@@ -32,6 +32,7 @@ Repo for VPAIR, an aerial visual place recognition dataset matching low-altitude
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [aero-vloc](../../catalog/repos/prime-slam__aero-vloc.md) (evaluated_on)
 - [VPAIR - Aerial Visual Place Recognition and Localization in Large-scale Outdoor Environments](../../catalog/resources/vpair-dataset-2022.md) (has_code)
+- [End-to-end GNSS-denied visual navigation on one real flight: nadir VO + DINOv2 retrieval + LightGlue fixes + multi-frame voting + altpnt integrity (VPAIR)](../../catalog/samples/e2e-visual-nav-vpair.md) (uses)
 - [Relative navigation benchmark on real data: KISS-ICP lidar odometry, OpenVINS VIO, mono and nadir VO, scored with evo](../../catalog/samples/relative-nav-benchmark.md) (uses)
 - [Drone frame to orthophoto geolocalization with LightGlue](../../catalog/samples/visual-geolocalization-lightglue.md) (uses)
 

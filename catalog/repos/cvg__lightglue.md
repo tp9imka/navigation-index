@@ -54,6 +54,7 @@ Fast learned local feature matcher (ICCV 2023) that adapts its depth to pair dif
 - [XFeat](../../catalog/repos/verlab__accelerated_features.md) (alternative_to)
 - [LightGlue: Local Feature Matching at Light Speed](../../catalog/resources/lightglue-2023.md) (has_code)
 - [OpenAerialMap](../../catalog/resources/openaerialmap.md) (uses)
+- [End-to-end GNSS-denied visual navigation on one real flight: nadir VO + DINOv2 retrieval + LightGlue fixes + multi-frame voting + altpnt integrity (VPAIR)](../../catalog/samples/e2e-visual-nav-vpair.md) (uses)
 - [License-clean drone frame to orthophoto geolocalization (ALIKED / DISK / SIFT + LightGlue)](../../catalog/samples/geoloc-license-clean.md) (uses)
 - [Golden demo: GPS drag (position-only or coherent) on an ArduCopter SITL AUTO mission, integrity monitoring with solution separation + protection level, real visual geolocalization, EKF3 switch to ExternalNav, Monte Carlo, dashboard replay](../../catalog/samples/golden-demo.md) (uses)
 - [Drone frame to orthophoto geolocalization with LightGlue](../../catalog/samples/visual-geolocalization-lightglue.md) (uses)
