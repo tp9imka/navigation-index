@@ -29,3 +29,4 @@ swarm-coop-real-uwb
 e2e-visual-nav-vpair
 thermal-geolocalization
 autopilot-spoof-response
+two-source-integrity-vpair

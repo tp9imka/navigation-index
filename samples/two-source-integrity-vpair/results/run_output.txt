@@ -1,0 +1,30 @@
+TRN lidar5: 93/93 fixes med 1.6 m, 93/93 fixes med 1.6 m, 93/93 fixes med 1.7 m
+TRN glo30: 44/46 fixes med 16.2 m, 46/46 fixes med 21.5 m, 44/46 fixes med 16.5 m
+TRN radalt: 3/8 fixes med 42.5 m, 2/8 fixes med 39.1 m, 4/8 fixes med 35.9 m
+stride 8 lidar5: vo_only avail50 2.7% HMI 0; visual_only avail50 1.6% HMI 0; trn_only avail50 2.7% HMI 0; both avail50 84.4% HMI 0; both_gate_only avail50 100.0% HMI 0
+stride 8 glo30: vo_only avail50 2.7% HMI 0; visual_only avail50 1.6% HMI 0; trn_only avail50 2.7% HMI 0; both avail50 1.6% HMI 0; both_gate_only avail50 97.3% HMI 0
+stride 8 radalt: vo_only avail50 2.7% HMI 0; visual_only avail50 1.6% HMI 0; trn_only avail50 2.7% HMI 0; both avail50 1.6% HMI 0; both_gate_only avail50 94.7% HMI 0
+stride 1 lidar5: vo_only avail50 2.7% HMI 0; visual_only avail50 1.6% HMI 0; trn_only avail50 2.7% HMI 0; both avail50 95.6% HMI 0; both_gate_only avail50 100.0% HMI 0
+stride 1 glo30: vo_only avail50 2.7% HMI 0; visual_only avail50 1.6% HMI 0; trn_only avail50 2.7% HMI 0; both avail50 1.6% HMI 0; both_gate_only avail50 100.0% HMI 0
+stride 1 radalt: vo_only avail50 2.7% HMI 0; visual_only avail50 1.6% HMI 0; trn_only avail50 2.7% HMI 0; both avail50 1.6% HMI 0; both_gate_only avail50 99.8% HMI 0
+faults lidar5 misreg_persistent_vis_first: detected 10/10, first attribution correct 0, HMI@50 0
+faults lidar5 misreg_transient_vis_first: detected 10/10, first attribution correct 0, HMI@50 0
+faults lidar5 trn_ambiguity_vis_first: detected 10/10, first attribution correct 10, HMI@50 0
+faults lidar5 misreg_persistent_trn_first: detected 10/10, first attribution correct 10, HMI@50 0
+faults lidar5 misreg_transient_trn_first: detected 10/10, first attribution correct 10, HMI@50 0
+faults lidar5 trn_ambiguity_trn_first: detected 10/10, first attribution correct 10, HMI@50 0
+faults lidar5 misreg_persistent_three: detected 10/10, first attribution correct 0, HMI@50 0
+faults lidar5 trn_ambiguity_three: detected 10/10, first attribution correct 1, HMI@50 19
+faults glo30 misreg_persistent_vis_first: detected 6/10, first attribution correct 0, HMI@50 0
+faults glo30 misreg_transient_vis_first: detected 8/10, first attribution correct 0, HMI@50 0
+faults glo30 trn_ambiguity_vis_first: detected 4/10, first attribution correct 4, HMI@50 0
+faults glo30 misreg_persistent_trn_first: detected 6/10, first attribution correct 0, HMI@50 0
+faults glo30 misreg_transient_trn_first: detected 8/10, first attribution correct 0, HMI@50 0
+faults glo30 trn_ambiguity_trn_first: detected 4/10, first attribution correct 2, HMI@50 0
+faults radalt misreg_persistent_vis_first: detected 4/10, first attribution correct 1, HMI@50 0
+faults radalt misreg_transient_vis_first: detected 3/10, first attribution correct 1, HMI@50 0
+faults radalt trn_ambiguity_vis_first: detected 6/10, first attribution correct 2, HMI@50 0
+faults radalt misreg_persistent_trn_first: detected 4/10, first attribution correct 1, HMI@50 0
+faults radalt misreg_transient_trn_first: detected 3/10, first attribution correct 1, HMI@50 0
+faults radalt trn_ambiguity_trn_first: detected 6/10, first attribution correct 2, HMI@50 0
+wrote results, 107.4 s

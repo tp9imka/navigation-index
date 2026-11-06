@@ -1,0 +1,26 @@
+{
+  "id": "sample:two-source-integrity-vpair",
+  "title": "Two independent absolute sources on one real flight: visual fixes + terrain-relative navigation with solution-separation integrity (VPAIR over NRW 1 m LiDAR)",
+  "summary": "Adds terrain-relative navigation as a second absolute source to the real VPAIR flight (8.53 km after GNSS loss, Rhine valley between Bad Honnef and Koenigswinter, east of Bonn). VO and visual fixes are the cached real-imagery front end of e2e-visual-nav-vpair (imported, no GPU). TRN sensors are simulated from real terrain at the real VPAIR poses: a downward heightmap (scanning LiDAR / stereo stand-in) from the Geobasis NRW 1 m DSM matched by terrain-heightmap-pf's v2 particle filter against a 5 m NRW map or a Copernicus GLO-30 map, and a 40 deg radar altimeter (blind-flight-bench beam model, noise, dropouts) matched by batch TERCOM against the DSM's leading-edge beam map. Fusion and integrity reuse altpnt-integrity v2 (heading/scale EKF, chi-square gate, solution separation, protection level, per-source fault priors), with TRN R from the TRN's own no-truth sigma. Reports error, PL availability at AL 25/50/100 m, HMI/MI with each source alone vs both over 10 TRN seeds, and injects a visual map misregistration and a TRN ambiguity (secondary match peak), with the monitor order swapped as a control and a three-source variant.",
+  "concepts": ["concept:assured-pnt", "concept:terrain-nav", "concept:sensor-fusion", "concept:visual-geolocalization", "concept:vio"],
+  "tags": ["vpair", "integrity", "protection-level", "solution-separation", "fde", "chi-square-gate", "trn", "tercom", "radar-altimeter", "lidar", "heightmap", "particle-filter", "geobasis-nrw", "glo-30", "fault-injection", "map-misregistration", "navdash"],
+  "related": [
+    {"id": "sample:e2e-visual-nav-vpair", "rel": "uses"},
+    {"id": "sample:altpnt-integrity", "rel": "uses"},
+    {"id": "sample:terrain-heightmap-pf", "rel": "uses"},
+    {"id": "sample:blind-flight-bench", "rel": "uses"},
+    {"id": "res:vpair-dataset-2022", "rel": "uses"},
+    {"id": "repo:aervisloc/vpair", "rel": "uses"},
+    {"id": "res:geobasis-nrw-dom1-dgm1", "rel": "uses"},
+    {"id": "res:copernicus-dem-aws", "rel": "uses"}
+  ],
+  "verified": "Ran 2026-11-06 on Apple M2 Max, CPython 3.12.14, numpy 2.5.4, scipy 1.18.1, rasterio 1.5.2: fetch_terrain.py (46 NRW DOM1 tiles, GLO-30 window, 125 s), run_two_source.py with 10 TRN seeds (107 s), screenshot.sh at frames 130 and 198. Map stride 8 (360 m tiles), heading +2 deg, 188 frames after GNSS loss: VO + visual fixes alone 9.7 m RMS but solution-separation PL median 1.2 km (1.6 % available at AL 50); + LiDAR-heightmap TRN 2.6 m RMS, PL median 30.5 m, available 14.4 / 84.4 / 100 % at AL 25 / 50 / 100 m; GLO-30-map TRN 55.6 % at AL 100 only; radar-altimeter TERCOM 10.9 % at AL 100 with 6 false detections. 0 HMI in every fault-free run. Faults: misregistration and TRN ambiguity detected 10/10 with the LiDAR TRN, no HMI, but two-source attribution of the misregistration follows the monitor's source order (control: swapped order flips it), and the three-source variant mis-excludes and gives 19 HMI epochs at AL 50 under TRN ambiguity. Tests: venv 14 pass; plain python3 7 pass, 7 skip. Altimeter and heightmap are simulated from real terrain at real poses, not recorded; LiDAR map and sensor share one DSM.",
+  "verified_status": "ran",
+  "deps": "venv",
+  "first_command": ".venv/bin/python run_two_source.py --data ../relative-nav-benchmark/data/vpair",
+  "group": "Integrity and GNSS-loss response on a vehicle",
+  "shows": "Second absolute source (TRN from real NRW LiDAR at real VPAIR poses) turns solution-separation integrity from 1.6 % to 84 % available at AL 50 m; fault injection with detection and attribution limits",
+  "input": "mixed",
+  "runtime": "fetch ~2 min (46 tiles, ~120 MB, git-ignored); run 107 s for 10 seeds on M2; needs the VPAIR sample (0.86 GB, shared with relative-nav-benchmark)",
+  "key_result": "[VPAIR, 8.5 km, map stride 8](README.md#results): PL available at AL 50 m 1.6 % with visual fixes alone => 84.4 % with a LiDAR-heightmap TRN (PL median 1.2 km => 30.5 m), 0 HMI; GLO-30 TRN only helps at AL 100 (55.6 %), radar-altimeter TERCOM barely (10.9 %); [faults](README.md#fault-injection) detected 10/10, two-source attribution set by monitor order, three-source exclusion gives HMI"
+}

@@ -1,0 +1,5 @@
+# Same pins as ../terrain-heightmap-pf (numpy, scipy, rasterio); run_fusion reuse needs nothing else.
+# Ran 2026-11-06 with CPython 3.12.14, macOS arm64.
+numpy==2.5.4
+scipy==1.18.1
+rasterio==1.5.2
