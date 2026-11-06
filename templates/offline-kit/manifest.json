@@ -1956,24 +1956,24 @@
    "size_complete": false
   },
   {
-   "id": "git:algafix/osnma",
-   "type": "git",
-   "tier": "standard",
-   "url": "https://github.com/Algafix/OSNMA",
-   "rank": 14,
-   "license": "EUPL-1.2",
-   "source": "docs/integration-cards/algafix__osnma.md",
-   "size": null,
-   "size_complete": false
-  },
-  {
    "id": "git:ardupilot/pymavlink",
    "type": "git",
    "tier": "standard",
    "url": "https://github.com/ArduPilot/pymavlink",
-   "rank": 15,
+   "rank": 14,
    "license": "NOASSERTION",
    "source": "docs/integration-cards/ardupilot__pymavlink.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:algafix/osnma",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/Algafix/OSNMA",
+   "rank": 15,
+   "license": "EUPL-1.2",
+   "source": "docs/integration-cards/algafix__osnma.md",
    "size": null,
    "size_complete": false
   },
@@ -2187,11 +2187,22 @@
    "size_complete": false
   },
   {
+   "id": "git:maplibre/maplibre-gl-js",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/maplibre/maplibre-gl-js",
+   "rank": 35,
+   "license": "NOASSERTION",
+   "source": "docs/integration-cards/maplibre__maplibre-gl-js.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
    "id": "git:rlabbe/filterpy",
    "type": "git",
    "tier": "standard",
    "url": "https://github.com/rlabbe/filterpy",
-   "rank": 35,
+   "rank": 36,
    "license": "MIT",
    "source": "docs/integration-cards/rlabbe__filterpy.md",
    "size": null,
@@ -2202,7 +2213,7 @@
    "type": "git",
    "tier": "standard",
    "url": "https://github.com/Aceinna/gnss-ins-sim",
-   "rank": 36,
+   "rank": 37,
    "license": "MIT",
    "source": "docs/integration-cards/aceinna__gnss-ins-sim.md",
    "size": null,
@@ -2213,20 +2224,9 @@
    "type": "git",
    "tier": "standard",
    "url": "https://github.com/Haiyang-Wong/OSNMA-SDR-SIM",
-   "rank": 37,
+   "rank": 38,
    "license": "not stated",
    "source": "docs/integration-cards/haiyang-wong__osnma-sdr-sim.md",
-   "size": null,
-   "size_complete": false
-  },
-  {
-   "id": "git:maplibre/maplibre-gl-js",
-   "type": "git",
-   "tier": "standard",
-   "url": "https://github.com/maplibre/maplibre-gl-js",
-   "rank": 38,
-   "license": "NOASSERTION",
-   "source": "docs/integration-cards/maplibre__maplibre-gl-js.md",
    "size": null,
    "size_complete": false
   },
