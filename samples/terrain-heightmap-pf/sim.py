@@ -25,6 +25,7 @@ class Config:
     # odometry (VIO-like, compass-aligned): per-run scale factor and compass bias
     odo_scale_sigma: float = 0.02
     compass_bias_sigma_deg: float = 3.0
+    compass_bias_fixed_deg: float = 0.0   # v2 bias test: added to the random bias
     compass_rw_deg_sqrt_s: float = 0.05
     odo_vel_noise: float = 0.3
     # reference DEM vs world: the world is the DEM plus correlated error (GLO-30 is not truth)
@@ -51,6 +52,8 @@ class Config:
     weight_power: float = 1.0
     init_sigma_m: float = 100.0
     init_offset_m: float = 0.0    # extra deterministic offset of the initial guess (convergence test)
+    search_min_m: float = 150.0
+    search_max_m: float = 2000.0
     # radar altimeter TERCOM baseline
     radalt_noise: float = 1.0
     baro_noise: float = 0.5
@@ -108,7 +111,7 @@ def make_odometry(truth, cfg, rng):
     """Odometry increments in the world frame as seen through compass bias and scale error."""
     n = len(truth)
     scale = 1 + rng.normal(0, cfg.odo_scale_sigma)
-    bias = np.deg2rad(rng.normal(0, cfg.compass_bias_sigma_deg)
+    bias = np.deg2rad(cfg.compass_bias_fixed_deg + rng.normal(0, cfg.compass_bias_sigma_deg)
                       + np.cumsum(rng.normal(0, cfg.compass_rw_deg_sqrt_s * np.sqrt(cfg.dt), n)))
     d_true = np.diff(truth, axis=0)
     d = np.empty_like(d_true)
@@ -173,7 +176,7 @@ def map_features(dem, cfg):
     return core.features(prep_heights(dem, cfg), cfg.feature, cfg.grad_thr)
 
 
-def run(region, seed, cfg, dem=None, res=None, fmap=None):
+def run(region, seed, cfg, dem=None, res=None, fmap=None, traj_fn=None):
     """One Monte Carlo run. Returns dict with per-step distance and errors, timings, events."""
     if dem is None:
         dem, res = load_region(region)
@@ -181,7 +184,7 @@ def run(region, seed, cfg, dem=None, res=None, fmap=None):
         fmap = map_features(dem, cfg)
     rng = np.random.default_rng(seed)
     world = make_world(dem, cfg, rng)
-    truth, dist = make_trajectory(dem, res, cfg, rng)
+    truth, dist = (traj_fn or make_trajectory)(dem, res, cfg, rng)
     d_odo, compass_err = make_odometry(truth, cfg, rng)
     n = len(truth)
 
@@ -211,7 +214,7 @@ def run(region, seed, cfg, dem=None, res=None, fmap=None):
                 t0 = time.perf_counter()
                 templ, valid = template_features(patch, mask, cfg)
                 c = pf.p.mean(0)
-                half_ext = float(np.clip(3 * pf.spread(), 150, 2000))
+                half_ext = float(np.clip(3 * pf.spread(), cfg.search_min_m, cfg.search_max_m))
                 sm = core.similarity_map(fmap, templ, valid, c[0], c[1], half_ext, res, cfg.blur_cells)
                 if sm is not None and templ[valid].std() > 0:
                     jit = max(cfg.jitter_min_m, cfg.jitter_frac * moved)

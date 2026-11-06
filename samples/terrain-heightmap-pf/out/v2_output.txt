@@ -1,0 +1,63 @@
+## Main: 20 runs per region, seeds 0-19 (same flights as v1)
+
+| region / navigator | @1 km | @2 km | @5 km | @10 km | RMSE med | updates applied | runs worse than odometry (final / RMSE) | ms/update med |
+|---|---|---|---|---|---|---|---|---|
+| hilly odometry | 108/197 | 105/218 | 173/303 | 311/462 | 193 | - | - | - |
+| hilly pf_grad_v1 | 33/54 | 23/31 | 27/39 | 26/37 | 41 | - | 0% / 0% | 1.1 |
+| hilly v2 | 12/15 | 12/14 | 10/20 | 12/14 | 29 | 1.00 | 0% / 0% | 3.3 |
+| hilly v2_nogate | 12/15 | 12/14 | 10/20 | 12/14 | 29 | 1.00 | 0% / 0% | 3.2 |
+| hilly v2_nohead | 11/19 | 11/16 | 13/18 | 13/19 | 29 | 1.00 | 0% / 0% | 1.8 |
+v1 pf_grad reproduces out/results.json exactly: True
+| mixed odometry | 122/177 | 127/213 | 188/308 | 404/643 | 240 | - | - | - |
+| mixed pf_grad_v1 | 55/194 | 32/76 | 30/45 | 32/84 | 63 | - | 0% / 0% | 1.1 |
+| mixed v2 | 73/241 | 22/100 | 25/40 | 27/59 | 59 | 0.93 | 0% / 0% | 5.0 |
+| mixed v2_nogate | 73/241 | 25/99 | 24/39 | 23/64 | 53 | 1.00 | 0% / 0% | 5.0 |
+| mixed v2_nohead | 102/170 | 27/211 | 31/75 | 39/408 | 77 | 0.74 | 0% / 0% | 1.8 |
+v1 pf_grad reproduces out/results.json exactly: True
+| flat odometry | 116/242 | 132/269 | 224/299 | 334/557 | 236 | - | - | - |
+| flat pf_grad_v1 | 27/136 | 26/37 | 58/182 | 41/156 | 84 | - | 5% / 5% | 1.1 |
+| flat v2 | 18/45 | 15/24 | 32/72 | 25/130 | 56 | 0.73 | 5% / 5% | 4.1 |
+| flat v2_nogate | 17/31 | 15/24 | 44/72 | 28/162 | 57 | 1.00 | 10% / 5% | 4.6 |
+| flat v2_nohead | 13/24 | 15/25 | 27/59 | 37/136 | 73 | 0.63 | 5% / 0% | 1.8 |
+v1 pf_grad reproduces out/results.json exactly: True
+| flat_smooth odometry | 116/242 | 132/269 | 224/299 | 334/557 | 236 | - | - | - |
+| flat_smooth pf_grad_v1 | 166/337 | 218/476 | 381/647 | 539/808 | 387 | - | 85% / 85% | 1.1 |
+| flat_smooth v2 | 116/242 | 132/269 | 220/299 | 336/557 | 229 | 0.00 | 45% / 40% | 51.1 |
+| flat_smooth v2_nogate | 142/311 | 197/388 | 454/963 | 632/1373 | 511 | 1.00 | 85% / 95% | 49.2 |
+| flat_smooth v2_nohead | 116/242 | 132/269 | 224/299 | 334/557 | 236 | 0.00 | 55% / 65% | 0.9 |
+v1 pf_grad reproduces out/results.json exactly: True
+
+## Confidence vs true error, v2 main runs, 4720 updates pooled over 4 regions x 20 runs
+
+| signal (no truth needed) | Spearman rho vs true error, pooled | hilly | mixed | flat | flat_smooth |
+|---|---|---|---|---|---|
+| spread | +0.84 | +0.35 | +0.59 | +0.72 | +0.30 |
+| ess | +0.79 | +0.24 | +0.43 | +0.59 | +0.02 |
+| crb | +0.81 | +0.24 | +0.46 | +0.62 | -0.06 |
+| signif | -0.78 | -0.22 | -0.53 | -0.62 | +0.04 |
+
+Spread as a 1-sigma radius: share of updates with true error below k x spread
+| k | pooled | hilly | mixed | flat | flat_smooth |
+|---|---|---|---|---|---|
+| 1 | 82% | 61% | 89% | 81% | 99% |
+| 2 | 99% | 97% | 100% | 99% | 100% |
+| 3 | 100% | 100% | 100% | 100% | 100% |
+spread <= 50 m on 51% of updates: true error median 14 m, p95 34 m (other updates: median 90 m)
+spread <= 100 m on 67% of updates: true error median 16 m, p95 62 m (other updates: median 144 m)
+
+## Compass bias test: fixed bias, no random part, 12 runs each (seeds 200-211)
+
+| region | bias | odometry @10 km med | v1 pf_grad @10 km med/p90 | v2 no heading state | v2 @10 km med/p90 | v2 final bias error, median abs |
+|---|---|---|---|---|---|---|
+| hilly | 0 deg | 271 | 24/35 | 10/16 | 8/19 | 1.8 deg |
+| hilly | 5 deg | 841 | 28/58 | 16/25 | 8/15 | 0.7 deg |
+| hilly | 10 deg | 1594 | 340/707 | 42/64 | 9/16 | 0.3 deg |
+| hilly | 15 deg | 2354 | 1938/2247 | 1971/2275 | 10/16 | 0.6 deg |
+| hilly | 20 deg | 3112 | 2649/2967 | 2776/3294 | 9/15 | 0.7 deg |
+| mixed | 0 deg | 162 | 45/103 | 41/79 | 53/223 | 2.0 deg |
+| mixed | 5 deg | 870 | 142/378 | 329/629 | 43/76 | 0.6 deg |
+| mixed | 10 deg | 1614 | 1081/1866 | 1194/1429 | 31/102 | 0.4 deg |
+| mixed | 15 deg | 2375 | 2070/2637 | 2389/2605 | 32/64 | 0.5 deg |
+| mixed | 20 deg | 3131 | 2715/3129 | 3163/3339 | 26/73 | 0.3 deg |
+
+wall time 365 s

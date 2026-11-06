@@ -1,0 +1,142 @@
+{
+ "seeds": [
+  300,
+  301,
+  302,
+  303,
+  304,
+  305,
+  306,
+  307,
+  308,
+  309
+ ],
+ "configs": {
+  "dsm_1m_binary5_v1": {
+   "final_median": 85.68325980928964,
+   "final_p90": 227.8408080991107,
+   "rmse_median": 48.3072353872781,
+   "odom_final_median": 131.0876100253211,
+   "applied_frac": null,
+   "ms_update_median": 1.1600418947637081,
+   "frac_edges_gt5": 0.056506,
+   "wall_s": 12.088493824005127
+  },
+  "dsm_1m_binary5_v2": {
+   "final_median": 0.6199571945608187,
+   "final_p90": 1.980142163987639,
+   "rmse_median": 3.156176760071975,
+   "odom_final_median": 131.0876100253211,
+   "applied_frac": 0.6476070528967255,
+   "ms_update_median": 4.145791986957192,
+   "frac_edges_gt5": 0.056506,
+   "wall_s": 24.19520592689514
+  },
+  "dsm_1m_grad_v1": {
+   "final_median": 1.7845767789947393,
+   "final_p90": 3.1723874641034415,
+   "rmse_median": 3.2251138693400945,
+   "odom_final_median": 131.0876100253211,
+   "applied_frac": null,
+   "ms_update_median": 1.245957799255848,
+   "frac_edges_gt5": 0.056506,
+   "wall_s": 10.443987846374512
+  },
+  "dsm_1m_grad_v2": {
+   "final_median": 0.37759423219049615,
+   "final_p90": 1.6902546052524954,
+   "rmse_median": 2.2447741660886003,
+   "odom_final_median": 131.0876100253211,
+   "applied_frac": 0.9662468513853903,
+   "ms_update_median": 4.578208085149527,
+   "frac_edges_gt5": 0.056506,
+   "wall_s": 26.488993167877197
+  },
+  "dsm_30m_binary5_v1": {
+   "final_median": 57.22649240184847,
+   "final_p90": 141.53451450372205,
+   "rmse_median": 61.505598005001914,
+   "odom_final_median": 137.1282144293889,
+   "applied_frac": null,
+   "ms_update_median": 0.9965414647012949,
+   "frac_edges_gt5": 0.13064616428288767,
+   "wall_s": 0.38695621490478516
+  },
+  "dsm_30m_binary5_v2": {
+   "final_median": 19.91630060541803,
+   "final_p90": 112.95541479443912,
+   "rmse_median": 26.935141129481586,
+   "odom_final_median": 137.1282144293889,
+   "applied_frac": 0.556,
+   "ms_update_median": 2.696375595405698,
+   "frac_edges_gt5": 0.13064616428288767,
+   "wall_s": 1.0105962753295898
+  },
+  "dsm_30m_grad_v1": {
+   "final_median": 37.344113316383606,
+   "final_p90": 51.11339737961423,
+   "rmse_median": 30.413572534511296,
+   "odom_final_median": 137.1282144293889,
+   "applied_frac": null,
+   "ms_update_median": 1.0175209026783705,
+   "frac_edges_gt5": 0.13064616428288767,
+   "wall_s": 0.379727840423584
+  },
+  "dsm_30m_grad_v2": {
+   "final_median": 13.864256158044917,
+   "final_p90": 19.368872997435737,
+   "rmse_median": 13.698133188670573,
+   "odom_final_median": 137.1282144293889,
+   "applied_frac": 1.0,
+   "ms_update_median": 2.8161874506622553,
+   "frac_edges_gt5": 0.13064616428288767,
+   "wall_s": 1.102586030960083
+  },
+  "dtm_1m_binary5_v1": {
+   "final_median": 131.78477590450336,
+   "final_p90": 262.19934656045615,
+   "rmse_median": 85.59573094891596,
+   "odom_final_median": 131.0876100253211,
+   "applied_frac": null,
+   "ms_update_median": 1.4831244479864836,
+   "frac_edges_gt5": 0.0,
+   "wall_s": 11.824326992034912
+  },
+  "dtm_1m_binary5_v2": {
+   "final_median": 132.83345008438187,
+   "final_p90": 252.9601077668496,
+   "rmse_median": 84.77817483776377,
+   "odom_final_median": 131.0876100253211,
+   "applied_frac": 0.0,
+   "ms_update_median": 0.3688330762088299,
+   "frac_edges_gt5": 0.0,
+   "wall_s": 7.273817777633667
+  },
+  "dtm_1m_grad_v1": {
+   "final_median": 22.996302622490784,
+   "final_p90": 234.7077163683764,
+   "rmse_median": 14.156119015216198,
+   "odom_final_median": 131.0876100253211,
+   "applied_frac": null,
+   "ms_update_median": 1.2592705897986889,
+   "frac_edges_gt5": 0.0,
+   "wall_s": 10.952182054519653
+  },
+  "dtm_1m_grad_v2": {
+   "final_median": 6.463992380462731,
+   "final_p90": 38.5530637592979,
+   "rmse_median": 7.18826263002971,
+   "odom_final_median": 131.0876100253211,
+   "applied_frac": 0.881360201511335,
+   "ms_update_median": 6.8673123605549335,
+   "frac_edges_gt5": 0.0,
+   "wall_s": 72.61984467506409
+  }
+ },
+ "edge_fraction": {
+  "dsm_1m": 0.056506,
+  "dsm_30m": 0.13064616428288767,
+  "dtm_1m": 0.0,
+  "dtm_30m": 0.0005653230821414439
+ }
+}

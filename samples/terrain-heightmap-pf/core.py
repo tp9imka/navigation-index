@@ -179,3 +179,183 @@ def tercom_fix(dem, res, track_e, track_n, profile, radius_m, step_m):
     far = np.hypot(de[:, 0] - de[b, 0], dn[:, 0] - dn[b, 0]) > 3 * res
     second = mad[far].min() if far.any() else np.inf
     return float(de[b, 0]), float(dn[b, 0]), float(mad[b]), float(second)
+
+
+# ---------------------------------------------------------------- v2: likelihood, information gate, heading state
+
+def rotate_patch(h, mask, angle):
+    """Undo a compass error `angle` (rad): out[u] = h[R(-angle) u], u in cells about the patch centre.
+
+    The sensor patch is h[g] = world(pos + R(err) g), so angle = err gives a north-aligned patch.
+    Cells whose source falls outside the patch or on an invalid cell become invalid.
+    """
+    from scipy.ndimage import map_coordinates
+    n0, n1 = h.shape
+    c0, c1 = (n0 - 1) / 2, (n1 - 1) / 2
+    v, u = np.mgrid[0:n0, 0:n1].astype(float)
+    u -= c1
+    v -= c0
+    ca, sa = np.cos(-angle), np.sin(-angle)
+    src_col = ca * u - sa * v + c1
+    src_row = sa * u + ca * v + c0
+    hv = np.where(mask, h, 0.0)
+    num = map_coordinates(hv, [src_row, src_col], order=1, cval=0.0)
+    den = map_coordinates(mask.astype(float), [src_row, src_col], order=1, cval=0.0)
+    m = den > 0.5
+    return np.where(m, num / np.where(m, den, 1.0), 0.0), m
+
+
+def ncc_map(image, templ, mask):
+    """Masked normalized cross-correlation of template and each image window ('valid').
+
+    rho = R / sqrt(sum m (T - Tbar)^2 * sum m (I - Ibar)^2), R the Eq. (1) correlation. Unlike
+    Eq. (1) it is invariant to feature gain, which matters because gradient magnitude of a
+    noisy patch is inflated (rectified noise) relative to the clean map. Windows with no
+    variance get rho = 0. Returns (rho, n_valid, template energy).
+    """
+    m = mask.astype(float)
+    n = m.sum()
+    t = np.where(mask, templ, 0.0)
+    tc = (t - t.sum() / n) * m
+    et = (tc ** 2).sum()
+    mf = m[::-1, ::-1]
+    s1 = fftconvolve(image, mf, mode="valid")
+    s2 = fftconvolve(image * image, mf, mode="valid")
+    r = fftconvolve(image, tc[::-1, ::-1], mode="valid")
+    var_i = s2 - s1 ** 2 / n
+    ok = var_i > 1e-9 * max(var_i.max(), 1e-30)
+    rho = np.where(ok, r / np.sqrt(np.where(ok, var_i, 1.0) * max(et, 1e-30)), 0.0)
+    return np.clip(rho, -1, 1), n, et
+
+
+def ncc_map_naive(image, templ, mask):
+    th, tw = templ.shape
+    m = mask.astype(bool)
+    out = np.zeros((image.shape[0] - th + 1, image.shape[1] - tw + 1))
+    a = templ[m] - templ[m].mean()
+    for i in range(out.shape[0]):
+        for j in range(out.shape[1]):
+            p = image[i:i + th, j:j + tw][m]
+            p = p - p.mean()
+            out[i, j] = (a * p).sum() / np.sqrt((a * a).sum() * (p * p).sum())
+    return out
+
+
+def ncc_loglik(rho_maps, n, kappa):
+    """Gain-fitted Gaussian residual sum(T - a I)^2 = E_T (1 - rho+^2), a >= 0, with the noise
+    variance self-calibrated from the best residual over all hypotheses (no truth, no tuning
+    of sigma). Returns log-likelihood maps, 0 at the best cell. kappa = cells per independent
+    residual.
+    """
+    res = [1 - np.clip(r, 0, None) ** 2 for r in rho_maps]
+    best = max(min(x.min() for x in res), 1e-6)
+    return [-(np.maximum(x, best) / best - 1) * n / (2 * kappa) for x in res]
+
+
+def translation_crb(window, mask, sigma2, res):
+    """Cramer-Rao bound of the template position from the reference features under the window.
+
+    Gaussian model f_obs = f_map(x + d) + white noise sigma2 per cell gives Fisher information
+    J = sum m grad f grad f^T / sigma2 (gradients per metre). Returns (worst-axis std in metres,
+    J). Inf when J is singular (no texture or texture in one direction only).
+    """
+    gy, gx = np.gradient(window, res)
+    m = mask.astype(float)
+    J = np.array([[(m * gx * gx).sum(), (m * gx * gy).sum()],
+                  [(m * gx * gy).sum(), (m * gy * gy).sum()]]) / max(sigma2, 1e-12)
+    lmin = np.linalg.eigvalsh(J)[0]
+    return (float(1 / np.sqrt(lmin)) if lmin > 1e-12 else float("inf")), J
+
+
+def ncc_crb(window, mask, rho, kappa, res, rho_null=0.0):
+    """CRB (metres, worst axis) of the match under the gain-fitted model T = a I(x) + e.
+
+    With rho the best NCC, the per-cell signal-to-noise ratio is rho^2 / (1 - rho^2) in units of
+    the window's own variance, so J = (n / kappa) SNR * sum m grad I grad I^T / E_I. rho is a
+    maximum over many placements and is biased up, so only the part above rho_null (the
+    maximum pure noise reaches) counts as signal: SNR = (rho^2 - rho_null^2) / (1 - rho^2).
+    Needs no truth: the reference window at the current estimate and the NCC map only.
+    """
+    m = mask.astype(bool)
+    n = m.sum()
+    v = window[m]
+    e_i = ((v - v.mean()) ** 2).sum()
+    rho = float(np.clip(rho, 0, 0.999))
+    snr = (rho ** 2 - rho_null ** 2) / (1 - rho ** 2)
+    if n == 0 or e_i <= 0 or snr <= 0:
+        return float("inf")
+    w = (window - v.mean()) / np.sqrt(e_i / n)
+    return translation_crb(w, mask, kappa / snr, res)[0]
+
+
+def temper_to_ess(loglik, ess_floor):
+    """Smallest flattening of the likelihood that keeps ESS >= ess_floor * N. Returns (w, beta)."""
+    l = loglik - loglik.max()
+    n = len(l)
+
+    def w_of(b):
+        w = np.exp(b * l)
+        return w / w.sum()
+
+    def ess(w):
+        return 1.0 / np.sum(w ** 2) / n
+
+    w = w_of(1.0)
+    if ess(w) >= ess_floor:
+        return w, 1.0
+    lo, hi = 0.0, 1.0
+    for _ in range(30):
+        mid = (lo + hi) / 2
+        if ess(w_of(mid)) >= ess_floor:
+            lo = mid
+        else:
+            hi = mid
+    return w_of(lo), lo
+
+
+class HeadingPF:
+    """Particle filter over (east, north, compass bias). Odometry is rotated per particle by -bias."""
+
+    def __init__(self, n, mean, sigma, bias_sigma, bias_max, rng, kmeans_k=4):
+        self.rng = rng
+        self.p = np.empty((n, 3))
+        self.p[:, :2] = np.asarray(mean, float) + rng.normal(0, sigma, (n, 2))
+        b = rng.normal(0, bias_sigma, n)
+        self.p[:, 2] = np.clip(b - b.mean(), -bias_max, bias_max)
+        self.bias_max = bias_max
+        self.k = kmeans_k
+
+    def predict(self, d):
+        c, s = np.cos(-self.p[:, 2]), np.sin(-self.p[:, 2])
+        self.p[:, 0] += c * d[0] - s * d[1]
+        self.p[:, 1] += s * d[0] + c * d[1]
+
+    def diffuse(self, pos_sigma, bias_sigma):
+        self.p[:, :2] += self.rng.normal(0, pos_sigma, (len(self.p), 2))
+        self.p[:, 2] = np.clip(self.p[:, 2] + self.rng.normal(0, bias_sigma, len(self.p)), -self.bias_max, self.bias_max)
+
+    def loglik_at(self, maps, angles, origin_e, origin_n, res):
+        """Log-likelihood per particle: bilinear in position, linear between the two nearest angle maps."""
+        a = np.asarray(angles, float)
+        floor = min(m.min() for m in maps)
+        v = np.stack([bilinear(m, self.p[:, 0] - origin_e, self.p[:, 1] - origin_n, res, fill=floor) for m in maps])
+        if len(a) == 1:
+            return v[0]
+        x = np.clip((self.p[:, 2] - a[0]) / (a[1] - a[0]), 0, len(a) - 1)
+        k0 = np.minimum(np.floor(x).astype(int), len(a) - 2)
+        f = x - k0
+        idx = np.arange(len(self.p))
+        return (1 - f) * v[k0, idx] + f * v[k0 + 1, idx]
+
+    def update(self, loglik, ess_floor):
+        """Weight, resample. Returns (pre-resample ESS fraction, tempering beta)."""
+        w, beta = temper_to_ess(loglik, ess_floor)
+        ess = 1.0 / np.sum(w ** 2) / len(w)
+        self.p = self.p[systematic_resample(w, self.rng)]
+        return float(ess), float(beta)
+
+    def estimate(self):
+        return largest_cluster_centroid(self.p[:, :2], self.k, self.rng)
+
+    def spread(self):
+        return float(np.sqrt(np.trace(np.cov(self.p[:, :2].T))))

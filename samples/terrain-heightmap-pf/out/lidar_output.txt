@@ -1,0 +1,16 @@
+| map | res | feature | filter | final err med/p90 [m] | RMSE med | odom final med | updates applied | ms/update med |
+|---|---|---|---|---|---|---|---|---|
+| dsm | 1m | binary5 | v1 | 85.7/227.8 | 48.3 | 131 | - | 1.2 |
+| dsm | 1m | binary5 | v2 | 0.6/2.0 | 3.2 | 131 | 0.65 | 4.1 |
+| dsm | 1m | grad | v1 | 1.8/3.2 | 3.2 | 131 | - | 1.2 |
+| dsm | 1m | grad | v2 | 0.4/1.7 | 2.2 | 131 | 0.97 | 4.6 |
+| dsm | 30m | binary5 | v1 | 57.2/141.5 | 61.5 | 137 | - | 1.0 |
+| dsm | 30m | binary5 | v2 | 19.9/113.0 | 26.9 | 137 | 0.56 | 2.7 |
+| dsm | 30m | grad | v1 | 37.3/51.1 | 30.4 | 137 | - | 1.0 |
+| dsm | 30m | grad | v2 | 13.9/19.4 | 13.7 | 137 | 1.00 | 2.8 |
+| dtm | 1m | binary5 | v1 | 131.8/262.2 | 85.6 | 131 | - | 1.5 |
+| dtm | 1m | binary5 | v2 | 132.8/253.0 | 84.8 | 131 | 0.00 | 0.4 |
+| dtm | 1m | grad | v1 | 23.0/234.7 | 14.2 | 131 | - | 1.3 |
+| dtm | 1m | grad | v2 | 6.5/38.6 | 7.2 | 131 | 0.88 | 6.9 |
+
+fraction of cells with |gradient| > 5 m/cell: {"dsm_1m": 0.057, "dsm_30m": 0.131, "dtm_1m": 0.0, "dtm_30m": 0.001}
