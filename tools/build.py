@@ -47,6 +47,11 @@ def norm_id(i):
     return i
 
 
+def norm_url(u):
+    u = re.sub(r"^https?://(www\.)?", "", u.strip().lower())
+    return u.split("#")[0].rstrip("/")
+
+
 def merge(records, aliases):
     """Merge records sharing an id (same repo found by two lanes)."""
     by_id, dups = {}, defaultdict(list)
@@ -225,8 +230,18 @@ def main():
             aliases[rid] = f"repo:{full.lower()}"
     meta = {aliases.get(k, k): v for k, v in meta.items()}
 
+    raw_resources = load_lane_dir("resources")
+    first_by_url = {}
+    for r in raw_resources:
+        key = norm_url(r.get("url", ""))
+        if not key:
+            continue
+        if key in first_by_url and first_by_url[key] != r["id"]:
+            aliases[r["id"]] = first_by_url[key]
+        else:
+            first_by_url.setdefault(key, r["id"])
     repos, repo_dups = merge(load_lane_dir("repos"), aliases)
-    resources, res_dups = merge(load_lane_dir("resources"), aliases)
+    resources, res_dups = merge(raw_resources, aliases)
     samples, _ = merge(load_samples(), aliases)
     for r in repos.values():
         r["_stars"] = meta.get(r["id"], {}).get("stargazers_count")

@@ -20,6 +20,7 @@ English edition of Gao Xiang's open textbook on visual SLAM, from geometry and L
 
 ## Referenced by
 
+- [14 Lectures on Visual SLAM (2nd ed.) code](../repos/gaoxiang12__slambook2.md) (same_org)
 - [14 Lectures on Visual SLAM: From Theory to Practice](../resources/gaoxiang-14-lectures-visual-slam.md) (has_code)
 
 _Indexed by lane(s): slam_

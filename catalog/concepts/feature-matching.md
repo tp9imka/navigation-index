@@ -4,7 +4,11 @@
 
 Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 
-## Repositories (26)
+## Samples (1)
+
+- [Drone frame to orthophoto geolocalization with LightGlue](../samples/visual-geolocalization-lightglue.md) - Matches a nadir drone frame against a georeferenced satellite or orthophoto tile with SuperPoint + LightGlue, fits a MAGSAC homography with OpenCV, and maps the frame centre through the GeoTIFF geotransform to lat/lon.
+
+## Repositories (31)
 
 - [LightGlue](../repos/cvg__lightglue.md) - fit: high - Fast learned local feature matcher (ICCV 2023) that adapts its depth to pair difficulty; works with SuperPoint, DISK, ALIKED and SIFT features.
 - [hloc](../repos/cvg__hierarchical-localization.md) - fit: high - Toolbox for hierarchical visual localization: global retrieval (NetVLAD etc.) to find candidate images, then local feature matching (SuperPoint, LightGlue...) and PnP against an SfM model.
@@ -12,11 +16,13 @@ Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 - [RoMa](../repos/parskatt__roma.md) - fit: high - Robust dense feature matcher (CVPR 2024) estimating pixel-dense warps with certainties, strong under large appearance change.
 - [small_gicp](../repos/koide3__small_gicp.md) - fit: high - Efficient, parallel point-cloud registration library (GICP, ICP variants) with C++ and Python APIs.
 - [vismatch (image-matching-models)](../repos/gmberton__vismatch.md) - fit: high - Wrapper exposing 50+ image matching models behind one interface (formerly image-matching-models).
+- [LightGlue-ONNX](../repos/fabio-sim__lightglue-onnx.md) - fit: high - ONNX export of SuperPoint/DISK + LightGlue feature matching with TensorRT and OpenVINO support.
 - [WildNav](../repos/tiers__wildnav.md) - fit: high - Python pipeline that localizes a drone by matching its downward camera frames against georeferenced satellite map tiles with SuperGlue, then converts the best match into GPS coordinates.
 - [AnyVisLoc benchmark](../repos/uav-avl__benchmark.md) - fit: high - Benchmark and code for UAV absolute visual localization under low-altitude, multi-view (oblique) observation, comparing retrieval and matching combinations against aerial and satellite reference maps.
 - [visual_localization (GNSS-free UAV)](../repos/terbouchehacene__visual_localization.md) - fit: high - A cleaner reimplementation of the WildNav idea: match UAV images to satellite tiles with SuperPoint/SuperGlue-style matchers and estimate geographic position.
 - [UAVLocalization (map retrieval + alignment)](../repos/hmf21__uavlocalization.md) - fit: high - Geo-localization system for aerial platforms that first retrieves the right satellite map region with a deep descriptor and then aligns the drone orthophoto to it to extract coordinates; evaluated on reorganized public A
 - [VGGT](../repos/facebookresearch__vggt.md) - fit: medium - Visual Geometry Grounded Transformer: a feed-forward network predicting camera poses, depth and point maps from one or many images (CVPR 2025 best paper).
+- [14 Lectures on Visual SLAM (2nd ed.) code](../repos/gaoxiang12__slambook2.md) - fit: medium - Companion code for the second edition of Gao Xiang's visual SLAM textbook: Lie groups, nonlinear optimization, feature VO, direct methods, back-end and loop closure examples in C++.
 - [SuperGlue (pretrained)](../repos/magicleap__supergluepretrainednetwork.md) - fit: medium - Pretrained SuperGlue graph-neural-network matcher with SuperPoint features (CVPR 2020).
 - [MASt3R-SLAM](../repos/rmurai0610__mast3r-slam.md) - fit: medium - Real-time dense monocular SLAM built on the MASt3R two-view 3D reconstruction prior, needing no fixed camera model (CVPR 2025).
 - [MASt3R](../repos/naver__mast3r.md) - fit: medium - Matching grounded in 3D: predicts dense correspondences and 3D pointmaps from image pairs, building on DUSt3R.
@@ -25,6 +31,7 @@ Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 - [SuperPoint (pretrained)](../repos/magicleap__superpointpretrainednetwork.md) - fit: medium - Pretrained SuperPoint keypoint detector and descriptor.
 - [fast_gicp](../repos/koide3__fast_gicp.md) - fit: medium - Collection of fast GICP and VGICP point-cloud registration implementations, multithreaded and CUDA.
 - [AirSLAM](../repos/sair-lab__airslam.md) - fit: medium - Point-and-line visual(-inertial) SLAM using learned features, designed for illumination-robust operation, with TensorRT acceleration; successor to AirVO.
+- [GTSfM](../repos/borglab__gtsfm.md) - fit: medium - End-to-end structure-from-motion pipeline built on GTSAM, with pluggable front-ends (classical and learned matchers) and distributed execution via Dask.
 - [vision_landing](../repos/goodrobots__vision_landing.md) - fit: medium - Precision landing using visual fiducial targets, sending LANDING_TARGET messages to ArduPilot.
 - [Aerial Template Matching](../repos/m-hamza-mughal__aerial-template-matching.md) - fit: medium - Classical template-matching approach for locating an aerial image inside a larger reference image, built on OpenCV.
 - [STHN](../repos/arplaboratory__sthn.md) - fit: medium - Deep homography estimation for aligning UAV thermal images to satellite maps (RA-L 2024), refining coarse geo-localization into precise alignment.
@@ -32,6 +39,8 @@ Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 - [Visual Locator](../repos/rtwotwo__visual-locator.md) - fit: medium - Absolute drone positioning by image retrieval (SelaVPR-style ViT features) over cropped satellite tiles followed by registration with SIFT+RANSAC or SuperPoint+SuperGlue.
 - [Glue Factory](../repos/cvg__glue-factory.md) - fit: low - Training library for local feature detection and matching (trains LightGlue and others).
 - [Quatro](../repos/url-kaist__quatro.md) - fit: low - Fast, robust global registration for terrestrial robots that assumes near-planar motion to cut degrees of freedom.
+- [EKLT](../repos/uzh-rpg__rpg_eklt.md) - fit: low - Asynchronous photometric feature tracking that combines events and frames (IJCV 2019).
+- [Event feature tracking (EM-ICP)](../repos/daniilidis-group__event_feature_tracking.md) - fit: low - MATLAB implementations of event-based feature tracking methods from the Penn GRASP lab.
 
 ## Documents, talks, courses, datasets (16)
 

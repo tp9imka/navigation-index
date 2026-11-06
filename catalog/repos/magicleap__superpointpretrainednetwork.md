@@ -25,6 +25,7 @@ Pretrained SuperPoint keypoint detector and descriptor.
 ## Referenced by
 
 - [SuperGlue (pretrained)](../repos/magicleap__supergluepretrainednetwork.md) (same_org)
+- [Drone frame to orthophoto geolocalization with LightGlue](../samples/visual-geolocalization-lightglue.md) (explains)
 
 _Indexed by lane(s): alt-nav_
 

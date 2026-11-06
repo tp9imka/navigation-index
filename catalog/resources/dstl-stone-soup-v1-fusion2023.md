@@ -18,6 +18,6 @@ FUSION 2023 paper announcing Stone Soup version 1.0, describing the framework's 
 ## Related
 
 - has_code: [Stone Soup](../repos/dstl__stone-soup.md)
-- part_of: [Stone Soup documentation and tutorials](../resources/dstl-stone-soup-docs.md)
+- part_of: [Stone Soup documentation and tutorials](../resources/stone-soup-docs.md)
 
 _Indexed by lane(s): domains-swarm_

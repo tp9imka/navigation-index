@@ -4,13 +4,13 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 463 | Jupyter Notebook | ? | 2022-11-23 | False | production | medium |
+| 463 | Jupyter Notebook | ? | 2022-11-23 | False | archived | medium |
 
 Multi-modal off-road dataset from Texas A&M with lidar, camera, IMU and GNSS plus semantic annotations collected on a ground robot.
 
 **Why it matters:** A standard benchmark for off-road perception and localization.
 
-**Hackathon notes:** Download only the sequences you need; ROS bags are large.
+**Hackathon notes:** Download only the sequences you need; ROS bags are large. Unmaintained since 2022; the data itself is static and still usable.
 
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
 

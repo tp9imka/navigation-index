@@ -21,6 +21,7 @@
 
 ## Referenced by
 
+- [R-Mode Baltic and R-Mode Baltic 2](../resources/dlr-r-mode-baltic.md) (cites)
 - [When GNSS fails, what will you do? MarRINav!](../resources/ion-webinar-marrinav.md) (cites)
 
 _Indexed by lane(s): learning_

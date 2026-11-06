@@ -24,6 +24,7 @@ Python port of the SoftGNSS software-defined GPS receiver toolkit.
 
 ## Referenced by
 
+- [pylgrim](../repos/kirienko__pylgrim.md) (alternative_to)
 - [SoftGNSS v3.0 (maintained copy)](../repos/tmboc__softgnss.md) (alternative_to)
 
 _Indexed by lane(s): gnss_

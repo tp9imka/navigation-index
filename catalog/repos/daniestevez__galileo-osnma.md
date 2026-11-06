@@ -28,7 +28,6 @@ Rust implementation of Galileo OSNMA that can run on embedded no_std targets, wi
 - [Galileo OSNMA Receiver Guidelines Issue 1.3](../resources/galileo-osnma-receiver-guidelines.md) (has_code)
 - [Galileo Open Service Navigation Message Authentication (OSNMA) - service page](../resources/galileo-osnma-service-page.md) (has_code)
 - [Galileo OSNMA Signal-In-Space Interface Control Document Issue 1.1](../resources/galileo-osnma-sis-icd.md) (has_code)
-- [Galileo OSNMA Signal-In-Space ICD v1.1](../resources/galileo-osnma-sis-icd-1-1.md) (has_code)
 - [Navipedia: Galileo Open Service Navigation Message Authentication](../resources/navipedia-osnma.md) (has_code)
 
 _Indexed by lane(s): gnss_

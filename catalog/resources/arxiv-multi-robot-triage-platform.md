@@ -1,8 +1,8 @@
-# A Multi-Robot Platform for Robotic Triage
+# A Multi-Robot Platform for Robotic Triage Combining Onboard Sensing and Foundation Models
 
 `res:arxiv-multi-robot-triage-platform` - paper - <https://arxiv.org/abs/2512.08754>
 
-**By:** DARPA Triage Challenge team - **Year:** 2025 - **Level:** advanced - **Access:** open
+**By:** Jason Hughes, Marcel Hussing, Edward Zhang, Shenbagaraj Kannapiran, et al. (DARPA Triage Challenge team) - **Year:** 2025 - **Level:** advanced - **Access:** open
 
 Technical report from a DARPA Triage Challenge team describing a multi-robot system and fine-tuned open vision-language models for injury identification.
 

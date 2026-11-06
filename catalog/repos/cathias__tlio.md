@@ -25,6 +25,7 @@ Tight Learned Inertial Odometry: a network regresses displacement and uncertaint
 
 ## Referenced by
 
+- [RIDI](../repos/higerra__ridi_imu.md) (alternative_to)
 - [EqNIO](../repos/royinajayanth__eqnio.md) (extends)
 - [RoNIN](../repos/sachini__ronin.md) (alternative_to)
 - [TLIO: Tight Learned Inertial Odometry](../resources/tlio-paper.md) (has_code)

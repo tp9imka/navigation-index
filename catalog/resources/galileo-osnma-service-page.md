@@ -10,6 +10,7 @@ Official landing page for the OSNMA service with status, public key and Merkle t
 
 - Where to get the current OSNMA public key and Merkle root
 - Links to service notices and documentation
+- Where to download the cryptographic material receivers need
 
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
 
@@ -21,5 +22,6 @@ Official landing page for the OSNMA service with status, public key and Merkle t
 - has_code: [OSNMAlib](../repos/algafix__osnma.md)
 - has_code: [FGI-OSNMA](../repos/nlsfi__fgi-osnma.md)
 - has_code: [OSNMA_ublox](../repos/axelbjork__osnma_ublox.md)
+- part_of: [Galileo OSNMA Signal-In-Space Interface Control Document Issue 1.1](../resources/galileo-osnma-sis-icd.md)
 
-_Indexed by lane(s): docs-standards_
+_Indexed by lane(s): docs-standards, gnss_

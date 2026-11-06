@@ -5,7 +5,9 @@
     "title": "Vision-based GNSS-Free Localization for UAVs in the Wild",
     "url": "https://arxiv.org/abs/2210.09727",
     "authors": [
-      "TIERS lab, University of Turku"
+      "Marius-Mihail Gurgu",
+      "Jorge Peña Queralta",
+      "Tomi Westerlund"
     ],
     "year": 2022,
     "summary": "Proposes matching drone camera frames to open satellite imagery with learned feature matching to get absolute position without GNSS, evaluated on flights over non-urban areas.",

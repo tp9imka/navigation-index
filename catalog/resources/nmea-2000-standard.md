@@ -18,6 +18,6 @@ CAN bus based marine network standard that carries position, heading, AIS and en
 
 ## Related
 
-- has_code: `repo:canboat/canboat` (not indexed)
+- has_code: [CANboat](../repos/canboat__canboat.md)
 
 _Indexed by lane(s): docs-standards_

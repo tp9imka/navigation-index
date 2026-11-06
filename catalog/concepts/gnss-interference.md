@@ -6,13 +6,19 @@ GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-
 
 **Parent:** [GNSS positioning](../concepts/gnss.md)
 
-## Repositories (14)
+## Samples (2)
+
+- [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../samples/gnss-interference-monitor.md) - A stdlib heuristic scorer turns per-epoch receiver telemetry (C/N0 across SVs, AGC, CW jamming indicator, clock and position jumps, receiver spoofing/jamming flags) into jamming and spoofing scores with stated reasons.
+- [GNSS/INS EKF through a GNSS outage and a spoofing walk-off](../samples/gnss-ins-ekf-outage.md) - A stdlib-only 2D loosely-coupled GNSS/INS EKF (8 states, hand-written matrix helpers) on a synthetic vehicle with biased, noisy 100 Hz IMU and 1 Hz GNSS.
+
+## Repositories (17)
 
 - [GPS-SDR-SIM](../repos/osqzss__gps-sdr-sim.md) - fit: high - Generates GPS L1 C/A baseband IQ sample files for a user-defined static or moving trajectory from a broadcast ephemeris file, for playback through an SDR.
 - [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md) - fit: high - Full software-defined GNSS receiver built on GNU Radio: acquisition, tracking, navigation message decoding and PVT for GPS, Galileo, GLONASS and BeiDou signals from SDR front-ends or IQ files, including Galileo OSNMA sup
 - [readsb](../repos/wiedehopf__readsb.md) - fit: high - ADS-B/Mode S decoder for RTL-SDR and other receivers with networking, JSON output, MLAT support and aggregation features.
 - [KrakenSDR DoA DSP](../repos/krakenrf__krakensdr_doa.md) - fit: high - Direction-of-arrival processing and web UI for the five-channel coherent KrakenSDR, producing bearings to RF emitters.
 - [OSNMAlib](../repos/algafix__osnma.md) - fit: high - Python implementation of the Galileo OSNMA receiver protocol: verifies TESLA key chains and MACs on navigation data from several input formats (u-blox, Septentrio, GNSS-SDR, files).
+- [Fraunhofer IIS Jammertest 2025 dataset](../repos/felixott94__fraunhoferiis_jammertest2025.md) - fit: high - Real-world GNSS interference recordings from Jammertest 2025 at Andoya, Norway, covering jamming, spoofing, meaconing and multi-emitter scenarios, with metadata for classification, characterization and direction finding.
 - [Multi-frequency GNSS spoofing raw dataset](../repos/s7am1na__gnss-spoofing-dataset.md) - fit: high - Raw GNSS measurement logs from Android phones and smartwatches recorded under spoofing scenarios on L1, L5 and dual-band.
 - [OSNMA-SDR-SIM](../repos/haiyang-wong__osnma-sdr-sim.md) - fit: high - Galileo E1-B/E5b signal simulator with OSNMA authentication data embedded, configurable OSNMA parameters and USRP or file output, tested against GNSS-SDR and OSNMAlib.
 - [ADSBCOT](../repos/snstac__adsbcot.md) - fit: high - Gateway that converts ADS-B traffic from dump1090/readsb or aggregator APIs into Cursor-on-Target so aircraft show in TAK.
@@ -20,10 +26,12 @@ GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-
 - [OpenWebRX](../repos/jketterl__openwebrx.md) - fit: medium - Multi-user web SDR receiver with waterfall display and many built-in digital decoders.
 - [OpenWebRX+](../repos/luarvique__openwebrx.md) - fit: medium - Actively developed fork of OpenWebRX adding decoders, bookmarks and packaging improvements.
 - [multi-sdr-gps-sim](../repos/mictronics__multi-sdr-gps-sim.md) - fit: medium - Maintained derivative of GPS-SDR-SIM that streams GPS L1 baseband on the fly to several SDRs (HackRF, ADALM-Pluto, bladeRF) or files.
+- [Jammertest test plan](../repos/npra__jammertest-plan.md) - fit: medium - Official test catalog and plan for Jammertest, Norway's annual live GNSS jamming and spoofing event, maintained by the Norwegian Public Roads Administration.
 - [GPSSpy](../repos/hoverflyhampton__gpsspy.md) - fit: medium - Python implementation of GPS jamming detection from receiver signal-to-noise ratio, following a published real-time jamming detection method.
+- [VAARA Jammertest dataset](../repos/univaasadigieco__vaara.md) - fit: medium - University of Vaasa public GNSS dataset recorded at Jammertest 2024, released in batches from autumn 2025 under a Finland-NSF project on secure satellite navigation.
 - [GPS L1 Direct Position Estimation module](../repos/sergio-vicenzo__gpsl1-dpemodule.md) - fit: low - Plug-in module adding Direct Position Estimation (positioning directly in the correlation domain) to MATLAB two-step software receivers such as SoftGNSS.
 
-## Documents, talks, courses, datasets (68)
+## Documents, talks, courses, datasets (67)
 
 - [Above Us Only Stars: Exposing GPS Spoofing in Russia and Syria](../resources/c4ads-above-us-only-stars.md) - report - Open-source investigation using AIS ship tracks, public records and ISS-based measurements to map thousands of GNSS spoofing events around Russia, Crimea and Syria, many linked to protection of VIPs and bases.
 - [ADS-B Data Analysis for GNSS Interference Mapping](../resources/insidegnss-adsb-interference-mapping.md) - blog - Trade-press article on using ADS-B integrity data to detect and map GNSS interference regions.
@@ -67,7 +75,6 @@ GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-
 - [Navipedia: Galileo Open Service Navigation Message Authentication](../resources/navipedia-osnma.md) - doc - Navipedia article explaining OSNMA's design and status in plain terms before you tackle the ICD.
 - [NovAtel GAJT-410ML Anti-Jam Antenna Product Sheet](../resources/novatel-gajt-410ml-sheet.md) - doc - Datasheet for a compact CRPA anti-jam antenna that combines an antenna array and null-forming electronics for land vehicles and small platforms, protecting GPS and Galileo bands and supporting M-code.
 - [NovAtel GAJT-710ML anti-jam antenna](../resources/novatel-gajt-710ml.md) - doc - Product page for the larger 7-element GAJT CRPA unit in a hardened enclosure for land vehicles and fixed sites.
-- [OPSGROUP GPS Spoofing Workgroup Final Report](../resources/opsgroup-gps-spoofing-final-report.md) - report - Large practitioner-driven report on airliner GPS spoofing, built from crew surveys and incident data, with recommendations to manufacturers, regulators and operators.
 - [Overview of satellite navigation spoofing and anti-spoofing techniques](../resources/lu-2024-spoofing-antispoofing-overview.md) - paper - Open-access Frontiers in Physics overview grouping anti-spoofing countermeasures into detection, identification, suppression and localization of the spoofer.
 - [Preliminary Lessons in Conventional Warfighting from Russia's Invasion of Ukraine: February-July 2022](../resources/rusi-preliminary-lessons-ukraine-2022.md) - report - RUSI analysis of the first months of the war, including the scale of Russian electronic warfare and its effect on Ukrainian UAV survival and GNSS-dependent systems.
 - [Real-World Spoofing Detection (ION ITM 2025)](../resources/kreizis-ion-itm-2025-spoofing.md) - paper - Analyses a real spoofing event in the Mediterranean recorded on low-cost u-blox F9P receivers and evaluates detection approaches on that live data rather than a simulator.

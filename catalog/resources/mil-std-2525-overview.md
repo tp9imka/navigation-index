@@ -18,7 +18,7 @@ Summary of the US military symbology standard and its revisions (2525B through E
 ## Related
 
 - has_code: [milsymbol](../repos/spatialillusions__milsymbol.md)
-- has_code: `repo:missioncommand/mil-sym-ts` (not indexed)
+- has_code: [mil-sym-ts](../repos/missioncommand__mil-sym-ts.md)
 - cites: [NATO Joint Military Symbology (APP-6) - overview](../resources/app-6-joint-military-symbology.md)
 
 _Indexed by lane(s): docs-standards_

@@ -32,6 +32,7 @@ C++ SDK exposing high-level MAVLink plugins (action, mission, offboard, telemetr
 - [MAVLink Common Message Set (common.xml)](../resources/mavlink-common-messages.md) (has_code)
 - [MAVLink Developer Guide](../resources/mavlink-developer-guide.md) (has_code)
 - [MAVLink Mission Protocol](../resources/mavlink-mission-protocol.md) (has_code)
+- [PX4 SITL GPS denial: inject, measure drift, recover](../samples/px4-sitl-gps-denial.md) (uses)
 
 _Indexed by lane(s): autopilots_
 

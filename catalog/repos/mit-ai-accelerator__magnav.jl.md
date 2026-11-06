@@ -25,7 +25,7 @@ Julia package from the DAF-MIT AI Accelerator for airborne magnetic anomaly navi
 - integrates_with: [AFIT MagNav example data](../repos/afit-eeng-magnav__example-data.md)
 - extends: [MagNav challenge submission (lw-kong)](../repos/lw-kong__magnav.md)
 - extends: [MagNav deep-learning compensation](../repos/naatyu__magnav.md)
-- evaluated_on: [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/afrl-mit-magnav-challenge-paper.md)
+- evaluated_on: [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/afrl-magnav-challenge-2020.md)
 
 ## Referenced by
 
@@ -38,14 +38,12 @@ Julia package from the DAF-MIT AI Accelerator for airborne magnetic anomaly navi
 - [MagNav deep-learning compensation](../repos/naatyu__magnav.md) (integrates_with)
 - [MAMMAL](../repos/powerbroker2__mammal.md) (alternative_to)
 - [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/afrl-magnav-challenge-2020.md) (has_code)
-- [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/afrl-mit-magnav-challenge-paper.md) (has_code)
 - [Developing a Series of AI Challenges for the United States Department of the Air Force](../resources/daf-ai-challenges-arxiv.md) (has_code)
 - [MagNav Challenge Problem (DAF-MIT AI Accelerator)](../resources/magnav-challenge-site.md) (has_code)
 - [MagNav.jl documentation](../resources/magnav-jl-docs.md) (explains)
-- [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/magnav-signal-enhancement-arxiv.md) (has_code)
 - [MagNav Challenge flight dataset (Zenodo)](../resources/magnav-zenodo-dataset.md) (has_code)
 - [MagNav - MIT CSAIL open-source technologies](../resources/mit-cap-magnav-page.md) (explains)
-- [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/mit-magnav-challenge-data.md) (has_code)
+- [MagNav.jl quickstart: Tolles-Lawson and EKF on the SGL 2020 flight](../samples/magnav-quickstart.md) (uses)
 
 _Indexed by lane(s): alt-nav, defense-context, sim-data_
 

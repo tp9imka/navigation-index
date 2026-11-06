@@ -39,6 +39,7 @@ Current-generation Gazebo robotics simulator with pluggable physics, rendering a
 - [Gazebo documentation and tutorials](../resources/gazebo-docs-tutorials.md) (has_code)
 - [PX4 Simulation (Gazebo, SITL) documentation](../resources/px4-simulation-docs.md) (explains)
 - [PX4 Simulation (Gazebo, SITL) documentation](../resources/px4-simulation-docs.md) (uses)
+- [PX4 SITL GPS denial: inject, measure drift, recover](../samples/px4-sitl-gps-denial.md) (uses)
 
 _Indexed by lane(s): sim-data_
 

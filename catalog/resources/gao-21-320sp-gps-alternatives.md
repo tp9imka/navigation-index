@@ -1,4 +1,4 @@
-# GAO-21-320SP: Defense Navigation Capabilities - DOD Is Developing PNT Alternatives to GPS
+# GAO-21-320SP: Defense Navigation Capabilities - DOD Is Developing Positioning, Navigation, and Timing Technologies to Complement GPS
 
 `res:gao-21-320sp-gps-alternatives` - report - <https://www.gao.gov/products/gao-21-320sp>
 

@@ -20,7 +20,7 @@ Classic textbook that walks through a complete MATLAB GPS software receiver: acq
 
 ## Related
 
-- has_code: `repo:gnsscusdr/cu-sdr-collection` (not indexed)
+- has_code: [CU Boulder GNSS SDR Collection](../repos/gnsscusdr__cu-sdr-collection.md)
 - has_code: [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md)
 - has_code: [SoftGNSS v3.0 (maintained copy)](../repos/tmboc__softgnss.md)
 

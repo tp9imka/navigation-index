@@ -27,6 +27,7 @@ Stereo visual-inertial odometry with a factor-graph backend, robust loop closure
 ## Referenced by
 
 - [Kimera-Multi](../repos/mit-spark__kimera-multi.md) (depends_on)
+- [MIT VNAV labs](../repos/mit-spark__vnav-labs.md) (same_org)
 - [Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping](../resources/kimera-rosinol-2019.md) (has_code)
 - [MIT 16.485 Visual Navigation for Autonomous Vehicles (VNAV)](../resources/mit-vnav-16485.md) (uses)
 

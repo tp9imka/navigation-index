@@ -1,4 +1,17 @@
 {
+ "repo:aau-cns/cnspy_trajectory_evaluation": {
+  "archived": false,
+  "description": "  A python3 package for evaluating trajectories for different error metrics.",
+  "forks_count": 0,
+  "full_name": "aau-cns/cnspy_trajectory_evaluation",
+  "html_url": "https://github.com/aau-cns/cnspy_trajectory_evaluation",
+  "language": "Python",
+  "license": "GPL-3.0",
+  "pushed_at": "2024-09-10T13:47:09Z",
+  "stargazers_count": 8,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:aau-cns/mars_lib": {
   "archived": false,
   "description": "MaRS: A Modular and Robust Sensor-Fusion Framework",
@@ -160,6 +173,32 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:airockchip/rknn_model_zoo": {
+  "archived": false,
+  "description": null,
+  "forks_count": 481,
+  "full_name": "airockchip/rknn_model_zoo",
+  "html_url": "https://github.com/airockchip/rknn_model_zoo",
+  "language": "C",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-10-20T08:40:16Z",
+  "stargazers_count": 2881,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:airvln/airvln": {
+  "archived": false,
+  "description": null,
+  "forks_count": 56,
+  "full_name": "AirVLN/AirVLN",
+  "html_url": "https://github.com/AirVLN/AirVLN",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-03-25T02:36:58Z",
+  "stargazers_count": 400,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:ajisrawi/dronemagnav": {
   "archived": false,
   "description": "Magnetic-anomaly navigation (MagNav) board + firmware for drones: ESP32-S3, BMI088, LIS3MDL, BMP280, u-blox GNSS, WDMAM map matching, particle filter, MAVLink, phone route planner. Proprietary - all rights reserved.",
@@ -171,6 +210,28 @@
   "pushed_at": "2026-09-13T06:16:42Z",
   "stargazers_count": 11,
   "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:akarsh-prabhakara/radarhd": {
+  "archived": false,
+  "description": "High resolution point clouds from mmWave radar",
+  "forks_count": 26,
+  "full_name": "akarsh-prabhakara/RadarHD",
+  "html_url": "https://github.com/akarsh-prabhakara/RadarHD",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2025-09-20T21:48:26Z",
+  "stargazers_count": 158,
+  "topics": [
+   "high-resolution",
+   "lidar",
+   "mmwave",
+   "mmwave-radar",
+   "point-cloud",
+   "u-net",
+   "wireless",
+   "wireless-sensing"
+  ],
   "fetched": "2026-11-06"
  },
  "repo:al-sad/dronerf": {
@@ -459,6 +520,23 @@
   "pushed_at": "2025-07-29T15:53:18Z",
   "stargazers_count": 10,
   "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:arclab-hku/esvio": {
+  "archived": false,
+  "description": "(RAL2023+IROS2023) ESVIO: Event-based Stereo Visual Inertial Odometry",
+  "forks_count": 13,
+  "full_name": "arclab-hku/ESVIO",
+  "html_url": "https://github.com/arclab-hku/ESVIO",
+  "language": "C++",
+  "license": "GPL-3.0",
+  "pushed_at": "2024-11-09T04:17:24Z",
+  "stargazers_count": 65,
+  "topics": [
+   "event-cameras",
+   "robotics",
+   "slam"
+  ],
   "fetched": "2026-11-06"
  },
  "repo:arclab-hku/event_based_vo-vio-slam": {
@@ -875,6 +953,37 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:aureliencousin/pdr": {
+  "archived": false,
+  "description": "Pedestrian Dead Reckoning app for android",
+  "forks_count": 37,
+  "full_name": "aureliencousin/PDR",
+  "html_url": "https://github.com/aureliencousin/PDR",
+  "language": "Java",
+  "license": null,
+  "pushed_at": "2026-03-02T22:34:53Z",
+  "stargazers_count": 81,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:auromix/ros-llm": {
+  "archived": false,
+  "description": "ROS-LLM is a framework designed for embodied intelligence applications in ROS. It allows natural language interactions and leverages Large Language Models (LLMs) for decision-making and robot control. With an easy configuration process, this framework allows for swift integration, enabling your robot to operate with it in as little as ten minutes.",
+  "forks_count": 99,
+  "full_name": "Auromix/ROS-LLM",
+  "html_url": "https://github.com/Auromix/ROS-LLM",
+  "language": "Python",
+  "license": "Apache-2.0",
+  "pushed_at": "2023-07-10T10:32:57Z",
+  "stargazers_count": 833,
+  "topics": [
+   "embodied-intelligence",
+   "gpt",
+   "llm",
+   "ros"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:auterion/px4-ros2-interface-lib": {
   "archived": false,
   "description": "Library to interface with PX4 from a companion computer using ROS 2",
@@ -1115,6 +1224,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:blazejosinski/lm_nav": {
+  "archived": false,
+  "description": null,
+  "forks_count": 26,
+  "full_name": "blazejosinski/lm_nav",
+  "html_url": "https://github.com/blazejosinski/lm_nav",
+  "language": "Jupyter Notebook",
+  "license": "MIT",
+  "pushed_at": "2025-01-14T02:20:54Z",
+  "stargazers_count": 272,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:bluenviron/gomavlib": {
   "archived": false,
   "description": "Mavlink library (2.0 and 1.0) for the Go programming language",
@@ -1261,6 +1383,23 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:borglab/gtsfm": {
+  "archived": false,
+  "description": "End-to-end SFM framework based on GTSAM",
+  "forks_count": 64,
+  "full_name": "borglab/gtsfm",
+  "html_url": "https://github.com/borglab/gtsfm",
+  "language": "Jupyter Notebook",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-11-06T05:10:58Z",
+  "stargazers_count": 528,
+  "topics": [
+   "3d-reconstruction",
+   "multiview-geometry",
+   "structure-from-motion"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:brian7704/opentakserver": {
   "archived": false,
   "description": "Yet another open source TAK Server for ATAK, iTAK, and WinTAK",
@@ -1332,6 +1471,27 @@
   "pushed_at": "2026-10-09T17:47:53Z",
   "stargazers_count": 56,
   "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:canboat/canboat": {
+  "archived": false,
+  "description": "CAN Boat provides NMEA 2000 and NMEA 0183 utilities. It contains a NMEA 2000 PGN decoder and can read and write N2K messages. It is not meant as an end-user tool but as a discovery mechanism for delving into NMEA 2000 networks.",
+  "forks_count": 205,
+  "full_name": "canboat/canboat",
+  "html_url": "https://github.com/canboat/canboat",
+  "language": "Rust",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-11-05T21:51:30Z",
+  "stargazers_count": 666,
+  "topics": [
+   "boating",
+   "n2k",
+   "nmea-parser",
+   "nmea-sentences",
+   "nmea0183",
+   "nmea2000",
+   "yachting"
+  ],
   "fetched": "2026-11-06"
  },
  "repo:caochao39/tare_planner": {
@@ -1549,6 +1709,23 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:cheolj/loran-c-reference-code": {
+  "archived": false,
+  "description": "Loran-c pulse and Loran chain reference signal",
+  "forks_count": 0,
+  "full_name": "CheolJ/Loran-c-reference-code",
+  "html_url": "https://github.com/CheolJ/Loran-c-reference-code",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2022-05-12T06:14:39Z",
+  "stargazers_count": 6,
+  "topics": [
+   "loran-c",
+   "loran-chain",
+   "positioning"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:chichengcn/gici-open": {
   "archived": false,
   "description": "GNSS/INS/Camera Integrated Navigation Library",
@@ -1559,6 +1736,19 @@
   "license": "GPL-3.0",
   "pushed_at": "2025-01-27T03:17:16Z",
   "stargazers_count": 679,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:christopherdoer/reve": {
+  "archived": false,
+  "description": "REVE - Radar Ego Velocity Estimator: Robust 3D ego velocity estimation using 4D mmWave radar sensors.",
+  "forks_count": 31,
+  "full_name": "christopherdoer/reve",
+  "html_url": "https://github.com/christopherdoer/reve",
+  "language": "Fortran",
+  "license": "GPL-3.0",
+  "pushed_at": "2022-07-03T15:40:03Z",
+  "stargazers_count": 125,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -1656,6 +1846,19 @@
    "driver-assistance-systems",
    "robotics"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:concept-graphs/concept-graphs": {
+  "archived": false,
+  "description": "Official code release for ConceptGraphs",
+  "forks_count": 148,
+  "full_name": "concept-graphs/concept-graphs",
+  "html_url": "https://github.com/concept-graphs/concept-graphs",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2025-10-16T22:09:00Z",
+  "stargazers_count": 986,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:connorlee77/seasonally-invariant-image-transform": {
@@ -1872,6 +2075,23 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:dan11003/tbv_slam_public": {
+  "archived": false,
+  "description": "Radar SLAM in C++ / ROS",
+  "forks_count": 11,
+  "full_name": "dan11003/tbv_slam_public",
+  "html_url": "https://github.com/dan11003/tbv_slam_public",
+  "language": "C++",
+  "license": "NOASSERTION",
+  "pushed_at": "2024-07-15T18:13:06Z",
+  "stargazers_count": 92,
+  "topics": [
+   "mapping",
+   "robotics",
+   "slam"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:daniestevez/galileo-osnma": {
   "archived": false,
   "description": "Galileo OSNMA (Open Service Navigation Message Authentication)",
@@ -1888,6 +2108,62 @@
    "galileo",
    "gnss",
    "osnma"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:daniilidis-group/event_feature_tracking": {
+  "archived": false,
+  "description": "This repo contains MATLAB implementations of the event-based feature tracking methods described in \"Event-based Feature Tracking with Probabilistic Data Association\" and \"Event-based Visual Inertial Odometry\".",
+  "forks_count": 31,
+  "full_name": "daniilidis-group/event_feature_tracking",
+  "html_url": "https://github.com/daniilidis-group/event_feature_tracking",
+  "language": "MATLAB",
+  "license": "NOASSERTION",
+  "pushed_at": "2022-02-15T12:12:22Z",
+  "stargazers_count": 84,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:danipascual/gnss-matlab": {
+  "archived": false,
+  "description": "Matlab codes to generate GNSS PRNs, secondary codes, dataless signals and spectra. Includes real data captures and a theory summary. GPS (L1CA, L2C, L5), Gaileo (E1OS, E5), BeiDou-2 (B1I)",
+  "forks_count": 106,
+  "full_name": "danipascual/GNSS-matlab",
+  "html_url": "https://github.com/danipascual/GNSS-matlab",
+  "language": "MATLAB",
+  "license": "NOASSERTION",
+  "pushed_at": "2019-01-16T18:08:15Z",
+  "stargazers_count": 257,
+  "topics": [
+   "beidou",
+   "boc",
+   "galileo",
+   "gnss",
+   "gnss-codes",
+   "gnss-signals",
+   "gps",
+   "prn"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:decargroup/miluv": {
+  "archived": false,
+  "description": "A Multi-UAV Indoor Localization dataset with UWB and Vision",
+  "forks_count": 4,
+  "full_name": "decargroup/miluv",
+  "html_url": "https://github.com/decargroup/miluv",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-07-27T20:13:41Z",
+  "stargazers_count": 32,
+  "topics": [
+   "dataset",
+   "localization",
+   "navigation",
+   "robotics",
+   "uav",
+   "ultra-wideband",
+   "vision"
   ],
   "fetched": "2026-11-06"
  },
@@ -1908,6 +2184,53 @@
    "python",
    "robotics",
    "state-estimation"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:deep-ternaloc/deep-ternaloc": {
+  "archived": false,
+  "description": "deep-ternaloc ( Deep Learning-Based - Terrain Referenced Navigation and Localization) is a project of Aerospace Research Center / ITU",
+  "forks_count": 2,
+  "full_name": "deep-ternaloc/deep-ternaloc",
+  "html_url": "https://github.com/deep-ternaloc/deep-ternaloc",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2022-08-02T09:17:27Z",
+  "stargazers_count": 4,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:deepakpopli/mavlink-mcp": {
+  "archived": false,
+  "description": "MAVLink MCP server: let Claude, Codex or any AI agent fly ArduPilot drones over MAVLink. Missions, camera vision, SITL, safety-gated. pip install mavlink-mcp",
+  "forks_count": 0,
+  "full_name": "deepakpopli/mavlink-mcp",
+  "html_url": "https://github.com/deepakpopli/mavlink-mcp",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-10-08T10:11:53Z",
+  "stargazers_count": 6,
+  "topics": [
+   "ai-agent",
+   "ardupilot",
+   "autonomous-drone",
+   "claude",
+   "claude-code",
+   "codex",
+   "computer-vision",
+   "drone",
+   "gazebo",
+   "llm",
+   "mavlink",
+   "mcp",
+   "mcp-server",
+   "model-context-protocol",
+   "px4",
+   "pymavlink",
+   "python",
+   "robotics",
+   "sitl",
+   "uav"
   ],
   "fetched": "2026-11-06"
  },
@@ -2014,6 +2337,124 @@
   "pushed_at": "2026-11-05T18:06:57Z",
   "stargazers_count": 678,
   "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:dstndstn/astrometry.net": {
+  "archived": false,
+  "description": "Astrometry.net -- automatic recognition of astronomical images",
+  "forks_count": 225,
+  "full_name": "dstndstn/astrometry.net",
+  "html_url": "https://github.com/dstndstn/astrometry.net",
+  "language": "C",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-10-22T16:42:25Z",
+  "stargazers_count": 876,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:dusty-nv/jetson-containers": {
+  "archived": false,
+  "description": "Machine Learning Containers for NVIDIA Jetson and JetPack-L4T",
+  "forks_count": 854,
+  "full_name": "dusty-nv/jetson-containers",
+  "html_url": "https://github.com/dusty-nv/jetson-containers",
+  "language": "Jupyter Notebook",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-11-02T06:49:44Z",
+  "stargazers_count": 4897,
+  "topics": [
+   "containers",
+   "docker",
+   "dockerfiles",
+   "jetson",
+   "machine-learning",
+   "numpy",
+   "nvidia",
+   "pandas",
+   "pytorch",
+   "ros-containers",
+   "ros2-foxy",
+   "scikit-learn",
+   "tensorflow"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:dusty-nv/jetson-inference": {
+  "archived": false,
+  "description": "Hello AI World guide to deploying deep-learning inference networks and deep vision primitives with TensorRT and NVIDIA Jetson.",
+  "forks_count": 3117,
+  "full_name": "dusty-nv/jetson-inference",
+  "html_url": "https://github.com/dusty-nv/jetson-inference",
+  "language": "C++",
+  "license": "MIT",
+  "pushed_at": "2025-10-16T17:34:47Z",
+  "stargazers_count": 9033,
+  "topics": [
+   "caffe",
+   "computer-vision",
+   "deep-learning",
+   "digits",
+   "embedded",
+   "image-recognition",
+   "inference",
+   "jetson",
+   "jetson-nano",
+   "jetson-tx1",
+   "jetson-tx2",
+   "jetson-xavier",
+   "jetson-xavier-nx",
+   "machine-learning",
+   "nvidia",
+   "object-detection",
+   "robotics",
+   "segmentation",
+   "tensorrt",
+   "video-analytics"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:dusty-nv/ros_deep_learning": {
+  "archived": false,
+  "description": "Deep learning inference nodes for ROS / ROS2 with support for NVIDIA Jetson and TensorRT",
+  "forks_count": 263,
+  "full_name": "dusty-nv/ros_deep_learning",
+  "html_url": "https://github.com/dusty-nv/ros_deep_learning",
+  "language": "C++",
+  "license": null,
+  "pushed_at": "2024-07-13T03:08:46Z",
+  "stargazers_count": 984,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:eku127/satnav": {
+  "archived": false,
+  "description": "[NeurIPS-26]  An open-source platform for long-horizon UAV vision-language navigation over satellite maps",
+  "forks_count": 1,
+  "full_name": "Eku127/SatNav",
+  "html_url": "https://github.com/Eku127/SatNav",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-09-28T02:05:53Z",
+  "stargazers_count": 18,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:ekumen-os/beluga": {
+  "archived": false,
+  "description": "A general implementation of Monte Carlo Localization (MCL) algorithms written in C++17, and a ROS package that can be used in ROS 2.",
+  "forks_count": 37,
+  "full_name": "Ekumen-OS/beluga",
+  "html_url": "https://github.com/Ekumen-OS/beluga",
+  "language": "C++",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-11-06T00:08:01Z",
+  "stargazers_count": 329,
+  "topics": [
+   "c-plus-plus",
+   "robotics",
+   "ros",
+   "ros2"
+  ],
   "fetched": "2026-11-06"
  },
  "repo:eliatarasov/eskf": {
@@ -2249,6 +2690,19 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:ethz-asl/rio": {
+  "archived": false,
+  "description": "Graph-based, sparse radar-inertial odometry estimation",
+  "forks_count": 12,
+  "full_name": "ethz-asl/rio",
+  "html_url": "https://github.com/ethz-asl/rio",
+  "language": "C++",
+  "license": "BSD-3-Clause",
+  "pushed_at": "2025-08-04T16:27:59Z",
+  "stargazers_count": 156,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:ethz-asl/rotors_simulator": {
   "archived": false,
   "description": "RotorS is a UAV gazebo simulator",
@@ -2351,6 +2805,39 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:fabio-sim/lightglue-onnx": {
+  "archived": false,
+  "description": "ONNX-compatible LightGlue: Local Feature Matching at Light Speed. Supports TensorRT, OpenVINO",
+  "forks_count": 83,
+  "full_name": "fabio-sim/LightGlue-ONNX",
+  "html_url": "https://github.com/fabio-sim/LightGlue-ONNX",
+  "language": "Python",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-07-30T08:43:19Z",
+  "stargazers_count": 822,
+  "topics": [
+   "deep-learning",
+   "disk",
+   "feature-extraction",
+   "feature-matching",
+   "homography",
+   "homography-estimation",
+   "lightglue",
+   "local-feature-matching",
+   "local-features",
+   "machine-learning",
+   "onnx",
+   "onnx-torch",
+   "onnxruntime",
+   "openvino",
+   "pose-estimation",
+   "pytorch",
+   "superpoint",
+   "tensorrt",
+   "visual-localization"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:facebookresearch/vggt": {
   "archived": false,
   "description": "[CVPR 2025 Best Paper Award] VGGT: Visual Geometry Grounded Transformer",
@@ -2361,6 +2848,19 @@
   "license": "NOASSERTION",
   "pushed_at": "2026-05-19T03:39:39Z",
   "stargazers_count": 14599,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:felixott94/fraunhoferiis_jammertest2025": {
+  "archived": false,
+  "description": "Real-world GNSS interference dataset recorded during Jammertest 2025 in Andøya, Norway. The dataset contains measurements from two outdoor test areas, covering jamming, spoofing, meaconing, and multi-emitter scenarios with metadata for interference classification, characterization, direction finding, and receiver-aware impact assessment.",
+  "forks_count": 1,
+  "full_name": "FelixOtt94/FraunhoferIIS_Jammertest2025",
+  "html_url": "https://github.com/FelixOtt94/FraunhoferIIS_Jammertest2025",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-08-26T08:39:34Z",
+  "stargazers_count": 5,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -2545,6 +3045,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:gaoxiang12/slambook2": {
+  "archived": false,
+  "description": "edition 2 of the slambook",
+  "forks_count": 2196,
+  "full_name": "gaoxiang12/slambook2",
+  "html_url": "https://github.com/gaoxiang12/slambook2",
+  "language": "C++",
+  "license": "MIT",
+  "pushed_at": "2024-12-27T07:33:49Z",
+  "stargazers_count": 6771,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:gazebosim/gz-sim": {
   "archived": false,
   "description": "Open source robotics simulator. The latest version of Gazebo.",
@@ -2637,6 +3150,19 @@
    "urban",
    "urban-planning"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:gengzezhou/navgpt": {
+  "archived": false,
+  "description": "[AAAI 2024] Official implementation of NavGPT: Explicit Reasoning in Vision-and-Language Navigation with Large Language Models",
+  "forks_count": 34,
+  "full_name": "GengzeZhou/NavGPT",
+  "html_url": "https://github.com/GengzeZhou/NavGPT",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2023-11-07T03:14:26Z",
+  "stargazers_count": 356,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:genrobo/grid-playground": {
@@ -2794,6 +3320,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:gladcolor/llm-geo": {
+  "archived": false,
+  "description": null,
+  "forks_count": 72,
+  "full_name": "gladcolor/LLM-Geo",
+  "html_url": "https://github.com/gladcolor/LLM-Geo",
+  "language": "Jupyter Notebook",
+  "license": "GPL-3.0",
+  "pushed_at": "2026-10-18T14:56:15Z",
+  "stargazers_count": 462,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:gmberton/cosplace": {
   "archived": false,
   "description": "Official code for CVPR 2022 paper \"Rethinking Visual Geo-localization for Large-Scale Applications\"",
@@ -2896,6 +3435,19 @@
    "signal-processing",
    "software-defined-radio"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:gnsscusdr/cu-sdr-collection": {
+  "archived": false,
+  "description": null,
+  "forks_count": 50,
+  "full_name": "gnsscusdr/CU-SDR-Collection",
+  "html_url": "https://github.com/gnsscusdr/CU-SDR-Collection",
+  "language": "MATLAB",
+  "license": null,
+  "pushed_at": "2024-09-18T17:15:14Z",
+  "stargazers_count": 80,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:go-gnss/ntrip": {
@@ -3030,6 +3582,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:hailo-ai/hailo-rpi5-examples": {
+  "archived": false,
+  "description": null,
+  "forks_count": 214,
+  "full_name": "hailo-ai/hailo-rpi5-examples",
+  "html_url": "https://github.com/hailo-ai/hailo-rpi5-examples",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-01-25T16:27:51Z",
+  "stargazers_count": 956,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:haiyang-wong/beidou-sdr-sim": {
   "archived": false,
   "description": "An open-source tool for generating  Beidou Navigation Satellite B1C Signal.",
@@ -3092,6 +3657,19 @@
   "license": "BSD-2-Clause",
   "pushed_at": "2021-10-09T15:21:17Z",
   "stargazers_count": 30,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:higerra/ridi_imu": {
+  "archived": false,
+  "description": null,
+  "forks_count": 68,
+  "full_name": "higerra/ridi_imu",
+  "html_url": "https://github.com/higerra/ridi_imu",
+  "language": "C++",
+  "license": "MIT",
+  "pushed_at": "2019-09-04T04:50:57Z",
+  "stargazers_count": 238,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -3343,6 +3921,25 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:hkust-aerial-robotics/gvins": {
+  "archived": false,
+  "description": "Tightly coupled GNSS-Visual-Inertial system for locally smooth and globally consistent state estimation in complex environment.",
+  "forks_count": 274,
+  "full_name": "HKUST-Aerial-Robotics/GVINS",
+  "html_url": "https://github.com/HKUST-Aerial-Robotics/GVINS",
+  "language": "C++",
+  "license": "GPL-3.0",
+  "pushed_at": "2021-09-11T10:55:25Z",
+  "stargazers_count": 1169,
+  "topics": [
+   "estimation-algorithm",
+   "gnss",
+   "localization",
+   "sensor-fusion",
+   "slam"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:hkust-aerial-robotics/gvins-dataset": {
   "archived": false,
   "description": "A dataset containing synchronized visual, inertial and GNSS raw measurements.",
@@ -3372,6 +3969,19 @@
   "license": null,
   "pushed_at": "2022-07-03T10:25:20Z",
   "stargazers_count": 293,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:hkust-aerial-robotics/rio": {
+  "archived": false,
+  "description": "Optimization Based and Point Uncertainty Aware Radar-inertial Odometry for 4D Radar System",
+  "forks_count": 19,
+  "full_name": "HKUST-Aerial-Robotics/RIO",
+  "html_url": "https://github.com/HKUST-Aerial-Robotics/RIO",
+  "language": "C++",
+  "license": "MIT",
+  "pushed_at": "2025-03-13T06:53:23Z",
+  "stargazers_count": 207,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -3662,6 +4272,30 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:internrobotics/internnav": {
+  "archived": false,
+  "description": "InternRobotics' open platform for building generalized navigation foundation models.",
+  "forks_count": 146,
+  "full_name": "InternRobotics/InternNav",
+  "html_url": "https://github.com/InternRobotics/InternNav",
+  "language": "Jupyter Notebook",
+  "license": "MIT",
+  "pushed_at": "2026-03-10T01:37:19Z",
+  "stargazers_count": 1168,
+  "topics": [
+   "mllms",
+   "navigation",
+   "robotics",
+   "spatial-ai",
+   "spatial-intelligence",
+   "vision-language-action-model",
+   "vision-language-navigation",
+   "visual-navigation",
+   "vla",
+   "vlm"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:introlab/rtabmap": {
   "archived": false,
   "description": "RTAB-Map library and standalone application",
@@ -3696,6 +4330,19 @@
   "license": "BSD-3-Clause",
   "pushed_at": "2026-11-04T18:43:06Z",
   "stargazers_count": 1546,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:ion-g-ion/mavlinkmcp": {
+  "archived": false,
+  "description": "MCP server for LLM to drone communication via MAVLink",
+  "forks_count": 8,
+  "full_name": "ion-g-ion/MAVLinkMCP",
+  "html_url": "https://github.com/ion-g-ion/MAVLinkMCP",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-08-31T18:34:01Z",
+  "stargazers_count": 25,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -3841,6 +4488,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:jjsantos01/qgis_mcp": {
+  "archived": false,
+  "description": "Model Context Protocol (MCP) that allows LLMs to use QGIS Desktop",
+  "forks_count": 190,
+  "full_name": "jjsantos01/qgis_mcp",
+  "html_url": "https://github.com/jjsantos01/qgis_mcp",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2025-10-01T01:23:25Z",
+  "stargazers_count": 1148,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:jketterl/openwebrx": {
   "archived": false,
   "description": "Open source, multi-user SDR receiver software with a web interface",
@@ -3898,6 +4558,19 @@
    "vlf",
    "web-interface"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:joansola/slamtb": {
+  "archived": false,
+  "description": "SLAM Toolbox",
+  "forks_count": 116,
+  "full_name": "joansola/slamtb",
+  "html_url": "https://github.com/joansola/slamtb",
+  "language": "MATLAB",
+  "license": "GPL-3.0",
+  "pushed_at": "2023-02-06T15:34:07Z",
+  "stargazers_count": 263,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:jsbsim-team/jsbsim": {
@@ -3980,6 +4653,32 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:jzhzhang/navid-vln-ce": {
+  "archived": false,
+  "description": "[RSS 2024 & RSS 2025] VLN-CE evaluation code of NaVid and Uni-NaVid",
+  "forks_count": 35,
+  "full_name": "jzhzhang/NaVid-VLN-CE",
+  "html_url": "https://github.com/jzhzhang/NaVid-VLN-CE",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2025-10-15T11:35:46Z",
+  "stargazers_count": 460,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:kaist-avelab/k-radar": {
+  "archived": false,
+  "description": "4D Radar Object Detection for Autonomous Driving in Various Weather Conditions",
+  "forks_count": 79,
+  "full_name": "kaist-avelab/K-Radar",
+  "html_url": "https://github.com/kaist-avelab/K-Radar",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-06-26T07:02:20Z",
+  "stargazers_count": 618,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:kdudkov/goatak": {
   "archived": false,
   "description": "go ATAK/CivTAK fast and simple server and client",
@@ -3998,6 +4697,44 @@
    "tak",
    "tak-server",
    "webtak"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:keenan-burnett/yeti_radar_odometry": {
+  "archived": false,
+  "description": "Radar odometry code which removes motion distortion and Doppler effects from Navtech radar data.",
+  "forks_count": 27,
+  "full_name": "keenan-burnett/yeti_radar_odometry",
+  "html_url": "https://github.com/keenan-burnett/yeti_radar_odometry",
+  "language": "C++",
+  "license": "BSD-3-Clause",
+  "pushed_at": "2021-12-15T01:15:28Z",
+  "stargazers_count": 154,
+  "topics": [
+   "autonomous-vehicles",
+   "radar",
+   "robotics"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:kirienko/pylgrim": {
+  "archived": false,
+  "description": "GNSS software receiver written in python",
+  "forks_count": 8,
+  "full_name": "kirienko/pylgrim",
+  "html_url": "https://github.com/kirienko/pylgrim",
+  "language": "Python",
+  "license": "GPL-3.0",
+  "pushed_at": "2020-11-11T08:42:03Z",
+  "stargazers_count": 21,
+  "topics": [
+   "glonass",
+   "gnss",
+   "gps",
+   "ionex",
+   "python",
+   "rinex",
+   "vmf1"
   ],
   "fetched": "2026-11-06"
  },
@@ -4155,6 +4892,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:kq6up/navalm": {
+  "archived": false,
+  "description": "Nautical almanac and celestial sight reduction for Unix/Linux, with CLI, ncurses, and web interfaces.",
+  "forks_count": 2,
+  "full_name": "kq6up/navalm",
+  "html_url": "https://github.com/kq6up/navalm",
+  "language": "C",
+  "license": "MIT",
+  "pushed_at": "2026-11-03T17:29:18Z",
+  "stargazers_count": 2,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:krakenrf/heimdall_daq_fw": {
   "archived": false,
   "description": "Coherent data acquisition signal processing chain for multichannel SDRs",
@@ -4290,6 +5040,19 @@
    "satellite",
    "uav"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:lcas/ros2_mcp": {
+  "archived": false,
+  "description": "A comprehensive ROS2 MCP",
+  "forks_count": 7,
+  "full_name": "LCAS/ros2_mcp",
+  "html_url": "https://github.com/LCAS/ros2_mcp",
+  "language": "Python",
+  "license": "Apache-2.0",
+  "pushed_at": "2025-12-12T07:55:35Z",
+  "stargazers_count": 10,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:leaflet/leaflet": {
@@ -4488,6 +5251,45 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:location-competition/indoor-location-competition-20": {
+  "archived": false,
+  "description": "Indoor Location Competition 2.0",
+  "forks_count": 89,
+  "full_name": "location-competition/indoor-location-competition-20",
+  "html_url": "https://github.com/location-competition/indoor-location-competition-20",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2022-05-07T18:17:43Z",
+  "stargazers_count": 201,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:locusrobotics/fuse": {
+  "archived": false,
+  "description": "The fuse stack provides a general architecture for performing sensor fusion live on a robot. Some possible applications include state estimation, localization, mapping, and calibration.",
+  "forks_count": 146,
+  "full_name": "locusrobotics/fuse",
+  "html_url": "https://github.com/locusrobotics/fuse",
+  "language": "C++",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-08-19T20:20:32Z",
+  "stargazers_count": 885,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:locusrobotics/roscon-uk-2025-se-workshop": {
+  "archived": false,
+  "description": "Materials needed for the ROSCon UK 2025 State Estimation Workshop",
+  "forks_count": 11,
+  "full_name": "locusrobotics/roscon-uk-2025-se-workshop",
+  "html_url": "https://github.com/locusrobotics/roscon-uk-2025-se-workshop",
+  "language": "C++",
+  "license": "Apache-2.0",
+  "pushed_at": "2025-09-16T16:41:42Z",
+  "stargazers_count": 71,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:lord-microstrain/ntrip_client": {
   "archived": false,
   "description": "ROS NTRIP client",
@@ -4571,6 +5373,47 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:luxonis/depthai": {
+  "archived": false,
+  "description": "DepthAI",
+  "forks_count": 252,
+  "full_name": "luxonis/depthai",
+  "html_url": "https://github.com/luxonis/depthai",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-10-26T14:50:21Z",
+  "stargazers_count": 1071,
+  "topics": [
+   "ai",
+   "cv",
+   "embedded",
+   "ml",
+   "performant",
+   "spatial"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:luxonis/depthai-ros": {
+  "archived": false,
+  "description": "Official ROS Driver for DepthAI Sensors.",
+  "forks_count": 263,
+  "full_name": "luxonis/depthai-ros",
+  "html_url": "https://github.com/luxonis/depthai-ros",
+  "language": "C++",
+  "license": "MIT",
+  "pushed_at": "2026-11-04T07:57:00Z",
+  "stargazers_count": 362,
+  "topics": [
+   "camera",
+   "camera-driver",
+   "computer-vision",
+   "cv",
+   "depthai",
+   "robotics",
+   "ros"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:lw-kong/magnav": {
   "archived": false,
   "description": "This is a submission repository for the signal enhancement for magnetic navigation (MagNav) challenge problem contest, which was introduced at JuliaCon 2020.",
@@ -4652,6 +5495,19 @@
   "license": "NOASSERTION",
   "pushed_at": "2022-07-24T18:56:31Z",
   "stargazers_count": 2200,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:mahdin75/gis-mcp": {
+  "archived": false,
+  "description": "A Model Context Protocol (MCP) server implementation that connects Large Language Models (LLMs) to GIS operations using GIS libraries, enabling AI assistants to perform geospatial operations and transformations.",
+  "forks_count": 54,
+  "full_name": "mahdin75/gis-mcp",
+  "html_url": "https://github.com/mahdin75/gis-mcp",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-08-21T06:27:40Z",
+  "stargazers_count": 204,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -5190,6 +6046,26 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:microsoft/promptcraft-robotics": {
+  "archived": false,
+  "description": "Community for applying LLMs to robotics and a robot simulator with ChatGPT integration",
+  "forks_count": 218,
+  "full_name": "microsoft/PromptCraft-Robotics",
+  "html_url": "https://github.com/microsoft/PromptCraft-Robotics",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2024-01-20T20:38:07Z",
+  "stargazers_count": 2123,
+  "topics": [
+   "airsim",
+   "chatgpt",
+   "llm",
+   "prompt-engineering",
+   "robotics",
+   "simulation"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:mictronics/multi-sdr-gps-sim": {
   "archived": false,
   "description": "multi-sdr-gps-sim generates a IQ data stream on-the-fly to simulate a  GPS L1 baseband signal using a SDR platform like HackRF or ADLAM-Pluto.",
@@ -5240,6 +6116,25 @@
    "tensorrt",
    "tracking-by-detection",
    "yolo"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:missioncommand/mil-sym-ts": {
+  "archived": false,
+  "description": "MIL-STD-2525 D+ Renderer for JavaScript/NodeJS",
+  "forks_count": 6,
+  "full_name": "missioncommand/mil-sym-ts",
+  "html_url": "https://github.com/missioncommand/mil-sym-ts",
+  "language": "TypeScript",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-11-05T13:56:31Z",
+  "stargazers_count": 32,
+  "topics": [
+   "mil-std-2525",
+   "mil-std-2525c",
+   "mil-std-2525d",
+   "mil-std-2525e",
+   "nodejs"
   ],
   "fetched": "2026-11-06"
  },
@@ -5430,6 +6325,32 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:mit-spark/vnav-lab-data": {
+  "archived": false,
+  "description": null,
+  "forks_count": 0,
+  "full_name": "MIT-SPARK/VNAV-lab-data",
+  "html_url": "https://github.com/MIT-SPARK/VNAV-lab-data",
+  "language": null,
+  "license": null,
+  "pushed_at": "2022-10-14T16:51:59Z",
+  "stargazers_count": 0,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:mit-spark/vnav-labs": {
+  "archived": false,
+  "description": "Labs for MIT 16.485 ",
+  "forks_count": 57,
+  "full_name": "MIT-SPARK/VNAV-labs",
+  "html_url": "https://github.com/MIT-SPARK/VNAV-labs",
+  "language": "C++",
+  "license": null,
+  "pushed_at": "2024-11-05T22:11:45Z",
+  "stargazers_count": 145,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:moos-ivp/moos-ivp": {
   "archived": false,
   "description": "MOOS-IvP is a set of modules for providing autonomy on robotic platforms, in particular autonomous marine vehicles.",
@@ -5453,6 +6374,58 @@
   "license": "LGPL-3.0",
   "pushed_at": "2022-08-09T18:22:43Z",
   "stargazers_count": 205,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:moveit/moveit2": {
+  "archived": false,
+  "description": ":robot: MoveIt for ROS 2",
+  "forks_count": 834,
+  "full_name": "moveit/moveit2",
+  "html_url": "https://github.com/moveit/moveit2",
+  "language": "C++",
+  "license": "BSD-3-Clause",
+  "pushed_at": "2026-10-28T19:03:40Z",
+  "stargazers_count": 2102,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:ms8r/celnav": {
+  "archived": false,
+  "description": "Celestial navigation for cruising sailors",
+  "forks_count": 4,
+  "full_name": "ms8r/celnav",
+  "html_url": "https://github.com/ms8r/celnav",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2024-08-20T15:08:54Z",
+  "stargazers_count": 25,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:mtahakoroglu/mpu6050_zupt": {
+  "archived": false,
+  "description": "an MPU6050 library featuring various open-source foot-mounted INS algorithms",
+  "forks_count": 1,
+  "full_name": "mtahakoroglu/MPU6050_ZUPT",
+  "html_url": "https://github.com/mtahakoroglu/MPU6050_ZUPT",
+  "language": "C++",
+  "license": "MIT",
+  "pushed_at": "2024-07-02T13:13:43Z",
+  "stargazers_count": 1,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:mttgdd/open-radvlad": {
+  "archived": false,
+  "description": "Open-RadVLAD: Fast and Robust Radar Place Recognition",
+  "forks_count": 1,
+  "full_name": "mttgdd/open-radvlad",
+  "html_url": "https://github.com/mttgdd/open-radvlad",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2024-02-17T19:38:23Z",
+  "stargazers_count": 21,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -5515,6 +6488,29 @@
    "deep-learning",
    "navigation",
    "python"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:nasa-jpl/rosa": {
+  "archived": false,
+  "description": "ROSA 🤖 is an AI Agent designed to interact with ROS1- and ROS2-based robotics systems using natural language queries. ROSA helps robot developers inspect, diagnose, understand, and operate robots.",
+  "forks_count": 188,
+  "full_name": "nasa-jpl/rosa",
+  "html_url": "https://github.com/nasa-jpl/rosa",
+  "language": "Python",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-11-03T02:04:37Z",
+  "stargazers_count": 1683,
+  "topics": [
+   "agents",
+   "ai",
+   "developer-tools",
+   "jpl",
+   "llm",
+   "nasa",
+   "robotics",
+   "ros",
+   "ros2"
   ],
   "fetched": "2026-11-06"
  },
@@ -5599,6 +6595,26 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:neuromorphs/tonic": {
+  "archived": false,
+  "description": "Event datasets and transforms.",
+  "forks_count": 57,
+  "full_name": "neuromorphs/tonic",
+  "html_url": "https://github.com/neuromorphs/tonic",
+  "language": "Python",
+  "license": "GPL-3.0",
+  "pushed_at": "2026-10-03T16:58:13Z",
+  "stargazers_count": 301,
+  "topics": [
+   "augmentation",
+   "datasets",
+   "event-based",
+   "neuromorphic",
+   "spikes",
+   "transformations"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:nickrehm/drehmflight": {
   "archived": false,
   "description": "Teensy/Arduino flight controller and stabilization for small-scale VTOL vehicles",
@@ -5629,6 +6645,19 @@
    "teensyduino",
    "vtol"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:nkarasiak/qgis-mcp": {
+  "archived": false,
+  "description": "Connect QGIS to AI agent through the Model Context Protocol (MCP)",
+  "forks_count": 90,
+  "full_name": "nkarasiak/qgis-mcp",
+  "html_url": "https://github.com/nkarasiak/qgis-mcp",
+  "language": "Python",
+  "license": "GPL-2.0",
+  "pushed_at": "2026-10-17T08:23:40Z",
+  "stargazers_count": 416,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:nlsfi/fgi-gsrx": {
@@ -5697,6 +6726,19 @@
   "license": "GPL-3.0",
   "pushed_at": "2023-03-06T06:28:43Z",
   "stargazers_count": 52,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:npra/jammertest-plan": {
+  "archived": false,
+  "description": "Official test catalog and test plan for Jammertest  ",
+  "forks_count": 4,
+  "full_name": "NPRA/jammertest-plan",
+  "html_url": "https://github.com/NPRA/jammertest-plan",
+  "language": "TeX",
+  "license": "MIT",
+  "pushed_at": "2026-10-16T10:57:43Z",
+  "stargazers_count": 13,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -5831,6 +6873,114 @@
   "license": null,
   "pushed_at": "2026-01-12T01:02:54Z",
   "stargazers_count": 66,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:nvidia-ai-iot/torch2trt": {
+  "archived": false,
+  "description": "An easy to use PyTorch to TensorRT converter",
+  "forks_count": 695,
+  "full_name": "NVIDIA-AI-IOT/torch2trt",
+  "html_url": "https://github.com/NVIDIA-AI-IOT/torch2trt",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2024-08-17T08:59:30Z",
+  "stargazers_count": 4887,
+  "topics": [
+   "classification",
+   "inference",
+   "jetson-nano",
+   "jetson-tx2",
+   "jetson-xavier",
+   "pytorch",
+   "tensorrt"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:nvidia-isaac-ros/isaac_ros_dnn_inference": {
+  "archived": false,
+  "description": "NVIDIA-accelerated DNN model inference ROS 2 packages using NVIDIA Triton/TensorRT for both Jetson and x86_64 with CUDA-capable GPU",
+  "forks_count": 24,
+  "full_name": "NVIDIA-ISAAC-ROS/isaac_ros_dnn_inference",
+  "html_url": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_dnn_inference",
+  "language": "C++",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-09-24T07:21:42Z",
+  "stargazers_count": 143,
+  "topics": [
+   "ai",
+   "deep-learning",
+   "deeplearning",
+   "dnn",
+   "gpu",
+   "jetson",
+   "nvidia",
+   "ros",
+   "ros2",
+   "ros2-humble",
+   "tao",
+   "tensorrt",
+   "tensorrt-inference",
+   "triton",
+   "triton-inference-server"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:nvidia-isaac-ros/isaac_ros_nvblox": {
+  "archived": false,
+  "description": "NVIDIA-accelerated 3D scene reconstruction and Nav2 local costmap provider using nvblox",
+  "forks_count": 149,
+  "full_name": "NVIDIA-ISAAC-ROS/isaac_ros_nvblox",
+  "html_url": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_nvblox",
+  "language": "C++",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-09-22T03:29:47Z",
+  "stargazers_count": 765,
+  "topics": [
+   "3d-reconstruction",
+   "gpu",
+   "jetson",
+   "nvidia",
+   "robotics",
+   "ros",
+   "ros2-humble"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:nvidia-isaac-ros/isaac_ros_visual_slam": {
+  "archived": false,
+  "description": "Visual SLAM/odometry package based on NVIDIA-accelerated cuVSLAM",
+  "forks_count": 212,
+  "full_name": "NVIDIA-ISAAC-ROS/isaac_ros_visual_slam",
+  "html_url": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_visual_slam",
+  "language": "C++",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-09-22T03:29:55Z",
+  "stargazers_count": 1493,
+  "topics": [
+   "gpu",
+   "jetson",
+   "localization",
+   "perception",
+   "robotics",
+   "ros",
+   "ros2",
+   "ros2-humble",
+   "slam",
+   "visual-odometry"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:nvidia-isaac/cuvslam": {
+  "archived": false,
+  "description": "CUDA-accelerated visual odometry and SLAM library for fast, accurate, low-latency camera tracking",
+  "forks_count": 210,
+  "full_name": "nvidia-isaac/cuVSLAM",
+  "html_url": "https://github.com/nvidia-isaac/cuVSLAM",
+  "language": "C++",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-11-05T23:42:00Z",
+  "stargazers_count": 1899,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -6248,6 +7398,28 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:pajaraca/iez": {
+  "archived": false,
+  "description": "An INS-EKF-ZUPT for Pedestrian Dead Reckoning",
+  "forks_count": 11,
+  "full_name": "pajaraca/IEZ",
+  "html_url": "https://github.com/pajaraca/IEZ",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2022-08-15T14:08:43Z",
+  "stargazers_count": 57,
+  "topics": [
+   "dead-reckoning",
+   "ekf",
+   "ins",
+   "kalman",
+   "kalman-filter",
+   "navigation",
+   "pdr",
+   "pdr-algorithm"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:panagiotisq/cell": {
   "archived": false,
   "description": "CELL: Confidence-weighted Event camera Localization in Lidar maps",
@@ -6394,6 +7566,40 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:pinto0309/pinto_model_zoo": {
+  "archived": false,
+  "description": "A repository for storing models that have been inter-converted between various frameworks. Supported frameworks are TensorFlow, PyTorch, ONNX, OpenVINO, TFJS, TFTRT, TensorFlowLite (Float32/16/INT8), EdgeTPU, CoreML.",
+  "forks_count": 669,
+  "full_name": "PINTO0309/PINTO_model_zoo",
+  "html_url": "https://github.com/PINTO0309/PINTO_model_zoo",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-10-24T02:31:20Z",
+  "stargazers_count": 4635,
+  "topics": [
+   "caffe",
+   "computer-vision",
+   "coreml",
+   "edgetpu",
+   "keras",
+   "mediapipe",
+   "model",
+   "model-zoo",
+   "models",
+   "onnx",
+   "openvino",
+   "pretrained-models",
+   "pytorch",
+   "tensorflow",
+   "tensorflow-lite",
+   "tensorflowjs",
+   "tf-trt",
+   "tfjs",
+   "tflite",
+   "tflite-models"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:plansys2/ros2_planning_system": {
   "archived": false,
   "description": "This repo contains a PDDL-based planning system for ROS2.",
@@ -6404,6 +7610,19 @@
   "license": "Apache-2.0",
   "pushed_at": "2026-10-30T22:32:10Z",
   "stargazers_count": 495,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:pmonta/gnss-dsp-tools": {
+  "archived": false,
+  "description": "GNSS code generators, acquisition, and tracking",
+  "forks_count": 68,
+  "full_name": "pmonta/GNSS-DSP-tools",
+  "html_url": "https://github.com/pmonta/GNSS-DSP-tools",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2025-08-17T21:11:29Z",
+  "stargazers_count": 142,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -6587,6 +7806,29 @@
    "routing",
    "routing-engine",
    "traveling-salesman"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:prophesee-ai/openeb": {
+  "archived": false,
+  "description": "Open source SDK to create applications leveraging event-based vision hardware equipment",
+  "forks_count": 94,
+  "full_name": "prophesee-ai/openeb",
+  "html_url": "https://github.com/prophesee-ai/openeb",
+  "language": "C++",
+  "license": null,
+  "pushed_at": "2026-05-15T06:30:03Z",
+  "stargazers_count": 308,
+  "topics": [
+   "camera-api",
+   "computer-vision",
+   "event-based",
+   "event-based-camera",
+   "event-camera",
+   "neuromorphic",
+   "neuromorphic-computing",
+   "neuromorphic-engineering",
+   "sdk"
   ],
   "fetched": "2026-11-06"
  },
@@ -6903,6 +8145,24 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:rhymesg/particle_filter": {
+  "archived": false,
+  "description": "MATLAB implementation of standard particle filter, auxiliary particle filter, mixture particle filter, and out-of-sequence particle filter for an application to terrain-referenced navigation.",
+  "forks_count": 13,
+  "full_name": "rhymesg/Particle_Filter",
+  "html_url": "https://github.com/rhymesg/Particle_Filter",
+  "language": "MATLAB",
+  "license": "MIT",
+  "pushed_at": "2026-09-27T12:21:59Z",
+  "stargazers_count": 36,
+  "topics": [
+   "particle-filter",
+   "particlefilter",
+   "terrain-aided-navigation",
+   "terrain-referenced-navigation"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:rlabbe/filterpy": {
   "archived": false,
   "description": "Python Kalman filtering and optimal estimation library. Implements Kalman filter, particle filter, Extended Kalman filter, Unscented Kalman filter, g-h (alpha-beta), least squares, H Infinity, smoothers, and more. Has companion book 'Kalman and Bayesian Filters in Python'.",
@@ -6929,6 +8189,30 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:rmeadomavic/ardupilot-mcp": {
+  "archived": false,
+  "description": "MCP server for talking to ArduPilot vehicles over MAVLink. SITL-first, safety-gated.",
+  "forks_count": 0,
+  "full_name": "rmeadomavic/ardupilot-mcp",
+  "html_url": "https://github.com/rmeadomavic/ardupilot-mcp",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-08-03T18:35:46Z",
+  "stargazers_count": 4,
+  "topics": [
+   "ardupilot",
+   "claude",
+   "drone",
+   "gcs",
+   "mavlink",
+   "mcp",
+   "model-context-protocol",
+   "pymavlink",
+   "sitl",
+   "uav"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:rmurai0610/mast3r-slam": {
   "archived": false,
   "description": "[CVPR 2025] MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors",
@@ -6945,6 +8229,19 @@
    "robotics",
    "slam"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:robodhruv/visualnav-transformer": {
+  "archived": false,
+  "description": "Official code and checkpoint release for mobile robot foundation models: GNM, ViNT, and NoMaD.",
+  "forks_count": 208,
+  "full_name": "robodhruv/visualnav-transformer",
+  "html_url": "https://github.com/robodhruv/visualnav-transformer",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2024-09-15T06:36:11Z",
+  "stargazers_count": 1340,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:robotics-star-lab/racer": {
@@ -6971,6 +8268,40 @@
   "pushed_at": "2026-07-07T09:19:57Z",
   "stargazers_count": 39,
   "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:robotmcp/demos-ros-mcp-server": {
+  "archived": false,
+  "description": "Demos and tutorials on connecting AI LLMs to Robots using https://github.com/robotmcp/ros-mcp-server",
+  "forks_count": 4,
+  "full_name": "robotmcp/demos-ros-mcp-server",
+  "html_url": "https://github.com/robotmcp/demos-ros-mcp-server",
+  "language": "C++",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-07-09T05:15:04Z",
+  "stargazers_count": 8,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:robotmcp/ros-mcp-server": {
+  "archived": false,
+  "description": "Connect AI models like Claude & GPT with robots using MCP and ROS.",
+  "forks_count": 220,
+  "full_name": "robotmcp/ros-mcp-server",
+  "html_url": "https://github.com/robotmcp/ros-mcp-server",
+  "language": "Python",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-11-05T15:56:04Z",
+  "stargazers_count": 1514,
+  "topics": [
+   "mcp",
+   "mcp-server",
+   "modelcontextprotocol",
+   "ros",
+   "ros-mcp-server",
+   "ros2",
+   "ros2-mcp-server"
+  ],
   "fetched": "2026-11-06"
  },
  "repo:robustfieldautonomylab/lego-loam": {
@@ -7050,6 +8381,19 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:romavis/loranc": {
+  "archived": false,
+  "description": "LORAN C (USSR \"Chayka\") receiver project",
+  "forks_count": 0,
+  "full_name": "romavis/LoranC",
+  "html_url": "https://github.com/romavis/LoranC",
+  "language": "IDL",
+  "license": "NOASSERTION",
+  "pushed_at": "2014-06-05T20:10:04Z",
+  "stargazers_count": 7,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:ros-navigation/navigation2": {
   "archived": false,
   "description": "ROS 2 Navigation Framework and System",
@@ -7064,6 +8408,25 @@
    "navigation",
    "robotics",
    "ros2"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:ros-navigation/navigation2_tutorials": {
+  "archived": false,
+  "description": "Tutorial code referenced in https://docs.nav2.org/",
+  "forks_count": 177,
+  "full_name": "ros-navigation/navigation2_tutorials",
+  "html_url": "https://github.com/ros-navigation/navigation2_tutorials",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-10-03T02:42:12Z",
+  "stargazers_count": 374,
+  "topics": [
+   "navigation",
+   "navigation2",
+   "robotics",
+   "ros2",
+   "tutorials"
   ],
   "fetched": "2026-11-06"
  },
@@ -7332,6 +8695,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:seandepagnier/celestial_navigation_pi": {
+  "archived": false,
+  "description": "celestial navigation plugin for opencpn",
+  "forks_count": 28,
+  "full_name": "seandepagnier/celestial_navigation_pi",
+  "html_url": "https://github.com/seandepagnier/celestial_navigation_pi",
+  "language": "C++",
+  "license": null,
+  "pushed_at": "2024-01-23T23:38:39Z",
+  "stargazers_count": 22,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:semuconsulting/pygnssutils": {
   "archived": false,
   "description": "Python GNSS CLI utility library for reading, parsing and broadcasting NMEA, UBX, SBF, QGC, RTCM3, NTRIP and SPARTN protocols",
@@ -7474,6 +8850,23 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:sensorsini/v2e": {
+  "archived": false,
+  "description": "V2E: From video frames to DVS events",
+  "forks_count": 80,
+  "full_name": "SensorsINI/v2e",
+  "html_url": "https://github.com/SensorsINI/v2e",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-04-13T14:39:55Z",
+  "stargazers_count": 499,
+  "topics": [
+   "event-camera",
+   "pytorch",
+   "simulator"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:sentinel-hub/sentinelhub-py": {
   "archived": false,
   "description": "Download and process satellite imagery in Python using Sentinel Hub services.",
@@ -7567,6 +8960,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:shailab-ipec/openfly-platform": {
+  "archived": false,
+  "description": null,
+  "forks_count": 34,
+  "full_name": "SHAILAB-IPEC/OpenFly-Platform",
+  "html_url": "https://github.com/SHAILAB-IPEC/OpenFly-Platform",
+  "language": "C++",
+  "license": "MIT",
+  "pushed_at": "2026-01-13T12:09:53Z",
+  "stargazers_count": 381,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:shelfcol/gps_imu_fusion": {
   "archived": false,
   "description": "gps_imu_fusion with eskf,ekf,ukf,etc",
@@ -7621,6 +9027,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:sirbastiano/federnet": {
+  "archived": false,
+  "description": "Terrain Relative Navigation project for Msc Thesis",
+  "forks_count": 5,
+  "full_name": "sirbastiano/FederNet",
+  "html_url": "https://github.com/sirbastiano/FederNet",
+  "language": "Jupyter Notebook",
+  "license": null,
+  "pushed_at": "2022-10-19T17:43:22Z",
+  "stargazers_count": 6,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:sjtu-visys/m2dgr": {
   "archived": false,
   "description": "M2DGR： a Multi-modal and Multi-scenario Dataset for Ground Robots(RA-L2021 & ICRA2022)",
@@ -7638,6 +9057,19 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:skyfielders/python-skyfield": {
+  "archived": false,
+  "description": "Elegant astronomy for Python",
+  "forks_count": 271,
+  "full_name": "skyfielders/python-skyfield",
+  "html_url": "https://github.com/skyfielders/python-skyfield",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-09-29T01:14:06Z",
+  "stargazers_count": 1800,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:skyy93/sample4geo": {
   "archived": false,
   "description": null,
@@ -7648,6 +9080,19 @@
   "license": null,
   "pushed_at": "2025-08-08T08:18:16Z",
   "stargazers_count": 172,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:slam-handbook-contributors/slam-handbook-public-release": {
+  "archived": false,
+  "description": "Release repo for our SLAM Handbook",
+  "forks_count": 302,
+  "full_name": "SLAM-Handbook-contributors/slam-handbook-public-release",
+  "html_url": "https://github.com/SLAM-Handbook-contributors/slam-handbook-public-release",
+  "language": "TeX",
+  "license": null,
+  "pushed_at": "2026-05-28T00:31:38Z",
+  "stargazers_count": 4681,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -7765,6 +9210,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:sparolab/referee": {
+  "archived": false,
+  "description": "SOTA Radar Global Descriptor in Radar Place Recognition (accepted in RA-L'24 w/ ICRA'25)",
+  "forks_count": 3,
+  "full_name": "sparolab/ReFeree",
+  "html_url": "https://github.com/sparolab/ReFeree",
+  "language": "C++",
+  "license": "BSD-3-Clause",
+  "pushed_at": "2026-09-24T20:23:33Z",
+  "stargazers_count": 62,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:spatialillusions/milsymbol": {
   "archived": false,
   "description": "Military Symbols in JavaScript",
@@ -7777,6 +9235,26 @@
   "stargazers_count": 822,
   "topics": [
    "military"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:spel-uchile/star_tracker": {
+  "archived": false,
+  "description": "Development of SPEL - Open Star Tracker (SOST) - Software tested in our nanosatellites SUCHAI-2/3 AND PlantSAT",
+  "forks_count": 16,
+  "full_name": "spel-uchile/Star_Tracker",
+  "html_url": "https://github.com/spel-uchile/Star_Tracker",
+  "language": "Python",
+  "license": "GPL-3.0",
+  "pushed_at": "2024-09-08T18:52:34Z",
+  "stargazers_count": 96,
+  "topics": [
+   "attitude-determination",
+   "cubesat",
+   "raspberry-pi",
+   "spel",
+   "star-tracker",
+   "stt"
   ],
   "fetched": "2026-11-06"
  },
@@ -8221,6 +9699,45 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:ts-fupeng/pvi-dataset": {
+  "archived": false,
+  "description": "Polarization Navigation Dataset",
+  "forks_count": 0,
+  "full_name": "TS-FuPeng/PVI-dataset",
+  "html_url": "https://github.com/TS-FuPeng/PVI-dataset",
+  "language": null,
+  "license": null,
+  "pushed_at": "2025-05-09T13:38:11Z",
+  "stargazers_count": 1,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:tum-vision/devo": {
+  "archived": false,
+  "description": "[3DV '24] Deep Event Visual Odometry",
+  "forks_count": 19,
+  "full_name": "tum-vision/DEVO",
+  "html_url": "https://github.com/tum-vision/DEVO",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2024-08-11T05:52:21Z",
+  "stargazers_count": 121,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:typefly/typefly": {
+  "archived": false,
+  "description": "A easy framework for developing LLM-based robot task planning.",
+  "forks_count": 25,
+  "full_name": "typefly/TypeFly",
+  "html_url": "https://github.com/typefly/TypeFly",
+  "language": "Python",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-07-08T18:45:12Z",
+  "stargazers_count": 118,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:u-blox/ubxlib": {
   "archived": true,
   "description": "Portable C libraries which provide APIs to build applications with u-blox products and services. Delivered as add-on to existing microcontroller and RTOS SDKs.",
@@ -8354,6 +9871,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:univaasadigieco/vaara": {
+  "archived": false,
+  "description": "University of Vaasa public dataset collected at Jammertest 2024",
+  "forks_count": 0,
+  "full_name": "UniVaasaDigiEco/VAARA",
+  "html_url": "https://github.com/UniVaasaDigiEco/VAARA",
+  "language": null,
+  "license": null,
+  "pushed_at": "2026-04-06T09:23:49Z",
+  "stargazers_count": 2,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:unmannedlab/rellis-3d": {
   "archived": false,
   "description": "RELLIS-3D: A Multi-modal Dataset for Off-Road Robotics",
@@ -8397,6 +9927,25 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:url-kaist/outlier-robust-radar-odometry": {
+  "archived": false,
+  "description": "ORORA: Outlier-robust radar odometry, which is accepted in ICRA'23",
+  "forks_count": 23,
+  "full_name": "url-kaist/outlier-robust-radar-odometry",
+  "html_url": "https://github.com/url-kaist/outlier-robust-radar-odometry",
+  "language": "C++",
+  "license": "GPL-3.0",
+  "pushed_at": "2025-03-27T22:25:07Z",
+  "stargazers_count": 215,
+  "topics": [
+   "odometry",
+   "outlier-rejection",
+   "radar",
+   "radar-data",
+   "radar-odometry"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:url-kaist/quatro": {
   "archived": false,
   "description": "Fast and robust global registration for terrestrial robots @ ICRA2022",
@@ -8427,6 +9976,36 @@
   "license": "BSD-3-Clause",
   "pushed_at": "2026-09-16T18:23:54Z",
   "stargazers_count": 126,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:utiasasrl/steam": {
+  "archived": false,
+  "description": "The Simultaneous Trajectory Estimation and Mapping (STEAM) Engine.",
+  "forks_count": 15,
+  "full_name": "utiasASRL/steam",
+  "html_url": "https://github.com/utiasASRL/steam",
+  "language": "C++",
+  "license": "BSD-3-Clause",
+  "pushed_at": "2026-05-15T20:55:48Z",
+  "stargazers_count": 117,
+  "topics": [
+   "cpp",
+   "robotics",
+   "state-estimation"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:utiasasrl/steam_icp": {
+  "archived": false,
+  "description": "Continuous-time lidar, radar, lidar-inertial, and radar-inertial odometry",
+  "forks_count": 25,
+  "full_name": "utiasASRL/steam_icp",
+  "html_url": "https://github.com/utiasASRL/steam_icp",
+  "language": "C++",
+  "license": "MIT",
+  "pushed_at": "2026-02-11T21:29:03Z",
+  "stargazers_count": 273,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -8563,6 +10142,58 @@
   "license": "GPL-3.0",
   "pushed_at": "2023-09-19T08:43:20Z",
   "stargazers_count": 280,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:uzh-rpg/rpg_dvs_ros": {
+  "archived": false,
+  "description": "ROS packages for DVS",
+  "forks_count": 159,
+  "full_name": "uzh-rpg/rpg_dvs_ros",
+  "html_url": "https://github.com/uzh-rpg/rpg_dvs_ros",
+  "language": "C++",
+  "license": "MIT",
+  "pushed_at": "2025-03-11T12:18:19Z",
+  "stargazers_count": 334,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:uzh-rpg/rpg_e2vid": {
+  "archived": false,
+  "description": "Code for the paper \"High Speed and High Dynamic Range Video with an Event Camera\" (T-PAMI, 2019).",
+  "forks_count": 154,
+  "full_name": "uzh-rpg/rpg_e2vid",
+  "html_url": "https://github.com/uzh-rpg/rpg_e2vid",
+  "language": "Python",
+  "license": "GPL-3.0",
+  "pushed_at": "2021-12-05T13:22:19Z",
+  "stargazers_count": 436,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:uzh-rpg/rpg_eklt": {
+  "archived": false,
+  "description": "Code for the paper \"EKLT: Asynchronous, Photometric Feature Tracking using Events and Frames\" (IJCV'19)",
+  "forks_count": 35,
+  "full_name": "uzh-rpg/rpg_eklt",
+  "html_url": "https://github.com/uzh-rpg/rpg_eklt",
+  "language": "C++",
+  "license": "GPL-3.0",
+  "pushed_at": "2021-10-20T03:03:27Z",
+  "stargazers_count": 139,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:uzh-rpg/rpg_emvs": {
+  "archived": false,
+  "description": "Code for the paper \"EMVS: Event-based Multi-View Stereo\" (IJCV, 2018)",
+  "forks_count": 52,
+  "full_name": "uzh-rpg/rpg_emvs",
+  "html_url": "https://github.com/uzh-rpg/rpg_emvs",
+  "language": "C++",
+  "license": null,
+  "pushed_at": "2021-08-19T09:11:38Z",
+  "stargazers_count": 149,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -8775,6 +10406,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:vlmaps/vlmaps": {
+  "archived": false,
+  "description": "[ICRA2023] Implementation of Visual Language Maps for Robot Navigation",
+  "forks_count": 84,
+  "full_name": "vlmaps/vlmaps",
+  "html_url": "https://github.com/vlmaps/vlmaps",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2024-07-09T14:03:26Z",
+  "stargazers_count": 732,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:vortexntnu/vortex-auv": {
   "archived": false,
   "description": "Software for guidance, navigation and control for the Vortex AUVs. Purpose built for competing in AUV/ROV competitions.",
@@ -8812,6 +10456,19 @@
   "license": null,
   "pushed_at": "2024-07-29T11:14:48Z",
   "stargazers_count": 5,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:water-cookie/citynav": {
+  "archived": false,
+  "description": null,
+  "forks_count": 17,
+  "full_name": "water-cookie/citynav",
+  "html_url": "https://github.com/water-cookie/citynav",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2025-02-11T06:01:12Z",
+  "stargazers_count": 147,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -8915,6 +10572,29 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:wise-vision/ros2_mcp": {
+  "archived": false,
+  "description": "ROS2 MCP: the MCP server that lets AI agents see, understand and operate ROS 2 robots. MPL-2.0.",
+  "forks_count": 18,
+  "full_name": "wise-vision/ros2_mcp",
+  "html_url": "https://github.com/wise-vision/ros2_mcp",
+  "language": "Python",
+  "license": "MPL-2.0",
+  "pushed_at": "2026-10-21T13:26:29Z",
+  "stargazers_count": 98,
+  "topics": [
+   "ai",
+   "ai-agents",
+   "mcp",
+   "mcp-server",
+   "mcp-server-ros2",
+   "model-context-protocol",
+   "robotics",
+   "ros2",
+   "ros2-mcp-server"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:wmuron/motpy": {
   "archived": false,
   "description": "Library for tracking-by-detection multi object tracking implemented in python",
@@ -8959,6 +10639,19 @@
   "license": "MIT",
   "pushed_at": "2026-07-06T02:34:20Z",
   "stargazers_count": 99,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:wuzhiguocarter/openpdr": {
+  "archived": false,
+  "description": "An opensource repository of Pedestrian Dead Reckoning which is device independent and sensor independent",
+  "forks_count": 17,
+  "full_name": "wuzhiguocarter/OpenPDR",
+  "html_url": "https://github.com/wuzhiguocarter/OpenPDR",
+  "language": "Matlab",
+  "license": null,
+  "pushed_at": "2017-07-05T07:41:23Z",
+  "stargazers_count": 60,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -9019,6 +10712,19 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:xuefanfu/3dg-vln": {
+  "archived": false,
+  "description": "Official implementation of 3DG-VLN, a UAV vision-language navigation framework for precise see-and-reach target navigation using high-resolution egocentric observations and online 3D direction updating.",
+  "forks_count": 0,
+  "full_name": "xuefanfu/3DG-VLN",
+  "html_url": "https://github.com/xuefanfu/3DG-VLN",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-09-13T01:54:08Z",
+  "stargazers_count": 38,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:xyangll/leospine": {
   "archived": false,
   "description": "LEO-SPINE is an open-source toolkit for LEO/MEO/GEO simulation and single/multi-satellite positioning. It supports Walker-Delta constellation design, TLE-based propagation, pseudorange/Doppler observations, and satellite positioning with convergence analysis.",
@@ -9029,6 +10735,32 @@
   "license": "MIT",
   "pushed_at": "2026-02-04T06:56:19Z",
   "stargazers_count": 9,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:yangsc4063/rino": {
+  "archived": false,
+  "description": "[T-ASE 2025] This is the official implementation of RINO: Accurate, Robust Radar-Inertial Odometry with Non-Iterative Estimation.",
+  "forks_count": 10,
+  "full_name": "yangsc4063/rino",
+  "html_url": "https://github.com/yangsc4063/rino",
+  "language": "C++",
+  "license": null,
+  "pushed_at": "2025-09-18T12:09:42Z",
+  "stargazers_count": 72,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:ybgdgh/co-navgpt": {
+  "archived": false,
+  "description": "We proposed to explore and search for the target in unknown environment based on Large Language Model for multi-robot system.",
+  "forks_count": 3,
+  "full_name": "ybgdgh/Co-NavGPT",
+  "html_url": "https://github.com/ybgdgh/Co-NavGPT",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2024-06-30T22:48:39Z",
+  "stargazers_count": 107,
   "topics": [],
   "fetched": "2026-11-06"
  },

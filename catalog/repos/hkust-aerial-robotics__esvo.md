@@ -24,6 +24,7 @@ Event-based stereo visual odometry using spatio-temporal consistency of two even
 
 ## Referenced by
 
+- [ESVIO](../repos/arclab-hku__esvio.md) (alternative_to)
 - [HKU Event-based VO/VIO/SLAM](../repos/arclab-hku__event_based_vo-vio-slam.md) (evaluated_on)
 
 _Indexed by lane(s): slam_

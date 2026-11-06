@@ -25,6 +25,7 @@ Sample data for MagNav work: MIT-AIA anomaly maps, a challenge flight, North Ame
 ## Referenced by
 
 - [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md) (integrates_with)
+- [MagNav.jl quickstart: Tolles-Lawson and EKF on the SGL 2020 flight](../samples/magnav-quickstart.md) (explains)
 
 _Indexed by lane(s): alt-nav_
 

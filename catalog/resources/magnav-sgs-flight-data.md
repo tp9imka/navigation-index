@@ -17,10 +17,10 @@ Zenodo record of airborne magnetometer, INS and GNSS flight data with datasheets
 
 ## Related
 
-- dataset_for: [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/afrl-mit-magnav-challenge-paper.md)
+- dataset_for: [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/afrl-magnav-challenge-2020.md)
 
 ## Referenced by
 
-- [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/afrl-mit-magnav-challenge-paper.md) (dataset_for)
+- [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/afrl-magnav-challenge-2020.md) (dataset_for)
 
 _Indexed by lane(s): defense-context_

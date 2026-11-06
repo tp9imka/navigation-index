@@ -18,10 +18,10 @@ Zenodo record holding the MagNav challenge flight data: magnetometer, INS, GPS t
 ## Related
 
 - has_code: [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md)
-- dataset_for: [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/magnav-signal-enhancement-arxiv.md)
+- dataset_for: [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/afrl-magnav-challenge-2020.md)
 
 ## Referenced by
 
-- [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/magnav-signal-enhancement-arxiv.md) (uses)
+- [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/afrl-magnav-challenge-2020.md) (uses)
 
 _Indexed by lane(s): docs-standards_

@@ -19,6 +19,6 @@ Nav2 tutorial on outdoor navigation with GPS: fusing GNSS, IMU and odometry with
 
 - has_code: [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md)
 - uses: [robot_localization](../repos/cra-ros-pkg__robot_localization.md)
-- has_code: `repo:ros-navigation/navigation2_tutorials` (not indexed)
+- has_code: [Nav2 tutorials](../repos/ros-navigation__navigation2_tutorials.md)
 
 _Indexed by lane(s): learning_

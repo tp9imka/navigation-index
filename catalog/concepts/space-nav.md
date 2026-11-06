@@ -4,8 +4,9 @@
 
 Orbit determination, LEO-PNT, spacecraft navigation.
 
-## Repositories (8)
+## Repositories (11)
 
+- [Skyfield](../repos/skyfielders__python-skyfield.md) - fit: high - Python library for high-accuracy positions of stars, planets and Earth satellites, with proper time scales and reference frames.
 - [tetra3](../repos/esa__tetra3.md) - fit: high - Fast lost-in-space plate solver for star trackers from ESA: identifies stars in an image and returns attitude using a precomputed pattern database.
 - [Starlink LEO-PNT](../repos/przemyslawpiekarski__starlink-leo-pnt.md) - fit: high - Passive positioning using Starlink downlink signals as signals of opportunity: SDR capture, blind OFDM analysis, Doppler extraction, TDOA/FDOA solver and EKF with TLE-based orbits.
 - [OpenStarTracker](../repos/ubnanosatlab__openstartracker.md) - fit: medium - Open-source star tracker using a Bayesian star identification approach, developed by the University at Buffalo Nanosatellite Lab.
@@ -13,7 +14,9 @@ Orbit determination, LEO-PNT, spacecraft navigation.
 - [LOST](../repos/uwcubesat__lost.md) - fit: medium - Open-source star tracker (C++) covering centroiding, star identification and attitude estimation, from the UW CubeSat team.
 - [SPEED+ baseline](../repos/tpark94__speedplusbaseline.md) - fit: medium - PyTorch baselines and domain-bridging methods for spacecraft pose estimation on the SPEED+ dataset used in ESA Kelvins SPEC2021.
 - [UT Starlink signal simulator](../repos/gitlab.com__radionavlab__public__ut-starlink-signal-simulator.md) - fit: medium - MATLAB-style utility functions from UT Austin's Radionavigation Lab for simulating Starlink Ku-band downlink signals, with playground examples.
+- [SPEL Open Star Tracker](../repos/spel-uchile__star_tracker.md) - fit: low - Open star tracker software from the University of Chile space lab, flown on SUCHAI nanosatellites.
 - [JointLoc](../repos/luoxubo__jointloc.md) - fit: low - Real-time visual localization framework for planetary UAVs that jointly uses relative and absolute pose estimation against orbital maps.
+- [FederNet](../repos/sirbastiano__federnet.md) - fit: low - Terrain relative navigation for planetary landing that detects craters with a Mask R-CNN and matches them to a catalog using projective invariants.
 
 ## Documents, talks, courses, datasets (19)
 

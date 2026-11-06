@@ -27,6 +27,7 @@ Python GNSS/INS simulator that generates trajectories, IMU/GNSS/magnetometer mea
 
 - [pyins](../repos/nmayorov__pyins.md) (alternative_to)
 - [NaveGo](../repos/rodralez__navego.md) (alternative_to)
+- [GNSS/INS EKF through a GNSS outage and a spoofing walk-off](../samples/gnss-ins-ekf-outage.md) (explains)
 
 _Indexed by lane(s): ins-fusion, sim-data_
 

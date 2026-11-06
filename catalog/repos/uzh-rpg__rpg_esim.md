@@ -18,6 +18,11 @@ Event camera simulator from UZH RPG that renders event streams from simulated sc
 
 **Domains:** air, ground
 
+## Referenced by
+
+- [v2e](../repos/sensorsini__v2e.md) (alternative_to)
+- [rpg_dvs_ros](../repos/uzh-rpg__rpg_dvs_ros.md) (same_org)
+
 _Indexed by lane(s): sim-data_
 
 _GitHub metadata fetched 2026-11-06._

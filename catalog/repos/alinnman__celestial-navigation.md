@@ -22,6 +22,10 @@ Python toolkit for classic celestial navigation sight reduction, usable offline 
 
 - integrates_with: [tetra3](../repos/esa__tetra3.md)
 
+## Referenced by
+
+- [celnav](../repos/ms8r__celnav.md) (alternative_to)
+
 _Indexed by lane(s): alt-nav_
 
 _GitHub metadata fetched 2026-11-06._

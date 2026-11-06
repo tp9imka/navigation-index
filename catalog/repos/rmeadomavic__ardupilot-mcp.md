@@ -1,0 +1,31 @@
+# ardupilot-mcp (safety-gated)
+
+`repo:rmeadomavic/ardupilot-mcp` - <https://github.com/rmeadomavic/ardupilot-mcp>
+
+| stars | language | license | last push | archived | maturity | hackathon fit |
+|---|---|---|---|---|---|---|
+| 4 | Python | MIT | 2026-08-03 | False | research-prototype | medium |
+
+SITL-first MCP server for talking to ArduPilot vehicles over MAVLink, with explicit safety gating of commands.
+
+**Why it matters:** Its safety-gate design is a useful pattern for keeping an LLM from issuing unsafe flight commands.
+
+**Hackathon notes:** Small codebase; read the gating logic and reuse it in your own bridge.
+
+**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
+
+**Tags:** `mcp`, `ardupilot`, `safety`, `sitl`
+
+**Domains:** air
+
+## Related
+
+- alternative_to: [MAVLinkMCP](../repos/ion-g-ion__mavlinkmcp.md)
+
+## Referenced by
+
+- [MAVLinkMCP](../repos/ion-g-ion__mavlinkmcp.md) (alternative_to)
+
+_Indexed by lane(s): gap-fill_
+
+_GitHub metadata fetched 2026-11-06._

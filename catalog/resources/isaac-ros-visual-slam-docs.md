@@ -17,6 +17,10 @@ Docs and quickstarts for NVIDIA's GPU-accelerated stereo visual-inertial odometr
 
 ## Related
 
-- has_code: `repo:nvidia-isaac-ros/isaac_ros_visual_slam` (not indexed)
+- has_code: [Isaac ROS Visual SLAM](../repos/nvidia-isaac-ros__isaac_ros_visual_slam.md)
+
+## Referenced by
+
+- [Isaac ROS Visual SLAM](../repos/nvidia-isaac-ros__isaac_ros_visual_slam.md) (integrates_with)
 
 _Indexed by lane(s): learning_

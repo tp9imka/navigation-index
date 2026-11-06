@@ -22,6 +22,10 @@ Repo for VPAIR, an aerial visual place recognition dataset matching low-altitude
 
 - integrates_with: [VPR methods evaluation](../repos/gmberton__vpr-methods-evaluation.md)
 
+## Referenced by
+
+- [Drone frame to orthophoto geolocalization with LightGlue](../samples/visual-geolocalization-lightglue.md) (uses)
+
 _Indexed by lane(s): sim-data_
 
 _GitHub metadata fetched 2026-11-06._

@@ -27,6 +27,7 @@ Large-scale dataset of real UAV flight imagery with satellite reference maps for
 
 - [GeoAnchor](../repos/yusufgunel__geoanchor.md) (evaluated_on)
 - [UAV-VisLoc: A Large-scale Dataset for UAV Visual Localization](../resources/uav-visloc-dataset-2024.md) (has_code)
+- [Drone frame to orthophoto geolocalization with LightGlue](../samples/visual-geolocalization-lightglue.md) (uses)
 
 _Indexed by lane(s): alt-nav, sim-data_
 

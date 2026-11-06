@@ -270,7 +270,7 @@
     "authors": [
       "EU / European GNSS Service Centre"
     ],
-    "year": 2023,
+    "year": 2024,
     "summary": "Companion to the OSNMA ICD describing how a receiver should process OSNMA: time-sync requirements, key and Merkle-tree handling, verification procedures and how to report authentication status to the user.",
     "key_takeaways": [
       "Spells out the receiver time-sync assumption that OSNMA security depends on",
@@ -1311,7 +1311,7 @@
   {
     "id": "res:gao-21-320sp-gps-alternatives",
     "kind": "report",
-    "title": "GAO-21-320SP: Defense Navigation Capabilities - DOD Is Developing PNT Alternatives to GPS",
+    "title": "GAO-21-320SP: Defense Navigation Capabilities - DOD Is Developing Positioning, Navigation, and Timing Technologies to Complement GPS",
     "url": "https://www.gao.gov/products/gao-21-320sp",
     "authors": [
       "US Government Accountability Office"
@@ -2197,7 +2197,11 @@
     "title": "White Paper: Protecting GNSS Against Intentional Interference",
     "url": "https://arxiv.org/abs/2208.11555",
     "authors": [
-      "Academic GNSS security community"
+      "Arul Elango",
+      "Ahmed Al-Tahmeesschi",
+      "Mikko Saukkoriipi",
+      "Titti Malmivirta",
+      "Laura Ruotsalainen"
     ],
     "year": 2022,
     "summary": "Open white paper summarizing the threat of jamming and spoofing to civil GNSS and the countermeasure landscape (signal authentication, antenna arrays, consistency checks, regulation).",
@@ -2545,7 +2549,9 @@
     "title": "Recent Advances on Jamming and Spoofing Detection in GNSS",
     "url": "https://www.mdpi.com/1424-8220/24/13/4210",
     "authors": [
-      "K. Rados, M. Brkic, D. Begusic"
+      "Katarina Radoš",
+      "Marta Brkić",
+      "Dinko Begušić"
     ],
     "year": 2024,
     "summary": "Open-access Sensors review of GNSS jamming and spoofing detection methods, finding machine learning is now the dominant approach, and covering combined jamming-plus-spoofing scenarios.",

@@ -1,0 +1,14 @@
+{
+  "id": "sample:gnss-interference-monitor",
+  "title": "GNSS interference monitor from u-blox telemetry and ADS-B NACp",
+  "summary": "A stdlib heuristic scorer turns per-epoch receiver telemetry (C/N0 across SVs, AGC, CW jamming indicator, clock and position jumps, receiver spoofing/jamming flags) into jamming and spoofing scores with stated reasons. A pyubx2 adapter feeds it live from UBX NAV-SAT, NAV-STATUS, NAV-CLOCK, MON-RF and SEC-SIG. A second stdlib module applies the GPSJam percentage method to readsb aircraft.json NACp for area-level interference maps.",
+  "concepts": ["concept:gnss-interference", "concept:ew-resilience", "concept:assured-pnt", "concept:gnss", "concept:situational-awareness"],
+  "tags": ["jamming", "spoofing", "u-blox", "ubx", "mon-rf", "agc", "cn0", "spoofdetstate", "sec-sig", "ads-b", "nacp", "gpsjam", "readsb", "stdlib"],
+  "related": [
+    {"id": "repo:semuconsulting/pyubx2", "rel": "uses"},
+    {"id": "repo:wiedehopf/readsb", "rel": "uses"},
+    {"id": "repo:semuconsulting/pygnssutils", "rel": "uses"},
+    {"id": "repo:s7am1na/gnss-spoofing-dataset", "rel": "explains"}
+  ],
+  "verified": "scorer.py, adsb_area_map.py and their 14 unit tests ran with python3.14.7 stdlib on 2026-11-06, output shown in README; a negative control (cn0_drop weight 0) made test_broadband_jamming fail as expected. ubx_monitor.py is an unverified sketch: syntax-checked only, requires pyubx2 (attribute names checked against pyubx2 v1.4.1 ubxtypes_get.py) and a u-blox receiver; readsb field names were checked against its README-json.md."
+}

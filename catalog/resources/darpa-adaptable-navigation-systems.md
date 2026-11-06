@@ -20,7 +20,7 @@ DARPA program page for ANS, which pursued GPS-quality PNT in denied environments
 ## Related
 
 - part_of: [DARPA Seeks PNT Robustness, Flexibility with All Source Positioning and Navigation Program](../resources/insidegnss-darpa-aspn.md)
-- cites: [DARPA Seeks PNT Robustness, Flexibility with All Source Positioning and Navigation Program](../resources/darpa-aspn-insidegnss.md)
+- cites: [DARPA Seeks PNT Robustness, Flexibility with All Source Positioning and Navigation Program](../resources/insidegnss-darpa-aspn.md)
 
 ## Referenced by
 

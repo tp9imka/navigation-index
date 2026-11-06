@@ -1749,7 +1749,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "high",
-    "hackathon_notes": "pip install; solve sample images in minutes. Combine attitude with a level sensor and clock for a celestial fix demo.",
+    "hackathon_notes": "Not on PyPI: pip install git+https://github.com/esa/tetra3.git; solve sample images in minutes. Combine attitude with a level sensor and clock for a celestial fix demo.",
     "related": [
       {
         "id": "repo:smroid/cedar-solve",

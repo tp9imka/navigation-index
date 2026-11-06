@@ -29,6 +29,7 @@ Fast learned local feature matcher (ICCV 2023) that adapts its depth to pair dif
 - [AnyLoc](../repos/anyloc__anyloc.md) (integrates_with)
 - [Glue Factory](../repos/cvg__glue-factory.md) (same_org)
 - [hloc](../repos/cvg__hierarchical-localization.md) (depends_on)
+- [LightGlue-ONNX](../repos/fabio-sim__lightglue-onnx.md) (extends)
 - [vismatch (image-matching-models)](../repos/gmberton__vismatch.md) (integrates_with)
 - [SuperGlue (pretrained)](../repos/magicleap__supergluepretrainednetwork.md) (alternative_to)
 - [RoMa](../repos/parskatt__roma.md) (alternative_to)
@@ -37,6 +38,7 @@ Fast learned local feature matcher (ICCV 2023) that adapts its depth to pair dif
 - [AnyVisLoc benchmark](../repos/uav-avl__benchmark.md) (evaluated_on)
 - [XFeat](../repos/verlab__accelerated_features.md) (alternative_to)
 - [LightGlue: Local Feature Matching at Light Speed](../resources/lightglue-2023.md) (has_code)
+- [Drone frame to orthophoto geolocalization with LightGlue](../samples/visual-geolocalization-lightglue.md) (uses)
 
 _Indexed by lane(s): alt-nav_
 

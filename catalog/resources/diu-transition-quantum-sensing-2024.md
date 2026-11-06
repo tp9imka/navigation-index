@@ -18,6 +18,6 @@ Coverage of DIU's Transition of Quantum Sensing call seeking quantum inertial se
 
 ## Related
 
-- cites: [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/afrl-mit-magnav-challenge-paper.md)
+- cites: [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/afrl-magnav-challenge-2020.md)
 
 _Indexed by lane(s): defense-context_

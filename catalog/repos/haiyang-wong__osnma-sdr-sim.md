@@ -28,7 +28,7 @@ Galileo E1-B/E5b signal simulator with OSNMA authentication data embedded, confi
 
 - [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md) (integrates_with)
 - [Beidou-SDR-SIM](../repos/haiyang-wong__beidou-sdr-sim.md) (same_org)
-- [Galileo OSNMA Signal-In-Space ICD v1.1](../resources/galileo-osnma-sis-icd-1-1.md) (has_code)
+- [Galileo OSNMA Signal-In-Space Interface Control Document Issue 1.1](../resources/galileo-osnma-sis-icd.md) (has_code)
 
 _Indexed by lane(s): gnss_
 

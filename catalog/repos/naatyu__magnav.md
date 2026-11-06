@@ -26,6 +26,7 @@ Deep-learning approach to aircraft magnetic disturbance compensation built aroun
 ## Referenced by
 
 - [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md) (extends)
+- [MagNav.jl quickstart: Tolles-Lawson and EKF on the SGL 2020 flight](../samples/magnav-quickstart.md) (explains)
 
 _Indexed by lane(s): alt-nav, defense-context_
 

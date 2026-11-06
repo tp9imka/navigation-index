@@ -6,18 +6,22 @@ Acquisition, tracking, navigation-message decoding in software on SDR front-ends
 
 **Parent:** [GNSS positioning](../concepts/gnss.md)
 
-## Repositories (10)
+## Repositories (14)
 
 - [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md) - fit: high - Full software-defined GNSS receiver built on GNU Radio: acquisition, tracking, navigation message decoding and PVT for GPS, Galileo, GLONASS and BeiDou signals from SDR front-ends or IQ files, including Galileo OSNMA sup
 - [AIS-catcher](../repos/jvde-github__ais-catcher.md) - fit: high - AIS receiver and decoder for cheap SDRs (RTL-SDR, Airspy, HackRF, SDRplay, SoapySDR) with a built-in web map, JSON/NMEA output and feed sharing.
 - [readsb](../repos/wiedehopf__readsb.md) - fit: high - ADS-B/Mode S decoder for RTL-SDR and other receivers with networking, JSON output, MLAT support and aggregation features.
+- [GNSS-DSP-tools](../repos/pmonta__gnss-dsp-tools.md) - fit: high - Python code generators, acquisition and tracking for many GNSS signals (GPS, Galileo, GLONASS, BeiDou, NavIC and more) operating on IQ recordings.
 - [Starlink LEO-PNT](../repos/przemyslawpiekarski__starlink-leo-pnt.md) - fit: high - Passive positioning using Starlink downlink signals as signals of opportunity: SDR capture, blind OFDM analysis, Doppler extraction, TDOA/FDOA solver and EKF with TLE-based orbits.
 - [PocketSDR](../repos/tomojitakasu__pocketsdr.md) - fit: medium - Open hardware GNSS front-end plus a software receiver (Python and C) by the RTKLIB author, supporting a wide range of GNSS signals across L1/L2/L5/L6 bands.
 - [FGI-GSRx](../repos/nlsfi__fgi-gsrx.md) - fit: medium - Multi-GNSS software receiver in MATLAB from the Finnish Geospatial Research Institute, with modular acquisition, tracking and navigation stages.
 - [SoftGNSS v3.0 (maintained copy)](../repos/tmboc__softgnss.md) - fit: medium - Maintained copy of the classic Borre/Akos SoftGNSS MATLAB GPS L1 receiver with updates for several sampler front-ends.
+- [CU Boulder GNSS SDR Collection](../repos/gnsscusdr__cu-sdr-collection.md) - fit: medium - University of Colorado Boulder collection of MATLAB software-defined GNSS receiver code-bases, organized per constellation (GPS, Galileo, GLONASS, BeiDou), with linked sample data sets.
 - [SoftGNSS-python](../repos/perrysou__softgnss-python.md) - fit: medium - Python port of the SoftGNSS software-defined GPS receiver toolkit.
 - [GNSS-SDRLIB](../repos/taroz__gnss-sdrlib.md) - fit: low - Older open-source GNSS software receiver library in C with a GUI, supporting several front-ends and real-time RTKLIB output.
+- [GNSS-matlab](../repos/danipascual__gnss-matlab.md) - fit: low - MATLAB code to generate GNSS PRN and secondary codes, dataless signals and spectra, with real captures.
 - [GPS L1 Direct Position Estimation module](../repos/sergio-vicenzo__gpsl1-dpemodule.md) - fit: low - Plug-in module adding Direct Position Estimation (positioning directly in the correlation domain) to MATLAB two-step software receivers such as SoftGNSS.
+- [pylgrim](../repos/kirienko__pylgrim.md) - fit: low - GNSS software receiver written in Python for learning acquisition, tracking and positioning.
 
 ## Documents, talks, courses, datasets (6)
 

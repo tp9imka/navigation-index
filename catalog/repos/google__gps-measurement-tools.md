@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|
 | 842 | Java | Apache-2.0 | 2026-10-19 | False | production | high |
 
-Google's Android raw GNSS measurement tooling: the GnssLogger app source, MATLAB analysis tools for pseudorange processing, and a rinex converter.
+Google's Android raw GNSS measurement tooling: the GnssLogger app source, MATLAB analysis tools for pseudorange processing (including a RINEX nav reader), and NMEA utilities.
 
 **Why it matters:** The canonical way to capture raw pseudoranges and carrier phase from phones, the basis for smartphone spoofing and integrity research.
 
@@ -32,7 +32,7 @@ Google's Android raw GNSS measurement tooling: the GnssLogger app source, MATLAB
 - [Detect GNSS jamming and spoofing (Android developer guide)](../resources/android-gnss-spoof-jam-detection.md) (uses)
 - [Android raw GNSS measurements developer guide](../resources/android-raw-gnss-developer-guide.md) (explains)
 - [Android Raw GNSS Measurement Datasets for Precise Positioning](../resources/google-android-raw-gnss-datasets.md) (has_code)
-- [Google Smartphone Decimeter Challenge 2023-2024](../resources/google-smartphone-decimeter-2023.md) (uses)
+- [Google Smartphone Decimeter Challenge 2023-2024](../resources/google-gsdc-2023.md) (uses)
 - [Detecting GNSS Jamming and Spoofing on Android Devices](../resources/ion-webinar-akos.md) (uses)
 - [GPS: An Introduction to Satellite Navigation, with an interactive Worldwide Laboratory using Smartphones](../resources/stanford-gps-mooc-van-diggelen-enge.md) (uses)
 

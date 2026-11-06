@@ -4,11 +4,13 @@
 
 **By:** Google, ION - **Year:** 2022 - **Level:** intermediate - **Access:** free-registration
 
-Earlier edition of the smartphone decimeter challenge with raw GNSS logs from multiple phones on US highways.
+Earlier edition of the smartphone GNSS positioning competition with Android raw measurement logs and ground truth.
 
 ## Key takeaways
 
 - Good secondary dataset for testing detectors on diverse phones
+- Sensors: phone raw GNSS, IMU
+- Kaggle account required
 
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
@@ -22,4 +24,4 @@ Earlier edition of the smartphone decimeter challenge with raw GNSS logs from mu
 
 - [Android Raw GNSS Measurement Datasets for Precise Positioning](../resources/google-android-raw-gnss-datasets.md) (dataset_for)
 
-_Indexed by lane(s): gnss_
+_Indexed by lane(s): gnss, sim-data_

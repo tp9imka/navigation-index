@@ -1,0 +1,34 @@
+# Hello AI World (jetson-inference)
+
+`repo:dusty-nv/jetson-inference` - <https://github.com/dusty-nv/jetson-inference>
+
+| stars | language | license | last push | archived | maturity | hackathon fit |
+|---|---|---|---|---|---|---|
+| 9,033 | C++ | MIT | 2025-10-16 | False | production | high |
+
+NVIDIA's guide and library for deploying detection, segmentation and depth networks with TensorRT on Jetson, with camera streaming.
+
+**Why it matters:** Get onboard perception running on a Jetson in hours.
+
+**Hackathon notes:** Use the Docker container; works with CSI/USB cameras.
+
+**Concepts:** [Onboard / edge AI perception](../concepts/edge-ai.md)
+
+**Tags:** `jetson`, `tensorrt`, `detection`, `segmentation`
+
+**Domains:** air, ground
+
+## Related
+
+- integrates_with: [ros_deep_learning](../repos/dusty-nv__ros_deep_learning.md)
+- same_org: [jetson-containers](../repos/dusty-nv__jetson-containers.md)
+
+## Referenced by
+
+- [jetson-containers](../repos/dusty-nv__jetson-containers.md) (same_org)
+- [ros_deep_learning](../repos/dusty-nv__ros_deep_learning.md) (depends_on)
+- [torch2trt](../repos/nvidia-ai-iot__torch2trt.md) (alternative_to)
+
+_Indexed by lane(s): gap-fill_
+
+_GitHub metadata fetched 2026-11-06._

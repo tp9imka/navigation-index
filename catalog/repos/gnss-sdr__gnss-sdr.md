@@ -27,8 +27,10 @@ Full software-defined GNSS receiver built on GNU Radio: acquisition, tracking, n
 ## Referenced by
 
 - [OSNMAlib](../repos/algafix__osnma.md) (integrates_with)
+- [CU Boulder GNSS SDR Collection](../repos/gnsscusdr__cu-sdr-collection.md) (alternative_to)
 - [OSNMA-SDR-SIM](../repos/haiyang-wong__osnma-sdr-sim.md) (integrates_with)
 - [GPS-SDR-SIM](../repos/osqzss__gps-sdr-sim.md) (integrates_with)
+- [GNSS-DSP-tools](../repos/pmonta__gnss-dsp-tools.md) (alternative_to)
 - [PocketSDR](../repos/tomojitakasu__pocketsdr.md) (alternative_to)
 - [BeiDou Navigation Satellite System Signal-In-Space ICDs (B1I, B3I, B1C, B2a, B2b)](../resources/beidou-icd-library.md) (has_code)
 - [A Software-Defined GPS and Galileo Receiver: A Single-Frequency Approach](../resources/borre-software-defined-gps-galileo-receiver.md) (has_code)

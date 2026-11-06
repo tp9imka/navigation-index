@@ -26,7 +26,9 @@ Open Python foot-mounted INS from UTIAS with a public inertial dataset and sever
 ## Referenced by
 
 - [ZUPT-aided INS (OpenShoe MATLAB)](../repos/hcarlsso__zupt-aided-ins.md) (alternative_to)
+- [IEZ (INS-EKF-ZUPT)](../repos/pajaraca__iez.md) (alternative_to)
 - [liegroups (Python)](../repos/utiasstars__liegroups.md) (same_org)
+- [OpenShoe: open source embedded foot-mounted INS](../resources/openshoe-foot-mounted-ins-2012.md) (explains)
 
 _Indexed by lane(s): ins-fusion_
 

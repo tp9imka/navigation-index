@@ -56,8 +56,8 @@ GPL autopilot covering Copter, Plane (incl. QuadPlane VTOL), Rover, boats and Ar
 - [Rpanion-server](../repos/stephendade__rpanion-server.md) (integrates_with)
 - [vision_to_mavros](../repos/thien94__vision_to_mavros.md) (integrates_with)
 - [Non-GPS Position Estimation (MAVLink messages)](../resources/ardupilot-dev-mavlink-nongps-position.md) (explains)
-- [ArduPilot Developer Conference Kaga 2024 (schedule and YouTube links)](../resources/ardupilot-devcon-2024-kaga.md) (uses)
 - [ArduPilot Developer Conference Kaga 2024 - schedule and YouTube links](../resources/ardupilot-devcon-kaga-2024.md) (explains)
+- [ArduPilot Developer Conference Kaga 2024 - schedule and YouTube links](../resources/ardupilot-devcon-kaga-2024.md) (uses)
 - [Extended Kalman Filter (EKF) navigation overview](../resources/ardupilot-ekf-overview.md) (explains)
 - [EKF Source Selection and Switching](../resources/ardupilot-ekf3-sources.md) (explains)
 - [GPS / Non-GPS Transitions](../resources/ardupilot-gps-non-gps-transitions.md) (explains)
@@ -76,6 +76,8 @@ GPL autopilot covering Copter, Plane (incl. QuadPlane VTOL), Rover, boats and Ar
 - [MAVLink Developer Guide](../resources/mavlink-developer-guide.md) (uses)
 - [MAVLink Mission Protocol](../resources/mavlink-mission-protocol.md) (uses)
 - [Developer Unconference - Paul Riseborough (EKF)](../resources/riseborough-ardupilot-unconference-2017-ekf.md) (explains)
+- [ArduPilot EKF3 source-set switch under GPS denial](../samples/ardupilot-ekf3-source-switch.md) (uses)
+- [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) (uses)
 
 _Indexed by lane(s): autopilots, domains-swarm_
 

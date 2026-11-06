@@ -28,6 +28,7 @@ Wuhan University i2Nav reference implementation of loosely coupled GNSS/INS inte
 - [OB_GINS](../repos/i2nav-whu__ob_gins.md) (same_org)
 - [NaveGo](../repos/rodralez__navego.md) (alternative_to)
 - [Principles of GNSS, Inertial, and Multisensor Integrated Navigation Systems, Second Edition](../resources/groves-pnt-book-2e.md) (explains)
+- [GNSS/INS EKF through a GNSS outage and a spoofing walk-off](../samples/gnss-ins-ekf-outage.md) (explains)
 
 _Indexed by lane(s): ins-fusion_
 

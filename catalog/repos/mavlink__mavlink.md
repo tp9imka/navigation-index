@@ -34,6 +34,8 @@ Message definitions (XML dialects) and the pymavlink-based generator for the MAV
 - [MAVLink Developer Guide](../resources/mavlink-developer-guide.md) (has_code)
 - [MAVLink Mission Protocol](../resources/mavlink-mission-protocol.md) (has_code)
 - [Open Drone ID (MAVLink microservice)](../resources/mavlink-opendroneid-microservice.md) (explains)
+- [ArduPilot EKF3 source-set switch under GPS denial](../samples/ardupilot-ekf3-source-switch.md) (explains)
+- [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) (uses)
 
 _Indexed by lane(s): autopilots_
 

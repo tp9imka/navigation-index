@@ -6,7 +6,7 @@ Global/local planners, sampling and search based planning, trajectory optimizati
 
 **Sub-concepts:** [Mission planning and routing](../concepts/mission-planning.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md)
 
-## Repositories (34)
+## Repositories (37)
 
 - [PythonRobotics](../repos/atsushisakai__pythonrobotics.md) - fit: high - Large collection of readable Python implementations of robotics algorithms: localization (EKF, particle filter), SLAM, path planning (A*, RRT*, D*, state lattice), path tracking and more, with animations.
 - [OSRM](../repos/project-osrm__osrm-backend.md) - fit: high - High-performance road routing engine on OpenStreetMap data using contraction hierarchies or multi-level Dijkstra.
@@ -20,6 +20,7 @@ Global/local planners, sampling and search based planning, trajectory optimizati
 - [CMU Autonomous Exploration Development Environment](../repos/hongbiaoz__autonomous_exploration_development_environment.md) - fit: high - CMU ground-robot development environment with simulated worlds, terrain analysis, local planner and waypoint tools used for exploration research (TARE, FAR planner).
 - [Fields2Cover](../repos/fields2cover__fields2cover.md) - fit: high - Modular coverage path planning library: headland generation, swath generation, route ordering (boustrophedon, snake, spiral) and Dubins/Reeds-Shepp path smoothing, with Python bindings.
 - [TARE Planner (CMU Explorer)](../repos/caochao39__tare_planner.md) - fit: high - Hierarchical exploration planner from CMU's Team Explorer, which earned the most-sectors-explored award at the SubT final.
+- [Nav2 tutorials](../repos/ros-navigation__navigation2_tutorials.md) - fit: high - Tutorial packages referenced by docs.nav2.org: example planner, controller and behavior-tree plugins, SLAM and GPS waypoint following setups.
 - [MOOS-IvP](../repos/moos-ivp__moos-ivp.md) - fit: high - Long-running autonomy middleware (MOOS) plus the IvP Helm behaviour-based multi-objective decision engine, used widely for autonomous marine vehicles, including COLREGs-aware collision avoidance behaviours.
 - [grid_map](../repos/leggedrobotics__grid_map.md) - fit: high - Universal multi-layer 2.5D grid map library for mobile robots with ROS/ROS 2 integration, filters, iterators and conversion to images, point clouds and costmaps.
 - [Autoware](../repos/autowarefoundation__autoware.md) - fit: medium - Meta-repository for Autoware, the open-source ROS 2 autonomous driving stack covering localization (NDT, EKF), perception, planning and control.
@@ -34,9 +35,11 @@ Global/local planners, sampling and search based planning, trajectory optimizati
 - [KR Autonomous Flight](../repos/kumarrobotics__kr_autonomous_flight.md) - fit: medium - UPenn Kumar Robotics end-to-end autonomy stack for GPS-denied quadrotors: state estimation, mapping, planning and control in one system.
 - [polygon_coverage_planning](../repos/ethz-asl__polygon_coverage_planning.md) - fit: medium - ETH ASL coverage planner for polygons with holes that treats boustrophedon sweep selection as a generalized TSP, aimed at UAV survey.
 - [opennav_coverage](../repos/open-navigation__opennav_coverage.md) - fit: medium - Nav2-compatible complete-coverage task server and navigator built on Fields2Cover, with behavior-tree utilities for field/area coverage and row following.
+- [MIT VNAV labs](../repos/mit-spark__vnav-labs.md) - fit: medium - Lab assignments for MIT 16.485 Visual Navigation for Autonomous Vehicles: ROS, 3D geometry, trajectory optimization, feature tracking, two-view geometry, VIO and place recognition.
 - [BenchNav](../repos/masafumiendo__benchnav.md) - fit: medium - Gymnasium-based PyTorch simulator for benchmarking off-road navigation planners under uncertain, probabilistic traversability, with synthetic terrain generation.
 - [HOUND](../repos/prl-mushr__hound_core.md) - fit: medium - Autonomy stack for a small-scale high-speed off-road vehicle from the UW MuSHR group, with BeamNG simulator integration and Jetson Orin deployment.
 - [MOOS-IvP COLREGs master's research code](../repos/d2snc__moos-ivp-masters.md) - fit: medium - MOOS-IvP applications from a 2025 master's project at Universidade de Sao Paulo implementing COLREGs-compliant collision avoidance for USVs, including a modified A* planner, a velocity-obstacle method and a virtual-conta
+- [MoveIt 2](../repos/moveit__moveit2.md) - fit: low - Motion planning framework for ROS 2 manipulators: kinematics, collision checking, planners (OMPL, Pilz, STOMP) and real-time servoing.
 - [GCOPTER](../repos/zju-fast-lab__gcopter.md) - fit: low - General-purpose multicopter trajectory optimizer (MINCO) handling safe-corridor constraints and dynamic limits with spatial-temporal deformation.
 - [MADER](../repos/mit-acl__mader.md) - fit: low - MIT ACL decentralized and asynchronous trajectory planner for multiple UAVs in dynamic environments with obstacle and agent avoidance.
 - [MBPlanner](../repos/ntnu-arl__mbplanner_ros.md) - fit: low - Motion-primitive based exploration planner for fast aerial robots in confined spaces, used in CERBERUS flying platforms.

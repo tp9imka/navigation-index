@@ -13,7 +13,7 @@ Clocks, holdover, PTP/NTP, GNSS-disciplined oscillators, chip-scale atomic clock
 - [GNSSTk](../repos/sgl-ut__gnsstk.md) - fit: low - C++ library (successor to GPSTk) from UT Austin ARL for GNSS data formats, time systems, ephemeris handling and positioning algorithms, with Python bindings.
 - [KiwiSDR](../repos/jks-prv__kiwisdr.md) - fit: low - Web-accessible shortwave SDR receiver (10 kHz - 30 MHz) with built-in software GPS and a Loran-C/eLoran monitor extension.
 
-## Documents, talks, courses, datasets (20)
+## Documents, talks, courses, datasets (21)
 
 - [Assessing Alternative Positioning, Navigation and Timing Technologies for Potential Deployment in the EU](../resources/jrc-assessing-apnt-2023.md) - report - JRC test campaign at Ispra of commercial alternative PNT systems (terrestrial beacons, LEO, eLoran-like, fibre timing and others) for DG DEFIS.
 - [Complementary PNT and GPS Backup Technologies Demonstration Report](../resources/dot-complementary-pnt-report-2021.md) - report - Field demonstration of 11 GPS-backup technologies (including eLoran, terrestrial beacons, LEO and fiber timing) against defined scenarios, delivered to Congress.
@@ -22,6 +22,7 @@ Clocks, holdover, PTP/NTP, GNSS-disciplined oscillators, chip-scale atomic clock
 - [DARPA's ROCkN Program Targets GNSS-Free Precision Timing in Contested Environments](../resources/darpa-rockn-insidegnss.md) - blog - Progress report on ROCkN field tests, including optical clock hardware flown on aircraft and deployed aboard a ship.
 - [DHS S&T Positioning, Navigation, and Timing Program](../resources/dhs-st-pnt-program.md) - doc - Program hub for DHS PNT work: conformance framework, reference architecture, timing guidance and test events for critical infrastructure.
 - [DOT Complementary PNT Action Plan](../resources/dot-complementary-pnt-action-plan-2023.md) - report - US DOT plan to drive adoption of complementary PNT for transportation and critical infrastructure via stakeholder engagement, specifications, field trials and test ranges.
+- [eLoran Independent Assessment Team findings (PNT Advisory Board briefing)](../resources/faa-eloran-iat-2014.md) - talk - Briefing to the US Space-Based PNT Advisory Board summarizing the 2006-2008 independent assessment of eLoran as a GPS backup, its accuracy and its independent failure modes.
 - [Executive Order 13905: Strengthening National Resilience Through Responsible Use of PNT Services](../resources/eo-13905-responsible-pnt.md) - standard - US executive order that defines 'responsible use of PNT' and tasks Commerce/NIST, DHS and others to produce PNT profiles, identify critical infrastructure dependencies and pilot-test resilience.
 - [GPS: An Introduction to Satellite Navigation, with an interactive Worldwide Laboratory using Smartphones](../resources/stanford-gps-mooc-van-diggelen-enge.md) - course - Stanford MOOC (originally on Coursera) now freely available as a long video series: how GPS works, pseudoranges, orbits and signals, receiver design, assisted GPS and the future of GNSS, with smartphone-based labs.
 - [ION Online Tutorial: The Basics of Satellite Navigation](../resources/ion-online-tutorial-basics-satnav.md) - course - ION's free online tutorial introducing satellite navigation fundamentals: trilateration with pseudoranges, clocks, signals, error sources and augmentation.

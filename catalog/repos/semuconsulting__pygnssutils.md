@@ -26,6 +26,7 @@ Python CLI and library utilities for reading, parsing and broadcasting GNSS stre
 ## Referenced by
 
 - [PyGPSClient](../repos/semuconsulting__pygpsclient.md) (depends_on)
+- [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../samples/gnss-interference-monitor.md) (uses)
 
 _Indexed by lane(s): gnss_
 

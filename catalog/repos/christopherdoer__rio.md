@@ -24,7 +24,9 @@ EKF-based radar-inertial odometry using 4D mmWave radar ego-velocity measurement
 
 ## Referenced by
 
+- [REVE](../repos/christopherdoer__reve.md) (integrates_with)
 - [RRxIO](../repos/christopherdoer__rrxio.md) (extends)
+- [HKUST 4D Radar-Inertial Odometry](../repos/hkust-aerial-robotics__rio.md) (alternative_to)
 - [Go-RIO](../repos/wooseongy__go-rio.md) (alternative_to)
 
 _Indexed by lane(s): slam_

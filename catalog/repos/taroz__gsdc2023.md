@@ -29,7 +29,6 @@ Winning-team code for the Google Smartphone Decimeter Challenge 2023, using fact
 - [GPS Measurement Tools (incl. GnssLogger)](../repos/google__gps-measurement-tools.md) (integrates_with)
 - [MatRTKLIB](../repos/taroz__matrtklib.md) (same_org)
 - [Google Smartphone Decimeter Challenge 2023-2024](../resources/google-gsdc-2023.md) (has_code)
-- [Google Smartphone Decimeter Challenge 2023-2024](../resources/google-smartphone-decimeter-2023.md) (has_code)
 
 _Indexed by lane(s): gnss, sim-data_
 

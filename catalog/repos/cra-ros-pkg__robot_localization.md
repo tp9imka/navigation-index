@@ -27,6 +27,8 @@ ROS package with EKF and UKF state estimation nodes that fuse any number of odom
 
 - [imu_tools](../repos/ccnyroboticslab__imu_tools.md) (integrates_with)
 - [ethzasl_msf (Multi Sensor Fusion)](../repos/ethz-asl__ethzasl_msf.md) (alternative_to)
+- [fuse](../repos/locusrobotics__fuse.md) (alternative_to)
+- [ROSCon UK 2025 State Estimation workshop](../repos/locusrobotics__roscon-uk-2025-se-workshop.md) (depends_on)
 - [Navigating Using GPS Localization (Nav2 tutorial)](../resources/nav2-gps-navigation-tutorial.md) (uses)
 - [Nav2 first-time robot setup: Odometry and robot_localization](../resources/nav2-robot-localization-setup-guide.md) (uses)
 - [ROSCon UK 2025 - State Estimation for Mobile Robotics Workshop](../resources/nav2-roscon-uk-2025-state-estimation-workshop.md) (uses)

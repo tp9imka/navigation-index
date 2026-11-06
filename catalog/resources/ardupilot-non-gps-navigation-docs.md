@@ -24,6 +24,6 @@ Landing page in the ArduPilot wiki listing every supported way to navigate witho
 
 ## Referenced by
 
-- [ArduPilot Developer Conference Kaga 2024 (schedule and YouTube links)](../resources/ardupilot-devcon-2024-kaga.md) (part_of)
+- [ArduPilot Developer Conference Kaga 2024 - schedule and YouTube links](../resources/ardupilot-devcon-kaga-2024.md) (part_of)
 
 _Indexed by lane(s): autopilots, learning_

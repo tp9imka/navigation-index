@@ -17,9 +17,9 @@ Vendor write-up of its receivers' behaviour during the Jammertest live jamming a
 
 ## Related
 
-- dataset_for: `repo:npra/jammertest-plan` (not indexed)
-- dataset_for: `repo:univaasadigieco/vaara` (not indexed)
-- dataset_for: `repo:felixott94/fraunhoferiis_jammertest2025` (not indexed)
+- dataset_for: [Jammertest test plan](../repos/npra__jammertest-plan.md)
+- dataset_for: [VAARA Jammertest dataset](../repos/univaasadigieco__vaara.md)
+- dataset_for: [Fraunhofer IIS Jammertest 2025 dataset](../repos/felixott94__fraunhoferiis_jammertest2025.md)
 - evaluates: [Jammertest - open GNSS jamming and spoofing test event (Andoya, Norway)](../resources/jammertest-norway.md)
 
 _Indexed by lane(s): docs-standards_

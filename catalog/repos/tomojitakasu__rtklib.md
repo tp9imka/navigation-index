@@ -42,6 +42,7 @@ The original open-source GNSS positioning package by T. Takasu: SPP, DGNSS, RTK,
 - [QZSS Performance Standards and Interface Specifications (IS-QZSS)](../resources/qzss-is-qzss.md) (has_code)
 - [RTCM 10403.x Differential GNSS (DGNSS) Services - Version 3](../resources/rtcm-sc104-standards.md) (has_code)
 - [rtklibexplorer blog](../resources/rtklibexplorer-blog.md) (uses)
+- [Public CORS RINEX to SPP vs RTK with RTKLIB demo5 and gnss_lib_py](../samples/gnss-rinex-processing.md) (explains)
 
 _Indexed by lane(s): gnss_
 

@@ -18,6 +18,6 @@ English translation of the popular Chinese visual SLAM textbook, from rigid-body
 ## Related
 
 - has_code: [14 Lectures on Visual SLAM (English)](../repos/gaoxiang12__slambook-en.md)
-- has_code: `repo:gaoxiang12/slambook2` (not indexed)
+- has_code: [14 Lectures on Visual SLAM (2nd ed.) code](../repos/gaoxiang12__slambook2.md)
 
 _Indexed by lane(s): learning_

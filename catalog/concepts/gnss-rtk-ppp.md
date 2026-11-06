@@ -6,6 +6,10 @@ Carrier-phase differential and precise point positioning, corrections (RTCM, SSR
 
 **Parent:** [GNSS positioning](../concepts/gnss.md)
 
+## Samples (1)
+
+- [Public CORS RINEX to SPP vs RTK with RTKLIB demo5 and gnss_lib_py](../samples/gnss-rinex-processing.md) - Downloads one day of public NOAA NGS CORS RINEX for a rover/base pair 30 km apart, runs RTKLIB demo5 rnx2rtkp in single-point and kinematic RTK modes with exact CLI flags, and scores both against the stations' published 
+
 ## Repositories (20)
 
 - [RTKLIB](../repos/tomojitakasu__rtklib.md) - fit: high - The original open-source GNSS positioning package by T.
@@ -35,10 +39,10 @@ Carrier-phase differential and precise point positioning, corrections (RTCM, SSR
 - [Galileo High Accuracy Service Signal-In-Space ICD (HAS SIS ICD) Issue 1.0](../resources/galileo-has-sis-icd.md) - standard - Defines the free Galileo High Accuracy Service: PPP orbit, clock and bias corrections broadcast on E6-B (and via internet), including message structure and Reed-Solomon encoding.
 - [GNSS Data Processing, Vol. I: Fundamentals and Algorithms (ESA TM-23)](../resources/esa-gnss-data-processing-vol1.md) - book - Free ESA textbook covering GNSS measurement modelling, SPP, differential positioning and PPP algorithms with full equations.
 - [GNSS Data Processing, Vol. II: Laboratory Exercises (ESA TM-23)](../resources/esa-gnss-data-processing-vol2.md) - book - Hands-on lab volume with step-by-step exercises on real data using the gLAB software, from SPP to carrier-phase PPP.
-- [Google Smartphone Decimeter Challenge 2023-2024](../resources/google-smartphone-decimeter-2023.md) - competition - Kaggle competition with raw GNSS and IMU logs from Android phones in cars, scored on positioning accuracy against high-grade truth.
+- [Google Smartphone Decimeter Challenge 2023-2024](../resources/google-gsdc-2023.md) - competition - Kaggle competition with raw GNSS and IMU logs from Android phones in cars, scored on positioning accuracy against high-grade truth.
 - [IGS products](../resources/igs-products.md) - doc - Catalog of International GNSS Service precise orbits, clocks, biases and atmospheric products used by PPP and precise processing.
 - [ION GNSS+ Tutorials](../resources/ion-gnss-plus-tutorials.md) - course - Pre-conference tutorial programme of ION GNSS+, the main annual GNSS technical meeting: half-day in-depth courses by field experts on topics such as GNSS signals, receivers, PPP/RTK, inertial integration and interference
-- [Navipedia](../resources/esa-navipedia.md) - doc - ESA-maintained wiki on GNSS: systems, signals, receivers, error sources, positioning algorithms (SPP, DGNSS, RTK, PPP), augmentation and applications.
+- [Navipedia - ESA GNSS encyclopedia](../resources/navipedia.md) - doc - ESA's free wiki covering GNSS fundamentals, systems, signals, receivers, augmentation and applications.
 - [Navipedia: RTK Standards](../resources/navipedia-rtk-standards.md) - doc - Free encyclopedia overview of the RTCM correction message families and transport (NTRIP) used for real-time kinematic positioning.
 - [NTRIP: Networked Transport of RTCM via Internet Protocol (BKG)](../resources/bkg-ntrip-about.md) - doc - BKG's overview of the NTRIP protocol for streaming GNSS corrections, with links to its caster, client and server software.
 - [QZSS Performance Standards and Interface Specifications (IS-QZSS)](../resources/qzss-is-qzss.md) - standard - Japan's QZSS interface specifications covering GPS-compatible signals, the L6 CLAS centimetre-level augmentation and MADOCA PPP services.

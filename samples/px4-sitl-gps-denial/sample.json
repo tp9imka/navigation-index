@@ -1,0 +1,15 @@
+{
+  "id": "sample:px4-sitl-gps-denial",
+  "title": "PX4 SITL GPS denial: inject, measure drift, recover",
+  "summary": "Flies a square mission in PX4 SITL (Gazebo gz_x500), turns the GPS off mid-mission with MAVSDK failure injection, logs EKF2 health and estimated vs ground-truth position, then restores GPS and returns home. A stdlib analyzer reports per-phase horizontal drift and time to a 5 m error, and reads 'not measured' when no truth is available.",
+  "concepts": ["concept:assured-pnt", "concept:autopilot", "concept:simulation", "concept:sensor-fusion", "concept:ins"],
+  "tags": ["px4", "ekf2", "sitl", "gazebo", "mavsdk", "failure-injection", "gps-denied", "drift", "ulog"],
+  "related": [
+    {"id": "repo:px4/px4-autopilot", "rel": "uses"},
+    {"id": "repo:mavlink/mavsdk-python", "rel": "uses"},
+    {"id": "repo:mavlink/mavsdk", "rel": "uses"},
+    {"id": "repo:gazebosim/gz-sim", "rel": "uses"},
+    {"id": "repo:px4/flight_review", "rel": "explains"}
+  ],
+  "verified": "drift.py and test_drift.py ran with python3.14.7 stdlib on 2026-11-06 (4 tests OK, synthetic drift output shown in README). gps_denial_mission.py and ulog_drift.py are unverified sketches: syntax-checked only, require mavsdk-grpc with PX4 SITL (Gazebo) and pyulog respectively."
+}

@@ -28,8 +28,12 @@ The standard ROS 2 navigation stack: behavior-tree driven navigator, global plan
 ## Referenced by
 
 - [BehaviorTree.CPP](../repos/behaviortree__behaviortree.cpp.md) (integrates_with)
+- [Beluga](../repos/ekumen-os__beluga.md) (alternative_to)
+- [MoveIt 2](../repos/moveit__moveit2.md) (integrates_with)
+- [Isaac ROS nvblox](../repos/nvidia-isaac-ros__isaac_ros_nvblox.md) (integrates_with)
 - [opennav_coverage](../repos/open-navigation__opennav_coverage.md) (extends)
 - [PlanSys2](../repos/plansys2__ros2_planning_system.md) (integrates_with)
+- [Nav2 tutorials](../repos/ros-navigation__navigation2_tutorials.md) (extends)
 - [Spatio-Temporal Voxel Layer](../repos/stevemacenski__spatio_temporal_voxel_layer.md) (integrates_with)
 - [The Marathon 2: A Navigation System](../resources/macenski-marathon2-nav2.md) (has_code)
 - [From the Desks of ROS Maintainers: A Survey of Modern & Capable Mobile Robotics Algorithms in the Robot Operating System 2](../resources/macenski-ros2-algorithms-survey.md) (explains)

@@ -35,6 +35,7 @@ MSCKF-based visual-inertial navigation platform with online calibration, a simul
 - [Basalt](../repos/vladyslavusenko__basalt.md) (alternative_to)
 - [Visual-Inertial Navigation: A Concise Review](../resources/huang-vins-concise-review-2019.md) (explains)
 - [OpenVINS documentation](../resources/openvins-docs.md) (has_code)
+- [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) (explains)
 
 _Indexed by lane(s): slam_
 

@@ -25,6 +25,7 @@ ROS 2 package combining TERCOM-style terrain matching with an error-state Kalman
 ## Referenced by
 
 - [python-tercom](../repos/alti3__python-tercom.md) (alternative_to)
+- [TRN particle filter examples](../repos/rhymesg__particle_filter.md) (alternative_to)
 - [Terrain-relative navigation with a particle filter](../samples/terrain-relative-nav-pf.md) (explains)
 
 _Indexed by lane(s): alt-nav_

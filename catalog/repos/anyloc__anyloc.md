@@ -29,6 +29,7 @@ Universal visual place recognition using foundation-model (DINOv2) features with
 - [UAVLocalization (map retrieval + alignment)](../repos/hmf21__uavlocalization.md) (alternative_to)
 - [SALAD](../repos/serizba__salad.md) (alternative_to)
 - [AnyLoc: Towards Universal Visual Place Recognition](../resources/anyloc-universal-vpr-2023.md) (has_code)
+- [Drone frame to orthophoto geolocalization with LightGlue](../samples/visual-geolocalization-lightglue.md) (explains)
 
 _Indexed by lane(s): alt-nav_
 

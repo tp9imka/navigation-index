@@ -6,7 +6,7 @@ SuperPoint + LightGlue matches -> OpenCV homography -> frame centre in tile pixe
 Unverified sketch: requires torch, lightglue (pip install -e cvg/LightGlue),
 opencv-python, rasterio, numpy.
 
-    python3 geolocalize.py --frame drone.jpg --tile ortho.tif [--truth LAT LON]
+    python3 geolocalize.py --frame drone.jpg --tile ortho.tif [--prior LAT LON] [--truth LAT LON]
 """
 
 import argparse
@@ -18,6 +18,7 @@ import torch
 from lightglue import LightGlue, SuperPoint
 from lightglue.utils import numpy_image_to_torch, rbd, read_image
 from rasterio.warp import transform as warp_transform
+from rasterio.windows import Window
 
 import geo_math
 
@@ -25,16 +26,23 @@ MAX_KEYPOINTS = 2048
 RANSAC_REPROJ_PX = 4.0
 MIN_INLIERS = 25
 ROTATIONS_K = (0, 1, 2, 3)  # SuperPoint is not rotation invariant: try 0/90/180/270 deg
+DEFAULT_CROP_PX = 2048
 
 
-def load_tile(path):
+def load_tile(path, prior=None, crop_px=DEFAULT_CROP_PX):
+    """Read RGB as uint8 HxWx3. With a (lat, lon) prior, read only a crop_px window around it."""
     with rasterio.open(path) as src:
-        bands = src.read([1, 2, 3]) if src.count >= 3 else np.repeat(src.read([1]), 3, axis=0)
-        img = np.transpose(bands, (1, 2, 0))
+        window = None
+        if prior is not None:
+            xs, ys = warp_transform("EPSG:4326", src.crs, [prior[1]], [prior[0]])
+            row, col = src.index(xs[0], ys[0])
+            window = Window(col - crop_px // 2, row - crop_px // 2, crop_px, crop_px)
+        idx = [1, 2, 3] if src.count >= 3 else [1, 1, 1]
+        img = np.transpose(src.read(idx, window=window, boundless=window is not None), (1, 2, 0))
         if img.dtype != np.uint8:
             lo, hi = np.percentile(img, (2, 98))
             img = np.clip((img - lo) / max(hi - lo, 1e-6) * 255, 0, 255).astype(np.uint8)
-        t = src.transform
+        t = src.window_transform(window) if window is not None else src.transform
         return img, (t.a, t.b, t.c, t.d, t.e, t.f), src.crs
 
 
@@ -68,6 +76,9 @@ def main():
     ap.add_argument("--frame", required=True)
     ap.add_argument("--tile", required=True)
     ap.add_argument("--truth", type=float, nargs=2, metavar=("LAT", "LON"))
+    ap.add_argument("--prior", type=float, nargs=2, metavar=("LAT", "LON"),
+                    help="rough position (INS / last fix); crops the map around it")
+    ap.add_argument("--crop-px", type=int, default=DEFAULT_CROP_PX)
     args = ap.parse_args()
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -75,7 +86,7 @@ def main():
     matcher = LightGlue(features="superpoint").eval().to(device)
 
     frame = read_image(args.frame)
-    tile, tile_transform, crs = load_tile(args.tile)
+    tile, tile_transform, crs = load_tile(args.tile, args.prior, args.crop_px)
 
     with torch.inference_mode():
         best = best_homography(extractor, matcher, frame, tile, device)

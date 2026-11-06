@@ -2,21 +2,29 @@
 
 `res:stone-soup-docs` - doc - <https://stonesoup.readthedocs.io/en/latest/>
 
-**By:** Dstl, Stone Soup community - **Year:** 2025 - **Level:** intermediate - **Access:** open
+**By:** Dstl, Stone Soup community, Stone Soup contributors - **Year:** 2025 - **Level:** intermediate - **Access:** open
 
-Official docs for Dstl's tracking framework with tutorials on Kalman, particle and multi-target trackers, data association and metrics.
+Official docs for the Stone Soup tracking framework with step-by-step tutorials from a single-target Kalman filter through data association (PDA, JPDA), multi-hypothesis tracking, GM-PHD, track initiation/deletion, sensor management and performance metrics.
 
 ## Key takeaways
 
 - Tutorial path from single-target Kalman to multi-target
 - Metrics module helps score your fusion objectively
+- Tutorials double as a self-paced multi-target tracking course
+- Metrics module (OSPA, SIAP) gives defensible evaluation numbers
+- Sensor and simulator components let you test without real radar
 
-**Concepts:** [Tracking and data association](../concepts/target-tracking.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Tracking and data association](../concepts/target-tracking.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Counter-UAS and drone detection](../concepts/counter-uas.md)
 
-**Tags:** `dstl`, `docs`, `tutorial`
+**Tags:** `dstl`, `docs`, `tutorial`, `tutorials`, `python`
 
 ## Related
 
 - has_code: [Stone Soup](../repos/dstl__stone-soup.md)
+- explains: [Stone Soup](../repos/dstl__stone-soup.md)
 
-_Indexed by lane(s): defense-context_
+## Referenced by
+
+- [Stone Soup: No Longer Just an Appetiser](../resources/dstl-stone-soup-v1-fusion2023.md) (part_of)
+
+_Indexed by lane(s): defense-context, domains-swarm_

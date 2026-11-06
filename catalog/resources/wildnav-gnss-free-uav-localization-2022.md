@@ -2,7 +2,7 @@
 
 `res:wildnav-gnss-free-uav-localization-2022` - paper - <https://arxiv.org/abs/2210.09727>
 
-**By:** TIERS lab, University of Turku - **Year:** 2022 - **Level:** intermediate - **Access:** open
+**By:** Marius-Mihail Gurgu, Jorge Peña Queralta, Tomi Westerlund - **Year:** 2022 - **Level:** intermediate - **Access:** open
 
 Proposes matching drone camera frames to open satellite imagery with learned feature matching to get absolute position without GNSS, evaluated on flights over non-urban areas.
 

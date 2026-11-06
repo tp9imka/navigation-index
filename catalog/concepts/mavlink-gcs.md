@@ -6,11 +6,13 @@ MAVLink protocol, SDKs, ground control stations, telemetry radios.
 
 **Parent:** [Autopilots and flight control](../concepts/autopilot.md)
 
-## Samples (1)
+## Samples (3)
 
+- [ArduPilot EKF3 source-set switch under GPS denial](../samples/ardupilot-ekf3-source-switch.md) - Flies ArduCopter SITL on GPS, switches EKF3 to an external-nav source set (SITL vicon) with MAV_CMD_SET_EKF_SOURCE_SET or an RC aux switch, cuts simulated GPS, keeps flying, then restores it.
 - [MAVLink telemetry to TAK Cursor-on-Target](../samples/mavlink-to-tak-cot.md) - Bridges autopilot GLOBAL_POSITION_INT messages into Cursor-on-Target events so a UAV shows up as a friendly track on ATAK, WinTAK or iTAK.
+- [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) - Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold.
 
-## Repositories (29)
+## Repositories (32)
 
 - [QGroundControl](../repos/mavlink__qgroundcontrol.md) - fit: high - Qt/QML cross-platform GCS (desktop, Android, iOS) for PX4 and ArduPilot: setup, mission planning, video and telemetry.
 - [MAVLink](../repos/mavlink__mavlink.md) - fit: high - Message definitions (XML dialects) and the pymavlink-based generator for the MAVLink micro air vehicle protocol, used by PX4, ArduPilot and most GCS tools.
@@ -25,6 +27,7 @@ MAVLink protocol, SDKs, ground control stations, telemetry radios.
 - [vision_to_mavros](../repos/thien94__vision_to_mavros.md) - fit: high - ROS and Python scripts that convert external localisation (fiducials, T265 VIO, SLAM, depth) into MAVROS/MAVLink pose messages, tested on ArduPilot.
 - [mavp2p](../repos/bluenviron__mavp2p.md) - fit: high - Single-binary Go MAVLink router/proxy supporting serial, UDP and TCP with deduplication.
 - [Rpanion-server](../repos/stephendade__rpanion-server.md) - fit: high - Web-based companion-computer manager for MAVLink vehicles: telemetry routing, video streaming, logging and network config on Raspberry Pi/Jetson.
+- [MAVLinkMCP](../repos/ion-g-ion__mavlinkmcp.md) - fit: high - MCP server bridging an LLM to a drone over MAVLink, exposing arming, takeoff, waypoint and telemetry tools via MAVSDK.
 - [OpenHD](../repos/openhd__openhd.md) - fit: medium - Open-source long-range digital HD video and telemetry link over Wi-Fi adapters in monitor mode (wifibroadcast-style), for air and ground units.
 - [Mission Planner](../repos/ardupilot__missionplanner.md) - fit: medium - Windows-centric C#/.NET GCS for ArduPilot with deep parameter, log-analysis and mission tooling.
 - [WFB-ng](../repos/svpcom__wfb-ng.md) - fit: medium - Long-range packet radio link over raw Wi-Fi injection with FEC, carrying video, MAVLink and IP tunnels.
@@ -38,6 +41,8 @@ MAVLink protocol, SDKs, ground control stations, telemetry radios.
 - [jMAVSim](../repos/px4__jmavsim.md) - fit: medium - Lightweight Java multirotor simulator that speaks MAVLink to PX4, without a 3D-world physics engine.
 - [node-mavlink](../repos/ardupilot__node-mavlink.md) - fit: medium - TypeScript/Node.js MAVLink bindings and tools.
 - [DroneMagNav](../repos/ajisrawi__dronemagnav.md) - fit: medium - Open hardware + firmware design for a drone magnetic-anomaly navigation board (ESP32-S3, magnetometer, IMU, baro) running particle-filter matching against a global anomaly map and feeding position to a flight controller 
+- [mavlink-mcp (ArduPilot)](../repos/deepakpopli__mavlink-mcp.md) - fit: medium - MCP server for flying ArduPilot vehicles from AI agents over MAVLink, covering missions, camera vision and SITL workflows.
+- [ardupilot-mcp (safety-gated)](../repos/rmeadomavic__ardupilot-mcp.md) - fit: medium - SITL-first MCP server for talking to ArduPilot vehicles over MAVLink, with explicit safety gating of commands.
 - [DroneKit-Python](../repos/dronekit__dronekit-python.md) - fit: low - Older high-level Python API for MAVLink vehicles, built on pymavlink; maintenance has slowed (last push 2024).
 - [APM Planner 2](../repos/ardupilot__apm_planner.md) - fit: low - Qt-based cross-platform ArduPilot GCS, now largely in maintenance mode.
 - [SiK radio firmware](../repos/ardupilot__sik.md) - fit: low - Firmware and tools for Si1000-based telemetry radios (3DR/RFD900 class) carrying MAVLink.

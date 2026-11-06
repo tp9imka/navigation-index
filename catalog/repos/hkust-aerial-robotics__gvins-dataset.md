@@ -20,7 +20,11 @@ Dataset with synchronized visual, inertial and raw GNSS measurements released wi
 
 ## Related
 
-- evaluated_on: `repo:hkust-aerial-robotics/gvins` (not indexed)
+- evaluated_on: [GVINS](../repos/hkust-aerial-robotics__gvins.md)
+
+## Referenced by
+
+- [GVINS](../repos/hkust-aerial-robotics__gvins.md) (evaluated_on)
 
 _Indexed by lane(s): sim-data_
 

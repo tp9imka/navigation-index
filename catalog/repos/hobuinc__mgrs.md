@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 136 | C++ | MIT | 2026-11-03 | False | production | high |
 
-Python library converting between latitude/longitude and MGRS grid references, wrapping the GeoTrans C code.
+Python library converting between latitude/longitude and MGRS grid references, built on NGA GEOTRANS 3.10 (now a Rust port exposed through a pybind11 extension).
 
 **Why it matters:** MGRS is the grid language of military users; needed for any C2 UI or report generator.
 
-**Hackathon notes:** pip install mgrs; mind the precision argument for 1 m vs 10 m references.
+**Hackathon notes:** pip install mgrs; mind the precision argument for 1 m vs 10 m references. Since 1.6.0 inverse conversion returns the grid-cell centre, not the south-west corner.
 
 **Concepts:** [Geodesy and coordinate frames](../concepts/geodesy.md), [Standards and interface specs](../concepts/standards.md)
 

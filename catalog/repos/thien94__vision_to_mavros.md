@@ -28,6 +28,7 @@ ROS and Python scripts that convert external localisation (fiducials, T265 VIO, 
 - [MAVROS](../repos/mavlink__mavros.md) (integrates_with)
 - [ROS and VIO tracking camera for non-GPS navigation](../resources/ardupilot-ros-vio-tracking-camera.md) (has_code)
 - [Intel RealSense T265 / VIO tracking camera setup](../resources/ardupilot-vio-tracking-camera.md) (has_code)
+- [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) (explains)
 
 _Indexed by lane(s): autopilots_
 

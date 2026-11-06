@@ -774,7 +774,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "high",
-    "hackathon_notes": "pip install mavsdk; examples cover takeoff, missions, offboard velocity.",
+    "hackathon_notes": "pip install mavsdk-grpc and import mavsdk_grpc (the PyPI name 'mavsdk' now means the native binding with a different API); examples cover takeoff, missions, offboard velocity.",
     "related": [
       {
         "id": "repo:mavlink/mavsdk",
@@ -2151,7 +2151,7 @@
       "arduino",
       "esp32"
     ],
-    "language": "C++",
+    "language": "C",
     "domains": [
       "air"
     ],

@@ -25,7 +25,7 @@ Repository for the 2023 Hilti SLAM Challenge, including multi-session sequences.
 ## Referenced by
 
 - [Hilti SLAM Challenge 2022](../repos/hilti-research__hilti-slam-challenge-2022.md) (same_org)
-- [Hilti SLAM Challenge](../resources/hilti-slam-challenge-site.md) (has_code)
+- [Hilti SLAM Challenge](../resources/hilti-slam-challenge.md) (has_code)
 
 _Indexed by lane(s): sim-data_
 

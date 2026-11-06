@@ -25,7 +25,7 @@ A public submission repository for the JuliaCon 2020 MagNav signal-enhancement c
 ## Referenced by
 
 - [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md) (extends)
-- [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/afrl-mit-magnav-challenge-paper.md) (has_code)
+- [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/afrl-magnav-challenge-2020.md) (has_code)
 
 _Indexed by lane(s): defense-context_
 

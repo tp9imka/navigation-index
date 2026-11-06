@@ -31,8 +31,8 @@ Open-source Python framework from UK Dstl and partners for developing, running a
 - [KrakenSDR DoA DSP](../repos/krakenrf__krakensdr_doa.md) (integrates_with)
 - [pyais](../repos/m0r13n__pyais.md) (integrates_with)
 - [VIMMJIPDA tracker interface](../repos/ntnu-itk-autonomous-ship-lab__vimmjipda.md) (alternative_to)
-- [Stone Soup documentation and tutorials](../resources/dstl-stone-soup-docs.md) (explains)
 - [Stone Soup: No Longer Just an Appetiser](../resources/dstl-stone-soup-v1-fusion2023.md) (has_code)
+- [Stone Soup documentation and tutorials](../resources/stone-soup-docs.md) (explains)
 - [Stone Soup documentation and tutorials](../resources/stone-soup-docs.md) (has_code)
 - [Stone Soup radar tracking of two UAVs with JPDA and OSPA](../samples/stone-soup-tracking.md) (uses)
 

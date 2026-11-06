@@ -20,14 +20,15 @@ Annual open field event where Norwegian agencies transmit real jamming, spoofing
 
 ## Related
 
-- dataset_for: `repo:npra/jammertest-plan` (not indexed)
-- dataset_for: `repo:univaasadigieco/vaara` (not indexed)
-- dataset_for: `repo:felixott94/fraunhoferiis_jammertest2025` (not indexed)
-- has_code: `repo:npra/jammertest-plan` (not indexed)
+- dataset_for: [Jammertest test plan](../repos/npra__jammertest-plan.md)
+- dataset_for: [VAARA Jammertest dataset](../repos/univaasadigieco__vaara.md)
+- dataset_for: [Fraunhofer IIS Jammertest 2025 dataset](../repos/felixott94__fraunhoferiis_jammertest2025.md)
+- has_code: [Jammertest test plan](../repos/npra__jammertest-plan.md)
 - part_of: [Results Jammertest 2025 - Resilient GNSS in an Era of Rising Jamming & Spoofing (webinar)](../resources/septentrio-jammertest-2025-webinar.md)
 
 ## Referenced by
 
+- [Jammertest test plan](../repos/npra__jammertest-plan.md) (integrates_with)
 - [Results Jammertest 2025 - Resilient GNSS in an Era of Rising Jamming & Spoofing (webinar)](../resources/septentrio-jammertest-2025-webinar.md) (evaluates)
 - [Most resilient GNSS receiver: results from Jammertest in Norway](../resources/septentrio-jammertest-results.md) (evaluates)
 - [Jamming, spoofing and secure positioning: Jammertest insights (u-blox webinar)](../resources/ublox-jammertest-webinar.md) (evaluates)

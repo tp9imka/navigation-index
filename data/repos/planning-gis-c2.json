@@ -1515,7 +1515,7 @@
     "kind": "repo",
     "name": "mgrs (Python)",
     "url": "https://github.com/hobuinc/mgrs",
-    "summary": "Python library converting between latitude/longitude and MGRS grid references, wrapping the GeoTrans C code.",
+    "summary": "Python library converting between latitude/longitude and MGRS grid references, built on NGA GEOTRANS 3.10 (now a Rust port exposed through a pybind11 extension).",
     "why_it_matters": "MGRS is the grid language of military users; needed for any C2 UI or report generator.",
     "concepts": [
       "concept:geodesy",
@@ -1532,7 +1532,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "high",
-    "hackathon_notes": "pip install mgrs; mind the precision argument for 1 m vs 10 m references.",
+    "hackathon_notes": "pip install mgrs; mind the precision argument for 1 m vs 10 m references. Since 1.6.0 inverse conversion returns the grid-cell centre, not the south-west corner.",
     "related": [
       {
         "id": "repo:geographiclib/geographiclib",
@@ -2374,7 +2374,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "high",
-    "hackathon_notes": "Anonymous access is rate-limited; register for more.",
+    "hackathon_notes": "Anonymous access is rate-limited. Since March 2026 authenticated access uses OAuth2 client credentials (basic auth was dropped); create an API client in your OpenSky account.",
     "related": [
       {
         "id": "repo:xoolive/traffic",

@@ -20,7 +20,7 @@ C++/ROS definitions and utilities for raw GNSS measurement processing (ephemeris
 
 ## Related
 
-- same_org: `repo:hkust-aerial-robotics/gvins` (not indexed)
+- same_org: [GVINS](../repos/hkust-aerial-robotics__gvins.md)
 
 _Indexed by lane(s): gnss_
 

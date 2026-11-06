@@ -26,6 +26,7 @@ INS-centric GNSS-visual-inertial navigation system from i2Nav, where the precise
 ## Referenced by
 
 - [GICI-LIB](../repos/chichengcn__gici-open.md) (alternative_to)
+- [GVINS](../repos/hkust-aerial-robotics__gvins.md) (alternative_to)
 - [LE-VINS](../repos/i2nav-whu__le-vins.md) (same_org)
 
 _Indexed by lane(s): ins-fusion_

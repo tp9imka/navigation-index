@@ -28,7 +28,7 @@ Decodes DJI DroneID (OcuSync 2.0) frames from SDR I/Q recordings, building on pr
 - [DragonSync](../repos/alphafox02__dragonsync.md) (integrates_with)
 - [dji_droneid](../repos/proto17__dji_droneid.md) (alternative_to)
 - [DroneSecurity (DJI DroneID receiver)](../repos/rub-syssec__dronesecurity.md) (alternative_to)
-- [Drone Security and the Mysterious Case of DJI's DroneID](../resources/ndss2023-dji-droneid.md) (uses)
+- [Drone Security and the Mysterious Case of DJI's DroneID](../resources/ndss-2023-dji-droneid.md) (uses)
 
 _Indexed by lane(s): domains-swarm_
 

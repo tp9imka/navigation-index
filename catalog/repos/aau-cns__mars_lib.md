@@ -21,7 +21,7 @@ Modular IMU-driven sensor-fusion framework from University of Klagenfurt designe
 ## Related
 
 - alternative_to: [ethzasl_msf (Multi Sensor Fusion)](../repos/ethz-asl__ethzasl_msf.md)
-- same_org: `repo:aau-cns/cnspy_trajectory_evaluation` (not indexed)
+- same_org: [cnspy trajectory evaluation](../repos/aau-cns__cnspy_trajectory_evaluation.md)
 
 ## Referenced by
 

@@ -22,6 +22,10 @@ Dataset and index of event-based VO, VIO and SLAM work from HKU ArcLab, includin
 
 - evaluated_on: [ESVO](../repos/hkust-aerial-robotics__esvo.md)
 
+## Referenced by
+
+- [ESVIO](../repos/arclab-hku__esvio.md) (same_org)
+
 _Indexed by lane(s): slam_
 
 _GitHub metadata fetched 2026-11-06._

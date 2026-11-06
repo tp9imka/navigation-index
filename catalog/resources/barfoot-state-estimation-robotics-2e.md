@@ -21,7 +21,7 @@ Textbook on probabilistic estimation for robotics, from linear-Gaussian filterin
 ## Related
 
 - has_code: [liegroups (Python)](../repos/utiasstars__liegroups.md)
-- has_code: `repo:utiasasrl/steam` (not indexed)
+- has_code: [STEAM](../repos/utiasasrl__steam.md)
 - same_author: [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook.md)
 
 _Indexed by lane(s): ins-fusion, learning_

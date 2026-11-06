@@ -6,7 +6,7 @@ Route networks, waypoint missions, coverage, terrain-aware and threat-aware rout
 
 **Parent:** [Path and motion planning](../concepts/path-planning.md)
 
-## Repositories (19)
+## Repositories (22)
 
 - [QGIS](../repos/qgis__qgis.md) - fit: high - Desktop open-source GIS for viewing, editing, analyzing and printing geospatial data, extensible via Python plugins.
 - [QGroundControl](../repos/mavlink__qgroundcontrol.md) - fit: high - Qt/QML cross-platform GCS (desktop, Android, iOS) for PX4 and ArduPilot: setup, mission planning, video and telemetry.
@@ -14,6 +14,8 @@ Route networks, waypoint missions, coverage, terrain-aware and threat-aware rout
 - [Fields2Cover](../repos/fields2cover__fields2cover.md) - fit: high - Modular coverage path planning library: headland generation, swath generation, route ordering (boustrophedon, snake, spiral) and Dubins/Reeds-Shepp path smoothing, with Python bindings.
 - [TARE Planner (CMU Explorer)](../repos/caochao39__tare_planner.md) - fit: high - Hierarchical exploration planner from CMU's Team Explorer, which earned the most-sectors-explored award at the SubT final.
 - [MAVProxy](../repos/ardupilot__mavproxy.md) - fit: high - Command-line, module-based ground station and MAVLink proxy with map, console and many plugins.
+- [TypeFly](../repos/typefly__typefly.md) - fit: high - Framework for LLM-based drone task planning that compiles natural-language requests into a compact robot language (MiniSpec) executed on a DJI Tello with vision services.
+- [MAVLinkMCP](../repos/ion-g-ion__mavlinkmcp.md) - fit: high - MCP server bridging an LLM to a drone over MAVLink, exposing arming, takeoff, waypoint and telemetry tools via MAVSDK.
 - [CBBA (Python)](../repos/inmo-jang__consensus-based-bundle-algorithm.md) - fit: high - Python implementation of the Consensus-Based Bundle Algorithm for decentralized multi-agent task allocation with plotting examples.
 - [INAV](../repos/inavflight__inav.md) - fit: medium - Navigation-focused fork of the Cleanflight/Betaflight lineage for small multirotors, fixed-wing and rovers, adding GPS position hold, return-to-home and waypoint missions on cheap F4/F7/H7 boards.
 - [Mission Planner](../repos/ardupilot__missionplanner.md) - fit: medium - Windows-centric C#/.NET GCS for ArduPilot with deep parameter, log-analysis and mission tooling.
@@ -26,9 +28,10 @@ Route networks, waypoint missions, coverage, terrain-aware and threat-aware rout
 - [opennav_coverage](../repos/open-navigation__opennav_coverage.md) - fit: medium - Nav2-compatible complete-coverage task server and navigator built on Fields2Cover, with behavior-tree utilities for field/area coverage and row following.
 - [GNSS-Radar](../repos/taroz__gnss-radar.md) - fit: medium - Web application showing current GNSS satellite positions (sky plot) for a location and time across constellations.
 - [Open-RMF rmf_task](../repos/open-rmf__rmf_task.md) - fit: medium - Task allocation library from Open-RMF that assigns tasks to fleets of robots, accounting for battery, travel time and task constraints.
+- [mavlink-mcp (ArduPilot)](../repos/deepakpopli__mavlink-mcp.md) - fit: medium - MCP server for flying ArduPilot vehicles from AI agents over MAVLink, covering missions, camera vision and SITL workflows.
 - [Paparazzi UAV](../repos/paparazzi__paparazzi.md) - fit: low - Long-running academic autopilot (ENAC, TU Delft and others) for fixed-wing, rotorcraft and hybrids, with its own ground segment, flight-plan language and INS modules.
 
-## Documents, talks, courses, datasets (6)
+## Documents, talks, courses, datasets (7)
 
 - [Aerostack2: A Software Framework for Developing Multi-robot Aerial Systems](../resources/aerostack2-paper.md) - paper - Describes the Aerostack2 ROS 2 architecture for aerial robotics: platform abstraction, behaviors, mission specification and multi-robot support.
 - [Fields2Cover: An open-source coverage path planning library for unmanned agricultural vehicles](../resources/fields2cover-paper.md) - paper - Paper behind the Fields2Cover library: modular coverage pipeline (headlands, swaths, route ordering, path smoothing) and benchmark of its components.
@@ -36,4 +39,5 @@ Route networks, waypoint missions, coverage, terrain-aware and threat-aware rout
 - [Navigating Using GPS Localization (Nav2 tutorial)](../resources/nav2-gps-navigation-tutorial.md) - doc - Nav2 tutorial on outdoor navigation with GPS: fusing GNSS, IMU and odometry with robot_localization's navsat_transform, configuring Nav2 for GPS waypoints, and demonstrating it in Gazebo.
 - [NeBula: Quest for Robotic Autonomy in Challenging Environments; TEAM CoSTAR at the DARPA Subterranean Challenge](../resources/nebula-costar-subt-paper.md) - paper - Describes the NeBula belief-space autonomy stack: multi-modal positioning, mapping, traversability, risk-aware mission planning and multi-robot reasoning; CoSTAR won the Urban circuit.
 - [PlanSys2: A Planning System Framework for ROS2](../resources/plansys2-paper.md) - paper - Presents PlanSys2, a PDDL planning and execution framework for ROS 2 that compiles plans into behavior trees and supports multi-robot execution.
+- [TypeFly: Flying Drones with Large Language Model](../resources/typefly-2023.md) - paper - Proposes a compact drone programming language for LLM output, cutting token count and latency while keeping plans checkable.
 

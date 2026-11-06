@@ -20,6 +20,7 @@ SDK for the Oxford RobotCar dataset with loaders and projection tools.
 
 ## Referenced by
 
+- [Yeti radar odometry](../repos/keenan-burnett__yeti_radar_odometry.md) (evaluated_on)
 - [Oxford RobotCar Dataset](../resources/oxford-robotcar-dataset.md) (has_code)
 
 _Indexed by lane(s): sim-data_

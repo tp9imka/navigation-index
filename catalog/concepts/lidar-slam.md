@@ -4,7 +4,7 @@
 
 LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 
-## Repositories (51)
+## Repositories (54)
 
 - [FAST-LIO / FAST-LIO2](../repos/hku-mars__fast_lio.md) - fit: high - Computationally efficient LiDAR-inertial odometry using an iterated error-state Kalman filter and incremental k-d tree map, mapping raw points directly.
 - [LIO-SAM](../repos/tixiaoshan__lio-sam.md) - fit: high - Tightly coupled LiDAR-inertial odometry via factor-graph smoothing, with optional GPS factors and loop closure.
@@ -20,6 +20,7 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [Autoware](../repos/autowarefoundation__autoware.md) - fit: medium - Meta-repository for Autoware, the open-source ROS 2 autonomous driving stack covering localization (NDT, EKF), perception, planning and control.
 - [Cartographer](../repos/cartographer-project__cartographer.md) - fit: medium - Real-time 2D and 3D SLAM with submaps and branch-and-bound loop closure across many sensor configurations.
 - [FAST-LIVO2](../repos/hku-mars__fast-livo2.md) - fit: medium - Direct LiDAR-inertial-visual odometry fusing LiDAR, camera and IMU in a sequential ESIKF update with a unified voxel map.
+- [SLAM Handbook (public release)](../repos/slam-handbook-contributors__slam-handbook-public-release.md) - fit: medium - Release repo for the SLAM Handbook (Cambridge University Press), edited by Carlone, Kim, Barfoot, Cremers and Dellaert, published incrementally in three parts from late 2024.
 - [TEASER++](../repos/mit-spark__teaser-plusplus.md) - fit: medium - Certifiable, outlier-robust point-cloud registration library with C++, Python and MATLAB bindings.
 - [hdl_graph_slam](../repos/koide3__hdl_graph_slam.md) - fit: medium - 3D LiDAR graph SLAM with NDT/GICP scan matching odometry, loop detection and optional GPS, IMU and floor-plane constraints.
 - [GLIM](../repos/koide3__glim.md) - fit: medium - Versatile point-cloud localization and mapping framework with GPU-accelerated factor graphs, supporting many range sensors and optional IMU.
@@ -41,6 +42,7 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [DCL-SLAM](../repos/zhongshp__dcl-slam.md) - fit: medium - Distributed collaborative lidar SLAM for robotic swarms with lightweight LiDAR-Iris descriptors for inter-robot place recognition and minimal data exchange.
 - [4DRadarSLAM](../repos/zhuge2333__4dradarslam.md) - fit: medium - 4D radar SLAM with scan-to-scan registration, loop closure and pose-graph optimization, released with an NTU 4D radar dataset.
 - [sonar-SLAM](../repos/jake3991__sonar-slam.md) - fit: medium - Underwater SLAM for robots with multibeam imaging sonar, from Stevens Institute research on BlueROV-class vehicles, combining sonar feature extraction and pose-graph optimization.
+- [STEAM-ICP](../repos/utiasasrl__steam_icp.md) - fit: medium - Continuous-time lidar, radar, lidar-inertial and radar-inertial odometry built on the STEAM library.
 - [MIMOSA](../repos/ntnu-arl__mimosa.md) - fit: medium - Tightly coupled sliding-window factor-graph fusion of IMU with LiDAR (geometric and photometric), radar radial-speed factors and external odometry such as VIO.
 - [Scan Context](../repos/gisbi-kim__scancontext.md) - fit: medium - LiDAR global place descriptor for loop detection and relocalization (backup of the original IRAP KAIST repo).
 - [Hilti SLAM Challenge 2023](../repos/hilti-research__hilti-slam-challenge-2023.md) - fit: medium - Repository for the 2023 Hilti SLAM Challenge, including multi-session sequences.
@@ -56,9 +58,10 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [GLIO](../repos/xikunliu-huskit__glio.md) - fit: low - Tightly coupled GNSS/LiDAR/IMU integration (PolyU) for continuous, drift-free state estimation in urban canyons.
 - [Quatro](../repos/url-kaist__quatro.md) - fit: low - Fast, robust global registration for terrestrial robots that assumes near-planar motion to cut degrees of freedom.
 - [LE-VINS](../repos/i2nav-whu__le-vins.md) - fit: low - INS-centric visual-inertial navigation with LiDAR depth enhancement for visual features, from i2Nav.
+- [STEAM](../repos/utiasasrl__steam.md) - fit: low - Simultaneous Trajectory Estimation and Mapping engine from UTIAS: a C++ nonlinear least-squares library with continuous-time Gaussian-process trajectory priors on Lie groups.
 - [CELL](../repos/panagiotisq__cell.md) - fit: low - Event camera localization in prior lidar maps with confidence weighting.
 
-## Documents, talks, courses, datasets (34)
+## Documents, talks, courses, datasets (31)
 
 - [Autoware documentation](../resources/autoware-docs.md) - doc - Official Autoware documentation with architecture, installation, tutorials and design notes for localization, perception and planning components.
 - [CERBERUS: Autonomous Legged and Aerial Robotic Exploration in the Tunnel and Urban Circuits of the DARPA Subterranean Challenge](../resources/cerberus-tunnel-urban-paper.md) - paper - Field Robotics paper covering CERBERUS' systems and results in the earlier SubT circuits, including perception, planning and artifact reporting.
@@ -72,7 +75,6 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [GSoC 2022: Update ROS integration for Non-GPS navigation and off-board path planning](../resources/ardupilot-gsoc2022-ros-non-gps.md) - blog - Wrap-up of a GSoC project updating ArduPilot's ROS integration for lidar/SLAM-based non-GPS navigation and off-board planning.
 - [HeLiPR: Heterogeneous LiDAR Dataset for inter-LiDAR Place Recognition](../resources/snu-helipr-dataset.md) - dataset - Same routes captured with Ouster, Aeva, Livox and Velodyne lidars to test place recognition across different lidar types.
 - [Hilti SLAM Challenge](../resources/hilti-slam-challenge.md) - competition - SLAM benchmark challenge with datasets from handheld and robot-mounted multi-sensor rigs in construction sites and buildings, run with an associated ICRA workshop and public leaderboard.
-- [Hilti SLAM Challenge](../resources/hilti-slam-challenge-site.md) - competition - Recurring SLAM challenge on construction sites with handheld and robot-mounted sensor rigs and millimetre-level ground truth.
 - [KISS-ICP: In Defense of Point-to-Point ICP -- Simple, Accurate, and Robust Registration If Done the Right Way](../resources/kiss-icp-vizzo-2022.md) - paper - Argues that a carefully engineered point-to-point ICP with motion compensation and adaptive thresholds matches far more complex LiDAR odometry across platforms.
 - [KITTI Visual Odometry / SLAM Evaluation](../resources/kitti-odometry-benchmark.md) - dataset - Driving sequences with stereo cameras, Velodyne lidar and GPS/IMU ground truth, plus a public leaderboard for odometry.
 - [LiDAR Odometry Survey: Recent Advancements and Remaining Challenges](../resources/lee-lidar-odometry-survey-2023.md) - paper - Survey of LiDAR-only, LiDAR-inertial and multi-sensor LiDAR odometry, with discussion of datasets, evaluation and open challenges such as degeneracy.
@@ -87,11 +89,9 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [Robot Mapping (SLAM course) WS 2013/14](../resources/stachniss-slam-course-2013.md) - lecture-series - Full semester recording of the Freiburg Robot Mapping course: EKF-SLAM, sparse extended information filters, FastSLAM, grid-based mapping, least-squares and graph-based SLAM, and front-end/back-end design.
 - [Robot Mapping - WS 2013/14 course page (slides, exercises)](../resources/freiburg-robot-mapping-course.md) - course - Course page that accompanies the Robot Mapping lecture videos, with lecture slides and programming exercises (EKF-SLAM, UKF, FastSLAM, least-squares calibration, graph-SLAM) in Octave/Matlab.
 - [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook.md) - book - Community-written handbook released in three parts during 2024-2025 and published by Cambridge University Press; the free PDF is mirrored on the editors' project page.
-- [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook-carlone-2025.md) - book - Edited community handbook covering SLAM foundations (factor graphs, state representations), sensor-specific pipelines (visual, LiDAR, inertial, leg odometry) and spatial AI topics such as learned SLAM and NeRF/Gaussian-s
 - [State Estimation and Localization for Self-Driving Cars (Coursera)](../resources/coursera-state-estimation-localization-sdc.md) - course - Course 2 of the UofT Self-Driving Cars specialization: least squares, KF/EKF/ES-EKF/UKF, IMU and GNSS sensor models, LiDAR scan matching with ICP, culminating in an error-state EKF that fuses IMU, GNSS and LiDAR on CARLA
 - [SubT-MRS Dataset](../resources/cmu-subt-mrs-dataset.md) - dataset - Multi-robot, multi-modal SLAM data in degraded environments - caves, tunnels, urban and off-road - with RGB, lidar, thermal and inertial sensing; used in ICCV SLAM challenges.
-- [Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems](../resources/swarm-slam-paper.md) - paper - Paper behind Swarm-SLAM, focusing on sparse inter-robot communication and decentralized loop closure selection.
-- [Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems](../resources/swarm-slam-lajoie-2023.md) - paper - Decentralized collaborative SLAM aimed at swarms, prioritizing which inter-robot loop closures to compute and share to limit communication.
+- [Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems](../resources/swarm-slam-paper.md) - paper - Decentralized collaborative SLAM aimed at swarms, prioritizing which inter-robot loop closures to compute and share to limit communication.
 - [Team CERBERUS Wins the DARPA Subterranean Challenge: Technical Overview and Lessons Learned](../resources/cerberus-subt-final-paper.md) - paper - Winning team's description of its legged-plus-aerial system: multi-modal perception, robust localization and mapping, exploration planning and artifact detection, with lessons from the final.
 - [The University of Michigan North Campus Long-Term Vision and LIDAR Dataset](../resources/umich-nclt-dataset.md) - dataset - Segway robot sessions over many months on one campus with lidar, omnidirectional camera, GPS, IMU and odometry.
 

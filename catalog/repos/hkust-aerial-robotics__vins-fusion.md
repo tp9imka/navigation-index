@@ -25,7 +25,9 @@ Extension of VINS-Mono supporting mono+IMU, stereo, and stereo+IMU, with optiona
 ## Referenced by
 
 - [Ceres Solver](../repos/ceres-solver__ceres-solver.md) (integrates_with)
+- [GVINS](../repos/hkust-aerial-robotics__gvins.md) (extends)
 - [VINS-Mono](../repos/hkust-aerial-robotics__vins-mono.md) (alternative_to)
+- [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) (explains)
 
 _Indexed by lane(s): slam_
 

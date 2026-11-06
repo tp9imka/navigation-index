@@ -38,12 +38,11 @@ Detecting, tracking and identifying drones (Remote ID, RF, radar, vision) - defe
 - [dji_droneid](../repos/proto17__dji_droneid.md) - fit: low - Original reverse engineering of DJI DroneID with MATLAB scripts and a GNU Radio module to demodulate frames.
 - [DroneRF](../repos/al-sad__dronerf.md) - fit: low - MATLAB and Python code for drone detection and identification from RF signals, accompanying the DroneRF dataset.
 
-## Documents, talks, courses, datasets (15)
+## Documents, talks, courses, datasets (14)
 
 - [Anti-UAV Challenge](../resources/anti-uav-challenge-site.md) - competition - Site for the recurring Anti-UAV workshop and challenge with tracks for single and multiple UAV tracking in infrared video.
 - [Anti-UAV: A Large Multi-Modal Benchmark for UAV Tracking](../resources/anti-uav-benchmark-paper.md) - paper - Introduces the Anti-UAV RGB and thermal infrared video benchmark for UAV tracking and an evaluation protocol.
-- [Drone Security and the Mysterious Case of DJI's DroneID](../resources/ndss-2023-dji-droneid.md) - paper - Reverse-engineers DJI's DroneID broadcast, shows it is unencrypted, and builds an SDR receiver that decodes drone and pilot positions.
-- [Drone Security and the Mysterious Case of DJI's DroneID](../resources/ndss2023-dji-droneid.md) - paper - Security analysis of DJI drones that reverse-engineers the DroneID broadcast and shows it is unencrypted, with an open receiver released.
+- [Drone Security and the Mysterious Case of DJI's DroneID](../resources/ndss-2023-dji-droneid.md) - paper - Security analysis of DJI drones that reverse-engineers the DroneID broadcast and shows it is unencrypted, with an open receiver released.
 - [EUDIS Defence Hackathon, 3rd edition (with BraveTech EU)](../resources/eudis-defence-hackathon-2025.md) - competition - EU defence hackathon (17-19 October 2025, eight locations) with challenges on protecting space assets, space for defence (including navigation and coordination) and sovereign aerospace including drone countermeasures; a 
 - [FAA - Remote Identification of Drones](../resources/faa-remote-id.md) - doc - FAA guidance on the Remote ID rule: what drones must broadcast, standard vs broadcast-module compliance and operator obligations.
 - [Meatgrinder: Russian Tactics in the Second Year of Its Invasion of Ukraine](../resources/rusi-meatgrinder-2023.md) - report - RUSI special report on Russian battlefield adaptation, including the density of Russian electronic warfare and its heavy effect on Ukrainian UAVs, with a widely cited estimate of around 10,000 drone losses per month.
@@ -52,7 +51,7 @@ Detecting, tracking and identifying drones (Remote ID, RF, radar, vision) - defe
 - [Preliminary Lessons in Conventional Warfighting from Russia's Invasion of Ukraine: February-July 2022](../resources/rusi-preliminary-lessons-ukraine-2022.md) - report - RUSI analysis of the first months of the war, including the scale of Russian electronic warfare and its effect on Ukrainian UAV survival and GNSS-dependent systems.
 - [Remote ID (ArduPilot)](../resources/ardupilot-remote-id-docs.md) - doc - ArduPilot wiki page on Remote ID modules, including ArduRemoteID setup and compliance notes.
 - [Remote ID (Open Drone ID) in PX4](../resources/px4-remote-id-docs.md) - doc - PX4 documentation for connecting Remote ID modules over MAVLink or DroneCAN and related failsafe behaviour.
-- [Stone Soup documentation and tutorials](../resources/dstl-stone-soup-docs.md) - doc - Official docs for the Stone Soup tracking framework with step-by-step tutorials from a single-target Kalman filter through data association (PDA, JPDA), multi-hypothesis tracking, GM-PHD, track initiation/deletion, senso
+- [Stone Soup documentation and tutorials](../resources/stone-soup-docs.md) - doc - Official docs for the Stone Soup tracking framework with step-by-step tutorials from a single-target Kalman filter through data association (PDA, JPDA), multi-hypothesis tracking, GM-PHD, track initiation/deletion, senso
 - [Ukraine's Brave1, NATO launch EUR 10M competition for counter-drone technology](../resources/brave1-nato-counter-drone-ew-competition.md) - blog - Coverage of a Brave1-NATO competition funding counter-drone technology and navigation that works under electronic warfare.
 - [В Україні провели хакатон зі створення антидронових рішень (Anti-drone hackathon held in Ukraine)](../resources/militarnyi-anti-drone-hackathon-ukraine.md) - blog - Ukrainian-language report on a defense hackathon focused on counter-drone solutions.
 

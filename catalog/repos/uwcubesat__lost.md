@@ -22,6 +22,10 @@ Open-source star tracker (C++) covering centroiding, star identification and att
 
 - alternative_to: [tetra3](../repos/esa__tetra3.md)
 
+## Referenced by
+
+- [SPEL Open Star Tracker](../repos/spel-uchile__star_tracker.md) (alternative_to)
+
 _Indexed by lane(s): alt-nav_
 
 _GitHub metadata fetched 2026-11-06._

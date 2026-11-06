@@ -28,10 +28,13 @@ Python MAVLink implementation plus tools for connections, log parsing (DataFlash
 
 - [ArduPilot](../repos/ardupilot__ardupilot.md) (integrates_with)
 - [MAVProxy](../repos/ardupilot__mavproxy.md) (depends_on)
+- [mavlink-mcp (ArduPilot)](../repos/deepakpopli__mavlink-mcp.md) (depends_on)
 - [DroneKit-Python](../repos/dronekit__dronekit-python.md) (depends_on)
 - [MAVLink](../repos/mavlink__mavlink.md) (depends_on)
 - [Non-GPS Position Estimation (MAVLink messages)](../resources/ardupilot-dev-mavlink-nongps-position.md) (uses)
+- [ArduPilot EKF3 source-set switch under GPS denial](../samples/ardupilot-ekf3-source-switch.md) (uses)
 - [MAVLink telemetry to TAK Cursor-on-Target](../samples/mavlink-to-tak-cot.md) (uses)
+- [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) (uses)
 
 _Indexed by lane(s): autopilots_
 

@@ -26,6 +26,7 @@ Node.js server implementing the Signal K open marine data standard: it ingests N
 
 ## Referenced by
 
+- [CANboat](../repos/canboat__canboat.md) (integrates_with)
 - [OpenCPN](../repos/opencpn__opencpn.md) (integrates_with)
 - [signalk-to-nmea0183](../repos/signalk__signalk-to-nmea0183.md) (extends)
 - [Signal K Specification](../repos/signalk__specification.md) (same_org)

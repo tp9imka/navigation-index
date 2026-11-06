@@ -29,6 +29,7 @@ Python library for parsing and generating u-blox UBX protocol messages, includin
 - [PyGPSClient](../repos/semuconsulting__pygpsclient.md) (depends_on)
 - [pynmeagps](../repos/semuconsulting__pynmeagps.md) (same_org)
 - [pyrtcm](../repos/semuconsulting__pyrtcm.md) (same_org)
+- [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../samples/gnss-interference-monitor.md) (uses)
 
 _Indexed by lane(s): gnss_
 

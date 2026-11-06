@@ -262,7 +262,7 @@
       "nmea0183",
       "plugin"
     ],
-    "language": "JavaScript",
+    "language": "TypeScript",
     "domains": [
       "maritime"
     ],
@@ -1585,9 +1585,9 @@
     "domains": [
       "ground"
     ],
-    "maturity": "production",
+    "maturity": "archived",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Download only the sequences you need; ROS bags are large.",
+    "hackathon_notes": "Download only the sequences you need; ROS bags are large. Unmaintained since 2022; the data itself is static and still usable.",
     "related": [
       {
         "id": "repo:castacks/tartan_drive",
@@ -2414,9 +2414,9 @@
     "domains": [
       "air"
     ],
-    "maturity": "production",
+    "maturity": "archived",
     "hackathon_fit": "high",
-    "hackathon_notes": "Download and run the provided EKF example as a baseline.",
+    "hackathon_notes": "Download and run the provided EKF example as a baseline. Unmaintained since 2021; the data itself is static and still usable.",
     "related": [
       {
         "id": "repo:bitcraze/lps-node-firmware",

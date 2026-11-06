@@ -31,6 +31,7 @@ ADS-B/Mode S decoder for RTL-SDR and other receivers with networking, JSON outpu
 - [ADSBCOT](../repos/snstac__adsbcot.md) (integrates_with)
 - [tar1090](../repos/wiedehopf__tar1090.md) (depends_on)
 - [GPSJam - daily GPS interference map](../resources/gpsjam-org.md) (uses)
+- [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../samples/gnss-interference-monitor.md) (uses)
 
 _Indexed by lane(s): defense-context, planning-gis-c2_
 

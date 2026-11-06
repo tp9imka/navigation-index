@@ -2,7 +2,7 @@
 
 `res:protecting-gnss-intentional-interference-arxiv` - paper - <https://arxiv.org/abs/2208.11555>
 
-**By:** Academic GNSS security community - **Year:** 2022 - **Level:** intro - **Access:** open
+**By:** Arul Elango, Ahmed Al-Tahmeesschi, Mikko Saukkoriipi, Titti Malmivirta, Laura Ruotsalainen - **Year:** 2022 - **Level:** intro - **Access:** open
 
 Open white paper summarizing the threat of jamming and spoofing to civil GNSS and the countermeasure landscape (signal authentication, antenna arrays, consistency checks, regulation).
 

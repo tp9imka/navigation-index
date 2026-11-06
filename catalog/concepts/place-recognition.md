@@ -4,7 +4,11 @@
 
 Global descriptors, image retrieval, LiDAR place recognition.
 
-## Repositories (34)
+## Samples (1)
+
+- [Drone frame to orthophoto geolocalization with LightGlue](../samples/visual-geolocalization-lightglue.md) - Matches a nadir drone frame against a georeferenced satellite or orthophoto tile with SuperPoint + LightGlue, fits a MAGSAC homography with OpenCV, and maps the frame centre through the GeoTIFF geotransform to lat/lon.
+
+## Repositories (37)
 
 - [ORB-SLAM3](../repos/uz-slamlab__orb_slam3.md) - fit: high - Visual, visual-inertial and multi-map SLAM supporting monocular, stereo and RGB-D cameras with pinhole and fisheye models, using a map atlas to survive tracking loss.
 - [hloc](../repos/cvg__hierarchical-localization.md) - fit: high - Toolbox for hierarchical visual localization: global retrieval (NetVLAD etc.) to find candidate images, then local feature matching (SuperPoint, LightGlue...) and PnP against an SfM model.
@@ -33,13 +37,16 @@ Global descriptors, image retrieval, LiDAR place recognition.
 - [VPR-Bench](../repos/mubarizzaffar__vpr-bench.md) - fit: medium - Open-source visual place recognition evaluation framework from the IJCV paper, with many datasets and techniques integrated.
 - [Mapillary SLS](../repos/mapillary__mapillary_sls.md) - fit: medium - Tools for the Mapillary Street-level Sequences dataset for lifelong visual place recognition.
 - [Scan Context](../repos/gisbi-kim__scancontext.md) - fit: medium - LiDAR global place descriptor for loop detection and relocalization (backup of the original IRAP KAIST repo).
+- [TBV Radar SLAM](../repos/dan11003__tbv_slam_public.md) - fit: medium - Radar SLAM with verified loop closures built on CFEAR radar odometry.
 - [ALTO](../repos/metaslam__alto.md) - fit: medium - Aerial-view, large-scale, terrain-oriented dataset for aerial place recognition and localization.
 - [Hilti SLAM Challenge 2023](../repos/hilti-research__hilti-slam-challenge-2023.md) - fit: medium - Repository for the 2023 Hilti SLAM Challenge, including multi-session sequences.
+- [ReFeree](../repos/sparolab__referee.md) - fit: medium - Lightweight radar global descriptor for radar place recognition (RA-L 2024).
 - [VPAIR](../repos/aervisloc__vpair.md) - fit: medium - Repo for VPAIR, an aerial visual place recognition dataset matching low-altitude flight imagery to reference orthophotos.
 - [U2S-CVGL (scale-aware UAV-to-satellite)](../repos/uav-avl__u2s-cvgl.md) - fit: medium - Scale-aware cross-view geo-localization method for matching UAV views to satellite imagery when the altitude-driven scale difference is unknown.
 - [Visual Locator](../repos/rtwotwo__visual-locator.md) - fit: medium - Absolute drone positioning by image retrieval (SelaVPR-style ViT features) over cropped satellite tiles followed by registration with SIFT+RANSAC or SuperPoint+SuperGlue.
 - [maplab](../repos/ethz-asl__maplab.md) - fit: low - Modular multi-session, multi-modal mapping framework with map merging, optimization and localization against saved maps.
 - [LPN (Local Pattern Network)](../repos/wtyhub__lpn.md) - fit: low - PyTorch implementation of a cross-view geo-localization method that pools features in rings around the image center to capture contextual local patterns.
+- [Open-RadVLAD](../repos/mttgdd__open-radvlad.md) - fit: low - Fast radar place recognition using VLAD-style aggregation over radar polar scans.
 
 ## Documents, talks, courses, datasets (11)
 

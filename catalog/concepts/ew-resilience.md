@@ -6,9 +6,14 @@ Operating comms and navigation under EW: spectrum monitoring, LPI/LPD links, fal
 
 **Parent:** [Assured / resilient PNT](../concepts/assured-pnt.md)
 
-## Repositories (10)
+## Samples (1)
+
+- [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../samples/gnss-interference-monitor.md) - A stdlib heuristic scorer turns per-epoch receiver telemetry (C/N0 across SVs, AGC, CW jamming indicator, clock and position jumps, receiver spoofing/jamming flags) into jamming and spoofing scores with stated reasons.
+
+## Repositories (12)
 
 - [KrakenSDR DoA DSP](../repos/krakenrf__krakensdr_doa.md) - fit: high - Direction-of-arrival processing and web UI for the five-channel coherent KrakenSDR, producing bearings to RF emitters.
+- [Fraunhofer IIS Jammertest 2025 dataset](../repos/felixott94__fraunhoferiis_jammertest2025.md) - fit: high - Real-world GNSS interference recordings from Jammertest 2025 at Andoya, Norway, covering jamming, spoofing, meaconing and multi-emitter scenarios, with metadata for classification, characterization and direction finding.
 - [ExpressLRS](../repos/expresslrs__expresslrs.md) - fit: medium - Open-source LoRa/FLRC radio control link (2.4 GHz and sub-GHz) with high packet rates, telemetry and MAVLink passthrough modes.
 - [OpenHD](../repos/openhd__openhd.md) - fit: medium - Open-source long-range digital HD video and telemetry link over Wi-Fi adapters in monitor mode (wifibroadcast-style), for air and ground units.
 - [WFB-ng](../repos/svpcom__wfb-ng.md) - fit: medium - Long-range packet radio link over raw Wi-Fi injection with FEC, carrying video, MAVLink and IP tunnels.
@@ -16,6 +21,7 @@ Operating comms and navigation under EW: spectrum monitoring, LPI/LPD links, fal
 - [mLRS](../repos/olliw42__mlrs.md) - fit: medium - LoRa-based bidirectional link carrying RC and full MAVLink serial data on 2.4 GHz, 868/915 MHz and 433 MHz.
 - [WarDragon FPV energy scan](../repos/alphafox02__wardragon-fpv-detect.md) - fit: medium - GNU Radio based scanner that checks known analog FPV video frequencies for energy and publishes alerts over ZMQ; the optional confirmation detector is closed source.
 - [UVDAR](../repos/ctu-mrs__uvdar_core.md) - fit: medium - Mutual relative localization for UAV swarms using blinking ultraviolet LEDs and UV-sensitive cameras, from CTU MRS.
+- [Jammertest test plan](../repos/npra__jammertest-plan.md) - fit: medium - Official test catalog and plan for Jammertest, Norway's annual live GNSS jamming and spoofing event, maintained by the Norwegian Public Roads Administration.
 - [GPSSpy](../repos/hoverflyhampton__gpsspy.md) - fit: medium - Python implementation of GPS jamming detection from receiver signal-to-noise ratio, following a published real-time jamming detection method.
 - [SiK radio firmware](../repos/ardupilot__sik.md) - fit: low - Firmware and tools for Si1000-based telemetry radios (3DR/RFD900 class) carrying MAVLink.
 
@@ -28,6 +34,7 @@ Operating comms and navigation under EW: spectrum monitoring, LPI/LPD links, fal
 - [EASA Safety Information Bulletin 2022-02R4: GNSS Outage and Alterations Leading to Communication / Navigation / Surveillance Degradation](../resources/easa-sib-2022-02r4.md) - standard - EASA's running bulletin on GNSS jamming and spoofing affecting aviation since February 2022, with recommendations for authorities, ANSPs, operators and manufacturers.
 - [From the Crows' Nest - growing threats to GPS/GNSS (Dana Goward)](../resources/crows-nest-goward-gps-threats-podcast.md) - podcast - Episode of the Association of Old Crows electronic warfare podcast in which RNT Foundation president Dana Goward discusses threats to GPS and the case for terrestrial and other backups.
 - [GNSS Spoofing and Detection](../resources/psiaki-humphreys-2016-gnss-spoofing-detection.md) - paper - Proceedings of the IEEE survey of spoofing attack types and detection/mitigation techniques, from navigation-data checks to signal distortion monitoring and multi-antenna methods.
+- [GPS Spoofing WorkGroup 2024 - Final Report](../resources/opsgroup-gps-spoofing-final-report-2024.md) - report - Crowd-sourced industry report from a six-week OPSGROUP workgroup of pilots, controllers, regulators and manufacturers on GPS spoofing hitting civil flights, mainly near Middle East and Black Sea / Baltic conflict areas.
 - [GPS-denied RTH for MAVLink systems using LoRa radio ranging](../resources/hyams-gps-denied-rth-lora-ranging.md) - blog - Blog (shared on ArduPilot Discourse) on returning a plane home without GPS using range measurements from a LoRa radio to a ground beacon; discussion covers multilateration and EKF3 range fusion.
 - [GPSJam - daily GPS interference map](../resources/gpsjam-org.md) - dataset - Daily world map of likely GPS interference derived from ADS-B navigation-integrity reports (NIC/NACp) aggregated into hexagons from community flight-tracking data.
 - [HACKtheMACHINE Unmanned (ONR / NavalX)](../resources/onr-hackthemachine-unmanned-2021.md) - competition - US Navy prize challenge on unmanned and autonomous systems with tracks on securing a simulated autopilot, separating benign from malicious data, and model-based mission requirements.
@@ -41,7 +48,6 @@ Operating comms and navigation under EW: spectrum monitoring, LPI/LPD links, fal
 - [NIST IR 8323r1: Foundational PNT Profile - Applying the Cybersecurity Framework for the Responsible Use of PNT Services](../resources/nist-ir-8323r1-pnt-profile.md) - standard - Maps the NIST Cybersecurity Framework functions (identify, protect, detect, respond, recover) onto systems that produce or consume PNT data.
 - [NovAtel GAJT-410ML Anti-Jam Antenna Product Sheet](../resources/novatel-gajt-410ml-sheet.md) - doc - Datasheet for a compact CRPA anti-jam antenna that combines an antenna array and null-forming electronics for land vehicles and small platforms, protecting GPS and Galileo bands and supporting M-code.
 - [NovAtel GAJT-710ML anti-jam antenna](../resources/novatel-gajt-710ml.md) - doc - Product page for the larger 7-element GAJT CRPA unit in a hardened enclosure for land vehicles and fixed sites.
-- [OPSGROUP GPS Spoofing Workgroup Final Report](../resources/opsgroup-gps-spoofing-final-report.md) - report - Large practitioner-driven report on airliner GPS spoofing, built from crew surveys and incident data, with recommendations to manufacturers, regulators and operators.
 - [Overview of satellite navigation spoofing and anti-spoofing techniques](../resources/lu-2024-spoofing-antispoofing-overview.md) - paper - Open-access Frontiers in Physics overview grouping anti-spoofing countermeasures into detection, identification, suppression and localization of the spoofer.
 - [Preliminary Lessons in Conventional Warfighting from Russia's Invasion of Ukraine: February-July 2022](../resources/rusi-preliminary-lessons-ukraine-2022.md) - report - RUSI analysis of the first months of the war, including the scale of Russian electronic warfare and its effect on Ukrainian UAV survival and GNSS-dependent systems.
 - [Researchers home in on origins of Russia's Baltic GPS jamming](../resources/defensenews-baltic-jamming-origins-2025.md) - blog - Report on Polish research tracing Baltic GNSS jamming to emitters in the Kaliningrad region, with context on the effects on aviation and shipping.

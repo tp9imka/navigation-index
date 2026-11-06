@@ -10,7 +10,7 @@ Fast lost-in-space plate solver for star trackers from ESA: identifies stars in 
 
 **Why it matters:** Star-based attitude (and with time + gravity vector, position) is jam-proof; tetra3 is the easiest open solver.
 
-**Hackathon notes:** pip install; solve sample images in minutes. Combine attitude with a level sensor and clock for a celestial fix demo.
+**Hackathon notes:** Not on PyPI: pip install git+https://github.com/esa/tetra3.git; solve sample images in minutes. Combine attitude with a level sensor and clock for a celestial fix demo.
 
 **Concepts:** [Celestial and star-tracker navigation](../concepts/celestial-nav.md), [Space and orbital navigation](../concepts/space-nav.md)
 
@@ -26,8 +26,10 @@ Fast lost-in-space plate solver for star trackers from ESA: identifies stars in 
 ## Referenced by
 
 - [celestial-navigation toolkit](../repos/alinnman__celestial-navigation.md) (integrates_with)
+- [Astrometry.net](../repos/dstndstn__astrometry.net.md) (alternative_to)
 - [NASA COTS Star Tracker](../repos/nasa__cots-star-tracker.md) (alternative_to)
 - [cedar-solve](../repos/smroid__cedar-solve.md) (fork_of)
+- [SPEL Open Star Tracker](../repos/spel-uchile__star_tracker.md) (alternative_to)
 - [OpenStarTracker](../repos/ubnanosatlab__openstartracker.md) (alternative_to)
 - [LOST](../repos/uwcubesat__lost.md) (alternative_to)
 - [tetra3 documentation](../resources/tetra3-docs.md) (explains)

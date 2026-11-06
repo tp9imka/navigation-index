@@ -18,6 +18,10 @@ Devkit for the Boreas multi-season driving dataset with radar, lidar, camera and
 
 **Domains:** ground
 
+## Referenced by
+
+- [STEAM-ICP](../repos/utiasasrl__steam_icp.md) (evaluated_on)
+
 _Indexed by lane(s): sim-data_
 
 _GitHub metadata fetched 2026-11-06._

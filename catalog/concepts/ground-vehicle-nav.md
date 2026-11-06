@@ -4,7 +4,7 @@
 
 UGV/off-road autonomy stacks, localization and navigation for ground robots.
 
-## Repositories (36)
+## Repositories (39)
 
 - [ArduPilot](../repos/ardupilot__ardupilot.md) - fit: high - GPL autopilot covering Copter, Plane (incl.
 - [CARLA](../repos/carla-simulator__carla.md) - fit: high - Open-source autonomous-driving simulator on Unreal with camera, lidar, radar, GNSS and IMU sensors, traffic and weather control.
@@ -19,12 +19,15 @@ UGV/off-road autonomy stacks, localization and navigation for ground robots.
 - [FAST_LIO_LOCALIZATION](../repos/hviktortsoi__fast_lio_localization.md) - fit: high - Relocalization in a prebuilt map using FAST-LIO odometry plus global scan-to-map registration.
 - [CMU Autonomous Exploration Development Environment](../repos/hongbiaoz__autonomous_exploration_development_environment.md) - fit: high - CMU ground-robot development environment with simulated worlds, terrain analysis, local planner and waypoint tools used for exploration research (TARE, FAR planner).
 - [AI-IMU Dead-Reckoning](../repos/mbrossar__ai-imu-dr.md) - fit: high - Car dead reckoning from IMU only, using an invariant EKF whose noise covariances are adapted by a neural network, evaluated on KITTI.
+- [Nav2 tutorials](../repos/ros-navigation__navigation2_tutorials.md) - fit: high - Tutorial packages referenced by docs.nav2.org: example planner, controller and behavior-tree plugins, SLAM and GPS waypoint following setups.
+- [Beluga](../repos/ekumen-os__beluga.md) - fit: high - Modern C++17 library of Monte Carlo Localization algorithms with a ROS 2 node that is a drop-in replacement for the Nav2 AMCL package.
 - [DRIFT](../repos/umich-curly__drift.md) - fit: high - Symmetry-preserving (invariant) state estimation library from University of Michigan for legged, wheeled and other robots, with real-time ROS support.
 - [Autoware](../repos/autowarefoundation__autoware.md) - fit: medium - Meta-repository for Autoware, the open-source ROS 2 autonomous driving stack covering localization (NDT, EKF), perception, planning and control.
 - [Cartographer](../repos/cartographer-project__cartographer.md) - fit: medium - Real-time 2D and 3D SLAM with submaps and branch-and-bound loop closure across many sensor configurations.
 - [GraphHopper](../repos/graphhopper__graphhopper.md) - fit: medium - Java OSM routing engine usable as library or server, with custom models for per-request costing and map matching.
 - [Autoware Universe](../repos/autowarefoundation__autoware_universe.md) - fit: medium - The broad package collection of Autoware with experimental and production-candidate modules, including localization, pose initialization and GNSS/IMU fusion.
 - [FAR Planner](../repos/michaelfyang__far_planner.md) - fit: medium - Visibility-graph route planner for known and unknown environments from the CMU SubT team.
+- [fuse](../repos/locusrobotics__fuse.md) - fit: medium - ROS framework for sensor fusion as factor-graph optimization: plugin sensor models, motion models and publishers on top of Ceres, supporting both smoothing and fixed-lag estimation.
 - [GBPlanner (CERBERUS)](../repos/ntnu-arl__gbplanner_ros.md) - fit: medium - NTNU ARL graph-based exploration planner for subterranean environments, used in the DARPA SubT challenge on legged and aerial robots.
 - [AWSIM](../repos/autowarefoundation__awsim.md) - fit: medium - Unity-based digital-twin simulator for Autoware with simulated lidar, camera, GNSS and IMU.
 - [RELLIS-3D](../repos/unmannedlab__rellis-3d.md) - fit: medium - Multi-modal off-road dataset from Texas A&M with lidar, camera, IMU and GNSS plus semantic annotations collected on a ground robot.

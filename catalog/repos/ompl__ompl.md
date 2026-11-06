@@ -21,7 +21,7 @@ Library of sampling-based motion planners (RRT, RRT*, PRM, BIT*, informed varian
 ## Related
 
 - alternative_to: [PythonRobotics](../repos/atsushisakai__pythonrobotics.md)
-- integrates_with: `repo:moveit/moveit2` (not indexed)
+- integrates_with: [MoveIt 2](../repos/moveit__moveit2.md)
 
 ## Referenced by
 

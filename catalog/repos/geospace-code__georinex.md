@@ -22,6 +22,10 @@ Fast Python reader for RINEX 2/3 observation and navigation files and SP3 orbits
 
 - alternative_to: [gnss_lib_py](../repos/stanford-navlab__gnss_lib_py.md)
 
+## Referenced by
+
+- [Public CORS RINEX to SPP vs RTK with RTKLIB demo5 and gnss_lib_py](../samples/gnss-rinex-processing.md) (uses)
+
 _Indexed by lane(s): gnss_
 
 _GitHub metadata fetched 2026-11-06._

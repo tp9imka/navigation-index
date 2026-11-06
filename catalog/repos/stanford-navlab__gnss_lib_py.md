@@ -30,6 +30,7 @@ Modular Python library from Stanford NavLab for parsing, analyzing and visualizi
 - [GPS Measurement Tools (incl. GnssLogger)](../repos/google__gps-measurement-tools.md) (integrates_with)
 - [Multi-frequency GNSS spoofing raw dataset](../repos/s7am1na__gnss-spoofing-dataset.md) (integrates_with)
 - [Google Smartphone Decimeter Challenge 2023-2024](../resources/google-gsdc-2023.md) (has_code)
+- [Public CORS RINEX to SPP vs RTK with RTKLIB demo5 and gnss_lib_py](../samples/gnss-rinex-processing.md) (uses)
 
 _Indexed by lane(s): gnss_
 

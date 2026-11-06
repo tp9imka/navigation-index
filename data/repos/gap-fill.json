@@ -1,0 +1,3426 @@
+[
+ {
+  "id": "repo:aau-cns/cnspy_trajectory_evaluation",
+  "kind": "repo",
+  "name": "cnspy trajectory evaluation",
+  "url": "https://github.com/aau-cns/cnspy_trajectory_evaluation",
+  "summary": "Python package that aligns an estimated trajectory with ground truth from CSV files, associates timestamps and reports position/attitude error metrics, including NEES from pose covariance.",
+  "why_it_matters": "Consistency checks (NEES) matter as much as RMSE when judging a GNSS-denied filter; this tool computes both from plain CSV.",
+  "concepts": [
+   "concept:datasets-benchmarks",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "ate",
+   "rpe",
+   "nees",
+   "evaluation",
+   "python"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "pip install cnspy-trajectory-evaluation; estimated CSV must carry pose covariance. Use evo for quick plots, this when you need filter consistency.",
+  "related": [
+   {
+    "id": "repo:michaelgrupp/evo",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:uzh-rpg/rpg_trajectory_evaluation",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:borglab/gtsfm",
+  "kind": "repo",
+  "name": "GTSfM",
+  "url": "https://github.com/borglab/gtsfm",
+  "summary": "End-to-end structure-from-motion pipeline built on GTSAM, with pluggable front-ends (classical and learned matchers) and distributed execution via Dask.",
+  "why_it_matters": "Builds georeferenceable 3D maps from drone or ground imagery, which can serve as prior maps for visual localization.",
+  "concepts": [
+   "concept:visual-slam",
+   "concept:feature-matching",
+   "concept:gis-mapping"
+  ],
+  "tags": [
+   "sfm",
+   "gtsam",
+   "dask",
+   "3d-reconstruction"
+  ],
+  "language": "Python",
+  "domains": [
+   "air",
+   "ground"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Conda environment install; runs on image folders or COLMAP-format data. Expect long runtimes on large sets - downsample.",
+  "related": [
+   {
+    "id": "repo:borglab/gtsam",
+    "rel": "depends_on"
+   }
+  ]
+ },
+ {
+  "id": "repo:canboat/canboat",
+  "kind": "repo",
+  "name": "CANboat",
+  "url": "https://github.com/canboat/canboat",
+  "summary": "Toolkit for NMEA 2000 networks: a PGN decoder/analyzer plus utilities to read, write and convert N2K and NMEA 0183 messages, used largely for reverse-engineering marine bus traffic.",
+  "why_it_matters": "Gives raw access to ship sensor buses (GNSS, heading, AIS, depth), useful for maritime nav integrity monitoring and spoofing detection research.",
+  "concepts": [
+   "concept:maritime-nav",
+   "concept:standards"
+  ],
+  "tags": [
+   "nmea2000",
+   "nmea0183",
+   "can-bus",
+   "pgn",
+   "marine"
+  ],
+  "language": "Rust",
+  "domains": [
+   "maritime"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Build analyzer and pipe candump/actisense logs through it to JSON. Needs a CAN or N2K gateway for live data; sample logs work offline.",
+  "related": [
+   {
+    "id": "repo:signalk/signalk-server",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:ekumen-os/beluga",
+  "kind": "repo",
+  "name": "Beluga",
+  "url": "https://github.com/Ekumen-OS/beluga",
+  "summary": "Modern C++17 library of Monte Carlo Localization algorithms with a ROS 2 node that is a drop-in replacement for the Nav2 AMCL package.",
+  "why_it_matters": "Map-based particle-filter localization for ground robots operating without GNSS; easier to extend than legacy AMCL.",
+  "concepts": [
+   "concept:ground-vehicle-nav",
+   "concept:ros",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "amcl",
+   "particle-filter",
+   "mcl",
+   "nav2",
+   "c++"
+  ],
+  "language": "C++",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Swap beluga_amcl for nav2_amcl in a Nav2 launch file; same parameters. Good base for adding custom sensor models.",
+  "related": [
+   {
+    "id": "repo:ros-navigation/navigation2",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:felixott94/fraunhoferiis_jammertest2025",
+  "kind": "repo",
+  "name": "Fraunhofer IIS Jammertest 2025 dataset",
+  "url": "https://github.com/FelixOtt94/FraunhoferIIS_Jammertest2025",
+  "summary": "Real-world GNSS interference recordings from Jammertest 2025 at Andoya, Norway, covering jamming, spoofing, meaconing and multi-emitter scenarios, with metadata for classification, characterization and direction finding.",
+  "why_it_matters": "Rare open real-world interference data from live jamming trials, suited to training and testing interference detectors and classifiers.",
+  "concepts": [
+   "concept:gnss-interference",
+   "concept:datasets-benchmarks",
+   "concept:ew-resilience"
+  ],
+  "tags": [
+   "jammertest",
+   "spoofing",
+   "jamming",
+   "meaconing",
+   "dataset"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Download the data and start with the provided Python loaders; pick one scenario class to build a jamming/spoofing classifier within a day.",
+  "related": [
+   {
+    "id": "repo:npra/jammertest-plan",
+    "rel": "evaluated_on"
+   },
+   {
+    "id": "repo:univaasadigieco/vaara",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:gaoxiang12/slambook2",
+  "kind": "repo",
+  "name": "14 Lectures on Visual SLAM (2nd ed.) code",
+  "url": "https://github.com/gaoxiang12/slambook2",
+  "summary": "Companion code for the second edition of Gao Xiang's visual SLAM textbook: Lie groups, nonlinear optimization, feature VO, direct methods, back-end and loop closure examples in C++.",
+  "why_it_matters": "One of the most-used hands-on routes into visual SLAM internals; good for bringing a team up to speed fast.",
+  "concepts": [
+   "concept:visual-slam",
+   "concept:feature-matching"
+  ],
+  "tags": [
+   "textbook",
+   "g2o",
+   "ceres",
+   "sophus",
+   "c++"
+  ],
+  "language": "C++",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "educational",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Each chapter builds standalone; dependency versions (Pangolin, Sophus, g2o) are old - use the bundled 3rdparty or a Docker image.",
+  "related": [
+   {
+    "id": "repo:gaoxiang12/slambook-en",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:gnsscusdr/cu-sdr-collection",
+  "kind": "repo",
+  "name": "CU Boulder GNSS SDR Collection",
+  "url": "https://github.com/gnsscusdr/CU-SDR-Collection",
+  "summary": "University of Colorado Boulder collection of MATLAB software-defined GNSS receiver code-bases, organized per constellation (GPS, Galileo, GLONASS, BeiDou), with linked sample data sets.",
+  "why_it_matters": "Teaching-grade multi-constellation receivers you can read end to end, from acquisition to tracking and navigation.",
+  "concepts": [
+   "concept:gnss-sdr",
+   "concept:gnss"
+  ],
+  "tags": [
+   "matlab",
+   "acquisition",
+   "tracking",
+   "galileo",
+   "beidou",
+   "glonass"
+  ],
+  "language": "MATLAB",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "educational",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Point the settings file at one of the provided IQ data sets and run. MATLAB licence required; slow on long recordings.",
+  "related": [
+   {
+    "id": "repo:nlsfi/fgi-gsrx",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:gnss-sdr/gnss-sdr",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:hkust-aerial-robotics/gvins",
+  "kind": "repo",
+  "name": "GVINS",
+  "url": "https://github.com/HKUST-Aerial-Robotics/GVINS",
+  "summary": "Tightly coupled GNSS-visual-inertial estimator that fuses raw GNSS pseudorange and Doppler with VIO in a factor graph, giving drift-free global poses and smooth local tracking.",
+  "why_it_matters": "Shows how raw GNSS measurements degrade gracefully into VIO when satellites are blocked, a core pattern for contested or urban PNT.",
+  "concepts": [
+   "concept:gnss-ins",
+   "concept:vio",
+   "concept:sensor-fusion",
+   "concept:gnss"
+  ],
+  "tags": [
+   "vins",
+   "raw-gnss",
+   "factor-graph",
+   "ros1"
+  ],
+  "language": "C++",
+  "domains": [
+   "air",
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "ROS1 (Melodic/Noetic) only; run on the GVINS dataset bags. Porting to ROS 2 is non-trivial.",
+  "related": [
+   {
+    "id": "repo:hkust-aerial-robotics/gvins-dataset",
+    "rel": "evaluated_on"
+   },
+   {
+    "id": "repo:hkust-aerial-robotics/vins-fusion",
+    "rel": "extends"
+   },
+   {
+    "id": "repo:i2nav-whu/ic-gvins",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:joansola/slamtb",
+  "kind": "repo",
+  "name": "SLAM Toolbox (MATLAB)",
+  "url": "https://github.com/joansola/slamtb",
+  "summary": "Joan Sola's MATLAB EKF-SLAM toolbox with landmark parameterizations (points, lines, inverse depth) and simulated or real sensor support, written for teaching and prototyping.",
+  "why_it_matters": "Readable reference for EKF-SLAM landmark handling, by the author of the widely cited Lie theory and quaternion kinematics notes.",
+  "concepts": [
+   "concept:visual-slam",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "ekf-slam",
+   "matlab",
+   "inverse-depth",
+   "teaching"
+  ],
+  "language": "MATLAB",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "educational",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Runs in MATLAB with simulated worlds out of the box; not maintained, use for understanding rather than deployment.",
+  "related": []
+ },
+ {
+  "id": "repo:locusrobotics/fuse",
+  "kind": "repo",
+  "name": "fuse",
+  "url": "https://github.com/locusrobotics/fuse",
+  "summary": "ROS framework for sensor fusion as factor-graph optimization: plugin sensor models, motion models and publishers on top of Ceres, supporting both smoothing and fixed-lag estimation.",
+  "why_it_matters": "A more flexible alternative to robot_localization EKF when you need delayed measurements, robust losses or custom constraints.",
+  "concepts": [
+   "concept:sensor-fusion",
+   "concept:ros",
+   "concept:ground-vehicle-nav"
+  ],
+  "tags": [
+   "factor-graph",
+   "ceres",
+   "fixed-lag",
+   "ros2"
+  ],
+  "language": "C++",
+  "domains": [
+   "ground",
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Use the fuse tutorials or the ROSCon UK 2025 workshop Docker image; plugin config in YAML. Ceres dependency builds slowly.",
+  "related": [
+   {
+    "id": "repo:locusrobotics/roscon-uk-2025-se-workshop",
+    "rel": "same_org"
+   },
+   {
+    "id": "repo:cra-ros-pkg/robot_localization",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:locusrobotics/roscon-uk-2025-se-workshop",
+  "kind": "repo",
+  "name": "ROSCon UK 2025 State Estimation workshop",
+  "url": "https://github.com/locusrobotics/roscon-uk-2025-se-workshop",
+  "summary": "Materials for an eight-task ROS 2 state estimation workshop at ROSCon UK 2025, with a Docker image, recorded bags and step-by-step exercises using robot_localization and fuse.",
+  "why_it_matters": "Ready-made, containerized curriculum for wiring wheel odometry, IMU and GNSS into a ROS 2 estimator.",
+  "concepts": [
+   "concept:sensor-fusion",
+   "concept:ros",
+   "concept:gnss-ins"
+  ],
+  "tags": [
+   "workshop",
+   "robot_localization",
+   "fuse",
+   "docker",
+   "ros2"
+  ],
+  "language": "C++",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "educational",
+  "hackathon_fit": "high",
+  "hackathon_notes": "docker compose run with the provided compose file; work through tasks in order. Fastest way to get a fused ROS 2 pose estimate running.",
+  "related": [
+   {
+    "id": "repo:locusrobotics/fuse",
+    "rel": "depends_on"
+   },
+   {
+    "id": "repo:cra-ros-pkg/robot_localization",
+    "rel": "depends_on"
+   }
+  ]
+ },
+ {
+  "id": "repo:missioncommand/mil-sym-ts",
+  "kind": "repo",
+  "name": "mil-sym-ts",
+  "url": "https://github.com/missioncommand/mil-sym-ts",
+  "summary": "TypeScript/JavaScript renderer for MIL-STD-2525 (D and later) military symbology, producing single-point and multi-point tactical graphics for web maps.",
+  "why_it_matters": "Standard-conformant symbols are the expected visual language for any common operational picture or C2 demo.",
+  "concepts": [
+   "concept:situational-awareness",
+   "concept:standards",
+   "concept:gis-mapping"
+  ],
+  "tags": [
+   "mil-std-2525",
+   "symbology",
+   "cop",
+   "typescript"
+  ],
+  "language": "TypeScript",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "high",
+  "hackathon_notes": "npm package; render SIDC codes to SVG/canvas and drop onto Leaflet/Cesium/OpenLayers layers. Multi-point graphics need control-point ordering per the standard.",
+  "related": [
+   {
+    "id": "repo:spatialillusions/milsymbol",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:mit-spark/vnav-lab-data",
+  "kind": "repo",
+  "name": "MIT VNAV lab data",
+  "url": "https://github.com/MIT-SPARK/VNAV-lab-data",
+  "summary": "Pointer repo for the ROS bag files used in MIT's Visual Navigation for Autonomous Vehicles course exercises.",
+  "why_it_matters": "Supplies the datasets that make the VNAV labs runnable outside MIT.",
+  "concepts": [
+   "concept:datasets-benchmarks",
+   "concept:vio"
+  ],
+  "tags": [
+   "course",
+   "rosbag",
+   "mit"
+  ],
+  "language": "",
+  "domains": [
+   "air",
+   "ground"
+  ],
+  "maturity": "educational",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Only a README with a download link; fetch bags alongside VNAV-labs.",
+  "related": [
+   {
+    "id": "repo:mit-spark/vnav-labs",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:mit-spark/vnav-labs",
+  "kind": "repo",
+  "name": "MIT VNAV labs",
+  "url": "https://github.com/MIT-SPARK/VNAV-labs",
+  "summary": "Lab assignments for MIT 16.485 Visual Navigation for Autonomous Vehicles: ROS, 3D geometry, trajectory optimization, feature tracking, two-view geometry, VIO and place recognition.",
+  "why_it_matters": "A structured, graded path from ROS basics to visual-inertial navigation, built by the SPARK lab behind Kimera.",
+  "concepts": [
+   "concept:vio",
+   "concept:visual-slam",
+   "concept:path-planning"
+  ],
+  "tags": [
+   "course",
+   "mit",
+   "ros",
+   "gtsam"
+  ],
+  "language": "C++",
+  "domains": [
+   "air"
+  ],
+  "maturity": "educational",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Labs assume Ubuntu + ROS; pick individual labs (feature tracking, two-view geometry) as warm-ups.",
+  "related": [
+   {
+    "id": "repo:mit-spark/vnav-lab-data",
+    "rel": "depends_on"
+   },
+   {
+    "id": "repo:mit-spark/kimera-vio",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:moveit/moveit2",
+  "kind": "repo",
+  "name": "MoveIt 2",
+  "url": "https://github.com/moveit/moveit2",
+  "summary": "Motion planning framework for ROS 2 manipulators: kinematics, collision checking, planners (OMPL, Pilz, STOMP) and real-time servoing.",
+  "why_it_matters": "Relevant when a vehicle carries an arm or gimbal-like mechanism; outside pure navigation but the ROS 2 standard for manipulation planning.",
+  "concepts": [
+   "concept:path-planning",
+   "concept:ros"
+  ],
+  "tags": [
+   "manipulation",
+   "ompl",
+   "ros2",
+   "motion-planning"
+  ],
+  "language": "C++",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Binary install via apt; use the MoveIt Setup Assistant for a new robot. Overkill unless your platform has an arm.",
+  "related": [
+   {
+    "id": "repo:ros-navigation/navigation2",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:npra/jammertest-plan",
+  "kind": "repo",
+  "name": "Jammertest test plan",
+  "url": "https://github.com/NPRA/jammertest-plan",
+  "summary": "Official test catalog and plan for Jammertest, Norway's annual live GNSS jamming and spoofing event, maintained by the Norwegian Public Roads Administration.",
+  "why_it_matters": "The reference for which interference scenarios were transmitted when, needed to label any Jammertest recording.",
+  "concepts": [
+   "concept:gnss-interference",
+   "concept:ew-resilience",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "jammertest",
+   "test-plan",
+   "norway",
+   "spoofing"
+  ],
+  "language": "TeX",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Use the per-year plan to map timestamps in Jammertest datasets to emitted scenarios.",
+  "related": [
+   {
+    "id": "repo:felixott94/fraunhoferiis_jammertest2025",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:univaasadigieco/vaara",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "res:jammertest-norway",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:nvidia-isaac-ros/isaac_ros_visual_slam",
+  "kind": "repo",
+  "name": "Isaac ROS Visual SLAM",
+  "url": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_visual_slam",
+  "summary": "ROS 2 package wrapping NVIDIA's GPU-accelerated cuVSLAM for stereo visual(-inertial) odometry and SLAM on Jetson and x86 GPUs.",
+  "why_it_matters": "Real-time VIO on embedded Jetson hardware with low CPU load, a practical GNSS-denied odometry source for drones and UGVs.",
+  "concepts": [
+   "concept:vio",
+   "concept:visual-slam",
+   "concept:edge-ai",
+   "concept:ros"
+  ],
+  "tags": [
+   "cuvslam",
+   "jetson",
+   "gpu",
+   "stereo",
+   "ros2"
+  ],
+  "language": "C++",
+  "domains": [
+   "air",
+   "ground"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Use the Isaac ROS dev container; RealSense or ZED stereo works out of the box. Jetson Orin recommended.",
+  "related": [
+   {
+    "id": "repo:nvidia-isaac/cuvslam",
+    "rel": "depends_on"
+   },
+   {
+    "id": "repo:nvidia-isaac-ros/isaac_ros_nvblox",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "res:isaac-ros-visual-slam-docs",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:ros-navigation/navigation2_tutorials",
+  "kind": "repo",
+  "name": "Nav2 tutorials",
+  "url": "https://github.com/ros-navigation/navigation2_tutorials",
+  "summary": "Tutorial packages referenced by docs.nav2.org: example planner, controller and behavior-tree plugins, SLAM and GPS waypoint following setups.",
+  "why_it_matters": "Shortest path to custom Nav2 plugins and GPS-based outdoor navigation in ROS 2.",
+  "concepts": [
+   "concept:path-planning",
+   "concept:ros",
+   "concept:ground-vehicle-nav"
+  ],
+  "tags": [
+   "nav2",
+   "plugins",
+   "gps-waypoints",
+   "ros2"
+  ],
+  "language": "Python",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "educational",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Clone into a ROS 2 workspace matching your distro branch; the GPS waypoint follower demo runs in Gazebo.",
+  "related": [
+   {
+    "id": "repo:ros-navigation/navigation2",
+    "rel": "extends"
+   }
+  ]
+ },
+ {
+  "id": "repo:slam-handbook-contributors/slam-handbook-public-release",
+  "kind": "repo",
+  "name": "SLAM Handbook (public release)",
+  "url": "https://github.com/SLAM-Handbook-contributors/slam-handbook-public-release",
+  "summary": "Release repo for the SLAM Handbook (Cambridge University Press), edited by Carlone, Kim, Barfoot, Cremers and Dellaert, published incrementally in three parts from late 2024.",
+  "why_it_matters": "Current, expert-written reference covering factor graphs through spatial AI; free drafts for the whole team.",
+  "concepts": [
+   "concept:visual-slam",
+   "concept:lidar-slam",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "book",
+   "factor-graphs",
+   "slam",
+   "reference"
+  ],
+  "language": "TeX",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "educational",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Download chapter PDFs from the release page; factor-graph chapter is the best starting point.",
+  "related": []
+ },
+ {
+  "id": "repo:univaasadigieco/vaara",
+  "kind": "repo",
+  "name": "VAARA Jammertest dataset",
+  "url": "https://github.com/UniVaasaDigiEco/VAARA",
+  "summary": "University of Vaasa public GNSS dataset recorded at Jammertest 2024, released in batches from autumn 2025 under a Finland-NSF project on secure satellite navigation.",
+  "why_it_matters": "Second independent real-world interference dataset, useful for cross-dataset validation of detectors.",
+  "concepts": [
+   "concept:gnss-interference",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "jammertest",
+   "dataset",
+   "spoofing",
+   "jamming"
+  ],
+  "language": "",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Check README for which batches are released; pair with the Jammertest plan for labels.",
+  "related": [
+   {
+    "id": "repo:npra/jammertest-plan",
+    "rel": "evaluated_on"
+   },
+   {
+    "id": "repo:felixott94/fraunhoferiis_jammertest2025",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:utiasasrl/steam",
+  "kind": "repo",
+  "name": "STEAM",
+  "url": "https://github.com/utiasASRL/steam",
+  "summary": "Simultaneous Trajectory Estimation and Mapping engine from UTIAS: a C++ nonlinear least-squares library with continuous-time Gaussian-process trajectory priors on Lie groups.",
+  "why_it_matters": "Continuous-time estimation handles asynchronous, motion-distorted sensors such as spinning radar and lidar.",
+  "concepts": [
+   "concept:sensor-fusion",
+   "concept:radar-nav",
+   "concept:lidar-slam"
+  ],
+  "tags": [
+   "continuous-time",
+   "gaussian-process",
+   "lie-groups",
+   "c++"
+  ],
+  "language": "C++",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Library, not an application; see steam_icp for a ready odometry pipeline built on it.",
+  "related": [
+   {
+    "id": "repo:utiasasrl/steam_icp",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:nasa-jpl/rosa",
+  "kind": "repo",
+  "name": "ROSA (ROS Agent)",
+  "url": "https://github.com/nasa-jpl/rosa",
+  "summary": "NASA JPL's LangChain-based AI agent that lets operators query and command ROS 1 and ROS 2 systems in natural language through a set of ROS introspection and control tools.",
+  "why_it_matters": "A credible, lab-backed reference for putting an LLM in the loop of a robot stack, with tool boundaries an operator can audit.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:ros"
+  ],
+  "tags": [
+   "llm",
+   "langchain",
+   "agent",
+   "jpl",
+   "ros2"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "high",
+  "hackathon_notes": "pip install jpl-rosa; demo runs against turtlesim in Docker. Add custom tools for your MAVROS/Nav2 topics.",
+  "related": [
+   {
+    "id": "repo:robotmcp/ros-mcp-server",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "res:jpl-rosa-paper-2024",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:robotmcp/ros-mcp-server",
+  "kind": "repo",
+  "name": "ROS MCP Server",
+  "url": "https://github.com/robotmcp/ros-mcp-server",
+  "summary": "Model Context Protocol server that exposes ROS topics, services and parameters (via rosbridge) to LLM clients such as Claude or GPT, for ROS 1 and ROS 2.",
+  "why_it_matters": "Fastest way to let an LLM inspect and drive an existing robot without changing robot code.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:ros"
+  ],
+  "tags": [
+   "mcp",
+   "rosbridge",
+   "llm",
+   "ros2"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Run rosbridge on the robot and point the MCP client config at the server; works with sim (Gazebo/Isaac). Add safety limits before anything flies.",
+  "related": [
+   {
+    "id": "repo:robotmcp/demos-ros-mcp-server",
+    "rel": "same_org"
+   },
+   {
+    "id": "repo:wise-vision/ros2_mcp",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:nasa-jpl/rosa",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:robotmcp/demos-ros-mcp-server",
+  "kind": "repo",
+  "name": "ROS MCP Server demos",
+  "url": "https://github.com/robotmcp/demos-ros-mcp-server",
+  "summary": "Demos and tutorials for connecting LLMs to robots via the ROS MCP server, including simulated mobile robots.",
+  "why_it_matters": "Worked examples shorten the path from install to a talking robot demo.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:ros"
+  ],
+  "tags": [
+   "mcp",
+   "tutorial",
+   "demo"
+  ],
+  "language": "C++",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "educational",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Follow one demo end to end before customizing the server.",
+  "related": [
+   {
+    "id": "repo:robotmcp/ros-mcp-server",
+    "rel": "extends"
+   }
+  ]
+ },
+ {
+  "id": "repo:wise-vision/ros2_mcp",
+  "kind": "repo",
+  "name": "WiseVision ROS 2 MCP",
+  "url": "https://github.com/wise-vision/ros2_mcp",
+  "summary": "MCP server that lets AI agents discover and operate ROS 2 robots: topic echo/publish, services, actions and introspection, implemented natively in ROS 2 rather than through rosbridge.",
+  "why_it_matters": "Native ROS 2 alternative for LLM control without a rosbridge hop.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:ros"
+  ],
+  "tags": [
+   "mcp",
+   "ros2",
+   "agent"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Build in a ROS 2 workspace; check supported distros in README.",
+  "related": [
+   {
+    "id": "repo:robotmcp/ros-mcp-server",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:lcas/ros2_mcp",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:lcas/ros2_mcp",
+  "kind": "repo",
+  "name": "LCAS ROS 2 MCP",
+  "url": "https://github.com/LCAS/ros2_mcp",
+  "summary": "ROS 2 MCP server from the Lincoln Centre for Autonomous Systems, exposing topics, services and actions to LLM agents.",
+  "why_it_matters": "University-maintained option for agricultural/field robot agent experiments.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:ros"
+  ],
+  "tags": [
+   "mcp",
+   "ros2",
+   "agent"
+  ],
+  "language": "Python",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Smaller project; compare with ros-mcp-server before committing.",
+  "related": [
+   {
+    "id": "repo:wise-vision/ros2_mcp",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:ion-g-ion/mavlinkmcp",
+  "kind": "repo",
+  "name": "MAVLinkMCP",
+  "url": "https://github.com/ion-g-ion/MAVLinkMCP",
+  "summary": "MCP server bridging an LLM to a drone over MAVLink, exposing arming, takeoff, waypoint and telemetry tools via MAVSDK.",
+  "why_it_matters": "Direct template for a natural-language drone mission interface on PX4/ArduPilot SITL.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:mavlink-gcs",
+   "concept:mission-planning"
+  ],
+  "tags": [
+   "mcp",
+   "mavlink",
+   "mavsdk",
+   "llm",
+   "drone"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Pair with PX4 or ArduPilot SITL; never point at a real vehicle without geofence and human confirm.",
+  "related": [
+   {
+    "id": "repo:mavlink/mavsdk-python",
+    "rel": "depends_on"
+   },
+   {
+    "id": "repo:deepakpopli/mavlink-mcp",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:rmeadomavic/ardupilot-mcp",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:deepakpopli/mavlink-mcp",
+  "kind": "repo",
+  "name": "mavlink-mcp (ArduPilot)",
+  "url": "https://github.com/deepakpopli/mavlink-mcp",
+  "summary": "MCP server for flying ArduPilot vehicles from AI agents over MAVLink, covering missions, camera vision and SITL workflows.",
+  "why_it_matters": "Another ready LLM-to-autopilot bridge, oriented to ArduPilot missions.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:mavlink-gcs",
+   "concept:mission-planning"
+  ],
+  "tags": [
+   "mcp",
+   "mavlink",
+   "ardupilot",
+   "llm"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Young project; test thoroughly in SITL.",
+  "related": [
+   {
+    "id": "repo:ardupilot/pymavlink",
+    "rel": "depends_on"
+   },
+   {
+    "id": "repo:ion-g-ion/mavlinkmcp",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:rmeadomavic/ardupilot-mcp",
+  "kind": "repo",
+  "name": "ardupilot-mcp (safety-gated)",
+  "url": "https://github.com/rmeadomavic/ardupilot-mcp",
+  "summary": "SITL-first MCP server for talking to ArduPilot vehicles over MAVLink, with explicit safety gating of commands.",
+  "why_it_matters": "Its safety-gate design is a useful pattern for keeping an LLM from issuing unsafe flight commands.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:mavlink-gcs"
+  ],
+  "tags": [
+   "mcp",
+   "ardupilot",
+   "safety",
+   "sitl"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Small codebase; read the gating logic and reuse it in your own bridge.",
+  "related": [
+   {
+    "id": "repo:ion-g-ion/mavlinkmcp",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:jjsantos01/qgis_mcp",
+  "kind": "repo",
+  "name": "QGIS MCP",
+  "url": "https://github.com/jjsantos01/qgis_mcp",
+  "summary": "MCP server plus QGIS plugin that lets an LLM create projects, load layers, run processing algorithms and execute PyQGIS code in QGIS Desktop.",
+  "why_it_matters": "Natural-language GIS analysis for terrain, route and coverage products in a mission-planning demo.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:gis-mapping"
+  ],
+  "tags": [
+   "mcp",
+   "qgis",
+   "pyqgis",
+   "llm"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Install the plugin, start the socket server in QGIS, add the MCP server to the client. Arbitrary code execution - sandbox it.",
+  "related": [
+   {
+    "id": "repo:nkarasiak/qgis-mcp",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:mahdin75/gis-mcp",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:nkarasiak/qgis-mcp",
+  "kind": "repo",
+  "name": "qgis-mcp (nkarasiak)",
+  "url": "https://github.com/nkarasiak/qgis-mcp",
+  "summary": "Actively maintained MCP bridge connecting AI agents to QGIS Desktop, with a broader tool set than the original qgis_mcp.",
+  "why_it_matters": "More recent alternative if the original QGIS MCP lags behind QGIS releases.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:gis-mapping"
+  ],
+  "tags": [
+   "mcp",
+   "qgis",
+   "llm"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Same plugin-plus-server pattern; check QGIS version compatibility.",
+  "related": [
+   {
+    "id": "repo:jjsantos01/qgis_mcp",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:mahdin75/gis-mcp",
+  "kind": "repo",
+  "name": "GIS MCP Server",
+  "url": "https://github.com/mahdin75/gis-mcp",
+  "summary": "MCP server giving LLMs geospatial operations through Shapely, PyProj, GeoPandas and Rasterio: geometry ops, CRS transforms, distances and raster analysis, without a desktop GIS.",
+  "why_it_matters": "Headless geodesy/GIS tool layer an agent can call for coordinate conversion and spatial reasoning.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:gis-mapping",
+   "concept:geodesy"
+  ],
+  "tags": [
+   "mcp",
+   "geopandas",
+   "pyproj",
+   "rasterio"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "high",
+  "hackathon_notes": "pip install gis-mcp; no QGIS needed. Good for an agent that must reason about coordinates and areas.",
+  "related": [
+   {
+    "id": "repo:jjsantos01/qgis_mcp",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:gladcolor/llm-geo",
+  "kind": "repo",
+  "name": "LLM-Geo (Autonomous GIS)",
+  "url": "https://github.com/gladcolor/LLM-Geo",
+  "summary": "Research prototype of an LLM-driven 'autonomous GIS' that turns a spatial question into a solution graph, generates code and executes the analysis to return maps and numbers.",
+  "why_it_matters": "Early worked example of LLM planning over geospatial workflows, a building block for agentic mission planning.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:gis-mapping"
+  ],
+  "tags": [
+   "llm",
+   "gis",
+   "code-generation",
+   "autonomous-gis"
+  ],
+  "language": "Jupyter Notebook",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Notebook-driven; needs an LLM API key. Use as design reference rather than a dependency.",
+  "related": [
+   {
+    "id": "repo:mahdin75/gis-mcp",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:typefly/typefly",
+  "kind": "repo",
+  "name": "TypeFly",
+  "url": "https://github.com/typefly/TypeFly",
+  "summary": "Framework for LLM-based drone task planning that compiles natural-language requests into a compact robot language (MiniSpec) executed on a DJI Tello with vision services.",
+  "why_it_matters": "Shows how to constrain LLM output into a small, verifiable command language for drones, cutting latency and risk.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:mission-planning"
+  ],
+  "tags": [
+   "llm",
+   "tello",
+   "dsl",
+   "drone"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Works with a cheap Tello and a GPU box for YOLO; virtual mode exists. Swap the backend for MAVSDK to target PX4.",
+  "related": [
+   {
+    "id": "repo:microsoft/promptcraft-robotics",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "res:typefly-2023",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:microsoft/promptcraft-robotics",
+  "kind": "repo",
+  "name": "PromptCraft-Robotics",
+  "url": "https://github.com/microsoft/PromptCraft-Robotics",
+  "summary": "Microsoft's collection of prompts and an AirSim-based ChatGPT drone simulator accompanying the 'ChatGPT for Robotics' work.",
+  "why_it_matters": "Classic starting point for prompting LLMs to produce drone control code in simulation.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:simulation"
+  ],
+  "tags": [
+   "chatgpt",
+   "airsim",
+   "prompts"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "No longer updated and AirSim itself is archived; mine the prompts, run elsewhere.",
+  "related": [
+   {
+    "id": "repo:microsoft/airsim",
+    "rel": "depends_on"
+   },
+   {
+    "id": "res:microsoft-chatgpt-robotics-2023",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:auromix/ros-llm",
+  "kind": "repo",
+  "name": "ROS-LLM",
+  "url": "https://github.com/Auromix/ROS-LLM",
+  "summary": "Framework for natural-language interaction with ROS robots, letting an LLM call robot functions and chain behaviors.",
+  "why_it_matters": "Earlier ROS-native LLM integration; useful comparison to MCP-based designs.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:ros"
+  ],
+  "tags": [
+   "llm",
+   "ros2",
+   "chatgpt"
+  ],
+  "language": "Python",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Not updated since 2023; prefer ROSA or the MCP servers for new work.",
+  "related": [
+   {
+    "id": "repo:nasa-jpl/rosa",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:shailab-ipec/openfly-platform",
+  "kind": "repo",
+  "name": "OpenFly",
+  "url": "https://github.com/SHAILAB-IPEC/OpenFly-Platform",
+  "summary": "Platform for outdoor aerial vision-language navigation: multi-engine simulators (UE, GTA V, Google Earth, 3DGS), automated data collection toolchain, a large benchmark and a keyframe-aware VLN model.",
+  "why_it_matters": "Largest open aerial VLN benchmark, for agents that fly to places described in words.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:simulation",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "vln",
+   "uav",
+   "benchmark",
+   "3dgs"
+  ],
+  "language": "C++",
+  "domains": [
+   "air"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Heavy downloads and GPU; use the released dataset with the baseline model rather than regenerating data.",
+  "related": [
+   {
+    "id": "repo:airvln/airvln",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:water-cookie/citynav",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "res:openfly-aerial-vln-2025",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:airvln/airvln",
+  "kind": "repo",
+  "name": "AerialVLN",
+  "url": "https://github.com/AirVLN/AirVLN",
+  "summary": "Benchmark and simulator (AirSim/UE-based) for vision-and-language navigation by UAVs in city-scale environments, with baseline agents.",
+  "why_it_matters": "The first widely used aerial VLN benchmark; baseline for language-commanded drone navigation.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:simulation",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "vln",
+   "uav",
+   "airsim",
+   "benchmark"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Large simulator assets; plan download time. Linux + GPU.",
+  "related": [
+   {
+    "id": "repo:shailab-ipec/openfly-platform",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "res:aerialvln-iccv-2023",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:water-cookie/citynav",
+  "kind": "repo",
+  "name": "CityNav",
+  "url": "https://github.com/water-cookie/citynav",
+  "summary": "Language-goal aerial navigation dataset over real-city 3D point clouds with geographic information, plus baselines that use map-based landmark grounding.",
+  "why_it_matters": "Links language goals to real geography, close to how operators describe destinations.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:datasets-benchmarks",
+   "concept:gis-mapping"
+  ],
+  "tags": [
+   "vln",
+   "uav",
+   "dataset",
+   "geographic"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Dataset plus training code; GPU needed for baselines.",
+  "related": [
+   {
+    "id": "repo:airvln/airvln",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "res:citynav-2024",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:eku127/satnav",
+  "kind": "repo",
+  "name": "SatNav",
+  "url": "https://github.com/Eku127/SatNav",
+  "summary": "Scalable benchmark and platform for long-horizon UAV vision-language navigation built from satellite imagery (NeurIPS 2026 Datasets track).",
+  "why_it_matters": "Satellite-imagery grounding matches what a real UAV can carry as a prior map, so results transfer better to GNSS-denied ops.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:visual-geolocalization",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "vln",
+   "uav",
+   "satellite",
+   "benchmark",
+   "2026"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "New release; check README for data availability before planning around it.",
+  "related": [
+   {
+    "id": "repo:shailab-ipec/openfly-platform",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:xuefanfu/3dg-vln",
+  "kind": "repo",
+  "name": "3DG-VLN",
+  "url": "https://github.com/xuefanfu/3DG-VLN",
+  "summary": "UAV vision-language navigation framework using 3D grounding for more precise goal localization (2026 research code).",
+  "why_it_matters": "Recent aerial VLN method to compare against benchmark baselines.",
+  "concepts": [
+   "concept:llm-agents-robotics"
+  ],
+  "tags": [
+   "vln",
+   "uav",
+   "3d-grounding",
+   "2026"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Research code; reproduce only if you need a SOTA aerial VLN baseline.",
+  "related": [
+   {
+    "id": "repo:eku127/satnav",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:internrobotics/internnav",
+  "kind": "repo",
+  "name": "InternNav",
+  "url": "https://github.com/InternRobotics/InternNav",
+  "summary": "Open platform for building and evaluating generalist navigation foundation models, covering VLN and related embodied navigation tasks with training and benchmarks.",
+  "why_it_matters": "Brings recent VLA-style navigation models into one toolkit.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:simulation"
+  ],
+  "tags": [
+   "vla",
+   "vln",
+   "foundation-model",
+   "embodied"
+  ],
+  "language": "Jupyter Notebook",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Large models and simulators; use the provided checkpoints.",
+  "related": [
+   {
+    "id": "repo:jzhzhang/navid-vln-ce",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:jzhzhang/navid-vln-ce",
+  "kind": "repo",
+  "name": "NaVid / Uni-NaVid",
+  "url": "https://github.com/jzhzhang/NaVid-VLN-CE",
+  "summary": "Evaluation code for NaVid and Uni-NaVid, video-based VLMs that plan the next navigation step from monocular RGB history in continuous VLN environments.",
+  "why_it_matters": "Shows map-free, camera-only language navigation, relevant when maps and GNSS are unavailable.",
+  "concepts": [
+   "concept:llm-agents-robotics"
+  ],
+  "tags": [
+   "vlm",
+   "vln-ce",
+   "habitat"
+  ],
+  "language": "Python",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Requires Habitat and large checkpoints; evaluation only.",
+  "related": [
+   {
+    "id": "res:navid-vln-2024",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:internrobotics/internnav",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:robodhruv/visualnav-transformer",
+  "kind": "repo",
+  "name": "GNM / ViNT / NoMaD",
+  "url": "https://github.com/robodhruv/visualnav-transformer",
+  "summary": "Code and checkpoints for general visual navigation foundation models (GNM, ViNT, NoMaD) that drive robots from camera images toward image goals or explore, with ROS deployment code.",
+  "why_it_matters": "Pretrained camera-only navigation policies that run on small robots, a ready learned navigation baseline.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:obstacle-avoidance",
+   "concept:edge-ai"
+  ],
+  "tags": [
+   "foundation-model",
+   "diffusion-policy",
+   "visual-navigation"
+  ],
+  "language": "Python",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Deploy NoMaD on a Jetson-class robot with a fisheye camera; topological graph from a teleop run.",
+  "related": [
+   {
+    "id": "repo:blazejosinski/lm_nav",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "res:vint-foundation-model-2023",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "res:nomad-diffusion-nav-2023",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:blazejosinski/lm_nav",
+  "kind": "repo",
+  "name": "LM-Nav",
+  "url": "https://github.com/blazejosinski/lm_nav",
+  "summary": "Code for LM-Nav, which composes a language model, CLIP and a visual navigation model to follow natural-language route instructions without language-annotated robot data.",
+  "why_it_matters": "Early demonstration of building language navigation from off-the-shelf pretrained parts.",
+  "concepts": [
+   "concept:llm-agents-robotics"
+  ],
+  "tags": [
+   "llm",
+   "clip",
+   "vnm",
+   "language-navigation"
+  ],
+  "language": "Python",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Mostly notebook-level; read for the architecture.",
+  "related": [
+   {
+    "id": "repo:robodhruv/visualnav-transformer",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "res:lm-nav-2022",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:vlmaps/vlmaps",
+  "kind": "repo",
+  "name": "VLMaps",
+  "url": "https://github.com/vlmaps/vlmaps",
+  "summary": "Builds visual-language maps by fusing pretrained visual-language features into a 3D reconstruction, enabling open-vocabulary landmark navigation from natural language.",
+  "why_it_matters": "Language-queryable maps are a natural interface for operators tasking robots.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:visual-slam"
+  ],
+  "tags": [
+   "vlm",
+   "lseg",
+   "spatial-map",
+   "habitat"
+  ],
+  "language": "Python",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Habitat-based data; GPU needed for feature extraction.",
+  "related": [
+   {
+    "id": "repo:concept-graphs/concept-graphs",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "res:vlmaps-2022",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:concept-graphs/concept-graphs",
+  "kind": "repo",
+  "name": "ConceptGraphs",
+  "url": "https://github.com/concept-graphs/concept-graphs",
+  "summary": "Builds open-vocabulary 3D scene graphs from RGB-D by associating 2D foundation-model detections across views, then lets an LLM plan over the graph.",
+  "why_it_matters": "Object-level semantic maps an LLM can reason about, useful for tasking and situational awareness.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:visual-slam",
+   "concept:situational-awareness"
+  ],
+  "tags": [
+   "scene-graph",
+   "open-vocabulary",
+   "rgb-d",
+   "llm"
+  ],
+  "language": "Python",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Heavy dependencies (SAM, CLIP, GroundingDINO); start from Replica examples.",
+  "related": [
+   {
+    "id": "repo:vlmaps/vlmaps",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "res:conceptgraphs-2023",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:gengzezhou/navgpt",
+  "kind": "repo",
+  "name": "NavGPT",
+  "url": "https://github.com/GengzeZhou/NavGPT",
+  "summary": "Purely LLM-based vision-and-language navigation agent that reasons explicitly over textual observations to choose actions (AAAI 2024).",
+  "why_it_matters": "Readable baseline for LLM reasoning in navigation, with prompts you can adapt.",
+  "concepts": [
+   "concept:llm-agents-robotics"
+  ],
+  "tags": [
+   "llm",
+   "vln",
+   "r2r",
+   "reasoning"
+  ],
+  "language": "Python",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Needs an LLM API and R2R/Matterport data.",
+  "related": [
+   {
+    "id": "repo:ybgdgh/co-navgpt",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:ybgdgh/co-navgpt",
+  "kind": "repo",
+  "name": "Co-NavGPT",
+  "url": "https://github.com/ybgdgh/Co-NavGPT",
+  "summary": "Multi-robot exploration and object search where an LLM assigns frontier goals to robots from a merged semantic map.",
+  "why_it_matters": "LLM as a multi-agent tasker, a pattern for swarm search missions.",
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:multi-agent"
+  ],
+  "tags": [
+   "llm",
+   "multi-robot",
+   "exploration",
+   "habitat"
+  ],
+  "language": "Python",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Habitat simulation; adapt the goal-assignment prompt for your own swarm sim.",
+  "related": [
+   {
+    "id": "repo:gengzezhou/navgpt",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:pajaraca/iez",
+  "kind": "repo",
+  "name": "IEZ (INS-EKF-ZUPT)",
+  "url": "https://github.com/pajaraca/IEZ",
+  "summary": "MATLAB implementation of a foot-mounted INS with EKF and zero-velocity updates for pedestrian dead reckoning, with sample datasets from two foot-mounted MPU6050 IMUs.",
+  "why_it_matters": "Compact reference for the standard ZUPT pedestrian tracker that underpins dismounted soldier navigation.",
+  "concepts": [
+   "concept:indoor-pedestrian",
+   "concept:ins"
+  ],
+  "tags": [
+   "zupt",
+   "foot-mounted",
+   "pdr",
+   "ekf",
+   "matlab"
+  ],
+  "language": "MATLAB",
+  "domains": [
+   "dismounted"
+  ],
+  "maturity": "educational",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Runs offline on included data; reproduce with any cheap IMU strapped to a boot.",
+  "related": [
+   {
+    "id": "repo:utiasstars/pyshoe",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "res:openshoe-foot-mounted-ins-2012",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:mtahakoroglu/mpu6050_zupt",
+  "kind": "repo",
+  "name": "MPU6050 ZUPT",
+  "url": "https://github.com/mtahakoroglu/MPU6050_ZUPT",
+  "summary": "Arduino/MPU6050 library implementing several open-source foot-mounted INS and zero-velocity detection algorithms.",
+  "why_it_matters": "Low-cost hardware path to a working foot-mounted INS demo.",
+  "concepts": [
+   "concept:indoor-pedestrian",
+   "concept:ins"
+  ],
+  "tags": [
+   "zupt",
+   "mpu6050",
+   "arduino",
+   "foot-mounted"
+  ],
+  "language": "C++",
+  "domains": [
+   "dismounted"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Needs an MPU6050 and microcontroller; expect heading drift without magnetometer aiding.",
+  "related": [
+   {
+    "id": "repo:pajaraca/iez",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:wuzhiguocarter/openpdr",
+  "kind": "repo",
+  "name": "OpenPDR",
+  "url": "https://github.com/wuzhiguocarter/OpenPDR",
+  "summary": "Device-independent pedestrian dead reckoning library: step detection, step length estimation and heading for smartphone-style sensors.",
+  "why_it_matters": "Simple step-and-heading baseline for phone-based indoor navigation.",
+  "concepts": [
+   "concept:indoor-pedestrian"
+  ],
+  "tags": [
+   "pdr",
+   "step-detection",
+   "smartphone"
+  ],
+  "language": "MATLAB",
+  "domains": [
+   "dismounted"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Unmaintained since 2017; use for algorithm reference.",
+  "related": [
+   {
+    "id": "repo:aureliencousin/pdr",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:aureliencousin/pdr",
+  "kind": "repo",
+  "name": "PDR Android app",
+  "url": "https://github.com/aureliencousin/PDR",
+  "summary": "Android app implementing pedestrian dead reckoning with step detection and orientation from phone sensors.",
+  "why_it_matters": "Phone-native PDR demo you can install and walk with during a hackathon.",
+  "concepts": [
+   "concept:indoor-pedestrian"
+  ],
+  "tags": [
+   "pdr",
+   "android",
+   "smartphone"
+  ],
+  "language": "Java",
+  "domains": [
+   "dismounted"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Build with Android Studio; fuse with Wi-Fi or UWB for correction.",
+  "related": [
+   {
+    "id": "repo:wuzhiguocarter/openpdr",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:higerra/ridi_imu",
+  "kind": "repo",
+  "name": "RIDI",
+  "url": "https://github.com/higerra/ridi_imu",
+  "summary": "Code for RIDI, which regresses velocity from smartphone IMU data with learned models to reduce inertial drift for pedestrian navigation.",
+  "why_it_matters": "Ancestor of RoNIN/TLIO-style learned inertial odometry.",
+  "concepts": [
+   "concept:indoor-pedestrian",
+   "concept:ins"
+  ],
+  "tags": [
+   "learned-inertial-odometry",
+   "smartphone",
+   "regression"
+  ],
+  "language": "C++",
+  "domains": [
+   "dismounted"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Old dependencies; prefer RoNIN for new work.",
+  "related": [
+   {
+    "id": "repo:sachini/ronin",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:cathias/tlio",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:location-competition/indoor-location-competition-20",
+  "kind": "repo",
+  "name": "Indoor Location Competition 2.0",
+  "url": "https://github.com/location-competition/indoor-location-competition-20",
+  "summary": "Data and baseline code from Microsoft Research's Indoor Location Competition 2.0: smartphone IMU, Wi-Fi, BLE and magnetic traces across many buildings with floor maps.",
+  "why_it_matters": "Large real indoor dataset for Wi-Fi/magnetic fingerprinting plus PDR fusion.",
+  "concepts": [
+   "concept:indoor-pedestrian",
+   "concept:datasets-benchmarks",
+   "concept:rf-localization"
+  ],
+  "tags": [
+   "wifi",
+   "ble",
+   "fingerprinting",
+   "smartphone",
+   "dataset"
+  ],
+  "language": "Python",
+  "domains": [
+   "dismounted"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Sample data in repo; full set on Kaggle. Good for a fingerprinting + PDR fusion demo.",
+  "related": []
+ },
+ {
+  "id": "repo:decargroup/miluv",
+  "kind": "repo",
+  "name": "MILUV devkit",
+  "url": "https://github.com/decargroup/miluv",
+  "summary": "Python devkit for MILUV, a multi-UAV indoor localization dataset with UWB ranging (including inter-robot), vision and IMU data.",
+  "why_it_matters": "UWB plus vision data with multiple vehicles, for relative and indoor localization.",
+  "concepts": [
+   "concept:indoor-pedestrian",
+   "concept:rf-localization",
+   "concept:datasets-benchmarks",
+   "concept:multi-agent"
+  ],
+  "tags": [
+   "uwb",
+   "multi-uav",
+   "dataset",
+   "indoor"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Download the dataset via devkit scripts; examples include UWB EKF.",
+  "related": [
+   {
+    "id": "repo:williamwenda/uwb_tdoa_dataset",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:ts-fupeng/pvi-dataset",
+  "kind": "repo",
+  "name": "PVI polarization navigation dataset",
+  "url": "https://github.com/TS-FuPeng/PVI-dataset",
+  "summary": "Dataset combining stereo camera, IMU, polarization camera and high-precision GPS for polarization-aided navigation research.",
+  "why_it_matters": "Polarized skylight gives a GNSS-free heading reference; open data for it is rare.",
+  "concepts": [
+   "concept:celestial-nav",
+   "concept:datasets-benchmarks",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "polarization",
+   "skylight-compass",
+   "dataset"
+  ],
+  "language": "",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "README only links a Google Drive; check data format before planning.",
+  "related": []
+ },
+ {
+  "id": "repo:ms8r/celnav",
+  "kind": "repo",
+  "name": "celnav",
+  "url": "https://github.com/ms8r/celnav",
+  "summary": "Python celestial navigation tools for cruising sailors: sight reduction, almanac data and fix computation.",
+  "why_it_matters": "Scriptable sight reduction for a GNSS-free position fix.",
+  "concepts": [
+   "concept:celestial-nav",
+   "concept:maritime-nav"
+  ],
+  "tags": [
+   "sight-reduction",
+   "almanac",
+   "sextant",
+   "python"
+  ],
+  "language": "Python",
+  "domains": [
+   "maritime"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Pure Python; combine with a camera-based star or sun altitude to automate a fix.",
+  "related": [
+   {
+    "id": "repo:alinnman/celestial-navigation",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:skyfielders/python-skyfield",
+    "rel": "depends_on"
+   }
+  ]
+ },
+ {
+  "id": "repo:seandepagnier/celestial_navigation_pi",
+  "kind": "repo",
+  "name": "OpenCPN celestial navigation plugin",
+  "url": "https://github.com/seandepagnier/celestial_navigation_pi",
+  "summary": "OpenCPN plugin for entering sextant sights and plotting lines of position and fixes on the chart.",
+  "why_it_matters": "Puts celestial fixes into a real chart plotter workflow.",
+  "concepts": [
+   "concept:celestial-nav",
+   "concept:maritime-nav"
+  ],
+  "tags": [
+   "opencpn",
+   "sextant",
+   "plugin"
+  ],
+  "language": "C++",
+  "domains": [
+   "maritime"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Build against OpenCPN SDK; useful as UI reference.",
+  "related": [
+   {
+    "id": "repo:ms8r/celnav",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:spel-uchile/star_tracker",
+  "kind": "repo",
+  "name": "SPEL Open Star Tracker",
+  "url": "https://github.com/spel-uchile/Star_Tracker",
+  "summary": "Open star tracker software from the University of Chile space lab, flown on SUCHAI nanosatellites.",
+  "why_it_matters": "Flight-tested open star tracker code, a basis for attitude from stars.",
+  "concepts": [
+   "concept:celestial-nav",
+   "concept:space-nav"
+  ],
+  "tags": [
+   "star-tracker",
+   "cubesat",
+   "attitude"
+  ],
+  "language": "Python",
+  "domains": [
+   "space"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Python prototype; compare with tetra3/LOST.",
+  "related": [
+   {
+    "id": "repo:uwcubesat/lost",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:esa/tetra3",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:dstndstn/astrometry.net",
+  "kind": "repo",
+  "name": "Astrometry.net",
+  "url": "https://github.com/dstndstn/astrometry.net",
+  "summary": "Blind astrometric solver that identifies star fields in arbitrary images and returns the precise sky pointing, using geometric hash indexes of star catalogs.",
+  "why_it_matters": "Proven lost-in-space plate solving; with a known time and gravity vector it yields attitude and coarse position.",
+  "concepts": [
+   "concept:celestial-nav"
+  ],
+  "tags": [
+   "plate-solving",
+   "astrometry",
+   "star-catalog"
+  ],
+  "language": "C",
+  "domains": [
+   "air",
+   "maritime",
+   "space"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "apt install astrometry.net plus index files for your field of view; solve-field on a night-sky photo.",
+  "related": [
+   {
+    "id": "repo:esa/tetra3",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:skyfielders/python-skyfield",
+  "kind": "repo",
+  "name": "Skyfield",
+  "url": "https://github.com/skyfielders/python-skyfield",
+  "summary": "Python library for high-accuracy positions of stars, planets and Earth satellites, with proper time scales and reference frames.",
+  "why_it_matters": "Gives the ephemerides any celestial or satellite-based nav prototype needs.",
+  "concepts": [
+   "concept:celestial-nav",
+   "concept:space-nav",
+   "concept:geodesy"
+  ],
+  "tags": [
+   "ephemeris",
+   "astronomy",
+   "tle",
+   "python"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "high",
+  "hackathon_notes": "pip install skyfield; downloads ephemeris files on first use.",
+  "related": [
+   {
+    "id": "repo:ms8r/celnav",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:kq6up/navalm",
+  "kind": "repo",
+  "name": "navalm",
+  "url": "https://github.com/kq6up/navalm",
+  "summary": "Nautical almanac and celestial sight reduction for Unix/Linux with CLI, ncurses and web interfaces.",
+  "why_it_matters": "Self-contained offline almanac, handy for air-gapped demos.",
+  "concepts": [
+   "concept:celestial-nav",
+   "concept:maritime-nav"
+  ],
+  "tags": [
+   "almanac",
+   "sight-reduction",
+   "cli"
+  ],
+  "language": "C",
+  "domains": [
+   "maritime"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Very new and small; verify outputs against a published almanac.",
+  "related": [
+   {
+    "id": "repo:ms8r/celnav",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:christopherdoer/reve",
+  "kind": "repo",
+  "name": "REVE",
+  "url": "https://github.com/christopherdoer/reve",
+  "summary": "Radar Ego Velocity Estimator: robust 3D ego-velocity from 4D mmWave radar Doppler point clouds, the front-end used by Doer's radar-inertial odometry.",
+  "why_it_matters": "Radar velocity works in smoke, fog and darkness, a strong aid for GNSS-denied drones.",
+  "concepts": [
+   "concept:radar-nav",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "mmwave",
+   "ego-velocity",
+   "doppler",
+   "ros"
+  ],
+  "language": "Fortran",
+  "domains": [
+   "air",
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "ROS1; run on the provided datasets, pairs with christopherdoer/rio.",
+  "related": [
+   {
+    "id": "repo:christopherdoer/rio",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:keenan-burnett/yeti_radar_odometry",
+  "kind": "repo",
+  "name": "Yeti radar odometry",
+  "url": "https://github.com/keenan-burnett/yeti_radar_odometry",
+  "summary": "Radar odometry for Navtech spinning radar that compensates motion distortion and Doppler effects.",
+  "why_it_matters": "Shows the corrections needed to make scanning radar odometry accurate.",
+  "concepts": [
+   "concept:radar-nav"
+  ],
+  "tags": [
+   "navtech",
+   "radar-odometry",
+   "motion-distortion"
+  ],
+  "language": "C++",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Unmaintained; evaluated on Oxford Radar RobotCar.",
+  "related": [
+   {
+    "id": "repo:ori-mrg/robotcar-dataset-sdk",
+    "rel": "evaluated_on"
+   },
+   {
+    "id": "repo:utiasasrl/steam_icp",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:utiasasrl/steam_icp",
+  "kind": "repo",
+  "name": "STEAM-ICP",
+  "url": "https://github.com/utiasASRL/steam_icp",
+  "summary": "Continuous-time lidar, radar, lidar-inertial and radar-inertial odometry built on the STEAM library.",
+  "why_it_matters": "Ready continuous-time radar odometry pipeline evaluated on Boreas.",
+  "concepts": [
+   "concept:radar-nav",
+   "concept:lidar-slam",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "continuous-time",
+   "icp",
+   "radar-inertial",
+   "boreas"
+  ],
+  "language": "C++",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Docker build; test on Boreas sequences.",
+  "related": [
+   {
+    "id": "repo:utiasasrl/steam",
+    "rel": "depends_on"
+   },
+   {
+    "id": "repo:utiasasrl/pyboreas",
+    "rel": "evaluated_on"
+   }
+  ]
+ },
+ {
+  "id": "repo:hkust-aerial-robotics/rio",
+  "kind": "repo",
+  "name": "HKUST 4D Radar-Inertial Odometry",
+  "url": "https://github.com/HKUST-Aerial-Robotics/RIO",
+  "summary": "Optimization-based, point-uncertainty-aware radar-inertial odometry for 4D radar.",
+  "why_it_matters": "Sliding-window alternative to EKF radar-inertial methods.",
+  "concepts": [
+   "concept:radar-nav",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "4d-radar",
+   "radar-inertial",
+   "optimization"
+  ],
+  "language": "C++",
+  "domains": [
+   "air",
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "ROS1 build; run on public 4D radar datasets.",
+  "related": [
+   {
+    "id": "repo:christopherdoer/rio",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:ethz-asl/rio",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:ethz-asl/rio",
+  "kind": "repo",
+  "name": "ETH Radar-Inertial Odometry",
+  "url": "https://github.com/ethz-asl/rio",
+  "summary": "Graph-based, sparse radar-inertial odometry estimation from ETH ASL, using GTSAM.",
+  "why_it_matters": "Factor-graph radar-inertial baseline for drones in degraded visual environments.",
+  "concepts": [
+   "concept:radar-nav",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "radar-inertial",
+   "gtsam",
+   "factor-graph"
+  ],
+  "language": "C++",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "ROS build; datasets linked in README.",
+  "related": [
+   {
+    "id": "repo:hkust-aerial-robotics/rio",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:yangsc4063/rino",
+  "kind": "repo",
+  "name": "RINO",
+  "url": "https://github.com/yangsc4063/rino",
+  "summary": "Radar-inertial odometry for scanning radar targeting accuracy and robustness (T-ASE 2025).",
+  "why_it_matters": "Recent scanning-radar inertial method to benchmark against.",
+  "concepts": [
+   "concept:radar-nav",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "radar-inertial",
+   "scanning-radar",
+   "2025"
+  ],
+  "language": "C++",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Research code; check dataset requirements.",
+  "related": [
+   {
+    "id": "repo:utiasasrl/steam_icp",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:url-kaist/outlier-robust-radar-odometry",
+  "kind": "repo",
+  "name": "ORORA",
+  "url": "https://github.com/url-kaist/outlier-robust-radar-odometry",
+  "summary": "Outlier-robust radar odometry using graduated non-convexity-style estimation on radar feature correspondences (ICRA 2023).",
+  "why_it_matters": "Robust estimation is what keeps radar odometry stable amid clutter and multipath.",
+  "concepts": [
+   "concept:radar-nav"
+  ],
+  "tags": [
+   "radar-odometry",
+   "robust-estimation",
+   "mulran"
+  ],
+  "language": "C++",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Evaluated on MulRan and Oxford Radar; ROS build.",
+  "related": [
+   {
+    "id": "repo:dan11003/cfear_radarodometry",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:dan11003/tbv_slam_public",
+  "kind": "repo",
+  "name": "TBV Radar SLAM",
+  "url": "https://github.com/dan11003/tbv_slam_public",
+  "summary": "Radar SLAM with verified loop closures built on CFEAR radar odometry.",
+  "why_it_matters": "Full radar-only SLAM, including loop closure, for long GNSS-denied drives.",
+  "concepts": [
+   "concept:radar-nav",
+   "concept:place-recognition"
+  ],
+  "tags": [
+   "radar-slam",
+   "loop-closure",
+   "cfear"
+  ],
+  "language": "C++",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "ROS1 + Docker; pairs with CFEAR.",
+  "related": [
+   {
+    "id": "repo:dan11003/cfear_radarodometry",
+    "rel": "extends"
+   }
+  ]
+ },
+ {
+  "id": "repo:sparolab/referee",
+  "kind": "repo",
+  "name": "ReFeree",
+  "url": "https://github.com/sparolab/ReFeree",
+  "summary": "Lightweight radar global descriptor for radar place recognition (RA-L 2024).",
+  "why_it_matters": "Cheap loop-closure and relocalization for radar-only navigation.",
+  "concepts": [
+   "concept:radar-nav",
+   "concept:place-recognition"
+  ],
+  "tags": [
+   "radar-place-recognition",
+   "descriptor"
+  ],
+  "language": "C++",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Small codebase; test on MulRan/Oxford Radar.",
+  "related": [
+   {
+    "id": "repo:mttgdd/open-radvlad",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:mttgdd/open-radvlad",
+  "kind": "repo",
+  "name": "Open-RadVLAD",
+  "url": "https://github.com/mttgdd/open-radvlad",
+  "summary": "Fast radar place recognition using VLAD-style aggregation over radar polar scans.",
+  "why_it_matters": "Simple radar relocalization baseline.",
+  "concepts": [
+   "concept:radar-nav",
+   "concept:place-recognition"
+  ],
+  "tags": [
+   "radar-place-recognition",
+   "vlad"
+  ],
+  "language": "Python",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Evaluate on Oxford Radar RobotCar.",
+  "related": [
+   {
+    "id": "repo:sparolab/referee",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:kaist-avelab/k-radar",
+  "kind": "repo",
+  "name": "K-Radar",
+  "url": "https://github.com/kaist-avelab/K-Radar",
+  "summary": "4D radar dataset and benchmark for object detection in diverse weather, with raw 4D tensors, lidar, cameras and GNSS.",
+  "why_it_matters": "Bad-weather 4D radar data, also usable for radar odometry and perception experiments.",
+  "concepts": [
+   "concept:radar-nav",
+   "concept:datasets-benchmarks",
+   "concept:target-tracking"
+  ],
+  "tags": [
+   "4d-radar",
+   "dataset",
+   "adverse-weather"
+  ],
+  "language": "Python",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Very large dataset; request access and use subsets.",
+  "related": []
+ },
+ {
+  "id": "repo:akarsh-prabhakara/radarhd",
+  "kind": "repo",
+  "name": "RadarHD",
+  "url": "https://github.com/akarsh-prabhakara/RadarHD",
+  "summary": "Learns to generate high-resolution, lidar-like point clouds from low-cost single-chip mmWave radar.",
+  "why_it_matters": "Makes cheap radar usable for mapping and localization in smoke or darkness.",
+  "concepts": [
+   "concept:radar-nav",
+   "concept:edge-ai"
+  ],
+  "tags": [
+   "mmwave",
+   "super-resolution",
+   "deep-learning"
+  ],
+  "language": "Python",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Pretrained model and data provided; GPU needed.",
+  "related": []
+ },
+ {
+  "id": "repo:kirienko/pylgrim",
+  "kind": "repo",
+  "name": "pylgrim",
+  "url": "https://github.com/kirienko/pylgrim",
+  "summary": "GNSS software receiver written in Python for learning acquisition, tracking and positioning.",
+  "why_it_matters": "Python-readable receiver chain for teaching and quick experiments.",
+  "concepts": [
+   "concept:gnss-sdr",
+   "concept:gnss"
+  ],
+  "tags": [
+   "software-receiver",
+   "python",
+   "gps-l1"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Unmaintained since 2020; use for learning.",
+  "related": [
+   {
+    "id": "repo:perrysou/softgnss-python",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:pmonta/gnss-dsp-tools",
+  "kind": "repo",
+  "name": "GNSS-DSP-tools",
+  "url": "https://github.com/pmonta/GNSS-DSP-tools",
+  "summary": "Python code generators, acquisition and tracking for many GNSS signals (GPS, Galileo, GLONASS, BeiDou, NavIC and more) operating on IQ recordings.",
+  "why_it_matters": "Broadest signal coverage among lightweight SDR toolkits; quick to test a new recording.",
+  "concepts": [
+   "concept:gnss-sdr",
+   "concept:gnss"
+  ],
+  "tags": [
+   "acquisition",
+   "tracking",
+   "prn-codes",
+   "python"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Run acquire-*.py on an IQ file from any SDR; no build needed.",
+  "related": [
+   {
+    "id": "repo:gnss-sdr/gnss-sdr",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:danipascual/gnss-matlab",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:danipascual/gnss-matlab",
+  "kind": "repo",
+  "name": "GNSS-matlab",
+  "url": "https://github.com/danipascual/GNSS-matlab",
+  "summary": "MATLAB code to generate GNSS PRN and secondary codes, dataless signals and spectra, with real captures.",
+  "why_it_matters": "Reference signal generation for interference and receiver studies.",
+  "concepts": [
+   "concept:gnss-sdr",
+   "concept:gnss"
+  ],
+  "tags": [
+   "prn",
+   "signal-generation",
+   "matlab",
+   "spectrum"
+  ],
+  "language": "MATLAB",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Old but self-contained; MATLAB needed.",
+  "related": [
+   {
+    "id": "repo:pmonta/gnss-dsp-tools",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:rhymesg/particle_filter",
+  "kind": "repo",
+  "name": "TRN particle filter examples",
+  "url": "https://github.com/rhymesg/Particle_Filter",
+  "summary": "MATLAB particle filtering examples for terrain-referenced navigation, comparing standard, auxiliary, mixture and out-of-sequence measurement particle filters (accompanies an IEEE TAES 2018 paper).",
+  "why_it_matters": "Directly addresses the ambiguous-terrain problem that breaks naive TRN.",
+  "concepts": [
+   "concept:terrain-nav",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "trn",
+   "particle-filter",
+   "matlab",
+   "tan"
+  ],
+  "language": "MATLAB",
+  "domains": [
+   "air"
+  ],
+  "maturity": "educational",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Runs in MATLAB with simulated terrain; port the update logic to Python for a DEM demo.",
+  "related": [
+   {
+    "id": "repo:mzahana/tercom_nav",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:deep-ternaloc/deep-ternaloc",
+  "kind": "repo",
+  "name": "Deep-TERNALOC",
+  "url": "https://github.com/deep-ternaloc/deep-ternaloc",
+  "summary": "Deep-learning-based terrain-referenced navigation and localization project from ITU Aerospace Research Center, with particle filter baselines.",
+  "why_it_matters": "Learning-based TRN reference from an aerospace lab.",
+  "concepts": [
+   "concept:terrain-nav"
+  ],
+  "tags": [
+   "trn",
+   "deep-learning",
+   "particle-filter"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Partial code; read with the project website.",
+  "related": [
+   {
+    "id": "repo:rhymesg/particle_filter",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:sirbastiano/federnet",
+  "kind": "repo",
+  "name": "FederNet",
+  "url": "https://github.com/sirbastiano/FederNet",
+  "summary": "Terrain relative navigation for planetary landing that detects craters with a Mask R-CNN and matches them to a catalog using projective invariants.",
+  "why_it_matters": "Crater-based TRN, the space analogue of map-matching navigation.",
+  "concepts": [
+   "concept:terrain-nav",
+   "concept:space-nav"
+  ],
+  "tags": [
+   "crater-detection",
+   "mask-rcnn",
+   "lunar",
+   "trn"
+  ],
+  "language": "Jupyter Notebook",
+  "domains": [
+   "space"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Thesis code; TensorFlow 2 and pretrained weights needed.",
+  "related": []
+ },
+ {
+  "id": "repo:arclab-hku/esvio",
+  "kind": "repo",
+  "name": "ESVIO",
+  "url": "https://github.com/arclab-hku/ESVIO",
+  "summary": "Event-based stereo visual-inertial odometry combining stereo event and image streams with IMU (RA-L/IROS 2023).",
+  "why_it_matters": "Event cameras keep tracking under fast motion and HDR where frame VIO fails.",
+  "concepts": [
+   "concept:vio"
+  ],
+  "tags": [
+   "event-camera",
+   "stereo",
+   "vio",
+   "ros"
+  ],
+  "language": "C++",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "ROS1; run on provided event datasets.",
+  "related": [
+   {
+    "id": "repo:arclab-hku/event_based_vo-vio-slam",
+    "rel": "same_org"
+   },
+   {
+    "id": "repo:hkust-aerial-robotics/esvo",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:uzh-rpg/rpg_eklt",
+  "kind": "repo",
+  "name": "EKLT",
+  "url": "https://github.com/uzh-rpg/rpg_eklt",
+  "summary": "Asynchronous photometric feature tracking that combines events and frames (IJCV 2019).",
+  "why_it_matters": "Feature tracks with very low latency, a front-end for event VIO.",
+  "concepts": [
+   "concept:vio",
+   "concept:feature-matching"
+  ],
+  "tags": [
+   "event-camera",
+   "feature-tracking"
+  ],
+  "language": "C++",
+  "domains": [
+   "air"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Old ROS1 code; use for reference.",
+  "related": [
+   {
+    "id": "repo:uzh-rpg/rpg_ultimate_slam_open",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:uzh-rpg/rpg_emvs",
+  "kind": "repo",
+  "name": "EMVS",
+  "url": "https://github.com/uzh-rpg/rpg_emvs",
+  "summary": "Event-based multi-view stereo: semi-dense 3D reconstruction from a moving event camera with known poses (IJCV 2018).",
+  "why_it_matters": "Mapping from event cameras for depth in HDR scenes.",
+  "concepts": [
+   "concept:visual-slam"
+  ],
+  "tags": [
+   "event-camera",
+   "multi-view-stereo"
+  ],
+  "language": "C++",
+  "domains": [
+   "air"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "ROS1; reference implementation.",
+  "related": [
+   {
+    "id": "repo:uzh-rpg/rpg_eklt",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:tum-vision/devo",
+  "kind": "repo",
+  "name": "DEVO",
+  "url": "https://github.com/tum-vision/DEVO",
+  "summary": "Deep Event Visual Odometry: learned monocular event-only VO trained on simulated events, generalizing to real benchmarks (3DV 2024).",
+  "why_it_matters": "Event-only odometry without frames, useful at night or under strobing light.",
+  "concepts": [
+   "concept:vio",
+   "concept:visual-slam"
+  ],
+  "tags": [
+   "event-camera",
+   "deep-learning",
+   "visual-odometry"
+  ],
+  "language": "Python",
+  "domains": [
+   "air",
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "PyTorch + CUDA; pretrained checkpoint available.",
+  "related": [
+   {
+    "id": "res:devo-deep-event-vo-2023",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:uzh-rpg/rpg_dvs_ros",
+  "kind": "repo",
+  "name": "rpg_dvs_ros",
+  "url": "https://github.com/uzh-rpg/rpg_dvs_ros",
+  "summary": "ROS drivers and tools for DVS/DAVIS event cameras, including calibration and rendering.",
+  "why_it_matters": "Standard way to get event-camera data into ROS 1.",
+  "concepts": [
+   "concept:ros",
+   "concept:calibration"
+  ],
+  "tags": [
+   "event-camera",
+   "dvs",
+   "davis",
+   "driver"
+  ],
+  "language": "C++",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "ROS1 only; for ROS 2 look at vendor drivers.",
+  "related": [
+   {
+    "id": "repo:uzh-rpg/rpg_esim",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:prophesee-ai/openeb",
+  "kind": "repo",
+  "name": "OpenEB",
+  "url": "https://github.com/prophesee-ai/openeb",
+  "summary": "Prophesee's open SDK for event-based vision: camera drivers, data formats, visualization and algorithm building blocks.",
+  "why_it_matters": "Entry point for the most common commercial event sensors.",
+  "concepts": [
+   "concept:edge-ai"
+  ],
+  "tags": [
+   "event-camera",
+   "sdk",
+   "prophesee"
+  ],
+  "language": "C++",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Build from source or packages; sample recordings available without hardware.",
+  "related": [
+   {
+    "id": "repo:neuromorphs/tonic",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:neuromorphs/tonic",
+  "kind": "repo",
+  "name": "Tonic",
+  "url": "https://github.com/neuromorphs/tonic",
+  "summary": "Python library for event-based datasets and transforms, in the style of torchvision.",
+  "why_it_matters": "Fast access to many event datasets for learning-based event navigation.",
+  "concepts": [
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "event-camera",
+   "dataset-loader",
+   "pytorch"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "pip install tonic; use transforms to voxel grids.",
+  "related": [
+   {
+    "id": "repo:prophesee-ai/openeb",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:sensorsini/v2e",
+  "kind": "repo",
+  "name": "v2e",
+  "url": "https://github.com/SensorsINI/v2e",
+  "summary": "Converts conventional video into realistic synthetic DVS event streams with sensor noise modeling.",
+  "why_it_matters": "Lets you produce event data for training/testing without owning an event camera.",
+  "concepts": [
+   "concept:simulation"
+  ],
+  "tags": [
+   "event-camera",
+   "synthetic-data",
+   "dvs"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "high",
+  "hackathon_notes": "pip install; feed it drone footage to create event sequences.",
+  "related": [
+   {
+    "id": "repo:uzh-rpg/rpg_esim",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:uzh-rpg/rpg_e2vid",
+  "kind": "repo",
+  "name": "E2VID",
+  "url": "https://github.com/uzh-rpg/rpg_e2vid",
+  "summary": "Reconstructs intensity video from event streams with a recurrent network, enabling frame-based methods on event data.",
+  "why_it_matters": "Bridge that lets standard VO/feature pipelines consume event camera data.",
+  "concepts": [
+   "concept:vio"
+  ],
+  "tags": [
+   "event-camera",
+   "video-reconstruction",
+   "deep-learning"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Pretrained model; PyTorch.",
+  "related": [
+   {
+    "id": "repo:uzh-rpg/rpg_dvs_ros",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:daniilidis-group/event_feature_tracking",
+  "kind": "repo",
+  "name": "Event feature tracking (EM-ICP)",
+  "url": "https://github.com/daniilidis-group/event_feature_tracking",
+  "summary": "MATLAB implementations of event-based feature tracking methods from the Penn GRASP lab.",
+  "why_it_matters": "Reference algorithms for event-based VIO front-ends.",
+  "concepts": [
+   "concept:vio",
+   "concept:feature-matching"
+  ],
+  "tags": [
+   "event-camera",
+   "feature-tracking",
+   "matlab"
+  ],
+  "language": "MATLAB",
+  "domains": [
+   "air"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "MATLAB; pair with MVSEC data.",
+  "related": []
+ },
+ {
+  "id": "repo:romavis/loranc",
+  "kind": "repo",
+  "name": "LoranC receiver",
+  "url": "https://github.com/romavis/LoranC",
+  "summary": "DSP-based Loran-C receiver project also aimed at the Russian Chayka chain, covering pulse detection and signal tracking.",
+  "why_it_matters": "One of very few open receivers for low-frequency hyperbolic navigation, the basis of eLoran.",
+  "concepts": [
+   "concept:signals-of-opportunity",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "loran-c",
+   "chayka",
+   "eloran",
+   "lf",
+   "dsp"
+  ],
+  "language": "IDL",
+  "domains": [
+   "maritime",
+   "multi"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Old code from 2014; use for algorithm reference with recorded LF IQ data.",
+  "related": [
+   {
+    "id": "repo:cheolj/loran-c-reference-code",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:cheolj/loran-c-reference-code",
+  "kind": "repo",
+  "name": "Loran-C reference signal generator",
+  "url": "https://github.com/CheolJ/Loran-c-reference-code",
+  "summary": "NumPy API that generates Loran-C master and secondary station pulse groups with phase codes for simulation (Korean docs).",
+  "why_it_matters": "Synthetic Loran/eLoran signals for testing receivers without LF hardware.",
+  "concepts": [
+   "concept:signals-of-opportunity",
+   "concept:simulation"
+  ],
+  "tags": [
+   "loran-c",
+   "eloran",
+   "signal-generation",
+   "python"
+  ],
+  "language": "Python",
+  "domains": [
+   "maritime"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Small; translate README; combine with a tracking loop for a toy eLoran receiver.",
+  "related": [
+   {
+    "id": "repo:romavis/loranc",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:nvidia-ai-iot/torch2trt",
+  "kind": "repo",
+  "name": "torch2trt",
+  "url": "https://github.com/NVIDIA-AI-IOT/torch2trt",
+  "summary": "Converts PyTorch models to TensorRT engines with a single call, aimed at Jetson deployment.",
+  "why_it_matters": "Simplest path to fast onboard inference for learned nav models.",
+  "concepts": [
+   "concept:edge-ai"
+  ],
+  "tags": [
+   "tensorrt",
+   "jetson",
+   "pytorch"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Install on a Jetson with JetPack; not every layer converts - check supported ops.",
+  "related": [
+   {
+    "id": "repo:dusty-nv/jetson-inference",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:dusty-nv/jetson-inference",
+  "kind": "repo",
+  "name": "Hello AI World (jetson-inference)",
+  "url": "https://github.com/dusty-nv/jetson-inference",
+  "summary": "NVIDIA's guide and library for deploying detection, segmentation and depth networks with TensorRT on Jetson, with camera streaming.",
+  "why_it_matters": "Get onboard perception running on a Jetson in hours.",
+  "concepts": [
+   "concept:edge-ai"
+  ],
+  "tags": [
+   "jetson",
+   "tensorrt",
+   "detection",
+   "segmentation"
+  ],
+  "language": "C++",
+  "domains": [
+   "air",
+   "ground"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Use the Docker container; works with CSI/USB cameras.",
+  "related": [
+   {
+    "id": "repo:dusty-nv/ros_deep_learning",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:dusty-nv/jetson-containers",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:dusty-nv/jetson-containers",
+  "kind": "repo",
+  "name": "jetson-containers",
+  "url": "https://github.com/dusty-nv/jetson-containers",
+  "summary": "Build system and prebuilt containers for ML on Jetson (PyTorch, ROS, LLMs, VLMs) matched to JetPack versions.",
+  "why_it_matters": "Avoids the dependency hell of getting ROS and PyTorch onto a Jetson.",
+  "concepts": [
+   "concept:edge-ai",
+   "concept:llm-agents-robotics"
+  ],
+  "tags": [
+   "jetson",
+   "docker",
+   "ros",
+   "llm"
+  ],
+  "language": "Jupyter Notebook",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Use autotag to pull a container matching your JetPack.",
+  "related": [
+   {
+    "id": "repo:dusty-nv/jetson-inference",
+    "rel": "same_org"
+   },
+   {
+    "id": "res:nvidia-jetson-ai-lab",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:dusty-nv/ros_deep_learning",
+  "kind": "repo",
+  "name": "ros_deep_learning",
+  "url": "https://github.com/dusty-nv/ros_deep_learning",
+  "summary": "ROS/ROS 2 nodes wrapping jetson-inference for detection, classification and segmentation with TensorRT.",
+  "why_it_matters": "Drop-in onboard perception topics for a ROS robot on Jetson.",
+  "concepts": [
+   "concept:edge-ai",
+   "concept:ros"
+  ],
+  "tags": [
+   "jetson",
+   "ros2",
+   "tensorrt"
+  ],
+  "language": "C++",
+  "domains": [
+   "ground",
+   "air"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Build inside jetson-containers ROS image.",
+  "related": [
+   {
+    "id": "repo:dusty-nv/jetson-inference",
+    "rel": "depends_on"
+   }
+  ]
+ },
+ {
+  "id": "repo:nvidia-isaac-ros/isaac_ros_nvblox",
+  "kind": "repo",
+  "name": "Isaac ROS nvblox",
+  "url": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_nvblox",
+  "summary": "GPU-accelerated 3D reconstruction (TSDF/ESDF) that provides Nav2 local costmaps from depth cameras.",
+  "why_it_matters": "Real-time onboard mapping for obstacle avoidance without lidar.",
+  "concepts": [
+   "concept:edge-ai",
+   "concept:obstacle-avoidance",
+   "concept:ros"
+  ],
+  "tags": [
+   "nvblox",
+   "tsdf",
+   "esdf",
+   "nav2",
+   "jetson"
+  ],
+  "language": "C++",
+  "domains": [
+   "ground",
+   "air"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Isaac ROS dev container; RealSense quickstart.",
+  "related": [
+   {
+    "id": "repo:nvidia-isaac-ros/isaac_ros_visual_slam",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:ros-navigation/navigation2",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:nvidia-isaac-ros/isaac_ros_dnn_inference",
+  "kind": "repo",
+  "name": "Isaac ROS DNN Inference",
+  "url": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_dnn_inference",
+  "summary": "ROS 2 packages for TensorRT and Triton inference on Jetson and x86, with encoder/decoder nodes for common model types.",
+  "why_it_matters": "Standard ROS 2 path to run custom learned models onboard.",
+  "concepts": [
+   "concept:edge-ai",
+   "concept:ros"
+  ],
+  "tags": [
+   "tensorrt",
+   "triton",
+   "ros2",
+   "jetson"
+  ],
+  "language": "C++",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Use with an ONNX model; dev container required.",
+  "related": [
+   {
+    "id": "repo:nvidia-isaac-ros/isaac_ros_nvblox",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:nvidia-isaac/cuvslam",
+  "kind": "repo",
+  "name": "cuVSLAM",
+  "url": "https://github.com/nvidia-isaac/cuVSLAM",
+  "summary": "NVIDIA's CUDA-accelerated visual odometry and SLAM library supporting mono to multi-camera rigs with optional IMU, with Python bindings.",
+  "why_it_matters": "The engine behind Isaac ROS Visual SLAM, now usable directly from Python.",
+  "concepts": [
+   "concept:vio",
+   "concept:visual-slam",
+   "concept:edge-ai"
+  ],
+  "tags": [
+   "cuda",
+   "jetson",
+   "visual-odometry",
+   "python"
+  ],
+  "language": "C++",
+  "domains": [
+   "air",
+   "ground"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "high",
+  "hackathon_notes": "pip install the Python wheel on Jetson or x86 with CUDA; examples for EuRoC/KITTI.",
+  "related": [
+   {
+    "id": "repo:nvidia-isaac-ros/isaac_ros_visual_slam",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "res:cuvslam-2025",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:fabio-sim/lightglue-onnx",
+  "kind": "repo",
+  "name": "LightGlue-ONNX",
+  "url": "https://github.com/fabio-sim/LightGlue-ONNX",
+  "summary": "ONNX export of SuperPoint/DISK + LightGlue feature matching with TensorRT and OpenVINO support.",
+  "why_it_matters": "Fast learned matching on embedded hardware for visual geolocalization and VO.",
+  "concepts": [
+   "concept:edge-ai",
+   "concept:feature-matching",
+   "concept:visual-geolocalization"
+  ],
+  "tags": [
+   "lightglue",
+   "onnx",
+   "tensorrt",
+   "openvino"
+  ],
+  "language": "Python",
+  "domains": [
+   "air",
+   "ground"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Download prebuilt ONNX models; run with onnxruntime-gpu or TensorRT.",
+  "related": [
+   {
+    "id": "repo:cvg/lightglue",
+    "rel": "extends"
+   }
+  ]
+ },
+ {
+  "id": "repo:pinto0309/pinto_model_zoo",
+  "kind": "repo",
+  "name": "PINTO model zoo",
+  "url": "https://github.com/PINTO0309/PINTO_model_zoo",
+  "summary": "Large collection of models converted between TensorFlow, TFLite, ONNX, OpenVINO, TensorRT and others.",
+  "why_it_matters": "Saves conversion time when a needed model must run on an edge accelerator.",
+  "concepts": [
+   "concept:edge-ai"
+  ],
+  "tags": [
+   "model-zoo",
+   "onnx",
+   "tflite",
+   "openvino"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Use the download scripts per model; check licences per model.",
+  "related": [
+   {
+    "id": "repo:airockchip/rknn_model_zoo",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:airockchip/rknn_model_zoo",
+  "kind": "repo",
+  "name": "RKNN Model Zoo",
+  "url": "https://github.com/airockchip/rknn_model_zoo",
+  "summary": "Rockchip's examples and converted models for its NPU (RK3588 and similar), with deployment code.",
+  "why_it_matters": "Low-cost non-NVIDIA edge AI option common on small drones and UGVs.",
+  "concepts": [
+   "concept:edge-ai"
+  ],
+  "tags": [
+   "rockchip",
+   "npu",
+   "rk3588"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Needs rknn-toolkit2 for conversion; run demos on an RK3588 board.",
+  "related": [
+   {
+    "id": "repo:pinto0309/pinto_model_zoo",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:luxonis/depthai",
+  "kind": "repo",
+  "name": "DepthAI",
+  "url": "https://github.com/luxonis/depthai",
+  "summary": "Python API and examples for Luxonis OAK cameras, which run neural networks and stereo depth on the camera itself.",
+  "why_it_matters": "Puts inference and depth on the sensor, freeing the companion computer.",
+  "concepts": [
+   "concept:edge-ai"
+  ],
+  "tags": [
+   "oak-d",
+   "stereo-depth",
+   "on-camera-inference"
+  ],
+  "language": "Python",
+  "domains": [
+   "air",
+   "ground"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "high",
+  "hackathon_notes": "pip install depthai; OAK-D required. Examples include spatial detection.",
+  "related": [
+   {
+    "id": "repo:luxonis/depthai-ros",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:luxonis/depthai-ros",
+  "kind": "repo",
+  "name": "DepthAI ROS",
+  "url": "https://github.com/luxonis/depthai-ros",
+  "summary": "ROS 1/2 driver for Luxonis OAK cameras publishing depth, detections and IMU.",
+  "why_it_matters": "Plug OAK cameras into a ROS nav stack.",
+  "concepts": [
+   "concept:edge-ai",
+   "concept:ros"
+  ],
+  "tags": [
+   "oak-d",
+   "ros2",
+   "driver"
+  ],
+  "language": "C++",
+  "domains": [
+   "air",
+   "ground"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Binary packages for major ROS 2 distros.",
+  "related": [
+   {
+    "id": "repo:luxonis/depthai",
+    "rel": "depends_on"
+   }
+  ]
+ },
+ {
+  "id": "repo:hailo-ai/hailo-rpi5-examples",
+  "kind": "repo",
+  "name": "Hailo Raspberry Pi 5 examples",
+  "url": "https://github.com/hailo-ai/hailo-rpi5-examples",
+  "summary": "Examples for Hailo-8/8L accelerators on Raspberry Pi 5 (AI Kit/HAT): detection, pose and segmentation pipelines; marked outdated in favor of hailo-apps.",
+  "why_it_matters": "Cheapest route to real-time onboard inference on a Pi-based vehicle.",
+  "concepts": [
+   "concept:edge-ai"
+  ],
+  "tags": [
+   "hailo",
+   "raspberry-pi",
+   "npu"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Repo points to hailo-ai/hailo-apps for current code; start there.",
+  "related": []
+ }
+]

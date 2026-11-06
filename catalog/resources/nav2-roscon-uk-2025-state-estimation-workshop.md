@@ -17,8 +17,8 @@ Hands-on workshop material comparing two ROS 2 state-estimation approaches: Kalm
 
 ## Related
 
-- has_code: `repo:locusrobotics/roscon-uk-2025-se-workshop` (not indexed)
-- uses: `repo:locusrobotics/fuse` (not indexed)
+- has_code: [ROSCon UK 2025 State Estimation workshop](../repos/locusrobotics__roscon-uk-2025-se-workshop.md)
+- uses: [fuse](../repos/locusrobotics__fuse.md)
 - uses: [robot_localization](../repos/cra-ros-pkg__robot_localization.md)
 
 _Indexed by lane(s): learning_

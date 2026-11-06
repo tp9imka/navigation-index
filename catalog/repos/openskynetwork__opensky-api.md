@@ -10,7 +10,7 @@ Python and Java bindings for the OpenSky Network REST API for live and recent ai
 
 **Why it matters:** Free crowd-sourced air picture when no local receiver is available.
 
-**Hackathon notes:** Anonymous access is rate-limited; register for more.
+**Hackathon notes:** Anonymous access is rate-limited. Since March 2026 authenticated access uses OAuth2 client credentials (basic auth was dropped); create an API client in your OpenSky account.
 
 **Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md)
 

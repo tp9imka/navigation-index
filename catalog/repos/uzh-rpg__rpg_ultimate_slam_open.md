@@ -25,6 +25,7 @@ Open-source release of Ultimate SLAM, combining events, standard frames and IMU 
 ## Referenced by
 
 - [ESVO](../repos/hkust-aerial-robotics__esvo.md) (alternative_to)
+- [EKLT](../repos/uzh-rpg__rpg_eklt.md) (same_org)
 
 _Indexed by lane(s): slam_
 

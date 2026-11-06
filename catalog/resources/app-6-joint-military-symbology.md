@@ -19,7 +19,7 @@ Overview of APP-6, the NATO standard for map symbols of units, equipment and tac
 ## Related
 
 - has_code: [milsymbol](../repos/spatialillusions__milsymbol.md)
-- has_code: `repo:missioncommand/mil-sym-ts` (not indexed)
+- has_code: [mil-sym-ts](../repos/missioncommand__mil-sym-ts.md)
 
 ## Referenced by
 

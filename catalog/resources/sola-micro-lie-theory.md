@@ -20,11 +20,11 @@ Tutorial paper giving just enough Lie theory (groups, exponential map, adjoint, 
 ## Related
 
 - has_code: [manif](../repos/artivis__manif.md)
-- same_author: [Quaternion kinematics for the error-state Kalman filter](../resources/sola-quaternion-eskf.md)
+- same_author: [Quaternion kinematics for the error-state Kalman filter](../resources/sola-quaternion-kinematics-eskf.md)
 
 ## Referenced by
 
-- [Quaternion kinematics for the error-state Kalman filter](../resources/sola-quaternion-eskf.md) (same_author)
+- [Quaternion kinematics for the error-state Kalman filter](../resources/sola-quaternion-kinematics-eskf.md) (same_author)
 - [SLAM toolbox for Matlab (EKF-SLAM teaching code)](../resources/sola-slamtb-ekf-slam-toolbox.md) (same_author)
 
 _Indexed by lane(s): ins-fusion, learning_

@@ -6,7 +6,11 @@ Camera-IMU, LiDAR-IMU extrinsics, intrinsics, time offset, Allan variance.
 
 **Parent:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
 
-## Repositories (18)
+## Samples (1)
+
+- [MagNav.jl quickstart: Tolles-Lawson and EKF on the SGL 2020 flight](../samples/magnav-quickstart.md) - A Julia walkthrough with MagNav.jl that downloads the public SGL 2020 challenge flight and Ottawa anomaly maps, compensates the scalar magnetometer with Tolles-Lawson on a calibration box, and runs the MagNav EKF against
+
+## Repositories (19)
 
 - [OpenVINS](../repos/rpng__open_vins.md) - fit: high - MSCKF-based visual-inertial navigation platform with online calibration, a simulator, and extensive documentation for research use.
 - [MINS](../repos/rpng__mins.md) - fit: high - Multi-sensor aided inertial navigation that fuses IMU with camera, LiDAR, GNSS and wheel odometry, including online spatial/temporal calibration and a multi-sensor simulator.
@@ -19,6 +23,7 @@ Camera-IMU, LiDAR-IMU extrinsics, intrinsics, time offset, Allan variance.
 - [iKalibr](../repos/unsigned-long__ikalibr.md) - fit: medium - Continuous-time, targetless multi-sensor calibration framework (IMU, cameras, LiDAR, radar, RGB-D, event cameras) estimating extrinsics and time offsets (IEEE T-RO 2025).
 - [NaveGo](../repos/rodralez__navego.md) - fit: medium - Open MATLAB/GNU Octave toolbox for simulating and processing integrated INS/GNSS navigation, including IMU error modelling and Allan variance analysis.
 - [imu_tk](../repos/kyle-ak__imu_tk.md) - fit: medium - Tool for calibrating IMU intrinsics (misalignment, scale factors and biases of accelerometer and gyro) from a sequence of static poses, without a turntable.
+- [rpg_dvs_ros](../repos/uzh-rpg__rpg_dvs_ros.md) - fit: medium - ROS drivers and tools for DVS/DAVIS event cameras, including calibration and rendering.
 - [NASA COTS Star Tracker](../repos/nasa__cots-star-tracker.md) - fit: medium - NASA software for building a star tracker from commercial off-the-shelf cameras, including calibration and attitude solution.
 - [Heimdall DAQ firmware](../repos/krakenrf__heimdall_daq_fw.md) - fit: medium - Coherent multichannel SDR acquisition chain (sync, calibration, decimation) underneath KrakenSDR DoA and passive radar apps.
 - [MagNav deep-learning compensation](../repos/naatyu__magnav.md) - fit: medium - Deep-learning approach to aircraft magnetic disturbance compensation built around the MagNav challenge data.

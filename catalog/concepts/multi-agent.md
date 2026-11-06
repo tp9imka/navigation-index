@@ -4,7 +4,7 @@
 
 Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 
-## Repositories (38)
+## Repositories (40)
 
 - [EGO-Swarm](../repos/zju-fast-lab__ego-planner-swarm.md) - fit: high - Decentralized multi-quadrotor extension of EGO-Planner with inter-agent collision avoidance and trajectory sharing over a network.
 - [gym-pybullet-drones](../repos/learnsyslab__gym-pybullet-drones.md) - fit: high - Gymnasium environments on PyBullet for single and multi-agent quadcopter control and RL (formerly under utiasDSL).
@@ -25,8 +25,10 @@ Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 - [DCL-SLAM](../repos/zhongshp__dcl-slam.md) - fit: medium - Distributed collaborative lidar SLAM for robotic swarms with lightweight LiDAR-Iris descriptors for inter-robot place recognition and minimal data exchange.
 - [Crazyswarm2](../repos/imrclab__crazyswarm2.md) - fit: medium - ROS 2 framework for flying many Crazyflie nano-quadrotors with motion capture or onboard localization, including simulation backends.
 - [ROS2swarm](../repos/ros2swarm__ros2swarm.md) - fit: medium - ROS 2 package providing a library of swarm behaviours (aggregation, dispersion, flocking) and an easy-to-extend framework, tested on TurtleBot-class robots.
+- [Co-NavGPT](../repos/ybgdgh__co-navgpt.md) - fit: medium - Multi-robot exploration and object search where an LLM assigns frontier goals to robots from a merged semantic map.
 - [Crazyflie simulation](../repos/bitcraze__crazyflie-simulation.md) - fit: medium - Simulation models and tooling for Crazyflie in Webots and Gazebo.
 - [Swarm-SLAM](../repos/lajoiepy__cslam.md) - fit: medium - ROS 2 decentralized collaborative SLAM supporting LiDAR, stereo and RGB-D, with sparse inter-robot communication.
+- [MILUV devkit](../repos/decargroup__miluv.md) - fit: medium - Python devkit for MILUV, a multi-UAV indoor localization dataset with UWB ranging (including inter-robot), vision and IMU data.
 - [Open-RMF rmf_task](../repos/open-rmf__rmf_task.md) - fit: medium - Task allocation library from Open-RMF that assigns tasks to fleets of robots, accounting for battery, travel time and task constraints.
 - [UVDAR](../repos/ctu-mrs__uvdar_core.md) - fit: medium - Mutual relative localization for UAV swarms using blinking ultraviolet LEDs and UV-sensitive cameras, from CTU MRS.
 - [Swarm relative localization (ETH PBL)](../repos/eth-pbl__swarm-relative-localization.md) - fit: medium - Infrastructure-less relative localization for decentralized swarm formation of nano-drones using UWB ranging (IROS 2023).
@@ -45,9 +47,9 @@ Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 - [DPGO](../repos/mit-acl__dpgo.md) - fit: low - Distributed pose-graph optimization library with certifiably correct solutions for multi-robot SLAM.
 - [Kimera-Distributed](../repos/mit-spark__kimera-distributed.md) - fit: low - Distributed back end of Kimera-Multi handling inter-robot loop closures and distributed optimization.
 
-## Documents, talks, courses, datasets (15)
+## Documents, talks, courses, datasets (14)
 
-- [A Multi-Robot Platform for Robotic Triage](../resources/arxiv-multi-robot-triage-platform.md) - paper - Technical report from a DARPA Triage Challenge team describing a multi-robot system and fine-tuned open vision-language models for injury identification.
+- [A Multi-Robot Platform for Robotic Triage Combining Onboard Sensing and Foundation Models](../resources/arxiv-multi-robot-triage-platform.md) - paper - Technical report from a DARPA Triage Challenge team describing a multi-robot system and fine-tuned open vision-language models for injury identification.
 - [Aerostack2: A Software Framework for Developing Multi-robot Aerial Systems](../resources/aerostack2-paper.md) - paper - Describes the Aerostack2 ROS 2 architecture for aerial robotics: platform abstraction, behaviors, mission specification and multi-robot support.
 - [Cooperative Localization for GNSS-Denied Subterranean Navigation: A UAV-UGV Team Approach](../resources/ion-webinar-gross.md) - talk - West Virginia University work on UAV and UGV teams sharing ranging and odometry to localize jointly in GNSS-denied underground environments.
 - [Crazyswarm2 documentation](../resources/crazyswarm2-docs.md) - doc - Docs for Crazyswarm2 with installation, simulation backends, swarm configuration and tutorials.
@@ -59,7 +61,6 @@ Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 - [MIT 2.680 Unmanned Marine Vehicle Autonomy, Sensing and Communications](../resources/mit-2680-marine-autonomy.md) - course - MIT course site with lectures and hands-on labs built on MOOS-IvP, covering behaviour-based autonomy, multi-vehicle coordination, collision avoidance and marine sensing.
 - [NeBula: Quest for Robotic Autonomy in Challenging Environments; TEAM CoSTAR at the DARPA Subterranean Challenge](../resources/nebula-costar-subt-paper.md) - paper - Describes the NeBula belief-space autonomy stack: multi-modal positioning, mapping, traversability, risk-aware mission planning and multi-robot reasoning; CoSTAR won the Urban circuit.
 - [Onboard Ranging-based Relative Localization and Stability for Lightweight Aerial Swarms](../resources/li-onboard-relative-localization-swarms.md) - paper - Presents onboard UWB ranging with an EKF for relative localization among small quadrotors, with a stability analysis of formation control built on those estimates.
-- [Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems](../resources/swarm-slam-paper.md) - paper - Paper behind Swarm-SLAM, focusing on sparse inter-robot communication and decentralized loop closure selection.
-- [Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems](../resources/swarm-slam-lajoie-2023.md) - paper - Decentralized collaborative SLAM aimed at swarms, prioritizing which inter-robot loop closures to compute and share to limit communication.
+- [Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems](../resources/swarm-slam-paper.md) - paper - Decentralized collaborative SLAM aimed at swarms, prioritizing which inter-robot loop closures to compute and share to limit communication.
 - [Team CERBERUS Wins the DARPA Subterranean Challenge: Technical Overview and Lessons Learned](../resources/cerberus-subt-final-paper.md) - paper - Winning team's description of its legged-plus-aerial system: multi-modal perception, robust localization and mapping, exploration planning and artifact detection, with lessons from the final.
 

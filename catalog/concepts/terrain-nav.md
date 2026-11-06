@@ -10,7 +10,7 @@ TERCOM/TRN/DSMAC-style matching of altimetry or imagery against DEM/terrain data
 
 - [Terrain-relative navigation with a particle filter](../samples/terrain-relative-nav-pf.md) - A stdlib-only simulation of TERCOM/TRN: an aircraft with a biased INS and a radar altimeter matches its measured terrain profile against a seeded synthetic DEM with a particle filter that also estimates the INS velocity 
 
-## Repositories (17)
+## Repositories (20)
 
 - [OpenDroneMap (ODM)](../repos/opendronemap__odm.md) - fit: high - Photogrammetry toolkit that turns aerial images into orthophotos, point clouds, 3D models and DEMs.
 - [Rasterio](../repos/rasterio__rasterio.md) - fit: high - Pythonic raster I/O on top of GDAL: read/write GeoTIFF and COG, windowed reads, masks and affine georeferencing.
@@ -22,12 +22,15 @@ TERCOM/TRN/DSMAC-style matching of altimetry or imagery against DEM/terrain data
 - [Wild Visual Navigation](../repos/leggedrobotics__wild_visual_navigation.md) - fit: medium - System that learns visual traversability online from pre-trained vision features and robot self-supervision, deployed on legged robots in forests.
 - [ALTO](../repos/metaslam__alto.md) - fit: medium - Aerial-view, large-scale, terrain-oriented dataset for aerial place recognition and localization.
 - [GNSS-Denied UAV Geolocalization (terrain-weighted)](../repos/yfs90__gnss-denied-uav-geolocalization.md) - fit: medium - Code and demos for a UAV geolocalization system that combines image matching, visual odometry and a terrain-weighted constraint optimization, intended to work day and night.
+- [TRN particle filter examples](../repos/rhymesg__particle_filter.md) - fit: medium - MATLAB particle filtering examples for terrain-referenced navigation, comparing standard, auxiliary, mixture and out-of-sequence measurement particle filters (accompanies an IEEE TAES 2018 paper).
 - [TERCOM-python (TERCOM + DSMAC)](../repos/ayushmankumar7__tercom-python.md) - fit: medium - OpenCV-based demo of map-based navigation combining terrain contour matching with scene-matching area correlation.
 - [terrain-nav-preprocessing](../repos/hstm__terrain-nav-preprocessing.md) - fit: medium - Preprocessing tools for terrain-referenced navigation, generating DEM tiles with controlled noise for training and evaluation.
 - [TERCOM via particle filter](../repos/sotostrk__tercom-via-particle-filter-uav-state-estimation-mae6760-project-.md) - fit: medium - MATLAB SIR particle filter estimating UAV position from terrain contour matching in GPS-denied flight.
 - [traversability_estimation](../repos/leggedrobotics__traversability_estimation.md) - fit: low - ETH package that computes traversability from elevation maps using slope, roughness and step-height filters.
 - [elevation_mapping](../repos/leggedrobotics__elevation_mapping.md) - fit: low - ETH Zurich robot-centric elevation mapping for rough terrain navigation that fuses range data into a probabilistic 2.5D map.
 - [Seasonally invariant transform (visual TRN)](../repos/connorlee77__seasonally-invariant-image-transform.md) - fit: low - Training code for a learned image transform that makes aerial imagery robust to seasonal appearance change for visual terrain-relative navigation.
+- [FederNet](../repos/sirbastiano__federnet.md) - fit: low - Terrain relative navigation for planetary landing that detects craters with a Mask R-CNN and matches them to a catalog using projective invariants.
+- [Deep-TERNALOC](../repos/deep-ternaloc__deep-ternaloc.md) - fit: low - Deep-learning-based terrain-referenced navigation and localization project from ITU Aerospace Research Center, with particle filter baselines.
 - [SMARC navigation](../repos/halajun__smarc_navigation.md) - fit: low - Localization and SLAM components for the SMARC AUVs (KTH), including EKF localization with IMU, DVL and multibeam sonar against a feature map.
 
 ## Documents, talks, courses, datasets (2)

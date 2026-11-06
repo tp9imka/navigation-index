@@ -27,7 +27,6 @@ Ruhr University Bochum receiver for DJI DroneID that works live with an SDR or o
 
 - [samples2djidroneid](../repos/anarkiwi__samples2djidroneid.md) (alternative_to)
 - [Drone Security and the Mysterious Case of DJI's DroneID](../resources/ndss-2023-dji-droneid.md) (has_code)
-- [Drone Security and the Mysterious Case of DJI's DroneID](../resources/ndss2023-dji-droneid.md) (has_code)
 
 _Indexed by lane(s): defense-context, domains-swarm_
 

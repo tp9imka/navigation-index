@@ -16,7 +16,7 @@ ROSCon 2024 site with the programme and links to recorded talks, including local
 
 ## Related
 
-- uses: `repo:ekumen-os/beluga` (not indexed)
+- uses: [Beluga](../repos/ekumen-os__beluga.md)
 
 ## Referenced by
 

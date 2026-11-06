@@ -17,10 +17,10 @@ DARPA challenge for autonomous systems that find and assess casualties in mass-c
 
 ## Related
 
-- part_of: [A Multi-Robot Platform for Robotic Triage](../resources/arxiv-multi-robot-triage-platform.md)
+- part_of: [A Multi-Robot Platform for Robotic Triage Combining Onboard Sensing and Foundation Models](../resources/arxiv-multi-robot-triage-platform.md)
 
 ## Referenced by
 
-- [A Multi-Robot Platform for Robotic Triage](../resources/arxiv-multi-robot-triage-platform.md) (part_of)
+- [A Multi-Robot Platform for Robotic Triage Combining Onboard Sensing and Foundation Models](../resources/arxiv-multi-robot-triage-platform.md) (part_of)
 
 _Indexed by lane(s): defense-context_

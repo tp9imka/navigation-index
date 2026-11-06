@@ -29,6 +29,7 @@ Command-line, module-based ground station and MAVLink proxy with map, console an
 - [ArduPilot](../repos/ardupilot__ardupilot.md) (integrates_with)
 - [pymavlink](../repos/ardupilot__pymavlink.md) (integrates_with)
 - [mavlink-router](../repos/mavlink-router__mavlink-router.md) (alternative_to)
+- [ArduPilot EKF3 source-set switch under GPS denial](../samples/ardupilot-ekf3-source-switch.md) (uses)
 
 _Indexed by lane(s): autopilots_
 

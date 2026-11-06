@@ -10,7 +10,7 @@ Asyncio Python client for MAVSDK that wraps a bundled mavsdk_server.
 
 **Why it matters:** Probably the fastest way to script missions or offboard control against PX4 SITL.
 
-**Hackathon notes:** pip install mavsdk; examples cover takeoff, missions, offboard velocity.
+**Hackathon notes:** pip install mavsdk-grpc and import mavsdk_grpc (the PyPI name 'mavsdk' now means the native binding with a different API); examples cover takeoff, missions, offboard velocity.
 
 **Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Autopilots and flight control](../concepts/autopilot.md)
 
@@ -26,7 +26,9 @@ Asyncio Python client for MAVSDK that wraps a bundled mavsdk_server.
 ## Referenced by
 
 - [DroneKit-Python](../repos/dronekit__dronekit-python.md) (alternative_to)
+- [MAVLinkMCP](../repos/ion-g-ion__mavlinkmcp.md) (depends_on)
 - [MAVSDK](../repos/mavlink__mavsdk.md) (integrates_with)
+- [PX4 SITL GPS denial: inject, measure drift, recover](../samples/px4-sitl-gps-denial.md) (uses)
 
 _Indexed by lane(s): autopilots_
 

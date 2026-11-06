@@ -24,6 +24,7 @@ Python package and CLI for evaluating odometry and SLAM trajectories (ATE/RPE, a
 
 ## Referenced by
 
+- [cnspy trajectory evaluation](../repos/aau-cns__cnspy_trajectory_evaluation.md) (alternative_to)
 - [KISS-ICP](../repos/prbonn__kiss-icp.md) (evaluated_on)
 - [OpenVINS](../repos/rpng__open_vins.md) (evaluated_on)
 - [ORB-SLAM3](../repos/uz-slamlab__orb_slam3.md) (evaluated_on)

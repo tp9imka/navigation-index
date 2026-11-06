@@ -18,8 +18,8 @@ MIT graduate course on the math and software of visual navigation: 3D geometry, 
 
 ## Related
 
-- has_code: `repo:mit-spark/vnav-labs` (not indexed)
-- uses: `repo:mit-spark/vnav-lab-data` (not indexed)
+- has_code: [MIT VNAV labs](../repos/mit-spark__vnav-labs.md)
+- uses: [MIT VNAV lab data](../repos/mit-spark__vnav-lab-data.md)
 - uses: [Kimera-VIO](../repos/mit-spark__kimera-vio.md)
 - same_author: [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook.md)
 

@@ -17,7 +17,7 @@ Solà's Matlab EKF-SLAM toolbox, used as teaching material for his SLAM courses:
 
 ## Related
 
-- has_code: `repo:joansola/slamtb` (not indexed)
+- has_code: [SLAM Toolbox (MATLAB)](../repos/joansola__slamtb.md)
 - same_author: [A micro Lie theory for state estimation in robotics](../resources/sola-micro-lie-theory.md)
 
 _Indexed by lane(s): learning_

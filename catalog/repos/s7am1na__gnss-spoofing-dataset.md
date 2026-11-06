@@ -23,6 +23,10 @@ Raw GNSS measurement logs from Android phones and smartwatches recorded under sp
 - integrates_with: [gnss_lib_py](../repos/stanford-navlab__gnss_lib_py.md)
 - depends_on: [GPS Measurement Tools (incl. GnssLogger)](../repos/google__gps-measurement-tools.md)
 
+## Referenced by
+
+- [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../samples/gnss-interference-monitor.md) (explains)
+
 _Indexed by lane(s): gnss_
 
 _GitHub metadata fetched 2026-11-06._

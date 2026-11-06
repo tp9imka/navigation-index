@@ -27,6 +27,7 @@ Pure JavaScript library generating MIL-STD-2525 (B/C/D/E) and APP-6 (B/D/E) mili
 
 - [Joint Military Symbology XML](../repos/esri__joint-military-symbology-xml.md) (alternative_to)
 - [Leaflet](../repos/leaflet__leaflet.md) (integrates_with)
+- [mil-sym-ts](../repos/missioncommand__mil-sym-ts.md) (alternative_to)
 - [NATO Joint Military Symbology (APP-6) - overview](../resources/app-6-joint-military-symbology.md) (has_code)
 - [MIL-STD-2525 Joint Military Symbology - overview](../resources/mil-std-2525-overview.md) (has_code)
 - [MIL-STD-2525D Joint Military Symbology](../resources/mil-std-2525d.md) (has_code)

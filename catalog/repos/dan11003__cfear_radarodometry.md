@@ -24,6 +24,8 @@ Learning-free spinning-radar odometry that filters returns to sparse oriented su
 
 ## Referenced by
 
+- [TBV Radar SLAM](../repos/dan11003__tbv_slam_public.md) (extends)
+- [ORORA](../repos/url-kaist__outlier-robust-radar-odometry.md) (alternative_to)
 - [4DRadarSLAM](../repos/zhuge2333__4dradarslam.md) (alternative_to)
 - [CFEAR Radarodometry - Conservative Filtering for Efficient and Accurate Radar Odometry](../resources/cfear-radarodometry-adolfsson-2021.md) (has_code)
 

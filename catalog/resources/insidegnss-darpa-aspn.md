@@ -9,10 +9,12 @@ Background article on DARPA ASPN: a navigation architecture that accepts arbitra
 ## Key takeaways
 
 - Shows the plug-and-play sensor-fusion goal that later GNSS-denied architectures inherit
+- Phase 1 built algorithms and a software architecture
+- Phase 2 targeted real-time fusion on SWaP-representative hardware
 
 **Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Standards and interface specs](../concepts/standards.md)
 
-**Tags:** `darpa`, `aspn`
+**Tags:** `darpa`, `aspn`, `plug-and-play`, `fusion`
 
 ## Related
 
@@ -20,6 +22,7 @@ Background article on DARPA ASPN: a navigation architecture that accepts arbitra
 
 ## Referenced by
 
+- [Adaptable Navigation Systems (ANS)](../resources/darpa-adaptable-navigation-systems.md) (cites)
 - [Adaptable Navigation Systems (ANS)](../resources/darpa-adaptable-navigation-systems.md) (part_of)
 
-_Indexed by lane(s): alt-nav_
+_Indexed by lane(s): alt-nav, docs-standards_

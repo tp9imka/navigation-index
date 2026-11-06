@@ -30,6 +30,6 @@ The master interface specification for the legacy GPS L1 C/A and L2C (and P(Y) a
 
 ## Referenced by
 
-- [GPS Interface Control Documents (archive.gps.gov)](../resources/gps-icwg-archive.md) (part_of)
+- [GPS Interface Control Documents (ICWG index)](../resources/gps-icwg-document-index.md) (part_of)
 
 _Indexed by lane(s): docs-standards, gnss_

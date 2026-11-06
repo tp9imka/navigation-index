@@ -25,7 +25,7 @@ Repository for the 2022 Hilti SLAM Challenge with dataset info and evaluation to
 ## Referenced by
 
 - [Hilti SLAM Challenge 2023](../repos/hilti-research__hilti-slam-challenge-2023.md) (same_org)
-- [Hilti SLAM Challenge](../resources/hilti-slam-challenge-site.md) (has_code)
+- [Hilti SLAM Challenge](../resources/hilti-slam-challenge.md) (has_code)
 
 _Indexed by lane(s): sim-data_
 

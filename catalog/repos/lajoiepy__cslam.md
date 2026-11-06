@@ -27,7 +27,7 @@ ROS 2 decentralized collaborative SLAM supporting LiDAR, stereo and RGB-D, with 
 
 - [D2SLAM](../repos/hkust-aerial-robotics__d2slam.md) (alternative_to)
 - [COVINS / COVINS-G](../repos/v4rl-ucy__covins.md) (alternative_to)
-- [Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems](../resources/swarm-slam-lajoie-2023.md) (has_code)
+- [Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems](../resources/swarm-slam-paper.md) (has_code)
 
 _Indexed by lane(s): slam_
 

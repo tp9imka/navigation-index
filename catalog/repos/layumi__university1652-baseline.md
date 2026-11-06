@@ -32,6 +32,7 @@ Dataset and baseline code for drone-based geo-localization across drone, satelli
 - [Sample4Geo](../repos/skyy93__sample4geo.md) (evaluated_on)
 - [LPN (Local Pattern Network)](../repos/wtyhub__lpn.md) (evaluated_on)
 - [University-1652: A Multi-view Multi-source Benchmark for Drone-based Geo-localization](../resources/university-1652-benchmark-2020.md) (has_code)
+- [Drone frame to orthophoto geolocalization with LightGlue](../samples/visual-geolocalization-lightglue.md) (explains)
 
 _Indexed by lane(s): alt-nav, sim-data_
 

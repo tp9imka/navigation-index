@@ -29,6 +29,7 @@ Toolbox for hierarchical visual localization: global retrieval (NetVLAD etc.) to
 - [Image Matching: Local Features & Beyond (CVPR workshop)](../resources/cvpr-image-matching-workshop.md) (uses)
 - [From Coarse to Fine: Robust Hierarchical Localization at Large Scale](../resources/hloc-coarse-to-fine-2018.md) (has_code)
 - [Long-Term Visual Localization benchmark](../resources/visual-localization-benchmark.md) (evaluates)
+- [Drone frame to orthophoto geolocalization with LightGlue](../samples/visual-geolocalization-lightglue.md) (explains)
 
 _Indexed by lane(s): alt-nav_
 

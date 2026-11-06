@@ -4,12 +4,13 @@
 
 TAK/CoT, MIL-STD-2525/APP-6 symbology, blue force tracking, common operating picture.
 
-## Samples (2)
+## Samples (3)
 
+- [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../samples/gnss-interference-monitor.md) - A stdlib heuristic scorer turns per-epoch receiver telemetry (C/N0 across SVs, AGC, CW jamming indicator, clock and position jumps, receiver spoofing/jamming flags) into jamming and spoofing scores with stated reasons.
 - [MAVLink telemetry to TAK Cursor-on-Target](../samples/mavlink-to-tak-cot.md) - Bridges autopilot GLOBAL_POSITION_INT messages into Cursor-on-Target events so a UAV shows up as a friendly track on ATAK, WinTAK or iTAK.
 - [Stone Soup radar tracking of two UAVs with JPDA and OSPA](../samples/stone-soup-tracking.md) - Simulates two small UAVs observed by a noisy bearing/range radar with clutter and tracks them with Stone Soup's Extended Kalman filter and JPDA data association.
 
-## Repositories (49)
+## Repositories (51)
 
 - [Leaflet](../repos/leaflet__leaflet.md) - fit: high - Small, simple JavaScript library for interactive raster/vector maps with a huge plugin ecosystem.
 - [CesiumJS](../repos/cesiumgs__cesium.md) - fit: high - WebGL 3D globe and map library with terrain, 3D Tiles, time-dynamic data (CZML) and accurate WGS84 rendering.
@@ -36,6 +37,7 @@ TAK/CoT, MIL-STD-2525/APP-6 symbology, blue force tracking, common operating pic
 - [DragonSync](../repos/alphafox02__dragonsync.md) - fit: high - Gateway that takes drone Remote ID / DroneID detections from WarDragon-style sensors and publishes them as CoT to TAK and other outputs.
 - [RID (ESP32 Remote ID receiver)](../repos/peterjburke__rid.md) - fit: high - ESP32 Remote ID receiver built on opendroneid-core-c and a fork of sxjack's electronic ID classes.
 - [node-CoT](../repos/dfpc-coe__node-cot.md) - fit: high - JavaScript/TypeScript library for parsing, building and converting Cursor-on-Target messages, including GeoJSON conversion and TAK protobuf.
+- [mil-sym-ts](../repos/missioncommand__mil-sym-ts.md) - fit: high - TypeScript/JavaScript renderer for MIL-STD-2525 (D and later) military symbology, producing single-point and multi-point tactical graphics for web maps.
 - [ADSBCOT](../repos/snstac__adsbcot.md) - fit: high - Gateway that converts ADS-B traffic from dump1090/readsb or aggregator APIs into Cursor-on-Target so aircraft show in TAK.
 - [OpenLayers](../repos/openlayers__openlayers.md) - fit: medium - Feature-rich web mapping library supporting many projections, WMS/WMTS, vector tiles and editing.
 - [Gqrx](../repos/gqrx-sdr__gqrx.md) - fit: medium - Desktop SDR receiver built on GNU Radio and Qt with FFT/waterfall and demodulators.
@@ -45,6 +47,7 @@ TAK/CoT, MIL-STD-2525/APP-6 symbology, blue force tracking, common operating pic
 - [OpenWebRX](../repos/jketterl__openwebrx.md) - fit: medium - Multi-user web SDR receiver with waterfall display and many built-in digital decoders.
 - [DroneSecurity (DJI DroneID receiver)](../repos/rub-syssec__dronesecurity.md) - fit: medium - Ruhr University Bochum receiver for DJI DroneID that works live with an SDR or offline on captures, released with their NDSS 2023 security analysis.
 - [dump1090-fa](../repos/flightaware__dump1090.md) - fit: medium - FlightAware's maintained Mode S/ADS-B decoder for RTL-SDR dongles.
+- [ConceptGraphs](../repos/concept-graphs__concept-graphs.md) - fit: medium - Builds open-vocabulary 3D scene graphs from RGB-D by associating 2D foundation-model detections across views, then lets an LLM plan over the graph.
 - [FreeTAKServer](../repos/freetakteam__freetakserver.md) - fit: medium - Open-source Python server compatible with TAK clients (ATAK, WinTAK, iTAK) that relays Cursor-on-Target positions, chat and data packages.
 - [TAK Server (open source)](../repos/tak-product-center__server.md) - fit: medium - Open-source release of the TAK Server from the TAK Product Center: the federation and message routing server for ATAK/WinTAK/iTAK clients, handling CoT, data packages, missions and video.
 - [OpenWebRX+](../repos/luarvique__openwebrx.md) - fit: medium - Actively developed fork of OpenWebRX adding decoders, bookmarks and packaging improvements.
@@ -61,11 +64,12 @@ TAK/CoT, MIL-STD-2525/APP-6 symbology, blue force tracking, common operating pic
 - [MonoGS (Gaussian Splatting SLAM)](../repos/muskie82__monogs.md) - fit: low - Gaussian-splatting SLAM for monocular, stereo and RGB-D cameras that tracks and maps directly against a 3D Gaussian representation.
 - [Joint Military Symbology XML](../repos/esri__joint-military-symbology-xml.md) - fit: low - Esri data encapsulation of MIL-STD-2525D and APP-6(D) symbology: symbol IDs, entity tables and SVG assets.
 
-## Documents, talks, courses, datasets (28)
+## Documents, talks, courses, datasets (29)
 
 - [Above Us Only Stars: Exposing GPS Spoofing in Russia and Syria](../resources/c4ads-above-us-only-stars.md) - report - Open-source investigation using AIS ship tracks, public records and ISS-based measurements to map thousands of GNSS spoofing events around Russia, Crimea and Syria, many linked to protection of VIPs and bases.
 - [ADS-B Data Analysis for GNSS Interference Mapping](../resources/insidegnss-adsb-interference-mapping.md) - blog - Trade-press article on using ADS-B integrity data to detect and map GNSS interference regions.
 - [Bellingcat OSINT Toolkit - GPSJam](../resources/bellingcat-toolkit-gpsjam.md) - doc - Bellingcat's toolkit entry on using GPSJam for open-source investigations, with notes on limitations and interpretation.
+- [ConceptGraphs: Open-Vocabulary 3D Scene Graphs for Perception and Planning](../resources/conceptgraphs-2023.md) - paper - Builds object-centric 3D scene graphs with open-vocabulary labels from RGB-D and uses an LLM to plan over them.
 - [cot-types: Collection of Cursor-on-Target types](../resources/cot-types-collection.md) - dataset - Community-compiled list of CoT type strings with mappings to other message formats, useful when choosing the 'type' attribute for tracks.
 - [Cursor on Target (NDIA briefing)](../resources/cot-niessen-ndia-2008.md) - talk - Briefing introducing the Cursor on Target XML event schema: the minimal event/point/detail model for exchanging what-when-where of tracked entities between C2 systems.
 - [Cursor-on-Target Message Router User's Guide](../resources/mitre-cot-users-guide.md) - doc - MITRE guide describing Cursor-on-Target: the base Event schema (what, where, when), its mandatory fields, sub-schema extensions and the message router used to distribute CoT.

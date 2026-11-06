@@ -1,0 +1,18 @@
+{
+  "id": "sample:visual-geolocalization-lightglue",
+  "title": "Drone frame to orthophoto geolocalization with LightGlue",
+  "summary": "Matches a nadir drone frame against a georeferenced satellite or orthophoto tile with SuperPoint + LightGlue, fits a MAGSAC homography with OpenCV, and maps the frame centre through the GeoTIFF geotransform to lat/lon. The geometry (affine geotransform, homography mapping, WGS84 UTM, haversine) is a stdlib module with unit tests; the pipeline points at UAV-VisLoc, VPAIR and University-1652 for imagery and at hloc / AnyLoc for retrieval over large maps.",
+  "concepts": ["concept:visual-geolocalization", "concept:feature-matching", "concept:place-recognition", "concept:geodesy", "concept:assured-pnt"],
+  "tags": ["lightglue", "superpoint", "homography", "geotiff", "rasterio", "opencv", "gnss-denied", "uav"],
+  "related": [
+    {"id": "repo:cvg/lightglue", "rel": "uses"},
+    {"id": "repo:rasterio/rasterio", "rel": "uses"},
+    {"id": "repo:magicleap/superpointpretrainednetwork", "rel": "explains"},
+    {"id": "repo:intellisensing/uav-visloc", "rel": "uses"},
+    {"id": "repo:aervisloc/vpair", "rel": "uses"},
+    {"id": "repo:layumi/university1652-baseline", "rel": "explains"},
+    {"id": "repo:cvg/hierarchical-localization", "rel": "explains"},
+    {"id": "repo:anyloc/anyloc", "rel": "explains"}
+  ],
+  "verified": "geo_math.py and test_geo_math.py ran with python3.14.7 stdlib on 2026-11-06 (12 tests OK), output shown in README; geolocalize.py is an unverified sketch: syntax-checked only, requires torch, lightglue, opencv-python, rasterio and numpy."
+}

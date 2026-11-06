@@ -1,0 +1,617 @@
+[
+ {
+  "id": "res:jpl-rosa-paper-2024",
+  "kind": "paper",
+  "title": "Enabling Novel Mission Operations and Interactions with ROSA: The Robot Operating System Agent",
+  "url": "https://arxiv.org/abs/2410.06472",
+  "authors": [
+   "NASA JPL"
+  ],
+  "year": 2024,
+  "summary": "Describes ROSA, an LLM agent that lets operators inspect and command ROS systems in natural language through a curated tool set, and discusses safety and operational considerations.",
+  "key_takeaways": [
+   "Tool-based LLM access keeps robot actions auditable",
+   "Targets operators, not only developers"
+  ],
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:ros"
+  ],
+  "tags": [
+   "jpl",
+   "llm",
+   "agent"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:nasa-jpl/rosa",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:openfly-aerial-vln-2025",
+  "kind": "paper",
+  "title": "OpenFly: A Comprehensive Platform for Aerial Vision-Language Navigation",
+  "url": "https://arxiv.org/abs/2502.18041",
+  "authors": [
+   "OpenFly authors"
+  ],
+  "year": 2025,
+  "summary": "Presents a multi-engine aerial VLN platform with automated data generation, a large outdoor benchmark and a keyframe-aware VLN model.",
+  "key_takeaways": [
+   "Automated toolchain scales aerial VLN data",
+   "Multiple rendering engines reduce sim bias"
+  ],
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:datasets-benchmarks",
+   "concept:simulation"
+  ],
+  "tags": [
+   "vln",
+   "uav"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:shailab-ipec/openfly-platform",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:aerialvln-iccv-2023",
+  "kind": "paper",
+  "title": "AerialVLN: Vision-and-Language Navigation for UAVs",
+  "url": "https://arxiv.org/abs/2308.06735",
+  "authors": [
+   "Liu et al."
+  ],
+  "year": 2023,
+  "summary": "ICCV 2023 paper introducing a city-scale UAV vision-and-language navigation task, simulator and baselines.",
+  "key_takeaways": [
+   "Aerial VLN is much harder than indoor VLN",
+   "Long trajectories and 3D actions"
+  ],
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "vln",
+   "uav",
+   "iccv"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:airvln/airvln",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:citynav-2024",
+  "kind": "paper",
+  "title": "CityNav: A Large-Scale Dataset for Real-World Aerial Navigation",
+  "url": "https://arxiv.org/abs/2406.14240",
+  "authors": [
+   "Lee et al."
+  ],
+  "year": 2024,
+  "summary": "Introduces a language-goal aerial navigation dataset built on real-city 3D data with geographic metadata, and baselines using map-based grounding.",
+  "key_takeaways": [
+   "Geographic map priors improve aerial language navigation",
+   "Human demonstrations from a web simulator"
+  ],
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:datasets-benchmarks",
+   "concept:gis-mapping"
+  ],
+  "tags": [
+   "vln",
+   "uav",
+   "dataset"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:water-cookie/citynav",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:vint-foundation-model-2023",
+  "kind": "paper",
+  "title": "ViNT: A Foundation Model for Visual Navigation",
+  "url": "https://arxiv.org/abs/2306.14846",
+  "authors": [
+   "Shah et al., UC Berkeley"
+  ],
+  "year": 2023,
+  "summary": "Trains a transformer navigation policy across many robot datasets and shows it adapts to new robots and tasks with little data.",
+  "key_takeaways": [
+   "Cross-embodiment pretraining works for navigation",
+   "Image-goal policy plus topological graph"
+  ],
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:obstacle-avoidance"
+  ],
+  "tags": [
+   "foundation-model",
+   "visual-navigation"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:robodhruv/visualnav-transformer",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:nomad-diffusion-nav-2023",
+  "kind": "paper",
+  "title": "NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration",
+  "url": "https://arxiv.org/abs/2310.07896",
+  "authors": [
+   "Sridhar et al., UC Berkeley"
+  ],
+  "year": 2023,
+  "summary": "Single diffusion policy that handles both goal-directed navigation and undirected exploration by masking the goal.",
+  "key_takeaways": [
+   "One model for explore and goal-reach",
+   "Runs on small robots"
+  ],
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:obstacle-avoidance"
+  ],
+  "tags": [
+   "diffusion-policy",
+   "exploration"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:robodhruv/visualnav-transformer",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:vlmaps-2022",
+  "kind": "paper",
+  "title": "Visual Language Maps for Robot Navigation",
+  "url": "https://arxiv.org/abs/2210.05714",
+  "authors": [
+   "Huang et al."
+  ],
+  "year": 2022,
+  "summary": "Fuses visual-language features into 3D maps so robots can localize landmarks named in open-vocabulary language and navigate to them.",
+  "key_takeaways": [
+   "Language-indexed spatial maps",
+   "Enables spatial instructions like 'between X and Y'"
+  ],
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:visual-slam"
+  ],
+  "tags": [
+   "vlm",
+   "spatial-map"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:vlmaps/vlmaps",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:lm-nav-2022",
+  "kind": "paper",
+  "title": "LM-Nav: Robotic Navigation with Large Pre-Trained Models of Language, Vision, and Action",
+  "url": "https://arxiv.org/abs/2207.04429",
+  "authors": [
+   "Shah et al."
+  ],
+  "year": 2022,
+  "summary": "Combines an LLM for landmark extraction, CLIP for grounding and a visual navigation model to follow long route instructions outdoors.",
+  "key_takeaways": [
+   "No language-annotated robot data needed",
+   "Modular pretrained composition"
+  ],
+  "concepts": [
+   "concept:llm-agents-robotics"
+  ],
+  "tags": [
+   "llm",
+   "clip"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:blazejosinski/lm_nav",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:typefly-2023",
+  "kind": "paper",
+  "title": "TypeFly: Flying Drones with Large Language Model",
+  "url": "https://arxiv.org/abs/2312.14950",
+  "authors": [
+   "Chen et al."
+  ],
+  "year": 2023,
+  "summary": "Proposes a compact drone programming language for LLM output, cutting token count and latency while keeping plans checkable.",
+  "key_takeaways": [
+   "Constrain LLM output to a small DSL",
+   "Latency matters for flight"
+  ],
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:mission-planning"
+  ],
+  "tags": [
+   "llm",
+   "drone",
+   "dsl"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:typefly/typefly",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:microsoft-chatgpt-robotics-2023",
+  "kind": "paper",
+  "title": "ChatGPT for Robotics: Design Principles and Model Abilities",
+  "url": "https://arxiv.org/abs/2306.17582",
+  "authors": [
+   "Vemprala et al., Microsoft"
+  ],
+  "year": 2023,
+  "summary": "Early study of prompting strategies and API design for using ChatGPT to generate robot and drone control code, with AirSim demos.",
+  "key_takeaways": [
+   "Expose a high-level function library to the LLM",
+   "Keep a human in the loop to review code"
+  ],
+  "concepts": [
+   "concept:llm-agents-robotics"
+  ],
+  "tags": [
+   "chatgpt",
+   "prompting"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:microsoft/promptcraft-robotics",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:conceptgraphs-2023",
+  "kind": "paper",
+  "title": "ConceptGraphs: Open-Vocabulary 3D Scene Graphs for Perception and Planning",
+  "url": "https://arxiv.org/abs/2309.16650",
+  "authors": [
+   "Gu et al."
+  ],
+  "year": 2023,
+  "summary": "Builds object-centric 3D scene graphs with open-vocabulary labels from RGB-D and uses an LLM to plan over them.",
+  "key_takeaways": [
+   "Compact object-level maps for LLM planning",
+   "Uses 2D foundation models"
+  ],
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:situational-awareness"
+  ],
+  "tags": [
+   "scene-graph"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:concept-graphs/concept-graphs",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:navid-vln-2024",
+  "kind": "paper",
+  "title": "NaVid: Video-based VLM Plans the Next Step for Vision-and-Language Navigation",
+  "url": "https://arxiv.org/abs/2402.15852",
+  "authors": [
+   "Zhang et al."
+  ],
+  "year": 2024,
+  "summary": "Video-based VLM that plans navigation actions from monocular RGB history without maps, odometry or depth.",
+  "key_takeaways": [
+   "Map-free language navigation",
+   "Sim-to-real transfer"
+  ],
+  "concepts": [
+   "concept:llm-agents-robotics"
+  ],
+  "tags": [
+   "vlm",
+   "vln"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:jzhzhang/navid-vln-ce",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:mcp-specification",
+  "kind": "standard",
+  "title": "Model Context Protocol specification",
+  "url": "https://modelcontextprotocol.io/specification/2025-06-18",
+  "authors": [
+   "Model Context Protocol project"
+  ],
+  "year": 2025,
+  "summary": "The specification for MCP, the protocol LLM clients use to call tools and read resources from servers; the basis of the ROS, MAVLink and QGIS MCP servers.",
+  "key_takeaways": [
+   "Tools, resources and prompts as server primitives",
+   "Transport and authorization rules"
+  ],
+  "concepts": [
+   "concept:llm-agents-robotics",
+   "concept:standards"
+  ],
+  "tags": [
+   "mcp",
+   "protocol"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:robotmcp/ros-mcp-server",
+    "rel": "explains"
+   },
+   {
+    "id": "repo:ion-g-ion/mavlinkmcp",
+    "rel": "explains"
+   },
+   {
+    "id": "repo:jjsantos01/qgis_mcp",
+    "rel": "explains"
+   }
+  ]
+ },
+ {
+  "id": "res:openshoe-foot-mounted-ins-2012",
+  "kind": "doc",
+  "title": "OpenShoe: open source embedded foot-mounted INS",
+  "url": "https://openshoe.org",
+  "authors": [
+   "Nilsson, Skog, Hari, Handel (KTH / IISc)"
+  ],
+  "year": 2012,
+  "summary": "Project site for OpenShoe, an open hardware and software ZUPT-aided foot-mounted INS module, described in the PLANS 2012 paper 'Foot-mounted INS for Everybody' and follow-up IPIN 2014 work.",
+  "key_takeaways": [
+   "Open hardware + firmware for ZUPT-aided INS",
+   "Module reports per-step displacement and heading change"
+  ],
+  "concepts": [
+   "concept:indoor-pedestrian",
+   "concept:ins"
+  ],
+  "tags": [
+   "openshoe",
+   "zupt",
+   "foot-mounted",
+   "open-hardware"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:pajaraca/iez",
+    "rel": "explains"
+   },
+   {
+    "id": "repo:utiasstars/pyshoe",
+    "rel": "explains"
+   }
+  ]
+ },
+ {
+  "id": "res:devo-deep-event-vo-2023",
+  "kind": "paper",
+  "title": "Deep Event Visual Odometry",
+  "url": "https://arxiv.org/abs/2312.09800",
+  "authors": [
+   "Klenk et al., TUM"
+  ],
+  "year": 2023,
+  "summary": "Learned event-only monocular VO trained on simulated events that generalizes to real event datasets.",
+  "key_takeaways": [
+   "Event-only VO without frames",
+   "Simulation-trained, real-world tested"
+  ],
+  "concepts": [
+   "concept:vio"
+  ],
+  "tags": [
+   "event-camera",
+   "3dv"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:tum-vision/devo",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:cuvslam-2025",
+  "kind": "paper",
+  "title": "cuVSLAM: CUDA accelerated visual odometry and mapping",
+  "url": "https://arxiv.org/abs/2506.04359",
+  "authors": [
+   "NVIDIA"
+  ],
+  "year": 2025,
+  "summary": "Describes NVIDIA's GPU-accelerated VO/SLAM supporting from one to many cameras with optional IMU, designed for real-time edge deployment.",
+  "key_takeaways": [
+   "Multi-camera rigs supported",
+   "Runs in real time on Jetson"
+  ],
+  "concepts": [
+   "concept:vio",
+   "concept:visual-slam",
+   "concept:edge-ai"
+  ],
+  "tags": [
+   "cuda",
+   "jetson"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:nvidia-isaac/cuvslam",
+    "rel": "has_code"
+   },
+   {
+    "id": "repo:nvidia-isaac-ros/isaac_ros_visual_slam",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:dlr-r-mode-baltic",
+  "kind": "report",
+  "title": "R-Mode Baltic and R-Mode Baltic 2",
+  "url": "https://www.dlr.de/en/kn/research-transfer/projects/maritime-security/r-mode-baltic-and-r-mode-baltic-2",
+  "authors": [
+   "DLR Institute of Communications and Navigation"
+  ],
+  "year": 2021,
+  "summary": "DLR project page for R-Mode Baltic, which built a Baltic Sea testbed adding ranging signals to existing maritime radio beacons and AIS base stations as a terrestrial backup to GNSS, continued by R-Mode Baltic 2 and ORMOBASS.",
+  "key_takeaways": [
+   "Reuses existing MF beacons and VHF AIS for ranging",
+   "Moving toward IALA standardisation"
+  ],
+  "concepts": [
+   "concept:assured-pnt",
+   "concept:maritime-nav",
+   "concept:signals-of-opportunity"
+  ],
+  "tags": [
+   "r-mode",
+   "baltic",
+   "ais",
+   "terrestrial-backup"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:39c3-baltic-jammer-r-mode",
+    "rel": "cites"
+   }
+  ]
+ },
+ {
+  "id": "res:faa-eloran-iat-2014",
+  "kind": "talk",
+  "title": "eLoran Independent Assessment Team findings (PNT Advisory Board briefing)",
+  "url": "https://archive.gps.gov/governance/advisory/meetings/2014-06/narins.pdf",
+  "authors": [
+   "M. Narins, FAA"
+  ],
+  "year": 2014,
+  "summary": "Briefing to the US Space-Based PNT Advisory Board summarizing the 2006-2008 independent assessment of eLoran as a GPS backup, its accuracy and its independent failure modes.",
+  "key_takeaways": [
+   "eLoran has different physical failure modes than GNSS",
+   "Recommended as backup for timing and harbor navigation"
+  ],
+  "concepts": [
+   "concept:assured-pnt",
+   "concept:timing",
+   "concept:signals-of-opportunity"
+  ],
+  "tags": [
+   "eloran",
+   "faa",
+   "gps-backup"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:romavis/loranc",
+    "rel": "explains"
+   }
+  ]
+ },
+ {
+  "id": "res:nvidia-jetson-ai-lab",
+  "kind": "doc",
+  "title": "NVIDIA Jetson AI Lab",
+  "url": "https://www.jetson-ai-lab.com/",
+  "authors": [
+   "NVIDIA"
+  ],
+  "year": 2025,
+  "summary": "Tutorial hub for running generative AI, VLMs and robotics models on Jetson devices, built around jetson-containers.",
+  "key_takeaways": [
+   "Step-by-step onboard LLM/VLM deployment",
+   "Covers ROS and robotics integrations"
+  ],
+  "concepts": [
+   "concept:edge-ai",
+   "concept:llm-agents-robotics"
+  ],
+  "tags": [
+   "jetson",
+   "vlm",
+   "tutorials"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:dusty-nv/jetson-containers",
+    "rel": "has_code"
+   }
+  ]
+ }
+]

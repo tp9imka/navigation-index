@@ -34,6 +34,7 @@ ROS/ROS 2 node bridging MAVLink to ROS topics and services, with GCS proxy; wide
 - [vision_to_mavros](../repos/thien94__vision_to_mavros.md) (depends_on)
 - [ROS and VIO tracking camera for non-GPS navigation](../resources/ardupilot-ros-vio-tracking-camera.md) (uses)
 - [Using Vision or Motion Capture Systems for Position Estimation](../resources/px4-external-position-estimation.md) (uses)
+- [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) (explains)
 
 _Indexed by lane(s): autopilots, domains-swarm_
 

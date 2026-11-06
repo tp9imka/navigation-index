@@ -22,6 +22,10 @@ Open hardware + firmware design for a drone magnetic-anomaly navigation board (E
 
 - alternative_to: [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md)
 
+## Referenced by
+
+- [MagNav.jl quickstart: Tolles-Lawson and EKF on the SGL 2020 flight](../samples/magnav-quickstart.md) (explains)
+
 _Indexed by lane(s): alt-nav_
 
 _GitHub metadata fetched 2026-11-06._

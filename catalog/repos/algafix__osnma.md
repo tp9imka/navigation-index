@@ -30,11 +30,10 @@ Python implementation of the Galileo OSNMA receiver protocol: verifies TESLA key
 - [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md) (integrates_with)
 - [OSNMA-SDR-SIM](../repos/haiyang-wong__osnma-sdr-sim.md) (integrates_with)
 - [FGI-OSNMA](../repos/nlsfi__fgi-osnma.md) (alternative_to)
+- [Galileo OSNMA Receiver Guidelines Issue 1.3](../resources/galileo-osnma-receiver-guidelines.md) (explains)
 - [Galileo OSNMA Receiver Guidelines Issue 1.3](../resources/galileo-osnma-receiver-guidelines.md) (has_code)
-- [Galileo OSNMA Receiver Guidelines v1.3](../resources/galileo-osnma-receiver-guidelines-1-3.md) (explains)
 - [Galileo Open Service Navigation Message Authentication (OSNMA) - service page](../resources/galileo-osnma-service-page.md) (has_code)
 - [Galileo OSNMA Signal-In-Space Interface Control Document Issue 1.1](../resources/galileo-osnma-sis-icd.md) (has_code)
-- [Galileo OSNMA Signal-In-Space ICD v1.1](../resources/galileo-osnma-sis-icd-1-1.md) (has_code)
 - [Navipedia: Galileo Open Service Navigation Message Authentication](../resources/navipedia-osnma.md) (has_code)
 
 _Indexed by lane(s): gnss_

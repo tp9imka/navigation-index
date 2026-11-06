@@ -959,7 +959,7 @@
       "ntrip",
       "docker"
     ],
-    "language": "Dockerfile",
+    "language": "C",
     "domains": [
       "multi"
     ],
@@ -1094,7 +1094,7 @@
     "kind": "repo",
     "name": "GPS Measurement Tools (incl. GnssLogger)",
     "url": "https://github.com/google/gps-measurement-tools",
-    "summary": "Google's Android raw GNSS measurement tooling: the GnssLogger app source, MATLAB analysis tools for pseudorange processing, and a rinex converter.",
+    "summary": "Google's Android raw GNSS measurement tooling: the GnssLogger app source, MATLAB analysis tools for pseudorange processing (including a RINEX nav reader), and NMEA utilities.",
     "why_it_matters": "The canonical way to capture raw pseudoranges and carrier phase from phones, the basis for smartphone spoofing and integrity research.",
     "concepts": [
       "concept:gnss",

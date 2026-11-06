@@ -2,7 +2,7 @@
 
 `res:gps-icwg-document-index` - doc - <https://archive.gps.gov/technical/icwg/>
 
-**By:** US Space Force / GPS.gov - **Year:** 2025 - **Level:** intermediate - **Access:** open
+**By:** US Space Force / GPS.gov, GPS.gov - **Year:** 2025 - **Level:** intermediate - **Access:** open
 
 Index page for the public GPS ICDs and ISs (200, 705, 800, 870 etc.), change notices and public ICWG meeting material. Useful to find the current revision and pending changes such as integrity support message formats.
 
@@ -10,9 +10,15 @@ Index page for the public GPS ICDs and ISs (200, 705, 800, 870 etc.), change not
 
 - Single place to check which revision is in force
 - Hosts proposed change notices and meeting redlines
+- Single entry point for all GPS signal ICDs
+- Historic versions also linked
 
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [Standards and interface specs](../concepts/standards.md)
 
-**Tags:** `icd`, `gps`, `icwg`
+**Tags:** `icd`, `gps`, `icwg`, `l5`, `l1c`
 
-_Indexed by lane(s): docs-standards_
+## Related
+
+- part_of: [IS-GPS-200N: NAVSTAR GPS Space Segment / Navigation User Segment Interfaces](../resources/gps-is-gps-200n.md)
+
+_Indexed by lane(s): docs-standards, gnss_

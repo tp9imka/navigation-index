@@ -4,9 +4,14 @@
 
 Matching UAV/ground imagery to satellite orthophotos or maps for absolute position without GNSS.
 
-## Repositories (35)
+## Samples (1)
+
+- [Drone frame to orthophoto geolocalization with LightGlue](../samples/visual-geolocalization-lightglue.md) - Matches a nadir drone frame against a georeferenced satellite or orthophoto tile with SuperPoint + LightGlue, fits a MAGSAC homography with OpenCV, and maps the frame centre through the GeoTIFF geotransform to lat/lon.
+
+## Repositories (37)
 
 - [OpenDroneMap (ODM)](../repos/opendronemap__odm.md) - fit: high - Photogrammetry toolkit that turns aerial images into orthophotos, point clouds, 3D models and DEMs.
+- [LightGlue-ONNX](../repos/fabio-sim__lightglue-onnx.md) - fit: high - ONNX export of SuperPoint/DISK + LightGlue feature matching with TensorRT and OpenVINO support.
 - [AnyLoc](../repos/anyloc__anyloc.md) - fit: high - Universal visual place recognition using foundation-model (DINOv2) features with VLAD/GeM aggregation, working across aerial, underwater, indoor and outdoor domains without task-specific training.
 - [UAV-VisLoc dataset](../repos/intellisensing__uav-visloc.md) - fit: high - Large-scale dataset of real UAV flight imagery with satellite reference maps for UAV visual localization across varied terrain.
 - [WildNav](../repos/tiers__wildnav.md) - fit: high - Python pipeline that localizes a drone by matching its downward camera frames against georeferenced satellite map tiles with SuperGlue, then converts the best match into GPS coordinates.
@@ -32,6 +37,7 @@ Matching UAV/ground imagery to satellite orthophotos or maps for absolute positi
 - [SCC-Loc](../repos/floralhercules__scc-loc.md) - fit: medium - Zero-shot UAV thermal geo-localization against satellite imagery without thermal-specific training.
 - [UVDAR](../repos/ctu-mrs__uvdar_core.md) - fit: medium - Mutual relative localization for UAV swarms using blinking ultraviolet LEDs and UV-sensitive cameras, from CTU MRS.
 - [U2S-CVGL (scale-aware UAV-to-satellite)](../repos/uav-avl__u2s-cvgl.md) - fit: medium - Scale-aware cross-view geo-localization method for matching UAV views to satellite imagery when the altitude-driven scale difference is unknown.
+- [SatNav](../repos/eku127__satnav.md) - fit: medium - Scalable benchmark and platform for long-horizon UAV vision-language navigation built from satellite imagery (NeurIPS 2026 Datasets track).
 - [UAVision](../repos/arborisers__uavision.md) - fit: medium - Map-matching-based visual localization software for UAVs in GNSS-denied settings, shipped with a GUI front end and demo.
 - [TERCOM-python (TERCOM + DSMAC)](../repos/ayushmankumar7__tercom-python.md) - fit: medium - OpenCV-based demo of map-based navigation combining terrain contour matching with scene-matching area correlation.
 - [Visual Locator](../repos/rtwotwo__visual-locator.md) - fit: medium - Absolute drone positioning by image retrieval (SelaVPR-style ViT features) over cropped satellite tiles followed by registration with SIFT+RANSAC or SuperPoint+SuperGlue.

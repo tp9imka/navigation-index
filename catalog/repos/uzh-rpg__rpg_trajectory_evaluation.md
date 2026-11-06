@@ -24,6 +24,7 @@ Toolbox for quantitative trajectory evaluation of VO/VIO, implementing the align
 
 ## Referenced by
 
+- [cnspy trajectory evaluation](../repos/aau-cns__cnspy_trajectory_evaluation.md) (alternative_to)
 - [evo](../repos/michaelgrupp__evo.md) (alternative_to)
 - [UZH-FPV dataset tools](../repos/uzh-rpg__uzh_fpv_open.md) (integrates_with)
 - [Vision Algorithms for Mobile Robotics (UZH/ETH)](../resources/scaramuzza-vision-algorithms-mobile-robotics.md) (uses)

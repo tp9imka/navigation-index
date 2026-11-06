@@ -4,17 +4,30 @@
 
 Radar odometry, radar SLAM, radar altimeters, Doppler velocity.
 
-## Repositories (9)
+## Repositories (22)
 
 - [4DRadarSLAM](../repos/zhuge2333__4dradarslam.md) - fit: medium - 4D radar SLAM with scan-to-scan registration, loop closure and pose-graph optimization, released with an NTU 4D radar dataset.
 - [RIO](../repos/christopherdoer__rio.md) - fit: medium - EKF-based radar-inertial odometry using 4D mmWave radar ego-velocity measurements.
+- [STEAM-ICP](../repos/utiasasrl__steam_icp.md) - fit: medium - Continuous-time lidar, radar, lidar-inertial and radar-inertial odometry built on the STEAM library.
+- [ORORA](../repos/url-kaist__outlier-robust-radar-odometry.md) - fit: medium - Outlier-robust radar odometry using graduated non-convexity-style estimation on radar feature correspondences (ICRA 2023).
+- [HKUST 4D Radar-Inertial Odometry](../repos/hkust-aerial-robotics__rio.md) - fit: medium - Optimization-based, point-uncertainty-aware radar-inertial odometry for 4D radar.
+- [ETH Radar-Inertial Odometry](../repos/ethz-asl__rio.md) - fit: medium - Graph-based, sparse radar-inertial odometry estimation from ETH ASL, using GTSAM.
 - [MIMOSA](../repos/ntnu-arl__mimosa.md) - fit: medium - Tightly coupled sliding-window factor-graph fusion of IMU with LiDAR (geometric and photometric), radar radial-speed factors and external odometry such as VIO.
 - [pyboreas](../repos/utiasasrl__pyboreas.md) - fit: medium - Devkit for the Boreas multi-season driving dataset with radar, lidar, camera and GNSS/INS ground truth.
+- [REVE](../repos/christopherdoer__reve.md) - fit: medium - Radar Ego Velocity Estimator: robust 3D ego-velocity from 4D mmWave radar Doppler point clouds, the front-end used by Doer's radar-inertial odometry.
 - [RRxIO](../repos/christopherdoer__rrxio.md) - fit: medium - Radar visual/thermal inertial odometry fusing 4D mmWave radar with a visual or thermal camera and IMU for degraded visual conditions.
 - [Go-RIO](../repos/wooseongy__go-rio.md) - fit: medium - Ground-optimized 4D radar-inertial odometry integrating continuous velocity via Gaussian processes (ICRA 2025 best paper finalist).
 - [OpenCPN radar_pi](../repos/opencpn-radar-pi__radar_pi.md) - fit: medium - OpenCPN plugin that connects to Navico and some Garmin and Raymarine marine radars and overlays radar imagery and ARPA-style targets on the chart.
+- [TBV Radar SLAM](../repos/dan11003__tbv_slam_public.md) - fit: medium - Radar SLAM with verified loop closures built on CFEAR radar odometry.
 - [CFEAR Radarodometry](../repos/dan11003__cfear_radarodometry.md) - fit: medium - Learning-free spinning-radar odometry that filters returns to sparse oriented surface points and registers against keyframes.
+- [ReFeree](../repos/sparolab__referee.md) - fit: medium - Lightweight radar global descriptor for radar place recognition (RA-L 2024).
+- [K-Radar](../repos/kaist-avelab__k-radar.md) - fit: low - 4D radar dataset and benchmark for object detection in diverse weather, with raw 4D tensors, lidar, cameras and GNSS.
+- [RadarHD](../repos/akarsh-prabhakara__radarhd.md) - fit: low - Learns to generate high-resolution, lidar-like point clouds from low-cost single-chip mmWave radar.
+- [Yeti radar odometry](../repos/keenan-burnett__yeti_radar_odometry.md) - fit: low - Radar odometry for Navtech spinning radar that compensates motion distortion and Doppler effects.
+- [STEAM](../repos/utiasasrl__steam.md) - fit: low - Simultaneous Trajectory Estimation and Mapping engine from UTIAS: a C++ nonlinear least-squares library with continuous-time Gaussian-process trajectory priors on Lie groups.
+- [RINO](../repos/yangsc4063__rino.md) - fit: low - Radar-inertial odometry for scanning radar targeting accuracy and robustness (T-ASE 2025).
 - [Gaussian-RIO](../repos/robotics-upo__gaussian-rio.md) - fit: low - 4D radar-inertial odometry using Gaussian modeling of radar points and multi-hypothesis scan matching.
+- [Open-RadVLAD](../repos/mttgdd__open-radvlad.md) - fit: low - Fast radar place recognition using VLAD-style aggregation over radar polar scans.
 
 ## Documents, talks, courses, datasets (6)
 

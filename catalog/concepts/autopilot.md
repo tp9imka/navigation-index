@@ -6,6 +6,12 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 
 **Sub-concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
 
+## Samples (3)
+
+- [ArduPilot EKF3 source-set switch under GPS denial](../samples/ardupilot-ekf3-source-switch.md) - Flies ArduCopter SITL on GPS, switches EKF3 to an external-nav source set (SITL vicon) with MAV_CMD_SET_EKF_SOURCE_SET or an RC aux switch, cuts simulated GPS, keeps flying, then restores it.
+- [PX4 SITL GPS denial: inject, measure drift, recover](../samples/px4-sitl-gps-denial.md) - Flies a square mission in PX4 SITL (Gazebo gz_x500), turns the GPS off mid-mission with MAVSDK failure injection, logs EKF2 health and estimated vs ground-truth position, then restores GPS and returns home.
+- [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) - Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold.
+
 ## Repositories (36)
 
 - [ArduPilot](../repos/ardupilot__ardupilot.md) - fit: high - GPL autopilot covering Copter, Plane (incl.
@@ -45,12 +51,11 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 - [Time-optimal quadrotor planning](../repos/uzh-rpg__rpg_time_optimal.md) - fit: low - Code for computing time-optimal quadrotor trajectories through waypoints, from the UZH group that placed second in AlphaPilot and built Swift.
 - [DroneCAN libcanard](../repos/dronecan__libcanard.md) - fit: low - Minimal C implementation of the DroneCAN protocol used for GNSS, compass, airspeed and other peripherals on CAN.
 
-## Documents, talks, courses, datasets (23)
+## Documents, talks, courses, datasets (21)
 
 - [2025 Abu Dhabi Autonomous Racing League (A2RL) - drone championship](../resources/a2rl-2025-season.md) - doc - Summary of the A2RL x DCL autonomous drone championship, won by TU Delft MAVLab ahead of TII Racing and KAIST, including races against human pilots.
 - [AlphaPilot: Autonomous Drone Racing](../resources/alphapilot-uzh-paper.md) - paper - UZH's second-place AlphaPilot system: learned gate detection, nonlinear filtering of visual-inertial state and time-optimal trajectory planning for GPS-free racing.
-- [ArduPilot Developer Conference Kaga 2024 (schedule and YouTube links)](../resources/ardupilot-devcon-2024-kaga.md) - talk - Three days of recorded ArduPilot developer talks; navigation-relevant sessions include 'High Altitude Non-GPS' (Sanket Sharma), 'CINS (DCM replacement)' (Pieter Van Goor, ANU), indoor flight and position offsets.
-- [ArduPilot Developer Conference Kaga 2024 - schedule and YouTube links](../resources/ardupilot-devcon-kaga-2024.md) - talk - Schedule and day-by-day livestream recordings of the 2024 ArduPilot developer conference in Japan, including a 'High Altitude Non-GPS' session and a talk on a CINS (DCM replacement) attitude estimator.
+- [ArduPilot Developer Conference Kaga 2024 - schedule and YouTube links](../resources/ardupilot-devcon-kaga-2024.md) - talk - Three days of recorded ArduPilot developer talks; navigation-relevant sessions include 'High Altitude Non-GPS' (Sanket Sharma), 'CINS (DCM replacement)' (Pieter Van Goor, ANU), indoor flight and position offsets.
 - [ArduPilot SITL Simulator (Software in the Loop)](../resources/ardupilot-sitl-docs.md) - doc - Developer docs for running ArduPilot vehicles in SITL, connecting GCS and external simulators.
 - [ArduSub documentation](../resources/ardusub-docs.md) - doc - User and developer documentation for ArduSub, covering ROV configuration, sensors, and integration of external positioning such as DVL and USBL via MAVLink.
 - [Autonomous Navigation for Flying Robots (TUM edX, AUTONAVx)](../resources/tum-autonavx.md) - course - MOOC version of the TUM flying-robots lecture with lecture videos and browser-based Python exercises on quadrotor state estimation, Kalman filtering, control and visual navigation.
@@ -67,7 +72,6 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 - [PX4 Simulation (Gazebo, SITL) documentation](../resources/px4-simulation-docs.md) - doc - How to run PX4 software-in-the-loop with Gazebo and other simulators, including multi-vehicle setups and connecting ROS 2 and ground stations.
 - [Relative navigation of fixed-wing aircraft in GPS-denied environments](../resources/ion-webinar-brink.md) - talk - AFRL perspective on relative navigation for fixed-wing aircraft without GPS, keeping estimation consistent by working in a relative frame with periodic global updates.
 - [STANAG 4586 - Standard Interfaces of UAV Control System (UCS) for NATO UAV Interoperability](../resources/stanag-4586-overview.md) - doc - Public overview of NATO's UAS interoperability standard, which defines a core UCS, a vehicle-specific module and five levels of interoperability from receiving payload data up to full flight control including launch and 
-- [Using PX4's Navigation Filter (EKF2)](../resources/px4-ekf2-guide.md) - doc - PX4 guide to its EKF2 estimator: which sensors it fuses (IMU, GNSS, baro, mag, optical flow, external vision, range), how to configure and tune them, and how to read innovation logs.
-- [Using the ECL EKF (EKF2)](../resources/px4-ekf2-tuning-guide.md) - doc - PX4's main EKF2 guide: states, sensor fusion options (GNSS, flow, external vision, range, airspeed), aiding modes, innovation monitoring and tuning.
+- [Using the ECL EKF (EKF2)](../resources/px4-ekf2-tuning-guide.md) - doc - PX4 guide to its EKF2 estimator: which sensors it fuses (IMU, GNSS, baro, mag, optical flow, external vision, range), how to configure and tune them, and how to read innovation logs.
 - [Visual Navigation for Flying Robots (TUM, 2013)](../resources/tum-visual-navigation-flying-robots.md) - lecture-series - Award-winning TUM lecture on making quadrotors navigate with cameras: 3D geometry, sensors, state estimation, visual motion estimation, SLAM, dense reconstruction, planning and exploration.
 

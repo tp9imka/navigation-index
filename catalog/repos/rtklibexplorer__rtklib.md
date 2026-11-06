@@ -39,6 +39,7 @@ Actively maintained RTKLIB fork tuned for low-cost receivers (especially u-blox)
 - [RTCM 10403.x Differential GNSS (DGNSS) Services - Version 3](../resources/rtcm-sc104-standards.md) (has_code)
 - [rtklibexplorer blog](../resources/rtklibexplorer-blog.md) (explains)
 - [rtklibexplorer blog](../resources/rtklibexplorer-blog.md) (has_code)
+- [Public CORS RINEX to SPP vs RTK with RTKLIB demo5 and gnss_lib_py](../samples/gnss-rinex-processing.md) (uses)
 
 _Indexed by lane(s): gnss_
 

@@ -28,7 +28,7 @@ Former home of PX4's estimation and control library including the EKF2 navigatio
 
 - [ESKF ROS (EliaTarasov)](../repos/eliatarasov__eskf.md) (extends)
 - [PX4 Autopilot](../repos/px4__px4-autopilot.md) (extends)
-- [Using PX4's Navigation Filter (EKF2)](../resources/px4-ekf2-guide.md) (has_code)
+- [Using the ECL EKF (EKF2)](../resources/px4-ekf2-tuning-guide.md) (has_code)
 
 _Indexed by lane(s): autopilots, ins-fusion_
 
