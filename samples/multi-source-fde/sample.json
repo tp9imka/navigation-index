@@ -1,0 +1,67 @@
+{
+  "id": "sample:multi-source-fde",
+  "title": "Multi-source fault detection and exclusion on one real flight: ARAIM-style subset exclusion across GNSS, visual fixes and two TRNs (VPAIR)",
+  "summary": "Extends two-source-integrity-vpair from detection to exclusion. One altpnt v2 EKF per subset of the absolute sources (16 filters: simulated GNSS, real visual fixes, LiDAR-heightmap TRN and GLO-30 TRN simulated over real terrain at the real VPAIR poses) runs on real nadir VO. A stdlib decision layer detects by solution separation, excludes only when exactly one candidate subset passes its own consistency test, declares unavailable when two or more do (or none), computes the PL from per-hypothesis priors and readmits after hold and probation. Seven scenarios over 10 seeds (GNSS drag-off spoof, visual misregistration, visual wrong-place lock, TRN secondary-peak ambiguity, two double faults) compare detection-only, single- and dual-fault subset FDE, and altpnt's largest-separation exclusion, which two-source reused. Reports detection latency, correct, partial and wrong exclusions, missed detections, HMI/MI and availability at AL 25/50/100 before and after exclusion.",
+  "concepts": [
+    "concept:assured-pnt",
+    "concept:sensor-fusion",
+    "concept:gnss-interference",
+    "concept:terrain-nav",
+    "concept:visual-geolocalization"
+  ],
+  "tags": [
+    "integrity",
+    "fde",
+    "araim",
+    "solution-separation",
+    "fault-exclusion",
+    "protection-level",
+    "spoofing",
+    "gnss-spoofing",
+    "trn",
+    "visual-geolocalization",
+    "vpair",
+    "wrong-exclusion",
+    "availability",
+    "fault-injection"
+  ],
+  "related": [
+    {
+      "id": "sample:two-source-integrity-vpair",
+      "rel": "uses"
+    },
+    {
+      "id": "sample:altpnt-integrity",
+      "rel": "uses"
+    },
+    {
+      "id": "sample:e2e-visual-nav-vpair",
+      "rel": "uses"
+    },
+    {
+      "id": "res:vpair-dataset-2022",
+      "rel": "uses"
+    },
+    {
+      "id": "res:geobasis-nrw-dom1-dgm1",
+      "rel": "uses"
+    },
+    {
+      "id": "res:copernicus-dem-aws",
+      "rel": "uses"
+    },
+    {
+      "id": "repo:stanford-gps-lab/maast_for_araim_2",
+      "rel": "explains"
+    }
+  ],
+  "verified": "Ran 2026-11-06 on Apple M2 Max, CPython 3.12.14 venv (numpy 2.5.4, scipy 1.18.1, rasterio 1.5.2): run_fde.py on the local VPAIR sample and two-source's NRW DSM / GLO-30 data, 10 seeds x 7 scenarios x 11 configurations, 164 s. Reproduces two-source's GNSS-denied three-source numbers with the reused max-separation monitor (84.7 % available at AL 50 nominal, 19 HMI at AL 50 under TRN ambiguity). Subset FDE: 0 HMI and 0 MI in every run at AL 25/50/100. GNSS 2 m/s drag-off: detected in 5-8 s, GNSS excluded 10/10, availability at AL 50 after onset 18.8 % detection-only => 83.8 %, error max 279 m => 21 m. Wrong exclusions: single-fault FDE 1 of 60 (a double fault, stayed unavailable, no HMI), dual-fault FDE 0 of 60, GNSS denied 0 of 30 with 7 runs unavailable instead; max-separation 27 of 60 and 25 of 30. Dual-fault monitoring drops GNSS-denied nominal availability at AL 50 from 84.7 % to 5.0 %. Tests: venv 17 pass; plain /opt/homebrew/bin/python3 3.14.7 14 pass, 3 skip. GNSS and TRN sensors simulated, faults injected, visual fixes and VO real.",
+  "verified_status": "ran",
+  "deps": "venv",
+  "first_command": ".venv/bin/python run_fde.py --data ../relative-nav-benchmark/data/vpair",
+  "group": "Integrity and GNSS-loss response on a vehicle",
+  "shows": "ARAIM-style subset exclusion (exclude only if exactly one subset is self-consistent, else unavailable) vs detection-only and max-separation exclusion, on a real flight with 3-4 absolute sources and single and double faults",
+  "input": "mixed",
+  "runtime": "164 s on M2 for 10 seeds x 7 scenarios; needs two-source's data/ (~120 MB) and the VPAIR sample (0.86 GB)",
+  "key_result": "[VPAIR, 10 seeds](README.md#results): GNSS spoof excluded 10/10, AL 50 availability after onset 18.8 % (detection-only) => 83.8 %, error max 279 => 21 m; subset FDE 0 HMI in every run; wrong exclusions 1/60 four-source single-fault FDE (a double fault, stayed unavailable), 0/60 dual-fault FDE, 0/30 GNSS denied (7 declared unavailable instead) vs max-separation 27/60 and 25/30 with 19 HMI; monitoring dual faults costs GNSS-denied AL 50 availability 84.7 % => 5 %"
+}

@@ -1,0 +1,85 @@
+nominal (20 s):
+  3src_detect          outcomes {'quiet': 10}  lat None  avail50 100.0% post None%  HMI50 0  HMI25 0  PLmed 22.9  HPEmax 5.9
+  3src_fde1            outcomes {'quiet': 10}  lat None  avail50 100.0% post None%  HMI50 0  HMI25 0  PLmed 22.9  HPEmax 5.9
+  3src_fde2            outcomes {'quiet': 10}  lat None  avail50 91.5% post None%  HMI50 0  HMI25 0  PLmed 26.7  HPEmax 5.9
+  4src_detect          outcomes {'quiet': 10}  lat None  avail50 100.0% post None%  HMI50 0  HMI25 0  PLmed 23.1  HPEmax 5.9
+  4src_fde1            outcomes {'quiet': 10}  lat None  avail50 100.0% post None%  HMI50 0  HMI25 0  PLmed 23.1  HPEmax 5.9
+  4src_fde2            outcomes {'quiet': 10}  lat None  avail50 90.7% post None%  HMI50 0  HMI25 0  PLmed 28.1  HPEmax 5.9
+  alt3_detect          outcomes {'quiet': 10}  lat None  avail50 84.7% post None%  HMI50 0  HMI25 0  PLmed 31.0  HPEmax 8.9
+  alt3_fde1            outcomes {'quiet': 10}  lat None  avail50 84.7% post None%  HMI50 0  HMI25 0  PLmed 31.0  HPEmax 8.9
+  alt3_fde2            outcomes {'quiet': 10}  lat None  avail50 5.0% post None%  HMI50 0  HMI25 0  PLmed 70.9  HPEmax 8.9
+  3src_altpnt_maxsep   outcomes {'quiet': 10}  lat None  avail50 100.0% post None%  HMI50 0  HMI25 0  PLmed 22.9  HPEmax 5.9
+  alt3_altpnt_maxsep   outcomes {'quiet': 10}  lat None  avail50 84.7% post None%  HMI50 0  HMI25 0  PLmed 31.0  HPEmax 8.9
+gnss_spoof (18 s):
+  3src_detect          outcomes {'detected_not_excluded': 10}  lat {'median': 8.0, 'min': 5, 'max': 8}  avail50 39.2% post 17.9%  HMI50 0  HMI25 0  PLmed 22.3  HPEmax 278.7
+  3src_fde1            outcomes {'correct_exclusion': 10}  lat {'median': 8.0, 'min': 5, 'max': 8}  avail50 88.0% post 83.8%  HMI50 0  HMI25 0  PLmed 27.6  HPEmax 19.1
+  3src_fde2            outcomes {'correct_exclusion': 10}  lat {'median': 8.0, 'min': 5, 'max': 8}  avail50 28.6% post 4.2%  HMI50 0  HMI25 0  PLmed 745.8  HPEmax 19.1
+  4src_detect          outcomes {'detected_not_excluded': 10}  lat {'median': 8.0, 'min': 5, 'max': 8}  avail50 39.9% post 18.8%  HMI50 0  HMI25 0  PLmed 22.6  HPEmax 278.7
+  4src_fde1            outcomes {'correct_exclusion': 10}  lat {'median': 8.0, 'min': 5, 'max': 8}  avail50 88.0% post 83.8%  HMI50 0  HMI25 0  PLmed 27.9  HPEmax 20.6
+  4src_fde2            outcomes {'correct_exclusion': 10}  lat {'median': 8.0, 'min': 5, 'max': 8}  avail50 31.5% post 8.1%  HMI50 0  HMI25 0  PLmed 62.2  HPEmax 20.6
+  alt3_detect          outcomes {'quiet': 10}  lat None  avail50 84.7% post None%  HMI50 0  HMI25 0  PLmed 31.0  HPEmax 8.9
+  alt3_fde1            outcomes {'quiet': 10}  lat None  avail50 84.7% post None%  HMI50 0  HMI25 0  PLmed 31.0  HPEmax 8.9
+  alt3_fde2            outcomes {'quiet': 10}  lat None  avail50 5.0% post None%  HMI50 0  HMI25 0  PLmed 70.9  HPEmax 8.9
+  3src_altpnt_maxsep   outcomes {'correct_exclusion': 9, 'wrong_exclusion': 1}  lat {'median': 8.0, 'min': 5, 'max': 8}  avail50 86.0% post 81.0%  HMI50 0  HMI25 0  PLmed 27.6  HPEmax 150.5
+  alt3_altpnt_maxsep   outcomes {'quiet': 10}  lat None  avail50 84.7% post None%  HMI50 0  HMI25 0  PLmed 31.0  HPEmax 8.9
+visual_misreg (19 s):
+  3src_detect          outcomes {'missed': 10}  lat None  avail50 100.0% post 100.0%  HMI50 0  HMI25 0  PLmed 23.2  HPEmax 5.9
+  3src_fde1            outcomes {'missed': 10}  lat None  avail50 100.0% post 100.0%  HMI50 0  HMI25 0  PLmed 23.2  HPEmax 5.9
+  3src_fde2            outcomes {'correct_exclusion': 10}  lat {'median': 21.0, 'min': 19, 'max': 21}  avail50 52.2% post 18.4%  HMI50 0  HMI25 0  PLmed 46.1  HPEmax 5.9
+  4src_detect          outcomes {'missed': 10}  lat None  avail50 100.0% post 100.0%  HMI50 0  HMI25 0  PLmed 23.5  HPEmax 5.9
+  4src_fde1            outcomes {'missed': 10}  lat None  avail50 100.0% post 100.0%  HMI50 0  HMI25 0  PLmed 23.5  HPEmax 5.9
+  4src_fde2            outcomes {'correct_exclusion': 10}  lat {'median': 21.0, 'min': 21, 'max': 25}  avail50 54.6% post 24.8%  HMI50 0  HMI25 0  PLmed 45.2  HPEmax 5.9
+  alt3_detect          outcomes {'detected_not_excluded': 10}  lat {'median': 25.0, 'min': 25, 'max': 25}  avail50 47.5% post 18.3%  HMI50 0  HMI25 0  PLmed 30.8  HPEmax 8.9
+  alt3_fde1            outcomes {'correct_exclusion': 6, 'detected_not_excluded': 4}  lat {'median': 25.0, 'min': 25, 'max': 25}  avail50 47.5% post 18.3%  HMI50 0  HMI25 0  PLmed 43.8  HPEmax 8.9
+  alt3_fde2            outcomes {'detected_not_excluded': 6, 'correct_exclusion': 4}  lat {'median': 25.0, 'min': 25, 'max': 25}  avail50 3.4% post 3.3%  HMI50 0  HMI25 0  PLmed 72.7  HPEmax 8.9
+  3src_altpnt_maxsep   outcomes {'missed': 10}  lat None  avail50 100.0% post 100.0%  HMI50 0  HMI25 0  PLmed 22.8  HPEmax 5.9
+  alt3_altpnt_maxsep   outcomes {'wrong_exclusion': 10}  lat {'median': 25.0, 'min': 25, 'max': 25}  avail50 51.2% post 25.3%  HMI50 0  HMI25 0  PLmed 47.4  HPEmax 173.8
+visual_wrong_place (20 s):
+  3src_detect          outcomes {'missed': 10}  lat None  avail50 100.0% post 100.0%  HMI50 0  HMI25 0  PLmed 22.9  HPEmax 5.9
+  3src_fde1            outcomes {'missed': 10}  lat None  avail50 100.0% post 100.0%  HMI50 0  HMI25 0  PLmed 22.9  HPEmax 5.9
+  3src_fde2            outcomes {'correct_exclusion': 10}  lat {'median': 18.0, 'min': 18, 'max': 18}  avail50 46.3% post 7.1%  HMI50 0  HMI25 0  PLmed 57.7  HPEmax 5.9
+  4src_detect          outcomes {'missed': 10}  lat None  avail50 100.0% post 100.0%  HMI50 0  HMI25 0  PLmed 23.1  HPEmax 5.9
+  4src_fde1            outcomes {'missed': 10}  lat None  avail50 100.0% post 100.0%  HMI50 0  HMI25 0  PLmed 23.1  HPEmax 5.9
+  4src_fde2            outcomes {'correct_exclusion': 10}  lat {'median': 18.0, 'min': 18, 'max': 18}  avail50 54.5% post 24.4%  HMI50 0  HMI25 0  PLmed 47.0  HPEmax 5.9
+  alt3_detect          outcomes {'detected_not_excluded': 10}  lat {'median': 18.0, 'min': 18, 'max': 18}  avail50 63.2% post 48.1%  HMI50 0  HMI25 0  PLmed 36.1  HPEmax 8.9
+  alt3_fde1            outcomes {'correct_exclusion': 10}  lat {'median': 18.0, 'min': 18, 'max': 18}  avail50 43.1% post 10.0%  HMI50 0  HMI25 0  PLmed 56.9  HPEmax 8.9
+  alt3_fde2            outcomes {'correct_exclusion': 10}  lat {'median': 18.0, 'min': 18, 'max': 18}  avail50 1.6% post 0.0%  HMI50 0  HMI25 0  PLmed 137.1  HPEmax 8.9
+  3src_altpnt_maxsep   outcomes {'missed': 10}  lat None  avail50 100.0% post 100.0%  HMI50 0  HMI25 0  PLmed 22.9  HPEmax 5.9
+  alt3_altpnt_maxsep   outcomes {'wrong_exclusion': 6, 'missed': 4}  lat {'median': 21.0, 'min': 19, 'max': 21}  avail50 53.6% post 29.8%  HMI50 0  HMI25 0  PLmed 64.8  HPEmax 104.7
+trn_ambiguity (18 s):
+  3src_detect          outcomes {'detected_not_excluded': 10}  lat {'median': 24.0, 'min': 8, 'max': 24}  avail50 74.5% post 65.5%  HMI50 0  HMI25 0  PLmed 23.7  HPEmax 7.7
+  3src_fde1            outcomes {'correct_exclusion': 10}  lat {'median': 24.0, 'min': 8, 'max': 24}  avail50 85.8% post 80.8%  HMI50 0  HMI25 0  PLmed 30.4  HPEmax 7.7
+  3src_fde2            outcomes {'correct_exclusion': 10}  lat {'median': 12.0, 'min': 8, 'max': 12}  avail50 50.3% post 33.4%  HMI50 0  HMI25 0  PLmed 44.0  HPEmax 7.7
+  4src_detect          outcomes {'detected_not_excluded': 10}  lat {'median': 24.0, 'min': 8, 'max': 24}  avail50 80.2% post 73.2%  HMI50 0  HMI25 0  PLmed 23.9  HPEmax 7.7
+  4src_fde1            outcomes {'correct_exclusion': 10}  lat {'median': 24.0, 'min': 8, 'max': 24}  avail50 86.6% post 81.9%  HMI50 0  HMI25 0  PLmed 30.3  HPEmax 7.7
+  4src_fde2            outcomes {'correct_exclusion': 10}  lat {'median': 12.0, 'min': 8, 'max': 12}  avail50 50.5% post 33.7%  HMI50 0  HMI25 0  PLmed 43.9  HPEmax 7.7
+  alt3_detect          outcomes {'detected_not_excluded': 10}  lat {'median': 12.0, 'min': 8, 'max': 12}  avail50 63.1% post 52.4%  HMI50 0  HMI25 0  PLmed 31.2  HPEmax 366.1
+  alt3_fde1            outcomes {'correct_exclusion': 7, 'detected_not_excluded': 3}  lat {'median': 12.0, 'min': 8, 'max': 12}  avail50 52.0% post 37.4%  HMI50 0  HMI25 0  PLmed 46.9  HPEmax 40.7
+  alt3_fde2            outcomes {'correct_exclusion': 5, 'detected_not_excluded': 5}  lat {'median': 12.0, 'min': 8, 'max': 12}  avail50 2.1% post 0.7%  HMI50 0  HMI25 0  PLmed 104.5  HPEmax 43.5
+  3src_altpnt_maxsep   outcomes {'wrong_exclusion': 10}  lat {'median': 24.0, 'min': 8, 'max': 24}  avail50 39.4% post 18.1%  HMI50 1  HMI25 0  PLmed 103.2  HPEmax 357.3
+  alt3_altpnt_maxsep   outcomes {'wrong_exclusion': 9, 'correct_exclusion': 1}  lat {'median': 12.0, 'min': 8, 'max': 12}  avail50 43.5% post 25.8%  HMI50 19  HMI25 0  PLmed 91.9  HPEmax 252.1
+double_spoof_trn (17 s):
+  3src_detect          outcomes {'detected_not_excluded': 10}  lat {'median': 10.0, 'min': 8, 'max': 11}  avail50 37.7% post 15.7%  HMI50 0  HMI25 0  PLmed 23.3  HPEmax 278.7
+  3src_fde1            outcomes {'partial_exclusion': 9, 'detected_not_excluded': 1}  lat {'median': 10.0, 'min': 8, 'max': 11}  avail50 52.7% post 36.0%  HMI50 0  HMI25 0  PLmed 31.1  HPEmax 278.7
+  3src_fde2            outcomes {'partial_exclusion': 9, 'detected_not_excluded': 1}  lat {'median': 10.0, 'min': 8, 'max': 11}  avail50 27.7% post 2.9%  HMI50 0  HMI25 0  PLmed 744.7  HPEmax 278.7
+  4src_detect          outcomes {'detected_not_excluded': 10}  lat {'median': 10.0, 'min': 8, 'max': 11}  avail50 38.4% post 16.7%  HMI50 0  HMI25 0  PLmed 23.5  HPEmax 278.7
+  4src_fde1            outcomes {'correct_exclusion': 3, 'partial_exclusion': 6, 'wrong_exclusion': 1}  lat {'median': 10.0, 'min': 8, 'max': 11}  avail50 56.8% post 41.5%  HMI50 0  HMI25 0  PLmed 34.6  HPEmax 277.2
+  4src_fde2            outcomes {'correct_exclusion': 4, 'partial_exclusion': 6}  lat {'median': 10.5, 'min': 8, 'max': 11}  avail50 27.6% post 2.8%  HMI50 0  HMI25 0  PLmed 71.2  HPEmax 75.4
+  alt3_detect          outcomes {'detected_not_excluded': 10}  lat {'median': 12.0, 'min': 8, 'max': 12}  avail50 63.1% post 52.4%  HMI50 0  HMI25 0  PLmed 31.2  HPEmax 366.1
+  alt3_fde1            outcomes {'correct_exclusion': 7, 'detected_not_excluded': 3}  lat {'median': 12.0, 'min': 8, 'max': 12}  avail50 52.0% post 37.4%  HMI50 0  HMI25 0  PLmed 46.9  HPEmax 40.7
+  alt3_fde2            outcomes {'correct_exclusion': 5, 'detected_not_excluded': 5}  lat {'median': 12.0, 'min': 8, 'max': 12}  avail50 2.1% post 0.7%  HMI50 0  HMI25 0  PLmed 104.5  HPEmax 43.5
+  3src_altpnt_maxsep   outcomes {'wrong_exclusion': 6, 'correct_exclusion': 3, 'partial_exclusion': 1}  lat {'median': 10.0, 'min': 8, 'max': 11}  avail50 43.3% post 23.3%  HMI50 0  HMI25 0  PLmed 173.2  HPEmax 357.3
+  alt3_altpnt_maxsep   outcomes {'wrong_exclusion': 9, 'correct_exclusion': 1}  lat {'median': 12.0, 'min': 8, 'max': 12}  avail50 43.5% post 25.8%  HMI50 19  HMI25 0  PLmed 91.9  HPEmax 252.1
+double_spoof_visual (18 s):
+  3src_detect          outcomes {'detected_not_excluded': 10}  lat {'median': 7.0, 'min': 6, 'max': 8}  avail50 51.2% post 7.4%  HMI50 0  HMI25 0  PLmed 23.1  HPEmax 198.8
+  3src_fde1            outcomes {'partial_exclusion': 10}  lat {'median': 7.0, 'min': 6, 'max': 8}  avail50 54.9% post 14.4%  HMI50 0  HMI25 0  PLmed 24.5  HPEmax 36.6
+  3src_fde2            outcomes {'partial_exclusion': 10}  lat {'median': 7.0, 'min': 6, 'max': 8}  avail50 46.5% post 7.5%  HMI50 0  HMI25 0  PLmed 51.0  HPEmax 36.6
+  4src_detect          outcomes {'detected_not_excluded': 10}  lat {'median': 7.0, 'min': 6, 'max': 8}  avail50 51.3% post 7.5%  HMI50 0  HMI25 0  PLmed 23.3  HPEmax 198.8
+  4src_fde1            outcomes {'correct_exclusion': 6, 'partial_exclusion': 4}  lat {'median': 7.0, 'min': 6, 'max': 8}  avail50 55.1% post 14.6%  HMI50 0  HMI25 0  PLmed 27.4  HPEmax 36.5
+  4src_fde2            outcomes {'partial_exclusion': 6, 'correct_exclusion': 4}  lat {'median': 7.0, 'min': 6, 'max': 8}  avail50 47.3% post 10.8%  HMI50 0  HMI25 0  PLmed 48.8  HPEmax 36.5
+  alt3_detect          outcomes {'detected_not_excluded': 10}  lat {'median': 25.0, 'min': 25, 'max': 25}  avail50 47.5% post 18.3%  HMI50 0  HMI25 0  PLmed 30.8  HPEmax 8.9
+  alt3_fde1            outcomes {'correct_exclusion': 6, 'detected_not_excluded': 4}  lat {'median': 25.0, 'min': 25, 'max': 25}  avail50 47.5% post 18.3%  HMI50 0  HMI25 0  PLmed 43.8  HPEmax 8.9
+  alt3_fde2            outcomes {'detected_not_excluded': 6, 'correct_exclusion': 4}  lat {'median': 25.0, 'min': 25, 'max': 25}  avail50 3.4% post 3.3%  HMI50 0  HMI25 0  PLmed 72.7  HPEmax 8.9
+  3src_altpnt_maxsep   outcomes {'wrong_exclusion': 10}  lat {'median': 7.0, 'min': 6, 'max': 8}  avail50 59.0% post 22.2%  HMI50 0  HMI25 0  PLmed 27.7  HPEmax 198.9
+  alt3_altpnt_maxsep   outcomes {'wrong_exclusion': 10}  lat {'median': 25.0, 'min': 25, 'max': 25}  avail50 51.2% post 25.3%  HMI50 0  HMI25 0  PLmed 47.4  HPEmax 173.8
+wrote results/fde_result.json, 164.0 s
