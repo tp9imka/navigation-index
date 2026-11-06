@@ -39,6 +39,7 @@ Modular Python library from Stanford NavLab for parsing, analyzing and visualizi
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [laika](../../catalog/repos/commaai__laika.md) (alternative_to)
 - [georinex](../../catalog/repos/geospace-code__georinex.md) (alternative_to)
 - [GPS Measurement Tools (incl. GnssLogger)](../../catalog/repos/google__gps-measurement-tools.md) (integrates_with)

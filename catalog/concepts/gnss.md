@@ -14,12 +14,14 @@ GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 - [Public CORS RINEX to SPP vs RTK with RTKLIB demo5 and gnss_lib_py](../../catalog/samples/gnss-rinex-processing.md) - Downloads one day of public NOAA NGS CORS RINEX for a rover/base pair 30 km apart, runs RTKLIB demo5 rnx2rtkp in single-point and kinematic RTK modes with exact CLI flags, and scores both against the stations' published 
 - [Real attack replay: Jammertest 2024 u-blox logs through the GNSS interference monitor, with RTKLIB SPP](../../catalog/samples/real-attack-replay.md) - Replays 7 public u-blox logs from Jammertest 2024 (University of Vaasa VAARA dataset, about 13 h, 21 labelled test slots: drive-by and convoy jamming, motorcade spoofing, time-offset and pseudorange-ramp spoofing at Blei
 
-## Guides (4)
+## Guides (6)
 
 - [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) - After this chapter you can describe any navigation system as "a state, an uncertainty, a set of measurements and a way to check they agree", and you will know the vocabulary judges use when they ask whether your solution
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) - After this chapter you can explain how a receiver turns satellite signals into a position, read raw receiver output, pick between SPP, RTK and PPP, and build a jamming or spoofing detector that runs on recorded data.
 - [Export control and ethics](../../docs/export-control-and-ethics.md) - Not legal advice.
 - [Learning paths](../../docs/learning-paths.md) - Three study tracks built from the courses, talks, books and docs in this index.
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) - Opinionated picks for a 24-48h build.
+- [Upstream findings](../../docs/upstream-findings.md) - Defects and gaps that the hub's samples found in other people's code and data, with what a maintainer needs to act on them.
 
 ## Repositories (70)
 

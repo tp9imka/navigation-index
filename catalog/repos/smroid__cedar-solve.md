@@ -33,6 +33,7 @@ Actively maintained fork of tetra3 with speed and robustness improvements, used 
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [tetra3](../../catalog/repos/esa__tetra3.md) (fork_of)
 - [NASA SkyView virtual observatory](../../catalog/resources/nasa-skyview-virtual-observatory.md) (uses)
 - [Celestial fix: cedar-solve plate solving on real star images, then position from star elevations above an IMU vertical](../../catalog/samples/celestial-star-tracker.md) (uses)

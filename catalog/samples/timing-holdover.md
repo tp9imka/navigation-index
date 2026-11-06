@@ -23,6 +23,7 @@ A stdlib-only simulation of a GNSS-disciplined oscillator (type-2 PLL on a noisy
 
 ## Referenced by
 
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)

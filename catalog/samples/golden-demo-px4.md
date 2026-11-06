@@ -17,4 +17,12 @@ The samples/golden-demo v2 scenario on PX4 v1.17.0 SIH in Docker. A pymavlink co
 - uses: [MAVLink](../../catalog/repos/mavlink__mavlink.md)
 - uses: [MapLibre GL JS](../../catalog/repos/maplibre__maplibre-gl-js.md)
 
+## Referenced by
+
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Upstream findings](../../docs/upstream-findings.md) (mentions)
+
 _Indexed by lane(s): samples_

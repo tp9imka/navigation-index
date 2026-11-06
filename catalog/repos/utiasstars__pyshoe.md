@@ -35,6 +35,7 @@ Open Python foot-mounted INS from UTIAS with a public inertial dataset and sever
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [ZUPT-aided INS (OpenShoe MATLAB)](../../catalog/repos/hcarlsso__zupt-aided-ins.md) (alternative_to)
 - [IEZ (INS-EKF-ZUPT)](../../catalog/repos/pajaraca__iez.md) (alternative_to)
 - [liegroups (Python)](../../catalog/repos/utiasstars__liegroups.md) (same_org)

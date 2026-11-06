@@ -25,5 +25,6 @@ Flies a square mission in PX4 SITL (SIH quadrotor, headless; Gazebo also works p
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Upstream findings](../../docs/upstream-findings.md) (mentions)
 
 _Indexed by lane(s): samples_

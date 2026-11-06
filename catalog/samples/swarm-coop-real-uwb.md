@@ -17,4 +17,12 @@ Runs the unmodified filters of swarm-coop-localization (dead reckoning, centrali
 - uses: [MILUV: A Multi-UAV Indoor Localization dataset with UWB and Vision](../../catalog/resources/miluv-dataset-2025.md)
 - explains: [UTIL: An Ultra-wideband Time-difference-of-arrival Indoor Localization Dataset](../../catalog/resources/util-uwb-dataset.md)
 
+## Referenced by
+
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+
 _Indexed by lane(s): samples_

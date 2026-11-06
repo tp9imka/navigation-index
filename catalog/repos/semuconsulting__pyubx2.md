@@ -34,6 +34,7 @@ Python library for parsing and generating u-blox UBX protocol messages, includin
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [GPSSpy](../../catalog/repos/hoverflyhampton__gpsspy.md) (integrates_with)
 - [PyGPSClient](../../catalog/repos/semuconsulting__pygpsclient.md) (depends_on)
 - [pynmeagps](../../catalog/repos/semuconsulting__pynmeagps.md) (same_org)

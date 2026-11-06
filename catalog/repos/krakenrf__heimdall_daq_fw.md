@@ -31,6 +31,7 @@ Coherent multichannel SDR acquisition chain (sync, calibration, decimation) unde
 
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [TDOA evaluation with RTL-SDRs](../../catalog/repos/dc9st__tdoa-evaluation-rtlsdr.md) (alternative_to)
 - [KrakenSDR DoA DSP](../../catalog/repos/krakenrf__krakensdr_doa.md) (depends_on)
 - [GNSS jammer geolocation from DF bearings to TAK](../../catalog/samples/interference-geolocation-to-tak.md) (explains)

@@ -35,6 +35,7 @@ Python package and CLI for evaluating odometry and SLAM trajectories (ATE/RPE, a
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [cnspy trajectory evaluation](../../catalog/repos/aau-cns__cnspy_trajectory_evaluation.md) (alternative_to)
 - [KISS-ICP](../../catalog/repos/prbonn__kiss-icp.md) (evaluated_on)
 - [OpenVINS](../../catalog/repos/rpng__open_vins.md) (evaluated_on)

@@ -39,6 +39,7 @@ Reference C library for encoding and decoding ASTM F3411 / ASD-STAN Remote ID me
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [DragonSync](../../catalog/repos/alphafox02__dragonsync.md) (integrates_with)
 - [ArduRemoteID](../../catalog/repos/ardupilot__arduremoteid.md) (depends_on)
 - [drone-mesh-mapper](../../catalog/repos/colonelpanichacks__drone-mesh-mapper.md) (alternative_to)

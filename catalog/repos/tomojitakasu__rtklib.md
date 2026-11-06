@@ -32,6 +32,7 @@ The original open-source GNSS positioning package by T. Takasu: SPP, DGNSS, RTK,
 
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [GICI-LIB](../../catalog/repos/chichengcn__gici-open.md) (extends)
 - [ntripcaster (BKG standard caster)](../../catalog/repos/nunojpg__ntripcaster.md) (integrates_with)
 - [RTKLIB demo5 (rtklibexplorer)](../../catalog/repos/rtklibexplorer__rtklib.md) (fork_of)

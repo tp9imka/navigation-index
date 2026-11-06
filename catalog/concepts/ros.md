@@ -4,10 +4,9 @@
 
 ROS ecosystem packages for navigation and localization.
 
-## Guides (2)
+## Guides (1)
 
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) - After this chapter you know how navigation changes off the drone: what ships broadcast and how spoofing shows up in it, how vehicles navigate underwater where no radio reaches, how ground robots and pedestrians dead-reck
-- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) - Opinionated picks for a 24-48h build.
 
 ## Repositories (80)
 

@@ -32,6 +32,7 @@ Runs unmodified OSNMAlib on the real Galileo I/NAV recording bundled with it (Se
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [OSNMAlib bundled Galileo I/NAV recording (custom_run)](../../catalog/resources/osnmalib-galileo-inav-recording.md) (dataset_for)
 - [Real attack replay: Jammertest 2024 u-blox logs through the GNSS interference monitor, with RTKLIB SPP](../../catalog/samples/real-attack-replay.md) (explains)
 

@@ -25,7 +25,11 @@ The coarse first stage that geoloc-license-clean lacks: no position prior, unkno
 
 ## Referenced by
 
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [NAIP aerial imagery on Microsoft Planetary Computer](../../catalog/resources/naip-planetary-computer.md) (dataset_for)
 - [OpenDroneMap Aukerman Park eBee image set](../../catalog/resources/odm-aukerman-ebee-dataset.md) (dataset_for)
 - [USGS 3DEP seamless DEMs on Microsoft Planetary Computer](../../catalog/resources/usgs-3dep-planetary-computer.md) (dataset_for)

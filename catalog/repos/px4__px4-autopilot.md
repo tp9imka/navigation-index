@@ -35,11 +35,13 @@ Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, buil
 
 ## Referenced by
 
+- [Autopilot GNSS fault handling: PX4 EKF2 and ArduPilot EKF3 under spoofing](../../docs/autopilot-gnss-fault-handling.md) (mentions)
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [Aerostack2](../../catalog/repos/aerostack2__aerostack2.md) (integrates_with)
 - [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md) (alternative_to)
 - [ROS2 PX4 Offboard Example](../../catalog/repos/ark-electronics__ros2_px4_offboard_example.md) (integrates_with)
@@ -83,6 +85,7 @@ Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, buil
 - [Visual Inertial Odometry (VIO)](../../catalog/resources/px4-visual-inertial-odometry.md) (explains)
 - [PX4 Autopilot YouTube channel](../../catalog/resources/px4-youtube-channel.md) (uses)
 - [PX4 State Estimation](../../catalog/resources/riseborough-px4-state-estimation-2020.md) (explains)
+- [How PX4 EKF2 and ArduPilot EKF3 handle a spoofed GNSS: source walk-through plus a 45-flight SITL sweep (drag rate 0.1-5 m/s, step offsets, default vs tightened gates, PX4 EKF2_GPS_MODE)](../../catalog/samples/autopilot-spoof-response.md) (uses)
 - [Golden demo on PX4 v1.17 SIH: coherent GPS drag via HIL_GPS, integrity monitor (SS + PL, GNSS-vs-VIO velocity), EKF2 switch from GNSS to external vision, comparison with ArduPilot, dashboard replay](../../catalog/samples/golden-demo-px4.md) (uses)
 - [PX4 SITL GPS denial: inject, measure drift, recover](../../catalog/samples/px4-sitl-gps-denial.md) (uses)
 - [Headless SITL in Docker: ArduCopter and PX4 SIH with one compose file](../../catalog/samples/sitl-docker.md) (uses)

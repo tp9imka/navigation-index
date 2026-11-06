@@ -21,4 +21,11 @@ Chains four sibling samples by import on the real VPAIR light-aircraft flight (1
 - uses: [LightGlue](../../catalog/repos/cvg__lightglue.md)
 - explains: [AnyLoc](../../catalog/repos/anyloc__anyloc.md)
 
+## Referenced by
+
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+
 _Indexed by lane(s): samples_

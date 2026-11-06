@@ -36,6 +36,7 @@ Galileo E1-B/E5b signal simulator with OSNMA authentication data embedded, confi
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [GNSS-SDR](../../catalog/repos/gnss-sdr__gnss-sdr.md) (integrates_with)
 - [Beidou-SDR-SIM](../../catalog/repos/haiyang-wong__beidou-sdr-sim.md) (same_org)
 - [Galileo OSNMA Signal-In-Space Interface Control Document Issue 1.1](../../catalog/resources/galileo-osnma-sis-icd.md) (has_code)

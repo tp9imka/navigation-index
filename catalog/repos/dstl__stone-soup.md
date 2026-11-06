@@ -39,6 +39,7 @@ Open-source Python framework from UK Dstl and partners for developing, running a
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [pyMHT](../../catalog/repos/erikliland__pymht.md) (alternative_to)
 - [KrakenSDR DoA DSP](../../catalog/repos/krakenrf__krakensdr_doa.md) (integrates_with)
 - [pyais](../../catalog/repos/m0r13n__pyais.md) (integrates_with)

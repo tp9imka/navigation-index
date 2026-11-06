@@ -37,6 +37,7 @@ Python implementation of the Galileo OSNMA receiver protocol: verifies TESLA key
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [OSNMA_ublox](../../catalog/repos/axelbjork__osnma_ublox.md) (alternative_to)
 - [galileo-osnma (Rust)](../../catalog/repos/daniestevez__galileo-osnma.md) (alternative_to)
 - [GNSS-SDR](../../catalog/repos/gnss-sdr__gnss-sdr.md) (integrates_with)

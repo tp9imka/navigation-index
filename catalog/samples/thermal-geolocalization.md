@@ -24,4 +24,12 @@ Real nadir DJI M4T thermal frames (Thermal-UAV / SCC-Loc, Apache-2.0 card) match
 - uses: [LightGlue](../../catalog/repos/cvg__lightglue.md)
 - uses: [Rasterio](../../catalog/repos/rasterio__rasterio.md)
 
+## Referenced by
+
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+
 _Indexed by lane(s): samples_

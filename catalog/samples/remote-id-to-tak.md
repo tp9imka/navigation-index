@@ -28,5 +28,6 @@ Passive airspace awareness from broadcast Remote ID (ASTM F3411 / ASD-STAN EN 47
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Upstream findings](../../docs/upstream-findings.md) (mentions)
 
 _Indexed by lane(s): samples_

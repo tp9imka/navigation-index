@@ -34,6 +34,7 @@ MCP server bridging an LLM to a drone over MAVLink, exposing arming, takeoff, wa
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [mavlink-mcp (ArduPilot)](../../catalog/repos/deepakpopli__mavlink-mcp.md) (alternative_to)
 - [ardupilot-mcp (safety-gated)](../../catalog/repos/rmeadomavic__ardupilot-mcp.md) (alternative_to)
 - [Model Context Protocol specification](../../catalog/resources/mcp-specification.md) (explains)

@@ -37,6 +37,7 @@ GPL autopilot covering Copter, Plane (incl. QuadPlane VTOL), Rover, boats and Ar
 
 ## Referenced by
 
+- [Autopilot GNSS fault handling: PX4 EKF2 and ArduPilot EKF3 under spoofing](../../docs/autopilot-gnss-fault-handling.md) (mentions)
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
@@ -92,6 +93,7 @@ GPL autopilot covering Copter, Plane (incl. QuadPlane VTOL), Rover, boats and Ar
 - [MAVLink Mission Protocol](../../catalog/resources/mavlink-mission-protocol.md) (uses)
 - [Developer Unconference - Paul Riseborough (EKF)](../../catalog/resources/riseborough-ardupilot-unconference-2017-ekf.md) (explains)
 - [ArduPilot EKF3 source-set switch under GPS denial](../../catalog/samples/ardupilot-ekf3-source-switch.md) (uses)
+- [How PX4 EKF2 and ArduPilot EKF3 handle a spoofed GNSS: source walk-through plus a 45-flight SITL sweep (drag rate 0.1-5 m/s, step offsets, default vs tightened gates, PX4 EKF2_GPS_MODE)](../../catalog/samples/autopilot-spoof-response.md) (uses)
 - [Golden demo: GPS drag (position-only or coherent) on an ArduCopter SITL AUTO mission, integrity monitoring with solution separation + protection level, real visual geolocalization, EKF3 switch to ExternalNav, Monte Carlo, dashboard replay](../../catalog/samples/golden-demo.md) (uses)
 - [LLM mission agent: a safety-gated MAVLink MCP server flying ArduPilot SITL](../../catalog/samples/llm-mission-agent.md) (uses)
 - [Headless SITL in Docker: ArduCopter and PX4 SIH with one compose file](../../catalog/samples/sitl-docker.md) (uses)

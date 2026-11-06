@@ -29,6 +29,8 @@ Python library for high-accuracy positions of stars, planets and Earth satellite
 
 ## Referenced by
 
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [celnav](../../catalog/repos/ms8r__celnav.md) (depends_on)
 - [JPL DE421 planetary ephemeris (NAIF SPK kernel)](../../catalog/resources/jpl-de421-ephemeris.md) (has_code)
 - [Celestial fix: cedar-solve plate solving on real star images, then position from star elevations above an IMU vertical](../../catalog/samples/celestial-star-tracker.md) (uses)

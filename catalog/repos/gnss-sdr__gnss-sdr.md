@@ -39,6 +39,7 @@ Full software-defined GNSS receiver built on GNU Radio: acquisition, tracking, n
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [OSNMAlib](../../catalog/repos/algafix__osnma.md) (integrates_with)
 - [CU Boulder GNSS SDR Collection](../../catalog/repos/gnsscusdr__cu-sdr-collection.md) (alternative_to)
 - [OSNMA-SDR-SIM](../../catalog/repos/haiyang-wong__osnma-sdr-sim.md) (integrates_with)
