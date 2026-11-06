@@ -1,0 +1,4 @@
+# dr scenario only (no camera): no VisualOdom, so arming does not wait for ExternalNav.
+VISO_TYPE 0
+EK3_SRC2_POSXY 0
+EK3_SRC2_VELXY 0

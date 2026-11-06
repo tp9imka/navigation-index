@@ -1,0 +1,34 @@
+# Loaded after models/plane.parm via --defaults. GPS from the companion as GPS_INPUT.
+# Source set 1 = GPS, set 2 = ExternalNav (companion reference), set 3 = no position, no
+# velocity: EKF3 dead reckons on airspeed + synthetic sideslip + compass + its wind estimate.
+AHRS_EKF_TYPE 3
+EK3_ENABLE 1
+EK2_ENABLE 0
+GPS1_TYPE 14
+GPS1_DELAY_MS 1
+VISO_TYPE 1
+VISO_POS_M_NSE 2.0
+EK3_SRC1_POSXY 3
+EK3_SRC1_VELXY 3
+EK3_SRC1_POSZ 1
+EK3_SRC1_VELZ 3
+EK3_SRC1_YAW 1
+EK3_SRC2_POSXY 6
+EK3_SRC2_VELXY 6
+VISO_VEL_M_NSE 0.3
+EK3_SRC2_POSZ 1
+EK3_SRC2_VELZ 0
+EK3_SRC2_YAW 1
+EK3_SRC3_POSXY 0
+EK3_SRC3_VELXY 0
+EK3_SRC3_POSZ 1
+EK3_SRC3_VELZ 0
+EK3_SRC3_YAW 1
+EK3_SRC_OPTIONS 0
+# Bit 0: no DCM fallback in forward flight. Without it AHRS can fall back to DCM, which
+# navigates on the (spoofed) GPS when the EKF stops using it.
+AHRS_OPTIONS 1
+FENCE_ENABLE 0
+SIM_WIND_SPD 6
+SIM_WIND_DIR 300
+SIM_WIND_TURB 1

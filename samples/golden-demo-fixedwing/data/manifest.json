@@ -1,0 +1,18 @@
+{
+ "schema": "navdash/1",
+ "title": "Fixed-wing golden demo: ArduPlane SITL, 27.6 km route, coherent GPS drag",
+ "tracks": [
+  "truth-day.jsonl",
+  "truth-baseline.jsonl",
+  "truth-night.jsonl",
+  "truth-dr.jsonl",
+  "ekf-day.jsonl",
+  "ekf-baseline.jsonl",
+  "ekf-night.jsonl",
+  "ekf-dr.jsonl",
+  "gnss.jsonl",
+  "fixes-day.jsonl",
+  "fixes-night.jsonl"
+ ],
+ "zones": "zones.geojson"
+}

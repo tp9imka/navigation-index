@@ -1,0 +1,98 @@
+{
+ "dr": {
+  "scenario": "dr",
+  "seed": 7,
+  "ref_kind": "vo",
+  "fix_model": null,
+  "spoof": {
+   "kind": "coherent",
+   "onset_s": 480.0,
+   "rate_mps": 1.0,
+   "bearing_deg": 90.0
+  },
+  "route_length_m": 27616.0,
+  "outcome": "route_complete",
+  "t_route_end_s": 1323.419,
+  "first_detect_s": {
+   "vel": 484.419,
+   "ss": 543.4
+  },
+  "ttd_s": {
+   "vel": 4.4,
+   "ss": 63.4
+  },
+  "action": {
+   "t": 484.419,
+   "action": "set_ekf_source_set",
+   "reason": "vel",
+   "source_set": 3
+  },
+  "source_set_ack": [
+   0
+  ],
+  "flown_after_onset_m": 20829.0,
+  "xte_max_after_onset_m": 844.0,
+  "xte_max_straight_after_onset_m": 844.0,
+  "xte_at_route_end_m": 844.0,
+  "xte_max_per_2km_bin_m": {
+   "0-2 km": 135.8,
+   "2-4 km": 252.4,
+   "4-6 km": 363.4,
+   "6-8 km": 448.3,
+   "8-10 km": 84.7,
+   "10-12 km": 143.5,
+   "12-14 km": 452.0,
+   "14-16 km": 532.6,
+   "16-18 km": 612.5,
+   "18-20 km": 678.9,
+   "20-22 km": 844.0
+  },
+  "truth_to_final_wp_at_route_end_m": 844.0,
+  "loiter_center_offset_m": 955.1,
+  "loiter_s": 120.0,
+  "ekf_err_max_after_onset_m": 981.3,
+  "ekf_err_at_route_end_m": 868.8,
+  "ekf_err_at_end_m": 977.2,
+  "ref_err_max_after_alarm_m": null,
+  "ref_err_median_m": 12.5,
+  "ekf_gps_glitch_reports_after_onset": 0,
+  "ekf_after_switch": {
+   "reports": 954,
+   "pos_horiz_abs": 5,
+   "pos_horiz_rel": 954,
+   "const_pos_mode": 0,
+   "pos_horiz_variance_max": 0.02
+  },
+  "fixes": {
+   "attempts": 0,
+   "produced": 0
+  },
+  "statustext_after_onset": [
+   {
+    "t": 858.519,
+    "text": "Reached waypoint #6 dist 53m"
+   },
+   {
+    "t": 858.519,
+    "text": "Mission: 7 WP"
+   },
+   {
+    "t": 1035.119,
+    "text": "Reached waypoint #7 dist 39m"
+   },
+   {
+    "t": 1035.119,
+    "text": "Mission: 8 WP"
+   },
+   {
+    "t": 1323.419,
+    "text": "Reached waypoint #8 dist 38m"
+   },
+   {
+    "t": 1323.419,
+    "text": "Mission: 9 LoitUnlim"
+   }
+  ],
+  "wall_s": 293.0
+ }
+}

@@ -1,0 +1,192 @@
+{
+ "coherent 1 m/s": {
+  "baseline": {
+   "1": {
+    "ttd_s": {
+     "vel": 9.4,
+     "ss": 11.4
+    },
+    "xte_max_after_onset_m": 749.6,
+    "xte_at_route_end_m": 749.6,
+    "truth_to_final_wp_at_route_end_m": 831.5,
+    "loiter_center_offset_m": 873.6,
+    "ekf_err_at_route_end_m": 814.2,
+    "ref_err_max_after_alarm_m": null,
+    "outcome": "route_complete",
+    "ekf_gps_glitch_reports_after_onset": 0,
+    "flown_after_onset_m": 19993.0
+   },
+   "2": {
+    "ttd_s": {
+     "vel": 7.4,
+     "ss": 11.4
+    },
+    "xte_max_after_onset_m": 748.9,
+    "xte_at_route_end_m": 748.9,
+    "truth_to_final_wp_at_route_end_m": 830.2,
+    "loiter_center_offset_m": 873.0,
+    "ekf_err_at_route_end_m": 814.0,
+    "ref_err_max_after_alarm_m": null,
+    "outcome": "route_complete",
+    "ekf_gps_glitch_reports_after_onset": 0,
+    "flown_after_onset_m": 19999.0
+   },
+   "3": {
+    "ttd_s": {
+     "vel": 7.4,
+     "ss": 10.4
+    },
+    "xte_max_after_onset_m": 750.9,
+    "xte_at_route_end_m": 750.9,
+    "truth_to_final_wp_at_route_end_m": 832.5,
+    "loiter_center_offset_m": 871.6,
+    "ekf_err_at_route_end_m": 814.5,
+    "ref_err_max_after_alarm_m": null,
+    "outcome": "route_complete",
+    "ekf_gps_glitch_reports_after_onset": 0,
+    "flown_after_onset_m": 19977.0
+   }
+  },
+  "day": {
+   "1": {
+    "ttd_s": {
+     "vel": 9.4,
+     "ss": 11.4
+    },
+    "xte_max_after_onset_m": 31.0,
+    "xte_at_route_end_m": 0.8,
+    "truth_to_final_wp_at_route_end_m": 37.9,
+    "loiter_center_offset_m": 14.4,
+    "ekf_err_at_route_end_m": 4.5,
+    "ref_err_max_after_alarm_m": 3.5,
+    "outcome": "route_complete",
+    "ekf_gps_glitch_reports_after_onset": 0,
+    "flown_after_onset_m": 20253.0
+   },
+   "2": {
+    "ttd_s": {
+     "vel": 7.4,
+     "ss": 11.4
+    },
+    "xte_max_after_onset_m": 28.0,
+    "xte_at_route_end_m": 0.0,
+    "truth_to_final_wp_at_route_end_m": 39.2,
+    "loiter_center_offset_m": 14.8,
+    "ekf_err_at_route_end_m": 4.4,
+    "ref_err_max_after_alarm_m": 3.4,
+    "outcome": "route_complete",
+    "ekf_gps_glitch_reports_after_onset": 0,
+    "flown_after_onset_m": 20261.0
+   },
+   "3": {
+    "ttd_s": {
+     "vel": 8.4,
+     "ss": 11.4
+    },
+    "xte_max_after_onset_m": 29.0,
+    "xte_at_route_end_m": 1.4,
+    "truth_to_final_wp_at_route_end_m": 38.9,
+    "loiter_center_offset_m": 14.8,
+    "ekf_err_at_route_end_m": 1.6,
+    "ref_err_max_after_alarm_m": 5.2,
+    "outcome": "route_complete",
+    "ekf_gps_glitch_reports_after_onset": 0,
+    "flown_after_onset_m": 20215.0
+   }
+  },
+  "night": {
+   "1": {
+    "ttd_s": {
+     "ss": 19.4,
+     "vel": 599.4
+    },
+    "xte_max_after_onset_m": 32.9,
+    "xte_at_route_end_m": 2.4,
+    "truth_to_final_wp_at_route_end_m": 21.9,
+    "loiter_center_offset_m": 20.0,
+    "ekf_err_at_route_end_m": 19.0,
+    "ref_err_max_after_alarm_m": 27.4,
+    "outcome": "route_complete",
+    "ekf_gps_glitch_reports_after_onset": 0,
+    "flown_after_onset_m": 20311.0
+   },
+   "2": {
+    "ttd_s": {
+     "ss": 31.4,
+     "vel": 580.4
+    },
+    "xte_max_after_onset_m": 50.1,
+    "xte_at_route_end_m": 3.0,
+    "truth_to_final_wp_at_route_end_m": 12.8,
+    "loiter_center_offset_m": 23.4,
+    "ekf_err_at_route_end_m": 29.3,
+    "ref_err_max_after_alarm_m": 49.4,
+    "outcome": "route_complete",
+    "ekf_gps_glitch_reports_after_onset": 0,
+    "flown_after_onset_m": 20281.0
+   },
+   "3": {
+    "ttd_s": {
+     "ss": 29.4,
+     "vel": 601.4
+    },
+    "xte_max_after_onset_m": 43.4,
+    "xte_at_route_end_m": 5.1,
+    "truth_to_final_wp_at_route_end_m": 12.2,
+    "loiter_center_offset_m": 28.5,
+    "ekf_err_at_route_end_m": 31.7,
+    "ref_err_max_after_alarm_m": 41.7,
+    "outcome": "route_complete",
+    "ekf_gps_glitch_reports_after_onset": 0,
+    "flown_after_onset_m": 20296.0
+   }
+  },
+  "dr": {
+   "1": {
+    "ttd_s": {
+     "ss": 232.4,
+     "vel": 575.4
+    },
+    "xte_max_after_onset_m": 686.7,
+    "xte_at_route_end_m": 686.7,
+    "truth_to_final_wp_at_route_end_m": 686.7,
+    "loiter_center_offset_m": 816.5,
+    "ekf_err_at_route_end_m": 712.7,
+    "ref_err_max_after_alarm_m": null,
+    "outcome": "route_complete",
+    "ekf_gps_glitch_reports_after_onset": 0,
+    "flown_after_onset_m": 20813.0
+   },
+   "2": {
+    "ttd_s": {
+     "ss": 295.4,
+     "vel": 582.4
+    },
+    "xte_max_after_onset_m": 745.0,
+    "xte_at_route_end_m": 745.0,
+    "truth_to_final_wp_at_route_end_m": 748.4,
+    "loiter_center_offset_m": 867.1,
+    "ekf_err_at_route_end_m": 773.7,
+    "ref_err_max_after_alarm_m": null,
+    "outcome": "route_complete",
+    "ekf_gps_glitch_reports_after_onset": 0,
+    "flown_after_onset_m": 20771.0
+   },
+   "3": {
+    "ttd_s": {
+     "ss": 337.4,
+     "vel": 601.4
+    },
+    "xte_max_after_onset_m": 713.3,
+    "xte_at_route_end_m": 713.3,
+    "truth_to_final_wp_at_route_end_m": 713.3,
+    "loiter_center_offset_m": 812.2,
+    "ekf_err_at_route_end_m": 740.6,
+    "ref_err_max_after_alarm_m": null,
+    "outcome": "route_complete",
+    "ekf_gps_glitch_reports_after_onset": 0,
+    "flown_after_onset_m": 20827.0
+   }
+  }
+ }
+}

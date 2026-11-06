@@ -1,0 +1,525 @@
+{
+ "baseline": {
+  "scenario": "baseline",
+  "seed": 7,
+  "ref_kind": "vo",
+  "fix_model": "day",
+  "spoof": {
+   "kind": "none",
+   "onset_s": 480.0,
+   "rate_mps": 1.0,
+   "bearing_deg": 90.0
+  },
+  "route_length_m": 27616.0,
+  "outcome": "route_complete",
+  "t_route_end_s": 1295.9,
+  "first_detect_s": {},
+  "ttd_s": {},
+  "action": null,
+  "source_set_ack": [],
+  "flown_after_onset_m": null,
+  "xte_max_after_onset_m": 0.0,
+  "xte_max_straight_after_onset_m": 0.0,
+  "xte_at_route_end_m": null,
+  "xte_max_per_2km_bin_m": {},
+  "truth_to_final_wp_at_route_end_m": 43.0,
+  "loiter_center_offset_m": 15.2,
+  "loiter_s": 120.0,
+  "ekf_err_max_after_onset_m": 4.9,
+  "ekf_err_at_route_end_m": 2.3,
+  "ekf_err_at_end_m": 3.1,
+  "ref_err_max_after_alarm_m": null,
+  "ref_err_median_m": 2.4,
+  "ekf_gps_glitch_reports_after_onset": 0,
+  "ekf_after_switch": null,
+  "fixes": {
+   "attempts": 714,
+   "produced": 559
+  },
+  "statustext_after_onset": [
+   {
+    "t": 0.04,
+    "text": "Mission: 1 Takeoff"
+   },
+   {
+    "t": 0.04,
+    "text": "Armed AUTO, xaccel = 0.0 m/s/s, waiting 0.2 sec"
+   },
+   {
+    "t": 0.24,
+    "text": "Triggered AUTO. GPS speed = 0.0"
+   },
+   {
+    "t": 3.6,
+    "text": "Holding course 35302 at 19.3m/s (-0.1)"
+   },
+   {
+    "t": 7.4,
+    "text": "Takeoff level-off starting at 21m"
+   },
+   {
+    "t": 9.4,
+    "text": "Takeoff complete at 60.07m"
+   },
+   {
+    "t": 9.4,
+    "text": "Mission: 2 WP"
+   },
+   {
+    "t": 74.0,
+    "text": "Reached waypoint #2 dist 52m"
+   },
+   {
+    "t": 74.0,
+    "text": "Mission: 3 LoitTurns"
+   },
+   {
+    "t": 257.2,
+    "text": "Loiter orbits complete"
+   },
+   {
+    "t": 257.2,
+    "text": "Mission: 4 WP"
+   },
+   {
+    "t": 357.3,
+    "text": "Reached waypoint #4 dist 20m"
+   },
+   {
+    "t": 357.3,
+    "text": "Mission: 5 WP"
+   },
+   {
+    "t": 459.981,
+    "text": "Reached waypoint #5 dist 53m"
+   },
+   {
+    "t": 459.981,
+    "text": "Mission: 6 WP"
+   },
+   {
+    "t": 853.581,
+    "text": "Reached waypoint #6 dist 53m"
+   },
+   {
+    "t": 853.581,
+    "text": "Mission: 7 WP"
+   },
+   {
+    "t": 1027.4,
+    "text": "Reached waypoint #7 dist 40m"
+   },
+   {
+    "t": 1027.4,
+    "text": "Mission: 8 WP"
+   },
+   {
+    "t": 1296.0,
+    "text": "Reached waypoint #8 dist 40m"
+   },
+   {
+    "t": 1296.0,
+    "text": "Mission: 9 LoitUnlim"
+   }
+  ],
+  "wall_s": 287.0
+ },
+ "day": {
+  "scenario": "day",
+  "seed": 7,
+  "ref_kind": "vo",
+  "fix_model": "day",
+  "spoof": {
+   "kind": "none",
+   "onset_s": 480.0,
+   "rate_mps": 1.0,
+   "bearing_deg": 90.0
+  },
+  "route_length_m": 27616.0,
+  "outcome": "route_complete",
+  "t_route_end_s": 1297.4,
+  "first_detect_s": {},
+  "ttd_s": {},
+  "action": null,
+  "source_set_ack": [],
+  "flown_after_onset_m": null,
+  "xte_max_after_onset_m": 0.0,
+  "xte_max_straight_after_onset_m": 0.0,
+  "xte_at_route_end_m": null,
+  "xte_max_per_2km_bin_m": {},
+  "truth_to_final_wp_at_route_end_m": 40.5,
+  "loiter_center_offset_m": 15.0,
+  "loiter_s": 119.8,
+  "ekf_err_max_after_onset_m": 7.1,
+  "ekf_err_at_route_end_m": 4.5,
+  "ekf_err_at_end_m": 1.3,
+  "ref_err_max_after_alarm_m": null,
+  "ref_err_median_m": 1.3,
+  "ekf_gps_glitch_reports_after_onset": 0,
+  "ekf_after_switch": null,
+  "fixes": {
+   "attempts": 714,
+   "produced": 559
+  },
+  "statustext_after_onset": [
+   {
+    "t": 0.079,
+    "text": "Mission: 1 Takeoff"
+   },
+   {
+    "t": 0.119,
+    "text": "Armed AUTO, xaccel = 0.0 m/s/s, waiting 0.2 sec"
+   },
+   {
+    "t": 0.319,
+    "text": "Triggered AUTO. GPS speed = 0.1"
+   },
+   {
+    "t": 3.619,
+    "text": "Holding course 35342 at 19.2m/s (-0.1)"
+   },
+   {
+    "t": 7.479,
+    "text": "Takeoff level-off starting at 22m"
+   },
+   {
+    "t": 9.519,
+    "text": "Takeoff complete at 60.59m"
+   },
+   {
+    "t": 9.519,
+    "text": "Mission: 2 WP"
+   },
+   {
+    "t": 73.919,
+    "text": "Reached waypoint #2 dist 52m"
+   },
+   {
+    "t": 73.919,
+    "text": "Mission: 3 LoitTurns"
+   },
+   {
+    "t": 258.819,
+    "text": "Loiter orbits complete"
+   },
+   {
+    "t": 258.819,
+    "text": "Mission: 4 WP"
+   },
+   {
+    "t": 358.819,
+    "text": "Reached waypoint #4 dist 20m"
+   },
+   {
+    "t": 358.819,
+    "text": "Mission: 5 WP"
+   },
+   {
+    "t": 461.619,
+    "text": "Reached waypoint #5 dist 52m"
+   },
+   {
+    "t": 461.619,
+    "text": "Mission: 6 WP"
+   },
+   {
+    "t": 855.019,
+    "text": "Reached waypoint #6 dist 54m"
+   },
+   {
+    "t": 855.019,
+    "text": "Mission: 7 WP"
+   },
+   {
+    "t": 1028.819,
+    "text": "Reached waypoint #7 dist 38m"
+   },
+   {
+    "t": 1028.819,
+    "text": "Mission: 8 WP"
+   },
+   {
+    "t": 1297.4,
+    "text": "Reached waypoint #8 dist 39m"
+   },
+   {
+    "t": 1297.4,
+    "text": "Mission: 9 LoitUnlim"
+   }
+  ],
+  "wall_s": 287.0
+ },
+ "night": {
+  "scenario": "night",
+  "seed": 7,
+  "ref_kind": "air",
+  "fix_model": "night",
+  "spoof": {
+   "kind": "none",
+   "onset_s": 480.0,
+   "rate_mps": 1.0,
+   "bearing_deg": 90.0
+  },
+  "route_length_m": 27616.0,
+  "outcome": "route_complete",
+  "t_route_end_s": 1298.519,
+  "first_detect_s": {},
+  "ttd_s": {},
+  "action": null,
+  "source_set_ack": [],
+  "flown_after_onset_m": null,
+  "xte_max_after_onset_m": 0.0,
+  "xte_max_straight_after_onset_m": 0.0,
+  "xte_at_route_end_m": null,
+  "xte_max_per_2km_bin_m": {},
+  "truth_to_final_wp_at_route_end_m": 35.3,
+  "loiter_center_offset_m": 15.0,
+  "loiter_s": 119.8,
+  "ekf_err_max_after_onset_m": 8.0,
+  "ekf_err_at_route_end_m": 5.1,
+  "ekf_err_at_end_m": 1.8,
+  "ref_err_max_after_alarm_m": null,
+  "ref_err_median_m": 5.0,
+  "ekf_gps_glitch_reports_after_onset": 0,
+  "ekf_after_switch": null,
+  "fixes": {
+   "attempts": 715,
+   "produced": 108
+  },
+  "statustext_after_onset": [
+   {
+    "t": 0.079,
+    "text": "Mission: 1 Takeoff"
+   },
+   {
+    "t": 0.119,
+    "text": "Armed AUTO, xaccel = 0.0 m/s/s, waiting 0.2 sec"
+   },
+   {
+    "t": 0.319,
+    "text": "Triggered AUTO. GPS speed = 0.0"
+   },
+   {
+    "t": 3.619,
+    "text": "Holding course 35349 at 19.2m/s (-0.2)"
+   },
+   {
+    "t": 7.479,
+    "text": "Takeoff level-off starting at 21m"
+   },
+   {
+    "t": 9.519,
+    "text": "Takeoff complete at 60.67m"
+   },
+   {
+    "t": 9.519,
+    "text": "Mission: 2 WP"
+   },
+   {
+    "t": 73.919,
+    "text": "Reached waypoint #2 dist 53m"
+   },
+   {
+    "t": 73.919,
+    "text": "Mission: 3 LoitTurns"
+   },
+   {
+    "t": 259.319,
+    "text": "Loiter orbits complete"
+   },
+   {
+    "t": 259.319,
+    "text": "Mission: 4 WP"
+   },
+   {
+    "t": 359.419,
+    "text": "Reached waypoint #4 dist 20m"
+   },
+   {
+    "t": 359.419,
+    "text": "Mission: 5 WP"
+   },
+   {
+    "t": 462.419,
+    "text": "Reached waypoint #5 dist 52m"
+   },
+   {
+    "t": 462.419,
+    "text": "Mission: 6 WP"
+   },
+   {
+    "t": 855.8,
+    "text": "Reached waypoint #6 dist 53m"
+   },
+   {
+    "t": 855.8,
+    "text": "Mission: 7 WP"
+   },
+   {
+    "t": 1029.919,
+    "text": "Reached waypoint #7 dist 38m"
+   },
+   {
+    "t": 1029.919,
+    "text": "Mission: 8 WP"
+   },
+   {
+    "t": 1298.519,
+    "text": "Reached waypoint #8 dist 38m"
+   },
+   {
+    "t": 1298.519,
+    "text": "Mission: 9 LoitUnlim"
+   }
+  ],
+  "wall_s": 288.0
+ },
+ "dr": {
+  "scenario": "dr",
+  "seed": 7,
+  "ref_kind": "air",
+  "fix_model": null,
+  "spoof": {
+   "kind": "none",
+   "onset_s": 480.0,
+   "rate_mps": 1.0,
+   "bearing_deg": 90.0
+  },
+  "route_length_m": 27616.0,
+  "outcome": "route_complete",
+  "t_route_end_s": 1325.919,
+  "first_detect_s": {
+   "ss": 758.419
+  },
+  "ttd_s": {},
+  "action": {
+   "t": 758.419,
+   "action": "set_ekf_source_set",
+   "reason": "ss",
+   "source_set": 3
+  },
+  "source_set_ack": [
+   0
+  ],
+  "flown_after_onset_m": null,
+  "xte_max_after_onset_m": 0.0,
+  "xte_max_straight_after_onset_m": 0.0,
+  "xte_at_route_end_m": null,
+  "xte_max_per_2km_bin_m": {},
+  "truth_to_final_wp_at_route_end_m": 752.0,
+  "loiter_center_offset_m": 853.5,
+  "loiter_s": 119.8,
+  "ekf_err_max_after_onset_m": 902.6,
+  "ekf_err_at_route_end_m": 793.2,
+  "ekf_err_at_end_m": 899.5,
+  "ref_err_max_after_alarm_m": null,
+  "ref_err_median_m": 130.5,
+  "ekf_gps_glitch_reports_after_onset": 0,
+  "ekf_after_switch": {
+   "reports": 682,
+   "pos_horiz_abs": 5,
+   "pos_horiz_rel": 682,
+   "const_pos_mode": 0,
+   "pos_horiz_variance_max": 0.06
+  },
+  "fixes": {
+   "attempts": 0,
+   "produced": 0
+  },
+  "statustext_after_onset": [
+   {
+    "t": 0.079,
+    "text": "Mission: 1 Takeoff"
+   },
+   {
+    "t": 0.119,
+    "text": "Armed AUTO, xaccel = 0.0 m/s/s, waiting 0.2 sec"
+   },
+   {
+    "t": 0.319,
+    "text": "Triggered AUTO. GPS speed = 0.0"
+   },
+   {
+    "t": 3.619,
+    "text": "Holding course 35349 at 19.2m/s (-0.2)"
+   },
+   {
+    "t": 7.479,
+    "text": "Takeoff level-off starting at 21m"
+   },
+   {
+    "t": 9.519,
+    "text": "Takeoff complete at 60.67m"
+   },
+   {
+    "t": 9.519,
+    "text": "Mission: 2 WP"
+   },
+   {
+    "t": 73.919,
+    "text": "Reached waypoint #2 dist 53m"
+   },
+   {
+    "t": 73.919,
+    "text": "Mission: 3 LoitTurns"
+   },
+   {
+    "t": 259.319,
+    "text": "Loiter orbits complete"
+   },
+   {
+    "t": 259.319,
+    "text": "Mission: 4 WP"
+   },
+   {
+    "t": 359.419,
+    "text": "Reached waypoint #4 dist 20m"
+   },
+   {
+    "t": 359.419,
+    "text": "Mission: 5 WP"
+   },
+   {
+    "t": 462.419,
+    "text": "Reached waypoint #5 dist 52m"
+   },
+   {
+    "t": 462.419,
+    "text": "Mission: 6 WP"
+   },
+   {
+    "t": 855.9,
+    "text": "Reached waypoint #6 dist 53m"
+   },
+   {
+    "t": 855.9,
+    "text": "Mission: 7 WP"
+   },
+   {
+    "t": 956.479,
+    "text": "AHRS: DCM active"
+   },
+   {
+    "t": 956.519,
+    "text": "AHRS: EKF3 active"
+   },
+   {
+    "t": 1036.8,
+    "text": "Reached waypoint #7 dist 39m"
+   },
+   {
+    "t": 1036.8,
+    "text": "Mission: 8 WP"
+   },
+   {
+    "t": 1325.919,
+    "text": "Reached waypoint #8 dist 39m"
+   },
+   {
+    "t": 1325.919,
+    "text": "Mission: 9 LoitUnlim"
+   }
+  ],
+  "wall_s": 293.0
+ }
+}

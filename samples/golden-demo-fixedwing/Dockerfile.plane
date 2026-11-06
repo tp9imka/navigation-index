@@ -1,0 +1,12 @@
+# Headless ArduPlane SITL, built on top of the sitl-docker ArduCopter image (same toolchain,
+# same clone; only the Plane tag and the plane target are added).
+ARG BASE=nav-sitl-ardupilot:copter-4.6.3
+FROM ${BASE}
+ARG PLANE_TAG=Plane-4.6.3
+WORKDIR /ardupilot
+RUN git fetch --depth 1 origin tag ${PLANE_TAG} && git checkout -q ${PLANE_TAG} \
+    && git submodule update --init --depth 1 --recursive modules/mavlink modules/waf modules/DroneCAN/libcanard modules/DroneCAN/dronecan_dsdlc modules/DroneCAN/pydronecan modules/DroneCAN/DSDL \
+    && ./waf configure --board sitl && ./waf plane
+COPY plane-entrypoint.sh /usr/local/bin/plane-entrypoint.sh
+EXPOSE 5760 5762 5763
+ENTRYPOINT ["/usr/local/bin/plane-entrypoint.sh"]
