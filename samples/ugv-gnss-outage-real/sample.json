@@ -1,0 +1,23 @@
+{
+  "id": "sample:ugv-gnss-outage-real",
+  "title": "UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector",
+  "summary": "Stdlib-only ground-vehicle loop on a real NCLT Segway session (2013-01-10, 1022 s, 1139 m, 42 MB download): consumer GPS at 1 Hz fused with MEMS strapdown INS (the 8-state EKF of gnss-ins-ekf-outage, imported), wheel speed + MEMS gyro, or wheel speed + KVH fibre-optic gyro. Measures dead-reckoning drift through injected 10/30/60/120 s outages and one real 39.6 s GNSS gap against NCLT SLAM truth, what a chi-square innovation gate does with real multipath, and detection time of an injected coherent drag (synthetic attack on real fixes) for the gate and an odometry-vs-GNSS displacement test, with false alarms on the clean log.",
+  "concepts": ["concept:ground-vehicle-nav", "concept:gnss-ins", "concept:ins", "concept:sensor-fusion", "concept:gnss-interference", "concept:assured-pnt", "concept:datasets-benchmarks"],
+  "tags": ["ugv", "wheel-odometry", "dead-reckoning", "fog", "ekf", "innovation-gate", "chi-square", "multipath", "gnss-outage", "spoofing", "drag", "real-data", "nclt", "stdlib"],
+  "related": [
+    {"id": "sample:gnss-ins-ekf-outage", "rel": "uses"},
+    {"id": "res:umich-nclt-dataset", "rel": "uses"},
+    {"id": "repo:cra-ros-pkg/robot_localization", "rel": "explains"},
+    {"id": "repo:umich-curly/drift", "rel": "explains"},
+    {"id": "repo:i2nav-whu/kf-gins", "rel": "explains"}
+  ],
+  "verified": "Ran 2026-11-06 with /opt/homebrew/bin/python3 3.14.7, stdlib only (run with -I). fetch_nclt.py downloaded and sha256-verified groundtruth_2013-01-10.csv (20.7 MB) and 2013-01-10_sen.tar.gz (21.7 MB) from the NCLT S3 bucket in ~27 s; ugv_loop.py (all four reports, ~26 s) output saved in results/all-2013-01-10.txt and quoted in the README. Sensor conventions checked against truth (gyro z slope 0.994, KVH rate sign, wheel scale 1.07). 11 unittest tests pass with data, 7 pass + 4 skip without data; mutations (inert gate, zero drag) make the gate and drag tests fail. One session only; truth is NCLT SLAM which fuses the same wheel odometry; the drag is a position offset on recorded fixes, not an RF spoof. robot_localization, DRIFT and KF-GINS were not run.",
+  "verified_status": "ran",
+  "deps": "stdlib",
+  "first_command": "python3 fetch_nclt.py && python3 ugv_loop.py",
+  "group": "Integrity and GNSS-loss response on a vehicle",
+  "shows": "Real Segway log (NCLT): GNSS outages bridged by wheel odometry vs MEMS INS, chi-square gate on real multipath, injected drag detection with gate vs odometry displacement test",
+  "input": "mixed",
+  "runtime": "download 42 MB in ~30 s; all reports ~26 s; tests ~4 s",
+  "key_result": "[Real NCLT log](README.md#results): 60 s outage drift median 57 m MEMS INS vs 3.9 m wheels + MEMS gyro vs 2.5 m wheels + FOG (120 s p95 34.5 / 16.7 m with wheels); gate rejected 16/40 multipath fixes and 0/800 good; injected 1 m/s drag caught by the odometry displacement test in 16-18 s (8/8), by the gate in 30-44 s; 0.1 m/s drag caught in at most 2 of 8 runs by either; 1 alarm per detector on the clean log, during a real 46-55 m multipath episode"
+}
