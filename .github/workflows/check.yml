@@ -17,8 +17,8 @@ jobs:
           node-version: "20"
       - name: Build from the committed tree
         run: |
-          python3 templates/offline-kit/build_manifest.py
           python3 tools/build.py | tee build.log
+          python3 templates/offline-kit/build_manifest.py
           grep -q "dangling: 0 bad concepts: 0" build.log
       - name: Links resolve
         run: python3 tools/check_links.py

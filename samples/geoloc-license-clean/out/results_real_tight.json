@@ -1,0 +1,657 @@
+{
+ "env": {
+  "cpu": "Apple M2 Max",
+  "torch_threads": 8,
+  "torch": "2.15.0",
+  "opencv": "5.0.0",
+  "map_gsd_m": 0.3,
+  "map_px": [
+   6667,
+   6667
+  ],
+  "season_source": "naip_aukerman_2019.tif",
+  "prior_offset_m": 30.0,
+  "search_radius_m": 60.0
+ },
+ "results": {
+  "aliked/real-vs-2023": {
+   "summary": {
+    "n": 5,
+    "fixes": 0,
+    "within_5m": 0,
+    "within_20m": 0,
+    "median_err_m": null,
+    "max_err_m": null,
+    "median_t_s": 1.948,
+    "median_search_s": 135.93
+   },
+   "rows": [
+    {
+     "features": "aliked",
+     "kpts_query": 1930,
+     "kpts_ref": 2048,
+     "matches": 35,
+     "inliers": 8,
+     "fix": null,
+     "work_gsd_m": 0.32,
+     "ref_px": [
+      1024,
+      1024
+     ],
+     "query_px": [
+      598,
+      646
+     ],
+     "t_prep_s": 0.006,
+     "t_match_s": 2.106,
+     "t_total_s": 2.113,
+     "agl_assumed": 120,
+     "heading_tried": 120.0,
+     "case": "DSC00229.JPG",
+     "t_search_s": 110.34,
+     "tries": 72,
+     "mode": "cold",
+     "exif_alt_msl": 346.315,
+     "track_deg": 250.4,
+     "err_m": null
+    },
+    {
+     "features": "aliked",
+     "kpts_query": 1353,
+     "kpts_ref": 2048,
+     "matches": 69,
+     "inliers": 11,
+     "fix": null,
+     "work_gsd_m": 0.3,
+     "ref_px": [
+      978,
+      978
+     ],
+     "query_px": [
+      537,
+      455
+     ],
+     "t_prep_s": 0.005,
+     "t_match_s": 1.467,
+     "t_total_s": 1.473,
+     "agl_assumed": 100,
+     "heading_tried": 345.0,
+     "case": "DSC00240.JPG",
+     "t_search_s": 130.76,
+     "tries": 72,
+     "mode": "cold",
+     "exif_alt_msl": 344.061,
+     "track_deg": 323.5,
+     "err_m": null
+    },
+    {
+     "features": "aliked",
+     "kpts_query": 670,
+     "kpts_ref": 2048,
+     "matches": 77,
+     "inliers": 12,
+     "fix": null,
+     "work_gsd_m": 0.3,
+     "ref_px": [
+      863,
+      862
+     ],
+     "query_px": [
+      429,
+      364
+     ],
+     "t_prep_s": 0.006,
+     "t_match_s": 1.591,
+     "t_total_s": 1.597,
+     "agl_assumed": 80,
+     "heading_tried": 195.0,
+     "case": "DSC00255.JPG",
+     "t_search_s": 135.93,
+     "tries": 72,
+     "mode": "cold",
+     "exif_alt_msl": 341.924,
+     "track_deg": 57.0,
+     "err_m": null
+    },
+    {
+     "features": "aliked",
+     "kpts_query": 1041,
+     "kpts_ref": 2048,
+     "matches": 19,
+     "inliers": 6,
+     "fix": null,
+     "work_gsd_m": 0.3,
+     "ref_px": [
+      862,
+      863
+     ],
+     "query_px": [
+      429,
+      364
+     ],
+     "t_prep_s": 0.004,
+     "t_match_s": 1.943,
+     "t_total_s": 1.948,
+     "agl_assumed": 80,
+     "heading_tried": 165.0,
+     "case": "DSC00270.JPG",
+     "t_search_s": 198.24,
+     "tries": 72,
+     "mode": "cold",
+     "exif_alt_msl": 343.119,
+     "track_deg": 231.2,
+     "err_m": null
+    },
+    {
+     "features": "aliked",
+     "kpts_query": 1353,
+     "kpts_ref": 2048,
+     "matches": 53,
+     "inliers": 9,
+     "fix": null,
+     "work_gsd_m": 0.3,
+     "ref_px": [
+      978,
+      978
+     ],
+     "query_px": [
+      455,
+      537
+     ],
+     "t_prep_s": 0.004,
+     "t_match_s": 4.319,
+     "t_total_s": 4.324,
+     "agl_assumed": 100,
+     "heading_tried": 285.0,
+     "case": "DSC00285.JPG",
+     "t_search_s": 228.21,
+     "tries": 72,
+     "mode": "cold",
+     "exif_alt_msl": 340.333,
+     "track_deg": 231.2,
+     "err_m": null
+    }
+   ]
+  },
+  "aliked/real-vs-2019": {
+   "summary": {
+    "n": 5,
+    "fixes": 1,
+    "within_5m": 0,
+    "within_20m": 1,
+    "median_err_m": 11.02,
+    "max_err_m": 11.02,
+    "median_t_s": 1.536,
+    "median_search_s": 96.43
+   },
+   "rows": [
+    {
+     "features": "aliked",
+     "kpts_query": 366,
+     "kpts_ref": 1391,
+     "matches": 23,
+     "inliers": 8,
+     "fix": null,
+     "work_gsd_m": 0.6,
+     "ref_px": [
+      489,
+      489
+     ],
+     "query_px": [
+      269,
+      227
+     ],
+     "t_prep_s": 0.006,
+     "t_match_s": 2.415,
+     "t_total_s": 2.421,
+     "agl_assumed": 100,
+     "heading_tried": 165.0,
+     "case": "DSC00229.JPG",
+     "t_search_s": 112.38,
+     "tries": 72,
+     "mode": "cold",
+     "exif_alt_msl": 346.315,
+     "track_deg": 250.4,
+     "err_m": null
+    },
+    {
+     "features": "aliked",
+     "kpts_query": 595,
+     "kpts_ref": 1676,
+     "matches": 19,
+     "inliers": 10,
+     "fix": null,
+     "work_gsd_m": 0.6,
+     "ref_px": [
+      547,
+      546
+     ],
+     "query_px": [
+      273,
+      322
+     ],
+     "t_prep_s": 0.006,
+     "t_match_s": 1.529,
+     "t_total_s": 1.536,
+     "agl_assumed": 120,
+     "heading_tried": 75.0,
+     "case": "DSC00240.JPG",
+     "t_search_s": 96.43,
+     "tries": 72,
+     "mode": "cold",
+     "exif_alt_msl": 344.061,
+     "track_deg": 323.5,
+     "err_m": null
+    },
+    {
+     "features": "aliked",
+     "kpts_query": 500,
+     "kpts_ref": 1627,
+     "matches": 68,
+     "inliers": 47,
+     "fix": [
+      -81.7520780993037,
+      41.30388498793265
+     ],
+     "work_gsd_m": 0.6,
+     "ref_px": [
+      547,
+      547
+     ],
+     "query_px": [
+      344,
+      344
+     ],
+     "t_prep_s": 0.006,
+     "t_match_s": 1.991,
+     "t_total_s": 1.997,
+     "agl_assumed": 120,
+     "heading_tried": 315.0,
+     "case": "DSC00255.JPG",
+     "t_search_s": 104.97,
+     "tries": 72,
+     "mode": "cold",
+     "exif_alt_msl": 341.924,
+     "track_deg": 57.0,
+     "err_m": 11.02
+    },
+    {
+     "features": "aliked",
+     "kpts_query": 558,
+     "kpts_ref": 1678,
+     "matches": 27,
+     "inliers": 7,
+     "fix": null,
+     "work_gsd_m": 0.6,
+     "ref_px": [
+      546,
+      547
+     ],
+     "query_px": [
+      318,
+      344
+     ],
+     "t_prep_s": 0.006,
+     "t_match_s": 1.396,
+     "t_total_s": 1.403,
+     "agl_assumed": 120,
+     "heading_tried": 119.2,
+     "case": "DSC00270.JPG",
+     "t_search_s": 12.71,
+     "tries": 9,
+     "mode": "warm",
+     "exif_alt_msl": 343.119,
+     "track_deg": 231.2,
+     "err_m": null
+    },
+    {
+     "features": "aliked",
+     "kpts_query": 527,
+     "kpts_ref": 1483,
+     "matches": 21,
+     "inliers": 7,
+     "fix": null,
+     "work_gsd_m": 0.6,
+     "ref_px": [
+      518,
+      518
+     ],
+     "query_px": [
+      318,
+      311
+     ],
+     "t_prep_s": 0.006,
+     "t_match_s": 0.674,
+     "t_total_s": 0.68,
+     "agl_assumed": 110,
+     "heading_tried": 139.2,
+     "case": "DSC00285.JPG",
+     "t_search_s": 6.68,
+     "tries": 9,
+     "mode": "warm",
+     "exif_alt_msl": 340.333,
+     "track_deg": 231.2,
+     "err_m": null
+    }
+   ]
+  },
+  "sift/real-vs-2023": {
+   "summary": {
+    "n": 5,
+    "fixes": 0,
+    "within_5m": 0,
+    "within_20m": 0,
+    "median_err_m": null,
+    "max_err_m": null,
+    "median_t_s": 0.331,
+    "median_search_s": 23.48
+   },
+   "rows": [
+    {
+     "features": "sift",
+     "kpts_query": 1610,
+     "kpts_ref": 1508,
+     "matches": 45,
+     "inliers": 6,
+     "fix": null,
+     "work_gsd_m": 0.3,
+     "ref_px": [
+      978,
+      978
+     ],
+     "query_px": [
+      573,
+      573
+     ],
+     "t_prep_s": 0.005,
+     "t_match_s": 0.249,
+     "t_total_s": 0.254,
+     "agl_assumed": 100,
+     "heading_tried": 225.0,
+     "case": "DSC00229.JPG",
+     "t_search_s": 21.66,
+     "tries": 72,
+     "mode": "cold",
+     "exif_alt_msl": 346.315,
+     "track_deg": 250.4,
+     "err_m": null
+    },
+    {
+     "features": "sift",
+     "kpts_query": 1636,
+     "kpts_ref": 1620,
+     "matches": 26,
+     "inliers": 8,
+     "fix": null,
+     "work_gsd_m": 0.32,
+     "ref_px": [
+      1025,
+      1024
+     ],
+     "query_px": [
+      391,
+      520
+     ],
+     "t_prep_s": 0.006,
+     "t_match_s": 0.456,
+     "t_total_s": 0.462,
+     "agl_assumed": 120,
+     "heading_tried": 90.0,
+     "case": "DSC00240.JPG",
+     "t_search_s": 23.48,
+     "tries": 72,
+     "mode": "cold",
+     "exif_alt_msl": 344.061,
+     "track_deg": 323.5,
+     "err_m": null
+    },
+    {
+     "features": "sift",
+     "kpts_query": 1662,
+     "kpts_ref": 1595,
+     "matches": 28,
+     "inliers": 6,
+     "fix": null,
+     "work_gsd_m": 0.3,
+     "ref_px": [
+      863,
+      862
+     ],
+     "query_px": [
+      458,
+      458
+     ],
+     "t_prep_s": 0.006,
+     "t_match_s": 0.577,
+     "t_total_s": 0.584,
+     "agl_assumed": 80,
+     "heading_tried": 225.0,
+     "case": "DSC00255.JPG",
+     "t_search_s": 27.95,
+     "tries": 72,
+     "mode": "cold",
+     "exif_alt_msl": 341.924,
+     "track_deg": 57.0,
+     "err_m": null
+    },
+    {
+     "features": "sift",
+     "kpts_query": 1657,
+     "kpts_ref": 1538,
+     "matches": 54,
+     "inliers": 10,
+     "fix": null,
+     "work_gsd_m": 0.3,
+     "ref_px": [
+      862,
+      863
+     ],
+     "query_px": [
+      458,
+      458
+     ],
+     "t_prep_s": 0.004,
+     "t_match_s": 0.274,
+     "t_total_s": 0.28,
+     "agl_assumed": 80,
+     "heading_tried": 225.0,
+     "case": "DSC00270.JPG",
+     "t_search_s": 16.69,
+     "tries": 72,
+     "mode": "cold",
+     "exif_alt_msl": 343.119,
+     "track_deg": 231.2,
+     "err_m": null
+    },
+    {
+     "features": "sift",
+     "kpts_query": 1611,
+     "kpts_ref": 1548,
+     "matches": 56,
+     "inliers": 8,
+     "fix": null,
+     "work_gsd_m": 0.3,
+     "ref_px": [
+      978,
+      978
+     ],
+     "query_px": [
+      537,
+      455
+     ],
+     "t_prep_s": 0.004,
+     "t_match_s": 0.325,
+     "t_total_s": 0.331,
+     "agl_assumed": 100,
+     "heading_tried": 195.0,
+     "case": "DSC00285.JPG",
+     "t_search_s": 28.23,
+     "tries": 72,
+     "mode": "cold",
+     "exif_alt_msl": 340.333,
+     "track_deg": 231.2,
+     "err_m": null
+    }
+   ]
+  },
+  "sift/real-vs-2019": {
+   "summary": {
+    "n": 5,
+    "fixes": 0,
+    "within_5m": 0,
+    "within_20m": 0,
+    "median_err_m": null,
+    "max_err_m": null,
+    "median_t_s": 0.367,
+    "median_search_s": 19.6
+   },
+   "rows": [
+    {
+     "features": "sift",
+     "kpts_query": 750,
+     "kpts_ref": 1611,
+     "matches": 69,
+     "inliers": 11,
+     "fix": null,
+     "work_gsd_m": 0.6,
+     "ref_px": [
+      489,
+      489
+     ],
+     "query_px": [
+      232,
+      174
+     ],
+     "t_prep_s": 0.006,
+     "t_match_s": 0.658,
+     "t_total_s": 0.666,
+     "agl_assumed": 100,
+     "heading_tried": 0.0,
+     "case": "DSC00229.JPG",
+     "t_search_s": 50.24,
+     "tries": 72,
+     "mode": "cold",
+     "exif_alt_msl": 346.315,
+     "track_deg": 250.4,
+     "err_m": null
+    },
+    {
+     "features": "sift",
+     "kpts_query": 1136,
+     "kpts_ref": 1627,
+     "matches": 31,
+     "inliers": 10,
+     "fix": null,
+     "work_gsd_m": 0.6,
+     "ref_px": [
+      547,
+      546
+     ],
+     "query_px": [
+      319,
+      345
+     ],
+     "t_prep_s": 0.006,
+     "t_match_s": 0.464,
+     "t_total_s": 0.47,
+     "agl_assumed": 120,
+     "heading_tried": 300.0,
+     "case": "DSC00240.JPG",
+     "t_search_s": 41.17,
+     "tries": 72,
+     "mode": "cold",
+     "exif_alt_msl": 344.061,
+     "track_deg": 323.5,
+     "err_m": null
+    },
+    {
+     "features": "sift",
+     "kpts_query": 405,
+     "kpts_ref": 1623,
+     "matches": 18,
+     "inliers": 8,
+     "fix": null,
+     "work_gsd_m": 0.6,
+     "ref_px": [
+      431,
+      431
+     ],
+     "query_px": [
+      185,
+      139
+     ],
+     "t_prep_s": 0.005,
+     "t_match_s": 0.361,
+     "t_total_s": 0.367,
+     "agl_assumed": 80,
+     "heading_tried": 0.0,
+     "case": "DSC00255.JPG",
+     "t_search_s": 19.6,
+     "tries": 72,
+     "mode": "cold",
+     "exif_alt_msl": 341.924,
+     "track_deg": 57.0,
+     "err_m": null
+    },
+    {
+     "features": "sift",
+     "kpts_query": 623,
+     "kpts_ref": 1628,
+     "matches": 42,
+     "inliers": 8,
+     "fix": null,
+     "work_gsd_m": 0.6,
+     "ref_px": [
+      431,
+      431
+     ],
+     "query_px": [
+      183,
+      215
+     ],
+     "t_prep_s": 0.006,
+     "t_match_s": 0.162,
+     "t_total_s": 0.169,
+     "agl_assumed": 80,
+     "heading_tried": 105.0,
+     "case": "DSC00270.JPG",
+     "t_search_s": 13.49,
+     "tries": 72,
+     "mode": "cold",
+     "exif_alt_msl": 343.119,
+     "track_deg": 231.2,
+     "err_m": null
+    },
+    {
+     "features": "sift",
+     "kpts_query": 675,
+     "kpts_ref": 1642,
+     "matches": 46,
+     "inliers": 8,
+     "fix": null,
+     "work_gsd_m": 0.6,
+     "ref_px": [
+      431,
+      431
+     ],
+     "query_px": [
+      229,
+      229
+     ],
+     "t_prep_s": 0.006,
+     "t_match_s": 0.176,
+     "t_total_s": 0.183,
+     "agl_assumed": 80,
+     "heading_tried": 315.0,
+     "case": "DSC00285.JPG",
+     "t_search_s": 11.98,
+     "tries": 72,
+     "mode": "cold",
+     "exif_alt_msl": 340.333,
+     "track_deg": 231.2,
+     "err_m": null
+    }
+   ]
+  }
+ }
+}
