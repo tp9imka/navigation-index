@@ -9,7 +9,7 @@ One-line: Python/Flask TAK server with a web map UI that ATAK, iTAK, WinTAK and 
 | Inputs | CoT from clients over TCP (default `OTS_TCP_STREAMING_PORT` 8088), TLS (8089), UDP (8087); Marti API HTTP 8080 / HTTPS 8443; OTS REST API (`blueprints/ots_api/*`: markers, missions, data packages, video, Meshtastic, federation, CasEvac). |
 | Outputs | Rebroadcast CoT to connected clients and groups/channels, CoT saved to a database, web UI live map ([OpenTAKServer-UI](https://github.com/brian7704/OpenTAKServer-UI)), video via MediaMTX. |
 | Key API / entry points | Config keys in `opentakserver/defaultconfig.py` (env-overridable): `OTS_LISTENER_PORT` 8081 (internal), `OTS_MARTI_HTTP_PORT` 8080, `OTS_MARTI_HTTPS_PORT` 8443, `OTS_TCP_STREAMING_PORT` 8088, `OTS_SSL_STREAMING_PORT` 8089, `OTS_UDP_PORT` 8087, `OTS_ENABLE_TCP_STREAMING_PORT`, `OTS_MEDIAMTX_ENABLE`, `OTS_ENABLE_MESHTASTIC`, `OTS_ENABLE_LDAP`. Blueprints: `blueprints/marti_api/` (TAK-compatible), `blueprints/ots_api/` (OTS REST), `blueprints/cli.py`. Docs: docs.opentakserver.io. |
-| Time to first result | Estimate: about 1 h with the installer on a fresh Ubuntu VM to a web map plus one ATAK client (README hackathon note in the index says the same). Docker path not tried. |
+| Time to first result | Estimate: about 1 h with the installer on a fresh Ubuntu VM to a web map plus one ATAK client (the index record's hackathon note gives the same figure). Docker path not tried. |
 | License | GPL-3.0. |
 
 ## Minimal usage

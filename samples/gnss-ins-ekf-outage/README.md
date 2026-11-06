@@ -47,7 +47,8 @@ The code is self-contained. These indexed repos are the real tools for the same 
 
 ## Prerequisites
 
-- Python 3.10+ (tested on 3.14.7). No third-party packages.
+- Python 3.10+ (tested on 3.14.7). No third-party packages for `ekf_outage.py`.
+- `filterpy_crosscheck.py` only: `python3 -m pip install -r requirements.txt` (filterpy 2.0.0).
 
 ## Run
 
@@ -95,6 +96,24 @@ How to read it:
   innovation stays small. This is the known weakness of innovation gating.
 - Fast walk-off (2 m/s): caught in 7 s, ending error 4 m.
 
+## Cross-check with filterpy
+
+`filterpy_crosscheck.py` swaps the hand-written `Ekf` for a subclass whose covariance
+propagation, innovation covariance and measurement update (Joseph form) go through
+`filterpy.kalman.ExtendedKalmanFilter`. Mechanization, F, Q, R and the gate are unchanged.
+
+```bash
+python3 -m pip install -r requirements.txt
+python3 filterpy_crosscheck.py
+python3 filterpy_crosscheck.py --sweep
+```
+
+Observed (filterpy 2.0.0, numpy 2.5.4, Python 3.12.14, 2026-11-06): both tables are
+identical to the stdlib ones above at the printed 0.1 m (`diff` of the default run is
+empty). Negative control: with R inflated 100x in the filterpy path only, the nominal EKF
+row moved from 1.9 / 5.7 / 1.8 to 2.1 / 5.9 / 2.0, so the comparison does exercise
+filterpy. This rules out an algebra slip in `matlite.py`; it does not validate the model.
+
 ## Extend it in a hackathon
 
 1. Swap the trajectory and IMU for `gnss-ins-sim` output: `sim.run(1)` then
@@ -125,3 +144,5 @@ How to read it:
 
 - `ekf_outage.py` - simulation, EKF, gate, report and sweep.
 - `matlite.py` - list-of-lists matrix helpers (multiply, transpose, 2x2 inverse).
+- `filterpy_crosscheck.py` - same runs with filterpy's EKF doing the covariance work.
+- `requirements.txt` - pinned filterpy for the cross-check.

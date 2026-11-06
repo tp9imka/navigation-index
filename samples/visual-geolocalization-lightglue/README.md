@@ -6,8 +6,8 @@ Get an absolute lat/lon fix for a drone without GNSS by matching a nadir camera 
 against a georeferenced satellite map or orthophoto:
 
 ```
-drone frame --SuperPoint+LightGlue--> matches --MAGSAC homography H--> frame centre in tile pixels
-            --GeoTIFF affine geotransform--> map coords (UTM or lon/lat) --rasterio.warp--> WGS84 lat/lon
+drone frame =SuperPoint+LightGlue=> matches =MAGSAC homography H=> frame centre in tile pixels
+            =GeoTIFF affine geotransform=> map coords (UTM or lon/lat) =rasterio.warp=> WGS84 lat/lon
 ```
 
 The frame centre of a nadir camera is (to first order) the point under the aircraft,
@@ -19,7 +19,10 @@ so the mapped centre is the position fix. The camera is passive: nothing is emit
 |---|---|---|
 | `geo_math.py` | Stdlib: affine pixel<->world, homography point mapping, WGS84 UTM forward/inverse, haversine, `frame_center_to_world` | ran, 12 unit tests |
 | `test_geo_math.py` | `unittest` suite for the above | ran |
-| `geolocalize.py` | Full pipeline with torch + LightGlue + OpenCV + rasterio | syntax-checked only |
+| `geolocalize.py` | Full pipeline with torch + LightGlue + OpenCV + rasterio | ran on synthetic pairs (below) |
+| `make_test_pair.py` | Cuts a map tile and a warped "drone frame" from one public OpenAerialMap orthophoto, writes truth + prior | ran |
+| `run_cases.sh` | 7 cases + a negative control through `make_test_pair.py` and `geolocalize.py` | ran |
+| `requirements.txt` | pinned torch 2.15.0, LightGlue git `5a650c4`, opencv-python 5.0.0.93, rasterio 1.5.2 | resolved and installed |
 
 ## Repos used and why
 
@@ -49,13 +52,11 @@ so the mapped centre is the position fix. The camera is passive: nothing is emit
 ## Prerequisites
 
 - Stdlib part: `python3` 3.10+ (verified with 3.14.7).
-- Pipeline (not installed or run here): Python 3.10+, `torch>=2.0`, `opencv-python>=4.5`
-  (for `cv2.USAC_MAGSAC`), `rasterio`, `numpy`, and LightGlue from source:
-
-```bash
-git clone https://github.com/cvg/LightGlue.git && python -m pip install -e LightGlue
-python -m pip install opencv-python rasterio
-```
+- Pipeline: `python3 -m pip install -r requirements.txt` (ran with Python 3.12.14, CPU
+  torch on macOS arm64). LightGlue installs from git; on first use it downloads its
+  SuperPoint and LightGlue weights from the LightGlue GitHub release into `~/.cache/torch`.
+- Internet once, for the orthophoto (~70 s for the windowed reads here). `data/` is
+  git-ignored (the map tile is ~9 MB).
 
 ## Run
 
@@ -66,47 +67,63 @@ cd samples/visual-geolocalization-lightglue
 python3 -m unittest -v test_geo_math
 ```
 
-Observed output (python3.14.7, 2026-11-06), trimmed:
+Observed (python3.14.7, 2026-11-06): `Ran 12 tests ... OK`. The UTM test anchors on the
+WGS84 meridian arc to 45 deg (4,984,944.378 m, matched within 1 cm) plus 1 cm round trips
+in both hemispheres.
 
-```
-test_rotated_scaled_frame_centre_lands_on_expected_ground_point ... ok
-test_corner_and_centre ... ok
-test_from_gdal ... ok
-test_round_trip_with_rotation_terms ... ok
-test_one_degree_latitude ... ok
-test_degenerate ... ok
-test_identity ... ok
-test_projective_divide ... ok
-test_similarity ... ok
-test_central_meridian_at_45n ... ok
-test_round_trip_north_and_south ... ok
-test_symmetry_about_central_meridian ... ok
-----------------------------------------------------------------------
-Ran 12 tests in 0.000s
+Full pipeline on synthetic pairs:
 
-OK
+```bash
+python3 -m pip install -r requirements.txt
+./run_cases.sh                       # PYTHON=... to pick the interpreter
+# or one case by hand:
+python3 make_test_pair.py --out data/base
+python3 geolocalize.py --frame data/base/drone_frame.jpg --tile data/base/map_tile.tif \
+    --prior <prior lat lon from data/base/pair.json> --truth <truth lat lon> --crop-px 1536
 ```
 
-The UTM test anchors on the WGS84 meridian arc to 45 deg (4,984,944.378 m, matched within
-1 cm) plus 1 cm round trips in both hemispheres.
+How a pair is made (`make_test_pair.py`): the source is the OpenAerialMap orthophoto
+"Tbilisi (GE) - Saburtalo" (SJRC F22s Pro, 2023-10-08, CC-BY 4.0, EPSG:3857 COG, 8447 x
+8926 px at 0.1 m in EPSG:3857 units, which is ~0.075 m on the ground at 41.7 N). The map
+is the whole ortho at 1/4 resolution (2111 x 2231 px, 0.4 m units). The frame is a
+1600 x 1200 window at 1/2 resolution (0.2 m units), rotated by `--yaw-deg`, given a
+keystone `--tilt`, gain/offset change, Gaussian blur and noise, saved as JPEG. Truth is
+the ground point under the frame centre; the prior is truth moved `--prior-offset-m` in a
+random direction (INS drift stand-in).
 
-Full pipeline (unverified, needs the dependencies above), on a UAV-VisLoc site:
+Observed (`./run_cases.sh`, torch 2.15.0 CPU, LightGlue 5a650c4, 2026-11-06, ~25 s/case):
+
+| Case | Settings | Inliers | Best rotation | Error vs truth |
+|---|---|---|---|---|
+| base | yaw 25 deg, tilt 0.08, prior 60 m off, crop 1536 px | 473 | 0 | 0.04 m |
+| yaw60 | yaw 60 deg | 452 | 270 | 0.11 m |
+| yaw135 | yaw 135 deg | 441 | 180 | 0.21 m |
+| tilt20 | tilt 0.20 | 458 | 0 | 0.06 m |
+| prior150 | prior 150 m off | 523 | 0 | 0.05 m |
+| crop2048 | crop 2048 px (map downscaled more by the 1024 px extractor resize) | 342 | 0 | 0.08 m |
+| edge | frame at the ortho edge, 40 % of it nodata, prior 250 m off | 162 | 0 | **30.67 m** |
+| negative control | Batumi frame (other OAM survey) vs Tbilisi map | 5 | - | `no reliable fix (inliers=5, need 25)` |
+
+How to read it:
+
+- Same survey for map and frame, so this checks the pipeline and the geometry chain
+  (rotation trials, homography, half-pixel convention, EPSG:3857 => WGS84), not
+  cross-season or cross-sensor robustness. Real flights will do much worse than 0.1 m.
+- 60 and 135 deg yaw were handled by the 4-rotation search (best at 270 and 180).
+- The **edge** case is the useful failure: 162 inliers passed the 25-inlier gate with a
+  30 m wrong fix. Nodata borders and partial overlap make an inlier count a weak
+  integrity signal; check the inlier spatial spread or the homography's scale/shear
+  against the expected GSD and attitude before trusting a fix.
+- The cross-city frame was rejected, so the gate does reject unrelated imagery.
+
+Real UAV frames (not run here; UAV-VisLoc is 16.4 GB):
 
 ```bash
 python3 geolocalize.py --frame UAV-VisLoc/01/drone/01_0001.JPG \
-    --tile UAV-VisLoc/01/satellite01.tif \
-    --prior <LAT> <LON> --truth <LAT> <LON>
+    --tile UAV-VisLoc/01/satellite01.tif --prior <LAT> <LON> --truth <LAT> <LON>
 ```
 
-Take `<LAT> <LON>` for `--truth` from `01.csv`; for `--prior` add a few hundred metres of
-offset to emulate INS drift. Expected output shape (not observed):
-
-```
-fix lat=... lon=... inliers=<N> frame_rotation=<0|90|180|270>deg
-error vs truth: <metres> m
-```
-
-If inliers < 25 it prints `no reliable fix` instead of a guess.
+Take `--truth` from `01.csv`; offset it by a few hundred metres for `--prior`.
 
 ## Large maps: retrieval first
 

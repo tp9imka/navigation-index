@@ -10,5 +10,5 @@
     {"id": "repo:semuconsulting/pygnssutils", "rel": "uses"},
     {"id": "repo:s7am1na/gnss-spoofing-dataset", "rel": "explains"}
   ],
-  "verified": "scorer.py, adsb_area_map.py and their 14 unit tests ran with python3.14.7 stdlib on 2026-11-06, output shown in README; a negative control (cn0_drop weight 0) made test_broadband_jamming fail as expected. ubx_monitor.py is an unverified sketch: syntax-checked only, requires pyubx2 (attribute names checked against pyubx2 v1.4.1 ubxtypes_get.py) and a u-blox receiver; readsb field names were checked against its README-json.md."
+  "verified": "scorer.py, adsb_area_map.py and 15 unit tests ran on 2026-11-06 (14 stdlib with python3.14.7; the full set incl. test_ubx_replay with pyubx2 1.4.1 on Python 3.12.14); negative controls: cn0_drop weight 0 fails test_broadband_jamming, disabling NAV-SAT parsing fails test_ubx_replay. ubx_monitor.py replay mode ran on a synthetic UBX capture generated with pyubx2 (gen_synthetic_ubx.py, invented values): jamming 60-89 s and spoofing 120-159 s were flagged on every epoch, clean epochs stayed clean. Not verified: live u-blox receiver (--port/--enable, CFG-VALSET), real recordings, real readsb feed."
 }

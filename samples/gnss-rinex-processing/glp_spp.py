@@ -3,9 +3,12 @@
 Ran with gnss_lib_py 1.1.0 on the P730 file converted to RINEX 3.04 by run_in_docker.sh.
 Requires: pip install -r requirements.txt (gnss-lib-py pulls georinex, numpy, pandas).
 
-Two corrections on top of plain glp calls, both needed to get metre-level results:
+Three fixes on top of plain glp calls, all needed to get metre-level results:
 - glp 1.1.0 RinexObs tags RINEX epochs (GPS time) as UTC and adds the leap seconds, so
   every SV is propagated to the wrong second (km-level errors). We subtract them back.
+- add_sv_states_rinex picks one ephemeris per SV at the earliest epoch of its input and
+  extrapolates it for the whole input (residuals grew to ~25 m over 2 h here), so it is
+  called on EPHEM_CHUNK_MIN chunks.
 - add_sv_states_rinex evaluates SVs at the receive time unless receiver position rows
   exist, so a second pass feeds the first WLS fix back for transmit-time SV states.
 A third pass adds a 15 deg elevation mask and glp's tropo + Klobuchar iono models
@@ -29,7 +32,21 @@ from compare_pos import ecef_delta_to_enu, ecef_to_geodetic, truth_at
 
 EPHEM_DIR = "data/glp_ephem"
 MS_PER_S = 1000
+EPHEM_CHUNK_MIN = 15
 ELEV_MASK_DEG = 15.0  # same as rnx2rtkp -m 15 in run_rtklib.sh
+
+
+def sv_states(obs):
+    """add_sv_states_rinex per chunk, so each chunk gets the ephemeris current at its start."""
+    chunk_ms = EPHEM_CHUNK_MIN * 60 * MS_PER_S
+    t = obs["gps_millis"]
+    parts = []
+    for start in np.arange(t.min(), t.max() + 1, chunk_ms):
+        part = obs.where("gps_millis", [start, start + chunk_ms - 1], condition="between")
+        if len(part):
+            parts.append(glp.add_sv_states_rinex(part, ephemeris_path=EPHEM_DIR,
+                                                 constellations=["gps"]))
+    return glp.concat(*parts)
 
 
 def klobuchar_params(nav_path):
@@ -73,7 +90,6 @@ def main():
     ap.add_argument("--minutes", type=float, default=60.0)
     ap.add_argument("--nav-header", default="data/brdc1000.24n.gz",
                     help="RINEX 2 nav file whose header carries ION ALPHA / ION BETA")
-    ap.add_argument("--dump")
     args = ap.parse_args()
 
     approx = gr.rinexheader(args.obs).get("position")
@@ -90,8 +106,8 @@ def main():
     obs = obs.where("gps_millis", window, condition="between")
     obs = obs.where("gnss_id", "gps").where("signal_type", "l1")
 
-    # Broadcast ephemeris; glp downloads the matching RINEX NAV into EPHEM_DIR if absent.
-    full = glp.add_sv_states_rinex(obs, ephemeris_path=EPHEM_DIR, constellations=["gps"])
+    # Broadcast ephemeris: glp downloads the day's RINEX NAV into EPHEM_DIR if absent.
+    full = sv_states(obs)
     # SV clock only; no iono/tropo model, so expect metre-level vertical bias.
     full["corr_pr_m"] = full["raw_pr_m"] + full["b_sv_m"]
     state = glp.solve_wls(full)
@@ -102,15 +118,11 @@ def main():
                                                    state["y_rx_wls_m"], state["z_rx_wls_m"])}
     rx = np.array([rx_by_t[t] for t in obs["gps_millis"]])
     obs["x_rx_m"], obs["y_rx_m"], obs["z_rx_m"] = rx[:, 0], rx[:, 1], rx[:, 2]
-    full = glp.add_sv_states_rinex(obs, ephemeris_path=EPHEM_DIR, constellations=["gps"])
+    full = sv_states(obs)
     full["corr_pr_m"] = full["raw_pr_m"] + full["b_sv_m"]
     state = glp.solve_wls(full)
     print(f"pass 2 (SV states at transmit time): {score(state, args)}")
 
-    if args.dump:
-        import pickle
-        with open(args.dump, "wb") as fh:
-            pickle.dump(full, fh)
     full = corrected(full, klobuchar_params(args.nav_header))
     state = glp.solve_wls(full)
     print(f"pass 3 (+{ELEV_MASK_DEG:g} deg mask, tropo, Klobuchar): {score(state, args)}")

@@ -41,30 +41,34 @@ data epoch with the sheet's velocity (`--epoch 2024.27`, ~8 cm of plate motion).
 ## Prerequisites
 
 - Python 3.10+ (stdlib) for `compare_pos.py` and its tests.
-- RTKLIB demo5 `rnx2rtkp` (and `convbin` for step 4). Build (not verified here):
+- Docker, for RTKLIB. `docker/Dockerfile` (debian bookworm-slim) clones rtklibexplorer
+  RTKLIB `v2.5.1`, builds `rnx2rtkp` and `convbin` with CMake, and installs `crx2rnx` from
+  the `hatanaka` 2.8.0 wheel. `run_in_docker.sh` builds the image on first use (~7 min
+  here) and moves files with `docker cp`, so it works even when the sample path is not
+  shared with the Docker VM (it was not, for `/private/tmp` on this machine). A native
+  build should work with the same CMake lines but was not tried here:
   ```bash
   git clone --depth 1 --branch v2.5.1 https://github.com/rtklibexplorer/RTKLIB.git
   cmake -S RTKLIB -B RTKLIB/build -DCMAKE_BUILD_TYPE=Release
-  cmake --build RTKLIB/build --target rnx2rtkp convbin -j
-  export PATH="$PWD/RTKLIB/bin:$PATH"     # CMake writes consapp binaries to RTKLIB/bin
+  cmake --build RTKLIB/build --target rnx2rtkp convbin -j     # binaries land in RTKLIB/bin
   ```
-- `crx2rnx` (Hatanaka's RNXCMP tools, distributed by GSI Japan; the GSI page did not load from
-  here on 2026-11-06, so find the current download by searching "RNXCMP crx2rnx") and `gzip` on
-  `PATH`. `rnx2rtkp` unpacks `.gz` itself and shells out to `crx2rnx` for `.d` files
-  (`rtk_uncompress()` in `src/rtkcmn.c`).
-- For `glp_spp.py`: `pip install gnss-lib-py` (pulls georinex, numpy, pandas) and internet
-  access, because glp downloads the broadcast ephemeris it needs.
+- For `glp_spp.py`: `python3 -m pip install -r requirements.txt` (gnss-lib-py 1.1.0,
+  georinex 1.16.1) and internet once: glp downloads the day's broadcast nav file into
+  `data/glp_ephem/`.
 
 ## Run
 
 ```bash
 cd samples/gnss-rinex-processing
-python3 -m unittest -v test_compare_pos.py      # stdlib, verified
-./fetch_data.sh                                  # a few MB into data/
-./run_rtklib.sh                                  # SPP + RTK over 12:00-14:00 GPST, then the score table
+python3 -m unittest -v test_compare_pos.py      # stdlib
+./fetch_data.sh                                  # ~3.6 MB into data/ (git-ignored), retries NGS 408s
+./run_in_docker.sh                               # rnx2rtkp SPP + RTK, score table, and data/p730_r3.rnx for glp
+python3 glp_spp.py data/p730_r3.rnx --truth data/p730_20.coord.txt --epoch 2024.27 \
+    --start 2024-04-09T12:00:00 --minutes 120    # ~100 s, mostly RinexObs parsing the 24 h file
 ```
 
-`run_rtklib.sh` runs exactly:
+With RTKLIB and `crx2rnx` already on `PATH`, `./run_rtklib.sh` runs the same two
+`rnx2rtkp` commands without Docker:
 
 ```bash
 rnx2rtkp -k rtk.conf -p 0 -sys G -m 15 -e -ts 2024/04/09 12:00:00 -te 2024/04/09 14:00:00 \
@@ -74,49 +78,58 @@ rnx2rtkp -k rtk.conf -p 2 -f 2 -sys G -m 15 -e -r <P731 X Y Z> -ts 2024/04/09 12
 python3 compare_pos.py --truth data/p730_20.coord.txt --epoch 2024.27 out/spp.pos out/rtk.pos
 ```
 
-Flags (from `rnx2rtkp -?` in demo5 v2.5.1): `-k` options file, `-p` mode (0 single,
-2 kinematic), `-f` frequencies (2 = L1+L2), `-sys G` GPS only, `-m` elevation mask in deg,
-`-e` ECEF x/y/z output, `-r x y z` base ECEF in m (without it RTKLIB averages the base's
-single-point solutions, which biases RTK by metres), `-ts`/`-te` start/end as
+Flags (confirmed with `rnx2rtkp -?` of the v2.5.1 build): `-k` options file, `-p` mode
+(0 single, 2 kinematic), `-f` frequencies (2 = L1+L2), `-sys G` GPS only, `-m` elevation
+mask in deg, `-e` ECEF x/y/z output, `-r x y z` base ECEF in m (without it RTKLIB averages
+the base's single-point solutions, which biases RTK by metres), `-ts`/`-te` start/end as
 `y/m/d h:m:s`, `-o` output file. The first OBS file is the rover, the second the base.
 `rtk.conf` sets broadcast iono (`pos1-ionoopt=brdc`), Saastamoinen troposphere,
-continuous AR. Command-line flags override it.
+continuous AR. Command-line flags override it. Per-epoch progress goes to `out/*.log`.
 
-Base coordinate printed by `compare_pos.py --print-xyz` from the real P731 sheet (verified):
+Base coordinate printed by `compare_pos.py --print-xyz` from the P731 sheet:
 
 ```
 -2432862.9296 -4134674.5894 4191141.5339
 ```
 
-Expected `compare_pos.py` table shape (NOT observed - RTKLIB was not run here):
+## Observed results (2026-11-06)
+
+RTKLIB demo5 v2.5.1 (`% program : RTKLIB ver.EX 2.5.1` in the `.pos` header), Docker
+build, P730 vs its NGS ITRF2020 coordinate propagated to 2024.27, 12:00-14:00 GPST, 30 s,
+GPS only:
 
 ```
 file                   epochs   E rms   N rms   U rms   H 95%  solution types
-out/spp.pos               241   ...                              single 100%
-out/rtk.pos               241   ...                              fix ..%, float ..%
+out/spp.pos               241   0.624   1.244   1.021   2.067  single 100%
+out/rtk.pos               241   0.084   0.055   0.071   0.045  fix 97%, float 3%
 ```
 
-Rough expectations from typical results, not measurements: SPP with broadcast orbits and
-models at about 1-3 m horizontal, 2-5 m vertical. RTK on a 30 km L1+L2 baseline at about
-1-10 cm once fixed. If RTK is not fixing, try `pos1-ionoopt=est-stec` in `rtk.conf`, which is
-better for baselines over ~10 km.
+The 8 float epochs are the first 4 minutes of the RTK run (`Q=2` before AR fixes); they
+carry most of the RTK RMS, while H 95 % is 4.5 cm.
 
-### Step 4 (optional): SPP with gnss_lib_py
+gnss_lib_py 1.1.0 `glp_spp.py` on the same rover, window and mask (GPS L1 C/A):
 
-gnss_lib_py's `RinexObs` maps RINEX 3 band codes (`1C`, `2W`, ...). The NGS files are
-RINEX 2.11 (`C1`, `P2`), so convert first:
-
-```bash
-gzip -dk data/p7301000.24d.gz && crx2rnx data/p7301000.24d             # => data/p7301000.24o
-convbin -r rinex -v 3.04 -os -o data/p730_r3.rnx data/p7301000.24o
-python3 glp_spp.py data/p730_r3.rnx --truth data/p730_20.coord.txt --epoch 2024.27 \
-    --start 2024-04-09T12:00:00 --minutes 120
+```
+RINEX header APPROX POSITION XYZ: [-2457630.665, -4118098.427, 4193651.724]
+pass 1 (SV states at receive time): 241 epochs  E/N/U rms = 30.69 / 19.58 / 24.67 m  H95 = 43.96 m
+pass 2 (SV states at transmit time): 241 epochs  E/N/U rms = 3.22 / 4.26 / 18.96 m  H95 = 10.54 m
+pass 3 (+15 deg mask, tropo, Klobuchar): 241 epochs  E/N/U rms = 0.65 / 1.28 / 1.10 m  H95 = 2.02 m
 ```
 
-`glp_spp.py` is an unverified sketch: it filters GPS L1, adds SV states from broadcast
-ephemeris (`add_sv_states_rinex`), corrects pseudorange only for SV clock
-(`corr_pr_m = raw_pr_m + b_sv_m`), runs `solve_wls`, and prints E/N/U RMS. Without
-iono/tropo models expect a several-metre vertical bias. Compare it with the RTKLIB SPP row.
+Pass 3 agrees with RTKLIB SPP to a few cm per axis. Getting there needed three fixes on
+top of the plain glp calls; each one was found from the residuals, not guessed:
+
+1. **Time tag.** glp 1.1.0 `RinexObs` treats RINEX epochs (GPS time) as UTC and adds the
+   18 leap seconds. Every SV is then propagated to the wrong second and the solution is
+   km off (first attempt: 7.3 / 3.9 / 5.6 km RMS). Subtract the leap seconds.
+2. **Ephemeris selection.** `add_sv_states_rinex` picks one ephemeris per SV at the
+   *earliest* epoch of its input and uses it for the whole input; per-SV residuals then
+   drift linearly to ~25 m over 2 h. Calling it per 15-minute chunk fixes that.
+3. **Transmit time and atmosphere.** Without receiver-position rows, SV states are at the
+   receive time (pass 1). Feeding the pass-1 fix back gives transmit-time states (pass 2).
+   Pass 3 adds the 15 deg mask and glp's `calculate_pseudorange_corr` (tropo + Klobuchar
+   with alpha/beta from the nav header). `solve_wls` already applies the Earth-rotation
+   correction, so it must not be added again (doing so doubled the east error).
 
 ## Test output (observed, python3.14.7, 2026-11-06)
 
@@ -166,8 +179,11 @@ on a synthetic file in the `-e` layout, not on real RTKLIB output.
 
 ## Files
 
-- `fetch_data.sh` - downloads the 5 public files into `data/`.
+- `fetch_data.sh` - downloads the 5 public files into `data/` (git-ignored).
 - `run_rtklib.sh`, `rtk.conf` - the two `rnx2rtkp` runs and scoring.
+- `docker/Dockerfile`, `run_in_docker.sh` - RTKLIB demo5 v2.5.1 + crx2rnx image, and the
+  wrapper that runs `run_rtklib.sh` plus the RINEX 2 => 3.04 conversion inside it.
+- `requirements.txt` - pinned gnss-lib-py / georinex for `glp_spp.py`.
 - `compare_pos.py` - stdlib: NGS sheet parser, plate-motion propagation, ECEF => ENU error stats per solution type.
 - `test_compare_pos.py` - unit tests for it.
-- `glp_spp.py` - gnss_lib_py SPP sketch.
+- `glp_spp.py` - gnss_lib_py WLS SPP, three passes, with the fixes above.

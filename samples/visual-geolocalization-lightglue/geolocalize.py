@@ -1,10 +1,10 @@
 """Geolocate a nadir drone frame against a georeferenced orthophoto / satellite tile.
 
-SuperPoint + LightGlue matches -> OpenCV homography -> frame centre in tile pixels
--> GeoTIFF geotransform -> lat/lon.
+SuperPoint + LightGlue matches => OpenCV homography => frame centre in tile pixels
+=> GeoTIFF geotransform => lat/lon.
 
-Unverified sketch: requires torch, lightglue (pip install -e cvg/LightGlue),
-opencv-python, rasterio, numpy.
+Requires requirements.txt (torch, lightglue from git, opencv-python, rasterio, numpy).
+Ran on the synthetic pair from make_test_pair.py; not yet on real UAV frames.
 
     python3 geolocalize.py --frame drone.jpg --tile ortho.tif [--prior LAT LON] [--truth LAT LON]
 """
@@ -104,7 +104,9 @@ def main():
         lon, lat = lons[0], lats[0]
     print(f"fix lat={lat:.6f} lon={lon:.6f} inliers={inliers} frame_rotation={rot}deg")
     if args.truth:
-        print(f"error vs truth: {geo_math.haversine_m(lat, lon, *args.truth):.1f} m")
+        print(f"error vs truth: {geo_math.haversine_m(lat, lon, *args.truth):.2f} m")
+        if args.prior:
+            print(f"prior error was: {geo_math.haversine_m(*args.prior, *args.truth):.1f} m")
 
 
 if __name__ == "__main__":

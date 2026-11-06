@@ -1,0 +1,8 @@
+# Pinned to the versions this sample ran with on 2026-11-06 (Python 3.12.14, macOS arm64).
+torch==2.15.0
+torchvision==0.29.2
+kornia==0.9.0
+opencv-python==5.0.0.93
+rasterio==1.5.2
+numpy==2.5.4
+lightglue @ git+https://github.com/cvg/LightGlue@5a650c444718caffc2669dc0094cde908f42dd73

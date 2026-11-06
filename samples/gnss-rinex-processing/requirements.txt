@@ -1,0 +1,6 @@
+# Pinned to the versions this sample ran with on 2026-11-06 (Python 3.12.14, macOS arm64).
+# glp_spp.py only; compare_pos.py is stdlib. RTKLIB runs in Docker (docker/Dockerfile).
+gnss-lib-py==1.1.0
+georinex==1.16.1
+numpy==2.5.4
+pandas==2.3.3

@@ -19,31 +19,37 @@ Class names follow the Stone Soup tutorials `docs/tutorials/02_ExtendedKalmanFil
 
 ## Prerequisites
 
-- Python 3.10+.
-- `python3 -m pip install stonesoup` (pulls numpy, scipy and friends). Not installed in the
-  environment this sample was written in.
+- Python 3.10+ (ran with 3.12.14).
+- `python3 -m pip install -r requirements.txt` (stonesoup 1.9.1, numpy 2.5.4, scipy 1.18.1).
 
 ## Run
 
 ```sh
 cd samples/stone-soup-tracking
+python3 -m pip install -r requirements.txt
 python3 radar_jpda_ospa.py
 ```
 
-## Expected output
-
-Not run here (no numpy/Stone Soup available), so no observed numbers. The script prints:
+## Observed output (stonesoup 1.9.1, Python 3.12.14, 2026-11-06)
 
 ```
 scans=60 tracks=2 truths=2
-OSPA (c=100 m, p=1): mean=<m> m max=<m> m final=<m> m
-track <id8> final position x=<m> m y=<m> m
-track <id8> final position x=<m> m y=<m> m
+OSPA (c=100 m, p=1): mean=17.0 m max=53.0 m final=27.1 m
+track 0 final position x=-776 m y=437 m
+track 1 final position x=-546 m y=461 m
+truth 0 final position x=-770 m y=458 m
+truth 1 final position x=-556 m y=430 m
 ```
 
-Sanity expectation, not a measured result: with 10 m range noise and 1 deg bearing noise
-at ~1.5 km (about 26 m cross-range), mean OSPA should sit well under the 100 m cutoff. A
-value pinned at 100 m means a track was lost or swapped.
+Identical on three consecutive runs. Each track ends within ~33 m of the truth it started
+on, and mean OSPA stays well below the 100 m cutoff, so neither target was lost or
+swapped in this run. One seed, one scenario: not a Monte Carlo result.
+
+The first run of the original sketch gave different numbers on every run despite
+`np.random.seed`: truths and tracks were kept in `set`s, whose order follows random
+UUIDs, so the noise draws were applied to the two targets in a different order each
+time. They are lists now and are wrapped in `set(...)` only where Stone Soup wants sets
+(`JPDA.associate`, `MultiManager.add_data`).
 
 ## What the script does
 
@@ -73,5 +79,7 @@ value pinned at 100 m means a track was lost or swapped.
   divided by measurement-space volume (here `2*pi*MAX_RANGE_M` in bearing x range).
 - Bearing wraps at +-pi; build clutter with `Bearing(...)` so residuals wrap correctly.
 - `OSPAMetric` without `measure=Euclidean((0, 2))` measures the full state vector.
-- `np.random.seed` makes the run repeatable; remove it for Monte Carlo runs.
+- `np.random.seed` makes the run repeatable only if the draw order is fixed too: iterate
+  over lists, not sets of Stone Soup objects (their hash is a random UUID).
+  Remove the seed for Monte Carlo runs.
 - The generated metric title is `"OSPA distances"`; check it if you upgrade Stone Soup.

@@ -1,0 +1,3 @@
+# Pinned to the versions this sample ran with on 2026-11-06 (Python 3.12.14, macOS arm64).
+pymavlink==2.4.50
+pytak==7.6.1

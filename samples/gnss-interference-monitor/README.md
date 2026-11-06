@@ -30,7 +30,11 @@ Defensive monitoring only: everything here observes signals; nothing transmits.
 | `adsb_area_map.py` | stdlib, run-verified. readsb `aircraft.json` snapshots => per-cell good/bad aircraft, GPSJam percentage, level |
 | `test_adsb_area_map.py` | 6 unit tests |
 | `fixtures/aircraft_demo.json` | synthetic readsb snapshot (made-up hex ids and coordinates) |
-| `ubx_monitor.py` | **unverified sketch**: needs `pyubx2` (and `pyserial` for a live port) and a u-blox receiver or `.ubx` capture |
+| `ubx_monitor.py` | pyubx2 adapter. Replay of a `.ubx` file run-verified on the synthetic capture; live `--port` mode not verified (no receiver) |
+| `gen_synthetic_ubx.py` | pyubx2 generator: 180 s of 1 Hz NAV-PVT/SAT/STATUS/CLOCK + MON-RF + SEC-SIG with a jamming and a spoofing episode (invented values) |
+| `fixtures/synthetic.ubx` | its output (60 KB, seed 11) |
+| `test_ubx_replay.py` | regenerates the capture, replays it through `ubx_monitor.run`, checks every epoch's verdict |
+| `requirements.txt` | pinned `pyubx2==1.4.1` (+ `pyserial` for a live port) |
 
 ## Heuristics in `scorer.py`
 
@@ -54,8 +58,9 @@ does not become the new normal. All thresholds are named constants at the top of
 ## Prerequisites
 
 - Python 3.10+ (tested 3.14.7) for `scorer.py`, `adsb_area_map.py` and the tests. No packages.
-- For `ubx_monitor.py`: `pip install pyubx2 pyserial` (written against pyubx2 v1.4.1), a
-  u-blox generation 9+ receiver (ZED-F9P, NEO-M9N, MAX-M10S, ...) on USB. SEC-SIG exists
+- For `ubx_monitor.py`, `gen_synthetic_ubx.py`, `test_ubx_replay.py`:
+  `pip install -r requirements.txt` (pyubx2 1.4.1; pyserial only for a live port). A live
+  run needs a u-blox generation 9+ receiver (ZED-F9P, NEO-M9N, MAX-M10S, ...) on USB. SEC-SIG exists
   only on newer firmware; the code works without it.
 - For the area map on live data: an RTL-SDR dongle + 1090 MHz antenna running readsb, e.g.
   `readsb --device-type rtlsdr --gain auto --write-json /run/readsb --write-json-every 1`.
@@ -106,20 +111,53 @@ reads `no-data`, not `green`.
 A negative control was run once: with the `cn0_drop` weight set to 0,
 `test_broadband_jamming` fails, so the test does exercise that detector.
 
-## Run (unverified sketch, needs hardware)
+## Run (pyubx2, offline replay of a synthetic capture)
 
 ```bash
-pip install pyubx2 pyserial
-python3 ubx_monitor.py --port /dev/ttyACM0 --baud 38400 --enable   # macOS: /dev/cu.usbmodem*
-python3 ubx_monitor.py --file capture.ubx                          # replay
+cd samples/gnss-interference-monitor
+python3 -m pip install -r requirements.txt
+python3 gen_synthetic_ubx.py fixtures/synthetic.ubx     # optional, the fixture is committed
+python3 ubx_monitor.py --file fixtures/synthetic.ubx --changes-only
+python3 -m unittest test_scorer test_adsb_area_map test_ubx_replay
 ```
 
-Expected shape of output (not observed - no receiver was attached):
+Synthetic timeline (`gen_synthetic_ubx.py`): 0-59 s clean sky (10 GPS/Galileo SVs, C/N0
+following elevation), 60-89 s broadband jamming (C/N0 -14..-20 dB until every SV drops
+below 20 dB-Hz, AGC -46 %, jamInd 160, receiver `jammingState` 2 from 70 s), 90-119 s
+clean, 120-159 s spoofing takeover (uniform 48 dB-Hz on all SVs, +5000 ns clock step,
+300 m position step then 20 m/s walk-off, receiver `spoofDetState` 2 from 130 s),
+160-179 s clean. Values are invented to exercise every detector, not recorded.
+
+Observed (pyubx2 1.4.1, Python 3.12.14, 2026-11-06):
 
 ```
 t=  216000.0 clean             jam=0.00 spoof=0.00
-t=  216001.0 jamming           jam=0.80 spoof=0.00 C/N0 drop >= 6 dB or lost on 9/10 SVs; AGC -45% vs baseline
+t=  216060.0 jamming           jam=1.00 spoof=0.00 C/N0 drop >= 6 dB or lost on 10/10 SVs; AGC -46% vs baseline; jamInd 160
+t=  216090.0 clean             jam=0.00 spoof=0.00
+t=  216120.0 spoofing          jam=0.00 spoof=1.00 median C/N0 rise +9.2 dB; C/N0 spread only 0.5 dB over 10 SVs; clock bias jump +5001 ns; implied speed 300 m/s
+t=  216161.0 clean             jam=0.00 spoof=0.00
+epochs per verdict: clean=109, jamming=30, spoofing=41
 ```
+
+Without `--changes-only` every epoch prints. Two details from the full run: from 121 s
+the spoof score drops to 0.65 (only the C/N0 rise and uniformity checks still fire) until
+the receiver flag joins at 130 s; and 160 s is still `spoofing` (0.70) because the
+spoofer switching off is itself a -5001 ns clock jump and a 1081 m/s position jump. That
+is why there are 41 spoofing epochs for a 40 s episode.
+
+`test_ubx_replay` asserts every epoch's verdict (15 tests in total, all OK). Negative
+control: with the `NAV-SAT` branch of `fill()` disabled, `test_ubx_replay` fails.
+
+Live receiver (not verified, no receiver attached):
+
+```bash
+python3 ubx_monitor.py --port /dev/ttyACM0 --baud 38400 --enable   # macOS: /dev/cu.usbmodem*
+```
+
+Two things the replay surfaced and the code now handles: the last epoch of a file was
+never scored (no following iTOW to flush it), and pyubx2 can only build MON-RF from a raw
+payload (it picks the 20- or 24-byte block layout from the payload length), so the
+generator packs MON-RF with `struct`.
 
 pyubx2 attribute names used (from `src/pyubx2/ubxtypes_get.py`, v1.4.1): NAV-PVT `fixType`,
 `lat`, `lon` (already scaled to degrees); NAV-SAT `numSvs`, `gnssId_NN`, `svId_NN`,
