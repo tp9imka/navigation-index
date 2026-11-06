@@ -26,7 +26,7 @@ jump, cluster on one point, or violate their own speed.
 **Resilient maritime PNT.** Backups at sea include eLoran and R-Mode, which reuses existing
 radio beacons and coastal infrastructure and has been tested in the jammed Baltic
 ([39C3 talk](../../catalog/resources/39c3-baltic-jammer-r-mode.md),
-[MarRINav webinar](../../catalog/resources/ion-webinar-MarRINav.md)). Marine radar plus
+[MarRINav webinar](../../catalog/resources/ion-webinar-marrinav.md)). Marine radar plus
 charts is the traditional independent cross-check.
 
 **Autonomy at sea.** Collision regulations (COLREGs) define give-way and stand-on duties;
