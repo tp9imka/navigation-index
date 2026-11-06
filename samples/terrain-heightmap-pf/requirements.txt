@@ -1,0 +1,6 @@
+# Pinned to the versions this sample ran with on 2026-11-06 (CPython 3.13.15, macOS arm64).
+numpy==2.5.4
+scipy==1.18.1
+rasterio==1.5.2
+matplotlib==3.11.2
+pytest

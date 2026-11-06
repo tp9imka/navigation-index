@@ -1,0 +1,14 @@
+{
+  "id": "sample:terrain-heightmap-pf",
+  "title": "Heightmap-gradient particle filter on real Copernicus DEM (SPRIN-D CTU method) vs TERCOM",
+  "summary": "Re-implementation of the CTU SPRIN-D winner's localization (arXiv 2510.01348): local heightmap gradients matched to a prior DEM with the unnormalized correlation coefficient, Gaussian-blurred similarity maps weighting a translational particle filter resampled every fixed odometry distance, K-means largest-cluster estimate. Runs 10 km simulated flights with VIO-like drift over three real Copernicus GLO-30 windows (Bavarian Forest hills, Erding where SPRIN-D was flown, Hungarian plain) plus a smoothed-flat control, and compares against a radar-altimeter batch TERCOM baseline. Reports error vs distance, convergence from a 300 m initial offset, flat-terrain failure, a sensor-error sweep and measured CPU time per update.",
+  "concepts": ["concept:terrain-nav", "concept:ins", "concept:sensor-fusion", "concept:assured-pnt", "concept:gis-mapping", "concept:simulation"],
+  "tags": ["trn", "tercom", "particle-filter", "heightmap", "gradient-matching", "template-matching", "dem", "copernicus-glo30", "sprind", "kmeans", "python", "numpy", "scipy"],
+  "related": [
+    {"id": "res:sprind-heightmap-gradients-2025", "rel": "explains"},
+    {"id": "res:copernicus-dem-aws", "rel": "uses"},
+    {"id": "repo:rasterio/rasterio", "rel": "uses"},
+    {"id": "repo:alti3/python-tercom", "rel": "explains"}
+  ],
+  "verified": "ran 2026-11-06 with CPython 3.13.15 + numpy 2.5.4 / scipy 1.18.1 / rasterio 1.5.2 / matplotlib 3.11.2 on an Apple M2 Max: fetch_dem.py downloaded the three GLO-30 windows over public HTTPS, run_eval.py produced every number and plot in README (results deterministic across two full runs, timings vary with machine load), test_core.py 14 passed and fails when the correlation flip or similarity-map origin is mutated. The flights, odometry and heightmap sensor are simulated; no real UAV, LiDAR or SfM data was used. The paper's own numbers are quoted from the paper, not reproduced."
+}

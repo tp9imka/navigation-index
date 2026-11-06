@@ -1,0 +1,90 @@
+## hilly (init sigma 100 m, 20 runs)
+| method | err@1km med/p90 | err@2km | err@5km | err@10km | RMSE med | conv. runs | conv. dist med |
+|---|---|---|---|---|---|---|---|
+| odom | 108/197 | 105/218 | 173/303 | 311/462 | 193 | 0% | - |
+| pf_paper | 53/114 | 36/81 | 45/79 | 51/119 | 58 | 70% | 2220 m |
+| pf_grad | 33/54 | 23/31 | 27/39 | 26/37 | 41 | 100% | 780 m |
+| tercom | 108/197 | 32/64 | 33/46 | 32/53 | 74 | 100% | 2000 m |
+timing ms: {'pf_paper_update_median': 1.1, 'pf_paper_update_p95': 1.95, 'pf_grad_update_median': 1.16, 'pf_grad_update_p95': 2.38, 'tercom_fix_median': 20.21, 'tercom_fix_p95': 41.44} tercom accept rate: 0.99
+terrain: {'height_std_m': 73.31, 'local_relief_std_m': 37.8, 'mean_grad_m_per_cell': 5.72, 'frac_grad_gt_2m': 0.88, 'size_km': [15.1, 15.2]}
+## mixed (init sigma 100 m, 20 runs)
+| method | err@1km med/p90 | err@2km | err@5km | err@10km | RMSE med | conv. runs | conv. dist med |
+|---|---|---|---|---|---|---|---|
+| odom | 122/177 | 127/213 | 188/308 | 404/643 | 240 | 0% | - |
+| pf_paper | 101/223 | 84/282 | 121/275 | 324/525 | 201 | 10% | 6220 m |
+| pf_grad | 55/194 | 32/76 | 30/45 | 32/84 | 63 | 85% | 6380 m |
+| tercom | 122/177 | 105/217 | 87/235 | 123/385 | 143 | 25% | 9000 m |
+timing ms: {'pf_paper_update_median': 1.07, 'pf_paper_update_p95': 2.25, 'pf_grad_update_median': 1.12, 'pf_grad_update_p95': 2.21, 'tercom_fix_median': 20.73, 'tercom_fix_p95': 32.13} tercom accept rate: 0.34
+terrain: {'height_std_m': 19.58, 'local_relief_std_m': 4.51, 'mean_grad_m_per_cell': 0.88, 'frac_grad_gt_2m': 0.1, 'size_km': [15.0, 15.0]}
+## flat (init sigma 100 m, 20 runs)
+| method | err@1km med/p90 | err@2km | err@5km | err@10km | RMSE med | conv. runs | conv. dist med |
+|---|---|---|---|---|---|---|---|
+| odom | 116/242 | 132/269 | 224/299 | 334/557 | 236 | 15% | 7600 m |
+| pf_paper | 44/227 | 30/122 | 47/97 | 171/319 | 108 | 25% | 9420 m |
+| pf_grad | 27/136 | 26/37 | 58/182 | 41/156 | 84 | 70% | 8540 m |
+| tercom | 116/242 | 42/103 | 56/134 | 210/342 | 123 | 15% | 10000 m |
+timing ms: {'pf_paper_update_median': 1.06, 'pf_paper_update_p95': 1.53, 'pf_grad_update_median': 1.19, 'pf_grad_update_p95': 1.93, 'tercom_fix_median': 19.96, 'tercom_fix_p95': 31.09} tercom accept rate: 0.33
+terrain: {'height_std_m': 3.38, 'local_relief_std_m': 2.97, 'mean_grad_m_per_cell': 0.64, 'frac_grad_gt_2m': 0.08, 'size_km': [15.8, 15.5]}
+## flat_smooth (init sigma 100 m, 20 runs)
+| method | err@1km med/p90 | err@2km | err@5km | err@10km | RMSE med | conv. runs | conv. dist med |
+|---|---|---|---|---|---|---|---|
+| odom | 116/242 | 132/269 | 224/299 | 334/557 | 236 | 15% | 7600 m |
+| pf_paper | 154/275 | 152/230 | 207/288 | 344/547 | 265 | 15% | 9580 m |
+| pf_grad | 166/337 | 218/476 | 381/647 | 539/808 | 387 | 0% | - |
+| tercom | 116/242 | 132/269 | 224/299 | 334/557 | 236 | 15% | 7600 m |
+timing ms: {'pf_paper_update_median': 1.11, 'pf_paper_update_p95': 1.58, 'pf_grad_update_median': 1.11, 'pf_grad_update_p95': 1.61, 'tercom_fix_median': 19.96, 'tercom_fix_p95': 28.96} tercom accept rate: 0.0
+terrain: {'height_std_m': 2.02, 'local_relief_std_m': 1.33, 'mean_grad_m_per_cell': 0.07, 'frac_grad_gt_2m': 0.0, 'size_km': [15.8, 15.5]}
+# Convergence: initial guess offset 300 m, particles spread sigma 100+150 m, 20 runs
+## hilly, 300 m initial offset
+| method | err@1km med/p90 | err@2km | err@5km | err@10km | RMSE med | conv. runs | conv. dist med |
+|---|---|---|---|---|---|---|---|
+| odom | 321/417 | 310/418 | 341/485 | 410/615 | 364 | 0% | - |
+| pf_paper | 197/525 | 50/173 | 46/96 | 34/113 | 145 | 75% | 3020 m |
+| pf_grad | 18/40 | 28/33 | 29/40 | 23/39 | 85 | 100% | 700 m |
+| tercom | 321/417 | 41/75 | 30/52 | 35/50 | 148 | 100% | 6000 m |
+## mixed, 300 m initial offset
+| method | err@1km med/p90 | err@2km | err@5km | err@10km | RMSE med | conv. runs | conv. dist med |
+|---|---|---|---|---|---|---|---|
+| odom | 324/447 | 311/435 | 343/494 | 515/707 | 385 | 0% | - |
+| pf_paper | 277/713 | 203/814 | 113/876 | 357/888 | 266 | 10% | 7260 m |
+| pf_grad | 178/505 | 35/782 | 37/89 | 33/89 | 123 | 85% | 6540 m |
+| tercom | 324/447 | 306/435 | 87/301 | 119/550 | 240 | 30% | 9000 m |
+## flat, 300 m initial offset
+| method | err@1km med/p90 | err@2km | err@5km | err@10km | RMSE med | conv. runs | conv. dist med |
+|---|---|---|---|---|---|---|---|
+| odom | 327/517 | 320/557 | 324/580 | 362/708 | 325 | 0% | - |
+| pf_paper | 420/762 | 37/612 | 69/124 | 171/439 | 174 | 25% | 8940 m |
+| pf_grad | 23/364 | 31/83 | 69/175 | 39/178 | 135 | 75% | 8140 m |
+| tercom | 327/517 | 50/294 | 54/117 | 176/287 | 190 | 25% | 10000 m |
+## flat_smooth, 300 m initial offset
+| method | err@1km med/p90 | err@2km | err@5km | err@10km | RMSE med | conv. runs | conv. dist med |
+|---|---|---|---|---|---|---|---|
+| odom | 327/517 | 320/557 | 324/580 | 362/708 | 325 | 0% | - |
+| pf_paper | 342/612 | 342/659 | 388/592 | 427/758 | 407 | 0% | - |
+| pf_grad | 363/759 | 488/780 | 579/1027 | 789/1005 | 605 | 0% | - |
+| tercom | 327/517 | 320/557 | 324/580 | 362/708 | 325 | 0% | - |
+# Sensitivity sweep, region mixed, PF gradient-magnitude variant, 12 runs each
+| parameter | value | RMSE med | err@10km med | err@10km p90 | odom err@10km med |
+|---|---|---|---|---|---|
+| obs_noise | 0.5 | 59 | 35 | 151 | 382 |
+| obs_noise | 2.0 | 59 | 56 | 105 | 382 |
+| obs_noise | 5.0 | 123 | 126 | 224 | 382 |
+| obs_noise | 10.0 | 269 | 266 | 653 | 382 |
+| obs_scale_err | 0.0 | 65 | 46 | 92 | 382 |
+| obs_scale_err | 0.02 | 67 | 32 | 125 | 382 |
+| obs_scale_err | 0.05 | 74 | 43 | 95 | 382 |
+| obs_scale_err | 0.1 | 77 | 53 | 131 | 382 |
+| compass_bias_sigma_deg | 0.0 | 72 | 45 | 103 | 162 |
+| compass_bias_sigma_deg | 3.0 | 59 | 56 | 105 | 382 |
+| compass_bias_sigma_deg | 10.0 | 89 | 83 | 1463 | 699 |
+| compass_bias_sigma_deg | 20.0 | 232 | 373 | 3924 | 1332 |
+| obs_res_m | 30.0 | 59 | 56 | 105 | 382 |
+| obs_res_m | 60.0 | 83 | 45 | 120 | 382 |
+| obs_res_m | 120.0 | 106 | 91 | 220 | 382 |
+| patch_cells | 21 | 72 | 49 | 203 | 382 |
+| patch_cells | 41 | 59 | 56 | 105 | 382 |
+| patch_cells | 61 | 64 | 52 | 136 | 382 |
+| swath_m | 300.0 | 99 | 73 | 144 | 382 |
+| swath_m | 600.0 | 59 | 56 | 105 | 382 |
+| swath_m | 1200.0 | 51 | 35 | 75 | 382 |
+wall time 105 s on Apple M2 Max; wrote out/results.json and PNGs
