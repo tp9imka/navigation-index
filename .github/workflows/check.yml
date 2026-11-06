@@ -21,6 +21,7 @@ jobs:
         run: |
           make -C templates/project-repo test
           (cd templates/demo-dashboard && python3 -m unittest -q)
+          (cd templates/offline-kit && python3 -m unittest -q)
           while read -r d; do
             [ -z "$d" ] && continue
             (cd "samples/$d" && python3 -m unittest discover -q) || exit 1

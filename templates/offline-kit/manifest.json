@@ -1,0 +1,2440 @@
+{
+ "version": 1,
+ "generated_by": "templates/offline-kit/build_manifest.py",
+ "tiers": [
+  "minimal",
+  "standard",
+  "full"
+ ],
+ "pip_platforms": {
+  "linux-amd64": [
+   "manylinux_2_28_x86_64",
+   "manylinux2014_x86_64"
+  ],
+  "linux-arm64": [
+   "manylinux_2_28_aarch64",
+   "manylinux2014_aarch64"
+  ],
+  "macos-arm64": [
+   "macosx_14_0_arm64"
+  ]
+ },
+ "python_version": "3.12",
+ "items": [
+  {
+   "id": "dataset:euroc-vicon-room1",
+   "type": "dataset",
+   "tier": "standard",
+   "license": "personal non-commercial (ETH Research Collection deposit terms)",
+   "source": "docs/dataset-cards/euroc-mav.md",
+   "note": "Host rate-limits (HTTP 429); prep.py fetches it alone with backoff.",
+   "files": [
+    {
+     "method": "http",
+     "dest": "vicon_room1.zip",
+     "size": 6040000000,
+     "size_note": "DSpace sizeBytes, rounded in card",
+     "url": "https://www.research-collection.ethz.ch/server/api/core/bitstreams/02ecda9a-298f-498b-970c-b7c44334d880/content",
+     "evidence": [
+      "bitstreams/02ecda9a-298f-498b-970c-b7c44334d880/content"
+     ]
+    }
+   ],
+   "size": 6040000000,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:tumvi-room1-512",
+   "type": "dataset",
+   "tier": "standard",
+   "license": "CC BY 4.0",
+   "source": "docs/dataset-cards/tum-vi.md",
+   "note": "",
+   "files": [
+    {
+     "method": "http",
+     "dest": "dataset-room1_512_16.tar",
+     "size": 1707110400,
+     "size_note": "HEAD",
+     "url": "https://cdn3.vision.in.tum.de/tumvi/exported/euroc/512_16/dataset-room1_512_16.tar",
+     "md5_url": "https://cdn3.vision.in.tum.de/tumvi/exported/euroc/512_16/dataset-room1_512_16.tar.md5",
+     "evidence": [
+      "https://cdn3.vision.in.tum.de/tumvi/exported/euroc/512_16/dataset-room1_512_16.tar.md5"
+     ]
+    }
+   ],
+   "size": 1707110400,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:uzhfpv-indoor-forward-3",
+   "type": "dataset",
+   "tier": "minimal",
+   "license": "CC BY-NC-SA 3.0",
+   "source": "docs/dataset-cards/uzh-fpv.md",
+   "note": "",
+   "files": [
+    {
+     "method": "http",
+     "dest": "indoor_forward_3_snapdragon_with_gt.zip",
+     "size": 840000000,
+     "size_note": "HEAD, rounded in card",
+     "url": "https://download.ifi.uzh.ch/rpg/web/datasets/uzh-fpv-newer-versions/v3/indoor_forward_3_snapdragon_with_gt.zip",
+     "evidence": [
+      "B=https://download.ifi.uzh.ch/rpg/web/datasets/uzh-fpv-newer-versions/v3",
+      "$B/indoor_forward_3_snapdragon_with_gt.zip"
+     ]
+    }
+   ],
+   "size": 840000000,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:ntuviral-eee03",
+   "type": "dataset",
+   "tier": "standard",
+   "license": "CC BY-NC-SA 4.0",
+   "source": "docs/dataset-cards/ntu-viral.md",
+   "note": "",
+   "files": [
+    {
+     "method": "http",
+     "dest": "eee_03.zip",
+     "size": 1995367404,
+     "size_note": "HEAD",
+     "url": "https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/sequences/eee_03.zip?download=true",
+     "evidence": [
+      "HF=https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main",
+      "$HF/sequences/eee_03.zip?download=true"
+     ]
+    }
+   ],
+   "size": 1995367404,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:kitti-raw-0001",
+   "type": "dataset",
+   "tier": "standard",
+   "license": "CC BY-NC-SA 3.0",
+   "source": "docs/dataset-cards/kitti.md",
+   "note": "",
+   "files": [
+    {
+     "method": "http",
+     "dest": "data_odometry_poses.zip",
+     "size": 1300000,
+     "size_note": "HEAD",
+     "url": "https://s3.eu-central-1.amazonaws.com/avg-kitti/data_odometry_poses.zip",
+     "evidence": [
+      "B=https://s3.eu-central-1.amazonaws.com/avg-kitti",
+      "$B/data_odometry_poses.zip"
+     ]
+    },
+    {
+     "method": "http",
+     "dest": "data_odometry_calib.zip",
+     "size": 600000,
+     "size_note": "HEAD",
+     "url": "https://s3.eu-central-1.amazonaws.com/avg-kitti/data_odometry_calib.zip",
+     "evidence": [
+      "B=https://s3.eu-central-1.amazonaws.com/avg-kitti",
+      "$B/data_odometry_calib.zip"
+     ]
+    },
+    {
+     "method": "http",
+     "dest": "2011_09_26_calib.zip",
+     "size": null,
+     "size_note": "not stated",
+     "url": "https://s3.eu-central-1.amazonaws.com/avg-kitti/raw_data/2011_09_26_calib.zip",
+     "evidence": [
+      "B=https://s3.eu-central-1.amazonaws.com/avg-kitti",
+      "$B/raw_data/2011_09_26_calib.zip"
+     ]
+    },
+    {
+     "method": "http",
+     "dest": "2011_09_26_drive_0001_sync.zip",
+     "size": 459000000,
+     "size_note": "HEAD",
+     "url": "https://s3.eu-central-1.amazonaws.com/avg-kitti/raw_data/2011_09_26_drive_0001/2011_09_26_drive_0001_sync.zip",
+     "evidence": [
+      "B=https://s3.eu-central-1.amazonaws.com/avg-kitti",
+      "$B/raw_data/2011_09_26_drive_0001/2011_09_26_drive_0001_sync.zip"
+     ]
+    },
+    {
+     "method": "http",
+     "dest": "2011_09_26_drive_0001_extract.zip",
+     "size": 697000000,
+     "size_note": "HEAD",
+     "url": "https://s3.eu-central-1.amazonaws.com/avg-kitti/raw_data/2011_09_26_drive_0001/2011_09_26_drive_0001_extract.zip",
+     "evidence": [
+      "B=https://s3.eu-central-1.amazonaws.com/avg-kitti",
+      "$B/raw_data/2011_09_26_drive_0001/2011_09_26_drive_0001_extract.zip"
+     ]
+    }
+   ],
+   "size": 1157900000,
+   "size_complete": false
+  },
+  {
+   "id": "dataset:urbannav-tokyo-medium-urban1",
+   "type": "dataset",
+   "tier": "standard",
+   "license": "MIT (covers the data, per README)",
+   "source": "docs/dataset-cards/urbannav.md",
+   "note": "",
+   "files": [
+    {
+     "method": "http",
+     "dest": "Tokyo_Data.zip",
+     "size": 4450000000,
+     "size_note": "HEAD",
+     "url": "https://www.dropbox.com/s/isu1bugpgr8dpas/Tokyo_Data.zip?dl=1",
+     "evidence": [
+      "https://www.dropbox.com/s/isu1bugpgr8dpas/Tokyo_Data.zip?dl=1"
+     ]
+    },
+    {
+     "method": "http",
+     "dest": "UrbanNav_TST_GT_raw.txt",
+     "size": 140000,
+     "size_note": "HEAD",
+     "url": "https://www.dropbox.com/s/twsvwftucoytfpc/UrbanNav_TST_GT_raw.txt?dl=1",
+     "evidence": [
+      "https://www.dropbox.com/s/twsvwftucoytfpc/UrbanNav_TST_GT_raw.txt?dl=1"
+     ]
+    },
+    {
+     "method": "http",
+     "dest": "xsense_imu_medium_urban1.csv",
+     "size": 110000000,
+     "size_note": "HEAD",
+     "url": "https://www.dropbox.com/s/2rh1rs15ihpf63u/xsense_imu_medium_urban1.csv?dl=1",
+     "evidence": [
+      "https://www.dropbox.com/s/2rh1rs15ihpf63u/xsense_imu_medium_urban1.csv?dl=1"
+     ]
+    }
+   ],
+   "size": 4560140000,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:boreas-radar-gt-calib",
+   "type": "dataset",
+   "tier": "standard",
+   "license": "CC BY 4.0",
+   "source": "docs/dataset-cards/boreas.md",
+   "note": "",
+   "files": [
+    {
+     "method": "s3prefix",
+     "endpoint": "https://boreas.s3.amazonaws.com",
+     "prefix": "boreas-2020-11-26-13-58/",
+     "include": [
+      "radar/",
+      "applanix/",
+      "calib/"
+     ],
+     "dest": "boreas-2020-11-26-13-58",
+     "size": 3040000000,
+     "size_note": "sum of S3 listing folder sizes in card (radar 2.75 + applanix 0.29 GB)",
+     "evidence": [
+      "S=boreas-2020-11-26-13-58",
+      "https://boreas.s3.amazonaws.com/$S",
+      "--include \"radar/*\""
+     ]
+    }
+   ],
+   "size": 3040000000,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:nclt-2012-01-08",
+   "type": "dataset",
+   "tier": "minimal",
+   "license": "ODbL + DbCL",
+   "source": "docs/dataset-cards/nclt.md",
+   "note": "",
+   "files": [
+    {
+     "method": "http",
+     "dest": "2012-01-08_sen.tar.gz",
+     "size": 119000000,
+     "size_note": "HEAD",
+     "url": "https://s3.us-east-2.amazonaws.com/nclt.perl.engin.umich.edu/sensor_data/2012-01-08_sen.tar.gz",
+     "evidence": [
+      "B=https://s3.us-east-2.amazonaws.com/nclt.perl.engin.umich.edu",
+      "D=2012-01-08",
+      "$B/sensor_data/${D}_sen.tar.gz"
+     ]
+    },
+    {
+     "method": "http",
+     "dest": "groundtruth_2012-01-08.csv",
+     "size": 116000000,
+     "size_note": "HEAD",
+     "url": "https://s3.us-east-2.amazonaws.com/nclt.perl.engin.umich.edu/ground_truth/groundtruth_2012-01-08.csv",
+     "evidence": [
+      "B=https://s3.us-east-2.amazonaws.com/nclt.perl.engin.umich.edu",
+      "D=2012-01-08",
+      "$B/ground_truth/groundtruth_${D}.csv"
+     ]
+    },
+    {
+     "method": "http",
+     "dest": "cov_2012-01-08.csv",
+     "size": null,
+     "size_note": "not stated",
+     "url": "https://s3.us-east-2.amazonaws.com/nclt.perl.engin.umich.edu/covariance/cov_2012-01-08.csv",
+     "evidence": [
+      "B=https://s3.us-east-2.amazonaws.com/nclt.perl.engin.umich.edu",
+      "D=2012-01-08",
+      "$B/covariance/cov_${D}.csv"
+     ]
+    }
+   ],
+   "size": 235000000,
+   "size_complete": false
+  },
+  {
+   "id": "dataset:gsdc-taroz-2023",
+   "type": "dataset",
+   "tier": "standard",
+   "license": "Kaggle competition rules",
+   "source": "docs/dataset-cards/gsdc.md",
+   "note": "",
+   "files": [
+    {
+     "method": "http",
+     "dest": "dataset_2023.zip",
+     "size": 2761355999,
+     "size_note": "HEAD",
+     "url": "http://www.taroz.net/data/dataset_2023.zip",
+     "evidence": [
+      "http://www.taroz.net/data/dataset_2023.zip"
+     ]
+    }
+   ],
+   "size": 2761355999,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:texbat-cleanstatic80-ds3proc",
+   "type": "dataset",
+   "tier": "standard",
+   "license": "UT research use; do not redistribute (share inside the team only after reading the terms)",
+   "source": "docs/dataset-cards/texbat.md",
+   "note": "",
+   "files": [
+    {
+     "method": "http",
+     "dest": "cleanStatic80.bin",
+     "size": 8016392192,
+     "size_note": "HEAD",
+     "url": "https://rnl-data.ae.utexas.edu/datastore/texbat/cleanStatic80.bin",
+     "evidence": [
+      "B=https://rnl-data.ae.utexas.edu/datastore/texbat",
+      "cleanStatic80.bin = 8,016,392,192 bytes"
+     ]
+    },
+    {
+     "method": "httpdir",
+     "url": "https://rnl-data.ae.utexas.edu/datastore/texbat/processed/ds3/",
+     "dest": "processed/ds3",
+     "size": 800000000,
+     "size_note": "directory listing, approximate",
+     "evidence": [
+      "$B/processed/ds3/"
+     ]
+    }
+   ],
+   "size": 8816392192,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:jammertest-vaara",
+   "type": "dataset",
+   "tier": "standard",
+   "license": "none stated (no LICENSE in repo)",
+   "source": "docs/dataset-cards/jammertest-data.md",
+   "note": "",
+   "files": [
+    {
+     "method": "git",
+     "url": "https://github.com/UniVaasaDigiEco/VAARA",
+     "dest": "VAARA",
+     "size": 1570000000,
+     "size_note": "git tree blob sizes, uncompressed",
+     "evidence": [
+      "https://github.com/UniVaasaDigiEco/VAARA"
+     ]
+    }
+   ],
+   "size": 1570000000,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:jammertest-fraunhofer-chunk",
+   "type": "dataset",
+   "tier": "standard",
+   "license": "CC BY-NC-SA 4.0",
+   "source": "docs/dataset-cards/jammertest-data.md",
+   "note": "Git LFS bandwidth quota on GitHub can block pulls; fetch early.",
+   "files": [
+    {
+     "method": "lfs",
+     "repo": "FelixOtt94/FraunhoferIIS_Jammertest2025",
+     "ref": "master",
+     "path": "dataset/Sample_Area1_0000000_0024999.h5.part-aa",
+     "dest": "Sample_Area1_0000000_0024999.h5.part-aa",
+     "size": 1992294400,
+     "size_note": "HEAD",
+     "evidence": [
+      "https://github.com/FelixOtt94/FraunhoferIIS_Jammertest2025",
+      "dataset/Sample_Area1_0000000_0024999.h5.part-*"
+     ]
+    },
+    {
+     "method": "lfs",
+     "repo": "FelixOtt94/FraunhoferIIS_Jammertest2025",
+     "ref": "master",
+     "path": "dataset/Sample_Area1_0000000_0024999.h5.part-ab",
+     "dest": "Sample_Area1_0000000_0024999.h5.part-ab",
+     "size": null,
+     "size_note": "from LFS pointer at fetch time",
+     "evidence": [
+      "https://github.com/FelixOtt94/FraunhoferIIS_Jammertest2025",
+      "dataset/Sample_Area1_0000000_0024999.h5.part-*"
+     ]
+    }
+   ],
+   "size": 1992294400,
+   "size_complete": false
+  },
+  {
+   "id": "dataset:jammertest-npra-plan",
+   "type": "dataset",
+   "tier": "full",
+   "license": "MIT",
+   "source": "docs/dataset-cards/jammertest-data.md",
+   "note": "",
+   "files": [
+    {
+     "method": "git",
+     "url": "https://github.com/NPRA/jammertest-plan",
+     "dest": "jammertest-plan",
+     "size": null,
+     "size_note": "Testcatalog.pdf 92 MB + small JSON; repo total not stated",
+     "evidence": [
+      "https://github.com/NPRA/jammertest-plan"
+     ]
+    }
+   ],
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "dataset:s7am1na-sample",
+   "type": "dataset",
+   "tier": "minimal",
+   "license": "MIT",
+   "source": "docs/dataset-cards/gnss-spoofing-s7am1na.md",
+   "note": "Format sample only, not a labelled attack (card).",
+   "files": [
+    {
+     "method": "http",
+     "dest": "gnss_log_2025_07_30_10_15_12.txt",
+     "size": 23678435,
+     "size_note": "HEAD",
+     "url": "https://raw.githubusercontent.com/S7AM1NA/GNSS-Spoofing-Dataset/main/sample/gnss_log_2025_07_30_10_15_12.txt",
+     "evidence": [
+      "https://raw.githubusercontent.com/S7AM1NA/GNSS-Spoofing-Dataset/main/sample/gnss_log_2025_07_30_10_15_12.txt"
+     ]
+    }
+   ],
+   "size": 23678435,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:magnav-zenodo-12723700",
+   "type": "dataset",
+   "tier": "standard",
+   "license": "public domain per LICENSE.md, plus an Air Force use agreement (non-profit research/education/government, no redistribution)",
+   "source": "docs/dataset-cards/magnav-challenge-data.md",
+   "note": "",
+   "files": [
+    {
+     "method": "zenodo",
+     "record": "12723700",
+     "dest": ".",
+     "size": 1160000000,
+     "size_note": "Zenodo API",
+     "evidence": [
+      "Z=https://zenodo.org/api/records/12723700/files"
+     ]
+    }
+   ],
+   "size": 1160000000,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:magnav-ottawa-maps",
+   "type": "dataset",
+   "tier": "standard",
+   "license": "as MagNav.jl artifacts",
+   "source": "docs/dataset-cards/magnav-challenge-data.md",
+   "note": "",
+   "files": [
+    {
+     "method": "manual",
+     "dest": "ottawa_area_maps_v3.tar.gz",
+     "size": 710500000,
+     "size_note": "Dropbox HEAD per card",
+     "instructions": "URL is in MagNav.jl Artifacts.toml, not in this repo. Easiest: run samples/magnav-quickstart once online (julia:1.11 image) and keep ~/.julia/artifacts.",
+     "evidence": [
+      "ottawa_area_maps_v3.tar.gz"
+     ]
+    }
+   ],
+   "size": 710500000,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:afit-magnav-example",
+   "type": "dataset",
+   "tier": "minimal",
+   "license": "none stated; sources carry their own terms",
+   "source": "docs/dataset-cards/afit-magnav-example-data.md",
+   "note": "",
+   "files": [
+    {
+     "method": "http",
+     "dest": "aia-maps.zip",
+     "size": 98562784,
+     "size_note": "HEAD",
+     "url": "https://github.com/AFIT-EENG-MagNav/example-data/raw/refs/heads/main/mit-aia/aia-maps.zip",
+     "evidence": [
+      "R=https://github.com/AFIT-EENG-MagNav/example-data/raw/refs/heads/main",
+      "$R/mit-aia/aia-maps.zip"
+     ]
+    },
+    {
+     "method": "http",
+     "dest": "10Hz_Mag_INS_Aux_Flt1002.xyz.zip",
+     "size": 72200000,
+     "size_note": "git tree",
+     "url": "https://github.com/AFIT-EENG-MagNav/example-data/raw/refs/heads/main/mit-aia/flight1002/10Hz_Mag_INS_Aux_Flt1002.xyz.zip",
+     "evidence": [
+      "R=https://github.com/AFIT-EENG-MagNav/example-data/raw/refs/heads/main",
+      "$R/mit-aia/flight1002/10Hz_Mag_INS_Aux_Flt1002.xyz.zip"
+     ]
+    },
+    {
+     "method": "http",
+     "dest": "USMAG_origmrg.gxf.zip",
+     "size": 41800000,
+     "size_note": "git tree",
+     "url": "https://github.com/AFIT-EENG-MagNav/example-data/raw/refs/heads/main/namad/USMAG_origmrg.gxf.zip",
+     "evidence": [
+      "R=https://github.com/AFIT-EENG-MagNav/example-data/raw/refs/heads/main",
+      "$R/namad/USMAG_origmrg.gxf.zip"
+     ]
+    },
+    {
+     "method": "http",
+     "dest": "egm2008-2_5.pgm.zip",
+     "size": 64200000,
+     "size_note": "git tree",
+     "url": "https://github.com/AFIT-EENG-MagNav/example-data/raw/refs/heads/main/geodesy/geoids/egm2008-2_5.pgm.zip",
+     "evidence": [
+      "R=https://github.com/AFIT-EENG-MagNav/example-data/raw/refs/heads/main",
+      "$R/geodesy/geoids/egm2008-2_5.pgm.zip"
+     ]
+    }
+   ],
+   "size": 276762784,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:util-uwb-tdoa",
+   "type": "dataset",
+   "tier": "standard",
+   "license": "not stated",
+   "source": "docs/dataset-cards/util-uwb-tdoa.md",
+   "note": "",
+   "files": [
+    {
+     "method": "http",
+     "dest": "dataset.7z",
+     "size": 1861803968,
+     "size_note": "GitHub releases API",
+     "url": "https://github.com/utiasDSL/util-uwb-dataset/releases/download/dataset-v1.0/dataset.7z",
+     "evidence": [
+      "https://github.com/utiasDSL/util-uwb-dataset/releases/download/dataset-v1.0/dataset.7z"
+     ]
+    }
+   ],
+   "size": 1861803968,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:miluv-default-3-random-0",
+   "type": "dataset",
+   "tier": "standard",
+   "license": "CC BY 4.0 (data), MIT (devkit)",
+   "source": "docs/dataset-cards/miluv.md",
+   "note": "",
+   "files": [
+    {
+     "method": "http",
+     "dest": "default_3_random_0.zip",
+     "size": 3200000000,
+     "size_note": "figshare API, rounded in card",
+     "url": "https://ndownloader.figshare.com/files/52291625",
+     "evidence": [
+      "https://ndownloader.figshare.com/files/52291625"
+     ]
+    }
+   ],
+   "size": 3200000000,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:uav-visloc-example",
+   "type": "dataset",
+   "tier": "standard",
+   "license": "not stated; ask before redistribution",
+   "source": "docs/dataset-cards/uav-visloc.md",
+   "note": "",
+   "files": [
+    {
+     "method": "gdrive",
+     "id": "16tY7tPZiNIoyAhknvyXnp0jAfccIcHtL",
+     "dest": "UAV_VisLoc_example.zip",
+     "size": 2040000000,
+     "size_note": "README",
+     "evidence": [
+      "16tY7tPZiNIoyAhknvyXnp0jAfccIcHtL"
+     ]
+    }
+   ],
+   "size": 2040000000,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:vpair-sample",
+   "type": "dataset",
+   "tier": "standard",
+   "license": "academic use only (README; stricter than the Zenodo CC BY tag)",
+   "source": "docs/dataset-cards/vpair.md",
+   "note": "",
+   "files": [
+    {
+     "method": "http",
+     "dest": "vpair_sample.zip",
+     "size": 861249439,
+     "size_note": "Zenodo API",
+     "url": "https://zenodo.org/records/6473989/files/vpair_sample.zip?download=1",
+     "evidence": [
+      "https://zenodo.org/records/6473989/files/vpair_sample.zip?download=1"
+     ]
+    }
+   ],
+   "size": 861249439,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:pohang00-navigation",
+   "type": "dataset",
+   "tier": "minimal",
+   "license": "CC BY-NC 4.0",
+   "source": "docs/dataset-cards/maritime-datasets.md",
+   "note": "",
+   "files": [
+    {
+     "method": "http",
+     "dest": "navigation.zip",
+     "size": 21000000,
+     "size_note": "S3 listing, approximate",
+     "url": "https://pohang-canal-dataset.s3.amazonaws.com/pohang00/navigation.zip",
+     "evidence": [
+      "https://pohang-canal-dataset.s3.amazonaws.com/pohang00/navigation.zip"
+     ]
+    }
+   ],
+   "size": 21000000,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:pohang00-radar",
+   "type": "dataset",
+   "tier": "standard",
+   "license": "CC BY-NC 4.0",
+   "source": "docs/dataset-cards/maritime-datasets.md",
+   "note": "",
+   "files": [
+    {
+     "method": "http",
+     "dest": "radar.zip",
+     "size": 200000000,
+     "size_note": "S3 listing, approximate",
+     "url": "https://pohang-canal-dataset.s3.amazonaws.com/pohang00/radar.zip",
+     "evidence": [
+      "s3://pohang-canal-dataset/pohang00/radar.zip",
+      "https://pohang-canal-dataset.s3.amazonaws.com/pohang00/"
+     ]
+    }
+   ],
+   "size": 200000000,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:massmind",
+   "type": "dataset",
+   "tier": "standard",
+   "license": "CC BY-NC-SA 4.0",
+   "source": "docs/dataset-cards/maritime-datasets.md",
+   "note": "",
+   "files": [
+    {
+     "method": "gdrive",
+     "id": "1T572f0oqy5JmuTvVEwkSUeXLWOSHl4hL",
+     "dest": "MassMIND_Images.zip",
+     "size": 414000000,
+     "size_note": "Drive page",
+     "evidence": [
+      "1T572f0oqy5JmuTvVEwkSUeXLWOSHl4hL"
+     ]
+    },
+    {
+     "method": "gdrive",
+     "id": "1pHp480_Q-s72RoDf1nD7ERzsv9yZTDE1",
+     "dest": "Segmentation_Masks.zip",
+     "size": 7000000,
+     "size_note": "Drive page",
+     "evidence": [
+      "1pHp480_Q-s72RoDf1nD7ERzsv9yZTDE1"
+     ]
+    },
+    {
+     "method": "gdrive",
+     "id": "16rPWhV8OEocyLLpT1-LSCALt757P_h0N",
+     "dest": "InstanceSegmentation_Masks.zip",
+     "size": 7000000,
+     "size_note": "Drive page",
+     "evidence": [
+      "16rPWhV8OEocyLLpT1-LSCALt757P_h0N"
+     ]
+    }
+   ],
+   "size": 428000000,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:anti-uav300",
+   "type": "dataset",
+   "tier": "standard",
+   "license": "data terms not stated",
+   "source": "docs/dataset-cards/anti-uav.md",
+   "note": "",
+   "files": [
+    {
+     "method": "gdrive",
+     "id": "1NPYaop35ocVTYWHOYQQHn8YHsM9jmLGr",
+     "dest": "Anti-UAV-RGBT.zip",
+     "size": 5600000000,
+     "size_note": "card",
+     "evidence": [
+      "1NPYaop35ocVTYWHOYQQHn8YHsM9jmLGr"
+     ]
+    }
+   ],
+   "size": 5600000000,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:dronerf",
+   "type": "dataset",
+   "tier": "standard",
+   "license": "CC BY 4.0",
+   "source": "docs/dataset-cards/drone-rf-datasets.md",
+   "note": "",
+   "files": [
+    {
+     "method": "mendeley",
+     "dataset": "f4c2b4n755",
+     "dest": ".",
+     "size": 4030000000,
+     "size_note": "Mendeley API",
+     "evidence": [
+      "https://data.mendeley.com/public-api/datasets/f4c2b4n755"
+     ]
+    }
+   ],
+   "size": 4030000000,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:remote-id-captures",
+   "type": "dataset",
+   "tier": "minimal",
+   "license": "DroneSecurity AGPL-3.0; opendroneid wireshark-dissector Apache-2.0",
+   "source": "docs/dataset-cards/remote-id-droneid-captures.md",
+   "note": "",
+   "files": [
+    {
+     "method": "git",
+     "url": "https://github.com/RUB-SysSec/DroneSecurity",
+     "dest": "DroneSecurity",
+     "size": null,
+     "size_note": "samples 7.6 MB; repo total not stated",
+     "evidence": [
+      "https://github.com/RUB-SysSec/DroneSecurity"
+     ]
+    },
+    {
+     "method": "git",
+     "url": "https://github.com/opendroneid/wireshark-dissector",
+     "dest": "wireshark-dissector",
+     "size": null,
+     "size_note": "pcaps under 0.1 MB; repo total not stated",
+     "evidence": [
+      "https://github.com/opendroneid/wireshark-dissector"
+     ]
+    }
+   ],
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "dataset:gvins-complex-environment",
+   "type": "dataset",
+   "tier": "full",
+   "license": "CC BY-NC-SA 4.0",
+   "source": "docs/dataset-cards/gvins.md",
+   "note": "",
+   "files": [
+    {
+     "method": "http",
+     "dest": "complex_environment.bag",
+     "size": 17300000000,
+     "size_note": "HF API",
+     "url": "https://huggingface.co/datasets/Shawn202606/GVINS-Dataset/resolve/main/complex_environment.bag",
+     "evidence": [
+      "B=https://huggingface.co/datasets/Shawn202606/GVINS-Dataset/resolve/main",
+      "$B/complex_environment.bag"
+     ]
+    },
+    {
+     "method": "http",
+     "dest": "checksum.txt",
+     "size": null,
+     "size_note": "not stated",
+     "url": "https://huggingface.co/datasets/Shawn202606/GVINS-Dataset/resolve/main/checksum.txt",
+     "evidence": [
+      "$B/checksum.txt"
+     ]
+    }
+   ],
+   "size": 17300000000,
+   "size_complete": false
+  },
+  {
+   "id": "dataset:denseuav",
+   "type": "dataset",
+   "tier": "full",
+   "license": "repo Apache-2.0 / HF card MIT; imagery terms unscoped",
+   "source": "docs/dataset-cards/denseuav.md",
+   "note": "",
+   "files": [
+    {
+     "method": "http",
+     "dest": "DenseUAV.zip",
+     "size": 16700000000,
+     "size_note": "card",
+     "url": "https://huggingface.co/datasets/Dmmm997/DenseUAV/resolve/main/DenseUAV.zip",
+     "evidence": [
+      "https://huggingface.co/datasets/Dmmm997/DenseUAV/resolve/main/DenseUAV.zip"
+     ]
+    }
+   ],
+   "size": 16700000000,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:hilti22-exp14",
+   "type": "dataset",
+   "tier": "full",
+   "license": "CC BY-NC-SA 3.0",
+   "source": "docs/dataset-cards/hilti-slam.md",
+   "note": "",
+   "files": [
+    {
+     "method": "http",
+     "dest": "exp14_basement_2.bag",
+     "size": 6260000000,
+     "size_note": "card",
+     "url": "https://huggingface.co/datasets/Hilti-Research/hilti-slam-challenge-2022/resolve/main/rosbags/exp14_basement_2.bag",
+     "evidence": [
+      "HF=https://huggingface.co/datasets/Hilti-Research/hilti-slam-challenge-2022/resolve/main",
+      "$HF/rosbags/exp14_basement_2.bag"
+     ]
+    },
+    {
+     "method": "http",
+     "dest": "exp14_basement_2_imu.txt",
+     "size": null,
+     "size_note": "not stated",
+     "url": "https://huggingface.co/datasets/Hilti-Research/hilti-slam-challenge-2022/resolve/main/ground_truth/exp14_basement_2_imu.txt",
+     "evidence": [
+      "HF=https://huggingface.co/datasets/Hilti-Research/hilti-slam-challenge-2022/resolve/main",
+      "$HF/ground_truth/exp14_basement_2_imu.txt"
+     ]
+    }
+   ],
+   "size": 6260000000,
+   "size_complete": false
+  },
+  {
+   "id": "dataset:sues-200",
+   "type": "dataset",
+   "tier": "full",
+   "license": "academic research only (README)",
+   "source": "docs/dataset-cards/sues-200.md",
+   "note": "",
+   "files": [
+    {
+     "method": "gdrive",
+     "id": "1UyVyFJ_pRaJHIr_eBY2HL7gkS5y9UxqI",
+     "dest": "SUES-200-512x512-V2.zip",
+     "size": 5300000000,
+     "size_note": "card",
+     "evidence": [
+      "1UyVyFJ_pRaJHIr_eBY2HL7gkS5y9UxqI"
+     ]
+    }
+   ],
+   "size": 5300000000,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:subpipe-mini2",
+   "type": "dataset",
+   "tier": "full",
+   "license": "CC BY 4.0",
+   "source": "docs/dataset-cards/underwater-datasets.md",
+   "note": "",
+   "files": [
+    {
+     "method": "http",
+     "dest": "SubPipeMini2.zip",
+     "size": 4900000000,
+     "size_note": "card",
+     "url": "https://zenodo.org/records/12666132/files/SubPipeMini2.zip?download=1",
+     "evidence": [
+      "https://zenodo.org/records/12666132/files/SubPipeMini2.zip?download=1"
+     ]
+    }
+   ],
+   "size": 4900000000,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:newer-college-math-easy",
+   "type": "dataset",
+   "tier": "full",
+   "license": "CC BY-NC-SA 4.0",
+   "source": "docs/dataset-cards/newer-college.md",
+   "note": "",
+   "files": [
+    {
+     "method": "http",
+     "dest": "2021-04-07-13-52-31_1-math-easy.bag",
+     "size": 1840000000,
+     "size_note": "card",
+     "url": "https://huggingface.co/datasets/ori-drs/newer_college_dataset/resolve/main/2021-ouster-os0-128-alphasense/collection%203%20-%20maths%20institute/2021-04-07-13-52-31_1-math-easy.bag",
+     "evidence": [
+      "HF=https://huggingface.co/datasets/ori-drs/newer_college_dataset/resolve/main",
+      "$HF/2021-ouster-os0-128-alphasense/collection%203%20-%20maths%20institute/2021-04-07-13-52-31_1-math-easy.bag"
+     ]
+    }
+   ],
+   "size": 1840000000,
+   "size_complete": true
+  },
+  {
+   "id": "dataset:tartanair-one-env",
+   "type": "dataset",
+   "tier": "full",
+   "license": "CC BY 4.0 (site) vs BSD-3 (HF), unresolved",
+   "source": "docs/dataset-cards/tartanair.md",
+   "note": "",
+   "files": [
+    {
+     "method": "manual",
+     "dest": "tartanair",
+     "size": 1060000000,
+     "size_note": "card",
+     "instructions": "Script-driven: git clone https://github.com/castacks/tartanair_tools and run download_training.py with --rgb --only-left after filtering download_training_zipfiles.txt to one env (see card).",
+     "evidence": [
+      "https://github.com/castacks/tartanair_tools"
+     ]
+    }
+   ],
+   "size": 1060000000,
+   "size_complete": true
+  },
+  {
+   "id": "script:gnss-rinex-processing-data",
+   "type": "script",
+   "tier": "minimal",
+   "license": "NOAA NGS CORS public data",
+   "source": "samples/gnss-rinex-processing/fetch_data.sh",
+   "path": "samples/gnss-rinex-processing/fetch_data.sh",
+   "outputs": "samples/gnss-rinex-processing/data/",
+   "size": 3600000,
+   "size_complete": true,
+   "note": "stated in script header"
+  },
+  {
+   "id": "pip:cuas-classifiers",
+   "type": "pip",
+   "tier": "standard",
+   "license": "per package (see PyPI metadata)",
+   "source": "samples/cuas-classifiers/requirements.txt",
+   "requirements": [
+    "numpy==2.5.4",
+    "pandas==3.1.1",
+    "scipy==1.18.1",
+    "scikit-learn==1.9.1",
+    "openpyxl==3.1.5",
+    "pytest==9.2.0"
+   ],
+   "vcs": [],
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "pip:geoloc-license-clean",
+   "type": "pip",
+   "tier": "standard",
+   "license": "per package (see PyPI metadata)",
+   "source": "samples/geoloc-license-clean/requirements.txt",
+   "requirements": [
+    "torch==2.15.0",
+    "torchvision==0.29.2",
+    "kornia==0.9.0",
+    "opencv-python==5.0.0.93",
+    "opencv-python-headless==5.0.0.93",
+    "numpy==2.5.4",
+    "rasterio==1.5.2",
+    "affine==3.0.1",
+    "pillow==13.0.0"
+   ],
+   "vcs": [
+    "lightglue @ git+https://github.com/cvg/LightGlue.git@5a650c444718caffc2669dc0094cde908f42dd73"
+   ],
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "pip:gnss-ins-ekf-outage",
+   "type": "pip",
+   "tier": "minimal",
+   "license": "per package (see PyPI metadata)",
+   "source": "samples/gnss-ins-ekf-outage/requirements.txt",
+   "requirements": [
+    "filterpy==2.0.0",
+    "numpy==2.5.4"
+   ],
+   "vcs": [],
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "pip:gnss-interference-monitor",
+   "type": "pip",
+   "tier": "minimal",
+   "license": "per package (see PyPI metadata)",
+   "source": "samples/gnss-interference-monitor/requirements.txt",
+   "requirements": [
+    "pyubx2==1.4.1",
+    "pyserial"
+   ],
+   "vcs": [],
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "pip:gnss-rinex-processing",
+   "type": "pip",
+   "tier": "standard",
+   "license": "per package (see PyPI metadata)",
+   "source": "samples/gnss-rinex-processing/requirements.txt",
+   "requirements": [
+    "gnss-lib-py==1.1.0",
+    "georinex==1.16.1",
+    "numpy==2.5.4",
+    "pandas==2.3.3"
+   ],
+   "vcs": [],
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "pip:interference-geolocation-to-tak",
+   "type": "pip",
+   "tier": "standard",
+   "license": "per package (see PyPI metadata)",
+   "source": "samples/interference-geolocation-to-tak/requirements.txt",
+   "requirements": [
+    "stonesoup==1.9.1"
+   ],
+   "vcs": [],
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "pip:llm-mission-agent",
+   "type": "pip",
+   "tier": "standard",
+   "license": "per package (see PyPI metadata)",
+   "source": "samples/llm-mission-agent/requirements.txt",
+   "requirements": [
+    "pymavlink==2.4.50",
+    "anthropic>=2.6"
+   ],
+   "vcs": [],
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "pip:mavlink-to-tak-cot",
+   "type": "pip",
+   "tier": "minimal",
+   "license": "per package (see PyPI metadata)",
+   "source": "samples/mavlink-to-tak-cot/requirements.txt",
+   "requirements": [
+    "pymavlink==2.4.50",
+    "pytak==7.6.1"
+   ],
+   "vcs": [],
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "pip:osint-jamming-map",
+   "type": "pip",
+   "tier": "standard",
+   "license": "per package (see PyPI metadata)",
+   "source": "samples/osint-jamming-map/requirements.txt",
+   "requirements": [
+    "pystac-client==0.9.1",
+    "planetary-computer==1.0.0",
+    "rasterio==1.5.2",
+    "numpy==2.5.4",
+    "scipy==1.18.1",
+    "shapely==2.2.0",
+    "h3==4.5.0",
+    "matplotlib==3.11.2",
+    "requests==2.34.2"
+   ],
+   "vcs": [],
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "pip:stone-soup-tracking",
+   "type": "pip",
+   "tier": "standard",
+   "license": "per package (see PyPI metadata)",
+   "source": "samples/stone-soup-tracking/requirements.txt",
+   "requirements": [
+    "stonesoup==1.9.1",
+    "numpy==2.5.4",
+    "scipy==1.18.1"
+   ],
+   "vcs": [],
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "pip:terrain-heightmap-pf",
+   "type": "pip",
+   "tier": "standard",
+   "license": "per package (see PyPI metadata)",
+   "source": "samples/terrain-heightmap-pf/requirements.txt",
+   "requirements": [
+    "numpy==2.5.4",
+    "scipy==1.18.1",
+    "rasterio==1.5.2",
+    "matplotlib==3.11.2",
+    "pytest"
+   ],
+   "vcs": [],
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "pip:visual-geolocalization-lightglue",
+   "type": "pip",
+   "tier": "standard",
+   "license": "per package (see PyPI metadata)",
+   "source": "samples/visual-geolocalization-lightglue/requirements.txt",
+   "requirements": [
+    "torch==2.15.0",
+    "torchvision==0.29.2",
+    "kornia==0.9.0",
+    "opencv-python==5.0.0.93",
+    "rasterio==1.5.2",
+    "numpy==2.5.4"
+   ],
+   "vcs": [
+    "lightglue @ git+https://github.com/cvg/LightGlue@5a650c444718caffc2669dc0094cde908f42dd73"
+   ],
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "pip:integration-cards",
+   "type": "pip",
+   "tier": "full",
+   "license": "per package",
+   "source": "Install rows of 33 integration cards",
+   "requirements": [
+    "numpy>=2.2.4",
+    "torch",
+    "torchvision",
+    "einops",
+    "fast_pytorch_kmeans",
+    "pymavlink",
+    "MAVProxy",
+    "elevation",
+    "gtsam",
+    "gtsam-develop",
+    "numpy",
+    "scipy",
+    "stonesoup",
+    "pymap3d",
+    "vismatch",
+    "pybullet",
+    "depthai",
+    "mavsdk-grpc",
+    "evo",
+    "rasterio",
+    "pyproj",
+    "Pillow",
+    "pandas",
+    "matplotlib",
+    "romatch",
+    "romatch[fused-local-corr]",
+    "kiss-icp",
+    "kiss-icp[all]",
+    "pmtiles",
+    "rio-pmtiles",
+    "filterpy",
+    "pygnssutils",
+    "pyubx2",
+    "cedar-solve",
+    "adsbcot",
+    "adsbcot[with_pymodes]",
+    "pytak",
+    "takproto",
+    "rotorpy",
+    "gnss-lib-py",
+    "transformations",
+    "apscheduler",
+    "pyrealsense2",
+    "opencv-contrib-python",
+    "tqdm",
+    "kornia",
+    "imufusion==1.3.3"
+   ],
+   "vcs": [],
+   "size": null,
+   "size_complete": false,
+   "each": true,
+   "note": "unpinned names, fetched one by one; resolve against your Python before the event"
+  },
+  {
+   "id": "docker:debian:bookworm-slim",
+   "type": "docker",
+   "tier": "standard",
+   "image": "debian:bookworm-slim",
+   "platforms": [
+    "linux/amd64",
+    "linux/arm64"
+   ],
+   "license": "per image",
+   "source": "samples/gnss-rinex-processing/docker/Dockerfile",
+   "size": null,
+   "size_complete": false,
+   "note": ""
+  },
+  {
+   "id": "docker:ghcr.io/kdudkov/goatak_server:latest",
+   "type": "docker",
+   "tier": "full",
+   "image": "ghcr.io/kdudkov/goatak_server:latest",
+   "platforms": [
+    "linux/amd64",
+    "linux/arm64"
+   ],
+   "license": "per image",
+   "source": "docs/integration-cards/kdudkov__goatak.md",
+   "size": null,
+   "size_complete": false,
+   "note": "unpinned tag; pin a digest you tested"
+  },
+  {
+   "id": "docker:ghcr.io/mit-ai-accelerator/magnav.jl",
+   "type": "docker",
+   "tier": "full",
+   "image": "ghcr.io/mit-ai-accelerator/magnav.jl",
+   "platforms": [
+    "linux/amd64",
+    "linux/arm64"
+   ],
+   "license": "per image",
+   "source": "docs/integration-cards/mit-ai-accelerator__magnav.jl.md",
+   "size": null,
+   "size_complete": false,
+   "note": "unpinned tag; pin a digest you tested"
+  },
+  {
+   "id": "docker:ghcr.io/osgeo/gdal:ubuntu-small-latest",
+   "type": "docker",
+   "tier": "full",
+   "image": "ghcr.io/osgeo/gdal:ubuntu-small-latest",
+   "platforms": [
+    "linux/amd64",
+    "linux/arm64"
+   ],
+   "license": "per image",
+   "source": "docs/integration-cards/osgeo__gdal.md",
+   "size": null,
+   "size_complete": false,
+   "note": ""
+  },
+  {
+   "id": "docker:python:3.12-slim",
+   "type": "docker",
+   "tier": "minimal",
+   "image": "python:3.12-slim",
+   "platforms": [
+    "linux/amd64",
+    "linux/arm64"
+   ],
+   "license": "per image",
+   "source": "samples/sitl-docker/Dockerfile.client",
+   "size": null,
+   "size_complete": false,
+   "note": ""
+  },
+  {
+   "id": "docker:python:3.14-slim",
+   "type": "docker",
+   "tier": "minimal",
+   "image": "python:3.14-slim",
+   "platforms": [
+    "linux/amd64",
+    "linux/arm64"
+   ],
+   "license": "per image",
+   "source": "templates/project-repo/docker-compose.yml",
+   "size": null,
+   "size_complete": false,
+   "note": ""
+  },
+  {
+   "id": "docker:ubuntu:22.04",
+   "type": "docker",
+   "tier": "standard",
+   "image": "ubuntu:22.04",
+   "platforms": [
+    "linux/amd64",
+    "linux/arm64"
+   ],
+   "license": "per image",
+   "source": "samples/sitl-docker/Dockerfile.ardupilot",
+   "size": null,
+   "size_complete": false,
+   "note": ""
+  },
+  {
+   "id": "docker:ubuntu:24.04",
+   "type": "docker",
+   "tier": "standard",
+   "image": "ubuntu:24.04",
+   "platforms": [
+    "linux/amd64",
+    "linux/arm64"
+   ],
+   "license": "per image",
+   "source": "samples/gnss-signal-chain/docker/Dockerfile, samples/sitl-docker/Dockerfile.px4",
+   "size": null,
+   "size_complete": false,
+   "note": ""
+  },
+  {
+   "id": "docker-build:nav-sitl-ardupilot:copter-4.6.3",
+   "type": "docker-build",
+   "tier": "standard",
+   "image": "nav-sitl-ardupilot:copter-4.6.3",
+   "context": "samples/sitl-docker",
+   "dockerfile": "Dockerfile.ardupilot",
+   "license": "per Dockerfile contents",
+   "source": "samples/sitl-docker/compose.yaml",
+   "size": null,
+   "size_complete": false,
+   "note": "needs network at build time; build and save the week before"
+  },
+  {
+   "id": "docker-build:nav-sitl-px4:v1.17.0",
+   "type": "docker-build",
+   "tier": "standard",
+   "image": "nav-sitl-px4:v1.17.0",
+   "context": "samples/sitl-docker",
+   "dockerfile": "Dockerfile.px4",
+   "license": "per Dockerfile contents",
+   "source": "samples/sitl-docker/compose.yaml",
+   "size": null,
+   "size_complete": false,
+   "note": "needs network at build time; build and save the week before"
+  },
+  {
+   "id": "docker-build:nav-sitl-client:latest",
+   "type": "docker-build",
+   "tier": "standard",
+   "image": "nav-sitl-client:latest",
+   "context": "samples/sitl-docker",
+   "dockerfile": "Dockerfile.client",
+   "license": "per Dockerfile contents",
+   "source": "samples/sitl-docker/compose.yaml",
+   "size": null,
+   "size_complete": false,
+   "note": "needs network at build time; build and save the week before"
+  },
+  {
+   "id": "docker-build:rtklib-demo5",
+   "type": "docker-build",
+   "tier": "standard",
+   "image": "rtklib-demo5",
+   "context": "samples/gnss-rinex-processing/docker",
+   "dockerfile": "Dockerfile",
+   "license": "per Dockerfile contents",
+   "source": "samples/gnss-rinex-processing/run_in_docker.sh",
+   "size": null,
+   "size_complete": false,
+   "note": "needs network at build time; build and save the week before"
+  },
+  {
+   "id": "docker-build:gnss-signal-chain",
+   "type": "docker-build",
+   "tier": "standard",
+   "image": "gnss-signal-chain",
+   "context": "samples/gnss-signal-chain/docker",
+   "dockerfile": "Dockerfile",
+   "license": "per Dockerfile contents",
+   "source": "samples/gnss-signal-chain/run.sh",
+   "size": null,
+   "size_complete": false,
+   "note": "needs network at build time; build and save the week before"
+  },
+  {
+   "id": "git:ardupilot/ardupilot",
+   "type": "git",
+   "tier": "minimal",
+   "url": "https://github.com/ArduPilot/ardupilot",
+   "rank": 1,
+   "license": "GPL-3.0",
+   "source": "docs/integration-cards/ardupilot__ardupilot.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:px4/px4-autopilot",
+   "type": "git",
+   "tier": "minimal",
+   "url": "https://github.com/PX4/PX4-Autopilot",
+   "rank": 2,
+   "license": "BSD-3-Clause",
+   "source": "docs/integration-cards/px4__px4-autopilot.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:gnss-sdr/gnss-sdr",
+   "type": "git",
+   "tier": "minimal",
+   "url": "https://github.com/gnss-sdr/gnss-sdr",
+   "rank": 3,
+   "license": "GPL-3.0",
+   "source": "docs/integration-cards/gnss-sdr__gnss-sdr.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:borglab/gtsam",
+   "type": "git",
+   "tier": "minimal",
+   "url": "https://github.com/borglab/gtsam",
+   "rank": 4,
+   "license": "NOASSERTION",
+   "source": "docs/integration-cards/borglab__gtsam.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:mit-ai-accelerator/magnav.jl",
+   "type": "git",
+   "tier": "minimal",
+   "url": "https://github.com/MIT-AI-Accelerator/MagNav.jl",
+   "rank": 5,
+   "license": "NOASSERTION",
+   "source": "docs/integration-cards/mit-ai-accelerator__magnav.jl.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:rtklibexplorer/rtklib",
+   "type": "git",
+   "tier": "minimal",
+   "url": "https://github.com/rtklibexplorer/RTKLIB",
+   "rank": 6,
+   "license": "NOASSERTION",
+   "source": "docs/integration-cards/rtklibexplorer__rtklib.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:ros-navigation/navigation2",
+   "type": "git",
+   "tier": "minimal",
+   "url": "https://github.com/ros-navigation/navigation2",
+   "rank": 7,
+   "license": "NOASSERTION",
+   "source": "docs/integration-cards/ros-navigation__navigation2.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:cvg/lightglue",
+   "type": "git",
+   "tier": "minimal",
+   "url": "https://github.com/cvg/LightGlue",
+   "rank": 8,
+   "license": "Apache-2.0",
+   "source": "docs/integration-cards/cvg__lightglue.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:anyloc/anyloc",
+   "type": "git",
+   "tier": "minimal",
+   "url": "https://github.com/AnyLoc/AnyLoc",
+   "rank": 9,
+   "license": "BSD-3-Clause",
+   "source": "docs/integration-cards/anyloc__anyloc.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:snstac/pytak",
+   "type": "git",
+   "tier": "minimal",
+   "url": "https://github.com/snstac/pytak",
+   "rank": 10,
+   "license": "Apache-2.0",
+   "source": "docs/integration-cards/snstac__pytak.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:tiers/wildnav",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/TIERS/wildnav",
+   "rank": 11,
+   "license": "BSD-3-Clause",
+   "source": "docs/integration-cards/tiers__wildnav.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:hku-mars/fast_lio",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/hku-mars/FAST_LIO",
+   "rank": 12,
+   "license": "GPL-2.0",
+   "source": "docs/integration-cards/hku-mars__fast_lio.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:rpng/open_vins",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/rpng/open_vins",
+   "rank": 13,
+   "license": "GPL-3.0",
+   "source": "docs/integration-cards/rpng__open_vins.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:gazebosim/gz-sim",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/gazebosim/gz-sim",
+   "rank": 14,
+   "license": "Apache-2.0",
+   "source": "docs/integration-cards/gazebosim__gz-sim.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:osqzss/gps-sdr-sim",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/osqzss/gps-sdr-sim",
+   "rank": 15,
+   "license": "MIT",
+   "source": "docs/integration-cards/osqzss__gps-sdr-sim.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:ardupilot/pymavlink",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/ArduPilot/pymavlink",
+   "rank": 16,
+   "license": "NOASSERTION",
+   "source": "docs/integration-cards/ardupilot__pymavlink.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:algafix/osnma",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/Algafix/OSNMA",
+   "rank": 17,
+   "license": "EUPL-1.2",
+   "source": "docs/integration-cards/algafix__osnma.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:dstl/stone-soup",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/dstl/Stone-Soup",
+   "rank": 18,
+   "license": "MIT",
+   "source": "docs/integration-cards/dstl__stone-soup.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:brian7704/opentakserver",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/brian7704/OpenTAKServer",
+   "rank": 19,
+   "license": "GPL-3.0",
+   "source": "docs/integration-cards/brian7704__opentakserver.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:cra-ros-pkg/robot_localization",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/cra-ros-pkg/robot_localization",
+   "rank": 20,
+   "license": "NOASSERTION",
+   "source": "docs/integration-cards/cra-ros-pkg__robot_localization.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:mavlink/mavros",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/mavlink/mavros",
+   "rank": 21,
+   "license": "NOASSERTION",
+   "source": "docs/integration-cards/mavlink__mavros.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:i2nav-whu/kf-gins",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/i2Nav-WHU/KF-GINS",
+   "rank": 22,
+   "license": "GPL-3.0",
+   "source": "docs/integration-cards/i2nav-whu__kf-gins.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:esa/tetra3",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/esa/tetra3",
+   "rank": 23,
+   "license": "Apache-2.0",
+   "source": "docs/integration-cards/esa__tetra3.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:uz-slamlab/orb_slam3",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/UZ-SLAMLab/ORB_SLAM3",
+   "rank": 24,
+   "license": "GPL-3.0",
+   "source": "docs/integration-cards/uz-slamlab__orb_slam3.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:osgeo/gdal",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/osgeo/gdal",
+   "rank": 25,
+   "license": "NOASSERTION",
+   "source": "docs/integration-cards/osgeo__gdal.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:michaelgrupp/evo",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/MichaelGrupp/evo",
+   "rank": 26,
+   "license": "GPL-3.0",
+   "source": "docs/integration-cards/michaelgrupp__evo.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:rasterio/rasterio",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/rasterio/rasterio",
+   "rank": 27,
+   "license": "NOASSERTION",
+   "source": "docs/integration-cards/rasterio__rasterio.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:aceinna/gnss-ins-sim",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/Aceinna/gnss-ins-sim",
+   "rank": 28,
+   "license": "MIT",
+   "source": "docs/integration-cards/aceinna__gnss-ins-sim.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:rlabbe/filterpy",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/rlabbe/filterpy",
+   "rank": 29,
+   "license": "MIT",
+   "source": "docs/integration-cards/rlabbe__filterpy.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:spatialillusions/milsymbol",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/spatialillusions/milsymbol",
+   "rank": 30,
+   "license": "MIT",
+   "source": "docs/integration-cards/spatialillusions__milsymbol.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:wiedehopf/readsb",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/wiedehopf/readsb",
+   "rank": 31,
+   "license": "NOASSERTION",
+   "source": "docs/integration-cards/wiedehopf__readsb.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:stanford-navlab/gnss_lib_py",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/Stanford-NavLab/gnss_lib_py",
+   "rank": 32,
+   "license": "MIT",
+   "source": "docs/integration-cards/stanford-navlab__gnss_lib_py.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:ardupilot/arduremoteid",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/ArduPilot/ArduRemoteID",
+   "rank": 33,
+   "license": "GPL-2.0",
+   "source": "docs/integration-cards/ardupilot__arduremoteid.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:alti3/python-tercom",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/alti3/python-tercom",
+   "rank": 34,
+   "license": "not stated",
+   "source": "docs/integration-cards/alti3__python-tercom.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:maplibre/maplibre-gl-js",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/maplibre/maplibre-gl-js",
+   "rank": 35,
+   "license": "NOASSERTION",
+   "source": "docs/integration-cards/maplibre__maplibre-gl-js.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:cvg/hierarchical-localization",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/cvg/Hierarchical-Localization",
+   "rank": 36,
+   "license": "Apache-2.0",
+   "source": "docs/integration-cards/cvg__hierarchical-localization.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:prbonn/kiss-icp",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/PRBonn/kiss-icp",
+   "rank": 37,
+   "license": "MIT",
+   "source": "docs/integration-cards/prbonn__kiss-icp.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:mavlink/mavsdk-python",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/mavlink/MAVSDK-Python",
+   "rank": 38,
+   "license": "BSD-3-Clause",
+   "source": "docs/integration-cards/mavlink__mavsdk-python.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:krakenrf/krakensdr_doa",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/krakenrf/krakensdr_doa",
+   "rank": 39,
+   "license": "GPL-3.0",
+   "source": "docs/integration-cards/krakenrf__krakensdr_doa.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:thien94/vision_to_mavros",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/thien94/vision_to_mavros",
+   "rank": 40,
+   "license": "GPL-3.0",
+   "source": "docs/integration-cards/thien94__vision_to_mavros.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:semuconsulting/pyubx2",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/semuconsulting/pyubx2",
+   "rank": 41,
+   "license": "BSD-3-Clause",
+   "source": "docs/integration-cards/semuconsulting__pyubx2.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:haiyang-wong/osnma-sdr-sim",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/Haiyang-Wong/OSNMA-SDR-SIM",
+   "rank": 42,
+   "license": "not stated",
+   "source": "docs/integration-cards/haiyang-wong__osnma-sdr-sim.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:mavlink/qgroundcontrol",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/mavlink/qgroundcontrol",
+   "rank": 43,
+   "license": "Apache-2.0",
+   "source": "docs/integration-cards/mavlink__qgroundcontrol.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:nvidia-isaac/cuvslam",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/nvidia-isaac/cuVSLAM",
+   "rank": 44,
+   "license": "NOASSERTION",
+   "source": "docs/integration-cards/nvidia-isaac__cuvslam.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:robotmcp/ros-mcp-server",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/robotmcp/ros-mcp-server",
+   "rank": 45,
+   "license": "Apache-2.0",
+   "source": "docs/integration-cards/robotmcp__ros-mcp-server.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:parskatt/roma",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/Parskatt/RoMa",
+   "rank": 46,
+   "license": "MIT",
+   "source": "docs/integration-cards/parskatt__roma.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:fabio-sim/lightglue-onnx",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/fabio-sim/LightGlue-ONNX",
+   "rank": 47,
+   "license": "Apache-2.0",
+   "source": "docs/integration-cards/fabio-sim__lightglue-onnx.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:ardupilot/mavproxy",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/ArduPilot/MAVProxy",
+   "rank": 48,
+   "license": "GPL-3.0",
+   "source": "docs/integration-cards/ardupilot__mavproxy.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:gmberton/vpr-methods-evaluation",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/gmberton/VPR-methods-evaluation",
+   "rank": 49,
+   "license": "MIT",
+   "source": "docs/integration-cards/gmberton__vpr-methods-evaluation.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:arplaboratory/satellite-thermal-geo-localization",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/arplaboratory/satellite-thermal-geo-localization",
+   "rank": 50,
+   "license": "MIT",
+   "source": "docs/integration-cards/arplaboratory__satellite-thermal-geo-localization.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:mzahana/tercom_nav",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/mzahana/tercom_nav",
+   "rank": 51,
+   "license": "not stated",
+   "source": "docs/integration-cards/mzahana__tercom_nav.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:snstac/adsbcot",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/snstac/adsbcot",
+   "rank": 52,
+   "license": "Apache-2.0",
+   "source": "docs/integration-cards/snstac__adsbcot.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:dusty-nv/jetson-inference",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/dusty-nv/jetson-inference",
+   "rank": 53,
+   "license": "MIT",
+   "source": "docs/integration-cards/dusty-nv__jetson-inference.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:protomaps/pmtiles",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/protomaps/pmtiles",
+   "rank": 54,
+   "license": "NOASSERTION",
+   "source": "docs/integration-cards/protomaps__pmtiles.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:learnsyslab/gym-pybullet-drones",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/learnsyslab/gym-pybullet-drones",
+   "rank": 55,
+   "license": "MIT",
+   "source": "docs/integration-cards/learnsyslab__gym-pybullet-drones.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:xiotechnologies/fusion",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/xioTechnologies/Fusion",
+   "rank": 56,
+   "license": "MIT",
+   "source": "docs/integration-cards/xiotechnologies__fusion.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:nasa-jpl/rosa",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/nasa-jpl/rosa",
+   "rank": 57,
+   "license": "Apache-2.0",
+   "source": "docs/integration-cards/nasa-jpl__rosa.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:i2nav-whu/ob_gins",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/i2Nav-WHU/OB_GINS",
+   "rank": 58,
+   "license": "GPL-3.0",
+   "source": "docs/integration-cards/i2nav-whu__ob_gins.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:mavlink-router/mavlink-router",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/mavlink-router/mavlink-router",
+   "rank": 59,
+   "license": "Apache-2.0",
+   "source": "docs/integration-cards/mavlink-router__mavlink-router.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:alphafox02/dragonsync",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/alphafox02/DragonSync",
+   "rank": 60,
+   "license": "Apache-2.0",
+   "source": "docs/integration-cards/alphafox02__dragonsync.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:ardupilot/ardupilot_ros",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/ArduPilot/ardupilot_ros",
+   "rank": 61,
+   "license": "GPL-3.0",
+   "source": "docs/integration-cards/ardupilot__ardupilot_ros.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:ion-g-ion/mavlinkmcp",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/ion-g-ion/MAVLinkMCP",
+   "rank": 62,
+   "license": "MIT",
+   "source": "docs/integration-cards/ion-g-ion__mavlinkmcp.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:introlab/rtabmap",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/introlab/rtabmap",
+   "rank": 63,
+   "license": "NOASSERTION",
+   "source": "docs/integration-cards/introlab__rtabmap.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:luxonis/depthai",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/luxonis/depthai",
+   "rank": 64,
+   "license": "not stated",
+   "source": "docs/integration-cards/luxonis__depthai.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:commaai/laika",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/commaai/laika",
+   "rank": 65,
+   "license": "MIT",
+   "source": "docs/integration-cards/commaai__laika.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:opendroneid/receiver-android",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/opendroneid/receiver-android",
+   "rank": 66,
+   "license": "Apache-2.0",
+   "source": "docs/integration-cards/opendroneid__receiver-android.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:bopen/elevation",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/bopen/elevation",
+   "rank": 67,
+   "license": "Apache-2.0",
+   "source": "docs/integration-cards/bopen__elevation.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:px4/px4_ros_com",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/PX4/px4_ros_com",
+   "rank": 68,
+   "license": "BSD-3-Clause",
+   "source": "docs/integration-cards/px4__px4_ros_com.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:semuconsulting/pygnssutils",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/semuconsulting/pygnssutils",
+   "rank": 69,
+   "license": "BSD-3-Clause",
+   "source": "docs/integration-cards/semuconsulting__pygnssutils.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:cesiumgs/cesium",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/cesiumgs/cesium",
+   "rank": 70,
+   "license": "Apache-2.0",
+   "source": "docs/integration-cards/cesiumgs__cesium.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:verlab/accelerated_features",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/verlab/accelerated_features",
+   "rank": 71,
+   "license": "Apache-2.0",
+   "source": "docs/integration-cards/verlab__accelerated_features.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:rpng/mins",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/rpng/MINS",
+   "rank": 72,
+   "license": "GPL-3.0",
+   "source": "docs/integration-cards/rpng__mins.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:geospace-code/pymap3d",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/geospace-code/pymap3d",
+   "rank": 73,
+   "license": "BSD-2-Clause",
+   "source": "docs/integration-cards/geospace-code__pymap3d.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:spencerfolk/rotorpy",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/spencerfolk/rotorpy",
+   "rank": 74,
+   "license": "MIT",
+   "source": "docs/integration-cards/spencerfolk__rotorpy.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:auterion/px4-ros2-interface-lib",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/Auterion/px4-ros2-interface-lib",
+   "rank": 75,
+   "license": "BSD-3-Clause",
+   "source": "docs/integration-cards/auterion__px4-ros2-interface-lib.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:smroid/cedar-solve",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/smroid/cedar-solve",
+   "rank": 76,
+   "license": "Apache-2.0",
+   "source": "docs/integration-cards/smroid__cedar-solve.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:gmberton/vismatch",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/gmberton/vismatch",
+   "rank": 77,
+   "license": "BSD-3-Clause",
+   "source": "docs/integration-cards/gmberton__vismatch.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:kdudkov/goatak",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/kdudkov/goatak",
+   "rank": 78,
+   "license": "AGPL-3.0",
+   "source": "docs/integration-cards/kdudkov__goatak.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:eprosima/micro-xrce-dds-agent",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/eProsima/Micro-XRCE-DDS-Agent",
+   "rank": 79,
+   "license": "Apache-2.0",
+   "source": "docs/integration-cards/eprosima__micro-xrce-dds-agent.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:locusrobotics/fuse",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/locusrobotics/fuse",
+   "rank": 80,
+   "license": "NOASSERTION",
+   "source": "docs/integration-cards/locusrobotics__fuse.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:krakenrf/heimdall_daq_fw",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/krakenrf/heimdall_daq_fw",
+   "rank": 81,
+   "license": "GPL-3.0",
+   "source": "docs/integration-cards/krakenrf__heimdall_daq_fw.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:snstac/takproto",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/snstac/takproto",
+   "rank": 82,
+   "license": "MIT",
+   "source": "docs/integration-cards/snstac__takproto.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:luxonis/depthai-core",
+   "type": "git",
+   "tier": "full",
+   "url": "https://github.com/luxonis/depthai-core",
+   "rank": 83,
+   "license": "MIT",
+   "source": "docs/integration-cards/luxonis__depthai-core.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "js:maplibre-gl.js",
+   "type": "js",
+   "tier": "minimal",
+   "url": "https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js",
+   "dest": "maplibre-gl.js",
+   "license": "BSD-3-Clause",
+   "source": "templates/demo-dashboard/fetch-vendor.sh",
+   "size": null,
+   "size_complete": false,
+   "note": "copy into templates/demo-dashboard/vendor/"
+  },
+  {
+   "id": "js:maplibre-gl.css",
+   "type": "js",
+   "tier": "minimal",
+   "url": "https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css",
+   "dest": "maplibre-gl.css",
+   "license": "BSD-3-Clause",
+   "source": "templates/demo-dashboard/fetch-vendor.sh",
+   "size": null,
+   "size_complete": false,
+   "note": "copy into templates/demo-dashboard/vendor/"
+  },
+  {
+   "id": "js:milsymbol.js",
+   "type": "js",
+   "tier": "minimal",
+   "url": "https://unpkg.com/milsymbol@3.0.4/dist/milsymbol.js",
+   "dest": "milsymbol.js",
+   "license": "MIT",
+   "source": "templates/demo-dashboard/fetch-vendor.sh",
+   "size": null,
+   "size_complete": false,
+   "note": "copy into templates/demo-dashboard/vendor/"
+  },
+  {
+   "id": "js:pmtiles.js",
+   "type": "js",
+   "tier": "minimal",
+   "url": "https://unpkg.com/pmtiles@4.4.1/dist/pmtiles.js",
+   "dest": "pmtiles.js",
+   "license": "BSD-3-Clause",
+   "source": "templates/demo-dashboard/fetch-vendor.sh",
+   "size": null,
+   "size_complete": false,
+   "note": "copy into templates/demo-dashboard/vendor/"
+  },
+  {
+   "id": "tool:pmtiles",
+   "type": "tool",
+   "tier": "minimal",
+   "repo": "protomaps/go-pmtiles",
+   "tag": "v1.31.2",
+   "assets": {
+    "darwin-arm64": "Darwin_arm64",
+    "linux-amd64": "Linux_x86_64",
+    "linux-arm64": "Linux_arm64",
+    "darwin-amd64": "Darwin_x86_64"
+   },
+   "license": "BSD-3-Clause",
+   "source": "docs/integration-cards/protomaps__pmtiles.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "tiles:basemap",
+   "type": "tiles",
+   "tier": "standard",
+   "source_url": "https://build.protomaps.com/{date}.pmtiles",
+   "bbox": "9.75,58.85,10.25,59.15",
+   "maxzoom": 14,
+   "dest": "basemap.pmtiles",
+   "license": "Protomaps basemap: ODbL (OpenStreetMap data), attribution required",
+   "source": "templates/demo-dashboard/README.md (Offline), docs/integration-cards/protomaps__pmtiles.md",
+   "size": null,
+   "size_complete": false,
+   "note": "override --bbox for the venue; size from `pmtiles extract --dry-run` (prep.py --probe)"
+  }
+ ]
+}
