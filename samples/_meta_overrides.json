@@ -145,7 +145,7 @@
  "maritime-ais-spoofing": {
   "group": "Maritime",
   "shows": "Stdlib detectors for spoofing signatures in real Danish AIS; recall and TTD on injected episodes; GeoJSON + CoT",
-  "input": "real",
+  "input": "mixed",
   "runtime": "detectors 5 s on 1.7 M fixes",
   "key_result": "[Injected episodes](README.md#results-on-injected-episodes-all-ran-2026-11-06): recall 0.79 (tuning day), 0.75 (held-out day), median TTD 7-8 s; no real spoofing found in 8.8 h"
  },

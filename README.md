@@ -31,6 +31,7 @@ it lists.
 
 | You want | Go to |
 |---|---|
+| One-page brief cheat sheets: demo, first 2 hours, citable numbers, traps | [docs/cheatsheets/](docs/cheatsheets/README.md) |
 | Project ideas, judging angle, reference architectures, prep checklist | [docs/hackathon-playbook.md](docs/hackathon-playbook.md) |
 | Flagship demo: SITL spoof => integrity monitor => source switch => operator dashboard | [samples/golden-demo](samples/golden-demo/README.md) |
 | A real past brief and seven team solutions, benchmarked | [docs/landscape/blind-flight-teardown.md](docs/landscape/blind-flight-teardown.md) |

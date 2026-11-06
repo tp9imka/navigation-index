@@ -13,6 +13,8 @@ first command per sample), [evidence-matrix.md](evidence-matrix.md) (numbers you
 [reference-stacks.md](reference-stacks.md) (what to build on, licenses),
 [templates/](../templates/README.md) (fill-in files).
 
+Brief family known? Read its [cheat sheet](cheatsheets/README.md) first (3 minutes each).
+
 Times are a plan, not a measurement. If a block overruns by more than 10 minutes, the Lead
 cuts scope, not the next block.
 

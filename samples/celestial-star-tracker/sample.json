@@ -28,5 +28,5 @@
   "shows": "cedar-solve lost-in-space on real star images vs a known WCS, then lat/lon from star elevations above an IMU vertical; error budget for level, vibration, accel bias, clock, refraction",
   "input": "mixed",
   "runtime": "fetch ~5 min (~190 MB); plate solve ~10 s; sim ~5 s",
-  "key_result": "[Plate solve](README.md#1a-accuracy-against-a-known-wcs): 40/40 real cutouts solved, pointing 5.2 arcsec median (12 deg FOV), ~30 ms per 1 MP frame; [position](README.md#error-budget-ran-2026-11-06---runs-200): 1 arcmin level = 1.85-1.87 km, 1 mg accel bias = 6.4 km, 1 s clock = 0.3 km at 50 N"
+  "key_result": "[Plate solve](README.md#1a-accuracy-against-a-known-wcs): 40/40 real cutouts solved, pointing 5.2 arcsec median (12 deg FOV), ~30 ms per 1 MP frame; [position](README.md#error-budget-ran-2026-11-06---runs-200): 1 arcmin level = 1,896 m (theory 1.85 km), 1 mg accel bias = 6.4 km, 1 s clock = 0.3 km at 50 N"
 }

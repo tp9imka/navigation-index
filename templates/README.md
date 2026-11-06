@@ -15,6 +15,7 @@ Start: `cp -r templates/project-repo ~/our-project && cd ~/our-project && make t
 | [risk-register.md](risk-register.md) | Project risks with trigger and fallback | H+0, re-read at the H+12 go/switch checkpoint |
 | [demo-script.md](demo-script.md) | Minute-by-minute live demo with fallback recording plan | Draft at H+0 (five lines), full by H+30, rehearse x3 |
 | [pitch-deck-outline.md](pitch-deck-outline.md) | 9 slides mapped to what defense judges reward | H+30 to H+40 |
+| [pitch/](pitch/README.md) | Pitch kit: 3- and 5-minute skeletons, 15 judge questions with evidence, story bank (10 hooks per brief family tied to measured results), 6-8 slide outline with figure paths and demo-failure fallback, judges' one-pager | H+22 draft, H+30 to H+40 final, rehearse x3 |
 | [judging-self-assessment.md](judging-self-assessment.md) | Score yourself against the judging criteria before judges do | H+22 and again at H+40 |
 | [submission-checklist.md](submission-checklist.md) | Licence, export-control check, secrets scan, reproducibility | H+42 to H+48, before the final push |
 | [post-hackathon-retro.md](post-hackathon-retro.md) | What worked, what to keep in the kit | Within a week after |

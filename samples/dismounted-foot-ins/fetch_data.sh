@@ -1,6 +1,6 @@
 #!/bin/sh
 # Fetch the pyshoe hallway trials (processed .mat, ~2 MB each, 36 trials, ~85 MB) and the raw
-# magnetometer logs of 5 walk trials (~6 MB each) into data/hallway/. Source: the UTIAS FTP
+# magnetometer logs of 6 walk trials (~6 MB each) into data/hallway/. Source: the UTIAS FTP
 # that pyshoe's download_data.sh points at (also on IEEE DataPort:
 # https://ieee-dataport.org/open-access/university-toronto-foot-mounted-inertial-navigation-dataset).
 set -eu
