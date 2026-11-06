@@ -2,7 +2,7 @@
 
 `res:insidegnss-ion-gnss-2025-galileo-resilient-pnt` - blog - <https://insidegnss.com/?p=195993>
 
-**By:** Inside GNSS - **Year:** 2025 - **Level:** intro - **Access:** open
+**By:** Richard Thomas (Inside GNSS) - **Year:** 2025 - **Level:** intro - **Access:** open
 
 Report on the ION GNSS+ 2025 plenary (Galileo history keynote) and the conference focus on GNSS vulnerabilities, assured PNT and LEO PNT pathfinders.
 

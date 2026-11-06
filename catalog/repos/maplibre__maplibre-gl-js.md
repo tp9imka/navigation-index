@@ -37,6 +37,7 @@ Open-source WebGL vector tile map renderer (fork of Mapbox GL JS v1) with styles
 - [OpenLayers](../repos/openlayers__openlayers.md) (alternative_to)
 - [PMTiles](../repos/protomaps__pmtiles.md) (integrates_with)
 - [deck.gl](../repos/visgl__deck.gl.md) (integrates_with)
+- [Golden demo: GPS drag on an ArduCopter SITL AUTO mission, chi-square detection and EKF3 switch to vision, replayed on the dashboard](../samples/golden-demo.md) (uses)
 
 _Indexed by lane(s): planning-gis-c2_
 

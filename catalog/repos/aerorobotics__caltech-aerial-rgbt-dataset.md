@@ -10,7 +10,7 @@ Aerial RGB plus thermal dataset from natural terrain (rivers, coasts, deserts, f
 
 **Why it matters:** Thermal-aerial data with GPS/IMU is rare; it supports night-time visual and thermal navigation research without flying your own sensor rig.
 
-**Hackathon notes:** Use the VIO split to test thermal-inertial odometry; or train RGB-to-thermal translation to build synthetic thermal maps.
+**Hackathon notes:** Use the VIO benchmark to test thermal-inertial odometry, or train RGB-to-thermal translation to build synthetic thermal maps. The labelled subset downloads directly; raw data are ROS1 bags from an S3 bucket. Non-commercial only: data.caltech.edu lists CC BY-NC 4.0 (README says CC BY-SA 4.0, non-commercial).
 
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
 
@@ -24,7 +24,7 @@ Aerial RGB plus thermal dataset from natural terrain (rivers, coasts, deserts, f
 
 ## Referenced by
 
-- [CART: Caltech Aerial RGB-Thermal Dataset in the Wild](../resources/cart-caltech-aerial-rgbt-2024.md) (has_code)
+- [Caltech Aerial RGB-Thermal Dataset in the Wild](../resources/cart-caltech-aerial-rgbt-2024.md) (has_code)
 
 _Indexed by lane(s): round3-expansion_
 

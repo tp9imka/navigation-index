@@ -2,14 +2,15 @@
 
 `res:gnss-raw-iq-jamming-classification-zenodo` - dataset - <https://zenodo.org/records/4629685>
 
-**By:** Zenodo record 4629685 authors - **Year:** 2021 - **Level:** intro - **Access:** open
+**By:** Carolyn J. Swinney, John C. Woods - **Year:** 2021 - **Level:** intro - **Access:** open
 
-Public raw IQ dataset of GNSS jamming signal types (Zenodo record 4629685) used as the basis for spectrogram-based jamming classification notebooks and papers.
+Raw IQ dataset of GNSS jamming signal types (DME, narrowband, single AM, single chirp, single FM, no jamming) with 1000 training and 250 test samples, generated with a MATLAB script built on the Morales Ferre et al. 2019 jammer-classification data. CC BY 4.0.
 
 ## Key takeaways
 
 - Common benchmark for jamming-type classifiers
 - Converted to spectrogram images in follow-up work
+- Signals are generated in MATLAB, not live over-the-air captures
 
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Jamming and spoofing](../concepts/gnss-interference.md)
 

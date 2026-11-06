@@ -18,6 +18,10 @@ Web-accessible shortwave SDR receiver (10 kHz - 30 MHz) with built-in software G
 
 **Domains:** multi
 
+## Referenced by
+
+- [kiwiclient](../repos/jks-prv__kiwiclient.md) (integrates_with)
+
 _Indexed by lane(s): alt-nav_
 
 _GitHub metadata fetched 2026-11-06._

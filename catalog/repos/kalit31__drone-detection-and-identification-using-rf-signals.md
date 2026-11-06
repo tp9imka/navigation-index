@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 16 | Jupyter Notebook | MIT | 2026-01-12 | False | research-prototype | medium |
 
-Code for an ML framework for drone detection and identification from RF signals.
+Notebooks and MATLAB feature extractors for drone detection and identification on DroneRF: PSD, MFCC and time-domain features with XGBoost, a 1D-CNN and a CNN+XGBoost hybrid.
 
 **Why it matters:** Another reproducible baseline on public drone RF data to compare against.
 
-**Hackathon notes:** Notebook-based; pair with DroneRF data.
+**Hackathon notes:** Notebook-based; the processed data is on the Google Drive link in the README, raw DroneRF is CC BY 4.0 on Mendeley. Feature extraction scripts need MATLAB.
 
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md)
 

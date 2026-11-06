@@ -34,6 +34,7 @@ MCP server bridging an LLM to a drone over MAVLink, exposing arming, takeoff, wa
 - [mavlink-mcp (ArduPilot)](../repos/deepakpopli__mavlink-mcp.md) (alternative_to)
 - [ardupilot-mcp (safety-gated)](../repos/rmeadomavic__ardupilot-mcp.md) (alternative_to)
 - [Model Context Protocol specification](../resources/mcp-specification.md) (explains)
+- [LLM mission agent: a safety-gated MAVLink MCP server flying ArduPilot SITL](../samples/llm-mission-agent.md) (explains)
 
 _Indexed by lane(s): gap-fill_
 

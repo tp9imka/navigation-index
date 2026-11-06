@@ -2,15 +2,16 @@
 
 `res:lars-maritime-obstacle-dataset-2023` - dataset - <https://lojzezust.github.io/lars-dataset/>
 
-**By:** Lojze Zust, Janez Pers, Matej Kristan - **Year:** 2023 - **Level:** intermediate - **Access:** open
+**By:** Lojze Zust, Janez Pers, Matej Kristan - **Year:** 2023 - **Level:** intermediate - **Access:** free-registration
 
-ICCV 2023 panoptic obstacle detection benchmark from lakes, rivers and seas, with per-pixel labelled key frames plus preceding frames and an online evaluation server.
+ICCV 2023 panoptic obstacle detection benchmark from lakes, rivers and seas: over 4,000 per-pixel labelled key frames, each with nine preceding frames (40k+ frames), 11 classes and an online evaluation server. CC BY-NC 4.0, research use only, download behind a registration form.
 
 ## Key takeaways
 
 - Most diverse maritime obstacle set by location and conditions
 - Online server for objective scoring
-- Baselines for many segmentation methods
+- Baselines for 27 segmentation methods
+- Non-commercial, research-only terms; no redistribution
 
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Maritime navigation](../concepts/maritime-nav.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md)
 

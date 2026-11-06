@@ -2,7 +2,7 @@
 
 `res:pilot-pixel-to-3d-2026` - paper - <https://arxiv.org/abs/2603.20778>
 
-**By:** NUDT SAW Lab - **Year:** 2026 - **Level:** advanced - **Access:** open
+**By:** Xiaoya Cheng, Long Wang, Yan Liu, Xinyi Liu, Hanlin Tan, Yu Liu, Maojun Zhang, Shen Yan - **Year:** 2026 - **Level:** advanced - **Access:** open
 
 Registers live UAV frames against geo-referenced 3D maps to recover 6-DoF ego pose and geo-locate observed points.
 

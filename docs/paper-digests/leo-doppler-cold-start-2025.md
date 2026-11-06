@@ -30,7 +30,7 @@ Doppler-only LEO positioning is a nonlinear least-squares problem. Local solvers
 ## Limitations
 - Stated by authors: static receiver only (dynamic case and joint orbit estimation left for future sum-of-squares work); the noise bound for tightness is conservative.
 - Our read: the SDP alone leaves 0.71 km error in simulation; always run the GN/DL refinement after it.
-- Our read: Sec. 5.5 says GN diverges or gives no feasible output at 1000 km, while Table 3 lists 2342.50 km. Minor text/table mismatch.
+- Our read: Sec. 5.5 says GN "diverges or fails to yield a feasible output" at 1000 km or more. That matches Table 3: 2342.50 km at 1000 km (diverged) and "-" at 5000 km (no output).
 - Our read: one site, one 35 min Iridium session. The 130-140 m result is dominated by TLE error and is not a statement about Starlink.
 - Our read: ~40 s per solve and a lifted state of size 2N+4 (N = number of measurements) make it an initializer, not a real-time filter.
 

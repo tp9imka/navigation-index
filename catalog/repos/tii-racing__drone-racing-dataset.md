@@ -10,7 +10,7 @@ Annotated dataset of fast autonomous and human-piloted quadrotor flight with vis
 
 **Why it matters:** High-speed VIO and gate-relative state estimation data.
 
-**Hackathon notes:** Use to test VIO at high speed.
+**Hackathon notes:** Dataset CC BY 4.0, code MIT. 18 autonomous and 18 piloted flights per README, over 21 m/s with mocap ground truth; v3.0.0 (Oct 2025) adds six pro-pilot flights. Use to test VIO at high speed.
 
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md)
 

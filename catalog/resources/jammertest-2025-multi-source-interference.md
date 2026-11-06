@@ -2,13 +2,14 @@
 
 `res:jammertest-2025-multi-source-interference` - paper - <https://arxiv.org/abs/2608.15819>
 
-**By:** Jammertest 2025 researchers - **Year:** 2026 - **Level:** advanced - **Access:** open
+**By:** Lucas Heublein, Inigo Cortes Vidal, Tobias Feigl, Alexander Rügamer, Felix Ott - **Year:** 2026 - **Level:** advanced - **Access:** open
 
-Analysis of how multiple simultaneous interference sources affected receivers at Jammertest 2025.
+Fraunhofer IIS dataset from Jammertest 2025 (Andøya) with a single-antenna E1/E5 receiver and a 2x2 CRPA array, benchmarking 17 ML models for interference type, bandwidth and power, plus YOLOv8s / RF-DETR detection of multiple simultaneous interferers in spectrograms.
 
 ## Key takeaways
 
-- Multi-emitter scenarios behave differently from single jammers
+- Near-99% within-area classification but large drops across test areas => domain shift is the real problem
+- Dataset is open on Zenodo (record 21332689) under CC BY-SA 4.0
 
 **Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md)
 

@@ -1,4 +1,4 @@
-# Martin Saska - RSS 2024 Aerial Swarms workshop slides
+# Martin Saska - Onboard relative localization for agile aerial swarming in the wild (RSS 2024 Aerial Swarms workshop slides)
 
 `res:saska-rss-2024-aerial-swarms` - talk - <https://imrclab.github.io/workshop-aerial-swarms-rss2024/presentations/saska_RSS_swarms_2024_compress.pdf>
 

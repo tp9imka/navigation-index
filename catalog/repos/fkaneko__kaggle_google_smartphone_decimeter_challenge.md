@@ -10,7 +10,7 @@
 
 **Why it matters:** Readable Kaggle-style pipeline for smartphone GNSS post-processing.
 
-**Hackathon notes:** Reference for feature engineering on Android GNSS logs.
+**Hackathon notes:** Apache-2.0 code; GSDC data is under Kaggle competition rules (not checked). Denoises host-baseline positions (STFT + CNN, LightGBM on IMU) and snaps to training ground truth with KNN, so it relies on repeated routes. Private score about 2.61 m.
 
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [GNSS/INS integration](../concepts/gnss-ins.md)
 

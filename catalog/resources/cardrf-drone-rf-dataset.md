@@ -2,7 +2,7 @@
 
 `res:cardrf-drone-rf-dataset` - dataset - <https://ieee-dataport.org/node/9593>
 
-**By:** IEEE DataPort contributors (CardRF) - **Year:** 2022 - **Level:** intermediate - **Access:** free-registration
+**By:** Olusiji Medaiyese, Martins Ezuma, Adrian Lauf, Ayodeji Adeniran - **Year:** 2022 - **Level:** intermediate - **Access:** free-registration
 
 Outdoor RF dataset of drone controller and telemetry signals plus Bluetooth and Wi-Fi, stored as .mat files, covering line-of-sight and beyond-line-of-sight conditions.
 

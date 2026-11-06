@@ -1,10 +1,10 @@
 # CopterHack 2022
 
-`res:copterhack-2022` - competition - <https://copterexpress.github.io/clover-vuepress/en/copterhack2022.html>
+`res:copterhack-2022` - competition - <https://web.archive.org/web/20231203134525/https://clover.coex.tech/en/copterhack2022.html>
 
 **By:** COEX - **Year:** 2022 - **Level:** intro - **Access:** open
 
-Results page for CopterHack 2022, an open-source drone project competition on the Clover platform; Atena (Swarm in Blocks) won.
+Results page for CopterHack 2022, an open-source drone project competition on the Clover platform; the final was on April 23, 2022 and Atena - Grupo SEMEAR (Swarm in Blocks, 21.6 points) won ahead of FTL (Advanced Clover 2).
 
 ## Key takeaways
 

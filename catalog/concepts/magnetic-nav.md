@@ -21,7 +21,7 @@ MagNav: matching magnetometer readings to crustal anomaly maps; aircraft compens
 - [MAMMAL](../repos/powerbroker2__mammal.md) - fit: medium - Python package (Magnetic Anomaly Map Matching Airborne and Land) for simulating and processing aeromagnetic survey data and building anomaly maps for MagNav.
 - [Rao-Blackwellized SLAM smoothing (magnetic)](../repos/manonkok__rao-blackwellized-slam-smoothing.md) - fit: medium - MATLAB code for Rao-Blackwellized particle smoothing for SLAM, including magnetic field mapping and map-matching localization with a magnetometer.
 - [DroneMagNav](../repos/ajisrawi__dronemagnav.md) - fit: medium - Open hardware + firmware design for a drone magnetic-anomaly navigation board (ESP32-S3, magnetometer, IMU, baro) running particle-filter matching against a global anomaly map and feeding position to a flight controller 
-- [Magnetic-field odometry](../repos/huang-chuan__magnetic-field-odometry.md) - fit: low - Magnetic-field aided inertial navigation using a magnetometer array for odometry.
+- [Magnetic-field odometry](../repos/huang-chuan__magnetic-field-odometry.md) - fit: low - MATLAB simulation of a tightly-integrated magnetic-field aided INS using a magnetometer array; it generates its own trajectory and sensor data.
 
 ## Documents, talks, courses, datasets (23)
 

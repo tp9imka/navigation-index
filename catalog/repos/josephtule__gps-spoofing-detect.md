@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 34 | MATLAB | ? | 2022-01-28 | False | educational | low |
 
-MATLAB project exploring GNSS spoofing detection methods.
+MATLAB course project with a write-up that tests GNSS spoofing detection on the TEXBAT DS7 scenario, with its own IQ extraction and least-squares navigation code.
 
 **Why it matters:** Small educational example.
 
-**Hackathon notes:** Reference only.
+**Hackathon notes:** Reference only. Needs TEXBAT processed data (open index on rnl-data.ae.utexas.edu, no terms stated) and spanikp's GNSS-toolbox. No licence file.
 
 **Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md)
 

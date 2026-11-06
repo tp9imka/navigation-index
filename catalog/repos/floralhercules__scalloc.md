@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 5 | Python | NOASSERTION | 2026-10-15 | False | active-research | medium |
 
-Geo-localization of oblique thermal UAV image sequences against satellite maps.
+Continuous geo-localization of oblique thermal UAV sequences against a 2D satellite map (VGGT reconstruction + MINIMA-RoMa matching), with the Thermal-Oblique dataset: 216 trajectories, 28,112 frames.
 
 **Why it matters:** Night-time thermal geo-localization with oblique cameras, closer to real FPV/ISR views.
 
-**Hackathon notes:** Recent; check data availability.
+**Hackathon notes:** No code licence yet - the author's notice says it is pending (all rights reserved). Depends on VGGT, whose licence prohibits military and warfare use; the original VGGT-1B checkpoint is non-commercial. Data, map and weights are on HF (gated, Apache-2.0 tag).
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
 

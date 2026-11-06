@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 8 | JavaScript | ? | 2023-06-09 | False | archived | medium |
 
-Block-programming interface for drone swarms on COEX Clover, CopterHack 2022 winner by team Atena.
+Block-programming and web control platform for drone swarms on COEX Clover (ROS, Gazebo); CopterHack 2022 winner by team Atena. The repo now holds Swarm in Blocks 2.0 (CopterHack 2023, 4th).
 
 **Why it matters:** Example of a winning open CopterHack project.
 
-**Hackathon notes:** Runs on Clover simulation.
+**Hackathon notes:** No licence (all rights reserved). Runs on the Clover Gazebo simulation; the real-swarm mode is barely tested.
 
 **Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Mission planning and routing](../concepts/mission-planning.md)
 

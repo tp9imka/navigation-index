@@ -10,7 +10,7 @@ Multiple-environment self-adaptive network for aerial-view geo-localization unde
 
 **Why it matters:** Weather robustness for drone-satellite matching.
 
-**Hackathon notes:** Baseline for the UAVM 2024 multi-weather track.
+**Hackathon notes:** MIT code; needs University-1652 (request-only, research use). Its University-WX weather augmentation matches the UAVM 2024 multi-weather setting, but it is not named as the official challenge baseline.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
 

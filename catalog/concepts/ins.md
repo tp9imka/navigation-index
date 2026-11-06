@@ -4,9 +4,10 @@
 
 Strapdown mechanization, IMU error models, calibration, dead reckoning.
 
-## Samples (4)
+## Samples (5)
 
 - [GNSS/INS EKF through a GNSS outage and a spoofing walk-off](../samples/gnss-ins-ekf-outage.md) - A stdlib-only 2D loosely-coupled GNSS/INS EKF (8 states, hand-written matrix helpers) on a synthetic vehicle with biased, noisy 100 Hz IMU and 1 Hz GNSS.
+- [Heightmap-gradient particle filter on real Copernicus DEM (SPRIN-D CTU method) vs TERCOM](../samples/terrain-heightmap-pf.md) - Re-implementation of the CTU SPRIN-D winner's localization (arXiv 2510.01348): local heightmap gradients matched to a prior DEM with the unnormalized correlation coefficient, Gaussian-blurred similarity maps weighting a 
 - [MagNav.jl quickstart: Tolles-Lawson and EKF on the SGL 2020 flight](../samples/magnav-quickstart.md) - A Julia walkthrough with MagNav.jl that downloads the public SGL 2020 challenge flight and Ottawa anomaly maps, compensates the scalar magnetometer with Tolles-Lawson on a calibration box, and runs the MagNav EKF against
 - [PX4 SITL GPS denial: inject, measure drift, recover](../samples/px4-sitl-gps-denial.md) - Flies a square mission in PX4 SITL (SIH quadrotor, headless; Gazebo also works per PX4 docs), denies GPS mid-mission, logs EKF2 health and estimated vs ground-truth position, then restores GPS and returns home.
 - [Terrain-relative navigation with a particle filter](../samples/terrain-relative-nav-pf.md) - A stdlib-only simulation of TERCOM/TRN: an aircraft with a biased INS and a radar altimeter matches its measured terrain profile against a seeded synthetic DEM with a particle filter that also estimates the INS velocity 
@@ -80,7 +81,7 @@ Strapdown mechanization, IMU error models, calibration, dead reckoning.
 - [iekf (contagon)](../repos/contagon__iekf.md) - fit: low - Invariant Kalman filter implementation on SE(2) and SE(3).
 - [AV-Matlab-SW](../repos/jaffarrell__av-matlab-sw.md) - fit: low - MATLAB software for Allan variance calculations accompanying a published article on IMU noise characterisation (Farrell et al.).
 - [Gaussian-RIO](../repos/robotics-upo__gaussian-rio.md) - fit: low - 4D radar-inertial odometry using Gaussian modeling of radar points and multi-hypothesis scan matching.
-- [Magnetic-field odometry](../repos/huang-chuan__magnetic-field-odometry.md) - fit: low - Magnetic-field aided inertial navigation using a magnetometer array for odometry.
+- [Magnetic-field odometry](../repos/huang-chuan__magnetic-field-odometry.md) - fit: low - MATLAB simulation of a tightly-integrated magnetic-field aided INS using a magnetometer array; it generates its own trajectory and sensor data.
 - [graduate_work (UAV INS module thesis)](../repos/danamarkova__graduate_work.md) - fit: low - Russian graduate thesis code: 'Development of a UAV inertial navigation module using auxiliary navigation data'.
 
 ## Documents, talks, courses, datasets (40)

@@ -1,0 +1,1100 @@
+[
+ {
+  "id": "res:cisa-time-guidance-network-operators",
+  "kind": "doc",
+  "title": "Time Guidance for Network Operators, Chief Information Officers, and Chief Information Security Officers",
+  "url": "https://www.cisa.gov/publication/time-guidance-network-operators-cios-cisos",
+  "authors": [
+   "CISA"
+  ],
+  "year": 2022,
+  "summary": "CISA guidance on making enterprise time resilient and secure: know where time comes from, use several independent sources, detect anomalies in timing sources, and test. The 2022 update added network considerations from a tabletop pilot plus self-assessment questions and a test plan.",
+  "key_takeaways": [
+   "Inventory every time dependency and its upstream source",
+   "Use multiple, diverse time sources and compare them",
+   "Detect and handle anomalies in time sources; test the response"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:assured-pnt",
+   "concept:standards"
+  ],
+  "tags": [
+   "cisa",
+   "resilient-timing",
+   "ntp",
+   "ptp",
+   "guidance"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:cisa-resilient-timing-fact-sheet",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:cisa-resilient-timing-fact-sheet",
+  "kind": "doc",
+  "title": "Technical-Level Resilient Timing Overview (CISA fact sheet)",
+  "url": "https://www.cisa.gov/sites/default/files/2023-02/Technical-Level_Resilient_Timing_Overview-CISA_Fact_Sheet_508C.pdf",
+  "authors": [
+   "CISA"
+  ],
+  "year": 2023,
+  "summary": "Short fact sheet that frames time as an invisible utility, lists sectors that depend on it, and summarizes technical measures for resilient timing.",
+  "key_takeaways": [
+   "Many organizations do not know where their time comes from",
+   "Short entry point before the longer CISA time guidance"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "cisa",
+   "fact-sheet",
+   "resilient-timing"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:cisa-time-guidance-network-operators",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:cisa-best-practices-time-frequency-fixed-2015",
+  "kind": "doc",
+  "title": "Best Practices for Improved Robustness of Time and Frequency Sources in Fixed Locations",
+  "url": "https://www.cisa.gov/resources-tools/resources/best-practices-improved-robustness-time-and-frequency-sources-fixed-locations",
+  "authors": [
+   "DHS / CISA"
+  ],
+  "year": 2015,
+  "summary": "Best-practice guide for people who install and maintain time and frequency sources at fixed infrastructure sites, where GPS receivers are the usual source of time and time interval.",
+  "key_takeaways": [
+   "Written for fixed sites that take time from GPS receivers",
+   "Covers installation and operating practice rather than protocol design"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:assured-pnt",
+   "concept:gnss-interference"
+  ],
+  "tags": [
+   "dhs",
+   "cisa",
+   "gps-timing",
+   "best-practices",
+   "fixed-site"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:cisa-time-guidance-network-operators",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:dhs-st-pnt-best-practices-critical-infrastructure-2025",
+  "kind": "doc",
+  "title": "Best Practices for Resilient Positioning, Navigation, and Timing (PNT) Supporting Critical Infrastructure",
+  "url": "https://www.dhs.gov/science-and-technology/publication/pnt-best-practices-supporting-critical-infrastructure",
+  "authors": [
+   "DHS Science and Technology Directorate"
+  ],
+  "year": 2025,
+  "summary": "DHS S&T guide released in February 2025 under EO 13905 to help providers, owners and operators use PNT responsibly. It gives general best practices with GPS/GNSS examples and use cases including stationary timing and moving platforms, applied through risk assessment.",
+  "key_takeaways": [
+   "Includes a stationary-timing use case",
+   "Risk-based: assess, then choose resilience measures"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:assured-pnt",
+   "concept:standards"
+  ],
+  "tags": [
+   "dhs",
+   "eo-13905",
+   "best-practices",
+   "critical-infrastructure"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:eo-13905-responsible-pnt",
+    "rel": "cites"
+   }
+  ]
+ },
+ {
+  "id": "res:nist-sp1065-frequency-stability-handbook",
+  "kind": "book",
+  "title": "Handbook of Frequency Stability Analysis (NIST SP 1065)",
+  "url": "https://www.nist.gov/publications/handbook-frequency-stability-analysis",
+  "authors": [
+   "W. J. Riley",
+   "D. A. Howe"
+  ],
+  "year": 2008,
+  "summary": "NIST tutorial and reference on characterizing clocks and oscillators: Allan, modified Allan, Hadamard and time deviation, power-law noise types, drift removal and confidence intervals.",
+  "key_takeaways": [
+   "Identify the noise type from the ADEV slope before extrapolating",
+   "Remove drift separately; ADEV alone does not show aging",
+   "TDEV is the time-domain statistic for time error over an interval"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:calibration"
+  ],
+  "tags": [
+   "allan-deviation",
+   "tdev",
+   "frequency-stability",
+   "nist"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:aewallin/allantools",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:nist-lombardi-fundamentals-time-frequency",
+  "kind": "paper",
+  "title": "Fundamentals of Time and Frequency",
+  "url": "https://tf.nist.gov/general/pdf/1498.pdf",
+  "authors": [
+   "M. A. Lombardi (NIST)"
+  ],
+  "year": 2002,
+  "summary": "Handbook chapter introducing accuracy vs stability, quartz, rubidium and cesium standards, and time and frequency transfer by radio and satellite signals.",
+  "key_takeaways": [
+   "Accuracy and stability are different properties",
+   "Overview of oscillator families and time-transfer signals"
+  ],
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "nist",
+   "primer",
+   "oscillators",
+   "time-transfer"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:nist-lombardi-gpsdo-calibration",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:nist-lombardi-gpsdo-calibration",
+  "kind": "paper",
+  "title": "The Use of GPS Disciplined Oscillators as Primary Frequency Standards for Calibration and Metrology Laboratories",
+  "url": "https://tf.nist.gov/general/pdf/2297.pdf",
+  "authors": [
+   "M. A. Lombardi (NIST)"
+  ],
+  "year": 2008,
+  "summary": "Explains how GPSDOs work, why they are attractive as self-calibrating references, and where they fall short of a cesium standard, including behaviour when the GPS signal is lost.",
+  "key_takeaways": [
+   "A GPSDO is only as good as its local oscillator once GNSS is gone",
+   "Discusses traceability and verification of GPSDO outputs"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "gpsdo",
+   "nist",
+   "holdover",
+   "metrology"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:andrewbcn/stm32-gpsdo",
+    "rel": "explains"
+   }
+  ]
+ },
+ {
+  "id": "res:vig-intro-quartz-frequency-standards",
+  "kind": "doc",
+  "title": "Introduction to Quartz Frequency Standards - Oscillator Comparison and Selection",
+  "url": "https://pe2bz.philpem.me.uk/Detect-Sense/-%20Sound-Vibration/Info-903-Piezo-Quartz/Intro-01/vigcomp.htm",
+  "authors": [
+   "J. R. Vig (US Army Research Laboratory)"
+  ],
+  "year": 1992,
+  "summary": "Section of Vig's introduction to quartz frequency standards comparing TCXO, MCXO, OCXO, rubidium, RbXO and cesium on accuracy, aging, temperature stability, short-term stability, size, warm-up, power and price (table 1). Hosted on a mirror; the original is an Army technical report.",
+  "key_takeaways": [
+   "One table with aging/year, temperature stability and ADEV at 1 s per oscillator class",
+   "OCXO beats rubidium at 1 s; rubidium wins on aging",
+   "Used as the parameter source for samples/timing-holdover"
+  ],
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "oscillator",
+   "tcxo",
+   "ocxo",
+   "rubidium",
+   "cesium",
+   "aging"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:microchip-csac-sa65-datasheet",
+  "kind": "doc",
+  "title": "Microchip SA65 Chip Scale Atomic Clock datasheet (DS00003478F)",
+  "url": "https://components101.com/sites/default/files/2026-08/CSAC-SA65-Datasheet.pdf",
+  "authors": [
+   "Microchip Technology"
+  ],
+  "year": 2025,
+  "summary": "Datasheet for the SA65 CSAC: ADEV 3e-10 at 1 s, typical aging below 9e-10 per month, +/-3e-10 frequency change over -40 to +80 C, under 120 mW, with 1PPS input for discipline to GNSS. Third-party mirror of the 9/25 revision.",
+  "key_takeaways": [
+   "Low power atomic holdover for portable and battery systems",
+   "1PPS input to discipline it from a GNSS receiver"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "csac",
+   "atomic-clock",
+   "datasheet",
+   "holdover"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:rfc5905-ntpv4",
+  "kind": "standard",
+  "title": "RFC 5905: Network Time Protocol Version 4: Protocol and Algorithms Specification",
+  "url": "https://www.rfc-editor.org/rfc/rfc5905",
+  "authors": [
+   "D. Mills",
+   "J. Martin",
+   "J. Burbank",
+   "W. Kasch"
+  ],
+  "year": 2010,
+  "summary": "The NTPv4 specification: on-wire protocol, clock filter, selection and clustering algorithms, and the clock discipline loop.",
+  "key_takeaways": [
+   "Selection and clustering reject falsetickers when several servers are used",
+   "The discipline algorithm is a hybrid phase/frequency loop"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:standards"
+  ],
+  "tags": [
+   "ntp",
+   "rfc",
+   "ietf"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:ntp-project/ntp",
+    "rel": "has_code"
+   },
+   {
+    "id": "repo:gitlab.com/chrony/chrony",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:rfc8915-nts",
+  "kind": "standard",
+  "title": "RFC 8915: Network Time Security for the Network Time Protocol",
+  "url": "https://www.rfc-editor.org/rfc/rfc8915",
+  "authors": [
+   "D. Franke",
+   "D. Sibold",
+   "K. Teichel",
+   "M. Dansarie",
+   "R. Sundblad"
+  ],
+  "year": 2020,
+  "summary": "Specifies NTS: a TLS-based key exchange followed by authenticated NTP packets, protecting clients from on-path spoofing of time responses.",
+  "key_takeaways": [
+   "Authenticates the server; does not stop delay attacks",
+   "Supported by chrony, ntpd-rs and NTPsec"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:standards",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "nts",
+   "ntp",
+   "rfc",
+   "authentication"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:pendulum-project/ntpd-rs",
+    "rel": "has_code"
+   },
+   {
+    "id": "repo:gitlab.com/chrony/chrony",
+    "rel": "has_code"
+   },
+   {
+    "id": "repo:cloudflare/cfnts",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:rfc7384-time-protocol-security",
+  "kind": "standard",
+  "title": "RFC 7384: Security Requirements of Time Protocols in Packet Switched Networks",
+  "url": "https://www.rfc-editor.org/rfc/rfc7384",
+  "authors": [
+   "T. Mizrahi"
+  ],
+  "year": 2014,
+  "summary": "Threat model and security requirements for NTP and PTP: packet manipulation, spoofing, replay, rogue master, delay attacks, cryptographic attacks and DoS.",
+  "key_takeaways": [
+   "Delay attacks cannot be stopped by cryptography alone",
+   "Useful checklist for a timing threat model slide"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:standards",
+   "concept:ew-resilience"
+  ],
+  "tags": [
+   "ntp",
+   "ptp",
+   "security",
+   "threat-model",
+   "rfc"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:rfc8915-nts",
+    "rel": "cites"
+   }
+  ]
+ },
+ {
+  "id": "res:rfc9523-khronos",
+  "kind": "standard",
+  "title": "RFC 9523: A Secure Selection and Filtering Mechanism for the Network Time Protocol with Khronos",
+  "url": "https://www.rfc-editor.org/rfc/rfc9523",
+  "authors": [
+   "N. Rozen-Schiff",
+   "D. Dolev",
+   "T. Mizrahi",
+   "M. Schapira"
+  ],
+  "year": 2024,
+  "summary": "Informational RFC describing Khronos: an NTP client watchdog that samples many servers and uses trimming to bound how far a man-in-the-middle controlling some of them can shift time.",
+  "key_takeaways": [
+   "Sample many servers, trim outliers, bound the shift",
+   "Grew out of the Chronos NDSS 2018 work"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:standards",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "ntp",
+   "khronos",
+   "rfc",
+   "time-shifting"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:deutsch-2018-chronos-ndss",
+    "rel": "cites"
+   }
+  ]
+ },
+ {
+  "id": "res:ietf-roughtime-draft",
+  "kind": "standard",
+  "title": "Roughtime (draft-ietf-ntp-roughtime)",
+  "url": "https://datatracker.ietf.org/doc/draft-ietf-ntp-roughtime/",
+  "authors": [
+   "IETF NTP working group"
+  ],
+  "year": 2024,
+  "summary": "IETF draft specifying Roughtime: signed coarse time responses that let clients chain queries across servers and prove misbehaviour.",
+  "key_takeaways": [
+   "Coarse but cryptographically accountable time",
+   "Good boot-time sanity bound for GNSS time"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:standards"
+  ],
+  "tags": [
+   "roughtime",
+   "ietf",
+   "authenticated-time"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:cloudflare/roughtime",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:ieee-1588-2019",
+  "kind": "standard",
+  "title": "IEEE 1588-2019: IEEE Standard for a Precision Clock Synchronization Protocol for Networked Measurement and Control Systems",
+  "url": "https://standards.ieee.org/ieee/1588/6825/",
+  "authors": [
+   "IEEE"
+  ],
+  "year": 2020,
+  "summary": "The PTP standard (version 2.1), approved November 2019 and published June 2020. Defines ordinary, boundary and transparent clocks, profiles and an optional security mechanism.",
+  "key_takeaways": [
+   "PTP accuracy depends on hardware timestamping and symmetric paths",
+   "The 2019 edition adds optional security mechanisms"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:standards"
+  ],
+  "tags": [
+   "ptp",
+   "ieee-1588",
+   "standard"
+  ],
+  "level": "advanced",
+  "access": "paywalled",
+  "related": [
+   {
+    "id": "repo:nwtime/linuxptp",
+    "rel": "has_code"
+   },
+   {
+    "id": "repo:pendulum-project/statime",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:itu-t-g8271",
+  "kind": "standard",
+  "title": "ITU-T G.8271: Time and phase synchronization aspects of telecommunication networks",
+  "url": "https://www.itu.int/rec/T-REC-G.8271",
+  "authors": [
+   "ITU-T"
+  ],
+  "year": 2020,
+  "summary": "Telecom recommendation that sets time and phase synchronization requirements and network limits for packet networks (2020 base text with a 2024 amendment).",
+  "key_takeaways": [
+   "Source of the telecom time-error budgets that PRTC/T-BC specs feed into"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:standards"
+  ],
+  "tags": [
+   "itu-t",
+   "telecom",
+   "phase-sync"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:itu-t-g8272-prtc",
+    "rel": "cites"
+   }
+  ]
+ },
+ {
+  "id": "res:itu-t-g8272-prtc",
+  "kind": "standard",
+  "title": "ITU-T G.8272: Timing characteristics of primary reference time clocks",
+  "url": "https://www.itu.int/rec/T-REC-G.8272",
+  "authors": [
+   "ITU-T"
+  ],
+  "year": 2025,
+  "summary": "Defines the primary reference time clock (PRTC), the GNSS-fed time source at the top of a telecom timing chain, and its output limits.",
+  "key_takeaways": [
+   "PRTC = the 'grandmaster from GNSS' in telecom vocabulary"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:standards"
+  ],
+  "tags": [
+   "itu-t",
+   "prtc",
+   "telecom",
+   "gnss-timing"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:itu-t-g8272-1-eprtc",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:itu-t-g8272-1-eprtc",
+  "kind": "standard",
+  "title": "ITU-T G.8272.1: Timing characteristics of enhanced primary reference time clocks",
+  "url": "https://www.itu.int/rec/T-REC-G.8272.1",
+  "authors": [
+   "ITU-T"
+  ],
+  "year": 2024,
+  "summary": "Defines the enhanced PRTC: GNSS plus an autonomous primary reference (in practice cesium or equivalent) to hold time through long GNSS outages. Secondary summaries describe about 30 ns to UTC when locked and around 100 ns over multi-week holdover; read the Recommendation for normative values.",
+  "key_takeaways": [
+   "Holdover is specified as a bound over days, not seconds",
+   "The 2024 edition adds parametric holdover"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:standards",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "itu-t",
+   "eprtc",
+   "holdover",
+   "cesium",
+   "telecom"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:calnex-eprtc-summary",
+    "rel": "explains"
+   }
+  ]
+ },
+ {
+  "id": "res:calnex-eprtc-summary",
+  "kind": "doc",
+  "title": "ITU-T G.8272.1 (ePRTC) One-Page Summary",
+  "url": "https://calnexsolutions.atlassian.net/wiki/spaces/GDW/pages/10518876/ITU-T+G.8272.1+ePRTC+One-Page+Summary",
+  "authors": [
+   "Calnex Solutions"
+  ],
+  "year": 2024,
+  "summary": "Vendor one-page summary of the ePRTC: within 30 ns of UTC when locked to GNSS and within 100 ns of UTC for up to 40 days in holdover, depending on the locked period.",
+  "key_takeaways": [
+   "Quick numbers for a pitch; check against the ITU text"
+  ],
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "eprtc",
+   "holdover",
+   "summary"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:itu-t-g8272-1-eprtc",
+    "rel": "explains"
+   }
+  ]
+ },
+ {
+  "id": "res:meta-ptp-at-meta-2022",
+  "kind": "blog",
+  "title": "How Precision Time Protocol is being deployed at Meta",
+  "url": "https://engineering.fb.com/2022/11/21/production-engineering/precision-time-protocol-at-meta/",
+  "authors": [
+   "O. Obleukhov",
+   "A. Byagowi"
+  ],
+  "year": 2022,
+  "summary": "Meta's PTP architecture: Time Appliance racks, unicast PTP through transparent clocks, and clients that report a window of uncertainty instead of a single time. When an appliance enters holdover its uncertainty grows with oscillator stability and clients are steered away by clock class.",
+  "key_takeaways": [
+   "Publish an uncertainty bound with time, not just time",
+   "Holdover is signalled to clients through clockClass"
+  ],
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "ptp",
+   "meta",
+   "holdover",
+   "window-of-uncertainty"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:meta/time",
+    "rel": "has_code"
+   },
+   {
+    "id": "repo:time-appliances-project/time-card",
+    "rel": "uses"
+   }
+  ]
+ },
+ {
+  "id": "res:meta-time-appliance-2021",
+  "kind": "blog",
+  "title": "Open-sourcing a more precise time appliance",
+  "url": "https://engineering.fb.com/2021/08/11/open-source/time-appliance/",
+  "authors": [
+   "A. Byagowi",
+   "O. Obleukhov"
+  ],
+  "year": 2021,
+  "summary": "Introduces the Time Card (GNSS receiver, miniature atomic clock, FPGA time engine on PCIe) and the OCP Time Appliance Project. States a holdover target of within 1 microsecond over 24 hours and reports a 24-hour test with PPS drift within 300 ns.",
+  "key_takeaways": [
+   "Atomic holdover target: 1 us per 24 h",
+   "Time Card driver is in Linux 5.15+"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "time-card",
+   "ocp",
+   "holdover",
+   "atomic-clock"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:time-appliances-project/time-card",
+    "rel": "has_code"
+   },
+   {
+    "id": "repo:time-appliances-project/open-time-server",
+    "rel": "explains"
+   }
+  ]
+ },
+ {
+  "id": "res:cern-white-rabbit",
+  "kind": "doc",
+  "title": "White Rabbit (CERN project page)",
+  "url": "https://white-rabbit.web.cern.ch/",
+  "authors": [
+   "CERN"
+  ],
+  "year": 2024,
+  "summary": "Project page for White Rabbit, the CERN-led extension of PTP and synchronous Ethernet that distributes sub-nanosecond time over fibre; links to specs, hardware and users.",
+  "key_takeaways": [
+   "Sub-ns time distribution inside a facility without GNSS at each node",
+   "Open hardware and HDL on the Open Hardware Repository"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:standards"
+  ],
+  "tags": [
+   "white-rabbit",
+   "ptp",
+   "synce",
+   "cern"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:gitlab.com/ohwr/project/wr-cores",
+    "rel": "has_code"
+   },
+   {
+    "id": "repo:gitlab.com/ohwr/project/ppsi",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:malhotra-2016-attacking-ntp",
+  "kind": "paper",
+  "title": "Attacking the Network Time Protocol",
+  "url": "https://www.ndss-symposium.org/wp-content/uploads/2017/09/attacking-network-time-protocol.pdf",
+  "authors": [
+   "A. Malhotra",
+   "I. E. Cohen",
+   "E. Brakke",
+   "S. Goldberg"
+  ],
+  "year": 2016,
+  "summary": "NDSS 2016 paper showing on-path time shifting of NTP clients, an off-path single-packet denial of service against NTP synchronization, and related attacks that exploit unauthenticated NTP.",
+  "key_takeaways": [
+   "Unauthenticated NTP can be shifted by an on-path attacker",
+   "Some attacks work off-path"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:ew-resilience"
+  ],
+  "tags": [
+   "ntp",
+   "security",
+   "time-shifting",
+   "ndss"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:ntp-project/ntp",
+    "rel": "evaluates"
+   }
+  ]
+ },
+ {
+  "id": "res:deutsch-2018-chronos-ndss",
+  "kind": "paper",
+  "title": "Preventing (Network) Time Travel with Chronos",
+  "url": "https://www.ndss-symposium.org/wp-content/uploads/2018/02/ndss2018_02A-2_Deutsch_paper.pdf",
+  "authors": [
+   "O. Deutsch",
+   "N. Rozen Schiff",
+   "D. Dolev",
+   "M. Schapira"
+  ],
+  "year": 2018,
+  "summary": "NDSS 2018 paper proposing Chronos, an NTP client that queries many servers and discards outliers to bound time-shifting by a man in the middle; basis of the later Khronos RFC.",
+  "key_takeaways": [
+   "Many servers plus trimming bounds an attacker's shift"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "ntp",
+   "chronos",
+   "time-shifting",
+   "ndss"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:rfc9523-khronos",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:shepard-humphreys-2012-pmu-spoofing",
+  "kind": "paper",
+  "title": "Evaluation of the vulnerability of phasor measurement units to GPS spoofing attacks",
+  "url": "https://ideas.repec.org/a/eee/ijocip/v5y2012i3p146-153.html",
+  "authors": [
+   "D. P. Shepard",
+   "T. E. Humphreys",
+   "A. A. Fansler"
+  ],
+  "year": 2012,
+  "summary": "International Journal of Critical Infrastructure Protection paper that spoofed the GPS timing receivers of power-grid phasor measurement units and showed their timestamps could be shifted.",
+  "key_takeaways": [
+   "Classic demonstration of GNSS time-push spoofing on infrastructure"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:gnss-interference"
+  ],
+  "tags": [
+   "spoofing",
+   "pmu",
+   "power-grid",
+   "gps-timing"
+  ],
+  "level": "advanced",
+  "access": "paywalled",
+  "related": [
+   {
+    "id": "res:ut-texbat",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:meinberg-gps-utc-anomaly-2016",
+  "kind": "report",
+  "title": "Global GPS time anomaly on Tue, Jan 26th (2016)",
+  "url": "https://www.meinbergglobal.com/english/news/global-gps-time-anomaly-on-tue-jan-26th.htm",
+  "authors": [
+   "Meinberg"
+  ],
+  "year": 2016,
+  "summary": "Vendor note on the January 2016 event in which GPS receivers worldwide, including all of Meinberg's own, showed time jumps of about 13 microseconds; later analyses traced it to faulty UTC correction parameters uploaded to some satellites.",
+  "key_takeaways": [
+   "A non-adversarial GNSS time fault hit many receivers at once",
+   "Argues for holdover and cross-checks even without an attacker"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "gps",
+   "utc-offset",
+   "anomaly",
+   "2016"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:insidegnss-gps-utc-anomaly-2016",
+    "rel": "explains"
+   }
+  ]
+ },
+ {
+  "id": "res:insidegnss-gps-utc-anomaly-2016",
+  "kind": "blog",
+  "title": "GPS Experiences UTC Timing, IIF Satellite Launcher Problems",
+  "url": "https://insidegnss.com/gps-experiences-utc-timing-iif-satellite-launcher-problems/",
+  "authors": [
+   "Inside GNSS"
+  ],
+  "year": 2016,
+  "summary": "News report on the January 2016 GPS UTC timing error of about 13 microseconds, attributed by the US Air Force to an erroneous ground software upload during the retirement of SVN 23.",
+  "key_takeaways": [
+   "Navigation was fine; only time was wrong"
+  ],
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "gps",
+   "utc-offset",
+   "anomaly"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:meinberg-gps-utc-anomaly-2016",
+    "rel": "explains"
+   }
+  ]
+ },
+ {
+  "id": "res:ptb-dcf77",
+  "kind": "doc",
+  "title": "PTB: DCF77",
+  "url": "https://www.ptb.de/cms/en/ptb/fachabteilungen/abt4/fb-44/ag-442/dissemination-of-legal-time/dcf77.html",
+  "authors": [
+   "Physikalisch-Technische Bundesanstalt"
+  ],
+  "year": 2024,
+  "summary": "PTB's page on the DCF77 77.5 kHz longwave time signal: transmitter, time code and how legal time is disseminated in Germany.",
+  "key_takeaways": [
+   "Terrestrial time source independent of GNSS over much of Europe"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:signals-of-opportunity"
+  ],
+  "tags": [
+   "dcf77",
+   "lf",
+   "time-signal",
+   "ptb"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:henningm1r/gr_dcf77_receiver",
+    "rel": "has_code"
+   },
+   {
+    "id": "repo:1ux/dcf77decode",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:nist-wwvb",
+  "kind": "doc",
+  "title": "NIST Radio Station WWVB",
+  "url": "https://www.nist.gov/pml/time-and-frequency-division/time-distribution/radio-station-wwvb",
+  "authors": [
+   "NIST"
+  ],
+  "year": 2024,
+  "summary": "NIST page for WWVB, the 60 kHz time signal from Fort Collins, Colorado, with its time code formats including the phase-modulated code.",
+  "key_takeaways": [
+   "US terrestrial time signal; phase modulation improves reception"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:signals-of-opportunity"
+  ],
+  "tags": [
+   "wwvb",
+   "lf",
+   "time-signal",
+   "nist"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:f4exb/sdrangel",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:nist-authenticated-ntp",
+  "kind": "doc",
+  "title": "NIST Authenticated NTP Service",
+  "url": "https://www.nist.gov/pml/time-and-frequency-division/time-services/nist-authenticated-ntp-service",
+  "authors": [
+   "NIST"
+  ],
+  "year": 2024,
+  "summary": "NIST's authenticated NTP service for registered users, using symmetric keys so clients can verify that time came from NIST.",
+  "key_takeaways": [
+   "An authenticated public reference for cross-checking GNSS time"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "ntp",
+   "authentication",
+   "nist"
+  ],
+  "level": "intro",
+  "access": "free-registration",
+  "related": [
+   {
+    "id": "res:rfc8915-nts",
+    "rel": "explains"
+   }
+  ]
+ },
+ {
+  "id": "res:chrony-comparison",
+  "kind": "doc",
+  "title": "Comparison of NTP implementations (chrony)",
+  "url": "https://chrony-project.org/comparison.html",
+  "authors": [
+   "chrony project"
+  ],
+  "year": 2025,
+  "summary": "Feature table comparing chrony, ntpd, NTPsec, OpenNTPD and others on NTS, hardware timestamping, reference clocks and other features.",
+  "key_takeaways": [
+   "Fast way to pick an NTP daemon for a build"
+  ],
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "ntp",
+   "comparison",
+   "chrony"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:gitlab.com/chrony/chrony",
+    "rel": "explains"
+   },
+   {
+    "id": "repo:gitlab.com/ntpsec/ntpsec",
+    "rel": "explains"
+   },
+   {
+    "id": "repo:pendulum-project/ntpd-rs",
+    "rel": "explains"
+   }
+  ]
+ },
+ {
+  "id": "res:leapsecond-tvb",
+  "kind": "doc",
+  "title": "LeapSecond.com (Tom Van Baak time and frequency pages)",
+  "url": "http://www.leapsecond.com/",
+  "authors": [
+   "T. Van Baak"
+  ],
+  "year": 2024,
+  "summary": "Long-running personal site with measurements of oscillators, GPSDOs and atomic clocks, Allan deviation tutorials and experiments.",
+  "key_takeaways": [
+   "Real ADEV plots of hobby and surplus oscillators",
+   "Practical measurement setups"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:calibration"
+  ],
+  "tags": [
+   "allan-deviation",
+   "gpsdo",
+   "time-nuts",
+   "measurements"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:tapr/ticc",
+    "rel": "explains"
+   }
+  ]
+ }
+]

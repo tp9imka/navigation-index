@@ -35,6 +35,7 @@ Python demo of TERCOM terrain contour matching: simulate a radar-altimeter profi
 - [tercom_nav (TERCOM + ESKF)](../repos/mzahana__tercom_nav.md) (alternative_to)
 - [TERCOM via particle filter](../repos/sotostrk__tercom-via-particle-filter-uav-state-estimation-mae6760-project-.md) (alternative_to)
 - [Hackathon-Blind-Flight (team GORIZONT)](../repos/t1gr20an06-k__hackathon-blind-flight.md) (alternative_to)
+- [Heightmap-gradient particle filter on real Copernicus DEM (SPRIN-D CTU method) vs TERCOM](../samples/terrain-heightmap-pf.md) (explains)
 - [Terrain-relative navigation with a particle filter](../samples/terrain-relative-nav-pf.md) (explains)
 
 _Indexed by lane(s): alt-nav_

@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 14 | Python | GPL-3.0 | 2024-04-25 | False | research-prototype | high |
 
-Loader and inspection scripts for a drone RF classification benchmark hosted on Kaggle, with samples across a range of SNRs.
+Loader and inspection scripts for a Kaggle drone RF benchmark: 16,384-sample IQ vectors and spectrograms from 6 drone remote-control transmitters plus a noise class, at SNR -20 to 30 dB in 2 dB steps.
 
 **Why it matters:** SNR-labelled RF samples let you measure how a drone RF classifier degrades with distance and noise.
 
-**Hackathon notes:** Download from Kaggle, load with the provided PyTorch dataloader, train a small CNN in an hour.
+**Hackathon notes:** Kaggle download is ~26 GB (CC BY 4.0; repo code GPL-3.0). Load dataset.pt with the provided PyTorch dataloader, then train a small CNN.
 
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../concepts/counter-uas.md)
 

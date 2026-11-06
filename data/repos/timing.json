@@ -1,0 +1,1366 @@
+[
+ {
+  "id": "repo:nwtime/linuxptp",
+  "kind": "repo",
+  "name": "linuxptp",
+  "url": "https://github.com/nwtime/linuxptp",
+  "summary": "The standard Linux implementation of IEEE 1588 PTP: ptp4l (boundary/ordinary/transparent clock), phc2sys (sync system clock to a NIC hardware clock), ts2phc (discipline a PHC from 1PPS + NMEA), pmc for management queries, and timemaster. richardcochran/linuxptp on GitHub carries the same tree.",
+  "why_it_matters": "If a hackathon build needs sub-microsecond time across several computers (sensor nodes, TDOA receivers, a radar array), this is the off-the-shelf way to get it on Linux with hardware timestamping.",
+  "concepts": [
+   "concept:timing",
+   "concept:standards"
+  ],
+  "tags": [
+   "ptp",
+   "ieee-1588",
+   "ptp4l",
+   "phc2sys",
+   "ts2phc",
+   "hardware-timestamping",
+   "linux"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "high",
+  "hackathon_notes": "apt install linuxptp. Needs NICs with hardware timestamping (check `ethtool -T`); Raspberry Pi CM4/CM5 and Intel i210/i225 work. Use ts2phc with a GNSS 1PPS to build a grandmaster, ptp4l -S for software timestamping in a demo. Log `pmc` offsets to show holdover and attack behaviour.",
+  "related": [
+   {
+    "id": "repo:gitlab.com/chrony/chrony",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:pendulum-project/statime",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:ptpd/ptpd",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:tum-esi/ptpsec",
+    "rel": "extends"
+   },
+   {
+    "id": "repo:jclark/satpulse",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:meta/time",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:gitlab.com/chrony/chrony",
+  "kind": "repo",
+  "name": "chrony",
+  "url": "https://gitlab.com/chrony/chrony",
+  "summary": "NTP client and server that also disciplines the system clock from reference clocks (1PPS, gpsd shared memory, PHC). Supports NTS, hardware timestamping on NTP packets, and source selection with outlier rejection. GitHub mirror: mlichvar/chrony.",
+  "why_it_matters": "The default Linux time daemon on most distributions; combining a GNSS refclock with several NTS servers is the quickest way to get a clock that notices when one source lies.",
+  "concepts": [
+   "concept:timing",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "ntp",
+   "nts",
+   "refclock",
+   "pps",
+   "gpsd",
+   "linux",
+   "time-sync"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Configure `refclock PPS /dev/pps0 lock NMEA` plus `refclock SHM 0` from gpsd, add `server ... nts` lines, then `chronyc sources -v` and `chronyc tracking` show offset, frequency and which sources are rejected. Good live demo of source selection when one GNSS source is walked off.",
+  "related": [
+   {
+    "id": "repo:gitlab.com/gpsd/gpsd",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:nwtime/linuxptp",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:pendulum-project/ntpd-rs",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:gitlab.com/ntpsec/ntpsec",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:mlichvar/clknetsim",
+    "rel": "evaluated_on"
+   },
+   {
+    "id": "repo:superq/chrony_exporter",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:gitlab.com/ntpsec/ntpsec",
+  "kind": "repo",
+  "name": "NTPsec",
+  "url": "https://gitlab.com/NTPsec/ntpsec",
+  "summary": "A security-focused refactor of the reference NTP implementation with much of the legacy code removed, NTS support and the classic refclock drivers. GitHub mirror: ntpsec/ntpsec.",
+  "why_it_matters": "Keeps the reference-implementation refclock drivers (useful for odd timing receivers) while dropping much of the attack surface of classic ntpd.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "ntp",
+   "nts",
+   "refclock",
+   "stratum-1"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Use when a specific refclock driver is needed that chrony lacks; otherwise chrony is easier. ntpviz plots offsets and frequency from its logs.",
+  "related": [
+   {
+    "id": "repo:ntp-project/ntp",
+    "rel": "fork_of"
+   },
+   {
+    "id": "repo:gitlab.com/chrony/chrony",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:ntp-project/ntp",
+  "kind": "repo",
+  "name": "NTP reference implementation (ntpd)",
+  "url": "https://github.com/ntp-project/ntp",
+  "summary": "The Network Time Foundation's reference implementation of NTPv4 (ntpd, ntpq, ntpdate and refclock drivers).",
+  "why_it_matters": "The baseline that NTP attack papers were written against; useful to reproduce published time-shifting attacks in a lab.",
+  "concepts": [
+   "concept:timing",
+   "concept:standards"
+  ],
+  "tags": [
+   "ntp",
+   "ntpd",
+   "reference-implementation"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Mostly a reference for behaviour comparisons; prefer chrony or ntpd-rs for new builds.",
+  "related": [
+   {
+    "id": "repo:gitlab.com/ntpsec/ntpsec",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:pendulum-project/ntpd-rs",
+  "kind": "repo",
+  "name": "ntpd-rs",
+  "url": "https://github.com/pendulum-project/ntpd-rs",
+  "summary": "A memory-safe NTP client and server in Rust with NTS support, from the Pendulum project (Trifecta Tech Foundation).",
+  "why_it_matters": "NTS-authenticated time from a small Rust daemon: a reasonable second time source to cross-check GNSS time on an edge box.",
+  "concepts": [
+   "concept:timing",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "ntp",
+   "nts",
+   "rust",
+   "memory-safe"
+  ],
+  "language": "Rust",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Packages and a container exist; configure NTS sources and read offsets via ntp-ctl. Its source-selection behaviour is a useful comparison with chrony.",
+  "related": [
+   {
+    "id": "repo:gitlab.com/chrony/chrony",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:pendulum-project/statime",
+    "rel": "same_org"
+   },
+   {
+    "id": "repo:pendulum-project/nts-pool",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:pendulum-project/statime",
+  "kind": "repo",
+  "name": "Statime",
+  "url": "https://github.com/pendulum-project/statime",
+  "summary": "A PTP (IEEE 1588-2019) implementation in Rust: a platform-agnostic library with a Linux daemon and an STM32 example for embedded targets.",
+  "why_it_matters": "A second PTP stack to compare against linuxptp, and a route to PTP on embedded targets.",
+  "concepts": [
+   "concept:timing",
+   "concept:standards"
+  ],
+  "tags": [
+   "ptp",
+   "ieee-1588",
+   "rust",
+   "embedded"
+  ],
+  "language": "Rust",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Try the Linux daemon against a linuxptp grandmaster; library use needs more effort.",
+  "related": [
+   {
+    "id": "repo:nwtime/linuxptp",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:pendulum-project/ntpd-rs",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:pendulum-project/nts-pool",
+  "kind": "repo",
+  "name": "NTS pool",
+  "url": "https://github.com/pendulum-project/nts-pool",
+  "summary": "Server side for a pool of NTS time servers: a key-exchange front end that hands clients to member servers while keeping authentication end to end.",
+  "why_it_matters": "Authenticated public time at pool scale is a prerequisite for using network time as an anti-spoofing cross-check.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "nts",
+   "ntp-pool",
+   "rust"
+  ],
+  "language": "Rust",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Background reading for the authenticated-time story; not needed to build a demo.",
+  "related": [
+   {
+    "id": "repo:pendulum-project/ntpd-rs",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:meta/time",
+  "kind": "repo",
+  "name": "Meta Time libraries",
+  "url": "https://github.com/meta/time",
+  "summary": "Meta's Go libraries and tools for NTP and PTP: protocol implementations, PTP hardware clock and timestamping helpers, a PTP server (ptp4u), the simple-PTP client sptp, ptpcheck/ntpcheck diagnostics, a Calnex API client, leap-second utilities and the oscillatord monitoring protocol. Formerly facebook/time.",
+  "why_it_matters": "Production code from a large-scale PTP deployment, including tools to inspect PTP clients and to monitor time cards.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "ptp",
+   "ntp",
+   "go",
+   "ptp4u",
+   "phc",
+   "monitoring"
+  ],
+  "language": "Go",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Go build; `ptpcheck` and `ntpcheck` are the quickest wins for diagnosing a lab setup.",
+  "related": [
+   {
+    "id": "repo:time-appliances-project/time-card",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:orolia2s/oscillatord",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:nwtime/linuxptp",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:time-appliances-project/time-card",
+  "kind": "repo",
+  "name": "OCP Time Card",
+  "url": "https://github.com/Time-Appliances-Project/Time-Card",
+  "summary": "Open Compute Project Time Appliance Project hardware: a PCIe card with a GNSS receiver and an atomic or OCXO holdover oscillator that turns a server into a PTP grandmaster, plus specs and drivers.",
+  "why_it_matters": "An open reference design for exactly the GNSS + holdover-oscillator architecture resilient timing guidance recommends.",
+  "concepts": [
+   "concept:timing",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "gpsdo",
+   "grandmaster",
+   "ocp",
+   "pcie",
+   "holdover",
+   "atomic-clock"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Hardware, not a 48 h build; read the architecture and holdover sections for design ideas.",
+  "related": [
+   {
+    "id": "repo:time-appliances-project/open-time-server",
+    "rel": "same_org"
+   },
+   {
+    "id": "repo:meta/time",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:orolia2s/oscillatord",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:time-appliances-project/open-time-server",
+  "kind": "repo",
+  "name": "Open Time Server spec",
+  "url": "https://github.com/Time-Appliances-Project/Open-Time-Server",
+  "summary": "OCP specification for an open time server: COTS server, a NIC with hardware timestamps and PPS in/out, and the Time Card as the GNSS/oscillator source.",
+  "why_it_matters": "A concise architecture document for a GNSS-backed time server with holdover; useful as a slide template for a resilient-timing pitch.",
+  "concepts": [
+   "concept:timing",
+   "concept:standards"
+  ],
+  "tags": [
+   "spec",
+   "ocp",
+   "time-server",
+   "ptp",
+   "ntp"
+  ],
+  "language": "",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Read-only spec. Use the block diagram and responsibilities split when designing your own time node.",
+  "related": [
+   {
+    "id": "repo:time-appliances-project/time-card",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:orolia2s/oscillatord",
+  "kind": "repo",
+  "name": "oscillatord",
+  "url": "https://github.com/Orolia2s/oscillatord",
+  "summary": "Daemon that disciplines the oscillator on the Orolia (Safran) Atomic Reference Time Card from a PPS reference and exposes monitoring.",
+  "why_it_matters": "Real disciplining code for a miniature atomic clock on a time card, to compare with toy GPSDO loops.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "gpsdo",
+   "disciplining",
+   "atomic-clock",
+   "time-card"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Needs the hardware; read the disciplining code for the loop design.",
+  "related": [
+   {
+    "id": "repo:time-appliances-project/time-card",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:meta/time",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:cloudflare/roughtime",
+  "kind": "repo",
+  "name": "Roughtime (Cloudflare)",
+  "url": "https://github.com/cloudflare/roughtime",
+  "summary": "Go implementation of Roughtime, a protocol that returns signed coarse timestamps so a client can prove a server lied and can combine several servers.",
+  "why_it_matters": "Gives a cryptographically checkable, coarse sanity bound on time, useful to catch large GNSS or NTP time shifts at boot.",
+  "concepts": [
+   "concept:timing",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "roughtime",
+   "authenticated-time",
+   "go"
+  ],
+  "language": "Go",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Query several public Roughtime servers at startup; reject GNSS time if it is outside their bound. Accuracy is seconds-level by design, not a fine timing source.",
+  "related": [
+   {
+    "id": "repo:cloudflare/cfnts",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:cloudflare/cfnts",
+  "kind": "repo",
+  "name": "cfnts",
+  "url": "https://github.com/cloudflare/cfnts",
+  "summary": "Cloudflare's Rust implementation of Network Time Security (NTS) key exchange and NTP server/client. Archived.",
+  "why_it_matters": "Readable NTS reference code; for running NTS use chrony, ntpd-rs or NTPsec.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "nts",
+   "rust"
+  ],
+  "language": "Rust",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Archived; read only.",
+  "related": [
+   {
+    "id": "repo:pendulum-project/ntpd-rs",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:aewallin/allantools",
+  "kind": "repo",
+  "name": "allantools",
+  "url": "https://github.com/aewallin/allantools",
+  "summary": "Python library for time and frequency stability statistics: Allan, modified Allan, overlapping, Hadamard and time deviation, plus confidence intervals and power-law noise generators.",
+  "why_it_matters": "The tool to turn a logged clock offset series into an ADEV/TDEV plot and to read holdover performance off it.",
+  "concepts": [
+   "concept:timing",
+   "concept:calibration"
+  ],
+  "tags": [
+   "allan-deviation",
+   "tdev",
+   "mdev",
+   "python",
+   "frequency-stability"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "high",
+  "hackathon_notes": "pip install allantools; feed phase data from chronyc tracking logs, ptp4l offsets or a TICC. Plot ADEV per oscillator and compare with datasheet curves.",
+  "related": [
+   {
+    "id": "repo:nmayorov/allan-variance",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:tapr/ticc",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:ori-drs/allan_variance_ros",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:tapr/ticc",
+  "kind": "repo",
+  "name": "TAPR TICC",
+  "url": "https://github.com/TAPR/TICC",
+  "summary": "Firmware and design files for TAPR's Arduino-based sub-nanosecond time interval counter, used to compare 1PPS outputs.",
+  "why_it_matters": "Cheap way to measure a GPSDO or GNSS receiver PPS against a reference and get the phase data ADEV tools need.",
+  "concepts": [
+   "concept:timing",
+   "concept:calibration"
+  ],
+  "tags": [
+   "time-interval-counter",
+   "pps",
+   "measurement",
+   "arduino"
+  ],
+  "language": "C++",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Needs the board; output is a text stream of timestamps that pipes into allantools.",
+  "related": [
+   {
+    "id": "repo:aewallin/allantools",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:andrewbcn/stm32-gpsdo",
+  "kind": "repo",
+  "name": "STM32 GPSDO",
+  "url": "https://github.com/AndrewBCN/STM32-GPSDO",
+  "summary": "Experimental GPS-disciplined oscillator: STM32 Black Pill, u-blox NEO-M8, a DAC and a used 10 MHz OCXO, with Arduino-framework firmware counting the OCXO against the 1PPS.",
+  "why_it_matters": "Low-cost build that shows the full GPSDO loop on hobby parts; a starting point for adding holdover and spoof-detection logic.",
+  "concepts": [
+   "concept:timing",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "gpsdo",
+   "ocxo",
+   "stm32",
+   "ublox",
+   "firmware"
+  ],
+  "language": "C++",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Parts are cheap and available; the loop is frequency-counting with long averaging, so expect hours to settle. felixd/STM32-GPSDO is a fork.",
+  "related": [
+   {
+    "id": "repo:andrewbcn/lars-diy-gpsdo",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:dankar/gpsdo-fw",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:gibbi/picogpsdo",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:andrewbcn/lars-diy-gpsdo",
+  "kind": "repo",
+  "name": "Lars DIY GPSDO (original files)",
+  "url": "https://github.com/AndrewBCN/Lars-DIY-GPSDO",
+  "summary": "Archive of Lars Walenius' Arduino GPSDO from the EEVblog forum: a PI loop with a simple 1 ns resolution time-interval phase detector between the GPS 1PPS and the divided OCXO.",
+  "why_it_matters": "The design many hobby GPSDOs copy; its loop and time-interval counter trick are a compact reference.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "gpsdo",
+   "arduino",
+   "pi-loop",
+   "ocxo"
+  ],
+  "language": "C++",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "educational",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Reference files only; derivatives such as paulvee/Lars-GPSDO-V4.2 and W3AXL/Simple-GPSDO are maintained builds.",
+  "related": [
+   {
+    "id": "repo:andrewbcn/stm32-gpsdo",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:dankar/gpsdo-fw",
+  "kind": "repo",
+  "name": "gpsdo-fw (BH3SAP alternative firmware)",
+  "url": "https://github.com/dankar/gpsdo-fw",
+  "summary": "Replacement firmware for a widely sold BH3SAP GPSDO module, with menus for PPB trend, PWM value storage and PPS resync.",
+  "why_it_matters": "Turns a cheap off-the-shelf GPSDO into something whose discipline and holdover behaviour you can read and modify.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "gpsdo",
+   "firmware",
+   "stm32"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Buy the module, flash over SWD. fredzo/gpsdo-fw is an active fork.",
+  "related": [
+   {
+    "id": "repo:andrewbcn/stm32-gpsdo",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:gibbi/picogpsdo",
+  "kind": "repo",
+  "name": "PicoGPSDO",
+  "url": "https://github.com/gibbi/PicoGPSDO",
+  "summary": "RP2040-based GPS-disciplined OCXO: firmware steers the OCXO via PWM from u-blox UBX timing messages (coarse from clock bias, fine from TIM-TP quantization error) and a Flask dashboard plots telemetry.",
+  "why_it_matters": "A modern open GPSDO that uses the receiver's quantization-error correction, the step most hobby designs skip.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "gpsdo",
+   "rp2040",
+   "ublox",
+   "ocxo",
+   "qerr"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Needs Pico SDK and the board; the web dashboard is a good pattern for a demo.",
+  "related": [
+   {
+    "id": "repo:andrewbcn/stm32-gpsdo",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:erikkaashoek/arduino_si5351_gpsdo",
+  "kind": "repo",
+  "name": "Arduino SI5351 GPSDO",
+  "url": "https://github.com/erikkaashoek/Arduino_SI5351_GPSDO",
+  "summary": "Minimal GPSDO: Arduino Nano steers an SI5351 synthesizer from the GPS 1PPS, with measurement time scaled to the observed stability and an optional phase detector.",
+  "why_it_matters": "Shows that a usable disciplined reference needs only a PPS and a few dollars of parts, and why the crystal's temperature sensitivity dominates.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "gpsdo",
+   "arduino",
+   "si5351",
+   "pps"
+  ],
+  "language": "C++",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Fast to build; replace the SI5351 crystal with a TCXO as the README advises.",
+  "related": [
+   {
+    "id": "repo:andrewbcn/lars-diy-gpsdo",
+    "rel": "extends"
+   }
+  ]
+ },
+ {
+  "id": "repo:rjrouquette/gpsdo",
+  "kind": "repo",
+  "name": "GPSDO PTP Master",
+  "url": "https://github.com/rjrouquette/gpsdo",
+  "summary": "A GPS-disciplined PTP grandmaster on a TI MSP432E4 MCU: u-blox receiver, software-disciplined crystal, PPS output, and NTP, PTP and SNMP servers on PoE with battery backup.",
+  "why_it_matters": "A single-board GNSS time server for a sensor network, the kind of node a distributed-sensing build needs.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "ptp",
+   "gpsdo",
+   "grandmaster",
+   "ntp",
+   "microcontroller"
+  ],
+  "language": "C++",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Hardware specific; read for architecture of a small grandmaster.",
+  "related": [
+   {
+    "id": "repo:nwtime/linuxptp",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:hamarituc/lbgpsdo",
+  "kind": "repo",
+  "name": "lbgpsdo",
+  "url": "https://github.com/hamarituc/lbgpsdo",
+  "summary": "Command-line utilities to read and write the configuration of Leo Bodnar GPSDO devices over USB HID.",
+  "why_it_matters": "Leo Bodnar units are a common lab GPS reference; scripting them helps a team set up repeatable reference outputs.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "gpsdo",
+   "configuration",
+   "python"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Only useful if you own the hardware.",
+  "related": []
+ },
+ {
+  "id": "repo:jclark/satpulse",
+  "kind": "repo",
+  "name": "SatPulse",
+  "url": "https://github.com/jclark/satpulse",
+  "summary": "Software for using a GNSS receiver on a computer for precise time: stratum-1 NTP with chrony, ntpd-rs or NTPsec, a PTP grandmaster on Raspberry Pi CM4/CM5 or Intel NICs via linuxptp, RTK base/rover, and a web GUI to configure and monitor receivers.",
+  "why_it_matters": "The shortest path from a GNSS timing receiver to a working NTP/PTP time server with monitoring, on cheap hardware.",
+  "concepts": [
+   "concept:timing",
+   "concept:gnss"
+  ],
+  "tags": [
+   "gnss",
+   "pps",
+   "ntp",
+   "ptp",
+   "grandmaster",
+   "raspberry-pi"
+  ],
+  "language": "Go",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Install on a Pi CM4/CM5 with a u-blox timing receiver; follow satpulse.net. The GUI makes receiver state visible during a jamming or spoofing demo.",
+  "related": [
+   {
+    "id": "repo:nwtime/linuxptp",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:gitlab.com/chrony/chrony",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:geerlingguy/time-pi",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:geerlingguy/time-pi",
+  "kind": "repo",
+  "name": "Time Pi",
+  "url": "https://github.com/geerlingguy/time-pi",
+  "summary": "Configuration for a Raspberry Pi stratum-1 PTP and NTP time server built from a GNSS module with PPS.",
+  "why_it_matters": "A documented recipe a team can reproduce in hours for a local GNSS time reference.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "raspberry-pi",
+   "ptp",
+   "ntp",
+   "pps",
+   "ansible"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Ansible-driven; budget an afternoon including GNSS antenna placement.",
+  "related": [
+   {
+    "id": "repo:jclark/satpulse",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:gitlab.com/chrony/chrony",
+    "rel": "depends_on"
+   },
+   {
+    "id": "repo:nwtime/linuxptp",
+    "rel": "depends_on"
+   }
+  ]
+ },
+ {
+  "id": "repo:redlab-i/pps-tools",
+  "kind": "repo",
+  "name": "pps-tools",
+  "url": "https://github.com/redlab-i/pps-tools",
+  "summary": "User-space tools and headers for the Linux PPS API (ppstest, ppsctl, ppswatch).",
+  "why_it_matters": "First thing to run when wiring a GNSS 1PPS into a Linux box: confirms pulses arrive and shows their jitter.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "pps",
+   "linux",
+   "gpio"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "apt install pps-tools; `ppstest /dev/pps0`.",
+  "related": [
+   {
+    "id": "repo:gitlab.com/chrony/chrony",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:gitlab.com/gpsd/gpsd",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:ptpd/ptpd",
+  "kind": "repo",
+  "name": "PTPd",
+  "url": "https://github.com/ptpd/ptpd",
+  "summary": "Older open-source PTPv2 daemon; the repository has been inactive since 2022.",
+  "why_it_matters": "Sometimes the only option on platforms without linuxptp hardware support; also appears in older PTP security papers.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "ptp",
+   "ieee-1588"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Prefer linuxptp or statime.",
+  "related": [
+   {
+    "id": "repo:nwtime/linuxptp",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:tum-esi/ptpsec",
+  "kind": "repo",
+  "name": "PTPsec",
+  "url": "https://github.com/tum-esi/ptpsec",
+  "summary": "Research implementation, based on linuxptp 3.1.1, that detects and mitigates PTP time-delay attacks by checking path asymmetry around cyclic redundant paths; includes a DPDK man-in-the-middle delay attacker for testing.",
+  "why_it_matters": "Shows how to defend the network time path, the part a GNSS-vs-PTP cross-check silently trusts.",
+  "concepts": [
+   "concept:timing",
+   "concept:assured-pnt",
+   "concept:ew-resilience"
+  ],
+  "tags": [
+   "ptp",
+   "security",
+   "delay-attack",
+   "asymmetry",
+   "linuxptp",
+   "dpdk"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Needs two NICs with hardware timestamping per node and DPDK for the attacker; plan a day of setup. The detection idea can be reproduced in software on logged offsets.",
+  "related": [
+   {
+    "id": "repo:nwtime/linuxptp",
+    "rel": "extends"
+   }
+  ]
+ },
+ {
+  "id": "repo:zxsecurity/nmeadesync",
+  "kind": "repo",
+  "name": "NMEAdesync",
+  "url": "https://github.com/zxsecurity/NMEAdesync",
+  "summary": "Proof-of-concept that feeds crafted NMEA sentences to a GPS-referenced NTP server to move its time; a red-team tool, inactive since 2017.",
+  "why_it_matters": "A ready-made test input for a time-spoofing detector: it reproduces the 'trusted serial GNSS time' weakness without RF.",
+  "concepts": [
+   "concept:timing",
+   "concept:gnss-interference"
+  ],
+  "tags": [
+   "ntp",
+   "nmea",
+   "spoofing",
+   "red-team"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Only for a closed lab against your own time server; no RF needed. Use it to show the detector alarm, not to attack anything.",
+  "related": [
+   {
+    "id": "repo:gitlab.com/gpsd/gpsd",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:mlichvar/clknetsim",
+  "kind": "repo",
+  "name": "clknetsim",
+  "url": "https://github.com/mlichvar/clknetsim",
+  "summary": "Clock and network simulator from the chrony author: runs real NTP/PTP daemons against simulated clocks and network delays to test synchronization behaviour. Mirror of gitlab.com/chrony/clknetsim.",
+  "why_it_matters": "Lets a team test a time daemon's reaction to delay changes, steps or a lying server without hardware.",
+  "concepts": [
+   "concept:timing",
+   "concept:simulation"
+  ],
+  "tags": [
+   "simulation",
+   "ntp",
+   "ptp",
+   "testing"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Linux only (LD_PRELOAD); the chrony test suite shows usage patterns.",
+  "related": [
+   {
+    "id": "repo:gitlab.com/chrony/chrony",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:nwtime/linuxptp",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:superq/chrony_exporter",
+  "kind": "repo",
+  "name": "chrony_exporter",
+  "url": "https://github.com/SuperQ/chrony_exporter",
+  "summary": "Prometheus exporter for chrony tracking, sources and server statistics.",
+  "why_it_matters": "Puts clock offset, frequency and source health on a dashboard: the monitoring half of a timing-resilience demo.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "prometheus",
+   "monitoring",
+   "chrony"
+  ],
+  "language": "Go",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Run next to chronyd, scrape with Prometheus, chart in Grafana; enable the sources collector to see each reference.",
+  "related": [
+   {
+    "id": "repo:gitlab.com/chrony/chrony",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:gitlab.com/ohwr/project/wr-cores",
+  "kind": "repo",
+  "name": "White Rabbit cores (wr-cores)",
+  "url": "https://gitlab.com/ohwr/project/wr-cores",
+  "summary": "CERN Open Hardware Repository HDL cores for White Rabbit nodes and switches, including the White Rabbit PTP Core that gives sub-nanosecond synchronization over fibre Ethernet.",
+  "why_it_matters": "White Rabbit is the open route to sub-ns time across a distributed array (radio telescopes, accelerators) and an alternative to GNSS time inside a facility.",
+  "concepts": [
+   "concept:timing",
+   "concept:standards"
+  ],
+  "tags": [
+   "white-rabbit",
+   "ptp",
+   "fpga",
+   "sub-nanosecond",
+   "ohwr"
+  ],
+  "language": "VHDL",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "low",
+  "hackathon_notes": "FPGA work; buy WR nodes/switches if you need it in a build.",
+  "related": [
+   {
+    "id": "repo:gitlab.com/ohwr/project/ppsi",
+    "rel": "same_org"
+   },
+   {
+    "id": "repo:gitlab.com/ohwr/project/wr-switch-sw",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:gitlab.com/ohwr/project/ppsi",
+  "kind": "repo",
+  "name": "PPSi",
+  "url": "https://gitlab.com/ohwr/project/ppsi",
+  "summary": "Portable PTP stack ('PTP Ported to Silicon') used in White Rabbit nodes and switches; one source tree builds for bare metal and Linux.",
+  "why_it_matters": "A PTP stack that runs on soft-core CPUs, with the White Rabbit extension.",
+  "concepts": [
+   "concept:timing",
+   "concept:standards"
+  ],
+  "tags": [
+   "ptp",
+   "white-rabbit",
+   "embedded"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Read for embedded PTP design.",
+  "related": [
+   {
+    "id": "repo:gitlab.com/ohwr/project/wr-cores",
+    "rel": "same_org"
+   },
+   {
+    "id": "repo:nwtime/linuxptp",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:gitlab.com/ohwr/project/wr-switch-sw",
+  "kind": "repo",
+  "name": "White Rabbit switch software",
+  "url": "https://gitlab.com/ohwr/project/wr-switch-sw",
+  "summary": "Embedded Linux software for the White Rabbit switch, including the PTP daemon integration and management.",
+  "why_it_matters": "Completes the White Rabbit picture for teams evaluating it as a distribution network.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "white-rabbit",
+   "switch",
+   "embedded-linux"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Hardware specific.",
+  "related": [
+   {
+    "id": "repo:gitlab.com/ohwr/project/wr-cores",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:henningm1r/gr_dcf77_receiver",
+  "kind": "repo",
+  "name": "gr_DCF77_Receiver",
+  "url": "https://github.com/henningM1r/gr_DCF77_Receiver",
+  "summary": "GNU Radio receiver and live decoder for the DCF77 77.5 kHz time signal, covering both the OOK and phase-modulated channels, with a simulated transmitter and channel for testing without hardware.",
+  "why_it_matters": "Time from a terrestrial LF signal of opportunity, independent of GNSS; the simulator lets a team test without an LF front end.",
+  "concepts": [
+   "concept:timing",
+   "concept:signals-of-opportunity"
+  ],
+  "tags": [
+   "dcf77",
+   "lf",
+   "gnu-radio",
+   "time-signal",
+   "sdr"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Needs an SDR that reaches 77.5 kHz (e.g. Airspy HF+, or an upconverter). Docker CI image exists. Outside Europe swap to WWVB/MSF.",
+  "related": [
+   {
+    "id": "repo:1ux/dcf77decode",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:f4exb/sdrangel",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:1ux/dcf77decode",
+  "kind": "repo",
+  "name": "DCF77Decode",
+  "url": "https://github.com/1ux/DCF77Decode",
+  "summary": "C library that decodes the DCF77 time code bitstream (from a cheap AM receiver module) covering most of the public standard.",
+  "why_it_matters": "A tiny GNSS-independent coarse time source for a microcontroller.",
+  "concepts": [
+   "concept:timing",
+   "concept:signals-of-opportunity"
+  ],
+  "tags": [
+   "dcf77",
+   "embedded",
+   "time-code"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Pair with a DCF77 receiver module; accuracy is limited by the AM envelope.",
+  "related": [
+   {
+    "id": "repo:henningm1r/gr_dcf77_receiver",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:f4exb/sdrangel",
+  "kind": "repo",
+  "name": "SDRangel",
+  "url": "https://github.com/f4exb/sdrangel",
+  "summary": "General SDR receive/transmit application with many demodulator plugins; its Radio Clock plugin decodes LF time broadcasts including MSF, DCF77, TDF, WWVB, JJY and RBU.",
+  "why_it_matters": "One GUI that decodes several LF time broadcasts and many other signals, useful for a signals-of-opportunity timing demo.",
+  "concepts": [
+   "concept:timing",
+   "concept:signals-of-opportunity",
+   "concept:gnss-sdr"
+  ],
+  "tags": [
+   "sdr",
+   "dcf77",
+   "wwvb",
+   "msf",
+   "radio-clock"
+  ],
+  "language": "C++",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Install packages or the Docker image; add the Radio Clock channel.",
+  "related": [
+   {
+    "id": "repo:henningm1r/gr_dcf77_receiver",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:dc9st/tdoa-evaluation-rtlsdr",
+  "kind": "repo",
+  "name": "TDOA evaluation with RTL-SDRs",
+  "url": "https://github.com/DC9ST/tdoa-evaluation-rtlsdr",
+  "summary": "MATLAB scripts that localize a transmitter by TDOA from three RTL-SDR receivers, synchronizing them on a known reference transmitter instead of GNSS time.",
+  "why_it_matters": "Shows that distributed RF sensing needs nanosecond-level relative timing and one way to get it without GNSS disciplining.",
+  "concepts": [
+   "concept:timing",
+   "concept:rf-localization"
+  ],
+  "tags": [
+   "tdoa",
+   "rtl-sdr",
+   "synchronization",
+   "matlab"
+  ],
+  "language": "MATLAB",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Three Pis with RTL-SDRs plus the modified librtlsdr; MATLAB or port to Octave/NumPy.",
+  "related": [
+   {
+    "id": "repo:dc9st/librtlsdr-2freq",
+    "rel": "depends_on"
+   },
+   {
+    "id": "repo:krakenrf/heimdall_daq_fw",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:dc9st/librtlsdr-2freq",
+  "kind": "repo",
+  "name": "librtlsdr-2freq",
+  "url": "https://github.com/DC9ST/librtlsdr-2freq",
+  "summary": "Modified librtlsdr that switches between two frequencies during one recording without losing samples, so a reference transmitter and the target land in the same stream.",
+  "why_it_matters": "The trick that makes reference-transmitter synchronization of cheap TDOA receivers work.",
+  "concepts": [
+   "concept:timing",
+   "concept:rf-localization"
+  ],
+  "tags": [
+   "rtl-sdr",
+   "tdoa",
+   "synchronization"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Build on the Pi receivers; see the companion evaluation scripts.",
+  "related": [
+   {
+    "id": "repo:dc9st/tdoa-evaluation-rtlsdr",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:jks-prv/kiwiclient",
+  "kind": "repo",
+  "name": "kiwiclient",
+  "url": "https://github.com/jks-prv/kiwiclient",
+  "summary": "Python clients for KiwiSDR receivers, including recorders that save IQ with GNSS timestamps from the receiver.",
+  "why_it_matters": "GNSS-timestamped IQ from a public network of receivers is the input for HF TDOA; it also shows what breaks when the receivers' GNSS time is denied.",
+  "concepts": [
+   "concept:timing",
+   "concept:rf-localization"
+  ],
+  "tags": [
+   "kiwisdr",
+   "hf",
+   "iq",
+   "gnss-timestamps",
+   "tdoa"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Pure Python; record from public KiwiSDRs. Timestamps are only as good as each receiver's GNSS.",
+  "related": [
+   {
+    "id": "repo:jks-prv/kiwisdr",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:ethz-asl/cuckoo_time_translator",
+  "kind": "repo",
+  "name": "cuckoo_time_translator",
+  "url": "https://github.com/ethz-asl/cuckoo_time_translator",
+  "summary": "ROS algorithms that translate a sensor's own hardware timestamps into host system time from one-way timing, estimating skew and offset.",
+  "why_it_matters": "Multi-sensor fusion (camera, IMU, LiDAR) breaks quietly when timestamps are off; this is the lightweight fix when PTP is not available on the sensor.",
+  "concepts": [
+   "concept:timing",
+   "concept:sensor-fusion",
+   "concept:ros",
+   "concept:calibration"
+  ],
+  "tags": [
+   "timestamps",
+   "clock-skew",
+   "ros",
+   "sensor-sync"
+  ],
+  "language": "C++",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "ROS1 catkin package; inactive since 2022, port the algorithm if on ROS 2.",
+  "related": [
+   {
+    "id": "repo:ethz-asl/kalibr",
+    "rel": "same_org"
+   }
+  ]
+ }
+]

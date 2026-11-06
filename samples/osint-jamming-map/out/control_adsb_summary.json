@@ -1,0 +1,1 @@
+{"date": "2026-10-01", "window_utc": ["03:51", "05:51"], "step_s": 600, "n_snapshots": 13, "t0_unix": 1790826659.001, "bbox": [4.0, 50.0, 10.0, 54.0], "hex_res": 4, "n_aircraft_classified": 879, "n_aircraft_bad": 19, "n_reports": 2630, "n_reports_bad": 37, "levels": {"red": 1, "yellow": 3, "green": 108, "no-data": 20}}

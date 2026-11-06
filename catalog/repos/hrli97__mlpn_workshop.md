@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 5 | Python | MIT | 2023-07-17 | False | research-prototype | low |
 
-Team solution for the ACM MM 2023 drone-satellite matching challenge.
+Team solution for the ACM MM 2023 drone-satellite matching challenge, 4th on the leaderboard (R@1 92.77).
 
 **Why it matters:** Open challenge entry.
 
-**Hackathon notes:** Training script; needs University-1652.
+**Hackathon notes:** MIT. Training script with hard-coded paths; needs University-1652 (request-only, research use).
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
 

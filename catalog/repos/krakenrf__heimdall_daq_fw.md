@@ -29,6 +29,7 @@ Coherent multichannel SDR acquisition chain (sync, calibration, decimation) unde
 
 ## Referenced by
 
+- [TDOA evaluation with RTL-SDRs](../repos/dc9st__tdoa-evaluation-rtlsdr.md) (alternative_to)
 - [KrakenSDR DoA DSP](../repos/krakenrf__krakensdr_doa.md) (depends_on)
 - [GNSS jammer geolocation from DF bearings to TAK](../samples/interference-geolocation-to-tak.md) (explains)
 

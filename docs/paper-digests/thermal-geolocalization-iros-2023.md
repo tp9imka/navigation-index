@@ -28,7 +28,7 @@ Locate a UAV at night, when RGB cameras are useless, by matching downward therma
 - Stated by authors: failures are mostly in desert (offset errors >= 50 m and outright misses); TGM output distorts roads and desert; enhancement can distort buildings; single, mostly-desert area; 4096-d descriptor is heavy; TGM and SGM are not trained end-to-end.
 - Our read: retrieval gives tile-center accuracy only (14.7 m mean is with a 512 m prior). For a filter you want a metric fix plus covariance - that is what STHN and UASTHN add.
 - Our read: assumes the thermal image is nadir, north-aligned and at known scale. On a real UAV you must rotate/scale with heading and altitude first.
-- Our read: the paper's split sizes read 10,256 / 13,011 / 26,568 (train / val / test), i.e. val > train; the HTML rendering duplicates numbers, check the PDF before quoting.
+- Our read: the paper's split sizes are 10,256 / 13,011 / 26,568 (train / val / test) thermal-satellite crop pairs, i.e. val > train (confirmed in the v3 PDF, Sec. IV-A).
 - Our read: the public SGM weights on Hugging Face are configured as ResNet-50 conv4 + GeM (per our integration card), not the paper's ResNet-18 + NetVLAD. Do not expect Table I numbers from the demo weights.
 
 ## Code, weights, license

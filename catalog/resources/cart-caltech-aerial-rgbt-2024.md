@@ -1,4 +1,4 @@
-# CART: Caltech Aerial RGB-Thermal Dataset in the Wild
+# Caltech Aerial RGB-Thermal Dataset in the Wild
 
 `res:cart-caltech-aerial-rgbt-2024` - paper - <https://arxiv.org/abs/2403.08997>
 
@@ -10,6 +10,7 @@ Aerial RGB-thermal dataset over natural US terrain with synchronized GPS and IMU
 
 - Thermal aerial data is expensive to collect - this fills a gap
 - Includes VIO benchmark with GPS/IMU
+- Dataset is for non-commercial use only (README: CC BY-SA 4.0 terms)
 
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
 

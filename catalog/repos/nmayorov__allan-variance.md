@@ -25,6 +25,7 @@ Small Python package computing Allan variance and fitting standard noise paramet
 
 ## Referenced by
 
+- [allantools](../repos/aewallin__allantools.md) (alternative_to)
 - [AV-Matlab-SW](../repos/jaffarrell__av-matlab-sw.md) (alternative_to)
 - [pyins](../repos/nmayorov__pyins.md) (same_org)
 

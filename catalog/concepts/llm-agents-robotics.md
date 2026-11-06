@@ -4,8 +4,9 @@
 
 Language models driving robots, mission planning, MCP servers for drones/ROS/GIS.
 
-## Samples (1)
+## Samples (2)
 
+- [LLM mission agent: a safety-gated MAVLink MCP server flying ArduPilot SITL](../samples/llm-mission-agent.md) - A small MCP server (stdio JSON-RPC 2.0, pymavlink) that lets Claude Code or any MCP client read and fly an ArduCopter: get_state, get_nav_health (EKF flags, variances, GNSS fix/sats/HDOP => nominal/degraded/lost), arm_ta
 - [Querying the hub from LLM agents via MCP](../samples/llm-agent-usage.md) - A stdlib-only MCP stdio server (tools/mcp_server.py) exposes search, show, concept and neighbors over the hub's index and graph so Claude Code, Cursor and other MCP clients can query it as tools.
 
 ## Repositories (30)

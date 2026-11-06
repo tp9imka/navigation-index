@@ -2,13 +2,14 @@
 
 `res:uavm-2024-codalab` - competition - <https://codalab.lisn.upsaclay.fr/competitions/18770>
 
-**By:** UAVM organizers - **Year:** 2024 - **Level:** intermediate - **Access:** free-registration
+**By:** Tingyu Wang et al. - **Year:** 2024 - **Level:** intermediate - **Access:** free-registration
 
 Codalab leaderboard for weather-robust drone-satellite matching.
 
 ## Key takeaways
 
 - Adds weather corruptions to cross-view retrieval
+- University-1652 data is request-only: research use, no sharing with third parties, no profit (layumi/University1652-Baseline Request.md)
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 

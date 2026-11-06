@@ -5,17 +5,17 @@
   "title": "Pohang Canal Dataset: A Multimodal Maritime Dataset for Autonomous Navigation in Restricted Waters",
   "url": "https://sites.google.com/view/pohang-canal-dataset",
   "authors": [
-   "Chung",
-   "Kim",
-   "Lee",
-   "Kim (KAIST)"
+   "Dongha Chung",
+   "Jonghwi Kim",
+   "Changyu Lee",
+   "Jinwhan Kim"
   ],
   "year": 2023,
   "summary": "Multimodal maritime dataset from a 7.5 km route through a narrow canal, port areas and near-coast waters, with LiDARs, marine radar, stereo, infrared and omnidirectional cameras, AHRS and RTK GPS. Also on the AWS Open Data registry.",
   "key_takeaways": [
    "Includes marine radar and LiDAR together - good for radar odometry at sea",
    "RTK ground truth and SLAM baseline trajectory included",
-   "Non-commercial licence"
+   "CC BY-NC 4.0 - non-commercial use only"
   ],
   "concepts": [
    "concept:datasets-benchmarks",
@@ -33,7 +33,7 @@
   "related": [
    {
     "id": "res:polaris-pohang-maritime-dataset-2024",
-    "rel": "same_author"
+    "rel": "dataset_for"
    }
   ]
  },
@@ -43,13 +43,20 @@
   "title": "PoLaRIS Dataset: A Maritime Object Detection and Tracking Dataset in Pohang Canal",
   "url": "https://arxiv.org/abs/2412.06192",
   "authors": [
-   "KAIST"
+   "Jiwon Choi",
+   "Dongjin Cho",
+   "Gihyeon Lee",
+   "Hogyun Kim",
+   "Geonmo Yang",
+   "Joowan Kim",
+   "Younggun Cho"
   ],
   "year": 2024,
-  "summary": "Maritime object detection and tracking dataset recorded in Pohang Canal with image and point-wise annotations of hazards.",
+  "summary": "Inha University dataset that adds object detection and tracking labels to five Pohang Canal sequences, with annotations on RGB, thermal, LiDAR and radar data for objects as small as 10x10 pixels. No separate licence stated; the underlying Pohang Canal data is CC BY-NC 4.0 (non-commercial).",
   "key_takeaways": [
    "Adds object labels to the Pohang Canal setting",
-   "Supports camera and LiDAR detection for USVs"
+   "Multi-modal labels for camera, thermal, LiDAR and radar detection on USVs",
+   "Inherits the non-commercial terms of the Pohang Canal data"
   ],
   "concepts": [
    "concept:datasets-benchmarks",
@@ -57,7 +64,7 @@
    "concept:target-tracking"
   ],
   "tags": [
-   "kaist",
+   "inha",
    "usv",
    "tracking"
   ],
@@ -66,7 +73,7 @@
   "related": [
    {
     "id": "res:pohang-canal-dataset-2023",
-    "rel": "same_author"
+    "rel": "uses"
    }
   ]
  },
@@ -76,13 +83,18 @@
   "title": "MassMIND: Massachusetts Maritime INfrared Dataset",
   "url": "https://arxiv.org/abs/2209.04097",
   "authors": [
-   "UMass Lowell Marine Robotics"
+   "Shailesh Nirgudkar",
+   "Michael DeFilippo",
+   "Michael Sacarny",
+   "Michael Benjamin",
+   "Paul Robinette"
   ],
   "year": 2022,
-  "summary": "Paper describing a labelled LWIR maritime image dataset for segmentation in coastal and harbour scenes.",
+  "summary": "Paper describing a labelled LWIR maritime dataset of 2,916 images from in and around Boston Harbor, segmented into seven classes, with UNet, PSPNet and DeepLabv3 baselines. Data is CC BY-NC-SA 4.0 (non-commercial).",
   "key_takeaways": [
    "Thermal segmentation for USV situational awareness",
-   "Semantic and instance masks provided"
+   "Semantic and instance masks provided",
+   "Non-commercial licence (CC BY-NC-SA 4.0)"
   ],
   "concepts": [
    "concept:datasets-benchmarks",
@@ -112,11 +124,12 @@
    "Matej Kristan"
   ],
   "year": 2023,
-  "summary": "ICCV 2023 panoptic obstacle detection benchmark from lakes, rivers and seas, with per-pixel labelled key frames plus preceding frames and an online evaluation server.",
+  "summary": "ICCV 2023 panoptic obstacle detection benchmark from lakes, rivers and seas: over 4,000 per-pixel labelled key frames, each with nine preceding frames (40k+ frames), 11 classes and an online evaluation server. CC BY-NC 4.0, research use only, download behind a registration form.",
   "key_takeaways": [
    "Most diverse maritime obstacle set by location and conditions",
    "Online server for objective scoring",
-   "Baselines for many segmentation methods"
+   "Baselines for 27 segmentation methods",
+   "Non-commercial, research-only terms; no redistribution"
   ],
   "concepts": [
    "concept:datasets-benchmarks",
@@ -129,7 +142,7 @@
    "panoptic"
   ],
   "level": "intermediate",
-  "access": "open",
+  "access": "free-registration",
   "related": [
    {
     "id": "repo:lojzezust/lars_evaluator",
@@ -143,18 +156,18 @@
   "title": "SubPipe: A Submarine Pipeline Inspection Dataset for Segmentation and Visual-inertial Localization",
   "url": "https://arxiv.org/abs/2401.17907",
   "authors": [
-   "Alvarez-Tunon",
-   "Marnet",
-   "Antal",
-   "Aubard",
-   "Costa",
-   "Brodskiy"
+   "Olaya Alvarez-Tunon",
+   "Luiza Ribeiro Marnet",
+   "Laszlo Antal",
+   "Martin Aubard",
+   "Maria Costa",
+   "Yury Brodskiy"
   ],
   "year": 2024,
-  "summary": "Describes an AUV dataset from a pipeline inspection mission with camera, side-scan sonar and navigation data, with VIO and segmentation baselines.",
+  "summary": "Describes an AUV dataset from a real pipeline inspection mission (OceanScan LAUV) with two cameras, side-scan sonar and navigation data, with SLAM, RGB segmentation and sonar object detection baselines. Data on Zenodo under CC BY 4.0 with a required copyright notice.",
   "key_takeaways": [
-   "Open underwater VIO benchmark with ground truth",
-   "Side-scan sonar segmentation labels"
+   "Open underwater visual SLAM benchmark with pose ground truth from navigation sensors",
+   "Side-scan sonar object detection labels (COCO and YOLO); segmentation labels are on RGB"
   ],
   "concepts": [
    "concept:datasets-benchmarks",
@@ -177,7 +190,7 @@
  {
   "id": "res:cart-caltech-aerial-rgbt-2024",
   "kind": "paper",
-  "title": "CART: Caltech Aerial RGB-Thermal Dataset in the Wild",
+  "title": "Caltech Aerial RGB-Thermal Dataset in the Wild",
   "url": "https://arxiv.org/abs/2403.08997",
   "authors": [
    "Connor Lee",
@@ -192,7 +205,8 @@
   "summary": "Aerial RGB-thermal dataset over natural US terrain with synchronized GPS and IMU, with benchmarks for thermal segmentation, RGB-to-thermal translation and VIO.",
   "key_takeaways": [
    "Thermal aerial data is expensive to collect - this fills a gap",
-   "Includes VIO benchmark with GPS/IMU"
+   "Includes VIO benchmark with GPS/IMU",
+   "Dataset is for non-commercial use only (README: CC BY-SA 4.0 terms)"
   ],
   "concepts": [
    "concept:datasets-benchmarks",
@@ -219,7 +233,10 @@
   "title": "Cardinal RF (CardRF): An Outdoor UAV/UAS/Drone RF Signals with Bluetooth and WiFi Signals Dataset",
   "url": "https://ieee-dataport.org/node/9593",
   "authors": [
-   "IEEE DataPort contributors (CardRF)"
+   "Olusiji Medaiyese",
+   "Martins Ezuma",
+   "Adrian Lauf",
+   "Ayodeji Adeniran"
   ],
   "year": 2022,
   "summary": "Outdoor RF dataset of drone controller and telemetry signals plus Bluetooth and Wi-Fi, stored as .mat files, covering line-of-sight and beyond-line-of-sight conditions.",
@@ -250,14 +267,14 @@
  {
   "id": "res:dronedetect-rf-dataset-essex",
   "kind": "dataset",
-  "title": "DroneDetect Dataset (RF recordings of UAS signals, University of Essex)",
+  "title": "DroneDetect Dataset: A Radio Frequency dataset of Unmanned Aerial System (UAS) Signals for Machine Learning Detection & Classification",
   "url": "https://ieee-dataport.org/node/4361",
   "authors": [
-   "Carolyn Swinney",
-   "John Woods (University of Essex)"
+   "Carolyn J. Swinney",
+   "John C. Woods"
   ],
   "year": 2021,
-  "summary": "RF recordings of several DJI and Parrot drones captured with a BladeRF SDR in GNU Radio, split by interference condition (clean, Bluetooth, Wi-Fi) and flight mode.",
+  "summary": "RF recordings of seven drones (six DJI models and the Parrot Disco) captured with a BladeRF SDR in GNU Radio, split by interference (clean, Bluetooth, Wi-Fi, both) and flight mode (on, hovering, flying). CC BY licence, free IEEE login needed.",
   "key_takeaways": [
    "Interference-labelled RF data for robust classifiers",
    "Python loader splits recordings into short samples",
@@ -287,10 +304,13 @@
   "title": "DIAT-uSAT: micro-Doppler Signature Dataset of Small Unmanned Aerial Vehicle (SUAV)",
   "url": "https://ieee-dataport.org/documents/diat-msat-micro-doppler-signature-dataset-small-unmanned-aerial-vehicle-suav",
   "authors": [
-   "DIAT Pune"
+   "Harish Chandra Kumawat",
+   "Mainak Chakraborty",
+   "A. Arockia Bazil Raj",
+   "Sunita Vikrant Dhavale"
   ],
   "year": 2022,
-  "summary": "X-band continuous-wave radar micro-Doppler signature images of small UAV-like targets including quadcopter, fixed-wing RC plane, rotors and a bionic bird.",
+  "summary": "4,849 micro-Doppler signature images from an X-band (10 GHz) continuous-wave radar of small UAV-like targets: RC plane, two rotor types, quadcopter, bionic bird and mini-helicopter plus bionic bird.",
   "key_takeaways": [
    "Radar micro-Doppler classification of drones vs birds",
    "Access via e-mail request for education use"
@@ -318,10 +338,10 @@
    "Ningning Yu et al."
   ],
   "year": 2024,
-  "summary": "Spectrograms derived from USRP IQ captures of drone controllers across ISM bands in urban settings, tied to an IEEE TIFS 2024 open-set drone recognition paper.",
+  "summary": "14,460 spectrograms (512x512, from 50 ms USRP IQ captures over three ISM bands in urban settings) of drone controllers from 7 brands, tied to an IEEE TIFS 2024 open-set drone recognition paper. CC BY licence.",
   "key_takeaways": [
    "Ready-made spectrograms - no SDR processing needed",
-   "Covers many common controller brands",
+   "Covers 7 brands: DJI, Vbar, FrSky, Futaba, Taranis, RadioLink, Skydroid",
    "Open-set recognition angle for unknown drones"
   ],
   "concepts": [
@@ -343,10 +363,14 @@
   "title": "Noisy Drone RF Signal Classification (Kaggle)",
   "url": "https://www.kaggle.com/datasets/sgluege/noisy-drone-rf-signal-classification",
   "authors": [
-   "S. Gluege et al."
+   "Stefan Gluege",
+   "Matthias Nyfeler",
+   "Nicola Ramagnano",
+   "Claus Horn",
+   "Christof Schuepbach"
   ],
   "year": 2023,
-  "summary": "Kaggle-hosted drone RF classification dataset with samples labelled by class and SNR.",
+  "summary": "Kaggle drone RF classification dataset: 1.2 ms IQ vectors from 6 consumer drone remotes plus a noise class, mixed with lab noise or Gaussian noise across SNR -20 to 30 dB. CC BY 4.0.",
   "key_takeaways": [
    "SNR labels allow robustness curves",
    "PyTorch tensor format"
@@ -374,14 +398,17 @@
   "title": "GNSS Interference Spectrum Highway Dataset 1",
   "url": "https://ieee-dataport.org/documents/gnss-interference-spectrum-highway-dataset-1",
   "authors": [
-   "Fraunhofer IIS"
+   "Felix Ott",
+   "Lucas Heublein",
+   "Nisha Lakshmana Raichur",
+   "Alexander Ruegamer"
   ],
   "year": 2024,
-  "summary": "Short raw IQ snapshots recorded at a German highway monitoring station, labelled into interference and non-interference classes, in .npy format with train/test splits.",
+  "summary": "20 ms raw IQ snapshots (E1 and E6 bands, 62.5 MHz) from a sensor on a bridge over a German highway, labelled into 8 interference and 3 non-interference classes, in .npy format with train/test and few-shot splits.",
   "key_takeaways": [
-   "Real-world in-car jammer events",
-   "Non-commercial licence",
-   "Companion dataset 2 has fewer classes"
+   "Real-world interference recorded at a highway",
+   "Non-commercial licence (CC BY-NC-SA 4.0)",
+   "Companion dataset 2 has fewer classes (2 interference, 1 non-interference)"
   ],
   "concepts": [
    "concept:datasets-benchmarks",
@@ -407,10 +434,12 @@
   "title": "FGI Jammer Test 2023 Repository",
   "url": "https://research.fi/en/results/dataset/2eee8cfd-db00-4e46-bd62-d7632c09c700",
   "authors": [
-   "Finnish Geospatial Research Institute (FGI)"
+   "Mohammad Zahidul H. Bhuiyan",
+   "Muwahida Liaquat",
+   "Saiful Islam"
   ],
-  "year": 2024,
-  "summary": "Open raw IQ recordings from Jammertest 2023 in Andoya covering a jamming case, incoherent spoofing and coherent spoofing scenarios, under CC BY 4.0.",
+  "year": 2025,
+  "summary": "Open raw IQ recordings (GPS L1 C/A and Galileo E1, LabSat 3 Wideband) from Jammertest 2023 in Norway covering a high-power jamming case, incoherent spoofing and coherent spoofing scenarios, under CC BY 4.0.",
   "key_takeaways": [
    "Real spoofing IQ data under open licence",
    "Usable with FGI-GSRx software receiver"
@@ -445,13 +474,15 @@
   "title": "Raw IQ dataset for GNSS GPS jamming signal classification",
   "url": "https://zenodo.org/records/4629685",
   "authors": [
-   "Zenodo record 4629685 authors"
+   "Carolyn J. Swinney",
+   "John C. Woods"
   ],
   "year": 2021,
-  "summary": "Public raw IQ dataset of GNSS jamming signal types (Zenodo record 4629685) used as the basis for spectrogram-based jamming classification notebooks and papers.",
+  "summary": "Raw IQ dataset of GNSS jamming signal types (DME, narrowband, single AM, single chirp, single FM, no jamming) with 1000 training and 250 test samples, generated with a MATLAB script built on the Morales Ferre et al. 2019 jammer-classification data. CC BY 4.0.",
   "key_takeaways": [
    "Common benchmark for jamming-type classifiers",
-   "Converted to spectrogram images in follow-up work"
+   "Converted to spectrogram images in follow-up work",
+   "Signals are generated in MATLAB, not live over-the-air captures"
   ],
   "concepts": [
    "concept:datasets-benchmarks",
@@ -474,16 +505,16 @@
  {
   "id": "res:zenodo-l1-jamming-iq-2025",
   "kind": "dataset",
-  "title": "L1 jamming IQ recordings (Zenodo, Feb 2025 series)",
+  "title": "GNSS L1 Jammed Signal 10MHz Recording - Triangular Wave (Part 1)",
   "url": "https://zenodo.org/records/14859561",
   "authors": [
-   "Unnamed EU Horizon project team"
+   "LINKS Foundation"
   ],
   "year": 2025,
-  "summary": "One of a series of February 2025 Zenodo records with GNSS L1 IQ recordings at 10 and 20 MHz sample rates under several jamming waveforms.",
+  "summary": "One of a series of February 2025 Zenodo records from LINKS Foundation with GNSS L1 IQ recordings at 10 and 20 MHz sample rates under several jamming waveforms (triangular, tick, linear narrow, linear wide fast) at stepped jamming powers. CC BY 4.0; Horizon Europe grant 101073909.",
   "key_takeaways": [
    "More recent real IQ jamming captures",
-   "Publisher not clearly identified - check metadata before citing"
+   "Each file is about 10 GB of int8 complex samples"
   ],
   "concepts": [
    "concept:datasets-benchmarks",
@@ -501,13 +532,15 @@
  {
   "id": "res:wsu-uav-acoustic-localization-24ch",
   "kind": "dataset",
-  "title": "UAV Acoustic Localization Dataset (24-channel beamformed recording)",
+  "title": "UAV Acoustic Localization Dataset: 24-Channel Beamformed Recordings of a DJI Air 3 Drone with Synchronized GPS Flight Logs",
   "url": "https://researchers.westernsydney.edu.au/en/datasets/uav-acoustic-localization-dataset-24-channel-beamformed-recording/",
   "authors": [
-   "Western Sydney University ICNS"
+   "Belman Jahir Rodriguez",
+   "Sergio Chevtchenko",
+   "Saeed Afshar"
   ],
-  "year": 2025,
-  "summary": "24-channel acoustic recordings of a DJI drone with synchronized GPS flight logs, including no-drone ambient segments, under CC BY-SA 4.0.",
+  "year": 2026,
+  "summary": "24-channel acoustic recordings (48 kHz, four synced Zoom F6 recorders) of a DJI Air 3 drone with synchronized GPS flight logs at 100 ms, including no-drone ambient segments, under CC BY-SA 4.0.",
   "key_takeaways": [
    "Ground-truth positions enable acoustic localization, not just detection",
    "Multi-recorder synchronized array"
@@ -532,7 +565,9 @@
   "title": "UaVirBASE: A Public-Access Unmanned Aerial Vehicle Sound Source Localization Dataset",
   "url": "https://www.mdpi.com/2076-3417/15/10/5378",
   "authors": [
-   "Applied Sciences authors"
+   "Gabriel Jekaterynczuk",
+   "Rafal Szadkowski",
+   "Zbigniew Piotrowski"
   ],
   "year": 2025,
   "summary": "Public dataset of synchronized multi-microphone UAV recordings under controlled distance, altitude, azimuth and orientation variations, for acoustic source localization.",
@@ -558,7 +593,7 @@
   "url": "https://arxiv.org/abs/2504.19347",
   "authors": [
    "Rayson Laroca",
-   "dos Santos",
+   "Marcelo dos Santos",
    "David Menotti"
   ],
   "year": 2025,
@@ -566,7 +601,7 @@
   "key_takeaways": [
    "Multi-scale tiling is key for tiny targets",
    "Copy-paste augmentation helps with scarce drone pixels",
-   "Reported as top-ranked; exact placing varies between versions"
+   "v1 abstract says top-3; v2 (Nov 2025) says first place"
   ],
   "concepts": [
    "concept:counter-uas",
@@ -592,17 +627,17 @@
   "title": "Kilometer-Scale GNSS-Denied UAV Navigation via Heightmap Gradients: A Winning System from the SPRIN-D Challenge",
   "url": "https://arxiv.org/abs/2510.01348",
   "authors": [
-   "Werner",
-   "Capek",
-   "Musil",
-   "Franek",
-   "Baca",
-   "Saska (CTU MRS / Fly4Future)"
+   "Michal Werner",
+   "David Capek",
+   "Tomas Musil",
+   "Ondrej Franek",
+   "Tomas Baca",
+   "Martin Saska"
   ],
   "year": 2025,
   "summary": "Describes the winning SPRIN-D Fully Autonomous Flight system: LiDAR local heightmaps matched against prior elevation data by gradient templates, fused with odometry in a clustered particle filter, flying about 9 km below 25 m AGL without GNSS.",
   "key_takeaways": [
-   "Terrain gradients beat raw height matching at low altitude",
+   "Heightmap gradients avoid needing reliable absolute (barometric) height",
    "Clustered particle filter handles multimodal position",
    "Runs on CPU in real time",
    "No public code found"
@@ -639,7 +674,7 @@
   "authors": [
    "SPRIND (German Federal Agency for Breakthrough Innovation)"
   ],
-  "year": 2025,
+  "year": 2024,
   "summary": "German innovation agency challenge for long-range autonomous flight without GNSS; Fly4Future (CTU spin-off) won, with Beyond Vision and KopterKraft on the podium; a 2.0 edition followed.",
   "key_takeaways": [
    "Real GNSS-denied long-range task specification",
@@ -700,7 +735,7 @@
    "WKO Kaernten"
   ],
   "year": 2026,
-  "summary": "Report on the Austrian site of the 5th EUDIS hackathon: IRNAS (Slovenia) won the GNSS-Denied Navigation challenge with multi-sensor fusion for a ground robot, reporting much lower path deviation after many test runs.",
+  "summary": "Report on the Klagenfurt site of the autumn 2026 EUDIS Defence Hackathon: IRNAS (Slovenia) won with multi-sensor fusion for ground robots; by the team's account path deviation fell from 37 cm to about 1 cm over 150+ test runs.",
   "key_takeaways": [
    "Winning entry was ground-robot sensor fusion, not visual drone nav",
    "No code repository linked"
@@ -732,10 +767,10 @@
    "IT Ukraine Association"
   ],
   "year": 2023,
-  "summary": "Coverage of the 2023 NATO TIDE hackathon in Warsaw, which included a Small UAV Visual Navigation Concept Development challenge alongside others.",
+  "summary": "Coverage of the TIDE NATO Hackathon 2023 in Poland, whose three challenges included Small UAV Visual Navigation Concepts; SoftServe won the Analytics Dashboard for Interoperability challenge.",
   "key_takeaways": [
    "NATO ACT has posed visual UAV navigation as a hackathon challenge",
-   "Winning teams presented at TIDE Sprint"
+   "Challenge winners were due to present at the Spring 2023 TIDE Sprint in Norway"
   ],
   "concepts": [
    "concept:visual-geolocalization",
@@ -760,9 +795,9 @@
    "Google"
   ],
   "year": 2023,
-  "summary": "ION page for the smartphone decimeter challenge listing official placings; for 2023 it lists Norizumi Motooka first, Taro Suzuki second and Jeonghyeon Yun third.",
+  "summary": "ION page for the 3rd Smartphone Decimeter Challenge (Google, ION Satellite Division and Kaggle; ran Sep 12, 2023 - May 23, 2024). It lists Norizumi Motooka first, Taro Suzuki second and Jeonghyeon Yun third, with $7,000 / $5,000 / $3,000 prizes.",
   "key_takeaways": [
-   "Official placings differ from the public Kaggle leaderboard",
+   "Prize eligibility needs a technical paper and a talk at ION GNSS+ 2024, not just a Kaggle rank",
    "Winners present at ION GNSS+"
   ],
   "concepts": [
@@ -799,7 +834,9 @@
   "summary": "Codalab leaderboard for drone-to-satellite matching on the University-160k extension.",
   "key_takeaways": [
    "Recall@1 leaderboard",
-   "Several team codebases are public"
+   "Several team codebases are public",
+   "Leaderboard is not the final ranking: the top entry (98.94) was removed for using University-1652 test data",
+   "University-1652 data is request-only: research use, no sharing with third parties, no profit (layumi/University1652-Baseline Request.md)"
   ],
   "concepts": [
    "concept:visual-geolocalization",
@@ -824,12 +861,13 @@
   "title": "ACM MM 2024 Multi-weather Drone Satellite Matching Challenge (UAVM 2024)",
   "url": "https://codalab.lisn.upsaclay.fr/competitions/18770",
   "authors": [
-   "UAVM organizers"
+   "Tingyu Wang et al."
   ],
   "year": 2024,
   "summary": "Codalab leaderboard for weather-robust drone-satellite matching.",
   "key_takeaways": [
-   "Adds weather corruptions to cross-view retrieval"
+   "Adds weather corruptions to cross-view retrieval",
+   "University-1652 data is request-only: research use, no sharing with third parties, no profit (layumi/University1652-Baseline Request.md)"
   ],
   "concepts": [
    "concept:visual-geolocalization",
@@ -857,9 +895,11 @@
    "Zhedong Zheng et al."
   ],
   "year": 2026,
-  "summary": "Workshop and challenge site for the 2026 UAV multimedia workshop, whose challenge baseline targets last-meter visual servoing navigation.",
+  "summary": "Workshop and challenge site for the 4th UAVs in Multimedia workshop at ACM MM 2026. The challenge (29 Mar - 30 Jun 2026, on Codabench) uses the PairUAV dataset for last-meter relative pose alignment; workshop on 14 Nov 2026.",
   "key_takeaways": [
-   "Challenge shifts from retrieval to precise approach navigation"
+   "Challenge shifts from retrieval to precise approach navigation",
+   "Awards require open-source code",
+   "PairUAV derives from University-1652, which is request-only for research use with no third-party sharing or profit"
   ],
   "concepts": [
    "concept:visual-geolocalization"
@@ -912,7 +952,14 @@
   "title": "PiLoT: Neural Pixel-to-3D Registration for UAV-based Ego and Target Geo-localization",
   "url": "https://arxiv.org/abs/2603.20778",
   "authors": [
-   "NUDT SAW Lab"
+   "Xiaoya Cheng",
+   "Long Wang",
+   "Yan Liu",
+   "Xinyi Liu",
+   "Hanlin Tan",
+   "Yu Liu",
+   "Maojun Zhang",
+   "Shen Yan"
   ],
   "year": 2026,
   "summary": "Registers live UAV frames against geo-referenced 3D maps to recover 6-DoF ego pose and geo-locate observed points.",
@@ -1002,12 +1049,13 @@
   "title": "GNSS/GPS Spoofing and Jamming Identification Using Machine Learning and Deep Learning",
   "url": "https://arxiv.org/abs/2501.02352",
   "authors": [
-   "arXiv 2501.02352 authors"
+   "Ali Ghanbarzade",
+   "Hossein Soleimani"
   ],
   "year": 2025,
   "summary": "Study applying ML and DL to spoofing detection and to jamming-type classification from spectrogram images of public IQ data.",
   "key_takeaways": [
-   "Spectrogram + CNN gives strong jamming-type accuracy on synthetic data",
+   "Spectrogram + CNN reaches 98.93% jamming-type accuracy (ResNet18, transfer learning) on the simulated Swinney-Woods raw IQ dataset (CC BY 4.0)",
    "Code in Colab notebooks"
   ],
   "concepts": [
@@ -1036,12 +1084,17 @@
   "title": "Analyzing and Characterizing Multi-Source Interference Effects at Jammertest Norway 2025",
   "url": "https://arxiv.org/abs/2608.15819",
   "authors": [
-   "Jammertest 2025 researchers"
+   "Lucas Heublein",
+   "Inigo Cortes Vidal",
+   "Tobias Feigl",
+   "Alexander Rügamer",
+   "Felix Ott"
   ],
   "year": 2026,
-  "summary": "Analysis of how multiple simultaneous interference sources affected receivers at Jammertest 2025.",
+  "summary": "Fraunhofer IIS dataset from Jammertest 2025 (Andøya) with a single-antenna E1/E5 receiver and a 2x2 CRPA array, benchmarking 17 ML models for interference type, bandwidth and power, plus YOLOv8s / RF-DETR detection of multiple simultaneous interferers in spectrograms.",
   "key_takeaways": [
-   "Multi-emitter scenarios behave differently from single jammers"
+   "Near-99% within-area classification but large drops across test areas => domain shift is the real problem",
+   "Dataset is open on Zenodo (record 21332689) under CC BY-SA 4.0"
   ],
   "concepts": [
    "concept:gnss-interference"
@@ -1069,10 +1122,16 @@
   "title": "Trends and Challenges in Next-Generation GNSS Interference Management",
   "url": "https://arxiv.org/abs/2510.27576",
   "authors": [
-   "Multiple authors"
+   "Leatile Marata",
+   "Mariona Jaramillo-Civill",
+   "Tales Imbiriba",
+   "Petri Välisuo",
+   "Heidi Kuusniemi",
+   "Elena Simona Lohan",
+   "Pau Closas"
   ],
   "year": 2025,
-  "summary": "Survey of interference detection, classification, localization and mitigation trends, including open datasets such as Jammertest recordings.",
+  "summary": "Magazine paper (submitted to IEEE AESM) on AI for GNSS interference detection, classification, localization and mitigation, with preliminary results and an open dataset from Jammertest 2024 (University of Vaasa VAARA).",
   "key_takeaways": [
    "Good map of the field and its datasets"
   ],
@@ -1093,12 +1152,18 @@
   "title": "Data-Driven Analysis of PNT Resilience: Insights and Lessons from Jammertest 2024 Vehicular Data",
   "url": "https://osuva.uwasa.fi/handle/11111/19667",
   "authors": [
-   "University of Vaasa"
+   "Jaakko Yliaho",
+   "Petri Välisuo",
+   "Elham Ahmadi",
+   "Kannan Selvan",
+   "Mahmoud Elsanhoury",
+   "Heidi Kuusniemi"
   ],
   "year": 2025,
   "summary": "Analyses vehicle-mounted GNSS, phone, IMU and camera data collected at Jammertest 2024.",
   "key_takeaways": [
-   "Shows how consumer and automotive stacks degrade under jamming/spoofing"
+   "Shows how consumer and automotive stacks degrade under jamming/spoofing",
+   "Data is on GitHub (UniVaasaDigiEco/VAARA) with no licence file => all rights reserved by default; ask before reuse"
   ],
   "concepts": [
    "concept:gnss-interference",
@@ -1123,13 +1188,26 @@
   "title": "On Your Own: Pro-level Autonomous Drone Racing in Uninstrumented Arenas",
   "url": "https://arxiv.org/abs/2510.13644",
   "authors": [
-   "TII racing team"
+   "Michael Bosello",
+   "Flavio Pinzarrone",
+   "Sara Kiade",
+   "Davide Aguiari",
+   "Yvo Keuter",
+   "Aaesha AlShehhi",
+   "Gyordan Caminati",
+   "Kei Long Wong",
+   "Ka Seng Chou",
+   "Junaid Halepota",
+   "Fares Alneyadi",
+   "Jacopo Panerati",
+   "Giovanni Pau"
   ],
   "year": 2025,
   "summary": "Autonomous drone racing using only onboard sensing in arenas without motion capture, with released human pilot flight data.",
   "key_takeaways": [
    "Onboard-only state estimation at racing speed",
-   "Related to the A2RL format"
+   "Human pilot data released at github.com/tii-racing/drone-racing-dataset",
+   "A2RL is cited as context, not the test venue"
   ],
   "concepts": [
    "concept:vio",
@@ -1191,12 +1269,12 @@
   "id": "res:copterhack-2022",
   "kind": "competition",
   "title": "CopterHack 2022",
-  "url": "https://copterexpress.github.io/clover-vuepress/en/copterhack2022.html",
+  "url": "https://web.archive.org/web/20231203134525/https://clover.coex.tech/en/copterhack2022.html",
   "authors": [
    "COEX"
   ],
   "year": 2022,
-  "summary": "Results page for CopterHack 2022, an open-source drone project competition on the Clover platform; Atena (Swarm in Blocks) won.",
+  "summary": "Results page for CopterHack 2022, an open-source drone project competition on the Clover platform; the final was on April 23, 2022 and Atena - Grupo SEMEAR (Swarm in Blocks, 21.6 points) won ahead of FTL (Advanced Clover 2).",
   "key_takeaways": [
    "All entries must be open source on Clover",
    "Links to finalist repos"
@@ -1261,14 +1339,19 @@
  {
   "id": "res:humphreys-fused-leo-gnss-mock-2025",
   "kind": "paper",
-  "title": "Fused LEO GNSS mock implementation (PLANS 2025 preprint)",
+  "title": "A Mock Implementation of Fused LEO GNSS",
   "url": "https://radionavlab.ae.utexas.edu/wp-content/uploads/morgan_MockStarlink_plans.pdf",
   "authors": [
-   "Morgan",
-   "Humphreys et al."
+   "Samuel C. Morgan",
+   "Zacharias M. Komodromos",
+   "Wenkai Qin",
+   "Zachary L. Clements",
+   "Andrew Graff",
+   "W. Jeremy Morrison",
+   "Todd E. Humphreys"
   ],
   "year": 2025,
-  "summary": "IEEE/ION PLANS 2025 preprint on a mock fused LEO-GNSS implementation exploring how a Starlink-like constellation could serve PNT.",
+  "summary": "First experimental demo of fused LEO GNSS with pseudoranges: beam-specific Starlink orbit and clock models are distributed as if by the operator and combined with live Starlink signals, giving 10-meter-level position and timing.",
   "key_takeaways": [
    "Concrete design study for LEO PNT"
   ],
@@ -1326,7 +1409,7 @@
   "title": "ION GNSS+ 2025: Galileo at 30 and the Future of Resilient PNT",
   "url": "https://insidegnss.com/?p=195993",
   "authors": [
-   "Inside GNSS"
+   "Richard Thomas (Inside GNSS)"
   ],
   "year": 2025,
   "summary": "Report on the ION GNSS+ 2025 plenary (Galileo history keynote) and the conference focus on GNSS vulnerabilities, assured PNT and LEO PNT pathfinders.",
@@ -1385,7 +1468,7 @@
  {
   "id": "res:saska-rss-2024-aerial-swarms",
   "kind": "talk",
-  "title": "Martin Saska - RSS 2024 Aerial Swarms workshop slides",
+  "title": "Martin Saska - Onboard relative localization for agile aerial swarming in the wild (RSS 2024 Aerial Swarms workshop slides)",
   "url": "https://imrclab.github.io/workshop-aerial-swarms-rss2024/presentations/saska_RSS_swarms_2024_compress.pdf",
   "authors": [
    "Martin Saska (CTU)"

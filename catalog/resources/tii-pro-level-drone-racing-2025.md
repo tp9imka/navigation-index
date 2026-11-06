@@ -2,14 +2,15 @@
 
 `res:tii-pro-level-drone-racing-2025` - paper - <https://arxiv.org/abs/2510.13644>
 
-**By:** TII racing team - **Year:** 2025 - **Level:** advanced - **Access:** open
+**By:** Michael Bosello, Flavio Pinzarrone, Sara Kiade, Davide Aguiari, Yvo Keuter, Aaesha AlShehhi, Gyordan Caminati, Kei Long Wong, Ka Seng Chou, Junaid Halepota, Fares Alneyadi, Jacopo Panerati, Giovanni Pau - **Year:** 2025 - **Level:** advanced - **Access:** open
 
 Autonomous drone racing using only onboard sensing in arenas without motion capture, with released human pilot flight data.
 
 ## Key takeaways
 
 - Onboard-only state estimation at racing speed
-- Related to the A2RL format
+- Human pilot data released at github.com/tii-racing/drone-racing-dataset
+- A2RL is cited as context, not the test venue
 
 **Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Autopilots and flight control](../concepts/autopilot.md)
 

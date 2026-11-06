@@ -10,7 +10,7 @@ Neural pixel-to-3D registration for UAV ego-localization and target geo-localiza
 
 **Why it matters:** Absolute 6-DoF pose from a 3D map is a strong GNSS-denied fix for low-altitude drones.
 
-**Hackathon notes:** GPU-heavy; demo data and pretrained model provided.
+**Hackathon notes:** GPU-heavy (CUDA extension build, CityGaussian conda env); demo data is about 15 GB. Code is MIT, but PiLoT-data on HF is gated: non-commercial research or education only, no redistribution. From NUDT, which is on the US Entity List - check your programme's rules.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Visual SLAM](../concepts/visual-slam.md)
 

@@ -4,13 +4,13 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 0 | Python | Apache-2.0 | 2022-09-29 | False | research-prototype | high |
+| 0 | Jupyter Notebook | Apache-2.0 | 2022-09-29 | False | archived | high |
 
 Notebooks that classify drone presence and type from RF using DroneRF and DroneDetect data (PSD+SVM and CNN approaches), aiming at real-time use with GamutRF hardware.
 
 **Why it matters:** Ready-made baselines on the two most-cited public drone RF datasets.
 
-**Hackathon notes:** Fastest path to a working RF drone classifier; includes a Raspberry Pi test script.
+**Hackathon notes:** Fork of the archived IQTLabs/RFClassification; no commits since 2022-09. Includes Raspberry Pi 4 test scripts. Download DroneRF (Mendeley, CC BY 4.0) and DroneDetect (IEEE DataPort, CC BY 4.0, 65.8 GB, needs an IEEE account) separately.
 
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 
@@ -24,7 +24,7 @@ Notebooks that classify drone presence and type from RF using DroneRF and DroneD
 
 ## Referenced by
 
-- [DroneDetect Dataset (RF recordings of UAS signals, University of Essex)](../resources/dronedetect-rf-dataset-essex.md) (has_code)
+- [DroneDetect Dataset: A Radio Frequency dataset of Unmanned Aerial System (UAS) Signals for Machine Learning Detection & Classification](../resources/dronedetect-rf-dataset-essex.md) (has_code)
 
 _Indexed by lane(s): round3-expansion_
 

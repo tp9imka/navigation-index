@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 122 | Python | ? | 2024-03-07 | False | research-prototype | medium |
 
-Transformer-based feature segmentation and region alignment for drone-to-satellite geo-localization (TCSVT 2021).
+Transformer-based feature segmentation and region alignment for drone-to-satellite geo-localization (TCSVT 2022).
 
 **Why it matters:** Widely used baseline on University-1652.
 
-**Hackathon notes:** Train on University-1652; good comparison baseline.
+**Hackathon notes:** No licence file (all rights reserved). Trains on University-1652, which is request-only and research use only. Good comparison baseline.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
 

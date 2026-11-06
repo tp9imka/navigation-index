@@ -1,0 +1,31 @@
+# PTPd
+
+`repo:ptpd/ptpd` - <https://github.com/ptpd/ptpd>
+
+| stars | language | license | last push | archived | maturity | hackathon fit |
+|---|---|---|---|---|---|---|
+| 580 | C | NOASSERTION | 2022-09-05 | False | archived | low |
+
+Older open-source PTPv2 daemon; the repository has been inactive since 2022.
+
+**Why it matters:** Sometimes the only option on platforms without linuxptp hardware support; also appears in older PTP security papers.
+
+**Hackathon notes:** Prefer linuxptp or statime.
+
+**Concepts:** [Timing and time transfer](../concepts/timing.md)
+
+**Tags:** `ptp`, `ieee-1588`
+
+**Domains:** multi
+
+## Related
+
+- alternative_to: [linuxptp](../repos/nwtime__linuxptp.md)
+
+## Referenced by
+
+- [linuxptp](../repos/nwtime__linuxptp.md) (alternative_to)
+
+_Indexed by lane(s): timing_
+
+_GitHub metadata fetched 2026-11-06._

@@ -45,6 +45,7 @@ Actively maintained RTKLIB fork tuned for low-cost receivers (especially u-blox)
 - [rtklibexplorer blog](../resources/rtklibexplorer-blog.md) (explains)
 - [rtklibexplorer blog](../resources/rtklibexplorer-blog.md) (has_code)
 - [Public CORS RINEX to SPP vs RTK with RTKLIB demo5 and gnss_lib_py](../samples/gnss-rinex-processing.md) (uses)
+- [File-based GNSS signal chain: gps-sdr-sim => GNSS-SDR => spoofing/jamming scorer](../samples/gnss-signal-chain.md) (uses)
 
 _Indexed by lane(s): gnss_
 

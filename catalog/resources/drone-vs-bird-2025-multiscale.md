@@ -2,7 +2,7 @@
 
 `res:drone-vs-bird-2025-multiscale` - paper - <https://arxiv.org/abs/2504.19347>
 
-**By:** Rayson Laroca, dos Santos, David Menotti - **Year:** 2025 - **Level:** intermediate - **Access:** open
+**By:** Rayson Laroca, Marcelo dos Santos, David Menotti - **Year:** 2025 - **Level:** intermediate - **Access:** open
 
 Entry to the 8th WOSDETC Drone-vs-Bird challenge at IJCNN 2025 using multi-scale YOLOv11 inference and copy-paste augmentation for tiny drones.
 
@@ -10,7 +10,7 @@ Entry to the 8th WOSDETC Drone-vs-Bird challenge at IJCNN 2025 using multi-scale
 
 - Multi-scale tiling is key for tiny targets
 - Copy-paste augmentation helps with scarce drone pixels
-- Reported as top-ranked; exact placing varies between versions
+- v1 abstract says top-3; v2 (Nov 2025) says first place
 
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Tracking and data association](../concepts/target-tracking.md)
 

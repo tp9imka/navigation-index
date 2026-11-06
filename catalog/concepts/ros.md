@@ -4,7 +4,7 @@
 
 ROS ecosystem packages for navigation and localization.
 
-## Repositories (77)
+## Repositories (78)
 
 - [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md) - fit: high - The standard ROS 2 navigation stack: behavior-tree driven navigator, global planners (NavFn, Smac hybrid-A*/lattice, Theta*), local controllers (DWB, MPPI, Regulated Pure Pursuit), costmaps, recovery behaviors and waypoi
 - [BehaviorTree.CPP](../repos/behaviortree__behaviortree.cpp.md) - fit: high - C++ behavior tree library with XML trees, async actions, logging and the Groot editor; the execution engine inside Nav2 and many mission frameworks.
@@ -68,6 +68,7 @@ ROS ecosystem packages for navigation and localization.
 - [ROS2swarm](../repos/ros2swarm__ros2swarm.md) - fit: medium - ROS 2 package providing a library of swarm behaviours (aggregation, dispersion, flocking) and an easy-to-extend framework, tested on TurtleBot-class robots.
 - [ROSflight ROS packages](../repos/rosflight__rosflight_ros_pkgs.md) - fit: medium - ROS 2 interface, simulator and utilities for the ROSflight autopilot.
 - [WiseVision ROS 2 MCP](../repos/wise-vision__ros2_mcp.md) - fit: medium - MCP server that lets AI agents discover and operate ROS 2 robots: topic echo/publish, services, actions and introspection, implemented natively in ROS 2 rather than through rosbridge.
+- [cuckoo_time_translator](../repos/ethz-asl__cuckoo_time_translator.md) - fit: medium - ROS algorithms that translate a sensor's own hardware timestamps into host system time from one-way timing, estimating skew and offset.
 - [ardupilot_gz](../repos/ardupilot__ardupilot_gz.md) - fit: medium - ROS 2 + Gazebo packages for ArduPilot SITL integration and testing.
 - [HoloOcean ROS bridge](../repos/byu-holoocean__holoocean-ros.md) - fit: medium - ROS bridge for HoloOcean, BYU's Unreal Engine based underwater simulator with DVL, IMU, depth, sonar and acoustic modem sensors.
 - [ping360_sonar ROS package](../repos/centralenantesrobotics__ping360_sonar.md) - fit: medium - ROS package that drives the Ping360 scanning sonar and publishes scans as images and laser-scan style messages.

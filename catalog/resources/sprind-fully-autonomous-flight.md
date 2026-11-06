@@ -2,7 +2,7 @@
 
 `res:sprind-fully-autonomous-flight` - competition - <https://sprind.org/en/articles/fully-autonomous-flight>
 
-**By:** SPRIND (German Federal Agency for Breakthrough Innovation) - **Year:** 2025 - **Level:** intro - **Access:** open
+**By:** SPRIND (German Federal Agency for Breakthrough Innovation) - **Year:** 2024 - **Level:** intro - **Access:** open
 
 German innovation agency challenge for long-range autonomous flight without GNSS; Fly4Future (CTU spin-off) won, with Beyond Vision and KopterKraft on the podium; a 2.0 edition followed.
 
@@ -10,6 +10,10 @@ German innovation agency challenge for long-range autonomous flight without GNSS
 
 - Real GNSS-denied long-range task specification
 - Winners published method details
+
+## Deep dives
+
+- [ctu-sprind-terrain-nav](../../docs/paper-digests/ctu-sprind-terrain-nav.md) (paper-digests)
 
 **Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Terrain-relative navigation](../concepts/terrain-nav.md)
 

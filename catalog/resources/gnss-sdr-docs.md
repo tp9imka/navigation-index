@@ -19,4 +19,8 @@ Tutorials and reference for configuring the GNSS-SDR receiver, including signal 
 
 - explains: [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md)
 
+## Referenced by
+
+- [File-based GNSS signal chain: gps-sdr-sim => GNSS-SDR => spoofing/jamming scorer](../samples/gnss-signal-chain.md) (explains)
+
 _Indexed by lane(s): gnss_

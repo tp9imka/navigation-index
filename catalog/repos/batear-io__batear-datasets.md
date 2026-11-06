@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 12 | Python | MIT | 2026-04-30 | False | research-prototype | high |
 
-Acoustic datasets for drone detection on embedded devices such as ESP32-S3, including bio-acoustic interference samples.
+Small Git LFS collection of drone and background audio for ESP32-S3 acoustic detection: about 89 WAV clips of DJI Mavic Pro, Mini 4 Pro and 5-inch FPV flights, ambient (urban, rural, fireworks, bat sites) and synthetic sweeps, plus resample and spectrogram tools.
 
 **Why it matters:** Targets low-cost acoustic sensor nodes - the cheapest C-UAS tripwire.
 
-**Hackathon notes:** Pair with the Batear firmware for a microcontroller acoustic sensor demo.
+**Hackathon notes:** MIT. Run git lfs pull to get the audio. Pair with the Batear firmware for a microcontroller acoustic sensor demo.
 
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../concepts/counter-uas.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 

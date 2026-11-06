@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 17 | MATLAB | GPL-3.0 | 2023-10-18 | False | research-prototype | low |
 
-Magnetic-field aided inertial navigation using a magnetometer array for odometry.
+MATLAB simulation of a tightly-integrated magnetic-field aided INS using a magnetometer array; it generates its own trajectory and sensor data.
 
 **Why it matters:** Shows magnetometer arrays as odometry where cameras fail.
 
-**Hackathon notes:** MATLAB reference.
+**Hackathon notes:** MATLAB simulation only, no real data. GPL-3.0.
 
 **Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
 

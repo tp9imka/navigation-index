@@ -1,0 +1,9 @@
+{
+ "title": "OSINT interference map 2026-10-01 (ADS-B NACp + Sentinel-1 RFI)",
+ "tracks": [
+  "adsb-good.jsonl",
+  "adsb-bad.jsonl",
+  "s1-overpass.jsonl"
+ ],
+ "zones": "zones.geojson"
+}

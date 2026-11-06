@@ -1,4 +1,17 @@
 {
+ "repo:1ux/dcf77decode": {
+  "archived": false,
+  "description": "Focusing on clean code, this library implements almost the entire public DCF77 standard in C.",
+  "forks_count": 1,
+  "full_name": "1ux/DCF77Decode",
+  "html_url": "https://github.com/1ux/DCF77Decode",
+  "language": "C++",
+  "license": "GPL-3.0",
+  "pushed_at": "2024-04-11T19:38:18Z",
+  "stargazers_count": 11,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:aau-cns/cnspy_trajectory_evaluation": {
   "archived": false,
   "description": "  A python3 package for evaluating trajectories for different error metrics.",
@@ -128,6 +141,19 @@
   "license": null,
   "pushed_at": "2026-11-01T16:22:42Z",
   "stargazers_count": 61,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:aewallin/allantools": {
+  "archived": false,
+  "description": "Allan deviation and related time & frequency statistics library in Python",
+  "forks_count": 88,
+  "full_name": "aewallin/allantools",
+  "html_url": "https://github.com/aewallin/allantools",
+  "language": "Python",
+  "license": "LGPL-3.0",
+  "pushed_at": "2026-10-26T09:15:06Z",
+  "stargazers_count": 275,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -464,6 +490,35 @@
   "pushed_at": "2026-10-27T20:31:57Z",
   "stargazers_count": 37,
   "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:andrewbcn/lars-diy-gpsdo": {
+  "archived": false,
+  "description": "These are the original files for Lars' DIY GPSDO EEVblog project by Lars Walenius",
+  "forks_count": 8,
+  "full_name": "AndrewBCN/Lars-DIY-GPSDO",
+  "html_url": "https://github.com/AndrewBCN/Lars-DIY-GPSDO",
+  "language": "C++",
+  "license": "GPL-3.0",
+  "pushed_at": "2022-01-24T09:55:10Z",
+  "stargazers_count": 13,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:andrewbcn/stm32-gpsdo": {
+  "archived": false,
+  "description": "An experimental GPSDO using an STM32 MCU and a u-blox Neo-M8 GNSS module.",
+  "forks_count": 33,
+  "full_name": "AndrewBCN/STM32-GPSDO",
+  "html_url": "https://github.com/AndrewBCN/STM32-GPSDO",
+  "language": "C++",
+  "license": "GPL-3.0",
+  "pushed_at": "2022-04-22T13:36:26Z",
+  "stargazers_count": 106,
+  "topics": [
+   "gpsdo",
+   "stm32duino"
+  ],
   "fetched": "2026-11-06"
  },
  "repo:anybotics/grid_map": {
@@ -1882,6 +1937,36 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:cloudflare/cfnts": {
+  "archived": true,
+  "description": "Cloudflare's implementation of the NTS protocol written in Rust",
+  "forks_count": 15,
+  "full_name": "cloudflare/cfnts",
+  "html_url": "https://github.com/cloudflare/cfnts",
+  "language": "Rust",
+  "license": "BSD-2-Clause",
+  "pushed_at": "2024-04-09T16:54:37Z",
+  "stargazers_count": 174,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:cloudflare/roughtime": {
+  "archived": false,
+  "description": "A secure clock-synchronization protocol for when rough is enough.",
+  "forks_count": 33,
+  "full_name": "cloudflare/roughtime",
+  "html_url": "https://github.com/cloudflare/roughtime",
+  "language": "Go",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-04-28T20:48:37Z",
+  "stargazers_count": 178,
+  "topics": [
+   "ntp",
+   "roughtime",
+   "time"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:codexlabsllc/colosseum": {
   "archived": true,
   "description": "Open source simulator for autonomous robotics built on Unreal Engine with support for Unity",
@@ -2298,6 +2383,65 @@
    "gnss-signals",
    "gps",
    "prn"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:dankar/gpsdo-fw": {
+  "archived": false,
+  "description": "Alternative firmware for a common GPSDO",
+  "forks_count": 21,
+  "full_name": "dankar/gpsdo-fw",
+  "html_url": "https://github.com/dankar/gpsdo-fw",
+  "language": "C",
+  "license": "GPL-3.0",
+  "pushed_at": "2025-02-25T19:45:15Z",
+  "stargazers_count": 39,
+  "topics": [
+   "frequency-standard",
+   "gps",
+   "ocxo",
+   "oscillator"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:dc9st/librtlsdr-2freq": {
+  "archived": false,
+  "description": "Modified librtlsdr with switch between two receive frequencies",
+  "forks_count": 16,
+  "full_name": "DC9ST/librtlsdr-2freq",
+  "html_url": "https://github.com/DC9ST/librtlsdr-2freq",
+  "language": "C",
+  "license": "GPL-3.0",
+  "pushed_at": "2019-04-06T21:39:57Z",
+  "stargazers_count": 30,
+  "topics": [
+   "librtlsdr",
+   "receiver",
+   "rtl-sdr",
+   "tdoa"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:dc9st/tdoa-evaluation-rtlsdr": {
+  "archived": false,
+  "description": "Matlab Scripts for Evaluation of a TDOA System based on RTL-SDRs",
+  "forks_count": 38,
+  "full_name": "DC9ST/tdoa-evaluation-rtlsdr",
+  "html_url": "https://github.com/DC9ST/tdoa-evaluation-rtlsdr",
+  "language": "MATLAB",
+  "license": null,
+  "pushed_at": "2020-10-30T22:59:55Z",
+  "stargazers_count": 104,
+  "topics": [
+   "correlation",
+   "defined",
+   "localization",
+   "radio",
+   "receiver",
+   "rtl-sdr",
+   "software",
+   "tdoa",
+   "time-difference-of-arrival"
   ],
   "fetched": "2026-11-06"
  },
@@ -2729,6 +2873,19 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:erikkaashoek/arduino_si5351_gpsdo": {
+  "archived": false,
+  "description": "Very simple Arduino nano and SI5351 GPSDO using the PPS from a GPS receiver",
+  "forks_count": 7,
+  "full_name": "erikkaashoek/Arduino_SI5351_GPSDO",
+  "html_url": "https://github.com/erikkaashoek/Arduino_SI5351_GPSDO",
+  "language": "C++",
+  "license": "GPL-3.0",
+  "pushed_at": "2021-12-03T10:50:30Z",
+  "stargazers_count": 32,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:erikliland/pymht": {
   "archived": false,
   "description": "Track oriented, multi target, multi hypothesis tracker",
@@ -2818,6 +2975,25 @@
   "pushed_at": "2024-03-25T16:53:49Z",
   "stargazers_count": 11,
   "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:ethz-asl/cuckoo_time_translator": {
+  "archived": false,
+  "description": "algorithms for synchronizing clocks ",
+  "forks_count": 22,
+  "full_name": "ethz-asl/cuckoo_time_translator",
+  "html_url": "https://github.com/ethz-asl/cuckoo_time_translator",
+  "language": "C++",
+  "license": "NOASSERTION",
+  "pushed_at": "2022-06-30T20:47:22Z",
+  "stargazers_count": 96,
+  "topics": [
+   "clock-synchronization",
+   "ros",
+   "sensor-fusion",
+   "time-series",
+   "timestamps"
+  ],
   "fetched": "2026-11-06"
  },
  "repo:ethz-asl/ethzasl_msf": {
@@ -3011,6 +3187,37 @@
    "remote-control",
    "sx1276",
    "sx1280"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:f4exb/sdrangel": {
+  "archived": false,
+  "description": "SDR Rx/Tx software for Airspy, Airspy HF+, BladeRF, HackRF, LimeSDR, PlutoSDR, RTL-SDR, SDRplay and FunCube",
+  "forks_count": 625,
+  "full_name": "f4exb/sdrangel",
+  "html_url": "https://github.com/f4exb/sdrangel",
+  "language": "C++",
+  "license": "GPL-3.0",
+  "pushed_at": "2026-11-05T14:11:48Z",
+  "stargazers_count": 4155,
+  "topics": [
+   "airspy",
+   "airspyhf",
+   "bladerf",
+   "d-star",
+   "dmr",
+   "dpmr",
+   "funcube",
+   "funcube-dongle",
+   "hackrf",
+   "limesdr",
+   "plutosdr",
+   "receiver",
+   "rtl-sdr",
+   "sdr",
+   "sdrplay",
+   "transmitter",
+   "ysf"
   ],
   "fetched": "2026-11-06"
  },
@@ -3419,6 +3626,26 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:geerlingguy/time-pi": {
+  "archived": false,
+  "description": "Raspberry Pi stratum 1 PTP and NTP timeserver configuration.",
+  "forks_count": 17,
+  "full_name": "geerlingguy/time-pi",
+  "html_url": "https://github.com/geerlingguy/time-pi",
+  "language": "Python",
+  "license": "GPL-3.0",
+  "pushed_at": "2026-11-06T06:28:50Z",
+  "stargazers_count": 293,
+  "topics": [
+   "gps",
+   "ntp",
+   "ptp",
+   "raspberry-pi",
+   "time",
+   "time-server"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:gengzezhou/navgpt": {
   "archived": false,
   "description": "[AAAI 2024] Official implementation of NavGPT: Explicit Reasoning in Vision-and-Language Navigation with Large Language Models",
@@ -3573,6 +3800,19 @@
    "coordinate-transformation",
    "geodesy"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:gibbi/picogpsdo": {
+  "archived": false,
+  "description": "Hardware and Software for the PicoGPSDO",
+  "forks_count": 5,
+  "full_name": "gibbi/PicoGPSDO",
+  "html_url": "https://github.com/gibbi/PicoGPSDO",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-04-20T18:38:18Z",
+  "stargazers_count": 23,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:gisbi-kim/sc-lio-sam": {
@@ -3944,6 +4184,23 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:hamarituc/lbgpsdo": {
+  "archived": false,
+  "description": "Configuration Utility for Leo Bodnar GPSDO",
+  "forks_count": 15,
+  "full_name": "hamarituc/lbgpsdo",
+  "html_url": "https://github.com/hamarituc/lbgpsdo",
+  "language": "Python",
+  "license": "GPL-3.0",
+  "pushed_at": "2026-03-08T21:11:22Z",
+  "stargazers_count": 35,
+  "topics": [
+   "amateurradio",
+   "hamradio",
+   "radio"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:hcarlsso/zupt-aided-ins": {
   "archived": false,
   "description": null,
@@ -3968,6 +4225,28 @@
   "pushed_at": "2025-02-12T15:57:10Z",
   "stargazers_count": 1,
   "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:henningm1r/gr_dcf77_receiver": {
+  "archived": false,
+  "description": "DCF77 time signal GNURadio receiver for SDRs incl. live decoder and transmitter simulation. It covers both OOK and phase modulation.",
+  "forks_count": 2,
+  "full_name": "henningM1r/gr_DCF77_Receiver",
+  "html_url": "https://github.com/henningM1r/gr_DCF77_Receiver",
+  "language": "Python",
+  "license": "GPL-3.0",
+  "pushed_at": "2023-08-13T19:49:41Z",
+  "stargazers_count": 28,
+  "topics": [
+   "airspy-hf",
+   "dcf77",
+   "gnuradio",
+   "low-frequency-radio",
+   "ook",
+   "phase-modulation",
+   "python3",
+   "sdr"
+  ],
   "fetched": "2026-11-06"
  },
  "repo:higerra/ridi_imu": {
@@ -4830,6 +5109,40 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:jclark/satpulse": {
+  "archived": false,
+  "description": "Use a GPS receiver on Linux, macOS, Windows: precision timing, positioning and GUI for evaluation/configuration",
+  "forks_count": 6,
+  "full_name": "jclark/satpulse",
+  "html_url": "https://github.com/jclark/satpulse",
+  "language": "Go",
+  "license": "MIT",
+  "pushed_at": "2026-11-02T08:47:34Z",
+  "stargazers_count": 70,
+  "topics": [
+   "beagley-ai",
+   "chrony",
+   "gnss",
+   "gps",
+   "linuxptp",
+   "ntp",
+   "ntp-server",
+   "ntrip",
+   "pps",
+   "ptp",
+   "ptp-grandmaster",
+   "raspberry-pi",
+   "raspberry-pi-cm4",
+   "raspberry-pi-cm5",
+   "rinex",
+   "rtcm",
+   "rtk",
+   "septentrio",
+   "ublox",
+   "unicore"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:je310/eskf": {
   "archived": false,
   "description": "An implementation of an Error State Kalman Filter (ESKF) ",
@@ -4900,6 +5213,19 @@
    "wspr-beacon",
    "ysf"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:jks-prv/kiwiclient": {
+  "archived": false,
+  "description": "Tools for connecting to KiwiSDR and processing audio/waterfall data.",
+  "forks_count": 55,
+  "full_name": "jks-prv/kiwiclient",
+  "html_url": "https://github.com/jks-prv/kiwiclient",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-08-03T01:33:16Z",
+  "stargazers_count": 98,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:jks-prv/kiwisdr": {
@@ -6432,6 +6758,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:meta/time": {
+  "archived": false,
+  "description": "Meta's Time libraries",
+  "forks_count": 94,
+  "full_name": "meta/time",
+  "html_url": "https://github.com/meta/time",
+  "language": "Go",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-11-02T13:12:32Z",
+  "stargazers_count": 680,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:metaslam/alto": {
   "archived": false,
   "description": "ALTO (Aerial-view Large-scale Terrain-Oriented) dataset",
@@ -6863,6 +7202,19 @@
   "license": null,
   "pushed_at": "2024-11-05T22:11:45Z",
   "stargazers_count": 145,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:mlichvar/clknetsim": {
+  "archived": false,
+  "description": "Clock and network simulator (mirror of https://gitlab.com/chrony/clknetsim)",
+  "forks_count": 13,
+  "full_name": "mlichvar/clknetsim",
+  "html_url": "https://github.com/mlichvar/clknetsim",
+  "language": "C",
+  "license": "GPL-2.0",
+  "pushed_at": "2026-10-20T09:53:28Z",
+  "stargazers_count": 37,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -7423,6 +7775,19 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:ntp-project/ntp": {
+  "archived": false,
+  "description": "The full and complete NTP Reference Implementation from the Network Time Protocol Project, at Network Time Foundation.",
+  "forks_count": 80,
+  "full_name": "ntp-project/ntp",
+  "html_url": "https://github.com/ntp-project/ntp",
+  "language": "C",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-08-27T08:23:03Z",
+  "stargazers_count": 197,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:ntu-aris/ntu_viral_dataset": {
   "archived": false,
   "description": null,
@@ -7567,6 +7932,19 @@
   "license": "NOASSERTION",
   "pushed_at": "2026-11-05T23:42:00Z",
   "stargazers_count": 1899,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:nwtime/linuxptp": {
+  "archived": false,
+  "description": "Linux PTP Project",
+  "forks_count": 9,
+  "full_name": "nwtime/linuxptp",
+  "html_url": "https://github.com/nwtime/linuxptp",
+  "language": "C",
+  "license": "GPL-2.0",
+  "pushed_at": "2026-08-09T22:20:48Z",
+  "stargazers_count": 43,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -7886,6 +8264,19 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:orolia2s/oscillatord": {
+  "archived": false,
+  "description": "Daemon used to discipline the Atomic Reference Time Card from Orolia",
+  "forks_count": 18,
+  "full_name": "Orolia2s/oscillatord",
+  "html_url": "https://github.com/Orolia2s/oscillatord",
+  "language": "C",
+  "license": "GPL-2.0",
+  "pushed_at": "2026-06-23T06:39:33Z",
+  "stargazers_count": 25,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:osgeo/gdal": {
   "archived": false,
   "description": "GDAL is an open source MIT licensed translator library for raster and vector geospatial data formats.",
@@ -8112,6 +8503,60 @@
    "px4",
    "simulation",
    "uav"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:pendulum-project/ntpd-rs": {
+  "archived": false,
+  "description": "A full-featured implementation of the Network Time Protocol, including NTS support.",
+  "forks_count": 96,
+  "full_name": "pendulum-project/ntpd-rs",
+  "html_url": "https://github.com/pendulum-project/ntpd-rs",
+  "language": "Rust",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-11-05T21:02:24Z",
+  "stargazers_count": 1156,
+  "topics": [
+   "clock",
+   "ntp",
+   "ntp-client",
+   "ntp-protocol",
+   "ntp-server",
+   "ntpd",
+   "time",
+   "time-synchronization"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:pendulum-project/nts-pool": {
+  "archived": false,
+  "description": "NTS pool key exchange server",
+  "forks_count": 5,
+  "full_name": "pendulum-project/nts-pool",
+  "html_url": "https://github.com/pendulum-project/nts-pool",
+  "language": "Rust",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-11-05T16:37:46Z",
+  "stargazers_count": 16,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:pendulum-project/statime": {
+  "archived": false,
+  "description": "Implementation of the Precision Time Protocol (PTP) in Rust",
+  "forks_count": 38,
+  "full_name": "pendulum-project/statime",
+  "html_url": "https://github.com/pendulum-project/statime",
+  "language": "Rust",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-11-03T10:15:36Z",
+  "stargazers_count": 322,
+  "topics": [
+   "clock",
+   "ieee1588",
+   "ptp",
+   "time",
+   "time-synchronization"
   ],
   "fetched": "2026-11-06"
  },
@@ -8473,6 +8918,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:ptpd/ptpd": {
+  "archived": false,
+  "description": "PTPd official source - master branch a.k.a. trunk",
+  "forks_count": 209,
+  "full_name": "ptpd/ptpd",
+  "html_url": "https://github.com/ptpd/ptpd",
+  "language": "C",
+  "license": "NOASSERTION",
+  "pushed_at": "2022-09-05T12:55:56Z",
+  "stargazers_count": 580,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:px4/flight_review": {
   "archived": false,
   "description": "web application for flight log analysis & review",
@@ -8723,6 +9181,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:redlab-i/pps-tools": {
+  "archived": false,
+  "description": "User-space tools for LinuxPPS",
+  "forks_count": 36,
+  "full_name": "redlab-i/pps-tools",
+  "html_url": "https://github.com/redlab-i/pps-tools",
+  "language": "C",
+  "license": "GPL-2.0",
+  "pushed_at": "2024-03-14T11:47:14Z",
+  "stargazers_count": 63,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:remaro-network/subpipe-dataset": {
   "archived": false,
   "description": "A Submarine Pipeline Inspection Dataset for Segmentation and Visual-inertial Localization",
@@ -8805,6 +9276,19 @@
    "terrain-aided-navigation",
    "terrain-referenced-navigation"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:rjrouquette/gpsdo": {
+  "archived": false,
+  "description": "GPSDO PTP Master",
+  "forks_count": 3,
+  "full_name": "rjrouquette/gpsdo",
+  "html_url": "https://github.com/rjrouquette/gpsdo",
+  "language": "C++",
+  "license": "Unlicense",
+  "pushed_at": "2024-06-10T12:49:29Z",
+  "stargazers_count": 11,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:rlabbe/filterpy": {
@@ -10140,6 +10624,19 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:superq/chrony_exporter": {
+  "archived": false,
+  "description": "Exporter for Chrony NTP",
+  "forks_count": 30,
+  "full_name": "SuperQ/chrony_exporter",
+  "html_url": "https://github.com/SuperQ/chrony_exporter",
+  "language": "Go",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-11-01T03:14:18Z",
+  "stargazers_count": 114,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:svpcom/wfb-ng": {
   "archived": false,
   "description": "WFB-NG - the next generation of long-range packet radio link based on raw WiFi radio",
@@ -10246,6 +10743,22 @@
   "pushed_at": "2026-04-03T08:42:40Z",
   "stargazers_count": 710,
   "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:tapr/ticc": {
+  "archived": false,
+  "description": "Sub-nanosecond time interval counter",
+  "forks_count": 13,
+  "full_name": "TAPR/TICC",
+  "html_url": "https://github.com/TAPR/TICC",
+  "language": "C++",
+  "license": "MIT",
+  "pushed_at": "2026-11-02T15:18:57Z",
+  "stargazers_count": 51,
+  "topics": [
+   "shield",
+   "timenuts"
+  ],
   "fetched": "2026-11-06"
  },
  "repo:taroz/gnss-radar": {
@@ -10416,6 +10929,44 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:time-appliances-project/open-time-server": {
+  "archived": false,
+  "description": null,
+  "forks_count": 1,
+  "full_name": "Time-Appliances-Project/Open-Time-Server",
+  "html_url": "https://github.com/Time-Appliances-Project/Open-Time-Server",
+  "language": null,
+  "license": "MIT",
+  "pushed_at": "2025-02-17T20:53:23Z",
+  "stargazers_count": 16,
+  "topics": [
+   "ntp",
+   "open-time-server",
+   "ptp"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:time-appliances-project/time-card": {
+  "archived": false,
+  "description": "Develop an end-to-end hypothetical reference model, network architectures, precision time tools, performance objectives and the methods to distribute, operate, monitor time synchronization within data center and much more...",
+  "forks_count": 122,
+  "full_name": "Time-Appliances-Project/Time-Card",
+  "html_url": "https://github.com/Time-Appliances-Project/Time-Card",
+  "language": "C",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-10-27T10:13:39Z",
+  "stargazers_count": 1491,
+  "topics": [
+   "ieee3335",
+   "ntp",
+   "pcie",
+   "ptm",
+   "ptp",
+   "synchronization",
+   "time-card"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:tixiaoshan/lio-sam": {
   "archived": false,
   "description": "LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping",
@@ -10528,6 +11079,24 @@
   "pushed_at": "2025-05-09T13:38:11Z",
   "stargazers_count": 1,
   "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:tum-esi/ptpsec": {
+  "archived": false,
+  "description": "PTPsec: Securing the Precision Time Protocol Against Time Delay Attacks Using Cyclic Path Asymmetry Analysis",
+  "forks_count": 1,
+  "full_name": "tum-esi/ptpsec",
+  "html_url": "https://github.com/tum-esi/ptpsec",
+  "language": "C",
+  "license": "MIT",
+  "pushed_at": "2025-04-16T12:38:47Z",
+  "stargazers_count": 1,
+  "topics": [
+   "ptp",
+   "security",
+   "time-delay-attack",
+   "time-synchronization"
+  ],
   "fetched": "2026-11-06"
  },
  "repo:tum-vision/devo": {
@@ -11930,6 +12499,19 @@
   "topics": [
    "asterix"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:zxsecurity/nmeadesync": {
+  "archived": false,
+  "description": "A tool which allows an attacker to change the time on a GPS-enabled NTP server by using spoofed NEMA sentences",
+  "forks_count": 2,
+  "full_name": "zxsecurity/NMEAdesync",
+  "html_url": "https://github.com/zxsecurity/NMEAdesync",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2017-06-24T03:17:50Z",
+  "stargazers_count": 26,
+  "topics": [],
   "fetched": "2026-11-06"
  }
 }

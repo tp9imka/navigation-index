@@ -28,6 +28,7 @@ Python client for searching STAC APIs (Earth Search, Planetary Computer and othe
 - [odc-stac](../repos/opendatacube__odc-stac.md) (integrates_with)
 - [sentinelhub-py](../repos/sentinel-hub__sentinelhub-py.md) (alternative_to)
 - [SpatioTemporal Asset Catalog (STAC) specification](../resources/stac-spec.md) (has_code)
+- [OSINT interference map from free data: ADS-B NACp hexes and Sentinel-1 C-band RFI over Kaliningrad / the SE Baltic](../samples/osint-jamming-map.md) (uses)
 
 _Indexed by lane(s): planning-gis-c2_
 

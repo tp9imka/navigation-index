@@ -1,0 +1,32 @@
+# PTPsec
+
+`repo:tum-esi/ptpsec` - <https://github.com/tum-esi/ptpsec>
+
+| stars | language | license | last push | archived | maturity | hackathon fit |
+|---|---|---|---|---|---|---|
+| 1 | C | MIT | 2025-04-16 | False | research-prototype | medium |
+
+Research implementation, based on linuxptp 3.1.1, that detects and mitigates PTP time-delay attacks by checking path asymmetry around cyclic redundant paths; includes a DPDK man-in-the-middle delay attacker for testing.
+
+**Why it matters:** Shows how to defend the network time path, the part a GNSS-vs-PTP cross-check silently trusts.
+
+**Hackathon notes:** Needs two NICs with hardware timestamping per node and DPDK for the attacker; plan a day of setup. The detection idea can be reproduced in software on logged offsets.
+
+**Concepts:** [Timing and time transfer](../concepts/timing.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+
+**Tags:** `ptp`, `security`, `delay-attack`, `asymmetry`, `linuxptp`, `dpdk`
+
+**Domains:** multi
+
+## Related
+
+- extends: [linuxptp](../repos/nwtime__linuxptp.md)
+
+## Referenced by
+
+- [linuxptp](../repos/nwtime__linuxptp.md) (extends)
+- [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../samples/timing-holdover.md) (explains)
+
+_Indexed by lane(s): timing_
+
+_GitHub metadata fetched 2026-11-06._

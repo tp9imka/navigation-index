@@ -23,7 +23,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Download from the Google Drive links in the README; small enough to fine-tune a segmentation net in a few hours.",
+  "hackathon_notes": "Download the three Google Drive zips in the README (2,916 LWIR images at 640x512, 7 classes, semantic and instance masks); small enough to fine-tune a segmentation net in a few hours. Licence is CC BY-NC-SA 4.0 - non-commercial only.",
   "related": [
    {
     "id": "repo:lojzezust/lars_evaluator",
@@ -53,9 +53,9 @@
   "domains": [
    "maritime"
   ],
-  "maturity": "active-research",
+  "maturity": "research-prototype",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Pair with the LaRS dataset from the project page; use the evaluator to score a YOLO/segmentation baseline.",
+  "hackathon_notes": "Pair with the LaRS dataset from the project page (4,000+ labelled key frames; test GT is hidden, so score test predictions on macvi.org); use the evaluator to score a YOLO/segmentation baseline. Dataset terms: CC BY-NC 4.0, research access only, no commercial use, no sharing images with third parties. The evaluator repo has no licence file.",
   "related": [
    {
     "id": "repo:uml-marine-robotics/massmind",
@@ -68,8 +68,8 @@
   "kind": "repo",
   "name": "SubPipe",
   "url": "https://github.com/remaro-network/SubPipe-dataset",
-  "summary": "Underwater dataset recorded by a lightweight AUV inspecting a submarine pipeline, with camera, side-scan sonar and navigation data for segmentation and visual-inertial localization.",
-  "why_it_matters": "One of few open AUV datasets with ground-truth trajectories, useful for testing underwater VIO where GNSS never reaches.",
+  "summary": "Underwater dataset recorded by a lightweight AUV inspecting a submarine pipeline: two cameras, side-scan sonar (10,030 images, COCO/YOLO labels), segmentation masks and navigation data, for segmentation, detection and visual-inertial localization.",
+  "why_it_matters": "One of few open AUV datasets with a pose reference (estimated from the vehicle's own navigation sensors, not an external ground truth), useful for testing underwater VIO where GNSS never reaches.",
   "concepts": [
    "concept:datasets-benchmarks",
    "concept:underwater-nav",
@@ -87,7 +87,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Large download; start with one sequence and run an off-the-shelf VIO to show drift underwater.",
+  "hackathon_notes": "Full set is ~80 GB unzipped on Zenodo; start with SubPipeMini (~12 GB) and run an off-the-shelf VIO to show drift underwater. Data CC BY 4.0, repo code GPL-3.0.",
   "related": []
  },
  {
@@ -114,7 +114,7 @@
   ],
   "maturity": "active-research",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Use the VIO split to test thermal-inertial odometry; or train RGB-to-thermal translation to build synthetic thermal maps.",
+  "hackathon_notes": "Use the VIO benchmark to test thermal-inertial odometry, or train RGB-to-thermal translation to build synthetic thermal maps. The labelled subset downloads directly; raw data are ROS1 bags from an S3 bucket. Non-commercial only: data.caltech.edu lists CC BY-NC 4.0 (README says CC BY-SA 4.0, non-commercial).",
   "related": [
    {
     "id": "repo:arplaboratory/satellite-thermal-geo-localization",
@@ -144,9 +144,9 @@
   "domains": [
    "air"
   ],
-  "maturity": "active-research",
+  "maturity": "archived",
   "hackathon_fit": "high",
-  "hackathon_notes": "Request the videos per README, train a small-object YOLO; the hard part is tiny targets, so tile the frames.",
+  "hackathon_notes": "Videos only on request (wosdetc@googlegroups.com) after signing a data usage agreement, research use only - allow lead time. Then train a small-object YOLO; the hard part is tiny targets, so tile the frames. Repo not updated since 2022-12 (2023 edition is the last listed).",
   "related": [
    {
     "id": "repo:zhaoj9014/anti-uav",
@@ -180,7 +180,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "low",
-  "hackathon_notes": "Licence restricts defence-related use - use for learning only or pick another acoustic set.",
+  "hackathon_notes": "Licence allows educational and non-commercial academic research only, and explicitly bans military, defence, intelligence, security and surveillance use - not usable for a defence entry; pick another acoustic set. The 'Unknown' clips come from ESC-50 and Speech Commands under their own licences.",
   "related": [
    {
     "id": "repo:batear-io/batear-datasets",
@@ -193,7 +193,7 @@
   "kind": "repo",
   "name": "Drone detection dataset (IR, visible, audio)",
   "url": "https://github.com/DroneDetectionThesis/Drone-detection-dataset",
-  "summary": "Multi-sensor dataset with infrared and visible video plus audio clips of drones, birds, airplanes and helicopters, from a Swedish thesis project.",
+  "summary": "Multi-sensor dataset from a Swedish thesis: 650 infrared and visible videos (airplane, bird, drone, helicopter; 203k labelled frames) plus 90 audio clips (drone, helicopter, background).",
   "why_it_matters": "Lets a team prototype sensor fusion for C-UAS (thermal + RGB + audio) on one consistent set of targets and distractors.",
   "concepts": [
    "concept:datasets-benchmarks",
@@ -212,7 +212,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "high",
-  "hackathon_notes": "Ready to download; good for a fused IR+audio classifier demo in a weekend.",
+  "hackathon_notes": "Data sits in the repo (~360 MB, no LFS), CC0. Labels are MATLAB groundTruth .mat files that scipy cannot read; use pip install mcos-decoder in Python. Good for a fused IR+audio classifier demo in a weekend.",
   "related": [
    {
     "id": "repo:wosdetc/challenge",
@@ -225,7 +225,7 @@
   "kind": "repo",
   "name": "RF-Drone-Detection (Georgia Tech)",
   "url": "https://github.com/tesorrells/RF-Drone-Detection",
-  "summary": "Student project building a passive RF drone detector for a campus police department, with Wi-Fi monitoring scripts and visualization tools.",
+  "summary": "Georgia Tech student project on passive RF drone detection: a wifi_monitor.py script that flags DJI MAC OUI prefixes via airodump-ng, plus hackrf_sweep and GNU Radio experiment tools.",
   "why_it_matters": "Shows a cheap passive RF detection path for drones that use Wi-Fi links.",
   "concepts": [
    "concept:counter-uas",
@@ -242,7 +242,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Needs a monitor-mode Wi-Fi adapter; works only on Wi-Fi-controlled drones, not proprietary links.",
+  "hackathon_notes": "Needs root and a monitor-mode Wi-Fi adapter (tested on 2.4 GHz only, Ubuntu 18.04). It only matches two DJI OUI prefixes, so it misses non-Wi-Fi links and is trivially spoofed. No licence file.",
   "related": [
    {
     "id": "repo:al-sad/dronerf",
@@ -255,7 +255,7 @@
   "kind": "repo",
   "name": "Noisy Drone RF Signal Classification",
   "url": "https://github.com/sgluege/Noisy-Drone-RF-Signal-Classification",
-  "summary": "Loader and inspection scripts for a drone RF classification benchmark hosted on Kaggle, with samples across a range of SNRs.",
+  "summary": "Loader and inspection scripts for a Kaggle drone RF benchmark: 16,384-sample IQ vectors and spectrograms from 6 drone remote-control transmitters plus a noise class, at SNR -20 to 30 dB in 2 dB steps.",
   "why_it_matters": "SNR-labelled RF samples let you measure how a drone RF classifier degrades with distance and noise.",
   "concepts": [
    "concept:datasets-benchmarks",
@@ -273,7 +273,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "high",
-  "hackathon_notes": "Download from Kaggle, load with the provided PyTorch dataloader, train a small CNN in an hour.",
+  "hackathon_notes": "Kaggle download is ~26 GB (CC BY 4.0; repo code GPL-3.0). Load dataset.pt with the provided PyTorch dataloader, then train a small CNN.",
   "related": [
    {
     "id": "repo:kitoweeknd/rfuav",
@@ -302,13 +302,13 @@
    "svm",
    "cnn"
   ],
-  "language": "Python",
+  "language": "Jupyter Notebook",
   "domains": [
    "air"
   ],
-  "maturity": "research-prototype",
+  "maturity": "archived",
   "hackathon_fit": "high",
-  "hackathon_notes": "Fastest path to a working RF drone classifier; includes a Raspberry Pi test script.",
+  "hackathon_notes": "Fork of the archived IQTLabs/RFClassification; no commits since 2022-09. Includes Raspberry Pi 4 test scripts. Download DroneRF (Mendeley, CC BY 4.0) and DroneDetect (IEEE DataPort, CC BY 4.0, 65.8 GB, needs an IEEE account) separately.",
   "related": [
    {
     "id": "repo:al-sad/dronerf",
@@ -321,7 +321,7 @@
   "kind": "repo",
   "name": "Drone Detection and Identification using RF signals",
   "url": "https://github.com/Kalit31/Drone-Detection-and-Identification-using-RF-signals",
-  "summary": "Code for an ML framework for drone detection and identification from RF signals.",
+  "summary": "Notebooks and MATLAB feature extractors for drone detection and identification on DroneRF: PSD, MFCC and time-domain features with XGBoost, a 1D-CNN and a CNN+XGBoost hybrid.",
   "why_it_matters": "Another reproducible baseline on public drone RF data to compare against.",
   "concepts": [
    "concept:counter-uas"
@@ -337,7 +337,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Notebook-based; pair with DroneRF data.",
+  "hackathon_notes": "Notebook-based; the processed data is on the Google Drive link in the README, raw DroneRF is CC BY 4.0 on Mendeley. Feature extraction scripts need MATLAB.",
   "related": [
    {
     "id": "repo:al-sad/dronerf",
@@ -365,7 +365,7 @@
   ],
   "maturity": "archived",
   "hackathon_fit": "low",
-  "hackathon_notes": "Older code (2020); use as reference only.",
+  "hackathon_notes": "Older code (2020): three Keras scripts that read DroneRF's RF_Data.csv and use the old keras.layers.core API; use as reference only.",
   "related": [
    {
     "id": "repo:al-sad/dronerf",
@@ -378,7 +378,7 @@
   "kind": "repo",
   "name": "GNSS jamming/spoofing classification notebooks",
   "url": "https://github.com/alicmu2024/GNSS-Jamming-Detection-and-Classification-using-Machine-Learning-Deep-Learning-and-Computer-Vision",
-  "summary": "Colab notebooks that classify GNSS jamming types from spectrogram images built from a public raw-IQ jamming dataset, with ML, DL and CV approaches; companion to an arXiv paper.",
+  "summary": "Colab notebooks for GNSS jamming-type classification (ML, DL and CV on spectrogram images) from a public raw-IQ jamming set, plus one GPS spoofing ML notebook; companion to arXiv 2501.02352.",
   "why_it_matters": "Turnkey starting point for a jamming-type classifier using open data.",
   "concepts": [
    "concept:gnss-interference",
@@ -397,7 +397,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "high",
-  "hackathon_notes": "Open in Colab, download the Zenodo IQ set, and you have a classifier in an hour.",
+  "hackathon_notes": "Open in Colab and download the Zenodo IQ set (1.9 GB, CC BY 4.0). Its signals are simulated in MATLAB: DME, narrowband, AM, chirp, FM and no jamming. The repo has no licence file.",
   "related": []
  },
  {
@@ -436,8 +436,8 @@
   "kind": "repo",
   "name": "Sentinel-1 RFI detection",
   "url": "https://github.com/zephr-xyz/sentinel1-rfi-detection",
-  "summary": "Pipeline that detects radio-frequency interference in Sentinel-1 SAR imagery using temporal z-scores and DEM masking, to map GNSS jamming activity from orbit.",
-  "why_it_matters": "Free satellite data as a wide-area jamming sensor - complements ADS-B based maps.",
+  "summary": "Pipeline that flags radio-frequency interference in Sentinel-1 C-band SAR scenes using temporal z-scores and DEM slope masking, run over Iran, the Persian Gulf and Jammertest 2025.",
+  "why_it_matters": "Free satellite data as a wide-area RFI sensor, complementing ADS-B based maps - but Sentinel-1 is C-band, and the authors' own Jammertest analysis could not tie detections to L-band GNSS jammers.",
   "concepts": [
    "concept:gnss-interference",
    "concept:situational-awareness",
@@ -456,7 +456,7 @@
   ],
   "maturity": "active-research",
   "hackathon_fit": "high",
-  "hackathon_notes": "Pull Sentinel-1 scenes for a region and produce a jamming heatmap; good OSINT-style demo.",
+  "hackathon_notes": "Needs a free Copernicus Data Space account. Pull Sentinel-1 scenes for a region and produce an RFI heatmap; present it as an RFI map, not a proven jamming map. MIT.",
   "related": []
  },
  {
@@ -482,7 +482,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "high",
-  "hackathon_notes": "Cheap hardware; multiple nodes needed for triangulation. Receive-only, so legal to test.",
+  "hackathon_notes": "Needs 3+ Raspberry Pi + RTL-SDR nodes with directional antennas; start with foxhunt-sim and --mock-sdr after uv sync. Receive-only, but a live test still needs an authorised interference source. Rotator GPIO driver and PPS wiring are still planned.",
   "related": []
  },
  {
@@ -490,7 +490,7 @@
   "kind": "repo",
   "name": "geoveil-cn0",
   "url": "https://github.com/miluta7/geoveil-cn0",
-  "summary": "Rust library with Python API that scores GNSS signal quality via C/N0 and flags jamming, spoofing and interference across constellations.",
+  "summary": "Rust library with a Python API (pip install geoveil-cn0) that scores GNSS signal quality from RINEX observation files via C/N0 and flags jamming, spoofing and interference across six constellations.",
   "why_it_matters": "Drop-in signal-quality monitor for a navigation stack.",
   "concepts": [
    "concept:gnss-interference",
@@ -508,7 +508,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Feed it receiver observables; good as an integrity-monitor component.",
+  "hackathon_notes": "Input is plain RINEX 2-4 files (decompress Hatanaka first); the spoofing check needs a broadcast nav file. Licence is PolyForm Noncommercial with an attribution term - no commercial use.",
   "related": []
  },
  {
@@ -516,7 +516,7 @@
   "kind": "repo",
   "name": "GNSS multiple jammers dataset",
   "url": "https://github.com/sobu-labs/gnss-multiple-jammers-dataset",
-  "summary": "Recordings of several simultaneous chirp jammers on GPS L1, captured in isolation, for studying notch-filter (ANF) mitigation.",
+  "summary": "Placeholder repo: its description promises recordings of several simultaneous chirp jammers on GPS L1 for notch-filter (ANF) mitigation studies, but the repo is empty (no commits) as of 2026-11-06.",
   "why_it_matters": "Multi-jammer data is rare; useful for testing mitigation filters.",
   "concepts": [
    "concept:gnss-interference",
@@ -534,7 +534,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Use to test an adaptive notch filter in GNU Radio or Python.",
+  "hackathon_notes": "No data, README or licence yet - nothing to use. Watch the repo or pick another jamming set.",
   "related": []
  },
  {
@@ -559,7 +559,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Reproduce on your own u-blox logs by enabling the same UBX messages.",
+  "hackathon_notes": "The Antarctica UBX set is one 45.7 GB zip on Zenodo (CC BY 4.0). Labels are the receiver's own jamming flag and the thesis results are a two-day pilot. Reproduce on your own u-blox logs by enabling the same UBX messages. Repo has no licence file.",
   "related": []
  },
  {
@@ -591,7 +591,7 @@
   "kind": "repo",
   "name": "Stanford GNSS spoof detection",
   "url": "https://github.com/fabianr-su/stanford-gnss-spoof-detection",
-  "summary": "Public code and simulations for spoof detection algorithms supporting Stanford GPS Lab publications.",
+  "summary": "A single MATLAB script (DoAsimulationStudy.m) simulating direction-of-arrival spoof detection, supporting Rothmaier et al. Stanford GPS Lab papers.",
   "why_it_matters": "Reference implementations of spoofing detection tests.",
   "concepts": [
    "concept:gnss-interference"
@@ -607,7 +607,7 @@
   ],
   "maturity": "archived",
   "hackathon_fit": "low",
-  "hackathon_notes": "Old MATLAB; useful for algorithm reference.",
+  "hackathon_notes": "Old MATLAB, one simulation script; useful only as an algorithm reference for DoA-based spoof detection.",
   "related": []
  },
  {
@@ -615,7 +615,7 @@
   "kind": "repo",
   "name": "GPS-Spoofing-Detect",
   "url": "https://github.com/josephtule/GPS-Spoofing-Detect",
-  "summary": "MATLAB project exploring GNSS spoofing detection methods.",
+  "summary": "MATLAB course project with a write-up that tests GNSS spoofing detection on the TEXBAT DS7 scenario, with its own IQ extraction and least-squares navigation code.",
   "why_it_matters": "Small educational example.",
   "concepts": [
    "concept:gnss-interference"
@@ -630,7 +630,7 @@
   ],
   "maturity": "educational",
   "hackathon_fit": "low",
-  "hackathon_notes": "Reference only.",
+  "hackathon_notes": "Reference only. Needs TEXBAT processed data (open index on rnl-data.ae.utexas.edu, no terms stated) and spanikp's GNSS-toolbox. No licence file.",
   "related": []
  },
  {
@@ -670,7 +670,7 @@
   "kind": "repo",
   "name": "MMC-UAV dataset",
   "url": "https://github.com/Chance1911/MMC-UAV-Dataset",
-  "summary": "Multimodal low-altitude anti-drone dataset combining RGB, infrared, active radar and passive RF.",
+  "summary": "Placeholder for a multimodal low-altitude anti-drone dataset (RGB, infrared, active radar, passive RF); the repo holds only a 3-line README that calls it MMA-UAV.",
   "why_it_matters": "Rare dataset with all four C-UAS sensor modalities.",
   "concepts": [
    "concept:datasets-benchmarks",
@@ -689,7 +689,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Check access instructions; data availability may be partial.",
+  "hackathon_notes": "No data, download link, paper or licence in the repo - not usable until the authors publish.",
   "related": [
    {
     "id": "repo:dronedetectionthesis/drone-detection-dataset",
@@ -728,7 +728,7 @@
   "kind": "repo",
   "name": "Batear datasets",
   "url": "https://github.com/batear-io/batear-datasets",
-  "summary": "Acoustic datasets for drone detection on embedded devices such as ESP32-S3, including bio-acoustic interference samples.",
+  "summary": "Small Git LFS collection of drone and background audio for ESP32-S3 acoustic detection: about 89 WAV clips of DJI Mavic Pro, Mini 4 Pro and 5-inch FPV flights, ambient (urban, rural, fireworks, bat sites) and synthetic sweeps, plus resample and spectrogram tools.",
   "why_it_matters": "Targets low-cost acoustic sensor nodes - the cheapest C-UAS tripwire.",
   "concepts": [
    "concept:datasets-benchmarks",
@@ -746,7 +746,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "high",
-  "hackathon_notes": "Pair with the Batear firmware for a microcontroller acoustic sensor demo.",
+  "hackathon_notes": "MIT. Run git lfs pull to get the audio. Pair with the Batear firmware for a microcontroller acoustic sensor demo.",
   "related": [
    {
     "id": "repo:batear-io/batear",
@@ -777,7 +777,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "high",
-  "hackathon_notes": "Follow the field protocol to measure your own detection ranges.",
+  "hackathon_notes": "MIT, but the README frames it as research and educational use. No field recordings ship in the repo - the experiments run on synthesized signals (--mock) until you record your own. Follow the field protocol to measure your own detection ranges.",
   "related": []
  },
  {
@@ -804,7 +804,7 @@
   ],
   "maturity": "active-research",
   "hackathon_fit": "high",
-  "hackathon_notes": "Pretrained models available; fine-tune on your area's satellite tiles.",
+  "hackathon_notes": "Code Apache-2.0; the HF dataset cards also say Apache-2.0, but the imagery is rendered from GTA V, so check the game's terms before non-research use. LR set 12.8 GB, HR 143.3 GB. Pretrained cross-area and same-area checkpoints on HF; fine-tune on your area's satellite tiles.",
   "related": [
    {
     "id": "repo:skyy93/sample4geo",
@@ -839,7 +839,7 @@
   ],
   "maturity": "active-research",
   "hackathon_fit": "medium",
-  "hackathon_notes": "GPU-heavy; demo data and pretrained model provided.",
+  "hackathon_notes": "GPU-heavy (CUDA extension build, CityGaussian conda env); demo data is about 15 GB. Code is MIT, but PiLoT-data on HF is gated: non-commercial research or education only, no redistribution. From NUDT, which is on the US Entity List - check your programme's rules.",
   "related": []
  },
  {
@@ -847,7 +847,7 @@
   "kind": "repo",
   "name": "FSRA",
   "url": "https://github.com/Dmmm1997/FSRA",
-  "summary": "Transformer-based feature segmentation and region alignment for drone-to-satellite geo-localization (TCSVT 2021).",
+  "summary": "Transformer-based feature segmentation and region alignment for drone-to-satellite geo-localization (TCSVT 2022).",
   "why_it_matters": "Widely used baseline on University-1652.",
   "concepts": [
    "concept:visual-geolocalization"
@@ -863,7 +863,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Train on University-1652; good comparison baseline.",
+  "hackathon_notes": "No licence file (all rights reserved). Trains on University-1652, which is request-only and research use only. Good comparison baseline.",
   "related": [
    {
     "id": "repo:layumi/university1652-baseline",
@@ -893,7 +893,7 @@
   ],
   "maturity": "active-research",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Use the HF test set; competition baseline.",
+  "hackathon_notes": "No licence on the repo. Training needs University-1652 (request-only, research use only), and the bundled SuperGlue code is Magic Leap's non-commercial research-only code. Competition test set is on HF; official scores only via CodaBench.",
   "related": [
    {
     "id": "repo:wtyhub/uavm2024",
@@ -921,9 +921,9 @@
   "domains": [
    "air"
   ],
-  "maturity": "active-research",
+  "maturity": "archived",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Follow links to public team repos.",
+  "hackathon_notes": "Public entries: MLPN (4th, R@1 92.77), DPN (6th, 90.02) and BingY998 (7th, 85.76); the top two are private, and MBEG's 98.94 was removed for using University-1652 test data. Data is University-1652-derived (request-only, research use).",
   "related": [
    {
     "id": "repo:layumi/university1652-baseline",
@@ -963,9 +963,9 @@
   "domains": [
    "air"
   ],
-  "maturity": "active-research",
+  "maturity": "archived",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Follow links to public team repos.",
+  "hackathon_notes": "Only two listed entries are public: WAGL (4th, R@1 94.07) and WELN (5th, 85.58). Challenge data (University160k-WX) builds on University-1652 (request-only, research use).",
   "related": [
    {
     "id": "repo:koorter/weln",
@@ -997,7 +997,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Baseline for the UAVM 2024 multi-weather track.",
+  "hackathon_notes": "MIT code; needs University-1652 (request-only, research use). Its University-WX weather augmentation matches the UAVM 2024 multi-weather setting, but it is not named as the official challenge baseline.",
   "related": [
    {
     "id": "repo:wtyhub/uavm2024",
@@ -1025,7 +1025,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "low",
-  "hackathon_notes": "Weights on Baidu pan; may be hard to fetch.",
+  "hackathon_notes": "No licence (all rights reserved). Weights and the University1652-Plus weather set are on Baidu pan only, may be hard to fetch; the data derives from University-1652 (research use). 5th on the public leaderboard (R@1 85.58), 4th after one team was removed.",
   "related": [
    {
     "id": "repo:wtyhub/uavm2024",
@@ -1038,7 +1038,7 @@
   "kind": "repo",
   "name": "MLPN (UAVM 2023 entry)",
   "url": "https://github.com/HrLi97/MLPN_workshop",
-  "summary": "Team solution for the ACM MM 2023 drone-satellite matching challenge.",
+  "summary": "Team solution for the ACM MM 2023 drone-satellite matching challenge, 4th on the leaderboard (R@1 92.77).",
   "why_it_matters": "Open challenge entry.",
   "concepts": [
    "concept:visual-geolocalization"
@@ -1052,7 +1052,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "low",
-  "hackathon_notes": "Training script; needs University-1652.",
+  "hackathon_notes": "MIT. Training script with hard-coded paths; needs University-1652 (request-only, research use).",
   "related": [
    {
     "id": "repo:layumi/uavm2023",
@@ -1079,7 +1079,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "low",
-  "hackathon_notes": "Minimal docs.",
+  "hackathon_notes": "One-line README, no licence (all rights reserved). 6th on the UAVM 2023 leaderboard (R@1 90.02). Needs University-1652 (request-only, research use).",
   "related": [
    {
     "id": "repo:layumi/uavm2023",
@@ -1108,7 +1108,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Was disqualified for using test data, but the method code is still useful.",
+  "hackathon_notes": "MIT. Topped the leaderboard (R@1 98.94) but was removed for using University-1652 test data; the method and distillation code are still useful. Weights on Baidu only; University-1652 is research use only.",
   "related": [
    {
     "id": "repo:layumi/uavm2023",
@@ -1138,7 +1138,7 @@
   ],
   "maturity": "archived",
   "hackathon_fit": "low",
-  "hackathon_notes": "Reference for feature engineering on Android GNSS logs.",
+  "hackathon_notes": "Apache-2.0 code; GSDC data is under Kaggle competition rules (not checked). Denoises host-baseline positions (STFT + CNN, LightGBM on IMU) and snaps to training ground truth with KNN, so it relies on repeated routes. Private score about 2.61 m.",
   "related": [
    {
     "id": "repo:taroz/gsdc2023",
@@ -1166,7 +1166,7 @@
   ],
   "maturity": "archived",
   "hackathon_fit": "low",
-  "hackathon_notes": "Reference only.",
+  "hackathon_notes": "Reference only: the EKF, INS and magnitude submodules are private, so it does not run as cloned. MIT. From an ENAC master's thesis.",
   "related": [
    {
     "id": "repo:taroz/gsdc2023",
@@ -1179,7 +1179,7 @@
   "kind": "repo",
   "name": "ML GNSS/IMU integration (GSDC 2022)",
   "url": "https://github.com/Akpozi/Machine_Learning_GNSS_IMU_Integration",
-  "summary": "ML-based adaptive positioning to fuse smartphone GNSS and IMU, built for GSDC 2022.",
+  "summary": "GSDC 2022 pipeline: an ML classifier picks the drive environment (highway, tree-lined, downtown) to set rtklib-py PPK options, then a loosely coupled GNSS/IMU Kalman filter refines the result.",
   "why_it_matters": "Example of learned GNSS/IMU fusion on phone data.",
   "concepts": [
    "concept:gnss-ins",
@@ -1196,7 +1196,7 @@
   ],
   "maturity": "archived",
   "hackathon_fit": "low",
-  "hackathon_notes": "Reference.",
+  "hackathon_notes": "Reference. No licence (all rights reserved).",
   "related": [
    {
     "id": "repo:taroz/gsdc2023",
@@ -1227,7 +1227,7 @@
   ],
   "maturity": "archived",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Pair with GSDC 2021 data and RTKLIB.",
+  "hackathon_notes": "No licence; Swift provides it as is. 2020 drives have OSR but no or partial SSR; 2021 drives have both. Pair with GSDC 2021 data and RTKLIB.",
   "related": []
  },
  {
@@ -1253,7 +1253,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "medium",
-  "hackathon_notes": "MATLAB with data; test on your own magnetometer arrays.",
+  "hackathon_notes": "MATLAB with eight recorded datasets in data/. Clone with --recurse-submodules (MAINS is a submodule). MAINS code is GPL-3.0, MAGEKF Apache-2.0. Test on your own magnetometer arrays.",
   "related": [
    {
     "id": "repo:huang-chuan/magnetic-field-odometry",
@@ -1266,7 +1266,7 @@
   "kind": "repo",
   "name": "Magnetic-field odometry",
   "url": "https://github.com/Huang-Chuan/magnetic-field-odometry",
-  "summary": "Magnetic-field aided inertial navigation using a magnetometer array for odometry.",
+  "summary": "MATLAB simulation of a tightly-integrated magnetic-field aided INS using a magnetometer array; it generates its own trajectory and sensor data.",
   "why_it_matters": "Shows magnetometer arrays as odometry where cameras fail.",
   "concepts": [
    "concept:magnetic-nav",
@@ -1283,7 +1283,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "low",
-  "hackathon_notes": "MATLAB reference.",
+  "hackathon_notes": "MATLAB simulation only, no real data. GPL-3.0.",
   "related": []
  },
  {
@@ -1291,7 +1291,7 @@
   "kind": "repo",
   "name": "ScalLoc",
   "url": "https://github.com/FloralHercules/ScalLoc",
-  "summary": "Geo-localization of oblique thermal UAV image sequences against satellite maps.",
+  "summary": "Continuous geo-localization of oblique thermal UAV sequences against a 2D satellite map (VGGT reconstruction + MINIMA-RoMa matching), with the Thermal-Oblique dataset: 216 trajectories, 28,112 frames.",
   "why_it_matters": "Night-time thermal geo-localization with oblique cameras, closer to real FPV/ISR views.",
   "concepts": [
    "concept:visual-geolocalization"
@@ -1307,7 +1307,7 @@
   ],
   "maturity": "active-research",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Recent; check data availability.",
+  "hackathon_notes": "No code licence yet - the author's notice says it is pending (all rights reserved). Depends on VGGT, whose licence prohibits military and warfare use; the original VGGT-1B checkpoint is non-commercial. Data, map and weights are on HF (gated, Apache-2.0 tag).",
   "related": [
    {
     "id": "repo:floralhercules/scc-loc",
@@ -1344,7 +1344,7 @@
   ],
   "maturity": "archived",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Built for Ubuntu 20.04 / ROS 2 Galactic; use Docker.",
+  "hackathon_notes": "Built for Ubuntu 20.04, ROS 2 Galactic and Ignition Fortress, all now end of life; use the osrf/mbzirc Docker image (needs nvidia-docker2). Apache-2.0.",
   "related": [
    {
     "id": "repo:osrf/vrx",
@@ -1375,7 +1375,7 @@
   ],
   "maturity": "active-research",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Use to test VIO at high speed.",
+  "hackathon_notes": "Dataset CC BY 4.0, code MIT. 18 autonomous and 18 piloted flights per README, over 21 m/s with mocap ground truth; v3.0.0 (Oct 2025) adds six pro-pilot flights. Use to test VIO at high speed.",
   "related": [
    {
     "id": "repo:aerostack2/aerostack2",
@@ -1388,7 +1388,7 @@
   "kind": "repo",
   "name": "Swarm in Blocks",
   "url": "https://github.com/Grupo-SEMEAR-USP/swarm_in_blocks",
-  "summary": "Block-programming interface for drone swarms on COEX Clover, CopterHack 2022 winner by team Atena.",
+  "summary": "Block-programming and web control platform for drone swarms on COEX Clover (ROS, Gazebo); CopterHack 2022 winner by team Atena. The repo now holds Swarm in Blocks 2.0 (CopterHack 2023, 4th).",
   "why_it_matters": "Example of a winning open CopterHack project.",
   "concepts": [
    "concept:multi-agent",
@@ -1405,7 +1405,7 @@
   ],
   "maturity": "archived",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Runs on Clover simulation.",
+  "hackathon_notes": "No licence (all rights reserved). Runs on the Clover Gazebo simulation; the real-swarm mode is barely tested.",
   "related": [
    {
     "id": "repo:copterexpress/clover",
@@ -1418,7 +1418,7 @@
   "kind": "repo",
   "name": "Clover Rescue Project",
   "url": "https://github.com/DevMBS/CRTClient",
-  "summary": "Frontend and backend from the Clover Rescue Team's CopterHack 2022 project.",
+  "summary": "Main web server and client (Node.js, Socket.IO) of the Clover Rescue Team's CopterHack 2022 project, 3rd place; the drone-side server is DevMBS/CRTClover.",
   "why_it_matters": "Example finalist code.",
   "concepts": [
    "concept:mission-planning"
@@ -1433,7 +1433,7 @@
   ],
   "maturity": "archived",
   "hackathon_fit": "low",
-  "hackathon_notes": "Reference only.",
+  "hackathon_notes": "MIT. Reference only.",
   "related": [
    {
     "id": "repo:copterexpress/clover",

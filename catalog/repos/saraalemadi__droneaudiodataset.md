@@ -10,7 +10,7 @@ Indoor recordings of drone propeller noise augmented with noise clips, organised
 
 **Why it matters:** A common baseline audio set for acoustic drone detection. Note: its licence explicitly forbids military/defence use, so check fit before building on it.
 
-**Hackathon notes:** Licence restricts defence-related use - use for learning only or pick another acoustic set.
+**Hackathon notes:** Licence allows educational and non-commercial academic research only, and explicitly bans military, defence, intelligence, security and surveillance use - not usable for a defence entry; pick another acoustic set. The 'Unknown' clips come from ESC-50 and Speech Commands under their own licences.
 
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../concepts/counter-uas.md)
 

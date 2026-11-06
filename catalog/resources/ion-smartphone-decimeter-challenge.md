@@ -4,11 +4,11 @@
 
 **By:** Institute of Navigation, Google - **Year:** 2023 - **Level:** intro - **Access:** open
 
-ION page for the smartphone decimeter challenge listing official placings; for 2023 it lists Norizumi Motooka first, Taro Suzuki second and Jeonghyeon Yun third.
+ION page for the 3rd Smartphone Decimeter Challenge (Google, ION Satellite Division and Kaggle; ran Sep 12, 2023 - May 23, 2024). It lists Norizumi Motooka first, Taro Suzuki second and Jeonghyeon Yun third, with $7,000 / $5,000 / $3,000 prizes.
 
 ## Key takeaways
 
-- Official placings differ from the public Kaggle leaderboard
+- Prize eligibility needs a technical paper and a talk at ION GNSS+ 2024, not just a Kaggle rank
 - Winners present at ION GNSS+
 
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [GNSS/INS integration](../concepts/gnss-ins.md)

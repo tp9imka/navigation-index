@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 14 | MATLAB | MIT | 2020-01-30 | False | archived | low |
 
-Public code and simulations for spoof detection algorithms supporting Stanford GPS Lab publications.
+A single MATLAB script (DoAsimulationStudy.m) simulating direction-of-arrival spoof detection, supporting Rothmaier et al. Stanford GPS Lab papers.
 
 **Why it matters:** Reference implementations of spoofing detection tests.
 
-**Hackathon notes:** Old MATLAB; useful for algorithm reference.
+**Hackathon notes:** Old MATLAB, one simulation script; useful only as an algorithm reference for DoA-based spoof detection.
 
 **Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md)
 

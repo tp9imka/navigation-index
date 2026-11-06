@@ -1,0 +1,217 @@
+{
+ "target": "S1D_IW_GRDH_1SDV_20261001T045103_20261001T045128_004817_0090AC",
+ "overpass_utc": "2026-10-01T04:51:16.402699Z",
+ "relative_orbit": 51,
+ "orbit_state": "descending",
+ "n_scenes": 18,
+ "grid": {
+  "lat0": 54.34,
+  "lon0": 19.03,
+  "rows": 193,
+  "cols": 462
+ },
+ "hex_res": 5,
+ "n_hex_scored": 228,
+ "n_hex_candidates": 0,
+ "dem_mask": true,
+ "scenes": [
+  {
+   "date": "2026-07-15",
+   "id": "S1C_IW_GRDH_1SDV_20260715T045047_20260715T045112_008549_010ECC",
+   "pct_px_z3": 0.775,
+   "esa_vh_rfi_detected": 0,
+   "esa_vv_rfi_detected": 0,
+   "esa_noise_reports": 18,
+   "esa_vh_max_kl": 9.54,
+   "esa_vh_in_out_ratio_mean": 3.789,
+   "esa_mitigation": "None"
+  },
+  {
+   "date": "2026-07-21",
+   "id": "S1D_IW_GRDH_1SDV_20260721T045101_20260721T045126_003767_006C26",
+   "pct_px_z3": 0.133,
+   "esa_vh_rfi_detected": 0,
+   "esa_vv_rfi_detected": 0,
+   "esa_noise_reports": 18,
+   "esa_vh_max_kl": 12.48,
+   "esa_vh_in_out_ratio_mean": 3.902,
+   "esa_mitigation": "None"
+  },
+  {
+   "date": "2026-07-27",
+   "id": "S1C_IW_GRDH_1SDV_20260727T045048_20260727T045113_008724_011499",
+   "pct_px_z3": 0.179,
+   "esa_vh_rfi_detected": 0,
+   "esa_vv_rfi_detected": 0,
+   "esa_noise_reports": 18,
+   "esa_vh_max_kl": 7.0,
+   "esa_vh_in_out_ratio_mean": 4.089,
+   "esa_mitigation": "None"
+  },
+  {
+   "date": "2026-08-02",
+   "id": "S1D_IW_GRDH_1SDV_20260802T045102_20260802T045127_003942_007241",
+   "pct_px_z3": 0.095,
+   "esa_vh_rfi_detected": 1,
+   "esa_vv_rfi_detected": 1,
+   "esa_noise_reports": 18,
+   "esa_vh_max_kl": 319968.0,
+   "esa_vh_in_out_ratio_mean": 4.041,
+   "esa_mitigation": "TimeFrequency"
+  },
+  {
+   "date": "2026-08-08",
+   "id": "S1C_IW_GRDH_1SDV_20260808T045049_20260808T045114_008899_011A6D",
+   "pct_px_z3": 0.25,
+   "esa_vh_rfi_detected": 0,
+   "esa_vv_rfi_detected": 0,
+   "esa_noise_reports": 18,
+   "esa_vh_max_kl": 10013.66,
+   "esa_vh_in_out_ratio_mean": 3.453,
+   "esa_mitigation": "None"
+  },
+  {
+   "date": "2026-08-14",
+   "id": "S1D_IW_GRDH_1SDV_20260814T045102_20260814T045127_004117_007854",
+   "pct_px_z3": 3.635,
+   "esa_vh_rfi_detected": 2,
+   "esa_vv_rfi_detected": 1,
+   "esa_noise_reports": 18,
+   "esa_vh_max_kl": 309969.0,
+   "esa_vh_in_out_ratio_mean": 3.106,
+   "esa_mitigation": "TimeFrequency"
+  },
+  {
+   "date": "2026-08-20",
+   "id": "S1C_IW_GRDH_1SDV_20260820T045049_20260820T045114_009074_01202F",
+   "pct_px_z3": 0.124,
+   "esa_vh_rfi_detected": 0,
+   "esa_vv_rfi_detected": 0,
+   "esa_noise_reports": 18,
+   "esa_vh_max_kl": 20023.16,
+   "esa_vh_in_out_ratio_mean": 4.43,
+   "esa_mitigation": "None"
+  },
+  {
+   "date": "2026-08-26",
+   "id": "S1D_IW_GRDH_1SDV_20260826T045103_20260826T045128_004292_007E71",
+   "pct_px_z3": 0.07,
+   "esa_vh_rfi_detected": 2,
+   "esa_vv_rfi_detected": 0,
+   "esa_noise_reports": 18,
+   "esa_vh_max_kl": 179984.6,
+   "esa_vh_in_out_ratio_mean": 4.003,
+   "esa_mitigation": "TimeFrequency"
+  },
+  {
+   "date": "2026-09-01",
+   "id": "S1C_IW_GRDH_1SDV_20260901T045050_20260901T045115_009249_01260D",
+   "pct_px_z3": 0.264,
+   "esa_vh_rfi_detected": 2,
+   "esa_vv_rfi_detected": 1,
+   "esa_noise_reports": 18,
+   "esa_vh_max_kl": 309969.0,
+   "esa_vh_in_out_ratio_mean": 3.87,
+   "esa_mitigation": "TimeFrequency"
+  },
+  {
+   "date": "2026-09-07",
+   "id": "S1D_IW_GRDH_1SDV_20260907T045103_20260907T045128_004467_00848C",
+   "pct_px_z3": 0.044,
+   "esa_vh_rfi_detected": 0,
+   "esa_vv_rfi_detected": 0,
+   "esa_noise_reports": 18,
+   "esa_vh_max_kl": 7.39,
+   "esa_vh_in_out_ratio_mean": 3.876,
+   "esa_mitigation": "None"
+  },
+  {
+   "date": "2026-09-13",
+   "id": "S1C_IW_GRDH_1SDV_20260913T045050_20260913T045115_009424_012BE8",
+   "pct_px_z3": 0.634,
+   "esa_vh_rfi_detected": 0,
+   "esa_vv_rfi_detected": 0,
+   "esa_noise_reports": 18,
+   "esa_vh_max_kl": 27.36,
+   "esa_vh_in_out_ratio_mean": 3.458,
+   "esa_mitigation": "None"
+  },
+  {
+   "date": "2026-09-19",
+   "id": "S1D_IW_GRDH_1SDV_20260919T045103_20260919T045128_004642_008A94",
+   "pct_px_z3": 0.048,
+   "esa_vh_rfi_detected": 1,
+   "esa_vv_rfi_detected": 0,
+   "esa_noise_reports": 18,
+   "esa_vh_max_kl": 319968.0,
+   "esa_vh_in_out_ratio_mean": 3.757,
+   "esa_mitigation": "TimeFrequency"
+  },
+  {
+   "date": "2026-09-25",
+   "id": "S1C_IW_GRDH_1SDV_20260925T045051_20260925T045116_009599_0131A6",
+   "pct_px_z3": 0.068,
+   "esa_vh_rfi_detected": 2,
+   "esa_vv_rfi_detected": 0,
+   "esa_noise_reports": 18,
+   "esa_vh_max_kl": 319968.0,
+   "esa_vh_in_out_ratio_mean": 3.958,
+   "esa_mitigation": "TimeFrequency"
+  },
+  {
+   "date": "2026-10-01",
+   "id": "S1D_IW_GRDH_1SDV_20261001T045103_20261001T045128_004817_0090AC",
+   "pct_px_z3": 0.128,
+   "esa_vh_rfi_detected": 1,
+   "esa_vv_rfi_detected": 1,
+   "esa_noise_reports": 18,
+   "esa_vh_max_kl": 279972.0,
+   "esa_vh_in_out_ratio_mean": 3.506,
+   "esa_mitigation": "TimeFrequency"
+  },
+  {
+   "date": "2026-10-07",
+   "id": "S1C_IW_GRDH_1SDV_20261007T045051_20261007T045116_009774_01377D",
+   "pct_px_z3": 0.135,
+   "esa_vh_rfi_detected": 1,
+   "esa_vv_rfi_detected": 0,
+   "esa_noise_reports": 18,
+   "esa_vh_max_kl": 319968.0,
+   "esa_vh_in_out_ratio_mean": 3.78,
+   "esa_mitigation": "TimeFrequency"
+  },
+  {
+   "date": "2026-10-19",
+   "id": "S1C_IW_GRDH_1SDV_20261019T045050_20261019T045115_009949_013D5D",
+   "pct_px_z3": 1.249,
+   "esa_vh_rfi_detected": 0,
+   "esa_vv_rfi_detected": 0,
+   "esa_noise_reports": 18,
+   "esa_vh_max_kl": 3.85,
+   "esa_vh_in_out_ratio_mean": 3.513,
+   "esa_mitigation": "None"
+  },
+  {
+   "date": "2026-10-25",
+   "id": "S1D_IW_GRDH_1SDV_20261025T045104_20261025T045129_005167_009CCD",
+   "pct_px_z3": 0.344,
+   "esa_vh_rfi_detected": 0,
+   "esa_vv_rfi_detected": 0,
+   "esa_noise_reports": 18,
+   "esa_vh_max_kl": 5.64,
+   "esa_vh_in_out_ratio_mean": 3.815,
+   "esa_mitigation": "None"
+  },
+  {
+   "date": "2026-10-31",
+   "id": "S1C_IW_GRDH_1SDV_20261031T045050_20261031T045115_010124_01434F",
+   "pct_px_z3": 0.143,
+   "esa_vh_rfi_detected": 1,
+   "esa_vv_rfi_detected": 1,
+   "esa_noise_reports": 18,
+   "esa_vh_max_kl": 319968.0,
+   "esa_vh_in_out_ratio_mean": 3.968,
+   "esa_mitigation": "TimeFrequency"
+  }
+ ]
+}

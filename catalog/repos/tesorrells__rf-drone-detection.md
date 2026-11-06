@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 226 | Python | ? | 2025-05-21 | False | research-prototype | medium |
 
-Student project building a passive RF drone detector for a campus police department, with Wi-Fi monitoring scripts and visualization tools.
+Georgia Tech student project on passive RF drone detection: a wifi_monitor.py script that flags DJI MAC OUI prefixes via airodump-ng, plus hackrf_sweep and GNU Radio experiment tools.
 
 **Why it matters:** Shows a cheap passive RF detection path for drones that use Wi-Fi links.
 
-**Hackathon notes:** Needs a monitor-mode Wi-Fi adapter; works only on Wi-Fi-controlled drones, not proprietary links.
+**Hackathon notes:** Needs root and a monitor-mode Wi-Fi adapter (tested on 2.4 GHz only, Ubuntu 18.04). It only matches two DJI OUI prefixes, so it misses non-Wi-Fi links and is trivially spoofed. No licence file.
 
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [RF localization and direction finding](../concepts/rf-localization.md)
 

@@ -1,10 +1,10 @@
-# UAV Acoustic Localization Dataset (24-channel beamformed recording)
+# UAV Acoustic Localization Dataset: 24-Channel Beamformed Recordings of a DJI Air 3 Drone with Synchronized GPS Flight Logs
 
 `res:wsu-uav-acoustic-localization-24ch` - dataset - <https://researchers.westernsydney.edu.au/en/datasets/uav-acoustic-localization-dataset-24-channel-beamformed-recording/>
 
-**By:** Western Sydney University ICNS - **Year:** 2025 - **Level:** intermediate - **Access:** open
+**By:** Belman Jahir Rodriguez, Sergio Chevtchenko, Saeed Afshar - **Year:** 2026 - **Level:** intermediate - **Access:** open
 
-24-channel acoustic recordings of a DJI drone with synchronized GPS flight logs, including no-drone ambient segments, under CC BY-SA 4.0.
+24-channel acoustic recordings (48 kHz, four synced Zoom F6 recorders) of a DJI Air 3 drone with synchronized GPS flight logs at 100 ms, including no-drone ambient segments, under CC BY-SA 4.0.
 
 ## Key takeaways
 

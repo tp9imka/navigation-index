@@ -6,9 +6,11 @@ Map engines, tiles, DEMs, orthophotos, coordinate systems, geodesy.
 
 **Sub-concepts:** [Geodesy and coordinate frames](../concepts/geodesy.md)
 
-## Samples (2)
+## Samples (4)
 
+- [Heightmap-gradient particle filter on real Copernicus DEM (SPRIN-D CTU method) vs TERCOM](../samples/terrain-heightmap-pf.md) - Re-implementation of the CTU SPRIN-D winner's localization (arXiv 2510.01348): local heightmap gradients matched to a prior DEM with the unnormalized correlation coefficient, Gaussian-blurred similarity maps weighting a 
 - [License-clean drone frame to orthophoto geolocalization (ALIKED / DISK / SIFT + LightGlue)](../samples/geoloc-license-clean.md) - Drone frame => NAIP orthophoto => lat/lon using only permissively licensed parts: ALIKED (BSD-3), DISK and LightGlue weights (Apache-2.0), OpenCV SIFT and MAGSAC (Apache-2.0), rasterio, public-domain NAIP from Microsoft 
+- [OSINT interference map from free data: ADS-B NACp hexes and Sentinel-1 C-band RFI over Kaliningrad / the SE Baltic](../samples/osint-jamming-map.md) - Two no-login OSINT layers for the same area and morning (2026-10-01, SE Baltic around Kaliningrad).
 - [Terrain-relative navigation with a particle filter](../samples/terrain-relative-nav-pf.md) - A stdlib-only simulation of TERCOM/TRN: an aircraft with a biased INS and a radar altimeter matches its measured terrain profile against a seeded synthetic DEM with a particle filter that also estimates the INS velocity 
 
 ## Repositories (42)
@@ -36,7 +38,7 @@ Map engines, tiles, DEMs, orthophotos, coordinate systems, geodesy.
 - [pystac-client](../repos/stac-utils__pystac-client.md) - fit: high - Python client for searching STAC APIs (Earth Search, Planetary Computer and others) by area, time and properties.
 - [GIS MCP Server](../repos/mahdin75__gis-mcp.md) - fit: high - MCP server giving LLMs geospatial operations through Shapely, PyProj, GeoPandas and Rasterio: geometry ops, CRS transforms, distances and raster analysis, without a desktop GIS.
 - [mil-sym-ts](../repos/missioncommand__mil-sym-ts.md) - fit: high - TypeScript/JavaScript renderer for MIL-STD-2525 (D and later) military symbology, producing single-point and multi-point tactical graphics for web maps.
-- [Sentinel-1 RFI detection](../repos/zephr-xyz__sentinel1-rfi-detection.md) - fit: high - Pipeline that detects radio-frequency interference in Sentinel-1 SAR imagery using temporal z-scores and DEM masking, to map GNSS jamming activity from orbit.
+- [Sentinel-1 RFI detection](../repos/zephr-xyz__sentinel1-rfi-detection.md) - fit: high - Pipeline that flags radio-frequency interference in Sentinel-1 C-band SAR scenes using temporal z-scores and DEM slope masking, run over Iran, the Persian Gulf and Jammertest 2025.
 - [grid_map](../repos/leggedrobotics__grid_map.md) - fit: high - Universal multi-layer 2.5D grid map library for mobile robots with ROS/ROS 2 integration, filters, iterators and conversion to images, point clouds and costmaps.
 - [Hackathon-Blind-Flight (team GORIZONT)](../repos/t1gr20an06-k__hackathon-blind-flight.md) - fit: high - Russian-language hackathon solution for 'Полёт вслепую' (Blind flight): estimate aircraft position, ground speed and heading without GNSS by reconstructing a terrain profile (barometric altitude minus radar altimeter) an
 - [FlyingBlind_Hakaton](../repos/solarwarlock__flyingblind_hakaton.md) - fit: high - Second public solution to the same 'Полёт вслепую' hackathon task: web prototype that reads a GeoTIFF DEM and NMEA-0183 radar-altimeter messages, searches start point, speed and azimuth hypotheses by RMSE/correlation, an

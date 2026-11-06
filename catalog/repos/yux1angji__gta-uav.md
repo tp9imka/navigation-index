@@ -10,7 +10,7 @@ Benchmark and code for UAV geo-localization trained on synthetic game imagery wi
 
 **Why it matters:** Synthetic data generation for geo-localization reduces the need for real flight data.
 
-**Hackathon notes:** Pretrained models available; fine-tune on your area's satellite tiles.
+**Hackathon notes:** Code Apache-2.0; the HF dataset cards also say Apache-2.0, but the imagery is rendered from GTA V, so check the game's terms before non-research use. LR set 12.8 GB, HR 143.3 GB. Pretrained cross-area and same-area checkpoints on HF; fine-tune on your area's satellite tiles.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Simulation and HIL/SITL](../concepts/simulation.md)
 

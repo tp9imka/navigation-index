@@ -6,9 +6,10 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 
 **Sub-concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
 
-## Samples (4)
+## Samples (5)
 
 - [ArduPilot EKF3 source-set switch under GPS denial](../samples/ardupilot-ekf3-source-switch.md) - Flies ArduCopter SITL on GPS, switches EKF3 to an external-nav source set (SITL vicon) with MAV_CMD_SET_EKF_SOURCE_SET, cuts simulated GPS, flies a 15 m leg, then restores it.
+- [Golden demo: GPS drag on an ArduCopter SITL AUTO mission, chi-square detection and EKF3 switch to vision, replayed on the dashboard](../samples/golden-demo.md) - One command flies ArduCopter 4.6.3 SITL in Docker on a survey, drags its GPS east at 1 m/s with SIM_GPS_GLITCH_X/Y, and runs a pymavlink companion that streams simulated visual-geolocalization fixes as VISION_POSITION_ES
 - [Headless SITL in Docker: ArduCopter and PX4 SIH with one compose file](../samples/sitl-docker.md) - Dockerfiles and a compose file that run ArduCopter 4.6.3 SITL (with a simulated vicon for ExternalNav) and PX4 v1.17.0 SIH quadrotor without Gazebo or a GUI, plus a Python client image with pymavlink and mavsdk-grpc that
 - [PX4 SITL GPS denial: inject, measure drift, recover](../samples/px4-sitl-gps-denial.md) - Flies a square mission in PX4 SITL (SIH quadrotor, headless; Gazebo also works per PX4 docs), denies GPS mid-mission, logs EKF2 health and estimated vs ground-truth position, then restores GPS and returns home.
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) - Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold.
@@ -65,7 +66,7 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 - [ArduSub documentation](../resources/ardusub-docs.md) - doc - User and developer documentation for ArduSub, covering ROV configuration, sensors, and integration of external positioning such as DVL and USBL via MAVLink.
 - [Auterion Skynode S and Auterion Visual Navigation](../resources/auterion-skynode-visual-navigation.md) - product - Auterion sells PX4-derived AuterionOS plus Skynode flight/mission computers.
 - [Autonomous Navigation for Flying Robots (TUM edX, AUTONAVx)](../resources/tum-autonavx.md) - course - MOOC version of the TUM flying-robots lecture with lecture videos and browser-based Python exercises on quadrotor state estimation, Kalman filtering, control and visual navigation.
-- [CopterHack 2022](../resources/copterhack-2022.md) - competition - Results page for CopterHack 2022, an open-source drone project competition on the Clover platform; Atena (Swarm in Blocks) won.
+- [CopterHack 2022](../resources/copterhack-2022.md) - competition - Results page for CopterHack 2022, an open-source drone project competition on the Clover platform; the final was on April 23, 2022 and Atena - Grupo SEMEAR (Swarm in Blocks, 21.6 points) won ahead of FTL (Advanced Clover
 - [CopterHack 2023](../resources/coex-copterhack-2023.md) - competition - Russian-language page of COEX's international open-source flying-robotics contest built on the Clover platform: format (teams develop open-source projects over months with expert feedback), final standings and links to p
 - [CVAR-UPM Drone Team - A2RL](../resources/cvar-upm-a2rl-team.md) - blog - Team page describing participation in A2RL seasons 1 and 2 using the open Aerostack2 framework, MPCC control and multi-gate visual positioning.
 - [EKF Source Selection and Switching](../resources/ardupilot-ekf3-sources.md) - doc - Reference for EKF3 source parameters (position, velocity, yaw per axis) and how fusion of multiple velocity sources works.

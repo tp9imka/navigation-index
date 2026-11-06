@@ -4,13 +4,13 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 3 |  | ? | 2024-10-26 | False | active-research | medium |
+| 3 |  | ? | 2024-10-26 | False | archived | medium |
 
 Page for the ACM MM 2024 multi-weather drone-satellite matching challenge, listing team repos.
 
 **Why it matters:** Adds weather robustness to cross-view geo-localization.
 
-**Hackathon notes:** Follow links to public team repos.
+**Hackathon notes:** Only two listed entries are public: WAGL (4th, R@1 94.07) and WELN (5th, 85.58). Challenge data (University160k-WX) builds on University-1652 (request-only, research use).
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 

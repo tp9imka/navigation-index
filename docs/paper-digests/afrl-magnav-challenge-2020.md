@@ -24,7 +24,7 @@ This is a challenge-problem definition, not a method paper. What it fixes:
 
 ## Headline results (as reported)
 - No quantitative results. The paper reports no RMSE, no standard deviation numbers and no navigation error.
-- Fig. 2 (qualitative): TL on Mag 1 "exactly matches" the SGL professional compensation; Mag 5 "performs fairly well"; Mags 3 and 4 "would not be suitable"; Mag 2 "not shown due to even worse performance".
+- Fig. 2 (qualitative, Flight 1002): TL on Mag 1 "exactly matches" the SGL professional compensation; Mag 5 "performs fairly well"; Mags 3 and 4 "would not be suitable"; Mag 2 "not shown due to even worse performance".
 - Our read: the index summary says "Physics (Tolles-Lawson) plus ML beat either alone". That is the paper's motivation, not a result in this paper.
 
 ## Follow-on compensation work (Gnadt)

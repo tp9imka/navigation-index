@@ -10,7 +10,7 @@ Long-wave infrared image dataset of a harbour environment with semantic and inst
 
 **Why it matters:** Thermal perception is what keeps an autonomous surface vessel aware of obstacles at night and in haze, when RGB fails.
 
-**Hackathon notes:** Download from the Google Drive links in the README; small enough to fine-tune a segmentation net in a few hours.
+**Hackathon notes:** Download the three Google Drive zips in the README (2,916 LWIR images at 640x512, 7 classes, semantic and instance masks); small enough to fine-tune a segmentation net in a few hours. Licence is CC BY-NC-SA 4.0 - non-commercial only.
 
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Maritime navigation](../concepts/maritime-nav.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
 

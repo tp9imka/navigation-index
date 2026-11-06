@@ -2,9 +2,9 @@
 
 `res:noisy-drone-rf-kaggle` - dataset - <https://www.kaggle.com/datasets/sgluege/noisy-drone-rf-signal-classification>
 
-**By:** S. Gluege et al. - **Year:** 2023 - **Level:** intro - **Access:** free-registration
+**By:** Stefan Gluege, Matthias Nyfeler, Nicola Ramagnano, Claus Horn, Christof Schuepbach - **Year:** 2023 - **Level:** intro - **Access:** free-registration
 
-Kaggle-hosted drone RF classification dataset with samples labelled by class and SNR.
+Kaggle drone RF classification dataset: 1.2 ms IQ vectors from 6 consumer drone remotes plus a noise class, mixed with lab noise or Gaussian noise across SNR -20 to 30 dB. CC BY 4.0.
 
 ## Key takeaways
 

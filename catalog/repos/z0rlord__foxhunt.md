@@ -10,7 +10,7 @@ Receive-only GNSS interference detection with radio direction finding and triang
 
 **Why it matters:** Low-cost jammer localization is a practical defensive EW capability.
 
-**Hackathon notes:** Cheap hardware; multiple nodes needed for triangulation. Receive-only, so legal to test.
+**Hackathon notes:** Needs 3+ Raspberry Pi + RTL-SDR nodes with directional antennas; start with foxhunt-sim and --mock-sdr after uv sync. Receive-only, but a live test still needs an authorised interference source. Rotator GPIO driver and PPS wiring are still planned.
 
 **Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [RF localization and direction finding](../concepts/rf-localization.md)
 

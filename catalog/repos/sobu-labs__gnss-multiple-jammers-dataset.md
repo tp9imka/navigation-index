@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 1 |  | ? | 2026-06-14 | False | research-prototype | medium |
 
-Recordings of several simultaneous chirp jammers on GPS L1, captured in isolation, for studying notch-filter (ANF) mitigation.
+Placeholder repo: its description promises recordings of several simultaneous chirp jammers on GPS L1 for notch-filter (ANF) mitigation studies, but the repo is empty (no commits) as of 2026-11-06.
 
 **Why it matters:** Multi-jammer data is rare; useful for testing mitigation filters.
 
-**Hackathon notes:** Use to test an adaptive notch filter in GNU Radio or Python.
+**Hackathon notes:** No data, README or licence yet - nothing to use. Watch the repo or pick another jamming set.
 
 **Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 

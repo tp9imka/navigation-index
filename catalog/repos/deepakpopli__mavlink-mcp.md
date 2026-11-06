@@ -26,6 +26,7 @@ MCP server for flying ArduPilot vehicles from AI agents over MAVLink, covering m
 ## Referenced by
 
 - [MAVLinkMCP](../repos/ion-g-ion__mavlinkmcp.md) (alternative_to)
+- [LLM mission agent: a safety-gated MAVLink MCP server flying ArduPilot SITL](../samples/llm-mission-agent.md) (explains)
 
 _Indexed by lane(s): gap-fill_
 

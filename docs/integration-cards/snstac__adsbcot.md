@@ -4,7 +4,7 @@ One-line: PyTAK-based gateway that polls an ADS-B decoder (readsb/dump1090 JSON,
 
 | | |
 |---|---|
-| Install | `sudo apt install adsbcot` from the signed snstac apt repo (keyring + sources commands in `docs/installation.md`; HTTP and file feeds only), or `python3 -m pip install adsbcot`. For `tcp://` raw/Beast feeds: `python3 -m pip install 'adsbcot[with_pymodes]'` and keep `pymodes>=2.18,<3`. Latest release v9.2.2 (2026-09-05, `src/adsbcot/VERSION`). |
+| Install | `sudo apt install adsbcot` from the signed snstac apt repo (keyring + sources commands in `docs/installation.md`; HTTP and file feeds only), or the `.deb`/`.rpm` assets on the GitHub release. `docs/installation.md` still says `python3 -m pip install adsbcot`, but PyPI returns 404 for `adsbcot` (checked 2026-11-06); install from source instead: `python3 -m pip install 'adsbcot[with_pymodes] @ git+https://github.com/snstac/adsbcot'` (the extra is needed for `tcp://` raw/Beast feeds; keep `pymodes>=2.18,<3`). Latest release v9.2.2 (2026-09-05, `src/adsbcot/VERSION`). |
 | Runs on | Python >= 3.9 (`setup.cfg`), Linux, macOS, Windows. Pure Python; deps `aircot>=4.0.0`, `pytak>=7.3.12`, `aiohttp<4`, `websockets<11`. A Pi is plenty. |
 | Inputs | `FEED_URL`: `file:///run/dump1090-fa/aircraft.json` (default), `http(s)://` aircraft JSON (readsb/piaware web, or aggregators such as airplanes.live `https://api.airplanes.live/v2/point/<lat>/<lon>/<radius>`), `ws(s)://` JSON, `tcp://`/`tcp+raw://` AVR on 30002, `tcp+beast://` on 30005. Port 30003 (SBS CSV) is not supported. Reads readsb/dump1090 keys (`hex`, `flight`, `lat`, `lon`, `alt_geom`, `gs`, `trk`, `squawk`, `category`, `NACp`/`nac_p`, `NACv`/`nac_v`) and Stratux keys. Optional `KNOWN_CRAFT` CSV for callsign/icon/CoT type overrides. |
 | Outputs | CoT XML events (via PyTAK, so also protobuf if `TAK_PROTO=1`) with `<track course speed>`, `<contact callsign>`, `<remarks>` (flight, reg, squawk, ICAO hex, category, type), `<__adsb>` and `<_radio>` detail; CoT type from `aircot.set_cot_type(...)`. Plus a periodic receiver beacon `SENSOR.<id>` of type `a-f-G-E-S-E` (disable with `SENSOR_BEACON=0`). Destination is PyTAK `COT_URL`. |
@@ -24,7 +24,7 @@ COT_URL = tcp://127.0.0.1:8088
 COT_STALE = 30
 ```
 ```bash
-python3 -m pip install adsbcot
+python3 -m pip install 'adsbcot @ git+https://github.com/snstac/adsbcot'
 adsbcot -c adsbcot.ini
 ```
 With a local SDR swap `FEED_URL` for your readsb JSON (`http://<host>:8080/data/aircraft.json` style, see the readsb card) or `tcp+beast://127.0.0.1:30005`.

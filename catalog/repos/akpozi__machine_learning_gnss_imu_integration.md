@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 22 | Python | ? | 2022-08-19 | False | archived | low |
 
-ML-based adaptive positioning to fuse smartphone GNSS and IMU, built for GSDC 2022.
+GSDC 2022 pipeline: an ML classifier picks the drive environment (highway, tree-lined, downtown) to set rtklib-py PPK options, then a loosely coupled GNSS/IMU Kalman filter refines the result.
 
 **Why it matters:** Example of learned GNSS/IMU fusion on phone data.
 
-**Hackathon notes:** Reference.
+**Hackathon notes:** Reference. No licence (all rights reserved).
 
 **Concepts:** [GNSS/INS integration](../concepts/gnss-ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
 

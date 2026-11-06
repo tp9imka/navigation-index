@@ -6,8 +6,9 @@ TERCOM/TRN/DSMAC-style matching of altimetry or imagery against DEM/terrain data
 
 **Parent:** [Assured / resilient PNT](../concepts/assured-pnt.md)
 
-## Samples (1)
+## Samples (2)
 
+- [Heightmap-gradient particle filter on real Copernicus DEM (SPRIN-D CTU method) vs TERCOM](../samples/terrain-heightmap-pf.md) - Re-implementation of the CTU SPRIN-D winner's localization (arXiv 2510.01348): local heightmap gradients matched to a prior DEM with the unnormalized correlation coefficient, Gaussian-blurred similarity maps weighting a 
 - [Terrain-relative navigation with a particle filter](../samples/terrain-relative-nav-pf.md) - A stdlib-only simulation of TERCOM/TRN: an aircraft with a biased INS and a radar altimeter matches its measured terrain profile against a seeded synthetic DEM with a particle filter that also estimates the INS velocity 
 
 ## Repositories (22)

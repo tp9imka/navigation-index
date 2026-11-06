@@ -18,4 +18,8 @@ Bridges autopilot GLOBAL_POSITION_INT messages into Cursor-on-Target events so a
 - uses: [OpenTAKServer](../repos/brian7704__opentakserver.md)
 - uses: [ATAK-CIV (TAK Product Center)](../repos/tak-product-center__atak-civ.md)
 
+## Referenced by
+
+- [C-UAS classifiers on public data: radar tracks (UAV vs bird) and DroneRF spectra](../samples/cuas-classifiers.md) (uses)
+
 _Indexed by lane(s): samples_

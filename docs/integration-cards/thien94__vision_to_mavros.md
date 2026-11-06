@@ -32,7 +32,7 @@ Hardware-free path: copy the MAVLink half of `t265_to_mavlink.py` (heartbeat as 
 ## Gotchas
 - Unmaintained since 2022 and ROS 1 only. For ROS 2, port the node logic or use MAVROS `vision_pose` with `tf/listen: true` directly.
 - Intel RealSense T265 is discontinued; treat the T265 scripts as templates.
-- Origin: without `set_origin.py` (or the script's `SET_GPS_GLOBAL_ORIGIN`), ArduPilot never gets a global position; open issue #67 reports `set_origin.py` failing to set home. Open #64-#66 are camera-specific setup questions (pose not published, D435i/T265 combos, ZED).
+- Origin: without `set_origin.py` (or the script's `SET_GPS_GLOBAL_ORIGIN`), ArduPilot never gets a global position; open issue #67 reports `set_origin.py` failing to set home. #64 (pose not published, closed) and open #65-#66 (ZED Mini, D435i/T265 combos) are camera-specific setup questions.
 - Angle conventions (`roll_cam`, `pitch_cam`, `yaw_cam`, `gamma_world`) are applied in a fixed order; a wrong sign shows up as the vehicle drifting in the wrong axis when you move it by hand. Test by hand before arming.
 - GPL-3.0.
 

@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 2 | JavaScript | NOASSERTION | 2022-04-18 | False | archived | low |
 
-Frontend and backend from the Clover Rescue Team's CopterHack 2022 project.
+Main web server and client (Node.js, Socket.IO) of the Clover Rescue Team's CopterHack 2022 project, 3rd place; the drone-side server is DevMBS/CRTClover.
 
 **Why it matters:** Example finalist code.
 
-**Hackathon notes:** Reference only.
+**Hackathon notes:** MIT. Reference only.
 
 **Concepts:** [Mission planning and routing](../concepts/mission-planning.md)
 

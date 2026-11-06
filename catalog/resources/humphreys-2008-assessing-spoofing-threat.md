@@ -27,5 +27,6 @@ Landmark ION GNSS 2008 paper that built a receiver-based civil GPS spoofer and a
 ## Referenced by
 
 - [GNSS Spoofing and Detection](../resources/psiaki-humphreys-2016-gnss-spoofing-detection.md) (same_author)
+- [File-based GNSS signal chain: gps-sdr-sim => GNSS-SDR => spoofing/jamming scorer](../samples/gnss-signal-chain.md) (explains)
 
 _Indexed by lane(s): gnss_

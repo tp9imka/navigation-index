@@ -10,7 +10,7 @@ Magnetic-field aided inertial navigation system for indoor positioning, compared
 
 **Why it matters:** Magnetic field anomalies as a GNSS-free position aid indoors.
 
-**Hackathon notes:** MATLAB with data; test on your own magnetometer arrays.
+**Hackathon notes:** MATLAB with eight recorded datasets in data/. Clone with --recurse-submodules (MAINS is a submodule). MAINS code is GPL-3.0, MAGEKF Apache-2.0. Test on your own magnetometer arrays.
 
 **Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
 

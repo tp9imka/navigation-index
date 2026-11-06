@@ -4,11 +4,13 @@
 
 TAK/CoT, MIL-STD-2525/APP-6 symbology, blue force tracking, common operating picture.
 
-## Samples (4)
+## Samples (6)
 
+- [C-UAS classifiers on public data: radar tracks (UAV vs bird) and DroneRF spectra](../samples/cuas-classifiers.md) - Two defensive drone-detection baselines on openly licensed recordings.
 - [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../samples/gnss-interference-monitor.md) - A stdlib heuristic scorer turns per-epoch receiver telemetry (C/N0 across SVs, AGC, CW jamming indicator, clock and position jumps, receiver spoofing/jamming flags) into jamming and spoofing scores with stated reasons.
 - [GNSS jammer geolocation from DF bearings to TAK](../samples/interference-geolocation-to-tak.md) - Locates a GNSS interference source from KrakenSDR-style direction-of-arrival bearings taken at two fixed sites and one moving vehicle, with noise and multipath outliers.
 - [MAVLink telemetry to TAK Cursor-on-Target](../samples/mavlink-to-tak-cot.md) - Bridges autopilot GLOBAL_POSITION_INT messages into Cursor-on-Target events so a UAV shows up as a friendly track on ATAK, WinTAK or iTAK.
+- [OSINT interference map from free data: ADS-B NACp hexes and Sentinel-1 C-band RFI over Kaliningrad / the SE Baltic](../samples/osint-jamming-map.md) - Two no-login OSINT layers for the same area and morning (2026-10-01, SE Baltic around Kaliningrad).
 - [Stone Soup radar tracking of two UAVs with JPDA and OSPA](../samples/stone-soup-tracking.md) - Simulates two small UAVs observed by a noisy bearing/range radar with clutter and tracks them with Stone Soup's Extended Kalman filter and JPDA data association.
 
 ## Repositories (53)
@@ -39,7 +41,7 @@ TAK/CoT, MIL-STD-2525/APP-6 symbology, blue force tracking, common operating pic
 - [RID (ESP32 Remote ID receiver)](../repos/peterjburke__rid.md) - fit: high - ESP32 Remote ID receiver built on opendroneid-core-c and a fork of sxjack's electronic ID classes.
 - [node-CoT](../repos/dfpc-coe__node-cot.md) - fit: high - JavaScript/TypeScript library for parsing, building and converting Cursor-on-Target messages, including GeoJSON conversion and TAK protobuf.
 - [mil-sym-ts](../repos/missioncommand__mil-sym-ts.md) - fit: high - TypeScript/JavaScript renderer for MIL-STD-2525 (D and later) military symbology, producing single-point and multi-point tactical graphics for web maps.
-- [Sentinel-1 RFI detection](../repos/zephr-xyz__sentinel1-rfi-detection.md) - fit: high - Pipeline that detects radio-frequency interference in Sentinel-1 SAR imagery using temporal z-scores and DEM masking, to map GNSS jamming activity from orbit.
+- [Sentinel-1 RFI detection](../repos/zephr-xyz__sentinel1-rfi-detection.md) - fit: high - Pipeline that flags radio-frequency interference in Sentinel-1 C-band SAR scenes using temporal z-scores and DEM slope masking, run over Iran, the Persian Gulf and Jammertest 2025.
 - [ADSBCOT](../repos/snstac__adsbcot.md) - fit: high - Gateway that converts ADS-B traffic from dump1090/readsb or aggregator APIs into Cursor-on-Target so aircraft show in TAK.
 - [OpenLayers](../repos/openlayers__openlayers.md) - fit: medium - Feature-rich web mapping library supporting many projections, WMS/WMTS, vector tiles and editing.
 - [Gqrx](../repos/gqrx-sdr__gqrx.md) - fit: medium - Desktop SDR receiver built on GNU Radio and Qt with FFT/waterfall and demodulators.

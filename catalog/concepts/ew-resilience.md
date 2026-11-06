@@ -6,15 +6,17 @@ Operating comms and navigation under EW: spectrum monitoring, LPI/LPD links, fal
 
 **Parent:** [Assured / resilient PNT](../concepts/assured-pnt.md)
 
-## Samples (2)
+## Samples (4)
 
+- [C-UAS classifiers on public data: radar tracks (UAV vs bird) and DroneRF spectra](../samples/cuas-classifiers.md) - Two defensive drone-detection baselines on openly licensed recordings.
 - [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../samples/gnss-interference-monitor.md) - A stdlib heuristic scorer turns per-epoch receiver telemetry (C/N0 across SVs, AGC, CW jamming indicator, clock and position jumps, receiver spoofing/jamming flags) into jamming and spoofing scores with stated reasons.
 - [GNSS jammer geolocation from DF bearings to TAK](../samples/interference-geolocation-to-tak.md) - Locates a GNSS interference source from KrakenSDR-style direction-of-arrival bearings taken at two fixed sites and one moving vehicle, with noise and multipath outliers.
+- [OSINT interference map from free data: ADS-B NACp hexes and Sentinel-1 C-band RFI over Kaliningrad / the SE Baltic](../samples/osint-jamming-map.md) - Two no-login OSINT layers for the same area and morning (2026-10-01, SE Baltic around Kaliningrad).
 
-## Repositories (15)
+## Repositories (16)
 
 - [KrakenSDR DoA DSP](../repos/krakenrf__krakensdr_doa.md) - fit: high - Direction-of-arrival processing and web UI for the five-channel coherent KrakenSDR, producing bearings to RF emitters.
-- [GNSS jamming/spoofing classification notebooks](../repos/alicmu2024__gnss-jamming-detection-and-classification-using-machine-learning-deep-learning-and-computer-vision.md) - fit: high - Colab notebooks that classify GNSS jamming types from spectrogram images built from a public raw-IQ jamming dataset, with ML, DL and CV approaches; companion to an arXiv paper.
+- [GNSS jamming/spoofing classification notebooks](../repos/alicmu2024__gnss-jamming-detection-and-classification-using-machine-learning-deep-learning-and-computer-vision.md) - fit: high - Colab notebooks for GNSS jamming-type classification (ML, DL and CV on spectrogram images) from a public raw-IQ jamming set, plus one GPS spoofing ML notebook; companion to arXiv 2501.02352.
 - [Fraunhofer IIS Jammertest 2025 dataset](../repos/felixott94__fraunhoferiis_jammertest2025.md) - fit: high - Real-world GNSS interference recordings from Jammertest 2025 at Andoya, Norway, covering jamming, spoofing, meaconing and multi-emitter scenarios, with metadata for classification, characterization and direction finding.
 - [ExpressLRS](../repos/expresslrs__expresslrs.md) - fit: medium - Open-source LoRa/FLRC radio control link (2.4 GHz and sub-GHz) with high packet rates, telemetry and MAVLink passthrough modes.
 - [OpenHD](../repos/openhd__openhd.md) - fit: medium - Open-source long-range digital HD video and telemetry link over Wi-Fi adapters in monitor mode (wifibroadcast-style), for air and ground units.
@@ -25,14 +27,16 @@ Operating comms and navigation under EW: spectrum monitoring, LPI/LPD links, fal
 - [UVDAR](../repos/ctu-mrs__uvdar_core.md) - fit: medium - Mutual relative localization for UAV swarms using blinking ultraviolet LEDs and UV-sensitive cameras, from CTU MRS.
 - [Jammertest test plan](../repos/npra__jammertest-plan.md) - fit: medium - Official test catalog and plan for Jammertest, Norway's annual live GNSS jamming and spoofing event, maintained by the Norwegian Public Roads Administration.
 - [GPSSpy](../repos/hoverflyhampton__gpsspy.md) - fit: medium - Python implementation of GPS jamming detection from receiver signal-to-noise ratio, following a published real-time jamming detection method.
+- [PTPsec](../repos/tum-esi__ptpsec.md) - fit: medium - Research implementation, based on linuxptp 3.1.1, that detects and mitigates PTP time-delay attacks by checking path asymmetry around cyclic redundant paths; includes a DPDK man-in-the-middle delay attacker for testing.
 - [Towards Jammer Fingerprinting](../repos/helsinki-sda-group__towards-jammer-fingerprinting.md) - fit: medium - LSTM (Bayesian and standard) classifiers that identify individual jammers from IQ recordings, from an ICL-GNSS 2024 paper on how environment and receiver affect classification.
 - [SiK radio firmware](../repos/ardupilot__sik.md) - fit: low - Firmware and tools for Si1000-based telemetry radios (3DR/RFD900 class) carrying MAVLink.
 - [Smart-UAV-Return-GNSS-Station](../repos/citec-spbu__smart-uav-return-gnss-station.md) - fit: low - Student project from SPbU (CITEC) on returning a UAV to its launch point when both GNSS and the ground-station link are lost, targeting a RockPi 4 companion computer.
 
-## Documents, talks, courses, datasets (52)
+## Documents, talks, courses, datasets (54)
 
 - [12 переможців і призовий фонд у 120 000 доларів: результати Хакатону «Наступ машин»](../resources/mod-nastup-mashyn-hackathon-2024.md) - competition - English: '12 winners and a $120,000 prize pool: results of the Onslaught of Machines hackathon'.
 - [Assessing the Spoofing Threat: Development of a Portable GPS Civilian Spoofer](../resources/humphreys-2008-assessing-spoofing-threat.md) - paper - Landmark ION GNSS 2008 paper that built a receiver-based civil GPS spoofer and analysed how hard it is to detect, kicking off modern civil spoofing defense research.
+- [Attacking the Network Time Protocol](../resources/malhotra-2016-attacking-ntp.md) - paper - NDSS 2016 paper showing on-path time shifting of NTP clients, an off-path single-packet denial of service against NTP synchronization, and related attacks that exploit unauthenticated NTP.
 - [Brave1 запускає лабораторію для тестування CRPA-антен](../resources/militarnyi-brave1-crpa-test-lab.md) - blog - English: 'Brave1 launches a lab for testing CRPA antennas'.
 - [DASA competition: Advanced Radio Frequency Sensing, Integrated Effects and PNT](../resources/dasa-advanced-rf-sensing-pnt-2022.md) - competition - UK DASA themed competition (for the Bright Corvus project) seeking RF sensing and resilient PNT innovations.
 - [DoD Directive 4650.05: Positioning, Navigation, and Timing (PNT)](../resources/dodd-4650-05-pnt.md) - standard - DoD policy directive governing the department's PNT enterprise, including the PNT Oversight Council and responsibilities for assured PNT and navigation warfare.
@@ -59,12 +63,13 @@ Operating comms and navigation under EW: spectrum monitoring, LPI/LPD links, fal
 - [Preliminary Lessons in Conventional Warfighting from Russia's Invasion of Ukraine: February-July 2022](../resources/rusi-preliminary-lessons-ukraine-2022.md) - report - RUSI analysis of the first months of the war, including the scale of Russian electronic warfare and its effect on Ukrainian UAV survival and GNSS-dependent systems.
 - [Researchers home in on origins of Russia's Baltic GPS jamming](../resources/defensenews-baltic-jamming-origins-2025.md) - blog - Report on Polish research tracing Baltic GNSS jamming to emitters in the Kaliningrad region, with context on the effects on aviation and shipping.
 - [Results Jammertest 2025 - Resilient GNSS in an Era of Rising Jamming & Spoofing (webinar)](../resources/septentrio-jammertest-2025-webinar.md) - talk - On-demand vendor webinar reviewing receiver behaviour during the high-power interference trials of Jammertest 2025 in Norway, with speakers from Septentrio, the GPS Innovation Alliance and drone maker UVify.
+- [RFC 7384: Security Requirements of Time Protocols in Packet Switched Networks](../resources/rfc7384-time-protocol-security.md) - standard - Threat model and security requirements for NTP and PTP: packet manipulation, spoofing, replay, rogue master, delay attacks, cryptographic attacks and DoS.
 - [Septentrio AIM+ GNSS jamming and spoofing protection](../resources/septentrio-aim-plus.md) - doc - Vendor explanation of AIM+ interference monitoring and mitigation: narrowband and wideband (chirp) jamming suppression in the receiver's signal processing plus layered spoofing detection including Galileo OSNMA.
 - [Space Security Challenge 2022: Hack-A-Sat 3](../resources/afrl-hack-a-sat-2022.md) - competition - AFRL/Space Force capture-the-flag on satellite and ground-segment security; challenge code from several editions has been released publicly.
 - [Space Threat Assessment 2024](../resources/csis-space-threat-assessment-2024.md) - report - Previous edition of the CSIS counterspace assessment; useful to see how GNSS interference reporting escalated between years.
 - [Space Threat Assessment 2025](../resources/csis-space-threat-assessment-2025.md) - report - Annual CSIS Aerospace Security Project review of counterspace capabilities, with sections on GPS jamming and spoofing in Eastern Europe and the Middle East.
 - [The invisible war: Inside the electronic warfare arms race that could shape course of the war](../resources/kyiv-independent-invisible-war-ew.md) - blog - Long-form reporting on the EW and counter-EW cycle in Ukraine, covering jamming of drones and navigation and the rapid iteration of countermeasures.
-- [Trends and Challenges in Next-Generation GNSS Interference Management](../resources/gnss-interference-management-trends-2025.md) - paper - Survey of interference detection, classification, localization and mitigation trends, including open datasets such as Jammertest recordings.
+- [Trends and Challenges in Next-Generation GNSS Interference Management](../resources/gnss-interference-management-trends-2025.md) - paper - Magazine paper (submitted to IEEE AESM) on AI for GNSS interference detection, classification, localization and mitigation, with preliminary results and an open dataset from Jammertest 2024 (University of Vaasa VAARA).
 - [UAVs: ISR, Deterrence and War (IISS Strategic Dossier)](../resources/iiss-uavs-isr-deterrence-war-2026.md) - report - IISS dossier on military UAV use, noting that GNSS is often effectively unavailable near the front line in Ukraine and that visual scene-matching navigation is a growing response.
 - [Ukraine's Autonomous Killer Drones Defeat Electronic Warfare](../resources/ieee-spectrum-ukraine-drones-ew-2025.md) - blog - Reporting on how Ukrainian drone developers respond to pervasive jamming of radio links and satellite navigation, including onboard optical navigation that keeps the drone flying after links are lost.
 - [Ukraine's Brave1, NATO launch EUR 10M competition for counter-drone technology](../resources/brave1-nato-counter-drone-ew-competition.md) - blog - Coverage of a Brave1-NATO competition funding counter-drone technology and navigation that works under electronic warfare.

@@ -19,6 +19,7 @@ US executive order that defines 'responsible use of PNT' and tasks Commerce/NIST
 ## Referenced by
 
 - [Resilient PNT Conformance Framework](../resources/dhs-resilient-pnt-conformance-framework.md) (cites)
+- [Best Practices for Resilient Positioning, Navigation, and Timing (PNT) Supporting Critical Infrastructure](../resources/dhs-st-pnt-best-practices-critical-infrastructure-2025.md) (cites)
 - [NIST IR 8323r1: Foundational PNT Profile - Applying the Cybersecurity Framework for the Responsible Use of PNT Services](../resources/nist-ir-8323r1-pnt-profile.md) (cites)
 - [National Positioning, Navigation, and Timing Resilience R&D Plan](../resources/us-national-pnt-rd-plan-2021.md) (cites)
 

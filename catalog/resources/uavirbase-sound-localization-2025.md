@@ -2,7 +2,7 @@
 
 `res:uavirbase-sound-localization-2025` - paper - <https://www.mdpi.com/2076-3417/15/10/5378>
 
-**By:** Applied Sciences authors - **Year:** 2025 - **Level:** intermediate - **Access:** open
+**By:** Gabriel Jekaterynczuk, Rafal Szadkowski, Zbigniew Piotrowski - **Year:** 2025 - **Level:** intermediate - **Access:** open
 
 Public dataset of synchronized multi-microphone UAV recordings under controlled distance, altitude, azimuth and orientation variations, for acoustic source localization.
 

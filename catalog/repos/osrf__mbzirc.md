@@ -10,7 +10,7 @@ Simulator (Ignition Fortress + ROS 2) for the MBZIRC Maritime Grand Challenge wh
 
 **Why it matters:** Ready-made maritime GNSS-denied multi-vehicle scenario.
 
-**Hackathon notes:** Built for Ubuntu 20.04 / ROS 2 Galactic; use Docker.
+**Hackathon notes:** Built for Ubuntu 20.04, ROS 2 Galactic and Ignition Fortress, all now end of life; use the osrf/mbzirc Docker image (needs nvidia-docker2). Apache-2.0.
 
 **Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Maritime navigation](../concepts/maritime-nav.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
 

@@ -2,16 +2,20 @@
 
 `res:sprind-heightmap-gradients-2025` - paper - <https://arxiv.org/abs/2510.01348>
 
-**By:** Werner, Capek, Musil, Franek, Baca, Saska (CTU MRS / Fly4Future) - **Year:** 2025 - **Level:** advanced - **Access:** open
+**By:** Michal Werner, David Capek, Tomas Musil, Ondrej Franek, Tomas Baca, Martin Saska - **Year:** 2025 - **Level:** advanced - **Access:** open
 
 Describes the winning SPRIN-D Fully Autonomous Flight system: LiDAR local heightmaps matched against prior elevation data by gradient templates, fused with odometry in a clustered particle filter, flying about 9 km below 25 m AGL without GNSS.
 
 ## Key takeaways
 
-- Terrain gradients beat raw height matching at low altitude
+- Heightmap gradients avoid needing reliable absolute (barometric) height
 - Clustered particle filter handles multimodal position
 - Runs on CPU in real time
 - No public code found
+
+## Deep dives
+
+- [ctu-sprind-terrain-nav](../../docs/paper-digests/ctu-sprind-terrain-nav.md) (paper-digests)
 
 **Concepts:** [Terrain-relative navigation](../concepts/terrain-nav.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
 
@@ -25,5 +29,6 @@ Describes the winning SPRIN-D Fully Autonomous Flight system: LiDAR local height
 ## Referenced by
 
 - [SPRIND Fully Autonomous Flight challenge](../resources/sprind-fully-autonomous-flight.md) (explains)
+- [Heightmap-gradient particle filter on real Copernicus DEM (SPRIN-D CTU method) vs TERCOM](../samples/terrain-heightmap-pf.md) (explains)
 
 _Indexed by lane(s): round3-expansion_

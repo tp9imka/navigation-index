@@ -41,7 +41,7 @@ OSNMAReceiver(UBXLiveSerial("/dev/ttyACM0"), cfg).start()
 - Authenticated position is still only as good as the time sync: OSNMA security assumes the receiver knows GST within `TS` (default 30 s); in live mode OSNMAlib can use NTP or the local clock.
 
 ## Gotchas
-- Public key changed from ID 1 to ID 2 on 2025-12-10 10:00 UTC; data recorded before that needs `OSNMA_PublicKey_1.xml` (both ship in the run folders). Data before 2023-08-03 needs the `OSNMA_Test_Phase_ICD` branch.
+- Public key changed from ID 1 to ID 2 on 2025-12-10 10:00 UTC; data recorded before that needs `OSNMA_PublicKey_1.xml` (both keys ship in `custom_run/`, `ublox_run/`, `gnss_sdr_run/`; the live galmon and Septentrio runners ship only key 2). Data before 2023-08-03 needs the `OSNMA_Test_Phase_ICD` branch.
 - `run_serial.py` hard-codes `"COM4"` and `UBXLiveSerial` hard-codes 115200 baud; change both for Linux/macOS or a receiver at 38400.
 - u-blox SFRBX v1 has no signal id; the code assumes Galileo E1 (comment in `input_ubx.py`). Dual-frequency E5b optimisation needs an input that delivers E5b-I pages.
 - Not packaged: no `pip install osnma`, imports rely on `sys.path.insert(0, '..')`.

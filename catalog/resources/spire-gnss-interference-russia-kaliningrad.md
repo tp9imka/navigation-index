@@ -15,4 +15,8 @@ Spire analysis using satellite-received ADS-B integrity metrics and RF data to c
 
 **Tags:** `baltic`, `kaliningrad`, `satellite-ads-b`, `spire`
 
+## Referenced by
+
+- [OSINT interference map from free data: ADS-B NACp hexes and Sentinel-1 C-band RFI over Kaliningrad / the SE Baltic](../samples/osint-jamming-map.md) (explains)
+
 _Indexed by lane(s): defense-context_

@@ -1,10 +1,10 @@
-# DroneDetect Dataset (RF recordings of UAS signals, University of Essex)
+# DroneDetect Dataset: A Radio Frequency dataset of Unmanned Aerial System (UAS) Signals for Machine Learning Detection & Classification
 
 `res:dronedetect-rf-dataset-essex` - dataset - <https://ieee-dataport.org/node/4361>
 
-**By:** Carolyn Swinney, John Woods (University of Essex) - **Year:** 2021 - **Level:** intermediate - **Access:** free-registration
+**By:** Carolyn J. Swinney, John C. Woods - **Year:** 2021 - **Level:** intermediate - **Access:** free-registration
 
-RF recordings of several DJI and Parrot drones captured with a BladeRF SDR in GNU Radio, split by interference condition (clean, Bluetooth, Wi-Fi) and flight mode.
+RF recordings of seven drones (six DJI models and the Parrot Disco) captured with a BladeRF SDR in GNU Radio, split by interference (clean, Bluetooth, Wi-Fi, both) and flight mode (on, hovering, flying). CC BY licence, free IEEE login needed.
 
 ## Key takeaways
 

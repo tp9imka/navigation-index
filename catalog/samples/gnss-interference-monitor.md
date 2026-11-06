@@ -17,4 +17,9 @@ A stdlib heuristic scorer turns per-epoch receiver telemetry (C/N0 across SVs, A
 - uses: [pygnssutils](../repos/semuconsulting__pygnssutils.md)
 - explains: [Multi-frequency GNSS spoofing raw dataset](../repos/s7am1na__gnss-spoofing-dataset.md)
 
+## Referenced by
+
+- [File-based GNSS signal chain: gps-sdr-sim => GNSS-SDR => spoofing/jamming scorer](../samples/gnss-signal-chain.md) (uses)
+- [OSINT interference map from free data: ADS-B NACp hexes and Sentinel-1 C-band RFI over Kaliningrad / the SE Baltic](../samples/osint-jamming-map.md) (explains)
+
 _Indexed by lane(s): samples_

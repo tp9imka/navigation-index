@@ -25,6 +25,7 @@ SITL-first MCP server for talking to ArduPilot vehicles over MAVLink, with expli
 ## Referenced by
 
 - [MAVLinkMCP](../repos/ion-g-ion__mavlinkmcp.md) (alternative_to)
+- [LLM mission agent: a safety-gated MAVLink MCP server flying ArduPilot SITL](../samples/llm-mission-agent.md) (explains)
 
 _Indexed by lane(s): gap-fill_
 

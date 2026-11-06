@@ -28,5 +28,6 @@ Proceedings of the IEEE survey of spoofing attack types and detection/mitigation
 
 - [Assessing the Spoofing Threat: Development of a Portable GPS Civilian Spoofer](../resources/humphreys-2008-assessing-spoofing-threat.md) (same_author)
 - [TEXBAT: Texas Spoofing Test Battery](../resources/ut-texbat.md) (same_author)
+- [File-based GNSS signal chain: gps-sdr-sim => GNSS-SDR => spoofing/jamming scorer](../samples/gnss-signal-chain.md) (explains)
 
 _Indexed by lane(s): gnss_

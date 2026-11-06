@@ -10,7 +10,7 @@ MATLAB package from an ION GNSS+ 2021 decimeter challenge entry.
 
 **Why it matters:** MATLAB route for smartphone GNSS positioning.
 
-**Hackathon notes:** Reference only.
+**Hackathon notes:** Reference only: the EKF, INS and magnitude submodules are private, so it does not run as cloned. MIT. From an ENAC master's thesis.
 
 **Concepts:** [GNSS positioning](../concepts/gnss.md)
 

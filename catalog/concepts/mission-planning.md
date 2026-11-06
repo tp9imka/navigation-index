@@ -6,6 +6,10 @@ Route networks, waypoint missions, coverage, terrain-aware and threat-aware rout
 
 **Parent:** [Path and motion planning](../concepts/path-planning.md)
 
+## Samples (1)
+
+- [LLM mission agent: a safety-gated MAVLink MCP server flying ArduPilot SITL](../samples/llm-mission-agent.md) - A small MCP server (stdio JSON-RPC 2.0, pymavlink) that lets Claude Code or any MCP client read and fly an ArduCopter: get_state, get_nav_health (EKF flags, variances, GNSS fix/sats/HDOP => nominal/degraded/lost), arm_ta
+
 ## Repositories (24)
 
 - [QGIS](../repos/qgis__qgis.md) - fit: high - Desktop open-source GIS for viewing, editing, analyzing and printing geospatial data, extensible via Python plugins.
@@ -28,10 +32,10 @@ Route networks, waypoint missions, coverage, terrain-aware and threat-aware rout
 - [opennav_coverage](../repos/open-navigation__opennav_coverage.md) - fit: medium - Nav2-compatible complete-coverage task server and navigator built on Fields2Cover, with behavior-tree utilities for field/area coverage and row following.
 - [GNSS-Radar](../repos/taroz__gnss-radar.md) - fit: medium - Web application showing current GNSS satellite positions (sky plot) for a location and time across constellations.
 - [Open-RMF rmf_task](../repos/open-rmf__rmf_task.md) - fit: medium - Task allocation library from Open-RMF that assigns tasks to fleets of robots, accounting for battery, travel time and task constraints.
-- [Swarm in Blocks](../repos/grupo-semear-usp__swarm_in_blocks.md) - fit: medium - Block-programming interface for drone swarms on COEX Clover, CopterHack 2022 winner by team Atena.
+- [Swarm in Blocks](../repos/grupo-semear-usp__swarm_in_blocks.md) - fit: medium - Block-programming and web control platform for drone swarms on COEX Clover (ROS, Gazebo); CopterHack 2022 winner by team Atena.
 - [mavlink-mcp (ArduPilot)](../repos/deepakpopli__mavlink-mcp.md) - fit: medium - MCP server for flying ArduPilot vehicles from AI agents over MAVLink, covering missions, camera vision and SITL workflows.
 - [Paparazzi UAV](../repos/paparazzi__paparazzi.md) - fit: low - Long-running academic autopilot (ENAC, TU Delft and others) for fixed-wing, rotorcraft and hybrids, with its own ground segment, flight-plan language and INS modules.
-- [Clover Rescue Project](../repos/devmbs__crtclient.md) - fit: low - Frontend and backend from the Clover Rescue Team's CopterHack 2022 project.
+- [Clover Rescue Project](../repos/devmbs__crtclient.md) - fit: low - Main web server and client (Node.js, Socket.IO) of the Clover Rescue Team's CopterHack 2022 project, 3rd place; the drone-side server is DevMBS/CRTClover.
 
 ## Documents, talks, courses, datasets (7)
 

@@ -1,0 +1,969 @@
+{
+ "date": "2026-10-01",
+ "window_utc": [
+  "03:51",
+  "05:51"
+ ],
+ "step_s": 60,
+ "n_snapshots": 121,
+ "t0_unix": 1790826659.001,
+ "bbox": [
+  18.0,
+  53.5,
+  25.0,
+  57.0
+ ],
+ "hex_res": 4,
+ "n_aircraft_classified": 129,
+ "n_aircraft_bad": 110,
+ "n_reports": 2327,
+ "n_reports_bad": 1229,
+ "levels": {
+  "red": 64,
+  "yellow": 0,
+  "green": 0,
+  "no-data": 30
+ },
+ "hexes": [
+  {
+   "h3": "8408925ffffffff",
+   "n_aircraft": 1,
+   "n_good": 0,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "8408965ffffffff",
+   "n_aircraft": 11,
+   "n_good": 0,
+   "n_bad": 11,
+   "pct_bad": 90.9,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 11
+  },
+  {
+   "h3": "8408967ffffffff",
+   "n_aircraft": 4,
+   "n_good": 0,
+   "n_bad": 4,
+   "pct_bad": 75.0,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 4
+  },
+  {
+   "h3": "841f091ffffffff",
+   "n_aircraft": 12,
+   "n_good": 1,
+   "n_bad": 11,
+   "pct_bad": 83.3,
+   "level": "red",
+   "n_nic_bad": 2,
+   "n_mlat_position": 10
+  },
+  {
+   "h3": "841f093ffffffff",
+   "n_aircraft": 11,
+   "n_good": 0,
+   "n_bad": 11,
+   "pct_bad": 90.9,
+   "level": "red",
+   "n_nic_bad": 1,
+   "n_mlat_position": 10
+  },
+  {
+   "h3": "841f095ffffffff",
+   "n_aircraft": 2,
+   "n_good": 1,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f097ffffffff",
+   "n_aircraft": 12,
+   "n_good": 1,
+   "n_bad": 11,
+   "pct_bad": 83.3,
+   "level": "red",
+   "n_nic_bad": 3,
+   "n_mlat_position": 8
+  },
+  {
+   "h3": "841f099ffffffff",
+   "n_aircraft": 15,
+   "n_good": 1,
+   "n_bad": 14,
+   "pct_bad": 86.7,
+   "level": "red",
+   "n_nic_bad": 1,
+   "n_mlat_position": 13
+  },
+  {
+   "h3": "841f09bffffffff",
+   "n_aircraft": 16,
+   "n_good": 1,
+   "n_bad": 15,
+   "pct_bad": 87.5,
+   "level": "red",
+   "n_nic_bad": 1,
+   "n_mlat_position": 14
+  },
+  {
+   "h3": "841f0d3ffffffff",
+   "n_aircraft": 15,
+   "n_good": 0,
+   "n_bad": 15,
+   "pct_bad": 93.3,
+   "level": "red",
+   "n_nic_bad": 1,
+   "n_mlat_position": 14
+  },
+  {
+   "h3": "841f0dbffffffff",
+   "n_aircraft": 6,
+   "n_good": 0,
+   "n_bad": 6,
+   "pct_bad": 83.3,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 6
+  },
+  {
+   "h3": "841f293ffffffff",
+   "n_aircraft": 24,
+   "n_good": 0,
+   "n_bad": 24,
+   "pct_bad": 95.8,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 24
+  },
+  {
+   "h3": "841f29bffffffff",
+   "n_aircraft": 6,
+   "n_good": 1,
+   "n_bad": 5,
+   "pct_bad": 66.7,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 5
+  },
+  {
+   "h3": "841f401ffffffff",
+   "n_aircraft": 2,
+   "n_good": 0,
+   "n_bad": 2,
+   "pct_bad": 50.0,
+   "level": "no-data",
+   "n_nic_bad": 1,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f405ffffffff",
+   "n_aircraft": 13,
+   "n_good": 1,
+   "n_bad": 12,
+   "pct_bad": 84.6,
+   "level": "red",
+   "n_nic_bad": 1,
+   "n_mlat_position": 11
+  },
+  {
+   "h3": "841f407ffffffff",
+   "n_aircraft": 7,
+   "n_good": 2,
+   "n_bad": 5,
+   "pct_bad": 57.1,
+   "level": "red",
+   "n_nic_bad": 3,
+   "n_mlat_position": 3
+  },
+  {
+   "h3": "841f409ffffffff",
+   "n_aircraft": 2,
+   "n_good": 0,
+   "n_bad": 2,
+   "pct_bad": 50.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 2
+  },
+  {
+   "h3": "841f40dffffffff",
+   "n_aircraft": 8,
+   "n_good": 0,
+   "n_bad": 8,
+   "pct_bad": 87.5,
+   "level": "red",
+   "n_nic_bad": 2,
+   "n_mlat_position": 6
+  },
+  {
+   "h3": "841f421ffffffff",
+   "n_aircraft": 4,
+   "n_good": 1,
+   "n_bad": 3,
+   "pct_bad": 50.0,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 3
+  },
+  {
+   "h3": "841f425ffffffff",
+   "n_aircraft": 12,
+   "n_good": 0,
+   "n_bad": 12,
+   "pct_bad": 91.7,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 12
+  },
+  {
+   "h3": "841f429ffffffff",
+   "n_aircraft": 15,
+   "n_good": 0,
+   "n_bad": 15,
+   "pct_bad": 93.3,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 15
+  },
+  {
+   "h3": "841f42bffffffff",
+   "n_aircraft": 2,
+   "n_good": 0,
+   "n_bad": 2,
+   "pct_bad": 50.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 2
+  },
+  {
+   "h3": "841f42dffffffff",
+   "n_aircraft": 32,
+   "n_good": 0,
+   "n_bad": 32,
+   "pct_bad": 96.9,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 32
+  },
+  {
+   "h3": "841f441ffffffff",
+   "n_aircraft": 6,
+   "n_good": 0,
+   "n_bad": 6,
+   "pct_bad": 83.3,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 6
+  },
+  {
+   "h3": "841f445ffffffff",
+   "n_aircraft": 12,
+   "n_good": 1,
+   "n_bad": 11,
+   "pct_bad": 83.3,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 11
+  },
+  {
+   "h3": "841f447ffffffff",
+   "n_aircraft": 4,
+   "n_good": 0,
+   "n_bad": 4,
+   "pct_bad": 75.0,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 4
+  },
+  {
+   "h3": "841f449ffffffff",
+   "n_aircraft": 7,
+   "n_good": 1,
+   "n_bad": 6,
+   "pct_bad": 71.4,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 6
+  },
+  {
+   "h3": "841f44bffffffff",
+   "n_aircraft": 4,
+   "n_good": 0,
+   "n_bad": 4,
+   "pct_bad": 75.0,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 4
+  },
+  {
+   "h3": "841f44dffffffff",
+   "n_aircraft": 7,
+   "n_good": 0,
+   "n_bad": 7,
+   "pct_bad": 85.7,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 7
+  },
+  {
+   "h3": "841f455ffffffff",
+   "n_aircraft": 1,
+   "n_good": 0,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f45dffffffff",
+   "n_aircraft": 1,
+   "n_good": 0,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f461ffffffff",
+   "n_aircraft": 13,
+   "n_good": 1,
+   "n_bad": 12,
+   "pct_bad": 84.6,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 12
+  },
+  {
+   "h3": "841f463ffffffff",
+   "n_aircraft": 11,
+   "n_good": 0,
+   "n_bad": 11,
+   "pct_bad": 90.9,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 11
+  },
+  {
+   "h3": "841f467ffffffff",
+   "n_aircraft": 20,
+   "n_good": 0,
+   "n_bad": 20,
+   "pct_bad": 95.0,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 20
+  },
+  {
+   "h3": "841f469ffffffff",
+   "n_aircraft": 3,
+   "n_good": 0,
+   "n_bad": 3,
+   "pct_bad": 66.7,
+   "level": "red",
+   "n_nic_bad": 3,
+   "n_mlat_position": 0
+  },
+  {
+   "h3": "841f46bffffffff",
+   "n_aircraft": 13,
+   "n_good": 0,
+   "n_bad": 13,
+   "pct_bad": 92.3,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 13
+  },
+  {
+   "h3": "841f509ffffffff",
+   "n_aircraft": 2,
+   "n_good": 0,
+   "n_bad": 2,
+   "pct_bad": 50.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 2
+  },
+  {
+   "h3": "841f519ffffffff",
+   "n_aircraft": 17,
+   "n_good": 0,
+   "n_bad": 17,
+   "pct_bad": 94.1,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 17
+  },
+  {
+   "h3": "841f51bffffffff",
+   "n_aircraft": 1,
+   "n_good": 0,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f541ffffffff",
+   "n_aircraft": 2,
+   "n_good": 0,
+   "n_bad": 2,
+   "pct_bad": 50.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 2
+  },
+  {
+   "h3": "841f543ffffffff",
+   "n_aircraft": 4,
+   "n_good": 1,
+   "n_bad": 3,
+   "pct_bad": 50.0,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 3
+  },
+  {
+   "h3": "841f545ffffffff",
+   "n_aircraft": 3,
+   "n_good": 0,
+   "n_bad": 3,
+   "pct_bad": 66.7,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 3
+  },
+  {
+   "h3": "841f547ffffffff",
+   "n_aircraft": 3,
+   "n_good": 0,
+   "n_bad": 3,
+   "pct_bad": 66.7,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 3
+  },
+  {
+   "h3": "841f54bffffffff",
+   "n_aircraft": 1,
+   "n_good": 0,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f54dffffffff",
+   "n_aircraft": 3,
+   "n_good": 0,
+   "n_bad": 3,
+   "pct_bad": 66.7,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 3
+  },
+  {
+   "h3": "841f551ffffffff",
+   "n_aircraft": 5,
+   "n_good": 0,
+   "n_bad": 5,
+   "pct_bad": 80.0,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 5
+  },
+  {
+   "h3": "841f553ffffffff",
+   "n_aircraft": 19,
+   "n_good": 0,
+   "n_bad": 19,
+   "pct_bad": 94.7,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 19
+  },
+  {
+   "h3": "841f555ffffffff",
+   "n_aircraft": 4,
+   "n_good": 1,
+   "n_bad": 3,
+   "pct_bad": 50.0,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 3
+  },
+  {
+   "h3": "841f557ffffffff",
+   "n_aircraft": 6,
+   "n_good": 0,
+   "n_bad": 6,
+   "pct_bad": 83.3,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 6
+  },
+  {
+   "h3": "841f559ffffffff",
+   "n_aircraft": 1,
+   "n_good": 0,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f55bffffffff",
+   "n_aircraft": 7,
+   "n_good": 0,
+   "n_bad": 7,
+   "pct_bad": 85.7,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 7
+  },
+  {
+   "h3": "841f55dffffffff",
+   "n_aircraft": 4,
+   "n_good": 0,
+   "n_bad": 4,
+   "pct_bad": 75.0,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 4
+  },
+  {
+   "h3": "841f569ffffffff",
+   "n_aircraft": 8,
+   "n_good": 0,
+   "n_bad": 8,
+   "pct_bad": 87.5,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 8
+  },
+  {
+   "h3": "841f56bffffffff",
+   "n_aircraft": 1,
+   "n_good": 0,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f601ffffffff",
+   "n_aircraft": 5,
+   "n_good": 3,
+   "n_bad": 2,
+   "pct_bad": 20.0,
+   "level": "red",
+   "n_nic_bad": 1,
+   "n_mlat_position": 2
+  },
+  {
+   "h3": "841f605ffffffff",
+   "n_aircraft": 19,
+   "n_good": 3,
+   "n_bad": 16,
+   "pct_bad": 78.9,
+   "level": "red",
+   "n_nic_bad": 7,
+   "n_mlat_position": 12
+  },
+  {
+   "h3": "841f607ffffffff",
+   "n_aircraft": 27,
+   "n_good": 21,
+   "n_bad": 6,
+   "pct_bad": 18.5,
+   "level": "red",
+   "n_nic_bad": 1,
+   "n_mlat_position": 4
+  },
+  {
+   "h3": "841f621ffffffff",
+   "n_aircraft": 3,
+   "n_good": 0,
+   "n_bad": 3,
+   "pct_bad": 66.7,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 3
+  },
+  {
+   "h3": "841f623ffffffff",
+   "n_aircraft": 13,
+   "n_good": 1,
+   "n_bad": 12,
+   "pct_bad": 84.6,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 12
+  },
+  {
+   "h3": "841f627ffffffff",
+   "n_aircraft": 8,
+   "n_good": 0,
+   "n_bad": 8,
+   "pct_bad": 87.5,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 8
+  },
+  {
+   "h3": "841f629ffffffff",
+   "n_aircraft": 10,
+   "n_good": 0,
+   "n_bad": 10,
+   "pct_bad": 90.0,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 10
+  },
+  {
+   "h3": "841f62bffffffff",
+   "n_aircraft": 16,
+   "n_good": 2,
+   "n_bad": 14,
+   "pct_bad": 81.2,
+   "level": "red",
+   "n_nic_bad": 5,
+   "n_mlat_position": 12
+  },
+  {
+   "h3": "841f62dffffffff",
+   "n_aircraft": 4,
+   "n_good": 0,
+   "n_bad": 4,
+   "pct_bad": 75.0,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 4
+  },
+  {
+   "h3": "841f631ffffffff",
+   "n_aircraft": 4,
+   "n_good": 0,
+   "n_bad": 4,
+   "pct_bad": 75.0,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 4
+  },
+  {
+   "h3": "841f635ffffffff",
+   "n_aircraft": 4,
+   "n_good": 0,
+   "n_bad": 4,
+   "pct_bad": 75.0,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 4
+  },
+  {
+   "h3": "841f637ffffffff",
+   "n_aircraft": 1,
+   "n_good": 0,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f639ffffffff",
+   "n_aircraft": 4,
+   "n_good": 0,
+   "n_bad": 4,
+   "pct_bad": 75.0,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 4
+  },
+  {
+   "h3": "841f63dffffffff",
+   "n_aircraft": 3,
+   "n_good": 1,
+   "n_bad": 2,
+   "pct_bad": 33.3,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f663ffffffff",
+   "n_aircraft": 1,
+   "n_good": 0,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f665ffffffff",
+   "n_aircraft": 1,
+   "n_good": 0,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f667ffffffff",
+   "n_aircraft": 8,
+   "n_good": 0,
+   "n_bad": 8,
+   "pct_bad": 87.5,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 8
+  },
+  {
+   "h3": "841f703ffffffff",
+   "n_aircraft": 1,
+   "n_good": 0,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f70dffffffff",
+   "n_aircraft": 1,
+   "n_good": 0,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 1,
+   "n_mlat_position": 0
+  },
+  {
+   "h3": "841f715ffffffff",
+   "n_aircraft": 1,
+   "n_good": 0,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f717ffffffff",
+   "n_aircraft": 1,
+   "n_good": 1,
+   "n_bad": 0,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 0
+  },
+  {
+   "h3": "841f71dffffffff",
+   "n_aircraft": 1,
+   "n_good": 0,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f721ffffffff",
+   "n_aircraft": 3,
+   "n_good": 0,
+   "n_bad": 3,
+   "pct_bad": 66.7,
+   "level": "red",
+   "n_nic_bad": 1,
+   "n_mlat_position": 2
+  },
+  {
+   "h3": "841f723ffffffff",
+   "n_aircraft": 1,
+   "n_good": 0,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f725ffffffff",
+   "n_aircraft": 19,
+   "n_good": 2,
+   "n_bad": 17,
+   "pct_bad": 84.2,
+   "level": "red",
+   "n_nic_bad": 7,
+   "n_mlat_position": 15
+  },
+  {
+   "h3": "841f727ffffffff",
+   "n_aircraft": 3,
+   "n_good": 0,
+   "n_bad": 3,
+   "pct_bad": 66.7,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 3
+  },
+  {
+   "h3": "841f729ffffffff",
+   "n_aircraft": 2,
+   "n_good": 0,
+   "n_bad": 2,
+   "pct_bad": 50.0,
+   "level": "no-data",
+   "n_nic_bad": 1,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f72bffffffff",
+   "n_aircraft": 2,
+   "n_good": 1,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 1,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f741ffffffff",
+   "n_aircraft": 9,
+   "n_good": 0,
+   "n_bad": 9,
+   "pct_bad": 88.9,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 9
+  },
+  {
+   "h3": "841f745ffffffff",
+   "n_aircraft": 12,
+   "n_good": 0,
+   "n_bad": 12,
+   "pct_bad": 91.7,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 12
+  },
+  {
+   "h3": "841f747ffffffff",
+   "n_aircraft": 1,
+   "n_good": 0,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 1,
+   "n_mlat_position": 0
+  },
+  {
+   "h3": "841f749ffffffff",
+   "n_aircraft": 9,
+   "n_good": 0,
+   "n_bad": 9,
+   "pct_bad": 88.9,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 9
+  },
+  {
+   "h3": "841f74dffffffff",
+   "n_aircraft": 16,
+   "n_good": 0,
+   "n_bad": 16,
+   "pct_bad": 93.8,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 16
+  },
+  {
+   "h3": "841f751ffffffff",
+   "n_aircraft": 3,
+   "n_good": 0,
+   "n_bad": 3,
+   "pct_bad": 66.7,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 3
+  },
+  {
+   "h3": "841f757ffffffff",
+   "n_aircraft": 1,
+   "n_good": 0,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f759ffffffff",
+   "n_aircraft": 1,
+   "n_good": 0,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f75bffffffff",
+   "n_aircraft": 6,
+   "n_good": 0,
+   "n_bad": 6,
+   "pct_bad": 83.3,
+   "level": "red",
+   "n_nic_bad": 0,
+   "n_mlat_position": 6
+  },
+  {
+   "h3": "841f763ffffffff",
+   "n_aircraft": 2,
+   "n_good": 0,
+   "n_bad": 2,
+   "pct_bad": 50.0,
+   "level": "no-data",
+   "n_nic_bad": 1,
+   "n_mlat_position": 1
+  },
+  {
+   "h3": "841f767ffffffff",
+   "n_aircraft": 2,
+   "n_good": 0,
+   "n_bad": 2,
+   "pct_bad": 50.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 2
+  },
+  {
+   "h3": "841f76bffffffff",
+   "n_aircraft": 1,
+   "n_good": 0,
+   "n_bad": 1,
+   "pct_bad": 0.0,
+   "level": "no-data",
+   "n_nic_bad": 0,
+   "n_mlat_position": 1
+  }
+ ]
+}

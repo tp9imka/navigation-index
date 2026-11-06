@@ -20,4 +20,9 @@ Registry entry for the Copernicus global DEM (GLO-30/GLO-90) hosted as cloud-opt
 - uses: [elevation](../repos/bopen__elevation.md)
 - uses: [Rasterio](../repos/rasterio__rasterio.md)
 
+## Referenced by
+
+- [OSINT interference map from free data: ADS-B NACp hexes and Sentinel-1 C-band RFI over Kaliningrad / the SE Baltic](../samples/osint-jamming-map.md) (uses)
+- [Heightmap-gradient particle filter on real Copernicus DEM (SPRIN-D CTU method) vs TERCOM](../samples/terrain-heightmap-pf.md) (uses)
+
 _Indexed by lane(s): planning-gis-c2_

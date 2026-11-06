@@ -10,7 +10,7 @@ Submission for the ACM MM 2023 drone-satellite matching challenge.
 
 **Why it matters:** Open challenge entry.
 
-**Hackathon notes:** Minimal docs.
+**Hackathon notes:** One-line README, no licence (all rights reserved). 6th on the UAVM 2023 leaderboard (R@1 90.02). Needs University-1652 (request-only, research use).
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
 

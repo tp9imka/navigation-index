@@ -4,7 +4,7 @@ One-line: a pip-installable factor-graph backend where IMU preintegration plus G
 
 | | |
 |---|---|
-| Install | `pip install gtsam` (PyPI latest 4.3.0, wheels for Linux x86_64/aarch64 and macOS universal2; no Windows wheel listed). Nightly develop wheels: `pip install gtsam-develop`. From source: `cmake -S . -B build -DGTSAM_BUILD_PYTHON=ON && cmake --build build && make python-install` (C++17; Boost optional per README). |
+| Install | `pip install gtsam` (PyPI latest 4.3.0, wheels for Linux x86_64/aarch64 and macOS universal2; no Windows wheel listed). Nightly develop wheels: `pip install gtsam-develop`. From source: `cmake -S . -B build -DGTSAM_BUILD_PYTHON=ON && cmake --build build --target python-install` (C++17; Boost optional per README). |
 | Runs on | Linux, macOS (Intel and Apple Silicon via universal2 wheel). Windows only via source build. CPU only. No ROS needed (a `4.3.0-ros` tag exists for ROS packaging). |
 | Inputs | Whatever you model. For nav: IMU specific force (m/s^2) and angular rate (rad/s) with dt; GNSS position as `Point3` in a local Cartesian nav frame (NED or ENU, your choice; ECEF also used by the GNSS factors); pseudoranges (m) with satellite ECEF position and clock bias for `PseudorangeFactor`. |
 | Outputs | `Values` with `Pose3` (X), velocity `Vector3` (V), `imuBias.ConstantBias` (B) per keyframe; marginal covariances via `gtsam.Marginals`. |

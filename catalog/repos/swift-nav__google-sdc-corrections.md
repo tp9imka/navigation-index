@@ -10,7 +10,7 @@ SSR and OSR GNSS correction data for the 2021 Google Smartphone Decimeter Challe
 
 **Why it matters:** Real correction streams aligned to a public phone dataset - good for practising RTK/PPP on phones.
 
-**Hackathon notes:** Pair with GSDC 2021 data and RTKLIB.
+**Hackathon notes:** No licence; Swift provides it as is. 2020 drives have OSR but no or partial SSR; 2021 drives have both. Pair with GSDC 2021 data and RTKLIB.
 
 **Concepts:** [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 

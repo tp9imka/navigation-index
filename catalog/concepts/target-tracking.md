@@ -4,8 +4,9 @@
 
 Multi-target tracking, MHT/JPDA, track fusion (for nav-relevant awareness, not weapon guidance).
 
-## Samples (2)
+## Samples (3)
 
+- [C-UAS classifiers on public data: radar tracks (UAV vs bird) and DroneRF spectra](../samples/cuas-classifiers.md) - Two defensive drone-detection baselines on openly licensed recordings.
 - [GNSS jammer geolocation from DF bearings to TAK](../samples/interference-geolocation-to-tak.md) - Locates a GNSS interference source from KrakenSDR-style direction-of-arrival bearings taken at two fixed sites and one moving vehicle, with noise and multipath outliers.
 - [Stone Soup radar tracking of two UAVs with JPDA and OSPA](../samples/stone-soup-tracking.md) - Simulates two small UAVs observed by a noisy bearing/range radar with clutter and tracks them with Stone Soup's Extended Kalman filter and JPDA data association.
 
@@ -37,7 +38,7 @@ Multi-target tracking, MHT/JPDA, track fusion (for nav-relevant awareness, not w
 - [Kalman and Bayesian Filters in Python](../resources/labbe-kalman-bayesian-filters-python.md) - book - Free interactive book as Jupyter notebooks: g-h filters, discrete Bayes, univariate and multivariate Kalman filters, EKF, UKF, particle filters and smoothers, all with runnable code built on the companion FilterPy librar
 - [Kalman Filter Tutorial (kalmanfilter.net)](../resources/kalmanfilter-net-tutorial.md) - blog - Free web tutorial deriving the Kalman filter through worked numerical examples (alpha-beta filter, 1D and multidimensional KF, EKF, UKF), written for engineers who want the equations without heavy theory.
 - [Multi-Object Tracking for Automotive Systems (edX)](../resources/chalmers-multi-object-tracking.md) - course - edX course on single- and multi-object tracking: data association, GNN/JPDA/MHT, random finite sets and PMBM filters, with Matlab assignments.
-- [PoLaRIS Dataset: A Maritime Object Detection and Tracking Dataset in Pohang Canal](../resources/polaris-pohang-maritime-dataset-2024.md) - dataset - Maritime object detection and tracking dataset recorded in Pohang Canal with image and point-wise annotations of hazards.
+- [PoLaRIS Dataset: A Maritime Object Detection and Tracking Dataset in Pohang Canal](../resources/polaris-pohang-maritime-dataset-2024.md) - dataset - Inha University dataset that adds object detection and tracking labels to five Pohang Canal sequences, with annotations on RGB, thermal, LiDAR and radar data for objects as small as 10x10 pixels.
 - [Stone Soup documentation and tutorials](../resources/stone-soup-docs.md) - doc - Official docs for the Stone Soup tracking framework with step-by-step tutorials from a single-target Kalman filter through data association (PDA, JPDA), multi-hypothesis tracking, GM-PHD, track initiation/deletion, senso
 - [Stone Soup: No Longer Just an Appetiser](../resources/dstl-stone-soup-v1-fusion2023.md) - paper - FUSION 2023 paper announcing Stone Soup version 1.0, describing the framework's stable architecture and its use across the tracking community.
 - [Understanding Sensor Fusion and Tracking (MATLAB Tech Talks)](../resources/mathworks-understanding-sensor-fusion-tracking.md) - video - Short video series on sensor fusion for autonomous systems: what sensor fusion is, IMU/magnetometer orientation estimation, fusing GPS and IMU for pose with an asynchronous EKF, single- and multi-object tracking, and tra

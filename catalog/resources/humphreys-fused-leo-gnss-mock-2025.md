@@ -1,10 +1,10 @@
-# Fused LEO GNSS mock implementation (PLANS 2025 preprint)
+# A Mock Implementation of Fused LEO GNSS
 
 `res:humphreys-fused-leo-gnss-mock-2025` - paper - <https://radionavlab.ae.utexas.edu/wp-content/uploads/morgan_MockStarlink_plans.pdf>
 
-**By:** Morgan, Humphreys et al. - **Year:** 2025 - **Level:** advanced - **Access:** open
+**By:** Samuel C. Morgan, Zacharias M. Komodromos, Wenkai Qin, Zachary L. Clements, Andrew Graff, W. Jeremy Morrison, Todd E. Humphreys - **Year:** 2025 - **Level:** advanced - **Access:** open
 
-IEEE/ION PLANS 2025 preprint on a mock fused LEO-GNSS implementation exploring how a Starlink-like constellation could serve PNT.
+First experimental demo of fused LEO GNSS with pseudoranges: beam-specific Starlink orbit and clock models are distributed as if by the operator and combined with live Starlink signals, giving 10-meter-level position and timing.
 
 ## Key takeaways
 

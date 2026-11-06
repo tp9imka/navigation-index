@@ -21,6 +21,6 @@ Lab page pointing to Humphreys' talk at the Munich Satellite Navigation Summit o
 
 ## Referenced by
 
-- [Fused LEO GNSS mock implementation (PLANS 2025 preprint)](../resources/humphreys-fused-leo-gnss-mock-2025.md) (same_author)
+- [A Mock Implementation of Fused LEO GNSS](../resources/humphreys-fused-leo-gnss-mock-2025.md) (same_author)
 
 _Indexed by lane(s): round3-expansion_

@@ -2,9 +2,9 @@
 
 `res:diat-musat-micro-doppler-dataset` - dataset - <https://ieee-dataport.org/documents/diat-msat-micro-doppler-signature-dataset-small-unmanned-aerial-vehicle-suav>
 
-**By:** DIAT Pune - **Year:** 2022 - **Level:** intermediate - **Access:** free-registration
+**By:** Harish Chandra Kumawat, Mainak Chakraborty, A. Arockia Bazil Raj, Sunita Vikrant Dhavale - **Year:** 2022 - **Level:** intermediate - **Access:** free-registration
 
-X-band continuous-wave radar micro-Doppler signature images of small UAV-like targets including quadcopter, fixed-wing RC plane, rotors and a bionic bird.
+4,849 micro-Doppler signature images from an X-band (10 GHz) continuous-wave radar of small UAV-like targets: RC plane, two rotor types, quadcopter, bionic bird and mini-helicopter plus bionic bird.
 
 ## Key takeaways
 

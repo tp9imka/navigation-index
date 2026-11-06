@@ -27,6 +27,7 @@ ETH ASL calibration toolbox for multi-camera and camera-IMU systems (extrinsics 
 
 ## Referenced by
 
+- [cuckoo_time_translator](../repos/ethz-asl__cuckoo_time_translator.md) (same_org)
 - [imu_tk](../repos/kyle-ak__imu_tk.md) (alternative_to)
 - [allan_variance_ros](../repos/ori-drs__allan_variance_ros.md) (integrates_with)
 - [iKalibr](../repos/unsigned-long__ikalibr.md) (alternative_to)

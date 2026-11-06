@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 69 | Jupyter Notebook | ? | 2025-11-17 | False | research-prototype | high |
 
-Colab notebooks that classify GNSS jamming types from spectrogram images built from a public raw-IQ jamming dataset, with ML, DL and CV approaches; companion to an arXiv paper.
+Colab notebooks for GNSS jamming-type classification (ML, DL and CV on spectrogram images) from a public raw-IQ jamming set, plus one GPS spoofing ML notebook; companion to arXiv 2501.02352.
 
 **Why it matters:** Turnkey starting point for a jamming-type classifier using open data.
 
-**Hackathon notes:** Open in Colab, download the Zenodo IQ set, and you have a classifier in an hour.
+**Hackathon notes:** Open in Colab and download the Zenodo IQ set (1.9 GB, CC BY 4.0). Its signals are simulated in MATLAB: DME, narrowband, AM, chirp, FM and no jamming. The repo has no licence file.
 
 **Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Electronic warfare resilience](../concepts/ew-resilience.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 

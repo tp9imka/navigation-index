@@ -6,17 +6,21 @@
 |---|---|---|---|---|---|---|
 | 30 | Python | MIT | 2026-03-25 | False | active-research | high |
 
-Pipeline that detects radio-frequency interference in Sentinel-1 SAR imagery using temporal z-scores and DEM masking, to map GNSS jamming activity from orbit.
+Pipeline that flags radio-frequency interference in Sentinel-1 C-band SAR scenes using temporal z-scores and DEM slope masking, run over Iran, the Persian Gulf and Jammertest 2025.
 
-**Why it matters:** Free satellite data as a wide-area jamming sensor - complements ADS-B based maps.
+**Why it matters:** Free satellite data as a wide-area RFI sensor, complementing ADS-B based maps - but Sentinel-1 is C-band, and the authors' own Jammertest analysis could not tie detections to L-band GNSS jammers.
 
-**Hackathon notes:** Pull Sentinel-1 scenes for a region and produce a jamming heatmap; good OSINT-style demo.
+**Hackathon notes:** Needs a free Copernicus Data Space account. Pull Sentinel-1 scenes for a region and produce an RFI heatmap; present it as an RFI map, not a proven jamming map. MIT.
 
 **Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
 
 **Tags:** `sentinel-1`, `sar`, `rfi`, `osint`
 
 **Domains:** space, multi
+
+## Referenced by
+
+- [OSINT interference map from free data: ADS-B NACp hexes and Sentinel-1 C-band RFI over Kaliningrad / the SE Baltic](../samples/osint-jamming-map.md) (uses)
 
 _Indexed by lane(s): round3-expansion_
 

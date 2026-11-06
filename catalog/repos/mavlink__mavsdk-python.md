@@ -33,6 +33,7 @@ Asyncio Python client for MAVSDK that wraps a bundled mavsdk_server.
 - [DroneKit-Python](../repos/dronekit__dronekit-python.md) (alternative_to)
 - [MAVLinkMCP](../repos/ion-g-ion__mavlinkmcp.md) (depends_on)
 - [MAVSDK](../repos/mavlink__mavsdk.md) (integrates_with)
+- [LLM mission agent: a safety-gated MAVLink MCP server flying ArduPilot SITL](../samples/llm-mission-agent.md) (explains)
 - [PX4 SITL GPS denial: inject, measure drift, recover](../samples/px4-sitl-gps-denial.md) (uses)
 - [Headless SITL in Docker: ArduCopter and PX4 SIH with one compose file](../samples/sitl-docker.md) (uses)
 

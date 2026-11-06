@@ -10,7 +10,7 @@ Baseline for last-meter UAV navigation using diffusion-refined aerial visual ser
 
 **Why it matters:** Moves geo-localization from retrieval to precise relative positioning for the final approach.
 
-**Hackathon notes:** Use the HF test set; competition baseline.
+**Hackathon notes:** No licence on the repo. Training needs University-1652 (request-only, research use only), and the bundled SuperGlue code is Magic Leap's non-commercial research-only code. Competition test set is on HF; official scores only via CodaBench.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 

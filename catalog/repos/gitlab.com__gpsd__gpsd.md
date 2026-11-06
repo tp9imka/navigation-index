@@ -20,6 +20,9 @@ Service daemon that monitors GNSS receivers over serial/USB/network and serves d
 
 ## Referenced by
 
+- [chrony](../repos/gitlab.com__chrony__chrony.md) (integrates_with)
+- [pps-tools](../repos/redlab-i__pps-tools.md) (integrates_with)
+- [NMEAdesync](../repos/zxsecurity__nmeadesync.md) (integrates_with)
 - [NMEA Revealed (gpsd project)](../resources/gpsd-nmea-revealed.md) (has_code)
 - [Safran VersaPNT and Geonyx resilient PNT units](../resources/safran-versapnt.md) (alternative_to)
 

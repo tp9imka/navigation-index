@@ -25,6 +25,7 @@ ROS tool (Oxford DRS) that computes Allan deviation plots from an IMU bag and ou
 
 ## Referenced by
 
+- [allantools](../repos/aewallin__allantools.md) (alternative_to)
 - [Kalibr](../repos/ethz-asl__kalibr.md) (integrates_with)
 - [imu_utils](../repos/gaowenliang__imu_utils.md) (alternative_to)
 - [allan-variance (Python)](../repos/nmayorov__allan-variance.md) (alternative_to)

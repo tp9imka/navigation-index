@@ -22,6 +22,10 @@ Labelled real-world radar tracks of small UAVs, birds, humans and vehicles from 
 
 - alternative_to: [Drone-vs-Bird Detection Challenge](../repos/wosdetc__challenge.md)
 
+## Referenced by
+
+- [C-UAS classifiers on public data: radar tracks (UAV vs bird) and DroneRF spectra](../samples/cuas-classifiers.md) (uses)
+
 _Indexed by lane(s): round3-expansion_
 
 _GitHub metadata fetched 2026-11-06._

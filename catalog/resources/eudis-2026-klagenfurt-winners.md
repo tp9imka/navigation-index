@@ -4,7 +4,7 @@
 
 **By:** WKO Kaernten - **Year:** 2026 - **Level:** intro - **Access:** open
 
-Report on the Austrian site of the 5th EUDIS hackathon: IRNAS (Slovenia) won the GNSS-Denied Navigation challenge with multi-sensor fusion for a ground robot, reporting much lower path deviation after many test runs.
+Report on the Klagenfurt site of the autumn 2026 EUDIS Defence Hackathon: IRNAS (Slovenia) won with multi-sensor fusion for ground robots; by the team's account path deviation fell from 37 cm to about 1 cm over 150+ test runs.
 
 ## Key takeaways
 

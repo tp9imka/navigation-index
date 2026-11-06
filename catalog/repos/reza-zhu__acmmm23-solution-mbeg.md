@@ -10,7 +10,7 @@ Modern-backbone efficient geo-localization solution for UAVM 2023 including dist
 
 **Why it matters:** Open entry with distillation, useful for edge deployment.
 
-**Hackathon notes:** Was disqualified for using test data, but the method code is still useful.
+**Hackathon notes:** MIT. Topped the leaderboard (R@1 98.94) but was removed for using University-1652 test data; the method and distillation code are still useful. Weights on Baidu only; University-1652 is research use only.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 

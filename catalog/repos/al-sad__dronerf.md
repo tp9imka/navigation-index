@@ -35,6 +35,7 @@ MATLAB and Python code for drone detection and identification from RF signals, a
 - [Noisy Drone RF Signal Classification](../repos/sgluege__noisy-drone-rf-signal-classification.md) (alternative_to)
 - [RF-Drone-Detection (Georgia Tech)](../repos/tesorrells__rf-drone-detection.md) (alternative_to)
 - [Cardinal RF (CardRF): An Outdoor UAV/UAS/Drone RF Signals with Bluetooth and WiFi Signals Dataset](../resources/cardrf-drone-rf-dataset.md) (cites)
+- [C-UAS classifiers on public data: radar tracks (UAV vs bird) and DroneRF spectra](../samples/cuas-classifiers.md) (uses)
 
 _Indexed by lane(s): domains-swarm_
 

@@ -10,7 +10,7 @@ CNN code for drone detection and identification on RF spectra.
 
 **Why it matters:** Simple CNN baseline for RF drone ID.
 
-**Hackathon notes:** Older code (2020); use as reference only.
+**Hackathon notes:** Older code (2020): three Keras scripts that read DroneRF's RF_Data.csv and use the old keras.layers.core API; use as reference only.
 
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md)
 

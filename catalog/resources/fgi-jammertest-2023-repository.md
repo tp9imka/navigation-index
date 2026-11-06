@@ -2,9 +2,9 @@
 
 `res:fgi-jammertest-2023-repository` - dataset - <https://research.fi/en/results/dataset/2eee8cfd-db00-4e46-bd62-d7632c09c700>
 
-**By:** Finnish Geospatial Research Institute (FGI) - **Year:** 2024 - **Level:** advanced - **Access:** open
+**By:** Mohammad Zahidul H. Bhuiyan, Muwahida Liaquat, Saiful Islam - **Year:** 2025 - **Level:** advanced - **Access:** open
 
-Open raw IQ recordings from Jammertest 2023 in Andoya covering a jamming case, incoherent spoofing and coherent spoofing scenarios, under CC BY 4.0.
+Open raw IQ recordings (GPS L1 C/A and Galileo E1, LabSat 3 Wideband) from Jammertest 2023 in Norway covering a high-power jamming case, incoherent spoofing and coherent spoofing scenarios, under CC BY 4.0.
 
 ## Key takeaways
 
