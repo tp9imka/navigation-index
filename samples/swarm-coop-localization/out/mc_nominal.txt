@@ -1,0 +1,9 @@
+
+Monte Carlo, 10 seeds, scenario=nominal, bearing=off: mean [min, max] over seeds
+method                               team RMSE             denied RMSE    NEES  B/s/ag
+dead-reckoning            49.1 [  28.5,   71.0]    60.1 [  34.9,   87.0]     0.9     0.0
+central-plain             15.0 [   8.6,   25.8]    17.7 [  10.0,   30.8]   311.1   138.1
+central-robust             2.0 [   1.5,    2.9]     2.4 [   1.7,    3.4]     4.7   138.1
+naive-robust              15.5 [   5.1,   29.3]    18.4 [   5.1,   35.7]  4742.7    24.0
+ci-plain                   8.9 [   5.1,   22.6]    10.8 [   6.2,   27.6]     5.2    24.0
+ci-robust                  5.5 [   3.9,   10.6]     6.7 [   4.7,   12.9]     2.0    24.0

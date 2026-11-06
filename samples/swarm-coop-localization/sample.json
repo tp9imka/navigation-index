@@ -1,0 +1,76 @@
+{
+  "id": "sample:swarm-coop-localization",
+  "title": "Cooperative localization for a GNSS-denied team: UWB ranging, centralized EKF vs covariance intersection, and a spoofed anchor",
+  "summary": "A stdlib-only simulation of six vehicles with biased odometry where only two keep GNSS. Inter-agent UWB two-way ranging has dropouts, Markov NLOS episodes and gross outliers; optional camera bearings; a lossy, range-limited mesh with a TDMA slot budget. It compares independent dead reckoning, a centralized 24-state EKF at a fusion centre (multi-hop uplink), a naive decentralized filter that ignores cross-correlation, and decentralized covariance intersection, each with plain or robust (gate + Huber + NLOS-aware) ranging. It reports per-agent error over time, NEES and bytes per second, then spoofs one anchor's GNSS with a slow walk-off and shows how far the error propagates with no check, a per-fix gate, peer range votes and solution separation (centralized sub-filters and a distributed per-anchor filter bank).",
+  "concepts": [
+    "concept:multi-agent",
+    "concept:rf-localization",
+    "concept:sensor-fusion",
+    "concept:assured-pnt",
+    "concept:gnss-interference"
+  ],
+  "tags": [
+    "cooperative-localization",
+    "uwb",
+    "two-way-ranging",
+    "nlos",
+    "huber",
+    "innovation-gate",
+    "covariance-intersection",
+    "decentralized-estimation",
+    "ekf",
+    "swarm",
+    "spoofing",
+    "solution-separation",
+    "integrity",
+    "communication-cost",
+    "stdlib"
+  ],
+  "related": [
+    {
+      "id": "repo:eth-pbl/swarm-relative-localization",
+      "rel": "explains"
+    },
+    {
+      "id": "res:li-onboard-relative-localization-swarms",
+      "rel": "explains"
+    },
+    {
+      "id": "repo:lijx10/uwb-localization",
+      "rel": "explains"
+    },
+    {
+      "id": "repo:hkust-aerial-robotics/omni-swarm",
+      "rel": "explains"
+    },
+    {
+      "id": "repo:pengyu-team/co-lrio",
+      "rel": "explains"
+    },
+    {
+      "id": "repo:vladniculescu/uwb-software-library",
+      "rel": "explains"
+    },
+    {
+      "id": "repo:decargroup/miluv",
+      "rel": "explains"
+    },
+    {
+      "id": "res:util-uwb-dataset",
+      "rel": "explains"
+    },
+    {
+      "id": "res:ion-webinar-gross",
+      "rel": "explains"
+    },
+    {
+      "id": "res:saska-rss-2024-aerial-swarms",
+      "rel": "explains"
+    },
+    {
+      "id": "sample:altpnt-integrity",
+      "rel": "explains"
+    }
+  ],
+  "verified": "ran with python3.14.7 stdlib on 2026-11-06: nominal and spoof scenarios, each range-only and with bearings (seed 1), and 10-seed Monte Carlo for all four; outputs saved in out/ and pasted in README. 20 unittest tests pass; mutations (SS gate disabled, robust weighting disabled) make the detection and robust-ranging tests fail. Synthetic data only: NLOS, comms and odometry models are stated assumptions, no UWB dataset or hardware was used, and none of the related repos was run."
+}

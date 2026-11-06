@@ -11,3 +11,4 @@ llm-mission-agent
 golden-demo
 timing-holdover
 maritime-ais-spoofing
+swarm-coop-localization

@@ -1,0 +1,12 @@
+
+Monte Carlo, 10 seeds, scenario=spoof, bearing=off: mean [min, max] over seeds
+method                          spoofed a RMSE           others RMSE  det false       latency s  B/s/ag
+dead-reckoning              86.4 [ 85.8,  86.9]    70.9 [ 41.0, 102.7]    0     0               -     0.0
+central-robust              84.3 [ 82.1,  86.2]    67.7 [ 28.4,  98.5]    0     0               -   138.1
+central-robust+gate         21.6 [  3.1,  86.0]    15.9 [  4.1,  61.8]    0     0               -   138.1
+central-robust+ss            2.3 [  1.6,   4.7]     2.9 [  1.8,   5.9]    9     1   30 [ 24,  34]   138.1
+ci-robust                   86.4 [ 85.9,  86.9]   131.0 [ 90.7, 178.2]    0     0               -    24.0
+ci-robust+gate              86.4 [ 85.9,  86.9]   131.8 [ 92.3, 178.2]    0     0               -    24.0
+ci-robust+vote              59.5 [ 13.0,  86.9]    79.8 [ 19.8, 134.8]    9     6   81 [ 35, 190]    24.0
+ci-robust+ss                76.7 [ 56.9,  88.5]   133.8 [ 40.5, 191.7]    8     0  142 [ 65, 264]    56.6
+det = seeds with a detection at or after spoof start; false = detections before it; latency = median [min, max] of first detection - spoof start
