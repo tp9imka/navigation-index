@@ -33,3 +33,4 @@ two-source-integrity-vpair
 golden-demo-fixedwing
 multi-source-fde
 autopilot-resilient-configs
+timing-network-holdover
