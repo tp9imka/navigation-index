@@ -17,10 +17,9 @@ TAK/CoT, MIL-STD-2525/APP-6 symbology, blue force tracking, common operating pic
 - [OSINT interference map from free data: ADS-B NACp hexes and Sentinel-1 C-band RFI over Kaliningrad / the SE Baltic](../../catalog/samples/osint-jamming-map.md) - Two no-login OSINT layers for the same area and morning (2026-10-01, SE Baltic around Kaliningrad).
 - [Stone Soup radar tracking of two UAVs with JPDA and OSPA](../../catalog/samples/stone-soup-tracking.md) - Simulates two small UAVs observed by a noisy bearing/range radar with clutter and tracks them with Stone Soup's Extended Kalman filter and JPDA data association.
 
-## Guides (4)
+## Guides (3)
 
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) - After this chapter you can run PX4 or ArduPilot in simulation, inject your own position source over MAVLink, configure the estimator to switch away from GNSS, and push your vehicle's position and detections onto a TAK co
-- [Evidence matrix](../../docs/evidence-matrix.md) - Every measured number in the hub's samples, by capability, with the kind of input it was measured on.
 - [Export control and ethics](../../docs/export-control-and-ethics.md) - Not legal advice.
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) - Opinionated picks for a 24-48h build.
 

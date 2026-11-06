@@ -1,6 +1,6 @@
 # navigation-index
 
-> Knowledge hub for navigation / PNT / GNSS-denied autonomy with a defense lens: 768 open-source repos, 678 documents, talks, courses and datasets, 43 usage samples and 30 guides, linked in one graph over 46 concepts.
+> Knowledge hub for navigation / PNT / GNSS-denied autonomy with a defense lens: 768 open-source repos, 678 documents, talks, courses and datasets, 44 usage samples and 30 guides, linked in one graph over 46 concepts.
 
 Read AGENTS.md for how to query and extend. For a problem statement, run `python3 tools/query.py decode "<statement>"` (MCP tool `decode`) or read docs/problem-statement-decoder.md to pick its rows, then search with each row's keywords: `python3 tools/query.py search "<keywords>"` or the MCP server tools/mcp_server.py (its `read` tool returns any guide or sample README). Guides (kind `guide`) are searchable like any other node.
 
@@ -59,6 +59,7 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 
 - [altpnt-integrity](samples/altpnt-integrity/README.md) (ran, stdlib): Stdlib EKF (INS + VIO + visual geoloc + jammed then spoofed GNSS) with solution-separation FDE, protection level, MI/HMI, Stanford diagram; v2 recalibrates every error model on measured sibling-sample data
 - [ardupilot-ekf3-source-switch](samples/ardupilot-ekf3-source-switch/README.md) (ran, docker): EKF3 source-set switch to ExternalNav (SITL vicon) around a GPS cut, plus a no-switch contrast run
+- [autopilot-resilient-configs](samples/autopilot-resilient-configs/README.md) (ran, docker): Which PX4 EKF2 / ArduPilot EKF3 configurations keep flying under a coherent GNSS drag, measured: Lua source switch, EV velocity + GPS mode 1, dual GPS, blending, gates, glitch clipping
 - [autopilot-spoof-response](samples/autopilot-spoof-response/README.md) (ran, docker): Why PX4 EKF2 and ArduPilot EKF3 end up on a spoofed position (gate rejection, then reset-to-GNSS after 7 s / 10 s), measured over drag rate, step size and gate settings in SITL
 - [blind-flight-bench](samples/blind-flight-bench/README.md) (ran, venv): Benchmark for the 2026 Blind flight brief: 20 km radar-altimeter flights over four real GLO-30 windows, 10 navigators incl. clean-room team re-implementations
 - [celestial-star-tracker](samples/celestial-star-tracker/README.md) (ran, venv): cedar-solve lost-in-space on real star images vs a known WCS, then lat/lon from star elevations above an IMU vertical; error budget for level, vibration, accel bias, clock, refraction
@@ -106,14 +107,14 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [GNSS positioning](catalog/concepts/gnss.md): 143 items - GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 - [RTK / PPP precise positioning](catalog/concepts/gnss-rtk-ppp.md): 39 items - Carrier-phase differential and precise point positioning, corrections (RTCM, SSR, NTRIP).
 - [Software-defined GNSS receivers](catalog/concepts/gnss-sdr.md): 34 items - Acquisition, tracking, navigation-message decoding in software on SDR front-ends.
-- [Jamming and spoofing](catalog/concepts/gnss-interference.md): 176 items - GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-jam antennas (CRPA).
-- [Assured / resilient PNT](catalog/concepts/assured-pnt.md): 253 items - Architectures that keep position, navigation and timing trustworthy under denial and deception.
+- [Jamming and spoofing](catalog/concepts/gnss-interference.md): 178 items - GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-jam antennas (CRPA).
+- [Assured / resilient PNT](catalog/concepts/assured-pnt.md): 254 items - Architectures that keep position, navigation and timing trustworthy under denial and deception.
 - [Timing and time transfer](catalog/concepts/timing.md): 112 items - Clocks, holdover, PTP/NTP, GNSS-disciplined oscillators, chip-scale atomic clocks.
 - [Inertial navigation (INS/IMU)](catalog/concepts/ins.md): 134 items - Strapdown mechanization, IMU error models, calibration, dead reckoning.
-- [Sensor fusion and state estimation](catalog/concepts/sensor-fusion.md): 217 items - Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integration.
+- [Sensor fusion and state estimation](catalog/concepts/sensor-fusion.md): 218 items - Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integration.
 - [GNSS/INS integration](catalog/concepts/gnss-ins.md): 70 items - Loosely, tightly and deeply coupled GNSS/INS.
 - [Sensor calibration](catalog/concepts/calibration.md): 37 items - Camera-IMU, LiDAR-IMU extrinsics, intrinsics, time offset, Allan variance.
-- [Visual(-inertial) odometry](catalog/concepts/vio.md): 148 items - VO/VIO from monocular, stereo, event cameras with IMU.
+- [Visual(-inertial) odometry](catalog/concepts/vio.md): 147 items - VO/VIO from monocular, stereo, event cameras with IMU.
 - [Visual SLAM](catalog/concepts/visual-slam.md): 91 items - Mapping and localization with loop closure from cameras.
 - [LiDAR odometry and SLAM](catalog/concepts/lidar-slam.md): 96 items - LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [Radar navigation and odometry](catalog/concepts/radar-nav.md): 34 items - Radar odometry, radar SLAM, radar altimeters, Doppler velocity.
@@ -126,20 +127,20 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [Signals of opportunity](catalog/concepts/signals-of-opportunity.md): 63 items - Positioning from LTE/5G, Wi-Fi, DVB, LEO satellites (Starlink, Iridium), eLoran, other non-navigation RF.
 - [RF localization and direction finding](catalog/concepts/rf-localization.md): 56 items - UWB, TDOA/AOA, direction finding, emitter geolocation, beacons.
 - [Indoor and pedestrian navigation](catalog/concepts/indoor-pedestrian.md): 24 items - PDR, foot-mounted INS, dismounted soldier navigation, indoor positioning.
-- [Autopilots and flight control](catalog/concepts/autopilot.md): 84 items - Flight stacks, control loops, estimation inside autopilots, firmware.
-- [MAVLink, ground control and C2 links](catalog/concepts/mavlink-gcs.md): 55 items - MAVLink protocol, SDKs, ground control stations, telemetry radios.
+- [Autopilots and flight control](catalog/concepts/autopilot.md): 85 items - Flight stacks, control loops, estimation inside autopilots, firmware.
+- [MAVLink, ground control and C2 links](catalog/concepts/mavlink-gcs.md): 57 items - MAVLink protocol, SDKs, ground control stations, telemetry radios.
 - [Path and motion planning](catalog/concepts/path-planning.md): 61 items - Global/local planners, sampling and search based planning, trajectory optimization.
 - [Mission planning and routing](catalog/concepts/mission-planning.md): 34 items - Route networks, waypoint missions, coverage, terrain-aware and threat-aware routing.
 - [Obstacle avoidance and collision avoidance](catalog/concepts/obstacle-avoidance.md): 36 items - Reactive avoidance, sense-and-avoid, DAA.
 - [Swarms and multi-agent navigation](catalog/concepts/multi-agent.md): 83 items - Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 - [GIS, maps and geospatial data](catalog/concepts/gis-mapping.md): 66 items - Map engines, tiles, DEMs, orthophotos, coordinate systems, geodesy.
 - [Geodesy and coordinate frames](catalog/concepts/geodesy.md): 24 items - Datums, projections, ECEF/ENU/NED, MGRS, geoid models.
-- [Situational awareness and C2 interop](catalog/concepts/situational-awareness.md): 104 items - TAK/CoT, MIL-STD-2525/APP-6 symbology, blue force tracking, common operating picture.
+- [Situational awareness and C2 interop](catalog/concepts/situational-awareness.md): 103 items - TAK/CoT, MIL-STD-2525/APP-6 symbology, blue force tracking, common operating picture.
 - [Maritime navigation](catalog/concepts/maritime-nav.md): 50 items - Surface vessel navigation, AIS, ECDIS/charts, USVs.
 - [Underwater navigation](catalog/concepts/underwater-nav.md): 28 items - DVL, USBL/LBL acoustics, AUV navigation, underwater SLAM.
 - [Ground vehicle autonomy](catalog/concepts/ground-vehicle-nav.md): 66 items - UGV/off-road autonomy stacks, localization and navigation for ground robots.
 - [Space and orbital navigation](catalog/concepts/space-nav.md): 38 items - Orbit determination, LEO-PNT, spacecraft navigation.
-- [Simulation and HIL/SITL](catalog/concepts/simulation.md): 117 items - Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simulators.
+- [Simulation and HIL/SITL](catalog/concepts/simulation.md): 118 items - Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simulators.
 - [Datasets and benchmarks](catalog/concepts/datasets-benchmarks.md): 205 items - Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [ROS / ROS 2 robotics middleware](catalog/concepts/ros.md): 104 items - ROS ecosystem packages for navigation and localization.
 - [Onboard / edge AI perception](catalog/concepts/edge-ai.md): 77 items - Detection, segmentation, depth on embedded hardware supporting navigation.
