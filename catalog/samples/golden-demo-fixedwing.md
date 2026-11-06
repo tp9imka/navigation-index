@@ -21,4 +21,11 @@ ArduPlane Plane-4.6.3 SITL in Docker (new image built on the sitl-docker copter 
 - uses: [MapLibre GL JS](../../catalog/repos/maplibre__maplibre-gl-js.md)
 - uses: [VPAIR - Aerial Visual Place Recognition and Localization in Large-scale Outdoor Environments](../../catalog/resources/vpair-dataset-2022.md)
 
+## Referenced by
+
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+
 _Indexed by lane(s): samples_

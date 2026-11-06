@@ -28,6 +28,7 @@ North Rhine-Westphalia's open-data 1 m digital surface model (DOM1, buildings an
 
 ## Referenced by
 
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Two independent absolute sources on one real flight: visual fixes + terrain-relative navigation with solution-separation integrity (VPAIR over NRW 1 m LiDAR)](../../catalog/samples/two-source-integrity-vpair.md) (uses)
 
 _Indexed by lane(s): datasets-used_

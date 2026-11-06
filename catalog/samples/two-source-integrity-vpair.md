@@ -21,4 +21,11 @@ Adds terrain-relative navigation as a second absolute source to the real VPAIR f
 - uses: [Geobasis NRW DOM1 / DGM1 1 m airborne LiDAR surface and terrain models](../../catalog/resources/geobasis-nrw-dom1-dgm1.md)
 - uses: [Copernicus DEM on AWS Open Data](../../catalog/resources/copernicus-dem-aws.md)
 
+## Referenced by
+
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+
 _Indexed by lane(s): samples_
