@@ -1,0 +1,2 @@
+# Only needed for --cot-url (PyTAK transport). Decoder, tracker, tests and --offline are stdlib.
+pytak==7.6.1
