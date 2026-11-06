@@ -1,0 +1,8 @@
+{
+ "title": "uzhfpv_indoor_forward_3: VO/VIO vs ground truth (local frame on placeholder origin)",
+ "tracks": [
+  "truth.jsonl",
+  "mono_vo.jsonl",
+  "openvins.jsonl"
+ ]
+}

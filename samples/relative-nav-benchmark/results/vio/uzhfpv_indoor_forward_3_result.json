@@ -1,0 +1,77 @@
+{
+ "part": "vio",
+ "dataset": "UZH-FPV uzhfpv_indoor_forward_3 (Snapdragon, 640x480 fisheye stereo, IMU)",
+ "gt_topic": "/groundtruth/pose",
+ "mono_vo": {
+  "method": "OpenCV mono VO (KLT + essential matrix), GT step-length scale oracle, left cam",
+  "metrics": {
+   "matched_poses": 730,
+   "gt_path_m": 278.0146376866844,
+   "est_path_m": 278.01665185231263,
+   "duration_s": 49.427999999999884,
+   "ate_aligned": {
+    "align": "se3",
+    "scale": 1.0,
+    "rmse_m": 0.7978425502540913,
+    "mean_m": 0.6964203826896345,
+    "max_m": 1.8897617043479278
+   },
+   "origin_anchored": {
+    "rmse_m": 1.160099835181965,
+    "max_m": 3.010848804778999,
+    "final_error_m": 1.9028042097672788,
+    "final_drift_pct_of_distance": 0.6844259085061888,
+    "max_error_pct_of_distance": 1.0829821155575812
+   },
+   "rpe_10m": {
+    "rmse_m": 0.1525347691545807,
+    "mean_m": 0.13622368268793833,
+    "mean_pct": 1.3622368268793834
+   }
+  },
+  "run": {
+   "wall_s": 21.51,
+   "cpu_s": 20.22,
+   "peak_rss_mb": 939.8,
+   "host": "Darwin arm64 python3.12.14",
+   "frames_in": 2552,
+   "keyframes": 730,
+   "rejected_pairs": 0
+  }
+ },
+ "openvins": {
+  "method": "OpenVINS v2.7 MSCKF, config uzhfpv_indoor, stereo + IMU, ros1_serial_msckf in Docker",
+  "metrics": {
+   "matched_poses": 1334,
+   "gt_path_m": 278.2755146583571,
+   "est_path_m": 278.8835820491485,
+   "duration_s": 49.49799999999959,
+   "ate_aligned": {
+    "align": "se3",
+    "scale": 1.0,
+    "rmse_m": 0.3644567489634542,
+    "mean_m": 0.33563388363005503,
+    "max_m": 0.7579850156805363
+   },
+   "origin_anchored": {
+    "rmse_m": 0.671617154253307,
+    "max_m": 1.5655316715809309,
+    "final_error_m": 0.7283444809590768,
+    "final_drift_pct_of_distance": 0.26173502252013653,
+    "max_error_pct_of_distance": 0.5625833352614429
+   },
+   "rpe_10m": {
+    "rmse_m": 0.1634717385250682,
+    "mean_m": 0.1500492484872663,
+    "mean_pct": 1.500492484872663
+   }
+  },
+  "run": {
+   "wall_s_rosrun": 80.968,
+   "user_s": 29.258,
+   "sys_s": 9.455,
+   "wall_s_container": 87,
+   "where": "colima 4 vCPU aarch64"
+  }
+ }
+}

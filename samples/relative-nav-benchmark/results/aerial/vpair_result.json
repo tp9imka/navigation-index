@@ -1,0 +1,154 @@
+{
+ "part": "aerial",
+ "dataset": "VPAIR sample (Zenodo 6473989): 199 consecutive nadir frames, 800x600",
+ "method": "SIFT + RANSAC 2D similarity frame-to-frame; calibrated on the first 10 steps (455 m) against GT, then open loop",
+ "gt": {
+  "source": "poses_query.txt (ECEF position + roll/pitch/yaw; GNSS-based per README)",
+  "path_m": 8979.957129542929,
+  "ellipsoid_height_m": [
+   359.7,
+   403.0
+  ],
+  "roll_std_deg": 3.58,
+  "pitch_std_deg": 0.91,
+  "mean_step_m": 45.35331883607539
+ },
+ "pairs": 198,
+ "failed_pairs": 0,
+ "median_inliers": 727,
+ "interframe_scale_range": [
+  0.9687,
+  1.0394
+ ],
+ "variants": {
+  "image_only_gsd_from_image_scale": {
+   "m_per_px": 0.3971,
+   "final_error_m": 2741.8,
+   "final_drift_pct_of_distance": 30.53,
+   "max_error_m": 2741.8,
+   "error_at_distance_m": {
+    "1000m": 113.9,
+    "2000m": 290.9,
+    "4000m": 714.3,
+    "6000m": 1269.0,
+    "8000m": 2237.0
+   },
+   "per_step": {
+    "length_ratio_median": 0.717,
+    "length_ratio_p5_p95": [
+     0.514,
+     0.951
+    ],
+    "direction_err_deg_median": -8.54,
+    "direction_err_deg_std": 15.58
+   },
+   "evo_ate_se3_rmse_m": 756.6
+  },
+  "image_only_constant_gsd": {
+   "m_per_px": 0.3954,
+   "final_error_m": 1390.3,
+   "final_drift_pct_of_distance": 15.48,
+   "max_error_m": 1390.3,
+   "error_at_distance_m": {
+    "1000m": 92.1,
+    "2000m": 192.1,
+    "4000m": 266.3,
+    "6000m": 488.0,
+    "8000m": 1088.4
+   },
+   "per_step": {
+    "length_ratio_median": 0.951,
+    "length_ratio_p5_p95": [
+     0.837,
+     1.095
+    ],
+    "direction_err_deg_median": -8.56,
+    "direction_err_deg_std": 15.58
+   },
+   "evo_ate_se3_rmse_m": 228.8
+  },
+  "attitude_aided_yaw_bias_0deg": {
+   "m_per_px": 0.4229,
+   "fitted_effective_agl_m": 323.8,
+   "mount_reflection": false,
+   "final_error_m": 58.0,
+   "final_drift_pct_of_distance": 0.65,
+   "max_error_m": 84.7,
+   "error_at_distance_m": {
+    "1000m": 22.7,
+    "2000m": 63.4,
+    "4000m": 39.2,
+    "6000m": 24.6,
+    "8000m": 41.5
+   },
+   "per_step": {
+    "length_ratio_median": 0.985,
+    "length_ratio_p5_p95": [
+     0.954,
+     1.057
+    ],
+    "direction_err_deg_median": -0.2,
+    "direction_err_deg_std": 0.65
+   },
+   "evo_ate_se3_rmse_m": 26.8
+  },
+  "attitude_aided_yaw_bias_2deg": {
+   "m_per_px": 0.4229,
+   "fitted_effective_agl_m": 323.8,
+   "mount_reflection": false,
+   "final_error_m": 287.7,
+   "final_drift_pct_of_distance": 3.2,
+   "max_error_m": 287.7,
+   "error_at_distance_m": {
+    "1000m": 46.1,
+    "2000m": 101.7,
+    "4000m": 136.5,
+    "6000m": 172.5,
+    "8000m": 250.2
+   },
+   "per_step": {
+    "length_ratio_median": 0.985,
+    "length_ratio_p5_p95": [
+     0.954,
+     1.057
+    ],
+    "direction_err_deg_median": -2.2,
+    "direction_err_deg_std": 0.65
+   },
+   "evo_ate_se3_rmse_m": 26.8
+  },
+  "attitude_aided_yaw_bias_5deg": {
+   "m_per_px": 0.4229,
+   "fitted_effective_agl_m": 323.8,
+   "mount_reflection": false,
+   "final_error_m": 731.2,
+   "final_drift_pct_of_distance": 8.14,
+   "max_error_m": 731.2,
+   "error_at_distance_m": {
+    "1000m": 96.6,
+    "2000m": 195.0,
+    "4000m": 338.6,
+    "6000m": 467.9,
+    "8000m": 646.6
+   },
+   "per_step": {
+    "length_ratio_median": 0.985,
+    "length_ratio_p5_p95": [
+     0.954,
+     1.057
+    ],
+    "direction_err_deg_median": -5.2,
+    "direction_err_deg_std": 0.65
+   },
+   "evo_ate_se3_rmse_m": 26.8
+  }
+ },
+ "run": {
+  "wall_s": 28.14,
+  "cpu_s": 98.83,
+  "peak_rss_mb": 246.4,
+  "host": "Darwin arm64 python3.12.14",
+  "frames": 199,
+  "note": "wall/cpu cover image loading + SIFT + RANSAC"
+ }
+}

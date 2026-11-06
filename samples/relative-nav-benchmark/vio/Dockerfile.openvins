@@ -1,0 +1,12 @@
+# Slim variant of open_vins Dockerfile_ros1_20_04 (that one is FROM osrf/ros:noetic-desktop-full
+# with an sshd/CLion layer). ros:noetic-perception is multi-arch, so this also builds on arm64.
+FROM ros:noetic-perception
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      git libeigen3-dev libboost-all-dev libceres-dev python3-catkin-tools python3-osrf-pycommon \
+    && rm -rf /var/lib/apt/lists/*
+ARG OV_REF=v2.7
+RUN mkdir -p /catkin_ws/src && cd /catkin_ws/src \
+    && git clone --depth 1 --branch ${OV_REF} https://github.com/rpng/open_vins.git
+WORKDIR /catkin_ws
+RUN . /opt/ros/noetic/setup.sh && catkin init && catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release \
+    && catkin build -j2 ov_core ov_init ov_msckf

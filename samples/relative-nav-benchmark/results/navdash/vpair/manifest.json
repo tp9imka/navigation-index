@@ -1,0 +1,8 @@
+{
+ "title": "VPAIR sample: nadir VO at > 300 m AGL",
+ "tracks": [
+  "truth.jsonl",
+  "nadir_vo_attitude.jsonl",
+  "nadir_vo_image_only.jsonl"
+ ]
+}

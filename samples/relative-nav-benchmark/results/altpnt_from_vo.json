@@ -1,0 +1,147 @@
+{
+ "note": "altpnt-integrity scenario with GNSS off (alt-PNT only), alert limit 50 m, 600 s at 30 m/s; VIO truth error replaced by the fitted model, filter tuning unchanged unless 'retuned'.",
+ "default_model": {
+  "hpe_rms": 16.179,
+  "hpe_p95": 41.119,
+  "hpe_max": 44.281,
+  "hpl_median": 511.265,
+  "availability": 0.05,
+  "mi": 0.0,
+  "hmi": 0.0
+ },
+ "kiss-icp-kitti04": {
+  "fit": {
+   "anchor_window_m": 52.6,
+   "samples_1hz": 28,
+   "mean_speed_mps": 13.9968038558153,
+   "distance_m": 391.9105079628284,
+   "scale_err": 0.0007725806653042788,
+   "yaw_err_rad": -0.0022726929852711704,
+   "white_mps": 0.12211570128851346,
+   "end_error_2d_m": 0.9723038601472794,
+   "end_error_pct": 0.2480933377370682
+  },
+  "altpnt_as_tuned": {
+   "hpe_rms": 19.463,
+   "hpe_p95": 47.367,
+   "hpe_max": 52.827,
+   "hpl_median": 511.333,
+   "availability": 0.05,
+   "mi": 0.0,
+   "hmi": 0.0
+  },
+  "altpnt_retuned_R": {
+   "hpe_rms": 18.562,
+   "hpe_p95": 46.14,
+   "hpe_max": 51.639,
+   "hpl_median": 519.422,
+   "availability": 0.049,
+   "mi": 0.0,
+   "hmi": 0.0
+  },
+  "altpnt_truth_params": {
+   "scale": 0.0007725806653042788,
+   "yaw_rad": -0.0022726929852711704,
+   "white_mps_at_30mps": 0.2617,
+   "filter_R": 0.1,
+   "filter_bias_sigma": 0.3
+  },
+  "altpnt_retuned_params": {
+   "scale": 0.0007725806653042788,
+   "yaw_rad": -0.0022726929852711704,
+   "white_mps_at_30mps": 0.2617,
+   "filter_R": 0.3271703201310963,
+   "filter_bias_sigma": 0.3
+  }
+ },
+ "openvins-uzhfpv": {
+  "fit": {
+   "anchor_window_m": 29.0,
+   "samples_1hz": 47,
+   "mean_speed_mps": 5.563743770657769,
+   "distance_m": 261.49595722091516,
+   "scale_err": -0.00036844457183882184,
+   "yaw_err_rad": 0.06257282612793139,
+   "white_mps": 0.16465433778761807,
+   "end_error_2d_m": 0.6445363247237461,
+   "end_error_pct": 0.24648041658985706
+  },
+  "altpnt_as_tuned": {
+   "hpe_rms": 494.649,
+   "hpe_p95": 799.98,
+   "hpe_max": 842.045,
+   "hpl_median": 382.31,
+   "availability": 0.049,
+   "mi": 357.8,
+   "hmi": 0.0
+  },
+  "altpnt_retuned_R": {
+   "hpe_rms": 16.866,
+   "hpe_p95": 40.137,
+   "hpe_max": 50.121,
+   "hpl_median": 2725.504,
+   "availability": 0.026,
+   "mi": 0.0,
+   "hmi": 0.0
+  },
+  "altpnt_truth_params": {
+   "scale": -0.00036844457183882184,
+   "yaw_rad": 0.06257282612793139,
+   "white_mps_at_30mps": 0.8878,
+   "filter_R": 0.1,
+   "filter_bias_sigma": 0.3
+  },
+  "altpnt_retuned_params": {
+   "scale": -0.00036844457183882184,
+   "yaw_rad": 0.06257282612793139,
+   "white_mps_at_30mps": 0.8878,
+   "filter_R": 1.1097810973249937,
+   "filter_bias_sigma": 2.346521657466831
+  }
+ },
+ "nadir-vo-vpair": {
+  "fit": {
+   "anchor_window_m": 899.6,
+   "samples_1hz": 197,
+   "mean_speed_mps": 45.33747708651799,
+   "distance_m": 8931.482986044044,
+   "scale_err": -0.0060343279365348,
+   "yaw_err_rad": -0.0004868860239091229,
+   "white_mps": 1.1589878795925936,
+   "end_error_2d_m": 70.32330950790829,
+   "end_error_pct": 0.7873643113667966
+  },
+  "altpnt_as_tuned": {
+   "hpe_rms": 40.048,
+   "hpe_p95": 88.469,
+   "hpe_max": 94.805,
+   "hpl_median": 512.364,
+   "availability": 0.049,
+   "mi": 0.0,
+   "hmi": 0.0
+  },
+  "altpnt_retuned_R": {
+   "hpe_rms": 17.72,
+   "hpe_p95": 44.527,
+   "hpe_max": 50.761,
+   "hpl_median": 538.79,
+   "availability": 0.042,
+   "mi": 0.0,
+   "hmi": 0.0
+  },
+  "altpnt_truth_params": {
+   "scale": -0.0060343279365348,
+   "yaw_rad": -0.0004868860239091229,
+   "white_mps_at_30mps": 0.7669,
+   "filter_R": 0.1,
+   "filter_bias_sigma": 0.3
+  },
+  "altpnt_retuned_params": {
+   "scale": -0.0060343279365348,
+   "yaw_rad": -0.0004868860239091229,
+   "white_mps_at_30mps": 0.7669,
+   "filter_R": 0.9586339663714233,
+   "filter_bias_sigma": 0.3
+  }
+ }
+}

@@ -1,0 +1,79 @@
+{
+ "part": "lidar",
+ "method": "KISS-ICP (pip kiss-icp, default config)",
+ "dataset": "KITTI odometry 04 via raw drive 2011_09_30_drive_0016_sync",
+ "config": {
+  "max_range_m": 100.0,
+  "voxel_size_m": 1.0,
+  "deskew": true
+ },
+ "metrics": {
+  "matched_poses": 271,
+  "gt_path_m": 393.64526093865527,
+  "est_path_m": 394.05577561187675,
+  "duration_s": 28.108708,
+  "ate_aligned": {
+   "align": "se3",
+   "scale": 1.0,
+   "rmse_m": 0.22667653640396232,
+   "mean_m": 0.2087585304100011,
+   "max_m": 0.6093822616717374
+  },
+  "origin_anchored": {
+   "rmse_m": 0.6885967622123131,
+   "max_m": 1.1316453200800154,
+   "final_error_m": 0.4806255064038949,
+   "final_drift_pct_of_distance": 0.12209609872041478,
+   "max_error_pct_of_distance": 0.2874784564614302
+  },
+  "rpe_100m": {
+   "rmse_m": 0.4494381529096695,
+   "mean_m": 0.43139841523407785,
+   "mean_pct": 0.4313984152340778
+  }
+ },
+ "kitti_segment_errors": {
+  "t_rel_pct": 0.4138474006853035,
+  "r_rel_deg_per_100m": 0.19024267650893117,
+  "lengths_used_m": [
+   100,
+   200,
+   300
+  ],
+  "segments": 43
+ },
+ "run": {
+  "wall_s": 19.72,
+  "cpu_s": 22.58,
+  "peak_rss_mb": 158.8,
+  "host": "Darwin arm64 python3.12.14",
+  "frames": 271,
+  "fps": 13.7,
+  "mean_points_per_scan": 125717
+ },
+ "metrics_vs_oxts": {
+  "matched_poses": 271,
+  "gt_path_m": 393.64084818961874,
+  "est_path_m": 394.05577561187675,
+  "duration_s": 28.108708,
+  "ate_aligned": {
+   "align": "se3",
+   "scale": 1.0,
+   "rmse_m": 0.2273571669291779,
+   "mean_m": 0.20839794234151657,
+   "max_m": 0.6258553056582622
+  },
+  "origin_anchored": {
+   "rmse_m": 0.7007686205677202,
+   "max_m": 1.1650109250805125,
+   "final_error_m": 0.4827563257557217,
+   "final_drift_pct_of_distance": 0.1226387779560864,
+   "max_error_pct_of_distance": 0.29595783324786484
+  },
+  "rpe_100m": {
+   "rmse_m": 0.4509770807834509,
+   "mean_m": 0.4322925926704999,
+   "mean_pct": 0.4322925926704999
+  }
+ }
+}

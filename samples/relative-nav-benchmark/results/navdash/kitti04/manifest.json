@@ -1,0 +1,7 @@
+{
+ "title": "KITTI 04: KISS-ICP vs OXTS",
+ "tracks": [
+  "truth.jsonl",
+  "kiss_icp.jsonl"
+ ]
+}
