@@ -7,10 +7,11 @@ around them: standards, papers, talks, courses, datasets, reports. Everything is
 knowledge graph, so a repo page shows the papers, courses and samples that point at it, and
 the reverse. On top of the index sit runnable samples, integration cards and templates.
 
-Counts on 2026-11-06: 1507 records (768 repos, 202 papers, 114 docs, 51 datasets, 47 talks,
-40 standards and more, over 46 concepts), 158 integration cards, 50 dataset cards, 46 paper
-digests, 33 sample folders (32 with a `sample.json`). Live counts are at the top of
-[INDEX.md](INDEX.md) and in [llms.txt](llms.txt).
+Counts from a `tools/build.py` run on 2026-11-06 (after review round 2): 1558 nodes (768
+repos, 202 papers, 114 docs, 69 blogs, 68 datasets, 47 talks, 40 standards, 38 samples, 28
+guides and more, over 46 concepts), 158 integration cards, 59 dataset cards, 46 paper digests.
+More samples were in progress at that point, so this line lags; the live counts are at the
+top of [INDEX.md](INDEX.md) and in [llms.txt](llms.txt).
 
 ## Got a problem statement? Four hops
 
@@ -74,8 +75,9 @@ python3 tools/check_links.py                           # relative links, as CI r
 claude mcp add navigation-index -- python3 "$PWD/tools/mcp_server.py"
 ```
 
-Free-text search works best with keywords ("ArduCopter spoof EKF3 dashboard"), not a pasted
-problem statement. For a statement, read the decoder first.
+Search with keywords ("ArduCopter spoof EKF3 dashboard"), not a pasted problem statement.
+For a statement, read the [decoder](docs/problem-statement-decoder.md) first, then search with
+the matching row's keywords. The same rule holds for the MCP `search` tool.
 
 ## How much to trust it
 
@@ -94,9 +96,16 @@ papers.
   (`verified`, `verified_status`) and in each README. Most numbers come from synthetic or
   simulated inputs; [docs/evidence-matrix.md](docs/evidence-matrix.md) marks which ones are
   real data.
-- [docs/reports/cold-start-review.md](docs/reports/cold-start-review.md) is a fresh-eyes
-  review of the whole hub; [reports/quality.md](reports/quality.md) lists dangling
-  references, archived repos and merged duplicates.
+- Superseded results stay visible but labelled: altpnt-integrity v1's "0 MI at 41.7 %
+  availability" was withdrawn by its own v2 (measured error models: 13-26 % availability at
+  0 MI). Quote from the [evidence matrix](docs/evidence-matrix.md), which marks these.
+- [docs/reports/review-round2.md](docs/reports/review-round2.md) and
+  [docs/reports/cold-start-review.md](docs/reports/cold-start-review.md) are fresh-eyes
+  reviews of the whole hub (round 2 is the newer one; it also lists which round-1 items are
+  still open); [reports/quality.md](reports/quality.md) lists dangling references, archived
+  repos and merged duplicates.
+- [docs/upstream-findings.md](docs/upstream-findings.md) tracks defects the samples found in
+  upstream projects and whether they were reported (none filed yet).
 
 Snapshot date: 2026-11-06.
 

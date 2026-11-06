@@ -43,10 +43,10 @@
  },
  "altpnt-integrity": {
   "group": "Integrity and GNSS-loss response on a vehicle",
-  "shows": "Stdlib EKF (INS + VIO + visual geoloc + jammed then spoofed GNSS) with solution-separation FDE, protection level, MI/HMI, Stanford diagram",
+  "shows": "Stdlib EKF (INS + VIO + visual geoloc + jammed then spoofed GNSS) with solution-separation FDE, protection level, MI/HMI, Stanford diagram; v2 recalibrates every error model on measured sibling-sample data",
   "input": "synthetic",
-  "runtime": "~20 s (20 seeds)",
-  "key_result": "[20 seeds, AL 50 m](README.md#observed-output-python3147-2026-11-06): full monitor 0 MI / 0 HMI epochs at 41.7 % availability; no monitor 3217 HMI epochs"
+  "runtime": "v1 ~20 s (20 seeds); v2 Monte Carlo ~3 min",
+  "key_result": "[v2, 20 seeds, AL 50 m](README.md#3-monte-carlo-python3-altpnt_v2py---runs-20-182-s-resultsv2_mcjson): with error models measured on real runs, the v1 monitor goes from 0 to 8901 of 12 000 MI* epochs; v2 (heading/scale states + measured R) gets back to 0 MI* at 13-26 % availability (34-41 % at AL 100 m). v1's 0 MI at 41.7 % holds only under its own assumed noise ([why](README.md#4-what-changed-vs-v1-honestly))"
  },
  "gnss-ins-ekf-outage": {
   "group": "Integrity and GNSS-loss response on a vehicle",
@@ -122,6 +122,7 @@
   "group": "C2 and situational awareness",
   "shows": "Stone Soup EKF + JPDA on two simulated UAVs in radar clutter, OSPA vs truth",
   "input": "synthetic",
+  "runtime": "not measured",
   "key_result": "[One seed](README.md#observed-output-stonesoup-191-python-31214-2026-11-06): 2 tracks on 2 truths, OSPA mean 17.0 m, max 53.0 m (c = 100 m)"
  },
  "remote-id-to-tak": {
@@ -153,7 +154,7 @@
   "shows": "Stdlib 15-state ZUPT EKF on 36 real pyshoe trials, cross-checked with pyshoe; corridor heading, floor, simulated UWB; CoT/navdash",
   "input": "real",
   "runtime": "~12 min on 11 workers",
-  "key_result": "[36 trials](README.md#result-1-stdlib-filter-vs-pyshoe-shoe-g--85e7-w--5-all-36-trials): 2.35 m ARMSE, 1.30 % final error (pyshoe 2.51 m, 1.49 %); [aided](README.md#result-3-aiding-ins15_py--shoe-85e7-all-36-trials) 1.07 m, 0.83 %"
+  "key_result": "[36 trials](README.md#result-1-stdlib-filter-vs-pyshoe-shoe-g--85e7-w--5-all-36-trials): 2.35 m ARMSE, 1.30 % final error (pyshoe 2.51 m, 1.49 %) on the author's download (re-run 2026-11-06: identical); a fresh download in review round 2 gave 2.21 m / 1.33 %, cause not found. The 95 % radius covers the truth at only 31 % of markers (60 % with ins15_py_yrw). [Aided](README.md#result-3-aiding-ins15_py--shoe-85e7-all-36-trials) 1.07 m, 0.83 % (UWB simulated)"
  },
  "swarm-coop-localization": {
   "group": "Swarm",
@@ -172,6 +173,7 @@
  "llm-agent-usage": {
   "group": "LLM agents",
   "shows": "The hub's stdlib MCP server (search / show / concept / neighbors) piped a demo session; client registration snippets",
+  "runtime": "under 1 s (0.32 s measured 2026-11-06, python3 3.14.7)",
   "key_result": "[Demo session](README.md): 7 JSON-RPC responses (functional check, no metric)"
  },
  "llm-mission-agent": {
@@ -183,6 +185,7 @@
  },
  "sitl-docker": {
   "group": "Infrastructure",
+  "input": "sitl",
   "shows": "Headless ArduCopter 4.6.3 SITL and PX4 v1.17.0 SIH images, compose file, client image",
   "runtime": "builds ~8.5 min / ~26 min",
   "key_result": "[Images](README.md#what-was-verified-2026-11-06-docker-2952-apple-silicon-linuxarm64): ArduPilot 1.85 GB, PX4 214 MB, client 558 MB; both stacks flew the other samples"

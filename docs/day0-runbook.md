@@ -135,7 +135,9 @@ claude mcp add navigation-index -- python3 /abs/path/navigation-index/tools/mcp_
 
 Tools: `search` (keywords, optional `kind`, `fit`, `domain`, `concept`), `concept` (everything
 tagged with a concept, high fit first), `neighbors` (graph walk from an id), `show` (full
-record). Without MCP, `python3 tools/query.py <tool> ...` takes the same arguments.
+record), `read` (MCP only: full markdown of a guide or sample README, e.g. the decoder).
+Without MCP, `python3 tools/query.py <tool> ...` takes the same arguments for the first four;
+open the file instead of `read`.
 
 Every result is an id. Turn it into a file: `repo:owner/name` => integration card
 `docs/integration-cards/owner__name.md` if it exists, else `catalog/repos/owner__name.md`.
@@ -148,12 +150,17 @@ detection") returns noise from other domains, so add a concept or `kind` filter.
 Do not paste the problem statement into `search`: free text ranks poorly (a cold-start test
 on 2026-11-06 got ION courses and an unrelated loitering munition for full-sentence queries).
 Take the keywords from the matching [decoder](problem-statement-decoder.md) row instead.
-Keyword queries that ranked the right sample first (re-checked with `tools/query.py` on 2026-11-06):
+Keyword queries that ranked the right sample first (re-checked with `tools/query.py` on 2026-11-06,
+after review round 2):
 
 ```
 search {"query":"ArduCopter spoof EKF3 dashboard"}            => golden-demo
 search {"query":"jammer localization sensor network TAK"}     => jammer-sensor-network, then interference-geolocation-to-tak
 search {"query":"spoofing integrity uav","kind":"sample"}     => altpnt-integrity
+search {"query":"star tracker celestial night heading","kind":"sample"}       => celestial-star-tracker
+search {"query":"timing holdover oscillator spoofing time push","kind":"sample"} => timing-holdover
+search {"query":"jammertest real attack replay u-blox","kind":"sample"}      => real-attack-replay
+search {"query":"PX4 SIH GPS spoof external vision","kind":"sample"}         => golden-demo-px4
 concept {"id":"concept:maritime-nav","fit":"high"}            => maritime repos, high fit first
 ```
 
@@ -171,18 +178,21 @@ The [sitl-docker](../samples/sitl-docker/) compose file pins ArduCopter 4.6.3 an
 | Problem class | Start with | First command / file | Version trap |
 |---|---|---|---|
 | UAS navigates through GNSS loss (ArduPilot) | ArduPilot SITL from sitl-docker + [ardupilot-ekf3-source-switch](../samples/ardupilot-ekf3-source-switch/) | `docker compose up -d ardupilot` | 4.6.x: `SIM_GPS_DISABLE 1`; 4.7 / master: `SIM_GPS1_ENABLE 0` ([card](integration-cards/ardupilot__ardupilot.md)) |
-| UAS with VIO or map-matching into PX4 | PX4 SIH from sitl-docker + [px4-sitl-gps-denial](../samples/px4-sitl-gps-denial/) | `docker compose up -d px4`; GPS loss via MAVSDK failure injection as in the sample, or `failure gps off` in the PX4 shell (`SYS_FAILURE_EN=1` first) | SIH target and `EKF2_AGP*` params differ between v1.17.0 and `main` ([card](integration-cards/px4__px4-autopilot.md)); `mavsdk-grpc` (in the sitl-docker client image, or a `.venv`) |
-| Visual geolocalization | NAIP via [geoloc-license-clean](../samples/geoloc-license-clean/) `download_data.py` (121 MB); [UAV-VisLoc](dataset-cards/uav-visloc.md) site 03 (2.0 GB) | [geoloc-license-clean](../samples/geoloc-license-clean/), [visual-geolocalization-lightglue](../samples/visual-geolocalization-lightglue/) | LightGlue with ALIKED, not SuperPoint (NC weights, [weights licenses](model-weights-licenses.md)); real frames fixed 1 of 5 in the sample |
+| UAS with VIO or map-matching into PX4 | PX4 SIH from sitl-docker + [px4-sitl-gps-denial](../samples/px4-sitl-gps-denial/) | `docker compose up -d px4`; GPS loss via `param set SIM_GPS_USED 0` as in the sample; for a spoof plus switch to external vision, [golden-demo-px4](../samples/golden-demo-px4/) `./run.sh` | On v1.17.0 SIH `failure gps off` / MAVSDK GPS failure injection gets no ACK and does nothing; v1.17.0 has no `GPS_INPUT` handler (golden-demo-px4 uses `HIL_GPS`); SIH target and `EKF2_AGP*` params differ between v1.17.0 and `main` ([card](integration-cards/px4__px4-autopilot.md)); `mavsdk-grpc` (in the sitl-docker client image, or a `.venv`) |
+| Visual geolocalization | NAIP via [geoloc-license-clean](../samples/geoloc-license-clean/) `download_data.py` (121 MB); [UAV-VisLoc](dataset-cards/uav-visloc.md) site 03 (2.0 GB) | [geoloc-license-clean](../samples/geoloc-license-clean/) (known prior), [vpr-large-area](../samples/vpr-large-area/) (no prior: retrieval over 49 km2 of NAIP first), [e2e-visual-nav-vpair](../samples/e2e-visual-nav-vpair/) (whole chain on a real flight), [thermal-geolocalization](../samples/thermal-geolocalization/) (night, thermal frames), [visual-geolocalization-lightglue](../samples/visual-geolocalization-lightglue/) | LightGlue with ALIKED, not SuperPoint (NC weights, [weights licenses](model-weights-licenses.md)); real frames fixed 1 of 5 in geoloc-license-clean and 1 of 23 in the vpr chain; FAISS and torch in one process abort on macOS arm64 |
 | VIO / LiDAR drift | [UZH-FPV](dataset-cards/uzh-fpv.md) (0.84 GB), [KITTI](dataset-cards/kitti.md) 04, VPAIR sample (0.86 GB) | [relative-nav-benchmark](../samples/relative-nav-benchmark/) `./run.sh lidar` / `vio` / `aerial` | EuRoC host rate-limits (HTTP 429 in the sample run); OpenVINS image build ~20 min |
-| Receiver jamming / spoofing | [Jammertest](dataset-cards/jammertest-data.md) VAARA (1.57 GB), [TEXBAT](dataset-cards/texbat.md) subset (8.8 GB), or simulated IQ | [gnss-interference-monitor](../samples/gnss-interference-monitor/), [gnss-signal-chain](../samples/gnss-signal-chain/) `./run.sh` (file only, ~600 MB per scenario) | S7AM1NA public sample is not a labelled attack |
-| UAS spoof + integrity demo | ArduCopter SITL from sitl-docker | [golden-demo](../samples/golden-demo/) `./run.sh --v2`, [altpnt-integrity](../samples/altpnt-integrity/) for PL | Copter 4.6.3 only tested; golden-demo flies a ~950 m survey with no jamming phase |
+| Receiver jamming / spoofing | [Jammertest](dataset-cards/jammertest-data.md) VAARA: the 7 u-blox logs are 64 MB via real-attack-replay's `./fetch_data.sh` (the full repo is 1.57 GB); [TEXBAT](dataset-cards/texbat.md) subset (8.8 GB), or simulated IQ | [real-attack-replay](../samples/real-attack-replay/) (real attacks through the scorer), [gnss-interference-monitor](../samples/gnss-interference-monitor/), [gnss-signal-chain](../samples/gnss-signal-chain/) `./run.sh` (file only, ~600 MB per scenario) | VAARA logs have no UBX NAV or MON-RF and break pyubx2 1.4.1 (use the sample's framer); VAARA states no licence, so do not redistribute it; S7AM1NA public sample is not a labelled attack |
+| UAS spoof + integrity demo | ArduCopter or PX4 SITL from sitl-docker | [golden-demo](../samples/golden-demo/) `./run.sh --v2`, [golden-demo-px4](../samples/golden-demo-px4/) `./run.sh`, [altpnt-integrity](../samples/altpnt-integrity/) for PL (quote v2: `altpnt_v2.py`) | Copter 4.6.3 and PX4 v1.17.0 SIH only tested; both fly a ~950 m survey with no jamming phase; altpnt v1's 41.7 % availability does not hold under measured error models |
 | Phone / raw GNSS | [GSDC](dataset-cards/gsdc.md) taroz zip (2.76 GB), [UrbanNav](dataset-cards/urbannav.md) | [gnss-rinex-processing](../samples/gnss-rinex-processing/) (RTKLIB in Docker, ran on CORS data) | gnss-lib-py needs Python below 3.15 |
 | INS holdover | [KITTI](dataset-cards/kitti.md) raw drive (1.2 GB), [NCLT](dataset-cards/nclt.md) (0.24 GB) | [gnss-ins-ekf-outage](../samples/gnss-ins-ekf-outage/) | FilterPy 2.0.0 API change |
 | Terrain navigation | Copernicus GLO-30 windows (`fetch_dem.py`, ~0.8 MB each) | [terrain-heightmap-pf](../samples/terrain-heightmap-pf/), [blind-flight-bench](../samples/blind-flight-bench/) (radar altimeter only, see [teardown](landscape/blind-flight-teardown.md)) | elevation 2.0 breaks 1.x commands; GLO-30 is a DSM, not bare earth |
-| Radio ranging / swarm | [UTIL](dataset-cards/util-uwb-tdoa.md) (1.86 GB), [MILUV](dataset-cards/miluv.md) (3.2 GB) | [swarm-coop-localization](../samples/swarm-coop-localization/) (stdlib sim), [GTSAM card](integration-cards/borglab__gtsam.md) | - |
+| Radio ranging / swarm | [UTIL](dataset-cards/util-uwb-tdoa.md) (1.86 GB), [MILUV](dataset-cards/miluv.md) (3.2 GB) | [swarm-coop-localization](../samples/swarm-coop-localization/) (stdlib sim), [swarm-coop-real-uwb](../samples/swarm-coop-real-uwb/) (`fetch_miluv.py` pulls ~55 MB of CSVs from the 3-11 GB zips by HTTP range), [GTSAM card](integration-cards/borglab__gtsam.md) | MILUV odometry is not used: the sample's odometry is synthetic |
 | Maritime | Committed OSM chart + DMA AIS fixtures; [Pohang](dataset-cards/maritime-datasets.md) navigation.zip (about 20 MB) for real radar | [usv-gnss-denied-nav](../samples/usv-gnss-denied-nav/) (own ship), [maritime-ais-spoofing](../samples/maritime-ais-spoofing/) (AIS) | Simulated radar sees the same chart: fix errors optimistic |
 | C-UAS awareness | [Remote ID captures](dataset-cards/remote-id-droneid-captures.md), [DroneRF](dataset-cards/drone-rf-datasets.md) (692 MB RAR), NRC radar tracks (~59 MB) | [remote-id-to-tak](../samples/remote-id-to-tak/), [cuas-classifiers](../samples/cuas-classifiers/), [stone-soup-tracking](../samples/stone-soup-tracking/) | Stone Soup needs Python 3.11+; DroneRF is one session per class |
 | MagNav | [MagNav challenge data](dataset-cards/magnav-challenge-data.md) (1.87 GB) | [magnav-quickstart](../samples/magnav-quickstart/) (ran in the `julia:1.11` Docker image) | ~10 min install + precompile, 5.8 GB Julia depot; pin FFTA 0.2; AFRL data agreement |
+| Timing | Nothing to download for the sim; VAARA logs (above) for a real +900 s time push | [timing-holdover](../samples/timing-holdover/) `python3 timing_holdover.py` (stdlib, ~5 s); [real-attack-replay](../samples/real-attack-replay/) for 2.4.2; guide [timing-resilience](timing-resilience.md) | Oscillator models are datasheet parameters, not a unit; receiver time only shows jumps > 5 s |
+| Dismounted / indoor | pyshoe hallway set via [dismounted-foot-ins](../samples/dismounted-foot-ins/) `sh fetch_data.sh` (~120 MB, about 15 min over FTP) | `python3 run_hallway.py data/hallway --tables filter --jobs 8` (stdlib, ~3 min) | pyshoe's own code needs Python 3.11 + numpy < 1.24; the filter's 95 % radius covers the truth at 31 % of markers |
+| Celestial | cedar-solve test frames, SkyView cutouts, DE421 via [celestial-star-tracker](../samples/celestial-star-tracker/) `python3 fetch_data.py` (~190 MB, ~5 min) | `.venv/bin/python plate_solve_eval.py` (~10 s) | cedar-solve from git tag v0.6.0 with `--no-deps` (PyPI 0.5.1 predates its NumPy 2 fix); SkyView sometimes answers "Too Many Processes" |
 
 If the organisers provide data, start there instead and keep one shortlisted set as a
 cross-check.

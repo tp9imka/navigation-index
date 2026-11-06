@@ -38,5 +38,10 @@
   "verified": "Ran 2026-11-06 on Apple Silicon (linux/arm64 Docker 29.5.2, nav-sitl-px4:v1.17.0 built from samples/sitl-docker, companion in nav-sitl-client:latest with Python 3.12 + pymavlink 2.4.50). Reference pair (coherent 1 m/s, seed 7): velocity-test alarm 3.0 s after onset, EKF2_GPS_CTRL=0 + EKF2_EV_CTRL=5 echoed within 0.03 s, max cross-track deviation 7.8 m with the monitor vs 75.0 m without, EKF2 error 8.2 m vs 105.7 m, EKF2 GPS_GLITCH never set and eph 0.22 m while 106 m off; ArduPilot reference 3.0 s, 6.8 m vs 75.0 m. 20-flight sweep (2 seeds x position/coherent x 1/3 m/s + no-spoof, monitor and shadow, 2012 s wall in 3 lanes): all completed; monitor deviation 7-9 m except position 1 m/s (22 m); without monitor 75 m at 1 m/s and 108-152 m at 3 m/s even though EKF2 flagged GPS_GLITCH; 1 SS false alarm in 2 no-spoof monitor flights. 6 unit tests pass in the venv; 3 pass and 3 skip under plain python3. Not tested: speedup, amd64, PX4 main, aux global position over DDS, host-side MAVLink (did not get replies through a published UDP port).",
   "verified_status": "ran",
   "deps": "docker",
-  "first_command": "./run.sh"
+  "first_command": "./run.sh",
+  "group": "Integrity and GNSS-loss response on a vehicle",
+  "shows": "golden-demo v2 ported to PX4 v1.17 SIH: coherent GPS drag via HIL_GPS, the same companion monitor (SS + PL, GNSS-vs-VIO velocity test), EKF2 switched from GNSS to external vision; ArduPilot side by side",
+  "input": "sitl",
+  "runtime": "./run.sh ~9 min (PX4 image build ~26 min the first time); 20-flight sweep ~35 min",
+  "key_result": "[Seed 7, coherent 1 m/s](README.md#result-ran-2026-11-06-one-flight-each-seed-7): velocity-test alarm 3.0 s after onset, max cross-track 7.8 m with the monitor vs 75.0 m without (ArduPilot 6.8 vs 75.0 m); EKF2 reported eph 0.22 m while 106 m off. [20-flight sweep](README.md#sweep-ran-2026-11-06-20-flights): 3 m/s drag without the monitor 108-152 m even with GPS_GLITCH flagged; 1 SS false alarm in 2 no-spoof flights"
 }
