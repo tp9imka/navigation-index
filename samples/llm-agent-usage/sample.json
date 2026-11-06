@@ -17,5 +17,6 @@
   "verified": "tools/mcp_server.py ran with python3.14.7 stdlib on 2026-11-06 by piping demo_requests.jsonl into it (initialize, tools/list, tools/call for search/concept/neighbors/show, error paths); transcript shown in README. Client registration (Claude Code, Cursor, others) was not exercised.",
   "verified_status": "ran",
   "deps": "stdlib",
+  "input": "real",
   "first_command": "python3 ../../tools/mcp_server.py < demo_requests.jsonl"
 }

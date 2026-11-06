@@ -38,7 +38,7 @@
   "first_command": "python3 spoof_sweep.py --python <venv-with-pymavlink>/bin/python",
   "group": "Integrity and GNSS-loss response on a vehicle",
   "shows": "Why PX4 EKF2 and ArduPilot EKF3 end up on a spoofed position (gate rejection, then reset-to-GNSS after 7 s / 10 s), measured over drag rate, step size and gate settings in SITL",
-  "input": "SITL",
+  "input": "sitl",
   "runtime": "45 flights ~35 min in 5 Docker lanes; analysis seconds (stdlib)",
   "key_result": "[Steps](README.md#step-offset-position-jumps-at-onset-velocity-untouched): flagged, then reset onto the full 20/100 m offset at 7.3 s (PX4) / 10.1 s (ArduPilot), default or tightened gates. [Coherent 0.1-5 m/s](README.md#coherent-drag-position--velocity-rate-sweep): 96-110 % of the spoof believed in every config; tighter gates only added LAND failsafes. PX4 EKF2_GPS_MODE 1 refused steps and position drags but blind-landed after 12-14 s."
 }
