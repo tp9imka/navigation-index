@@ -1,6 +1,6 @@
 # NAIP aerial orthophotos on Microsoft Planetary Computer
 
-<!-- about: sample:geoloc-license-clean, sample:golden-demo, repo:stac-utils/pystac-client -->
+<!-- about: res:naip-planetary-computer, sample:geoloc-license-clean, sample:golden-demo, repo:stac-utils/pystac-client -->
 
 USDA National Agriculture Imagery Program: leaf-on aerial orthophotos of the contiguous US, each state re-flown every 2-3 years, RGB + NIR. Planetary Computer serves them as Cloud-Optimized GeoTIFFs behind a STAC API, so a few km2 can be read as windows without downloading whole tiles. This is the license-clean map source for the visual geolocalization samples. No index id of its own; the marker names the samples and the STAC client.
 

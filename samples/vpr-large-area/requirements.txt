@@ -1,0 +1,14 @@
+# Verified with Python 3.12.14 on macOS arm64 (Apple M2 Max, torch MPS backend), 2026-11-06.
+# DINOv2 code is fetched by torch.hub at the pinned commit in vpr.DINOV2_REPO; weights from dl.fbaipublicfiles.com.
+lightglue @ git+https://github.com/cvg/LightGlue.git@5a650c444718caffc2669dc0094cde908f42dd73
+torch==2.15.0
+torchvision==0.29.2
+kornia==0.9.0
+opencv-python==5.0.0.93
+opencv-python-headless==5.0.0.93
+numpy==2.5.4
+rasterio==1.5.2
+affine==3.0.1
+pillow==13.0.0
+# optional: only for a FAISS-backed index in a process without torch (see README)
+faiss-cpu==1.15.1

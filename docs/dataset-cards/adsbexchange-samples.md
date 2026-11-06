@@ -1,6 +1,6 @@
 # ADS-B Exchange free monthly sample (readsb-hist)
 
-<!-- about: sample:osint-jamming-map, repo:wiedehopf/readsb, res:gpsjam-org -->
+<!-- about: res:adsbexchange-monthly-samples, sample:osint-jamming-map, repo:wiedehopf/readsb, res:gpsjam-org -->
 
 ADS-B Exchange publishes its complete global feed free of charge for the 1st day of each month: `readsb-hist` snapshots, one gzipped `aircraft.json` per 5 s, with each aircraft's NACp / NIC quality fields and MLAT flags. That is enough to rebuild a GPSJam-style interference map for any past 1st-of-month. No login. No index id of its own; the marker names the sample, the decoder whose JSON format it uses, and GPSJam.
 

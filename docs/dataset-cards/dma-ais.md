@@ -1,6 +1,6 @@
 # Danish Maritime Authority historical AIS
 
-<!-- about: sample:maritime-ais-spoofing, sample:usv-gnss-denied-nav, repo:m0r13n/pyais -->
+<!-- about: res:dma-historical-ais, sample:maritime-ais-spoofing, sample:usv-gnss-denied-nav, repo:m0r13n/pyais -->
 
 Daily CSV dumps of all AIS messages received by the Danish Maritime Authority's shore network: Danish waters and approaches (Skagerrak, Kattegat, the belts, western Baltic, part of the North Sea). Free, no login, one zip per UTC day. This dataset has no index id of its own; the marker above names the samples and decoder that use it.
 

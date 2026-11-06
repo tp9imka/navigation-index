@@ -1,6 +1,6 @@
 # Geobasis NRW DOM1 / DGM1 (1 m airborne LiDAR surface and terrain models)
 
-<!-- about: sample:terrain-heightmap-pf -->
+<!-- about: res:geobasis-nrw-dom1-dgm1, sample:terrain-heightmap-pf -->
 
 North Rhine-Westphalia's survey authority publishes its 1 m digital surface model (DOM1, first-return LiDAR incl. buildings and trees) and 1 m terrain model (DGM1) for the whole state as open data, 1 x 1 km GeoTIFF tiles, no login. A real high-resolution prior map for terrain and heightmap navigation tests. No index id of its own; the marker names the sample that uses it.
 

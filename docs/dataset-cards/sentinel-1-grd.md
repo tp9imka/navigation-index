@@ -1,6 +1,6 @@
 # Sentinel-1 GRD on Planetary Computer (with ESA RFI annotations)
 
-<!-- about: repo:zephr-xyz/sentinel1-rfi-detection, sample:osint-jamming-map, repo:stac-utils/pystac-client -->
+<!-- about: res:sentinel-1-grd-planetary-computer, repo:zephr-xyz/sentinel1-rfi-detection, sample:osint-jamming-map, repo:stac-utils/pystac-client -->
 
 Copernicus Sentinel-1 C-band SAR, Level-1 Ground Range Detected scenes, mirrored by Microsoft Planetary Computer as Cloud-Optimized GeoTIFFs (VV, VH) plus the SAFE XML annotations, including ESA's per-swath RF interference report. Readable anonymously after URL signing, no Copernicus account. No index id for the dataset itself; the marker names the RFI-detection repo the sample ports, the sample and the STAC client.
 

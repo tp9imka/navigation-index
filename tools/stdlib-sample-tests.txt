@@ -23,3 +23,4 @@ cuas-classifiers
 terrain-heightmap-pf
 celestial-star-tracker
 real-attack-replay
+vpr-large-area

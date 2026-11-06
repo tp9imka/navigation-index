@@ -1,6 +1,6 @@
 # OpenAerialMap drone orthophotos (as used by the LightGlue geoloc sample)
 
-<!-- about: sample:visual-geolocalization-lightglue -->
+<!-- about: res:openaerialmap, sample:visual-geolocalization-lightglue -->
 
 OpenAerialMap (OAM, run by HOT) is an open catalogue of user-contributed aerial and drone orthophotos, CC BY 4.0, stored as Cloud-Optimized GeoTIFFs on a public S3 bucket. Coverage is patchy (wherever someone uploaded a survey), but it gives real centimetre-level drone orthos outside the US with no login. No index id of its own; the marker names the sample that uses it.
 

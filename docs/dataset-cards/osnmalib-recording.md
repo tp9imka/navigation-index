@@ -1,6 +1,6 @@
 # OSNMAlib bundled Galileo I/NAV recording (current_config.sbf)
 
-<!-- about: repo:algafix/osnma, sample:osnma-authentication -->
+<!-- about: res:osnmalib-galileo-inav-recording, repo:algafix/osnma, sample:osnma-authentication -->
 
 A real 76-minute Septentrio SBF `GALRawINAV` recording of live Galileo I/NAV pages with OSNMA, shipped inside the OSNMAlib repository together with the matching GSC public key and Merkle tree. The smallest real OSNMA data you can get: no receiver, no account, 2.6 MB. No index id for the recording itself; it is described under OSNMAlib's id.
 

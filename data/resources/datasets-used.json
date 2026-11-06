@@ -1,0 +1,384 @@
+[
+  {
+    "id": "res:dma-historical-ais",
+    "kind": "dataset",
+    "title": "Danish Maritime Authority historical AIS data",
+    "url": "https://dma.dk/safety-at-sea/navigational-information/ais-data",
+    "authors": ["Danish Maritime Authority"],
+    "summary": "Daily zip files, one CSV per UTC day, holding every AIS report received by the Danish shore network across Danish waters and approaches (Skagerrak, Kattegat, the belts, western Baltic). Free download over plain HTTP from aisdata.ais.dk with no account; a day is roughly 0.5-0.9 GB zipped. Positions are whatever each ship's own GNSS reported, stamped with base-station receive time.",
+    "key_takeaways": [
+      "No login, one zip per day; a single deflate stream lets you HTTP-Range the first N MB and inflate a partial day",
+      "Heavy duplication (one report heard by several stations) and 91/181/0,0 'not available' positions need cleaning first",
+      "No ground truth for spoofing: inject episodes yourself; receive-time stamps create speed and jump artefacts",
+      "Reuse under Danish public-data conditions with the DMA attribution sentence"
+    ],
+    "concepts": ["concept:datasets-benchmarks", "concept:maritime-nav", "concept:gnss-interference", "concept:situational-awareness"],
+    "tags": ["ais", "maritime", "baltic", "csv", "spoofing-detection", "no-login"],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {"id": "sample:maritime-ais-spoofing", "rel": "dataset_for"},
+      {"id": "sample:usv-gnss-denied-nav", "rel": "dataset_for"},
+      {"id": "repo:m0r13n/pyais", "rel": "has_code"},
+      {"id": "res:itu-r-m1371-ais", "rel": "uses"}
+    ]
+  },
+  {
+    "id": "res:naip-planetary-computer",
+    "kind": "dataset",
+    "title": "NAIP aerial imagery on Microsoft Planetary Computer",
+    "url": "https://planetarycomputer.microsoft.com/dataset/naip",
+    "authors": ["USDA Farm Service Agency", "Microsoft Planetary Computer"],
+    "summary": "USDA National Agriculture Imagery Program leaf-on orthophotos (RGB + NIR) of the contiguous US, re-flown per state every few years, served as Cloud-Optimized GeoTIFFs behind a STAC API. Windows of a few square km can be read straight from the COGs after fetching a free SAS token. Resolution depends on state and year (0.3-1 m in the Ohio scenes the samples use).",
+    "key_takeaways": [
+      "Public-domain-with-attribution reference map you can redistribute, unlike most satellite basemaps",
+      "Several epochs of the same area make map-age experiments for visual geolocalization easy",
+      "Unsigned blob URLs return HTTP 409; sign with planetary_computer or the SAS token endpoint",
+      "US only; quarter-quad files are 0.4-1.4 GB, so read windows or overviews"
+    ],
+    "concepts": ["concept:datasets-benchmarks", "concept:visual-geolocalization", "concept:gis-mapping", "concept:place-recognition"],
+    "tags": ["naip", "orthophoto", "stac", "cog", "planetary-computer", "aerial-imagery", "usa"],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {"id": "sample:geoloc-license-clean", "rel": "dataset_for"},
+      {"id": "sample:golden-demo", "rel": "dataset_for"},
+      {"id": "sample:vpr-large-area", "rel": "dataset_for"},
+      {"id": "repo:stac-utils/pystac-client", "rel": "has_code"},
+      {"id": "repo:rasterio/rasterio", "rel": "has_code"}
+    ]
+  },
+  {
+    "id": "res:openaerialmap",
+    "kind": "dataset",
+    "title": "OpenAerialMap",
+    "url": "https://openaerialmap.org/",
+    "authors": ["Humanitarian OpenStreetMap Team", "OpenAerialMap contributors"],
+    "summary": "An open catalogue of user-contributed aerial and drone orthomosaics, each stored as a Cloud-Optimized GeoTIFF on a public S3 bucket under CC BY 4.0. Coverage is patchy but global, which makes it a quick source of centimetre-level drone orthos outside the US with no login.",
+    "key_takeaways": [
+      "Non-US, redistributable drone orthos for a visual-geolocalization demo map",
+      "Scenes are EPSG:3857; convert units to ground metres (cos latitude) before quoting GSD",
+      "Quality, date and georeference vary per uploader; check each scene",
+      "Synthetic frames cut from the same ortho as the map are a best case, not a flight result"
+    ],
+    "concepts": ["concept:datasets-benchmarks", "concept:visual-geolocalization", "concept:gis-mapping"],
+    "tags": ["orthophoto", "drone-imagery", "cog", "cc-by-4.0", "hotosm"],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {"id": "sample:visual-geolocalization-lightglue", "rel": "dataset_for"},
+      {"id": "repo:cvg/lightglue", "rel": "uses"}
+    ]
+  },
+  {
+    "id": "res:geobasis-nrw-dom1-dgm1",
+    "kind": "dataset",
+    "title": "Geobasis NRW DOM1 / DGM1 1 m airborne LiDAR surface and terrain models",
+    "url": "https://www.opengeodata.nrw.de/produkte/geobasis/hm/",
+    "authors": ["Geobasis NRW (Bezirksregierung Koeln)"],
+    "summary": "North Rhine-Westphalia's open-data 1 m digital surface model (DOM1, buildings and vegetation included) and 1 m bare-earth terrain model (DGM1) for the whole state, delivered as 1 x 1 km GeoTIFF tiles in ETRS89 / UTM 32N with no login. Licensed dl-de/zero-2.0, so no attribution is required.",
+    "key_takeaways": [
+      "A real high-resolution prior map for terrain or heightmap navigation in a European setting",
+      "In the terrain-heightmap sample, edge-based matching that failed on 30 m GLO-30 worked on the 1 m surface model",
+      "Tile names carry the flight year, which differs by area; list the directory if a name 404s",
+      "NRW only; DOM1 vegetation changes with season"
+    ],
+    "concepts": ["concept:datasets-benchmarks", "concept:terrain-nav", "concept:gis-mapping"],
+    "tags": ["lidar", "dsm", "dtm", "dem", "germany", "geotiff", "dl-de-zero"],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {"id": "sample:terrain-heightmap-pf", "rel": "dataset_for"},
+      {"id": "repo:rasterio/rasterio", "rel": "has_code"}
+    ]
+  },
+  {
+    "id": "res:adsbexchange-monthly-samples",
+    "kind": "dataset",
+    "title": "ADS-B Exchange free monthly sample data (readsb-hist)",
+    "url": "https://www.adsbexchange.com/data-products/sample-data/",
+    "authors": ["ADS-B Exchange"],
+    "summary": "ADS-B Exchange publishes its complete global feed for the 1st day of each month free of charge, as gzipped readsb aircraft.json snapshots every 5 s. Each aircraft entry carries quality fields such as NACp and NIC plus MLAT flags, which is enough to rebuild a GPSJam-style GNSS interference map for any past 1st-of-month. No open licence is named; the site's terms of use apply.",
+    "key_takeaways": [
+      "Only the 1st of each month is published, appearing about 1.5 days later",
+      "Each global snapshot is about 5 MB gzipped; filter to a bbox while downloading",
+      "Low NACp says 'degraded', not why; under spoofing the reported position is itself false",
+      "Check the terms before redistributing raw snapshots; commit derived aggregates instead"
+    ],
+    "concepts": ["concept:datasets-benchmarks", "concept:gnss-interference", "concept:situational-awareness"],
+    "tags": ["ads-b", "readsb", "nacp", "gnss-jamming-map", "osint", "aviation"],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {"id": "sample:osint-jamming-map", "rel": "dataset_for"},
+      {"id": "repo:wiedehopf/readsb", "rel": "has_code"},
+      {"id": "repo:snstac/adsbcot", "rel": "has_code"}
+    ]
+  },
+  {
+    "id": "res:sentinel-1-grd-planetary-computer",
+    "kind": "dataset",
+    "title": "Sentinel-1 Level-1 GRD on Microsoft Planetary Computer",
+    "url": "https://planetarycomputer.microsoft.com/dataset/sentinel-1-grd",
+    "authors": ["ESA / Copernicus", "Microsoft Planetary Computer"],
+    "summary": "Copernicus Sentinel-1 C-band SAR Ground Range Detected scenes mirrored as Cloud-Optimized GeoTIFFs (VV, VH) together with the SAFE XML annotations, which include ESA's per-swath RF interference report. Readable anonymously after URL signing, no Copernicus account needed. Free and open under the Copernicus data policy.",
+    "key_takeaways": [
+      "ESA's rfiDetected annotation plus a temporal z-score over a stack gives a C-band RF-activity context layer",
+      "C-band, not L-band: it sees radars and broadband emissions, not a GNSS jammer's intended signal",
+      "One snapshot per pass, every 6 days per orbit track in the 2026 stack; read COG overviews, full VH is about 0.5 GB",
+      "Some scenes can be missing from the mirror"
+    ],
+    "concepts": ["concept:datasets-benchmarks", "concept:ew-resilience", "concept:situational-awareness", "concept:gnss-interference"],
+    "tags": ["sentinel-1", "sar", "rfi", "copernicus", "stac", "cog", "planetary-computer"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "sample:osint-jamming-map", "rel": "dataset_for"},
+      {"id": "repo:zephr-xyz/sentinel1-rfi-detection", "rel": "has_code"},
+      {"id": "repo:stac-utils/pystac-client", "rel": "has_code"},
+      {"id": "res:copernicus-dem-aws", "rel": "same_author"}
+    ]
+  },
+  {
+    "id": "res:osnmalib-galileo-inav-recording",
+    "kind": "dataset",
+    "title": "OSNMAlib bundled Galileo I/NAV recording (custom_run)",
+    "url": "https://github.com/Algafix/OSNMA/tree/master/custom_run",
+    "authors": ["Aleix Galan (OSNMAlib)"],
+    "summary": "A real 76-minute Septentrio SBF GALRawINAV recording of live Galileo E1 I/NAV pages with OSNMA, shipped in the OSNMAlib repository alongside the matching GSC public key and Merkle tree, plus an older recording from the previous public-key period. About 2.6 MB: the smallest real OSNMA input available, no receiver or account needed. EUPL-1.2 as part of the repo.",
+    "key_takeaways": [
+      "Runs OSNMA authentication offline in seconds; attacks can be injected by manipulating pages",
+      "File mode trusts the signal's own GST, so a months-old replay still authenticates: replay demos need an independent clock",
+      "No DSM-PKR in the recording, so cold start with only the Merkle tree cannot be shown",
+      "The bundled key and tree go stale at the next GSC renewal"
+    ],
+    "concepts": ["concept:datasets-benchmarks", "concept:gnss-interference", "concept:assured-pnt", "concept:gnss"],
+    "tags": ["osnma", "galileo", "sbf", "septentrio", "authentication", "replay"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "repo:algafix/osnma", "rel": "part_of"},
+      {"id": "sample:osnma-authentication", "rel": "dataset_for"},
+      {"id": "res:galileo-osnma-service-page", "rel": "uses"}
+    ]
+  },
+  {
+    "id": "res:dronerf-mendeley-dataset",
+    "kind": "dataset",
+    "title": "DroneRF dataset: A dataset of drones for RF-based detection, classification, and identification",
+    "url": "https://data.mendeley.com/datasets/f4c2b4n755/1",
+    "authors": ["Mohammad Al-Sa'd", "Mhd Saria Allahham", "Amr Mohamed", "Abdulla Al-Ali", "Tamer Khattab", "Aiman Erbad"],
+    "year": 2019,
+    "summary": "RF recordings of drone-to-controller communications from three consumer drones (Bebop, AR Drone, Phantom) in several flight modes, plus background recordings with no drone, collected at Qatar University. Published on Mendeley Data under CC BY 4.0 as segmented RAR archives of CSV sample text.",
+    "key_takeaways": [
+      "Classic baseline for RF-based drone detection and type identification",
+      "Archives expand a lot: the cuas-classifiers sample's 4-archive subset is about 0.7 GB packed and 6.6 GB of CSV",
+      "Mendeley's API rejects the default urllib user agent; set one explicitly",
+      "Detection and classification only; the sample rate is not stated in the dataset description"
+    ],
+    "concepts": ["concept:datasets-benchmarks", "concept:counter-uas", "concept:rf-localization"],
+    "tags": ["drone-rf", "c-uas", "rf-fingerprinting", "mendeley", "cc-by-4.0"],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {"id": "repo:al-sad/dronerf", "rel": "has_code"},
+      {"id": "sample:cuas-classifiers", "rel": "dataset_for"},
+      {"id": "repo:nrc-cnrc/cuas-sensing-dataset", "rel": "uses"}
+    ]
+  },
+  {
+    "id": "res:uoft-foot-mounted-ins-dataset",
+    "kind": "dataset",
+    "title": "University of Toronto Foot-Mounted Inertial Navigation Dataset",
+    "url": "https://ieee-dataport.org/open-access/university-toronto-foot-mounted-inertial-navigation-dataset",
+    "authors": ["Brandon Wagstaff", "Valentin Peretroukhin", "Jonathan Kelly"],
+    "year": 2021,
+    "summary": "Foot-mounted IMU recordings from five subjects over more than 7.6 km with ground-truth positioning, built to evaluate zero-velocity-aided pedestrian INS. Includes non-walking motions such as running, crawling and stair climbing, and mixed walk/run trials. Open access on IEEE DataPort (DOI 10.21227/v1z6-9z84) under a Creative Commons Attribution licence.",
+    "key_takeaways": [
+      "Ground truth plus varied gaits makes it a test bed for adaptive zero-velocity detectors",
+      "Companion code is the pyshoe repository",
+      "Crawling and running trials are the relevant ones for dismounted-soldier scenarios"
+    ],
+    "concepts": ["concept:datasets-benchmarks", "concept:indoor-pedestrian", "concept:ins"],
+    "tags": ["zupt", "foot-mounted-imu", "pedestrian-ins", "dismounted", "ieee-dataport"],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {"id": "repo:utiasstars/pyshoe", "rel": "has_code"},
+      {"id": "sample:dismounted-foot-ins", "rel": "dataset_for"}
+    ]
+  },
+  {
+    "id": "res:noaa-ngs-cors-rinex",
+    "kind": "dataset",
+    "title": "NOAA NGS CORS network RINEX data archive",
+    "url": "https://geodesy.noaa.gov/corsdata/",
+    "authors": ["NOAA National Geodetic Survey"],
+    "summary": "Public archive of RINEX observation and navigation files from the US Continuously Operating Reference Station network, organised by year and day of year. Station coordinates are precisely known and fixed, so any positioning error computed from these files is solution error, which makes them a clean test input for SPP, PPP and RTK pipelines. US government data, no login.",
+    "key_takeaways": [
+      "Fixed, surveyed antennas give free truth for positioning-algorithm benchmarks",
+      "Files are daily 30 s RINEX, often Hatanaka-compressed; pair with broadcast or precise orbits",
+      "Pairs of nearby stations give a ready-made baseline for RTK tests"
+    ],
+    "concepts": ["concept:datasets-benchmarks", "concept:gnss", "concept:gnss-rtk-ppp", "concept:geodesy"],
+    "tags": ["cors", "rinex", "noaa", "reference-stations", "rtk", "ppp"],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {"id": "sample:gnss-rinex-processing", "rel": "dataset_for"},
+      {"id": "repo:rtklibexplorer/rtklib", "rel": "has_code"},
+      {"id": "repo:geospace-code/georinex", "rel": "has_code"}
+    ]
+  },
+  {
+    "id": "res:igs-bkg-brdc-broadcast-ephemeris",
+    "kind": "dataset",
+    "title": "IGS daily merged broadcast navigation files (BKG mirror)",
+    "url": "https://igs.bkg.bund.de/root_ftp/IGS/BRDC/",
+    "authors": ["International GNSS Service", "BKG (German Federal Agency for Cartography and Geodesy)"],
+    "summary": "Daily multi-GNSS RINEX navigation files that merge the broadcast ephemerides collected across the IGS network, mirrored by BKG over HTTPS and organised by year and day of year. The standard way to get a real ephemeris for a past date when simulating GNSS signals or reprocessing recorded observations.",
+    "key_takeaways": [
+      "Feed a past date's ephemeris to a signal simulator such as gps-sdr-sim or to an SPP solver",
+      "No account needed on the BKG HTTPS mirror",
+      "Broadcast orbits, not precise products; use IGS final orbits when centimetre accuracy matters"
+    ],
+    "concepts": ["concept:datasets-benchmarks", "concept:gnss", "concept:gnss-sdr"],
+    "tags": ["igs", "bkg", "rinex-nav", "ephemeris", "brdc"],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {"id": "sample:gnss-signal-chain", "rel": "dataset_for"},
+      {"id": "repo:osqzss/gps-sdr-sim", "rel": "has_code"},
+      {"id": "res:bkg-ntrip-about", "rel": "same_author"}
+    ]
+  },
+  {
+    "id": "res:usgs-3dep-planetary-computer",
+    "kind": "dataset",
+    "title": "USGS 3DEP seamless DEMs on Microsoft Planetary Computer",
+    "url": "https://planetarycomputer.microsoft.com/dataset/3dep-seamless",
+    "authors": ["U.S. Geological Survey", "Microsoft Planetary Computer"],
+    "summary": "The USGS 3D Elevation Program seamless bare-earth DEMs for the US, served as Cloud-Optimized GeoTIFFs through Planetary Computer's STAC API with the same SAS signing as NAIP. Licensed PDDL-1.0 per the STAC collection; the vpr-large-area sample uses it to get ground elevation under each drone frame.",
+    "key_takeaways": [
+      "Same STAC search and signing flow as NAIP, so one helper covers imagery and terrain",
+      "Gives ground height under a frame to turn barometric or GNSS altitude into height above ground",
+      "US only; outside the US use Copernicus GLO-30"
+    ],
+    "concepts": ["concept:datasets-benchmarks", "concept:terrain-nav", "concept:gis-mapping"],
+    "tags": ["3dep", "dem", "usgs", "stac", "cog", "planetary-computer"],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {"id": "sample:vpr-large-area", "rel": "dataset_for"},
+      {"id": "repo:stac-utils/pystac-client", "rel": "has_code"},
+      {"id": "res:naip-planetary-computer", "rel": "same_author"}
+    ]
+  },
+  {
+    "id": "res:odm-aukerman-ebee-dataset",
+    "kind": "dataset",
+    "title": "OpenDroneMap Aukerman Park eBee image set",
+    "url": "https://github.com/OpenDroneMap/odm_data_aukerman",
+    "authors": ["OpenDroneMap"],
+    "summary": "A CC0 set of nadir photos from a senseFly eBee survey of Aukerman Park, Ohio, distributed by OpenDroneMap as a photogrammetry test dataset, with EXIF GPS in each frame. The geolocalization samples use these real drone frames as queries against NAIP orthophotos of the same park.",
+    "key_takeaways": [
+      "Real fixed-wing drone frames with a public-domain licence and EXIF positions as approximate truth",
+      "Overlaps several NAIP epochs, so map-age effects can be measured on real imagery",
+      "EXIF GPS is a consumer-grade fix, not survey truth"
+    ],
+    "concepts": ["concept:datasets-benchmarks", "concept:visual-geolocalization", "concept:place-recognition"],
+    "tags": ["ebee", "drone-imagery", "cc0", "photogrammetry", "opendronemap"],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {"id": "sample:geoloc-license-clean", "rel": "dataset_for"},
+      {"id": "sample:vpr-large-area", "rel": "dataset_for"},
+      {"id": "repo:opendronemap/odm", "rel": "has_code"},
+      {"id": "res:naip-planetary-computer", "rel": "uses"}
+    ]
+  },
+  {
+    "id": "res:nasa-skyview-virtual-observatory",
+    "kind": "dataset",
+    "title": "NASA SkyView virtual observatory",
+    "url": "https://skyview.gsfc.nasa.gov/current/cgi/titlepage.pl",
+    "authors": ["NASA Goddard Space Flight Center"],
+    "summary": "A NASA service that cuts FITS images with a reference WCS from many all-sky surveys at any position, scale and projection. The celestial star-tracker sample pulls cutouts of the Mellinger optical all-sky mosaic to score plate-solving accuracy against a known attitude.",
+    "key_takeaways": [
+      "Free reference star fields with known pointing for testing lost-in-space star trackers",
+      "Under load it can answer with an HTML 'Too Many Processes' page instead of FITS; retry and validate",
+      "Survey mosaics are not camera frames: no lens distortion, noise or stray light of a real sensor"
+    ],
+    "concepts": ["concept:datasets-benchmarks", "concept:celestial-nav"],
+    "tags": ["skyview", "fits", "star-field", "plate-solving", "mellinger"],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {"id": "sample:celestial-star-tracker", "rel": "dataset_for"},
+      {"id": "repo:smroid/cedar-solve", "rel": "uses"}
+    ]
+  },
+  {
+    "id": "res:jpl-de421-ephemeris",
+    "kind": "dataset",
+    "title": "JPL DE421 planetary ephemeris (NAIF SPK kernel)",
+    "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/a_old_versions/",
+    "authors": ["NASA JPL Solar System Dynamics / NAIF"],
+    "summary": "The DE421 planetary and lunar ephemeris as a NAIF SPK binary kernel (de421.bsp, about 16 MB), an older but compact JPL Development Ephemeris commonly loaded with Skyfield. Celestial navigation code needs it to place the Sun, Moon and planets and to compute observer geometry.",
+    "key_takeaways": [
+      "Small, offline ephemeris adequate for celestial fixes; newer DE files exist under the same NAIF tree",
+      "Load with Skyfield; no account needed",
+      "Kept under a_old_versions on the NAIF server"
+    ],
+    "concepts": ["concept:datasets-benchmarks", "concept:celestial-nav", "concept:space-nav"],
+    "tags": ["ephemeris", "jpl", "naif", "spk", "skyfield"],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {"id": "sample:celestial-star-tracker", "rel": "dataset_for"},
+      {"id": "repo:skyfielders/python-skyfield", "rel": "has_code"}
+    ]
+  },
+  {
+    "id": "res:natural-earth-vectors",
+    "kind": "dataset",
+    "title": "Natural Earth vector data",
+    "url": "https://www.naturalearthdata.com/downloads/10m-physical-vectors/",
+    "authors": ["Natural Earth (NACIS volunteers)"],
+    "summary": "Public-domain world vector layers (land, coastline, countries) at 1:10m, 1:50m and 1:110m scales. Samples use the 10 m land polygon as an 'is this position on land' mask for AIS plausibility checks and the 50 m country borders as a basemap for interference maps.",
+    "key_takeaways": [
+      "Public domain, small downloads, no login",
+      "At 1:10m, canals, fjord heads and harbours are drawn as land: most 'on land' AIS alerts in the sample were coastline resolution",
+      "Use a large-scale water mask for harbour-level checks"
+    ],
+    "concepts": ["concept:datasets-benchmarks", "concept:gis-mapping", "concept:maritime-nav"],
+    "tags": ["natural-earth", "coastline", "basemap", "public-domain", "shapefile"],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {"id": "sample:maritime-ais-spoofing", "rel": "dataset_for"},
+      {"id": "sample:osint-jamming-map", "rel": "dataset_for"}
+    ]
+  },
+  {
+    "id": "res:openstreetmap-overpass-api",
+    "kind": "dataset",
+    "title": "OpenStreetMap data via the Overpass API",
+    "url": "https://wiki.openstreetmap.org/wiki/Overpass_API",
+    "authors": ["OpenStreetMap contributors"],
+    "summary": "A read-only query API over the OpenStreetMap database that returns features (coastlines, bridges, wind turbines, buoys) inside a bounding box. The USV GNSS-denied sample builds its radar chart and landmark set from Overpass queries; OSM data is under ODbL with attribution.",
+    "key_takeaways": [
+      "Quick way to build a real chart or landmark map for any region",
+      "Public endpoints rate-limit; keep fallbacks and cache results",
+      "If the simulated sensor sees the same OSM map the matcher uses, error numbers are optimistic"
+    ],
+    "concepts": ["concept:datasets-benchmarks", "concept:gis-mapping", "concept:maritime-nav"],
+    "tags": ["openstreetmap", "overpass", "odbl", "landmarks", "coastline"],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {"id": "sample:usv-gnss-denied-nav", "rel": "dataset_for"},
+      {"id": "repo:gboeing/osmnx", "rel": "has_code"}
+    ]
+  }
+]
