@@ -188,6 +188,9 @@ STATEMENTS = (
     ("An LLM assistant that tells operators what to do when navigation is jammed", {22}, {22}),
     ("Swarm of drones must keep formation without GNSS using relative ranging", {10}, {10}),
 )
+# below the floor: the decoder has no cue for "infantry", "squad", "building"; row 9 must still come first
+WEAK = ("Give an infantry squad on foot a way to know where each member is inside a multi-storey building "
+        "with no GPS, and share it with the platoon leader", 9)
 MINI_DECODER = """# t
 | Rows | Words in the statement | Read as |
 |---|---|---|
@@ -221,6 +224,25 @@ class Decode(unittest.TestCase):
         text = STATEMENTS[0][0]
         self.assertEqual(mcp_server.query.decode(text), mcp_server.query.decode(text))
 
+    @unittest.skipUnless(HAVE_DECODER, "no decoder doc")
+    def test_floor_and_nonsense(self):
+        q = mcp_server.query
+        text, row = WEAK
+        rows = q.decode(text)
+        self.assertEqual(rows[0]["row"], row)
+        self.assertTrue(all(r["low_confidence"] for r in rows))
+        self.assertIn("low confidence", q.format_decoded(rows))
+        self.assertFalse(q.decode(STATEMENTS[0][0])[0]["low_confidence"])
+        for junk in ("Bake a chocolate cake for the team", "Plan the office holiday party for the hours after work"):
+            self.assertEqual(q.decode(junk), [], junk)
+
+    def test_triggers_keep_stopwords(self):
+        q = mcp_server.query
+        self.assertEqual(q.pattern("how long"), ("how", "long"))
+        self.assertFalse(q.has_seq(q.trigger_tokens("a long tunnel network"), q.pattern("how long")))
+        self.assertTrue(q.has_seq(q.trigger_tokens("How long can we fly"), q.pattern("how long")))
+        self.assertTrue(q.has_seq(q.trigger_tokens("jammed or spoofed"), q.pattern("jammed and spoofed")))
+
     def test_parser_tolerates_reordered_columns_and_new_rows(self):
         rows, triggers = mcp_server.query.decoder_rows(MINI_DECODER)
         self.assertEqual([r["row"] for r in rows], [1, 2])
@@ -231,7 +253,8 @@ class Decode(unittest.TestCase):
         self.assertEqual(rows[1]["cards"][0]["id"], "repo:gitlab.com/g/y")
         self.assertEqual(len(triggers), 2)
         # "+" is a conjunction: "detect" alone does not fire the trigger
-        self.assertEqual(mcp_server.query.decode("detect it", text=MINI_DECODER)[0]["matched_wording"], [])
+        alone = {r["row"]: r for r in mcp_server.query.decode("detect the magnet", text=MINI_DECODER)}
+        self.assertEqual(alone[1]["matched_wording"], [])
         hit = mcp_server.query.decode("detect the jammers", text=MINI_DECODER)[0]
         self.assertEqual(hit["row"], 1)
         self.assertEqual(hit["matched_wording"], ["detect", "jamming / interference"])
@@ -261,10 +284,15 @@ class Decode(unittest.TestCase):
         out = json.loads(r["content"][0]["text"])
         self.assertEqual(len(out["rows"]), 1)
         self.assertEqual(set(out["rows"][0]), {"row", "name", "approach", "start_from", "cards", "risk",
-                                               "matched_wording", "keywords", "score"})
+                                               "matched_wording", "keywords", "score", "low_confidence"})
+        self.assertEqual(out["confidence"], "ok")
         self.assertIn("Untrusted", out["untrusted"])
+        out = json.loads(call("decode", statement=WEAK[0])["result"]["content"][0]["text"])
+        self.assertEqual(out["confidence"], "low")
+        self.assertIn("by hand", out["next"])
         out = json.loads(call("decode", statement="hello world")["result"]["content"][0]["text"])
         self.assertEqual(out["rows"], [])
+        self.assertEqual(out["confidence"], "none")
         self.assertIn("by hand", out["next"])
         for bad in ({"statement": 5}, {}, {"statement": "x", "limit": "2"}):
             self.assertTrue(call("decode", **bad)["result"]["isError"], bad)

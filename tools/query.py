@@ -253,15 +253,30 @@ DECODER_DOC = "docs/problem-statement-decoder.md"
 DECODE_MAX_ROWS = 3
 DECODE_TRIGGER_W = 2.0   # per matched trigger group, times the row's position decay in the Rows cell
 DECODE_TRIGGER_DECAY = 0.5
-DECODE_NAME_W = 1.0      # idf of statement tokens found in the row's problem statement
-DECODE_APPROACH_W = 0.3  # idf of statement tokens found in the row's approach
-DECODE_KEEP = 0.4        # rows after the first are kept when they score at least this share of the best
+DECODE_PHRASE_W = 1.0    # extra share per additional word of a multi-word trigger: "ground robot" beats "underground"
+# idf of statement tokens found in each row column; the problem statement is the row's own wording
+DECODE_FIELD_W = {"name": 1.5, "approach": 0.3, "pitch": 0.3, "risk": 0.15, "datasets": 0.15}
+DECODE_KEEP = 0.35       # rows after the first are kept when they score at least this share of the best
+# Calibrated on tools/decode_eval.json (python3 tools/decode_eval.py --sweep): a best row under DECODE_FLOOR
+# is returned flagged low_confidence; a statement that shares fewer than DECODE_MIN_EVIDENCE distinct words
+# with all rows together (a single generic word such as "team" or "hours") gets no row at all.
+DECODE_FLOOR = 5.0
+DECODE_MIN_EVIDENCE = 2
 DECODE_KEYWORD_CARDS = 2
 DECODE_NUM_RATIO = 2.0   # "10 km" in a statement matches a "5 km" trigger, not a "30 km" one
 # "detect" meets "detection", "jamming" meets "jammer": the ranker's stemmer keeps these apart on purpose
 DECODE_SUFFIXES = ("ation", "ion", "er", "or")
 DECODE_ROOT_MIN = 4
 DECODE_WINDOW_SLACK = 2  # a multi-word trigger matches its words in any order within len + slack tokens
+# Triggers keep the search stopwords ("how long" must not fire on "long"); only these connectors are
+# dropped from both the trigger and the statement, so "jammed and spoofed" still meets "jammed or spoofed".
+DECODE_CONNECTORS = frozenset("a an the and or".split())
+# Generic English words in the row columns that would match any statement; triggers still see them.
+DECODE_STOP = STOP | frozenset("after before each every must need know give way share keep make get use only also "
+                               "no up out over through while more less one two three many much some other own "
+                               "show want new good able long plan".split())
+DECODE_LOW_NOTE = ("low confidence: no row clearly matches; read docs/problem-statement-decoder.md by hand "
+                   "and run search with your own nouns")
 LINK = re.compile(r"\[([^\]]*)\]\(([^)]*)\)")
 
 
@@ -294,8 +309,16 @@ def plain(cell):
     return re.sub(r"\s+", " ", re.sub(r"[`*]", "", LINK.sub(r"\1", cell))).strip()
 
 
+def trigger_tokens(text):
+    """Decode-only tokens: stemmed like search, but stopwords stay so phrase triggers keep their meaning."""
+    text = text.lower()
+    for rx, rep in NORMALIZE:
+        text = rx.sub(rep, text)
+    return [stem(t) for t in re.split(r"[^a-z0-9]+", text) if t and t not in DECODE_CONNECTORS]
+
+
 def pattern(text):
-    return tuple(tokens(text))
+    return tuple(trigger_tokens(text))
 
 
 def root(t):
@@ -382,7 +405,7 @@ def decoder_rows(text=None):
             ni = header.index("#")
             col = {k: column(header, *keys) for k, keys in (
                 ("name", ("problem statement",)), ("approach", ("approach",)), ("stack", ("stack",)),
-                ("datasets", ("dataset",)), ("start", ("start from",)), ("risk", ("risk",)))}
+                ("datasets", ("dataset",)), ("start", ("start from",)), ("risk", ("risk",)), ("pitch", ("pitch",)))}
             for cells in body:
                 if len(cells) <= ni or not cells[ni].isdigit():
                     continue
@@ -390,7 +413,7 @@ def decoder_rows(text=None):
                 rows.append({"row": int(cells[ni]), "name": plain(get("name")), "approach": plain(get("approach")),
                              "start_from": links(get("start"), "sample"), "start_from_text": plain(get("start")),
                              "cards": links(get("stack"), "card"), "datasets": plain(get("datasets")),
-                             "risk": plain(get("risk"))})
+                             "risk": plain(get("risk")), "pitch": plain(get("pitch"))})
     return rows, triggers
 
 
@@ -403,49 +426,62 @@ def row_keywords(row):
 
 
 def decode(statement, limit=DECODE_MAX_ROWS, text=None):
-    """Top decoder rows for a problem statement: trigger wording plus idf overlap with each row. Deterministic."""
+    """Top decoder rows for a problem statement: trigger wording plus idf overlap with each row's columns.
+    Deterministic. Every row carries low_confidence; [] when nothing or only one generic word matched."""
     rows, triggers = decoder_rows(text)
     if not rows:
         return []
-    seq = tokens(statement)
-    toks = set(seq)
-    docs = {r["row"]: (set(tokens(r["name"])), set(tokens(r["approach"]))) for r in rows}
+    seq = trigger_tokens(statement)
+    toks = {stem(t) for t in words(statement) if t not in DECODE_STOP}
+    fields = {r["row"]: {f: {stem(t) for t in words(r.get(f, "")) if t not in DECODE_STOP} for f in DECODE_FIELD_W}
+              for r in rows}
     df = defaultdict(int)
-    for name_t, appr_t in docs.values():
-        for t in name_t | appr_t:
+    for cols in fields.values():
+        for t in set().union(*cols.values()):
             df[t] += 1
     idf = lambda t: math.log(1 + (len(rows) - df[t] + 0.5) / (df[t] + 0.5))  # noqa: E731
     score = {r["row"]: 0.0 for r in rows}
     why = {r["row"]: [] for r in rows}
+    evidence = {r["row"]: set() for r in rows}
     for tr in triggers:
-        hit = []
+        hit, used = [], set()
         for side in tr["sides"]:
-            got = [g["text"] for g in side if any(has_seq(seq, p) for p in g["patterns"])]
+            got = [g for g in side if any(has_seq(seq, p) for p in g["patterns"])]
             if not got:
                 hit = []
                 break
             hit += got
         if not hit:
             continue
+        weight = 0.0
+        for g in hit:
+            best = max((p for p in g["patterns"] if has_seq(seq, p)), key=len)
+            weight += 1 + DECODE_PHRASE_W * (len(best) - 1)
+            used |= {s for s in seq for t in best if tok_match(t, s)}
         for pos, n in enumerate(tr["rows"]):
             if n in score:
-                score[n] += DECODE_TRIGGER_W * len(hit) / (1 + DECODE_TRIGGER_DECAY * pos)
-                why[n] += [h for h in hit if h not in why[n]]
-    for n, (name_t, appr_t) in docs.items():
-        hit_name = {t for t in name_t if any(tok_match(t, s, False) for s in toks)}
-        hit_appr = {t for t in appr_t - name_t if any(tok_match(t, s, False) for s in toks)}
-        score[n] += DECODE_NAME_W * sum(idf(t) for t in hit_name) + DECODE_APPROACH_W * sum(idf(t) for t in hit_appr)
+                score[n] += DECODE_TRIGGER_W * weight / (1 + DECODE_TRIGGER_DECAY * pos)
+                why[n] += [g["text"] for g in hit if g["text"] not in why[n]]
+                evidence[n] |= used
+    for n, cols in fields.items():
+        seen = set()
+        for f, w in DECODE_FIELD_W.items():
+            hit = {t for t in cols[f] - seen if any(tok_match(t, s, False) for s in toks)}
+            score[n] += w * sum(idf(t) for t in hit)
+            seen |= cols[f]
+            evidence[n] |= {s for s in toks for t in hit if tok_match(t, s, False)}
     ranked = sorted((r for r in rows if score[r["row"]] > 0), key=lambda r: (-score[r["row"]], r["row"]))
-    if not ranked:
+    if not ranked or len(set().union(*(evidence[r["row"]] for r in ranked))) < DECODE_MIN_EVIDENCE:
         return []
     best = score[ranked[0]["row"]]
+    low = best < DECODE_FLOOR
     keep = [r for i, r in enumerate(ranked[:max(1, limit)]) if i == 0 or score[r["row"]] >= DECODE_KEEP * best]
-    return [{**r, "score": round(score[r["row"]], 3), "matched_wording": why[r["row"]],
+    return [{**r, "score": round(score[r["row"]], 3), "low_confidence": low, "matched_wording": why[r["row"]],
              "keywords": row_keywords(r)} for r in keep]
 
 
 def format_decoded(rows):
-    out = []
+    out = [DECODE_LOW_NOTE, ""] if rows and rows[0]["low_confidence"] else []
     for r in rows:
         out.append(f"row {r['row']}: {r['name']}  (score {r['score']})")
         if r["matched_wording"]:
@@ -456,7 +492,8 @@ def format_decoded(rows):
         out.append("  cards:      " + ", ".join(c["name"] for c in r["cards"]))
         out.append("  risk:       " + r["risk"])
         out.append(f'  search:     python3 tools/query.py search "{r["keywords"]}"')
-    return "\n".join(out) if out else "no decoder row matched; read docs/problem-statement-decoder.md"
+    return "\n".join(out) if out else ("no decoder row matched (the statement may be outside the hub's scope); "
+                                       "read docs/problem-statement-decoder.md by hand or run search with your own nouns")
 
 
 def load():

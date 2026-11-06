@@ -69,7 +69,9 @@ TOOLS = [
         "description": "Match a pasted problem statement to 1-3 rows of the problem-statement decoder "
                        "(guide:problem-statement-decoder) by its wording triggers and row text. Deterministic, "
                        "no LLM. Each row: name, approach, start_from samples, cards, risk, the wording that "
-                       "matched and keywords to pass to search. Use read on the decoder for stack, datasets "
+                       "matched and keywords to pass to search. confidence \"low\" means no row clearly fits: "
+                       "read the decoder by hand and search with your own nouns; no rows means the statement "
+                       "shares almost nothing with the decoder. Use read on the decoder for stack, datasets "
                        "and pitch. " + READ_NOTE,
         "inputSchema": {"type": "object", "required": ["statement"], "properties": {
             "statement": {"type": "string", "description": "the problem statement as given, any length up to "
@@ -178,12 +180,17 @@ def tool_decode(args):
     limit = int_arg(args, "limit", query.DECODE_MAX_ROWS, 1, query.DECODE_MAX_ROWS)
     rows = query.decode(statement[:MAX_STATEMENT_CHARS], limit,
                         clean_text((query.ROOT / query.DECODER_DOC).read_text()))
-    keep = ("row", "name", "approach", "start_from", "cards", "risk", "matched_wording", "keywords", "score")
-    return {"rows": [{k: r[k] for k in keep} for r in rows],
-            "untrusted": READ_NOTE,
-            "next": "search with each row's keywords; read guide:problem-statement-decoder for stack, "
-                    "datasets and pitch" if rows else
-                    "no row matched; read guide:problem-statement-decoder and match the wording by hand"}
+    keep = ("row", "name", "approach", "start_from", "cards", "risk", "matched_wording", "keywords", "score",
+            "low_confidence")
+    low = bool(rows) and rows[0]["low_confidence"]
+    if not rows:
+        nxt = "no row matched; read guide:problem-statement-decoder and match the wording by hand"
+    elif low:
+        nxt = query.DECODE_LOW_NOTE.replace("docs/problem-statement-decoder.md", "guide:problem-statement-decoder")
+    else:
+        nxt = "search with each row's keywords; read guide:problem-statement-decoder for stack, datasets and pitch"
+    return {"rows": [{k: r[k] for k in keep} for r in rows], "confidence": "none" if not rows else
+            "low" if low else "ok", "untrusted": READ_NOTE, "next": nxt}
 
 
 def tool_show(args):
