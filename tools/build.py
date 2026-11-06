@@ -305,6 +305,15 @@ def main():
         else:
             text = renderers.get(n["kind"], render_resource)(n, nodes, back, meta)
         (ROOT / page_path(n)).write_text(text)
+    # Merged ids (renamed repos, duplicate resource URLs) keep a stub page so links to the old id survive.
+    for old, new in aliases.items():
+        target = nodes.get(new)
+        if not target or old in nodes:
+            continue
+        stub = {"id": old, "kind": target["kind"]}
+        path = ROOT / page_path(stub)
+        if not path.exists():
+            path.write_text(f"# Moved\n\n`{old}` was merged into {link(nodes, new)}.\n")
 
     write_index(nodes, concepts, members, children)
     write_graph(nodes, edges, meta)
