@@ -2487,6 +2487,22 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:dansarie/pyroughtime": {
+  "archived": false,
+  "description": "A Python 3 Roughtime library and command line client",
+  "forks_count": 5,
+  "full_name": "dansarie/pyroughtime",
+  "html_url": "https://github.com/dansarie/pyroughtime",
+  "language": "Python",
+  "license": "GPL-3.0",
+  "pushed_at": "2026-10-19T19:15:30Z",
+  "stargazers_count": 11,
+  "topics": [
+   "network-time-synchronization",
+   "roughtime"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:daryamalafeeva/srns": {
   "archived": false,
   "description": "Homework on course \"Features of satellite radio navigation systems GPS, GLONASS, Galileo, Beidou\"",
@@ -3030,6 +3046,28 @@
   "pushed_at": "2025-07-21T13:05:35Z",
   "stargazers_count": 32,
   "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:epagris/flexptp": {
+  "archived": false,
+  "description": "Precision Time Protocol implementation for microcontrollers.",
+  "forks_count": 20,
+  "full_name": "epagris/flexPTP",
+  "html_url": "https://github.com/epagris/flexPTP",
+  "language": "C",
+  "license": "MIT",
+  "pushed_at": "2026-10-27T19:00:13Z",
+  "stargazers_count": 65,
+  "topics": [
+   "embedded",
+   "flexptp",
+   "gptp",
+   "ieee1588",
+   "microcontroller",
+   "ptp",
+   "timesync",
+   "tsn"
+  ],
   "fetched": "2026-11-06"
  },
  "repo:eprosima/micro-xrce-dds-agent": {
@@ -4335,6 +4373,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:groundstate/time-transfer-tools": {
+  "archived": false,
+  "description": "Tools for analysing time-transfer data, including CGGTTS and RINEX observation files",
+  "forks_count": 4,
+  "full_name": "groundstate/time-transfer-tools",
+  "html_url": "https://github.com/groundstate/time-transfer-tools",
+  "language": "MATLAB",
+  "license": "MIT",
+  "pushed_at": "2025-11-13T03:27:47Z",
+  "stargazers_count": 10,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:grupo-semear-usp/swarm_in_blocks": {
   "archived": false,
   "description": "Swarm In Blocks project by team Atena - SEMEAR group.",
@@ -4428,6 +4479,19 @@
    "hamradio",
    "radio"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:hamsternz/mmcm_gpsdo": {
+  "archived": false,
+  "description": "An all-digital GPS disciplined oscillator using MMCM phase shift. ",
+  "forks_count": 1,
+  "full_name": "hamsternz/MMCM_GPSDO",
+  "html_url": "https://github.com/hamsternz/MMCM_GPSDO",
+  "language": "VHDL",
+  "license": null,
+  "pushed_at": "2022-09-01T21:19:29Z",
+  "stargazers_count": 33,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:hcarlsso/zupt-aided-ins": {
@@ -5148,6 +5212,25 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:int08h/roughenough": {
+  "archived": false,
+  "description": "Rugged and performant Roughtime (RFC 10049) server and client implementation",
+  "forks_count": 24,
+  "full_name": "int08h/roughenough",
+  "html_url": "https://github.com/int08h/roughenough",
+  "language": "Rust",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-11-02T03:07:31Z",
+  "stargazers_count": 149,
+  "topics": [
+   "rfc10049",
+   "roughtime",
+   "rust",
+   "rust-library",
+   "time-sync"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:intellisensing/uav-visloc": {
   "archived": false,
   "description": "UAV-VisLoc: A Large-scale Dataset for UAV Visual Localization",
@@ -5494,6 +5577,19 @@
    "vlf",
    "web-interface"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:jmfriedt/gr-allan": {
+  "archived": false,
+  "description": "Allan deviation plot for GNU Radio",
+  "forks_count": 0,
+  "full_name": "jmfriedt/gr-allan",
+  "html_url": "https://github.com/jmfriedt/gr-allan",
+  "language": "CMake",
+  "license": "GPL-3.0",
+  "pushed_at": "2023-07-05T15:10:04Z",
+  "stargazers_count": 8,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:joansola/slamtb": {
@@ -6458,6 +6554,31 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:lularible/ptp-book": {
+  "archived": false,
+  "description": "A comprehensive open-source book on the Precision Time Protocol (IEEE 1588/gPTP). From thought experiments to protocol internals, LinuxPTP source code analysis, and a hands-on ptp-lite implementation (~1000 lines C). A complete guide from theory to running code.",
+  "forks_count": 15,
+  "full_name": "Lularible/ptp-book",
+  "html_url": "https://github.com/Lularible/ptp-book",
+  "language": "C",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-10-22T03:36:17Z",
+  "stargazers_count": 229,
+  "topics": [
+   "automotive",
+   "book",
+   "c",
+   "embedded",
+   "gptp",
+   "ieee1588",
+   "linuxptp",
+   "precision-time-protocol",
+   "ptp",
+   "time-synchronization",
+   "tutorial"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:luoxubo/jointloc": {
   "archived": false,
   "description": "[IROS 2024] JointLoc: A Real-time Visual Localization Framework for Planetary UAVs Based on Joint Relative and Absolute Pose Estimation",
@@ -7052,6 +7173,34 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:meinberg-sync/flashptpd": {
+  "archived": true,
+  "description": "An experimental C++17 implementation of a new Client/Server-based approach to IEEE1588 (Precision Time Protocol, PTP)",
+  "forks_count": 6,
+  "full_name": "meinberg-sync/flashptpd",
+  "html_url": "https://github.com/meinberg-sync/flashptpd",
+  "language": "C++",
+  "license": "MIT",
+  "pushed_at": "2024-07-02T13:12:40Z",
+  "stargazers_count": 51,
+  "topics": [
+   "client-server",
+   "flashptp",
+   "flashptpd",
+   "hardware-timestamping",
+   "ieee1588",
+   "linux",
+   "linuxptp",
+   "ntp",
+   "phc",
+   "ptp",
+   "ptp4l",
+   "synchronization",
+   "time",
+   "unicast"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:meta/time": {
   "archived": false,
   "description": "Meta's Time libraries",
@@ -7523,6 +7672,48 @@
   "pushed_at": "2026-10-20T09:53:28Z",
   "stargazers_count": 37,
   "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:mlichvar/ntpperf": {
+  "archived": false,
+  "description": "Tool for measuring performance of NTP servers and PTP masters",
+  "forks_count": 13,
+  "full_name": "mlichvar/ntpperf",
+  "html_url": "https://github.com/mlichvar/ntpperf",
+  "language": "C",
+  "license": "GPL-2.0",
+  "pushed_at": "2026-11-02T13:13:26Z",
+  "stargazers_count": 79,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:montecri/gnsstimeserver": {
+  "archived": false,
+  "description": "Ethernet/WiFi-enabled GNSS (GPS, BeiDou, GLONASS, Galileo) fed NTP/RDATE/PTP server based on ESP8266/ESP32 and Arduino",
+  "forks_count": 31,
+  "full_name": "Montecri/GNSSTimeServer",
+  "html_url": "https://github.com/Montecri/GNSSTimeServer",
+  "language": "C",
+  "license": "MIT",
+  "pushed_at": "2026-11-01T23:36:56Z",
+  "stargazers_count": 242,
+  "topics": [
+   "arduino",
+   "clock",
+   "esp32",
+   "esp8266",
+   "ethernet",
+   "gnss",
+   "gps",
+   "ntp",
+   "ptp",
+   "rdate",
+   "rfc868",
+   "time",
+   "timeserver",
+   "w5500",
+   "wifi"
+  ],
   "fetched": "2026-11-06"
  },
  "repo:moos-ivp/moos-ivp": {
@@ -8521,6 +8712,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:openshift/linuxptp-daemon": {
+  "archived": false,
+  "description": "Linuxptp daemon runs as kubernetes DaemonSet and manages linuxptp processes such as ptp4l, phc2sys and timemaster.",
+  "forks_count": 43,
+  "full_name": "openshift/linuxptp-daemon",
+  "html_url": "https://github.com/openshift/linuxptp-daemon",
+  "language": "Go",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-11-06T15:17:33Z",
+  "stargazers_count": 30,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:openskynetwork/opensky-api": {
   "archived": false,
   "description": "Python and Java bindings for the OpenSky Network REST API",
@@ -9254,6 +9458,19 @@
   "license": null,
   "pushed_at": "2026-03-11T12:41:32Z",
   "stargazers_count": 11,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:ptp-sim/libptp": {
+  "archived": false,
+  "description": "Library to simulate the Precision Time Protocol (PTP, IEEE 1588) in OMNeT++",
+  "forks_count": 6,
+  "full_name": "ptp-sim/libPTP",
+  "html_url": "https://github.com/ptp-sim/libPTP",
+  "language": "C++",
+  "license": "GPL-3.0",
+  "pushed_at": "2021-07-22T19:09:31Z",
+  "stargazers_count": 35,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -12952,6 +13169,19 @@
    "feature-matching",
    "pose-estimation"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:zlab-pub/wifi-ptp": {
+  "archived": false,
+  "description": "Precision Time Protocol (PTP) for Wi-Fi",
+  "forks_count": 10,
+  "full_name": "zlab-pub/wifi-ptp",
+  "html_url": "https://github.com/zlab-pub/wifi-ptp",
+  "language": "C",
+  "license": null,
+  "pushed_at": "2024-07-01T14:14:09Z",
+  "stargazers_count": 73,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:zm0612/eskf-gps-imu-fusion": {

@@ -1,0 +1,530 @@
+[
+ {
+  "id": "repo:gitlab.com/ohwr/project/wrpc-sw",
+  "kind": "repo",
+  "name": "White Rabbit PTP Core software (wrpc-sw)",
+  "url": "https://gitlab.com/ohwr/project/wrpc-sw",
+  "summary": "Software for the White Rabbit PTP Core (WRPC): a bare-metal PTP daemon (PPSi) and drivers for the WRPC HDL that runs on a soft CPU inside the FPGA, giving a node sub-ns sync over fibre.",
+  "why_it_matters": "The node side of White Rabbit: if a team has a WR-capable FPGA board, this is what turns it into a synchronised timing endpoint.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "white-rabbit",
+   "ptp",
+   "fpga",
+   "ppsi",
+   "ohwr"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Needs WR hardware (e.g. SPEC board + WR switch) and the wr-cores gateware. Not a 48 h starting point without the kit on the table; useful as reference for how WR extends PTP with phase tracking and link calibration.",
+  "related": [
+   {
+    "id": "repo:gitlab.com/ohwr/project/wr-cores",
+    "rel": "depends_on"
+   },
+   {
+    "id": "repo:gitlab.com/ohwr/project/ppsi",
+    "rel": "depends_on"
+   },
+   {
+    "id": "repo:gitlab.com/ohwr/project/wr-switch-sw",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:gitlab.com/ohwr/project/white-rabbit",
+  "kind": "repo",
+  "name": "White Rabbit (OHWR project hub)",
+  "url": "https://gitlab.com/ohwr/project/white-rabbit",
+  "summary": "Umbrella OHWR project for White Rabbit, the deterministic Ethernet extension of PTP; the wiki collects specs, hardware lists, user stories and links to all WR sub-projects.",
+  "why_it_matters": "Starting point to find which WR hardware, gateware and calibration notes exist before committing to WR in a timing demo.",
+  "concepts": [
+   "concept:timing",
+   "concept:standards"
+  ],
+  "tags": [
+   "white-rabbit",
+   "ptp",
+   "ohwr",
+   "wiki"
+  ],
+  "language": "",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Read the wiki, not the code. Use it to pick hardware and to cite WR accuracy from the project's own docs.",
+  "related": [
+   {
+    "id": "repo:gitlab.com/ohwr/project/wr-cores",
+    "rel": "same_org"
+   },
+   {
+    "id": "repo:gitlab.com/ohwr/project/wrpc-sw",
+    "rel": "same_org"
+   },
+   {
+    "id": "repo:gitlab.com/ohwr/project/wr-calibration",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:gitlab.com/ohwr/project/wr-calibration",
+  "kind": "repo",
+  "name": "White Rabbit calibration",
+  "url": "https://gitlab.com/ohwr/project/wr-calibration",
+  "summary": "Procedures and notes for calibrating White Rabbit equipment: fixed hardware delays and fibre asymmetry that must be measured for absolute time accuracy.",
+  "why_it_matters": "Calibration is where path asymmetry gets removed in practice; the same A/2 error modelled in sample:timing-network-holdover.",
+  "concepts": [
+   "concept:timing",
+   "concept:calibration"
+  ],
+  "tags": [
+   "white-rabbit",
+   "calibration",
+   "asymmetry",
+   "ohwr"
+  ],
+  "language": "",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Reference reading for explaining why uncalibrated asymmetry biases two-way time transfer.",
+  "related": [
+   {
+    "id": "repo:gitlab.com/ohwr/project/wrpc-sw",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:int08h/roughenough",
+  "kind": "repo",
+  "name": "Roughenough",
+  "url": "https://github.com/int08h/roughenough",
+  "summary": "Rust Roughtime (RFC 10049) server and client with a batching UDP server, optional malfeasance reporting and several key-protection backends (KMS, PKCS#11, SSH agent).",
+  "why_it_matters": "Quickest way to stand up an authenticated rough-time source and a client that checks several servers against each other.",
+  "concepts": [
+   "concept:timing",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "roughtime",
+   "rfc10049",
+   "rust",
+   "authenticated-time"
+  ],
+  "language": "Rust",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "cargo build needs a recent Rust (README states MSRV 1.94.1). Run a local server plus public servers; show the client flagging a server whose time you skew.",
+  "related": [
+   {
+    "id": "repo:cloudflare/roughtime",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:dansarie/pyroughtime",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:dansarie/pyroughtime",
+  "kind": "repo",
+  "name": "pyroughtime",
+  "url": "https://github.com/dansarie/pyroughtime",
+  "summary": "Python Roughtime library and CLI implementing RFC 10049; validates signatures against server long-term keys, queries several servers to catch a misbehaving one, and includes a small test server.",
+  "why_it_matters": "Python is the fastest route to put Roughtime into a hackathon notebook or detector.",
+  "concepts": [
+   "concept:timing",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "roughtime",
+   "rfc10049",
+   "python"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "pip install pycryptodome in the venv. Query several servers, then run the bundled test server with a wrong clock to show detection.",
+  "related": [
+   {
+    "id": "repo:int08h/roughenough",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:mlichvar/ntpperf",
+  "kind": "repo",
+  "name": "ntpperf",
+  "url": "https://github.com/mlichvar/ntpperf",
+  "summary": "Load generator for NTP servers and PTP masters by chrony's author: simulates many clients with raw Ethernet frames via libpcap and reports responses, losses and, with a known direct link, how transmit timestamp accuracy degrades with rate.",
+  "why_it_matters": "Tests whether a time server stays accurate under request floods - a denial-of-service angle on timing infrastructure.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "ntp",
+   "ptp",
+   "benchmark",
+   "load-test",
+   "libpcap"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Needs a dedicated link and routing so responses come back to the test host. Lab tool, not demo material.",
+  "related": [
+   {
+    "id": "repo:gitlab.com/chrony/chrony",
+    "rel": "same_org"
+   },
+   {
+    "id": "repo:mlichvar/clknetsim",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:meinberg-sync/flashptpd",
+  "kind": "repo",
+  "name": "flashptpd",
+  "url": "https://github.com/meinberg-sync/flashptpd",
+  "summary": "Experimental C++17 client/server style PTP from Meinberg: the client sends Sync with a request TLV and the server answers, so no BMCA or master announce is needed. Archived.",
+  "why_it_matters": "Shows a unicast request/response PTP variant close to NTP in shape; useful when thinking about how a client chooses among several servers.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "ptp",
+   "client-server",
+   "meinberg",
+   "c++"
+  ],
+  "language": "C++",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Archived; read for the protocol idea, do not build on it.",
+  "related": [
+   {
+    "id": "repo:nwtime/linuxptp",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:lularible/ptp-book",
+  "kind": "repo",
+  "name": "ptp-book",
+  "url": "https://github.com/Lularible/ptp-book",
+  "summary": "Open book on PTP (IEEE 1588 / gPTP) in Chinese with an English translation: BMCA, the four-timestamp maths, transparent clocks, hardware timestamping, security, a walk through linuxptp source, and a ~1000-line ptp-lite implementation.",
+  "why_it_matters": "Fast self-study path for a team member who has to explain or modify PTP during the event.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "ptp",
+   "book",
+   "linuxptp",
+   "education"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "educational",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Read the English chapters for BMCA and the servo; ptp-lite is small enough to instrument for a delay-attack demo.",
+  "related": [
+   {
+    "id": "repo:nwtime/linuxptp",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:ptp-sim/libptp",
+  "kind": "repo",
+  "name": "LibPTP",
+  "url": "https://github.com/ptp-sim/libPTP",
+  "summary": "OMNeT++/INET library for simulating IEEE 1588-2008 networks: ordinary, boundary and transparent clocks, E2E and P2P delay, a PI servo with pluggable servos and filters, and power-law clock noise via LibPLN.",
+  "why_it_matters": "A packet-level PTP network simulator if a stdlib model is too coarse.",
+  "concepts": [
+   "concept:timing",
+   "concept:simulation"
+  ],
+  "tags": [
+   "ptp",
+   "omnet++",
+   "simulation",
+   "clock-noise"
+  ],
+  "language": "C++",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "OMNeT++ setup is heavy and the repo was last pushed in 2021. Prefer sample:timing-network-holdover or clknetsim unless packet-level detail is required.",
+  "related": [
+   {
+    "id": "repo:mlichvar/clknetsim",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:epagris/flexptp",
+  "kind": "repo",
+  "name": "flexPTP",
+  "url": "https://github.com/epagris/flexPTP",
+  "summary": "PTP (IEEE 1588, also 802.1AS) for Cortex-M4/M7 microcontrollers: master and slave ordinary clock, E2E and P2P, L2 and L4 transports, one- and two-step. MIT licence, with a journal paper.",
+  "why_it_matters": "Puts PTP on the MCU next to a sensor, so each sensor node timestamps in a shared timebase.",
+  "concepts": [
+   "concept:timing",
+   "concept:edge-ai"
+  ],
+  "tags": [
+   "ptp",
+   "embedded",
+   "stm32",
+   "802.1as",
+   "mcu"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Needs an MCU with an Ethernet MAC that supports PTP timestamps (STM32F7/H7 class). Good fit for a sensor-network TDOA demo if the boards are at hand.",
+  "related": [
+   {
+    "id": "repo:nwtime/linuxptp",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:zlab-pub/wifi-ptp",
+  "kind": "repo",
+  "name": "Wi-PTP",
+  "url": "https://github.com/zlab-pub/wifi-ptp",
+  "summary": "PTP over Wi-Fi: a patched ath9k driver (Linux 4.19) that timestamps in the Wi-Fi hardware path plus an adjusted linuxptp.",
+  "why_it_matters": "Time sync between drones or ground nodes over Wi-Fi instead of cable.",
+  "concepts": [
+   "concept:timing",
+   "concept:multi-agent"
+  ],
+  "tags": [
+   "ptp",
+   "wifi",
+   "ath9k",
+   "linuxptp",
+   "uav"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Needs Atheros ath9k cards and a kernel rebuild on an old kernel. Cite the idea; do not plan on building it in 48 h.",
+  "related": [
+   {
+    "id": "repo:nwtime/linuxptp",
+    "rel": "extends"
+   }
+  ]
+ },
+ {
+  "id": "repo:openshift/linuxptp-daemon",
+  "kind": "repo",
+  "name": "linuxptp-daemon (OpenShift)",
+  "url": "https://github.com/openshift/linuxptp-daemon",
+  "summary": "Kubernetes DaemonSet that manages ptp4l, phc2sys, ts2phc and timemaster per node, parses their logs into clock-state events, and for u-blox GNSS grandmasters treats a UBX-NAV-STATUS spoofing flag as GNSS loss.",
+  "why_it_matters": "Production code that already wires GNSS spoofing detection into PTP grandmaster state - a concrete reference for clock-state handling and holdover.",
+  "concepts": [
+   "concept:timing",
+   "concept:gnss-interference"
+  ],
+  "tags": [
+   "ptp",
+   "linuxptp",
+   "kubernetes",
+   "telco",
+   "ts2phc",
+   "u-blox",
+   "spoofing-flag"
+  ],
+  "language": "Go",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Read pkg/parser and the ts2phc monitoring code for log parsing and state machines; reuse the regexes to parse your own ptp4l logs. Running it needs OpenShift and E810-class NICs.",
+  "related": [
+   {
+    "id": "repo:nwtime/linuxptp",
+    "rel": "depends_on"
+   }
+  ]
+ },
+ {
+  "id": "repo:groundstate/time-transfer-tools",
+  "kind": "repo",
+  "name": "time-transfer-tools",
+  "url": "https://github.com/groundstate/time-transfer-tools",
+  "summary": "MATLAB classes to read CGGTTS (V1, V2E) and RINEX 2/3 observation files, match observations between two stations and compute averaged differences - the GNSS common-view time transfer workflow.",
+  "why_it_matters": "Lets a team compare two GNSS-timed sites the way timing labs do.",
+  "concepts": [
+   "concept:timing",
+   "concept:gnss"
+  ],
+  "tags": [
+   "cggtts",
+   "common-view",
+   "rinex",
+   "time-transfer",
+   "matlab"
+  ],
+  "language": "MATLAB",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Needs MATLAB. Useful only if CGGTTS files are available (e.g. from a timing lab).",
+  "related": [
+   {
+    "id": "repo:sgl-ut/gnsstk",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:jmfriedt/gr-allan",
+  "kind": "repo",
+  "name": "gr-allan",
+  "url": "https://github.com/jmfriedt/gr-allan",
+  "summary": "GNU Radio sink block that wraps allantools to plot Allan deviation in real time from a stream.",
+  "why_it_matters": "Live ADEV of an SDR-measured frequency or phase offset during a demo.",
+  "concepts": [
+   "concept:timing",
+   "concept:gnss-sdr"
+  ],
+  "tags": [
+   "allan-deviation",
+   "gnu-radio",
+   "allantools"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Tested by the author on GNU Radio 3.10.5; needs allantools installed. Build with cmake.",
+  "related": [
+   {
+    "id": "repo:aewallin/allantools",
+    "rel": "depends_on"
+   }
+  ]
+ },
+ {
+  "id": "repo:montecri/gnsstimeserver",
+  "kind": "repo",
+  "name": "GNSSTimeServer",
+  "url": "https://github.com/Montecri/GNSSTimeServer",
+  "summary": "ESP8266/ESP32 stratum-1 time server fed by a GNSS module and a TCXO-backed RTC, serving NTP and RDATE over WiFi or W5500 Ethernet, with a PTPv2 master edition, web dashboard and battery backup.",
+  "why_it_matters": "Cheapest portable GNSS-fed time source for a field demo network.",
+  "concepts": [
+   "concept:timing",
+   "concept:gnss"
+  ],
+  "tags": [
+   "ntp",
+   "ptp",
+   "esp32",
+   "gnss",
+   "stratum-1",
+   "diy"
+  ],
+  "language": "C",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Bill of materials and firmware in the repo; an ESP32 plus GNSS module with PPS. Accuracy is MCU-class, not NIC hardware timestamping.",
+  "related": [
+   {
+    "id": "repo:geerlingguy/time-pi",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:jclark/satpulse",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:hamsternz/mmcm_gpsdo",
+  "kind": "repo",
+  "name": "MMCM_GPSDO",
+  "url": "https://github.com/hamsternz/MMCM_GPSDO",
+  "summary": "All-digital GPSDO in VHDL for a Basys3 FPGA board: steers the clock with MMCM phase shifts from a GPS 1PPS, showing frequency error on LEDs. Author describes the loop as simple and constants as empirical.",
+  "why_it_matters": "Minimal FPGA disciplining loop to read or extend with holdover logic.",
+  "concepts": [
+   "concept:timing"
+  ],
+  "tags": [
+   "gpsdo",
+   "fpga",
+   "vhdl",
+   "1pps",
+   "xilinx"
+  ],
+  "language": "VHDL",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Needs a Basys3 (Artix-7) and a GPS with PPS. No licence file per GitHub metadata - read, do not copy.",
+  "related": [
+   {
+    "id": "repo:andrewbcn/stm32-gpsdo",
+    "rel": "alternative_to"
+   }
+  ]
+ }
+]

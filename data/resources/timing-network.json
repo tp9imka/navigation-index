@@ -1,0 +1,689 @@
+[
+ {
+  "id": "res:itu-t-g8275-1-ptp-full-support",
+  "kind": "standard",
+  "title": "ITU-T G.8275.1: Precision time protocol telecom profile for phase/time synchronization with full timing support from the network",
+  "url": "https://www.itu.int/rec/T-REC-G.8275.1",
+  "authors": [
+   "ITU-T SG15"
+  ],
+  "year": 2026,
+  "summary": "The telecom PTP profile for networks where every node is a boundary or transparent clock (full on-path support), using Ethernet transport. Current in-force edition per the ITU page is 02/2026 with Amendment 1 (08/2026); the first edition was 2014.",
+  "key_takeaways": [
+   "The profile a 5G fronthaul / TDD backhaul uses to deliver phase from a PRTC",
+   "Assumes every hop timestamps; pairs with G.8273.2 clock limits and the G.8271.1 network budget",
+   "linuxptp ships configs/G.8275.1.cfg"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:standards"
+  ],
+  "tags": [
+   "itu-t",
+   "ptp",
+   "telecom-profile",
+   "full-timing-support",
+   "5g"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "hackathon_fit": "medium",
+  "related": [
+   {
+    "id": "res:itu-t-g8271",
+    "rel": "part_of"
+   },
+   {
+    "id": "res:itu-t-g8273-2-tbc-tsc",
+    "rel": "uses"
+   },
+   {
+    "id": "res:ieee-1588-2019",
+    "rel": "uses"
+   },
+   {
+    "id": "repo:nwtime/linuxptp",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:itu-t-g8275-2-ptp-partial-support",
+  "kind": "standard",
+  "title": "ITU-T G.8275.2: Precision time protocol telecom profile for phase/time synchronization with partial timing support from the network",
+  "url": "https://www.itu.int/rec/T-REC-G.8275.2",
+  "authors": [
+   "ITU-T SG15"
+  ],
+  "year": 2026,
+  "summary": "Telecom PTP profile for networks where some nodes do not support PTP (partial timing support), carried over IPv4/IPv6 unicast. Intended for assisted partial timing support, e.g. a local GNSS receiver with PTP as backup during GNSS outage. In-force edition 02/2026 plus Amendment 1 (08/2026) per the ITU page.",
+  "key_takeaways": [
+   "Unicast PTP over IP through non-PTP-aware routers: asymmetry and packet delay variation are not removed hop by hop",
+   "The APTS case (GNSS primary, PTP as holdover aid) is the closest standard to a GNSS-denied timing fallback",
+   "linuxptp ships configs/G.8275.2.cfg"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:standards",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "itu-t",
+   "ptp",
+   "telecom-profile",
+   "partial-timing-support",
+   "apts",
+   "unicast"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "hackathon_fit": "medium",
+  "related": [
+   {
+    "id": "res:itu-t-g8275-1-ptp-full-support",
+    "rel": "same_author"
+   },
+   {
+    "id": "res:itu-t-g8271",
+    "rel": "part_of"
+   },
+   {
+    "id": "repo:nwtime/linuxptp",
+    "rel": "has_code"
+   },
+   {
+    "id": "sample:timing-network-holdover",
+    "rel": "explains"
+   }
+  ]
+ },
+ {
+  "id": "res:itu-t-g8273-2-tbc-tsc",
+  "kind": "standard",
+  "title": "ITU-T G.8273.2: Timing characteristics of telecom boundary clocks and telecom time synchronous clocks for use with full timing support from the network",
+  "url": "https://www.itu.int/rec/T-REC-G.8273.2",
+  "authors": [
+   "ITU-T SG15"
+  ],
+  "year": 2023,
+  "summary": "Performance limits for telecom boundary clocks (T-BC) and telecom time slave clocks (T-TSC): constant and dynamic time error, noise generation, tolerance and transfer, by clock class. In-force edition 06/2023 with amendments 08/2024 and 11/2025 per the ITU page.",
+  "key_takeaways": [
+   "Defines the clock classes (A/B/C/D) whose per-hop time error sums into the G.8271.1 budget",
+   "Gives the vocabulary for reporting a PTP chain: cTE, dTE, max|TE|",
+   "Use it to set honest per-hop error assumptions in a simulation"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:standards"
+  ],
+  "tags": [
+   "itu-t",
+   "t-bc",
+   "t-tsc",
+   "time-error",
+   "boundary-clock"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "hackathon_fit": "low",
+  "related": [
+   {
+    "id": "res:itu-t-g8275-1-ptp-full-support",
+    "rel": "part_of"
+   },
+   {
+    "id": "res:itu-t-g8271",
+    "rel": "part_of"
+   },
+   {
+    "id": "res:itu-t-g8272-prtc",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:3gpp-ts-38-133-cell-phase-sync",
+  "kind": "standard",
+  "title": "3GPP TS 38.133 (ETSI TS 138 133): NR; Requirements for support of radio resource management - clause 7.4 Cell phase synchronization accuracy",
+  "url": "https://www.etsi.org/deliver/etsi_ts/138100_138199/138133/15.02.00_60/ts_138133v150200p.pdf",
+  "authors": [
+   "3GPP TSG RAN WG4",
+   "ETSI"
+  ],
+  "year": 2018,
+  "summary": "Clause 7.4 defines cell phase synchronization accuracy for TDD as the maximum absolute deviation in frame start timing between any pair of same-frequency cells with overlapping coverage, and requires it to be better than 3 us at the BS antenna connectors (read in V15.2.0, 2018-07). Commonly translated into roughly +-1.5 us per cell against a common reference. The ETSI server lists releases up to V19.6.0; only V15.2.0 was read here.",
+  "key_takeaways": [
+   "5G TDD needs cells within 3 us of each other => roughly +-1.5 us to UTC per cell",
+   "GNSS loss at a TDD site becomes a holdover problem measured against this number",
+   "Linked PDF is the 2018 Release 15 edition; check the current release before quoting clause numbers"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:standards",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "3gpp",
+   "5g-nr",
+   "tdd",
+   "phase-sync",
+   "3-us"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "hackathon_fit": "medium",
+  "related": [
+   {
+    "id": "res:itu-t-g8271",
+    "rel": "cites"
+   },
+   {
+    "id": "sample:timing-network-holdover",
+    "rel": "explains"
+   },
+   {
+    "id": "sample:timing-holdover",
+    "rel": "explains"
+   }
+  ]
+ },
+ {
+  "id": "res:rfc10049-roughtime",
+  "kind": "standard",
+  "title": "RFC 10049: Roughtime: A Protocol for Rough Time Synchronization",
+  "url": "https://www.rfc-editor.org/info/rfc10049",
+  "authors": [
+   "IETF NTP WG"
+  ],
+  "year": 2026,
+  "summary": "The published RFC version of Roughtime: signed, rough (seconds-level) time from several servers, with a chained-nonce scheme so a client can prove a server lied. The hub already indexes the IETF draft; this is the final RFC that current implementations (roughenough, pyroughtime) cite.",
+  "key_takeaways": [
+   "Authenticated time to bootstrap certificate checks or detect a grossly wrong clock, not to discipline an oscillator",
+   "Querying several servers gives cryptographic evidence of misbehaviour"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:standards",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "roughtime",
+   "ietf",
+   "rfc",
+   "authenticated-time"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "hackathon_fit": "medium",
+  "related": [
+   {
+    "id": "res:ietf-roughtime-draft",
+    "rel": "cites"
+   },
+   {
+    "id": "repo:int08h/roughenough",
+    "rel": "has_code"
+   },
+   {
+    "id": "repo:dansarie/pyroughtime",
+    "rel": "has_code"
+   },
+   {
+    "id": "repo:cloudflare/roughtime",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:finkenzeller-2024-ptpsec",
+  "kind": "paper",
+  "title": "PTPsec: Securing the Precision Time Protocol Against Time Delay Attacks Using Cyclic Path Asymmetry Analysis",
+  "url": "https://arxiv.org/abs/2401.10664",
+  "authors": [
+   "Andreas Finkenzeller",
+   "Oliver Butowski",
+   "Emanuel Regnath",
+   "Mohammad Hamad",
+   "Sebastian Steinhorst"
+  ],
+  "year": 2024,
+  "summary": "Detects PTP time delay attacks by measuring round-trip times over redundant network paths and comparing their asymmetry, with a new measurement message on top of IEEE 1588-2019. Evaluated on a hardware testbed; code at tum-esi/ptpsec. Detection relies on at least one redundant path staying symmetric.",
+  "key_takeaways": [
+   "A delay attack is a path asymmetry change - encryption and authentication alone do not stop it",
+   "Cyclic path measurements catch static and incremental delay attacks if one path is clean",
+   "Same idea as the cross-node consistency check in sample:timing-network-holdover"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:ew-resilience",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "ptp",
+   "delay-attack",
+   "path-asymmetry",
+   "tum"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "hackathon_fit": "medium",
+  "related": [
+   {
+    "id": "repo:tum-esi/ptpsec",
+    "rel": "has_code"
+   },
+   {
+    "id": "res:ieee-1588-2019",
+    "rel": "uses"
+   },
+   {
+    "id": "res:finkenzeller-2025-ptpsec-sdn",
+    "rel": "same_author"
+   },
+   {
+    "id": "sample:timing-network-holdover",
+    "rel": "explains"
+   }
+  ]
+ },
+ {
+  "id": "res:finkenzeller-2025-ptpsec-sdn",
+  "kind": "paper",
+  "title": "Securing the Precision Time Protocol with SDN-enabled Cyclic Path Asymmetry Analysis",
+  "url": "https://zenodo.org/records/17294266",
+  "authors": [
+   "Andreas Finkenzeller",
+   "Arne Fucks",
+   "Emanuel Regnath",
+   "Mohammad Hamad",
+   "Sebastian Steinhorst"
+  ],
+  "year": 2025,
+  "summary": "Follow-up to PTPsec that uses software-defined networking to find redundant paths dynamically in arbitrary topologies and then runs the cyclic path asymmetry check against delay attacks. Open-access PDF on Zenodo (CC BY 4.0).",
+  "key_takeaways": [
+   "Removes PTPsec's need for hand-configured redundant paths",
+   "Useful reference for a delay-attack detection demo on a small switched testbed"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:ew-resilience"
+  ],
+  "tags": [
+   "ptp",
+   "sdn",
+   "delay-attack",
+   "tum"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "hackathon_fit": "low",
+  "related": [
+   {
+    "id": "res:finkenzeller-2024-ptpsec",
+    "rel": "same_author"
+   },
+   {
+    "id": "repo:tum-esi/ptpsec",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:ila-eloran-definition-document-2007",
+  "kind": "doc",
+  "title": "Enhanced Loran (eLoran) Definition Document",
+  "url": "https://rntfnd.org/wp-content/uploads/eLoran-Definition-Document-0-1-Released.pdf",
+  "authors": [
+   "International Loran Association"
+  ],
+  "year": 2007,
+  "summary": "High-level definition of eLoran for policy makers, service providers and users: what distinguishes it from Loran-C (UTC-synchronised transmitters, a data channel, differential corrections) and the positioning and timing services it is meant to provide. The linked copy is version 0.1 issued for consultation in January 2007.",
+  "key_takeaways": [
+   "eLoran transmissions are tied to UTC, which is what makes it a GNSS-independent timing source",
+   "Draft for consultation - check later ILA material before quoting requirement numbers"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:signals-of-opportunity",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "eloran",
+   "loran",
+   "ila",
+   "terrestrial-timing"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "hackathon_fit": "low",
+  "related": [
+   {
+    "id": "res:faa-eloran-iat-2014",
+    "rel": "same_author"
+   },
+   {
+    "id": "res:uk-eloran-programme-2025",
+    "rel": "explains"
+   },
+   {
+    "id": "repo:romavis/loranc",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:insidegnss-chronos-eloran-utd-2025",
+  "kind": "blog",
+  "title": "Chronos Technology Tests eLoran Timing Provision in the UK",
+  "url": "https://insidegnss.com/chronos-technology-tests-eloran-timing-provision-in-the-uk/",
+  "authors": [
+   "Inside GNSS"
+  ],
+  "year": 2025,
+  "summary": "Report on the ESA-funded UTC Time Distribution (UTD) project led by Chronos Technology: caesium clocks replaced at the Anthorn eLoran transmitter, and prototype receivers producing UTC-aligned 1PPS from eLoran alone in timing mode. Accuracy is described by the company as comparable to good GNSS timing receivers; no measurement report is linked.",
+  "key_takeaways": [
+   "Current UK evidence that eLoran is being used as a timing (not positioning) backup",
+   "Press account - treat the accuracy statement as a vendor claim"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:assured-pnt",
+   "concept:signals-of-opportunity"
+  ],
+  "tags": [
+   "eloran",
+   "anthorn",
+   "esa",
+   "chronos",
+   "utc"
+  ],
+  "level": "intro",
+  "access": "open",
+  "hackathon_fit": "low",
+  "related": [
+   {
+    "id": "res:uk-eloran-programme-2025",
+    "rel": "explains"
+   },
+   {
+    "id": "res:ila-eloran-definition-document-2007",
+    "rel": "cites"
+   }
+  ]
+ },
+ {
+  "id": "res:uniri-wan-ptp-outlier-filtering-dataset",
+  "kind": "dataset",
+  "title": "Data for \"PTP over wide area networks with offset measurement outlier filtering\"",
+  "url": "https://zenodo.org/records/14231423",
+  "authors": [
+   "Victor Vazquez",
+   "Carlos Megias",
+   "Carmen Velez",
+   "Hector Esteban",
+   "Javier Diaz"
+  ],
+  "year": 2024,
+  "summary": "University of Granada measurements of ptp4l and chrony time transfer over about 200 km of research network between ROA (Spanish UTC lab) and Granada, plus Calnex Paragon-X network emulation runs and free-running NIC stability against a passive hydrogen maser. CSVs give ptp4l offset_raw, offset_sw, delay, frequency adjustment and a hardware 1PPS time error from a frequency counter, and GNSS common-view one-way delays. Zenodo marks the files as restricted (access on request), CC BY 4.0.",
+  "key_takeaways": [
+   "The only dataset found with both ptp4l's own offset estimate and an independent 1PPS truth - exactly what a replay needs",
+   "One-way delays each direction give the real path asymmetry, not an assumed one",
+   "Files are restricted on Zenodo: request access early, it is not a same-day download"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "ptp4l",
+   "chrony",
+   "wan",
+   "time-transfer",
+   "1pps",
+   "path-asymmetry",
+   "zenodo"
+  ],
+  "level": "advanced",
+  "access": "free-registration",
+  "hackathon_fit": "high",
+  "related": [
+   {
+    "id": "repo:nwtime/linuxptp",
+    "rel": "evaluates"
+   },
+   {
+    "id": "repo:gitlab.com/chrony/chrony",
+    "rel": "evaluates"
+   },
+   {
+    "id": "sample:timing-network-holdover",
+    "rel": "dataset_for"
+   },
+   {
+    "id": "repo:aewallin/allantools",
+    "rel": "uses"
+   }
+  ]
+ },
+ {
+  "id": "res:edi-ptp-mobile-network-dataset",
+  "kind": "dataset",
+  "title": "Clock Synchronization Accuracy over Mobile Networks",
+  "url": "https://zenodo.org/records/14230741",
+  "authors": [
+   "Marcis Kalnins"
+  ],
+  "year": 2024,
+  "summary": "PTPv2 (PTPd) time synchronization between two hosts across mobile networks including a private 5G SA network, with the slave's PTPd 'offset from master' log values and an independent PPS-vs-PPS offset measured with an Analog Discovery 2 between the two NICs. Setup schematics included. Single zip, about 60 MB, open, CC BY 4.0. One folder is described in 'Clock Synchronization and Network Delay Evaluation over a Private 5G Standalone Network' (Kalnins, Rusins, Elsts).",
+  "key_takeaways": [
+   "Real asymmetric, high-jitter packet path - a stress case for a PTP servo or for path-asymmetry detection",
+   "PPS truth lets you compare what PTP thinks against what the clocks actually did",
+   "PTPd, not ptp4l; the README warns the logged offset is the servo's view, not true offset"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "ptp",
+   "ptpd",
+   "5g",
+   "mobile-network",
+   "1pps",
+   "zenodo"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "hackathon_fit": "high",
+  "related": [
+   {
+    "id": "repo:ptpd/ptpd",
+    "rel": "evaluates"
+   },
+   {
+    "id": "sample:timing-network-holdover",
+    "rel": "dataset_for"
+   }
+  ]
+ },
+ {
+  "id": "res:kit-iec61850-ptp-gnss-spoofing-dataset",
+  "kind": "dataset",
+  "title": "IEC61850 SV and PTP traffic under GNSS time synchronization attacks",
+  "url": "https://doi.org/10.35097/8k5cjmx5mqrq61qk",
+  "authors": [
+   "Clemens Fruboese (KIT KASTEL)"
+  ],
+  "year": 2026,
+  "summary": "Pseudonymised pcap captures of IEC 61850 Sampled Values and IEEE 1588 PTP traffic from the KIT KASTEL energy security lab while the substation's GNSS-fed time server is spoofed. About 592 GB tar on KIT RADAR, CC BY-NC 4.0. Companion of the jamming dataset; related publication 'Compromising Synchrophasor Data by Attacking Time Synchronization: A Hardware-Lab Study' (2026). The landing page does not list devices or derived offset series.",
+  "key_takeaways": [
+   "Real PTP grandmaster behaviour while its GNSS input is attacked - announce/clockClass changes and timestamps are in the pcaps",
+   "Very large: plan a partial download and a pcap-to-offset extraction step",
+   "Non-commercial licence"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:datasets-benchmarks",
+   "concept:gnss-interference"
+  ],
+  "tags": [
+   "ptp",
+   "iec-61850",
+   "pcap",
+   "gnss-spoofing",
+   "substation",
+   "kit"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "hackathon_fit": "medium",
+  "related": [
+   {
+    "id": "res:kit-iec61850-ptp-gnss-jamming-dataset",
+    "rel": "same_author"
+   },
+   {
+    "id": "sample:timing-network-holdover",
+    "rel": "dataset_for"
+   },
+   {
+    "id": "res:shepard-humphreys-2012-pmu-spoofing",
+    "rel": "cites"
+   }
+  ]
+ },
+ {
+  "id": "res:kit-iec61850-ptp-gnss-jamming-dataset",
+  "kind": "dataset",
+  "title": "IEC61850 SV and PTP traffic under GNSS jamming",
+  "url": "https://doi.org/10.35097/2en2xs4njx2ecbru",
+  "authors": [
+   "Clemens Fruboese (KIT KASTEL)"
+  ],
+  "year": 2026,
+  "summary": "Jamming half of the KIT KASTEL captures: IEC 61850 Sampled Values and PTP traffic while the substation time server's GNSS is jammed, about 594 GB pcap tar on KIT RADAR, CC BY-NC 4.0, identifiers pseudonymised.",
+  "key_takeaways": [
+   "Shows how a real grandmaster announces loss of GNSS and enters holdover on the wire",
+   "Pair with the spoofing half to contrast detectable loss vs silent drift"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:datasets-benchmarks",
+   "concept:gnss-interference"
+  ],
+  "tags": [
+   "ptp",
+   "iec-61850",
+   "pcap",
+   "gnss-jamming",
+   "holdover",
+   "kit"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "hackathon_fit": "medium",
+  "related": [
+   {
+    "id": "res:kit-iec61850-ptp-gnss-spoofing-dataset",
+    "rel": "same_author"
+   },
+   {
+    "id": "sample:timing-network-holdover",
+    "rel": "dataset_for"
+   },
+   {
+    "id": "sample:timing-holdover",
+    "rel": "dataset_for"
+   }
+  ]
+ },
+ {
+  "id": "res:mikes-nordunet-white-rabbit-link-data",
+  "kind": "dataset",
+  "title": "MIKES NorduNET NTS White Rabbit link data (UTC(MIKE) - WR(RISE))",
+  "url": "https://monitor.mikes.fi/ftp/NTS_data/readme.txt",
+  "authors": [
+   "VTT MIKES"
+  ],
+  "year": 2026,
+  "summary": "Public HDF5 files from the White Rabbit link between RISE (Stockholm) and MIKES (Espoo): time-interval counter readings of UTC(MIKE) against the WR-delivered RISE time every 10 minutes (valid from about 2026-05-23), plus WR switch telemetry (round-trip time in ps for boundary clocks at SUNET, CSC and MIKES) via SNMP. Updated about daily per the readme; an example plotting script sits in the same folder.",
+  "key_takeaways": [
+   "A real long-haul WR time-transfer series against a national UTC realisation - good for Allan deviation and drift plots",
+   "RTT telemetry lets you look for path changes",
+   "Live folder, no DOI or licence stated - cite the URL and date of download"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "white-rabbit",
+   "time-transfer",
+   "utc-k",
+   "hdf5",
+   "mikes",
+   "rise"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "hackathon_fit": "medium",
+  "related": [
+   {
+    "id": "res:cern-white-rabbit",
+    "rel": "uses"
+   },
+   {
+    "id": "repo:gitlab.com/ohwr/project/wr-switch-sw",
+    "rel": "uses"
+   },
+   {
+    "id": "repo:aewallin/allantools",
+    "rel": "uses"
+   },
+   {
+    "id": "sample:timing-network-holdover",
+    "rel": "dataset_for"
+   }
+  ]
+ },
+ {
+  "id": "res:bipm-circular-t",
+  "kind": "dataset",
+  "title": "BIPM Circular T",
+  "url": "https://www.bipm.org/en/time-ftp/circular-t",
+  "authors": [
+   "BIPM"
+  ],
+  "year": 2026,
+  "summary": "Monthly BIPM publication of UTC - UTC(k) for the national timing labs contributing to UTC, with uncertainties, plus related TAI data on the BIPM FTP server. The canonical public record of how well real national clock ensembles track UTC.",
+  "key_takeaways": [
+   "Real clock-ensemble offsets to feed allantools or to sanity-check the scale of ensemble numbers",
+   "5-day sampling, published monthly: long-term behaviour only, not holdover over minutes"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:datasets-benchmarks",
+   "concept:standards"
+  ],
+  "tags": [
+   "bipm",
+   "utc",
+   "tai",
+   "time-scale",
+   "ensemble"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "hackathon_fit": "low",
+  "related": [
+   {
+    "id": "repo:aewallin/allantools",
+    "rel": "uses"
+   },
+   {
+    "id": "res:nist-sp1065-frequency-stability-handbook",
+    "rel": "uses"
+   }
+  ]
+ }
+]
