@@ -1,0 +1,11 @@
+# osnma_adapter.py, demo_adapter.py and the adapter tests are stdlib only.
+# osnma_scenarios.py needs an OSNMAlib checkout (github.com/Algafix/OSNMA, ran at commit 25aa61de, 2026-10-14)
+# plus its requirements. Versions this sample ran with on 2026-11-06 (Python 3.12.14, macOS arm64):
+bitstring==4.4.0
+ecdsa==0.19.2
+pycryptodome==4.3.0
+reedsolo==1.7.0
+pandas==3.1.1
+protobuf==7.36.2
+ntplib
+pyserial

@@ -1,0 +1,142 @@
+# GNSS-SDR 0.0.20 OSNMA runs on OSNMA-SDR-SIM e0b80759 E1 files, 2026-11-06 (Docker, aarch64).
+# Message counts, numbers >= 3 digits replaced by N. Produced with run_sim.sh; logs themselves not kept.
+
+## 600 s, cross_auth_mode=3, non-strict (stdout+stderr)
+  36 Galileo OSNMA: time constraint OK (delta_T s)
+  36 Galileo OSNMA: data received starting at WN TOW, from satellite Galileo PRN
+  36 Galileo OSNMA: Receiver Time GST
+  36 Galileo OSNMA: Cannot process MACK block. Skipping it.
+  18 Galileo OSNMA: Available blocks for DSM_ID 11: [ X X X X X X X - ]
+   3 Galileo OSNMA: Available blocks for DSM_ID 11: [ X X X X X X - - ]
+   3 Galileo OSNMA: Available blocks for DSM_ID 11: [ X X X X X - - - ]
+   3 Galileo OSNMA: Available blocks for DSM_ID 11: [ X X X X - - - - ]
+   3 Galileo OSNMA: Available blocks for DSM_ID 11: [ X X X - - - - - ]
+   3 Galileo OSNMA: Available blocks for DSM_ID 11: [ X X - - - - - - ]
+   3 Galileo OSNMA: Available blocks for DSM_ID 11: [ X - - - - - - - ]
+   1 Processing file /out/osnma_sim_e1.bin, which contains N samples (N bytes)
+   1 OSNMA Public key successfully read from file /scripts/OSNMA_PublicKey_PKID2.pem
+   1 OSNMA Public Key available, trying to find DSM-KROOT saved
+   1 OSNMA Merkle Tree successfully read from file /scripts/OSNMA_MerkleTree.xml
+   1 OSNMA DSM-KROOT not available :: WARM START
+   1 Galileo OSNMA: in non-strict mode, local system time is not checked.
+PVT fixes: 1069
+
+## 600 s, cross_auth_mode=3, strict (stdout+stderr)
+  35 Galileo OSNMA: | local_t - GST_SIS | < T_L  [ | N | < 30 ]
+  35 Galileo OSNMA: time constraint violation
+  35 Galileo OSNMA: data received starting at WN TOW, from satellite Galileo PRN
+  35 Galileo OSNMA: Receiver Time GST
+   1 Processing file /out/osnma_sim_e1.bin, which contains N samples (N bytes)
+   1 OSNMA Public key successfully read from file /scripts/OSNMA_PublicKey_PKID2.pem
+   1 OSNMA Public Key available, trying to find DSM-KROOT saved
+   1 OSNMA Merkle Tree successfully read from file /scripts/OSNMA_MerkleTree.xml
+   1 OSNMA DSM-KROOT not available :: WARM START
+   1 Galileo OSNMA: initial receiver time GST
+PVT fixes: 0
+
+## 600 s, cross_auth_mode=1, non-strict (stdout+stderr)
+  74 Galileo OSNMA: time constraint OK (delta_T s)
+  74 Galileo OSNMA: data received starting at WN TOW, from satellite Galileo PRN
+  74 Galileo OSNMA: Receiver Time GST
+  38 Galileo OSNMA: Cannot process MACK block. Skipping it.
+  18 Galileo OSNMA: Available blocks for DSM_ID 11: [ X - X - X - X - ]
+   6 Galileo OSNMA: TESLA key verification :: SUCCESS!
+   6 Galileo OSNMA: Available blocks for DSM_ID 11: [ X X X X X X - X ]
+   6 Galileo OSNMA: Available blocks for DSM_ID 11: [ X X X X X - - X ]
+   6 Galileo OSNMA: Available blocks for DSM_ID 11: [ X X X X - - - X ]
+   6 Galileo OSNMA: Available blocks for DSM_ID 11: [ X X X - - - - X ]
+   6 Galileo OSNMA: Available blocks for DSM_ID 11: [ X X - - - - - X ]
+   6 Galileo OSNMA: Available blocks for DSM_ID 11: [ X - X - - - X - ]
+   6 Galileo OSNMA: Available blocks for DSM_ID 11: [ X - - - - - X - ]
+   5 Galileo OSNMA: Available blocks for DSM_ID 11: [ X - - - - - - X ]
+   5 Galileo OSNMA: Available blocks for DSM_ID 11: [ - - - - - - X - - - - - - - - - ]
+   3 Galileo OSNMA: Available blocks for DSM_ID 11: [ - - - - - - - X - - - - - - - - ]
+   1 Processing file /out/osnma_sim_e1.bin, which contains N samples (N bytes)
+   1 OSNMA Public key successfully read from file /scripts/OSNMA_PublicKey_PKID2.pem
+   1 OSNMA Public Key available, trying to find DSM-KROOT saved
+   1 OSNMA Merkle Tree successfully read from file /scripts/OSNMA_MerkleTree.xml
+   1 OSNMA DSM-KROOT not available :: WARM START
+   1 Galileo OSNMA: in non-strict mode, local system time is not checked.
+   1 Galileo OSNMA: DSM-KROOT authentication successful!
+   1 Galileo OSNMA: Available blocks for DSM_ID 11: [ X X X X X X X X ]
+PVT fixes: 1025
+
+## 600 s, cross_auth_mode=1, non-strict (glog INFO file)
+    110 Galileo OSNMA: new ADKD=0/12 navData from Galileo PRN
+     78 Galileo OSNMA: IOD_nav=0bN, TOW_start=N, TOW_last=N, l_t=0, PRNd=15, verified=0
+     74 Galileo OSNMA: time constraint OK (delta_T=0 s)
+     74 Galileo OSNMA: data received starting at WN=N, TOW=N, from satellite Galileo PRN
+     74 Galileo OSNMA: Receiver Time GST=[N N]
+     72 Galileo OSNMA: IOD_nav=0bN, TOW_start=N, TOW_last=N, l_t=0, PRNd=27, verified=0
+     57 Galileo OSNMA: new ADKD=4 navData from Galileo PRN
+     42 Galileo OSNMA: IOD_nav=0bN, TOW_start=N, TOW_last=N, l_t=0, PRNd=34, verified=0
+     38 Galileo OSNMA: Cannot process MACK block. Skipping it.
+     36 Galileo OSNMA: d_tags_awaiting_verify :: size: 0
+     36 Galileo OSNMA: NavData status :: SVID=34
+     36 Galileo OSNMA: NavData status :: SVID=30
+     36 Galileo OSNMA: NavData status :: SVID=27
+     36 Galileo OSNMA: NavData status :: SVID=18
+     36 Galileo OSNMA: NavData status :: SVID=15
+     36 Galileo OSNMA: NavData status :: SVID=13
+     36 Galileo OSNMA: IOD_nav=0bN, TOW_start=N, TOW_last=N, l_t=0, PRNd=30, verified=0
+     36 Galileo OSNMA: IOD_nav=0bN, TOW_start=N, TOW_last=N, l_t=0, PRNd=18, verified=0
+     36 Galileo OSNMA: IOD_nav=0bN, TOW_start=N, TOW_last=N, l_t=0, PRNd=13, verified=0
+     18 Galileo OSNMA: Available blocks for DSM_ID 11: [ X - X - X - X - ]
+     17 Galileo OSNMA: number of blocks in this message: 8
+     17 Galileo OSNMA: Received block DSM_BID=0 with DSM_ID 11
+     12 Galileo OSNMA: Received block DSM_BID=6 with DSM_ID 11
+     12 Galileo OSNMA: Received block DSM_BID=4 with DSM_ID 11
+     12 Galileo OSNMA: Received block DSM_BID=2 with DSM_ID 11
+      6 Galileo OSNMA: TESLA key verification :: SUCCESS!
+      6 Galileo OSNMA: TESLA key chain verification: KROOT time matches.
+      6 Galileo OSNMA: Received block DSM_BID=5 with DSM_ID 11
+      6 Galileo OSNMA: Received block DSM_BID=3 with DSM_ID 11
+      6 Galileo OSNMA: Received block DSM_BID=1 with DSM_ID 11
+      6 Galileo OSNMA: Available blocks for DSM_ID 11: [ X X X X X X - X ]
+      6 Galileo OSNMA: Available blocks for DSM_ID 11: [ X X X X X - - X ]
+      6 Galileo OSNMA: Available blocks for DSM_ID 11: [ X X X X - - - X ]
+      6 Galileo OSNMA: Available blocks for DSM_ID 11: [ X X X - - - - X ]
+      6 Galileo OSNMA: Available blocks for DSM_ID 11: [ X X - - - - - X ]
+      6 Galileo OSNMA: Available blocks for DSM_ID 11: [ X - X - - - X - ]
+      6 Galileo OSNMA: Available blocks for DSM_ID 11: [ X - - - - - X - ]
+      5 OSNMA Merkletree - Size string (bytes): 64
+      5 OSNMA Merkletree - Node length (bits): N
+      5 Galileo OSNMA: TESLA verification (2 hashes) need to be performed up to closest verified TESLA key
+      5 Galileo OSNMA: Available blocks for DSM_ID 11: [ X - - - - - - X ]
+      5 Galileo OSNMA: Available blocks for DSM_ID 11: [ - - - - - - X - - - - - - - - - ]
+      3 Galileo OSNMA: Received block DSM_BID=7 with DSM_ID 11
+      3 Galileo OSNMA: Available blocks for DSM_ID 11: [ - - - - - - - X - - - - - - - - ]
+      1 OpenSSL: Unable to read certificate from file: /scripts/OSNMA_PublicKey_PKID2.pem
+      1 OpenSSL: OSNMA signature authenticated successfully
+      1 OSNMA Public key successfully read from file /scripts/OSNMA_PublicKey_PKID2.pem
+      1 OSNMA Public Key available, trying to find DSM-KROOT saved
+      1 OSNMA Merkletree - m_4_0 = NE15EDENEAC6ENANB7CNCCE24C3C93FFCNACD9BFNF04E
+      1 OSNMA Merkletree - m_3_1 = 84DENE6DANE5B8DNFANC57CCNANEDDNA
+      1 OSNMA Merkletree - m_2_1 = DE73DNE4C5BCDC34CDNF2FE40FD08BNAD2BND3A2CFNF9
+      1 OSNMA Merkletree - m_1_1 = 6AAFDENBFNDNCE40E3A0CDA1ECA3F7A4EA67ENE7AANC1EN
+      1 OSNMA Merkletree - m_0_0 = 7BNFANCND48DDND94F9CNFD37DC6CNDNFDDEN
+      1 OSNMA Merkletree - Source: GAL - EXT - GOC-SC
+      1 OSNMA Merkletree - Signal Version: 1.0
+      1 OSNMA Merkletree - Public Key: 1
+      1 OSNMA Merkletree - Point: NB5CA6C46BNEEED6CDD2CDDB1F7D6ANE5B8DA0DE1EBDNFC99
+      1 OSNMA Merkletree - PKID: 2
+      1 OSNMA Merkletree - PK Type: ECDSA P-N/SHA-N
+      1 OSNMA Merkletree - N: 16
+      1 OSNMA Merkletree - Length in Bits: N
+      1 OSNMA Merkletree - Issue Date: N-12-09T09:59:56Z
+      1 OSNMA Merkletree - Hash Function: SHA-N
+      1 OSNMA Merkletree - Destination: GAL - EXT - GOC-SC
+      1 OSNMA Merkletree - Data Version: 1.0
+      1 OSNMA Merkle Tree successfully read from file /scripts/OSNMA_MerkleTree.xml
+      1 OSNMA DSM-KROOT not available :: WARM START
+      1 Galileo OSNMA: in non-strict mode, local system time is not checked.
+      1 Galileo OSNMA: TESLA verification (91 hashes) need to be performed up to Kroot
+      1 Galileo OSNMA: NMA Status is Operational, Chain in force is 1, Chain and Public Key Status is Nominal
+      1 Galileo OSNMA: DSM-KROOT with CID=1, PKID=2, WN=N, TOW=N
+      1 Galileo OSNMA: DSM-KROOT message received.
+      1 Galileo OSNMA: DSM-KROOT message received ok.
+      1 Galileo OSNMA: DSM-KROOT authentication successful!
+      1 Galileo OSNMA: DSM message completed :: start processing, GST=[N N]
+      1 Galileo OSNMA: Available blocks for DSM_ID 11: [ X X X X X X X X ]
+      1 Galileo OSNMA message ports connected
+      1 File source filename /out/osnma_sim_e1.bin
