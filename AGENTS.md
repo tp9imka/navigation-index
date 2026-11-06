@@ -14,7 +14,7 @@ Guide for LLM coding agents (Claude Code, Cursor, Codex, Copilot...) using or ex
    python3 tools/query.py search "uav satellite image matching" --kind repo --fit high
    python3 tools/query.py concept concept:terrain-nav
    python3 tools/query.py neighbors repo:px4/px4-autopilot --depth 2
-   python3 tools/query.py show res:afrl-magnav-challenge --json
+   python3 tools/query.py show res:afrl-magnav-challenge-2020 --json
    ```
    or register the MCP server: `claude mcp add navigation-index -- python3 /abs/path/tools/mcp_server.py`.
 5. For working code start from `samples/` - each sample says honestly whether it was run

@@ -2,6 +2,8 @@ name: check
 on:
   push:
   pull_request:
+permissions:
+  contents: write
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -10,19 +12,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Build is reproducible and clean
-        run: |
-          python3 tools/build.py | tee build.log
-          grep -q "dangling: 0 bad concepts: 0" build.log
-          git diff --stat --exit-code -- catalog INDEX.md graph/graph.json index llms.txt reports
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Search ranker parity (Python vs site JS)
-        run: python3 tools/search_eval.py --parity
+      - name: Build from the committed tree
+        run: |
+          python3 tools/build.py | tee build.log
+          grep -q "dangling: 0 bad concepts: 0" build.log
       - name: Links resolve
         run: python3 tools/check_links.py
-      - name: Stdlib sample tests
+      - name: Search ranker parity (Python vs site JS)
+        run: python3 tools/search_eval.py --parity
+      - name: Stdlib sample and template tests
         run: |
           make -C templates/project-repo test
           (cd templates/demo-dashboard && python3 -m unittest -q)
@@ -31,3 +32,15 @@ jobs:
             [ -z "$d" ] && continue
             (cd "samples/$d" && python3 -m unittest discover -q) || exit 1
           done < tools/stdlib-sample-tests.txt
+      # Generated files are derived from data/, samples/ and docs/; CI owns them on main so a
+      # local build from a dirty tree can never leave the published catalog inconsistent.
+      - name: Commit regenerated catalog on main
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "navigation-index-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add catalog INDEX.md graph/graph.json index llms.txt reports site/data
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: regenerate catalog [skip ci]"
+            git push
+          fi
