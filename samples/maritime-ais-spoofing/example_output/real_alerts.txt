@@ -1,0 +1,132 @@
+248374000	MT GANGES STAR	Tanker	Class A	530	1793667560-1793679360	{'on_land': 136}	position inside eroded land polygon
+209659000	CONTAINERSHIPSAURORA	Cargo	Class A	567	1793670709-1793678860	{'on_land': 112}	position inside eroded land polygon
+212006000	JUDITH	Cargo	Class A	513	1793674715-1793679665	{'on_land': 57}	position inside eroded land polygon
+258009780	BUVIK	Cargo	Class A	1578	1793665739-1793669088	{'on_land': 46}	position inside eroded land polygon
+245046000	LINGEBORG	Cargo	Class A	71	1793667900-1793671800	{'on_land': 25}	position inside eroded land polygon
+244750806	GUARDIAN	Other	Class A	3168	1793666998-1793670598	{'loiter_underway': 7, 'sog_mismatch': 14, 'cog_mismatch': 1}	spread 249 m at 6.0 kn
+212006000	JUDITH	Cargo	Class A	513	1793671914-1793673924	{'on_land': 20}	position inside eroded land polygon
+244267000		Undefined	Class A	47	1793667324-1793669004	{'on_land': 14}	position inside eroded land polygon
+248374000	MT GANGES STAR	Tanker	Class A	530	1793665240-1793666880	{'on_land': 14}	position inside eroded land polygon
+231907000		Undefined	Class A	73	1793665390-1793666458	{'on_land': 13}	position inside eroded land polygon
+244663000	LIBERTAS	Port tender	Class A	1081	1793676507-1793679621	{'sog_mismatch': 10, 'loiter_underway': 2}	derived 1.9 kn vs reported 6.3 kn
+275545000		Undefined	Class A	33	1793677312-1793679051	{'on_land': 12}	position inside eroded land polygon
+212453000	SOUNDMAR	Cargo	Class A	37	1793667267-1793668716	{'on_land': 11}	position inside eroded land polygon
+219010706	MUNIN	Pleasure	Class B	56	1793670663-1793671711	{'on_land': 4, 'jump': 6, 'mmsi_shared': 1}	position inside eroded land polygon
+266220000		Undefined	Class A	39	1793677031-1793678551	{'on_land': 11}	position inside eroded land polygon
+212006000	JUDITH	Cargo	Class A	513	1793667305-1793669254	{'on_land': 10}	position inside eroded land polygon
+212006000	JUDITH	Cargo	Class A	513	1793670285-1793671196	{'on_land': 10}	position inside eroded land polygon
+212338000	ASTRAMAR	Cargo	Class A	247	1793664163-1793665093	{'on_land': 10}	position inside eroded land polygon
+244218000		Undefined	Class A	19	1793674589-1793676469	{'on_land': 10}	position inside eroded land polygon
+97000106	KEEP CLEAR 0.25NM 99	Fishing	Class B	975	1793670421-1793672825	{'sog_mismatch': 9}	derived 0.4 kn vs reported 3.4 kn
+219015298		Undefined	Class A	28	1793677468-1793678538	{'on_land': 9}	position inside eroded land polygon
+219018851	WICTORIA II	Pleasure	Class B	185	1793665297-1793666587	{'sog_mismatch': 7, 'jump': 2}	derived 0.8 kn vs reported 8.2 kn
+244267000		Undefined	Class A	47	1793670365-1793671594	{'on_land': 9}	position inside eroded land polygon
+97000106	KEEP CLEAR 0.25NM 99	Fishing	Class B	975	1793673596-1793674250	{'sog_mismatch': 8}	derived 0.5 kn vs reported 5.4 kn
+219018851	WICTORIA II	Pleasure	Class B	185	1793673496-1793675326	{'sog_mismatch': 8}	derived 0.7 kn vs reported 7.1 kn
+231907000		Undefined	Class A	73	1793671565-1793672792	{'on_land': 8}	position inside eroded land polygon
+244750806	GUARDIAN	Other	Class A	3168	1793664165-1793666394	{'sog_mismatch': 4, 'loiter_underway': 4}	derived 2.8 kn vs reported 5.8 kn
+244750806	GUARDIAN	Other	Class A	3168	1793671298-1793672638	{'sog_mismatch': 7, 'loiter_underway': 1}	derived 1.4 kn vs reported 4.7 kn
+265540720	GERD	Passenger	Class A	1058	1793678160-1793679290	{'on_land': 8}	position inside eroded land polygon
+209731000	DELAMAR	Cargo	Class A	1808	1793675849-1793676210	{'on_land': 7}	position inside eroded land polygon
+258114000	MISJE VERDE	Cargo	Class A	1869	1793674776-1793675137	{'on_land': 7}	position inside eroded land polygon
+219022257	DANPILOT BRAVO	Pilot	Class A	2393	1793670733-1793671244	{'sog_mismatch': 4, 'cog_mismatch': 2}	derived 4.3 kn vs reported 13.3 kn
+219029420	THULE	Sailing	Class B	152	1793673946-1793674901	{'on_land': 6}	position inside eroded land polygon
+232032735	CELTIC PIONEER	Cargo	Class A	102	1793673282-1793673711	{'on_land': 6}	position inside eroded land polygon
+244067000		Undefined	Class A	21	1793677733-1793678693	{'on_land': 6}	position inside eroded land polygon
+259488000	ROBAS	Other	Class A	834	1793668236-1793668555	{'on_land': 6}	position inside eroded land polygon
+970010055	L40 KEEP CLEAR 0. 10	Fishing	Class B	375	1793664274-1793665570	{'sog_mismatch': 6}	derived 0.0 kn vs reported 4.4 kn
+97000106	KEEP CLEAR 0.25NM 99	Fishing	Class B	975	1793666255-1793667686	{'sog_mismatch': 5}	derived 0.3 kn vs reported 3.4 kn
+265547240	VIPAN	Passenger	Class A	1371	1793677654-1793677793	{'sog_mismatch': 2, 'cog_mismatch': 2, 'loiter_underway': 1}	derived 3.0 kn vs reported 12.1 kn
+275545000		Undefined	Class A	33	1793675411-1793676532	{'on_land': 5}	position inside eroded land polygon
+212453000	SOUNDMAR	Cargo	Class A	37	1793664537-1793665256	{'on_land': 4}	position inside eroded land polygon
+219004343	BRITTA HG 74	Fishing	Class B	407	1793668982-1793669372	{'sog_mismatch': 2, 'cog_mismatch': 1, 'loiter_underway': 1}	derived 1.2 kn vs reported 5.2 kn
+219010706	MUNIN	Pleasure	Class B	56	1793667629-1793668079	{'sog_mismatch': 4}	derived 7.0 kn vs reported 0.5 kn
+219018851	WICTORIA II	Pleasure	Class B	185	1793672356-1793672656	{'sog_mismatch': 4}	derived 0.8 kn vs reported 4.2 kn
+219025783	MARLEN	Pleasure	Class A	1027	1793671223-1793671451	{'sog_mismatch': 4}	derived 3.5 kn vs reported 0.0 kn
+244218000		Undefined	Class A	19	1793672629-1793673348	{'on_land': 4}	position inside eroded land polygon
+244267000		Undefined	Class A	47	1793666134-1793666665	{'on_land': 4}	position inside eroded land polygon
+265056000	BRISEN	Tanker	Class A	282	1793678741-1793678931	{'on_land': 4}	position inside eroded land polygon
+265177000	STENA DANICA	Passenger	Class A	1412	1793670842-1793671191	{'on_land': 4}	position inside eroded land polygon
+265527920	ULRIKA	Passenger	Class A	1187	1793676355-1793677196	{'sog_mismatch': 2, 'loiter_underway': 2}	derived 0.1 kn vs reported 3.5 kn
+265540720	GERD	Passenger	Class A	1058	1793674551-1793674791	{'on_land': 4}	position inside eroded land polygon
+265540720	GERD	Passenger	Class A	1058	1793676335-1793676561	{'on_land': 4}	position inside eroded land polygon
+265547240	VIPAN	Passenger	Class A	1371	1793676201-1793676813	{'sog_mismatch': 2, 'loiter_underway': 1, 'cog_mismatch': 1}	derived 0.3 kn vs reported 6.3 kn
+266220000		Undefined	Class A	39	1793666301-1793666720	{'on_land': 4}	position inside eroded land polygon
+266220000		Undefined	Class A	39	1793673290-1793673752	{'on_land': 4}	position inside eroded land polygon
+266437000	LL91 KRISTINA	Fishing	Class A	461	1793669534-1793670062	{'cog_mismatch': 4}	track 243 vs reported 168 deg
+97000106	KEEP CLEAR 0.25NM 99	Fishing	Class B	975	1793664086-1793664608	{'sog_mismatch': 3}	derived 0.3 kn vs reported 3.4 kn
+97000106	KEEP CLEAR 0.25NM 99	Fishing	Class B	975	1793677453-1793678040	{'sog_mismatch': 3}	derived 0.1 kn vs reported 3.4 kn
+212338000	ASTRAMAR	Cargo	Class A	247	1793666743-1793667363	{'on_land': 3}	position inside eroded land polygon
+219010706	MUNIN	Pleasure	Class B	56	1793668948-1793669046	{'sog_mismatch': 1, 'on_land': 2}	derived 11.8 kn vs reported 0.6 kn
+219024676	DANPILOT KILO	Pilot	Class A	2151	1793675207-1793675997	{'cog_mismatch': 1, 'sog_mismatch': 1, 'loiter_underway': 1}	track 228 vs reported 168 deg
+219026443	DANPILOT PAPA	Pilot	Class A	1264	1793668915-1793669463	{'sog_mismatch': 3}	derived 4.8 kn vs reported 11.7 kn
+219029420	THULE	Sailing	Class B	152	1793672176-1793672869	{'on_land': 3}	position inside eroded land polygon
+219029769	SILVA	Sailing	Class B	292	1793674665-1793675204	{'sog_mismatch': 1, 'jump': 2}	derived 0.2 kn vs reported 5.2 kn
+219032520	LFBV NYKOBING F	SAR	Class B	36	1793668885-1793669166	{'on_land': 3}	position inside eroded land polygon
+219159000	FENJA	Tug	Class A	478	1793673900-1793674052	{'on_land': 3}	position inside eroded land polygon
+244067000		Undefined	Class A	21	1793679432-1793679612	{'on_land': 3}	position inside eroded land polygon
+244750806	GUARDIAN	Other	Class A	3168	1793675391-1793676411	{'sog_mismatch': 3}	derived 2.1 kn vs reported 5.6 kn
+246812000	SC FALCON	Port tender	Class A	787	1793666998-1793667412	{'loiter_underway': 1, 'sog_mismatch': 2}	spread 824 m at 23.7 kn
+246812000	SC FALCON	Port tender	Class A	787	1793673776-1793674774	{'cog_mismatch': 1, 'loiter_underway': 2}	track 213 vs reported 112 deg
+265036420	PILOT 222 SE	Pilot	Class A	569	1793677378-1793677901	{'sog_mismatch': 1, 'loiter_underway': 1, 'cog_mismatch': 1}	derived 3.6 kn vs reported 8.8 kn
+265056000	BRISEN	Tanker	Class A	282	1793674485-1793674624	{'on_land': 3}	position inside eroded land polygon
+265502370	VG55 INGAROE	Fishing	Class A	686	1793675278-1793675404	{'on_land': 3}	position inside eroded land polygon
+265527920	ULRIKA	Passenger	Class A	1187	1793678395-1793678995	{'loiter_underway': 2, 'sog_mismatch': 1}	spread 742 m at 7.7 kn
+265540720	GERD	Passenger	Class A	1058	1793664089-1793664241	{'on_land': 3}	position inside eroded land polygon
+266160000	VG29 CHRISTINA	Fishing	Class A	756	1793673217-1793673341	{'on_land': 3}	position inside eroded land polygon
+266163000	VG350 ALTHEA	Fishing	Class A	1422	1793667772-1793667892	{'on_land': 3}	position inside eroded land polygon
+203247191	YRSA	Sailing	Class B	226	1793670166-1793670290	{'on_land': 2}	position inside eroded land polygon
+209659000	CONTAINERSHIPSAURORA	Cargo	Class A	567	1793679711-1793679781	{'on_land': 2}	position inside eroded land polygon
+212338000	ASTRAMAR	Cargo	Class A	247	1793668043-1793668103	{'on_land': 2}	position inside eroded land polygon
+219003959	S 501 SOFIE	Fishing	Class B	106	1793668900-1793668900	{'jump': 1, 'on_land': 1}	20218 m in 33 s
+219015298		Undefined	Class A	28	1793673399-1793673728	{'on_land': 2}	position inside eroded land polygon
+219016555	LOLLAND	Passenger	Class A	1599	1793672303-1793672310	{'jump': 2}	9954 m in 13 s
+219029420	THULE	Sailing	Class B	152	1793670587-1793670827	{'on_land': 2}	position inside eroded land polygon
+219029420	THULE	Sailing	Class B	152	1793679186-1793679395	{'on_land': 2}	position inside eroded land polygon
+232032735	CELTIC PIONEER	Cargo	Class A	102	1793677822-1793677892	{'on_land': 2}	position inside eroded land polygon
+244967000	AMADEUS SMARAGD	Cargo	Class A	234	1793677415-1793677495	{'on_land': 2}	position inside eroded land polygon
+245046000	LINGEBORG	Cargo	Class A	71	1793664109-1793664179	{'on_land': 2}	position inside eroded land polygon
+245046000	LINGEBORG	Cargo	Class A	71	1793672480-1793672770	{'on_land': 2}	position inside eroded land polygon
+246843000	MARFAAM	Cargo	Class A	26	1793670384-1793670869	{'jump': 2}	690071 m in 605 s
+255806250		Undefined	Class A	4	1793668395-1793668484	{'on_land': 2}	position inside eroded land polygon
+255916186		Undefined	Class A	4	1793678257-1793678353	{'on_land': 2}	position inside eroded land polygon
+266220000		Undefined	Class A	39	1793668011-1793668441	{'on_land': 2}	position inside eroded land polygon
+266220000		Undefined	Class A	39	1793675221-1793675472	{'on_land': 2}	position inside eroded land polygon
+266232000	TAVASTLAND	Cargo	Class A	926	1793676167-1793676182	{'jump': 2}	738600 m in 6 s
+266452000	F/V KUNGSVIK	Fishing	Class A	148	1793678399-1793678459	{'on_land': 2}	position inside eroded land polygon
+203247191	YRSA	Sailing	Class B	226	1793666986-1793666986	{'on_land': 1}	position inside eroded land polygon
+203247191	YRSA	Sailing	Class B	226	1793667797-1793667797	{'on_land': 1}	position inside eroded land polygon
+203247191	YRSA	Sailing	Class B	226	1793668968-1793668968	{'on_land': 1}	position inside eroded land polygon
+203247191	YRSA	Sailing	Class B	226	1793678267-1793678267	{'on_land': 1}	position inside eroded land polygon
+209659000	CONTAINERSHIPSAURORA	Cargo	Class A	567	1793667961-1793667961	{'on_land': 1}	position inside eroded land polygon
+211187510		Undefined	Class A	6	1793673396-1793673396	{'on_land': 1}	position inside eroded land polygon
+211187510		Undefined	Class A	6	1793678586-1793678586	{'on_land': 1}	position inside eroded land polygon
+211440370		Undefined	Class A	2	1793677796-1793677796	{'on_land': 1}	position inside eroded land polygon
+212338000	ASTRAMAR	Cargo	Class A	247	1793674744-1793674744	{'on_land': 1}	position inside eroded land polygon
+219002719	FRIHEDEN	Passenger	Class A	1211	1793665540-1793665540	{'on_land': 1}	position inside eroded land polygon
+219002719	FRIHEDEN	Passenger	Class A	1211	1793679740-1793679740	{'on_land': 1}	position inside eroded land polygon
+219010706	MUNIN	Pleasure	Class B	56	1793674932-1793674932	{'jump': 1}	227668 m in 3221 s
+219020924	S/Y ELHAJA II	Sailing	Class B	23	1793668181-1793668181	{'jump': 1}	38288 m in 1019 s
+219026899	ZIGGY1	Pleasure	Class B	118	1793676890-1793676890	{'on_land': 1}	position inside eroded land polygon
+219026899	ZIGGY1	Pleasure	Class B	118	1793677596-1793677596	{'on_land': 1}	position inside eroded land polygon
+219029420	THULE	Sailing	Class B	152	1793668252-1793668252	{'on_land': 1}	position inside eroded land polygon
+219029420	THULE	Sailing	Class B	152	1793676462-1793676462	{'on_land': 1}	position inside eroded land polygon
+219029420	THULE	Sailing	Class B	152	1793678406-1793678406	{'on_land': 1}	position inside eroded land polygon
+219032520	LFBV NYKOBING F	SAR	Class B	36	1793668266-1793668266	{'on_land': 1}	position inside eroded land polygon
+219032520	LFBV NYKOBING F	SAR	Class B	36	1793677298-1793677298	{'on_land': 1}	position inside eroded land polygon
+232032735	CELTIC PIONEER	Cargo	Class A	102	1793675891-1793675891	{'on_land': 1}	position inside eroded land polygon
+232032735	CELTIC PIONEER	Cargo	Class A	102	1793679391-1793679391	{'on_land': 1}	position inside eroded land polygon
+244067000		Undefined	Class A	21	1793670792-1793670792	{'on_land': 1}	position inside eroded land polygon
+244067000		Undefined	Class A	21	1793674012-1793674012	{'on_land': 1}	position inside eroded land polygon
+244218000		Undefined	Class A	19	1793671480-1793671480	{'on_land': 1}	position inside eroded land polygon
+244267000		Undefined	Class A	47	1793673335-1793673335	{'on_land': 1}	position inside eroded land polygon
+244267000		Undefined	Class A	47	1793679724-1793679724	{'on_land': 1}	position inside eroded land polygon
+248374000	MT GANGES STAR	Tanker	Class A	530	1793664580-1793664580	{'on_land': 1}	position inside eroded land polygon
+255806250		Undefined	Class A	4	1793673764-1793673764	{'on_land': 1}	position inside eroded land polygon
+255916186		Undefined	Class A	4	1793678964-1793678964	{'on_land': 1}	position inside eroded land polygon
+265514120	ALVSNABBEN 5	Passenger	Class A	265	1793679649-1793679649	{'on_land': 1}	position inside eroded land polygon
+266166000	VG45 WESTLAND	Fishing	Class A	825	1793675115-1793675115	{'on_land': 1}	position inside eroded land polygon
+266454000	DONIA	Tanker	Class A	908	1793664334-1793664334	{'on_land': 1}	position inside eroded land polygon
+266454000	DONIA	Tanker	Class A	908	1793665364-1793665364	{'on_land': 1}	position inside eroded land polygon
+266454000	DONIA	Tanker	Class A	908	1793666845-1793666845	{'on_land': 1}	position inside eroded land polygon
+275545000		Undefined	Class A	33	1793679772-1793679772	{'on_land': 1}	position inside eroded land polygon

@@ -1,0 +1,78 @@
+loaded {'rows': 1719325, 'mmsi': 2540, 'same_second_conflicts': 5514} in 6 s
+
+== unaltered real data (5 s) ==
+tracks 2540 ([('Class A', 1731), ('Class B', 619), ('AtoN', 145), ('Base Station', 44), ('Search and Rescue Transponder', 1)])
+fixes 1713811
+flags by kind [('on_land', 725), ('sog_mismatch', 213), ('loiter_underway', 47), ('cog_mismatch', 44), ('jump', 19), ('mmsi_not_ship', 15), ('mmsi_shared', 1), ('mmsi_placeholder', 1)]
+static MMSI anomalies [('mmsi_not_ship', 15), ('mmsi_placeholder', 1)]
+alerts 132 on 61 vessels
+alerts by strongest kind [('on_land', 98), ('weak-only', 27), ('jump', 7)]
+alerting vessels by ship type [('Cargo', 12), ('Undefined', 11), ('Fishing', 10), ('Passenger', 7), ('Pilot', 4), ('Sailing', 4), ('Pleasure', 4), ('Tanker', 3)]
+
+== injected, seed 1: 244 episodes on 244 vessels (5 s) ==
+episode kind              n  recall  TTD med s  TTD p90 s  first detector
+circle                   50    0.96         14         66  sog_mismatch 17, cog_mismatch 13, jump 12
+circle_group             44    1.00          4         16  jump 44
+drift                    50    0.44         73        273  sog_mismatch 19, on_land 1, cog_mismatch 1
+offset                  100    0.80          4         14  jump 78, turn 2
+offset 0-0.5 km          12    0.08          3          3  turn 1
+offset 0.5-2 km          32    0.78          4         11  jump 24, turn 1
+offset 2-10 km           33    0.97          4         10  jump 32
+offset >=10 km           23    0.96          3         17  jump 22
+ALL                     244    0.80          6         66  jump 134, sog_mismatch 36, cog_mismatch 14
+ALL observable          233    0.83          6         61  jump 134, sog_mismatch 36, cog_mismatch 14
+
+alerts total 444, overlapping an injected episode 312
+precision over all alerts (real-data alerts count as FP): 0.70
+precision on injected vessels only: 1.00 (0 alerts outside episodes)
+
+== injected, seed 2: 243 episodes on 243 vessels (5 s) ==
+episode kind              n  recall  TTD med s  TTD p90 s  first detector
+circle                   50    0.92         17         84  sog_mismatch 16, cog_mismatch 12, jump 10
+circle_group             43    0.95          5         12  jump 41
+drift                    50    0.54         70       1319  sog_mismatch 24, cog_mismatch 2, loiter_underway 1
+offset                  100    0.77          6         16  jump 74, sog_mismatch 2, turn 1
+offset 0-0.5 km          20    0.15         11         13  sog_mismatch 1, jump 1, turn 1
+offset 0.5-2 km          23    0.87          6         13  jump 19, sog_mismatch 1
+offset 2-10 km           38    0.92          6         11  jump 35
+offset >=10 km           19    1.00          6        167  jump 19
+ALL                     243    0.79          8         84  jump 125, sog_mismatch 42, cog_mismatch 14
+ALL observable          230    0.82          8         78  jump 124, sog_mismatch 41, cog_mismatch 13
+
+alerts total 428, overlapping an injected episode 296
+precision over all alerts (real-data alerts count as FP): 0.69
+precision on injected vessels only: 1.00 (0 alerts outside episodes)
+
+== injected, seed 3: 251 episodes on 251 vessels (5 s) ==
+episode kind              n  recall  TTD med s  TTD p90 s  first detector
+circle                   50    0.98         23        103  cog_mismatch 17, sog_mismatch 16, jump 8
+circle_group             51    1.00          6         10  jump 51
+drift                    50    0.44         94        882  sog_mismatch 16, loiter_underway 3, cog_mismatch 2
+offset                  100    0.75          6         12  jump 74, sog_mismatch 1
+offset 0-0.5 km          14    0.00        nan        nan  
+offset 0.5-2 km          32    0.81          6         20  jump 25, sog_mismatch 1
+offset 2-10 km           25    0.88          6         10  jump 22
+offset >=10 km           29    0.93          6          9  jump 27
+ALL                     251    0.78          7         86  jump 133, sog_mismatch 33, cog_mismatch 19
+ALL observable          235    0.83          7         79  jump 133, sog_mismatch 31, cog_mismatch 18
+
+alerts total 444, overlapping an injected episode 312
+precision over all alerts (real-data alerts count as FP): 0.70
+precision on injected vessels only: 1.00 (0 alerts outside episodes)
+
+== NMEA round trip: 349656 fixes via pyais ==
+episode kind              n  recall  TTD med s  TTD p90 s  first detector
+circle                   50    0.98         23        103  cog_mismatch 17, sog_mismatch 16, jump 8
+circle_group             51    1.00          6         10  jump 51
+drift                    50    0.44         94        882  sog_mismatch 16, loiter_underway 3, cog_mismatch 2
+offset                  100    0.75          6         12  jump 74, sog_mismatch 1
+offset 0-0.5 km          14    0.00        nan        nan  
+offset 0.5-2 km          32    0.81          6         20  jump 25, sog_mismatch 1
+offset 2-10 km           25    0.88          6         10  jump 22
+offset >=10 km           29    0.93          6          9  jump 27
+ALL                     251    0.78          7         86  jump 133, sog_mismatch 33, cog_mismatch 19
+ALL observable          235    0.83          7         79  jump 133, sog_mismatch 31, cog_mismatch 18
+
+alerts total 312, overlapping an injected episode 312
+precision over all alerts (real-data alerts count as FP): 1.00
+precision on injected vessels only: 1.00 (0 alerts outside episodes)
