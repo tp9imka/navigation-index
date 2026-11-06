@@ -1,0 +1,2 @@
+# Optional: only for the pyubx2 cross-check test (test_ubx_frames_parse_with_pyubx2). Everything else is stdlib.
+pyubx2==1.4.1

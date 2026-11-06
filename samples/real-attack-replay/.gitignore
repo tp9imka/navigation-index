@@ -1,0 +1,4 @@
+fixtures/*.ubx
+__pycache__/
+data/
+out/

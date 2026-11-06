@@ -1,0 +1,14 @@
+{
+  "_about": "Labels for fixtures/vaara_shaped.ubx (synthetic, written by make_fixture.py). Same schema as labels.json.",
+  "files": [
+    {
+      "path": "vaara_shaped.ubx", "day": "2024-09-12", "period_s": 1.0, "platform": "static (synthetic)", "static": true,
+      "windows": [
+        {"test": "staircase", "kind": "spoof", "start": "07:05:00", "end": "07:06:59", "source": "synthetic", "what": "C/N0 -4 dB every 20 s, shaped on 2.4.3"},
+        {"test": "step_drop", "kind": "spoof", "start": "07:09:00", "end": "07:09:59", "source": "synthetic", "what": "C/N0 -20 dB step, shaped on 2.4.12"},
+        {"test": "time_jump", "kind": "spoof", "start": "07:11:00", "end": "07:11:19", "source": "synthetic", "what": "receiver UTC +900 s, shaped on 2.4.2"},
+        {"test": "quiet", "kind": "quiet", "start": "07:12:00", "end": "07:12:29", "source": "synthetic", "what": "clean, 17 s after 3 epochs with no time and no fix"}
+      ]
+    }
+  ]
+}

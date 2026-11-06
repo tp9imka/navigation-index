@@ -1,0 +1,268 @@
+{
+  "_about": "Test windows (UTC) for the VAARA Jammertest 2024 u-blox logs. source=vaara: Jammertest_metadata.md in UniVaasaDigiEco/VAARA (field log, corrected UTC lines). source=plan-shift: NPRA 2024 transmission plan (jammertest-plan commit 659ed2ecb0, Latex/transmissionplan/plan-thursday.tex, local CEST) moved 50 min earlier, the offset between the plan and the VAARA-logged 2.4.12; start/end are approximate and were cross-checked against the C/N0 and receiver-time signature in the data. kind: jam | spoof | quiet. Windows of kind quiet are the only ones counted as false-alarm time; time outside every window is reported separately as 'no logged test' because other sites were transmitting all day. Optional per-window 'stationary' (sub-span when the car stood still, from the field notes and the receiver's own speed) and 'ref' (a clean stationary span just before, whose median position is the truth for spp_eval.py).",
+  "files": [
+    {
+      "path": "2024-09-10/Test_1/ublox_2024-09-10T073207Z0000.ubx",
+      "day": "2024-09-10",
+      "period_s": 0.5,
+      "platform": "car (motorcade, stationary test car beside the road)",
+      "static": false,
+      "windows": [
+        {
+          "test": "1.10.6a",
+          "kind": "jam",
+          "start": "08:12:58",
+          "end": "08:28:55",
+          "source": "vaara",
+          "what": "drive past 3 parked cars with multi-band jammers H6.1-H6.3 (0.4-1 W), antennas up; H6.2 not working"
+        },
+        {
+          "test": "1.10.6b",
+          "kind": "jam",
+          "start": "08:32:28",
+          "end": "08:48:50",
+          "source": "vaara",
+          "what": "same, towards Stave, all 3 jammers on"
+        },
+        {
+          "test": "1.10.6c",
+          "kind": "jam",
+          "start": "09:09:05",
+          "end": "09:24:57",
+          "source": "vaara",
+          "what": "same, antennas laid flat toward the road"
+        },
+        {
+          "test": "1.10.6d",
+          "kind": "jam",
+          "start": "09:26:38",
+          "end": "09:42:43",
+          "source": "vaara",
+          "what": "same, antennas flat, towards Stave"
+        }
+      ]
+    },
+    {
+      "path": "2024-09-10/Test_2/ublox_2024-09-10T115512Z0000.ubx",
+      "day": "2024-09-10",
+      "period_s": 0.5,
+      "platform": "car",
+      "static": false,
+      "windows": [
+        {
+          "test": "1.10.3",
+          "kind": "jam",
+          "start": "12:05:10",
+          "end": "12:27:35",
+          "source": "vaara",
+          "what": "start beside a parked car with dual-band jammer S2.4 (0.03-0.1 W), drive away, laps for 30 min"
+        },
+        {
+          "test": "1.10.4",
+          "kind": "jam",
+          "start": "12:30:28",
+          "end": "12:58:52",
+          "source": "vaara",
+          "what": "same with multi-band jammer H6.5 (1-1.6 W); log ends 12:52:47"
+        }
+      ]
+    },
+    {
+      "path": "2024-09-11/Morning_Motorcade/Test_1/ublox_2024-09-11T075704.ubx",
+      "day": "2024-09-11",
+      "period_s": 1.0,
+      "platform": "car (motorcade)",
+      "static": false,
+      "windows": [
+        {
+          "test": "2.6.1a",
+          "kind": "spoof",
+          "start": "08:06:00",
+          "end": "08:16:54",
+          "source": "vaara",
+          "what": "spoofer in a vehicle (M1.1, L1/E1/B1/G1, 0.01 W), stationary, dynamic spoofed position; log: spoofing lasted about a minute (amplifier broke)",
+          "stationary": [
+            "08:06:00",
+            "08:16:54"
+          ],
+          "ref": [
+            "08:02:30",
+            "08:05:50"
+          ]
+        },
+        {
+          "test": "2.6.2",
+          "kind": "spoof",
+          "start": "08:59:59",
+          "end": "09:22:17",
+          "source": "vaara",
+          "what": "spoofer stationary then moving, fixed spoofed position (catalog: 70N 10E), no initial jamming; motorcade drove from 09:10:10",
+          "stationary": [
+            "08:59:59",
+            "09:10:10"
+          ],
+          "ref": [
+            "08:46:00",
+            "08:56:00"
+          ]
+        },
+        {
+          "test": "2.6.3",
+          "kind": "spoof",
+          "start": "09:51:00",
+          "end": "10:07:42",
+          "source": "vaara",
+          "what": "spoofer moving with fixed spoofed position ('sea spoofing'); driving from 09:55",
+          "stationary": [
+            "09:51:00",
+            "09:54:00"
+          ],
+          "ref": [
+            "09:46:30",
+            "09:50:50"
+          ]
+        },
+        {
+          "test": "0.0.1",
+          "kind": "quiet",
+          "start": "10:11:10",
+          "end": "10:23:25",
+          "source": "vaara",
+          "what": "no test running, uninterfered GNSS (driving)"
+        },
+        {
+          "test": "2.6.1b",
+          "kind": "spoof",
+          "start": "10:30:01",
+          "end": "10:51:01",
+          "source": "vaara",
+          "what": "spoofer stationary with dynamic spoofed position, motorcade stationary",
+          "stationary": [
+            "10:30:01",
+            "10:51:01"
+          ],
+          "ref": [
+            "10:24:30",
+            "10:29:50"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "2024-09-11/Afternoon/Test_1/ublox_2024-09-11T122113.ubx",
+      "day": "2024-09-11",
+      "period_s": 1.0,
+      "platform": "car (convoy)",
+      "static": false,
+      "windows": [
+        {
+          "test": "0.3.1a",
+          "kind": "jam",
+          "start": "12:46:41",
+          "end": "13:10:12",
+          "source": "vaara",
+          "what": "ad hoc: jammer H3.2 on a car driving in the convoy, Stave => Nordmela, 50 km/h"
+        },
+        {
+          "test": "0.3.1b",
+          "kind": "jam",
+          "start": "13:16:39",
+          "end": "13:45:01",
+          "source": "vaara",
+          "what": "ad hoc: jammer H6.5 in the convoy, Nordmela => Stave, 2 min stationary at the end"
+        },
+        {
+          "test": "0.3.1c",
+          "kind": "jam",
+          "start": "13:52:24",
+          "end": "14:16:43",
+          "source": "vaara",
+          "what": "ad hoc: stationary demo, H3.2 (and H6.5/H6.6 per log)"
+        }
+      ]
+    },
+    {
+      "path": "2024-09-11/Afternoon/Test_2/ublox_2024-09-11T143312.ubx",
+      "day": "2024-09-11",
+      "period_s": 1.0,
+      "platform": "car",
+      "static": false,
+      "windows": [
+        {
+          "test": "0.3.1d",
+          "kind": "jam",
+          "start": "14:50:03",
+          "end": "15:02:48",
+          "source": "vaara",
+          "what": "ad hoc: test car passes jammer H3.2 at varying speeds"
+        },
+        {
+          "test": "0.3.1e",
+          "kind": "jam",
+          "start": "15:06:00",
+          "end": "15:22:06",
+          "source": "vaara",
+          "what": "ad hoc: same with H6.5, L1 switched off, L5 off halfway"
+        },
+        {
+          "test": "0.3.1f",
+          "kind": "jam",
+          "start": "15:28:52",
+          "end": "15:51:22",
+          "source": "vaara",
+          "what": "ad hoc: three fixed jammers along the route (H6.6, H6.5 without L1, H3.2); log ends 15:47:28"
+        }
+      ]
+    },
+    {
+      "path": "2024-09-12/Test_1/ublox_2024-09-12T071744.ubx",
+      "day": "2024-09-12",
+      "period_s": 1.0,
+      "platform": "static at Bleik",
+      "static": true,
+      "windows": [
+        {
+          "test": "2.4.2",
+          "kind": "spoof",
+          "start": "07:10:00",
+          "end": "07:35:00",
+          "source": "plan-shift",
+          "what": "incoherent spoofing, time offset +15 min, power ramp (Bleik, 0.0316 W); log starts 07:17:45 already inside it"
+        },
+        {
+          "test": "2.4.3",
+          "kind": "spoof",
+          "start": "07:50:00",
+          "end": "08:05:00",
+          "source": "plan-shift",
+          "what": "incoherent spoofing, time offset -3 min, power jump (Bleik, 0.0316 W)"
+        },
+        {
+          "test": "2.4.12",
+          "kind": "spoof",
+          "start": "08:20:10",
+          "end": "08:35:15",
+          "source": "vaara",
+          "what": "incoherent time spoofing, fixed spoofed position at Bleik, pseudorange ramp from minute 5 (log: 3 m/s = 9 ns/s, 6 us total)"
+        }
+      ]
+    },
+    {
+      "path": "2024-09-12/Test_2/ublox_2024-09-12T085023.ubx",
+      "day": "2024-09-12",
+      "period_s": 1.0,
+      "platform": "static at Bleik",
+      "static": true,
+      "windows": [
+        {
+          "test": "2.4.13",
+          "kind": "spoof",
+          "start": "08:50:08",
+          "end": "09:05:21",
+          "source": "vaara",
+          "what": "5 min jamming (E6, L2, E5b, L5, then L1/G1/B1I from 08:50:21), spoofing from 08:55:19 with jamming switched off band by band, pseudorange ramp 9 ns/s"
+        }
+      ]
+    }
+  ]
+}

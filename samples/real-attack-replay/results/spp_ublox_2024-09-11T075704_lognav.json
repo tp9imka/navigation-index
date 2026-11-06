@@ -1,0 +1,102 @@
+[
+ {
+  "test": "2.6.1a",
+  "span_utc": [
+   "08:06:00",
+   "08:16:54"
+  ],
+  "spp": {
+   "n": 653,
+   "availability": 0.997,
+   "median_m": 38611.9,
+   "p95_m": 378360.2,
+   "max_m": 1477108.8,
+   "frac_gt_100m": 1.0,
+   "ref_spread_p95_m": 6028.2
+  },
+  "nmea": {
+   "n": 655,
+   "availability": 1.0,
+   "median_m": 0.8,
+   "p95_m": 1.1,
+   "max_m": 1.1,
+   "frac_gt_100m": 0.0,
+   "ref_spread_p95_m": 0.3
+  }
+ },
+ {
+  "test": "2.6.2",
+  "span_utc": [
+   "08:59:59",
+   "09:10:10"
+  ],
+  "spp": {
+   "n": 50,
+   "availability": 0.082,
+   "median_m": 220152.6,
+   "p95_m": 2124604.1,
+   "max_m": 2896304.2,
+   "frac_gt_100m": 1.0,
+   "ref_spread_p95_m": 27590.5
+  },
+  "nmea": {
+   "n": 612,
+   "availability": 1.0,
+   "median_m": 1.1,
+   "p95_m": 1.3,
+   "max_m": 1.3,
+   "frac_gt_100m": 0.0,
+   "ref_spread_p95_m": 0.3
+  }
+ },
+ {
+  "test": "2.6.3",
+  "span_utc": [
+   "09:51:00",
+   "09:54:00"
+  ],
+  "spp": {
+   "n": 165,
+   "availability": 0.912,
+   "median_m": 10.3,
+   "p95_m": 101446.6,
+   "max_m": 463008.3,
+   "frac_gt_100m": 0.285,
+   "ref_spread_p95_m": 0.9
+  },
+  "nmea": {
+   "n": 181,
+   "availability": 1.0,
+   "median_m": 0.5,
+   "p95_m": 0.7,
+   "max_m": 0.7,
+   "frac_gt_100m": 0.0,
+   "ref_spread_p95_m": 0.2
+  }
+ },
+ {
+  "test": "2.6.1b",
+  "span_utc": [
+   "10:30:01",
+   "10:51:01"
+  ],
+  "spp": {
+   "n": 71,
+   "availability": 0.056,
+   "median_m": 18.5,
+   "p95_m": 2421.6,
+   "max_m": 4454561.8,
+   "frac_gt_100m": 0.211,
+   "ref_spread_p95_m": 1.0
+  },
+  "nmea": {
+   "n": 1261,
+   "availability": 1.0,
+   "median_m": 1.6,
+   "p95_m": 3.1,
+   "max_m": 3.2,
+   "frac_gt_100m": 0.0,
+   "ref_spread_p95_m": 0.8
+  }
+ }
+]
