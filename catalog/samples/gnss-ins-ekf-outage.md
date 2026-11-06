@@ -26,5 +26,6 @@ A stdlib-only 2D loosely-coupled GNSS/INS EKF (8 states, hand-written matrix hel
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) (uses)
 
 _Indexed by lane(s): samples_

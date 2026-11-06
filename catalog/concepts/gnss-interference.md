@@ -6,7 +6,7 @@ GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-
 
 **Parent:** [GNSS positioning](../../catalog/concepts/gnss.md)
 
-## Samples (20)
+## Samples (21)
 
 - [Anti-spoof autopilot configurations tested in SITL: 13 PX4 EKF2 / ArduPilot EKF3 configs (EV velocity + EKF2_GPS_MODE 1, aux global position, EK3 source sets, fuse-all-velocities, EK3_GLITCH_RAD 0, dual GPS affinity / blending, a Lua GPS-vs-ExternalNav source-switch applet, companion monitor) x coherent drag 0.3/1/3 m/s + clean, 3 seeds, 156 flights, ranked recipe table](../../catalog/samples/autopilot-resilient-configs.md) - Builds on samples/autopilot-spoof-response (both EKFs believe a coherent GNSS drag) and looks for configurations that keep each autopilot flying.
 - [Cooperative localization for a GNSS-denied team: UWB ranging, centralized EKF vs covariance intersection, and a spoofed anchor](../../catalog/samples/swarm-coop-localization.md) - A stdlib-only simulation of six vehicles with biased odometry where only two keep GNSS.
@@ -27,6 +27,7 @@ GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-
 - [Network of GNSS-disciplined clocks: holdover from peers, spoof isolation by cross-node consistency, ADEV-weighted ensemble](../../catalog/samples/timing-network-holdover.md) - A stdlib-only simulation of six GNSS-disciplined sites (TCXO, OCXO, CSAC, Rb oscillators imported from timing-holdover) linked by PTP-like two-way time transfer with static path asymmetry, exponential queueing delay and 
 - [OSINT interference map from free data: ADS-B NACp hexes and Sentinel-1 C-band RFI over Kaliningrad / the SE Baltic](../../catalog/samples/osint-jamming-map.md) - Two no-login OSINT layers for the same area and morning (2026-10-01, SE Baltic around Kaliningrad).
 - [Real attack replay: Jammertest 2024 u-blox logs through the GNSS interference monitor, with RTKLIB SPP](../../catalog/samples/real-attack-replay.md) - Replays 7 public u-blox logs from Jammertest 2024 (University of Vaasa VAARA dataset, about 13 h, 21 labelled test slots: drive-by and convoy jamming, motorcade spoofing, time-offset and pseudorange-ramp spoofing at Blei
+- [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) - Stdlib-only ground-vehicle loop on a real NCLT Segway session (2013-01-10, 1022 s, 1139 m, 42 MB download): consumer GPS at 1 Hz fused with MEMS strapdown INS (the 8-state EKF of gnss-ins-ekf-outage, imported), wheel spe
 - [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) - A simulated USV runs a 19.6 km transit over real geography (Lillgrund => Drogden channel => Copenhagen approach) built from OpenStreetMap coastline, Oresund bridge, wind turbines and seamarks, with 75 min of real Danish 
 
 ## Guides (17)

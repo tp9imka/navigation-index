@@ -43,6 +43,7 @@ Wuhan University i2Nav reference implementation of loosely coupled GNSS/INS inte
 - [SBG Systems Ellipse INS - 2025 GNSS-denied firmware](../../catalog/resources/sbg-new-ellipse-firmware.md) (alternative_to)
 - [VectorNav - Iridium STL-aided INS collaboration with NAL Research](../../catalog/resources/vectornav-stl-aided-ins.md) (alternative_to)
 - [GNSS/INS EKF through a GNSS outage and a spoofing walk-off](../../catalog/samples/gnss-ins-ekf-outage.md) (explains)
+- [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) (explains)
 
 _Indexed by lane(s): ins-fusion_
 

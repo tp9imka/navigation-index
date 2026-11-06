@@ -4,7 +4,7 @@
 
 Public datasets, evaluation tools, leaderboards for navigation and localization.
 
-## Samples (7)
+## Samples (8)
 
 - [C-UAS classifiers on public data: radar tracks (UAV vs bird) and DroneRF spectra](../../catalog/samples/cuas-classifiers.md) - Two defensive drone-detection baselines on openly licensed recordings.
 - [Cooperative localization on real UWB: MILUV drones through the swarm-coop filters](../../catalog/samples/swarm-coop-real-uwb.md) - Runs the unmodified filters of swarm-coop-localization (dead reckoning, centralized EKF, naive decentralized, covariance intersection; plain vs robust ranging; gate / vote / solution-separation integrity) on real two-way
@@ -13,6 +13,7 @@ Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [Public CORS RINEX to SPP vs RTK with RTKLIB demo5 and gnss_lib_py](../../catalog/samples/gnss-rinex-processing.md) - Downloads one day of public NOAA NGS CORS RINEX for a rover/base pair 30 km apart, runs RTKLIB demo5 rnx2rtkp in single-point and kinematic RTK modes with exact CLI flags, and scores both against the stations' published 
 - [Real attack replay: Jammertest 2024 u-blox logs through the GNSS interference monitor, with RTKLIB SPP](../../catalog/samples/real-attack-replay.md) - Replays 7 public u-blox logs from Jammertest 2024 (University of Vaasa VAARA dataset, about 13 h, 21 labelled test slots: drive-by and convoy jamming, motorcade spoofing, time-offset and pseudorange-ramp spoofing at Blei
 - [Relative navigation benchmark on real data: KISS-ICP lidar odometry, OpenVINS VIO, mono and nadir VO, scored with evo](../../catalog/samples/relative-nav-benchmark.md) - One command per part.
+- [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) - Stdlib-only ground-vehicle loop on a real NCLT Segway session (2013-01-10, 1022 s, 1139 m, 42 MB download): consumer GPS at 1 Hz fused with MEMS strapdown INS (the 8-state EKF of gnss-ins-ekf-outage, imported), wheel spe
 
 ## Guides (7)
 

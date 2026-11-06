@@ -6,7 +6,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 
 **Sub-concepts:** [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 
-## Samples (19)
+## Samples (20)
 
 - [Anti-spoof autopilot configurations tested in SITL: 13 PX4 EKF2 / ArduPilot EKF3 configs (EV velocity + EKF2_GPS_MODE 1, aux global position, EK3 source sets, fuse-all-velocities, EK3_GLITCH_RAD 0, dual GPS affinity / blending, a Lua GPS-vs-ExternalNav source-switch applet, companion monitor) x coherent drag 0.3/1/3 m/s + clean, 3 seeds, 156 flights, ranked recipe table](../../catalog/samples/autopilot-resilient-configs.md) - Builds on samples/autopilot-spoof-response (both EKFs believe a coherent GNSS drag) and looks for configurations that keep each autopilot flying.
 - [ArduPilot EKF3 source-set switch under GPS denial](../../catalog/samples/ardupilot-ekf3-source-switch.md) - Flies ArduCopter SITL on GPS, switches EKF3 to an external-nav source set (SITL vicon) with MAV_CMD_SET_EKF_SOURCE_SET, cuts simulated GPS, flies a 15 m leg, then restores it.
@@ -25,6 +25,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [PX4 SITL GPS denial: inject, measure drift, recover](../../catalog/samples/px4-sitl-gps-denial.md) - Flies a square mission in PX4 SITL (SIH quadrotor, headless; Gazebo also works per PX4 docs), denies GPS mid-mission, logs EKF2 health and estimated vs ground-truth position, then restores GPS and returns home.
 - [Terrain-relative navigation with a particle filter](../../catalog/samples/terrain-relative-nav-pf.md) - A stdlib-only simulation of TERCOM/TRN: an aircraft with a biased INS and a radar altimeter matches its measured terrain profile against a seeded synthetic DEM with a particle filter that also estimates the INS velocity 
 - [Two independent absolute sources on one real flight: visual fixes + terrain-relative navigation with solution-separation integrity (VPAIR over NRW 1 m LiDAR)](../../catalog/samples/two-source-integrity-vpair.md) - Adds terrain-relative navigation as a second absolute source to the real VPAIR flight (8.53 km after GNSS loss, Rhine valley between Bad Honnef and Koenigswinter, east of Bonn).
+- [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) - Stdlib-only ground-vehicle loop on a real NCLT Segway session (2013-01-10, 1022 s, 1139 m, 42 MB download): consumer GPS at 1 Hz fused with MEMS strapdown INS (the 8-state EKF of gnss-ins-ekf-outage, imported), wheel spe
 - [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) - A simulated USV runs a 19.6 km transit over real geography (Lillgrund => Drogden channel => Copenhagen approach) built from OpenStreetMap coastline, Oresund bridge, wind turbines and seamarks, with 75 min of real Danish 
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../../catalog/samples/vio-to-mavlink-bridge.md) - Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold.
 

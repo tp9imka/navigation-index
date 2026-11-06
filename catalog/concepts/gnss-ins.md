@@ -6,9 +6,10 @@ Loosely, tightly and deeply coupled GNSS/INS.
 
 **Parent:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
-## Samples (1)
+## Samples (2)
 
 - [GNSS/INS EKF through a GNSS outage and a spoofing walk-off](../../catalog/samples/gnss-ins-ekf-outage.md) - A stdlib-only 2D loosely-coupled GNSS/INS EKF (8 states, hand-written matrix helpers) on a synthetic vehicle with biased, noisy 100 Hz IMU and 1 Hz GNSS.
+- [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) - Stdlib-only ground-vehicle loop on a real NCLT Segway session (2013-01-10, 1022 s, 1139 m, 42 MB download): consumer GPS at 1 Hz fused with MEMS strapdown INS (the 8-state EKF of gnss-ins-ekf-outage, imported), wheel spe
 
 ## Guides (3)
 

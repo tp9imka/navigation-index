@@ -4,6 +4,10 @@
 
 UGV/off-road autonomy stacks, localization and navigation for ground robots.
 
+## Samples (1)
+
+- [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) - Stdlib-only ground-vehicle loop on a real NCLT Segway session (2013-01-10, 1022 s, 1139 m, 42 MB download): consumer GPS at 1 Hz fused with MEMS strapdown INS (the 8-state EKF of gnss-ins-ekf-outage, imported), wheel spe
+
 ## Guides (2)
 
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) - After this chapter you know how navigation changes off the drone: what ships broadcast and how spoofing shows up in it, how vehicles navigate underwater where no radio reaches, how ground robots and pedestrians dead-reck

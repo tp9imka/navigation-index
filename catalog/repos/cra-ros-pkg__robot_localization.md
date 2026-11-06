@@ -43,6 +43,7 @@ ROS package with EKF and UKF state estimation nodes that fuse any number of odom
 - [Smoothing Odometry using Robot Localization (Nav2 first-time robot setup guide)](../../catalog/resources/nav2-robot-localization-setup-guide.md) (uses)
 - [ROSCon UK 2025 - State Estimation for Mobile Robotics Workshop](../../catalog/resources/nav2-roscon-uk-2025-state-estimation-workshop.md) (uses)
 - [robot_localization package documentation](../../catalog/resources/robot-localization-docs.md) (has_code)
+- [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) (explains)
 
 _Indexed by lane(s): ins-fusion_
 

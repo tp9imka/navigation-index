@@ -25,5 +25,6 @@ Segway robot sessions over many months on one campus with lidar, omnidirectional
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) (uses)
 
 _Indexed by lane(s): sim-data_

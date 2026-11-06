@@ -4,7 +4,7 @@
 
 Strapdown mechanization, IMU error models, calibration, dead reckoning.
 
-## Samples (7)
+## Samples (8)
 
 - [Celestial fix: cedar-solve plate solving on real star images, then position from star elevations above an IMU vertical](../../catalog/samples/celestial-star-tracker.md) - Runs cedar-solve (tetra3 API, v0.6.0 on NumPy 2) lost-in-space on 40 real SkyView Mellinger cutouts with a known WCS (12 and 20 deg FOV, random pointing and roll) and on the 20 real camera frames shipped with cedar-solve
 - [Dismounted foot-mounted INS: stdlib 15-state ZUPT EKF on the real pyshoe hallway data, cross-checked against pyshoe, with corridor heading, UWB and TAK output](../../catalog/samples/dismounted-foot-ins.md) - A stdlib-only error-state EKF (position, velocity, attitude, accel and gyro bias) with SHOE, ARED, AMVD and MBGTD stance detectors, run on all 36 real foot-mounted IMU trials of the UTIAS pyshoe hallway dataset (214.6 m 
@@ -13,6 +13,7 @@ Strapdown mechanization, IMU error models, calibration, dead reckoning.
 - [MagNav.jl quickstart: Tolles-Lawson and EKF on the SGL 2020 flight](../../catalog/samples/magnav-quickstart.md) - A Julia walkthrough with MagNav.jl that downloads the public SGL 2020 challenge flight and Ottawa anomaly maps, compensates the scalar magnetometer with Tolles-Lawson on a calibration box, and runs the MagNav EKF against
 - [PX4 SITL GPS denial: inject, measure drift, recover](../../catalog/samples/px4-sitl-gps-denial.md) - Flies a square mission in PX4 SITL (SIH quadrotor, headless; Gazebo also works per PX4 docs), denies GPS mid-mission, logs EKF2 health and estimated vs ground-truth position, then restores GPS and returns home.
 - [Terrain-relative navigation with a particle filter](../../catalog/samples/terrain-relative-nav-pf.md) - A stdlib-only simulation of TERCOM/TRN: an aircraft with a biased INS and a radar altimeter matches its measured terrain profile against a seeded synthetic DEM with a particle filter that also estimates the INS velocity 
+- [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) - Stdlib-only ground-vehicle loop on a real NCLT Segway session (2013-01-10, 1022 s, 1139 m, 42 MB download): consumer GPS at 1 Hz fused with MEMS strapdown INS (the 8-state EKF of gnss-ins-ekf-outage, imported), wheel spe
 
 ## Guides (11)
 
