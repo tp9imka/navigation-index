@@ -1,0 +1,4 @@
+data/
+out/*.jsonl
+.venv/
+__pycache__/
