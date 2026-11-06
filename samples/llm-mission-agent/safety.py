@@ -2,7 +2,7 @@
 
 Geometry runs in a local tangent plane (equirectangular around the fence centroid),
 which is accurate to well under 1 m for fences a few km across. Not for fences that
-span tens of km or cross the antimeridian/poles.
+span tens of km or cross the antimeridian/poles; the constructor rejects those.
 """
 import json
 import math
@@ -15,6 +15,10 @@ DEFAULT_MAX_LEG_M = 1000.0
 MAX_WAYPOINTS = 200
 MIN_SURVEY_SPACING_M = 5.0
 MAX_SURVEY_LINES = 100
+MAX_FENCE_EXTENT_M = 50_000.0   # tangent-plane error stays sub-metre well below this
+MAX_ABS_LAT_DEG = 85.0          # the projection degenerates towards the poles
+MAX_AREA_VERTICES = 100
+CLEARANCE_EPS_M = 0.01
 
 
 class SafetyError(ValueError):
@@ -30,8 +34,16 @@ class Fence:
             raise SafetyError("fence polygon needs at least 3 vertices")
         for lat, lon in polygon:
             check_lat_lon(lat, lon)
+            if abs(lat) > MAX_ABS_LAT_DEG:
+                raise SafetyError(f"fence vertex latitude {lat} beyond +/-{MAX_ABS_LAT_DEG} deg")
+        for name, v in (("min_alt_m", min_alt_m), ("max_alt_m", max_alt_m),
+                        ("margin_m", margin_m), ("max_leg_m", max_leg_m)):
+            if not _finite(v):
+                raise SafetyError(f"{name} must be a finite number")
         if not 0 <= min_alt_m < max_alt_m:
             raise SafetyError("need 0 <= min_alt_m < max_alt_m")
+        if margin_m < 0 or max_leg_m <= 0:
+            raise SafetyError("need margin_m >= 0 and max_leg_m > 0")
         self.polygon = [(float(a), float(b)) for a, b in polygon]
         self.min_alt_m = float(min_alt_m)
         self.max_alt_m = float(max_alt_m)
@@ -40,6 +52,11 @@ class Fence:
         self.lat0 = sum(p[0] for p in self.polygon) / len(self.polygon)
         self.lon0 = sum(p[1] for p in self.polygon) / len(self.polygon)
         self.xy = [self.to_xy(lat, lon) for lat, lon in self.polygon]
+        if max(math.dist(p, q) for p in self.xy for q in self.xy) > MAX_FENCE_EXTENT_M:
+            # also catches a fence across the antimeridian, which would otherwise project
+            # as a band around the rest of the globe, i.e. an inverted fence
+            raise SafetyError(f"fence spans more than {MAX_FENCE_EXTENT_M / 1000:.0f} km or "
+                              "crosses the antimeridian")
 
     @classmethod
     def from_json(cls, path):
@@ -89,15 +106,24 @@ class Fence:
             raise SafetyError(f"{what} ({lat:.6f}, {lon:.6f}) is outside the geofence "
                               f"(or within {self.margin_m} m of its edge)")
 
+    def clearance(self, p):
+        """Distance in metres from local point p to the nearest fence edge."""
+        return min(point_segment_distance(p, e1, e2) for e1, e2 in self.edges())
+
     def check_leg(self, start, end, what="leg"):
-        """Straight leg between two (lat, lon) points must stay inside the fence."""
+        """Straight leg between two (lat, lon) points must stay inside the fence and keep
+        margin_m from every edge (or, when it starts closer than that, not get closer)."""
         a, b = self.to_xy(*start), self.to_xy(*end)
         length = math.dist(a, b)
         if length > self.max_leg_m:
             raise SafetyError(f"{what} is {length:.0f} m, longer than max_leg_m {self.max_leg_m:.0f}")
+        required = min(self.margin_m, self.clearance(a)) - CLEARANCE_EPS_M
         for e1, e2 in self.edges():
             if segments_intersect(a, b, e1, e2):
                 raise SafetyError(f"{what} crosses the geofence boundary")
+            if segment_distance(a, b, e1, e2) < required:
+                raise SafetyError(f"{what} passes within {self.margin_m} m of the geofence "
+                                  "boundary (e.g. a concave corner)")
         return length
 
     def check_goto(self, lat, lon, rel_alt_m, current=None):
@@ -133,6 +159,10 @@ class Fence:
                 "start_checked": start is not None}
 
 
+def _finite(v):
+    return isinstance(v, (int, float)) and not isinstance(v, bool) and math.isfinite(v)
+
+
 def check_lat_lon(lat, lon):
     if not all(isinstance(v, (int, float)) and math.isfinite(v) for v in (lat, lon)):
         raise SafetyError("lat/lon must be finite numbers in degrees")
@@ -160,6 +190,12 @@ def point_segment_distance(p, a, b):
     return math.dist(p, (ax + t * dx, ay + t * dy))
 
 
+def segment_distance(p1, p2, q1, q2):
+    """Minimum distance between two segments that do not intersect."""
+    return min(point_segment_distance(p1, q1, q2), point_segment_distance(p2, q1, q2),
+               point_segment_distance(q1, p1, p2), point_segment_distance(q2, p1, p2))
+
+
 def _orient(a, b, c):
     v = (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0])
     return 0 if abs(v) < 1e-9 else (1 if v > 0 else -1)
@@ -183,15 +219,27 @@ def plan_survey(fence, area, spacing_m, rel_alt_m, heading_deg=0.0, inset_m=None
     """Boustrophedon (lawnmower) waypoints over `area` (list of (lat, lon)), lines along
     heading_deg (degrees true). Each pass is clipped to the area and shortened by inset_m
     at both ends. The result is checked against the fence by the caller."""
-    if spacing_m < MIN_SURVEY_SPACING_M:
-        raise SafetyError(f"spacing_m must be >= {MIN_SURVEY_SPACING_M}")
+    if not (_finite(spacing_m) and spacing_m >= MIN_SURVEY_SPACING_M):
+        raise SafetyError(f"spacing_m must be a finite number >= {MIN_SURVEY_SPACING_M}")
+    if not _finite(heading_deg):
+        raise SafetyError("heading_deg must be a finite number")
     fence.check_alt(rel_alt_m)
     inset = fence.margin_m if inset_m is None else float(inset_m)
+    if not math.isfinite(inset):
+        raise SafetyError("inset_m must be a finite number")
+    if not 3 <= len(area) <= MAX_AREA_VERTICES:
+        raise SafetyError(f"survey polygon needs 3 to {MAX_AREA_VERTICES} vertices")
+    for lat, lon in area:
+        check_lat_lon(lat, lon)
     pts = [fence.to_xy(lat, lon) for lat, lon in area]
     h = math.radians(heading_deg)
     ux, uy = math.sin(h), math.cos(h)      # along-track (east, north)
     vx, vy = math.cos(h), -math.sin(h)     # cross-track
     along = [(x * ux + y * uy, x * vx + y * vy) for x, y in pts]
+    # passes never extend past the fence, which bounds the 1 m trim loop below
+    fence_along = [(x * ux + y * uy, x * vx + y * vy) for x, y in fence.xy]
+    a_lo, a_hi = min(p[0] for p in fence_along), max(p[0] for p in fence_along)
+    v_lo, v_hi = min(p[1] for p in fence_along), max(p[1] for p in fence_along)
     vmin, vmax = min(p[1] for p in along), max(p[1] for p in along)
     n_lines = int((vmax - vmin) // spacing_m) + 1
     if n_lines > MAX_SURVEY_LINES:
@@ -202,6 +250,9 @@ def plan_survey(fence, area, spacing_m, rel_alt_m, heading_deg=0.0, inset_m=None
         v = vmin + spacing_m * (k + 0.5) if n_lines > 1 else (vmin + vmax) / 2
         if v > vmax:
             break
+        if not v_lo < v < v_hi:
+            flip = not flip
+            continue
         xs = []
         n = len(along)
         for i in range(n):
@@ -212,6 +263,7 @@ def plan_survey(fence, area, spacing_m, rel_alt_m, heading_deg=0.0, inset_m=None
         segs = [(xs[i] + inset, xs[i + 1] - inset) for i in range(0, len(xs) - 1, 2)
                 if xs[i + 1] - xs[i] > 2 * inset]
         for s0, s1 in (reversed(segs) if flip else segs):
+            s0, s1 = max(s0, a_lo), min(s1, a_hi)
             s0, s1 = _trim_to_fence(fence, s0, s1, v, (ux, uy), (vx, vy))
             if s1 - s0 <= 0:
                 continue

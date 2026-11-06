@@ -161,8 +161,9 @@ def main():
     p.add_argument("--transcript", default="transcript.jsonl")
     p.add_argument("--log", default="mav_mcp_commands.jsonl")
     args = p.parse_args()
+    # scripted harness with no human at the keyboard: SITL only
     cmd = [sys.executable, str(HERE / "mav_mcp_server.py"), "--connect", args.connect,
-           "--log", args.log]
+           "--log", args.log, "--confirm", "none"]
     if args.scenario == "dry":
         cmd.append("--dry-run")
     c = McpClient(cmd, args.transcript)

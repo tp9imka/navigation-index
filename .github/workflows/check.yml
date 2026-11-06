@@ -26,6 +26,7 @@ jobs:
         run: python3 tools/search_eval.py --parity
       - name: Stdlib sample and template tests
         run: |
+          python3 tools/test_mcp_server.py
           make -C templates/project-repo test
           (cd templates/demo-dashboard && python3 -m unittest -q)
           (cd templates/offline-kit && python3 -m unittest -q)

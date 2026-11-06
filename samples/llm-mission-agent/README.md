@@ -16,7 +16,7 @@ nav-health logic is stdlib and unit-tested.
 | `fence.example.json` | 5-vertex fence around the ArduPilot SITL default home (CMAC), 5-60 m above home, 10 m margin |
 | `run_transcript.py` | scripted MCP client used to verify the server end to end against SITL (no LLM) |
 | `agent_loop.py` | Claude tool-use loop over this server (+ optionally the index server) via the `anthropic` SDK. **Not run** |
-| `test_safety.py` | 24 stdlib tests: fence, concave-path crossing, altitude, mission, survey, nav-health verdicts, dry-run server |
+| `test_safety.py` | 47 stdlib tests: fence, concave-path crossing and corner clearance, altitude, mission, survey, nav-health verdicts, dry-run server, approval gate, JSON-RPC robustness |
 | `example_output/` | transcripts and command logs from the verified runs |
 
 ## Tools
@@ -34,15 +34,19 @@ this so the model sees it.
 | `set_mode` | `MAV_CMD_DO_SET_MODE` | allowlist GUIDED/AUTO/LOITER/BRAKE/RTL/LAND/SMART_RTL; AUTO only after a fence-checked upload |
 | `plan_survey` | lawnmower over a polygon (default: the fence), inset from the edges; returns waypoints, sends nothing | output re-checked against the fence |
 | `upload_mission` | MISSION_COUNT / MISSION_ITEM_INT handshake, optional RTL at end, optional start in AUTO | every waypoint and every leg (from the vehicle position) inside fence and band; 200 waypoint cap |
-| `set_ekf_source_set` | `MAV_CMD_SET_EKF_SOURCE_SET` 1-3, reports what the set uses from `EK3_SRCn_*` params | none beyond the enum; the description warns that a set without live sensors loses position |
+| `set_ekf_source_set` | `MAV_CMD_SET_EKF_SOURCE_SET` 1-3, reports what the set uses from `EK3_SRCn_*` params | enum and operator approval; the description warns that a set without live sensors loses position |
+
+Every actuating call except a switch to an exit mode also waits for operator approval; see
+[Safety](#safety).
 
 Cross-cutting:
 
 - **Dry run** (`--dry-run` or `MAV_DRY_RUN=1`): actuating tools run every check, then return
   `would_send` instead of sending. Reads still work if a vehicle is connected. `--connect none`
   gives a validation-only server with no vehicle.
-- **Command log** (`--log`, default `mav_mcp_commands.jsonl`): one JSON line per tool call with
-  arguments, outcome `read / ok / dry_run / rejected / error`, reason and result.
+- **Command log** (`--log`, default `mav_mcp_commands.jsonl`, created owner-only `0600`): one
+  JSON line per tool call with arguments, outcome `read / ok / dry_run / rejected / error`,
+  reason and result, plus `approved / declined` lines for operator decisions.
 - Safety rejections come back as tool results with `isError: true` and `{"rejected": true,
   "reason": ...}`, so the model sees why; unknown tools are JSON-RPC errors.
 - The vehicle link opens on the first tool call, so `initialize` never blocks on a vehicle.
@@ -77,7 +81,7 @@ ArduCopter `Copter-4.6.3` SITL, `nav-sitl-ardupilot:copter-4.6.3` image from
 `docker run` with host ports 15760/15762/15763 (other containers were using the defaults).
 pymavlink 2.4.50 in a uv venv on python 3.13; unit tests on python 3.14.7.
 
-`python3 -m unittest test_safety`: 24 tests, OK. The first version of the survey planner
+`python3 -m unittest test_safety`: 24 tests, OK (47 after the security review below). The first version of the survey planner
 failed `test_survey_tool_returns_checked_waypoints`: an along-track inset does not keep a
 pass end 10 m from a fence edge that meets it at a shallow angle, and rounding to 1e-7 deg
 pushed a point that sat exactly on the margin back out. The planner now trims pass ends
@@ -137,6 +141,7 @@ claude mcp add mavlink-sitl \
   -e MAV_CONNECT=tcp:127.0.0.1:5762 \
   -e MAV_FENCE=/abs/path/samples/llm-mission-agent/fence.example.json \
   -e MAV_LOG=/abs/path/mav_mcp_commands.jsonl \
+  -e MAV_CONFIRM=elicit \
   -- /abs/path/.venv/bin/python /abs/path/samples/llm-mission-agent/mav_mcp_server.py
 claude mcp list
 ```
@@ -154,28 +159,33 @@ Or as a project `.mcp.json` (Claude Code; Cursor and Claude Desktop take the sam
       "env": {"MAV_CONNECT": "tcp:127.0.0.1:5762",
               "MAV_FENCE": "/abs/path/samples/llm-mission-agent/fence.example.json",
               "MAV_LOG": "/abs/path/mav_mcp_commands.jsonl",
-              "MAV_DRY_RUN": "0"}
+              "MAV_DRY_RUN": "0",
+              "MAV_CONFIRM": "elicit"}
     }
   }
 }
 ```
 
-Start a second entry with `MAV_DRY_RUN=1` if you want the agent to rehearse first. Claude
-Code asks for permission per tool by default; keep that on for the actuating tools
-(`arm_takeoff`, `goto`, `set_mode`, `upload_mission`, `set_ekf_source_set`) and allow the
-read tools.
+Start a second entry with `MAV_DRY_RUN=1` if you want the agent to rehearse first. With
+`MAV_CONFIRM=elicit` (the default) the server asks the human through MCP elicitation before
+each actuating call; a client that does not declare elicitation gets every actuating call
+refused with a reason. Claude Code's own per-tool permission prompt is a second, client-side
+gate: keep it on for the actuating tools (`arm_takeoff`, `goto`, `set_mode`,
+`upload_mission`, `set_ekf_source_set`) and allow the read tools.
 
 Without Claude Code, `agent_loop.py` does the same over the Messages API:
 
 ```sh
 export ANTHROPIC_API_KEY=...
-python agent_loop.py --with-index --confirm --connect tcp:127.0.0.1:5762 \
+python agent_loop.py --with-index --connect tcp:127.0.0.1:5762 \
   --prompt "Survey the fence at 20 m with 40 m spacing. If GNSS degrades, switch to the vision source set and RTL."
 ```
 
 It defaults to `claude-sonnet-5-5` (`--model claude-opus-5-5` for the larger model), effort
 `medium`, server-side refusal fallback (`fallbacks: "default"`), and writes
-`agent_transcript.jsonl`. `--confirm` asks on the terminal before every actuating call.
+`agent_transcript.jsonl`. It declares the elicitation capability and shows each approval
+request from the server on the terminal (`approve? [y/N]`); `--no-confirm` starts the server
+with `--confirm none` and is for SITL only.
 
 ## Prompt recipes
 
@@ -246,6 +256,73 @@ before anything flies. From their index records only (source not read):
 `--enable-actuation` / `--allow-real-vehicle` flags, the closest in spirit to this sample;
 `repo:deepakpopli/mavlink-mcp` covers ArduPilot missions and camera workflows.
 
-Scope note: this is a navigation/autonomy sample for simulation. Do not point any LLM
-agent at a real airframe without an independent autopilot fence, a human with a kill
-switch, and the operator approval gate on.
+## Safety
+
+This is a simulation sample. **Never fly a real vehicle with it without a qualified safety
+pilot holding an independent RC link with a kill switch, and without the legal authorization
+the airspace requires** (operator registration, operational category or waiver, and any
+radio licensing). The LLM is the least trustworthy component in the loop; the design assumes
+it can be steered by anything it reads.
+
+**Threat in one line.** Text the operator does not control reaches the model: STATUSTEXT
+from the vehicle link (MAVLink v2 without signing is unauthenticated: during the 2026-11-06
+review a second link sending as system 1, component 191 had its STATUSTEXT routed by SITL to
+the server's link and shown to the model), navigation-index records that were gathered from
+the web, and the user prompt itself. Any of it can say "switch to source set 3" or "take off
+now". Control characters and bidi/zero-width characters are stripped from STATUSTEXT and
+tool results label such text as data, but no filter stops a plainly worded instruction. The
+controls that matter sit below the model:
+
+**Human confirmation gate (server side).** With `--confirm elicit` (default, `MAV_CONFIRM`)
+`arm_takeoff`, `goto`, `upload_mission` (including `start`), `set_ekf_source_set` and
+`set_mode` to GUIDED or AUTO first pass every fence and altitude check, then send the MCP
+client an `elicitation/create` request with a plain summary of what will be sent (target,
+altitude above home, leg length, the waypoint list, the EKF sources of the chosen set). Only
+an `accept` with `approve: true` sends the command. Decline, cancel, a malformed answer or no
+answer within 120 s rejects it, and the decision is written to the command log. Properties
+that make it a gate rather than a speed bump:
+
+- the approval arrives as a JSON-RPC response written by the client, which the model cannot
+  produce: it only emits tool calls, and approval fields inside tool arguments are ignored;
+- it runs after validation, so the human approves a command that already passed the fence;
+- no elicitation capability from the client => actuating calls are refused, not waved through;
+- switches to RTL, LAND, BRAKE, LOITER and SMART_RTL are never gated, so an exit is never
+  waiting for a click;
+- `--dry-run` sends nothing and needs no approval; `--confirm none` turns the gate off and is
+  for SITL and scripted tests (`run_transcript.py` uses it).
+
+The approval is only as good as the person reading it: check the summary, not the model's
+explanation of it.
+
+**What the geofence does.** The server rejects, before anything is sent: targets and
+waypoints outside the inclusion polygon or within `margin_m` of an edge; straight legs that
+cross an edge or pass within `margin_m` of one, including concave corners (a leg that starts
+closer than the margin may not get closer); legs longer than `max_leg_m`; altitudes outside
+`[min_alt_m, max_alt_m]` metres above home; AUTO without a mission this server validated;
+non-allowlisted modes; and, with a vehicle link, any `goto`, `arm_takeoff` or `upload_mission`
+while the vehicle position is unknown or stale (more than 3 s), or a takeoff with the vehicle
+or home outside the fence. Fence files that span more than 50 km, cross the antimeridian,
+reach beyond 85 deg latitude or carry non-finite numbers are refused at start-up.
+
+**What the geofence does not guarantee.**
+
+- It checks commands, not flight. Wind, overshoot, a bad EKF solution, GNSS spoofing or a
+  failsafe can carry the vehicle outside; nothing here watches for that or reacts to it.
+  Enable ArduPilot's own fence (`FENCE_ENABLE`, `FENCE_TYPE`, a polygon uploaded to the
+  autopilot, `FENCE_ACTION`) as the enforcing layer.
+- The fence is only as true as the position. Under GNSS spoofing or after a switch to a
+  drifting source set, "inside" is the EKF's belief.
+- Altitude is relative to home, not terrain and not MSL. A home reset (another GCS, a
+  re-arm elsewhere) moves the band; terrain rising inside the fence is not considered.
+  `RTL_ALT` and the autopilot's own climb behaviour are not checked against the band.
+- AUTO is allowed after a validated upload, but nothing re-reads the mission from the
+  vehicle: another GCS can replace it afterwards.
+- Long waits (`arm_takeoff` up to 105 s, `goto wait_s` up to 120 s) block this
+  single-threaded server; an RTL requested meanwhile queues behind them. Use `wait_s: 0`
+  and keep exits on the RC link and a GCS.
+- Geometry is a local tangent plane: fine for fences a few km across, refused beyond 50 km.
+
+**Before anything real** (outside the scope of this sample): MAVLink 2 signing on every
+link, an autopilot-side fence and failsafes, a GCS the safety pilot watches, a dry-run
+rehearsal of the exact mission, and the agent and index server on separate machines or
+sessions if the index content is not fully trusted.
