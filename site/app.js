@@ -84,16 +84,20 @@ const DEEP_DOC_CHARS = 1500, GUIDE_BODY_CHARS = 6000;
 const STOP = new Set(("a an and are as at be by for from in into is it of on or the to with via using none " +
   "all any but can do does have has how if its not our should so than that their them then there they this we what when where which who will you your").split(" "));
 const SYNONYM = { gps: "gnss", drone: "uav", uas: "uav", suas: "uav", quadcopter: "uav", quadrotor: "uav", multirotor: "uav", ladar: "lidar", harbour: "harbor", defence: "defense", ship: "vessel", boat: "vessel" };
-const NORMALIZE = [[/isation/g, "ization"], [/fixed[\s_-]+wing/g, "fixedwing"], [/geo[\s_-]+locali[sz]ation/g, "geolocalization"], [/geo[\s_-]+locali[sz]e/g, "geolocalize"]];
+const NORMALIZE = [[/isation/g, "ization"], [/fixed[\s_-]+wing/g, "fixedwing"], [/geo[\s_-]+locali[sz]ation/g, "geolocalization"], [/geo[\s_-]+locali[sz]e/g, "geolocalize"], [/night[\s_-]*time/g, "night"]];
+
+const STEM_EXCEPT = { cots: "cots", cors: "cors", take: "take", takes: "take", taking: "take",
+  same: "same", stated: "stated", plane: "plane", planes: "plane", denial: "deny" };
 
 function stem(t) {
   const syn = w => Object.prototype.hasOwnProperty.call(SYNONYM, w);
-  if (t.length > 4 && t.endsWith("ies")) t = t.slice(0, -3) + "y";
+  if (Object.prototype.hasOwnProperty.call(STEM_EXCEPT, t)) return STEM_EXCEPT[t];
+  if (t.length > 4 && (t.endsWith("ies") || t.endsWith("ied"))) t = t.slice(0, -3) + "y";
   else if (t.length > 3 && t.endsWith("s") && !t.endsWith("ss") && !t.endsWith("us") && !t.endsWith("is")) t = t.slice(0, -1);
   if (syn(t)) return SYNONYM[t];
   let cut = false;
   if (t.length > 5 && t.endsWith("ing")) { t = t.slice(0, -3); cut = true; }
-  else if (t.length > 4 && t.endsWith("ed")) { t = t.slice(0, -2); cut = true; }
+  else if (t.length > 4 && t.endsWith("ed") && !t.endsWith("eed")) { t = t.slice(0, -2); cut = true; }
   if (cut && t.length > 3 && t[t.length - 1] === t[t.length - 2] && !"lsz".includes(t[t.length - 1])) t = t.slice(0, -1);
   else if (t.length > 3 && t.endsWith("e")) t = t.slice(0, -1);
   return syn(t) ? SYNONYM[t] : t;

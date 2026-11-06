@@ -67,6 +67,7 @@ tools/           build.py, query.py, mcp_server.py, check_links.py, enrich.py (s
 All stdlib Python 3, no installs. `enrich.py` needs an authenticated `gh` CLI.
 
 ```
+python3 tools/query.py decode "Navigate a quadcopter 10 km without GPS under jamming"   # 1-3 decoder rows
 python3 tools/query.py search "visual geolocalization satellite" --kind repo --fit high
 python3 tools/query.py concept concept:magnetic-nav
 python3 tools/query.py show sample:golden-demo
@@ -76,8 +77,9 @@ claude mcp add navigation-index -- python3 "$PWD/tools/mcp_server.py"
 ```
 
 Search with keywords ("ArduCopter spoof EKF3 dashboard"), not a pasted problem statement.
-For a statement, read the [decoder](docs/problem-statement-decoder.md) first, then search with
-the matching row's keywords. The same rule holds for the MCP `search` tool.
+For a statement, run `query.py decode` (MCP: `decode`) or read the
+[decoder](docs/problem-statement-decoder.md) first, then search with the matching row's
+keywords. The same rule holds for the MCP `search` tool.
 
 ## How much to trust it
 

@@ -5,8 +5,9 @@
   query.py search lightglue --kind repo --fit high      with filters
   query.py concept concept:magnetic-nav                 everything about a concept
   query.py search "usv spoofing harbor"               guides (kind guide), samples and repos rank together
-For a problem statement, read docs/problem-statement-decoder.md first and search with each matching
-row's keywords. Pasting the whole statement works less well: long queries up-weight platform words
+  query.py decode "Navigate a quadcopter 10 km without GPS"  top 1-3 decoder rows for a pasted statement
+For a problem statement, run decode (or read docs/problem-statement-decoder.md) first and search with each
+matching row's keywords. Pasting the whole statement works less well: long queries up-weight platform words
 (DOMAIN_WORDS) but generic GNSS terms still pull in broad records.
   query.py show repo:px4/px4-autopilot                  full record
   query.py neighbors repo:px4/px4-autopilot --depth 2   graph walk
@@ -46,17 +47,26 @@ SYNONYM = {"gps": "gnss", "drone": "uav", "uas": "uav", "suas": "uav", "quadcopt
 NORMALIZE = ((re.compile(r"isation"), "ization"),
              (re.compile(r"fixed[\s_-]+wing"), "fixedwing"),
              (re.compile(r"geo[\s_-]+locali[sz]ation"), "geolocalization"),
-             (re.compile(r"geo[\s_-]+locali[sz]e"), "geolocalize"))
+             (re.compile(r"geo[\s_-]+locali[sz]e"), "geolocalize"),
+             (re.compile(r"night[\s_-]*time"), "night"))
 # Platform, environment and timing words decide which samples apply to a statement; in a long query
 # they are drowned by generic GNSS / spoofing terms that every record shares.
 DOMAIN_WORDS = ("uav fixedwing usv ugv uuv auv vessel maritime harbor underwater subsea indoor underground "
                 "tunnel subterranean dismounted pedestrian soldier night timing clock")
 DOMAIN_W = 2.0
 LONG_QUERY_TERMS = 6  # distinct query tokens from which a query is treated as a statement
+# Whole words the suffix rules get wrong: domain acronyms they would merge with English words
+# (COTS/CoT, CORS/core, TAK/take, SAM/same), "stated" vs "state", aircraft "plane" vs "planning".
+# Agent nouns stay apart on purpose: folding jammer => jam measured worse (jammer localization is
+# not jamming detection).
+STEM_EXCEPT = {"cots": "cots", "cors": "cors", "take": "take", "takes": "take", "taking": "take",
+               "same": "same", "stated": "stated", "plane": "plane", "planes": "plane", "denial": "deny"}
 
 
 def stem(t):
-    if len(t) > 4 and t.endswith("ies"):
+    if t in STEM_EXCEPT:
+        return STEM_EXCEPT[t]
+    if len(t) > 4 and t.endswith(("ies", "ied")):
         t = t[:-3] + "y"
     elif len(t) > 3 and t.endswith("s") and not t.endswith(("ss", "us", "is")):
         t = t[:-1]
@@ -66,7 +76,7 @@ def stem(t):
     cut = False
     if len(t) > 5 and t.endswith("ing"):
         t, cut = t[:-3], True
-    elif len(t) > 4 and t.endswith("ed"):
+    elif len(t) > 4 and t.endswith("ed") and not t.endswith("eed"):
         t, cut = t[:-2], True
     if cut and len(t) > 3 and t[-1] == t[-2] and t[-1] not in "lsz":
         t = t[:-1]
@@ -238,6 +248,217 @@ def search(recs, query, filters=None):
             if filters is None or matches_filters(e["ref"], filters)]
 
 
+# ---- problem-statement decoder: rows and wording triggers parsed from the doc at call time
+DECODER_DOC = "docs/problem-statement-decoder.md"
+DECODE_MAX_ROWS = 3
+DECODE_TRIGGER_W = 2.0   # per matched trigger group, times the row's position decay in the Rows cell
+DECODE_TRIGGER_DECAY = 0.5
+DECODE_NAME_W = 1.0      # idf of statement tokens found in the row's problem statement
+DECODE_APPROACH_W = 0.3  # idf of statement tokens found in the row's approach
+DECODE_KEEP = 0.4        # rows after the first are kept when they score at least this share of the best
+DECODE_KEYWORD_CARDS = 2
+DECODE_NUM_RATIO = 2.0   # "10 km" in a statement matches a "5 km" trigger, not a "30 km" one
+# "detect" meets "detection", "jamming" meets "jammer": the ranker's stemmer keeps these apart on purpose
+DECODE_SUFFIXES = ("ation", "ion", "er", "or")
+DECODE_ROOT_MIN = 4
+DECODE_WINDOW_SLACK = 2  # a multi-word trigger matches its words in any order within len + slack tokens
+LINK = re.compile(r"\[([^\]]*)\]\(([^)]*)\)")
+
+
+def md_cells(line):
+    return [c.strip().replace("\\|", "|") for c in re.split(r"(?<!\\)\|", line.strip().strip("|"))]
+
+
+def md_tables(text):
+    """[(header cells, [row cells])] for every pipe table in a markdown text."""
+    out, block = [], []
+    for line in text.splitlines() + [""]:
+        if line.lstrip().startswith("|"):
+            block.append(md_cells(line))
+            continue
+        if len(block) >= 2 and all(re.fullmatch(r":?-+:?", c) for c in block[1] if c):
+            out.append((block[0], block[2:]))
+        block = []
+    return out
+
+
+def column(header, *keys):
+    for k in keys:
+        for i, h in enumerate(header):
+            if k in h.lower():
+                return i
+    return None
+
+
+def plain(cell):
+    return re.sub(r"\s+", " ", re.sub(r"[`*]", "", LINK.sub(r"\1", cell))).strip()
+
+
+def pattern(text):
+    return tuple(tokens(text))
+
+
+def root(t):
+    for suf in DECODE_SUFFIXES:
+        if t.endswith(suf) and len(t) - len(suf) >= DECODE_ROOT_MIN:
+            t = t[:-len(suf)]
+            return t[:-1] if t[-1] == t[-2] else t
+    return t
+
+
+def tok_match(a, b, near_numbers=True):
+    if a.isdigit() or b.isdigit():
+        if not near_numbers:
+            return a == b
+        return a.isdigit() and b.isdigit() and int(a) > 0 and int(b) > 0 and \
+            max(int(a), int(b)) <= DECODE_NUM_RATIO * min(int(a), int(b))
+    return a == b or root(a) == root(b)
+
+
+def has_seq(seq, pat):
+    n = len(pat)
+    span = n + DECODE_WINDOW_SLACK if n > 1 else 1
+    return n > 0 and any(all(any(tok_match(p, s) for s in seq[i:i + span]) for p in pat)
+                         for i in range(max(1, len(seq) - n + 1)))
+
+
+def trigger_groups(cell):
+    """Quoted phrases (each with " / " alternatives). A "+" makes the trigger a conjunction:
+    '"detect", "map" + jamming / interference' needs one group from each side."""
+    sides = []
+    for part in cell.rsplit("+", 1):
+        groups = [[a.strip() for a in q.split(" / ") if a.strip()] for q in re.findall(r'"([^"]+)"', part)]
+        bare = re.sub(r'"[^"]*"', "", part).strip(" ,")
+        if not groups and bare:
+            groups = [[a.strip() for a in bare.split("/") if a.strip()]]
+        sides.append([{"text": " / ".join(g), "patterns": {pattern(a) for a in g} - {()}} for g in groups if g])
+    return [s for s in sides if s]
+
+
+def links(cell, kind):
+    out = []
+    for label, href in LINK.findall(cell):
+        href = href.split("#", 1)[0].rstrip("/")
+        name = href.rsplit("/", 1)[-1]
+        if kind == "sample" and "samples/" in href:
+            out.append({"id": f"sample:{name}", "name": label, "path": f"samples/{name}/README.md"})
+        elif kind == "sample" and "templates/" in href:
+            out.append({"name": label, "path": "templates/" + href.split("templates/", 1)[1]})
+        elif kind == "card" and name.endswith(".md"):
+            path = posix_join("docs", href)
+            rid = ("repo:" + name[:-3].replace("__", "/") if "/repos/" in path or "integration-cards/" in path
+                   else "res:" + name[:-3] if "/resources/" in path else None)
+            out.append({"id": rid, "name": label, "path": path})
+    return out
+
+
+def posix_join(base, href):
+    parts = []
+    for part in (base + "/" + href).split("/"):
+        if part == "..":
+            if parts:
+                parts.pop()
+        elif part and part != ".":
+            parts.append(part)
+    return "/".join(parts)
+
+
+def decoder_rows(text=None):
+    """(rows, triggers) parsed from the decoder doc; tolerant of added rows and reordered columns."""
+    if text is None:
+        text = (ROOT / DECODER_DOC).read_text()
+    rows, triggers = [], []
+    for header, body in md_tables(text):
+        wi, ri = column(header, "words"), column(header, "rows")
+        if wi is not None and ri is not None:
+            for cells in body:
+                if len(cells) <= max(wi, ri):
+                    continue
+                refs = [int(x) for x in re.findall(r"\d+", cells[ri])]
+                read_as = column(header, "read as")
+                triggers.append({"words": cells[wi], "read_as": plain(cells[read_as]) if read_as is not None
+                                 and read_as < len(cells) else "", "rows": refs, "sides": trigger_groups(cells[wi])})
+        elif "#" in header and column(header, "problem statement") is not None:
+            ni = header.index("#")
+            col = {k: column(header, *keys) for k, keys in (
+                ("name", ("problem statement",)), ("approach", ("approach",)), ("stack", ("stack",)),
+                ("datasets", ("dataset",)), ("start", ("start from",)), ("risk", ("risk",)))}
+            for cells in body:
+                if len(cells) <= ni or not cells[ni].isdigit():
+                    continue
+                get = lambda k: cells[col[k]] if col[k] is not None and col[k] < len(cells) else ""  # noqa: E731
+                rows.append({"row": int(cells[ni]), "name": plain(get("name")), "approach": plain(get("approach")),
+                             "start_from": links(get("start"), "sample"), "start_from_text": plain(get("start")),
+                             "cards": links(get("stack"), "card"), "datasets": plain(get("datasets")),
+                             "risk": plain(get("risk"))})
+    return rows, triggers
+
+
+def row_keywords(row):
+    """Search keywords for a row: its statement's content words plus its first stack names."""
+    kw = list(dict.fromkeys(w for w in re.findall(r"[A-Za-z0-9][\w-]*", row["name"]) if w.lower() not in STOP))
+    for c in row["cards"][:DECODE_KEYWORD_CARDS]:
+        kw.append(re.sub(r"\s*\(.*?\)|\s+card$", "", c["name"]).strip())
+    return " ".join(k for k in kw if k)
+
+
+def decode(statement, limit=DECODE_MAX_ROWS, text=None):
+    """Top decoder rows for a problem statement: trigger wording plus idf overlap with each row. Deterministic."""
+    rows, triggers = decoder_rows(text)
+    if not rows:
+        return []
+    seq = tokens(statement)
+    toks = set(seq)
+    docs = {r["row"]: (set(tokens(r["name"])), set(tokens(r["approach"]))) for r in rows}
+    df = defaultdict(int)
+    for name_t, appr_t in docs.values():
+        for t in name_t | appr_t:
+            df[t] += 1
+    idf = lambda t: math.log(1 + (len(rows) - df[t] + 0.5) / (df[t] + 0.5))  # noqa: E731
+    score = {r["row"]: 0.0 for r in rows}
+    why = {r["row"]: [] for r in rows}
+    for tr in triggers:
+        hit = []
+        for side in tr["sides"]:
+            got = [g["text"] for g in side if any(has_seq(seq, p) for p in g["patterns"])]
+            if not got:
+                hit = []
+                break
+            hit += got
+        if not hit:
+            continue
+        for pos, n in enumerate(tr["rows"]):
+            if n in score:
+                score[n] += DECODE_TRIGGER_W * len(hit) / (1 + DECODE_TRIGGER_DECAY * pos)
+                why[n] += [h for h in hit if h not in why[n]]
+    for n, (name_t, appr_t) in docs.items():
+        hit_name = {t for t in name_t if any(tok_match(t, s, False) for s in toks)}
+        hit_appr = {t for t in appr_t - name_t if any(tok_match(t, s, False) for s in toks)}
+        score[n] += DECODE_NAME_W * sum(idf(t) for t in hit_name) + DECODE_APPROACH_W * sum(idf(t) for t in hit_appr)
+    ranked = sorted((r for r in rows if score[r["row"]] > 0), key=lambda r: (-score[r["row"]], r["row"]))
+    if not ranked:
+        return []
+    best = score[ranked[0]["row"]]
+    keep = [r for i, r in enumerate(ranked[:max(1, limit)]) if i == 0 or score[r["row"]] >= DECODE_KEEP * best]
+    return [{**r, "score": round(score[r["row"]], 3), "matched_wording": why[r["row"]],
+             "keywords": row_keywords(r)} for r in keep]
+
+
+def format_decoded(rows):
+    out = []
+    for r in rows:
+        out.append(f"row {r['row']}: {r['name']}  (score {r['score']})")
+        if r["matched_wording"]:
+            out.append("  wording:    " + "; ".join(r["matched_wording"]))
+        out.append("  approach:   " + r["approach"])
+        out.append("  start from: " + (", ".join(s.get("id") or s["path"] for s in r["start_from"])
+                                       or r["start_from_text"]))
+        out.append("  cards:      " + ", ".join(c["name"] for c in r["cards"]))
+        out.append("  risk:       " + r["risk"])
+        out.append(f'  search:     python3 tools/query.py search "{r["keywords"]}"')
+    return "\n".join(out) if out else "no decoder row matched; read docs/problem-statement-decoder.md"
+
+
 def load():
     recs = {}
     for line in (ROOT / "index" / "records.jsonl").read_text().splitlines():
@@ -278,7 +499,7 @@ def brief(r):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("cmd", choices=["search", "concept", "show", "neighbors", "concepts"])
+    p.add_argument("cmd", choices=["search", "decode", "concept", "show", "neighbors", "concepts"])
     p.add_argument("arg", nargs="?")
     p.add_argument("--kind")
     p.add_argument("--fit", choices=["high", "medium", "low"])
@@ -288,6 +509,10 @@ def main():
     p.add_argument("--depth", type=int, default=1)
     p.add_argument("--json", action="store_true")
     a = p.parse_args()
+    if a.cmd == "decode":
+        rows = decode(a.arg or "", min(a.limit, DECODE_MAX_ROWS))
+        print(json.dumps(rows, indent=1, ensure_ascii=False) if a.json else format_decoded(rows))
+        return
     recs, adj = load()
 
     if a.cmd == "concepts":

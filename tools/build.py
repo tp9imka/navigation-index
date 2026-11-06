@@ -620,8 +620,9 @@ def write_llms(nodes, concepts, members):
         f"{nres} documents, talks, courses and datasets, {nsample} usage samples and {nguide} guides, "
         f"linked in one graph over {len(concepts)} concepts.",
         "",
-        "Read AGENTS.md for how to query and extend. For a problem statement, read "
-        "docs/problem-statement-decoder.md, pick its rows, then search with each row's keywords: "
+        "Read AGENTS.md for how to query and extend. For a problem statement, run "
+        "`python3 tools/query.py decode \"<statement>\"` (MCP tool `decode`) or read "
+        "docs/problem-statement-decoder.md to pick its rows, then search with each row's keywords: "
         "`python3 tools/query.py search \"<keywords>\"` or the MCP server tools/mcp_server.py "
         "(its `read` tool returns any guide or sample README). Guides (kind `guide`) are searchable like any other node.",
         "",

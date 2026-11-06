@@ -6,15 +6,16 @@ Guide for LLM coding agents (Claude Code, Cursor, Codex, Copilot...) using or ex
 
 Free-text search ranks a pasted problem statement poorly. Do this instead:
 
-1. Read `docs/problem-statement-decoder.md`. Match the statement's wording to 1-3 rows; each
-   row names an approach, integration cards, datasets, a sample to start from and the main risk.
+1. Run `python3 tools/query.py decode "<statement>"` (MCP: `decode`). It matches the statement
+   against `docs/problem-statement-decoder.md` and returns 1-3 rows with approach, cards, samples
+   to start from, risk and search keywords. Skim the doc to confirm the pick.
 2. Open `samples/README.md` for the named samples: status (`ran` / `partial` / `sketch`),
    deps (`stdlib` / `venv` / `docker`), first command, key measured result. The same fields
    are in each `samples/<name>/sample.json` (`verified_status`, `deps`, `first_command`).
 3. Quote numbers from `docs/evidence-matrix.md`, which marks real vs simulated inputs and
    labels superseded results (e.g. altpnt-integrity v1's 41.7 % availability, withdrawn by its
    v2). Never present a synthetic or SITL number as a field result.
-4. Then search with keywords taken from the decoder row, not the statement
+4. Then search with the row's keywords (decode prints them), not the statement
    (`search "jammer localization sensor network TAK"` works; a paragraph of prose does not).
    This applies to `tools/query.py`, the MCP `search` tool and the site alike. An MCP client
    without file access can get the decoder's full text with the `read` tool
@@ -40,7 +41,7 @@ interpreter. Deviations are listed in `samples/README.md`.
    python3 tools/query.py show sample:golden-demo
    ```
    or register the MCP server: `claude mcp add navigation-index -- python3 /abs/path/tools/mcp_server.py`.
-   Tools: `search`, `show`, `concept`, `neighbors`, `read` (MCP only: full markdown of a guide
+   Tools: `search`, `decode`, `show`, `concept`, `neighbors`, `read` (MCP only: full markdown of a guide
    or sample README). A sample id `sample:<name>` maps to `samples/<name>/README.md`; a repo id `repo:owner/name` maps to
    `docs/integration-cards/owner__name.md` when a card exists, else `catalog/repos/owner__name.md`.
 5. For working code start from `samples/README.md` - each sample says what ran, on which

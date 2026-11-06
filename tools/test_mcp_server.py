@@ -176,5 +176,120 @@ class ReadTool(unittest.TestCase):
         self.assertIn("section not found", read(path="README.md", section="no such heading zz")[1])
 
 
+HAVE_DECODER = (HERE.parent / "docs" / "problem-statement-decoder.md").exists()
+# (statement, rows that must be returned, rows allowed first)
+STATEMENTS = (
+    ("Teams must navigate a quadcopter 10 km without GPS under jamming", {1}, {1}),
+    ("Detect and localize GNSS jammers near a base", {3, 5}, {3, 5}),
+    ("Night-time fixed-wing navigation without satellites", {15, 16}, {15}),
+    ("Maritime vessels with spoofed AIS", {7, 8}, {7, 8}),
+    ("Build a resilient time server for critical infrastructure that detects GNSS time pushes", {6, 19}, {6, 19}),
+    ("Soldiers need to navigate inside buildings and tunnels", {9}, {9}),
+    ("An LLM assistant that tells operators what to do when navigation is jammed", {22}, {22}),
+    ("Swarm of drones must keep formation without GNSS using relative ranging", {10}, {10}),
+)
+MINI_DECODER = """# t
+| Rows | Words in the statement | Read as |
+|---|---|---|
+| 2 | "magnet" | m |
+| 1, 2 | "detect" + jamming / interference | j |
+
+| Main risk | # | Start from | Problem statement | Recommended approach | Stack |
+|---|---|---|---|---|---|
+| r1 | 1 | [a](../samples/alpha/) | Detect jamming | A1 | [X card](integration-cards/o__x.md) |
+| r2 | 2 | none | Magnetic \\| anomaly nav | A2 | [Y](../catalog/repos/gitlab.com__g__y.md) |
+"""
+
+
+class Decode(unittest.TestCase):
+    @unittest.skipUnless(HAVE_DECODER, "no decoder doc")
+    def test_realistic_statements(self):
+        for text, must, first in STATEMENTS:
+            rows = mcp_server.query.decode(text)
+            got = [r["row"] for r in rows]
+            self.assertTrue(1 <= len(rows) <= 3, (text, got))
+            self.assertLessEqual(must, set(got), (text, got))
+            self.assertIn(got[0], first, (text, got))
+            for r in rows:
+                self.assertTrue(r["approach"] and r["risk"] and r["keywords"], r["row"])
+                self.assertTrue(all(s["path"].startswith(("samples/", "templates/")) for s in r["start_from"]))
+
+    @unittest.skipUnless(HAVE_DECODER, "no decoder doc")
+    def test_no_match_and_determinism(self):
+        self.assertEqual(mcp_server.query.decode("hello world"), [])
+        self.assertEqual(mcp_server.query.decode(""), [])
+        text = STATEMENTS[0][0]
+        self.assertEqual(mcp_server.query.decode(text), mcp_server.query.decode(text))
+
+    def test_parser_tolerates_reordered_columns_and_new_rows(self):
+        rows, triggers = mcp_server.query.decoder_rows(MINI_DECODER)
+        self.assertEqual([r["row"] for r in rows], [1, 2])
+        self.assertEqual(rows[1]["name"], "Magnetic | anomaly nav")
+        self.assertEqual(rows[0]["start_from"][0]["id"], "sample:alpha")
+        self.assertEqual(rows[0]["cards"][0], {"id": "repo:o/x", "name": "X card",
+                                               "path": "docs/integration-cards/o__x.md"})
+        self.assertEqual(rows[1]["cards"][0]["id"], "repo:gitlab.com/g/y")
+        self.assertEqual(len(triggers), 2)
+        # "+" is a conjunction: "detect" alone does not fire the trigger
+        self.assertEqual(mcp_server.query.decode("detect it", text=MINI_DECODER)[0]["matched_wording"], [])
+        hit = mcp_server.query.decode("detect the jammers", text=MINI_DECODER)[0]
+        self.assertEqual(hit["row"], 1)
+        self.assertEqual(hit["matched_wording"], ["detect", "jamming / interference"])
+        self.assertEqual(mcp_server.query.decode("magnetometer map", text=MINI_DECODER), [])
+
+    def test_number_triggers_match_nearby_distances_only(self):
+        q = mcp_server.query
+        self.assertTrue(q.has_seq(q.tokens("fly 8 km out"), q.pattern("10 km")))
+        self.assertFalse(q.has_seq(q.tokens("fly 10 km out"), q.pattern("30 km")))
+
+    @unittest.skipUnless(HAVE_INDEX and HAVE_DECODER, "run tools/build.py first")
+    def test_ids_resolve_and_paths_exist(self):
+        recs, _ = mcp_server.data()
+        rows, _ = mcp_server.query.decoder_rows()
+        for r in rows:
+            for c in r["cards"] + r["start_from"]:
+                if c.get("id"):
+                    self.assertIn(c["id"], recs, (r["row"], c))
+                self.assertTrue((HERE.parent / c["path"]).exists(), (r["row"], c))
+
+    @unittest.skipUnless(HAVE_INDEX and HAVE_DECODER, "run tools/build.py first")
+    def test_mcp_tool(self):
+        tools = {t["name"]: t for t in mcp_server.handle(
+            {"jsonrpc": "2.0", "id": 1, "method": "tools/list"})["result"]["tools"]}
+        self.assertIn("decode", tools)
+        r = call("decode", statement=STATEMENTS[3][0], limit=1)["result"]
+        out = json.loads(r["content"][0]["text"])
+        self.assertEqual(len(out["rows"]), 1)
+        self.assertEqual(set(out["rows"][0]), {"row", "name", "approach", "start_from", "cards", "risk",
+                                               "matched_wording", "keywords", "score"})
+        self.assertIn("Untrusted", out["untrusted"])
+        out = json.loads(call("decode", statement="hello world")["result"]["content"][0]["text"])
+        self.assertEqual(out["rows"], [])
+        self.assertIn("by hand", out["next"])
+        for bad in ({"statement": 5}, {}, {"statement": "x", "limit": "2"}):
+            self.assertTrue(call("decode", **bad)["result"]["isError"], bad)
+
+    @unittest.skipUnless(HAVE_INDEX and HAVE_DECODER, "run tools/build.py first")
+    def test_cli(self):
+        out = subprocess.run([sys.executable, str(HERE / "query.py"), "decode", STATEMENTS[0][0], "--json"],
+                             check=True, capture_output=True, text=True).stdout
+        self.assertEqual(json.loads(out)[0]["row"], 1)
+        out = subprocess.run([sys.executable, str(HERE / "query.py"), "decode", STATEMENTS[0][0]],
+                             check=True, capture_output=True, text=True).stdout
+        self.assertIn('search:     python3 tools/query.py search "', out)
+
+
+class Stemmer(unittest.TestCase):
+    def test_known_fixes(self):
+        stem = mcp_server.query.stem
+        for a, b in (("denied", "deny"), ("denies", "deny"), ("denial", "deny"), ("speed", "speeds"),
+                     ("needed", "need"), ("taking", "take"), ("planes", "plane")):
+            self.assertEqual(stem(a), stem(b), (a, b))
+        for a, b in (("cots", "cot"), ("cors", "core"), ("take", "tak"), ("same", "sam"),
+                     ("stated", "state"), ("plane", "planning"), ("jammer", "jamming")):
+            self.assertNotEqual(stem(a), stem(b), (a, b))
+        self.assertEqual(mcp_server.query.tokens("night-time"), ["night"])
+
+
 if __name__ == "__main__":
     unittest.main()
