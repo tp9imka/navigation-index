@@ -128,7 +128,7 @@
  "remote-id-to-tak": {
   "group": "Counter-UAS detection",
   "shows": "Stdlib Open Drone ID decoder validated against opendroneid-core-c, track table with plausibility flags, CoT via PyTAK",
-  "input": "real",
+  "input": "mixed",
   "runtime": "tests 0.086 s",
   "key_result": "[Decoder](README.md#1-decoder-validated-against-opendroneid-core-c-ran-it) field-for-field equal to core-c on 500 + 500 vectors and 81 payloads from public captures"
  },

@@ -52,9 +52,13 @@ downloads full SAFE zips from Copernicus Data Space, which needs a free CDSE acc
 ### Dashboard
 
 ```sh
-cd ../../templates/demo-dashboard && python3 -m http.server 8000
-# http://localhost:8000/?manifest=../../samples/osint-jamming-map/out/manifest.json&t=3617
+cd ../.. && python3 -m http.server 8000      # serve the repo root, so the dashboard can read samples/
+# http://localhost:8000/templates/demo-dashboard/index.html?manifest=../../samples/osint-jamming-map/out/manifest.json&t=3617
 ```
+
+Ran 2026-11-06 (headless Chrome, SwiftShader): title, the three tracks and the S-1 overpass event
+load. Serving `templates/demo-dashboard` alone does not work: `../../samples/...` then points
+outside the server root (404).
 
 `zones.geojson` uses the dashboard's zone format: polygons with `kind` (`jamming` = ADS-B red or
 yellow hex, amber; `c-band-rfi` = Sentinel-1 flag, purple), `label`, `t_start`/`t_end` on the

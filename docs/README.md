@@ -25,7 +25,7 @@ not a pasted problem statement: for a statement, read the
 ### H+0: the problem statement drops
 
 1. [problem-statement-decoder.md](problem-statement-decoder.md) - wording table => 1-3 of
-   26 rows, each with approach, stack, data, starting sample, risk and pitch.
+   the decoder rows, each with approach, stack, data, starting sample, risk and pitch.
 2. [day0-runbook.md](day0-runbook.md) - the first three hours, until a walking skeleton runs.
 3. [../samples/README.md](../samples/README.md) - every sample with status, deps, first
    command and key measured result (generated from each `sample.json`).
@@ -34,13 +34,17 @@ not a pasted problem statement: for a statement, read the
 
 - [reference-stacks.md](reference-stacks.md) - one default and one alternative per
   capability, plus what to avoid and why.
-- [integration-cards/](integration-cards/) - one repo each: install, wiring, gotchas,
-  license. Indexed by `<!-- about: -->` markers from the catalog pages.
+- [integration-cards/](integration-cards/README.md) - one repo each: install, wiring, gotchas,
+  license. The README is a generated index grouped by capability, with fit, license and last
+  push per card. Indexed by `<!-- about: -->` markers from the catalog pages.
 - [dataset-cards/](dataset-cards/README.md) - checked sizes, formats and licenses.
 - [paper-digests/](paper-digests/README.md) - what a paper claims and what the code does.
 - [integrity-monitoring.md](integrity-monitoring.md) - protection levels, solution
   separation, Stanford diagram.
 - [timing-resilience.md](timing-resilience.md) - holdover, time attacks, timing builds.
+- [autopilot-gnss-fault-handling.md](autopilot-gnss-fault-handling.md) - what PX4 EKF2 and
+  ArduPilot EKF3 do under GNSS spoofing and jamming, read from pinned source and checked in
+  SITL; why the vehicle follows the spoofed position and what an external monitor must add.
 - [model-weights-licenses.md](model-weights-licenses.md) - code license vs weights license
   for learned matchers and place recognition.
 - [hackathon-playbook.md](hackathon-playbook.md) sections 3-5 - project ideas, reference
@@ -56,7 +60,7 @@ not a pasted problem statement: for a statement, read the
 
 - [SCHEMA.md](SCHEMA.md) - data model for `data/`. Sample fields (`verified_status`, `deps`, `first_command`, `key_result`, `input`, `group`, `runtime`) are described in [../samples/README.md](../samples/README.md).
 - [reports/](reports/) - hand-written review and fact-check passes (cold-start review,
-  [review round 2](reports/review-round2.md), fact checks, search ranking, card vs sample
+  [review round 2](reports/review-round2.md), [review round 3](reports/review-round3.md), fact checks, search ranking, card vs sample
   cross-check).
 - [upstream-findings.md](upstream-findings.md) - defects the samples found in upstream code,
   with reproduction, evidence, suggested report text and channel; nothing filed yet. The top-level `reports/` folder

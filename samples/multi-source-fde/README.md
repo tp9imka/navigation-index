@@ -60,15 +60,29 @@ is the optimistic configuration and `fde2` the one that matches the stated prior
 
 ## Run
 
+From a clean checkout this sample does not run on its own. It needs:
+
+- a venv with numpy, scipy and rasterio: `requirements.txt` here points at
+  `../two-source-integrity-vpair/requirements.txt` (pins used for the run: CPython 3.12.14,
+  numpy 2.5.4, scipy 1.18.1, rasterio 1.5.2);
+- the VPAIR sample, 0.86 GB, from `../relative-nav-benchmark/fetch_data.sh aerial`;
+- the two-source sample's terrain in `../two-source-integrity-vpair/data/`: 46 NRW DSM tiles
+  (~120 MB) plus a GLO-30 window, from its `fetch_terrain.py` (sizes from those samples' READMEs);
+- the visual front-end cache `../e2e-visual-nav-vpair/results/frontend*.json`, which is committed.
+
+Plain `python3 run_fde.py` without the venv stops with `ModuleNotFoundError: No module named 'numpy'`.
+
 ```sh
-# needs the two-source sample's data/ (fetch_terrain.py) and the VPAIR sample (relative-nav-benchmark/fetch_data.sh aerial)
-DATA=../relative-nav-benchmark/data/vpair     # any dir containing vpair_sample/
-<venv>/bin/python run_fde.py --data $DATA     # 164 s on M2 Max, 10 seeds x 7 scenarios, results/fde_result.json
-python3 -m unittest discover                  # 17 tests; 3 need numpy + the two-source imports
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+../relative-nav-benchmark/fetch_data.sh aerial            # 0.86 GB => ../relative-nav-benchmark/data/vpair/
+DATA=../relative-nav-benchmark/data/vpair                 # any dir containing vpair_sample/
+.venv/bin/python ../two-source-integrity-vpair/fetch_terrain.py --data $DATA   # ~120 MB => ../two-source-integrity-vpair/data/
+.venv/bin/python run_fde.py --data $DATA                  # 164 s on M2 Max, 10 seeds x 7 scenarios, results/fde_result.json
+python3 -m unittest discover                              # 17 tests; 3 need numpy + the two-source imports
 ```
 
-Same venv as two-source (numpy, scipy, rasterio). `results/run_output.txt` is the console output of
-the run below.
+The install line and the data chain above were not re-run for this note; they follow the two-source
+and relative-nav-benchmark READMEs. `results/run_output.txt` is the console output of the run below.
 
 ## Scenarios
 

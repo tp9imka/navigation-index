@@ -124,6 +124,11 @@ more honest drift number.
 - **15-state default vs pyshoe: 2.35 vs 2.51 m ARMSE, 1.30 % vs 1.49 % final, 3.63 vs 3.92 m
   max** (mean of 36 trials). A modest gain; the bias states mostly help through slightly
   different gains, not through bias estimates that mean much.
+- **Two downloads, two results.** The table is on the author's download (re-run on that data
+  2026-11-06: identical). A fresh `fetch_data.sh` download in review round 2, same code, gave
+  **2.21 m / 1.33 % / 3.68 m** for `ins15_py` (`pyshoe9` 2.37 m, `ins15` 2.76 m): every config
+  about 0.14 m lower. Cause not found. Quote "2.2-2.35 m" or name the download, as the
+  [evidence matrix](../../docs/evidence-matrix.md) does.
 - **Step order matters more than I expected**: pyshoe's `nav_eq` rotates the specific force
   with the already-updated attitude and integrates position from the new velocity. That beats
   the textbook order (previous attitude, old velocity) by ~0.5 m ARMSE here. Not explained, just

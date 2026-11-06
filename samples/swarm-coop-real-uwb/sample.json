@@ -38,6 +38,6 @@
   "group": "Swarm",
   "shows": "Swarm-coop filters on real MILUV inter-drone UWB: real vs simulated range error, DR vs centralized vs CI, injected anchor fault and detection time",
   "input": "mixed",
-  "runtime": "download ~55 MB in ~3 min; stats < 2 s; nominal ~2 min; each fault run ~3 min; tests ~4 s",
+  "runtime": "first-command download 31.4 MB in ~1 min (all three experiments 54.6 MB); stats < 2 s; nominal ~2 min; each fault run ~3 min; tests ~4 s",
   "key_result": "[Sim vs real](README.md#how-the-sims-conclusions-hold-on-real-data): real UWB core sd ~0.10 m like the sim but max 1.9 m vs the sim's 9 % > 5 m, so plain = robust on real ranges; denied drone 0.48 m DR => 0.20 m centralized, 0.27 m CI; centralized SS detects a biased-anchor fault 30/30 at median 42 s, 0 false alarms in 30 clean runs"
 }

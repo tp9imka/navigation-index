@@ -1,0 +1,2 @@
+# Same packages as the two-source sample, whose data loading, TRN and EKF code run_fde.py imports.
+-r ../two-source-integrity-vpair/requirements.txt

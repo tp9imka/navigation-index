@@ -53,7 +53,7 @@ GitHub repo by id even if another lane indexes it. The builder reports dangling 
 
 ```json
 {
-  "id": "res:afrl-magnav-challenge",
+  "id": "res:magnav-challenge-site",
   "kind": "paper | talk | course | lecture-series | masterclass | doc | standard | book | dataset | report | blog | competition | podcast | video",
   "title": "Exact title",
   "url": "https://...",

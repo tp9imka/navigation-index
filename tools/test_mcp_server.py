@@ -189,8 +189,7 @@ STATEMENTS = (
     ("Swarm of drones must keep formation without GNSS using relative ranging", {10}, {10}),
 )
 # below the floor: the decoder has no cue for "infantry", "squad", "building"; row 9 must still come first
-WEAK = ("Give an infantry squad on foot a way to know where each member is inside a multi-storey building "
-        "with no GPS, and share it with the platoon leader", 9)
+WEAK = ('An AUV must return to its dock after 6 hours under ice with no surface access', 17)
 MINI_DECODER = """# t
 | Rows | Words in the statement | Read as |
 |---|---|---|

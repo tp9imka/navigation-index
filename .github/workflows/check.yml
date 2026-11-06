@@ -19,6 +19,7 @@ jobs:
         run: |
           python3 tools/build.py | tee build.log
           python3 templates/offline-kit/build_manifest.py
+          python3 tools/card_index.py
           grep -q "dangling: 0 bad concepts: 0" build.log
       - name: Links resolve
         run: python3 tools/check_links.py
@@ -45,7 +46,7 @@ jobs:
         run: |
           git config user.name "navigation-index-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add catalog INDEX.md graph/graph.json index llms.txt reports site/data samples/README.md templates/offline-kit/manifest.json
+          git add catalog INDEX.md graph/graph.json index llms.txt reports site/data samples/README.md templates/offline-kit/manifest.json docs/integration-cards/README.md
           if ! git diff --cached --quiet; then
             git commit -m "chore: regenerate catalog [skip ci]"
             git push
