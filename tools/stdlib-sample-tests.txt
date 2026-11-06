@@ -21,3 +21,4 @@ osnma-authentication
 osint-jamming-map
 cuas-classifiers
 terrain-heightmap-pf
+celestial-star-tracker

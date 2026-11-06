@@ -1,0 +1,10 @@
+# Tested 2026-11-06 with Python 3.12.14 on macOS arm64.
+# cedar-solve is installed separately with --no-deps (README): its pyproject pins numpy<2 and
+# Pillow<9, but the tag below ran fine with these newer versions.
+numpy==2.5.4
+scipy==1.18.1
+pillow==13.0.0
+astropy==8.0.2
+skyfield==1.55
+jplephem==2.24
+sgp4==2.27
