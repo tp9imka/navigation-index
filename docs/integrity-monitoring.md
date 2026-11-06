@@ -140,7 +140,8 @@ Research that does this for cameras:
 ## 6. FDE with several alt-PNT sources
 
 How many independent absolute sources you have decides what the monitor can do. The
-altpnt-integrity sample makes this concrete (20 seeds, AL 50 m, full monitor):
+altpnt-integrity sample makes this concrete (v1 assumed error models, 20 seeds, AL 50 m,
+full monitor; section 8 shows how these availabilities drop with measured models):
 
 | Absolute sources active | Detect | Identify | What the sample shows |
 |---|---|---|---|
@@ -185,7 +186,75 @@ most important number in the monitor.
 - A source that just came back from an outage is the easiest to spoof: the filter's
   covariance is large and the gate is wide. Probation before re-admission closes that hole.
 
-## 8. Presenting it to judges
+## 8. The calibration lesson: assumed vs measured error models
+
+A protection level is a function of the error models. v1 of the sample chose them (VIO heading
+error 0.23 deg, geoloc zero-mean 5 m with an 8 m filter R, 85 % fix availability) and showed
+zero MI over 20 seeds. Four sibling samples then measured those errors on real data, and v2
+of the sample ([section "v2"](../samples/altpnt-integrity/README.md#v2-calibrated-on-measured-error-models))
+re-ran the same flight, faults and monitor with them. Numbers below are 20 seeds x 600 epochs,
+AL 50 m, from `samples/altpnt-integrity/results/v2_mc.json`.
+
+| Error model | Assumed in v1 | Measured | Measured in |
+|---|---|---|---|
+| Relative-source heading | 0.23 deg | 3.6 deg fit, 0.6 => 5.2 deg over 50 s (OpenVINS); 0.13 deg (KISS-ICP); 0.03 deg (attitude-aided nadir VO) | [relative-nav-benchmark](../samples/relative-nav-benchmark/) |
+| Relative-source scale | 0.5 % constant | wanders -4.9 % to +7.4 % over 8.9 km (nadir VO) | same |
+| VIO velocity noise at 30 m/s | 0.08 m/s | 0.26-0.89 m/s | same |
+| Geoloc availability | 85 % | 58 % on rendered cross-season frames; 1 of 5 real UAV frames | [golden-demo](../samples/golden-demo/), [geoloc-license-clean](../samples/geoloc-license-clean/) |
+| Geoloc error | zero-mean 5 m | 3.3 m median, 9.9 m max, around a constant 3.5 m registration bias; 11 m on the one real frame | same |
+| Geoloc wrong fixes | 30 % in texture zones | 0 of 296 accepted (bound 1.0e-2) | same |
+| TRN confidence | - | spread is conservative as a 1-sigma radius pooled, near-exact in hilly terrain (1.07 inflation) | [terrain-heightmap-pf](../samples/terrain-heightmap-pf/) |
+
+What happened:
+
+- **The assumed-model result did not survive.** Same v1 filter and monitor in the measured
+  world: availability 41.7 % => 8.3 %, MI* (PE > PL in any region) 0 => 8901 of 12 000 epochs,
+  HMI 0 => 18. Without GNSS, MI* is 63 % of epochs, the same order as the 60 % that
+  relative-nav-benchmark found by plugging its fitted heading into v1.
+- **One model broke it.** With KISS-ICP-grade heading and the real geoloc models, v1 still had
+  0 MI and 38.8 % availability. The measured geoloc errors were inside v1's R; the heading
+  error was ten to twenty times outside the VIO bias prior.
+- **The fix is in the model, not the monitor.** Heading and scale states, measured VIO noise
+  and an overbounded geoloc R brought MI* back to 0 in the OpenVINS, KISS-ICP, nadir-VO and
+  GNSS-off measured worlds (20 seeds each). With TRN added, 221 epochs of PE > PL remained, 220
+  of them during a two-source ambiguity alert, so none while claiming availability. Availability: 13.9 % (folded overbound + bias term) to 26.1 %
+  (paired overbound), against v1's claimed 41.7 %. At AL 100 m it is 34-41 %.
+- **Using TRN confidence as R works; a constant R misleads.** TRN as a third source with R from
+  particle spread raised availability to 16.7 % (41.1 % at AL 100 m) with no MI while claiming
+  availability; the same fixes with a constant 25 m R gave 10 such epochs.
+- **An overbound only covers the conditions it was fitted on.** Under a map-age stress row
+  (20 % availability plus the 11 m real-frame bias), the 3.5 m bias bound from the cross-season
+  table was exceeded: 374 epochs of PE > PL (flagged unavailable at AL 50 m), and 2 HMI epochs
+  at AL 100 m.
+- **Honest drift costs detection.** A 5 deg heading prior makes a 1.5 m/s spoof walk-off at
+  30 m/s indistinguishable from heading error; with the v2 tuning, probation re-admitted the
+  spoofer and blamed vgeo on 3 of 5 inspected seeds. The PL caught it as unavailability, not as an exclusion.
+
+How to overbound a measured error distribution:
+
+- **CDF overbounding (DeCleene 2000).** Pick a zero-mean Gaussian whose CDF lies above the
+  empirical one on the negative side and below it on the positive side (equivalently, its
+  two-sided tail lies above the empirical tail everywhere). If the true errors are symmetric
+  and unimodal, the bound carries through the linear position solution. The sample applies it
+  to the folded per-axis errors with a 95 % confidence bound on each tail fraction: 5.4 m.
+- **Paired overbounding (Rife, Pullen, Enge and Pervan 2006).** Two envelopes, left and right,
+  so biased and asymmetric errors are handled; in practice a bias bound plus a core sigma. For
+  the geoloc table: 3.5 m bias + 2.7 m sigma. The bias goes into the PL and into the SS
+  thresholds because a Kalman filter averages fixes as if independent and a map registration
+  bias does not average out.
+- **Fault, not tail.** Wrong matches are a fault mode with a prior, not a tail of the nominal
+  Gaussian. Zero observed in n trials still gives a prior: 1 - 0.05^(1/n), about 3/n. That
+  number, not 0, goes into the fault budget.
+- **Learned uncertainty is a measurement covariance only after you check its coverage.** The
+  TRN particle spread became R after its coverage against truth was measured (82 / 99 / 100 %
+  at 1 / 2 / 3x spread) and inflated to the worst region.
+
+Message for judges: "We tuned on assumed errors and got zero misleading information. Then we
+measured the errors on real data, re-ran, and got misleading information in most epochs. Here is
+the model change that removed it and the availability it cost." That sequence is more credible
+than any zero-MI claim on its own.
+
+## 9. Presenting it to judges
 
 Judges see accuracy plots every round. Show the four things below instead.
 
@@ -203,14 +272,22 @@ Judges see accuracy plots every round. Show the four things below instead.
 4. **Monitor log on the timeline.** "330 s vgeo excluded (map misregistration), 435 s
    ambiguous alert (spoof), 485 s GNSS blamed." Judges remember events, not tables.
 
-One sentence pitch: "Our navigator reports a protection level every epoch; in 12 000
-simulated epochs with spoofing, outliers and map errors it was never wrong without saying
-so, and here is the same flight with the monitor off."
+5. **Assumed vs measured.** The section 8 table: the same monitor with assumed and with
+   measured error models, and what it took to get back to zero MI.
 
-## 9. Pitfalls
+One sentence pitch: "Our navigator reports a protection level every epoch; with error models
+measured on real data it was never wrong without saying so over 12 000 simulated epochs, here
+is the same flight with the monitor off, and here is what the assumed models would have
+claimed."
+
+## 10. Pitfalls
 
 - A PL is a model output. If R and Q are optimistic, the PL is optimistic. Overbound
-  noise, check MI on a fault-free Monte Carlo, then add faults.
+  noise, check MI on a fault-free Monte Carlo, then add faults. Then measure the noise on
+  real data and redo it: in the sample a heading error outside the assumed model turned zero
+  MI into MI in 74 % of epochs (section 8).
+- An overbound fitted on one season pair, one park or one platform does not cover another.
+  Say which data each bound came from.
 - `P_j - P0` as the separation covariance assumes optimal filters fed the same data.
   Gating breaks that slightly; floor the separation sigma.
 - AL, P_FA and P_MD in the sample are illustrative. No UAV alt-PNT integrity standard was
@@ -243,6 +320,16 @@ or publisher record but the text was not read.
 - Blanch, J., Walter, T., Enge, P., et al. "Baseline Advanced RAIM User Algorithm and
   Possible Improvements." IEEE Transactions on Aerospace and Electronic Systems 51(1),
   713-732, 2015. Bibliographic record (dblp).
+- DeCleene, B. "Defining Pseudorange Integrity - Overbounding." Proceedings of ION GPS 2000,
+  Salt Lake City, September 2000. Bibliographic record via secondary sources (a USPTO patent
+  citation and later overbounding papers) and the
+  [Stanford GPS Lab Gaussian overbound page](https://gps.stanford.edu/resources/software-tools/gaussian-overbound);
+  full text not read. The symmetric-unimodal condition is as stated in those secondary sources.
+- Rife, J., Pullen, S., Enge, P., Pervan, B. "Paired Overbounding for Nonideal LAAS and WAAS
+  Error Distributions." IEEE Transactions on Aerospace and Electronic Systems 42(4),
+  1386-1395, 2006. doi:10.1109/TAES.2006.314579. Bibliographic record and abstract via library
+  index; author order differs between indexes, check the DOI. Earlier conference version:
+  "Paired Overbounding and Application to GPS Augmentation", IEEE PLANS 2004.
 - Tossaint, M., Samson, J., Toran, F., Ventura-Traveset, J., Sanz, J., Hernandez-Pajares,
   M., Juan, J. M., Tadjine, A., Delgado, I. "The Stanford - ESA Integrity Diagram: Focusing
   on SBAS Integrity." 2006. [Navipedia article](https://gssc.esa.int/navipedia/index.php/The_Stanford_%E2%80%93_ESA_Integrity_Diagram:_Focusing_on_SBAS_Integrity)
