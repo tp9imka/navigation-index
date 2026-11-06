@@ -102,6 +102,10 @@ class Scenario:
     asym_change: dict = field(default_factory=dict)  # link index => (t, extra asymmetry s)
     checkpoints: tuple = CHECKPOINTS
     trace_every: float = None      # record every node's TE at this period (s) after ref_t
+    # link index => (1 Hz series of offset error, s; start index). Replaces that link's synthetic
+    # asymmetry, queueing and timestamp noise; looped. m = x_a - x_b + series, so a node b taking
+    # time from a over this link sees TE = +series (real_link.py feeds PPS truth this way).
+    link_replay: dict = field(default_factory=dict)
 
 
 @dataclass
@@ -112,6 +116,7 @@ class Result:
     alarms: list = field(default_factory=list)     # (s after spoof_at or monitor end, node)
     weights: dict = field(default_factory=dict)
     trace: list = field(default_factory=list)      # (s after ref_t, [TE per node])
+    thresholds: dict = field(default_factory=dict)  # consistency-check alarm threshold per node, s
 
 
 def adev_model(grade, tau, temp_fraction):
@@ -133,6 +138,20 @@ def ensemble_weights(cfg):
 def best_clock(cfg):
     w = ensemble_weights(cfg)
     return max(w, key=w.get)
+
+
+def replay_value(series, start, t, dt):
+    """Mean of a looped 1 Hz error series over the step [t, t + dt)."""
+    n = len(series)
+    w = max(1, int(round(dt)))
+    i0 = int(t) + start
+    return sum(series[(i0 + j) % n] for j in range(w)) / w
+
+
+def replay_noise(series, dt):
+    w = max(1, int(round(dt)))
+    means = [sum(series[i:i + w]) / w for i in range(0, len(series) - w + 1, w)]
+    return statistics.pstdev(means) if len(means) > 1 else 0.0
 
 
 def step_noise(link, cfg):
@@ -237,7 +256,8 @@ def run(scn, cfg, seed):
         gains.append([(2.0 * th.LOOP_DAMPING / c, 1.0 / (c * c)) for c in (th.ACQ_TC_S, tc)])
     trk_gains = []
     for i, gr in enumerate(grades):
-        sig = max(step_noise(LINKS[k], cfg) for _, k, _ in g.adj[i])
+        sig = max(replay_noise(scn.link_replay[k][0], dt) if k in scn.link_replay else step_noise(LINKS[k], cfg)
+                  for _, k, _ in g.adj[i])
         tc = th.loop_time_constant(gr, sig, cfg.temp_fraction)
         trk_gains.append((2.0 * th.LOOP_DAMPING / tc, 1.0 / (tc * tc)))
     # phase-only averaging while acquiring: the held-over oscillator's frequency is already
@@ -306,6 +326,8 @@ def run(scn, cfg, seed):
                 qr = qb + rng.gauss(0.0, qb / math.sqrt(npk))
                 nz = rng.gauss(0.0, l.ts / math.sqrt(2.0 * npk))
             m = x[a] - x[b] - (l.asym * cfg.asym_scale + extra) / 2.0 + (qr - qf) / 2.0 + nz
+            if k in scn.link_replay:
+                m = x[a] - x[b] + replay_value(*scn.link_replay[k], t, dt)
             meas.append(m)
             if scn.calib and cfg.calibrate and scn.calib[0] <= t < scn.calib[1] and locked[a] and locked[b]:
                 cal_acc[k][0] += m
@@ -406,6 +428,7 @@ def run(scn, cfg, seed):
                 else:
                     if base is None:
                         base, var, thr = _train(train_rows, g, cfg)
+                        res.thresholds = {g.names[i]: v for i, v in thr.items()}
                     edges = [(g.idx[LINKS[k].a], g.idx[LINKS[k].b], d - base[k], 1.0 / var[k])
                              for k, d in row.items() if k in base]
                     nodes = sorted({e[0] for e in edges} | {e[1] for e in edges})

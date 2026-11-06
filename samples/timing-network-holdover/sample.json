@@ -1,28 +1,86 @@
 {
   "id": "sample:timing-network-holdover",
   "title": "Network of GNSS-disciplined clocks: holdover from peers, spoof isolation by cross-node consistency, ADEV-weighted ensemble",
-  "summary": "A stdlib-only simulation of six GNSS-disciplined sites (TCXO, OCXO, CSAC, Rb oscillators imported from timing-holdover) linked by PTP-like two-way time transfer with static path asymmetry, exponential queueing delay and a lucky-packet filter. Three scenarios: regional jamming where GNSS-less nodes hold time from peers vs alone; a 1-50 ns/s time push on one node caught by a least-squares cross-node consistency check that isolates it before GNSS-denied nodes take its time; and all GNSS lost, comparing every node alone, following the best clock, and an Allan-deviation-weighted paper-clock ensemble. Reports time error per node, time under 1 / 1.5 / 5 / 10 us budgets (G.8271 levels), detection time, false alarms, and how much uncalibrated or changed path asymmetry costs (A/2).",
-  "concepts": ["concept:timing", "concept:assured-pnt", "concept:gnss-interference", "concept:simulation"],
-  "tags": ["ptp", "two-way-time-transfer", "path-asymmetry", "holdover", "clock-ensemble", "allan-deviation", "time-spoofing", "consistency-check", "bmca", "packet-delay-variation", "stdlib"],
-  "related": [
-    {"id": "sample:timing-holdover", "rel": "uses"},
-    {"id": "repo:nwtime/linuxptp", "rel": "explains"},
-    {"id": "repo:mlichvar/clknetsim", "rel": "explains"},
-    {"id": "repo:tum-esi/ptpsec", "rel": "explains"},
-    {"id": "repo:aewallin/allantools", "rel": "explains"},
-    {"id": "res:ieee-1588-2019", "rel": "uses"},
-    {"id": "res:itu-t-g8271", "rel": "uses"},
-    {"id": "res:rfc7384-time-protocol-security", "rel": "uses"},
-    {"id": "res:vig-intro-quartz-frequency-standards", "rel": "uses"},
-    {"id": "res:microchip-csac-sa65-datasheet", "rel": "uses"}
+  "summary": "A stdlib-only simulation of six GNSS-disciplined sites (TCXO, OCXO, CSAC, Rb oscillators imported from timing-holdover) linked by PTP-like two-way time transfer with static path asymmetry, exponential queueing delay and a lucky-packet filter. Three scenarios: regional jamming where GNSS-less nodes hold time from peers vs alone; a 1-50 ns/s time push on one node caught by a least-squares cross-node consistency check that isolates it before GNSS-denied nodes take its time; and all GNSS lost, comparing every node alone, following the best clock, and an Allan-deviation-weighted paper-clock ensemble. Reports time error per node, time under 1 / 1.5 / 5 / 10 us budgets (G.8271 levels), detection time, false alarms, and how much uncalibrated or changed path asymmetry costs (A/2). A separate real-data mode (fetch_data.py + real_link.py) characterises PTP over private 5G SA, public 5G NSA and 4G from the open Kalnins dataset (Zenodo 14230741: PPS-vs-PPS truth, PTPd logs, a UPF packet capture) and replays the measured time error into the jamming and spoof scenarios.",
+  "concepts": [
+    "concept:timing",
+    "concept:assured-pnt",
+    "concept:gnss-interference",
+    "concept:simulation"
   ],
-  "verified": "Ran with python3.14.7 stdlib on 2026-11-06, default arguments, 51 s; output pasted verbatim in README (plus a --temp-fraction 0 run of scenario c). 10 unittest tests pass under plain /opt/homebrew/bin/python3 (3.14.7) in about 3 s, including a same-seed check that an added 2 us asymmetry moves time by exactly 1 us, a no-spoof control and a planted blind-detector control. Oscillator parameters are the parent's datasheet/table values; network delays, asymmetries, PPS noise, temperature fraction, site layout and thresholds are stated assumptions. No hardware, PTP logs or real GNSS data; none of the related repos was run.",
+  "tags": [
+    "ptp",
+    "two-way-time-transfer",
+    "path-asymmetry",
+    "holdover",
+    "clock-ensemble",
+    "allan-deviation",
+    "time-spoofing",
+    "consistency-check",
+    "bmca",
+    "packet-delay-variation",
+    "stdlib",
+    "5g",
+    "ptpd",
+    "real-data"
+  ],
+  "related": [
+    {
+      "id": "sample:timing-holdover",
+      "rel": "uses"
+    },
+    {
+      "id": "repo:nwtime/linuxptp",
+      "rel": "explains"
+    },
+    {
+      "id": "repo:mlichvar/clknetsim",
+      "rel": "explains"
+    },
+    {
+      "id": "repo:tum-esi/ptpsec",
+      "rel": "explains"
+    },
+    {
+      "id": "repo:aewallin/allantools",
+      "rel": "explains"
+    },
+    {
+      "id": "res:ieee-1588-2019",
+      "rel": "uses"
+    },
+    {
+      "id": "res:itu-t-g8271",
+      "rel": "uses"
+    },
+    {
+      "id": "res:rfc7384-time-protocol-security",
+      "rel": "uses"
+    },
+    {
+      "id": "res:vig-intro-quartz-frequency-standards",
+      "rel": "uses"
+    },
+    {
+      "id": "res:microchip-csac-sa65-datasheet",
+      "rel": "uses"
+    },
+    {
+      "id": "res:edi-ptp-mobile-network-dataset",
+      "rel": "uses"
+    },
+    {
+      "id": "repo:ptpd/ptpd",
+      "rel": "evaluates"
+    }
+  ],
+  "verified": "Synthetic: ran with python3.14.7 stdlib on 2026-11-06, default arguments, 51 s; output pasted verbatim in README (plus a --temp-fraction 0 run of scenario c). Real-data mode: fetch_data.py downloaded the Zenodo 14230741 zip (MD5 945aefa3013bc926d748f7e820275069 matched the record) and real_link.py ran on it in 19 s, output pasted verbatim. 21 unittest tests pass under plain /opt/homebrew/bin/python3 (3.14.7) in about 4 s with the data, 18 pass and 3 skip without it; they include parser tests on inline fixtures (PPS, PTPd with glued rows, a hand-built pcapng), a same-seed check that an added 2 us asymmetry moves time by exactly 1 us, a check that a replayed constant 2 us link error becomes 2 us of relay time error, a no-spoof control and a planted blind-detector control. Oscillator parameters are the parent's datasheet/table values; synthetic network delays, asymmetries, PPS noise, temperature fraction, site layout and thresholds are stated assumptions. Real data: PPS truth and PTPd logs come from different runs and PTP software (Timebeat vs PTPd), each record is 15 min and is looped for the replay. None of the related repos was run.",
   "verified_status": "ran",
   "deps": "stdlib",
   "first_command": "python3 timing_network.py",
   "group": "Timing",
   "shows": "Six GNSS-disciplined sites over PTP-like links: holdover from peers vs alone under regional jamming, cross-node consistency check isolating a time push, ADEV-weighted ensemble vs best clock, cost of path asymmetry",
-  "input": "synthetic",
-  "runtime": "~50 s (spoof study alone ~10 s)",
-  "key_result": "[Synthetic network, 10 seeds](README.md#output-ran-on-2026-11-06-python-3147-default-arguments-51-s): jammed TCXO alone exceeds 1.5 us after 16-22 min, from peers stays under 1 us for 24 h; 50 ns/s push on the relay isolated in 50 s (5/5), downstream nodes 332 ns vs 360 us unguarded, 0 false alarms in 40 h; unknown asymmetry A costs A/2 (4 us => 2.16 us); all GNSS lost 24 h worst node: ensemble 1.13 us, best clock 2.27 us, alone 4.18 ms"
+  "input": "mixed",
+  "runtime": "~50 s synthetic (spoof study alone ~10 s); real-data mode ~20 s after a 60 MB download",
+  "key_result": "[Synthetic network, 10 seeds](README.md#output-ran-on-2026-11-06-python-3147-default-arguments-51-s): jammed TCXO alone exceeds 1.5 us after 16-22 min, from peers stays under 1 us for 24 h; 50 ns/s push on the relay isolated in 50 s (5/5), downstream nodes 332 ns vs 360 us unguarded, 0 false alarms in 40 h; unknown asymmetry A costs A/2 (4 us => 2.16 us); all GNSS lost 24 h worst node: ensemble 1.13 us, best clock 2.27 us, alone 4.18 ms. [Real PTP over 5G, Zenodo 14230741](README.md#real-data-output-ran-2026-11-06-python-3147-default-arguments-19-s): PPS truth |TE| median 1.6-2.3 ms (private 5G SA) and 9.4 ms (public 5G NSA), at most 0.3 % of seconds under 1.5 us; implied asymmetry 3.3-4.7 ms (SA), 14.9 ms (NSA), about 10^4 x the sample's radio links; replayed into (a) the jammed relay stays at 1.6-2.4 ms for 24 h vs under 1 us on the synthetic links"
 }
