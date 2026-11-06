@@ -51,6 +51,11 @@ gRPC route for other languages: `./mavsdk_server_musl_x86_64 -p 50051 udpin://0.
 - Command support depends on the autopilot: closed issue #1846 shows `Command unsupported (511)`; many plugins are PX4-first, ArduPilot coverage varies per plugin.
 - Volunteer-maintained (README: not sponsored by any company).
 
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- The Python gRPC path (`mavsdk-grpc` 4.0.5 with its bundled `mavsdk_server`, linux/aarch64) flew a PX4 v1.17.0 SIH mission end to end; the native v4 binding and the C++ API were not run. Failure plugin GPS injection timed out against v1.17.0 SIH (PX4 limitation) - [px4-sitl-gps-denial](../../samples/px4-sitl-gps-denial/README.md).
+
 ## Alternatives
 - [pymavlink](./ardupilot__pymavlink.md) - raw messages, any dialect, log parsing; more code per action.
 - [MAVROS](./mavlink__mavros.md) - when the companion stack is ROS.

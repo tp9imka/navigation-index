@@ -47,7 +47,7 @@ Catalog page: [catalog/repos/opendroneid__opendroneid-core-c.md](../../catalog/r
 
 ## Gotchas
 
-- Treat every received frame as hostile input. Fixed on `master` in 2026: out-of-bounds read on a truncated Wi-Fi NAN frame that crashed receivers (#106) and a stack buffer overflow from an out-of-range message-pack count via MAVLink (#107). The v2.0 tag (2022) predates both; build from current `master`.
+- Treat every received frame as hostile input (the decoder does no range checks, see Verified in this hub). Fixed on `master` in 2026: out-of-bounds read on a truncated Wi-Fi NAN frame that crashed receivers (#106) and a stack buffer overflow from an out-of-range message-pack count via MAVLink (#107). The v2.0 tag (2022) predates both; build from current `master`.
 - `drone_export_gps_data()` produced invalid JSON (trailing commas, missing comma, #109); fixed by commit 2026-08-27 "Fix faulty json output from wifi.c". Older copies vendored into other projects may still have it.
 - `install(TARGETS ...)` installs only `libopendroneid.so`; headers are not installed. Point your include path at `libopendroneid/`.
 - Default build flags are `-O0` with fortify/stack protector (top-level CMakeLists.txt) - fine for a receiver, set your own for embedded.
@@ -55,6 +55,16 @@ Catalog page: [catalog/repos/opendroneid__opendroneid-core-c.md](../../catalog/r
 - Many drones transmit only some methods (BT4 legacy, BT5 long range, Wi-Fi NaN, Wi-Fi Beacon); iOS and many Android phones cannot receive BT5 LR or NaN (README). Plan receiver hardware for all four.
 - China GB 46750-2025 drones use a different wire format (`libopendroneidcn`), not decodable by the ASTM functions.
 - Message pack with multiple messages of one type is an open question (#101).
+
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- A stdlib Python decoder was checked field by field against core-c (500 core-c-encoded vectors, 500 random raw messages, 81 payloads from the wireshark-dissector captures); five planted decoder bugs each failed the suite. Things found in core-c while mirroring it (not fixed upstream by the hub) - [remote-id-to-tak](../../samples/remote-id-to-tak/README.md):
+  - `decodeHorizontalAccuracy(ODID_HOR_ACC_4NM)` returns 7808 m; 4 NM (and the enum comment) is 7408 m.
+  - `decodeBasicIDMessage` copies 21 bytes (`sizeof(UASID)`) from a 20-byte UUID/session-ID field; the C string is not NUL-terminated if the reserved byte is nonzero.
+  - `decodeOpenDroneID` on a pack trusts the buffer to hold `MsgPackSize` messages (only `odid_message_process_pack` checks length).
+  - No range checks on decode: corrupted BT5 frames without the sniffer CRC check decoded to lat -89.8, lon -214.6.
+  - `TimeStamp` must be decoded in float32 to match core-c bit for bit.
 
 ## Alternatives
 

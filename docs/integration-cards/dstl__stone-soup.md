@@ -13,7 +13,7 @@ One-line: Dstl's modular Python framework for tracking and state estimation (Kal
 | License | MIT. |
 
 ## Minimal usage
-Imports and structure follow `docs/examples/filters/bearing_only_example.py`; tracker assembly is the standard tutorial pattern. Not run.
+Imports and structure follow `docs/examples/filters/bearing_only_example.py`; tracker assembly is the standard tutorial pattern. This listing was not run as written; the same EKF + JPDA pattern ran in the hub (see Verified in this hub).
 
 ```python
 import numpy as np
@@ -56,6 +56,13 @@ Two or more stations with separated baselines make the target observable; one st
 - Bearing-only from a single static sensor is unobservable; the EKF will diverge quietly. Use two stations or a moving platform.
 - Open #1314 (`is_clutter_detectable` vs `is_detectable` semantics) and #1269 (PCRB metric with multiple locations/models) affect simulation and metrics, not basic tracking.
 - Keep it to air-picture awareness; the index scope excludes fire-control use.
+
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- **Set-order nondeterminism**: with `np.random.seed` fixed, results still changed run to run because truths and tracks were kept in Python `set`s whose order follows random UUIDs, so noise draws hit targets in a different order. Keep lists; wrap in `set(...)` only where Stone Soup wants sets (`JPDA.associate`, `MultiManager.add_data`). After the fix, three runs were identical. stonesoup 1.9.1, numpy 2.5.4, Python 3.12.14 - [stone-soup-tracking](../../samples/stone-soup-tracking/README.md).
+- `OSPAMetric` without `measure=Euclidean((0, 2))` scores the full state (mixes position and velocity units). EKF + JPDA on two targets in clutter: mean OSPA 17.0 m (c=100 m), one seed - [stone-soup-tracking](../../samples/stone-soup-tracking/README.md).
+- Bearing-only emitter location: a 5000-particle PF with a heavy-tailed likelihood and a gated UKF both ran on 900 synthetic DF bearings (8-12 m error); ~40 s wall on the first run, mostly imports and the PF. stonesoup 1.9.1 - [interference-geolocation-to-tak](../../samples/interference-geolocation-to-tak/README.md).
 
 ## Alternatives
 - [PyMHT](../../catalog/repos/erikliland__pymht.md): track-oriented MHT for maritime radar.

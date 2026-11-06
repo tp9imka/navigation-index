@@ -50,6 +50,11 @@ Catalog page: [catalog/repos/m0r13n__pyais.md](../../catalog/repos/m0r13n__pyais
 - Malformed payloads with unexpected bit length used to fail silently returning `None` (closed #46); check for `None` anyway when ingesting dirty feeds.
 - Message timestamps: AIS position reports carry only a UTC second (0-59); full receive time must come from the receiver, tag block or your clock (closed #17, #139).
 
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- pyais 3.3.1 decoded its own `tests/nmea-sample` (85,194 lines): 82,748 messages, 2 `UnknownMessageException`, 1,055 position reports with position-not-available. Encoding injected tracks as AIVDM msg 1/18 with `\c:` tag-block timestamps and decoding them back reproduced identical detector results - [maritime-ais-spoofing](../../samples/maritime-ais-spoofing/README.md).
+
 ## Alternatives
 
 - [AIS-catcher](./jvde-github__ais-catcher.md) `-o 5` / `JSON_FULL` - decoding done in C at the receiver; prefer when you only need JSON and no Python logic.

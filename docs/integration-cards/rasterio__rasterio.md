@@ -49,6 +49,12 @@ Catalog page: [catalog/repos/rasterio__rasterio.md](../../catalog/repos/rasterio
 - `masked=True` returns a numpy masked array; filling nodata (sea, voids) with 0 m is a silent bias in a terrain filter. Decide the fill policy explicitly.
 - Mac Arm: open issue #2868 about netCDF URL paths on Apple Silicon wheels.
 
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- rasterio 1.5.2 (Python 3.12-3.13, macOS arm64 wheels) read windows of public Copernicus GLO-30 COGs and NAIP COGs over HTTPS and reprojected them without a local GDAL install - [terrain-heightmap-pf](../../samples/terrain-heightmap-pf/README.md), [geoloc-license-clean](../../samples/geoloc-license-clean/README.md).
+- Half-pixel trap: LightGlue keypoints put integers on pixel centres, the rasterio affine on pixel corners; add 0.5 before applying the transform - [visual-geolocalization-lightglue](../../samples/visual-geolocalization-lightglue/README.md).
+
 ## Alternatives
 
 - [GDAL](./osgeo__gdal.md) Python bindings (`osgeo.gdal`) - same engine, lower level, harder install; prefer when you need a driver the wheels omit.

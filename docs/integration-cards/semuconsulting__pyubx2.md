@@ -50,6 +50,12 @@ The `CFG_MSGOUT_UBX_*_USB` keys used above exist in `UBX_CONFIG_DATABASE` (`ubxt
 - `spoofDetState` and `jammingState` are the receiver's heuristic verdicts, not ground truth; the flags exist only on firmware that implements them (not stated per model in the README).
 - u-center recordings include undocumented DBG/TRK/SEC messages; answer "No" to adding receiver config when recording.
 
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- Offline replay of a synthetic UBX capture with pyubx2 1.4.1 (Python 3.12.14) parsed NAV-PVT, NAV-SAT, NAV-STATUS, NAV-CLOCK, MON-RF and SEC-SIG with the attribute names in the card; repeating groups carry two-digit suffixes (`cno_01`, `agcCnt_01`) - [gnss-interference-monitor](../../samples/gnss-interference-monitor/README.md).
+- MON-RF could only be built from a raw payload (pyubx2 picks the 20- or 24-byte block layout from payload length), so the generator packs it with `struct`; `jammingState_01` is absent from the 20-byte MON-RF-V0 layout. Live receiver path not run - [gnss-interference-monitor](../../samples/gnss-interference-monitor/README.md).
+
 ## Alternatives
 - [pygnssutils](./semuconsulting__pygnssutils.md) - wraps pyubx2 with CLI streaming, NTRIP and multi-protocol reading; prefer it when you want no code.
 - [PyGPSClient](../../catalog/repos/semuconsulting__pygpsclient.md) - GUI on the same stack for interactive receiver config and spectrum (MON-SPAN) view.

@@ -13,7 +13,7 @@ LiDAR-only odometry (point-to-point ICP, adaptive threshold, voxel-hash local ma
 | License | GitHub metadata: MIT. `ros/` also carries its own LICENSE file. No weights. |
 
 ## Minimal usage
-Not run. From README and `python/README.md`.
+From README and `python/README.md`. This listing was not run as written; the Python API ran on KITTI 04 in the hub (see Verified in this hub).
 
 ```sh
 pip install "kiss-icp[all]"
@@ -48,6 +48,13 @@ Note: set `max_range` before `load_config` (via the yaml) if you want the derive
 - Pure LiDAR: degrades in geometrically degenerate scenes (long corridors, open fields, tunnels) where IMU-coupled LIO holds better.
 - ROS 1 users must pin v0.3.0.
 - The node publishes odometry only; no map save, no relocalization.
+
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- **KITTI 04, default config** (100 m range, 1 m voxel, deskew on), 271 scans / 393.6 m: ATE RMSE 0.23 m (SE3 aligned), final origin-anchored error 0.48 m = 0.12 %, KITTI t_rel 0.41 %. 04 is short and straight: treat as a best case. kiss-icp 1.3.0 - [relative-nav-benchmark](../../samples/relative-nav-benchmark/README.md).
+- **Throughput on Apple M2 Max (native, CPU)**: 271 scans of 125,717 points in 12.3 s and 19.7 s (22 and 14 fps, host shared), peak RSS 159-167 MB - [relative-nav-benchmark](../../samples/relative-nav-benchmark/README.md).
+- KITTI GT is in the rectified cam0 frame and KISS-ICP runs in the velodyne frame; conjugate with `T_cam0_velo` before scoring (agrees with OXTS within 2 cm) - [relative-nav-benchmark](../../samples/relative-nav-benchmark/README.md).
 
 ## Alternatives
 - [FAST-LIO2](./hku-mars__fast_lio.md) - when a synced IMU is available and motion is aggressive; GPL-2.0.

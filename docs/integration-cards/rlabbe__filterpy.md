@@ -50,6 +50,11 @@ for z in fixes_ned:                               # (N, 2) array, e.g. from pyma
 - Author states the tests are not robust and the docs are generated from bleeding-edge master, so docs can describe features not yet on PyPI.
 - Pure numpy: fine at 100 Hz for small states in Python, but not a real-time embedded runtime (no figures given in the README).
 
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- filterpy 2.0.0 with numpy 2.5.4 on Python 3.12.14: `ExtendedKalmanFilter` (Joseph-form update) reproduced a hand-written 2D GNSS/INS EKF to the printed 0.1 m; a planted 100x R change moved the result, so the comparison exercises filterpy - [gnss-ins-ekf-outage](../../samples/gnss-ins-ekf-outage/README.md).
+
 ## Alternatives
 - [navlie](../../catalog/repos/decargroup__navlie.md) - Lie-group EKF/UKF/batch with IMU models; prefer for attitude-bearing INS states.
 - [GTSAM](./borglab__gtsam.md) - factor-graph smoothing with IMU preintegration when filtering is not enough.

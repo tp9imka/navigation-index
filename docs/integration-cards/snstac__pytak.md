@@ -13,7 +13,7 @@ One-line: pure-Python asyncio library and CLI for sending and receiving Cursor o
 | License | Apache-2.0. |
 
 ## Minimal usage
-Adapted from the README quick example; sends own-ship position from a MAVLink vehicle every 2 s. Not run.
+Adapted from the README quick example; sends own-ship position from a MAVLink vehicle every 2 s. Not run as written; a similar MAVLink => PyTAK bridge ran offline in the hub (see Verified in this hub).
 
 ```python
 import asyncio, pytak
@@ -53,6 +53,11 @@ asyncio.run(main())
 - Default URL is write-only multicast (`udp+wo://239.2.3.1:6969`); many hackathon Wi-Fi networks and Docker bridges drop multicast. Use `tcp://` to a server if markers do not appear.
 - Stale time: CoT disappears after `stale`; a too-short stale with a slow loop makes markers blink.
 - TLS: open issues #74 (`NoneType` has no `private_bytes`), #101 (cert cache gaps after #100), closed #116 (cert and key in one file). Test enrollment early; plain TCP to a local server is the fallback.
+
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- pytak 7.6.1 + pymavlink 2.4.50 (Python 3.12.14) delivered CoT to a local TCP sink and a UDP `udp+wo://` sink. PyTAK sends a `takPing` (`t-x-d-d`) keepalive first; sinks expecting only tracks must skip it. When the sink closed, the bridge died with `BrokenPipeError` (no reconnect). TLS, multicast and real TAK clients not tested - [mavlink-to-tak-cot](../../samples/mavlink-to-tak-cot/README.md).
 
 ## Alternatives
 - [node-cot](../../catalog/repos/dfpc-coe__node-cot.md) for a JavaScript/TypeScript stack.

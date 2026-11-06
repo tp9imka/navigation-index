@@ -13,7 +13,7 @@ The fastest path from receiver logs or public RINEX to an SPP / RTK / PPK / PPP 
 | License | GitHub metadata: NOASSERTION. `license.txt` in repo is BSD 2-clause (T. Takasu). Commercial use permitted under that text. |
 
 ## Minimal usage
-Not run here. Adapted from `rnx2rtkp -?` help text and the repo's own [gnss-rinex-processing sample](../../samples/gnss-rinex-processing/README.md):
+Adapted from `rnx2rtkp -?` help text and the repo's own [gnss-rinex-processing sample](../../samples/gnss-rinex-processing/README.md):
 
 ```bash
 # single point (code only), ECEF output
@@ -39,9 +39,16 @@ Order matters for `rnx2rtkp`: first OBS = rover, second OBS = base, then NAV/SP3
 - **Mode numbers differ from upstream RTKLIB 2.4.x.** demo5 v2.5.1: `4:static-start, 5:moving-base, 6:fixed, 7:ppp-kinematic, 8:ppp-static, 9:ppp-fixed`. Upstream: `4:moving-base, 5:fixed, 6:ppp-kinematic`. Always read `rnx2rtkp -?` of the binary you built (confirmed from `app/consapp/rnx2rtkp/rnx2rtkp.c`).
 - `crx2rnx` must be on PATH, and on Linux the README says rename `CRX2RNX` to lowercase `crx2rnx`. Without it, Hatanaka files fail silently-ish.
 - Without `-r`/`-l` the base position is the average of single solutions: metres of error leak into the "RTK" result.
-- RINEX header `APPROX POSITION XYZ` is not truth (sample README found 1.6 m offset on a CORS station).
+- RINEX header `APPROX POSITION XYZ` is not truth (the hub sample measured a 1.6 m offset on a CORS station).
 - Open issues: #783 malloc error in `addobsdata` for high-rate RINEX 3 base files (2.5.0); #111 `rtkrcv` crashes on musl/uClibc (Alpine containers, some embedded images) - use a glibc base image.
 - The README's benchmark percentages (PPC-Dataset 88.0%, UrbanNav Tokyo 75.7% overall) are the maintainer's, measured with the shipped `*_urban.conf` files; not reproduced here.
+
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- **Ran** `rnx2rtkp` v2.5.1 (cmake build in Docker) on NOAA CORS P730 vs base P731, 2 h, 30 s, GPS only, scored against the NGS ITRF2020 coordinate: SPP E/N/U RMS 0.62 / 1.24 / 1.02 m, H95 2.07 m; RTK fix 97 %, H95 4.5 cm (the 8 float epochs are the first 4 min) - [gnss-rinex-processing](../../samples/gnss-rinex-processing/README.md).
+- `-r x y z` for the base was used; mode numbers confirmed with `rnx2rtkp -?` of that build (`2` = kinematic). Missing `crx2rnx` shows up as a decompression error on `.d` input, not a clear message. `-ts`/`-te` take two arguments each - [gnss-rinex-processing](../../samples/gnss-rinex-processing/README.md).
+- `rnx2rtkp` on GNSS-SDR 0.0.19 RINEX output reproduced GNSS-SDR's own PVT medians to 0.1 m (same RTKLIB core, so a plumbing check) - [gnss-signal-chain](../../samples/gnss-signal-chain/README.md).
 
 ## Alternatives
 - [tomojitakasu/RTKLIB](../../catalog/repos/tomojitakasu__rtklib.md) - upstream; use only if a tool depends on 2.4.x behaviour. demo5 is the better default for low-cost receivers.

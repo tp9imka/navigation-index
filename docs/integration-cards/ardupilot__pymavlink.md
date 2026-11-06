@@ -40,10 +40,19 @@ Log triage: `mavlogdump.py --types GPS,XKF4 flight.bin` (ArduPilot) or `mavlogdu
 - Catalog: [pymavlink page](../../catalog/repos/ardupilot__pymavlink.md).
 
 ## Gotchas
-- `mavutil.py` sets `MAVLINK_DIALECT=all` by default; set `MAVLINK_DIALECT=ardupilotmega` or `common` before import if you want a smaller, explicit dialect. Set `MAVLINK20=1` to force MAVLink 2 (needed for messages with extension fields or ids > 255).
+- `mavutil.py` sets `MAVLINK_DIALECT=all` by default; set `MAVLINK_DIALECT=ardupilotmega` or `common` before import if you want a smaller, explicit dialect. Set `MAVLINK20=1` to force MAVLink 2 (needed for messages with extension fields or ids > 255; confirmed for `ODOMETRY`, see Verified in this hub).
 - `udpin:` listens, `udpout:` sends. SITL via `sim_vehicle.py` sends to 14550, so the script must `udpin`. Getting this backwards gives a silent hang in `wait_heartbeat()`.
 - Mode names come from `ardupilotmega.xml`; custom names can be added in `~/.pymavlink/custom_mode_map.json` (README).
 - `mavnative` C parser was removed in 2022; parsing is pure Python, so high-rate streams (IMU at 400 Hz) cost CPU.
+
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- `MAVLINK20=1` must be set before `import pymavlink` for `ODOMETRY` (id 331): without it the first SITL run failed with `'MAVLink' object has no attribute 'odometry_send'`. pymavlink 2.4.50 - [vio-to-mavlink-bridge](../../samples/vio-to-mavlink-bridge/README.md).
+- pymavlink requests no telemetry streams: a script waiting for `GLOBAL_POSITION_INT` on ArduPilot SERIAL1 hung until it sent `MAV_CMD_SET_MESSAGE_INTERVAL` for every message it reads. pymavlink 2.4.50, Copter-4.6.3 SITL - [ardupilot-ekf3-source-switch](../../samples/ardupilot-ekf3-source-switch/README.md).
+- `arducopter_arm()` + `motors_armed_wait()` sends once and then blocks forever while SITL is still failing pre-arm checks (20-30 s after boot); retry and print the pre-arm STATUSTEXT instead - [ardupilot-ekf3-source-switch](../../samples/ardupilot-ekf3-source-switch/README.md).
+- In an asyncio app (PyTAK) run `recv_match(blocking=True)` in an executor; that bridge thinned 10 Hz telemetry to ~1 CoT event/s and worked over TCP and UDP. pymavlink 2.4.50, Python 3.12 - [mavlink-to-tak-cot](../../samples/mavlink-to-tak-cot/README.md).
+- Companion clocks: stamping injected messages with the autopilot's `time_boot_ms` (not host wall clock) kept SITL `--speedup` runs consistent - [golden-demo](../../samples/golden-demo/README.md).
 
 ## Alternatives
 - [MAVSDK-Python](./mavlink__mavsdk-python.md): higher-level async API, PX4-first.

@@ -13,7 +13,7 @@ One-line: the reference implementation of airborne magnetic anomaly navigation (
 | License | Code: GitHub NOASSERTION. `LICENSE.md` says the work was created by the Department of the Air Force under 17 U.S.C. 105 and is public domain, followed by MIT-style permission text. Data: separate and restrictive, see Gotchas. |
 
 ## Minimal usage
-Adapted from `examples/simple_magnav.jl` (bundled data, no download). Not run.
+Adapted from `examples/simple_magnav.jl` (bundled data, no download). This listing was not run; a full SGL 2020 flight-line run is in Verified in this hub.
 
 ```julia
 using Pkg; Pkg.add("MagNav")
@@ -48,6 +48,16 @@ Real flight (pattern from `examples/pluto_sgl.jl`, which builds `df_flight` / `d
 - Precompile failures on Windows with Julia 1.11.3 in `GDAL_jll` / `ArchGDAL` (issue #271); a DataFrames vs older-BSON segfault was fixed upstream (issue #161). Use the Docker image if Julia setup fights you.
 - Ottawa maps are k-NN filled where data is missing; use `map_check` so you do not "navigate" on synthetic map cells (`ottawa_area_maps` docstring).
 - Anomaly-map navigation needs map coverage of the flight area; global models (EMAG2, EMM720) are much coarser than survey maps, so accuracy numbers from the SGL flights do not transfer.
+
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- **Ran end to end** in `julia:1.11` Docker (Julia 1.11.9, linux/arm64): MagNav.jl v1.3.5 on SGL 2020 Flt1006 line 1006.08 (8391 samples, 14 min). EKF DRMS 31 m vs CRLB DRMS 13 m; INS-only final error 219 m - [magnav-quickstart](../../samples/magnav-quickstart/README.md).
+- **FFTA pin needed**: a fresh resolve pulled FFTA 0.3.2, whose `plan_rfft` is ambiguous with FFTW and breaks precompiling GlobalSensitivity (via KernelDensity), so `using MagNav` fails. `Pkg.add(name="FFTA", version="0.2")` (resolved 0.2.1) fixed it - [magnav-quickstart](../../samples/magnav-quickstart/README.md).
+- **Memory**: OOM-killed (exit 137) in a 7.7 GB Docker VM shared with other containers; `--heap-size-hint=2500M` plus `JULIA_NUM_THREADS=1` fixed it - [magnav-quickstart](../../samples/magnav-quickstart/README.md).
+- **Cost**: Julia depot 5.8 GB (4.1 GB artifacts incl. `ottawa_area_maps` ~1.2 GB, `sgl_2020_train` ~563 MB, EMAG2 ~0.5 GB pulled at precompile); install + precompile ~10 min, script 43 s once cached - [magnav-quickstart](../../samples/magnav-quickstart/README.md).
+- On this line Tolles-Lawson did not lower the map residual (4.63 nT uncompensated vs 5.84 nT TL vs 5.65 nT SGL-compensated); Mag 1 is on the tail stinger. Not investigated further - [magnav-quickstart](../../samples/magnav-quickstart/README.md).
+- The `ghcr.io` Docker image was not tried; the official `julia:1.11` image was used instead.
 
 ## Alternatives
 - [magnav.py](../../catalog/repos/manasp21__magnav.py.md) - Python port; prefer it if the team will not touch Julia (check its parity first).

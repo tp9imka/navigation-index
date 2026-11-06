@@ -13,7 +13,7 @@ Python implementation of Galileo OSNMA (navigation message authentication): feed
 | License | EUPL-1.2 (copyleft, compatible with GPL; check before embedding in closed code). |
 
 ## Minimal usage
-Not run. From README and `ublox_run/run_serial.py`:
+Not run with a live receiver. From README and `ublox_run/run_serial.py` (file-mode runs on a recording are in Verified in this hub):
 
 ```sh
 git clone https://github.com/Algafix/OSNMA && cd OSNMA
@@ -47,6 +47,14 @@ OSNMAReceiver(UBXLiveSerial("/dev/ttyACM0"), cfg).start()
 - Not packaged: no `pip install osnma`, imports rely on `sys.path.insert(0, '..')`.
 - Merkle tree and public key must come from the GSC (gsc-europa.eu); a bundled copy can go stale after a key or tree renewal event.
 - README research notice: do not reuse unpublished optimisation ideas without citing the papers.
+
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- **Ran** unmodified OSNMAlib (commit 25aa61de, Python 3.12) on its bundled 76 min Septentrio recording: 56 KROOT, 962 TESLA keys, 4711 tags authenticated, 0 failures; first ADKD0 authentication 90 s after the first page (warm start). 20 min x 11 scenarios ~8 s wall on an M-series Mac. Runs one scenario per process (config and status logger are module singletons) - [osnma-authentication](../../samples/osnma-authentication/README.md).
+- **Same-IOD forgery stays authenticated**: an ADKD0 block's authenticated bit stream is computed once (`ADKD0DataBlock.add_word` / `_compute_data_stream`); later words with the same IOD overwrite `words` but not that stream. Forged OMEGA_0 on E23 stayed "authenticated" for 10 min until an IOD change. Navigate on the authenticated copy, or compare decoded words against it - [osnma-authentication](../../samples/osnma-authentication/README.md).
+- **File mode trusts the signal's GST**: an 11-month-old recording authenticated perfectly with no independent clock. With an independent clock: 3 s delay still authenticates; 60 s leaves only ADKD12; 1 h gives silence, not failures (`_filter_tag_by_TL`) - [osnma-authentication](../../samples/osnma-authentication/README.md).
+- **Cold start**: with only the Merkle root no DSM-PKR appeared in 76 min, so no key and no authentication. Stripping OSNMA bits produces no failure, only absence - [osnma-authentication](../../samples/osnma-authentication/README.md).
 
 ## Alternatives
 - [daniestevez/galileo-osnma](../../catalog/repos/daniestevez__galileo-osnma.md) - Rust, no_std, suited to embedded receivers.

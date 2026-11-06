@@ -13,7 +13,7 @@ Pure-Python GNSS measurement toolkit: parse Android raw logs, RINEX, NMEA, SP3/C
 | License | MIT. |
 
 ## Minimal usage
-Not run. Condensed from this repo's [gnss-rinex-processing sample](../../samples/gnss-rinex-processing/README.md) (`glp_spp.py`, itself a syntax-checked sketch against 1.1.0):
+Condensed from this repo's [gnss-rinex-processing sample](../../samples/gnss-rinex-processing/README.md) (`glp_spp.py`). Earlier versions of this card called that script a syntax-checked sketch; it has since been run against 1.1.0 and needed the fixes in Verified in this hub, which this condensed listing does not include:
 
 ```python
 import gnss_lib_py as glp
@@ -39,8 +39,16 @@ For Android logs swap the first line for `glp.AndroidRawGnss("gnss_log.txt")` an
 - RINEX 2 obs: open issue #182 reports a crash loading a `.26o` file with `RinexObs`. Convert to RINEX 3 first (`convbin`), as the sample does.
 - Open #161: `add_sv_states_rinex` handles one signal type per constellation at a time; filter to one band before calling.
 - Pinned `xarray<=2024.7.0` and `georinex<=1.16.1` can conflict with other geo packages in a shared env; use a dedicated venv.
-- WLS without iono/tropo correction gives metre-level bias, mostly vertical. Fine for relative tests, not for accuracy claims.
+- WLS without iono/tropo correction gives metre-level bias, mostly vertical. Fine for relative tests, not for accuracy claims. Larger errors (tens of m to km) on RINEX input come from the time-tag and ephemeris issues in Verified in this hub, not from the atmosphere.
 - Closed #138: older Colab images needed a pandas pin; check if Colab install fails.
+
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- **Ran** WLS SPP on public NOAA CORS RINEX (P730, 2 h, GPS L1 C/A). With three fixes it matches RTKLIB SPP to a few cm per axis (E/N/U RMS 0.65 / 1.28 / 1.10 m, H95 2.02 m). gnss-lib-py 1.1.0 - [gnss-rinex-processing](../../samples/gnss-rinex-processing/README.md).
+- **GPST read as UTC**: 1.1.0 `RinexObs` treats RINEX epochs (GPS time) as UTC and adds 18 leap seconds; every SV is propagated to the wrong second and the fix is km off (7.3 / 3.9 / 5.6 km RMS on the first attempt). Subtract the leap seconds - [gnss-rinex-processing](../../samples/gnss-rinex-processing/README.md).
+- **One ephemeris per SV per call**: `add_sv_states_rinex` picks the ephemeris at the earliest epoch of its input and uses it for the whole input; residuals drift to ~25 m over 2 h. Call it per 15-minute chunk - [gnss-rinex-processing](../../samples/gnss-rinex-processing/README.md).
+- Without receiver-position rows SV states are computed at receive time (30 m RMS); feed the first fix back for transmit-time states. `solve_wls` already applies Earth rotation; adding it again doubled the east error. `RinexObs` parse of a 24 h file dominates runtime (~100 s) - [gnss-rinex-processing](../../samples/gnss-rinex-processing/README.md).
 
 ## Alternatives
 - [laika](./commaai__laika.md) - stronger correction pipeline (DCB, IONEX, DGPS from CORS) but RINEX 2 only and less maintained; prefer for corrected pseudoranges on US data.

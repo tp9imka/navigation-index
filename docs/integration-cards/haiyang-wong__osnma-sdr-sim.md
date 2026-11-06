@@ -48,12 +48,19 @@ gnss-sdr --config_file=../E1_off_line.conf
 
 ## Gotchas
 - **`usrp` is inverted**: `usrp=1` disables transmission and writes the file; `usrp=0` enables USRP TX (`s.opt.use_usrp = (usrpConfig == 0)` in `main.cpp`). Keep `usrp=1`.
-- **Disk size**: derived from the formats, not measured. E1 at 2.6 MS/s x 4 bytes = ~10.4 MB/s; E5b at 20.46 MS/s x 4 bytes = ~82 MB/s. The shipped `run_config.ini` (`duration=600`, `enable_e5=true`) therefore writes roughly 6 GB + 49 GB. Use `enable_e5=false` and short durations first.
-- `CMakeLists.txt` sets `CMAKE_BUILD_TYPE Release` and then unconditionally `set(CMAKE_BUILD_TYPE Debug)` with `-g -DDEBUG`, so builds are unoptimised; generation will be slower than an optimised build (not measured).
+- **Disk size**: derived from the formats; the E1 figure was later measured in the hub (6.24 GB for 600 s, see Verified in this hub). E1 at 2.6 MS/s x 4 bytes = ~10.4 MB/s; E5b at 20.46 MS/s x 4 bytes = ~82 MB/s. The shipped `run_config.ini` (`duration=600`, `enable_e5=true`) therefore writes roughly 6 GB + 49 GB. Use `enable_e5=false` and short durations first.
+- `CMakeLists.txt` sets `CMAKE_BUILD_TYPE Release` and then unconditionally `set(CMAKE_BUILD_TYPE Debug)` with `-g -DDEBUG`, so builds are unoptimised; generation will be slower than an optimised build (not compared; the hub measured 235 s wall for 600 s of E1).
 - `osnma-sdr-sim-e5` must sit next to `osnma-sdr-sim` (lookup in `main.cpp`), so run from `build/`.
 - Bundled public key file `OSNMA_PublicKey_2026_03_19.xml.xml` has a double extension.
 - Only four recorded dates are bundled; a `start_time` outside a recorded window has no valid OSNMA data. Ephemeris and OSNMA CSV must refer to the same day.
 - No issues filed on GitHub (search returned none); 4 stars, single author, research code.
+
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- **Ran** (commit e0b80759, aarch64 Docker): 600 s E1 file took 235 s wall and wrote 6.24 GB (2.6 MS/s int16 I/Q), confirming ~10.4 MB/s. Needs `-include bitset` to compile with GCC 14 - [osnma-authentication](../../samples/osnma-authentication/README.md).
+- **Default `cross_auth_mode=3`** put OSNMA on only 4 of 7 visible PRNs; GNSS-SDR 0.0.20 never completed DSM-KROOT (7 of 8 blocks) in 600 s. `CROSS_AUTH_MODE=1` (all SVs carry OSNMA) delivered all 8 blocks ~4 min in and KROOT/TESLA verified; tags still not authenticated in GNSS-SDR - [osnma-authentication](../../samples/osnma-authentication/README.md).
+- **Position mismatch**: GNSS-SDR's fix was ~3,000 km from the configured static location (20, -51) logged by the simulator. Cause not investigated; do not use its output for position-accuracy claims until understood - [osnma-authentication](../../samples/osnma-authentication/README.md).
 
 ## Alternatives
 - [GPS-SDR-SIM](./osqzss__gps-sdr-sim.md) - GPS L1 C/A IQ files with trajectories; no Galileo, no authentication. Archived.

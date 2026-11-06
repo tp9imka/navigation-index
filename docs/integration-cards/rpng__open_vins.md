@@ -13,7 +13,7 @@ CPU-only MSCKF visual-inertial odometry with online camera/IMU calibration and a
 | License | GitHub metadata: GPL-3.0; LICENSE file is GNU GPL v3. No model weights. |
 
 ## Minimal usage
-Not run. From `docs/gs-tutorial.dox` (ROS 2) and the ROS 2 CI workflow.
+Not run as written (ROS 2). From `docs/gs-tutorial.dox` (ROS 2) and the ROS 2 CI workflow. The ROS 1 serial runner ran in the hub (see Verified in this hub).
 
 ```sh
 # simulator, no data needed
@@ -40,6 +40,14 @@ ROS 1: `roslaunch ov_msckf subscribe.launch config:=euroc_mav` and `rosbag play 
 - Jetson: open #514 (segfault on Orin Nano with some configs), #506 (boost::filesystem link error in Isaac ROS dev container), #350 (diverges on Xavier NX with EuRoC). Budget time for real-time tuning on small ARM boards (lower feature count, `max_cameras`).
 - OpenCV must include contrib (ArUco) if you build OpenCV from source (docs). Open #510: ArUco compile issue on Humble + OpenCV 4.
 - GPL-3.0: linking it into a distributed product makes that product GPL.
+
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- **UZH-FPV indoor_forward_3, stereo + IMU, config `uzhfpv_indoor`**: ATE RMSE 0.36 m over 278 m, final error 0.73 m (0.26 %), RPE over 10 m 1.5 %; needs ~9.5 s to initialise. v2.7 (ROS 1 noetic) - [relative-nav-benchmark](../../samples/relative-nav-benchmark/README.md).
+- **Build and run on arm64**: slim `ros:noetic-perception` image building only `ov_core ov_init ov_msckf` took ~20 min (catkin 754 s with `-j2`), image 1.7 GB; 92 s bag processed in 28.7 s and 81.0 s (second run with host contention), same ATE to 1 mm - [relative-nav-benchmark](../../samples/relative-nav-benchmark/README.md).
+- ROS 1 serial mode aborts at exit with `class_loader::LibraryUnloadException` after the last state is written: harmless, but the exit code is non-zero. `save_total_state` writes JPL `q_GtoI`, numerically equal to the Hamilton `q_ItoG` TUM expects - [relative-nav-benchmark](../../samples/relative-nav-benchmark/README.md).
+- A 3.6 deg heading error fitted from that 50 s run, replayed for 600 s at 30 m/s, made a tuned integrity monitor give 60 % misleading-information epochs: fit the VIO error model from data before trusting protection levels - [relative-nav-benchmark](../../samples/relative-nav-benchmark/README.md).
 
 ## Alternatives
 - [cuVSLAM](./nvidia-isaac__cuvslam.md) - if the platform is a Jetson; GPU stereo-inertial plus SLAM and relocalization, NVIDIA-only license.

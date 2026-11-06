@@ -4,7 +4,7 @@ One-line: Python MCP server (built on MAVSDK) that lets an LLM agent read teleme
 
 | | |
 |---|---|
-| Install | `git clone https://github.com/ion-g-ion/MAVLinkMCP && cd MAVLinkMCP && uv sync` (uses the committed `uv.lock`), or `pip install -e .`. Python 3.10+. |
+| Install | `git clone https://github.com/ion-g-ion/MAVLinkMCP && cd MAVLinkMCP && uv sync` (uses the committed `uv.lock`), or `pip install -e .` (pulls `mavsdk` 4.x, a different API; see Verified in this hub). Python 3.10+. |
 | Runs on | Any OS with Python 3.10+ and MAVSDK wheels; target is PX4 SITL first (README). |
 | Inputs | MAVLink over UDP: `MAVLINK_ADDRESS` empty => `udpin://0.0.0.0:$MAVLINK_PORT` (default 14540, what PX4 SITL sends to); set => `udpout://host:port`. `MAVLINK_CONNECT_TIMEOUT` default 60 s. Map tiles: `MAVLINKMCP_MAP_PROVIDER` (`esri` default, `osm`, `mapbox`, `maptiler`, `custom`, `none`), `MAVLINKMCP_MAP_API_KEY`, `MAVLINKMCP_MAP_TILE_URL`. |
 | Outputs | MCP tools/prompts/resources over stdio (default), `streamable-http` or `sse`; georeferenced map images; stored plans; QGC `.plan` export (`download_mission_as_plan`). |
@@ -37,6 +37,11 @@ For a GNSS-loss demo: inject `failure gps off` in the PX4 shell ([PX4](./px4__px
 - Map imagery is the only outbound network use; set `MAVLINKMCP_MAP_PROVIDER=none` on an air-gapped or opsec-sensitive setup, `prefetch_map_area` to cache before going offline. Provider attribution is required.
 - Safety: README says prefer SITL and keep a human ready to land; treat tool failures as fail-closed.
 - Small project (index metadata: 25 stars); GitHub issues search returned nothing.
+
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- Not run. Source read at the 2026-08-31 commit: `pyproject.toml` depends on unpinned `mavsdk` and imports `from mavsdk import System` (gRPC API); `uv.lock` pins 3.17.2, so `uv sync` works as written, but `pip install -e .` resolves `mavsdk` 4.x (the native binding). Use `uv sync` or pin `mavsdk<4`. 51 `@mcp.tool` functions; no inclusion geofence on commands and no dry-run mode found by grep - [llm-mission-agent](../../samples/llm-mission-agent/README.md).
 
 ## Alternatives
 - [ardupilot-mcp](../../catalog/repos/rmeadomavic__ardupilot-mcp.md): SITL-first, ArduPilot, explicit safety gating.

@@ -35,11 +35,18 @@ Own IMU: build an N x 6 `[ax ay az gx gy gz]` array at a fixed rate, start with 
 
 ## Gotchas
 - Import breakage: `ins_tools/EKF.py` unconditionally does `import ins_tools.LSTM` (needs torch), `import ins_tools.SVM` (needs sklearn) and `from sklearn.externals import joblib`. `sklearn.externals.joblib` was removed from scikit-learn years ago, so on a current sklearn the module fails to import even if you only want SHOE. README says to delete the LSTM/SVM imports; you must also delete or replace the `joblib` import (`import joblib`). Issue #9 (open): old pickled SVM model needs `sklearn.svm.classes`, i.e. scikit-learn 0.19.1, which does not install alongside modern packages.
-- Data download: `download_data.sh` is `wget -r ftp://128.100.201.179/...` (no TLS); issue #8 reports it unreachable, and the authors point to IEEE DataPort: https://ieee-dataport.org/open-access/university-toronto-foot-mounted-inertial-navigation-dataset.
+- Data download: `download_data.sh` is `wget -r ftp://128.100.201.179/...` (no TLS); issue #8 reports it unreachable (it served 36 trials to the hub on 2026-11-06), and the authors point to IEEE DataPort: https://ieee-dataport.org/open-access/university-toronto-foot-mounted-inertial-navigation-dataset.
 - Pretrained LSTM loads from `results/pretrained-models/zv_lstm_model.tar`, which is not in git (only `results/readme.txt`); it comes with the dataset download (issue #1, #4).
 - No training code for new IMUs (maintainer reply in issue #6). Detector thresholds are IMU and gait specific.
 - Repo is dormant: last push 2021-12-17. Treat as reference code.
 - Yaw is unobservable with ZUPT only; long walks drift in heading.
+
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- **Ran** pyshoe's own `INS.baseline` (SHOE) on all 36 hallway trials at commit 6bbc4df: needs Python 3.11 + numpy 1.23.5 + scipy 1.10.1 (`np.int`, `np.float`, `np.maximum_sctype` break on numpy >= 1.24); LSTM/SVM detectors and the `liegroups` import had to be stubbed. ARMSE 2.51 m, 1.49 % final error (mean of 36), ~4 min - [dismounted-foot-ins](../../samples/dismounted-foot-ins/README.md).
+- The UTIAS FTP served 36 trials (README says 39) on 2026-11-06. Do not integrate with the per-sample ROS timestamps (bunched intervals): error doubled to 5.00 m; use T = 1/200. Gyro bias from the initial standstill made it worse (2.35 => 6.14 m with a 15-state filter) - [dismounted-foot-ins](../../samples/dismounted-foot-ins/README.md).
+- No licence file in the repo; the hub vendors none of its code - [dismounted-foot-ins](../../samples/dismounted-foot-ins/README.md).
 
 ## Alternatives
 - [zupt-aided-ins](../../catalog/repos/hcarlsso__zupt-aided-ins.md) - another ZUPT-aided INS implementation.

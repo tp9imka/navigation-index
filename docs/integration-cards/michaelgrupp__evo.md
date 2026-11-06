@@ -47,6 +47,12 @@ evo_rpe tum gt.tum est.tum -va --delta 1 --delta_unit m --pose_relation point_di
 - Reading `/tf` from bags needs a real ROS install; plain pose topics do not.
 - GPL-3.0.
 
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- Used as a library for SE3 ATE, origin-anchored drift and RPE across KISS-ICP, OpenVINS and VO runs - [relative-nav-benchmark](../../samples/relative-nav-benchmark/README.md).
+- Umeyama alignment fails on a perfectly straight synthetic trajectory (degenerate covariance); test with a wiggly path - [relative-nav-benchmark](../../samples/relative-nav-benchmark/README.md).
+
 ## Alternatives
 - [rpg_trajectory_evaluation](../../catalog/repos/uzh-rpg__rpg_trajectory_evaluation.md) - when you want the UZH protocol (sub-trajectory relative error by distance, multi-run boxplots) for a VIO paper-style table.
 - [MINS](./rpng__mins.md) ships its own `mins_eval` (accuracy, consistency/NEES, timing) - prefer it when you need filter consistency, which evo does not compute.

@@ -13,7 +13,7 @@ One-line: asyncio Python API (takeoff, offboard, missions, telemetry streams, fa
 | License | BSD-3-Clause. |
 
 ## Minimal usage
-Trimmed from `examples/failure_injection.py` (main). Not run.
+Trimmed from `examples/failure_injection.py` (main). Not run as written; the hub's PX4 sample ran the same pattern with `mavsdk-grpc` 4.0.5 and found the GPS `inject` call times out on PX4 v1.17.0 SIH (see Verified in this hub).
 
 ```python
 import asyncio
@@ -50,6 +50,15 @@ asyncio.run(run())
 - The rename is a trap for copied code: tutorials say `pip install mavsdk` / `from mavsdk import System`. Today that pulls the native binding (different API). Either `pip install mavsdk-grpc` + `import mavsdk_grpc as mavsdk`, or pin `mavsdk<4`.
 - `drone.connect()` silently spawns the bundled `mavsdk_server` on port 50051; a second script on the same host will collide unless you set `port=` or point at a separately running server with `mavsdk_server_address`.
 - Health `is_global_position_ok` waits for GNSS by default; GNSS-denied starts with EV only need a different readiness check.
+
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- `mavsdk-grpc` 4.0.5 (`import mavsdk_grpc`) flew a full PX4 v1.17.0 SIH mission from a linux/aarch64 container; `mavsdk_server` ships in the wheel. The macOS arm64 wheel's server starts (`--help`) but was not flown. Python 3.12 - [px4-sitl-gps-denial](../../samples/px4-sitl-gps-denial/README.md).
+- `drone.failure.inject(SENSOR_GPS, OFF)` times out against PX4 v1.17.0 SIH (PX4 side, see the PX4 card); the sample falls back to `param.set_param_int('SIM_GPS_USED', 0)`. Set `SYS_FAILURE_EN 1` first in any case - [px4-sitl-gps-denial](../../samples/px4-sitl-gps-denial/README.md).
+- `telemetry.ground_truth()` is filled by SIH, so drift vs truth can be measured live; position telemetry alone is the EKF estimate - [px4-sitl-gps-denial](../../samples/px4-sitl-gps-denial/README.md).
+- Harmless log noise: `Received ack for not-existing command: 176! Ignoring...` during mode changes. `MissionItem` takes 14 positional arguments in the version used - [px4-sitl-gps-denial](../../samples/px4-sitl-gps-denial/README.md).
+- Rename trap seen in the wild: MAVLinkMCP's `pyproject.toml` depends on unpinned `mavsdk` and imports `from mavsdk import System`; `uv sync` gets the locked 3.17.2, `pip install -e .` would resolve 4.x (source read, not run) - [llm-mission-agent](../../samples/llm-mission-agent/README.md).
 
 ## Alternatives
 - [pymavlink](./ardupilot__pymavlink.md): lower level, every message, both autopilots, log parsing.

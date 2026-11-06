@@ -13,7 +13,7 @@ One-line: sparse learned matcher that turns two images into point correspondence
 | License | Code and LightGlue weights: Apache-2.0 (GitHub metadata, README). Extractors differ - see Gotchas. SuperPoint weights + `lightglue/superpoint.py`: Magic Leap non-commercial research license. DISK: Apache-2.0 per README. ALIKED: BSD-3-Clause (README, file header of `aliked.py`). |
 
 ## Minimal usage
-Not run. Adapted from README; ALIKED chosen instead of the SuperPoint default for licensing reasons.
+Adapted from README; ALIKED chosen instead of the SuperPoint default for licensing reasons. This snippet was not run as written; the same extractor + matcher pipeline ran in hub samples (see Verified in this hub).
 
 ```python
 import cv2, torch
@@ -46,6 +46,15 @@ H, inl = cv2.findHomography(p0, p1, cv2.USAC_MAGSAC, 3.0)
 - Runtime depends on keypoint count, not resolution (issue #151 comment); huge images are resized to 1024 by the extractor anyway, so small ground features can vanish - raise `resize` for high-altitude tiles.
 - Pruning thresholds are tuned for RTX 30xx (README); rerun `benchmark.py` on Jetson/other hardware and adjust `LightGlue.pruning_keypoint_thresholds['cuda']`.
 - ONNX export issues upstream (#112 GridSample on NXP i.MX 93 NPU, #66 TensorRT in C++) are open - another reason to start from LightGlue-ONNX.
+
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- **CPU runtimes, Apple M2 Max, torch 2.15.0 (8 threads), max 2048 keypoints, one extract+match+homography call, model load excluded**: same-season synthetic frames ALIKED 1.43 s, DISK 2.79 s, SIFT 0.28 s median per frame; cross-season ALIKED 1.67 s, DISK 3.14 s, SIFT 0.46 s. Other jobs shared the machine - [geoloc-license-clean](../../samples/geoloc-license-clean/README.md).
+- **Accuracy, NAIP 2019 frames vs 2023 map**: ALIKED 20/20 fixes (median 3.88 m), DISK 16/20 (4.82 m), SIFT 13/20 (1.90 m); same-season all 20/20 at ~0.1 m. Real 2016 eBee frames vs NAIP: 0-1 of 5 fixed (ALIKED, 30 m prior, 2019 map), so synthetic numbers overstate real performance - [geoloc-license-clean](../../samples/geoloc-license-clean/README.md).
+- **Inlier count is a weak integrity signal**: a frame 40 % over nodata at the ortho edge passed a 25-inlier gate with 162 inliers and a 30.7 m wrong fix (SuperPoint + LightGlue, ~25 s/case CPU) - [visual-geolocalization-lightglue](../../samples/visual-geolocalization-lightglue/README.md).
+- Downsampling a 3 cm frame to map GSD with one `cv2.warpAffine` aliased texture away; `cv2.resize(INTER_AREA)` first fixed it. Heading unknown => 72 matcher calls per frame (~100 s ALIKED cold search) - [geoloc-license-clean](../../samples/geoloc-license-clean/README.md).
+- In a 52-flight SITL Monte Carlo, ALIKED + LightGlue on NAIP 2019 renders vs 2023 got 246 / 425 fixes, median 3.3 m, with a consistent ~3.2 m east offset from inter-epoch registration; 3.6 s per frame median on 12-core Apple Silicon under load - [golden-demo](../../samples/golden-demo/README.md).
 
 ## Alternatives
 - [XFeat](./verlab__accelerated_features.md) - Apache-2.0 end to end, real-time sparse on CPU; slightly lower accuracy than SP+LG per its own MegaDepth table.

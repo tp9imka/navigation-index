@@ -30,7 +30,7 @@ Then process `static.bin` with GNSS-SDR using `SignalSource.item_type=ishort` an
 ## Wiring it into a nav stack
 - Offline loop: trajectory CSV (from a planned route or a [gnss-ins-sim](./aceinna__gnss-ins-sim.md) run, converted to 10 Hz ECEF) => IQ file => [GNSS-SDR](./gnss-sdr__gnss-sdr.md) => RINEX/NMEA/UDP monitor => your integrity check or GNSS/INS filter. You get IQ-level realism where gnss-ins-sim only gives position-level GNSS.
 - Detector development: GNSS-SDR's `gnss_synchro` monitor gives C/N0 and tracking flags per channel; the [gnss-interference-monitor sample](../../samples/gnss-interference-monitor/README.md) shows a scoring approach.
-- Mixing a "spoofer" file with an "authentic" file at different power levels is possible in numpy (add int16 arrays with scaling) to emulate a takeover in post-processing. Not tested here.
+- Mixing a "spoofer" file with an "authentic" file at different power levels is possible in numpy (add int16 arrays with scaling) to emulate a takeover in post-processing. Tested later in the hub (see Verified in this hub).
 - Do not use it to test OSNMA: GPS L1 C/A only, no Galileo. See [OSNMA-SDR-SIM](../../catalog/repos/haiyang-wong__osnma-sdr-sim.md) for Galileo test vectors.
 
 ## Gotchas
@@ -40,6 +40,12 @@ Then process `static.bin` with GNSS-SDR using `SignalSource.item_type=ishort` an
 - GNSS-SDR acquisition problems with sim files are a recurring issue topic (#309 "No PRN acquired after feeding the bin file to GNSS SDR"); usual cause is item type or sample-rate mismatch in the receiver config.
 - `-p` disables path loss (constant power); default includes a free-space path loss model, which matters if you study C/N0-based detectors.
 - No multipath, no antenna pattern, no receiver clock model beyond the trajectory: signals are cleaner than reality, so thresholds tuned on sim data are optimistic.
+
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- **Ran** at commit `28ca29a` (`gcc -O3`) with the bundled `brdc0010.22n`, 150 s static scenarios; generate + mix 19-35 s per scenario on 4 vCPU arm64 Docker, 600,000,000-byte files; GNSS-SDR 0.0.19 got a fix (median 2.9 m). The parser wants a RINEX 2 GPS nav file; BKG's RINEX 3 mixed files would need `convbin` first (not tested) - [gnss-signal-chain](../../samples/gnss-signal-chain/README.md).
+- Mixing a spoofer file into an authentic file in numpy works as a post-processing takeover: an aligned drag-off pulled GNSS-SDR to ~978 m error over 70 s; an unaligned overpower denied PVT instead of capturing it - [gnss-signal-chain](../../samples/gnss-signal-chain/README.md).
 
 ## Alternatives
 - [multi-sdr-gps-sim](../../catalog/repos/mictronics__multi-sdr-gps-sim.md) - maintained derivative with more SDR backends; same legal boundary applies.

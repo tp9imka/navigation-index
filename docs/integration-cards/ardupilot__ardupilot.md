@@ -13,7 +13,7 @@ One-line: GPL autopilot with a scriptable EKF3 that can switch between GPS, exte
 | License | GPL-3.0 (GitHub metadata; README: GPLv3 or later). |
 
 ## Minimal usage
-SITL copter, then turn it into a GNSS-denied ExternalNav vehicle using the simulated Vicon source. The parameter set is taken from the `VisionPosition` test in `Tools/autotest/arducopter.py` (master). Not run.
+SITL copter, then turn it into a GNSS-denied ExternalNav vehicle using the simulated Vicon source. The parameter set is taken from the `VisionPosition` test in `Tools/autotest/arducopter.py` (master). This exact listing was not run; the equivalent EKF3 source-set setup with `sim:vicon` was run on Copter-4.6.3 SITL (see Verified in this hub).
 
 ```bash
 ./Tools/autotest/sim_vehicle.py -v copter --console --map -A "--serial5=sim:vicon:"
@@ -48,6 +48,17 @@ GNSS outage mid-flight instead of no GPS at all (master / 4.7 names): `param set
 - ArduRover GUIDED via MAVROS with ExternalNav and no GPS: closed issue #33049 reports `SET_POSITION_TARGET_LOCAL_NED` not working; check before you build a rover demo on it.
 - Lua scripting needs `SCR_ENABLE=1`, a reboot, and enough `SCR_HEAP_SIZE` (the dead-reckon applet asks for 80000+).
 - GPL-3.0: modified firmware you distribute must ship source.
+
+## Verified in this hub
+Measured by hub samples that ran this code on 2026-11-06, unless a bullet says otherwise. The linked sample README holds the commands and raw output.
+
+- **SITL in Docker on Apple Silicon works**: `arducopter` binary started directly (`--serial0 tcp:0`, `--serial5 sim:vicon:`), no `sim_vehicle.py`/MAVProxy; image 1.85 GB, ~8.5 min build, linux/arm64. Pre-arm checks pass only 20-30 s after boot (`AHRS: waiting for home`, `Gyros inconsistent`, `VisOdom: yaw diff`); retry arming. `Arm: Logging failed` meant the Docker VM disk was full. Copter-4.6.3 - [sitl-docker](../../samples/sitl-docker/README.md).
+- **Source-set switch confirmed**: set 2 = ExternalNav (SITL vicon) via `MAV_CMD_SET_EKF_SOURCE_SET` (ACCEPTED), then `SIM_GPS_DISABLE=1`: EKF kept `POS_HORIZ_ABS` (flags `0x033f`) and variances < 0.1 for 30 s. No `using external nav` STATUSTEXT on the in-flight switch. Copter-4.6.3 - [ardupilot-ekf3-source-switch](../../samples/ardupilot-ekf3-source-switch/README.md).
+- **Without the switch**: EKF coasted ~6 s still flagged absolute, then dropped horizontal position (`0x0025`, then `0x00a7` CONST_POS_MODE), `EKF Failsafe: changed to LAND`, landed. When GPS returned the position jumped ~3.6 m - dead-reckoning error the EKF had not reported. Variances stayed `good` throughout: watch flags, not variances. Copter-4.6.3 - [ardupilot-ekf3-source-switch](../../samples/ardupilot-ekf3-source-switch/README.md).
+- **4.6 SITL GPS knobs**: `SIM_GPS_DISABLE` (4.6) vs `SIM_GPS1_ENABLE` (4.7/master), confirmed by probing. `SIM_GPS_GLITCH_X/Y` adds to lat/lon after the lag model and leaves velocity untouched; no 4.6 parameter drags velocity. `SIM_GPS_NOISE` only moves altitude in 4.6.3. With GPS disabled, `GPS_RAW_INT` showed `NO_FIX` but `satellites_visible 3` and HDOP 1.21 - key on fix type, not HDOP. Copter-4.6.3 - [golden-demo](../../samples/golden-demo/README.md), [llm-mission-agent](../../samples/llm-mission-agent/README.md).
+- **`ODOMETRY` ingress** is accepted only with `frame_id=MAV_FRAME_LOCAL_FRD` and `child_frame_id=MAV_FRAME_BODY_FRD` (`GCS_MAVLINK::handle_odometry`); with that, EKF3 logged `is using external nav data` and reached flags `0x033f`. Copter-4.6.3 - [vio-to-mavlink-bridge](../../samples/vio-to-mavlink-bridge/README.md).
+- **`GPS_INPUT` (`GPS1_TYPE=14`) needs >= 10 Hz**: 5 Hz under host load gave `GPS 1: not healthy` and arming refused (AP_GPS wants an average frame gap under 215 ms). Copter-4.6.3 - [golden-demo](../../samples/golden-demo/README.md).
+- **ExternalNav starvation**: raw visual-geoloc fixes as ExternalNav with a ~10 s no-fix gap triggered `EKF Failsafe: changed to LAND` in 4 of 4 flights despite low variances; a continuous 5 Hz DR+fix reference fixed it. `EKF3 lane switch` every 10-20 s appeared only when SITL's own simulated GPS was the GPS (0 with `GPS_INPUT`); mechanism not found. Copter-4.6.3 - [golden-demo](../../samples/golden-demo/README.md).
 
 ## Alternatives
 - [PX4](./px4__px4-autopilot.md): BSD-licensed, EKF2 with bitmask aiding control, ROS 2 native over uXRCE-DDS, SIH for a no-Gazebo simulator.
