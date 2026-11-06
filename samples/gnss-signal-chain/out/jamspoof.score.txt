@@ -1,0 +1,6 @@
+    t nSV meanCN0 sdCN0    herr_m    clk_ns  jam spoof verdict / reasons
+   43   4    45.1   1.2      17.5    -143.9 0.00  0.00 clean
+   48   5    43.9   2.2       0.7     -33.4 0.00  0.00 clean
+   75   5    43.9   2.6       7.2     -72.3 0.30  0.00 clean / AGC +29109% vs baseline
+RTKLIB rnx2rtkp SPP on GNSS-SDR RINEX: 33 common epochs, horizontal error vs truth median 3.6 m (GNSS-SDR PVT 3.6 m), last epoch 7.2 m (GNSS-SDR 7.2 m)
+epochs 33, alert epochs 0, first alert t=None

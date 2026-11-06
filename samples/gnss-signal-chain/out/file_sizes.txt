@@ -1,0 +1,4 @@
+600000000 /work/work/clean.bin
+600000000 /work/work/overpower.bin
+600000000 /work/work/jamspoof.bin
+600000000 /work/work/dragoff.bin

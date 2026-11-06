@@ -1,0 +1,17 @@
+{
+  "id": "sample:gnss-signal-chain",
+  "title": "File-based GNSS signal chain: gps-sdr-sim => GNSS-SDR => spoofing/jamming scorer",
+  "summary": "A Docker (arm64/amd64) testbed that never transmits: gps-sdr-sim synthesizes GPS L1 C/A IQ for a static receiver from the shipped 2022-01-01 broadcast ephemeris, a numpy mixer adds noise, a second spoofer stream (power offset, time offset, ramp) and/or a jamming burst, GNSS-SDR 0.0.19 processes each file into PVT, RINEX and a PVT dump, and an adapter feeds the 1 Hz epochs (position, clock, per-SV C/N0) into the gnss-interference-monitor scorer. Four scenarios: clean, unaligned overpower, jam-then-spoof, and a code/carrier-aligned drag-off that walks the fix 978 m away.",
+  "concepts": ["concept:gnss-sdr", "concept:gnss-interference", "concept:simulation", "concept:gnss", "concept:assured-pnt"],
+  "tags": ["gps-sdr-sim", "gnss-sdr", "iq-file", "spoofing", "drag-off", "jamming", "cn0", "rinex", "rnx2rtkp", "docker", "arm64", "file-based"],
+  "related": [
+    {"id": "repo:osqzss/gps-sdr-sim", "rel": "uses"},
+    {"id": "repo:gnss-sdr/gnss-sdr", "rel": "uses"},
+    {"id": "repo:rtklibexplorer/rtklib", "rel": "uses"},
+    {"id": "sample:gnss-interference-monitor", "rel": "uses"},
+    {"id": "res:gnss-sdr-docs", "rel": "explains"},
+    {"id": "res:humphreys-2008-assessing-spoofing-threat", "rel": "explains"},
+    {"id": "res:psiaki-humphreys-2016-gnss-spoofing-detection", "rel": "explains"}
+  ],
+  "verified": "ran end to end on 2026-11-06 with Docker arm64 on Apple Silicon (./run.sh, 223 s): gps-sdr-sim commit 28ca29a, GNSS-SDR 0.0.19 (Ubuntu 24.04 package), RTKLIB demo5 v2.5.1 rnx2rtkp. Real outputs are in out/ and quoted in the README: clean median horizontal error 3.0 m with 0 scorer alerts; drag-off captured the PVT to 977.8 m off truth with the first scorer alert at t=67 s and a missed stretch t=87-129 s; unaligned overpower and jam-then-spoof caused a GNSS-SDR PVT outage, not a capture. GNSS-SDR runs are not bit-identical between runs. Not validated against a hardware receiver; the AGC input is a file-power proxy."
+}

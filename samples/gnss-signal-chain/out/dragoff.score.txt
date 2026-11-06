@@ -1,0 +1,91 @@
+    t nSV meanCN0 sdCN0    herr_m    clk_ns  jam spoof verdict / reasons
+   43   4    45.1   1.2      17.6    -144.5 0.00  0.00 clean
+   48   6    43.2   2.6       0.5     -29.8 0.00  0.00 clean
+   64   6    45.5   1.9       2.4     -34.3 0.00  0.35 clean / C/N0 spread only 1.9 dB over 6 SVs
+   65   6    46.4   1.8       3.1     -23.3 0.00  0.35 clean / C/N0 spread only 1.8 dB over 6 SVs
+   66   6    47.3   1.3       1.3     -15.6 0.30  0.35 clean / AGC +30% vs baseline; C/N0 spread only 1.3 dB over 6 SVs
+   67   6    48.0   1.4       0.8     -31.1 0.30  0.65 spoofing / median C/N0 rise +4.0 dB; AGC +49% vs baseline; C/N0 spread only 1.4 dB over 6 SVs
+   68   6    48.5   1.4       2.4     -35.8 0.30  0.65 spoofing / median C/N0 rise +5.1 dB; AGC +81% vs baseline; C/N0 spread only 1.4 dB over 6 SVs
+   69   6    50.0   1.4       0.5     -34.8 0.30  0.65 spoofing / median C/N0 rise +6.3 dB; AGC +137% vs baseline; C/N0 spread only 1.4 dB over 6 SVs
+   70   6    50.3   1.1       1.5     -27.9 0.30  0.65 spoofing / median C/N0 rise +6.5 dB; AGC +237% vs baseline; C/N0 spread only 1.1 dB over 6 SVs
+   71   6    50.5   0.7       1.3     -23.5 0.30  0.65 spoofing / median C/N0 rise +6.0 dB; AGC +237% vs baseline; C/N0 spread only 0.7 dB over 6 SVs
+   72   6    50.2   0.4       1.2     -27.2 0.30  0.65 spoofing / median C/N0 rise +5.9 dB; AGC +236% vs baseline; C/N0 spread only 0.4 dB over 6 SVs
+   73   6    50.8   1.2       0.7     -30.2 0.30  0.65 spoofing / median C/N0 rise +7.4 dB; AGC +237% vs baseline; C/N0 spread only 1.2 dB over 6 SVs
+   74   6    50.1   1.2       1.4     -33.2 0.30  0.65 spoofing / median C/N0 rise +5.7 dB; AGC +237% vs baseline; C/N0 spread only 1.2 dB over 6 SVs
+   75   6    50.2   1.9       0.6     -32.0 0.30  0.65 spoofing / median C/N0 rise +6.0 dB; AGC +237% vs baseline; C/N0 spread only 1.9 dB over 6 SVs
+   76   6    50.1   1.8       1.6     -36.5 0.30  0.65 spoofing / median C/N0 rise +6.2 dB; AGC +237% vs baseline; C/N0 spread only 1.8 dB over 6 SVs
+   77   6    49.9   1.3       0.4     -30.7 0.30  0.65 spoofing / median C/N0 rise +5.7 dB; AGC +237% vs baseline; C/N0 spread only 1.3 dB over 6 SVs
+   78   6    50.6   1.1       0.5     -29.0 0.30  0.65 spoofing / median C/N0 rise +6.4 dB; AGC +237% vs baseline; C/N0 spread only 1.1 dB over 6 SVs
+   79   6    50.8   0.6       0.3     -27.9 0.30  0.65 spoofing / median C/N0 rise +6.7 dB; AGC +237% vs baseline; C/N0 spread only 0.6 dB over 6 SVs
+   80   6    51.1   0.8       0.5     -32.9 0.30  0.65 spoofing / median C/N0 rise +7.4 dB; AGC +194% vs baseline; C/N0 spread only 0.8 dB over 6 SVs
+   81   6    50.5   1.0       0.3     -32.4 0.30  0.65 spoofing / median C/N0 rise +6.2 dB; AGC +163% vs baseline; C/N0 spread only 1.0 dB over 6 SVs
+   82   6    50.0   0.8       0.9     -40.6 0.30  0.65 spoofing / median C/N0 rise +6.3 dB; AGC +169% vs baseline; C/N0 spread only 0.8 dB over 6 SVs
+   83   6    49.7   0.5       3.4     -22.7 0.30  0.65 spoofing / median C/N0 rise +5.1 dB; AGC +169% vs baseline; C/N0 spread only 0.5 dB over 6 SVs
+   84   6    49.3   0.6       2.7     -47.7 0.30  0.65 spoofing / median C/N0 rise +5.1 dB; AGC +167% vs baseline; C/N0 spread only 0.6 dB over 6 SVs
+   85   6    49.0   0.5       5.3     -42.0 0.30  0.65 spoofing / median C/N0 rise +5.0 dB; AGC +168% vs baseline; C/N0 spread only 0.5 dB over 6 SVs
+   86   6    48.9   0.6       9.9     -27.1 0.30  0.65 spoofing / median C/N0 rise +4.6 dB; AGC +169% vs baseline; C/N0 spread only 0.6 dB over 6 SVs
+   87   6    48.3   0.8      11.3     -31.4 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 0.8 dB over 6 SVs
+   88   6    47.7   1.0      16.3     -29.0 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.0 dB over 6 SVs
+   89   6    47.6   1.4      20.0     -29.3 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.4 dB over 6 SVs
+   90   6    47.2   1.2      25.7     -23.7 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.2 dB over 6 SVs
+   91   6    46.8   1.0      30.7     -29.7 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.0 dB over 6 SVs
+   92   6    46.4   0.7      35.8     -33.6 0.30  0.35 clean / AGC +169% vs baseline; C/N0 spread only 0.7 dB over 6 SVs
+   93   6    46.3   1.0      44.1     -23.3 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.0 dB over 6 SVs
+   94   6    46.2   1.4      49.9     -29.9 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.4 dB over 6 SVs
+   95   6    46.2   1.5      57.9     -22.3 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.5 dB over 6 SVs
+   96   6    45.8   1.2      64.1     -28.2 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.2 dB over 6 SVs
+   97   6    45.8   1.0      71.6     -36.5 0.30  0.35 clean / AGC +167% vs baseline; C/N0 spread only 1.0 dB over 6 SVs
+   98   6    45.6   1.0      81.1     -20.0 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.0 dB over 6 SVs
+   99   6    45.4   1.2      91.1     -25.4 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.2 dB over 6 SVs
+  100   6    45.4   1.3      98.9     -46.3 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.3 dB over 6 SVs
+  101   6    45.4   1.6     110.1     -35.3 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.6 dB over 6 SVs
+  102   6    45.3   1.5     121.1     -28.2 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.5 dB over 6 SVs
+  103   6    45.2   1.5     132.3     -33.2 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.5 dB over 6 SVs
+  104   6    45.3   1.7     144.2     -28.9 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.7 dB over 6 SVs
+  105   6    45.2   1.6     154.9     -36.7 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.6 dB over 6 SVs
+  106   6    45.2   1.7     167.6     -46.6 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.7 dB over 6 SVs
+  107   6    45.0   1.6     183.8     -10.2 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.6 dB over 6 SVs
+  108   8    45.7   1.6     194.9     -30.6 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.6 dB over 8 SVs
+  109   8    45.6   1.7     210.5     -28.4 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.7 dB over 8 SVs
+  110   8    46.0   2.1     224.4     -43.4 0.30  0.00 clean / AGC +168% vs baseline
+  111   8    46.1   2.1     239.9     -37.9 0.30  0.00 clean / AGC +168% vs baseline
+  112   8    46.2   2.3     254.2     -32.2 0.30  0.00 clean / AGC +168% vs baseline
+  113   8    46.4   2.3     270.7     -41.9 0.30  0.00 clean / AGC +168% vs baseline
+  114   8    46.4   2.3     288.5     -31.6 0.30  0.00 clean / AGC +168% vs baseline
+  115   8    46.8   2.5     305.8     -31.8 0.30  0.00 clean / AGC +168% vs baseline
+  116   8    46.6   2.4     323.1     -34.4 0.30  0.00 clean / AGC +168% vs baseline
+  117   8    46.9   2.5     342.3     -25.2 0.30  0.00 clean / AGC +168% vs baseline
+  118   8    47.0   2.2     360.4     -32.0 0.30  0.00 clean / AGC +168% vs baseline
+  119   8    47.1   2.1     379.2     -35.2 0.30  0.00 clean / AGC +168% vs baseline
+  120   8    47.4   2.2     398.8     -30.1 0.30  0.00 clean / AGC +168% vs baseline
+  121   8    47.4   2.0     418.7     -38.5 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 2.0 dB over 8 SVs
+  122   8    47.9   2.1     439.2     -28.4 0.30  0.00 clean / AGC +168% vs baseline
+  123   8    48.0   2.0     458.4     -42.8 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 2.0 dB over 8 SVs
+  124   8    47.8   1.7     478.0     -38.6 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.7 dB over 8 SVs
+  125   8    48.2   1.8     499.9     -31.2 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.8 dB over 8 SVs
+  126   8    48.3   1.7     519.6     -22.8 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.7 dB over 8 SVs
+  127   8    48.5   1.6     537.6     -40.6 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.6 dB over 8 SVs
+  128   8    48.4   1.7     558.2     -37.0 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.7 dB over 8 SVs
+  129   8    49.0   1.8     578.4     -24.9 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.8 dB over 8 SVs
+  130   8    48.9   1.6     597.0     -47.9 0.30  0.65 spoofing / median C/N0 rise +4.0 dB; AGC +168% vs baseline; C/N0 spread only 1.6 dB over 8 SVs
+  131   8    49.0   1.8     618.9     -39.0 0.30  0.35 clean / AGC +168% vs baseline; C/N0 spread only 1.8 dB over 8 SVs
+  132   8    48.8   1.8     638.2     -30.3 0.30  0.65 spoofing / median C/N0 rise +4.1 dB; AGC +168% vs baseline; C/N0 spread only 1.8 dB over 8 SVs
+  133   8    49.1   1.7     658.6     -30.9 0.30  0.65 spoofing / median C/N0 rise +5.1 dB; AGC +168% vs baseline; C/N0 spread only 1.7 dB over 8 SVs
+  134   8    49.3   1.5     677.4     -42.0 0.30  0.65 spoofing / median C/N0 rise +5.6 dB; AGC +168% vs baseline; C/N0 spread only 1.5 dB over 8 SVs
+  135   8    49.3   1.5     698.7     -34.0 0.30  0.65 spoofing / median C/N0 rise +5.7 dB; AGC +168% vs baseline; C/N0 spread only 1.5 dB over 8 SVs
+  136   8    48.8   1.5     718.0     -37.9 0.30  0.65 spoofing / median C/N0 rise +4.7 dB; AGC +168% vs baseline; C/N0 spread only 1.5 dB over 8 SVs
+  137   8    49.1   1.4     738.4     -34.8 0.30  0.65 spoofing / median C/N0 rise +5.0 dB; AGC +168% vs baseline; C/N0 spread only 1.4 dB over 8 SVs
+  138   8    49.3   1.3     758.4     -41.5 0.30  0.65 spoofing / median C/N0 rise +5.1 dB; AGC +168% vs baseline; C/N0 spread only 1.3 dB over 8 SVs
+  139   8    49.5   1.3     778.4     -33.4 0.30  0.65 spoofing / median C/N0 rise +5.6 dB; AGC +168% vs baseline; C/N0 spread only 1.3 dB over 8 SVs
+  140   8    49.5   1.3     798.3     -29.6 0.30  0.65 spoofing / median C/N0 rise +5.3 dB; AGC +168% vs baseline; C/N0 spread only 1.3 dB over 8 SVs
+  141   8    49.5   1.2     818.3     -38.1 0.30  0.65 spoofing / median C/N0 rise +5.5 dB; AGC +168% vs baseline; C/N0 spread only 1.2 dB over 8 SVs
+  142   8    49.4   1.2     838.7     -38.6 0.30  0.65 spoofing / median C/N0 rise +5.2 dB; AGC +168% vs baseline; C/N0 spread only 1.2 dB over 8 SVs
+  143   8    49.5   1.2     857.8     -24.9 0.30  0.65 spoofing / median C/N0 rise +5.6 dB; AGC +168% vs baseline; C/N0 spread only 1.2 dB over 8 SVs
+  144   8    49.7   1.4     878.5     -28.2 0.30  0.65 spoofing / median C/N0 rise +5.7 dB; AGC +168% vs baseline; C/N0 spread only 1.4 dB over 8 SVs
+  145   8    49.6   1.4     898.7     -33.4 0.30  0.65 spoofing / median C/N0 rise +6.0 dB; AGC +168% vs baseline; C/N0 spread only 1.4 dB over 8 SVs
+  146   8    49.7   1.1     919.4     -35.0 0.30  0.65 spoofing / median C/N0 rise +5.6 dB; AGC +168% vs baseline; C/N0 spread only 1.1 dB over 8 SVs
+  147   8    49.3   1.0     938.6     -33.4 0.30  0.65 spoofing / median C/N0 rise +5.3 dB; AGC +168% vs baseline; C/N0 spread only 1.0 dB over 8 SVs
+  148   8    49.6   1.2     958.6     -31.0 0.30  0.65 spoofing / median C/N0 rise +5.9 dB; AGC +168% vs baseline; C/N0 spread only 1.2 dB over 8 SVs
+  149   8    49.2   0.9     977.8     -43.6 0.30  0.65 spoofing / median C/N0 rise +5.0 dB; AGC +150% vs baseline; C/N0 spread only 0.9 dB over 8 SVs
+RTKLIB rnx2rtkp SPP on GNSS-SDR RINEX: 107 common epochs, horizontal error vs truth median 64.1 m (GNSS-SDR PVT 64.1 m), last epoch 977.8 m (GNSS-SDR 977.8 m)
+epochs 107, alert epochs 39, first alert t=67.0

@@ -1,0 +1,8 @@
+TIMING clean generate+mix 18 s
+TIMING clean gnss-sdr 61 s
+TIMING overpower generate+mix 31 s
+TIMING overpower gnss-sdr 16 s
+TIMING jamspoof generate+mix 32 s
+TIMING jamspoof gnss-sdr 15 s
+TIMING dragoff generate+mix 32 s
+TIMING dragoff gnss-sdr 15 s
