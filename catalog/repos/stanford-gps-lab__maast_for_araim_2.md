@@ -30,6 +30,7 @@ Stanford GPS Lab MATLAB toolset that evaluates Advanced RAIM availability and pr
 - [RAIM (MATLAB)](../../catalog/repos/michaelbeechan__raim.md) (alternative_to)
 - [Baseline advanced RAIM user algorithm and possible improvements](../../catalog/resources/blanch-2015-baseline-araim-user-algorithm.md) (has_code)
 - [Integrity monitoring for alt-PNT: solution-separation FDE, protection levels and a Stanford diagram](../../catalog/samples/altpnt-integrity.md) (explains)
+- [Multi-source fault detection and exclusion on one real flight: ARAIM-style subset exclusion across GNSS, visual fixes and two TRNs (VPAIR)](../../catalog/samples/multi-source-fde.md) (explains)
 
 _Indexed by lane(s): gnss_
 
