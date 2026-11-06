@@ -170,8 +170,8 @@
     "kind": "repo",
     "name": "Betaflight",
     "url": "https://github.com/betaflight/betaflight",
-    "summary": "Racing/freestyle-oriented flight controller firmware focused on attitude control and low-latency filtering; GPS rescue mode is its main navigation feature.",
-    "why_it_matters": "Dominant firmware on FPV drones seen in current conflicts; understanding its limited navigation (GPS Rescue only) matters for C-UAS and EW-impact analysis.",
+    "summary": "Racing/freestyle-oriented flight controller firmware focused on attitude control and low-latency filtering. GPS Rescue was long its only navigation mode; releases since 2025 add altitude hold, position hold and waypoint flight plans (AUTOPILOT mode in 2026.6).",
+    "why_it_matters": "Dominant firmware on FPV drones seen in current conflicts; its navigation is still limited (GPS Rescue plus newer altitude/position hold and basic waypoints), which matters for C-UAS and EW-impact analysis.",
     "concepts": [
       "concept:autopilot",
       "concept:counter-uas"
@@ -596,7 +596,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Can run on a companion and publish OPTICAL_FLOW_RAD over MAVLink; check activity before depending on it.",
+    "hackathon_notes": "Library only (PX4Flow SAD block matching and an OpenCV KLT variant behind calcFlow()); there is no executable or MAVLink output, so you write the camera capture and OPTICAL_FLOW_RAD publishing yourself. The Gazebo Classic flow plugin is the reference user. Light maintenance commits in 2026.",
     "related": [
       {
         "id": "repo:px4/px4-autopilot",
@@ -1016,7 +1016,7 @@
     ],
     "maturity": "archived",
     "hackathon_fit": "low",
-    "hackathon_notes": "Has compatibility issues with recent Python versions; pin Python 3.9/3.10 or avoid.",
+    "hackathon_notes": "The PyPI release 2.9.2 (2019) fails to import on Python 3.10+ (it uses collections.MutableMapping); pin Python 3.9 or install from GitHub master, which has the fix. Better to avoid for new work.",
     "related": [
       {
         "id": "repo:ardupilot/pymavlink",
@@ -1216,7 +1216,7 @@
     "kind": "repo",
     "name": "UAV Log Viewer",
     "url": "https://github.com/ArduPilot/UAVLogViewer",
-    "summary": "Browser-based viewer for ArduPilot DataFlash and MAVLink logs (also reads PX4 ULog), with 3D replay and plotting.",
+    "summary": "Browser-based viewer for ArduPilot DataFlash (.bin) and MAVLink telemetry (.tlog) logs, also DJI .txt logs, with 3D replay and plotting.",
     "why_it_matters": "Quick post-flight review of EKF3 innovations and source switching.",
     "concepts": [
       "concept:sensor-fusion",
@@ -1250,7 +1250,7 @@
     "kind": "repo",
     "name": "ArduPilot Methodic Configurator",
     "url": "https://github.com/ArduPilot/MethodicConfigurator",
-    "summary": "Guided step-by-step parameter configuration tool for ArduPilot vehicles.",
+    "summary": "Guided step-by-step parameter configuration tool for ArduPilot vehicles; the sequence is complete for ArduCopter, while Plane, Heli and Rover guides are still incomplete.",
     "why_it_matters": "Reduces setup mistakes on new airframes, which matter more than code in short builds.",
     "concepts": [
       "concept:autopilot"
@@ -1802,9 +1802,9 @@
     "domains": [
       "air"
     ],
-    "maturity": "research-prototype",
+    "maturity": "archived",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Needs OpenCV and a camera on the companion; inactive since 2023.",
+    "hackathon_notes": "Discontinued by its authors (README: academic/learning use only). Needs OpenCV, the aruco library and DroneKit on the companion; inactive since 2023.",
     "related": [
       {
         "id": "repo:ardupilot/ardupilot",
@@ -1870,7 +1870,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Install on Linux with compatible RTL8812AU/EU cards; key pairs per link.",
+    "hackathon_notes": "Install on Linux with compatible RTL8812AU/EU cards (patched drivers required); key pairs per link. Code is GPL-3.0, but the author's paid support excludes military usage.",
     "related": [
       {
         "id": "repo:openhd/openhd",
@@ -2204,7 +2204,7 @@
     "kind": "repo",
     "name": "Aerostack2",
     "url": "https://github.com/aerostack2/aerostack2",
-    "summary": "ROS 2 framework for autonomous single and multi-aerial-robot systems with behaviours, state estimation plugins and platform adapters (PX4, Crazyflie, DJI, Gazebo).",
+    "summary": "ROS 2 framework for autonomous single and multi-aerial-robot systems with behaviours, state estimation plugins and platform adapters (Gazebo and a multirotor simulator in this repo; PX4, Crazyflie and DJI adapters in separate as2_platform_* repos).",
     "why_it_matters": "A complete companion-side autonomy architecture, handy for multi-UAV missions without starting from scratch.",
     "concepts": [
       "concept:ros",

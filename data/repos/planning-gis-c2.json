@@ -71,7 +71,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Needs a source build of Fields2Cover; send a polygon in GPS or map frame and get a coverage route. Best for flat open terrain.",
+    "hackathon_notes": "Fields2Cover is apt-installable on Humble, Jazzy and Kilted (ros-<distro>-fields2cover 2.x); only the main branch (Lyrical) builds it from source. Send a polygon in GPS or map frame and get a coverage route. Best for flat open terrain.",
     "related": [
       {
         "id": "repo:ros-navigation/navigation2",
@@ -142,7 +142,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "ROS1 (Noetic) with a bundled simulator; runs on a laptop. Porting to ROS 2 / PX4 needs a bridge. Good for a demo of reactive flight in a random forest map.",
+    "hackathon_notes": "ROS1 (Ubuntu 16.04-20.04) with a bundled simulator; runs on a laptop. A ROS 2 port lives in the ego-planner-swarm ros2_version branch, and upstream recommends EGO-Swarm over this repo; PX4 needs a bridge. Good for a demo of reactive flight in a random forest map.",
     "related": [
       {
         "id": "repo:zju-fast-lab/ego-planner-swarm",
@@ -194,7 +194,7 @@
     "kind": "repo",
     "name": "Fast-Planner",
     "url": "https://github.com/hkust-aerial-robotics/fast-planner",
-    "summary": "HKUST quadrotor planning framework: kinodynamic A* front-end plus B-spline optimization, with topological and perception-aware variants for fast flight in unknown environments.",
+    "summary": "HKUST quadrotor planning framework: kinodynamic A* front-end plus B-spline optimization, with a topological-path variant for fast flight in unknown environments. The perception-aware (RAPTOR) planner is listed as 'to appear' and is not in the repo.",
     "why_it_matters": "Classic baseline that most later UAV planners compare against; modular enough to reuse its mapping (ESDF) and search components.",
     "concepts": [
       "concept:path-planning",
@@ -344,7 +344,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "ROS workspace with Gazebo SubT-like worlds; heavy but realistic.",
+    "hackathon_notes": "The default branch is now OmniPlanner (GBPlanner 3.0, aerial/ground/underwater); GBPlanner 2.0 is on the gbplanner2 branch. ROS workspace with Gazebo worlds; heavy but realistic. Licence is BSD-3, but the README says it is intended for civilian use only.",
     "related": [
       {
         "id": "repo:hkust-aerial-robotics/fuel",
@@ -412,7 +412,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Docker images help; large build. Use it to see how estimation and planning are glued, or reuse the planner.",
+    "hackathon_notes": "Docker images help; large build. Use it to see how estimation and planning are glued, or reuse the planner. Penn Software Licence: non-profit research use only, commercial use needs a licence from Penn. An experimental ROS 2 Jazzy port is on the ros2_dev branch.",
     "related": [
       {
         "id": "repo:hkust-aerial-robotics/fast-planner",
@@ -1038,7 +1038,7 @@
     "kind": "repo",
     "name": "Cesium Terrain Builder",
     "url": "https://github.com/geo-data/cesium-terrain-builder",
-    "summary": "Command-line tools to convert GDAL-readable DEMs into Cesium terrain tiles (heightmap and quantized-mesh with the docker variant).",
+    "summary": "Command-line tools to convert GDAL-readable DEMs into Cesium heightmap terrain tiles; quantized-mesh output needs the ahuarte47 fork, which the tum-gis Docker image packages.",
     "why_it_matters": "Turns a Copernicus/SRTM DEM into offline 3D terrain for a CesiumJS display without internet.",
     "concepts": [
       "concept:gis-mapping",
@@ -1284,7 +1284,7 @@
     "name": "GraphHopper",
     "url": "https://github.com/graphhopper/graphhopper",
     "summary": "Java OSM routing engine usable as library or server, with custom models for per-request costing and map matching.",
-    "why_it_matters": "Embeddable routing on JVM/Android, relevant for on-device dismounted navigation apps.",
+    "why_it_matters": "Embeddable routing on the JVM, relevant for dismounted navigation apps; on-device Android routing is no longer officially supported (last Android demo is v1.0).",
     "concepts": [
       "concept:path-planning",
       "concept:ground-vehicle-nav",
@@ -1498,7 +1498,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "medium",
-    "hackathon_notes": "java -jar planetiler.jar --area=<region> outputs mbtiles or pmtiles.",
+    "hackathon_notes": "planetiler --download --area=<region> --output=<name>.pmtiles builds mbtiles or pmtiles; the jar needs Java 25+, the Homebrew, single-file and Docker launchers need no Java. The first run downloads about 1 GB of ocean and Natural Earth data.",
     "related": [
       {
         "id": "repo:protomaps/pmtiles",
@@ -2007,7 +2007,7 @@
     "kind": "repo",
     "name": "takproto",
     "url": "https://github.com/snstac/takproto",
-    "summary": "Encode and decode TAK protobuf (TAK Protocol v1) packets, including mesh and stream formats.",
+    "summary": "Encode and decode TAK protobuf (TAK Protocol v1) packets, including mesh and stream formats. A GitHub fork of dB-SPL/takprotobuf, now maintained by Sensors & Signals and published on PyPI as takproto.",
     "why_it_matters": "Needed when talking to modern TAK clients that prefer protobuf over XML CoT.",
     "concepts": [
       "concept:situational-awareness",

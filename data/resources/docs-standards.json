@@ -896,7 +896,7 @@
     "title": "Cursor on Target (NDIA briefing)",
     "url": "https://ndia.dtic.mil/wp-content/uploads/2008/USCG/Wednesday/2NiessenCursorOnTarget.pdf",
     "authors": [
-      "MITRE (Niessen)"
+      "Christopher Niessen (MITRE)"
     ],
     "year": 2008,
     "summary": "Briefing introducing the Cursor on Target XML event schema: the minimal event/point/detail model for exchanging what-when-where of tracked entities between C2 systems.",
@@ -1655,13 +1655,13 @@
   {
     "id": "res:icao-gnss-rfi-workshop-presentation",
     "kind": "talk",
-    "title": "ICAO workshop presentation: GNSS Radio Frequency Interference",
+    "title": "GNSS interference (ICAO WRC-27 Preparatory Workshop presentation)",
     "url": "https://www.icao.int/sites/default/files/safety/FSMP/MeetingDocs/FSMP%20WG23/Presentations/5.02_Workshop-Presentation_GNSS-RFI.pdf",
     "authors": [
-      "ICAO Flight Safety Measures Panel"
+      "Mathieu Hussong (DGAC, French CAA)"
     ],
-    "year": 2024,
-    "summary": "ICAO panel presentation on GNSS RFI impacts on flight operations and the regulatory response, from the Flight Safety Measures Panel working group.",
+    "year": 2026,
+    "summary": "French DGAC presentation at an ICAO WRC-27 preparatory workshop on GNSS RFI: definitions of RFI, jamming and spoofing, the problems they cause in flight (with OPSGROUP 2024 spoofing data), where interference happens, and the ICAO position and actions.",
     "key_takeaways": [
       "Summarizes operational impacts on avionics",
       "Frames the ICAO-level mitigation agenda"
@@ -1842,7 +1842,7 @@
     "authors": [
       "Inside GNSS"
     ],
-    "year": 2025,
+    "year": 2026,
     "summary": "Progress report on ROCkN field tests, including optical clock hardware flown on aircraft and deployed aboard a ship.",
     "key_takeaways": [
       "Reports field synchronization and platform trials",
@@ -2167,7 +2167,7 @@
     "authors": [
       "u-blox"
     ],
-    "year": 2023,
+    "year": 2019,
     "summary": "u-blox explainer on how jamming and spoofing affect mass-market receivers and which receiver-side defences (multi-band, multi-constellation, signal monitoring) help.",
     "key_takeaways": [
       "Spoofing many signals consistently is harder with multi-GNSS",
@@ -2509,10 +2509,14 @@
   {
     "id": "res:kreizis-ion-itm-2025-spoofing",
     "kind": "paper",
-    "title": "Real-World Spoofing Detection (ION ITM 2025)",
-    "url": "https://web.stanford.edu/group/scpnt/gpslab/pubs/papers/Kriezis_ION_ITM_2025_Real_World_Spoofing_Detection.pdf",
+    "title": "Real-World Spoofing Detection and Characterization Using Low-Cost Receivers",
+    "url": "https://web.stanford.edu/group/scpnt/gpslab/pubs/papers/Kreizis_ION_ITM_2025_Real_World_Spoofing_Detection.pdf",
     "authors": [
-      "Kriezis et al., Stanford GPS Lab"
+      "Argyris Kriezis",
+      "Yu-Hsuan Chen",
+      "Dennis Akos",
+      "Sherman Lo",
+      "Todd Walter"
     ],
     "year": 2025,
     "summary": "Analyses a real spoofing event in the Mediterranean recorded on low-cost u-blox F9P receivers and evaluates detection approaches on that live data rather than a simulator.",
@@ -2604,10 +2608,14 @@
   {
     "id": "res:lu-2024-spoofing-antispoofing-overview",
     "kind": "paper",
-    "title": "Overview of satellite navigation spoofing and anti-spoofing techniques",
+    "title": "Overview of satellite nav spoofing and anti-spoofing techniques",
     "url": "https://www.frontiersin.org/journals/physics/articles/10.3389/fphy.2024.1428544/full",
     "authors": [
-      "Lu and Lu"
+      "Cheng Lu",
+      "Zukun Lu",
+      "Zhe Liu",
+      "Long Huang",
+      "Feiqiang Chen"
     ],
     "year": 2024,
     "summary": "Open-access Frontiers in Physics overview grouping anti-spoofing countermeasures into detection, identification, suppression and localization of the spoofer.",
@@ -2634,7 +2642,11 @@
     "title": "Survey on positioning technology based on signal of opportunity from low earth orbit",
     "url": "https://www.frontiersin.org/journals/physics/articles/10.3389/fphy.2025.1592447/full",
     "authors": [
-      "Frontiers in Physics authors"
+      "Jiawei He",
+      "Shaojie Ni",
+      "Honglei Lin",
+      "Zhe Liu",
+      "Zhibin Xiao"
     ],
     "year": 2025,
     "summary": "Open-access survey of LEO signals-of-opportunity positioning: Doppler methods, error sources, and extracting observables from signals never designed for navigation (unknown codes, poor onboard clocks).",
@@ -2881,7 +2893,7 @@
     "title": "Researchers home in on origins of Russia's Baltic GPS jamming",
     "url": "https://www.defensenews.com/global/europe/2025/07/02/researchers-home-in-on-origins-of-russias-baltic-gps-jamming/",
     "authors": [
-      "Defense News"
+      "Linus Höller (Defense News)"
     ],
     "year": 2025,
     "summary": "Report on Polish research tracing Baltic GNSS jamming to emitters in the Kaliningrad region, with context on the effects on aviation and shipping.",

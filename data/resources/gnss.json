@@ -40,16 +40,17 @@
   {
     "id": "res:gps-icwg-archive",
     "kind": "doc",
-    "title": "GPS Interface Control Documents (archive.gps.gov)",
+    "title": "Interface Control Documents",
     "url": "https://archive.gps.gov/technical/icwg/",
     "authors": [
       "GPS.gov"
     ],
-    "year": 2022,
+    "year": 2025,
     "summary": "Index of current GPS interface specifications, including IS-GPS-200 (L1/L2), IS-GPS-705 (L5) and IS-GPS-800 (L1C).",
     "key_takeaways": [
       "Single entry point for all GPS signal ICDs",
-      "Historic versions also linked"
+      "Historic versions also linked",
+      "Archive site, frozen since February 2025 per its own banner"
     ],
     "concepts": [
       "concept:gnss",
@@ -73,7 +74,7 @@
   {
     "id": "res:galileo-os-sis-icd-2-1",
     "kind": "standard",
-    "title": "Galileo Open Service Signal-In-Space ICD (OS SIS ICD) v2.1",
+    "title": "Galileo Open Service Signal-In-Space Interface Control Document (OS SIS ICD), Issue 2.1",
     "url": "https://www.gsc-europa.eu/sites/default/files/sites/all/files/Galileo_OS_SIS_ICD_v2.1.pdf",
     "authors": [
       "European Union / EUSPA"
@@ -106,7 +107,7 @@
   {
     "id": "res:galileo-osnma-sis-icd-1-1",
     "kind": "standard",
-    "title": "Galileo OSNMA Signal-In-Space ICD v1.1",
+    "title": "Galileo Open Service Navigation Message Authentication (OSNMA) Signal-In-Space Interface Control Document (SIS ICD), Issue 1.1",
     "url": "https://www.gsc-europa.eu/sites/default/files/sites/all/files/Galileo_OSNMA_SIS_ICD_v1.1.pdf",
     "authors": [
       "European Union / EUSPA"
@@ -153,7 +154,7 @@
   {
     "id": "res:galileo-osnma-receiver-guidelines-1-3",
     "kind": "standard",
-    "title": "Galileo OSNMA Receiver Guidelines v1.3",
+    "title": "Galileo Open Service Navigation Message Authentication (OSNMA) Receiver Guidelines, Issue 1.3",
     "url": "https://www.gsc-europa.eu/sites/default/files/sites/all/files/Galileo_OSNMA_Receiver_Guidelines_v1.3.pdf",
     "authors": [
       "European Union / EUSPA"
@@ -189,7 +190,7 @@
   {
     "id": "res:gsc-osnma-service-page",
     "kind": "doc",
-    "title": "Galileo OSNMA service page (GSC)",
+    "title": "Galileo Open Service Navigation Message Authentication (OSNMA)",
     "url": "https://www.gsc-europa.eu/galileo/services/galileo-open-service-navigation-message-authentication-osnma",
     "authors": [
       "European GNSS Service Centre"
@@ -219,7 +220,7 @@
   {
     "id": "res:gsc-programme-reference-documents",
     "kind": "doc",
-    "title": "Galileo programme reference documents (GSC electronic library)",
+    "title": "Programme Reference Documents",
     "url": "https://www.gsc-europa.eu/electronic-library/programme-reference-documents",
     "authors": [
       "European GNSS Service Centre"
@@ -312,7 +313,7 @@
       "John Wiseman"
     ],
     "year": 2022,
-    "summary": "Daily world maps of likely GPS interference derived from aircraft ADS-B navigation accuracy reports (NIC/NACp) collected by ADS-B Exchange.",
+    "summary": "Daily world maps of likely GPS interference derived from aircraft ADS-B navigation accuracy reports (NIC/NACp) aggregated from airplanes.live and ADS-B Exchange.",
     "key_takeaways": [
       "Shows persistent interference zones (Baltic, Middle East, Black Sea)",
       "Method is indirect: inferred from aircraft-reported accuracy"
@@ -434,7 +435,7 @@
   {
     "id": "res:ut-texbat",
     "kind": "dataset",
-    "title": "TEXBAT: Texas Spoofing Test Battery",
+    "title": "Texas Spoofing Test Battery (TEXBAT)",
     "url": "https://radionavlab.ae.utexas.edu/texbat/",
     "authors": [
       "UT Austin Radionavigation Lab"
@@ -443,7 +444,8 @@
     "summary": "Public set of recorded high-rate IQ files of GPS L1 spoofing scenarios (static and dynamic, time and position push) used as a standard benchmark for spoofing detection.",
     "key_takeaways": [
       "De facto benchmark for signal-level spoofing detectors",
-      "Recordings are large IQ files suitable for GNSS-SDR"
+      "Recordings are large IQ files suitable for GNSS-SDR",
+      "Terms: research use only, (c) University of Texas; users asked not to redistribute the data"
     ],
     "concepts": [
       "concept:gnss-interference",
@@ -512,7 +514,7 @@
     "summary": "IEEE TAES letter showing carrier-phase tracking of Starlink signals with unknown structure and positioning from several satellites.",
     "key_takeaways": [
       "Positioning from Starlink is feasible without knowing the signal format",
-      "Accuracy reported at metre level with known altitude"
+      "Six satellites tracked; 7.7 m horizontal error with known receiver altitude"
     ],
     "concepts": [
       "concept:signals-of-opportunity",
@@ -545,7 +547,8 @@
     "summary": "Kaggle competition with Android raw GNSS and IMU logs plus ground truth, aiming at decimeter-level smartphone positioning.",
     "key_takeaways": [
       "Large public smartphone GNSS dataset with truth",
-      "Winning solutions used factor graphs and carrier phase"
+      "Winning solutions used factor graphs and carrier phase",
+      "Data also on IEEE DataPort under CC BY; Kaggle competition rules not verified"
     ],
     "concepts": [
       "concept:gnss",
@@ -607,7 +610,9 @@
     "title": "Android Raw GNSS Measurement Datasets for Precise Positioning",
     "url": "https://research.google/pubs/android-raw-gnss-measurement-datasets-for-precise-positioning/",
     "authors": [
-      "Google Android GPS team"
+      "Guoyu (Michael) Fu",
+      "Mohammed Khider",
+      "Frank van Diggelen"
     ],
     "year": 2020,
     "summary": "ION GNSS+ 2020 paper releasing the first public Android raw GNSS datasets with corrections and ground truth, the origin of the GSDC series.",
@@ -639,7 +644,7 @@
   {
     "id": "res:android-raw-gnss-developer-guide",
     "kind": "doc",
-    "title": "Android raw GNSS measurements developer guide",
+    "title": "Raw GNSS Measurements",
     "url": "https://developer.android.com/develop/sensors-and-location/sensors/gnss",
     "authors": [
       "Google"
@@ -702,7 +707,7 @@
   {
     "id": "res:bkg-bnc",
     "kind": "doc",
-    "title": "BKG Ntrip Client (BNC)",
+    "title": "BKG Ntrip Client - BNC",
     "url": "https://igs.bkg.bund.de/ntrip/bnc",
     "authors": [
       "BKG"

@@ -347,7 +347,10 @@
     "title": "Cursor-on-Target Message Router User's Guide",
     "url": "https://www.mitre.org/sites/default/files/pdf/09_4937.pdf",
     "authors": [
-      "MITRE"
+      "Michael J. Kristan",
+      "Jeffrey T. Hamalainen",
+      "Douglas P. Robbins",
+      "Patrick J. Newell (MITRE)"
     ],
     "year": 2009,
     "summary": "MITRE guide describing Cursor-on-Target: the base Event schema (what, where, when), its mandatory fields, sub-schema extensions and the message router used to distribute CoT.",

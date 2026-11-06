@@ -159,7 +159,7 @@
     "name": "jMAVSim",
     "url": "https://github.com/PX4/jMAVSim",
     "summary": "Lightweight Java multirotor simulator that speaks MAVLink to PX4, without a 3D-world physics engine.",
-    "why_it_matters": "Fastest way to get a PX4 SITL quad flying for MAVLink, GCS or mission-logic work when sensors and worlds do not matter.",
+    "why_it_matters": "Was the fastest way to get a PX4 SITL quad flying for MAVLink, GCS or mission-logic work when sensors and worlds do not matter; PX4 has since replaced it with SIH.",
     "concepts": [
       "concept:simulation",
       "concept:mavlink-gcs"
@@ -176,7 +176,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Runs with 'make px4_sitl jmavsim'. Needs a JDK. No cameras or lidar, so not for perception work.",
+    "hackathon_notes": "Removed from PX4-Autopilot main in September 2026; 'make px4_sitl jmavsim' only exists up to PX4 v1.17. On current PX4 use 'make px4_sitl_sih sihsim_quadx' with Hawkeye. Needs a JDK. No cameras or lidar, so not for perception work. This repo is PX4's fork of DrTon/jMAVSim.",
     "related": [
       {
         "id": "repo:px4/px4-autopilot",
@@ -233,7 +233,7 @@
     "kind": "repo",
     "name": "ArduPilot SITL Models",
     "url": "https://github.com/ArduPilot/SITL_Models",
-    "summary": "Collection of aircraft and vehicle models and parameter files for ArduPilot SITL across several simulator backends.",
+    "summary": "Collection of aircraft and vehicle models and parameter files for ArduPilot SITL, mostly for the RealFlight simulator (planes, quadplanes, tailsitters, helicopters, multicopters) plus a Gazebo package with models and worlds.",
     "why_it_matters": "Ready-made airframes (including fixed-wing and VTOL) save hours when a hackathon scenario needs something other than a quadcopter.",
     "concepts": [
       "concept:simulation",
@@ -252,7 +252,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Pick a model folder and follow its readme; each lists the backend it targets.",
+    "hackathon_notes": "No top-level README. RealFlight is a paid commercial simulator; without it, only the Gazebo folder is usable. RealFlight model folders each have their own README.",
     "related": [
       {
         "id": "repo:ardupilot/ardupilot",
@@ -703,7 +703,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "low",
-    "hackathon_notes": "Pinned to specific Isaac Sim versions; check compatibility before investing time.",
+    "hackathon_notes": "Pinned to specific Isaac Sim versions (README badge: 4.1.0) and Linux only. The author states at the top of the README that this version is hard to maintain and will not be updated further; treat it as frozen.",
     "related": [
       {
         "id": "repo:isaac-sim/isaacsim",
@@ -947,7 +947,7 @@
     "kind": "repo",
     "name": "GRID playground (AirGen)",
     "url": "https://github.com/GenRobo/GRID-playground",
-    "summary": "Notebooks and examples for the GRID platform from Scaled Foundations, which pairs the AirSim-derived AirGen simulator with foundation-model perception and LLM-driven robot control.",
+    "summary": "Notes and examples for the GRID platform from General Robotics (formerly Scaled Foundations), which pairs the AirSim-derived AirGen simulator with foundation-model perception and LLM-driven robot control.",
     "why_it_matters": "Shows a sim plus foundation-model workflow for aerial autonomy, close to 'LLM in the loop' hackathon ideas.",
     "concepts": [
       "concept:simulation",
@@ -1190,7 +1190,7 @@
     ],
     "maturity": "archived",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Inactive since 2020; dataset itself is on the UZH site.",
+    "hackathon_notes": "Inactive since 2020; dataset itself is on the UZH site under CC BY-NC-SA 3.0 (non-commercial). The repo code is GPL-3.0.",
     "related": [
       {
         "id": "repo:uzh-rpg/rpg_trajectory_evaluation",
@@ -1222,7 +1222,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Download bags from the challenge site; scoring scripts in repo.",
+    "hackathon_notes": "Bags are on the challenge site and Hugging Face (Hilti-Research/hilti-slam-challenge-2022); ground truth and evaluation scripts are in the repo. Data licence is CC BY-NC-SA 3.0: non-commercial use only.",
     "related": [
       {
         "id": "repo:hilti-research/hilti-slam-challenge-2023",
@@ -1254,7 +1254,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Same workflow as 2022; check the challenge site for current download links.",
+    "hackathon_notes": "Same workflow as 2022; bags on the challenge site and Hugging Face. Data licence is CC BY-NC-SA 3.0: non-commercial use only.",
     "related": [
       {
         "id": "repo:hilti-research/hilti-slam-challenge-2022",
@@ -1285,7 +1285,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Data downloads and tutorials are linked from the site.",
+    "hackathon_notes": "Data downloads and tutorials are linked from the site. Licensed CC BY-NC-SA 4.0, intended for non-commercial academic use.",
     "related": [
       {
         "id": "repo:ntu-aris/ntu_viral_dataset",
@@ -1317,7 +1317,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "ROS bags; download links on the site.",
+    "hackathon_notes": "ROS bags; download links on the site. Licensed CC BY-NC-SA 4.0 for non-commercial academic use; commercial use needs contact with the authors.",
     "related": [
       {
         "id": "repo:mcdviral/mcdviral.github.io",
@@ -1349,7 +1349,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "ROS bags; check repo for download mirrors.",
+    "hackathon_notes": "ROS bags; check repo for download mirrors. Repo says MIT but the dataset is 'provided for academic purpose'; commercial use requires contacting the authors.",
     "related": []
   },
   {
@@ -1376,7 +1376,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "ROS bags with custom GNSS message types; install the gnss_comm package.",
+    "hackathon_notes": "ROS bags with custom GNSS message types; install the gnss_comm package. Dataset licence is CC BY-NC-SA 4.0 (non-commercial).",
     "related": [
       {
         "id": "repo:hkust-aerial-robotics/gvins",
@@ -1417,7 +1417,7 @@
     "kind": "repo",
     "name": "ALTO",
     "url": "https://github.com/MetaSLAM/ALTO",
-    "summary": "Aerial-view, large-scale, terrain-oriented dataset for aerial place recognition and localization.",
+    "summary": "Placeholder repo for ALTO, an aerial-view, large-scale, terrain-oriented dataset for UAV place recognition and localization. It holds only a README with Dropbox links to the ICRA 2022 GPR Competition rounds; the full dataset is still marked 'Coming soon'.",
     "why_it_matters": "Directly targets UAV localization over terrain when GNSS is unavailable.",
     "concepts": [
       "concept:datasets-benchmarks",
@@ -1434,8 +1434,8 @@
       "air"
     ],
     "maturity": "archived",
-    "hackathon_fit": "medium",
-    "hackathon_notes": "Inactive since 2022; check that the download links still work before planning around it.",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Inactive since 2022; only the competition subsets are downloadable (Dropbox), so check the links still work before planning around it. The BSD-3 licence covers the repo; no data terms are stated.",
     "related": []
   },
   {
@@ -1461,7 +1461,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Small enough to evaluate quickly with VPR-methods-evaluation.",
+    "hackathon_notes": "Academic use only, commercial use prohibited (README). Full set is 20.5 GB (2,706 query/reference pairs plus 10,000 distractors); a 0.86 GB sample is on Zenodo. The repo itself holds only the README and images. Evaluate with VPR-methods-evaluation.",
     "related": [
       {
         "id": "repo:gmberton/vpr-methods-evaluation",
@@ -1549,7 +1549,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Comparable training pipeline to University-1652.",
+    "hackathon_notes": "Comparable training pipeline to University-1652. The dataset is for academic research only, despite the repo's MIT code licence.",
     "related": [
       {
         "id": "repo:layumi/university1652-baseline",
@@ -1664,7 +1664,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Older dependencies; consider VPR-methods-evaluation for modern models.",
+    "hackathon_notes": "Older dependencies; consider VPR-methods-evaluation for modern models. Bundled datasets and techniques keep their own licences (see each folder); the MIT licence covers the framework code only.",
     "related": [
       {
         "id": "repo:gmberton/vpr-methods-evaluation",
@@ -1779,7 +1779,7 @@
     ],
     "maturity": "archived",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Inactive since 2022; Python and MATLAB helpers still work.",
+    "hackathon_notes": "Inactive since 2022; Python and MATLAB helpers still work. The dataset itself is CC BY-NC-SA 4.0, for non-commercial academic use only.",
     "related": []
   },
   {
@@ -1897,7 +1897,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Julia install required; data downloads via the package's artifacts.",
+    "hackathon_notes": "Julia install required, or use the provided Docker image; data downloads via the package's artifacts. The flight data is under a US Air Force Data Sharing Agreement: non-profit research, non-profit education or US government purposes only.",
     "related": []
   }
 ]

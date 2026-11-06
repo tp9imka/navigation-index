@@ -123,7 +123,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Requires MATLAB. Useful if the team already lives in MATLAB for analysis plots.",
+    "hackathon_notes": "Requires MATLAB. Useful if the team already lives in MATLAB for analysis plots. Since January 2025 the backend is MALIB (the RTKLIB successor), not RTKLIB 2.4.3; pre-compiled mex files ship for Windows, Ubuntu and macOS.",
     "related": [
       {
         "id": "repo:tomojitakasu/rtklib",
@@ -233,7 +233,7 @@
     ],
     "maturity": "archived",
     "hackathon_fit": "low",
-    "hackathon_notes": "Not updated since 2015 (repo not formally archived). Use for reference only; prefer PocketSDR or GNSS-SDR for live work.",
+    "hackathon_notes": "Not updated since 2015 (repo not formally archived). v2.0 only runs on 64-bit Windows (Visual Studio 2012 build). Use for reference only; prefer PocketSDR or GNSS-SDR for live work.",
     "related": [
       {
         "id": "repo:tomojitakasu/pocketsdr",
@@ -327,7 +327,7 @@
     ],
     "maturity": "educational",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Not updated since 2023; fine for offline IQ experiments.",
+    "hackathon_notes": "Not updated since 2023 and written for Python 2.7 (README system requirements; installation section says 'Coming soon'). Expect porting work before offline IQ experiments.",
     "related": [
       {
         "id": "repo:tmboc/softgnss",
@@ -521,7 +521,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Linux build; needs precise products downloaded. Post-processing only, so plan for hours of data.",
+    "hackathon_notes": "Command-line build via install.sh on Linux and macOS, plus a Windows GUI version; needs precise products downloaded. Post-processing only, so plan for hours of data.",
     "related": [
       {
         "id": "repo:geoscienceaustralia/ginan",
@@ -1056,7 +1056,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "medium",
-    "hackathon_notes": "pip install ntripbrowser; point at rtk2go or a national caster.",
+    "hackathon_notes": "Needs libcurl. pip install ntripbrowser still installs the 2021 release (2.2.3); the repo is at 4.0.0 (2025, Python 3.11+), so install from a clone with make install for current code. Point at rtk2go or a national caster.",
     "related": []
   },
   {
@@ -1130,7 +1130,7 @@
     "kind": "repo",
     "name": "GSDC 2023 solution (taroz)",
     "url": "https://github.com/taroz/gsdc2023",
-    "summary": "Winning-team code for the Google Smartphone Decimeter Challenge 2023, using factor-graph style smartphone GNSS/IMU processing in MATLAB.",
+    "summary": "Code reproducing Taro Suzuki's Google Smartphone Decimeter Challenge 2023 entry (1st on the public leaderboard, 2nd on the private one), using factor graph optimization of smartphone GNSS and IMU in MATLAB.",
     "why_it_matters": "Shows what state-of-the-art smartphone positioning looks like on a public benchmark.",
     "concepts": [
       "concept:gnss",
@@ -1260,7 +1260,7 @@
     "kind": "repo",
     "name": "multi-sdr-gps-sim",
     "url": "https://github.com/Mictronics/multi-sdr-gps-sim",
-    "summary": "Maintained derivative of GPS-SDR-SIM that streams GPS L1 baseband on the fly to several SDRs (HackRF, ADALM-Pluto, bladeRF) or files.",
+    "summary": "Maintained derivative of GPS-SDR-SIM that streams GPS L1 baseband on the fly to HackRF or ADALM-Pluto, or to a binary IQ file, with a curses text UI.",
     "why_it_matters": "More current option than the archived original for building test rigs. Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.",
     "concepts": [
       "concept:gnss",
@@ -1754,7 +1754,7 @@
     "kind": "repo",
     "name": "UT Starlink signal simulator",
     "url": "https://gitlab.com/radionavlab/public/ut-starlink-signal-simulator",
-    "summary": "MATLAB-style utility functions from UT Austin's Radionavigation Lab for simulating Starlink Ku-band downlink signals, with playground examples.",
+    "summary": "MATLAB utility functions from UT Austin's Radionavigation Lab for simulating Starlink Ku-band downlink signals (OFDM frames, PSS/SSS, Doppler and path-loss histories), with MATLAB live-script playground examples.",
     "why_it_matters": "Lets teams experiment with Starlink as a signal of opportunity for PNT without capturing real Ku-band data.",
     "concepts": [
       "concept:signals-of-opportunity",
@@ -1774,7 +1774,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Small codebase; pair with the Humphreys Starlink signal-structure paper.",
+    "hackathon_notes": "Small MATLAB codebase, MIT licensed, last commit January 2024 and marked work in progress. The companion paper is Komodromos, Qin and Humphreys, 'Signal Simulator for Starlink Ku-Band Downlink' (ION GNSS+ 2023).",
     "related": [
       {
         "id": "repo:przemyslawpiekarski/starlink-leo-pnt",
@@ -1869,8 +1869,8 @@
     "kind": "repo",
     "name": "openpilot",
     "url": "https://github.com/commaai/openpilot",
-    "summary": "Open driver-assistance robotics stack whose localization uses GNSS (via laika) fused with IMU and vision.",
-    "why_it_matters": "Real-world example of GNSS feeding a production fusion pipeline on consumer hardware.",
+    "summary": "Open driver-assistance robotics stack. Its current locationd fuses IMU and camera odometry in a pose Kalman filter; GNSS is still read and logged (ubloxd, qcomgpsd) but the laika-based GNSS fusion has been removed.",
+    "why_it_matters": "Real-world example of a production fusion pipeline on consumer hardware, and of a stack that dropped GNSS from its localizer in favour of vision and IMU.",
     "concepts": [
       "concept:gnss",
       "concept:sensor-fusion",
@@ -1887,7 +1887,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "low",
-    "hackathon_notes": "Large codebase; study locationd and its use of laika rather than running the full stack.",
+    "hackathon_notes": "Large codebase; study locationd (pose_kf) and the ubloxd GNSS parsing rather than running the full stack. For laika-style GNSS processing, look at the standalone commaai/laika repo or older openpilot releases.",
     "related": [
       {
         "id": "repo:commaai/laika",

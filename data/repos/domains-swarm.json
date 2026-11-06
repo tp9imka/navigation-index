@@ -341,7 +341,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Build against a MOOS-IvP tree; use pContactSpawn to stage head-on/crossing/overtaking cases.",
+    "hackathon_notes": "Build against a MOOS-IvP tree; use pContactSpawn to stage head-on/crossing/overtaking cases. No LICENSE file, so all rights reserved by default. The README says terms are 'specified in the repository' but none are.",
     "related": [
       {
         "id": "repo:moos-ivp/moos-ivp",
@@ -413,7 +413,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Install with uv alongside colav-simulator; the core tracker code itself lives on Code Ocean.",
+    "hackathon_notes": "Install with uv alongside colav-simulator; the VIMMJIPDA core tracker code is vendored in vimmjipda/code (also published on Code Ocean).",
     "related": [
       {
         "id": "repo:ntnu-itk-autonomous-ship-lab/colav-simulator",
@@ -430,7 +430,7 @@
     "kind": "repo",
     "name": "Aeolus Ocean",
     "url": "https://github.com/aavek/Aeolus-Ocean",
-    "summary": "Collision avoidance simulator for COLREG-compliant autonomous ship navigation intended for use as a digital twin under varied weather and day/night conditions.",
+    "summary": "Collision avoidance simulator for COLREG-compliant autonomous ship navigation intended for use as a digital twin under varied weather and day/night conditions. Distributed only as a Windows binary release (v1.11); the repo holds no source code.",
     "why_it_matters": "Another research testbed for COLREGs logic with environmental variation.",
     "concepts": [
       "concept:maritime-nav",
@@ -448,7 +448,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "low",
-    "hackathon_notes": "Little recent activity; check the README for build steps before committing time.",
+    "hackathon_notes": "Binary only: download the v1.11 Windows release and run the .exe. Source is not published, so there are no build steps and nothing to modify or run on Linux. Little activity since 2023.",
     "related": [
       {
         "id": "repo:ntnu-itk-autonomous-ship-lab/colav-simulator",
@@ -543,7 +543,7 @@
     "kind": "repo",
     "name": "ardupilot_gazebo",
     "url": "https://github.com/ArduPilot/ardupilot_gazebo",
-    "summary": "Gazebo Sim plugins and models that connect ArduPilot SITL to Gazebo physics for copters, rovers and boats.",
+    "summary": "Gazebo Sim plugins that connect ArduPilot SITL to Gazebo physics, with example Iris copter and Zephyr plane models and worlds.",
     "why_it_matters": "Bridge for testing ArduPilot USV/rover nav in a 3D world.",
     "concepts": [
       "concept:simulation",
@@ -562,7 +562,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Follow the ArduPilot wiki Gazebo guide; works best on Ubuntu.",
+    "hackathon_notes": "Follow the ArduPilot wiki Gazebo guide; works best on Ubuntu (macOS also supported). No rover or boat models ship here, so a USV/rover test needs a model from elsewhere, such as ardupilot/SITL_Models.",
     "related": [
       {
         "id": "repo:ardupilot/ardupilot",
@@ -595,7 +595,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "medium",
-    "hackathon_notes": "apt install for your ROS distro; remap your odometry into /mavros/vision_pose.",
+    "hackathon_notes": "apt install ros-<distro>-mavros, then run install_geographiclib_datasets.sh; current MAVROS targets ROS 2 (Humble and newer). Feed your odometry into /mavros/vision_pose/pose.",
     "related": [
       {
         "id": "repo:ardupilot/ardupilot",
@@ -657,9 +657,9 @@
     "domains": [
       "underwater"
     ],
-    "maturity": "production",
+    "maturity": "archived",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Needs a DVL or recorded JSON; protocol is simple JSON over TCP so a replay mock is easy.",
+    "hackathon_notes": "Archived by Water Linked and no longer maintained, but the serial (wldvl) and TCP parsers still work as examples. Needs a DVL or recorded JSON; protocol is simple JSON over TCP so a replay mock is easy. No LICENSE file, so all rights reserved by default.",
     "related": [
       {
         "id": "repo:waterlinked/dvl-a50-ros-driver",
@@ -693,7 +693,7 @@
     ],
     "maturity": "archived",
     "hackathon_fit": "low",
-    "hackathon_notes": "Archived; port the parsing to ROS 2 or use dvl-python directly.",
+    "hackathon_notes": "Archived; port the parsing to ROS 2 or use dvl-python directly (also archived). No LICENSE file, so all rights reserved by default.",
     "related": [
       {
         "id": "repo:waterlinked/dvl-python",
@@ -821,7 +821,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "ROS 1 Noetic + Gazebo 11 via Docker; setup is heavy, budget half a day. A ROS 2 port has been in progress.",
+    "hackathon_notes": "ROS 1 Noetic + Gazebo 11 via Docker; setup is heavy, budget half a day. No push here since 2024-08; the ROS 2 port continues in the IOES-Lab/dave fork.",
     "related": [
       {
         "id": "repo:uuvsimulator/uuv_simulator",
@@ -959,7 +959,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "HoloOcean itself is installed via pip plus a large world package; the bridge adds ROS topics. Needs a decent GPU.",
+    "hackathon_notes": "HoloOcean itself is not installed from PyPI (that package is an old 0.5.x): the source repo is only visible to a GitHub account linked to Epic Games, then pip install the client and run holoocean.install('Ocean') for the world package. The bridge is ROS 2 (Humble/Jazzy), Docker recommended. Needs a decent GPU.",
     "related": [
       {
         "id": "repo:patrykcieslak/stonefish",
@@ -972,7 +972,7 @@
     "kind": "repo",
     "name": "USBL Simulator",
     "url": "https://github.com/maximilian-nitsch/USBL-Simulator",
-    "summary": "C++ library and ROS 2 node that simulates ultra-short baseline acoustic positioning measurements, with a Gazebo plugin.",
+    "summary": "C++ library and ROS 2 (Humble) node that simulates ultra-short baseline acoustic positioning measurements; a Gazebo plugin is only listed as a planned feature.",
     "why_it_matters": "USBL is the main absolute fix for submerged vehicles; simulated USBL lets a team test an aided-INS filter.",
     "concepts": [
       "concept:underwater-nav",
@@ -1007,7 +1007,7 @@
     "kind": "repo",
     "name": "AuvEstimator",
     "url": "https://github.com/alliWong/AuvEstimator",
-    "summary": "Work-in-progress EKF that fuses DVL, IMU and barometer data for AUV state estimation, with a ROS wrapper.",
+    "summary": "Work-in-progress AUV state estimator fusing DVL, IMU and barometer two ways, a 15-state EKF and a GTSAM factor graph with custom DVL and barometer factors, with ROS 1 (Kinetic/Melodic, Python 2.7) wrappers.",
     "why_it_matters": "Small, readable DVL-aided INS example to start a GNSS-free underwater nav filter from.",
     "concepts": [
       "concept:underwater-nav",
@@ -1026,7 +1026,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Dormant since 2021; treat as a starting template, not a dependency.",
+    "hackathon_notes": "Dormant since 2021; treat as a starting template, not a dependency. No LICENSE file, so all rights reserved by default.",
     "related": [
       {
         "id": "repo:waterlinked/dvl-python",
@@ -1063,7 +1063,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "low",
-    "hackathon_notes": "ROS 1 era and dormant; read for architecture.",
+    "hackathon_notes": "Fork of smarc-project/smarc_navigation frozen in 2021; the upstream was updated until 2024, so start there. ROS 1 era; read for architecture.",
     "related": [
       {
         "id": "repo:alliwong/auvestimator",
@@ -1245,8 +1245,8 @@
     "kind": "repo",
     "name": "Autoware Universe",
     "url": "https://github.com/autowarefoundation/autoware_universe",
-    "summary": "The broad package collection of Autoware with experimental and production-candidate modules, including localization, pose initialization and GNSS/IMU fusion.",
-    "why_it_matters": "Where most Autoware localization code actually lives.",
+    "summary": "The broad package collection of Autoware with experimental and production-candidate modules, including localization add-ons such as YabLoc, landmark-based localizers and the pose estimator arbiter.",
+    "why_it_matters": "Holds Autoware's extra localization modules; the core NDT scan matcher and EKF localizer have moved to autoware_core.",
     "concepts": [
       "concept:ground-vehicle-nav",
       "concept:sensor-fusion",
@@ -1264,7 +1264,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Pick packages like autoware_ndt_scan_matcher and autoware_ekf_localizer and run them standalone with rosbags.",
+    "hackathon_notes": "Pick packages and run them standalone with rosbags; autoware_ndt_scan_matcher and autoware_ekf_localizer now live in autoware_core, not here.",
     "related": [
       {
         "id": "repo:autowarefoundation/autoware",
@@ -1294,7 +1294,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Prebuilt binaries for Ubuntu with an NVIDIA GPU.",
+    "hackathon_notes": "Prebuilt binaries for Ubuntu with an NVIDIA GPU. Licence is split: code Apache-2.0, but assets (including release content) are CC BY-NC, so non-commercial use only, and the docs may not be publicly re-hosted.",
     "related": [
       {
         "id": "repo:autowarefoundation/autoware",
@@ -1375,7 +1375,7 @@
     "kind": "repo",
     "name": "elevation_mapping",
     "url": "https://github.com/leggedrobotics/elevation_mapping",
-    "summary": "ETH Zurich robot-centric elevation mapping for rough terrain navigation that fuses range data into a probabilistic 2.5D map.",
+    "summary": "Robot-centric elevation mapping for rough terrain navigation, started at ETH Zurich and now maintained by ANYbotics, that fuses range data into a probabilistic 2.5D map. This entry is the leggedrobotics fork of ANYbotics/elevation_mapping.",
     "why_it_matters": "Classic baseline for terrain mapping on legged and wheeled robots.",
     "concepts": [
       "concept:ground-vehicle-nav",
@@ -1392,7 +1392,7 @@
     ],
     "maturity": "archived",
     "hackathon_fit": "low",
-    "hackathon_notes": "ROS 1 and dormant since 2022; prefer the GPU version.",
+    "hackathon_notes": "ROS 1; this fork is dormant since 2022, while upstream ANYbotics/elevation_mapping was updated in 2024. Prefer the GPU version.",
     "related": [
       {
         "id": "repo:leggedrobotics/elevation_mapping_cupy",
@@ -1507,7 +1507,7 @@
     "kind": "repo",
     "name": "WayFAST",
     "url": "https://github.com/matval/WayFAST",
-    "summary": "Self-supervised traversability prediction for wheeled field robots that learns from RGB-D and estimates traction from kinodynamic models.",
+    "summary": "Self-supervised traversability prediction for wheeled field robots that learns from RGB-D, with labels from kinodynamic traction estimates. The repo holds only the network models, one training notebook and a dataset download link; the traction estimator and navigation stack are not included.",
     "why_it_matters": "Agricultural/field traversability learning without hand labels.",
     "concepts": [
       "concept:ground-vehicle-nav",
@@ -1524,7 +1524,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "low",
-    "hackathon_notes": "Dormant; use for method reference.",
+    "hackathon_notes": "Dormant; use for method reference. No LICENSE file, so all rights reserved by default.",
     "related": [
       {
         "id": "repo:leggedrobotics/wild_visual_navigation",
@@ -1556,7 +1556,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "pip install and run notebooks; plain Python, quick to start.",
+    "hackathon_notes": "Docker setup via make build-gpu or build-cpu, or pip install from the clone (not on PyPI); fetch the dataset and models with scripts/download_dataset_and_model.sh, then run the tutorial notebooks. No LICENSE file, so all rights reserved by default.",
     "related": [
       {
         "id": "repo:leggedrobotics/wild_visual_navigation",
@@ -1587,7 +1587,7 @@
     ],
     "maturity": "archived",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Download only the sequences you need; ROS bags are large. Unmaintained since 2022; the data itself is static and still usable.",
+    "hackathon_notes": "Download only the sequences you need; ROS bags are large. Unmaintained since 2022; the data itself is static and still usable. Data and code are CC BY-NC-SA 3.0, so non-commercial use only.",
     "related": [
       {
         "id": "repo:castacks/tartan_drive",
@@ -1832,7 +1832,7 @@
     "kind": "repo",
     "name": "Crazyflie simulation",
     "url": "https://github.com/bitcraze/crazyflie-simulation",
-    "summary": "Simulation models and tooling for Crazyflie in Webots and Gazebo.",
+    "summary": "Minimal simulation models and tooling for Crazyflie in Webots and Gazebo; the README says it is not actively maintained and not realistic in dynamics.",
     "why_it_matters": "Hardware-free swarm prototyping.",
     "concepts": [
       "concept:simulation",
@@ -1847,7 +1847,7 @@
     "domains": [
       "air"
     ],
-    "maturity": "active-research",
+    "maturity": "research-prototype",
     "hackathon_fit": "medium",
     "hackathon_notes": "Webots is the easiest entry.",
     "related": [
@@ -2014,9 +2014,9 @@
       "ground",
       "multi"
     ],
-    "maturity": "research-prototype",
+    "maturity": "archived",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Launch in Gazebo with multiple TurtleBots.",
+    "hackathon_notes": "Launch in Gazebo with multiple TurtleBots. Not maintained any more (README); branches target ROS 2 Dashing, Foxy and Galactic.",
     "related": [
       {
         "id": "repo:buzz-lang/buzz",
@@ -2103,7 +2103,7 @@
     "kind": "repo",
     "name": "CoLRIO",
     "url": "https://github.com/PengYu-Team/Co-LRIO",
-    "summary": "ROS 2 centralized lidar-ranging-inertial state estimation for robotic swarms that offloads optimization to a server and uses UWB inter-robot ranges (ICRA 2024).",
+    "summary": "Placeholder repo: it only holds a README pointing to zhongshp/Co-LRIO, where the code lives. CoLRIO is ROS 2 centralized lidar-ranging-inertial state estimation for robotic swarms that offloads optimization to a server and uses UWB inter-robot ranges (ICRA 2024).",
     "why_it_matters": "Shows how UWB ranging tightens swarm state estimation when GNSS is out.",
     "concepts": [
       "concept:multi-agent",
@@ -2124,8 +2124,8 @@
       "multi"
     ],
     "maturity": "research-prototype",
-    "hackathon_fit": "medium",
-    "hackathon_notes": "ROS 2 Foxy and GTSAM 4.2; build is sensitive to versions.",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Use zhongshp/Co-LRIO (Apache-2.0, C++). ROS 2 Foxy and GTSAM 4.2a8; build is sensitive to versions.",
     "related": [
       {
         "id": "repo:zhongshp/dcl-slam",
@@ -2221,7 +2221,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "low",
-    "hackathon_notes": "Needs GPUs and multi-camera rigs; study rather than deploy.",
+    "hackathon_notes": "Needs a CUDA GPU and the provided Docker images; runs on a quad fisheye rig, RealSense stereo or TUM datasets. Study rather than deploy.",
     "related": [
       {
         "id": "repo:hkust-aerial-robotics/omni-swarm",
@@ -2317,7 +2317,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Crazyflie with UWB decks plus their library; Python simulation available.",
+    "hackathon_notes": "The repo holds only a Python demo of the algorithm (demo.py) and a PDF supplement; no Crazyflie or UWB firmware is included.",
     "related": [
       {
         "id": "repo:vladniculescu/uwb-software-library",
@@ -2353,7 +2353,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Flash as Crazyflie app; ranging between two nodes in a few lines.",
+    "hackathon_notes": "Flash as Crazyflie app; ranging between two nodes in a few lines. Fork of iGNSS/uwb-software-library, tested against a pinned crazyflie-firmware commit. No LICENSE file, so all rights reserved by default.",
     "related": [
       {
         "id": "repo:eth-pbl/swarm-relative-localization",
@@ -2681,7 +2681,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Use the COCO conversion scripts first.",
+    "hackathon_notes": "Use the COCO conversion scripts first. No LICENSE file, so all rights reserved by default. The three datasets keep their own terms.",
     "related": [
       {
         "id": "repo:zhaoj9014/anti-uav",
@@ -2871,7 +2871,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Arduino IDE; examples cover receivers.",
+    "hackathon_notes": "Arduino IDE; the id_open examples are transmitters (ESP32, ESP8266, nRF52) and id_scanner is a receiver sketch.",
     "related": [
       {
         "id": "repo:opendroneid/opendroneid-core-c",
@@ -3025,7 +3025,7 @@
     "kind": "repo",
     "name": "dji_droneid",
     "url": "https://github.com/proto17/dji_droneid",
-    "summary": "Original reverse engineering of DJI DroneID with MATLAB scripts and a GNU Radio module to demodulate frames.",
+    "summary": "Original reverse engineering of DJI DroneID with MATLAB/Octave scripts that demodulate frames, C++ turbo-code helpers and a GNU Radio correlation test flowgraph.",
     "why_it_matters": "Foundational work behind open DJI DroneID decoders.",
     "concepts": [
       "concept:counter-uas"
@@ -3116,7 +3116,7 @@
     "kind": "repo",
     "name": "DroneRF",
     "url": "https://github.com/Al-Sad/DroneRF",
-    "summary": "MATLAB and Python code for drone detection and identification from RF signals, accompanying the DroneRF dataset.",
+    "summary": "LabVIEW programs to record RF signals plus MATLAB and Python code for drone detection and identification, accompanying the DroneRF dataset (Mendeley Data, CC BY 4.0).",
     "why_it_matters": "Widely cited RF detection baseline.",
     "concepts": [
       "concept:counter-uas",

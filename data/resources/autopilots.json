@@ -101,7 +101,7 @@
   {
     "id": "res:ardupilot-ekf-overview",
     "kind": "doc",
-    "title": "Extended Kalman Filter (EKF) navigation overview",
+    "title": "Extended Kalman Filter (EKF)",
     "url": "https://ardupilot.org/copter/docs/common-apm-navigation-extended-kalman-filter-overview.html",
     "authors": [
       "ArduPilot Dev Team"
@@ -134,7 +134,7 @@
   {
     "id": "res:ardupilot-vio-tracking-camera",
     "kind": "doc",
-    "title": "Intel RealSense T265 / VIO tracking camera setup",
+    "title": "Intel RealSense T265",
     "url": "https://ardupilot.org/copter/docs/common-vio-tracking-camera.html",
     "authors": [
       "ArduPilot Dev Team"
@@ -170,7 +170,7 @@
   {
     "id": "res:ardupilot-dev-mavlink-nongps-position",
     "kind": "doc",
-    "title": "Non-GPS Position Estimation (MAVLink messages)",
+    "title": "Non-GPS Position Estimation",
     "url": "https://ardupilot.org/dev/docs/mavlink-nongps-position-estimation.html",
     "authors": [
       "ArduPilot Dev Team"
@@ -206,7 +206,7 @@
   {
     "id": "res:ardupilot-optical-flow-setup",
     "kind": "doc",
-    "title": "Optical Flow Sensor setup",
+    "title": "Optical Flow Sensor Testing and Setup",
     "url": "https://ardupilot.org/copter/docs/common-optical-flow-sensor-setup.html",
     "authors": [
       "ArduPilot Dev Team"
@@ -237,7 +237,7 @@
   {
     "id": "res:ardupilot-ros-vio-tracking-camera",
     "kind": "doc",
-    "title": "ROS and VIO tracking camera for non-GPS navigation",
+    "title": "ROS and VIO tracking camera for non-GPS Navigation",
     "url": "https://ardupilot.org/dev/docs/ros-vio-tracking-camera.html",
     "authors": [
       "ArduPilot Dev Team"
@@ -278,7 +278,7 @@
   {
     "id": "res:px4-ekf2-tuning-guide",
     "kind": "doc",
-    "title": "Using the ECL EKF (EKF2)",
+    "title": "Using PX4's Navigation Filter (EKF2)",
     "url": "https://docs.px4.io/main/en/advanced_config/tuning_the_ecl_ekf.html",
     "authors": [
       "PX4 Dev Team"
@@ -353,7 +353,7 @@
   {
     "id": "res:px4-visual-inertial-odometry",
     "kind": "doc",
-    "title": "Visual Inertial Odometry (VIO) in PX4",
+    "title": "Visual Inertial Odometry (VIO)",
     "url": "https://docs.px4.io/main/en/computer_vision/visual_inertial_odometry.html",
     "authors": [
       "PX4 Dev Team"
@@ -385,7 +385,7 @@
   {
     "id": "res:px4-optical-flow-docs",
     "kind": "doc",
-    "title": "Optical Flow (PX4)",
+    "title": "Optical Flow",
     "url": "https://docs.px4.io/main/en/sensor/optical_flow.html",
     "authors": [
       "PX4 Dev Team"
@@ -420,7 +420,7 @@
   {
     "id": "res:px4-remote-id-docs",
     "kind": "doc",
-    "title": "Remote ID (Open Drone ID) in PX4",
+    "title": "Remote ID (Open Drone ID)",
     "url": "https://docs.px4.io/main/en/peripherals/remote_id.html",
     "authors": [
       "PX4 Dev Team"
@@ -455,7 +455,7 @@
   {
     "id": "res:ardupilot-remote-id-docs",
     "kind": "doc",
-    "title": "Remote ID (ArduPilot)",
+    "title": "Remote ID (aka Drone ID)",
     "url": "https://ardupilot.org/copter/docs/common-remoteid.html",
     "authors": [
       "ArduPilot Dev Team"
@@ -490,7 +490,7 @@
   {
     "id": "res:mavlink-opendroneid-microservice",
     "kind": "doc",
-    "title": "Open Drone ID (MAVLink microservice)",
+    "title": "Open Drone ID",
     "url": "https://mavlink.io/en/services/opendroneid.html",
     "authors": [
       "MAVLink project"
@@ -526,13 +526,13 @@
   {
     "id": "res:riseborough-px4-state-estimation-2020",
     "kind": "talk",
-    "title": "PX4 state estimation update (PX4 Developer Summit Virtual 2020)",
+    "title": "PX4 State Estimation",
     "url": "https://px4.io/wp-content/uploads/2020/07/Paul-Riseborough-PX4-state-estimation-update.pdf",
     "authors": [
       "Paul Riseborough"
     ],
     "year": 2020,
-    "summary": "Slide deck from the EKF2 lead developer covering estimator changes, including operation without GPS and handling of non-GPS aiding sensors.",
+    "summary": "Slide deck from the EKF2 lead developer covering estimator changes: yaw alignment from IMU and GPS velocity without a magnetometer, external vision improvements, range finder and optical flow fixes, and plans to expand non-GPS navigation.",
     "key_takeaways": [
       "Primary-source view of EKF2 design choices",
       "Covers non-GPS aiding behaviour"
@@ -623,10 +623,10 @@
   {
     "id": "res:ardupilot-devcon-kaga-2024",
     "kind": "talk",
-    "title": "ArduPilot Developer Conference Kaga 2024 - schedule and YouTube links",
+    "title": "ArduPilot Developer Conference Kaga 2024 - Schedule and YouTube Links",
     "url": "https://discuss.ardupilot.org/t/ardupilot-developer-conference-kaga-2024-schedule-and-youtube-links/125384",
     "authors": [
-      "ArduPilot community"
+      "Rishabh Singh"
     ],
     "year": 2024,
     "summary": "Schedule and day-by-day livestream recordings of the 2024 ArduPilot developer conference in Japan, including a 'High Altitude Non-GPS' session and a talk on a CINS (DCM replacement) attitude estimator.",
@@ -687,10 +687,10 @@
   {
     "id": "res:ardupilot-gsoc2022-ros-non-gps",
     "kind": "blog",
-    "title": "GSoC 2022: Update ROS integration for Non-GPS navigation and off-board path planning",
+    "title": "GSoC 2022 wrapping up: Update ROS integration for Non-GPS navigation and off-board path-planning",
     "url": "https://discuss.ardupilot.org/t/gsoc-2022-wrapping-up-update-ros-integration-for-non-gps-navigation-and-off-board-path-planning/90701",
     "authors": [
-      "ArduPilot GSoC 2022"
+      "Sanket Sharma"
     ],
     "year": 2022,
     "summary": "Wrap-up of a GSoC project updating ArduPilot's ROS integration for lidar/SLAM-based non-GPS navigation and off-board planning.",
@@ -724,7 +724,7 @@
   {
     "id": "res:hyams-gps-denied-rth-lora-ranging",
     "kind": "blog",
-    "title": "GPS-denied RTH for MAVLink systems using LoRa radio ranging",
+    "title": "Sam Hyams's GPS-denied RTH for MAVLink systems using LoRa radio ranging",
     "url": "https://discuss.ardupilot.org/t/sam-hyamss-gps-denied-rth-for-mavlink-systems-using-lora-radio-ranging/130709",
     "authors": [
       "Sam Hyams"

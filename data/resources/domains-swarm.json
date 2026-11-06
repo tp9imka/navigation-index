@@ -40,7 +40,11 @@
     "title": "Stone Soup: No Longer Just an Appetiser",
     "url": "https://livrepository.liverpool.ac.uk/id/eprint/3173692",
     "authors": [
-      "Stone Soup team (Dstl, University of Liverpool and partners)"
+      "Steven Hiscocks",
+      "Jordi Barr",
+      "Nicola Perree",
+      "James Wright",
+      "et al."
     ],
     "year": 2023,
     "summary": "FUSION 2023 paper announcing Stone Soup version 1.0, describing the framework's stable architecture and its use across the tracking community.",
@@ -75,7 +79,8 @@
     "title": "MIT 2.680 Unmanned Marine Vehicle Autonomy, Sensing and Communications",
     "url": "https://oceanai.mit.edu/2.680/pmwiki/pmwiki.php",
     "authors": [
-      "MIT (M. Benjamin and colleagues)"
+      "Michael Benjamin",
+      "Henrik Schmidt"
     ],
     "year": 2025,
     "summary": "MIT course site with lectures and hands-on labs built on MOOS-IvP, covering behaviour-based autonomy, multi-vehicle coordination, collision avoidance and marine sensing.",
@@ -173,12 +178,12 @@
   {
     "id": "res:itu-r-m1371-ais",
     "kind": "standard",
-    "title": "ITU-R M.1371 - Technical characteristics for an automatic identification system using TDMA in the VHF maritime mobile band",
+    "title": "ITU-R M.1371-6 - Technical characteristics for VHF automatic identification system using time division multiple access in the maritime mobile service",
     "url": "https://www.itu.int/rec/R-REC-M.1371",
     "authors": [
       "ITU-R"
     ],
-    "year": 2014,
+    "year": 2026,
     "summary": "The ITU recommendation defining AIS radio, TDMA access and message formats that decoders such as pyais implement.",
     "key_takeaways": [
       "Defines message types 1-27 decoded by pyais and AIS-catcher",
@@ -442,13 +447,16 @@
   {
     "id": "res:util-uwb-dataset",
     "kind": "dataset",
-    "title": "UTIL: UWB TDoA dataset",
-    "url": "https://utiasdsl.github.io/util-uwb-dataset/",
+    "title": "UTIL: An Ultra-wideband Time-difference-of-arrival Indoor Localization Dataset",
+    "url": "https://learnsyslab.github.io/util-uwb-dataset/",
     "authors": [
-      "University of Toronto Dynamic Systems Lab"
+      "Wenda Zhao",
+      "Abhishek Goudar",
+      "Xinyuan Qiao",
+      "Angela P. Schoellig"
     ],
     "year": 2022,
-    "summary": "Project page for a UWB TDoA dataset collected with Loco Positioning hardware, with ground truth for evaluating indoor UWB localization.",
+    "summary": "Project page for a UWB TDoA dataset collected with Loco Positioning hardware, with ground truth for evaluating indoor UWB localization. No licence file in the learnsyslab/util-uwb-dataset GitHub repo, so reuse terms are unstated (all rights reserved by default).",
     "key_takeaways": [
       "Real UWB data including non-line-of-sight effects",
       "Useful to benchmark estimators before buying hardware"
@@ -667,7 +675,11 @@
     "title": "Drone Security and the Mysterious Case of DJI's DroneID",
     "url": "https://www.ndss-symposium.org/ndss-paper/drone-security-and-the-mysterious-case-of-djis-droneid/",
     "authors": [
-      "Schiller et al., Ruhr University Bochum / CISPA"
+      "Nico Schiller",
+      "Merlin Chlosta",
+      "Moritz Schloegel",
+      "Nils Bars",
+      "et al."
     ],
     "year": 2023,
     "summary": "Security analysis of DJI drones that reverse-engineers the DroneID broadcast and shows it is unencrypted, with an open receiver released.",

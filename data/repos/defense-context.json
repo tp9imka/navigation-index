@@ -395,7 +395,7 @@
     "kind": "repo",
     "name": "dump1090-fa",
     "url": "https://github.com/flightaware/dump1090",
-    "summary": "FlightAware's maintained Mode S/ADS-B decoder for RTL-SDR dongles.",
+    "summary": "FlightAware's maintained Mode S/ADS-B decoder (dump1090-fa), a GitHub fork and successor of dump1090-mutability, supporting RTL-SDR, bladeRF, HackRF, LimeSDR and SoapySDR devices.",
     "why_it_matters": "Widely packaged alternative to readsb for the same ADS-B situational-awareness use.",
     "concepts": [
       "concept:situational-awareness"
@@ -410,7 +410,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "medium",
-    "hackathon_notes": "apt-installable on Raspberry Pi OS; pick either this or readsb, not both.",
+    "hackathon_notes": "apt-installable on Raspberry Pi OS from FlightAware's own package repository (it is not in Debian main), or build the .deb from source; pick either this or readsb, not both.",
     "related": [
       {
         "id": "repo:wiedehopf/readsb",
@@ -756,7 +756,7 @@
     ],
     "maturity": "archived",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Inactive since 2022; useful as a template for a challenge-style submission on the MagNav data.",
+    "hackathon_notes": "Inactive since 2022; useful as a template for a challenge-style submission on the MagNav data. Needs both Julia (Tolles-Lawson pre-filter) and MATLAB with the Deep Learning Toolbox (the learned filter in runs/main.m).",
     "related": [
       {
         "id": "repo:mit-ai-accelerator/magnav.jl",
@@ -867,7 +867,7 @@
     "kind": "repo",
     "name": "GBPlanner (CERBERUS)",
     "url": "https://github.com/ntnu-arl/gbplanner_ros",
-    "summary": "Graph-based exploration planner for subterranean environments, the planning core of Team CERBERUS, winner of the DARPA SubT final.",
+    "summary": "Graph-based exploration planner from NTNU ARL; the main branch is now OmniPlanner (GBPlanner 3.0) for aerial, ground and underwater robots, and GBPlanner 2.0, the planning core of Team CERBERUS, winner of the DARPA SubT final, is kept on the gbplanner2 branch.",
     "why_it_matters": "Winning-team open code for autonomous exploration of GNSS-denied spaces with legged and aerial robots.",
     "concepts": [
       "concept:path-planning",
@@ -887,7 +887,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "ROS1 catkin build with simulation demos; budget hours for dependencies. Pair with any lidar odometry.",
+    "hackathon_notes": "ROS Noetic catkin build; the OmniPlanner simulation setup needs Gazebo Garden and a ros_gz bridge built from source, so budget hours for dependencies. Pair with any lidar odometry.",
     "related": [
       {
         "id": "repo:ntnu-arl/mbplanner_ros",
@@ -967,7 +967,7 @@
     "kind": "repo",
     "name": "NeBula multi-robot dataset",
     "url": "https://github.com/NeBula-Autonomy/nebula-multirobot-dataset",
-    "summary": "Index for CoSTAR's multi-robot lidar/IMU/odometry datasets recorded in tunnels, mines and urban underground sites.",
+    "summary": "Index for CoSTAR's multi-robot SubT lidar datasets (Tunnel, Urban, Finals Prelim2, Kentucky Underground): processed keyed scans and incremental pose graphs sent to the base station, g2o/pcd exports and ground truth.",
     "why_it_matters": "Real GNSS-denied field data from SubT for testing SLAM or loop closure without building robots.",
     "concepts": [
       "concept:datasets-benchmarks",
@@ -984,7 +984,7 @@
     ],
     "maturity": "archived",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Bags are large; pick one sequence.",
+    "hackathon_notes": "Bags are large; pick one sequence. Data is processed LAMP front-end output, not raw sensor streams. No licence file or data terms are given (all rights reserved by default); cite LAMP 2.0 and ask the authors before reuse beyond research.",
     "related": [
       {
         "id": "repo:nebula-autonomy/lamp",
@@ -1184,7 +1184,7 @@
     ],
     "maturity": "archived",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Dataset download is large; start with a subset. Inactive since 2023.",
+    "hackathon_notes": "Dataset download is large; start with a subset. Inactive since 2023. The code is MIT, but the SPEED+ dataset on the Stanford Digital Repository is CC BY-NC-SA 4.0 (non-commercial).",
     "related": [
       {
         "id": "res:kelvins-pose-estimation-2021",

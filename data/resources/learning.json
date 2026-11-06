@@ -43,7 +43,7 @@
   {
     "id": "res:stachniss-slam-course-2013",
     "kind": "lecture-series",
-    "title": "Robot Mapping (SLAM course) WS 2013/14",
+    "title": "SLAM Course (2013)",
     "url": "https://www.youtube.com/playlist?list=PLgnQpQtFTOGQrZ4O5QzbIHgl3b1JHimN_",
     "authors": [
       "Cyrill Stachniss",
@@ -87,7 +87,6 @@
     "url": "http://ais.informatik.uni-freiburg.de/teaching/ws13/mapping/",
     "authors": [
       "Cyrill Stachniss",
-      "Wolfram Burgard",
       "University of Freiburg"
     ],
     "year": 2013,
@@ -420,7 +419,7 @@
   {
     "id": "res:kalmanfilter-net-tutorial",
     "kind": "blog",
-    "title": "Kalman Filter Tutorial (kalmanfilter.net)",
+    "title": "Kalman Filter Explained Through Examples",
     "url": "https://www.kalmanfilter.net/",
     "authors": [
       "Alex Becker"
@@ -461,7 +460,7 @@
       "Frank Dellaert (eds.)"
     ],
     "year": 2025,
-    "summary": "Community-written handbook released in three parts during 2024-2025 and published by Cambridge University Press; the free PDF is mirrored on the editors' project page. Covers factor graphs, Lie groups, robust estimation, certifiable methods, visual/LiDAR/radar/event-based SLAM, and learned spatial representations.",
+    "summary": "Community-written handbook released in three parts (Part 1 November 2024, Part 2 March 2025, Part 3 May 2025), to be published by Cambridge University Press; the free PDF (main.pdf) and LaTeX sources are in the GitHub release repo. Covers factor graphs, Lie groups, robust estimation, certifiable methods, visual/LiDAR/radar/event-based SLAM, and learned spatial representations.",
     "key_takeaways": [
       "Most current one-stop reference on SLAM (2025)",
       "Chapters on non-visual sensors such as radar",
@@ -574,16 +573,16 @@
   {
     "id": "res:gtsam-tutorial-intro",
     "kind": "doc",
-    "title": "GTSAM Tutorial: Factor Graphs and GTSAM",
+    "title": "Factor Graphs and GTSAM",
     "url": "https://gtsam.org/tutorials/intro.html",
     "authors": [
       "Frank Dellaert",
       "Georgia Tech Borg Lab"
     ],
-    "year": 2020,
-    "summary": "Hands-on introduction to the GTSAM library: modelling robot odometry, landmark and pose-graph SLAM as factor graphs, solving with Levenberg-Marquardt or iSAM2, and reading marginal covariances, with C++ and Python snippets.",
+    "year": 2019,
+    "summary": "Hands-on introduction to the GTSAM library: modelling robot odometry, landmark and pose-graph SLAM as factor graphs, solving with Levenberg-Marquardt or iSAM2, and reading marginal covariances, with C++ and MATLAB snippets.",
     "key_takeaways": [
-      "Shortest path to a working pose-graph in Python",
+      "Shortest path to a working pose-graph (C++ or MATLAB examples)",
       "Pattern reusable for GNSS/INS/visual factor fusion"
     ],
     "concepts": [
@@ -729,7 +728,9 @@
     "url": "https://github.com/gaoxiang12/slambook-en",
     "authors": [
       "Xiang Gao",
-      "Tao Zhang"
+      "Tao Zhang",
+      "Qinrui Yan",
+      "Yi Liu"
     ],
     "year": 2021,
     "summary": "English translation of the popular Chinese visual SLAM textbook, from rigid-body motion and Lie algebra through camera models, nonlinear optimization, feature/direct VO, backend optimization, loop closure and dense mapping, each with C++ examples.",
@@ -898,7 +899,7 @@
     "id": "res:chalmers-multi-object-tracking",
     "kind": "course",
     "title": "Multi-Object Tracking for Automotive Systems (edX)",
-    "url": "https://www.edx.org/learn/engineering/chalmers-university-of-technology-multi-object-tracking-for-automotive-systems",
+    "url": "https://www.edx.org/learn/autonomous-robotics/chalmers-university-of-technology-multi-object-tracking-for-automotive-systems",
     "authors": [
       "Karl Granström",
       "Lennart Svensson",
@@ -934,13 +935,13 @@
     "id": "res:udacity-ai-for-robotics-cs373",
     "kind": "course",
     "title": "Artificial Intelligence for Robotics (Udacity CS373)",
-    "url": "https://www.udacity.com/course/artificial-intelligence-for-robotics--cs373",
+    "url": "https://web.archive.org/web/20231121083032/https://www.udacity.com/course/artificial-intelligence-for-robotics--cs373",
     "authors": [
       "Sebastian Thrun",
       "Udacity"
     ],
     "year": 2012,
-    "summary": "Free classic course by Sebastian Thrun programming robot localization (histogram filter, Kalman filter, particle filter), search/planning, PID control and GraphSLAM in Python.",
+    "summary": "Free classic course by Sebastian Thrun programming robot localization (histogram filter, Kalman filter, particle filter), search/planning, PID control and GraphSLAM in Python. The original Udacity course page now redirects to Udacity's paid AI catalogue; the link points to a 2023 archive copy.",
     "key_takeaways": [
       "Gentle, code-along intro to localization filters",
       "Particle-filter lesson is a 1-hour hackathon primer"
@@ -1126,8 +1127,8 @@
     "authors": [
       "Institute of Navigation"
     ],
-    "year": 2025,
-    "summary": "Pre-conference tutorial programme of ION GNSS+, the main annual GNSS technical meeting: half-day in-depth courses by field experts on topics such as GNSS signals, receivers, PPP/RTK, inertial integration and interference.",
+    "year": 2026,
+    "summary": "Pre-conference tutorial programme of ION GNSS+, the main annual GNSS technical meeting: full-day course series taught by field experts (2026: Survey of GNSS Systems, Advanced Algorithms for Navigation, Space and Spacecraft Navigation), with a one-time on-demand recording for registered students.",
     "key_takeaways": [
       "Expert-taught deep dives; topics change yearly",
       "Paid add-on to conference registration"
@@ -1155,15 +1156,15 @@
   {
     "id": "res:ion-gnss-plus-short-courses",
     "kind": "course",
-    "title": "ION GNSS+ Short Courses (GPS/GNSS 101 and more)",
+    "title": "ION GNSS+ Short Courses - Taught by ION Masters",
     "url": "https://www.ion.org/gnss/short-courses.cfm",
     "authors": [
       "Institute of Navigation"
     ],
-    "year": 2025,
-    "summary": "Short courses run at ION GNSS+ for registered attendees, including a GPS/GNSS 101 course taught by John Raquet and a space applications of GNSS course by Penina Axelrad.",
+    "year": 2026,
+    "summary": "Masters short course programme at ION GNSS+, complimentary for paid conference attendees: 50-minute lectures by ION Master Instructors. The 2026 line-up includes Space Applications of GNSS (Penny Axelrad), GNSS Modernization (Christopher Hegarty), LEO PNT with mega-constellations (Zak Kassas), quantum navigation (Allison Kealy, Andrew Greentree) and the first public GPS spoofer (Todd Humphreys).",
     "key_takeaways": [
-      "Fast fundamentals refresh for newcomers attending ION GNSS+"
+      "Short expert lectures on GNSS, LEO PNT, spoofing and quantum navigation for ION GNSS+ attendees"
     ],
     "concepts": [
       "concept:gnss",
@@ -1186,14 +1187,15 @@
     "id": "res:ion-online-tutorial-basics-satnav",
     "kind": "course",
     "title": "ION Online Tutorial: The Basics of Satellite Navigation",
-    "url": "https://www.ion.org/publications/online-tutorial-basics.cfm",
+    "url": "https://web.archive.org/web/20260606003753/https://www.ion.org/publications/online-tutorial-basics.cfm",
     "authors": [
+      "Per Enge",
       "Institute of Navigation"
     ],
     "year": 2020,
-    "summary": "ION's free online tutorial introducing satellite navigation fundamentals: trilateration with pseudoranges, clocks, signals, error sources and augmentation.",
+    "summary": "ION recorded online tutorial by Per Enge in four parts: Fundamentals of Satellite Navigation (45 min, viewable after ION sign-in), plus Applications, Mathematics, and Performance & Future of Satellite Navigation ($50 members / $100 non-members each). The tutorial page now redirects to the ION publications store, which sells the three paid parts.",
     "key_takeaways": [
-      "Free, short, authoritative intro"
+      "Short, authoritative intro by Per Enge; only the Fundamentals part is free (sign-in)"
     ],
     "concepts": [
       "concept:gnss",
@@ -1204,7 +1206,7 @@
       "intro"
     ],
     "level": "intro",
-    "access": "open",
+    "access": "paywalled",
     "related": []
   },
   {
@@ -1354,9 +1356,9 @@
       "Ariel Baron"
     ],
     "year": 2024,
-    "summary": "Implementation-focused talk on navigating with Doppler measurements from LEO satellites and the accuracy achieved in practice.",
+    "summary": "Talk on navigation with carrier Doppler-shift measurements from LEO satellite signals of opportunity: analytically derived Jacobian formulas for the navigation solution and a GNSS-like dilution-of-precision metric to assess accuracy, with preliminary numerical results. The paper is free in NAVIGATION (ION journal).",
     "key_takeaways": [
-      "Practical error budget for LEO Doppler nav"
+      "DOP-style accuracy metric for LEO Doppler nav"
     ],
     "concepts": [
       "concept:space-nav",
@@ -1614,7 +1616,7 @@
   {
     "id": "res:ion-webinar-kealy",
     "kind": "talk",
-    "title": "Quantum Sensors for Navigation, From Physics to Field Deployment",
+    "title": "Quantum Sensors for Navigation - From Physics to Field Deployment",
     "url": "https://www.ion.org/publications/webinar-kealy.cfm",
     "authors": [
       "Allison Kealy",
@@ -2078,13 +2080,13 @@
   {
     "id": "res:ublox-jammertest-webinar",
     "kind": "talk",
-    "title": "Jamming, spoofing and secure positioning: Jammertest insights (u-blox webinar)",
+    "title": "The Future of Secure Positioning and Timing: Insights from Jammertest 2025",
     "url": "https://www.u-blox.com/en/webinars/jamming-spoofing-secure-positioning-jammertest",
     "authors": [
       "u-blox"
     ],
     "year": 2025,
-    "summary": "On-demand u-blox webinar on what multi-band receiver testing at Jammertest revealed about positioning continuity under interference and hybrid spoofing detection.",
+    "summary": "u-blox webinar (25 November 2025) on Jammertest 2025 results: what multi-band receiver testing revealed about positioning continuity under interference, meaconing defence and hybrid spoofing detection with authentication. The page offers the slide deck for download rather than a recording.",
     "key_takeaways": [
       "Multi-band receivers and spoofing detection in mass-market chips"
     ],
@@ -2109,8 +2111,8 @@
   {
     "id": "res:policytracker-gnss-vulnerabilities-podcast",
     "kind": "podcast",
-    "title": "GNSS vulnerabilities explained (PolicyTracker Spectrum Podcast)",
-    "url": "https://www.policytracker.com/?p=84684",
+    "title": "Podcast: the vulnerable state of global navigation satellite systems (PolicyTracker Spectrum Podcast)",
+    "url": "https://www.policytracker.com/blog/podcast-the-vulnerable-state-of-global-navigation-satellite-systems/",
     "authors": [
       "PolicyTracker",
       "Logan Scott"
@@ -2135,14 +2137,14 @@
   {
     "id": "res:crows-nest-goward-gps-threats-podcast",
     "kind": "podcast",
-    "title": "From the Crows' Nest - growing threats to GPS/GNSS (Dana Goward)",
+    "title": "What Happens When GPS Goes Dark? (From the Crows' Nest)",
     "url": "https://share.transistor.fm/s/2f3315c7",
     "authors": [
       "Association of Old Crows",
       "Ken Miller",
       "Dana Goward"
     ],
-    "year": 2025,
+    "year": 2026,
     "summary": "Episode of the Association of Old Crows electronic warfare podcast in which RNT Foundation president Dana Goward discusses threats to GPS and the case for terrestrial and other backups.",
     "key_takeaways": [
       "EW-community framing of PNT resilience"
@@ -2342,7 +2344,7 @@
   {
     "id": "res:nav2-robot-localization-setup-guide",
     "kind": "doc",
-    "title": "Nav2 first-time robot setup: Odometry and robot_localization",
+    "title": "Smoothing Odometry using Robot Localization (Nav2 first-time robot setup guide)",
     "url": "https://docs.nav2.org/rolling/configuration_and_development/first_time_robot_setup_guide/odom/setup_robot_localization/",
     "authors": [
       "Open Navigation"
@@ -2687,7 +2689,7 @@
       "ArduPilot Dev Team"
     ],
     "year": 2025,
-    "summary": "ArduPilot documentation hub for flying without GPS: optical flow, visual odometry cameras, motion capture, beacons/UWB, wheel encoders and external navigation via MAVLink/ROS.",
+    "summary": "ArduPilot Copter documentation hub for flying without GPS: optical flow, visual odometry cameras (RealSense T265, OAK-D, ModalAI VOXL), motion capture (OptiTrack, Vicon, Nokov), beacons/UWB (Marvelmind, Pozyx, Nooploop), ROS with Cartographer, GPS/non-GPS transitions and EKF origin handling.",
     "key_takeaways": [
       "Menu of supported GPS-free aiding sources",
       "Guides for feeding external pose into EKF3"
@@ -2879,7 +2881,7 @@
       "GNSS-SDR project (CTTC)"
     ],
     "year": 2024,
-    "summary": "Tutorials for the open-source GNSS-SDR software receiver: signal acquisition and tracking, configuring front ends, processing recorded IQ files, and generating observables and PVT.",
+    "summary": "Tutorials for the open-source GNSS-SDR software receiver: GNSS open-service signals, running with a low-cost RTL2832U DVB-T dongle as front end, monitoring the receiver's internal status, build-time options, cross-compiling for embedded platforms, data types and the testing framework. Acquisition, tracking and PVT blocks are documented in the site's Signal Processing Blocks section.",
     "key_takeaways": [
       "Learn receiver internals with real IQ data",
       "Base for interference-detection experiments"
@@ -2943,17 +2945,18 @@
   {
     "id": "res:hilti-slam-challenge",
     "kind": "competition",
-    "title": "Hilti SLAM Challenge",
+    "title": "Hilti x Trimble SLAM Challenge 2026",
     "url": "https://hilti-challenge.com/",
     "authors": [
       "Hilti",
-      "University of Oxford",
-      "University of Bonn"
+      "Trimble",
+      "University of Oxford (Dynamic Robot Systems Group)"
     ],
-    "year": 2023,
-    "summary": "SLAM benchmark challenge with datasets from handheld and robot-mounted multi-sensor rigs in construction sites and buildings, run with an associated ICRA workshop and public leaderboard.",
+    "year": 2026,
+    "summary": "Yearly SLAM benchmark challenge with datasets and leaderboards from 2021 to 2026. The 2026 edition provides 360-degree camera and IMU sequences captured on active construction sites with floor-plan priors, scored in SLAM and floor-plan Localization categories; the live evaluation system stays open after the challenge. Datasets are CC BY-NC-SA 3.0 (non-commercial).",
     "key_takeaways": [
-      "Hard GNSS-denied indoor sequences with accurate ground truth"
+      "Hard GNSS-denied indoor sequences with accurate ground truth",
+      "Non-commercial licence (CC BY-NC-SA 3.0): fine for a hackathon demo, not for a product"
     ],
     "concepts": [
       "concept:lidar-slam",

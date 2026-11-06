@@ -132,7 +132,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "ROS 1 only and no longer maintained; run in a Melodic/Noetic container. Sensitive to time sync and initialization motion.",
+    "hackathon_notes": "ROS 1 only and no longer maintained; the README targets Ubuntu 16.04 / ROS Kinetic with Ceres 1.14, and the bundled Docker image is ROS Kinetic. Sensitive to time sync and initialization motion.",
     "related": [
       {
         "id": "repo:hkust-aerial-robotics/vins-fusion",
@@ -344,7 +344,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Submit issues upstream on GitLab. Builds cleanly on Ubuntu; ROS integration is via community wrappers.",
+    "hackathon_notes": "Submit issues upstream on GitLab. Install from GitLab release binaries (Ubuntu 22.04+ amd64, macOS arm64) or build from source with CMake presets + vcpkg; ROS integration is via community wrappers.",
     "related": [
       {
         "id": "repo:rpng/open_vins",
@@ -492,7 +492,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "ROS 1; unmaintained. Tested heavily on EuRoC; good comparison point to OpenVINS.",
+    "hackathon_notes": "ROS 1; unmaintained. Tested heavily on EuRoC; good comparison point to OpenVINS. Licence: Penn Software License - non-profit research use only, no redistribution without Penn's approval; commercial use needs a separate licence.",
     "related": [
       {
         "id": "repo:rpng/open_vins",
@@ -753,7 +753,7 @@
       "patch",
       "pytorch"
     ],
-    "language": "C++",
+    "language": "Python",
     "domains": [
       "air",
       "ground"
@@ -793,7 +793,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Requires a capable NVIDIA GPU and model checkpoint downloads. Great demo value on handheld video.",
+    "hackathon_notes": "Requires a capable NVIDIA GPU and model checkpoint downloads. Great demo value on handheld video. Licence: the code is CC BY-NC-SA 4.0 and the MASt3R checkpoints are also non-commercial - research and demo use only.",
     "related": [
       {
         "id": "repo:facebookresearch/vggt",
@@ -828,8 +828,8 @@
       "multi"
     ],
     "maturity": "active-research",
-    "hackathon_fit": "medium",
-    "hackathon_notes": "GPU inference via PyTorch; Hugging Face demo for quick tests. Not a full SLAM system by itself.",
+    "hackathon_fit": "low",
+    "hackathon_notes": "GPU inference via PyTorch; Hugging Face demo for quick tests. Not a full SLAM system by itself. Licence: LICENSE.txt prohibits military, warfare and ITAR-controlled uses; the default VGGT-1B checkpoint is non-commercial and only the gated VGGT-1B-Commercial checkpoint allows commercial use.",
     "related": [
       {
         "id": "repo:rmurai0610/mast3r-slam",
@@ -859,7 +859,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "low",
-    "hackathon_notes": "Needs a strong GPU; not real-time on embedded hardware. Best as an offline mapping demo.",
+    "hackathon_notes": "Needs a strong GPU; not real-time on embedded hardware. Best as an offline mapping demo. Licence: Imperial College MonoGS licence - non-commercial, internal or academic research use only.",
     "related": [
       {
         "id": "repo:spla-tam/splatam",
@@ -892,7 +892,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "low",
-    "hackathon_notes": "GPU-heavy and slower than real time; good for offline indoor captures.",
+    "hackathon_notes": "GPU-heavy and slower than real time; good for offline indoor captures. The repo is BSD-3, but it depends on diff-gaussian-rasterization-w-depth, which carries the Inria Gaussian-Splatting licence (non-commercial research use only).",
     "related": [
       {
         "id": "repo:muskie82/monogs",
@@ -921,7 +921,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "low",
-    "hackathon_notes": "LibTorch + CUDA build; check version pins carefully.",
+    "hackathon_notes": "LibTorch + CUDA build; check version pins carefully. Licence: GPL-3.0 overall, but the repo also ships the Inria Gaussian-Splatting licence (LICENSE.md), which limits that code to non-commercial research use.",
     "related": [
       {
         "id": "repo:uz-slamlab/orb_slam3",
@@ -1040,7 +1040,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "low",
-    "hackathon_notes": "Download sequences as rosbags; pair with ESVO.",
+    "hackathon_notes": "Download sequences as rosbags from OneDrive or Baidu Disk. The README warns that ESVO, EVO and Ultimate SLAM fail on most of the stereo sequences, so expect a hard benchmark. Licence: MIT, but the README says the data is provided for academic purposes and commercial use needs contact with the lab.",
     "related": [
       {
         "id": "repo:hkust-aerial-robotics/esvo",
@@ -1226,7 +1226,7 @@
     "kind": "repo",
     "name": "CFEAR Radarodometry",
     "url": "https://github.com/dan11003/CFEAR_Radarodometry",
-    "summary": "Learning-free spinning-radar odometry that filters returns to sparse oriented surface points and registers against keyframes.",
+    "summary": "Landing page for CFEAR, learning-free spinning-radar odometry that filters returns to sparse oriented surface points and registers against keyframes. This repo holds only a README and LICENSE; the code is in dan11003/CFEAR_Radarodometry_code_public.",
     "why_it_matters": "Strong baseline for spinning (Navtech-style) radar odometry; robust in weather that defeats LiDAR.",
     "concepts": [
       "concept:radar-nav"
@@ -1241,8 +1241,8 @@
       "ground"
     ],
     "maturity": "research-prototype",
-    "hackathon_fit": "medium",
-    "hackathon_notes": "ROS 1; benchmarked on Oxford Radar RobotCar and Boreas.",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Clone CFEAR_Radarodometry_code_public for the ROS 1 code (Melodic or later; Oxford Radar RobotCar demo bag provided). Benchmarked on Oxford Radar RobotCar and Boreas. GPL-3.0.",
     "related": [
       {
         "id": "repo:zhuge2333/4dradarslam",
@@ -1483,7 +1483,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "low",
-    "hackathon_notes": "ROS 1, heavy on dependencies; FAST-LIVO2 is the newer alternative.",
+    "hackathon_notes": "ROS 1, heavy on dependencies; FAST-LIVO2 is the newer alternative. Licence: GPLv2 but the README allows it free only for personal and academic use; commercial use needs a separately negotiated licence.",
     "related": [
       {
         "id": "repo:hku-mars/fast-livo2",
@@ -1870,7 +1870,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "ROS 1 main; check community ROS 2 forks.",
+    "hackathon_notes": "ROS 1 on master; ROS 2 is supported on the repo's feature/ros2 branch.",
     "related": [
       {
         "id": "repo:hku-mars/fast_lio",
@@ -1996,7 +1996,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "ROS 1 demos; integrates with FAST-LIO.",
+    "hackathon_notes": "ROS 1 demos; integrates with FAST-LIO. Licence: GPLv2 but the README allows it free only for personal and academic use; commercial use needs a separate licence.",
     "related": [
       {
         "id": "repo:hku-mars/fast_lio",
@@ -2206,7 +2206,7 @@
     "kind": "repo",
     "name": "Kimera-Distributed",
     "url": "https://github.com/MIT-SPARK/Kimera-Distributed",
-    "summary": "Distributed back end of Kimera-Multi handling inter-robot loop closures and distributed optimization.",
+    "summary": "Distributed front end of Kimera-Multi: handles the inter-robot communication protocol and pose-graph coarsening; the robust distributed optimization back end is DPGO.",
     "why_it_matters": "Reusable distributed SLAM back end.",
     "concepts": [
       "concept:multi-agent"
@@ -2215,7 +2215,7 @@
       "distributed",
       "pose-graph"
     ],
-    "language": "",
+    "language": "C++",
     "domains": [
       "air",
       "ground"
@@ -2279,7 +2279,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "ROS 2; experiments run on recorded multi-robot datasets. Pick one sensor type to start.",
+    "hackathon_notes": "This repo is only the core cslam ROS 2 package (loop closure detection front end and pose-graph back end); setup, launch files and docs live in the main MISTLab/Swarm-SLAM repo. Experiments run on recorded multi-robot datasets. Pick one sensor type to start.",
     "related": [
       {
         "id": "repo:mit-spark/kimera-multi",
@@ -2341,7 +2341,7 @@
       "decentralized",
       "uav"
     ],
-    "language": "Jupyter Notebook",
+    "language": "C++",
     "domains": [
       "air"
     ],
@@ -2405,7 +2405,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Works without ROS; evo is easier day to day.",
+    "hackathon_notes": "Works without ROS but is Python 2 only; evo is easier day to day.",
     "related": [
       {
         "id": "repo:michaelgrupp/evo",

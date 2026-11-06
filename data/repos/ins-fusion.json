@@ -309,7 +309,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Core library builds standalone; ROS wrapper exists separately. Good fit for a sensor-dropout demo.",
+    "hackathon_notes": "Core library builds standalone; ROS wrapper exists separately (mars_ros). Good fit for a sensor-dropout demo. Licence is BSD-2-Clause with an added condition that forbids selling the software or services based on it (source-available, no commercial use).",
     "related": [
       {
         "id": "repo:ethz-asl/ethzasl_msf",
@@ -654,7 +654,7 @@
     "kind": "repo",
     "name": "strapdown-rs",
     "url": "https://github.com/jbrodovsky/strapdown-rs",
-    "summary": "Rust implementation of a strapdown inertial navigation system, aimed at simulation and research on INS behaviour.",
+    "summary": "Rust library and CLI for strapdown INS research under GNSS denial: local-level mechanization, four loosely coupled filters (ESKF, EKF, UKF, Rao-Blackwellized particle filter) and a simulator that removes or corrupts GNSS in recorded or synthetic data from a scenario file.",
     "why_it_matters": "Lesser-known, actively developed Rust INS; memory-safe option for embedded or simulation pipelines.",
     "concepts": [
       "concept:ins",
@@ -670,7 +670,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "cargo build; small and readable. Check the crate docs for current API.",
+    "hackathon_notes": "cargo build; library crate is strapdown-core (docs.rs) and the CLI is strapdown-sim. Loosely coupled only, no pseudorange or carrier-phase models.",
     "related": [
       {
         "id": "repo:nmayorov/pyins",
@@ -882,7 +882,7 @@
     "kind": "repo",
     "name": "gps_imu_fusion",
     "url": "https://github.com/Shelfcol/gps_imu_fusion",
-    "summary": "GPS/IMU fusion examples implemented with ESKF, EKF, UKF and other filters.",
+    "summary": "GPS/IMU fusion examples derived from zm0612/eskf-gps-imu-fusion, implementing an EKF, the original ESKF and a Sola-style quaternion ESKF, plus an observability analysis; UKF is only listed as TODO. Docs in Chinese.",
     "why_it_matters": "Small comparison set of filter types for GNSS/IMU.",
     "concepts": [
       "concept:gnss-ins",
@@ -891,7 +891,7 @@
     "tags": [
       "eskf",
       "ekf",
-      "ukf"
+      "chinese-docs"
     ],
     "language": "C++",
     "domains": [
@@ -1172,7 +1172,7 @@
     "kind": "repo",
     "name": "AV-Matlab-SW",
     "url": "https://github.com/jaffarrell/AV-Matlab-SW",
-    "summary": "MATLAB software for Allan variance calculations accompanying a published article on IMU noise characterisation (Farrell et al.).",
+    "summary": "MATLAB scripts (plus a Python port, AV_Python) for Allan variance analysis and Gauss-Markov IMU error modelling, accompanying Farrell et al., 'Inertial measurement unit error modeling tutorial', IEEE Control Systems Magazine 2022 (preprint PDF included).",
     "why_it_matters": "Deeper treatment of Allan variance pitfalls than the typical tool.",
     "concepts": [
       "concept:calibration",
@@ -1188,7 +1188,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "low",
-    "hackathon_notes": "Read with the paper; MATLAB required.",
+    "hackathon_notes": "Read with the IEEE CSM tutorial (preprint in the repo). MATLAB for the article scripts; the AV_Python folder has Jupyter demos if you have no MATLAB.",
     "related": [
       {
         "id": "repo:nmayorov/allan-variance",
@@ -1654,7 +1654,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "PyTorch; dataset is large. Pretrained models give a quick baseline.",
+    "hackathon_notes": "PyTorch; dataset is large and only about half of it was published (security concerns). Pretrained models give a quick baseline. The RoNIN data and pretrained models are under a custom licence for non-commercial and scientific research use only (code is GPL-3.0).",
     "related": [
       {
         "id": "repo:cathias/tlio",
@@ -1689,7 +1689,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Training data is head-mounted; expect domain gap on other platforms.",
+    "hackathon_notes": "Training data is head-mounted; expect domain gap on other platforms. The released dataset is CC BY-NC (non-commercial); the code is BSD-licensed.",
     "related": [
       {
         "id": "repo:sachini/ronin",
@@ -1828,7 +1828,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Recent research code; check README for datasets.",
+    "hackathon_notes": "PyPose-based research code. EuRoC, Blackbird and a simulated Pegasus split plus pretrained models are on GitHub releases; the EKF also needs the AirIMU results files.",
     "related": [
       {
         "id": "repo:haleqiu/airimu",
@@ -1861,7 +1861,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "low",
-    "hackathon_notes": "Builds on TLIO/RoNIN pipelines; set those up first.",
+    "hackathon_notes": "Repo vendors modified TLIO (TLIO-master/) and RoNIN code, so no separate setup; get the TLIO dataset (CC BY-NC) or RoNIN data (non-commercial licence) first. No licence file in the repo, so the code is all rights reserved.",
     "related": [
       {
         "id": "repo:cathias/tlio",
@@ -1895,7 +1895,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "low",
-    "hackathon_notes": "Research code; datasets from UZH.",
+    "hackathon_notes": "Research code; trained and tested on the MIT Blackbird dataset (converter script, one sample sequence and the trained network are in the repo). Reuses TLIO filter code.",
     "related": [
       {
         "id": "repo:air-io/air-io",
@@ -1958,7 +1958,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Header-mostly; widely packaged.",
+    "hackathon_notes": "Header-mostly; widely packaged. In maintenance mode since June 2024 (bug fixes only); sophus2 and sophus-rs are the successors.",
     "related": [
       {
         "id": "repo:artivis/manif",
@@ -1985,9 +1985,9 @@
     "domains": [
       "multi"
     ],
-    "maturity": "production",
+    "maturity": "archived",
     "hackathon_fit": "medium",
-    "hackathon_notes": "pip install from source; small and stable.",
+    "hackathon_notes": "pip install from source; small and stable but no longer maintained (README points to PyMLG as the successor).",
     "related": [
       {
         "id": "repo:artivis/manif",

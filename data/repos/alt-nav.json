@@ -186,7 +186,7 @@
     "kind": "repo",
     "name": "GNSS-Denied UAV Geolocalization (terrain-weighted)",
     "url": "https://github.com/YFS90/GNSS-Denied-UAV-Geolocalization",
-    "summary": "Code and demos for a UAV geolocalization system that combines image matching, visual odometry and a terrain-weighted constraint optimization, intended to work day and night.",
+    "summary": "Project page for a UAV geolocalization system that combines image matching, visual odometry and a terrain-weighted constraint optimization, intended to work day and night. The repo holds only the README, result figures and demo video links - no code is released.",
     "why_it_matters": "Fuses absolute map matches with relative VO and terrain constraints - the hybrid structure a real GNSS-denied nav stack needs.",
     "concepts": [
       "concept:visual-geolocalization",
@@ -205,8 +205,8 @@
       "air"
     ],
     "maturity": "research-prototype",
-    "hackathon_fit": "medium",
-    "hackathon_notes": "Check what is actually released before planning around it; mainly a reference for the fusion design.",
+    "hackathon_fit": "low",
+    "hackathon_notes": "No code, data or weights are released (README, figures and videos only); use it only as a reference for the fusion design.",
     "related": [
       {
         "id": "repo:yusufgunel/geoanchor",
@@ -349,7 +349,7 @@
     "kind": "repo",
     "name": "Aerial Template Matching",
     "url": "https://github.com/m-hamza-mughal/Aerial-Template-Matching",
-    "summary": "Classical template-matching approach for locating an aerial image inside a larger reference image, built on OpenCV.",
+    "summary": "Code for the paper 'Assisting UAV Localization via Deep Contextual Image Matching': locates an aerial template inside a larger georeferenced map with a SIFT pipeline and a deep variant built on Neighbourhood Consensus Networks, then reads GPS coordinates with GDAL.",
     "why_it_matters": "A zero-training baseline to compare learned matchers against; mirrors classic DSMAC-style scene correlation in spirit.",
     "concepts": [
       "concept:visual-geolocalization",
@@ -450,7 +450,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Dataset requires a request form; the synthetic drone views are building-centric, not wide-area terrain.",
+    "hackathon_notes": "Dataset is sent on emailed request from an academic address, after agreeing to research-only use, no sharing with third parties and no profit (Request.md); the synthetic drone views are building-centric, not wide-area terrain.",
     "related": [
       {
         "id": "repo:reza-zhu/sues-200-benchmark",
@@ -488,7 +488,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Use as a second evaluation set alongside University-1652.",
+    "hackathon_notes": "Use as a second evaluation set alongside University-1652. Dataset and weights are for academic research only (README).",
     "related": [
       {
         "id": "repo:layumi/university1652-baseline",
@@ -549,7 +549,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Pretrained checkpoints help; fine-tune on your tile set if time allows.",
+    "hackathon_notes": "Pretrained checkpoints help; fine-tune on your tile set if time allows. No licence file, so code and weights are all rights reserved by default.",
     "related": [
       {
         "id": "repo:layumi/university1652-baseline",
@@ -784,7 +784,7 @@
       "event-camera",
       "lidar-map"
     ],
-    "language": "C",
+    "language": "Python",
     "domains": [
       "ground",
       "air"
@@ -978,7 +978,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Fast inference; good for an onboard-feasibility story.",
+    "hackathon_notes": "Fast inference; good for an onboard-feasibility story. No licence file, so code and weights are all rights reserved by default.",
     "related": [
       {
         "id": "repo:amaralibey/bag-of-queries",
@@ -1452,10 +1452,10 @@
   {
     "id": "repo:ayushmankumar7/tercom-python",
     "kind": "repo",
-    "name": "TERCOM-python (TERCOM + DSMAC)",
+    "name": "TERCOM-python (DSMAC-style scene matching)",
     "url": "https://github.com/ayushmankumar7/TERCOM-python",
-    "summary": "OpenCV-based demo of map-based navigation combining terrain contour matching with scene-matching area correlation.",
-    "why_it_matters": "Shows both classic map-matching families side by side.",
+    "summary": "A single short OpenCV script that locates a Google Maps crop inside a larger map image with SIFT matching and a RANSAC homography, framed as DSMAC-style scene matching. Despite the repo name there is no terrain contour (TERCOM) code.",
+    "why_it_matters": "Minimal scene-matching (DSMAC-style) baseline; the TERCOM half exists only in the name.",
     "concepts": [
       "concept:terrain-nav",
       "concept:visual-geolocalization"
@@ -1698,7 +1698,7 @@
     "kind": "repo",
     "name": "DroneMagNav",
     "url": "https://github.com/ajisrawi/dronemagnav",
-    "summary": "Open hardware + firmware design for a drone magnetic-anomaly navigation board (ESP32-S3, magnetometer, IMU, baro) running particle-filter matching against a global anomaly map and feeding position to a flight controller over MAVLink.",
+    "summary": "Hardware + firmware design for a drone magnetic-anomaly navigation board (ESP32-S3, magnetometer, IMU, baro) running particle-filter matching against a global anomaly map and feeding position to a flight controller over MAVLink. Proprietary: the LICENSE grants no rights to copy, modify or use it.",
     "why_it_matters": "Rare example of MagNav pushed down to cheap drone hardware with an autopilot interface.",
     "concepts": [
       "concept:magnetic-nav",
@@ -1717,7 +1717,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Very recent single-author project; hardware not validated in flight per what we could see. Global anomaly maps are coarse, so expect km-level, not meter-level, results on small drones.",
+    "hackathon_notes": "Very recent single-author project; the board has not been built and the firmware has not run on real hardware (README status). Proprietary licence, so read it for ideas only - do not reuse code or designs. Global anomaly maps are coarse, so expect km-level, not meter-level, results on small drones.",
     "related": [
       {
         "id": "repo:mit-ai-accelerator/magnav.jl",
@@ -1840,7 +1840,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Build with make; includes test images.",
+    "hackathon_notes": "Build with make; it can generate synthetic star images for testing (no real test images ship in the repo).",
     "related": [
       {
         "id": "repo:esa/tetra3",
@@ -2041,13 +2041,13 @@
       "leo",
       "simulation"
     ],
-    "language": "JavaScript",
+    "language": "Python",
     "domains": [
       "multi"
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "medium",
-    "hackathon_notes": "Browser-friendly; good for visualizing LEO coverage in a pitch.",
+    "hackathon_notes": "Desktop PySide6 app with Cesium 3D views (browser or embedded WebView); good for visualizing LEO coverage in a pitch.",
     "related": [
       {
         "id": "repo:gao-tech1/graphgnsslib_leo_v1.2",
@@ -2060,7 +2060,7 @@
     "kind": "repo",
     "name": "GraphGNSSLib LEO",
     "url": "https://github.com/Gao-tech1/GraphGNSSLib_LEO_V1.2",
-    "summary": "Factor-graph positioning combining GNSS and LEO satellite measurements, extending GraphGNSSLib.",
+    "summary": "Factor-graph positioning combining real GNSS pseudorange/Doppler with simulated LEO satellite measurements, extending GraphGNSSLib.",
     "why_it_matters": "Shows how LEO observations slot into a factor graph alongside degraded GNSS.",
     "concepts": [
       "concept:signals-of-opportunity",
@@ -2107,7 +2107,7 @@
     ],
     "maturity": "educational",
     "hackathon_fit": "medium",
-    "hackathon_notes": "MATLAB needed (Octave may partly work).",
+    "hackathon_notes": "MATLAB with the 5G Toolbox and Phased Array System Toolbox is needed, so Octave will not work; only the outdoor scenario is included.",
     "related": []
   },
   {

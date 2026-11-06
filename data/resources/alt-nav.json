@@ -815,7 +815,9 @@
     "title": "Exploiting Starlink Signals for Navigation: First Results",
     "url": "https://ece.osu.edu/sites/default/files/2022-09/Exploiting_Starlink_signals_for_navigation_first_results.pdf",
     "authors": [
-      "Zaher M. Kassas et al."
+      "Mohammad Neinavaie",
+      "Joe Khalife",
+      "Zaher M. Kassas"
     ],
     "year": 2021,
     "summary": "Early experimental demonstration of opportunistic positioning by tracking Doppler from Starlink satellites, without cooperation from the operator.",
@@ -1000,7 +1002,7 @@
     "title": "Ukraine's Autonomous Killer Drones Defeat Electronic Warfare",
     "url": "https://spectrum.ieee.org/ukraine-killer-drones",
     "authors": [
-      "IEEE Spectrum"
+      "Tereza Pultarova"
     ],
     "year": 2025,
     "summary": "Reporting on how Ukrainian drone developers respond to pervasive jamming of radio links and satellite navigation, including onboard optical navigation that keeps the drone flying after links are lost.",
@@ -1056,7 +1058,7 @@
     "title": "Ukrainian Drones Use Vermeer Optical Navigation System",
     "url": "https://militarnyi.com/en/news/ukrainian-drones-use-vermeer-optical-navigation-system",
     "authors": [
-      "Militarnyi"
+      "Kyrylo Kushnikov"
     ],
     "year": 2025,
     "summary": "Ukrainian defense outlet reporting that a US company's optical (visual) navigation system is being integrated into Ukrainian reconnaissance and strike drones.",

@@ -303,9 +303,9 @@
     "title": "ADS-B Data Analysis for GNSS Interference Mapping",
     "url": "https://insidegnss.com/?p=197872",
     "authors": [
-      "Inside GNSS"
+      "Maksim Barodzka"
     ],
-    "year": 2024,
+    "year": 2026,
     "summary": "Trade-press article on using ADS-B integrity data to detect and map GNSS interference regions.",
     "key_takeaways": [
       "ADS-B is an existing, free sensor network for interference awareness",
@@ -362,10 +362,10 @@
     "title": "Researchers home in on origins of Russia's Baltic GPS jamming",
     "url": "https://www.defensenews.com/global/europe/2025/07/02/researchers-home-in-on-origins-of-russias-baltic-gps-jamming/",
     "authors": [
-      "Defense News"
+      "Linus Höller"
     ],
     "year": 2025,
-    "summary": "Reporting on Gdynia Maritime University and DLR work combining ground monitoring stations with aviation data to localize Baltic jamming emitters.",
+    "summary": "Reporting on Gdynia Maritime University research tracing Baltic jamming to Russian sites such as Baltiysk in Kaliningrad, DLR comment on how cheap and mobile jammers are, and an analyst's heatmap of likely jammer locations built from aircraft ADS-B integrity data.",
     "key_takeaways": [
       "Emitter localization from distributed monitors plus ADS-B is feasible",
       "Baltic interference has shifted to include spoofing"
@@ -444,15 +444,15 @@
   {
     "id": "res:windward-2025-maritime-stress-test",
     "kind": "blog",
-    "title": "Windward - 2025 maritime stress test",
+    "title": "2025 Was a Stress Test & Maritime AI™ Is the Only Way to Pass",
     "url": "https://windward.ai/blog/2025-maritime-stress-test/",
     "authors": [
-      "Windward"
+      "Maya Romi"
     ],
     "year": 2025,
-    "summary": "Maritime-intelligence review of 2025 including large-scale GNSS jamming and spoofing in the Gulf and Strait of Hormuz after the June 2025 Israel-Iran strikes.",
+    "summary": "Windward's quarter-by-quarter review of 2025 maritime risk: sanctions, dark fleet growth, flag-registry fraud and GNSS interference. Reports GPS jamming affecting more than 24,000 vessels across Q1-Q3, with hotspots in the Arabian Gulf, Mediterranean and Baltic, and false port calls near Iranian terminals during the Iran conflict.",
     "key_takeaways": [
-      "Hundreds of ships per day affected at the peak",
+      "GPS jamming affected more than 24,000 vessels in Q1-Q3 2025, over 13,000 in Q2 alone",
       "AIS anomalies are the main public signal of GNSS manipulation at sea"
     ],
     "concepts": [
@@ -538,16 +538,16 @@
   {
     "id": "res:kyiv-independent-invisible-war-ew",
     "kind": "blog",
-    "title": "The invisible war: Inside the electronic warfare arms race that could shape course of the war",
+    "title": "The Invisible War: Inside the electronic warfare arms race that could shape course of war in Ukraine",
     "url": "https://kyivindependent.com/the-invisible-war-inside-the-electronic-warfare-arms-race-that-could-shape-course-of-the-war",
     "authors": [
-      "Kyiv Independent"
+      "Oleksandr Tartachnyi"
     ],
     "year": 2024,
     "summary": "Long-form reporting on the EW and counter-EW cycle in Ukraine, covering jamming of drones and navigation and the rapid iteration of countermeasures.",
     "key_takeaways": [
-      "Adaptation cycles are measured in weeks",
-      "Frequency agility and non-GNSS navigation are recurring answers"
+      "GPS-guided Excalibur shells and JDAM bombs lost accuracy to Russian jamming within months to a year of delivery",
+      "Ukraine's Pokrova system jams and spoofs satellite navigation; officials claim it cut the accuracy of spoofed missiles by 40%"
     ],
     "concepts": [
       "concept:ew-resilience",
@@ -568,7 +568,7 @@
     "title": "Ukrainian military's anti-drone GPS spoofing spills into civilians' phones",
     "url": "https://therecord.media/ukraine-anti-drone-gps-spoofing-affects-civilian-mobile-phones",
     "authors": [
-      "The Record"
+      "Daryna Antoniuk"
     ],
     "year": 2024,
     "summary": "Report on Ukraine's nationwide defensive spoofing against incoming drones and missiles, and its side effects on civilian devices' location and time.",
@@ -592,10 +592,10 @@
   {
     "id": "res:militarnyi-vermeer-optical-navigation",
     "kind": "blog",
-    "title": "Ukrainian drones use Vermeer optical navigation system",
-    "url": "https://militarnyi.com/?p=292033",
+    "title": "Ukrainian Drones Use Vermeer Optical Navigation System",
+    "url": "https://militarnyi.com/en/news/ukrainian-drones-use-vermeer-optical-navigation-system/",
     "authors": [
-      "Militarnyi"
+      "Kyrylo Kushnikov"
     ],
     "year": 2025,
     "summary": "Ukrainian defense outlet report on a visual positioning system integrated on drones used by Ukrainian forces for operation when GNSS is jammed.",
@@ -677,12 +677,12 @@
   {
     "id": "res:brave1-nato-counter-drone-ew-competition",
     "kind": "blog",
-    "title": "Ukraine's Brave1, NATO launch EUR 10M competition for counter-drone technology",
+    "title": "Ukraine's Brave1, NATO Launch €10M Competition for Counter-Drone Technology",
     "url": "https://www.kyivpost.com/post/72587",
     "authors": [
-      "Kyiv Post"
+      "Alisa Orlova"
     ],
-    "year": 2025,
+    "year": 2026,
     "summary": "Coverage of a Brave1-NATO competition funding counter-drone technology and navigation that works under electronic warfare.",
     "key_takeaways": [
       "Brave1 frames navigation under EW as a top battlefield need",
@@ -709,7 +709,7 @@
     "title": "В Україні провели хакатон зі створення антидронових рішень (Anti-drone hackathon held in Ukraine)",
     "url": "https://militarnyi.com/uk/news/v-ukrayini-provely-hakaton-zi-stvorennya-antydronovyh-rishen/",
     "authors": [
-      "Militarnyi"
+      "Taras Safronov"
     ],
     "year": 2024,
     "summary": "Ukrainian-language report on a defense hackathon focused on counter-drone solutions.",
@@ -733,10 +733,10 @@
   {
     "id": "res:diu-transition-quantum-sensing-2024",
     "kind": "blog",
-    "title": "DIU solicitation: Transition of Quantum Sensing for navigation",
+    "title": "DIU launches new emerging tech portfolio, solicits industry for quantum sensing capabilities",
     "url": "https://defensescoop.com/2024/05/09/diu-transition-quantum-sensors-emerging-technologies-portfolio/",
     "authors": [
-      "DefenseScoop"
+      "Mikayla Easley"
     ],
     "year": 2024,
     "summary": "Coverage of DIU's Transition of Quantum Sensing call seeking quantum inertial sensors and magnetometers to extend navigation holdover when GPS is unavailable.",
@@ -767,10 +767,10 @@
   {
     "id": "res:darpa-roqs-2024",
     "kind": "blog",
-    "title": "DARPA eying new quantum sensing program: Robust Quantum Sensors (RoQS)",
+    "title": "DARPA eyeing new quantum sensing program",
     "url": "https://defensescoop.com/2024/12/30/darpa-eying-new-quantum-sensing-program-robust-quantum-sensors-roqs/",
     "authors": [
-      "DefenseScoop"
+      "Jon Harper"
     ],
     "year": 2024,
     "summary": "Report on DARPA's RoQS program to make quantum sensors robust to platform interference so they can support navigation without GPS on real vehicles.",
@@ -795,10 +795,10 @@
   {
     "id": "res:darpa-aspn-briefing-2019",
     "kind": "talk",
-    "title": "DARPA PNT programs briefing to the National Space-Based PNT Advisory Board (2019)",
-    "url": "https://www.GPS.gov/governance/advisory/meetings/2019-06/burke.pdf",
+    "title": "DARPA Positioning, Navigation, and Timing (PNT) Technology and their Impacts on GPS users",
+    "url": "https://web.archive.org/web/20250604144700/https://www.gps.gov/governance/advisory/meetings/2019-06/burke.pdf",
     "authors": [
-      "DARPA"
+      "John Burke"
     ],
     "year": 2019,
     "summary": "DARPA slide deck summarizing its PNT portfolio, including All Source Positioning and Navigation (ASPN), a plug-and-play architecture for fusing non-traditional sensors when GPS is denied.",
@@ -879,8 +879,8 @@
   {
     "id": "res:dasa-advanced-rf-sensing-pnt-2022",
     "kind": "competition",
-    "title": "DASA competition: Advanced Radio Frequency Sensing, Integrated Effects and PNT",
-    "url": "https://www.techuk.org/resource/new-competition-advanced-radio-frequency-sensing-integrated-effects-and-pnt.html",
+    "title": "Advanced Radio Frequency Sensing, Integrated Effects and PNT",
+    "url": "https://www.gov.uk/government/publications/advanced-radio-frequency-sensing-integrated-effects-and-pnt",
     "authors": [
       "UK Defence and Security Accelerator",
       "Dstl"
@@ -908,10 +908,10 @@
   {
     "id": "res:uk-pnt-growth-government-response-2025",
     "kind": "report",
-    "title": "Positioning, navigation and timing growth: government response",
+    "title": "Positioning, Navigation and Timing Growth: government response",
     "url": "https://www.gov.uk/government/calls-for-evidence/positioning-navigation-and-timing-growth/outcome/positioning-navigation-and-timing-growth-government-response",
     "authors": [
-      "UK Government"
+      "Department for Science, Innovation and Technology"
     ],
     "year": 2025,
     "summary": "UK government response on growing the resilient PNT sector, following its national PNT framework work.",
@@ -1000,7 +1000,7 @@
     "title": "HACKtheMACHINE Unmanned (ONR / NavalX)",
     "url": "https://www.onr.navy.mil/media-center/news-releases/navys-hackthemachine-challenge-seeks-new-ideas-unmanned-autonomous-tech",
     "authors": [
-      "Office of Naval Research"
+      "Warren Duffie Jr."
     ],
     "year": 2021,
     "summary": "US Navy prize challenge on unmanned and autonomous systems with tracks on securing a simulated autopilot, separating benign from malicious data, and model-based mission requirements.",
@@ -1205,12 +1205,14 @@
   {
     "id": "res:magnav-sgs-flight-data",
     "kind": "dataset",
-    "title": "MagNav challenge flight data (Sander Geophysics, Zenodo)",
+    "title": "DAF-MIT AIA Open Flight Data for Magnetic Navigation Research",
     "url": "https://zenodo.org/records/12723700",
     "authors": [
-      "MIT",
-      "Department of the Air Force",
-      "Sander Geophysics"
+      "Albert R. Gnadt",
+      "Joseph Belarge",
+      "Aaron Canciani",
+      "Lauren Conger",
+      "et al."
     ],
     "year": 2024,
     "summary": "Zenodo record of airborne magnetometer, INS and GNSS flight data with datasheets, collected for the MagNav challenge.",
@@ -1375,10 +1377,10 @@
   {
     "id": "res:mavlab-alphapilot-win-2019",
     "kind": "blog",
-    "title": "MAVLab wins the AlphaPilot challenge",
+    "title": "MAVLab wins the AlphaPilot AI challenge",
     "url": "https://mavlab.tudelft.nl/mavlab-wins-the-alpha-pilot-challenge/",
     "authors": [
-      "TU Delft MAVLab"
+      "Christophe De Wagter"
     ],
     "year": 2019,
     "summary": "TU Delft MAVLab's account of winning the 2019 Lockheed Martin AlphaPilot / AIRR autonomous drone race.",
@@ -1441,7 +1443,7 @@
   {
     "id": "res:a2rl-2025-season",
     "kind": "doc",
-    "title": "2025 Abu Dhabi Autonomous Racing League (A2RL) - drone championship",
+    "title": "2025 Abu Dhabi Autonomous Racing League",
     "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Autonomous_Racing_League",
     "authors": [
       "Wikipedia"
@@ -1638,7 +1640,7 @@
     "id": "res:linux-foundation-ear-open-source",
     "kind": "doc",
     "title": "The EAR and Open Source Software",
-    "url": "https://bestpractices.linuxfoundation.org/export/ear-oss.html",
+    "url": "https://bestpractices.linuxfoundation.org/regulatory/export/ear-oss.html",
     "authors": [
       "Linux Foundation"
     ],
@@ -1696,10 +1698,11 @@
   {
     "id": "res:eff-export-encryption-source-explained",
     "kind": "blog",
-    "title": "U.S. Export Controls and Published Encryption Source Code Explained",
+    "title": "U.S. Export Controls and \"Published\" Encryption Source Code Explained",
     "url": "https://www.eff.org/deeplinks/2019/08/us-export-controls-and-published-encryption-source-code-explained",
     "authors": [
-      "Electronic Frontier Foundation"
+      "Cindy Cohn",
+      "Andrew Crocker"
     ],
     "year": 2019,
     "summary": "EFF explainer on the 2016-era EAR changes for published encryption source and when email notification is still needed.",
@@ -1726,7 +1729,7 @@
   {
     "id": "res:stonybrook-export-publicly-available",
     "kind": "doc",
-    "title": "Regulatory Definitions of Publicly Available, Public Domain, and Published (ITAR/EAR)",
+    "title": "Overview of Regulatory Definitions of Publicly Available, Public Domain, and Published",
     "url": "https://www.stonybrook.edu/research-security/export-controls/reference_guides/publicly-available.html",
     "authors": [
       "Stony Brook University Research Security"
@@ -1756,7 +1759,7 @@
     "title": "DOD adopts 5 principles of artificial intelligence ethics",
     "url": "https://www.army.mil/article/233690/dod_adopts_5_principles_of_artificial_intelligence_ethics",
     "authors": [
-      "US Department of Defense"
+      "C. Todd Lopez"
     ],
     "year": 2020,
     "summary": "Announcement of the DoD's AI ethical principles - responsible, equitable, traceable, reliable, governable - recommended by the Defense Innovation Board.",
@@ -1779,7 +1782,7 @@
   {
     "id": "res:nato-ai-strategy-principles-2021",
     "kind": "doc",
-    "title": "Summary of the NATO Artificial Intelligence Strategy (Principles of Responsible Use)",
+    "title": "Summary of the NATO Artificial Intelligence Strategy",
     "url": "https://www.nato.int/cps/en/natohq/official_texts_187617.htm",
     "authors": [
       "NATO"
