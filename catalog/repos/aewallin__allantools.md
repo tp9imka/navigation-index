@@ -35,6 +35,7 @@ Python library for time and frequency stability statistics: Allan, modified Alla
 - [TAPR TICC](../../catalog/repos/tapr__ticc.md) (integrates_with)
 - [Handbook of Frequency Stability Analysis (NIST SP 1065)](../../catalog/resources/nist-sp1065-frequency-stability-handbook.md) (has_code)
 - [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../../catalog/samples/timing-holdover.md) (explains)
+- [Network of GNSS-disciplined clocks: holdover from peers, spoof isolation by cross-node consistency, ADEV-weighted ensemble](../../catalog/samples/timing-network-holdover.md) (explains)
 
 _Indexed by lane(s): timing_
 

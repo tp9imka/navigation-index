@@ -27,6 +27,7 @@ Research implementation, based on linuxptp 3.1.1, that detects and mitigates PTP
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 - [linuxptp](../../catalog/repos/nwtime__linuxptp.md) (extends)
 - [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../../catalog/samples/timing-holdover.md) (explains)
+- [Network of GNSS-disciplined clocks: holdover from peers, spoof isolation by cross-node consistency, ADEV-weighted ensemble](../../catalog/samples/timing-network-holdover.md) (explains)
 
 _Indexed by lane(s): timing_
 

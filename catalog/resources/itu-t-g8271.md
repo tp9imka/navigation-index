@@ -18,4 +18,8 @@ Telecom recommendation that sets time and phase synchronization requirements and
 
 - cites: [ITU-T G.8272: Timing characteristics of primary reference time clocks](../../catalog/resources/itu-t-g8272-prtc.md)
 
+## Referenced by
+
+- [Network of GNSS-disciplined clocks: holdover from peers, spoof isolation by cross-node consistency, ADEV-weighted ensemble](../../catalog/samples/timing-network-holdover.md) (uses)
+
 _Indexed by lane(s): timing_

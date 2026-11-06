@@ -22,5 +22,6 @@ Threat model and security requirements for NTP and PTP: packet manipulation, spo
 ## Referenced by
 
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [Network of GNSS-disciplined clocks: holdover from peers, spoof isolation by cross-node consistency, ADEV-weighted ensemble](../../catalog/samples/timing-network-holdover.md) (uses)
 
 _Indexed by lane(s): timing_

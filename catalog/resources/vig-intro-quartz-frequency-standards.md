@@ -20,5 +20,6 @@ Section of Vig's introduction to quartz frequency standards comparing TCXO, MCXO
 
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 - [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../../catalog/samples/timing-holdover.md) (uses)
+- [Network of GNSS-disciplined clocks: holdover from peers, spoof isolation by cross-node consistency, ADEV-weighted ensemble](../../catalog/samples/timing-network-holdover.md) (uses)
 
 _Indexed by lane(s): timing_

@@ -1,6 +1,6 @@
 # navigation-index
 
-> Knowledge hub for navigation / PNT / GNSS-denied autonomy with a defense lens: 768 open-source repos, 678 documents, talks, courses and datasets, 44 usage samples and 30 guides, linked in one graph over 46 concepts.
+> Knowledge hub for navigation / PNT / GNSS-denied autonomy with a defense lens: 768 open-source repos, 678 documents, talks, courses and datasets, 45 usage samples and 30 guides, linked in one graph over 46 concepts.
 
 Read AGENTS.md for how to query and extend. For a problem statement, run `python3 tools/query.py decode "<statement>"` (MCP tool `decode`) or read docs/problem-statement-decoder.md to pick its rows, then search with each row's keywords: `python3 tools/query.py search "<keywords>"` or the MCP server tools/mcp_server.py (its `read` tool returns any guide or sample README). Guides (kind `guide`) are searchable like any other node.
 
@@ -96,6 +96,7 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [terrain-relative-nav-pf](samples/terrain-relative-nav-pf/README.md) (partial, stdlib): Stdlib SIR particle filter: biased INS + radar altimeter vs a synthetic DEM, flat-terrain control
 - [thermal-geolocalization](samples/thermal-geolocalization/README.md) (ran, venv): Night / thermal frame => RGB satellite fix by condition, modality-bridging preprocessing, a gate that accepted no wrong fix, CPU vs MPS timing
 - [timing-holdover](samples/timing-holdover/README.md) (ran, stdlib): GNSS-disciplined oscillator sim (TCXO / CSAC / OCXO / Rb): holdover error after outage, slow time-walk spoof vs internal and cross-source monitors
+- [timing-network-holdover](samples/timing-network-holdover/README.md) (ran, stdlib): Six GNSS-disciplined sites over PTP-like links: holdover from peers vs alone under regional jamming, cross-node consistency check isolating a time push, ADEV-weighted ensemble vs best clock, cost of path asymmetry
 - [two-source-integrity-vpair](samples/two-source-integrity-vpair/README.md) (ran, venv): Second absolute source (TRN from real NRW LiDAR at real VPAIR poses) turns solution-separation integrity from 1.6 % to 84 % available at AL 50 m; fault injection with detection and attribution limits
 - [usv-gnss-denied-nav](samples/usv-gnss-denied-nav/README.md) (ran, stdlib): USV own-ship nav in the Oresund: compass + speed-log DR, simulated radar matched to the real OSM chart, monitor excludes spoofed GNSS
 - [vio-to-mavlink-bridge](samples/vio-to-mavlink-bridge/README.md) (partial, stdlib): ENU/FLU pose => NED/FRD ODOMETRY or VISION_POSITION_ESTIMATE for EKF3 / EKF2
@@ -107,9 +108,9 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [GNSS positioning](catalog/concepts/gnss.md): 143 items - GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 - [RTK / PPP precise positioning](catalog/concepts/gnss-rtk-ppp.md): 39 items - Carrier-phase differential and precise point positioning, corrections (RTCM, SSR, NTRIP).
 - [Software-defined GNSS receivers](catalog/concepts/gnss-sdr.md): 34 items - Acquisition, tracking, navigation-message decoding in software on SDR front-ends.
-- [Jamming and spoofing](catalog/concepts/gnss-interference.md): 178 items - GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-jam antennas (CRPA).
-- [Assured / resilient PNT](catalog/concepts/assured-pnt.md): 254 items - Architectures that keep position, navigation and timing trustworthy under denial and deception.
-- [Timing and time transfer](catalog/concepts/timing.md): 112 items - Clocks, holdover, PTP/NTP, GNSS-disciplined oscillators, chip-scale atomic clocks.
+- [Jamming and spoofing](catalog/concepts/gnss-interference.md): 179 items - GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-jam antennas (CRPA).
+- [Assured / resilient PNT](catalog/concepts/assured-pnt.md): 255 items - Architectures that keep position, navigation and timing trustworthy under denial and deception.
+- [Timing and time transfer](catalog/concepts/timing.md): 113 items - Clocks, holdover, PTP/NTP, GNSS-disciplined oscillators, chip-scale atomic clocks.
 - [Inertial navigation (INS/IMU)](catalog/concepts/ins.md): 134 items - Strapdown mechanization, IMU error models, calibration, dead reckoning.
 - [Sensor fusion and state estimation](catalog/concepts/sensor-fusion.md): 218 items - Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integration.
 - [GNSS/INS integration](catalog/concepts/gnss-ins.md): 70 items - Loosely, tightly and deeply coupled GNSS/INS.
@@ -140,12 +141,12 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [Underwater navigation](catalog/concepts/underwater-nav.md): 28 items - DVL, USBL/LBL acoustics, AUV navigation, underwater SLAM.
 - [Ground vehicle autonomy](catalog/concepts/ground-vehicle-nav.md): 66 items - UGV/off-road autonomy stacks, localization and navigation for ground robots.
 - [Space and orbital navigation](catalog/concepts/space-nav.md): 38 items - Orbit determination, LEO-PNT, spacecraft navigation.
-- [Simulation and HIL/SITL](catalog/concepts/simulation.md): 118 items - Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simulators.
+- [Simulation and HIL/SITL](catalog/concepts/simulation.md): 120 items - Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simulators.
 - [Datasets and benchmarks](catalog/concepts/datasets-benchmarks.md): 205 items - Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [ROS / ROS 2 robotics middleware](catalog/concepts/ros.md): 104 items - ROS ecosystem packages for navigation and localization.
 - [Onboard / edge AI perception](catalog/concepts/edge-ai.md): 77 items - Detection, segmentation, depth on embedded hardware supporting navigation.
 - [Tracking and data association](catalog/concepts/target-tracking.md): 32 items - Multi-target tracking, MHT/JPDA, track fusion (for nav-relevant awareness, not weapon guidance).
-- [Counter-UAS and drone detection](catalog/concepts/counter-uas.md): 79 items - Detecting, tracking and identifying drones (Remote ID, RF, radar, vision) - defensive.
+- [Counter-UAS and drone detection](catalog/concepts/counter-uas.md): 78 items - Detecting, tracking and identifying drones (Remote ID, RF, radar, vision) - defensive.
 - [Electronic warfare resilience](catalog/concepts/ew-resilience.md): 92 items - Operating comms and navigation under EW: spectrum monitoring, LPI/LPD links, fallback modes.
 - [Standards and interface specs](catalog/concepts/standards.md): 105 items - ICDs, STANAGs, RTCM, NMEA, MAVLink, CoT, ASTERIX, interoperability specs.
 - [Policy, export control and ethics](catalog/concepts/policy-ethics.md): 41 items - ITAR/EAR, dual-use rules, PNT policy, responsible military AI.

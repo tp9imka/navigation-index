@@ -48,6 +48,7 @@ The standard Linux implementation of IEEE 1588 PTP: ptp4l (boundary/ordinary/tra
 - [PTPsec](../../catalog/repos/tum-esi__ptpsec.md) (extends)
 - [IEEE 1588-2019: IEEE Standard for a Precision Clock Synchronization Protocol for Networked Measurement and Control Systems](../../catalog/resources/ieee-1588-2019.md) (has_code)
 - [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../../catalog/samples/timing-holdover.md) (explains)
+- [Network of GNSS-disciplined clocks: holdover from peers, spoof isolation by cross-node consistency, ADEV-weighted ensemble](../../catalog/samples/timing-network-holdover.md) (explains)
 
 _Indexed by lane(s): timing_
 
