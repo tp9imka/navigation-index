@@ -12,5 +12,8 @@
     {"id": "repo:brian7704/opentakserver", "rel": "explains"},
     {"id": "repo:tak-product-center/atak-civ", "rel": "explains"}
   ],
-  "verified": "Ran 2026-11-06: 11 unittest cases OK with python3.14.7 stdlib (geo, Kraken JSON/CSV parsing incl. HTTP poll against a local server, triangulation, ellipse, CoT build, UDP send to localhost); locate.py --method all ran with Python 3.12.14 + stonesoup 1.9.1 on synthetic data, outputs in README. Not run: a live KrakenSDR, the websocket listener (needs websockets), and rendering of the CoT ellipse on an ATAK/WinTAK client (ellipse angle convention unverified)."
+  "verified": "Ran 2026-11-06: 11 unittest cases OK with python3.14.7 stdlib (geo, Kraken JSON/CSV parsing incl. HTTP poll against a local server, triangulation, ellipse, CoT build, UDP send to localhost); locate.py --method all ran with Python 3.12.14 + stonesoup 1.9.1 on synthetic data, outputs in README. Not run: a live KrakenSDR, the websocket listener (needs websockets), and rendering of the CoT ellipse on an ATAK/WinTAK client (ellipse angle convention unverified).",
+  "verified_status": "ran",
+  "deps": "stdlib",
+  "first_command": "python3 locate.py"
 }

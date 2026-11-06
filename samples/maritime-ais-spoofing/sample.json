@@ -15,5 +15,8 @@
     {"id": "res:itu-r-m1371-ais", "rel": "explains"},
     {"id": "res:dlr-r-mode-baltic", "rel": "explains"}
   ],
-  "verified": "Ran 2026-11-06: run.py with python 3.12.14 (pyais 3.3.1, pandas 3.1.1, shapely 2.2.0, pyshp 3.1.6) on DMA AIS 2026-11-03 and 2026-10-20 (first ~100 MB of each zip), 3 injection seeds per day, plus a pyais NMEA encode/decode round trip with identical scores; nmea_io.py stats on the pyais tests/nmea-sample file; 19 stdlib unit tests pass on python 3.14.7, and disabling the jump, cluster, turn, on-land or SOG checks makes tests fail. Not done: CoT shown in an ATAK/WinTAK client, live NMEA stream ingestion (Kystverket stream unreachable from this network), NOAA MarineCadastre data. No real spoofing event was found in the 8.8 h analysed; detection numbers come from injected episodes."
+  "verified": "Ran 2026-11-06: run.py with python 3.12.14 (pyais 3.3.1, pandas 3.1.1, shapely 2.2.0, pyshp 3.1.6) on DMA AIS 2026-11-03 and 2026-10-20 (first ~100 MB of each zip), 3 injection seeds per day, plus a pyais NMEA encode/decode round trip with identical scores; nmea_io.py stats on the pyais tests/nmea-sample file; 19 stdlib unit tests pass on python 3.14.7, and disabling the jump, cluster, turn, on-land or SOG checks makes tests fail. Not done: CoT shown in an ATAK/WinTAK client, live NMEA stream ingestion (Kystverket stream unreachable from this network), NOAA MarineCadastre data. No real spoofing event was found in the 8.8 h analysed; detection numbers come from injected episodes.",
+  "verified_status": "ran",
+  "deps": "stdlib",
+  "first_command": "python3 -m unittest -v"
 }

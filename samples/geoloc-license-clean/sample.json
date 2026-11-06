@@ -48,5 +48,8 @@
       "rel": "explains"
     }
   ],
-  "verified": "Ran 2026-11-06 on Apple M2 Max CPU (torch 2.15.0, Python 3.12.14): download_data.py fetched NAIP 2023/2019 windows from Planetary Computer and 5 CC0 eBee frames; run_eval.py on 20 synthetic frames per case: same-map median error 0.10-0.11 m for ALIKED/DISK/SIFT+LightGlue (0.28-2.8 s/frame), cross-season 1.9-4.8 m with 13-20/20 fixes; real eBee frames vs NAIP: 1 fix out of 5 (ALIKED, 2019 map, tight prior, 11.0 m error), 0/5 in all other configs. Numbers and logs in README."
+  "verified": "Ran 2026-11-06 on Apple M2 Max CPU (torch 2.15.0, Python 3.12.14): download_data.py fetched NAIP 2023/2019 windows from Planetary Computer and 5 CC0 eBee frames; run_eval.py on 20 synthetic frames per case: same-map median error 0.10-0.11 m for ALIKED/DISK/SIFT+LightGlue (0.28-2.8 s/frame), cross-season 1.9-4.8 m with 13-20/20 fixes; real eBee frames vs NAIP: 1 fix out of 5 (ALIKED, 2019 map, tight prior, 11.0 m error), 0/5 in all other configs. Numbers and logs in README.",
+  "verified_status": "ran",
+  "deps": "venv",
+  "first_command": ".venv/bin/python download_data.py && .venv/bin/python run_eval.py --n 20"
 }

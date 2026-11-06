@@ -1,0 +1,171 @@
+# Samples
+
+Runnable starting points, grouped by problem. Each sample folder has a README (goal, run,
+results, limits) and a `sample.json` whose `verified` field says what ran, when, on which
+interpreter and on which data. Pick one from the
+[problem-statement decoder](../docs/problem-statement-decoder.md); cite its numbers from the
+[evidence matrix](../docs/evidence-matrix.md).
+
+Snapshot 2026-11-06. Hand-written from each README and `sample.json`; when a sample changes,
+update its row here too.
+
+## Columns
+
+- **Status** (`verified_status` in `sample.json`): `ran` = the documented main path was executed
+  and its output is in the README; `partial` = the main path ran, but a shipped part was only
+  syntax-checked, is a sketch, or (for `llm-mission-agent`) the LLM loop was never run against
+  the API; `sketch` = nothing ran. `pending` = being written in this round. "(derived)" =
+  the sample's `sample.json` has no `verified_status` yet; the value is read from its `verified` text.
+  Untested hardware paths (live receiver, real TAK server) are listed in each README under
+  "not verified" and do not change the status.
+- **Deps** (`deps`): what the first command needs. `stdlib` = plain `python3`, no installs;
+  `venv` = third-party Python packages (install convention below); `docker` = Docker plus the
+  images the README builds. Network downloads are noted under Runtime.
+- **First command** (`first_command`): run from `samples/<name>/`. It produces the headline
+  result or the quickest real part of it. For `venv` and `docker` samples, do the install
+  step first.
+- **Input**: `real` = recorded public data (dataset named in the README); `SITL` = real autopilot
+  firmware in simulation; `synthetic` = simulated sensors, possibly over real terrain or maps.
+  Read the evidence matrix before quoting any number as a field result.
+
+## Install convention
+
+One convention for every sample, inside the sample folder:
+
+```sh
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+.venv/bin/python <script>.py
+```
+
+or the sample's own Docker command. Never `pip install` into the global or Homebrew interpreter
+(PEP 668 refuses it on macOS, and it leaks versions between samples). `uv venv .venv` +
+`uv pip install --python .venv/bin/python -r requirements.txt` is equivalent.
+
+Where a README says something else, use the convention anyway:
+
+| Sample | README says | Do instead |
+|---|---|---|
+| mavlink-to-tak-cot, gnss-interference-monitor, gnss-ins-ekf-outage, gnss-rinex-processing, stone-soup-tracking, visual-geolocalization-lightglue | `python3 -m pip install -r requirements.txt` | the convention |
+| interference-geolocation-to-tak, remote-id-to-tak | `pip install -r requirements.txt` | the convention |
+| ardupilot-ekf3-source-switch, vio-to-mavlink-bridge | `pip install pymavlink`, no requirements.txt | `python3 -m venv .venv && .venv/bin/pip install pymavlink==2.4.50` |
+| golden-demo | `PYTHON=/path/to/venv/bin/python ./run.sh`, `pip install pymavlink==2.4.50`, no requirements.txt | same venv as above, then `PYTHON=.venv/bin/python ./run.sh --v2`; `--live` also needs geoloc-license-clean's requirements |
+| px4-sitl-gps-denial | `pip install pyulog` for `ulog_drift.py` | `.venv/bin/pip install pyulog==1.3.0`; the flight itself runs in the sitl-docker client image |
+| terrain-relative-nav-pf | `pip install rasterio` for the optional `dem_rasterio.py` | `.venv/bin/pip install rasterio` (that script is the unrun part) |
+| blind-flight-bench | `.venv/bin/pip install numpy scipy rasterio` (unpinned, no requirements.txt) | as written; it also imports `../terrain-heightmap-pf` |
+| maritime-ais-spoofing | `uv venv venv` (folder `venv`, not `.venv`) | either works; commands in its README use `venv/bin/python` |
+| relative-nav-benchmark, cuas-classifiers | `uv venv ... --python 3.12` | keep Python 3.12 (pinned wheels) |
+| llm-mission-agent | venv at the repo root (`../../.venv`) | a sample-local `.venv` works the same |
+| dismounted-foot-ins | stdlib; the pyshoe cross-check wants a separate Python 3.11 venv with numpy 1.23.5, scipy 1.10.1 | as written, only for `pyshoe_compare.py` |
+| magnav-quickstart | Julia packages inside the `julia:1.11` Docker image | as written |
+
+Unit tests: `python3 -m unittest discover` inside a sample runs with no third-party packages
+for every sample listed in [tools/stdlib-sample-tests.txt](../tools/stdlib-sample-tests.txt)
+(CI); tests that need numpy, pymavlink or pyubx2 skip. Checked on 2026-11-06 with plain
+Homebrew `python3` for all 20 listed samples: all OK. Not in that list because their tests
+need packages: osint-jamming-map, cuas-classifiers, terrain-heightmap-pf (they error without
+their venv), relative-nav-benchmark (all 5 skip).
+
+## By problem
+
+### GNSS threats: detect, map, locate, authenticate
+
+| Sample | What it shows | Status | Deps | First command | Runtime | Key measured result | Input | Concepts |
+|---|---|---|---|---|---|---|---|---|
+| [gnss-interference-monitor](gnss-interference-monitor/README.md) | Per-receiver scorer for jamming, spoofing, slow drag-off, clock drift and lost fix from u-blox telemetry; latched alarm with reasons; ADS-B NACp area map | ran | stdlib | `python3 -m unittest -v test_scorer.py test_adsb_area_map.py` | tests under 1 s | [Synthetic drag](gnss-interference-monitor/README.md#run-verified-part): static-reference mode flags a 0.02 m/s^2 drag at 38 s / 14 m; 20 h synthetic soak 0 alert epochs (CV prior). On GNSS-SDR output of simulated IQ the drag-off is caught 6-9 s after it starts | synthetic | gnss-interference, ew-resilience, assured-pnt |
+| [gnss-signal-chain](gnss-signal-chain/README.md) | File-only GPS L1 IQ chain: gps-sdr-sim => spoof/jam mixer => GNSS-SDR => scorer, four scenarios | ran | docker | `./run.sh` | 319 s incl. image build | [Drag-off](gnss-signal-chain/README.md#before--after): alert at t=89 s (CV prior) / t=86 s (static reference), 9 / 6 s after the drag starts; clean run 0 alarm epochs | synthetic | gnss-sdr, gnss-interference, simulation |
+| [osnma-authentication](osnma-authentication/README.md) | Galileo OSNMA on a real recorded I/NAV stream with unmodified OSNMAlib under 10 manipulations; adapter turns auth status into scorer alerts | ran (derived) | stdlib | `python3 -m unittest -v test_osnma_adapter.py && python3 demo_adapter.py` | 11 scenarios ~8 s (OSNMAlib venv, Python 3.10-3.12) | [Real 76 min recording](osnma-authentication/README.md#results-on-the-real-recording-ran-2026-11-06): clean 4711 tags, 0 failures; forged nav bit => 277 tag failures; replay without an independent clock and 3 s meaconing authenticate normally | real | gnss-interference, assured-pnt, standards |
+| [jammer-sensor-network](jammer-sensor-network/README.md) | Many cheap receivers report C/N0 drop and AGC; aggregator localizes the jammer (centroid, RSS least squares, grid Bayes, optional DF) => CoT + navdash | ran | stdlib | `python3 demo.py` | demo ~40 s, evaluate ~2 min | [16 nodes on 4 x 4 km, 6 dB shadowing](jammer-sensor-network/README.md#monte-carlo-evaluatepy-40-trials-per-row-one-10-s-snapshot-of-static-nodes): grid median 313 m, grid + 3 DF stations 40 m (40 trials) | synthetic | gnss-interference, rf-localization, situational-awareness |
+| [interference-geolocation-to-tak](interference-geolocation-to-tak/README.md) | Jammer triangulation from KrakenSDR-style DF bearings (stdlib RANSAC + Gauss-Newton, Stone Soup PF/UKF) => CoT point + 95 % ellipse | ran | stdlib | `python3 locate.py` | ls under 1 s; --method all ~40 s | [3 stations, 300 s](interference-geolocation-to-tak/README.md#run-all-of-this-was-run-on-2026-11-06): 14 m (ls), 12 m (pf), 8 m (ukf); truth inside the 95 % ellipse in every run (one seed) | synthetic | gnss-interference, rf-localization, target-tracking |
+| [osint-jamming-map](osint-jamming-map/README.md) | Free OSINT layers for one day over the SE Baltic: ADS-B NACp hexes vs Sentinel-1 C-band RFI | ran | venv | `.venv/bin/python adsb_hexmap.py && .venv/bin/python s1_rfi.py && .venv/bin/python make_map.py` | S-1 ~8 min; ADS-B download 600-750 MB | [ADS-B](osint-jamming-map/README.md#ads-b-outadsb_summaryjson): 110 of 129 aircraft NACp < 8 vs 19 of 879 in a NL/DE control; Sentinel-1 layer did not agree with it | real | gnss-interference, situational-awareness, ew-resilience |
+| [gnss-rinex-processing](gnss-rinex-processing/README.md) | RTKLIB demo5 SPP/RTK and gnss_lib_py WLS on public NOAA CORS RINEX, scored against the NGS coordinate | ran | docker | `./fetch_data.sh && ./run_in_docker.sh` | ~7 min image build, ~100 s glp | [RTK](gnss-rinex-processing/README.md#observed-results-2026-11-06) 0.084 / 0.055 / 0.071 m E/N/U rms, 97 % fix; SPP 0.62 / 1.24 / 1.02 m | real | gnss, gnss-rtk-ppp, geodesy |
+
+### Integrity and GNSS-loss response on a vehicle
+
+| Sample | What it shows | Status | Deps | First command | Runtime | Key measured result | Input | Concepts |
+|---|---|---|---|---|---|---|---|---|
+| [golden-demo](golden-demo/README.md) | ArduCopter SITL survey, GPS dragged (position or coherent); companion detects with SS + velocity test against real geoloc, switches EKF3 to ExternalNav; dashboard replay; 52-flight Monte Carlo | ran | docker | `PYTHON=.venv/bin/python ./run.sh --v2` | v2 ~8 min; MC 20 min | [52 flights](golden-demo/README.md#v2-monte-carlo-ran-2026-11-06-52-flights): 24/24 monitor flights detected, 0/4 false alarms without spoof; coherent 1 m/s median TTD 2.8 s; max deviation 5.4-18.6 m (one 29.1 m) vs 24.5-86.9 m without the monitor | SITL | assured-pnt, gnss-interference, simulation |
+| [altpnt-integrity](altpnt-integrity/README.md) | Stdlib EKF (INS + VIO + visual geoloc + jammed then spoofed GNSS) with solution-separation FDE, protection level, MI/HMI, Stanford diagram | ran | stdlib | `python3 altpnt_integrity.py --runs 20` | ~20 s (20 seeds) | [20 seeds, AL 50 m](altpnt-integrity/README.md#observed-output-python3147-2026-11-06): full monitor 0 MI / 0 HMI epochs at 41.7 % availability; no monitor 3217 HMI epochs | synthetic | assured-pnt, sensor-fusion, visual-geolocalization |
+| [gnss-ins-ekf-outage](gnss-ins-ekf-outage/README.md) | 2D loosely coupled GNSS/INS EKF: INS-only drift, 60 s outage, spoof walk-off vs gate and latch | ran | stdlib | `python3 ekf_outage.py` | under 1 s | [60 s outage](gnss-ins-ekf-outage/README.md#expected-output-observed-python3147-2026-11-06): EKF max 7.7 m vs INS-only 1303.8 m; the gate never alarms on drags up to 0.5 m/s | synthetic | gnss-ins, ins, sensor-fusion |
+| [ardupilot-ekf3-source-switch](ardupilot-ekf3-source-switch/README.md) | EKF3 source-set switch to ExternalNav (SITL vicon) around a GPS cut, plus a no-switch contrast run | ran | docker | `python3 source_switch.py --connect tcp:127.0.0.1:5762 --setup && python3 source_switch.py --connect tcp:127.0.0.1:5762` | ~100 s flight | [With switch](ardupilot-ekf3-source-switch/README.md#run-the-sitl-flight-ran-2026-11-06): POS_HORIZ_ABS kept 30 s without GPS; [without](ardupilot-ekf3-source-switch/README.md#contrast-run-gps-cut-without-the-source-switch): ~6 s coast, then EKF failsafe LAND | SITL | autopilot, sensor-fusion, assured-pnt |
+
+### Alt-PNT: absolute fixes
+
+| Sample | What it shows | Status | Deps | First command | Runtime | Key measured result | Input | Concepts |
+|---|---|---|---|---|---|---|---|---|
+| [visual-geolocalization-lightglue](visual-geolocalization-lightglue/README.md) | Nadir frame => orthophoto match (LightGlue, MAGSAC homography, GeoTIFF transform) => lat/lon; stdlib geometry module | ran | venv | `PYTHON=.venv/bin/python ./run_cases.sh` | ~25 s per case | [Synthetic pairs from one real ortho](visual-geolocalization-lightglue/README.md#run): 0.04-0.21 m; 30.67 m wrong fix accepted at the ortho edge | synthetic | visual-geolocalization, feature-matching, place-recognition |
+| [geoloc-license-clean](geoloc-license-clean/README.md) | Same pipeline with permissive parts only (ALIKED / DISK / SIFT + LightGlue, NAIP maps), synthetic and real eBee frames | ran | venv | `.venv/bin/python download_data.py && .venv/bin/python run_eval.py --n 20` | download ~7 min, eval ~60 min CPU | [Synthetic](geoloc-license-clean/README.md#measured-results-ran-2026-11-06) same-map 0.10-0.11 m, cross-season 1.90-4.82 m median; real eBee frames 1 of 5 fixed (11.0 m) | real | visual-geolocalization, feature-matching, assured-pnt |
+| [vpr-large-area](vpr-large-area/) | pending: being written in this round | pending | - | - | - | - | - | - |
+| [terrain-heightmap-pf](terrain-heightmap-pf/README.md) | Heightmap-gradient particle filter and radar-altimeter TERCOM on real GLO-30 terrain; v2 information gate, compass-bias state, confidence, 1 m LiDAR | ran | venv | `.venv/bin/python fetch_dem.py && .venv/bin/python run_eval.py` | fetch ~25 s, v1 ~105 s, v2 ~6 min | [v2 at 10 km](terrain-heightmap-pf/README.md#1-information-gate-never-worse-than-odometry-on-flat-terrain): median 12 m hilly, 27 m mixed, 25 m flat vs odometry 311-404 m (20 runs) | synthetic | terrain-nav, ins, sensor-fusion |
+| [terrain-relative-nav-pf](terrain-relative-nav-pf/README.md) | Stdlib SIR particle filter: biased INS + radar altimeter vs a synthetic DEM, flat-terrain control | partial | stdlib | `python3 trn_pf.py` | ~1.5 s | [Seed 7](terrain-relative-nav-pf/README.md#observed-output-python3147-2026-11-06): PF 4-25 m vs INS 380.3 m at 200 s; flat control 1-sigma 229-301 m | synthetic | terrain-nav, ins, sensor-fusion |
+| [blind-flight-bench](blind-flight-bench/README.md) | Benchmark for the 2026 Blind flight brief: 20 km radar-altimeter flights over four real GLO-30 windows, 10 navigators incl. clean-room team re-implementations | ran | venv | `.venv/bin/python regions.py && .venv/bin/python run_bench.py` | ~6 min (+ ~30 s fetch) | [Straight, 20 km](blind-flight-bench/README.md#straight-flights-all-regions-pooled): beam-aware PF 148 m median (18 % diverged) vs dead reckoning 1582 m (92 %); turns: every navigator diverges in 80-100 % of flights | synthetic | terrain-nav, assured-pnt, sensor-fusion |
+| [magnav-quickstart](magnav-quickstart/README.md) | MagNav.jl Tolles-Lawson + EKF on real SGL 2020 flight line 1006.08 | ran | docker | `docker exec magnav sh -c 'cd /work && JULIA_NUM_THREADS=1 julia --heap-size-hint=2500M --project=/work /sample/magnav_quickstart.jl /examples'` | 43 s after ~10 min install | [One 14 min line](magnav-quickstart/README.md#observed-output-2026-11-06): EKF DRMS 31.2 m vs INS-only final 218.8 m; CRLB DRMS 13 m | real | magnetic-nav, assured-pnt, ins |
+
+### Relative navigation and autopilot integration
+
+| Sample | What it shows | Status | Deps | First command | Runtime | Key measured result | Input | Concepts |
+|---|---|---|---|---|---|---|---|---|
+| [relative-nav-benchmark](relative-nav-benchmark/README.md) | KISS-ICP, OpenVINS, mono and nadir VO on KITTI 04, UZH-FPV and VPAIR, scored with evo; fitted error models fed to altpnt-integrity | ran | venv | `PY=$PWD/.venv/bin/python RELNAV_DATA=$PWD/data ./run.sh lidar` | lidar 12-20 s + 1.13 GB; OpenVINS image ~20 min | [Final drift](relative-nav-benchmark/README.md#results): KISS-ICP 0.12 % of 394 m; OpenVINS 0.26 % of 278 m; nadir VO 15.5 % image-only, 0.65 % attitude-aided over 8.98 km | real | vio, lidar-slam, datasets-benchmarks |
+| [px4-sitl-gps-denial](px4-sitl-gps-denial/README.md) | 15 s GPS denial on PX4 v1.17.0 SIH, EKF2 drift vs ground truth | ran | docker | `docker exec px4client sh -c 'cd /sample && python gps_denial_mission.py --deny-via sim-param --log /tmp/flight_log.csv'` | ~2.5 min per run | [Two runs](px4-sitl-gps-denial/README.md#observed): max horizontal error 8.37 m and 17.71 m, 12.7 s and 8.5 s to 5 m | SITL | assured-pnt, autopilot, simulation |
+| [vio-to-mavlink-bridge](vio-to-mavlink-bridge/README.md) | ENU/FLU pose => NED/FRD ODOMETRY or VISION_POSITION_ESTIMATE for EKF3 / EKF2 | partial | stdlib | `python3 bridge.py example_pose_enu.csv --dry-run` | tests 0.002 s | [EKF3](vio-to-mavlink-bridge/README.md#ardupilot-arducopter-copter-463-sitl) and [EKF2](vio-to-mavlink-bridge/README.md#px4-v1170-sih-quadrotor) fused a stationary ODOMETRY pose; no flight on vision | SITL | vio, sensor-fusion, mavlink-gcs |
+
+### C2 and situational awareness
+
+| Sample | What it shows | Status | Deps | First command | Runtime | Key measured result | Input | Concepts |
+|---|---|---|---|---|---|---|---|---|
+| [mavlink-to-tak-cot](mavlink-to-tak-cot/README.md) | MAVLink GLOBAL_POSITION_INT => CoT; stdlib builder plus pymavlink/PyTAK bridge | ran | stdlib | `python3 -m unittest -v test_cot && python3 cot.py` | tests 0.001 s | [Offline end to end](mavlink-to-tak-cot/README.md#part-2---bridge-offline-end-to-end-verified): well-formed CoT at ~1 Hz over TCP and UDP to a local sink (fake autopilot) | synthetic | situational-awareness, mavlink-gcs, standards |
+| [stone-soup-tracking](stone-soup-tracking/README.md) | Stone Soup EKF + JPDA on two simulated UAVs in radar clutter, OSPA vs truth | ran | venv | `.venv/bin/python radar_jpda_ospa.py` | not stated | [One seed](stone-soup-tracking/README.md#observed-output-stonesoup-191-python-31214-2026-11-06): 2 tracks on 2 truths, OSPA mean 17.0 m, max 53.0 m (c = 100 m) | synthetic | target-tracking, counter-uas, situational-awareness |
+
+### Counter-UAS detection
+
+| Sample | What it shows | Status | Deps | First command | Runtime | Key measured result | Input | Concepts |
+|---|---|---|---|---|---|---|---|---|
+| [remote-id-to-tak](remote-id-to-tak/README.md) | Stdlib Open Drone ID decoder validated against opendroneid-core-c, track table with plausibility flags, CoT via PyTAK | ran | stdlib | `python3 rid_to_cot.py --sim --offline --quiet` | tests 0.086 s | [Decoder](remote-id-to-tak/README.md#1-decoder-validated-against-opendroneid-core-c-ran-it) field-for-field equal to core-c on 500 + 500 vectors and 81 payloads from public captures | real | counter-uas, situational-awareness, standards |
+| [cuas-classifiers](cuas-classifiers/README.md) | UAV vs bird from real radar tracks (NRC Echodyne) and DroneRF detection / identification | ran | venv | `python3 download_data.py radar && .venv/bin/python train_radar.py --save-model out/radar_model.pkl` | radar 104-329 s; RF download ~10 min | [Radar](cuas-classifiers/README.md#1-radar-uav-vs-bird-from-tracks) balanced accuracy 0.928 (GroupKFold), 0.902-0.918 cross-site; [DroneRF](cuas-classifiers/README.md#2-rf-dronerf-detection-and-identification) detection 0.977-0.994 | real | counter-uas, target-tracking, datasets-benchmarks |
+
+### Maritime
+
+| Sample | What it shows | Status | Deps | First command | Runtime | Key measured result | Input | Concepts |
+|---|---|---|---|---|---|---|---|---|
+| [usv-gnss-denied-nav](usv-gnss-denied-nav/README.md) | USV own-ship nav in the Oresund: compass + speed-log DR, simulated radar matched to the real OSM chart, monitor excludes spoofed GNSS | see sample.json | - | see README | run.py ~2 min | [5 seeds](usv-gnss-denied-nav/README.md#results-5-seeds-real-outputs): coastal drag excluded 125-131 s after onset, max error 10-25 m vs 1391-1395 m without the monitor; 0 false alarms in 25 runs | synthetic | maritime-nav, assured-pnt, radar-nav |
+| [maritime-ais-spoofing](maritime-ais-spoofing/README.md) | Stdlib detectors for spoofing signatures in real Danish AIS; recall and TTD on injected episodes; GeoJSON + CoT | ran | stdlib | `python3 -m unittest -v` | detectors 5 s on 1.7 M fixes | [Injected episodes](maritime-ais-spoofing/README.md#results-on-injected-episodes-all-ran-2026-11-06): recall 0.79 (tuning day), 0.75 (held-out day), median TTD 7-8 s; no real spoofing found in 8.8 h | real | maritime-nav, gnss-interference, situational-awareness |
+
+### Dismounted
+
+| Sample | What it shows | Status | Deps | First command | Runtime | Key measured result | Input | Concepts |
+|---|---|---|---|---|---|---|---|---|
+| [dismounted-foot-ins](dismounted-foot-ins/README.md) | Stdlib 15-state ZUPT EKF on 36 real pyshoe trials, cross-checked with pyshoe; corridor heading, floor, simulated UWB; CoT/navdash | ran | stdlib | `sh fetch_data.sh && python3 run_hallway.py data/hallway --tables filter,detectors,aiding --jobs 8` | ~12 min on 11 workers | [36 trials](dismounted-foot-ins/README.md#result-1-stdlib-filter-vs-pyshoe-shoe-g--85e7-w--5-all-36-trials): 2.35 m ARMSE, 1.30 % final error (pyshoe 2.51 m, 1.49 %); [aided](dismounted-foot-ins/README.md#result-3-aiding-ins15_py--shoe-85e7-all-36-trials) 1.07 m, 0.83 % | real | indoor-pedestrian, ins, sensor-fusion |
+
+### Swarm
+
+| Sample | What it shows | Status | Deps | First command | Runtime | Key measured result | Input | Concepts |
+|---|---|---|---|---|---|---|---|---|
+| [swarm-coop-localization](swarm-coop-localization/README.md) | 6 vehicles, 2 with GNSS, UWB ranging: centralized EKF vs covariance intersection, robust ranging, spoofed-anchor detection | ran | stdlib | `python3 coop_loc.py` | ~10 s | [10 seeds](swarm-coop-localization/README.md#results-10-seeds): central robust team RMSE 2.0 m vs dead reckoning 49.1 m; solution separation detects the spoofed anchor in 9/10 with 1 false alarm | synthetic | multi-agent, rf-localization, sensor-fusion |
+
+### Timing
+
+| Sample | What it shows | Status | Deps | First command | Runtime | Key measured result | Input | Concepts |
+|---|---|---|---|---|---|---|---|---|
+| [timing-holdover](timing-holdover/README.md) | GNSS-disciplined oscillator sim (TCXO / CSAC / OCXO / Rb): holdover error after outage, slow time-walk spoof vs internal and cross-source monitors | ran | stdlib | `python3 timing_holdover.py` | ~5 s | [24 h holdover](timing-holdover/README.md#output-ran-on-2026-11-06-python-3147-default-arguments-about-5-s), median: TCXO 59.58 us, CSAC 1.27 us, OCXO 610.0 ns, Rb 43.8 ns (no temperature term) | synthetic | timing, assured-pnt, gnss-interference |
+
+### LLM agents
+
+| Sample | What it shows | Status | Deps | First command | Runtime | Key measured result | Input | Concepts |
+|---|---|---|---|---|---|---|---|---|
+| [llm-agent-usage](llm-agent-usage/README.md) | The hub's stdlib MCP server (search / show / concept / neighbors) piped a demo session; client registration snippets | ran | stdlib | `python3 ../../tools/mcp_server.py < demo_requests.jsonl` | not stated | [Demo session](llm-agent-usage/README.md): 7 JSON-RPC responses (functional check, no metric) | - | llm-agents-robotics |
+| [llm-mission-agent](llm-mission-agent/README.md) | Safety-gated MAVLink MCP server (geofence, altitude band, mode allowlist, dry run) flying ArduCopter SITL; Claude tool-use loop included but not run | partial | docker | `../../.venv/bin/python run_transcript.py --scenario flight --connect tcp:127.0.0.1:5762 --sim-connect tcp:127.0.0.1:5763` | 126 s scripted flight | [Scripted MCP client](llm-mission-agent/README.md#what-was-verified-2026-11-06): takeoff, survey upload, GPS loss => degraded health => ExternalNav switch => RTL; fence and altitude rejections fired | SITL | llm-agents-robotics, mavlink-gcs, mission-planning |
+
+### Infrastructure
+
+| Sample | What it shows | Status | Deps | First command | Runtime | Key measured result | Input | Concepts |
+|---|---|---|---|---|---|---|---|---|
+| [sitl-docker](sitl-docker/README.md) | Headless ArduCopter 4.6.3 SITL and PX4 v1.17.0 SIH images, compose file, client image | ran | docker | `docker compose up -d ardupilot px4` | builds ~8.5 min / ~26 min | [Images](sitl-docker/README.md#what-was-verified-2026-11-06-docker-2952-apple-silicon-linuxarm64): ArduPilot 1.85 GB, PX4 214 MB, client 558 MB; both stacks flew the other samples | - | simulation, autopilot, mavlink-gcs |
+
+## Known inconsistencies in sample docs (2026-11-06)
+
+- px4-sitl-gps-denial: README shows `ulog_drift.py` output "ran on run B"; `sample.json`
+  `verified` says it was not run. The README output is the more specific record.
+- golden-demo: README says the unit tests import pymavlink; the code guards that import and
+  skips 2 tests without it (17 tests, 2 skipped on plain python3). Its "Limits" mention p90,
+  the Monte Carlo tables show min / median / max only.
+- jammer-sensor-network: "What the numbers say" gives 739 m for the two-jammer single-source
+  fit; the scenario table gives 889 m (grid) and 576 m (weighted centroid).

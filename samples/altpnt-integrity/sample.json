@@ -11,5 +11,8 @@
     {"id": "repo:borglab/gtsam", "rel": "explains"},
     {"id": "repo:arplaboratory/uasthn", "rel": "explains"}
   ],
-  "verified": "ran with python3.14.7 stdlib on 2026-11-06: default run, --magnav, --no-gnss, --al-sweep, 20-seed Monte Carlo for 8 configurations, CSV and SVG writers (SVG rendered with macOS qlmanage and inspected); 15 unit tests pass (python3 -m unittest), and the detection tests were confirmed to fail with detection disabled. Synthetic data only; no real flight log or indexed repo was run."
+  "verified": "ran with python3.14.7 stdlib on 2026-11-06: default run, --magnav, --no-gnss, --al-sweep, 20-seed Monte Carlo for 8 configurations, CSV and SVG writers (SVG rendered with macOS qlmanage and inspected); 15 unit tests pass (python3 -m unittest), and the detection tests were confirmed to fail with detection disabled. Synthetic data only; no real flight log or indexed repo was run.",
+  "verified_status": "ran",
+  "deps": "stdlib",
+  "first_command": "python3 altpnt_integrity.py --runs 20"
 }

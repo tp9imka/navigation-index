@@ -72,5 +72,8 @@
       "rel": "explains"
     }
   ],
-  "verified": "ran with python3.14.7 stdlib on 2026-11-06: nominal and spoof scenarios, each range-only and with bearings (seed 1), and 10-seed Monte Carlo for all four; outputs saved in out/ and pasted in README. 20 unittest tests pass; mutations (SS gate disabled, robust weighting disabled) make the detection and robust-ranging tests fail. Synthetic data only: NLOS, comms and odometry models are stated assumptions, no UWB dataset or hardware was used, and none of the related repos was run."
+  "verified": "ran with python3.14.7 stdlib on 2026-11-06: nominal and spoof scenarios, each range-only and with bearings (seed 1), and 10-seed Monte Carlo for all four; outputs saved in out/ and pasted in README. 20 unittest tests pass; mutations (SS gate disabled, robust weighting disabled) make the detection and robust-ranging tests fail. Synthetic data only: NLOS, comms and odometry models are stated assumptions, no UWB dataset or hardware was used, and none of the related repos was run.",
+  "verified_status": "ran",
+  "deps": "stdlib",
+  "first_command": "python3 coop_loc.py"
 }

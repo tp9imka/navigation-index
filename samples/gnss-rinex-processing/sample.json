@@ -10,5 +10,8 @@
     {"id": "repo:stanford-navlab/gnss_lib_py", "rel": "uses"},
     {"id": "repo:geospace-code/georinex", "rel": "uses"}
   ],
-  "verified": "ran on 2026-11-06 on real NOAA NGS CORS data (P730 rover, P731 base, 2024-04-09 12:00-14:00 GPST, GPS only, 241 epochs): RTKLIB demo5 v2.5.1 built in Docker (docker/Dockerfile) gave SPP E/N/U rms 0.62/1.24/1.02 m and RTK 0.084/0.055/0.071 m with 97% fix, scored by compare_pos.py against the propagated ITRF2020 sheet; gnss_lib_py 1.1.0 WLS (glp_spp.py, after fixing a GPST-vs-UTC epoch tag, per-chunk ephemeris selection and transmit-time SV states) gave 0.65/1.28/1.10 m. compare_pos.py's 4 unit tests ran with python3.14.7. Not verified: other days/stations, multi-GNSS, PPP, antenna phase-centre models, a native (non-Docker) RTKLIB build."
+  "verified": "ran on 2026-11-06 on real NOAA NGS CORS data (P730 rover, P731 base, 2024-04-09 12:00-14:00 GPST, GPS only, 241 epochs): RTKLIB demo5 v2.5.1 built in Docker (docker/Dockerfile) gave SPP E/N/U rms 0.62/1.24/1.02 m and RTK 0.084/0.055/0.071 m with 97% fix, scored by compare_pos.py against the propagated ITRF2020 sheet; gnss_lib_py 1.1.0 WLS (glp_spp.py, after fixing a GPST-vs-UTC epoch tag, per-chunk ephemeris selection and transmit-time SV states) gave 0.65/1.28/1.10 m. compare_pos.py's 4 unit tests ran with python3.14.7. Not verified: other days/stations, multi-GNSS, PPP, antenna phase-centre models, a native (non-Docker) RTKLIB build.",
+  "verified_status": "ran",
+  "deps": "docker",
+  "first_command": "./fetch_data.sh && ./run_in_docker.sh"
 }

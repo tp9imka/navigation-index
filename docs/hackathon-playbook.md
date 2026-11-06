@@ -13,12 +13,16 @@ Version 2, 2026-11-06. New since v1: each project idea links its
 (1.1); the prep checklist uses the measured pre-download shortlist; known traps (PX4 v1.17.0
 vs `main`, ArduPilot 4.6 vs 4.7 params, `mavsdk` vs `mavsdk-grpc`, non-commercial SuperPoint
 weights, Oxford RobotCar withdrawn, EuRoC moved and rate-limited) are folded in where they bite.
+Updated 2026-11-06 (v2.1): every idea's "Start" points at the sample that already builds it;
+see the quick picker's last column.
 
 Companion docs:
 
 - [reference-stacks.md](reference-stacks.md) - "if you only have X, use Y", with a license column.
 - [day0-runbook.md](day0-runbook.md) - the first 3 hours after the problem statement drops.
-- [problem-statement-decoder.md](problem-statement-decoder.md) - 26 likely statements => approach, stack, data, sample, risk, pitch.
+- [problem-statement-decoder.md](problem-statement-decoder.md) - 26 likely statements => approach, stack, data, sample, risk, pitch. Start here when the statement drops.
+- [samples/README.md](../samples/README.md) - every sample by problem: status, deps, first command, key result.
+- [evidence-matrix.md](evidence-matrix.md) - every measured number across samples, real vs simulated input.
 - [landscape/](landscape/README.md) - what vendors already sell and what funders ask for.
 - [templates/](../templates/README.md) - project skeleton, threat model, demo script, pitch outline, self-assessment.
 
@@ -78,14 +82,14 @@ reachable it is in 48h:
 
 | Differentiator | Why it is rare | How to show it in 48h | Kit |
 |---|---|---|---|
-| **Integrity monitoring: know when the fix is wrong** | No vendor publishes how its visual or magnetic fix fails, or a false-alarm / missed-detection rate ([landscape](landscape/README.md#where-a-hackathon-team-can-still-add-something)). DASA asks for "AI for spoofing detection and multi-source fusion" ([programs](landscape/programs-and-challenges.md)). | A monitor in front of the filter that rejects a spoofed GNSS fix or a wrong visual match, with time-to-detect, false alarms and "misleading %" measured on recorded data. Show the rejected input on screen. | [project-repo](../templates/project-repo/) (`IntegrityMonitor`, metrics incl. misleading %), [gnss-ins-ekf-outage](../samples/gnss-ins-ekf-outage/), [gnss_lib_py card](integration-cards/stanford-navlab__gnss_lib_py.md) (FDE), [OSNMAlib card](integration-cards/algafix__osnma.md) |
+| **Integrity monitoring: know when the fix is wrong** | No vendor publishes how its visual or magnetic fix fails, or a false-alarm / missed-detection rate ([landscape](landscape/README.md#where-a-hackathon-team-can-still-add-something)). DASA asks for "AI for spoofing detection and multi-source fusion" ([programs](landscape/programs-and-challenges.md)). | A monitor in front of the filter that rejects a spoofed GNSS fix or a wrong visual match, with time-to-detect, false alarms and "misleading %" measured on recorded data. Show the rejected input on screen. | [golden-demo](../samples/golden-demo/), [altpnt-integrity](../samples/altpnt-integrity/), [project-repo](../templates/project-repo/) (`IntegrityMonitor`, metrics incl. misleading %), [gnss-ins-ekf-outage](../samples/gnss-ins-ekf-outage/), [gnss_lib_py card](integration-cards/stanford-navlab__gnss_lib_py.md) (FDE), [OSNMAlib card](integration-cards/algafix__osnma.md) |
 | **Honest uncertainty, not just a dot** | Filters under slow spoofing report a confidence radius smaller than the true error. The template's own synthetic run shows it: a 95% radius of 8.2 m against a true error of 10.1 m ([templates README](../templates/README.md)). | Plot reported uncertainty vs true error over the attack; push it to TAK as CoT `ce`/`le` so operators see it grow. | [PyTAK card](integration-cards/snstac__pytak.md), [evo card](integration-cards/michaelgrupp__evo.md) |
 | **Measured numbers on open data, failure cases included** | Vendors quote RNP levels or "x times better than INS", never error on a shared dataset ([products](landscape/gnss-denied-nav-products.md#reading-the-table)). | Error vs distance on a public set from the [shortlist](#63-datasets-to-pre-download), plus the case where it breaks (night, water, flat terrain, map age). | [dataset cards](dataset-cards/README.md), [evo card](integration-cards/michaelgrupp__evo.md) |
 | **GNSS loss and link loss together** | Ukrainian sources treat EW as layered: control uplink, video downlink and GNSS are jammed together, so most fielded designs assume no GNSS *and* no link ([UA/RU overview](landscape/ua-ru-sources-overview.md)). English demos usually keep a perfect datalink. | Cut the GCS link in SITL at the same time as GNSS; show the vehicle keeps a bounded estimate and a defined behaviour (RTH, loiter) onboard. | [ArduPilot card](integration-cards/ardupilot__ardupilot.md), [sitl-docker](../samples/sitl-docker/) |
 | **Route for navigability** | Planners route for distance and threat. Coupling the planner to where the matcher or TRN works shows up in Russian/Belarusian papers, rarely in English VPS work ([UA/RU overview](landscape/ua-ru-sources-overview.md)). | Idea 14: navigability cost map (texture, terrain roughness, interference cells) => two routes flown in SITL with GNSS off => error at goal. | [Rasterio card](integration-cards/rasterio__rasterio.md), [GDAL card](integration-cards/osgeo__gdal.md) |
 | **Drop-in integration, not a new autopilot** | Funders ask for "plug-in replacement for COTS GNSS" (DASA). A working SITL loop beats a slide. | Feed your estimate as `GPS_INPUT`, external vision or PX4 aux global position; show the EKF accepting it and the GCS showing the source in use. | [MAVProxy card](integration-cards/ardupilot__mavproxy.md) (`GPSInput`), [px4-ros2-interface-lib card](integration-cards/auterion__px4-ros2-interface-lib.md), [vio-to-mavlink-bridge](../samples/vio-to-mavlink-bridge/) |
 | **A labelled replay set as a deliverable** | No open, labelled, multi-constellation spoofing dataset with raw observables (not IQ) turned up beyond Jammertest participant releases ([dataset gaps](dataset-cards/README.md#gaps)). | Label onset and end of each event in the Jammertest data you used, publish the labels with your detector. | [Jammertest card](dataset-cards/jammertest-data.md) |
-| **Detect-and-warn for others** | Fits UK GNSS-warning and Jammertest themes; needs no special hardware. | Ideas 1-3: fleet or crowd interference map from receivers, phones, ADS-B or AIS, with "no data" shown differently from "no interference". | [readsb card](integration-cards/wiedehopf__readsb.md), [gnss-interference-monitor](../samples/gnss-interference-monitor/) |
+| **Detect-and-warn for others** | Fits UK GNSS-warning and Jammertest themes; needs no special hardware. | Ideas 1-3: fleet or crowd interference map from receivers, phones, ADS-B or AIS, with "no data" shown differently from "no interference". | [readsb card](integration-cards/wiedehopf__readsb.md), [gnss-interference-monitor](../samples/gnss-interference-monitor/), [jammer-sensor-network](../samples/jammer-sensor-network/), [maritime-ais-spoofing](../samples/maritime-ais-spoofing/) |
 
 Avoid: claiming accuracy you did not measure; depending on quantum sensors, FOG IMUs or LEO
 PNT signals you cannot access; any live GNSS transmission; targeting framing.
@@ -162,28 +166,28 @@ through a cable or shielded enclosure, never over the air.
 
 ### Quick picker
 
-| # | Idea | Risk | Hardware needed | Platform |
-|---|---|---|---|---|
-| 1 | GNSS interference monitor => TAK overlay | low | u-blox receiver or Android phone | any |
-| 2 | ADS-B-derived interference map for your region | low | RTL-SDR (optional) | air picture |
-| 3 | AIS track-plausibility spoofing detector | low | none (RTL-SDR optional) | USV / maritime |
-| 4 | Android raw GNSS spoofing detector | low-medium | Android phone (optional) | dismounted |
-| 5 | INS holdover budget calculator | low | none | any |
-| 6 | Nav-integrity incident reporter (LLM over flight logs) | low | none | UAS |
-| 7 | MAVLink MCP server with guardrails | low-medium | none (SITL) | UAS |
-| 8 | Authenticate-or-alarm pipeline with OSNMA | medium | none (u-blox optional) | any |
-| 9 | Spoof-aware source switching in ArduPilot SITL | medium | none (SITL) | small UAS |
-| 10 | VIO => PX4 GPS-free flight with measured drift | medium | none (SITL) | small UAS |
-| 11 | Terrain-relative navigation over a real DEM | medium | none | fixed-wing |
-| 12 | Maritime multi-source position integrity in Signal K | medium | none | USV |
-| 13 | Radio-ranging return-to-home | medium | UWB or LoRa radios (optional) | small UAS |
-| 14 | LLM agent that plans GNSS-denied routes | medium | none | UAS / UGV |
-| 15 | Celestial heading and attitude backup | medium | camera (optional) | USV / fixed-wing |
-| 16 | MagNav compensation sprint | medium-high | none | fixed-wing |
-| 17 | UUV DVL + USBL navigation in sim | medium-high | none | UUV |
-| 18 | Visual geolocalization fused with VO | high | laptop GPU | fixed-wing / UAS |
-| 19 | Cooperative localization for a small team | high | none (sim) or Crazyflies | swarm |
-| 20 | Real-time visual geolocalization on Jetson | high | Jetson + camera | UAS |
+| # | Idea | Risk | Hardware needed | Platform | Start from (sample) |
+|---|---|---|---|---|---|
+| 1 | GNSS interference monitor => TAK overlay | low | u-blox receiver or Android phone | any | [gnss-interference-monitor](../samples/gnss-interference-monitor/), [jammer-sensor-network](../samples/jammer-sensor-network/) |
+| 2 | ADS-B-derived interference map for your region | low | RTL-SDR (optional) | air picture | [osint-jamming-map](../samples/osint-jamming-map/), `adsb_area_map.py` |
+| 3 | AIS track-plausibility spoofing detector | low | none (RTL-SDR optional) | USV / maritime | [maritime-ais-spoofing](../samples/maritime-ais-spoofing/) |
+| 4 | Android raw GNSS spoofing detector | low-medium | Android phone (optional) | dismounted | [gnss-rinex-processing](../samples/gnss-rinex-processing/) (baseline only) |
+| 5 | INS holdover budget calculator | low | none | any | [gnss-ins-ekf-outage](../samples/gnss-ins-ekf-outage/), [timing-holdover](../samples/timing-holdover/) |
+| 6 | Nav-integrity incident reporter (LLM over flight logs) | low | none | UAS | [llm-mission-agent](../samples/llm-mission-agent/) (`nav_health.py`) |
+| 7 | MAVLink MCP server with guardrails | low-medium | none (SITL) | UAS | [llm-mission-agent](../samples/llm-mission-agent/) |
+| 8 | Authenticate-or-alarm pipeline with OSNMA | medium | none (u-blox optional) | any | [osnma-authentication](../samples/osnma-authentication/) |
+| 9 | Spoof-aware source switching in ArduPilot SITL | medium | none (SITL) | small UAS | [golden-demo](../samples/golden-demo/) |
+| 10 | VIO => PX4 GPS-free flight with measured drift | medium | none (SITL) | small UAS | [relative-nav-benchmark](../samples/relative-nav-benchmark/), [vio-to-mavlink-bridge](../samples/vio-to-mavlink-bridge/) |
+| 11 | Terrain-relative navigation over a real DEM | medium | none | fixed-wing | [terrain-heightmap-pf](../samples/terrain-heightmap-pf/), [blind-flight-bench](../samples/blind-flight-bench/) |
+| 12 | Maritime multi-source position integrity in Signal K | medium | none | USV | [usv-gnss-denied-nav](../samples/usv-gnss-denied-nav/) |
+| 13 | Radio-ranging return-to-home | medium | UWB or LoRa radios (optional) | small UAS | [ardupilot-ekf3-source-switch](../samples/ardupilot-ekf3-source-switch/) (no ranging yet) |
+| 14 | LLM agent that plans GNSS-denied routes | medium | none | UAS / UGV | [llm-mission-agent](../samples/llm-mission-agent/) (`plan_survey`) |
+| 15 | Celestial heading and attitude backup | medium | camera (optional) | USV / fixed-wing | none |
+| 16 | MagNav compensation sprint | medium-high | none | fixed-wing | [magnav-quickstart](../samples/magnav-quickstart/) |
+| 17 | UUV DVL + USBL navigation in sim | medium-high | none | UUV | none ([gnss-ins-ekf-outage](../samples/gnss-ins-ekf-outage/) pattern) |
+| 18 | Visual geolocalization fused with VO | high | laptop GPU | fixed-wing / UAS | [geoloc-license-clean](../samples/geoloc-license-clean/), [golden-demo](../samples/golden-demo/) v2 |
+| 19 | Cooperative localization for a small team | high | none (sim) or Crazyflies | swarm | [swarm-coop-localization](../samples/swarm-coop-localization/) |
+| 20 | Real-time visual geolocalization on Jetson | high | Jetson + camera | UAS | [geoloc-license-clean](../samples/geoloc-license-clean/) (CPU timings) |
 
 ---
 
@@ -193,7 +197,7 @@ through a cable or shielded enclosure, never over the air.
 - **Why it matters:** Interference awareness is the first layer of resilience ([NAVGUARD](../catalog/resources/edf21-navguard-factsheet.md) funds exactly this; [EASA/IATA plan](../catalog/resources/easa-iata-gnss-interference-plan-2025.md) calls for better civil-military sharing of interference data). Units need to know "GNSS here is not trustworthy" before they rely on it.
 - **Stack:** [pyubx2](../catalog/repos/semuconsulting__pyubx2.md) (MON-RF jamming indicator, NAV-STATUS spoof flags, C/N0), [PyGPSClient](../catalog/repos/semuconsulting__pygpsclient.md) for bench viewing, [PyTAK](../catalog/repos/snstac__pytak.md) for CoT, [OpenTAKServer](../catalog/repos/brian7704__opentakserver.md) or [GoATAK](../catalog/repos/kdudkov__goatak.md) web client, [milsymbol](../catalog/repos/spatialillusions__milsymbol.md). Phone alternative: [Android detection APIs](../catalog/resources/android-gnss-spoof-jam-detection.md). Sample: [gnss-interference-monitor](../samples/gnss-interference-monitor/) (`ubx_monitor.py`, plus a scorer); CoT plumbing: [mavlink-to-tak-cot](../samples/mavlink-to-tak-cot/).
 - **Data:** [Jammertest](../catalog/resources/jammertest-norway.md) participant recordings for replay; [multi-frequency spoofing dataset](../catalog/repos/s7am1na__gnss-spoofing-dataset.md).
-- **Kit:** Cards [pyubx2](integration-cards/semuconsulting__pyubx2.md) (MON-RF / NAV-STATUS / NAV-PVT flags), [PyTAK](integration-cards/snstac__pytak.md) (`ce`/`le` for uncertainty), [OpenTAKServer](integration-cards/brian7704__opentakserver.md), [GoATAK](integration-cards/kdudkov__goatak.md), [milsymbol](integration-cards/spatialillusions__milsymbol.md). Data [Jammertest](dataset-cards/jammertest-data.md) (VAARA 1.57 GB + one Fraunhofer chunk pair 2.9 GB), [TEXBAT](dataset-cards/texbat.md) (cleanStatic80 8.0 GB). Start: [project-repo](../templates/project-repo/) already has a chi-square `IntegrityMonitor` and a `CotPublisher`; write a UBX-replay `PoseSource`. Fill [threat-model](../templates/threat-model.md) on day 0.
+- **Kit:** Cards [pyubx2](integration-cards/semuconsulting__pyubx2.md) (MON-RF / NAV-STATUS / NAV-PVT flags), [PyTAK](integration-cards/snstac__pytak.md) (`ce`/`le` for uncertainty), [OpenTAKServer](integration-cards/brian7704__opentakserver.md), [GoATAK](integration-cards/kdudkov__goatak.md), [milsymbol](integration-cards/spatialillusions__milsymbol.md). Data [Jammertest](dataset-cards/jammertest-data.md) (VAARA 1.57 GB + one Fraunhofer chunk pair 2.9 GB), [TEXBAT](dataset-cards/texbat.md) (cleanStatic80 8.0 GB). Start: [gnss-interference-monitor](../samples/gnss-interference-monitor/) (scorer with latched alarm and reasons, pyubx2 replay) for one node; [jammer-sensor-network](../samples/jammer-sensor-network/) for many nodes => map + CoT. Fill [threat-model](../templates/threat-model.md) on day 0.
 - **Demo plan:** Replay a Jammertest log (or cabled GPS-SDR-SIM into the receiver) => monitor flags jamming, then spoofing => a hazard polygon with timestamp and confidence appears in TAK.
 - **Stretch:** Several monitors => coarse emitter area by intersecting affected regions ([Defense News](../catalog/resources/defensenews-baltic-jamming-origins-2025.md) shows distributed monitors work).
 - **Risk:** Live jamming not available at the venue; mitigate with replay. Thresholds tuned on one receiver model do not transfer.
@@ -204,7 +208,7 @@ through a cable or shielded enclosure, never over the air.
 - **Why it matters:** ADS-B is a free, existing sensor network for interference awareness ([Inside GNSS](../catalog/resources/insidegnss-adsb-interference-mapping.md), [Bellingcat toolkit](../catalog/resources/bellingcat-toolkit-gpsjam.md)); aircraft integrity reports reveal denial areas around conflict zones.
 - **Stack:** [readsb](../catalog/repos/wiedehopf__readsb.md) on an RTL-SDR, [pyModeS](../catalog/repos/junzis__pymodes.md) for NIC/NACp, [OpenSky API](../catalog/repos/openskynetwork__opensky-api.md) for wider coverage, [ADSBCOT](../catalog/repos/snstac__adsbcot.md), [deck.gl](../catalog/repos/visgl__deck.gl.md) hex layer or [tar1090](../catalog/repos/wiedehopf__tar1090.md) colored by NIC. Sample: `adsb_area_map.py` in [gnss-interference-monitor](../samples/gnss-interference-monitor/) bins readsb snapshots with the GPSJam formula.
 - **Data:** OpenSky historical state vectors; [Flightradar24 jamming map](../catalog/resources/fr24-gps-jamming-map.md) and GPSJam as cross-check.
-- **Kit:** Cards [readsb](integration-cards/wiedehopf__readsb.md) (`aircraft.json` NIC/NACp/SIL and `gpsOkBefore`), [PyTAK](integration-cards/snstac__pytak.md), [Stone Soup](integration-cards/dstl__stone-soup.md) (ADS-B readers). No dataset card: OpenSky historical states are the data, and OpenSky dropped basic auth for OAuth2 client credentials in March 2026. Start: [project-repo](../templates/project-repo/) publishers.
+- **Kit:** Cards [readsb](integration-cards/wiedehopf__readsb.md) (`aircraft.json` NIC/NACp/SIL and `gpsOkBefore`), [PyTAK](integration-cards/snstac__pytak.md), [Stone Soup](integration-cards/dstl__stone-soup.md) (ADS-B readers). No dataset card: OpenSky historical states are the data, and OpenSky dropped basic auth for OAuth2 client credentials in March 2026. Start: [osint-jamming-map](../samples/osint-jamming-map/) (ADS-B NACp hexes, ran on a real day over the Baltic) and `adsb_area_map.py` in [gnss-interference-monitor](../samples/gnss-interference-monitor/).
 - **Demo plan:** Pick a known day of Baltic interference ([Spire report](../catalog/resources/spire-gnss-interference-russia-kaliningrad.md)) => your map vs GPSJam side by side => live local feed running at the table.
 - **Stretch:** Distinguish jamming (NIC drops) from spoofing (position jumps, impossible velocities) per aircraft.
 - **Risk:** Empty cells mean no data, not no jamming (GPSJam FAQ point). Say so on the map legend. OpenSky anonymous access is rate-limited.
@@ -215,7 +219,7 @@ through a cable or shielded enclosure, never over the air.
 - **Why it matters:** At sea, AIS anomalies are the main public signal of GNSS manipulation ([Windward 2025](../catalog/resources/windward-2025-maritime-stress-test.md)); [C4ADS](../catalog/resources/c4ads-above-us-only-stars.md) mapped thousands of spoofing events this way.
 - **Stack:** [pyais](../catalog/repos/m0r13n__pyais.md), [AIS-catcher](../catalog/repos/jvde-github__ais-catcher.md) for live RF, [Stone Soup](../catalog/repos/dstl__stone-soup.md) gating for "impossible given motion model", [OpenCPN](../catalog/repos/opencpn__opencpn.md) or [MapLibre](../catalog/repos/maplibre__maplibre-gl-js.md) display, [PyTAK](../catalog/repos/snstac__pytak.md) for CoT.
 - **Data:** Public AIS TCP feeds or recorded NMEA; message definitions in [ITU-R M.1371](../catalog/resources/itu-r-m1371-ais.md).
-- **Kit:** Cards [Stone Soup](integration-cards/dstl__stone-soup.md) (AIS readers, gating), [PyTAK](integration-cards/snstac__pytak.md). No AIS dataset card - record your own feed. [Maritime sets](dataset-cards/maritime-datasets.md) cover imagery and navigation logs, not AIS. Start: [project-repo](../templates/project-repo/).
+- **Kit:** Cards [Stone Soup](integration-cards/dstl__stone-soup.md) (AIS readers, gating), [PyTAK](integration-cards/snstac__pytak.md). No AIS dataset card; [maritime-ais-spoofing](../samples/maritime-ais-spoofing/) pulls Danish Maritime Authority AIS by HTTP range request. Start: [maritime-ais-spoofing](../samples/maritime-ais-spoofing/) (detectors, injected episodes, recall / TTD on real AIS).
 - **Demo plan:** Replay a recorded feed => rule-based and motion-model detectors fire => clustered "suspected interference area" polygons with counts.
 - **Stretch:** Separate AIS falsification by the vessel from GNSS spoofing of many vessels (clusters with common displacement point to spoofing).
 - **Risk:** Finding a public feed with a known event inside 48h; pre-download one before the event.
@@ -226,7 +230,7 @@ through a cable or shielded enclosure, never over the air.
 - **Why it matters:** Dismounted users carry phones; defensive spoofing already affects civilian devices ([The Record](../catalog/resources/therecord-ukraine-spoofing-civilian-phones.md)). Phone sensing needs no custom hardware ([Akos ION talk](../catalog/resources/ion-webinar-akos.md)).
 - **Stack:** [gnss_lib_py](../catalog/repos/stanford-navlab__gnss_lib_py.md) (fault detection examples), [GnssLogger](../catalog/repos/google__gps-measurement-tools.md), [laika](../catalog/repos/commaai__laika.md) for corrections, [RAIM](../catalog/repos/michaelbeechan__raim.md) as reference logic. Sample for the RINEX/SPP baseline: [gnss-rinex-processing](../samples/gnss-rinex-processing/).
 - **Data:** [GSDC 2023](../catalog/resources/google-gsdc-2023.md) for clean baselines; phone logs from [Jammertest](../catalog/resources/jammertest-norway.md) for real interference. The [multi-frequency spoofing dataset](../catalog/repos/s7am1na__gnss-spoofing-dataset.md) is useful for the log format only (see Risk).
-- **Kit:** Cards [gnss_lib_py](integration-cards/stanford-navlab__gnss_lib_py.md) (Android parsers, FDE on one `NavData` table), [laika](integration-cards/commaai__laika.md). Data [GSDC](dataset-cards/gsdc.md) (taroz preprocessed 2.76 GB), [UrbanNav](dataset-cards/urbannav.md) (GT + IMU CSV 0.11 GB), phone logs inside [Jammertest](dataset-cards/jammertest-data.md); [S7AM1NA](dataset-cards/gnss-spoofing-s7am1na.md) is format-only (see Risk). Start: [project-repo](../templates/project-repo/) with a GnssLogger `PoseSource`.
+- **Kit:** Cards [gnss_lib_py](integration-cards/stanford-navlab__gnss_lib_py.md) (Android parsers, FDE on one `NavData` table), [laika](integration-cards/commaai__laika.md). Data [GSDC](dataset-cards/gsdc.md) (taroz preprocessed 2.76 GB), [UrbanNav](dataset-cards/urbannav.md) (GT + IMU CSV 0.11 GB), phone logs inside [Jammertest](dataset-cards/jammertest-data.md); [S7AM1NA](dataset-cards/gnss-spoofing-s7am1na.md) is format-only (see Risk). Start: [project-repo](../templates/project-repo/) with a GnssLogger `PoseSource`; [gnss-rinex-processing](../samples/gnss-rinex-processing/) for the SPP / RTK baseline.
 - **Demo plan:** Clean drive log => no alarms; spoofed log => alarm at the onset with time-to-detect and false-alarm rate on a plot.
 - **Stretch:** Run live on a phone via the Android APIs and post an alert to TAK.
 - **Risk:** Labelled phone spoofing data is scarce: the S7AM1NA full release its README points to does not exist, and the public 23.7 MB sample is not a labelled attack ([card](dataset-cards/gnss-spoofing-s7am1na.md)). Plan on Jammertest phone logs or on spoofing injected into clean GSDC logs, and say which. Phone raw-measurement quality varies by handset.
@@ -237,7 +241,7 @@ through a cable or shielded enclosure, never over the air.
 - **Why it matters:** Holdover time is the stated value metric for alt-PNT funding ([DIU quantum sensing](../catalog/resources/diu-transition-quantum-sensing-2024.md)). Planners need an honest number per IMU grade.
 - **Stack:** [pyins](../catalog/repos/nmayorov__pyins.md), [gnss-ins-sim](../catalog/repos/aceinna__gnss-ins-sim.md), [allan-variance](../catalog/repos/nmayorov__allan-variance.md) for your own IMU, [KF-GINS](../catalog/repos/i2nav-whu__kf-gins.md) for real-data comparison. Sample: [gnss-ins-ekf-outage](../samples/gnss-ins-ekf-outage/).
 - **Data:** KF-GINS bundled demo dataset; your own static IMU recording (record hours before the event).
-- **Kit:** Cards [gnss-ins-sim](integration-cards/aceinna__gnss-ins-sim.md) (per-segment GNSS visibility), [KF-GINS](integration-cards/i2nav-whu__kf-gins.md), [FilterPy](integration-cards/rlabbe__filterpy.md) (2.0.0 changes the API). Data [KITTI](dataset-cards/kitti.md) one raw drive with OXTS (1.2 GB), [NCLT](dataset-cards/nclt.md) one session (0.24 GB), [TUM-VI](dataset-cards/tum-vi.md) room1_512 (1.71 GB). Start: `eval/metrics.py` in [project-repo](../templates/project-repo/) already reports `time_to_exceed_al_s`.
+- **Kit:** Cards [gnss-ins-sim](integration-cards/aceinna__gnss-ins-sim.md) (per-segment GNSS visibility), [KF-GINS](integration-cards/i2nav-whu__kf-gins.md), [FilterPy](integration-cards/rlabbe__filterpy.md) (2.0.0 changes the API). Data [KITTI](dataset-cards/kitti.md) one raw drive with OXTS (1.2 GB), [NCLT](dataset-cards/nclt.md) one session (0.24 GB), [TUM-VI](dataset-cards/tum-vi.md) room1_512 (1.71 GB). Start: [gnss-ins-ekf-outage](../samples/gnss-ins-ekf-outage/) (outage and drift tables), [timing-holdover](../samples/timing-holdover/) for clocks, [relative-nav-benchmark](../samples/relative-nav-benchmark/) for drift rates measured on real data; `eval/metrics.py` in [project-repo](../templates/project-repo/) reports `time_to_exceed_al_s`.
 - **Demo plan:** Pick MEMS vs tactical-grade profile => sliders for outage length and aiding rate => error envelope plot; validate one curve against KF-GINS with masked GNSS epochs.
 - **Stretch:** Export the result as a mission-planning constraint ("re-acquire an absolute fix every X km").
 - **Risk:** Low. Main trap is presenting simulated numbers as measured; label them.
@@ -248,7 +252,7 @@ through a cable or shielded enclosure, never over the air.
 - **Why it matters:** Post-incident analysis is slow and expert-bound; reporting is the first pillar of the [EASA/IATA plan](../catalog/resources/easa-iata-gnss-interference-plan-2025.md). Traceability is a stated AI principle ([DoD](../catalog/resources/dod-ai-ethical-principles-2020.md)).
 - **Stack:** [pymavlink](../catalog/repos/ardupilot__pymavlink.md) for DataFlash/tlog parsing, deterministic extractors for GPS status, EKF innovations and source changes, then an LLM that only narrates extracted facts with citations to log timestamps. Hub MCP template: [llm-agent-usage](../samples/llm-agent-usage/).
 - **Data:** Logs from SITL runs with injected GPS faults (ideas 9 and 10 produce them; the [px4-sitl-gps-denial](../samples/px4-sitl-gps-denial/) and [ardupilot-ekf3-source-switch](../samples/ardupilot-ekf3-source-switch/) samples log GPS cuts).
-- **Kit:** Cards [pymavlink](integration-cards/ardupilot__pymavlink.md) (log tools), [ArduPilot](integration-cards/ardupilot__ardupilot.md), [PX4](integration-cards/px4__px4-autopilot.md). Data: logs from the [sitl-docker](../samples/sitl-docker/) stack with a GPS cut. Start: [project-repo](../templates/project-repo/); keep the extractor deterministic and tested, the LLM only narrates.
+- **Kit:** Cards [pymavlink](integration-cards/ardupilot__pymavlink.md) (log tools), [ArduPilot](integration-cards/ardupilot__ardupilot.md), [PX4](integration-cards/px4__px4-autopilot.md). Data: logs from the [sitl-docker](../samples/sitl-docker/) stack with a GPS cut. Start: `nav_health.py` in [llm-mission-agent](../samples/llm-mission-agent/) as the deterministic extractor; keep it tested, the LLM only narrates.
 - **Demo plan:** Two logs (clean, spoofed) => two reports; every claim links to a log line; a plot generated from the same extracted events.
 - **Stretch:** Aggregate many logs into a fleet-level "where and when did we lose GNSS" map.
 - **Risk:** LLM inventing events. Mitigate by making the LLM summarise a structured event list only, and checking every timestamp it cites exists.
@@ -259,7 +263,7 @@ through a cable or shielded enclosure, never over the air.
 - **Why it matters:** Operators will use language interfaces to C2 tools; governability ([NATO AI principles](../catalog/resources/nato-ai-strategy-principles-2021.md)) means the agent can be disengaged and cannot act on its own. Showing the guardrails is the point.
 - **Stack:** [pymavlink](../catalog/repos/ardupilot__pymavlink.md) or [MAVSDK-Python](../catalog/repos/mavlink__mavsdk-python.md) (`pip install mavsdk-grpc`; plain `mavsdk` is now a different API), [mavlink-router](../catalog/repos/mavlink-router__mavlink-router.md) to share the link with a GCS, [MAVLink signing](../catalog/resources/mavlink-2-signing.md), [mission protocol](../catalog/resources/mavlink-mission-protocol.md). MCP server pattern: the hub's own stdlib server in [llm-agent-usage](../samples/llm-agent-usage/).
 - **Data:** ArduPilot SITL ([docs](../catalog/resources/ardupilot-sitl-docs.md)).
-- **Kit:** Cards [MAVLinkMCP](integration-cards/ion-g-ion__mavlinkmcp.md) (prior art: MCP over MAVSDK with a reviewable plan pipeline - show what you add on top), [mavlink-router](integration-cards/mavlink-router__mavlink-router.md) (per-endpoint msg-id filters give the agent a read-only link), [MAVSDK-Python](integration-cards/mavlink__mavsdk-python.md) (`pip install mavsdk-grpc`), [QGroundControl](integration-cards/mavlink__qgroundcontrol.md). For ROS robots: [ros-mcp-server](integration-cards/robotmcp__ros-mcp-server.md) and [ROSA](integration-cards/nasa-jpl__rosa.md) both keep write access by default. Data: [sitl-docker](../samples/sitl-docker/). Start: [project-repo](../templates/project-repo/) AGENTS.md is already wired to the hub.
+- **Kit:** Cards [MAVLinkMCP](integration-cards/ion-g-ion__mavlinkmcp.md) (prior art: MCP over MAVSDK with a reviewable plan pipeline - show what you add on top), [mavlink-router](integration-cards/mavlink-router__mavlink-router.md) (per-endpoint msg-id filters give the agent a read-only link), [MAVSDK-Python](integration-cards/mavlink__mavsdk-python.md) (`pip install mavsdk-grpc`), [QGroundControl](integration-cards/mavlink__qgroundcontrol.md). For ROS robots: [ros-mcp-server](integration-cards/robotmcp__ros-mcp-server.md) and [ROSA](integration-cards/nasa-jpl__rosa.md) both keep write access by default. Data: [sitl-docker](../samples/sitl-docker/). Start: [llm-mission-agent](../samples/llm-mission-agent/) already is this idea (geofence, altitude band, mode allowlist, dry run; flew SITL; the LLM loop was not run against the API). Add on top, do not rebuild.
 - **Demo plan:** In Claude Code or another MCP client: "what is the nav health?" => tool reads EKF/GNSS => agent proposes a return-to-launch on degraded GNSS => human approves in [QGroundControl](../catalog/repos/mavlink__qgroundcontrol.md) or a confirm prompt => vehicle executes in SITL. Show a refused command outside the geofence.
 - **Stretch:** Tool that explains nav source configuration (EK3_SRC sets) in plain language and suggests a safer config, applied only on approval.
 - **Risk:** Scope creep into autonomy. Keep write tools to an allowlist (mission upload, RTL, mode change) and log every tool call.
@@ -270,7 +274,7 @@ through a cable or shielded enclosure, never over the air.
 - **Why it matters:** Authentication turns "trust GNSS" into "trust authenticated GNSS"; [NISTIR 8323](../catalog/resources/nist-ir-8323-pnt-profile.md) treats GNSS as an untrusted input.
 - **Stack:** [OSNMA-SDR-SIM](../catalog/repos/haiyang-wong__osnma-sdr-sim.md) (file sink) => [GNSS-SDR](../catalog/repos/gnss-sdr__gnss-sdr.md) => [OSNMAlib](../catalog/repos/algafix__osnma.md). Live path: u-blox SFRBX into OSNMAlib. Specs: [OSNMA receiver guidelines](../catalog/resources/galileo-osnma-receiver-guidelines.md), [OSNMA SIS ICD](../catalog/resources/galileo-osnma-sis-icd.md).
 - **Data:** Simulated IQ files; GSC public key and Merkle root ([GSC documents](../catalog/resources/gsc-programme-reference-documents.md)).
-- **Kit:** Cards [OSNMAlib](integration-cards/algafix__osnma.md) (EUPL-1.2), [GNSS-SDR](integration-cards/gnss-sdr__gnss-sdr.md) (has built-in Galileo OSNMA), [GPS-SDR-SIM](integration-cards/osqzss__gps-sdr-sim.md) (archived, file output only), [pyubx2](integration-cards/semuconsulting__pyubx2.md). Data [TEXBAT](dataset-cards/texbat.md) for a GPS L1 signal-level spoof leg; OSNMA test signals come from simulation. Start: [project-repo](../templates/project-repo/) with an authentication-verdict `IntegrityMonitor`.
+- **Kit:** Cards [OSNMAlib](integration-cards/algafix__osnma.md) (EUPL-1.2), [GNSS-SDR](integration-cards/gnss-sdr__gnss-sdr.md) (has built-in Galileo OSNMA), [GPS-SDR-SIM](integration-cards/osqzss__gps-sdr-sim.md) (archived, file output only), [pyubx2](integration-cards/semuconsulting__pyubx2.md). Data [TEXBAT](dataset-cards/texbat.md) for a GPS L1 signal-level spoof leg; OSNMA test signals come from simulation. Start: [osnma-authentication](../samples/osnma-authentication/) (OSNMAlib on a real recording under 10 manipulations, adapter into the scorer).
 - **Demo plan:** Authentic file => green; tampered navigation message file => MAC failure => red alarm and downstream fix dropped.
 - **Stretch:** Combine with a C/N0 jamming detector so the output distinguishes "denied" from "deceived".
 - **Risk:** Toolchain plumbing (GNSS-SDR configs). Cabled or file-only: radiating GNSS signals is illegal in most jurisdictions. OSNMA does not help against jamming or all forms of replay; say so.
@@ -281,7 +285,7 @@ through a cable or shielded enclosure, never over the air.
 - **Why it matters:** Hybrid GPS/INS can be dragged off by a spoofer ([FAA SAFO 24002](../catalog/resources/faa-safo-24002-gnss-disruptions.md)); after-effects persist when GNSS returns ([OPSGROUP](../catalog/resources/opsgroup-gps-spoofing-final-report-2024.md)). Detect, respond and recover in one demo.
 - **Stack:** [ArduPilot](../catalog/repos/ardupilot__ardupilot.md) with [EKF3 source selection](../catalog/resources/ardupilot-ekf3-sources.md) and [GPS / non-GPS transitions](../catalog/resources/ardupilot-gps-non-gps-transitions.md), [MAVProxy](../catalog/repos/ardupilot__mavproxy.md) module for operator alert, [pymavlink](../catalog/repos/ardupilot__pymavlink.md). Optionally a custom [MAVLink](../catalog/repos/mavlink__mavlink.md) dialect message for "spoofing detected". Sample: [ardupilot-ekf3-source-switch](../samples/ardupilot-ekf3-source-switch/) already flies a SITL source-set switch around a GPS cut - add the detector in front of it.
 - **Data:** SITL with injected GPS faults. Parameter names depend on the version: `SIM_GPS1_ENABLE 0`, `SIM_GPS1_JAM 1`, `SIM_GPS1_GLTCH_X/Y` on 4.7 / master; `SIM_GPS_DISABLE 1`, `SIM_GPS_JAM`, `SIM_GPS_GLITCH_X/Y` on 4.6.x ([card](integration-cards/ardupilot__ardupilot.md)).
-- **Kit:** Cards [ArduPilot](integration-cards/ardupilot__ardupilot.md) (EKF3 source sets from Lua or MAVLink, SITL ExternalNav recipe), [MAVProxy](integration-cards/ardupilot__mavproxy.md) (`GPSInput` module: UDP JSON => `GPS_INPUT`), [pymavlink](integration-cards/ardupilot__pymavlink.md). Data: [sitl-docker](../samples/sitl-docker/) (Copter 4.6.3) and [Jammertest](dataset-cards/jammertest-data.md) for real signatures. Start: the detector is the `ChiSquareMonitor` in [project-repo](../templates/project-repo/), moved in front of the source switch.
+- **Kit:** Cards [ArduPilot](integration-cards/ardupilot__ardupilot.md) (EKF3 source sets from Lua or MAVLink, SITL ExternalNav recipe), [MAVProxy](integration-cards/ardupilot__mavproxy.md) (`GPSInput` module: UDP JSON => `GPS_INPUT`), [pymavlink](integration-cards/ardupilot__pymavlink.md). Data: [sitl-docker](../samples/sitl-docker/) (Copter 4.6.3) and [Jammertest](dataset-cards/jammertest-data.md) for real signatures. Start: [golden-demo](../samples/golden-demo/) is this idea built and measured (SITL spoof drag => solution separation + velocity test => `MAV_CMD_SET_EKF_SOURCE_SET` => dashboard, 52-flight Monte Carlo). Add a jamming phase and a longer route; take protection levels from [altpnt-integrity](../samples/altpnt-integrity/).
 - **Demo plan:** Mission in progress => slow position drag starts => detector fires within N seconds => source switch => vehicle holds course on flow/VIO => GNSS re-validated => switch back. Plot true vs estimated vs spoofed track.
 - **Stretch:** Run the same detector against PX4 EKF2 ([tuning guide](../catalog/resources/px4-ekf2-tuning-guide.md)) to show it is autopilot-agnostic.
 - **Risk:** Tuning thresholds so slow drag-offs are caught without false alarms. Pre-record a few fault scenarios before the event.
@@ -292,7 +296,7 @@ through a cable or shielded enclosure, never over the air.
 - **Why it matters:** VIO is the workhorse for small UAS in denied areas; vision-inertial estimation won GPS-free racing ([AlphaPilot UZH](../catalog/resources/alphapilot-uzh-paper.md)).
 - **Stack:** [PX4](../catalog/repos/px4__px4-autopilot.md) + [Gazebo](../catalog/repos/gazebosim__gz-sim.md), [OpenVINS](../catalog/repos/rpng__open_vins.md) (has its own simulator), [MAVROS](../catalog/repos/mavlink__mavros.md) or the uXRCE-DDS bridge (pin PX4 v1.17.0 or `main`; SIH target and aux-position params differ), [evo](../catalog/repos/michaelgrupp__evo.md). Docs: [PX4 external position](../catalog/resources/px4-external-position-estimation.md), [PX4 VIO](../catalog/resources/px4-visual-inertial-odometry.md). Samples: [px4-sitl-gps-denial](../samples/px4-sitl-gps-denial/) gives the no-aiding drift baseline (GPS cut via MAVSDK failure injection, drift numbers per phase); [vio-to-mavlink-bridge](../samples/vio-to-mavlink-bridge/) handles ENU/NED frames.
 - **Data:** [EuRoC](../catalog/resources/ethz-euroc-mav-dataset.md) to validate VIO before closing the loop - it moved to the ETH Research Collection and the host rate-limits (HTTP 429), so pull it days ahead ([card](dataset-cards/euroc-mav.md)); [UZH-FPV](../catalog/resources/uzh-fpv-drone-racing-dataset.md) for aggressive motion.
-- **Kit:** Cards [PX4](integration-cards/px4__px4-autopilot.md) (v1.17.0 vs `main` naming), [OpenVINS](integration-cards/rpng__open_vins.md) (GPL-3.0, built-in simulator), [MAVROS](integration-cards/mavlink__mavros.md), [px4_ros_com](integration-cards/px4__px4_ros_com.md) (`frame_transforms.h`), [evo](integration-cards/michaelgrupp__evo.md). Data [EuRoC](dataset-cards/euroc-mav.md) vicon_room1 (6.04 GB), [UZH-FPV](dataset-cards/uzh-fpv.md) indoor_forward_3 (0.84 GB), [TUM-VI](dataset-cards/tum-vi.md) room1_512 (1.71 GB). Start: [project-repo](../templates/project-repo/) with an odometry `PoseSource`.
+- **Kit:** Cards [PX4](integration-cards/px4__px4-autopilot.md) (v1.17.0 vs `main` naming), [OpenVINS](integration-cards/rpng__open_vins.md) (GPL-3.0, built-in simulator), [MAVROS](integration-cards/mavlink__mavros.md), [px4_ros_com](integration-cards/px4__px4_ros_com.md) (`frame_transforms.h`), [evo](integration-cards/michaelgrupp__evo.md). Data [EuRoC](dataset-cards/euroc-mav.md) vicon_room1 (6.04 GB), [UZH-FPV](dataset-cards/uzh-fpv.md) indoor_forward_3 (0.84 GB), [TUM-VI](dataset-cards/tum-vi.md) room1_512 (1.71 GB). Start: [relative-nav-benchmark](../samples/relative-nav-benchmark/) (OpenVINS on UZH-FPV, scored with evo) and [vio-to-mavlink-bridge](../samples/vio-to-mavlink-bridge/) (ODOMETRY into EKF2, stationary pose only).
 - **Demo plan:** Square mission with GPS => same mission with GPS off and VIO in => ATE plot and number, plus a failure case (low texture world).
 - **Stretch:** Add periodic absolute fixes (idea 18) to bound drift.
 - **Risk:** Frame conventions (ENU/NED, body frames) eat hours. Use the sample's frame tests.
@@ -301,7 +305,8 @@ through a cable or shielded enclosure, never over the air.
 
 - **Pitch:** Particle-filter TRN for a fixed-wing over real Copernicus terrain: biased INS plus radar altimeter profile => corrected position with uncertainty.
 - **Why it matters:** Terrain does not jam. TRN is a classic aviation answer for long legs where imagery may fail (night, cloud).
-- **Stack:** [TRN PF sample](../samples/terrain-relative-nav-pf/) (stdlib simulation, rasterio DEM loader), [Rasterio](../catalog/repos/rasterio__rasterio.md), [elevation](../catalog/repos/bopen__elevation.md) for tiles, [python-tercom](../catalog/repos/alti3__python-tercom.md) for batch correlation comparison, [tercom_nav](../catalog/repos/mzahana__tercom_nav.md) for ROS 2 + SITL.
+- **Start:** [terrain-heightmap-pf](../samples/terrain-heightmap-pf/) (real GLO-30 terrain, PF vs TERCOM, information gate) and [blind-flight-bench](../samples/blind-flight-bench/) (radar-altimeter-only brief from a real 2026 hackathon; read [the teardown](landscape/blind-flight-teardown.md) first: beam footprint, flat terrain and turns sink most entries).
+- **Stack:** [TRN PF sample](../samples/terrain-relative-nav-pf/) (stdlib simulation; its rasterio DEM loader is an unrun sketch), [Rasterio](../catalog/repos/rasterio__rasterio.md), [elevation](../catalog/repos/bopen__elevation.md) for tiles, [python-tercom](../catalog/repos/alti3__python-tercom.md) for batch correlation comparison, [tercom_nav](../catalog/repos/mzahana__tercom_nav.md) for ROS 2 + SITL.
 - **Data:** [Copernicus DEM on AWS](../catalog/resources/copernicus-dem-aws.md) (no account needed).
 - **Kit:** Cards [Rasterio](integration-cards/rasterio__rasterio.md), [elevation](integration-cards/bopen__elevation.md) (2.0 breaks 1.x commands; products use different vertical datums), [GDAL](integration-cards/osgeo__gdal.md), [tercom_nav](integration-cards/mzahana__tercom_nav.md) (ROS 2 Humble + PX4 SITL; no LICENSE file), [python-tercom](integration-cards/alti3__python-tercom.md) (no license - read, do not copy). Data: Copernicus DEM; [AFIT example data](dataset-cards/afit-magnav-example-data.md) if you want real flight altitudes. Prior hackathon: the 2026 Russian "Blind flight" TERCOM task and its public solutions ([UA/RU overview](landscape/ua-ru-sources-overview.md)).
 - **Demo plan:** Fly the same route over rough and flat terrain => error stays bounded over rough, diverges over flat => show the correlation surface. The failure case is part of the honest pitch.
@@ -314,7 +319,7 @@ through a cable or shielded enclosure, never over the air.
 - **Why it matters:** Hundreds of ships per day affected at peak in the Gulf ([Windward](../catalog/resources/windward-2025-maritime-stress-test.md)); terrestrial backups like R-Mode are being revived in the Baltic ([39C3 talk](../catalog/resources/39c3-baltic-jammer-r-mode.md), [MarRINav talk](../catalog/resources/ion-webinar-marrinav.md)).
 - **Stack:** [Signal K Server](../catalog/repos/signalk__signalk-server.md) (sample data playback), [OpenCPN](../catalog/repos/opencpn__opencpn.md), [radar_pi](../catalog/repos/opencpn-radar-pi__radar_pi.md) for radar overlay, [pynmeagps](../catalog/repos/semuconsulting__pynmeagps.md) to inject a spoofed NMEA stream, [VRX](../catalog/repos/osrf__vrx.md) or [MOOS-IvP](../catalog/repos/moos-ivp__moos-ivp.md) for a simulated vessel.
 - **Data:** Signal K sample data; your own spoofed NMEA generated with pynmeagps.
-- **Kit:** Data [Maritime sets](dataset-cards/maritime-datasets.md) (Pohang `navigation.zip`, about 20 MB, GPS and AHRS). Cards [Stone Soup](integration-cards/dstl__stone-soup.md), [PyTAK](integration-cards/snstac__pytak.md) for shore C2. Start: [project-repo](../templates/project-repo/) with an NMEA `PoseSource` and a DR `NavFilter`.
+- **Kit:** Data [Maritime sets](dataset-cards/maritime-datasets.md) (Pohang `navigation.zip`, about 20 MB, GPS and AHRS). Cards [Stone Soup](integration-cards/dstl__stone-soup.md), [PyTAK](integration-cards/snstac__pytak.md) for shore C2. Start: [usv-gnss-denied-nav](../samples/usv-gnss-denied-nav/) (compass + speed-log DR, radar-to-chart fixes, monitor; Signal K / OpenCPN mapping in its README).
 - **Demo plan:** Normal voyage => spoofed position drift injected => divergence from DR grows => alarm and DR position shown as the trusted one on the chart.
 - **Stretch:** Add a celestial fix from [tetra3](../catalog/repos/esa__tetra3.md) (idea 15) as an independent absolute check.
 - **Risk:** Low; the integration is mostly JSON plumbing. DR quality depends on the current/leeway model; keep it simple and say so.
@@ -378,7 +383,7 @@ through a cable or shielded enclosure, never over the air.
 
 - **Pitch:** "Visual GPS": match downward camera frames against satellite tiles to get absolute fixes, and fuse them with visual odometry so drift stays bounded between fixes.
 - **Why it matters:** Vision-based absolute positioning against reference imagery is being fielded on drones under jamming ([Militarnyi on Vermeer](../catalog/resources/militarnyi-vermeer-optical-nav-2025.md), with the caveat that vendor claims are untested).
-- **Stack:** Retrieval with [AnyLoc](../catalog/repos/anyloc__anyloc.md) or [SALAD](../catalog/repos/serizba__salad.md) => verification with [LightGlue](../catalog/repos/cvg__lightglue.md) (ALIKED or DISK extractor; SuperPoint weights are non-commercial) + RANSAC homography => fusion with VO, following [GeoAnchor](../catalog/repos/yusufgunel__geoanchor.md) as a blueprint. Compare matchers fast with [vismatch](../catalog/repos/gmberton__vismatch.md). Sample: [visual-geolocalization-lightglue](../samples/visual-geolocalization-lightglue/). Background: [WildNav paper](../catalog/resources/wildnav-gnss-free-uav-localization-2022.md), [AnyVisLoc benchmark](../catalog/repos/uav-avl__benchmark.md).
+- **Stack:** Retrieval with [AnyLoc](../catalog/repos/anyloc__anyloc.md) or [SALAD](../catalog/repos/serizba__salad.md) => verification with [LightGlue](../catalog/repos/cvg__lightglue.md) (ALIKED or DISK extractor; SuperPoint weights are non-commercial) + RANSAC homography => fusion with VO, following [GeoAnchor](../catalog/repos/yusufgunel__geoanchor.md) as a blueprint. Compare matchers fast with [vismatch](../catalog/repos/gmberton__vismatch.md). Samples: [geoloc-license-clean](../samples/geoloc-license-clean/) (permissive weights only; real eBee frames fixed 1 of 5) and [visual-geolocalization-lightglue](../samples/visual-geolocalization-lightglue/) (SuperPoint, non-commercial weights; see [weights licenses](model-weights-licenses.md)). Background: [WildNav paper](../catalog/resources/wildnav-gnss-free-uav-localization-2022.md), [AnyVisLoc benchmark](../catalog/repos/uav-avl__benchmark.md).
 - **Data:** [UAV-VisLoc](../catalog/repos/intellisensing__uav-visloc.md) (pick one flight and its map), [VPAIR](../catalog/repos/aervisloc__vpair.md), [ALTO](../catalog/repos/metaslam__alto.md).
 - **Kit:** Cards [AnyLoc](integration-cards/anyloc__anyloc.md) (hardcoded CUDA), [LightGlue](integration-cards/cvg__lightglue.md) (use ALIKED or DISK - SuperPoint weights are non-commercial), [RoMa](integration-cards/parskatt__roma.md) (verifier), [vismatch](integration-cards/gmberton__vismatch.md), [VPR-methods-evaluation](integration-cards/gmberton__vpr-methods-evaluation.md), [hloc](integration-cards/cvg__hierarchical-localization.md), [WildNav](integration-cards/tiers__wildnav.md). Data [UAV-VisLoc](dataset-cards/uav-visloc.md) site 03 (2.0 GB), [VPAIR](dataset-cards/vpair.md) sample (0.86 GB), [AerialVL](dataset-cards/aerialvl.md), [DenseUAV](dataset-cards/denseuav.md) (16.7 GB, two satellite epochs for map age), [AnyVisLoc](dataset-cards/anyvisloc.md) (no redistribution), [thermal sets](dataset-cards/thermal-datasets.md). Landscape: at least ten vendors sell this ([products](landscape/gnss-denied-nav-products.md)), so lead with the rejected bad match and the error-vs-distance curve, not the match itself.
 - **Demo plan:** VO-only track drifts => add geolocalization fixes => error vs ground truth plot drops and stays bounded; show one rejected bad match.
@@ -392,6 +397,7 @@ through a cable or shielded enclosure, never over the air.
 - **Stack:** [Crazyswarm2](../catalog/repos/imrclab__crazyswarm2.md) (sim works without hardware) or [gym-pybullet-drones](../catalog/repos/learnsyslab__gym-pybullet-drones.md); [swarm relative localization](../catalog/repos/eth-pbl__swarm-relative-localization.md) and [UWB software library](../catalog/repos/vladniculescu__uwb-software-library.md) for ranging; [GTSAM](../catalog/repos/borglab__gtsam.md) for a shared factor graph; [Swarm-SLAM](../catalog/repos/mistlab__swarm-slam.md) or [CSLAM](../catalog/repos/lajoiepy__cslam.md) if you have lidar/camera agents.
 - **Data:** [NTU VIRAL](../catalog/repos/ntu-aris__ntu_viral_dataset.md) (drone with UWB), [MCD](../catalog/resources/mcd-multi-campus-dataset.md) (UWB + lidar), [SubT-MRS](../catalog/resources/cmu-subt-mrs-dataset.md) for multi-robot.
 - **Kit:** Cards [GTSAM](integration-cards/borglab__gtsam.md), [gym-pybullet-drones](integration-cards/learnsyslab__gym-pybullet-drones.md) (ground-truth state only, no sensor models). Data [MILUV](dataset-cards/miluv.md) one 3-robot run with inter-robot UWB (3.2 GB), [UTIL](dataset-cards/util-uwb-tdoa.md), [NTU VIRAL](dataset-cards/ntu-viral.md).
+- **Start:** [swarm-coop-localization](../samples/swarm-coop-localization/) (centralized vs covariance-intersection, spoofed-anchor detection, 10-seed tables).
 - **Demo plan:** Sim swarm with GNSS off => independent DR vs cooperative estimate => error per agent over time; then cut comms to one agent and show graceful degradation.
 - **Stretch:** Comms-aware: degrade the link (packet loss) and show which agents to keep within range.
 - **Risk:** Multi-robot SLAM stacks are heavy; a 2D range-plus-odometry factor graph in GTSAM is enough for 48h.
@@ -412,6 +418,8 @@ through a cable or shielded enclosure, never over the air.
 ## 4. Reference architectures
 
 ### 4.1 GNSS-denied UAV navigation stack
+
+Built examples: [golden-demo](../samples/golden-demo/) (SITL, geoloc, integrity, source switch, dashboard), [relative-nav-benchmark](../samples/relative-nav-benchmark/) (measured VIO / VO drift), [geoloc-license-clean](../samples/geoloc-license-clean/) (absolute fixes).
 
 ```mermaid
 flowchart LR
@@ -458,6 +466,8 @@ Key design rule: integrity checks sit before the EKF, not after.
 
 ### 4.2 Interference detection to C2 picture
 
+Built examples: [jammer-sensor-network](../samples/jammer-sensor-network/) (nodes => aggregator => localization => CoT), [gnss-interference-monitor](../samples/gnss-interference-monitor/) (per-node scorer), [interference-geolocation-to-tak](../samples/interference-geolocation-to-tak/) (DF), [osint-jamming-map](../samples/osint-jamming-map/) (context layer).
+
 ```mermaid
 flowchart LR
   subgraph Edge["Edge sensors"]
@@ -498,6 +508,8 @@ Repos: [pyubx2](../catalog/repos/semuconsulting__pyubx2.md), [readsb](../catalog
 [deck.gl](../catalog/repos/visgl__deck.gl.md). Label "no data" cells differently from "no interference".
 
 ### 4.3 Multi-sensor fusion with integrity monitoring
+
+Built examples: [altpnt-integrity](../samples/altpnt-integrity/) (solution separation, PL, Stanford diagram, MI/HMI over 20 seeds), [golden-demo](../samples/golden-demo/) v2 (the same monitor in a SITL loop).
 
 ```mermaid
 flowchart TB
@@ -540,6 +552,8 @@ Repos: [GTSAM](../catalog/repos/borglab__gtsam.md), [MaRS](../catalog/repos/aau-
 
 ### 4.4 Maritime GNSS-denied navigation
 
+Built examples: [usv-gnss-denied-nav](../samples/usv-gnss-denied-nav/) (own ship), [maritime-ais-spoofing](../samples/maritime-ais-spoofing/) (shore side).
+
 ```mermaid
 flowchart LR
   subgraph Ship["Vessel sensors"]
@@ -579,6 +593,8 @@ Repos: [Signal K Server](../catalog/repos/signalk__signalk-server.md), [OpenCPN]
 [pyais](../catalog/repos/m0r13n__pyais.md), [MOOS-IvP](../catalog/repos/moos-ivp__moos-ivp.md). Context: [Maritime navigation](../catalog/concepts/maritime-nav.md), [NMEA 0183](../catalog/resources/nmea-0183-standard.md).
 
 ### 4.5 Team / swarm cooperative localization
+
+Built example: [swarm-coop-localization](../samples/swarm-coop-localization/).
 
 ```mermaid
 flowchart TB
@@ -695,7 +711,7 @@ class and power draw? What data did you train or tune on, and does it transfer?
 - [ ] Jetson flashed, CUDA and your matcher tested on one image, if doing idea 20.
 - [ ] Offline basemap: [PMTiles](../catalog/repos/protomaps__pmtiles.md) extract of the venue region + [Martin](../catalog/repos/maplibre__martin.md) or [TileServer GL](../catalog/repos/maptiler__tileserver-gl.md).
 - [ ] Copy [templates/project-repo](../templates/project-repo/) to the team repo and run `make test eval demo` on every laptop.
-- [ ] Run each sample you plan to use: [samples/](../samples/). Each `sample.json` says what ran: the stdlib parts of most samples ran on 2026-11-06; the SITL, pyubx2, RTKLIB, Stone Soup, LightGlue and MagNav.jl paths are syntax-checked sketches.
+- [ ] Run each sample you plan to use, from [samples/README.md](../samples/README.md) (status, deps, first command). Most samples ran end to end on 2026-11-06, including the SITL, pyubx2, RTKLIB, Stone Soup, LightGlue and MagNav.jl paths; the few unrun parts are marked `partial` there. Use one `.venv` per sample, never global pip.
 - [ ] Register the hub as an MCP server and try the example queries in [day0-runbook.md](day0-runbook.md#5-find-components-fast-with-the-hub-via-mcp).
 
 ### 6.3 Datasets to pre-download

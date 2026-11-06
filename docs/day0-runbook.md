@@ -6,7 +6,9 @@ walking skeleton should run end to end. It assumes the
 disk, SITL images built, the [project-repo template](../templates/project-repo/) green on
 every laptop, the hub registered as an MCP server.
 
-Companions: [problem-statement-decoder.md](problem-statement-decoder.md) (statement => approach),
+Companions: [problem-statement-decoder.md](problem-statement-decoder.md) (statement => approach;
+the single source for "where to start"), [samples/README.md](../samples/README.md) (status and
+first command per sample), [evidence-matrix.md](evidence-matrix.md) (numbers you can cite),
 [hackathon-playbook.md](hackathon-playbook.md) (ideas, differentiators, 48h plan),
 [reference-stacks.md](reference-stacks.md) (what to build on, licenses),
 [templates/](../templates/README.md) (fill-in files).
@@ -20,7 +22,7 @@ cuts scope, not the next block.
 |---|---|---|---|
 | 0:00-0:10 | All | Read the statement twice, silently. Then the judging criteria, rules, provided data and hardware. Highlight nouns: platform, threat, deliverable, constraints. | Highlighted statement |
 | 0:10-0:20 | Lead + Pitch | Fill the decode sheet ([section 1](#1-decode-the-statement)). Match it to 1-3 rows of the [decoder](problem-statement-decoder.md). | Decode sheet, 3 candidates |
-| 0:10-0:20 | Nav, Platform, Viz | Run the MCP queries for the matching statement ([section 5](#5-find-components-fast-with-the-hub-via-mcp)); open the linked integration and dataset cards. | One stack per candidate |
+| 0:10-0:20 | Nav, Platform, Viz | For each candidate row: open its samples in [samples/README.md](../samples/README.md) (status, deps, first command) and its numbers in [evidence-matrix.md](evidence-matrix.md); then the linked integration and dataset cards; MCP queries with the row's keywords ([section 5](#5-find-components-fast-with-the-hub-via-mcp)). | One stack and one starting sample per candidate |
 | 0:20-0:25 | Lead | Send organisers the open questions (data provided? RF allowed? hardware on site? scoring weights? submission format?). | Questions sent |
 | 0:25-0:40 | All | Score the 3 candidates independently with the rubric ([section 2](#2-pick-the-idea-scoring-rubric)), then compare. Discuss only the criteria where scores differ by 2 or more. | Scores table |
 | 0:40-0:50 | Lead | Decide idea + fallback. Name the one metric. Write the five-line demo script ([demo-script](../templates/demo-script.md)). Record the decision in ADR-001 ([adr](../templates/adr.md)). | ADR-001, demo script v0 |
@@ -71,7 +73,7 @@ the judging criteria say otherwise, and write the change in ADR-001.
 | Criterion | Weight | 1 | 5 |
 |---|---|---|---|
 | Fit to the statement and its judging criteria | x3 | Tangential; needs re-framing | Uses the statement's own words; hits the main scoring line |
-| Skeleton by H+6 with what is on disk | x3 | New toolchain, nothing built, no data local | Template + a sample + a shortlisted dataset or a built SITL image |
+| Skeleton by H+6 with what is on disk | x3 | New toolchain, nothing built, no data local | A sample marked `ran` that already does half of it, + a shortlisted dataset or a built SITL image |
 | Measurable with ground truth | x2 | Only "it looks right" | ATE / time-to-detect / false alarms vs ground truth, automated in `eval/` |
 | Differentiation ([playbook 1.1](hackathon-playbook.md#11-differentiators-judges-have-not-seen)) | x2 | The demo every team brings | Integrity, honest uncertainty or a hard condition, measured |
 | Team skill match | x2 | Nobody has used the core library | Someone shipped with it before |
@@ -143,24 +145,25 @@ Tips: `concept` with `fit: high` beats free-text search; `neighbors` from one re
 finds its alternatives and integrations; free-text search on common words ("spoofing
 detection") returns noise from other domains, so add a concept or `kind` filter.
 
-The calls below were piped into `tools/mcp_server.py` on 2026-11-06 against the index built
-that day; the hits column is what came back (top 5). Rankings can shift when the index is rebuilt.
+Do not paste the problem statement into `search`: free text ranks poorly (a cold-start test
+on 2026-11-06 got ION courses and an unrelated loitering munition for full-sentence queries).
+Take the keywords from the matching [decoder](problem-statement-decoder.md) row instead.
+Keyword queries that ranked the right sample first (re-checked with `tools/query.py` on 2026-11-06):
 
-| # | Statement | MCP calls | Top hits on 2026-11-06 | Then open |
-|---|---|---|---|---|
-| 1 | Navigate a drone 10 km without GNSS | `concept {"id":"concept:visual-geolocalization","domain":"air","fit":"high"}`; `neighbors {"id":"repo:cvg/lightglue"}` | WildNav, visual_localization, UAVLocalization, AnyVisLoc benchmark, GeoAnchor; neighbors add AnyLoc, hloc | [LightGlue card](integration-cards/cvg__lightglue.md), [AnyLoc card](integration-cards/anyloc__anyloc.md), [UAV-VisLoc](dataset-cards/uav-visloc.md) |
-| 2 | Detect and map GNSS jamming | `concept {"id":"concept:gnss-interference","fit":"high"}`; `search {"query":"ads-b integrity interference map"}` | ADSBCOT, readsb, KrakenSDR DoA, Fraunhofer Jammertest 2025, GNSS-SDR; search adds GPSJam, Inside GNSS ADS-B mapping, the interference-monitor sample | [readsb card](integration-cards/wiedehopf__readsb.md), [Jammertest](dataset-cards/jammertest-data.md), [gnss-interference-monitor](../samples/gnss-interference-monitor/) |
-| 3 | Detect spoofing and keep navigating | `search {"query":"spoofing","kind":"sample"}`; `search {"query":"spoofing detection","kind":"repo"}` | Samples: gnss-ins-ekf-outage, gnss-interference-monitor. Repos: S7AM1NA dataset, fit-gps-spoof-fix, GPSSpy (plus C-UAS noise: RFUAV, a UAV detection benchmark) | [gnss_lib_py card](integration-cards/stanford-navlab__gnss_lib_py.md), [project-repo](../templates/project-repo/) |
-| 4 | Resilient timing for a sensor network | `concept {"id":"concept:timing"}`; `search {"query":"holdover clock"}` | gpsd, galmon, KiwiSDR, GNSSTk; DARPA ROCkN, IGS products, gnss-ins-ekf-outage | [gpsd](../catalog/repos/gitlab.com__gpsd__gpsd.md), [pyubx2 card](integration-cards/semuconsulting__pyubx2.md) - thin coverage, see decoder row 6 |
-| 5 | Maritime USV in a spoofed area | `concept {"id":"concept:maritime-nav","fit":"high"}`; `search {"query":"ais spoofing"}` | ArduPilot, BlueOS, OpenCPN, pyais, AIS-catcher; C4ADS report, pyais, spoofing reviews, TEXBAT | [Stone Soup card](integration-cards/dstl__stone-soup.md), [maritime sets](dataset-cards/maritime-datasets.md) |
-| 6 | Soldier navigation indoors / underground | `concept {"id":"concept:indoor-pedestrian","fit":"high"}`; `search {"query":"foot-mounted inertial zupt"}` | Crazyflie firmware, IEZ, PyShoe; OpenShoe, IEZ, ZUPT-aided INS, MPU6050 ZUPT | [PyShoe](dataset-cards/pyshoe.md), [FilterPy card](integration-cards/rlabbe__filterpy.md) |
-| 7 | Swarm relative localization | `search {"query":"uwb relative localization"}`; `concept {"id":"concept:multi-agent","fit":"high"}` | Li et al. swarm ranging paper, ETH swarm relative localization, uwb-localization, UTIL dataset; Crazyflie firmware and cflib, drone-mesh-mapper, MOOS-IvP, EGO-Swarm | [GTSAM card](integration-cards/borglab__gtsam.md), [MILUV](dataset-cards/miluv.md) |
-| 8 | C2 picture under EW | `neighbors {"id":"repo:snstac/pytak"}`; `concept {"id":"concept:situational-awareness","fit":"high"}` | OpenDroneID receiver, ATAK-CIV, FreeTAKServer, OpenTAKServer; QGroundControl, ArduRemoteID, Open Drone ID core, Stone Soup | [PyTAK card](integration-cards/snstac__pytak.md), [OpenTAKServer card](integration-cards/brian7704__opentakserver.md), [mavlink-to-tak-cot](../samples/mavlink-to-tak-cot/) |
-| 9 | Detect and track drones | `concept {"id":"concept:counter-uas","fit":"high"}`; `search {"query":"remote id receiver","fit":"high"}` | ArduRemoteID, Open Drone ID core, OpenDroneID receiver, Stone Soup, ADSBCOT; RID (ESP32), DragonSync | [OpenDroneID receiver card](integration-cards/opendroneid__receiver-android.md), [Remote ID captures](dataset-cards/remote-id-droneid-captures.md) |
-| 10 | Fixed-wing terrain navigation | `concept {"id":"concept:terrain-nav","fit":"high"}`; `show {"id":"repo:mzahana/tercom_nav"}` | python-tercom, tercom_nav, elevation_mapping_cupy, Rasterio, elevation | [tercom_nav card](integration-cards/mzahana__tercom_nav.md), [terrain-relative-nav-pf](../samples/terrain-relative-nav-pf/) |
+```
+search {"query":"ArduCopter spoof EKF3 dashboard"}            => golden-demo
+search {"query":"jammer localization sensor network TAK"}     => jammer-sensor-network, then interference-geolocation-to-tak
+search {"query":"spoofing integrity uav","kind":"sample"}     => altpnt-integrity
+concept {"id":"concept:maritime-nav","fit":"high"}            => maritime repos, high fit first
+```
+
+Rankings shift when the index is rebuilt. `show sample:<name>` returns the sample record; its
+README is `samples/<name>/README.md`.
 
 ## 6. Which SITL or dataset to start
 
+The decoder's "Start from" column is the source of truth for which sample fits a statement;
+this table adds the data to have on disk and the version trap for each class.
 Start from what is already on disk. Sizes are from the [dataset cards](dataset-cards/README.md).
 The [sitl-docker](../samples/sitl-docker/) compose file pins ArduCopter 4.6.3 and PX4 v1.17.0 SIH
 (check its README for what was run).
@@ -168,17 +171,18 @@ The [sitl-docker](../samples/sitl-docker/) compose file pins ArduCopter 4.6.3 an
 | Problem class | Start with | First command / file | Version trap |
 |---|---|---|---|
 | UAS navigates through GNSS loss (ArduPilot) | ArduPilot SITL from sitl-docker + [ardupilot-ekf3-source-switch](../samples/ardupilot-ekf3-source-switch/) | `docker compose up -d ardupilot` | 4.6.x: `SIM_GPS_DISABLE 1`; 4.7 / master: `SIM_GPS1_ENABLE 0` ([card](integration-cards/ardupilot__ardupilot.md)) |
-| UAS with VIO or map-matching into PX4 | PX4 SIH from sitl-docker + [px4-sitl-gps-denial](../samples/px4-sitl-gps-denial/) | `docker compose up -d px4`; GPS loss via MAVSDK failure injection as in the sample, or `failure gps off` in the PX4 shell (`SYS_FAILURE_EN=1` first) | SIH target and `EKF2_AGP*` params differ between v1.17.0 and `main` ([card](integration-cards/px4__px4-autopilot.md)); `pip install mavsdk-grpc` |
-| Visual geolocalization | [UAV-VisLoc](dataset-cards/uav-visloc.md) site 03 (2.0 GB) | [visual-geolocalization-lightglue](../samples/visual-geolocalization-lightglue/) | LightGlue with ALIKED, not SuperPoint (NC weights) |
-| VIO drift | [EuRoC](dataset-cards/euroc-mav.md) vicon_room1 (6.04 GB) or [UZH-FPV](dataset-cards/uzh-fpv.md) (0.84 GB) | [evo card](integration-cards/michaelgrupp__evo.md) for scoring | EuRoC host rate-limits; it must already be on disk |
-| Receiver jamming / spoofing | [Jammertest](dataset-cards/jammertest-data.md) VAARA (1.57 GB), [TEXBAT](dataset-cards/texbat.md) subset (8.8 GB) | [gnss-interference-monitor](../samples/gnss-interference-monitor/) `scorer.py` | S7AM1NA public sample is not a labelled attack |
-| Phone / raw GNSS | [GSDC](dataset-cards/gsdc.md) taroz zip (2.76 GB), [UrbanNav](dataset-cards/urbannav.md) | [gnss-rinex-processing](../samples/gnss-rinex-processing/) | gnss-lib-py needs Python below 3.15 |
+| UAS with VIO or map-matching into PX4 | PX4 SIH from sitl-docker + [px4-sitl-gps-denial](../samples/px4-sitl-gps-denial/) | `docker compose up -d px4`; GPS loss via MAVSDK failure injection as in the sample, or `failure gps off` in the PX4 shell (`SYS_FAILURE_EN=1` first) | SIH target and `EKF2_AGP*` params differ between v1.17.0 and `main` ([card](integration-cards/px4__px4-autopilot.md)); `mavsdk-grpc` (in the sitl-docker client image, or a `.venv`) |
+| Visual geolocalization | NAIP via [geoloc-license-clean](../samples/geoloc-license-clean/) `download_data.py` (121 MB); [UAV-VisLoc](dataset-cards/uav-visloc.md) site 03 (2.0 GB) | [geoloc-license-clean](../samples/geoloc-license-clean/), [visual-geolocalization-lightglue](../samples/visual-geolocalization-lightglue/) | LightGlue with ALIKED, not SuperPoint (NC weights, [weights licenses](model-weights-licenses.md)); real frames fixed 1 of 5 in the sample |
+| VIO / LiDAR drift | [UZH-FPV](dataset-cards/uzh-fpv.md) (0.84 GB), [KITTI](dataset-cards/kitti.md) 04, VPAIR sample (0.86 GB) | [relative-nav-benchmark](../samples/relative-nav-benchmark/) `./run.sh lidar` / `vio` / `aerial` | EuRoC host rate-limits (HTTP 429 in the sample run); OpenVINS image build ~20 min |
+| Receiver jamming / spoofing | [Jammertest](dataset-cards/jammertest-data.md) VAARA (1.57 GB), [TEXBAT](dataset-cards/texbat.md) subset (8.8 GB), or simulated IQ | [gnss-interference-monitor](../samples/gnss-interference-monitor/), [gnss-signal-chain](../samples/gnss-signal-chain/) `./run.sh` (file only, ~600 MB per scenario) | S7AM1NA public sample is not a labelled attack |
+| UAS spoof + integrity demo | ArduCopter SITL from sitl-docker | [golden-demo](../samples/golden-demo/) `./run.sh --v2`, [altpnt-integrity](../samples/altpnt-integrity/) for PL | Copter 4.6.3 only tested; golden-demo flies a ~950 m survey with no jamming phase |
+| Phone / raw GNSS | [GSDC](dataset-cards/gsdc.md) taroz zip (2.76 GB), [UrbanNav](dataset-cards/urbannav.md) | [gnss-rinex-processing](../samples/gnss-rinex-processing/) (RTKLIB in Docker, ran on CORS data) | gnss-lib-py needs Python below 3.15 |
 | INS holdover | [KITTI](dataset-cards/kitti.md) raw drive (1.2 GB), [NCLT](dataset-cards/nclt.md) (0.24 GB) | [gnss-ins-ekf-outage](../samples/gnss-ins-ekf-outage/) | FilterPy 2.0.0 API change |
-| Terrain navigation | Copernicus DEM tiles for the AOI | [terrain-relative-nav-pf](../samples/terrain-relative-nav-pf/) | elevation 2.0 breaks 1.x commands; vertical datums differ |
-| Radio ranging / swarm | [UTIL](dataset-cards/util-uwb-tdoa.md) (1.86 GB), [MILUV](dataset-cards/miluv.md) (3.2 GB) | [GTSAM card](integration-cards/borglab__gtsam.md) | - |
-| Maritime | [Pohang](dataset-cards/maritime-datasets.md) navigation.zip (about 20 MB) | [project-repo](../templates/project-repo/) with an NMEA source | - |
-| C-UAS awareness | [Remote ID captures](dataset-cards/remote-id-droneid-captures.md), [DroneRF](dataset-cards/drone-rf-datasets.md) | [stone-soup-tracking](../samples/stone-soup-tracking/) (sketch) | Stone Soup needs Python 3.11+ |
-| MagNav | [MagNav challenge data](dataset-cards/magnav-challenge-data.md) (1.87 GB) | [magnav-quickstart](../samples/magnav-quickstart/) (unverified sketch) | Julia first-run compile; AFRL data agreement |
+| Terrain navigation | Copernicus GLO-30 windows (`fetch_dem.py`, ~0.8 MB each) | [terrain-heightmap-pf](../samples/terrain-heightmap-pf/), [blind-flight-bench](../samples/blind-flight-bench/) (radar altimeter only, see [teardown](landscape/blind-flight-teardown.md)) | elevation 2.0 breaks 1.x commands; GLO-30 is a DSM, not bare earth |
+| Radio ranging / swarm | [UTIL](dataset-cards/util-uwb-tdoa.md) (1.86 GB), [MILUV](dataset-cards/miluv.md) (3.2 GB) | [swarm-coop-localization](../samples/swarm-coop-localization/) (stdlib sim), [GTSAM card](integration-cards/borglab__gtsam.md) | - |
+| Maritime | Committed OSM chart + DMA AIS fixtures; [Pohang](dataset-cards/maritime-datasets.md) navigation.zip (about 20 MB) for real radar | [usv-gnss-denied-nav](../samples/usv-gnss-denied-nav/) (own ship), [maritime-ais-spoofing](../samples/maritime-ais-spoofing/) (AIS) | Simulated radar sees the same chart: fix errors optimistic |
+| C-UAS awareness | [Remote ID captures](dataset-cards/remote-id-droneid-captures.md), [DroneRF](dataset-cards/drone-rf-datasets.md) (692 MB RAR), NRC radar tracks (~59 MB) | [remote-id-to-tak](../samples/remote-id-to-tak/), [cuas-classifiers](../samples/cuas-classifiers/), [stone-soup-tracking](../samples/stone-soup-tracking/) | Stone Soup needs Python 3.11+; DroneRF is one session per class |
+| MagNav | [MagNav challenge data](dataset-cards/magnav-challenge-data.md) (1.87 GB) | [magnav-quickstart](../samples/magnav-quickstart/) (ran in the `julia:1.11` Docker image) | ~10 min install + precompile, 5.8 GB Julia depot; pin FFTA 0.2; AFRL data agreement |
 
 If the organisers provide data, start there instead and keep one shortlisted set as a
 cross-check.

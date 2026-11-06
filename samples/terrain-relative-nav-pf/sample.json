@@ -11,5 +11,8 @@
     {"id": "repo:hstm/terrain-nav-preprocessing", "rel": "explains"},
     {"id": "repo:rasterio/rasterio", "rel": "uses"}
   ],
-  "verified": "terrain.py and trn_pf.py ran with python3.14.7 stdlib on 2026-11-06, output shown in README; dem_rasterio.py is an unverified sketch: syntax-checked only, requires rasterio (the GLO-30 tile URL returned HTTP 200 on 2026-11-06)."
+  "verified": "terrain.py and trn_pf.py ran with python3.14.7 stdlib on 2026-11-06, output shown in README; dem_rasterio.py is an unverified sketch: syntax-checked only, requires rasterio (the GLO-30 tile URL returned HTTP 200 on 2026-11-06).",
+  "verified_status": "partial",
+  "deps": "stdlib",
+  "first_command": "python3 trn_pf.py"
 }

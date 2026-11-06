@@ -37,5 +37,8 @@
       "rel": "uses"
     }
   ],
-  "verified": "Built and ran on 2026-11-06 with Docker 29.5.2 on Apple Silicon (linux/arm64): both SITL images built, the ArduPilot, PX4 and VIO bridge samples flew against them, and docker compose (v5.7.0, run from the docker:29-cli image) brought both services up and a client container reached both. amd64 not tested."
+  "verified": "Built and ran on 2026-11-06 with Docker 29.5.2 on Apple Silicon (linux/arm64): both SITL images built, the ArduPilot, PX4 and VIO bridge samples flew against them, and docker compose (v5.7.0, run from the docker:29-cli image) brought both services up and a client container reached both. amd64 not tested.",
+  "verified_status": "ran",
+  "deps": "docker",
+  "first_command": "docker compose up -d ardupilot px4"
 }

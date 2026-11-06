@@ -14,5 +14,8 @@
     {"id": "res:microchip-csac-sa65-datasheet", "rel": "uses"},
     {"id": "res:nist-sp1065-frequency-stability-handbook", "rel": "uses"}
   ],
-  "verified": "ran with python3.14.7 stdlib on 2026-11-06 (default arguments, about 5 s); output pasted verbatim in README. 9 unittest tests pass, including an ADEV check of the noise model, a no-spoof negative control and a planted blind-detector control that proves the cross-source alarm can fail. Oscillator parameters are datasheet/table values; PPS noise, second-source noise/asymmetry, temperature fraction and detector thresholds are stated assumptions. No hardware or real GNSS data was used, and none of the related repos was run."
+  "verified": "ran with python3.14.7 stdlib on 2026-11-06 (default arguments, about 5 s); output pasted verbatim in README. 9 unittest tests pass, including an ADEV check of the noise model, a no-spoof negative control and a planted blind-detector control that proves the cross-source alarm can fail. Oscillator parameters are datasheet/table values; PPS noise, second-source noise/asymmetry, temperature fraction and detector thresholds are stated assumptions. No hardware or real GNSS data was used, and none of the related repos was run.",
+  "verified_status": "ran",
+  "deps": "stdlib",
+  "first_command": "python3 timing_holdover.py"
 }

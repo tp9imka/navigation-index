@@ -10,5 +10,8 @@
     {"id": "repo:i2nav-whu/kf-gins", "rel": "explains"},
     {"id": "repo:borglab/gtsam", "rel": "explains"}
   ],
-  "verified": "ran with python3.14.7 stdlib on 2026-11-06 (default run and --sweep), output shown in README. filterpy_crosscheck.py re-ran both with filterpy 2.0.0's ExtendedKalmanFilter doing covariance, innovation and Joseph-form update (Python 3.12.14) and reproduced the tables to the printed 0.1 m; inflating R 100x in the filterpy path changed them, so that path is live. gnss-ins-sim, KF-GINS and GTSAM were not run."
+  "verified": "ran with python3.14.7 stdlib on 2026-11-06 (default run and --sweep), output shown in README. filterpy_crosscheck.py re-ran both with filterpy 2.0.0's ExtendedKalmanFilter doing covariance, innovation and Joseph-form update (Python 3.12.14) and reproduced the tables to the printed 0.1 m; inflating R 100x in the filterpy path changed them, so that path is live. gnss-ins-sim, KF-GINS and GTSAM were not run.",
+  "verified_status": "ran",
+  "deps": "stdlib",
+  "first_command": "python3 ekf_outage.py"
 }

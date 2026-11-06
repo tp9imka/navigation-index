@@ -12,5 +12,8 @@
     {"id": "repo:deepakpopli/mavlink-mcp", "rel": "explains"},
     {"id": "repo:mavlink/mavsdk-python", "rel": "explains"}
   ],
-  "verified": "Ran on 2026-11-06 against ArduCopter Copter-4.6.3 SITL in Docker (samples/sitl-docker image, linux/arm64) with pymavlink 2.4.50 on python3.13 (uv venv): scripted MCP client drove the server through fence and altitude rejections, arm_takeoff to 20 m, goto (arrived), plan_survey + upload_mission (12 items, AUTO), SIM_GPS_DISABLE=1 => get_nav_health degraded (gnss_ok false), set_ekf_source_set 2 (ExternalNav) accepted, RTL to landing and disarm; dry-run scenario also run. Transcripts in example_output/. 24 stdlib unit tests pass on python3.14.7. agent_loop.py was not run against the API (no ANTHROPIC_API_KEY in the environment); the Claude Code registration commands were not executed."
+  "verified": "Ran on 2026-11-06 against ArduCopter Copter-4.6.3 SITL in Docker (samples/sitl-docker image, linux/arm64) with pymavlink 2.4.50 on python3.13 (uv venv): scripted MCP client drove the server through fence and altitude rejections, arm_takeoff to 20 m, goto (arrived), plan_survey + upload_mission (12 items, AUTO), SIM_GPS_DISABLE=1 => get_nav_health degraded (gnss_ok false), set_ekf_source_set 2 (ExternalNav) accepted, RTL to landing and disarm; dry-run scenario also run. Transcripts in example_output/. 24 stdlib unit tests pass on python3.14.7. agent_loop.py was not run against the API (no ANTHROPIC_API_KEY in the environment); the Claude Code registration commands were not executed.",
+  "verified_status": "partial",
+  "deps": "docker",
+  "first_command": "../../.venv/bin/python run_transcript.py --scenario flight --connect tcp:127.0.0.1:5762 --sim-connect tcp:127.0.0.1:5763"
 }

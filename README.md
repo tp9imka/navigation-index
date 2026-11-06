@@ -2,40 +2,63 @@
 
 A research hub for navigation hackathons with a defense lens: PNT, GNSS-denied and
 GNSS-contested navigation, sensor fusion, SLAM, autopilots, situational awareness.
-It indexes open-source repos (not cloned - described, tagged and linked) and the technical
-material around them: standards, papers, talks, courses, masterclasses, datasets, reports.
-Everything is one knowledge graph, so a repo page shows the papers, courses and samples
-that point at it, and the reverse.
+It indexes open-source repos (described, tagged and linked, not cloned) and the material
+around them: standards, papers, talks, courses, datasets, reports. Everything is one
+knowledge graph, so a repo page shows the papers, courses and samples that point at it, and
+the reverse. On top of the index sit runnable samples, integration cards and templates.
 
-Current counts are at the top of [INDEX.md](INDEX.md) and in [llms.txt](llms.txt).
+Counts on 2026-11-06: 1507 records (768 repos, 202 papers, 114 docs, 51 datasets, 47 talks,
+40 standards and more, over 46 concepts), 158 integration cards, 50 dataset cards, 46 paper
+digests, 33 sample folders (32 with a `sample.json`). Live counts are at the top of
+[INDEX.md](INDEX.md) and in [llms.txt](llms.txt).
 
-## Where to start
+## Got a problem statement? Four hops
+
+1. **Decode it.** [docs/problem-statement-decoder.md](docs/problem-statement-decoder.md):
+   wording table => 1-3 of 26 rows, each with approach, stack, data, starting sample, risk,
+   pitch. Then [docs/day0-runbook.md](docs/day0-runbook.md) for the first three hours.
+2. **Pick a sample.** [samples/README.md](samples/README.md): every sample grouped by
+   problem, with status (ran / partial / sketch), deps, first command and the key measured
+   result.
+3. **Cite numbers.** [docs/evidence-matrix.md](docs/evidence-matrix.md): every measured number
+   across samples, with input type (real / SITL / synthetic) and caveats.
+4. **Build on cards.** [integration cards](docs/integration-cards/) (install, wiring,
+   gotchas, license for one repo) and [dataset cards](docs/dataset-cards/README.md)
+   (checked sizes and licenses). Picks per capability:
+   [docs/reference-stacks.md](docs/reference-stacks.md).
+
+## Where else to look
 
 | You want | Go to |
 |---|---|
-| Project ideas, judging angle, reference architectures | [docs/hackathon-playbook.md](docs/hackathon-playbook.md) |
-| "Which library should I use for X" | [docs/reference-stacks.md](docs/reference-stacks.md) |
+| Project ideas, judging angle, reference architectures, prep checklist | [docs/hackathon-playbook.md](docs/hackathon-playbook.md) |
+| Flagship demo: SITL spoof => integrity monitor => source switch => operator dashboard | [samples/golden-demo](samples/golden-demo/README.md) |
+| A real past brief and seven team solutions, benchmarked | [docs/landscape/blind-flight-teardown.md](docs/landscape/blind-flight-teardown.md) |
+| What vendors sell, what funders ask for, UA/RU sources | [docs/landscape/](docs/landscape/README.md), [UA/RU overview](docs/landscape/ua-ru-sources-overview.md) |
+| Integrity and timing guides | [docs/integrity-monitoring.md](docs/integrity-monitoring.md), [docs/timing-resilience.md](docs/timing-resilience.md) |
+| Model weights vs code licenses (SuperPoint, MASt3R...) | [docs/model-weights-licenses.md](docs/model-weights-licenses.md) |
+| Team repo skeleton, judge dashboard, offline cache | [templates/](templates/README.md): [project-repo](templates/project-repo/), [demo-dashboard](templates/demo-dashboard/README.md), [offline-kit](templates/offline-kit/README.md) |
 | Learn navigation fast | [docs/primer/](docs/primer/README.md), [docs/learning-paths.md](docs/learning-paths.md) |
-| Browse everything by topic | [INDEX.md](INDEX.md) => `catalog/concepts/` |
-| Working code | [samples/](samples/) |
-| See the graph | [graph/index.html](graph/index.html) (serve the repo root, see below) |
-| Use it from an LLM agent | [AGENTS.md](AGENTS.md), [llms.txt](llms.txt), [samples/llm-agent-usage](samples/llm-agent-usage/README.md) |
+| Browse by topic | [INDEX.md](INDEX.md) => `catalog/concepts/` |
+| Search UI and graph in a browser | `python3 -m http.server 8000` from the repo root, then open `/site/` ([site/README.md](site/README.md)) or `/graph/` |
+| Use it from an LLM agent | [AGENTS.md](AGENTS.md), [llms.txt](llms.txt), MCP server `tools/mcp_server.py` ([samples/llm-agent-usage](samples/llm-agent-usage/README.md)) |
+| An MCP server that flies a vehicle (SITL, geofenced, dry-run mode) | [samples/llm-mission-agent](samples/llm-mission-agent/README.md) |
 | Stay legal | [docs/export-control-and-ethics.md](docs/export-control-and-ethics.md) |
 
 ## Layout
 
 ```
 data/            source of truth (JSON per research lane) - edit here
-  concepts.json  fixed concept taxonomy
-  repos/         repo records
-  resources/     papers, standards, talks, courses, datasets, reports
-  github_meta.json  stars / license / last push, fetched by tools/enrich.py
 catalog/         generated page per repo, resource, concept, sample
 graph/           graph.json + interactive viewer
 index/           records.jsonl - one JSON line per node, for grep / RAG
-samples/         usage samples; each states whether it was run or is a sketch
-docs/            playbook, reference stacks, primer, schema, reports
-tools/           enrich.py, build.py, query.py, mcp_server.py (stdlib only)
+site/            static search UI (serve the repo root, open /site/)
+samples/         runnable samples; each sample.json says what ran
+templates/       project-repo skeleton, demo-dashboard, offline-kit, fill-in docs
+docs/            decoder, runbook, playbook, reference stacks, cards, primer, landscape
+docs/reports/    hand-written reviews and fact checks
+reports/         generated by tools/build.py (quality.md)
+tools/           build.py, query.py, mcp_server.py, check_links.py, enrich.py (stdlib only)
 ```
 
 ## Tools
@@ -45,26 +68,37 @@ All stdlib Python 3, no installs. `enrich.py` needs an authenticated `gh` CLI.
 ```
 python3 tools/query.py search "visual geolocalization satellite" --kind repo --fit high
 python3 tools/query.py concept concept:magnetic-nav
-python3 tools/query.py neighbors repo:mit-ai-accelerator/magnav.jl --depth 2
-python3 tools/enrich.py && python3 tools/build.py      # after editing data/
-python3 -m http.server 8000   # then open http://localhost:8000/graph/
+python3 tools/query.py show sample:golden-demo
+python3 tools/enrich.py && python3 tools/build.py      # after editing data/ or samples/*/sample.json
+python3 tools/check_links.py                           # relative links, as CI runs it
 claude mcp add navigation-index -- python3 "$PWD/tools/mcp_server.py"
 ```
 
-## How it was built and how much to trust it
+Free-text search works best with keywords ("ArduCopter spoof EKF3 dashboard"), not a pasted
+problem statement. For a statement, read the decoder first.
 
-Eleven parallel research lanes (autopilots, GNSS, INS/fusion, SLAM, GNSS-denied alt-nav,
-planning/GIS/C2, simulation/datasets, maritime/underwater/swarm/C-UAS, standards,
-learning material, defense context), plus a gap-fill lane for thin areas. Every
-GitHub repo was confirmed to exist via the GitHub API. Stars, license and last push come
-from the API, not from the researchers. A fact-check pass sampled records against READMEs
-and arXiv: see [docs/reports/fact-check-2026-11-06.md](docs/reports/fact-check-2026-11-06.md)
-for the measured error rate. Most records got only mechanical checks, so verify a repo's
-README before you build on it. Samples marked "unverified sketch" were syntax-checked,
-never run.
+## How much to trust it
 
-Snapshot date: 2026-11-06. [reports/quality.md](reports/quality.md) lists dangling
-references, archived repos and merged duplicates.
+- **Records.** Every GitHub repo was confirmed to exist via the GitHub API; stars, license and
+  last push come from the API. Fact-check rounds 1, 3, 4 and 5 read records against READMEs and
+papers.
+  Measured error rates: 8.3% of a 60-repo random sample in
+  [round 1](docs/reports/fact-check-2026-11-06.md); 9.5% factual errors in 273 high-fit and
+  gap-fill repos in [round 3](docs/reports/fact-check-round3.md); 31.6% substantive issues in
+  364 medium/low-fit repos in [round 5](docs/reports/fact-check-round5.md) (licence terms were
+  the biggest category). Patches were applied, but read a repo's README and LICENSE before
+  you build on it, especially for medium/low-fit records.
+- **Integration and dataset cards** were read from source and docs, not run, unless the card
+  says otherwise ([round 4](docs/reports/fact-check-round4.md) checked a sample of them).
+- **Samples** state what ran, on which data and with which interpreter, in `sample.json`
+  (`verified`, `verified_status`) and in each README. Most numbers come from synthetic or
+  simulated inputs; [docs/evidence-matrix.md](docs/evidence-matrix.md) marks which ones are
+  real data.
+- [docs/reports/cold-start-review.md](docs/reports/cold-start-review.md) is a fresh-eyes
+  review of the whole hub; [reports/quality.md](reports/quality.md) lists dangling
+  references, archived repos and merged duplicates.
+
+Snapshot date: 2026-11-06.
 
 ## Scope
 

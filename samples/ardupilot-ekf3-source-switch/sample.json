@@ -37,5 +37,8 @@
       "rel": "explains"
     }
   ],
-  "verified": "Ran on 2026-11-06 against ArduCopter Copter-4.6.3 SITL in Docker (samples/sitl-docker, linux/arm64) with pymavlink 2.4.50 on python3.12: source switch accepted, EKF kept POS_HORIZ_ABS with GPS fix_type 1 for 30 s and flew the 15 m leg; --no-switch lost position after ~6 s and triggered 'EKF Failsafe: changed to LAND Mode'. Output in README. ekf_flags.py tests (6) pass on python3.14.7. --switch-via rc not run."
+  "verified": "Ran on 2026-11-06 against ArduCopter Copter-4.6.3 SITL in Docker (samples/sitl-docker, linux/arm64) with pymavlink 2.4.50 on python3.12: source switch accepted, EKF kept POS_HORIZ_ABS with GPS fix_type 1 for 30 s and flew the 15 m leg; --no-switch lost position after ~6 s and triggered 'EKF Failsafe: changed to LAND Mode'. Output in README. ekf_flags.py tests (6) pass on python3.14.7. --switch-via rc not run.",
+  "verified_status": "ran",
+  "deps": "docker",
+  "first_command": "python3 source_switch.py --connect tcp:127.0.0.1:5762 --setup && python3 source_switch.py --connect tcp:127.0.0.1:5762"
 }
