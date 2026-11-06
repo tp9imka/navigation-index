@@ -32,7 +32,7 @@ developers use onboard optical navigation to keep flying after links and GNSS ar
 ([IEEE Spectrum](../../catalog/resources/ieee-spectrum-ukraine-drones-ew-2025.md),
 [IISS dossier](../../catalog/resources/iiss-uavs-isr-deterrence-war-2026.md)). Vendor
 performance claims there are not independently tested
-([Militarnyi report](../../catalog/resources/militarnyi-vermeer-optical-navigation.md)).
+([Militarnyi report](../../catalog/resources/militarnyi-vermeer-optical-nav-2025.md)).
 
 Pipeline (retrieve-then-match, from chapter 4):
 
