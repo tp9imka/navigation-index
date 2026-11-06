@@ -1325,6 +1325,21 @@
    "size_complete": false
   },
   {
+   "id": "pip:two-source-integrity-vpair",
+   "type": "pip",
+   "tier": "standard",
+   "license": "per package (see PyPI metadata)",
+   "source": "samples/two-source-integrity-vpair/requirements.txt",
+   "requirements": [
+    "numpy==2.5.4",
+    "scipy==1.18.1",
+    "rasterio==1.5.2"
+   ],
+   "vcs": [],
+   "size": null,
+   "size_complete": false
+  },
+  {
    "id": "pip:usv-gnss-denied-nav",
    "type": "pip",
    "tier": "standard",

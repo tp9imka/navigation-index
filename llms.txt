@@ -1,6 +1,6 @@
 # navigation-index
 
-> Knowledge hub for navigation / PNT / GNSS-denied autonomy with a defense lens: 768 open-source repos, 678 documents, talks, courses and datasets, 40 usage samples and 30 guides, linked in one graph over 46 concepts.
+> Knowledge hub for navigation / PNT / GNSS-denied autonomy with a defense lens: 768 open-source repos, 678 documents, talks, courses and datasets, 41 usage samples and 30 guides, linked in one graph over 46 concepts.
 
 Read AGENTS.md for how to query and extend. For a problem statement, read docs/problem-statement-decoder.md, pick its rows, then search with each row's keywords: `python3 tools/query.py search "<keywords>"` or the MCP server tools/mcp_server.py (its `read` tool returns any guide or sample README). Guides (kind `guide`) are searchable like any other node.
 
@@ -93,6 +93,7 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [terrain-relative-nav-pf](samples/terrain-relative-nav-pf/README.md) (partial, stdlib): Stdlib SIR particle filter: biased INS + radar altimeter vs a synthetic DEM, flat-terrain control
 - [thermal-geolocalization](samples/thermal-geolocalization/README.md) (ran, venv): Night / thermal frame => RGB satellite fix by condition, modality-bridging preprocessing, a gate that accepted no wrong fix, CPU vs MPS timing
 - [timing-holdover](samples/timing-holdover/README.md) (ran, stdlib): GNSS-disciplined oscillator sim (TCXO / CSAC / OCXO / Rb): holdover error after outage, slow time-walk spoof vs internal and cross-source monitors
+- [two-source-integrity-vpair](samples/two-source-integrity-vpair/README.md) (ran, venv): Second absolute source (TRN from real NRW LiDAR at real VPAIR poses) turns solution-separation integrity from 1.6 % to 84 % available at AL 50 m; fault injection with detection and attribution limits
 - [usv-gnss-denied-nav](samples/usv-gnss-denied-nav/README.md) (ran, stdlib): USV own-ship nav in the Oresund: compass + speed-log DR, simulated radar matched to the real OSM chart, monitor excludes spoofed GNSS
 - [vio-to-mavlink-bridge](samples/vio-to-mavlink-bridge/README.md) (partial, stdlib): ENU/FLU pose => NED/FRD ODOMETRY or VISION_POSITION_ESTIMATE for EKF3 / EKF2
 - [visual-geolocalization-lightglue](samples/visual-geolocalization-lightglue/README.md) (ran, venv): Nadir frame => orthophoto match (LightGlue, MAGSAC homography, GeoTIFF transform) => lat/lon; stdlib geometry module
@@ -104,20 +105,20 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [RTK / PPP precise positioning](catalog/concepts/gnss-rtk-ppp.md): 39 items - Carrier-phase differential and precise point positioning, corrections (RTCM, SSR, NTRIP).
 - [Software-defined GNSS receivers](catalog/concepts/gnss-sdr.md): 34 items - Acquisition, tracking, navigation-message decoding in software on SDR front-ends.
 - [Jamming and spoofing](catalog/concepts/gnss-interference.md): 174 items - GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-jam antennas (CRPA).
-- [Assured / resilient PNT](catalog/concepts/assured-pnt.md): 250 items - Architectures that keep position, navigation and timing trustworthy under denial and deception.
+- [Assured / resilient PNT](catalog/concepts/assured-pnt.md): 251 items - Architectures that keep position, navigation and timing trustworthy under denial and deception.
 - [Timing and time transfer](catalog/concepts/timing.md): 112 items - Clocks, holdover, PTP/NTP, GNSS-disciplined oscillators, chip-scale atomic clocks.
 - [Inertial navigation (INS/IMU)](catalog/concepts/ins.md): 134 items - Strapdown mechanization, IMU error models, calibration, dead reckoning.
-- [Sensor fusion and state estimation](catalog/concepts/sensor-fusion.md): 214 items - Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integration.
+- [Sensor fusion and state estimation](catalog/concepts/sensor-fusion.md): 215 items - Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integration.
 - [GNSS/INS integration](catalog/concepts/gnss-ins.md): 70 items - Loosely, tightly and deeply coupled GNSS/INS.
 - [Sensor calibration](catalog/concepts/calibration.md): 37 items - Camera-IMU, LiDAR-IMU extrinsics, intrinsics, time offset, Allan variance.
-- [Visual(-inertial) odometry](catalog/concepts/vio.md): 147 items - VO/VIO from monocular, stereo, event cameras with IMU.
+- [Visual(-inertial) odometry](catalog/concepts/vio.md): 148 items - VO/VIO from monocular, stereo, event cameras with IMU.
 - [Visual SLAM](catalog/concepts/visual-slam.md): 91 items - Mapping and localization with loop closure from cameras.
 - [LiDAR odometry and SLAM](catalog/concepts/lidar-slam.md): 96 items - LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [Radar navigation and odometry](catalog/concepts/radar-nav.md): 34 items - Radar odometry, radar SLAM, radar altimeters, Doppler velocity.
 - [Place recognition and loop closure](catalog/concepts/place-recognition.md): 74 items - Global descriptors, image retrieval, LiDAR place recognition.
 - [Feature detection and matching](catalog/concepts/feature-matching.md): 65 items - Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
-- [Visual geo-localization (image-to-map)](catalog/concepts/visual-geolocalization.md): 139 items - Matching UAV/ground imagery to satellite orthophotos or maps for absolute position without GNSS.
-- [Terrain-relative navigation](catalog/concepts/terrain-nav.md): 59 items - TERCOM/TRN/DSMAC-style matching of altimetry or imagery against DEM/terrain databases.
+- [Visual geo-localization (image-to-map)](catalog/concepts/visual-geolocalization.md): 140 items - Matching UAV/ground imagery to satellite orthophotos or maps for absolute position without GNSS.
+- [Terrain-relative navigation](catalog/concepts/terrain-nav.md): 60 items - TERCOM/TRN/DSMAC-style matching of altimetry or imagery against DEM/terrain databases.
 - [Magnetic anomaly navigation](catalog/concepts/magnetic-nav.md): 45 items - MagNav: matching magnetometer readings to crustal anomaly maps; aircraft compensation.
 - [Celestial and star-tracker navigation](catalog/concepts/celestial-nav.md): 24 items - Star trackers, sun/sky polarization, celestial fixes.
 - [Signals of opportunity](catalog/concepts/signals-of-opportunity.md): 63 items - Positioning from LTE/5G, Wi-Fi, DVB, LEO satellites (Starlink, Iridium), eLoran, other non-navigation RF.

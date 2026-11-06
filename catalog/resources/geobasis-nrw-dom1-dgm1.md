@@ -26,4 +26,8 @@ North Rhine-Westphalia's open-data 1 m digital surface model (DOM1, buildings an
 - dataset_for: [Heightmap-gradient particle filter on real DEM and 1 m LiDAR (SPRIN-D CTU method) vs TERCOM](../../catalog/samples/terrain-heightmap-pf.md)
 - has_code: [Rasterio](../../catalog/repos/rasterio__rasterio.md)
 
+## Referenced by
+
+- [Two independent absolute sources on one real flight: visual fixes + terrain-relative navigation with solution-separation integrity (VPAIR over NRW 1 m LiDAR)](../../catalog/samples/two-source-integrity-vpair.md) (uses)
+
 _Indexed by lane(s): datasets-used_
