@@ -1,0 +1,43 @@
+get_state({}) => {"mode": "RTL", "armed": false, "dry_run": false, "ekf_source_set_commanded": null, "position": {"lat": -35.3632609, "lon": 149.1652299, "alt_msl_m": 584.07, "rel_alt_m": 0.01, "heading_deg": 21.55}, 
+get_nav_health({}) => {"verdict": "nominal", "reasons": [], "gnss_ok": true, "horizontal_position": "abs", "ekf_flags": ["ATTITUDE", "VELOCITY_HORIZ", "VELOCITY_VERT", "POS_HORIZ_REL", "POS_HORIZ_ABS", "POS_VERT_ABS", "PRE
+# safety: target outside fence, then altitude above the band
+goto({"lat": -35.37, "lon": 149.1652, "rel_alt_m": 20}) => ERROR {"rejected": true, "reason": "target (-35.370000, 149.165200) is outside the geofence (or within 10.0 m of its edge)"}
+arm_takeoff({"rel_alt_m": 120}) => ERROR {"rejected": true, "reason": "altitude 120.0 m outside [5.0, 60.0] m above home"}
+# takeoff and survey
+arm_takeoff({"rel_alt_m": 20}) => {"armed": true, "takeoff_ack": "MAV_RESULT_ACCEPTED", "target_rel_alt_m": 20.0, "reached_rel_alt_m": 18.11}
+goto({"lat": -35.363, "lon": 149.1648, "rel_alt_m": 20, "wait_s": 40}) => {"sent": true, "fence_check": {"target_inside": true, "path_checked": true, "leg_m": 48.6}, "arrived": true}
+plan_survey({"polygon": [[-35.3629, 149.1648], [-35.3629, 149.1662], [-35.3619, 149.1662], [) => {"waypoints": [{"lat": -35.3628101, "lon": 149.1649378, "rel_alt_m": 20.0}, {"lat": -35.3619899, "lon": 149.1649378, "rel_alt_m": 20.0}, {"lat": -35.3619899, "lon": 149.1652135, "rel_alt_m": 20.0}, {"
+upload_mission({"waypoints": [{"lat": -35.3628101, "lon": 149.1649378, "rel_alt_m": 20.0}, {"la) => {"uploaded_items": 12, "fence_check": {"waypoints": 10, "path_m": 580.9, "start_checked": true}, "mode_ack": "MAV_RESULT_ACCEPTED"}
+get_state({}) => {"mode": "AUTO", "armed": true, "dry_run": false, "ekf_source_set_commanded": null, "position": {"lat": -35.3620204, "lon": 149.165214, "alt_msl_m": 604.07, "rel_alt_m": 20.0, "heading_deg": 167.41}, 
+get_nav_health({}) => {"verdict": "nominal", "reasons": [], "gnss_ok": true, "horizontal_position": "abs", "ekf_flags": ["ATTITUDE", "VELOCITY_HORIZ", "VELOCITY_VERT", "POS_HORIZ_REL", "POS_HORIZ_ABS", "POS_VERT_ABS", "PRE
+# jammer: SIM_GPS_DISABLE=1 on a separate MAVLink link
+# SIM_GPS_DISABLE now 1.0
+get_nav_health({}) => {"verdict": "nominal", "reasons": [], "gnss_ok": true, "horizontal_position": "abs", "ekf_flags": ["ATTITUDE", "VELOCITY_HORIZ", "VELOCITY_VERT", "POS_HORIZ_REL", "POS_HORIZ_ABS", "POS_VERT_ABS", "PRE
+get_nav_health({}) => {"verdict": "degraded", "reasons": ["GNSS weak: fix=NO_FIX sats=3 hdop=1.21"], "gnss_ok": false, "horizontal_position": "abs", "ekf_flags": ["ATTITUDE", "VELOCITY_HORIZ", "VELOCITY_VERT", "POS_HORIZ_R
+# agent policy: GNSS degraded => vision source set 2 (ExternalNav), then RTL
+set_ekf_source_set({"source_set": 2}) => {"source_set": 2, "ack": "MAV_RESULT_ACCEPTED", "uses": {"POSXY": "ExternalNav", "VELXY": "ExternalNav", "POSZ": "Baro", "VELZ": "ExternalNav", "YAW": "ExternalNav"}}
+get_nav_health({}) => {"verdict": "degraded", "reasons": ["GNSS weak: fix=NO_FIX sats=3 hdop=1.21"], "gnss_ok": false, "horizontal_position": "abs", "ekf_flags": ["ATTITUDE", "VELOCITY_HORIZ", "VELOCITY_VERT", "POS_HORIZ_R
+get_nav_health({}) => {"verdict": "degraded", "reasons": ["GNSS weak: fix=NO_FIX sats=3 hdop=1.21"], "gnss_ok": false, "horizontal_position": "abs", "ekf_flags": ["ATTITUDE", "VELOCITY_HORIZ", "VELOCITY_VERT", "POS_HORIZ_R
+get_nav_health({}) => {"verdict": "degraded", "reasons": ["GNSS weak: fix=NO_FIX sats=3 hdop=1.21"], "gnss_ok": false, "horizontal_position": "abs", "ekf_flags": ["ATTITUDE", "VELOCITY_HORIZ", "VELOCITY_VERT", "POS_HORIZ_R
+get_nav_health({}) => {"verdict": "degraded", "reasons": ["GNSS weak: fix=NO_FIX sats=3 hdop=1.21"], "gnss_ok": false, "horizontal_position": "abs", "ekf_flags": ["ATTITUDE", "VELOCITY_HORIZ", "VELOCITY_VERT", "POS_HORIZ_R
+set_mode({"mode": "RTL"}) => {"mode": "RTL", "ack": "MAV_RESULT_ACCEPTED"}
+get_state({}) => {"mode": "RTL", "armed": true, "dry_run": false, "ekf_source_set_commanded": 2, "position": {"lat": -35.3626986, "lon": 149.1654927, "alt_msl_m": 604.06, "rel_alt_m": 20.0, "heading_deg": 359.07}, "in
+get_state({}) => {"mode": "RTL", "armed": true, "dry_run": false, "ekf_source_set_commanded": 2, "position": {"lat": -35.3625913, "lon": 149.1654874, "alt_msl_m": 604.04, "rel_alt_m": 19.98, "heading_deg": 359.81}, "i
+get_state({}) => {"mode": "RTL", "armed": true, "dry_run": false, "ekf_source_set_commanded": 2, "position": {"lat": -35.3627286, "lon": 149.1654346, "alt_msl_m": 604.04, "rel_alt_m": 19.97, "heading_deg": 358.0}, "in
+get_state({}) => {"mode": "RTL", "armed": true, "dry_run": false, "ekf_source_set_commanded": 2, "position": {"lat": -35.3630366, "lon": 149.1653157, "alt_msl_m": 604.02, "rel_alt_m": 19.95, "heading_deg": 358.28}, "i
+get_state({}) => {"mode": "RTL", "armed": true, "dry_run": false, "ekf_source_set_commanded": 2, "position": {"lat": -35.3632585, "lon": 149.1652319, "alt_msl_m": 604.01, "rel_alt_m": 19.94, "heading_deg": 358.64}, "i
+get_state({}) => {"mode": "RTL", "armed": true, "dry_run": false, "ekf_source_set_commanded": 2, "position": {"lat": -35.3632634, "lon": 149.1652292, "alt_msl_m": 604.04, "rel_alt_m": 19.97, "heading_deg": 358.91}, "i
+get_state({}) => {"mode": "RTL", "armed": true, "dry_run": false, "ekf_source_set_commanded": 2, "position": {"lat": -35.3632614, "lon": 149.1652298, "alt_msl_m": 603.5, "rel_alt_m": 19.43, "heading_deg": 358.96}, "in
+get_state({}) => {"mode": "RTL", "armed": true, "dry_run": false, "ekf_source_set_commanded": 2, "position": {"lat": -35.3632611, "lon": 149.1652299, "alt_msl_m": 597.53, "rel_alt_m": 13.47, "heading_deg": 358.99}, "i
+get_state({}) => {"mode": "RTL", "armed": true, "dry_run": false, "ekf_source_set_commanded": 2, "position": {"lat": -35.363261, "lon": 149.1652299, "alt_msl_m": 593.67, "rel_alt_m": 9.61, "heading_deg": 359.0}, "insi
+get_state({}) => {"mode": "RTL", "armed": true, "dry_run": false, "ekf_source_set_commanded": 2, "position": {"lat": -35.363261, "lon": 149.1652299, "alt_msl_m": 591.65, "rel_alt_m": 7.59, "heading_deg": 359.02}, "ins
+get_state({}) => {"mode": "RTL", "armed": true, "dry_run": false, "ekf_source_set_commanded": 2, "position": {"lat": -35.363261, "lon": 149.16523, "alt_msl_m": 589.65, "rel_alt_m": 5.58, "heading_deg": 359.04}, "insid
+get_state({}) => {"mode": "RTL", "armed": true, "dry_run": false, "ekf_source_set_commanded": 2, "position": {"lat": -35.363261, "lon": 149.16523, "alt_msl_m": 587.65, "rel_alt_m": 3.58, "heading_deg": 359.05}, "insid
+get_state({}) => {"mode": "RTL", "armed": true, "dry_run": false, "ekf_source_set_commanded": 2, "position": {"lat": -35.363261, "lon": 149.16523, "alt_msl_m": 585.55, "rel_alt_m": 1.48, "heading_deg": 359.06}, "insid
+get_state({}) => {"mode": "RTL", "armed": true, "dry_run": false, "ekf_source_set_commanded": 2, "position": {"lat": -35.363261, "lon": 149.16523, "alt_msl_m": 584.06, "rel_alt_m": -0.01, "heading_deg": 359.05}, "insi
+get_state({}) => {"mode": "RTL", "armed": false, "dry_run": false, "ekf_source_set_commanded": 2, "position": {"lat": -35.363261, "lon": 149.16523, "alt_msl_m": 584.07, "rel_alt_m": 0.01, "heading_deg": 359.02}, "insi
+get_nav_health({}) => {"verdict": "degraded", "reasons": ["GNSS weak: fix=NO_FIX sats=3 hdop=1.21"], "gnss_ok": false, "horizontal_position": "abs", "ekf_flags": ["ATTITUDE", "VELOCITY_HORIZ", "VELOCITY_VERT", "POS_HORIZ_R
+# restore GPS and source set 1 for the next run
+# SIM_GPS_DISABLE now 0.0
+set_ekf_source_set({"source_set": 1}) => {"source_set": 1, "ack": "MAV_RESULT_ACCEPTED", "uses": {"POSXY": "GPS", "VELXY": "GPS", "POSZ": "Baro", "VELZ": "GPS", "YAW": "Compass"}}
+get_state({}) => {"mode": "RTL", "armed": false, "dry_run": false, "ekf_source_set_commanded": 1, "position": {"lat": -35.363261, "lon": 149.16523, "alt_msl_m": 584.07, "rel_alt_m": 0.01, "heading_deg": 358.97}, "insi

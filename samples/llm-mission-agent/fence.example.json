@@ -1,0 +1,14 @@
+{
+  "comment": "Inclusion polygon around the ArduPilot SITL default home (CMAC, -35.363261, 149.165230). lat/lon WGS84 degrees; altitudes in metres above home.",
+  "polygon": [
+    [-35.36586, 149.16206],
+    [-35.36586, 149.16856],
+    [-35.36226, 149.16986],
+    [-35.36046, 149.16526],
+    [-35.36226, 149.16136]
+  ],
+  "min_alt_m": 5,
+  "max_alt_m": 60,
+  "margin_m": 10,
+  "max_leg_m": 800
+}

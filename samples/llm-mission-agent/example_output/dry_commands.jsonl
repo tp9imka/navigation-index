@@ -1,0 +1,6 @@
+{"ts": 1793952845.93, "tool": "(start)", "outcome": "info", "result": {"connect": "tcp:127.0.0.1:15762", "dry_run": true, "fence": "<repo>/samples/llm-mission-agent/fence.example.json"}}
+{"ts": 1793952845.982, "tool": "get_state", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952845.985, "tool": "goto", "args": {"lat": -35.3625, "lon": 149.1656, "rel_alt_m": 25}, "outcome": "dry_run", "result": {"dry_run": true, "fence_check": {"target_inside": true, "path_checked": true, "leg_m": 90.4}, "would_send": "SET_POSITION_TARGET_GLOBAL_INT (GLOBAL_RELATIVE_ALT_INT)"}}
+{"ts": 1793952845.985, "tool": "goto", "args": {"lat": -35.37, "lon": 149.1652, "rel_alt_m": 25}, "outcome": "rejected", "reason": "target (-35.370000, 149.165200) is outside the geofence (or within 10.0 m of its edge)"}
+{"ts": 1793952845.986, "tool": "set_mode", "args": {"mode": "AUTO"}, "outcome": "rejected", "reason": "AUTO needs a mission uploaded through upload_mission"}
+{"ts": 1793952846.286, "tool": "set_ekf_source_set", "args": {"source_set": 2}, "outcome": "dry_run", "result": {"dry_run": true, "would_send": "MAV_CMD_SET_EKF_SOURCE_SET 2", "uses": {"POSXY": "ExternalNav", "VELXY": "ExternalNav", "POSZ": "Baro", "VELZ": "ExternalNav", "YAW": "ExternalNav"}}}

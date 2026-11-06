@@ -7,3 +7,4 @@ visual-geolocalization-lightglue
 gnss-rinex-processing
 altpnt-integrity
 interference-geolocation-to-tak
+llm-mission-agent

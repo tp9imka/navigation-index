@@ -1,0 +1,4 @@
+# MCP server, transcript driver, tests: pymavlink only (tests need nothing outside stdlib)
+pymavlink==2.4.50
+# agent_loop.py only
+anthropic>=2.6

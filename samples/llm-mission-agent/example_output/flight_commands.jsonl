@@ -1,0 +1,37 @@
+{"ts": 1793952705.262, "tool": "(start)", "outcome": "info", "result": {"connect": "tcp:127.0.0.1:15762", "dry_run": false, "fence": "<repo>/samples/llm-mission-agent/fence.example.json"}}
+{"ts": 1793952705.308, "tool": "get_state", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952705.309, "tool": "get_nav_health", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952705.31, "tool": "goto", "args": {"lat": -35.37, "lon": 149.1652, "rel_alt_m": 20}, "outcome": "rejected", "reason": "target (-35.370000, 149.165200) is outside the geofence (or within 10.0 m of its edge)"}
+{"ts": 1793952705.31, "tool": "arm_takeoff", "args": {"rel_alt_m": 120}, "outcome": "rejected", "reason": "altitude 120.0 m outside [5.0, 60.0] m above home"}
+{"ts": 1793952717.372, "tool": "arm_takeoff", "args": {"rel_alt_m": 20}, "outcome": "ok", "result": {"armed": true, "takeoff_ack": "MAV_RESULT_ACCEPTED", "target_rel_alt_m": 20.0, "reached_rel_alt_m": 18.11}}
+{"ts": 1793952725.912, "tool": "goto", "args": {"lat": -35.363, "lon": 149.1648, "rel_alt_m": 20, "wait_s": 40}, "outcome": "ok", "result": {"sent": true, "fence_check": {"target_inside": true, "path_checked": true, "leg_m": 48.6}, "arrived": true}}
+{"ts": 1793952725.921, "tool": "plan_survey", "args": {"polygon": [[-35.3629, 149.1648], [-35.3629, 149.1662], [-35.3619, 149.1662], [-35.3619, 149.1648]], "spacing_m": 25, "rel_alt_m": 20}, "outcome": "ok", "result": {"waypoints": [{"lat": -35.3628101, "lon": 149.1649378, "rel_alt_m": 20.0}, {"lat": -35.3619899, "lon": 149.1649378, "rel_alt_m": 20.0}, {"lat": -35.3619899, "lon": 149.1652135, "rel_alt_m": 20.0}, {"lat": -35.3628101, "lon": 149.1652135, "rel_alt_m": 20.0}, {"lat": -35.3628101, "lon": 149.1654892, "rel_alt_m": 20.0}, {"lat": -35.3619899, "lon": 149.1654892, "rel_alt_m": 20.0}, {"lat": -35.3619899, "lon": 149.1657649, "rel_alt_m": 20.0}, {"lat": -35.3628101, "lon": 149.1657649, "rel_alt_m": 20.0}, {"lat": -35.3628101, "lon": 149.1660406, "rel_alt_m": 20.0}, {"lat": -35.3619899, "lon": 149.1660406, "rel_alt_m": 20.0}], "fence_check": {"waypoints": 10, "path_m": 556.0, "start_checked": false}}}
+{"ts": 1793952726.108, "tool": "upload_mission", "args": {"waypoints": [{"lat": -35.3628101, "lon": 149.1649378, "rel_alt_m": 20.0}, {"lat": -35.3619899, "lon": 149.1649378, "rel_alt_m": 20.0}, {"lat": -35.3619899, "lon": 149.1652135, "rel_alt_m": 20.0}, {"lat": -35.3628101, "lon": 149.1652135, "rel_alt_m": 20.0}, {"lat": -35.3628101, "lon": 149.1654892, "rel_alt_m": 20.0}, {"lat": -35.3619899, "lon": 149.1654892, "rel_alt_m": 20.0}, {"lat": -35.3619899, "lon": 149.1657649, "rel_alt_m": 20.0}, {"lat": -35.3628101, "lon": 149.1657649, "rel_alt_m": 20.0}, {"lat": -35.3628101, "lon": 149.1660406, "rel_alt_m": 20.0}, {"lat": -35.3619899, "lon": 149.1660406, "rel_alt_m": 20.0}], "rtl_at_end": true, "start": true}, "outcome": "ok", "result": {"uploaded_items": 12, "fence_check": {"waypoints": 10, "path_m": 580.9, "start_checked": true}, "mode_ack": "MAV_RESULT_ACCEPTED"}}
+{"ts": 1793952751.114, "tool": "get_state", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952751.116, "tool": "get_nav_health", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952751.184, "tool": "get_nav_health", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952753.189, "tool": "get_nav_health", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952753.639, "tool": "set_ekf_source_set", "args": {"source_set": 2}, "outcome": "ok", "result": {"source_set": 2, "ack": "MAV_RESULT_ACCEPTED", "uses": {"POSXY": "ExternalNav", "VELXY": "ExternalNav", "POSZ": "Baro", "VELZ": "ExternalNav", "YAW": "ExternalNav"}}}
+{"ts": 1793952753.64, "tool": "get_nav_health", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952757.645, "tool": "get_nav_health", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952761.648, "tool": "get_nav_health", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952765.65, "tool": "get_nav_health", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952769.659, "tool": "set_mode", "args": {"mode": "RTL"}, "outcome": "ok", "result": {"mode": "RTL", "ack": "MAV_RESULT_ACCEPTED"}}
+{"ts": 1793952769.66, "tool": "get_state", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952773.666, "tool": "get_state", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952777.673, "tool": "get_state", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952781.678, "tool": "get_state", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952785.683, "tool": "get_state", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952789.684, "tool": "get_state", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952793.686, "tool": "get_state", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952797.691, "tool": "get_state", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952801.696, "tool": "get_state", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952805.697, "tool": "get_state", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952809.702, "tool": "get_state", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952813.708, "tool": "get_state", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952817.711, "tool": "get_state", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952821.713, "tool": "get_state", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952825.716, "tool": "get_state", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952825.717, "tool": "get_nav_health", "args": {}, "outcome": "read", "result": null}
+{"ts": 1793952831.212, "tool": "set_ekf_source_set", "args": {"source_set": 1}, "outcome": "ok", "result": {"source_set": 1, "ack": "MAV_RESULT_ACCEPTED", "uses": {"POSXY": "GPS", "VELXY": "GPS", "POSZ": "Baro", "VELZ": "GPS", "YAW": "Compass"}}}
+{"ts": 1793952831.218, "tool": "get_state", "args": {}, "outcome": "read", "result": null}

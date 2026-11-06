@@ -1,0 +1,5 @@
+get_state({}) => {"mode": "RTL", "armed": false, "dry_run": true, "ekf_source_set_commanded": null, "position": {"lat": -35.3632546, "lon": 149.1652283, "alt_msl_m": 584.07, "rel_alt_m": 0.01, "heading_deg": 359.26}, 
+goto({"lat": -35.3625, "lon": 149.1656, "rel_alt_m": 25}) => {"dry_run": true, "fence_check": {"target_inside": true, "path_checked": true, "leg_m": 90.4}, "would_send": "SET_POSITION_TARGET_GLOBAL_INT (GLOBAL_RELATIVE_ALT_INT)"}
+goto({"lat": -35.37, "lon": 149.1652, "rel_alt_m": 25}) => ERROR {"rejected": true, "reason": "target (-35.370000, 149.165200) is outside the geofence (or within 10.0 m of its edge)"}
+set_mode({"mode": "AUTO"}) => ERROR {"rejected": true, "reason": "AUTO needs a mission uploaded through upload_mission"}
+set_ekf_source_set({"source_set": 2}) => {"dry_run": true, "would_send": "MAV_CMD_SET_EKF_SOURCE_SET 2", "uses": {"POSXY": "ExternalNav", "VELXY": "ExternalNav", "POSZ": "Baro", "VELZ": "ExternalNav", "YAW": "ExternalNav"}}
