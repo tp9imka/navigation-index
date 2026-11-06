@@ -24,6 +24,8 @@ jobs:
         run: python3 tools/check_links.py
       - name: Search ranker parity (Python vs site JS)
         run: python3 tools/search_eval.py --parity
+      - name: Sample test list is complete
+        run: python3 tools/check_sample_tests.py
       - name: Stdlib sample and template tests
         run: |
           python3 tools/test_mcp_server.py

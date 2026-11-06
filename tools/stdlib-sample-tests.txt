@@ -34,3 +34,6 @@ golden-demo-fixedwing
 multi-source-fde
 autopilot-resilient-configs
 timing-network-holdover
+gnss-ins-ekf-outage
+terrain-relative-nav-pf
+relative-nav-benchmark

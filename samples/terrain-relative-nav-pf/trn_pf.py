@@ -64,6 +64,23 @@ def weighted_stats(particles, weights):
     return mx, my, math.sqrt(var)
 
 
+def measurement_update(particles, weights, dem, measured_terrain, meas_sigma):
+    """Bayes update on one terrain-height measurement. Returns normalized weights,
+    or None when every particle is off the DEM or infinitely unlikely."""
+    new_w = []
+    for p, w in zip(particles, weights):
+        h = dem.height(p[0], p[1])
+        if h is None:
+            new_w.append(0.0)
+        else:
+            r = (measured_terrain - h) / meas_sigma
+            new_w.append(w * math.exp(-0.5 * r * r))
+    total = sum(new_w)
+    if total <= 0.0:
+        return None
+    return [w / total for w in new_w]
+
+
 def run(seed, n_particles, duration_s, terrain_scale):
     rng = random.Random(seed)
     dem = synthetic_dem(DEM_ROWS, DEM_COLS, DEM_SPACING_M, seed)
@@ -80,6 +97,7 @@ def run(seed, n_particles, duration_s, terrain_scale):
     weights = [1.0 / n_particles] * n_particles
     resamples = 0
     terrain_seen = []
+    history = []  # (t, ins_err_m, pf_err_m, pf_spread_m) per step
 
     print(f"seed={seed} particles={n_particles} duration={duration_s}s "
           f"terrain_scale={terrain_scale} meas_sigma={meas_sigma:.1f}m")
@@ -109,21 +127,14 @@ def run(seed, n_particles, duration_s, terrain_scale):
             p[0] += (ins_ve - p[2]) * DT_S + rng.gauss(0, PROCESS_POS_SIGMA_M)
             p[1] += (ins_vn - p[3]) * DT_S + rng.gauss(0, PROCESS_POS_SIGMA_M)
 
-        new_w = []
-        for p, w in zip(particles, weights):
-            h = dem.height(p[0], p[1])
-            if h is None:
-                new_w.append(0.0)
-            else:
-                r = (measured_terrain - h) / meas_sigma
-                new_w.append(w * math.exp(-0.5 * r * r))
-        total = sum(new_w)
-        if total <= 0.0:
+        new_w = measurement_update(particles, weights, dem, measured_terrain, meas_sigma)
+        if new_w is None:
             print(f"t={t:.0f}s: all particle weights vanished (filter divergence)")
             break
-        weights = [w / total for w in new_w]
+        weights = new_w
 
         mx, my, spread = weighted_stats(particles, weights)
+        history.append((t, math.hypot(ix - tx, iy - ty), math.hypot(mx - tx, my - ty), spread))
         if k % int(REPORT_EVERY_S / DT_S) == 0:
             be = sum(w * p[2] for p, w in zip(particles, weights))
             bn = sum(w * p[3] for p, w in zip(particles, weights))
@@ -140,6 +151,10 @@ def run(seed, n_particles, duration_s, terrain_scale):
     roughness = math.sqrt(sum((h - mean) ** 2 for h in terrain_seen) / len(terrain_seen))
     print(f"resamples={resamples} terrain_std_along_track={roughness:.1f}m "
           f"true_bias e/n={INS_VEL_BIAS_MPS[0]:.2f}/{INS_VEL_BIAS_MPS[1]:.2f} m/s")
+    bias = (sum(w * p[2] for p, w in zip(particles, weights)),
+            sum(w * p[3] for p, w in zip(particles, weights)))
+    return {"history": history, "resamples": resamples, "terrain_std_m": roughness,
+            "bias_est": bias, "weights": weights}
 
 
 def main():
