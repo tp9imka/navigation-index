@@ -8,3 +8,4 @@ gnss-rinex-processing
 altpnt-integrity
 interference-geolocation-to-tak
 llm-mission-agent
+golden-demo

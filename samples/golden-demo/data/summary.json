@@ -1,0 +1,78 @@
+{
+  "monitor": {
+    "mode": "monitor",
+    "spoof": {
+      "onset_s": 25.0,
+      "rate_mps": 1.0,
+      "bearing_deg": 90.0,
+      "max_m": 150.0
+    },
+    "mission_duration_s": 117.9,
+    "spoof_offset_at_end_m": 92.5,
+    "alarm_t_s": 34.4,
+    "time_to_detect_s": 9.4,
+    "spoof_offset_at_alarm_m": 9.3,
+    "action": "set_ekf_source_set",
+    "source_set_ack": 0,
+    "max_path_deviation_after_onset_m": 7.6,
+    "max_path_deviation_before_onset_m": 0.1,
+    "path_deviation_at_end_m": 0.5,
+    "max_ekf_error_m": 7.7,
+    "max_ekf_error_t_s": 34.3,
+    "ekf_gps_glitching_reports": 0,
+    "ekf_max_pos_horiz_variance_after_onset": 1.335,
+    "ekf_reports_over_0p5_after_onset": 86,
+    "statustext_after_onset": [
+      "35.2: EKF3 lane switch 1",
+      "35.2: EKF primary changed:1",
+      "47.8: EKF3 lane switch 0",
+      "47.8: EKF primary changed:0",
+      "49.0: Reached command #2",
+      "49.0: Mission: 3 WP",
+      "57.7: EKF3 lane switch 1",
+      "57.7: EKF primary changed:1",
+      "66.8: Reached command #3",
+      "66.8: Mission: 4 WP",
+      "68.8: EKF3 lane switch 0",
+      "68.8: EKF primary changed:0",
+      "81.8: EKF3 lane switch 1",
+      "81.8: EKF primary changed:1",
+      "92.4: EKF3 lane switch 0",
+      "92.4: EKF primary changed:0",
+      "113.0: Reached command #4",
+      "113.7: EKF3 lane switch 1",
+      "113.7: EKF primary changed:1"
+    ]
+  },
+  "baseline": {
+    "mode": "baseline",
+    "spoof": {
+      "onset_s": 25.0,
+      "rate_mps": 1.0,
+      "bearing_deg": 90.0,
+      "max_m": 150.0
+    },
+    "mission_duration_s": 114.9,
+    "spoof_offset_at_end_m": 89.9,
+    "alarm_t_s": 34.4,
+    "time_to_detect_s": 9.4,
+    "spoof_offset_at_alarm_m": 9.2,
+    "action": "none_shadow_mode",
+    "source_set_ack": null,
+    "max_path_deviation_after_onset_m": 75.0,
+    "max_path_deviation_before_onset_m": 0.1,
+    "path_deviation_at_end_m": 62.4,
+    "max_ekf_error_m": 88.3,
+    "max_ekf_error_t_s": 114.9,
+    "ekf_gps_glitching_reports": 0,
+    "ekf_max_pos_horiz_variance_after_onset": 0.504,
+    "ekf_reports_over_0p5_after_onset": 3,
+    "statustext_after_onset": [
+      "47.9: Reached command #2",
+      "47.9: Mission: 3 WP",
+      "65.4: Reached command #3",
+      "65.4: Mission: 4 WP",
+      "110.0: Reached command #4"
+    ]
+  }
+}

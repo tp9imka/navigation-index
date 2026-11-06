@@ -1,0 +1,13 @@
+{
+  "schema": "navdash/1",
+  "title": "Golden demo: ArduCopter SITL GPS drag, monitor vs none",
+  "tracks": [
+    "truth.jsonl",
+    "truth-baseline.jsonl",
+    "ekf-monitor.jsonl",
+    "ekf-baseline.jsonl",
+    "gnss.jsonl",
+    "vgeo.jsonl"
+  ],
+  "zones": "zones.geojson"
+}
