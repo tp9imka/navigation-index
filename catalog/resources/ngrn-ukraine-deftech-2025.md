@@ -11,6 +11,10 @@ Analysis of Ukraine's defence-tech ecosystem at the end of 2025, noting that GNS
 - GNSS denial is a baseline requirement in current conflict
 - Context for prioritising alt-nav in hackathon scope
 
+## Deep dives
+
+- [trends-2025-2026](../../docs/landscape/trends-2025-2026.md) (landscape)
+
 **Concepts:** [Electronic warfare resilience](../concepts/ew-resilience.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
 
 **Tags:** `ukraine`, `deftech`, `analysis`

@@ -12,6 +12,11 @@ Python GNSS processing library from comma.ai that fetches orbits, clocks and atm
 
 **Hackathon notes:** pip-installable. Correction downloads need internet (NASA CDDIS requires an Earthdata login). Good backend for Android raw data experiments.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [commaai__laika](../../docs/integration-cards/commaai__laika.md) (integration-cards)
+
 **Concepts:** [GNSS positioning](../concepts/gnss.md)
 
 **Tags:** `python`, `pseudorange`, `corrections`, `comma-ai`

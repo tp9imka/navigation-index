@@ -12,6 +12,10 @@ Synthetic low-altitude quadcopter flights with RGB, depth, normals, semantics an
 - Size class: large
 - Built on AirSim
 
+## Deep dives
+
+- [mid-air](../../docs/dataset-cards/mid-air.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Simulation and HIL/SITL](../concepts/simulation.md)
 
 **Tags:** `synthetic`, `airsim`, `weather`

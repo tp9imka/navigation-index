@@ -12,6 +12,10 @@ Repository for the 2022 Hilti SLAM Challenge with dataset info and evaluation to
 
 **Hackathon notes:** Download bags from the challenge site; scoring scripts in repo.
 
+## Deep dives
+
+- [hilti-slam](../../docs/dataset-cards/hilti-slam.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Visual SLAM](../concepts/visual-slam.md)
 
 **Tags:** `hilti`, `slam`, `challenge`

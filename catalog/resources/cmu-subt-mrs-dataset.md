@@ -12,6 +12,10 @@ Multi-robot, multi-modal SLAM data in degraded environments - caves, tunnels, ur
 - Domains: subterranean, off-road
 - Size class: large
 
+## Deep dives
+
+- [subt-datasets](../../docs/dataset-cards/subt-datasets.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
 
 **Tags:** `subt`, `degraded`, `thermal`

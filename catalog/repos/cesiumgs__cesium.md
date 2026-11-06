@@ -12,6 +12,11 @@ WebGL 3D globe and map library with terrain, 3D Tiles, time-dynamic data (CZML) 
 
 **Hackathon notes:** npm install cesium. Default imagery/terrain use Cesium ion (token); for offline, serve your own quantized-mesh terrain and tiles.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [cesiumgs__cesium](../../docs/integration-cards/cesiumgs__cesium.md) (integration-cards)
+
 **Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
 
 **Tags:** `3d-globe`, `3d-tiles`, `czml`, `webgl`

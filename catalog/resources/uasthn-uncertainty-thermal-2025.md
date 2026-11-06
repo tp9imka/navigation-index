@@ -10,6 +10,10 @@ Adds uncertainty estimation to satellite-thermal homography so a navigation filt
 
 - Uncertainty makes visual fixes filter-ready
 
+## Deep dives
+
+- [thermal-datasets](../../docs/dataset-cards/thermal-datasets.md) (dataset-cards)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
 
 **Tags:** `arxiv`, `thermal`, `uncertainty`

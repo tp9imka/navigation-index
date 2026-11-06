@@ -12,6 +12,10 @@ PyTorch implementation of a cross-view geo-localization method that pools featur
 
 **Hackathon notes:** Mainly as a comparison baseline.
 
+## Deep dives
+
+- [university-1652](../../docs/dataset-cards/university-1652.md) (dataset-cards)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Place recognition and loop closure](../concepts/place-recognition.md)
 
 **Tags:** `cross-view`, `baseline`

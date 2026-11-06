@@ -6,7 +6,7 @@ Mapping and localization with loop closure from cameras.
 
 **Parent:** [Visual(-inertial) odometry](../concepts/vio.md)
 
-## Repositories (46)
+## Repositories (47)
 
 - [PythonRobotics](../repos/atsushisakai__pythonrobotics.md) - fit: high - Large collection of readable Python implementations of robotics algorithms: localization (EKF, particle filter), SLAM, path planning (A*, RRT*, D*, state lattice), path tracking and more, with animations.
 - [ORB-SLAM3](../repos/uz-slamlab__orb_slam3.md) - fit: high - Visual, visual-inertial and multi-map SLAM supporting monocular, stereo and RGB-D cameras with pinhole and fisheye models, using a map atlas to survive tracking loss.
@@ -44,6 +44,7 @@ Mapping and localization with loop closure from cameras.
 - [DEVO](../repos/tum-vision__devo.md) - fit: medium - Deep Event Visual Odometry: learned monocular event-only VO trained on simulated events, generalizing to real benchmarks (3DV 2024).
 - [Hilti SLAM Challenge 2022](../repos/hilti-research__hilti-slam-challenge-2022.md) - fit: medium - Repository for the 2022 Hilti SLAM Challenge with dataset info and evaluation tooling.
 - [Swarm-SLAM](../repos/lajoiepy__cslam.md) - fit: medium - ROS 2 decentralized collaborative SLAM supporting LiDAR, stereo and RGB-D, with sparse inter-robot communication.
+- [ORB_SLAM3_system_local](../repos/sasha-lobov__orb_slam3_system_local.md) - fit: medium - Pet project for local UAV navigation without GNSS: AirSim video streamed over ZeroMQ into monocular ORB-SLAM3, a ROS node converts NED/ENU frames, IMU data corrects monocular scale, and a PID controller tracks a trajecto
 - [maplab](../repos/ethz-asl__maplab.md) - fit: low - Modular multi-session, multi-modal mapping framework with map merging, optimization and localization against saved maps.
 - [DSO (Direct Sparse Odometry)](../repos/jakobengel__dso.md) - fit: low - Direct monocular visual odometry that optimizes photometric error over a sparse set of pixels with joint photometric calibration.
 - [SplaTAM](../repos/spla-tam__splatam.md) - fit: low - Dense RGB-D SLAM that tracks and maps using 3D Gaussians and differentiable rendering (CVPR 2024).
@@ -55,7 +56,7 @@ Mapping and localization with loop closure from cameras.
 - [SLAM Toolbox (MATLAB)](../repos/joansola__slamtb.md) - fit: low - Joan Sola's MATLAB EKF-SLAM toolbox with landmark parameterizations (points, lines, inverse depth) and simulated or real sensor support, written for teaching and prototyping.
 - [EMVS](../repos/uzh-rpg__rpg_emvs.md) - fit: low - Event-based multi-view stereo: semi-dense 3D reconstruction from a moving event camera with known poses (IJCV 2018).
 
-## Documents, talks, courses, datasets (30)
+## Documents, talks, courses, datasets (33)
 
 - [14 Lectures on Visual SLAM: From Theory to Practice](../resources/gaoxiang-14-lectures-visual-slam.md) - book - English translation of the popular Chinese visual SLAM textbook, from rigid-body motion and Lie algebra through camera models, nonlinear optimization, feature/direct VO, backend optimization, loop closure and dense mappi
 - [Artificial Intelligence for Robotics (Udacity CS373)](../resources/udacity-ai-for-robotics-cs373.md) - course - Free classic course by Sebastian Thrun programming robot localization (histogram filter, Kalman filter, particle filter), search/planning, PID control and GraphSLAM in Python.
@@ -81,10 +82,13 @@ Mapping and localization with loop closure from cameras.
 - [Robot Mapping - WS 2013/14 course page (slides, exercises)](../resources/freiburg-robot-mapping-course.md) - course - Course page that accompanies the Robot Mapping lecture videos, with lecture slides and programming exercises (EKF-SLAM, UKF, FastSLAM, least-squares calibration, graph-SLAM) in Octave/Matlab.
 - [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook.md) - book - Community-written handbook released in three parts during 2024-2025 and published by Cambridge University Press; the free PDF is mirrored on the editors' project page.
 - [SLAM toolbox for Matlab (EKF-SLAM teaching code)](../resources/sola-slamtb-ekf-slam-toolbox.md) - course - Solà's Matlab EKF-SLAM toolbox, used as teaching material for his SLAM courses: modular robots, sensors, landmark parameterizations (including inverse-depth points and lines) and graph-SLAM variants.
+- [Spleenlab VISIONAIRY perception and GNSS-free navigation software](../resources/spleenlab-visionairy.md) - product - German company Spleenlab sells VISIONAIRY, a modular perception suite (VIO, map-based relocalization, EO/IR and LiDAR SLAM) that integrates with PX4/Auterion and ROS; used by Quantum Systems and Blueflite for GNSS-denied
 - [State Estimation for Robotics (Second Edition)](../resources/barfoot-state-estimation-robotics-2e.md) - book - Textbook on probabilistic estimation for robotics, from linear-Gaussian filtering and batch estimation to matrix Lie groups for 3D pose; the second edition adds variational inference and inertial navigation material.
 - [Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems](../resources/swarm-slam-paper.md) - paper - Decentralized collaborative SLAM aimed at swarms, prioritizing which inter-robot loop closures to compute and share to limit communication.
 - [TartanAir: A Dataset to Push the Limits of Visual SLAM](../resources/cmu-tartanair-dataset.md) - dataset - Large synthetic dataset rendered in AirSim/Unreal environments with challenging lighting, weather and motion, with perfect ground truth for many modalities.
 - [TUM RGB-D SLAM Dataset and Benchmark](../resources/tum-rgbd-benchmark.md) - dataset - Kinect RGB-D sequences with motion-capture ground truth and evaluation tools; the trajectory format is used widely by other tools.
 - [Visual Language Maps for Robot Navigation](../resources/vlmaps-2022.md) - paper - Fuses visual-language features into 3D maps so robots can localize landmarks named in open-vocabulary language and navigate to them.
 - [Visual Navigation for Flying Robots (TUM, 2013)](../resources/tum-visual-navigation-flying-robots.md) - lecture-series - Award-winning TUM lecture on making quadrotors navigate with cameras: 3D geometry, sensors, state estimation, visual motion estimation, SLAM, dense reconstruction, planning and exploration.
+- [Навигация квадрокоптера с использованием монокулярного зрения](../resources/habr-monocular-quad-nav-2016.md) - blog - English: 'Quadcopter navigation using monocular vision'.
+- [Навигация по карте маркеров · Clover](../resources/coex-clover-docs-aruco-map-ru.md) - doc - English: 'Navigation by marker map - Clover docs'.
 

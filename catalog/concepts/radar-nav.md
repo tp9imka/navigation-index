@@ -29,11 +29,12 @@ Radar odometry, radar SLAM, radar altimeters, Doppler velocity.
 - [Gaussian-RIO](../repos/robotics-upo__gaussian-rio.md) - fit: low - 4D radar-inertial odometry using Gaussian modeling of radar points and multi-hypothesis scan matching.
 - [Open-RadVLAD](../repos/mttgdd__open-radvlad.md) - fit: low - Fast radar place recognition using VLAD-style aggregation over radar polar scans.
 
-## Documents, talks, courses, datasets (6)
+## Documents, talks, courses, datasets (7)
 
 - [4D Millimeter-Wave Radar in Autonomous Driving: A Survey](../resources/han-4d-mmwave-radar-survey-2023.md) - paper - Survey of 4D imaging radar: signal processing, datasets, calibration, perception and SLAM/odometry uses.
 - [CFEAR Radarodometry - Conservative Filtering for Efficient and Accurate Radar Odometry](../resources/cfear-radarodometry-adolfsson-2021.md) - paper - Learning-free spinning-radar odometry that keeps the strongest returns per azimuth, builds oriented surface points and registers against a keyframe history (IROS 2021).
 - [From Sea to Space: Advancing Perception in Harsh Domains (ICRA 2026 workshop)](../resources/icra-2026-sea-to-space-perception-workshop.md) - talk - ICRA 2026 (Vienna) workshop on perception for underwater, space and terrestrial field robots, including localization and mapping in degraded sensing, GPS-denied global localization, novel sensors (sonar, radar, thermal, 
+- [Honeywell HGuide o480 single-card INS and HGuide i700 IMU](../resources/honeywell-hguide-o480.md) - product - HGuide o480 (May 2025) is a single-card INS for small UAVs and ground robots that accepts velocity aiding (e.g.
 - [MulRan: Multimodal Range Dataset for Urban Place Recognition](../resources/snu-mulran-dataset.md) - dataset - Urban sequences with radar and lidar for range-sensor place recognition and odometry.
 - [Oxford Radar RobotCar Dataset](../resources/oxford-radar-robotcar-dataset.md) - dataset - RobotCar route re-driven with a scanning FMCW radar plus lidars and cameras, for radar odometry and localization.
 - [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook.md) - book - Community-written handbook released in three parts during 2024-2025 and published by Cambridge University Press; the free PDF is mirrored on the editors' project page.

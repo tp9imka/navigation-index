@@ -12,6 +12,10 @@ Original reverse engineering of DJI DroneID with MATLAB scripts and a GNU Radio 
 
 **Hackathon notes:** Use for understanding the PHY; prefer samples2djidroneid for decoding.
 
+## Deep dives
+
+- [remote-id-droneid-captures](../../docs/dataset-cards/remote-id-droneid-captures.md) (dataset-cards)
+
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md)
 
 **Tags:** `dji`, `droneid`, `gnuradio`, `matlab`

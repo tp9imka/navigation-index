@@ -8,7 +8,7 @@ Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 
 - [Drone frame to orthophoto geolocalization with LightGlue](../samples/visual-geolocalization-lightglue.md) - Matches a nadir drone frame against a georeferenced satellite or orthophoto tile with SuperPoint + LightGlue, fits a MAGSAC homography with OpenCV, and maps the frame centre through the GeoTIFF geotransform to lat/lon.
 
-## Repositories (31)
+## Repositories (32)
 
 - [LightGlue](../repos/cvg__lightglue.md) - fit: high - Fast learned local feature matcher (ICCV 2023) that adapts its depth to pair difficulty; works with SuperPoint, DISK, ALIKED and SIFT features.
 - [hloc](../repos/cvg__hierarchical-localization.md) - fit: high - Toolbox for hierarchical visual localization: global retrieval (NetVLAD etc.) to find candidate images, then local feature matching (SuperPoint, LightGlue...) and PnP against an SfM model.
@@ -35,6 +35,7 @@ Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 - [vision_landing](../repos/goodrobots__vision_landing.md) - fit: medium - Precision landing using visual fiducial targets, sending LANDING_TARGET messages to ArduPilot.
 - [Aerial Template Matching](../repos/m-hamza-mughal__aerial-template-matching.md) - fit: medium - Classical template-matching approach for locating an aerial image inside a larger reference image, built on OpenCV.
 - [STHN](../repos/arplaboratory__sthn.md) - fit: medium - Deep homography estimation for aligning UAV thermal images to satellite maps (RA-L 2024), refining coarse geo-localization into precise alignment.
+- [rope-ladder-tracker](../repos/vohminv__rope-ladder-tracker.md) - fit: medium - Python/OpenCV return-to-home for a quadcopter with a downward camera and no GPS.
 - [UAVision](../repos/arborisers__uavision.md) - fit: medium - Map-matching-based visual localization software for UAVs in GNSS-denied settings, shipped with a GUI front end and demo.
 - [Visual Locator](../repos/rtwotwo__visual-locator.md) - fit: medium - Absolute drone positioning by image retrieval (SelaVPR-style ViT features) over cropped satellite tiles followed by registration with SIFT+RANSAC or SuperPoint+SuperGlue.
 - [Glue Factory](../repos/cvg__glue-factory.md) - fit: low - Training library for local feature detection and matching (trains LightGlue and others).
@@ -42,7 +43,7 @@ Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 - [EKLT](../repos/uzh-rpg__rpg_eklt.md) - fit: low - Asynchronous photometric feature tracking that combines events and frames (IJCV 2019).
 - [Event feature tracking (EM-ICP)](../repos/daniilidis-group__event_feature_tracking.md) - fit: low - MATLAB implementations of event-based feature tracking methods from the Penn GRASP lab.
 
-## Documents, talks, courses, datasets (16)
+## Documents, talks, courses, datasets (20)
 
 - [14 Lectures on Visual SLAM: From Theory to Practice](../resources/gaoxiang-14-lectures-visual-slam.md) - book - English translation of the popular Chinese visual SLAM textbook, from rigid-body motion and Lie algebra through camera models, nonlinear optimization, feature/direct VO, backend optimization, loop closure and dense mappi
 - [Cyrill Stachniss YouTube channel (incl. '5 Minutes with Cyrill')](../resources/stachniss-youtube-channel.md) - video - Channel hosting Stachniss's full lecture courses plus the '5 Minutes with Cyrill' series of short explainers on single concepts (Kalman filter, factor graphs, ICP, RANSAC, SIFT, occupancy grids).
@@ -60,4 +61,8 @@ Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 - [Vision-based GNSS-Free Localization for UAVs in the Wild](../resources/wildnav-gnss-free-uav-localization-2022.md) - paper - Proposes matching drone camera frames to open satellite imagery with learned feature matching to get absolute position without GNSS, evaluated on flights over non-urban areas.
 - [Visual Odometry: Part I - The First 30 Years and Fundamentals / Part II - Matching, Robustness, Optimization, and Applications](../resources/scaramuzza-vo-tutorial.md) - paper - Two-part IEEE Robotics & Automation Magazine tutorial (Part II at rpg.ifi.uzh.ch/docs/VO_Part_II_Scaramuzza.pdf).
 - [XFeat: Accelerated Features for Lightweight Image Matching](../resources/xfeat-2024.md) - paper - Lightweight feature extraction and matching architecture aimed at real-time use on constrained hardware.
+- [Алгоритм оптичної навігації дрона](../resources/kma-boiko-optical-nav-thesis-2025.md) - report - English: 'Drone optical navigation algorithm'.
+- [Метод навігації БПЛА в умовах відсутності GPS-сигналу на основі візуальної одометрії](../resources/zp-baranov-vo-gps-denied-2024.md) - paper - English: 'UAV navigation method in GPS-denied conditions based on visual odometry'.
+- [Навигация по снимкам местности на основе сопоставления глубоких признаков и визуальной одометрии](../resources/bntu-rulko-terrain-nav-deep-features-2025.md) - paper - English: 'Terrain relative navigation based on deep feature template matching and visual odometry'.
+- [Разработка алгоритма абсолютной визуально-инерциальной навигации беспилотных воздушных судов](../resources/preprints-lazareva-absolute-vi-nav.md) - paper - English: 'Development of an absolute visual-inertial navigation algorithm for unmanned aircraft'.
 

@@ -21,5 +21,6 @@ Service daemon that monitors GNSS receivers over serial/USB/network and serves d
 ## Referenced by
 
 - [NMEA Revealed (gpsd project)](../resources/gpsd-nmea-revealed.md) (has_code)
+- [Safran VersaPNT and Geonyx resilient PNT units](../resources/safran-versapnt.md) (alternative_to)
 
 _Indexed by lane(s): gnss_

@@ -11,6 +11,10 @@ Program to field low-SWaP optical atomic clocks with timing holdover beyond GPS 
 - Two technical areas: portable and transportable clocks
 - Two two-year phases from physics package to operational clock
 
+## Deep dives
+
+- [programs-and-challenges](../../docs/landscape/programs-and-challenges.md) (landscape)
+
 **Concepts:** [Timing and time transfer](../concepts/timing.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
 
 **Tags:** `darpa`, `rockn`, `optical-clock`, `holdover`

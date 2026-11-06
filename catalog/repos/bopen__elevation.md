@@ -12,6 +12,11 @@ CLI/Python tool to download, cache and clip global DEMs (SRTM, Copernicus DEM an
 
 **Hackathon notes:** Needs GDAL on PATH; eio clip --bounds ... produces a GeoTIFF.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [bopen__elevation](../../docs/integration-cards/bopen__elevation.md) (integration-cards)
+
 **Concepts:** [Terrain-relative navigation](../concepts/terrain-nav.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
 
 **Tags:** `dem`, `srtm`, `copernicus-dem`

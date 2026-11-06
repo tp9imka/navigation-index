@@ -12,6 +12,10 @@ Repository for the 2023 Hilti SLAM Challenge, including multi-session sequences.
 
 **Hackathon notes:** Same workflow as 2022; check the challenge site for current download links.
 
+## Deep dives
+
+- [hilti-slam](../../docs/dataset-cards/hilti-slam.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Place recognition and loop closure](../concepts/place-recognition.md)
 
 **Tags:** `hilti`, `slam`, `multi-session`

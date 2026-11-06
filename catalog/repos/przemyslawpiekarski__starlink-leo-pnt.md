@@ -28,7 +28,10 @@ Passive positioning using Starlink downlink signals as signals of opportunity: S
 
 - [UT Starlink signal simulator](../repos/gitlab.com__radionavlab__public__ut-starlink-signal-simulator.md) (alternative_to)
 - [LEO SoOP positioning thesis (Voska)](../repos/voskavoj__dp.md) (alternative_to)
+- [Iridium PNT (Satellite Time and Location) and Iridium PNT ASIC](../resources/iridium-pnt-stl-asic.md) (alternative_to)
 - [Exploiting Starlink Signals for Navigation: First Results](../resources/kassas-starlink-first-results-2022.md) (uses)
+- [TrustPoint - C-band LEO PNT](../resources/trustpoint-leo-pnt.md) (alternative_to)
+- [Xona Space Systems Pulsar LEO PNT constellation](../resources/xona-pulsar-leo-pnt.md) (alternative_to)
 
 _Indexed by lane(s): alt-nav, gnss_
 

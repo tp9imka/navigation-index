@@ -12,6 +12,10 @@ Firmware for the Crazyflie nano quad, Bolt and the Roadrunner positioning tag, w
 
 **Hackathon notes:** If you have Crazyflies, the Python lib gets you scripted flights in an hour. UWB Loco anchors make a good GNSS-denied testbed. Simulation via crazyswarm2 or the official SIL.
 
+## Deep dives
+
+- [util-uwb-tdoa](../../docs/dataset-cards/util-uwb-tdoa.md) (dataset-cards)
+
 **Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [RF localization and direction finding](../concepts/rf-localization.md), [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
 
 **Tags:** `crazyflie`, `uwb`, `lighthouse`, `flow-deck`, `kalman`, `nano-drone`, `tdoa`, `ekf`

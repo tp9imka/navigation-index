@@ -4,7 +4,7 @@
 
 ITAR/EAR, dual-use rules, PNT policy, responsible military AI.
 
-## Documents, talks, courses, datasets (38)
+## Documents, talks, courses, datasets (39)
 
 - [15 CFR 734.7 - Published (Export Administration Regulations)](../resources/ecfr-ear-734-7-published.md) - standard - The regulation text defining when information and software count as 'published' and therefore not subject to the EAR.
 - [Analyzing a More Resilient National Positioning, Navigation, and Timing Capability (RR-2970)](../resources/rand-rr2970-resilient-pnt.md) - report - DHS-sponsored RAND study of civil US PNT dependence that argues GPS is not the only PNT source in practice and that no single system is a perfect backup.
@@ -17,6 +17,7 @@ ITAR/EAR, dual-use rules, PNT policy, responsible military AI.
 - [DOT Complementary PNT Action Plan](../resources/dot-complementary-pnt-action-plan-2023.md) - report - US DOT plan to drive adoption of complementary PNT for transportation and critical infrastructure via stakeholder engagement, specifications, field trials and test ranges.
 - [EASA and IATA comprehensive plan to mitigate the risks of GNSS interference](../resources/easa-iata-gnss-interference-plan-2025.md) - report - Joint plan from a May 2025 EASA/IATA workshop setting out actions on reporting and monitoring, prevention and mitigation, airspace/infrastructure (backup navaids) and civil-military coordination against GNSS interference
 - [EASA Safety Information Bulletin 2022-02R4: GNSS Outage and Alterations Leading to Communication / Navigation / Surveillance Degradation](../resources/easa-sib-2022-02r4.md) - standard - EASA's running bulletin on GNSS jamming and spoofing affecting aviation since February 2022, with recommendations for authorities, ANSPs, operators and manufacturers.
+- [European Defence Fund 2025 calls](../resources/edf-2025-call.md) - program - EDF 2025 work programme (EUR 1.065B) closed 16 October 2025 with 410 proposals; results expected April 2026.
 - [EUSPA GNSS Market and User Technology Reports](../resources/euspa-gnss-market-user-reports.md) - report - Download page for EUSPA's market reports and GNSS User Technology Reports, which survey receiver, antenna and resilience technology trends.
 - [Executive Order 13905: Strengthening National Resilience Through Responsible Use of PNT Services](../resources/eo-13905-responsible-pnt.md) - standard - US executive order that defines 'responsible use of PNT' and tasks Commerce/NIST, DHS and others to produce PNT profiles, identify critical infrastructure dependencies and pilot-test resilience.
 - [FAA - Remote Identification of Drones](../resources/faa-remote-id.md) - doc - FAA guidance on the Remote ID rule: what drones must broadcast, standard vs broadcast-module compliance and operator obligations.

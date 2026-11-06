@@ -25,6 +25,8 @@ Maintained derivative of GPS-SDR-SIM that streams GPS L1 baseband on the fly to 
 ## Referenced by
 
 - [GPS-SDR-SIM](../repos/osqzss__gps-sdr-sim.md) (alternative_to)
+- [Safran Skydel simulation engine / GSG-8 GNSS simulator (ex-Orolia)](../resources/safran-skydel-gsg8.md) (alternative_to)
+- [Spirent GSS7000 and PNT X GNSS/PNT simulators](../resources/spirent-gss7000-pntx.md) (alternative_to)
 
 _Indexed by lane(s): gnss_
 

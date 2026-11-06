@@ -12,6 +12,11 @@ Current-generation Gazebo robotics simulator with pluggable physics, rendering a
 
 **Hackathon notes:** Install a binary release (Harmonic or later) plus ros_gz. Pair with PX4 'make px4_sitl gz_x500' or ardupilot_gazebo. GPU helps for camera sensors; headless server mode works for CI.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [gazebosim__gz-sim](../../docs/integration-cards/gazebosim__gz-sim.md) (integration-cards)
+
 **Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Autopilots and flight control](../concepts/autopilot.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
 
 **Tags:** `gazebo`, `sitl`, `sensors`, `physics`

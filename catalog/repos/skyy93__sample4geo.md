@@ -12,6 +12,10 @@ Cross-view geo-localization training with hard negative sampling, reporting stro
 
 **Hackathon notes:** Pretrained checkpoints help; fine-tune on your tile set if time allows.
 
+## Deep dives
+
+- [university-1652](../../docs/dataset-cards/university-1652.md) (dataset-cards)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Place recognition and loop closure](../concepts/place-recognition.md)
 
 **Tags:** `contrastive`, `hard-negatives`, `cross-view`

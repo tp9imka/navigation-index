@@ -11,6 +11,10 @@ DIANA feature on cohort companies working on resilient navigation and secure com
 - Shows the spread of selected approaches: magnetic, quantum, LEO PNT, vision
 - Selection favors deployable, testable dual-use products
 
+## Deep dives
+
+- [programs-and-challenges](../../docs/landscape/programs-and-challenges.md) (landscape)
+
 **Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Signals of opportunity](../concepts/signals-of-opportunity.md)
 
 **Tags:** `nato`, `diana`, `cohort`

@@ -12,6 +12,10 @@ Python package for downloading, customizing and iterating the TartanAir-V2 synth
 
 **Hackathon notes:** Download only the environments and modalities you need - full set is very large.
 
+## Deep dives
+
+- [tartanair](../../docs/dataset-cards/tartanair.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Simulation and HIL/SITL](../concepts/simulation.md), [Visual SLAM](../concepts/visual-slam.md)
 
 **Tags:** `tartanair`, `synthetic`, `python`

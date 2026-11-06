@@ -12,6 +12,10 @@ Official repository of the Anti-UAV challenge and benchmark for detecting and tr
 
 **Hackathon notes:** Download a subset, train a YOLO detector plus tracker, report on their metric.
 
+## Deep dives
+
+- [anti-uav](../../docs/dataset-cards/anti-uav.md) (dataset-cards)
+
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Tracking and data association](../concepts/target-tracking.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `anti-uav`, `thermal`, `benchmark`, `dataset`

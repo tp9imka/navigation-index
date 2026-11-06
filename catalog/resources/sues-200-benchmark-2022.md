@@ -10,6 +10,10 @@ Drone-satellite benchmark with imagery at several flight heights across varied s
 
 - Altitude changes strongly affect retrieval accuracy
 
+## Deep dives
+
+- [sues-200](../../docs/dataset-cards/sues-200.md) (dataset-cards)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `arxiv`, `dataset`

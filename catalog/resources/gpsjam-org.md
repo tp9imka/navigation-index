@@ -29,5 +29,6 @@ Daily world map of likely GPS interference derived from ADS-B navigation-integri
 
 - [Bellingcat OSINT Toolkit - GPSJam](../resources/bellingcat-toolkit-gpsjam.md) (explains)
 - [ADS-B Data Analysis for GNSS Interference Mapping](../resources/insidegnss-adsb-interference-mapping.md) (explains)
+- [Неоднозначный сигнал](../resources/novayagazeta-gnss-interference-europe-2025.md) (cites)
 
 _Indexed by lane(s): defense-context, docs-standards, gnss_

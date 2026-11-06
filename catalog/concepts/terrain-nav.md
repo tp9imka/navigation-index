@@ -10,7 +10,7 @@ TERCOM/TRN/DSMAC-style matching of altimetry or imagery against DEM/terrain data
 
 - [Terrain-relative navigation with a particle filter](../samples/terrain-relative-nav-pf.md) - A stdlib-only simulation of TERCOM/TRN: an aircraft with a biased INS and a radar altimeter matches its measured terrain profile against a seeded synthetic DEM with a particle filter that also estimates the INS velocity 
 
-## Repositories (20)
+## Repositories (22)
 
 - [OpenDroneMap (ODM)](../repos/opendronemap__odm.md) - fit: high - Photogrammetry toolkit that turns aerial images into orthophotos, point clouds, 3D models and DEMs.
 - [Rasterio](../repos/rasterio__rasterio.md) - fit: high - Pythonic raster I/O on top of GDAL: read/write GeoTIFF and COG, windowed reads, masks and affine georeferencing.
@@ -18,6 +18,8 @@ TERCOM/TRN/DSMAC-style matching of altimetry or imagery against DEM/terrain data
 - [elevation](../repos/bopen__elevation.md) - fit: high - CLI/Python tool to download, cache and clip global DEMs (SRTM, Copernicus DEM and others) for a bounding box.
 - [tercom_nav (TERCOM + ESKF)](../repos/mzahana__tercom_nav.md) - fit: high - ROS 2 package combining TERCOM-style terrain matching with an error-state Kalman filter for UAV navigation.
 - [python-tercom](../repos/alti3__python-tercom.md) - fit: high - Python demo of TERCOM terrain contour matching: simulate a radar-altimeter profile over a DEM and correlate it against the map to recover position.
+- [Hackathon-Blind-Flight (team GORIZONT)](../repos/t1gr20an06-k__hackathon-blind-flight.md) - fit: high - Russian-language hackathon solution for 'Полёт вслепую' (Blind flight): estimate aircraft position, ground speed and heading without GNSS by reconstructing a terrain profile (barometric altitude minus radar altimeter) an
+- [FlyingBlind_Hakaton](../repos/solarwarlock__flyingblind_hakaton.md) - fit: high - Second public solution to the same 'Полёт вслепую' hackathon task: web prototype that reads a GeoTIFF DEM and NMEA-0183 radar-altimeter messages, searches start point, speed and azimuth hypotheses by RMSE/correlation, an
 - [Cesium Terrain Builder](../repos/geo-data__cesium-terrain-builder.md) - fit: medium - Command-line tools to convert GDAL-readable DEMs into Cesium terrain tiles (heightmap and quantized-mesh with the docker variant).
 - [Wild Visual Navigation](../repos/leggedrobotics__wild_visual_navigation.md) - fit: medium - System that learns visual traversability online from pre-trained vision features and robot self-supervision, deployed on legged robots in forests.
 - [ALTO](../repos/metaslam__alto.md) - fit: medium - Aerial-view, large-scale, terrain-oriented dataset for aerial place recognition and localization.
@@ -33,8 +35,10 @@ TERCOM/TRN/DSMAC-style matching of altimetry or imagery against DEM/terrain data
 - [Deep-TERNALOC](../repos/deep-ternaloc__deep-ternaloc.md) - fit: low - Deep-learning-based terrain-referenced navigation and localization project from ITU Aerospace Research Center, with particle filter baselines.
 - [SMARC navigation](../repos/halajun__smarc_navigation.md) - fit: low - Localization and SLAM components for the SMARC AUVs (KTH), including EKF localization with IMU, DVL and multibeam sonar against a feature map.
 
-## Documents, talks, courses, datasets (2)
+## Documents, talks, courses, datasets (4)
 
 - [A Robust Approach to Vision-Based Terrain-Aided Localization](../resources/ion-webinar-navon.md) - talk - Vision-based terrain-aided localization for aircraft, matching onboard imagery against terrain/map references as a GNSS-independent position source.
 - [Copernicus DEM on AWS Open Data](../resources/copernicus-dem-aws.md) - dataset - Registry entry for the Copernicus global DEM (GLO-30/GLO-90) hosted as cloud-optimized GeoTIFFs on AWS, freely accessible without an account.
+- [Helsing HX-2 - map/landmark-based GNSS-denied navigation (navigation aspect only)](../resources/helsing-hx2-navigation.md) - product - Helsing's HX-2 is a loitering UAS supplied to Ukraine.
+- [У 17 років створив навігацію для дронів, яку не глушить РЕБ. Історія киянина, який переміг на «Олімпіаді геніїв» у США](../resources/dou-lapko-urban-nav-interview-2025.md) - blog - English: 'Built EW-proof drone navigation at 17: the story of a Kyiv student who won the Genius Olympiad in the USA'.
 

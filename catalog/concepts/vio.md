@@ -10,7 +10,7 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) - Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold.
 
-## Repositories (59)
+## Repositories (62)
 
 - [ArduPilot](../repos/ardupilot__ardupilot.md) - fit: high - GPL autopilot covering Copter, Plane (incl.
 - [PX4 Autopilot](../repos/px4__px4-autopilot.md) - fit: high - Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, built on NuttX with a uORB pub/sub middleware.
@@ -20,6 +20,7 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [Isaac ROS Visual SLAM](../repos/nvidia-isaac-ros__isaac_ros_visual_slam.md) - fit: high - ROS 2 package wrapping NVIDIA's GPU-accelerated cuVSLAM for stereo visual(-inertial) odometry and SLAM on Jetson and x86 GPUs.
 - [MAVROS](../repos/mavlink__mavros.md) - fit: high - ROS/ROS 2 node bridging MAVLink to ROS topics and services, with GCS proxy; widely used to push vision/SLAM poses into PX4 or ArduPilot.
 - [MINS](../repos/rpng__mins.md) - fit: high - Multi-sensor aided inertial navigation that fuses IMU with camera, LiDAR, GNSS and wheel odometry, including online spatial/temporal calibration and a multi-sensor simulator.
+- [COEX Clover](../repos/copterexpress__clover.md) - fit: high - ROS-based software stack and Raspberry Pi image for the Clover educational quadcopter (PX4 underneath).
 - [vision_to_mavros](../repos/thien94__vision_to_mavros.md) - fit: high - ROS and Python scripts that convert external localisation (fiducials, T265 VIO, SLAM, depth) into MAVROS/MAVLink pose messages, tested on ArduPilot.
 - [GeoAnchor](../repos/yusufgunel__geoanchor.md) - fit: high - Recent project fusing visual odometry with satellite-map matching in a particle filter for GNSS-denied UAV flight, with an explicit notion of when the map match should not be trusted; evaluated on UAV-VisLoc flights and 
 - [AirSim](../repos/microsoft__airsim.md) - fit: medium - Unreal Engine based simulator for drones and cars with camera, depth, lidar, IMU, GPS, barometer and magnetometer models and a Python/C++ API.
@@ -56,6 +57,7 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [UZH-FPV dataset tools](../repos/uzh-rpg__uzh_fpv_open.md) - fit: medium - Companion repo for the UZH-FPV drone racing dataset with scripts and info.
 - [DISO](../repos/senseroboticslab__diso.md) - fit: medium - Direct imaging sonar odometry: estimates vehicle motion directly from forward-looking imaging sonar frames without feature extraction.
 - [ETIO](../repos/hitsz-nrsl__etio.md) - fit: medium - Edge-based monocular thermal-inertial odometry that tracks thermal edges for visually degraded environments.
+- [rope-ladder-tracker](../repos/vohminv__rope-ladder-tracker.md) - fit: medium - Python/OpenCV return-to-home for a quadcopter with a downward camera and no GPS.
 - [R3LIVE](../repos/hku-mars__r3live.md) - fit: low - Tightly coupled LiDAR-inertial-visual estimation and RGB-colored mapping package.
 - [Flightmare](../repos/uzh-rpg__flightmare.md) - fit: low - Quadrotor simulator from UZH RPG with a decoupled Unity renderer and fast dynamics, aimed at RL and vision-based agile flight.
 - [ESIM](../repos/uzh-rpg__rpg_esim.md) - fit: low - Event camera simulator from UZH RPG that renders event streams from simulated scenes.
@@ -70,14 +72,16 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [Blackbird dataset](../repos/mit-aera__blackbird-dataset.md) - fit: low - MIT dataset of aggressive indoor quadrotor flights with real IMU and motor data and rendered camera imagery.
 - [EKLT](../repos/uzh-rpg__rpg_eklt.md) - fit: low - Asynchronous photometric feature tracking that combines events and frames (IJCV 2019).
 - [Event feature tracking (EM-ICP)](../repos/daniilidis-group__event_feature_tracking.md) - fit: low - MATLAB implementations of event-based feature tracking methods from the Penn GRASP lab.
+- [Smart-UAV-Return-GNSS-Station](../repos/citec-spbu__smart-uav-return-gnss-station.md) - fit: low - Student project from SPbU (CITEC) on returning a UAV to its launch point when both GNSS and the ground-station link are lost, targeting a RockPi 4 companion computer.
 - [MIT VNAV lab data](../repos/mit-spark__vnav-lab-data.md) - fit: low - Pointer repo for the ROS bag files used in MIT's Visual Navigation for Autonomous Vehicles course exercises.
 
-## Documents, talks, courses, datasets (42)
+## Documents, talks, courses, datasets (52)
 
 - [14 Lectures on Visual SLAM: From Theory to Practice](../resources/gaoxiang-14-lectures-visual-slam.md) - book - English translation of the popular Chinese visual SLAM textbook, from rigid-body motion and Lie algebra through camera models, nonlinear optimization, feature/direct VO, backend optimization, loop closure and dense mappi
 - [2025 Abu Dhabi Autonomous Racing League (A2RL) - drone championship](../resources/a2rl-2025-season.md) - doc - Summary of the A2RL x DCL autonomous drone championship, won by TU Delft MAVLab ahead of TII Racing and KAIST, including races against human pilots.
 - [A micro Lie theory for state estimation in robotics](../resources/sola-micro-lie-theory.md) - paper - Tutorial paper giving just enough Lie theory (groups, exponential map, adjoint, Jacobians, uncertainty on manifolds) to write correct estimators for 3D pose; it is the basis of Solà's 'Lie theory for the roboticist' cour
 - [AlphaPilot: Autonomous Drone Racing](../resources/alphapilot-uzh-paper.md) - paper - UZH's second-place AlphaPilot system: learned gate detection, nonlinear filtering of visual-inertial state and time-optimal trajectory planning for GPS-free racing.
+- [Auterion Skynode S and Auterion Visual Navigation](../resources/auterion-skynode-visual-navigation.md) - product - Auterion sells PX4-derived AuterionOS plus Skynode flight/mission computers.
 - [Autonomous Navigation for Flying Robots (TUM edX, AUTONAVx)](../resources/tum-autonavx.md) - course - MOOC version of the TUM flying-robots lecture with lecture videos and browser-based Python exercises on quadrotor state estimation, Kalman filtering, control and visual navigation.
 - [Champion-level drone racing using deep reinforcement learning](../resources/swift-champion-drone-racing-nature.md) - paper - Swift, a quadrotor using only onboard camera and IMU with an RL-trained policy, beat human world-champion pilots in head-to-head races.
 - [cuVSLAM: CUDA accelerated visual odometry and mapping](../resources/cuvslam-2025.md) - paper - Describes NVIDIA's GPU-accelerated VO/SLAM supporting from one to many cameras with optional IMU, designed for real-time edge deployment.
@@ -102,10 +106,13 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM](../resources/orb-slam3-campos-2020.md) - paper - Describes ORB-SLAM3's tightly integrated visual-inertial SLAM, MAP-based IMU initialization and the multi-map Atlas that recovers from tracking loss.
 - [PX4 Developer Summit 2025 recordings](../resources/px4-dev-summit-2025-playlist.md) - video - YouTube playlist of 2025 PX4 Developer Summit talks; the program included GNSS and navigation sessions, among them a talk on structure-aided visual localisation for PX4 indoors (SAVLoc).
 - [ROS and VIO tracking camera for non-GPS navigation](../resources/ardupilot-ros-vio-tracking-camera.md) - doc - Developer tutorial wiring a VIO camera through ROS and MAVROS into ArduPilot for indoor flight.
+- [Shield AI Hivemind autonomy stack](../resources/shield-ai-hivemind.md) - product - Hivemind is Shield AI's onboard autonomy software, flown on its V-BAT and on partner aircraft.
 - [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook.md) - book - Community-written handbook released in three parts during 2024-2025 and published by Cambridge University Press; the free PDF is mirrored on the editors' project page.
+- [Spleenlab VISIONAIRY perception and GNSS-free navigation software](../resources/spleenlab-visionairy.md) - product - German company Spleenlab sells VISIONAIRY, a modular perception suite (VIO, map-based relocalization, EO/IR and LiDAR SLAM) that integrates with PX4/Auterion and ROS; used by Quantum Systems and Blueflite for GNSS-denied
 - [The EuRoC MAV Dataset](../resources/ethz-euroc-mav-dataset.md) - dataset - Stereo camera and IMU sequences from a micro aerial vehicle in an industrial hall and a Vicon room, with laser-tracker or motion-capture ground truth.
 - [The Multi Vehicle Stereo Event Camera Dataset (MVSEC)](../resources/upenn-mvsec-dataset.md) - dataset - Stereo event cameras with IMU, lidar and ground truth on several platforms including a hexacopter and a car.
 - [The UZH-FPV Drone Racing Dataset](../resources/uzh-fpv-drone-racing-dataset.md) - dataset - High-speed, aggressive FPV drone flights with camera, event camera and IMU data, with a leaderboard and recurring state estimation competitions.
+- [Theseus Visual Navigation System (YC launch)](../resources/theseus-visual-navigation-system.md) - company - US startup whose founders started at the February 2024 El Segundo Defense Tech Hackathon (Aviation Week coverage).
 - [TUM VI Benchmark for Visual-Inertial Odometry](../resources/tum-vi-benchmark.md) - dataset - Handheld stereo camera and IMU sequences indoors and outdoors with photometric calibration; ground truth only at start and end for long sequences.
 - [Using the ECL EKF (EKF2)](../resources/px4-ekf2-tuning-guide.md) - doc - PX4 guide to its EKF2 estimator: which sensors it fuses (IMU, GNSS, baro, mag, optical flow, external vision, range), how to configure and tune them, and how to read innovation logs.
 - [Using Vision or Motion Capture Systems for Position Estimation](../resources/px4-external-position-estimation.md) - doc - How to feed external vision or mocap poses into PX4 EKF2 via MAVLink or ROS, including frame conventions and EKF2_EV_* parameters.
@@ -116,4 +123,10 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [Visual Navigation for Flying Robots (TUM, 2013)](../resources/tum-visual-navigation-flying-robots.md) - lecture-series - Award-winning TUM lecture on making quadrotors navigate with cameras: 3D geometry, sensors, state estimation, visual motion estimation, SLAM, dense reconstruction, planning and exploration.
 - [Visual Odometry: Part I - The First 30 Years and Fundamentals / Part II - Matching, Robustness, Optimization, and Applications](../resources/scaramuzza-vo-tutorial.md) - paper - Two-part IEEE Robotics & Automation Magazine tutorial (Part II at rpg.ifi.uzh.ch/docs/VO_Part_II_Scaramuzza.pdf).
 - [Visual-Inertial Navigation: A Concise Review](../resources/huang-vins-concise-review-2019.md) - paper - Compact review of visual-inertial navigation: filtering vs optimization, observability, calibration and representative systems.
+- [Как я научил квадрокоптер возвращаться домой без GPS: алгоритм «верёвочной лестницы»](../resources/habr-rope-ladder-return-home-2025.md) - blog - English: 'How I taught a quadcopter to return home without GPS: the rope-ladder algorithm'.
+- [Комбіноване керування безпілотними літальними апаратами в умовах радіоелектронної боротьби](../resources/lpnu-klushyn-combined-control-under-ew-2025.md) - paper - English: 'Combined UAV control under electronic warfare'.
+- [Метод навігації БПЛА в умовах відсутності GPS-сигналу на основі візуальної одометрії](../resources/zp-baranov-vo-gps-denied-2024.md) - paper - English: 'UAV navigation method in GPS-denied conditions based on visual odometry'.
+- [Навигация по Optical Flow · Clover](../resources/coex-clover-docs-optical-flow-ru.md) - doc - English: 'Optical Flow navigation - Clover docs'.
+- [Технология коррекции навигационных параметров БПЛА в условиях отсутствия сигналов спутниковой навигации с использованием методов оптической одометрии](../resources/gosniias-optical-odometry-multicopter-2016.md) - paper - English: 'Technology for correcting UAV navigation parameters without satellite signals using optical odometry'.
+- [Інтелектуальна кіберфізична система для навігації БПЛА в умовах дії засобів РЕБ противника](../resources/khmnu-berezka-cps-uav-nav-under-ew-2026.md) - paper - English: 'Intelligent cyber-physical system for UAV navigation under enemy EW'.
 

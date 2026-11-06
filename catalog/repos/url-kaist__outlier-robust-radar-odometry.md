@@ -12,6 +12,10 @@ Outlier-robust radar odometry using graduated non-convexity-style estimation on 
 
 **Hackathon notes:** Evaluated on MulRan and Oxford Radar; ROS build.
 
+## Deep dives
+
+- [mulran-helipr](../../docs/dataset-cards/mulran-helipr.md) (dataset-cards)
+
 **Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md)
 
 **Tags:** `radar-odometry`, `robust-estimation`, `mulran`

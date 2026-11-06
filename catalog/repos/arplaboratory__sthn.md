@@ -12,6 +12,10 @@ Deep homography estimation for aligning UAV thermal images to satellite maps (RA
 
 **Hackathon notes:** Combine with the IROS 2023 retrieval stage from the same lab.
 
+## Deep dives
+
+- [thermal-datasets](../../docs/dataset-cards/thermal-datasets.md) (dataset-cards)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Feature detection and matching](../concepts/feature-matching.md)
 
 **Tags:** `thermal`, `homography`

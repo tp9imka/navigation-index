@@ -12,6 +12,10 @@ ROS and Python scripts that convert external localisation (fiducials, T265 VIO, 
 
 **Hackathon notes:** Old (2022) but simple; adapt the non-ROS T265 script to any VIO source.
 
+## Deep dives
+
+- [thien94__vision_to_mavros](../../docs/integration-cards/thien94__vision_to_mavros.md) (integration-cards)
+
 **Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
 
 **Tags:** `t265`, `vision_position_estimate`, `apriltag`, `gsoc`
@@ -28,6 +32,7 @@ ROS and Python scripts that convert external localisation (fiducials, T265 VIO, 
 - [MAVROS](../repos/mavlink__mavros.md) (integrates_with)
 - [ROS and VIO tracking camera for non-GPS navigation](../resources/ardupilot-ros-vio-tracking-camera.md) (has_code)
 - [Intel RealSense T265 / VIO tracking camera setup](../resources/ardupilot-vio-tracking-camera.md) (has_code)
+- [Spleenlab VISIONAIRY perception and GNSS-free navigation software](../resources/spleenlab-visionairy.md) (alternative_to)
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) (explains)
 
 _Indexed by lane(s): autopilots_

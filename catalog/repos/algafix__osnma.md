@@ -12,6 +12,11 @@ Python implementation of the Galileo OSNMA receiver protocol: verifies TESLA key
 
 **Hackathon notes:** Works live with a u-blox receiver outputting SFRBX; needs the public key and Merkle root from the GSC. Good basis for an 'authenticated position' demo.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [algafix__osnma](../../docs/integration-cards/algafix__osnma.md) (integration-cards)
+
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Jamming and spoofing](../concepts/gnss-interference.md)
 
 **Tags:** `osnma`, `galileo`, `authentication`, `python`

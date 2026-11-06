@@ -26,5 +26,8 @@ MATLAB-style utility functions from UT Austin's Radionavigation Lab for simulati
 
 - [Starlink LEO-PNT](../repos/przemyslawpiekarski__starlink-leo-pnt.md) (alternative_to)
 - [Signal Structure of the Starlink Ku-Band Downlink](../resources/humphreys-2023-starlink-signal-structure.md) (has_code)
+- [Iridium PNT (Satellite Time and Location) and Iridium PNT ASIC](../resources/iridium-pnt-stl-asic.md) (alternative_to)
+- [TrustPoint - C-band LEO PNT](../resources/trustpoint-leo-pnt.md) (alternative_to)
+- [Xona Space Systems Pulsar LEO PNT constellation](../resources/xona-pulsar-leo-pnt.md) (alternative_to)
 
 _Indexed by lane(s): gnss_

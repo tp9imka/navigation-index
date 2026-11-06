@@ -12,6 +12,11 @@ Graph-based SLAM library and app supporting RGB-D, stereo and LiDAR, with memory
 
 **Hackathon notes:** Install via apt binaries (ROS) or the standalone app. Supports phone/iPad LiDAR capture. Save a map, then switch to localization mode.
 
+## Deep dives
+
+- [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
+- [introlab__rtabmap](../../docs/integration-cards/introlab__rtabmap.md) (integration-cards)
+
 **Concepts:** [Visual SLAM](../concepts/visual-slam.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Place recognition and loop closure](../concepts/place-recognition.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
 
 **Tags:** `rgbd`, `stereo`, `lidar`, `database`, `gui`

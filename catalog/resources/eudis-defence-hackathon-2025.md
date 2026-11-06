@@ -11,8 +11,16 @@ EU defence hackathon (17-19 October 2025, eight locations) with challenges on pr
 - Shows how EU frames navigation and C-UAS challenge statements
 - Pre-hackathon webinar recording available
 
+## Deep dives
+
+- [programs-and-challenges](../../docs/landscape/programs-and-challenges.md) (landscape)
+
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
 
 **Tags:** `hackathon`, `eu`, `brave1`, `ukraine`
+
+## Referenced by
+
+- [EUDIS Defence Hackathon, 5th edition (Oct 2026) - GNSS-denied navigation challenge](../resources/eudis-defence-hackathon-2026.md) (cites)
 
 _Indexed by lane(s): learning_

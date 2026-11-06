@@ -12,6 +12,10 @@ Dataset and baseline (TIP 2023) for UAV self-positioning in low-altitude urban e
 
 **Hackathon notes:** Good dataset for training a retrieval head for urban flights.
 
+## Deep dives
+
+- [denseuav](../../docs/dataset-cards/denseuav.md) (dataset-cards)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `urban`, `self-positioning`, `dataset`, `uav`

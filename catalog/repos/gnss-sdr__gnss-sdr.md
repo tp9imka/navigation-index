@@ -12,6 +12,12 @@ Full software-defined GNSS receiver built on GNU Radio: acquisition, tracking, n
 
 **Hackathon notes:** Install from distro packages (apt install gnss-sdr) to skip a long build. Feed it GPS-SDR-SIM or recorded IQ files; works with HackRF/USRP/RTL-SDR front-ends.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [gnss-sdr__gnss-sdr](../../docs/integration-cards/gnss-sdr__gnss-sdr.md) (integration-cards)
+- [texbat](../../docs/dataset-cards/texbat.md) (dataset-cards)
+
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [Software-defined GNSS receivers](../concepts/gnss-sdr.md), [Jamming and spoofing](../concepts/gnss-interference.md)
 
 **Tags:** `gnu-radio`, `receiver`, `osnma`, `iq`, `c++`
@@ -42,6 +48,8 @@ Full software-defined GNSS receiver built on GNU Radio: acquisition, tracking, n
 - [IS-GPS-200N: NAVSTAR GPS Space Segment / Navigation User Segment Interfaces](../resources/gps-is-gps-200n.md) (has_code)
 - [IS-GPS-705J: NAVSTAR GPS Space Segment / User Segment L5 Interfaces](../resources/gps-is-gps-705j.md) (has_code)
 - [IS-GPS-800J: NAVSTAR GPS Space Segment / User Segment L1C Interfaces](../resources/gps-is-gps-800j.md) (has_code)
+- [infiniDome GPSdome / GPSdome 2 small-UAS anti-jam module](../resources/infinidome-gpsdome.md) (alternative_to)
+- [Safran VersaPNT and Geonyx resilient PNT units](../resources/safran-versapnt.md) (alternative_to)
 
 _Indexed by lane(s): gnss_
 

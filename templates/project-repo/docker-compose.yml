@@ -1,0 +1,38 @@
+# Skeleton. Only `app` runs out of the box; `sim` and `tak` are placeholders behind profiles.
+# Pin every image to a tag you tested before the event; venue Wi-Fi will not pull them.
+#   docker compose up app                     # synthetic scenario, no sim, no TAK
+#   docker compose --profile sim --profile tak up
+name: navapp
+
+services:
+  app:
+    image: python:3.14-slim
+    working_dir: /work
+    volumes:
+      - ./:/work
+    environment:
+      PYTHONPATH: /work/src
+    command: >
+      python -m navapp --scenario ${SCENARIO:-spoof} --out runs/compose.jsonl
+      --origin ${ORIGIN:-59.0,10.0}
+      --cot-udp ${COT_TARGET:-tak:8087}
+      --mavlink-udp ${GCS_TARGET:-host.docker.internal:14550}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  # Replace with your SITL image (ArduPilot sim_vehicle.py or PX4 gz). Exposes MAVLink UDP.
+  # The app reads it once you add a MAVLink PoseSource adapter in src/navapp/.
+  sim:
+    profiles: ["sim"]
+    image: ${SIM_IMAGE:-replace-me/sitl:pin-a-tag}
+    ports:
+      - "14550:14550/udp"
+
+  # Replace with your TAK server image (e.g. an OpenTAKServer build you tested).
+  # Check which port and protocol its CoT input listens on and set COT_TARGET to match.
+  tak:
+    profiles: ["tak"]
+    image: ${TAK_IMAGE:-replace-me/tak-server:pin-a-tag}
+    ports:
+      - "8087:8087/udp"
+      - "8089:8089"

@@ -12,6 +12,10 @@ Repo for VPAIR, an aerial visual place recognition dataset matching low-altitude
 
 **Hackathon notes:** Small enough to evaluate quickly with VPR-methods-evaluation.
 
+## Deep dives
+
+- [vpair](../../docs/dataset-cards/vpair.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Place recognition and loop closure](../concepts/place-recognition.md)
 
 **Tags:** `aerial`, `vpr`, `orthophoto`

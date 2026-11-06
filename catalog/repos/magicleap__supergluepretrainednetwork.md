@@ -30,6 +30,7 @@ Pretrained SuperGlue graph-neural-network matcher with SuperPoint features (CVPR
 - [SuperPoint (pretrained)](../repos/magicleap__superpointpretrainednetwork.md) (same_org)
 - [Visual Locator](../repos/rtwotwo__visual-locator.md) (depends_on)
 - [WildNav](../repos/tiers__wildnav.md) (depends_on)
+- [Алгоритм оптичної навігації дрона](../resources/kma-boiko-optical-nav-thesis-2025.md) (uses)
 
 _Indexed by lane(s): alt-nav_
 

@@ -11,6 +11,10 @@ Urban driving in dense city areas with lidar, stereo and navigation sensors wher
 - Sensors: lidars, stereo, GNSS, IMU, wheel encoders
 - Size class: large
 
+## Deep dives
+
+- [complex-urban](../../docs/dataset-cards/complex-urban.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [GNSS/INS integration](../concepts/gnss-ins.md)
 
 **Tags:** `urban`, `korea`

@@ -12,6 +12,10 @@ Official test catalog and plan for Jammertest, Norway's annual live GNSS jamming
 
 **Hackathon notes:** Use the per-year plan to map timestamps in Jammertest datasets to emitted scenarios.
 
+## Deep dives
+
+- [jammertest-data](../../docs/dataset-cards/jammertest-data.md) (dataset-cards)
+
 **Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Electronic warfare resilience](../concepts/ew-resilience.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `jammertest`, `test-plan`, `norway`, `spoofing`

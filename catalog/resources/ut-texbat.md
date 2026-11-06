@@ -11,6 +11,10 @@ Public set of recorded high-rate IQ files of GPS L1 spoofing scenarios (static a
 - De facto benchmark for signal-level spoofing detectors
 - Recordings are large IQ files suitable for GNSS-SDR
 
+## Deep dives
+
+- [texbat](../../docs/dataset-cards/texbat.md) (dataset-cards)
+
 **Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
 
 **Tags:** `spoofing`, `iq`, `benchmark`

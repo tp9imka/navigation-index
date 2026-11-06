@@ -33,7 +33,7 @@ Carrier-phase differential and precise point positioning, corrections (RTCM, SSR
 - [Node-NTRIP caster](../repos/node-ntrip__caster.md) - fit: low - TypeScript/Node.js NTRIP caster library supporting NTRIP v1 and v2.
 - [gnssanalysis](../repos/geoscienceaustralia__gnssanalysis.md) - fit: low - Geoscience Australia Python module of utilities for reading and comparing GNSS products (SP3, CLK, SINEX, Ginan outputs) and computing differences/statistics.
 
-## Documents, talks, courses, datasets (13)
+## Documents, talks, courses, datasets (15)
 
 - [BKG Ntrip Client (BNC)](../resources/bkg-bnc.md) - doc - Page for BNC, BKG's multi-stream NTRIP client that records, decodes, converts to RINEX, monitors and can compute real-time PPP from correction streams.
 - [Galileo High Accuracy Service Signal-In-Space ICD (HAS SIS ICD) Issue 1.0](../resources/galileo-has-sis-icd.md) - standard - Defines the free Galileo High Accuracy Service: PPP orbit, clock and bias corrections broadcast on E6-B (and via internet), including message structure and Reed-Solomon encoding.
@@ -47,5 +47,7 @@ Carrier-phase differential and precise point positioning, corrections (RTCM, SSR
 - [NTRIP: Networked Transport of RTCM via Internet Protocol (BKG)](../resources/bkg-ntrip-about.md) - doc - BKG's overview of the NTRIP protocol for streaming GNSS corrections, with links to its caster, client and server software.
 - [QZSS Performance Standards and Interface Specifications (IS-QZSS)](../resources/qzss-is-qzss.md) - standard - Japan's QZSS interface specifications covering GPS-compatible signals, the L6 CLAS centimetre-level augmentation and MADOCA PPP services.
 - [RTCM 10403.x Differential GNSS (DGNSS) Services - Version 3](../resources/rtcm-sc104-standards.md) - standard - The paid-access RTCM v3 standard that defines the binary messages used to stream GNSS corrections and observations (legacy RTK 1001-1012, MSM 1-7 per constellation, ephemerides, SSR).
+- [RTKLib - Сантиметровая точность GPS/ГЛОНАСС в пост-обработке](../resources/habr-rtklib-postprocessing-2014.md) - blog - English: 'RTKLIB: centimeter-level GPS/GLONASS accuracy in post-processing'.
 - [rtklibexplorer blog](../resources/rtklibexplorer-blog.md) - blog - Long-running practitioner blog on getting centimetre-level RTK/PPK from low-cost u-blox receivers with the demo5 RTKLIB fork, with configuration walk-throughs and data analysis.
+- [Высокоточная навигация GNSS RTK](../resources/habr-zed-f9p-rtk-2022.md) - blog - English: 'High-precision GNSS RTK navigation'.
 

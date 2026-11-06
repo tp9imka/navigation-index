@@ -12,6 +12,11 @@ Python CLI and library utilities for reading, parsing and broadcasting GNSS stre
 
 **Hackathon notes:** pip install pygnssutils; gnssntripclient gets you RTCM from a caster in one command.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [semuconsulting__pygnssutils](../../docs/integration-cards/semuconsulting__pygnssutils.md) (integration-cards)
+
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md)
 
 **Tags:** `ntrip`, `cli`, `python`, `spartn`

@@ -12,6 +12,10 @@ Index for CoSTAR's multi-robot lidar/IMU/odometry datasets recorded in tunnels, 
 
 **Hackathon notes:** Bags are large; pick one sequence.
 
+## Deep dives
+
+- [subt-datasets](../../docs/dataset-cards/subt-datasets.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
 
 **Tags:** `darpa-subt`, `dataset`, `multi-robot`

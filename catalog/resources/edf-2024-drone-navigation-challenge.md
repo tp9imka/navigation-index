@@ -11,8 +11,16 @@ European Defence Fund technological-challenge topic on multi-sensor integration 
 - EU frames GNSS-denied drone navigation as a benchmarked challenge
 - Multi-sensor fusion, not a single sensor, is the ask
 
+## Deep dives
+
+- [programs-and-challenges](../../docs/landscape/programs-and-challenges.md) (landscape)
+
 **Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `edf`, `eu`, `challenge`, `drone`
+
+## Referenced by
+
+- [European Defence Fund 2025 calls](../resources/edf-2025-call.md) (cites)
 
 _Indexed by lane(s): defense-context_

@@ -15,4 +15,8 @@ Factsheet for an EDF-funded project developing ground and space-based detection 
 
 **Tags:** `edf`, `navguard`, `monitoring`
 
+## Referenced by
+
+- [European Defence Fund 2025 calls](../resources/edf-2025-call.md) (cites)
+
 _Indexed by lane(s): defense-context_

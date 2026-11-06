@@ -12,6 +12,10 @@ Tools and utilities for the TartanDrive off-road driving dataset from CMU's AirL
 
 **Hackathon notes:** Data is large; use the provided loaders and a subset.
 
+## Deep dives
+
+- [offroad-rellis-tartandrive](../../docs/dataset-cards/offroad-rellis-tartandrive.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
 
 **Tags:** `dataset`, `off-road`, `atv`, `cmu`

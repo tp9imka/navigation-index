@@ -12,6 +12,11 @@ Translator library and CLI tools for raster and vector geospatial formats (GeoTI
 
 **Hackathon notes:** Use conda or the OSGeo Docker image to avoid version mismatches between GDAL and Python bindings.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [osgeo__gdal](../../docs/integration-cards/osgeo__gdal.md) (integration-cards)
+
 **Concepts:** [GIS, maps and geospatial data](../concepts/gis-mapping.md), [Geodesy and coordinate frames](../concepts/geodesy.md)
 
 **Tags:** `raster`, `vector`, `geotiff`, `cog`, `gdaldem`

@@ -12,6 +12,12 @@ IROS 2023 code for long-range UAV thermal geo-localization against satellite RGB
 
 **Hackathon notes:** Dataset on Hugging Face (gated). Use the pretrained model to show night-time matching in a demo.
 
+## Deep dives
+
+- [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
+- [arplaboratory__satellite-thermal-geo-localization](../../docs/integration-cards/arplaboratory__satellite-thermal-geo-localization.md) (integration-cards)
+- [thermal-datasets](../../docs/dataset-cards/thermal-datasets.md) (dataset-cards)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 
 **Tags:** `thermal`, `night`, `domain-adaptation`

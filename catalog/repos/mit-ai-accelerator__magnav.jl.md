@@ -12,6 +12,13 @@ Julia package from the DAF-MIT AI Accelerator for airborne magnetic anomaly navi
 
 **Hackathon notes:** Julia install plus large data download; first run compiles slowly. Start from the example notebooks and the provided flight lines.
 
+## Deep dives
+
+- [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
+- [mit-ai-accelerator__magnav.jl](../../docs/integration-cards/mit-ai-accelerator__magnav.jl.md) (integration-cards)
+- [afit-magnav-example-data](../../docs/dataset-cards/afit-magnav-example-data.md) (dataset-cards)
+- [magnav-challenge-data](../../docs/dataset-cards/magnav-challenge-data.md) (dataset-cards)
+
 **Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `julia`, `magnav`, `afrl`, `tolles-lawson`, `mit`
@@ -39,10 +46,13 @@ Julia package from the DAF-MIT AI Accelerator for airborne magnetic anomaly navi
 - [MAMMAL](../repos/powerbroker2__mammal.md) (alternative_to)
 - [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/afrl-magnav-challenge-2020.md) (has_code)
 - [Developing a Series of AI Challenges for the United States Department of the Air Force](../resources/daf-ai-challenges-arxiv.md) (has_code)
+- [DAF-MIT AI Accelerator MagNav real-time C-17 demonstration (2023)](../resources/daf-mit-magnav-c17-demo-2023.md) (has_code)
 - [MagNav Challenge Problem (DAF-MIT AI Accelerator)](../resources/magnav-challenge-site.md) (has_code)
 - [MagNav.jl documentation](../resources/magnav-jl-docs.md) (explains)
 - [MagNav Challenge flight dataset (Zenodo)](../resources/magnav-zenodo-dataset.md) (has_code)
 - [MagNav - MIT CSAIL open-source technologies](../resources/mit-cap-magnav-page.md) (explains)
+- [Q-CTRL Ironstone Opal quantum-assured magnetic navigation](../resources/qctrl-ironstone-opal.md) (alternative_to)
+- [SandboxAQ AQNav geomagnetic navigation](../resources/sandboxaq-aqnav.md) (alternative_to)
 - [MagNav.jl quickstart: Tolles-Lawson and EKF on the SGL 2020 flight](../samples/magnav-quickstart.md) (uses)
 
 _Indexed by lane(s): alt-nav, defense-context, sim-data_

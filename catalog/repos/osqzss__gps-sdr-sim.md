@@ -12,6 +12,11 @@ Generates GPS L1 C/A baseband IQ sample files for a user-defined static or movin
 
 **Hackathon notes:** Generate IQ files and feed GNSS-SDR directly (no RF needed) to test detectors. Repository archived in 2025 but still works. Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [osqzss__gps-sdr-sim](../../docs/integration-cards/osqzss__gps-sdr-sim.md) (integration-cards)
+
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [Jamming and spoofing](../concepts/gnss-interference.md), [Simulation and HIL/SITL](../concepts/simulation.md)
 
 **Tags:** `simulator`, `iq`, `hackrf`, `gps-l1`
@@ -32,6 +37,8 @@ Generates GPS L1 C/A baseband IQ sample files for a user-defined static or movin
 - [Low-cost GPS simulator: GPS spoofing by SDR (DEF CON 23)](../resources/defcon23-low-cost-gps-spoofing-sdr.md) (uses)
 - [IS-GPS-200N: NAVSTAR GPS Space Segment / Navigation User Segment Interfaces](../resources/gps-is-gps-200n.md) (explains)
 - [IS-GPS-200N: NAVSTAR GPS Space Segment / Navigation User Segment Interfaces](../resources/gps-is-gps-200n.md) (has_code)
+- [Safran Skydel simulation engine / GSG-8 GNSS simulator (ex-Orolia)](../resources/safran-skydel-gsg8.md) (alternative_to)
+- [Spirent GSS7000 and PNT X GNSS/PNT simulators](../resources/spirent-gss7000-pntx.md) (alternative_to)
 
 _Indexed by lane(s): gnss_
 

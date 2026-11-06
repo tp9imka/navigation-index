@@ -12,6 +12,10 @@ Site repo for MCD, a multi-campus dataset across Asia and Europe with spinning a
 
 **Hackathon notes:** Data downloads and tutorials are linked from the site.
 
+## Deep dives
+
+- [mcd](../../docs/dataset-cards/mcd.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [RF localization and direction finding](../concepts/rf-localization.md)
 
 **Tags:** `lidar`, `uwb`, `prior-map`

@@ -12,6 +12,10 @@ C++ library for writing PX4 flight modes and navigation-data sources in ROS 2 on
 
 **Hackathon notes:** Needs recent PX4 (1.15+) and matching px4_msgs; examples include custom modes and external navigation interfaces.
 
+## Deep dives
+
+- [auterion__px4-ros2-interface-lib](../../docs/integration-cards/auterion__px4-ros2-interface-lib.md) (integration-cards)
+
 **Concepts:** [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Autopilots and flight control](../concepts/autopilot.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
 
 **Tags:** `ros2`, `flight-modes`, `companion`, `auterion`

@@ -12,6 +12,10 @@ Example Android app that listens for Remote ID broadcasts over Bluetooth 4/5 and
 
 **Hackathon notes:** Sideload on a recent Android phone; Wi-Fi NaN support depends on handset. Extend to forward detections as CoT to a TAK server.
 
+## Deep dives
+
+- [remote-id-droneid-captures](../../docs/dataset-cards/remote-id-droneid-captures.md) (dataset-cards)
+
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Standards and interface specs](../concepts/standards.md)
 
 **Tags:** `remote-id`, `android`, `bluetooth`, `wifi-nan`, `ble`

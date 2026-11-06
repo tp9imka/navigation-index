@@ -11,8 +11,16 @@ UK DASA themed competition (for the Bright Corvus project) seeking RF sensing an
 - UK MOD treats RF sensing and PNT as one problem space
 - Example of UK-style challenge framing
 
+## Deep dives
+
+- [programs-and-challenges](../../docs/landscape/programs-and-challenges.md) (landscape)
+
 **Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
 
 **Tags:** `dasa`, `dstl`, `uk`, `competition`
+
+## Referenced by
+
+- [UK DASA Early Market Engagement: PNT problem statement for uncrewed systems](../resources/uk-dasa-emp-pnt-problem-statement-2024.md) (cites)
 
 _Indexed by lane(s): defense-context_

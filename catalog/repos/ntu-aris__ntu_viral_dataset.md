@@ -12,6 +12,10 @@ Site repo for NTU VIRAL, an aerial dataset with lidars, cameras, IMU and UWB ran
 
 **Hackathon notes:** ROS bags; download links on the site.
 
+## Deep dives
+
+- [ntu-viral](../../docs/dataset-cards/ntu-viral.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md), [RF localization and direction finding](../concepts/rf-localization.md)
 
 **Tags:** `uwb`, `drone`, `lidar`, `imu`

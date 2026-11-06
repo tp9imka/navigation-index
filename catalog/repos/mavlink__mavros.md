@@ -12,6 +12,10 @@ ROS/ROS 2 node bridging MAVLink to ROS topics and services, with GCS proxy; wide
 
 **Hackathon notes:** Publish to /mavros/vision_pose/pose or odometry topics; mind ENU/NED frame conversions.
 
+## Deep dives
+
+- [mavlink__mavros](../../docs/integration-cards/mavlink__mavros.md) (integration-cards)
+
 **Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Visual(-inertial) odometry](../concepts/vio.md)
 
 **Tags:** `ros`, `ros2`, `bridge`, `vision_pose`, `mavlink`, `gateway`
@@ -29,6 +33,7 @@ ROS/ROS 2 node bridging MAVLink to ROS topics and services, with GCS proxy; wide
 ## Referenced by
 
 - [ArduPilot](../repos/ardupilot__ardupilot.md) (integrates_with)
+- [COEX Clover](../repos/copterexpress__clover.md) (depends_on)
 - [MAVSDK](../repos/mavlink__mavsdk.md) (alternative_to)
 - [px4_ros_com](../repos/px4__px4_ros_com.md) (alternative_to)
 - [vision_to_mavros](../repos/thien94__vision_to_mavros.md) (depends_on)

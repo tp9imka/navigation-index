@@ -12,6 +12,10 @@ Raw GNSS measurement logs from Android phones and smartwatches recorded under sp
 
 **Hackathon notes:** Load logs with gnss_lib_py and build a consistency-check or ML detector. Verify labelling and scenario details in the README before trusting results.
 
+## Deep dives
+
+- [gnss-spoofing-s7am1na](../../docs/dataset-cards/gnss-spoofing-s7am1na.md) (dataset-cards)
+
 **Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
 
 **Tags:** `spoofing`, `dataset`, `android`, `l5`

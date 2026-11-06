@@ -11,6 +11,10 @@ Same routes captured with Ouster, Aeva, Livox and Velodyne lidars to test place 
 - Sensors: four lidar types, IMU, GNSS/INS
 - Use for cross-sensor relocalization
 
+## Deep dives
+
+- [mulran-helipr](../../docs/dataset-cards/mulran-helipr.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Place recognition and loop closure](../concepts/place-recognition.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
 
 **Tags:** `lidar`, `heterogeneous`

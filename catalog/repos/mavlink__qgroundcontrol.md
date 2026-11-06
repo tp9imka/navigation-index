@@ -12,6 +12,10 @@ Qt/QML cross-platform GCS (desktop, Android, iOS) for PX4 and ArduPilot: setup, 
 
 **Hackathon notes:** Use prebuilt binaries for SITL; custom builds take a few hours to set up Qt.
 
+## Deep dives
+
+- [mavlink__qgroundcontrol](../../docs/integration-cards/mavlink__qgroundcontrol.md) (integration-cards)
+
 **Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Mission planning and routing](../concepts/mission-planning.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
 
 **Tags:** `gcs`, `qt`, `qml`, `mission-planning`

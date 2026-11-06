@@ -10,7 +10,7 @@ Loosely, tightly and deeply coupled GNSS/INS.
 
 - [GNSS/INS EKF through a GNSS outage and a spoofing walk-off](../samples/gnss-ins-ekf-outage.md) - A stdlib-only 2D loosely-coupled GNSS/INS EKF (8 states, hand-written matrix helpers) on a synthetic vehicle with biased, noisy 100 Hz IMU and 1 Hz GNSS.
 
-## Repositories (33)
+## Repositories (34)
 
 - [ArduPilot](../repos/ardupilot__ardupilot.md) - fit: high - GPL autopilot covering Copter, Plane (incl.
 - [PX4 Autopilot](../repos/px4__px4-autopilot.md) - fit: high - Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, built on NuttX with a uORB pub/sub middleware.
@@ -45,8 +45,9 @@ Loosely, tightly and deeply coupled GNSS/INS.
 - [GLIO](../repos/xikunliu-huskit__glio.md) - fit: low - Tightly coupled GNSS/LiDAR/IMU integration (PolyU) for continuous, drift-free state estimation in urban canyons.
 - [gnss_comm](../repos/hkust-aerial-robotics__gnss_comm.md) - fit: low - C++/ROS definitions and utilities for raw GNSS measurement processing (ephemeris, satellite positions, pseudorange models) used by GVINS.
 - [gps_imu_fusion](../repos/shelfcol__gps_imu_fusion.md) - fit: low - GPS/IMU fusion examples implemented with ESKF, EKF, UKF and other filters.
+- [graduate_work (UAV INS module thesis)](../repos/danamarkova__graduate_work.md) - fit: low - Russian graduate thesis code: 'Development of a UAV inertial navigation module using auxiliary navigation data'.
 
-## Documents, talks, courses, datasets (21)
+## Documents, talks, courses, datasets (26)
 
 - [Complex Urban Dataset](../resources/kaist-complex-urban-dataset.md) - dataset - Urban driving in dense city areas with lidar, stereo and navigation sensors where GNSS is degraded.
 - [EKF Source Selection and Switching](../resources/ardupilot-ekf3-sources.md) - doc - Reference for EKF3 source parameters (position, velocity, yaw per axis) and how fusion of multiple velocity sources works.
@@ -55,6 +56,8 @@ Loosely, tightly and deeply coupled GNSS/INS.
 - [Factor Graphs and GTSAM: A Hands-on Introduction](../resources/gtsam-intro-tutorial.md) - doc - Hands-on introduction to the GTSAM library: modelling robot odometry, landmark and pose-graph SLAM as factor graphs, solving with Levenberg-Marquardt or iSAM2, and reading marginal covariances, with C++ and Python snippe
 - [Factor Graphs for Robot Perception](../resources/dellaert-kaess-factor-graphs-robot-perception.md) - paper - Foundations and Trends monograph (free author PDF) explaining SLAM and sensor fusion as inference on factor graphs, with incremental smoothing (iSAM) and the reasoning behind the GTSAM library.
 - [GPS / Non-GPS Transitions](../resources/ardupilot-gps-non-gps-transitions.md) - doc - Explains configuring EKF3 with two source sets (e.g.
+- [Honeywell HGuide o480 single-card INS and HGuide i700 IMU](../resources/honeywell-hguide-o480.md) - product - HGuide o480 (May 2025) is a single-card INS for small UAVs and ground robots that accepts velocity aiding (e.g.
+- [Inertial Labs VINS visual-aided INS (with Maxar Raptor)](../resources/inertial-labs-vins.md) - product - Launched June 2025, VINS combines an Inertial Labs INS with Maxar Raptor software that matches camera frames to Maxar Precision3D satellite-derived 3D maps for absolute position on long-range UAV flights.
 - [ION GNSS+ Tutorials](../resources/ion-gnss-plus-tutorials.md) - course - Pre-conference tutorial programme of ION GNSS+, the main annual GNSS technical meeting: half-day in-depth courses by field experts on topics such as GNSS signals, receivers, PPP/RTK, inertial integration and interference
 - [LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping](../resources/lio-sam-shan-2020.md) - paper - Formulates LiDAR-inertial odometry as factor-graph smoothing with IMU preintegration, LiDAR odometry, GPS and loop-closure factors.
 - [MARS-LVIG Dataset](../resources/hku-mars-lvig-dataset.md) - dataset - Aerial robot SLAM dataset for lidar-visual-inertial-GNSS fusion, including sequences with raw GNSS measurements under different lighting.
@@ -65,8 +68,11 @@ Loosely, tightly and deeply coupled GNSS/INS.
 - [Quaternion kinematics for the error-state Kalman filter](../resources/sola-quaternion-kinematics-eskf.md) - paper - Long tutorial report covering quaternion conventions, rotation perturbations and their derivatives, and a full derivation of an IMU-driven error-state Kalman filter including the reset step.
 - [robot_localization package documentation](../resources/robot-localization-docs.md) - doc - Documentation for the widely used ROS EKF/UKF state estimation package, including state-estimation node configuration, sensor integration, and navsat_transform for GPS.
 - [ROSCon UK 2025 - State Estimation for Mobile Robotics Workshop](../resources/nav2-roscon-uk-2025-state-estimation-workshop.md) - masterclass - Hands-on workshop material comparing two ROS 2 state-estimation approaches: Kalman filtering with robot_localization (EKF/UKF, covariance tuning, frames, rate handling) and factor-graph fixed-lag smoothing with fuse.
+- [SBG Systems Ellipse INS - 2025 GNSS-denied firmware](../resources/sbg-new-ellipse-firmware.md) - product - A March 2025 free firmware update for SBG's Ellipse (v3 hardware) adds jamming/spoofing detection flags and lets users reject or re-enable GNSS and other aiding sensors without resetting the filter.
 - [State Estimation and Localization for Self-Driving Cars (Coursera)](../resources/coursera-state-estimation-localization-sdc.md) - course - Course 2 of the UofT Self-Driving Cars specialization: least squares, KF/EKF/ES-EKF/UKF, IMU and GNSS sensor models, LiDAR scan matching with ICP, culminating in an error-state EKF that fuses IMU, GNSS and LiDAR on CARLA
 - [Understanding Sensor Fusion and Tracking (MATLAB Tech Talks)](../resources/mathworks-understanding-sensor-fusion-tracking.md) - video - Short video series on sensor fusion for autonomous systems: what sensor fusion is, IMU/magnetometer orientation estimation, fusing GPS and IMU for pose with an asynchronous EKF, single- and multi-object tracking, and tra
 - [UrbanLoco: A Full Sensor Suite Dataset for Mapping and Localization in Urban Scenes](../resources/polyu-urbanloco-dataset.md) - dataset - Driving data from Hong Kong and California urban canyons with a full sensor suite, targeted at GNSS outliers and degraded localization.
 - [Using the ECL EKF (EKF2)](../resources/px4-ekf2-tuning-guide.md) - doc - PX4 guide to its EKF2 estimator: which sensors it fuses (IMU, GNSS, baro, mag, optical flow, external vision, range), how to configure and tune them, and how to read innovation logs.
+- [VectorNav - Iridium STL-aided INS collaboration with NAL Research](../resources/vectornav-stl-aided-ins.md) - company - VectorNav makes small tactical-grade IMU/GNSS-INS units widely used on research drones (PX4 has a driver).
+- [Разработка алгоритма абсолютной визуально-инерциальной навигации беспилотных воздушных судов](../resources/preprints-lazareva-absolute-vi-nav.md) - paper - English: 'Development of an absolute visual-inertial navigation algorithm for unmanned aircraft'.
 

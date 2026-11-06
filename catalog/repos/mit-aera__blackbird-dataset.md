@@ -12,6 +12,10 @@ MIT dataset of aggressive indoor quadrotor flights with real IMU and motor data 
 
 **Hackathon notes:** Inactive since 2022; download scripts may need adaptation.
 
+## Deep dives
+
+- [blackbird](../../docs/dataset-cards/blackbird.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md)
 
 **Tags:** `quadrotor`, `aggressive`, `synthetic-vision`

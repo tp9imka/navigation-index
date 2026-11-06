@@ -10,6 +10,10 @@ Introduces the drone/satellite/ground benchmark that most drone cross-view geo-l
 
 - Defines drone->satellite and satellite->drone retrieval tasks
 
+## Deep dives
+
+- [university-1652](../../docs/dataset-cards/university-1652.md) (dataset-cards)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `arxiv`, `dataset`

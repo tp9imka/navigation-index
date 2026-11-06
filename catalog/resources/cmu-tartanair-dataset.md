@@ -11,6 +11,10 @@ Large synthetic dataset rendered in AirSim/Unreal environments with challenging 
 - Sensors (simulated): stereo, depth, flow, lidar, IMU
 - Size class: very large
 
+## Deep dives
+
+- [tartanair](../../docs/dataset-cards/tartanair.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Simulation and HIL/SITL](../concepts/simulation.md), [Visual SLAM](../concepts/visual-slam.md)
 
 **Tags:** `synthetic`, `tartanair`

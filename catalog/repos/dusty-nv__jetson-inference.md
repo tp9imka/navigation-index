@@ -12,6 +12,11 @@ NVIDIA's guide and library for deploying detection, segmentation and depth netwo
 
 **Hackathon notes:** Use the Docker container; works with CSI/USB cameras.
 
+## Deep dives
+
+- [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
+- [dusty-nv__jetson-inference](../../docs/integration-cards/dusty-nv__jetson-inference.md) (integration-cards)
+
 **Concepts:** [Onboard / edge AI perception](../concepts/edge-ai.md)
 
 **Tags:** `jetson`, `tensorrt`, `detection`, `segmentation`

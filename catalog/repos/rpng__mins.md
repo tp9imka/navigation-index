@@ -12,6 +12,11 @@ Multi-sensor aided inertial navigation that fuses IMU with camera, LiDAR, GNSS a
 
 **Hackathon notes:** Start with the provided simulated data to see each sensor's contribution, then disable GNSS mid-run to demo a jamming scenario.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [rpng__mins](../../docs/integration-cards/rpng__mins.md) (integration-cards)
+
 **Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Visual(-inertial) odometry](../concepts/vio.md), [GNSS/INS integration](../concepts/gnss-ins.md), [Sensor calibration](../concepts/calibration.md)
 
 **Tags:** `msckf`, `wheel-odometry`, `gnss`, `lidar`, `simulator`

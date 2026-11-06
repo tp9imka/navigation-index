@@ -12,6 +12,10 @@ Asyncio Python client for MAVSDK that wraps a bundled mavsdk_server.
 
 **Hackathon notes:** pip install mavsdk-grpc and import mavsdk_grpc (the PyPI name 'mavsdk' now means the native binding with a different API); examples cover takeoff, missions, offboard velocity.
 
+## Deep dives
+
+- [mavlink__mavsdk-python](../../docs/integration-cards/mavlink__mavsdk-python.md) (integration-cards)
+
 **Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Autopilots and flight control](../concepts/autopilot.md)
 
 **Tags:** `python`, `asyncio`, `offboard`

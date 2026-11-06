@@ -11,6 +11,10 @@ Zenodo record holding the MagNav challenge flight data: magnetometer, INS, GPS t
 - HDF5 flight lines with truth position
 - Paired with MagNav.jl loaders
 
+## Deep dives
+
+- [magnav-challenge-data](../../docs/dataset-cards/magnav-challenge-data.md) (dataset-cards)
+
 **Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `magnav`, `dataset`, `zenodo`

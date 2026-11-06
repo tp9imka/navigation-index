@@ -12,6 +12,10 @@ Google's Android raw GNSS measurement tooling: the GnssLogger app source, MATLAB
 
 **Hackathon notes:** Install GnssLogger from the Play Store and log on any recent Android phone; parse logs with gnss_lib_py.
 
+## Deep dives
+
+- [gsdc](../../docs/dataset-cards/gsdc.md) (dataset-cards)
+
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `android`, `gnsslogger`, `raw-measurements`, `matlab`, `raw-gnss`

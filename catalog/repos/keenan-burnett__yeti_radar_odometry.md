@@ -12,6 +12,10 @@ Radar odometry for Navtech spinning radar that compensates motion distortion and
 
 **Hackathon notes:** Unmaintained; evaluated on Oxford Radar RobotCar.
 
+## Deep dives
+
+- [oxford-radar-robotcar](../../docs/dataset-cards/oxford-radar-robotcar.md) (dataset-cards)
+
 **Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md)
 
 **Tags:** `navtech`, `radar-odometry`, `motion-distortion`

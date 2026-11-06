@@ -11,6 +11,10 @@ Successor to KITTI with longer suburban drives, 360-degree perception sensors an
 - Sensors: perspective and fisheye cameras, lidar, GPS/IMU
 - Size class: very large
 
+## Deep dives
+
+- [kitti](../../docs/dataset-cards/kitti.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
 
 **Tags:** `kitti`, `driving`

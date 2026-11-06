@@ -12,6 +12,10 @@ Go implementation of a simple ATAK-compatible server and a web client, supportin
 
 **Hackathon notes:** go build or release binary; web map client is handy for judges without ATAK installed.
 
+## Deep dives
+
+- [kdudkov__goatak](../../docs/integration-cards/kdudkov__goatak.md) (integration-cards)
+
 **Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md)
 
 **Tags:** `tak`, `go`, `web-client`

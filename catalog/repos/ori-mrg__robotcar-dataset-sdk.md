@@ -12,6 +12,11 @@ SDK for the Oxford RobotCar dataset with loaders and projection tools.
 
 **Hackathon notes:** Inactive since 2022; Python and MATLAB helpers still work.
 
+## Deep dives
+
+- [oxford-radar-robotcar](../../docs/dataset-cards/oxford-radar-robotcar.md) (dataset-cards)
+- [oxford-robotcar](../../docs/dataset-cards/oxford-robotcar.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
 
 **Tags:** `oxford`, `robotcar`, `sdk`

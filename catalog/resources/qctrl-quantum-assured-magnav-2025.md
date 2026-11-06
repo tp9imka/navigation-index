@@ -15,4 +15,8 @@ Reports airborne and ground field trials of magnetic anomaly navigation using qu
 
 **Tags:** `arxiv`, `quantum`, `field-trial`
 
+## Referenced by
+
+- [Q-CTRL Ironstone Opal quantum-assured magnetic navigation](../resources/qctrl-ironstone-opal.md) (cites)
+
 _Indexed by lane(s): alt-nav_

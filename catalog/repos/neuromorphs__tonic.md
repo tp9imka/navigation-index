@@ -12,6 +12,10 @@ Python library for event-based datasets and transforms, in the style of torchvis
 
 **Hackathon notes:** pip install tonic; use transforms to voxel grids.
 
+## Deep dives
+
+- [event-camera-datasets](../../docs/dataset-cards/event-camera-datasets.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `event-camera`, `dataset-loader`, `pytorch`

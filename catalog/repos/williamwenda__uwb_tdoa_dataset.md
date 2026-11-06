@@ -12,6 +12,10 @@ Dataset and scripts for UWB time-difference-of-arrival measurements from Bitcraz
 
 **Hackathon notes:** Download and run the provided EKF example as a baseline. Unmaintained since 2021; the data itself is static and still usable.
 
+## Deep dives
+
+- [util-uwb-tdoa](../../docs/dataset-cards/util-uwb-tdoa.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [RF localization and direction finding](../concepts/rf-localization.md)
 
 **Tags:** `uwb`, `tdoa`, `dataset`, `loco`

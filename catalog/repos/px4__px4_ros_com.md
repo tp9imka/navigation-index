@@ -12,6 +12,10 @@ Example ROS 2 nodes and helpers (frame transforms) for interfacing with PX4 over
 
 **Hackathon notes:** Clone alongside px4_msgs into a colcon workspace.
 
+## Deep dives
+
+- [px4__px4_ros_com](../../docs/integration-cards/px4__px4_ros_com.md) (integration-cards)
+
 **Concepts:** [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Autopilots and flight control](../concepts/autopilot.md)
 
 **Tags:** `ros2`, `examples`, `offboard`

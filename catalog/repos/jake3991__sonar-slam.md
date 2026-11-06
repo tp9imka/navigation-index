@@ -12,6 +12,10 @@ Underwater SLAM for robots with multibeam imaging sonar, from Stevens Institute 
 
 **Hackathon notes:** ROS 1 with sample bags; budget time for dependencies.
 
+## Deep dives
+
+- [underwater-datasets](../../docs/dataset-cards/underwater-datasets.md) (dataset-cards)
+
 **Concepts:** [Underwater navigation](../concepts/underwater-nav.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
 
 **Tags:** `sonar-slam`, `multibeam`, `pose-graph`, `gtsam`

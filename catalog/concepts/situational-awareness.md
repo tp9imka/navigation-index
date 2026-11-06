@@ -64,7 +64,7 @@ TAK/CoT, MIL-STD-2525/APP-6 symbology, blue force tracking, common operating pic
 - [MonoGS (Gaussian Splatting SLAM)](../repos/muskie82__monogs.md) - fit: low - Gaussian-splatting SLAM for monocular, stereo and RGB-D cameras that tracks and maps directly against a 3D Gaussian representation.
 - [Joint Military Symbology XML](../repos/esri__joint-military-symbology-xml.md) - fit: low - Esri data encapsulation of MIL-STD-2525D and APP-6(D) symbology: symbol IDs, entity tables and SVG assets.
 
-## Documents, talks, courses, datasets (29)
+## Documents, talks, courses, datasets (31)
 
 - [Above Us Only Stars: Exposing GPS Spoofing in Russia and Syria](../resources/c4ads-above-us-only-stars.md) - report - Open-source investigation using AIS ship tracks, public records and ISS-based measurements to map thousands of GNSS spoofing events around Russia, Crimea and Syria, many linked to protection of VIPs and bases.
 - [ADS-B Data Analysis for GNSS Interference Mapping](../resources/insidegnss-adsb-interference-mapping.md) - blog - Trade-press article on using ADS-B integrity data to detect and map GNSS interference regions.
@@ -95,4 +95,6 @@ TAK/CoT, MIL-STD-2525/APP-6 symbology, blue force tracking, common operating pic
 - [TAK.gov - Team Awareness Kit portal](../resources/tak-gov.md) - doc - Official TAK portal for ATAK/WinTAK/iTAK/TAK Server downloads, plugin SDKs and documentation; most materials require free registration.
 - [The 1090 Megahertz Riddle: A Guide to Decoding Mode S and ADS-B Signals](../resources/junzis-1090mhz-riddle.md) - book - Open book explaining Mode S and ADS-B message structure, position decoding (CPR), Comm-B registers and Mode S surveillance, with pyModeS examples.
 - [Windward - 2025 maritime stress test](../resources/windward-2025-maritime-stress-test.md) - blog - Maritime-intelligence review of 2025 including large-scale GNSS jamming and spoofing in the Gulf and Strait of Hormuz after the June 2025 Israel-Iran strikes.
+- [«Ми почали будувати захищену екосистему для всіх військових застосунків». Архітектор DELTA - про розвиток системи](../resources/dou-delta-architecture-interview-2024.md) - blog - English: 'We started building a secure ecosystem for all military applications.
+- [Неоднозначный сигнал](../resources/novayagazeta-gnss-interference-europe-2025.md) - blog - English: 'An ambiguous signal'.
 

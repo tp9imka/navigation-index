@@ -12,6 +12,11 @@ Fast lost-in-space plate solver for star trackers from ESA: identifies stars in 
 
 **Hackathon notes:** Not on PyPI: pip install git+https://github.com/esa/tetra3.git; solve sample images in minutes. Combine attitude with a level sensor and clock for a celestial fix demo.
 
+## Deep dives
+
+- [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
+- [esa__tetra3](../../docs/integration-cards/esa__tetra3.md) (integration-cards)
+
 **Concepts:** [Celestial and star-tracker navigation](../concepts/celestial-nav.md), [Space and orbital navigation](../concepts/space-nav.md)
 
 **Tags:** `star-tracker`, `plate-solver`, `esa`

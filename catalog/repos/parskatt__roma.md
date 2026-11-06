@@ -12,6 +12,11 @@ Robust dense feature matcher (CVPR 2024) estimating pixel-dense warps with certa
 
 **Hackathon notes:** Use as the accurate-but-slow verifier on the top retrieval hit; GPU recommended.
 
+## Deep dives
+
+- [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
+- [parskatt__roma](../../docs/integration-cards/parskatt__roma.md) (integration-cards)
+
 **Concepts:** [Feature detection and matching](../concepts/feature-matching.md)
 
 **Tags:** `dense`, `dinov2`, `robust`

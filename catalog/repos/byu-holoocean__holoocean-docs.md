@@ -12,6 +12,10 @@ Documentation repository for HoloOcean, BYU's Unreal-based underwater simulator 
 
 **Hackathon notes:** Follow the installation page of the docs; Python package plus downloadable worlds. Heavy GPU load for sonar rendering.
 
+## Deep dives
+
+- [underwater-datasets](../../docs/dataset-cards/underwater-datasets.md) (dataset-cards)
+
 **Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Underwater navigation](../concepts/underwater-nav.md)
 
 **Tags:** `underwater`, `unreal`, `sonar`, `dvl`

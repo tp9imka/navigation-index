@@ -12,6 +12,10 @@ Earlier edition of the smartphone GNSS positioning competition with Android raw 
 - Sensors: phone raw GNSS, IMU
 - Kaggle account required
 
+## Deep dives
+
+- [gsdc](../../docs/dataset-cards/gsdc.md) (dataset-cards)
+
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `android`, `kaggle`, `gsdc`

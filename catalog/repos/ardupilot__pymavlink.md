@@ -12,6 +12,10 @@ Python MAVLink implementation plus tools for connections, log parsing (DataFlash
 
 **Hackathon notes:** pip install pymavlink; mavutil.mavlink_connection('udp:...') against SITL works in minutes.
 
+## Deep dives
+
+- [ardupilot__pymavlink](../../docs/integration-cards/ardupilot__pymavlink.md) (integration-cards)
+
 **Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
 
 **Tags:** `python`, `logs`, `dataflash`, `tlog`

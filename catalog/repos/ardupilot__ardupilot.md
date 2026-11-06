@@ -12,6 +12,10 @@ GPL autopilot covering Copter, Plane (incl. QuadPlane VTOL), Rover, boats and Ar
 
 **Hackathon notes:** `sim_vehicle.py -v ArduCopter --console --map` gives SITL in minutes. Lua scripting lets you add behaviour on the flight controller without a fork. Use SIM_GPS1_ENABLE=0 / EK3_SRC1_* to simulate GNSS denial.
 
+## Deep dives
+
+- [ardupilot__ardupilot](../../docs/integration-cards/ardupilot__ardupilot.md) (integration-cards)
+
 **Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [GNSS/INS integration](../concepts/gnss-ins.md), [Visual(-inertial) odometry](../concepts/vio.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [Maritime navigation](../concepts/maritime-nav.md), [Underwater navigation](../concepts/underwater-nav.md), [Simulation and HIL/SITL](../concepts/simulation.md)
 
 **Tags:** `ekf3`, `arducopter`, `arduplane`, `ardurover`, `ardusub`, `lua-scripting`, `sitl`, `mavlink`
@@ -42,6 +46,7 @@ GPL autopilot covering Copter, Plane (incl. QuadPlane VTOL), Rover, boats and Ar
 - [ArduPilot SITL Models](../repos/ardupilot__sitl_models.md) (integrates_with)
 - [UAV Log Viewer](../repos/ardupilot__uavlogviewer.md) (integrates_with)
 - [BlueOS](../repos/bluerobotics__blueos.md) (integrates_with)
+- [ArduPilot Copter - українською](../repos/c-o-s-t-y-a__ardupilot_ua.md) (extends)
 - [DroneCAN libcanard](../repos/dronecan__libcanard.md) (integrates_with)
 - [Micro XRCE-DDS Agent](../repos/eprosima__micro-xrce-dds-agent.md) (integrates_with)
 - [Gazebo Sim (gz-sim)](../repos/gazebosim__gz-sim.md) (integrates_with)
@@ -71,6 +76,7 @@ GPL autopilot covering Copter, Plane (incl. QuadPlane VTOL), Rover, boats and Ar
 - [Intel RealSense T265 / VIO tracking camera setup](../resources/ardupilot-vio-tracking-camera.md) (explains)
 - [ArduSub documentation](../resources/ardusub-docs.md) (explains)
 - [GPS-denied RTH for MAVLink systems using LoRa radio ranging](../resources/hyams-gps-denied-rth-lora-ranging.md) (uses)
+- [Система управління та навігації БПЛА](../resources/kpi-spaskyi-uav-control-nav-under-ew-2025.md) (uses)
 - [MAVLink 2 and Message Signing](../resources/mavlink-2-signing.md) (uses)
 - [MAVLink Common Message Set (common.xml)](../resources/mavlink-common-messages.md) (uses)
 - [MAVLink Developer Guide](../resources/mavlink-developer-guide.md) (uses)

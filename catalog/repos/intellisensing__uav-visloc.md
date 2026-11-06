@@ -12,6 +12,10 @@ Large-scale dataset of real UAV flight imagery with satellite reference maps for
 
 **Hackathon notes:** Best dataset to test a visual-GPS demo; pick one flight and its map, run your matcher, plot error vs ground truth.
 
+## Deep dives
+
+- [uav-visloc](../../docs/dataset-cards/uav-visloc.md) (dataset-cards)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `dataset`, `uav`, `satellite`, `absolute-localization`
@@ -26,6 +30,9 @@ Large-scale dataset of real UAV flight imagery with satellite reference maps for
 ## Referenced by
 
 - [GeoAnchor](../repos/yusufgunel__geoanchor.md) (evaluated_on)
+- [Inertial Labs VINS visual-aided INS (with Maxar Raptor)](../resources/inertial-labs-vins.md) (alternative_to)
+- [Theseus Visual Navigation System (YC launch)](../resources/theseus-visual-navigation-system.md) (alternative_to)
+- [Twist Robotics OSCAR visual navigation module (Ukraine)](../resources/twist-robotics-oscar.md) (alternative_to)
 - [UAV-VisLoc: A Large-scale Dataset for UAV Visual Localization](../resources/uav-visloc-dataset-2024.md) (has_code)
 - [Drone frame to orthophoto geolocalization with LightGlue](../samples/visual-geolocalization-lightglue.md) (uses)
 

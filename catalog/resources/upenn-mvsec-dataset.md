@@ -11,6 +11,10 @@ Stereo event cameras with IMU, lidar and ground truth on several platforms inclu
 - Sensors: stereo event, IMU, lidar, GPS
 - Platforms: drone, car, motorcycle, handheld
 
+## Deep dives
+
+- [event-camera-datasets](../../docs/dataset-cards/event-camera-datasets.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md)
 
 **Tags:** `event-camera`, `multi-platform`

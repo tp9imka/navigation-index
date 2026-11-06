@@ -12,6 +12,11 @@ Open-source WebGL vector tile map renderer (fork of Mapbox GL JS v1) with styles
 
 **Hackathon notes:** Pair with martin or tileserver-gl and a PMTiles extract for an offline basemap.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [maplibre__maplibre-gl-js](../../docs/integration-cards/maplibre__maplibre-gl-js.md) (integration-cards)
+
 **Concepts:** [GIS, maps and geospatial data](../concepts/gis-mapping.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
 
 **Tags:** `vector-tiles`, `webgl`, `maplibre-style`

@@ -11,6 +11,10 @@ ION GNSS+ 2020 paper releasing the first public Android raw GNSS datasets with c
 - Describes data collection and ground truth
 - Basis for all later GSDC editions
 
+## Deep dives
+
+- [gsdc](../../docs/dataset-cards/gsdc.md) (dataset-cards)
+
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `android`, `dataset`

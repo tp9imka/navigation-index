@@ -12,6 +12,11 @@ Python library for parsing and generating u-blox UBX protocol messages, includin
 
 **Hackathon notes:** pip install pyubx2. Read MON-RF jamming indicators and NAV-STATUS spoof flags to build a live interference monitor quickly.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [semuconsulting__pyubx2](../../docs/integration-cards/semuconsulting__pyubx2.md) (integration-cards)
+
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [Standards and interface specs](../concepts/standards.md)
 
 **Tags:** `ubx`, `u-blox`, `python`, `parser`

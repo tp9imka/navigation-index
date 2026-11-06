@@ -12,6 +12,10 @@ Actively developed open-source TAK server for ATAK, iTAK and WinTAK with web UI,
 
 **Hackathon notes:** Installer scripts for Linux/RPi; get clients connected in an hour, then focus on your sensor feed.
 
+## Deep dives
+
+- [brian7704__opentakserver](../../docs/integration-cards/brian7704__opentakserver.md) (integration-cards)
+
 **Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md)
 
 **Tags:** `tak`, `cot`, `server`, `meshtastic`, `video`

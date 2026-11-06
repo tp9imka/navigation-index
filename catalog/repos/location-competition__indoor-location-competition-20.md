@@ -12,6 +12,10 @@ Data and baseline code from Microsoft Research's Indoor Location Competition 2.0
 
 **Hackathon notes:** Sample data in repo; full set on Kaggle. Good for a fingerprinting + PDR fusion demo.
 
+## Deep dives
+
+- [indoor-location-2020](../../docs/dataset-cards/indoor-location-2020.md) (dataset-cards)
+
 **Concepts:** [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [RF localization and direction finding](../concepts/rf-localization.md)
 
 **Tags:** `wifi`, `ble`, `fingerprinting`, `smartphone`, `dataset`

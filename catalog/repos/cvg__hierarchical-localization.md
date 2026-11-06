@@ -12,6 +12,11 @@ Toolbox for hierarchical visual localization: global retrieval (NetVLAD etc.) to
 
 **Hackathon notes:** Use its retrieval + matching APIs even without the SfM part; pip-installable.
 
+## Deep dives
+
+- [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
+- [cvg__hierarchical-localization](../../docs/integration-cards/cvg__hierarchical-localization.md) (integration-cards)
+
 **Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md), [Feature detection and matching](../concepts/feature-matching.md), [Visual SLAM](../concepts/visual-slam.md)
 
 **Tags:** `sfm`, `colmap`, `retrieval`, `pnp`

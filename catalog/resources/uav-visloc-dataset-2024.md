@@ -11,6 +11,10 @@ Introduces a dataset of real UAV flight images paired with satellite maps over v
 - Real flights with ground truth
 - Covers terrain types beyond cities
 
+## Deep dives
+
+- [uav-visloc](../../docs/dataset-cards/uav-visloc.md) (dataset-cards)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `arxiv`, `dataset`

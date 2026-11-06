@@ -12,6 +12,10 @@ Python asyncio package for TAK integration: CoT send/receive over TCP, UDP, TLS 
 
 **Hackathon notes:** pip install pytak; write a CoT generator for your detections. Lowest-friction way into the TAK ecosystem.
 
+## Deep dives
+
+- [snstac__pytak](../../docs/integration-cards/snstac__pytak.md) (integration-cards)
+
 **Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Standards and interface specs](../concepts/standards.md)
 
 **Tags:** `tak`, `cot`, `python`, `asyncio`

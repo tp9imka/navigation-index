@@ -6,7 +6,7 @@ Reactive avoidance, sense-and-avoid, DAA.
 
 **Parent:** [Path and motion planning](../concepts/path-planning.md)
 
-## Repositories (23)
+## Repositories (24)
 
 - [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md) - fit: high - The standard ROS 2 navigation stack: behavior-tree driven navigator, global planners (NavFn, Smac hybrid-A*/lattice, Theta*), local controllers (DWB, MPPI, Regulated Pure Pursuit), costmaps, recovery behaviors and waypoi
 - [EGO-Swarm](../repos/zju-fast-lab__ego-planner-swarm.md) - fit: high - Decentralized multi-quadrotor extension of EGO-Planner with inter-agent collision avoidance and trajectory sharing over a network.
@@ -26,13 +26,14 @@ Reactive avoidance, sense-and-avoid, DAA.
 - [Ping Python](../repos/bluerobotics__ping-python.md) - fit: medium - Python library and examples for Blue Robotics Ping echosounder and Ping360 scanning sonar using the Ping protocol.
 - [ping360_sonar ROS package](../repos/centralenantesrobotics__ping360_sonar.md) - fit: medium - ROS package that drives the Ping360 scanning sonar and publishes scans as images and laser-scan style messages.
 - [MOOS-IvP COLREGs master's research code](../repos/d2snc__moos-ivp-masters.md) - fit: medium - MOOS-IvP applications from a 2025 master's project at Universidade de Sao Paulo implementing COLREGs-compliant collision avoidance for USVs, including a modified A* planner, a velocity-obstacle method and a virtual-conta
+- [safe-route (KosmoHackathon 2026)](../repos/kurligin__safe-route.md) - fit: medium - Controller for an autonomous ground cargo platform in the amr-sim simulator plus an operator workstation, built for the 'Безопасный маршрут' case of KosmoHackathon 2026 (2nd place in the final).
 - [Flightmare](../repos/uzh-rpg__flightmare.md) - fit: low - Quadrotor simulator from UZH RPG with a decoupled Unity renderer and fast dynamics, aimed at RL and vision-based agile flight.
 - [PX4 Avoidance](../repos/px4__px4-avoidance.md) - fit: low - Archived ROS nodes for local planning, global planning and safe landing using depth sensors with PX4.
 - [MADER](../repos/mit-acl__mader.md) - fit: low - MIT ACL decentralized and asynchronous trajectory planner for multiple UAVs in dynamic environments with obstacle and agent avoidance.
 - [MBPlanner](../repos/ntnu-arl__mbplanner_ros.md) - fit: low - Motion-primitive based exploration planner for fast aerial robots in confined spaces, used in CERBERUS flying platforms.
 - [Aeolus Ocean](../repos/aavek__aeolus-ocean.md) - fit: low - Collision avoidance simulator for COLREG-compliant autonomous ship navigation intended for use as a digital twin under varied weather and day/night conditions.
 
-## Documents, talks, courses, datasets (6)
+## Documents, talks, courses, datasets (7)
 
 - [COLREGs - Convention on the International Regulations for Preventing Collisions at Sea, 1972](../resources/imo-colregs.md) - standard - IMO page for the collision regulations that define give-way and stand-on duties, lights and signals; the rule set autonomous surface vessels must encode.
 - [EGO-Planner: An ESDF-free Gradient-based Local Planner for Quadrotors](../resources/zhou-ego-planner-paper.md) - paper - Introduces a local planner that avoids building a full Euclidean signed distance field, computing collision penalties only from obstacles the trajectory intersects, cutting onboard compute.
@@ -40,4 +41,5 @@ Reactive avoidance, sense-and-avoid, DAA.
 - [NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration](../resources/nomad-diffusion-nav-2023.md) - paper - Single diffusion policy that handles both goal-directed navigation and undirected exploration by masking the goal.
 - [Robust and Efficient Quadrotor Trajectory Generation for Fast Autonomous Flight](../resources/zhou-fast-planner-paper.md) - paper - Fast-Planner paper: kinodynamic path search front-end plus B-spline optimization and time adjustment for fast quadrotor flight in unknown environments.
 - [ViNT: A Foundation Model for Visual Navigation](../resources/vint-foundation-model-2023.md) - paper - Trains a transformer navigation policy across many robot datasets and shows it adapts to new robots and tasks with little data.
+- [Навигация квадрокоптера с использованием монокулярного зрения](../resources/habr-monocular-quad-nav-2016.md) - blog - English: 'Quadcopter navigation using monocular vision'.
 

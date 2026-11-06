@@ -166,8 +166,29 @@ def render_sample(n, nodes, back, meta):
     return "\n".join(lines) + "\n"
 
 
+ATTACH_DIRS = ("docs/integration-cards", "docs/dataset-cards", "docs/paper-digests", "docs/landscape")
+ATTACH_RE = re.compile(r"<!--\s*about:\s*([^>]+?)\s*-->")
+
+
+def load_attachments():
+    """Deep-dive docs declare the nodes they describe with <!-- about: id1, id2 --> anywhere in the file."""
+    att = defaultdict(list)
+    for d in ATTACH_DIRS:
+        for f in sorted((ROOT / d).glob("*.md")):
+            for m in ATTACH_RE.finditer(f.read_text()):
+                for nid in m.group(1).split(","):
+                    att[norm_id(nid.strip())].append(f.relative_to(ROOT).as_posix())
+    return att
+
+
+ATTACHMENTS = {}
+
+
 def common_tail(n, nodes, back):
     lines = []
+    docs = ATTACHMENTS.get(n["id"], [])
+    if docs:
+        lines += ["## Deep dives", ""] + [f"- [{Path(d).stem}](../../{d}) ({Path(d).parent.name})" for d in docs] + [""]
     if n.get("concepts"):
         lines += ["**Concepts:** " + ", ".join(link(nodes, c) for c in n["concepts"]), ""]
     if n.get("tags"):
@@ -271,6 +292,7 @@ def main():
             children[c["parent"]].append(c["id"])
             edges.append({"source": c["id"], "target": c["parent"], "rel": "subconcept_of"})
 
+    ATTACHMENTS.update({aliases.get(k, k): v for k, v in load_attachments().items()})
     for sub in ("repos", "resources", "concepts", "samples"):
         d = ROOT / "catalog" / sub
         d.mkdir(parents=True, exist_ok=True)
@@ -359,6 +381,8 @@ def write_records(nodes, meta):
         for n in nodes.values():
             rec = {k: v for k, v in n.items() if not k.startswith("_")}
             rec["page"] = page_path(n)
+            if ATTACHMENTS.get(n["id"]):
+                rec["deep_dives"] = ATTACHMENTS[n["id"]]
             if n["kind"] == "repo" and n["id"] in meta:
                 m = meta[n["id"]]
                 rec["github"] = {k: m.get(k) for k in ("stargazers_count", "license", "pushed_at", "archived", "language")}

@@ -12,6 +12,11 @@ x-io Technologies' C AHRS library (revised Madgwick-style algorithm) with gyro o
 
 **Hackathon notes:** Drop the C files into firmware or pip install imufusion for Python prototyping.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [xiotechnologies__fusion](../../docs/integration-cards/xiotechnologies__fusion.md) (integration-cards)
+
 **Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 
 **Tags:** `ahrs`, `madgwick`, `embedded`, `c`

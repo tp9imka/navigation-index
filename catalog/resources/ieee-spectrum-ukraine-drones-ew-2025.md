@@ -11,6 +11,10 @@ Reporting on how Ukrainian drone developers respond to pervasive jamming of radi
 - Jamming makes onboard, map-based navigation a front-line requirement
 - Optical navigation is spreading to cheap drones
 
+## Deep dives
+
+- [trends-2025-2026](../../docs/landscape/trends-2025-2026.md) (landscape)
+
 **Concepts:** [Electronic warfare resilience](../concepts/ew-resilience.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
 
 **Tags:** `ukraine`, `jamming`, `reporting`

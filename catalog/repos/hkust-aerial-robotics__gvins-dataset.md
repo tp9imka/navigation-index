@@ -12,6 +12,10 @@ Dataset with synchronized visual, inertial and raw GNSS measurements released wi
 
 **Hackathon notes:** ROS bags with custom GNSS message types; install the gnss_comm package.
 
+## Deep dives
+
+- [gvins](../../docs/dataset-cards/gvins.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [GNSS/INS integration](../concepts/gnss-ins.md), [Visual(-inertial) odometry](../concepts/vio.md)
 
 **Tags:** `gnss-raw`, `vio`, `rosbag`

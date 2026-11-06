@@ -12,6 +12,10 @@ Multi-modal, multi-scenario ground robot dataset from SJTU with cameras, lidar, 
 
 **Hackathon notes:** ROS bags; check repo for download mirrors.
 
+## Deep dives
+
+- [m2dgr](../../docs/dataset-cards/m2dgr.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [GNSS/INS integration](../concepts/gnss-ins.md)
 
 **Tags:** `ground-robot`, `gnss`, `lidar`, `ros-bag`

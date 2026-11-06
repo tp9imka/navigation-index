@@ -1,0 +1,29 @@
+name: weekly-refresh
+on:
+  schedule:
+    - cron: "17 4 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refresh GitHub metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 tools/enrich.py --refresh
+          for i in 1 2 3; do python3 tools/enrich.py; done
+      - name: Rebuild
+        run: python3 tools/build.py
+      - name: Commit if changed
+        run: |
+          git config user.name "navigation-index-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then git commit -m "chore: weekly metadata refresh" && git push; fi

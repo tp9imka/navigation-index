@@ -25,6 +25,7 @@ Diploma thesis materials on signals-of-opportunity positioning from LEO satellit
 ## Referenced by
 
 - [Starlink LEO-PNT](../repos/przemyslawpiekarski__starlink-leo-pnt.md) (alternative_to)
+- [Iridium PNT (Satellite Time and Location) and Iridium PNT ASIC](../resources/iridium-pnt-stl-asic.md) (alternative_to)
 
 _Indexed by lane(s): alt-nav_
 

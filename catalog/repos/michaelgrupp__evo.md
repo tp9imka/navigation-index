@@ -12,6 +12,11 @@ Python package and CLI for evaluating odometry and SLAM trajectories (ATE/RPE, a
 
 **Hackathon notes:** pip install evo. Run evo_ape with alignment flags; it reads most dataset ground-truth formats directly.
 
+## Deep dives
+
+- [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
+- [michaelgrupp__evo](../../docs/integration-cards/michaelgrupp__evo.md) (integration-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual SLAM](../concepts/visual-slam.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
 
 **Tags:** `evaluation`, `ate`, `rpe`, `trajectory`, `pip`, `plotting`

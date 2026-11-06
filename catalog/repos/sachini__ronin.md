@@ -12,6 +12,10 @@ Robust Neural Inertial Navigation: smartphone IMU dataset and baseline networks 
 
 **Hackathon notes:** PyTorch; dataset is large. Pretrained models give a quick baseline.
 
+## Deep dives
+
+- [ronin](../../docs/dataset-cards/ronin.md) (dataset-cards)
+
 **Concepts:** [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md), [Onboard / edge AI perception](../concepts/edge-ai.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `learned-inertial`, `smartphone`, `pytorch`

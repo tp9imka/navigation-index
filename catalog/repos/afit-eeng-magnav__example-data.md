@@ -12,6 +12,10 @@ Sample data for MagNav work: MIT-AIA anomaly maps, a challenge flight, North Ame
 
 **Hackathon notes:** Grab these files first.
 
+## Deep dives
+
+- [afit-magnav-example-data](../../docs/dataset-cards/afit-magnav-example-data.md) (dataset-cards)
+
 **Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `data`, `anomaly-map`, `afit`

@@ -12,6 +12,10 @@ High-speed, aggressive FPV drone flights with camera, event camera and IMU data,
 - Size class: medium
 - Hard for most VIO pipelines
 
+## Deep dives
+
+- [uzh-fpv](../../docs/dataset-cards/uzh-fpv.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md)
 
 **Tags:** `drone-racing`, `event-camera`

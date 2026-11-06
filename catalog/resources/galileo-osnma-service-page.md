@@ -12,6 +12,10 @@ Official landing page for the OSNMA service with status, public key and Merkle t
 - Links to service notices and documentation
 - Where to download the cryptographic material receivers need
 
+## Deep dives
+
+- [trends-2025-2026](../../docs/landscape/trends-2025-2026.md) (landscape)
+
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
 
 **Tags:** `osnma`, `galileo`, `service`

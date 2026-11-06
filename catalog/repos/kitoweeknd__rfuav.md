@@ -12,6 +12,10 @@ Code for the RFUAV benchmark dataset for UAV detection and identification from R
 
 **Hackathon notes:** Start from the provided spectrogram models; raw data size is large.
 
+## Deep dives
+
+- [drone-rf-datasets](../../docs/dataset-cards/drone-rf-datasets.md) (dataset-cards)
+
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 
 **Tags:** `rf-detection`, `spectrogram`, `dataset`

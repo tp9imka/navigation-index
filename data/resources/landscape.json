@@ -1,0 +1,1424 @@
+[
+  {
+    "id": "res:auterion-skynode-visual-navigation",
+    "kind": "product",
+    "title": "Auterion Skynode S and Auterion Visual Navigation",
+    "url": "https://thedefensepost.com/2024/07/01/auterion-drone-bypass-jamming/",
+    "authors": [
+      "Auterion"
+    ],
+    "year": 2024,
+    "summary": "Auterion sells PX4-derived AuterionOS plus Skynode flight/mission computers. Skynode S (2024) is a small integrated autopilot/mission computer marketed for operation when GNSS and links are jammed; Auterion Visual Navigation is the company's camera-based position source, named in its 2025 DIU Artemis completion announcement.",
+    "key_takeaways": [
+      "Vendor claim: AuterionOS detects GNSS jamming/spoofing and stops trusting GNSS (Jan 2024 announcement)",
+      "Vendor/press claim: used in Ukraine; no public accuracy figures found",
+      "Open-source base is PX4; the visual navigation layer is proprietary"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:vio",
+      "concept:autopilot",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "landscape",
+      "auterion",
+      "px4",
+      "uav",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tiers/wildnav",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:uav-avl/benchmark",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:anyloc/anyloc",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "res:px4-visual-inertial-odometry",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:shield-ai-hivemind",
+    "kind": "product",
+    "title": "Shield AI Hivemind autonomy stack",
+    "url": "https://insideunmannedsystems.com/the-hivemind-working-toward-resilient-intelligent-teams/",
+    "authors": [
+      "Shield AI"
+    ],
+    "year": 2024,
+    "summary": "Hivemind is Shield AI's onboard autonomy software, flown on its V-BAT and on partner aircraft. In an interview the CTO describes a state-estimation framework fusing visual, EO/IR and inertial observations so the aircraft keeps operating without GNSS or comms.",
+    "key_takeaways": [
+      "Vendor description: multi-sensor state estimation for GNSS-denied and comms-denied flight",
+      "No published accuracy numbers found",
+      "ViDAR (acquired with Sentient Vision, 2024) is an EO/IR detection product, not a navigation source"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:sensor-fusion",
+      "concept:assured-pnt",
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "landscape",
+      "shield-ai",
+      "v-bat",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:rpng/open_vins",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:nvidia-isaac/cuvslam",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:borglab/gtsam",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "res:helsing-hx2-navigation",
+    "kind": "product",
+    "title": "Helsing HX-2 - map/landmark-based GNSS-denied navigation (navigation aspect only)",
+    "url": "https://shephardmedia.com/news/air-warfare/details-revealed-on-new-uas-munition-destined-for-ukraine/",
+    "authors": [
+      "Helsing"
+    ],
+    "year": 2024,
+    "summary": "Helsing's HX-2 is a loitering UAS supplied to Ukraine. Indexed here only for its navigation approach: press reporting says an onboard computer with stored map data lets it navigate by recognising landmarks when satellite navigation is denied. Helsing navigation job postings mention vision-aided, terrain-relative, celestial and signals-of-opportunity methods.",
+    "key_takeaways": [
+      "Press/vendor claim: landmark recognition against stored maps; no public accuracy data",
+      "Shows the European market expects map-based visual nav as a baseline feature"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:terrain-nav",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "landscape",
+      "helsing",
+      "europe",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tiers/wildnav",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:uav-avl/benchmark",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:anyloc/anyloc",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "res:qctrl-ironstone-opal",
+    "kind": "product",
+    "title": "Q-CTRL Ironstone Opal quantum-assured magnetic navigation",
+    "url": "https://q-ctrl.com/case-study/q-ctrl-delivering-quantum-advantage-to-airborne-systems",
+    "authors": [
+      "Q-CTRL"
+    ],
+    "year": 2025,
+    "summary": "Q-CTRL's navigation product pairs quantum magnetometers with its software to match measured crustal magnetic anomalies against maps (MagNav). The company reports flight, ground and maritime trials and positions it as a GNSS backup for aviation, including work with Airbus.",
+    "key_takeaways": [
+      "Vendor claims (not independent): met RNP 0.3 in flight; positioning error up to tens of times lower than a velocity-aided INS in an April 2025 flight; different multipliers appear in different Q-CTRL materials",
+      "Vendor claim: DO-160 qualification",
+      "Underlying method is the same map-matching problem as the open AFRL/MIT MagNav challenge"
+    ],
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "landscape",
+      "q-ctrl",
+      "quantum",
+      "magnav",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mit-ai-accelerator/magnav.jl",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:manasp21/magnav.py",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "res:qctrl-quantum-assured-magnav-2025",
+        "rel": "cites"
+      },
+      {
+        "id": "res:magnav-challenge-site",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:sandboxaq-aqnav",
+    "kind": "product",
+    "title": "SandboxAQ AQNav geomagnetic navigation",
+    "url": "https://www.sandboxaq.com/post/sandboxaq-and-acubed-achieve-remarkable-progress-in-magnetic-navigation",
+    "authors": [
+      "SandboxAQ"
+    ],
+    "year": 2025,
+    "summary": "AQNav is SandboxAQ's magnetic anomaly navigation system: magnetometers plus learned compensation, matched against magnetic anomaly maps. Flight-tested with Acubed (Airbus) on a Beechcraft Baron using public maps, with the USAF on C-17/C-130J, and in 2026 on a Northrop Grumman Lumberjack drone.",
+    "key_takeaways": [
+      "Vendor claims: RNP 2 compliance over 150+ flight hours; outperformed free-inertial INS on all >2 h flights",
+      "Sept 2026 drone test announcement gave no error figures (noted by press)",
+      "Accepted into the 2025 NATO DIANA cohort (vendor/press)"
+    ],
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "landscape",
+      "sandboxaq",
+      "magnav",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mit-ai-accelerator/magnav.jl",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:manasp21/magnav.py",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "res:magnav-challenge-site",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:xona-pulsar-leo-pnt",
+    "kind": "product",
+    "title": "Xona Space Systems Pulsar LEO PNT constellation",
+    "url": "https://smallsatnews.com/2025/07/01/xona-space-systems-has-launched-their-pulsar-0-pnt-satellite/",
+    "authors": [
+      "Xona Space Systems"
+    ],
+    "year": 2025,
+    "summary": "Xona is building Pulsar, a commercial LEO constellation broadcasting dedicated L-band navigation signals with authentication. Pulsar-0 launched in June/July 2025 as an in-orbit demonstrator; production satellites and initial service were planned for 2026-2027 per later reporting, and the FCC granted conditional approval for the constellation.",
+    "key_takeaways": [
+      "LEO PNT signals are stronger at the ground than MEO GNSS, which is the anti-jam argument",
+      "Service is not yet generally available; dates in press reports conflict",
+      "Open work in this space uses existing LEO signals of opportunity (Starlink, Iridium Doppler) instead"
+    ],
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:assured-pnt",
+      "concept:space-nav"
+    ],
+    "tags": [
+      "landscape",
+      "xona",
+      "leo-pnt",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:przemyslawpiekarski/starlink-leo-pnt",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:gitlab.com/radionavlab/public/ut-starlink-signal-simulator",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "res:kassas-starlink-navigation",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:trustpoint-leo-pnt",
+    "kind": "company",
+    "title": "TrustPoint - C-band LEO PNT",
+    "url": "https://www.businesswire.com/news/home/20250625377848/en/TrustPoint-Launches-Third-Satellite-and-Successfully-Establishes-First-Contact",
+    "authors": [
+      "TrustPoint"
+    ],
+    "year": 2025,
+    "summary": "TrustPoint is developing a commercial C-band LEO navigation constellation. Its third demonstration satellite (Time Flies) launched in June 2025 carrying a C-band payload for testing partner receivers.",
+    "key_takeaways": [
+      "Vendor claim: commercial GPS alternative from LEO; no independent performance reports found",
+      "C-band choice moves PNT away from crowded and jammed L-band"
+    ],
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:assured-pnt",
+      "concept:space-nav"
+    ],
+    "tags": [
+      "landscape",
+      "trustpoint",
+      "leo-pnt",
+      "c-band",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:przemyslawpiekarski/starlink-leo-pnt",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:gitlab.com/radionavlab/public/ut-starlink-signal-simulator",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "res:iridium-pnt-stl-asic",
+    "kind": "product",
+    "title": "Iridium PNT (Satellite Time and Location) and Iridium PNT ASIC",
+    "url": "https://www.gpsworld.com/iridium-pnt-asic-now-commercially-available-bringing-resilient-gnss-protection-to-devices-worldwide/",
+    "authors": [
+      "Iridium"
+    ],
+    "year": 2026,
+    "summary": "Iridium broadcasts a high-power LEO timing and location signal (STL, from the Satelles acquisition) usable as a GNSS backup and cross-check. A dedicated PNT ASIC was unveiled in October 2025 and announced commercially available in July 2026; integrators include Solace and Skyband, and VectorNav/NAL Research announced STL-aided INS work in 2025.",
+    "key_takeaways": [
+      "Positioning is coarse compared to GNSS; main value is timing and an independent plausibility check",
+      "Vendor claim on ASIC size: 8 x 8 mm, under 0.2 g (press)",
+      "Open LEO Doppler code in the index can use Iridium signals of opportunity without a subscription"
+    ],
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:timing",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "landscape",
+      "iridium",
+      "stl",
+      "leo-pnt",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:przemyslawpiekarski/starlink-leo-pnt",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:gitlab.com/radionavlab/public/ut-starlink-signal-simulator",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:voskavoj/dp",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "res:honeywell-vision-aided-navigation",
+    "kind": "product",
+    "title": "Honeywell Vision Aided Navigation (Alternative Navigation Suite)",
+    "url": "https://aerospace.honeywell.com/us/en/products-and-services/products/navigation-and-sensors/navigation-systems/vision-aided-navigation",
+    "authors": [
+      "Honeywell Aerospace"
+    ],
+    "year": 2025,
+    "summary": "Honeywell's VAN correlates live visible or IR imagery against onboard reference maps for an absolute fix, paired with its inertial units. It sits in an Alternative Navigation Suite with magnetic-anomaly and celestial modules.",
+    "key_takeaways": [
+      "Vendor description: passive, sensor-agnostic image-to-map correlation",
+      "Press claim: 'GPS-like' performance on Embraer E170 and AW139 tests; no numbers published",
+      "Same problem as open UAV absolute visual localization benchmarks"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:magnetic-nav",
+      "concept:celestial-nav",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "landscape",
+      "honeywell",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tiers/wildnav",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:uav-avl/benchmark",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:anyloc/anyloc",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:fabio-sim/lightglue-onnx",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "res:honeywell-hguide-o480",
+    "kind": "product",
+    "title": "Honeywell HGuide o480 single-card INS and HGuide i700 IMU",
+    "url": "https://www.honeywellaerospace.com/us/en/about-us/press-release/2025/05/honeywell-new-single-card-resilient-navigation-system",
+    "authors": [
+      "Honeywell Aerospace"
+    ],
+    "year": 2025,
+    "summary": "HGuide o480 (May 2025) is a single-card INS for small UAVs and ground robots that accepts velocity aiding (e.g. Honeywell radar velocity sensor) and embeds a Septentrio receiver with AIM+ anti-jam/anti-spoof. The HGuide i700 IMU is marketed as near navigation grade with a no-license-required export classification.",
+    "key_takeaways": [
+      "Shows the commodity pattern: tactical IMU + velocity aid + hardened GNSS in one card",
+      "Export classification is a selling point, which matters for team hardware choices"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:gnss-ins",
+      "concept:radar-nav",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "landscape",
+      "honeywell",
+      "hguide",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:i2nav-whu/kf-gins",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:nmayorov/pyins",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:aceinna/gnss-ins-sim",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "res:septentrio-aim-plus",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:advanced-navigation-boreas",
+    "kind": "product",
+    "title": "Advanced Navigation Boreas FOG INS with LVS laser velocity sensor",
+    "url": "https://www.criticalcomms.com.au/content/transport/article/beating-the-jammers-australian-tech-gives-warfighters-precision-in-gps-blackouts-289326898",
+    "authors": [
+      "Advanced Navigation"
+    ],
+    "year": 2026,
+    "summary": "Advanced Navigation's Boreas fibre-optic-gyro INS line, fused with its LVS laser velocity sensor or wheel odometry, is marketed for long GNSS-denied ground and maritime runs; reported trials include a US Army testbed and an underground mine.",
+    "key_takeaways": [
+      "Vendor/press claims: about 11.7 m error over 65 km with GNSS jammed (wheel-encoder config); sub-0.1% of distance in a mine trial",
+      "Strategy is inertial-centric dead reckoning with velocity aiding, not vision"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:ground-vehicle-nav",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "landscape",
+      "advanced-navigation",
+      "fog",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:i2nav-whu/kf-gins",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:nmayorov/pyins",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:aceinna/gnss-ins-sim",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "res:inertial-labs-vins",
+    "kind": "product",
+    "title": "Inertial Labs VINS visual-aided INS (with Maxar Raptor)",
+    "url": "https://inertiallabs.com/inertial-labs-launches-visual-aided-ins-for-gps-compromised-paths/",
+    "authors": [
+      "Inertial Labs (VIAVI)"
+    ],
+    "year": 2025,
+    "summary": "Launched June 2025, VINS combines an Inertial Labs INS with Maxar Raptor software that matches camera frames to Maxar Precision3D satellite-derived 3D maps for absolute position on long-range UAV flights.",
+    "key_takeaways": [
+      "Vendor claims: about 35 m horizontal / 5 m vertical without GNSS",
+      "Options for Iridium-based PNT and M-code receivers",
+      "Commercial map product (Precision3D) is the moat; open teams use free orthophotos and DEMs"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:gnss-ins",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "landscape",
+      "inertial-labs",
+      "viavi",
+      "maxar",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tiers/wildnav",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:uav-avl/benchmark",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:anyloc/anyloc",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:fabio-sim/lightglue-onnx",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:intellisensing/uav-visloc",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "res:safran-versapnt",
+    "kind": "product",
+    "title": "Safran VersaPNT and Geonyx resilient PNT units",
+    "url": "https://safran-navigation-timing.com/solution/defense/",
+    "authors": [
+      "Safran"
+    ],
+    "year": 2024,
+    "summary": "Safran's defense PNT range includes VersaPNT (GNSS receiver + IMU + disciplined oscillator with jamming/spoofing detection and NTP/PTP time serving) and the Geonyx HRG-based INS; GPS World reports a NAVKITE kit combining Geonyx M with VersaSync for French Navy commandos.",
+    "key_takeaways": [
+      "Combined position + timing holdover in one box is the standard defense product shape",
+      "Detection flags and holdover timing are reproducible in open stacks at lower grade"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:timing",
+      "concept:ins",
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "landscape",
+      "safran",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:gitlab.com/gpsd/gpsd",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:gnss-sdr/gnss-sdr",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "res:dhs-resilient-pnt-conformance-framework",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:sbg-new-ellipse-firmware",
+    "kind": "product",
+    "title": "SBG Systems Ellipse INS - 2025 GNSS-denied firmware",
+    "url": "https://www.sbg-systems.com/news/introducing-new-ellipse/",
+    "authors": [
+      "SBG Systems"
+    ],
+    "year": 2025,
+    "summary": "A March 2025 free firmware update for SBG's Ellipse (v3 hardware) adds jamming/spoofing detection flags and lets users reject or re-enable GNSS and other aiding sensors without resetting the filter.",
+    "key_takeaways": [
+      "Vendor claim: improved accuracy in GNSS-denied and magnetically disturbed conditions",
+      "Integrity flags plus manual sensor rejection is now an expected feature even in small INS"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:gnss-ins",
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "landscape",
+      "sbg",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:i2nav-whu/kf-gins",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:nmayorov/pyins",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:aceinna/gnss-ins-sim",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "res:vectornav-stl-aided-ins",
+    "kind": "company",
+    "title": "VectorNav - Iridium STL-aided INS collaboration with NAL Research",
+    "url": "https://www.vectornav.com/about/news",
+    "authors": [
+      "VectorNav Technologies"
+    ],
+    "year": 2025,
+    "summary": "VectorNav makes small tactical-grade IMU/GNSS-INS units widely used on research drones (PX4 has a driver). In April 2025 it announced work with NAL Research on Iridium STL-aided INS for GNSS-denied operation.",
+    "key_takeaways": [
+      "Collaboration announcement, not a shipped product feature",
+      "VN-series units are a common drop-in for PX4 testbeds"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:gnss-ins",
+      "concept:signals-of-opportunity"
+    ],
+    "tags": [
+      "landscape",
+      "vectornav",
+      "iridium",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:i2nav-whu/kf-gins",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:nmayorov/pyins",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:aceinna/gnss-ins-sim",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "res:iridium-pnt-stl-asic",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:spirent-gss7000-pntx",
+    "kind": "product",
+    "title": "Spirent GSS7000 and PNT X GNSS/PNT simulators",
+    "url": "https://spirent.com/products/gss6300",
+    "authors": [
+      "Spirent"
+    ],
+    "year": 2024,
+    "summary": "Spirent's lab simulators generate multi-GNSS RF with controllable interference and spoofing (meaconing, trajectory spoofing, nav data spoofing) for hardware-in-the-loop receiver testing; PNT X extends this to combined PNT/sensor simulation.",
+    "key_takeaways": [
+      "Lab-grade, export-controlled tooling; judges from industry will know it",
+      "Open alternatives are SDR-based signal simulators - legal only into a cable or shielded enclosure"
+    ],
+    "concepts": [
+      "concept:simulation",
+      "concept:gnss-interference",
+      "concept:gnss"
+    ],
+    "tags": [
+      "landscape",
+      "spirent",
+      "simulator",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:osqzss/gps-sdr-sim",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:haiyang-wong/osnma-sdr-sim",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:mictronics/multi-sdr-gps-sim",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "res:safran-skydel-gsg8",
+    "kind": "product",
+    "title": "Safran Skydel simulation engine / GSG-8 GNSS simulator (ex-Orolia)",
+    "url": "https://www.safran-group.com/products-services/skydel-gsg-8-advanced-gnss-simulator",
+    "authors": [
+      "Safran (ex-Orolia)"
+    ],
+    "year": 2024,
+    "summary": "Skydel is the SDR/GPU-based simulation engine behind Safran's GSG-8 simulators, with built-in jamming and spoofing scenarios, CRPA wavefront variants and LEO PNT signal options; Safran offers it to universities through an academic programme.",
+    "key_takeaways": [
+      "Vendor datasheet: jamming and spoofing generated without extra hardware",
+      "Spoofing workflows run a 'truth' and a 'spoofer' instance - a useful mental model for test design"
+    ],
+    "concepts": [
+      "concept:simulation",
+      "concept:gnss-interference",
+      "concept:gnss"
+    ],
+    "tags": [
+      "landscape",
+      "safran",
+      "orolia",
+      "skydel",
+      "simulator",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:osqzss/gps-sdr-sim",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:haiyang-wong/osnma-sdr-sim",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:mictronics/multi-sdr-gps-sim",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "res:infinidome-gpsdome",
+    "kind": "product",
+    "title": "infiniDome GPSdome / GPSdome 2 small-UAS anti-jam module",
+    "url": "https://www.gpsworld.com/infinidome-releases-gpsdome-2-dual-band-anti-jamming-technology/",
+    "authors": [
+      "infiniDome"
+    ],
+    "year": 2022,
+    "summary": "infiniDome sells retrofit anti-jam modules that sit between antenna elements and a commercial GNSS receiver on small drones and vehicles; GPSdome 2 is dual-band with up to four elements for nulling several jammer directions.",
+    "key_takeaways": [
+      "Vendor claim: CRPA-like protection without CRPA cost or export restrictions",
+      "Vendor claim: '400%' jamming resilience improvement in Israeli-government-sponsored trials",
+      "Weight figures differ across press releases"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:ew-resilience",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "landscape",
+      "infinidome",
+      "crpa",
+      "anti-jam",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:krakenrf/krakensdr_doa",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:gnss-sdr/gnss-sdr",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "res:novatel-gajt-710ml",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:twist-robotics-oscar",
+    "kind": "product",
+    "title": "Twist Robotics OSCAR visual navigation module (Ukraine)",
+    "url": "https://www.pravda.com.ua/eng/news/2026/01/28/8018266",
+    "authors": [
+      "Twist Robotics"
+    ],
+    "year": 2026,
+    "summary": "Ukrainian company Twist Robotics announced OSCAR in January 2026: a camera-based module that recognises landmarks, matches them to a map and feeds coordinates to the UAV autopilot when GNSS is jammed.",
+    "key_takeaways": [
+      "Vendor claim: platforms with the module have flown more than 500,000 km",
+      "Architecture (camera => map match => coordinates into autopilot) is the same one open repos implement"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "landscape",
+      "ukraine",
+      "twist-robotics",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tiers/wildnav",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:uav-avl/benchmark",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:anyloc/anyloc",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:fabio-sim/lightglue-onnx",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:intellisensing/uav-visloc",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "res:militarnyi-vermeer-optical-nav-2025",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:blue-arrow-visual-nav",
+    "kind": "company",
+    "title": "Blue Arrow - Ukrainian visual navigation for drones (Brave1 cluster)",
+    "url": "https://dev.ua/en/news/nemozhlyvo-zbyty-z-kursu-ukrainska-blue-arrow-stvoryla-navihatsiiu-dlia-droniv-bez-gps-1749633544",
+    "authors": [
+      "Blue Arrow"
+    ],
+    "year": 2025,
+    "summary": "Brave1 cluster member Blue Arrow was presented by Ukraine's minister Fedorov in 2025 as having an autonomous visual navigation system that lets drones fly without GNSS under jamming and spoofing.",
+    "key_takeaways": [
+      "Claim relayed from a ministerial post; no technical detail or numbers published",
+      "One of many Ukrainian vendors in this niche (others named by Brave1: Norda Dynamics, The Fourth Law, ZIR)"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "landscape",
+      "ukraine",
+      "brave1",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tiers/wildnav",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:uav-avl/benchmark",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:anyloc/anyloc",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "res:theseus-visual-navigation-system",
+    "kind": "company",
+    "title": "Theseus Visual Navigation System (YC launch)",
+    "url": "https://www.ycombinator.com/launches/Ln6-theseus-gps-denied-navigation-for-drones",
+    "authors": [
+      "Theseus"
+    ],
+    "year": 2024,
+    "summary": "US startup whose founders started at the February 2024 El Segundo Defense Tech Hackathon (Aviation Week coverage). Its VNS uses a camera, an IMU and pre-loaded satellite imagery to estimate position and feeds the drone a substitute GPS signal.",
+    "key_takeaways": [
+      "Vendor claims: integration under 30 minutes; six months from hackathon to a SOCOM sale",
+      "Direct precedent that a hackathon visual-nav demo can become a product - and that judges have seen this pitch"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:vio",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "landscape",
+      "theseus",
+      "yc",
+      "hackathon-origin",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tiers/wildnav",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:uav-avl/benchmark",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:anyloc/anyloc",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:fabio-sim/lightglue-onnx",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:intellisensing/uav-visloc",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "res:spleenlab-visionairy",
+    "kind": "product",
+    "title": "Spleenlab VISIONAIRY perception and GNSS-free navigation software",
+    "url": "https://auterion.com/safe-autonomous-drone-operations/",
+    "authors": [
+      "Spleenlab"
+    ],
+    "year": 2024,
+    "summary": "German company Spleenlab sells VISIONAIRY, a modular perception suite (VIO, map-based relocalization, EO/IR and LiDAR SLAM) that integrates with PX4/Auterion and ROS; used by Quantum Systems and Blueflite for GNSS-denied navigation.",
+    "key_takeaways": [
+      "Vendor description only; no published accuracy",
+      "Module list mirrors what open VIO + VPR repos offer"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:visual-slam",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "landscape",
+      "spleenlab",
+      "germany",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:rpng/open_vins",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:nvidia-isaac/cuvslam",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:thien94/vision_to_mavros",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:anyloc/anyloc",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "res:uavos-navai",
+    "kind": "product",
+    "title": "UAVOS NavAI vision-based navigation module",
+    "url": "https://www.gpsworld.com/uavos-introduces-navai-vision-based-navigation-module-for-gnss-degraded-uas-operations/",
+    "authors": [
+      "UAVOS"
+    ],
+    "year": 2025,
+    "summary": "UAVOS markets NavAI as an add-on vision-based navigation module for UAS in GNSS-degraded conditions (GPS World product announcement).",
+    "key_takeaways": [
+      "Product announcement; performance figures not verified here"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "landscape",
+      "uavos",
+      "vendor-claim"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tiers/wildnav",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:uav-avl/benchmark",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:anyloc/anyloc",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "res:darpa-roqs-program",
+    "kind": "program",
+    "title": "DARPA Robust Quantum Sensors (RoQS) - Phase 1",
+    "url": "https://www.darpa.mil/news/2025/roqs-launches-first-phase",
+    "authors": [
+      "DARPA MTO"
+    ],
+    "year": 2025,
+    "summary": "RoQS (solicitation DARPA-PS-25-11) aims to make quantum sensors robust to platform vibration and motion so they work on real vehicles; Phase 1 launched August 2025 with compact sensors to be tested on a government helicopter plus platform integration studies.",
+    "key_takeaways": [
+      "Problem statement: quantum sensors lose their advantage on moving platforms",
+      "Signals where defense money is going for GNSS-independent inertial/magnetic sensing"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:magnetic-nav",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "landscape",
+      "darpa",
+      "quantum"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:darpa-roqs-2024",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:diu-tqs-program",
+    "kind": "program",
+    "title": "DIU Transition of Quantum Sensing (TQS)",
+    "url": "https://www.diu.mil/latest/dius-transition-of-quantum-sensing-tqs-field-testing-to-begin-across-five",
+    "authors": [
+      "Defense Innovation Unit"
+    ],
+    "year": 2025,
+    "summary": "DIU programme fielding quantum sensors for PNT: lines of effort cover quantum inertial sensors, gravimeters for gravity-aided naval navigation, quantum magnetic sensing, magnetic navigation and component insertion, with more than 10 field tests planned in the first ~12 months (announced March 2025).",
+    "key_takeaways": [
+      "18 named performers including Honeywell, Lockheed Martin, Q-CTRL, AOSense, Anduril, Northrop Grumman, Vector Atomic",
+      "Honeywell flew a quantum MagNav test on an Embraer 170 under TQS (press)"
+    ],
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:ins",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "landscape",
+      "diu",
+      "quantum",
+      "magnav"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:diu-transition-quantum-sensing-2024",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:daf-mit-magnav-c17-demo-2023",
+    "kind": "program",
+    "title": "DAF-MIT AI Accelerator MagNav real-time C-17 demonstration (2023)",
+    "url": "https://www.airandspaceforces.com/air-force-magnetic-navigation-gps/",
+    "authors": [
+      "DAF-MIT AI Accelerator",
+      "AFIT",
+      "USAF"
+    ],
+    "year": 2023,
+    "summary": "In May 2023 the Air Force and MIT flew a real-time MagNav demo on a C-17A during exercise Golden Phoenix, training the compensation network in flight on a laptop. Follows the open MagNav challenge problem and dataset.",
+    "key_takeaways": [
+      "Reported accuracy about 1 km - far from GNSS, but independent of RF",
+      "Public dataset and Julia/Python code make this the most reproducible alt-PNT track for a hackathon"
+    ],
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "landscape",
+      "afrl",
+      "mit",
+      "magnav"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:magnav-challenge-site",
+        "rel": "cites"
+      },
+      {
+        "id": "repo:mit-ai-accelerator/magnav.jl",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:uk-quantum-nav-flight-trial-2024",
+    "kind": "program",
+    "title": "UK quantum navigation flight trials (Infleqtion, BAE Systems, QinetiQ)",
+    "url": "https://www.gov.uk/government/news/un-jammable-quantum-tech-takes-flight-to-boost-uks-resilience-against-hostile-actors",
+    "authors": [
+      "UK Government",
+      "Infleqtion",
+      "BAE Systems",
+      "QinetiQ"
+    ],
+    "year": 2024,
+    "summary": "In May 2024 an optical atomic clock and a cold-atom sensor flew on QinetiQ's RJ100 testbed from Boscombe Down, toward a quantum inertial navigation system concept. Linked to the UK National Quantum Strategy mission of quantum navigation on aircraft by 2030.",
+    "key_takeaways": [
+      "Government claim: first publicly acknowledged in-flight tests of this kind",
+      "Government funding stated as nearly GBP 8 million"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:timing",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "landscape",
+      "uk",
+      "quantum",
+      "infleqtion"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:uk-dasa-emp-pnt-problem-statement-2024",
+    "kind": "program",
+    "title": "UK DASA Early Market Engagement: PNT problem statement for uncrewed systems",
+    "url": "https://www.gov.uk/government/publications/early-market-engagement-pilot-uncrewed-systems/problem-statement-position-navigation-and-timing-pnt",
+    "authors": [
+      "UK Defence and Security Accelerator"
+    ],
+    "year": 2024,
+    "summary": "Published September 2024. Asks for assured PNT for small UAS: low-cost, low-SWaP CRPA (multi-frequency, SDR-based), SDR/GPU GNSS receivers, AI for spoofing detection and multi-source fusion, as plug-in replacements for COTS GNSS.",
+    "key_takeaways": [
+      "Explicit platform example: under 1.5 m wingspan",
+      "Unit cost must suit mass use - cost is a first-class requirement"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:gnss-interference",
+      "concept:gnss-sdr",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "landscape",
+      "uk",
+      "dasa",
+      "problem-statement"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:dasa-advanced-rf-sensing-pnt-2022",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:uk-eloran-programme-2025",
+    "kind": "program",
+    "title": "UK national eLoran, Timing Centre and GNSS warning investment (2025)",
+    "url": "https://rntfnd.org/2025/11/19/uk-announces-155m-investment-in-timing-centre-eloran-gnss-warning/",
+    "authors": [
+      "UK Government (reported by RNT Foundation)"
+    ],
+    "year": 2025,
+    "summary": "November 2025 UK announcement of about GBP 155M for a national timing centre, a sovereign eLoran system and GNSS interference warning; a Find a Tender notice targets eLoran IOC by 2028 and FOC by 2030.",
+    "key_takeaways": [
+      "Terrestrial backup and GNSS warning, not only alt-nav on the vehicle"
+    ],
+    "concepts": [
+      "concept:timing",
+      "concept:assured-pnt",
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "landscape",
+      "uk",
+      "eloran",
+      "policy"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:esa-navisp",
+    "kind": "program",
+    "title": "ESA NAVISP (Navigation Innovation and Support Programme)",
+    "url": "https://navisp.esa.int/",
+    "authors": [
+      "European Space Agency"
+    ],
+    "year": 2025,
+    "summary": "ESA's PNT R&D programme funding industry projects including GNSS-independent PNT; 2025 examples include ALL.SPACE (EUR 950k, signals of opportunity from a multi-orbit terminal, with GMV NSL) and maritime alt-PNT via VDES and R-Mode.",
+    "key_takeaways": [
+      "Permanent open call route for European companies",
+      "Shows European emphasis on SoOP and terrestrial backups"
+    ],
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:assured-pnt",
+      "concept:timing"
+    ],
+    "tags": [
+      "landscape",
+      "esa",
+      "europe"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:edf-2025-call",
+    "kind": "program",
+    "title": "European Defence Fund 2025 calls",
+    "url": "https://defence-industry-space.ec.europa.eu/record-response-european-defence-fund-2025-call-410-project-proposals-submitted-eu1065-billion-2025-10-20_en",
+    "authors": [
+      "European Commission DG DEFIS"
+    ],
+    "year": 2025,
+    "summary": "EDF 2025 work programme (EUR 1.065B) closed 16 October 2025 with 410 proposals; results expected April 2026. Indexed as the current EDF cycle; the explicit drone-navigation challenge topic in the index is from EDF 2024.",
+    "key_takeaways": [
+      "No 2025 topic explicitly on GNSS-denied navigation confirmed in this pass",
+      "EDF 2024 challenge (multi-sensor drone navigation) is the best-matched prior topic"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "landscape",
+      "edf",
+      "europe"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:edf-2024-drone-navigation-challenge",
+        "rel": "cites"
+      },
+      {
+        "id": "res:edf21-navguard-factsheet",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:brave-nato-unite-2026",
+    "kind": "program",
+    "title": "UNITE - Brave NATO: Brave1 and NATO Innovation HQ joint competition (2026)",
+    "url": "https://resiliencemedia.co/brave1-and-nato-innovation-hq-team-up-to-fast-track-defence-tech/",
+    "authors": [
+      "Brave1",
+      "NATO"
+    ],
+    "year": 2026,
+    "summary": "March 2026 programme pairing Ukrainian and NATO-country companies on joint solutions: first round EUR 10M, up to EUR 1M per project split between partners. Focus areas are counter-UAS and navigation where EW disrupts positioning; NATO-side funding limited to non-lethal categories.",
+    "key_takeaways": [
+      "Ministerial framing: 'robust navigation in GPS-denied environments' as a critical field"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:counter-uas",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "landscape",
+      "brave1",
+      "nato",
+      "ukraine"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:brave1-nato-counter-drone-ew-competition",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:eudis-defence-hackathon-2026",
+    "kind": "program",
+    "title": "EUDIS Defence Hackathon, 5th edition (Oct 2026) - GNSS-denied navigation challenge",
+    "url": "https://defence-industry-space.ec.europa.eu/5th-edition-eudis-defence-hackathon-here-and-we-are-looking-our-next-8-local-organisers-2026-04-28_en",
+    "authors": [
+      "European Commission EUDIS"
+    ],
+    "year": 2026,
+    "summary": "EU-funded 48-hour hackathon held 15-17 October 2026 at eight sites under the theme 'Autonomy on the Battlefield'. Common challenges were GNSS-denied navigation and swarm coordination, plus one local challenge per host (e.g. counter-UAS in Cyprus).",
+    "key_takeaways": [
+      "Most direct precedent for this hackathon's likely problem statement",
+      "Eligibility: EU, Norway, Ukraine citizens aged 18+"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:visual-geolocalization",
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "landscape",
+      "eudis",
+      "hackathon",
+      "europe"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:eudis-defence-hackathon-2025",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:european-defense-tech-hackathon",
+    "kind": "program",
+    "title": "European Defense Tech Hackathon series (Paris, London, Sheffield, Prague...)",
+    "url": "https://dronexl.co/2024/12/03/europes-largest-defense-tech-hackathon-drone-detection",
+    "authors": [
+      "European Defense Tech Hackathon organisers"
+    ],
+    "year": 2024,
+    "summary": "Independent recurring European defense hackathon series. The December 2024 Paris edition had a second-place magnetic navigation entry for underwater drones; 2025 London and Sheffield editions listed GNSS-denied navigation tracks.",
+    "key_takeaways": [
+      "Navigation tracks recur; winners skew toward working demos with real data"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:magnetic-nav",
+      "concept:counter-uas"
+    ],
+    "tags": [
+      "landscape",
+      "hackathon",
+      "europe"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:el-segundo-defense-tech-hackathon-2024",
+    "kind": "program",
+    "title": "El Segundo Defense Tech Hackathon (Feb 2024) - origin of Theseus GPS-denied drone",
+    "url": "https://aviationweek.com/aerospace/emerging-technologies/how-trio-engineers-developed-gps-denied-drone-under-500",
+    "authors": [
+      "Aviation Week"
+    ],
+    "year": 2024,
+    "summary": "Aviation Week story (March 2024) on three non-defense engineers who built a GPS-denied drone for under USD 500 at a 24-hour defense tech hackathon; the team became Theseus.",
+    "key_takeaways": [
+      "Cheap visual nav prototypes are a known hackathon genre in the US"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "landscape",
+      "hackathon",
+      "us"
+    ],
+    "level": "intermediate",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "res:theseus-visual-navigation-system",
+        "rel": "explains"
+      }
+    ]
+  }
+]

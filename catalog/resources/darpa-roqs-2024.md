@@ -11,8 +11,16 @@ Report on DARPA's RoQS program to make quantum sensors robust to platform interf
 - Platform noise, not lab sensitivity, is the barrier DARPA targets
 - Context for why classical magnetic compensation still matters
 
+## Deep dives
+
+- [programs-and-challenges](../../docs/landscape/programs-and-challenges.md) (landscape)
+
 **Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [Magnetic anomaly navigation](../concepts/magnetic-nav.md)
 
 **Tags:** `darpa`, `quantum`, `roqs`
+
+## Referenced by
+
+- [DARPA Robust Quantum Sensors (RoQS) - Phase 1](../resources/darpa-roqs-program.md) (cites)
 
 _Indexed by lane(s): defense-context_

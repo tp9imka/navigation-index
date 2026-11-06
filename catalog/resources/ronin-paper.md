@@ -11,6 +11,10 @@ Introduces a large smartphone IMU dataset with ground truth and benchmarks neura
 - Benchmark dataset for learned pedestrian navigation
 - Body-frame heading-agnostic representation
 
+## Deep dives
+
+- [ronin](../../docs/dataset-cards/ronin.md) (dataset-cards)
+
 **Concepts:** [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 
 **Tags:** `learned-inertial`, `smartphone`

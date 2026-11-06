@@ -14,6 +14,10 @@ Companion to the OSNMA ICD describing how a receiver should process OSNMA: time-
 - Explains which attacks OSNMA does and does not stop (e.g. replay/meaconing limits)
 - Covers key renewal and alert handling
 
+## Deep dives
+
+- [trends-2025-2026](../../docs/landscape/trends-2025-2026.md) (landscape)
+
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [Jamming and spoofing](../concepts/gnss-interference.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Standards and interface specs](../concepts/standards.md)
 
 **Tags:** `osnma`, `galileo`, `receiver`, `anti-spoofing`

@@ -14,4 +14,8 @@ Ukrainian defense outlet reporting that a US company's optical (visual) navigati
 
 **Tags:** `ukraine`, `industry`
 
+## Referenced by
+
+- [Twist Robotics OSCAR visual navigation module (Ukraine)](../resources/twist-robotics-oscar.md) (cites)
+
 _Indexed by lane(s): alt-nav_

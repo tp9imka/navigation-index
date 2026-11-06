@@ -46,7 +46,7 @@ Global/local planners, sampling and search based planning, trajectory optimizati
 - [Time-optimal quadrotor planning](../repos/uzh-rpg__rpg_time_optimal.md) - fit: low - Code for computing time-optimal quadrotor trajectories through waypoints, from the UZH group that placed second in AlphaPilot and built Swift.
 - [BRUCE](../repos/jinkunw__bruce.md) - fit: low - BlueROV underwater SLAM and exploration code from Stevens Institute, combining sonar-based SLAM with active exploration planning.
 
-## Documents, talks, courses, datasets (19)
+## Documents, talks, courses, datasets (21)
 
 - [AlphaPilot: Autonomous Drone Racing](../resources/alphapilot-uzh-paper.md) - paper - UZH's second-place AlphaPilot system: learned gate detection, nonlinear filtering of visual-inertial state and time-optimal trajectory planning for GPS-free racing.
 - [Artificial Intelligence for Robotics (Udacity CS373)](../resources/udacity-ai-for-robotics-cs373.md) - course - Free classic course by Sebastian Thrun programming robot localization (histogram filter, Kalman filter, particle filter), search/planning, PID control and GraphSLAM in Python.
@@ -67,4 +67,6 @@ Global/local planners, sampling and search based planning, trajectory optimizati
 - [The Marathon 2: A Navigation System](../resources/macenski-marathon2-nav2.md) - paper - Paper introducing Nav2: behavior-tree based navigation architecture for ROS 2, its design choices and a long-duration campus deployment test.
 - [The Open Motion Planning Library (OMPL) website](../resources/ompl-site.md) - doc - Official OMPL documentation with planner catalogue, tutorials, Python binding guide and benchmarking tools.
 - [Visual Navigation for Flying Robots (TUM, 2013)](../resources/tum-visual-navigation-flying-robots.md) - lecture-series - Award-winning TUM lecture on making quadrotors navigate with cameras: 3D geometry, sensors, state estimation, visual motion estimation, SLAM, dense reconstruction, planning and exploration.
+- [Алгоритм планирования маршрута БПЛА в условиях недостатка визуальных ориентиров](../resources/nstu-konovalov-route-planning-few-landmarks-2024.md) - paper - English: 'UAV route planning algorithm under a shortage of visual landmarks'.
+- [Навигация по снимкам местности на основе сопоставления глубоких признаков и визуальной одометрии](../resources/bntu-rulko-terrain-nav-deep-features-2025.md) - paper - English: 'Terrain relative navigation based on deep feature template matching and visual odometry'.
 

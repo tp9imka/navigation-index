@@ -11,6 +11,10 @@ Handheld lidar plus stereo and multi-camera sequences around New College, Oxford
 - Sensors: lidar, stereo, multi-camera, IMUs
 - Size class: large
 
+## Deep dives
+
+- [newer-college](../../docs/dataset-cards/newer-college.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
 
 **Tags:** `oxford`, `handheld`, `lidar`

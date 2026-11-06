@@ -19,4 +19,8 @@ Guide to setting up a VIO pipeline on a companion computer and fusing it in PX4 
 
 - explains: [PX4 Autopilot](../repos/px4__px4-autopilot.md)
 
+## Referenced by
+
+- [Auterion Skynode S and Auterion Visual Navigation](../resources/auterion-skynode-visual-navigation.md) (cites)
+
 _Indexed by lane(s): autopilots_

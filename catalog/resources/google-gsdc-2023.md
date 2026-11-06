@@ -14,6 +14,10 @@ Kaggle competition with raw GNSS and IMU logs from Android phones in cars, score
 - Size class: medium
 - Kaggle account required
 
+## Deep dives
+
+- [gsdc](../../docs/dataset-cards/gsdc.md) (dataset-cards)
+
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md)
 
 **Tags:** `android`, `kaggle`, `gsdc`, `smartphone`

@@ -10,6 +10,10 @@ Refines thermal-to-satellite localization with learned homography estimation for
 
 - Coarse-to-fine: retrieval then homography
 
+## Deep dives
+
+- [thermal-datasets](../../docs/dataset-cards/thermal-datasets.md) (dataset-cards)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Feature detection and matching](../concepts/feature-matching.md)
 
 **Tags:** `arxiv`, `thermal`

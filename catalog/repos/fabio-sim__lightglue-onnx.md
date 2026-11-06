@@ -12,6 +12,11 @@ ONNX export of SuperPoint/DISK + LightGlue feature matching with TensorRT and Op
 
 **Hackathon notes:** Download prebuilt ONNX models; run with onnxruntime-gpu or TensorRT.
 
+## Deep dives
+
+- [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
+- [fabio-sim__lightglue-onnx](../../docs/integration-cards/fabio-sim__lightglue-onnx.md) (integration-cards)
+
 **Concepts:** [Onboard / edge AI perception](../concepts/edge-ai.md), [Feature detection and matching](../concepts/feature-matching.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
 
 **Tags:** `lightglue`, `onnx`, `tensorrt`, `openvino`
@@ -21,6 +26,13 @@ ONNX export of SuperPoint/DISK + LightGlue feature matching with TensorRT and Op
 ## Related
 
 - extends: [LightGlue](../repos/cvg__lightglue.md)
+
+## Referenced by
+
+- [Honeywell Vision Aided Navigation (Alternative Navigation Suite)](../resources/honeywell-vision-aided-navigation.md) (alternative_to)
+- [Inertial Labs VINS visual-aided INS (with Maxar Raptor)](../resources/inertial-labs-vins.md) (alternative_to)
+- [Theseus Visual Navigation System (YC launch)](../resources/theseus-visual-navigation-system.md) (alternative_to)
+- [Twist Robotics OSCAR visual navigation module (Ukraine)](../resources/twist-robotics-oscar.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

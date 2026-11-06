@@ -12,6 +12,10 @@ SLAM benchmark challenge with datasets from handheld and robot-mounted multi-sen
 - Sensors: lidar, cameras, IMU
 - GNSS-denied indoor
 
+## Deep dives
+
+- [hilti-slam](../../docs/dataset-cards/hilti-slam.md) (dataset-cards)
+
 **Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Visual(-inertial) odometry](../concepts/vio.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual SLAM](../concepts/visual-slam.md)
 
 **Tags:** `benchmark`, `slam`, `icra`, `hilti`, `challenge`

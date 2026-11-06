@@ -28,5 +28,6 @@ Defines four cumulative resilience levels for PNT user equipment based on preven
 
 - [Resilient PNT Reference Architecture](../resources/dhs-resilient-pnt-reference-architecture.md) (part_of)
 - [DHS S&T Positioning, Navigation, and Timing Program](../resources/dhs-st-pnt-program.md) (part_of)
+- [Safran VersaPNT and Geonyx resilient PNT units](../resources/safran-versapnt.md) (cites)
 
 _Indexed by lane(s): defense-context, docs-standards_

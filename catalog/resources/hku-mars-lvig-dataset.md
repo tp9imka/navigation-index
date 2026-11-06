@@ -11,6 +11,10 @@ Aerial robot SLAM dataset for lidar-visual-inertial-GNSS fusion, including seque
 - Sensors: lidar, camera, IMU, GNSS (incl. raw)
 - Domain: aerial over large outdoor areas
 
+## Deep dives
+
+- [mars-lvig](../../docs/dataset-cards/mars-lvig.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [GNSS/INS integration](../concepts/gnss-ins.md)
 
 **Tags:** `aerial`, `lidar`, `gnss-raw`

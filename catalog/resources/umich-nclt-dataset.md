@@ -11,6 +11,10 @@ Segway robot sessions over many months on one campus with lidar, omnidirectional
 - Sensors: Velodyne HDL-32E, Ladybug3, GPS/RTK, IMU
 - Long-term change over seasons
 
+## Deep dives
+
+- [nclt](../../docs/dataset-cards/nclt.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Place recognition and loop closure](../concepts/place-recognition.md)
 
 **Tags:** `long-term`, `campus`

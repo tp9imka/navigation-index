@@ -12,6 +12,10 @@ Gazebo-based simulation environment for the RobotX maritime autonomy competition
 
 **Hackathon notes:** Current branch targets gz-sim and ROS 2. Task worlds (station keeping, wayfinding) work as hackathon challenges out of the box.
 
+## Deep dives
+
+- [maritime-datasets](../../docs/dataset-cards/maritime-datasets.md) (dataset-cards)
+
 **Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Maritime navigation](../concepts/maritime-nav.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
 
 **Tags:** `gazebo`, `usv`, `wam-v`, `robotx`, `ros2`, `maritime`

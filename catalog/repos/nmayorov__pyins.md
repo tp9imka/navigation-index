@@ -28,7 +28,11 @@ Python package for modelling and analysing inertial navigation systems: strapdow
 - [gnss-ins-sim](../repos/aceinna__gnss-ins-sim.md) (alternative_to)
 - [strapdown-rs](../repos/jbrodovsky__strapdown-rs.md) (alternative_to)
 - [allan-variance (Python)](../repos/nmayorov__allan-variance.md) (same_org)
+- [Advanced Navigation Boreas FOG INS with LVS laser velocity sensor](../resources/advanced-navigation-boreas.md) (alternative_to)
+- [Honeywell HGuide o480 single-card INS and HGuide i700 IMU](../resources/honeywell-hguide-o480.md) (alternative_to)
+- [SBG Systems Ellipse INS - 2025 GNSS-denied firmware](../resources/sbg-new-ellipse-firmware.md) (alternative_to)
 - [Strapdown Inertial Navigation Technology, 2nd Edition](../resources/titterton-weston-strapdown-ins-2e.md) (explains)
+- [VectorNav - Iridium STL-aided INS collaboration with NAL Research](../resources/vectornav-stl-aided-ins.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 

@@ -12,6 +12,10 @@ DARPA's 2018-2021 challenge for autonomous robot teams mapping and searching tun
 - Heterogeneous teams (legged + aerial) won
 - Communication-denied autonomy was decisive
 
+## Deep dives
+
+- [subt-datasets](../../docs/dataset-cards/subt-datasets.md) (dataset-cards)
+
 **Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `darpa`, `subt`, `challenge`

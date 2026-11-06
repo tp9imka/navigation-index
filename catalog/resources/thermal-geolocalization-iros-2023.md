@@ -11,6 +11,10 @@ Matches night-time UAV thermal imagery to satellite RGB maps using domain adapta
 - Night visual GPS is possible via thermal-to-RGB matching
 - Domain adaptation offsets missing paired data
 
+## Deep dives
+
+- [thermal-datasets](../../docs/dataset-cards/thermal-datasets.md) (dataset-cards)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
 
 **Tags:** `arxiv`, `thermal`, `night`

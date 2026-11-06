@@ -12,6 +12,11 @@ Python GNSS/INS simulator that generates trajectories, IMU/GNSS/magnetometer mea
 
 **Hackathon notes:** Pure Python; define a motion profile CSV and sensor grade, then plug your filter in as an algorithm.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [aceinna__gnss-ins-sim](../../docs/integration-cards/aceinna__gnss-ins-sim.md) (integration-cards)
+
 **Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [GNSS/INS integration](../concepts/gnss-ins.md)
 
 **Tags:** `imu-simulation`, `trajectory`, `python`, `imu`, `gnss`, `simulation`
@@ -27,6 +32,10 @@ Python GNSS/INS simulator that generates trajectories, IMU/GNSS/magnetometer mea
 
 - [pyins](../repos/nmayorov__pyins.md) (alternative_to)
 - [NaveGo](../repos/rodralez__navego.md) (alternative_to)
+- [Advanced Navigation Boreas FOG INS with LVS laser velocity sensor](../resources/advanced-navigation-boreas.md) (alternative_to)
+- [Honeywell HGuide o480 single-card INS and HGuide i700 IMU](../resources/honeywell-hguide-o480.md) (alternative_to)
+- [SBG Systems Ellipse INS - 2025 GNSS-denied firmware](../resources/sbg-new-ellipse-firmware.md) (alternative_to)
+- [VectorNav - Iridium STL-aided INS collaboration with NAL Research](../resources/vectornav-stl-aided-ins.md) (alternative_to)
 - [GNSS/INS EKF through a GNSS outage and a spoofing walk-off](../samples/gnss-ins-ekf-outage.md) (explains)
 
 _Indexed by lane(s): ins-fusion, sim-data_

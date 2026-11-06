@@ -12,6 +12,10 @@ Companion repo for the UZH-FPV drone racing dataset with scripts and info.
 
 **Hackathon notes:** Inactive since 2020; dataset itself is on the UZH site.
 
+## Deep dives
+
+- [uzh-fpv](../../docs/dataset-cards/uzh-fpv.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md)
 
 **Tags:** `uzh-fpv`, `drone-racing`, `vio`

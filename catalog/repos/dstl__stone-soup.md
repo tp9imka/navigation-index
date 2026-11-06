@@ -12,6 +12,10 @@ Open-source Python framework from UK Dstl and partners for developing, running a
 
 **Hackathon notes:** pip install stonesoup; tutorials run in Jupyter. Good for fusing ADS-B, Remote ID or DF bearings into tracks on a common picture within a day. Keep it to air-picture awareness, not fire control.
 
+## Deep dives
+
+- [maritime-datasets](../../docs/dataset-cards/maritime-datasets.md) (dataset-cards)
+
 **Concepts:** [Tracking and data association](../concepts/target-tracking.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Counter-UAS and drone detection](../concepts/counter-uas.md)
 
 **Tags:** `dstl`, `kalman`, `particle-filter`, `python`, `tracking`, `jpda`, `phd`, `metrics`

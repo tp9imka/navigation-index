@@ -37,6 +37,8 @@ The original open-source GNSS positioning package by T. Takasu: SPP, DGNSS, RTK,
 - [Galileo High Accuracy Service Signal-In-Space ICD (HAS SIS ICD) Issue 1.0](../resources/galileo-has-sis-icd.md) (has_code)
 - [Galileo Open Service Signal-In-Space Interface Control Document (OS SIS ICD) Issue 2.1](../resources/galileo-os-sis-icd-2-1.md) (has_code)
 - [IS-GPS-200N: NAVSTAR GPS Space Segment / Navigation User Segment Interfaces](../resources/gps-is-gps-200n.md) (has_code)
+- [SDR приемник GPS на микроконтроллере](../resources/habr-mcu-gps-sdr-2024.md) (uses)
+- [RTKLib - Сантиметровая точность GPS/ГЛОНАСС в пост-обработке](../resources/habr-rtklib-postprocessing-2014.md) (uses)
 - [Real-World Spoofing Detection (ION ITM 2025)](../resources/kreizis-ion-itm-2025-spoofing.md) (has_code)
 - [Navipedia: RTK Standards](../resources/navipedia-rtk-standards.md) (has_code)
 - [QZSS Performance Standards and Interface Specifications (IS-QZSS)](../resources/qzss-is-qzss.md) (has_code)

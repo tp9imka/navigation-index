@@ -12,6 +12,10 @@ C++ simulation library for marine robotics with hydrodynamics, underwater render
 
 **Hackathon notes:** Build with CMake; use stonefish_ros for ROS integration. Good for a DVL+USBL EKF demo.
 
+## Deep dives
+
+- [underwater-datasets](../../docs/dataset-cards/underwater-datasets.md) (dataset-cards)
+
 **Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Underwater navigation](../concepts/underwater-nav.md), [Maritime navigation](../concepts/maritime-nav.md)
 
 **Tags:** `simulator`, `dvl`, `usbl`, `sonar`, `opengl`, `auv`, `marine`

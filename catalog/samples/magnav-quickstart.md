@@ -6,6 +6,10 @@ A Julia walkthrough with MagNav.jl that downloads the public SGL 2020 challenge 
 
 **Verification:** unverified sketch: never run, Julia not installed; function names and signatures checked against MagNav.jl v1.3.5 examples and src on 2026-11-06; requires Julia 1.10+, MagNav.jl, CSV.jl, DataFrames.jl and the package's data artifacts.
 
+## Deep dives
+
+- [magnav-challenge-data](../../docs/dataset-cards/magnav-challenge-data.md) (dataset-cards)
+
 **Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Sensor calibration](../concepts/calibration.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `magnav`, `julia`, `tolles-lawson`, `ekf`, `anomaly-map`, `afrl`, `gnss-denied`, `airborne`

@@ -10,7 +10,7 @@ Map engines, tiles, DEMs, orthophotos, coordinate systems, geodesy.
 
 - [Terrain-relative navigation with a particle filter](../samples/terrain-relative-nav-pf.md) - A stdlib-only simulation of TERCOM/TRN: an aircraft with a biased INS and a radar altimeter matches its measured terrain profile against a seeded synthetic DEM with a particle filter that also estimates the INS velocity 
 
-## Repositories (39)
+## Repositories (41)
 
 - [Leaflet](../repos/leaflet__leaflet.md) - fit: high - Small, simple JavaScript library for interactive raster/vector maps with a huge plugin ecosystem.
 - [CesiumJS](../repos/cesiumgs__cesium.md) - fit: high - WebGL 3D globe and map library with terrain, 3D Tiles, time-dynamic data (CZML) and accurate WGS84 rendering.
@@ -36,6 +36,8 @@ Map engines, tiles, DEMs, orthophotos, coordinate systems, geodesy.
 - [GIS MCP Server](../repos/mahdin75__gis-mcp.md) - fit: high - MCP server giving LLMs geospatial operations through Shapely, PyProj, GeoPandas and Rasterio: geometry ops, CRS transforms, distances and raster analysis, without a desktop GIS.
 - [mil-sym-ts](../repos/missioncommand__mil-sym-ts.md) - fit: high - TypeScript/JavaScript renderer for MIL-STD-2525 (D and later) military symbology, producing single-point and multi-point tactical graphics for web maps.
 - [grid_map](../repos/leggedrobotics__grid_map.md) - fit: high - Universal multi-layer 2.5D grid map library for mobile robots with ROS/ROS 2 integration, filters, iterators and conversion to images, point clouds and costmaps.
+- [Hackathon-Blind-Flight (team GORIZONT)](../repos/t1gr20an06-k__hackathon-blind-flight.md) - fit: high - Russian-language hackathon solution for 'Полёт вслепую' (Blind flight): estimate aircraft position, ground speed and heading without GNSS by reconstructing a terrain profile (barometric altitude minus radar altimeter) an
+- [FlyingBlind_Hakaton](../repos/solarwarlock__flyingblind_hakaton.md) - fit: high - Second public solution to the same 'Полёт вслепую' hackathon task: web prototype that reads a GeoTIFF DEM and NMEA-0183 radar-altimeter messages, searches start point, speed and azimuth hypotheses by RMSE/correlation, an
 - [OpenLayers](../repos/openlayers__openlayers.md) - fit: medium - Feature-rich web mapping library supporting many projections, WMS/WMTS, vector tiles and editing.
 - [GraphHopper](../repos/graphhopper__graphhopper.md) - fit: medium - Java OSM routing engine usable as library or server, with custom models for per-request costing and map matching.
 - [Planetiler](../repos/onthegomap__planetiler.md) - fit: medium - Fast vector tile generator that builds OpenMapTiles-compatible tilesets from OSM extracts on a single machine.
@@ -52,10 +54,12 @@ Map engines, tiles, DEMs, orthophotos, coordinate systems, geodesy.
 - [MAMMAL](../repos/powerbroker2__mammal.md) - fit: medium - Python package (Magnetic Anomaly Map Matching Airborne and Land) for simulating and processing aeromagnetic survey data and building anomaly maps for MagNav.
 - [terrain-nav-preprocessing](../repos/hstm__terrain-nav-preprocessing.md) - fit: medium - Preprocessing tools for terrain-referenced navigation, generating DEM tiles with controlled noise for training and evaluation.
 
-## Documents, talks, courses, datasets (4)
+## Documents, talks, courses, datasets (6)
 
 - [CityNav: A Large-Scale Dataset for Real-World Aerial Navigation](../resources/citynav-2024.md) - paper - Introduces a language-goal aerial navigation dataset built on real-city 3D data with geographic metadata, and baselines using map-based grounding.
 - [Copernicus DEM on AWS Open Data](../resources/copernicus-dem-aws.md) - dataset - Registry entry for the Copernicus global DEM (GLO-30/GLO-90) hosted as cloud-optimized GeoTIFFs on AWS, freely accessible without an account.
 - [NATO Joint Military Symbology (APP-6) - overview](../resources/app-6-joint-military-symbology.md) - doc - Overview of APP-6, the NATO standard for map symbols of units, equipment and tactical graphics, now at edition E and aligned with the US MIL-STD-2525 family.
 - [SpatioTemporal Asset Catalog (STAC) specification](../resources/stac-spec.md) - standard - Specification and ecosystem site for STAC, the common way to describe and search geospatial imagery and DEM assets.
+- [«Ми почали будувати захищену екосистему для всіх військових застосунків». Архітектор DELTA - про розвиток системи](../resources/dou-delta-architecture-interview-2024.md) - blog - English: 'We started building a secure ecosystem for all military applications.
+- [У 17 років створив навігацію для дронів, яку не глушить РЕБ. Історія киянина, який переміг на «Олімпіаді геніїв» у США](../resources/dou-lapko-urban-nav-interview-2025.md) - blog - English: 'Built EW-proof drone navigation at 17: the story of a Kyiv student who won the Genius Olympiad in the USA'.
 

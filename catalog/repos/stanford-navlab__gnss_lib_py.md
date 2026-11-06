@@ -12,6 +12,13 @@ Modular Python library from Stanford NavLab for parsing, analyzing and visualizi
 
 **Hackathon notes:** pip install gnss-lib-py; tutorials load GSDC data directly. Very good fit for a 24h spoofing-detection or integrity notebook.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [stanford-navlab__gnss_lib_py](../../docs/integration-cards/stanford-navlab__gnss_lib_py.md) (integration-cards)
+- [gnss-spoofing-s7am1na](../../docs/dataset-cards/gnss-spoofing-s7am1na.md) (dataset-cards)
+- [gsdc](../../docs/dataset-cards/gsdc.md) (dataset-cards)
+
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `python`, `android`, `rinex`, `fde`

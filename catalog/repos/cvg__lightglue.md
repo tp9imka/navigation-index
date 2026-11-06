@@ -12,6 +12,11 @@ Fast learned local feature matcher (ICCV 2023) that adapts its depth to pair dif
 
 **Hackathon notes:** pip install; use SuperPoint+LightGlue between a drone frame and top-k retrieved tiles, then RANSAC homography.
 
+## Deep dives
+
+- [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
+- [cvg__lightglue](../../docs/integration-cards/cvg__lightglue.md) (integration-cards)
+
 **Concepts:** [Feature detection and matching](../concepts/feature-matching.md)
 
 **Tags:** `matcher`, `superpoint`, `fast`

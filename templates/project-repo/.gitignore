@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Run outputs: commit results.md and the plots you cite, not raw runs
+runs/*
+!runs/results.md
+
+# Large data stays out of git; document where to fetch it in README
+data/raw/
+*.bag
+*.db3
+*.ulg
+*.tlog
+*.bin
+*.iq
+*.cs8
+*.dat
+
+# Secrets and local config
+.env
+*.env
+!.env.example
+*.pem
+*.key
+*.p12
+secrets/
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/

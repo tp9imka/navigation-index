@@ -12,6 +12,11 @@ Wrapper exposing many state-of-the-art place recognition models behind one inter
 
 **Hackathon notes:** Format your data as database/queries folders with UTM in filenames; GPU recommended.
 
+## Deep dives
+
+- [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
+- [gmberton__vpr-methods-evaluation](../../docs/integration-cards/gmberton__vpr-methods-evaluation.md) (integration-cards)
+
 **Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
 
 **Tags:** `wrapper`, `benchmark`, `vpr`, `evaluation`, `pytorch`

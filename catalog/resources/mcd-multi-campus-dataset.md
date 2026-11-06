@@ -11,6 +11,10 @@ Multi-campus sequences in Asia and Europe across seasons with two lidar types, s
 - Sensors: lidar, stereo, IMU, UWB
 - Ground truth: continuous-time with prior maps
 
+## Deep dives
+
+- [mcd](../../docs/dataset-cards/mcd.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
 
 **Tags:** `campus`, `uwb`

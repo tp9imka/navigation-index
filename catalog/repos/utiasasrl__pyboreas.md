@@ -12,6 +12,10 @@ Devkit for the Boreas multi-season driving dataset with radar, lidar, camera and
 
 **Hackathon notes:** Data is hosted on S3; download selected sequences.
 
+## Deep dives
+
+- [boreas](../../docs/dataset-cards/boreas.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Radar navigation and odometry](../concepts/radar-nav.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
 
 **Tags:** `radar`, `lidar`, `winter`, `devkit`

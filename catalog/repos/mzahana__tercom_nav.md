@@ -12,6 +12,11 @@ ROS 2 package combining TERCOM-style terrain matching with an error-state Kalman
 
 **Hackathon notes:** Good if your team runs ROS 2 with PX4/ArduPilot SITL; pair with a DEM and simulated altimeter.
 
+## Deep dives
+
+- [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
+- [mzahana__tercom_nav](../../docs/integration-cards/mzahana__tercom_nav.md) (integration-cards)
+
 **Concepts:** [Terrain-relative navigation](../concepts/terrain-nav.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
 
 **Tags:** `ros2`, `eskf`, `tercom`
@@ -26,6 +31,7 @@ ROS 2 package combining TERCOM-style terrain matching with an error-state Kalman
 
 - [python-tercom](../repos/alti3__python-tercom.md) (alternative_to)
 - [TRN particle filter examples](../repos/rhymesg__particle_filter.md) (alternative_to)
+- [FlyingBlind_Hakaton](../repos/solarwarlock__flyingblind_hakaton.md) (alternative_to)
 - [Terrain-relative navigation with a particle filter](../samples/terrain-relative-nav-pf.md) (explains)
 
 _Indexed by lane(s): alt-nav_

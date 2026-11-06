@@ -19,4 +19,8 @@ Opportunistic navigation using Starlink downlink signals without cooperation fro
 
 - same_author: [Navigation with Multi-Constellation LEO Satellite Signals of Opportunity: Starlink, OneWeb, Orbcomm, and Iridium](../resources/kassas-multi-constellation-leo.md)
 
+## Referenced by
+
+- [Xona Space Systems Pulsar LEO PNT constellation](../resources/xona-pulsar-leo-pnt.md) (cites)
+
 _Indexed by lane(s): docs-standards_

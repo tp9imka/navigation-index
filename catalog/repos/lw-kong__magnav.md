@@ -12,6 +12,10 @@ A public submission repository for the JuliaCon 2020 MagNav signal-enhancement c
 
 **Hackathon notes:** Inactive since 2022; useful as a template for a challenge-style submission on the MagNav data.
 
+## Deep dives
+
+- [magnav-challenge-data](../../docs/dataset-cards/magnav-challenge-data.md) (dataset-cards)
+
 **Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `magnav-challenge`, `julia`, `machine-learning`

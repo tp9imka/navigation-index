@@ -12,6 +12,10 @@ Widely used Python package for YOLO-family detection, segmentation and tracking 
 
 **Hackathon notes:** pip install ultralytics; fine-tune on a drone dataset in hours with a GPU. Check AGPL licensing for deployment.
 
+## Deep dives
+
+- [anti-uav](../../docs/dataset-cards/anti-uav.md) (dataset-cards)
+
 **Concepts:** [Onboard / edge AI perception](../concepts/edge-ai.md), [Tracking and data association](../concepts/target-tracking.md), [Counter-UAS and drone detection](../concepts/counter-uas.md)
 
 **Tags:** `yolo`, `detection`, `tracking`

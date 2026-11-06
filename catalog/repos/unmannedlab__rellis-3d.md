@@ -12,6 +12,10 @@ Multi-modal off-road dataset from Texas A&M with lidar, camera, IMU and GNSS plu
 
 **Hackathon notes:** Download only the sequences you need; ROS bags are large. Unmaintained since 2022; the data itself is static and still usable.
 
+## Deep dives
+
+- [offroad-rellis-tartandrive](../../docs/dataset-cards/offroad-rellis-tartandrive.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
 
 **Tags:** `dataset`, `off-road`, `lidar`, `semantic`

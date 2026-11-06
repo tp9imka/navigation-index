@@ -12,6 +12,10 @@ Lightweight C++ daemon that routes MAVLink between serial, UDP and TCP endpoints
 
 **Hackathon notes:** Build with meson; one config file. Run it before attaching multiple clients.
 
+## Deep dives
+
+- [mavlink-router__mavlink-router](../../docs/integration-cards/mavlink-router__mavlink-router.md) (integration-cards)
+
 **Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
 
 **Tags:** `router`, `companion`, `udp`, `serial`

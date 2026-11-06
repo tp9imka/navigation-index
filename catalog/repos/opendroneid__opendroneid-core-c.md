@@ -12,6 +12,10 @@ Reference C library for encoding and decoding ASTM F3411 / ASD-STAN Remote ID me
 
 **Hackathon notes:** Builds with CMake in minutes; pair with an ESP32 or phone receiver to decode drone broadcasts and push them to a map or TAK.
 
+## Deep dives
+
+- [remote-id-droneid-captures](../../docs/dataset-cards/remote-id-droneid-captures.md) (dataset-cards)
+
 **Concepts:** [Standards and interface specs](../concepts/standards.md), [Counter-UAS and drone detection](../concepts/counter-uas.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
 
 **Tags:** `remote-id`, `astm-f3411`, `en4709`, `bluetooth`, `wifi`, `uas`

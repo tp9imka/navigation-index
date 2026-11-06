@@ -12,6 +12,10 @@ Handheld stereo camera and IMU sequences indoors and outdoors with photometric c
 - Size class: medium
 - Good for long-term drift tests
 
+## Deep dives
+
+- [tum-vi](../../docs/dataset-cards/tum-vi.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md)
 
 **Tags:** `tum`, `handheld`

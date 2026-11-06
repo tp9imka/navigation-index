@@ -23,7 +23,7 @@ Acquisition, tracking, navigation-message decoding in software on SDR front-ends
 - [GPS L1 Direct Position Estimation module](../repos/sergio-vicenzo__gpsl1-dpemodule.md) - fit: low - Plug-in module adding Direct Position Estimation (positioning directly in the correlation domain) to MATLAB two-step software receivers such as SoftGNSS.
 - [pylgrim](../repos/kirienko__pylgrim.md) - fit: low - GNSS software receiver written in Python for learning acquisition, tracking and positioning.
 
-## Documents, talks, courses, datasets (6)
+## Documents, talks, courses, datasets (9)
 
 - [A Software-Defined GPS and Galileo Receiver: A Single-Frequency Approach](../resources/borre-software-defined-gps-galileo-receiver.md) - book - Classic textbook that walks through a complete MATLAB GPS software receiver: acquisition, code/carrier tracking, navigation decoding and positioning.
 - [GNSS-SDR documentation](../resources/gnss-sdr-docs.md) - doc - Tutorials and reference for configuring the GNSS-SDR receiver, including signal processing blocks, front-end setup and monitoring outputs.
@@ -31,4 +31,7 @@ Acquisition, tracking, navigation-message decoding in software on SDR front-ends
 - [GPS: An Introduction to Satellite Navigation, with an interactive Worldwide Laboratory using Smartphones](../resources/stanford-gps-mooc-van-diggelen-enge.md) - course - Stanford MOOC (originally on Coursera) now freely available as a long video series: how GPS works, pseudoranges, orbits and signals, receiver design, assisted GPS and the future of GNSS, with smartphone-based labs.
 - [LTE Receiver Design and Multipath Analysis for Navigation in Urban Environments](../resources/ion-webinar-shamaei-kassas.md) - talk - Design of a software receiver that extracts navigation observables from cellular LTE signals and analysis of multipath effects in urban settings.
 - [Robust Interference Mitigation in GNSS Snapshot Receivers](../resources/ion-webinar-calatrava.md) - talk - Interference mitigation techniques adapted to snapshot (short-capture) GNSS receivers used in low-power and IoT devices.
+- [SDR приемник GPS на микроконтроллере](../resources/habr-mcu-gps-sdr-2024.md) - blog - English: 'SDR GPS receiver on a microcontroller'.
+- [UK DASA Early Market Engagement: PNT problem statement for uncrewed systems](../resources/uk-dasa-emp-pnt-problem-statement-2024.md) - program - Published September 2024.
+- [Помехи в глобальных навигационных спутниковых системах](../resources/habr-gnss-interference-klimenko-2016.md) - blog - English: 'Interference in global navigation satellite systems'.
 

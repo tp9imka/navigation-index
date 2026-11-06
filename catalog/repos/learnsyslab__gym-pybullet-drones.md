@@ -12,6 +12,11 @@ Gymnasium environments on PyBullet for single and multi-agent quadcopter control
 
 **Hackathon notes:** pip install in a venv and run examples within minutes. No photorealistic sensors; good for control, swarming and planning logic.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [learnsyslab__gym-pybullet-drones](../../docs/integration-cards/learnsyslab__gym-pybullet-drones.md) (integration-cards)
+
 **Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
 
 **Tags:** `pybullet`, `gymnasium`, `rl`, `crazyflie`

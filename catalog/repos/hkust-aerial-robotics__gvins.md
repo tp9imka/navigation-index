@@ -12,6 +12,10 @@ Tightly coupled GNSS-visual-inertial estimator that fuses raw GNSS pseudorange a
 
 **Hackathon notes:** ROS1 (Melodic/Noetic) only; run on the GVINS dataset bags. Porting to ROS 2 is non-trivial.
 
+## Deep dives
+
+- [gvins](../../docs/dataset-cards/gvins.md) (dataset-cards)
+
 **Concepts:** [GNSS/INS integration](../concepts/gnss-ins.md), [Visual(-inertial) odometry](../concepts/vio.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [GNSS positioning](../concepts/gnss.md)
 
 **Tags:** `vins`, `raw-gnss`, `factor-graph`, `ros1`

@@ -12,6 +12,11 @@ Fast radar place recognition using VLAD-style aggregation over radar polar scans
 
 **Hackathon notes:** Evaluate on Oxford Radar RobotCar.
 
+## Deep dives
+
+- [mulran-helipr](../../docs/dataset-cards/mulran-helipr.md) (dataset-cards)
+- [oxford-radar-robotcar](../../docs/dataset-cards/oxford-radar-robotcar.md) (dataset-cards)
+
 **Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md), [Place recognition and loop closure](../concepts/place-recognition.md)
 
 **Tags:** `radar-place-recognition`, `vlad`

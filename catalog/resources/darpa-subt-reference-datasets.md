@@ -11,6 +11,10 @@ Reference sensor datasets and artifact data released for the DARPA Subterranean 
 - Sensors: lidar, cameras, IMU from SubT-style robots
 - GNSS-denied underground
 
+## Deep dives
+
+- [subt-datasets](../../docs/dataset-cards/subt-datasets.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
 
 **Tags:** `darpa`, `subt`, `underground`

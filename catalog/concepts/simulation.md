@@ -10,7 +10,7 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [GNSS/INS EKF through a GNSS outage and a spoofing walk-off](../samples/gnss-ins-ekf-outage.md) - A stdlib-only 2D loosely-coupled GNSS/INS EKF (8 states, hand-written matrix helpers) on a synthetic vehicle with biased, noisy 100 Hz IMU and 1 Hz GNSS.
 - [PX4 SITL GPS denial: inject, measure drift, recover](../samples/px4-sitl-gps-denial.md) - Flies a square mission in PX4 SITL (Gazebo gz_x500), turns the GPS off mid-mission with MAVSDK failure injection, logs EKF2 health and estimated vs ground-truth position, then restores GPS and returns home.
 
-## Repositories (69)
+## Repositories (72)
 
 - [ArduPilot](../repos/ardupilot__ardupilot.md) - fit: high - GPL autopilot covering Copter, Plane (incl.
 - [CARLA](../repos/carla-simulator__carla.md) - fit: high - Open-source autonomous-driving simulator on Unreal with camera, lidar, radar, GNSS and IMU sensors, traffic and weather control.
@@ -22,6 +22,7 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [gnss-ins-sim](../repos/aceinna__gnss-ins-sim.md) - fit: high - Python GNSS/INS simulator that generates trajectories, IMU/GNSS/magnetometer measurements with configurable error models, and runs navigation algorithms on them.
 - [CMU Autonomous Exploration Development Environment](../repos/hongbiaoz__autonomous_exploration_development_environment.md) - fit: high - CMU ground-robot development environment with simulated worlds, terrain analysis, local planner and waypoint tools used for exploration research (TARE, FAR planner).
 - [Virtual RobotX (VRX)](../repos/osrf__vrx.md) - fit: high - Gazebo-based simulation environment for the RobotX maritime autonomy competition, with a WAM-V USV model, waves, wind, sensors and scored tasks such as station keeping, wayfinding and perception.
+- [COEX Clover](../repos/copterexpress__clover.md) - fit: high - ROS-based software stack and Raspberry Pi image for the Clover educational quadcopter (PX4 underneath).
 - [ros_gz bridge](../repos/gazebosim__ros_gz.md) - fit: high - Bridge packages that relay topics, services and clock between Gazebo Sim transport and ROS 1/ROS 2.
 - [v2e](../repos/sensorsini__v2e.md) - fit: high - Converts conventional video into realistic synthetic DVS event streams with sensor noise modeling.
 - [Stonefish](../repos/patrykcieslak__stonefish.md) - fit: high - C++ simulation library for marine robotics with hydrodynamics, underwater rendering and sensors including DVL, USBL, multibeam and forward-looking sonar; has a ROS wrapper.
@@ -65,6 +66,7 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [USBL Simulator](../repos/maximilian-nitsch__usbl-simulator.md) - fit: medium - C++ library and ROS 2 node that simulates ultra-short baseline acoustic positioning measurements, with a Gazebo plugin.
 - [LEO-SPINE](../repos/xyangll__leospine.md) - fit: medium - Open toolkit for LEO/MEO/GEO constellation simulation and single/multi-satellite positioning.
 - [strapdown-rs](../repos/jbrodovsky__strapdown-rs.md) - fit: medium - Rust implementation of a strapdown inertial navigation system, aimed at simulation and research on INS behaviour.
+- [ORB_SLAM3_system_local](../repos/sasha-lobov__orb_slam3_system_local.md) - fit: medium - Pet project for local UAV navigation without GNSS: AirSim video streamed over ZeroMQ into monocular ORB-SLAM3, a ROS node converts NED/ENU frames, IMU data corrects monocular scale, and a PID controller tracks a trajecto
 - [UT Starlink signal simulator](../repos/gitlab.com__radionavlab__public__ut-starlink-signal-simulator.md) - fit: medium - MATLAB-style utility functions from UT Austin's Radionavigation Lab for simulating Starlink Ku-band downlink signals, with playground examples.
 - [Paparazzi UAV](../repos/paparazzi__paparazzi.md) - fit: low - Long-running academic autopilot (ENAC, TU Delft and others) for fixed-wing, rotorcraft and hybrids, with its own ground segment, flight-plan language and INS modules.
 - [RotorS](../repos/ethz-asl__rotors_simulator.md) - fit: low - Gazebo Classic MAV simulator from ETH ASL with multirotor models, IMU and odometry sensor plugins and example controllers.
@@ -81,8 +83,9 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [NPS underwater multibeam sonar plugin](../repos/field-robotics-lab__nps_uw_multibeam_sonar.md) - fit: low - GPU (CUDA) multibeam sonar simulation plugin for Gazebo producing physically motivated sonar imagery.
 - [Loran-C reference signal generator](../repos/cheolj__loran-c-reference-code.md) - fit: low - NumPy API that generates Loran-C master and secondary station pulse groups with phase codes for simulation (Korean docs).
 - [Beidou-SDR-SIM](../repos/haiyang-wong__beidou-sdr-sim.md) - fit: low - Open-source generator for BeiDou B1C baseband signals for SDR playback or file output.
+- [graduate_work (UAV INS module thesis)](../repos/danamarkova__graduate_work.md) - fit: low - Russian graduate thesis code: 'Development of a UAV inertial navigation module using auxiliary navigation data'.
 
-## Documents, talks, courses, datasets (12)
+## Documents, talks, courses, datasets (14)
 
 - [AirSim Documentation](../resources/microsoft-airsim-docs.md) - doc - Docs for AirSim covering setup, APIs, sensor configuration and PX4/ArduPilot integration.
 - [ArduPilot SITL Simulator (Software in the Loop)](../resources/ardupilot-sitl-docs.md) - doc - Developer docs for running ArduPilot vehicles in SITL, connecting GCS and external simulators.
@@ -94,6 +97,8 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [OpenFly: A Comprehensive Platform for Aerial Vision-Language Navigation](../resources/openfly-aerial-vln-2025.md) - paper - Presents a multi-engine aerial VLN platform with automated data generation, a large outdoor benchmark and a keyframe-aware VLN model.
 - [OpenSky: A Modular and Open-Source Simulator of Sky Polarization Measurements](../resources/opensky-sky-polarization-simulator-2024.md) - paper - Open simulator of what a polarimetric camera sees of the sky (intensity, angle and degree of polarization), validated against real captures, for developing polarization compasses.
 - [PX4 Simulation (Gazebo, SITL) documentation](../resources/px4-simulation-docs.md) - doc - How to run PX4 software-in-the-loop with Gazebo and other simulators, including multi-vehicle setups and connecting ROS 2 and ground stations.
+- [Safran Skydel simulation engine / GSG-8 GNSS simulator (ex-Orolia)](../resources/safran-skydel-gsg8.md) - product - Skydel is the SDR/GPU-based simulation engine behind Safran's GSG-8 simulators, with built-in jamming and spoofing scenarios, CRPA wavefront variants and LEO PNT signal options; Safran offers it to universities through a
 - [Self-Driving Cars Specialization (University of Toronto)](../resources/coursera-self-driving-cars-specialization.md) - course - Four-course specialization covering vehicle dynamics and control, state estimation and localization, visual perception, and motion planning, using the CARLA simulator for assignments.
+- [Spirent GSS7000 and PNT X GNSS/PNT simulators](../resources/spirent-gss7000-pntx.md) - product - Spirent's lab simulators generate multi-GNSS RF with controllable interference and spoofing (meaconing, trajectory spoofing, nav data spoofing) for hardware-in-the-loop receiver testing; PNT X extends this to combined PN
 - [TartanAir: A Dataset to Push the Limits of Visual SLAM](../resources/cmu-tartanair-dataset.md) - dataset - Large synthetic dataset rendered in AirSim/Unreal environments with challenging lighting, weather and motion, with perfect ground truth for many modalities.
 

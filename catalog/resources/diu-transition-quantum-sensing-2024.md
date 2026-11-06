@@ -12,6 +12,10 @@ Coverage of DIU's Transition of Quantum Sensing call seeking quantum inertial se
 - Lines of effort: inertial, magnetometers, technology insertion
 - Magnetic anomaly navigation is a funded transition path
 
+## Deep dives
+
+- [programs-and-challenges](../../docs/landscape/programs-and-challenges.md) (landscape)
+
 **Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [Magnetic anomaly navigation](../concepts/magnetic-nav.md)
 
 **Tags:** `diu`, `quantum`, `solicitation`
@@ -19,5 +23,9 @@ Coverage of DIU's Transition of Quantum Sensing call seeking quantum inertial se
 ## Related
 
 - cites: [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/afrl-magnav-challenge-2020.md)
+
+## Referenced by
+
+- [DIU Transition of Quantum Sensing (TQS)](../resources/diu-tqs-program.md) (cites)
 
 _Indexed by lane(s): defense-context_

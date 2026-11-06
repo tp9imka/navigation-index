@@ -12,6 +12,10 @@ University of Vaasa public GNSS dataset recorded at Jammertest 2024, released in
 
 **Hackathon notes:** Check README for which batches are released; pair with the Jammertest plan for labels.
 
+## Deep dives
+
+- [jammertest-data](../../docs/dataset-cards/jammertest-data.md) (dataset-cards)
+
 **Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `jammertest`, `dataset`, `spoofing`, `jamming`

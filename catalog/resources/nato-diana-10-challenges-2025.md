@@ -11,6 +11,10 @@ Announcement of DIANA's 2026 challenge programme topics, including operating in 
 - Problem statements stress dual-use and resilience in contested spectrum
 - Good template for writing a hackathon pitch in NATO language
 
+## Deep dives
+
+- [programs-and-challenges](../../docs/landscape/programs-and-challenges.md) (landscape)
+
 **Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Electronic warfare resilience](../concepts/ew-resilience.md), [Policy, export control and ethics](../concepts/policy-ethics.md)
 
 **Tags:** `nato`, `diana`, `challenge`, `dual-use`

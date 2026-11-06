@@ -29,6 +29,8 @@ Galileo E1-B/E5b signal simulator with OSNMA authentication data embedded, confi
 - [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md) (integrates_with)
 - [Beidou-SDR-SIM](../repos/haiyang-wong__beidou-sdr-sim.md) (same_org)
 - [Galileo OSNMA Signal-In-Space Interface Control Document Issue 1.1](../resources/galileo-osnma-sis-icd.md) (has_code)
+- [Safran Skydel simulation engine / GSG-8 GNSS simulator (ex-Orolia)](../resources/safran-skydel-gsg8.md) (alternative_to)
+- [Spirent GSS7000 and PNT X GNSS/PNT simulators](../resources/spirent-gss7000-pntx.md) (alternative_to)
 
 _Indexed by lane(s): gnss_
 

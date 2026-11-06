@@ -12,6 +12,10 @@ Node.js server implementing the Signal K open marine data standard: it ingests N
 
 **Hackathon notes:** Run via Docker or npm, enable the sample data playback, subscribe over WebSocket. Write a plugin to inject an alternative position source.
 
+## Deep dives
+
+- [maritime-datasets](../../docs/dataset-cards/maritime-datasets.md) (dataset-cards)
+
 **Concepts:** [Maritime navigation](../concepts/maritime-nav.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
 
 **Tags:** `signalk`, `nmea2000`, `nmea0183`, `websocket`, `iot`

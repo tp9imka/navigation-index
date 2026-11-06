@@ -13,6 +13,10 @@ Security analysis of DJI drones that reverse-engineers the DroneID broadcast and
 - DroneID leaks drone and pilot position in the clear
 - Decoding needs SDR captures at high sample rates
 
+## Deep dives
+
+- [remote-id-droneid-captures](../../docs/dataset-cards/remote-id-droneid-captures.md) (dataset-cards)
+
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [RF localization and direction finding](../concepts/rf-localization.md)
 
 **Tags:** `dji`, `droneid`, `ndss`, `sdr`

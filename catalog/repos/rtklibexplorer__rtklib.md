@@ -12,6 +12,11 @@ Actively maintained RTKLIB fork tuned for low-cost receivers (especially u-blox)
 
 **Hackathon notes:** Prebuilt Windows binaries and Linux builds are easy. Pair with a u-blox F9P and a free NTRIP caster for cm-level fixes in an afternoon.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [rtklibexplorer__rtklib](../../docs/integration-cards/rtklibexplorer__rtklib.md) (integration-cards)
+
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md)
 
 **Tags:** `rtk`, `ppk`, `demo5`, `u-blox`, `rtklib-fork`

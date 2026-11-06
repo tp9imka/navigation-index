@@ -12,6 +12,11 @@ Visual, visual-inertial and multi-map SLAM supporting monocular, stereo and RGB-
 
 **Hackathon notes:** Build against Pangolin, OpenCV and Eigen; expect a few compile fixes. Run on EuRoC or TUM-VI first, then your own camera after Kalibr calibration. Upstream sees little activity.
 
+## Deep dives
+
+- [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
+- [uz-slamlab__orb_slam3](../../docs/integration-cards/uz-slamlab__orb_slam3.md) (integration-cards)
+
 **Concepts:** [Visual SLAM](../concepts/visual-slam.md), [Visual(-inertial) odometry](../concepts/vio.md), [Place recognition and loop closure](../concepts/place-recognition.md)
 
 **Tags:** `orb`, `imu`, `multi-map`, `fisheye`, `c++`
@@ -31,6 +36,7 @@ Visual, visual-inertial and multi-map SLAM supporting monocular, stereo and RGB-
 - [Photo-SLAM](../repos/huajianup__photo-slam.md) (depends_on)
 - [ORB-SLAM2](../repos/raulmur__orb_slam2.md) (alternative_to)
 - [AirSLAM](../repos/sair-lab__airslam.md) (alternative_to)
+- [ORB_SLAM3_system_local](../repos/sasha-lobov__orb_slam3_system_local.md) (depends_on)
 - [ORB_SLAM3_ROS2](../repos/zang09__orb_slam3_ros2.md) (integrates_with)
 - [ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM](../resources/orb-slam3-campos-2020.md) (has_code)
 

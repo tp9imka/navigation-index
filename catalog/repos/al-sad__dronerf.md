@@ -12,6 +12,10 @@ MATLAB and Python code for drone detection and identification from RF signals, a
 
 **Hackathon notes:** Dormant since 2021; good for a quick baseline classifier.
 
+## Deep dives
+
+- [drone-rf-datasets](../../docs/dataset-cards/drone-rf-datasets.md) (dataset-cards)
+
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `rf-detection`, `dataset`, `matlab`

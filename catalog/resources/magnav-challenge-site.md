@@ -15,6 +15,12 @@ Challenge site for airborne magnetic anomaly navigation: compensate the aircraft
 - Domain: airborne
 - Code: MagNav.jl
 
+## Deep dives
+
+- [afit-magnav-example-data](../../docs/dataset-cards/afit-magnav-example-data.md) (dataset-cards)
+- [magnav-challenge-data](../../docs/dataset-cards/magnav-challenge-data.md) (dataset-cards)
+- [programs-and-challenges](../../docs/landscape/programs-and-challenges.md) (landscape)
+
 **Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `magnav`, `afrl`, `mit`, `airborne`, `challenge`
@@ -27,5 +33,8 @@ Challenge site for airborne magnetic anomaly navigation: compensate the aircraft
 ## Referenced by
 
 - [Developing a Series of AI Challenges for the United States Department of the Air Force](../resources/daf-ai-challenges-arxiv.md) (explains)
+- [DAF-MIT AI Accelerator MagNav real-time C-17 demonstration (2023)](../resources/daf-mit-magnav-c17-demo-2023.md) (cites)
+- [Q-CTRL Ironstone Opal quantum-assured magnetic navigation](../resources/qctrl-ironstone-opal.md) (cites)
+- [SandboxAQ AQNav geomagnetic navigation](../resources/sandboxaq-aqnav.md) (cites)
 
 _Indexed by lane(s): docs-standards, sim-data_

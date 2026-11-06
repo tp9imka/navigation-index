@@ -12,6 +12,10 @@ Lua Wireshark dissector that decodes Remote ID broadcast frames over Wi-Fi and B
 
 **Hackathon notes:** Drop the Lua into the Wireshark plugin folder.
 
+## Deep dives
+
+- [remote-id-droneid-captures](../../docs/dataset-cards/remote-id-droneid-captures.md) (dataset-cards)
+
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md)
 
 **Tags:** `remote-id`, `wireshark`

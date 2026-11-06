@@ -12,6 +12,10 @@ Pure JavaScript library generating MIL-STD-2525 (B/C/D/E) and APP-6 (B/D/E) mili
 
 **Hackathon notes:** npm install milsymbol; new ms.Symbol(sidc).asSVG() drops straight into a Leaflet or MapLibre marker.
 
+## Deep dives
+
+- [spatialillusions__milsymbol](../../docs/integration-cards/spatialillusions__milsymbol.md) (integration-cards)
+
 **Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Standards and interface specs](../concepts/standards.md)
 
 **Tags:** `mil-std-2525`, `app-6`, `svg`, `symbology`

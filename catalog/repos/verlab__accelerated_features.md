@@ -12,6 +12,11 @@ Lightweight local feature extractor and matcher (CVPR 2024) designed for speed o
 
 **Hackathon notes:** Runs on CPU in real time; good for an embedded/Jetson story.
 
+## Deep dives
+
+- [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
+- [verlab__accelerated_features](../../docs/integration-cards/verlab__accelerated_features.md) (integration-cards)
+
 **Concepts:** [Feature detection and matching](../concepts/feature-matching.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 
 **Tags:** `lightweight`, `cpu`

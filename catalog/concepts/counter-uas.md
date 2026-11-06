@@ -38,12 +38,14 @@ Detecting, tracking and identifying drones (Remote ID, RF, radar, vision) - defe
 - [dji_droneid](../repos/proto17__dji_droneid.md) - fit: low - Original reverse engineering of DJI DroneID with MATLAB scripts and a GNU Radio module to demodulate frames.
 - [DroneRF](../repos/al-sad__dronerf.md) - fit: low - MATLAB and Python code for drone detection and identification from RF signals, accompanying the DroneRF dataset.
 
-## Documents, talks, courses, datasets (14)
+## Documents, talks, courses, datasets (21)
 
 - [Anti-UAV Challenge](../resources/anti-uav-challenge-site.md) - competition - Site for the recurring Anti-UAV workshop and challenge with tracks for single and multiple UAV tracking in infrared video.
 - [Anti-UAV: A Large Multi-Modal Benchmark for UAV Tracking](../resources/anti-uav-benchmark-paper.md) - paper - Introduces the Anti-UAV RGB and thermal infrared video benchmark for UAV tracking and an evaluation protocol.
 - [Drone Security and the Mysterious Case of DJI's DroneID](../resources/ndss-2023-dji-droneid.md) - paper - Security analysis of DJI drones that reverse-engineers the DroneID broadcast and shows it is unencrypted, with an open receiver released.
 - [EUDIS Defence Hackathon, 3rd edition (with BraveTech EU)](../resources/eudis-defence-hackathon-2025.md) - competition - EU defence hackathon (17-19 October 2025, eight locations) with challenges on protecting space assets, space for defence (including navigation and coordination) and sovereign aerospace including drone countermeasures; a 
+- [European Defense Tech Hackathon series (Paris, London, Sheffield, Prague...)](../resources/european-defense-tech-hackathon.md) - program - Independent recurring European defense hackathon series.
+- [European Defense Tech Hackathon: Як стартапи в Мюнхені вирішують проблеми оборони України](../resources/militarnyi-edth-munich-2025.md) - blog - English: 'European Defense Tech Hackathon: how startups in Munich tackle Ukraine's defense problems'.
 - [FAA - Remote Identification of Drones](../resources/faa-remote-id.md) - doc - FAA guidance on the Remote ID rule: what drones must broadcast, standard vs broadcast-module compliance and operator obligations.
 - [Meatgrinder: Russian Tactics in the Second Year of Its Invasion of Ukraine](../resources/rusi-meatgrinder-2023.md) - report - RUSI special report on Russian battlefield adaptation, including the density of Russian electronic warfare and its heavy effect on Ukrainian UAVs, with a widely cited estimate of around 10,000 drone losses per month.
 - [Multi-Object Tracking for Automotive Systems (edX)](../resources/chalmers-multi-object-tracking.md) - course - edX course on single- and multi-object tracking: data association, GNN/JPDA/MHT, random finite sets and PMBM filters, with Matlab assignments.
@@ -53,5 +55,10 @@ Detecting, tracking and identifying drones (Remote ID, RF, radar, vision) - defe
 - [Remote ID (Open Drone ID) in PX4](../resources/px4-remote-id-docs.md) - doc - PX4 documentation for connecting Remote ID modules over MAVLink or DroneCAN and related failsafe behaviour.
 - [Stone Soup documentation and tutorials](../resources/stone-soup-docs.md) - doc - Official docs for the Stone Soup tracking framework with step-by-step tutorials from a single-target Kalman filter through data association (PDA, JPDA), multi-hypothesis tracking, GM-PHD, track initiation/deletion, senso
 - [Ukraine's Brave1, NATO launch EUR 10M competition for counter-drone technology](../resources/brave1-nato-counter-drone-ew-competition.md) - blog - Coverage of a Brave1-NATO competition funding counter-drone technology and navigation that works under electronic warfare.
+- [UNITE - Brave NATO: Brave1 and NATO Innovation HQ joint competition (2026)](../resources/brave-nato-unite-2026.md) - program - March 2026 programme pairing Ukrainian and NATO-country companies on joint solutions: first round EUR 10M, up to EUR 1M per project split between partners.
+- [«Інколи від РЕБ очікують більше, ніж вона може». Як радіоелектронна боротьба працює проти FPV і «Шахедів»](../resources/dou-how-reb-works-2025.md) - blog - English: 'Sometimes more is expected from EW than it can deliver.
 - [В Україні провели хакатон зі створення антидронових рішень (Anti-drone hackathon held in Ukraine)](../resources/militarnyi-anti-drone-hackathon-ukraine.md) - blog - Ukrainian-language report on a defense hackathon focused on counter-drone solutions.
+- [Завершився Jammer Hackathon, де шукали РЕБ/РЕР рішення для фронту. Які проєкти перемогли](../resources/dou-jammer-hackathon-winners-2024.md) - competition - English: 'Jammer Hackathon is over: which EW/ELINT projects won'.
+- [Шукають РЕБ/РЕР рішення для боротьби з ворожими дронами. Деталі про Jammer Hackathon](../resources/dou-jammer-hackathon-2024.md) - competition - English: 'EW/ELINT solutions against enemy drones wanted: Jammer Hackathon details'.
+- [Як модернізуються «Шахеди» і чи є там штучний інтелект. Розбір DOU](../resources/dou-how-shahed-works-2025.md) - blog - English: 'How Shaheds are being upgraded and whether there is AI inside.
 

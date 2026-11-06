@@ -12,6 +12,10 @@ Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, buil
 
 **Hackathon notes:** Run `make px4_sitl gz_x500` for SITL with Gazebo in under an hour. Feed VIO/SLAM poses via the ROS 2 uXRCE-DDS bridge or MAVLink ODOMETRY; disable GPS with EKF2_GPS_CTRL to test GPS-denied behaviour.
 
+## Deep dives
+
+- [px4__px4-autopilot](../../docs/integration-cards/px4__px4-autopilot.md) (integration-cards)
+
 **Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [GNSS/INS integration](../concepts/gnss-ins.md), [Visual(-inertial) odometry](../concepts/vio.md), [Simulation and HIL/SITL](../concepts/simulation.md)
 
 **Tags:** `ekf2`, `uorb`, `nuttx`, `vtol`, `sitl`
@@ -34,6 +38,7 @@ Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, buil
 - [ArduPilot](../repos/ardupilot__ardupilot.md) (alternative_to)
 - [ROS2 PX4 Offboard Example](../repos/ark-electronics__ros2_px4_offboard_example.md) (integrates_with)
 - [PX4 ROS 2 Interface Library](../repos/auterion__px4-ros2-interface-lib.md) (integrates_with)
+- [COEX Clover](../repos/copterexpress__clover.md) (integrates_with)
 - [Micro XRCE-DDS Agent](../repos/eprosima__micro-xrce-dds-agent.md) (integrates_with)
 - [Gazebo Sim (gz-sim)](../repos/gazebosim__gz-sim.md) (integrates_with)
 - [MAVROS](../repos/mavlink__mavros.md) (integrates_with)
@@ -52,6 +57,7 @@ Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, buil
 - [PX4 SITL Gazebo Classic](../repos/px4__px4-sitl_gazebo-classic.md) (integrates_with)
 - [px4_msgs](../repos/px4__px4_msgs.md) (depends_on)
 - [ROSflight firmware](../repos/rosflight__rosflight_firmware.md) (alternative_to)
+- [Auterion Skynode S and Auterion Visual Navigation](../resources/auterion-skynode-visual-navigation.md) (alternative_to)
 - [PX4 Developer Summit 2025 Recap](../resources/dronecode-px4-dev-summit-2025-recap.md) (explains)
 - [MAVLink 2 and Message Signing](../resources/mavlink-2-signing.md) (uses)
 - [MAVLink Common Message Set (common.xml)](../resources/mavlink-common-messages.md) (uses)

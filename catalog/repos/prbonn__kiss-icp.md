@@ -12,6 +12,11 @@ Minimal LiDAR odometry based on point-to-point ICP with adaptive thresholding, w
 
 **Hackathon notes:** `pip install kiss-icp` and run on a rosbag or KITTI folder in minutes. Add KISS-SLAM for loop closure.
 
+## Deep dives
+
+- [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
+- [prbonn__kiss-icp](../../docs/integration-cards/prbonn__kiss-icp.md) (integration-cards)
+
 **Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
 
 **Tags:** `icp`, `python`, `ros2`, `pip`

@@ -11,8 +11,16 @@ Coverage of a Brave1-NATO competition funding counter-drone technology and navig
 - Brave1 frames navigation under EW as a top battlefield need
 - Competitions emphasize rapid field testing
 
+## Deep dives
+
+- [programs-and-challenges](../../docs/landscape/programs-and-challenges.md) (landscape)
+
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Electronic warfare resilience](../concepts/ew-resilience.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
 
 **Tags:** `brave1`, `ukraine`, `nato`, `competition`
+
+## Referenced by
+
+- [UNITE - Brave NATO: Brave1 and NATO Innovation HQ joint competition (2026)](../resources/brave-nato-unite-2026.md) (cites)
 
 _Indexed by lane(s): defense-context_

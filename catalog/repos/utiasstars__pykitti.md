@@ -12,6 +12,10 @@ Python loaders for the KITTI raw and odometry datasets.
 
 **Hackathon notes:** pip install pykitti and point it at the dataset folders.
 
+## Deep dives
+
+- [kitti](../../docs/dataset-cards/kitti.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
 
 **Tags:** `kitti`, `loader`, `python`

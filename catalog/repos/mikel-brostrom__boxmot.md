@@ -12,6 +12,10 @@ Pluggable collection of modern multi-object trackers (ByteTrack, BoT-SORT, OC-SO
 
 **Hackathon notes:** pip install boxmot and wrap your detector; pick ByteTrack for speed.
 
+## Deep dives
+
+- [anti-uav](../../docs/dataset-cards/anti-uav.md) (dataset-cards)
+
 **Concepts:** [Tracking and data association](../concepts/target-tracking.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 
 **Tags:** `mot`, `bytetrack`, `yolo`, `reid`

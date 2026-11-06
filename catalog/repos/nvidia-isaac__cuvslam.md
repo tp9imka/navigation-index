@@ -12,6 +12,11 @@ NVIDIA's CUDA-accelerated visual odometry and SLAM library supporting mono to mu
 
 **Hackathon notes:** pip install the Python wheel on Jetson or x86 with CUDA; examples for EuRoC/KITTI.
 
+## Deep dives
+
+- [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
+- [nvidia-isaac__cuvslam](../../docs/integration-cards/nvidia-isaac__cuvslam.md) (integration-cards)
+
 **Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Visual SLAM](../concepts/visual-slam.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 
 **Tags:** `cuda`, `jetson`, `visual-odometry`, `python`
@@ -27,6 +32,8 @@ NVIDIA's CUDA-accelerated visual odometry and SLAM library supporting mono to mu
 
 - [Isaac ROS Visual SLAM](../repos/nvidia-isaac-ros__isaac_ros_visual_slam.md) (depends_on)
 - [cuVSLAM: CUDA accelerated visual odometry and mapping](../resources/cuvslam-2025.md) (has_code)
+- [Shield AI Hivemind autonomy stack](../resources/shield-ai-hivemind.md) (alternative_to)
+- [Spleenlab VISIONAIRY perception and GNSS-free navigation software](../resources/spleenlab-visionairy.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

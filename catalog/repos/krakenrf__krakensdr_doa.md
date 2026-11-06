@@ -28,6 +28,7 @@ Direction-of-arrival processing and web UI for the five-channel coherent KrakenS
 - [Stone Soup](../repos/dstl__stone-soup.md) (integrates_with)
 - [Heimdall DAQ firmware](../repos/krakenrf__heimdall_daq_fw.md) (same_org)
 - [Researchers home in on origins of Russia's Baltic GPS jamming](../resources/defensenews-baltic-jamming-origins-2025.md) (uses)
+- [infiniDome GPSdome / GPSdome 2 small-UAS anti-jam module](../resources/infinidome-gpsdome.md) (alternative_to)
 
 _Indexed by lane(s): defense-context_
 

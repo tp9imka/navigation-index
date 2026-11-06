@@ -17,6 +17,10 @@ Defines the AFRL/MIT MagNav challenge: remove the aircraft's own magnetic field 
 - Scalar magnetometer mixes Earth core, crustal anomaly and aircraft fields
 - Dataset released on Zenodo
 
+## Deep dives
+
+- [magnav-challenge-data](../../docs/dataset-cards/magnav-challenge-data.md) (dataset-cards)
+
 **Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `arxiv`, `afrl`, `mit`, `challenge`, `magnav`, `tolles-lawson`, `ml`

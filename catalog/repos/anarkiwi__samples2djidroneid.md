@@ -12,6 +12,10 @@ Decodes DJI DroneID (OcuSync 2.0) frames from SDR I/Q recordings, building on pr
 
 **Hackathon notes:** Needs high-rate I/Q captures; decoding is slow with interference.
 
+## Deep dives
+
+- [remote-id-droneid-captures](../../docs/dataset-cards/remote-id-droneid-captures.md) (dataset-cards)
+
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [RF localization and direction finding](../concepts/rf-localization.md)
 
 **Tags:** `dji`, `droneid`, `ocusync`, `sdr`

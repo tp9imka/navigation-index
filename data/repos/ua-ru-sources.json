@@ -1,0 +1,383 @@
+[
+ {
+  "id": "repo:copterexpress/clover",
+  "kind": "repo",
+  "name": "COEX Clover",
+  "url": "https://github.com/CopterExpress/clover",
+  "summary": "ROS-based software stack and Raspberry Pi image for the Clover educational quadcopter (PX4 underneath). Ships ArUco marker detection, marker-map navigation published to PX4 as a vision position estimate, downward optical-flow position hold, and a Gazebo simulator. Documentation is written in Russian first, with English translations.",
+  "why_it_matters": "One of the most complete Russian-language open stacks for GNSS-free indoor/outdoor flight: optical flow plus marker maps fed into the autopilot EKF, with documented parameter sets.",
+  "concepts": [
+   "concept:vio",
+   "concept:autopilot",
+   "concept:ros",
+   "concept:simulation",
+   "concept:mavlink-gcs"
+  ],
+  "tags": [
+   "lang:ru",
+   "aruco",
+   "optical-flow",
+   "px4",
+   "raspberry-pi",
+   "education",
+   "coex"
+  ],
+  "language": "C++",
+  "domains": [
+   "air"
+  ],
+  "maturity": "production",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Use the Docker/VM simulator image to fly ArUco-map navigation without hardware in hours. The marker-map => VPE path is a ready template for any external position source into PX4. ROS1 (Noetic) based; ROS2 only via community ports. Canonical repo is CopterExpress/clover; klever-coex/clover is a recent fork.",
+  "related": [
+   {
+    "id": "repo:px4/px4-autopilot",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:mavlink/mavros",
+    "rel": "depends_on"
+   },
+   {
+    "id": "res:coex-clover-docs-optical-flow-ru",
+    "rel": "part_of"
+   }
+  ]
+ },
+ {
+  "id": "repo:vohminv/rope-ladder-tracker",
+  "kind": "repo",
+  "name": "rope-ladder-tracker",
+  "url": "https://github.com/VohminV/rope-ladder-tracker",
+  "summary": "Python/OpenCV return-to-home for a quadcopter with a downward camera and no GPS. Instead of integrating optical flow, it stores keyframes ('rungs') on the way out and, on the way back, matches the nearest rung and truncates history, sending the residual offset to the controller. README and the companion Habr article are in Russian.",
+  "why_it_matters": "A small, readable alternative to drift-prone flow integration for the specific job of getting home when GNSS is gone; the same idea as teach-and-repeat.",
+  "concepts": [
+   "concept:vio",
+   "concept:feature-matching",
+   "concept:place-recognition"
+  ],
+  "tags": [
+   "lang:ru",
+   "optical-flow",
+   "return-to-home",
+   "teach-and-repeat",
+   "opencv"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Pure Python + OpenCV, runs on a laptop against recorded downward video. Integration with a flight controller is left to the user (README sends offsets; no MAVLink bridge verified). Good seed for a 'return home under jamming' demo.",
+  "related": []
+ },
+ {
+  "id": "repo:t1gr20an06-k/hackathon-blind-flight",
+  "kind": "repo",
+  "name": "Hackathon-Blind-Flight (team GORIZONT)",
+  "url": "https://github.com/t1Gr20an06-k/Hackathon-Blind-Flight",
+  "summary": "Russian-language hackathon solution for 'Полёт вслепую' (Blind flight): estimate aircraft position, ground speed and heading without GNSS by reconstructing a terrain profile (barometric altitude minus radar altimeter) and matching it against a DEM, TERCOM style.",
+  "why_it_matters": "A compact, documented TERCOM pipeline on real DEM data; shows how a GNSS-denied hackathon problem was posed and solved in 2026.",
+  "concepts": [
+   "concept:terrain-nav",
+   "concept:gis-mapping"
+  ],
+  "tags": [
+   "lang:ru",
+   "tercom",
+   "radar-altimeter",
+   "dem",
+   "hackathon"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Reads DEM + altimeter series; small dependency set. Useful as a baseline if a hackathon gives altimeter/DEM data. Accuracy figures are not independently checked here.",
+  "related": [
+   {
+    "id": "repo:solarwarlock/flyingblind_hakaton",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:alti3/python-tercom",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:solarwarlock/flyingblind_hakaton",
+  "kind": "repo",
+  "name": "FlyingBlind_Hakaton",
+  "url": "https://github.com/SolarWarlock/FlyingBlind_Hakaton",
+  "summary": "Second public solution to the same 'Полёт вслепую' hackathon task: web prototype that reads a GeoTIFF DEM and NMEA-0183 radar-altimeter messages, searches start point, speed and azimuth hypotheses by RMSE/correlation, and reports a confidence and a flat-terrain check.",
+  "why_it_matters": "Shows the practical details (UTM projection, bilinear DEM sampling, weighted scoring for informative relief, flat-terrain rejection) that a TERCOM demo needs.",
+  "concepts": [
+   "concept:terrain-nav",
+   "concept:gis-mapping"
+  ],
+  "tags": [
+   "lang:ru",
+   "tercom",
+   "nmea",
+   "dem",
+   "rasterio",
+   "hackathon"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "high",
+  "hackathon_notes": "rasterio + pyproj; includes a synthetic NMEA generator from a real DEM, which is handy for building test data fast. Single-commit repo.",
+  "related": [
+   {
+    "id": "repo:t1gr20an06-k/hackathon-blind-flight",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:mzahana/tercom_nav",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:kurligin/safe-route",
+  "kind": "repo",
+  "name": "safe-route (KosmoHackathon 2026)",
+  "url": "https://github.com/Kurligin/safe-route",
+  "summary": "Controller for an autonomous ground cargo platform in the amr-sim simulator plus an operator workstation, built for the 'Безопасный маршрут' case of KosmoHackathon 2026 (2nd place in the final). A Kalman filter fuses wheel odometry, gyro and lidar-to-wall-map matching to keep position in GNSS shadow, and speed is set from a 3 s pedestrian motion forecast.",
+  "why_it_matters": "Worked example of GNSS-shadow ground navigation with a scored simulator benchmark, written in Russian.",
+  "concepts": [
+   "concept:ground-vehicle-nav",
+   "concept:sensor-fusion",
+   "concept:lidar-slam",
+   "concept:obstacle-avoidance"
+  ],
+  "tags": [
+   "lang:ru",
+   "amr",
+   "kalman",
+   "lidar",
+   "hackathon",
+   "fastapi",
+   "react"
+  ],
+  "language": "Python",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "README reports position error and collision results against the organisers' baseline (their numbers, not verified here). Depends on the organisers' amr-sim, which may not be public.",
+  "related": []
+ },
+ {
+  "id": "repo:sasha-lobov/orb_slam3_system_local",
+  "kind": "repo",
+  "name": "ORB_SLAM3_system_local",
+  "url": "https://github.com/sasha-lobov/ORB_SLAM3_system_local",
+  "summary": "Pet project for local UAV navigation without GNSS: AirSim video streamed over ZeroMQ into monocular ORB-SLAM3, a ROS node converts NED/ENU frames, IMU data corrects monocular scale, and a PID controller tracks a trajectory. Russian README.",
+  "why_it_matters": "A minimal end-to-end sim loop (simulator => SLAM => control) that a team can copy to test VO under GNSS loss.",
+  "concepts": [
+   "concept:visual-slam",
+   "concept:simulation",
+   "concept:ros"
+  ],
+  "tags": [
+   "lang:ru",
+   "orb-slam3",
+   "airsim",
+   "zeromq",
+   "monocular"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Needs ORB-SLAM3 built separately and AirSim (archived upstream). Useful mainly as an architecture reference.",
+  "related": [
+   {
+    "id": "repo:uz-slamlab/orb_slam3",
+    "rel": "depends_on"
+   },
+   {
+    "id": "repo:microsoft/airsim",
+    "rel": "depends_on"
+   }
+  ]
+ },
+ {
+  "id": "repo:danamarkova/graduate_work",
+  "kind": "repo",
+  "name": "graduate_work (UAV INS module thesis)",
+  "url": "https://github.com/DanaMarkova/graduate_work",
+  "summary": "Russian graduate thesis code: 'Development of a UAV inertial navigation module using auxiliary navigation data'. C++ client for INS/GNSS fusion, a C# flight simulator with sensor emulation, a Node.js telemetry server and a Vue web UI.",
+  "why_it_matters": "Small, self-contained INS + aiding simulator with a visual front-end; good for teaching drift and aiding.",
+  "concepts": [
+   "concept:ins",
+   "concept:gnss-ins",
+   "concept:simulation"
+  ],
+  "tags": [
+   "lang:ru",
+   "thesis",
+   "ins",
+   "websocket"
+  ],
+  "language": "C",
+  "domains": [
+   "air"
+  ],
+  "maturity": "educational",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Mixed C++/C#/Node stack; setup cost moderate. Treat as reference, not a library.",
+  "related": []
+ },
+ {
+  "id": "repo:roosmax/diploma",
+  "kind": "repo",
+  "name": "Diploma: LoRa local navigation system (MIPT 2026)",
+  "url": "https://github.com/Roosmax/Diploma",
+  "summary": "MIPT (FAKT) 2026 diploma: local navigation for a UAV under GNSS suppression, correcting a strapdown INS with LoRa two-way-ranging (TWR) distances to ground beacons. Python code includes INS mechanization, an error-state EKF, a tightly coupled MSCKF variant, least-squares triangulation, an IMU simulator and parameter studies; thesis and slides are in Russian (.docx/.pptx).",
+  "why_it_matters": "Open, inspectable version of the 'ground beacons instead of satellites' approach that Ukrainian vendors also describe publicly (see Vyriy beacon navigation).",
+  "concepts": [
+   "concept:rf-localization",
+   "concept:ins",
+   "concept:sensor-fusion",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "lang:ru",
+   "lora",
+   "twr",
+   "beacons",
+   "eskf",
+   "thesis"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Pure Python simulation, no hardware needed; good basis for a beacon-ranging + INS demo. No README; read Code/main.py and the thesis.",
+  "related": []
+ },
+ {
+  "id": "repo:msemitkin/fit-gps-spoof-fix",
+  "kind": "repo",
+  "name": "fit-gps-spoof-fix",
+  "url": "https://github.com/msemitkin/fit-gps-spoof-fix",
+  "summary": "Scripts (packaged as an agent skill) that repair Garmin/Strava .fit activities corrupted by GNSS spoofing or jamming: tracks that teleport to a fixed far-away location, impossible speed spikes, phantom distance. Bilingual English/Ukrainian README written from the Ukrainian civilian experience of EW.",
+  "why_it_matters": "Encodes practical spoof signatures seen by civilians in Ukraine (position jumps, speed outliers) as simple detection rules; a quick start for track-level spoof detection.",
+  "concepts": [
+   "concept:gnss-interference",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "lang:uk",
+   "spoofing-detection",
+   "fit",
+   "garmin",
+   "civilian"
+  ],
+  "language": "Python",
+  "domains": [
+   "dismounted"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Tiny Python codebase; the detection heuristics can be lifted into any trajectory plausibility checker. Very new (Oct 2026).",
+  "related": []
+ },
+ {
+  "id": "repo:c-o-s-t-y-a/ardupilot_ua",
+  "kind": "repo",
+  "name": "ArduPilot Copter - українською",
+  "url": "https://github.com/c-o-s-t-y-a/ardupilot_ua",
+  "summary": "Unofficial Ukrainian translation of key sections of the ArduPilot Copter documentation, with a translation-status file and a built site. CC BY-SA 3.0 like the original.",
+  "why_it_matters": "Lowers the entry barrier for Ukrainian-speaking teams and operators configuring ArduPilot, including non-GPS navigation sections.",
+  "concepts": [
+   "concept:autopilot",
+   "concept:mavlink-gcs"
+  ],
+  "tags": [
+   "lang:uk",
+   "ardupilot",
+   "documentation",
+   "translation"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "educational",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Reference only. May lag the English wiki; the original wins on conflicts.",
+  "related": [
+   {
+    "id": "repo:ardupilot/ardupilot",
+    "rel": "extends"
+   }
+  ]
+ },
+ {
+  "id": "repo:citec-spbu/smart-uav-return-gnss-station",
+  "kind": "repo",
+  "name": "Smart-UAV-Return-GNSS-Station",
+  "url": "https://github.com/citec-spbu/Smart-UAV-Return-GNSS-Station",
+  "summary": "Student project from SPbU (CITEC) on returning a UAV to its launch point when both GNSS and the ground-station link are lost, targeting a RockPi 4 companion computer. Description in Russian; README is minimal and points to an external Notion board.",
+  "why_it_matters": "Same problem statement as many Ukrainian field requirements (lost link + lost GNSS => come home), from the Russian academic side.",
+  "concepts": [
+   "concept:vio",
+   "concept:ew-resilience"
+  ],
+  "tags": [
+   "lang:ru",
+   "return-to-home",
+   "rockpi",
+   "student"
+  ],
+  "language": "C",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Sparse docs; read the C sources directly. Reference value only.",
+  "related": []
+ },
+ {
+  "id": "repo:geoscan/geoscan_pioneer_max",
+  "kind": "repo",
+  "name": "Geoscan Pioneer Max",
+  "url": "https://github.com/geoscan/geoscan_pioneer_max",
+  "summary": "Meta-repository from Russian vendor Geoscan for the Pioneer Max educational quadcopter: system images, ROS workspace, web control apps and guides, documented in Russian.",
+  "why_it_matters": "Shows how a Russian educational drone ecosystem packages ROS, mission tools and indoor positioning for schools and competitions.",
+  "concepts": [
+   "concept:autopilot",
+   "concept:ros"
+  ],
+  "tags": [
+   "lang:ru",
+   "geoscan",
+   "education",
+   "ros"
+  ],
+  "language": "CMake",
+  "domains": [
+   "air"
+  ],
+  "maturity": "educational",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Hardware-specific; useful only as reference for packaging and docs. Last push March 2024.",
+  "related": []
+ }
+]

@@ -12,6 +12,10 @@ Winning-team code for the Google Smartphone Decimeter Challenge 2023, using fact
 
 **Hackathon notes:** MATLAB required. Read it for the pipeline design even if you reimplement in Python.
 
+## Deep dives
+
+- [gsdc](../../docs/dataset-cards/gsdc.md) (dataset-cards)
+
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [GNSS/INS integration](../concepts/gnss-ins.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md)
 
 **Tags:** `gsdc`, `smartphone`, `matlab`, `factor-graph`, `kaggle`

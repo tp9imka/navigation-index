@@ -32,11 +32,12 @@ Camera-IMU, LiDAR-IMU extrinsics, intrinsics, time offset, Allan variance.
 - [lidar_imu_calib](../repos/chennuo0125-hit__lidar_imu_calib.md) - fit: low - Automatic calibration of the extrinsic rotation between a 3D LiDAR and an IMU.
 - [AV-Matlab-SW](../repos/jaffarrell__av-matlab-sw.md) - fit: low - MATLAB software for Allan variance calculations accompanying a published article on IMU noise characterisation (Farrell et al.).
 
-## Documents, talks, courses, datasets (5)
+## Documents, talks, courses, datasets (6)
 
 - [Kalibr wiki: camera-IMU calibration tutorials](../resources/kalibr-wiki.md) - doc - Wiki for Kalibr covering multi-camera, camera-IMU and rolling-shutter calibration, target generation and data collection practice.
 - [Kalibr wiki: IMU Noise Model](../resources/kalibr-imu-noise-model-wiki.md) - doc - Practical explanation of white noise and random-walk bias parameters for IMUs, how to convert datasheet values to continuous/discrete form and how to inflate them for real use.
 - [OpenVINS documentation](../resources/openvins-docs.md) - doc - Documentation for the OpenVINS MSCKF-based visual-inertial estimator, including derivations of the propagation and update steps, calibration, evaluation tooling and ROS usage.
 - [Photogrammetry I & II](../resources/stachniss-photogrammetry-i-ii.md) - lecture-series - Recorded two-semester photogrammetry course (2015/16 playlist): camera models, direct linear transform, projective geometry, epipolar geometry, bundle adjustment, and image-based 3D reconstruction.
 - [Vision Algorithms for Mobile Robotics (UZH/ETH)](../resources/scaramuzza-vision-algorithms-mobile-robotics.md) - course - Graduate course building a monocular visual odometry pipeline step by step: image formation, calibration, feature detection, two-view geometry, P3P+RANSAC, bundle adjustment, KLT tracking, place recognition, visual-inert
+- [Навигация по Optical Flow · Clover](../resources/coex-clover-docs-optical-flow-ru.md) - doc - English: 'Optical Flow navigation - Clover docs'.
 

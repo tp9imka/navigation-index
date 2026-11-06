@@ -15,7 +15,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [Terrain-relative navigation with a particle filter](../samples/terrain-relative-nav-pf.md) - A stdlib-only simulation of TERCOM/TRN: an aircraft with a biased INS and a radar altimeter matches its measured terrain profile against a seeded synthetic DEM with a particle filter that also estimates the INS velocity 
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) - Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold.
 
-## Repositories (87)
+## Repositories (89)
 
 - [PythonRobotics](../repos/atsushisakai__pythonrobotics.md) - fit: high - Large collection of readable Python implementations of robotics algorithms: localization (EKF, particle filter), SLAM, path planning (A*, RRT*, D*, state lattice), path tracking and more, with animations.
 - [Kalman and Bayesian Filters in Python (book)](../repos/rlabbe__kalman-and-bayesian-filters-in-python.md) - fit: high - Free interactive book of Jupyter notebooks teaching Kalman, EKF, UKF and particle filters with an intuition-first approach.
@@ -45,6 +45,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [ROSCon UK 2025 State Estimation workshop](../repos/locusrobotics__roscon-uk-2025-se-workshop.md) - fit: high - Materials for an eight-task ROS 2 state estimation workshop at ROSCon UK 2025, with a Docker image, recorded bags and step-by-step exercises using robot_localization and fuse.
 - [Starlink LEO-PNT](../repos/przemyslawpiekarski__starlink-leo-pnt.md) - fit: high - Passive positioning using Starlink downlink signals as signals of opportunity: SDR capture, blind OFDM analysis, Doppler extraction, TDOA/FDOA solver and EKF with TLE-based orbits.
 - [GeoAnchor](../repos/yusufgunel__geoanchor.md) - fit: high - Recent project fusing visual odometry with satellite-map matching in a particle filter for GNSS-denied UAV flight, with an explicit notion of when the map match should not be trusted; evaluated on UAV-VisLoc flights and 
+- [Diploma: LoRa local navigation system (MIPT 2026)](../repos/roosmax__diploma.md) - fit: high - MIPT (FAKT) 2026 diploma: local navigation for a UAV under GNSS suppression, correcting a strapdown INS with LoRa two-way-ranging (TWR) distances to ground beacons.
 - [Autoware](../repos/autowarefoundation__autoware.md) - fit: medium - Meta-repository for Autoware, the open-source ROS 2 autonomous driving stack covering localization (NDT, EKF), perception, planning and control.
 - [FAST-LIVO2](../repos/hku-mars__fast-livo2.md) - fit: medium - Direct LiDAR-inertial-visual odometry fusing LiDAR, camera and IMU in a sequential ESIKF update with a unified voxel map.
 - [VINS-Fusion](../repos/hkust-aerial-robotics__vins-fusion.md) - fit: medium - Extension of VINS-Mono supporting mono+IMU, stereo, and stereo+IMU, with optional loose fusion of global sensors such as GPS.
@@ -87,6 +88,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [KF-HomoVAL](../repos/lizhipro__kf-homoval.md) - fit: medium - 6-DoF absolute visual localization for UAVs built on deep homography estimation between the drone view and a reference map, smoothed with a Kalman filter.
 - [AuvEstimator](../repos/alliwong__auvestimator.md) - fit: medium - Work-in-progress EKF that fuses DVL, IMU and barometer data for AUV state estimation, with a ROS wrapper.
 - [CoLRIO](../repos/pengyu-team__co-lrio.md) - fit: medium - ROS 2 centralized lidar-ranging-inertial state estimation for robotic swarms that offloads optimization to a server and uses UWB inter-robot ranges (ICRA 2024).
+- [safe-route (KosmoHackathon 2026)](../repos/kurligin__safe-route.md) - fit: medium - Controller for an autonomous ground cargo platform in the amr-sim simulator plus an operator workstation, built for the 'Безопасный маршрут' case of KosmoHackathon 2026 (2nd place in the final).
 - [TERCOM via particle filter](../repos/sotostrk__tercom-via-particle-filter-uav-state-estimation-mae6760-project-.md) - fit: medium - MATLAB SIR particle filter estimating UAV position from terrain contour matching in GPS-denied flight.
 - [openpilot](../repos/commaai__openpilot.md) - fit: low - Open driver-assistance robotics stack whose localization uses GNSS (via laika) fused with IMU and vision.
 - [Baidu Apollo](../repos/apolloauto__apollo.md) - fit: low - Baidu's open autonomous driving platform, including the multi-sensor fusion localization module combining GNSS RTK, IMU and lidar map matching.
@@ -105,7 +107,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [PVI polarization navigation dataset](../repos/ts-fupeng__pvi-dataset.md) - fit: low - Dataset combining stereo camera, IMU, polarization camera and high-precision GPS for polarization-aided navigation research.
 - [SMARC navigation](../repos/halajun__smarc_navigation.md) - fit: low - Localization and SLAM components for the SMARC AUVs (KTH), including EKF localization with IMU, DVL and multibeam sonar against a feature map.
 
-## Documents, talks, courses, datasets (64)
+## Documents, talks, courses, datasets (68)
 
 - [A micro Lie theory for state estimation in robotics](../resources/sola-micro-lie-theory.md) - paper - Tutorial paper giving just enough Lie theory (groups, exponential map, adjoint, Jacobians, uncertainty on manifolds) to write correct estimators for 3D pose; it is the basis of Solà's 'Lie theory for the roboticist' cour
 - [Adaptable Navigation Systems (ANS)](../resources/darpa-adaptable-navigation-systems.md) - doc - DARPA program page for ANS, which pursued GPS-quality PNT in denied environments through precision inertial sensors (PINS) and the All Source Positioning and Navigation (ASPN) sensor-fusion effort.
@@ -157,6 +159,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [ROSCon UK 2025 - State Estimation for Mobile Robotics Workshop](../resources/nav2-roscon-uk-2025-state-estimation-workshop.md) - masterclass - Hands-on workshop material comparing two ROS 2 state-estimation approaches: Kalman filtering with robot_localization (EKF/UKF, covariance tuning, frames, rate handling) and factor-graph fixed-lag smoothing with fuse.
 - [Self-Driving Cars Specialization (University of Toronto)](../resources/coursera-self-driving-cars-specialization.md) - course - Four-course specialization covering vehicle dynamics and control, state estimation and localization, visual perception, and motion planning, using the CARLA simulator for assignments.
 - [Sensor Fusion and Non-linear Filtering for Automotive Systems (edX)](../resources/chalmers-sensor-fusion-nonlinear-filtering.md) - course - Self-paced edX course on Bayesian filtering: state-space and motion/measurement models, Kalman filter, EKF/UKF/CKF, and particle filters, with Matlab assignments building a personal filtering toolbox.
+- [Shield AI Hivemind autonomy stack](../resources/shield-ai-hivemind.md) - product - Hivemind is Shield AI's onboard autonomy software, flown on its V-BAT and on partner aircraft.
 - [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook.md) - book - Community-written handbook released in three parts during 2024-2025 and published by Cambridge University Press; the free PDF is mirrored on the editors' project page.
 - [SLAM toolbox for Matlab (EKF-SLAM teaching code)](../resources/sola-slamtb-ekf-slam-toolbox.md) - course - Solà's Matlab EKF-SLAM toolbox, used as teaching material for his SLAM courses: modular robots, sensors, landmark parameterizations (including inverse-depth points and lines) and graph-SLAM variants.
 - [Stanford NAV Lab (Grace Gao)](../resources/stanford-navlab.md) - doc - Grace Gao's lab working on robust navigation for autonomous systems: GNSS in urban environments, sensor fusion, integrity and lunar PNT.
@@ -167,8 +170,11 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [SubT-MRS Dataset](../resources/cmu-subt-mrs-dataset.md) - dataset - Multi-robot, multi-modal SLAM data in degraded environments - caves, tunnels, urban and off-road - with RGB, lidar, thermal and inertial sensing; used in ICCV SLAM challenges.
 - [The invariant extended Kalman filter as a stable observer](../resources/barrau-bonnabel-invariant-ekf.md) - paper - Foundational paper showing that for group-affine systems the invariant EKF has error dynamics independent of the trajectory, giving stability guarantees standard EKFs lack.
 - [UASTHN: Uncertainty-Aware Deep Homography Estimation for UAV Satellite-Thermal Geo-localization](../resources/uasthn-uncertainty-thermal-2025.md) - paper - Adds uncertainty estimation to satellite-thermal homography so a navigation filter can weight or reject visual fixes.
+- [UK DASA Early Market Engagement: PNT problem statement for uncrewed systems](../resources/uk-dasa-emp-pnt-problem-statement-2024.md) - program - Published September 2024.
 - [Understanding Sensor Fusion and Tracking (MATLAB Tech Talks)](../resources/mathworks-understanding-sensor-fusion-tracking.md) - video - Short video series on sensor fusion for autonomous systems: what sensor fusion is, IMU/magnetometer orientation estimation, fusing GPS and IMU for pose with an asynchronous EKF, single- and multi-object tracking, and tra
 - [Using the ECL EKF (EKF2)](../resources/px4-ekf2-tuning-guide.md) - doc - PX4 guide to its EKF2 estimator: which sensors it fuses (IMU, GNSS, baro, mag, optical flow, external vision, range), how to configure and tune them, and how to read innovation logs.
 - [Using Vision or Motion Capture Systems for Position Estimation](../resources/px4-external-position-estimation.md) - doc - How to feed external vision or mocap poses into PX4 EKF2 via MAVLink or ROS, including frame conventions and EKF2_EV_* parameters.
 - [Visual Inertial Odometry (VIO) in PX4](../resources/px4-visual-inertial-odometry.md) - doc - Guide to setting up a VIO pipeline on a companion computer and fusing it in PX4 for GPS-free flight.
+- [Комбіноване керування безпілотними літальними апаратами в умовах радіоелектронної боротьби](../resources/lpnu-klushyn-combined-control-under-ew-2025.md) - paper - English: 'Combined UAV control under electronic warfare'.
+- [Інтелектуальна кіберфізична система для навігації БПЛА в умовах дії засобів РЕБ противника](../resources/khmnu-berezka-cps-uav-nav-under-ew-2026.md) - paper - English: 'Intelligent cyber-physical system for UAV navigation under enemy EW'.
 

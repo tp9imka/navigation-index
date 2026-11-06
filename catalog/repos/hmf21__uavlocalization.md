@@ -12,6 +12,10 @@ Geo-localization system for aerial platforms that first retrieves the right sate
 
 **Hackathon notes:** Use its pipeline layout as the backbone of a demo; datasets need a separate download. Conda env file provided.
 
+## Deep dives
+
+- [aerialvl](../../docs/dataset-cards/aerialvl.md) (dataset-cards)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Place recognition and loop closure](../concepts/place-recognition.md), [Feature detection and matching](../concepts/feature-matching.md)
 
 **Tags:** `uav`, `retrieval`, `alignment`, `pytorch`

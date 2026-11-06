@@ -24,9 +24,11 @@ Star trackers, sun/sky polarization, celestial fixes.
 - [navalm](../repos/kq6up__navalm.md) - fit: low - Nautical almanac and celestial sight reduction for Unix/Linux with CLI, ncurses and web interfaces.
 - [PVI polarization navigation dataset](../repos/ts-fupeng__pvi-dataset.md) - fit: low - Dataset combining stereo camera, IMU, polarization camera and high-precision GPS for polarization-aided navigation research.
 
-## Documents, talks, courses, datasets (3)
+## Documents, talks, courses, datasets (5)
 
 - [GAO-21-320SP: Defense Navigation Capabilities - DOD Is Developing Positioning, Navigation, and Timing Technologies to Complement GPS](../resources/gao-21-320sp-gps-alternatives.md) - report - Technology assessment of DoD's alternative PNT efforts (inertial, vision, celestial, magnetic, signals of opportunity, clocks), with maturity status and challenges.
+- [Honeywell Vision Aided Navigation (Alternative Navigation Suite)](../resources/honeywell-vision-aided-navigation.md) - product - Honeywell's VAN correlates live visible or IR imagery against onboard reference maps for an absolute fix, paired with its inertial units.
 - [OpenSky: A Modular and Open-Source Simulator of Sky Polarization Measurements](../resources/opensky-sky-polarization-simulator-2024.md) - paper - Open simulator of what a polarimetric camera sees of the sky (intensity, angle and degree of polarization), validated against real captures, for developing polarization compasses.
 - [tetra3 documentation](../resources/tetra3-docs.md) - doc - Usage and API documentation for the tetra3 lost-in-space star plate solver, including database generation and solving images.
+- [Навигация без GPS, которая уже работает](../resources/habr-nav-without-gps-overview-2025.md) - blog - English: 'Navigation without GPS that already works'.
 

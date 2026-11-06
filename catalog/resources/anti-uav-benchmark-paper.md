@@ -11,6 +11,10 @@ Introduces the Anti-UAV RGB and thermal infrared video benchmark for UAV trackin
 - Thermal IR matters for night and small-target tracking
 - Targets frequently disappear, so trackers must handle absence
 
+## Deep dives
+
+- [anti-uav](../../docs/dataset-cards/anti-uav.md) (dataset-cards)
+
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Tracking and data association](../concepts/target-tracking.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `anti-uav`, `thermal`

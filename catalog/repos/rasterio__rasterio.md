@@ -12,6 +12,11 @@ Pythonic raster I/O on top of GDAL: read/write GeoTIFF and COG, windowed reads, 
 
 **Hackathon notes:** pip wheels include GDAL; use windowed reads to crop tiles around a vehicle position.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [rasterio__rasterio](../../docs/integration-cards/rasterio__rasterio.md) (integration-cards)
+
 **Concepts:** [GIS, maps and geospatial data](../concepts/gis-mapping.md), [Terrain-relative navigation](../concepts/terrain-nav.md)
 
 **Tags:** `geotiff`, `dem`, `raster`

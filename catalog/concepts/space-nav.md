@@ -18,7 +18,7 @@ Orbit determination, LEO-PNT, spacecraft navigation.
 - [JointLoc](../repos/luoxubo__jointloc.md) - fit: low - Real-time visual localization framework for planetary UAVs that jointly uses relative and absolute pose estimation against orbital maps.
 - [FederNet](../repos/sirbastiano__federnet.md) - fit: low - Terrain relative navigation for planetary landing that detects craters with a Mask R-CNN and matches them to a catalog using projective invariants.
 
-## Documents, talks, courses, datasets (19)
+## Documents, talks, courses, datasets (21)
 
 - [Ad Astra: Navigation with Megaconstellation LEO Satellites (GRASP on Robotics)](../resources/kassas-ad-astra-leo-grasp-2024.md) - talk - UPenn GRASP seminar by Zak Kassas on opportunistic PNT from Starlink, OneWeb and other LEO megaconstellations, addressing unknown signal structure, poor ephemerides and clock instability with his STAN (simultaneous track
 - [Enter LEO on the GNSS Stage: Navigation with Starlink Satellites](../resources/kassas-starlink-navigation.md) - paper - Opportunistic navigation using Starlink downlink signals without cooperation from the operator, describing two ways to extract navigation observables from unknown signals.
@@ -37,6 +37,8 @@ Orbit determination, LEO-PNT, spacecraft navigation.
 - [Stanford NAV Lab (Grace Gao)](../resources/stanford-navlab.md) - doc - Grace Gao's lab working on robust navigation for autonomous systems: GNSS in urban environments, sensor fusion, integrity and lunar PNT.
 - [Survey on positioning technology based on signal of opportunity from low earth orbit](../resources/leo-soop-positioning-survey-2025.md) - paper - Open-access survey of LEO signals-of-opportunity positioning: Doppler methods, error sources, and extracting observables from signals never designed for navigation (unknown codes, poor onboard clocks).
 - [The First Carrier Phase Tracking and Positioning Results With Starlink LEO Satellite Signals](../resources/kassas-2022-starlink-carrier-phase.md) - paper - IEEE TAES letter showing carrier-phase tracking of Starlink signals with unknown structure and positioning from several satellites.
+- [TrustPoint - C-band LEO PNT](../resources/trustpoint-leo-pnt.md) - company - TrustPoint is developing a commercial C-band LEO navigation constellation.
 - [Unveiling Starlink for PNT](../resources/ion-webinar-kozhaya.md) - talk - Presents work on exploiting Starlink downlink signals for opportunistic positioning, including signal structure discovery and Doppler/pseudorange-based navigation results.
 - [UT Austin Radionavigation Laboratory (talks, papers, news)](../resources/ut-radionavigation-lab.md) - blog - Lab site of Todd Humphreys' group, indexing talks, briefings and papers on GNSS spoofing detection, LEO interference monitoring, Starlink-based PNT and precise automotive positioning.
+- [Xona Space Systems Pulsar LEO PNT constellation](../resources/xona-pulsar-leo-pnt.md) - product - Xona is building Pulsar, a commercial LEO constellation broadcasting dedicated L-band navigation signals with authentication.
 

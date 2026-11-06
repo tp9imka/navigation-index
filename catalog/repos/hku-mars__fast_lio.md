@@ -12,6 +12,11 @@ Computationally efficient LiDAR-inertial odometry using an iterated error-state 
 
 **Hackathon notes:** Easiest LIO to get running; Livox drivers supported. No loop closure; pair with a localization or loop-closure add-on.
 
+## Deep dives
+
+- [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
+- [hku-mars__fast_lio](../../docs/integration-cards/hku-mars__fast_lio.md) (integration-cards)
+
 **Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
 
 **Tags:** `iekf`, `ikd-tree`, `livox`, `ros1`

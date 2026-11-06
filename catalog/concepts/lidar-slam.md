@@ -4,7 +4,7 @@
 
 LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 
-## Repositories (54)
+## Repositories (55)
 
 - [FAST-LIO / FAST-LIO2](../repos/hku-mars__fast_lio.md) - fit: high - Computationally efficient LiDAR-inertial odometry using an iterated error-state Kalman filter and incremental k-d tree map, mapping raw points directly.
 - [LIO-SAM](../repos/tixiaoshan__lio-sam.md) - fit: high - Tightly coupled LiDAR-inertial odometry via factor-graph smoothing, with optional GPS factors and loop closure.
@@ -51,6 +51,7 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [Swarm-SLAM](../repos/lajoiepy__cslam.md) - fit: medium - ROS 2 decentralized collaborative SLAM supporting LiDAR, stereo and RGB-D, with sparse inter-robot communication.
 - [MCD: Multi-Campus Dataset](../repos/mcdviral__mcdviral.github.io.md) - fit: medium - Site repo for MCD, a multi-campus dataset across Asia and Europe with spinning and non-repetitive lidar, stereo cameras, IMUs, UWB ranging, survey-grade prior maps and continuous-time ground truth.
 - [CoLRIO](../repos/pengyu-team__co-lrio.md) - fit: medium - ROS 2 centralized lidar-ranging-inertial state estimation for robotic swarms that offloads optimization to a server and uses UWB inter-robot ranges (ICRA 2024).
+- [safe-route (KosmoHackathon 2026)](../repos/kurligin__safe-route.md) - fit: medium - Controller for an autonomous ground cargo platform in the amr-sim simulator plus an operator workstation, built for the 'Безопасный маршрут' case of KosmoHackathon 2026 (2nd place in the final).
 - [LeGO-LOAM](../repos/robustfieldautonomylab__lego-loam.md) - fit: low - Lightweight ground-optimized LiDAR odometry and mapping that segments ground to speed up feature extraction on UGVs.
 - [R3LIVE](../repos/hku-mars__r3live.md) - fit: low - Tightly coupled LiDAR-inertial-visual estimation and RGB-colored mapping package.
 - [LI-Calib](../repos/april-zju__lidar_imu_calib.md) - fit: low - Targetless LiDAR-IMU calibration based on continuous-time batch estimation (IROS 2020).

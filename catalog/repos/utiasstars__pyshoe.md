@@ -12,6 +12,10 @@ Open Python foot-mounted INS from UTIAS with a public inertial dataset and sever
 
 **Hackathon notes:** Python; dataset download needed. Strap an IMU to a boot and compare detectors.
 
+## Deep dives
+
+- [pyshoe](../../docs/dataset-cards/pyshoe.md) (dataset-cards)
+
 **Concepts:** [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `zupt`, `foot-mounted`, `dataset`

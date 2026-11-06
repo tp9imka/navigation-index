@@ -12,6 +12,10 @@ Code and configs for benchmarking drone detection and tracking across Anti-UAV, 
 
 **Hackathon notes:** Use the COCO conversion scripts first.
 
+## Deep dives
+
+- [anti-uav](../../docs/dataset-cards/anti-uav.md) (dataset-cards)
+
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Tracking and data association](../concepts/target-tracking.md)
 
 **Tags:** `drone-vs-bird`, `mav-vid`, `coco`

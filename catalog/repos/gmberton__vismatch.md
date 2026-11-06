@@ -12,6 +12,11 @@ Wrapper exposing 50+ image matching models behind one interface (formerly image-
 
 **Hackathon notes:** Best first stop for matcher selection during the hackathon.
 
+## Deep dives
+
+- [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
+- [gmberton__vismatch](../../docs/integration-cards/gmberton__vismatch.md) (integration-cards)
+
 **Concepts:** [Feature detection and matching](../concepts/feature-matching.md)
 
 **Tags:** `wrapper`, `benchmark`

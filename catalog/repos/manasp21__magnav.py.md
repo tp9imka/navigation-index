@@ -26,6 +26,8 @@ Python port of MagNav.jl for magnetic navigation research.
 ## Referenced by
 
 - [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md) (alternative_to)
+- [Q-CTRL Ironstone Opal quantum-assured magnetic navigation](../resources/qctrl-ironstone-opal.md) (alternative_to)
+- [SandboxAQ AQNav geomagnetic navigation](../resources/sandboxaq-aqnav.md) (alternative_to)
 - [MagNav.jl quickstart: Tolles-Lawson and EKF on the SGL 2020 flight](../samples/magnav-quickstart.md) (explains)
 
 _Indexed by lane(s): alt-nav, defense-context_

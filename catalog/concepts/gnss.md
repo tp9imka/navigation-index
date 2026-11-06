@@ -75,7 +75,7 @@ GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 - [OSNMA_ublox](../repos/axelbjork__osnma_ublox.md) - fit: low - Jupyter-based real-time OSNMA authentication of u-blox receiver data in Python.
 - [Beidou-SDR-SIM](../repos/haiyang-wong__beidou-sdr-sim.md) - fit: low - Open-source generator for BeiDou B1C baseband signals for SDR playback or file output.
 
-## Documents, talks, courses, datasets (42)
+## Documents, talks, courses, datasets (45)
 
 - [2025 PNT Symposium - Day 2 Invited Speaker Presentation Videos](../resources/stanford-pnt-symposium-2025-invited-videos.md) - video - Video album of invited speaker talks from the 2025 Stanford PNT Symposium, featuring speakers such as Brad Parkinson and Jade Morton.
 - [A Software-Defined GPS and Galileo Receiver: A Single-Frequency Approach](../resources/borre-software-defined-gps-galileo-receiver.md) - book - Classic textbook that walks through a complete MATLAB GPS software receiver: acquisition, code/carrier tracking, navigation decoding and positioning.
@@ -113,7 +113,10 @@ GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 - [Principles of GNSS, Inertial, and Multisensor Integrated Navigation Systems, Second Edition](../resources/groves-pnt-book-2e.md) - book - Standard reference on satellite, inertial and terrestrial radio navigation and their integration, including INS/GNSS integration architectures, dead reckoning, feature matching and integrity monitoring.
 - [QZSS Performance Standards and Interface Specifications (IS-QZSS)](../resources/qzss-is-qzss.md) - standard - Japan's QZSS interface specifications covering GPS-compatible signals, the L6 CLAS centimetre-level augmentation and MADOCA PPP services.
 - [rtklibexplorer blog](../resources/rtklibexplorer-blog.md) - blog - Long-running practitioner blog on getting centimetre-level RTK/PPK from low-cost u-blox receivers with the demo5 RTKLIB fork, with configuration walk-throughs and data analysis.
+- [Safran Skydel simulation engine / GSG-8 GNSS simulator (ex-Orolia)](../resources/safran-skydel-gsg8.md) - product - Skydel is the SDR/GPU-based simulation engine behind Safran's GSG-8 simulators, with built-in jamming and spoofing scenarios, CRPA wavefront variants and LEO PNT signal options; Safran offers it to universities through a
 - [SCPNT Photo and Video Gallery (PNT Symposium recordings archive)](../resources/stanford-scpnt-video-gallery.md) - video - Archive index of Stanford PNT Symposium recordings going back to 2007, organised by year into student and invited-speaker albums.
+- [SDR приемник GPS на микроконтроллере](../resources/habr-mcu-gps-sdr-2024.md) - blog - English: 'SDR GPS receiver on a microcontroller'.
+- [Spirent GSS7000 and PNT X GNSS/PNT simulators](../resources/spirent-gss7000-pntx.md) - product - Spirent's lab simulators generate multi-GNSS RF with controllable interference and spoofing (meaconing, trajectory spoofing, nav data spoofing) for hardware-in-the-loop receiver testing; PNT X extends this to combined PN
 - [Stanford Center for Position, Navigation and Time (SCPNT) / GPS Lab](../resources/stanford-scpnt.md) - doc - Home of the Stanford GPS Lab and the annual PNT symposium; hosts papers and presentations on integrity, interference monitoring, spoofing and alternative PNT.
 - [Stanford GPS Laboratory](../resources/stanford-gps-lab.md) - doc - Research group site with publications and theses on GNSS integrity, interference detection and localization, and navigation for aviation.
 - [Stanford NAV Lab (Grace Gao)](../resources/stanford-navlab.md) - doc - Grace Gao's lab working on robust navigation for autonomous systems: GNSS in urban environments, sensor fusion, integrity and lunar PNT.

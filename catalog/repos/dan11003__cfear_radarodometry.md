@@ -12,6 +12,11 @@ Learning-free spinning-radar odometry that filters returns to sparse oriented su
 
 **Hackathon notes:** ROS 1; benchmarked on Oxford Radar RobotCar and Boreas.
 
+## Deep dives
+
+- [boreas](../../docs/dataset-cards/boreas.md) (dataset-cards)
+- [oxford-radar-robotcar](../../docs/dataset-cards/oxford-radar-robotcar.md) (dataset-cards)
+
 **Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md)
 
 **Tags:** `spinning-radar`, `oxford-radar`, `ros1`

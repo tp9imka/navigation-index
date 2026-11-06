@@ -8,7 +8,7 @@ Global descriptors, image retrieval, LiDAR place recognition.
 
 - [Drone frame to orthophoto geolocalization with LightGlue](../samples/visual-geolocalization-lightglue.md) - Matches a nadir drone frame against a georeferenced satellite or orthophoto tile with SuperPoint + LightGlue, fits a MAGSAC homography with OpenCV, and maps the frame centre through the GeoTIFF geotransform to lat/lon.
 
-## Repositories (37)
+## Repositories (38)
 
 - [ORB-SLAM3](../repos/uz-slamlab__orb_slam3.md) - fit: high - Visual, visual-inertial and multi-map SLAM supporting monocular, stereo and RGB-D cameras with pinhole and fisheye models, using a map atlas to survive tracking loss.
 - [hloc](../repos/cvg__hierarchical-localization.md) - fit: high - Toolbox for hierarchical visual localization: global retrieval (NetVLAD etc.) to find candidate images, then local feature matching (SuperPoint, LightGlue...) and PnP against an SfM model.
@@ -43,12 +43,13 @@ Global descriptors, image retrieval, LiDAR place recognition.
 - [ReFeree](../repos/sparolab__referee.md) - fit: medium - Lightweight radar global descriptor for radar place recognition (RA-L 2024).
 - [VPAIR](../repos/aervisloc__vpair.md) - fit: medium - Repo for VPAIR, an aerial visual place recognition dataset matching low-altitude flight imagery to reference orthophotos.
 - [U2S-CVGL (scale-aware UAV-to-satellite)](../repos/uav-avl__u2s-cvgl.md) - fit: medium - Scale-aware cross-view geo-localization method for matching UAV views to satellite imagery when the altitude-driven scale difference is unknown.
+- [rope-ladder-tracker](../repos/vohminv__rope-ladder-tracker.md) - fit: medium - Python/OpenCV return-to-home for a quadcopter with a downward camera and no GPS.
 - [Visual Locator](../repos/rtwotwo__visual-locator.md) - fit: medium - Absolute drone positioning by image retrieval (SelaVPR-style ViT features) over cropped satellite tiles followed by registration with SIFT+RANSAC or SuperPoint+SuperGlue.
 - [maplab](../repos/ethz-asl__maplab.md) - fit: low - Modular multi-session, multi-modal mapping framework with map merging, optimization and localization against saved maps.
 - [LPN (Local Pattern Network)](../repos/wtyhub__lpn.md) - fit: low - PyTorch implementation of a cross-view geo-localization method that pools features in rings around the image center to capture contextual local patterns.
 - [Open-RadVLAD](../repos/mttgdd__open-radvlad.md) - fit: low - Fast radar place recognition using VLAD-style aggregation over radar polar scans.
 
-## Documents, talks, courses, datasets (11)
+## Documents, talks, courses, datasets (13)
 
 - [AnyLoc: Towards Universal Visual Place Recognition](../resources/anyloc-universal-vpr-2023.md) - paper - Shows that unsupervised aggregation of foundation-model (DINOv2) features gives place recognition that generalizes across domains including aerial imagery, without VPR-specific training.
 - [DCL-SLAM: A Distributed Collaborative LiDAR SLAM Framework for a Robotic Swarm](../resources/dcl-slam-paper.md) - paper - Describes a fully distributed lidar C-SLAM using compact descriptors for inter-robot place recognition.
@@ -61,4 +62,6 @@ Global descriptors, image retrieval, LiDAR place recognition.
 - [Sample4Geo: Hard Negative Sampling For Cross-View Geo-Localisation](../resources/sample4geo-2023.md) - paper - Shows that a simple contrastive setup with careful hard-negative sampling performs strongly on cross-view geo-localization benchmarks.
 - [The University of Michigan North Campus Long-Term Vision and LIDAR Dataset](../resources/umich-nclt-dataset.md) - dataset - Segway robot sessions over many months on one campus with lidar, omnidirectional camera, GPS, IMU and odometry.
 - [Vision Algorithms for Mobile Robotics (UZH/ETH)](../resources/scaramuzza-vision-algorithms-mobile-robotics.md) - course - Graduate course building a monocular visual odometry pipeline step by step: image formation, calibration, feature detection, two-view geometry, P3P+RANSAC, bundle adjustment, KLT tracking, place recognition, visual-inert
+- [Как я научил квадрокоптер возвращаться домой без GPS: алгоритм «верёвочной лестницы»](../resources/habr-rope-ladder-return-home-2025.md) - blog - English: 'How I taught a quadcopter to return home without GPS: the rope-ladder algorithm'.
+- [Уловки, подсмотренные у медоносных пчёл, помогают дронам возвращаться домой без GPS](../resources/habr-bee-nav-translation-2026.md) - blog - English: 'Tricks borrowed from honeybees help drones return home without GPS'.
 

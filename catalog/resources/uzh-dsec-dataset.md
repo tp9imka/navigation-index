@@ -11,6 +11,10 @@ Stereo event and frame cameras plus lidar and RTK GNSS on a car, including night
 - Sensors: stereo event, stereo RGB, lidar, RTK GNSS
 - Good for low-light perception
 
+## Deep dives
+
+- [event-camera-datasets](../../docs/dataset-cards/event-camera-datasets.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
 
 **Tags:** `event-camera`, `driving`

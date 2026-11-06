@@ -11,6 +11,10 @@ Zenodo record of airborne magnetometer, INS and GNSS flight data with datasheets
 - Real flight lines with multiple magnetometers
 - Ground truth from GNSS for evaluating nav error
 
+## Deep dives
+
+- [magnav-challenge-data](../../docs/dataset-cards/magnav-challenge-data.md) (dataset-cards)
+
 **Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `dataset`, `magnav`, `zenodo`

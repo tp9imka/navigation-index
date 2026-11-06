@@ -12,6 +12,10 @@ Dataset and baseline code for drone-based geo-localization across drone, satelli
 
 **Hackathon notes:** Dataset requires a request form; the synthetic drone views are building-centric, not wide-area terrain.
 
+## Deep dives
+
+- [university-1652](../../docs/dataset-cards/university-1652.md) (dataset-cards)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Place recognition and loop closure](../concepts/place-recognition.md)
 
 **Tags:** `cross-view`, `drone`, `satellite`, `benchmark`

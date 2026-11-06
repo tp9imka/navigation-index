@@ -4,7 +4,7 @@
 
 UGV/off-road autonomy stacks, localization and navigation for ground robots.
 
-## Repositories (39)
+## Repositories (40)
 
 - [ArduPilot](../repos/ardupilot__ardupilot.md) - fit: high - GPL autopilot covering Copter, Plane (incl.
 - [CARLA](../repos/carla-simulator__carla.md) - fit: high - Open-source autonomous-driving simulator on Unreal with camera, lidar, radar, GNSS and IMU sensors, traffic and weather control.
@@ -38,6 +38,7 @@ UGV/off-road autonomy stacks, localization and navigation for ground robots.
 - [pyboreas](../repos/utiasasrl__pyboreas.md) - fit: medium - Devkit for the Boreas multi-season driving dataset with radar, lidar, camera and GNSS/INS ground truth.
 - [BenchNav](../repos/masafumiendo__benchnav.md) - fit: medium - Gymnasium-based PyTorch simulator for benchmarking off-road navigation planners under uncertain, probabilistic traversability, with synthetic terrain generation.
 - [HOUND](../repos/prl-mushr__hound_core.md) - fit: medium - Autonomy stack for a small-scale high-speed off-road vehicle from the UW MuSHR group, with BeamNG simulator integration and Jetson Orin deployment.
+- [safe-route (KosmoHackathon 2026)](../repos/kurligin__safe-route.md) - fit: medium - Controller for an autonomous ground cargo platform in the amr-sim simulator plus an operator workstation, built for the 'Безопасный маршрут' case of KosmoHackathon 2026 (2nd place in the final).
 - [openpilot](../repos/commaai__openpilot.md) - fit: low - Open driver-assistance robotics stack whose localization uses GNSS (via laika) fused with IMU and vision.
 - [Baidu Apollo](../repos/apolloauto__apollo.md) - fit: low - Baidu's open autonomous driving platform, including the multi-sensor fusion localization module combining GNSS RTK, IMU and lidar map matching.
 - [LeGO-LOAM](../repos/robustfieldautonomylab__lego-loam.md) - fit: low - Lightweight ground-optimized LiDAR odometry and mapping that segments ground to speed up feature extraction on UGVs.
@@ -46,8 +47,9 @@ UGV/off-road autonomy stacks, localization and navigation for ground robots.
 - [WayFAST](../repos/matval__wayfast.md) - fit: low - Self-supervised traversability prediction for wheeled field robots that learns from RGB-D and estimates traction from kinodynamic models.
 - [elevation_mapping](../repos/leggedrobotics__elevation_mapping.md) - fit: low - ETH Zurich robot-centric elevation mapping for rough terrain navigation that fuses range data into a probabilistic 2.5D map.
 
-## Documents, talks, courses, datasets (17)
+## Documents, talks, courses, datasets (18)
 
+- [Advanced Navigation Boreas FOG INS with LVS laser velocity sensor](../resources/advanced-navigation-boreas.md) - product - Advanced Navigation's Boreas fibre-optic-gyro INS line, fused with its LVS laser velocity sensor or wheel odometry, is marketed for long GNSS-denied ground and maritime runs; reported trials include a US Army testbed and
 - [AI-IMU Dead-Reckoning](../resources/brossard-ai-imu-dr.md) - paper - Car localisation from IMU alone by combining an invariant EKF with a neural network that adapts measurement noise covariances (pseudo-measurements), evaluated on KITTI.
 - [Autoware documentation](../resources/autoware-docs.md) - doc - Official Autoware documentation with architecture, installation, tutorials and design notes for localization, perception and planning components.
 - [Complex Urban Dataset](../resources/kaist-complex-urban-dataset.md) - dataset - Urban driving in dense city areas with lidar, stereo and navigation sensors where GNSS is degraded.

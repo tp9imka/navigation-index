@@ -12,6 +12,11 @@ Georgia Tech factor-graph library for smoothing and mapping, with incremental so
 
 **Hackathon notes:** pip install gtsam gives Python bindings; start from the ImuFactor examples and add a GNSS position factor. Noise model tuning is where time goes.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [borglab__gtsam](../../docs/integration-cards/borglab__gtsam.md) (integration-cards)
+
 **Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [GNSS/INS integration](../concepts/gnss-ins.md), [Visual SLAM](../concepts/visual-slam.md)
 
 **Tags:** `factor-graph`, `isam2`, `imu-preintegration`, `python`
@@ -40,6 +45,7 @@ Georgia Tech factor-graph library for smoothing and mapping, with incremental so
 - [Factor Graphs and GTSAM: A Hands-on Introduction](../resources/gtsam-intro-tutorial.md) (explains)
 - [Factor Graphs and GTSAM: A Hands-on Introduction](../resources/gtsam-intro-tutorial.md) (has_code)
 - [iSAM2: Incremental Smoothing and Mapping Using the Bayes Tree](../resources/kaess-isam2.md) (has_code)
+- [Shield AI Hivemind autonomy stack](../resources/shield-ai-hivemind.md) (alternative_to)
 - [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook.md) (explains)
 - [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook.md) (uses)
 - [GNSS/INS EKF through a GNSS outage and a spoofing walk-off](../samples/gnss-ins-ekf-outage.md) (explains)

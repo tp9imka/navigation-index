@@ -12,6 +12,11 @@ Pure-Python 3D coordinate conversions: geodetic, ECEF, ENU, NED, AER, ECI, with 
 
 **Hackathon notes:** pip install pymap3d; no compiled deps.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [geospace-code__pymap3d](../../docs/integration-cards/geospace-code__pymap3d.md) (integration-cards)
+
 **Concepts:** [Geodesy and coordinate frames](../concepts/geodesy.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
 
 **Tags:** `ecef`, `enu`, `ned`, `aer`

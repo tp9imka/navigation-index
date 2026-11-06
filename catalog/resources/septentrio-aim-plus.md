@@ -12,6 +12,10 @@ Vendor explanation of AIM+ interference monitoring and mitigation: narrowband an
 - Tiered feature levels
 - OSNMA is one of the anti-spoofing layers
 
+## Deep dives
+
+- [gnss-denied-nav-products](../../docs/landscape/gnss-denied-nav-products.md) (landscape)
+
 **Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Electronic warfare resilience](../concepts/ew-resilience.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
 
 **Tags:** `septentrio`, `aim+`, `anti-jam`, `anti-spoofing`, `osnma`
@@ -19,5 +23,9 @@ Vendor explanation of AIM+ interference monitoring and mitigation: narrowband an
 ## Related
 
 - uses: [Galileo OSNMA Signal-In-Space Interface Control Document Issue 1.1](../resources/galileo-osnma-sis-icd.md)
+
+## Referenced by
+
+- [Honeywell HGuide o480 single-card INS and HGuide i700 IMU](../resources/honeywell-hguide-o480.md) (cites)
 
 _Indexed by lane(s): docs-standards_

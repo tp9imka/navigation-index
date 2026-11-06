@@ -1473,6 +1473,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:c-o-s-t-y-a/ardupilot_ua": {
+  "archived": false,
+  "description": "переклад офіційної документації ardupilot українською ",
+  "forks_count": 0,
+  "full_name": "c-o-s-t-y-a/ardupilot_ua",
+  "html_url": "https://github.com/c-o-s-t-y-a/ardupilot_ua",
+  "language": "Python",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-09-25T07:22:14Z",
+  "stargazers_count": 0,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:canboat/canboat": {
   "archived": false,
   "description": "CAN Boat provides NMEA 2000 and NMEA 0183 utilities. It contains a NMEA 2000 PGN decoder and can read and write N2K messages. It is not meant as an end-user tool but as a discovery mechanism for delving into NMEA 2000 networks.",
@@ -1778,6 +1791,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:citec-spbu/smart-uav-return-gnss-station": {
+  "archived": false,
+  "description": "Интеллектуальное возвращение БпЛА в точку старта при отсутствии ГНСС и связи со станцией управления",
+  "forks_count": 2,
+  "full_name": "citec-spbu/Smart-UAV-Return-GNSS-Station",
+  "html_url": "https://github.com/citec-spbu/Smart-UAV-Return-GNSS-Station",
+  "language": "C",
+  "license": null,
+  "pushed_at": "2024-06-01T19:17:55Z",
+  "stargazers_count": 3,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:codexlabsllc/colosseum": {
   "archived": true,
   "description": "Open source simulator for autonomous robotics built on Unreal Engine with support for Unity",
@@ -1891,6 +1917,31 @@
   "pushed_at": "2024-01-23T01:34:46Z",
   "stargazers_count": 72,
   "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:copterexpress/clover": {
+  "archived": false,
+  "description": "ROS-based framework and RPi image to control PX4-powered drones 🍀",
+  "forks_count": 320,
+  "full_name": "CopterExpress/clover",
+  "html_url": "https://github.com/CopterExpress/clover",
+  "language": "C++",
+  "license": "MIT",
+  "pushed_at": "2026-04-14T14:31:20Z",
+  "stargazers_count": 694,
+  "topics": [
+   "aruco",
+   "computer-vision",
+   "drone",
+   "education",
+   "mavros",
+   "optical-flow",
+   "px4",
+   "quadcopter",
+   "raspberry-pi",
+   "robotics",
+   "ros"
+  ],
   "fetched": "2026-11-06"
  },
  "repo:cra-ros-pkg/robot_localization": {
@@ -2090,6 +2141,19 @@
    "robotics",
    "slam"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:danamarkova/graduate_work": {
+  "archived": false,
+  "description": "Дипломная работа на тему «Разработка модуля инерциальной навигации БПЛА с использованием  вспомогательных навигационных данных»",
+  "forks_count": 0,
+  "full_name": "DanaMarkova/graduate_work",
+  "html_url": "https://github.com/DanaMarkova/graduate_work",
+  "language": "C",
+  "license": null,
+  "pushed_at": "2025-08-20T09:47:42Z",
+  "stargazers_count": 0,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:daniestevez/galileo-osnma": {
@@ -3210,6 +3274,23 @@
   "pushed_at": "2026-08-24T20:42:05Z",
   "stargazers_count": 487,
   "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:geoscan/geoscan_pioneer_max": {
+  "archived": true,
+  "description": "Geoscan Pioneer Max Repository",
+  "forks_count": 6,
+  "full_name": "geoscan/geoscan_pioneer_max",
+  "html_url": "https://github.com/geoscan/geoscan_pioneer_max",
+  "language": "CMake",
+  "license": "MIT",
+  "pushed_at": "2024-03-15T20:05:47Z",
+  "stargazers_count": 14,
+  "topics": [
+   "geoscan",
+   "geoscan-pioneer-max",
+   "ros"
+  ],
   "fetched": "2026-11-06"
  },
  "repo:geoscienceaustralia/ginan": {
@@ -4987,6 +5068,19 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:kurligin/safe-route": {
+  "archived": false,
+  "description": "Безопасный маршрут — контроллер беспилотной платформы без ГНСС и АРМ оператора. 2 место, финал КосмоХакатона 2026",
+  "forks_count": 0,
+  "full_name": "Kurligin/safe-route",
+  "html_url": "https://github.com/Kurligin/safe-route",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-10-26T10:35:23Z",
+  "stargazers_count": 0,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:kyle-ak/imu_tk": {
   "archived": false,
   "description": null,
@@ -6401,6 +6495,38 @@
   "pushed_at": "2024-08-20T15:08:54Z",
   "stargazers_count": 25,
   "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:msemitkin/fit-gps-spoof-fix": {
+  "archived": false,
+  "description": "Fix Strava/Garmin bike rides broken by GPS spoofing or jamming: track jumps to Lima, 200+ km/h spikes, fake km. Виправлення активностей Strava/Garmin після спуфінгу та глушіння GPS (РЕБ). Agent Skill for Claude, Codex, Cursor",
+  "forks_count": 0,
+  "full_name": "msemitkin/fit-gps-spoof-fix",
+  "html_url": "https://github.com/msemitkin/fit-gps-spoof-fix",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-10-28T14:40:58Z",
+  "stargazers_count": 1,
+  "topics": [
+   "activity-fix",
+   "agent-skills",
+   "claude-code",
+   "claude-code-plugin",
+   "claude-skills",
+   "codex",
+   "cursor",
+   "cycling",
+   "fit-file",
+   "garmin",
+   "gps",
+   "gps-spoofing-data",
+   "jamming",
+   "lima",
+   "peru",
+   "python",
+   "strava",
+   "ukraine"
+  ],
   "fetched": "2026-11-06"
  },
  "repo:mtahakoroglu/mpu6050_zupt": {
@@ -8394,6 +8520,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:roosmax/diploma": {
+  "archived": false,
+  "description": "Дипломная работа (ФАКТ МФТИ, 2026): «Локальная навигационная система на основе технологии LoRa» — навигация БПЛА в условиях подавления ГНСС и РЭБ с коррекцией БИНС по дальнометрии LoRa (TWR)",
+  "forks_count": 0,
+  "full_name": "Roosmax/Diploma",
+  "html_url": "https://github.com/Roosmax/Diploma",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-07-22T14:40:23Z",
+  "stargazers_count": 0,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:ros-navigation/navigation2": {
   "archived": false,
   "description": "ROS 2 Navigation Framework and System",
@@ -8680,6 +8819,19 @@
    "visual-odometry",
    "visual-slam"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:sasha-lobov/orb_slam3_system_local": {
+  "archived": false,
+  "description": "Pet-проект по исследованию и реализации системы локальной навигации БПЛА в условиях отсутствия GNSS.",
+  "forks_count": 0,
+  "full_name": "sasha-lobov/ORB_SLAM3_system_local",
+  "html_url": "https://github.com/sasha-lobov/ORB_SLAM3_system_local",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-05-31T11:03:05Z",
+  "stargazers_count": 0,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:schwehr/noaadata": {
@@ -9184,6 +9336,19 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:solarwarlock/flyingblind_hakaton": {
+  "archived": false,
+  "description": "Веб-прототип резервной навигации без ГНСС. По цифровой модели рельефа `DEM` и сообщениям радиовысотомера `NMEA-0183` проект оценивает положение воздушного судна, скорость, курс и вектор движения.",
+  "forks_count": 0,
+  "full_name": "SolarWarlock/FlyingBlind_Hakaton",
+  "html_url": "https://github.com/SolarWarlock/FlyingBlind_Hakaton",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-07-31T17:21:33Z",
+  "stargazers_count": 0,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:sotostrk/tercom-via-particle-filter-uav-state-estimation-mae6760-project-": {
   "archived": false,
   "description": "SIR Particle Filter for GPS-denied UAV localization via Terrain Contour Matching (TERCOM). Estimates 3-state pose [x, y, θ] by fusing radar altimeter terrain measurements with magnetometer heading. Demonstrates global localization from uniform prior. MATLAB implementation. MAE 6760, Cornell University.",
@@ -9443,6 +9608,28 @@
    "astm-f3411",
    "en-4709-002",
    "rid"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:t1gr20an06-k/hackathon-blind-flight": {
+  "archived": false,
+  "description": "Навигация летательного аппарата без GPS по рельефу местности (TERCOM): координаты, скорость и курс из данных радиовысотомера и карты высот.",
+  "forks_count": 0,
+  "full_name": "t1Gr20an06-k/Hackathon-Blind-Flight",
+  "html_url": "https://github.com/t1Gr20an06-k/Hackathon-Blind-Flight",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-07-15T23:08:25Z",
+  "stargazers_count": 2,
+  "topics": [
+   "dem",
+   "gnss-denied",
+   "kalman-filter",
+   "navigation",
+   "python",
+   "radar-altimeter",
+   "tercom",
+   "terrain-matching"
   ],
   "fetched": "2026-11-06"
  },
@@ -10416,6 +10603,19 @@
   "license": "MIT",
   "pushed_at": "2024-07-09T14:03:26Z",
   "stargazers_count": 732,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:vohminv/rope-ladder-tracker": {
+  "archived": false,
+  "description": "Возврат квадрокоптера домой по оптическому потоку с использованием системы \"верёвочной лестницы\" — без GPS.",
+  "forks_count": 3,
+  "full_name": "VohminV/rope-ladder-tracker",
+  "html_url": "https://github.com/VohminV/rope-ladder-tracker",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2025-08-14T02:27:47Z",
+  "stargazers_count": 11,
   "topics": [],
   "fetched": "2026-11-06"
  },

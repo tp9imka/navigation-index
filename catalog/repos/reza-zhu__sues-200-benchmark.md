@@ -12,6 +12,10 @@ Multi-height, multi-scene drone-satellite cross-view dataset and evaluation code
 
 **Hackathon notes:** Use as a second evaluation set alongside University-1652.
 
+## Deep dives
+
+- [sues-200](../../docs/dataset-cards/sues-200.md) (dataset-cards)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `cross-view`, `multi-height`, `dataset`

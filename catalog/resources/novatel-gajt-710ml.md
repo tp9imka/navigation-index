@@ -11,6 +11,10 @@ Product page for the larger 7-element GAJT CRPA unit in a hardened enclosure for
 - More elements give more simultaneous nulls
 - Typical military vehicle CRPA form factor
 
+## Deep dives
+
+- [gnss-denied-nav-products](../../docs/landscape/gnss-denied-nav-products.md) (landscape)
+
 **Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
 
 **Tags:** `crpa`, `anti-jam`, `novatel`, `gajt`
@@ -18,5 +22,9 @@ Product page for the larger 7-element GAJT CRPA unit in a hardened enclosure for
 ## Related
 
 - same_author: [NovAtel GAJT-410ML Anti-Jam Antenna Product Sheet](../resources/novatel-gajt-410ml-sheet.md)
+
+## Referenced by
+
+- [infiniDome GPSdome / GPSdome 2 small-UAS anti-jam module](../resources/infinidome-gpsdome.md) (cites)
 
 _Indexed by lane(s): docs-standards_

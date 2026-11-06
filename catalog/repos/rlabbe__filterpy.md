@@ -12,6 +12,11 @@ Python library of Kalman filters (linear, extended, unscented, ensemble), smooth
 
 **Hackathon notes:** pip install filterpy. Not Lie-group aware, so handle attitude error states manually or use navlie/manif for that.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [rlabbe__filterpy](../../docs/integration-cards/rlabbe__filterpy.md) (integration-cards)
+
 **Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Tracking and data association](../concepts/target-tracking.md)
 
 **Tags:** `kalman-filter`, `ukf`, `ekf`, `python`

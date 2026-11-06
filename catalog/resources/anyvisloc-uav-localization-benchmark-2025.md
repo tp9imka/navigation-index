@@ -11,6 +11,10 @@ Builds a benchmark for low-altitude, oblique-view UAV absolute visual localizati
 - Low-altitude oblique views are much harder than nadir
 - Gives evidence for picking retrieval/matcher combos
 
+## Deep dives
+
+- [anyvisloc](../../docs/dataset-cards/anyvisloc.md) (dataset-cards)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Feature detection and matching](../concepts/feature-matching.md)
 
 **Tags:** `arxiv`, `benchmark`, `2025`

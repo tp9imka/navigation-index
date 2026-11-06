@@ -12,13 +12,14 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 - [PX4 SITL GPS denial: inject, measure drift, recover](../samples/px4-sitl-gps-denial.md) - Flies a square mission in PX4 SITL (Gazebo gz_x500), turns the GPS off mid-mission with MAVSDK failure injection, logs EKF2 health and estimated vs ground-truth position, then restores GPS and returns home.
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) - Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold.
 
-## Repositories (36)
+## Repositories (39)
 
 - [ArduPilot](../repos/ardupilot__ardupilot.md) - fit: high - GPL autopilot covering Copter, Plane (incl.
 - [PX4 Autopilot](../repos/px4__px4-autopilot.md) - fit: high - Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, built on NuttX with a uORB pub/sub middleware.
 - [Crazyflie firmware](../repos/bitcraze__crazyflie-firmware.md) - fit: high - Firmware for the Crazyflie nano quad, Bolt and the Roadrunner positioning tag, with EKF and complementary estimators supporting UWB Loco positioning, Lighthouse, Flow deck and mocap.
 - [Gazebo Sim (gz-sim)](../repos/gazebosim__gz-sim.md) - fit: high - Current-generation Gazebo robotics simulator with pluggable physics, rendering and a large sensor library (IMU, GPS/NavSat, lidar, cameras, magnetometer, altimeter).
 - [MAVSDK](../repos/mavlink__mavsdk.md) - fit: high - C++ SDK exposing high-level MAVLink plugins (action, mission, offboard, telemetry, camera) with a gRPC server for other languages.
+- [COEX Clover](../repos/copterexpress__clover.md) - fit: high - ROS-based software stack and Raspberry Pi image for the Clover educational quadcopter (PX4 underneath).
 - [BlueOS](../repos/bluerobotics__blueos.md) - fit: high - Blue Robotics' onboard software platform for ROVs and USVs: web UI, ArduPilot management, MAVLink routing and a Docker extension system on a Raspberry Pi companion computer.
 - [MAVSDK-Python](../repos/mavlink__mavsdk-python.md) - fit: high - Asyncio Python client for MAVSDK that wraps a bundled mavsdk_server.
 - [cflib (Crazyflie Python library)](../repos/bitcraze__crazyflie-lib-python.md) - fit: high - Python API to connect, log, set parameters and send setpoints/high-level commands to Crazyflies over Crazyradio or USB.
@@ -50,15 +51,19 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 - [ArduPilot Methodic Configurator](../repos/ardupilot__methodicconfigurator.md) - fit: low - Guided step-by-step parameter configuration tool for ArduPilot vehicles.
 - [Time-optimal quadrotor planning](../repos/uzh-rpg__rpg_time_optimal.md) - fit: low - Code for computing time-optimal quadrotor trajectories through waypoints, from the UZH group that placed second in AlphaPilot and built Swift.
 - [DroneCAN libcanard](../repos/dronecan__libcanard.md) - fit: low - Minimal C implementation of the DroneCAN protocol used for GNSS, compass, airspeed and other peripherals on CAN.
+- [Geoscan Pioneer Max](../repos/geoscan__geoscan_pioneer_max.md) - fit: low - Meta-repository from Russian vendor Geoscan for the Pioneer Max educational quadcopter: system images, ROS workspace, web control apps and guides, documented in Russian.
+- [ArduPilot Copter - українською](../repos/c-o-s-t-y-a__ardupilot_ua.md) - fit: low - Unofficial Ukrainian translation of key sections of the ArduPilot Copter documentation, with a translation-status file and a built site.
 
-## Documents, talks, courses, datasets (21)
+## Documents, talks, courses, datasets (26)
 
 - [2025 Abu Dhabi Autonomous Racing League (A2RL) - drone championship](../resources/a2rl-2025-season.md) - doc - Summary of the A2RL x DCL autonomous drone championship, won by TU Delft MAVLab ahead of TII Racing and KAIST, including races against human pilots.
 - [AlphaPilot: Autonomous Drone Racing](../resources/alphapilot-uzh-paper.md) - paper - UZH's second-place AlphaPilot system: learned gate detection, nonlinear filtering of visual-inertial state and time-optimal trajectory planning for GPS-free racing.
 - [ArduPilot Developer Conference Kaga 2024 - schedule and YouTube links](../resources/ardupilot-devcon-kaga-2024.md) - talk - Three days of recorded ArduPilot developer talks; navigation-relevant sessions include 'High Altitude Non-GPS' (Sanket Sharma), 'CINS (DCM replacement)' (Pieter Van Goor, ANU), indoor flight and position offsets.
 - [ArduPilot SITL Simulator (Software in the Loop)](../resources/ardupilot-sitl-docs.md) - doc - Developer docs for running ArduPilot vehicles in SITL, connecting GCS and external simulators.
 - [ArduSub documentation](../resources/ardusub-docs.md) - doc - User and developer documentation for ArduSub, covering ROV configuration, sensors, and integration of external positioning such as DVL and USBL via MAVLink.
+- [Auterion Skynode S and Auterion Visual Navigation](../resources/auterion-skynode-visual-navigation.md) - product - Auterion sells PX4-derived AuterionOS plus Skynode flight/mission computers.
 - [Autonomous Navigation for Flying Robots (TUM edX, AUTONAVx)](../resources/tum-autonavx.md) - course - MOOC version of the TUM flying-robots lecture with lecture videos and browser-based Python exercises on quadrotor state estimation, Kalman filtering, control and visual navigation.
+- [CopterHack 2023](../resources/coex-copterhack-2023.md) - competition - Russian-language page of COEX's international open-source flying-robotics contest built on the Clover platform: format (teams develop open-source projects over months with expert feedback), final standings and links to p
 - [EKF Source Selection and Switching](../resources/ardupilot-ekf3-sources.md) - doc - Reference for EKF3 source parameters (position, velocity, yaw per axis) and how fusion of multiple velocity sources works.
 - [HACKtheMACHINE Unmanned (ONR / NavalX)](../resources/onr-hackthemachine-unmanned-2021.md) - competition - US Navy prize challenge on unmanned and autonomous systems with tracks on securing a simulated autopilot, separating benign from malicious data, and model-based mission requirements.
 - [MAVLab wins the AlphaPilot challenge](../resources/mavlab-alphapilot-win-2019.md) - blog - TU Delft MAVLab's account of winning the 2019 Lockheed Martin AlphaPilot / AIRR autonomous drone race.
@@ -74,4 +79,7 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 - [STANAG 4586 - Standard Interfaces of UAV Control System (UCS) for NATO UAV Interoperability](../resources/stanag-4586-overview.md) - doc - Public overview of NATO's UAS interoperability standard, which defines a core UCS, a vehicle-specific module and five levels of interoperability from receiving payload data up to full flight control including launch and 
 - [Using the ECL EKF (EKF2)](../resources/px4-ekf2-tuning-guide.md) - doc - PX4 guide to its EKF2 estimator: which sensors it fuses (IMU, GNSS, baro, mag, optical flow, external vision, range), how to configure and tune them, and how to read innovation logs.
 - [Visual Navigation for Flying Robots (TUM, 2013)](../resources/tum-visual-navigation-flying-robots.md) - lecture-series - Award-winning TUM lecture on making quadrotors navigate with cameras: 3D geometry, sensors, state estimation, visual motion estimation, SLAM, dense reconstruction, planning and exploration.
+- [Навигация по Optical Flow · Clover](../resources/coex-clover-docs-optical-flow-ru.md) - doc - English: 'Optical Flow navigation - Clover docs'.
+- [Навигация по карте маркеров · Clover](../resources/coex-clover-docs-aruco-map-ru.md) - doc - English: 'Navigation by marker map - Clover docs'.
+- [Система управління та навігації БПЛА](../resources/kpi-spaskyi-uav-control-nav-under-ew-2025.md) - paper - English: 'UAV control and navigation system'.
 

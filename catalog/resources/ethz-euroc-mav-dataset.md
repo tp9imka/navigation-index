@@ -12,6 +12,10 @@ Stereo camera and IMU sequences from a micro aerial vehicle in an industrial hal
 - Size class: small (GB range)
 - Use for first VIO sanity checks
 
+## Deep dives
+
+- [euroc-mav](../../docs/dataset-cards/euroc-mav.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md)
 
 **Tags:** `euroc`, `mav`, `indoor`

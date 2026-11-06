@@ -12,6 +12,10 @@ Continuous-time lidar, radar, lidar-inertial and radar-inertial odometry built o
 
 **Hackathon notes:** Docker build; test on Boreas sequences.
 
+## Deep dives
+
+- [boreas](../../docs/dataset-cards/boreas.md) (dataset-cards)
+
 **Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
 
 **Tags:** `continuous-time`, `icp`, `radar-inertial`, `boreas`

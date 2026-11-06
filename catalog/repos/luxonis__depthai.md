@@ -12,6 +12,11 @@ Python API and examples for Luxonis OAK cameras, which run neural networks and s
 
 **Hackathon notes:** pip install depthai; OAK-D required. Examples include spatial detection.
 
+## Deep dives
+
+- [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
+- [luxonis__depthai](../../docs/integration-cards/luxonis__depthai.md) (integration-cards)
+
 **Concepts:** [Onboard / edge AI perception](../concepts/edge-ai.md)
 
 **Tags:** `oak-d`, `stereo-depth`, `on-camera-inference`

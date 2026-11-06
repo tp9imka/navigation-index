@@ -12,6 +12,11 @@ ROS package with EKF and UKF state estimation nodes that fuse any number of odom
 
 **Hackathon notes:** apt install on ROS 2; mostly YAML config. Common gotcha: frame conventions (REP-103/105) and double-counting velocities.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [cra-ros-pkg__robot_localization](../../docs/integration-cards/cra-ros-pkg__robot_localization.md) (integration-cards)
+
 **Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [GNSS/INS integration](../concepts/gnss-ins.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
 
 **Tags:** `ekf`, `ukf`, `ros2`, `navsat`

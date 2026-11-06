@@ -12,6 +12,11 @@ The standard ROS 2 navigation stack: behavior-tree driven navigator, global plan
 
 **Hackathon notes:** apt install ros-<distro>-navigation2 plus nav2_bringup gives a Gazebo TurtleBot demo in under an hour. Swap AMCL for your own localization by publishing map->odom TF. Tuning params YAML is the main time sink.
 
+## Deep dives
+
+- [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
+- [ros-navigation__navigation2](../../docs/integration-cards/ros-navigation__navigation2.md) (integration-cards)
+
 **Concepts:** [Path and motion planning](../concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
 
 **Tags:** `nav2`, `ros2`, `costmap`, `mppi`, `smac-planner`, `behavior-tree`

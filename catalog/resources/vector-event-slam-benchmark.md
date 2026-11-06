@@ -10,6 +10,10 @@ Hardware-synchronized event stereo, regular stereo, RGB-D, lidar and IMU across 
 
 - Sensors: event stereo, stereo, RGB-D, lidar, IMU
 
+## Deep dives
+
+- [event-camera-datasets](../../docs/dataset-cards/event-camera-datasets.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md)
 
 **Tags:** `event-camera`

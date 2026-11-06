@@ -53,7 +53,7 @@ Detection, segmentation, depth on embedded hardware supporting navigation.
 - [EqNIO](../repos/royinajayanth__eqnio.md) - fit: low - Subequivariant neural inertial odometry (ICLR 2025) that canonicalises IMU data so networks generalise across orientations; applied on top of TLIO and RoNIN.
 - [Deep learning celestial navigation](../repos/gregtozzi__deep_learning_celnav.md) - fit: low - Exploratory project on automating celestial navigation with deep learning and edge inference on synthetic sky images.
 
-## Documents, talks, courses, datasets (15)
+## Documents, talks, courses, datasets (17)
 
 - [A Multi-Robot Platform for Robotic Triage Combining Onboard Sensing and Foundation Models](../resources/arxiv-multi-robot-triage-platform.md) - paper - Technical report from a DARPA Triage Challenge team describing a multi-robot system and fine-tuned open vision-language models for injury identification.
 - [AI-IMU Dead-Reckoning](../resources/brossard-ai-imu-dr.md) - paper - Car localisation from IMU alone by combining an invariant EKF with a neural network that adapts measurement noise covariances (pseudo-measurements), evaluated on KITTI.
@@ -70,4 +70,6 @@ Detection, segmentation, depth on embedded hardware supporting navigation.
 - [TLIO: Tight Learned Inertial Odometry](../resources/tlio-paper.md) - paper - Combines a network that predicts displacement and uncertainty from IMU data with an EKF, for pedestrian inertial odometry.
 - [Wild Visual Navigation: Fast Traversability Learning via Pre-Trained Models and Online Self-Supervision](../resources/wild-visual-navigation-paper.md) - paper - Describes learning visual traversability online from pre-trained features and robot experience, adapting within minutes in forests and grassland.
 - [XFeat: Accelerated Features for Lightweight Image Matching](../resources/xfeat-2024.md) - paper - Lightweight feature extraction and matching architecture aimed at real-time use on constrained hardware.
+- [Троє 20-річних хлопців за 24 години створили дрон, якому не потрібен GPS](../resources/devua-24h-gps-free-drone-2024.md) - blog - English: 'Three 20-year-olds built a drone that needs no GPS in 24 hours'.
+- [Уловки, подсмотренные у медоносных пчёл, помогают дронам возвращаться домой без GPS](../resources/habr-bee-nav-translation-2026.md) - blog - English: 'Tricks borrowed from honeybees help drones return home without GPS'.
 

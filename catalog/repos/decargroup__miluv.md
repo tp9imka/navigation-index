@@ -12,6 +12,10 @@ Python devkit for MILUV, a multi-UAV indoor localization dataset with UWB rangin
 
 **Hackathon notes:** Download the dataset via devkit scripts; examples include UWB EKF.
 
+## Deep dives
+
+- [miluv](../../docs/dataset-cards/miluv.md) (dataset-cards)
+
 **Concepts:** [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md), [RF localization and direction finding](../concepts/rf-localization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
 
 **Tags:** `uwb`, `multi-uav`, `dataset`, `indoor`

@@ -12,6 +12,10 @@ Real-world GNSS interference recordings from Jammertest 2025 at Andoya, Norway, 
 
 **Hackathon notes:** Download the data and start with the provided Python loaders; pick one scenario class to build a jamming/spoofing classifier within a day.
 
+## Deep dives
+
+- [jammertest-data](../../docs/dataset-cards/jammertest-data.md) (dataset-cards)
+
 **Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
 
 **Tags:** `jammertest`, `spoofing`, `jamming`, `meaconing`, `dataset`

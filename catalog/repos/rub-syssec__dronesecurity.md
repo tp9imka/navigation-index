@@ -12,6 +12,10 @@ Ruhr University Bochum receiver for DJI DroneID that works live with an SDR or o
 
 **Hackathon notes:** Requires a wideband SDR (e.g. USRP/BladeRF) and recorded or live captures; sample captures ease offline work.
 
+## Deep dives
+
+- [remote-id-droneid-captures](../../docs/dataset-cards/remote-id-droneid-captures.md) (dataset-cards)
+
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md), [RF localization and direction finding](../concepts/rf-localization.md)
 
 **Tags:** `dji`, `droneid`, `sdr`, `ndss`, `usrp`

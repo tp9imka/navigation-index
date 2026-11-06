@@ -11,6 +11,10 @@ Paper introducing the RELLIS-3D multimodal off-road dataset with annotated lidar
 - Off-road semantics differ sharply from urban datasets
 - Includes GNSS/IMU for localization work
 
+## Deep dives
+
+- [offroad-rellis-tartandrive](../../docs/dataset-cards/offroad-rellis-tartandrive.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
 
 **Tags:** `off-road`, `dataset`

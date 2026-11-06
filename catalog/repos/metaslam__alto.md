@@ -12,6 +12,10 @@ Aerial-view, large-scale, terrain-oriented dataset for aerial place recognition 
 
 **Hackathon notes:** Inactive since 2022; check that the download links still work before planning around it.
 
+## Deep dives
+
+- [alto](../../docs/dataset-cards/alto.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Terrain-relative navigation](../concepts/terrain-nav.md), [Place recognition and loop closure](../concepts/place-recognition.md)
 
 **Tags:** `aerial`, `vpr`, `terrain`

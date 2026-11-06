@@ -12,6 +12,10 @@ Visual geo-localization dataset and code designed for aerial vehicles.
 
 **Hackathon notes:** Check README for map tile download steps.
 
+## Deep dives
+
+- [aerialvl](../../docs/dataset-cards/aerialvl.md) (dataset-cards)
+
 **Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
 
 **Tags:** `aerial`, `vpr`, `sequence`

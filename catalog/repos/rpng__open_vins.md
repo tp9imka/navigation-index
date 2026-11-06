@@ -12,6 +12,11 @@ MSCKF-based visual-inertial navigation platform with online calibration, a simul
 
 **Hackathon notes:** Supports ROS 1 and ROS 2. Its built-in simulator lets you test without hardware on day one. Docs site explains every estimator component.
 
+## Deep dives
+
+- [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
+- [rpng__open_vins](../../docs/integration-cards/rpng__open_vins.md) (integration-cards)
+
 **Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Sensor calibration](../concepts/calibration.md), [Simulation and HIL/SITL](../concepts/simulation.md)
 
 **Tags:** `msckf`, `ekf`, `ros1`, `ros2`, `simulator`
@@ -35,6 +40,8 @@ MSCKF-based visual-inertial navigation platform with online calibration, a simul
 - [Basalt](../repos/vladyslavusenko__basalt.md) (alternative_to)
 - [Visual-Inertial Navigation: A Concise Review](../resources/huang-vins-concise-review-2019.md) (explains)
 - [OpenVINS documentation](../resources/openvins-docs.md) (has_code)
+- [Shield AI Hivemind autonomy stack](../resources/shield-ai-hivemind.md) (alternative_to)
+- [Spleenlab VISIONAIRY perception and GNSS-free navigation software](../resources/spleenlab-visionairy.md) (alternative_to)
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) (explains)
 
 _Indexed by lane(s): slam_
