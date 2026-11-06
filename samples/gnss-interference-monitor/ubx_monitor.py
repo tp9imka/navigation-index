@@ -1,11 +1,12 @@
 """Feed live u-blox UBX telemetry into the heuristic scorer. Requires pyubx2 (and pyserial for a port).
 
-UNVERIFIED SKETCH: written against pyubx2 1.4.x payload definitions
-(src/pyubx2/ubxtypes_get.py), syntax-checked only.
+Replay mode verified with pyubx2 1.4.1 on the synthetic capture from gen_synthetic_ubx.py.
+Live-port mode (--port, --enable) is not verified: no receiver was attached.
 
 Usage:
   python3 ubx_monitor.py --port /dev/ttyACM0 --baud 38400 --enable   # live receiver (M8/M9/M10/F9)
   python3 ubx_monitor.py --file capture.ubx                          # replay a recording
+  python3 ubx_monitor.py --file fixtures/synthetic.ubx --changes-only
 """
 
 from __future__ import annotations
@@ -60,24 +61,39 @@ def fill(ep: Epoch, msg) -> None:
         ep.spoof_det_state = max(ep.spoof_det_state or 0, msg.spoofingState)
 
 
-def run(stream):
+def run(stream, changes_only=False):
     scorer = InterferenceScorer()
     reader = UBXReader(stream, protfilter=UBX_PROTOCOL)
+    counts: dict[str, int] = {}
+    last_verdict = None
+
+    def emit(ep):
+        nonlocal last_verdict
+        a = scorer.assess(ep)
+        counts[a.verdict] = counts.get(a.verdict, 0) + 1
+        if not changes_only or a.verdict != last_verdict:
+            print(f"t={ep.t:10.1f} {a.verdict:<17} jam={a.jam_score:.2f} "
+                  f"spoof={a.spoof_score:.2f} {'; '.join(a.reasons)}")
+        last_verdict = a.verdict
+
     current_tow = None
     ep = None
     for _raw, msg in reader:
         if msg is None or not hasattr(msg, "identity"):
             continue
-        tow = getattr(msg, "iTOW", None)  # NAV-* messages of one epoch share iTOW
+        # NAV-* messages of one epoch share iTOW; MON-RF / SEC-SIG carry none and are
+        # attributed to the epoch whose NAV messages preceded them.
+        tow = getattr(msg, "iTOW", None)
         if tow is not None and tow != current_tow:
             if ep is not None:
-                a = scorer.assess(ep)
-                print(f"t={ep.t:10.1f} {a.verdict:<17} jam={a.jam_score:.2f} "
-                      f"spoof={a.spoof_score:.2f} {'; '.join(a.reasons)}")
+                emit(ep)
             current_tow = tow
             ep = Epoch(t=tow / MS_PER_S)
         if ep is not None:
             fill(ep, msg)
+    if ep is not None:
+        emit(ep)
+    print("epochs per verdict: " + ", ".join(f"{k}={v}" for k, v in sorted(counts.items())))
 
 
 def main():
@@ -87,17 +103,18 @@ def main():
     src.add_argument("--file")
     ap.add_argument("--baud", type=int, default=38400)
     ap.add_argument("--enable", action="store_true", help="send CFG-VALSET to enable messages")
+    ap.add_argument("--changes-only", action="store_true", help="print only verdict changes")
     args = ap.parse_args()
     if args.file:
         with open(args.file, "rb") as fh:
-            run(fh)
+            run(fh, args.changes_only)
         return
     from serial import Serial  # pyserial
 
     with Serial(args.port, args.baud, timeout=3) as stream:
         if args.enable:
             enable_messages(stream)
-        run(stream)
+        run(stream, args.changes_only)
 
 
 if __name__ == "__main__":

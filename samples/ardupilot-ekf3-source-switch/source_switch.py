@@ -12,7 +12,10 @@ from pymavlink import mavutil
 import ekf_flags
 
 EKF_STATUS_REPORT_ID = 193
-EKF_REPORT_INTERVAL_US = 200_000
+GLOBAL_POSITION_INT_ID = 33
+GPS_RAW_INT_ID = 24
+LOCAL_POSITION_NED_ID = 32
+REPORT_INTERVAL_US = 200_000
 TAKEOFF_ALT_M = 10.0
 ALT_REACHED_FRACTION = 0.9
 LEG_NORTH_M = 15.0
@@ -53,6 +56,8 @@ class Vehicle:
         self.m = mavutil.mavlink_connection(url)
         self.m.wait_heartbeat()
         self.rc_pwm = None
+        self.gps_fix = None
+        self.local_ne = None
         print(f"heartbeat from sys {self.m.target_system} comp {self.m.target_component}")
 
     def command(self, cmd, *params):
@@ -61,7 +66,9 @@ class Vehicle:
         ack = self.m.recv_match(type="COMMAND_ACK", condition=f"COMMAND_ACK.command=={cmd}",
                                 blocking=True, timeout=5)
         result = ack.result if ack else None
-        print(f"command {cmd} => {result}")
+        name = mavutil.mavlink.enums["MAV_CMD"][cmd].name if cmd in mavutil.mavlink.enums["MAV_CMD"] else cmd
+        result_name = mavutil.mavlink.enums["MAV_RESULT"][result].name if ack else "no ACK"
+        print(f"command {name} => {result_name}")
         return result == mavutil.mavlink.MAV_RESULT_ACCEPTED
 
     def get_param(self, name):
@@ -110,18 +117,28 @@ def log_phase(v, writer, phase, duration_s):
     last_print = 0.0
     while time.time() < end:
         v.refresh_rc()
-        msg = v.m.recv_match(type=["EKF_STATUS_REPORT", "STATUSTEXT"], blocking=True, timeout=1)
+        msg = v.m.recv_match(type=["EKF_STATUS_REPORT", "STATUSTEXT", "GPS_RAW_INT",
+                                   "LOCAL_POSITION_NED"], blocking=True, timeout=1)
         if msg is None:
             continue
         if msg.get_type() == "STATUSTEXT":
             print(f"  [{phase}] STATUSTEXT: {msg.text}")
             continue
+        if msg.get_type() == "GPS_RAW_INT":
+            v.gps_fix = msg.fix_type
+            continue
+        if msg.get_type() == "LOCAL_POSITION_NED":
+            v.local_ne = (msg.x, msg.y)
+            continue
         d = msg.to_dict()
+        ne = v.local_ne or (float("nan"), float("nan"))
         writer.writerow([f"{time.time():.2f}", phase, d["flags"],
                          "|".join(ekf_flags.decode(d["flags"]))] +
-                        [f"{d[f]:.3f}" for f in ekf_flags.VARIANCE_FIELDS])
+                        [f"{d[f]:.3f}" for f in ekf_flags.VARIANCE_FIELDS] +
+                        [v.gps_fix, f"{ne[0]:.2f}", f"{ne[1]:.2f}"])
         if time.time() - last_print >= 1.0:
-            print(f"  [{phase}] {ekf_flags.summarize(d)}")
+            print(f"  [{phase}] gps_fix={v.gps_fix} ne=({ne[0]:.1f},{ne[1]:.1f}) "
+                  f"{ekf_flags.summarize(d)}")
             last_print = time.time()
 
 
@@ -135,8 +152,10 @@ def wait_for(v, predicate, what):
 
 
 def fly(v, via, log_path):
-    v.command(mavutil.mavlink.MAV_CMD_SET_MESSAGE_INTERVAL, EKF_STATUS_REPORT_ID,
-              EKF_REPORT_INTERVAL_US)
+    # pymavlink requests no streams, so ask for every message this script reads.
+    for msg_id in (EKF_STATUS_REPORT_ID, GLOBAL_POSITION_INT_ID, GPS_RAW_INT_ID,
+                   LOCAL_POSITION_NED_ID):
+        v.command(mavutil.mavlink.MAV_CMD_SET_MESSAGE_INTERVAL, msg_id, REPORT_INTERVAL_US)
     v.set_source_set(1, via)
     wait_for(v, ekf_flags.has_absolute_position, "EKF absolute position before arming")
 
@@ -146,12 +165,15 @@ def fly(v, via, log_path):
     v.command(mavutil.mavlink.MAV_CMD_NAV_TAKEOFF, 0, 0, 0, 0, 0, 0, TAKEOFF_ALT_M)
     while True:
         pos = v.m.recv_match(type="GLOBAL_POSITION_INT", blocking=True, timeout=TIMEOUT_S)
+        if pos is None:
+            raise TimeoutError("no GLOBAL_POSITION_INT during takeoff")
         if pos.relative_alt / 1000.0 >= TAKEOFF_ALT_M * ALT_REACHED_FRACTION:
             break
 
     with open(log_path, "w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["time", "phase", "flags", "flag_names"] + list(ekf_flags.VARIANCE_FIELDS))
+        w.writerow(["time", "phase", "flags", "flag_names"] + list(ekf_flags.VARIANCE_FIELDS) +
+                   ["gps_fix", "north_m", "east_m"])
         log_phase(v, w, "gps", PHASE_GPS_S)
 
         v.set_source_set(2, via)

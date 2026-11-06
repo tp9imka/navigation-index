@@ -17,7 +17,7 @@ jobs:
           git diff --stat --exit-code -- catalog INDEX.md graph/graph.json index llms.txt reports
       - name: Stdlib sample tests
         run: |
-          (cd templates/project-repo && python3 -m unittest discover -s tests -q)
+          make -C templates/project-repo test
           while read -r d; do
             [ -z "$d" ] && continue
             (cd "samples/$d" && python3 -m unittest discover -q) || exit 1

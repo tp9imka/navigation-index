@@ -1,6 +1,6 @@
 """Two small UAVs seen by one ground radar: EKF + JPDA tracking and OSPA scoring with Stone Soup.
 
-Requires: pip install stonesoup  (pulls numpy, scipy). Sketch, not run in this repo.
+Requires: pip install -r requirements.txt (stonesoup, numpy, scipy). Run with stonesoup 1.9.1.
 """
 from datetime import datetime, timedelta
 
@@ -54,13 +54,14 @@ measurement_model = CartesianToBearingRange(
     translation_offset=RADAR_XY,
 )
 
-truths = set()
+# Lists, not sets: set order follows random uuids, which would reorder the noise draws per run.
+truths = []
 for init in INITIAL_STATES:
     truth = GroundTruthPath([GroundTruthState(init, timestamp=times[0])])
     for t in times[1:]:
         truth.append(GroundTruthState(
             transition_model.function(truth[-1], noise=True, time_interval=DT), timestamp=t))
-    truths.add(truth)
+    truths.append(truth)
 
 scans = []
 for k, t in enumerate(times):
@@ -86,11 +87,11 @@ hypothesiser = PDAHypothesiser(predictor=predictor, updater=updater,
 data_associator = JPDA(hypothesiser=hypothesiser)
 
 # Known priors keep the sketch short; swap in an initiator for real pop-up targets.
-tracks = {Track([GaussianState(np.array(init, dtype=float).reshape(-1, 1), PRIOR_COVAR,
-                               timestamp=times[0])]) for init in INITIAL_STATES}
+tracks = [Track([GaussianState(np.array(init, dtype=float).reshape(-1, 1), PRIOR_COVAR,
+                               timestamp=times[0])]) for init in INITIAL_STATES]
 
 for t, detections in scans[1:]:
-    hypotheses = data_associator.associate(tracks, detections, t)
+    hypotheses = data_associator.associate(set(tracks), detections, t)
     for track in tracks:
         track_hypotheses = hypotheses[track]
         states, weights = [], []
@@ -106,7 +107,7 @@ for t, detections in scans[1:]:
 ospa = OSPAMetric(c=OSPA_CUTOFF_M, p=OSPA_ORDER, measure=Euclidean((0, 2)),
                   generator_name="ospa", tracks_key="tracks", truths_key="truths")
 manager = MultiManager([ospa])
-manager.add_data({"tracks": tracks, "truths": truths})
+manager.add_data({"tracks": set(tracks), "truths": set(truths)})
 metrics = manager.generate_metrics()
 
 per_step = metrics["ospa"]["OSPA distances"].value
@@ -114,6 +115,9 @@ values = [float(m.value) for m in per_step]
 print(f"scans={len(scans)} tracks={len(tracks)} truths={len(truths)}")
 print(f"OSPA (c={OSPA_CUTOFF_M:g} m, p={OSPA_ORDER}): mean={np.mean(values):.1f} m "
       f"max={np.max(values):.1f} m final={values[-1]:.1f} m")
-for track in tracks:
+for i, track in enumerate(tracks):
     x, _, y, _ = track.state_vector.ravel()
-    print(f"track {track.id[:8]} final position x={x:.0f} m y={y:.0f} m")
+    print(f"track {i} final position x={x:.0f} m y={y:.0f} m")
+for i, truth in enumerate(truths):
+    x, _, y, _ = truth.state_vector.ravel()
+    print(f"truth {i} final position x={x:.0f} m y={y:.0f} m")

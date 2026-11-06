@@ -1,4 +1,4 @@
-"""MAVLink -> CoT bridge (sketch). Requires: pip install pymavlink pytak.
+"""MAVLink => CoT bridge. Requires: pip install -r requirements.txt (pymavlink, pytak).
 
   python3 bridge.py --mavlink udpin:0.0.0.0:14550 --cot-url udp+wo://239.2.3.1:6969
   python3 bridge.py --mavlink udpin:0.0.0.0:14550 --cot-url tcp://takserver.local:8087
