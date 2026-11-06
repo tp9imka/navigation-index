@@ -16,17 +16,19 @@ Landmark ION GNSS 2008 paper that built a receiver-based civil GPS spoofer and a
 
 - [humphreys-2008-assessing-spoofing-threat](../../docs/paper-digests/humphreys-2008-assessing-spoofing-threat.md) (paper-digests)
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `spoofing`, `humphreys`, `ion-gnss`
 
 ## Related
 
-- same_author: [GNSS Spoofing and Detection](../resources/psiaki-humphreys-2016-gnss-spoofing-detection.md)
+- same_author: [GNSS Spoofing and Detection](../../catalog/resources/psiaki-humphreys-2016-gnss-spoofing-detection.md)
 
 ## Referenced by
 
-- [GNSS Spoofing and Detection](../resources/psiaki-humphreys-2016-gnss-spoofing-detection.md) (same_author)
-- [File-based GNSS signal chain: gps-sdr-sim => GNSS-SDR => spoofing/jamming scorer](../samples/gnss-signal-chain.md) (explains)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [GNSS Spoofing and Detection](../../catalog/resources/psiaki-humphreys-2016-gnss-spoofing-detection.md) (same_author)
+- [File-based GNSS signal chain: gps-sdr-sim => GNSS-SDR => spoofing/jamming scorer](../../catalog/samples/gnss-signal-chain.md) (explains)
 
 _Indexed by lane(s): gnss_

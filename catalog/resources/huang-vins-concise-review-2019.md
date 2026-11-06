@@ -11,12 +11,17 @@ Compact review of visual-inertial navigation: filtering vs optimization, observa
 - Explains why MSCKF-style filters and sliding-window optimizers coexist
 - Observability and consistency drive estimator design
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `survey`, `msckf`
 
 ## Related
 
-- explains: [OpenVINS](../repos/rpng__open_vins.md)
+- explains: [OpenVINS](../../catalog/repos/rpng__open_vins.md)
+
+## Referenced by
+
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 
 _Indexed by lane(s): slam_

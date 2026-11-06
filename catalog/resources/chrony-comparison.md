@@ -10,14 +10,14 @@ Feature table comparing chrony, ntpd, NTPsec, OpenNTPD and others on NTS, hardwa
 
 - Fast way to pick an NTP daemon for a build
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `ntp`, `comparison`, `chrony`
 
 ## Related
 
-- explains: [chrony](../repos/gitlab.com__chrony__chrony.md)
-- explains: [NTPsec](../repos/gitlab.com__ntpsec__ntpsec.md)
-- explains: [ntpd-rs](../repos/pendulum-project__ntpd-rs.md)
+- explains: [chrony](../../catalog/repos/gitlab.com__chrony__chrony.md)
+- explains: [NTPsec](../../catalog/repos/gitlab.com__ntpsec__ntpsec.md)
+- explains: [ntpd-rs](../../catalog/repos/pendulum-project__ntpd-rs.md)
 
 _Indexed by lane(s): timing_

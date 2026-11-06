@@ -12,7 +12,7 @@ Learns IMU error correction and uncertainty with a network, combined with differ
 
 **Hackathon notes:** PyTorch and PyPose; pretrained models available.
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Onboard / edge AI perception](../concepts/edge-ai.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `learned-inertial`, `pypose`, `uncertainty`
 
@@ -20,13 +20,13 @@ Learns IMU error correction and uncertainty with a network, combined with differ
 
 ## Related
 
-- same_org: [AirIO](../repos/air-io__air-io.md)
-- alternative_to: [Denoise IMU Gyro](../repos/mbrossar__denoise-imu-gyro.md)
+- same_org: [AirIO](../../catalog/repos/air-io__air-io.md)
+- alternative_to: [Denoise IMU Gyro](../../catalog/repos/mbrossar__denoise-imu-gyro.md)
 
 ## Referenced by
 
-- [AirIO](../repos/air-io__air-io.md) (same_org)
-- [Denoise IMU Gyro](../repos/mbrossar__denoise-imu-gyro.md) (alternative_to)
+- [AirIO](../../catalog/repos/air-io__air-io.md) (same_org)
+- [Denoise IMU Gyro](../../catalog/repos/mbrossar__denoise-imu-gyro.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 

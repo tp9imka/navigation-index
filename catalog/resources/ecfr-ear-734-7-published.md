@@ -11,12 +11,13 @@ The regulation text defining when information and software count as 'published' 
 - Primary source to cite in an export-control slide
 - Read with 734.3(b)(3) and 742.15(b)
 
-**Concepts:** [Policy, export control and ethics](../concepts/policy-ethics.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `ear`, `regulation`, `bis`
 
 ## Referenced by
 
-- [The EAR and Open Source Software](../resources/linux-foundation-ear-open-source.md) (explains)
+- [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
+- [The EAR and Open Source Software](../../catalog/resources/linux-foundation-ear-open-source.md) (explains)
 
 _Indexed by lane(s): defense-context_

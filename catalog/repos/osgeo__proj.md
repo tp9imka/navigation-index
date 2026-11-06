@@ -12,7 +12,12 @@ Cartographic projection and coordinate transformation library with datum grids, 
 
 **Hackathon notes:** Bundle the proj-data grids offline if your demo has no internet.
 
-**Concepts:** [Geodesy and coordinate frames](../concepts/geodesy.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+## Deep dives
+
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [osgeo__proj](../../docs/integration-cards/osgeo__proj.md) (integration-cards)
+
+**Concepts:** [Geodesy and coordinate frames](../../catalog/concepts/geodesy.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `crs`, `datum`, `utm`, `itrf`
 
@@ -20,14 +25,15 @@ Cartographic projection and coordinate transformation library with datum grids, 
 
 ## Related
 
-- integrates_with: [pyproj](../repos/pyproj4__pyproj.md)
-- integrates_with: [GDAL](../repos/osgeo__gdal.md)
+- integrates_with: [pyproj](../../catalog/repos/pyproj4__pyproj.md)
+- integrates_with: [GDAL](../../catalog/repos/osgeo__gdal.md)
 
 ## Referenced by
 
-- [GDAL](../repos/osgeo__gdal.md) (depends_on)
-- [pyproj](../repos/pyproj4__pyproj.md) (depends_on)
-- [QGIS](../repos/qgis__qgis.md) (depends_on)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [GDAL](../../catalog/repos/osgeo__gdal.md) (depends_on)
+- [pyproj](../../catalog/repos/pyproj4__pyproj.md) (depends_on)
+- [QGIS](../../catalog/repos/qgis__qgis.md) (depends_on)
 
 _Indexed by lane(s): planning-gis-c2_
 

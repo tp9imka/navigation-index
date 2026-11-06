@@ -1,4 +1,4 @@
-# Regulatory Definitions of Publicly Available, Public Domain, and Published (ITAR/EAR)
+# Overview of Regulatory Definitions of Publicly Available, Public Domain, and Published
 
 `res:stonybrook-export-publicly-available` - doc - <https://www.stonybrook.edu/research-security/export-controls/reference_guides/publicly-available.html>
 
@@ -12,8 +12,13 @@ University compliance guide comparing ITAR public-domain (22 CFR 120.34) and EAR
 - Fundamental-research protection can be lost via publication restrictions
 - Military GNSS items (e.g. M-code receivers, some anti-jam antenna tech) may be ITAR or EAR controlled - keep hackathon code on public civil signals and published methods
 
-**Concepts:** [Policy, export control and ethics](../concepts/policy-ethics.md)
+**Concepts:** [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md)
 
 **Tags:** `itar`, `ear`, `fundamental-research`
+
+## Referenced by
+
+- [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 
 _Indexed by lane(s): defense-context_

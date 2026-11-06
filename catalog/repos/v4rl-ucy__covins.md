@@ -12,7 +12,7 @@ Centralized collaborative visual-inertial SLAM where agents run VIO and a server
 
 **Hackathon notes:** ROS 1 + Docker; COVINS-G can take poses from any VIO such as OpenVINS.
 
-**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `centralized`, `map-merging`, `ros1`
 
@@ -20,12 +20,12 @@ Centralized collaborative visual-inertial SLAM where agents run VIO and a server
 
 ## Related
 
-- integrates_with: [OpenVINS](../repos/rpng__open_vins.md)
-- alternative_to: [Swarm-SLAM](../repos/lajoiepy__cslam.md)
+- integrates_with: [OpenVINS](../../catalog/repos/rpng__open_vins.md)
+- alternative_to: [Swarm-SLAM](../../catalog/repos/lajoiepy__cslam.md)
 
 ## Referenced by
 
-- [Swarm-SLAM](../repos/lajoiepy__cslam.md) (alternative_to)
+- [Swarm-SLAM](../../catalog/repos/lajoiepy__cslam.md) (alternative_to)
 
 _Indexed by lane(s): slam_
 

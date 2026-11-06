@@ -12,12 +12,22 @@ Outdoor RF dataset of drone controller and telemetry signals plus Bluetooth and 
 - Includes Wi-Fi/Bluetooth confusers
 - Large download (tens of GB); MATLAB loader provided
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../concepts/counter-uas.md), [RF localization and direction finding](../concepts/rf-localization.md)
+## Deep dives
+
+- [drone-rf-datasets](../../docs/dataset-cards/drone-rf-datasets.md) (dataset-cards)
+
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 
 **Tags:** `rf`, `drone-detection`, `dataport`
 
 ## Related
 
-- cites: [DroneRF](../repos/al-sad__dronerf.md)
+- cites: [DroneRF](../../catalog/repos/al-sad__dronerf.md)
+
+## Referenced by
+
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): round3-expansion_

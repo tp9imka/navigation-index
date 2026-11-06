@@ -11,8 +11,12 @@ Landmark survey that frames modern SLAM as factor-graph MAP estimation and discu
 - Standard framing of front end vs back end
 - Robustness to outliers and long-term operation remain the hard problems
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `survey`
+
+## Referenced by
+
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 
 _Indexed by lane(s): slam_

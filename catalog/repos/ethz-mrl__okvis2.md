@@ -12,7 +12,7 @@ Keyframe-based visual-inertial SLAM with loop closure and a realtime scalable fa
 
 **Hackathon notes:** CMake build; check the README for ROS integration and the camera/IMU config format for your sensor.
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `keyframe`, `loop-closure`, `factor-graph`
 
@@ -20,11 +20,11 @@ Keyframe-based visual-inertial SLAM with loop closure and a realtime scalable fa
 
 ## Related
 
-- extends: [OKVIS2-X](../repos/ethz-mrl__okvis2-x.md)
+- extends: [OKVIS2-X](../../catalog/repos/ethz-mrl__okvis2-x.md)
 
 ## Referenced by
 
-- [OKVIS2-X](../repos/ethz-mrl__okvis2-x.md) (extends)
+- [OKVIS2-X](../../catalog/repos/ethz-mrl__okvis2-x.md) (extends)
 
 _Indexed by lane(s): slam_
 

@@ -17,7 +17,7 @@ Gymnasium environments on PyBullet for single and multi-agent quadcopter control
 - [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
 - [learnsyslab__gym-pybullet-drones](../../docs/integration-cards/learnsyslab__gym-pybullet-drones.md) (integration-cards)
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `pybullet`, `gymnasium`, `rl`, `crazyflie`
 
@@ -25,14 +25,18 @@ Gymnasium environments on PyBullet for single and multi-agent quadcopter control
 
 ## Related
 
-- alternative_to: [RotorPy](../repos/spencerfolk__rotorpy.md)
-- alternative_to: [Aerial Gym Simulator](../repos/ntnu-arl__aerial_gym_simulator.md)
+- alternative_to: [RotorPy](../../catalog/repos/spencerfolk__rotorpy.md)
+- alternative_to: [Aerial Gym Simulator](../../catalog/repos/ntnu-arl__aerial_gym_simulator.md)
 
 ## Referenced by
 
-- [Aerial Gym Simulator](../repos/ntnu-arl__aerial_gym_simulator.md) (alternative_to)
-- [RotorPy](../repos/spencerfolk__rotorpy.md) (alternative_to)
-- [Flightmare](../repos/uzh-rpg__flightmare.md) (alternative_to)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Aerial Gym Simulator](../../catalog/repos/ntnu-arl__aerial_gym_simulator.md) (alternative_to)
+- [RotorPy](../../catalog/repos/spencerfolk__rotorpy.md) (alternative_to)
+- [Flightmare](../../catalog/repos/uzh-rpg__flightmare.md) (alternative_to)
 
 _Indexed by lane(s): sim-data_
 

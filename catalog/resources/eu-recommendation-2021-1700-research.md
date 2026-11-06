@@ -11,16 +11,18 @@ Non-binding guidance helping universities and researchers spot and manage dual-u
 - Practical red-flag checklist for collaborative or international teams
 - Contact national authority when control status is unclear
 
-**Concepts:** [Policy, export control and ethics](../concepts/policy-ethics.md)
+**Concepts:** [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md)
 
 **Tags:** `eu`, `dual-use`, `research-compliance`
 
 ## Related
 
-- explains: [Regulation (EU) 2021/821 - Dual-use export control regime](../resources/eu-dual-use-regulation-2021-821.md)
+- explains: [Regulation (EU) 2021/821 - Dual-use export control regime](../../catalog/resources/eu-dual-use-regulation-2021-821.md)
 
 ## Referenced by
 
-- [Regulation (EU) 2021/821 - Dual-use export control regime](../resources/eu-dual-use-regulation-2021-821.md) (part_of)
+- [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Regulation (EU) 2021/821 - Dual-use export control regime](../../catalog/resources/eu-dual-use-regulation-2021-821.md) (part_of)
 
 _Indexed by lane(s): defense-context_

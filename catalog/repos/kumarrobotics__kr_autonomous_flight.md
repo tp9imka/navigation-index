@@ -10,9 +10,9 @@ UPenn Kumar Robotics end-to-end autonomy stack for GPS-denied quadrotors: state 
 
 **Why it matters:** Full reference stack for flying without GNSS in forests and under canopy, from a lab with many field deployments.
 
-**Hackathon notes:** Docker images help; large build. Use it to see how estimation and planning are glued, or reuse the planner.
+**Hackathon notes:** Docker images help; large build. Use it to see how estimation and planning are glued, or reuse the planner. Penn Software Licence: non-profit research use only, commercial use needs a licence from Penn. An experimental ROS 2 Jazzy port is on the ros2_dev branch.
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [Visual(-inertial) odometry](../concepts/vio.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `gps-denied`, `quadrotor`, `full-stack`
 
@@ -20,7 +20,7 @@ UPenn Kumar Robotics end-to-end autonomy stack for GPS-denied quadrotors: state 
 
 ## Related
 
-- alternative_to: [Fast-Planner](../repos/hkust-aerial-robotics__fast-planner.md)
+- alternative_to: [Fast-Planner](../../catalog/repos/hkust-aerial-robotics__fast-planner.md)
 
 _Indexed by lane(s): planning-gis-c2_
 

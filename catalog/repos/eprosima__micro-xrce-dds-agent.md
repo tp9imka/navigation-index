@@ -17,7 +17,7 @@ Agent that bridges DDS-XRCE clients on microcontrollers into a full DDS / ROS 2 
 - [_index-round3](../../docs/integration-cards/_index-round3.md) (integration-cards)
 - [eprosima__micro-xrce-dds-agent](../../docs/integration-cards/eprosima__micro-xrce-dds-agent.md) (integration-cards)
 
-**Concepts:** [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `dds`, `xrce`, `ros2`, `bridge`
 
@@ -25,15 +25,15 @@ Agent that bridges DDS-XRCE clients on microcontrollers into a full DDS / ROS 2 
 
 ## Related
 
-- integrates_with: [PX4 Autopilot](../repos/px4__px4-autopilot.md)
-- integrates_with: [ArduPilot](../repos/ardupilot__ardupilot.md)
-- integrates_with: [px4_msgs](../repos/px4__px4_msgs.md)
+- integrates_with: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
+- integrates_with: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
+- integrates_with: [px4_msgs](../../catalog/repos/px4__px4_msgs.md)
 
 ## Referenced by
 
-- [ardupilot_ros](../repos/ardupilot__ardupilot_ros.md) (depends_on)
-- [PX4 Autopilot](../repos/px4__px4-autopilot.md) (integrates_with)
-- [px4_msgs](../repos/px4__px4_msgs.md) (integrates_with)
+- [ardupilot_ros](../../catalog/repos/ardupilot__ardupilot_ros.md) (depends_on)
+- [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md) (integrates_with)
+- [px4_msgs](../../catalog/repos/px4__px4_msgs.md) (integrates_with)
 
 _Indexed by lane(s): autopilots_
 

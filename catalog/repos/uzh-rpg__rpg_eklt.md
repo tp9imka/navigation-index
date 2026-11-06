@@ -12,7 +12,7 @@ Asynchronous photometric feature tracking that combines events and frames (IJCV 
 
 **Hackathon notes:** Old ROS1 code; use for reference.
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Feature detection and matching](../concepts/feature-matching.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 
 **Tags:** `event-camera`, `feature-tracking`
 
@@ -20,11 +20,11 @@ Asynchronous photometric feature tracking that combines events and frames (IJCV 
 
 ## Related
 
-- same_org: [Ultimate SLAM](../repos/uzh-rpg__rpg_ultimate_slam_open.md)
+- same_org: [Ultimate SLAM](../../catalog/repos/uzh-rpg__rpg_ultimate_slam_open.md)
 
 ## Referenced by
 
-- [EMVS](../repos/uzh-rpg__rpg_emvs.md) (same_org)
+- [EMVS](../../catalog/repos/uzh-rpg__rpg_emvs.md) (same_org)
 
 _Indexed by lane(s): gap-fill_
 

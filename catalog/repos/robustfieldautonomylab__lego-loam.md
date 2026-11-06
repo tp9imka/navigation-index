@@ -12,7 +12,7 @@ Lightweight ground-optimized LiDAR odometry and mapping that segments ground to 
 
 **Hackathon notes:** ROS 1 only, unmaintained, tuned for Velodyne VLP-16. Use LIO-SAM or KISS-ICP instead unless reproducing baselines.
 
-**Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
+**Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 
 **Tags:** `loam`, `ground-segmentation`, `ros1`
 
@@ -20,7 +20,7 @@ Lightweight ground-optimized LiDAR odometry and mapping that segments ground to 
 
 ## Related
 
-- alternative_to: [LIO-SAM](../repos/tixiaoshan__lio-sam.md)
+- alternative_to: [LIO-SAM](../../catalog/repos/tixiaoshan__lio-sam.md)
 
 _Indexed by lane(s): slam_
 

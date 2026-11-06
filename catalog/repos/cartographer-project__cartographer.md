@@ -12,7 +12,7 @@ Real-time 2D and 3D SLAM with submaps and branch-and-bound loop closure across m
 
 **Hackathon notes:** Project is in maintenance mode with little activity. Still available via ROS packages and works for 2D indoor mapping.
 
-**Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
+**Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 
 **Tags:** `2d-slam`, `submaps`, `ros`
 
@@ -20,11 +20,11 @@ Real-time 2D and 3D SLAM with submaps and branch-and-bound loop closure across m
 
 ## Related
 
-- alternative_to: [RTAB-Map](../repos/introlab__rtabmap.md)
+- alternative_to: [RTAB-Map](../../catalog/repos/introlab__rtabmap.md)
 
 ## Referenced by
 
-- [RTAB-Map](../repos/introlab__rtabmap.md) (alternative_to)
+- [RTAB-Map](../../catalog/repos/introlab__rtabmap.md) (alternative_to)
 
 _Indexed by lane(s): slam_
 

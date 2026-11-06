@@ -12,7 +12,7 @@ LiDAR global place descriptor for loop detection and relocalization (backup of t
 
 **Hackathon notes:** Header-only style C++; SC-LIO-SAM shows integration.
 
-**Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `descriptor`, `loop-closure`, `matlab`, `c++`
 
@@ -20,12 +20,12 @@ LiDAR global place descriptor for loop detection and relocalization (backup of t
 
 ## Related
 
-- integrates_with: [SC-LIO-SAM](../repos/gisbi-kim__sc-lio-sam.md)
+- integrates_with: [SC-LIO-SAM](../../catalog/repos/gisbi-kim__sc-lio-sam.md)
 
 ## Referenced by
 
-- [SC-LIO-SAM](../repos/gisbi-kim__sc-lio-sam.md) (depends_on)
-- [LIO-SAM](../repos/tixiaoshan__lio-sam.md) (integrates_with)
+- [SC-LIO-SAM](../../catalog/repos/gisbi-kim__sc-lio-sam.md) (depends_on)
+- [LIO-SAM](../../catalog/repos/tixiaoshan__lio-sam.md) (integrates_with)
 
 _Indexed by lane(s): slam_
 

@@ -17,7 +17,7 @@ x-io Technologies' C AHRS library (revised Madgwick-style algorithm) with gyro o
 - [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
 - [xiotechnologies__fusion](../../docs/integration-cards/xiotechnologies__fusion.md) (integration-cards)
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `ahrs`, `madgwick`, `embedded`, `c`
 
@@ -25,14 +25,16 @@ x-io Technologies' C AHRS library (revised Madgwick-style algorithm) with gyro o
 
 ## Related
 
-- alternative_to: [AHRS (Python)](../repos/mayitzin__ahrs.md)
-- alternative_to: [MadgwickAHRS (Arduino)](../repos/arduino-libraries__madgwickahrs.md)
+- alternative_to: [AHRS (Python)](../../catalog/repos/mayitzin__ahrs.md)
+- alternative_to: [MadgwickAHRS (Arduino)](../../catalog/repos/arduino-libraries__madgwickahrs.md)
 
 ## Referenced by
 
-- [MadgwickAHRS (Arduino)](../repos/arduino-libraries__madgwickahrs.md) (alternative_to)
-- [AHRS (Python)](../repos/mayitzin__ahrs.md) (alternative_to)
-- [An efficient orientation filter for inertial and inertial/magnetic sensor arrays](../resources/madgwick-orientation-filter-report.md) (has_code)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [MadgwickAHRS (Arduino)](../../catalog/repos/arduino-libraries__madgwickahrs.md) (alternative_to)
+- [AHRS (Python)](../../catalog/repos/mayitzin__ahrs.md) (alternative_to)
+- [An efficient orientation filter for inertial and inertial/magnetic sensor arrays](../../catalog/resources/madgwick-orientation-filter-report.md) (has_code)
 
 _Indexed by lane(s): ins-fusion_
 

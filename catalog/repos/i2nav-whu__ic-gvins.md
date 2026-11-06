@@ -12,7 +12,7 @@ INS-centric GNSS-visual-inertial navigation system from i2Nav, where the precise
 
 **Hackathon notes:** ROS-based; heavier setup than KF-GINS. Use their datasets first.
 
-**Concepts:** [GNSS/INS integration](../concepts/gnss-ins.md), [Visual(-inertial) odometry](../concepts/vio.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `gnss-visual-inertial`, `factor-graph`, `i2nav`
 
@@ -20,14 +20,15 @@ INS-centric GNSS-visual-inertial navigation system from i2Nav, where the precise
 
 ## Related
 
-- same_org: [LE-VINS](../repos/i2nav-whu__le-vins.md)
-- alternative_to: [GICI-LIB](../repos/chichengcn__gici-open.md)
+- same_org: [LE-VINS](../../catalog/repos/i2nav-whu__le-vins.md)
+- alternative_to: [GICI-LIB](../../catalog/repos/chichengcn__gici-open.md)
 
 ## Referenced by
 
-- [GICI-LIB](../repos/chichengcn__gici-open.md) (alternative_to)
-- [GVINS](../repos/hkust-aerial-robotics__gvins.md) (alternative_to)
-- [LE-VINS](../repos/i2nav-whu__le-vins.md) (same_org)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [GICI-LIB](../../catalog/repos/chichengcn__gici-open.md) (alternative_to)
+- [GVINS](../../catalog/repos/hkust-aerial-robotics__gvins.md) (alternative_to)
+- [LE-VINS](../../catalog/repos/i2nav-whu__le-vins.md) (same_org)
 
 _Indexed by lane(s): ins-fusion_
 

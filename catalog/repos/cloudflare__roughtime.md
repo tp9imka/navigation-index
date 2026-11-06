@@ -12,7 +12,7 @@ Go implementation of Roughtime, a protocol that returns signed coarse timestamps
 
 **Hackathon notes:** Query several public Roughtime servers at startup; reject GNSS time if it is outside their bound. Accuracy is seconds-level by design, not a fine timing source.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `roughtime`, `authenticated-time`, `go`
 
@@ -20,11 +20,12 @@ Go implementation of Roughtime, a protocol that returns signed coarse timestamps
 
 ## Related
 
-- same_org: [cfnts](../repos/cloudflare__cfnts.md)
+- same_org: [cfnts](../../catalog/repos/cloudflare__cfnts.md)
 
 ## Referenced by
 
-- [Roughtime (draft-ietf-ntp-roughtime)](../resources/ietf-roughtime-draft.md) (has_code)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [Roughtime (draft-ietf-ntp-roughtime)](../../catalog/resources/ietf-roughtime-draft.md) (has_code)
 
 _Indexed by lane(s): timing_
 

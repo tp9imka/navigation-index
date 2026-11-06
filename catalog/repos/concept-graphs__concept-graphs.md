@@ -12,7 +12,7 @@ Builds open-vocabulary 3D scene graphs from RGB-D by associating 2D foundation-m
 
 **Hackathon notes:** Heavy dependencies (SAM, CLIP, GroundingDINO); start from Replica examples.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [Visual SLAM](../concepts/visual-slam.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Visual SLAM](../../catalog/concepts/visual-slam.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `scene-graph`, `open-vocabulary`, `rgb-d`, `llm`
 
@@ -20,13 +20,13 @@ Builds open-vocabulary 3D scene graphs from RGB-D by associating 2D foundation-m
 
 ## Related
 
-- alternative_to: [VLMaps](../repos/vlmaps__vlmaps.md)
-- integrates_with: [ConceptGraphs: Open-Vocabulary 3D Scene Graphs for Perception and Planning](../resources/conceptgraphs-2023.md)
+- alternative_to: [VLMaps](../../catalog/repos/vlmaps__vlmaps.md)
+- integrates_with: [ConceptGraphs: Open-Vocabulary 3D Scene Graphs for Perception and Planning](../../catalog/resources/conceptgraphs-2023.md)
 
 ## Referenced by
 
-- [VLMaps](../repos/vlmaps__vlmaps.md) (alternative_to)
-- [ConceptGraphs: Open-Vocabulary 3D Scene Graphs for Perception and Planning](../resources/conceptgraphs-2023.md) (has_code)
+- [VLMaps](../../catalog/repos/vlmaps__vlmaps.md) (alternative_to)
+- [ConceptGraphs: Open-Vocabulary 3D Scene Graphs for Perception and Planning](../../catalog/resources/conceptgraphs-2023.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

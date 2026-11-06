@@ -12,16 +12,18 @@ The ASCII serial sentence standard (GGA, RMC, GSA, GSV, VTG...) used by nearly a
 - Checksummed ASCII over serial, easy to parse and to fake
 - Still the lowest-common-denominator GNSS output
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Maritime navigation](../concepts/maritime-nav.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `nmea0183`, `serial`, `marine`
 
 ## Related
 
-- has_code: [pynmeagps](../repos/semuconsulting__pynmeagps.md)
+- has_code: [pynmeagps](../../catalog/repos/semuconsulting__pynmeagps.md)
 
 ## Referenced by
 
-- [NMEA Revealed (gpsd project)](../resources/gpsd-nmea-revealed.md) (explains)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
+- [NMEA Revealed (gpsd project)](../../catalog/resources/gpsd-nmea-revealed.md) (explains)
 
 _Indexed by lane(s): docs-standards_

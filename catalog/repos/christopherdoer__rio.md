@@ -12,7 +12,7 @@ EKF-based radar-inertial odometry using 4D mmWave radar ego-velocity measurement
 
 **Hackathon notes:** ROS 1; uses the author's radar ego-velocity estimator. Works with TI mmWave-class sensors.
 
-**Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `4d-radar`, `mmwave`, `ekf`, `ros1`
 
@@ -20,14 +20,17 @@ EKF-based radar-inertial odometry using 4D mmWave radar ego-velocity measurement
 
 ## Related
 
-- same_org: [RRxIO](../repos/christopherdoer__rrxio.md)
+- same_org: [RRxIO](../../catalog/repos/christopherdoer__rrxio.md)
 
 ## Referenced by
 
-- [REVE](../repos/christopherdoer__reve.md) (integrates_with)
-- [RRxIO](../repos/christopherdoer__rrxio.md) (extends)
-- [HKUST 4D Radar-Inertial Odometry](../repos/hkust-aerial-robotics__rio.md) (alternative_to)
-- [Go-RIO](../repos/wooseongy__go-rio.md) (alternative_to)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [REVE](../../catalog/repos/christopherdoer__reve.md) (integrates_with)
+- [RRxIO](../../catalog/repos/christopherdoer__rrxio.md) (extends)
+- [HKUST 4D Radar-Inertial Odometry](../../catalog/repos/hkust-aerial-robotics__rio.md) (alternative_to)
+- [Go-RIO](../../catalog/repos/wooseongy__go-rio.md) (alternative_to)
 
 _Indexed by lane(s): slam_
 

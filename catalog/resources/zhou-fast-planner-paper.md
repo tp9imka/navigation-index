@@ -10,12 +10,16 @@ Fast-Planner paper: kinodynamic path search front-end plus B-spline optimization
 
 - Front-end/back-end split is the template many later planners follow
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
 **Tags:** `quadrotor`, `kinodynamic`
 
 ## Related
 
-- has_code: [Fast-Planner](../repos/hkust-aerial-robotics__fast-planner.md)
+- has_code: [Fast-Planner](../../catalog/repos/hkust-aerial-robotics__fast-planner.md)
+
+## Referenced by
+
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 
 _Indexed by lane(s): planning-gis-c2_

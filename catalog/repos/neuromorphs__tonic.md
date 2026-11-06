@@ -16,7 +16,7 @@ Python library for event-based datasets and transforms, in the style of torchvis
 
 - [event-camera-datasets](../../docs/dataset-cards/event-camera-datasets.md) (dataset-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `event-camera`, `dataset-loader`, `pytorch`
 
@@ -24,11 +24,11 @@ Python library for event-based datasets and transforms, in the style of torchvis
 
 ## Related
 
-- integrates_with: [OpenEB](../repos/prophesee-ai__openeb.md)
+- integrates_with: [OpenEB](../../catalog/repos/prophesee-ai__openeb.md)
 
 ## Referenced by
 
-- [OpenEB](../repos/prophesee-ai__openeb.md) (integrates_with)
+- [OpenEB](../../catalog/repos/prophesee-ai__openeb.md) (integrates_with)
 
 _Indexed by lane(s): gap-fill_
 

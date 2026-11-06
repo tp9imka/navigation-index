@@ -12,7 +12,7 @@ GitHub mirror of LibrePilot, the community continuation of OpenPilot for CC3D/Re
 
 **Hackathon notes:** Read-only reference. Hardware is end-of-life.
 
-**Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `openpilot-lineage`, `uavtalk`, `cc3d`, `revolution`
 
@@ -20,7 +20,7 @@ GitHub mirror of LibrePilot, the community continuation of OpenPilot for CC3D/Re
 
 ## Related
 
-- fork_of: [OpenPilot (mirror)](../repos/openpilot__openpilot.md)
+- fork_of: [OpenPilot (mirror)](../../catalog/repos/openpilot__openpilot.md)
 
 _Indexed by lane(s): autopilots_
 

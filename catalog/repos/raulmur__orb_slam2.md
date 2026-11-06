@@ -12,7 +12,7 @@ Feature-based SLAM for monocular, stereo and RGB-D cameras using ORB features, w
 
 **Hackathon notes:** Superseded by ORB-SLAM3 and no longer developed; builds need patching on modern OpenCV/Eigen. Use only to reproduce old baselines.
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [Place recognition and loop closure](../concepts/place-recognition.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 
 **Tags:** `orb`, `bundle-adjustment`, `loop-closure`, `c++`
 
@@ -20,11 +20,11 @@ Feature-based SLAM for monocular, stereo and RGB-D cameras using ORB features, w
 
 ## Related
 
-- alternative_to: [ORB-SLAM3](../repos/uz-slamlab__orb_slam3.md)
+- alternative_to: [ORB-SLAM3](../../catalog/repos/uz-slamlab__orb_slam3.md)
 
 ## Referenced by
 
-- [ORB-SLAM3](../repos/uz-slamlab__orb_slam3.md) (extends)
+- [ORB-SLAM3](../../catalog/repos/uz-slamlab__orb_slam3.md) (extends)
 
 _Indexed by lane(s): slam_
 

@@ -12,7 +12,7 @@ Android app implementing pedestrian dead reckoning with step detection and orien
 
 **Hackathon notes:** The author marks it unmaintained (written in 2014). It is an Eclipse ADT project, so expect to import and migrate it into Android Studio, and the manifest lacks a Google Maps API key. Use the step-detection and heading code as reference; fuse with Wi-Fi or UWB for correction.
 
-**Concepts:** [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md)
+**Concepts:** [Indoor and pedestrian navigation](../../catalog/concepts/indoor-pedestrian.md)
 
 **Tags:** `pdr`, `android`, `smartphone`
 
@@ -20,11 +20,11 @@ Android app implementing pedestrian dead reckoning with step detection and orien
 
 ## Related
 
-- alternative_to: [OpenPDR](../repos/wuzhiguocarter__openpdr.md)
+- alternative_to: [OpenPDR](../../catalog/repos/wuzhiguocarter__openpdr.md)
 
 ## Referenced by
 
-- [OpenPDR](../repos/wuzhiguocarter__openpdr.md) (alternative_to)
+- [OpenPDR](../../catalog/repos/wuzhiguocarter__openpdr.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

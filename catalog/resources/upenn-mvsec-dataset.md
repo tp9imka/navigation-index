@@ -15,8 +15,12 @@ Stereo event cameras with IMU, lidar and ground truth on several platforms inclu
 
 - [event-camera-datasets](../../docs/dataset-cards/event-camera-datasets.md) (dataset-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `event-camera`, `multi-platform`
+
+## Referenced by
+
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 
 _Indexed by lane(s): sim-data_

@@ -15,12 +15,16 @@ Describes ORB-SLAM3's tightly integrated visual-inertial SLAM, MAP-based IMU ini
 
 - [orb-slam3-campos-2020](../../docs/paper-digests/orb-slam3-campos-2020.md) (paper-digests)
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `orb-slam`
 
 ## Related
 
-- has_code: [ORB-SLAM3](../repos/uz-slamlab__orb_slam3.md)
+- has_code: [ORB-SLAM3](../../catalog/repos/uz-slamlab__orb_slam3.md)
+
+## Referenced by
+
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 
 _Indexed by lane(s): slam_

@@ -11,7 +11,7 @@ Download page for EUSPA's market reports and GNSS User Technology Reports, which
 - User Technology Report covers anti-jamming, authentication and multi-constellation trends
 - Useful for framing a pitch
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Policy, export control and ethics](../concepts/policy-ethics.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md)
 
 **Tags:** `euspa`, `market`, `user-technology`
 

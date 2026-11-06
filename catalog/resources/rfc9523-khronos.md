@@ -11,16 +11,17 @@ Informational RFC describing Khronos: an NTP client watchdog that samples many s
 - Sample many servers, trim outliers, bound the shift
 - Grew out of the Chronos NDSS 2018 work
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Standards and interface specs](../concepts/standards.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Standards and interface specs](../../catalog/concepts/standards.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `ntp`, `khronos`, `rfc`, `time-shifting`
 
 ## Related
 
-- cites: [Preventing (Network) Time Travel with Chronos](../resources/deutsch-2018-chronos-ndss.md)
+- cites: [Preventing (Network) Time Travel with Chronos](../../catalog/resources/deutsch-2018-chronos-ndss.md)
 
 ## Referenced by
 
-- [Preventing (Network) Time Travel with Chronos](../resources/deutsch-2018-chronos-ndss.md) (same_author)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [Preventing (Network) Time Travel with Chronos](../../catalog/resources/deutsch-2018-chronos-ndss.md) (same_author)
 
 _Indexed by lane(s): timing_

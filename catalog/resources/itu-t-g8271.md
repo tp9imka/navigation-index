@@ -10,12 +10,12 @@ Telecom recommendation that sets time and phase synchronization requirements and
 
 - Source of the telecom time-error budgets that PRTC/T-BC specs feed into
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `itu-t`, `telecom`, `phase-sync`
 
 ## Related
 
-- cites: [ITU-T G.8272: Timing characteristics of primary reference time clocks](../resources/itu-t-g8272-prtc.md)
+- cites: [ITU-T G.8272: Timing characteristics of primary reference time clocks](../../catalog/resources/itu-t-g8272-prtc.md)
 
 _Indexed by lane(s): timing_

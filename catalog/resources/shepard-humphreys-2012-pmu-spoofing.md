@@ -10,12 +10,16 @@ International Journal of Critical Infrastructure Protection paper that spoofed t
 
 - Classic demonstration of GNSS time-push spoofing on infrastructure
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Jamming and spoofing](../concepts/gnss-interference.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
 **Tags:** `spoofing`, `pmu`, `power-grid`, `gps-timing`
 
 ## Related
 
-- same_author: [TEXBAT: Texas Spoofing Test Battery](../resources/ut-texbat.md)
+- same_author: [Texas Spoofing Test Battery (TEXBAT)](../../catalog/resources/ut-texbat.md)
+
+## Referenced by
+
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 
 _Indexed by lane(s): timing_

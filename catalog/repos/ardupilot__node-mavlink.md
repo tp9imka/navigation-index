@@ -12,7 +12,7 @@ TypeScript/Node.js MAVLink bindings and tools.
 
 **Hackathon notes:** npm install; works over serial/UDP/TCP.
 
-**Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
+**Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 
 **Tags:** `typescript`, `node`
 
@@ -20,7 +20,7 @@ TypeScript/Node.js MAVLink bindings and tools.
 
 ## Related
 
-- depends_on: [MAVLink](../repos/mavlink__mavlink.md)
+- depends_on: [MAVLink](../../catalog/repos/mavlink__mavlink.md)
 
 _Indexed by lane(s): autopilots_
 

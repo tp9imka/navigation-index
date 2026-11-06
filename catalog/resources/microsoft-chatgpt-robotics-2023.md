@@ -11,16 +11,16 @@ Early study of prompting strategies and API design for using ChatGPT to generate
 - Expose a high-level function library to the LLM
 - Keep a human in the loop to review code
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md)
 
 **Tags:** `chatgpt`, `prompting`
 
 ## Related
 
-- has_code: [PromptCraft-Robotics](../repos/microsoft__promptcraft-robotics.md)
+- has_code: [PromptCraft-Robotics](../../catalog/repos/microsoft__promptcraft-robotics.md)
 
 ## Referenced by
 
-- [PromptCraft-Robotics](../repos/microsoft__promptcraft-robotics.md) (integrates_with)
+- [PromptCraft-Robotics](../../catalog/repos/microsoft__promptcraft-robotics.md) (integrates_with)
 
 _Indexed by lane(s): gap-fill_

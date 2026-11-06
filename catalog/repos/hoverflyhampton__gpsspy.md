@@ -12,7 +12,7 @@ Python implementation of GPS jamming detection from receiver signal-to-noise rat
 
 **Hackathon notes:** Small codebase from 2021; adapt to read C/N0 from pyubx2 or Android logs.
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `jamming-detection`, `snr`, `python`
 
@@ -20,7 +20,13 @@ Python implementation of GPS jamming detection from receiver signal-to-noise rat
 
 ## Related
 
-- integrates_with: [pyubx2](../repos/semuconsulting__pyubx2.md)
+- integrates_with: [pyubx2](../../catalog/repos/semuconsulting__pyubx2.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 
 _Indexed by lane(s): gnss_
 

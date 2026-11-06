@@ -15,8 +15,15 @@ English: 'UAV route planning algorithm under a shortage of visual landmarks'. Jo
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `lang:ru`, `route-planning`, `landmarks`
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Разработана система автономной визуальной навигации роя дронов](../../catalog/resources/spbran-konovalov-swarm-visual-nav-2025.md) (same_author)
 
 _Indexed by lane(s): ua-ru-sources_

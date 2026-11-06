@@ -14,12 +14,16 @@ Lightweight feature extraction and matching architecture aimed at real-time use 
 
 - [xfeat-2024](../../docs/paper-digests/xfeat-2024.md) (paper-digests)
 
-**Concepts:** [Feature detection and matching](../concepts/feature-matching.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Feature detection and matching](../../catalog/concepts/feature-matching.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `arxiv`, `lightweight`
 
 ## Related
 
-- has_code: [XFeat](../repos/verlab__accelerated_features.md)
+- has_code: [XFeat](../../catalog/repos/verlab__accelerated_features.md)
+
+## Referenced by
+
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 
 _Indexed by lane(s): alt-nav_

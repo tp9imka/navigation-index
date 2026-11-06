@@ -12,7 +12,7 @@ Datasets for acoustic echolocation and sound-source localization recorded on a C
 
 **Hackathon notes:** Niche; useful if exploring acoustic self-localization.
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Indoor and pedestrian navigation](../../catalog/concepts/indoor-pedestrian.md)
 
 **Tags:** `acoustic`, `crazyflie`, `echolocation`
 

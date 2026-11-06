@@ -11,12 +11,12 @@ Registers live UAV frames against geo-referenced 3D maps to recover 6-DoF ego po
 - Map-based absolute pose for GNSS-denied flight
 - 3DGS backends released
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `cvpr2026`, `3d-map`
 
 ## Related
 
-- has_code: [PiLoT](../repos/nudt-sawlab__pilot.md)
+- has_code: [PiLoT](../../catalog/repos/nudt-sawlab__pilot.md)
 
 _Indexed by lane(s): round3-expansion_

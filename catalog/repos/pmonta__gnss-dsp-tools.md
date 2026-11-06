@@ -12,7 +12,7 @@ Python code generators, acquisition and tracking scripts for GPS, Galileo, GLONA
 
 **Hackathon notes:** Install numpy, scipy and numba (conda is the easy route), then run acquire-<system>-<signal>.py or track-*.py on an IQ file from any SDR. No compile step beyond Numba's JIT.
 
-**Concepts:** [Software-defined GNSS receivers](../concepts/gnss-sdr.md), [GNSS positioning](../concepts/gnss.md)
+**Concepts:** [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md), [GNSS positioning](../../catalog/concepts/gnss.md)
 
 **Tags:** `acquisition`, `tracking`, `prn-codes`, `python`
 
@@ -20,12 +20,12 @@ Python code generators, acquisition and tracking scripts for GPS, Galileo, GLONA
 
 ## Related
 
-- alternative_to: [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md)
-- alternative_to: [GNSS-matlab](../repos/danipascual__gnss-matlab.md)
+- alternative_to: [GNSS-SDR](../../catalog/repos/gnss-sdr__gnss-sdr.md)
+- alternative_to: [GNSS-matlab](../../catalog/repos/danipascual__gnss-matlab.md)
 
 ## Referenced by
 
-- [GNSS-matlab](../repos/danipascual__gnss-matlab.md) (alternative_to)
+- [GNSS-matlab](../../catalog/repos/danipascual__gnss-matlab.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

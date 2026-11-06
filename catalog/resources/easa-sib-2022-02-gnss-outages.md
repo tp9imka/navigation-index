@@ -12,19 +12,20 @@ EASA's safety information bulletin on GNSS jamming and spoofing affecting aircra
 - Recommends cross-checking with non-GNSS navaids and reporting events
 - Affected flight information regions are tracked on EASA's GNSS page
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `easa`, `aviation`, `bulletin`, `regulation`
 
 ## Related
 
-- part_of: [EASA - Global Navigation Satellite System outages and alterations](../resources/easa-gnss-outages-page.md)
+- part_of: [EASA - Global Navigation Satellite System outages and alterations](../../catalog/resources/easa-gnss-outages-page.md)
 
 ## Referenced by
 
-- [EASA - Global Navigation Satellite System outages and alterations](../resources/easa-gnss-outages-page.md) (explains)
-- [EASA and IATA comprehensive plan to mitigate the risks of GNSS interference](../resources/easa-iata-gnss-interference-plan-2025.md) (cites)
-- [FAA SAFO 24002: Recognizing and Mitigating GPS/GNSS Disruptions](../resources/faa-safo-24002-gnss-disruptions.md) (cites)
-- [GPS Spoofing WorkGroup 2024 - Final Report](../resources/opsgroup-gps-spoofing-final-report-2024.md) (cites)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [EASA - Global Navigation Satellite System outages and alterations](../../catalog/resources/easa-gnss-outages-page.md) (explains)
+- [EASA and IATA comprehensive plan to mitigate the risks of GNSS interference](../../catalog/resources/easa-iata-gnss-interference-plan-2025.md) (cites)
+- [FAA SAFO 24002: Recognizing and Mitigating GPS/GNSS Disruptions](../../catalog/resources/faa-safo-24002-gnss-disruptions.md) (cites)
+- [GPS Spoofing WorkGroup 2024 - Final Report](../../catalog/resources/opsgroup-gps-spoofing-final-report-2024.md) (cites)
 
 _Indexed by lane(s): defense-context_

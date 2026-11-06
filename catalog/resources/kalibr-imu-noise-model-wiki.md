@@ -11,13 +11,18 @@ Practical explanation of white noise and random-walk bias parameters for IMUs, h
 - Continuous vs discrete noise density conversion
 - Inflate Allan-derived noise for real-world use
 
-**Concepts:** [Sensor calibration](../concepts/calibration.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Sensor calibration](../../catalog/concepts/calibration.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `imu-noise`, `allan-variance`
 
 ## Related
 
-- part_of: [Kalibr](../repos/ethz-asl__kalibr.md)
-- explains: [allan_variance_ros](../repos/ori-drs__allan_variance_ros.md)
+- part_of: [Kalibr](../../catalog/repos/ethz-asl__kalibr.md)
+- explains: [allan_variance_ros](../../catalog/repos/ori-drs__allan_variance_ros.md)
+
+## Referenced by
+
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 
 _Indexed by lane(s): ins-fusion_

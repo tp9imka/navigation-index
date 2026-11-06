@@ -11,12 +11,12 @@ Kaggle drone RF classification dataset: 1.2 ms IQ vectors from 6 consumer drone 
 - SNR labels allow robustness curves
 - PyTorch tensor format
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../concepts/counter-uas.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md)
 
 **Tags:** `kaggle`, `rf`
 
 ## Related
 
-- has_code: [Noisy Drone RF Signal Classification](../repos/sgluege__noisy-drone-rf-signal-classification.md)
+- has_code: [Noisy Drone RF Signal Classification](../../catalog/repos/sgluege__noisy-drone-rf-signal-classification.md)
 
 _Indexed by lane(s): round3-expansion_

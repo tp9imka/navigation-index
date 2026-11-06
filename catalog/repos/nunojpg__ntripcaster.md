@@ -12,7 +12,7 @@ Maintained mirror of the BKG standard NTRIP broadcaster in C for distributing RT
 
 **Hackathon notes:** Builds with autotools; pair with str2str from RTKLIB as the source.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md)
 
 **Tags:** `ntrip`, `caster`, `rtcm`, `c`
 
@@ -20,16 +20,16 @@ Maintained mirror of the BKG standard NTRIP broadcaster in C for distributing RT
 
 ## Related
 
-- alternative_to: [ntripcaster Docker](../repos/goblimey__ntripcaster.md)
-- integrates_with: [RTKLIB](../repos/tomojitakasu__rtklib.md)
+- alternative_to: [ntripcaster Docker](../../catalog/repos/goblimey__ntripcaster.md)
+- integrates_with: [RTKLIB](../../catalog/repos/tomojitakasu__rtklib.md)
 
 ## Referenced by
 
-- [go-gnss/ntrip](../repos/go-gnss__ntrip.md) (alternative_to)
-- [ntripcaster Docker](../repos/goblimey__ntripcaster.md) (alternative_to)
-- [Node-NTRIP caster](../repos/node-ntrip__caster.md) (alternative_to)
-- [pygnssutils](../repos/semuconsulting__pygnssutils.md) (alternative_to)
-- [NTRIP: Networked Transport of RTCM via Internet Protocol (BKG)](../resources/bkg-ntrip-about.md) (has_code)
+- [go-gnss/ntrip](../../catalog/repos/go-gnss__ntrip.md) (alternative_to)
+- [ntripcaster Docker](../../catalog/repos/goblimey__ntripcaster.md) (alternative_to)
+- [Node-NTRIP caster](../../catalog/repos/node-ntrip__caster.md) (alternative_to)
+- [pygnssutils](../../catalog/repos/semuconsulting__pygnssutils.md) (alternative_to)
+- [NTRIP: Networked Transport of RTCM via Internet Protocol (BKG)](../../catalog/resources/bkg-ntrip-about.md) (has_code)
 
 _Indexed by lane(s): gnss_
 

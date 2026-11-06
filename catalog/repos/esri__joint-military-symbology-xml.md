@@ -12,7 +12,7 @@ Esri data encapsulation of MIL-STD-2525D and APP-6(D) symbology: symbol IDs, ent
 
 **Hackathon notes:** Archived in 2024; data still useful.
 
-**Concepts:** [Standards and interface specs](../concepts/standards.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [Standards and interface specs](../../catalog/concepts/standards.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `mil-std-2525d`, `app-6d`, `sidc`
 
@@ -20,12 +20,12 @@ Esri data encapsulation of MIL-STD-2525D and APP-6(D) symbology: symbol IDs, ent
 
 ## Related
 
-- alternative_to: [milsymbol](../repos/spatialillusions__milsymbol.md)
+- alternative_to: [milsymbol](../../catalog/repos/spatialillusions__milsymbol.md)
 
 ## Referenced by
 
-- [milsymbol](../repos/spatialillusions__milsymbol.md) (alternative_to)
-- [MIL-STD-2525D Joint Military Symbology](../resources/mil-std-2525d.md) (has_code)
+- [milsymbol](../../catalog/repos/spatialillusions__milsymbol.md) (alternative_to)
+- [MIL-STD-2525D Joint Military Symbology](../../catalog/resources/mil-std-2525d.md) (has_code)
 
 _Indexed by lane(s): planning-gis-c2_
 

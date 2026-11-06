@@ -12,12 +12,16 @@ CAN bus based marine network standard that carries position, heading, AIS and en
 - Plug-and-play backbone on modern vessels
 - Unauthenticated bus, relevant to maritime spoofing resilience
 
-**Concepts:** [Maritime navigation](../concepts/maritime-nav.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `nmea2000`, `can`, `pgn`, `marine`
 
 ## Related
 
-- has_code: [CANboat](../repos/canboat__canboat.md)
+- has_code: [CANboat](../../catalog/repos/canboat__canboat.md)
+
+## Referenced by
+
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 
 _Indexed by lane(s): docs-standards_

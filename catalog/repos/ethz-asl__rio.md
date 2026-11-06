@@ -12,7 +12,7 @@ Graph-based, sparse radar-inertial odometry estimation from ETH ASL, using GTSAM
 
 **Hackathon notes:** ROS build; datasets linked in README.
 
-**Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `radar-inertial`, `gtsam`, `factor-graph`
 
@@ -20,11 +20,11 @@ Graph-based, sparse radar-inertial odometry estimation from ETH ASL, using GTSAM
 
 ## Related
 
-- alternative_to: [HKUST 4D Radar-Inertial Odometry](../repos/hkust-aerial-robotics__rio.md)
+- alternative_to: [HKUST 4D Radar-Inertial Odometry](../../catalog/repos/hkust-aerial-robotics__rio.md)
 
 ## Referenced by
 
-- [HKUST 4D Radar-Inertial Odometry](../repos/hkust-aerial-robotics__rio.md) (alternative_to)
+- [HKUST 4D Radar-Inertial Odometry](../../catalog/repos/hkust-aerial-robotics__rio.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

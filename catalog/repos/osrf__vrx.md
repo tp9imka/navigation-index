@@ -16,7 +16,7 @@ Gazebo-based simulation environment for the RobotX maritime autonomy competition
 
 - [maritime-datasets](../../docs/dataset-cards/maritime-datasets.md) (dataset-cards)
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Maritime navigation](../concepts/maritime-nav.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `gazebo`, `usv`, `wam-v`, `robotx`, `ros2`, `maritime`
 
@@ -24,13 +24,19 @@ Gazebo-based simulation environment for the RobotX maritime autonomy competition
 
 ## Related
 
-- integrates_with: [ArduPilot](../repos/ardupilot__ardupilot.md)
-- alternative_to: [MOOS-IvP](../repos/moos-ivp__moos-ivp.md)
-- depends_on: [Gazebo Sim (gz-sim)](../repos/gazebosim__gz-sim.md)
+- integrates_with: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
+- alternative_to: [MOOS-IvP](../../catalog/repos/moos-ivp__moos-ivp.md)
+- depends_on: [Gazebo Sim (gz-sim)](../../catalog/repos/gazebosim__gz-sim.md)
 
 ## Referenced by
 
-- [MBZIRC Maritime Grand Challenge simulator](../repos/osrf__mbzirc.md) (alternative_to)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [MBZIRC Maritime Grand Challenge simulator](../../catalog/repos/osrf__mbzirc.md) (alternative_to)
 
 _Indexed by lane(s): domains-swarm, sim-data_
 

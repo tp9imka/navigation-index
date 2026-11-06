@@ -15,15 +15,23 @@ VectorNav makes small tactical-grade IMU/GNSS-INS units widely used on research 
 
 - [gnss-denied-nav-products](../../docs/landscape/gnss-denied-nav-products.md) (landscape)
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [GNSS/INS integration](../concepts/gnss-ins.md), [Signals of opportunity](../concepts/signals-of-opportunity.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md)
 
 **Tags:** `landscape`, `vectornav`, `iridium`, `vendor-claim`
 
 ## Related
 
-- alternative_to: [KF-GINS](../repos/i2nav-whu__kf-gins.md)
-- alternative_to: [pyins](../repos/nmayorov__pyins.md)
-- alternative_to: [gnss-ins-sim](../repos/aceinna__gnss-ins-sim.md)
-- uses: [Iridium PNT (Satellite Time and Location) and Iridium PNT ASIC](../resources/iridium-pnt-stl-asic.md)
+- alternative_to: [KF-GINS](../../catalog/repos/i2nav-whu__kf-gins.md)
+- alternative_to: [pyins](../../catalog/repos/nmayorov__pyins.md)
+- alternative_to: [gnss-ins-sim](../../catalog/repos/aceinna__gnss-ins-sim.md)
+- uses: [Iridium PNT (Satellite Time and Location) and Iridium PNT ASIC](../../catalog/resources/iridium-pnt-stl-asic.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
+- [GNSS-denied navigation: products and companies](../../docs/landscape/gnss-denied-nav-products.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
 
 _Indexed by lane(s): landscape_

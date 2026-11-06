@@ -12,7 +12,7 @@ MATLAB implementations of event-based feature tracking methods from the Penn GRA
 
 **Hackathon notes:** MATLAB; pair with MVSEC data.
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Feature detection and matching](../concepts/feature-matching.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 
 **Tags:** `event-camera`, `feature-tracking`, `matlab`
 

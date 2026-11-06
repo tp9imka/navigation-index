@@ -17,7 +17,7 @@ ESP32-based Remote ID transmitter firmware implementing ASTM F3411 broadcast (Bl
 - [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [ardupilot__arduremoteid](../../docs/integration-cards/ardupilot__arduremoteid.md) (integration-cards)
 
-**Concepts:** [Standards and interface specs](../concepts/standards.md), [Counter-UAS and drone detection](../concepts/counter-uas.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [Standards and interface specs](../../catalog/concepts/standards.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `remote-id`, `astm-f3411`, `esp32`, `opendroneid`, `dronecan`
 
@@ -25,18 +25,20 @@ ESP32-based Remote ID transmitter firmware implementing ASTM F3411 broadcast (Bl
 
 ## Related
 
-- depends_on: [Open Drone ID Core C](../repos/opendroneid__opendroneid-core-c.md)
-- integrates_with: [ArduPilot](../repos/ardupilot__ardupilot.md)
-- integrates_with: [OpenDroneID Android receiver](../repos/opendroneid__receiver-android.md)
+- depends_on: [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md)
+- integrates_with: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
+- integrates_with: [OpenDroneID Android receiver](../../catalog/repos/opendroneid__receiver-android.md)
 
 ## Referenced by
 
-- [ArduPilot](../repos/ardupilot__ardupilot.md) (integrates_with)
-- [Open Drone ID Core C](../repos/opendroneid__opendroneid-core-c.md) (integrates_with)
-- [OpenDroneID Android receiver](../repos/opendroneid__receiver-android.md) (integrates_with)
-- [uav_electronic_ids](../repos/sxjack__uav_electronic_ids.md) (alternative_to)
-- [Remote ID (ArduPilot)](../resources/ardupilot-remote-id-docs.md) (has_code)
-- [Remote ID (Open Drone ID) in PX4](../resources/px4-remote-id-docs.md) (uses)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md) (integrates_with)
+- [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md) (integrates_with)
+- [OpenDroneID Android receiver](../../catalog/repos/opendroneid__receiver-android.md) (integrates_with)
+- [uav_electronic_ids](../../catalog/repos/sxjack__uav_electronic_ids.md) (alternative_to)
+- [Remote ID (aka Drone ID)](../../catalog/resources/ardupilot-remote-id-docs.md) (has_code)
+- [Remote ID (Open Drone ID)](../../catalog/resources/px4-remote-id-docs.md) (uses)
 
 _Indexed by lane(s): autopilots_
 

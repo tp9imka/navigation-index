@@ -17,7 +17,7 @@ ROS package with EKF and UKF state estimation nodes that fuse any number of odom
 - [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
 - [cra-ros-pkg__robot_localization](../../docs/integration-cards/cra-ros-pkg__robot_localization.md) (integration-cards)
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [GNSS/INS integration](../concepts/gnss-ins.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 
 **Tags:** `ekf`, `ukf`, `ros2`, `navsat`
 
@@ -25,19 +25,24 @@ ROS package with EKF and UKF state estimation nodes that fuse any number of odom
 
 ## Related
 
-- alternative_to: [ethzasl_msf (Multi Sensor Fusion)](../repos/ethz-asl__ethzasl_msf.md)
-- integrates_with: [imu_tools](../repos/ccnyroboticslab__imu_tools.md)
+- alternative_to: [ethzasl_msf (Multi Sensor Fusion)](../../catalog/repos/ethz-asl__ethzasl_msf.md)
+- integrates_with: [imu_tools](../../catalog/repos/ccnyroboticslab__imu_tools.md)
 
 ## Referenced by
 
-- [imu_tools](../repos/ccnyroboticslab__imu_tools.md) (integrates_with)
-- [ethzasl_msf (Multi Sensor Fusion)](../repos/ethz-asl__ethzasl_msf.md) (alternative_to)
-- [fuse](../repos/locusrobotics__fuse.md) (alternative_to)
-- [ROSCon UK 2025 State Estimation workshop](../repos/locusrobotics__roscon-uk-2025-se-workshop.md) (depends_on)
-- [Navigating Using GPS Localization (Nav2 tutorial)](../resources/nav2-gps-navigation-tutorial.md) (uses)
-- [Nav2 first-time robot setup: Odometry and robot_localization](../resources/nav2-robot-localization-setup-guide.md) (uses)
-- [ROSCon UK 2025 - State Estimation for Mobile Robotics Workshop](../resources/nav2-roscon-uk-2025-state-estimation-workshop.md) (uses)
-- [robot_localization package documentation](../resources/robot-localization-docs.md) (has_code)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [imu_tools](../../catalog/repos/ccnyroboticslab__imu_tools.md) (integrates_with)
+- [ethzasl_msf (Multi Sensor Fusion)](../../catalog/repos/ethz-asl__ethzasl_msf.md) (alternative_to)
+- [fuse](../../catalog/repos/locusrobotics__fuse.md) (alternative_to)
+- [ROSCon UK 2025 State Estimation workshop](../../catalog/repos/locusrobotics__roscon-uk-2025-se-workshop.md) (depends_on)
+- [Navigating Using GPS Localization (Nav2 tutorial)](../../catalog/resources/nav2-gps-navigation-tutorial.md) (uses)
+- [Smoothing Odometry using Robot Localization (Nav2 first-time robot setup guide)](../../catalog/resources/nav2-robot-localization-setup-guide.md) (uses)
+- [ROSCon UK 2025 - State Estimation for Mobile Robotics Workshop](../../catalog/resources/nav2-roscon-uk-2025-state-estimation-workshop.md) (uses)
+- [robot_localization package documentation](../../catalog/resources/robot-localization-docs.md) (has_code)
 
 _Indexed by lane(s): ins-fusion_
 

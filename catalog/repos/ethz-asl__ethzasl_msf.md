@@ -12,7 +12,7 @@ Modular EKF framework from ETH ASL for fusing IMU propagation with pose, positio
 
 **Hackathon notes:** ROS 1 era; building on modern distros takes effort. Read it for the design more than to run it.
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `ekf`, `mav`, `ros1`
 
@@ -20,14 +20,14 @@ Modular EKF framework from ETH ASL for fusing IMU propagation with pose, positio
 
 ## Related
 
-- alternative_to: [MaRS (Modular and Robust Sensor-Fusion)](../repos/aau-cns__mars_lib.md)
-- alternative_to: [robot_localization](../repos/cra-ros-pkg__robot_localization.md)
-- same_org: [ROVIO](../repos/ethz-asl__rovio.md)
+- alternative_to: [MaRS (Modular and Robust Sensor-Fusion)](../../catalog/repos/aau-cns__mars_lib.md)
+- alternative_to: [robot_localization](../../catalog/repos/cra-ros-pkg__robot_localization.md)
+- same_org: [ROVIO](../../catalog/repos/ethz-asl__rovio.md)
 
 ## Referenced by
 
-- [MaRS (Modular and Robust Sensor-Fusion)](../repos/aau-cns__mars_lib.md) (alternative_to)
-- [robot_localization](../repos/cra-ros-pkg__robot_localization.md) (alternative_to)
+- [MaRS (Modular and Robust Sensor-Fusion)](../../catalog/repos/aau-cns__mars_lib.md) (alternative_to)
+- [robot_localization](../../catalog/repos/cra-ros-pkg__robot_localization.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 

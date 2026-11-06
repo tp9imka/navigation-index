@@ -12,7 +12,7 @@ Siamese-network solution to the ACM MM 2024 multi-environment drone-satellite ma
 
 **Hackathon notes:** No licence (all rights reserved). Weights and the University1652-Plus weather set are on Baidu pan only, may be hard to fetch; the data derives from University-1652 (research use). 5th on the public leaderboard (R@1 85.58), 4th after one team was removed.
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `siamese`, `challenge`
 
@@ -20,11 +20,11 @@ Siamese-network solution to the ACM MM 2024 multi-environment drone-satellite ma
 
 ## Related
 
-- evaluated_on: [UAVM 2024 challenge](../repos/wtyhub__uavm2024.md)
+- evaluated_on: [UAVM 2024 challenge](../../catalog/repos/wtyhub__uavm2024.md)
 
 ## Referenced by
 
-- [UAVM 2024 challenge](../repos/wtyhub__uavm2024.md) (integrates_with)
+- [UAVM 2024 challenge](../../catalog/repos/wtyhub__uavm2024.md) (integrates_with)
 
 _Indexed by lane(s): round3-expansion_
 

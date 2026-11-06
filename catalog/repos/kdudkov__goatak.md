@@ -17,7 +17,7 @@ Go implementation of a simple ATAK-compatible server and a web client, supportin
 - [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [kdudkov__goatak](../../docs/integration-cards/kdudkov__goatak.md) (integration-cards)
 
-**Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `tak`, `go`, `web-client`
 
@@ -25,7 +25,13 @@ Go implementation of a simple ATAK-compatible server and a web client, supportin
 
 ## Related
 
-- alternative_to: [OpenTAKServer](../repos/brian7704__opentakserver.md)
+- alternative_to: [OpenTAKServer](../../catalog/repos/brian7704__opentakserver.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 
 _Indexed by lane(s): planning-gis-c2_
 

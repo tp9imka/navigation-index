@@ -12,7 +12,7 @@ Python implementation (one 9-state script, plus ESP32 logger firmware) of a foot
 
 **Hackathon notes:** Runs offline on included data; reproduce with any cheap IMU strapped to a boot.
 
-**Concepts:** [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Indoor and pedestrian navigation](../../catalog/concepts/indoor-pedestrian.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `zupt`, `foot-mounted`, `pdr`, `ekf`, `python`
 
@@ -20,13 +20,14 @@ Python implementation (one 9-state script, plus ESP32 logger firmware) of a foot
 
 ## Related
 
-- alternative_to: [PyShoe](../repos/utiasstars__pyshoe.md)
-- integrates_with: [OpenShoe: open source embedded foot-mounted INS](../resources/openshoe-foot-mounted-ins-2012.md)
+- alternative_to: [PyShoe](../../catalog/repos/utiasstars__pyshoe.md)
+- integrates_with: [OpenShoe: open source embedded foot-mounted INS](../../catalog/resources/openshoe-foot-mounted-ins-2012.md)
 
 ## Referenced by
 
-- [MPU6050 ZUPT](../repos/mtahakoroglu__mpu6050_zupt.md) (alternative_to)
-- [OpenShoe: open source embedded foot-mounted INS](../resources/openshoe-foot-mounted-ins-2012.md) (explains)
+- [MPU6050 ZUPT](../../catalog/repos/mtahakoroglu__mpu6050_zupt.md) (alternative_to)
+- [OpenShoe: open source embedded foot-mounted INS](../../catalog/resources/openshoe-foot-mounted-ins-2012.md) (explains)
+- [Dismounted foot-mounted INS: stdlib 15-state ZUPT EKF on the real pyshoe hallway data, cross-checked against pyshoe, with corridor heading, UWB and TAK output](../../catalog/samples/dismounted-foot-ins.md) (explains)
 
 _Indexed by lane(s): gap-fill_
 

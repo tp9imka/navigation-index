@@ -12,7 +12,7 @@ Desktop SDR receiver built on GNU Radio and Qt with FFT/waterfall and demodulato
 
 **Hackathon notes:** Available via brew/apt. Only transmit-free monitoring; never radiate in GNSS bands outside licensed test ranges.
 
-**Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Jamming and spoofing](../concepts/gnss-interference.md)
+**Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
 **Tags:** `sdr`, `gnu-radio`, `qt`, `waterfall`
 
@@ -20,11 +20,12 @@ Desktop SDR receiver built on GNU Radio and Qt with FFT/waterfall and demodulato
 
 ## Related
 
-- alternative_to: [OpenWebRX](../repos/jketterl__openwebrx.md)
+- alternative_to: [OpenWebRX](../../catalog/repos/jketterl__openwebrx.md)
 
 ## Referenced by
 
-- [OpenWebRX](../repos/jketterl__openwebrx.md) (alternative_to)
+- [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
+- [OpenWebRX](../../catalog/repos/jketterl__openwebrx.md) (alternative_to)
 
 _Indexed by lane(s): defense-context_
 

@@ -12,7 +12,7 @@ Loop-closure detection using bird's-eye-view density images of local LiDAR maps.
 
 **Hackathon notes:** Python bindings via pip.
 
-**Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `loop-closure`, `bev`, `pip`
 
@@ -20,12 +20,12 @@ Loop-closure detection using bird's-eye-view density images of local LiDAR maps.
 
 ## Related
 
-- integrates_with: [KISS-ICP](../repos/prbonn__kiss-icp.md)
+- integrates_with: [KISS-ICP](../../catalog/repos/prbonn__kiss-icp.md)
 
 ## Referenced by
 
-- [KISS-ICP](../repos/prbonn__kiss-icp.md) (integrates_with)
-- [KISS-SLAM](../repos/prbonn__kiss-slam.md) (depends_on)
+- [KISS-ICP](../../catalog/repos/prbonn__kiss-icp.md) (integrates_with)
+- [KISS-SLAM](../../catalog/repos/prbonn__kiss-slam.md) (depends_on)
 
 _Indexed by lane(s): slam_
 

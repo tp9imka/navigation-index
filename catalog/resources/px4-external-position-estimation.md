@@ -11,13 +11,19 @@ How to feed external vision or mocap poses into PX4 EKF2 via MAVLink or ROS, inc
 - ODOMETRY / VISION_POSITION_ESTIMATE inputs
 - Frame handling ENU vs NED
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `external-vision`, `mocap`, `px4`
 
 ## Related
 
-- explains: [PX4 Autopilot](../repos/px4__px4-autopilot.md)
-- uses: [MAVROS](../repos/mavlink__mavros.md)
+- explains: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
+- uses: [MAVROS](../../catalog/repos/mavlink__mavros.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 
 _Indexed by lane(s): autopilots_

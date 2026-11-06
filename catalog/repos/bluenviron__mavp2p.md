@@ -12,7 +12,12 @@ Single-binary Go MAVLink router/proxy supporting serial, UDP and TCP with dedupl
 
 **Hackathon notes:** Download the release binary and run; no build.
 
-**Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [bluenviron__mavp2p](../../docs/integration-cards/bluenviron__mavp2p.md) (integration-cards)
+
+**Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 
 **Tags:** `go`, `router`, `single-binary`
 
@@ -20,13 +25,14 @@ Single-binary Go MAVLink router/proxy supporting serial, UDP and TCP with dedupl
 
 ## Related
 
-- depends_on: [gomavlib](../repos/bluenviron__gomavlib.md)
-- alternative_to: [mavlink-router](../repos/mavlink-router__mavlink-router.md)
+- depends_on: [gomavlib](../../catalog/repos/bluenviron__gomavlib.md)
+- alternative_to: [mavlink-router](../../catalog/repos/mavlink-router__mavlink-router.md)
 
 ## Referenced by
 
-- [gomavlib](../repos/bluenviron__gomavlib.md) (same_org)
-- [mavlink-router](../repos/mavlink-router__mavlink-router.md) (alternative_to)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [gomavlib](../../catalog/repos/bluenviron__gomavlib.md) (same_org)
+- [mavlink-router](../../catalog/repos/mavlink-router__mavlink-router.md) (alternative_to)
 
 _Indexed by lane(s): autopilots_
 

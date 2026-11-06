@@ -11,17 +11,20 @@ Follow-up Kelvins challenge focused on bridging the domain gap: train on synthet
 - Sim-to-real gap is the core difficulty judges scored
 - Kelvins pages document rules and metrics
 
-**Concepts:** [Space and orbital navigation](../concepts/space-nav.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Space and orbital navigation](../../catalog/concepts/space-nav.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `esa-kelvins`, `spec2021`, `speedplus`
 
 ## Related
 
-- has_code: [SPEED+ baseline](../repos/tpark94__speedplusbaseline.md)
+- has_code: [SPEED+ baseline](../../catalog/repos/tpark94__speedplusbaseline.md)
 
 ## Referenced by
 
-- [SPEED+ baseline](../repos/tpark94__speedplusbaseline.md) (evaluated_on)
-- [Satellite Pose Estimation Challenge: Dataset, Competition Design and Results](../resources/kelvins-spec2019-paper.md) (cites)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [SPEED+ baseline](../../catalog/repos/tpark94__speedplusbaseline.md) (evaluated_on)
+- [Satellite Pose Estimation Challenge: Dataset, Competition Design and Results](../../catalog/resources/kelvins-spec2019-paper.md) (cites)
 
 _Indexed by lane(s): defense-context_

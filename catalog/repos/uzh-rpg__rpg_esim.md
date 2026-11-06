@@ -12,7 +12,7 @@ Event camera simulator from UZH RPG that renders event streams from simulated sc
 
 **Hackathon notes:** ROS1 and older build tooling. For converting existing video to events, rpg_vid2e is easier.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `event-camera`, `simulator`, `ros`
 
@@ -20,8 +20,8 @@ Event camera simulator from UZH RPG that renders event streams from simulated sc
 
 ## Referenced by
 
-- [v2e](../repos/sensorsini__v2e.md) (alternative_to)
-- [rpg_dvs_ros](../repos/uzh-rpg__rpg_dvs_ros.md) (same_org)
+- [v2e](../../catalog/repos/sensorsini__v2e.md) (alternative_to)
+- [rpg_dvs_ros](../../catalog/repos/uzh-rpg__rpg_dvs_ros.md) (same_org)
 
 _Indexed by lane(s): sim-data_
 

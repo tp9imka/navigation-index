@@ -16,7 +16,7 @@ Documentation repository for HoloOcean, BYU's Unreal-based underwater simulator 
 
 - [underwater-datasets](../../docs/dataset-cards/underwater-datasets.md) (dataset-cards)
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Underwater navigation](../concepts/underwater-nav.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Underwater navigation](../../catalog/concepts/underwater-nav.md)
 
 **Tags:** `underwater`, `unreal`, `sonar`, `dvl`
 
@@ -24,12 +24,14 @@ Documentation repository for HoloOcean, BYU's Unreal-based underwater simulator 
 
 ## Related
 
-- alternative_to: [Stonefish](../repos/patrykcieslak__stonefish.md)
+- alternative_to: [Stonefish](../../catalog/repos/patrykcieslak__stonefish.md)
 
 ## Referenced by
 
-- [Stonefish](../repos/patrykcieslak__stonefish.md) (alternative_to)
-- [HoloOcean Documentation](../resources/byu-holoocean-docs.md) (explains)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Stonefish](../../catalog/repos/patrykcieslak__stonefish.md) (alternative_to)
+- [HoloOcean Documentation](../../catalog/resources/byu-holoocean-docs.md) (explains)
 
 _Indexed by lane(s): sim-data_
 

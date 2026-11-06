@@ -12,7 +12,7 @@ Scalable benchmark and platform for long-horizon UAV vision-language navigation 
 
 **Hackathon notes:** New release; check README for data availability before planning around it.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `vln`, `uav`, `satellite`, `benchmark`, `2026`
 
@@ -20,11 +20,11 @@ Scalable benchmark and platform for long-horizon UAV vision-language navigation 
 
 ## Related
 
-- alternative_to: [OpenFly](../repos/shailab-ipec__openfly-platform.md)
+- alternative_to: [OpenFly](../../catalog/repos/shailab-ipec__openfly-platform.md)
 
 ## Referenced by
 
-- [3DG-VLN](../repos/xuefanfu__3dg-vln.md) (alternative_to)
+- [3DG-VLN](../../catalog/repos/xuefanfu__3dg-vln.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

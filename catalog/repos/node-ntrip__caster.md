@@ -12,7 +12,7 @@ TypeScript/Node.js NTRIP caster library supporting NTRIP v1 and v2.
 
 **Hackathon notes:** Last updated 2023; fine for demos.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md)
 
 **Tags:** `ntrip`, `nodejs`, `typescript`
 
@@ -20,7 +20,7 @@ TypeScript/Node.js NTRIP caster library supporting NTRIP v1 and v2.
 
 ## Related
 
-- alternative_to: [ntripcaster (BKG standard caster)](../repos/nunojpg__ntripcaster.md)
+- alternative_to: [ntripcaster (BKG standard caster)](../../catalog/repos/nunojpg__ntripcaster.md)
 
 _Indexed by lane(s): gnss_
 

@@ -11,7 +11,7 @@ US DOT plan to drive adoption of complementary PNT for transportation and critic
 - Five lines of effort starting with engagement and standards
 - Leads to field testing of commercial CPNT technologies
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Signals of opportunity](../concepts/signals-of-opportunity.md), [Timing and time transfer](../concepts/timing.md), [Policy, export control and ethics](../concepts/policy-ethics.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Timing and time transfer](../../catalog/concepts/timing.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md)
 
 **Tags:** `dot`, `cpnt`, `volpe`, `policy`
 

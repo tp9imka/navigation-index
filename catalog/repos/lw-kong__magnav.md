@@ -10,14 +10,14 @@ A public submission repository for the JuliaCon 2020 MagNav signal-enhancement c
 
 **Why it matters:** One of the few open challenge entries - shows what a competing compensation pipeline looks like end to end.
 
-**Hackathon notes:** Inactive since 2022; useful as a template for a challenge-style submission on the MagNav data.
+**Hackathon notes:** Inactive since 2022; useful as a template for a challenge-style submission on the MagNav data. Needs both Julia (Tolles-Lawson pre-filter) and MATLAB with the Deep Learning Toolbox (the learned filter in runs/main.m).
 
 ## Deep dives
 
 - [magnav-challenge-data](../../docs/dataset-cards/magnav-challenge-data.md) (dataset-cards)
 - [afrl-magnav-challenge-2020](../../docs/paper-digests/afrl-magnav-challenge-2020.md) (paper-digests)
 
-**Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `magnav-challenge`, `julia`, `machine-learning`
 
@@ -25,12 +25,15 @@ A public submission repository for the JuliaCon 2020 MagNav signal-enhancement c
 
 ## Related
 
-- depends_on: [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md)
+- depends_on: [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md)
 
 ## Referenced by
 
-- [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md) (extends)
-- [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/afrl-magnav-challenge-2020.md) (has_code)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md) (extends)
+- [Signal Enhancement for Magnetic Navigation Challenge Problem](../../catalog/resources/afrl-magnav-challenge-2020.md) (has_code)
 
 _Indexed by lane(s): defense-context_
 

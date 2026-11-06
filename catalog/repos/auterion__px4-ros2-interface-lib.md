@@ -17,7 +17,7 @@ C++ library for writing PX4 flight modes and navigation-data sources in ROS 2 on
 - [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [auterion__px4-ros2-interface-lib](../../docs/integration-cards/auterion__px4-ros2-interface-lib.md) (integration-cards)
 
-**Concepts:** [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Autopilots and flight control](../concepts/autopilot.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `ros2`, `flight-modes`, `companion`, `auterion`
 
@@ -25,12 +25,15 @@ C++ library for writing PX4 flight modes and navigation-data sources in ROS 2 on
 
 ## Related
 
-- integrates_with: [PX4 Autopilot](../repos/px4__px4-autopilot.md)
-- depends_on: [px4_msgs](../repos/px4__px4_msgs.md)
+- integrates_with: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
+- depends_on: [px4_msgs](../../catalog/repos/px4__px4_msgs.md)
 
 ## Referenced by
 
-- [px4_ros_com](../repos/px4__px4_ros_com.md) (alternative_to)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [px4_ros_com](../../catalog/repos/px4__px4_ros_com.md) (alternative_to)
 
 _Indexed by lane(s): autopilots_
 

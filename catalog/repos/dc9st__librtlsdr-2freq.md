@@ -12,7 +12,7 @@ Modified librtlsdr that switches between two frequencies during one recording wi
 
 **Hackathon notes:** Build on the Pi receivers; see the companion evaluation scripts.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [RF localization and direction finding](../concepts/rf-localization.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 
 **Tags:** `rtl-sdr`, `tdoa`, `synchronization`
 
@@ -20,11 +20,11 @@ Modified librtlsdr that switches between two frequencies during one recording wi
 
 ## Related
 
-- integrates_with: [TDOA evaluation with RTL-SDRs](../repos/dc9st__tdoa-evaluation-rtlsdr.md)
+- integrates_with: [TDOA evaluation with RTL-SDRs](../../catalog/repos/dc9st__tdoa-evaluation-rtlsdr.md)
 
 ## Referenced by
 
-- [TDOA evaluation with RTL-SDRs](../repos/dc9st__tdoa-evaluation-rtlsdr.md) (depends_on)
+- [TDOA evaluation with RTL-SDRs](../../catalog/repos/dc9st__tdoa-evaluation-rtlsdr.md) (depends_on)
 
 _Indexed by lane(s): timing_
 

@@ -10,13 +10,13 @@ Archive index of Stanford PNT Symposium recordings going back to 2007, organised
 
 - Deep back-catalogue of GNSS and PNT talks
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `stanford`, `archive`
 
 ## Referenced by
 
-- [Stanford PNT Symposium 2024 (18th annual)](../resources/stanford-pnt-symposium-2024.md) (part_of)
-- [Stanford PNT Symposium 2025 (19th annual)](../resources/stanford-pnt-symposium-2025.md) (part_of)
+- [Stanford PNT Symposium 2024 (18th annual)](../../catalog/resources/stanford-pnt-symposium-2024.md) (part_of)
+- [Stanford PNT Symposium 2025 (19th annual)](../../catalog/resources/stanford-pnt-symposium-2025.md) (part_of)
 
 _Indexed by lane(s): learning_

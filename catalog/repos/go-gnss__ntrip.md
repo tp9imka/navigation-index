@@ -12,7 +12,7 @@ Go library implementing NTRIP client, server and caster components.
 
 **Hackathon notes:** Use as a library inside a Go backend; smaller community than BKG caster.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md)
 
 **Tags:** `ntrip`, `go`
 
@@ -20,7 +20,7 @@ Go library implementing NTRIP client, server and caster components.
 
 ## Related
 
-- alternative_to: [ntripcaster (BKG standard caster)](../repos/nunojpg__ntripcaster.md)
+- alternative_to: [ntripcaster (BKG standard caster)](../../catalog/repos/nunojpg__ntripcaster.md)
 
 _Indexed by lane(s): gnss_
 

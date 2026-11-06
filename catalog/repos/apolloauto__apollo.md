@@ -12,7 +12,7 @@ Baidu's open autonomous driving platform, including the multi-sensor fusion loca
 
 **Hackathon notes:** Very heavy to build; read the localization module docs and code rather than deploy.
 
-**Concepts:** [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [GNSS/INS integration](../concepts/gnss-ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `apollo`, `msf-localization`, `rtk`, `av`
 
@@ -20,11 +20,11 @@ Baidu's open autonomous driving platform, including the multi-sensor fusion loca
 
 ## Related
 
-- alternative_to: [Autoware](../repos/autowarefoundation__autoware.md)
+- alternative_to: [Autoware](../../catalog/repos/autowarefoundation__autoware.md)
 
 ## Referenced by
 
-- [Autoware](../repos/autowarefoundation__autoware.md) (alternative_to)
+- [Autoware](../../catalog/repos/autowarefoundation__autoware.md) (alternative_to)
 
 _Indexed by lane(s): domains-swarm_
 

@@ -19,7 +19,7 @@ IROS 2023 code for long-range UAV thermal geo-localization against satellite RGB
 - [thermal-datasets](../../docs/dataset-cards/thermal-datasets.md) (dataset-cards)
 - [thermal-geolocalization-iros-2023](../../docs/paper-digests/thermal-geolocalization-iros-2023.md) (paper-digests)
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `thermal`, `night`, `domain-adaptation`
 
@@ -27,15 +27,18 @@ IROS 2023 code for long-range UAV thermal geo-localization against satellite RGB
 
 ## Related
 
-- same_org: [STHN](../repos/arplaboratory__sthn.md)
-- same_org: [UASTHN](../repos/arplaboratory__uasthn.md)
+- same_org: [STHN](../../catalog/repos/arplaboratory__sthn.md)
+- same_org: [UASTHN](../../catalog/repos/arplaboratory__uasthn.md)
 
 ## Referenced by
 
-- [CART - Caltech Aerial RGB-Thermal](../repos/aerorobotics__caltech-aerial-rgbt-dataset.md) (alternative_to)
-- [STHN](../repos/arplaboratory__sthn.md) (extends)
-- [SCC-Loc](../repos/floralhercules__scc-loc.md) (alternative_to)
-- [Long-range UAV Thermal Geo-localization with Satellite Imagery](../resources/thermal-geolocalization-iros-2023.md) (has_code)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [CART - Caltech Aerial RGB-Thermal](../../catalog/repos/aerorobotics__caltech-aerial-rgbt-dataset.md) (alternative_to)
+- [STHN](../../catalog/repos/arplaboratory__sthn.md) (extends)
+- [SCC-Loc](../../catalog/repos/floralhercules__scc-loc.md) (alternative_to)
+- [Long-range UAV Thermal Geo-localization with Satellite Imagery](../../catalog/resources/thermal-geolocalization-iros-2023.md) (has_code)
 
 _Indexed by lane(s): alt-nav_
 

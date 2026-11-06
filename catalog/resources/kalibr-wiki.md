@@ -10,12 +10,16 @@ Wiki for Kalibr covering multi-camera, camera-IMU and rolling-shutter calibratio
 
 - Bad calibration ruins VIO; this is the standard workflow
 
-**Concepts:** [Sensor calibration](../concepts/calibration.md), [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Sensor calibration](../../catalog/concepts/calibration.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `kalibr`, `camera-imu`
 
 ## Related
 
-- has_code: [Kalibr](../repos/ethz-asl__kalibr.md)
+- has_code: [Kalibr](../../catalog/repos/ethz-asl__kalibr.md)
+
+## Referenced by
+
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 
 _Indexed by lane(s): learning_

@@ -12,7 +12,7 @@
 
 **Hackathon notes:** ROS 1; GLIM is the author's newer framework.
 
-**Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [GNSS/INS integration](../concepts/gnss-ins.md)
+**Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md)
 
 **Tags:** `graph-slam`, `ndt`, `gicp`, `ros1`
 
@@ -20,13 +20,13 @@
 
 ## Related
 
-- alternative_to: [GLIM](../repos/koide3__glim.md)
-- depends_on: [fast_gicp](../repos/koide3__fast_gicp.md)
+- alternative_to: [GLIM](../../catalog/repos/koide3__glim.md)
+- depends_on: [fast_gicp](../../catalog/repos/koide3__fast_gicp.md)
 
 ## Referenced by
 
-- [GLIM](../repos/koide3__glim.md) (alternative_to)
-- [4DRadarSLAM](../repos/zhuge2333__4dradarslam.md) (extends)
+- [GLIM](../../catalog/repos/koide3__glim.md) (alternative_to)
+- [4DRadarSLAM](../../catalog/repos/zhuge2333__4dradarslam.md) (extends)
 
 _Indexed by lane(s): slam_
 

@@ -12,7 +12,7 @@ Older open-source PTPv2 daemon; the repository has been inactive since 2022.
 
 **Hackathon notes:** Prefer linuxptp or statime.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `ptp`, `ieee-1588`
 
@@ -20,11 +20,11 @@ Older open-source PTPv2 daemon; the repository has been inactive since 2022.
 
 ## Related
 
-- alternative_to: [linuxptp](../repos/nwtime__linuxptp.md)
+- alternative_to: [linuxptp](../../catalog/repos/nwtime__linuxptp.md)
 
 ## Referenced by
 
-- [linuxptp](../repos/nwtime__linuxptp.md) (alternative_to)
+- [linuxptp](../../catalog/repos/nwtime__linuxptp.md) (alternative_to)
 
 _Indexed by lane(s): timing_
 

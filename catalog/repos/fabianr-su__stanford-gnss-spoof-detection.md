@@ -12,7 +12,7 @@ A single MATLAB script (DoAsimulationStudy.m) simulating direction-of-arrival sp
 
 **Hackathon notes:** Old MATLAB, one simulation script; useful only as an algorithm reference for DoA-based spoof detection.
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
 **Tags:** `spoofing`, `stanford`, `matlab`
 

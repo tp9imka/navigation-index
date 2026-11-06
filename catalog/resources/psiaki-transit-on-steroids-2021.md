@@ -15,12 +15,14 @@ Analyzes positioning from carrier Doppler measurements of a large LEO constellat
 
 - [psiaki-transit-on-steroids-2021](../../docs/paper-digests/psiaki-transit-on-steroids-2021.md) (paper-digests)
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md)
 
 **Tags:** `ion`, `navigation-journal`, `leo`
 
 ## Referenced by
 
-- [Initialization-Free LEO Doppler Positioning via Semidefinite Relaxation: A Cold-Start Approach](../resources/leo-doppler-cold-start-2025.md) (cites)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [Initialization-Free LEO Doppler Positioning via Semidefinite Relaxation: A Cold-Start Approach](../../catalog/resources/leo-doppler-cold-start-2025.md) (cites)
+- [Pilots and Other Predictable Elements of the Starlink Ku-Band Downlink](../../catalog/resources/qin-psiaki-2026-starlink-pilots.md) (same_author)
 
 _Indexed by lane(s): alt-nav_

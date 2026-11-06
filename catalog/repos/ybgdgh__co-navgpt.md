@@ -12,7 +12,7 @@ Multi-robot exploration and object search where an LLM assigns frontier goals to
 
 **Hackathon notes:** Habitat simulation; adapt the goal-assignment prompt for your own swarm sim.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `llm`, `multi-robot`, `exploration`, `habitat`
 
@@ -20,11 +20,11 @@ Multi-robot exploration and object search where an LLM assigns frontier goals to
 
 ## Related
 
-- alternative_to: [NavGPT](../repos/gengzezhou__navgpt.md)
+- alternative_to: [NavGPT](../../catalog/repos/gengzezhou__navgpt.md)
 
 ## Referenced by
 
-- [NavGPT](../repos/gengzezhou__navgpt.md) (alternative_to)
+- [NavGPT](../../catalog/repos/gengzezhou__navgpt.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

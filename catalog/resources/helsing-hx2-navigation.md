@@ -15,14 +15,22 @@ Helsing's HX-2 is a loitering UAS supplied to Ukraine. Indexed here only for its
 
 - [gnss-denied-nav-products](../../docs/landscape/gnss-denied-nav-products.md) (landscape)
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Terrain-relative navigation](../concepts/terrain-nav.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `landscape`, `helsing`, `europe`, `vendor-claim`
 
 ## Related
 
-- alternative_to: [WildNav](../repos/tiers__wildnav.md)
-- alternative_to: [AnyVisLoc benchmark](../repos/uav-avl__benchmark.md)
-- alternative_to: [AnyLoc](../repos/anyloc__anyloc.md)
+- alternative_to: [WildNav](../../catalog/repos/tiers__wildnav.md)
+- alternative_to: [AnyVisLoc benchmark](../../catalog/repos/uav-avl__benchmark.md)
+- alternative_to: [AnyLoc](../../catalog/repos/anyloc__anyloc.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
+- [GNSS-denied navigation: products and companies](../../docs/landscape/gnss-denied-nav-products.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
 
 _Indexed by lane(s): landscape_

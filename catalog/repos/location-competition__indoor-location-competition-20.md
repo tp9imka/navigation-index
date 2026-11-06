@@ -16,11 +16,15 @@ Data and baseline code from Microsoft Research's Indoor Location Competition 2.0
 
 - [indoor-location-2020](../../docs/dataset-cards/indoor-location-2020.md) (dataset-cards)
 
-**Concepts:** [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [RF localization and direction finding](../concepts/rf-localization.md)
+**Concepts:** [Indoor and pedestrian navigation](../../catalog/concepts/indoor-pedestrian.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 
 **Tags:** `wifi`, `ble`, `fingerprinting`, `smartphone`, `dataset`
 
 **Domains:** dismounted
+
+## Referenced by
+
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): gap-fill_
 

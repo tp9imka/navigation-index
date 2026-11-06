@@ -14,9 +14,11 @@ Pluggable collection of modern multi-object trackers (ByteTrack, BoT-SORT, OC-SO
 
 ## Deep dives
 
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [mikel-brostrom__boxmot](../../docs/integration-cards/mikel-brostrom__boxmot.md) (integration-cards)
 - [anti-uav](../../docs/dataset-cards/anti-uav.md) (dataset-cards)
 
-**Concepts:** [Tracking and data association](../concepts/target-tracking.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Tracking and data association](../../catalog/concepts/target-tracking.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `mot`, `bytetrack`, `yolo`, `reid`
 
@@ -24,14 +26,17 @@ Pluggable collection of modern multi-object trackers (ByteTrack, BoT-SORT, OC-SO
 
 ## Related
 
-- depends_on: [ByteTrack](../repos/foundationvision__bytetrack.md)
-- integrates_with: [Ultralytics YOLO](../repos/ultralytics__ultralytics.md)
+- depends_on: [ByteTrack](../../catalog/repos/foundationvision__bytetrack.md)
+- integrates_with: [Ultralytics YOLO](../../catalog/repos/ultralytics__ultralytics.md)
 
 ## Referenced by
 
-- [ByteTrack](../repos/foundationvision__bytetrack.md) (integrates_with)
-- [Ultralytics YOLO](../repos/ultralytics__ultralytics.md) (integrates_with)
-- [motpy](../repos/wmuron__motpy.md) (alternative_to)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [ByteTrack](../../catalog/repos/foundationvision__bytetrack.md) (integrates_with)
+- [Ultralytics YOLO](../../catalog/repos/ultralytics__ultralytics.md) (integrates_with)
+- [motpy](../../catalog/repos/wmuron__motpy.md) (alternative_to)
 
 _Indexed by lane(s): domains-swarm_
 

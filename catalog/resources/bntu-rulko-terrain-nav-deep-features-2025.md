@@ -16,8 +16,14 @@ English: 'Terrain relative navigation based on deep feature template matching an
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Feature detection and matching](../concepts/feature-matching.md), [Path and motion planning](../concepts/path-planning.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md), [Path and motion planning](../../catalog/concepts/path-planning.md)
 
 **Tags:** `lang:ru`, `belarus`, `deep-features`, `season-invariance`
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_

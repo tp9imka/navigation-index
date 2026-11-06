@@ -12,7 +12,7 @@ Absolute drone positioning by image retrieval (SelaVPR-style ViT features) over 
 
 **Hackathon notes:** Training described used a multi-GPU server; for a hackathon reuse pretrained weights and the pipeline code only.
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Place recognition and loop closure](../concepts/place-recognition.md), [Feature detection and matching](../concepts/feature-matching.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 
 **Tags:** `retrieval`, `registration`, `selavpr`
 
@@ -20,12 +20,12 @@ Absolute drone positioning by image retrieval (SelaVPR-style ViT features) over 
 
 ## Related
 
-- depends_on: [SelaVPR](../repos/lu-feng__selavpr.md)
-- depends_on: [SuperGlue (pretrained)](../repos/magicleap__supergluepretrainednetwork.md)
+- depends_on: [SelaVPR](../../catalog/repos/lu-feng__selavpr.md)
+- depends_on: [SuperGlue (pretrained)](../../catalog/repos/magicleap__supergluepretrainednetwork.md)
 
 ## Referenced by
 
-- [SelaVPR](../repos/lu-feng__selavpr.md) (integrates_with)
+- [SelaVPR](../../catalog/repos/lu-feng__selavpr.md) (integrates_with)
 
 _Indexed by lane(s): alt-nav_
 

@@ -12,7 +12,7 @@ GNU Radio based scanner that checks known analog FPV video frequencies for energ
 
 **Hackathon notes:** Needs GNU Radio 3.10, gr-inspector and an SDR such as Pluto.
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `fpv`, `gnuradio`, `sdr`, `energy-detection`
 
@@ -20,11 +20,11 @@ GNU Radio based scanner that checks known analog FPV video frequencies for energ
 
 ## Related
 
-- same_org: [WarDragon docs](../repos/alphafox02__wardragon.md)
+- same_org: [WarDragon docs](../../catalog/repos/alphafox02__wardragon.md)
 
 ## Referenced by
 
-- [WarDragon docs](../repos/alphafox02__wardragon.md) (same_org)
+- [WarDragon docs](../../catalog/repos/alphafox02__wardragon.md) (same_org)
 
 _Indexed by lane(s): domains-swarm_
 

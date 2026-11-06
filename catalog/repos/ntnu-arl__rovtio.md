@@ -12,7 +12,7 @@ Visual-thermal-inertial odometry extending ROVIO to fuse asynchronous thermal an
 
 **Hackathon notes:** Needs a thermal camera synced to IMU (or their datasets). Thermal calibration targets need a heated pattern.
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `thermal`, `night`, `smoke`, `iekf`
 
@@ -20,16 +20,16 @@ Visual-thermal-inertial odometry extending ROVIO to fuse asynchronous thermal an
 
 ## Related
 
-- extends: [ROVIO](../repos/ethz-asl__rovio.md)
-- alternative_to: [ETIO](../repos/hitsz-nrsl__etio.md)
-- alternative_to: [RRxIO](../repos/christopherdoer__rrxio.md)
+- extends: [ROVIO](../../catalog/repos/ethz-asl__rovio.md)
+- alternative_to: [ETIO](../../catalog/repos/hitsz-nrsl__etio.md)
+- alternative_to: [RRxIO](../../catalog/repos/christopherdoer__rrxio.md)
 
 ## Referenced by
 
-- [RRxIO](../repos/christopherdoer__rrxio.md) (alternative_to)
-- [ROVIO](../repos/ethz-asl__rovio.md) (extends)
-- [ETIO](../repos/hitsz-nrsl__etio.md) (alternative_to)
-- [MIMOSA](../repos/ntnu-arl__mimosa.md) (same_org)
+- [RRxIO](../../catalog/repos/christopherdoer__rrxio.md) (alternative_to)
+- [ROVIO](../../catalog/repos/ethz-asl__rovio.md) (extends)
+- [ETIO](../../catalog/repos/hitsz-nrsl__etio.md) (alternative_to)
+- [MIMOSA](../../catalog/repos/ntnu-arl__mimosa.md) (same_org)
 
 _Indexed by lane(s): slam_
 

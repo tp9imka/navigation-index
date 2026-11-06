@@ -16,14 +16,22 @@ Hivemind is Shield AI's onboard autonomy software, flown on its V-BAT and on par
 
 - [gnss-denied-nav-products](../../docs/landscape/gnss-denied-nav-products.md) (landscape)
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `landscape`, `shield-ai`, `v-bat`, `vendor-claim`
 
 ## Related
 
-- alternative_to: [OpenVINS](../repos/rpng__open_vins.md)
-- alternative_to: [cuVSLAM](../repos/nvidia-isaac__cuvslam.md)
-- alternative_to: [GTSAM](../repos/borglab__gtsam.md)
+- alternative_to: [OpenVINS](../../catalog/repos/rpng__open_vins.md)
+- alternative_to: [cuVSLAM](../../catalog/repos/nvidia-isaac__cuvslam.md)
+- alternative_to: [GTSAM](../../catalog/repos/borglab__gtsam.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
+- [GNSS-denied navigation: products and companies](../../docs/landscape/gnss-denied-nav-products.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
 
 _Indexed by lane(s): landscape_

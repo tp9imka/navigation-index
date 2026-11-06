@@ -18,7 +18,7 @@ Robust dense feature matcher (CVPR 2024) estimating pixel-dense warps with certa
 - [parskatt__roma](../../docs/integration-cards/parskatt__roma.md) (integration-cards)
 - [roma-dense-matching-2023](../../docs/paper-digests/roma-dense-matching-2023.md) (paper-digests)
 
-**Concepts:** [Feature detection and matching](../concepts/feature-matching.md)
+**Concepts:** [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 
 **Tags:** `dense`, `dinov2`, `robust`
 
@@ -26,15 +26,18 @@ Robust dense feature matcher (CVPR 2024) estimating pixel-dense warps with certa
 
 ## Related
 
-- alternative_to: [LoFTR](../repos/zju3dv__loftr.md)
-- alternative_to: [LightGlue](../repos/cvg__lightglue.md)
+- alternative_to: [LoFTR](../../catalog/repos/zju3dv__loftr.md)
+- alternative_to: [LightGlue](../../catalog/repos/cvg__lightglue.md)
 
 ## Referenced by
 
-- [vismatch (image-matching-models)](../repos/gmberton__vismatch.md) (integrates_with)
-- [AnyVisLoc benchmark](../repos/uav-avl__benchmark.md) (evaluated_on)
-- [LoFTR](../repos/zju3dv__loftr.md) (alternative_to)
-- [RoMa: Robust Dense Feature Matching](../resources/roma-dense-matching-2023.md) (has_code)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [vismatch (image-matching-models)](../../catalog/repos/gmberton__vismatch.md) (integrates_with)
+- [AnyVisLoc benchmark](../../catalog/repos/uav-avl__benchmark.md) (evaluated_on)
+- [LoFTR](../../catalog/repos/zju3dv__loftr.md) (alternative_to)
+- [RoMa: Robust Dense Feature Matching](../../catalog/resources/roma-dense-matching-2023.md) (has_code)
 
 _Indexed by lane(s): alt-nav_
 

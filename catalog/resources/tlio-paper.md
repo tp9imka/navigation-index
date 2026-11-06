@@ -14,12 +14,16 @@ Combines a network that predicts displacement and uncertainty from IMU data with
 
 - [tlio-paper](../../docs/paper-digests/tlio-paper.md) (paper-digests)
 
-**Concepts:** [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Indoor and pedestrian navigation](../../catalog/concepts/indoor-pedestrian.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `learned-inertial`
 
 ## Related
 
-- has_code: [TLIO](../repos/cathias__tlio.md)
+- has_code: [TLIO](../../catalog/repos/cathias__tlio.md)
+
+## Referenced by
+
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 
 _Indexed by lane(s): ins-fusion_

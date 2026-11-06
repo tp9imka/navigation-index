@@ -12,7 +12,7 @@ Gazebo worlds, robot models, ROS interfaces and scoring tools from the virtual t
 
 **Hackathon notes:** Dockerized, ROS1-era; heavy GPU/CPU needs. Use the hello-world repo as a starting point.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `darpa-subt`, `gazebo`, `ros`, `underground`
 
@@ -20,13 +20,13 @@ Gazebo worlds, robot models, ROS interfaces and scoring tools from the virtual t
 
 ## Related
 
-- evaluated_on: [GBPlanner (CERBERUS)](../repos/ntnu-arl__gbplanner_ros.md)
-- alternative_to: [TARE Planner (CMU Explorer)](../repos/caochao39__tare_planner.md)
+- evaluated_on: [GBPlanner (CERBERUS)](../../catalog/repos/ntnu-arl__gbplanner_ros.md)
+- alternative_to: [TARE Planner (CMU Explorer)](../../catalog/repos/caochao39__tare_planner.md)
 
 ## Referenced by
 
-- [GBPlanner (CERBERUS)](../repos/ntnu-arl__gbplanner_ros.md) (evaluated_on)
-- [DARPA Subterranean (SubT) Challenge](../resources/darpa-subt-challenge.md) (has_code)
+- [GBPlanner (CERBERUS)](../../catalog/repos/ntnu-arl__gbplanner_ros.md) (evaluated_on)
+- [DARPA Subterranean (SubT) Challenge](../../catalog/resources/darpa-subt-challenge.md) (has_code)
 
 _Indexed by lane(s): defense-context_
 

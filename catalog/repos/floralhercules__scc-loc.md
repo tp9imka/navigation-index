@@ -12,7 +12,7 @@ Zero-shot UAV thermal geo-localization against satellite imagery without thermal
 
 **Hackathon notes:** Very recent; check release completeness.
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `thermal`, `zero-shot`
 
@@ -20,11 +20,11 @@ Zero-shot UAV thermal geo-localization against satellite imagery without thermal
 
 ## Related
 
-- alternative_to: [Satellite-thermal geo-localization](../repos/arplaboratory__satellite-thermal-geo-localization.md)
+- alternative_to: [Satellite-thermal geo-localization](../../catalog/repos/arplaboratory__satellite-thermal-geo-localization.md)
 
 ## Referenced by
 
-- [ScalLoc](../repos/floralhercules__scalloc.md) (same_org)
+- [ScalLoc](../../catalog/repos/floralhercules__scalloc.md) (same_org)
 
 _Indexed by lane(s): alt-nav_
 

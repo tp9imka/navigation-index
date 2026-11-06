@@ -12,7 +12,7 @@ CMU ground-robot development environment with simulated worlds, terrain analysis
 
 **Hackathon notes:** Download the Unity/Gazebo environment and run; the local planner and terrain analysis nodes are reusable standalone.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md), [Path and motion planning](../concepts/path-planning.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Path and motion planning](../../catalog/concepts/path-planning.md)
 
 **Tags:** `cmu`, `explorer`, `ros`, `simulation`, `terrain-analysis`, `exploration`
 
@@ -20,15 +20,17 @@ CMU ground-robot development environment with simulated worlds, terrain analysis
 
 ## Related
 
-- integrates_with: [TARE Planner (CMU Explorer)](../repos/caochao39__tare_planner.md)
-- integrates_with: [FAR Planner](../repos/michaelfyang__far_planner.md)
-- alternative_to: [GBPlanner (CERBERUS)](../repos/ntnu-arl__gbplanner_ros.md)
+- integrates_with: [TARE Planner (CMU Explorer)](../../catalog/repos/caochao39__tare_planner.md)
+- integrates_with: [FAR Planner](../../catalog/repos/michaelfyang__far_planner.md)
+- alternative_to: [GBPlanner (CERBERUS)](../../catalog/repos/ntnu-arl__gbplanner_ros.md)
 
 ## Referenced by
 
-- [TARE Planner (CMU Explorer)](../repos/caochao39__tare_planner.md) (depends_on)
-- [FAR Planner](../repos/michaelfyang__far_planner.md) (depends_on)
-- [GBPlanner (CERBERUS)](../repos/ntnu-arl__gbplanner_ros.md) (alternative_to)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [TARE Planner (CMU Explorer)](../../catalog/repos/caochao39__tare_planner.md) (depends_on)
+- [FAR Planner](../../catalog/repos/michaelfyang__far_planner.md) (depends_on)
+- [GBPlanner (CERBERUS)](../../catalog/repos/ntnu-arl__gbplanner_ros.md) (alternative_to)
 
 _Indexed by lane(s): defense-context, planning-gis-c2_
 

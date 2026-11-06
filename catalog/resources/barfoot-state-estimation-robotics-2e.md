@@ -14,14 +14,19 @@ Textbook on probabilistic estimation for robotics, from linear-Gaussian filterin
 - Rigorous treatment of SE(3) uncertainty
 - Bridges filtering and batch optimization
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `textbook`, `lie-group`, `batch-estimation`, `lie-groups`, `estimation`, `utias`
 
 ## Related
 
-- has_code: [liegroups (Python)](../repos/utiasstars__liegroups.md)
-- has_code: [STEAM](../repos/utiasasrl__steam.md)
-- same_author: [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook.md)
+- has_code: [liegroups (Python)](../../catalog/repos/utiasstars__liegroups.md)
+- has_code: [STEAM](../../catalog/repos/utiasasrl__steam.md)
+- same_author: [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../../catalog/resources/slam-handbook.md)
+
+## Referenced by
+
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 
 _Indexed by lane(s): ins-fusion, learning_

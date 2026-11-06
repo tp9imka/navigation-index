@@ -17,7 +17,7 @@ CLI/Python tool to download, cache and clip global DEMs (SRTM, Copernicus DEM an
 - [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
 - [bopen__elevation](../../docs/integration-cards/bopen__elevation.md) (integration-cards)
 
-**Concepts:** [Terrain-relative navigation](../concepts/terrain-nav.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+**Concepts:** [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `dem`, `srtm`, `copernicus-dem`
 
@@ -25,13 +25,18 @@ CLI/Python tool to download, cache and clip global DEMs (SRTM, Copernicus DEM an
 
 ## Related
 
-- integrates_with: [Rasterio](../repos/rasterio__rasterio.md)
-- depends_on: [GDAL](../repos/osgeo__gdal.md)
+- integrates_with: [Rasterio](../../catalog/repos/rasterio__rasterio.md)
+- depends_on: [GDAL](../../catalog/repos/osgeo__gdal.md)
 
 ## Referenced by
 
-- [Rasterio](../repos/rasterio__rasterio.md) (integrates_with)
-- [Copernicus DEM on AWS Open Data](../resources/copernicus-dem-aws.md) (uses)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Rasterio](../../catalog/repos/rasterio__rasterio.md) (integrates_with)
+- [Copernicus DEM on AWS Open Data](../../catalog/resources/copernicus-dem-aws.md) (uses)
 
 _Indexed by lane(s): planning-gis-c2_
 

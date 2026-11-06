@@ -12,7 +12,7 @@ SSR and OSR GNSS correction data for the 2021 Google Smartphone Decimeter Challe
 
 **Hackathon notes:** No licence; Swift provides it as is. 2020 drives have OSR but no or partial SSR; 2021 drives have both. Pair with GSDC 2021 data and RTKLIB.
 
-**Concepts:** [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `corrections`, `rtcm`, `ssr`, `osr`
 

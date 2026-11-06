@@ -10,16 +10,16 @@ Video album of invited speaker talks from the 2025 Stanford PNT Symposium, featu
 
 - Primary-source talks on the direction of GPS and resilient PNT
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `stanford`, `video`, `invited-talks`
 
 ## Related
 
-- part_of: [Stanford PNT Symposium 2025 (19th annual)](../resources/stanford-pnt-symposium-2025.md)
+- part_of: [Stanford PNT Symposium 2025 (19th annual)](../../catalog/resources/stanford-pnt-symposium-2025.md)
 
 ## Referenced by
 
-- [Stanford PNT Symposium 2025 (19th annual)](../resources/stanford-pnt-symposium-2025.md) (part_of)
+- [Stanford PNT Symposium 2025 (19th annual)](../../catalog/resources/stanford-pnt-symposium-2025.md) (part_of)
 
 _Indexed by lane(s): learning_

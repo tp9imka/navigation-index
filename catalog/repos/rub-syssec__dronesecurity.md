@@ -16,7 +16,7 @@ Ruhr University Bochum receiver for DJI DroneID that works live with an SDR or o
 
 - [remote-id-droneid-captures](../../docs/dataset-cards/remote-id-droneid-captures.md) (dataset-cards)
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md), [RF localization and direction finding](../concepts/rf-localization.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 
 **Tags:** `dji`, `droneid`, `sdr`, `ndss`, `usrp`
 
@@ -24,13 +24,16 @@ Ruhr University Bochum receiver for DJI DroneID that works live with an SDR or o
 
 ## Related
 
-- evaluated_on: [Drone Security and the Mysterious Case of DJI's DroneID](../resources/ndss-2023-dji-droneid.md)
-- alternative_to: [samples2djidroneid](../repos/anarkiwi__samples2djidroneid.md)
+- evaluated_on: [Drone Security and the Mysterious Case of DJI's DroneID](../../catalog/resources/ndss-2023-dji-droneid.md)
+- alternative_to: [samples2djidroneid](../../catalog/repos/anarkiwi__samples2djidroneid.md)
 
 ## Referenced by
 
-- [samples2djidroneid](../repos/anarkiwi__samples2djidroneid.md) (alternative_to)
-- [Drone Security and the Mysterious Case of DJI's DroneID](../resources/ndss-2023-dji-droneid.md) (has_code)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [samples2djidroneid](../../catalog/repos/anarkiwi__samples2djidroneid.md) (alternative_to)
+- [Drone Security and the Mysterious Case of DJI's DroneID](../../catalog/resources/ndss-2023-dji-droneid.md) (has_code)
 
 _Indexed by lane(s): defense-context, domains-swarm_
 

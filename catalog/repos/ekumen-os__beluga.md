@@ -12,7 +12,7 @@ Modern C++17 library of Monte Carlo Localization algorithms with a ROS 2 node th
 
 **Hackathon notes:** Swap beluga_amcl for nav2_amcl in a Nav2 launch file; same parameters. Good base for adding custom sensor models.
 
-**Concepts:** [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `amcl`, `particle-filter`, `mcl`, `nav2`, `c++`
 
@@ -20,11 +20,11 @@ Modern C++17 library of Monte Carlo Localization algorithms with a ROS 2 node th
 
 ## Related
 
-- alternative_to: [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md)
+- alternative_to: [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md)
 
 ## Referenced by
 
-- [ROSCon 2024 (Odense) programme and recordings](../resources/roscon-2024.md) (uses)
+- [ROSCon 2024 (Odense) programme and recordings](../../catalog/resources/roscon-2024.md) (uses)
 
 _Indexed by lane(s): gap-fill_
 

@@ -17,12 +17,18 @@ English: 'Drone optical navigation algorithm'. Master's defense slides (Kyiv-Moh
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Feature detection and matching](../concepts/feature-matching.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 
 **Tags:** `lang:uk`, `thesis`, `superpoint`, `superglue`, `orb`, `geotiff`
 
 ## Related
 
-- uses: [SuperGlue (pretrained)](../repos/magicleap__supergluepretrainednetwork.md)
+- uses: [SuperGlue (pretrained)](../../catalog/repos/magicleap__supergluepretrainednetwork.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_

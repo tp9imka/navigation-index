@@ -16,7 +16,7 @@ Underwater SLAM for robots with multibeam imaging sonar, from Stevens Institute 
 
 - [underwater-datasets](../../docs/dataset-cards/underwater-datasets.md) (dataset-cards)
 
-**Concepts:** [Underwater navigation](../concepts/underwater-nav.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `sonar-slam`, `multibeam`, `pose-graph`, `gtsam`
 
@@ -24,13 +24,16 @@ Underwater SLAM for robots with multibeam imaging sonar, from Stevens Institute 
 
 ## Related
 
-- extends: [BRUCE](../repos/jinkunw__bruce.md)
-- alternative_to: [DISO](../repos/senseroboticslab__diso.md)
+- extends: [BRUCE](../../catalog/repos/jinkunw__bruce.md)
+- alternative_to: [DISO](../../catalog/repos/senseroboticslab__diso.md)
 
 ## Referenced by
 
-- [BRUCE](../repos/jinkunw__bruce.md) (alternative_to)
-- [DISO](../repos/senseroboticslab__diso.md) (alternative_to)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [BRUCE](../../catalog/repos/jinkunw__bruce.md) (alternative_to)
+- [DISO](../../catalog/repos/senseroboticslab__diso.md) (alternative_to)
 
 _Indexed by lane(s): domains-swarm_
 

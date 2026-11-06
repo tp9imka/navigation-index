@@ -11,12 +11,16 @@ Swift, a quadrotor using only onboard camera and IMU with an RL-trained policy, 
 - Onboard VIO plus learned control reached human-champion level
 - Sim-to-real with residual models from real data
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Onboard / edge AI perception](../concepts/edge-ai.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `drone-racing`, `reinforcement-learning`, `nature`
 
 ## Related
 
-- uses: [Flightmare](../repos/uzh-rpg__flightmare.md)
+- uses: [Flightmare](../../catalog/repos/uzh-rpg__flightmare.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 
 _Indexed by lane(s): defense-context_

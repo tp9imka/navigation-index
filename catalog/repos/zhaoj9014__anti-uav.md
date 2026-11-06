@@ -14,9 +14,11 @@ Official repository of the Anti-UAV challenge and benchmark for detecting and tr
 
 ## Deep dives
 
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [zhaoj9014__anti-uav](../../docs/integration-cards/zhaoj9014__anti-uav.md) (integration-cards)
 - [anti-uav](../../docs/dataset-cards/anti-uav.md) (dataset-cards)
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Tracking and data association](../concepts/target-tracking.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Tracking and data association](../../catalog/concepts/target-tracking.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `anti-uav`, `thermal`, `benchmark`, `dataset`
 
@@ -24,16 +26,18 @@ Official repository of the Anti-UAV challenge and benchmark for detecting and tr
 
 ## Related
 
-- evaluated_on: [UAV Detection and Tracking Benchmark](../repos/kostadinovshalon__uavdetectiontrackingbenchmark.md)
-- integrates_with: [Ultralytics YOLO](../repos/ultralytics__ultralytics.md)
+- evaluated_on: [UAV Detection and Tracking Benchmark](../../catalog/repos/kostadinovshalon__uavdetectiontrackingbenchmark.md)
+- integrates_with: [Ultralytics YOLO](../../catalog/repos/ultralytics__ultralytics.md)
 
 ## Referenced by
 
-- [UAV Detection and Tracking Benchmark](../repos/kostadinovshalon__uavdetectiontrackingbenchmark.md) (evaluated_on)
-- [Ultralytics YOLO](../repos/ultralytics__ultralytics.md) (evaluated_on)
-- [Drone-vs-Bird Detection Challenge](../repos/wosdetc__challenge.md) (alternative_to)
-- [Anti-UAV: A Large Multi-Modal Benchmark for UAV Tracking](../resources/anti-uav-benchmark-paper.md) (has_code)
-- [Anti-UAV Challenge](../resources/anti-uav-challenge-site.md) (uses)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [UAV Detection and Tracking Benchmark](../../catalog/repos/kostadinovshalon__uavdetectiontrackingbenchmark.md) (evaluated_on)
+- [Ultralytics YOLO](../../catalog/repos/ultralytics__ultralytics.md) (evaluated_on)
+- [Drone-vs-Bird Detection Challenge](../../catalog/repos/wosdetc__challenge.md) (alternative_to)
+- [Anti-UAV: A Large Multi-Modal Benchmark for UAV Tracking](../../catalog/resources/anti-uav-benchmark-paper.md) (has_code)
+- [Anti-UAV Challenge](../../catalog/resources/anti-uav-challenge-site.md) (uses)
 
 _Indexed by lane(s): domains-swarm_
 

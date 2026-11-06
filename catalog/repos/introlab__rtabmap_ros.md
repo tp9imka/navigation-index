@@ -12,7 +12,12 @@ ROS and ROS 2 integration for RTAB-Map, exposing SLAM, localization and odometry
 
 **Hackathon notes:** apt-installable for supported distros; launch examples cover common sensors.
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
+## Deep dives
+
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [introlab__rtabmap_ros](../../docs/integration-cards/introlab__rtabmap_ros.md) (integration-cards)
+
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 
 **Tags:** `ros2`, `nav2`, `launch`
 
@@ -20,11 +25,12 @@ ROS and ROS 2 integration for RTAB-Map, exposing SLAM, localization and odometry
 
 ## Related
 
-- depends_on: [RTAB-Map](../repos/introlab__rtabmap.md)
+- depends_on: [RTAB-Map](../../catalog/repos/introlab__rtabmap.md)
 
 ## Referenced by
 
-- [RTAB-Map](../repos/introlab__rtabmap.md) (integrates_with)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
+- [RTAB-Map](../../catalog/repos/introlab__rtabmap.md) (integrates_with)
 
 _Indexed by lane(s): slam_
 

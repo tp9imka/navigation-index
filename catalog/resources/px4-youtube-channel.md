@@ -10,16 +10,16 @@ Official channel with PX4 Developer Summit recordings, dev calls and feature dem
 
 - Search 'EKF2' for estimator deep dives
 
-**Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `px4`, `youtube`
 
 ## Related
 
-- uses: [PX4 Autopilot](../repos/px4__px4-autopilot.md)
+- uses: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
 
 ## Referenced by
 
-- [PX4 Developer Summit (talks and recordings)](../resources/px4-developer-summit.md) (part_of)
+- [PX4 Developer Summit (talks and recordings)](../../catalog/resources/px4-developer-summit.md) (part_of)
 
 _Indexed by lane(s): learning_

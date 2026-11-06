@@ -12,7 +12,12 @@ Python interface to PROJ for CRS definitions, coordinate transformations and geo
 
 **Hackathon notes:** pip install pyproj ships PROJ inside the wheel; reuse a Transformer object for speed.
 
-**Concepts:** [Geodesy and coordinate frames](../concepts/geodesy.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [pyproj4__pyproj](../../docs/integration-cards/pyproj4__pyproj.md) (integration-cards)
+
+**Concepts:** [Geodesy and coordinate frames](../../catalog/concepts/geodesy.md)
 
 **Tags:** `crs`, `transformer`, `geod`
 
@@ -20,13 +25,16 @@ Python interface to PROJ for CRS definitions, coordinate transformations and geo
 
 ## Related
 
-- depends_on: [PROJ](../repos/osgeo__proj.md)
-- alternative_to: [pymap3d](../repos/geospace-code__pymap3d.md)
+- depends_on: [PROJ](../../catalog/repos/osgeo__proj.md)
+- alternative_to: [pymap3d](../../catalog/repos/geospace-code__pymap3d.md)
 
 ## Referenced by
 
-- [pymap3d](../repos/geospace-code__pymap3d.md) (alternative_to)
-- [PROJ](../repos/osgeo__proj.md) (integrates_with)
+- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [pymap3d](../../catalog/repos/geospace-code__pymap3d.md) (alternative_to)
+- [PROJ](../../catalog/repos/osgeo__proj.md) (integrates_with)
 
 _Indexed by lane(s): planning-gis-c2_
 

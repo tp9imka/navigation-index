@@ -12,7 +12,7 @@ Reconstructs intensity video from event streams with a recurrent network, enabli
 
 **Hackathon notes:** Pretrained model; PyTorch.
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `event-camera`, `video-reconstruction`, `deep-learning`
 
@@ -20,7 +20,7 @@ Reconstructs intensity video from event streams with a recurrent network, enabli
 
 ## Related
 
-- same_org: [rpg_dvs_ros](../repos/uzh-rpg__rpg_dvs_ros.md)
+- same_org: [rpg_dvs_ros](../../catalog/repos/uzh-rpg__rpg_dvs_ros.md)
 
 _Indexed by lane(s): gap-fill_
 

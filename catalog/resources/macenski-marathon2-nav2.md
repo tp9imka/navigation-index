@@ -11,16 +11,17 @@ Paper introducing Nav2: behavior-tree based navigation architecture for ROS 2, i
 - Explains why Nav2 uses behavior trees and lifecycle nodes
 - Describes long-running real-world validation
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 
 **Tags:** `nav2`, `behavior-tree`
 
 ## Related
 
-- has_code: [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md)
+- has_code: [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md)
 
 ## Referenced by
 
-- [From the Desks of ROS Maintainers: A Survey of Modern & Capable Mobile Robotics Algorithms in the Robot Operating System 2](../resources/macenski-ros2-algorithms-survey.md) (same_author)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [From the Desks of ROS Maintainers: A Survey of Modern & Capable Mobile Robotics Algorithms in the Robot Operating System 2](../../catalog/resources/macenski-ros2-algorithms-survey.md) (same_author)
 
 _Indexed by lane(s): planning-gis-c2_

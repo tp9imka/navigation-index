@@ -16,12 +16,19 @@ Introduces a dataset of real UAV flight images paired with satellite maps over v
 - [uav-visloc](../../docs/dataset-cards/uav-visloc.md) (dataset-cards)
 - [uav-visloc-dataset-2024](../../docs/paper-digests/uav-visloc-dataset-2024.md) (paper-digests)
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `arxiv`, `dataset`
 
 ## Related
 
-- has_code: [UAV-VisLoc dataset](../repos/intellisensing__uav-visloc.md)
+- has_code: [UAV-VisLoc dataset](../../catalog/repos/intellisensing__uav-visloc.md)
+
+## Referenced by
+
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): alt-nav_

@@ -10,12 +10,12 @@ Estimates Doppler from Starlink downlinks blindly in the frequency domain withou
 
 - Blind spectral Doppler avoids needing proprietary signal details
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md)
 
 **Tags:** `starlink`, `doppler`, `kassas`
 
 ## Related
 
-- same_author: [Exploiting Starlink Signals for Navigation: First Results](../resources/kassas-starlink-first-results-2022.md)
+- same_author: [Exploiting Starlink Signals for Navigation: First Results](../../catalog/resources/kassas-starlink-first-results-2022.md)
 
 _Indexed by lane(s): alt-nav_

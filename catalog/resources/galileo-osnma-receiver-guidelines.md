@@ -19,17 +19,28 @@ Companion to the OSNMA ICD describing how a receiver should process OSNMA: time-
 - [galileo-osnma](../../docs/paper-digests/galileo-osnma.md) (paper-digests)
 - [trends-2025-2026](../../docs/landscape/trends-2025-2026.md) (landscape)
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Jamming and spoofing](../concepts/gnss-interference.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `osnma`, `galileo`, `receiver`, `anti-spoofing`
 
 ## Related
 
-- has_code: [galileo-osnma (Rust)](../repos/daniestevez__galileo-osnma.md)
-- has_code: [OSNMAlib](../repos/algafix__osnma.md)
-- has_code: [FGI-OSNMA](../repos/nlsfi__fgi-osnma.md)
-- has_code: [OSNMA_ublox](../repos/axelbjork__osnma_ublox.md)
-- part_of: [Galileo OSNMA Signal-In-Space Interface Control Document Issue 1.1](../resources/galileo-osnma-sis-icd.md)
-- explains: [OSNMAlib](../repos/algafix__osnma.md)
+- has_code: [galileo-osnma (Rust)](../../catalog/repos/daniestevez__galileo-osnma.md)
+- has_code: [OSNMAlib](../../catalog/repos/algafix__osnma.md)
+- has_code: [FGI-OSNMA](../../catalog/repos/nlsfi__fgi-osnma.md)
+- has_code: [OSNMA_ublox](../../catalog/repos/axelbjork__osnma_ublox.md)
+- part_of: [Galileo OSNMA Signal-In-Space Interface Control Document Issue 1.1](../../catalog/resources/galileo-osnma-sis-icd.md)
+- explains: [OSNMAlib](../../catalog/repos/algafix__osnma.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
+- [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../../catalog/samples/gnss-interference-monitor.md) (explains)
+- [Galileo OSNMA authentication as a spoofing defence: real recording, file-level attacks, scorer adapter](../../catalog/samples/osnma-authentication.md) (explains)
 
 _Indexed by lane(s): docs-standards, gnss_

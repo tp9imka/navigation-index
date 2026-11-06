@@ -12,7 +12,7 @@ C library that decodes the DCF77 time code bitstream (from a cheap AM receiver m
 
 **Hackathon notes:** Pair with a DCF77 receiver module; accuracy is limited by the AM envelope.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Signals of opportunity](../concepts/signals-of-opportunity.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md)
 
 **Tags:** `dcf77`, `embedded`, `time-code`
 
@@ -20,12 +20,12 @@ C library that decodes the DCF77 time code bitstream (from a cheap AM receiver m
 
 ## Related
 
-- alternative_to: [gr_DCF77_Receiver](../repos/henningm1r__gr_dcf77_receiver.md)
+- alternative_to: [gr_DCF77_Receiver](../../catalog/repos/henningm1r__gr_dcf77_receiver.md)
 
 ## Referenced by
 
-- [gr_DCF77_Receiver](../repos/henningm1r__gr_dcf77_receiver.md) (alternative_to)
-- [PTB: DCF77](../resources/ptb-dcf77.md) (has_code)
+- [gr_DCF77_Receiver](../../catalog/repos/henningm1r__gr_dcf77_receiver.md) (alternative_to)
+- [PTB: DCF77](../../catalog/resources/ptb-dcf77.md) (has_code)
 
 _Indexed by lane(s): timing_
 

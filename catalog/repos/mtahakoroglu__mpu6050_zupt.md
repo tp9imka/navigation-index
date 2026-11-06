@@ -12,7 +12,7 @@ Arduino library forked from MPU6050_tockn that reads and calibrates an MPU6050 a
 
 **Hackathon notes:** Only the IMU reading and calibration part exists; you would write the ZUPT detector and INS yourself (see pajaraca/IEZ or OpenShoe for the algorithm). Needs an MPU6050 and an Arduino-class board; expect heading drift without magnetometer aiding.
 
-**Concepts:** [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Indoor and pedestrian navigation](../../catalog/concepts/indoor-pedestrian.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `zupt`, `mpu6050`, `arduino`, `foot-mounted`
 
@@ -20,7 +20,7 @@ Arduino library forked from MPU6050_tockn that reads and calibrates an MPU6050 a
 
 ## Related
 
-- alternative_to: [IEZ (INS-EKF-ZUPT)](../repos/pajaraca__iez.md)
+- alternative_to: [IEZ (INS-EKF-ZUPT)](../../catalog/repos/pajaraca__iez.md)
 
 _Indexed by lane(s): gap-fill_
 

@@ -10,13 +10,13 @@ Learning-based inertial odometry for UAVs that improves feature observability by
 
 **Why it matters:** Recent IMU-only drone odometry for GNSS-denied flight.
 
-**Hackathon notes:** Recent research code; check README for datasets.
+**Hackathon notes:** PyPose-based research code. EuRoC, Blackbird and a simulated Pegasus split plus pretrained models are on GitHub releases; the EKF also needs the AirIMU results files.
 
 ## Deep dives
 
 - [airio-paper](../../docs/paper-digests/airio-paper.md) (paper-digests)
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `learned-inertial`, `uav`, `pytorch`
 
@@ -24,14 +24,14 @@ Learning-based inertial odometry for UAVs that improves feature observability by
 
 ## Related
 
-- same_org: [AirIMU](../repos/haleqiu__airimu.md)
-- alternative_to: [Learned Inertial Odometry for Drone Racing](../repos/uzh-rpg__learned_inertial_model_odometry.md)
+- same_org: [AirIMU](../../catalog/repos/haleqiu__airimu.md)
+- alternative_to: [Learned Inertial Odometry for Drone Racing](../../catalog/repos/uzh-rpg__learned_inertial_model_odometry.md)
 
 ## Referenced by
 
-- [AirIMU](../repos/haleqiu__airimu.md) (same_org)
-- [Learned Inertial Odometry for Drone Racing](../repos/uzh-rpg__learned_inertial_model_odometry.md) (alternative_to)
-- [AirIO: Learning Inertial Odometry with Enhanced IMU Feature Observability](../resources/airio-paper.md) (has_code)
+- [AirIMU](../../catalog/repos/haleqiu__airimu.md) (same_org)
+- [Learned Inertial Odometry for Drone Racing](../../catalog/repos/uzh-rpg__learned_inertial_model_odometry.md) (alternative_to)
+- [AirIO: Learning Inertial Odometry with Enhanced IMU Feature Observability](../../catalog/resources/airio-paper.md) (has_code)
 
 _Indexed by lane(s): ins-fusion_
 

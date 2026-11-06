@@ -12,7 +12,12 @@ ROS 2 wrapper package that exposes ORB-SLAM3 as nodes for monocular, stereo and 
 
 **Hackathon notes:** Needs a working ORB-SLAM3 build first; check the README for the ROS 2 distro it targets before choosing your Docker base image.
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+## Deep dives
+
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [zang09__orb_slam3_ros2](../../docs/integration-cards/zang09__orb_slam3_ros2.md) (integration-cards)
+
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `ros2`, `wrapper`, `orb-slam3`
 
@@ -20,11 +25,12 @@ ROS 2 wrapper package that exposes ORB-SLAM3 as nodes for monocular, stereo and 
 
 ## Related
 
-- integrates_with: [ORB-SLAM3](../repos/uz-slamlab__orb_slam3.md)
+- integrates_with: [ORB-SLAM3](../../catalog/repos/uz-slamlab__orb_slam3.md)
 
 ## Referenced by
 
-- [ORB-SLAM3](../repos/uz-slamlab__orb_slam3.md) (integrates_with)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
+- [ORB-SLAM3](../../catalog/repos/uz-slamlab__orb_slam3.md) (integrates_with)
 
 _Indexed by lane(s): slam_
 

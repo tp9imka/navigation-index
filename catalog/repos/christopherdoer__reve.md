@@ -12,7 +12,7 @@ Radar Ego Velocity Estimator: robust 3D ego-velocity from 4D mmWave radar Dopple
 
 **Hackathon notes:** ROS1; run on the provided datasets, pairs with christopherdoer/rio.
 
-**Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `mmwave`, `ego-velocity`, `doppler`, `ros`
 
@@ -20,7 +20,7 @@ Radar Ego Velocity Estimator: robust 3D ego-velocity from 4D mmWave radar Dopple
 
 ## Related
 
-- integrates_with: [RIO](../repos/christopherdoer__rio.md)
+- integrates_with: [RIO](../../catalog/repos/christopherdoer__rio.md)
 
 _Indexed by lane(s): gap-fill_
 

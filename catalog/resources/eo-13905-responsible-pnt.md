@@ -12,15 +12,15 @@ US executive order that defines 'responsible use of PNT' and tasks Commerce/NIST
 - Directs creation of voluntary PNT profiles
 - Calls for testing PNT resilience in federal contracts
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Policy, export control and ethics](../concepts/policy-ethics.md), [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md), [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `executive-order`, `eo-13905`, `policy`, `critical-infrastructure`
 
 ## Referenced by
 
-- [Resilient PNT Conformance Framework](../resources/dhs-resilient-pnt-conformance-framework.md) (cites)
-- [Best Practices for Resilient Positioning, Navigation, and Timing (PNT) Supporting Critical Infrastructure](../resources/dhs-st-pnt-best-practices-critical-infrastructure-2025.md) (cites)
-- [NIST IR 8323r1: Foundational PNT Profile - Applying the Cybersecurity Framework for the Responsible Use of PNT Services](../resources/nist-ir-8323r1-pnt-profile.md) (cites)
-- [National Positioning, Navigation, and Timing Resilience R&D Plan](../resources/us-national-pnt-rd-plan-2021.md) (cites)
+- [Resilient PNT Conformance Framework](../../catalog/resources/dhs-resilient-pnt-conformance-framework.md) (cites)
+- [Best Practices for Resilient Positioning, Navigation, and Timing (PNT) Supporting Critical Infrastructure](../../catalog/resources/dhs-st-pnt-best-practices-critical-infrastructure-2025.md) (cites)
+- [NIST IR 8323r1: Foundational PNT Profile - Applying the Cybersecurity Framework for the Responsible Use of PNT Services](../../catalog/resources/nist-ir-8323r1-pnt-profile.md) (cites)
+- [National Positioning, Navigation, and Timing Resilience R&D Plan](../../catalog/resources/us-national-pnt-rd-plan-2021.md) (cites)
 
 _Indexed by lane(s): docs-standards_

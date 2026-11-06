@@ -12,7 +12,7 @@ Deep visual SLAM that iterates dense bundle adjustment through a recurrent updat
 
 **Hackathon notes:** Needs a large-memory NVIDIA GPU; not real-time on embedded. Pretrained weights available.
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `deep-learning`, `dense-ba`, `pytorch`
 
@@ -20,14 +20,15 @@ Deep visual SLAM that iterates dense bundle adjustment through a recurrent updat
 
 ## Related
 
-- alternative_to: [DPVO / DPV-SLAM](../repos/princeton-vl__dpvo.md)
-- alternative_to: [MASt3R-SLAM](../repos/rmurai0610__mast3r-slam.md)
+- alternative_to: [DPVO / DPV-SLAM](../../catalog/repos/princeton-vl__dpvo.md)
+- alternative_to: [MASt3R-SLAM](../../catalog/repos/rmurai0610__mast3r-slam.md)
 
 ## Referenced by
 
-- [DPVO / DPV-SLAM](../repos/princeton-vl__dpvo.md) (alternative_to)
-- [MASt3R-SLAM](../repos/rmurai0610__mast3r-slam.md) (alternative_to)
-- [DROID-SLAM: Deep Visual SLAM for Monocular, Stereo, and RGB-D Cameras](../resources/droid-slam-teed-2021.md) (has_code)
+- [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
+- [DPVO / DPV-SLAM](../../catalog/repos/princeton-vl__dpvo.md) (alternative_to)
+- [MASt3R-SLAM](../../catalog/repos/rmurai0610__mast3r-slam.md) (alternative_to)
+- [DROID-SLAM: Deep Visual SLAM for Monocular, Stereo, and RGB-D Cameras](../../catalog/resources/droid-slam-teed-2021.md) (has_code)
 
 _Indexed by lane(s): slam_
 

@@ -12,7 +12,7 @@ Aerial RGB plus thermal dataset from natural terrain (rivers, coasts, deserts, f
 
 **Hackathon notes:** Use the VIO benchmark to test thermal-inertial odometry, or train RGB-to-thermal translation to build synthetic thermal maps. The labelled subset downloads directly; raw data are ROS1 bags from an S3 bucket. Non-commercial only: data.caltech.edu lists CC BY-NC 4.0 (README says CC BY-SA 4.0, non-commercial).
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `thermal`, `rgbt`, `aerial`, `caltech`
 
@@ -20,11 +20,11 @@ Aerial RGB plus thermal dataset from natural terrain (rivers, coasts, deserts, f
 
 ## Related
 
-- alternative_to: [Satellite-thermal geo-localization](../repos/arplaboratory__satellite-thermal-geo-localization.md)
+- alternative_to: [Satellite-thermal geo-localization](../../catalog/repos/arplaboratory__satellite-thermal-geo-localization.md)
 
 ## Referenced by
 
-- [Caltech Aerial RGB-Thermal Dataset in the Wild](../resources/cart-caltech-aerial-rgbt-2024.md) (has_code)
+- [Caltech Aerial RGB-Thermal Dataset in the Wild](../../catalog/resources/cart-caltech-aerial-rgbt-2024.md) (has_code)
 
 _Indexed by lane(s): round3-expansion_
 

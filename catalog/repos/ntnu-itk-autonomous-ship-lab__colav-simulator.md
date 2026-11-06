@@ -12,7 +12,12 @@ Python framework from the NTNU Autoship centre for simulating and evaluating aut
 
 **Hackathon notes:** Python with uv; define scenarios and swap in your own planner. Pair with its VIMMJIPDA tracker for realistic target estimates.
 
-**Concepts:** [Maritime navigation](../concepts/maritime-nav.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [ntnu-itk-autonomous-ship-lab__colav-simulator](../../docs/integration-cards/ntnu-itk-autonomous-ship-lab__colav-simulator.md) (integration-cards)
+
+**Concepts:** [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `colav`, `colregs`, `autonomous-ship`, `ntnu`
 
@@ -20,16 +25,19 @@ Python framework from the NTNU Autoship centre for simulating and evaluating aut
 
 ## Related
 
-- integrates_with: [VIMMJIPDA tracker interface](../repos/ntnu-itk-autonomous-ship-lab__vimmjipda.md)
-- alternative_to: [MOOS-IvP](../repos/moos-ivp__moos-ivp.md)
-- alternative_to: [Aeolus Ocean](../repos/aavek__aeolus-ocean.md)
+- integrates_with: [VIMMJIPDA tracker interface](../../catalog/repos/ntnu-itk-autonomous-ship-lab__vimmjipda.md)
+- alternative_to: [MOOS-IvP](../../catalog/repos/moos-ivp__moos-ivp.md)
+- alternative_to: [Aeolus Ocean](../../catalog/repos/aavek__aeolus-ocean.md)
 
 ## Referenced by
 
-- [Aeolus Ocean](../repos/aavek__aeolus-ocean.md) (alternative_to)
-- [MOOS-IvP](../repos/moos-ivp__moos-ivp.md) (alternative_to)
-- [VIMMJIPDA tracker interface](../repos/ntnu-itk-autonomous-ship-lab__vimmjipda.md) (extends)
-- [COLREGs - Convention on the International Regulations for Preventing Collisions at Sea, 1972](../resources/imo-colregs.md) (explains)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Aeolus Ocean](../../catalog/repos/aavek__aeolus-ocean.md) (alternative_to)
+- [MOOS-IvP](../../catalog/repos/moos-ivp__moos-ivp.md) (alternative_to)
+- [VIMMJIPDA tracker interface](../../catalog/repos/ntnu-itk-autonomous-ship-lab__vimmjipda.md) (extends)
+- [COLREGs - Convention on the International Regulations for Preventing Collisions at Sea, 1972](../../catalog/resources/imo-colregs.md) (explains)
+- [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) (explains)
 
 _Indexed by lane(s): domains-swarm_
 

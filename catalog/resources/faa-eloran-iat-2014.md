@@ -11,12 +11,12 @@ Briefing by the FAA's chief navigation systems engineer to the US Space-Based PN
 - eLoran has different physical failure modes than GNSS
 - IAT found eLoran meets non-precision approach (RNP 0.3), harbor entrance (10-20 m) and Stratum 1 timing needs
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Timing and time transfer](../concepts/timing.md), [Signals of opportunity](../concepts/signals-of-opportunity.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Timing and time transfer](../../catalog/concepts/timing.md), [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md)
 
 **Tags:** `eloran`, `faa`, `gps-backup`
 
 ## Related
 
-- explains: [LoranC receiver](../repos/romavis__loranc.md)
+- explains: [LoranC receiver](../../catalog/repos/romavis__loranc.md)
 
 _Indexed by lane(s): gap-fill_

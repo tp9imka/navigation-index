@@ -12,11 +12,15 @@ Receive-only GNSS interference detection with radio direction finding and triang
 
 **Hackathon notes:** Needs 3+ Raspberry Pi + RTL-SDR nodes with directional antennas; start with foxhunt-sim and --mock-sdr after uv sync. Receive-only, but a live test still needs an authorised interference source. Rotator GPIO driver and PPS wiring are still planned.
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [RF localization and direction finding](../concepts/rf-localization.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 
 **Tags:** `rtl-sdr`, `rdf`, `raspberry-pi`, `jammer-localization`
 
 **Domains:** ground
+
+## Referenced by
+
+- [Low-cost GNSS jammer sensor network: u-blox telemetry => localization => TAK and dashboard](../../catalog/samples/jammer-sensor-network.md) (explains)
 
 _Indexed by lane(s): round3-expansion_
 

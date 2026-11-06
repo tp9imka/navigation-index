@@ -12,7 +12,7 @@ Event-based stereo visual odometry using spatio-temporal consistency of two even
 
 **Hackathon notes:** Needs stereo event cameras or recorded datasets; ROS 1.
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `event-camera`, `stereo`, `ros1`
 
@@ -20,12 +20,12 @@ Event-based stereo visual odometry using spatio-temporal consistency of two even
 
 ## Related
 
-- alternative_to: [Ultimate SLAM](../repos/uzh-rpg__rpg_ultimate_slam_open.md)
+- alternative_to: [Ultimate SLAM](../../catalog/repos/uzh-rpg__rpg_ultimate_slam_open.md)
 
 ## Referenced by
 
-- [ESVIO](../repos/arclab-hku__esvio.md) (alternative_to)
-- [HKU Event-based VO/VIO/SLAM](../repos/arclab-hku__event_based_vo-vio-slam.md) (evaluated_on)
+- [ESVIO](../../catalog/repos/arclab-hku__esvio.md) (alternative_to)
+- [HKU Event-based VO/VIO/SLAM](../../catalog/repos/arclab-hku__event_based_vo-vio-slam.md) (evaluated_on)
 
 _Indexed by lane(s): slam_
 

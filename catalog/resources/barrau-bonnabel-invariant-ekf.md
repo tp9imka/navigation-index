@@ -11,17 +11,18 @@ Foundational paper showing that for group-affine systems the invariant EKF has e
 - Error defined on the Lie group, not in vector space
 - Better consistency under large initial errors
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `inekf`, `observer`, `lie-group`
 
 ## Related
 
-- explains: [invariant-ekf (Hartley InEKF)](../repos/rosshartley__invariant-ekf.md)
-- explains: [DRIFT](../repos/umich-curly__drift.md)
+- explains: [invariant-ekf (Hartley InEKF)](../../catalog/repos/rosshartley__invariant-ekf.md)
+- explains: [DRIFT](../../catalog/repos/umich-curly__drift.md)
 
 ## Referenced by
 
-- [Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation](../resources/hartley-contact-aided-inekf.md) (cites)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
+- [Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation](../../catalog/resources/hartley-contact-aided-inekf.md) (cites)
 
 _Indexed by lane(s): ins-fusion_

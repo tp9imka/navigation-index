@@ -12,7 +12,7 @@ MATLAB implementation of the power-distortion detector for GNSS spoofing and jam
 
 **Hackathon notes:** Inactive since 2020; read alongside the TEXBAT data.
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
 **Tags:** `spoofing`, `power-distortion`, `matlab`
 

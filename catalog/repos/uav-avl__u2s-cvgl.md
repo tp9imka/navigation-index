@@ -12,7 +12,7 @@ Scale-aware cross-view geo-localization method for matching UAV views to satelli
 
 **Hackathon notes:** Research code; useful if your demo flies at varying altitudes and fixed-scale tiles break.
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Place recognition and loop closure](../concepts/place-recognition.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 
 **Tags:** `cross-view`, `scale`, `uav`, `satellite`
 
@@ -20,11 +20,11 @@ Scale-aware cross-view geo-localization method for matching UAV views to satelli
 
 ## Related
 
-- same_org: [AnyVisLoc benchmark](../repos/uav-avl__benchmark.md)
+- same_org: [AnyVisLoc benchmark](../../catalog/repos/uav-avl__benchmark.md)
 
 ## Referenced by
 
-- [AnyVisLoc benchmark](../repos/uav-avl__benchmark.md) (same_org)
+- [AnyVisLoc benchmark](../../catalog/repos/uav-avl__benchmark.md) (same_org)
 
 _Indexed by lane(s): alt-nav_
 

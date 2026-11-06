@@ -12,7 +12,7 @@ Small Python package computing Allan variance and fitting standard noise paramet
 
 **Hackathon notes:** pip install; feed a numpy array of static IMU samples.
 
-**Concepts:** [Sensor calibration](../concepts/calibration.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Sensor calibration](../../catalog/concepts/calibration.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `allan-variance`, `python`
 
@@ -20,14 +20,17 @@ Small Python package computing Allan variance and fitting standard noise paramet
 
 ## Related
 
-- same_org: [pyins](../repos/nmayorov__pyins.md)
-- alternative_to: [allan_variance_ros](../repos/ori-drs__allan_variance_ros.md)
+- same_org: [pyins](../../catalog/repos/nmayorov__pyins.md)
+- alternative_to: [allan_variance_ros](../../catalog/repos/ori-drs__allan_variance_ros.md)
 
 ## Referenced by
 
-- [allantools](../repos/aewallin__allantools.md) (alternative_to)
-- [AV-Matlab-SW](../repos/jaffarrell__av-matlab-sw.md) (alternative_to)
-- [pyins](../repos/nmayorov__pyins.md) (same_org)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [allantools](../../catalog/repos/aewallin__allantools.md) (alternative_to)
+- [AV-Matlab-SW](../../catalog/repos/jaffarrell__av-matlab-sw.md) (alternative_to)
+- [pyins](../../catalog/repos/nmayorov__pyins.md) (same_org)
 
 _Indexed by lane(s): ins-fusion_
 

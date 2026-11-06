@@ -12,7 +12,12 @@ Software for using a GNSS receiver on a computer for precise time: stratum-1 NTP
 
 **Hackathon notes:** Install on a Pi CM4/CM5 with a u-blox timing receiver; follow satpulse.net. The GUI makes receiver state visible during a jamming or spoofing demo.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [GNSS positioning](../concepts/gnss.md)
+## Deep dives
+
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [jclark__satpulse](../../docs/integration-cards/jclark__satpulse.md) (integration-cards)
+
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [GNSS positioning](../../catalog/concepts/gnss.md)
 
 **Tags:** `gnss`, `pps`, `ntp`, `ptp`, `grandmaster`, `raspberry-pi`
 
@@ -20,14 +25,15 @@ Software for using a GNSS receiver on a computer for precise time: stratum-1 NTP
 
 ## Related
 
-- integrates_with: [linuxptp](../repos/nwtime__linuxptp.md)
-- integrates_with: [chrony](../repos/gitlab.com__chrony__chrony.md)
-- alternative_to: [Time Pi](../repos/geerlingguy__time-pi.md)
+- integrates_with: [linuxptp](../../catalog/repos/nwtime__linuxptp.md)
+- integrates_with: [chrony](../../catalog/repos/gitlab.com__chrony__chrony.md)
+- alternative_to: [Time Pi](../../catalog/repos/geerlingguy__time-pi.md)
 
 ## Referenced by
 
-- [Time Pi](../repos/geerlingguy__time-pi.md) (alternative_to)
-- [linuxptp](../repos/nwtime__linuxptp.md) (integrates_with)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [Time Pi](../../catalog/repos/geerlingguy__time-pi.md) (alternative_to)
+- [linuxptp](../../catalog/repos/nwtime__linuxptp.md) (integrates_with)
 
 _Indexed by lane(s): timing_
 

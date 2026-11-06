@@ -12,7 +12,7 @@ Firmware for Bitcraze Loco Positioning UWB anchors and tags (DW1000), supporting
 
 **Hackathon notes:** Needs Loco nodes; configure anchors with the Crazyflie client.
 
-**Concepts:** [RF localization and direction finding](../concepts/rf-localization.md), [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md)
+**Concepts:** [RF localization and direction finding](../../catalog/concepts/rf-localization.md), [Indoor and pedestrian navigation](../../catalog/concepts/indoor-pedestrian.md)
 
 **Tags:** `uwb`, `dw1000`, `anchor`, `tdoa`
 
@@ -20,15 +20,17 @@ Firmware for Bitcraze Loco Positioning UWB anchors and tags (DW1000), supporting
 
 ## Related
 
-- integrates_with: [Crazyflie firmware](../repos/bitcraze__crazyflie-firmware.md)
-- evaluated_on: [UTIL UWB TDoA dataset tools](../repos/williamwenda__uwb_tdoa_dataset.md)
+- integrates_with: [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md)
+- evaluated_on: [UTIL UWB TDoA dataset tools](../../catalog/repos/williamwenda__uwb_tdoa_dataset.md)
 
 ## Referenced by
 
-- [Crazyflie firmware](../repos/bitcraze__crazyflie-firmware.md) (integrates_with)
-- [uwb-localization (MAV swarm)](../repos/lijx10__uwb-localization.md) (alternative_to)
-- [UTIL UWB TDoA dataset tools](../repos/williamwenda__uwb_tdoa_dataset.md) (evaluated_on)
-- [Loco Positioning System documentation](../resources/bitcraze-loco-positioning.md) (explains)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md) (integrates_with)
+- [uwb-localization (MAV swarm)](../../catalog/repos/lijx10__uwb-localization.md) (alternative_to)
+- [UTIL UWB TDoA dataset tools](../../catalog/repos/williamwenda__uwb_tdoa_dataset.md) (evaluated_on)
+- [Loco Positioning System documentation](../../catalog/resources/bitcraze-loco-positioning.md) (explains)
 
 _Indexed by lane(s): domains-swarm_
 

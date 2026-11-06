@@ -12,7 +12,7 @@ Frontier-information-structure based autonomous exploration for quadrotors, comb
 
 **Hackathon notes:** Bundled sim; pairs naturally with a VIO/LiDAR odometry source from other lanes.
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [Mission planning and routing](../concepts/mission-planning.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
 **Tags:** `exploration`, `frontier`, `quadrotor`
 
@@ -20,14 +20,14 @@ Frontier-information-structure based autonomous exploration for quadrotors, comb
 
 ## Related
 
-- extends: [Fast-Planner](../repos/hkust-aerial-robotics__fast-planner.md)
-- extends: [RACER - multi-UAV exploration](../repos/robotics-star-lab__racer.md)
+- extends: [Fast-Planner](../../catalog/repos/hkust-aerial-robotics__fast-planner.md)
+- extends: [RACER - multi-UAV exploration](../../catalog/repos/robotics-star-lab__racer.md)
 
 ## Referenced by
 
-- [Fast-Planner](../repos/hkust-aerial-robotics__fast-planner.md) (extends)
-- [GBPlanner (CERBERUS)](../repos/ntnu-arl__gbplanner_ros.md) (alternative_to)
-- [RACER - multi-UAV exploration](../repos/robotics-star-lab__racer.md) (extends)
+- [Fast-Planner](../../catalog/repos/hkust-aerial-robotics__fast-planner.md) (extends)
+- [GBPlanner (CERBERUS)](../../catalog/repos/ntnu-arl__gbplanner_ros.md) (alternative_to)
+- [RACER - multi-UAV exploration](../../catalog/repos/robotics-star-lab__racer.md) (extends)
 
 _Indexed by lane(s): planning-gis-c2_
 

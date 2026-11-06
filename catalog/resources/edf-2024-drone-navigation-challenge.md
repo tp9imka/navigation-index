@@ -15,12 +15,18 @@ European Defence Fund technological-challenge topic on multi-sensor integration 
 
 - [programs-and-challenges](../../docs/landscape/programs-and-challenges.md) (landscape)
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `edf`, `eu`, `challenge`, `drone`
 
 ## Referenced by
 
-- [European Defence Fund 2025 calls](../resources/edf-2025-call.md) (cites)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [European Defence Fund 2025 calls](../../catalog/resources/edf-2025-call.md) (cites)
 
 _Indexed by lane(s): defense-context_

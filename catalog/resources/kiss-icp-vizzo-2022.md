@@ -15,12 +15,16 @@ Argues that a carefully engineered point-to-point ICP with motion compensation a
 
 - [kiss-icp-vizzo-2022](../../docs/paper-digests/kiss-icp-vizzo-2022.md) (paper-digests)
 
-**Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `icp`
 
 ## Related
 
-- has_code: [KISS-ICP](../repos/prbonn__kiss-icp.md)
+- has_code: [KISS-ICP](../../catalog/repos/prbonn__kiss-icp.md)
+
+## Referenced by
+
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 
 _Indexed by lane(s): slam_

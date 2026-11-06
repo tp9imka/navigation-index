@@ -15,12 +15,16 @@ Introduces direct registration of raw LiDAR points in an iterated Kalman filter 
 
 - [fast-lio2-xu-2021](../../docs/paper-digests/fast-lio2-xu-2021.md) (paper-digests)
 
-**Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `iekf`, `ikd-tree`
 
 ## Related
 
-- has_code: [FAST-LIO / FAST-LIO2](../repos/hku-mars__fast_lio.md)
+- has_code: [FAST-LIO / FAST-LIO2](../../catalog/repos/hku-mars__fast_lio.md)
+
+## Referenced by
+
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 
 _Indexed by lane(s): slam_

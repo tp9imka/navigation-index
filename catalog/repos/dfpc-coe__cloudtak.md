@@ -12,7 +12,7 @@ Browser-based TAK-compatible common operating picture with ETL connectors that p
 
 **Hackathon notes:** AWS-oriented deployment; locally, reuse its node-CoT library and connector patterns.
 
-**Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `tak`, `cop`, `etl`, `web`
 
@@ -20,12 +20,13 @@ Browser-based TAK-compatible common operating picture with ETL connectors that p
 
 ## Related
 
-- depends_on: [node-CoT](../repos/dfpc-coe__node-cot.md)
-- integrates_with: [TAK Server (open source)](../repos/tak-product-center__server.md)
+- depends_on: [node-CoT](../../catalog/repos/dfpc-coe__node-cot.md)
+- integrates_with: [TAK Server (open source)](../../catalog/repos/tak-product-center__server.md)
 
 ## Referenced by
 
-- [node-CoT](../repos/dfpc-coe__node-cot.md) (same_org)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [node-CoT](../../catalog/repos/dfpc-coe__node-cot.md) (same_org)
 
 _Indexed by lane(s): planning-gis-c2_
 

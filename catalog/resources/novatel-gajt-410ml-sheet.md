@@ -11,12 +11,13 @@ Datasheet for a compact CRPA anti-jam antenna that combines an antenna array and
 - Null-steering CRPA as a drop-in in front of an existing receiver
 - Shows typical number of nulls and suppression claims for this class
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Electronic warfare resilience](../concepts/ew-resilience.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `crpa`, `anti-jam`, `novatel`, `gajt`, `nulling`
 
 ## Referenced by
 
-- [NovAtel GAJT-710ML anti-jam antenna](../resources/novatel-gajt-710ml.md) (same_author)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
+- [NovAtel GAJT-710ML anti-jam antenna](../../catalog/resources/novatel-gajt-710ml.md) (same_author)
 
 _Indexed by lane(s): docs-standards_

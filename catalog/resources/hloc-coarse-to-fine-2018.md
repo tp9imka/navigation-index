@@ -14,12 +14,18 @@ The HF-Net paper and foundation of hloc: global retrieval to find candidate plac
 
 - [hloc-coarse-to-fine-2018](../../docs/paper-digests/hloc-coarse-to-fine-2018.md) (paper-digests)
 
-**Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md), [Feature detection and matching](../concepts/feature-matching.md)
+**Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 
 **Tags:** `arxiv`
 
 ## Related
 
-- has_code: [hloc](../repos/cvg__hierarchical-localization.md)
+- has_code: [hloc](../../catalog/repos/cvg__hierarchical-localization.md)
+
+## Referenced by
+
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 
 _Indexed by lane(s): alt-nav_

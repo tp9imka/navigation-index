@@ -12,7 +12,7 @@ Simple Python library for tracking-by-detection multi-object tracking with Kalma
 
 **Hackathon notes:** pip install motpy; a few lines to track YOLO boxes.
 
-**Concepts:** [Tracking and data association](../concepts/target-tracking.md)
+**Concepts:** [Tracking and data association](../../catalog/concepts/target-tracking.md)
 
 **Tags:** `mot`, `kalman`, `tracking-by-detection`
 
@@ -20,7 +20,7 @@ Simple Python library for tracking-by-detection multi-object tracking with Kalma
 
 ## Related
 
-- alternative_to: [BoxMOT](../repos/mikel-brostrom__boxmot.md)
+- alternative_to: [BoxMOT](../../catalog/repos/mikel-brostrom__boxmot.md)
 
 _Indexed by lane(s): domains-swarm_
 

@@ -12,7 +12,7 @@ Extension of VINS-Mono supporting mono+IMU, stereo, and stereo+IMU, with optiona
 
 **Hackathon notes:** ROS 1; use a Docker image. The global-fusion node is a good template for injecting GNSS when it is trusted and dropping it when jammed.
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [GNSS/INS integration](../concepts/gnss-ins.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md)
 
 **Tags:** `stereo`, `gps-fusion`, `ceres`, `ros1`
 
@@ -20,14 +20,17 @@ Extension of VINS-Mono supporting mono+IMU, stereo, and stereo+IMU, with optiona
 
 ## Related
 
-- extends: [VINS-Mono](../repos/hkust-aerial-robotics__vins-mono.md)
+- extends: [VINS-Mono](../../catalog/repos/hkust-aerial-robotics__vins-mono.md)
 
 ## Referenced by
 
-- [Ceres Solver](../repos/ceres-solver__ceres-solver.md) (integrates_with)
-- [GVINS](../repos/hkust-aerial-robotics__gvins.md) (extends)
-- [VINS-Mono](../repos/hkust-aerial-robotics__vins-mono.md) (alternative_to)
-- [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) (explains)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Ceres Solver](../../catalog/repos/ceres-solver__ceres-solver.md) (integrates_with)
+- [GVINS](../../catalog/repos/hkust-aerial-robotics__gvins.md) (extends)
+- [VINS-Mono](../../catalog/repos/hkust-aerial-robotics__vins-mono.md) (alternative_to)
+- [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../../catalog/samples/vio-to-mavlink-bridge.md) (explains)
 
 _Indexed by lane(s): slam_
 

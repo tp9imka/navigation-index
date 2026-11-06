@@ -17,7 +17,7 @@ Qt/QML cross-platform GCS (desktop, Android, iOS) for PX4 and ArduPilot: setup, 
 - [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [mavlink__qgroundcontrol](../../docs/integration-cards/mavlink__qgroundcontrol.md) (integration-cards)
 
-**Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Mission planning and routing](../concepts/mission-planning.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `gcs`, `qt`, `qml`, `mission-planning`
 
@@ -25,16 +25,19 @@ Qt/QML cross-platform GCS (desktop, Android, iOS) for PX4 and ArduPilot: setup, 
 
 ## Related
 
-- integrates_with: [PX4 Autopilot](../repos/px4__px4-autopilot.md)
-- alternative_to: [Mission Planner](../repos/ardupilot__missionplanner.md)
-- alternative_to: [APM Planner 2](../repos/ardupilot__apm_planner.md)
+- integrates_with: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
+- alternative_to: [Mission Planner](../../catalog/repos/ardupilot__missionplanner.md)
+- alternative_to: [APM Planner 2](../../catalog/repos/ardupilot__apm_planner.md)
 
 ## Referenced by
 
-- [APM Planner 2](../repos/ardupilot__apm_planner.md) (alternative_to)
-- [Mission Planner](../repos/ardupilot__missionplanner.md) (alternative_to)
-- [MAVLink Camera Manager](../repos/mavlink__mavlink-camera-manager.md) (integrates_with)
-- [PX4 Autopilot](../repos/px4__px4-autopilot.md) (integrates_with)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [APM Planner 2](../../catalog/repos/ardupilot__apm_planner.md) (alternative_to)
+- [Mission Planner](../../catalog/repos/ardupilot__missionplanner.md) (alternative_to)
+- [MAVLink Camera Manager](../../catalog/repos/mavlink__mavlink-camera-manager.md) (integrates_with)
+- [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md) (integrates_with)
 
 _Indexed by lane(s): autopilots_
 

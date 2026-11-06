@@ -12,7 +12,7 @@ EUROCONTROL ASTERIX category specifications in a structured machine-readable for
 
 **Hackathon notes:** Companion asterix-libs repo has generated Python libraries.
 
-**Concepts:** [Standards and interface specs](../concepts/standards.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [Standards and interface specs](../../catalog/concepts/standards.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `asterix`, `spec`, `codegen`
 
@@ -20,12 +20,12 @@ EUROCONTROL ASTERIX category specifications in a structured machine-readable for
 
 ## Related
 
-- alternative_to: [ASTERIX decoder (Croatia Control)](../repos/croatiacontrolltd__asterix.md)
+- alternative_to: [ASTERIX decoder (Croatia Control)](../../catalog/repos/croatiacontrolltd__asterix.md)
 
 ## Referenced by
 
-- [ASTERIX decoder (Croatia Control)](../repos/croatiacontrolltd__asterix.md) (alternative_to)
-- [EUROCONTROL ASTERIX](../resources/eurocontrol-asterix.md) (has_code)
+- [ASTERIX decoder (Croatia Control)](../../catalog/repos/croatiacontrolltd__asterix.md) (alternative_to)
+- [EUROCONTROL ASTERIX](../../catalog/resources/eurocontrol-asterix.md) (has_code)
 
 _Indexed by lane(s): planning-gis-c2_
 

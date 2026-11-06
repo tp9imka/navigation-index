@@ -12,7 +12,7 @@ Motion planning framework for ROS 2 manipulators: kinematics, collision checking
 
 **Hackathon notes:** Binary install via apt; use the MoveIt Setup Assistant for a new robot. Overkill unless your platform has an arm.
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `manipulation`, `ompl`, `ros2`, `motion-planning`
 
@@ -20,11 +20,11 @@ Motion planning framework for ROS 2 manipulators: kinematics, collision checking
 
 ## Related
 
-- integrates_with: [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md)
+- integrates_with: [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md)
 
 ## Referenced by
 
-- [OMPL - Open Motion Planning Library](../repos/ompl__ompl.md) (integrates_with)
+- [OMPL - Open Motion Planning Library](../../catalog/repos/ompl__ompl.md) (integrates_with)
 
 _Indexed by lane(s): gap-fill_
 

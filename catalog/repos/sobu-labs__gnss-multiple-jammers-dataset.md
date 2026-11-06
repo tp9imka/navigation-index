@@ -12,7 +12,7 @@ Placeholder repo: its description promises recordings of several simultaneous ch
 
 **Hackathon notes:** No data, README or licence yet - nothing to use. Watch the repo or pick another jamming set.
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `chirp`, `l1`, `anf`, `dataset`
 

@@ -12,7 +12,7 @@ Clock and network simulator from the chrony author: runs real NTP/PTP daemons ag
 
 **Hackathon notes:** Linux only (LD_PRELOAD); the chrony test suite shows usage patterns.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `simulation`, `ntp`, `ptp`, `testing`
 
@@ -20,12 +20,13 @@ Clock and network simulator from the chrony author: runs real NTP/PTP daemons ag
 
 ## Related
 
-- integrates_with: [chrony](../repos/gitlab.com__chrony__chrony.md)
-- integrates_with: [linuxptp](../repos/nwtime__linuxptp.md)
+- integrates_with: [chrony](../../catalog/repos/gitlab.com__chrony__chrony.md)
+- integrates_with: [linuxptp](../../catalog/repos/nwtime__linuxptp.md)
 
 ## Referenced by
 
-- [chrony](../repos/gitlab.com__chrony__chrony.md) (evaluated_on)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [chrony](../../catalog/repos/gitlab.com__chrony__chrony.md) (evaluated_on)
 
 _Indexed by lane(s): timing_
 

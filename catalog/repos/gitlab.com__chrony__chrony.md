@@ -12,7 +12,12 @@ NTP client and server that also disciplines the system clock from reference cloc
 
 **Hackathon notes:** Configure `refclock PPS /dev/pps0 lock NMEA` plus `refclock SHM 0` from gpsd, add `server ... nts` lines, then `chronyc sources -v` and `chronyc tracking` show offset, frequency and which sources are rejected. Good live demo of source selection when one GNSS source is walked off.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+## Deep dives
+
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [gitlab.com__chrony__chrony](../../docs/integration-cards/gitlab.com__chrony__chrony.md) (integration-cards)
+
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `ntp`, `nts`, `refclock`, `pps`, `gpsd`, `linux`, `time-sync`
 
@@ -20,26 +25,28 @@ NTP client and server that also disciplines the system clock from reference cloc
 
 ## Related
 
-- integrates_with: [gpsd](../repos/gitlab.com__gpsd__gpsd.md)
-- integrates_with: [linuxptp](../repos/nwtime__linuxptp.md)
-- alternative_to: [ntpd-rs](../repos/pendulum-project__ntpd-rs.md)
-- alternative_to: [NTPsec](../repos/gitlab.com__ntpsec__ntpsec.md)
-- evaluated_on: [clknetsim](../repos/mlichvar__clknetsim.md)
-- integrates_with: [chrony_exporter](../repos/superq__chrony_exporter.md)
+- integrates_with: [gpsd](../../catalog/repos/gitlab.com__gpsd__gpsd.md)
+- integrates_with: [linuxptp](../../catalog/repos/nwtime__linuxptp.md)
+- alternative_to: [ntpd-rs](../../catalog/repos/pendulum-project__ntpd-rs.md)
+- alternative_to: [NTPsec](../../catalog/repos/gitlab.com__ntpsec__ntpsec.md)
+- evaluated_on: [clknetsim](../../catalog/repos/mlichvar__clknetsim.md)
+- integrates_with: [chrony_exporter](../../catalog/repos/superq__chrony_exporter.md)
 
 ## Referenced by
 
-- [Time Pi](../repos/geerlingguy__time-pi.md) (depends_on)
-- [NTPsec](../repos/gitlab.com__ntpsec__ntpsec.md) (alternative_to)
-- [SatPulse](../repos/jclark__satpulse.md) (integrates_with)
-- [clknetsim](../repos/mlichvar__clknetsim.md) (integrates_with)
-- [linuxptp](../repos/nwtime__linuxptp.md) (integrates_with)
-- [ntpd-rs](../repos/pendulum-project__ntpd-rs.md) (alternative_to)
-- [pps-tools](../repos/redlab-i__pps-tools.md) (integrates_with)
-- [chrony_exporter](../repos/superq__chrony_exporter.md) (integrates_with)
-- [Comparison of NTP implementations (chrony)](../resources/chrony-comparison.md) (explains)
-- [RFC 5905: Network Time Protocol Version 4: Protocol and Algorithms Specification](../resources/rfc5905-ntpv4.md) (has_code)
-- [RFC 8915: Network Time Security for the Network Time Protocol](../resources/rfc8915-nts.md) (has_code)
-- [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../samples/timing-holdover.md) (explains)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [Time Pi](../../catalog/repos/geerlingguy__time-pi.md) (depends_on)
+- [NTPsec](../../catalog/repos/gitlab.com__ntpsec__ntpsec.md) (alternative_to)
+- [SatPulse](../../catalog/repos/jclark__satpulse.md) (integrates_with)
+- [clknetsim](../../catalog/repos/mlichvar__clknetsim.md) (integrates_with)
+- [linuxptp](../../catalog/repos/nwtime__linuxptp.md) (integrates_with)
+- [ntpd-rs](../../catalog/repos/pendulum-project__ntpd-rs.md) (alternative_to)
+- [pps-tools](../../catalog/repos/redlab-i__pps-tools.md) (integrates_with)
+- [chrony_exporter](../../catalog/repos/superq__chrony_exporter.md) (integrates_with)
+- [Comparison of NTP implementations (chrony)](../../catalog/resources/chrony-comparison.md) (explains)
+- [RFC 5905: Network Time Protocol Version 4: Protocol and Algorithms Specification](../../catalog/resources/rfc5905-ntpv4.md) (has_code)
+- [RFC 8915: Network Time Security for the Network Time Protocol](../../catalog/resources/rfc8915-nts.md) (has_code)
+- [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../../catalog/samples/timing-holdover.md) (explains)
 
 _Indexed by lane(s): timing_

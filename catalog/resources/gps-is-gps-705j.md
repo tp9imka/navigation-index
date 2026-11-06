@@ -12,12 +12,12 @@ Interface specification for the GPS L5 safety-of-life band signal: I5/Q5 codes, 
 - CNAV message types shared with L2C
 - Draft uprevisions were discussed at the 2025 public ICWG
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `icd`, `gps`, `l5`, `cnav`
 
 ## Related
 
-- has_code: [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md)
+- has_code: [GNSS-SDR](../../catalog/repos/gnss-sdr__gnss-sdr.md)
 
 _Indexed by lane(s): docs-standards_

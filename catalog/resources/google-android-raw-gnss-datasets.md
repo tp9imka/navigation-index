@@ -2,7 +2,7 @@
 
 `res:google-android-raw-gnss-datasets` - paper - <https://research.google/pubs/android-raw-gnss-measurement-datasets-for-precise-positioning/>
 
-**By:** Google Android GPS team - **Year:** 2020 - **Level:** intermediate - **Access:** open
+**By:** Guoyu (Michael) Fu, Mohammed Khider, Frank van Diggelen - **Year:** 2020 - **Level:** intermediate - **Access:** open
 
 ION GNSS+ 2020 paper releasing the first public Android raw GNSS datasets with corrections and ground truth, the origin of the GSDC series.
 
@@ -15,13 +15,19 @@ ION GNSS+ 2020 paper releasing the first public Android raw GNSS datasets with c
 
 - [gsdc](../../docs/dataset-cards/gsdc.md) (dataset-cards)
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `android`, `dataset`
 
 ## Related
 
-- dataset_for: [Google Smartphone Decimeter Challenge 2022](../resources/google-gsdc-2022.md)
-- has_code: [GPS Measurement Tools (incl. GnssLogger)](../repos/google__gps-measurement-tools.md)
+- dataset_for: [Google Smartphone Decimeter Challenge 2022](../../catalog/resources/google-gsdc-2022.md)
+- has_code: [GPS Measurement Tools (incl. GnssLogger)](../../catalog/repos/google__gps-measurement-tools.md)
+
+## Referenced by
+
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): gnss_

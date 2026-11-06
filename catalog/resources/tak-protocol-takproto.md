@@ -12,15 +12,19 @@ Documentation of the TAK protocol used by ATAK and TAK Server: how CoT events ar
 - Mesh vs streaming framing headers
 - Essential to get a custom app talking to ATAK
 
-**Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `tak`, `cot`, `protobuf`, `atak`
 
 ## Related
 
-- has_code: [ATAK-CIV (DoD release, archived)](../repos/deptofdefense__androidtacticalassaultkit-civ.md)
-- has_code: [ATAK-CIV (TAK Product Center)](../repos/tak-product-center__atak-civ.md)
-- has_code: [PyTAK](../repos/snstac__pytak.md)
-- cites: [Cursor on Target (NDIA briefing)](../resources/cot-niessen-ndia-2008.md)
+- has_code: [ATAK-CIV (DoD release, archived)](../../catalog/repos/deptofdefense__androidtacticalassaultkit-civ.md)
+- has_code: [ATAK-CIV (TAK Product Center)](../../catalog/repos/tak-product-center__atak-civ.md)
+- has_code: [PyTAK](../../catalog/repos/snstac__pytak.md)
+- cites: [Cursor on Target (NDIA briefing)](../../catalog/resources/cot-niessen-ndia-2008.md)
+
+## Referenced by
+
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 
 _Indexed by lane(s): docs-standards_

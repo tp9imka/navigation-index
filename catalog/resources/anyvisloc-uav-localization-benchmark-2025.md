@@ -16,12 +16,18 @@ Builds a benchmark for low-altitude, oblique-view UAV absolute visual localizati
 - [anyvisloc](../../docs/dataset-cards/anyvisloc.md) (dataset-cards)
 - [anyvisloc-uav-localization-benchmark-2025](../../docs/paper-digests/anyvisloc-uav-localization-benchmark-2025.md) (paper-digests)
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Feature detection and matching](../concepts/feature-matching.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 
 **Tags:** `arxiv`, `benchmark`, `2025`
 
 ## Related
 
-- has_code: [AnyVisLoc benchmark](../repos/uav-avl__benchmark.md)
+- has_code: [AnyVisLoc benchmark](../../catalog/repos/uav-avl__benchmark.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 
 _Indexed by lane(s): alt-nav_

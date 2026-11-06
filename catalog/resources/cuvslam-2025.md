@@ -15,17 +15,17 @@ Describes NVIDIA's GPU-accelerated VO/SLAM supporting from one to many cameras w
 
 - [cuvslam-2025](../../docs/paper-digests/cuvslam-2025.md) (paper-digests)
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Visual SLAM](../concepts/visual-slam.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Visual SLAM](../../catalog/concepts/visual-slam.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `cuda`, `jetson`
 
 ## Related
 
-- has_code: [cuVSLAM](../repos/nvidia-isaac__cuvslam.md)
-- has_code: [Isaac ROS Visual SLAM](../repos/nvidia-isaac-ros__isaac_ros_visual_slam.md)
+- has_code: [cuVSLAM](../../catalog/repos/nvidia-isaac__cuvslam.md)
+- has_code: [Isaac ROS Visual SLAM](../../catalog/repos/nvidia-isaac-ros__isaac_ros_visual_slam.md)
 
 ## Referenced by
 
-- [cuVSLAM](../repos/nvidia-isaac__cuvslam.md) (integrates_with)
+- [cuVSLAM](../../catalog/repos/nvidia-isaac__cuvslam.md) (integrates_with)
 
 _Indexed by lane(s): gap-fill_

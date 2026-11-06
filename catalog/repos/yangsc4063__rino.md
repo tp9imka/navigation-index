@@ -12,7 +12,7 @@ Non-iterative, adaptively loosely coupled radar-inertial odometry for spinning (
 
 **Hackathon notes:** ROS Noetic / Ubuntu 20.04, catkin build, Sophus built manually. Replay MulRan with its file player (radar + IMU); a Boreas demo is shown.
 
-**Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `radar-inertial`, `scanning-radar`, `2025`
 
@@ -20,7 +20,7 @@ Non-iterative, adaptively loosely coupled radar-inertial odometry for spinning (
 
 ## Related
 
-- alternative_to: [STEAM-ICP](../repos/utiasasrl__steam_icp.md)
+- alternative_to: [STEAM-ICP](../../catalog/repos/utiasasrl__steam_icp.md)
 
 _Indexed by lane(s): gap-fill_
 

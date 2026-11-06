@@ -12,7 +12,7 @@ General-purpose multicopter trajectory optimizer (MINCO) handling safe-corridor 
 
 **Hackathon notes:** Header-heavy C++ with ROS1 examples; best used as a library behind your own front-end.
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md)
 
 **Tags:** `minco`, `trajectory-optimization`, `safe-flight-corridor`
 
@@ -20,11 +20,11 @@ General-purpose multicopter trajectory optimizer (MINCO) handling safe-corridor 
 
 ## Related
 
-- same_org: [EGO-Planner](../repos/zju-fast-lab__ego-planner.md)
+- same_org: [EGO-Planner](../../catalog/repos/zju-fast-lab__ego-planner.md)
 
 ## Referenced by
 
-- [EGO-Planner](../repos/zju-fast-lab__ego-planner.md) (same_org)
+- [EGO-Planner](../../catalog/repos/zju-fast-lab__ego-planner.md) (same_org)
 
 _Indexed by lane(s): planning-gis-c2_
 

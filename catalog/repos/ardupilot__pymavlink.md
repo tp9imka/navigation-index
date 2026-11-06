@@ -17,7 +17,7 @@ Python MAVLink implementation plus tools for connections, log parsing (DataFlash
 - [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [ardupilot__pymavlink](../../docs/integration-cards/ardupilot__pymavlink.md) (integration-cards)
 
-**Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
+**Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 
 **Tags:** `python`, `logs`, `dataflash`, `tlog`
 
@@ -25,24 +25,29 @@ Python MAVLink implementation plus tools for connections, log parsing (DataFlash
 
 ## Related
 
-- depends_on: [MAVLink](../repos/mavlink__mavlink.md)
-- integrates_with: [MAVProxy](../repos/ardupilot__mavproxy.md)
-- depends_on: [DroneKit-Python](../repos/dronekit__dronekit-python.md)
+- depends_on: [MAVLink](../../catalog/repos/mavlink__mavlink.md)
+- integrates_with: [MAVProxy](../../catalog/repos/ardupilot__mavproxy.md)
+- depends_on: [DroneKit-Python](../../catalog/repos/dronekit__dronekit-python.md)
 
 ## Referenced by
 
-- [ArduPilot](../repos/ardupilot__ardupilot.md) (integrates_with)
-- [MAVProxy](../repos/ardupilot__mavproxy.md) (depends_on)
-- [mavlink-mcp (ArduPilot)](../repos/deepakpopli__mavlink-mcp.md) (depends_on)
-- [DroneKit-Python](../repos/dronekit__dronekit-python.md) (depends_on)
-- [MAVLink](../repos/mavlink__mavlink.md) (depends_on)
-- [Non-GPS Position Estimation (MAVLink messages)](../resources/ardupilot-dev-mavlink-nongps-position.md) (uses)
-- [ArduPilot EKF3 source-set switch under GPS denial](../samples/ardupilot-ekf3-source-switch.md) (uses)
-- [Golden demo: GPS drag on an ArduCopter SITL AUTO mission, chi-square detection and EKF3 switch to vision, replayed on the dashboard](../samples/golden-demo.md) (uses)
-- [LLM mission agent: a safety-gated MAVLink MCP server flying ArduPilot SITL](../samples/llm-mission-agent.md) (uses)
-- [MAVLink telemetry to TAK Cursor-on-Target](../samples/mavlink-to-tak-cot.md) (uses)
-- [Headless SITL in Docker: ArduCopter and PX4 SIH with one compose file](../samples/sitl-docker.md) (uses)
-- [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) (uses)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md) (integrates_with)
+- [MAVProxy](../../catalog/repos/ardupilot__mavproxy.md) (depends_on)
+- [mavlink-mcp (ArduPilot)](../../catalog/repos/deepakpopli__mavlink-mcp.md) (depends_on)
+- [DroneKit-Python](../../catalog/repos/dronekit__dronekit-python.md) (depends_on)
+- [MAVLink](../../catalog/repos/mavlink__mavlink.md) (depends_on)
+- [Non-GPS Position Estimation](../../catalog/resources/ardupilot-dev-mavlink-nongps-position.md) (uses)
+- [ArduPilot EKF3 source-set switch under GPS denial](../../catalog/samples/ardupilot-ekf3-source-switch.md) (uses)
+- [Golden demo: GPS drag (position-only or coherent) on an ArduCopter SITL AUTO mission, integrity monitoring with solution separation + protection level, real visual geolocalization, EKF3 switch to ExternalNav, Monte Carlo, dashboard replay](../../catalog/samples/golden-demo.md) (uses)
+- [Golden demo on PX4 v1.17 SIH: coherent GPS drag via HIL_GPS, integrity monitor (SS + PL, GNSS-vs-VIO velocity), EKF2 switch from GNSS to external vision, comparison with ArduPilot, dashboard replay](../../catalog/samples/golden-demo-px4.md) (uses)
+- [LLM mission agent: a safety-gated MAVLink MCP server flying ArduPilot SITL](../../catalog/samples/llm-mission-agent.md) (uses)
+- [MAVLink telemetry to TAK Cursor-on-Target](../../catalog/samples/mavlink-to-tak-cot.md) (uses)
+- [Headless SITL in Docker: ArduCopter and PX4 SIH with one compose file](../../catalog/samples/sitl-docker.md) (uses)
+- [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../../catalog/samples/vio-to-mavlink-bridge.md) (uses)
 
 _Indexed by lane(s): autopilots_
 

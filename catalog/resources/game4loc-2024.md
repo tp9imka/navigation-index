@@ -11,12 +11,12 @@ Builds a large synthetic drone-satellite dataset from a video game with partial-
 - Synthetic data transfers to real benchmarks
 - Partial-match pairs are more realistic than perfect crops
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `aaai2025`, `synthetic`
 
 ## Related
 
-- has_code: [Game4Loc / GTA-UAV](../repos/yux1angji__gta-uav.md)
+- has_code: [Game4Loc / GTA-UAV](../../catalog/repos/yux1angji__gta-uav.md)
 
 _Indexed by lane(s): round3-expansion_

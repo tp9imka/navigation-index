@@ -10,9 +10,9 @@ UZH RPG code fusing a learned inertial displacement model with an EKF for drone 
 
 **Why it matters:** Shows learned IO on aggressive UAV flight.
 
-**Hackathon notes:** Research code; datasets from UZH.
+**Hackathon notes:** Research code; trained and tested on the MIT Blackbird dataset (converter script, one sample sequence and the trained network are in the repo). Reuses TLIO filter code.
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `learned-inertial`, `drone-racing`, `ekf`
 
@@ -20,11 +20,11 @@ UZH RPG code fusing a learned inertial displacement model with an EKF for drone 
 
 ## Related
 
-- alternative_to: [AirIO](../repos/air-io__air-io.md)
+- alternative_to: [AirIO](../../catalog/repos/air-io__air-io.md)
 
 ## Referenced by
 
-- [AirIO](../repos/air-io__air-io.md) (alternative_to)
+- [AirIO](../../catalog/repos/air-io__air-io.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 

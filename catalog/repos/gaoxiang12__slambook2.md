@@ -12,7 +12,7 @@ Companion code for the second edition of Gao Xiang's visual SLAM textbook: Lie g
 
 **Hackathon notes:** Each chapter builds standalone; dependency versions (Pangolin, Sophus, g2o) are old - use the bundled 3rdparty or a Docker image.
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [Feature detection and matching](../concepts/feature-matching.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 
 **Tags:** `textbook`, `g2o`, `ceres`, `sophus`, `c++`
 
@@ -20,11 +20,11 @@ Companion code for the second edition of Gao Xiang's visual SLAM textbook: Lie g
 
 ## Related
 
-- same_org: [14 Lectures on Visual SLAM (English)](../repos/gaoxiang12__slambook-en.md)
+- same_org: [14 Lectures on Visual SLAM (English)](../../catalog/repos/gaoxiang12__slambook-en.md)
 
 ## Referenced by
 
-- [14 Lectures on Visual SLAM: From Theory to Practice](../resources/gaoxiang-14-lectures-visual-slam.md) (has_code)
+- [14 Lectures on Visual SLAM: From Theory to Practice](../../catalog/resources/gaoxiang-14-lectures-visual-slam.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

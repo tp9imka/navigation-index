@@ -10,16 +10,17 @@ News report on the January 2016 GPS UTC timing error of about 13 microseconds, a
 
 - Navigation was fine; only time was wrong
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `gps`, `utc-offset`, `anomaly`
 
 ## Related
 
-- explains: [Global GPS time anomaly on Tue, Jan 26th (2016)](../resources/meinberg-gps-utc-anomaly-2016.md)
+- explains: [Global GPS time anomaly on Tue, Jan 26th (2016)](../../catalog/resources/meinberg-gps-utc-anomaly-2016.md)
 
 ## Referenced by
 
-- [Global GPS time anomaly on Tue, Jan 26th (2016)](../resources/meinberg-gps-utc-anomaly-2016.md) (explains)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [Global GPS time anomaly on Tue, Jan 26th (2016)](../../catalog/resources/meinberg-gps-utc-anomaly-2016.md) (explains)
 
 _Indexed by lane(s): timing_

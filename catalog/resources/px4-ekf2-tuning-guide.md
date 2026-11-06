@@ -1,4 +1,4 @@
-# Using the ECL EKF (EKF2)
+# Using PX4's Navigation Filter (EKF2)
 
 `res:px4-ekf2-tuning-guide` - doc - <https://docs.px4.io/main/en/advanced_config/tuning_the_ecl_ekf.html>
 
@@ -13,15 +13,22 @@ PX4 guide to its EKF2 estimator: which sensors it fuses (IMU, GNSS, baro, mag, o
 - How to feed VIO/visual positioning into PX4 instead of GNSS
 - Innovation test tuning for spoof/glitch rejection
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [GNSS/INS integration](../concepts/gnss-ins.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [Autopilots and flight control](../concepts/autopilot.md), [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `ekf2`, `px4`, `tuning`, `docs`
 
 ## Related
 
-- explains: [PX4 Autopilot](../repos/px4__px4-autopilot.md)
-- uses: [PX4 Flight Review](../repos/px4__flight_review.md)
-- has_code: [PX4 Autopilot](../repos/px4__px4-autopilot.md)
-- has_code: [PX4 ECL (Estimation & Control Library)](../repos/px4__px4-ecl.md)
+- explains: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
+- uses: [PX4 Flight Review](../../catalog/repos/px4__flight_review.md)
+- has_code: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
+- has_code: [PX4 ECL (Estimation & Control Library)](../../catalog/repos/px4__px4-ecl.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 
 _Indexed by lane(s): autopilots, learning_

@@ -12,7 +12,7 @@ Mutual relative localization for UAV swarms using blinking ultraviolet LEDs and 
 
 **Hackathon notes:** Needs special UV hardware for real use; simulated in the MRS Gazebo setup.
 
-**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Electronic warfare resilience](../concepts/ew-resilience.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `relative-localization`, `uv-led`, `swarm`, `emcon`
 
@@ -20,12 +20,13 @@ Mutual relative localization for UAV swarms using blinking ultraviolet LEDs and 
 
 ## Related
 
-- extends: [MRS UAV System](../repos/ctu-mrs__mrs_uav_system.md)
+- extends: [MRS UAV System](../../catalog/repos/ctu-mrs__mrs_uav_system.md)
 
 ## Referenced by
 
-- [MRS UAV System](../repos/ctu-mrs__mrs_uav_system.md) (integrates_with)
-- [Martin Saska - Onboard relative localization for agile aerial swarming in the wild (RSS 2024 Aerial Swarms workshop slides)](../resources/saska-rss-2024-aerial-swarms.md) (explains)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [MRS UAV System](../../catalog/repos/ctu-mrs__mrs_uav_system.md) (integrates_with)
+- [Martin Saska - Onboard relative localization for agile aerial swarming in the wild (RSS 2024 Aerial Swarms workshop slides)](../../catalog/resources/saska-rss-2024-aerial-swarms.md) (explains)
 
 _Indexed by lane(s): domains-swarm_
 

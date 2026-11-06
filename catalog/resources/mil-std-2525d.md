@@ -11,13 +11,17 @@ US DoD standard defining military symbology (frames, icons, modifiers and the sy
 - SIDC structure drives symbol rendering in milsymbol
 - Know which revision your consumers expect (2525C vs D/E codes differ)
 
-**Concepts:** [Standards and interface specs](../concepts/standards.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [Standards and interface specs](../../catalog/concepts/standards.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `mil-std-2525`, `symbology`, `sidc`
 
 ## Related
 
-- has_code: [milsymbol](../repos/spatialillusions__milsymbol.md)
-- has_code: [Joint Military Symbology XML](../repos/esri__joint-military-symbology-xml.md)
+- has_code: [milsymbol](../../catalog/repos/spatialillusions__milsymbol.md)
+- has_code: [Joint Military Symbology XML](../../catalog/repos/esri__joint-military-symbology-xml.md)
+
+## Referenced by
+
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 
 _Indexed by lane(s): planning-gis-c2_

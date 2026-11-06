@@ -17,7 +17,7 @@ Gateway that takes drone Remote ID / DroneID detections from WarDragon-style sen
 - [_index-round3](../../docs/integration-cards/_index-round3.md) (integration-cards)
 - [alphafox02__dragonsync](../../docs/integration-cards/alphafox02__dragonsync.md) (integration-cards)
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `remote-id`, `tak`, `cot`, `sensor-gateway`, `droneid`, `adsb`
 
@@ -25,17 +25,19 @@ Gateway that takes drone Remote ID / DroneID detections from WarDragon-style sen
 
 ## Related
 
-- integrates_with: [Open Drone ID Core C](../repos/opendroneid__opendroneid-core-c.md)
-- integrates_with: [PyTAK](../repos/snstac__pytak.md)
-- integrates_with: [FreeTAKServer](../repos/freetakteam__freetakserver.md)
-- same_org: [WarDragon docs](../repos/alphafox02__wardragon.md)
-- integrates_with: [samples2djidroneid](../repos/anarkiwi__samples2djidroneid.md)
+- integrates_with: [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md)
+- integrates_with: [PyTAK](../../catalog/repos/snstac__pytak.md)
+- integrates_with: [FreeTAKServer](../../catalog/repos/freetakteam__freetakserver.md)
+- same_org: [WarDragon docs](../../catalog/repos/alphafox02__wardragon.md)
+- integrates_with: [samples2djidroneid](../../catalog/repos/anarkiwi__samples2djidroneid.md)
 
 ## Referenced by
 
-- [WarDragon docs](../repos/alphafox02__wardragon.md) (same_org)
-- [FreeTAKServer](../repos/freetakteam__freetakserver.md) (integrates_with)
-- [Open Drone ID Core C](../repos/opendroneid__opendroneid-core-c.md) (alternative_to)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [WarDragon docs](../../catalog/repos/alphafox02__wardragon.md) (same_org)
+- [FreeTAKServer](../../catalog/repos/freetakteam__freetakserver.md) (integrates_with)
+- [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md) (alternative_to)
+- [Drone Remote ID decoder, track table and TAK output](../../catalog/samples/remote-id-to-tak.md) (alternative_to)
 
 _Indexed by lane(s): defense-context, domains-swarm_
 

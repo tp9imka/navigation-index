@@ -17,7 +17,7 @@ Asyncio Python client for MAVSDK that wraps a bundled mavsdk_server.
 - [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [mavlink__mavsdk-python](../../docs/integration-cards/mavlink__mavsdk-python.md) (integration-cards)
 
-**Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Autopilots and flight control](../concepts/autopilot.md)
+**Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
 **Tags:** `python`, `asyncio`, `offboard`
 
@@ -25,17 +25,21 @@ Asyncio Python client for MAVSDK that wraps a bundled mavsdk_server.
 
 ## Related
 
-- depends_on: [MAVSDK](../repos/mavlink__mavsdk.md)
-- alternative_to: [DroneKit-Python](../repos/dronekit__dronekit-python.md)
+- depends_on: [MAVSDK](../../catalog/repos/mavlink__mavsdk.md)
+- alternative_to: [DroneKit-Python](../../catalog/repos/dronekit__dronekit-python.md)
 
 ## Referenced by
 
-- [DroneKit-Python](../repos/dronekit__dronekit-python.md) (alternative_to)
-- [MAVLinkMCP](../repos/ion-g-ion__mavlinkmcp.md) (depends_on)
-- [MAVSDK](../repos/mavlink__mavsdk.md) (integrates_with)
-- [LLM mission agent: a safety-gated MAVLink MCP server flying ArduPilot SITL](../samples/llm-mission-agent.md) (explains)
-- [PX4 SITL GPS denial: inject, measure drift, recover](../samples/px4-sitl-gps-denial.md) (uses)
-- [Headless SITL in Docker: ArduCopter and PX4 SIH with one compose file](../samples/sitl-docker.md) (uses)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [DroneKit-Python](../../catalog/repos/dronekit__dronekit-python.md) (alternative_to)
+- [Полёт вслепую - GCS with terrain-referenced navigation](../../catalog/repos/drones-voronka__drones-backend.md) (depends_on)
+- [MAVLinkMCP](../../catalog/repos/ion-g-ion__mavlinkmcp.md) (depends_on)
+- [MAVSDK](../../catalog/repos/mavlink__mavsdk.md) (integrates_with)
+- [LLM mission agent: a safety-gated MAVLink MCP server flying ArduPilot SITL](../../catalog/samples/llm-mission-agent.md) (explains)
+- [PX4 SITL GPS denial: inject, measure drift, recover](../../catalog/samples/px4-sitl-gps-denial.md) (uses)
+- [Headless SITL in Docker: ArduCopter and PX4 SIH with one compose file](../../catalog/samples/sitl-docker.md) (uses)
 
 _Indexed by lane(s): autopilots_
 

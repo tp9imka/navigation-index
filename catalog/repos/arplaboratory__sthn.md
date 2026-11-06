@@ -17,7 +17,7 @@ Deep homography estimation for aligning UAV thermal images to satellite maps (RA
 - [thermal-datasets](../../docs/dataset-cards/thermal-datasets.md) (dataset-cards)
 - [sthn-thermal-homography-2024](../../docs/paper-digests/sthn-thermal-homography-2024.md) (paper-digests)
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Feature detection and matching](../concepts/feature-matching.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 
 **Tags:** `thermal`, `homography`
 
@@ -25,16 +25,18 @@ Deep homography estimation for aligning UAV thermal images to satellite maps (RA
 
 ## Related
 
-- extends: [Satellite-thermal geo-localization](../repos/arplaboratory__satellite-thermal-geo-localization.md)
-- same_org: [UASTHN](../repos/arplaboratory__uasthn.md)
+- extends: [Satellite-thermal geo-localization](../../catalog/repos/arplaboratory__satellite-thermal-geo-localization.md)
+- same_org: [UASTHN](../../catalog/repos/arplaboratory__uasthn.md)
 
 ## Referenced by
 
-- [Satellite-thermal geo-localization](../repos/arplaboratory__satellite-thermal-geo-localization.md) (same_org)
-- [UASTHN](../repos/arplaboratory__uasthn.md) (extends)
-- [ScalLoc](../repos/floralhercules__scalloc.md) (alternative_to)
-- [KF-HomoVAL](../repos/lizhipro__kf-homoval.md) (alternative_to)
-- [STHN: Deep Homography Estimation for UAV Thermal Geo-localization with Satellite Imagery](../resources/sthn-thermal-homography-2024.md) (has_code)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Satellite-thermal geo-localization](../../catalog/repos/arplaboratory__satellite-thermal-geo-localization.md) (same_org)
+- [UASTHN](../../catalog/repos/arplaboratory__uasthn.md) (extends)
+- [ScalLoc](../../catalog/repos/floralhercules__scalloc.md) (alternative_to)
+- [KF-HomoVAL](../../catalog/repos/lizhipro__kf-homoval.md) (alternative_to)
+- [STHN: Deep Homography Estimation for UAV Thermal Geo-localization with Satellite Imagery](../../catalog/resources/sthn-thermal-homography-2024.md) (has_code)
 
 _Indexed by lane(s): alt-nav_
 

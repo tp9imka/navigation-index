@@ -12,7 +12,7 @@ Tightly coupled sliding-window factor-graph fusion of IMU with LiDAR (geometric 
 
 **Hackathon notes:** ROS Noetic; publishes nav_msgs/Odometry. Radar factor lets you keep velocity constraints when LiDAR is blinded by dust or smoke.
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Radar navigation and odometry](../concepts/radar-nav.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Radar navigation and odometry](../../catalog/concepts/radar-nav.md)
 
 **Tags:** `multi-modal`, `subterranean`, `2025`
 
@@ -20,7 +20,11 @@ Tightly coupled sliding-window factor-graph fusion of IMU with LiDAR (geometric 
 
 ## Related
 
-- same_org: [ROVTIO](../repos/ntnu-arl__rovtio.md)
+- same_org: [ROVTIO](../../catalog/repos/ntnu-arl__rovtio.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 
 _Indexed by lane(s): slam_
 

@@ -12,7 +12,7 @@ Simultaneous Trajectory Estimation and Mapping engine from UTIAS: a C++ nonlinea
 
 **Hackathon notes:** Library, not an application; see steam_icp for a ready odometry pipeline built on it.
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Radar navigation and odometry](../concepts/radar-nav.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `continuous-time`, `gaussian-process`, `lie-groups`, `c++`
 
@@ -20,12 +20,12 @@ Simultaneous Trajectory Estimation and Mapping engine from UTIAS: a C++ nonlinea
 
 ## Related
 
-- same_org: [STEAM-ICP](../repos/utiasasrl__steam_icp.md)
+- same_org: [STEAM-ICP](../../catalog/repos/utiasasrl__steam_icp.md)
 
 ## Referenced by
 
-- [STEAM-ICP](../repos/utiasasrl__steam_icp.md) (depends_on)
-- [State Estimation for Robotics (Second Edition)](../resources/barfoot-state-estimation-robotics-2e.md) (has_code)
+- [STEAM-ICP](../../catalog/repos/utiasasrl__steam_icp.md) (depends_on)
+- [State Estimation for Robotics (Second Edition)](../../catalog/resources/barfoot-state-estimation-robotics-2e.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

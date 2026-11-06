@@ -16,7 +16,7 @@ Community-curated list of event-camera papers, datasets, drivers, simulators and
 
 - [event-camera-datasets](../../docs/dataset-cards/event-camera-datasets.md) (dataset-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `event-camera`, `awesome-list`
 
@@ -24,8 +24,8 @@ Community-curated list of event-camera papers, datasets, drivers, simulators and
 
 ## Referenced by
 
-- [Ultimate SLAM](../repos/uzh-rpg__rpg_ultimate_slam_open.md) (same_org)
-- [Event-based Vision: A Survey](../resources/gallego-event-vision-survey-2019.md) (part_of)
+- [Ultimate SLAM](../../catalog/repos/uzh-rpg__rpg_ultimate_slam_open.md) (same_org)
+- [Event-based Vision: A Survey](../../catalog/resources/gallego-event-vision-survey-2019.md) (part_of)
 
 _Indexed by lane(s): slam_
 

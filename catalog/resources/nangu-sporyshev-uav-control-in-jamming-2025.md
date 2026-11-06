@@ -16,8 +16,14 @@ English: 'Ways to increase UAV control resilience in a jamming environment'. Sur
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Electronic warfare resilience](../concepts/ew-resilience.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+**Concepts:** [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `lang:uk`, `survey`, `national-guard`
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_

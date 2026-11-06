@@ -16,7 +16,7 @@ Python package for downloading, customizing and iterating the TartanAir-V2 synth
 
 - [tartanair](../../docs/dataset-cards/tartanair.md) (dataset-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Simulation and HIL/SITL](../concepts/simulation.md), [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `tartanair`, `synthetic`, `python`
 
@@ -24,7 +24,9 @@ Python package for downloading, customizing and iterating the TartanAir-V2 synth
 
 ## Referenced by
 
-- [TartanAir: A Dataset to Push the Limits of Visual SLAM](../resources/cmu-tartanair-dataset.md) (has_code)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [TartanAir: A Dataset to Push the Limits of Visual SLAM](../../catalog/resources/cmu-tartanair-dataset.md) (has_code)
 
 _Indexed by lane(s): sim-data_
 

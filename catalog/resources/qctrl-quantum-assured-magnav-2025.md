@@ -15,12 +15,13 @@ Reports airborne and ground field trials of magnetic anomaly navigation using qu
 
 - [qctrl-quantum-assured-magnav-2025](../../docs/paper-digests/qctrl-quantum-assured-magnav-2025.md) (paper-digests)
 
-**Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `arxiv`, `quantum`, `field-trial`
 
 ## Referenced by
 
-- [Q-CTRL Ironstone Opal quantum-assured magnetic navigation](../resources/qctrl-ironstone-opal.md) (cites)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [Q-CTRL Ironstone Opal quantum-assured magnetic navigation](../../catalog/resources/qctrl-ironstone-opal.md) (cites)
 
 _Indexed by lane(s): alt-nav_

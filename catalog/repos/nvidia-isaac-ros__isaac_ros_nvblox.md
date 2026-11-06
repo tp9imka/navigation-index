@@ -12,7 +12,7 @@ GPU-accelerated 3D reconstruction (TSDF/ESDF) that provides Nav2 local costmaps 
 
 **Hackathon notes:** Isaac ROS dev container; RealSense quickstart.
 
-**Concepts:** [Onboard / edge AI perception](../concepts/edge-ai.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `nvblox`, `tsdf`, `esdf`, `nav2`, `jetson`
 
@@ -20,13 +20,13 @@ GPU-accelerated 3D reconstruction (TSDF/ESDF) that provides Nav2 local costmaps 
 
 ## Related
 
-- integrates_with: [Isaac ROS Visual SLAM](../repos/nvidia-isaac-ros__isaac_ros_visual_slam.md)
-- integrates_with: [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md)
+- integrates_with: [Isaac ROS Visual SLAM](../../catalog/repos/nvidia-isaac-ros__isaac_ros_visual_slam.md)
+- integrates_with: [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md)
 
 ## Referenced by
 
-- [Isaac ROS DNN Inference](../repos/nvidia-isaac-ros__isaac_ros_dnn_inference.md) (same_org)
-- [Isaac ROS Visual SLAM](../repos/nvidia-isaac-ros__isaac_ros_visual_slam.md) (integrates_with)
+- [Isaac ROS DNN Inference](../../catalog/repos/nvidia-isaac-ros__isaac_ros_dnn_inference.md) (same_org)
+- [Isaac ROS Visual SLAM](../../catalog/repos/nvidia-isaac-ros__isaac_ros_visual_slam.md) (integrates_with)
 
 _Indexed by lane(s): gap-fill_
 

@@ -14,12 +14,16 @@ Introduces SALAD, aggregating DINOv2 local features into a global descriptor via
 
 - [salad-vpr-2023](../../docs/paper-digests/salad-vpr-2023.md) (paper-digests)
 
-**Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md)
+**Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 
 **Tags:** `arxiv`
 
 ## Related
 
-- has_code: [SALAD](../repos/serizba__salad.md)
+- has_code: [SALAD](../../catalog/repos/serizba__salad.md)
+
+## Referenced by
+
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 
 _Indexed by lane(s): alt-nav_

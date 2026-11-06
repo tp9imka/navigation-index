@@ -12,7 +12,7 @@ ROS/ROS 2 nodes wrapping jetson-inference for detection, classification and segm
 
 **Hackathon notes:** Build inside jetson-containers ROS image.
 
-**Concepts:** [Onboard / edge AI perception](../concepts/edge-ai.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `jetson`, `ros2`, `tensorrt`
 
@@ -20,11 +20,11 @@ ROS/ROS 2 nodes wrapping jetson-inference for detection, classification and segm
 
 ## Related
 
-- depends_on: [Hello AI World (jetson-inference)](../repos/dusty-nv__jetson-inference.md)
+- depends_on: [Hello AI World (jetson-inference)](../../catalog/repos/dusty-nv__jetson-inference.md)
 
 ## Referenced by
 
-- [Hello AI World (jetson-inference)](../repos/dusty-nv__jetson-inference.md) (integrates_with)
+- [Hello AI World (jetson-inference)](../../catalog/repos/dusty-nv__jetson-inference.md) (integrates_with)
 
 _Indexed by lane(s): gap-fill_
 

@@ -12,7 +12,7 @@ Notebooks that classify drone presence and type from RF using DroneRF and DroneD
 
 **Hackathon notes:** Fork of the archived IQTLabs/RFClassification; no commits since 2022-09. Includes Raspberry Pi 4 test scripts. Download DroneRF (Mendeley, CC BY 4.0) and DroneDetect (IEEE DataPort, CC BY 4.0, 65.8 GB, needs an IEEE account) separately.
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `dronerf`, `dronedetect`, `svm`, `cnn`
 
@@ -20,11 +20,11 @@ Notebooks that classify drone presence and type from RF using DroneRF and DroneD
 
 ## Related
 
-- depends_on: [DroneRF](../repos/al-sad__dronerf.md)
+- depends_on: [DroneRF](../../catalog/repos/al-sad__dronerf.md)
 
 ## Referenced by
 
-- [DroneDetect Dataset: A Radio Frequency dataset of Unmanned Aerial System (UAS) Signals for Machine Learning Detection & Classification](../resources/dronedetect-rf-dataset-essex.md) (has_code)
+- [DroneDetect Dataset: A Radio Frequency dataset of Unmanned Aerial System (UAS) Signals for Machine Learning Detection & Classification](../../catalog/resources/dronedetect-rf-dataset-essex.md) (has_code)
 
 _Indexed by lane(s): round3-expansion_
 

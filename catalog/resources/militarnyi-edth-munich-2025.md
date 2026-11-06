@@ -16,8 +16,14 @@ English: 'European Defense Tech Hackathon: how startups in Munich tackle Ukraine
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Underwater navigation](../concepts/underwater-nav.md), [Counter-UAS and drone detection](../concepts/counter-uas.md), [RF localization and direction finding](../concepts/rf-localization.md)
+**Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 
 **Tags:** `lang:uk`, `edth`, `hackathon`, `brave1`
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_

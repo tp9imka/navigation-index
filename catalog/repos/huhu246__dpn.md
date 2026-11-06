@@ -12,7 +12,7 @@ Submission for the ACM MM 2023 drone-satellite matching challenge.
 
 **Hackathon notes:** One-line README, no licence (all rights reserved). 6th on the UAVM 2023 leaderboard (R@1 90.02). Needs University-1652 (request-only, research use).
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `challenge`
 
@@ -20,11 +20,11 @@ Submission for the ACM MM 2023 drone-satellite matching challenge.
 
 ## Related
 
-- evaluated_on: [UAVM 2023 challenge](../repos/layumi__uavm2023.md)
+- evaluated_on: [UAVM 2023 challenge](../../catalog/repos/layumi__uavm2023.md)
 
 ## Referenced by
 
-- [UAVM 2023 challenge](../repos/layumi__uavm2023.md) (integrates_with)
+- [UAVM 2023 challenge](../../catalog/repos/layumi__uavm2023.md) (integrates_with)
 
 _Indexed by lane(s): round3-expansion_
 

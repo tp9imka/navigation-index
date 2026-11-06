@@ -15,12 +15,17 @@ EU defence hackathon (17-19 October 2025, eight locations) with challenges on pr
 
 - [programs-and-challenges](../../docs/landscape/programs-and-challenges.md) (landscape)
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `hackathon`, `eu`, `brave1`, `ukraine`
 
 ## Referenced by
 
-- [EUDIS Defence Hackathon, 5th edition (Oct 2026) - GNSS-denied navigation challenge](../resources/eudis-defence-hackathon-2026.md) (cites)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [EUDIS Defence Hackathon, 5th edition (Oct 2026) - GNSS-denied navigation challenge](../../catalog/resources/eudis-defence-hackathon-2026.md) (cites)
 
 _Indexed by lane(s): learning_

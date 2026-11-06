@@ -12,7 +12,7 @@ MATLAB code to generate GNSS PRN and secondary codes, dataless signals and spect
 
 **Hackathon notes:** Old but self-contained; MATLAB needed.
 
-**Concepts:** [Software-defined GNSS receivers](../concepts/gnss-sdr.md), [GNSS positioning](../concepts/gnss.md)
+**Concepts:** [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md), [GNSS positioning](../../catalog/concepts/gnss.md)
 
 **Tags:** `prn`, `signal-generation`, `matlab`, `spectrum`
 
@@ -20,11 +20,11 @@ MATLAB code to generate GNSS PRN and secondary codes, dataless signals and spect
 
 ## Related
 
-- alternative_to: [GNSS-DSP-tools](../repos/pmonta__gnss-dsp-tools.md)
+- alternative_to: [GNSS-DSP-tools](../../catalog/repos/pmonta__gnss-dsp-tools.md)
 
 ## Referenced by
 
-- [GNSS-DSP-tools](../repos/pmonta__gnss-dsp-tools.md) (alternative_to)
+- [GNSS-DSP-tools](../../catalog/repos/pmonta__gnss-dsp-tools.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

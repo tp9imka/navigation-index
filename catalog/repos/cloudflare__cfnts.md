@@ -12,7 +12,7 @@ Cloudflare's Rust implementation of Network Time Security (NTS) key exchange and
 
 **Hackathon notes:** Archived; read only.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `nts`, `rust`
 
@@ -20,12 +20,12 @@ Cloudflare's Rust implementation of Network Time Security (NTS) key exchange and
 
 ## Related
 
-- alternative_to: [ntpd-rs](../repos/pendulum-project__ntpd-rs.md)
+- alternative_to: [ntpd-rs](../../catalog/repos/pendulum-project__ntpd-rs.md)
 
 ## Referenced by
 
-- [Roughtime (Cloudflare)](../repos/cloudflare__roughtime.md) (same_org)
-- [RFC 8915: Network Time Security for the Network Time Protocol](../resources/rfc8915-nts.md) (has_code)
+- [Roughtime (Cloudflare)](../../catalog/repos/cloudflare__roughtime.md) (same_org)
+- [RFC 8915: Network Time Security for the Network Time Protocol](../../catalog/resources/rfc8915-nts.md) (has_code)
 
 _Indexed by lane(s): timing_
 

@@ -12,7 +12,7 @@ Open field-test toolkit for acoustic and radar detection of low-signature drones
 
 **Hackathon notes:** MIT, but the README frames it as research and educational use. No field recordings ship in the repo - the experiments run on synthesized signals (--mock) until you record your own. Follow the field protocol to measure your own detection ranges.
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `acoustic`, `radar`, `fpv`, `cots`
 

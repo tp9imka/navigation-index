@@ -12,7 +12,7 @@ Loads STAC items into xarray datasets with reprojection, resampling and mosaicki
 
 **Hackathon notes:** Works with Dask for larger AOIs.
 
-**Concepts:** [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+**Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `stac`, `xarray`, `mosaic`
 
@@ -20,11 +20,11 @@ Loads STAC items into xarray datasets with reprojection, resampling and mosaicki
 
 ## Related
 
-- integrates_with: [pystac-client](../repos/stac-utils__pystac-client.md)
+- integrates_with: [pystac-client](../../catalog/repos/stac-utils__pystac-client.md)
 
 ## Referenced by
 
-- [pystac-client](../repos/stac-utils__pystac-client.md) (integrates_with)
+- [pystac-client](../../catalog/repos/stac-utils__pystac-client.md) (integrates_with)
 
 _Indexed by lane(s): planning-gis-c2_
 

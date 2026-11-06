@@ -15,13 +15,18 @@ Derives IMU preintegration on the SO(3) manifold with bias-correction Jacobians,
 
 - [forster-imu-preintegration](../../docs/paper-digests/forster-imu-preintegration.md) (paper-digests)
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Visual(-inertial) odometry](../concepts/vio.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `imu-preintegration`, `factor-graph`
 
 ## Related
 
-- has_code: [GTSAM](../repos/borglab__gtsam.md)
-- uses: [OB_GINS](../repos/i2nav-whu__ob_gins.md)
+- has_code: [GTSAM](../../catalog/repos/borglab__gtsam.md)
+- uses: [OB_GINS](../../catalog/repos/i2nav-whu__ob_gins.md)
+
+## Referenced by
+
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 
 _Indexed by lane(s): ins-fusion_

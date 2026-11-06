@@ -10,9 +10,9 @@ Arduino classes for several UAV electronic ID formats (ASTM/EU Remote ID, French
 
 **Why it matters:** Small, readable alternative Remote ID implementation, including receiver-side sketches.
 
-**Hackathon notes:** Arduino IDE; inactive since early 2024.
+**Hackathon notes:** Arduino IDE; the id_open examples are transmitters (ESP32, ESP8266, nRF52) and id_scanner is a receiver sketch.
 
-**Concepts:** [Standards and interface specs](../concepts/standards.md), [Counter-UAS and drone detection](../concepts/counter-uas.md)
+**Concepts:** [Standards and interface specs](../../catalog/concepts/standards.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md)
 
 **Tags:** `remote-id`, `arduino`, `esp32`
 
@@ -20,12 +20,13 @@ Arduino classes for several UAV electronic ID formats (ASTM/EU Remote ID, French
 
 ## Related
 
-- alternative_to: [Open Drone ID Core C](../repos/opendroneid__opendroneid-core-c.md)
-- alternative_to: [ArduRemoteID](../repos/ardupilot__arduremoteid.md)
+- alternative_to: [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md)
+- alternative_to: [ArduRemoteID](../../catalog/repos/ardupilot__arduremoteid.md)
 
 ## Referenced by
 
-- [RID (ESP32 Remote ID receiver)](../repos/peterjburke__rid.md) (fork_of)
+- [RID (ESP32 Remote ID receiver)](../../catalog/repos/peterjburke__rid.md) (fork_of)
+- [Drone Remote ID decoder, track table and TAK output](../../catalog/samples/remote-id-to-tak.md) (integrates_with)
 
 _Indexed by lane(s): autopilots, domains-swarm_
 

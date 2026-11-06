@@ -11,12 +11,12 @@ Page for the 28-29 October 2024 symposium with agenda, student and invited-speak
 - Year-over-year view of resilient PNT research
 - Slides downloadable for many talks
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [Timing and time transfer](../concepts/timing.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `stanford`, `scpnt`, `symposium`
 
 ## Related
 
-- part_of: [SCPNT Photo and Video Gallery (PNT Symposium recordings archive)](../resources/stanford-scpnt-video-gallery.md)
+- part_of: [SCPNT Photo and Video Gallery (PNT Symposium recordings archive)](../../catalog/resources/stanford-scpnt-video-gallery.md)
 
 _Indexed by lane(s): learning_

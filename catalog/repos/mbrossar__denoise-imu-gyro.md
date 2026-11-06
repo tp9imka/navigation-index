@@ -12,7 +12,7 @@ CNN that denoises low-cost gyroscope signals to improve attitude estimation.
 
 **Hackathon notes:** Inactive since 2020; trained on EuRoC/TUM-VI.
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `cnn`, `gyro`, `attitude`
 
@@ -20,13 +20,13 @@ CNN that denoises low-cost gyroscope signals to improve attitude estimation.
 
 ## Related
 
-- same_org: [AI-IMU Dead-Reckoning](../repos/mbrossar__ai-imu-dr.md)
-- alternative_to: [AirIMU](../repos/haleqiu__airimu.md)
+- same_org: [AI-IMU Dead-Reckoning](../../catalog/repos/mbrossar__ai-imu-dr.md)
+- alternative_to: [AirIMU](../../catalog/repos/haleqiu__airimu.md)
 
 ## Referenced by
 
-- [AirIMU](../repos/haleqiu__airimu.md) (alternative_to)
-- [AI-IMU Dead-Reckoning](../repos/mbrossar__ai-imu-dr.md) (same_org)
+- [AirIMU](../../catalog/repos/haleqiu__airimu.md) (alternative_to)
+- [AI-IMU Dead-Reckoning](../../catalog/repos/mbrossar__ai-imu-dr.md) (same_org)
 
 _Indexed by lane(s): ins-fusion_
 

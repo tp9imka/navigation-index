@@ -10,12 +10,12 @@ NIST's authenticated NTP service for registered users, using symmetric keys so c
 
 - An authenticated public reference for cross-checking GNSS time
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `ntp`, `authentication`, `nist`
 
 ## Related
 
-- explains: [RFC 8915: Network Time Security for the Network Time Protocol](../resources/rfc8915-nts.md)
+- explains: [RFC 8915: Network Time Security for the Network Time Protocol](../../catalog/resources/rfc8915-nts.md)
 
 _Indexed by lane(s): timing_

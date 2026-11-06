@@ -12,7 +12,7 @@ Web-accessible shortwave SDR receiver (10 kHz - 30 MHz) with built-in software G
 
 **Hackathon notes:** Use public KiwiSDR receivers to look at LF navigation signals; not a positioning solver.
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `sdr`, `loran`, `lf`
 
@@ -20,7 +20,7 @@ Web-accessible shortwave SDR receiver (10 kHz - 30 MHz) with built-in software G
 
 ## Referenced by
 
-- [kiwiclient](../repos/jks-prv__kiwiclient.md) (integrates_with)
+- [kiwiclient](../../catalog/repos/jks-prv__kiwiclient.md) (integrates_with)
 
 _Indexed by lane(s): alt-nav_
 

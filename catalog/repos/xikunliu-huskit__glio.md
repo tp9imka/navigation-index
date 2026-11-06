@@ -12,7 +12,7 @@ Tightly coupled GNSS/LiDAR/IMU integration (PolyU) for continuous, drift-free st
 
 **Hackathon notes:** ROS 1 research code; needs raw GNSS observables in the data.
 
-**Concepts:** [GNSS/INS integration](../concepts/gnss-ins.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `tightly-coupled`, `urban-canyon`, `ros`
 
@@ -20,12 +20,12 @@ Tightly coupled GNSS/LiDAR/IMU integration (PolyU) for continuous, drift-free st
 
 ## Related
 
-- integrates_with: [GraphGNSSLib](../repos/weisongwen__graphgnsslib.md)
-- alternative_to: [LIO-SAM](../repos/tixiaoshan__lio-sam.md)
+- integrates_with: [GraphGNSSLib](../../catalog/repos/weisongwen__graphgnsslib.md)
+- alternative_to: [LIO-SAM](../../catalog/repos/tixiaoshan__lio-sam.md)
 
 ## Referenced by
 
-- [GraphGNSSLib](../repos/weisongwen__graphgnsslib.md) (integrates_with)
+- [GraphGNSSLib](../../catalog/repos/weisongwen__graphgnsslib.md) (integrates_with)
 
 _Indexed by lane(s): ins-fusion_
 

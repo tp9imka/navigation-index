@@ -12,12 +12,12 @@ Interface specification for the modernized L1C civil signal designed for interop
 - CNAV-2 adds FEC-coded subframes
 - Key reference for multi-GNSS L1 receiver design
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `icd`, `gps`, `l1c`, `cnav-2`
 
 ## Related
 
-- has_code: [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md)
+- has_code: [GNSS-SDR](../../catalog/repos/gnss-sdr__gnss-sdr.md)
 
 _Indexed by lane(s): docs-standards_

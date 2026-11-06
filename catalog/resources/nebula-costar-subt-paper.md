@@ -11,12 +11,17 @@ Describes the NeBula belief-space autonomy stack: multi-modal positioning, mappi
 - Reasoning over uncertainty in localization improves mission decisions
 - Redundant odometry sources were essential underground
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Mission planning and routing](../concepts/mission-planning.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `darpa-subt`, `costar`, `jpl`
 
 ## Related
 
-- has_code: [LAMP (NeBula multi-robot SLAM)](../repos/nebula-autonomy__lamp.md)
+- has_code: [LAMP (NeBula multi-robot SLAM)](../../catalog/repos/nebula-autonomy__lamp.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 
 _Indexed by lane(s): defense-context_

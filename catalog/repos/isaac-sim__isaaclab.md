@@ -12,7 +12,7 @@ Robot-learning framework on Isaac Sim for massively parallel RL and imitation le
 
 **Hackathon notes:** Install via pip on a supported Isaac Sim version. Start from an existing nav task config rather than writing environments from scratch.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Path and motion planning](../concepts/path-planning.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Path and motion planning](../../catalog/concepts/path-planning.md)
 
 **Tags:** `rl`, `isaac-sim`, `gpu`, `learning`
 
@@ -20,12 +20,12 @@ Robot-learning framework on Isaac Sim for massively parallel RL and imitation le
 
 ## Related
 
-- depends_on: [NVIDIA Isaac Sim](../repos/isaac-sim__isaacsim.md)
-- alternative_to: [Aerial Gym Simulator](../repos/ntnu-arl__aerial_gym_simulator.md)
+- depends_on: [NVIDIA Isaac Sim](../../catalog/repos/isaac-sim__isaacsim.md)
+- alternative_to: [Aerial Gym Simulator](../../catalog/repos/ntnu-arl__aerial_gym_simulator.md)
 
 ## Referenced by
 
-- [NVIDIA Isaac Sim](../repos/isaac-sim__isaacsim.md) (integrates_with)
+- [NVIDIA Isaac Sim](../../catalog/repos/isaac-sim__isaacsim.md) (integrates_with)
 
 _Indexed by lane(s): sim-data_
 

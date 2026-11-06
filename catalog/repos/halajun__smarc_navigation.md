@@ -10,9 +10,9 @@ Localization and SLAM components for the SMARC AUVs (KTH), including EKF localiz
 
 **Why it matters:** Research AUV navigation from a Swedish maritime robotics centre, showing map-aided underwater localization.
 
-**Hackathon notes:** ROS 1 era and dormant; read for architecture.
+**Hackathon notes:** Fork of smarc-project/smarc_navigation frozen in 2021; the upstream was updated until 2024, so start there. ROS 1 era; read for architecture.
 
-**Concepts:** [Underwater navigation](../concepts/underwater-nav.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Terrain-relative navigation](../concepts/terrain-nav.md)
+**Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md)
 
 **Tags:** `auv`, `ekf`, `dvl`, `multibeam`, `kth`
 
@@ -20,11 +20,11 @@ Localization and SLAM components for the SMARC AUVs (KTH), including EKF localiz
 
 ## Related
 
-- alternative_to: [AuvEstimator](../repos/alliwong__auvestimator.md)
+- alternative_to: [AuvEstimator](../../catalog/repos/alliwong__auvestimator.md)
 
 ## Referenced by
 
-- [AuvEstimator](../repos/alliwong__auvestimator.md) (alternative_to)
+- [AuvEstimator](../../catalog/repos/alliwong__auvestimator.md) (alternative_to)
 
 _Indexed by lane(s): domains-swarm_
 

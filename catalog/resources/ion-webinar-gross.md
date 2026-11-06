@@ -10,12 +10,18 @@ West Virginia University work on UAV and UGV teams sharing ranging and odometry 
 
 - Cooperative ranging reduces drift in heterogeneous teams
 
-**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [RF localization and direction finding](../concepts/rf-localization.md)
+**Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 
 **Tags:** `subterranean`, `uav-ugv`, `ion`, `webinar`
 
 ## Related
 
-- part_of: [ION Webinar Series (archive and YouTube recordings)](../resources/ion-webinar-series.md)
+- part_of: [ION Webinar Series (archive and YouTube recordings)](../../catalog/resources/ion-webinar-series.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [Cooperative localization for a GNSS-denied team: UWB ranging, centralized EKF vs covariance intersection, and a spoofed anchor](../../catalog/samples/swarm-coop-localization.md) (explains)
 
 _Indexed by lane(s): learning_

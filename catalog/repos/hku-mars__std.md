@@ -10,9 +10,9 @@ Stable Triangle Descriptor for 3D point-cloud place recognition and loop closure
 
 **Why it matters:** Works with solid-state LiDARs and small fields of view where Scan Context struggles.
 
-**Hackathon notes:** ROS 1 demos; integrates with FAST-LIO.
+**Hackathon notes:** ROS 1 demos; integrates with FAST-LIO. Licence: GPLv2 but the README allows it free only for personal and academic use; commercial use needs a separate licence.
 
-**Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `descriptor`, `livox`, `loop-closure`
 
@@ -20,7 +20,7 @@ Stable Triangle Descriptor for 3D point-cloud place recognition and loop closure
 
 ## Related
 
-- integrates_with: [FAST-LIO / FAST-LIO2](../repos/hku-mars__fast_lio.md)
+- integrates_with: [FAST-LIO / FAST-LIO2](../../catalog/repos/hku-mars__fast_lio.md)
 
 _Indexed by lane(s): slam_
 

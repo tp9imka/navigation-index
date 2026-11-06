@@ -12,7 +12,7 @@ Transformer-based feature segmentation and region alignment for drone-to-satelli
 
 **Hackathon notes:** No licence file (all rights reserved). Trains on University-1652, which is request-only and research use only. Good comparison baseline.
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `transformer`, `university-1652`, `cross-view`
 
@@ -20,11 +20,11 @@ Transformer-based feature segmentation and region alignment for drone-to-satelli
 
 ## Related
 
-- evaluated_on: [University-1652 baseline](../repos/layumi__university1652-baseline.md)
+- evaluated_on: [University-1652 baseline](../../catalog/repos/layumi__university1652-baseline.md)
 
 ## Referenced by
 
-- [A Transformer-Based Feature Segmentation and Region Alignment Method For UAV-View Geo-Localization](../resources/fsra-2022.md) (has_code)
+- [A Transformer-Based Feature Segmentation and Region Alignment Method For UAV-View Geo-Localization](../../catalog/resources/fsra-2022.md) (has_code)
 
 _Indexed by lane(s): round3-expansion_
 

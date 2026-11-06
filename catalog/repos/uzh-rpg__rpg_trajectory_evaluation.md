@@ -12,7 +12,7 @@ Toolbox for quantitative trajectory evaluation of VO/VIO, implementing the align
 
 **Hackathon notes:** Old Python 2 era code, ROS optional. evo is easier for quick use.
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `evaluation`, `vio`, `trajectory`, `relative-error`
 
@@ -20,14 +20,15 @@ Toolbox for quantitative trajectory evaluation of VO/VIO, implementing the align
 
 ## Related
 
-- alternative_to: [evo](../repos/michaelgrupp__evo.md)
+- alternative_to: [evo](../../catalog/repos/michaelgrupp__evo.md)
 
 ## Referenced by
 
-- [cnspy trajectory evaluation](../repos/aau-cns__cnspy_trajectory_evaluation.md) (alternative_to)
-- [evo](../repos/michaelgrupp__evo.md) (alternative_to)
-- [UZH-FPV dataset tools](../repos/uzh-rpg__uzh_fpv_open.md) (integrates_with)
-- [Vision Algorithms for Mobile Robotics (UZH/ETH)](../resources/scaramuzza-vision-algorithms-mobile-robotics.md) (uses)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [cnspy trajectory evaluation](../../catalog/repos/aau-cns__cnspy_trajectory_evaluation.md) (alternative_to)
+- [evo](../../catalog/repos/michaelgrupp__evo.md) (alternative_to)
+- [UZH-FPV dataset tools](../../catalog/repos/uzh-rpg__uzh_fpv_open.md) (integrates_with)
+- [Vision Algorithms for Mobile Robotics (UZH/ETH)](../../catalog/resources/scaramuzza-vision-algorithms-mobile-robotics.md) (uses)
 
 _Indexed by lane(s): sim-data, slam_
 

@@ -12,7 +12,7 @@ Gazebo/ROS packages for underwater vehicle simulation with hydrodynamics, thrust
 
 **Hackathon notes:** Archived and tied to old ROS/Gazebo; use Stonefish or DAVE instead.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Underwater navigation](../concepts/underwater-nav.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Underwater navigation](../../catalog/concepts/underwater-nav.md)
 
 **Tags:** `gazebo`, `uuv`, `ros1`, `underwater`, `gazebo-classic`
 
@@ -20,11 +20,12 @@ Gazebo/ROS packages for underwater vehicle simulation with hydrodynamics, thrust
 
 ## Related
 
-- alternative_to: [Project DAVE](../repos/field-robotics-lab__dave.md)
+- alternative_to: [Project DAVE](../../catalog/repos/field-robotics-lab__dave.md)
 
 ## Referenced by
 
-- [Project DAVE](../repos/field-robotics-lab__dave.md) (extends)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Project DAVE](../../catalog/repos/field-robotics-lab__dave.md) (extends)
 
 _Indexed by lane(s): domains-swarm, sim-data_
 

@@ -11,12 +11,19 @@ Reference for EKF3 source parameters (position, velocity, yaw per axis) and how 
 - Per-axis source selection for position, velocity and yaw
 - Basis for GNSS-denied and spoofing-resilience configs
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [GNSS/INS integration](../concepts/gnss-ins.md), [Autopilots and flight control](../concepts/autopilot.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
 **Tags:** `ekf3`, `parameters`
 
 ## Related
 
-- explains: [ArduPilot](../repos/ardupilot__ardupilot.md)
+- explains: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 
 _Indexed by lane(s): autopilots_

@@ -11,12 +11,16 @@ NDSS 2016 paper showing on-path time shifting of NTP clients, an off-path single
 - Unauthenticated NTP can be shifted by an on-path attacker
 - Some attacks work off-path
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `ntp`, `security`, `time-shifting`, `ndss`
 
 ## Related
 
-- evaluates: [NTP reference implementation (ntpd)](../repos/ntp-project__ntp.md)
+- evaluates: [NTP reference implementation (ntpd)](../../catalog/repos/ntp-project__ntp.md)
+
+## Referenced by
+
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 
 _Indexed by lane(s): timing_

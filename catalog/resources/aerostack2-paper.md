@@ -10,12 +10,16 @@ Describes the Aerostack2 ROS 2 architecture for aerial robotics: platform abstra
 
 - Platform abstraction lets the same mission run on several autopilots and simulators
 
-**Concepts:** [Mission planning and routing](../concepts/mission-planning.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Mission planning and routing](../../catalog/concepts/mission-planning.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `aerostack2`, `uav`
 
 ## Related
 
-- has_code: [Aerostack2](../repos/aerostack2__aerostack2.md)
+- has_code: [Aerostack2](../../catalog/repos/aerostack2__aerostack2.md)
+
+## Referenced by
+
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 
 _Indexed by lane(s): planning-gis-c2_

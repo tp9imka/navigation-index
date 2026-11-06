@@ -12,7 +12,7 @@ Long-wave infrared image dataset of a harbour environment with semantic and inst
 
 **Hackathon notes:** Download the three Google Drive zips in the README (2,916 LWIR images at 640x512, 7 classes, semantic and instance masks); small enough to fine-tune a segmentation net in a few hours. Licence is CC BY-NC-SA 4.0 - non-commercial only.
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Maritime navigation](../concepts/maritime-nav.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `lwir`, `thermal`, `segmentation`, `usv`
 
@@ -20,12 +20,12 @@ Long-wave infrared image dataset of a harbour environment with semantic and inst
 
 ## Related
 
-- alternative_to: [LaRS evaluator](../repos/lojzezust__lars_evaluator.md)
+- alternative_to: [LaRS evaluator](../../catalog/repos/lojzezust__lars_evaluator.md)
 
 ## Referenced by
 
-- [LaRS evaluator](../repos/lojzezust__lars_evaluator.md) (alternative_to)
-- [MassMIND: Massachusetts Maritime INfrared Dataset](../resources/massmind-paper-2022.md) (has_code)
+- [LaRS evaluator](../../catalog/repos/lojzezust__lars_evaluator.md) (alternative_to)
+- [MassMIND: Massachusetts Maritime INfrared Dataset](../../catalog/resources/massmind-paper-2022.md) (has_code)
 
 _Indexed by lane(s): round3-expansion_
 

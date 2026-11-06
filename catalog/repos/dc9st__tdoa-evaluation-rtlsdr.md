@@ -12,7 +12,7 @@ MATLAB scripts that localize a transmitter by TDOA from three RTL-SDR receivers,
 
 **Hackathon notes:** Three Pis with RTL-SDRs plus the modified librtlsdr; MATLAB or port to Octave/NumPy.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [RF localization and direction finding](../concepts/rf-localization.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 
 **Tags:** `tdoa`, `rtl-sdr`, `synchronization`, `matlab`
 
@@ -20,12 +20,13 @@ MATLAB scripts that localize a transmitter by TDOA from three RTL-SDR receivers,
 
 ## Related
 
-- depends_on: [librtlsdr-2freq](../repos/dc9st__librtlsdr-2freq.md)
-- alternative_to: [Heimdall DAQ firmware](../repos/krakenrf__heimdall_daq_fw.md)
+- depends_on: [librtlsdr-2freq](../../catalog/repos/dc9st__librtlsdr-2freq.md)
+- alternative_to: [Heimdall DAQ firmware](../../catalog/repos/krakenrf__heimdall_daq_fw.md)
 
 ## Referenced by
 
-- [librtlsdr-2freq](../repos/dc9st__librtlsdr-2freq.md) (integrates_with)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [librtlsdr-2freq](../../catalog/repos/dc9st__librtlsdr-2freq.md) (integrates_with)
 
 _Indexed by lane(s): timing_
 

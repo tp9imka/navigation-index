@@ -15,8 +15,14 @@ English: 'Navigation without GPS that already works'. Overview of deployed or de
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Celestial and star-tracker navigation](../concepts/celestial-nav.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md)
 
 **Tags:** `lang:ru`, `habr`, `overview`
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_

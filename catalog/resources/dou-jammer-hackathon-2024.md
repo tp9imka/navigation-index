@@ -16,16 +16,19 @@ English: 'EW/ELINT solutions against enemy drones wanted: Jammer Hackathon detai
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [RF localization and direction finding](../concepts/rf-localization.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `lang:uk`, `brave1`, `hackathon`, `problem-statement`
 
 ## Related
 
-- part_of: [Завершився Jammer Hackathon, де шукали РЕБ/РЕР рішення для фронту. Які проєкти перемогли](../resources/dou-jammer-hackathon-winners-2024.md)
+- part_of: [Завершився Jammer Hackathon, де шукали РЕБ/РЕР рішення для фронту. Які проєкти перемогли](../../catalog/resources/dou-jammer-hackathon-winners-2024.md)
 
 ## Referenced by
 
-- [Завершився Jammer Hackathon, де шукали РЕБ/РЕР рішення для фронту. Які проєкти перемогли](../resources/dou-jammer-hackathon-winners-2024.md) (part_of)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Завершився Jammer Hackathon, де шукали РЕБ/РЕР рішення для фронту. Які проєкти перемогли](../../catalog/resources/dou-jammer-hackathon-winners-2024.md) (part_of)
 
 _Indexed by lane(s): ua-ru-sources_

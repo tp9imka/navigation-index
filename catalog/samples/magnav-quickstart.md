@@ -10,16 +10,24 @@ A Julia walkthrough with MagNav.jl that downloads the public SGL 2020 challenge 
 
 - [magnav-challenge-data](../../docs/dataset-cards/magnav-challenge-data.md) (dataset-cards)
 
-**Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Sensor calibration](../concepts/calibration.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Sensor calibration](../../catalog/concepts/calibration.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `magnav`, `julia`, `tolles-lawson`, `ekf`, `anomaly-map`, `afrl`, `gnss-denied`, `airborne`
 
 ## Related
 
-- uses: [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md)
-- explains: [MagNavPy](../repos/manasp21__magnav.py.md)
-- explains: [MagNav deep-learning compensation](../repos/naatyu__magnav.md)
-- explains: [AFIT MagNav example data](../repos/afit-eeng-magnav__example-data.md)
-- explains: [DroneMagNav](../repos/ajisrawi__dronemagnav.md)
+- uses: [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md)
+- explains: [MagNavPy](../../catalog/repos/manasp21__magnav.py.md)
+- explains: [MagNav deep-learning compensation](../../catalog/repos/naatyu__magnav.md)
+- explains: [AFIT MagNav example data](../../catalog/repos/afit-eeng-magnav__example-data.md)
+- explains: [DroneMagNav](../../catalog/repos/ajisrawi__dronemagnav.md)
+
+## Referenced by
+
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): samples_

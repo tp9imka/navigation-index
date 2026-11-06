@@ -18,15 +18,24 @@ Q-CTRL's navigation product pairs quantum magnetometers with its software to mat
 - [gnss-denied-nav-products](../../docs/landscape/gnss-denied-nav-products.md) (landscape)
 - [trends-2025-2026](../../docs/landscape/trends-2025-2026.md) (landscape)
 
-**Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `landscape`, `q-ctrl`, `quantum`, `magnav`, `vendor-claim`
 
 ## Related
 
-- alternative_to: [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md)
-- alternative_to: [MagNavPy](../repos/manasp21__magnav.py.md)
-- cites: [Quantum-assured magnetic navigation achieves positioning accuracy better than a strategic-grade INS in airborne and ground-based field trials](../resources/qctrl-quantum-assured-magnav-2025.md)
-- cites: [MagNav Challenge Problem (DAF-MIT AI Accelerator)](../resources/magnav-challenge-site.md)
+- alternative_to: [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md)
+- alternative_to: [MagNavPy](../../catalog/repos/manasp21__magnav.py.md)
+- cites: [Quantum-assured magnetic navigation achieves positioning accuracy better than a strategic-grade INS in airborne and ground-based field trials](../../catalog/resources/qctrl-quantum-assured-magnav-2025.md)
+- cites: [MagNav Challenge Problem (DAF-MIT AI Accelerator)](../../catalog/resources/magnav-challenge-site.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
+- [GNSS-denied navigation: products and companies](../../docs/landscape/gnss-denied-nav-products.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
+- [Docs map](../../docs/README.md) (mentions)
 
 _Indexed by lane(s): landscape_

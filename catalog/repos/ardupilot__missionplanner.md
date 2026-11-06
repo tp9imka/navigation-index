@@ -12,7 +12,7 @@ Windows-centric C#/.NET GCS for ArduPilot with deep parameter, log-analysis and 
 
 **Hackathon notes:** Windows best; runs under Mono on Linux/mac with caveats.
 
-**Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Mission planning and routing](../concepts/mission-planning.md)
+**Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 
 **Tags:** `gcs`, `csharp`, `windows`
 
@@ -20,14 +20,16 @@ Windows-centric C#/.NET GCS for ArduPilot with deep parameter, log-analysis and 
 
 ## Related
 
-- integrates_with: [ArduPilot](../repos/ardupilot__ardupilot.md)
-- alternative_to: [QGroundControl](../repos/mavlink__qgroundcontrol.md)
+- integrates_with: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
+- alternative_to: [QGroundControl](../../catalog/repos/mavlink__qgroundcontrol.md)
 
 ## Referenced by
 
-- [APM Planner 2](../repos/ardupilot__apm_planner.md) (alternative_to)
-- [ArduPilot](../repos/ardupilot__ardupilot.md) (integrates_with)
-- [QGroundControl](../repos/mavlink__qgroundcontrol.md) (alternative_to)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [APM Planner 2](../../catalog/repos/ardupilot__apm_planner.md) (alternative_to)
+- [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md) (integrates_with)
+- [QGroundControl](../../catalog/repos/mavlink__qgroundcontrol.md) (alternative_to)
 
 _Indexed by lane(s): autopilots_
 

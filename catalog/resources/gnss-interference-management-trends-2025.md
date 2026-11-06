@@ -10,7 +10,7 @@ Magazine paper (submitted to IEEE AESM) on AI for GNSS interference detection, c
 
 - Good map of the field and its datasets
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `survey`
 

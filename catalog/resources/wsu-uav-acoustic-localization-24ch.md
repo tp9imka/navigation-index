@@ -11,7 +11,7 @@
 - Ground-truth positions enable acoustic localization, not just detection
 - Multi-recorder synchronized array
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../concepts/counter-uas.md), [RF localization and direction finding](../concepts/rf-localization.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 
 **Tags:** `acoustic`, `microphone-array`, `beamforming`
 

@@ -11,14 +11,14 @@ Results page for CopterHack 2022, an open-source drone project competition on th
 - All entries must be open source on Clover
 - Links to finalist repos
 
-**Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+**Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `copterhack`, `clover`
 
 ## Related
 
-- has_code: [Swarm in Blocks](../repos/grupo-semear-usp__swarm_in_blocks.md)
-- has_code: [Clover Rescue Project](../repos/devmbs__crtclient.md)
-- same_author: [CopterHack 2023](../resources/coex-copterhack-2023.md)
+- has_code: [Swarm in Blocks](../../catalog/repos/grupo-semear-usp__swarm_in_blocks.md)
+- has_code: [Clover Rescue Project](../../catalog/repos/devmbs__crtclient.md)
+- same_author: [CopterHack 2023](../../catalog/resources/coex-copterhack-2023.md)
 
 _Indexed by lane(s): round3-expansion_

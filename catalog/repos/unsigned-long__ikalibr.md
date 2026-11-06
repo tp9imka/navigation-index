@@ -12,7 +12,7 @@ Continuous-time, targetless multi-sensor calibration framework (IMU, cameras, Li
 
 **Hackathon notes:** ROS-based with many dependencies; budget setup time.
 
-**Concepts:** [Sensor calibration](../concepts/calibration.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Sensor calibration](../../catalog/concepts/calibration.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `spatiotemporal`, `continuous-time`, `radar`, `lidar`
 
@@ -20,13 +20,14 @@ Continuous-time, targetless multi-sensor calibration framework (IMU, cameras, Li
 
 ## Related
 
-- alternative_to: [Kalibr](../repos/ethz-asl__kalibr.md)
-- alternative_to: [LI-Calib](../repos/april-zju__lidar_imu_calib.md)
+- alternative_to: [Kalibr](../../catalog/repos/ethz-asl__kalibr.md)
+- alternative_to: [LI-Calib](../../catalog/repos/april-zju__lidar_imu_calib.md)
 
 ## Referenced by
 
-- [LI-Calib](../repos/april-zju__lidar_imu_calib.md) (alternative_to)
-- [Kalibr](../repos/ethz-asl__kalibr.md) (alternative_to)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [LI-Calib](../../catalog/repos/april-zju__lidar_imu_calib.md) (alternative_to)
+- [Kalibr](../../catalog/repos/ethz-asl__kalibr.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 

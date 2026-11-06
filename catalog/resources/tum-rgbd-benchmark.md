@@ -11,12 +11,16 @@ Kinect RGB-D sequences with motion-capture ground truth and evaluation tools; th
 - Sensors: RGB-D, accelerometer
 - Size class: medium
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `tum`, `rgbd`, `indoor`
 
 ## Related
 
-- uses: [evo](../repos/michaelgrupp__evo.md)
+- uses: [evo](../../catalog/repos/michaelgrupp__evo.md)
+
+## Referenced by
+
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 
 _Indexed by lane(s): sim-data_

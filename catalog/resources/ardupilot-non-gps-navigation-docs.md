@@ -4,7 +4,7 @@
 
 **By:** ArduPilot Dev Team - **Year:** None - **Level:** intro - **Access:** open
 
-Landing page in the ArduPilot wiki listing every supported way to navigate without GNSS: optical flow, beacons, wheel encoders, visual odometry/VIO cameras, motion capture and MAVLink external position.
+ArduPilot Copter documentation hub for flying without GPS: optical flow, visual odometry cameras (RealSense T265, OAK-D, ModalAI VOXL), motion capture (OptiTrack, Vicon, Nokov), beacons/UWB (Marvelmind, Pozyx, Nooploop), ROS with Cartographer, GPS/non-GPS transitions and EKF origin handling.
 
 ## Key takeaways
 
@@ -13,17 +13,20 @@ Landing page in the ArduPilot wiki listing every supported way to navigate witho
 - Menu of supported GPS-free aiding sources
 - Guides for feeding external pose into EKF3
 
-**Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [Visual(-inertial) odometry](../concepts/vio.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [RF localization and direction finding](../concepts/rf-localization.md)
+**Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 
 **Tags:** `ardupilot`, `non-gps`, `ekf3`, `optical-flow`
 
 ## Related
 
-- explains: [ArduPilot](../repos/ardupilot__ardupilot.md)
-- has_code: [ArduPilot](../repos/ardupilot__ardupilot.md)
+- explains: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
+- has_code: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
 
 ## Referenced by
 
-- [ArduPilot Developer Conference Kaga 2024 - schedule and YouTube links](../resources/ardupilot-devcon-kaga-2024.md) (part_of)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [ArduPilot Developer Conference Kaga 2024 - Schedule and YouTube Links](../../catalog/resources/ardupilot-devcon-kaga-2024.md) (part_of)
 
 _Indexed by lane(s): autopilots, learning_

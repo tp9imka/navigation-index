@@ -10,12 +10,17 @@ Open simulator of what a polarimetric camera sees of the sky (intensity, angle a
 
 - Lets you test sky-polarization heading without field data
 
-**Concepts:** [Celestial and star-tracker navigation](../concepts/celestial-nav.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `polarization`, `ieee-tim`
 
 ## Related
 
-- uses: [ccompass](../repos/benjaminpotter__ccompass.md)
+- uses: [ccompass](../../catalog/repos/benjaminpotter__ccompass.md)
+
+## Referenced by
+
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [Celestial fix: cedar-solve plate solving on real star images, then position from star elevations above an IMU vertical](../../catalog/samples/celestial-star-tracker.md) (explains)
 
 _Indexed by lane(s): alt-nav_

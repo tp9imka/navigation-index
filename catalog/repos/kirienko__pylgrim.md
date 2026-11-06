@@ -12,7 +12,7 @@ Playground GNSS positioning code in Python/numpy that computes a static GPS posi
 
 **Hackathon notes:** Unmaintained since 2020; use for learning.
 
-**Concepts:** [Software-defined GNSS receivers](../concepts/gnss-sdr.md), [GNSS positioning](../concepts/gnss.md)
+**Concepts:** [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md), [GNSS positioning](../../catalog/concepts/gnss.md)
 
 **Tags:** `software-receiver`, `python`, `gps-l1`
 
@@ -20,7 +20,7 @@ Playground GNSS positioning code in Python/numpy that computes a static GPS posi
 
 ## Related
 
-- alternative_to: [SoftGNSS-python](../repos/perrysou__softgnss-python.md)
+- alternative_to: [SoftGNSS-python](../../catalog/repos/perrysou__softgnss-python.md)
 
 _Indexed by lane(s): gap-fill_
 

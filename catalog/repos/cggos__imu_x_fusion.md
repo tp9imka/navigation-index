@@ -12,7 +12,7 @@ Loosely coupled IMU + GNSS / 6-DoF odometry fusion with multiple estimators side
 
 **Hackathon notes:** ROS package; swap estimator by config to compare behaviour.
 
-**Concepts:** [GNSS/INS integration](../concepts/gnss-ins.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `eskf`, `iekf`, `ukf`, `comparison`
 
@@ -20,13 +20,14 @@ Loosely coupled IMU + GNSS / 6-DoF odometry fusion with multiple estimators side
 
 ## Related
 
-- alternative_to: [imu_gps_localization](../repos/ydsf16__imu_gps_localization.md)
-- alternative_to: [gps_imu_fusion](../repos/shelfcol__gps_imu_fusion.md)
+- alternative_to: [imu_gps_localization](../../catalog/repos/ydsf16__imu_gps_localization.md)
+- alternative_to: [gps_imu_fusion](../../catalog/repos/shelfcol__gps_imu_fusion.md)
 
 ## Referenced by
 
-- [gps_imu_fusion](../repos/shelfcol__gps_imu_fusion.md) (alternative_to)
-- [imu_gps_localization](../repos/ydsf16__imu_gps_localization.md) (alternative_to)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
+- [gps_imu_fusion](../../catalog/repos/shelfcol__gps_imu_fusion.md) (alternative_to)
+- [imu_gps_localization](../../catalog/repos/ydsf16__imu_gps_localization.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 

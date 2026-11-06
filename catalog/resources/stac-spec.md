@@ -10,12 +10,17 @@ Specification and ecosystem site for STAC, the common way to describe and search
 
 - Public STAC APIs give key-free access to Sentinel-2 and Copernicus DEM
 
-**Concepts:** [GIS, maps and geospatial data](../concepts/gis-mapping.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `stac`
 
 ## Related
 
-- has_code: [pystac-client](../repos/stac-utils__pystac-client.md)
+- has_code: [pystac-client](../../catalog/repos/stac-utils__pystac-client.md)
+
+## Referenced by
+
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 
 _Indexed by lane(s): planning-gis-c2_

@@ -12,7 +12,7 @@ BlueROV underwater SLAM and exploration code from Stevens Institute, combining s
 
 **Hackathon notes:** Dormant since 2020.
 
-**Concepts:** [Underwater navigation](../concepts/underwater-nav.md), [Path and motion planning](../concepts/path-planning.md)
+**Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md), [Path and motion planning](../../catalog/concepts/path-planning.md)
 
 **Tags:** `sonar`, `exploration`, `bluerov`
 
@@ -20,11 +20,11 @@ BlueROV underwater SLAM and exploration code from Stevens Institute, combining s
 
 ## Related
 
-- alternative_to: [sonar-SLAM](../repos/jake3991__sonar-slam.md)
+- alternative_to: [sonar-SLAM](../../catalog/repos/jake3991__sonar-slam.md)
 
 ## Referenced by
 
-- [sonar-SLAM](../repos/jake3991__sonar-slam.md) (extends)
+- [sonar-SLAM](../../catalog/repos/jake3991__sonar-slam.md) (extends)
 
 _Indexed by lane(s): domains-swarm_
 

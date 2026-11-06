@@ -10,12 +10,12 @@ JRC activity page hosting the A-PNT assessment report with per-vendor appendices
 
 - Official host for the report and vendor appendices
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Policy, export control and ethics](../concepts/policy-ethics.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md)
 
 **Tags:** `jrc`, `eu`, `cpnt`
 
 ## Referenced by
 
-- [Assessing Alternative Positioning, Navigation and Timing Technologies for Potential Deployment in the EU](../resources/jrc-assessing-apnt-2023.md) (part_of)
+- [Assessing Alternative Positioning, Navigation and Timing Technologies for Potential Deployment in the EU](../../catalog/resources/jrc-assessing-apnt-2023.md) (part_of)
 
 _Indexed by lane(s): docs-standards_

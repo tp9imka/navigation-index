@@ -16,8 +16,14 @@ English: 'Tricks borrowed from honeybees help drones return home without GPS'. R
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `lang:ru`, `habr`, `translation`, `bio-inspired`
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_

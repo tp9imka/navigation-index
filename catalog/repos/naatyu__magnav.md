@@ -12,7 +12,7 @@ Deep-learning approach to aircraft magnetic disturbance compensation built aroun
 
 **Hackathon notes:** Unmaintained since 2023; dependencies may need pinning.
 
-**Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Sensor calibration](../concepts/calibration.md)
+**Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 
 **Tags:** `compensation`, `deep-learning`, `challenge`, `magnav`, `pytorch`, `notebooks`
 
@@ -20,13 +20,13 @@ Deep-learning approach to aircraft magnetic disturbance compensation built aroun
 
 ## Related
 
-- integrates_with: [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md)
-- extends: [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md)
+- integrates_with: [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md)
+- extends: [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md)
 
 ## Referenced by
 
-- [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md) (extends)
-- [MagNav.jl quickstart: Tolles-Lawson and EKF on the SGL 2020 flight](../samples/magnav-quickstart.md) (explains)
+- [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md) (extends)
+- [MagNav.jl quickstart: Tolles-Lawson and EKF on the SGL 2020 flight](../../catalog/samples/magnav-quickstart.md) (explains)
 
 _Indexed by lane(s): alt-nav, defense-context_
 

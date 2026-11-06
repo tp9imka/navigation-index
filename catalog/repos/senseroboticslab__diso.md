@@ -12,7 +12,7 @@ Direct imaging sonar odometry: estimates vehicle motion directly from forward-lo
 
 **Hackathon notes:** C++ with ROS; try on the provided datasets first.
 
-**Concepts:** [Underwater navigation](../concepts/underwater-nav.md), [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `sonar-odometry`, `direct-method`, `fls`
 
@@ -20,11 +20,12 @@ Direct imaging sonar odometry: estimates vehicle motion directly from forward-lo
 
 ## Related
 
-- alternative_to: [sonar-SLAM](../repos/jake3991__sonar-slam.md)
+- alternative_to: [sonar-SLAM](../../catalog/repos/jake3991__sonar-slam.md)
 
 ## Referenced by
 
-- [sonar-SLAM](../repos/jake3991__sonar-slam.md) (alternative_to)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
+- [sonar-SLAM](../../catalog/repos/jake3991__sonar-slam.md) (alternative_to)
 
 _Indexed by lane(s): domains-swarm_
 

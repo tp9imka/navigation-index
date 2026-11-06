@@ -11,7 +11,7 @@ EUSPA announcement of the defence and security CASSINI hackathon winners, includ
 - Two of four winners tackled GNSS-free navigation or spoofing
 - Pitch videos linked
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Jamming and spoofing](../concepts/gnss-interference.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `cassini`, `euspa`, `hackathon`
 

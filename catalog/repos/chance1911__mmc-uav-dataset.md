@@ -12,7 +12,7 @@ Placeholder for a multimodal low-altitude anti-drone dataset (RGB, infrared, act
 
 **Hackathon notes:** No data, download link, paper or licence in the repo - not usable until the authors publish.
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../concepts/counter-uas.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `multimodal`, `radar`, `rf`, `infrared`
 
@@ -20,7 +20,7 @@ Placeholder for a multimodal low-altitude anti-drone dataset (RGB, infrared, act
 
 ## Related
 
-- alternative_to: [Drone detection dataset (IR, visible, audio)](../repos/dronedetectionthesis__drone-detection-dataset.md)
+- alternative_to: [Drone detection dataset (IR, visible, audio)](../../catalog/repos/dronedetectionthesis__drone-detection-dataset.md)
 
 _Indexed by lane(s): round3-expansion_
 

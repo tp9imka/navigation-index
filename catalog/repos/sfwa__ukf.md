@@ -12,7 +12,7 @@ Templated C++ unscented Kalman filter library for state and parameter estimation
 
 **Hackathon notes:** Heavy template code; worth it only if you specifically need a UKF on a microcontroller-class target.
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `ukf`, `eigen`, `embedded`
 
@@ -20,7 +20,7 @@ Templated C++ unscented Kalman filter library for state and parameter estimation
 
 ## Related
 
-- alternative_to: [FilterPy](../repos/rlabbe__filterpy.md)
+- alternative_to: [FilterPy](../../catalog/repos/rlabbe__filterpy.md)
 
 _Indexed by lane(s): ins-fusion_
 

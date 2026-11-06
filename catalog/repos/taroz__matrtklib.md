@@ -10,9 +10,9 @@ MATLAB wrapper exposing RTKLIB functions and data structures (observations, navi
 
 **Why it matters:** Lets MATLAB users script RTKLIB processing and analysis without writing C.
 
-**Hackathon notes:** Requires MATLAB. Useful if the team already lives in MATLAB for analysis plots.
+**Hackathon notes:** Requires MATLAB. Useful if the team already lives in MATLAB for analysis plots. Since January 2025 the backend is MALIB (the RTKLIB successor), not RTKLIB 2.4.3; pre-compiled mex files ship for Windows, Ubuntu and macOS.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md)
 
 **Tags:** `matlab`, `rtklib-wrapper`
 
@@ -20,8 +20,8 @@ MATLAB wrapper exposing RTKLIB functions and data structures (observations, navi
 
 ## Related
 
-- depends_on: [RTKLIB](../repos/tomojitakasu__rtklib.md)
-- same_org: [GSDC 2023 solution (taroz)](../repos/taroz__gsdc2023.md)
+- depends_on: [RTKLIB](../../catalog/repos/tomojitakasu__rtklib.md)
+- same_org: [GSDC 2023 solution (taroz)](../../catalog/repos/taroz__gsdc2023.md)
 
 _Indexed by lane(s): gnss_
 

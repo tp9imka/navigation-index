@@ -12,7 +12,7 @@ PyTorch toolbox for embodied navigation on Habitat and Isaac Sim, covering visio
 
 **Hackathon notes:** Large models and simulators; use the provided checkpoints.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `vla`, `vln`, `foundation-model`, `embodied`
 
@@ -20,11 +20,11 @@ PyTorch toolbox for embodied navigation on Habitat and Isaac Sim, covering visio
 
 ## Related
 
-- alternative_to: [NaVid / Uni-NaVid](../repos/jzhzhang__navid-vln-ce.md)
+- alternative_to: [NaVid / Uni-NaVid](../../catalog/repos/jzhzhang__navid-vln-ce.md)
 
 ## Referenced by
 
-- [NaVid / Uni-NaVid](../repos/jzhzhang__navid-vln-ce.md) (alternative_to)
+- [NaVid / Uni-NaVid](../../catalog/repos/jzhzhang__navid-vln-ce.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

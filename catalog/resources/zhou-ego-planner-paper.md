@@ -11,12 +11,16 @@ Introduces a local planner that avoids building a full Euclidean signed distance
 - ESDF-free collision cost reduces mapping overhead
 - Fits small onboard computers for agile flight
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
 **Tags:** `quadrotor`, `b-spline`
 
 ## Related
 
-- has_code: [EGO-Planner](../repos/zju-fast-lab__ego-planner.md)
+- has_code: [EGO-Planner](../../catalog/repos/zju-fast-lab__ego-planner.md)
+
+## Referenced by
+
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 
 _Indexed by lane(s): planning-gis-c2_

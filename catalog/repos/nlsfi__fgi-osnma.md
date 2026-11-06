@@ -12,7 +12,7 @@ Python OSNMA implementation from the Finnish Geospatial Research Institute desig
 
 **Hackathon notes:** Not updated since 2023; check against current ICD version.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `osnma`, `python`, `fgi`
 
@@ -20,16 +20,16 @@ Python OSNMA implementation from the Finnish Geospatial Research Institute desig
 
 ## Related
 
-- alternative_to: [OSNMAlib](../repos/algafix__osnma.md)
-- same_org: [FGI-GSRx](../repos/nlsfi__fgi-gsrx.md)
+- alternative_to: [OSNMAlib](../../catalog/repos/algafix__osnma.md)
+- same_org: [FGI-GSRx](../../catalog/repos/nlsfi__fgi-gsrx.md)
 
 ## Referenced by
 
-- [FGI-GSRx](../repos/nlsfi__fgi-gsrx.md) (same_org)
-- [Galileo OSNMA Receiver Guidelines Issue 1.3](../resources/galileo-osnma-receiver-guidelines.md) (has_code)
-- [Galileo Open Service Navigation Message Authentication (OSNMA) - service page](../resources/galileo-osnma-service-page.md) (has_code)
-- [Galileo OSNMA Signal-In-Space Interface Control Document Issue 1.1](../resources/galileo-osnma-sis-icd.md) (has_code)
-- [Navipedia: Galileo Open Service Navigation Message Authentication](../resources/navipedia-osnma.md) (has_code)
+- [FGI-GSRx](../../catalog/repos/nlsfi__fgi-gsrx.md) (same_org)
+- [Galileo OSNMA Receiver Guidelines Issue 1.3](../../catalog/resources/galileo-osnma-receiver-guidelines.md) (has_code)
+- [Galileo Open Service Navigation Message Authentication (OSNMA) - service page](../../catalog/resources/galileo-osnma-service-page.md) (has_code)
+- [Galileo OSNMA Signal-In-Space Interface Control Document Issue 1.1](../../catalog/resources/galileo-osnma-sis-icd.md) (has_code)
+- [Navipedia: Galileo Open Service Navigation Message Authentication](../../catalog/resources/navipedia-osnma.md) (has_code)
 
 _Indexed by lane(s): gnss_
 

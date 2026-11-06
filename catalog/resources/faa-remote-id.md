@@ -13,13 +13,19 @@ FAA guidance on the Remote ID rule: what drones must broadcast, standard vs broa
 - Standard Remote ID broadcasts drone and control station location
 - Non-compliant drones need non-cooperative detection
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Standards and interface specs](../concepts/standards.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Policy, export control and ethics](../concepts/policy-ethics.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Standards and interface specs](../../catalog/concepts/standards.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md)
 
 **Tags:** `remote-id`, `faa`, `regulation`
 
 ## Related
 
-- has_code: [Open Drone ID Core C](../repos/opendroneid__opendroneid-core-c.md)
-- explains: [Open Drone ID Core C](../repos/opendroneid__opendroneid-core-c.md)
+- has_code: [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md)
+- explains: [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md)
+
+## Referenced by
+
+- [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [Drone Remote ID decoder, track table and TAK output](../../catalog/samples/remote-id-to-tak.md) (uses)
 
 _Indexed by lane(s): defense-context, domains-swarm_

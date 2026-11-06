@@ -12,7 +12,12 @@ Small, simple JavaScript library for interactive raster/vector maps with a huge 
 
 **Hackathon notes:** Works with milsymbol to render unit icons as markers.
 
-**Concepts:** [GIS, maps and geospatial data](../concepts/gis-mapping.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [leaflet__leaflet](../../docs/integration-cards/leaflet__leaflet.md) (integration-cards)
+
+**Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `web-map`, `plugins`
 
@@ -20,13 +25,15 @@ Small, simple JavaScript library for interactive raster/vector maps with a huge 
 
 ## Related
 
-- integrates_with: [milsymbol](../repos/spatialillusions__milsymbol.md)
-- alternative_to: [OpenLayers](../repos/openlayers__openlayers.md)
+- integrates_with: [milsymbol](../../catalog/repos/spatialillusions__milsymbol.md)
+- alternative_to: [OpenLayers](../../catalog/repos/openlayers__openlayers.md)
 
 ## Referenced by
 
-- [OpenLayers](../repos/openlayers__openlayers.md) (alternative_to)
-- [milsymbol](../repos/spatialillusions__milsymbol.md) (integrates_with)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [OpenLayers](../../catalog/repos/openlayers__openlayers.md) (alternative_to)
+- [milsymbol](../../catalog/repos/spatialillusions__milsymbol.md) (integrates_with)
 
 _Indexed by lane(s): planning-gis-c2_
 

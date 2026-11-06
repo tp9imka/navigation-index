@@ -11,17 +11,22 @@ Synthetic low-altitude quadcopter flights with RGB, depth, normals, semantics an
 - Sensors (simulated): RGB, depth, IMU, GPS
 - Size class: large
 - Built on AirSim
+- Licence: CC BY-NC-SA 4.0, non-commercial; commercial licence on request
 
 ## Deep dives
 
 - [mid-air](../../docs/dataset-cards/mid-air.md) (dataset-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `synthetic`, `airsim`, `weather`
 
 ## Related
 
-- uses: [AirSim](../repos/microsoft__airsim.md)
+- uses: [AirSim](../../catalog/repos/microsoft__airsim.md)
+
+## Referenced by
+
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 
 _Indexed by lane(s): sim-data_

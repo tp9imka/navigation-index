@@ -11,8 +11,13 @@ IISS dossier on military UAV use, noting that GNSS is often effectively unavaila
 - GNSS denial is the operating norm near the front
 - Scene-matching navigation has decades of lineage
 
-**Concepts:** [Electronic warfare resilience](../concepts/ew-resilience.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `iiss`, `ukraine`, `policy`
+
+## Referenced by
+
+- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 
 _Indexed by lane(s): alt-nav_

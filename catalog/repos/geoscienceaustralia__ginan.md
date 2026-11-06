@@ -12,7 +12,7 @@ Geoscience Australia's GNSS analysis toolkit for precise orbit determination and
 
 **Hackathon notes:** Heavy build and configuration; Docker images help. Overkill for most 48h builds.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md), [Geodesy and coordinate frames](../concepts/geodesy.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md), [Geodesy and coordinate frames](../../catalog/concepts/geodesy.md)
 
 **Tags:** `ppp`, `pod`, `c++`, `positioning-australia`
 
@@ -20,14 +20,14 @@ Geoscience Australia's GNSS analysis toolkit for precise orbit determination and
 
 ## Related
 
-- same_org: [gnssanalysis](../repos/geoscienceaustralia__gnssanalysis.md)
-- alternative_to: [PRIDE PPP-AR](../repos/pridelab__pride-pppar.md)
+- same_org: [gnssanalysis](../../catalog/repos/geoscienceaustralia__gnssanalysis.md)
+- alternative_to: [PRIDE PPP-AR](../../catalog/repos/pridelab__pride-pppar.md)
 
 ## Referenced by
 
-- [gnssanalysis](../repos/geoscienceaustralia__gnssanalysis.md) (same_org)
-- [PRIDE PPP-AR](../repos/pridelab__pride-pppar.md) (alternative_to)
-- [IGS products](../resources/igs-products.md) (uses)
+- [gnssanalysis](../../catalog/repos/geoscienceaustralia__gnssanalysis.md) (same_org)
+- [PRIDE PPP-AR](../../catalog/repos/pridelab__pride-pppar.md) (alternative_to)
+- [IGS products](../../catalog/resources/igs-products.md) (uses)
 
 _Indexed by lane(s): gnss_
 

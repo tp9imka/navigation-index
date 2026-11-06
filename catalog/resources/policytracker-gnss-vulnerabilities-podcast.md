@@ -1,6 +1,6 @@
-# GNSS vulnerabilities explained (PolicyTracker Spectrum Podcast)
+# Podcast: the vulnerable state of global navigation satellite systems (PolicyTracker Spectrum Podcast)
 
-`res:policytracker-gnss-vulnerabilities-podcast` - podcast - <https://www.policytracker.com/?p=84684>
+`res:policytracker-gnss-vulnerabilities-podcast` - podcast - <https://www.policytracker.com/blog/podcast-the-vulnerable-state-of-global-navigation-satellite-systems/>
 
 **By:** PolicyTracker, Logan Scott - **Year:** 2025 - **Level:** intro - **Access:** open
 
@@ -10,8 +10,12 @@ Spectrum-policy podcast episode with PNT consultant Logan Scott on GNSS jamming,
 
 - Policy and spectrum angle on GNSS interference
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Policy, export control and ethics](../concepts/policy-ethics.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md)
 
 **Tags:** `podcast`, `spectrum`
+
+## Referenced by
+
+- [Learning paths](../../docs/learning-paths.md) (mentions)
 
 _Indexed by lane(s): learning_

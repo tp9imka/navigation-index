@@ -17,7 +17,7 @@ Model Context Protocol server that exposes ROS topics, services and parameters (
 - [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [robotmcp__ros-mcp-server](../../docs/integration-cards/robotmcp__ros-mcp-server.md) (integration-cards)
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `mcp`, `rosbridge`, `llm`, `ros2`
 
@@ -25,16 +25,19 @@ Model Context Protocol server that exposes ROS topics, services and parameters (
 
 ## Related
 
-- same_org: [ROS MCP Server demos](../repos/robotmcp__demos-ros-mcp-server.md)
-- alternative_to: [WiseVision ROS 2 MCP](../repos/wise-vision__ros2_mcp.md)
-- alternative_to: [ROSA (ROS Agent)](../repos/nasa-jpl__rosa.md)
+- same_org: [ROS MCP Server demos](../../catalog/repos/robotmcp__demos-ros-mcp-server.md)
+- alternative_to: [WiseVision ROS 2 MCP](../../catalog/repos/wise-vision__ros2_mcp.md)
+- alternative_to: [ROSA (ROS Agent)](../../catalog/repos/nasa-jpl__rosa.md)
 
 ## Referenced by
 
-- [ROSA (ROS Agent)](../repos/nasa-jpl__rosa.md) (alternative_to)
-- [ROS MCP Server demos](../repos/robotmcp__demos-ros-mcp-server.md) (extends)
-- [WiseVision ROS 2 MCP](../repos/wise-vision__ros2_mcp.md) (alternative_to)
-- [Model Context Protocol specification](../resources/mcp-specification.md) (explains)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [ROSA (ROS Agent)](../../catalog/repos/nasa-jpl__rosa.md) (alternative_to)
+- [ROS MCP Server demos](../../catalog/repos/robotmcp__demos-ros-mcp-server.md) (extends)
+- [WiseVision ROS 2 MCP](../../catalog/repos/wise-vision__ros2_mcp.md) (alternative_to)
+- [Model Context Protocol specification](../../catalog/resources/mcp-specification.md) (explains)
 
 _Indexed by lane(s): gap-fill_
 

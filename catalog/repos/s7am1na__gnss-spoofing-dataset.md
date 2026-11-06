@@ -16,7 +16,7 @@ Raw GNSS measurement logs from Android phones and smartwatches recorded under sp
 
 - [gnss-spoofing-s7am1na](../../docs/dataset-cards/gnss-spoofing-s7am1na.md) (dataset-cards)
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `spoofing`, `dataset`, `android`, `l5`
 
@@ -24,12 +24,15 @@ Raw GNSS measurement logs from Android phones and smartwatches recorded under sp
 
 ## Related
 
-- integrates_with: [gnss_lib_py](../repos/stanford-navlab__gnss_lib_py.md)
-- depends_on: [GPS Measurement Tools (incl. GnssLogger)](../repos/google__gps-measurement-tools.md)
+- integrates_with: [gnss_lib_py](../../catalog/repos/stanford-navlab__gnss_lib_py.md)
+- depends_on: [GPS Measurement Tools (incl. GnssLogger)](../../catalog/repos/google__gps-measurement-tools.md)
 
 ## Referenced by
 
-- [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../samples/gnss-interference-monitor.md) (explains)
+- [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
+- [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../../catalog/samples/gnss-interference-monitor.md) (explains)
 
 _Indexed by lane(s): gnss_
 

@@ -12,7 +12,7 @@ Python API to connect, log, set parameters and send setpoints/high-level command
 
 **Hackathon notes:** pip install cflib; Swarm class runs parallel commands.
 
-**Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md), [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
+**Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 
 **Tags:** `python`, `crazyflie`, `crazyradio`, `swarm`
 
@@ -20,12 +20,13 @@ Python API to connect, log, set parameters and send setpoints/high-level command
 
 ## Related
 
-- integrates_with: [Crazyflie firmware](../repos/bitcraze__crazyflie-firmware.md)
+- integrates_with: [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md)
 
 ## Referenced by
 
-- [Crazyflie firmware](../repos/bitcraze__crazyflie-firmware.md) (integrates_with)
-- [Crazyswarm2](../repos/imrclab__crazyswarm2.md) (depends_on)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md) (integrates_with)
+- [Crazyswarm2](../../catalog/repos/imrclab__crazyswarm2.md) (depends_on)
 
 _Indexed by lane(s): autopilots, domains-swarm_
 

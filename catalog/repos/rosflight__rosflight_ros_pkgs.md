@@ -12,7 +12,7 @@ ROS 2 interface, simulator and utilities for the ROSflight autopilot.
 
 **Hackathon notes:** Start with the sim launch files.
 
-**Concepts:** [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `ros2`, `rosflight`
 
@@ -20,11 +20,11 @@ ROS 2 interface, simulator and utilities for the ROSflight autopilot.
 
 ## Related
 
-- integrates_with: [ROSflight firmware](../repos/rosflight__rosflight_firmware.md)
+- integrates_with: [ROSflight firmware](../../catalog/repos/rosflight__rosflight_firmware.md)
 
 ## Referenced by
 
-- [ROSflight firmware](../repos/rosflight__rosflight_firmware.md) (integrates_with)
+- [ROSflight firmware](../../catalog/repos/rosflight__rosflight_firmware.md) (integrates_with)
 
 _Indexed by lane(s): autopilots_
 

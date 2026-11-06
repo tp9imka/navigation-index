@@ -12,7 +12,7 @@ Stereo visual-inertial odometry with a factor-graph backend, robust loop closure
 
 **Hackathon notes:** Heavier build (GTSAM, OpenGV, DBoW2); use the Docker setup. The ROS wrapper lives in a separate repo.
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `gtsam`, `mesh`, `factor-graph`, `stereo`
 
@@ -20,16 +20,16 @@ Stereo visual-inertial odometry with a factor-graph backend, robust loop closure
 
 ## Related
 
-- depends_on: [Kimera-RPGO](../repos/mit-spark__kimera-rpgo.md)
-- depends_on: [GTSAM](../repos/borglab__gtsam.md)
-- extends: [Kimera-Multi](../repos/mit-spark__kimera-multi.md)
+- depends_on: [Kimera-RPGO](../../catalog/repos/mit-spark__kimera-rpgo.md)
+- depends_on: [GTSAM](../../catalog/repos/borglab__gtsam.md)
+- extends: [Kimera-Multi](../../catalog/repos/mit-spark__kimera-multi.md)
 
 ## Referenced by
 
-- [Kimera-Multi](../repos/mit-spark__kimera-multi.md) (depends_on)
-- [MIT VNAV labs](../repos/mit-spark__vnav-labs.md) (same_org)
-- [Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping](../resources/kimera-rosinol-2019.md) (has_code)
-- [MIT 16.485 Visual Navigation for Autonomous Vehicles (VNAV)](../resources/mit-vnav-16485.md) (uses)
+- [Kimera-Multi](../../catalog/repos/mit-spark__kimera-multi.md) (depends_on)
+- [MIT VNAV labs](../../catalog/repos/mit-spark__vnav-labs.md) (same_org)
+- [Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping](../../catalog/resources/kimera-rosinol-2019.md) (has_code)
+- [MIT 16.485 Visual Navigation for Autonomous Vehicles (VNAV)](../../catalog/resources/mit-vnav-16485.md) (uses)
 
 _Indexed by lane(s): slam_
 

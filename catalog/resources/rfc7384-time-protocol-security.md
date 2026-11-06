@@ -11,12 +11,16 @@ Threat model and security requirements for NTP and PTP: packet manipulation, spo
 - Delay attacks cannot be stopped by cryptography alone
 - Useful checklist for a timing threat model slide
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Standards and interface specs](../concepts/standards.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Standards and interface specs](../../catalog/concepts/standards.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `ntp`, `ptp`, `security`, `threat-model`, `rfc`
 
 ## Related
 
-- cites: [RFC 8915: Network Time Security for the Network Time Protocol](../resources/rfc8915-nts.md)
+- cites: [RFC 8915: Network Time Security for the Network Time Protocol](../../catalog/resources/rfc8915-nts.md)
+
+## Referenced by
+
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 
 _Indexed by lane(s): timing_

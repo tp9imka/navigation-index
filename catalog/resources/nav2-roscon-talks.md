@@ -11,13 +11,13 @@ Curated index of ROSCon talks by the Nav2 team and community from 2018 onward, c
 - Single entry point for Nav2 conference talks
 - Talks on MPPI and Smac planners explain design rationale
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `roscon`, `nav2`, `video`
 
 ## Related
 
-- explains: [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md)
-- part_of: [Nav2 Documentation](../resources/nav2-docs.md)
+- explains: [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md)
+- part_of: [Nav2 Documentation](../../catalog/resources/nav2-docs.md)
 
 _Indexed by lane(s): planning-gis-c2_

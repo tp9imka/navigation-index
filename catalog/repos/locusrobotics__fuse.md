@@ -17,7 +17,7 @@ ROS framework for sensor fusion as factor-graph optimization: plugin sensor mode
 - [_index-round3](../../docs/integration-cards/_index-round3.md) (integration-cards)
 - [locusrobotics__fuse](../../docs/integration-cards/locusrobotics__fuse.md) (integration-cards)
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 
 **Tags:** `factor-graph`, `ceres`, `fixed-lag`, `ros2`
 
@@ -25,13 +25,13 @@ ROS framework for sensor fusion as factor-graph optimization: plugin sensor mode
 
 ## Related
 
-- same_org: [ROSCon UK 2025 State Estimation workshop](../repos/locusrobotics__roscon-uk-2025-se-workshop.md)
-- alternative_to: [robot_localization](../repos/cra-ros-pkg__robot_localization.md)
+- same_org: [ROSCon UK 2025 State Estimation workshop](../../catalog/repos/locusrobotics__roscon-uk-2025-se-workshop.md)
+- alternative_to: [robot_localization](../../catalog/repos/cra-ros-pkg__robot_localization.md)
 
 ## Referenced by
 
-- [ROSCon UK 2025 State Estimation workshop](../repos/locusrobotics__roscon-uk-2025-se-workshop.md) (depends_on)
-- [ROSCon UK 2025 - State Estimation for Mobile Robotics Workshop](../resources/nav2-roscon-uk-2025-state-estimation-workshop.md) (uses)
+- [ROSCon UK 2025 State Estimation workshop](../../catalog/repos/locusrobotics__roscon-uk-2025-se-workshop.md) (depends_on)
+- [ROSCon UK 2025 - State Estimation for Mobile Robotics Workshop](../../catalog/resources/nav2-roscon-uk-2025-state-estimation-workshop.md) (uses)
 
 _Indexed by lane(s): gap-fill_
 

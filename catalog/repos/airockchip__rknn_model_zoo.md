@@ -12,7 +12,7 @@ Rockchip's examples and converted models for its NPU (RK3588 and similar), with 
 
 **Hackathon notes:** Needs rknn-toolkit2 for conversion; run demos on an RK3588 board.
 
-**Concepts:** [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `rockchip`, `npu`, `rk3588`
 
@@ -20,11 +20,11 @@ Rockchip's examples and converted models for its NPU (RK3588 and similar), with 
 
 ## Related
 
-- alternative_to: [PINTO model zoo](../repos/pinto0309__pinto_model_zoo.md)
+- alternative_to: [PINTO model zoo](../../catalog/repos/pinto0309__pinto_model_zoo.md)
 
 ## Referenced by
 
-- [PINTO model zoo](../repos/pinto0309__pinto_model_zoo.md) (alternative_to)
+- [PINTO model zoo](../../catalog/repos/pinto0309__pinto_model_zoo.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

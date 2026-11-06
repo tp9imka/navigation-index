@@ -12,7 +12,7 @@ MATLAB course project with a write-up that tests GNSS spoofing detection on the 
 
 **Hackathon notes:** Reference only. Needs TEXBAT processed data (open index on rnl-data.ae.utexas.edu, no terms stated) and spanikp's GNSS-toolbox. No licence file.
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
 **Tags:** `spoofing`, `matlab`
 

@@ -12,7 +12,7 @@ SITL-first MCP server for talking to ArduPilot vehicles over MAVLink, with expli
 
 **Hackathon notes:** `pipx install ardupilot-mavlink-mcp`, point it at SITL (tcp:127.0.0.1:5760). Read-only by default; arming needs `--enable-actuation`, and real (non-loopback) links also need `--allow-real-vehicle`. Its prearm-diagnosis and single-reader-thread design are worth copying.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 
 **Tags:** `mcp`, `ardupilot`, `safety`, `sitl`
 
@@ -20,12 +20,12 @@ SITL-first MCP server for talking to ArduPilot vehicles over MAVLink, with expli
 
 ## Related
 
-- alternative_to: [MAVLinkMCP](../repos/ion-g-ion__mavlinkmcp.md)
+- alternative_to: [MAVLinkMCP](../../catalog/repos/ion-g-ion__mavlinkmcp.md)
 
 ## Referenced by
 
-- [MAVLinkMCP](../repos/ion-g-ion__mavlinkmcp.md) (alternative_to)
-- [LLM mission agent: a safety-gated MAVLink MCP server flying ArduPilot SITL](../samples/llm-mission-agent.md) (explains)
+- [MAVLinkMCP](../../catalog/repos/ion-g-ion__mavlinkmcp.md) (alternative_to)
+- [LLM mission agent: a safety-gated MAVLink MCP server flying ArduPilot SITL](../../catalog/samples/llm-mission-agent.md) (explains)
 
 _Indexed by lane(s): gap-fill_
 

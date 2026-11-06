@@ -11,16 +11,16 @@ Describes ROSA, an LLM agent that lets operators inspect and command ROS systems
 - Tool-based LLM access keeps robot actions auditable
 - Targets operators, not only developers
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `jpl`, `llm`, `agent`
 
 ## Related
 
-- has_code: [ROSA (ROS Agent)](../repos/nasa-jpl__rosa.md)
+- has_code: [ROSA (ROS Agent)](../../catalog/repos/nasa-jpl__rosa.md)
 
 ## Referenced by
 
-- [ROSA (ROS Agent)](../repos/nasa-jpl__rosa.md) (integrates_with)
+- [ROSA (ROS Agent)](../../catalog/repos/nasa-jpl__rosa.md) (integrates_with)
 
 _Indexed by lane(s): gap-fill_

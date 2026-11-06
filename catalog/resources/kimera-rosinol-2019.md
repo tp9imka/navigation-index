@@ -11,13 +11,17 @@ Describes the Kimera stack: VIO, robust pose-graph optimization, mesh reconstruc
 - Metric-semantic maps on CPU in real time
 - Modular: VIO, RPGO, mesher, semantics
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Visual SLAM](../concepts/visual-slam.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Visual SLAM](../../catalog/concepts/visual-slam.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `semantic`, `mesh`
 
 ## Related
 
-- has_code: [Kimera-VIO](../repos/mit-spark__kimera-vio.md)
-- has_code: [Kimera-RPGO](../repos/mit-spark__kimera-rpgo.md)
+- has_code: [Kimera-VIO](../../catalog/repos/mit-spark__kimera-vio.md)
+- has_code: [Kimera-RPGO](../../catalog/repos/mit-spark__kimera-rpgo.md)
+
+## Referenced by
+
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 
 _Indexed by lane(s): slam_

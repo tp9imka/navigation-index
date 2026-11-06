@@ -11,13 +11,13 @@ YouTube playlist of 2025 PX4 Developer Summit talks; the program included GNSS a
 - Recent community work on estimation and navigation
 - Recordings published gradually per Dronecode
 
-**Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [Visual(-inertial) odometry](../concepts/vio.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `px4-dev-summit`, `talks`
 
 ## Related
 
-- explains: [PX4 Autopilot](../repos/px4__px4-autopilot.md)
-- part_of: [PX4 Developer Summit 2025 Recap](../resources/dronecode-px4-dev-summit-2025-recap.md)
+- explains: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
+- part_of: [PX4 Developer Summit 2025 Recap](../../catalog/resources/dronecode-px4-dev-summit-2025-recap.md)
 
 _Indexed by lane(s): autopilots_

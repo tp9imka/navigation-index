@@ -10,12 +10,12 @@ Overview page for MagNav as an open-source technology from the DAF-MIT AI Accele
 
 - Context on program origin and goals
 
-**Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md)
+**Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md)
 
 **Tags:** `mit`, `overview`
 
 ## Related
 
-- explains: [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md)
+- explains: [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md)
 
 _Indexed by lane(s): alt-nav_

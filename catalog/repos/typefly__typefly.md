@@ -12,7 +12,12 @@ LLM-based robot control framework: an OpenAI model turns a natural-language requ
 
 **Hackathon notes:** `pip install -e .`, add an OpenAI key and run `typefly-run`; the default virtual robot uses a webcam, so no hardware is needed. A Tello needs both a Wi-Fi and an ethernet adapter. Swap in a MAVSDK-based robot wrapper to target PX4.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [Mission planning and routing](../concepts/mission-planning.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [typefly__typefly](../../docs/integration-cards/typefly__typefly.md) (integration-cards)
+
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 
 **Tags:** `llm`, `tello`, `dsl`, `drone`
 
@@ -20,12 +25,12 @@ LLM-based robot control framework: an OpenAI model turns a natural-language requ
 
 ## Related
 
-- alternative_to: [PromptCraft-Robotics](../repos/microsoft__promptcraft-robotics.md)
-- integrates_with: [TypeFly: Flying Drones with Large Language Model](../resources/typefly-2023.md)
+- alternative_to: [PromptCraft-Robotics](../../catalog/repos/microsoft__promptcraft-robotics.md)
+- integrates_with: [TypeFly: Flying Drones with Large Language Model](../../catalog/resources/typefly-2023.md)
 
 ## Referenced by
 
-- [TypeFly: Flying Drones with Large Language Model](../resources/typefly-2023.md) (has_code)
+- [TypeFly: Flying Drones with Large Language Model](../../catalog/resources/typefly-2023.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

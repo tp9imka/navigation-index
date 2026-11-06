@@ -16,7 +16,7 @@ Dataset and scripts for UWB time-difference-of-arrival measurements from Bitcraz
 
 - [util-uwb-tdoa](../../docs/dataset-cards/util-uwb-tdoa.md) (dataset-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [RF localization and direction finding](../concepts/rf-localization.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 
 **Tags:** `uwb`, `tdoa`, `dataset`, `loco`
 
@@ -24,13 +24,18 @@ Dataset and scripts for UWB time-difference-of-arrival measurements from Bitcraz
 
 ## Related
 
-- evaluated_on: [Loco Positioning node firmware](../repos/bitcraze__lps-node-firmware.md)
+- evaluated_on: [Loco Positioning node firmware](../../catalog/repos/bitcraze__lps-node-firmware.md)
 
 ## Referenced by
 
-- [Loco Positioning node firmware](../repos/bitcraze__lps-node-firmware.md) (evaluated_on)
-- [MILUV devkit](../repos/decargroup__miluv.md) (alternative_to)
-- [UTIL: UWB TDoA dataset](../resources/util-uwb-dataset.md) (has_code)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Loco Positioning node firmware](../../catalog/repos/bitcraze__lps-node-firmware.md) (evaluated_on)
+- [MILUV devkit](../../catalog/repos/decargroup__miluv.md) (alternative_to)
+- [UWB drone dataset (TIERS)](../../catalog/repos/tiers__uwb-drone-dataset.md) (alternative_to)
+- [UTIL: An Ultra-wideband Time-difference-of-arrival Indoor Localization Dataset](../../catalog/resources/util-uwb-dataset.md) (has_code)
 
 _Indexed by lane(s): domains-swarm_
 

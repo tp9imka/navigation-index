@@ -12,7 +12,7 @@ UAV vision-language navigation method that feeds high-resolution front and downw
 
 **Hackathon notes:** Research code; reproduce only if you need a SOTA aerial VLN baseline.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md)
 
 **Tags:** `vln`, `uav`, `3d-grounding`, `2026`
 
@@ -20,7 +20,7 @@ UAV vision-language navigation method that feeds high-resolution front and downw
 
 ## Related
 
-- alternative_to: [SatNav](../repos/eku127__satnav.md)
+- alternative_to: [SatNav](../../catalog/repos/eku127__satnav.md)
 
 _Indexed by lane(s): gap-fill_
 

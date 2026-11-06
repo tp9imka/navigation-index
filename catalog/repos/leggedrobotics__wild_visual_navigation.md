@@ -12,7 +12,7 @@ System that learns visual traversability online from pre-trained vision features
 
 **Hackathon notes:** Needs a GPU and a camera bag; offline demo scripts help.
 
-**Concepts:** [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [Onboard / edge AI perception](../concepts/edge-ai.md), [Terrain-relative navigation](../concepts/terrain-nav.md)
+**Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md), [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md)
 
 **Tags:** `traversability`, `self-supervised`, `dino`, `eth`
 
@@ -20,14 +20,14 @@ System that learns visual traversability online from pre-trained vision features
 
 ## Related
 
-- integrates_with: [elevation_mapping_cupy](../repos/leggedrobotics__elevation_mapping_cupy.md)
+- integrates_with: [elevation_mapping_cupy](../../catalog/repos/leggedrobotics__elevation_mapping_cupy.md)
 
 ## Referenced by
 
-- [elevation_mapping_cupy](../repos/leggedrobotics__elevation_mapping_cupy.md) (integrates_with)
-- [BenchNav](../repos/masafumiendo__benchnav.md) (evaluated_on)
-- [WayFAST](../repos/matval__wayfast.md) (alternative_to)
-- [Wild Visual Navigation: Fast Traversability Learning via Pre-Trained Models and Online Self-Supervision](../resources/wild-visual-navigation-paper.md) (has_code)
+- [elevation_mapping_cupy](../../catalog/repos/leggedrobotics__elevation_mapping_cupy.md) (integrates_with)
+- [BenchNav](../../catalog/repos/masafumiendo__benchnav.md) (evaluated_on)
+- [WayFAST](../../catalog/repos/matval__wayfast.md) (alternative_to)
+- [Wild Visual Navigation: Fast Traversability Learning via Pre-Trained Models and Online Self-Supervision](../../catalog/resources/wild-visual-navigation-paper.md) (has_code)
 
 _Indexed by lane(s): domains-swarm_
 

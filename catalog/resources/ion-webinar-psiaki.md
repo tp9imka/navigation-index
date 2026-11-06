@@ -10,12 +10,12 @@ Analysis of Doppler-only positioning from large LEO constellations, revisiting t
 
 - Doppler positioning theory for LEO PNT
 
-**Concepts:** [Space and orbital navigation](../concepts/space-nav.md), [Signals of opportunity](../concepts/signals-of-opportunity.md)
+**Concepts:** [Space and orbital navigation](../../catalog/concepts/space-nav.md), [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md)
 
 **Tags:** `doppler`, `leo-pnt`, `ion`, `webinar`
 
 ## Related
 
-- part_of: [ION Webinar Series (archive and YouTube recordings)](../resources/ion-webinar-series.md)
+- part_of: [ION Webinar Series (archive and YouTube recordings)](../../catalog/resources/ion-webinar-series.md)
 
 _Indexed by lane(s): learning_

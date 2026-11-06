@@ -12,7 +12,7 @@ Diploma thesis materials on signals-of-opportunity positioning from LEO satellit
 
 **Hackathon notes:** Use as the math reference for a Doppler-positioning simulator.
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md)
 
 **Tags:** `leo`, `doppler`, `thesis`
 
@@ -20,12 +20,12 @@ Diploma thesis materials on signals-of-opportunity positioning from LEO satellit
 
 ## Related
 
-- alternative_to: [Starlink LEO-PNT](../repos/przemyslawpiekarski__starlink-leo-pnt.md)
+- alternative_to: [Starlink LEO-PNT](../../catalog/repos/przemyslawpiekarski__starlink-leo-pnt.md)
 
 ## Referenced by
 
-- [Starlink LEO-PNT](../repos/przemyslawpiekarski__starlink-leo-pnt.md) (alternative_to)
-- [Iridium PNT (Satellite Time and Location) and Iridium PNT ASIC](../resources/iridium-pnt-stl-asic.md) (alternative_to)
+- [Starlink LEO-PNT](../../catalog/repos/przemyslawpiekarski__starlink-leo-pnt.md) (alternative_to)
+- [Iridium PNT (Satellite Time and Location) and Iridium PNT ASIC](../../catalog/resources/iridium-pnt-stl-asic.md) (alternative_to)
 
 _Indexed by lane(s): alt-nav_
 

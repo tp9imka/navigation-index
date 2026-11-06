@@ -11,16 +11,18 @@ BKG's overview of the NTRIP protocol for streaming GNSS corrections, with links 
 - NTRIP is HTTP-based streaming of RTCM
 - BKG maintains the reference caster
 
-**Concepts:** [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `ntrip`, `rtcm`, `bkg`
 
 ## Related
 
-- has_code: [ntripcaster (BKG standard caster)](../repos/nunojpg__ntripcaster.md)
+- has_code: [ntripcaster (BKG standard caster)](../../catalog/repos/nunojpg__ntripcaster.md)
 
 ## Referenced by
 
-- [BKG Ntrip Client (BNC)](../resources/bkg-bnc.md) (part_of)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
+- [BKG Ntrip Client - BNC](../../catalog/resources/bkg-bnc.md) (part_of)
+- [IGS daily merged broadcast navigation files (BKG mirror)](../../catalog/resources/igs-bkg-brdc-broadcast-ephemeris.md) (same_author)
 
 _Indexed by lane(s): gnss_

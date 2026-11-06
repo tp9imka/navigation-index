@@ -12,18 +12,18 @@ The paid-access RTCM v3 standard that defines the binary messages used to stream
 - MSM4/MSM7 are the common choices for RTK
 - Standard itself is purchased; open parsers document much of it
 
-**Concepts:** [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `rtcm3`, `msm`, `ntrip`, `rtk`
 
 ## Related
 
-- has_code: [RTKLIB](../repos/tomojitakasu__rtklib.md)
-- has_code: [RTKLIB demo5 (rtklibexplorer)](../repos/rtklibexplorer__rtklib.md)
-- has_code: [pyrtcm](../repos/semuconsulting__pyrtcm.md)
+- has_code: [RTKLIB](../../catalog/repos/tomojitakasu__rtklib.md)
+- has_code: [RTKLIB demo5 (rtklibexplorer)](../../catalog/repos/rtklibexplorer__rtklib.md)
+- has_code: [pyrtcm](../../catalog/repos/semuconsulting__pyrtcm.md)
 
 ## Referenced by
 
-- [Navipedia: RTK Standards](../resources/navipedia-rtk-standards.md) (explains)
+- [Navipedia: RTK Standards](../../catalog/resources/navipedia-rtk-standards.md) (explains)
 
 _Indexed by lane(s): docs-standards_

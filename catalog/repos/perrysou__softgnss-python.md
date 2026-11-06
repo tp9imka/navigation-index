@@ -10,9 +10,9 @@ Python port of the SoftGNSS software-defined GPS receiver toolkit.
 
 **Why it matters:** Python version of the textbook receiver; easier for teams without MATLAB.
 
-**Hackathon notes:** Not updated since 2023; fine for offline IQ experiments.
+**Hackathon notes:** Not updated since 2023 and written for Python 2.7 (README system requirements; installation section says 'Coming soon'). Expect porting work before offline IQ experiments.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Software-defined GNSS receivers](../concepts/gnss-sdr.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md)
 
 **Tags:** `python`, `gps-l1`, `receiver`
 
@@ -20,12 +20,13 @@ Python port of the SoftGNSS software-defined GPS receiver toolkit.
 
 ## Related
 
-- alternative_to: [SoftGNSS v3.0 (maintained copy)](../repos/tmboc__softgnss.md)
+- alternative_to: [SoftGNSS v3.0 (maintained copy)](../../catalog/repos/tmboc__softgnss.md)
 
 ## Referenced by
 
-- [pylgrim](../repos/kirienko__pylgrim.md) (alternative_to)
-- [SoftGNSS v3.0 (maintained copy)](../repos/tmboc__softgnss.md) (alternative_to)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [pylgrim](../../catalog/repos/kirienko__pylgrim.md) (alternative_to)
+- [SoftGNSS v3.0 (maintained copy)](../../catalog/repos/tmboc__softgnss.md) (alternative_to)
 
 _Indexed by lane(s): gnss_
 

@@ -17,7 +17,7 @@ Python package and CLI for evaluating odometry and SLAM trajectories (ATE/RPE, a
 - [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
 - [michaelgrupp__evo](../../docs/integration-cards/michaelgrupp__evo.md) (integration-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual SLAM](../concepts/visual-slam.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Visual SLAM](../../catalog/concepts/visual-slam.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `evaluation`, `ate`, `rpe`, `trajectory`, `pip`, `plotting`
 
@@ -25,17 +25,24 @@ Python package and CLI for evaluating odometry and SLAM trajectories (ATE/RPE, a
 
 ## Related
 
-- alternative_to: [rpg_trajectory_evaluation](../repos/uzh-rpg__rpg_trajectory_evaluation.md)
+- alternative_to: [rpg_trajectory_evaluation](../../catalog/repos/uzh-rpg__rpg_trajectory_evaluation.md)
 
 ## Referenced by
 
-- [cnspy trajectory evaluation](../repos/aau-cns__cnspy_trajectory_evaluation.md) (alternative_to)
-- [KISS-ICP](../repos/prbonn__kiss-icp.md) (evaluated_on)
-- [OpenVINS](../repos/rpng__open_vins.md) (evaluated_on)
-- [ORB-SLAM3](../repos/uz-slamlab__orb_slam3.md) (evaluated_on)
-- [rpg_trajectory_evaluation](../repos/uzh-rpg__rpg_trajectory_evaluation.md) (alternative_to)
-- [The EuRoC MAV Dataset](../resources/ethz-euroc-mav-dataset.md) (uses)
-- [TUM RGB-D SLAM Dataset and Benchmark](../resources/tum-rgbd-benchmark.md) (uses)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [cnspy trajectory evaluation](../../catalog/repos/aau-cns__cnspy_trajectory_evaluation.md) (alternative_to)
+- [KISS-ICP](../../catalog/repos/prbonn__kiss-icp.md) (evaluated_on)
+- [OpenVINS](../../catalog/repos/rpng__open_vins.md) (evaluated_on)
+- [ORB-SLAM3](../../catalog/repos/uz-slamlab__orb_slam3.md) (evaluated_on)
+- [rpg_trajectory_evaluation](../../catalog/repos/uzh-rpg__rpg_trajectory_evaluation.md) (alternative_to)
+- [EuRoC MAV Dataset](../../catalog/resources/ethz-euroc-mav-dataset.md) (uses)
+- [TUM RGB-D SLAM Dataset and Benchmark](../../catalog/resources/tum-rgbd-benchmark.md) (uses)
+- [Relative navigation benchmark on real data: KISS-ICP lidar odometry, OpenVINS VIO, mono and nadir VO, scored with evo](../../catalog/samples/relative-nav-benchmark.md) (uses)
 
 _Indexed by lane(s): sim-data, slam_
 

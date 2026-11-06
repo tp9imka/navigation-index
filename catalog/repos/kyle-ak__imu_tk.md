@@ -12,7 +12,7 @@ Tool for calibrating IMU intrinsics (misalignment, scale factors and biases of a
 
 **Hackathon notes:** Needs Ceres; collect static poses in many orientations with short rotations between.
 
-**Concepts:** [Sensor calibration](../concepts/calibration.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Sensor calibration](../../catalog/concepts/calibration.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `imu-intrinsics`, `multi-position`
 
@@ -20,7 +20,7 @@ Tool for calibrating IMU intrinsics (misalignment, scale factors and biases of a
 
 ## Related
 
-- alternative_to: [Kalibr](../repos/ethz-asl__kalibr.md)
+- alternative_to: [Kalibr](../../catalog/repos/ethz-asl__kalibr.md)
 
 _Indexed by lane(s): ins-fusion_
 

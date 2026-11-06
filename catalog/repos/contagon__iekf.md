@@ -12,7 +12,7 @@ Invariant Kalman filter implementation on SE(2) and SE(3).
 
 **Hackathon notes:** Small research repo; use for learning the algorithm.
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `inekf`, `se3`, `python`
 
@@ -20,11 +20,11 @@ Invariant Kalman filter implementation on SE(2) and SE(3).
 
 ## Related
 
-- alternative_to: [invariant-ekf (Hartley InEKF)](../repos/rosshartley__invariant-ekf.md)
+- alternative_to: [invariant-ekf (Hartley InEKF)](../../catalog/repos/rosshartley__invariant-ekf.md)
 
 ## Referenced by
 
-- [invariant-ekf (Hartley InEKF)](../repos/rosshartley__invariant-ekf.md) (alternative_to)
+- [invariant-ekf (Hartley InEKF)](../../catalog/repos/rosshartley__invariant-ekf.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 

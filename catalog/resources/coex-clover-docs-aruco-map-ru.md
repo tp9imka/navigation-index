@@ -15,12 +15,18 @@ English: 'Navigation by marker map - Clover docs'. Russian documentation for fly
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [Autopilots and flight control](../concepts/autopilot.md), [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 
 **Tags:** `lang:ru`, `coex`, `aruco`, `docs`
 
 ## Related
 
-- part_of: [COEX Clover](../repos/copterexpress__clover.md)
+- part_of: [COEX Clover](../../catalog/repos/copterexpress__clover.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_

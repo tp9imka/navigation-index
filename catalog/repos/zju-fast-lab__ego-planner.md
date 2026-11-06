@@ -10,9 +10,9 @@ ESDF-free gradient-based local planner for quadrotors from ZJU FAST Lab: optimiz
 
 **Why it matters:** Lightweight onboard replanning for small drones flying through clutter; widely reused baseline for agile UAV navigation in unknown environments.
 
-**Hackathon notes:** ROS1 (Noetic) with a bundled simulator; runs on a laptop. Porting to ROS 2 / PX4 needs a bridge. Good for a demo of reactive flight in a random forest map.
+**Hackathon notes:** ROS1 (Ubuntu 16.04-20.04) with a bundled simulator; runs on a laptop. A ROS 2 port lives in the ego-planner-swarm ros2_version branch, and upstream recommends EGO-Swarm over this repo; PX4 needs a bridge. Good for a demo of reactive flight in a random forest map.
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `quadrotor`, `b-spline`, `local-planner`, `ros1`
 
@@ -20,16 +20,16 @@ ESDF-free gradient-based local planner for quadrotors from ZJU FAST Lab: optimiz
 
 ## Related
 
-- extends: [EGO-Swarm](../repos/zju-fast-lab__ego-planner-swarm.md)
-- extends: [Fast-Planner](../repos/hkust-aerial-robotics__fast-planner.md)
-- same_org: [GCOPTER](../repos/zju-fast-lab__gcopter.md)
+- extends: [EGO-Swarm](../../catalog/repos/zju-fast-lab__ego-planner-swarm.md)
+- extends: [Fast-Planner](../../catalog/repos/hkust-aerial-robotics__fast-planner.md)
+- same_org: [GCOPTER](../../catalog/repos/zju-fast-lab__gcopter.md)
 
 ## Referenced by
 
-- [Fast-Planner](../repos/hkust-aerial-robotics__fast-planner.md) (alternative_to)
-- [EGO-Swarm](../repos/zju-fast-lab__ego-planner-swarm.md) (extends)
-- [GCOPTER](../repos/zju-fast-lab__gcopter.md) (same_org)
-- [EGO-Planner: An ESDF-free Gradient-based Local Planner for Quadrotors](../resources/zhou-ego-planner-paper.md) (has_code)
+- [Fast-Planner](../../catalog/repos/hkust-aerial-robotics__fast-planner.md) (alternative_to)
+- [EGO-Swarm](../../catalog/repos/zju-fast-lab__ego-planner-swarm.md) (extends)
+- [GCOPTER](../../catalog/repos/zju-fast-lab__gcopter.md) (same_org)
+- [EGO-Planner: An ESDF-free Gradient-based Local Planner for Quadrotors](../../catalog/resources/zhou-ego-planner-paper.md) (has_code)
 
 _Indexed by lane(s): planning-gis-c2_
 

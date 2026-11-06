@@ -11,7 +11,7 @@ Open-access review of GPS attack detection and mitigation focused on the GPS-den
 - Covers both detection and what to fall back on
 - Does not cover timing-only alternatives
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `survey`, `gps-denied`, `mdpi`
 

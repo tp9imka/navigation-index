@@ -12,7 +12,7 @@ Archive of Lars Walenius' Arduino GPSDO from the EEVblog forum: a PI loop with a
 
 **Hackathon notes:** Reference files only; derivatives such as paulvee/Lars-GPSDO-V4.2 and W3AXL/Simple-GPSDO are maintained builds.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `gpsdo`, `arduino`, `pi-loop`, `ocxo`
 
@@ -20,12 +20,13 @@ Archive of Lars Walenius' Arduino GPSDO from the EEVblog forum: a PI loop with a
 
 ## Related
 
-- alternative_to: [STM32 GPSDO](../repos/andrewbcn__stm32-gpsdo.md)
+- alternative_to: [STM32 GPSDO](../../catalog/repos/andrewbcn__stm32-gpsdo.md)
 
 ## Referenced by
 
-- [STM32 GPSDO](../repos/andrewbcn__stm32-gpsdo.md) (alternative_to)
-- [Arduino SI5351 GPSDO](../repos/erikkaashoek__arduino_si5351_gpsdo.md) (extends)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [STM32 GPSDO](../../catalog/repos/andrewbcn__stm32-gpsdo.md) (alternative_to)
+- [Arduino SI5351 GPSDO](../../catalog/repos/erikkaashoek__arduino_si5351_gpsdo.md) (extends)
 
 _Indexed by lane(s): timing_
 

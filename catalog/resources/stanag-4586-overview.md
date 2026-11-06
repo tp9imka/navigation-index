@@ -12,8 +12,12 @@ Public overview of NATO's UAS interoperability standard, which defines a core UC
 - Vehicle Specific Module isolates proprietary air vehicle interfaces
 - Full text distributed via NATO / national channels
 
-**Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Standards and interface specs](../concepts/standards.md), [Autopilots and flight control](../concepts/autopilot.md)
+**Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Standards and interface specs](../../catalog/concepts/standards.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
 **Tags:** `stanag-4586`, `nato`, `uas`, `interoperability`
+
+## Referenced by
+
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 
 _Indexed by lane(s): docs-standards_

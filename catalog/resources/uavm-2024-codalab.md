@@ -11,12 +11,12 @@ Codalab leaderboard for weather-robust drone-satellite matching.
 - Adds weather corruptions to cross-view retrieval
 - University-1652 data is request-only: research use, no sharing with third parties, no profit (layumi/University1652-Baseline Request.md)
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `multi-weather`, `codalab`
 
 ## Related
 
-- has_code: [UAVM 2024 challenge](../repos/wtyhub__uavm2024.md)
+- has_code: [UAVM 2024 challenge](../../catalog/repos/wtyhub__uavm2024.md)
 
 _Indexed by lane(s): round3-expansion_

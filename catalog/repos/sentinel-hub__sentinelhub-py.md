@@ -12,7 +12,7 @@ Python client for Sentinel Hub and Copernicus Data Space services to search, dow
 
 **Hackathon notes:** Needs free Copernicus Data Space or Sentinel Hub credentials; set up before the event.
 
-**Concepts:** [GIS, maps and geospatial data](../concepts/gis-mapping.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `sentinel-2`, `copernicus`, `satellite-imagery`
 
@@ -20,7 +20,7 @@ Python client for Sentinel Hub and Copernicus Data Space services to search, dow
 
 ## Related
 
-- alternative_to: [pystac-client](../repos/stac-utils__pystac-client.md)
+- alternative_to: [pystac-client](../../catalog/repos/stac-utils__pystac-client.md)
 
 _Indexed by lane(s): planning-gis-c2_
 

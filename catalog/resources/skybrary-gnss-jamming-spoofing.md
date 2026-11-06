@@ -13,12 +13,18 @@ Aviation safety wiki article explaining jamming vs spoofing, their effects on ai
 - Plain-language intro to the aviation impact
 - Links to EASA/FAA/ICAO references
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
 **Tags:** `aviation`, `primer`, `skybrary`, `explainer`
 
 ## Related
 
-- cites: [EASA Safety Information Bulletin 2022-02R4: GNSS Outage and Alterations Leading to Communication / Navigation / Surveillance Degradation](../resources/easa-sib-2022-02r4.md)
+- cites: [EASA Safety Information Bulletin 2022-02R4: GNSS Outage and Alterations Leading to Communication / Navigation / Surveillance Degradation](../../catalog/resources/easa-sib-2022-02r4.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
 
 _Indexed by lane(s): defense-context, docs-standards_

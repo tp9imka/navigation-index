@@ -12,7 +12,7 @@ Open-source generator for BeiDou B1C baseband signals for SDR playback or file o
 
 **Hackathon notes:** Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `beidou`, `b1c`, `simulator`
 
@@ -20,11 +20,11 @@ Open-source generator for BeiDou B1C baseband signals for SDR playback or file o
 
 ## Related
 
-- same_org: [OSNMA-SDR-SIM](../repos/haiyang-wong__osnma-sdr-sim.md)
+- same_org: [OSNMA-SDR-SIM](../../catalog/repos/haiyang-wong__osnma-sdr-sim.md)
 
 ## Referenced by
 
-- [OSNMA-SDR-SIM](../repos/haiyang-wong__osnma-sdr-sim.md) (same_org)
+- [OSNMA-SDR-SIM](../../catalog/repos/haiyang-wong__osnma-sdr-sim.md) (same_org)
 
 _Indexed by lane(s): gnss_
 

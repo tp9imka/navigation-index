@@ -12,12 +12,12 @@ Workshop and challenge site for the 4th UAVs in Multimedia workshop at ACM MM 20
 - Awards require open-source code
 - PairUAV derives from University-1652, which is request-only for research use with no third-party sharing or profit
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `uavm`, `workshop`
 
 ## Related
 
-- has_code: [PairUAV](../repos/yaxuanli-cn__pairuav.md)
+- has_code: [PairUAV](../../catalog/repos/yaxuanli-cn__pairuav.md)
 
 _Indexed by lane(s): round3-expansion_

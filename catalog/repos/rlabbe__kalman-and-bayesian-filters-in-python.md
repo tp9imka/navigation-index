@@ -12,7 +12,7 @@ Free interactive book of Jupyter notebooks teaching Kalman, EKF, UKF and particl
 
 **Hackathon notes:** Run the notebooks locally or in Binder; chapters on UKF and EKF are enough for a hackathon.
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `book`, `notebooks`, `kalman-filter`
 
@@ -20,12 +20,13 @@ Free interactive book of Jupyter notebooks teaching Kalman, EKF, UKF and particl
 
 ## Related
 
-- depends_on: [FilterPy](../repos/rlabbe__filterpy.md)
+- depends_on: [FilterPy](../../catalog/repos/rlabbe__filterpy.md)
 
 ## Referenced by
 
-- [FilterPy](../repos/rlabbe__filterpy.md) (same_org)
-- [Kalman and Bayesian Filters in Python](../resources/labbe-kalman-bayesian-filters-python.md) (has_code)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [FilterPy](../../catalog/repos/rlabbe__filterpy.md) (same_org)
+- [Kalman and Bayesian Filters in Python](../../catalog/resources/labbe-kalman-bayesian-filters-python.md) (has_code)
 
 _Indexed by lane(s): ins-fusion_
 

@@ -11,7 +11,7 @@ Grace Gao's lab working on robust navigation for autonomous systems: GNSS in urb
 - Research on GNSS+vision/lidar fusion and integrity
 - Home of AA272-related teaching on smartphone GNSS
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Space and orbital navigation](../concepts/space-nav.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md)
 
 **Tags:** `stanford`, `navlab`, `autonomy`
 

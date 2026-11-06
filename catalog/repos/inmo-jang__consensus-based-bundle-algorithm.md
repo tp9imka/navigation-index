@@ -12,7 +12,7 @@ Python implementation of the Consensus-Based Bundle Algorithm for decentralized 
 
 **Hackathon notes:** numpy + matplotlib only; wrap in a ROS 2 node or call from a mission script to assign search cells to drones.
 
-**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Mission planning and routing](../concepts/mission-planning.md)
+**Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 
 **Tags:** `cbba`, `task-allocation`, `auction`
 
@@ -20,11 +20,14 @@ Python implementation of the Consensus-Based Bundle Algorithm for decentralized 
 
 ## Related
 
-- alternative_to: [Open-RMF rmf_task](../repos/open-rmf__rmf_task.md)
+- alternative_to: [Open-RMF rmf_task](../../catalog/repos/open-rmf__rmf_task.md)
 
 ## Referenced by
 
-- [Open-RMF rmf_task](../repos/open-rmf__rmf_task.md) (alternative_to)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Open-RMF rmf_task](../../catalog/repos/open-rmf__rmf_task.md) (alternative_to)
 
 _Indexed by lane(s): planning-gis-c2_
 

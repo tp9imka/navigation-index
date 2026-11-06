@@ -16,16 +16,19 @@ Russian-language page of COEX's international open-source flying-robotics contes
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+**Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `lang:ru`, `coex`, `competition`, `open-source`
 
 ## Related
 
-- uses: [COEX Clover](../repos/copterexpress__clover.md)
+- uses: [COEX Clover](../../catalog/repos/copterexpress__clover.md)
 
 ## Referenced by
 
-- [CopterHack 2022](../resources/copterhack-2022.md) (same_author)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [CopterHack 2022](../../catalog/resources/copterhack-2022.md) (same_author)
 
 _Indexed by lane(s): ua-ru-sources_

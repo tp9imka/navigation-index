@@ -17,7 +17,7 @@ NASA JPL's LangChain-based AI agent that lets operators query and command ROS 1 
 - [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [nasa-jpl__rosa](../../docs/integration-cards/nasa-jpl__rosa.md) (integration-cards)
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `llm`, `langchain`, `agent`, `jpl`, `ros2`
 
@@ -25,14 +25,17 @@ NASA JPL's LangChain-based AI agent that lets operators query and command ROS 1 
 
 ## Related
 
-- alternative_to: [ROS MCP Server](../repos/robotmcp__ros-mcp-server.md)
-- integrates_with: [Enabling Novel Mission Operations and Interactions with ROSA: The Robot Operating System Agent](../resources/jpl-rosa-paper-2024.md)
+- alternative_to: [ROS MCP Server](../../catalog/repos/robotmcp__ros-mcp-server.md)
+- integrates_with: [Enabling Novel Mission Operations and Interactions with ROSA: The Robot Operating System Agent](../../catalog/resources/jpl-rosa-paper-2024.md)
 
 ## Referenced by
 
-- [ROS-LLM](../repos/auromix__ros-llm.md) (alternative_to)
-- [ROS MCP Server](../repos/robotmcp__ros-mcp-server.md) (alternative_to)
-- [Enabling Novel Mission Operations and Interactions with ROSA: The Robot Operating System Agent](../resources/jpl-rosa-paper-2024.md) (has_code)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [ROS-LLM](../../catalog/repos/auromix__ros-llm.md) (alternative_to)
+- [ROS MCP Server](../../catalog/repos/robotmcp__ros-mcp-server.md) (alternative_to)
+- [Enabling Novel Mission Operations and Interactions with ROSA: The Robot Operating System Agent](../../catalog/resources/jpl-rosa-paper-2024.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

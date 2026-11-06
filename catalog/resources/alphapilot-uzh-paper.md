@@ -11,12 +11,16 @@ UZH's second-place AlphaPilot system: learned gate detection, nonlinear filterin
 - Vision-inertial state estimation, not GNSS, drove the race
 - Splitting perception and planning made it robust
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Path and motion planning](../concepts/path-planning.md), [Autopilots and flight control](../concepts/autopilot.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
 **Tags:** `alphapilot`, `drone-racing`, `uzh`
 
 ## Related
 
-- has_code: [Time-optimal quadrotor planning](../repos/uzh-rpg__rpg_time_optimal.md)
+- has_code: [Time-optimal quadrotor planning](../../catalog/repos/uzh-rpg__rpg_time_optimal.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 
 _Indexed by lane(s): defense-context_

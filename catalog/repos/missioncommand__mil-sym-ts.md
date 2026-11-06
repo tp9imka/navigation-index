@@ -12,7 +12,12 @@ TypeScript/JavaScript renderer for MIL-STD-2525 (D and later) military symbology
 
 **Hackathon notes:** npm package; render SIDC codes to SVG/canvas and drop onto Leaflet/Cesium/OpenLayers layers. Multi-point graphics need control-point ordering per the standard.
 
-**Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Standards and interface specs](../concepts/standards.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [missioncommand__mil-sym-ts](../../docs/integration-cards/missioncommand__mil-sym-ts.md) (integration-cards)
+
+**Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Standards and interface specs](../../catalog/concepts/standards.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `mil-std-2525`, `symbology`, `cop`, `typescript`
 
@@ -20,12 +25,12 @@ TypeScript/JavaScript renderer for MIL-STD-2525 (D and later) military symbology
 
 ## Related
 
-- alternative_to: [milsymbol](../repos/spatialillusions__milsymbol.md)
+- alternative_to: [milsymbol](../../catalog/repos/spatialillusions__milsymbol.md)
 
 ## Referenced by
 
-- [NATO Joint Military Symbology (APP-6) - overview](../resources/app-6-joint-military-symbology.md) (has_code)
-- [MIL-STD-2525 Joint Military Symbology - overview](../resources/mil-std-2525-overview.md) (has_code)
+- [NATO Joint Military Symbology (APP-6) - overview](../../catalog/resources/app-6-joint-military-symbology.md) (has_code)
+- [MIL-STD-2525 Joint Military Symbology - overview](../../catalog/resources/mil-std-2525-overview.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

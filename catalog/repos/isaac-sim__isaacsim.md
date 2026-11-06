@@ -12,7 +12,7 @@ NVIDIA's Omniverse-based robot simulator, now open source, with RTX sensor simul
 
 **Hackathon notes:** RTX GPU and a lot of disk required. Use the prebuilt container or pip install rather than building from source in a hackathon.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `omniverse`, `nvidia`, `rtx`, `synthetic-data`
 
@@ -20,15 +20,17 @@ NVIDIA's Omniverse-based robot simulator, now open source, with RTX sensor simul
 
 ## Related
 
-- integrates_with: [Isaac Lab](../repos/isaac-sim__isaaclab.md)
-- integrates_with: [Pegasus Simulator](../repos/pegasussimulator__pegasussimulator.md)
-- integrates_with: [OmniDrones](../repos/btx0424__omnidrones.md)
+- integrates_with: [Isaac Lab](../../catalog/repos/isaac-sim__isaaclab.md)
+- integrates_with: [Pegasus Simulator](../../catalog/repos/pegasussimulator__pegasussimulator.md)
+- integrates_with: [OmniDrones](../../catalog/repos/btx0424__omnidrones.md)
 
 ## Referenced by
 
-- [OmniDrones](../repos/btx0424__omnidrones.md) (depends_on)
-- [Isaac Lab](../repos/isaac-sim__isaaclab.md) (depends_on)
-- [Pegasus Simulator](../repos/pegasussimulator__pegasussimulator.md) (depends_on)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [OmniDrones](../../catalog/repos/btx0424__omnidrones.md) (depends_on)
+- [Isaac Lab](../../catalog/repos/isaac-sim__isaaclab.md) (depends_on)
+- [Pegasus Simulator](../../catalog/repos/pegasussimulator__pegasussimulator.md) (depends_on)
 
 _Indexed by lane(s): sim-data_
 

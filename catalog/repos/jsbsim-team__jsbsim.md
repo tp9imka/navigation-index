@@ -12,7 +12,7 @@ Open-source flight dynamics model library for fixed-wing and other aircraft, use
 
 **Hackathon notes:** Python bindings via pip. Combine with ArduPilot SITL for an autopilot loop.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `flight-dynamics`, `fixed-wing`, `fdm`
 
@@ -20,7 +20,7 @@ Open-source flight dynamics model library for fixed-wing and other aircraft, use
 
 ## Related
 
-- integrates_with: [ArduPilot](../repos/ardupilot__ardupilot.md)
+- integrates_with: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
 
 _Indexed by lane(s): sim-data_
 

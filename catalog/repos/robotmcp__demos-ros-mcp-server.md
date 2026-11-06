@@ -12,7 +12,7 @@ Standalone demos for driving robots with natural language through the ROS MCP se
 
 **Hackathon notes:** Each sub-folder is a self-contained project with its own README; the PX4 demo (takeoff, patterns, orbit, RTL via MAVROS) is the most relevant. Run one demo end to end before customizing the server.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `mcp`, `tutorial`, `demo`
 
@@ -20,11 +20,11 @@ Standalone demos for driving robots with natural language through the ROS MCP se
 
 ## Related
 
-- extends: [ROS MCP Server](../repos/robotmcp__ros-mcp-server.md)
+- extends: [ROS MCP Server](../../catalog/repos/robotmcp__ros-mcp-server.md)
 
 ## Referenced by
 
-- [ROS MCP Server](../repos/robotmcp__ros-mcp-server.md) (same_org)
+- [ROS MCP Server](../../catalog/repos/robotmcp__ros-mcp-server.md) (same_org)
 
 _Indexed by lane(s): gap-fill_
 

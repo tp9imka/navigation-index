@@ -15,12 +15,16 @@ Introduces the drone/satellite/ground benchmark that most drone cross-view geo-l
 - [university-1652](../../docs/dataset-cards/university-1652.md) (dataset-cards)
 - [university-1652-benchmark-2020](../../docs/paper-digests/university-1652-benchmark-2020.md) (paper-digests)
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `arxiv`, `dataset`
 
 ## Related
 
-- has_code: [University-1652 baseline](../repos/layumi__university1652-baseline.md)
+- has_code: [University-1652 baseline](../../catalog/repos/layumi__university1652-baseline.md)
+
+## Referenced by
+
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 
 _Indexed by lane(s): alt-nav_

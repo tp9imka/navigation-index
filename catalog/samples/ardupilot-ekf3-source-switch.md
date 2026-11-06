@@ -6,15 +6,23 @@ Flies ArduCopter SITL on GPS, switches EKF3 to an external-nav source set (SITL 
 
 **Verification:** Ran on 2026-11-06 against ArduCopter Copter-4.6.3 SITL in Docker (samples/sitl-docker, linux/arm64) with pymavlink 2.4.50 on python3.12: source switch accepted, EKF kept POS_HORIZ_ABS with GPS fix_type 1 for 30 s and flew the 15 m leg; --no-switch lost position after ~6 s and triggered 'EKF Failsafe: changed to LAND Mode'. Output in README. ekf_flags.py tests (6) pass on python3.14.7. --switch-via rc not run.
 
-**Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Simulation and HIL/SITL](../concepts/simulation.md), [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
+**Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 
 **Tags:** `ardupilot`, `ekf3`, `source-sets`, `sitl`, `pymavlink`, `gps-denied`, `external-nav`, `vicon`
 
 ## Related
 
-- uses: [ArduPilot](../repos/ardupilot__ardupilot.md)
-- uses: [pymavlink](../repos/ardupilot__pymavlink.md)
-- uses: [MAVProxy](../repos/ardupilot__mavproxy.md)
-- explains: [MAVLink](../repos/mavlink__mavlink.md)
+- uses: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
+- uses: [pymavlink](../../catalog/repos/ardupilot__pymavlink.md)
+- uses: [MAVProxy](../../catalog/repos/ardupilot__mavproxy.md)
+- explains: [MAVLink](../../catalog/repos/mavlink__mavlink.md)
+
+## Referenced by
+
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 
 _Indexed by lane(s): samples_

@@ -8,11 +8,11 @@
 
 Lightweight Java multirotor simulator that speaks MAVLink to PX4, without a 3D-world physics engine.
 
-**Why it matters:** Fastest way to get a PX4 SITL quad flying for MAVLink, GCS or mission-logic work when sensors and worlds do not matter.
+**Why it matters:** Was the fastest way to get a PX4 SITL quad flying for MAVLink, GCS or mission-logic work when sensors and worlds do not matter; PX4 has since replaced it with SIH.
 
-**Hackathon notes:** Runs with 'make px4_sitl jmavsim'. Needs a JDK. No cameras or lidar, so not for perception work.
+**Hackathon notes:** Removed from PX4-Autopilot main in September 2026; 'make px4_sitl jmavsim' only exists up to PX4 v1.17. On current PX4 use 'make px4_sitl_sih sihsim_quadx' with Hawkeye. Needs a JDK. No cameras or lidar, so not for perception work. This repo is PX4's fork of DrTon/jMAVSim.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 
 **Tags:** `px4`, `mavlink`, `java`, `sitl`
 
@@ -20,12 +20,12 @@ Lightweight Java multirotor simulator that speaks MAVLink to PX4, without a 3D-w
 
 ## Related
 
-- integrates_with: [PX4 Autopilot](../repos/px4__px4-autopilot.md)
-- alternative_to: [Gazebo Sim (gz-sim)](../repos/gazebosim__gz-sim.md)
+- integrates_with: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
+- alternative_to: [Gazebo Sim (gz-sim)](../../catalog/repos/gazebosim__gz-sim.md)
 
 ## Referenced by
 
-- [PX4 Simulation (Gazebo, SITL) documentation](../resources/px4-simulation-docs.md) (explains)
+- [PX4 Simulation (Gazebo, SITL) documentation](../../catalog/resources/px4-simulation-docs.md) (explains)
 
 _Indexed by lane(s): sim-data_
 

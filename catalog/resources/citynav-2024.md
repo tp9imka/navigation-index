@@ -11,16 +11,16 @@ Introduces a language-goal aerial navigation dataset built on real-city 3D data 
 - Geographic map priors improve aerial language navigation
 - Human demonstrations from a web simulator
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `vln`, `uav`, `dataset`
 
 ## Related
 
-- has_code: [CityNav](../repos/water-cookie__citynav.md)
+- has_code: [CityNav](../../catalog/repos/water-cookie__citynav.md)
 
 ## Referenced by
 
-- [CityNav](../repos/water-cookie__citynav.md) (integrates_with)
+- [CityNav](../../catalog/repos/water-cookie__citynav.md) (integrates_with)
 
 _Indexed by lane(s): gap-fill_

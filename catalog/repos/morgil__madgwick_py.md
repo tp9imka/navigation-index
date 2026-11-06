@@ -12,7 +12,7 @@ Minimal Python implementation of Madgwick's IMU and AHRS algorithms.
 
 **Hackathon notes:** Tiny, unmaintained; use for reading.
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `ahrs`, `madgwick`, `python`
 
@@ -20,11 +20,11 @@ Minimal Python implementation of Madgwick's IMU and AHRS algorithms.
 
 ## Related
 
-- alternative_to: [AHRS (Python)](../repos/mayitzin__ahrs.md)
+- alternative_to: [AHRS (Python)](../../catalog/repos/mayitzin__ahrs.md)
 
 ## Referenced by
 
-- [AHRS (Python)](../repos/mayitzin__ahrs.md) (alternative_to)
+- [AHRS (Python)](../../catalog/repos/mayitzin__ahrs.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 

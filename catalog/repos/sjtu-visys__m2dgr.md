@@ -10,13 +10,13 @@ Multi-modal, multi-scenario ground robot dataset from SJTU with cameras, lidar, 
 
 **Why it matters:** Indoor/outdoor transitions with GNSS make it useful for testing GNSS-loss handling in fusion.
 
-**Hackathon notes:** ROS bags; check repo for download mirrors.
+**Hackathon notes:** ROS bags; check repo for download mirrors. Repo says MIT but the dataset is 'provided for academic purpose'; commercial use requires contacting the authors.
 
 ## Deep dives
 
 - [m2dgr](../../docs/dataset-cards/m2dgr.md) (dataset-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [GNSS/INS integration](../concepts/gnss-ins.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md)
 
 **Tags:** `ground-robot`, `gnss`, `lidar`, `ros-bag`
 

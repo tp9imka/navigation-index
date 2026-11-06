@@ -12,13 +12,13 @@ Autonomous drone racing using only onboard sensing in arenas without motion capt
 - Human pilot data released at github.com/tii-racing/drone-racing-dataset
 - A2RL is cited as context, not the test venue
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Autopilots and flight control](../concepts/autopilot.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
 **Tags:** `drone-racing`, `tii`, `a2rl`
 
 ## Related
 
-- has_code: [Race Against the Machine dataset](../repos/tii-racing__drone-racing-dataset.md)
-- part_of: [2025 Abu Dhabi Autonomous Racing League (A2RL) - drone championship](../resources/a2rl-2025-season.md)
+- has_code: [Race Against the Machine dataset](../../catalog/repos/tii-racing__drone-racing-dataset.md)
+- part_of: [2025 Abu Dhabi Autonomous Racing League](../../catalog/resources/a2rl-2025-season.md)
 
 _Indexed by lane(s): round3-expansion_

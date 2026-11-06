@@ -12,12 +12,13 @@ Section of Vig's introduction to quartz frequency standards comparing TCXO, MCXO
 - OCXO beats rubidium at 1 s; rubidium wins on aging
 - Used as the parameter source for samples/timing-holdover
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `oscillator`, `tcxo`, `ocxo`, `rubidium`, `cesium`, `aging`
 
 ## Referenced by
 
-- [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../samples/timing-holdover.md) (uses)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../../catalog/samples/timing-holdover.md) (uses)
 
 _Indexed by lane(s): timing_

@@ -14,9 +14,11 @@ Car dead reckoning from IMU only, using an invariant EKF whose noise covariances
 
 ## Deep dives
 
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [mbrossar__ai-imu-dr](../../docs/integration-cards/mbrossar__ai-imu-dr.md) (integration-cards)
 - [brossard-ai-imu-dr](../../docs/paper-digests/brossard-ai-imu-dr.md) (paper-digests)
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `inekf`, `learned-covariance`, `kitti`
 
@@ -24,13 +26,14 @@ Car dead reckoning from IMU only, using an invariant EKF whose noise covariances
 
 ## Related
 
-- same_org: [Denoise IMU Gyro](../repos/mbrossar__denoise-imu-gyro.md)
-- alternative_to: [invariant-ekf (Hartley InEKF)](../repos/rosshartley__invariant-ekf.md)
+- same_org: [Denoise IMU Gyro](../../catalog/repos/mbrossar__denoise-imu-gyro.md)
+- alternative_to: [invariant-ekf (Hartley InEKF)](../../catalog/repos/rosshartley__invariant-ekf.md)
 
 ## Referenced by
 
-- [Denoise IMU Gyro](../repos/mbrossar__denoise-imu-gyro.md) (same_org)
-- [AI-IMU Dead-Reckoning](../resources/brossard-ai-imu-dr.md) (has_code)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
+- [Denoise IMU Gyro](../../catalog/repos/mbrossar__denoise-imu-gyro.md) (same_org)
+- [AI-IMU Dead-Reckoning](../../catalog/resources/brossard-ai-imu-dr.md) (has_code)
 
 _Indexed by lane(s): ins-fusion_
 

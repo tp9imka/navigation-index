@@ -12,7 +12,7 @@ Builds visual-language maps by fusing pretrained visual-language features into a
 
 **Hackathon notes:** Habitat-based data; GPU needed for feature extraction.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `vlm`, `lseg`, `spatial-map`, `habitat`
 
@@ -20,13 +20,13 @@ Builds visual-language maps by fusing pretrained visual-language features into a
 
 ## Related
 
-- alternative_to: [ConceptGraphs](../repos/concept-graphs__concept-graphs.md)
-- integrates_with: [Visual Language Maps for Robot Navigation](../resources/vlmaps-2022.md)
+- alternative_to: [ConceptGraphs](../../catalog/repos/concept-graphs__concept-graphs.md)
+- integrates_with: [Visual Language Maps for Robot Navigation](../../catalog/resources/vlmaps-2022.md)
 
 ## Referenced by
 
-- [ConceptGraphs](../repos/concept-graphs__concept-graphs.md) (alternative_to)
-- [Visual Language Maps for Robot Navigation](../resources/vlmaps-2022.md) (has_code)
+- [ConceptGraphs](../../catalog/repos/concept-graphs__concept-graphs.md) (alternative_to)
+- [Visual Language Maps for Robot Navigation](../../catalog/resources/vlmaps-2022.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

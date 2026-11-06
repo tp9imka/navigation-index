@@ -16,7 +16,7 @@ Tightly coupled GNSS-visual-inertial estimator that fuses raw GNSS pseudorange a
 
 - [gvins](../../docs/dataset-cards/gvins.md) (dataset-cards)
 
-**Concepts:** [GNSS/INS integration](../concepts/gnss-ins.md), [Visual(-inertial) odometry](../concepts/vio.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [GNSS positioning](../concepts/gnss.md)
+**Concepts:** [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [GNSS positioning](../../catalog/concepts/gnss.md)
 
 **Tags:** `vins`, `raw-gnss`, `factor-graph`, `ros1`
 
@@ -24,14 +24,15 @@ Tightly coupled GNSS-visual-inertial estimator that fuses raw GNSS pseudorange a
 
 ## Related
 
-- evaluated_on: [GVINS dataset](../repos/hkust-aerial-robotics__gvins-dataset.md)
-- extends: [VINS-Fusion](../repos/hkust-aerial-robotics__vins-fusion.md)
-- alternative_to: [IC-GVINS](../repos/i2nav-whu__ic-gvins.md)
+- evaluated_on: [GVINS dataset](../../catalog/repos/hkust-aerial-robotics__gvins-dataset.md)
+- extends: [VINS-Fusion](../../catalog/repos/hkust-aerial-robotics__vins-fusion.md)
+- alternative_to: [IC-GVINS](../../catalog/repos/i2nav-whu__ic-gvins.md)
 
 ## Referenced by
 
-- [gnss_comm](../repos/hkust-aerial-robotics__gnss_comm.md) (same_org)
-- [GVINS dataset](../repos/hkust-aerial-robotics__gvins-dataset.md) (evaluated_on)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [gnss_comm](../../catalog/repos/hkust-aerial-robotics__gnss_comm.md) (same_org)
+- [GVINS dataset](../../catalog/repos/hkust-aerial-robotics__gvins-dataset.md) (evaluated_on)
 
 _Indexed by lane(s): gap-fill_
 

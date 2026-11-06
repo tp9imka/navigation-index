@@ -12,7 +12,12 @@ C++ library for accurate geodesic problems, UTM/UPS/MGRS conversions, geoid heig
 
 **Hackathon notes:** Python and JS ports exist (geographiclib-python, geographiclib-js); geoid datasets download separately.
 
-**Concepts:** [Geodesy and coordinate frames](../concepts/geodesy.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [geographiclib__geographiclib](../../docs/integration-cards/geographiclib__geographiclib.md) (integration-cards)
+
+**Concepts:** [Geodesy and coordinate frames](../../catalog/concepts/geodesy.md)
 
 **Tags:** `geodesic`, `geoid`, `mgrs`, `egm2008`
 
@@ -20,12 +25,14 @@ C++ library for accurate geodesic problems, UTM/UPS/MGRS conversions, geoid heig
 
 ## Related
 
-- alternative_to: [mgrs (Python)](../repos/hobuinc__mgrs.md)
+- alternative_to: [mgrs (Python)](../../catalog/repos/hobuinc__mgrs.md)
 
 ## Referenced by
 
-- [mgrs (Python)](../repos/hobuinc__mgrs.md) (alternative_to)
-- [GeographicLib documentation](../resources/geographiclib-docs.md) (explains)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [mgrs (Python)](../../catalog/repos/hobuinc__mgrs.md) (alternative_to)
+- [GeographicLib documentation](../../catalog/resources/geographiclib-docs.md) (explains)
 
 _Indexed by lane(s): planning-gis-c2_
 

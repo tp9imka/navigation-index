@@ -10,9 +10,9 @@ Decentralized and distributed collaborative visual-inertial SLAM for aerial swar
 
 **Why it matters:** Swarm-scale relative localization and mapping for UAV teams.
 
-**Hackathon notes:** Needs GPUs and multi-camera rigs; study rather than deploy.
+**Hackathon notes:** Needs a CUDA GPU and the provided Docker images; runs on a quad fisheye rig, RealSense stereo or TUM datasets. Study rather than deploy.
 
-**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Visual(-inertial) odometry](../concepts/vio.md), [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `swarm`, `c-slam`, `hkust`, `decentralized`, `uav`
 
@@ -20,12 +20,12 @@ Decentralized and distributed collaborative visual-inertial SLAM for aerial swar
 
 ## Related
 
-- extends: [Omni-swarm](../repos/hkust-aerial-robotics__omni-swarm.md)
-- alternative_to: [Swarm-SLAM](../repos/lajoiepy__cslam.md)
+- extends: [Omni-swarm](../../catalog/repos/hkust-aerial-robotics__omni-swarm.md)
+- alternative_to: [Swarm-SLAM](../../catalog/repos/lajoiepy__cslam.md)
 
 ## Referenced by
 
-- [Omni-swarm](../repos/hkust-aerial-robotics__omni-swarm.md) (alternative_to)
+- [Omni-swarm](../../catalog/repos/hkust-aerial-robotics__omni-swarm.md) (alternative_to)
 
 _Indexed by lane(s): domains-swarm, slam_
 

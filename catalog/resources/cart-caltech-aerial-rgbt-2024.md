@@ -12,12 +12,12 @@ Aerial RGB-thermal dataset over natural US terrain with synchronized GPS and IMU
 - Includes VIO benchmark with GPS/IMU
 - Dataset is for non-commercial use only (README: CC BY-SA 4.0 terms)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `thermal`, `caltech`, `aerial`
 
 ## Related
 
-- has_code: [CART - Caltech Aerial RGB-Thermal](../repos/aerorobotics__caltech-aerial-rgbt-dataset.md)
+- has_code: [CART - Caltech Aerial RGB-Thermal](../../catalog/repos/aerorobotics__caltech-aerial-rgbt-dataset.md)
 
 _Indexed by lane(s): round3-expansion_

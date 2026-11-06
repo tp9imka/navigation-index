@@ -12,7 +12,7 @@ Robust pose-graph optimization that rejects bad loop closures via pairwise consi
 
 **Hackathon notes:** Small library; feed it any odometry + loop closure edges. Good drop-in back end for a custom front end.
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `pose-graph`, `pcm`, `outlier-rejection`, `gtsam`
 
@@ -20,12 +20,13 @@ Robust pose-graph optimization that rejects bad loop closures via pairwise consi
 
 ## Related
 
-- depends_on: [GTSAM](../repos/borglab__gtsam.md)
+- depends_on: [GTSAM](../../catalog/repos/borglab__gtsam.md)
 
 ## Referenced by
 
-- [Kimera-VIO](../repos/mit-spark__kimera-vio.md) (depends_on)
-- [Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping](../resources/kimera-rosinol-2019.md) (has_code)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Kimera-VIO](../../catalog/repos/mit-spark__kimera-vio.md) (depends_on)
+- [Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping](../../catalog/resources/kimera-rosinol-2019.md) (has_code)
 
 _Indexed by lane(s): slam_
 

@@ -16,7 +16,7 @@ Tools and utilities for the TartanDrive off-road driving dataset from CMU's AirL
 
 - [offroad-rellis-tartandrive](../../docs/dataset-cards/offroad-rellis-tartandrive.md) (dataset-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 
 **Tags:** `dataset`, `off-road`, `atv`, `cmu`
 
@@ -24,11 +24,11 @@ Tools and utilities for the TartanDrive off-road driving dataset from CMU's AirL
 
 ## Related
 
-- alternative_to: [RELLIS-3D](../repos/unmannedlab__rellis-3d.md)
+- alternative_to: [RELLIS-3D](../../catalog/repos/unmannedlab__rellis-3d.md)
 
 ## Referenced by
 
-- [RELLIS-3D](../repos/unmannedlab__rellis-3d.md) (alternative_to)
+- [RELLIS-3D](../../catalog/repos/unmannedlab__rellis-3d.md) (alternative_to)
 
 _Indexed by lane(s): domains-swarm_
 

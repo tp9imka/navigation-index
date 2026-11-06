@@ -16,16 +16,19 @@ English: 'Optical Flow navigation - Clover docs'. Russian-language official docu
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Autopilots and flight control](../concepts/autopilot.md), [Sensor calibration](../concepts/calibration.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 
 **Tags:** `lang:ru`, `coex`, `px4`, `optical-flow`, `docs`
 
 ## Related
 
-- part_of: [COEX Clover](../repos/copterexpress__clover.md)
+- part_of: [COEX Clover](../../catalog/repos/copterexpress__clover.md)
 
 ## Referenced by
 
-- [COEX Clover](../repos/copterexpress__clover.md) (part_of)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [COEX Clover](../../catalog/repos/copterexpress__clover.md) (part_of)
 
 _Indexed by lane(s): ua-ru-sources_

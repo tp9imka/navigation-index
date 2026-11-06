@@ -12,7 +12,12 @@ Python decoder for Mode S and ADS-B messages including Comm-B / EHS fields, with
 
 **Hackathon notes:** pip install pyModeS now installs the v3 rewrite (Python 3.11+): a single decode() call plus a stateful PipeDecoder for streams, and a modes CLI. Older tutorials and The 1090MHz Riddle use the v2 pms.adsb.* API; pin pyModeS<3 to follow them. Pairs with a Beast/raw feed from readsb.
 
-**Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Standards and interface specs](../concepts/standards.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [junzis__pymodes](../../docs/integration-cards/junzis__pymodes.md) (integration-cards)
+
+**Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `mode-s`, `ads-b`, `python`
 
@@ -20,13 +25,15 @@ Python decoder for Mode S and ADS-B messages including Comm-B / EHS fields, with
 
 ## Related
 
-- integrates_with: [traffic](../repos/xoolive__traffic.md)
-- integrates_with: [readsb](../repos/wiedehopf__readsb.md)
+- integrates_with: [traffic](../../catalog/repos/xoolive__traffic.md)
+- integrates_with: [readsb](../../catalog/repos/wiedehopf__readsb.md)
 
 ## Referenced by
 
-- [traffic](../repos/xoolive__traffic.md) (depends_on)
-- [The 1090 Megahertz Riddle: A Guide to Decoding Mode S and ADS-B Signals](../resources/junzis-1090mhz-riddle.md) (has_code)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [traffic](../../catalog/repos/xoolive__traffic.md) (depends_on)
+- [The 1090 Megahertz Riddle: A Guide to Decoding Mode S and ADS-B Signals](../../catalog/resources/junzis-1090mhz-riddle.md) (has_code)
 
 _Indexed by lane(s): planning-gis-c2_
 

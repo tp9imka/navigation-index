@@ -12,7 +12,7 @@ PDDL-based symbolic planning system for ROS 2: domain/problem management, plan g
 
 **Hackathon notes:** apt-installable; write a PDDL domain and wrap Nav2 goals as actions. Learning PDDL is the time cost.
 
-**Concepts:** [Mission planning and routing](../concepts/mission-planning.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+**Concepts:** [Mission planning and routing](../../catalog/concepts/mission-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `pddl`, `task-planning`, `behavior-tree`, `ros2`
 
@@ -20,14 +20,15 @@ PDDL-based symbolic planning system for ROS 2: domain/problem management, plan g
 
 ## Related
 
-- integrates_with: [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md)
-- depends_on: [BehaviorTree.CPP](../repos/behaviortree__behaviortree.cpp.md)
-- integrates_with: [Aerostack2](../repos/aerostack2__aerostack2.md)
+- integrates_with: [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md)
+- depends_on: [BehaviorTree.CPP](../../catalog/repos/behaviortree__behaviortree.cpp.md)
+- integrates_with: [Aerostack2](../../catalog/repos/aerostack2__aerostack2.md)
 
 ## Referenced by
 
-- [Aerostack2](../repos/aerostack2__aerostack2.md) (integrates_with)
-- [PlanSys2: A Planning System Framework for ROS2](../resources/plansys2-paper.md) (has_code)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Aerostack2](../../catalog/repos/aerostack2__aerostack2.md) (integrates_with)
+- [PlanSys2: A Planning System Framework for ROS2](../../catalog/resources/plansys2-paper.md) (has_code)
 
 _Indexed by lane(s): planning-gis-c2_
 

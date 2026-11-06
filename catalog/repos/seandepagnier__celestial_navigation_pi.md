@@ -12,7 +12,7 @@ OpenCPN plugin for entering sextant sights and plotting lines of position and fi
 
 **Hackathon notes:** Build against OpenCPN SDK; useful as UI reference.
 
-**Concepts:** [Celestial and star-tracker navigation](../concepts/celestial-nav.md), [Maritime navigation](../concepts/maritime-nav.md)
+**Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md)
 
 **Tags:** `opencpn`, `sextant`, `plugin`
 
@@ -20,7 +20,7 @@ OpenCPN plugin for entering sextant sights and plotting lines of position and fi
 
 ## Related
 
-- alternative_to: [celnav](../repos/ms8r__celnav.md)
+- alternative_to: [celnav](../../catalog/repos/ms8r__celnav.md)
 
 _Indexed by lane(s): gap-fill_
 

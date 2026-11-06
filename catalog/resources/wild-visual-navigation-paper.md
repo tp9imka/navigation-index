@@ -11,12 +11,16 @@ Describes learning visual traversability online from pre-trained features and ro
 - Self-supervision removes manual traversability labels
 - Pre-trained vision features make online learning feasible
 
-**Concepts:** [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `traversability`, `eth`
 
 ## Related
 
-- has_code: [Wild Visual Navigation](../repos/leggedrobotics__wild_visual_navigation.md)
+- has_code: [Wild Visual Navigation](../../catalog/repos/leggedrobotics__wild_visual_navigation.md)
+
+## Referenced by
+
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 
 _Indexed by lane(s): domains-swarm_

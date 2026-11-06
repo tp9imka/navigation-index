@@ -12,7 +12,7 @@ Evaluation code for NaVid and Uni-NaVid, video-based VLMs that plan the next nav
 
 **Hackathon notes:** Requires Habitat and large checkpoints; evaluation only.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md)
 
 **Tags:** `vlm`, `vln-ce`, `habitat`
 
@@ -20,13 +20,13 @@ Evaluation code for NaVid and Uni-NaVid, video-based VLMs that plan the next nav
 
 ## Related
 
-- integrates_with: [NaVid: Video-based VLM Plans the Next Step for Vision-and-Language Navigation](../resources/navid-vln-2024.md)
-- alternative_to: [InternNav](../repos/internrobotics__internnav.md)
+- integrates_with: [NaVid: Video-based VLM Plans the Next Step for Vision-and-Language Navigation](../../catalog/resources/navid-vln-2024.md)
+- alternative_to: [InternNav](../../catalog/repos/internrobotics__internnav.md)
 
 ## Referenced by
 
-- [InternNav](../repos/internrobotics__internnav.md) (alternative_to)
-- [NaVid: Video-based VLM Plans the Next Step for Vision-and-Language Navigation](../resources/navid-vln-2024.md) (has_code)
+- [InternNav](../../catalog/repos/internrobotics__internnav.md) (alternative_to)
+- [NaVid: Video-based VLM Plans the Next Step for Vision-and-Language Navigation](../../catalog/resources/navid-vln-2024.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

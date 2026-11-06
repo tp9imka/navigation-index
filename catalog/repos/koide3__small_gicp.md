@@ -12,7 +12,12 @@ Efficient, parallel point-cloud registration library (GICP, ICP variants) with C
 
 **Hackathon notes:** `pip install small_gicp`; good for scan-to-map localization prototypes.
 
-**Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Feature detection and matching](../concepts/feature-matching.md)
+## Deep dives
+
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [koide3__small_gicp](../../docs/integration-cards/koide3__small_gicp.md) (integration-cards)
+
+**Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 
 **Tags:** `icp`, `gicp`, `python`, `pip`
 
@@ -20,11 +25,13 @@ Efficient, parallel point-cloud registration library (GICP, ICP variants) with C
 
 ## Related
 
-- extends: [fast_gicp](../repos/koide3__fast_gicp.md)
+- extends: [fast_gicp](../../catalog/repos/koide3__fast_gicp.md)
 
 ## Referenced by
 
-- [fast_gicp](../repos/koide3__fast_gicp.md) (alternative_to)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [fast_gicp](../../catalog/repos/koide3__fast_gicp.md) (alternative_to)
 
 _Indexed by lane(s): slam_
 

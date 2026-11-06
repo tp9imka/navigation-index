@@ -11,13 +11,13 @@ Solà's Matlab EKF-SLAM toolbox, used as teaching material for his SLAM courses:
 - Readable reference implementation of EKF-SLAM
 - Shows landmark parameterization trade-offs
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `matlab`, `ekf-slam`, `teaching`
 
 ## Related
 
-- has_code: [SLAM Toolbox (MATLAB)](../repos/joansola__slamtb.md)
-- same_author: [A micro Lie theory for state estimation in robotics](../resources/sola-micro-lie-theory.md)
+- has_code: [SLAM Toolbox (MATLAB)](../../catalog/repos/joansola__slamtb.md)
+- same_author: [A micro Lie theory for state estimation in robotics](../../catalog/resources/sola-micro-lie-theory.md)
 
 _Indexed by lane(s): learning_

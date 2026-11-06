@@ -12,7 +12,7 @@ MATLAB implementation of classic receiver autonomous integrity monitoring (fault
 
 **Hackathon notes:** Small and readable; port the residual test to Python for a quick FDE demo.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `raim`, `fde`, `matlab`
 
@@ -20,13 +20,18 @@ MATLAB implementation of classic receiver autonomous integrity monitoring (fault
 
 ## Related
 
-- alternative_to: [MAAST for ARAIM](../repos/stanford-gps-lab__maast_for_araim_2.md)
+- alternative_to: [MAAST for ARAIM](../../catalog/repos/stanford-gps-lab__maast_for_araim_2.md)
 
 ## Referenced by
 
-- [MAAST for ARAIM](../repos/stanford-gps-lab__maast_for_araim_2.md) (alternative_to)
-- [Navipedia - ESA GNSS encyclopedia](../resources/navipedia.md) (explains)
-- [Integrity monitoring for alt-PNT: solution-separation FDE, protection levels and a Stanford diagram](../samples/altpnt-integrity.md) (explains)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
+- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [MAAST for ARAIM](../../catalog/repos/stanford-gps-lab__maast_for_araim_2.md) (alternative_to)
+- [A Baseline GPS RAIM Scheme and a Note on the Equivalence of Three RAIM Methods](../../catalog/resources/brown-1992-baseline-raim.md) (explains)
+- [Navipedia - ESA GNSS encyclopedia](../../catalog/resources/navipedia.md) (explains)
+- [Integrity monitoring for alt-PNT: solution-separation FDE, protection levels and a Stanford diagram](../../catalog/samples/altpnt-integrity.md) (explains)
 
 _Indexed by lane(s): gnss_
 

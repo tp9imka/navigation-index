@@ -12,7 +12,7 @@ Open-source GNSS positioning and RTK package using factor graph optimization, bu
 
 **Hackathon notes:** ROS 1 + Ceres; uses RTKLIB internals for observation handling.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `factor-graph`, `rtk`, `ros`, `urban`, `ceres`
 
@@ -20,15 +20,15 @@ Open-source GNSS positioning and RTK package using factor graph optimization, bu
 
 ## Related
 
-- depends_on: [RTKLIB](../repos/tomojitakasu__rtklib.md)
-- alternative_to: [gtsam_gnss](../repos/taroz__gtsam_gnss.md)
-- integrates_with: [GLIO](../repos/xikunliu-huskit__glio.md)
+- depends_on: [RTKLIB](../../catalog/repos/tomojitakasu__rtklib.md)
+- alternative_to: [gtsam_gnss](../../catalog/repos/taroz__gtsam_gnss.md)
+- integrates_with: [GLIO](../../catalog/repos/xikunliu-huskit__glio.md)
 
 ## Referenced by
 
-- [GICI-LIB](../repos/chichengcn__gici-open.md) (alternative_to)
-- [gtsam_gnss](../repos/taroz__gtsam_gnss.md) (alternative_to)
-- [GLIO](../repos/xikunliu-huskit__glio.md) (integrates_with)
+- [GICI-LIB](../../catalog/repos/chichengcn__gici-open.md) (alternative_to)
+- [gtsam_gnss](../../catalog/repos/taroz__gtsam_gnss.md) (alternative_to)
+- [GLIO](../../catalog/repos/xikunliu-huskit__glio.md) (integrates_with)
 
 _Indexed by lane(s): gnss, ins-fusion_
 

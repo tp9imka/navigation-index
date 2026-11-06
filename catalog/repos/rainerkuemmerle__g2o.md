@@ -12,7 +12,7 @@ General framework for graph optimization, widely used for pose-graph SLAM back e
 
 **Hackathon notes:** Best for pose graphs; IMU factors are less turnkey than in GTSAM.
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `pose-graph`, `graph-optimization`
 
@@ -20,12 +20,12 @@ General framework for graph optimization, widely used for pose-graph SLAM back e
 
 ## Related
 
-- alternative_to: [GTSAM](../repos/borglab__gtsam.md)
-- alternative_to: [Ceres Solver](../repos/ceres-solver__ceres-solver.md)
+- alternative_to: [GTSAM](../../catalog/repos/borglab__gtsam.md)
+- alternative_to: [Ceres Solver](../../catalog/repos/ceres-solver__ceres-solver.md)
 
 ## Referenced by
 
-- [GTSAM](../repos/borglab__gtsam.md) (alternative_to)
+- [GTSAM](../../catalog/repos/borglab__gtsam.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 

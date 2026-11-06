@@ -12,7 +12,7 @@ ROS library fusing UWB ranging with IMU for accurate 3D localization of MAV swar
 
 **Hackathon notes:** ROS 1 and dormant since 2018.
 
-**Concepts:** [RF localization and direction finding](../concepts/rf-localization.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [RF localization and direction finding](../../catalog/concepts/rf-localization.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `uwb`, `imu`, `swarm`
 
@@ -20,7 +20,12 @@ ROS library fusing UWB ranging with IMU for accurate 3D localization of MAV swar
 
 ## Related
 
-- alternative_to: [Loco Positioning node firmware](../repos/bitcraze__lps-node-firmware.md)
+- alternative_to: [Loco Positioning node firmware](../../catalog/repos/bitcraze__lps-node-firmware.md)
+
+## Referenced by
+
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Cooperative localization for a GNSS-denied team: UWB ranging, centralized EKF vs covariance intersection, and a spoofed anchor](../../catalog/samples/swarm-coop-localization.md) (explains)
 
 _Indexed by lane(s): domains-swarm_
 

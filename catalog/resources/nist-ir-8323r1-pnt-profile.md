@@ -12,12 +12,18 @@ Maps the NIST Cybersecurity Framework functions (identify, protect, detect, resp
 - Organized around CSF functions, applicable to both GNSS and non-GNSS sources
 - NIST has signalled alignment with CSF 2.0
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Policy, export control and ethics](../concepts/policy-ethics.md), [Timing and time transfer](../concepts/timing.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md), [Timing and time transfer](../../catalog/concepts/timing.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `nist`, `cybersecurity-framework`, `pnt-profile`
 
 ## Related
 
-- cites: [Executive Order 13905: Strengthening National Resilience Through Responsible Use of PNT Services](../resources/eo-13905-responsible-pnt.md)
+- cites: [Executive Order 13905: Strengthening National Resilience Through Responsible Use of PNT Services](../../catalog/resources/eo-13905-responsible-pnt.md)
+
+## Referenced by
+
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 
 _Indexed by lane(s): docs-standards_

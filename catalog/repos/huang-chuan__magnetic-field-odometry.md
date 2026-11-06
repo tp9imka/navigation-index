@@ -12,7 +12,7 @@ MATLAB simulation of a tightly-integrated magnetic-field aided INS using a magne
 
 **Hackathon notes:** MATLAB simulation only, no real data. GPL-3.0.
 
-**Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `magnetometer-array`, `odometry`
 
@@ -20,7 +20,7 @@ MATLAB simulation of a tightly-integrated magnetic-field aided INS using a magne
 
 ## Referenced by
 
-- [MAINS](../repos/huang-chuan__mainsvsmagekf.md) (same_org)
+- [MAINS](../../catalog/repos/huang-chuan__mainsvsmagekf.md) (same_org)
 
 _Indexed by lane(s): round3-expansion_
 

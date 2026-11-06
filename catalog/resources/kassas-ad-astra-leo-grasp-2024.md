@@ -11,18 +11,20 @@ UPenn GRASP seminar by Zak Kassas on opportunistic PNT from Starlink, OneWeb and
 - LEO signals of opportunity as a GNSS backup
 - Covers SDR receiver design to navigation filter
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [Space and orbital navigation](../concepts/space-nav.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `kassas`, `leo-pnt`, `starlink`
 
 ## Related
 
-- same_author: [LTE Receiver Design and Multipath Analysis for Navigation in Urban Environments](../resources/ion-webinar-shamaei-kassas.md)
+- same_author: [LTE Receiver Design and Multipath Analysis for Navigation in Urban Environments](../../catalog/resources/ion-webinar-shamaei-kassas.md)
 
 ## Referenced by
 
-- [Unveiling Starlink for PNT](../resources/ion-webinar-kozhaya.md) (part_of)
-- [LTE Receiver Design and Multipath Analysis for Navigation in Urban Environments](../resources/ion-webinar-shamaei-kassas.md) (same_author)
-- [Ad Astra: Navigation with Megaconstellation LEO Satellites (IEEE AESS video)](../resources/kassas-ad-astra-aess-video.md) (same_author)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [Unveiling Starlink for PNT](../../catalog/resources/ion-webinar-kozhaya.md) (part_of)
+- [LTE Receiver Design and Multipath Analysis for Navigation in Urban Environments](../../catalog/resources/ion-webinar-shamaei-kassas.md) (same_author)
+- [Ad Astra: Navigation with Megaconstellation LEO Satellites (IEEE AESS video)](../../catalog/resources/kassas-ad-astra-aess-video.md) (same_author)
 
 _Indexed by lane(s): learning_

@@ -11,16 +11,18 @@ Self-paced edX course on Bayesian filtering: state-space and motion/measurement 
 - Rigorous but practical nonlinear filtering
 - Pairs with Chalmers' multi-object tracking course
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 
 **Tags:** `edx`, `chalmers`, `particle-filter`
 
 ## Related
 
-- same_author: [Multi-Object Tracking for Automotive Systems (edX)](../resources/chalmers-multi-object-tracking.md)
+- same_author: [Multi-Object Tracking for Automotive Systems (edX)](../../catalog/resources/chalmers-multi-object-tracking.md)
 
 ## Referenced by
 
-- [Multi-Object Tracking for Automotive Systems (edX)](../resources/chalmers-multi-object-tracking.md) (same_author)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
+- [Multi-Object Tracking for Automotive Systems (edX)](../../catalog/resources/chalmers-multi-object-tracking.md) (same_author)
 
 _Indexed by lane(s): learning_

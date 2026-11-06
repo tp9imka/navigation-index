@@ -12,7 +12,7 @@ Large collection of readable Python implementations of robotics algorithms: loca
 
 **Hackathon notes:** Pure numpy/matplotlib; no build. Good for a quick 2D planner over a rasterized DEM.
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `education`, `a-star`, `rrt`, `ekf`, `particle-filter`
 
@@ -20,11 +20,14 @@ Large collection of readable Python implementations of robotics algorithms: loca
 
 ## Related
 
-- alternative_to: [OMPL - Open Motion Planning Library](../repos/ompl__ompl.md)
+- alternative_to: [OMPL - Open Motion Planning Library](../../catalog/repos/ompl__ompl.md)
 
 ## Referenced by
 
-- [OMPL - Open Motion Planning Library](../repos/ompl__ompl.md) (alternative_to)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [OMPL - Open Motion Planning Library](../../catalog/repos/ompl__ompl.md) (alternative_to)
 
 _Indexed by lane(s): planning-gis-c2_
 

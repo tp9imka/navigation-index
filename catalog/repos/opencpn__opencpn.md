@@ -12,7 +12,12 @@ Cross-platform open-source chartplotter and navigation application that displays
 
 **Hackathon notes:** Install the packaged build, feed it NMEA over UDP/TCP from your own nav filter or a simulator and you have a chart display in minutes. Writing a plugin needs the plugin SDK and a full C++ build.
 
-**Concepts:** [Maritime navigation](../concepts/maritime-nav.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [opencpn__opencpn](../../docs/integration-cards/opencpn__opencpn.md) (integration-cards)
+
+**Concepts:** [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `chartplotter`, `s57`, `ais`, `nmea0183`, `plugins`
 
@@ -20,15 +25,21 @@ Cross-platform open-source chartplotter and navigation application that displays
 
 ## Related
 
-- integrates_with: [OpenCPN radar_pi](../repos/opencpn-radar-pi__radar_pi.md)
-- integrates_with: [Signal K Server](../repos/signalk__signalk-server.md)
-- integrates_with: [AIS-catcher](../repos/jvde-github__ais-catcher.md)
+- integrates_with: [OpenCPN radar_pi](../../catalog/repos/opencpn-radar-pi__radar_pi.md)
+- integrates_with: [Signal K Server](../../catalog/repos/signalk__signalk-server.md)
+- integrates_with: [AIS-catcher](../../catalog/repos/jvde-github__ais-catcher.md)
 
 ## Referenced by
 
-- [AIS-catcher](../repos/jvde-github__ais-catcher.md) (integrates_with)
-- [OpenCPN radar_pi](../repos/opencpn-radar-pi__radar_pi.md) (extends)
-- [Signal K Server](../repos/signalk__signalk-server.md) (integrates_with)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [AIS-catcher](../../catalog/repos/jvde-github__ais-catcher.md) (integrates_with)
+- [OpenCPN radar_pi](../../catalog/repos/opencpn-radar-pi__radar_pi.md) (extends)
+- [Signal K Server](../../catalog/repos/signalk__signalk-server.md) (integrates_with)
+- [GNSS spoofing signatures in real AIS tracks: detectors, injected ground truth, GeoJSON and CoT](../../catalog/samples/maritime-ais-spoofing.md) (explains)
+- [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) (explains)
 
 _Indexed by lane(s): domains-swarm_
 

@@ -11,13 +11,13 @@ Open raw IQ recordings (GPS L1 C/A and Galileo E1, LabSat 3 Wideband) from Jamme
 - Real spoofing IQ data under open licence
 - Usable with FGI-GSRx software receiver
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Jamming and spoofing](../concepts/gnss-interference.md), [Software-defined GNSS receivers](../concepts/gnss-sdr.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md)
 
 **Tags:** `jammertest`, `fgi`, `iq`, `spoofing`
 
 ## Related
 
-- has_code: [FGI-GSRx](../repos/nlsfi__fgi-gsrx.md)
-- part_of: [Jammertest - open GNSS jamming and spoofing test event (Andoya, Norway)](../resources/jammertest-norway.md)
+- has_code: [FGI-GSRx](../../catalog/repos/nlsfi__fgi-gsrx.md)
+- part_of: [Jammertest - open GNSS jamming and spoofing test event (Andoya, Norway)](../../catalog/resources/jammertest-norway.md)
 
 _Indexed by lane(s): round3-expansion_

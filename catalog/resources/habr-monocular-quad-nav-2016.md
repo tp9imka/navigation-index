@@ -15,8 +15,14 @@ English: 'Quadcopter navigation using monocular vision'. Walk-through of monocul
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
 **Tags:** `lang:ru`, `habr`, `monocular`
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_

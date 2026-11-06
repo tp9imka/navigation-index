@@ -17,7 +17,7 @@ Pure JavaScript library generating MIL-STD-2525 (B/C/D/E) and APP-6 (B/D/E) mili
 - [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [spatialillusions__milsymbol](../../docs/integration-cards/spatialillusions__milsymbol.md) (integration-cards)
 
-**Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `mil-std-2525`, `app-6`, `svg`, `symbology`
 
@@ -25,17 +25,22 @@ Pure JavaScript library generating MIL-STD-2525 (B/C/D/E) and APP-6 (B/D/E) mili
 
 ## Related
 
-- integrates_with: [Leaflet](../repos/leaflet__leaflet.md)
-- alternative_to: [Joint Military Symbology XML](../repos/esri__joint-military-symbology-xml.md)
+- integrates_with: [Leaflet](../../catalog/repos/leaflet__leaflet.md)
+- alternative_to: [Joint Military Symbology XML](../../catalog/repos/esri__joint-military-symbology-xml.md)
 
 ## Referenced by
 
-- [Joint Military Symbology XML](../repos/esri__joint-military-symbology-xml.md) (alternative_to)
-- [Leaflet](../repos/leaflet__leaflet.md) (integrates_with)
-- [mil-sym-ts](../repos/missioncommand__mil-sym-ts.md) (alternative_to)
-- [NATO Joint Military Symbology (APP-6) - overview](../resources/app-6-joint-military-symbology.md) (has_code)
-- [MIL-STD-2525 Joint Military Symbology - overview](../resources/mil-std-2525-overview.md) (has_code)
-- [MIL-STD-2525D Joint Military Symbology](../resources/mil-std-2525d.md) (has_code)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Joint Military Symbology XML](../../catalog/repos/esri__joint-military-symbology-xml.md) (alternative_to)
+- [Leaflet](../../catalog/repos/leaflet__leaflet.md) (integrates_with)
+- [mil-sym-ts](../../catalog/repos/missioncommand__mil-sym-ts.md) (alternative_to)
+- [NATO Joint Military Symbology (APP-6) - overview](../../catalog/resources/app-6-joint-military-symbology.md) (has_code)
+- [MIL-STD-2525 Joint Military Symbology - overview](../../catalog/resources/mil-std-2525-overview.md) (has_code)
+- [MIL-STD-2525D Joint Military Symbology](../../catalog/resources/mil-std-2525d.md) (has_code)
 
 _Indexed by lane(s): planning-gis-c2_
 

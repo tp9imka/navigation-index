@@ -12,7 +12,7 @@ Optimization-based, point-uncertainty-aware radar-inertial odometry for 4D radar
 
 **Hackathon notes:** ROS1 build; run on public 4D radar datasets.
 
-**Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `4d-radar`, `radar-inertial`, `optimization`
 
@@ -20,12 +20,12 @@ Optimization-based, point-uncertainty-aware radar-inertial odometry for 4D radar
 
 ## Related
 
-- alternative_to: [RIO](../repos/christopherdoer__rio.md)
-- alternative_to: [ETH Radar-Inertial Odometry](../repos/ethz-asl__rio.md)
+- alternative_to: [RIO](../../catalog/repos/christopherdoer__rio.md)
+- alternative_to: [ETH Radar-Inertial Odometry](../../catalog/repos/ethz-asl__rio.md)
 
 ## Referenced by
 
-- [ETH Radar-Inertial Odometry](../repos/ethz-asl__rio.md) (alternative_to)
+- [ETH Radar-Inertial Odometry](../../catalog/repos/ethz-asl__rio.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

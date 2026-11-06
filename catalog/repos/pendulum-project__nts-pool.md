@@ -12,7 +12,7 @@ Server side for a pool of NTS time servers: a key-exchange front end that hands 
 
 **Hackathon notes:** Background reading for the authenticated-time story; not needed to build a demo.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `nts`, `ntp-pool`, `rust`
 
@@ -20,11 +20,11 @@ Server side for a pool of NTS time servers: a key-exchange front end that hands 
 
 ## Related
 
-- same_org: [ntpd-rs](../repos/pendulum-project__ntpd-rs.md)
+- same_org: [ntpd-rs](../../catalog/repos/pendulum-project__ntpd-rs.md)
 
 ## Referenced by
 
-- [ntpd-rs](../repos/pendulum-project__ntpd-rs.md) (same_org)
+- [ntpd-rs](../../catalog/repos/pendulum-project__ntpd-rs.md) (same_org)
 
 _Indexed by lane(s): timing_
 

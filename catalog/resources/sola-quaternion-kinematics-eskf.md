@@ -18,19 +18,21 @@ Long tutorial report covering quaternion conventions, rotation perturbations and
 
 - [sola-quaternion-kinematics-eskf](../../docs/paper-digests/sola-quaternion-kinematics-eskf.md) (paper-digests)
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [GNSS/INS integration](../concepts/gnss-ins.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md)
 
 **Tags:** `eskf`, `quaternion`, `tutorial`, `imu`, `sola`
 
 ## Related
 
-- has_code: [ESKF (je310)](../repos/je310__eskf.md)
-- same_author: [manif](../repos/artivis__manif.md)
-- same_author: [A micro Lie theory for state estimation in robotics](../resources/sola-micro-lie-theory.md)
-- same_author: [SLAM Toolbox (MATLAB)](../repos/joansola__slamtb.md)
+- has_code: [ESKF (je310)](../../catalog/repos/je310__eskf.md)
+- same_author: [manif](../../catalog/repos/artivis__manif.md)
+- same_author: [A micro Lie theory for state estimation in robotics](../../catalog/resources/sola-micro-lie-theory.md)
+- same_author: [SLAM Toolbox (MATLAB)](../../catalog/repos/joansola__slamtb.md)
 
 ## Referenced by
 
-- [A micro Lie theory for state estimation in robotics](../resources/sola-micro-lie-theory.md) (same_author)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
+- [A micro Lie theory for state estimation in robotics](../../catalog/resources/sola-micro-lie-theory.md) (same_author)
 
 _Indexed by lane(s): ins-fusion, learning_

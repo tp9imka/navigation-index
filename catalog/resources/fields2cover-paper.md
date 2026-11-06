@@ -10,12 +10,16 @@ Paper behind the Fields2Cover library: modular coverage pipeline (headlands, swa
 
 - Coverage planning decomposes cleanly into swath generation, ordering and turning
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [Mission planning and routing](../concepts/mission-planning.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 
 **Tags:** `coverage`
 
 ## Related
 
-- has_code: [Fields2Cover](../repos/fields2cover__fields2cover.md)
+- has_code: [Fields2Cover](../../catalog/repos/fields2cover__fields2cover.md)
+
+## Referenced by
+
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 
 _Indexed by lane(s): planning-gis-c2_

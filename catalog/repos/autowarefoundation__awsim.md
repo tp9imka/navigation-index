@@ -10,9 +10,9 @@ Unity-based digital-twin simulator for Autoware with simulated lidar, camera, GN
 
 **Why it matters:** Lets a team exercise Autoware localization without a car.
 
-**Hackathon notes:** Prebuilt binaries for Ubuntu with an NVIDIA GPU.
+**Hackathon notes:** Prebuilt binaries for Ubuntu with an NVIDIA GPU. Licence is split: code Apache-2.0, but assets (including release content) are CC BY-NC, so non-commercial use only, and the docs may not be publicly re-hosted.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 
 **Tags:** `unity`, `simulator`, `autoware`
 
@@ -20,11 +20,11 @@ Unity-based digital-twin simulator for Autoware with simulated lidar, camera, GN
 
 ## Related
 
-- integrates_with: [Autoware](../repos/autowarefoundation__autoware.md)
+- integrates_with: [Autoware](../../catalog/repos/autowarefoundation__autoware.md)
 
 ## Referenced by
 
-- [Autoware](../repos/autowarefoundation__autoware.md) (integrates_with)
+- [Autoware](../../catalog/repos/autowarefoundation__autoware.md) (integrates_with)
 
 _Indexed by lane(s): domains-swarm_
 

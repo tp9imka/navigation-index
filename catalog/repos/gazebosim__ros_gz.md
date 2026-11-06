@@ -12,7 +12,12 @@ Bridge packages that relay topics, services and clock between Gazebo Sim transpo
 
 **Hackathon notes:** Use parameter_bridge with a YAML of topic mappings. Match the ros_gz branch to your ROS 2 distro and Gazebo release or builds fail.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+## Deep dives
+
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [gazebosim__ros_gz](../../docs/integration-cards/gazebosim__ros_gz.md) (integration-cards)
+
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `gazebo`, `ros2`, `bridge`
 
@@ -20,11 +25,12 @@ Bridge packages that relay topics, services and clock between Gazebo Sim transpo
 
 ## Related
 
-- integrates_with: [Gazebo Sim (gz-sim)](../repos/gazebosim__gz-sim.md)
+- integrates_with: [Gazebo Sim (gz-sim)](../../catalog/repos/gazebosim__gz-sim.md)
 
 ## Referenced by
 
-- [Gazebo Sim (gz-sim)](../repos/gazebosim__gz-sim.md) (integrates_with)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Gazebo Sim (gz-sim)](../../catalog/repos/gazebosim__gz-sim.md) (integrates_with)
 
 _Indexed by lane(s): sim-data_
 

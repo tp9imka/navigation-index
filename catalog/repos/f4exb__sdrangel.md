@@ -12,7 +12,7 @@ General SDR receive/transmit application with many demodulator plugins; its Radi
 
 **Hackathon notes:** Install packages or the Docker image; add the Radio Clock channel.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Signals of opportunity](../concepts/signals-of-opportunity.md), [Software-defined GNSS receivers](../concepts/gnss-sdr.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md)
 
 **Tags:** `sdr`, `dcf77`, `wwvb`, `msf`, `radio-clock`
 
@@ -20,12 +20,13 @@ General SDR receive/transmit application with many demodulator plugins; its Radi
 
 ## Related
 
-- alternative_to: [gr_DCF77_Receiver](../repos/henningm1r__gr_dcf77_receiver.md)
+- alternative_to: [gr_DCF77_Receiver](../../catalog/repos/henningm1r__gr_dcf77_receiver.md)
 
 ## Referenced by
 
-- [gr_DCF77_Receiver](../repos/henningm1r__gr_dcf77_receiver.md) (alternative_to)
-- [NIST Radio Station WWVB](../resources/nist-wwvb.md) (has_code)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [gr_DCF77_Receiver](../../catalog/repos/henningm1r__gr_dcf77_receiver.md) (alternative_to)
+- [NIST Radio Station WWVB](../../catalog/resources/nist-wwvb.md) (has_code)
 
 _Indexed by lane(s): timing_
 

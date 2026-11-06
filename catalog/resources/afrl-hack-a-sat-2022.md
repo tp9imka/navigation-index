@@ -11,8 +11,12 @@ AFRL/Space Force capture-the-flag on satellite and ground-segment security; chal
 - Space-segment security is part of assured PNT
 - Released challenges are good training material
 
-**Concepts:** [Space and orbital navigation](../concepts/space-nav.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Space and orbital navigation](../../catalog/concepts/space-nav.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `afrl`, `space-force`, `ctf`
+
+## Referenced by
+
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 
 _Indexed by lane(s): defense-context_

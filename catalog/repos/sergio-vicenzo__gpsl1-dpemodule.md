@@ -12,7 +12,7 @@ Plug-in module adding Direct Position Estimation (positioning directly in the co
 
 **Hackathon notes:** Research code; computationally heavy. Useful as a stretch comparison against conventional tracking.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Software-defined GNSS receivers](../concepts/gnss-sdr.md), [Jamming and spoofing](../concepts/gnss-interference.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
 **Tags:** `dpe`, `matlab`, `research`
 
@@ -20,7 +20,7 @@ Plug-in module adding Direct Position Estimation (positioning directly in the co
 
 ## Related
 
-- extends: [SoftGNSS v3.0 (maintained copy)](../repos/tmboc__softgnss.md)
+- extends: [SoftGNSS v3.0 (maintained copy)](../../catalog/repos/tmboc__softgnss.md)
 
 _Indexed by lane(s): gnss_
 

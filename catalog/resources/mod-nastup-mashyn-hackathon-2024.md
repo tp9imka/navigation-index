@@ -16,8 +16,14 @@ English: '12 winners and a $120,000 prize pool: results of the Onslaught of Mach
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `lang:uk`, `mod`, `hackathon`, `problem-areas`
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_

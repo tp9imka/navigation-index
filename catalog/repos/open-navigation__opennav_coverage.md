@@ -10,9 +10,9 @@ Nav2-compatible complete-coverage task server and navigator built on Fields2Cove
 
 **Why it matters:** Gives Nav2 robots area-search and survey patterns (boustrophedon sweeps over a polygon) out of the box, useful for search, mapping and route clearance scenarios.
 
-**Hackathon notes:** Needs a source build of Fields2Cover; send a polygon in GPS or map frame and get a coverage route. Best for flat open terrain.
+**Hackathon notes:** Fields2Cover is apt-installable on Humble, Jazzy and Kilted (ros-<distro>-fields2cover 2.x); only the main branch (Lyrical) builds it from source. Send a polygon in GPS or map frame and get a coverage route. Best for flat open terrain.
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [Mission planning and routing](../concepts/mission-planning.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `coverage`, `nav2`, `fields2cover`, `boustrophedon`
 
@@ -20,13 +20,13 @@ Nav2-compatible complete-coverage task server and navigator built on Fields2Cove
 
 ## Related
 
-- extends: [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md)
-- depends_on: [Fields2Cover](../repos/fields2cover__fields2cover.md)
+- extends: [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md)
+- depends_on: [Fields2Cover](../../catalog/repos/fields2cover__fields2cover.md)
 
 ## Referenced by
 
-- [Fields2Cover](../repos/fields2cover__fields2cover.md) (integrates_with)
-- [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md) (extends)
+- [Fields2Cover](../../catalog/repos/fields2cover__fields2cover.md) (integrates_with)
+- [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md) (extends)
 
 _Indexed by lane(s): planning-gis-c2_
 

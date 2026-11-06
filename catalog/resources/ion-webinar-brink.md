@@ -10,12 +10,12 @@ AFRL perspective on relative navigation for fixed-wing aircraft without GPS, kee
 
 - Relative navigation frames tame unobservable global drift
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Autopilots and flight control](../concepts/autopilot.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
 **Tags:** `afrl`, `fixed-wing`, `relative-nav`, `ion`, `webinar`
 
 ## Related
 
-- part_of: [ION Webinar Series (archive and YouTube recordings)](../resources/ion-webinar-series.md)
+- part_of: [ION Webinar Series (archive and YouTube recordings)](../../catalog/resources/ion-webinar-series.md)
 
 _Indexed by lane(s): learning_

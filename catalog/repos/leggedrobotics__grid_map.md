@@ -12,7 +12,7 @@ Universal multi-layer 2.5D grid map library for mobile robots with ROS/ROS 2 int
 
 **Hackathon notes:** Available as ROS 2 binaries; load a GeoTIFF DEM (via GDAL) into a grid_map layer for terrain-aware costs.
 
-**Concepts:** [GIS, maps and geospatial data](../concepts/gis-mapping.md), [Path and motion planning](../concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `grid-map`, `elevation`, `costmap`
 
@@ -20,12 +20,12 @@ Universal multi-layer 2.5D grid map library for mobile robots with ROS/ROS 2 int
 
 ## Related
 
-- integrates_with: [elevation_mapping_cupy](../repos/leggedrobotics__elevation_mapping_cupy.md)
-- integrates_with: [GDAL](../repos/osgeo__gdal.md)
+- integrates_with: [elevation_mapping_cupy](../../catalog/repos/leggedrobotics__elevation_mapping_cupy.md)
+- integrates_with: [GDAL](../../catalog/repos/osgeo__gdal.md)
 
 ## Referenced by
 
-- [elevation_mapping_cupy](../repos/leggedrobotics__elevation_mapping_cupy.md) (depends_on)
+- [elevation_mapping_cupy](../../catalog/repos/leggedrobotics__elevation_mapping_cupy.md) (depends_on)
 
 _Indexed by lane(s): planning-gis-c2_
 

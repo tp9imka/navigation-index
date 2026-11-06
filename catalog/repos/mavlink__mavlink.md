@@ -12,7 +12,12 @@ Message definitions (XML dialects) and the pymavlink-based generator for the MAV
 
 **Hackathon notes:** Add a custom dialect XML and regenerate bindings to prototype new messages (e.g. a jamming-detection report).
 
-**Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Standards and interface specs](../concepts/standards.md)
+## Deep dives
+
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [mavlink__mavlink](../../docs/integration-cards/mavlink__mavlink.md) (integration-cards)
+
+**Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `protocol`, `xml`, `dialects`, `generator`
 
@@ -20,22 +25,25 @@ Message definitions (XML dialects) and the pymavlink-based generator for the MAV
 
 ## Related
 
-- depends_on: [pymavlink](../repos/ardupilot__pymavlink.md)
-- same_org: [MAVLink Developer Guide](../repos/mavlink__mavlink-devguide.md)
+- depends_on: [pymavlink](../../catalog/repos/ardupilot__pymavlink.md)
+- same_org: [MAVLink Developer Guide](../../catalog/repos/mavlink__mavlink-devguide.md)
 
 ## Referenced by
 
-- [node-mavlink](../repos/ardupilot__node-mavlink.md) (depends_on)
-- [pymavlink](../repos/ardupilot__pymavlink.md) (depends_on)
-- [MAVLink Developer Guide](../repos/mavlink__mavlink-devguide.md) (same_org)
-- [rust-mavlink](../repos/mavlink__rust-mavlink.md) (depends_on)
-- [MAVLink 2 and Message Signing](../resources/mavlink-2-signing.md) (has_code)
-- [MAVLink Common Message Set (common.xml)](../resources/mavlink-common-messages.md) (has_code)
-- [MAVLink Developer Guide](../resources/mavlink-developer-guide.md) (has_code)
-- [MAVLink Mission Protocol](../resources/mavlink-mission-protocol.md) (has_code)
-- [Open Drone ID (MAVLink microservice)](../resources/mavlink-opendroneid-microservice.md) (explains)
-- [ArduPilot EKF3 source-set switch under GPS denial](../samples/ardupilot-ekf3-source-switch.md) (explains)
-- [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) (uses)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [node-mavlink](../../catalog/repos/ardupilot__node-mavlink.md) (depends_on)
+- [pymavlink](../../catalog/repos/ardupilot__pymavlink.md) (depends_on)
+- [MAVLink Developer Guide](../../catalog/repos/mavlink__mavlink-devguide.md) (same_org)
+- [rust-mavlink](../../catalog/repos/mavlink__rust-mavlink.md) (depends_on)
+- [MAVLink 2 and Message Signing](../../catalog/resources/mavlink-2-signing.md) (has_code)
+- [MAVLink Common Message Set (common.xml)](../../catalog/resources/mavlink-common-messages.md) (has_code)
+- [MAVLink Developer Guide](../../catalog/resources/mavlink-developer-guide.md) (has_code)
+- [MAVLink Mission Protocol](../../catalog/resources/mavlink-mission-protocol.md) (has_code)
+- [Open Drone ID](../../catalog/resources/mavlink-opendroneid-microservice.md) (explains)
+- [ArduPilot EKF3 source-set switch under GPS denial](../../catalog/samples/ardupilot-ekf3-source-switch.md) (explains)
+- [Golden demo on PX4 v1.17 SIH: coherent GPS drag via HIL_GPS, integrity monitor (SS + PL, GNSS-vs-VIO velocity), EKF2 switch from GNSS to external vision, comparison with ArduPilot, dashboard replay](../../catalog/samples/golden-demo-px4.md) (uses)
+- [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../../catalog/samples/vio-to-mavlink-bridge.md) (uses)
 
 _Indexed by lane(s): autopilots_
 

@@ -11,12 +11,18 @@ Stanford MOOC (originally on Coursera) now freely available as a long video seri
 - Best intro to pseudoranges and receiver basics
 - Smartphone labs pair with Android raw GNSS measurements
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Software-defined GNSS receivers](../concepts/gnss-sdr.md), [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md), [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `stanford`, `mooc`, `smartphone`
 
 ## Related
 
-- uses: [GPS Measurement Tools (incl. GnssLogger)](../repos/google__gps-measurement-tools.md)
+- uses: [GPS Measurement Tools (incl. GnssLogger)](../../catalog/repos/google__gps-measurement-tools.md)
+
+## Referenced by
+
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 
 _Indexed by lane(s): learning_

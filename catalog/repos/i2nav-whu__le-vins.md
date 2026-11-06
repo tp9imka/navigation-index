@@ -12,7 +12,7 @@ INS-centric visual-inertial navigation with LiDAR depth enhancement for visual f
 
 **Hackathon notes:** Needs camera+LiDAR+IMU data; research code.
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `lidar-enhanced`, `i2nav`
 
@@ -20,11 +20,11 @@ INS-centric visual-inertial navigation with LiDAR depth enhancement for visual f
 
 ## Related
 
-- same_org: [IC-GVINS](../repos/i2nav-whu__ic-gvins.md)
+- same_org: [IC-GVINS](../../catalog/repos/i2nav-whu__ic-gvins.md)
 
 ## Referenced by
 
-- [IC-GVINS](../repos/i2nav-whu__ic-gvins.md) (same_org)
+- [IC-GVINS](../../catalog/repos/i2nav-whu__ic-gvins.md) (same_org)
 
 _Indexed by lane(s): ins-fusion_
 

@@ -12,7 +12,12 @@ Symmetry-preserving (invariant) state estimation library from University of Mich
 
 **Hackathon notes:** Has ROS examples; try on a wheeled robot bag for GNSS-free odometry.
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+## Deep dives
+
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [umich-curly__drift](../../docs/integration-cards/umich-curly__drift.md) (integration-cards)
+
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `inekf`, `dead-reckoning`, `legged`, `wheeled`
 
@@ -20,12 +25,13 @@ Symmetry-preserving (invariant) state estimation library from University of Mich
 
 ## Related
 
-- extends: [invariant-ekf (Hartley InEKF)](../repos/rosshartley__invariant-ekf.md)
+- extends: [invariant-ekf (Hartley InEKF)](../../catalog/repos/rosshartley__invariant-ekf.md)
 
 ## Referenced by
 
-- [invariant-ekf (Hartley InEKF)](../repos/rosshartley__invariant-ekf.md) (extends)
-- [The invariant extended Kalman filter as a stable observer](../resources/barrau-bonnabel-invariant-ekf.md) (explains)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [invariant-ekf (Hartley InEKF)](../../catalog/repos/rosshartley__invariant-ekf.md) (extends)
+- [The invariant extended Kalman filter as a stable observer](../../catalog/resources/barrau-bonnabel-invariant-ekf.md) (explains)
 
 _Indexed by lane(s): ins-fusion_
 

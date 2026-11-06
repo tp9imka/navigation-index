@@ -12,7 +12,7 @@ Documentation hub for WarDragon, an SDR-based RF sensing appliance for drone det
 
 **Hackathon notes:** Docs only; follow links to the open component repos.
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `sdr`, `rf-detection`, `docs`
 
@@ -20,13 +20,13 @@ Documentation hub for WarDragon, an SDR-based RF sensing appliance for drone det
 
 ## Related
 
-- same_org: [DragonSync](../repos/alphafox02__dragonsync.md)
-- same_org: [WarDragon FPV energy scan](../repos/alphafox02__wardragon-fpv-detect.md)
+- same_org: [DragonSync](../../catalog/repos/alphafox02__dragonsync.md)
+- same_org: [WarDragon FPV energy scan](../../catalog/repos/alphafox02__wardragon-fpv-detect.md)
 
 ## Referenced by
 
-- [DragonSync](../repos/alphafox02__dragonsync.md) (same_org)
-- [WarDragon FPV energy scan](../repos/alphafox02__wardragon-fpv-detect.md) (same_org)
+- [DragonSync](../../catalog/repos/alphafox02__dragonsync.md) (same_org)
+- [WarDragon FPV energy scan](../../catalog/repos/alphafox02__wardragon-fpv-detect.md) (same_org)
 
 _Indexed by lane(s): domains-swarm_
 

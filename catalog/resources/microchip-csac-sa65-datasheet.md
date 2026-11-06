@@ -11,12 +11,13 @@ Datasheet for the SA65 CSAC: ADEV 3e-10 at 1 s, typical aging below 9e-10 per mo
 - Low power atomic holdover for portable and battery systems
 - 1PPS input to discipline it from a GNSS receiver
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `csac`, `atomic-clock`, `datasheet`, `holdover`
 
 ## Referenced by
 
-- [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../samples/timing-holdover.md) (uses)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../../catalog/samples/timing-holdover.md) (uses)
 
 _Indexed by lane(s): timing_

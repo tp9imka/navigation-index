@@ -11,13 +11,17 @@ Meta's PTP architecture: Time Appliance racks, unicast PTP through transparent c
 - Publish an uncertainty bound with time, not just time
 - Holdover is signalled to clients through clockClass
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `ptp`, `meta`, `holdover`, `window-of-uncertainty`
 
 ## Related
 
-- has_code: [Meta Time libraries](../repos/meta__time.md)
-- uses: [OCP Time Card](../repos/time-appliances-project__time-card.md)
+- has_code: [Meta Time libraries](../../catalog/repos/meta__time.md)
+- uses: [OCP Time Card](../../catalog/repos/time-appliances-project__time-card.md)
+
+## Referenced by
+
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 
 _Indexed by lane(s): timing_

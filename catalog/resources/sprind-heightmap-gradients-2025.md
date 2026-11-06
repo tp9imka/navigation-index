@@ -17,18 +17,18 @@ Describes the winning SPRIN-D Fully Autonomous Flight system: LiDAR local height
 
 - [ctu-sprind-terrain-nav](../../docs/paper-digests/ctu-sprind-terrain-nav.md) (paper-digests)
 
-**Concepts:** [Terrain-relative navigation](../concepts/terrain-nav.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `sprind`, `ctu`, `particle-filter`, `icra2026`
 
 ## Related
 
-- uses: [MRS UAV System](../repos/ctu-mrs__mrs_uav_system.md)
-- part_of: [SPRIND Fully Autonomous Flight challenge](../resources/sprind-fully-autonomous-flight.md)
+- uses: [MRS UAV System](../../catalog/repos/ctu-mrs__mrs_uav_system.md)
+- part_of: [SPRIND Fully Autonomous Flight challenge](../../catalog/resources/sprind-fully-autonomous-flight.md)
 
 ## Referenced by
 
-- [SPRIND Fully Autonomous Flight challenge](../resources/sprind-fully-autonomous-flight.md) (explains)
-- [Heightmap-gradient particle filter on real Copernicus DEM (SPRIN-D CTU method) vs TERCOM](../samples/terrain-heightmap-pf.md) (explains)
+- [SPRIND Fully Autonomous Flight challenge](../../catalog/resources/sprind-fully-autonomous-flight.md) (explains)
+- [Heightmap-gradient particle filter on real DEM and 1 m LiDAR (SPRIN-D CTU method) vs TERCOM](../../catalog/samples/terrain-heightmap-pf.md) (explains)
 
 _Indexed by lane(s): round3-expansion_

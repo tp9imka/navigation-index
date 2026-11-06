@@ -6,13 +6,13 @@
 |---|---|---|---|---|---|---|
 | 173 | Python | GPL-3.0 | 2026-11-06 | False | production | low |
 
-Guided step-by-step parameter configuration tool for ArduPilot vehicles.
+Guided step-by-step parameter configuration tool for ArduPilot vehicles; the sequence is complete for ArduCopter, while Plane, Heli and Rover guides are still incomplete.
 
 **Why it matters:** Reduces setup mistakes on new airframes, which matter more than code in short builds.
 
 **Hackathon notes:** Use when building physical ArduPilot vehicles.
 
-**Concepts:** [Autopilots and flight control](../concepts/autopilot.md)
+**Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
 **Tags:** `configuration`, `parameters`
 
@@ -20,7 +20,7 @@ Guided step-by-step parameter configuration tool for ArduPilot vehicles.
 
 ## Related
 
-- integrates_with: [ArduPilot](../repos/ardupilot__ardupilot.md)
+- integrates_with: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
 
 _Indexed by lane(s): autopilots_
 

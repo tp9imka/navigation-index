@@ -12,7 +12,7 @@ ICLR 2024 method adapting pretrained foundation models for place recognition wit
 
 **Hackathon notes:** Used by Visual-Locator for UAV retrieval.
 
-**Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md)
+**Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 
 **Tags:** `adapter`, `foundation-model`
 
@@ -20,11 +20,11 @@ ICLR 2024 method adapting pretrained foundation models for place recognition wit
 
 ## Related
 
-- integrates_with: [Visual Locator](../repos/rtwotwo__visual-locator.md)
+- integrates_with: [Visual Locator](../../catalog/repos/rtwotwo__visual-locator.md)
 
 ## Referenced by
 
-- [Visual Locator](../repos/rtwotwo__visual-locator.md) (depends_on)
+- [Visual Locator](../../catalog/repos/rtwotwo__visual-locator.md) (depends_on)
 
 _Indexed by lane(s): alt-nav_
 

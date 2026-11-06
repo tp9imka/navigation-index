@@ -11,8 +11,13 @@ Short video series on sensor fusion for autonomous systems: what sensor fusion i
 - Clear 10-15 minute visual explanations
 - GPS+IMU episode maps directly to a nav-filter build
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [GNSS/INS integration](../concepts/gnss-ins.md), [Tracking and data association](../concepts/target-tracking.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Tracking and data association](../../catalog/concepts/target-tracking.md)
 
 **Tags:** `matlab`, `tech-talks`, `video`
+
+## Referenced by
+
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 
 _Indexed by lane(s): learning_

@@ -11,13 +11,13 @@ ION page for the 3rd Smartphone Decimeter Challenge (Google, ION Satellite Divis
 - Prize eligibility needs a technical paper and a talk at ION GNSS+ 2024, not just a Kaggle rank
 - Winners present at ION GNSS+
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [GNSS/INS integration](../concepts/gnss-ins.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md)
 
 **Tags:** `gsdc`, `ion`, `smartphone`
 
 ## Related
 
-- has_code: [GSDC 2023 solution (taroz)](../repos/taroz__gsdc2023.md)
-- part_of: [Google Smartphone Decimeter Challenge 2023-2024](../resources/google-gsdc-2023.md)
+- has_code: [GSDC 2023 solution (taroz)](../../catalog/repos/taroz__gsdc2023.md)
+- part_of: [Google Smartphone Decimeter Challenge 2023-2024](../../catalog/resources/google-gsdc-2023.md)
 
 _Indexed by lane(s): round3-expansion_

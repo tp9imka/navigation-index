@@ -12,7 +12,12 @@ Converts PyTorch models to TensorRT engines with a single call, aimed at Jetson 
 
 **Hackathon notes:** Install on a Jetson with JetPack; not every layer converts - check supported ops.
 
-**Concepts:** [Onboard / edge AI perception](../concepts/edge-ai.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [nvidia-ai-iot__torch2trt](../../docs/integration-cards/nvidia-ai-iot__torch2trt.md) (integration-cards)
+
+**Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `tensorrt`, `jetson`, `pytorch`
 
@@ -20,7 +25,7 @@ Converts PyTorch models to TensorRT engines with a single call, aimed at Jetson 
 
 ## Related
 
-- alternative_to: [Hello AI World (jetson-inference)](../repos/dusty-nv__jetson-inference.md)
+- alternative_to: [Hello AI World (jetson-inference)](../../catalog/repos/dusty-nv__jetson-inference.md)
 
 _Indexed by lane(s): gap-fill_
 

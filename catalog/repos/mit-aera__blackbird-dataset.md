@@ -16,7 +16,7 @@ MIT dataset of aggressive indoor quadrotor flights with real IMU and motor data 
 
 - [blackbird](../../docs/dataset-cards/blackbird.md) (dataset-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `quadrotor`, `aggressive`, `synthetic-vision`
 
@@ -24,11 +24,11 @@ MIT dataset of aggressive indoor quadrotor flights with real IMU and motor data 
 
 ## Related
 
-- integrates_with: [FlightGoggles](../repos/mit-aera__flightgoggles.md)
+- integrates_with: [FlightGoggles](../../catalog/repos/mit-aera__flightgoggles.md)
 
 ## Referenced by
 
-- [FlightGoggles](../repos/mit-aera__flightgoggles.md) (integrates_with)
+- [FlightGoggles](../../catalog/repos/mit-aera__flightgoggles.md) (integrates_with)
 
 _Indexed by lane(s): sim-data_
 

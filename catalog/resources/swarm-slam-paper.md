@@ -13,13 +13,17 @@ Decentralized collaborative SLAM aimed at swarms, prioritizing which inter-robot
 - Communication budget is a first-class design constraint
 - Supports LiDAR, stereo and RGB-D
 
-**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Visual SLAM](../concepts/visual-slam.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Visual SLAM](../../catalog/concepts/visual-slam.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `c-slam`, `swarm`, `ros2`
 
 ## Related
 
-- has_code: [Swarm-SLAM](../repos/mistlab__swarm-slam.md)
-- has_code: [Swarm-SLAM](../repos/lajoiepy__cslam.md)
+- has_code: [Swarm-SLAM](../../catalog/repos/mistlab__swarm-slam.md)
+- has_code: [Swarm-SLAM](../../catalog/repos/lajoiepy__cslam.md)
+
+## Referenced by
+
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 
 _Indexed by lane(s): domains-swarm, slam_

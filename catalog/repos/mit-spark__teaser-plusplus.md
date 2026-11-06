@@ -12,7 +12,7 @@ Certifiable, outlier-robust point-cloud registration library with C++, Python an
 
 **Hackathon notes:** Needs correspondences (e.g. FPFH) as input; Python bindings make it quick to prototype.
 
-**Concepts:** [Feature detection and matching](../concepts/feature-matching.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [Feature detection and matching](../../catalog/concepts/feature-matching.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `registration`, `certifiable`, `python`
 
@@ -20,11 +20,11 @@ Certifiable, outlier-robust point-cloud registration library with C++, Python an
 
 ## Related
 
-- alternative_to: [Quatro](../repos/url-kaist__quatro.md)
+- alternative_to: [Quatro](../../catalog/repos/url-kaist__quatro.md)
 
 ## Referenced by
 
-- [Quatro](../repos/url-kaist__quatro.md) (alternative_to)
+- [Quatro](../../catalog/repos/url-kaist__quatro.md) (alternative_to)
 
 _Indexed by lane(s): slam_
 

@@ -10,12 +10,16 @@ Recurring CVPR workshop and Kaggle challenge on feature matching and structure-f
 
 - State of the art in learned matchers (SuperPoint/LightGlue family)
 
-**Concepts:** [Feature detection and matching](../concepts/feature-matching.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Feature detection and matching](../../catalog/concepts/feature-matching.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `cvpr`, `workshop`, `matching`
 
 ## Related
 
-- uses: [hloc](../repos/cvg__hierarchical-localization.md)
+- uses: [hloc](../../catalog/repos/cvg__hierarchical-localization.md)
+
+## Referenced by
+
+- [Learning paths](../../docs/learning-paths.md) (mentions)
 
 _Indexed by lane(s): learning_

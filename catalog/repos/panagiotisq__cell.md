@@ -12,7 +12,7 @@ Event camera localization in prior lidar maps with confidence weighting.
 
 **Hackathon notes:** Requires event camera data; mostly a reference.
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `event-camera`, `lidar-map`
 

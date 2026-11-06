@@ -16,11 +16,17 @@ Controller for an autonomous ground cargo platform in the amr-sim simulator plus
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md)
+**Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
 **Tags:** `lang:ru`, `amr`, `kalman`, `lidar`, `hackathon`, `fastapi`, `react`
 
 **Domains:** ground
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_
 

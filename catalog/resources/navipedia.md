@@ -15,12 +15,19 @@ ESA's free wiki covering GNSS fundamentals, systems, signals, receivers, augment
 - Reliable quick reference for GNSS equations
 - Covers Galileo signal and service details
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Geodesy and coordinate frames](../concepts/geodesy.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Geodesy and coordinate frames](../../catalog/concepts/geodesy.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `navipedia`, `esa`, `encyclopedia`, `wiki`, `reference`, `galileo`
 
 ## Related
 
-- explains: [RAIM (MATLAB)](../repos/michaelbeechan__raim.md)
+- explains: [RAIM (MATLAB)](../../catalog/repos/michaelbeechan__raim.md)
+
+## Referenced by
+
+- [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 
 _Indexed by lane(s): docs-standards, gnss, learning_

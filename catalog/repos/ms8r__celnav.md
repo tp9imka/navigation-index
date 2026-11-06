@@ -12,7 +12,7 @@ Small Tkinter desktop app for celestial navigation on a boat: computes the Nauti
 
 **Hackathon notes:** Python 2 code (imports ConfigParser, Tkinter) with no commits since 2018; port the celnav.py core to Python 3 or use it as an algorithm reference. Pair with a camera-based sun or star altitude to automate a fix.
 
-**Concepts:** [Celestial and star-tracker navigation](../concepts/celestial-nav.md), [Maritime navigation](../concepts/maritime-nav.md)
+**Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md)
 
 **Tags:** `sight-reduction`, `almanac`, `sextant`, `python`
 
@@ -20,14 +20,15 @@ Small Tkinter desktop app for celestial navigation on a boat: computes the Nauti
 
 ## Related
 
-- alternative_to: [celestial-navigation toolkit](../repos/alinnman__celestial-navigation.md)
-- depends_on: [Skyfield](../repos/skyfielders__python-skyfield.md)
+- alternative_to: [celestial-navigation toolkit](../../catalog/repos/alinnman__celestial-navigation.md)
+- depends_on: [Skyfield](../../catalog/repos/skyfielders__python-skyfield.md)
 
 ## Referenced by
 
-- [navalm](../repos/kq6up__navalm.md) (alternative_to)
-- [OpenCPN celestial navigation plugin](../repos/seandepagnier__celestial_navigation_pi.md) (alternative_to)
-- [Skyfield](../repos/skyfielders__python-skyfield.md) (integrates_with)
+- [navalm](../../catalog/repos/kq6up__navalm.md) (alternative_to)
+- [OpenCPN celestial navigation plugin](../../catalog/repos/seandepagnier__celestial_navigation_pi.md) (alternative_to)
+- [Skyfield](../../catalog/repos/skyfielders__python-skyfield.md) (integrates_with)
+- [Celestial fix: cedar-solve plate solving on real star images, then position from star elevations above an IMU vertical](../../catalog/samples/celestial-star-tracker.md) (explains)
 
 _Indexed by lane(s): gap-fill_
 

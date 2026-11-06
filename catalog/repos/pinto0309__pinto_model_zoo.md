@@ -12,7 +12,7 @@ Large collection of models converted between TensorFlow, TFLite, ONNX, OpenVINO,
 
 **Hackathon notes:** Use the download scripts per model; check licences per model.
 
-**Concepts:** [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `model-zoo`, `onnx`, `tflite`, `openvino`
 
@@ -20,11 +20,11 @@ Large collection of models converted between TensorFlow, TFLite, ONNX, OpenVINO,
 
 ## Related
 
-- alternative_to: [RKNN Model Zoo](../repos/airockchip__rknn_model_zoo.md)
+- alternative_to: [RKNN Model Zoo](../../catalog/repos/airockchip__rknn_model_zoo.md)
 
 ## Referenced by
 
-- [RKNN Model Zoo](../repos/airockchip__rknn_model_zoo.md) (alternative_to)
+- [RKNN Model Zoo](../../catalog/repos/airockchip__rknn_model_zoo.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

@@ -12,7 +12,7 @@ Geoscience Australia Python module of utilities for reading and comparing GNSS p
 
 **Hackathon notes:** Niche; useful if comparing PPP solutions or product quality.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md), [Geodesy and coordinate frames](../concepts/geodesy.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md), [Geodesy and coordinate frames](../../catalog/concepts/geodesy.md)
 
 **Tags:** `python`, `sp3`, `sinex`, `ginan`
 
@@ -20,11 +20,11 @@ Geoscience Australia Python module of utilities for reading and comparing GNSS p
 
 ## Related
 
-- same_org: [Ginan](../repos/geoscienceaustralia__ginan.md)
+- same_org: [Ginan](../../catalog/repos/geoscienceaustralia__ginan.md)
 
 ## Referenced by
 
-- [Ginan](../repos/geoscienceaustralia__ginan.md) (same_org)
+- [Ginan](../../catalog/repos/geoscienceaustralia__ginan.md) (same_org)
 
 _Indexed by lane(s): gnss_
 

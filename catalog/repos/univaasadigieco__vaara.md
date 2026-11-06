@@ -16,7 +16,7 @@ University of Vaasa public GNSS dataset recorded at Jammertest 2024, released in
 
 - [jammertest-data](../../docs/dataset-cards/jammertest-data.md) (dataset-cards)
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `jammertest`, `dataset`, `spoofing`, `jamming`
 
@@ -24,16 +24,21 @@ University of Vaasa public GNSS dataset recorded at Jammertest 2024, released in
 
 ## Related
 
-- evaluated_on: [Jammertest test plan](../repos/npra__jammertest-plan.md)
-- alternative_to: [Fraunhofer IIS Jammertest 2025 dataset](../repos/felixott94__fraunhoferiis_jammertest2025.md)
+- evaluated_on: [Jammertest test plan](../../catalog/repos/npra__jammertest-plan.md)
+- alternative_to: [Fraunhofer IIS Jammertest 2025 dataset](../../catalog/repos/felixott94__fraunhoferiis_jammertest2025.md)
 
 ## Referenced by
 
-- [Fraunhofer IIS Jammertest 2025 dataset](../repos/felixott94__fraunhoferiis_jammertest2025.md) (alternative_to)
-- [Jammertest test plan](../repos/npra__jammertest-plan.md) (integrates_with)
-- [Data-Driven Analysis of PNT Resilience: Insights and Lessons from Jammertest 2024 Vehicular Data](../resources/jammertest-2024-vehicular-pnt-resilience.md) (has_code)
-- [Jammertest - open GNSS jamming and spoofing test event (Andoya, Norway)](../resources/jammertest-norway.md) (dataset_for)
-- [Most resilient GNSS receiver: results from Jammertest in Norway](../resources/septentrio-jammertest-results.md) (dataset_for)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Fraunhofer IIS Jammertest 2025 dataset](../../catalog/repos/felixott94__fraunhoferiis_jammertest2025.md) (alternative_to)
+- [Jammertest test plan](../../catalog/repos/npra__jammertest-plan.md) (integrates_with)
+- [Data-Driven Analysis of PNT Resilience: Insights and Lessons from Jammertest 2024 Vehicular Data](../../catalog/resources/jammertest-2024-vehicular-pnt-resilience.md) (has_code)
+- [Jammertest - open GNSS jamming and spoofing test event (Andoya, Norway)](../../catalog/resources/jammertest-norway.md) (dataset_for)
+- [Most resilient GNSS receiver: results from Jammertest in Norway](../../catalog/resources/septentrio-jammertest-results.md) (dataset_for)
+- [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../../catalog/samples/gnss-interference-monitor.md) (uses)
+- [Real attack replay: Jammertest 2024 u-blox logs through the GNSS interference monitor, with RTKLIB SPP](../../catalog/samples/real-attack-replay.md) (uses)
 
 _Indexed by lane(s): gap-fill_
 

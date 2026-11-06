@@ -12,7 +12,7 @@ ROS 2 MCP server from the Lincoln Centre for Autonomous Systems: tools to list a
 
 **Hackathon notes:** Smaller project; compare with ros-mcp-server before committing.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `mcp`, `ros2`, `agent`
 
@@ -20,11 +20,11 @@ ROS 2 MCP server from the Lincoln Centre for Autonomous Systems: tools to list a
 
 ## Related
 
-- alternative_to: [WiseVision ROS 2 MCP](../repos/wise-vision__ros2_mcp.md)
+- alternative_to: [WiseVision ROS 2 MCP](../../catalog/repos/wise-vision__ros2_mcp.md)
 
 ## Referenced by
 
-- [WiseVision ROS 2 MCP](../repos/wise-vision__ros2_mcp.md) (alternative_to)
+- [WiseVision ROS 2 MCP](../../catalog/repos/wise-vision__ros2_mcp.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

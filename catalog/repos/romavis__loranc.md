@@ -12,7 +12,7 @@ Hobby project to build a DSP-based Loran-C receiver that can also lock onto the 
 
 **Hackathon notes:** Hardware reference only, last touched 2014: the loop-antenna preamp and RF front-end schematics are the useful part for an LF receiver build. No signal processing code to reuse.
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `loran-c`, `chayka`, `eloran`, `lf`, `dsp`
 
@@ -20,12 +20,12 @@ Hobby project to build a DSP-based Loran-C receiver that can also lock onto the 
 
 ## Related
 
-- alternative_to: [Loran-C reference signal generator](../repos/cheolj__loran-c-reference-code.md)
+- alternative_to: [Loran-C reference signal generator](../../catalog/repos/cheolj__loran-c-reference-code.md)
 
 ## Referenced by
 
-- [Loran-C reference signal generator](../repos/cheolj__loran-c-reference-code.md) (alternative_to)
-- [The Global Loran / eLoran Infrastructure Evolution: A Robust and Resilient PNT Backup for GNSS](../resources/faa-eloran-iat-2014.md) (explains)
+- [Loran-C reference signal generator](../../catalog/repos/cheolj__loran-c-reference-code.md) (alternative_to)
+- [The Global Loran / eLoran Infrastructure Evolution: A Robust and Resilient PNT Backup for GNSS](../../catalog/resources/faa-eloran-iat-2014.md) (explains)
 
 _Indexed by lane(s): gap-fill_
 

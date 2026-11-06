@@ -1,25 +1,25 @@
-# ION GNSS+ Short Courses (GPS/GNSS 101 and more)
+# ION GNSS+ Short Courses - Taught by ION Masters
 
 `res:ion-gnss-plus-short-courses` - course - <https://www.ion.org/gnss/short-courses.cfm>
 
-**By:** Institute of Navigation - **Year:** 2025 - **Level:** intro - **Access:** paywalled
+**By:** Institute of Navigation - **Year:** 2026 - **Level:** intro - **Access:** paywalled
 
-Short courses run at ION GNSS+ for registered attendees, including a GPS/GNSS 101 course taught by John Raquet and a space applications of GNSS course by Penina Axelrad.
+Masters short course programme at ION GNSS+, complimentary for paid conference attendees: 50-minute lectures by ION Master Instructors. The 2026 line-up includes Space Applications of GNSS (Penny Axelrad), GNSS Modernization (Christopher Hegarty), LEO PNT with mega-constellations (Zak Kassas), quantum navigation (Allison Kealy, Andrew Greentree) and the first public GPS spoofer (Todd Humphreys).
 
 ## Key takeaways
 
-- Fast fundamentals refresh for newcomers attending ION GNSS+
+- Short expert lectures on GNSS, LEO PNT, spoofing and quantum navigation for ION GNSS+ attendees
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Space and orbital navigation](../concepts/space-nav.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md)
 
 **Tags:** `ion`, `short-course`
 
 ## Related
 
-- part_of: [ION GNSS+ Tutorials](../resources/ion-gnss-plus-tutorials.md)
+- part_of: [ION GNSS+ Tutorials](../../catalog/resources/ion-gnss-plus-tutorials.md)
 
 ## Referenced by
 
-- [ION GNSS+ Tutorials](../resources/ion-gnss-plus-tutorials.md) (part_of)
+- [ION GNSS+ Tutorials](../../catalog/resources/ion-gnss-plus-tutorials.md) (part_of)
 
 _Indexed by lane(s): learning_

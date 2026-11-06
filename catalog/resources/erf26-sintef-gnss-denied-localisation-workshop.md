@@ -10,7 +10,7 @@ European Robotics Forum 2026 workshop (Stavanger) organised by SINTEF on GNSS-de
 
 - Industry-side view of deployable GNSS-denied localisation
 
-**Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Visual(-inertial) odometry](../concepts/vio.md), [Maritime navigation](../concepts/maritime-nav.md)
+**Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md)
 
 **Tags:** `erf`, `sintef`, `workshop`
 

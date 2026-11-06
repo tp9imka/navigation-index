@@ -11,13 +11,17 @@ Distributed multi-robot SLAM where robots exchange compact information peer to p
 - Peer-to-peer, no central server
 - Robust to bad inter-robot loop closures
 
-**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `distributed`
 
 ## Related
 
-- has_code: [Kimera-Multi](../repos/mit-spark__kimera-multi.md)
-- uses: [DPGO](../repos/mit-acl__dpgo.md)
+- has_code: [Kimera-Multi](../../catalog/repos/mit-spark__kimera-multi.md)
+- uses: [DPGO](../../catalog/repos/mit-acl__dpgo.md)
+
+## Referenced by
+
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 
 _Indexed by lane(s): slam_

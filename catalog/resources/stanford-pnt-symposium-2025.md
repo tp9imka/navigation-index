@@ -11,17 +11,18 @@ Annual Stanford SCPNT symposium page (8-9 October 2025) with the agenda and link
 - Current state of GNSS integrity, resilience and alt-PNT from leading labs
 - Student talks are a good source of fresh project ideas
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Jamming and spoofing](../concepts/gnss-interference.md), [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `stanford`, `scpnt`, `symposium`
 
 ## Related
 
-- part_of: [2025 PNT Symposium - Day 2 Invited Speaker Presentation Videos](../resources/stanford-pnt-symposium-2025-invited-videos.md)
-- part_of: [SCPNT Photo and Video Gallery (PNT Symposium recordings archive)](../resources/stanford-scpnt-video-gallery.md)
+- part_of: [2025 PNT Symposium - Day 2 Invited Speaker Presentation Videos](../../catalog/resources/stanford-pnt-symposium-2025-invited-videos.md)
+- part_of: [SCPNT Photo and Video Gallery (PNT Symposium recordings archive)](../../catalog/resources/stanford-scpnt-video-gallery.md)
 
 ## Referenced by
 
-- [2025 PNT Symposium - Day 2 Invited Speaker Presentation Videos](../resources/stanford-pnt-symposium-2025-invited-videos.md) (part_of)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [2025 PNT Symposium - Day 2 Invited Speaker Presentation Videos](../../catalog/resources/stanford-pnt-symposium-2025-invited-videos.md) (part_of)
 
 _Indexed by lane(s): learning_

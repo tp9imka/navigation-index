@@ -12,12 +12,12 @@ Paper describing a labelled LWIR maritime dataset of 2,916 images from in and ar
 - Semantic and instance masks provided
 - Non-commercial licence (CC BY-NC-SA 4.0)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Maritime navigation](../concepts/maritime-nav.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md)
 
 **Tags:** `lwir`, `usv`
 
 ## Related
 
-- has_code: [MassMIND](../repos/uml-marine-robotics__massmind.md)
+- has_code: [MassMIND](../../catalog/repos/uml-marine-robotics__massmind.md)
 
 _Indexed by lane(s): round3-expansion_

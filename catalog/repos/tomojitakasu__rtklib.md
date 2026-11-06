@@ -12,7 +12,12 @@ The original open-source GNSS positioning package by T. Takasu: SPP, DGNSS, RTK,
 
 **Hackathon notes:** Use str2str to relay NTRIP/serial streams and rnx2rtkp for post-processing. Upstream is quiet since 2024; prefer the demo5 fork for current receivers.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md)
+## Deep dives
+
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [tomojitakasu__rtklib](../../docs/integration-cards/tomojitakasu__rtklib.md) (integration-cards)
+
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md)
 
 **Tags:** `rtk`, `ppk`, `ppp`, `rinex`, `rtcm`, `c`
 
@@ -20,31 +25,33 @@ The original open-source GNSS positioning package by T. Takasu: SPP, DGNSS, RTK,
 
 ## Related
 
-- alternative_to: [RTKLIB demo5 (rtklibexplorer)](../repos/rtklibexplorer__rtklib.md)
-- alternative_to: [rtklib-py](../repos/rtklibexplorer__rtklib-py.md)
+- alternative_to: [RTKLIB demo5 (rtklibexplorer)](../../catalog/repos/rtklibexplorer__rtklib.md)
+- alternative_to: [rtklib-py](../../catalog/repos/rtklibexplorer__rtklib-py.md)
 
 ## Referenced by
 
-- [GICI-LIB](../repos/chichengcn__gici-open.md) (extends)
-- [ntripcaster (BKG standard caster)](../repos/nunojpg__ntripcaster.md) (integrates_with)
-- [RTKLIB demo5 (rtklibexplorer)](../repos/rtklibexplorer__rtklib.md) (fork_of)
-- [MatRTKLIB](../repos/taroz__matrtklib.md) (depends_on)
-- [PocketSDR](../repos/tomojitakasu__pocketsdr.md) (same_org)
-- [GraphGNSSLib](../repos/weisongwen__graphgnsslib.md) (depends_on)
-- [BeiDou Navigation Satellite System Signal-In-Space ICDs (B1I, B3I, B1C, B2a, B2b)](../resources/beidou-icd-library.md) (has_code)
-- [GNSS Data Processing, Vol. I: Fundamentals and Algorithms (ESA TM-23)](../resources/esa-gnss-data-processing-vol1.md) (has_code)
-- [GNSS Data Processing, Vol. II: Laboratory Exercises (ESA TM-23)](../resources/esa-gnss-data-processing-vol2.md) (has_code)
-- [Galileo High Accuracy Service Signal-In-Space ICD (HAS SIS ICD) Issue 1.0](../resources/galileo-has-sis-icd.md) (has_code)
-- [Galileo Open Service Signal-In-Space Interface Control Document (OS SIS ICD) Issue 2.1](../resources/galileo-os-sis-icd-2-1.md) (has_code)
-- [IS-GPS-200N: NAVSTAR GPS Space Segment / Navigation User Segment Interfaces](../resources/gps-is-gps-200n.md) (has_code)
-- [SDR приемник GPS на микроконтроллере](../resources/habr-mcu-gps-sdr-2024.md) (uses)
-- [RTKLib - Сантиметровая точность GPS/ГЛОНАСС в пост-обработке](../resources/habr-rtklib-postprocessing-2014.md) (uses)
-- [Real-World Spoofing Detection (ION ITM 2025)](../resources/kreizis-ion-itm-2025-spoofing.md) (has_code)
-- [Navipedia: RTK Standards](../resources/navipedia-rtk-standards.md) (has_code)
-- [QZSS Performance Standards and Interface Specifications (IS-QZSS)](../resources/qzss-is-qzss.md) (has_code)
-- [RTCM 10403.x Differential GNSS (DGNSS) Services - Version 3](../resources/rtcm-sc104-standards.md) (has_code)
-- [rtklibexplorer blog](../resources/rtklibexplorer-blog.md) (uses)
-- [Public CORS RINEX to SPP vs RTK with RTKLIB demo5 and gnss_lib_py](../samples/gnss-rinex-processing.md) (explains)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [GICI-LIB](../../catalog/repos/chichengcn__gici-open.md) (extends)
+- [ntripcaster (BKG standard caster)](../../catalog/repos/nunojpg__ntripcaster.md) (integrates_with)
+- [RTKLIB demo5 (rtklibexplorer)](../../catalog/repos/rtklibexplorer__rtklib.md) (fork_of)
+- [MatRTKLIB](../../catalog/repos/taroz__matrtklib.md) (depends_on)
+- [PocketSDR](../../catalog/repos/tomojitakasu__pocketsdr.md) (same_org)
+- [GraphGNSSLib](../../catalog/repos/weisongwen__graphgnsslib.md) (depends_on)
+- [BeiDou Navigation Satellite System Signal-In-Space ICDs (B1I, B3I, B1C, B2a, B2b)](../../catalog/resources/beidou-icd-library.md) (has_code)
+- [GNSS Data Processing, Vol. I: Fundamentals and Algorithms (ESA TM-23)](../../catalog/resources/esa-gnss-data-processing-vol1.md) (has_code)
+- [GNSS Data Processing, Vol. II: Laboratory Exercises (ESA TM-23)](../../catalog/resources/esa-gnss-data-processing-vol2.md) (has_code)
+- [Galileo High Accuracy Service Signal-In-Space ICD (HAS SIS ICD) Issue 1.0](../../catalog/resources/galileo-has-sis-icd.md) (has_code)
+- [Galileo Open Service Signal-In-Space Interface Control Document (OS SIS ICD) Issue 2.1](../../catalog/resources/galileo-os-sis-icd-2-1.md) (has_code)
+- [IS-GPS-200N: NAVSTAR GPS Space Segment / Navigation User Segment Interfaces](../../catalog/resources/gps-is-gps-200n.md) (has_code)
+- [SDR приемник GPS на микроконтроллере](../../catalog/resources/habr-mcu-gps-sdr-2024.md) (uses)
+- [RTKLib - Сантиметровая точность GPS/ГЛОНАСС в пост-обработке](../../catalog/resources/habr-rtklib-postprocessing-2014.md) (uses)
+- [Real-World Spoofing Detection and Characterization Using Low-Cost Receivers](../../catalog/resources/kreizis-ion-itm-2025-spoofing.md) (has_code)
+- [Navipedia: RTK Standards](../../catalog/resources/navipedia-rtk-standards.md) (has_code)
+- [QZSS Performance Standards and Interface Specifications (IS-QZSS)](../../catalog/resources/qzss-is-qzss.md) (has_code)
+- [RTCM 10403.x Differential GNSS (DGNSS) Services - Version 3](../../catalog/resources/rtcm-sc104-standards.md) (has_code)
+- [rtklibexplorer blog](../../catalog/resources/rtklibexplorer-blog.md) (uses)
+- [Public CORS RINEX to SPP vs RTK with RTKLIB demo5 and gnss_lib_py](../../catalog/samples/gnss-rinex-processing.md) (explains)
 
 _Indexed by lane(s): gnss_
 

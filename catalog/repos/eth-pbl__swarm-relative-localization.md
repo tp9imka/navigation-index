@@ -10,9 +10,9 @@ Infrastructure-less relative localization for decentralized swarm formation of n
 
 **Why it matters:** Relative positioning without anchors, the realistic case for field swarms.
 
-**Hackathon notes:** Crazyflie with UWB decks plus their library; Python simulation available.
+**Hackathon notes:** The repo holds only a Python demo of the algorithm (demo.py) and a PDF supplement; no Crazyflie or UWB firmware is included.
 
-**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md), [RF localization and direction finding](../concepts/rf-localization.md)
+**Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 
 **Tags:** `uwb`, `relative-localization`, `crazyflie`, `nano-drone`
 
@@ -20,13 +20,16 @@ Infrastructure-less relative localization for decentralized swarm formation of n
 
 ## Related
 
-- depends_on: [UWB Software Library (USL)](../repos/vladniculescu__uwb-software-library.md)
-- extends: [Crazyflie firmware](../repos/bitcraze__crazyflie-firmware.md)
+- depends_on: [UWB Software Library (USL)](../../catalog/repos/vladniculescu__uwb-software-library.md)
+- extends: [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md)
 
 ## Referenced by
 
-- [GEARdrones](../repos/excitablecell__geardrones.md) (alternative_to)
-- [UWB Software Library (USL)](../repos/vladniculescu__uwb-software-library.md) (integrates_with)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [GEARdrones](../../catalog/repos/excitablecell__geardrones.md) (alternative_to)
+- [UWB Software Library (USL)](../../catalog/repos/vladniculescu__uwb-software-library.md) (integrates_with)
+- [Cooperative localization for a GNSS-denied team: UWB ranging, centralized EKF vs covariance intersection, and a spoofed anchor](../../catalog/samples/swarm-coop-localization.md) (explains)
 
 _Indexed by lane(s): domains-swarm_
 

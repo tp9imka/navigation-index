@@ -14,9 +14,11 @@ Firmware for the Crazyflie nano quad, Bolt and the Roadrunner positioning tag, w
 
 ## Deep dives
 
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [bitcraze__crazyflie-firmware](../../docs/integration-cards/bitcraze__crazyflie-firmware.md) (integration-cards)
 - [util-uwb-tdoa](../../docs/dataset-cards/util-uwb-tdoa.md) (dataset-cards)
 
-**Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [RF localization and direction finding](../concepts/rf-localization.md), [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+**Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md), [Indoor and pedestrian navigation](../../catalog/concepts/indoor-pedestrian.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `crazyflie`, `uwb`, `lighthouse`, `flow-deck`, `kalman`, `nano-drone`, `tdoa`, `ekf`
 
@@ -24,24 +26,29 @@ Firmware for the Crazyflie nano quad, Bolt and the Roadrunner positioning tag, w
 
 ## Related
 
-- integrates_with: [cflib (Crazyflie Python library)](../repos/bitcraze__crazyflie-lib-python.md)
-- integrates_with: [Crazyswarm2](../repos/imrclab__crazyswarm2.md)
-- same_org: [ESP-Drone](../repos/espressif__esp-drone.md)
-- integrates_with: [Loco Positioning node firmware](../repos/bitcraze__lps-node-firmware.md)
+- integrates_with: [cflib (Crazyflie Python library)](../../catalog/repos/bitcraze__crazyflie-lib-python.md)
+- integrates_with: [Crazyswarm2](../../catalog/repos/imrclab__crazyswarm2.md)
+- same_org: [ESP-Drone](../../catalog/repos/espressif__esp-drone.md)
+- integrates_with: [Loco Positioning node firmware](../../catalog/repos/bitcraze__lps-node-firmware.md)
 
 ## Referenced by
 
-- [Aerostack2](../repos/aerostack2__aerostack2.md) (integrates_with)
-- [cflib (Crazyflie Python library)](../repos/bitcraze__crazyflie-lib-python.md) (integrates_with)
-- [Crazyflie simulation](../repos/bitcraze__crazyflie-simulation.md) (same_org)
-- [Loco Positioning node firmware](../repos/bitcraze__lps-node-firmware.md) (integrates_with)
-- [ESP-Drone](../repos/espressif__esp-drone.md) (fork_of)
-- [Swarm relative localization (ETH PBL)](../repos/eth-pbl__swarm-relative-localization.md) (extends)
-- [Crazyswarm2](../repos/imrclab__crazyswarm2.md) (depends_on)
-- [Crazyswarm2](../repos/imrclab__crazyswarm2.md) (integrates_with)
-- [dRehmFlight VTOL](../repos/nickrehm__drehmflight.md) (alternative_to)
-- [Loco Positioning System documentation](../resources/bitcraze-loco-positioning.md) (explains)
-- [Onboard Ranging-based Relative Localization and Stability for Lightweight Aerial Swarms](../resources/li-onboard-relative-localization-swarms.md) (uses)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Aerostack2](../../catalog/repos/aerostack2__aerostack2.md) (integrates_with)
+- [cflib (Crazyflie Python library)](../../catalog/repos/bitcraze__crazyflie-lib-python.md) (integrates_with)
+- [Crazyflie simulation](../../catalog/repos/bitcraze__crazyflie-simulation.md) (same_org)
+- [Loco Positioning node firmware](../../catalog/repos/bitcraze__lps-node-firmware.md) (integrates_with)
+- [ESP-Drone](../../catalog/repos/espressif__esp-drone.md) (fork_of)
+- [Swarm relative localization (ETH PBL)](../../catalog/repos/eth-pbl__swarm-relative-localization.md) (extends)
+- [Crazyswarm2](../../catalog/repos/imrclab__crazyswarm2.md) (depends_on)
+- [Crazyswarm2](../../catalog/repos/imrclab__crazyswarm2.md) (integrates_with)
+- [dRehmFlight VTOL](../../catalog/repos/nickrehm__drehmflight.md) (alternative_to)
+- [Loco Positioning System documentation](../../catalog/resources/bitcraze-loco-positioning.md) (explains)
+- [Onboard Ranging-based Relative Localization and Stability for Lightweight Aerial Swarms](../../catalog/resources/li-onboard-relative-localization-swarms.md) (uses)
 
 _Indexed by lane(s): autopilots, domains-swarm_
 

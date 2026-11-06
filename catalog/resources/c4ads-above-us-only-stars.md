@@ -14,12 +14,16 @@ Open-source investigation using AIS ship tracks, public records and ISS-based me
 - AIS position anomalies reveal spoofing at scale
 - Methodology is reproducible with public data
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Maritime navigation](../concepts/maritime-nav.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `osint`, `ais`, `spoofing`, `russia`, `syria`, `c4ads`
 
 ## Referenced by
 
-- [Windward - 2025 maritime stress test](../resources/windward-2025-maritime-stress-test.md) (cites)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
+- [2025 Was a Stress Test & Maritime AI™ Is the Only Way to Pass](../../catalog/resources/windward-2025-maritime-stress-test.md) (cites)
+- [GNSS spoofing signatures in real AIS tracks: detectors, injected ground truth, GeoJSON and CoT](../../catalog/samples/maritime-ais-spoofing.md) (explains)
 
 _Indexed by lane(s): defense-context, docs-standards_

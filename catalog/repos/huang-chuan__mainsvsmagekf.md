@@ -12,7 +12,7 @@ Magnetic-field aided inertial navigation system for indoor positioning, compared
 
 **Hackathon notes:** MATLAB with eight recorded datasets in data/. Clone with --recurse-submodules (MAINS is a submodule). MAINS code is GPL-3.0, MAGEKF Apache-2.0. Test on your own magnetometer arrays.
 
-**Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `magnetic`, `indoor`, `ekf`
 
@@ -20,7 +20,7 @@ Magnetic-field aided inertial navigation system for indoor positioning, compared
 
 ## Related
 
-- same_org: [Magnetic-field odometry](../repos/huang-chuan__magnetic-field-odometry.md)
+- same_org: [Magnetic-field odometry](../../catalog/repos/huang-chuan__magnetic-field-odometry.md)
 
 _Indexed by lane(s): round3-expansion_
 

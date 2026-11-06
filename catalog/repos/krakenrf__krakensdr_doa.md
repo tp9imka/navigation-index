@@ -17,7 +17,7 @@ Direction-of-arrival processing and web UI for the five-channel coherent KrakenS
 - [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [krakenrf__krakensdr_doa](../../docs/integration-cards/krakenrf__krakensdr_doa.md) (integration-cards)
 
-**Concepts:** [RF localization and direction finding](../concepts/rf-localization.md), [Jamming and spoofing](../concepts/gnss-interference.md), [Counter-UAS and drone detection](../concepts/counter-uas.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [RF localization and direction finding](../../catalog/concepts/rf-localization.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `direction-finding`, `doa`, `music`, `sdr`, `krakensdr`
 
@@ -25,16 +25,20 @@ Direction-of-arrival processing and web UI for the five-channel coherent KrakenS
 
 ## Related
 
-- depends_on: [Heimdall DAQ firmware](../repos/krakenrf__heimdall_daq_fw.md)
-- integrates_with: [Stone Soup](../repos/dstl__stone-soup.md)
+- depends_on: [Heimdall DAQ firmware](../../catalog/repos/krakenrf__heimdall_daq_fw.md)
+- integrates_with: [Stone Soup](../../catalog/repos/dstl__stone-soup.md)
 
 ## Referenced by
 
-- [Stone Soup](../repos/dstl__stone-soup.md) (integrates_with)
-- [Heimdall DAQ firmware](../repos/krakenrf__heimdall_daq_fw.md) (same_org)
-- [Researchers home in on origins of Russia's Baltic GPS jamming](../resources/defensenews-baltic-jamming-origins-2025.md) (uses)
-- [infiniDome GPSdome / GPSdome 2 small-UAS anti-jam module](../resources/infinidome-gpsdome.md) (alternative_to)
-- [GNSS jammer geolocation from DF bearings to TAK](../samples/interference-geolocation-to-tak.md) (uses)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Stone Soup](../../catalog/repos/dstl__stone-soup.md) (integrates_with)
+- [Heimdall DAQ firmware](../../catalog/repos/krakenrf__heimdall_daq_fw.md) (same_org)
+- [Researchers home in on origins of Russia's Baltic GPS jamming](../../catalog/resources/defensenews-baltic-jamming-origins-2025.md) (uses)
+- [infiniDome GPSdome / GPSdome 2 small-UAS anti-jam module](../../catalog/resources/infinidome-gpsdome.md) (alternative_to)
+- [GNSS jammer geolocation from DF bearings to TAK](../../catalog/samples/interference-geolocation-to-tak.md) (uses)
+- [Low-cost GNSS jammer sensor network: u-blox telemetry => localization => TAK and dashboard](../../catalog/samples/jammer-sensor-network.md) (explains)
 
 _Indexed by lane(s): defense-context_
 

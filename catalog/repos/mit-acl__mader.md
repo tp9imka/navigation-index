@@ -12,7 +12,7 @@ MIT ACL decentralized and asynchronous trajectory planner for multiple UAVs in d
 
 **Hackathon notes:** No commits since 2022; ROS1. Use for ideas rather than code reuse.
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
 **Tags:** `decentralized`, `asynchronous`, `multi-uav`
 
@@ -20,7 +20,7 @@ MIT ACL decentralized and asynchronous trajectory planner for multiple UAVs in d
 
 ## Related
 
-- alternative_to: [EGO-Swarm](../repos/zju-fast-lab__ego-planner-swarm.md)
+- alternative_to: [EGO-Swarm](../../catalog/repos/zju-fast-lab__ego-planner-swarm.md)
 
 _Indexed by lane(s): planning-gis-c2_
 

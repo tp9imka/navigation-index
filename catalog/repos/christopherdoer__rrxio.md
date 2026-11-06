@@ -12,7 +12,7 @@ Radar visual/thermal inertial odometry fusing 4D mmWave radar with a visual or t
 
 **Hackathon notes:** ROS 1; datasets released by the author. Good for a degraded-visibility demo.
 
-**Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md), [Visual(-inertial) odometry](../concepts/vio.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `thermal`, `4d-radar`, `ekf`, `ros1`
 
@@ -20,13 +20,13 @@ Radar visual/thermal inertial odometry fusing 4D mmWave radar with a visual or t
 
 ## Related
 
-- extends: [RIO](../repos/christopherdoer__rio.md)
-- alternative_to: [ROVTIO](../repos/ntnu-arl__rovtio.md)
+- extends: [RIO](../../catalog/repos/christopherdoer__rio.md)
+- alternative_to: [ROVTIO](../../catalog/repos/ntnu-arl__rovtio.md)
 
 ## Referenced by
 
-- [RIO](../repos/christopherdoer__rio.md) (same_org)
-- [ROVTIO](../repos/ntnu-arl__rovtio.md) (alternative_to)
+- [RIO](../../catalog/repos/christopherdoer__rio.md) (same_org)
+- [ROVTIO](../../catalog/repos/ntnu-arl__rovtio.md) (alternative_to)
 
 _Indexed by lane(s): slam_
 

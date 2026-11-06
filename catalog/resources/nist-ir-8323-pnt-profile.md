@@ -11,12 +11,13 @@ Maps the NIST Cybersecurity Framework onto systems that consume PNT, giving iden
 - Treats GNSS as an untrusted external input
 - Detection and recovery practices map directly to hackathon features
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Standards and interface specs](../concepts/standards.md), [Policy, export control and ethics](../concepts/policy-ethics.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Standards and interface specs](../../catalog/concepts/standards.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md)
 
 **Tags:** `nist`, `cybersecurity-framework`, `eo-13905`
 
 ## Referenced by
 
-- [Resilient PNT Conformance Framework](../resources/dhs-resilient-pnt-conformance-framework.md) (cites)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Resilient PNT Conformance Framework](../../catalog/resources/dhs-resilient-pnt-conformance-framework.md) (cites)
 
 _Indexed by lane(s): defense-context_

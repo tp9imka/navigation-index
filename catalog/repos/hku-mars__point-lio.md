@@ -12,7 +12,7 @@ High-bandwidth LiDAR-inertial odometry that updates the state point by point, to
 
 **Hackathon notes:** Same ecosystem as FAST-LIO; try when FAST-LIO diverges on aggressive motion.
 
-**Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `point-wise`, `high-bandwidth`, `ros1`
 
@@ -20,11 +20,11 @@ High-bandwidth LiDAR-inertial odometry that updates the state point by point, to
 
 ## Related
 
-- alternative_to: [FAST-LIO / FAST-LIO2](../repos/hku-mars__fast_lio.md)
+- alternative_to: [FAST-LIO / FAST-LIO2](../../catalog/repos/hku-mars__fast_lio.md)
 
 ## Referenced by
 
-- [FAST-LIO / FAST-LIO2](../repos/hku-mars__fast_lio.md) (alternative_to)
+- [FAST-LIO / FAST-LIO2](../../catalog/repos/hku-mars__fast_lio.md) (alternative_to)
 
 _Indexed by lane(s): slam_
 

@@ -12,8 +12,12 @@ DHS-sponsored RAND study of civil US PNT dependence that argues GPS is not the o
 - High bar for a large government-funded GPS backup
 - Recommends modest investment in threat detection
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Policy, export control and ethics](../concepts/policy-ethics.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md)
 
 **Tags:** `rand`, `think-tank`, `economics`, `civil-pnt`
+
+## Referenced by
+
+- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
 
 _Indexed by lane(s): docs-standards_

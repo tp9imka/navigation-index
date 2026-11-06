@@ -16,7 +16,7 @@ ICRA 2025 extension of STHN that adds uncertainty estimation to satellite-therma
 
 - [uasthn-uncertainty-thermal-2025](../../docs/paper-digests/uasthn-uncertainty-thermal-2025.md) (paper-digests)
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `thermal`, `uncertainty`
 
@@ -24,14 +24,14 @@ ICRA 2025 extension of STHN that adds uncertainty estimation to satellite-therma
 
 ## Related
 
-- extends: [STHN](../repos/arplaboratory__sthn.md)
+- extends: [STHN](../../catalog/repos/arplaboratory__sthn.md)
 
 ## Referenced by
 
-- [Satellite-thermal geo-localization](../repos/arplaboratory__satellite-thermal-geo-localization.md) (same_org)
-- [STHN](../repos/arplaboratory__sthn.md) (same_org)
-- [UASTHN: Uncertainty-Aware Deep Homography Estimation for UAV Satellite-Thermal Geo-localization](../resources/uasthn-uncertainty-thermal-2025.md) (has_code)
-- [Integrity monitoring for alt-PNT: solution-separation FDE, protection levels and a Stanford diagram](../samples/altpnt-integrity.md) (explains)
+- [Satellite-thermal geo-localization](../../catalog/repos/arplaboratory__satellite-thermal-geo-localization.md) (same_org)
+- [STHN](../../catalog/repos/arplaboratory__sthn.md) (same_org)
+- [UASTHN: Uncertainty-Aware Deep Homography Estimation for UAV Satellite-Thermal Geo-localization](../../catalog/resources/uasthn-uncertainty-thermal-2025.md) (has_code)
+- [Integrity monitoring for alt-PNT: solution-separation FDE, protection levels and a Stanford diagram](../../catalog/samples/altpnt-integrity.md) (explains)
 
 _Indexed by lane(s): alt-nav_
 

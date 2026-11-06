@@ -12,7 +12,7 @@ Multi-GNSS software receiver in MATLAB from the Finnish Geospatial Research Inst
 
 **Hackathon notes:** Needs MATLAB and IQ files; slow but transparent.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Software-defined GNSS receivers](../concepts/gnss-sdr.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md)
 
 **Tags:** `matlab`, `receiver`, `fgi`
 
@@ -20,14 +20,14 @@ Multi-GNSS software receiver in MATLAB from the Finnish Geospatial Research Inst
 
 ## Related
 
-- same_org: [FGI-OSNMA](../repos/nlsfi__fgi-osnma.md)
-- alternative_to: [SoftGNSS v3.0 (maintained copy)](../repos/tmboc__softgnss.md)
+- same_org: [FGI-OSNMA](../../catalog/repos/nlsfi__fgi-osnma.md)
+- alternative_to: [SoftGNSS v3.0 (maintained copy)](../../catalog/repos/tmboc__softgnss.md)
 
 ## Referenced by
 
-- [CU Boulder GNSS SDR Collection](../repos/gnsscusdr__cu-sdr-collection.md) (alternative_to)
-- [FGI-OSNMA](../repos/nlsfi__fgi-osnma.md) (same_org)
-- [FGI Jammer Test 2023 Repository](../resources/fgi-jammertest-2023-repository.md) (has_code)
+- [CU Boulder GNSS SDR Collection](../../catalog/repos/gnsscusdr__cu-sdr-collection.md) (alternative_to)
+- [FGI-OSNMA](../../catalog/repos/nlsfi__fgi-osnma.md) (same_org)
+- [FGI Jammer Test 2023 Repository](../../catalog/resources/fgi-jammertest-2023-repository.md) (has_code)
 
 _Indexed by lane(s): gnss_
 

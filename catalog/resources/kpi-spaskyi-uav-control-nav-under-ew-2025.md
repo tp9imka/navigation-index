@@ -16,12 +16,18 @@ English: 'UAV control and navigation system'. KPI authors describe an ArduPilot-
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [Electronic warfare resilience](../concepts/ew-resilience.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `lang:uk`, `kpi`, `ardupilot`, `link-resilience`
 
 ## Related
 
-- uses: [ArduPilot](../repos/ardupilot__ardupilot.md)
+- uses: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_

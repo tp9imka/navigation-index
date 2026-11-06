@@ -12,7 +12,12 @@ ROS 2 package wrapping NVIDIA's GPU-accelerated cuVSLAM for stereo visual(-inert
 
 **Hackathon notes:** Use the Isaac ROS dev container; RealSense or ZED stereo works out of the box. Jetson Orin recommended.
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Visual SLAM](../concepts/visual-slam.md), [Onboard / edge AI perception](../concepts/edge-ai.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+## Deep dives
+
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [nvidia-isaac-ros__isaac_ros_visual_slam](../../docs/integration-cards/nvidia-isaac-ros__isaac_ros_visual_slam.md) (integration-cards)
+
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Visual SLAM](../../catalog/concepts/visual-slam.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `cuvslam`, `jetson`, `gpu`, `stereo`, `ros2`
 
@@ -20,16 +25,16 @@ ROS 2 package wrapping NVIDIA's GPU-accelerated cuVSLAM for stereo visual(-inert
 
 ## Related
 
-- depends_on: [cuVSLAM](../repos/nvidia-isaac__cuvslam.md)
-- integrates_with: [Isaac ROS nvblox](../repos/nvidia-isaac-ros__isaac_ros_nvblox.md)
-- integrates_with: [Isaac ROS Visual SLAM documentation](../resources/isaac-ros-visual-slam-docs.md)
+- depends_on: [cuVSLAM](../../catalog/repos/nvidia-isaac__cuvslam.md)
+- integrates_with: [Isaac ROS nvblox](../../catalog/repos/nvidia-isaac-ros__isaac_ros_nvblox.md)
+- integrates_with: [Isaac ROS Visual SLAM documentation](../../catalog/resources/isaac-ros-visual-slam-docs.md)
 
 ## Referenced by
 
-- [Isaac ROS nvblox](../repos/nvidia-isaac-ros__isaac_ros_nvblox.md) (integrates_with)
-- [cuVSLAM](../repos/nvidia-isaac__cuvslam.md) (integrates_with)
-- [cuVSLAM: CUDA accelerated visual odometry and mapping](../resources/cuvslam-2025.md) (has_code)
-- [Isaac ROS Visual SLAM documentation](../resources/isaac-ros-visual-slam-docs.md) (has_code)
+- [Isaac ROS nvblox](../../catalog/repos/nvidia-isaac-ros__isaac_ros_nvblox.md) (integrates_with)
+- [cuVSLAM](../../catalog/repos/nvidia-isaac__cuvslam.md) (integrates_with)
+- [cuVSLAM: CUDA accelerated visual odometry and mapping](../../catalog/resources/cuvslam-2025.md) (has_code)
+- [Isaac ROS Visual SLAM documentation](../../catalog/resources/isaac-ros-visual-slam-docs.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

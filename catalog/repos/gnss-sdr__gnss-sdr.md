@@ -18,7 +18,7 @@ Full software-defined GNSS receiver built on GNU Radio: acquisition, tracking, n
 - [gnss-sdr__gnss-sdr](../../docs/integration-cards/gnss-sdr__gnss-sdr.md) (integration-cards)
 - [texbat](../../docs/dataset-cards/texbat.md) (dataset-cards)
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Software-defined GNSS receivers](../concepts/gnss-sdr.md), [Jamming and spoofing](../concepts/gnss-interference.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
 **Tags:** `gnu-radio`, `receiver`, `osnma`, `iq`, `c++`
 
@@ -26,31 +26,40 @@ Full software-defined GNSS receiver built on GNU Radio: acquisition, tracking, n
 
 ## Related
 
-- integrates_with: [GPS-SDR-SIM](../repos/osqzss__gps-sdr-sim.md)
-- integrates_with: [OSNMAlib](../repos/algafix__osnma.md)
-- integrates_with: [OSNMA-SDR-SIM](../repos/haiyang-wong__osnma-sdr-sim.md)
+- integrates_with: [GPS-SDR-SIM](../../catalog/repos/osqzss__gps-sdr-sim.md)
+- integrates_with: [OSNMAlib](../../catalog/repos/algafix__osnma.md)
+- integrates_with: [OSNMA-SDR-SIM](../../catalog/repos/haiyang-wong__osnma-sdr-sim.md)
 
 ## Referenced by
 
-- [OSNMAlib](../repos/algafix__osnma.md) (integrates_with)
-- [CU Boulder GNSS SDR Collection](../repos/gnsscusdr__cu-sdr-collection.md) (alternative_to)
-- [OSNMA-SDR-SIM](../repos/haiyang-wong__osnma-sdr-sim.md) (integrates_with)
-- [GPS-SDR-SIM](../repos/osqzss__gps-sdr-sim.md) (integrates_with)
-- [GNSS-DSP-tools](../repos/pmonta__gnss-dsp-tools.md) (alternative_to)
-- [PocketSDR](../repos/tomojitakasu__pocketsdr.md) (alternative_to)
-- [BeiDou Navigation Satellite System Signal-In-Space ICDs (B1I, B3I, B1C, B2a, B2b)](../resources/beidou-icd-library.md) (has_code)
-- [A Software-Defined GPS and Galileo Receiver: A Single-Frequency Approach](../resources/borre-software-defined-gps-galileo-receiver.md) (has_code)
-- [Galileo Open Service Signal-In-Space Interface Control Document (OS SIS ICD) Issue 2.1](../resources/galileo-os-sis-icd-2-1.md) (explains)
-- [Galileo Open Service Signal-In-Space Interface Control Document (OS SIS ICD) Issue 2.1](../resources/galileo-os-sis-icd-2-1.md) (has_code)
-- [GNSS-SDR documentation](../resources/gnss-sdr-docs.md) (explains)
-- [GNSS-SDR tutorials](../resources/gnss-sdr-tutorials.md) (has_code)
-- [IS-GPS-200N: NAVSTAR GPS Space Segment / Navigation User Segment Interfaces](../resources/gps-is-gps-200n.md) (explains)
-- [IS-GPS-200N: NAVSTAR GPS Space Segment / Navigation User Segment Interfaces](../resources/gps-is-gps-200n.md) (has_code)
-- [IS-GPS-705J: NAVSTAR GPS Space Segment / User Segment L5 Interfaces](../resources/gps-is-gps-705j.md) (has_code)
-- [IS-GPS-800J: NAVSTAR GPS Space Segment / User Segment L1C Interfaces](../resources/gps-is-gps-800j.md) (has_code)
-- [infiniDome GPSdome / GPSdome 2 small-UAS anti-jam module](../resources/infinidome-gpsdome.md) (alternative_to)
-- [Safran VersaPNT and Geonyx resilient PNT units](../resources/safran-versapnt.md) (alternative_to)
-- [File-based GNSS signal chain: gps-sdr-sim => GNSS-SDR => spoofing/jamming scorer](../samples/gnss-signal-chain.md) (uses)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [OSNMAlib](../../catalog/repos/algafix__osnma.md) (integrates_with)
+- [CU Boulder GNSS SDR Collection](../../catalog/repos/gnsscusdr__cu-sdr-collection.md) (alternative_to)
+- [OSNMA-SDR-SIM](../../catalog/repos/haiyang-wong__osnma-sdr-sim.md) (integrates_with)
+- [Приемники ГНСС - GNSS receiver design handbook (MPEI)](../../catalog/repos/korogodin__gnssrec.md) (integrates_with)
+- [GPS-SDR-SIM](../../catalog/repos/osqzss__gps-sdr-sim.md) (integrates_with)
+- [GNSS-DSP-tools](../../catalog/repos/pmonta__gnss-dsp-tools.md) (alternative_to)
+- [PocketSDR](../../catalog/repos/tomojitakasu__pocketsdr.md) (alternative_to)
+- [BeiDou Navigation Satellite System Signal-In-Space ICDs (B1I, B3I, B1C, B2a, B2b)](../../catalog/resources/beidou-icd-library.md) (has_code)
+- [A Software-Defined GPS and Galileo Receiver: A Single-Frequency Approach](../../catalog/resources/borre-software-defined-gps-galileo-receiver.md) (has_code)
+- [Galileo Open Service Signal-In-Space Interface Control Document (OS SIS ICD) Issue 2.1](../../catalog/resources/galileo-os-sis-icd-2-1.md) (explains)
+- [Galileo Open Service Signal-In-Space Interface Control Document (OS SIS ICD) Issue 2.1](../../catalog/resources/galileo-os-sis-icd-2-1.md) (has_code)
+- [GNSS-SDR documentation](../../catalog/resources/gnss-sdr-docs.md) (explains)
+- [GNSS-SDR tutorials](../../catalog/resources/gnss-sdr-tutorials.md) (has_code)
+- [IS-GPS-200N: NAVSTAR GPS Space Segment / Navigation User Segment Interfaces](../../catalog/resources/gps-is-gps-200n.md) (explains)
+- [IS-GPS-200N: NAVSTAR GPS Space Segment / Navigation User Segment Interfaces](../../catalog/resources/gps-is-gps-200n.md) (has_code)
+- [IS-GPS-705J: NAVSTAR GPS Space Segment / User Segment L5 Interfaces](../../catalog/resources/gps-is-gps-705j.md) (has_code)
+- [IS-GPS-800J: NAVSTAR GPS Space Segment / User Segment L1C Interfaces](../../catalog/resources/gps-is-gps-800j.md) (has_code)
+- [infiniDome GPSdome / GPSdome 2 small-UAS anti-jam module](../../catalog/resources/infinidome-gpsdome.md) (alternative_to)
+- [Safran VersaPNT and Geonyx resilient PNT units](../../catalog/resources/safran-versapnt.md) (alternative_to)
+- [File-based GNSS signal chain: gps-sdr-sim => GNSS-SDR => spoofing/jamming scorer](../../catalog/samples/gnss-signal-chain.md) (uses)
+- [Galileo OSNMA authentication as a spoofing defence: real recording, file-level attacks, scorer adapter](../../catalog/samples/osnma-authentication.md) (uses)
 
 _Indexed by lane(s): gnss_
 

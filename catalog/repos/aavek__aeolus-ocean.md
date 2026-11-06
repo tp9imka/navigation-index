@@ -6,13 +6,13 @@
 |---|---|---|---|---|---|---|
 | 67 |  | BSD-3-Clause | 2023-07-14 | False | research-prototype | low |
 
-Collision avoidance simulator for COLREG-compliant autonomous ship navigation intended for use as a digital twin under varied weather and day/night conditions.
+Collision avoidance simulator for COLREG-compliant autonomous ship navigation intended for use as a digital twin under varied weather and day/night conditions. Distributed only as a Windows binary release (v1.11); the repo holds no source code.
 
 **Why it matters:** Another research testbed for COLREGs logic with environmental variation.
 
-**Hackathon notes:** Little recent activity; check the README for build steps before committing time.
+**Hackathon notes:** Binary only: download the v1.11 Windows release and run the .exe. Source is not published, so there are no build steps and nothing to modify or run on Linux. Little activity since 2023.
 
-**Concepts:** [Maritime navigation](../concepts/maritime-nav.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `colregs`, `digital-twin`, `simulator`
 
@@ -20,11 +20,12 @@ Collision avoidance simulator for COLREG-compliant autonomous ship navigation in
 
 ## Related
 
-- alternative_to: [NTNU colav-simulator](../repos/ntnu-itk-autonomous-ship-lab__colav-simulator.md)
+- alternative_to: [NTNU colav-simulator](../../catalog/repos/ntnu-itk-autonomous-ship-lab__colav-simulator.md)
 
 ## Referenced by
 
-- [NTNU colav-simulator](../repos/ntnu-itk-autonomous-ship-lab__colav-simulator.md) (alternative_to)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [NTNU colav-simulator](../../catalog/repos/ntnu-itk-autonomous-ship-lab__colav-simulator.md) (alternative_to)
 
 _Indexed by lane(s): domains-swarm_
 

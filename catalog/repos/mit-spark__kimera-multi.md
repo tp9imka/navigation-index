@@ -12,7 +12,7 @@ Index repo for Kimera-Multi, a distributed multi-robot metric-semantic SLAM syst
 
 **Hackathon notes:** Multi-repo install; budget a full day. Use their datasets for a demo.
 
-**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `c-slam`, `semantic`, `mit`, `distributed`, `ros1`
 
@@ -20,18 +20,19 @@ Index repo for Kimera-Multi, a distributed multi-robot metric-semantic SLAM syst
 
 ## Related
 
-- alternative_to: [Swarm-SLAM](../repos/mistlab__swarm-slam.md)
-- depends_on: [Kimera-VIO](../repos/mit-spark__kimera-vio.md)
-- depends_on: [Kimera-Distributed](../repos/mit-spark__kimera-distributed.md)
-- depends_on: [DPGO](../repos/mit-acl__dpgo.md)
+- alternative_to: [Swarm-SLAM](../../catalog/repos/mistlab__swarm-slam.md)
+- depends_on: [Kimera-VIO](../../catalog/repos/mit-spark__kimera-vio.md)
+- depends_on: [Kimera-Distributed](../../catalog/repos/mit-spark__kimera-distributed.md)
+- depends_on: [DPGO](../../catalog/repos/mit-acl__dpgo.md)
 
 ## Referenced by
 
-- [Swarm-SLAM](../repos/lajoiepy__cslam.md) (alternative_to)
-- [Swarm-SLAM](../repos/mistlab__swarm-slam.md) (alternative_to)
-- [Kimera-Distributed](../repos/mit-spark__kimera-distributed.md) (integrates_with)
-- [Kimera-VIO](../repos/mit-spark__kimera-vio.md) (extends)
-- [Kimera-Multi: Robust, Distributed, Dense Metric-Semantic SLAM for Multi-Robot Systems](../resources/kimera-multi-tian-2021.md) (has_code)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Swarm-SLAM](../../catalog/repos/lajoiepy__cslam.md) (alternative_to)
+- [Swarm-SLAM](../../catalog/repos/mistlab__swarm-slam.md) (alternative_to)
+- [Kimera-Distributed](../../catalog/repos/mit-spark__kimera-distributed.md) (integrates_with)
+- [Kimera-VIO](../../catalog/repos/mit-spark__kimera-vio.md) (extends)
+- [Kimera-Multi: Robust, Distributed, Dense Metric-Semantic SLAM for Multi-Robot Systems](../../catalog/resources/kimera-multi-tian-2021.md) (has_code)
 
 _Indexed by lane(s): domains-swarm, slam_
 

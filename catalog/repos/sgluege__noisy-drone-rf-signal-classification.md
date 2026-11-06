@@ -12,7 +12,7 @@ Loader and inspection scripts for a Kaggle drone RF benchmark: 16,384-sample IQ 
 
 **Hackathon notes:** Kaggle download is ~26 GB (CC BY 4.0; repo code GPL-3.0). Load dataset.pt with the provided PyTorch dataloader, then train a small CNN.
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../concepts/counter-uas.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md)
 
 **Tags:** `rf`, `snr`, `classification`, `kaggle`
 
@@ -20,12 +20,12 @@ Loader and inspection scripts for a Kaggle drone RF benchmark: 16,384-sample IQ 
 
 ## Related
 
-- alternative_to: [RFUAV](../repos/kitoweeknd__rfuav.md)
-- alternative_to: [DroneRF](../repos/al-sad__dronerf.md)
+- alternative_to: [RFUAV](../../catalog/repos/kitoweeknd__rfuav.md)
+- alternative_to: [DroneRF](../../catalog/repos/al-sad__dronerf.md)
 
 ## Referenced by
 
-- [Noisy Drone RF Signal Classification (Kaggle)](../resources/noisy-drone-rf-kaggle.md) (has_code)
+- [Noisy Drone RF Signal Classification (Kaggle)](../../catalog/resources/noisy-drone-rf-kaggle.md) (has_code)
 
 _Indexed by lane(s): round3-expansion_
 

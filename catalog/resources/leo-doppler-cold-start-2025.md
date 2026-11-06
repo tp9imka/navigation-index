@@ -14,12 +14,12 @@ Formulates LEO Doppler positioning as an optimization solvable by semidefinite r
 
 - [leo-doppler-cold-start-2025](../../docs/paper-digests/leo-doppler-cold-start-2025.md) (paper-digests)
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md)
 
 **Tags:** `arxiv`, `leo`, `optimization`
 
 ## Related
 
-- cites: [Navigation using carrier Doppler shift from a LEO constellation: TRANSIT on steroids](../resources/psiaki-transit-on-steroids-2021.md)
+- cites: [Navigation using carrier Doppler shift from a LEO constellation: TRANSIT on steroids](../../catalog/resources/psiaki-transit-on-steroids-2021.md)
 
 _Indexed by lane(s): alt-nav_

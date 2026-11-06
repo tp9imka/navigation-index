@@ -19,7 +19,7 @@ Modular Python library from Stanford NavLab for parsing, analyzing and visualizi
 - [gnss-spoofing-s7am1na](../../docs/dataset-cards/gnss-spoofing-s7am1na.md) (dataset-cards)
 - [gsdc](../../docs/dataset-cards/gsdc.md) (dataset-cards)
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `python`, `android`, `rinex`, `fde`
 
@@ -27,17 +27,24 @@ Modular Python library from Stanford NavLab for parsing, analyzing and visualizi
 
 ## Related
 
-- integrates_with: [GPS Measurement Tools (incl. GnssLogger)](../repos/google__gps-measurement-tools.md)
-- alternative_to: [laika](../repos/commaai__laika.md)
+- integrates_with: [GPS Measurement Tools (incl. GnssLogger)](../../catalog/repos/google__gps-measurement-tools.md)
+- alternative_to: [laika](../../catalog/repos/commaai__laika.md)
 
 ## Referenced by
 
-- [laika](../repos/commaai__laika.md) (alternative_to)
-- [georinex](../repos/geospace-code__georinex.md) (alternative_to)
-- [GPS Measurement Tools (incl. GnssLogger)](../repos/google__gps-measurement-tools.md) (integrates_with)
-- [Multi-frequency GNSS spoofing raw dataset](../repos/s7am1na__gnss-spoofing-dataset.md) (integrates_with)
-- [Google Smartphone Decimeter Challenge 2023-2024](../resources/google-gsdc-2023.md) (has_code)
-- [Public CORS RINEX to SPP vs RTK with RTKLIB demo5 and gnss_lib_py](../samples/gnss-rinex-processing.md) (uses)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [laika](../../catalog/repos/commaai__laika.md) (alternative_to)
+- [georinex](../../catalog/repos/geospace-code__georinex.md) (alternative_to)
+- [GPS Measurement Tools (incl. GnssLogger)](../../catalog/repos/google__gps-measurement-tools.md) (integrates_with)
+- [Multi-frequency GNSS spoofing raw dataset](../../catalog/repos/s7am1na__gnss-spoofing-dataset.md) (integrates_with)
+- [Google Smartphone Decimeter Challenge 2023-2024](../../catalog/resources/google-gsdc-2023.md) (has_code)
+- [Public CORS RINEX to SPP vs RTK with RTKLIB demo5 and gnss_lib_py](../../catalog/samples/gnss-rinex-processing.md) (uses)
 
 _Indexed by lane(s): gnss_
 

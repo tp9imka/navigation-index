@@ -15,19 +15,24 @@ Defines four cumulative resilience levels for PNT user equipment based on preven
 - Scope is PNT-producing equipment, not downstream consumers
 - A later v2.0 was reported in 2022 with evaluation guidance
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Standards and interface specs](../concepts/standards.md), [Timing and time transfer](../concepts/timing.md), [Jamming and spoofing](../concepts/gnss-interference.md), [Policy, export control and ethics](../concepts/policy-ethics.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Standards and interface specs](../../catalog/concepts/standards.md), [Timing and time transfer](../../catalog/concepts/timing.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md)
 
 **Tags:** `dhs`, `eo-13905`, `resilience-levels`, `conformance`, `receiver`
 
 ## Related
 
-- cites: [NISTIR 8323: Foundational PNT Profile - Applying the Cybersecurity Framework for the Responsible Use of PNT Services](../resources/nist-ir-8323-pnt-profile.md)
-- cites: [Executive Order 13905: Strengthening National Resilience Through Responsible Use of PNT Services](../resources/eo-13905-responsible-pnt.md)
+- cites: [NISTIR 8323: Foundational PNT Profile - Applying the Cybersecurity Framework for the Responsible Use of PNT Services](../../catalog/resources/nist-ir-8323-pnt-profile.md)
+- cites: [Executive Order 13905: Strengthening National Resilience Through Responsible Use of PNT Services](../../catalog/resources/eo-13905-responsible-pnt.md)
 
 ## Referenced by
 
-- [Resilient PNT Reference Architecture](../resources/dhs-resilient-pnt-reference-architecture.md) (part_of)
-- [DHS S&T Positioning, Navigation, and Timing Program](../resources/dhs-st-pnt-program.md) (part_of)
-- [Safran VersaPNT and Geonyx resilient PNT units](../resources/safran-versapnt.md) (cites)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [Resilient PNT Reference Architecture](../../catalog/resources/dhs-resilient-pnt-reference-architecture.md) (part_of)
+- [DHS S&T Positioning, Navigation, and Timing Program](../../catalog/resources/dhs-st-pnt-program.md) (part_of)
+- [Safran VersaPNT and Geonyx resilient PNT units](../../catalog/resources/safran-versapnt.md) (cites)
 
 _Indexed by lane(s): defense-context, docs-standards_

@@ -11,16 +11,16 @@ Builds object-centric 3D scene graphs with open-vocabulary labels from RGB-D and
 - Compact object-level maps for LLM planning
 - Uses 2D foundation models
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `scene-graph`
 
 ## Related
 
-- has_code: [ConceptGraphs](../repos/concept-graphs__concept-graphs.md)
+- has_code: [ConceptGraphs](../../catalog/repos/concept-graphs__concept-graphs.md)
 
 ## Referenced by
 
-- [ConceptGraphs](../repos/concept-graphs__concept-graphs.md) (integrates_with)
+- [ConceptGraphs](../../catalog/repos/concept-graphs__concept-graphs.md) (integrates_with)
 
 _Indexed by lane(s): gap-fill_

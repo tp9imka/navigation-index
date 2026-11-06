@@ -10,9 +10,9 @@ Modular IMU-driven sensor-fusion framework from University of Klagenfurt designe
 
 **Why it matters:** Directly relevant to graceful degradation when GNSS or another aiding sensor drops out.
 
-**Hackathon notes:** Core library builds standalone; ROS wrapper exists separately. Good fit for a sensor-dropout demo.
+**Hackathon notes:** Core library builds standalone; ROS wrapper exists separately (mars_ros). Good fit for a sensor-dropout demo. Licence is BSD-2-Clause with an added condition that forbids selling the software or services based on it (source-available, no commercial use).
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `ekf`, `modular`, `uav`
 
@@ -20,12 +20,15 @@ Modular IMU-driven sensor-fusion framework from University of Klagenfurt designe
 
 ## Related
 
-- alternative_to: [ethzasl_msf (Multi Sensor Fusion)](../repos/ethz-asl__ethzasl_msf.md)
-- same_org: [cnspy trajectory evaluation](../repos/aau-cns__cnspy_trajectory_evaluation.md)
+- alternative_to: [ethzasl_msf (Multi Sensor Fusion)](../../catalog/repos/ethz-asl__ethzasl_msf.md)
+- same_org: [cnspy trajectory evaluation](../../catalog/repos/aau-cns__cnspy_trajectory_evaluation.md)
 
 ## Referenced by
 
-- [ethzasl_msf (Multi Sensor Fusion)](../repos/ethz-asl__ethzasl_msf.md) (alternative_to)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [ethzasl_msf (Multi Sensor Fusion)](../../catalog/repos/ethz-asl__ethzasl_msf.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 

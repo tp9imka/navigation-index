@@ -16,7 +16,7 @@ Lua Wireshark dissector that decodes Remote ID broadcast frames over Wi-Fi and B
 
 - [remote-id-droneid-captures](../../docs/dataset-cards/remote-id-droneid-captures.md) (dataset-cards)
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md)
 
 **Tags:** `remote-id`, `wireshark`
 
@@ -24,11 +24,15 @@ Lua Wireshark dissector that decodes Remote ID broadcast frames over Wi-Fi and B
 
 ## Related
 
-- same_org: [Open Drone ID Core C](../repos/opendroneid__opendroneid-core-c.md)
+- same_org: [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md)
 
 ## Referenced by
 
-- [Open Drone ID Core C](../repos/opendroneid__opendroneid-core-c.md) (same_org)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md) (same_org)
+- [Drone Remote ID decoder, track table and TAK output](../../catalog/samples/remote-id-to-tak.md) (uses)
 
 _Indexed by lane(s): domains-swarm_
 

@@ -12,7 +12,7 @@ Firmware and tools for Si1000-based telemetry radios (3DR/RFD900 class) carrying
 
 **Hackathon notes:** Mostly use stock firmware; configure via AT commands or Mission Planner.
 
-**Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `telemetry`, `fhss`, `rfd900`, `si1000`
 
@@ -20,11 +20,11 @@ Firmware and tools for Si1000-based telemetry radios (3DR/RFD900 class) carrying
 
 ## Related
 
-- alternative_to: [mLRS](../repos/olliw42__mlrs.md)
+- alternative_to: [mLRS](../../catalog/repos/olliw42__mlrs.md)
 
 ## Referenced by
 
-- [mLRS](../repos/olliw42__mlrs.md) (alternative_to)
+- [mLRS](../../catalog/repos/olliw42__mlrs.md) (alternative_to)
 
 _Indexed by lane(s): autopilots_
 

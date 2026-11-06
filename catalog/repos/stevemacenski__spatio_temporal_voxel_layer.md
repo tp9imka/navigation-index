@@ -12,7 +12,7 @@ Nav2 costmap layer using OpenVDB voxel grids with time decay to represent 3D obs
 
 **Hackathon notes:** Drop-in Nav2 plugin via apt.
 
-**Concepts:** [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `costmap`, `openvdb`, `nav2`
 
@@ -20,11 +20,11 @@ Nav2 costmap layer using OpenVDB voxel grids with time decay to represent 3D obs
 
 ## Related
 
-- integrates_with: [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md)
+- integrates_with: [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md)
 
 ## Referenced by
 
-- [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md) (integrates_with)
+- [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md) (integrates_with)
 
 _Indexed by lane(s): planning-gis-c2_
 

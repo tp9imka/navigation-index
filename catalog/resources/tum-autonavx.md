@@ -11,16 +11,17 @@ MOOC version of the TUM flying-robots lecture with lecture videos and browser-ba
 - Lighter-weight than the full lecture
 - Python exercise format is easy to adapt
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Visual(-inertial) odometry](../concepts/vio.md), [Autopilots and flight control](../concepts/autopilot.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
 **Tags:** `mooc`, `edx`, `quadrotor`
 
 ## Related
 
-- same_author: [Visual Navigation for Flying Robots (TUM, 2013)](../resources/tum-visual-navigation-flying-robots.md)
+- same_author: [Visual Navigation for Flying Robots (TUM, 2013)](../../catalog/resources/tum-visual-navigation-flying-robots.md)
 
 ## Referenced by
 
-- [Visual Navigation for Flying Robots (TUM, 2013)](../resources/tum-visual-navigation-flying-robots.md) (part_of)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
+- [Visual Navigation for Flying Robots (TUM, 2013)](../../catalog/resources/tum-visual-navigation-flying-robots.md) (part_of)
 
 _Indexed by lane(s): learning_

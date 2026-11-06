@@ -12,7 +12,13 @@ Python library for decoding and encoding AIS NMEA sentences (AIVDM/AIVDO), inclu
 
 **Hackathon notes:** pip install pyais, point it at a public AIS TCP feed or a recorded NMEA file, and you have vessel tracks in an hour. Pair with AIS-catcher for live RF.
 
-**Concepts:** [Maritime navigation](../concepts/maritime-nav.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Tracking and data association](../concepts/target-tracking.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [m0r13n__pyais](../../docs/integration-cards/m0r13n__pyais.md) (integration-cards)
+- [dma-ais](../../docs/dataset-cards/dma-ais.md) (dataset-cards)
+
+**Concepts:** [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Tracking and data association](../../catalog/concepts/target-tracking.md)
 
 **Tags:** `ais`, `nmea`, `decoder`, `python`
 
@@ -20,15 +26,21 @@ Python library for decoding and encoding AIS NMEA sentences (AIVDM/AIVDO), inclu
 
 ## Related
 
-- integrates_with: [AIS-catcher](../repos/jvde-github__ais-catcher.md)
-- alternative_to: [noaadata](../repos/schwehr__noaadata.md)
-- integrates_with: [Stone Soup](../repos/dstl__stone-soup.md)
+- integrates_with: [AIS-catcher](../../catalog/repos/jvde-github__ais-catcher.md)
+- alternative_to: [noaadata](../../catalog/repos/schwehr__noaadata.md)
+- integrates_with: [Stone Soup](../../catalog/repos/dstl__stone-soup.md)
 
 ## Referenced by
 
-- [AIS-catcher](../repos/jvde-github__ais-catcher.md) (integrates_with)
-- [noaadata](../repos/schwehr__noaadata.md) (alternative_to)
-- [ITU-R M.1371 - Technical characteristics for an automatic identification system using TDMA in the VHF maritime mobile band](../resources/itu-r-m1371-ais.md) (explains)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [AIS-catcher](../../catalog/repos/jvde-github__ais-catcher.md) (integrates_with)
+- [noaadata](../../catalog/repos/schwehr__noaadata.md) (alternative_to)
+- [Danish Maritime Authority historical AIS data](../../catalog/resources/dma-historical-ais.md) (has_code)
+- [ITU-R M.1371-6 - Technical characteristics for VHF automatic identification system using time division multiple access in the maritime mobile service](../../catalog/resources/itu-r-m1371-ais.md) (explains)
+- [GNSS spoofing signatures in real AIS tracks: detectors, injected ground truth, GeoJSON and CoT](../../catalog/samples/maritime-ais-spoofing.md) (uses)
 
 _Indexed by lane(s): domains-swarm_
 

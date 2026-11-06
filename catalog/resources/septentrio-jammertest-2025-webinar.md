@@ -11,16 +11,16 @@ On-demand vendor webinar reviewing receiver behaviour during the high-power inte
 - Field results under interference levels like Baltic/Eastern Europe
 - Vendor view; treat claims accordingly
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `jammertest`, `septentrio`, `webinar`
 
 ## Related
 
-- evaluates: [Jammertest - open GNSS jamming and spoofing test event (Andoya, Norway)](../resources/jammertest-norway.md)
+- evaluates: [Jammertest - open GNSS jamming and spoofing test event (Andoya, Norway)](../../catalog/resources/jammertest-norway.md)
 
 ## Referenced by
 
-- [Jammertest - open GNSS jamming and spoofing test event (Andoya, Norway)](../resources/jammertest-norway.md) (part_of)
+- [Jammertest - open GNSS jamming and spoofing test event (Andoya, Norway)](../../catalog/resources/jammertest-norway.md) (part_of)
 
 _Indexed by lane(s): learning_

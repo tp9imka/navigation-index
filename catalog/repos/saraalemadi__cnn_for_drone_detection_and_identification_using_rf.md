@@ -12,7 +12,7 @@ CNN code for drone detection and identification on RF spectra.
 
 **Hackathon notes:** Older code (2020): three Keras scripts that read DroneRF's RF_Data.csv and use the old keras.layers.core API; use as reference only.
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md)
 
 **Tags:** `rf`, `cnn`
 
@@ -20,7 +20,7 @@ CNN code for drone detection and identification on RF spectra.
 
 ## Related
 
-- depends_on: [DroneRF](../repos/al-sad__dronerf.md)
+- depends_on: [DroneRF](../../catalog/repos/al-sad__dronerf.md)
 
 _Indexed by lane(s): round3-expansion_
 

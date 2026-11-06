@@ -10,9 +10,9 @@ Older high-level Python API for MAVLink vehicles, built on pymavlink; maintenanc
 
 **Why it matters:** Many tutorials still use it; fine for simple ArduPilot scripts but prefer pymavlink or MAVSDK for new work.
 
-**Hackathon notes:** Has compatibility issues with recent Python versions; pin Python 3.9/3.10 or avoid.
+**Hackathon notes:** The PyPI release 2.9.2 (2019) fails to import on Python 3.10+ (it uses collections.MutableMapping); pin Python 3.9 or install from GitHub master, which has the fix. Better to avoid for new work.
 
-**Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Autopilots and flight control](../concepts/autopilot.md)
+**Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
 **Tags:** `python`, `legacy`
 
@@ -20,13 +20,14 @@ Older high-level Python API for MAVLink vehicles, built on pymavlink; maintenanc
 
 ## Related
 
-- depends_on: [pymavlink](../repos/ardupilot__pymavlink.md)
-- alternative_to: [MAVSDK-Python](../repos/mavlink__mavsdk-python.md)
+- depends_on: [pymavlink](../../catalog/repos/ardupilot__pymavlink.md)
+- alternative_to: [MAVSDK-Python](../../catalog/repos/mavlink__mavsdk-python.md)
 
 ## Referenced by
 
-- [pymavlink](../repos/ardupilot__pymavlink.md) (depends_on)
-- [MAVSDK-Python](../repos/mavlink__mavsdk-python.md) (alternative_to)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [pymavlink](../../catalog/repos/ardupilot__pymavlink.md) (depends_on)
+- [MAVSDK-Python](../../catalog/repos/mavlink__mavsdk-python.md) (alternative_to)
 
 _Indexed by lane(s): autopilots_
 

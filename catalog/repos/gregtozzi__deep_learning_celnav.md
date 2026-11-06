@@ -12,11 +12,15 @@ Exploratory project on automating celestial navigation with deep learning and ed
 
 **Hackathon notes:** Concept reference.
 
-**Concepts:** [Celestial and star-tracker navigation](../concepts/celestial-nav.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `deep-learning`, `maritime`
 
 **Domains:** maritime, air
+
+## Referenced by
+
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 
 _Indexed by lane(s): alt-nav_
 

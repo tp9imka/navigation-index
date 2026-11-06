@@ -10,9 +10,9 @@ PyTorch baselines and domain-bridging methods for spacecraft pose estimation on 
 
 **Why it matters:** Open code tied to an ESA competition on vision-based relative navigation and sim-to-real gap.
 
-**Hackathon notes:** Dataset download is large; start with a subset. Inactive since 2023.
+**Hackathon notes:** Dataset download is large; start with a subset. Inactive since 2023. The code is MIT, but the SPEED+ dataset on the Stanford Digital Repository is CC BY-NC-SA 4.0 (non-commercial).
 
-**Concepts:** [Space and orbital navigation](../concepts/space-nav.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Space and orbital navigation](../../catalog/concepts/space-nav.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `esa-kelvins`, `spec2021`, `pose-estimation`, `pytorch`
 
@@ -20,11 +20,11 @@ PyTorch baselines and domain-bridging methods for spacecraft pose estimation on 
 
 ## Related
 
-- evaluated_on: [ESA Kelvins Satellite Pose Estimation Competition 2021 (SPEED+)](../resources/kelvins-pose-estimation-2021.md)
+- evaluated_on: [ESA Kelvins Satellite Pose Estimation Competition 2021 (SPEED+)](../../catalog/resources/kelvins-pose-estimation-2021.md)
 
 ## Referenced by
 
-- [ESA Kelvins Satellite Pose Estimation Competition 2021 (SPEED+)](../resources/kelvins-pose-estimation-2021.md) (has_code)
+- [ESA Kelvins Satellite Pose Estimation Competition 2021 (SPEED+)](../../catalog/resources/kelvins-pose-estimation-2021.md) (has_code)
 
 _Indexed by lane(s): defense-context_
 

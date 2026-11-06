@@ -12,7 +12,12 @@ Download, model and analyze street networks and other OSM features as NetworkX g
 
 **Hackathon notes:** pip install osmnx; needs internet for Overpass unless you load a local OSM file.
 
-**Concepts:** [GIS, maps and geospatial data](../concepts/gis-mapping.md), [Path and motion planning](../concepts/path-planning.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [gboeing__osmnx](../../docs/integration-cards/gboeing__osmnx.md) (integration-cards)
+
+**Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md), [Path and motion planning](../../catalog/concepts/path-planning.md)
 
 **Tags:** `osm`, `networkx`, `street-network`
 
@@ -20,7 +25,14 @@ Download, model and analyze street networks and other OSM features as NetworkX g
 
 ## Related
 
-- alternative_to: [OSRM](../repos/project-osrm__osrm-backend.md)
+- alternative_to: [OSRM](../../catalog/repos/project-osrm__osrm-backend.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [OpenStreetMap data via the Overpass API](../../catalog/resources/openstreetmap-overpass-api.md) (has_code)
 
 _Indexed by lane(s): planning-gis-c2_
 

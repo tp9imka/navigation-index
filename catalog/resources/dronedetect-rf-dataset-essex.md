@@ -12,12 +12,22 @@ RF recordings of seven drones (six DJI models and the Parrot Disco) captured wit
 - Python loader splits recordings into short samples
 - Do not confuse with an unrelated image dataset of the same name
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../concepts/counter-uas.md)
+## Deep dives
+
+- [drone-rf-datasets](../../docs/dataset-cards/drone-rf-datasets.md) (dataset-cards)
+
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md)
 
 **Tags:** `rf`, `bladerf`, `drone-detection`
 
 ## Related
 
-- has_code: [RFClassification](../repos/codymq__rfclassification.md)
+- has_code: [RFClassification](../../catalog/repos/codymq__rfclassification.md)
+
+## Referenced by
+
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): round3-expansion_

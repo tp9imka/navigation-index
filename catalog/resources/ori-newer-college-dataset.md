@@ -10,13 +10,18 @@ Handheld lidar plus stereo and multi-camera sequences around New College, Oxford
 
 - Sensors: lidar, stereo, multi-camera, IMUs
 - Size class: large
+- Licence: CC BY-NC-SA 4.0, non-commercial academic use
 
 ## Deep dives
 
 - [newer-college](../../docs/dataset-cards/newer-college.md) (dataset-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `oxford`, `handheld`, `lidar`
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 
 _Indexed by lane(s): sim-data_

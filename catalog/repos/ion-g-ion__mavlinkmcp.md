@@ -17,7 +17,7 @@ MCP server bridging an LLM to a drone over MAVLink, exposing arming, takeoff, wa
 - [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [ion-g-ion__mavlinkmcp](../../docs/integration-cards/ion-g-ion__mavlinkmcp.md) (integration-cards)
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Mission planning and routing](../concepts/mission-planning.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 
 **Tags:** `mcp`, `mavlink`, `mavsdk`, `llm`, `drone`
 
@@ -25,16 +25,19 @@ MCP server bridging an LLM to a drone over MAVLink, exposing arming, takeoff, wa
 
 ## Related
 
-- depends_on: [MAVSDK-Python](../repos/mavlink__mavsdk-python.md)
-- alternative_to: [mavlink-mcp (ArduPilot)](../repos/deepakpopli__mavlink-mcp.md)
-- alternative_to: [ardupilot-mcp (safety-gated)](../repos/rmeadomavic__ardupilot-mcp.md)
+- depends_on: [MAVSDK-Python](../../catalog/repos/mavlink__mavsdk-python.md)
+- alternative_to: [mavlink-mcp (ArduPilot)](../../catalog/repos/deepakpopli__mavlink-mcp.md)
+- alternative_to: [ardupilot-mcp (safety-gated)](../../catalog/repos/rmeadomavic__ardupilot-mcp.md)
 
 ## Referenced by
 
-- [mavlink-mcp (ArduPilot)](../repos/deepakpopli__mavlink-mcp.md) (alternative_to)
-- [ardupilot-mcp (safety-gated)](../repos/rmeadomavic__ardupilot-mcp.md) (alternative_to)
-- [Model Context Protocol specification](../resources/mcp-specification.md) (explains)
-- [LLM mission agent: a safety-gated MAVLink MCP server flying ArduPilot SITL](../samples/llm-mission-agent.md) (explains)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [mavlink-mcp (ArduPilot)](../../catalog/repos/deepakpopli__mavlink-mcp.md) (alternative_to)
+- [ardupilot-mcp (safety-gated)](../../catalog/repos/rmeadomavic__ardupilot-mcp.md) (alternative_to)
+- [Model Context Protocol specification](../../catalog/resources/mcp-specification.md) (explains)
+- [LLM mission agent: a safety-gated MAVLink MCP server flying ArduPilot SITL](../../catalog/samples/llm-mission-agent.md) (explains)
 
 _Indexed by lane(s): gap-fill_
 

@@ -12,7 +12,7 @@ NumPy API that generates Loran-C master and secondary station pulse groups with 
 
 **Hackathon notes:** Small; translate README; combine with a tracking loop for a toy eLoran receiver.
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `loran-c`, `eloran`, `signal-generation`, `python`
 
@@ -20,11 +20,11 @@ NumPy API that generates Loran-C master and secondary station pulse groups with 
 
 ## Related
 
-- alternative_to: [LoranC receiver](../repos/romavis__loranc.md)
+- alternative_to: [LoranC receiver](../../catalog/repos/romavis__loranc.md)
 
 ## Referenced by
 
-- [LoranC receiver](../repos/romavis__loranc.md) (alternative_to)
+- [LoranC receiver](../../catalog/repos/romavis__loranc.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

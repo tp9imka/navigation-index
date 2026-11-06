@@ -12,18 +12,20 @@ Graduate course building a monocular visual odometry pipeline step by step: imag
 - Covers place recognition and VIO fusion
 - Python templates available alongside Matlab
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Feature detection and matching](../concepts/feature-matching.md), [Sensor calibration](../concepts/calibration.md), [Place recognition and loop closure](../concepts/place-recognition.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md), [Sensor calibration](../../catalog/concepts/calibration.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 
 **Tags:** `scaramuzza`, `uzh`, `visual-odometry`, `event-camera`
 
 ## Related
 
-- uses: [SVO Pro](../repos/uzh-rpg__rpg_svo_pro_open.md)
-- uses: [rpg_trajectory_evaluation](../repos/uzh-rpg__rpg_trajectory_evaluation.md)
-- same_author: [Visual Odometry: Part I - The First 30 Years and Fundamentals / Part II - Matching, Robustness, Optimization, and Applications](../resources/scaramuzza-vo-tutorial.md)
+- uses: [SVO Pro](../../catalog/repos/uzh-rpg__rpg_svo_pro_open.md)
+- uses: [rpg_trajectory_evaluation](../../catalog/repos/uzh-rpg__rpg_trajectory_evaluation.md)
+- same_author: [Visual Odometry: Part I - The First 30 Years and Fundamentals / Part II - Matching, Robustness, Optimization, and Applications](../../catalog/resources/scaramuzza-vo-tutorial.md)
 
 ## Referenced by
 
-- [Visual Odometry: Part I - The First 30 Years and Fundamentals / Part II - Matching, Robustness, Optimization, and Applications](../resources/scaramuzza-vo-tutorial.md) (same_author)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
+- [Visual Odometry: Part I - The First 30 Years and Fundamentals / Part II - Matching, Robustness, Optimization, and Applications](../../catalog/resources/scaramuzza-vo-tutorial.md) (same_author)
 
 _Indexed by lane(s): learning_

@@ -1,8 +1,8 @@
-# MagNav challenge flight data (Sander Geophysics, Zenodo)
+# DAF-MIT AIA Open Flight Data for Magnetic Navigation Research
 
 `res:magnav-sgs-flight-data` - dataset - <https://zenodo.org/records/12723700>
 
-**By:** MIT, Department of the Air Force, Sander Geophysics - **Year:** 2024 - **Level:** intermediate - **Access:** open
+**By:** Albert R. Gnadt, Joseph Belarge, Aaron Canciani, Lauren Conger, et al. - **Year:** 2024 - **Level:** intermediate - **Access:** open
 
 Zenodo record of airborne magnetometer, INS and GNSS flight data with datasheets, collected for the MagNav challenge.
 
@@ -15,16 +15,19 @@ Zenodo record of airborne magnetometer, INS and GNSS flight data with datasheets
 
 - [magnav-challenge-data](../../docs/dataset-cards/magnav-challenge-data.md) (dataset-cards)
 
-**Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `dataset`, `magnav`, `zenodo`
 
 ## Related
 
-- dataset_for: [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/afrl-magnav-challenge-2020.md)
+- dataset_for: [Signal Enhancement for Magnetic Navigation Challenge Problem](../../catalog/resources/afrl-magnav-challenge-2020.md)
 
 ## Referenced by
 
-- [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/afrl-magnav-challenge-2020.md) (dataset_for)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Signal Enhancement for Magnetic Navigation Challenge Problem](../../catalog/resources/afrl-magnav-challenge-2020.md) (dataset_for)
 
 _Indexed by lane(s): defense-context_

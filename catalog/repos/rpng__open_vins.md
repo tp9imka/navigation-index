@@ -18,7 +18,7 @@ MSCKF-based visual-inertial navigation platform with online calibration, a simul
 - [rpng__open_vins](../../docs/integration-cards/rpng__open_vins.md) (integration-cards)
 - [openvins-2020](../../docs/paper-digests/openvins-2020.md) (paper-digests)
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Sensor calibration](../concepts/calibration.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor calibration](../../catalog/concepts/calibration.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `msckf`, `ekf`, `ros1`, `ros2`, `simulator`
 
@@ -26,24 +26,32 @@ MSCKF-based visual-inertial navigation platform with online calibration, a simul
 
 ## Related
 
-- extends: [MINS](../repos/rpng__mins.md)
-- alternative_to: [MSCKF_VIO](../repos/kumarrobotics__msckf_vio.md)
-- evaluated_on: [evo](../repos/michaelgrupp__evo.md)
+- extends: [MINS](../../catalog/repos/rpng__mins.md)
+- alternative_to: [MSCKF_VIO](../../catalog/repos/kumarrobotics__msckf_vio.md)
+- evaluated_on: [evo](../../catalog/repos/michaelgrupp__evo.md)
 
 ## Referenced by
 
-- [Kalibr](../repos/ethz-asl__kalibr.md) (integrates_with)
-- [maplab](../repos/ethz-asl__maplab.md) (integrates_with)
-- [MSCKF_VIO](../repos/kumarrobotics__msckf_vio.md) (alternative_to)
-- [MAVROS](../repos/mavlink__mavros.md) (integrates_with)
-- [MINS](../repos/rpng__mins.md) (extends)
-- [COVINS / COVINS-G](../repos/v4rl-ucy__covins.md) (integrates_with)
-- [Basalt](../repos/vladyslavusenko__basalt.md) (alternative_to)
-- [Visual-Inertial Navigation: A Concise Review](../resources/huang-vins-concise-review-2019.md) (explains)
-- [OpenVINS documentation](../resources/openvins-docs.md) (has_code)
-- [Shield AI Hivemind autonomy stack](../resources/shield-ai-hivemind.md) (alternative_to)
-- [Spleenlab VISIONAIRY perception and GNSS-free navigation software](../resources/spleenlab-visionairy.md) (alternative_to)
-- [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) (explains)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Kalibr](../../catalog/repos/ethz-asl__kalibr.md) (integrates_with)
+- [maplab](../../catalog/repos/ethz-asl__maplab.md) (integrates_with)
+- [MSCKF_VIO](../../catalog/repos/kumarrobotics__msckf_vio.md) (alternative_to)
+- [MAVROS](../../catalog/repos/mavlink__mavros.md) (integrates_with)
+- [MINS](../../catalog/repos/rpng__mins.md) (extends)
+- [COVINS / COVINS-G](../../catalog/repos/v4rl-ucy__covins.md) (integrates_with)
+- [Basalt](../../catalog/repos/vladyslavusenko__basalt.md) (alternative_to)
+- [Visual-Inertial Navigation: A Concise Review](../../catalog/resources/huang-vins-concise-review-2019.md) (explains)
+- [OpenVINS documentation](../../catalog/resources/openvins-docs.md) (has_code)
+- [Shield AI Hivemind autonomy stack](../../catalog/resources/shield-ai-hivemind.md) (alternative_to)
+- [Spleenlab VISIONAIRY perception and GNSS-free navigation software](../../catalog/resources/spleenlab-visionairy.md) (alternative_to)
+- [Distributed Visual-Inertial Cooperative Localization](../../catalog/resources/zhu-2021-distributed-vi-cooperative-localization.md) (uses)
+- [Relative navigation benchmark on real data: KISS-ICP lidar odometry, OpenVINS VIO, mono and nadir VO, scored with evo](../../catalog/samples/relative-nav-benchmark.md) (uses)
+- [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../../catalog/samples/vio-to-mavlink-bridge.md) (explains)
 
 _Indexed by lane(s): slam_
 

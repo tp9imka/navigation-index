@@ -16,7 +16,7 @@ Real-world GNSS interference recordings from Jammertest 2025 at Andoya, Norway, 
 
 - [jammertest-data](../../docs/dataset-cards/jammertest-data.md) (dataset-cards)
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `jammertest`, `spoofing`, `jamming`, `meaconing`, `dataset`
 
@@ -24,18 +24,22 @@ Real-world GNSS interference recordings from Jammertest 2025 at Andoya, Norway, 
 
 ## Related
 
-- evaluated_on: [Jammertest test plan](../repos/npra__jammertest-plan.md)
-- alternative_to: [VAARA Jammertest dataset](../repos/univaasadigieco__vaara.md)
+- evaluated_on: [Jammertest test plan](../../catalog/repos/npra__jammertest-plan.md)
+- alternative_to: [VAARA Jammertest dataset](../../catalog/repos/univaasadigieco__vaara.md)
 
 ## Referenced by
 
-- [Towards Jammer Fingerprinting](../repos/helsinki-sda-group__towards-jammer-fingerprinting.md) (integrates_with)
-- [Jammertest test plan](../repos/npra__jammertest-plan.md) (integrates_with)
-- [VAARA Jammertest dataset](../repos/univaasadigieco__vaara.md) (alternative_to)
-- [GNSS Interference Spectrum Highway Dataset 1](../resources/fraunhofer-gnss-interference-highway-dataset.md) (same_author)
-- [Analyzing and Characterizing Multi-Source Interference Effects at Jammertest Norway 2025](../resources/jammertest-2025-multi-source-interference.md) (uses)
-- [Jammertest - open GNSS jamming and spoofing test event (Andoya, Norway)](../resources/jammertest-norway.md) (dataset_for)
-- [Most resilient GNSS receiver: results from Jammertest in Norway](../resources/septentrio-jammertest-results.md) (dataset_for)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Towards Jammer Fingerprinting](../../catalog/repos/helsinki-sda-group__towards-jammer-fingerprinting.md) (integrates_with)
+- [Jammertest test plan](../../catalog/repos/npra__jammertest-plan.md) (integrates_with)
+- [VAARA Jammertest dataset](../../catalog/repos/univaasadigieco__vaara.md) (alternative_to)
+- [GNSS Interference Spectrum Highway Dataset 1](../../catalog/resources/fraunhofer-gnss-interference-highway-dataset.md) (same_author)
+- [Analyzing and Characterizing Multi-Source Interference Effects at Jammertest Norway 2025](../../catalog/resources/jammertest-2025-multi-source-interference.md) (uses)
+- [Jammertest - open GNSS jamming and spoofing test event (Andoya, Norway)](../../catalog/resources/jammertest-norway.md) (dataset_for)
+- [Most resilient GNSS receiver: results from Jammertest in Norway](../../catalog/resources/septentrio-jammertest-results.md) (dataset_for)
+- [Low-cost GNSS jammer sensor network: u-blox telemetry => localization => TAK and dashboard](../../catalog/samples/jammer-sensor-network.md) (explains)
 
 _Indexed by lane(s): gap-fill_
 

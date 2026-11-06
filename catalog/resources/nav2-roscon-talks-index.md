@@ -10,12 +10,12 @@ Index of ROSCon talks by Nav2 developers and the community (Vimeo links), includ
 
 - Curated entry point into ROSCon navigation videos
 
-**Concepts:** [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Path and motion planning](../concepts/path-planning.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `roscon`, `nav2`, `vimeo`
 
 ## Related
 
-- uses: [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md)
+- uses: [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md)
 
 _Indexed by lane(s): learning_

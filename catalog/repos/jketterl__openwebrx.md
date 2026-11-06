@@ -12,7 +12,7 @@ Multi-user web SDR receiver with waterfall display and many built-in digital dec
 
 **Hackathon notes:** Docker image available. Upstream activity slowed after 2024; the luarvique fork is more active.
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `sdr`, `waterfall`, `web`, `spectrum-monitoring`
 
@@ -20,13 +20,13 @@ Multi-user web SDR receiver with waterfall display and many built-in digital dec
 
 ## Related
 
-- alternative_to: [OpenWebRX+](../repos/luarvique__openwebrx.md)
-- alternative_to: [Gqrx](../repos/gqrx-sdr__gqrx.md)
+- alternative_to: [OpenWebRX+](../../catalog/repos/luarvique__openwebrx.md)
+- alternative_to: [Gqrx](../../catalog/repos/gqrx-sdr__gqrx.md)
 
 ## Referenced by
 
-- [Gqrx](../repos/gqrx-sdr__gqrx.md) (alternative_to)
-- [OpenWebRX+](../repos/luarvique__openwebrx.md) (fork_of)
+- [Gqrx](../../catalog/repos/gqrx-sdr__gqrx.md) (alternative_to)
+- [OpenWebRX+](../../catalog/repos/luarvique__openwebrx.md) (fork_of)
 
 _Indexed by lane(s): defense-context_
 

@@ -12,7 +12,7 @@ Example Linux transmitter for Remote ID over Bluetooth and Wi-Fi.
 
 **Hackathon notes:** Needs compatible Bluetooth/Wi-Fi chipsets; dormant since 2023.
 
-**Concepts:** [Standards and interface specs](../concepts/standards.md), [Counter-UAS and drone detection](../concepts/counter-uas.md)
+**Concepts:** [Standards and interface specs](../../catalog/concepts/standards.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md)
 
 **Tags:** `remote-id`, `linux`, `bluetooth`, `test-signal`
 
@@ -20,11 +20,11 @@ Example Linux transmitter for Remote ID over Bluetooth and Wi-Fi.
 
 ## Related
 
-- depends_on: [Open Drone ID Core C](../repos/opendroneid__opendroneid-core-c.md)
+- depends_on: [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md)
 
 ## Referenced by
 
-- [Open Drone ID Core C](../repos/opendroneid__opendroneid-core-c.md) (same_org)
+- [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md) (same_org)
 
 _Indexed by lane(s): autopilots, domains-swarm_
 

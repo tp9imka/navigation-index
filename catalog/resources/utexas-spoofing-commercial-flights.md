@@ -11,7 +11,7 @@ Post from Todd Humphreys' lab on spoofing incidents hitting commercial aircraft 
 - Academic view on why civil receivers accept spoofed signals
 - Points toward authentication and cross-checks as defenses
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
 **Tags:** `ut-austin`, `spoofing`, `aviation`
 

@@ -11,12 +11,12 @@ Recorded IEEE AESS Distinguished Lecture on opportunistic navigation with LEO me
 - Recorded version of the LEO SoOp lecture
 - Covers tracking unknown LEO signals for nav
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md)
 
 **Tags:** `leo`, `kassas`, `video`
 
 ## Related
 
-- same_author: [Ad Astra: Navigation with Megaconstellation LEO Satellites (GRASP on Robotics)](../resources/kassas-ad-astra-leo-grasp-2024.md)
+- same_author: [Ad Astra: Navigation with Megaconstellation LEO Satellites (GRASP on Robotics)](../../catalog/resources/kassas-ad-astra-leo-grasp-2024.md)
 
 _Indexed by lane(s): round3-expansion_

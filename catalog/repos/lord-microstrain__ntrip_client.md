@@ -12,7 +12,12 @@ ROS/ROS 2 node that connects to an NTRIP caster and publishes RTCM corrections, 
 
 **Hackathon notes:** apt-installable ROS package; works with any receiver driver accepting RTCM topics.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [lord-microstrain__ntrip_client](../../docs/integration-cards/lord-microstrain__ntrip_client.md) (integration-cards)
+
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `ntrip`, `ros2`, `rtcm`
 
@@ -20,11 +25,11 @@ ROS/ROS 2 node that connects to an NTRIP caster and publishes RTCM corrections, 
 
 ## Related
 
-- integrates_with: [ublox ROS driver](../repos/kumarrobotics__ublox.md)
+- integrates_with: [ublox ROS driver](../../catalog/repos/kumarrobotics__ublox.md)
 
 ## Referenced by
 
-- [ublox ROS driver](../repos/kumarrobotics__ublox.md) (integrates_with)
+- [ublox ROS driver](../../catalog/repos/kumarrobotics__ublox.md) (integrates_with)
 
 _Indexed by lane(s): gnss_
 

@@ -11,16 +11,17 @@ Vendor note on the January 2016 event in which GPS receivers worldwide, includin
 - A non-adversarial GNSS time fault hit many receivers at once
 - Argues for holdover and cross-checks even without an attacker
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `gps`, `utc-offset`, `anomaly`, `2016`
 
 ## Related
 
-- explains: [GPS Experiences UTC Timing, IIF Satellite Launcher Problems](../resources/insidegnss-gps-utc-anomaly-2016.md)
+- explains: [GPS Experiences UTC Timing, IIF Satellite Launcher Problems](../../catalog/resources/insidegnss-gps-utc-anomaly-2016.md)
 
 ## Referenced by
 
-- [GPS Experiences UTC Timing, IIF Satellite Launcher Problems](../resources/insidegnss-gps-utc-anomaly-2016.md) (explains)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [GPS Experiences UTC Timing, IIF Satellite Launcher Problems](../../catalog/resources/insidegnss-gps-utc-anomaly-2016.md) (explains)
 
 _Indexed by lane(s): timing_

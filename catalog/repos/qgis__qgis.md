@@ -12,7 +12,7 @@ Desktop open-source GIS for viewing, editing, analyzing and printing geospatial 
 
 **Hackathon notes:** Install the LTR build; draw AOIs and export GeoJSON for planners. QGIS loads MBTiles/PMTiles for offline basemaps.
 
-**Concepts:** [GIS, maps and geospatial data](../concepts/gis-mapping.md), [Mission planning and routing](../concepts/mission-planning.md)
+**Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 
 **Tags:** `desktop-gis`, `pyqgis`, `plugins`
 
@@ -20,12 +20,14 @@ Desktop open-source GIS for viewing, editing, analyzing and printing geospatial 
 
 ## Related
 
-- depends_on: [GDAL](../repos/osgeo__gdal.md)
-- depends_on: [PROJ](../repos/osgeo__proj.md)
+- depends_on: [GDAL](../../catalog/repos/osgeo__gdal.md)
+- depends_on: [PROJ](../../catalog/repos/osgeo__proj.md)
 
 ## Referenced by
 
-- [GDAL](../repos/osgeo__gdal.md) (integrates_with)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [GDAL](../../catalog/repos/osgeo__gdal.md) (integrates_with)
 
 _Indexed by lane(s): planning-gis-c2_
 

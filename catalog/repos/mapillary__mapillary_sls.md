@@ -12,7 +12,7 @@ Tools for the Mapillary Street-level Sequences dataset for lifelong visual place
 
 **Hackathon notes:** Dataset download needs registration on Mapillary.
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Place recognition and loop closure](../concepts/place-recognition.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 
 **Tags:** `vpr`, `street-level`, `sequences`
 
@@ -20,7 +20,7 @@ Tools for the Mapillary Street-level Sequences dataset for lifelong visual place
 
 ## Related
 
-- integrates_with: [VPR methods evaluation](../repos/gmberton__vpr-methods-evaluation.md)
+- integrates_with: [VPR methods evaluation](../../catalog/repos/gmberton__vpr-methods-evaluation.md)
 
 _Indexed by lane(s): sim-data_
 

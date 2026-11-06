@@ -14,14 +14,19 @@ Classic textbook that walks through a complete MATLAB GPS software receiver: acq
 - Teaches acquisition and tracking loops by code
 - Still the standard SDR GNSS teaching text
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Software-defined GNSS receivers](../concepts/gnss-sdr.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md)
 
 **Tags:** `textbook`, `sdr`, `matlab`, `borre`, `softgnss`
 
 ## Related
 
-- has_code: [CU Boulder GNSS SDR Collection](../repos/gnsscusdr__cu-sdr-collection.md)
-- has_code: [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md)
-- has_code: [SoftGNSS v3.0 (maintained copy)](../repos/tmboc__softgnss.md)
+- has_code: [CU Boulder GNSS SDR Collection](../../catalog/repos/gnsscusdr__cu-sdr-collection.md)
+- has_code: [GNSS-SDR](../../catalog/repos/gnss-sdr__gnss-sdr.md)
+- has_code: [SoftGNSS v3.0 (maintained copy)](../../catalog/repos/tmboc__softgnss.md)
+
+## Referenced by
+
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 
 _Indexed by lane(s): docs-standards, gnss_

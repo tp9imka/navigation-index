@@ -11,13 +11,13 @@ Describes the Air Force AI challenge series including MagNav, covering both the 
 - MagNav split into compensation and navigation sub-challenges
 - Context on how DAF releases open benchmarks
 
-**Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `magnav`, `afrl`, `challenge`
 
 ## Related
 
-- has_code: [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md)
-- explains: [MagNav Challenge Problem (DAF-MIT AI Accelerator)](../resources/magnav-challenge-site.md)
+- has_code: [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md)
+- explains: [MagNav Challenge Problem (DAF-MIT AI Accelerator)](../../catalog/resources/magnav-challenge-site.md)
 
 _Indexed by lane(s): docs-standards_

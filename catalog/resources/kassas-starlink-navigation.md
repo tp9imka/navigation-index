@@ -15,16 +15,16 @@ Opportunistic navigation using Starlink downlink signals without cooperation fro
 
 - [kassas-starlink-navigation](../../docs/paper-digests/kassas-starlink-navigation.md) (paper-digests)
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [Space and orbital navigation](../concepts/space-nav.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `starlink`, `leo`, `kassas`, `opportunistic`
 
 ## Related
 
-- same_author: [Navigation with Multi-Constellation LEO Satellite Signals of Opportunity: Starlink, OneWeb, Orbcomm, and Iridium](../resources/kassas-multi-constellation-leo.md)
+- same_author: [Navigation with Multi-Constellation LEO Satellite Signals of Opportunity: Starlink, OneWeb, Orbcomm, and Iridium](../../catalog/resources/kassas-multi-constellation-leo.md)
 
 ## Referenced by
 
-- [Xona Space Systems Pulsar LEO PNT constellation](../resources/xona-pulsar-leo-pnt.md) (cites)
+- [Xona Space Systems Pulsar LEO PNT constellation](../../catalog/resources/xona-pulsar-leo-pnt.md) (cites)
 
 _Indexed by lane(s): docs-standards_

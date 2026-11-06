@@ -12,7 +12,7 @@ Multiple-environment self-adaptive network for aerial-view geo-localization unde
 
 **Hackathon notes:** MIT code; needs University-1652 (request-only, research use). Its University-WX weather augmentation matches the UAVM 2024 multi-weather setting, but it is not named as the official challenge baseline.
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `multi-weather`, `cross-view`
 
@@ -20,11 +20,11 @@ Multiple-environment self-adaptive network for aerial-view geo-localization unde
 
 ## Related
 
-- same_org: [UAVM 2024 challenge](../repos/wtyhub__uavm2024.md)
+- same_org: [UAVM 2024 challenge](../../catalog/repos/wtyhub__uavm2024.md)
 
 ## Referenced by
 
-- [UAVM 2024 challenge](../repos/wtyhub__uavm2024.md) (same_org)
+- [UAVM 2024 challenge](../../catalog/repos/wtyhub__uavm2024.md) (same_org)
 
 _Indexed by lane(s): round3-expansion_
 

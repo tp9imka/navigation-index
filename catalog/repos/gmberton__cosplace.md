@@ -12,7 +12,7 @@ CVPR 2022 large-scale visual geo-localization treating place recognition as clas
 
 **Hackathon notes:** torch.hub weights available.
 
-**Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `vpr`, `large-scale`
 
@@ -20,11 +20,14 @@ CVPR 2022 large-scale visual geo-localization treating place recognition as clas
 
 ## Related
 
-- same_org: [EigenPlaces](../repos/gmberton__eigenplaces.md)
+- same_org: [EigenPlaces](../../catalog/repos/gmberton__eigenplaces.md)
 
 ## Referenced by
 
-- [EigenPlaces](../repos/gmberton__eigenplaces.md) (same_org)
+- [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
+- [Deep Visual Geo-localization Benchmark](../../catalog/repos/gmberton__deep-visual-geo-localization-benchmark.md) (same_org)
+- [EigenPlaces](../../catalog/repos/gmberton__eigenplaces.md) (same_org)
+- [Rethinking Visual Geo-localization for Large-Scale Applications](../../catalog/resources/cosplace-sf-xl-2022.md) (has_code)
 
 _Indexed by lane(s): alt-nav_
 

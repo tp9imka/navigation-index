@@ -11,13 +11,13 @@ Fraunhofer IIS dataset from Jammertest 2025 (Andøya) with a single-antenna E1/E
 - Near-99% within-area classification but large drops across test areas => domain shift is the real problem
 - Dataset is open on Zenodo (record 21332689) under CC BY-SA 4.0
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
 **Tags:** `jammertest`, `multi-emitter`
 
 ## Related
 
-- uses: [Fraunhofer IIS Jammertest 2025 dataset](../repos/felixott94__fraunhoferiis_jammertest2025.md)
-- part_of: [Jammertest - open GNSS jamming and spoofing test event (Andoya, Norway)](../resources/jammertest-norway.md)
+- uses: [Fraunhofer IIS Jammertest 2025 dataset](../../catalog/repos/felixott94__fraunhoferiis_jammertest2025.md)
+- part_of: [Jammertest - open GNSS jamming and spoofing test event (Andoya, Norway)](../../catalog/resources/jammertest-norway.md)
 
 _Indexed by lane(s): round3-expansion_

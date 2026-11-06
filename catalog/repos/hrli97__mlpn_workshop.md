@@ -12,7 +12,7 @@ Team solution for the ACM MM 2023 drone-satellite matching challenge, 4th on the
 
 **Hackathon notes:** MIT. Training script with hard-coded paths; needs University-1652 (request-only, research use).
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `challenge`
 
@@ -20,11 +20,11 @@ Team solution for the ACM MM 2023 drone-satellite matching challenge, 4th on the
 
 ## Related
 
-- evaluated_on: [UAVM 2023 challenge](../repos/layumi__uavm2023.md)
+- evaluated_on: [UAVM 2023 challenge](../../catalog/repos/layumi__uavm2023.md)
 
 ## Referenced by
 
-- [UAVM 2023 challenge](../repos/layumi__uavm2023.md) (integrates_with)
+- [UAVM 2023 challenge](../../catalog/repos/layumi__uavm2023.md) (integrates_with)
 
 _Indexed by lane(s): round3-expansion_
 

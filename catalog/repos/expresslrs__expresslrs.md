@@ -12,7 +12,7 @@ Open-source LoRa/FLRC radio control link (2.4 GHz and sub-GHz) with high packet 
 
 **Hackathon notes:** Flash with ExpressLRS Configurator; receivers are cheap.
 
-**Concepts:** [Electronic warfare resilience](../concepts/ew-resilience.md), [Counter-UAS and drone detection](../concepts/counter-uas.md)
+**Concepts:** [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md)
 
 **Tags:** `lora`, `rc-link`, `crsf`, `sx128x`, `sx127x`
 
@@ -20,14 +20,14 @@ Open-source LoRa/FLRC radio control link (2.4 GHz and sub-GHz) with high packet 
 
 ## Related
 
-- alternative_to: [mLRS](../repos/olliw42__mlrs.md)
-- integrates_with: [Betaflight](../repos/betaflight__betaflight.md)
+- alternative_to: [mLRS](../../catalog/repos/olliw42__mlrs.md)
+- integrates_with: [Betaflight](../../catalog/repos/betaflight__betaflight.md)
 
 ## Referenced by
 
-- [Betaflight](../repos/betaflight__betaflight.md) (integrates_with)
-- [INAV](../repos/inavflight__inav.md) (integrates_with)
-- [mLRS](../repos/olliw42__mlrs.md) (alternative_to)
+- [Betaflight](../../catalog/repos/betaflight__betaflight.md) (integrates_with)
+- [INAV](../../catalog/repos/inavflight__inav.md) (integrates_with)
+- [mLRS](../../catalog/repos/olliw42__mlrs.md) (alternative_to)
 
 _Indexed by lane(s): autopilots_
 

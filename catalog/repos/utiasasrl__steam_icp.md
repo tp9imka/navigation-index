@@ -16,7 +16,7 @@ Continuous-time lidar, radar, lidar-inertial and radar-inertial odometry built o
 
 - [boreas](../../docs/dataset-cards/boreas.md) (dataset-cards)
 
-**Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `continuous-time`, `icp`, `radar-inertial`, `boreas`
 
@@ -24,14 +24,16 @@ Continuous-time lidar, radar, lidar-inertial and radar-inertial odometry built o
 
 ## Related
 
-- depends_on: [STEAM](../repos/utiasasrl__steam.md)
-- evaluated_on: [pyboreas](../repos/utiasasrl__pyboreas.md)
+- depends_on: [STEAM](../../catalog/repos/utiasasrl__steam.md)
+- evaluated_on: [pyboreas](../../catalog/repos/utiasasrl__pyboreas.md)
 
 ## Referenced by
 
-- [Yeti radar odometry](../repos/keenan-burnett__yeti_radar_odometry.md) (alternative_to)
-- [STEAM](../repos/utiasasrl__steam.md) (same_org)
-- [RINO](../repos/yangsc4063__rino.md) (alternative_to)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Yeti radar odometry](../../catalog/repos/keenan-burnett__yeti_radar_odometry.md) (alternative_to)
+- [STEAM](../../catalog/repos/utiasasrl__steam.md) (same_org)
+- [RINO](../../catalog/repos/yangsc4063__rino.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

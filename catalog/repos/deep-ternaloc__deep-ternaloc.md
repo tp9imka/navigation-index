@@ -12,7 +12,7 @@ Deep-learning-based terrain-referenced navigation and localization project from 
 
 **Hackathon notes:** Partial code; read with the project website.
 
-**Concepts:** [Terrain-relative navigation](../concepts/terrain-nav.md)
+**Concepts:** [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md)
 
 **Tags:** `trn`, `deep-learning`, `particle-filter`
 
@@ -20,7 +20,7 @@ Deep-learning-based terrain-referenced navigation and localization project from 
 
 ## Related
 
-- alternative_to: [TRN particle filter examples](../repos/rhymesg__particle_filter.md)
+- alternative_to: [TRN particle filter examples](../../catalog/repos/rhymesg__particle_filter.md)
 
 _Indexed by lane(s): gap-fill_
 

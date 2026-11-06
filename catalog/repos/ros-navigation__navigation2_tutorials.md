@@ -12,7 +12,7 @@ Tutorial packages referenced by docs.nav2.org: example planner, controller and b
 
 **Hackathon notes:** Clone into a ROS 2 workspace matching your distro branch; the GPS waypoint follower demo runs in Gazebo.
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 
 **Tags:** `nav2`, `plugins`, `gps-waypoints`, `ros2`
 
@@ -20,11 +20,11 @@ Tutorial packages referenced by docs.nav2.org: example planner, controller and b
 
 ## Related
 
-- extends: [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md)
+- extends: [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md)
 
 ## Referenced by
 
-- [Navigating Using GPS Localization (Nav2 tutorial)](../resources/nav2-gps-navigation-tutorial.md) (has_code)
+- [Navigating Using GPS Localization (Nav2 tutorial)](../../catalog/resources/nav2-gps-navigation-tutorial.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

@@ -12,7 +12,7 @@ Lightweight tightly coupled LiDAR-inertial odometry using parallel sparse increm
 
 **Hackathon notes:** ROS 1; same config style as FAST-LIO.
 
-**Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `ivox`, `iekf`, `ros1`
 
@@ -20,11 +20,11 @@ Lightweight tightly coupled LiDAR-inertial odometry using parallel sparse increm
 
 ## Related
 
-- alternative_to: [FAST-LIO / FAST-LIO2](../repos/hku-mars__fast_lio.md)
+- alternative_to: [FAST-LIO / FAST-LIO2](../../catalog/repos/hku-mars__fast_lio.md)
 
 ## Referenced by
 
-- [FAST-LIO / FAST-LIO2](../repos/hku-mars__fast_lio.md) (alternative_to)
+- [FAST-LIO / FAST-LIO2](../../catalog/repos/hku-mars__fast_lio.md) (alternative_to)
 
 _Indexed by lane(s): slam_
 

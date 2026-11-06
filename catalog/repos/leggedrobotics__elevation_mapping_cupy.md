@@ -12,7 +12,12 @@ GPU-accelerated elevation and traversability mapping from ETH Zurich, supporting
 
 **Hackathon notes:** Needs CUDA; Docker image available. Feed a depth camera or lidar and get a traversability layer.
 
-**Concepts:** [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [Terrain-relative navigation](../concepts/terrain-nav.md), [Onboard / edge AI perception](../concepts/edge-ai.md), [Path and motion planning](../concepts/path-planning.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+## Deep dives
+
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [leggedrobotics__elevation_mapping_cupy](../../docs/integration-cards/leggedrobotics__elevation_mapping_cupy.md) (integration-cards)
+
+**Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `elevation-map`, `traversability`, `cupy`, `gpu`
 
@@ -20,16 +25,17 @@ GPU-accelerated elevation and traversability mapping from ETH Zurich, supporting
 
 ## Related
 
-- depends_on: [grid_map](../repos/anybotics__grid_map.md)
-- integrates_with: [Wild Visual Navigation](../repos/leggedrobotics__wild_visual_navigation.md)
-- depends_on: [grid_map](../repos/leggedrobotics__grid_map.md)
+- depends_on: [grid_map](../../catalog/repos/anybotics__grid_map.md)
+- integrates_with: [Wild Visual Navigation](../../catalog/repos/leggedrobotics__wild_visual_navigation.md)
+- depends_on: [grid_map](../../catalog/repos/leggedrobotics__grid_map.md)
 
 ## Referenced by
 
-- [grid_map](../repos/anybotics__grid_map.md) (integrates_with)
-- [elevation_mapping](../repos/leggedrobotics__elevation_mapping.md) (alternative_to)
-- [grid_map](../repos/leggedrobotics__grid_map.md) (integrates_with)
-- [Wild Visual Navigation](../repos/leggedrobotics__wild_visual_navigation.md) (integrates_with)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
+- [grid_map](../../catalog/repos/anybotics__grid_map.md) (integrates_with)
+- [elevation_mapping](../../catalog/repos/leggedrobotics__elevation_mapping.md) (alternative_to)
+- [grid_map](../../catalog/repos/leggedrobotics__grid_map.md) (integrates_with)
+- [Wild Visual Navigation](../../catalog/repos/leggedrobotics__wild_visual_navigation.md) (integrates_with)
 
 _Indexed by lane(s): domains-swarm, planning-gis-c2_
 

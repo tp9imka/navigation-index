@@ -12,7 +12,7 @@ A GPS-disciplined PTP grandmaster on a TI MSP432E4 MCU: u-blox receiver, softwar
 
 **Hackathon notes:** Hardware specific; read for architecture of a small grandmaster.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `ptp`, `gpsdo`, `grandmaster`, `ntp`, `microcontroller`
 
@@ -20,7 +20,11 @@ A GPS-disciplined PTP grandmaster on a TI MSP432E4 MCU: u-blox receiver, softwar
 
 ## Related
 
-- integrates_with: [linuxptp](../repos/nwtime__linuxptp.md)
+- integrates_with: [linuxptp](../../catalog/repos/nwtime__linuxptp.md)
+
+## Referenced by
+
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 
 _Indexed by lane(s): timing_
 

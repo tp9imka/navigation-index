@@ -12,7 +12,12 @@ Web-based companion-computer manager for MAVLink vehicles: telemetry routing, vi
 
 **Hackathon notes:** Flash the prebuilt image to a Pi; manage routing in the browser.
 
-**Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [stephendade__rpanion-server](../../docs/integration-cards/stephendade__rpanion-server.md) (integration-cards)
+
+**Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 
 **Tags:** `companion`, `raspberry-pi`, `video`, `web`
 
@@ -20,13 +25,13 @@ Web-based companion-computer manager for MAVLink vehicles: telemetry routing, vi
 
 ## Related
 
-- integrates_with: [ArduPilot](../repos/ardupilot__ardupilot.md)
-- alternative_to: [BlueOS](../repos/bluerobotics__blueos.md)
-- alternative_to: [mavlink-router](../repos/mavlink-router__mavlink-router.md)
+- integrates_with: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
+- alternative_to: [BlueOS](../../catalog/repos/bluerobotics__blueos.md)
+- alternative_to: [mavlink-router](../../catalog/repos/mavlink-router__mavlink-router.md)
 
 ## Referenced by
 
-- [BlueOS](../repos/bluerobotics__blueos.md) (alternative_to)
+- [BlueOS](../../catalog/repos/bluerobotics__blueos.md) (alternative_to)
 
 _Indexed by lane(s): autopilots_
 

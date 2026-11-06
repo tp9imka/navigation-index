@@ -11,12 +11,16 @@ DHS S&T guide released in February 2025 under EO 13905 to help providers, owners
 - Includes a stationary-timing use case
 - Risk-based: assess, then choose resilience measures
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `dhs`, `eo-13905`, `best-practices`, `critical-infrastructure`
 
 ## Related
 
-- cites: [Executive Order 13905: Strengthening National Resilience Through Responsible Use of PNT Services](../resources/eo-13905-responsible-pnt.md)
+- cites: [Executive Order 13905: Strengthening National Resilience Through Responsible Use of PNT Services](../../catalog/resources/eo-13905-responsible-pnt.md)
+
+## Referenced by
+
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 
 _Indexed by lane(s): timing_

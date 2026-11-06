@@ -11,12 +11,17 @@ Documentation for the OpenVINS MSCKF-based visual-inertial estimator, including 
 - Doubles as a VIO textbook with derivations
 - Evaluation tools for comparing trajectories
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Sensor calibration](../concepts/calibration.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor calibration](../../catalog/concepts/calibration.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `msckf`, `openvins`, `docs`
 
 ## Related
 
-- has_code: [OpenVINS](../repos/rpng__open_vins.md)
+- has_code: [OpenVINS](../../catalog/repos/rpng__open_vins.md)
+
+## Referenced by
+
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 
 _Indexed by lane(s): learning_

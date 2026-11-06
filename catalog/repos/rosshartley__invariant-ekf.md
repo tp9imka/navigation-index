@@ -12,7 +12,7 @@ C++ library implementing the invariant EKF for aided inertial navigation, includ
 
 **Hackathon notes:** Last push 2019; still compiles with Eigen. Pairs with the Hartley 2019 paper.
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `inekf`, `lie-group`, `legged`
 
@@ -20,16 +20,16 @@ C++ library implementing the invariant EKF for aided inertial navigation, includ
 
 ## Related
 
-- extends: [DRIFT](../repos/umich-curly__drift.md)
-- alternative_to: [iekf (contagon)](../repos/contagon__iekf.md)
+- extends: [DRIFT](../../catalog/repos/umich-curly__drift.md)
+- alternative_to: [iekf (contagon)](../../catalog/repos/contagon__iekf.md)
 
 ## Referenced by
 
-- [iekf (contagon)](../repos/contagon__iekf.md) (alternative_to)
-- [AI-IMU Dead-Reckoning](../repos/mbrossar__ai-imu-dr.md) (alternative_to)
-- [DRIFT](../repos/umich-curly__drift.md) (extends)
-- [The invariant extended Kalman filter as a stable observer](../resources/barrau-bonnabel-invariant-ekf.md) (explains)
-- [Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation](../resources/hartley-contact-aided-inekf.md) (has_code)
+- [iekf (contagon)](../../catalog/repos/contagon__iekf.md) (alternative_to)
+- [AI-IMU Dead-Reckoning](../../catalog/repos/mbrossar__ai-imu-dr.md) (alternative_to)
+- [DRIFT](../../catalog/repos/umich-curly__drift.md) (extends)
+- [The invariant extended Kalman filter as a stable observer](../../catalog/resources/barrau-bonnabel-invariant-ekf.md) (explains)
+- [Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation](../../catalog/resources/hartley-contact-aided-inekf.md) (has_code)
 
 _Indexed by lane(s): ins-fusion_
 

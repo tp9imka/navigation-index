@@ -10,13 +10,13 @@ Multi-height, multi-scene drone-satellite cross-view dataset and evaluation code
 
 **Why it matters:** Adds altitude variation that University-1652 lacks - closer to real flight profiles.
 
-**Hackathon notes:** Use as a second evaluation set alongside University-1652.
+**Hackathon notes:** Comparable training pipeline to University-1652. The dataset is for academic research only, despite the repo's MIT code licence.
 
 ## Deep dives
 
 - [sues-200](../../docs/dataset-cards/sues-200.md) (dataset-cards)
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `cross-view`, `multi-height`, `dataset`
 
@@ -24,12 +24,13 @@ Multi-height, multi-scene drone-satellite cross-view dataset and evaluation code
 
 ## Related
 
-- alternative_to: [University-1652 baseline](../repos/layumi__university1652-baseline.md)
+- alternative_to: [University-1652 baseline](../../catalog/repos/layumi__university1652-baseline.md)
 
 ## Referenced by
 
-- [University-1652 baseline](../repos/layumi__university1652-baseline.md) (alternative_to)
-- [SUES-200: A Multi-height Multi-scene Cross-view Image Benchmark Across Drone and Satellite](../resources/sues-200-benchmark-2022.md) (has_code)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [University-1652 baseline](../../catalog/repos/layumi__university1652-baseline.md) (alternative_to)
+- [SUES-200: A Multi-height Multi-scene Cross-view Image Benchmark Across Drone and Satellite](../../catalog/resources/sues-200-benchmark-2022.md) (has_code)
 
 _Indexed by lane(s): alt-nav, sim-data_
 

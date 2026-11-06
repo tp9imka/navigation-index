@@ -16,7 +16,7 @@ Python/OpenCV return-to-home for a quadcopter with a downward camera and no GPS.
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Feature detection and matching](../concepts/feature-matching.md), [Place recognition and loop closure](../concepts/place-recognition.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 
 **Tags:** `lang:ru`, `optical-flow`, `return-to-home`, `teach-and-repeat`, `opencv`
 
@@ -24,7 +24,10 @@ Python/OpenCV return-to-home for a quadcopter with a downward camera and no GPS.
 
 ## Referenced by
 
-- [Как я научил квадрокоптер возвращаться домой без GPS: алгоритм «верёвочной лестницы»](../resources/habr-rope-ladder-return-home-2025.md) (has_code)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Как я научил квадрокоптер возвращаться домой без GPS: алгоритм «верёвочной лестницы»](../../catalog/resources/habr-rope-ladder-return-home-2025.md) (has_code)
 
 _Indexed by lane(s): ua-ru-sources_
 

@@ -12,7 +12,7 @@ Open-source release of the TAK Server from the TAK Product Center: the federatio
 
 **Hackathon notes:** Java + PostgreSQL + certificate setup is the main hurdle; use a docker recipe and allow several hours.
 
-**Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `tak`, `cot`, `federation`, `java`
 
@@ -20,16 +20,16 @@ Open-source release of the TAK Server from the TAK Product Center: the federatio
 
 ## Related
 
-- same_org: [ATAK-CIV (TAK Product Center)](../repos/tak-product-center__atak-civ.md)
-- alternative_to: [FreeTAKServer](../repos/freetakteam__freetakserver.md)
-- alternative_to: [OpenTAKServer](../repos/brian7704__opentakserver.md)
+- same_org: [ATAK-CIV (TAK Product Center)](../../catalog/repos/tak-product-center__atak-civ.md)
+- alternative_to: [FreeTAKServer](../../catalog/repos/freetakteam__freetakserver.md)
+- alternative_to: [OpenTAKServer](../../catalog/repos/brian7704__opentakserver.md)
 
 ## Referenced by
 
-- [OpenTAKServer](../repos/brian7704__opentakserver.md) (alternative_to)
-- [CloudTAK](../repos/dfpc-coe__cloudtak.md) (integrates_with)
-- [FreeTAKServer](../repos/freetakteam__freetakserver.md) (alternative_to)
-- [TAK.gov - Team Awareness Kit portal](../resources/tak-gov.md) (explains)
+- [OpenTAKServer](../../catalog/repos/brian7704__opentakserver.md) (alternative_to)
+- [CloudTAK](../../catalog/repos/dfpc-coe__cloudtak.md) (integrates_with)
+- [FreeTAKServer](../../catalog/repos/freetakteam__freetakserver.md) (alternative_to)
+- [TAK.gov - Team Awareness Kit portal](../../catalog/resources/tak-gov.md) (explains)
 
 _Indexed by lane(s): planning-gis-c2_
 

@@ -11,13 +11,18 @@ User and developer documentation for ArduSub, covering ROV configuration, sensor
 - Explains how external position sources feed the EKF on a sub
 - Good companion to BlueOS extensions
 
-**Concepts:** [Underwater navigation](../concepts/underwater-nav.md), [Autopilots and flight control](../concepts/autopilot.md)
+**Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
 **Tags:** `ardusub`, `rov`
 
 ## Related
 
-- explains: [ArduPilot](../repos/ardupilot__ardupilot.md)
-- explains: [BlueOS](../repos/bluerobotics__blueos.md)
+- explains: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
+- explains: [BlueOS](../../catalog/repos/bluerobotics__blueos.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 
 _Indexed by lane(s): domains-swarm_

@@ -11,12 +11,12 @@ Experimental multi-constellation LEO SoOP navigation combining four commercial c
 - Combining constellations improves geometry and accuracy
 - STAN estimates satellite states and receiver state together
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [Space and orbital navigation](../concepts/space-nav.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `leo`, `starlink`, `oneweb`, `iridium`, `stan`
 
 ## Referenced by
 
-- [Enter LEO on the GNSS Stage: Navigation with Starlink Satellites](../resources/kassas-starlink-navigation.md) (same_author)
+- [Enter LEO on the GNSS Stage: Navigation with Starlink Satellites](../../catalog/resources/kassas-starlink-navigation.md) (same_author)
 
 _Indexed by lane(s): docs-standards_

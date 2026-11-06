@@ -11,14 +11,18 @@ Internal report introducing the gradient-descent orientation filter now known as
 - Low computational cost attitude filter
 - Single tuning parameter
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `ahrs`, `madgwick`
 
 ## Related
 
-- has_code: [x-io Fusion](../repos/xiotechnologies__fusion.md)
-- has_code: [MadgwickAHRS (Arduino)](../repos/arduino-libraries__madgwickahrs.md)
-- has_code: [AHRS (Python)](../repos/mayitzin__ahrs.md)
+- has_code: [x-io Fusion](../../catalog/repos/xiotechnologies__fusion.md)
+- has_code: [MadgwickAHRS (Arduino)](../../catalog/repos/arduino-libraries__madgwickahrs.md)
+- has_code: [AHRS (Python)](../../catalog/repos/mayitzin__ahrs.md)
+
+## Referenced by
+
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 
 _Indexed by lane(s): ins-fusion_

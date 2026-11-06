@@ -11,12 +11,16 @@ Classic IET text on strapdown inertial navigation: sensor technologies, mechanis
 - Physical principles and error growth of INS
 - Sensor technology from mechanical gyros to MEMS
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `textbook`, `strapdown`
 
 ## Related
 
-- explains: [pyins](../repos/nmayorov__pyins.md)
+- explains: [pyins](../../catalog/repos/nmayorov__pyins.md)
+
+## Referenced by
+
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 
 _Indexed by lane(s): ins-fusion_

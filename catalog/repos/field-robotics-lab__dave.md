@@ -10,9 +10,9 @@ Gazebo-based underwater simulation environment from the Naval Postgraduate Schoo
 
 **Why it matters:** Navy-funded underwater sim with realistic DVL and sonar sensors for testing AUV nav without water.
 
-**Hackathon notes:** ROS 1 Noetic + Gazebo 11 via Docker; setup is heavy, budget half a day. A ROS 2 port has been in progress.
+**Hackathon notes:** ROS 1 Noetic + Gazebo 11 via Docker; setup is heavy, budget half a day. No push here since 2024-08; the ROS 2 port continues in the IOES-Lab/dave fork.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Underwater navigation](../concepts/underwater-nav.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Underwater navigation](../../catalog/concepts/underwater-nav.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `gazebo`, `uuv`, `dvl`, `multibeam`, `nps`, `underwater`, `sonar`
 
@@ -20,15 +20,17 @@ Gazebo-based underwater simulation environment from the Naval Postgraduate Schoo
 
 ## Related
 
-- extends: [UUV Simulator](../repos/uuvsimulator__uuv_simulator.md)
-- integrates_with: [NPS underwater multibeam sonar plugin](../repos/field-robotics-lab__nps_uw_multibeam_sonar.md)
-- alternative_to: [Stonefish](../repos/patrykcieslak__stonefish.md)
+- extends: [UUV Simulator](../../catalog/repos/uuvsimulator__uuv_simulator.md)
+- integrates_with: [NPS underwater multibeam sonar plugin](../../catalog/repos/field-robotics-lab__nps_uw_multibeam_sonar.md)
+- alternative_to: [Stonefish](../../catalog/repos/patrykcieslak__stonefish.md)
 
 ## Referenced by
 
-- [NPS underwater multibeam sonar plugin](../repos/field-robotics-lab__nps_uw_multibeam_sonar.md) (integrates_with)
-- [Stonefish](../repos/patrykcieslak__stonefish.md) (alternative_to)
-- [UUV Simulator](../repos/uuvsimulator__uuv_simulator.md) (alternative_to)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [NPS underwater multibeam sonar plugin](../../catalog/repos/field-robotics-lab__nps_uw_multibeam_sonar.md) (integrates_with)
+- [Stonefish](../../catalog/repos/patrykcieslak__stonefish.md) (alternative_to)
+- [UUV Simulator](../../catalog/repos/uuvsimulator__uuv_simulator.md) (alternative_to)
 
 _Indexed by lane(s): domains-swarm, sim-data_
 

@@ -15,12 +15,16 @@ Paper introducing the RELLIS-3D multimodal off-road dataset with annotated lidar
 
 - [offroad-rellis-tartandrive](../../docs/dataset-cards/offroad-rellis-tartandrive.md) (dataset-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 
 **Tags:** `off-road`, `dataset`
 
 ## Related
 
-- has_code: [RELLIS-3D](../repos/unmannedlab__rellis-3d.md)
+- has_code: [RELLIS-3D](../../catalog/repos/unmannedlab__rellis-3d.md)
+
+## Referenced by
+
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 
 _Indexed by lane(s): domains-swarm_

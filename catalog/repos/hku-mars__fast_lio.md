@@ -18,7 +18,7 @@ Computationally efficient LiDAR-inertial odometry using an iterated error-state 
 - [hku-mars__fast_lio](../../docs/integration-cards/hku-mars__fast_lio.md) (integration-cards)
 - [fast-lio2-xu-2021](../../docs/paper-digests/fast-lio2-xu-2021.md) (paper-digests)
 
-**Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `iekf`, `ikd-tree`, `livox`, `ros1`
 
@@ -26,25 +26,30 @@ Computationally efficient LiDAR-inertial odometry using an iterated error-state 
 
 ## Related
 
-- alternative_to: [Point-LIO](../repos/hku-mars__point-lio.md)
-- extends: [FAST_LIO_LOCALIZATION](../repos/hviktortsoi__fast_lio_localization.md)
-- integrates_with: [livox_ros_driver2](../repos/livox-sdk__livox_ros_driver2.md)
-- alternative_to: [Faster-LIO](../repos/gaoxiang12__faster-lio.md)
+- alternative_to: [Point-LIO](../../catalog/repos/hku-mars__point-lio.md)
+- extends: [FAST_LIO_LOCALIZATION](../../catalog/repos/hviktortsoi__fast_lio_localization.md)
+- integrates_with: [livox_ros_driver2](../../catalog/repos/livox-sdk__livox_ros_driver2.md)
+- alternative_to: [Faster-LIO](../../catalog/repos/gaoxiang12__faster-lio.md)
 
 ## Referenced by
 
-- [Faster-LIO](../repos/gaoxiang12__faster-lio.md) (alternative_to)
-- [FAST-LIVO2](../repos/hku-mars__fast-livo2.md) (extends)
-- [LiDAR_IMU_Init](../repos/hku-mars__lidar_imu_init.md) (integrates_with)
-- [Point-LIO](../repos/hku-mars__point-lio.md) (alternative_to)
-- [STD](../repos/hku-mars__std.md) (integrates_with)
-- [FAST_LIO_LOCALIZATION](../repos/hviktortsoi__fast_lio_localization.md) (extends)
-- [livox_ros_driver2](../repos/livox-sdk__livox_ros_driver2.md) (integrates_with)
-- [RKO-LIO](../repos/prbonn__rko_lio.md) (alternative_to)
-- [LIO-SAM](../repos/tixiaoshan__lio-sam.md) (alternative_to)
-- [DLIO](../repos/vectr-ucla__direct_lidar_inertial_odometry.md) (alternative_to)
-- [FAST-LIO2: Fast Direct LiDAR-inertial Odometry](../resources/fast-lio2-xu-2021.md) (has_code)
-- [LiDAR Odometry Survey: Recent Advancements and Remaining Challenges](../resources/lee-lidar-odometry-survey-2023.md) (cites)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Faster-LIO](../../catalog/repos/gaoxiang12__faster-lio.md) (alternative_to)
+- [FAST-LIVO2](../../catalog/repos/hku-mars__fast-livo2.md) (extends)
+- [LiDAR_IMU_Init](../../catalog/repos/hku-mars__lidar_imu_init.md) (integrates_with)
+- [Point-LIO](../../catalog/repos/hku-mars__point-lio.md) (alternative_to)
+- [STD](../../catalog/repos/hku-mars__std.md) (integrates_with)
+- [FAST_LIO_LOCALIZATION](../../catalog/repos/hviktortsoi__fast_lio_localization.md) (extends)
+- [livox_ros_driver2](../../catalog/repos/livox-sdk__livox_ros_driver2.md) (integrates_with)
+- [RKO-LIO](../../catalog/repos/prbonn__rko_lio.md) (alternative_to)
+- [LIO-SAM](../../catalog/repos/tixiaoshan__lio-sam.md) (alternative_to)
+- [DLIO](../../catalog/repos/vectr-ucla__direct_lidar_inertial_odometry.md) (alternative_to)
+- [FAST-LIO2: Fast Direct LiDAR-inertial Odometry](../../catalog/resources/fast-lio2-xu-2021.md) (has_code)
+- [LiDAR Odometry Survey: Recent Advancements and Remaining Challenges](../../catalog/resources/lee-lidar-odometry-survey-2023.md) (cites)
 
 _Indexed by lane(s): slam_
 

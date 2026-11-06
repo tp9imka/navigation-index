@@ -15,12 +15,16 @@ Thermal-inertial odometry that tracks thermal image edges instead of corner feat
 
 - [etio-thermal-inertial-odometry-2022](../../docs/paper-digests/etio-thermal-inertial-odometry-2022.md) (paper-digests)
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `thermal`, `degraded-visual`
 
 ## Related
 
-- has_code: [ETIO](../repos/hitsz-nrsl__etio.md)
+- has_code: [ETIO](../../catalog/repos/hitsz-nrsl__etio.md)
+
+## Referenced by
+
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 
 _Indexed by lane(s): slam_

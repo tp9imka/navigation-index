@@ -12,7 +12,7 @@ Modular multi-session, multi-modal mapping framework with map merging, optimizat
 
 **Hackathon notes:** Large ROS 1 codebase; only worth it if you need persistent map management.
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Place recognition and loop closure](../concepts/place-recognition.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 
 **Tags:** `multi-session`, `map-merging`, `ros1`
 
@@ -20,7 +20,7 @@ Modular multi-session, multi-modal mapping framework with map merging, optimizat
 
 ## Related
 
-- integrates_with: [OpenVINS](../repos/rpng__open_vins.md)
+- integrates_with: [OpenVINS](../../catalog/repos/rpng__open_vins.md)
 
 _Indexed by lane(s): slam_
 

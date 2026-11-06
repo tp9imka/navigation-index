@@ -13,12 +13,12 @@ Codalab leaderboard for drone-to-satellite matching on the University-160k exten
 - Leaderboard is not the final ranking: the top entry (98.94) was removed for using University-1652 test data
 - University-1652 data is request-only: research use, no sharing with third parties, no profit (layumi/University1652-Baseline Request.md)
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `university-160k`, `codalab`
 
 ## Related
 
-- has_code: [UAVM 2023 challenge](../repos/layumi__uavm2023.md)
+- has_code: [UAVM 2023 challenge](../../catalog/repos/layumi__uavm2023.md)
 
 _Indexed by lane(s): round3-expansion_

@@ -12,7 +12,7 @@ Open-source star tracker using a Bayesian star identification approach, develope
 
 **Hackathon notes:** Calibration step needed for your camera; budget a few hours.
 
-**Concepts:** [Celestial and star-tracker navigation](../concepts/celestial-nav.md), [Space and orbital navigation](../concepts/space-nav.md)
+**Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md)
 
 **Tags:** `star-tracker`, `cubesat`
 
@@ -20,11 +20,12 @@ Open-source star tracker using a Bayesian star identification approach, develope
 
 ## Related
 
-- alternative_to: [tetra3](../repos/esa__tetra3.md)
+- alternative_to: [tetra3](../../catalog/repos/esa__tetra3.md)
 
 ## Referenced by
 
-- [tetra3](../repos/esa__tetra3.md) (alternative_to)
+- [tetra3](../../catalog/repos/esa__tetra3.md) (alternative_to)
+- [Celestial fix: cedar-solve plate solving on real star images, then position from star elevations above an IMU vertical](../../catalog/samples/celestial-star-tracker.md) (explains)
 
 _Indexed by lane(s): alt-nav_
 

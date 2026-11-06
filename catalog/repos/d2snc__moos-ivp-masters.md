@@ -10,9 +10,9 @@ MOOS-IvP applications from a 2025 master's project at Universidade de Sao Paulo 
 
 **Why it matters:** Recent, field-validated COLREGs avoidance code that plugs straight into MOOS-IvP.
 
-**Hackathon notes:** Build against a MOOS-IvP tree; use pContactSpawn to stage head-on/crossing/overtaking cases.
+**Hackathon notes:** Build against a MOOS-IvP tree; use pContactSpawn to stage head-on/crossing/overtaking cases. No LICENSE file, so all rights reserved by default. The README says terms are 'specified in the repository' but none are.
 
-**Concepts:** [Maritime navigation](../concepts/maritime-nav.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md), [Path and motion planning](../concepts/path-planning.md)
+**Concepts:** [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Path and motion planning](../../catalog/concepts/path-planning.md)
 
 **Tags:** `colregs`, `usv`, `velocity-obstacles`, `a-star`, `moos-ivp`
 
@@ -20,12 +20,12 @@ MOOS-IvP applications from a 2025 master's project at Universidade de Sao Paulo 
 
 ## Related
 
-- extends: [MOOS-IvP](../repos/moos-ivp__moos-ivp.md)
+- extends: [MOOS-IvP](../../catalog/repos/moos-ivp__moos-ivp.md)
 
 ## Referenced by
 
-- [MOOS-IvP](../repos/moos-ivp__moos-ivp.md) (extends)
-- [COLREGs - Convention on the International Regulations for Preventing Collisions at Sea, 1972](../resources/imo-colregs.md) (explains)
+- [MOOS-IvP](../../catalog/repos/moos-ivp__moos-ivp.md) (extends)
+- [COLREGs - Convention on the International Regulations for Preventing Collisions at Sea, 1972](../../catalog/resources/imo-colregs.md) (explains)
 
 _Indexed by lane(s): domains-swarm_
 

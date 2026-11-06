@@ -12,7 +12,7 @@ LSTM (Bayesian and standard) classifiers that identify individual jammers from I
 
 **Hackathon notes:** Needs your own IQ recordings in the expected file layout; reuse the model code on Jammertest data.
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `jammer`, `fingerprinting`, `lstm`, `iq`
 
@@ -20,7 +20,7 @@ LSTM (Bayesian and standard) classifiers that identify individual jammers from I
 
 ## Related
 
-- integrates_with: [Fraunhofer IIS Jammertest 2025 dataset](../repos/felixott94__fraunhoferiis_jammertest2025.md)
+- integrates_with: [Fraunhofer IIS Jammertest 2025 dataset](../../catalog/repos/felixott94__fraunhoferiis_jammertest2025.md)
 
 _Indexed by lane(s): round3-expansion_
 

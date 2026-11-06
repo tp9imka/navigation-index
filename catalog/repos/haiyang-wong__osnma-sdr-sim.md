@@ -17,7 +17,7 @@ Galileo E1-B/E5b signal simulator with OSNMA authentication data embedded, confi
 - [_index-round3](../../docs/integration-cards/_index-round3.md) (integration-cards)
 - [haiyang-wong__osnma-sdr-sim](../../docs/integration-cards/haiyang-wong__osnma-sdr-sim.md) (integration-cards)
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Simulation and HIL/SITL](../concepts/simulation.md), [Jamming and spoofing](../concepts/gnss-interference.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
 **Tags:** `osnma`, `galileo`, `usrp`, `simulator`
 
@@ -25,17 +25,23 @@ Galileo E1-B/E5b signal simulator with OSNMA authentication data embedded, confi
 
 ## Related
 
-- integrates_with: [OSNMAlib](../repos/algafix__osnma.md)
-- integrates_with: [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md)
-- same_org: [Beidou-SDR-SIM](../repos/haiyang-wong__beidou-sdr-sim.md)
+- integrates_with: [OSNMAlib](../../catalog/repos/algafix__osnma.md)
+- integrates_with: [GNSS-SDR](../../catalog/repos/gnss-sdr__gnss-sdr.md)
+- same_org: [Beidou-SDR-SIM](../../catalog/repos/haiyang-wong__beidou-sdr-sim.md)
 
 ## Referenced by
 
-- [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md) (integrates_with)
-- [Beidou-SDR-SIM](../repos/haiyang-wong__beidou-sdr-sim.md) (same_org)
-- [Galileo OSNMA Signal-In-Space Interface Control Document Issue 1.1](../resources/galileo-osnma-sis-icd.md) (has_code)
-- [Safran Skydel simulation engine / GSG-8 GNSS simulator (ex-Orolia)](../resources/safran-skydel-gsg8.md) (alternative_to)
-- [Spirent GSS7000 and PNT X GNSS/PNT simulators](../resources/spirent-gss7000-pntx.md) (alternative_to)
+- [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [GNSS-SDR](../../catalog/repos/gnss-sdr__gnss-sdr.md) (integrates_with)
+- [Beidou-SDR-SIM](../../catalog/repos/haiyang-wong__beidou-sdr-sim.md) (same_org)
+- [Galileo OSNMA Signal-In-Space Interface Control Document Issue 1.1](../../catalog/resources/galileo-osnma-sis-icd.md) (has_code)
+- [Safran Skydel simulation engine / GSG-8 GNSS simulator (ex-Orolia)](../../catalog/resources/safran-skydel-gsg8.md) (alternative_to)
+- [Spirent GSS7000 and PNT X GNSS/PNT simulators](../../catalog/resources/spirent-gss7000-pntx.md) (alternative_to)
+- [Galileo OSNMA authentication as a spoofing defence: real recording, file-level attacks, scorer adapter](../../catalog/samples/osnma-authentication.md) (uses)
 
 _Indexed by lane(s): gnss_
 

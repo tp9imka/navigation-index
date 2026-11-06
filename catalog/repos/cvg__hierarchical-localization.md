@@ -18,7 +18,7 @@ Toolbox for hierarchical visual localization: global retrieval (NetVLAD etc.) to
 - [cvg__hierarchical-localization](../../docs/integration-cards/cvg__hierarchical-localization.md) (integration-cards)
 - [hloc-coarse-to-fine-2018](../../docs/paper-digests/hloc-coarse-to-fine-2018.md) (paper-digests)
 
-**Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md), [Feature detection and matching](../concepts/feature-matching.md), [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `sfm`, `colmap`, `retrieval`, `pnp`
 
@@ -26,16 +26,20 @@ Toolbox for hierarchical visual localization: global retrieval (NetVLAD etc.) to
 
 ## Related
 
-- depends_on: [LightGlue](../repos/cvg__lightglue.md)
-- integrates_with: [SuperGlue (pretrained)](../repos/magicleap__supergluepretrainednetwork.md)
+- depends_on: [LightGlue](../../catalog/repos/cvg__lightglue.md)
+- integrates_with: [SuperGlue (pretrained)](../../catalog/repos/magicleap__supergluepretrainednetwork.md)
 
 ## Referenced by
 
-- [LightGlue](../repos/cvg__lightglue.md) (integrates_with)
-- [Image Matching: Local Features & Beyond (CVPR workshop)](../resources/cvpr-image-matching-workshop.md) (uses)
-- [From Coarse to Fine: Robust Hierarchical Localization at Large Scale](../resources/hloc-coarse-to-fine-2018.md) (has_code)
-- [Long-Term Visual Localization benchmark](../resources/visual-localization-benchmark.md) (evaluates)
-- [Drone frame to orthophoto geolocalization with LightGlue](../samples/visual-geolocalization-lightglue.md) (explains)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [LightGlue](../../catalog/repos/cvg__lightglue.md) (integrates_with)
+- [Image Matching: Local Features & Beyond (CVPR workshop)](../../catalog/resources/cvpr-image-matching-workshop.md) (uses)
+- [From Coarse to Fine: Robust Hierarchical Localization at Large Scale](../../catalog/resources/hloc-coarse-to-fine-2018.md) (has_code)
+- [Long-Term Visual Localization benchmark](../../catalog/resources/visual-localization-benchmark.md) (evaluates)
+- [Drone frame to orthophoto geolocalization with LightGlue](../../catalog/samples/visual-geolocalization-lightglue.md) (explains)
 
 _Indexed by lane(s): alt-nav_
 

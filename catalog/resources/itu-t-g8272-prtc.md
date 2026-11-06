@@ -10,16 +10,17 @@ Defines the primary reference time clock (PRTC), the GNSS-fed time source at the
 
 - PRTC = the 'grandmaster from GNSS' in telecom vocabulary
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `itu-t`, `prtc`, `telecom`, `gnss-timing`
 
 ## Related
 
-- same_author: [ITU-T G.8272.1: Timing characteristics of enhanced primary reference time clocks](../resources/itu-t-g8272-1-eprtc.md)
+- same_author: [ITU-T G.8272.1: Timing characteristics of enhanced primary reference time clocks](../../catalog/resources/itu-t-g8272-1-eprtc.md)
 
 ## Referenced by
 
-- [ITU-T G.8271: Time and phase synchronization aspects of telecommunication networks](../resources/itu-t-g8271.md) (cites)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [ITU-T G.8271: Time and phase synchronization aspects of telecommunication networks](../../catalog/resources/itu-t-g8271.md) (cites)
 
 _Indexed by lane(s): timing_

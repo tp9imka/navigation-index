@@ -13,12 +13,12 @@ ICCV 2023 panoptic obstacle detection benchmark from lakes, rivers and seas: ove
 - Baselines for 27 segmentation methods
 - Non-commercial, research-only terms; no redistribution
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Maritime navigation](../concepts/maritime-nav.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
 **Tags:** `iccv2023`, `usv`, `panoptic`
 
 ## Related
 
-- has_code: [LaRS evaluator](../repos/lojzezust__lars_evaluator.md)
+- has_code: [LaRS evaluator](../../catalog/repos/lojzezust__lars_evaluator.md)
 
 _Indexed by lane(s): round3-expansion_

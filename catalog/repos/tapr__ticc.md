@@ -12,7 +12,7 @@ Firmware and design files for TAPR's Arduino-based sub-nanosecond time interval 
 
 **Hackathon notes:** Needs the board; output is a text stream of timestamps that pipes into allantools.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Sensor calibration](../concepts/calibration.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 
 **Tags:** `time-interval-counter`, `pps`, `measurement`, `arduino`
 
@@ -20,12 +20,13 @@ Firmware and design files for TAPR's Arduino-based sub-nanosecond time interval 
 
 ## Related
 
-- integrates_with: [allantools](../repos/aewallin__allantools.md)
+- integrates_with: [allantools](../../catalog/repos/aewallin__allantools.md)
 
 ## Referenced by
 
-- [allantools](../repos/aewallin__allantools.md) (integrates_with)
-- [LeapSecond.com (Tom Van Baak time and frequency pages)](../resources/leapsecond-tvb.md) (explains)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [allantools](../../catalog/repos/aewallin__allantools.md) (integrates_with)
+- [LeapSecond.com (Tom Van Baak time and frequency pages)](../../catalog/resources/leapsecond-tvb.md) (explains)
 
 _Indexed by lane(s): timing_
 

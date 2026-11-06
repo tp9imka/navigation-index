@@ -12,7 +12,7 @@ Community fork of AirSim that moved it to newer Unreal Engine 5 releases. The Gi
 
 **Hackathon notes:** Archived on GitHub, so expect unanswered issues. Use only if you need its UE5 changes specifically.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `airsim`, `unreal5`, `fork`
 
@@ -20,13 +20,13 @@ Community fork of AirSim that moved it to newer Unreal Engine 5 releases. The Gi
 
 ## Related
 
-- fork_of: [AirSim](../repos/microsoft__airsim.md)
-- alternative_to: [Project AirSim](../repos/iamaisim__projectairsim.md)
+- fork_of: [AirSim](../../catalog/repos/microsoft__airsim.md)
+- alternative_to: [Project AirSim](../../catalog/repos/iamaisim__projectairsim.md)
 
 ## Referenced by
 
-- [Project AirSim](../repos/iamaisim__projectairsim.md) (alternative_to)
-- [AirSim](../repos/microsoft__airsim.md) (fork_of)
+- [Project AirSim](../../catalog/repos/iamaisim__projectairsim.md) (alternative_to)
+- [AirSim](../../catalog/repos/microsoft__airsim.md) (fork_of)
 
 _Indexed by lane(s): sim-data_
 

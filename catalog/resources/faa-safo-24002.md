@@ -12,12 +12,19 @@ Safety alert for operators describing how jamming and spoofing manifest in the c
 - Advises readiness to use conventional navaids
 - Later FAA guidance revisions followed in 2026
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Policy, export control and ethics](../concepts/policy-ethics.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md)
 
 **Tags:** `faa`, `safo`, `aviation`, `spoofing`
 
 ## Related
 
-- cites: [FAA GPS/GNSS Interference Reports and Anomaly Reporting](../resources/faa-gps-reports.md)
+- cites: [FAA GPS/GNSS Interference Reports and Anomaly Reporting](../../catalog/resources/faa-gps-reports.md)
+
+## Referenced by
+
+- [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
+- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 
 _Indexed by lane(s): docs-standards_

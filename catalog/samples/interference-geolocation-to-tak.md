@@ -6,17 +6,25 @@ Locates a GNSS interference source from KrakenSDR-style direction-of-arrival bea
 
 **Verification:** Ran 2026-11-06: 11 unittest cases OK with python3.14.7 stdlib (geo, Kraken JSON/CSV parsing incl. HTTP poll against a local server, triangulation, ellipse, CoT build, UDP send to localhost); locate.py --method all ran with Python 3.12.14 + stonesoup 1.9.1 on synthetic data, outputs in README. Not run: a live KrakenSDR, the websocket listener (needs websockets), and rendering of the CoT ellipse on an ATAK/WinTAK client (ellipse angle convention unverified).
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [RF localization and direction finding](../concepts/rf-localization.md), [Tracking and data association](../concepts/target-tracking.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md), [Tracking and data association](../../catalog/concepts/target-tracking.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `jammer`, `direction-finding`, `doa`, `krakensdr`, `triangulation`, `bearing-only`, `stone-soup`, `particle-filter`, `ukf`, `cot`, `tak`, `error-ellipse`
 
 ## Related
 
-- uses: [KrakenSDR DoA DSP](../repos/krakenrf__krakensdr_doa.md)
-- explains: [Heimdall DAQ firmware](../repos/krakenrf__heimdall_daq_fw.md)
-- uses: [Stone Soup](../repos/dstl__stone-soup.md)
-- explains: [PyTAK](../repos/snstac__pytak.md)
-- explains: [OpenTAKServer](../repos/brian7704__opentakserver.md)
-- explains: [ATAK-CIV (TAK Product Center)](../repos/tak-product-center__atak-civ.md)
+- uses: [KrakenSDR DoA DSP](../../catalog/repos/krakenrf__krakensdr_doa.md)
+- explains: [Heimdall DAQ firmware](../../catalog/repos/krakenrf__heimdall_daq_fw.md)
+- uses: [Stone Soup](../../catalog/repos/dstl__stone-soup.md)
+- explains: [PyTAK](../../catalog/repos/snstac__pytak.md)
+- explains: [OpenTAKServer](../../catalog/repos/brian7704__opentakserver.md)
+- explains: [ATAK-CIV (TAK Product Center)](../../catalog/repos/tak-product-center__atak-civ.md)
+
+## Referenced by
+
+- [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Low-cost GNSS jammer sensor network: u-blox telemetry => localization => TAK and dashboard](../../catalog/samples/jammer-sensor-network.md) (uses)
 
 _Indexed by lane(s): samples_

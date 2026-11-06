@@ -12,7 +12,7 @@ Low-cost edge-only acoustic drone detector on ESP32-S3 with encrypted LoRa or Et
 
 **Hackathon notes:** ESP-IDF build; tune thresholds per site.
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `acoustic`, `esp32`, `lora`
 
@@ -20,12 +20,12 @@ Low-cost edge-only acoustic drone detector on ESP32-S3 with encrypted LoRa or Et
 
 ## Related
 
-- alternative_to: [VolAnti](../repos/agamrossen__volanti.md)
+- alternative_to: [VolAnti](../../catalog/repos/agamrossen__volanti.md)
 
 ## Referenced by
 
-- [VolAnti](../repos/agamrossen__volanti.md) (alternative_to)
-- [Batear datasets](../repos/batear-io__batear-datasets.md) (integrates_with)
+- [VolAnti](../../catalog/repos/agamrossen__volanti.md) (alternative_to)
+- [Batear datasets](../../catalog/repos/batear-io__batear-datasets.md) (integrates_with)
 
 _Indexed by lane(s): domains-swarm_
 

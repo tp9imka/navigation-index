@@ -12,7 +12,12 @@ Long-running autonomy middleware (MOOS) plus the IvP Helm behaviour-based multi-
 
 **Hackathon notes:** Builds on Linux/macOS with CMake; the bundled alpha and heron missions run in simulation with pMarineViewer. Pair with the MIT 2.680 labs.
 
-**Concepts:** [Maritime navigation](../concepts/maritime-nav.md), [Path and motion planning](../concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [moos-ivp__moos-ivp](../../docs/integration-cards/moos-ivp__moos-ivp.md) (integration-cards)
+
+**Concepts:** [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `moos`, `ivp-helm`, `usv`, `uuv`, `colregs`, `mit`
 
@@ -20,16 +25,20 @@ Long-running autonomy middleware (MOOS) plus the IvP Helm behaviour-based multi-
 
 ## Related
 
-- extends: [MOOS-IvP COLREGs master's research code](../repos/d2snc__moos-ivp-masters.md)
-- alternative_to: [NTNU colav-simulator](../repos/ntnu-itk-autonomous-ship-lab__colav-simulator.md)
+- extends: [MOOS-IvP COLREGs master's research code](../../catalog/repos/d2snc__moos-ivp-masters.md)
+- alternative_to: [NTNU colav-simulator](../../catalog/repos/ntnu-itk-autonomous-ship-lab__colav-simulator.md)
 
 ## Referenced by
 
-- [MOOS-IvP COLREGs master's research code](../repos/d2snc__moos-ivp-masters.md) (extends)
-- [NTNU colav-simulator](../repos/ntnu-itk-autonomous-ship-lab__colav-simulator.md) (alternative_to)
-- [Virtual RobotX (VRX)](../repos/osrf__vrx.md) (alternative_to)
-- [MIT 2.680 Unmanned Marine Vehicle Autonomy, Sensing and Communications](../resources/mit-2680-marine-autonomy.md) (uses)
-- [MOOS-IvP documentation wiki](../resources/moos-ivp-docs.md) (explains)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [MOOS-IvP COLREGs master's research code](../../catalog/repos/d2snc__moos-ivp-masters.md) (extends)
+- [NTNU colav-simulator](../../catalog/repos/ntnu-itk-autonomous-ship-lab__colav-simulator.md) (alternative_to)
+- [Virtual RobotX (VRX)](../../catalog/repos/osrf__vrx.md) (alternative_to)
+- [MIT 2.680 Unmanned Marine Vehicle Autonomy, Sensing and Communications](../../catalog/resources/mit-2680-marine-autonomy.md) (uses)
+- [MOOS-IvP documentation wiki](../../catalog/resources/moos-ivp-docs.md) (explains)
+- [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) (explains)
 
 _Indexed by lane(s): domains-swarm_
 

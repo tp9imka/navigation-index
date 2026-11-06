@@ -12,7 +12,7 @@ Real-time LiDAR-inertial initialization estimating extrinsics, time offset, grav
 
 **Hackathon notes:** Builds like FAST_LIO; feed a bag with aggressive motion at start.
 
-**Concepts:** [Sensor calibration](../concepts/calibration.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Sensor calibration](../../catalog/concepts/calibration.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `lidar-imu`, `online-init`, `fast-lio`, `extrinsics`, `time-offset`, `ros1`
 
@@ -20,12 +20,12 @@ Real-time LiDAR-inertial initialization estimating extrinsics, time offset, grav
 
 ## Related
 
-- integrates_with: [FAST-LIO / FAST-LIO2](../repos/hku-mars__fast_lio.md)
-- alternative_to: [LI-Calib](../repos/april-zju__lidar_imu_calib.md)
+- integrates_with: [FAST-LIO / FAST-LIO2](../../catalog/repos/hku-mars__fast_lio.md)
+- alternative_to: [LI-Calib](../../catalog/repos/april-zju__lidar_imu_calib.md)
 
 ## Referenced by
 
-- [lidar_imu_calib](../repos/chennuo0125-hit__lidar_imu_calib.md) (alternative_to)
+- [lidar_imu_calib](../../catalog/repos/chennuo0125-hit__lidar_imu_calib.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion, slam_
 

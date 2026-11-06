@@ -12,7 +12,7 @@ MATLAB code for Rao-Blackwellized particle smoothing for SLAM, including magneti
 
 **Hackathon notes:** Good for understanding magnetic map matching quickly.
 
-**Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Indoor and pedestrian navigation](../../catalog/concepts/indoor-pedestrian.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `particle-filter`, `magnetic-slam`, `matlab`
 

@@ -12,7 +12,7 @@ Gazebo Classic MAV simulator from ETH ASL with multirotor models, IMU and odomet
 
 **Hackathon notes:** ROS1 and Gazebo Classic only; use for reproducing older papers rather than new builds.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `gazebo-classic`, `ros1`, `mav`
 
@@ -20,7 +20,7 @@ Gazebo Classic MAV simulator from ETH ASL with multirotor models, IMU and odomet
 
 ## Related
 
-- alternative_to: [Gazebo Sim (gz-sim)](../repos/gazebosim__gz-sim.md)
+- alternative_to: [Gazebo Sim (gz-sim)](../../catalog/repos/gazebosim__gz-sim.md)
 
 _Indexed by lane(s): sim-data_
 

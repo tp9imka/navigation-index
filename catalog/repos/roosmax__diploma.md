@@ -16,7 +16,7 @@ MIPT (FAKT) 2026 diploma: local navigation for a UAV under GNSS suppression, cor
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [RF localization and direction finding](../concepts/rf-localization.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [RF localization and direction finding](../../catalog/concepts/rf-localization.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `lang:ru`, `lora`, `twr`, `beacons`, `eskf`, `thesis`
 
@@ -24,7 +24,10 @@ MIPT (FAKT) 2026 diploma: local navigation for a UAV under GNSS suppression, cor
 
 ## Referenced by
 
-- [Vyriy створила маякову навігацію для дронів, яка працює без GPS і зв’язку](../resources/devua-vyriy-beacon-navigation-2026.md) (explains)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Vyriy створила маякову навігацію для дронів, яка працює без GPS і зв’язку](../../catalog/resources/devua-vyriy-beacon-navigation-2026.md) (explains)
 
 _Indexed by lane(s): ua-ru-sources_
 

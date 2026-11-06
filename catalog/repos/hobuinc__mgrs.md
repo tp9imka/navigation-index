@@ -12,7 +12,7 @@ Python library converting between latitude/longitude and MGRS grid references, b
 
 **Hackathon notes:** pip install mgrs; mind the precision argument for 1 m vs 10 m references. Since 1.6.0 inverse conversion returns the grid-cell centre, not the south-west corner.
 
-**Concepts:** [Geodesy and coordinate frames](../concepts/geodesy.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Geodesy and coordinate frames](../../catalog/concepts/geodesy.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `mgrs`, `utm`, `grid-reference`
 
@@ -20,11 +20,13 @@ Python library converting between latitude/longitude and MGRS grid references, b
 
 ## Related
 
-- alternative_to: [GeographicLib](../repos/geographiclib__geographiclib.md)
+- alternative_to: [GeographicLib](../../catalog/repos/geographiclib__geographiclib.md)
 
 ## Referenced by
 
-- [GeographicLib](../repos/geographiclib__geographiclib.md) (alternative_to)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [GeographicLib](../../catalog/repos/geographiclib__geographiclib.md) (alternative_to)
 
 _Indexed by lane(s): planning-gis-c2_
 

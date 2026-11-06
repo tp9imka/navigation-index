@@ -12,7 +12,7 @@ Maintained copy of the classic Borre/Akos SoftGNSS MATLAB GPS L1 receiver with u
 
 **Hackathon notes:** Good for learning acquisition and tracking loops on a sample data file.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Software-defined GNSS receivers](../concepts/gnss-sdr.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md)
 
 **Tags:** `matlab`, `gps-l1`, `textbook`
 
@@ -20,14 +20,15 @@ Maintained copy of the classic Borre/Akos SoftGNSS MATLAB GPS L1 receiver with u
 
 ## Related
 
-- alternative_to: [SoftGNSS-python](../repos/perrysou__softgnss-python.md)
+- alternative_to: [SoftGNSS-python](../../catalog/repos/perrysou__softgnss-python.md)
 
 ## Referenced by
 
-- [FGI-GSRx](../repos/nlsfi__fgi-gsrx.md) (alternative_to)
-- [SoftGNSS-python](../repos/perrysou__softgnss-python.md) (alternative_to)
-- [GPS L1 Direct Position Estimation module](../repos/sergio-vicenzo__gpsl1-dpemodule.md) (extends)
-- [A Software-Defined GPS and Galileo Receiver: A Single-Frequency Approach](../resources/borre-software-defined-gps-galileo-receiver.md) (has_code)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [FGI-GSRx](../../catalog/repos/nlsfi__fgi-gsrx.md) (alternative_to)
+- [SoftGNSS-python](../../catalog/repos/perrysou__softgnss-python.md) (alternative_to)
+- [GPS L1 Direct Position Estimation module](../../catalog/repos/sergio-vicenzo__gpsl1-dpemodule.md) (extends)
+- [A Software-Defined GPS and Galileo Receiver: A Single-Frequency Approach](../../catalog/resources/borre-software-defined-gps-galileo-receiver.md) (has_code)
 
 _Indexed by lane(s): gnss_
 

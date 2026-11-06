@@ -12,7 +12,7 @@ Deep Event Visual Odometry: learned monocular event-only VO trained on simulated
 
 **Hackathon notes:** PyTorch + CUDA; pretrained checkpoint available.
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `event-camera`, `deep-learning`, `visual-odometry`
 
@@ -20,11 +20,11 @@ Deep Event Visual Odometry: learned monocular event-only VO trained on simulated
 
 ## Related
 
-- integrates_with: [Deep Event Visual Odometry](../resources/devo-deep-event-vo-2023.md)
+- integrates_with: [Deep Event Visual Odometry](../../catalog/resources/devo-deep-event-vo-2023.md)
 
 ## Referenced by
 
-- [Deep Event Visual Odometry](../resources/devo-deep-event-vo-2023.md) (has_code)
+- [Deep Event Visual Odometry](../../catalog/resources/devo-deep-event-vo-2023.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

@@ -12,7 +12,7 @@ Python package (Magnetic Anomaly Map Matching Airborne and Land) for simulating 
 
 **Hackathon notes:** Use to generate maps or simulated surveys feeding a particle filter.
 
-**Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+**Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `python`, `anomaly-map`, `survey`
 
@@ -20,11 +20,12 @@ Python package (Magnetic Anomaly Map Matching Airborne and Land) for simulating 
 
 ## Related
 
-- alternative_to: [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md)
+- alternative_to: [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md)
 
 ## Referenced by
 
-- [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md) (alternative_to)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md) (alternative_to)
 
 _Indexed by lane(s): alt-nav_
 

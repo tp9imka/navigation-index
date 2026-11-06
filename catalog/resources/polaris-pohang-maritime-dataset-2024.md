@@ -12,16 +12,16 @@ Inha University dataset that adds object detection and tracking labels to five P
 - Multi-modal labels for camera, thermal, LiDAR and radar detection on USVs
 - Inherits the non-commercial terms of the Pohang Canal data
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Maritime navigation](../concepts/maritime-nav.md), [Tracking and data association](../concepts/target-tracking.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Tracking and data association](../../catalog/concepts/target-tracking.md)
 
 **Tags:** `inha`, `usv`, `tracking`
 
 ## Related
 
-- uses: [Pohang Canal Dataset: A Multimodal Maritime Dataset for Autonomous Navigation in Restricted Waters](../resources/pohang-canal-dataset-2023.md)
+- uses: [Pohang Canal Dataset: A Multimodal Maritime Dataset for Autonomous Navigation in Restricted Waters](../../catalog/resources/pohang-canal-dataset-2023.md)
 
 ## Referenced by
 
-- [Pohang Canal Dataset: A Multimodal Maritime Dataset for Autonomous Navigation in Restricted Waters](../resources/pohang-canal-dataset-2023.md) (dataset_for)
+- [Pohang Canal Dataset: A Multimodal Maritime Dataset for Autonomous Navigation in Restricted Waters](../../catalog/resources/pohang-canal-dataset-2023.md) (dataset_for)
 
 _Indexed by lane(s): round3-expansion_

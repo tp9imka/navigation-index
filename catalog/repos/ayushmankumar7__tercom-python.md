@@ -1,4 +1,4 @@
-# TERCOM-python (TERCOM + DSMAC)
+# TERCOM-python (DSMAC-style scene matching)
 
 `repo:ayushmankumar7/tercom-python` - <https://github.com/ayushmankumar7/TERCOM-python>
 
@@ -6,13 +6,13 @@
 |---|---|---|---|---|---|---|
 | 8 | Python | ? | 2022-12-05 | False | educational | medium |
 
-OpenCV-based demo of map-based navigation combining terrain contour matching with scene-matching area correlation.
+A single short OpenCV script that locates a Google Maps crop inside a larger map image with SIFT matching and a RANSAC homography, framed as DSMAC-style scene matching. Despite the repo name there is no terrain contour (TERCOM) code.
 
-**Why it matters:** Shows both classic map-matching families side by side.
+**Why it matters:** Minimal scene-matching (DSMAC-style) baseline; the TERCOM half exists only in the name.
 
 **Hackathon notes:** Small educational code; use for concept slides and quick baselines.
 
-**Concepts:** [Terrain-relative navigation](../concepts/terrain-nav.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `tercom`, `dsmac`, `opencv`
 
@@ -20,11 +20,11 @@ OpenCV-based demo of map-based navigation combining terrain contour matching wit
 
 ## Related
 
-- alternative_to: [python-tercom](../repos/alti3__python-tercom.md)
+- alternative_to: [python-tercom](../../catalog/repos/alti3__python-tercom.md)
 
 ## Referenced by
 
-- [Aerial Template Matching](../repos/m-hamza-mughal__aerial-template-matching.md) (alternative_to)
+- [Aerial Template Matching](../../catalog/repos/m-hamza-mughal__aerial-template-matching.md) (alternative_to)
 
 _Indexed by lane(s): alt-nav_
 

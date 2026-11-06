@@ -12,7 +12,7 @@ Feature-rich web mapping library supporting many projections, WMS/WMTS, vector t
 
 **Hackathon notes:** npm install ol; integrates with proj4js for custom CRS.
 
-**Concepts:** [GIS, maps and geospatial data](../concepts/gis-mapping.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `web-map`, `ogc`, `projections`
 
@@ -20,13 +20,13 @@ Feature-rich web mapping library supporting many projections, WMS/WMTS, vector t
 
 ## Related
 
-- alternative_to: [Leaflet](../repos/leaflet__leaflet.md)
-- alternative_to: [MapLibre GL JS](../repos/maplibre__maplibre-gl-js.md)
+- alternative_to: [Leaflet](../../catalog/repos/leaflet__leaflet.md)
+- alternative_to: [MapLibre GL JS](../../catalog/repos/maplibre__maplibre-gl-js.md)
 
 ## Referenced by
 
-- [Leaflet](../repos/leaflet__leaflet.md) (alternative_to)
-- [MapLibre GL JS](../repos/maplibre__maplibre-gl-js.md) (alternative_to)
+- [Leaflet](../../catalog/repos/leaflet__leaflet.md) (alternative_to)
+- [MapLibre GL JS](../../catalog/repos/maplibre__maplibre-gl-js.md) (alternative_to)
 
 _Indexed by lane(s): planning-gis-c2_
 

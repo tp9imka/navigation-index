@@ -12,7 +12,7 @@ Microsoft's collection of prompts and an AirSim-based ChatGPT drone simulator ac
 
 **Hackathon notes:** No longer updated and AirSim itself is archived; mine the prompts, run elsewhere.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `chatgpt`, `airsim`, `prompts`
 
@@ -20,13 +20,13 @@ Microsoft's collection of prompts and an AirSim-based ChatGPT drone simulator ac
 
 ## Related
 
-- depends_on: [AirSim](../repos/microsoft__airsim.md)
-- integrates_with: [ChatGPT for Robotics: Design Principles and Model Abilities](../resources/microsoft-chatgpt-robotics-2023.md)
+- depends_on: [AirSim](../../catalog/repos/microsoft__airsim.md)
+- integrates_with: [ChatGPT for Robotics: Design Principles and Model Abilities](../../catalog/resources/microsoft-chatgpt-robotics-2023.md)
 
 ## Referenced by
 
-- [TypeFly](../repos/typefly__typefly.md) (alternative_to)
-- [ChatGPT for Robotics: Design Principles and Model Abilities](../resources/microsoft-chatgpt-robotics-2023.md) (has_code)
+- [TypeFly](../../catalog/repos/typefly__typefly.md) (alternative_to)
+- [ChatGPT for Robotics: Design Principles and Model Abilities](../../catalog/resources/microsoft-chatgpt-robotics-2023.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

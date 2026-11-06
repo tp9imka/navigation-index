@@ -12,7 +12,7 @@ C++/ROS definitions and utilities for raw GNSS measurement processing (ephemeris
 
 **Hackathon notes:** ROS 1; stable but unmaintained since 2022.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [GNSS/INS integration](../concepts/gnss-ins.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `raw-measurements`, `ros`, `c++`
 
@@ -20,7 +20,7 @@ C++/ROS definitions and utilities for raw GNSS measurement processing (ephemeris
 
 ## Related
 
-- same_org: [GVINS](../repos/hkust-aerial-robotics__gvins.md)
+- same_org: [GVINS](../../catalog/repos/hkust-aerial-robotics__gvins.md)
 
 _Indexed by lane(s): gnss_
 

@@ -11,16 +11,18 @@ Two-part IEEE Robotics & Automation Magazine tutorial (Part II at rpg.ifi.uzh.ch
 - Best single-read primer on VO design choices
 - Part II covers RANSAC and windowed bundle adjustment
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Feature detection and matching](../concepts/feature-matching.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 
 **Tags:** `visual-odometry`, `tutorial`, `ieee-ram`
 
 ## Related
 
-- same_author: [Vision Algorithms for Mobile Robotics (UZH/ETH)](../resources/scaramuzza-vision-algorithms-mobile-robotics.md)
+- same_author: [Vision Algorithms for Mobile Robotics (UZH/ETH)](../../catalog/resources/scaramuzza-vision-algorithms-mobile-robotics.md)
 
 ## Referenced by
 
-- [Vision Algorithms for Mobile Robotics (UZH/ETH)](../resources/scaramuzza-vision-algorithms-mobile-robotics.md) (same_author)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
+- [Vision Algorithms for Mobile Robotics (UZH/ETH)](../../catalog/resources/scaramuzza-vision-algorithms-mobile-robotics.md) (same_author)
 
 _Indexed by lane(s): learning_

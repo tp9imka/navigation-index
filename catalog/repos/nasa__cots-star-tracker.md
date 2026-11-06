@@ -12,7 +12,7 @@ NASA software for building a star tracker from commercial off-the-shelf cameras,
 
 **Hackathon notes:** Follow its calibration workflow with a phone or Pi camera.
 
-**Concepts:** [Celestial and star-tracker navigation](../concepts/celestial-nav.md), [Space and orbital navigation](../concepts/space-nav.md), [Sensor calibration](../concepts/calibration.md)
+**Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 
 **Tags:** `nasa`, `cots`, `star-tracker`
 
@@ -20,7 +20,12 @@ NASA software for building a star tracker from commercial off-the-shelf cameras,
 
 ## Related
 
-- alternative_to: [tetra3](../repos/esa__tetra3.md)
+- alternative_to: [tetra3](../../catalog/repos/esa__tetra3.md)
+
+## Referenced by
+
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [Celestial fix: cedar-solve plate solving on real star images, then position from star elevations above an IMU vertical](../../catalog/samples/celestial-star-tracker.md) (explains)
 
 _Indexed by lane(s): alt-nav_
 

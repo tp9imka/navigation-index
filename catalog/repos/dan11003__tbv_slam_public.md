@@ -12,7 +12,7 @@ Radar SLAM with verified loop closures built on CFEAR radar odometry.
 
 **Hackathon notes:** ROS1 + Docker; pairs with CFEAR.
 
-**Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md), [Place recognition and loop closure](../concepts/place-recognition.md)
+**Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 
 **Tags:** `radar-slam`, `loop-closure`, `cfear`
 
@@ -20,7 +20,7 @@ Radar SLAM with verified loop closures built on CFEAR radar odometry.
 
 ## Related
 
-- extends: [CFEAR Radarodometry](../repos/dan11003__cfear_radarodometry.md)
+- extends: [CFEAR Radarodometry](../../catalog/repos/dan11003__cfear_radarodometry.md)
 
 _Indexed by lane(s): gap-fill_
 

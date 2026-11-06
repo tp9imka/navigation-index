@@ -12,20 +12,21 @@ Official documentation for the MAVLink micro air vehicle messaging protocol: mes
 - Microservices define stateful exchanges like mission upload
 - Generators produce bindings for C, Python, Rust and more
 
-**Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Autopilots and flight control](../concepts/autopilot.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `mavlink`, `protocol`, `uav`, `dronecode`
 
 ## Related
 
-- has_code: [MAVLink](../repos/mavlink__mavlink.md)
-- has_code: [MAVSDK](../repos/mavlink__mavsdk.md)
-- uses: [ArduPilot](../repos/ardupilot__ardupilot.md)
-- uses: [PX4 Autopilot](../repos/px4__px4-autopilot.md)
+- has_code: [MAVLink](../../catalog/repos/mavlink__mavlink.md)
+- has_code: [MAVSDK](../../catalog/repos/mavlink__mavsdk.md)
+- uses: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
+- uses: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
 
 ## Referenced by
 
-- [MAVLink 2 and Message Signing](../resources/mavlink-2-signing.md) (part_of)
-- [MAVLink Mission Protocol](../resources/mavlink-mission-protocol.md) (part_of)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [MAVLink 2 and Message Signing](../../catalog/resources/mavlink-2-signing.md) (part_of)
+- [MAVLink Mission Protocol](../../catalog/resources/mavlink-mission-protocol.md) (part_of)
 
 _Indexed by lane(s): docs-standards_

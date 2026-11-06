@@ -12,7 +12,7 @@ Improved web interface for readsb/dump1090 with track history, filtering and ove
 
 **Hackathon notes:** One-line install on top of readsb. Fork the JS to color aircraft by NIC to show degraded GNSS.
 
-**Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+**Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `ads-b`, `web-map`, `javascript`, `web-ui`
 
@@ -20,11 +20,13 @@ Improved web interface for readsb/dump1090 with track history, filtering and ove
 
 ## Related
 
-- depends_on: [readsb](../repos/wiedehopf__readsb.md)
+- depends_on: [readsb](../../catalog/repos/wiedehopf__readsb.md)
 
 ## Referenced by
 
-- [readsb](../repos/wiedehopf__readsb.md) (integrates_with)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [readsb](../../catalog/repos/wiedehopf__readsb.md) (integrates_with)
 
 _Indexed by lane(s): defense-context, planning-gis-c2_
 

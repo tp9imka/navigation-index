@@ -12,7 +12,7 @@ Multi-sensor dataset from a Swedish thesis: 650 infrared and visible videos (air
 
 **Hackathon notes:** Data sits in the repo (~360 MB, no LFS), CC0. Labels are MATLAB groundTruth .mat files that scipy cannot read; use pip install mcos-decoder in Python. Good for a fused IR+audio classifier demo in a weekend.
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../concepts/counter-uas.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `infrared`, `audio`, `multi-sensor`, `c-uas`
 
@@ -20,12 +20,12 @@ Multi-sensor dataset from a Swedish thesis: 650 infrared and visible videos (air
 
 ## Related
 
-- alternative_to: [Drone-vs-Bird Detection Challenge](../repos/wosdetc__challenge.md)
+- alternative_to: [Drone-vs-Bird Detection Challenge](../../catalog/repos/wosdetc__challenge.md)
 
 ## Referenced by
 
-- [MMC-UAV dataset](../repos/chance1911__mmc-uav-dataset.md) (alternative_to)
-- [Drone-vs-Bird Detection Challenge](../repos/wosdetc__challenge.md) (alternative_to)
+- [MMC-UAV dataset](../../catalog/repos/chance1911__mmc-uav-dataset.md) (alternative_to)
+- [Drone-vs-Bird Detection Challenge](../../catalog/repos/wosdetc__challenge.md) (alternative_to)
 
 _Indexed by lane(s): round3-expansion_
 

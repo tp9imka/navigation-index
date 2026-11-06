@@ -6,17 +6,17 @@
 |---|---|---|---|---|---|---|
 | 52 |  | ? | 2025-05-14 | False | archived | medium |
 
-Index for CoSTAR's multi-robot lidar/IMU/odometry datasets recorded in tunnels, mines and urban underground sites.
+Index for CoSTAR's multi-robot SubT lidar datasets (Tunnel, Urban, Finals Prelim2, Kentucky Underground): processed keyed scans and incremental pose graphs sent to the base station, g2o/pcd exports and ground truth.
 
 **Why it matters:** Real GNSS-denied field data from SubT for testing SLAM or loop closure without building robots.
 
-**Hackathon notes:** Bags are large; pick one sequence.
+**Hackathon notes:** Bags are large; pick one sequence. Data is processed LAMP front-end output, not raw sensor streams. No licence file or data terms are given (all rights reserved by default); cite LAMP 2.0 and ask the authors before reuse beyond research.
 
 ## Deep dives
 
 - [subt-datasets](../../docs/dataset-cards/subt-datasets.md) (dataset-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `darpa-subt`, `dataset`, `multi-robot`
 
@@ -24,11 +24,11 @@ Index for CoSTAR's multi-robot lidar/IMU/odometry datasets recorded in tunnels, 
 
 ## Related
 
-- same_org: [LAMP (NeBula multi-robot SLAM)](../repos/nebula-autonomy__lamp.md)
+- same_org: [LAMP (NeBula multi-robot SLAM)](../../catalog/repos/nebula-autonomy__lamp.md)
 
 ## Referenced by
 
-- [LAMP (NeBula multi-robot SLAM)](../repos/nebula-autonomy__lamp.md) (evaluated_on)
+- [LAMP (NeBula multi-robot SLAM)](../../catalog/repos/nebula-autonomy__lamp.md) (evaluated_on)
 
 _Indexed by lane(s): defense-context_
 

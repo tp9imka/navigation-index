@@ -1,4 +1,4 @@
-# Robot Mapping (SLAM course) WS 2013/14
+# SLAM Course (2013)
 
 `res:stachniss-slam-course-2013` - lecture-series - <https://www.youtube.com/playlist?list=PLgnQpQtFTOGQrZ4O5QzbIHgl3b1JHimN_>
 
@@ -12,18 +12,20 @@ Full semester recording of the Freiburg Robot Mapping course: EKF-SLAM, sparse e
 - Graph-SLAM via least squares, robust kernels
 - Slides and Octave exercises on the course page
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `slam`, `freiburg`, `graph-slam`, `fastslam`
 
 ## Related
 
-- explains: [Robot Mapping - WS 2013/14 course page (slides, exercises)](../resources/freiburg-robot-mapping-course.md)
-- same_author: [Cyrill Stachniss YouTube channel (incl. '5 Minutes with Cyrill')](../resources/stachniss-youtube-channel.md)
+- explains: [Robot Mapping - WS 2013/14 course page (slides, exercises)](../../catalog/resources/freiburg-robot-mapping-course.md)
+- same_author: [Cyrill Stachniss YouTube channel (incl. '5 Minutes with Cyrill')](../../catalog/resources/stachniss-youtube-channel.md)
 
 ## Referenced by
 
-- [Robot Mapping - WS 2013/14 course page (slides, exercises)](../resources/freiburg-robot-mapping-course.md) (part_of)
-- [Online Training: Mobile Robotics (Basics + Robotics blocks)](../resources/stachniss-mobile-robotics-online-training.md) (part_of)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
+- [Robot Mapping - WS 2013/14 course page (slides, exercises)](../../catalog/resources/freiburg-robot-mapping-course.md) (part_of)
+- [Online Training: Mobile Robotics (Basics + Robotics blocks)](../../catalog/resources/stachniss-mobile-robotics-online-training.md) (part_of)
 
 _Indexed by lane(s): learning_

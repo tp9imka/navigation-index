@@ -12,7 +12,7 @@ Daemon that disciplines the oscillator on the Orolia (Safran) Atomic Reference T
 
 **Hackathon notes:** Needs the hardware; read the disciplining code for the loop design.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `gpsdo`, `disciplining`, `atomic-clock`, `time-card`
 
@@ -20,13 +20,14 @@ Daemon that disciplines the oscillator on the Orolia (Safran) Atomic Reference T
 
 ## Related
 
-- integrates_with: [OCP Time Card](../repos/time-appliances-project__time-card.md)
-- integrates_with: [Meta Time libraries](../repos/meta__time.md)
+- integrates_with: [OCP Time Card](../../catalog/repos/time-appliances-project__time-card.md)
+- integrates_with: [Meta Time libraries](../../catalog/repos/meta__time.md)
 
 ## Referenced by
 
-- [Meta Time libraries](../repos/meta__time.md) (integrates_with)
-- [OCP Time Card](../repos/time-appliances-project__time-card.md) (integrates_with)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [Meta Time libraries](../../catalog/repos/meta__time.md) (integrates_with)
+- [OCP Time Card](../../catalog/repos/time-appliances-project__time-card.md) (integrates_with)
 
 _Indexed by lane(s): timing_
 

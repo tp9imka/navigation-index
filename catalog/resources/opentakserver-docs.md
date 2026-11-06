@@ -10,12 +10,12 @@ Installation and configuration docs for OpenTAKServer, including client enrollme
 
 - Step-by-step install on Ubuntu or Raspberry Pi
 
-**Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `tak`, `server`
 
 ## Related
 
-- explains: [OpenTAKServer](../repos/brian7704__opentakserver.md)
+- explains: [OpenTAKServer](../../catalog/repos/brian7704__opentakserver.md)
 
 _Indexed by lane(s): planning-gis-c2_

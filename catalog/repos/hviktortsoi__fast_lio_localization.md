@@ -12,7 +12,12 @@ Relocalization in a prebuilt map using FAST-LIO odometry plus global scan-to-map
 
 **Hackathon notes:** ROS 1; build a map with FAST-LIO first, then localize. Needs a rough initial pose (RViz or another sensor). The global-localization node needs Python 2.7 and Open3D 0.9, so plan for a Melodic-era environment or a container.
 
-**Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Place recognition and loop closure](../concepts/place-recognition.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
+## Deep dives
+
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [hviktortsoi__fast_lio_localization](../../docs/integration-cards/hviktortsoi__fast_lio_localization.md) (integration-cards)
+
+**Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 
 **Tags:** `relocalization`, `prior-map`, `ros1`
 
@@ -20,11 +25,11 @@ Relocalization in a prebuilt map using FAST-LIO odometry plus global scan-to-map
 
 ## Related
 
-- extends: [FAST-LIO / FAST-LIO2](../repos/hku-mars__fast_lio.md)
+- extends: [FAST-LIO / FAST-LIO2](../../catalog/repos/hku-mars__fast_lio.md)
 
 ## Referenced by
 
-- [FAST-LIO / FAST-LIO2](../repos/hku-mars__fast_lio.md) (extends)
+- [FAST-LIO / FAST-LIO2](../../catalog/repos/hku-mars__fast_lio.md) (extends)
 
 _Indexed by lane(s): slam_
 

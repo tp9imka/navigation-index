@@ -6,13 +6,13 @@
 |---|---|---|---|---|---|---|
 | 20 | C | MIT | 2025-07-25 | False | research-prototype | low |
 
-Factor-graph positioning combining GNSS and LEO satellite measurements, extending GraphGNSSLib.
+Factor-graph positioning combining real GNSS pseudorange/Doppler with simulated LEO satellite measurements, extending GraphGNSSLib.
 
 **Why it matters:** Shows how LEO observations slot into a factor graph alongside degraded GNSS.
 
 **Hackathon notes:** C/ROS build; reference.
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [GNSS positioning](../concepts/gnss.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [GNSS positioning](../../catalog/concepts/gnss.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `factor-graph`, `leo`
 
@@ -20,11 +20,11 @@ Factor-graph positioning combining GNSS and LEO satellite measurements, extendin
 
 ## Related
 
-- alternative_to: [LEO-SPINE](../repos/xyangll__leospine.md)
+- alternative_to: [LEO-SPINE](../../catalog/repos/xyangll__leospine.md)
 
 ## Referenced by
 
-- [LEO-SPINE](../repos/xyangll__leospine.md) (alternative_to)
+- [LEO-SPINE](../../catalog/repos/xyangll__leospine.md) (alternative_to)
 
 _Indexed by lane(s): alt-nav_
 

@@ -11,16 +11,17 @@ Explains how GPSDOs work, why they are attractive as self-calibrating references
 - A GPSDO is only as good as its local oscillator once GNSS is gone
 - Discusses traceability and verification of GPSDO outputs
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `gpsdo`, `nist`, `holdover`, `metrology`
 
 ## Related
 
-- explains: [STM32 GPSDO](../repos/andrewbcn__stm32-gpsdo.md)
+- explains: [STM32 GPSDO](../../catalog/repos/andrewbcn__stm32-gpsdo.md)
 
 ## Referenced by
 
-- [Fundamentals of Time and Frequency](../resources/nist-lombardi-fundamentals-time-frequency.md) (same_author)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [Fundamentals of Time and Frequency](../../catalog/resources/nist-lombardi-fundamentals-time-frequency.md) (same_author)
 
 _Indexed by lane(s): timing_

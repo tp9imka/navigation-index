@@ -12,7 +12,7 @@ Examples for Hailo-8/8L accelerators on Raspberry Pi 5 (AI Kit/HAT): detection, 
 
 **Hackathon notes:** Repo points to hailo-ai/hailo-apps for current code; start there.
 
-**Concepts:** [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `hailo`, `raspberry-pi`, `npu`
 

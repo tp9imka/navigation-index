@@ -14,17 +14,20 @@ Official docs for the Stone Soup tracking framework with step-by-step tutorials 
 - Metrics module (OSPA, SIAP) gives defensible evaluation numbers
 - Sensor and simulator components let you test without real radar
 
-**Concepts:** [Tracking and data association](../concepts/target-tracking.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Counter-UAS and drone detection](../concepts/counter-uas.md)
+**Concepts:** [Tracking and data association](../../catalog/concepts/target-tracking.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md)
 
 **Tags:** `dstl`, `docs`, `tutorial`, `tutorials`, `python`
 
 ## Related
 
-- has_code: [Stone Soup](../repos/dstl__stone-soup.md)
-- explains: [Stone Soup](../repos/dstl__stone-soup.md)
+- has_code: [Stone Soup](../../catalog/repos/dstl__stone-soup.md)
+- explains: [Stone Soup](../../catalog/repos/dstl__stone-soup.md)
 
 ## Referenced by
 
-- [Stone Soup: No Longer Just an Appetiser](../resources/dstl-stone-soup-v1-fusion2023.md) (part_of)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [Stone Soup: No Longer Just an Appetiser](../../catalog/resources/dstl-stone-soup-v1-fusion2023.md) (part_of)
 
 _Indexed by lane(s): defense-context, domains-swarm_

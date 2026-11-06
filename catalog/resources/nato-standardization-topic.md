@@ -11,7 +11,7 @@ NATO's public explanation of how STANAGs and Allied publications are produced an
 - STANAGs record national agreement to implement an Allied publication
 - Most full texts are restricted; summaries and some APs are public
 
-**Concepts:** [Standards and interface specs](../concepts/standards.md), [Policy, export control and ethics](../concepts/policy-ethics.md)
+**Concepts:** [Standards and interface specs](../../catalog/concepts/standards.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md)
 
 **Tags:** `nato`, `stanag`, `standardization`
 

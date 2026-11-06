@@ -16,11 +16,18 @@ Meta-repository from Russian vendor Geoscan for the Pioneer Max educational quad
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `lang:ru`, `geoscan`, `education`, `ros`
 
 **Domains:** air
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Дроны: Автономные беспилотные воздушные системы](../../catalog/resources/lektorium-geoscan-autonomous-drones-course.md) (uses)
 
 _Indexed by lane(s): ua-ru-sources_
 

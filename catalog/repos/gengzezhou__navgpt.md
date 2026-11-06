@@ -12,7 +12,7 @@ Purely LLM-based vision-and-language navigation agent that reasons explicitly ov
 
 **Hackathon notes:** Needs an LLM API and R2R/Matterport data.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md)
 
 **Tags:** `llm`, `vln`, `r2r`, `reasoning`
 
@@ -20,11 +20,11 @@ Purely LLM-based vision-and-language navigation agent that reasons explicitly ov
 
 ## Related
 
-- alternative_to: [Co-NavGPT](../repos/ybgdgh__co-navgpt.md)
+- alternative_to: [Co-NavGPT](../../catalog/repos/ybgdgh__co-navgpt.md)
 
 ## Referenced by
 
-- [Co-NavGPT](../repos/ybgdgh__co-navgpt.md) (alternative_to)
+- [Co-NavGPT](../../catalog/repos/ybgdgh__co-navgpt.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

@@ -16,11 +16,17 @@ Student project from SPbU (CITEC) on returning a UAV to its launch point when bo
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `lang:ru`, `return-to-home`, `rockpi`, `student`
 
 **Domains:** air
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_
 

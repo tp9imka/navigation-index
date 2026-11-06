@@ -12,7 +12,7 @@ LIO-SAM combined with Scan Context loop closure for more reliable large-scale Li
 
 **Hackathon notes:** ROS 1; same setup as LIO-SAM.
 
-**Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Place recognition and loop closure](../concepts/place-recognition.md)
+**Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 
 **Tags:** `lio-sam`, `scan-context`, `ros1`
 
@@ -20,12 +20,12 @@ LIO-SAM combined with Scan Context loop closure for more reliable large-scale Li
 
 ## Related
 
-- extends: [LIO-SAM](../repos/tixiaoshan__lio-sam.md)
-- depends_on: [Scan Context](../repos/gisbi-kim__scancontext.md)
+- extends: [LIO-SAM](../../catalog/repos/tixiaoshan__lio-sam.md)
+- depends_on: [Scan Context](../../catalog/repos/gisbi-kim__scancontext.md)
 
 ## Referenced by
 
-- [Scan Context](../repos/gisbi-kim__scancontext.md) (integrates_with)
+- [Scan Context](../../catalog/repos/gisbi-kim__scancontext.md) (integrates_with)
 
 _Indexed by lane(s): slam_
 

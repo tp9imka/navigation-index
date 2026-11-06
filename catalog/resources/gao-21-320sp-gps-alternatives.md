@@ -12,8 +12,16 @@ Technology assessment of DoD's alternative PNT efforts (inertial, vision, celest
 - Reviews maturity of many alt-PNT technology families
 - Flags integration and testing as recurring challenges
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [Signals of opportunity](../concepts/signals-of-opportunity.md), [Celestial and star-tracker navigation](../concepts/celestial-nav.md), [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Policy, export control and ethics](../concepts/policy-ethics.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md), [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md)
 
 **Tags:** `gao`, `dod`, `alt-pnt`, `technology-assessment`
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [Celestial fix: cedar-solve plate solving on real star images, then position from star elevations above an IMU vertical](../../catalog/samples/celestial-star-tracker.md) (explains)
 
 _Indexed by lane(s): docs-standards_

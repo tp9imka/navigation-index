@@ -16,7 +16,7 @@ Pet project for local UAV navigation without GNSS: AirSim video streamed over Ze
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [Simulation and HIL/SITL](../concepts/simulation.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `lang:ru`, `orb-slam3`, `airsim`, `zeromq`, `monocular`
 
@@ -24,8 +24,15 @@ Pet project for local UAV navigation without GNSS: AirSim video streamed over Ze
 
 ## Related
 
-- depends_on: [ORB-SLAM3](../repos/uz-slamlab__orb_slam3.md)
-- depends_on: [AirSim](../repos/microsoft__airsim.md)
+- depends_on: [ORB-SLAM3](../../catalog/repos/uz-slamlab__orb_slam3.md)
+- depends_on: [AirSim](../../catalog/repos/microsoft__airsim.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [ViNet_AirSim_drone - learned VIO in AirSim](../../catalog/repos/sasha-lobov__vinet_airsim_drone.md) (same_org)
 
 _Indexed by lane(s): ua-ru-sources_
 

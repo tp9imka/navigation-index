@@ -15,12 +15,16 @@ Car localisation from IMU alone by combining an invariant EKF with a neural netw
 
 - [brossard-ai-imu-dr](../../docs/paper-digests/brossard-ai-imu-dr.md) (paper-digests)
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `inekf`, `learned-covariance`
 
 ## Related
 
-- has_code: [AI-IMU Dead-Reckoning](../repos/mbrossar__ai-imu-dr.md)
+- has_code: [AI-IMU Dead-Reckoning](../../catalog/repos/mbrossar__ai-imu-dr.md)
+
+## Referenced by
+
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 
 _Indexed by lane(s): ins-fusion_

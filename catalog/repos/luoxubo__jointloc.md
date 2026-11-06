@@ -12,7 +12,7 @@ Real-time visual localization framework for planetary UAVs that jointly uses rel
 
 **Hackathon notes:** C++ build; mostly a design reference.
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Space and orbital navigation](../concepts/space-nav.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `planetary`, `mars`, `real-time`
 

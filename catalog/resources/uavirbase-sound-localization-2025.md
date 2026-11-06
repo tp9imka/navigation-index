@@ -10,7 +10,7 @@ Public dataset of synchronized multi-microphone UAV recordings under controlled 
 
 - Controlled geometry for DOA algorithm testing
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../concepts/counter-uas.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md)
 
 **Tags:** `acoustic`, `doa`
 

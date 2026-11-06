@@ -11,12 +11,16 @@ Presents an error-state iterated Kalman filter that sequentially fuses LiDAR and
 - Sequential updates handle LiDAR/camera dimension mismatch
 - Robust when one modality degrades
 
-**Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Visual(-inertial) odometry](../concepts/vio.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `lidar-visual`
 
 ## Related
 
-- has_code: [FAST-LIVO2](../repos/hku-mars__fast-livo2.md)
+- has_code: [FAST-LIVO2](../../catalog/repos/hku-mars__fast-livo2.md)
+
+## Referenced by
+
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 
 _Indexed by lane(s): slam_

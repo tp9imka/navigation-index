@@ -12,8 +12,12 @@ The formal commitment the US government makes about civil GPS signal-in-space ac
 - Defines what counts as a major service failure
 - Basis for RAIM and integrity assumptions in aviation
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Standards and interface specs](../concepts/standards.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Standards and interface specs](../../catalog/concepts/standards.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `gps`, `performance-standard`, `integrity`
+
+## Referenced by
+
+- [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
 
 _Indexed by lane(s): docs-standards_

@@ -12,7 +12,7 @@ Go MAVLink v1/v2 library with dialect generation and multiple transports.
 
 **Hackathon notes:** Go modules; examples for reading/writing messages.
 
-**Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
+**Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 
 **Tags:** `go`, `library`
 
@@ -20,13 +20,13 @@ Go MAVLink v1/v2 library with dialect generation and multiple transports.
 
 ## Related
 
-- same_org: [mavp2p](../repos/bluenviron__mavp2p.md)
-- alternative_to: [rust-mavlink](../repos/mavlink__rust-mavlink.md)
+- same_org: [mavp2p](../../catalog/repos/bluenviron__mavp2p.md)
+- alternative_to: [rust-mavlink](../../catalog/repos/mavlink__rust-mavlink.md)
 
 ## Referenced by
 
-- [mavp2p](../repos/bluenviron__mavp2p.md) (depends_on)
-- [rust-mavlink](../repos/mavlink__rust-mavlink.md) (alternative_to)
+- [mavp2p](../../catalog/repos/bluenviron__mavp2p.md) (depends_on)
+- [rust-mavlink](../../catalog/repos/mavlink__rust-mavlink.md) (alternative_to)
 
 _Indexed by lane(s): autopilots_
 

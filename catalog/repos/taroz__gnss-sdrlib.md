@@ -10,9 +10,9 @@ Older open-source GNSS software receiver library in C with a GUI, supporting sev
 
 **Why it matters:** Compact receiver codebase that is easier to read than GNSS-SDR; historically a common teaching receiver.
 
-**Hackathon notes:** Not updated since 2015 (repo not formally archived). Use for reference only; prefer PocketSDR or GNSS-SDR for live work.
+**Hackathon notes:** Not updated since 2015 (repo not formally archived). v2.0 only runs on 64-bit Windows (Visual Studio 2012 build). Use for reference only; prefer PocketSDR or GNSS-SDR for live work.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Software-defined GNSS receivers](../concepts/gnss-sdr.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md)
 
 **Tags:** `receiver`, `c`, `legacy`
 
@@ -20,7 +20,7 @@ Older open-source GNSS software receiver library in C with a GUI, supporting sev
 
 ## Related
 
-- alternative_to: [PocketSDR](../repos/tomojitakasu__pocketsdr.md)
+- alternative_to: [PocketSDR](../../catalog/repos/tomojitakasu__pocketsdr.md)
 
 _Indexed by lane(s): gnss_
 

@@ -12,7 +12,7 @@ Continuous geo-localization of oblique thermal UAV sequences against a 2D satell
 
 **Hackathon notes:** No code licence yet - the author's notice says it is pending (all rights reserved). Depends on VGGT, whose licence prohibits military and warfare use; the original VGGT-1B checkpoint is non-commercial. Data, map and weights are on HF (gated, Apache-2.0 tag).
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `thermal`, `oblique`, `sequence`
 
@@ -20,8 +20,8 @@ Continuous geo-localization of oblique thermal UAV sequences against a 2D satell
 
 ## Related
 
-- same_org: [SCC-Loc](../repos/floralhercules__scc-loc.md)
-- alternative_to: [STHN](../repos/arplaboratory__sthn.md)
+- same_org: [SCC-Loc](../../catalog/repos/floralhercules__scc-loc.md)
+- alternative_to: [STHN](../../catalog/repos/arplaboratory__sthn.md)
 
 _Indexed by lane(s): round3-expansion_
 

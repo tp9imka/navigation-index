@@ -12,7 +12,7 @@ Open hardware GNSS front-end plus a software receiver (Python and C) by the RTKL
 
 **Hackathon notes:** Software runs on recorded IF without the hardware; building the board is out of hackathon scope unless pre-built.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Software-defined GNSS receivers](../concepts/gnss-sdr.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md)
 
 **Tags:** `front-end`, `open-hardware`, `sdr`, `multi-band`
 
@@ -20,12 +20,12 @@ Open hardware GNSS front-end plus a software receiver (Python and C) by the RTKL
 
 ## Related
 
-- same_org: [RTKLIB](../repos/tomojitakasu__rtklib.md)
-- alternative_to: [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md)
+- same_org: [RTKLIB](../../catalog/repos/tomojitakasu__rtklib.md)
+- alternative_to: [GNSS-SDR](../../catalog/repos/gnss-sdr__gnss-sdr.md)
 
 ## Referenced by
 
-- [GNSS-SDRLIB](../repos/taroz__gnss-sdrlib.md) (alternative_to)
+- [GNSS-SDRLIB](../../catalog/repos/taroz__gnss-sdrlib.md) (alternative_to)
 
 _Indexed by lane(s): gnss_
 

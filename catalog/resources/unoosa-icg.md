@@ -11,7 +11,7 @@ UN forum where GNSS providers coordinate compatibility, interoperability and spe
 - Venue for multi-GNSS interoperability agreements
 - Hosts work on interference detection and mitigation
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Jamming and spoofing](../concepts/gnss-interference.md), [Policy, export control and ethics](../concepts/policy-ethics.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md)
 
 **Tags:** `un`, `icg`, `interoperability`
 

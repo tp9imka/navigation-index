@@ -12,7 +12,7 @@ Desktop application to view and record data from Blue Robotics Ping echosounder 
 
 **Hackathon notes:** Prebuilt releases; logs can be replayed into ping-python.
 
-**Concepts:** [Underwater navigation](../concepts/underwater-nav.md)
+**Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md)
 
 **Tags:** `sonar`, `viewer`, `logging`
 
@@ -20,11 +20,11 @@ Desktop application to view and record data from Blue Robotics Ping echosounder 
 
 ## Related
 
-- same_org: [Ping Python](../repos/bluerobotics__ping-python.md)
+- same_org: [Ping Python](../../catalog/repos/bluerobotics__ping-python.md)
 
 ## Referenced by
 
-- [Ping Python](../repos/bluerobotics__ping-python.md) (same_org)
+- [Ping Python](../../catalog/repos/bluerobotics__ping-python.md) (same_org)
 
 _Indexed by lane(s): domains-swarm_
 

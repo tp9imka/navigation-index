@@ -10,9 +10,9 @@ WACV 2023 place recognition descriptor built by MLP feature mixing; lightweight 
 
 **Why it matters:** Compact descriptors suit embedded retrieval on a drone.
 
-**Hackathon notes:** Fast inference; good for an onboard-feasibility story.
+**Hackathon notes:** Fast inference; good for an onboard-feasibility story. No licence file, so code and weights are all rights reserved by default.
 
-**Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `vpr`, `lightweight`
 
@@ -20,11 +20,16 @@ WACV 2023 place recognition descriptor built by MLP feature mixing; lightweight 
 
 ## Related
 
-- same_org: [BoQ](../repos/amaralibey__bag-of-queries.md)
+- same_org: [BoQ](../../catalog/repos/amaralibey__bag-of-queries.md)
 
 ## Referenced by
 
-- [BoQ](../repos/amaralibey__bag-of-queries.md) (same_org)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [BoQ](../../catalog/repos/amaralibey__bag-of-queries.md) (same_org)
+- [GSV-Cities](../../catalog/repos/amaralibey__gsv-cities.md) (integrates_with)
+- [MixVPR: Feature Mixing for Visual Place Recognition](../../catalog/resources/mixvpr-2023.md) (has_code)
 
 _Indexed by lane(s): alt-nav_
 

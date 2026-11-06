@@ -12,7 +12,7 @@ ROS package for analysing IMU performance with Allan variance to estimate noise 
 
 **Hackathon notes:** ROS 1, depends on Ceres; needs long static logs.
 
-**Concepts:** [Sensor calibration](../concepts/calibration.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Sensor calibration](../../catalog/concepts/calibration.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `allan-variance`, `ros1`
 
@@ -20,11 +20,11 @@ ROS package for analysing IMU performance with Allan variance to estimate noise 
 
 ## Related
 
-- alternative_to: [allan_variance_ros](../repos/ori-drs__allan_variance_ros.md)
+- alternative_to: [allan_variance_ros](../../catalog/repos/ori-drs__allan_variance_ros.md)
 
 ## Referenced by
 
-- [allan_variance_ros](../repos/ori-drs__allan_variance_ros.md) (alternative_to)
+- [allan_variance_ros](../../catalog/repos/ori-drs__allan_variance_ros.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 

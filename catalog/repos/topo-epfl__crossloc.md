@@ -12,7 +12,7 @@ CVPR 2022 cross-modal visual representation learning for absolute camera localiz
 
 **Hackathon notes:** Older and heavy to set up; read for the synthetic-data idea.
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `synthetic-data`, `cross-modal`, `aerial`
 

@@ -12,7 +12,7 @@ Direct monocular visual odometry that optimizes photometric error over a sparse 
 
 **Hackathon notes:** No IMU, no loop closure, scale-ambiguous; mostly useful as a building block or comparison.
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `direct`, `photometric`, `monocular`
 
@@ -20,11 +20,11 @@ Direct monocular visual odometry that optimizes photometric error over a sparse 
 
 ## Related
 
-- extends: [DM-VIO](../repos/lukasvst__dm-vio.md)
+- extends: [DM-VIO](../../catalog/repos/lukasvst__dm-vio.md)
 
 ## Referenced by
 
-- [DM-VIO](../repos/lukasvst__dm-vio.md) (extends)
+- [DM-VIO](../../catalog/repos/lukasvst__dm-vio.md) (extends)
 
 _Indexed by lane(s): slam_
 

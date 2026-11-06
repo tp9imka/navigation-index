@@ -12,7 +12,7 @@ GNSS/INS/Camera integrated navigation library supporting a range of GNSS modes (
 
 **Hackathon notes:** Large codebase; run on the provided dataset first. Config files are the main interface.
 
-**Concepts:** [GNSS/INS integration](../concepts/gnss-ins.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md), [Visual(-inertial) odometry](../concepts/vio.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `tightly-coupled`, `rtk`, `ppp`, `factor-graph`
 
@@ -20,13 +20,13 @@ GNSS/INS/Camera integrated navigation library supporting a range of GNSS modes (
 
 ## Related
 
-- alternative_to: [IC-GVINS](../repos/i2nav-whu__ic-gvins.md)
-- extends: [RTKLIB](../repos/tomojitakasu__rtklib.md)
-- alternative_to: [GraphGNSSLib](../repos/weisongwen__graphgnsslib.md)
+- alternative_to: [IC-GVINS](../../catalog/repos/i2nav-whu__ic-gvins.md)
+- extends: [RTKLIB](../../catalog/repos/tomojitakasu__rtklib.md)
+- alternative_to: [GraphGNSSLib](../../catalog/repos/weisongwen__graphgnsslib.md)
 
 ## Referenced by
 
-- [IC-GVINS](../repos/i2nav-whu__ic-gvins.md) (alternative_to)
+- [IC-GVINS](../../catalog/repos/i2nav-whu__ic-gvins.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 

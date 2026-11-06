@@ -12,7 +12,7 @@ MATLAB SIR particle filter estimating UAV position from terrain contour matching
 
 **Hackathon notes:** Port the filter loop to Python for a demo.
 
-**Concepts:** [Terrain-relative navigation](../concepts/terrain-nav.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `particle-filter`, `matlab`, `tercom`
 
@@ -20,12 +20,13 @@ MATLAB SIR particle filter estimating UAV position from terrain contour matching
 
 ## Related
 
-- alternative_to: [python-tercom](../repos/alti3__python-tercom.md)
+- alternative_to: [python-tercom](../../catalog/repos/alti3__python-tercom.md)
 
 ## Referenced by
 
-- [python-tercom](../repos/alti3__python-tercom.md) (alternative_to)
-- [Terrain-relative navigation with a particle filter](../samples/terrain-relative-nav-pf.md) (explains)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [python-tercom](../../catalog/repos/alti3__python-tercom.md) (alternative_to)
+- [Terrain-relative navigation with a particle filter](../../catalog/samples/terrain-relative-nav-pf.md) (explains)
 
 _Indexed by lane(s): alt-nav_
 

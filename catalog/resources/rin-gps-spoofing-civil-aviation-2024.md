@@ -11,7 +11,7 @@ Royal Institute of Navigation event microsite gathering expert talks on spoofing
 - UK navigation-community perspective
 - Covers detection, operations and policy angles
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `rin`, `aviation`, `uk`
 

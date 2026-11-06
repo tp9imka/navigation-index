@@ -14,12 +14,17 @@ RUSI special report on Russian battlefield adaptation, including the density of 
 - Describes dense, layered Russian EW deployment
 - Drone attrition to EW drives demand for non-GNSS navigation
 
-**Concepts:** [Electronic warfare resilience](../concepts/ew-resilience.md), [Jamming and spoofing](../concepts/gnss-interference.md), [Counter-UAS and drone detection](../concepts/counter-uas.md), [Policy, export control and ethics](../concepts/policy-ethics.md)
+**Concepts:** [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md)
 
 **Tags:** `rusi`, `ukraine`, `ew`, `uav`, `drones`
 
 ## Related
 
-- same_author: [Preliminary Lessons in Conventional Warfighting from Russia's Invasion of Ukraine: February-July 2022](../resources/rusi-preliminary-lessons-ukraine-2022.md)
+- same_author: [Preliminary Lessons in Conventional Warfighting from Russia's Invasion of Ukraine: February-July 2022](../../catalog/resources/rusi-preliminary-lessons-ukraine-2022.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
 
 _Indexed by lane(s): defense-context, docs-standards_

@@ -10,13 +10,17 @@ PTB's page on the DCF77 77.5 kHz longwave time signal: transmitter, time code an
 
 - Terrestrial time source independent of GNSS over much of Europe
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Signals of opportunity](../concepts/signals-of-opportunity.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md)
 
 **Tags:** `dcf77`, `lf`, `time-signal`, `ptb`
 
 ## Related
 
-- has_code: [gr_DCF77_Receiver](../repos/henningm1r__gr_dcf77_receiver.md)
-- has_code: [DCF77Decode](../repos/1ux__dcf77decode.md)
+- has_code: [gr_DCF77_Receiver](../../catalog/repos/henningm1r__gr_dcf77_receiver.md)
+- has_code: [DCF77Decode](../../catalog/repos/1ux__dcf77decode.md)
+
+## Referenced by
+
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 
 _Indexed by lane(s): timing_

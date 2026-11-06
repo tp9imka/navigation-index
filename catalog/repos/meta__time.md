@@ -12,7 +12,7 @@ Meta's Go libraries and tools for NTP and PTP: protocol implementations, PTP har
 
 **Hackathon notes:** Go build; `ptpcheck` and `ntpcheck` are the quickest wins for diagnosing a lab setup.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `ptp`, `ntp`, `go`, `ptp4u`, `phc`, `monitoring`
 
@@ -20,16 +20,17 @@ Meta's Go libraries and tools for NTP and PTP: protocol implementations, PTP har
 
 ## Related
 
-- integrates_with: [OCP Time Card](../repos/time-appliances-project__time-card.md)
-- integrates_with: [oscillatord](../repos/orolia2s__oscillatord.md)
-- integrates_with: [linuxptp](../repos/nwtime__linuxptp.md)
+- integrates_with: [OCP Time Card](../../catalog/repos/time-appliances-project__time-card.md)
+- integrates_with: [oscillatord](../../catalog/repos/orolia2s__oscillatord.md)
+- integrates_with: [linuxptp](../../catalog/repos/nwtime__linuxptp.md)
 
 ## Referenced by
 
-- [linuxptp](../repos/nwtime__linuxptp.md) (integrates_with)
-- [oscillatord](../repos/orolia2s__oscillatord.md) (integrates_with)
-- [OCP Time Card](../repos/time-appliances-project__time-card.md) (integrates_with)
-- [How Precision Time Protocol is being deployed at Meta](../resources/meta-ptp-at-meta-2022.md) (has_code)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [linuxptp](../../catalog/repos/nwtime__linuxptp.md) (integrates_with)
+- [oscillatord](../../catalog/repos/orolia2s__oscillatord.md) (integrates_with)
+- [OCP Time Card](../../catalog/repos/time-appliances-project__time-card.md) (integrates_with)
+- [How Precision Time Protocol is being deployed at Meta](../../catalog/resources/meta-ptp-at-meta-2022.md) (has_code)
 
 _Indexed by lane(s): timing_
 

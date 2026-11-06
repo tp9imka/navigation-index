@@ -12,17 +12,17 @@ Background article on DARPA ASPN: a navigation architecture that accepts arbitra
 - Phase 1 built algorithms and a software architecture
 - Phase 2 targeted real-time fusion on SWaP-representative hardware
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `darpa`, `aspn`, `plug-and-play`, `fusion`
 
 ## Related
 
-- part_of: [Adaptable Navigation Systems (ANS)](../resources/darpa-adaptable-navigation-systems.md)
+- part_of: [Adaptable Navigation Systems (ANS)](../../catalog/resources/darpa-adaptable-navigation-systems.md)
 
 ## Referenced by
 
-- [Adaptable Navigation Systems (ANS)](../resources/darpa-adaptable-navigation-systems.md) (cites)
-- [Adaptable Navigation Systems (ANS)](../resources/darpa-adaptable-navigation-systems.md) (part_of)
+- [Adaptable Navigation Systems (ANS)](../../catalog/resources/darpa-adaptable-navigation-systems.md) (cites)
+- [Adaptable Navigation Systems (ANS)](../../catalog/resources/darpa-adaptable-navigation-systems.md) (part_of)
 
 _Indexed by lane(s): alt-nav, docs-standards_

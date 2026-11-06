@@ -12,7 +12,7 @@ Model and world repository for the new Gazebo, used by PX4 SITL targets such as 
 
 **Hackathon notes:** Fetched automatically by PX4 SITL. Fork and edit SDF to add cameras or change sensor noise.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Autopilots and flight control](../concepts/autopilot.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
 **Tags:** `px4`, `gazebo`, `models`, `sdf`
 
@@ -20,12 +20,12 @@ Model and world repository for the new Gazebo, used by PX4 SITL targets such as 
 
 ## Related
 
-- integrates_with: [PX4 Autopilot](../repos/px4__px4-autopilot.md)
-- integrates_with: [Gazebo Sim (gz-sim)](../repos/gazebosim__gz-sim.md)
+- integrates_with: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
+- integrates_with: [Gazebo Sim (gz-sim)](../../catalog/repos/gazebosim__gz-sim.md)
 
 ## Referenced by
 
-- [Gazebo Sim (gz-sim)](../repos/gazebosim__gz-sim.md) (integrates_with)
+- [Gazebo Sim (gz-sim)](../../catalog/repos/gazebosim__gz-sim.md) (integrates_with)
 
 _Indexed by lane(s): sim-data_
 

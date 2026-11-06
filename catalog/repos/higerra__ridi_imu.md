@@ -16,7 +16,7 @@ Code for RIDI, which regresses velocity from smartphone IMU data with learned mo
 
 - [ronin](../../docs/dataset-cards/ronin.md) (dataset-cards)
 
-**Concepts:** [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Indoor and pedestrian navigation](../../catalog/concepts/indoor-pedestrian.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `learned-inertial-odometry`, `smartphone`, `regression`
 
@@ -24,8 +24,8 @@ Code for RIDI, which regresses velocity from smartphone IMU data with learned mo
 
 ## Related
 
-- alternative_to: [RoNIN](../repos/sachini__ronin.md)
-- alternative_to: [TLIO](../repos/cathias__tlio.md)
+- alternative_to: [RoNIN](../../catalog/repos/sachini__ronin.md)
+- alternative_to: [TLIO](../../catalog/repos/cathias__tlio.md)
 
 _Indexed by lane(s): gap-fill_
 

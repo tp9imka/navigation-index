@@ -12,7 +12,7 @@ Ground-optimized 4D radar-inertial odometry integrating continuous velocity via 
 
 **Hackathon notes:** Recent code; check sensor assumptions against your radar.
 
-**Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `4d-radar`, `gaussian-process`, `2025`
 
@@ -20,11 +20,11 @@ Ground-optimized 4D radar-inertial odometry integrating continuous velocity via 
 
 ## Related
 
-- alternative_to: [RIO](../repos/christopherdoer__rio.md)
+- alternative_to: [RIO](../../catalog/repos/christopherdoer__rio.md)
 
 ## Referenced by
 
-- [Gaussian-RIO](../repos/robotics-upo__gaussian-rio.md) (alternative_to)
+- [Gaussian-RIO](../../catalog/repos/robotics-upo__gaussian-rio.md) (alternative_to)
 
 _Indexed by lane(s): slam_
 

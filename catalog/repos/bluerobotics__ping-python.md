@@ -12,7 +12,7 @@ Python library and examples for Blue Robotics Ping echosounder and Ping360 scann
 
 **Hackathon notes:** pip install bluerobotics-ping; requires the hardware or Ping Viewer logs.
 
-**Concepts:** [Underwater navigation](../concepts/underwater-nav.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md)
+**Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
 **Tags:** `sonar`, `echosounder`, `ping360`
 
@@ -20,13 +20,14 @@ Python library and examples for Blue Robotics Ping echosounder and Ping360 scann
 
 ## Related
 
-- same_org: [Ping Viewer](../repos/bluerobotics__ping-viewer.md)
-- alternative_to: [ping360_sonar ROS package](../repos/centralenantesrobotics__ping360_sonar.md)
+- same_org: [Ping Viewer](../../catalog/repos/bluerobotics__ping-viewer.md)
+- alternative_to: [ping360_sonar ROS package](../../catalog/repos/centralenantesrobotics__ping360_sonar.md)
 
 ## Referenced by
 
-- [Ping Viewer](../repos/bluerobotics__ping-viewer.md) (same_org)
-- [ping360_sonar ROS package](../repos/centralenantesrobotics__ping360_sonar.md) (alternative_to)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
+- [Ping Viewer](../../catalog/repos/bluerobotics__ping-viewer.md) (same_org)
+- [ping360_sonar ROS package](../../catalog/repos/centralenantesrobotics__ping360_sonar.md) (alternative_to)
 
 _Indexed by lane(s): domains-swarm_
 

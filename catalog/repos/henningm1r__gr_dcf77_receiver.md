@@ -12,7 +12,7 @@ GNU Radio receiver and live decoder for the DCF77 77.5 kHz time signal, covering
 
 **Hackathon notes:** Needs an SDR that reaches 77.5 kHz (e.g. Airspy HF+, or an upconverter). Docker CI image exists. Outside Europe swap to WWVB/MSF.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Signals of opportunity](../concepts/signals-of-opportunity.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md)
 
 **Tags:** `dcf77`, `lf`, `gnu-radio`, `time-signal`, `sdr`
 
@@ -20,14 +20,15 @@ GNU Radio receiver and live decoder for the DCF77 77.5 kHz time signal, covering
 
 ## Related
 
-- alternative_to: [DCF77Decode](../repos/1ux__dcf77decode.md)
-- alternative_to: [SDRangel](../repos/f4exb__sdrangel.md)
+- alternative_to: [DCF77Decode](../../catalog/repos/1ux__dcf77decode.md)
+- alternative_to: [SDRangel](../../catalog/repos/f4exb__sdrangel.md)
 
 ## Referenced by
 
-- [DCF77Decode](../repos/1ux__dcf77decode.md) (alternative_to)
-- [SDRangel](../repos/f4exb__sdrangel.md) (alternative_to)
-- [PTB: DCF77](../resources/ptb-dcf77.md) (has_code)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [DCF77Decode](../../catalog/repos/1ux__dcf77decode.md) (alternative_to)
+- [SDRangel](../../catalog/repos/f4exb__sdrangel.md) (alternative_to)
+- [PTB: DCF77](../../catalog/resources/ptb-dcf77.md) (has_code)
 
 _Indexed by lane(s): timing_
 

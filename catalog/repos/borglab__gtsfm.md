@@ -12,7 +12,7 @@ End-to-end structure-from-motion pipeline built on GTSAM, with pluggable front-e
 
 **Hackathon notes:** No compilation: `uv tool install .` (or `pip install .` in Python 3.12) from a recursive checkout, then `gtsfm run` opens a browser workspace with sample scenes; `gtsfm execute` is the CLI path for your own image folders. Expect long runtimes on large sets - downsample.
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [Feature detection and matching](../concepts/feature-matching.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `sfm`, `gtsam`, `dask`, `3d-reconstruction`
 
@@ -20,11 +20,11 @@ End-to-end structure-from-motion pipeline built on GTSAM, with pluggable front-e
 
 ## Related
 
-- depends_on: [GTSAM](../repos/borglab__gtsam.md)
+- depends_on: [GTSAM](../../catalog/repos/borglab__gtsam.md)
 
 ## Referenced by
 
-- [GTSAM](../repos/borglab__gtsam.md) (same_org)
+- [GTSAM](../../catalog/repos/borglab__gtsam.md) (same_org)
 
 _Indexed by lane(s): gap-fill_
 

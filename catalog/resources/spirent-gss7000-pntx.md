@@ -15,14 +15,22 @@ Spirent's lab simulators generate multi-GNSS RF with controllable interference a
 
 - [gnss-denied-nav-products](../../docs/landscape/gnss-denied-nav-products.md) (landscape)
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Jamming and spoofing](../concepts/gnss-interference.md), [GNSS positioning](../concepts/gnss.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [GNSS positioning](../../catalog/concepts/gnss.md)
 
 **Tags:** `landscape`, `spirent`, `simulator`, `vendor-claim`
 
 ## Related
 
-- alternative_to: [GPS-SDR-SIM](../repos/osqzss__gps-sdr-sim.md)
-- alternative_to: [OSNMA-SDR-SIM](../repos/haiyang-wong__osnma-sdr-sim.md)
-- alternative_to: [multi-sdr-gps-sim](../repos/mictronics__multi-sdr-gps-sim.md)
+- alternative_to: [GPS-SDR-SIM](../../catalog/repos/osqzss__gps-sdr-sim.md)
+- alternative_to: [OSNMA-SDR-SIM](../../catalog/repos/haiyang-wong__osnma-sdr-sim.md)
+- alternative_to: [multi-sdr-gps-sim](../../catalog/repos/mictronics__multi-sdr-gps-sim.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
+- [GNSS-denied navigation: products and companies](../../docs/landscape/gnss-denied-nav-products.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
 
 _Indexed by lane(s): landscape_

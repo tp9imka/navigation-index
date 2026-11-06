@@ -12,7 +12,7 @@ Point-and-line visual(-inertial) SLAM using learned features, designed for illum
 
 **Hackathon notes:** Needs an NVIDIA GPU (TensorRT). Docker recommended.
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [Visual(-inertial) odometry](../concepts/vio.md), [Feature detection and matching](../concepts/feature-matching.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `point-line`, `tensorrt`, `illumination`, `ros1`
 
@@ -20,7 +20,7 @@ Point-and-line visual(-inertial) SLAM using learned features, designed for illum
 
 ## Related
 
-- alternative_to: [ORB-SLAM3](../repos/uz-slamlab__orb_slam3.md)
+- alternative_to: [ORB-SLAM3](../../catalog/repos/uz-slamlab__orb_slam3.md)
 
 _Indexed by lane(s): slam_
 

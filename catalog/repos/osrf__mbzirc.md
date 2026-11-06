@@ -12,7 +12,7 @@ Simulator (Ignition Fortress + ROS 2) for the MBZIRC Maritime Grand Challenge wh
 
 **Hackathon notes:** Built for Ubuntu 20.04, ROS 2 Galactic and Ignition Fortress, all now end of life; use the osrf/mbzirc Docker image (needs nvidia-docker2). Apache-2.0.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Maritime navigation](../concepts/maritime-nav.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `mbzirc`, `gazebo`, `ros2`, `usv`
 
@@ -20,7 +20,7 @@ Simulator (Ignition Fortress + ROS 2) for the MBZIRC Maritime Grand Challenge wh
 
 ## Related
 
-- alternative_to: [Virtual RobotX (VRX)](../repos/osrf__vrx.md)
+- alternative_to: [Virtual RobotX (VRX)](../../catalog/repos/osrf__vrx.md)
 
 _Indexed by lane(s): round3-expansion_
 

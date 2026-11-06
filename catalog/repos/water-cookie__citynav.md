@@ -12,7 +12,7 @@ Language-goal aerial navigation dataset over real-city 3D point clouds with geog
 
 **Hackathon notes:** Dataset plus training code; GPU needed for baselines.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `vln`, `uav`, `dataset`, `geographic`
 
@@ -20,13 +20,13 @@ Language-goal aerial navigation dataset over real-city 3D point clouds with geog
 
 ## Related
 
-- alternative_to: [AerialVLN](../repos/airvln__airvln.md)
-- integrates_with: [CityNav: A Large-Scale Dataset for Real-World Aerial Navigation](../resources/citynav-2024.md)
+- alternative_to: [AerialVLN](../../catalog/repos/airvln__airvln.md)
+- integrates_with: [CityNav: A Large-Scale Dataset for Real-World Aerial Navigation](../../catalog/resources/citynav-2024.md)
 
 ## Referenced by
 
-- [OpenFly](../repos/shailab-ipec__openfly-platform.md) (alternative_to)
-- [CityNav: A Large-Scale Dataset for Real-World Aerial Navigation](../resources/citynav-2024.md) (has_code)
+- [OpenFly](../../catalog/repos/shailab-ipec__openfly-platform.md) (alternative_to)
+- [CityNav: A Large-Scale Dataset for Real-World Aerial Navigation](../../catalog/resources/citynav-2024.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

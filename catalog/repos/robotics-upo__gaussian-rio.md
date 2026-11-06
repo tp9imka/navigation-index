@@ -12,7 +12,7 @@
 
 **Hackathon notes:** Small research codebase; read the paper before integrating.
 
-**Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `4d-radar`, `scan-matching`
 
@@ -20,7 +20,7 @@
 
 ## Related
 
-- alternative_to: [Go-RIO](../repos/wooseongy__go-rio.md)
+- alternative_to: [Go-RIO](../../catalog/repos/wooseongy__go-rio.md)
 
 _Indexed by lane(s): slam_
 

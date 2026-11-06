@@ -12,7 +12,12 @@ ESP32 firmware and a Python/Flask mapper that capture Remote ID broadcasts over 
 
 **Hackathon notes:** ESP32 boards plus Meshtastic nodes cost little; flash and map in an afternoon.
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [colonelpanichacks__drone-mesh-mapper](../../docs/integration-cards/colonelpanichacks__drone-mesh-mapper.md) (integration-cards)
+
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `remote-id`, `esp32`, `meshtastic`, `lora`
 
@@ -20,12 +25,13 @@ ESP32 firmware and a Python/Flask mapper that capture Remote ID broadcasts over 
 
 ## Related
 
-- alternative_to: [Open Drone ID Core C](../repos/opendroneid__opendroneid-core-c.md)
-- integrates_with: [OpenTAKServer](../repos/brian7704__opentakserver.md)
+- alternative_to: [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md)
+- integrates_with: [OpenTAKServer](../../catalog/repos/brian7704__opentakserver.md)
 
 ## Referenced by
 
-- [Open Drone ID Core C](../repos/opendroneid__opendroneid-core-c.md) (alternative_to)
+- [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md) (alternative_to)
+- [Drone Remote ID decoder, track table and TAK output](../../catalog/samples/remote-id-to-tak.md) (integrates_with)
 
 _Indexed by lane(s): defense-context_
 

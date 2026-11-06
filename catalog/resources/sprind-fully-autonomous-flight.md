@@ -15,16 +15,16 @@ German innovation agency challenge for long-range autonomous flight without GNSS
 
 - [ctu-sprind-terrain-nav](../../docs/paper-digests/ctu-sprind-terrain-nav.md) (paper-digests)
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Terrain-relative navigation](../concepts/terrain-nav.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md)
 
 **Tags:** `sprind`, `challenge`, `germany`
 
 ## Related
 
-- explains: [Kilometer-Scale GNSS-Denied UAV Navigation via Heightmap Gradients: A Winning System from the SPRIN-D Challenge](../resources/sprind-heightmap-gradients-2025.md)
+- explains: [Kilometer-Scale GNSS-Denied UAV Navigation via Heightmap Gradients: A Winning System from the SPRIN-D Challenge](../../catalog/resources/sprind-heightmap-gradients-2025.md)
 
 ## Referenced by
 
-- [Kilometer-Scale GNSS-Denied UAV Navigation via Heightmap Gradients: A Winning System from the SPRIN-D Challenge](../resources/sprind-heightmap-gradients-2025.md) (part_of)
+- [Kilometer-Scale GNSS-Denied UAV Navigation via Heightmap Gradients: A Winning System from the SPRIN-D Challenge](../../catalog/resources/sprind-heightmap-gradients-2025.md) (part_of)
 
 _Indexed by lane(s): round3-expansion_

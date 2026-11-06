@@ -12,7 +12,7 @@ ROS 1/ROS 2 driver for Livox LiDARs such as Mid-360 and HAP.
 
 **Hackathon notes:** Build with the Livox SDK2; set the custom message format expected by FAST-LIO.
 
-**Concepts:** [ROS / ROS 2 robotics middleware](../concepts/ros.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `driver`, `mid-360`, `ros2`
 
@@ -20,11 +20,11 @@ ROS 1/ROS 2 driver for Livox LiDARs such as Mid-360 and HAP.
 
 ## Related
 
-- integrates_with: [FAST-LIO / FAST-LIO2](../repos/hku-mars__fast_lio.md)
+- integrates_with: [FAST-LIO / FAST-LIO2](../../catalog/repos/hku-mars__fast_lio.md)
 
 ## Referenced by
 
-- [FAST-LIO / FAST-LIO2](../repos/hku-mars__fast_lio.md) (integrates_with)
+- [FAST-LIO / FAST-LIO2](../../catalog/repos/hku-mars__fast_lio.md) (integrates_with)
 
 _Indexed by lane(s): slam_
 

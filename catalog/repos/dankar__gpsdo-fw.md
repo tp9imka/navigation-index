@@ -12,7 +12,7 @@ Replacement firmware for a widely sold BH3SAP GPSDO module, with menus for PPB t
 
 **Hackathon notes:** Buy the module, flash over SWD. fredzo/gpsdo-fw is an active fork.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `gpsdo`, `firmware`, `stm32`
 
@@ -20,11 +20,12 @@ Replacement firmware for a widely sold BH3SAP GPSDO module, with menus for PPB t
 
 ## Related
 
-- alternative_to: [STM32 GPSDO](../repos/andrewbcn__stm32-gpsdo.md)
+- alternative_to: [STM32 GPSDO](../../catalog/repos/andrewbcn__stm32-gpsdo.md)
 
 ## Referenced by
 
-- [STM32 GPSDO](../repos/andrewbcn__stm32-gpsdo.md) (alternative_to)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [STM32 GPSDO](../../catalog/repos/andrewbcn__stm32-gpsdo.md) (alternative_to)
 
 _Indexed by lane(s): timing_
 

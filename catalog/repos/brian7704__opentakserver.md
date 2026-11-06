@@ -17,7 +17,7 @@ Actively developed open-source TAK server for ATAK, iTAK and WinTAK with web UI,
 - [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [brian7704__opentakserver](../../docs/integration-cards/brian7704__opentakserver.md) (integration-cards)
 
-**Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `tak`, `cot`, `server`, `meshtastic`, `video`
 
@@ -25,21 +25,26 @@ Actively developed open-source TAK server for ATAK, iTAK and WinTAK with web UI,
 
 ## Related
 
-- alternative_to: [FreeTAKServer](../repos/freetakteam__freetakserver.md)
-- integrates_with: [PyTAK](../repos/snstac__pytak.md)
-- alternative_to: [TAK Server (open source)](../repos/tak-product-center__server.md)
+- alternative_to: [FreeTAKServer](../../catalog/repos/freetakteam__freetakserver.md)
+- integrates_with: [PyTAK](../../catalog/repos/snstac__pytak.md)
+- alternative_to: [TAK Server (open source)](../../catalog/repos/tak-product-center__server.md)
 
 ## Referenced by
 
-- [drone-mesh-mapper](../repos/colonelpanichacks__drone-mesh-mapper.md) (integrates_with)
-- [FreeTAKServer](../repos/freetakteam__freetakserver.md) (alternative_to)
-- [GoATAK](../repos/kdudkov__goatak.md) (alternative_to)
-- [PyTAK](../repos/snstac__pytak.md) (integrates_with)
-- [ATAK-CIV (TAK Product Center)](../repos/tak-product-center__atak-civ.md) (integrates_with)
-- [TAK Server (open source)](../repos/tak-product-center__server.md) (alternative_to)
-- [OpenTAKServer Documentation](../resources/opentakserver-docs.md) (explains)
-- [GNSS jammer geolocation from DF bearings to TAK](../samples/interference-geolocation-to-tak.md) (explains)
-- [MAVLink telemetry to TAK Cursor-on-Target](../samples/mavlink-to-tak-cot.md) (uses)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [drone-mesh-mapper](../../catalog/repos/colonelpanichacks__drone-mesh-mapper.md) (integrates_with)
+- [FreeTAKServer](../../catalog/repos/freetakteam__freetakserver.md) (alternative_to)
+- [GoATAK](../../catalog/repos/kdudkov__goatak.md) (alternative_to)
+- [PyTAK](../../catalog/repos/snstac__pytak.md) (integrates_with)
+- [ATAK-CIV (TAK Product Center)](../../catalog/repos/tak-product-center__atak-civ.md) (integrates_with)
+- [TAK Server (open source)](../../catalog/repos/tak-product-center__server.md) (alternative_to)
+- [OpenTAKServer Documentation](../../catalog/resources/opentakserver-docs.md) (explains)
+- [GNSS jammer geolocation from DF bearings to TAK](../../catalog/samples/interference-geolocation-to-tak.md) (explains)
+- [Low-cost GNSS jammer sensor network: u-blox telemetry => localization => TAK and dashboard](../../catalog/samples/jammer-sensor-network.md) (explains)
+- [MAVLink telemetry to TAK Cursor-on-Target](../../catalog/samples/mavlink-to-tak-cot.md) (uses)
 
 _Indexed by lane(s): defense-context, planning-gis-c2_
 

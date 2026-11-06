@@ -10,12 +10,16 @@ Official Gazebo (gz) docs and tutorials: building worlds, sensors (IMU, GPS/NavS
 
 - NavSat and IMU sensors enable GNSS-denied scenario testing
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `gazebo`, `simulation`, `tutorial`
 
 ## Related
 
-- has_code: [Gazebo Sim (gz-sim)](../repos/gazebosim__gz-sim.md)
+- has_code: [Gazebo Sim (gz-sim)](../../catalog/repos/gazebosim__gz-sim.md)
+
+## Referenced by
+
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 
 _Indexed by lane(s): learning_

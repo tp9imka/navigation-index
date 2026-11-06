@@ -11,16 +11,16 @@ DARPA challenge for autonomous systems that find and assess casualties in mass-c
 - Humanitarian defense use-case with navigation plus perception
 - Team directory helps find open contributions
 
-**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `darpa`, `triage`, `search-and-rescue`
 
 ## Related
 
-- part_of: [A Multi-Robot Platform for Robotic Triage Combining Onboard Sensing and Foundation Models](../resources/arxiv-multi-robot-triage-platform.md)
+- part_of: [A Multi-Robot Platform for Robotic Triage Combining Onboard Sensing and Foundation Models](../../catalog/resources/arxiv-multi-robot-triage-platform.md)
 
 ## Referenced by
 
-- [A Multi-Robot Platform for Robotic Triage Combining Onboard Sensing and Foundation Models](../resources/arxiv-multi-robot-triage-platform.md) (part_of)
+- [A Multi-Robot Platform for Robotic Triage Combining Onboard Sensing and Foundation Models](../../catalog/resources/arxiv-multi-robot-triage-platform.md) (part_of)
 
 _Indexed by lane(s): defense-context_

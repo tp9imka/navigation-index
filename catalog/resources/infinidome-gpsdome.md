@@ -16,14 +16,23 @@ infiniDome sells retrofit anti-jam modules that sit between antenna elements and
 - [README](../../docs/landscape/README.md) (landscape)
 - [gnss-denied-nav-products](../../docs/landscape/gnss-denied-nav-products.md) (landscape)
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Electronic warfare resilience](../concepts/ew-resilience.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `landscape`, `infinidome`, `crpa`, `anti-jam`, `vendor-claim`
 
 ## Related
 
-- alternative_to: [KrakenSDR DoA DSP](../repos/krakenrf__krakensdr_doa.md)
-- alternative_to: [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md)
-- cites: [NovAtel GAJT-710ML anti-jam antenna](../resources/novatel-gajt-710ml.md)
+- alternative_to: [KrakenSDR DoA DSP](../../catalog/repos/krakenrf__krakensdr_doa.md)
+- alternative_to: [GNSS-SDR](../../catalog/repos/gnss-sdr__gnss-sdr.md)
+- cites: [NovAtel GAJT-710ML anti-jam antenna](../../catalog/resources/novatel-gajt-710ml.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
+- [GNSS-denied navigation: products and companies](../../docs/landscape/gnss-denied-nav-products.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
+- [Docs map](../../docs/README.md) (mentions)
 
 _Indexed by lane(s): landscape_

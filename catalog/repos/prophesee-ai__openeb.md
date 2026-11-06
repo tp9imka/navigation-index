@@ -12,7 +12,7 @@ Prophesee's open SDK for event-based vision: camera drivers, data formats, visua
 
 **Hackathon notes:** Build from source or packages; sample recordings available without hardware.
 
-**Concepts:** [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `event-camera`, `sdk`, `prophesee`
 
@@ -20,11 +20,11 @@ Prophesee's open SDK for event-based vision: camera drivers, data formats, visua
 
 ## Related
 
-- integrates_with: [Tonic](../repos/neuromorphs__tonic.md)
+- integrates_with: [Tonic](../../catalog/repos/neuromorphs__tonic.md)
 
 ## Referenced by
 
-- [Tonic](../repos/neuromorphs__tonic.md) (integrates_with)
+- [Tonic](../../catalog/repos/neuromorphs__tonic.md) (integrates_with)
 
 _Indexed by lane(s): gap-fill_
 

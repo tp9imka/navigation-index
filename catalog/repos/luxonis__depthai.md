@@ -17,7 +17,7 @@ Landing repository for Luxonis OAK cameras, which run neural networks and stereo
 - [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
 - [luxonis__depthai](../../docs/integration-cards/luxonis__depthai.md) (integration-cards)
 
-**Concepts:** [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `oak-d`, `stereo-depth`, `on-camera-inference`
 
@@ -25,12 +25,14 @@ Landing repository for Luxonis OAK cameras, which run neural networks and stereo
 
 ## Related
 
-- integrates_with: [DepthAI ROS](../repos/luxonis__depthai-ros.md)
+- integrates_with: [DepthAI ROS](../../catalog/repos/luxonis__depthai-ros.md)
 
 ## Referenced by
 
-- [DepthAI Core](../repos/luxonis__depthai-core.md) (same_org)
-- [DepthAI ROS](../repos/luxonis__depthai-ros.md) (depends_on)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [DepthAI Core](../../catalog/repos/luxonis__depthai-core.md) (same_org)
+- [DepthAI ROS](../../catalog/repos/luxonis__depthai-ros.md) (depends_on)
 
 _Indexed by lane(s): gap-fill_
 

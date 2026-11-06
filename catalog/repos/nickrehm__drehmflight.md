@@ -12,7 +12,7 @@ Single-file Arduino/Teensy flight controller for small VTOL and multirotor craft
 
 **Hackathon notes:** Flash to a Teensy with an MPU6050/9250 IMU; no navigation or MAVLink, so pair with a companion for anything beyond stabilisation.
 
-**Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `teensy`, `arduino`, `vtol`, `madgwick`, `educational`
 
@@ -20,12 +20,12 @@ Single-file Arduino/Teensy flight controller for small VTOL and multirotor craft
 
 ## Related
 
-- alternative_to: [ESP-Drone](../repos/espressif__esp-drone.md)
-- alternative_to: [Crazyflie firmware](../repos/bitcraze__crazyflie-firmware.md)
+- alternative_to: [ESP-Drone](../../catalog/repos/espressif__esp-drone.md)
+- alternative_to: [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md)
 
 ## Referenced by
 
-- [ESP-Drone](../repos/espressif__esp-drone.md) (alternative_to)
+- [ESP-Drone](../../catalog/repos/espressif__esp-drone.md) (alternative_to)
 
 _Indexed by lane(s): autopilots_
 

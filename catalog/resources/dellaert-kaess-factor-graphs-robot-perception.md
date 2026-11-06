@@ -17,18 +17,20 @@ Foundations and Trends monograph (free author PDF) explaining SLAM and sensor fu
 
 - [dellaert-kaess-factor-graphs-robot-perception](../../docs/paper-digests/dellaert-kaess-factor-graphs-robot-perception.md) (paper-digests)
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Visual SLAM](../concepts/visual-slam.md), [GNSS/INS integration](../concepts/gnss-ins.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Visual SLAM](../../catalog/concepts/visual-slam.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md)
 
 **Tags:** `factor-graph`, `gtsam`, `isam`
 
 ## Related
 
-- has_code: [GTSAM](../repos/borglab__gtsam.md)
-- explains: [Factor Graphs and GTSAM: A Hands-on Introduction](../resources/gtsam-intro-tutorial.md)
+- has_code: [GTSAM](../../catalog/repos/borglab__gtsam.md)
+- explains: [Factor Graphs and GTSAM: A Hands-on Introduction](../../catalog/resources/gtsam-intro-tutorial.md)
 
 ## Referenced by
 
-- [Factor Graphs and GTSAM: A Hands-on Introduction](../resources/gtsam-intro-tutorial.md) (same_author)
-- [iSAM2: Incremental Smoothing and Mapping Using the Bayes Tree](../resources/kaess-isam2.md) (same_author)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
+- [Factor Graphs and GTSAM: A Hands-on Introduction](../../catalog/resources/gtsam-intro-tutorial.md) (same_author)
+- [iSAM2: Incremental Smoothing and Mapping Using the Bayes Tree](../../catalog/resources/kaess-isam2.md) (same_author)
 
 _Indexed by lane(s): ins-fusion, learning_

@@ -12,16 +12,17 @@ Multimodal maritime dataset from a 7.5 km route through a narrow canal, port are
 - RTK ground truth and SLAM baseline trajectory included
 - CC BY-NC 4.0 - non-commercial use only
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Maritime navigation](../concepts/maritime-nav.md), [Radar navigation and odometry](../concepts/radar-nav.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Radar navigation and odometry](../../catalog/concepts/radar-nav.md)
 
 **Tags:** `kaist`, `usv`, `radar`, `lidar`
 
 ## Related
 
-- dataset_for: [PoLaRIS Dataset: A Maritime Object Detection and Tracking Dataset in Pohang Canal](../resources/polaris-pohang-maritime-dataset-2024.md)
+- dataset_for: [PoLaRIS Dataset: A Maritime Object Detection and Tracking Dataset in Pohang Canal](../../catalog/resources/polaris-pohang-maritime-dataset-2024.md)
 
 ## Referenced by
 
-- [PoLaRIS Dataset: A Maritime Object Detection and Tracking Dataset in Pohang Canal](../resources/polaris-pohang-maritime-dataset-2024.md) (uses)
+- [PoLaRIS Dataset: A Maritime Object Detection and Tracking Dataset in Pohang Canal](../../catalog/resources/polaris-pohang-maritime-dataset-2024.md) (uses)
+- [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) (explains)
 
 _Indexed by lane(s): round3-expansion_

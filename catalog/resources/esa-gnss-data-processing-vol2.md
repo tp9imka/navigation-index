@@ -11,14 +11,19 @@ Hands-on lab volume with step-by-step exercises on real data using the gLAB soft
 - Ready-made labs usable as a GNSS bootcamp
 - Real RINEX data throughout
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md)
 
 **Tags:** `textbook`, `labs`, `glab`, `esa`
 
 ## Related
 
-- has_code: [RTKLIB](../repos/tomojitakasu__rtklib.md)
-- has_code: [RTKLIB demo5 (rtklibexplorer)](../repos/rtklibexplorer__rtklib.md)
-- part_of: [GNSS Data Processing, Vol. I: Fundamentals and Algorithms (ESA TM-23)](../resources/esa-gnss-data-processing-vol1.md)
+- has_code: [RTKLIB](../../catalog/repos/tomojitakasu__rtklib.md)
+- has_code: [RTKLIB demo5 (rtklibexplorer)](../../catalog/repos/rtklibexplorer__rtklib.md)
+- part_of: [GNSS Data Processing, Vol. I: Fundamentals and Algorithms (ESA TM-23)](../../catalog/resources/esa-gnss-data-processing-vol1.md)
+
+## Referenced by
+
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 
 _Indexed by lane(s): docs-standards_

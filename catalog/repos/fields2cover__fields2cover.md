@@ -12,7 +12,7 @@ Modular coverage path planning library: headland generation, swath generation, r
 
 **Hackathon notes:** Build from source with GDAL dependency; Python bindings let you produce a sweep over a GeoJSON polygon quickly.
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [Mission planning and routing](../concepts/mission-planning.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 
 **Tags:** `coverage`, `boustrophedon`, `dubins`, `python-bindings`
 
@@ -20,14 +20,16 @@ Modular coverage path planning library: headland generation, swath generation, r
 
 ## Related
 
-- integrates_with: [opennav_coverage](../repos/open-navigation__opennav_coverage.md)
-- alternative_to: [polygon_coverage_planning](../repos/ethz-asl__polygon_coverage_planning.md)
+- integrates_with: [opennav_coverage](../../catalog/repos/open-navigation__opennav_coverage.md)
+- alternative_to: [polygon_coverage_planning](../../catalog/repos/ethz-asl__polygon_coverage_planning.md)
 
 ## Referenced by
 
-- [polygon_coverage_planning](../repos/ethz-asl__polygon_coverage_planning.md) (alternative_to)
-- [opennav_coverage](../repos/open-navigation__opennav_coverage.md) (depends_on)
-- [Fields2Cover: An open-source coverage path planning library for unmanned agricultural vehicles](../resources/fields2cover-paper.md) (has_code)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [polygon_coverage_planning](../../catalog/repos/ethz-asl__polygon_coverage_planning.md) (alternative_to)
+- [opennav_coverage](../../catalog/repos/open-navigation__opennav_coverage.md) (depends_on)
+- [Fields2Cover: An open-source coverage path planning library for unmanned agricultural vehicles](../../catalog/resources/fields2cover-paper.md) (has_code)
 
 _Indexed by lane(s): planning-gis-c2_
 

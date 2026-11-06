@@ -6,13 +6,13 @@
 |---|---|---|---|---|---|---|
 | 65 | Python | ? | 2024-03-13 | False | research-prototype | low |
 
-Self-supervised traversability prediction for wheeled field robots that learns from RGB-D and estimates traction from kinodynamic models.
+Self-supervised traversability prediction for wheeled field robots that learns from RGB-D, with labels from kinodynamic traction estimates. The repo holds only the network models, one training notebook and a dataset download link; the traction estimator and navigation stack are not included.
 
 **Why it matters:** Agricultural/field traversability learning without hand labels.
 
-**Hackathon notes:** Dormant; use for method reference.
+**Hackathon notes:** Dormant; use for method reference. No LICENSE file, so all rights reserved by default.
 
-**Concepts:** [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `traversability`, `self-supervised`, `field-robot`
 
@@ -20,7 +20,7 @@ Self-supervised traversability prediction for wheeled field robots that learns f
 
 ## Related
 
-- alternative_to: [Wild Visual Navigation](../repos/leggedrobotics__wild_visual_navigation.md)
+- alternative_to: [Wild Visual Navigation](../../catalog/repos/leggedrobotics__wild_visual_navigation.md)
 
 _Indexed by lane(s): domains-swarm_
 

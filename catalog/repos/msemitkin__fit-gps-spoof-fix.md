@@ -16,11 +16,18 @@ Scripts (packaged as an agent skill) that repair Garmin/Strava .fit activities c
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `lang:uk`, `spoofing-detection`, `fit`, `garmin`, `civilian`
 
 **Domains:** dismounted
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Stone Nav - car navigation without GPS (iOS)](../../catalog/repos/foxfollow__stone-navigation-emulation.md) (alternative_to)
 
 _Indexed by lane(s): ua-ru-sources_
 

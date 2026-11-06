@@ -12,7 +12,7 @@ Training library for local feature detection and matching (trains LightGlue and 
 
 **Hackathon notes:** Training takes longer than a hackathon; use for post-event work.
 
-**Concepts:** [Feature detection and matching](../concepts/feature-matching.md)
+**Concepts:** [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 
 **Tags:** `training`, `matcher`
 
@@ -20,12 +20,13 @@ Training library for local feature detection and matching (trains LightGlue and 
 
 ## Related
 
-- same_org: [LightGlue](../repos/cvg__lightglue.md)
+- same_org: [LightGlue](../../catalog/repos/cvg__lightglue.md)
 
 ## Referenced by
 
-- [LightGlue](../repos/cvg__lightglue.md) (same_org)
-- [License-clean drone frame to orthophoto geolocalization (ALIKED / DISK / SIFT + LightGlue)](../samples/geoloc-license-clean.md) (explains)
+- [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
+- [LightGlue](../../catalog/repos/cvg__lightglue.md) (same_org)
+- [License-clean drone frame to orthophoto geolocalization (ALIKED / DISK / SIFT + LightGlue)](../../catalog/samples/geoloc-license-clean.md) (explains)
 
 _Indexed by lane(s): alt-nav_
 

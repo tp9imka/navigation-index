@@ -12,7 +12,7 @@ Experimental GPS-disciplined oscillator: STM32 Black Pill, u-blox NEO-M8, a DAC 
 
 **Hackathon notes:** Parts are cheap and available; the loop is frequency-counting with long averaging, so expect hours to settle. felixd/STM32-GPSDO is a fork.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `gpsdo`, `ocxo`, `stm32`, `ublox`, `firmware`
 
@@ -20,17 +20,18 @@ Experimental GPS-disciplined oscillator: STM32 Black Pill, u-blox NEO-M8, a DAC 
 
 ## Related
 
-- alternative_to: [Lars DIY GPSDO (original files)](../repos/andrewbcn__lars-diy-gpsdo.md)
-- alternative_to: [gpsdo-fw (BH3SAP alternative firmware)](../repos/dankar__gpsdo-fw.md)
-- alternative_to: [PicoGPSDO](../repos/gibbi__picogpsdo.md)
+- alternative_to: [Lars DIY GPSDO (original files)](../../catalog/repos/andrewbcn__lars-diy-gpsdo.md)
+- alternative_to: [gpsdo-fw (BH3SAP alternative firmware)](../../catalog/repos/dankar__gpsdo-fw.md)
+- alternative_to: [PicoGPSDO](../../catalog/repos/gibbi__picogpsdo.md)
 
 ## Referenced by
 
-- [Lars DIY GPSDO (original files)](../repos/andrewbcn__lars-diy-gpsdo.md) (alternative_to)
-- [gpsdo-fw (BH3SAP alternative firmware)](../repos/dankar__gpsdo-fw.md) (alternative_to)
-- [PicoGPSDO](../repos/gibbi__picogpsdo.md) (alternative_to)
-- [The Use of GPS Disciplined Oscillators as Primary Frequency Standards for Calibration and Metrology Laboratories](../resources/nist-lombardi-gpsdo-calibration.md) (explains)
-- [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../samples/timing-holdover.md) (explains)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [Lars DIY GPSDO (original files)](../../catalog/repos/andrewbcn__lars-diy-gpsdo.md) (alternative_to)
+- [gpsdo-fw (BH3SAP alternative firmware)](../../catalog/repos/dankar__gpsdo-fw.md) (alternative_to)
+- [PicoGPSDO](../../catalog/repos/gibbi__picogpsdo.md) (alternative_to)
+- [The Use of GPS Disciplined Oscillators as Primary Frequency Standards for Calibration and Metrology Laboratories](../../catalog/resources/nist-lombardi-gpsdo-calibration.md) (explains)
+- [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../../catalog/samples/timing-holdover.md) (explains)
 
 _Indexed by lane(s): timing_
 

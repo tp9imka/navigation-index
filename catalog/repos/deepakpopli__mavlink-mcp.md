@@ -12,7 +12,7 @@ MCP server for flying ArduPilot vehicles from AI agents over MAVLink, covering m
 
 **Hackathon notes:** Young project; test thoroughly in SITL.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Mission planning and routing](../concepts/mission-planning.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 
 **Tags:** `mcp`, `mavlink`, `ardupilot`, `llm`
 
@@ -20,13 +20,13 @@ MCP server for flying ArduPilot vehicles from AI agents over MAVLink, covering m
 
 ## Related
 
-- depends_on: [pymavlink](../repos/ardupilot__pymavlink.md)
-- alternative_to: [MAVLinkMCP](../repos/ion-g-ion__mavlinkmcp.md)
+- depends_on: [pymavlink](../../catalog/repos/ardupilot__pymavlink.md)
+- alternative_to: [MAVLinkMCP](../../catalog/repos/ion-g-ion__mavlinkmcp.md)
 
 ## Referenced by
 
-- [MAVLinkMCP](../repos/ion-g-ion__mavlinkmcp.md) (alternative_to)
-- [LLM mission agent: a safety-gated MAVLink MCP server flying ArduPilot SITL](../samples/llm-mission-agent.md) (explains)
+- [MAVLinkMCP](../../catalog/repos/ion-g-ion__mavlinkmcp.md) (alternative_to)
+- [LLM mission agent: a safety-gated MAVLink MCP server flying ArduPilot SITL](../../catalog/samples/llm-mission-agent.md) (explains)
 
 _Indexed by lane(s): gap-fill_
 

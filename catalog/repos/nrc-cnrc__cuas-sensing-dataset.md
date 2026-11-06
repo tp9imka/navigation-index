@@ -12,7 +12,11 @@ Labelled real-world radar tracks of small UAVs, birds, humans and vehicles from 
 
 **Hackathon notes:** Train a kinematic-feature classifier on the tracks; no RF hardware needed.
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../concepts/counter-uas.md), [Tracking and data association](../concepts/target-tracking.md)
+## Deep dives
+
+- [nrc-cuas-sensing](../../docs/dataset-cards/nrc-cuas-sensing.md) (dataset-cards)
+
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Tracking and data association](../../catalog/concepts/target-tracking.md)
 
 **Tags:** `radar`, `tracks`, `echodyne`, `drone-vs-bird`
 
@@ -20,11 +24,12 @@ Labelled real-world radar tracks of small UAVs, birds, humans and vehicles from 
 
 ## Related
 
-- alternative_to: [Drone-vs-Bird Detection Challenge](../repos/wosdetc__challenge.md)
+- alternative_to: [Drone-vs-Bird Detection Challenge](../../catalog/repos/wosdetc__challenge.md)
 
 ## Referenced by
 
-- [C-UAS classifiers on public data: radar tracks (UAV vs bird) and DroneRF spectra](../samples/cuas-classifiers.md) (uses)
+- [DroneRF dataset: A dataset of drones for RF-based detection, classification, and identification](../../catalog/resources/dronerf-mendeley-dataset.md) (uses)
+- [C-UAS classifiers on public data: radar tracks (UAV vs bird) and DroneRF spectra](../../catalog/samples/cuas-classifiers.md) (uses)
 
 _Indexed by lane(s): round3-expansion_
 

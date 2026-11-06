@@ -17,7 +17,7 @@ ROS 2 integration examples for ArduPilot, including Cartographer-based non-GPS n
 - [_index-round3](../../docs/integration-cards/_index-round3.md) (integration-cards)
 - [ardupilot__ardupilot_ros](../../docs/integration-cards/ardupilot__ardupilot_ros.md) (integration-cards)
 
-**Concepts:** [ROS / ROS 2 robotics middleware](../concepts/ros.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Autopilots and flight control](../concepts/autopilot.md)
+**Concepts:** [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
 **Tags:** `ros2`, `dds`, `cartographer`, `non-gps`
 
@@ -25,15 +25,16 @@ ROS 2 integration examples for ArduPilot, including Cartographer-based non-GPS n
 
 ## Related
 
-- integrates_with: [ArduPilot](../repos/ardupilot__ardupilot.md)
-- integrates_with: [ardupilot_gz](../repos/ardupilot__ardupilot_gz.md)
-- depends_on: [Micro XRCE-DDS Agent](../repos/eprosima__micro-xrce-dds-agent.md)
+- integrates_with: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
+- integrates_with: [ardupilot_gz](../../catalog/repos/ardupilot__ardupilot_gz.md)
+- depends_on: [Micro XRCE-DDS Agent](../../catalog/repos/eprosima__micro-xrce-dds-agent.md)
 
 ## Referenced by
 
-- [ArduPilot](../repos/ardupilot__ardupilot.md) (integrates_with)
-- [ardupilot_gz](../repos/ardupilot__ardupilot_gz.md) (integrates_with)
-- [GSoC 2022: Update ROS integration for Non-GPS navigation and off-board path planning](../resources/ardupilot-gsoc2022-ros-non-gps.md) (has_code)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md) (integrates_with)
+- [ardupilot_gz](../../catalog/repos/ardupilot__ardupilot_gz.md) (integrates_with)
+- [GSoC 2022 wrapping up: Update ROS integration for Non-GPS navigation and off-board path-planning](../../catalog/resources/ardupilot-gsoc2022-ros-non-gps.md) (has_code)
 
 _Indexed by lane(s): autopilots_
 

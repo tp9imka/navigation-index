@@ -12,7 +12,7 @@ Extension of OKVIS2 that can additionally use dense depth or LiDAR and fuse GNSS
 
 **Hackathon notes:** New codebase; expect some setup friction. Good showcase for switching GNSS on/off.
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [GNSS/INS integration](../concepts/gnss-ins.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `gnss`, `lidar`, `depth`, `2025`
 
@@ -20,11 +20,11 @@ Extension of OKVIS2 that can additionally use dense depth or LiDAR and fuse GNSS
 
 ## Related
 
-- extends: [OKVIS2](../repos/ethz-mrl__okvis2.md)
+- extends: [OKVIS2](../../catalog/repos/ethz-mrl__okvis2.md)
 
 ## Referenced by
 
-- [OKVIS2](../repos/ethz-mrl__okvis2.md) (extends)
+- [OKVIS2](../../catalog/repos/ethz-mrl__okvis2.md) (extends)
 
 _Indexed by lane(s): slam_
 

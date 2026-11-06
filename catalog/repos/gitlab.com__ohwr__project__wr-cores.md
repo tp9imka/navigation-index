@@ -12,7 +12,7 @@ CERN Open Hardware Repository HDL cores for White Rabbit nodes and switches, inc
 
 **Hackathon notes:** FPGA work; buy WR nodes/switches if you need it in a build.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `white-rabbit`, `ptp`, `fpga`, `sub-nanosecond`, `ohwr`
 
@@ -20,13 +20,14 @@ CERN Open Hardware Repository HDL cores for White Rabbit nodes and switches, inc
 
 ## Related
 
-- same_org: [PPSi](../repos/gitlab.com__ohwr__project__ppsi.md)
-- same_org: [White Rabbit switch software](../repos/gitlab.com__ohwr__project__wr-switch-sw.md)
+- same_org: [PPSi](../../catalog/repos/gitlab.com__ohwr__project__ppsi.md)
+- same_org: [White Rabbit switch software](../../catalog/repos/gitlab.com__ohwr__project__wr-switch-sw.md)
 
 ## Referenced by
 
-- [PPSi](../repos/gitlab.com__ohwr__project__ppsi.md) (same_org)
-- [White Rabbit switch software](../repos/gitlab.com__ohwr__project__wr-switch-sw.md) (same_org)
-- [White Rabbit (CERN project page)](../resources/cern-white-rabbit.md) (has_code)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [PPSi](../../catalog/repos/gitlab.com__ohwr__project__ppsi.md) (same_org)
+- [White Rabbit switch software](../../catalog/repos/gitlab.com__ohwr__project__wr-switch-sw.md) (same_org)
+- [White Rabbit (CERN project page)](../../catalog/resources/cern-white-rabbit.md) (has_code)
 
 _Indexed by lane(s): timing_

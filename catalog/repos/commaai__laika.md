@@ -17,7 +17,7 @@ Python GNSS processing library from comma.ai that fetches orbits, clocks and atm
 - [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
 - [commaai__laika](../../docs/integration-cards/commaai__laika.md) (integration-cards)
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md)
 
 **Tags:** `python`, `pseudorange`, `corrections`, `comma-ai`
 
@@ -25,13 +25,16 @@ Python GNSS processing library from comma.ai that fetches orbits, clocks and atm
 
 ## Related
 
-- same_org: [openpilot](../repos/commaai__openpilot.md)
-- alternative_to: [gnss_lib_py](../repos/stanford-navlab__gnss_lib_py.md)
+- same_org: [openpilot](../../catalog/repos/commaai__openpilot.md)
+- alternative_to: [gnss_lib_py](../../catalog/repos/stanford-navlab__gnss_lib_py.md)
 
 ## Referenced by
 
-- [openpilot](../repos/commaai__openpilot.md) (depends_on)
-- [gnss_lib_py](../repos/stanford-navlab__gnss_lib_py.md) (alternative_to)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [openpilot](../../catalog/repos/commaai__openpilot.md) (depends_on)
+- [gnss_lib_py](../../catalog/repos/stanford-navlab__gnss_lib_py.md) (alternative_to)
 
 _Indexed by lane(s): gnss_
 

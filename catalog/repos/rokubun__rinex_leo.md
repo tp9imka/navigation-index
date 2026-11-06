@@ -12,7 +12,7 @@ Proposal for RINEX format modifications to carry LEO-PNT observables and ephemer
 
 **Hackathon notes:** Archived; read-only reference.
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `rinex`, `leo-pnt`, `format`
 

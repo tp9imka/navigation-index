@@ -14,9 +14,11 @@ C++ simulation library for marine robotics with hydrodynamics, underwater render
 
 ## Deep dives
 
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [patrykcieslak__stonefish](../../docs/integration-cards/patrykcieslak__stonefish.md) (integration-cards)
 - [underwater-datasets](../../docs/dataset-cards/underwater-datasets.md) (dataset-cards)
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Underwater navigation](../concepts/underwater-nav.md), [Maritime navigation](../concepts/maritime-nav.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Underwater navigation](../../catalog/concepts/underwater-nav.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md)
 
 **Tags:** `simulator`, `dvl`, `usbl`, `sonar`, `opengl`, `auv`, `marine`
 
@@ -24,17 +26,21 @@ C++ simulation library for marine robotics with hydrodynamics, underwater render
 
 ## Related
 
-- alternative_to: [Project DAVE](../repos/field-robotics-lab__dave.md)
-- alternative_to: [HoloOcean ROS bridge](../repos/byu-holoocean__holoocean-ros.md)
-- alternative_to: [HoloOcean (documentation)](../repos/byu-holoocean__holoocean-docs.md)
+- alternative_to: [Project DAVE](../../catalog/repos/field-robotics-lab__dave.md)
+- alternative_to: [HoloOcean ROS bridge](../../catalog/repos/byu-holoocean__holoocean-ros.md)
+- alternative_to: [HoloOcean (documentation)](../../catalog/repos/byu-holoocean__holoocean-docs.md)
 
 ## Referenced by
 
-- [HoloOcean (documentation)](../repos/byu-holoocean__holoocean-docs.md) (alternative_to)
-- [HoloOcean ROS bridge](../repos/byu-holoocean__holoocean-ros.md) (alternative_to)
-- [Project DAVE](../repos/field-robotics-lab__dave.md) (alternative_to)
-- [USBL Simulator](../repos/maximilian-nitsch__usbl-simulator.md) (alternative_to)
-- [Vortex AUV](../repos/vortexntnu__vortex-auv.md) (integrates_with)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [HoloOcean (documentation)](../../catalog/repos/byu-holoocean__holoocean-docs.md) (alternative_to)
+- [HoloOcean ROS bridge](../../catalog/repos/byu-holoocean__holoocean-ros.md) (alternative_to)
+- [Project DAVE](../../catalog/repos/field-robotics-lab__dave.md) (alternative_to)
+- [USBL Simulator](../../catalog/repos/maximilian-nitsch__usbl-simulator.md) (alternative_to)
+- [Vortex AUV](../../catalog/repos/vortexntnu__vortex-auv.md) (integrates_with)
 
 _Indexed by lane(s): domains-swarm, sim-data_
 

@@ -12,7 +12,7 @@ Colab notebooks for GNSS jamming-type classification (ML, DL and CV on spectrogr
 
 **Hackathon notes:** Open in Colab and download the Zenodo IQ set (1.9 GB, CC BY 4.0). Its signals are simulated in MATLAB: DME, narrowband, AM, chirp, FM and no jamming. The repo has no licence file.
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Electronic warfare resilience](../concepts/ew-resilience.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `jamming`, `spectrogram`, `colab`, `iq`
 
@@ -20,8 +20,8 @@ Colab notebooks for GNSS jamming-type classification (ML, DL and CV on spectrogr
 
 ## Referenced by
 
-- [Raw IQ dataset for GNSS GPS jamming signal classification](../resources/gnss-raw-iq-jamming-classification-zenodo.md) (has_code)
-- [GNSS/GPS Spoofing and Jamming Identification Using Machine Learning and Deep Learning](../resources/gnss-spoof-jam-ml-dl-2025.md) (has_code)
+- [Raw IQ dataset for GNSS GPS jamming signal classification](../../catalog/resources/gnss-raw-iq-jamming-classification-zenodo.md) (has_code)
+- [GNSS/GPS Spoofing and Jamming Identification Using Machine Learning and Deep Learning](../../catalog/resources/gnss-spoof-jam-ml-dl-2025.md) (has_code)
 
 _Indexed by lane(s): round3-expansion_
 

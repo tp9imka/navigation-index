@@ -12,7 +12,7 @@ Configuration for a Raspberry Pi stratum-1 PTP and NTP time server built from a 
 
 **Hackathon notes:** Ansible-driven; budget an afternoon including GNSS antenna placement.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `raspberry-pi`, `ptp`, `ntp`, `pps`, `ansible`
 
@@ -20,13 +20,14 @@ Configuration for a Raspberry Pi stratum-1 PTP and NTP time server built from a 
 
 ## Related
 
-- alternative_to: [SatPulse](../repos/jclark__satpulse.md)
-- depends_on: [chrony](../repos/gitlab.com__chrony__chrony.md)
-- depends_on: [linuxptp](../repos/nwtime__linuxptp.md)
+- alternative_to: [SatPulse](../../catalog/repos/jclark__satpulse.md)
+- depends_on: [chrony](../../catalog/repos/gitlab.com__chrony__chrony.md)
+- depends_on: [linuxptp](../../catalog/repos/nwtime__linuxptp.md)
 
 ## Referenced by
 
-- [SatPulse](../repos/jclark__satpulse.md) (alternative_to)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [SatPulse](../../catalog/repos/jclark__satpulse.md) (alternative_to)
 
 _Indexed by lane(s): timing_
 

@@ -12,7 +12,7 @@ Error-state Kalman filter fusing IMU and GPS for localization, small and readabl
 
 **Hackathon notes:** Small ROS project; easy to strip ROS and port.
 
-**Concepts:** [GNSS/INS integration](../concepts/gnss-ins.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `eskf`, `ros`
 
@@ -20,13 +20,13 @@ Error-state Kalman filter fusing IMU and GPS for localization, small and readabl
 
 ## Related
 
-- alternative_to: [eskf-gps-imu-fusion](../repos/zm0612__eskf-gps-imu-fusion.md)
-- alternative_to: [imu_x_fusion](../repos/cggos__imu_x_fusion.md)
+- alternative_to: [eskf-gps-imu-fusion](../../catalog/repos/zm0612__eskf-gps-imu-fusion.md)
+- alternative_to: [imu_x_fusion](../../catalog/repos/cggos__imu_x_fusion.md)
 
 ## Referenced by
 
-- [imu_x_fusion](../repos/cggos__imu_x_fusion.md) (alternative_to)
-- [eskf-gps-imu-fusion](../repos/zm0612__eskf-gps-imu-fusion.md) (alternative_to)
+- [imu_x_fusion](../../catalog/repos/cggos__imu_x_fusion.md) (alternative_to)
+- [eskf-gps-imu-fusion](../../catalog/repos/zm0612__eskf-gps-imu-fusion.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 

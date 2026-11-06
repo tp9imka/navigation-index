@@ -11,7 +11,7 @@ Low-altitude urban MAV flight over streets with camera, IMU and GPS plus Google 
 - Sensors: camera, IMU, GPS
 - Use for aerial-to-street-view localization
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `urban`, `mav`, `street-view`
 

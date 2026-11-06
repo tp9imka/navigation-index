@@ -12,7 +12,7 @@ User-space tools and headers for the Linux PPS API (ppstest, ppsctl, ppswatch).
 
 **Hackathon notes:** apt install pps-tools; `ppstest /dev/pps0`.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `pps`, `linux`, `gpio`
 
@@ -20,8 +20,12 @@ User-space tools and headers for the Linux PPS API (ppstest, ppsctl, ppswatch).
 
 ## Related
 
-- integrates_with: [chrony](../repos/gitlab.com__chrony__chrony.md)
-- integrates_with: [gpsd](../repos/gitlab.com__gpsd__gpsd.md)
+- integrates_with: [chrony](../../catalog/repos/gitlab.com__chrony__chrony.md)
+- integrates_with: [gpsd](../../catalog/repos/gitlab.com__gpsd__gpsd.md)
+
+## Referenced by
+
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 
 _Indexed by lane(s): timing_
 

@@ -12,7 +12,7 @@ Open-source acoustic drone detector that listens for propeller noise; explicitly
 
 **Hackathon notes:** Breadboard build guide; new project, verify claims on your own recordings.
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `acoustic`, `detection`, `embedded`
 
@@ -20,11 +20,11 @@ Open-source acoustic drone detector that listens for propeller noise; explicitly
 
 ## Related
 
-- alternative_to: [Batear](../repos/batear-io__batear.md)
+- alternative_to: [Batear](../../catalog/repos/batear-io__batear.md)
 
 ## Referenced by
 
-- [Batear](../repos/batear-io__batear.md) (alternative_to)
+- [Batear](../../catalog/repos/batear-io__batear.md) (alternative_to)
 
 _Indexed by lane(s): domains-swarm_
 

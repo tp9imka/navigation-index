@@ -12,7 +12,7 @@ Benchmark and simulator (AirSim/UE-based) for vision-and-language navigation by 
 
 **Hackathon notes:** Large simulator assets; plan download time. Linux + GPU.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [Simulation and HIL/SITL](../concepts/simulation.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `vln`, `uav`, `airsim`, `benchmark`
 
@@ -20,14 +20,14 @@ Benchmark and simulator (AirSim/UE-based) for vision-and-language navigation by 
 
 ## Related
 
-- alternative_to: [OpenFly](../repos/shailab-ipec__openfly-platform.md)
-- integrates_with: [AerialVLN: Vision-and-Language Navigation for UAVs](../resources/aerialvln-iccv-2023.md)
+- alternative_to: [OpenFly](../../catalog/repos/shailab-ipec__openfly-platform.md)
+- integrates_with: [AerialVLN: Vision-and-Language Navigation for UAVs](../../catalog/resources/aerialvln-iccv-2023.md)
 
 ## Referenced by
 
-- [OpenFly](../repos/shailab-ipec__openfly-platform.md) (alternative_to)
-- [CityNav](../repos/water-cookie__citynav.md) (alternative_to)
-- [AerialVLN: Vision-and-Language Navigation for UAVs](../resources/aerialvln-iccv-2023.md) (has_code)
+- [OpenFly](../../catalog/repos/shailab-ipec__openfly-platform.md) (alternative_to)
+- [CityNav](../../catalog/repos/water-cookie__citynav.md) (alternative_to)
+- [AerialVLN: Vision-and-Language Navigation for UAVs](../../catalog/resources/aerialvln-iccv-2023.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

@@ -16,7 +16,7 @@ Geo-localization system for aerial platforms that first retrieves the right sate
 
 - [aerialvl](../../docs/dataset-cards/aerialvl.md) (dataset-cards)
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Place recognition and loop closure](../concepts/place-recognition.md), [Feature detection and matching](../concepts/feature-matching.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 
 **Tags:** `uav`, `retrieval`, `alignment`, `pytorch`
 
@@ -24,8 +24,15 @@ Geo-localization system for aerial platforms that first retrieves the right sate
 
 ## Related
 
-- alternative_to: [WildNav](../repos/tiers__wildnav.md)
-- alternative_to: [AnyLoc](../repos/anyloc__anyloc.md)
+- alternative_to: [WildNav](../../catalog/repos/tiers__wildnav.md)
+- alternative_to: [AnyLoc](../../catalog/repos/anyloc__anyloc.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Large-area visual place recognition for lost-GNSS recovery (DINOv2 GeM / VLAD over a 49 km2 NAIP tile DB, chained to LightGlue fine matching)](../../catalog/samples/vpr-large-area.md) (explains)
 
 _Indexed by lane(s): alt-nav_
 

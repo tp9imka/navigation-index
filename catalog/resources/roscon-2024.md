@@ -10,16 +10,16 @@ ROSCon 2024 site with the programme and links to recorded talks, including local
 
 - Recent ROS 2 localization tooling talks
 
-**Concepts:** [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `roscon`, `beluga`, `amcl`
 
 ## Related
 
-- uses: [Beluga](../repos/ekumen-os__beluga.md)
+- uses: [Beluga](../../catalog/repos/ekumen-os__beluga.md)
 
 ## Referenced by
 
-- [ROSCon 2023 videos and slides](../resources/roscon-2023-videos.md) (part_of)
+- [ROSCon 2023 videos and slides](../../catalog/resources/roscon-2023-videos.md) (part_of)
 
 _Indexed by lane(s): learning_

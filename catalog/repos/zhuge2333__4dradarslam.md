@@ -12,7 +12,7 @@
 
 **Hackathon notes:** ROS 1; structured like hdl_graph_slam. Test on their dataset first.
 
-**Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `4d-radar`, `gicp`, `pose-graph`, `ros1`
 
@@ -20,13 +20,14 @@
 
 ## Related
 
-- extends: [hdl_graph_slam](../repos/koide3__hdl_graph_slam.md)
-- alternative_to: [CFEAR Radarodometry](../repos/dan11003__cfear_radarodometry.md)
+- extends: [hdl_graph_slam](../../catalog/repos/koide3__hdl_graph_slam.md)
+- alternative_to: [CFEAR Radarodometry](../../catalog/repos/dan11003__cfear_radarodometry.md)
 
 ## Referenced by
 
-- [CFEAR Radarodometry](../repos/dan11003__cfear_radarodometry.md) (alternative_to)
-- [4D Millimeter-Wave Radar in Autonomous Driving: A Survey](../resources/han-4d-mmwave-radar-survey-2023.md) (cites)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
+- [CFEAR Radarodometry](../../catalog/repos/dan11003__cfear_radarodometry.md) (alternative_to)
+- [4D Millimeter-Wave Radar in Autonomous Driving: A Survey](../../catalog/resources/han-4d-mmwave-radar-survey-2023.md) (cites)
 
 _Indexed by lane(s): slam_
 

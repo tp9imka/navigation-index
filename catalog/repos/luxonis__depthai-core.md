@@ -17,7 +17,7 @@ C++ core library and Python bindings for Luxonis OAK cameras: on-device stereo d
 - [_index-round3](../../docs/integration-cards/_index-round3.md) (integration-cards)
 - [luxonis__depthai-core](../../docs/integration-cards/luxonis__depthai-core.md) (integration-cards)
 
-**Concepts:** [Onboard / edge AI perception](../concepts/edge-ai.md), [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `oak`, `stereo`, `depth`, `python`, `c++`
 
@@ -25,7 +25,7 @@ C++ core library and Python bindings for Luxonis OAK cameras: on-device stereo d
 
 ## Related
 
-- same_org: [DepthAI](../repos/luxonis__depthai.md)
+- same_org: [DepthAI](../../catalog/repos/luxonis__depthai.md)
 
 _Indexed by lane(s): coordinator_
 

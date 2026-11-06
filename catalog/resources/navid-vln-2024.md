@@ -11,16 +11,16 @@ Video-based VLM that plans navigation actions from monocular RGB history without
 - Map-free language navigation
 - Sim-to-real transfer
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md)
 
 **Tags:** `vlm`, `vln`
 
 ## Related
 
-- has_code: [NaVid / Uni-NaVid](../repos/jzhzhang__navid-vln-ce.md)
+- has_code: [NaVid / Uni-NaVid](../../catalog/repos/jzhzhang__navid-vln-ce.md)
 
 ## Referenced by
 
-- [NaVid / Uni-NaVid](../repos/jzhzhang__navid-vln-ce.md) (integrates_with)
+- [NaVid / Uni-NaVid](../../catalog/repos/jzhzhang__navid-vln-ce.md) (integrates_with)
 
 _Indexed by lane(s): gap-fill_

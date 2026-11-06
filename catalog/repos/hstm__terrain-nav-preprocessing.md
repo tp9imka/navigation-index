@@ -12,7 +12,7 @@ Preprocessing tools for terrain-referenced navigation, generating DEM tiles with
 
 **Hackathon notes:** Use to build synthetic DEM test sets.
 
-**Concepts:** [Terrain-relative navigation](../concepts/terrain-nav.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+**Concepts:** [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `dem`, `preprocessing`
 
@@ -20,11 +20,11 @@ Preprocessing tools for terrain-referenced navigation, generating DEM tiles with
 
 ## Related
 
-- integrates_with: [python-tercom](../repos/alti3__python-tercom.md)
+- integrates_with: [python-tercom](../../catalog/repos/alti3__python-tercom.md)
 
 ## Referenced by
 
-- [Terrain-relative navigation with a particle filter](../samples/terrain-relative-nav-pf.md) (explains)
+- [Terrain-relative navigation with a particle filter](../../catalog/samples/terrain-relative-nav-pf.md) (explains)
 
 _Indexed by lane(s): alt-nav_
 

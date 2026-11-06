@@ -6,13 +6,13 @@
 |---|---|---|---|---|---|---|
 | 1,807 | C++ | Apache-2.0 | 2026-11-06 | False | production | medium |
 
-The broad package collection of Autoware with experimental and production-candidate modules, including localization, pose initialization and GNSS/IMU fusion.
+The broad package collection of Autoware with experimental and production-candidate modules, including localization add-ons such as YabLoc, landmark-based localizers and the pose estimator arbiter.
 
-**Why it matters:** Where most Autoware localization code actually lives.
+**Why it matters:** Holds Autoware's extra localization modules; the core NDT scan matcher and EKF localizer have moved to autoware_core.
 
-**Hackathon notes:** Pick packages like autoware_ndt_scan_matcher and autoware_ekf_localizer and run them standalone with rosbags.
+**Hackathon notes:** Pick packages and run them standalone with rosbags; autoware_ndt_scan_matcher and autoware_ekf_localizer now live in autoware_core, not here.
 
-**Concepts:** [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `autoware`, `localization`, `ekf`, `ndt`
 
@@ -20,11 +20,11 @@ The broad package collection of Autoware with experimental and production-candid
 
 ## Related
 
-- same_org: [Autoware](../repos/autowarefoundation__autoware.md)
+- same_org: [Autoware](../../catalog/repos/autowarefoundation__autoware.md)
 
 ## Referenced by
 
-- [Autoware](../repos/autowarefoundation__autoware.md) (depends_on)
+- [Autoware](../../catalog/repos/autowarefoundation__autoware.md) (depends_on)
 
 _Indexed by lane(s): domains-swarm_
 

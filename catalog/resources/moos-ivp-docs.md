@@ -11,12 +11,16 @@ Documentation hub for MOOS-IvP with install guides, the IvP Helm manual, behavio
 - Helm manual explains multi-objective behaviour arbitration
 - Mission files are simple text, quick to adapt
 
-**Concepts:** [Maritime navigation](../concepts/maritime-nav.md), [Path and motion planning](../concepts/path-planning.md)
+**Concepts:** [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Path and motion planning](../../catalog/concepts/path-planning.md)
 
 **Tags:** `moos-ivp`, `docs`
 
 ## Related
 
-- explains: [MOOS-IvP](../repos/moos-ivp__moos-ivp.md)
+- explains: [MOOS-IvP](../../catalog/repos/moos-ivp__moos-ivp.md)
+
+## Referenced by
+
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 
 _Indexed by lane(s): domains-swarm_

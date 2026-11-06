@@ -12,7 +12,7 @@ Embedded Linux software for the White Rabbit switch, including the PTP daemon in
 
 **Hackathon notes:** Hardware specific.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `white-rabbit`, `switch`, `embedded-linux`
 
@@ -20,10 +20,10 @@ Embedded Linux software for the White Rabbit switch, including the PTP daemon in
 
 ## Related
 
-- same_org: [White Rabbit cores (wr-cores)](../repos/gitlab.com__ohwr__project__wr-cores.md)
+- same_org: [White Rabbit cores (wr-cores)](../../catalog/repos/gitlab.com__ohwr__project__wr-cores.md)
 
 ## Referenced by
 
-- [White Rabbit cores (wr-cores)](../repos/gitlab.com__ohwr__project__wr-cores.md) (same_org)
+- [White Rabbit cores (wr-cores)](../../catalog/repos/gitlab.com__ohwr__project__wr-cores.md) (same_org)
 
 _Indexed by lane(s): timing_

@@ -19,23 +19,26 @@ Defines Open Service Navigation Message Authentication: how TESLA-chain MACs and
 
 - [galileo-osnma](../../docs/paper-digests/galileo-osnma.md) (paper-digests)
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Jamming and spoofing](../concepts/gnss-interference.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `osnma`, `galileo`, `authentication`, `anti-spoofing`, `tesla`
 
 ## Related
 
-- has_code: [galileo-osnma (Rust)](../repos/daniestevez__galileo-osnma.md)
-- has_code: [OSNMAlib](../repos/algafix__osnma.md)
-- has_code: [FGI-OSNMA](../repos/nlsfi__fgi-osnma.md)
-- has_code: [OSNMA_ublox](../repos/axelbjork__osnma_ublox.md)
-- has_code: [OSNMA-SDR-SIM](../repos/haiyang-wong__osnma-sdr-sim.md)
+- has_code: [galileo-osnma (Rust)](../../catalog/repos/daniestevez__galileo-osnma.md)
+- has_code: [OSNMAlib](../../catalog/repos/algafix__osnma.md)
+- has_code: [FGI-OSNMA](../../catalog/repos/nlsfi__fgi-osnma.md)
+- has_code: [OSNMA_ublox](../../catalog/repos/axelbjork__osnma_ublox.md)
+- has_code: [OSNMA-SDR-SIM](../../catalog/repos/haiyang-wong__osnma-sdr-sim.md)
 
 ## Referenced by
 
-- [Galileo OSNMA Receiver Guidelines Issue 1.3](../resources/galileo-osnma-receiver-guidelines.md) (part_of)
-- [Galileo Open Service Navigation Message Authentication (OSNMA) - service page](../resources/galileo-osnma-service-page.md) (part_of)
-- [Navipedia: Galileo Open Service Navigation Message Authentication](../resources/navipedia-osnma.md) (explains)
-- [Septentrio AIM+ GNSS jamming and spoofing protection](../resources/septentrio-aim-plus.md) (uses)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
+- [Galileo OSNMA Receiver Guidelines Issue 1.3](../../catalog/resources/galileo-osnma-receiver-guidelines.md) (part_of)
+- [Galileo Open Service Navigation Message Authentication (OSNMA) - service page](../../catalog/resources/galileo-osnma-service-page.md) (part_of)
+- [Navipedia: Galileo Open Service Navigation Message Authentication](../../catalog/resources/navipedia-osnma.md) (explains)
+- [Septentrio AIM+ GNSS jamming and spoofing protection](../../catalog/resources/septentrio-aim-plus.md) (uses)
+- [Galileo OSNMA authentication as a spoofing defence: real recording, file-level attacks, scorer adapter](../../catalog/samples/osnma-authentication.md) (explains)
 
 _Indexed by lane(s): docs-standards, gnss_

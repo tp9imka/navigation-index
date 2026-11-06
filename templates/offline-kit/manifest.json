@@ -1037,28 +1037,6 @@
    "size_complete": false
   },
   {
-   "id": "pip:e2e-visual-nav-vpair",
-   "type": "pip",
-   "tier": "standard",
-   "license": "per package (see PyPI metadata)",
-   "source": "samples/e2e-visual-nav-vpair/requirements.txt",
-   "requirements": [
-    "torch==2.15.0",
-    "torchvision==0.29.2",
-    "kornia==0.9.0",
-    "opencv-python-headless==5.0.0.93",
-    "numpy==2.5.4",
-    "rasterio==1.5.2",
-    "affine==3.0.1",
-    "pillow==13.0.0"
-   ],
-   "vcs": [
-    "lightglue @ git+https://github.com/cvg/LightGlue.git@5a650c444718caffc2669dc0094cde908f42dd73"
-   ],
-   "size": null,
-   "size_complete": false
-  },
-  {
    "id": "pip:geoloc-license-clean",
    "type": "pip",
    "tier": "standard",
@@ -1297,30 +1275,6 @@
     "pytest"
    ],
    "vcs": [],
-   "size": null,
-   "size_complete": false
-  },
-  {
-   "id": "pip:thermal-geolocalization",
-   "type": "pip",
-   "tier": "standard",
-   "license": "per package (see PyPI metadata)",
-   "source": "samples/thermal-geolocalization/requirements.txt",
-   "requirements": [
-    "torch==2.15.0",
-    "torchvision==0.29.2",
-    "kornia==0.9.0",
-    "opencv-python-headless==5.0.0.93",
-    "numpy==2.5.4",
-    "rasterio==1.5.2",
-    "affine==3.0.1",
-    "pillow==13.0.0",
-    "safetensors==0.8.0",
-    "huggingface_hub==2.4.0"
-   ],
-   "vcs": [
-    "lightglue @ git+https://github.com/cvg/LightGlue.git@5a650c444718caffc2669dc0094cde908f42dd73"
-   ],
    "size": null,
    "size_complete": false
   },

@@ -12,7 +12,7 @@ Research prototype of an LLM-driven 'autonomous GIS' that turns a spatial questi
 
 **Hackathon notes:** Notebook-driven; needs an LLM API key. Use as design reference rather than a dependency.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `llm`, `gis`, `code-generation`, `autonomous-gis`
 
@@ -20,7 +20,7 @@ Research prototype of an LLM-driven 'autonomous GIS' that turns a spatial questi
 
 ## Related
 
-- alternative_to: [GIS MCP Server](../repos/mahdin75__gis-mcp.md)
+- alternative_to: [GIS MCP Server](../../catalog/repos/mahdin75__gis-mcp.md)
 
 _Indexed by lane(s): gap-fill_
 

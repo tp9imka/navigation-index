@@ -15,13 +15,21 @@ In May 2023 the Air Force and MIT flew a real-time MagNav demo on a C-17A during
 
 - [programs-and-challenges](../../docs/landscape/programs-and-challenges.md) (landscape)
 
-**Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `landscape`, `afrl`, `mit`, `magnav`
 
 ## Related
 
-- cites: [MagNav Challenge Problem (DAF-MIT AI Accelerator)](../resources/magnav-challenge-site.md)
-- has_code: [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md)
+- cites: [MagNav Challenge Problem (DAF-MIT AI Accelerator)](../../catalog/resources/magnav-challenge-site.md)
+- has_code: [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md)
+
+## Referenced by
+
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): landscape_

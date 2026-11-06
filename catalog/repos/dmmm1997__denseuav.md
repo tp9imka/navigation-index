@@ -16,7 +16,7 @@ Dataset and baseline (TIP 2023) for UAV self-positioning in low-altitude urban e
 
 - [denseuav](../../docs/dataset-cards/denseuav.md) (dataset-cards)
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `urban`, `self-positioning`, `dataset`, `uav`
 
@@ -24,11 +24,12 @@ Dataset and baseline (TIP 2023) for UAV self-positioning in low-altitude urban e
 
 ## Related
 
-- alternative_to: [University-1652 baseline](../repos/layumi__university1652-baseline.md)
+- alternative_to: [University-1652 baseline](../../catalog/repos/layumi__university1652-baseline.md)
 
 ## Referenced by
 
-- [University-1652 baseline](../repos/layumi__university1652-baseline.md) (alternative_to)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [University-1652 baseline](../../catalog/repos/layumi__university1652-baseline.md) (alternative_to)
 
 _Indexed by lane(s): alt-nav, sim-data_
 

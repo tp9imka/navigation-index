@@ -17,7 +17,7 @@ Gateway that converts ADS-B traffic from dump1090/readsb or aggregator APIs into
 - [_index-round3](../../docs/integration-cards/_index-round3.md) (integration-cards)
 - [snstac__adsbcot](../../docs/integration-cards/snstac__adsbcot.md) (integration-cards)
 
-**Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Jamming and spoofing](../concepts/gnss-interference.md), [Counter-UAS and drone detection](../concepts/counter-uas.md)
+**Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md)
 
 **Tags:** `ads-b`, `tak`, `cot`, `sdr`
 
@@ -25,16 +25,20 @@ Gateway that converts ADS-B traffic from dump1090/readsb or aggregator APIs into
 
 ## Related
 
-- depends_on: [PyTAK](../repos/snstac__pytak.md)
-- integrates_with: [readsb](../repos/wiedehopf__readsb.md)
-- integrates_with: [dump1090-fa](../repos/flightaware__dump1090.md)
+- depends_on: [PyTAK](../../catalog/repos/snstac__pytak.md)
+- integrates_with: [readsb](../../catalog/repos/wiedehopf__readsb.md)
+- integrates_with: [dump1090-fa](../../catalog/repos/flightaware__dump1090.md)
 
 ## Referenced by
 
-- [Stone Soup](../repos/dstl__stone-soup.md) (integrates_with)
-- [PyTAK](../repos/snstac__pytak.md) (same_org)
-- [readsb](../repos/wiedehopf__readsb.md) (integrates_with)
-- [GPSJam - daily GPS interference map](../resources/gpsjam-org.md) (uses)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Stone Soup](../../catalog/repos/dstl__stone-soup.md) (integrates_with)
+- [PyTAK](../../catalog/repos/snstac__pytak.md) (same_org)
+- [readsb](../../catalog/repos/wiedehopf__readsb.md) (integrates_with)
+- [ADS-B Exchange free monthly sample data (readsb-hist)](../../catalog/resources/adsbexchange-monthly-samples.md) (has_code)
+- [GPSJam - daily GPS interference map](../../catalog/resources/gpsjam-org.md) (uses)
 
 _Indexed by lane(s): defense-context, planning-gis-c2_
 

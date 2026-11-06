@@ -15,12 +15,16 @@ Introduces a large smartphone IMU dataset with ground truth and benchmarks neura
 
 - [ronin](../../docs/dataset-cards/ronin.md) (dataset-cards)
 
-**Concepts:** [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Indoor and pedestrian navigation](../../catalog/concepts/indoor-pedestrian.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `learned-inertial`, `smartphone`
 
 ## Related
 
-- has_code: [RoNIN](../repos/sachini__ronin.md)
+- has_code: [RoNIN](../../catalog/repos/sachini__ronin.md)
+
+## Referenced by
+
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 
 _Indexed by lane(s): ins-fusion_

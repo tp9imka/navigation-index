@@ -1,4 +1,4 @@
-# BKG Ntrip Client (BNC)
+# BKG Ntrip Client - BNC
 
 `res:bkg-bnc` - doc - <https://igs.bkg.bund.de/ntrip/bnc>
 
@@ -11,12 +11,12 @@ Page for BNC, BKG's multi-stream NTRIP client that records, decodes, converts to
 - Swiss-army tool for real-time correction streams
 - Can monitor stream latency and outages
 
-**Concepts:** [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md), [GNSS positioning](../concepts/gnss.md)
+**Concepts:** [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md), [GNSS positioning](../../catalog/concepts/gnss.md)
 
 **Tags:** `ntrip`, `bnc`, `ppp`, `rinex`
 
 ## Related
 
-- part_of: [NTRIP: Networked Transport of RTCM via Internet Protocol (BKG)](../resources/bkg-ntrip-about.md)
+- part_of: [NTRIP: Networked Transport of RTCM via Internet Protocol (BKG)](../../catalog/resources/bkg-ntrip-about.md)
 
 _Indexed by lane(s): gnss_

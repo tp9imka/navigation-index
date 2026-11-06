@@ -12,7 +12,7 @@ Lightweight Python library for parsing NMEA 0183 sentences.
 
 **Hackathon notes:** pip install pynmea2; simpler than pynmeagps but less coverage.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `nmea`, `python`
 
@@ -20,11 +20,11 @@ Lightweight Python library for parsing NMEA 0183 sentences.
 
 ## Related
 
-- alternative_to: [pynmeagps](../repos/semuconsulting__pynmeagps.md)
+- alternative_to: [pynmeagps](../../catalog/repos/semuconsulting__pynmeagps.md)
 
 ## Referenced by
 
-- [pynmeagps](../repos/semuconsulting__pynmeagps.md) (alternative_to)
+- [pynmeagps](../../catalog/repos/semuconsulting__pynmeagps.md) (alternative_to)
 
 _Indexed by lane(s): gnss_
 

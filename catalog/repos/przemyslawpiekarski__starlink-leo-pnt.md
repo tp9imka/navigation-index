@@ -12,7 +12,7 @@ Passive positioning using Starlink downlink signals as signals of opportunity: S
 
 **Hackathon notes:** Needs an SDR that covers Ku-band via LNB, or use the simulation path with TLEs. Treat claims as unverified.
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [Software-defined GNSS receivers](../concepts/gnss-sdr.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Space and orbital navigation](../concepts/space-nav.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `starlink`, `leo`, `doppler`, `sdr`, `leo-pnt`, `tdoa`
 
@@ -20,18 +20,22 @@ Passive positioning using Starlink downlink signals as signals of opportunity: S
 
 ## Related
 
-- alternative_to: [LEO SoOP positioning thesis (Voska)](../repos/voskavoj__dp.md)
-- alternative_to: [LEO-SPINE](../repos/xyangll__leospine.md)
-- alternative_to: [UT Starlink signal simulator](../repos/gitlab.com__radionavlab__public__ut-starlink-signal-simulator.md)
+- alternative_to: [LEO SoOP positioning thesis (Voska)](../../catalog/repos/voskavoj__dp.md)
+- alternative_to: [LEO-SPINE](../../catalog/repos/xyangll__leospine.md)
+- alternative_to: [UT Starlink signal simulator](../../catalog/repos/gitlab.com__radionavlab__public__ut-starlink-signal-simulator.md)
 
 ## Referenced by
 
-- [UT Starlink signal simulator](../repos/gitlab.com__radionavlab__public__ut-starlink-signal-simulator.md) (alternative_to)
-- [LEO SoOP positioning thesis (Voska)](../repos/voskavoj__dp.md) (alternative_to)
-- [Iridium PNT (Satellite Time and Location) and Iridium PNT ASIC](../resources/iridium-pnt-stl-asic.md) (alternative_to)
-- [Exploiting Starlink Signals for Navigation: First Results](../resources/kassas-starlink-first-results-2022.md) (uses)
-- [TrustPoint - C-band LEO PNT](../resources/trustpoint-leo-pnt.md) (alternative_to)
-- [Xona Space Systems Pulsar LEO PNT constellation](../resources/xona-pulsar-leo-pnt.md) (alternative_to)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [UT Starlink signal simulator](../../catalog/repos/gitlab.com__radionavlab__public__ut-starlink-signal-simulator.md) (alternative_to)
+- [LEO SoOP positioning thesis (Voska)](../../catalog/repos/voskavoj__dp.md) (alternative_to)
+- [Iridium PNT (Satellite Time and Location) and Iridium PNT ASIC](../../catalog/resources/iridium-pnt-stl-asic.md) (alternative_to)
+- [Exploiting Starlink Signals for Navigation: First Results](../../catalog/resources/kassas-starlink-first-results-2022.md) (uses)
+- [TrustPoint - C-band LEO PNT](../../catalog/resources/trustpoint-leo-pnt.md) (alternative_to)
+- [Xona Space Systems Pulsar LEO PNT constellation](../../catalog/resources/xona-pulsar-leo-pnt.md) (alternative_to)
 
 _Indexed by lane(s): alt-nav, gnss_
 

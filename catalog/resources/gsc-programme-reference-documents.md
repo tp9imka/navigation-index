@@ -12,8 +12,13 @@ Library of current Galileo ICDs, service definition documents and receiver guide
 - Includes service definition documents with committed performance
 - Includes the HAS (High Accuracy Service) ICD for free PPP corrections
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `galileo`, `library`, `icd`, `has`
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): docs-standards, gnss_

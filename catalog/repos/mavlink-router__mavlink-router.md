@@ -17,7 +17,7 @@ Lightweight C++ daemon that routes MAVLink between serial, UDP and TCP endpoints
 - [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [mavlink-router__mavlink-router](../../docs/integration-cards/mavlink-router__mavlink-router.md) (integration-cards)
 
-**Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
+**Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 
 **Tags:** `router`, `companion`, `udp`, `serial`
 
@@ -25,14 +25,18 @@ Lightweight C++ daemon that routes MAVLink between serial, UDP and TCP endpoints
 
 ## Related
 
-- alternative_to: [mavp2p](../repos/bluenviron__mavp2p.md)
-- alternative_to: [MAVProxy](../repos/ardupilot__mavproxy.md)
+- alternative_to: [mavp2p](../../catalog/repos/bluenviron__mavp2p.md)
+- alternative_to: [MAVProxy](../../catalog/repos/ardupilot__mavproxy.md)
 
 ## Referenced by
 
-- [MAVProxy](../repos/ardupilot__mavproxy.md) (alternative_to)
-- [mavp2p](../repos/bluenviron__mavp2p.md) (alternative_to)
-- [Rpanion-server](../repos/stephendade__rpanion-server.md) (alternative_to)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [MAVProxy](../../catalog/repos/ardupilot__mavproxy.md) (alternative_to)
+- [mavp2p](../../catalog/repos/bluenviron__mavp2p.md) (alternative_to)
+- [Rpanion-server](../../catalog/repos/stephendade__rpanion-server.md) (alternative_to)
 
 _Indexed by lane(s): autopilots_
 

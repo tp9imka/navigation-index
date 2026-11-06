@@ -12,7 +12,7 @@ Long-running academic autopilot (ENAC, TU Delft and others) for fixed-wing, roto
 
 **Hackathon notes:** Toolchain and ground station setup takes hours; pick only if you know it already. Flight-plan XML is a nice example of declarative mission logic.
 
-**Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [Mission planning and routing](../concepts/mission-planning.md), [Simulation and HIL/SITL](../concepts/simulation.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+**Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `enac`, `tu-delft`, `fixed-wing`, `flight-plans`, `ivy-bus`
 
@@ -20,8 +20,12 @@ Long-running academic autopilot (ENAC, TU Delft and others) for fixed-wing, roto
 
 ## Related
 
-- alternative_to: [PX4 Autopilot](../repos/px4__px4-autopilot.md)
-- alternative_to: [ArduPilot](../repos/ardupilot__ardupilot.md)
+- alternative_to: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
+- alternative_to: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
+
+## Referenced by
+
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 
 _Indexed by lane(s): autopilots_
 

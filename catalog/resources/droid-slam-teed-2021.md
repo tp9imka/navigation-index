@@ -11,12 +11,16 @@ Learned SLAM that iteratively refines poses and depth through a differentiable d
 - Big robustness gains on hard sequences
 - GPU-heavy
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `deep-learning`
 
 ## Related
 
-- has_code: [DROID-SLAM](../repos/princeton-vl__droid-slam.md)
+- has_code: [DROID-SLAM](../../catalog/repos/princeton-vl__droid-slam.md)
+
+## Referenced by
+
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 
 _Indexed by lane(s): slam_

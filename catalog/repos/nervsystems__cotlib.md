@@ -12,7 +12,7 @@ Go library for parsing, validating and generating Cursor-on-Target XML with secu
 
 **Hackathon notes:** Schema validation needs libxml2 and CGO.
 
-**Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `cot`, `go`, `validation`
 
@@ -20,7 +20,7 @@ Go library for parsing, validating and generating Cursor-on-Target XML with secu
 
 ## Related
 
-- alternative_to: [node-CoT](../repos/dfpc-coe__node-cot.md)
+- alternative_to: [node-CoT](../../catalog/repos/dfpc-coe__node-cot.md)
 
 _Indexed by lane(s): planning-gis-c2_
 

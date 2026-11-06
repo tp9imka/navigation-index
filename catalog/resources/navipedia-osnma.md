@@ -10,16 +10,20 @@ Navipedia article explaining OSNMA's design and status in plain terms before you
 
 - Gentle introduction to TESLA-based navigation message authentication
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Jamming and spoofing](../concepts/gnss-interference.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `navipedia`, `osnma`
 
 ## Related
 
-- has_code: [galileo-osnma (Rust)](../repos/daniestevez__galileo-osnma.md)
-- has_code: [OSNMAlib](../repos/algafix__osnma.md)
-- has_code: [FGI-OSNMA](../repos/nlsfi__fgi-osnma.md)
-- has_code: [OSNMA_ublox](../repos/axelbjork__osnma_ublox.md)
-- explains: [Galileo OSNMA Signal-In-Space Interface Control Document Issue 1.1](../resources/galileo-osnma-sis-icd.md)
+- has_code: [galileo-osnma (Rust)](../../catalog/repos/daniestevez__galileo-osnma.md)
+- has_code: [OSNMAlib](../../catalog/repos/algafix__osnma.md)
+- has_code: [FGI-OSNMA](../../catalog/repos/nlsfi__fgi-osnma.md)
+- has_code: [OSNMA_ublox](../../catalog/repos/axelbjork__osnma_ublox.md)
+- explains: [Galileo OSNMA Signal-In-Space Interface Control Document Issue 1.1](../../catalog/resources/galileo-osnma-sis-icd.md)
+
+## Referenced by
+
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 
 _Indexed by lane(s): docs-standards_

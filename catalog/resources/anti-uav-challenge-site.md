@@ -10,16 +10,16 @@ Site for the recurring Anti-UAV workshop and challenge with tracks for single an
 
 - Leaderboards give a reference point for hackathon results
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Tracking and data association](../concepts/target-tracking.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Tracking and data association](../../catalog/concepts/target-tracking.md)
 
 **Tags:** `challenge`, `workshop`
 
 ## Related
 
-- uses: [Anti-UAV](../repos/zhaoj9014__anti-uav.md)
+- uses: [Anti-UAV](../../catalog/repos/zhaoj9014__anti-uav.md)
 
 ## Referenced by
 
-- [Anti-UAV: A Large Multi-Modal Benchmark for UAV Tracking](../resources/anti-uav-benchmark-paper.md) (part_of)
+- [Anti-UAV: A Large Multi-Modal Benchmark for UAV Tracking](../../catalog/resources/anti-uav-benchmark-paper.md) (part_of)
 
 _Indexed by lane(s): domains-swarm_

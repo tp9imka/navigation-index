@@ -15,12 +15,16 @@ UAV-focused learned inertial odometry that changes how IMU data are represented 
 
 - [airio-paper](../../docs/paper-digests/airio-paper.md) (paper-digests)
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `learned-inertial`, `uav`
 
 ## Related
 
-- has_code: [AirIO](../repos/air-io__air-io.md)
+- has_code: [AirIO](../../catalog/repos/air-io__air-io.md)
+
+## Referenced by
+
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 
 _Indexed by lane(s): ins-fusion_

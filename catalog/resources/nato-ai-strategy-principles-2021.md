@@ -1,4 +1,4 @@
-# Summary of the NATO Artificial Intelligence Strategy (Principles of Responsible Use)
+# Summary of the NATO Artificial Intelligence Strategy
 
 `res:nato-ai-strategy-principles-2021` - doc - <https://www.nato.int/cps/en/natohq/official_texts_187617.htm>
 
@@ -11,8 +11,13 @@ NATO's 2021 AI strategy summary setting six principles of responsible use: lawfu
 - Applies across the whole AI lifecycle
 - Expect a NATO-flavored jury to probe reliability and governability
 
-**Concepts:** [Policy, export control and ethics](../concepts/policy-ethics.md)
+**Concepts:** [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md)
 
 **Tags:** `nato`, `responsible-ai`, `strategy`
+
+## Referenced by
+
+- [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 
 _Indexed by lane(s): defense-context_

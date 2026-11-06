@@ -10,13 +10,13 @@ Repo for VPAIR, an aerial visual place recognition dataset matching low-altitude
 
 **Why it matters:** Benchmark for UAV visual geolocalization against georeferenced maps.
 
-**Hackathon notes:** Small enough to evaluate quickly with VPR-methods-evaluation.
+**Hackathon notes:** Academic use only, commercial use prohibited (README). Full set is 20.5 GB (2,706 query/reference pairs plus 10,000 distractors); a 0.86 GB sample is on Zenodo. The repo itself holds only the README and images. Evaluate with VPR-methods-evaluation.
 
 ## Deep dives
 
 - [vpair](../../docs/dataset-cards/vpair.md) (dataset-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Place recognition and loop closure](../concepts/place-recognition.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 
 **Tags:** `aerial`, `vpr`, `orthophoto`
 
@@ -24,11 +24,16 @@ Repo for VPAIR, an aerial visual place recognition dataset matching low-altitude
 
 ## Related
 
-- integrates_with: [VPR methods evaluation](../repos/gmberton__vpr-methods-evaluation.md)
+- integrates_with: [VPR methods evaluation](../../catalog/repos/gmberton__vpr-methods-evaluation.md)
 
 ## Referenced by
 
-- [Drone frame to orthophoto geolocalization with LightGlue](../samples/visual-geolocalization-lightglue.md) (uses)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [aero-vloc](../../catalog/repos/prime-slam__aero-vloc.md) (evaluated_on)
+- [VPAIR - Aerial Visual Place Recognition and Localization in Large-scale Outdoor Environments](../../catalog/resources/vpair-dataset-2022.md) (has_code)
+- [Relative navigation benchmark on real data: KISS-ICP lidar odometry, OpenVINS VIO, mono and nadir VO, scored with evo](../../catalog/samples/relative-nav-benchmark.md) (uses)
+- [Drone frame to orthophoto geolocalization with LightGlue](../../catalog/samples/visual-geolocalization-lightglue.md) (uses)
 
 _Indexed by lane(s): sim-data_
 

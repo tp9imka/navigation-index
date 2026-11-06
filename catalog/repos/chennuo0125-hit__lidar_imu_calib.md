@@ -12,7 +12,7 @@ Automatic calibration of the extrinsic rotation between a 3D LiDAR and an IMU.
 
 **Hackathon notes:** Inactive since 2021; rotation only.
 
-**Concepts:** [Sensor calibration](../concepts/calibration.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [Sensor calibration](../../catalog/concepts/calibration.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `lidar-imu`, `extrinsics`, `ros1`
 
@@ -20,12 +20,12 @@ Automatic calibration of the extrinsic rotation between a 3D LiDAR and an IMU.
 
 ## Related
 
-- alternative_to: [LI-Calib](../repos/april-zju__lidar_imu_calib.md)
-- alternative_to: [LiDAR_IMU_Init](../repos/hku-mars__lidar_imu_init.md)
+- alternative_to: [LI-Calib](../../catalog/repos/april-zju__lidar_imu_calib.md)
+- alternative_to: [LiDAR_IMU_Init](../../catalog/repos/hku-mars__lidar_imu_init.md)
 
 ## Referenced by
 
-- [LI-Calib](../repos/april-zju__lidar_imu_calib.md) (alternative_to)
+- [LI-Calib](../../catalog/repos/april-zju__lidar_imu_calib.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 

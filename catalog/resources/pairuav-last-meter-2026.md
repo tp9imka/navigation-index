@@ -10,12 +10,12 @@ Proposes diffusion-refined visual servoing for precise final-approach UAV naviga
 
 - Relative pose refinement complements global geo-localization
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `visual-servoing`, `diffusion`
 
 ## Related
 
-- has_code: [PairUAV](../repos/yaxuanli-cn__pairuav.md)
+- has_code: [PairUAV](../../catalog/repos/yaxuanli-cn__pairuav.md)
 
 _Indexed by lane(s): round3-expansion_

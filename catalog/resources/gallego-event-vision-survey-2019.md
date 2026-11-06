@@ -11,12 +11,16 @@ Comprehensive survey of event cameras: sensing principle, algorithms (feature tr
 - Microsecond latency and high dynamic range
 - Algorithms must be redesigned for asynchronous data
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `event-camera`, `survey`
 
 ## Related
 
-- part_of: [Event-based Vision Resources](../repos/uzh-rpg__event-based_vision_resources.md)
+- part_of: [Event-based Vision Resources](../../catalog/repos/uzh-rpg__event-based_vision_resources.md)
+
+## Referenced by
+
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 
 _Indexed by lane(s): slam_

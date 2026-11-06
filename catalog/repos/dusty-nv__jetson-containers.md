@@ -12,7 +12,12 @@ Build system and prebuilt containers for ML on Jetson (PyTorch, ROS, LLMs, VLMs)
 
 **Hackathon notes:** Use autotag to pull a container matching your JetPack.
 
-**Concepts:** [Onboard / edge AI perception](../concepts/edge-ai.md), [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [dusty-nv__jetson-containers](../../docs/integration-cards/dusty-nv__jetson-containers.md) (integration-cards)
+
+**Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md), [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md)
 
 **Tags:** `jetson`, `docker`, `ros`, `llm`
 
@@ -20,13 +25,13 @@ Build system and prebuilt containers for ML on Jetson (PyTorch, ROS, LLMs, VLMs)
 
 ## Related
 
-- same_org: [Hello AI World (jetson-inference)](../repos/dusty-nv__jetson-inference.md)
-- integrates_with: [NVIDIA Jetson AI Lab](../resources/nvidia-jetson-ai-lab.md)
+- same_org: [Hello AI World (jetson-inference)](../../catalog/repos/dusty-nv__jetson-inference.md)
+- integrates_with: [NVIDIA Jetson AI Lab](../../catalog/resources/nvidia-jetson-ai-lab.md)
 
 ## Referenced by
 
-- [Hello AI World (jetson-inference)](../repos/dusty-nv__jetson-inference.md) (same_org)
-- [NVIDIA Jetson AI Lab](../resources/nvidia-jetson-ai-lab.md) (has_code)
+- [Hello AI World (jetson-inference)](../../catalog/repos/dusty-nv__jetson-inference.md) (same_org)
+- [NVIDIA Jetson AI Lab](../../catalog/resources/nvidia-jetson-ai-lab.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

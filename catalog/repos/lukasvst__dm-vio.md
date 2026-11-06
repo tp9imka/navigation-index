@@ -12,7 +12,7 @@ Monocular visual-inertial odometry built on DSO using delayed marginalization an
 
 **Hackathon notes:** Standalone build with an optional ROS wrapper repo. Expects photometrically calibrated input for best results.
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `direct`, `delayed-marginalization`, `monocular`
 
@@ -20,11 +20,11 @@ Monocular visual-inertial odometry built on DSO using delayed marginalization an
 
 ## Related
 
-- extends: [DSO (Direct Sparse Odometry)](../repos/jakobengel__dso.md)
+- extends: [DSO (Direct Sparse Odometry)](../../catalog/repos/jakobengel__dso.md)
 
 ## Referenced by
 
-- [DSO (Direct Sparse Odometry)](../repos/jakobengel__dso.md) (extends)
+- [DSO (Direct Sparse Odometry)](../../catalog/repos/jakobengel__dso.md) (extends)
 
 _Indexed by lane(s): slam_
 

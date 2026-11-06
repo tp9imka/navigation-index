@@ -11,19 +11,20 @@ Specifies NTS: a TLS-based key exchange followed by authenticated NTP packets, p
 - Authenticates the server; does not stop delay attacks
 - Supported by chrony, ntpd-rs and NTPsec
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Standards and interface specs](../concepts/standards.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Standards and interface specs](../../catalog/concepts/standards.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `nts`, `ntp`, `rfc`, `authentication`
 
 ## Related
 
-- has_code: [ntpd-rs](../repos/pendulum-project__ntpd-rs.md)
-- has_code: [chrony](../repos/gitlab.com__chrony__chrony.md)
-- has_code: [cfnts](../repos/cloudflare__cfnts.md)
+- has_code: [ntpd-rs](../../catalog/repos/pendulum-project__ntpd-rs.md)
+- has_code: [chrony](../../catalog/repos/gitlab.com__chrony__chrony.md)
+- has_code: [cfnts](../../catalog/repos/cloudflare__cfnts.md)
 
 ## Referenced by
 
-- [NIST Authenticated NTP Service](../resources/nist-authenticated-ntp.md) (explains)
-- [RFC 7384: Security Requirements of Time Protocols in Packet Switched Networks](../resources/rfc7384-time-protocol-security.md) (cites)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [NIST Authenticated NTP Service](../../catalog/resources/nist-authenticated-ntp.md) (explains)
+- [RFC 7384: Security Requirements of Time Protocols in Packet Switched Networks](../../catalog/resources/rfc7384-time-protocol-security.md) (cites)
 
 _Indexed by lane(s): timing_

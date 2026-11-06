@@ -15,8 +15,16 @@ ESA's PNT R&D programme funding industry projects including GNSS-independent PNT
 
 - [programs-and-challenges](../../docs/landscape/programs-and-challenges.md) (landscape)
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `landscape`, `esa`, `europe`
+
+## Referenced by
+
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): landscape_

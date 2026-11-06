@@ -10,12 +10,12 @@ Interference mitigation techniques adapted to snapshot (short-capture) GNSS rece
 
 - Snapshot receivers need different mitigation than tracking receivers
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Software-defined GNSS receivers](../concepts/gnss-sdr.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md)
 
 **Tags:** `snapshot-receiver`, `mitigation`, `ion`, `webinar`
 
 ## Related
 
-- part_of: [ION Webinar Series (archive and YouTube recordings)](../resources/ion-webinar-series.md)
+- part_of: [ION Webinar Series (archive and YouTube recordings)](../../catalog/resources/ion-webinar-series.md)
 
 _Indexed by lane(s): learning_

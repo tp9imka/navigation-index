@@ -12,7 +12,7 @@ Terrain relative navigation for planetary landing that detects craters with a Ma
 
 **Hackathon notes:** Thesis code; TensorFlow 2 and pretrained weights needed.
 
-**Concepts:** [Terrain-relative navigation](../concepts/terrain-nav.md), [Space and orbital navigation](../concepts/space-nav.md)
+**Concepts:** [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md)
 
 **Tags:** `crater-detection`, `mask-rcnn`, `lunar`, `trn`
 

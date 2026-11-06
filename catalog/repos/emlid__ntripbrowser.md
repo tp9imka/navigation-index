@@ -10,9 +10,9 @@ Command-line tool that fetches and displays an NTRIP caster's source table, opti
 
 **Why it matters:** Quick way to find the nearest public base station mountpoint.
 
-**Hackathon notes:** pip install ntripbrowser; point at rtk2go or a national caster.
+**Hackathon notes:** Needs libcurl. pip install ntripbrowser still installs the 2021 release (2.2.3); the repo is at 4.0.0 (2025, Python 3.11+), so install from a clone with make install for current code. Point at rtk2go or a national caster.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md)
 
 **Tags:** `ntrip`, `cli`, `python`
 

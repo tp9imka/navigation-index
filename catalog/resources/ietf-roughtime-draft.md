@@ -11,12 +11,12 @@ IETF draft specifying Roughtime: signed coarse time responses that let clients c
 - Coarse but cryptographically accountable time
 - Good boot-time sanity bound for GNSS time
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `roughtime`, `ietf`, `authenticated-time`
 
 ## Related
 
-- has_code: [Roughtime (Cloudflare)](../repos/cloudflare__roughtime.md)
+- has_code: [Roughtime (Cloudflare)](../../catalog/repos/cloudflare__roughtime.md)
 
 _Indexed by lane(s): timing_

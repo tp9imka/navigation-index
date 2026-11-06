@@ -17,7 +17,7 @@ Current-generation Gazebo robotics simulator with pluggable physics, rendering a
 - [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
 - [gazebosim__gz-sim](../../docs/integration-cards/gazebosim__gz-sim.md) (integration-cards)
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Autopilots and flight control](../concepts/autopilot.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `gazebo`, `sitl`, `sensors`, `physics`
 
@@ -25,26 +25,29 @@ Current-generation Gazebo robotics simulator with pluggable physics, rendering a
 
 ## Related
 
-- integrates_with: [PX4 Autopilot](../repos/px4__px4-autopilot.md)
-- integrates_with: [ArduPilot](../repos/ardupilot__ardupilot.md)
-- integrates_with: [ros_gz bridge](../repos/gazebosim__ros_gz.md)
-- integrates_with: [ardupilot_gazebo](../repos/ardupilot__ardupilot_gazebo.md)
-- integrates_with: [PX4 Gazebo models](../repos/px4__px4-gazebo-models.md)
+- integrates_with: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
+- integrates_with: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
+- integrates_with: [ros_gz bridge](../../catalog/repos/gazebosim__ros_gz.md)
+- integrates_with: [ardupilot_gazebo](../../catalog/repos/ardupilot__ardupilot_gazebo.md)
+- integrates_with: [PX4 Gazebo models](../../catalog/repos/px4__px4-gazebo-models.md)
 
 ## Referenced by
 
-- [ardupilot_gazebo](../repos/ardupilot__ardupilot_gazebo.md) (integrates_with)
-- [Webots](../repos/cyberbotics__webots.md) (alternative_to)
-- [RotorS](../repos/ethz-asl__rotors_simulator.md) (alternative_to)
-- [ros_gz bridge](../repos/gazebosim__ros_gz.md) (integrates_with)
-- [Virtual RobotX (VRX)](../repos/osrf__vrx.md) (depends_on)
-- [jMAVSim](../repos/px4__jmavsim.md) (alternative_to)
-- [PX4 Gazebo models](../repos/px4__px4-gazebo-models.md) (integrates_with)
-- [PX4 SITL Gazebo Classic](../repos/px4__px4-sitl_gazebo-classic.md) (alternative_to)
-- [Gazebo documentation and tutorials](../resources/gazebo-docs-tutorials.md) (has_code)
-- [PX4 Simulation (Gazebo, SITL) documentation](../resources/px4-simulation-docs.md) (explains)
-- [PX4 Simulation (Gazebo, SITL) documentation](../resources/px4-simulation-docs.md) (uses)
-- [PX4 SITL GPS denial: inject, measure drift, recover](../samples/px4-sitl-gps-denial.md) (uses)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [ardupilot_gazebo](../../catalog/repos/ardupilot__ardupilot_gazebo.md) (integrates_with)
+- [Webots](../../catalog/repos/cyberbotics__webots.md) (alternative_to)
+- [RotorS](../../catalog/repos/ethz-asl__rotors_simulator.md) (alternative_to)
+- [ros_gz bridge](../../catalog/repos/gazebosim__ros_gz.md) (integrates_with)
+- [Virtual RobotX (VRX)](../../catalog/repos/osrf__vrx.md) (depends_on)
+- [jMAVSim](../../catalog/repos/px4__jmavsim.md) (alternative_to)
+- [PX4 Gazebo models](../../catalog/repos/px4__px4-gazebo-models.md) (integrates_with)
+- [PX4 SITL Gazebo Classic](../../catalog/repos/px4__px4-sitl_gazebo-classic.md) (alternative_to)
+- [Gazebo documentation and tutorials](../../catalog/resources/gazebo-docs-tutorials.md) (has_code)
+- [PX4 Simulation (Gazebo, SITL) documentation](../../catalog/resources/px4-simulation-docs.md) (explains)
+- [PX4 Simulation (Gazebo, SITL) documentation](../../catalog/resources/px4-simulation-docs.md) (uses)
+- [PX4 SITL GPS denial: inject, measure drift, recover](../../catalog/samples/px4-sitl-gps-denial.md) (uses)
 
 _Indexed by lane(s): sim-data_
 

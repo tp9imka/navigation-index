@@ -12,7 +12,12 @@ Cross-platform Python GUI GNSS client that displays and configures receivers ove
 
 **Hackathon notes:** pip install pygpsclient. Good bench tool to watch C/N0 drop during a jamming test in a shielded setup.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [semuconsulting__pygpsclient](../../docs/integration-cards/semuconsulting__pygpsclient.md) (integration-cards)
+
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md)
 
 **Tags:** `gui`, `ntrip`, `u-blox`, `python`
 
@@ -20,12 +25,15 @@ Cross-platform Python GUI GNSS client that displays and configures receivers ove
 
 ## Related
 
-- depends_on: [pyubx2](../repos/semuconsulting__pyubx2.md)
-- depends_on: [pygnssutils](../repos/semuconsulting__pygnssutils.md)
+- depends_on: [pyubx2](../../catalog/repos/semuconsulting__pyubx2.md)
+- depends_on: [pygnssutils](../../catalog/repos/semuconsulting__pygnssutils.md)
 
 ## Referenced by
 
-- [pyubx2](../repos/semuconsulting__pyubx2.md) (integrates_with)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [pyubx2](../../catalog/repos/semuconsulting__pyubx2.md) (integrates_with)
 
 _Indexed by lane(s): gnss_
 

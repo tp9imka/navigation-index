@@ -12,7 +12,7 @@ Command-line utilities to read and write the configuration of Leo Bodnar GPSDO d
 
 **Hackathon notes:** Only useful if you own the hardware.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `gpsdo`, `configuration`, `python`
 

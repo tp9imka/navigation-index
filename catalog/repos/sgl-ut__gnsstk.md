@@ -12,11 +12,15 @@ C++ library (successor to GPSTk) from UT Austin ARL for GNSS data formats, time 
 
 **Hackathon notes:** Build is CMake-heavy; use for robust format and time handling rather than quick demos.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Timing and time transfer](../concepts/timing.md), [Geodesy and coordinate frames](../concepts/geodesy.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Timing and time transfer](../../catalog/concepts/timing.md), [Geodesy and coordinate frames](../../catalog/concepts/geodesy.md)
 
 **Tags:** `c++`, `rinex`, `time-systems`, `gpstk`
 
 **Domains:** multi
+
+## Referenced by
+
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 
 _Indexed by lane(s): gnss_
 

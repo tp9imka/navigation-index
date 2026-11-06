@@ -12,7 +12,7 @@ Direct LiDAR-inertial-visual odometry fusing LiDAR, camera and IMU in a sequenti
 
 **Hackathon notes:** Needs hardware-synced LiDAR+camera; datasets available.
 
-**Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Visual(-inertial) odometry](../concepts/vio.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `lidar-visual`, `esikf`, `colored-map`
 
@@ -20,13 +20,13 @@ Direct LiDAR-inertial-visual odometry fusing LiDAR, camera and IMU in a sequenti
 
 ## Related
 
-- alternative_to: [R3LIVE](../repos/hku-mars__r3live.md)
-- extends: [FAST-LIO / FAST-LIO2](../repos/hku-mars__fast_lio.md)
+- alternative_to: [R3LIVE](../../catalog/repos/hku-mars__r3live.md)
+- extends: [FAST-LIO / FAST-LIO2](../../catalog/repos/hku-mars__fast_lio.md)
 
 ## Referenced by
 
-- [R3LIVE](../repos/hku-mars__r3live.md) (alternative_to)
-- [FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry](../resources/fast-livo2-zheng-2024.md) (has_code)
+- [R3LIVE](../../catalog/repos/hku-mars__r3live.md) (alternative_to)
+- [FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry](../../catalog/resources/fast-livo2-zheng-2024.md) (has_code)
 
 _Indexed by lane(s): slam_
 

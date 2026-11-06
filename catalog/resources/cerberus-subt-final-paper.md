@@ -11,17 +11,19 @@ Winning team's description of its legged-plus-aerial system: multi-modal percept
 - Robust multi-sensor odometry and exploration were key
 - Field-hardening and operator workflow mattered as much as algorithms
 
-**Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Path and motion planning](../concepts/path-planning.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+**Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `darpa-subt`, `cerberus`, `winner`
 
 ## Related
 
-- has_code: [GBPlanner (CERBERUS)](../repos/ntnu-arl__gbplanner_ros.md)
-- same_author: [CERBERUS: Autonomous Legged and Aerial Robotic Exploration in the Tunnel and Urban Circuits of the DARPA Subterranean Challenge](../resources/cerberus-tunnel-urban-paper.md)
+- has_code: [GBPlanner (CERBERUS)](../../catalog/repos/ntnu-arl__gbplanner_ros.md)
+- same_author: [CERBERUS: Autonomous Legged and Aerial Robotic Exploration in the Tunnel and Urban Circuits of the DARPA Subterranean Challenge](../../catalog/resources/cerberus-tunnel-urban-paper.md)
 
 ## Referenced by
 
-- [DARPA Subterranean (SubT) Challenge](../resources/darpa-subt-challenge.md) (part_of)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [DARPA Subterranean (SubT) Challenge](../../catalog/resources/darpa-subt-challenge.md) (part_of)
 
 _Indexed by lane(s): defense-context_

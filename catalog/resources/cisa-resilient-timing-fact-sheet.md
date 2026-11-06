@@ -11,16 +11,16 @@ Short fact sheet that frames time as an invisible utility, lists sectors that de
 - Many organizations do not know where their time comes from
 - Short entry point before the longer CISA time guidance
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `cisa`, `fact-sheet`, `resilient-timing`
 
 ## Related
 
-- same_author: [Time Guidance for Network Operators, Chief Information Officers, and Chief Information Security Officers](../resources/cisa-time-guidance-network-operators.md)
+- same_author: [Time Guidance for Network Operators, Chief Information Officers, and Chief Information Security Officers](../../catalog/resources/cisa-time-guidance-network-operators.md)
 
 ## Referenced by
 
-- [Time Guidance for Network Operators, Chief Information Officers, and Chief Information Security Officers](../resources/cisa-time-guidance-network-operators.md) (same_author)
+- [Time Guidance for Network Operators, Chief Information Officers, and Chief Information Security Officers](../../catalog/resources/cisa-time-guidance-network-operators.md) (same_author)
 
 _Indexed by lane(s): timing_

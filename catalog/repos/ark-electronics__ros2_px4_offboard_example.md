@@ -12,7 +12,7 @@ Small example of driving PX4 velocity setpoints from ROS 2 teleop, with SITL lau
 
 **Hackathon notes:** Runs against PX4 SITL in about an hour (README pins PX4 release/1.15, ROS 2 Humble, Ubuntu 22.04). The README says the tutorial has moved to ARK-Electronics/ros2_px4_teleop_example (C++, PX4 custom modes); use that for current PX4.
 
-**Concepts:** [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Autopilots and flight control](../concepts/autopilot.md)
+**Concepts:** [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
 **Tags:** `ros2`, `offboard`, `example`
 
@@ -20,8 +20,8 @@ Small example of driving PX4 velocity setpoints from ROS 2 teleop, with SITL lau
 
 ## Related
 
-- depends_on: [px4_msgs](../repos/px4__px4_msgs.md)
-- integrates_with: [PX4 Autopilot](../repos/px4__px4-autopilot.md)
+- depends_on: [px4_msgs](../../catalog/repos/px4__px4_msgs.md)
+- integrates_with: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
 
 _Indexed by lane(s): autopilots_
 

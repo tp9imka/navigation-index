@@ -12,7 +12,7 @@ Python clients for KiwiSDR receivers, including recorders that save IQ with GNSS
 
 **Hackathon notes:** Pure Python; record from public KiwiSDRs. Timestamps are only as good as each receiver's GNSS.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [RF localization and direction finding](../concepts/rf-localization.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 
 **Tags:** `kiwisdr`, `hf`, `iq`, `gnss-timestamps`, `tdoa`
 
@@ -20,7 +20,11 @@ Python clients for KiwiSDR receivers, including recorders that save IQ with GNSS
 
 ## Related
 
-- integrates_with: [KiwiSDR](../repos/jks-prv__kiwisdr.md)
+- integrates_with: [KiwiSDR](../../catalog/repos/jks-prv__kiwisdr.md)
+
+## Referenced by
+
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 
 _Indexed by lane(s): timing_
 

@@ -12,14 +12,18 @@ A free, detailed field-by-field reference to NMEA 0183 sentences as actually emi
 - Covers talker IDs for multi-GNSS output
 - Written by gpsd maintainers who parse these daily
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `nmea0183`, `gpsd`, `reference`
 
 ## Related
 
-- has_code: [gpsd](../repos/gitlab.com__gpsd__gpsd.md)
-- has_code: [pynmeagps](../repos/semuconsulting__pynmeagps.md)
-- explains: [NMEA 0183 Interface Standard](../resources/nmea-0183-standard.md)
+- has_code: [gpsd](../../catalog/repos/gitlab.com__gpsd__gpsd.md)
+- has_code: [pynmeagps](../../catalog/repos/semuconsulting__pynmeagps.md)
+- explains: [NMEA 0183 Interface Standard](../../catalog/resources/nmea-0183-standard.md)
+
+## Referenced by
+
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 
 _Indexed by lane(s): docs-standards_

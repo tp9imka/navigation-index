@@ -12,7 +12,7 @@ Guidance, navigation and control software from NTNU's student Vortex team for co
 
 **Hackathon notes:** ROS 2 workspace; sim integration via their companion repos.
 
-**Concepts:** [Underwater navigation](../concepts/underwater-nav.md), [Autopilots and flight control](../concepts/autopilot.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `auv`, `gnc`, `ros2`, `robosub`
 
@@ -20,7 +20,7 @@ Guidance, navigation and control software from NTNU's student Vortex team for co
 
 ## Related
 
-- integrates_with: [Stonefish](../repos/patrykcieslak__stonefish.md)
+- integrates_with: [Stonefish](../../catalog/repos/patrykcieslak__stonefish.md)
 
 _Indexed by lane(s): domains-swarm_
 

@@ -6,13 +6,13 @@
 |---|---|---|---|---|---|---|
 | 239 | C++ | LGPL-3.0 | 2026-10-29 | False | production | high |
 
-Gazebo Sim plugins and models that connect ArduPilot SITL to Gazebo physics for copters, rovers and boats.
+Gazebo Sim plugins that connect ArduPilot SITL to Gazebo physics, with example Iris copter and Zephyr plane models and worlds.
 
 **Why it matters:** Brings ArduPilot vehicles (copter, plane, rover, boat) into gz-sim with realistic sensors for nav and autonomy testing.
 
-**Hackathon notes:** Build against your Gazebo release, run sim_vehicle.py with '-f gazebo-iris --model JSON'. Follow the README's environment variables for model paths.
+**Hackathon notes:** Follow the ArduPilot wiki Gazebo guide; works best on Ubuntu (macOS also supported). No rover or boat models ship here, so a USV/rover test needs a model from elsewhere, such as ardupilot/SITL_Models.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Autopilots and flight control](../concepts/autopilot.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
 **Tags:** `gazebo`, `sitl`, `plugins`, `plugin`, `ardupilot`
 
@@ -20,19 +20,22 @@ Gazebo Sim plugins and models that connect ArduPilot SITL to Gazebo physics for 
 
 ## Related
 
-- integrates_with: [ArduPilot](../repos/ardupilot__ardupilot.md)
-- alternative_to: [PX4 SITL Gazebo Classic](../repos/px4__px4-sitl_gazebo-classic.md)
-- extends: [ArduPilot](../repos/ardupilot__ardupilot.md)
-- integrates_with: [Gazebo Sim (gz-sim)](../repos/gazebosim__gz-sim.md)
-- integrates_with: [ArduPilot SITL Models](../repos/ardupilot__sitl_models.md)
+- integrates_with: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
+- alternative_to: [PX4 SITL Gazebo Classic](../../catalog/repos/px4__px4-sitl_gazebo-classic.md)
+- extends: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
+- integrates_with: [Gazebo Sim (gz-sim)](../../catalog/repos/gazebosim__gz-sim.md)
+- integrates_with: [ArduPilot SITL Models](../../catalog/repos/ardupilot__sitl_models.md)
 
 ## Referenced by
 
-- [ArduPilot](../repos/ardupilot__ardupilot.md) (integrates_with)
-- [ardupilot_gz](../repos/ardupilot__ardupilot_gz.md) (depends_on)
-- [ArduPilot SITL Models](../repos/ardupilot__sitl_models.md) (integrates_with)
-- [Gazebo Sim (gz-sim)](../repos/gazebosim__gz-sim.md) (integrates_with)
-- [ArduPilot SITL Simulator (Software in the Loop)](../resources/ardupilot-sitl-docs.md) (explains)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md) (integrates_with)
+- [ardupilot_gz](../../catalog/repos/ardupilot__ardupilot_gz.md) (depends_on)
+- [ArduPilot SITL Models](../../catalog/repos/ardupilot__sitl_models.md) (integrates_with)
+- [Gazebo Sim (gz-sim)](../../catalog/repos/gazebosim__gz-sim.md) (integrates_with)
+- [SITL Simulator (Software in the Loop)](../../catalog/resources/ardupilot-sitl-docs.md) (explains)
 
 _Indexed by lane(s): autopilots, domains-swarm, sim-data_
 

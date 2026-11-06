@@ -15,8 +15,13 @@ Analysis of Ukraine's defence-tech ecosystem at the end of 2025, noting that GNS
 
 - [trends-2025-2026](../../docs/landscape/trends-2025-2026.md) (landscape)
 
-**Concepts:** [Electronic warfare resilience](../concepts/ew-resilience.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `ukraine`, `deftech`, `analysis`
+
+## Referenced by
+
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
 
 _Indexed by lane(s): learning_

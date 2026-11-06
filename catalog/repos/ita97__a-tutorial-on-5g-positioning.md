@@ -10,9 +10,9 @@ MATLAB simulation code accompanying an IEEE tutorial on 5G positioning (timing, 
 
 **Why it matters:** Cellular positioning is a fallback PNT source; this is a didactic, runnable starting point.
 
-**Hackathon notes:** MATLAB needed (Octave may partly work).
+**Hackathon notes:** MATLAB with the 5G Toolbox and Phased Array System Toolbox is needed, so Octave will not work; only the outdoor scenario is included.
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [RF localization and direction finding](../concepts/rf-localization.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 
 **Tags:** `5g`, `matlab`, `tutorial`
 

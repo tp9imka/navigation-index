@@ -17,7 +17,7 @@ Pure-Python 3D coordinate conversions: geodetic, ECEF, ENU, NED, AER, ECI, with 
 - [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
 - [geospace-code__pymap3d](../../docs/integration-cards/geospace-code__pymap3d.md) (integration-cards)
 
-**Concepts:** [Geodesy and coordinate frames](../concepts/geodesy.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Geodesy and coordinate frames](../../catalog/concepts/geodesy.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `ecef`, `enu`, `ned`, `aer`
 
@@ -25,11 +25,14 @@ Pure-Python 3D coordinate conversions: geodetic, ECEF, ENU, NED, AER, ECI, with 
 
 ## Related
 
-- alternative_to: [pyproj](../repos/pyproj4__pyproj.md)
+- alternative_to: [pyproj](../../catalog/repos/pyproj4__pyproj.md)
 
 ## Referenced by
 
-- [pyproj](../repos/pyproj4__pyproj.md) (alternative_to)
+- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [pyproj](../../catalog/repos/pyproj4__pyproj.md) (alternative_to)
 
 _Indexed by lane(s): planning-gis-c2_
 

@@ -12,7 +12,7 @@ Source of the mavlink.io documentation: protocol, microservices (mission, parame
 
 **Hackathon notes:** Read the microservice pages before implementing anything stateful.
 
-**Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `docs`, `microservices`
 
@@ -20,11 +20,11 @@ Source of the mavlink.io documentation: protocol, microservices (mission, parame
 
 ## Related
 
-- same_org: [MAVLink](../repos/mavlink__mavlink.md)
+- same_org: [MAVLink](../../catalog/repos/mavlink__mavlink.md)
 
 ## Referenced by
 
-- [MAVLink](../repos/mavlink__mavlink.md) (same_org)
+- [MAVLink](../../catalog/repos/mavlink__mavlink.md) (same_org)
 
 _Indexed by lane(s): autopilots_
 

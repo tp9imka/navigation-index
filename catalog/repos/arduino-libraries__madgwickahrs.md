@@ -12,7 +12,7 @@ Official Arduino library implementing the Madgwick AHRS filter.
 
 **Hackathon notes:** Install from the Arduino library manager; set sample rate correctly.
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `ahrs`, `arduino`, `madgwick`
 
@@ -20,12 +20,12 @@ Official Arduino library implementing the Madgwick AHRS filter.
 
 ## Related
 
-- alternative_to: [x-io Fusion](../repos/xiotechnologies__fusion.md)
+- alternative_to: [x-io Fusion](../../catalog/repos/xiotechnologies__fusion.md)
 
 ## Referenced by
 
-- [x-io Fusion](../repos/xiotechnologies__fusion.md) (alternative_to)
-- [An efficient orientation filter for inertial and inertial/magnetic sensor arrays](../resources/madgwick-orientation-filter-report.md) (has_code)
+- [x-io Fusion](../../catalog/repos/xiotechnologies__fusion.md) (alternative_to)
+- [An efficient orientation filter for inertial and inertial/magnetic sensor arrays](../../catalog/resources/madgwick-orientation-filter-report.md) (has_code)
 
 _Indexed by lane(s): ins-fusion_
 

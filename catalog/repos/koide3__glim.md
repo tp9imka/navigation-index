@@ -12,7 +12,7 @@ Versatile point-cloud localization and mapping framework with GPU-accelerated fa
 
 **Hackathon notes:** Prebuilt packages exist for ROS 2; GPU optional but recommended.
 
-**Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `gpu`, `factor-graph`, `ros2`
 
@@ -20,12 +20,12 @@ Versatile point-cloud localization and mapping framework with GPU-accelerated fa
 
 ## Related
 
-- same_org: [fast_gicp](../repos/koide3__fast_gicp.md)
-- alternative_to: [hdl_graph_slam](../repos/koide3__hdl_graph_slam.md)
+- same_org: [fast_gicp](../../catalog/repos/koide3__fast_gicp.md)
+- alternative_to: [hdl_graph_slam](../../catalog/repos/koide3__hdl_graph_slam.md)
 
 ## Referenced by
 
-- [hdl_graph_slam](../repos/koide3__hdl_graph_slam.md) (alternative_to)
+- [hdl_graph_slam](../../catalog/repos/koide3__hdl_graph_slam.md) (alternative_to)
 
 _Indexed by lane(s): slam_
 

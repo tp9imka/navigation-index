@@ -15,12 +15,18 @@ Shows that unsupervised aggregation of foundation-model (DINOv2) features gives 
 
 - [anyloc-universal-vpr-2023](../../docs/paper-digests/anyloc-universal-vpr-2023.md) (paper-digests)
 
-**Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `arxiv`, `dinov2`
 
 ## Related
 
-- has_code: [AnyLoc](../repos/anyloc__anyloc.md)
+- has_code: [AnyLoc](../../catalog/repos/anyloc__anyloc.md)
+
+## Referenced by
+
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [Large-area visual place recognition for lost-GNSS recovery (DINOv2 GeM / VLAD over a 49 km2 NAIP tile DB, chained to LightGlue fine matching)](../../catalog/samples/vpr-large-area.md) (explains)
 
 _Indexed by lane(s): alt-nav_

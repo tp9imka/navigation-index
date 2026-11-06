@@ -12,7 +12,7 @@ Proof-of-concept that feeds crafted NMEA sentences to a GPS-referenced NTP serve
 
 **Hackathon notes:** Only for a closed lab against your own time server; no RF needed. Use it to show the detector alarm, not to attack anything.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Jamming and spoofing](../concepts/gnss-interference.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
 **Tags:** `ntp`, `nmea`, `spoofing`, `red-team`
 
@@ -20,7 +20,11 @@ Proof-of-concept that feeds crafted NMEA sentences to a GPS-referenced NTP serve
 
 ## Related
 
-- integrates_with: [gpsd](../repos/gitlab.com__gpsd__gpsd.md)
+- integrates_with: [gpsd](../../catalog/repos/gitlab.com__gpsd__gpsd.md)
+
+## Referenced by
+
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 
 _Indexed by lane(s): timing_
 

@@ -12,7 +12,12 @@ Python state estimation package on Lie groups (McGill DECAR): EKF, iterated EKF,
 
 **Hackathon notes:** pip install; has IMU and GNSS-like examples.
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+## Deep dives
+
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [decargroup__navlie](../../docs/integration-cards/decargroup__navlie.md) (integration-cards)
+
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `lie-group`, `ekf`, `iekf`, `python`
 
@@ -20,13 +25,16 @@ Python state estimation package on Lie groups (McGill DECAR): EKF, iterated EKF,
 
 ## Related
 
-- alternative_to: [FilterPy](../repos/rlabbe__filterpy.md)
-- alternative_to: [manif](../repos/artivis__manif.md)
+- alternative_to: [FilterPy](../../catalog/repos/rlabbe__filterpy.md)
+- alternative_to: [manif](../../catalog/repos/artivis__manif.md)
 
 ## Referenced by
 
-- [manif](../repos/artivis__manif.md) (alternative_to)
-- [FilterPy](../repos/rlabbe__filterpy.md) (alternative_to)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [manif](../../catalog/repos/artivis__manif.md) (alternative_to)
+- [FilterPy](../../catalog/repos/rlabbe__filterpy.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 

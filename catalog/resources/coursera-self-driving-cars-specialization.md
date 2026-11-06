@@ -11,12 +11,13 @@ Four-course specialization covering vehicle dynamics and control, state estimati
 - End-to-end autonomy pipeline in one program
 - CARLA-based assignments transfer to hackathon sims
 
-**Concepts:** [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Path and motion planning](../concepts/path-planning.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `coursera`, `carla`, `autonomous-driving`
 
 ## Referenced by
 
-- [State Estimation and Localization for Self-Driving Cars (Coursera)](../resources/coursera-state-estimation-localization-sdc.md) (part_of)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
+- [State Estimation and Localization for Self-Driving Cars (Coursera)](../../catalog/resources/coursera-state-estimation-localization-sdc.md) (part_of)
 
 _Indexed by lane(s): learning_

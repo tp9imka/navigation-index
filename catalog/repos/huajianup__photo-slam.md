@@ -10,9 +10,9 @@ Couples ORB-SLAM3-style geometric tracking with a photorealistic Gaussian map fo
 
 **Why it matters:** Classic robust tracking plus a nice-looking map, closer to real time than pure splatting SLAM.
 
-**Hackathon notes:** LibTorch + CUDA build; check version pins carefully.
+**Hackathon notes:** LibTorch + CUDA build; check version pins carefully. Licence: GPL-3.0 overall, but the repo also ships the Inria Gaussian-Splatting licence (LICENSE.md), which limits that code to non-commercial research use.
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `3dgs`, `orb-slam3`, `libtorch`
 
@@ -20,12 +20,12 @@ Couples ORB-SLAM3-style geometric tracking with a photorealistic Gaussian map fo
 
 ## Related
 
-- depends_on: [ORB-SLAM3](../repos/uz-slamlab__orb_slam3.md)
-- alternative_to: [MonoGS (Gaussian Splatting SLAM)](../repos/muskie82__monogs.md)
+- depends_on: [ORB-SLAM3](../../catalog/repos/uz-slamlab__orb_slam3.md)
+- alternative_to: [MonoGS (Gaussian Splatting SLAM)](../../catalog/repos/muskie82__monogs.md)
 
 ## Referenced by
 
-- [MonoGS (Gaussian Splatting SLAM)](../repos/muskie82__monogs.md) (alternative_to)
+- [MonoGS (Gaussian Splatting SLAM)](../../catalog/repos/muskie82__monogs.md) (alternative_to)
 
 _Indexed by lane(s): slam_
 

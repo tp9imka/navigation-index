@@ -16,8 +16,14 @@ English: 'Built EW-proof drone navigation at 17: the story of a Kyiv student who
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Terrain-relative navigation](../concepts/terrain-nav.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+**Concepts:** [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `lang:uk`, `dou`, `osm`, `rangefinder`, `student`
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_

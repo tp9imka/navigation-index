@@ -12,7 +12,7 @@ MATLAB scripts producing IMU Allan standard deviation charts and Kalibr-ready no
 
 **Hackathon notes:** Archived; prefer allan_variance_ros.
 
-**Concepts:** [Sensor calibration](../concepts/calibration.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Sensor calibration](../../catalog/concepts/calibration.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `allan-variance`, `matlab`, `archived`
 
@@ -20,7 +20,11 @@ MATLAB scripts producing IMU Allan standard deviation charts and Kalibr-ready no
 
 ## Related
 
-- alternative_to: [allan_variance_ros](../repos/ori-drs__allan_variance_ros.md)
+- alternative_to: [allan_variance_ros](../../catalog/repos/ori-drs__allan_variance_ros.md)
+
+## Referenced by
+
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 
 _Indexed by lane(s): ins-fusion_
 

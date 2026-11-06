@@ -10,12 +10,16 @@ Benchmark and workshop series for 6-DoF visual localization under changing condi
 
 - Standard evaluation for map-based visual relocalization
 
-**Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `benchmark`, `relocalization`
 
 ## Related
 
-- evaluates: [hloc](../repos/cvg__hierarchical-localization.md)
+- evaluates: [hloc](../../catalog/repos/cvg__hierarchical-localization.md)
+
+## Referenced by
+
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 
 _Indexed by lane(s): learning_

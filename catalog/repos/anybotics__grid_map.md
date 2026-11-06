@@ -12,7 +12,12 @@ C++ library and ROS integration for multi-layer 2.5D grid maps, widely used for 
 
 **Hackathon notes:** apt install ros-<distro>-grid-map; convert DEMs or point clouds to layers quickly.
 
-**Concepts:** [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md), [Path and motion planning](../concepts/path-planning.md)
+## Deep dives
+
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [anybotics__grid_map](../../docs/integration-cards/anybotics__grid_map.md) (integration-cards)
+
+**Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md), [Path and motion planning](../../catalog/concepts/path-planning.md)
 
 **Tags:** `grid-map`, `elevation`, `ros`
 
@@ -20,14 +25,15 @@ C++ library and ROS integration for multi-layer 2.5D grid maps, widely used for 
 
 ## Related
 
-- integrates_with: [elevation_mapping_cupy](../repos/leggedrobotics__elevation_mapping_cupy.md)
-- integrates_with: [elevation_mapping](../repos/leggedrobotics__elevation_mapping.md)
+- integrates_with: [elevation_mapping_cupy](../../catalog/repos/leggedrobotics__elevation_mapping_cupy.md)
+- integrates_with: [elevation_mapping](../../catalog/repos/leggedrobotics__elevation_mapping.md)
 
 ## Referenced by
 
-- [elevation_mapping](../repos/leggedrobotics__elevation_mapping.md) (depends_on)
-- [elevation_mapping_cupy](../repos/leggedrobotics__elevation_mapping_cupy.md) (depends_on)
-- [traversability_estimation](../repos/leggedrobotics__traversability_estimation.md) (depends_on)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [elevation_mapping](../../catalog/repos/leggedrobotics__elevation_mapping.md) (depends_on)
+- [elevation_mapping_cupy](../../catalog/repos/leggedrobotics__elevation_mapping_cupy.md) (depends_on)
+- [traversability_estimation](../../catalog/repos/leggedrobotics__traversability_estimation.md) (depends_on)
 
 _Indexed by lane(s): domains-swarm_
 

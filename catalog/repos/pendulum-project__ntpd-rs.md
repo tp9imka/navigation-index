@@ -12,7 +12,7 @@ A memory-safe NTP client and server in Rust with NTS support, from the Pendulum 
 
 **Hackathon notes:** Packages and a container exist; configure NTS sources and read offsets via ntp-ctl. Its source-selection behaviour is a useful comparison with chrony.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `ntp`, `nts`, `rust`, `memory-safe`
 
@@ -20,18 +20,19 @@ A memory-safe NTP client and server in Rust with NTS support, from the Pendulum 
 
 ## Related
 
-- alternative_to: [chrony](../repos/gitlab.com__chrony__chrony.md)
-- same_org: [Statime](../repos/pendulum-project__statime.md)
-- same_org: [NTS pool](../repos/pendulum-project__nts-pool.md)
+- alternative_to: [chrony](../../catalog/repos/gitlab.com__chrony__chrony.md)
+- same_org: [Statime](../../catalog/repos/pendulum-project__statime.md)
+- same_org: [NTS pool](../../catalog/repos/pendulum-project__nts-pool.md)
 
 ## Referenced by
 
-- [cfnts](../repos/cloudflare__cfnts.md) (alternative_to)
-- [chrony](../repos/gitlab.com__chrony__chrony.md) (alternative_to)
-- [NTS pool](../repos/pendulum-project__nts-pool.md) (same_org)
-- [Statime](../repos/pendulum-project__statime.md) (same_org)
-- [Comparison of NTP implementations (chrony)](../resources/chrony-comparison.md) (explains)
-- [RFC 8915: Network Time Security for the Network Time Protocol](../resources/rfc8915-nts.md) (has_code)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [cfnts](../../catalog/repos/cloudflare__cfnts.md) (alternative_to)
+- [chrony](../../catalog/repos/gitlab.com__chrony__chrony.md) (alternative_to)
+- [NTS pool](../../catalog/repos/pendulum-project__nts-pool.md) (same_org)
+- [Statime](../../catalog/repos/pendulum-project__statime.md) (same_org)
+- [Comparison of NTP implementations (chrony)](../../catalog/resources/chrony-comparison.md) (explains)
+- [RFC 8915: Network Time Security for the Network Time Protocol](../../catalog/resources/rfc8915-nts.md) (has_code)
 
 _Indexed by lane(s): timing_
 

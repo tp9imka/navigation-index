@@ -12,16 +12,17 @@ NIST tutorial and reference on characterizing clocks and oscillators: Allan, mod
 - Remove drift separately; ADEV alone does not show aging
 - TDEV is the time-domain statistic for time error over an interval
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Sensor calibration](../concepts/calibration.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 
 **Tags:** `allan-deviation`, `tdev`, `frequency-stability`, `nist`
 
 ## Related
 
-- has_code: [allantools](../repos/aewallin__allantools.md)
+- has_code: [allantools](../../catalog/repos/aewallin__allantools.md)
 
 ## Referenced by
 
-- [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../samples/timing-holdover.md) (uses)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../../catalog/samples/timing-holdover.md) (uses)
 
 _Indexed by lane(s): timing_

@@ -12,7 +12,7 @@ Czech Technical University's multi-robot UAV platform with control, estimation (
 
 **Hackathon notes:** Install via apt; simulation tutorials are good. Moving between ROS 1 and ROS 2 versions, so check the branch.
 
-**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Autopilots and flight control](../concepts/autopilot.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `mrs`, `ctu`, `swarm`, `px4`
 
@@ -20,14 +20,15 @@ Czech Technical University's multi-robot UAV platform with control, estimation (
 
 ## Related
 
-- integrates_with: [UVDAR](../repos/ctu-mrs__uvdar_core.md)
-- alternative_to: [Aerostack2](../repos/aerostack2__aerostack2.md)
+- integrates_with: [UVDAR](../../catalog/repos/ctu-mrs__uvdar_core.md)
+- alternative_to: [Aerostack2](../../catalog/repos/aerostack2__aerostack2.md)
 
 ## Referenced by
 
-- [Aerostack2](../repos/aerostack2__aerostack2.md) (alternative_to)
-- [UVDAR](../repos/ctu-mrs__uvdar_core.md) (extends)
-- [Kilometer-Scale GNSS-Denied UAV Navigation via Heightmap Gradients: A Winning System from the SPRIN-D Challenge](../resources/sprind-heightmap-gradients-2025.md) (uses)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Aerostack2](../../catalog/repos/aerostack2__aerostack2.md) (alternative_to)
+- [UVDAR](../../catalog/repos/ctu-mrs__uvdar_core.md) (extends)
+- [Kilometer-Scale GNSS-Denied UAV Navigation via Heightmap Gradients: A Winning System from the SPRIN-D Challenge](../../catalog/resources/sprind-heightmap-gradients-2025.md) (uses)
 
 _Indexed by lane(s): domains-swarm_
 

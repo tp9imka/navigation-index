@@ -12,7 +12,7 @@ ETH ASL calibration toolbox for multi-camera and camera-IMU systems (extrinsics 
 
 **Hackathon notes:** Use the Docker image to avoid ROS 1 build pain; print an AprilGrid target in advance.
 
-**Concepts:** [Sensor calibration](../concepts/calibration.md), [Visual(-inertial) odometry](../concepts/vio.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Sensor calibration](../../catalog/concepts/calibration.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `camera-imu`, `extrinsics`, `time-offset`, `aprilgrid`, `ros1`
 
@@ -20,20 +20,22 @@ ETH ASL calibration toolbox for multi-camera and camera-IMU systems (extrinsics 
 
 ## Related
 
-- alternative_to: [iKalibr](../repos/unsigned-long__ikalibr.md)
-- integrates_with: [allan_variance_ros](../repos/ori-drs__allan_variance_ros.md)
-- integrates_with: [OpenVINS](../repos/rpng__open_vins.md)
-- integrates_with: [ORB-SLAM3](../repos/uz-slamlab__orb_slam3.md)
+- alternative_to: [iKalibr](../../catalog/repos/unsigned-long__ikalibr.md)
+- integrates_with: [allan_variance_ros](../../catalog/repos/ori-drs__allan_variance_ros.md)
+- integrates_with: [OpenVINS](../../catalog/repos/rpng__open_vins.md)
+- integrates_with: [ORB-SLAM3](../../catalog/repos/uz-slamlab__orb_slam3.md)
 
 ## Referenced by
 
-- [cuckoo_time_translator](../repos/ethz-asl__cuckoo_time_translator.md) (same_org)
-- [imu_tk](../repos/kyle-ak__imu_tk.md) (alternative_to)
-- [allan_variance_ros](../repos/ori-drs__allan_variance_ros.md) (integrates_with)
-- [iKalibr](../repos/unsigned-long__ikalibr.md) (alternative_to)
-- [ORB-SLAM3](../repos/uz-slamlab__orb_slam3.md) (integrates_with)
-- [Kalibr wiki: IMU Noise Model](../resources/kalibr-imu-noise-model-wiki.md) (part_of)
-- [Kalibr wiki: camera-IMU calibration tutorials](../resources/kalibr-wiki.md) (has_code)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [cuckoo_time_translator](../../catalog/repos/ethz-asl__cuckoo_time_translator.md) (same_org)
+- [imu_tk](../../catalog/repos/kyle-ak__imu_tk.md) (alternative_to)
+- [allan_variance_ros](../../catalog/repos/ori-drs__allan_variance_ros.md) (integrates_with)
+- [iKalibr](../../catalog/repos/unsigned-long__ikalibr.md) (alternative_to)
+- [ORB-SLAM3](../../catalog/repos/uz-slamlab__orb_slam3.md) (integrates_with)
+- [Kalibr wiki: IMU Noise Model](../../catalog/resources/kalibr-imu-noise-model-wiki.md) (part_of)
+- [Kalibr wiki: camera-IMU calibration tutorials](../../catalog/resources/kalibr-wiki.md) (has_code)
 
 _Indexed by lane(s): ins-fusion, slam_
 

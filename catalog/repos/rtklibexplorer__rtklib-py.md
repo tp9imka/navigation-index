@@ -12,7 +12,7 @@ Python port of the demo5 RTKLIB positioning core, currently focused on post-proc
 
 **Hackathon notes:** Slow compared to C RTKLIB and PPK only; last pushed 2023. Ideal for instrumenting or modifying the filter during a hackathon.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md)
 
 **Tags:** `ppk`, `python`, `rtklib-port`
 
@@ -20,12 +20,12 @@ Python port of the demo5 RTKLIB positioning core, currently focused on post-proc
 
 ## Related
 
-- extends: [RTKLIB demo5 (rtklibexplorer)](../repos/rtklibexplorer__rtklib.md)
+- extends: [RTKLIB demo5 (rtklibexplorer)](../../catalog/repos/rtklibexplorer__rtklib.md)
 
 ## Referenced by
 
-- [RTKLIB demo5 (rtklibexplorer)](../repos/rtklibexplorer__rtklib.md) (same_org)
-- [RTKLIB](../repos/tomojitakasu__rtklib.md) (alternative_to)
+- [RTKLIB demo5 (rtklibexplorer)](../../catalog/repos/rtklibexplorer__rtklib.md) (same_org)
+- [RTKLIB](../../catalog/repos/tomojitakasu__rtklib.md) (alternative_to)
 
 _Indexed by lane(s): gnss_
 

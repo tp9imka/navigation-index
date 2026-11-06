@@ -10,12 +10,16 @@ Slides from the RSS 2024 aerial swarms workshop discussing reliable GNSS-denied 
 
 - Relative localization (UVDAR) as swarm enabler
 
-**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `rss2024`, `ctu`, `swarm`
 
 ## Related
 
-- explains: [UVDAR](../repos/ctu-mrs__uvdar_core.md)
+- explains: [UVDAR](../../catalog/repos/ctu-mrs__uvdar_core.md)
+
+## Referenced by
+
+- [Cooperative localization for a GNSS-denied team: UWB ranging, centralized EKF vs covariance intersection, and a spoofed anchor](../../catalog/samples/swarm-coop-localization.md) (explains)
 
 _Indexed by lane(s): round3-expansion_

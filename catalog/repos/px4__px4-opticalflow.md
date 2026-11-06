@@ -10,9 +10,9 @@ Algorithms for computing optical flow from a downward camera to produce velocity
 
 **Why it matters:** Optical flow plus range finder is the cheapest GNSS-free velocity source for low-altitude hover and drift control.
 
-**Hackathon notes:** Can run on a companion and publish OPTICAL_FLOW_RAD over MAVLink; check activity before depending on it.
+**Hackathon notes:** Library only (PX4Flow SAD block matching and an OpenCV KLT variant behind calcFlow()); there is no executable or MAVLink output, so you write the camera capture and OPTICAL_FLOW_RAD publishing yourself. The Gazebo Classic flow plugin is the reference user. Light maintenance commits in 2026.
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `optical-flow`, `px4flow`, `camera`
 
@@ -20,12 +20,12 @@ Algorithms for computing optical flow from a downward camera to produce velocity
 
 ## Related
 
-- integrates_with: [PX4 Autopilot](../repos/px4__px4-autopilot.md)
-- integrates_with: [ArduPilot](../repos/ardupilot__ardupilot.md)
+- integrates_with: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
+- integrates_with: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
 
 ## Referenced by
 
-- [Optical Flow (PX4)](../resources/px4-optical-flow-docs.md) (has_code)
+- [Optical Flow](../../catalog/resources/px4-optical-flow-docs.md) (has_code)
 
 _Indexed by lane(s): autopilots_
 

@@ -11,12 +11,17 @@ Vendor documentation for Water Linked DVLs and Underwater GPS (USBL-style) syste
 - DVL reports velocity and dead-reckoning over JSON/TCP
 - Check firmware version against protocol version
 
-**Concepts:** [Underwater navigation](../concepts/underwater-nav.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `dvl`, `usbl`, `waterlinked`, `protocol`
 
 ## Related
 
-- explains: [Water Linked DVL Python](../repos/waterlinked__dvl-python.md)
+- explains: [Water Linked DVL Python](../../catalog/repos/waterlinked__dvl-python.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 
 _Indexed by lane(s): domains-swarm_

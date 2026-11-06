@@ -12,7 +12,7 @@ Baseline for last-meter UAV navigation using diffusion-refined aerial visual ser
 
 **Hackathon notes:** No licence on the repo. Training needs University-1652 (request-only, research use only), and the bundled SuperGlue code is Magic Leap's non-commercial research-only code. Competition test set is on HF; official scores only via CodaBench.
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `visual-servoing`, `diffusion`, `uavm2026`
 
@@ -20,12 +20,12 @@ Baseline for last-meter UAV navigation using diffusion-refined aerial visual ser
 
 ## Related
 
-- same_org: [UAVM 2024 challenge](../repos/wtyhub__uavm2024.md)
+- same_org: [UAVM 2024 challenge](../../catalog/repos/wtyhub__uavm2024.md)
 
 ## Referenced by
 
-- [ACM MM 2026 Workshop on UAVs (UAVM 2026)](../resources/acmmm-2026-uav-workshop.md) (has_code)
-- [Last-Meter Precision Navigation for UAVs: A Diffusion-Refined Aerial Visual Servoing Approach](../resources/pairuav-last-meter-2026.md) (has_code)
+- [ACM MM 2026 Workshop on UAVs (UAVM 2026)](../../catalog/resources/acmmm-2026-uav-workshop.md) (has_code)
+- [Last-Meter Precision Navigation for UAVs: A Diffusion-Refined Aerial Visual Servoing Approach](../../catalog/resources/pairuav-last-meter-2026.md) (has_code)
 
 _Indexed by lane(s): round3-expansion_
 

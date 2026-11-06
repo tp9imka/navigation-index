@@ -12,13 +12,13 @@ Japan's QZSS interface specifications covering GPS-compatible signals, the L6 CL
 - CLAS and MADOCA give free precise positioning corrections
 - Specs are published openly by the Cabinet Office
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `qzss`, `clas`, `madoca`, `l6`
 
 ## Related
 
-- has_code: [RTKLIB](../repos/tomojitakasu__rtklib.md)
-- has_code: [RTKLIB demo5 (rtklibexplorer)](../repos/rtklibexplorer__rtklib.md)
+- has_code: [RTKLIB](../../catalog/repos/tomojitakasu__rtklib.md)
+- has_code: [RTKLIB demo5 (rtklibexplorer)](../../catalog/repos/rtklibexplorer__rtklib.md)
 
 _Indexed by lane(s): docs-standards_

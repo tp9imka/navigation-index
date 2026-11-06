@@ -12,7 +12,7 @@ Pointer repo for the ROS bag files used in MIT's Visual Navigation for Autonomou
 
 **Hackathon notes:** Only a README with a download link; fetch bags alongside VNAV-labs.
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `course`, `rosbag`, `mit`
 
@@ -20,12 +20,12 @@ Pointer repo for the ROS bag files used in MIT's Visual Navigation for Autonomou
 
 ## Related
 
-- integrates_with: [MIT VNAV labs](../repos/mit-spark__vnav-labs.md)
+- integrates_with: [MIT VNAV labs](../../catalog/repos/mit-spark__vnav-labs.md)
 
 ## Referenced by
 
-- [MIT VNAV labs](../repos/mit-spark__vnav-labs.md) (depends_on)
-- [MIT 16.485 Visual Navigation for Autonomous Vehicles (VNAV)](../resources/mit-vnav-16485.md) (uses)
+- [MIT VNAV labs](../../catalog/repos/mit-spark__vnav-labs.md) (depends_on)
+- [MIT 16.485 Visual Navigation for Autonomous Vehicles (VNAV)](../../catalog/resources/mit-vnav-16485.md) (uses)
 
 _Indexed by lane(s): gap-fill_
 

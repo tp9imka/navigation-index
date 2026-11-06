@@ -10,6 +10,7 @@ Kaggle competition with raw GNSS and IMU logs from Android phones in cars, score
 
 - Large public smartphone GNSS dataset with truth
 - Winning solutions used factor graphs and carrier phase
+- Data also on IEEE DataPort under CC BY; Kaggle competition rules not verified
 - Sensors: phone raw GNSS, IMU
 - Size class: medium
 - Kaggle account required
@@ -18,19 +19,24 @@ Kaggle competition with raw GNSS and IMU logs from Android phones in cars, score
 
 - [gsdc](../../docs/dataset-cards/gsdc.md) (dataset-cards)
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md)
 
 **Tags:** `android`, `kaggle`, `gsdc`, `smartphone`
 
 ## Related
 
-- has_code: [GSDC 2023 solution (taroz)](../repos/taroz__gsdc2023.md)
-- has_code: [gnss_lib_py](../repos/stanford-navlab__gnss_lib_py.md)
-- uses: [GPS Measurement Tools (incl. GnssLogger)](../repos/google__gps-measurement-tools.md)
+- has_code: [GSDC 2023 solution (taroz)](../../catalog/repos/taroz__gsdc2023.md)
+- has_code: [gnss_lib_py](../../catalog/repos/stanford-navlab__gnss_lib_py.md)
+- uses: [GPS Measurement Tools (incl. GnssLogger)](../../catalog/repos/google__gps-measurement-tools.md)
 
 ## Referenced by
 
-- [Google Smartphone Decimeter Challenge 2022](../resources/google-gsdc-2022.md) (part_of)
-- [ION Smartphone Decimeter Challenge (with Google)](../resources/ion-smartphone-decimeter-challenge.md) (part_of)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Google Smartphone Decimeter Challenge 2022](../../catalog/resources/google-gsdc-2022.md) (part_of)
+- [ION Smartphone Decimeter Challenge (with Google)](../../catalog/resources/ion-smartphone-decimeter-challenge.md) (part_of)
 
 _Indexed by lane(s): gnss, sim-data_

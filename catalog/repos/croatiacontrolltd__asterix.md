@@ -12,7 +12,7 @@ C/C++ and Python decoder for EUROCONTROL ASTERIX surveillance data from files, s
 
 **Hackathon notes:** Python module is on PyPI as asterix_decoder; feed it recorded or live UDP ASTERIX and get JSON per record.
 
-**Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Tracking and data association](../concepts/target-tracking.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Tracking and data association](../../catalog/concepts/target-tracking.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `asterix`, `eurocontrol`, `radar`, `surveillance`
 
@@ -20,12 +20,12 @@ C/C++ and Python decoder for EUROCONTROL ASTERIX surveillance data from files, s
 
 ## Related
 
-- alternative_to: [asterix-specs](../repos/zoranbosnjak__asterix-specs.md)
+- alternative_to: [asterix-specs](../../catalog/repos/zoranbosnjak__asterix-specs.md)
 
 ## Referenced by
 
-- [asterix-specs](../repos/zoranbosnjak__asterix-specs.md) (alternative_to)
-- [EUROCONTROL ASTERIX](../resources/eurocontrol-asterix.md) (has_code)
+- [asterix-specs](../../catalog/repos/zoranbosnjak__asterix-specs.md) (alternative_to)
+- [EUROCONTROL ASTERIX](../../catalog/resources/eurocontrol-asterix.md) (has_code)
 
 _Indexed by lane(s): planning-gis-c2_
 

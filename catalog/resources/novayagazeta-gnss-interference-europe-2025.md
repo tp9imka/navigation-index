@@ -16,12 +16,18 @@ English: 'An ambiguous signal'. Russian-language independent journalism on GNSS 
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `lang:ru`, `aviation`, `baltic`, `journalism`
 
 ## Related
 
-- cites: [GPSJam - daily GPS interference map](../resources/gpsjam-org.md)
+- cites: [GPSJam - daily GPS interference map](../../catalog/resources/gpsjam-org.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_

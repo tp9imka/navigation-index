@@ -12,7 +12,7 @@ Neural pixel-to-3D registration for UAV ego-localization and target geo-localiza
 
 **Hackathon notes:** GPU-heavy (CUDA extension build, CityGaussian conda env); demo data is about 15 GB. Code is MIT, but PiLoT-data on HF is gated: non-commercial research or education only, no redistribution. From NUDT, which is on the US Entity List - check your programme's rules.
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `3dgs`, `6dof`, `cvpr2026`, `map-based`
 
@@ -20,7 +20,7 @@ Neural pixel-to-3D registration for UAV ego-localization and target geo-localiza
 
 ## Referenced by
 
-- [PiLoT: Neural Pixel-to-3D Registration for UAV-based Ego and Target Geo-localization](../resources/pilot-pixel-to-3d-2026.md) (has_code)
+- [PiLoT: Neural Pixel-to-3D Registration for UAV-based Ego and Target Geo-localization](../../catalog/resources/pilot-pixel-to-3d-2026.md) (has_code)
 
 _Indexed by lane(s): round3-expansion_
 

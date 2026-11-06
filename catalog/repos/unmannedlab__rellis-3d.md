@@ -10,13 +10,13 @@ Multi-modal off-road dataset from Texas A&M with lidar, camera, IMU and GNSS plu
 
 **Why it matters:** A standard benchmark for off-road perception and localization.
 
-**Hackathon notes:** Download only the sequences you need; ROS bags are large. Unmaintained since 2022; the data itself is static and still usable.
+**Hackathon notes:** Download only the sequences you need; ROS bags are large. Unmaintained since 2022; the data itself is static and still usable. Data and code are CC BY-NC-SA 3.0, so non-commercial use only.
 
 ## Deep dives
 
 - [offroad-rellis-tartandrive](../../docs/dataset-cards/offroad-rellis-tartandrive.md) (dataset-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 
 **Tags:** `dataset`, `off-road`, `lidar`, `semantic`
 
@@ -24,12 +24,12 @@ Multi-modal off-road dataset from Texas A&M with lidar, camera, IMU and GNSS plu
 
 ## Related
 
-- alternative_to: [TartanDrive](../repos/castacks__tartan_drive.md)
+- alternative_to: [TartanDrive](../../catalog/repos/castacks__tartan_drive.md)
 
 ## Referenced by
 
-- [TartanDrive](../repos/castacks__tartan_drive.md) (alternative_to)
-- [RELLIS-3D Dataset: Data, Benchmarks and Analysis](../resources/rellis3d-paper.md) (has_code)
+- [TartanDrive](../../catalog/repos/castacks__tartan_drive.md) (alternative_to)
+- [RELLIS-3D Dataset: Data, Benchmarks and Analysis](../../catalog/resources/rellis3d-paper.md) (has_code)
 
 _Indexed by lane(s): domains-swarm_
 

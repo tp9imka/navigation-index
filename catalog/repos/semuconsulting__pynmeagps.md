@@ -12,7 +12,12 @@ Python library for parsing and generating NMEA 0183 GNSS sentences, including pr
 
 **Hackathon notes:** pip install pynmeagps. Can also generate NMEA to feed test positions into a downstream system.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Standards and interface specs](../concepts/standards.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [semuconsulting__pynmeagps](../../docs/integration-cards/semuconsulting__pynmeagps.md) (integration-cards)
+
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `nmea`, `python`, `parser`
 
@@ -20,14 +25,16 @@ Python library for parsing and generating NMEA 0183 GNSS sentences, including pr
 
 ## Related
 
-- same_org: [pyubx2](../repos/semuconsulting__pyubx2.md)
-- alternative_to: [pynmea2](../repos/knio__pynmea2.md)
+- same_org: [pyubx2](../../catalog/repos/semuconsulting__pyubx2.md)
+- alternative_to: [pynmea2](../../catalog/repos/knio__pynmea2.md)
 
 ## Referenced by
 
-- [pynmea2](../repos/knio__pynmea2.md) (alternative_to)
-- [NMEA Revealed (gpsd project)](../resources/gpsd-nmea-revealed.md) (has_code)
-- [NMEA 0183 Interface Standard](../resources/nmea-0183-standard.md) (has_code)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [pynmea2](../../catalog/repos/knio__pynmea2.md) (alternative_to)
+- [NMEA Revealed (gpsd project)](../../catalog/resources/gpsd-nmea-revealed.md) (has_code)
+- [NMEA 0183 Interface Standard](../../catalog/resources/nmea-0183-standard.md) (has_code)
 
 _Indexed by lane(s): gnss_
 

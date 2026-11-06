@@ -17,7 +17,7 @@ Python CLI and library utilities for reading, parsing and broadcasting GNSS stre
 - [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
 - [semuconsulting__pygnssutils](../../docs/integration-cards/semuconsulting__pygnssutils.md) (integration-cards)
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md)
 
 **Tags:** `ntrip`, `cli`, `python`, `spartn`
 
@@ -25,13 +25,15 @@ Python CLI and library utilities for reading, parsing and broadcasting GNSS stre
 
 ## Related
 
-- depends_on: [pyrtcm](../repos/semuconsulting__pyrtcm.md)
-- alternative_to: [ntripcaster (BKG standard caster)](../repos/nunojpg__ntripcaster.md)
+- depends_on: [pyrtcm](../../catalog/repos/semuconsulting__pyrtcm.md)
+- alternative_to: [ntripcaster (BKG standard caster)](../../catalog/repos/nunojpg__ntripcaster.md)
 
 ## Referenced by
 
-- [PyGPSClient](../repos/semuconsulting__pygpsclient.md) (depends_on)
-- [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../samples/gnss-interference-monitor.md) (uses)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [PyGPSClient](../../catalog/repos/semuconsulting__pygpsclient.md) (depends_on)
+- [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../../catalog/samples/gnss-interference-monitor.md) (uses)
 
 _Indexed by lane(s): gnss_
 

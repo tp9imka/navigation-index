@@ -12,7 +12,7 @@
 
 **Hackathon notes:** Very large dataset; request access and use subsets.
 
-**Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Tracking and data association](../concepts/target-tracking.md)
+**Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Tracking and data association](../../catalog/concepts/target-tracking.md)
 
 **Tags:** `4d-radar`, `dataset`, `adverse-weather`
 

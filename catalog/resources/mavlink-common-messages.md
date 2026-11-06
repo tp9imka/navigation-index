@@ -12,15 +12,20 @@ Reference of all messages and commands in the common dialect, including GPS_RAW_
 - ODOMETRY carries full pose plus covariance
 - Enumerations document EKF and GPS fix status flags
 
-**Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Autopilots and flight control](../concepts/autopilot.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `mavlink`, `messages`, `gps_input`, `odometry`
 
 ## Related
 
-- has_code: [MAVLink](../repos/mavlink__mavlink.md)
-- has_code: [MAVSDK](../repos/mavlink__mavsdk.md)
-- uses: [ArduPilot](../repos/ardupilot__ardupilot.md)
-- uses: [PX4 Autopilot](../repos/px4__px4-autopilot.md)
+- has_code: [MAVLink](../../catalog/repos/mavlink__mavlink.md)
+- has_code: [MAVSDK](../../catalog/repos/mavlink__mavsdk.md)
+- uses: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
+- uses: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
+
+## Referenced by
+
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 
 _Indexed by lane(s): docs-standards_

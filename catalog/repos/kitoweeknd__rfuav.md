@@ -16,7 +16,7 @@ Code for the RFUAV benchmark dataset for UAV detection and identification from R
 
 - [drone-rf-datasets](../../docs/dataset-cards/drone-rf-datasets.md) (dataset-cards)
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `rf-detection`, `spectrogram`, `dataset`
 
@@ -24,12 +24,15 @@ Code for the RFUAV benchmark dataset for UAV detection and identification from R
 
 ## Related
 
-- alternative_to: [DroneRF](../repos/al-sad__dronerf.md)
+- alternative_to: [DroneRF](../../catalog/repos/al-sad__dronerf.md)
 
 ## Referenced by
 
-- [DroneRF](../repos/al-sad__dronerf.md) (alternative_to)
-- [Noisy Drone RF Signal Classification](../repos/sgluege__noisy-drone-rf-signal-classification.md) (alternative_to)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [DroneRF](../../catalog/repos/al-sad__dronerf.md) (alternative_to)
+- [Noisy Drone RF Signal Classification](../../catalog/repos/sgluege__noisy-drone-rf-signal-classification.md) (alternative_to)
 
 _Indexed by lane(s): domains-swarm_
 

@@ -11,7 +11,7 @@ Report on the ION GNSS+ 2025 plenary (Galileo history keynote) and the conferenc
 - LEO PNT pitched as a third layer
 - Recording not linked
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [GNSS positioning](../concepts/gnss.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [GNSS positioning](../../catalog/concepts/gnss.md)
 
 **Tags:** `ion-gnss`, `2025`
 

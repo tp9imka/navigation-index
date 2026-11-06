@@ -16,7 +16,7 @@ Decodes DJI DroneID (OcuSync 2.0) frames from SDR I/Q recordings, building on pr
 
 - [remote-id-droneid-captures](../../docs/dataset-cards/remote-id-droneid-captures.md) (dataset-cards)
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [RF localization and direction finding](../concepts/rf-localization.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 
 **Tags:** `dji`, `droneid`, `ocusync`, `sdr`
 
@@ -24,15 +24,18 @@ Decodes DJI DroneID (OcuSync 2.0) frames from SDR I/Q recordings, building on pr
 
 ## Related
 
-- extends: [dji_droneid](../repos/proto17__dji_droneid.md)
-- alternative_to: [DroneSecurity (DJI DroneID receiver)](../repos/rub-syssec__dronesecurity.md)
+- extends: [dji_droneid](../../catalog/repos/proto17__dji_droneid.md)
+- alternative_to: [DroneSecurity (DJI DroneID receiver)](../../catalog/repos/rub-syssec__dronesecurity.md)
 
 ## Referenced by
 
-- [DragonSync](../repos/alphafox02__dragonsync.md) (integrates_with)
-- [dji_droneid](../repos/proto17__dji_droneid.md) (alternative_to)
-- [DroneSecurity (DJI DroneID receiver)](../repos/rub-syssec__dronesecurity.md) (alternative_to)
-- [Drone Security and the Mysterious Case of DJI's DroneID](../resources/ndss-2023-dji-droneid.md) (uses)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [DragonSync](../../catalog/repos/alphafox02__dragonsync.md) (integrates_with)
+- [dji_droneid](../../catalog/repos/proto17__dji_droneid.md) (alternative_to)
+- [DroneSecurity (DJI DroneID receiver)](../../catalog/repos/rub-syssec__dronesecurity.md) (alternative_to)
+- [Drone Security and the Mysterious Case of DJI's DroneID](../../catalog/resources/ndss-2023-dji-droneid.md) (uses)
 
 _Indexed by lane(s): domains-swarm_
 

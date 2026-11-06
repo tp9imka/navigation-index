@@ -11,12 +11,12 @@ Federal R&D plan responding to EO 13905, laying out research priorities for resi
 - Identifies federal R&D priorities for PNT resilience
 - Ties research areas back to EO 13905
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Policy, export control and ethics](../concepts/policy-ethics.md), [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md), [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `ostp`, `r-and-d-plan`, `policy`
 
 ## Related
 
-- cites: [Executive Order 13905: Strengthening National Resilience Through Responsible Use of PNT Services](../resources/eo-13905-responsible-pnt.md)
+- cites: [Executive Order 13905: Strengthening National Resilience Through Responsible Use of PNT Services](../../catalog/resources/eo-13905-responsible-pnt.md)
 
 _Indexed by lane(s): docs-standards_

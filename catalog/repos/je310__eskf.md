@@ -16,7 +16,7 @@ Error-state Kalman filter implementation following Sola's quaternion ESKF formul
 
 - [sola-quaternion-kinematics-eskf](../../docs/paper-digests/sola-quaternion-kinematics-eskf.md) (paper-digests)
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `eskf`, `quaternion`, `sola`
 
@@ -24,12 +24,12 @@ Error-state Kalman filter implementation following Sola's quaternion ESKF formul
 
 ## Related
 
-- alternative_to: [ESKF ROS (EliaTarasov)](../repos/eliatarasov__eskf.md)
+- alternative_to: [ESKF ROS (EliaTarasov)](../../catalog/repos/eliatarasov__eskf.md)
 
 ## Referenced by
 
-- [ESKF ROS (EliaTarasov)](../repos/eliatarasov__eskf.md) (alternative_to)
-- [Quaternion kinematics for the error-state Kalman filter](../resources/sola-quaternion-kinematics-eskf.md) (has_code)
+- [ESKF ROS (EliaTarasov)](../../catalog/repos/eliatarasov__eskf.md) (alternative_to)
+- [Quaternion kinematics for the error-state Kalman filter](../../catalog/resources/sola-quaternion-kinematics-eskf.md) (has_code)
 
 _Indexed by lane(s): ins-fusion_
 

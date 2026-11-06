@@ -15,16 +15,18 @@ AFIT dissertation establishing airborne magnetic anomaly navigation methods and 
 
 - [canciani-afit-magnetic-anomaly-dissertation-2016](../../docs/paper-digests/canciani-afit-magnetic-anomaly-dissertation-2016.md) (paper-digests)
 
-**Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md)
+**Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md)
 
 **Tags:** `afit`, `dissertation`
 
 ## Related
 
-- same_author: [Signal Enhancement for Magnetic Navigation Challenge Problem](../resources/afrl-magnav-challenge-2020.md)
+- same_author: [Signal Enhancement for Magnetic Navigation Challenge Problem](../../catalog/resources/afrl-magnav-challenge-2020.md)
 
 ## Referenced by
 
-- [Magnetic Sensors in Flight Tests as Alternative PNT to GNSS](../resources/insidegnss-magnav-flight-tests-2020.md) (cites)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [Absolute Positioning Using the Earth's Magnetic Anomaly Field](../../catalog/resources/canciani-raquet-2016-absolute-positioning-magnetic-anomaly.md) (same_author)
+- [Magnetic Sensors in Flight Tests as Alternative PNT to GNSS](../../catalog/resources/insidegnss-magnav-flight-tests-2020.md) (cites)
 
 _Indexed by lane(s): alt-nav_

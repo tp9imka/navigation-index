@@ -12,13 +12,18 @@ A curated self-study path of short recorded lectures from Bonn's Photogrammetry 
 - Covers EKF/MCL localization and pose-graph SLAM end to end
 - Links the older full SLAM course playlist
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Visual SLAM](../concepts/visual-slam.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Visual SLAM](../../catalog/concepts/visual-slam.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `stachniss`, `bonn`, `kalman`, `particle-filter`, `youtube`
 
 ## Related
 
-- part_of: [Robot Mapping (SLAM course) WS 2013/14](../resources/stachniss-slam-course-2013.md)
-- same_author: [Cyrill Stachniss YouTube channel (incl. '5 Minutes with Cyrill')](../resources/stachniss-youtube-channel.md)
+- part_of: [SLAM Course (2013)](../../catalog/resources/stachniss-slam-course-2013.md)
+- same_author: [Cyrill Stachniss YouTube channel (incl. '5 Minutes with Cyrill')](../../catalog/resources/stachniss-youtube-channel.md)
+
+## Referenced by
+
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 
 _Indexed by lane(s): learning_

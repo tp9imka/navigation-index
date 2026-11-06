@@ -15,17 +15,20 @@ Reverse-engineers the Starlink Ku-band downlink as OFDM and identifies synchroni
 
 - [humphreys-2023-starlink-signal-structure](../../docs/paper-digests/humphreys-2023-starlink-signal-structure.md) (paper-digests)
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [Space and orbital navigation](../concepts/space-nav.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `starlink`, `leo-pnt`, `ofdm`
 
 ## Related
 
-- has_code: [UT Starlink signal simulator](../repos/gitlab.com__radionavlab__public__ut-starlink-signal-simulator.md)
+- has_code: [UT Starlink signal simulator](../../catalog/repos/gitlab.com__radionavlab__public__ut-starlink-signal-simulator.md)
 
 ## Referenced by
 
-- [Starlink Based LEO PNT (Munich Satellite Navigation Summit 2025)](../resources/humphreys-munich-summit-2025-starlink-pnt.md) (same_author)
-- [The First Carrier Phase Tracking and Positioning Results With Starlink LEO Satellite Signals](../resources/kassas-2022-starlink-carrier-phase.md) (cites)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [Starlink Based LEO PNT (Munich Satellite Navigation Summit 2025)](../../catalog/resources/humphreys-munich-summit-2025-starlink-pnt.md) (same_author)
+- [The First Carrier Phase Tracking and Positioning Results With Starlink LEO Satellite Signals](../../catalog/resources/kassas-2022-starlink-carrier-phase.md) (cites)
+- [Timing Properties of the Starlink Ku-Band Downlink](../../catalog/resources/qin-2025-starlink-timing-properties.md) (same_author)
+- [Pilots and Other Predictable Elements of the Starlink Ku-Band Downlink](../../catalog/resources/qin-psiaki-2026-starlink-pilots.md) (same_author)
 
 _Indexed by lane(s): gnss_

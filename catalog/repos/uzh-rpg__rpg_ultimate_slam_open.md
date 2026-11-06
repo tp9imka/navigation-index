@@ -12,7 +12,7 @@ Open-source release of Ultimate SLAM, combining events, standard frames and IMU 
 
 **Hackathon notes:** ROS 1 / catkin; test on event datasets before buying hardware.
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `event-camera`, `hdr`, `imu`, `ros1`
 
@@ -20,12 +20,12 @@ Open-source release of Ultimate SLAM, combining events, standard frames and IMU 
 
 ## Related
 
-- same_org: [Event-based Vision Resources](../repos/uzh-rpg__event-based_vision_resources.md)
+- same_org: [Event-based Vision Resources](../../catalog/repos/uzh-rpg__event-based_vision_resources.md)
 
 ## Referenced by
 
-- [ESVO](../repos/hkust-aerial-robotics__esvo.md) (alternative_to)
-- [EKLT](../repos/uzh-rpg__rpg_eklt.md) (same_org)
+- [ESVO](../../catalog/repos/hkust-aerial-robotics__esvo.md) (alternative_to)
+- [EKLT](../../catalog/repos/uzh-rpg__rpg_eklt.md) (same_org)
 
 _Indexed by lane(s): slam_
 

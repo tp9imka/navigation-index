@@ -12,7 +12,12 @@ LiDAR SLAM that adds loop closure and pose-graph optimization on top of KISS-ICP
 
 **Hackathon notes:** Pip-installable; quick to demo on outdoor bags.
 
-**Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Place recognition and loop closure](../concepts/place-recognition.md)
+## Deep dives
+
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [prbonn__kiss-slam](../../docs/integration-cards/prbonn__kiss-slam.md) (integration-cards)
+
+**Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 
 **Tags:** `pip`, `loop-closure`, `pose-graph`
 
@@ -20,12 +25,14 @@ LiDAR SLAM that adds loop closure and pose-graph optimization on top of KISS-ICP
 
 ## Related
 
-- extends: [KISS-ICP](../repos/prbonn__kiss-icp.md)
-- depends_on: [MapClosures](../repos/prbonn__mapclosures.md)
+- extends: [KISS-ICP](../../catalog/repos/prbonn__kiss-icp.md)
+- depends_on: [MapClosures](../../catalog/repos/prbonn__mapclosures.md)
 
 ## Referenced by
 
-- [KISS-ICP](../repos/prbonn__kiss-icp.md) (extends)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [KISS-ICP](../../catalog/repos/prbonn__kiss-icp.md) (extends)
 
 _Indexed by lane(s): slam_
 

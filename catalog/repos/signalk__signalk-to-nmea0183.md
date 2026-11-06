@@ -12,7 +12,7 @@ Signal K server plugin that converts Signal K data back into NMEA 0183 sentences
 
 **Hackathon notes:** Enable in the Signal K admin UI, choose sentences, output over TCP.
 
-**Concepts:** [Maritime navigation](../concepts/maritime-nav.md)
+**Concepts:** [Maritime navigation](../../catalog/concepts/maritime-nav.md)
 
 **Tags:** `signalk`, `nmea0183`, `plugin`
 
@@ -20,11 +20,12 @@ Signal K server plugin that converts Signal K data back into NMEA 0183 sentences
 
 ## Related
 
-- extends: [Signal K Server](../repos/signalk__signalk-server.md)
+- extends: [Signal K Server](../../catalog/repos/signalk__signalk-server.md)
 
 ## Referenced by
 
-- [Signal K Server](../repos/signalk__signalk-server.md) (integrates_with)
+- [Signal K Server](../../catalog/repos/signalk__signalk-server.md) (integrates_with)
+- [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) (explains)
 
 _Indexed by lane(s): domains-swarm_
 

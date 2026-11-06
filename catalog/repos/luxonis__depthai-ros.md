@@ -12,7 +12,7 @@ ROS 1/2 driver for Luxonis OAK cameras publishing depth, detections and IMU.
 
 **Hackathon notes:** Binary packages for major ROS 2 distros.
 
-**Concepts:** [Onboard / edge AI perception](../concepts/edge-ai.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `oak-d`, `ros2`, `driver`
 
@@ -20,11 +20,11 @@ ROS 1/2 driver for Luxonis OAK cameras publishing depth, detections and IMU.
 
 ## Related
 
-- depends_on: [DepthAI](../repos/luxonis__depthai.md)
+- depends_on: [DepthAI](../../catalog/repos/luxonis__depthai.md)
 
 ## Referenced by
 
-- [DepthAI](../repos/luxonis__depthai.md) (integrates_with)
+- [DepthAI](../../catalog/repos/luxonis__depthai.md) (integrates_with)
 
 _Indexed by lane(s): gap-fill_
 

@@ -10,9 +10,9 @@ C++ Lie group library (SO2, SE2, SO3, SE3, Sim3) built on Eigen, used in many SL
 
 **Why it matters:** De facto Lie group dependency in SLAM codebases.
 
-**Hackathon notes:** Header-mostly; widely packaged.
+**Hackathon notes:** Header-mostly; widely packaged. In maintenance mode since June 2024 (bug fixes only); sophus2 and sophus-rs are the successors.
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `lie-group`, `eigen`
 
@@ -20,11 +20,11 @@ C++ Lie group library (SO2, SE2, SO3, SE3, Sim3) built on Eigen, used in many SL
 
 ## Related
 
-- alternative_to: [manif](../repos/artivis__manif.md)
+- alternative_to: [manif](../../catalog/repos/artivis__manif.md)
 
 ## Referenced by
 
-- [manif](../repos/artivis__manif.md) (alternative_to)
+- [manif](../../catalog/repos/artivis__manif.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 

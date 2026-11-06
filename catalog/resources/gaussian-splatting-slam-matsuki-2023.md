@@ -10,12 +10,12 @@ Monocular and RGB-D SLAM that tracks and maps directly against 3D Gaussians usin
 
 - Single representation for tracking, mapping and rendering
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `3dgs`, `cvpr-2024`
 
 ## Related
 
-- has_code: [MonoGS (Gaussian Splatting SLAM)](../repos/muskie82__monogs.md)
+- has_code: [MonoGS (Gaussian Splatting SLAM)](../../catalog/repos/muskie82__monogs.md)
 
 _Indexed by lane(s): slam_

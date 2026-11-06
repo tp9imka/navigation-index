@@ -12,16 +12,21 @@ Describes MAVLink 2 packet signing: a shared-secret SHA-256 based signature and 
 - Key distribution is left to the integrator
 - Relevant for hardening drone C2 links against injection
 
-**Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Electronic warfare resilience](../concepts/ew-resilience.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `mavlink2`, `signing`, `security`, `c2-link`
 
 ## Related
 
-- has_code: [MAVLink](../repos/mavlink__mavlink.md)
-- has_code: [MAVSDK](../repos/mavlink__mavsdk.md)
-- uses: [ArduPilot](../repos/ardupilot__ardupilot.md)
-- uses: [PX4 Autopilot](../repos/px4__px4-autopilot.md)
-- part_of: [MAVLink Developer Guide](../resources/mavlink-developer-guide.md)
+- has_code: [MAVLink](../../catalog/repos/mavlink__mavlink.md)
+- has_code: [MAVSDK](../../catalog/repos/mavlink__mavsdk.md)
+- uses: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
+- uses: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
+- part_of: [MAVLink Developer Guide](../../catalog/resources/mavlink-developer-guide.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 
 _Indexed by lane(s): docs-standards_

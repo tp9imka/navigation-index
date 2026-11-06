@@ -16,8 +16,14 @@ English: 'Development of an absolute visual-inertial navigation algorithm for un
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [GNSS/INS integration](../concepts/gnss-ins.md), [Feature detection and matching](../concepts/feature-matching.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 
 **Tags:** `lang:ru`, `sift`, `preprint`
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_

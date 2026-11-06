@@ -12,7 +12,7 @@ MATLAB particle filtering examples for terrain-referenced navigation, comparing 
 
 **Hackathon notes:** Runs in MATLAB with simulated terrain; port the update logic to Python for a DEM demo.
 
-**Concepts:** [Terrain-relative navigation](../concepts/terrain-nav.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `trn`, `particle-filter`, `matlab`, `tan`
 
@@ -20,11 +20,11 @@ MATLAB particle filtering examples for terrain-referenced navigation, comparing 
 
 ## Related
 
-- alternative_to: [tercom_nav (TERCOM + ESKF)](../repos/mzahana__tercom_nav.md)
+- alternative_to: [tercom_nav (TERCOM + ESKF)](../../catalog/repos/mzahana__tercom_nav.md)
 
 ## Referenced by
 
-- [Deep-TERNALOC](../repos/deep-ternaloc__deep-ternaloc.md) (alternative_to)
+- [Deep-TERNALOC](../../catalog/repos/deep-ternaloc__deep-ternaloc.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

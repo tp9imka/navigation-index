@@ -12,7 +12,7 @@ Unity3D and ROS framework from MIT for photorealistic camera rendering with real
 
 **Hackathon notes:** Not actively maintained since 2024; ROS1. Mostly of interest as a reference or alongside the Blackbird dataset.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `unity`, `hil`, `photorealistic`, `ros`
 
@@ -20,13 +20,13 @@ Unity3D and ROS framework from MIT for photorealistic camera rendering with real
 
 ## Related
 
-- integrates_with: [Blackbird dataset](../repos/mit-aera__blackbird-dataset.md)
-- alternative_to: [Flightmare](../repos/uzh-rpg__flightmare.md)
+- integrates_with: [Blackbird dataset](../../catalog/repos/mit-aera__blackbird-dataset.md)
+- alternative_to: [Flightmare](../../catalog/repos/uzh-rpg__flightmare.md)
 
 ## Referenced by
 
-- [Blackbird dataset](../repos/mit-aera__blackbird-dataset.md) (integrates_with)
-- [Flightmare](../repos/uzh-rpg__flightmare.md) (alternative_to)
+- [Blackbird dataset](../../catalog/repos/mit-aera__blackbird-dataset.md) (integrates_with)
+- [Flightmare](../../catalog/repos/uzh-rpg__flightmare.md) (alternative_to)
 
 _Indexed by lane(s): sim-data_
 

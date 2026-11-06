@@ -4,15 +4,15 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 90 | Python | MIT | 2026-11-04 | False | active-research | medium |
+| 90 | Python | MIT | 2026-11-04 | False | research-prototype | medium |
 
-Simulation models and tooling for Crazyflie in Webots and Gazebo.
+Minimal simulation models and tooling for Crazyflie in Webots and Gazebo; the README says it is not actively maintained and not realistic in dynamics.
 
 **Why it matters:** Hardware-free swarm prototyping.
 
 **Hackathon notes:** Webots is the easiest entry.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `crazyflie`, `webots`, `gazebo`
 
@@ -20,7 +20,7 @@ Simulation models and tooling for Crazyflie in Webots and Gazebo.
 
 ## Related
 
-- same_org: [Crazyflie firmware](../repos/bitcraze__crazyflie-firmware.md)
+- same_org: [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md)
 
 _Indexed by lane(s): domains-swarm_
 

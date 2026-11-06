@@ -12,7 +12,7 @@ ROS 2 message definitions mirroring PX4 uORB topics, used with the uXRCE-DDS bri
 
 **Hackathon notes:** Match the branch to your PX4 version or messages will mismatch.
 
-**Concepts:** [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Autopilots and flight control](../concepts/autopilot.md)
+**Concepts:** [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
 **Tags:** `ros2`, `uorb`, `dds`
 
@@ -20,17 +20,19 @@ ROS 2 message definitions mirroring PX4 uORB topics, used with the uXRCE-DDS bri
 
 ## Related
 
-- depends_on: [PX4 Autopilot](../repos/px4__px4-autopilot.md)
-- integrates_with: [px4_ros_com](../repos/px4__px4_ros_com.md)
-- integrates_with: [Micro XRCE-DDS Agent](../repos/eprosima__micro-xrce-dds-agent.md)
+- depends_on: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
+- integrates_with: [px4_ros_com](../../catalog/repos/px4__px4_ros_com.md)
+- integrates_with: [Micro XRCE-DDS Agent](../../catalog/repos/eprosima__micro-xrce-dds-agent.md)
 
 ## Referenced by
 
-- [ROS2 PX4 Offboard Example](../repos/ark-electronics__ros2_px4_offboard_example.md) (depends_on)
-- [PX4 ROS 2 Interface Library](../repos/auterion__px4-ros2-interface-lib.md) (depends_on)
-- [Micro XRCE-DDS Agent](../repos/eprosima__micro-xrce-dds-agent.md) (integrates_with)
-- [PX4 Autopilot](../repos/px4__px4-autopilot.md) (integrates_with)
-- [px4_ros_com](../repos/px4__px4_ros_com.md) (depends_on)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [ROS2 PX4 Offboard Example](../../catalog/repos/ark-electronics__ros2_px4_offboard_example.md) (depends_on)
+- [PX4 ROS 2 Interface Library](../../catalog/repos/auterion__px4-ros2-interface-lib.md) (depends_on)
+- [Micro XRCE-DDS Agent](../../catalog/repos/eprosima__micro-xrce-dds-agent.md) (integrates_with)
+- [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md) (integrates_with)
+- [px4_ros_com](../../catalog/repos/px4__px4_ros_com.md) (depends_on)
 
 _Indexed by lane(s): autopilots_
 

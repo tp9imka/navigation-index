@@ -12,7 +12,7 @@ ROS drivers and tools for DVS/DAVIS event cameras, including calibration and ren
 
 **Hackathon notes:** ROS1 only; for ROS 2 look at vendor drivers.
 
-**Concepts:** [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Sensor calibration](../concepts/calibration.md)
+**Concepts:** [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 
 **Tags:** `event-camera`, `dvs`, `davis`, `driver`
 
@@ -20,11 +20,11 @@ ROS drivers and tools for DVS/DAVIS event cameras, including calibration and ren
 
 ## Related
 
-- same_org: [ESIM](../repos/uzh-rpg__rpg_esim.md)
+- same_org: [ESIM](../../catalog/repos/uzh-rpg__rpg_esim.md)
 
 ## Referenced by
 
-- [E2VID](../repos/uzh-rpg__rpg_e2vid.md) (same_org)
+- [E2VID](../../catalog/repos/uzh-rpg__rpg_e2vid.md) (same_org)
 
 _Indexed by lane(s): gap-fill_
 

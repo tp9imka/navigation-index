@@ -11,16 +11,16 @@ Tutorials and reference for configuring the GNSS-SDR receiver, including signal 
 - Step-by-step first-fix tutorials with sample files
 - Explains each receiver block for modification
 
-**Concepts:** [Software-defined GNSS receivers](../concepts/gnss-sdr.md)
+**Concepts:** [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md)
 
 **Tags:** `tutorial`, `receiver`
 
 ## Related
 
-- explains: [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md)
+- explains: [GNSS-SDR](../../catalog/repos/gnss-sdr__gnss-sdr.md)
 
 ## Referenced by
 
-- [File-based GNSS signal chain: gps-sdr-sim => GNSS-SDR => spoofing/jamming scorer](../samples/gnss-signal-chain.md) (explains)
+- [File-based GNSS signal chain: gps-sdr-sim => GNSS-SDR => spoofing/jamming scorer](../../catalog/samples/gnss-signal-chain.md) (explains)
 
 _Indexed by lane(s): gnss_

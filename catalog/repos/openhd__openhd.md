@@ -12,7 +12,7 @@ Open-source long-range digital HD video and telemetry link over Wi-Fi adapters i
 
 **Hackathon notes:** Needs supported Wi-Fi cards (RTL8812AU) and SBCs; budget a few hours for imaging.
 
-**Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Electronic warfare resilience](../concepts/ew-resilience.md), [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
+**Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 
 **Tags:** `wifibroadcast`, `video`, `telemetry`, `long-range`
 
@@ -20,11 +20,11 @@ Open-source long-range digital HD video and telemetry link over Wi-Fi adapters i
 
 ## Related
 
-- alternative_to: [WFB-ng](../repos/svpcom__wfb-ng.md)
+- alternative_to: [WFB-ng](../../catalog/repos/svpcom__wfb-ng.md)
 
 ## Referenced by
 
-- [WFB-ng](../repos/svpcom__wfb-ng.md) (alternative_to)
+- [WFB-ng](../../catalog/repos/svpcom__wfb-ng.md) (alternative_to)
 
 _Indexed by lane(s): autopilots_
 

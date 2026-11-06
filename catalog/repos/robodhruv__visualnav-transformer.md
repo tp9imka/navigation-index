@@ -12,7 +12,12 @@ Code and checkpoints for general visual navigation foundation models (GNM, ViNT,
 
 **Hackathon notes:** Deploy NoMaD on a Jetson-class robot with a fisheye camera; topological graph from a teleop run.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+## Deep dives
+
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [robodhruv__visualnav-transformer](../../docs/integration-cards/robodhruv__visualnav-transformer.md) (integration-cards)
+
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `foundation-model`, `diffusion-policy`, `visual-navigation`
 
@@ -20,15 +25,15 @@ Code and checkpoints for general visual navigation foundation models (GNM, ViNT,
 
 ## Related
 
-- integrates_with: [LM-Nav](../repos/blazejosinski__lm_nav.md)
-- integrates_with: [ViNT: A Foundation Model for Visual Navigation](../resources/vint-foundation-model-2023.md)
-- integrates_with: [NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration](../resources/nomad-diffusion-nav-2023.md)
+- integrates_with: [LM-Nav](../../catalog/repos/blazejosinski__lm_nav.md)
+- integrates_with: [ViNT: A Foundation Model for Visual Navigation](../../catalog/resources/vint-foundation-model-2023.md)
+- integrates_with: [NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration](../../catalog/resources/nomad-diffusion-nav-2023.md)
 
 ## Referenced by
 
-- [LM-Nav](../repos/blazejosinski__lm_nav.md) (integrates_with)
-- [NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration](../resources/nomad-diffusion-nav-2023.md) (has_code)
-- [ViNT: A Foundation Model for Visual Navigation](../resources/vint-foundation-model-2023.md) (has_code)
+- [LM-Nav](../../catalog/repos/blazejosinski__lm_nav.md) (integrates_with)
+- [NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration](../../catalog/resources/nomad-diffusion-nav-2023.md) (has_code)
+- [ViNT: A Foundation Model for Visual Navigation](../../catalog/resources/vint-foundation-model-2023.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

@@ -8,11 +8,11 @@
 
 Java OSM routing engine usable as library or server, with custom models for per-request costing and map matching.
 
-**Why it matters:** Embeddable routing on JVM/Android, relevant for on-device dismounted navigation apps.
+**Why it matters:** Embeddable routing on the JVM, relevant for dismounted navigation apps; on-device Android routing is no longer officially supported (last Android demo is v1.0).
 
 **Hackathon notes:** Single jar + OSM pbf; custom model JSON lets you penalize road classes or areas.
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `routing`, `osm`, `android`, `custom-model`
 
@@ -20,12 +20,12 @@ Java OSM routing engine usable as library or server, with custom models for per-
 
 ## Related
 
-- alternative_to: [Valhalla](../repos/valhalla__valhalla.md)
+- alternative_to: [Valhalla](../../catalog/repos/valhalla__valhalla.md)
 
 ## Referenced by
 
-- [OSRM](../repos/project-osrm__osrm-backend.md) (alternative_to)
-- [Valhalla](../repos/valhalla__valhalla.md) (alternative_to)
+- [OSRM](../../catalog/repos/project-osrm__osrm-backend.md) (alternative_to)
+- [Valhalla](../../catalog/repos/valhalla__valhalla.md) (alternative_to)
 
 _Indexed by lane(s): planning-gis-c2_
 

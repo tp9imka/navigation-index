@@ -12,7 +12,12 @@ ROS driver for u-blox receivers that publishes fixes, raw measurements and recei
 
 **Hackathon notes:** Available as a ROS package; check the branch for ROS 1 vs ROS 2.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [kumarrobotics__ublox](../../docs/integration-cards/kumarrobotics__ublox.md) (integration-cards)
+
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `ros`, `u-blox`, `driver`
 
@@ -20,11 +25,11 @@ ROS driver for u-blox receivers that publishes fixes, raw measurements and recei
 
 ## Related
 
-- integrates_with: [ROS NTRIP client](../repos/lord-microstrain__ntrip_client.md)
+- integrates_with: [ROS NTRIP client](../../catalog/repos/lord-microstrain__ntrip_client.md)
 
 ## Referenced by
 
-- [ROS NTRIP client](../repos/lord-microstrain__ntrip_client.md) (integrates_with)
+- [ROS NTRIP client](../../catalog/repos/lord-microstrain__ntrip_client.md) (integrates_with)
 
 _Indexed by lane(s): gnss_
 

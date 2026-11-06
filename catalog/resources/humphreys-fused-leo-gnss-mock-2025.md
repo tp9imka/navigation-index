@@ -10,12 +10,16 @@ First experimental demo of fused LEO GNSS with pseudoranges: beam-specific Starl
 
 - Concrete design study for LEO PNT
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [Space and orbital navigation](../concepts/space-nav.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md)
 
 **Tags:** `leo-pnt`, `plans2025`
 
 ## Related
 
-- same_author: [Starlink Based LEO PNT (Munich Satellite Navigation Summit 2025)](../resources/humphreys-munich-summit-2025-starlink-pnt.md)
+- same_author: [Starlink Based LEO PNT (Munich Satellite Navigation Summit 2025)](../../catalog/resources/humphreys-munich-summit-2025-starlink-pnt.md)
+
+## Referenced by
+
+- [Fused Low-Earth-Orbit GNSS](../../catalog/resources/iannucci-humphreys-2020-fused-leo-gnss.md) (same_author)
 
 _Indexed by lane(s): round3-expansion_

@@ -12,7 +12,7 @@ Python collection of attitude estimation algorithms (Madgwick, Mahony, complemen
 
 **Hackathon notes:** pip install ahrs; numpy arrays in, quaternions out.
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Geodesy and coordinate frames](../concepts/geodesy.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Geodesy and coordinate frames](../../catalog/concepts/geodesy.md)
 
 **Tags:** `ahrs`, `madgwick`, `mahony`, `wmm`
 
@@ -20,14 +20,16 @@ Python collection of attitude estimation algorithms (Madgwick, Mahony, complemen
 
 ## Related
 
-- alternative_to: [x-io Fusion](../repos/xiotechnologies__fusion.md)
-- alternative_to: [madgwick_py](../repos/morgil__madgwick_py.md)
+- alternative_to: [x-io Fusion](../../catalog/repos/xiotechnologies__fusion.md)
+- alternative_to: [madgwick_py](../../catalog/repos/morgil__madgwick_py.md)
 
 ## Referenced by
 
-- [madgwick_py](../repos/morgil__madgwick_py.md) (alternative_to)
-- [x-io Fusion](../repos/xiotechnologies__fusion.md) (alternative_to)
-- [An efficient orientation filter for inertial and inertial/magnetic sensor arrays](../resources/madgwick-orientation-filter-report.md) (has_code)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [madgwick_py](../../catalog/repos/morgil__madgwick_py.md) (alternative_to)
+- [x-io Fusion](../../catalog/repos/xiotechnologies__fusion.md) (alternative_to)
+- [An efficient orientation filter for inertial and inertial/magnetic sensor arrays](../../catalog/resources/madgwick-orientation-filter-report.md) (has_code)
 
 _Indexed by lane(s): ins-fusion_
 

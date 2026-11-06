@@ -10,9 +10,9 @@ GitHub mirror of Basalt, a visual-inertial odometry and mapping system built aro
 
 **Why it matters:** Fast, accurate stereo VIO that runs well on CPUs; also ships camera-IMU calibration.
 
-**Hackathon notes:** Submit issues upstream on GitLab. Builds cleanly on Ubuntu; ROS integration is via community wrappers.
+**Hackathon notes:** Submit issues upstream on GitLab. Install from GitLab release binaries (Ubuntu 22.04+ amd64, macOS arm64) or build from source with CMake presets + vcpkg; ROS integration is via community wrappers.
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Sensor calibration](../concepts/calibration.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 
 **Tags:** `stereo`, `factor-recovery`, `gitlab-mirror`
 
@@ -20,7 +20,12 @@ GitHub mirror of Basalt, a visual-inertial odometry and mapping system built aro
 
 ## Related
 
-- alternative_to: [OpenVINS](../repos/rpng__open_vins.md)
+- alternative_to: [OpenVINS](../../catalog/repos/rpng__open_vins.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 
 _Indexed by lane(s): slam_
 

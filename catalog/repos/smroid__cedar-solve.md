@@ -17,7 +17,7 @@ Actively maintained fork of tetra3 with speed and robustness improvements, used 
 - [_index-round3](../../docs/integration-cards/_index-round3.md) (integration-cards)
 - [smroid__cedar-solve](../../docs/integration-cards/smroid__cedar-solve.md) (integration-cards)
 
-**Concepts:** [Celestial and star-tracker navigation](../concepts/celestial-nav.md)
+**Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md)
 
 **Tags:** `star-tracker`, `tetra3-fork`
 
@@ -25,11 +25,17 @@ Actively maintained fork of tetra3 with speed and robustness improvements, used 
 
 ## Related
 
-- fork_of: [tetra3](../repos/esa__tetra3.md)
+- fork_of: [tetra3](../../catalog/repos/esa__tetra3.md)
 
 ## Referenced by
 
-- [tetra3](../repos/esa__tetra3.md) (fork_of)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [tetra3](../../catalog/repos/esa__tetra3.md) (fork_of)
+- [NASA SkyView virtual observatory](../../catalog/resources/nasa-skyview-virtual-observatory.md) (uses)
+- [Celestial fix: cedar-solve plate solving on real star images, then position from star elevations above an IMU vertical](../../catalog/samples/celestial-star-tracker.md) (uses)
 
 _Indexed by lane(s): alt-nav_
 

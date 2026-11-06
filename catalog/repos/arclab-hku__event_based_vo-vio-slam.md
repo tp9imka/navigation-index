@@ -10,9 +10,9 @@ Dataset and index of event-based VO, VIO and SLAM work from HKU ArcLab, includin
 
 **Why it matters:** Ready-made event data for testing event odometry without hardware.
 
-**Hackathon notes:** Download sequences as rosbags; pair with ESVO.
+**Hackathon notes:** Download sequences as rosbags from OneDrive or Baidu Disk. The README warns that ESVO, EVO and Ultimate SLAM fail on most of the stereo sequences, so expect a hard benchmark. Licence: MIT, but the README says the data is provided for academic purposes and commercial use needs contact with the lab.
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `event-camera`, `dataset`
 
@@ -20,11 +20,11 @@ Dataset and index of event-based VO, VIO and SLAM work from HKU ArcLab, includin
 
 ## Related
 
-- evaluated_on: [ESVO](../repos/hkust-aerial-robotics__esvo.md)
+- evaluated_on: [ESVO](../../catalog/repos/hkust-aerial-robotics__esvo.md)
 
 ## Referenced by
 
-- [ESVIO](../repos/arclab-hku__esvio.md) (same_org)
+- [ESVIO](../../catalog/repos/arclab-hku__esvio.md) (same_org)
 
 _Indexed by lane(s): slam_
 

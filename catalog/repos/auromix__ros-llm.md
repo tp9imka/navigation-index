@@ -12,7 +12,7 @@ Framework for natural-language interaction with ROS robots, letting an LLM call 
 
 **Hackathon notes:** Not updated since 2023; prefer ROSA or the MCP servers for new work.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `llm`, `ros2`, `chatgpt`
 
@@ -20,7 +20,7 @@ Framework for natural-language interaction with ROS robots, letting an LLM call 
 
 ## Related
 
-- alternative_to: [ROSA (ROS Agent)](../repos/nasa-jpl__rosa.md)
+- alternative_to: [ROSA (ROS Agent)](../../catalog/repos/nasa-jpl__rosa.md)
 
 _Indexed by lane(s): gap-fill_
 

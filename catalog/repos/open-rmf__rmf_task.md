@@ -12,7 +12,7 @@ Task allocation library from Open-RMF that assigns tasks to fleets of robots, ac
 
 **Hackathon notes:** Part of the larger Open-RMF stack; worth it only if you want fleet management, otherwise use CBBA.
 
-**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Mission planning and routing](../concepts/mission-planning.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `fleet-management`, `task-allocation`, `open-rmf`
 
@@ -20,11 +20,12 @@ Task allocation library from Open-RMF that assigns tasks to fleets of robots, ac
 
 ## Related
 
-- alternative_to: [CBBA (Python)](../repos/inmo-jang__consensus-based-bundle-algorithm.md)
+- alternative_to: [CBBA (Python)](../../catalog/repos/inmo-jang__consensus-based-bundle-algorithm.md)
 
 ## Referenced by
 
-- [CBBA (Python)](../repos/inmo-jang__consensus-based-bundle-algorithm.md) (alternative_to)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [CBBA (Python)](../../catalog/repos/inmo-jang__consensus-based-bundle-algorithm.md) (alternative_to)
 
 _Indexed by lane(s): planning-gis-c2_
 

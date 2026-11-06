@@ -16,11 +16,18 @@ Open multisensor urban positioning dataset from PolyU IPNL with GNSS, IMU, lidar
 
 - [urbannav](../../docs/dataset-cards/urbannav.md) (dataset-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [GNSS positioning](../concepts/gnss.md), [GNSS/INS integration](../concepts/gnss-ins.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [GNSS positioning](../../catalog/concepts/gnss.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md)
 
 **Tags:** `urban-canyon`, `gnss`, `nlos`, `hong-kong`
 
 **Domains:** ground, dismounted
+
+## Referenced by
+
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): sim-data_
 

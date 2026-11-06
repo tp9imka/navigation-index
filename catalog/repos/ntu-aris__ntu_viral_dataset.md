@@ -10,13 +10,13 @@ Site repo for NTU VIRAL, an aerial dataset with lidars, cameras, IMU and UWB ran
 
 **Why it matters:** Rare UWB-equipped drone dataset for range-aided fusion experiments.
 
-**Hackathon notes:** ROS bags; download links on the site.
+**Hackathon notes:** ROS bags; download links on the site. Licensed CC BY-NC-SA 4.0 for non-commercial academic use; commercial use needs contact with the authors.
 
 ## Deep dives
 
 - [ntu-viral](../../docs/dataset-cards/ntu-viral.md) (dataset-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md), [RF localization and direction finding](../concepts/rf-localization.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 
 **Tags:** `uwb`, `drone`, `lidar`, `imu`
 
@@ -24,11 +24,13 @@ Site repo for NTU VIRAL, an aerial dataset with lidars, cameras, IMU and UWB ran
 
 ## Related
 
-- same_org: [MCD: Multi-Campus Dataset](../repos/mcdviral__mcdviral.github.io.md)
+- same_org: [MCD: Multi-Campus Dataset](../../catalog/repos/mcdviral__mcdviral.github.io.md)
 
 ## Referenced by
 
-- [MCD: Multi-Campus Dataset](../repos/mcdviral__mcdviral.github.io.md) (same_org)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [MCD: Multi-Campus Dataset](../../catalog/repos/mcdviral__mcdviral.github.io.md) (same_org)
 
 _Indexed by lane(s): sim-data_
 

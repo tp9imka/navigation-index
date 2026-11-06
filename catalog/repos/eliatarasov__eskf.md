@@ -12,7 +12,7 @@ ROS error-state Kalman filter derived from PX4/ecl that fuses IMU with GPS, magn
 
 **Hackathon notes:** ROS 1, unmaintained since 2019.
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [GNSS/INS integration](../concepts/gnss-ins.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `eskf`, `px4`, `ros1`
 
@@ -20,13 +20,13 @@ ROS error-state Kalman filter derived from PX4/ecl that fuses IMU with GPS, magn
 
 ## Related
 
-- extends: [PX4 ECL (Estimation & Control Library)](../repos/px4__px4-ecl.md)
-- alternative_to: [ESKF (je310)](../repos/je310__eskf.md)
+- extends: [PX4 ECL (Estimation & Control Library)](../../catalog/repos/px4__px4-ecl.md)
+- alternative_to: [ESKF (je310)](../../catalog/repos/je310__eskf.md)
 
 ## Referenced by
 
-- [ESKF (je310)](../repos/je310__eskf.md) (alternative_to)
-- [PX4 ECL (Estimation & Control Library)](../repos/px4__px4-ecl.md) (extends)
+- [ESKF (je310)](../../catalog/repos/je310__eskf.md) (alternative_to)
+- [PX4 ECL (Estimation & Control Library)](../../catalog/repos/px4__px4-ecl.md) (extends)
 
 _Indexed by lane(s): ins-fusion_
 

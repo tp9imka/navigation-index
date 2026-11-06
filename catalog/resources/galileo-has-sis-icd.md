@@ -12,13 +12,17 @@ Defines the free Galileo High Accuracy Service: PPP orbit, clock and bias correc
 - Enables decimetre-level PPP without a ground subscription
 - E6-B message decoding details for receiver builders
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `galileo`, `has`, `ppp`, `e6`
 
 ## Related
 
-- has_code: [RTKLIB](../repos/tomojitakasu__rtklib.md)
-- has_code: [RTKLIB demo5 (rtklibexplorer)](../repos/rtklibexplorer__rtklib.md)
+- has_code: [RTKLIB](../../catalog/repos/tomojitakasu__rtklib.md)
+- has_code: [RTKLIB demo5 (rtklibexplorer)](../../catalog/repos/rtklibexplorer__rtklib.md)
+
+## Referenced by
+
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 
 _Indexed by lane(s): docs-standards_

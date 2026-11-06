@@ -12,7 +12,7 @@ Nautical almanac and celestial sight reduction for Unix/Linux with CLI, ncurses 
 
 **Hackathon notes:** Very new and small; verify outputs against a published almanac.
 
-**Concepts:** [Celestial and star-tracker navigation](../concepts/celestial-nav.md), [Maritime navigation](../concepts/maritime-nav.md)
+**Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md)
 
 **Tags:** `almanac`, `sight-reduction`, `cli`
 
@@ -20,7 +20,7 @@ Nautical almanac and celestial sight reduction for Unix/Linux with CLI, ncurses 
 
 ## Related
 
-- alternative_to: [celnav](../repos/ms8r__celnav.md)
+- alternative_to: [celnav](../../catalog/repos/ms8r__celnav.md)
 
 _Indexed by lane(s): gap-fill_
 

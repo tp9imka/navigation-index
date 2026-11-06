@@ -12,7 +12,12 @@ ROS tools for IMUs: Madgwick and complementary orientation filters and an RViz I
 
 **Hackathon notes:** apt install on ROS 2.
 
-**Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+## Deep dives
+
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [ccnyroboticslab__imu_tools](../../docs/integration-cards/ccnyroboticslab__imu_tools.md) (integration-cards)
+
+**Concepts:** [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `ahrs`, `ros2`, `madgwick`, `complementary`
 
@@ -20,11 +25,11 @@ ROS tools for IMUs: Madgwick and complementary orientation filters and an RViz I
 
 ## Related
 
-- integrates_with: [robot_localization](../repos/cra-ros-pkg__robot_localization.md)
+- integrates_with: [robot_localization](../../catalog/repos/cra-ros-pkg__robot_localization.md)
 
 ## Referenced by
 
-- [robot_localization](../repos/cra-ros-pkg__robot_localization.md) (integrates_with)
+- [robot_localization](../../catalog/repos/cra-ros-pkg__robot_localization.md) (integrates_with)
 
 _Indexed by lane(s): ins-fusion_
 

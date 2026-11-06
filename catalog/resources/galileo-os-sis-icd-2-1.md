@@ -14,15 +14,19 @@ Specification of the Galileo open service signals (E1, E5a, E5b, E6 at the struc
 - Required for decoding Galileo navigation data
 - I/NAV is the carrier for OSNMA bits
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `icd`, `galileo`, `e1`, `e5`, `inav`
 
 ## Related
 
-- has_code: [RTKLIB](../repos/tomojitakasu__rtklib.md)
-- has_code: [RTKLIB demo5 (rtklibexplorer)](../repos/rtklibexplorer__rtklib.md)
-- has_code: [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md)
-- explains: [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md)
+- has_code: [RTKLIB](../../catalog/repos/tomojitakasu__rtklib.md)
+- has_code: [RTKLIB demo5 (rtklibexplorer)](../../catalog/repos/rtklibexplorer__rtklib.md)
+- has_code: [GNSS-SDR](../../catalog/repos/gnss-sdr__gnss-sdr.md)
+- explains: [GNSS-SDR](../../catalog/repos/gnss-sdr__gnss-sdr.md)
+
+## Referenced by
+
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 
 _Indexed by lane(s): docs-standards, gnss_

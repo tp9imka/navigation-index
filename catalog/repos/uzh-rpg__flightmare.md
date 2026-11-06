@@ -12,7 +12,7 @@ Quadrotor simulator from UZH RPG with a decoupled Unity renderer and fast dynami
 
 **Hackathon notes:** Last updated 2024 and ROS1-oriented; expect dependency fixing. Unity renderer binaries are separate downloads.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Visual(-inertial) odometry](../concepts/vio.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
 **Tags:** `uzh`, `quadrotor`, `unity`, `reinforcement-learning`, `rl`, `agile-flight`
 
@@ -20,15 +20,15 @@ Quadrotor simulator from UZH RPG with a decoupled Unity renderer and fast dynami
 
 ## Related
 
-- same_org: [Time-optimal quadrotor planning](../repos/uzh-rpg__rpg_time_optimal.md)
-- alternative_to: [FlightGoggles](../repos/mit-aera__flightgoggles.md)
-- alternative_to: [gym-pybullet-drones](../repos/learnsyslab__gym-pybullet-drones.md)
+- same_org: [Time-optimal quadrotor planning](../../catalog/repos/uzh-rpg__rpg_time_optimal.md)
+- alternative_to: [FlightGoggles](../../catalog/repos/mit-aera__flightgoggles.md)
+- alternative_to: [gym-pybullet-drones](../../catalog/repos/learnsyslab__gym-pybullet-drones.md)
 
 ## Referenced by
 
-- [FlightGoggles](../repos/mit-aera__flightgoggles.md) (alternative_to)
-- [Time-optimal quadrotor planning](../repos/uzh-rpg__rpg_time_optimal.md) (same_org)
-- [Champion-level drone racing using deep reinforcement learning](../resources/swift-champion-drone-racing-nature.md) (uses)
+- [FlightGoggles](../../catalog/repos/mit-aera__flightgoggles.md) (alternative_to)
+- [Time-optimal quadrotor planning](../../catalog/repos/uzh-rpg__rpg_time_optimal.md) (same_org)
+- [Champion-level drone racing using deep reinforcement learning](../../catalog/resources/swift-champion-drone-racing-nature.md) (uses)
 
 _Indexed by lane(s): defense-context, sim-data_
 

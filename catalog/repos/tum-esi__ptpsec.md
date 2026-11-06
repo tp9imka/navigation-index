@@ -12,7 +12,7 @@ Research implementation, based on linuxptp 3.1.1, that detects and mitigates PTP
 
 **Hackathon notes:** Needs two NICs with hardware timestamping per node and DPDK for the attacker; plan a day of setup. The detection idea can be reproduced in software on logged offsets.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `ptp`, `security`, `delay-attack`, `asymmetry`, `linuxptp`, `dpdk`
 
@@ -20,12 +20,13 @@ Research implementation, based on linuxptp 3.1.1, that detects and mitigates PTP
 
 ## Related
 
-- extends: [linuxptp](../repos/nwtime__linuxptp.md)
+- extends: [linuxptp](../../catalog/repos/nwtime__linuxptp.md)
 
 ## Referenced by
 
-- [linuxptp](../repos/nwtime__linuxptp.md) (extends)
-- [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../samples/timing-holdover.md) (explains)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [linuxptp](../../catalog/repos/nwtime__linuxptp.md) (extends)
+- [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../../catalog/samples/timing-holdover.md) (explains)
 
 _Indexed by lane(s): timing_
 

@@ -11,8 +11,13 @@ Field demonstration of 11 GPS-backup technologies (including eLoran, terrestrial
 - No single technology fully backs up GPS
 - eLoran fails differently from GNSS, which is its value
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Signals of opportunity](../concepts/signals-of-opportunity.md), [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `eloran`, `dot`, `gps-backup`
+
+## Referenced by
+
+- [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 
 _Indexed by lane(s): alt-nav_

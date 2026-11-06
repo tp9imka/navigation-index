@@ -11,16 +11,16 @@ Presents a multi-engine aerial VLN platform with automated data generation, a la
 - Automated toolchain scales aerial VLN data
 - Multiple rendering engines reduce sim bias
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `vln`, `uav`
 
 ## Related
 
-- has_code: [OpenFly](../repos/shailab-ipec__openfly-platform.md)
+- has_code: [OpenFly](../../catalog/repos/shailab-ipec__openfly-platform.md)
 
 ## Referenced by
 
-- [OpenFly](../repos/shailab-ipec__openfly-platform.md) (integrates_with)
+- [OpenFly](../../catalog/repos/shailab-ipec__openfly-platform.md) (integrates_with)
 
 _Indexed by lane(s): gap-fill_

@@ -16,16 +16,19 @@ Matches night-time UAV thermal imagery to satellite RGB maps using domain adapta
 - [thermal-datasets](../../docs/dataset-cards/thermal-datasets.md) (dataset-cards)
 - [thermal-geolocalization-iros-2023](../../docs/paper-digests/thermal-geolocalization-iros-2023.md) (paper-digests)
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `arxiv`, `thermal`, `night`
 
 ## Related
 
-- has_code: [Satellite-thermal geo-localization](../repos/arplaboratory__satellite-thermal-geo-localization.md)
+- has_code: [Satellite-thermal geo-localization](../../catalog/repos/arplaboratory__satellite-thermal-geo-localization.md)
 
 ## Referenced by
 
-- [STHN: Deep Homography Estimation for UAV Thermal Geo-localization with Satellite Imagery](../resources/sthn-thermal-homography-2024.md) (same_author)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [STHN: Deep Homography Estimation for UAV Thermal Geo-localization with Satellite Imagery](../../catalog/resources/sthn-thermal-homography-2024.md) (same_author)
 
 _Indexed by lane(s): alt-nav_

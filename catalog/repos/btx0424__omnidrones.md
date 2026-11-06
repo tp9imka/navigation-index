@@ -10,9 +10,9 @@ GPU-parallel drone simulation and RL platform built on Isaac Sim.
 
 **Why it matters:** Supports multi-drone and transport tasks with vectorized environments for learning-based autonomy.
 
-**Hackathon notes:** Pinned to specific Isaac Sim versions; check compatibility before investing time.
+**Hackathon notes:** Pinned to specific Isaac Sim versions (README badge: 4.1.0) and Linux only. The author states at the top of the README that this version is hard to maintain and will not be updated further; treat it as frozen.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `isaac-sim`, `rl`, `drones`
 
@@ -20,13 +20,13 @@ GPU-parallel drone simulation and RL platform built on Isaac Sim.
 
 ## Related
 
-- depends_on: [NVIDIA Isaac Sim](../repos/isaac-sim__isaacsim.md)
-- alternative_to: [Aerial Gym Simulator](../repos/ntnu-arl__aerial_gym_simulator.md)
+- depends_on: [NVIDIA Isaac Sim](../../catalog/repos/isaac-sim__isaacsim.md)
+- alternative_to: [Aerial Gym Simulator](../../catalog/repos/ntnu-arl__aerial_gym_simulator.md)
 
 ## Referenced by
 
-- [NVIDIA Isaac Sim](../repos/isaac-sim__isaacsim.md) (integrates_with)
-- [Aerial Gym Simulator](../repos/ntnu-arl__aerial_gym_simulator.md) (alternative_to)
+- [NVIDIA Isaac Sim](../../catalog/repos/isaac-sim__isaacsim.md) (integrates_with)
+- [Aerial Gym Simulator](../../catalog/repos/ntnu-arl__aerial_gym_simulator.md) (alternative_to)
 
 _Indexed by lane(s): sim-data_
 

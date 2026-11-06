@@ -11,12 +11,12 @@ Describes an AUV dataset from a real pipeline inspection mission (OceanScan LAUV
 - Open underwater visual SLAM benchmark with pose ground truth from navigation sensors
 - Side-scan sonar object detection labels (COCO and YOLO); segmentation labels are on RGB
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Underwater navigation](../concepts/underwater-nav.md), [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Underwater navigation](../../catalog/concepts/underwater-nav.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `auv`, `remaro`
 
 ## Related
 
-- has_code: [SubPipe](../repos/remaro-network__subpipe-dataset.md)
+- has_code: [SubPipe](../../catalog/repos/remaro-network__subpipe-dataset.md)
 
 _Indexed by lane(s): round3-expansion_

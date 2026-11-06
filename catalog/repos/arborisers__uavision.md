@@ -12,7 +12,7 @@ Map-matching-based visual localization software for UAVs in GNSS-denied settings
 
 **Hackathon notes:** Useful for UI inspiration and a quick demo; inspect the matcher it uses before relying on accuracy.
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Feature detection and matching](../concepts/feature-matching.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 
 **Tags:** `gui`, `map-matching`
 
@@ -20,7 +20,7 @@ Map-matching-based visual localization software for UAVs in GNSS-denied settings
 
 ## Related
 
-- alternative_to: [WildNav](../repos/tiers__wildnav.md)
+- alternative_to: [WildNav](../../catalog/repos/tiers__wildnav.md)
 
 _Indexed by lane(s): alt-nav_
 

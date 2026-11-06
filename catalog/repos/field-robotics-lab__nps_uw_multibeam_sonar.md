@@ -12,7 +12,7 @@ GPU (CUDA) multibeam sonar simulation plugin for Gazebo producing physically mot
 
 **Hackathon notes:** Needs an NVIDIA GPU; used within DAVE.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Underwater navigation](../concepts/underwater-nav.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Underwater navigation](../../catalog/concepts/underwater-nav.md)
 
 **Tags:** `multibeam`, `sonar`, `cuda`, `gazebo`
 
@@ -20,11 +20,11 @@ GPU (CUDA) multibeam sonar simulation plugin for Gazebo producing physically mot
 
 ## Related
 
-- integrates_with: [Project DAVE](../repos/field-robotics-lab__dave.md)
+- integrates_with: [Project DAVE](../../catalog/repos/field-robotics-lab__dave.md)
 
 ## Referenced by
 
-- [Project DAVE](../repos/field-robotics-lab__dave.md) (integrates_with)
+- [Project DAVE](../../catalog/repos/field-robotics-lab__dave.md) (integrates_with)
 
 _Indexed by lane(s): domains-swarm_
 

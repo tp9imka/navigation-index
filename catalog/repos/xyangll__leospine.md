@@ -10,9 +10,9 @@ Open toolkit for LEO/MEO/GEO constellation simulation and single/multi-satellite
 
 **Why it matters:** Lets a team simulate LEO-based positioning geometry and accuracy without hardware.
 
-**Hackathon notes:** Browser-friendly; good for visualizing LEO coverage in a pitch.
+**Hackathon notes:** Desktop PySide6 app with Cesium 3D views (browser or embedded WebView); good for visualizing LEO coverage in a pitch.
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `leo`, `simulation`
 
@@ -20,12 +20,16 @@ Open toolkit for LEO/MEO/GEO constellation simulation and single/multi-satellite
 
 ## Related
 
-- alternative_to: [GraphGNSSLib LEO](../repos/gao-tech1__graphgnsslib_leo_v1.2.md)
+- alternative_to: [GraphGNSSLib LEO](../../catalog/repos/gao-tech1__graphgnsslib_leo_v1.2.md)
 
 ## Referenced by
 
-- [GraphGNSSLib LEO](../repos/gao-tech1__graphgnsslib_leo_v1.2.md) (alternative_to)
-- [Starlink LEO-PNT](../repos/przemyslawpiekarski__starlink-leo-pnt.md) (alternative_to)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [GraphGNSSLib LEO](../../catalog/repos/gao-tech1__graphgnsslib_leo_v1.2.md) (alternative_to)
+- [Starlink LEO-PNT](../../catalog/repos/przemyslawpiekarski__starlink-leo-pnt.md) (alternative_to)
 
 _Indexed by lane(s): alt-nav_
 

@@ -15,12 +15,18 @@ Proposes matching drone camera frames to open satellite imagery with learned fea
 
 - [wildnav-gnss-free-uav-localization-2022](../../docs/paper-digests/wildnav-gnss-free-uav-localization-2022.md) (paper-digests)
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Feature detection and matching](../concepts/feature-matching.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `arxiv`, `uav`
 
 ## Related
 
-- has_code: [WildNav](../repos/tiers__wildnav.md)
+- has_code: [WildNav](../../catalog/repos/tiers__wildnav.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 
 _Indexed by lane(s): alt-nav_

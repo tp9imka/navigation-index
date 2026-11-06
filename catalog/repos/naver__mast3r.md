@@ -16,7 +16,7 @@ Matching grounded in 3D: predicts dense correspondences and 3D pointmaps from im
 
 - [mast3r-2024](../../docs/paper-digests/mast3r-2024.md) (paper-digests)
 
-**Concepts:** [Feature detection and matching](../concepts/feature-matching.md), [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Feature detection and matching](../../catalog/concepts/feature-matching.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `3d`, `dense`, `foundation-model`
 
@@ -24,8 +24,9 @@ Matching grounded in 3D: predicts dense correspondences and 3D pointmaps from im
 
 ## Referenced by
 
-- [vismatch (image-matching-models)](../repos/gmberton__vismatch.md) (integrates_with)
-- [Grounding Image Matching in 3D with MASt3R](../resources/mast3r-2024.md) (has_code)
+- [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
+- [vismatch (image-matching-models)](../../catalog/repos/gmberton__vismatch.md) (integrates_with)
+- [Grounding Image Matching in 3D with MASt3R](../../catalog/resources/mast3r-2024.md) (has_code)
 
 _Indexed by lane(s): alt-nav_
 

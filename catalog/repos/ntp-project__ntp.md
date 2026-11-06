@@ -12,7 +12,7 @@ The Network Time Foundation's reference implementation of NTPv4 (ntpd, ntpq, ntp
 
 **Hackathon notes:** Mostly a reference for behaviour comparisons; prefer chrony or ntpd-rs for new builds.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `ntp`, `ntpd`, `reference-implementation`
 
@@ -20,13 +20,13 @@ The Network Time Foundation's reference implementation of NTPv4 (ntpd, ntpq, ntp
 
 ## Related
 
-- alternative_to: [NTPsec](../repos/gitlab.com__ntpsec__ntpsec.md)
+- alternative_to: [NTPsec](../../catalog/repos/gitlab.com__ntpsec__ntpsec.md)
 
 ## Referenced by
 
-- [NTPsec](../repos/gitlab.com__ntpsec__ntpsec.md) (fork_of)
-- [Attacking the Network Time Protocol](../resources/malhotra-2016-attacking-ntp.md) (evaluates)
-- [RFC 5905: Network Time Protocol Version 4: Protocol and Algorithms Specification](../resources/rfc5905-ntpv4.md) (has_code)
+- [NTPsec](../../catalog/repos/gitlab.com__ntpsec__ntpsec.md) (fork_of)
+- [Attacking the Network Time Protocol](../../catalog/resources/malhotra-2016-attacking-ntp.md) (evaluates)
+- [RFC 5905: Network Time Protocol Version 4: Protocol and Algorithms Specification](../../catalog/resources/rfc5905-ntpv4.md) (has_code)
 
 _Indexed by lane(s): timing_
 

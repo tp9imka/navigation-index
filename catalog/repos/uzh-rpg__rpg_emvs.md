@@ -12,7 +12,7 @@ Event-based multi-view stereo: semi-dense 3D reconstruction from a moving event 
 
 **Hackathon notes:** ROS1; reference implementation.
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `event-camera`, `multi-view-stereo`
 
@@ -20,7 +20,7 @@ Event-based multi-view stereo: semi-dense 3D reconstruction from a moving event 
 
 ## Related
 
-- same_org: [EKLT](../repos/uzh-rpg__rpg_eklt.md)
+- same_org: [EKLT](../../catalog/repos/uzh-rpg__rpg_eklt.md)
 
 _Indexed by lane(s): gap-fill_
 

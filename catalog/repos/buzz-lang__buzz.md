@@ -12,7 +12,7 @@ Domain-specific programming language for robot swarms with swarm-level primitive
 
 **Hackathon notes:** Builds cleanly; bindings to real robots require extra work.
 
-**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+**Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `swarm-language`, `stigmergy`, `mistlab`
 
@@ -20,11 +20,11 @@ Domain-specific programming language for robot swarms with swarm-level primitive
 
 ## Related
 
-- same_org: [Swarm-SLAM](../repos/mistlab__swarm-slam.md)
+- same_org: [Swarm-SLAM](../../catalog/repos/mistlab__swarm-slam.md)
 
 ## Referenced by
 
-- [ROS2swarm](../repos/ros2swarm__ros2swarm.md) (alternative_to)
+- [ROS2swarm](../../catalog/repos/ros2swarm__ros2swarm.md) (alternative_to)
 
 _Indexed by lane(s): domains-swarm_
 

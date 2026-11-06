@@ -11,7 +11,7 @@ DoD policy directive governing the department's PNT enterprise, including the PN
 - Establishes the DoD PNT Oversight Council
 - Assigns responsibilities for PNT and navigation warfare
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Policy, export control and ethics](../concepts/policy-ethics.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `dod`, `directive`, `navwar`, `policy`
 

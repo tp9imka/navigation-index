@@ -16,12 +16,18 @@ English: 'SDR GPS receiver on a microcontroller'. Builds a real-time software GP
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Software-defined GNSS receivers](../concepts/gnss-sdr.md), [GNSS positioning](../concepts/gnss.md)
+**Concepts:** [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md), [GNSS positioning](../../catalog/concepts/gnss.md)
 
 **Tags:** `lang:ru`, `habr`, `stm32`, `sdr`, `diy`
 
 ## Related
 
-- uses: [RTKLIB](../repos/tomojitakasu__rtklib.md)
+- uses: [RTKLIB](../../catalog/repos/tomojitakasu__rtklib.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_

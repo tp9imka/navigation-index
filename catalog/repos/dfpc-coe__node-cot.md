@@ -12,7 +12,12 @@ JavaScript/TypeScript library for parsing, building and converting Cursor-on-Tar
 
 **Hackathon notes:** npm install @tak-ps/node-cot.
 
-**Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Standards and interface specs](../concepts/standards.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [dfpc-coe__node-cot](../../docs/integration-cards/dfpc-coe__node-cot.md) (integration-cards)
+
+**Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `cot`, `geojson`, `typescript`
 
@@ -20,14 +25,15 @@ JavaScript/TypeScript library for parsing, building and converting Cursor-on-Tar
 
 ## Related
 
-- same_org: [CloudTAK](../repos/dfpc-coe__cloudtak.md)
-- alternative_to: [PyTAK](../repos/snstac__pytak.md)
+- same_org: [CloudTAK](../../catalog/repos/dfpc-coe__cloudtak.md)
+- alternative_to: [PyTAK](../../catalog/repos/snstac__pytak.md)
 
 ## Referenced by
 
-- [CloudTAK](../repos/dfpc-coe__cloudtak.md) (depends_on)
-- [cotlib (Go)](../repos/nervsystems__cotlib.md) (alternative_to)
-- [Cursor-on-Target Message Router User's Guide](../resources/mitre-cot-users-guide.md) (explains)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [CloudTAK](../../catalog/repos/dfpc-coe__cloudtak.md) (depends_on)
+- [cotlib (Go)](../../catalog/repos/nervsystems__cotlib.md) (alternative_to)
+- [Cursor-on-Target Message Router User's Guide](../../catalog/resources/mitre-cot-users-guide.md) (explains)
 
 _Indexed by lane(s): planning-gis-c2_
 

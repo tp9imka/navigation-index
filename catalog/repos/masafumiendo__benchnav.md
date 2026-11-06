@@ -10,9 +10,9 @@ Gymnasium-based PyTorch simulator for benchmarking off-road navigation planners 
 
 **Why it matters:** Lightweight way to compare off-road planners without a robot.
 
-**Hackathon notes:** pip install and run notebooks; plain Python, quick to start.
+**Hackathon notes:** Docker setup via make build-gpu or build-cpu, or pip install from the clone (not on PyPI); fetch the dataset and models with scripts/download_dataset_and_model.sh, then run the tutorial notebooks. No LICENSE file, so all rights reserved by default.
 
-**Concepts:** [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [Path and motion planning](../concepts/path-planning.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `off-road`, `benchmark`, `gymnasium`
 
@@ -20,11 +20,11 @@ Gymnasium-based PyTorch simulator for benchmarking off-road navigation planners 
 
 ## Related
 
-- evaluated_on: [Wild Visual Navigation](../repos/leggedrobotics__wild_visual_navigation.md)
+- evaluated_on: [Wild Visual Navigation](../../catalog/repos/leggedrobotics__wild_visual_navigation.md)
 
 ## Referenced by
 
-- [HOUND](../repos/prl-mushr__hound_core.md) (alternative_to)
+- [HOUND](../../catalog/repos/prl-mushr__hound_core.md) (alternative_to)
 
 _Indexed by lane(s): domains-swarm_
 

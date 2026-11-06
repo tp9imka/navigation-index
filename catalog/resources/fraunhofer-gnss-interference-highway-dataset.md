@@ -12,12 +12,12 @@
 - Non-commercial licence (CC BY-NC-SA 4.0)
 - Companion dataset 2 has fewer classes (2 interference, 1 non-interference)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Jamming and spoofing](../concepts/gnss-interference.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
 **Tags:** `fraunhofer`, `iq`, `highway`
 
 ## Related
 
-- same_author: [Fraunhofer IIS Jammertest 2025 dataset](../repos/felixott94__fraunhoferiis_jammertest2025.md)
+- same_author: [Fraunhofer IIS Jammertest 2025 dataset](../../catalog/repos/felixott94__fraunhoferiis_jammertest2025.md)
 
 _Indexed by lane(s): round3-expansion_

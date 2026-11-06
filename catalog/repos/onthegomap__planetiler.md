@@ -10,9 +10,9 @@ Fast vector tile generator that builds OpenMapTiles-compatible tilesets from OSM
 
 **Why it matters:** Build your own up-to-date offline basemap for an AOI in minutes.
 
-**Hackathon notes:** java -jar planetiler.jar --area=<region> outputs mbtiles or pmtiles.
+**Hackathon notes:** planetiler --download --area=<region> --output=<name>.pmtiles builds mbtiles or pmtiles; the jar needs Java 25+, the Homebrew, single-file and Docker launchers need no Java. The first run downloads about 1 GB of ocean and Natural Earth data.
 
-**Concepts:** [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+**Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `vector-tiles`, `osm`, `openmaptiles`
 
@@ -20,12 +20,12 @@ Fast vector tile generator that builds OpenMapTiles-compatible tilesets from OSM
 
 ## Related
 
-- integrates_with: [PMTiles](../repos/protomaps__pmtiles.md)
-- integrates_with: [TileServer GL](../repos/maptiler__tileserver-gl.md)
+- integrates_with: [PMTiles](../../catalog/repos/protomaps__pmtiles.md)
+- integrates_with: [TileServer GL](../../catalog/repos/maptiler__tileserver-gl.md)
 
 ## Referenced by
 
-- [PMTiles](../repos/protomaps__pmtiles.md) (integrates_with)
+- [PMTiles](../../catalog/repos/protomaps__pmtiles.md) (integrates_with)
 
 _Indexed by lane(s): planning-gis-c2_
 

@@ -6,13 +6,13 @@
 |---|---|---|---|---|---|---|
 | 880 | C++ | BSD-3-Clause | 2026-10-13 | False | active-research | medium |
 
-NTNU ARL graph-based exploration planner for subterranean environments, used in the DARPA SubT challenge on legged and aerial robots.
+Graph-based exploration planner from NTNU ARL; the main branch is now OmniPlanner (GBPlanner 3.0) for aerial, ground and underwater robots, and GBPlanner 2.0, the planning core of Team CERBERUS, winner of the DARPA SubT final, is kept on the gbplanner2 branch.
 
 **Why it matters:** Winning-team open code for autonomous exploration of GNSS-denied spaces with legged and aerial robots.
 
-**Hackathon notes:** ROS1 catkin build with simulation demos; budget hours for dependencies. Pair with any lidar odometry.
+**Hackathon notes:** The default branch is now OmniPlanner (GBPlanner 3.0, aerial/ground/underwater); GBPlanner 2.0 is on the gbplanner2 branch. ROS workspace with Gazebo worlds; heavy but realistic. Licence is BSD-3, but the README says it is intended for civilian use only.
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [Mission planning and routing](../concepts/mission-planning.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 
 **Tags:** `darpa-subt`, `cerberus`, `exploration`, `ros`, `subterranean`
 
@@ -20,18 +20,18 @@ NTNU ARL graph-based exploration planner for subterranean environments, used in 
 
 ## Related
 
-- same_org: [MBPlanner](../repos/ntnu-arl__mbplanner_ros.md)
-- evaluated_on: [DARPA SubT Virtual Challenge](../repos/osrf__subt.md)
-- alternative_to: [FUEL - Fast UAV Exploration](../repos/hkust-aerial-robotics__fuel.md)
-- alternative_to: [CMU Autonomous Exploration Development Environment](../repos/hongbiaoz__autonomous_exploration_development_environment.md)
+- same_org: [MBPlanner](../../catalog/repos/ntnu-arl__mbplanner_ros.md)
+- evaluated_on: [DARPA SubT Virtual Challenge](../../catalog/repos/osrf__subt.md)
+- alternative_to: [FUEL - Fast UAV Exploration](../../catalog/repos/hkust-aerial-robotics__fuel.md)
+- alternative_to: [CMU Autonomous Exploration Development Environment](../../catalog/repos/hongbiaoz__autonomous_exploration_development_environment.md)
 
 ## Referenced by
 
-- [TARE Planner (CMU Explorer)](../repos/caochao39__tare_planner.md) (alternative_to)
-- [CMU Autonomous Exploration Development Environment](../repos/hongbiaoz__autonomous_exploration_development_environment.md) (alternative_to)
-- [MBPlanner](../repos/ntnu-arl__mbplanner_ros.md) (same_org)
-- [DARPA SubT Virtual Challenge](../repos/osrf__subt.md) (evaluated_on)
-- [Team CERBERUS Wins the DARPA Subterranean Challenge: Technical Overview and Lessons Learned](../resources/cerberus-subt-final-paper.md) (has_code)
+- [TARE Planner (CMU Explorer)](../../catalog/repos/caochao39__tare_planner.md) (alternative_to)
+- [CMU Autonomous Exploration Development Environment](../../catalog/repos/hongbiaoz__autonomous_exploration_development_environment.md) (alternative_to)
+- [MBPlanner](../../catalog/repos/ntnu-arl__mbplanner_ros.md) (same_org)
+- [DARPA SubT Virtual Challenge](../../catalog/repos/osrf__subt.md) (evaluated_on)
+- [Team CERBERUS Wins the DARPA Subterranean Challenge: Technical Overview and Lessons Learned](../../catalog/resources/cerberus-subt-final-paper.md) (has_code)
 
 _Indexed by lane(s): defense-context, planning-gis-c2_
 

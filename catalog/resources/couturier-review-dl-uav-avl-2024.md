@@ -15,8 +15,13 @@ Survey of deep-learning approaches to UAV absolute visual localization against r
 
 - [couturier-review-dl-uav-avl-2024](../../docs/paper-digests/couturier-review-dl-uav-avl-2024.md) (paper-digests)
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `survey`, `drones-journal`
+
+## Referenced by
+
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 
 _Indexed by lane(s): alt-nav_

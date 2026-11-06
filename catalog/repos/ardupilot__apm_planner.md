@@ -12,7 +12,7 @@ Qt-based cross-platform ArduPilot GCS, now largely in maintenance mode.
 
 **Hackathon notes:** Prefer QGroundControl or Mission Planner.
 
-**Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
+**Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 
 **Tags:** `gcs`, `qt`
 
@@ -20,12 +20,12 @@ Qt-based cross-platform ArduPilot GCS, now largely in maintenance mode.
 
 ## Related
 
-- alternative_to: [QGroundControl](../repos/mavlink__qgroundcontrol.md)
-- alternative_to: [Mission Planner](../repos/ardupilot__missionplanner.md)
+- alternative_to: [QGroundControl](../../catalog/repos/mavlink__qgroundcontrol.md)
+- alternative_to: [Mission Planner](../../catalog/repos/ardupilot__missionplanner.md)
 
 ## Referenced by
 
-- [QGroundControl](../repos/mavlink__qgroundcontrol.md) (alternative_to)
+- [QGroundControl](../../catalog/repos/mavlink__qgroundcontrol.md) (alternative_to)
 
 _Indexed by lane(s): autopilots_
 

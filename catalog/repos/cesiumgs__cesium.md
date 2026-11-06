@@ -17,7 +17,7 @@ WebGL 3D globe and map library with terrain, 3D Tiles, time-dynamic data (CZML) 
 - [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
 - [cesiumgs__cesium](../../docs/integration-cards/cesiumgs__cesium.md) (integration-cards)
 
-**Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+**Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `3d-globe`, `3d-tiles`, `czml`, `webgl`
 
@@ -25,12 +25,15 @@ WebGL 3D globe and map library with terrain, 3D Tiles, time-dynamic data (CZML) 
 
 ## Related
 
-- integrates_with: [Cesium Terrain Builder](../repos/geo-data__cesium-terrain-builder.md)
-- alternative_to: [MapLibre GL JS](../repos/maplibre__maplibre-gl-js.md)
+- integrates_with: [Cesium Terrain Builder](../../catalog/repos/geo-data__cesium-terrain-builder.md)
+- alternative_to: [MapLibre GL JS](../../catalog/repos/maplibre__maplibre-gl-js.md)
 
 ## Referenced by
 
-- [Cesium Terrain Builder](../repos/geo-data__cesium-terrain-builder.md) (integrates_with)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Cesium Terrain Builder](../../catalog/repos/geo-data__cesium-terrain-builder.md) (integrates_with)
 
 _Indexed by lane(s): planning-gis-c2_
 

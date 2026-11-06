@@ -17,7 +17,7 @@ The standard ROS 2 navigation stack: behavior-tree driven navigator, global plan
 - [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
 - [ros-navigation__navigation2](../../docs/integration-cards/ros-navigation__navigation2.md) (integration-cards)
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `nav2`, `ros2`, `costmap`, `mppi`, `smac-planner`, `behavior-tree`
 
@@ -25,27 +25,32 @@ The standard ROS 2 navigation stack: behavior-tree driven navigator, global plan
 
 ## Related
 
-- extends: [opennav_coverage](../repos/open-navigation__opennav_coverage.md)
-- depends_on: [BehaviorTree.CPP](../repos/behaviortree__behaviortree.cpp.md)
-- integrates_with: [Spatio-Temporal Voxel Layer](../repos/stevemacenski__spatio_temporal_voxel_layer.md)
-- alternative_to: [OMPL - Open Motion Planning Library](../repos/ompl__ompl.md)
+- extends: [opennav_coverage](../../catalog/repos/open-navigation__opennav_coverage.md)
+- depends_on: [BehaviorTree.CPP](../../catalog/repos/behaviortree__behaviortree.cpp.md)
+- integrates_with: [Spatio-Temporal Voxel Layer](../../catalog/repos/stevemacenski__spatio_temporal_voxel_layer.md)
+- alternative_to: [OMPL - Open Motion Planning Library](../../catalog/repos/ompl__ompl.md)
 
 ## Referenced by
 
-- [BehaviorTree.CPP](../repos/behaviortree__behaviortree.cpp.md) (integrates_with)
-- [Beluga](../repos/ekumen-os__beluga.md) (alternative_to)
-- [MoveIt 2](../repos/moveit__moveit2.md) (integrates_with)
-- [Isaac ROS nvblox](../repos/nvidia-isaac-ros__isaac_ros_nvblox.md) (integrates_with)
-- [opennav_coverage](../repos/open-navigation__opennav_coverage.md) (extends)
-- [PlanSys2](../repos/plansys2__ros2_planning_system.md) (integrates_with)
-- [Nav2 tutorials](../repos/ros-navigation__navigation2_tutorials.md) (extends)
-- [Spatio-Temporal Voxel Layer](../repos/stevemacenski__spatio_temporal_voxel_layer.md) (integrates_with)
-- [The Marathon 2: A Navigation System](../resources/macenski-marathon2-nav2.md) (has_code)
-- [From the Desks of ROS Maintainers: A Survey of Modern & Capable Mobile Robotics Algorithms in the Robot Operating System 2](../resources/macenski-ros2-algorithms-survey.md) (explains)
-- [Nav2 Documentation](../resources/nav2-docs.md) (explains)
-- [Navigating Using GPS Localization (Nav2 tutorial)](../resources/nav2-gps-navigation-tutorial.md) (has_code)
-- [Nav2 ROSCon Talks (index)](../resources/nav2-roscon-talks.md) (explains)
-- [Nav2 ROSCon Talks index](../resources/nav2-roscon-talks-index.md) (uses)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [BehaviorTree.CPP](../../catalog/repos/behaviortree__behaviortree.cpp.md) (integrates_with)
+- [Beluga](../../catalog/repos/ekumen-os__beluga.md) (alternative_to)
+- [MoveIt 2](../../catalog/repos/moveit__moveit2.md) (integrates_with)
+- [Isaac ROS nvblox](../../catalog/repos/nvidia-isaac-ros__isaac_ros_nvblox.md) (integrates_with)
+- [opennav_coverage](../../catalog/repos/open-navigation__opennav_coverage.md) (extends)
+- [PlanSys2](../../catalog/repos/plansys2__ros2_planning_system.md) (integrates_with)
+- [Nav2 tutorials](../../catalog/repos/ros-navigation__navigation2_tutorials.md) (extends)
+- [Spatio-Temporal Voxel Layer](../../catalog/repos/stevemacenski__spatio_temporal_voxel_layer.md) (integrates_with)
+- [The Marathon 2: A Navigation System](../../catalog/resources/macenski-marathon2-nav2.md) (has_code)
+- [From the Desks of ROS Maintainers: A Survey of Modern & Capable Mobile Robotics Algorithms in the Robot Operating System 2](../../catalog/resources/macenski-ros2-algorithms-survey.md) (explains)
+- [Nav2 Documentation](../../catalog/resources/nav2-docs.md) (explains)
+- [Navigating Using GPS Localization (Nav2 tutorial)](../../catalog/resources/nav2-gps-navigation-tutorial.md) (has_code)
+- [Nav2 ROSCon Talks (index)](../../catalog/resources/nav2-roscon-talks.md) (explains)
+- [Nav2 ROSCon Talks index](../../catalog/resources/nav2-roscon-talks-index.md) (uses)
 
 _Indexed by lane(s): planning-gis-c2_
 

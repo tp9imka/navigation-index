@@ -1,6 +1,6 @@
 # Multi-Object Tracking for Automotive Systems (edX)
 
-`res:chalmers-multi-object-tracking` - course - <https://www.edx.org/learn/engineering/chalmers-university-of-technology-multi-object-tracking-for-automotive-systems>
+`res:chalmers-multi-object-tracking` - course - <https://www.edx.org/learn/autonomous-robotics/chalmers-university-of-technology-multi-object-tracking-for-automotive-systems>
 
 **By:** Karl Granström, Lennart Svensson, Chalmers University of Technology - **Year:** 2019 - **Level:** advanced - **Access:** free-registration
 
@@ -11,16 +11,16 @@ edX course on single- and multi-object tracking: data association, GNN/JPDA/MHT,
 - Modern RFS/PMBM trackers explained
 - Direct use for radar/EO track fusion
 
-**Concepts:** [Tracking and data association](../concepts/target-tracking.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Counter-UAS and drone detection](../concepts/counter-uas.md)
+**Concepts:** [Tracking and data association](../../catalog/concepts/target-tracking.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md)
 
 **Tags:** `edx`, `mht`, `pmbm`, `tracking`
 
 ## Related
 
-- same_author: [Sensor Fusion and Non-linear Filtering for Automotive Systems (edX)](../resources/chalmers-sensor-fusion-nonlinear-filtering.md)
+- same_author: [Sensor Fusion and Non-linear Filtering for Automotive Systems (edX)](../../catalog/resources/chalmers-sensor-fusion-nonlinear-filtering.md)
 
 ## Referenced by
 
-- [Sensor Fusion and Non-linear Filtering for Automotive Systems (edX)](../resources/chalmers-sensor-fusion-nonlinear-filtering.md) (same_author)
+- [Sensor Fusion and Non-linear Filtering for Automotive Systems (edX)](../../catalog/resources/chalmers-sensor-fusion-nonlinear-filtering.md) (same_author)
 
 _Indexed by lane(s): learning_

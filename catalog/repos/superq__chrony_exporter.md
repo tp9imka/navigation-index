@@ -12,7 +12,7 @@ Prometheus exporter for chrony tracking, sources and server statistics.
 
 **Hackathon notes:** Run next to chronyd, scrape with Prometheus, chart in Grafana; enable the sources collector to see each reference.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `prometheus`, `monitoring`, `chrony`
 
@@ -20,11 +20,12 @@ Prometheus exporter for chrony tracking, sources and server statistics.
 
 ## Related
 
-- integrates_with: [chrony](../repos/gitlab.com__chrony__chrony.md)
+- integrates_with: [chrony](../../catalog/repos/gitlab.com__chrony__chrony.md)
 
 ## Referenced by
 
-- [chrony](../repos/gitlab.com__chrony__chrony.md) (integrates_with)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [chrony](../../catalog/repos/gitlab.com__chrony__chrony.md) (integrates_with)
 
 _Indexed by lane(s): timing_
 

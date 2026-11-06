@@ -12,7 +12,7 @@ Toolkit for NMEA 2000 networks: a PGN decoder/analyzer plus utilities to read, w
 
 **Hackathon notes:** Build analyzer and pipe candump/actisense logs through it to JSON. Needs a CAN or N2K gateway for live data; sample logs work offline.
 
-**Concepts:** [Maritime navigation](../concepts/maritime-nav.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `nmea2000`, `nmea0183`, `can-bus`, `pgn`, `marine`
 
@@ -20,11 +20,11 @@ Toolkit for NMEA 2000 networks: a PGN decoder/analyzer plus utilities to read, w
 
 ## Related
 
-- integrates_with: [Signal K Server](../repos/signalk__signalk-server.md)
+- integrates_with: [Signal K Server](../../catalog/repos/signalk__signalk-server.md)
 
 ## Referenced by
 
-- [NMEA 2000 Standard (CAN-based marine network)](../resources/nmea-2000-standard.md) (has_code)
+- [NMEA 2000 Standard (CAN-based marine network)](../../catalog/resources/nmea-2000-standard.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

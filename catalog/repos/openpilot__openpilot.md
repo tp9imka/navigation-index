@@ -12,7 +12,7 @@ Mirror of the original OpenPilot flight controller project (not comma.ai's openp
 
 **Hackathon notes:** Historical reference only.
 
-**Concepts:** [Autopilots and flight control](../concepts/autopilot.md)
+**Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
 **Tags:** `openpilot`, `uavtalk`, `history`
 
@@ -20,7 +20,7 @@ Mirror of the original OpenPilot flight controller project (not comma.ai's openp
 
 ## Referenced by
 
-- [LibrePilot](../repos/librepilot__librepilot.md) (fork_of)
+- [LibrePilot](../../catalog/repos/librepilot__librepilot.md) (fork_of)
 
 _Indexed by lane(s): autopilots_
 

@@ -14,9 +14,11 @@ Widely used Python package for YOLO-family detection, segmentation and tracking 
 
 ## Deep dives
 
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [ultralytics__ultralytics](../../docs/integration-cards/ultralytics__ultralytics.md) (integration-cards)
 - [anti-uav](../../docs/dataset-cards/anti-uav.md) (dataset-cards)
 
-**Concepts:** [Onboard / edge AI perception](../concepts/edge-ai.md), [Tracking and data association](../concepts/target-tracking.md), [Counter-UAS and drone detection](../concepts/counter-uas.md)
+**Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md), [Tracking and data association](../../catalog/concepts/target-tracking.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md)
 
 **Tags:** `yolo`, `detection`, `tracking`
 
@@ -24,13 +26,17 @@ Widely used Python package for YOLO-family detection, segmentation and tracking 
 
 ## Related
 
-- evaluated_on: [Anti-UAV](../repos/zhaoj9014__anti-uav.md)
-- integrates_with: [BoxMOT](../repos/mikel-brostrom__boxmot.md)
+- evaluated_on: [Anti-UAV](../../catalog/repos/zhaoj9014__anti-uav.md)
+- integrates_with: [BoxMOT](../../catalog/repos/mikel-brostrom__boxmot.md)
 
 ## Referenced by
 
-- [BoxMOT](../repos/mikel-brostrom__boxmot.md) (integrates_with)
-- [Anti-UAV](../repos/zhaoj9014__anti-uav.md) (integrates_with)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [drone_navigation - ROS 2 + PX4 + RTAB-Map diploma](../../catalog/repos/bolotnaya-glesenb__drone_navigation.md) (depends_on)
+- [BoxMOT](../../catalog/repos/mikel-brostrom__boxmot.md) (integrates_with)
+- [Anti-UAV](../../catalog/repos/zhaoj9014__anti-uav.md) (integrates_with)
 
 _Indexed by lane(s): domains-swarm_
 

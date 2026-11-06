@@ -11,12 +11,16 @@ Formulates LiDAR-inertial odometry as factor-graph smoothing with IMU preintegra
 - Factor graphs make it straightforward to add or drop GNSS
 - Keyframe-local scan matching keeps it real time
 
-**Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [GNSS/INS integration](../concepts/gnss-ins.md)
+**Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md)
 
 **Tags:** `factor-graph`, `gtsam`
 
 ## Related
 
-- has_code: [LIO-SAM](../repos/tixiaoshan__lio-sam.md)
+- has_code: [LIO-SAM](../../catalog/repos/tixiaoshan__lio-sam.md)
+
+## Referenced by
+
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 
 _Indexed by lane(s): slam_

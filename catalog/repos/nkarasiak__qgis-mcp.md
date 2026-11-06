@@ -12,7 +12,7 @@ MCP bridge that lets AI agents drive QGIS Desktop: a QGIS plugin runs a TCP sock
 
 **Hackathon notes:** Same plugin-plus-server pattern; check QGIS version compatibility.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `mcp`, `qgis`, `llm`
 
@@ -20,11 +20,11 @@ MCP bridge that lets AI agents drive QGIS Desktop: a QGIS plugin runs a TCP sock
 
 ## Related
 
-- alternative_to: [QGIS MCP](../repos/jjsantos01__qgis_mcp.md)
+- alternative_to: [QGIS MCP](../../catalog/repos/jjsantos01__qgis_mcp.md)
 
 ## Referenced by
 
-- [QGIS MCP](../repos/jjsantos01__qgis_mcp.md) (alternative_to)
+- [QGIS MCP](../../catalog/repos/jjsantos01__qgis_mcp.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

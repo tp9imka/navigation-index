@@ -12,7 +12,7 @@ Modern-backbone efficient geo-localization solution for UAVM 2023 including dist
 
 **Hackathon notes:** MIT. Topped the leaderboard (R@1 98.94) but was removed for using University-1652 test data; the method and distillation code are still useful. Weights on Baidu only; University-1652 is research use only.
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `distillation`, `challenge`
 
@@ -20,11 +20,11 @@ Modern-backbone efficient geo-localization solution for UAVM 2023 including dist
 
 ## Related
 
-- evaluated_on: [UAVM 2023 challenge](../repos/layumi__uavm2023.md)
+- evaluated_on: [UAVM 2023 challenge](../../catalog/repos/layumi__uavm2023.md)
 
 ## Referenced by
 
-- [UAVM 2023 challenge](../repos/layumi__uavm2023.md) (integrates_with)
+- [UAVM 2023 challenge](../../catalog/repos/layumi__uavm2023.md) (integrates_with)
 
 _Indexed by lane(s): round3-expansion_
 

@@ -12,7 +12,12 @@ Decentralized multi-quadrotor extension of EGO-Planner with inter-agent collisio
 
 **Hackathon notes:** Simulation launches many drones on one machine; trajectory broadcast assumes reliable comms - an interesting knob to degrade in a hackathon.
 
-**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Path and motion planning](../concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md)
+## Deep dives
+
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [zju-fast-lab__ego-planner-swarm](../../docs/integration-cards/zju-fast-lab__ego-planner-swarm.md) (integration-cards)
+
+**Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
 **Tags:** `swarm`, `trajectory`, `quadrotor`, `decentralized`
 
@@ -20,13 +25,15 @@ Decentralized multi-quadrotor extension of EGO-Planner with inter-agent collisio
 
 ## Related
 
-- integrates_with: [Aerostack2](../repos/aerostack2__aerostack2.md)
-- extends: [EGO-Planner](../repos/zju-fast-lab__ego-planner.md)
+- integrates_with: [Aerostack2](../../catalog/repos/aerostack2__aerostack2.md)
+- extends: [EGO-Planner](../../catalog/repos/zju-fast-lab__ego-planner.md)
 
 ## Referenced by
 
-- [MADER](../repos/mit-acl__mader.md) (alternative_to)
-- [EGO-Planner](../repos/zju-fast-lab__ego-planner.md) (extends)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [MADER](../../catalog/repos/mit-acl__mader.md) (alternative_to)
+- [EGO-Planner](../../catalog/repos/zju-fast-lab__ego-planner.md) (extends)
 
 _Indexed by lane(s): domains-swarm, planning-gis-c2_
 

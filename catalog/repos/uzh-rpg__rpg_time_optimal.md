@@ -12,7 +12,7 @@ Code for computing time-optimal quadrotor trajectories through waypoints, from t
 
 **Hackathon notes:** Python/CasADi, offline only. Inactive since 2021.
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [Autopilots and flight control](../concepts/autopilot.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
 **Tags:** `drone-racing`, `alphapilot`, `optimal-control`, `casadi`
 
@@ -20,12 +20,12 @@ Code for computing time-optimal quadrotor trajectories through waypoints, from t
 
 ## Related
 
-- same_org: [Flightmare](../repos/uzh-rpg__flightmare.md)
+- same_org: [Flightmare](../../catalog/repos/uzh-rpg__flightmare.md)
 
 ## Referenced by
 
-- [Flightmare](../repos/uzh-rpg__flightmare.md) (same_org)
-- [AlphaPilot: Autonomous Drone Racing](../resources/alphapilot-uzh-paper.md) (has_code)
+- [Flightmare](../../catalog/repos/uzh-rpg__flightmare.md) (same_org)
+- [AlphaPilot: Autonomous Drone Racing](../../catalog/resources/alphapilot-uzh-paper.md) (has_code)
 
 _Indexed by lane(s): defense-context_
 

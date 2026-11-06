@@ -16,16 +16,20 @@ Earlier edition of the smartphone GNSS positioning competition with Android raw 
 
 - [gsdc](../../docs/dataset-cards/gsdc.md) (dataset-cards)
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `android`, `kaggle`, `gsdc`
 
 ## Related
 
-- part_of: [Google Smartphone Decimeter Challenge 2023-2024](../resources/google-gsdc-2023.md)
+- part_of: [Google Smartphone Decimeter Challenge 2023-2024](../../catalog/resources/google-gsdc-2023.md)
 
 ## Referenced by
 
-- [Android Raw GNSS Measurement Datasets for Precise Positioning](../resources/google-android-raw-gnss-datasets.md) (dataset_for)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Android Raw GNSS Measurement Datasets for Precise Positioning](../../catalog/resources/google-android-raw-gnss-datasets.md) (dataset_for)
 
 _Indexed by lane(s): gnss, sim-data_

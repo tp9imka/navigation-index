@@ -12,7 +12,7 @@ Converts conventional video into realistic synthetic DVS event streams with sens
 
 **Hackathon notes:** Not on PyPI: create a conda env, install CUDA PyTorch, then `pip install -e .` from a clone (or use the Colab notebook). Needs a GPU; conversion runs far slower than real time, so test with --stop on a short clip of drone footage first.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `event-camera`, `synthetic-data`, `dvs`
 
@@ -20,7 +20,7 @@ Converts conventional video into realistic synthetic DVS event streams with sens
 
 ## Related
 
-- alternative_to: [ESIM](../repos/uzh-rpg__rpg_esim.md)
+- alternative_to: [ESIM](../../catalog/repos/uzh-rpg__rpg_esim.md)
 
 _Indexed by lane(s): gap-fill_
 

@@ -12,7 +12,7 @@ Real-time GPS L1 signal simulator variant of GPS-SDR-SIM for bladeRF hardware.
 
 **Hackathon notes:** Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `simulator`, `bladerf`
 
@@ -20,7 +20,7 @@ Real-time GPS L1 signal simulator variant of GPS-SDR-SIM for bladeRF hardware.
 
 ## Related
 
-- extends: [GPS-SDR-SIM](../repos/osqzss__gps-sdr-sim.md)
+- extends: [GPS-SDR-SIM](../../catalog/repos/osqzss__gps-sdr-sim.md)
 
 _Indexed by lane(s): gnss_
 

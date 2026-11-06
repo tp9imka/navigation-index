@@ -12,19 +12,21 @@ MIT graduate course on the math and software of visual navigation: 3D geometry, 
 - Strong on certifiable/robust estimation
 - Lecture notes downloadable per topic
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Visual SLAM](../concepts/visual-slam.md), [Path and motion planning](../concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Visual SLAM](../../catalog/concepts/visual-slam.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `mit`, `carlone`, `quadrotor`, `lie-groups`
 
 ## Related
 
-- has_code: [MIT VNAV labs](../repos/mit-spark__vnav-labs.md)
-- uses: [MIT VNAV lab data](../repos/mit-spark__vnav-lab-data.md)
-- uses: [Kimera-VIO](../repos/mit-spark__kimera-vio.md)
-- same_author: [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook.md)
+- has_code: [MIT VNAV labs](../../catalog/repos/mit-spark__vnav-labs.md)
+- uses: [MIT VNAV lab data](../../catalog/repos/mit-spark__vnav-lab-data.md)
+- uses: [Kimera-VIO](../../catalog/repos/mit-spark__kimera-vio.md)
+- same_author: [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../../catalog/resources/slam-handbook.md)
 
 ## Referenced by
 
-- [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook.md) (same_author)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
+- [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../../catalog/resources/slam-handbook.md) (same_author)
 
 _Indexed by lane(s): learning_

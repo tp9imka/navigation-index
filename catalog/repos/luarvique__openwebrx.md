@@ -12,7 +12,7 @@ Actively developed fork of OpenWebRX adding decoders, bookmarks and packaging im
 
 **Hackathon notes:** Use the provided packages/Docker; works with RTL-SDR, Airspy, SDRplay, HackRF.
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `sdr`, `spectrum-monitoring`, `web`
 
@@ -20,11 +20,11 @@ Actively developed fork of OpenWebRX adding decoders, bookmarks and packaging im
 
 ## Related
 
-- fork_of: [OpenWebRX](../repos/jketterl__openwebrx.md)
+- fork_of: [OpenWebRX](../../catalog/repos/jketterl__openwebrx.md)
 
 ## Referenced by
 
-- [OpenWebRX](../repos/jketterl__openwebrx.md) (alternative_to)
+- [OpenWebRX](../../catalog/repos/jketterl__openwebrx.md) (alternative_to)
 
 _Indexed by lane(s): defense-context_
 

@@ -10,16 +10,16 @@ Field Robotics paper covering CERBERUS' systems and results in the earlier SubT 
 
 - Documents the iteration path to the winning system
 
-**Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Path and motion planning](../concepts/path-planning.md)
+**Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Path and motion planning](../../catalog/concepts/path-planning.md)
 
 **Tags:** `darpa-subt`, `cerberus`
 
 ## Related
 
-- has_code: [MBPlanner](../repos/ntnu-arl__mbplanner_ros.md)
+- has_code: [MBPlanner](../../catalog/repos/ntnu-arl__mbplanner_ros.md)
 
 ## Referenced by
 
-- [Team CERBERUS Wins the DARPA Subterranean Challenge: Technical Overview and Lessons Learned](../resources/cerberus-subt-final-paper.md) (same_author)
+- [Team CERBERUS Wins the DARPA Subterranean Challenge: Technical Overview and Lessons Learned](../../catalog/resources/cerberus-subt-final-paper.md) (same_author)
 
 _Indexed by lane(s): defense-context_

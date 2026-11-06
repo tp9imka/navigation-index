@@ -16,12 +16,17 @@ Repeated drives of the same Oxford route over a year in all weather, with camera
 
 - [oxford-robotcar](../../docs/dataset-cards/oxford-robotcar.md) (dataset-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [Place recognition and loop closure](../concepts/place-recognition.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 
 **Tags:** `oxford`, `long-term`
 
 ## Related
 
-- has_code: [Oxford RobotCar SDK](../repos/ori-mrg__robotcar-dataset-sdk.md)
+- has_code: [Oxford RobotCar SDK](../../catalog/repos/ori-mrg__robotcar-dataset-sdk.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 
 _Indexed by lane(s): sim-data_

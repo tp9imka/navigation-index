@@ -12,7 +12,7 @@ GSDC 2022 pipeline: an ML classifier picks the drive environment (highway, tree-
 
 **Hackathon notes:** Reference. No licence (all rights reserved).
 
-**Concepts:** [GNSS/INS integration](../concepts/gnss-ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `gsdc`, `imu`, `ml`
 
@@ -20,7 +20,7 @@ GSDC 2022 pipeline: an ML classifier picks the drive environment (highway, tree-
 
 ## Related
 
-- alternative_to: [GSDC 2023 solution (taroz)](../repos/taroz__gsdc2023.md)
+- alternative_to: [GSDC 2023 solution (taroz)](../../catalog/repos/taroz__gsdc2023.md)
 
 _Indexed by lane(s): round3-expansion_
 

@@ -11,16 +11,16 @@ Lab page pointing to Humphreys' talk at the Munich Satellite Navigation Summit o
 - Status of Starlink as a PNT source
 - Context for the Starlink PNT service debate
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `starlink`, `leo-pnt`, `humphreys`
 
 ## Related
 
-- same_author: [Signal Structure of the Starlink Ku-Band Downlink](../resources/humphreys-2023-starlink-signal-structure.md)
+- same_author: [Signal Structure of the Starlink Ku-Band Downlink](../../catalog/resources/humphreys-2023-starlink-signal-structure.md)
 
 ## Referenced by
 
-- [A Mock Implementation of Fused LEO GNSS](../resources/humphreys-fused-leo-gnss-mock-2025.md) (same_author)
+- [A Mock Implementation of Fused LEO GNSS](../../catalog/resources/humphreys-fused-leo-gnss-mock-2025.md) (same_author)
 
 _Indexed by lane(s): round3-expansion_

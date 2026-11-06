@@ -12,7 +12,7 @@ Espressif's mini quadcopter firmware for ESP32/ESP32-S2/S3, derived from Crazyfl
 
 **Hackathon notes:** Builds with ESP-IDF; supports optical-flow deck style positioning only with extra sensors. Expect tuning effort on DIY frames.
 
-**Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `esp32`, `wifi`, `crazyflie-derived`, `mini-drone`
 
@@ -20,13 +20,13 @@ Espressif's mini quadcopter firmware for ESP32/ESP32-S2/S3, derived from Crazyfl
 
 ## Related
 
-- fork_of: [Crazyflie firmware](../repos/bitcraze__crazyflie-firmware.md)
-- alternative_to: [dRehmFlight VTOL](../repos/nickrehm__drehmflight.md)
+- fork_of: [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md)
+- alternative_to: [dRehmFlight VTOL](../../catalog/repos/nickrehm__drehmflight.md)
 
 ## Referenced by
 
-- [Crazyflie firmware](../repos/bitcraze__crazyflie-firmware.md) (same_org)
-- [dRehmFlight VTOL](../repos/nickrehm__drehmflight.md) (alternative_to)
+- [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md) (same_org)
+- [dRehmFlight VTOL](../../catalog/repos/nickrehm__drehmflight.md) (alternative_to)
 
 _Indexed by lane(s): autopilots_
 

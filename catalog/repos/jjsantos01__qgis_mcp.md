@@ -12,7 +12,12 @@ MCP server plus QGIS plugin that lets an LLM create projects, load layers, run p
 
 **Hackathon notes:** Install the plugin, start the socket server in QGIS, add the MCP server to the client. Arbitrary code execution - sandbox it.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [jjsantos01__qgis_mcp](../../docs/integration-cards/jjsantos01__qgis_mcp.md) (integration-cards)
+
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `mcp`, `qgis`, `pyqgis`, `llm`
 
@@ -20,14 +25,14 @@ MCP server plus QGIS plugin that lets an LLM create projects, load layers, run p
 
 ## Related
 
-- alternative_to: [qgis-mcp (nkarasiak)](../repos/nkarasiak__qgis-mcp.md)
-- alternative_to: [GIS MCP Server](../repos/mahdin75__gis-mcp.md)
+- alternative_to: [qgis-mcp (nkarasiak)](../../catalog/repos/nkarasiak__qgis-mcp.md)
+- alternative_to: [GIS MCP Server](../../catalog/repos/mahdin75__gis-mcp.md)
 
 ## Referenced by
 
-- [GIS MCP Server](../repos/mahdin75__gis-mcp.md) (alternative_to)
-- [qgis-mcp (nkarasiak)](../repos/nkarasiak__qgis-mcp.md) (alternative_to)
-- [Model Context Protocol specification](../resources/mcp-specification.md) (explains)
+- [GIS MCP Server](../../catalog/repos/mahdin75__gis-mcp.md) (alternative_to)
+- [qgis-mcp (nkarasiak)](../../catalog/repos/nkarasiak__qgis-mcp.md) (alternative_to)
+- [Model Context Protocol specification](../../catalog/resources/mcp-specification.md) (explains)
 
 _Indexed by lane(s): gap-fill_
 

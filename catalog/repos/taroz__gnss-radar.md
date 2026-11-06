@@ -12,7 +12,7 @@ Web application showing current GNSS satellite positions (sky plot) for a locati
 
 **Hackathon notes:** Use the hosted site or run locally for offline sky plots.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Mission planning and routing](../concepts/mission-planning.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 
 **Tags:** `skyplot`, `web`, `visibility`
 

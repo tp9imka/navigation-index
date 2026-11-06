@@ -11,12 +11,12 @@ Best-practice guide for people who install and maintain time and frequency sourc
 - Written for fixed sites that take time from GPS receivers
 - Covers installation and operating practice rather than protocol design
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Jamming and spoofing](../concepts/gnss-interference.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
 **Tags:** `dhs`, `cisa`, `gps-timing`, `best-practices`, `fixed-site`
 
 ## Related
 
-- same_author: [Time Guidance for Network Operators, Chief Information Officers, and Chief Information Security Officers](../resources/cisa-time-guidance-network-operators.md)
+- same_author: [Time Guidance for Network Operators, Chief Information Officers, and Chief Information Security Officers](../../catalog/resources/cisa-time-guidance-network-operators.md)
 
 _Indexed by lane(s): timing_

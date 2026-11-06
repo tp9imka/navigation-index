@@ -12,17 +12,18 @@ CISA guidance on making enterprise time resilient and secure: know where time co
 - Use multiple, diverse time sources and compare them
 - Detect and handle anomalies in time sources; test the response
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `cisa`, `resilient-timing`, `ntp`, `ptp`, `guidance`
 
 ## Related
 
-- same_author: [Technical-Level Resilient Timing Overview (CISA fact sheet)](../resources/cisa-resilient-timing-fact-sheet.md)
+- same_author: [Technical-Level Resilient Timing Overview (CISA fact sheet)](../../catalog/resources/cisa-resilient-timing-fact-sheet.md)
 
 ## Referenced by
 
-- [Best Practices for Improved Robustness of Time and Frequency Sources in Fixed Locations](../resources/cisa-best-practices-time-frequency-fixed-2015.md) (same_author)
-- [Technical-Level Resilient Timing Overview (CISA fact sheet)](../resources/cisa-resilient-timing-fact-sheet.md) (same_author)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [Best Practices for Improved Robustness of Time and Frequency Sources in Fixed Locations](../../catalog/resources/cisa-best-practices-time-frequency-fixed-2015.md) (same_author)
+- [Technical-Level Resilient Timing Overview (CISA fact sheet)](../../catalog/resources/cisa-resilient-timing-fact-sheet.md) (same_author)
 
 _Indexed by lane(s): timing_

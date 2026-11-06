@@ -15,12 +15,22 @@ March 2026 programme pairing Ukrainian and NATO-country companies on joint solut
 - [README](../../docs/landscape/README.md) (landscape)
 - [programs-and-challenges](../../docs/landscape/programs-and-challenges.md) (landscape)
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Counter-UAS and drone detection](../concepts/counter-uas.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `landscape`, `brave1`, `nato`, `ukraine`
 
 ## Related
 
-- cites: [Ukraine's Brave1, NATO launch EUR 10M competition for counter-drone technology](../resources/brave1-nato-counter-drone-ew-competition.md)
+- cites: [Ukraine's Brave1, NATO Launch €10M Competition for Counter-Drone Technology](../../catalog/resources/brave1-nato-counter-drone-ew-competition.md)
+
+## Referenced by
+
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Docs map](../../docs/README.md) (mentions)
 
 _Indexed by lane(s): landscape_

@@ -12,7 +12,7 @@ Event-based stereo visual-inertial odometry combining stereo event and image str
 
 **Hackathon notes:** ROS1; run on provided event datasets.
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `event-camera`, `stereo`, `vio`, `ros`
 
@@ -20,8 +20,8 @@ Event-based stereo visual-inertial odometry combining stereo event and image str
 
 ## Related
 
-- same_org: [HKU Event-based VO/VIO/SLAM](../repos/arclab-hku__event_based_vo-vio-slam.md)
-- alternative_to: [ESVO](../repos/hkust-aerial-robotics__esvo.md)
+- same_org: [HKU Event-based VO/VIO/SLAM](../../catalog/repos/arclab-hku__event_based_vo-vio-slam.md)
+- alternative_to: [ESVO](../../catalog/repos/hkust-aerial-robotics__esvo.md)
 
 _Indexed by lane(s): gap-fill_
 

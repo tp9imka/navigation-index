@@ -17,7 +17,7 @@ Open-source WebGL vector tile map renderer (fork of Mapbox GL JS v1) with styles
 - [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
 - [maplibre__maplibre-gl-js](../../docs/integration-cards/maplibre__maplibre-gl-js.md) (integration-cards)
 
-**Concepts:** [GIS, maps and geospatial data](../concepts/gis-mapping.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `vector-tiles`, `webgl`, `maplibre-style`
 
@@ -25,19 +25,24 @@ Open-source WebGL vector tile map renderer (fork of Mapbox GL JS v1) with styles
 
 ## Related
 
-- integrates_with: [Martin](../repos/maplibre__martin.md)
-- integrates_with: [TileServer GL](../repos/maptiler__tileserver-gl.md)
-- integrates_with: [PMTiles](../repos/protomaps__pmtiles.md)
-- alternative_to: [OpenLayers](../repos/openlayers__openlayers.md)
+- integrates_with: [Martin](../../catalog/repos/maplibre__martin.md)
+- integrates_with: [TileServer GL](../../catalog/repos/maptiler__tileserver-gl.md)
+- integrates_with: [PMTiles](../../catalog/repos/protomaps__pmtiles.md)
+- alternative_to: [OpenLayers](../../catalog/repos/openlayers__openlayers.md)
 
 ## Referenced by
 
-- [CesiumJS](../repos/cesiumgs__cesium.md) (alternative_to)
-- [TileServer GL](../repos/maptiler__tileserver-gl.md) (integrates_with)
-- [OpenLayers](../repos/openlayers__openlayers.md) (alternative_to)
-- [PMTiles](../repos/protomaps__pmtiles.md) (integrates_with)
-- [deck.gl](../repos/visgl__deck.gl.md) (integrates_with)
-- [Golden demo: GPS drag on an ArduCopter SITL AUTO mission, chi-square detection and EKF3 switch to vision, replayed on the dashboard](../samples/golden-demo.md) (uses)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [CesiumJS](../../catalog/repos/cesiumgs__cesium.md) (alternative_to)
+- [TileServer GL](../../catalog/repos/maptiler__tileserver-gl.md) (integrates_with)
+- [OpenLayers](../../catalog/repos/openlayers__openlayers.md) (alternative_to)
+- [PMTiles](../../catalog/repos/protomaps__pmtiles.md) (integrates_with)
+- [deck.gl](../../catalog/repos/visgl__deck.gl.md) (integrates_with)
+- [Golden demo: GPS drag (position-only or coherent) on an ArduCopter SITL AUTO mission, integrity monitoring with solution separation + protection level, real visual geolocalization, EKF3 switch to ExternalNav, Monte Carlo, dashboard replay](../../catalog/samples/golden-demo.md) (uses)
+- [Golden demo on PX4 v1.17 SIH: coherent GPS drag via HIL_GPS, integrity monitor (SS + PL, GNSS-vs-VIO velocity), EKF2 switch from GNSS to external vision, comparison with ArduPilot, dashboard replay](../../catalog/samples/golden-demo-px4.md) (uses)
 
 _Indexed by lane(s): planning-gis-c2_
 

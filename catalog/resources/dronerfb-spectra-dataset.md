@@ -12,7 +12,7 @@
 - Covers 7 brands: DJI, Vbar, FrSky, Futaba, Taranis, RadioLink, Skydroid
 - Open-set recognition angle for unknown drones
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../concepts/counter-uas.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md)
 
 **Tags:** `rf`, `spectrogram`, `open-set`
 

@@ -11,16 +11,16 @@ ICCV 2023 paper introducing a city-scale UAV vision-and-language navigation task
 - Aerial VLN is much harder than indoor VLN
 - Long trajectories and 3D actions
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `vln`, `uav`, `iccv`
 
 ## Related
 
-- has_code: [AerialVLN](../repos/airvln__airvln.md)
+- has_code: [AerialVLN](../../catalog/repos/airvln__airvln.md)
 
 ## Referenced by
 
-- [AerialVLN](../repos/airvln__airvln.md) (integrates_with)
+- [AerialVLN](../../catalog/repos/airvln__airvln.md) (integrates_with)
 
 _Indexed by lane(s): gap-fill_

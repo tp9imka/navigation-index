@@ -10,13 +10,13 @@ Companion repo for the UZH-FPV drone racing dataset with scripts and info.
 
 **Why it matters:** Aggressive high-speed drone sequences stress VIO well beyond EuRoC.
 
-**Hackathon notes:** Inactive since 2020; dataset itself is on the UZH site.
+**Hackathon notes:** Inactive since 2020; dataset itself is on the UZH site under CC BY-NC-SA 3.0 (non-commercial). The repo code is GPL-3.0.
 
 ## Deep dives
 
 - [uzh-fpv](../../docs/dataset-cards/uzh-fpv.md) (dataset-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `uzh-fpv`, `drone-racing`, `vio`
 
@@ -24,11 +24,13 @@ Companion repo for the UZH-FPV drone racing dataset with scripts and info.
 
 ## Related
 
-- integrates_with: [rpg_trajectory_evaluation](../repos/uzh-rpg__rpg_trajectory_evaluation.md)
+- integrates_with: [rpg_trajectory_evaluation](../../catalog/repos/uzh-rpg__rpg_trajectory_evaluation.md)
 
 ## Referenced by
 
-- [The UZH-FPV Drone Racing Dataset](../resources/uzh-fpv-drone-racing-dataset.md) (has_code)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [The UZH-FPV Drone Racing Dataset](../../catalog/resources/uzh-fpv-drone-racing-dataset.md) (has_code)
 
 _Indexed by lane(s): sim-data_
 

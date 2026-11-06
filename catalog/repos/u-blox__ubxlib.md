@@ -12,7 +12,7 @@ u-blox's portable C libraries for building applications on their GNSS and cellul
 
 **Hackathon notes:** Repository is archived; prefer the SparkFun library or pyubx2.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md)
 
 **Tags:** `u-blox`, `embedded`, `c`
 
@@ -20,11 +20,12 @@ u-blox's portable C libraries for building applications on their GNSS and cellul
 
 ## Related
 
-- alternative_to: [SparkFun u-blox GNSS v3 Arduino library](../repos/sparkfun__sparkfun_u-blox_gnss_v3.md)
+- alternative_to: [SparkFun u-blox GNSS v3 Arduino library](../../catalog/repos/sparkfun__sparkfun_u-blox_gnss_v3.md)
 
 ## Referenced by
 
-- [SparkFun u-blox GNSS v3 Arduino library](../repos/sparkfun__sparkfun_u-blox_gnss_v3.md) (alternative_to)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [SparkFun u-blox GNSS v3 Arduino library](../../catalog/repos/sparkfun__sparkfun_u-blox_gnss_v3.md) (alternative_to)
 
 _Indexed by lane(s): gnss_
 

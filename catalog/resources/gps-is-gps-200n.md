@@ -15,21 +15,22 @@ The master interface specification for the legacy GPS L1 C/A and L2C (and P(Y) a
 - Defines L1 C/A and L2C signal structure
 - Needed to build or audit any navigation message decoder
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `icd`, `gps`, `l1-ca`, `l2c`, `navigation-message`, `l1`
 
 ## Related
 
-- has_code: [RTKLIB](../repos/tomojitakasu__rtklib.md)
-- has_code: [RTKLIB demo5 (rtklibexplorer)](../repos/rtklibexplorer__rtklib.md)
-- has_code: [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md)
-- has_code: [GPS-SDR-SIM](../repos/osqzss__gps-sdr-sim.md)
-- explains: [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md)
-- explains: [GPS-SDR-SIM](../repos/osqzss__gps-sdr-sim.md)
+- has_code: [RTKLIB](../../catalog/repos/tomojitakasu__rtklib.md)
+- has_code: [RTKLIB demo5 (rtklibexplorer)](../../catalog/repos/rtklibexplorer__rtklib.md)
+- has_code: [GNSS-SDR](../../catalog/repos/gnss-sdr__gnss-sdr.md)
+- has_code: [GPS-SDR-SIM](../../catalog/repos/osqzss__gps-sdr-sim.md)
+- explains: [GNSS-SDR](../../catalog/repos/gnss-sdr__gnss-sdr.md)
+- explains: [GPS-SDR-SIM](../../catalog/repos/osqzss__gps-sdr-sim.md)
 
 ## Referenced by
 
-- [GPS Interface Control Documents (ICWG index)](../resources/gps-icwg-document-index.md) (part_of)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
+- [GPS Interface Control Documents (ICWG index)](../../catalog/resources/gps-icwg-document-index.md) (part_of)
 
 _Indexed by lane(s): docs-standards, gnss_

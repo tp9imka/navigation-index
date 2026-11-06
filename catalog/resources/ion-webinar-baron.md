@@ -4,18 +4,18 @@
 
 **By:** Ariel Baron - **Year:** 2024 - **Level:** intermediate - **Access:** open
 
-Implementation-focused talk on navigating with Doppler measurements from LEO satellites and the accuracy achieved in practice.
+Talk on navigation with carrier Doppler-shift measurements from LEO satellite signals of opportunity: analytically derived Jacobian formulas for the navigation solution and a GNSS-like dilution-of-precision metric to assess accuracy, with preliminary numerical results. The paper is free in NAVIGATION (ION journal).
 
 ## Key takeaways
 
-- Practical error budget for LEO Doppler nav
+- DOP-style accuracy metric for LEO Doppler nav
 
-**Concepts:** [Space and orbital navigation](../concepts/space-nav.md), [Signals of opportunity](../concepts/signals-of-opportunity.md)
+**Concepts:** [Space and orbital navigation](../../catalog/concepts/space-nav.md), [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md)
 
 **Tags:** `doppler`, `leo-pnt`, `ion`, `webinar`
 
 ## Related
 
-- part_of: [ION Webinar Series (archive and YouTube recordings)](../resources/ion-webinar-series.md)
+- part_of: [ION Webinar Series (archive and YouTube recordings)](../../catalog/resources/ion-webinar-series.md)
 
 _Indexed by lane(s): learning_

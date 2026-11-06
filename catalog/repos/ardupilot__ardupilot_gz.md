@@ -12,7 +12,7 @@ ROS 2 + Gazebo packages for ArduPilot SITL integration and testing.
 
 **Hackathon notes:** Target ROS 2 Humble + Gazebo Harmonic per the README.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `gazebo`, `ros2`, `sitl`
 
@@ -20,12 +20,12 @@ ROS 2 + Gazebo packages for ArduPilot SITL integration and testing.
 
 ## Related
 
-- depends_on: [ardupilot_gazebo](../repos/ardupilot__ardupilot_gazebo.md)
-- integrates_with: [ardupilot_ros](../repos/ardupilot__ardupilot_ros.md)
+- depends_on: [ardupilot_gazebo](../../catalog/repos/ardupilot__ardupilot_gazebo.md)
+- integrates_with: [ardupilot_ros](../../catalog/repos/ardupilot__ardupilot_ros.md)
 
 ## Referenced by
 
-- [ardupilot_ros](../repos/ardupilot__ardupilot_ros.md) (integrates_with)
+- [ardupilot_ros](../../catalog/repos/ardupilot__ardupilot_ros.md) (integrates_with)
 
 _Indexed by lane(s): autopilots_
 

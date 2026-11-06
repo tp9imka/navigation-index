@@ -12,7 +12,7 @@ Blind astrometric solver that identifies star fields in arbitrary images and ret
 
 **Hackathon notes:** apt install astrometry.net plus index files for your field of view; solve-field on a night-sky photo.
 
-**Concepts:** [Celestial and star-tracker navigation](../concepts/celestial-nav.md)
+**Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md)
 
 **Tags:** `plate-solving`, `astrometry`, `star-catalog`
 
@@ -20,7 +20,11 @@ Blind astrometric solver that identifies star fields in arbitrary images and ret
 
 ## Related
 
-- alternative_to: [tetra3](../repos/esa__tetra3.md)
+- alternative_to: [tetra3](../../catalog/repos/esa__tetra3.md)
+
+## Referenced by
+
+- [Celestial fix: cedar-solve plate solving on real star images, then position from star elevations above an IMU vertical](../../catalog/samples/celestial-star-tracker.md) (explains)
 
 _Indexed by lane(s): gap-fill_
 

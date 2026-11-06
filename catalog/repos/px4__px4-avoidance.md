@@ -12,7 +12,7 @@ Archived ROS nodes for local planning, global planning and safe landing using de
 
 **Hackathon notes:** ROS 1 only; read for design ideas.
 
-**Concepts:** [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `ros1`, `local-planner`, `safe-landing`
 
@@ -20,7 +20,7 @@ Archived ROS nodes for local planning, global planning and safe landing using de
 
 ## Related
 
-- integrates_with: [PX4 Autopilot](../repos/px4__px4-autopilot.md)
+- integrates_with: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
 
 _Indexed by lane(s): autopilots_
 

@@ -17,7 +17,7 @@ ROS and Python scripts that convert external localisation (fiducials, T265 VIO, 
 - [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [thien94__vision_to_mavros](../../docs/integration-cards/thien94__vision_to_mavros.md) (integration-cards)
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `t265`, `vision_position_estimate`, `apriltag`, `gsoc`
 
@@ -25,16 +25,19 @@ ROS and Python scripts that convert external localisation (fiducials, T265 VIO, 
 
 ## Related
 
-- depends_on: [MAVROS](../repos/mavlink__mavros.md)
-- integrates_with: [ArduPilot](../repos/ardupilot__ardupilot.md)
+- depends_on: [MAVROS](../../catalog/repos/mavlink__mavros.md)
+- integrates_with: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
 
 ## Referenced by
 
-- [MAVROS](../repos/mavlink__mavros.md) (integrates_with)
-- [ROS and VIO tracking camera for non-GPS navigation](../resources/ardupilot-ros-vio-tracking-camera.md) (has_code)
-- [Intel RealSense T265 / VIO tracking camera setup](../resources/ardupilot-vio-tracking-camera.md) (has_code)
-- [Spleenlab VISIONAIRY perception and GNSS-free navigation software](../resources/spleenlab-visionairy.md) (alternative_to)
-- [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) (explains)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [MAVROS](../../catalog/repos/mavlink__mavros.md) (integrates_with)
+- [ROS and VIO tracking camera for non-GPS Navigation](../../catalog/resources/ardupilot-ros-vio-tracking-camera.md) (has_code)
+- [Intel RealSense T265](../../catalog/resources/ardupilot-vio-tracking-camera.md) (has_code)
+- [Spleenlab VISIONAIRY perception and GNSS-free navigation software](../../catalog/resources/spleenlab-visionairy.md) (alternative_to)
+- [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../../catalog/samples/vio-to-mavlink-bridge.md) (explains)
 
 _Indexed by lane(s): autopilots_
 

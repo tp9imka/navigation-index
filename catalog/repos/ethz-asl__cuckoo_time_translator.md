@@ -12,7 +12,7 @@ ROS algorithms that translate a sensor's own hardware timestamps into host syste
 
 **Hackathon notes:** ROS1 catkin package; inactive since 2022, port the algorithm if on ROS 2.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Sensor calibration](../concepts/calibration.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 
 **Tags:** `timestamps`, `clock-skew`, `ros`, `sensor-sync`
 
@@ -20,7 +20,11 @@ ROS algorithms that translate a sensor's own hardware timestamps into host syste
 
 ## Related
 
-- same_org: [Kalibr](../repos/ethz-asl__kalibr.md)
+- same_org: [Kalibr](../../catalog/repos/ethz-asl__kalibr.md)
+
+## Referenced by
+
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 
 _Indexed by lane(s): timing_
 

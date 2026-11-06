@@ -12,7 +12,7 @@ A cleaner reimplementation of the WildNav idea: match UAV images to satellite ti
 
 **Hackathon notes:** Good starting skeleton if WildNav's scripts feel too ad hoc; swap the matcher for LightGlue or XFeat for speed.
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Feature detection and matching](../concepts/feature-matching.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 
 **Tags:** `uav`, `satellite-map`, `superpoint`
 
@@ -20,12 +20,13 @@ A cleaner reimplementation of the WildNav idea: match UAV images to satellite ti
 
 ## Related
 
-- alternative_to: [WildNav](../repos/tiers__wildnav.md)
-- integrates_with: [LightGlue](../repos/cvg__lightglue.md)
+- alternative_to: [WildNav](../../catalog/repos/tiers__wildnav.md)
+- integrates_with: [LightGlue](../../catalog/repos/cvg__lightglue.md)
 
 ## Referenced by
 
-- [WildNav](../repos/tiers__wildnav.md) (alternative_to)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [WildNav](../../catalog/repos/tiers__wildnav.md) (alternative_to)
 
 _Indexed by lane(s): alt-nav_
 

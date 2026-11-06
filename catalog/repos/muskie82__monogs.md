@@ -10,9 +10,9 @@ Gaussian-splatting SLAM for monocular, stereo and RGB-D cameras that tracks and 
 
 **Why it matters:** Produces photorealistic maps useful for operator situational awareness and later simulation.
 
-**Hackathon notes:** Needs a strong GPU; not real-time on embedded hardware. Best as an offline mapping demo.
+**Hackathon notes:** Needs a strong GPU; not real-time on embedded hardware. Best as an offline mapping demo. Licence: Imperial College MonoGS licence - non-commercial, internal or academic research use only.
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `3dgs`, `dense`, `pytorch`
 
@@ -20,15 +20,15 @@ Gaussian-splatting SLAM for monocular, stereo and RGB-D cameras that tracks and 
 
 ## Related
 
-- alternative_to: [SplaTAM](../repos/spla-tam__splatam.md)
-- alternative_to: [Photo-SLAM](../repos/huajianup__photo-slam.md)
+- alternative_to: [SplaTAM](../../catalog/repos/spla-tam__splatam.md)
+- alternative_to: [Photo-SLAM](../../catalog/repos/huajianup__photo-slam.md)
 
 ## Referenced by
 
-- [Photo-SLAM](../repos/huajianup__photo-slam.md) (alternative_to)
-- [SplaTAM](../repos/spla-tam__splatam.md) (alternative_to)
-- [Gaussian Splatting SLAM](../resources/gaussian-splatting-slam-matsuki-2023.md) (has_code)
-- [How NeRFs and 3D Gaussian Splatting are Reshaping SLAM: a Survey](../resources/tosi-nerf-3dgs-slam-survey-2024.md) (cites)
+- [Photo-SLAM](../../catalog/repos/huajianup__photo-slam.md) (alternative_to)
+- [SplaTAM](../../catalog/repos/spla-tam__splatam.md) (alternative_to)
+- [Gaussian Splatting SLAM](../../catalog/resources/gaussian-splatting-slam-matsuki-2023.md) (has_code)
+- [How NeRFs and 3D Gaussian Splatting are Reshaping SLAM: a Survey](../../catalog/resources/tosi-nerf-3dgs-slam-survey-2024.md) (cites)
 
 _Indexed by lane(s): slam_
 

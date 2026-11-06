@@ -15,8 +15,16 @@ DIANA feature on cohort companies working on resilient navigation and secure com
 
 - [programs-and-challenges](../../docs/landscape/programs-and-challenges.md) (landscape)
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Signals of opportunity](../concepts/signals-of-opportunity.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md)
 
 **Tags:** `nato`, `diana`, `cohort`
+
+## Referenced by
+
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): defense-context_

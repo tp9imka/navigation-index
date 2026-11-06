@@ -12,7 +12,7 @@ ESKF fusing GPS and IMU for improved positioning, with documentation in Chinese.
 
 **Hackathon notes:** Standalone CMake build; docs are in Chinese.
 
-**Concepts:** [GNSS/INS integration](../concepts/gnss-ins.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `eskf`, `chinese-docs`
 
@@ -20,11 +20,11 @@ ESKF fusing GPS and IMU for improved positioning, with documentation in Chinese.
 
 ## Related
 
-- alternative_to: [imu_gps_localization](../repos/ydsf16__imu_gps_localization.md)
+- alternative_to: [imu_gps_localization](../../catalog/repos/ydsf16__imu_gps_localization.md)
 
 ## Referenced by
 
-- [imu_gps_localization](../repos/ydsf16__imu_gps_localization.md) (alternative_to)
+- [imu_gps_localization](../../catalog/repos/ydsf16__imu_gps_localization.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 

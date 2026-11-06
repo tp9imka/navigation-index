@@ -16,7 +16,7 @@ PyTorch implementation of a cross-view geo-localization method that pools featur
 
 - [university-1652](../../docs/dataset-cards/university-1652.md) (dataset-cards)
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Place recognition and loop closure](../concepts/place-recognition.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 
 **Tags:** `cross-view`, `baseline`
 
@@ -24,11 +24,11 @@ PyTorch implementation of a cross-view geo-localization method that pools featur
 
 ## Related
 
-- evaluated_on: [University-1652 baseline](../repos/layumi__university1652-baseline.md)
+- evaluated_on: [University-1652 baseline](../../catalog/repos/layumi__university1652-baseline.md)
 
 ## Referenced by
 
-- [University-1652 baseline](../repos/layumi__university1652-baseline.md) (evaluated_on)
+- [University-1652 baseline](../../catalog/repos/layumi__university1652-baseline.md) (evaluated_on)
 
 _Indexed by lane(s): alt-nav_
 

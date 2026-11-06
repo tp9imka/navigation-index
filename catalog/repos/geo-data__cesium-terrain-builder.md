@@ -6,13 +6,13 @@
 |---|---|---|---|---|---|---|
 | 888 | C++ | NOASSERTION | 2023-03-05 | False | archived | medium |
 
-Command-line tools to convert GDAL-readable DEMs into Cesium terrain tiles (heightmap and quantized-mesh with the docker variant).
+Command-line tools to convert GDAL-readable DEMs into Cesium heightmap terrain tiles; quantized-mesh output needs the ahuarte47 fork, which the tum-gis Docker image packages.
 
 **Why it matters:** Turns a Copernicus/SRTM DEM into offline 3D terrain for a CesiumJS display without internet.
 
 **Hackathon notes:** Unmaintained since 2023; use the tum-gis docker image to avoid build pain.
 
-**Concepts:** [GIS, maps and geospatial data](../concepts/gis-mapping.md), [Terrain-relative navigation](../concepts/terrain-nav.md)
+**Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md), [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md)
 
 **Tags:** `quantized-mesh`, `dem`, `offline-terrain`
 
@@ -20,12 +20,13 @@ Command-line tools to convert GDAL-readable DEMs into Cesium terrain tiles (heig
 
 ## Related
 
-- integrates_with: [CesiumJS](../repos/cesiumgs__cesium.md)
-- depends_on: [GDAL](../repos/osgeo__gdal.md)
+- integrates_with: [CesiumJS](../../catalog/repos/cesiumgs__cesium.md)
+- depends_on: [GDAL](../../catalog/repos/osgeo__gdal.md)
 
 ## Referenced by
 
-- [CesiumJS](../repos/cesiumgs__cesium.md) (integrates_with)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [CesiumJS](../../catalog/repos/cesiumgs__cesium.md) (integrates_with)
 
 _Indexed by lane(s): planning-gis-c2_
 

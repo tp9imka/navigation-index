@@ -15,13 +15,20 @@ Introduces the Anti-UAV RGB and thermal infrared video benchmark for UAV trackin
 
 - [anti-uav](../../docs/dataset-cards/anti-uav.md) (dataset-cards)
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Tracking and data association](../concepts/target-tracking.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Tracking and data association](../../catalog/concepts/target-tracking.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `anti-uav`, `thermal`
 
 ## Related
 
-- has_code: [Anti-UAV](../repos/zhaoj9014__anti-uav.md)
-- part_of: [Anti-UAV Challenge](../resources/anti-uav-challenge-site.md)
+- has_code: [Anti-UAV](../../catalog/repos/zhaoj9014__anti-uav.md)
+- part_of: [Anti-UAV Challenge](../../catalog/resources/anti-uav-challenge-site.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): domains-swarm_

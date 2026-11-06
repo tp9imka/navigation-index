@@ -12,7 +12,7 @@ Planned device-independent pedestrian dead reckoning platform that never got pas
 
 **Hackathon notes:** Unmaintained since 2017. Only the ellipsoid-fit IMU/magnetometer calibration scripts are reusable; for actual PDR code look elsewhere.
 
-**Concepts:** [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md)
+**Concepts:** [Indoor and pedestrian navigation](../../catalog/concepts/indoor-pedestrian.md)
 
 **Tags:** `pdr`, `step-detection`, `smartphone`
 
@@ -20,11 +20,11 @@ Planned device-independent pedestrian dead reckoning platform that never got pas
 
 ## Related
 
-- alternative_to: [PDR Android app](../repos/aureliencousin__pdr.md)
+- alternative_to: [PDR Android app](../../catalog/repos/aureliencousin__pdr.md)
 
 ## Referenced by
 
-- [PDR Android app](../repos/aureliencousin__pdr.md) (alternative_to)
+- [PDR Android app](../../catalog/repos/aureliencousin__pdr.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

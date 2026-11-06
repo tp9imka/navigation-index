@@ -12,7 +12,7 @@ Pure-Python AIS decode and encode library from a long-time AIS researcher, with 
 
 **Hackathon notes:** Use mainly as a cross-check; pyais has the friendlier API.
 
-**Concepts:** [Maritime navigation](../concepts/maritime-nav.md)
+**Concepts:** [Maritime navigation](../../catalog/concepts/maritime-nav.md)
 
 **Tags:** `ais`, `decoder`, `python`
 
@@ -20,11 +20,13 @@ Pure-Python AIS decode and encode library from a long-time AIS researcher, with 
 
 ## Related
 
-- alternative_to: [pyais](../repos/m0r13n__pyais.md)
+- alternative_to: [pyais](../../catalog/repos/m0r13n__pyais.md)
 
 ## Referenced by
 
-- [pyais](../repos/m0r13n__pyais.md) (alternative_to)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [pyais](../../catalog/repos/m0r13n__pyais.md) (alternative_to)
+- [GNSS spoofing signatures in real AIS tracks: detectors, injected ground truth, GeoJSON and CoT](../../catalog/samples/maritime-ais-spoofing.md) (explains)
 
 _Indexed by lane(s): domains-swarm_
 

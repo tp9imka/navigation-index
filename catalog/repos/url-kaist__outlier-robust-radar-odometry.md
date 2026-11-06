@@ -16,7 +16,7 @@ Outlier-robust radar odometry using graduated non-convexity-style estimation on 
 
 - [mulran-helipr](../../docs/dataset-cards/mulran-helipr.md) (dataset-cards)
 
-**Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md)
+**Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md)
 
 **Tags:** `radar-odometry`, `robust-estimation`, `mulran`
 
@@ -24,7 +24,7 @@ Outlier-robust radar odometry using graduated non-convexity-style estimation on 
 
 ## Related
 
-- alternative_to: [CFEAR Radarodometry](../repos/dan11003__cfear_radarodometry.md)
+- alternative_to: [CFEAR Radarodometry](../../catalog/repos/dan11003__cfear_radarodometry.md)
 
 _Indexed by lane(s): gap-fill_
 

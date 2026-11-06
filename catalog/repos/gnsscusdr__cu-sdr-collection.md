@@ -12,7 +12,7 @@ University of Colorado Boulder collection of MATLAB software-defined GNSS receiv
 
 **Hackathon notes:** Point the settings file at one of the provided IQ data sets and run. MATLAB licence required; slow on long recordings.
 
-**Concepts:** [Software-defined GNSS receivers](../concepts/gnss-sdr.md), [GNSS positioning](../concepts/gnss.md)
+**Concepts:** [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md), [GNSS positioning](../../catalog/concepts/gnss.md)
 
 **Tags:** `matlab`, `acquisition`, `tracking`, `galileo`, `beidou`, `glonass`
 
@@ -20,12 +20,12 @@ University of Colorado Boulder collection of MATLAB software-defined GNSS receiv
 
 ## Related
 
-- alternative_to: [FGI-GSRx](../repos/nlsfi__fgi-gsrx.md)
-- alternative_to: [GNSS-SDR](../repos/gnss-sdr__gnss-sdr.md)
+- alternative_to: [FGI-GSRx](../../catalog/repos/nlsfi__fgi-gsrx.md)
+- alternative_to: [GNSS-SDR](../../catalog/repos/gnss-sdr__gnss-sdr.md)
 
 ## Referenced by
 
-- [A Software-Defined GPS and Galileo Receiver: A Single-Frequency Approach](../resources/borre-software-defined-gps-galileo-receiver.md) (has_code)
+- [A Software-Defined GPS and Galileo Receiver: A Single-Frequency Approach](../../catalog/resources/borre-software-defined-gps-galileo-receiver.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

@@ -18,7 +18,7 @@ Multi-sensor aided inertial navigation that fuses IMU with camera, LiDAR, GNSS a
 - [rpng__mins](../../docs/integration-cards/rpng__mins.md) (integration-cards)
 - [mins-2023](../../docs/paper-digests/mins-2023.md) (paper-digests)
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Visual(-inertial) odometry](../concepts/vio.md), [GNSS/INS integration](../concepts/gnss-ins.md), [Sensor calibration](../concepts/calibration.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 
 **Tags:** `msckf`, `wheel-odometry`, `gnss`, `lidar`, `simulator`
 
@@ -26,11 +26,14 @@ Multi-sensor aided inertial navigation that fuses IMU with camera, LiDAR, GNSS a
 
 ## Related
 
-- extends: [OpenVINS](../repos/rpng__open_vins.md)
+- extends: [OpenVINS](../../catalog/repos/rpng__open_vins.md)
 
 ## Referenced by
 
-- [OpenVINS](../repos/rpng__open_vins.md) (extends)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [OpenVINS](../../catalog/repos/rpng__open_vins.md) (extends)
 
 _Indexed by lane(s): slam_
 

@@ -10,12 +10,12 @@ Announcement and index of ROSCon 2023 recordings and slides, including navigatio
 
 - One place to find localization/navigation ROSCon talks
 
-**Concepts:** [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Path and motion planning](../concepts/path-planning.md)
+**Concepts:** [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Path and motion planning](../../catalog/concepts/path-planning.md)
 
 **Tags:** `roscon`, `video`
 
 ## Related
 
-- part_of: [ROSCon 2024 (Odense) programme and recordings](../resources/roscon-2024.md)
+- part_of: [ROSCon 2024 (Odense) programme and recordings](../../catalog/resources/roscon-2024.md)
 
 _Indexed by lane(s): learning_

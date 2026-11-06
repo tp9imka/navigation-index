@@ -11,13 +11,17 @@ Survey by ROS maintainers of the mobile robotics algorithms available in ROS 2: 
 - Map of which ROS 2 packages are production-ready
 - Good orientation before choosing a localization or planning stack
 
-**Concepts:** [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Path and motion planning](../concepts/path-planning.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `survey`, `ros2`
 
 ## Related
 
-- explains: [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md)
-- same_author: [The Marathon 2: A Navigation System](../resources/macenski-marathon2-nav2.md)
+- explains: [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md)
+- same_author: [The Marathon 2: A Navigation System](../../catalog/resources/macenski-marathon2-nav2.md)
+
+## Referenced by
+
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 
 _Indexed by lane(s): planning-gis-c2_

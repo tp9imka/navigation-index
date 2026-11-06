@@ -12,7 +12,7 @@ Lightweight STM32 drone control and multi-agent localization system combining a 
 
 **Hackathon notes:** Custom hardware; dormant since 2023.
 
-**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md), [RF localization and direction finding](../concepts/rf-localization.md), [Autopilots and flight control](../concepts/autopilot.md)
+**Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
 **Tags:** `uwb`, `stm32`, `swarm`
 
@@ -20,7 +20,7 @@ Lightweight STM32 drone control and multi-agent localization system combining a 
 
 ## Related
 
-- alternative_to: [Swarm relative localization (ETH PBL)](../repos/eth-pbl__swarm-relative-localization.md)
+- alternative_to: [Swarm relative localization (ETH PBL)](../../catalog/repos/eth-pbl__swarm-relative-localization.md)
 
 _Indexed by lane(s): domains-swarm_
 

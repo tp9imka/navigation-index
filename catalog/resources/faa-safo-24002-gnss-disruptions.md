@@ -12,16 +12,17 @@ FAA Safety Alert for Operators describing jamming vs spoofing effects on aircraf
 - Revert to conventional procedures and report to ATC
 - Disruptions cluster around conflict zones and C-UAS protection areas
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [GNSS/INS integration](../concepts/gnss-ins.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md)
 
 **Tags:** `faa`, `aviation`, `safety-alert`
 
 ## Related
 
-- cites: [EASA SIB 2022-02R3: Global Navigation Satellite System Outage and Alterations Leading to Communication / Navigation / Surveillance Degradation](../resources/easa-sib-2022-02-gnss-outages.md)
+- cites: [EASA SIB 2022-02R3: Global Navigation Satellite System Outage and Alterations Leading to Communication / Navigation / Surveillance Degradation](../../catalog/resources/easa-sib-2022-02-gnss-outages.md)
 
 ## Referenced by
 
-- [GPS Spoofing WorkGroup 2024 - Final Report](../resources/opsgroup-gps-spoofing-final-report-2024.md) (cites)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [GPS Spoofing WorkGroup 2024 - Final Report](../../catalog/resources/opsgroup-gps-spoofing-final-report-2024.md) (cites)
 
 _Indexed by lane(s): defense-context_

@@ -12,7 +12,7 @@ Arduino library for u-blox GNSS modules over I2C/SPI/serial, covering configurat
 
 **Hackathon notes:** Many examples, including NTRIP over Wi-Fi on ESP32. Good for a low-cost rover or base station.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md)
 
 **Tags:** `arduino`, `esp32`, `u-blox`, `embedded`
 
@@ -20,11 +20,11 @@ Arduino library for u-blox GNSS modules over I2C/SPI/serial, covering configurat
 
 ## Related
 
-- alternative_to: [ubxlib](../repos/u-blox__ubxlib.md)
+- alternative_to: [ubxlib](../../catalog/repos/u-blox__ubxlib.md)
 
 ## Referenced by
 
-- [ubxlib](../repos/u-blox__ubxlib.md) (alternative_to)
+- [ubxlib](../../catalog/repos/u-blox__ubxlib.md) (alternative_to)
 
 _Indexed by lane(s): gnss_
 

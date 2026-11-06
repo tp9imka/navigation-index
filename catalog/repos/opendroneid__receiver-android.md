@@ -18,7 +18,7 @@ Example Android app that listens for Remote ID broadcasts over Bluetooth 4/5 and
 - [opendroneid__receiver-android](../../docs/integration-cards/opendroneid__receiver-android.md) (integration-cards)
 - [remote-id-droneid-captures](../../docs/dataset-cards/remote-id-droneid-captures.md) (dataset-cards)
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `remote-id`, `android`, `bluetooth`, `wifi-nan`, `ble`
 
@@ -26,14 +26,20 @@ Example Android app that listens for Remote ID broadcasts over Bluetooth 4/5 and
 
 ## Related
 
-- depends_on: [Open Drone ID Core C](../repos/opendroneid__opendroneid-core-c.md)
-- integrates_with: [ArduRemoteID](../repos/ardupilot__arduremoteid.md)
-- integrates_with: [PyTAK](../repos/snstac__pytak.md)
+- depends_on: [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md)
+- integrates_with: [ArduRemoteID](../../catalog/repos/ardupilot__arduremoteid.md)
+- integrates_with: [PyTAK](../../catalog/repos/snstac__pytak.md)
 
 ## Referenced by
 
-- [ArduRemoteID](../repos/ardupilot__arduremoteid.md) (integrates_with)
-- [Open Drone ID Core C](../repos/opendroneid__opendroneid-core-c.md) (same_org)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [ArduRemoteID](../../catalog/repos/ardupilot__arduremoteid.md) (integrates_with)
+- [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md) (same_org)
+- [Drone Remote ID decoder, track table and TAK output](../../catalog/samples/remote-id-to-tak.md) (integrates_with)
 
 _Indexed by lane(s): autopilots, defense-context, domains-swarm_
 

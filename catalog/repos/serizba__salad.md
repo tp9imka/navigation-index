@@ -16,7 +16,7 @@ Place recognition descriptor using optimal-transport aggregation of DINOv2 featu
 
 - [salad-vpr-2023](../../docs/paper-digests/salad-vpr-2023.md) (paper-digests)
 
-**Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md)
+**Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 
 **Tags:** `dinov2`, `optimal-transport`
 
@@ -24,14 +24,18 @@ Place recognition descriptor using optimal-transport aggregation of DINOv2 featu
 
 ## Related
 
-- alternative_to: [AnyLoc](../repos/anyloc__anyloc.md)
-- alternative_to: [BoQ](../repos/amaralibey__bag-of-queries.md)
+- alternative_to: [AnyLoc](../../catalog/repos/anyloc__anyloc.md)
+- alternative_to: [BoQ](../../catalog/repos/amaralibey__bag-of-queries.md)
 
 ## Referenced by
 
-- [AnyLoc](../repos/anyloc__anyloc.md) (alternative_to)
-- [VPR methods evaluation](../repos/gmberton__vpr-methods-evaluation.md) (integrates_with)
-- [Optimal Transport Aggregation for Visual Place Recognition](../resources/salad-vpr-2023.md) (has_code)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [AnyLoc](../../catalog/repos/anyloc__anyloc.md) (alternative_to)
+- [VPR methods evaluation](../../catalog/repos/gmberton__vpr-methods-evaluation.md) (integrates_with)
+- [aero-vloc](../../catalog/repos/prime-slam__aero-vloc.md) (integrates_with)
+- [Optimal Transport Aggregation for Visual Place Recognition](../../catalog/resources/salad-vpr-2023.md) (has_code)
 
 _Indexed by lane(s): alt-nav_
 

@@ -11,12 +11,12 @@ Open book explaining Mode S and ADS-B message structure, position decoding (CPR)
 - CPR position decoding explained step by step
 - Covers enhanced surveillance fields beyond basic ADS-B
 
-**Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `ads-b`, `mode-s`
 
 ## Related
 
-- has_code: [pyModeS](../repos/junzis__pymodes.md)
+- has_code: [pyModeS](../../catalog/repos/junzis__pymodes.md)
 
 _Indexed by lane(s): planning-gis-c2_

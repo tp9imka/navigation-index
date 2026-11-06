@@ -12,7 +12,7 @@ ETH package that computes traversability from elevation maps using slope, roughn
 
 **Hackathon notes:** ROS 1, dormant; reimplement the filters with grid_map.
 
-**Concepts:** [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [Terrain-relative navigation](../concepts/terrain-nav.md)
+**Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md)
 
 **Tags:** `traversability`, `grid-map`, `eth`
 
@@ -20,7 +20,7 @@ ETH package that computes traversability from elevation maps using slope, roughn
 
 ## Related
 
-- depends_on: [grid_map](../repos/anybotics__grid_map.md)
+- depends_on: [grid_map](../../catalog/repos/anybotics__grid_map.md)
 
 _Indexed by lane(s): domains-swarm_
 

@@ -6,15 +6,25 @@ A stdlib-only 2D loosely-coupled GNSS/INS EKF (8 states, hand-written matrix hel
 
 **Verification:** ran with python3.14.7 stdlib on 2026-11-06 (default run and --sweep), output shown in README. filterpy_crosscheck.py re-ran both with filterpy 2.0.0's ExtendedKalmanFilter doing covariance, innovation and Joseph-form update (Python 3.12.14) and reproduced the tables to the printed 0.1 m; inflating R 100x in the filterpy path changed them, so that path is live. gnss-ins-sim, KF-GINS and GTSAM were not run.
 
-**Concepts:** [GNSS/INS integration](../concepts/gnss-ins.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Jamming and spoofing](../concepts/gnss-interference.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `ekf`, `loosely-coupled`, `innovation-gate`, `chi-square`, `nis`, `gnss-outage`, `spoofing`, `holdover`, `stdlib`
 
 ## Related
 
-- explains: [gnss-ins-sim](../repos/aceinna__gnss-ins-sim.md)
-- uses: [FilterPy](../repos/rlabbe__filterpy.md)
-- explains: [KF-GINS](../repos/i2nav-whu__kf-gins.md)
-- explains: [GTSAM](../repos/borglab__gtsam.md)
+- explains: [gnss-ins-sim](../../catalog/repos/aceinna__gnss-ins-sim.md)
+- uses: [FilterPy](../../catalog/repos/rlabbe__filterpy.md)
+- explains: [KF-GINS](../../catalog/repos/i2nav-whu__kf-gins.md)
+- explains: [GTSAM](../../catalog/repos/borglab__gtsam.md)
+
+## Referenced by
+
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): samples_

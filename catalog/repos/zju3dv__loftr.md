@@ -16,7 +16,7 @@ Detector-free transformer matcher producing dense-ish correspondences, good on l
 
 - [loftr-2021](../../docs/paper-digests/loftr-2021.md) (paper-digests)
 
-**Concepts:** [Feature detection and matching](../concepts/feature-matching.md)
+**Concepts:** [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 
 **Tags:** `detector-free`, `transformer`
 
@@ -24,11 +24,12 @@ Detector-free transformer matcher producing dense-ish correspondences, good on l
 
 ## Related
 
-- alternative_to: [RoMa](../repos/parskatt__roma.md)
+- alternative_to: [RoMa](../../catalog/repos/parskatt__roma.md)
 
 ## Referenced by
 
-- [RoMa](../repos/parskatt__roma.md) (alternative_to)
+- [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
+- [RoMa](../../catalog/repos/parskatt__roma.md) (alternative_to)
 
 _Indexed by lane(s): alt-nav_
 

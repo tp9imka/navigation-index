@@ -12,7 +12,7 @@ Minimal GPSDO: Arduino Nano steers an SI5351 synthesizer from the GPS 1PPS, with
 
 **Hackathon notes:** Fast to build; replace the SI5351 crystal with a TCXO as the README advises.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `gpsdo`, `arduino`, `si5351`, `pps`
 
@@ -20,7 +20,11 @@ Minimal GPSDO: Arduino Nano steers an SI5351 synthesizer from the GPS 1PPS, with
 
 ## Related
 
-- extends: [Lars DIY GPSDO (original files)](../repos/andrewbcn__lars-diy-gpsdo.md)
+- extends: [Lars DIY GPSDO (original files)](../../catalog/repos/andrewbcn__lars-diy-gpsdo.md)
+
+## Referenced by
+
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 
 _Indexed by lane(s): timing_
 

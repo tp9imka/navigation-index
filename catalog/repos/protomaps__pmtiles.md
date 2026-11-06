@@ -17,7 +17,7 @@ Single-file tile archive format and tooling, served by HTTP range requests from 
 - [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
 - [protomaps__pmtiles](../../docs/integration-cards/protomaps__pmtiles.md) (integration-cards)
 
-**Concepts:** [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+**Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `pmtiles`, `offline`, `static-hosting`
 
@@ -25,14 +25,17 @@ Single-file tile archive format and tooling, served by HTTP range requests from 
 
 ## Related
 
-- integrates_with: [MapLibre GL JS](../repos/maplibre__maplibre-gl-js.md)
-- integrates_with: [Planetiler](../repos/onthegomap__planetiler.md)
+- integrates_with: [MapLibre GL JS](../../catalog/repos/maplibre__maplibre-gl-js.md)
+- integrates_with: [Planetiler](../../catalog/repos/onthegomap__planetiler.md)
 
 ## Referenced by
 
-- [MapLibre GL JS](../repos/maplibre__maplibre-gl-js.md) (integrates_with)
-- [Martin](../repos/maplibre__martin.md) (integrates_with)
-- [Planetiler](../repos/onthegomap__planetiler.md) (integrates_with)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [MapLibre GL JS](../../catalog/repos/maplibre__maplibre-gl-js.md) (integrates_with)
+- [Martin](../../catalog/repos/maplibre__martin.md) (integrates_with)
+- [Planetiler](../../catalog/repos/onthegomap__planetiler.md) (integrates_with)
 
 _Indexed by lane(s): planning-gis-c2_
 

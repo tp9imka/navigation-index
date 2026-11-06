@@ -12,7 +12,7 @@ Evaluation scripts for LaRS, a panoptic maritime obstacle detection benchmark sp
 
 **Hackathon notes:** Pair with the LaRS dataset from the project page (4,000+ labelled key frames; test GT is hidden, so score test predictions on macvi.org); use the evaluator to score a YOLO/segmentation baseline. Dataset terms: CC BY-NC 4.0, research access only, no commercial use, no sharing images with third parties. The evaluator repo has no licence file.
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Maritime navigation](../concepts/maritime-nav.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
 **Tags:** `lars`, `panoptic`, `usv`, `benchmark`
 
@@ -20,12 +20,12 @@ Evaluation scripts for LaRS, a panoptic maritime obstacle detection benchmark sp
 
 ## Related
 
-- alternative_to: [MassMIND](../repos/uml-marine-robotics__massmind.md)
+- alternative_to: [MassMIND](../../catalog/repos/uml-marine-robotics__massmind.md)
 
 ## Referenced by
 
-- [MassMIND](../repos/uml-marine-robotics__massmind.md) (alternative_to)
-- [LaRS: A Diverse Panoptic Maritime Obstacle Detection Dataset and Benchmark](../resources/lars-maritime-obstacle-dataset-2023.md) (has_code)
+- [MassMIND](../../catalog/repos/uml-marine-robotics__massmind.md) (alternative_to)
+- [LaRS: A Diverse Panoptic Maritime Obstacle Detection Dataset and Benchmark](../../catalog/resources/lars-maritime-obstacle-dataset-2023.md) (has_code)
 
 _Indexed by lane(s): round3-expansion_
 

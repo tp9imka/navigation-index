@@ -11,12 +11,16 @@ Catalog of International GNSS Service precise orbits, clocks, biases and atmosph
 - Precise products are free
 - Product latency ranges from real-time to final
 
-**Concepts:** [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md), [Geodesy and coordinate frames](../concepts/geodesy.md)
+**Concepts:** [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md), [Geodesy and coordinate frames](../../catalog/concepts/geodesy.md)
 
 **Tags:** `igs`, `sp3`, `clock`, `ppp`
 
 ## Related
 
-- uses: [Ginan](../repos/geoscienceaustralia__ginan.md)
+- uses: [Ginan](../../catalog/repos/geoscienceaustralia__ginan.md)
+
+## Referenced by
+
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 
 _Indexed by lane(s): gnss_

@@ -12,7 +12,7 @@ Main web server and client (Node.js, Socket.IO) of the Clover Rescue Team's Copt
 
 **Hackathon notes:** MIT. Reference only.
 
-**Concepts:** [Mission planning and routing](../concepts/mission-planning.md)
+**Concepts:** [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 
 **Tags:** `copterhack`, `clover`
 
@@ -20,11 +20,11 @@ Main web server and client (Node.js, Socket.IO) of the Clover Rescue Team's Copt
 
 ## Related
 
-- depends_on: [COEX Clover](../repos/copterexpress__clover.md)
+- depends_on: [COEX Clover](../../catalog/repos/copterexpress__clover.md)
 
 ## Referenced by
 
-- [CopterHack 2022](../resources/copterhack-2022.md) (has_code)
+- [CopterHack 2022](../../catalog/resources/copterhack-2022.md) (has_code)
 
 _Indexed by lane(s): round3-expansion_
 

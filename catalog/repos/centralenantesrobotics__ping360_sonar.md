@@ -12,7 +12,7 @@ ROS package that drives the Ping360 scanning sonar and publishes scans as images
 
 **Hackathon notes:** Needs the sonar; the laser-scan output plugs into standard 2D SLAM tools.
 
-**Concepts:** [Underwater navigation](../concepts/underwater-nav.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md)
+**Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
 **Tags:** `ping360`, `sonar`, `ros`
 
@@ -20,11 +20,11 @@ ROS package that drives the Ping360 scanning sonar and publishes scans as images
 
 ## Related
 
-- alternative_to: [Ping Python](../repos/bluerobotics__ping-python.md)
+- alternative_to: [Ping Python](../../catalog/repos/bluerobotics__ping-python.md)
 
 ## Referenced by
 
-- [Ping Python](../repos/bluerobotics__ping-python.md) (alternative_to)
+- [Ping Python](../../catalog/repos/bluerobotics__ping-python.md) (alternative_to)
 
 _Indexed by lane(s): domains-swarm_
 

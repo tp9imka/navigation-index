@@ -16,7 +16,7 @@ Python loaders for the KITTI raw and odometry datasets.
 
 - [kitti](../../docs/dataset-cards/kitti.md) (dataset-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 
 **Tags:** `kitti`, `loader`, `python`
 
@@ -24,7 +24,11 @@ Python loaders for the KITTI raw and odometry datasets.
 
 ## Referenced by
 
-- [KITTI Visual Odometry / SLAM Evaluation](../resources/kitti-odometry-benchmark.md) (has_code)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [KITTI Visual Odometry / SLAM Evaluation](../../catalog/resources/kitti-odometry-benchmark.md) (has_code)
 
 _Indexed by lane(s): sim-data_
 

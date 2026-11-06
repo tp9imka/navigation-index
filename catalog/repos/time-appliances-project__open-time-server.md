@@ -12,7 +12,7 @@ OCP specification for an open time server: COTS server, a NIC with hardware time
 
 **Hackathon notes:** Read-only spec. Use the block diagram and responsibilities split when designing your own time node.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `spec`, `ocp`, `time-server`, `ptp`, `ntp`
 
@@ -20,12 +20,13 @@ OCP specification for an open time server: COTS server, a NIC with hardware time
 
 ## Related
 
-- same_org: [OCP Time Card](../repos/time-appliances-project__time-card.md)
+- same_org: [OCP Time Card](../../catalog/repos/time-appliances-project__time-card.md)
 
 ## Referenced by
 
-- [OCP Time Card](../repos/time-appliances-project__time-card.md) (same_org)
-- [Open-sourcing a more precise time appliance](../resources/meta-time-appliance-2021.md) (explains)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [OCP Time Card](../../catalog/repos/time-appliances-project__time-card.md) (same_org)
+- [Open-sourcing a more precise time appliance](../../catalog/resources/meta-time-appliance-2021.md) (explains)
 
 _Indexed by lane(s): timing_
 

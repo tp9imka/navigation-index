@@ -13,12 +13,16 @@ Annual CSIS Aerospace Security Project review of counterspace capabilities, with
 - Country-by-country counterspace inventory
 - Tracks GNSS electronic attack incidents year over year
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Policy, export control and ethics](../concepts/policy-ethics.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `csis`, `counterspace`, `policy`, `think-tank`
 
 ## Related
 
-- same_author: [Space Threat Assessment 2024](../resources/csis-space-threat-assessment-2024.md)
+- same_author: [Space Threat Assessment 2024](../../catalog/resources/csis-space-threat-assessment-2024.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 
 _Indexed by lane(s): defense-context, docs-standards_

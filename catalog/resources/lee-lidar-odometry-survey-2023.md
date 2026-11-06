@@ -11,13 +11,18 @@ Survey of LiDAR-only, LiDAR-inertial and multi-sensor LiDAR odometry, with discu
 - Taxonomy of LiDAR, LiDAR-inertial and LiDAR-plus-other fusion
 - Geometric degeneracy (tunnels, open fields) is a key open issue
 
-**Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `survey`
 
 ## Related
 
-- cites: [FAST-LIO / FAST-LIO2](../repos/hku-mars__fast_lio.md)
-- cites: [KISS-ICP](../repos/prbonn__kiss-icp.md)
+- cites: [FAST-LIO / FAST-LIO2](../../catalog/repos/hku-mars__fast_lio.md)
+- cites: [KISS-ICP](../../catalog/repos/prbonn__kiss-icp.md)
+
+## Referenced by
+
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 
 _Indexed by lane(s): slam_

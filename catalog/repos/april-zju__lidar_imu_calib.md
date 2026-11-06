@@ -12,7 +12,7 @@ Targetless LiDAR-IMU calibration based on continuous-time batch estimation (IROS
 
 **Hackathon notes:** ROS 1; needs a sequence with rich excitation.
 
-**Concepts:** [Sensor calibration](../concepts/calibration.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
+**Concepts:** [Sensor calibration](../../catalog/concepts/calibration.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md)
 
 **Tags:** `lidar-imu`, `continuous-time`, `b-spline`
 
@@ -20,14 +20,14 @@ Targetless LiDAR-IMU calibration based on continuous-time batch estimation (IROS
 
 ## Related
 
-- alternative_to: [lidar_imu_calib](../repos/chennuo0125-hit__lidar_imu_calib.md)
-- alternative_to: [iKalibr](../repos/unsigned-long__ikalibr.md)
+- alternative_to: [lidar_imu_calib](../../catalog/repos/chennuo0125-hit__lidar_imu_calib.md)
+- alternative_to: [iKalibr](../../catalog/repos/unsigned-long__ikalibr.md)
 
 ## Referenced by
 
-- [lidar_imu_calib](../repos/chennuo0125-hit__lidar_imu_calib.md) (alternative_to)
-- [LiDAR_IMU_Init](../repos/hku-mars__lidar_imu_init.md) (alternative_to)
-- [iKalibr](../repos/unsigned-long__ikalibr.md) (alternative_to)
+- [lidar_imu_calib](../../catalog/repos/chennuo0125-hit__lidar_imu_calib.md) (alternative_to)
+- [LiDAR_IMU_Init](../../catalog/repos/hku-mars__lidar_imu_init.md) (alternative_to)
+- [iKalibr](../../catalog/repos/unsigned-long__ikalibr.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 

@@ -16,13 +16,21 @@ TrustPoint is developing a commercial C-band LEO navigation constellation. Its t
 - [gnss-denied-nav-products](../../docs/landscape/gnss-denied-nav-products.md) (landscape)
 - [trends-2025-2026](../../docs/landscape/trends-2025-2026.md) (landscape)
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Space and orbital navigation](../concepts/space-nav.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md)
 
 **Tags:** `landscape`, `trustpoint`, `leo-pnt`, `c-band`, `vendor-claim`
 
 ## Related
 
-- alternative_to: [Starlink LEO-PNT](../repos/przemyslawpiekarski__starlink-leo-pnt.md)
-- alternative_to: [UT Starlink signal simulator](../repos/gitlab.com__radionavlab__public__ut-starlink-signal-simulator.md)
+- alternative_to: [Starlink LEO-PNT](../../catalog/repos/przemyslawpiekarski__starlink-leo-pnt.md)
+- alternative_to: [UT Starlink signal simulator](../../catalog/repos/gitlab.com__radionavlab__public__ut-starlink-signal-simulator.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
+- [GNSS-denied navigation: products and companies](../../docs/landscape/gnss-denied-nav-products.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
 
 _Indexed by lane(s): landscape_

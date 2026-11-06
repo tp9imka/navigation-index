@@ -11,7 +11,7 @@ ICRA 2026 (Vienna) workshop on perception for underwater, space and terrestrial 
 - Cross-domain view of degraded-sensing localization
 - Speaker list points to active groups
 
-**Concepts:** [Underwater navigation](../concepts/underwater-nav.md), [Space and orbital navigation](../concepts/space-nav.md), [Radar navigation and odometry](../concepts/radar-nav.md), [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Underwater navigation](../../catalog/concepts/underwater-nav.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md), [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `icra`, `workshop`, `harsh-environments`
 

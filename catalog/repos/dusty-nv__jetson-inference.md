@@ -17,7 +17,7 @@ NVIDIA's guide and library for deploying detection, segmentation and depth netwo
 - [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
 - [dusty-nv__jetson-inference](../../docs/integration-cards/dusty-nv__jetson-inference.md) (integration-cards)
 
-**Concepts:** [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `jetson`, `tensorrt`, `detection`, `segmentation`
 
@@ -25,14 +25,16 @@ NVIDIA's guide and library for deploying detection, segmentation and depth netwo
 
 ## Related
 
-- integrates_with: [ros_deep_learning](../repos/dusty-nv__ros_deep_learning.md)
-- same_org: [jetson-containers](../repos/dusty-nv__jetson-containers.md)
+- integrates_with: [ros_deep_learning](../../catalog/repos/dusty-nv__ros_deep_learning.md)
+- same_org: [jetson-containers](../../catalog/repos/dusty-nv__jetson-containers.md)
 
 ## Referenced by
 
-- [jetson-containers](../repos/dusty-nv__jetson-containers.md) (same_org)
-- [ros_deep_learning](../repos/dusty-nv__ros_deep_learning.md) (depends_on)
-- [torch2trt](../repos/nvidia-ai-iot__torch2trt.md) (alternative_to)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [jetson-containers](../../catalog/repos/dusty-nv__jetson-containers.md) (same_org)
+- [ros_deep_learning](../../catalog/repos/dusty-nv__ros_deep_learning.md) (depends_on)
+- [torch2trt](../../catalog/repos/nvidia-ai-iot__torch2trt.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

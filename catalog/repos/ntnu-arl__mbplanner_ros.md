@@ -12,7 +12,7 @@ Motion-primitive based exploration planner for fast aerial robots in confined sp
 
 **Hackathon notes:** ROS1, not updated since 2023.
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
 **Tags:** `darpa-subt`, `cerberus`, `uav`, `exploration`
 
@@ -20,12 +20,12 @@ Motion-primitive based exploration planner for fast aerial robots in confined sp
 
 ## Related
 
-- same_org: [GBPlanner (CERBERUS)](../repos/ntnu-arl__gbplanner_ros.md)
+- same_org: [GBPlanner (CERBERUS)](../../catalog/repos/ntnu-arl__gbplanner_ros.md)
 
 ## Referenced by
 
-- [GBPlanner (CERBERUS)](../repos/ntnu-arl__gbplanner_ros.md) (same_org)
-- [CERBERUS: Autonomous Legged and Aerial Robotic Exploration in the Tunnel and Urban Circuits of the DARPA Subterranean Challenge](../resources/cerberus-tunnel-urban-paper.md) (has_code)
+- [GBPlanner (CERBERUS)](../../catalog/repos/ntnu-arl__gbplanner_ros.md) (same_org)
+- [CERBERUS: Autonomous Legged and Aerial Robotic Exploration in the Tunnel and Urban Circuits of the DARPA Subterranean Challenge](../../catalog/resources/cerberus-tunnel-urban-paper.md) (has_code)
 
 _Indexed by lane(s): defense-context_
 

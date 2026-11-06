@@ -12,7 +12,7 @@ Block-programming and web control platform for drone swarms on COEX Clover (ROS,
 
 **Hackathon notes:** No licence (all rights reserved). Runs on the Clover Gazebo simulation; the real-swarm mode is barely tested.
 
-**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Mission planning and routing](../concepts/mission-planning.md)
+**Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 
 **Tags:** `copterhack`, `clover`, `swarm`
 
@@ -20,11 +20,11 @@ Block-programming and web control platform for drone swarms on COEX Clover (ROS,
 
 ## Related
 
-- depends_on: [COEX Clover](../repos/copterexpress__clover.md)
+- depends_on: [COEX Clover](../../catalog/repos/copterexpress__clover.md)
 
 ## Referenced by
 
-- [CopterHack 2022](../resources/copterhack-2022.md) (has_code)
+- [CopterHack 2022](../../catalog/resources/copterhack-2022.md) (has_code)
 
 _Indexed by lane(s): round3-expansion_
 

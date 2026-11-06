@@ -12,7 +12,7 @@ Fast, robust global registration for terrestrial robots that assumes near-planar
 
 **Hackathon notes:** Smaller research codebase; pair with KISS-ICP.
 
-**Concepts:** [Feature detection and matching](../concepts/feature-matching.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
+**Concepts:** [Feature detection and matching](../../catalog/concepts/feature-matching.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md)
 
 **Tags:** `registration`, `ground-robot`
 
@@ -20,11 +20,11 @@ Fast, robust global registration for terrestrial robots that assumes near-planar
 
 ## Related
 
-- alternative_to: [TEASER++](../repos/mit-spark__teaser-plusplus.md)
+- alternative_to: [TEASER++](../../catalog/repos/mit-spark__teaser-plusplus.md)
 
 ## Referenced by
 
-- [TEASER++](../repos/mit-spark__teaser-plusplus.md) (alternative_to)
+- [TEASER++](../../catalog/repos/mit-spark__teaser-plusplus.md) (alternative_to)
 
 _Indexed by lane(s): slam_
 

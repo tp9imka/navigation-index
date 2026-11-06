@@ -10,7 +10,7 @@ ICRA 2025 workshop covering aerial perception, navigation and planning.
 
 - Broad aerial robotics retrospective
 
-**Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `icra2025`, `workshop`
 

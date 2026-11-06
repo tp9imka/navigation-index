@@ -12,7 +12,7 @@ Dockerfile and instructions to build and run the BKG NTRIP caster in a container
 
 **Hackathon notes:** docker build and go; last updated 2024.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [RTK / PPP precise positioning](../concepts/gnss-rtk-ppp.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [RTK / PPP precise positioning](../../catalog/concepts/gnss-rtk-ppp.md)
 
 **Tags:** `ntrip`, `docker`
 
@@ -20,11 +20,11 @@ Dockerfile and instructions to build and run the BKG NTRIP caster in a container
 
 ## Related
 
-- alternative_to: [ntripcaster (BKG standard caster)](../repos/nunojpg__ntripcaster.md)
+- alternative_to: [ntripcaster (BKG standard caster)](../../catalog/repos/nunojpg__ntripcaster.md)
 
 ## Referenced by
 
-- [ntripcaster (BKG standard caster)](../repos/nunojpg__ntripcaster.md) (alternative_to)
+- [ntripcaster (BKG standard caster)](../../catalog/repos/nunojpg__ntripcaster.md) (alternative_to)
 
 _Indexed by lane(s): gnss_
 

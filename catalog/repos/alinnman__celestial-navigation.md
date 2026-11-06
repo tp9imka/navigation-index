@@ -12,7 +12,7 @@ Python toolkit for classic celestial navigation sight reduction, usable offline 
 
 **Hackathon notes:** Pair with a star tracker output to compute position.
 
-**Concepts:** [Celestial and star-tracker navigation](../concepts/celestial-nav.md), [Maritime navigation](../concepts/maritime-nav.md)
+**Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md)
 
 **Tags:** `sight-reduction`, `offline`
 
@@ -20,11 +20,13 @@ Python toolkit for classic celestial navigation sight reduction, usable offline 
 
 ## Related
 
-- integrates_with: [tetra3](../repos/esa__tetra3.md)
+- integrates_with: [tetra3](../../catalog/repos/esa__tetra3.md)
 
 ## Referenced by
 
-- [celnav](../repos/ms8r__celnav.md) (alternative_to)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [celnav](../../catalog/repos/ms8r__celnav.md) (alternative_to)
+- [Celestial fix: cedar-solve plate solving on real star images, then position from star elevations above an IMU vertical](../../catalog/samples/celestial-star-tracker.md) (explains)
 
 _Indexed by lane(s): alt-nav_
 

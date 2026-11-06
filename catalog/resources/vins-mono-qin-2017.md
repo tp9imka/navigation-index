@@ -15,12 +15,16 @@ Presents the VINS-Mono estimator: IMU preintegration, robust initialization, tig
 
 - [vins-mono-qin-2017](../../docs/paper-digests/vins-mono-qin-2017.md) (paper-digests)
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `sliding-window`, `preintegration`
 
 ## Related
 
-- has_code: [VINS-Mono](../repos/hkust-aerial-robotics__vins-mono.md)
+- has_code: [VINS-Mono](../../catalog/repos/hkust-aerial-robotics__vins-mono.md)
+
+## Referenced by
+
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 
 _Indexed by lane(s): slam_

@@ -12,7 +12,7 @@ Deep Patch Visual Odometry: learned sparse patch tracking for VO, plus DPV-SLAM 
 
 **Hackathon notes:** CUDA build of custom kernels; follow the conda instructions.
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `deep-learning`, `patch`, `pytorch`
 
@@ -20,11 +20,12 @@ Deep Patch Visual Odometry: learned sparse patch tracking for VO, plus DPV-SLAM 
 
 ## Related
 
-- alternative_to: [DROID-SLAM](../repos/princeton-vl__droid-slam.md)
+- alternative_to: [DROID-SLAM](../../catalog/repos/princeton-vl__droid-slam.md)
 
 ## Referenced by
 
-- [DROID-SLAM](../repos/princeton-vl__droid-slam.md) (alternative_to)
+- [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
+- [DROID-SLAM](../../catalog/repos/princeton-vl__droid-slam.md) (alternative_to)
 
 _Indexed by lane(s): slam_
 

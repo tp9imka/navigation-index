@@ -12,7 +12,7 @@ Meta-repository for Autoware, the open-source ROS 2 autonomous driving stack cov
 
 **Hackathon notes:** Heavy: use the Docker images and the planning simulator. For a hackathon, lift single packages such as NDT scan matcher or the EKF localizer.
 
-**Concepts:** [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Path and motion planning](../concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `autoware`, `ndt`, `ros2`, `av`
 
@@ -20,16 +20,16 @@ Meta-repository for Autoware, the open-source ROS 2 autonomous driving stack cov
 
 ## Related
 
-- depends_on: [Autoware Universe](../repos/autowarefoundation__autoware_universe.md)
-- integrates_with: [AWSIM](../repos/autowarefoundation__awsim.md)
-- alternative_to: [Baidu Apollo](../repos/apolloauto__apollo.md)
+- depends_on: [Autoware Universe](../../catalog/repos/autowarefoundation__autoware_universe.md)
+- integrates_with: [AWSIM](../../catalog/repos/autowarefoundation__awsim.md)
+- alternative_to: [Baidu Apollo](../../catalog/repos/apolloauto__apollo.md)
 
 ## Referenced by
 
-- [Baidu Apollo](../repos/apolloauto__apollo.md) (alternative_to)
-- [Autoware Universe](../repos/autowarefoundation__autoware_universe.md) (same_org)
-- [AWSIM](../repos/autowarefoundation__awsim.md) (integrates_with)
-- [Autoware documentation](../resources/autoware-docs.md) (explains)
+- [Baidu Apollo](../../catalog/repos/apolloauto__apollo.md) (alternative_to)
+- [Autoware Universe](../../catalog/repos/autowarefoundation__autoware_universe.md) (same_org)
+- [AWSIM](../../catalog/repos/autowarefoundation__awsim.md) (integrates_with)
+- [Autoware documentation](../../catalog/resources/autoware-docs.md) (explains)
 
 _Indexed by lane(s): domains-swarm_
 

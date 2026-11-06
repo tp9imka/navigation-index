@@ -11,12 +11,12 @@ Forum post for the EKF talk at the 2017 ArduPilot developer un-conference in Can
 - Design rationale behind ArduPilot's EKF
 - Older but still the clearest primer
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `ardupilot-conference`, `ekf`
 
 ## Related
 
-- explains: [ArduPilot](../repos/ardupilot__ardupilot.md)
+- explains: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
 
 _Indexed by lane(s): autopilots_

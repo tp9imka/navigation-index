@@ -12,7 +12,7 @@ Google's nonlinear least-squares and general optimization library with automatic
 
 **Hackathon notes:** Solid but you write the residuals yourself. Pair with an existing IMU preintegration residual (e.g. from OB_GINS) rather than deriving from scratch.
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `nonlinear-least-squares`, `autodiff`, `bundle-adjustment`
 
@@ -20,15 +20,15 @@ Google's nonlinear least-squares and general optimization library with automatic
 
 ## Related
 
-- alternative_to: [GTSAM](../repos/borglab__gtsam.md)
-- integrates_with: [OB_GINS](../repos/i2nav-whu__ob_gins.md)
-- integrates_with: [VINS-Fusion](../repos/hkust-aerial-robotics__vins-fusion.md)
+- alternative_to: [GTSAM](../../catalog/repos/borglab__gtsam.md)
+- integrates_with: [OB_GINS](../../catalog/repos/i2nav-whu__ob_gins.md)
+- integrates_with: [VINS-Fusion](../../catalog/repos/hkust-aerial-robotics__vins-fusion.md)
 
 ## Referenced by
 
-- [GTSAM](../repos/borglab__gtsam.md) (alternative_to)
-- [OB_GINS](../repos/i2nav-whu__ob_gins.md) (depends_on)
-- [g2o](../repos/rainerkuemmerle__g2o.md) (alternative_to)
+- [GTSAM](../../catalog/repos/borglab__gtsam.md) (alternative_to)
+- [OB_GINS](../../catalog/repos/i2nav-whu__ob_gins.md) (depends_on)
+- [g2o](../../catalog/repos/rainerkuemmerle__g2o.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_
 

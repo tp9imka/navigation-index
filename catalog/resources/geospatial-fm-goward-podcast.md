@@ -10,12 +10,12 @@ RNT Foundation post linking Dana Goward's Geospatial FM podcast appearance on GP
 
 - Advocacy perspective on eLoran and PNT backups
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Policy, export control and ethics](../concepts/policy-ethics.md), [Timing and time transfer](../concepts/timing.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md), [Timing and time transfer](../../catalog/concepts/timing.md)
 
 **Tags:** `podcast`, `rntf`
 
 ## Referenced by
 
-- [From the Crows' Nest - growing threats to GPS/GNSS (Dana Goward)](../resources/crows-nest-goward-gps-threats-podcast.md) (same_author)
+- [What Happens When GPS Goes Dark? (From the Crows' Nest)](../../catalog/resources/crows-nest-goward-gps-threats-podcast.md) (same_author)
 
 _Indexed by lane(s): learning_

@@ -12,7 +12,7 @@ Lightweight radar global descriptor for radar place recognition (RA-L 2024).
 
 **Hackathon notes:** Small codebase; test on MulRan/Oxford Radar.
 
-**Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md), [Place recognition and loop closure](../concepts/place-recognition.md)
+**Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 
 **Tags:** `radar-place-recognition`, `descriptor`
 
@@ -20,11 +20,11 @@ Lightweight radar global descriptor for radar place recognition (RA-L 2024).
 
 ## Related
 
-- alternative_to: [Open-RadVLAD](../repos/mttgdd__open-radvlad.md)
+- alternative_to: [Open-RadVLAD](../../catalog/repos/mttgdd__open-radvlad.md)
 
 ## Referenced by
 
-- [Open-RadVLAD](../repos/mttgdd__open-radvlad.md) (alternative_to)
+- [Open-RadVLAD](../../catalog/repos/mttgdd__open-radvlad.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

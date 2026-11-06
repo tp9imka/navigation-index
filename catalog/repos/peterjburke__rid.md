@@ -12,7 +12,12 @@ ESP32 Remote ID receiver built on opendroneid-core-c and a fork of sxjack's elec
 
 **Hackathon notes:** PlatformIO project for VS Code (not the Arduino IDE), developed on a TTGO ESP32 board with a 1.14-inch LCD; it shows lat/lon of one UAV on the display.
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [peterjburke__rid](../../docs/integration-cards/peterjburke__rid.md) (integration-cards)
+
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `remote-id`, `esp32`
 
@@ -20,8 +25,12 @@ ESP32 Remote ID receiver built on opendroneid-core-c and a fork of sxjack's elec
 
 ## Related
 
-- fork_of: [uav_electronic_ids](../repos/sxjack__uav_electronic_ids.md)
-- depends_on: [Open Drone ID Core C](../repos/opendroneid__opendroneid-core-c.md)
+- fork_of: [uav_electronic_ids](../../catalog/repos/sxjack__uav_electronic_ids.md)
+- depends_on: [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md)
+
+## Referenced by
+
+- [Drone Remote ID decoder, track table and TAK output](../../catalog/samples/remote-id-to-tak.md) (integrates_with)
 
 _Indexed by lane(s): domains-swarm_
 

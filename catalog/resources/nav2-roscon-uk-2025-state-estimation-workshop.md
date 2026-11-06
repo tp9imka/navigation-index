@@ -11,14 +11,19 @@ Hands-on workshop material comparing two ROS 2 state-estimation approaches: Kalm
 - Filter vs smoother trade-offs with runnable exercises
 - Directly reusable configs for IMU/odom/GPS fusion
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md), [GNSS/INS integration](../concepts/gnss-ins.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md)
 
 **Tags:** `roscon`, `fuse`, `robot_localization`, `workshop`
 
 ## Related
 
-- has_code: [ROSCon UK 2025 State Estimation workshop](../repos/locusrobotics__roscon-uk-2025-se-workshop.md)
-- uses: [fuse](../repos/locusrobotics__fuse.md)
-- uses: [robot_localization](../repos/cra-ros-pkg__robot_localization.md)
+- has_code: [ROSCon UK 2025 State Estimation workshop](../../catalog/repos/locusrobotics__roscon-uk-2025-se-workshop.md)
+- uses: [fuse](../../catalog/repos/locusrobotics__fuse.md)
+- uses: [robot_localization](../../catalog/repos/cra-ros-pkg__robot_localization.md)
+
+## Referenced by
+
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 
 _Indexed by lane(s): learning_

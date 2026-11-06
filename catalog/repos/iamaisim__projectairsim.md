@@ -12,7 +12,7 @@ Open-source release of Project AirSim, the rewrite and successor of AirSim, for 
 
 **Hackathon notes:** Check its docs for supported Unreal version and OS. Heavier setup than AirSim binaries; budget several hours.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `airsim`, `unreal`, `autonomy`
 
@@ -20,13 +20,13 @@ Open-source release of Project AirSim, the rewrite and successor of AirSim, for 
 
 ## Related
 
-- extends: [AirSim](../repos/microsoft__airsim.md)
-- alternative_to: [Colosseum (AirSim fork)](../repos/codexlabsllc__colosseum.md)
+- extends: [AirSim](../../catalog/repos/microsoft__airsim.md)
+- alternative_to: [Colosseum (AirSim fork)](../../catalog/repos/codexlabsllc__colosseum.md)
 
 ## Referenced by
 
-- [Colosseum (AirSim fork)](../repos/codexlabsllc__colosseum.md) (alternative_to)
-- [AirSim](../repos/microsoft__airsim.md) (alternative_to)
+- [Colosseum (AirSim fork)](../../catalog/repos/codexlabsllc__colosseum.md) (alternative_to)
+- [AirSim](../../catalog/repos/microsoft__airsim.md) (alternative_to)
 
 _Indexed by lane(s): sim-data_
 

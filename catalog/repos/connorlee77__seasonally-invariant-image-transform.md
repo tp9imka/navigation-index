@@ -12,7 +12,7 @@ Training code for a learned image transform that makes aerial imagery robust to 
 
 **Hackathon notes:** Older; reference for appearance-change preprocessing.
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Terrain-relative navigation](../concepts/terrain-nav.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md)
 
 **Tags:** `seasonal`, `trn`, `jpl`
 

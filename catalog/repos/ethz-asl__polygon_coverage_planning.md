@@ -12,7 +12,7 @@ ETH ASL coverage planner for polygons with holes that treats boustrophedon sweep
 
 **Hackathon notes:** ROS1 + CGAL; last push 2023. Use as a reference or run offline to produce waypoint lists.
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [Mission planning and routing](../concepts/mission-planning.md)
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 
 **Tags:** `coverage`, `gtsp`, `uav-survey`, `cgal`
 
@@ -20,11 +20,11 @@ ETH ASL coverage planner for polygons with holes that treats boustrophedon sweep
 
 ## Related
 
-- alternative_to: [Fields2Cover](../repos/fields2cover__fields2cover.md)
+- alternative_to: [Fields2Cover](../../catalog/repos/fields2cover__fields2cover.md)
 
 ## Referenced by
 
-- [Fields2Cover](../repos/fields2cover__fields2cover.md) (alternative_to)
+- [Fields2Cover](../../catalog/repos/fields2cover__fields2cover.md) (alternative_to)
 
 _Indexed by lane(s): planning-gis-c2_
 

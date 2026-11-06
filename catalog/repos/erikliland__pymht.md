@@ -12,7 +12,7 @@ Track-oriented multi-hypothesis multi-target tracker in Python developed for mar
 
 **Hackathon notes:** Dormant; useful as a readable algorithm reference.
 
-**Concepts:** [Tracking and data association](../concepts/target-tracking.md), [Maritime navigation](../concepts/maritime-nav.md)
+**Concepts:** [Tracking and data association](../../catalog/concepts/target-tracking.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md)
 
 **Tags:** `mht`, `radar`, `tracking`
 
@@ -20,11 +20,12 @@ Track-oriented multi-hypothesis multi-target tracker in Python developed for mar
 
 ## Related
 
-- alternative_to: [Stone Soup](../repos/dstl__stone-soup.md)
+- alternative_to: [Stone Soup](../../catalog/repos/dstl__stone-soup.md)
 
 ## Referenced by
 
-- [Stone Soup](../repos/dstl__stone-soup.md) (alternative_to)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Stone Soup](../../catalog/repos/dstl__stone-soup.md) (alternative_to)
 
 _Indexed by lane(s): domains-swarm_
 

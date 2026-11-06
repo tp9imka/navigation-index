@@ -6,13 +6,13 @@
 |---|---|---|---|---|---|---|
 | 348 | Jupyter Notebook | NOASSERTION | 2026-01-06 | False | research-prototype | medium |
 
-Notebooks and examples for the GRID platform from Scaled Foundations, which pairs the AirSim-derived AirGen simulator with foundation-model perception and LLM-driven robot control.
+Notes and examples for the GRID platform from General Robotics (formerly Scaled Foundations), which pairs the AirSim-derived AirGen simulator with foundation-model perception and LLM-driven robot control.
 
 **Why it matters:** Shows a sim plus foundation-model workflow for aerial autonomy, close to 'LLM in the loop' hackathon ideas.
 
 **Hackathon notes:** Uses the hosted GRID platform for the sim side; check account requirements before relying on it.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md)
 
 **Tags:** `airgen`, `airsim`, `foundation-models`, `llm`
 
@@ -20,7 +20,11 @@ Notebooks and examples for the GRID platform from Scaled Foundations, which pair
 
 ## Related
 
-- extends: [AirSim](../repos/microsoft__airsim.md)
+- extends: [AirSim](../../catalog/repos/microsoft__airsim.md)
+
+## Referenced by
+
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 
 _Indexed by lane(s): sim-data_
 

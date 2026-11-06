@@ -18,18 +18,24 @@ Iridium broadcasts a high-power LEO timing and location signal (STL, from the Sa
 - [gnss-denied-nav-products](../../docs/landscape/gnss-denied-nav-products.md) (landscape)
 - [trends-2025-2026](../../docs/landscape/trends-2025-2026.md) (landscape)
 
-**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [Timing and time transfer](../concepts/timing.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `landscape`, `iridium`, `stl`, `leo-pnt`, `vendor-claim`
 
 ## Related
 
-- alternative_to: [Starlink LEO-PNT](../repos/przemyslawpiekarski__starlink-leo-pnt.md)
-- alternative_to: [UT Starlink signal simulator](../repos/gitlab.com__radionavlab__public__ut-starlink-signal-simulator.md)
-- alternative_to: [LEO SoOP positioning thesis (Voska)](../repos/voskavoj__dp.md)
+- alternative_to: [Starlink LEO-PNT](../../catalog/repos/przemyslawpiekarski__starlink-leo-pnt.md)
+- alternative_to: [UT Starlink signal simulator](../../catalog/repos/gitlab.com__radionavlab__public__ut-starlink-signal-simulator.md)
+- alternative_to: [LEO SoOP positioning thesis (Voska)](../../catalog/repos/voskavoj__dp.md)
 
 ## Referenced by
 
-- [VectorNav - Iridium STL-aided INS collaboration with NAL Research](../resources/vectornav-stl-aided-ins.md) (uses)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
+- [GNSS-denied navigation: products and companies](../../docs/landscape/gnss-denied-nav-products.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
+- [Docs map](../../docs/README.md) (mentions)
+- [VectorNav - Iridium STL-aided INS collaboration with NAL Research](../../catalog/resources/vectornav-stl-aided-ins.md) (uses)
 
 _Indexed by lane(s): landscape_

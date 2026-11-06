@@ -6,13 +6,13 @@
 |---|---|---|---|---|---|---|
 | 136 | HTML | ? | 2026-08-05 | False | production | medium |
 
-Collection of aircraft and vehicle models and parameter files for ArduPilot SITL across several simulator backends.
+Collection of aircraft and vehicle models and parameter files for ArduPilot SITL, mostly for the RealFlight simulator (planes, quadplanes, tailsitters, helicopters, multicopters) plus a Gazebo package with models and worlds.
 
 **Why it matters:** Ready-made airframes (including fixed-wing and VTOL) save hours when a hackathon scenario needs something other than a quadcopter.
 
-**Hackathon notes:** Pick a model folder and follow its readme; each lists the backend it targets.
+**Hackathon notes:** No top-level README. RealFlight is a paid commercial simulator; without it, only the Gazebo folder is usable. RealFlight model folders each have their own README.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Autopilots and flight control](../concepts/autopilot.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
 **Tags:** `ardupilot`, `sitl`, `models`
 
@@ -20,12 +20,12 @@ Collection of aircraft and vehicle models and parameter files for ArduPilot SITL
 
 ## Related
 
-- integrates_with: [ArduPilot](../repos/ardupilot__ardupilot.md)
-- integrates_with: [ardupilot_gazebo](../repos/ardupilot__ardupilot_gazebo.md)
+- integrates_with: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
+- integrates_with: [ardupilot_gazebo](../../catalog/repos/ardupilot__ardupilot_gazebo.md)
 
 ## Referenced by
 
-- [ardupilot_gazebo](../repos/ardupilot__ardupilot_gazebo.md) (integrates_with)
+- [ardupilot_gazebo](../../catalog/repos/ardupilot__ardupilot_gazebo.md) (integrates_with)
 
 _Indexed by lane(s): sim-data_
 

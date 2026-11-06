@@ -12,7 +12,7 @@ Code for LM-Nav, which composes a language model, CLIP and a visual navigation m
 
 **Hackathon notes:** Mostly notebook-level; read for the architecture.
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md)
 
 **Tags:** `llm`, `clip`, `vnm`, `language-navigation`
 
@@ -20,13 +20,13 @@ Code for LM-Nav, which composes a language model, CLIP and a visual navigation m
 
 ## Related
 
-- integrates_with: [GNM / ViNT / NoMaD](../repos/robodhruv__visualnav-transformer.md)
-- integrates_with: [LM-Nav: Robotic Navigation with Large Pre-Trained Models of Language, Vision, and Action](../resources/lm-nav-2022.md)
+- integrates_with: [GNM / ViNT / NoMaD](../../catalog/repos/robodhruv__visualnav-transformer.md)
+- integrates_with: [LM-Nav: Robotic Navigation with Large Pre-Trained Models of Language, Vision, and Action](../../catalog/resources/lm-nav-2022.md)
 
 ## Referenced by
 
-- [GNM / ViNT / NoMaD](../repos/robodhruv__visualnav-transformer.md) (integrates_with)
-- [LM-Nav: Robotic Navigation with Large Pre-Trained Models of Language, Vision, and Action](../resources/lm-nav-2022.md) (has_code)
+- [GNM / ViNT / NoMaD](../../catalog/repos/robodhruv__visualnav-transformer.md) (integrates_with)
+- [LM-Nav: Robotic Navigation with Large Pre-Trained Models of Language, Vision, and Action](../../catalog/resources/lm-nav-2022.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

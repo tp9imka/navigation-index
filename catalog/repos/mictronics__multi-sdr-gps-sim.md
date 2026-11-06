@@ -6,13 +6,13 @@
 |---|---|---|---|---|---|---|
 | 271 | C | MIT | 2025-01-17 | False | active-research | medium |
 
-Maintained derivative of GPS-SDR-SIM that streams GPS L1 baseband on the fly to several SDRs (HackRF, ADALM-Pluto, bladeRF) or files.
+Maintained derivative of GPS-SDR-SIM that streams GPS L1 baseband on the fly to HackRF or ADALM-Pluto, or to a binary IQ file, with a curses text UI.
 
 **Why it matters:** More current option than the archived original for building test rigs. Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.
 
 **Hackathon notes:** Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Simulation and HIL/SITL](../concepts/simulation.md), [Jamming and spoofing](../concepts/gnss-interference.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
 **Tags:** `simulator`, `hackrf`, `pluto`
 
@@ -20,13 +20,15 @@ Maintained derivative of GPS-SDR-SIM that streams GPS L1 baseband on the fly to 
 
 ## Related
 
-- fork_of: [GPS-SDR-SIM](../repos/osqzss__gps-sdr-sim.md)
+- fork_of: [GPS-SDR-SIM](../../catalog/repos/osqzss__gps-sdr-sim.md)
 
 ## Referenced by
 
-- [GPS-SDR-SIM](../repos/osqzss__gps-sdr-sim.md) (alternative_to)
-- [Safran Skydel simulation engine / GSG-8 GNSS simulator (ex-Orolia)](../resources/safran-skydel-gsg8.md) (alternative_to)
-- [Spirent GSS7000 and PNT X GNSS/PNT simulators](../resources/spirent-gss7000-pntx.md) (alternative_to)
+- [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [GPS-SDR-SIM](../../catalog/repos/osqzss__gps-sdr-sim.md) (alternative_to)
+- [Safran Skydel simulation engine / GSG-8 GNSS simulator (ex-Orolia)](../../catalog/resources/safran-skydel-gsg8.md) (alternative_to)
+- [Spirent GSS7000 and PNT X GNSS/PNT simulators](../../catalog/resources/spirent-gss7000-pntx.md) (alternative_to)
 
 _Indexed by lane(s): gnss_
 

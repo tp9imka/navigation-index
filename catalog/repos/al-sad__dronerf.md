@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|
 | 201 | MATLAB | Apache-2.0 | 2021-01-28 | False | archived | low |
 
-MATLAB and Python code for drone detection and identification from RF signals, accompanying the DroneRF dataset.
+LabVIEW programs to record RF signals plus MATLAB and Python code for drone detection and identification, accompanying the DroneRF dataset (Mendeley Data, CC BY 4.0).
 
 **Why it matters:** Widely cited RF detection baseline.
 
@@ -16,7 +16,7 @@ MATLAB and Python code for drone detection and identification from RF signals, a
 
 - [drone-rf-datasets](../../docs/dataset-cards/drone-rf-datasets.md) (dataset-cards)
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `rf-detection`, `dataset`, `matlab`
 
@@ -24,18 +24,22 @@ MATLAB and Python code for drone detection and identification from RF signals, a
 
 ## Related
 
-- alternative_to: [RFUAV](../repos/kitoweeknd__rfuav.md)
+- alternative_to: [RFUAV](../../catalog/repos/kitoweeknd__rfuav.md)
 
 ## Referenced by
 
-- [RFClassification](../repos/codymq__rfclassification.md) (depends_on)
-- [Drone Detection and Identification using RF signals](../repos/kalit31__drone-detection-and-identification-using-rf-signals.md) (depends_on)
-- [RFUAV](../repos/kitoweeknd__rfuav.md) (alternative_to)
-- [CNN for drone detection using RF](../repos/saraalemadi__cnn_for_drone_detection_and_identification_using_rf.md) (depends_on)
-- [Noisy Drone RF Signal Classification](../repos/sgluege__noisy-drone-rf-signal-classification.md) (alternative_to)
-- [RF-Drone-Detection (Georgia Tech)](../repos/tesorrells__rf-drone-detection.md) (alternative_to)
-- [Cardinal RF (CardRF): An Outdoor UAV/UAS/Drone RF Signals with Bluetooth and WiFi Signals Dataset](../resources/cardrf-drone-rf-dataset.md) (cites)
-- [C-UAS classifiers on public data: radar tracks (UAV vs bird) and DroneRF spectra](../samples/cuas-classifiers.md) (uses)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [RFClassification](../../catalog/repos/codymq__rfclassification.md) (depends_on)
+- [Drone Detection and Identification using RF signals](../../catalog/repos/kalit31__drone-detection-and-identification-using-rf-signals.md) (depends_on)
+- [RFUAV](../../catalog/repos/kitoweeknd__rfuav.md) (alternative_to)
+- [CNN for drone detection using RF](../../catalog/repos/saraalemadi__cnn_for_drone_detection_and_identification_using_rf.md) (depends_on)
+- [Noisy Drone RF Signal Classification](../../catalog/repos/sgluege__noisy-drone-rf-signal-classification.md) (alternative_to)
+- [RF-Drone-Detection (Georgia Tech)](../../catalog/repos/tesorrells__rf-drone-detection.md) (alternative_to)
+- [Cardinal RF (CardRF): An Outdoor UAV/UAS/Drone RF Signals with Bluetooth and WiFi Signals Dataset](../../catalog/resources/cardrf-drone-rf-dataset.md) (cites)
+- [DroneRF dataset: A dataset of drones for RF-based detection, classification, and identification](../../catalog/resources/dronerf-mendeley-dataset.md) (has_code)
+- [C-UAS classifiers on public data: radar tracks (UAV vs bird) and DroneRF spectra](../../catalog/samples/cuas-classifiers.md) (uses)
 
 _Indexed by lane(s): domains-swarm_
 

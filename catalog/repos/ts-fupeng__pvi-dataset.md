@@ -12,11 +12,15 @@ Dataset combining stereo camera, IMU, polarization camera and high-precision GPS
 
 **Hackathon notes:** README only links a Google Drive; check data format before planning.
 
-**Concepts:** [Celestial and star-tracker navigation](../concepts/celestial-nav.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `polarization`, `skylight-compass`, `dataset`
 
 **Domains:** ground
+
+## Referenced by
+
+- [Celestial fix: cedar-solve plate solving on real star images, then position from star elevations above an IMU vertical](../../catalog/samples/celestial-star-tracker.md) (explains)
 
 _Indexed by lane(s): gap-fill_
 

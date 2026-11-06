@@ -11,12 +11,16 @@ Builds a real-time dense monocular SLAM system on the MASt3R two-view reconstruc
 - 3D foundation models can serve as SLAM front ends
 - Works with uncalibrated video
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [Feature detection and matching](../concepts/feature-matching.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md)
 
 **Tags:** `foundation-model`, `cvpr-2025`
 
 ## Related
 
-- has_code: [MASt3R-SLAM](../repos/rmurai0610__mast3r-slam.md)
+- has_code: [MASt3R-SLAM](../../catalog/repos/rmurai0610__mast3r-slam.md)
+
+## Referenced by
+
+- [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 
 _Indexed by lane(s): slam_

@@ -12,7 +12,7 @@ Notebooks and MATLAB feature extractors for drone detection and identification o
 
 **Hackathon notes:** Notebook-based; the processed data is on the Google Drive link in the README, raw DroneRF is CC BY 4.0 on Mendeley. Feature extraction scripts need MATLAB.
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md)
 
 **Tags:** `rf`, `ml`, `dronerf`
 
@@ -20,7 +20,7 @@ Notebooks and MATLAB feature extractors for drone detection and identification o
 
 ## Related
 
-- depends_on: [DroneRF](../repos/al-sad__dronerf.md)
+- depends_on: [DroneRF](../../catalog/repos/al-sad__dronerf.md)
 
 _Indexed by lane(s): round3-expansion_
 

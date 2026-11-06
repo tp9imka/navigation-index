@@ -11,12 +11,13 @@ Factsheet for an EDF-funded project developing ground and space-based detection 
 - Interference detection and monitoring is a funded European priority
 - Pairs well with ADS-B/SDR monitoring hackathon ideas
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `edf`, `navguard`, `monitoring`
 
 ## Referenced by
 
-- [European Defence Fund 2025 calls](../resources/edf-2025-call.md) (cites)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [European Defence Fund 2025 calls](../../catalog/resources/edf-2025-call.md) (cites)
 
 _Indexed by lane(s): defense-context_

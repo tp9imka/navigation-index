@@ -12,7 +12,7 @@ Decentralized omnidirectional visual-inertial-UWB state estimation for aerial sw
 
 **Hackathon notes:** Dormant since 2022; superseded by D2SLAM.
 
-**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Visual(-inertial) odometry](../concepts/vio.md), [RF localization and direction finding](../concepts/rf-localization.md)
+**Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 
 **Tags:** `uwb`, `vio`, `swarm`, `hkust`
 
@@ -20,11 +20,12 @@ Decentralized omnidirectional visual-inertial-UWB state estimation for aerial sw
 
 ## Related
 
-- alternative_to: [D2SLAM](../repos/hkust-aerial-robotics__d2slam.md)
+- alternative_to: [D2SLAM](../../catalog/repos/hkust-aerial-robotics__d2slam.md)
 
 ## Referenced by
 
-- [D2SLAM](../repos/hkust-aerial-robotics__d2slam.md) (extends)
+- [D2SLAM](../../catalog/repos/hkust-aerial-robotics__d2slam.md) (extends)
+- [Cooperative localization for a GNSS-denied team: UWB ranging, centralized EKF vs covariance intersection, and a spoofed anchor](../../catalog/samples/swarm-coop-localization.md) (explains)
 
 _Indexed by lane(s): domains-swarm_
 

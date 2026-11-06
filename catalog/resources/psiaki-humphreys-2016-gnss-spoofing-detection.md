@@ -16,18 +16,21 @@ Proceedings of the IEEE survey of spoofing attack types and detection/mitigation
 
 - [psiaki-humphreys-2016-gnss-spoofing-detection](../../docs/paper-digests/psiaki-humphreys-2016-gnss-spoofing-detection.md) (paper-digests)
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `spoofing`, `survey`, `proc-ieee`
 
 ## Related
 
-- same_author: [Assessing the Spoofing Threat: Development of a Portable GPS Civilian Spoofer](../resources/humphreys-2008-assessing-spoofing-threat.md)
+- same_author: [Assessing the Spoofing Threat: Development of a Portable GPS Civilian Spoofer](../../catalog/resources/humphreys-2008-assessing-spoofing-threat.md)
 
 ## Referenced by
 
-- [Assessing the Spoofing Threat: Development of a Portable GPS Civilian Spoofer](../resources/humphreys-2008-assessing-spoofing-threat.md) (same_author)
-- [TEXBAT: Texas Spoofing Test Battery](../resources/ut-texbat.md) (same_author)
-- [File-based GNSS signal chain: gps-sdr-sim => GNSS-SDR => spoofing/jamming scorer](../samples/gnss-signal-chain.md) (explains)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
+- [Assessing the Spoofing Threat: Development of a Portable GPS Civilian Spoofer](../../catalog/resources/humphreys-2008-assessing-spoofing-threat.md) (same_author)
+- [Texas Spoofing Test Battery (TEXBAT)](../../catalog/resources/ut-texbat.md) (same_author)
+- [File-based GNSS signal chain: gps-sdr-sim => GNSS-SDR => spoofing/jamming scorer](../../catalog/samples/gnss-signal-chain.md) (explains)
 
 _Indexed by lane(s): gnss_

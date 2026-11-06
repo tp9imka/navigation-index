@@ -12,7 +12,7 @@ Open Compute Project Time Appliance Project hardware: a PCIe card with a GNSS re
 
 **Hackathon notes:** Hardware, not a 48 h build; read the architecture and holdover sections for design ideas.
 
-**Concepts:** [Timing and time transfer](../concepts/timing.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `gpsdo`, `grandmaster`, `ocp`, `pcie`, `holdover`, `atomic-clock`
 
@@ -20,17 +20,18 @@ Open Compute Project Time Appliance Project hardware: a PCIe card with a GNSS re
 
 ## Related
 
-- same_org: [Open Time Server spec](../repos/time-appliances-project__open-time-server.md)
-- integrates_with: [Meta Time libraries](../repos/meta__time.md)
-- integrates_with: [oscillatord](../repos/orolia2s__oscillatord.md)
+- same_org: [Open Time Server spec](../../catalog/repos/time-appliances-project__open-time-server.md)
+- integrates_with: [Meta Time libraries](../../catalog/repos/meta__time.md)
+- integrates_with: [oscillatord](../../catalog/repos/orolia2s__oscillatord.md)
 
 ## Referenced by
 
-- [Meta Time libraries](../repos/meta__time.md) (integrates_with)
-- [oscillatord](../repos/orolia2s__oscillatord.md) (integrates_with)
-- [Open Time Server spec](../repos/time-appliances-project__open-time-server.md) (same_org)
-- [How Precision Time Protocol is being deployed at Meta](../resources/meta-ptp-at-meta-2022.md) (uses)
-- [Open-sourcing a more precise time appliance](../resources/meta-time-appliance-2021.md) (has_code)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [Meta Time libraries](../../catalog/repos/meta__time.md) (integrates_with)
+- [oscillatord](../../catalog/repos/orolia2s__oscillatord.md) (integrates_with)
+- [Open Time Server spec](../../catalog/repos/time-appliances-project__open-time-server.md) (same_org)
+- [How Precision Time Protocol is being deployed at Meta](../../catalog/resources/meta-ptp-at-meta-2022.md) (uses)
+- [Open-sourcing a more precise time appliance](../../catalog/resources/meta-time-appliance-2021.md) (has_code)
 
 _Indexed by lane(s): timing_
 

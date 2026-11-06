@@ -12,7 +12,7 @@ CVPR 2024 place recognition with a bag of learnable global queries over backbone
 
 **Hackathon notes:** torch.hub available.
 
-**Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md)
+**Concepts:** [Place recognition and loop closure](../../catalog/concepts/place-recognition.md)
 
 **Tags:** `vpr`, `transformer`
 
@@ -20,12 +20,15 @@ CVPR 2024 place recognition with a bag of learnable global queries over backbone
 
 ## Related
 
-- same_org: [MixVPR](../repos/amaralibey__mixvpr.md)
+- same_org: [MixVPR](../../catalog/repos/amaralibey__mixvpr.md)
 
 ## Referenced by
 
-- [MixVPR](../repos/amaralibey__mixvpr.md) (same_org)
-- [SALAD](../repos/serizba__salad.md) (alternative_to)
+- [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
+- [GSV-Cities](../../catalog/repos/amaralibey__gsv-cities.md) (integrates_with)
+- [MixVPR](../../catalog/repos/amaralibey__mixvpr.md) (same_org)
+- [SALAD](../../catalog/repos/serizba__salad.md) (alternative_to)
+- [Large-area visual place recognition for lost-GNSS recovery (DINOv2 GeM / VLAD over a 49 km2 NAIP tile DB, chained to LightGlue fine matching)](../../catalog/samples/vpr-large-area.md) (explains)
 
 _Indexed by lane(s): alt-nav_
 

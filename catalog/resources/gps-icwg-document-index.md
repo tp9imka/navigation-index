@@ -12,13 +12,14 @@ Index page for the public GPS ICDs and ISs (200, 705, 800, 870 etc.), change not
 - Hosts proposed change notices and meeting redlines
 - Single entry point for all GPS signal ICDs
 - Historic versions also linked
+- Archive site, frozen since February 2025 per its own banner
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `icd`, `gps`, `icwg`, `l5`, `l1c`
 
 ## Related
 
-- part_of: [IS-GPS-200N: NAVSTAR GPS Space Segment / Navigation User Segment Interfaces](../resources/gps-is-gps-200n.md)
+- part_of: [IS-GPS-200N: NAVSTAR GPS Space Segment / Navigation User Segment Interfaces](../../catalog/resources/gps-is-gps-200n.md)
 
 _Indexed by lane(s): docs-standards, gnss_

@@ -12,7 +12,7 @@ ROS 2 packages for TensorRT and Triton inference on Jetson and x86, with encoder
 
 **Hackathon notes:** Use with an ONNX model; dev container required.
 
-**Concepts:** [Onboard / edge AI perception](../concepts/edge-ai.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `tensorrt`, `triton`, `ros2`, `jetson`
 
@@ -20,7 +20,7 @@ ROS 2 packages for TensorRT and Triton inference on Jetson and x86, with encoder
 
 ## Related
 
-- same_org: [Isaac ROS nvblox](../repos/nvidia-isaac-ros__isaac_ros_nvblox.md)
+- same_org: [Isaac ROS nvblox](../../catalog/repos/nvidia-isaac-ros__isaac_ros_nvblox.md)
 
 _Indexed by lane(s): gap-fill_
 

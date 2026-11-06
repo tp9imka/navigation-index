@@ -12,7 +12,7 @@ OpenCPN plugin that connects to Navico and some Garmin and Raymarine marine rada
 
 **Hackathon notes:** Needs a supported radar on the network to be interesting; without hardware, study the protocol decoding and overlay code.
 
-**Concepts:** [Maritime navigation](../concepts/maritime-nav.md), [Radar navigation and odometry](../concepts/radar-nav.md), [Tracking and data association](../concepts/target-tracking.md)
+**Concepts:** [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Tracking and data association](../../catalog/concepts/target-tracking.md)
 
 **Tags:** `opencpn-plugin`, `marine-radar`, `arpa`
 
@@ -20,11 +20,13 @@ OpenCPN plugin that connects to Navico and some Garmin and Raymarine marine rada
 
 ## Related
 
-- extends: [OpenCPN](../repos/opencpn__opencpn.md)
+- extends: [OpenCPN](../../catalog/repos/opencpn__opencpn.md)
 
 ## Referenced by
 
-- [OpenCPN](../repos/opencpn__opencpn.md) (integrates_with)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [OpenCPN](../../catalog/repos/opencpn__opencpn.md) (integrates_with)
+- [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) (explains)
 
 _Indexed by lane(s): domains-swarm_
 

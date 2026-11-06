@@ -12,7 +12,7 @@ C++ behavior tree library with XML trees, async actions, logging and the Groot e
 
 **Hackathon notes:** Header-friendly library; Groot2 GUI helps demo mission logic to judges.
 
-**Concepts:** [Mission planning and routing](../concepts/mission-planning.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Mission planning and routing](../../catalog/concepts/mission-planning.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `behavior-tree`, `groot`, `mission-logic`
 
@@ -20,13 +20,15 @@ C++ behavior tree library with XML trees, async actions, logging and the Groot e
 
 ## Related
 
-- integrates_with: [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md)
+- integrates_with: [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md)
 
 ## Referenced by
 
-- [Aerostack2](../repos/aerostack2__aerostack2.md) (depends_on)
-- [PlanSys2](../repos/plansys2__ros2_planning_system.md) (depends_on)
-- [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md) (depends_on)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Aerostack2](../../catalog/repos/aerostack2__aerostack2.md) (depends_on)
+- [PlanSys2](../../catalog/repos/plansys2__ros2_planning_system.md) (depends_on)
+- [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md) (depends_on)
 
 _Indexed by lane(s): planning-gis-c2_
 

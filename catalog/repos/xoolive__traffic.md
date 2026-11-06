@@ -12,7 +12,7 @@ Toolbox for processing and analyzing air traffic trajectories: OpenSky access, f
 
 **Hackathon notes:** pip install traffic; OpenSky historical data needs an account.
 
-**Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Tracking and data association](../concepts/target-tracking.md)
+**Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Tracking and data association](../../catalog/concepts/target-tracking.md)
 
 **Tags:** `air-traffic`, `trajectories`, `opensky`
 
@@ -20,13 +20,13 @@ Toolbox for processing and analyzing air traffic trajectories: OpenSky access, f
 
 ## Related
 
-- depends_on: [pyModeS](../repos/junzis__pymodes.md)
-- integrates_with: [OpenSky API clients](../repos/openskynetwork__opensky-api.md)
+- depends_on: [pyModeS](../../catalog/repos/junzis__pymodes.md)
+- integrates_with: [OpenSky API clients](../../catalog/repos/openskynetwork__opensky-api.md)
 
 ## Referenced by
 
-- [pyModeS](../repos/junzis__pymodes.md) (integrates_with)
-- [OpenSky API clients](../repos/openskynetwork__opensky-api.md) (integrates_with)
+- [pyModeS](../../catalog/repos/junzis__pymodes.md) (integrates_with)
+- [OpenSky API clients](../../catalog/repos/openskynetwork__opensky-api.md) (integrates_with)
 
 _Indexed by lane(s): planning-gis-c2_
 

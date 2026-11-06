@@ -17,7 +17,7 @@ Coherent multichannel SDR acquisition chain (sync, calibration, decimation) unde
 - [_index-round3](../../docs/integration-cards/_index-round3.md) (integration-cards)
 - [krakenrf__heimdall_daq_fw](../../docs/integration-cards/krakenrf__heimdall_daq_fw.md) (integration-cards)
 
-**Concepts:** [RF localization and direction finding](../concepts/rf-localization.md), [Sensor calibration](../concepts/calibration.md)
+**Concepts:** [RF localization and direction finding](../../catalog/concepts/rf-localization.md), [Sensor calibration](../../catalog/concepts/calibration.md)
 
 **Tags:** `sdr`, `coherent`, `daq`
 
@@ -25,13 +25,15 @@ Coherent multichannel SDR acquisition chain (sync, calibration, decimation) unde
 
 ## Related
 
-- same_org: [KrakenSDR DoA DSP](../repos/krakenrf__krakensdr_doa.md)
+- same_org: [KrakenSDR DoA DSP](../../catalog/repos/krakenrf__krakensdr_doa.md)
 
 ## Referenced by
 
-- [TDOA evaluation with RTL-SDRs](../repos/dc9st__tdoa-evaluation-rtlsdr.md) (alternative_to)
-- [KrakenSDR DoA DSP](../repos/krakenrf__krakensdr_doa.md) (depends_on)
-- [GNSS jammer geolocation from DF bearings to TAK](../samples/interference-geolocation-to-tak.md) (explains)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [TDOA evaluation with RTL-SDRs](../../catalog/repos/dc9st__tdoa-evaluation-rtlsdr.md) (alternative_to)
+- [KrakenSDR DoA DSP](../../catalog/repos/krakenrf__krakensdr_doa.md) (depends_on)
+- [GNSS jammer geolocation from DF bearings to TAK](../../catalog/samples/interference-geolocation-to-tak.md) (explains)
 
 _Indexed by lane(s): defense-context_
 

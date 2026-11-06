@@ -12,7 +12,12 @@ Library of sampling-based motion planners (RRT, RRT*, PRM, BIT*, informed varian
 
 **Hackathon notes:** pip wheels exist for the Python bindings; define a state validity checker against your occupancy grid or DEM and you have a planner in an afternoon.
 
-**Concepts:** [Path and motion planning](../concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md)
+## Deep dives
+
+- [_index-round5-nav](../../docs/integration-cards/_index-round5-nav.md) (integration-cards)
+- [ompl__ompl](../../docs/integration-cards/ompl__ompl.md) (integration-cards)
+
+**Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
 **Tags:** `rrt`, `prm`, `sampling-based`, `python-bindings`
 
@@ -20,14 +25,17 @@ Library of sampling-based motion planners (RRT, RRT*, PRM, BIT*, informed varian
 
 ## Related
 
-- alternative_to: [PythonRobotics](../repos/atsushisakai__pythonrobotics.md)
-- integrates_with: [MoveIt 2](../repos/moveit__moveit2.md)
+- alternative_to: [PythonRobotics](../../catalog/repos/atsushisakai__pythonrobotics.md)
+- integrates_with: [MoveIt 2](../../catalog/repos/moveit__moveit2.md)
 
 ## Referenced by
 
-- [PythonRobotics](../repos/atsushisakai__pythonrobotics.md) (alternative_to)
-- [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md) (alternative_to)
-- [The Open Motion Planning Library (OMPL) website](../resources/ompl-site.md) (explains)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [PythonRobotics](../../catalog/repos/atsushisakai__pythonrobotics.md) (alternative_to)
+- [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md) (alternative_to)
+- [The Open Motion Planning Library (OMPL) website](../../catalog/resources/ompl-site.md) (explains)
 
 _Indexed by lane(s): planning-gis-c2_
 

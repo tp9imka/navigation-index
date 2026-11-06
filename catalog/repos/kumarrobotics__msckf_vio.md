@@ -10,9 +10,9 @@ Stereo multi-state constraint Kalman filter VIO designed for fast autonomous fli
 
 **Why it matters:** Lean filter-based stereo VIO that runs comfortably on embedded CPUs.
 
-**Hackathon notes:** ROS 1; unmaintained. Tested heavily on EuRoC; good comparison point to OpenVINS.
+**Hackathon notes:** ROS 1; unmaintained. Tested heavily on EuRoC; good comparison point to OpenVINS. Licence: Penn Software License - non-profit research use only, no redistribution without Penn's approval; commercial use needs a separate licence.
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `msckf`, `stereo`, `ros1`
 
@@ -20,11 +20,11 @@ Stereo multi-state constraint Kalman filter VIO designed for fast autonomous fli
 
 ## Related
 
-- alternative_to: [OpenVINS](../repos/rpng__open_vins.md)
+- alternative_to: [OpenVINS](../../catalog/repos/rpng__open_vins.md)
 
 ## Referenced by
 
-- [OpenVINS](../repos/rpng__open_vins.md) (alternative_to)
+- [OpenVINS](../../catalog/repos/rpng__open_vins.md) (alternative_to)
 
 _Indexed by lane(s): slam_
 

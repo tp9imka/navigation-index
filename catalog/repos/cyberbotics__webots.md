@@ -12,7 +12,7 @@ General-purpose open-source robot simulator with many robot models and sensors i
 
 **Hackathon notes:** Installers for Windows, macOS and Linux. webots_ros2 package for ROS 2. Less common in aerial autonomy.
 
-**Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `webots`, `ros2`, `robots`
 
@@ -20,7 +20,7 @@ General-purpose open-source robot simulator with many robot models and sensors i
 
 ## Related
 
-- alternative_to: [Gazebo Sim (gz-sim)](../repos/gazebosim__gz-sim.md)
+- alternative_to: [Gazebo Sim (gz-sim)](../../catalog/repos/gazebosim__gz-sim.md)
 
 _Indexed by lane(s): sim-data_
 

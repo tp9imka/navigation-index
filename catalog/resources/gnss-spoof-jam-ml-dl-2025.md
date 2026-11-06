@@ -11,13 +11,13 @@ Study applying ML and DL to spoofing detection and to jamming-type classificatio
 - Spectrogram + CNN reaches 98.93% jamming-type accuracy (ResNet18, transfer learning) on the simulated Swinney-Woods raw IQ dataset (CC BY 4.0)
 - Code in Colab notebooks
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
 **Tags:** `ml`, `spectrogram`
 
 ## Related
 
-- has_code: [GNSS jamming/spoofing classification notebooks](../repos/alicmu2024__gnss-jamming-detection-and-classification-using-machine-learning-deep-learning-and-computer-vision.md)
-- uses: [Raw IQ dataset for GNSS GPS jamming signal classification](../resources/gnss-raw-iq-jamming-classification-zenodo.md)
+- has_code: [GNSS jamming/spoofing classification notebooks](../../catalog/repos/alicmu2024__gnss-jamming-detection-and-classification-using-machine-learning-deep-learning-and-computer-vision.md)
+- uses: [Raw IQ dataset for GNSS GPS jamming signal classification](../../catalog/resources/gnss-raw-iq-jamming-classification-zenodo.md)
 
 _Indexed by lane(s): round3-expansion_

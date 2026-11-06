@@ -12,7 +12,7 @@ Joan Sola's MATLAB SLAM toolbox with EKF-SLAM (`ekf` branch) and graph-SLAM (`gr
 
 **Hackathon notes:** Runs in MATLAB with simulated worlds out of the box; not maintained, use for understanding rather than deployment.
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `ekf-slam`, `matlab`, `inverse-depth`, `teaching`
 
@@ -20,8 +20,8 @@ Joan Sola's MATLAB SLAM toolbox with EKF-SLAM (`ekf` branch) and graph-SLAM (`gr
 
 ## Referenced by
 
-- [Quaternion kinematics for the error-state Kalman filter](../resources/sola-quaternion-kinematics-eskf.md) (same_author)
-- [SLAM toolbox for Matlab (EKF-SLAM teaching code)](../resources/sola-slamtb-ekf-slam-toolbox.md) (has_code)
+- [Quaternion kinematics for the error-state Kalman filter](../../catalog/resources/sola-quaternion-kinematics-eskf.md) (same_author)
+- [SLAM toolbox for Matlab (EKF-SLAM teaching code)](../../catalog/resources/sola-slamtb-ekf-slam-toolbox.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

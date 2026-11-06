@@ -12,16 +12,16 @@ Raw IQ dataset of GNSS jamming signal types (DME, narrowband, single AM, single 
 - Converted to spectrogram images in follow-up work
 - Signals are generated in MATLAB, not live over-the-air captures
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Jamming and spoofing](../concepts/gnss-interference.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
 **Tags:** `zenodo`, `iq`, `jamming`
 
 ## Related
 
-- has_code: [GNSS jamming/spoofing classification notebooks](../repos/alicmu2024__gnss-jamming-detection-and-classification-using-machine-learning-deep-learning-and-computer-vision.md)
+- has_code: [GNSS jamming/spoofing classification notebooks](../../catalog/repos/alicmu2024__gnss-jamming-detection-and-classification-using-machine-learning-deep-learning-and-computer-vision.md)
 
 ## Referenced by
 
-- [GNSS/GPS Spoofing and Jamming Identification Using Machine Learning and Deep Learning](../resources/gnss-spoof-jam-ml-dl-2025.md) (uses)
+- [GNSS/GPS Spoofing and Jamming Identification Using Machine Learning and Deep Learning](../../catalog/resources/gnss-spoof-jam-ml-dl-2025.md) (uses)
 
 _Indexed by lane(s): round3-expansion_

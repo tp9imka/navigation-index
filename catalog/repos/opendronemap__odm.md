@@ -12,7 +12,7 @@ Photogrammetry toolkit that turns aerial images into orthophotos, point clouds, 
 
 **Hackathon notes:** docker run opendronemap/odm on a folder of images; WebODM gives a GUI. Processing time scales with image count.
 
-**Concepts:** [GIS, maps and geospatial data](../concepts/gis-mapping.md), [Terrain-relative navigation](../concepts/terrain-nav.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+**Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md), [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `photogrammetry`, `orthophoto`, `dsm`
 
@@ -20,11 +20,15 @@ Photogrammetry toolkit that turns aerial images into orthophotos, point clouds, 
 
 ## Related
 
-- depends_on: [GDAL](../repos/osgeo__gdal.md)
+- depends_on: [GDAL](../../catalog/repos/osgeo__gdal.md)
 
 ## Referenced by
 
-- [License-clean drone frame to orthophoto geolocalization (ALIKED / DISK / SIFT + LightGlue)](../samples/geoloc-license-clean.md) (explains)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [OpenDroneMap Aukerman Park eBee image set](../../catalog/resources/odm-aukerman-ebee-dataset.md) (has_code)
+- [License-clean drone frame to orthophoto geolocalization (ALIKED / DISK / SIFT + LightGlue)](../../catalog/samples/geoloc-license-clean.md) (explains)
 
 _Indexed by lane(s): planning-gis-c2_
 

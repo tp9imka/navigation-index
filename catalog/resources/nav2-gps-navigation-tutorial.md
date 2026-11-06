@@ -11,14 +11,19 @@ Nav2 tutorial on outdoor navigation with GPS: fusing GNSS, IMU and odometry with
 - Shortest working path to GPS waypoint following on a ROS 2 robot
 - Shows datum and frame setup that trips people up
 
-**Concepts:** [ROS / ROS 2 robotics middleware](../concepts/ros.md), [GNSS/INS integration](../concepts/gnss-ins.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [Mission planning and routing](../concepts/mission-planning.md)
+**Concepts:** [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 
 **Tags:** `nav2`, `ros2`, `gps`, `robot_localization`
 
 ## Related
 
-- has_code: [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md)
-- uses: [robot_localization](../repos/cra-ros-pkg__robot_localization.md)
-- has_code: [Nav2 tutorials](../repos/ros-navigation__navigation2_tutorials.md)
+- has_code: [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md)
+- uses: [robot_localization](../../catalog/repos/cra-ros-pkg__robot_localization.md)
+- has_code: [Nav2 tutorials](../../catalog/repos/ros-navigation__navigation2_tutorials.md)
+
+## Referenced by
+
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 
 _Indexed by lane(s): learning_

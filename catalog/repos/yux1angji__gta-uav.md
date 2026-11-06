@@ -12,7 +12,7 @@ Benchmark and code for UAV geo-localization trained on synthetic game imagery wi
 
 **Hackathon notes:** Code Apache-2.0; the HF dataset cards also say Apache-2.0, but the imagery is rendered from GTA V, so check the game's terms before non-research use. LR set 12.8 GB, HR 143.3 GB. Pretrained cross-area and same-area checkpoints on HF; fine-tune on your area's satellite tiles.
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `cross-view`, `synthetic`, `gta`, `aaai2025`
 
@@ -20,12 +20,12 @@ Benchmark and code for UAV geo-localization trained on synthetic game imagery wi
 
 ## Related
 
-- alternative_to: [Sample4Geo](../repos/skyy93__sample4geo.md)
-- alternative_to: [University-1652 baseline](../repos/layumi__university1652-baseline.md)
+- alternative_to: [Sample4Geo](../../catalog/repos/skyy93__sample4geo.md)
+- alternative_to: [University-1652 baseline](../../catalog/repos/layumi__university1652-baseline.md)
 
 ## Referenced by
 
-- [Game4Loc: A UAV Geo-Localization Benchmark from Game Data](../resources/game4loc-2024.md) (has_code)
+- [Game4Loc: A UAV Geo-Localization Benchmark from Game Data](../../catalog/resources/game4loc-2024.md) (has_code)
 
 _Indexed by lane(s): round3-expansion_
 

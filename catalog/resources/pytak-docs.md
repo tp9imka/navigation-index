@@ -10,12 +10,17 @@ Docs and examples for PyTAK: configuration, transports (TCP/UDP/TLS/multicast) a
 
 - Example scripts are a minimal template for pushing positions to TAK
 
-**Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `cot`, `python`
 
 ## Related
 
-- explains: [PyTAK](../repos/snstac__pytak.md)
+- explains: [PyTAK](../../catalog/repos/snstac__pytak.md)
+
+## Referenced by
+
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 
 _Indexed by lane(s): planning-gis-c2_

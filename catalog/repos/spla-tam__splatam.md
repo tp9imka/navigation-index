@@ -10,9 +10,9 @@ Dense RGB-D SLAM that tracks and maps using 3D Gaussians and differentiable rend
 
 **Why it matters:** Reference Gaussian-splatting SLAM for RGB-D sensors.
 
-**Hackathon notes:** GPU-heavy and slower than real time; good for offline indoor captures.
+**Hackathon notes:** GPU-heavy and slower than real time; good for offline indoor captures. The repo is BSD-3, but it depends on diff-gaussian-rasterization-w-depth, which carries the Inria Gaussian-Splatting licence (non-commercial research use only).
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `3dgs`, `rgbd`, `pytorch`
 
@@ -20,12 +20,12 @@ Dense RGB-D SLAM that tracks and maps using 3D Gaussians and differentiable rend
 
 ## Related
 
-- alternative_to: [MonoGS (Gaussian Splatting SLAM)](../repos/muskie82__monogs.md)
+- alternative_to: [MonoGS (Gaussian Splatting SLAM)](../../catalog/repos/muskie82__monogs.md)
 
 ## Referenced by
 
-- [MonoGS (Gaussian Splatting SLAM)](../repos/muskie82__monogs.md) (alternative_to)
-- [How NeRFs and 3D Gaussian Splatting are Reshaping SLAM: a Survey](../resources/tosi-nerf-3dgs-slam-survey-2024.md) (cites)
+- [MonoGS (Gaussian Splatting SLAM)](../../catalog/repos/muskie82__monogs.md) (alternative_to)
+- [How NeRFs and 3D Gaussian Splatting are Reshaping SLAM: a Survey](../../catalog/resources/tosi-nerf-3dgs-slam-survey-2024.md) (cites)
 
 _Indexed by lane(s): slam_
 

@@ -11,13 +11,19 @@ Bitcraze documentation for its UWB positioning system covering anchor placement,
 - TDoA scales to many tags, TWR is simpler
 - Anchor geometry dominates accuracy
 
-**Concepts:** [RF localization and direction finding](../concepts/rf-localization.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+**Concepts:** [RF localization and direction finding](../../catalog/concepts/rf-localization.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `uwb`, `loco`, `tdoa`
 
 ## Related
 
-- explains: [Loco Positioning node firmware](../repos/bitcraze__lps-node-firmware.md)
-- explains: [Crazyflie firmware](../repos/bitcraze__crazyflie-firmware.md)
+- explains: [Loco Positioning node firmware](../../catalog/repos/bitcraze__lps-node-firmware.md)
+- explains: [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 
 _Indexed by lane(s): domains-swarm_

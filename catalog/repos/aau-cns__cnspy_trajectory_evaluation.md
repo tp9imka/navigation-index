@@ -12,7 +12,7 @@ Python package that aligns an estimated trajectory with ground truth from CSV fi
 
 **Hackathon notes:** pip install cnspy-trajectory-evaluation; estimated CSV must carry pose covariance. Use evo for quick plots, this when you need filter consistency.
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `ate`, `rpe`, `nees`, `evaluation`, `python`
 
@@ -20,12 +20,12 @@ Python package that aligns an estimated trajectory with ground truth from CSV fi
 
 ## Related
 
-- alternative_to: [evo](../repos/michaelgrupp__evo.md)
-- alternative_to: [rpg_trajectory_evaluation](../repos/uzh-rpg__rpg_trajectory_evaluation.md)
+- alternative_to: [evo](../../catalog/repos/michaelgrupp__evo.md)
+- alternative_to: [rpg_trajectory_evaluation](../../catalog/repos/uzh-rpg__rpg_trajectory_evaluation.md)
 
 ## Referenced by
 
-- [MaRS (Modular and Robust Sensor-Fusion)](../repos/aau-cns__mars_lib.md) (same_org)
+- [MaRS (Modular and Robust Sensor-Fusion)](../../catalog/repos/aau-cns__mars_lib.md) (same_org)
 
 _Indexed by lane(s): gap-fill_
 

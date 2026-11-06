@@ -12,7 +12,7 @@ Header-only C library for processing sky polarization images to support heading 
 
 **Hackathon notes:** Needs a polarization camera (or simulated images).
 
-**Concepts:** [Celestial and star-tracker navigation](../concepts/celestial-nav.md)
+**Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md)
 
 **Tags:** `polarization`, `heading`, `c`
 
@@ -20,7 +20,9 @@ Header-only C library for processing sky polarization images to support heading 
 
 ## Referenced by
 
-- [OpenSky: A Modular and Open-Source Simulator of Sky Polarization Measurements](../resources/opensky-sky-polarization-simulator-2024.md) (uses)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [OpenSky: A Modular and Open-Source Simulator of Sky Polarization Measurements](../../catalog/resources/opensky-sky-polarization-simulator-2024.md) (uses)
+- [Celestial fix: cedar-solve plate solving on real star images, then position from star elevations above an IMU vertical](../../catalog/samples/celestial-star-tracker.md) (explains)
 
 _Indexed by lane(s): alt-nav_
 

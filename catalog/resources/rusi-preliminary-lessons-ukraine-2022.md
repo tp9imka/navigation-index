@@ -11,12 +11,12 @@ RUSI analysis of the first months of the war, including the scale of Russian ele
 - EW is a dominant factor in small-UAV attrition
 - Lessons for resilience of navigation and C2 links
 
-**Concepts:** [Electronic warfare resilience](../concepts/ew-resilience.md), [Jamming and spoofing](../concepts/gnss-interference.md), [Counter-UAS and drone detection](../concepts/counter-uas.md), [Policy, export control and ethics](../concepts/policy-ethics.md)
+**Concepts:** [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md)
 
 **Tags:** `rusi`, `ukraine`, `ew`, `think-tank`
 
 ## Referenced by
 
-- [Meatgrinder: Russian Tactics in the Second Year of Its Invasion of Ukraine](../resources/rusi-meatgrinder-2023.md) (same_author)
+- [Meatgrinder: Russian Tactics in the Second Year of Its Invasion of Ukraine](../../catalog/resources/rusi-meatgrinder-2023.md) (same_author)
 
 _Indexed by lane(s): docs-standards_

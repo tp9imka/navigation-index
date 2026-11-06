@@ -15,13 +15,21 @@ EDF 2025 work programme (EUR 1.065B) closed 16 October 2025 with 410 proposals; 
 
 - [programs-and-challenges](../../docs/landscape/programs-and-challenges.md) (landscape)
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Policy, export control and ethics](../concepts/policy-ethics.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md)
 
 **Tags:** `landscape`, `edf`, `europe`
 
 ## Related
 
-- cites: [EDF-2024-LS-RA-CHALLENGE-SENS-RADNP: Multi-sensor integration for robust autonomous drone navigation](../resources/edf-2024-drone-navigation-challenge.md)
-- cites: [EDF 2021 NAVGUARD project factsheet](../resources/edf21-navguard-factsheet.md)
+- cites: [EDF-2024-LS-RA-CHALLENGE-SENS-RADNP: Multi-sensor integration for robust autonomous drone navigation](../../catalog/resources/edf-2024-drone-navigation-challenge.md)
+- cites: [EDF 2021 NAVGUARD project factsheet](../../catalog/resources/edf21-navguard-factsheet.md)
+
+## Referenced by
+
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): landscape_

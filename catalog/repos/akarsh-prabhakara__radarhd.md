@@ -12,7 +12,7 @@ Learns to generate high-resolution, lidar-like point clouds from low-cost single
 
 **Hackathon notes:** Pretrained model and data provided; GPU needed.
 
-**Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
+**Concepts:** [Radar navigation and odometry](../../catalog/concepts/radar-nav.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md)
 
 **Tags:** `mmwave`, `super-resolution`, `deep-learning`
 

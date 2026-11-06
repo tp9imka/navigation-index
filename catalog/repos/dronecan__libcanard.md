@@ -12,7 +12,7 @@ Minimal C implementation of the DroneCAN protocol used for GNSS, compass, airspe
 
 **Hackathon notes:** Use with dronecan/DSDL; mostly for hardware teams.
 
-**Concepts:** [Standards and interface specs](../concepts/standards.md), [Autopilots and flight control](../concepts/autopilot.md)
+**Concepts:** [Standards and interface specs](../../catalog/concepts/standards.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
 **Tags:** `dronecan`, `can`, `embedded`
 
@@ -20,7 +20,7 @@ Minimal C implementation of the DroneCAN protocol used for GNSS, compass, airspe
 
 ## Related
 
-- integrates_with: [ArduPilot](../repos/ardupilot__ardupilot.md)
+- integrates_with: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
 
 _Indexed by lane(s): autopilots_
 

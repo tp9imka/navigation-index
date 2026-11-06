@@ -11,7 +11,7 @@ One of a series of February 2025 Zenodo records from LINKS Foundation with GNSS 
 - More recent real IQ jamming captures
 - Each file is about 10 GB of int8 complex samples
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Jamming and spoofing](../concepts/gnss-interference.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
 **Tags:** `zenodo`, `l1`, `iq`
 

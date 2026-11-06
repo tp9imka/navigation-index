@@ -14,9 +14,11 @@ Node.js server implementing the Signal K open marine data standard: it ingests N
 
 ## Deep dives
 
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [signalk__signalk-server](../../docs/integration-cards/signalk__signalk-server.md) (integration-cards)
 - [maritime-datasets](../../docs/dataset-cards/maritime-datasets.md) (dataset-cards)
 
-**Concepts:** [Maritime navigation](../concepts/maritime-nav.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+**Concepts:** [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `signalk`, `nmea2000`, `nmea0183`, `websocket`, `iot`
 
@@ -24,17 +26,23 @@ Node.js server implementing the Signal K open marine data standard: it ingests N
 
 ## Related
 
-- depends_on: [Signal K Specification](../repos/signalk__specification.md)
-- integrates_with: [signalk-to-nmea0183](../repos/signalk__signalk-to-nmea0183.md)
-- integrates_with: [OpenCPN](../repos/opencpn__opencpn.md)
+- depends_on: [Signal K Specification](../../catalog/repos/signalk__specification.md)
+- integrates_with: [signalk-to-nmea0183](../../catalog/repos/signalk__signalk-to-nmea0183.md)
+- integrates_with: [OpenCPN](../../catalog/repos/opencpn__opencpn.md)
 
 ## Referenced by
 
-- [CANboat](../repos/canboat__canboat.md) (integrates_with)
-- [OpenCPN](../repos/opencpn__opencpn.md) (integrates_with)
-- [signalk-to-nmea0183](../repos/signalk__signalk-to-nmea0183.md) (extends)
-- [Signal K Specification](../repos/signalk__specification.md) (same_org)
-- [Signal K Specification](../resources/signalk-spec.md) (explains)
+- [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [CANboat](../../catalog/repos/canboat__canboat.md) (integrates_with)
+- [OpenCPN](../../catalog/repos/opencpn__opencpn.md) (integrates_with)
+- [signalk-to-nmea0183](../../catalog/repos/signalk__signalk-to-nmea0183.md) (extends)
+- [Signal K Specification](../../catalog/repos/signalk__specification.md) (same_org)
+- [Signal K Specification](../../catalog/resources/signalk-spec.md) (explains)
+- [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) (explains)
 
 _Indexed by lane(s): domains-swarm_
 

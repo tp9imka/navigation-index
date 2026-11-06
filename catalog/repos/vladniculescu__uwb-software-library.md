@@ -10,9 +10,9 @@ FreeRTOS UWB library for DW1000 on Crazyflie providing double-sided two-way rang
 
 **Why it matters:** Peer-to-peer ranging building block for anchor-free relative localization.
 
-**Hackathon notes:** Flash as Crazyflie app; ranging between two nodes in a few lines.
+**Hackathon notes:** Flash as Crazyflie app; ranging between two nodes in a few lines. Fork of iGNSS/uwb-software-library, tested against a pinned crazyflie-firmware commit. No LICENSE file, so all rights reserved by default.
 
-**Concepts:** [RF localization and direction finding](../concepts/rf-localization.md), [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+**Concepts:** [RF localization and direction finding](../../catalog/concepts/rf-localization.md), [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `uwb`, `dw1000`, `twr`, `crazyflie`
 
@@ -20,11 +20,14 @@ FreeRTOS UWB library for DW1000 on Crazyflie providing double-sided two-way rang
 
 ## Related
 
-- integrates_with: [Swarm relative localization (ETH PBL)](../repos/eth-pbl__swarm-relative-localization.md)
+- integrates_with: [Swarm relative localization (ETH PBL)](../../catalog/repos/eth-pbl__swarm-relative-localization.md)
 
 ## Referenced by
 
-- [Swarm relative localization (ETH PBL)](../repos/eth-pbl__swarm-relative-localization.md) (depends_on)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Swarm relative localization (ETH PBL)](../../catalog/repos/eth-pbl__swarm-relative-localization.md) (depends_on)
+- [Cooperative localization for a GNSS-denied team: UWB ranging, centralized EKF vs covariance intersection, and a spoofed anchor](../../catalog/samples/swarm-coop-localization.md) (explains)
 
 _Indexed by lane(s): domains-swarm_
 

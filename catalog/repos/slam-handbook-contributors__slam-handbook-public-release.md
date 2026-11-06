@@ -12,7 +12,7 @@ Release repo for the SLAM Handbook (Cambridge University Press), edited by Carlo
 
 **Hackathon notes:** Download chapter PDFs from the release page; factor-graph chapter is the best starting point.
 
-**Concepts:** [Visual SLAM](../concepts/visual-slam.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `book`, `factor-graphs`, `slam`, `reference`
 
@@ -20,7 +20,7 @@ Release repo for the SLAM Handbook (Cambridge University Press), edited by Carlo
 
 ## Referenced by
 
-- [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook.md) (has_code)
+- [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../../catalog/resources/slam-handbook.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

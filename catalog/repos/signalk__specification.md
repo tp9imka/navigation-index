@@ -12,7 +12,7 @@ The JSON schema and specification for the Signal K marine data format covering n
 
 **Hackathon notes:** Read the navigation.* paths before designing your own message format.
 
-**Concepts:** [Maritime navigation](../concepts/maritime-nav.md), [Standards and interface specs](../concepts/standards.md)
+**Concepts:** [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `signalk`, `schema`, `json`
 
@@ -20,12 +20,12 @@ The JSON schema and specification for the Signal K marine data format covering n
 
 ## Related
 
-- same_org: [Signal K Server](../repos/signalk__signalk-server.md)
+- same_org: [Signal K Server](../../catalog/repos/signalk__signalk-server.md)
 
 ## Referenced by
 
-- [Signal K Server](../repos/signalk__signalk-server.md) (depends_on)
-- [Signal K Specification](../resources/signalk-spec.md) (explains)
+- [Signal K Server](../../catalog/repos/signalk__signalk-server.md) (depends_on)
+- [Signal K Specification](../../catalog/resources/signalk-spec.md) (explains)
 
 _Indexed by lane(s): domains-swarm_
 

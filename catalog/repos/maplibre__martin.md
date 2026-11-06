@@ -12,7 +12,12 @@ Fast Rust tile server for PostGIS, MBTiles and PMTiles sources, with tile genera
 
 **Hackathon notes:** Single binary or docker; point at a PostGIS table to stream dynamic features.
 
-**Concepts:** [GIS, maps and geospatial data](../concepts/gis-mapping.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [maplibre__martin](../../docs/integration-cards/maplibre__martin.md) (integration-cards)
+
+**Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `tile-server`, `postgis`, `pmtiles`, `rust`
 
@@ -20,13 +25,15 @@ Fast Rust tile server for PostGIS, MBTiles and PMTiles sources, with tile genera
 
 ## Related
 
-- alternative_to: [TileServer GL](../repos/maptiler__tileserver-gl.md)
-- integrates_with: [PMTiles](../repos/protomaps__pmtiles.md)
+- alternative_to: [TileServer GL](../../catalog/repos/maptiler__tileserver-gl.md)
+- integrates_with: [PMTiles](../../catalog/repos/protomaps__pmtiles.md)
 
 ## Referenced by
 
-- [MapLibre GL JS](../repos/maplibre__maplibre-gl-js.md) (integrates_with)
-- [TileServer GL](../repos/maptiler__tileserver-gl.md) (alternative_to)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [MapLibre GL JS](../../catalog/repos/maplibre__maplibre-gl-js.md) (integrates_with)
+- [TileServer GL](../../catalog/repos/maptiler__tileserver-gl.md) (alternative_to)
 
 _Indexed by lane(s): planning-gis-c2_
 

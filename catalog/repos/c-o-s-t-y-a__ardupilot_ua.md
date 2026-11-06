@@ -16,7 +16,7 @@ Unofficial Ukrainian translation of key sections of the ArduPilot Copter documen
 
 - [ua-ru-sources-overview](../../docs/landscape/ua-ru-sources-overview.md) (landscape)
 
-**Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
+**Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 
 **Tags:** `lang:uk`, `ardupilot`, `documentation`, `translation`
 
@@ -24,7 +24,13 @@ Unofficial Ukrainian translation of key sections of the ArduPilot Copter documen
 
 ## Related
 
-- extends: [ArduPilot](../repos/ardupilot__ardupilot.md)
+- extends: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
+
+## Referenced by
+
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ua-ru-sources_
 

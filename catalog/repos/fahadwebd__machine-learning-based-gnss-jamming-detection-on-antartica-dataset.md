@@ -12,7 +12,7 @@ Thesis code for ML jamming detection and temporal generalisation using real mari
 
 **Hackathon notes:** The Antarctica UBX set is one 45.7 GB zip on Zenodo (CC BY 4.0). Labels are the receiver's own jamming flag and the thesis results are a two-day pilot. Reproduce on your own u-blox logs by enabling the same UBX messages. Repo has no licence file.
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Maritime navigation](../concepts/maritime-nav.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Maritime navigation](../../catalog/concepts/maritime-nav.md)
 
 **Tags:** `u-blox`, `maritime`, `jamming-detection`
 

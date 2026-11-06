@@ -12,7 +12,7 @@ Community Python port of MIT's MagNav.jl: loads flight, INS and magnetometer dat
 
 **Hackathon notes:** Community port; install from the repo (despite the README badge, magnavpy is not on PyPI) and sort out GDAL first. Verify outputs against MagNav.jl examples.
 
-**Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Magnetic anomaly navigation](../../catalog/concepts/magnetic-nav.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `python`, `port`, `magnav`
 
@@ -20,15 +20,17 @@ Community Python port of MIT's MagNav.jl: loads flight, INS and magnetometer dat
 
 ## Related
 
-- alternative_to: [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md)
-- fork_of: [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md)
+- alternative_to: [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md)
+- fork_of: [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md)
 
 ## Referenced by
 
-- [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md) (alternative_to)
-- [Q-CTRL Ironstone Opal quantum-assured magnetic navigation](../resources/qctrl-ironstone-opal.md) (alternative_to)
-- [SandboxAQ AQNav geomagnetic navigation](../resources/sandboxaq-aqnav.md) (alternative_to)
-- [MagNav.jl quickstart: Tolles-Lawson and EKF on the SGL 2020 flight](../samples/magnav-quickstart.md) (explains)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md) (alternative_to)
+- [Q-CTRL Ironstone Opal quantum-assured magnetic navigation](../../catalog/resources/qctrl-ironstone-opal.md) (alternative_to)
+- [SandboxAQ AQNav geomagnetic navigation](../../catalog/resources/sandboxaq-aqnav.md) (alternative_to)
+- [MagNav.jl quickstart: Tolles-Lawson and EKF on the SGL 2020 flight](../../catalog/samples/magnav-quickstart.md) (explains)
 
 _Indexed by lane(s): alt-nav, defense-context_
 

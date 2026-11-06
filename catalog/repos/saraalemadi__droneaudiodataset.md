@@ -12,7 +12,7 @@ Indoor recordings of drone propeller noise augmented with noise clips, organised
 
 **Hackathon notes:** Licence allows educational and non-commercial academic research only, and explicitly bans military, defence, intelligence, security and surveillance use - not usable for a defence entry; pick another acoustic set. The 'Unknown' clips come from ESC-50 and Speech Commands under their own licences.
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../concepts/counter-uas.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md)
 
 **Tags:** `acoustic`, `audio`, `drone-detection`
 
@@ -20,7 +20,7 @@ Indoor recordings of drone propeller noise augmented with noise clips, organised
 
 ## Related
 
-- alternative_to: [Batear datasets](../repos/batear-io__batear-datasets.md)
+- alternative_to: [Batear datasets](../../catalog/repos/batear-io__batear-datasets.md)
 
 _Indexed by lane(s): round3-expansion_
 

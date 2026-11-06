@@ -12,7 +12,7 @@ Open release of SVO Pro: semi-direct visual(-inertial) odometry with fisheye/omn
 
 **Hackathon notes:** ROS 1 / catkin build; dormant since 2024. Good when CPU budget is tight.
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Visual SLAM](../concepts/visual-slam.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
 **Tags:** `semi-direct`, `fisheye`, `ros1`, `agile-flight`
 
@@ -20,11 +20,12 @@ Open release of SVO Pro: semi-direct visual(-inertial) odometry with fisheye/omn
 
 ## Related
 
-- alternative_to: [ROVIO](../repos/ethz-asl__rovio.md)
+- alternative_to: [ROVIO](../../catalog/repos/ethz-asl__rovio.md)
 
 ## Referenced by
 
-- [Vision Algorithms for Mobile Robotics (UZH/ETH)](../resources/scaramuzza-vision-algorithms-mobile-robotics.md) (uses)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Vision Algorithms for Mobile Robotics (UZH/ETH)](../../catalog/resources/scaramuzza-vision-algorithms-mobile-robotics.md) (uses)
 
 _Indexed by lane(s): slam_
 

@@ -12,7 +12,7 @@ Rust implementation of MAVLink with generated dialects and serial/UDP/TCP connec
 
 **Hackathon notes:** cargo add mavlink.
 
-**Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
+**Concepts:** [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 
 **Tags:** `rust`, `library`
 
@@ -20,12 +20,12 @@ Rust implementation of MAVLink with generated dialects and serial/UDP/TCP connec
 
 ## Related
 
-- depends_on: [MAVLink](../repos/mavlink__mavlink.md)
-- alternative_to: [gomavlib](../repos/bluenviron__gomavlib.md)
+- depends_on: [MAVLink](../../catalog/repos/mavlink__mavlink.md)
+- alternative_to: [gomavlib](../../catalog/repos/bluenviron__gomavlib.md)
 
 ## Referenced by
 
-- [gomavlib](../repos/bluenviron__gomavlib.md) (alternative_to)
+- [gomavlib](../../catalog/repos/bluenviron__gomavlib.md) (alternative_to)
 
 _Indexed by lane(s): autopilots_
 

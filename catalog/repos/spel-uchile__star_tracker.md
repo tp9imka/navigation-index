@@ -12,7 +12,7 @@ Open star tracker software from the University of Chile space lab, flown on SUCH
 
 **Hackathon notes:** Python prototype; compare with tetra3/LOST.
 
-**Concepts:** [Celestial and star-tracker navigation](../concepts/celestial-nav.md), [Space and orbital navigation](../concepts/space-nav.md)
+**Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md), [Space and orbital navigation](../../catalog/concepts/space-nav.md)
 
 **Tags:** `star-tracker`, `cubesat`, `attitude`
 
@@ -20,8 +20,8 @@ Open star tracker software from the University of Chile space lab, flown on SUCH
 
 ## Related
 
-- alternative_to: [LOST](../repos/uwcubesat__lost.md)
-- alternative_to: [tetra3](../repos/esa__tetra3.md)
+- alternative_to: [LOST](../../catalog/repos/uwcubesat__lost.md)
+- alternative_to: [tetra3](../../catalog/repos/esa__tetra3.md)
 
 _Indexed by lane(s): gap-fill_
 

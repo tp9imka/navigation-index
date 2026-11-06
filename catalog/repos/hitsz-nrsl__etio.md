@@ -16,7 +16,7 @@ Edge-based monocular thermal-inertial odometry that tracks thermal edges for vis
 
 - [etio-thermal-inertial-odometry-2022](../../docs/paper-digests/etio-thermal-inertial-odometry-2022.md) (paper-digests)
 
-**Concepts:** [Visual(-inertial) odometry](../concepts/vio.md)
+**Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `thermal`, `edges`, `degraded-visual`
 
@@ -24,12 +24,12 @@ Edge-based monocular thermal-inertial odometry that tracks thermal edges for vis
 
 ## Related
 
-- alternative_to: [ROVTIO](../repos/ntnu-arl__rovtio.md)
+- alternative_to: [ROVTIO](../../catalog/repos/ntnu-arl__rovtio.md)
 
 ## Referenced by
 
-- [ROVTIO](../repos/ntnu-arl__rovtio.md) (alternative_to)
-- [Edge-based Monocular Thermal-Inertial Odometry in Visually Degraded Environments](../resources/etio-thermal-inertial-odometry-2022.md) (has_code)
+- [ROVTIO](../../catalog/repos/ntnu-arl__rovtio.md) (alternative_to)
+- [Edge-based Monocular Thermal-Inertial Odometry in Visually Degraded Environments](../../catalog/resources/etio-thermal-inertial-odometry-2022.md) (has_code)
 
 _Indexed by lane(s): slam_
 

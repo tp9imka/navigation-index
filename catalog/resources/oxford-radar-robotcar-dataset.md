@@ -10,13 +10,18 @@ RobotCar route re-driven with a scanning FMCW radar plus lidars and cameras, for
 
 - Sensors: FMCW radar, lidar, cameras, GPS/INS
 - Size class: large
+- Licence: CC BY-NC-SA 4.0, non-commercial academic use; registration required
 
 ## Deep dives
 
 - [oxford-radar-robotcar](../../docs/dataset-cards/oxford-radar-robotcar.md) (dataset-cards)
 
-**Concepts:** [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Radar navigation and odometry](../concepts/radar-nav.md)
+**Concepts:** [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md), [Radar navigation and odometry](../../catalog/concepts/radar-nav.md)
 
 **Tags:** `radar`, `oxford`
+
+## Referenced by
+
+- [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 
 _Indexed by lane(s): sim-data_

@@ -11,16 +11,16 @@ Proposes a compact drone programming language for LLM output, cutting token coun
 - Constrain LLM output to a small DSL
 - Latency matters for flight
 
-**Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [Mission planning and routing](../concepts/mission-planning.md)
+**Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 
 **Tags:** `llm`, `drone`, `dsl`
 
 ## Related
 
-- has_code: [TypeFly](../repos/typefly__typefly.md)
+- has_code: [TypeFly](../../catalog/repos/typefly__typefly.md)
 
 ## Referenced by
 
-- [TypeFly](../repos/typefly__typefly.md) (integrates_with)
+- [TypeFly](../../catalog/repos/typefly__typefly.md) (integrates_with)
 
 _Indexed by lane(s): gap-fill_

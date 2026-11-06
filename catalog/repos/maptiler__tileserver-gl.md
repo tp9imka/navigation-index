@@ -12,7 +12,12 @@ Vector and raster tile server that serves MBTiles/PMTiles with GL styles and ren
 
 **Hackathon notes:** docker run maptiler/tileserver-gl with an mbtiles file; also gives WMTS for QGIS.
 
-**Concepts:** [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [maptiler__tileserver-gl](../../docs/integration-cards/maptiler__tileserver-gl.md) (integration-cards)
+
+**Concepts:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `tile-server`, `mbtiles`, `offline`
 
@@ -20,14 +25,15 @@ Vector and raster tile server that serves MBTiles/PMTiles with GL styles and ren
 
 ## Related
 
-- alternative_to: [Martin](../repos/maplibre__martin.md)
-- integrates_with: [MapLibre GL JS](../repos/maplibre__maplibre-gl-js.md)
+- alternative_to: [Martin](../../catalog/repos/maplibre__martin.md)
+- integrates_with: [MapLibre GL JS](../../catalog/repos/maplibre__maplibre-gl-js.md)
 
 ## Referenced by
 
-- [MapLibre GL JS](../repos/maplibre__maplibre-gl-js.md) (integrates_with)
-- [Martin](../repos/maplibre__martin.md) (alternative_to)
-- [Planetiler](../repos/onthegomap__planetiler.md) (integrates_with)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [MapLibre GL JS](../../catalog/repos/maplibre__maplibre-gl-js.md) (integrates_with)
+- [Martin](../../catalog/repos/maplibre__martin.md) (alternative_to)
+- [Planetiler](../../catalog/repos/onthegomap__planetiler.md) (integrates_with)
 
 _Indexed by lane(s): planning-gis-c2_
 

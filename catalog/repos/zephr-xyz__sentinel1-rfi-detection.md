@@ -12,7 +12,11 @@ Pipeline that flags radio-frequency interference in Sentinel-1 C-band SAR scenes
 
 **Hackathon notes:** Needs a free Copernicus Data Space account. Pull Sentinel-1 scenes for a region and produce an RFI heatmap; present it as an RFI map, not a proven jamming map. MIT.
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
+## Deep dives
+
+- [sentinel-1-grd](../../docs/dataset-cards/sentinel-1-grd.md) (dataset-cards)
+
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `sentinel-1`, `sar`, `rfi`, `osint`
 
@@ -20,7 +24,8 @@ Pipeline that flags radio-frequency interference in Sentinel-1 C-band SAR scenes
 
 ## Referenced by
 
-- [OSINT interference map from free data: ADS-B NACp hexes and Sentinel-1 C-band RFI over Kaliningrad / the SE Baltic](../samples/osint-jamming-map.md) (uses)
+- [Sentinel-1 Level-1 GRD on Microsoft Planetary Computer](../../catalog/resources/sentinel-1-grd-planetary-computer.md) (has_code)
+- [OSINT interference map from free data: ADS-B NACp hexes and Sentinel-1 C-band RFI over Kaliningrad / the SE Baltic](../../catalog/samples/osint-jamming-map.md) (uses)
 
 _Indexed by lane(s): round3-expansion_
 

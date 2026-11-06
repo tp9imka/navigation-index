@@ -12,7 +12,7 @@ Rust library with a Python API (pip install geoveil-cn0) that scores GNSS signal
 
 **Hackathon notes:** Input is plain RINEX 2-4 files (decompress Hatanaka first); the spoofing check needs a broadcast nav file. Licence is PolyForm Noncommercial with an attribution term - no commercial use.
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [GNSS positioning](../concepts/gnss.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [GNSS positioning](../../catalog/concepts/gnss.md)
 
 **Tags:** `cn0`, `rust`, `python`, `monitoring`
 

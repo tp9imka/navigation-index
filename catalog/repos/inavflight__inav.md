@@ -12,7 +12,7 @@ Navigation-focused fork of the Cleanflight/Betaflight lineage for small multirot
 
 **Hackathon notes:** Configure with INAV Configurator; supports MSP and a MAVLink telemetry subset. SITL exists but is less polished than PX4/ArduPilot. Good for physical demos on cheap hardware.
 
-**Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [GNSS/INS integration](../concepts/gnss-ins.md), [Mission planning and routing](../concepts/mission-planning.md)
+**Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Mission planning and routing](../../catalog/concepts/mission-planning.md)
 
 **Tags:** `fpv`, `fixed-wing`, `rth`, `waypoints`, `msp`
 
@@ -20,12 +20,12 @@ Navigation-focused fork of the Cleanflight/Betaflight lineage for small multirot
 
 ## Related
 
-- alternative_to: [Betaflight](../repos/betaflight__betaflight.md)
-- integrates_with: [ExpressLRS](../repos/expresslrs__expresslrs.md)
+- alternative_to: [Betaflight](../../catalog/repos/betaflight__betaflight.md)
+- integrates_with: [ExpressLRS](../../catalog/repos/expresslrs__expresslrs.md)
 
 ## Referenced by
 
-- [Betaflight](../repos/betaflight__betaflight.md) (alternative_to)
+- [Betaflight](../../catalog/repos/betaflight__betaflight.md) (alternative_to)
 
 _Indexed by lane(s): autopilots_
 

@@ -12,7 +12,7 @@ Autonomy stack for a small-scale high-speed off-road vehicle from the UW MuSHR g
 
 **Hackathon notes:** Docker-based install; real hardware optional. BeamNG license needed for sim.
 
-**Concepts:** [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [Path and motion planning](../concepts/path-planning.md), [Simulation and HIL/SITL](../concepts/simulation.md)
+**Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `off-road`, `rc-car`, `jetson`, `beamng`
 
@@ -20,7 +20,7 @@ Autonomy stack for a small-scale high-speed off-road vehicle from the UW MuSHR g
 
 ## Related
 
-- alternative_to: [BenchNav](../repos/masafumiendo__benchnav.md)
+- alternative_to: [BenchNav](../../catalog/repos/masafumiendo__benchnav.md)
 
 _Indexed by lane(s): domains-swarm_
 

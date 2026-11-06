@@ -11,16 +11,16 @@ EASA's landing page for GNSS interference: current SIB revision, affected region
 - Single place to check the current bulletin revision
 - Links civil-aviation guidance to the interference geography
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
 **Tags:** `easa`, `aviation`
 
 ## Related
 
-- explains: [EASA SIB 2022-02R3: Global Navigation Satellite System Outage and Alterations Leading to Communication / Navigation / Surveillance Degradation](../resources/easa-sib-2022-02-gnss-outages.md)
+- explains: [EASA SIB 2022-02R3: Global Navigation Satellite System Outage and Alterations Leading to Communication / Navigation / Surveillance Degradation](../../catalog/resources/easa-sib-2022-02-gnss-outages.md)
 
 ## Referenced by
 
-- [EASA SIB 2022-02R3: Global Navigation Satellite System Outage and Alterations Leading to Communication / Navigation / Surveillance Degradation](../resources/easa-sib-2022-02-gnss-outages.md) (part_of)
+- [EASA SIB 2022-02R3: Global Navigation Satellite System Outage and Alterations Leading to Communication / Navigation / Surveillance Degradation](../../catalog/resources/easa-sib-2022-02-gnss-outages.md) (part_of)
 
 _Indexed by lane(s): defense-context_

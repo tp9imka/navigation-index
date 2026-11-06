@@ -11,15 +11,15 @@ Vendor write-up of its receivers' behaviour during the Jammertest live jamming a
 - Describes live jamming and spoofing scenarios
 - Vendor-authored results, not independent
 
-**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
+**Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `septentrio`, `jammertest`, `field-test`
 
 ## Related
 
-- dataset_for: [Jammertest test plan](../repos/npra__jammertest-plan.md)
-- dataset_for: [VAARA Jammertest dataset](../repos/univaasadigieco__vaara.md)
-- dataset_for: [Fraunhofer IIS Jammertest 2025 dataset](../repos/felixott94__fraunhoferiis_jammertest2025.md)
-- evaluates: [Jammertest - open GNSS jamming and spoofing test event (Andoya, Norway)](../resources/jammertest-norway.md)
+- dataset_for: [Jammertest test plan](../../catalog/repos/npra__jammertest-plan.md)
+- dataset_for: [VAARA Jammertest dataset](../../catalog/repos/univaasadigieco__vaara.md)
+- dataset_for: [Fraunhofer IIS Jammertest 2025 dataset](../../catalog/repos/felixott94__fraunhoferiis_jammertest2025.md)
+- evaluates: [Jammertest - open GNSS jamming and spoofing test event (Andoya, Norway)](../../catalog/resources/jammertest-norway.md)
 
 _Indexed by lane(s): docs-standards_

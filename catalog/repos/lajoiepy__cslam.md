@@ -10,9 +10,9 @@ ROS 2 decentralized collaborative SLAM supporting LiDAR, stereo and RGB-D, with 
 
 **Why it matters:** Designed for bandwidth-limited swarms, a realistic constraint under jamming.
 
-**Hackathon notes:** ROS 2; experiments run on recorded multi-robot datasets. Pick one sensor type to start.
+**Hackathon notes:** This repo is only the core cslam ROS 2 package (loop closure detection front end and pose-graph back end); setup, launch files and docs live in the main MISTLab/Swarm-SLAM repo. Experiments run on recorded multi-robot datasets. Pick one sensor type to start.
 
-**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Visual SLAM](../concepts/visual-slam.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+**Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [Visual SLAM](../../catalog/concepts/visual-slam.md), [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [ROS / ROS 2 robotics middleware](../../catalog/concepts/ros.md)
 
 **Tags:** `ros2`, `decentralized`, `swarm`
 
@@ -20,14 +20,16 @@ ROS 2 decentralized collaborative SLAM supporting LiDAR, stereo and RGB-D, with 
 
 ## Related
 
-- alternative_to: [Kimera-Multi](../repos/mit-spark__kimera-multi.md)
-- alternative_to: [COVINS / COVINS-G](../repos/v4rl-ucy__covins.md)
+- alternative_to: [Kimera-Multi](../../catalog/repos/mit-spark__kimera-multi.md)
+- alternative_to: [COVINS / COVINS-G](../../catalog/repos/v4rl-ucy__covins.md)
 
 ## Referenced by
 
-- [D2SLAM](../repos/hkust-aerial-robotics__d2slam.md) (alternative_to)
-- [COVINS / COVINS-G](../repos/v4rl-ucy__covins.md) (alternative_to)
-- [Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems](../resources/swarm-slam-paper.md) (has_code)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [D2SLAM](../../catalog/repos/hkust-aerial-robotics__d2slam.md) (alternative_to)
+- [COVINS / COVINS-G](../../catalog/repos/v4rl-ucy__covins.md) (alternative_to)
+- [Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems](../../catalog/resources/swarm-slam-paper.md) (has_code)
 
 _Indexed by lane(s): slam_
 

@@ -6,13 +6,13 @@
 |---|---|---|---|---|---|---|
 | 21 | C++ | ? | 2024-08-17 | False | research-prototype | low |
 
-Distributed back end of Kimera-Multi handling inter-robot loop closures and distributed optimization.
+Distributed front end of Kimera-Multi: handles the inter-robot communication protocol and pose-graph coarsening; the robust distributed optimization back end is DPGO.
 
 **Why it matters:** Reusable distributed SLAM back end.
 
 **Hackathon notes:** Used through Kimera-Multi.
 
-**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md)
+**Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md)
 
 **Tags:** `distributed`, `pose-graph`
 
@@ -20,11 +20,11 @@ Distributed back end of Kimera-Multi handling inter-robot loop closures and dist
 
 ## Related
 
-- integrates_with: [Kimera-Multi](../repos/mit-spark__kimera-multi.md)
+- integrates_with: [Kimera-Multi](../../catalog/repos/mit-spark__kimera-multi.md)
 
 ## Referenced by
 
-- [Kimera-Multi](../repos/mit-spark__kimera-multi.md) (depends_on)
+- [Kimera-Multi](../../catalog/repos/mit-spark__kimera-multi.md) (depends_on)
 
 _Indexed by lane(s): slam_
 

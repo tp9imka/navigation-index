@@ -12,7 +12,7 @@
 
 **Hackathon notes:** Pair with the STHN family for comparison; expect to retrain on your imagery.
 
-**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `homography`, `kalman`, `6dof`
 
@@ -20,7 +20,7 @@
 
 ## Related
 
-- alternative_to: [STHN](../repos/arplaboratory__sthn.md)
+- alternative_to: [STHN](../../catalog/repos/arplaboratory__sthn.md)
 
 _Indexed by lane(s): alt-nav_
 

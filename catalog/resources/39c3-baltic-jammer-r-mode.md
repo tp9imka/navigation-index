@@ -11,17 +11,21 @@
 - Concrete view of Baltic jamming/spoofing effects on ships, aircraft, timing
 - Terrestrial backups as an alternative to space-based ones
 
-**Concepts:** [Maritime navigation](../concepts/maritime-nav.md), [Jamming and spoofing](../concepts/gnss-interference.md), [Signals of opportunity](../concepts/signals-of-opportunity.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+**Concepts:** [Maritime navigation](../../catalog/concepts/maritime-nav.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Signals of opportunity](../../catalog/concepts/signals-of-opportunity.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `ccc`, `r-mode`, `baltic`, `dlr`
 
 ## Related
 
-- cites: [When GNSS fails, what will you do? MarRINav!](../resources/ion-webinar-marrinav.md)
+- cites: [When GNSS fails, what will you do? MarRINav!](../../catalog/resources/ion-webinar-marrinav.md)
 
 ## Referenced by
 
-- [R-Mode Baltic and R-Mode Baltic 2](../resources/dlr-r-mode-baltic.md) (cites)
-- [When GNSS fails, what will you do? MarRINav!](../resources/ion-webinar-marrinav.md) (cites)
+- [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
+- [R-Mode Baltic and R-Mode Baltic 2](../../catalog/resources/dlr-r-mode-baltic.md) (cites)
+- [When GNSS fails, what will you do? MarRINav!](../../catalog/resources/ion-webinar-marrinav.md) (cites)
 
 _Indexed by lane(s): learning_

@@ -12,7 +12,12 @@ Fast Python reader for RINEX 2/3/4 observation and navigation files (plain, gzip
 
 **Hackathon notes:** pip install georinex. Use it to load public CORS/IGS RINEX for analysis or ML features.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md), [Geodesy and coordinate frames](../concepts/geodesy.md)
+## Deep dives
+
+- [_index-round5-c2-gis](../../docs/integration-cards/_index-round5-c2-gis.md) (integration-cards)
+- [geospace-code__georinex](../../docs/integration-cards/geospace-code__georinex.md) (integration-cards)
+
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md), [Geodesy and coordinate frames](../../catalog/concepts/geodesy.md)
 
 **Tags:** `rinex`, `xarray`, `python`, `sp3`
 
@@ -20,11 +25,15 @@ Fast Python reader for RINEX 2/3/4 observation and navigation files (plain, gzip
 
 ## Related
 
-- alternative_to: [gnss_lib_py](../repos/stanford-navlab__gnss_lib_py.md)
+- alternative_to: [gnss_lib_py](../../catalog/repos/stanford-navlab__gnss_lib_py.md)
 
 ## Referenced by
 
-- [Public CORS RINEX to SPP vs RTK with RTKLIB demo5 and gnss_lib_py](../samples/gnss-rinex-processing.md) (uses)
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
+- [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [NOAA NGS CORS network RINEX data archive](../../catalog/resources/noaa-ngs-cors-rinex.md) (has_code)
+- [Public CORS RINEX to SPP vs RTK with RTKLIB demo5 and gnss_lib_py](../../catalog/samples/gnss-rinex-processing.md) (uses)
 
 _Indexed by lane(s): gnss_
 

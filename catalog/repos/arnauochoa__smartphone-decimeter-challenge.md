@@ -12,7 +12,7 @@ MATLAB package from an ION GNSS+ 2021 decimeter challenge entry.
 
 **Hackathon notes:** Reference only: the EKF, INS and magnitude submodules are private, so it does not run as cloned. MIT. From an ENAC master's thesis.
 
-**Concepts:** [GNSS positioning](../concepts/gnss.md)
+**Concepts:** [GNSS positioning](../../catalog/concepts/gnss.md)
 
 **Tags:** `matlab`, `gsdc`
 
@@ -20,7 +20,7 @@ MATLAB package from an ION GNSS+ 2021 decimeter challenge entry.
 
 ## Related
 
-- alternative_to: [GSDC 2023 solution (taroz)](../repos/taroz__gsdc2023.md)
+- alternative_to: [GSDC 2023 solution (taroz)](../../catalog/repos/taroz__gsdc2023.md)
 
 _Indexed by lane(s): round3-expansion_
 

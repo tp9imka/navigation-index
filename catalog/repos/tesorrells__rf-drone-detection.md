@@ -12,7 +12,7 @@ Georgia Tech student project on passive RF drone detection: a wifi_monitor.py sc
 
 **Hackathon notes:** Needs root and a monitor-mode Wi-Fi adapter (tested on 2.4 GHz only, Ubuntu 18.04). It only matches two DJI OUI prefixes, so it misses non-Wi-Fi links and is trivially spoofed. No licence file.
 
-**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [RF localization and direction finding](../concepts/rf-localization.md)
+**Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md)
 
 **Tags:** `passive-rf`, `wifi`, `drone-detection`
 
@@ -20,7 +20,7 @@ Georgia Tech student project on passive RF drone detection: a wifi_monitor.py sc
 
 ## Related
 
-- alternative_to: [DroneRF](../repos/al-sad__dronerf.md)
+- alternative_to: [DroneRF](../../catalog/repos/al-sad__dronerf.md)
 
 _Indexed by lane(s): round3-expansion_
 

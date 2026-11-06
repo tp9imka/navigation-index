@@ -11,12 +11,12 @@ Program hub for DHS PNT work: conformance framework, reference architecture, tim
 - Links all DHS resilient PNT publications
 - Shows the civil critical-infrastructure angle of PNT resilience
 
-**Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Timing and time transfer](../concepts/timing.md), [Policy, export control and ethics](../concepts/policy-ethics.md)
+**Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Timing and time transfer](../../catalog/concepts/timing.md), [Policy, export control and ethics](../../catalog/concepts/policy-ethics.md)
 
 **Tags:** `dhs`, `program`
 
 ## Related
 
-- part_of: [Resilient PNT Conformance Framework](../resources/dhs-resilient-pnt-conformance-framework.md)
+- part_of: [Resilient PNT Conformance Framework](../../catalog/resources/dhs-resilient-pnt-conformance-framework.md)
 
 _Indexed by lane(s): docs-standards_

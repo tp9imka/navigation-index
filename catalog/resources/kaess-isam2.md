@@ -15,13 +15,18 @@ Introduces the Bayes tree and the iSAM2 algorithm for incremental nonlinear smoo
 
 - [kaess-isam2](../../docs/paper-digests/kaess-isam2.md) (paper-digests)
 
-**Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
+**Concepts:** [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `isam2`, `factor-graph`
 
 ## Related
 
-- has_code: [GTSAM](../repos/borglab__gtsam.md)
-- same_author: [Factor Graphs for Robot Perception](../resources/dellaert-kaess-factor-graphs-robot-perception.md)
+- has_code: [GTSAM](../../catalog/repos/borglab__gtsam.md)
+- same_author: [Factor Graphs for Robot Perception](../../catalog/resources/dellaert-kaess-factor-graphs-robot-perception.md)
+
+## Referenced by
+
+- [Learning paths](../../docs/learning-paths.md) (mentions)
+- [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 
 _Indexed by lane(s): ins-fusion_
