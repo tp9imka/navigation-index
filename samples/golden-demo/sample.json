@@ -1,13 +1,62 @@
 {
   "id": "sample:golden-demo",
-  "title": "Golden demo: GPS drag on an ArduCopter SITL AUTO mission, chi-square detection and EKF3 switch to vision, replayed on the dashboard",
-  "summary": "One command flies ArduCopter 4.6.3 SITL in Docker on a survey, drags its GPS east at 1 m/s with SIM_GPS_GLITCH_X/Y, and runs a pymavlink companion that streams simulated visual-geolocalization fixes as VISION_POSITION_ESTIMATE, tests GNSS against a VIO dead-reckoning + visual-geoloc reference with navapp's windowed chi-square monitor, and on alarm commands MAV_CMD_SET_EKF_SOURCE_SET 2 (ExternalNav). A contrast run without the response shows the copter following the spoof while its EKF raises no GPS_GLITCHING flag. Both runs are logged and converted to navdash/1 for templates/demo-dashboard, with a headless screenshot.",
-  "concepts": ["concept:assured-pnt", "concept:gnss-interference", "concept:simulation", "concept:autopilot", "concept:mavlink-gcs", "concept:visual-geolocalization"],
-  "tags": ["demo", "spoofing", "gps-drag", "sitl", "ardupilot", "ekf3", "source-switch", "externalnav", "vision-position-estimate", "chi-square", "integrity", "pymavlink", "dashboard", "navdash", "docker"],
-  "related": [
-    {"id": "repo:ardupilot/ardupilot", "rel": "uses"},
-    {"id": "repo:ardupilot/pymavlink", "rel": "uses"},
-    {"id": "repo:maplibre/maplibre-gl-js", "rel": "uses"}
+  "title": "Golden demo: GPS drag (position-only or coherent) on an ArduCopter SITL AUTO mission, integrity monitoring with solution separation + protection level, real visual geolocalization, EKF3 switch to ExternalNav, Monte Carlo, dashboard replay",
+  "summary": "One command flies ArduCopter 4.6.3 SITL in Docker on a survey and drags its GPS east. v1 uses SIM_GPS_GLITCH (position only), simulated visual geoloc and navapp's windowed chi-square test. v2 injects the GPS from a pymavlink companion as GPS_INPUT so the drag can be coherent (position + velocity), takes visual-geoloc fixes from real ALIKED+LightGlue matching of frames rendered from a 2019 NAIP orthophoto against a 2023 NAIP map (replayed from a 425-node table, or live), runs a solution-separation FDE bank with a horizontal protection level ported from samples/altpnt-integrity plus a GNSS-vs-VIO velocity test, and on alarm commands MAV_CMD_SET_EKF_SOURCE_SET 2 with the companion's GNSS-free reference as ExternalNav. A 52-flight Monte Carlo (seed x rate 0.3/1/3 m/s x spoof type, monitor vs shadow) reports time-to-detect, misses, false alarms and deviation with and without the monitor; an experiment localises v1's EKF lane switching to the SITL GPS path. Logs convert to navdash/1 for templates/demo-dashboard (PL vs AL ring in v2).",
+  "concepts": [
+    "concept:assured-pnt",
+    "concept:gnss-interference",
+    "concept:simulation",
+    "concept:autopilot",
+    "concept:mavlink-gcs",
+    "concept:visual-geolocalization"
   ],
-  "verified": "Ran 2026-11-06 on Apple Silicon (linux/arm64 Docker, Copter-4.6.3 SITL image from samples/sitl-docker, pymavlink 2.4.50, Python 3.12), one run per mode, seed 7: monitor alarm 9.4 s after onset at 9.3 m spoof offset, max cross-track deviation 7.6 m with the monitor vs 75.0 m without, max EKF error 7.7 m vs 88.3 m; EKF GPS_GLITCHING never set in either run. 6 converter unit tests pass; dashboard rendered headless in Chrome via the DevTools protocol. Alt-PNT and VIO inputs are truth plus noise; no Monte Carlo; amd64 and ArduPilot 4.7+ not tested."
+  "tags": [
+    "aliked",
+    "ardupilot",
+    "chi-square",
+    "coherent-spoof",
+    "dashboard",
+    "demo",
+    "docker",
+    "ekf3",
+    "externalnav",
+    "gps-drag",
+    "gps-input",
+    "integrity",
+    "lightglue",
+    "monte-carlo",
+    "naip",
+    "navdash",
+    "protection-level",
+    "pymavlink",
+    "raim-like",
+    "sitl",
+    "solution-separation",
+    "source-switch",
+    "spoofing",
+    "vision-position-estimate"
+  ],
+  "related": [
+    {
+      "id": "repo:ardupilot/ardupilot",
+      "rel": "uses"
+    },
+    {
+      "id": "repo:ardupilot/pymavlink",
+      "rel": "uses"
+    },
+    {
+      "id": "repo:maplibre/maplibre-gl-js",
+      "rel": "uses"
+    },
+    {
+      "id": "repo:cvg/lightglue",
+      "rel": "uses"
+    },
+    {
+      "id": "repo:rasterio/rasterio",
+      "rel": "uses"
+    }
+  ],
+  "verified": "Ran 2026-11-06 on Apple Silicon (linux/arm64 Docker, Copter-4.6.3 SITL image from samples/sitl-docker, pymavlink 2.4.50, Python 3.12). v1 (one run per mode, seed 7): chi-square alarm 9.4 s after onset, max cross-track deviation 7.6 m with the monitor vs 75.0 m without. v2 reference (coherent 1 m/s, replayed real geoloc): velocity-test alarm 3.0 s after onset, 6.8 m vs 75.0 m, EKF GPS_GLITCHING never set. v2 Monte Carlo, 52 flights in 1201 s wall (3 parallel SITLs, speedup 3): ss+vel detected 24/24 monitor flights with 0 pre-onset false alarms and 0/4 false alarms without spoof; median TTD 45/22.5/6.2 s (position 0.3/1/3 m/s) and 37.4/2.8/1 s (coherent); v1 chi-square false-alarmed in 4/4 no-spoof flights with real geoloc. Real geoloc table: 246/425 frames fixed, median 3.3 m. One live-matching flight completed (68% fixes after AUTO, ~3.5 s per match). Lane-switch experiment: 4-6 switches with SITL GPS, 0 with injected GPS (2 seeds each); mechanism not found. 17 unit tests pass. VIO is truth plus noise; frames are rendered nadir from a real orthophoto; amd64 and ArduPilot 4.7+ not tested."
 }

@@ -78,5 +78,31 @@ class Analyse(unittest.TestCase):
             self.assertTrue({"spoof_suspected", "source_switched"} <= kinds)
 
 
+    def test_v2_logs_get_a_primary_ss_track_with_pl(self):
+        mon = synthetic_run("monitor", 0.0, 32.0)
+        mon[0] |= {"gps": "inject", "detector": "ss+vel", "vgeo": {"mode": "replay"}}
+        mon[0]["spoof"]["kind"] = "coherent"
+        lat0, lon0 = LAT0, LON0
+        for i in range(40):
+            t = float(i)
+            la, lo = enu_to_geodetic(0.0, 10 * t, lat0, lon0)
+            mon.append({"type": "COMPANION_SS", "t": t, "lat": la, "lon": lo, "hpl": 6.0 if t < 32 else 60.0,
+                        "excluded": [] if t < 32 else ["gnss"], "ambiguous": False,
+                        "events": ["exclude:gnss"] if t == 32 else [], "sep": {}, "sigma_h": 1.0, "e": 0, "n": 10 * t})
+        mon.append({"type": "COMPANION_DETECT", "t": 28.0, "detector": "vel", "events": []})
+        with tempfile.TemporaryDirectory() as d:
+            out = Path(d)
+            s = T.convert(mon, synthetic_run("baseline", 1.0, None), out)
+            self.assertEqual(s["monitor"]["detect"]["vel"]["ttd_s"], 3.0)
+            self.assertIn("ss-monitor.jsonl", json.loads((out / "manifest.json").read_text())["tracks"])
+            lines = [json.loads(x) for x in (out / "ss-monitor.jsonl").read_text().splitlines()]
+            self.assertTrue(lines[0]["header"]["primary"])
+            self.assertEqual(lines[0]["header"]["alert_limit_m"], T.SS_ALERT_LIMIT_M)
+            pts = [x for x in lines[1:] if "pl_m" in x]
+            self.assertEqual({p["health"] for p in pts}, {"trusted", "unavailable"})
+            ekf = json.loads((out / "ekf-monitor.jsonl").read_text().splitlines()[0])["header"]
+            self.assertFalse(ekf["primary"])
+
+
 if __name__ == "__main__":
     unittest.main()

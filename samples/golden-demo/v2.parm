@@ -1,0 +1,4 @@
+# v2: ExternalNav set also takes VIO velocity (VISION_SPEED_ESTIMATE); faster climb to 150 m.
+EK3_SRC2_VELXY 6
+VISO_VEL_M_NSE 0.2
+WPNAV_SPEED_UP 500

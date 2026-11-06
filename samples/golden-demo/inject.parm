@@ -1,0 +1,4 @@
+# v2: GPS comes from the companion as MAVLink GPS_INPUT (AP_GPS_MAV), so it can drag
+# position and velocity together. Loaded after golden.parm.
+GPS1_TYPE 14
+GPS1_DELAY_MS 1

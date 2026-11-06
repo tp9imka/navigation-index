@@ -1,0 +1,154 @@
+{
+  "monitor": {
+    "mode": "monitor",
+    "seed": 7,
+    "spoof": {
+      "kind": "coherent",
+      "onset_s": 25.0,
+      "rate_mps": 1.0,
+      "bearing_deg": 90.0,
+      "max_m": 150.0
+    },
+    "gps": "inject",
+    "vgeo": "replay",
+    "detector": "ss+vel",
+    "detect": {
+      "chi2": {
+        "t_s": 44.0,
+        "false_alarm": false,
+        "ttd_s": 19.0
+      },
+      "ss": {
+        "t_s": 52.0,
+        "false_alarm": false,
+        "ttd_s": 27.0
+      },
+      "vel": {
+        "t_s": 28.0,
+        "false_alarm": false,
+        "ttd_s": 3.0
+      },
+      "ss+vel": {
+        "t_s": 28.0,
+        "false_alarm": false,
+        "ttd_s": 3.0
+      },
+      "any": {
+        "t_s": 28.0,
+        "false_alarm": false,
+        "ttd_s": 3.0
+      }
+    },
+    "ss": {
+      "hpl_median_before_onset_m": 12.8,
+      "misleading_epochs": 0,
+      "epochs": 120,
+      "unavailable_epochs": 14,
+      "max_error_m": 21.1,
+      "alert_limit_m": 50.0
+    },
+    "vgeo_fixes": 67,
+    "vgeo_failures": 52,
+    "ekf_lane_switches": 0,
+    "ekf_lane_switches_after_action": 0,
+    "outcome": "mission_complete",
+    "mission_duration_s": 119.6,
+    "spoof_offset_at_end_m": 94.6,
+    "alarm_t_s": 28.0,
+    "time_to_detect_s": 3.0,
+    "spoof_offset_at_alarm_m": 3.0,
+    "action": "set_ekf_source_set",
+    "source_set_ack": 0,
+    "max_path_deviation_after_onset_m": 6.8,
+    "max_path_deviation_before_onset_m": 0.7,
+    "path_deviation_at_end_m": 4.4,
+    "max_ekf_error_m": 8.0,
+    "max_ekf_error_t_s": 57.8,
+    "ekf_gps_glitching_reports": 0,
+    "ekf_max_pos_horiz_variance_after_onset": 0.323,
+    "ekf_reports_over_0p5_after_onset": 0,
+    "statustext_after_onset": [
+      "52.2: Reached command #2",
+      "52.2: Mission: 3 WP",
+      "69.8: Reached command #3",
+      "69.8: Mission: 4 WP",
+      "114.6: Reached command #4"
+    ]
+  },
+  "baseline": {
+    "mode": "baseline",
+    "seed": 7,
+    "spoof": {
+      "kind": "coherent",
+      "onset_s": 25.0,
+      "rate_mps": 1.0,
+      "bearing_deg": 90.0,
+      "max_m": 150.0
+    },
+    "gps": "inject",
+    "vgeo": "replay",
+    "detector": "ss+vel",
+    "detect": {
+      "chi2": {
+        "t_s": 40.9,
+        "false_alarm": false,
+        "ttd_s": 15.9
+      },
+      "ss": {
+        "t_s": 47.0,
+        "false_alarm": false,
+        "ttd_s": 22.0
+      },
+      "vel": {
+        "t_s": 28.6,
+        "false_alarm": false,
+        "ttd_s": 3.6
+      },
+      "ss+vel": {
+        "t_s": 28.6,
+        "false_alarm": false,
+        "ttd_s": 3.6
+      },
+      "any": {
+        "t_s": 28.6,
+        "false_alarm": false,
+        "ttd_s": 3.6
+      }
+    },
+    "ss": {
+      "hpl_median_before_onset_m": 12.8,
+      "misleading_epochs": 3,
+      "epochs": 117,
+      "unavailable_epochs": 0,
+      "max_error_m": 35.4,
+      "alert_limit_m": 50.0
+    },
+    "vgeo_fixes": 71,
+    "vgeo_failures": 46,
+    "ekf_lane_switches": 0,
+    "ekf_lane_switches_after_action": 0,
+    "outcome": "mission_complete",
+    "mission_duration_s": 119.1,
+    "spoof_offset_at_end_m": 94.1,
+    "alarm_t_s": 28.6,
+    "time_to_detect_s": 3.6,
+    "spoof_offset_at_alarm_m": 3.5,
+    "action": "none_shadow_mode",
+    "source_set_ack": null,
+    "max_path_deviation_after_onset_m": 75.0,
+    "max_path_deviation_before_onset_m": 1.4,
+    "path_deviation_at_end_m": 56.4,
+    "max_ekf_error_m": 93.7,
+    "max_ekf_error_t_s": 119.1,
+    "ekf_gps_glitching_reports": 0,
+    "ekf_max_pos_horiz_variance_after_onset": 0.172,
+    "ekf_reports_over_0p5_after_onset": 0,
+    "statustext_after_onset": [
+      "51.8: Reached command #2",
+      "51.8: Mission: 3 WP",
+      "69.4: Reached command #3",
+      "69.4: Mission: 4 WP",
+      "114.2: Reached command #4"
+    ]
+  }
+}
