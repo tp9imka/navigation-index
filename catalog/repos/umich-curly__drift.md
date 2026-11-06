@@ -30,6 +30,7 @@ Symmetry-preserving (invariant) state estimation library from University of Mich
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [invariant-ekf (Hartley InEKF)](../../catalog/repos/rosshartley__invariant-ekf.md) (extends)
 - [The invariant extended Kalman filter as a stable observer](../../catalog/resources/barrau-bonnabel-invariant-ekf.md) (explains)
 
