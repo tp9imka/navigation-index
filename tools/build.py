@@ -311,6 +311,7 @@ def main():
     write_records(nodes, meta)
     write_quality(nodes, repo_dups, res_dups, dangling, bad_concepts, meta)
     write_llms(nodes, concepts, members)
+    write_site(nodes, edges, meta)
     kinds = defaultdict(int)
     for n in nodes.values():
         kinds[n["kind"]] += 1
@@ -443,6 +444,88 @@ def write_quality(nodes, repo_dups, res_dups, dangling, bad_concepts, meta):
     rdir = ROOT / "reports"
     rdir.mkdir(exist_ok=True)
     (rdir / "quality.md").write_text("\n".join(lines))
+
+
+DOC_KIND = {"docs/integration-cards": "integration-card", "docs/dataset-cards": "dataset-card",
+            "docs/paper-digests": "paper-digest", "docs/landscape": "landscape"}
+SITE_DOC_SUMMARY = 400  # chars of a deep-dive doc's lead paragraph shown on its card
+SITE_DOC_BODY = 1500  # chars of plain text per deep-dive doc kept for search
+
+
+def md_plain(text):
+    text = re.sub(r"<!--.*?-->", " ", text, flags=re.S)
+    text = re.sub(r"```.*?```", " ", text, flags=re.S)
+    text = re.sub(r"!?\[([^\]]*)\]\([^)]*\)", r"\1", text)
+    return re.sub(r"[#*`|>]+|\s+", " ", text).strip()
+
+
+def site_doc(path):
+    text = (ROOT / path).read_text()
+    title = next((ln[2:].strip() for ln in text.splitlines() if ln.startswith("# ")), Path(path).stem)
+    lead = ""
+    for block in re.split(r"\n\s*\n", re.sub(r"<!--.*?-->", "", text, flags=re.S)):
+        b = block.strip()
+        if b and not b.startswith(("#", "|", "```", "<")):
+            lead = md_plain(b)
+            break
+    about = [norm_id(x.strip()) for m in ATTACH_RE.finditer(text) for x in m.group(1).split(",")]
+    return title, lead, about, md_plain(text)
+
+
+def site_verify_status(v):
+    low = (v or "").lower()
+    if not low or "placeholder" in low:
+        return "placeholder"
+    if re.search(r"\b(ran|run on|built and ran|tests? pass)", low) and not low.startswith(("not run", "unverified", "sketch")):
+        return "ran"
+    return "sketch"
+
+
+def write_site(nodes, edges, meta):
+    """Compact search/facet index for the static web UI in site/ (site/data/index.json)."""
+    ids = list(nodes)
+    pos = {nid: i for i, nid in enumerate(ids)}
+    related = defaultdict(list)
+    for e in edges:
+        if e["rel"] != "about" and e["source"] in pos and e["target"] in pos:
+            related[e["source"]].append([pos[e["target"]], e["rel"]])
+    sample_linked = {x["id"] for n in nodes.values() if n["kind"] == "sample" for x in n.get("related", [])}
+    out_nodes = []
+    for nid in ids:
+        n = nodes[nid]
+        m = meta.get(nid, {}) if n["kind"] == "repo" else {}
+        dd = ATTACHMENTS.get(nid, [])
+        rec = {
+            "i": nid, "k": n["kind"], "n": label(n), "s": n.get("summary", ""),
+            "w": n.get("why_it_matters"), "h": n.get("hackathon_notes"),
+            "kt": " ".join(n.get("key_takeaways", [])), "g": n.get("tags"), "c": n.get("concepts"),
+            "d": n.get("domains"), "f": n.get("hackathon_fit"), "m": n.get("maturity"),
+            "l": m.get("license"), "lg": m.get("language") or n.get("language"),
+            "st": m.get("stargazers_count"), "pu": (m.get("pushed_at") or "")[:10], "ar": m.get("archived"),
+            "u": n.get("url"), "p": page_path(n), "dd": dd, "y": n.get("year"), "lv": n.get("level"),
+            "pa": n.get("parent"), "r": related.get(nid),
+            "hs": 1 if nid in sample_linked or n["kind"] == "sample" else None,
+            "hi": 1 if any(d.startswith("docs/integration-cards/") for d in dd) else None,
+        }
+        if n["kind"] == "sample":
+            rec.update({"v": n.get("verified", ""), "vs": site_verify_status(n.get("verified")), "sd": n.get("_dir")})
+        out_nodes.append({k: v for k, v in rec.items() if v not in (None, "", [], False)})
+    out_docs = []
+    for d, kind in DOC_KIND.items():
+        for f in sorted((ROOT / d).glob("*.md")):
+            path = f.relative_to(ROOT).as_posix()
+            title, lead, about, body = site_doc(path)
+            about_ix = [pos[a] for a in dict.fromkeys(about) if a in pos]
+            concepts = list(dict.fromkeys(
+                c for a in about if a in nodes
+                for c in ([a] if nodes[a]["kind"] == "concept" else nodes[a].get("concepts", []))))
+            rec = {"i": "doc:" + path, "k": kind, "n": title, "s": lead[:SITE_DOC_SUMMARY],
+                   "b": body[:SITE_DOC_BODY], "c": concepts, "p": path, "ab": about_ix}
+            out_docs.append({k: v for k, v in rec.items() if v not in (None, "", [])})
+    sdir = ROOT / "site" / "data"
+    sdir.mkdir(parents=True, exist_ok=True)
+    payload = {"generated_by": "tools/build.py", "nodes": out_nodes, "docs": out_docs}
+    (sdir / "index.json").write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n")
 
 
 if __name__ == "__main__":

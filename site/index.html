@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navigation Index</title>
+<meta name="description" content="Search and browse the navigation / PNT / GNSS-denied autonomy hub: repos, documents, datasets, samples and deep-dive cards.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+<script>
+  try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"
+  integrity="sha384-/TQbtLCAerC3jgaim+N78RZSDYV7ryeoBCVqTuzRrFec2akfBkHS7ACQ3PQhvMVi" crossorigin="anonymous"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"
+  integrity="sha384-+VfUPEb0PdtChMwmBcBmykRMDd+v6D/oFmB3rZM/puCMDYcIvF968OimRh4KQY9a" crossorigin="anonymous"></script>
+<script defer src="app.js"></script>
+</head>
+<body>
+<header class="top">
+  <button id="filtersBtn" class="icon-btn only-narrow" aria-controls="side" aria-expanded="false" title="Filters">Filters</button>
+  <a class="brand" href="#" title="Home">Navigation Index</a>
+  <div class="searchbox">
+    <input id="q" type="search" placeholder="Search repos, docs, datasets, cards...  ( / )" autocomplete="off" spellcheck="false" aria-label="Search">
+  </div>
+  <nav class="topnav">
+    <a href="#view=kits" id="kitsLink"><span class="wide-only">Starter </span>kits</a>
+    <a href="../graph/index.html">Graph</a>
+    <button id="helpBtn" class="icon-btn" title="Keyboard shortcuts (?)">?</button>
+    <button id="themeBtn" class="icon-btn" title="Toggle dark / light theme (t)" aria-label="Toggle theme">&#9680;</button>
+  </nav>
+</header>
+<div class="layout">
+  <aside id="side" class="side" aria-label="Filters">
+    <div class="side-head">
+      <strong>Filters</strong>
+      <button id="clearBtn" class="link-btn">Clear all</button>
+    </div>
+    <div id="facets"></div>
+    <section class="facet">
+      <h3>Concepts</h3>
+      <div id="tree" class="tree"></div>
+    </section>
+  </aside>
+  <main id="main">
+    <div id="toolbar" class="toolbar">
+      <span id="count" class="muted"></span>
+      <span id="active" class="active-filters"></span>
+      <span class="spacer"></span>
+      <button id="copyMcp" class="btn" title="Copy this search as an MCP tool call">Copy MCP query</button>
+      <button id="copyCli" class="btn" title="Copy this search as a tools/query.py command">Copy CLI</button>
+    </div>
+    <div id="results" class="results" role="list"></div>
+    <div id="page" class="page" hidden>
+      <div class="page-main">
+        <div class="page-bar"><a href="#" id="backLink" class="btn">Back to results</a> <a id="rawLink" class="muted" target="_blank" rel="noopener">raw markdown</a></div>
+        <article id="pageBody" class="md"></article>
+      </div>
+      <aside id="pageSide" class="page-side"></aside>
+    </div>
+    <div id="kits" class="kits" hidden></div>
+  </main>
+</div>
+<div id="help" class="overlay" hidden>
+  <div class="dialog" role="dialog" aria-labelledby="helpTitle">
+    <h2 id="helpTitle">Keyboard</h2>
+    <table>
+      <tr><td><kbd>/</kbd></td><td>Focus search</td></tr>
+      <tr><td><kbd>j</kbd> <kbd>k</kbd> or arrows</td><td>Move between results</td></tr>
+      <tr><td><kbd>Enter</kbd></td><td>Open catalog page of the selected result</td></tr>
+      <tr><td><kbd>o</kbd></td><td>Open source URL</td></tr>
+      <tr><td><kbd>r</kbd></td><td>Toggle related panel</td></tr>
+      <tr><td><kbd>c</kbd></td><td>Copy MCP <code>show</code> call for the selected result</td></tr>
+      <tr><td><kbd>s</kbd></td><td>Starter kits</td></tr>
+      <tr><td><kbd>t</kbd></td><td>Toggle theme</td></tr>
+      <tr><td><kbd>Esc</kbd></td><td>Back / close / leave search box</td></tr>
+    </table>
+    <button class="btn" id="helpClose">Close</button>
+  </div>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
