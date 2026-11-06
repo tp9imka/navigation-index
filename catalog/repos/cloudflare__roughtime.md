@@ -25,7 +25,9 @@ Go implementation of Roughtime, a protocol that returns signed coarse timestamps
 ## Referenced by
 
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [Roughenough](../../catalog/repos/int08h__roughenough.md) (alternative_to)
 - [Roughtime (draft-ietf-ntp-roughtime)](../../catalog/resources/ietf-roughtime-draft.md) (has_code)
+- [RFC 10049: Roughtime: A Protocol for Rough Time Synchronization](../../catalog/resources/rfc10049-roughtime.md) (has_code)
 
 _Indexed by lane(s): timing_
 

@@ -19,4 +19,8 @@ IETF draft specifying Roughtime: signed coarse time responses that let clients c
 
 - has_code: [Roughtime (Cloudflare)](../../catalog/repos/cloudflare__roughtime.md)
 
+## Referenced by
+
+- [RFC 10049: Roughtime: A Protocol for Rough Time Synchronization](../../catalog/resources/rfc10049-roughtime.md) (cites)
+
 _Indexed by lane(s): timing_

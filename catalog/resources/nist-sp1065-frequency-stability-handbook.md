@@ -23,6 +23,7 @@ NIST tutorial and reference on characterizing clocks and oscillators: Allan, mod
 ## Referenced by
 
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [BIPM Circular T](../../catalog/resources/bipm-circular-t.md) (uses)
 - [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../../catalog/samples/timing-holdover.md) (uses)
 
 _Indexed by lane(s): timing_

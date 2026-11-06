@@ -34,7 +34,7 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) - Opinionated picks for a 24-48h build.
 - [Upstream findings](../../docs/upstream-findings.md) - Defects and gaps that the hub's samples found in other people's code and data, with what a maintainer needs to act on them.
 
-## Repositories (80)
+## Repositories (81)
 
 - [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md) - fit: high - GPL autopilot covering Copter, Plane (incl.
 - [CARLA](../../catalog/repos/carla-simulator__carla.md) - fit: high - Open-source autonomous-driving simulator on Unreal with camera, lidar, radar, GNSS and IMU sensors, traffic and weather control.
@@ -110,6 +110,7 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [CrossLoc](../../catalog/repos/topo-epfl__crossloc.md) - fit: low - CVPR 2022 cross-modal visual representation learning for absolute camera localization of aerial imagery, trained largely on synthetic data rendered from geodata.
 - [Aeolus Ocean](../../catalog/repos/aavek__aeolus-ocean.md) - fit: low - Collision avoidance simulator for COLREG-compliant autonomous ship navigation intended for use as a digital twin under varied weather and day/night conditions.
 - [NPS underwater multibeam sonar plugin](../../catalog/repos/field-robotics-lab__nps_uw_multibeam_sonar.md) - fit: low - GPU (CUDA) multibeam sonar simulation plugin for Gazebo producing physically motivated sonar imagery.
+- [LibPTP](../../catalog/repos/ptp-sim__libptp.md) - fit: low - OMNeT++/INET library for simulating IEEE 1588-2008 networks: ordinary, boundary and transparent clocks, E2E and P2P delay, a PI servo with pluggable servos and filters, and power-law clock noise via LibPLN.
 - [Loran-C reference signal generator](../../catalog/repos/cheolj__loran-c-reference-code.md) - fit: low - NumPy API that generates Loran-C master and secondary station pulse groups with phase codes for simulation (Korean docs).
 - [Beidou-SDR-SIM](../../catalog/repos/haiyang-wong__beidou-sdr-sim.md) - fit: low - Open-source generator for BeiDou B1C baseband signals for SDR playback or file output.
 - [ViNet_AirSim_drone - learned VIO in AirSim](../../catalog/repos/sasha-lobov__vinet_airsim_drone.md) - fit: low - PyTorch CNN+RNN network that predicts relative pose between frames from a monocular camera and 6-axis IMU, trained on data collected in Microsoft AirSim with ground-truth poses and a composite loss to limit drift.

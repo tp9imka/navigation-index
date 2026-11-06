@@ -21,5 +21,6 @@ International Journal of Critical Infrastructure Protection paper that spoofed t
 ## Referenced by
 
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [IEC61850 SV and PTP traffic under GNSS time synchronization attacks](../../catalog/resources/kit-iec61850-ptp-gnss-spoofing-dataset.md) (cites)
 
 _Indexed by lane(s): timing_

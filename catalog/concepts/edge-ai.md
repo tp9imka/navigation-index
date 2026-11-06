@@ -12,7 +12,7 @@ Detection, segmentation, depth on embedded hardware supporting navigation.
 
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) - Learned models in navigation pipelines carry three separate sets of terms:
 
-## Repositories (54)
+## Repositories (55)
 
 - [Ultralytics YOLO](../../catalog/repos/ultralytics__ultralytics.md) - fit: high - Widely used Python package for YOLO-family detection, segmentation and tracking with training, export to edge runtimes and built-in trackers.
 - [Hello AI World (jetson-inference)](../../catalog/repos/dusty-nv__jetson-inference.md) - fit: high - NVIDIA's guide and library for deploying detection, segmentation and depth networks with TensorRT on Jetson, with camera streaming.
@@ -58,6 +58,7 @@ Detection, segmentation, depth on embedded hardware supporting navigation.
 - [AirIMU](../../catalog/repos/haleqiu__airimu.md) - fit: medium - Learns IMU error correction and uncertainty with a network, combined with differentiable IMU preintegration (CMU AirLab).
 - [Isaac ROS DNN Inference](../../catalog/repos/nvidia-isaac-ros__isaac_ros_dnn_inference.md) - fit: medium - ROS 2 packages for TensorRT and Triton inference on Jetson and x86, with encoder/decoder nodes for common model types.
 - [galileo-osnma (Rust)](../../catalog/repos/daniestevez__galileo-osnma.md) - fit: medium - Rust implementation of Galileo OSNMA that can run on embedded no_std targets, with examples for live receivers.
+- [flexPTP](../../catalog/repos/epagris__flexptp.md) - fit: medium - PTP (IEEE 1588, also 802.1AS) for Cortex-M4/M7 microcontrollers: master and slave ordinary clock, E2E and P2P, L2 and L4 transports, one- and two-step.
 - [SPEED+ baseline](../../catalog/repos/tpark94__speedplusbaseline.md) - fit: medium - PyTorch baselines and domain-bridging methods for spacecraft pose estimation on the SPEED+ dataset used in ESA Kelvins SPEC2021.
 - [MBEG](../../catalog/repos/reza-zhu__acmmm23-solution-mbeg.md) - fit: medium - Modern-backbone efficient geo-localization solution for UAVM 2023 including distillation training.
 - [VGGT](../../catalog/repos/facebookresearch__vggt.md) - fit: low - Visual Geometry Grounded Transformer: a feed-forward network predicting camera poses, depth and point maps from one or many images (CVPR 2025 best paper).

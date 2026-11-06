@@ -29,6 +29,8 @@ A stdlib-only simulation of a GNSS-disciplined oscillator (type-2 PLL on a noisy
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [3GPP TS 38.133 (ETSI TS 138 133): NR; Requirements for support of radio resource management - clause 7.4 Cell phase synchronization accuracy](../../catalog/resources/3gpp-ts-38-133-cell-phase-sync.md) (explains)
+- [IEC61850 SV and PTP traffic under GNSS jamming](../../catalog/resources/kit-iec61850-ptp-gnss-jamming-dataset.md) (dataset_for)
 - [Network of GNSS-disciplined clocks: holdover from peers, spoof isolation by cross-node consistency, ADEV-weighted ensemble](../../catalog/samples/timing-network-holdover.md) (uses)
 
 _Indexed by lane(s): samples_

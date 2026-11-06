@@ -25,5 +25,7 @@ Embedded Linux software for the White Rabbit switch, including the PTP daemon in
 ## Referenced by
 
 - [White Rabbit cores (wr-cores)](../../catalog/repos/gitlab.com__ohwr__project__wr-cores.md) (same_org)
+- [White Rabbit PTP Core software (wrpc-sw)](../../catalog/repos/gitlab.com__ohwr__project__wrpc-sw.md) (integrates_with)
+- [MIKES NorduNET NTS White Rabbit link data (UTC(MIKE) - WR(RISE))](../../catalog/resources/mikes-nordunet-white-rabbit-link-data.md) (uses)
 
 _Indexed by lane(s): timing_

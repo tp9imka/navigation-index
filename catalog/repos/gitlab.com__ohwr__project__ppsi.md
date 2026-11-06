@@ -27,6 +27,7 @@ Portable PTP stack ('PTP Ported to Silicon') used in White Rabbit nodes and swit
 
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 - [White Rabbit cores (wr-cores)](../../catalog/repos/gitlab.com__ohwr__project__wr-cores.md) (same_org)
+- [White Rabbit PTP Core software (wrpc-sw)](../../catalog/repos/gitlab.com__ohwr__project__wrpc-sw.md) (depends_on)
 - [White Rabbit (CERN project page)](../../catalog/resources/cern-white-rabbit.md) (has_code)
 
 _Indexed by lane(s): timing_

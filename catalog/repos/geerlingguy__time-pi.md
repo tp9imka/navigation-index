@@ -28,6 +28,7 @@ Configuration for a Raspberry Pi stratum-1 PTP and NTP time server built from a 
 
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 - [SatPulse](../../catalog/repos/jclark__satpulse.md) (alternative_to)
+- [GNSSTimeServer](../../catalog/repos/montecri__gnsstimeserver.md) (alternative_to)
 
 _Indexed by lane(s): timing_
 

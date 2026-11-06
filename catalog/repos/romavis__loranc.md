@@ -26,6 +26,7 @@ Hobby project to build a DSP-based Loran-C receiver that can also lock onto the 
 
 - [Loran-C reference signal generator](../../catalog/repos/cheolj__loran-c-reference-code.md) (alternative_to)
 - [The Global Loran / eLoran Infrastructure Evolution: A Robust and Resilient PNT Backup for GNSS](../../catalog/resources/faa-eloran-iat-2014.md) (explains)
+- [Enhanced Loran (eLoran) Definition Document](../../catalog/resources/ila-eloran-definition-document-2007.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

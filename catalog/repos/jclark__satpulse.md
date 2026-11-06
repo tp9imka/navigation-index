@@ -33,6 +33,7 @@ Software for using a GNSS receiver on a computer for precise time: stratum-1 NTP
 
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 - [Time Pi](../../catalog/repos/geerlingguy__time-pi.md) (alternative_to)
+- [GNSSTimeServer](../../catalog/repos/montecri__gnsstimeserver.md) (alternative_to)
 - [linuxptp](../../catalog/repos/nwtime__linuxptp.md) (integrates_with)
 
 _Indexed by lane(s): timing_

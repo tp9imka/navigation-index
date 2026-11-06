@@ -20,6 +20,10 @@ Telecom recommendation that sets time and phase synchronization requirements and
 
 ## Referenced by
 
+- [3GPP TS 38.133 (ETSI TS 138 133): NR; Requirements for support of radio resource management - clause 7.4 Cell phase synchronization accuracy](../../catalog/resources/3gpp-ts-38-133-cell-phase-sync.md) (cites)
+- [ITU-T G.8273.2: Timing characteristics of telecom boundary clocks and telecom time synchronous clocks for use with full timing support from the network](../../catalog/resources/itu-t-g8273-2-tbc-tsc.md) (part_of)
+- [ITU-T G.8275.1: Precision time protocol telecom profile for phase/time synchronization with full timing support from the network](../../catalog/resources/itu-t-g8275-1-ptp-full-support.md) (part_of)
+- [ITU-T G.8275.2: Precision time protocol telecom profile for phase/time synchronization with partial timing support from the network](../../catalog/resources/itu-t-g8275-2-ptp-partial-support.md) (part_of)
 - [Network of GNSS-disciplined clocks: holdover from peers, spoof isolation by cross-node consistency, ADEV-weighted ensemble](../../catalog/samples/timing-network-holdover.md) (uses)
 
 _Indexed by lane(s): timing_

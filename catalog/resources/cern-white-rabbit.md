@@ -20,4 +20,8 @@ Project page for White Rabbit, the CERN-led extension of PTP and synchronous Eth
 - has_code: [White Rabbit cores (wr-cores)](../../catalog/repos/gitlab.com__ohwr__project__wr-cores.md)
 - has_code: [PPSi](../../catalog/repos/gitlab.com__ohwr__project__ppsi.md)
 
+## Referenced by
+
+- [MIKES NorduNET NTS White Rabbit link data (UTC(MIKE) - WR(RISE))](../../catalog/resources/mikes-nordunet-white-rabbit-link-data.md) (uses)
+
 _Indexed by lane(s): timing_

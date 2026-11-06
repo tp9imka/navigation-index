@@ -32,8 +32,12 @@ Python library for time and frequency stability statistics: Allan, modified Alla
 ## Referenced by
 
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
+- [gr-allan](../../catalog/repos/jmfriedt__gr-allan.md) (depends_on)
 - [TAPR TICC](../../catalog/repos/tapr__ticc.md) (integrates_with)
+- [BIPM Circular T](../../catalog/resources/bipm-circular-t.md) (uses)
+- [MIKES NorduNET NTS White Rabbit link data (UTC(MIKE) - WR(RISE))](../../catalog/resources/mikes-nordunet-white-rabbit-link-data.md) (uses)
 - [Handbook of Frequency Stability Analysis (NIST SP 1065)](../../catalog/resources/nist-sp1065-frequency-stability-handbook.md) (has_code)
+- [Data for "PTP over wide area networks with offset measurement outlier filtering"](../../catalog/resources/uniri-wan-ptp-outlier-filtering-dataset.md) (uses)
 - [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../../catalog/samples/timing-holdover.md) (explains)
 - [Network of GNSS-disciplined clocks: holdover from peers, spoof isolation by cross-node consistency, ADEV-weighted ensemble](../../catalog/samples/timing-network-holdover.md) (explains)
 

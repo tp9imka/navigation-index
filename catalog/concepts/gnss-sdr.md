@@ -15,7 +15,7 @@ Acquisition, tracking, navigation-message decoding in software on SDR front-ends
 
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) - After this chapter you can explain how a receiver turns satellite signals into a position, read raw receiver output, pick between SPP, RTK and PPP, and build a jamming or spoofing detector that runs on recorded data.
 
-## Repositories (18)
+## Repositories (19)
 
 - [GNSS-SDR](../../catalog/repos/gnss-sdr__gnss-sdr.md) - fit: high - Full software-defined GNSS receiver built on GNU Radio: acquisition, tracking, navigation message decoding and PVT for GPS, Galileo, GLONASS and BeiDou signals from SDR front-ends or IQ files, including Galileo OSNMA sup
 - [AIS-catcher](../../catalog/repos/jvde-github__ais-catcher.md) - fit: high - AIS receiver and decoder for cheap SDRs (RTL-SDR, Airspy, HackRF, SDRplay, SoapySDR) with a built-in web map, JSON/NMEA output and feed sharing.
@@ -32,6 +32,7 @@ Acquisition, tracking, navigation-message decoding in software on SDR front-ends
 - [GNSS-matlab](../../catalog/repos/danipascual__gnss-matlab.md) - fit: low - MATLAB code to generate GNSS PRN and secondary codes, dataless signals and spectra, with real captures.
 - [GPS L1 Direct Position Estimation module](../../catalog/repos/sergio-vicenzo__gpsl1-dpemodule.md) - fit: low - Plug-in module adding Direct Position Estimation (positioning directly in the correlation domain) to MATLAB two-step software receivers such as SoftGNSS.
 - [pylgrim](../../catalog/repos/kirienko__pylgrim.md) - fit: low - Playground GNSS positioning code in Python/numpy that computes a static GPS position (50-100 m accuracy per the README) from RINEX 2.11 observations, with parsers for RINEX nav/obs, SP3 and IONEX plus Klobuchar, IONEX an
+- [gr-allan](../../catalog/repos/jmfriedt__gr-allan.md) - fit: low - GNU Radio sink block that wraps allantools to plot Allan deviation in real time from a stream.
 - [gnssrecbasics2020 - GNSS receiver course labs (MPEI)](../../catalog/repos/korogodin__gnssrecbasics2020.md) - fit: low - Assignments and lab reports for the first semester of the MPEI navigation receivers course (2020): signal model, statistical correlator equivalent, positioning accuracy and further labs.
 - [SRNS - GNSS course homework (GLONASS/Galileo signals)](../../catalog/repos/daryamalafeeva__srns.md) - fit: low - Python homework for a course on GPS, GLONASS, Galileo and BeiDou: GLONASS satellite position and velocity from the almanac, a GLONASS L3OCp signal generator and Galileo E1-B/C signal shaping.
 - [Приемники ГНСС - GNSS receiver design handbook (MPEI)](../../catalog/repos/korogodin__gnssrec.md) - fit: low - Source of a Russian-language textbook for the MPEI course on satellite navigation user equipment by I.

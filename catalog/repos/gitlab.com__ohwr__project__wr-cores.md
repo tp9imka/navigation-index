@@ -27,7 +27,9 @@ CERN Open Hardware Repository HDL cores for White Rabbit nodes and switches, inc
 
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 - [PPSi](../../catalog/repos/gitlab.com__ohwr__project__ppsi.md) (same_org)
+- [White Rabbit (OHWR project hub)](../../catalog/repos/gitlab.com__ohwr__project__white-rabbit.md) (same_org)
 - [White Rabbit switch software](../../catalog/repos/gitlab.com__ohwr__project__wr-switch-sw.md) (same_org)
+- [White Rabbit PTP Core software (wrpc-sw)](../../catalog/repos/gitlab.com__ohwr__project__wrpc-sw.md) (depends_on)
 - [White Rabbit (CERN project page)](../../catalog/resources/cern-white-rabbit.md) (has_code)
 
 _Indexed by lane(s): timing_

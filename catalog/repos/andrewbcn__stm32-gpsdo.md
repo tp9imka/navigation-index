@@ -30,6 +30,7 @@ Experimental GPS-disciplined oscillator: STM32 Black Pill, u-blox NEO-M8, a DAC 
 - [Lars DIY GPSDO (original files)](../../catalog/repos/andrewbcn__lars-diy-gpsdo.md) (alternative_to)
 - [gpsdo-fw (BH3SAP alternative firmware)](../../catalog/repos/dankar__gpsdo-fw.md) (alternative_to)
 - [PicoGPSDO](../../catalog/repos/gibbi__picogpsdo.md) (alternative_to)
+- [MMCM_GPSDO](../../catalog/repos/hamsternz__mmcm_gpsdo.md) (alternative_to)
 - [The Use of GPS Disciplined Oscillators as Primary Frequency Standards for Calibration and Metrology Laboratories](../../catalog/resources/nist-lombardi-gpsdo-calibration.md) (explains)
 - [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../../catalog/samples/timing-holdover.md) (explains)
 

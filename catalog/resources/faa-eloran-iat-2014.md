@@ -19,4 +19,8 @@ Briefing by the FAA's chief navigation systems engineer to the US Space-Based PN
 
 - explains: [LoranC receiver](../../catalog/repos/romavis__loranc.md)
 
+## Referenced by
+
+- [Enhanced Loran (eLoran) Definition Document](../../catalog/resources/ila-eloran-definition-document-2007.md) (same_author)
+
 _Indexed by lane(s): gap-fill_

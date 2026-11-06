@@ -13,7 +13,7 @@ Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) - After this chapter you can convert between the coordinate systems your tools disagree on, fetch free imagery and elevation data for a region, display it, and plan a path or a multi-vehicle mission over it.
 
-## Repositories (43)
+## Repositories (44)
 
 - [EGO-Swarm](../../catalog/repos/zju-fast-lab__ego-planner-swarm.md) - fit: high - Decentralized multi-quadrotor extension of EGO-Planner with inter-agent collision avoidance and trajectory sharing over a network.
 - [gym-pybullet-drones](../../catalog/repos/learnsyslab__gym-pybullet-drones.md) - fit: high - Gymnasium environments on PyBullet for single and multi-agent quadcopter control and RL (formerly under utiasDSL).
@@ -56,6 +56,7 @@ Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 - [Omni-swarm](../../catalog/repos/hkust-aerial-robotics__omni-swarm.md) - fit: low - Decentralized omnidirectional visual-inertial-UWB state estimation for aerial swarms from HKUST, combining VIO, UWB ranges and map-based place recognition.
 - [GEARdrones](../../catalog/repos/excitablecell__geardrones.md) - fit: low - Lightweight STM32 drone control and multi-agent localization system combining a flight controller, UWB relative localization and a monitor tool.
 - [DPGO](../../catalog/repos/mit-acl__dpgo.md) - fit: low - Distributed pose-graph optimization library with certifiably correct solutions for multi-robot SLAM.
+- [Wi-PTP](../../catalog/repos/zlab-pub__wifi-ptp.md) - fit: low - PTP over Wi-Fi: a patched ath9k driver (Linux 4.19) that timestamps in the Wi-Fi hardware path plus an adjusted linuxptp.
 - [Kimera-Distributed](../../catalog/repos/mit-spark__kimera-distributed.md) - fit: low - Distributed front end of Kimera-Multi: handles the inter-robot communication protocol and pose-graph coarsening; the robust distributed optimization back end is DPGO.
 - [CoLRIO](../../catalog/repos/pengyu-team__co-lrio.md) - fit: low - Placeholder repo: it only holds a README pointing to zhongshp/Co-LRIO, where the code lives.
 

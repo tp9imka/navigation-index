@@ -27,6 +27,8 @@ Clock and network simulator from the chrony author: runs real NTP/PTP daemons ag
 
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 - [chrony](../../catalog/repos/gitlab.com__chrony__chrony.md) (evaluated_on)
+- [ntpperf](../../catalog/repos/mlichvar__ntpperf.md) (same_org)
+- [LibPTP](../../catalog/repos/ptp-sim__libptp.md) (alternative_to)
 - [Network of GNSS-disciplined clocks: holdover from peers, spoof isolation by cross-node consistency, ADEV-weighted ensemble](../../catalog/samples/timing-network-holdover.md) (explains)
 
 _Indexed by lane(s): timing_

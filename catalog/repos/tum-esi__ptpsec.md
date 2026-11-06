@@ -26,6 +26,8 @@ Research implementation, based on linuxptp 3.1.1, that detects and mitigates PTP
 
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 - [linuxptp](../../catalog/repos/nwtime__linuxptp.md) (extends)
+- [PTPsec: Securing the Precision Time Protocol Against Time Delay Attacks Using Cyclic Path Asymmetry Analysis](../../catalog/resources/finkenzeller-2024-ptpsec.md) (has_code)
+- [Securing the Precision Time Protocol with SDN-enabled Cyclic Path Asymmetry Analysis](../../catalog/resources/finkenzeller-2025-ptpsec-sdn.md) (has_code)
 - [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../../catalog/samples/timing-holdover.md) (explains)
 - [Network of GNSS-disciplined clocks: holdover from peers, spoof isolation by cross-node consistency, ADEV-weighted ensemble](../../catalog/samples/timing-network-holdover.md) (explains)
 

@@ -40,6 +40,7 @@ NTP client and server that also disciplines the system clock from reference cloc
 - [NTPsec](../../catalog/repos/gitlab.com__ntpsec__ntpsec.md) (alternative_to)
 - [SatPulse](../../catalog/repos/jclark__satpulse.md) (integrates_with)
 - [clknetsim](../../catalog/repos/mlichvar__clknetsim.md) (integrates_with)
+- [ntpperf](../../catalog/repos/mlichvar__ntpperf.md) (same_org)
 - [linuxptp](../../catalog/repos/nwtime__linuxptp.md) (integrates_with)
 - [ntpd-rs](../../catalog/repos/pendulum-project__ntpd-rs.md) (alternative_to)
 - [pps-tools](../../catalog/repos/redlab-i__pps-tools.md) (integrates_with)
@@ -47,6 +48,7 @@ NTP client and server that also disciplines the system clock from reference cloc
 - [Comparison of NTP implementations (chrony)](../../catalog/resources/chrony-comparison.md) (explains)
 - [RFC 5905: Network Time Protocol Version 4: Protocol and Algorithms Specification](../../catalog/resources/rfc5905-ntpv4.md) (has_code)
 - [RFC 8915: Network Time Security for the Network Time Protocol](../../catalog/resources/rfc8915-nts.md) (has_code)
+- [Data for "PTP over wide area networks with offset measurement outlier filtering"](../../catalog/resources/uniri-wan-ptp-outlier-filtering-dataset.md) (evaluates)
 - [GNSS-disciplined clock holdover per oscillator grade, and a slow time-walk spoof](../../catalog/samples/timing-holdover.md) (explains)
 
 _Indexed by lane(s): timing_

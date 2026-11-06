@@ -22,5 +22,6 @@ Defines the primary reference time clock (PRTC), the GNSS-fed time source at the
 
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 - [ITU-T G.8271: Time and phase synchronization aspects of telecommunication networks](../../catalog/resources/itu-t-g8271.md) (cites)
+- [ITU-T G.8273.2: Timing characteristics of telecom boundary clocks and telecom time synchronous clocks for use with full timing support from the network](../../catalog/resources/itu-t-g8273-2-tbc-tsc.md) (same_author)
 
 _Indexed by lane(s): timing_

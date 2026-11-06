@@ -16,7 +16,7 @@ ICDs, STANAGs, RTCM, NMEA, MAVLink, CoT, ASTERIX, interoperability specs.
 - [Export control and ethics](../../docs/export-control-and-ethics.md) - Not legal advice.
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) - After this page you can explain why a GNSS-denied system loses time before it loses position, estimate how long a given oscillator holds time from its datasheet, name the attacks on GNSS and network time, and pick a 24-4
 
-## Repositories (34)
+## Repositories (35)
 
 - [MAVLink](../../catalog/repos/mavlink__mavlink.md) - fit: high - Message definitions (XML dialects) and the pymavlink-based generator for the MAVLink micro air vehicle protocol, used by PX4, ArduPilot and most GCS tools.
 - [milsymbol](../../catalog/repos/spatialillusions__milsymbol.md) - fit: high - Pure JavaScript library generating MIL-STD-2525 (B/C/D/E) and APP-6 (B/D/E) military symbols as SVG or canvas.
@@ -51,10 +51,17 @@ ICDs, STANAGs, RTCM, NMEA, MAVLink, CoT, ASTERIX, interoperability specs.
 - [RINEX LEO extension proposal](../../catalog/repos/rokubun__rinex_leo.md) - fit: low - Proposal for RINEX format modifications to carry LEO-PNT observables and ephemeris.
 - [MAAST for ARAIM](../../catalog/repos/stanford-gps-lab__maast_for_araim_2.md) - fit: low - Stanford GPS Lab MATLAB toolset that evaluates Advanced RAIM availability and protection levels over service areas.
 - [PPSi](../../catalog/repos/gitlab.com__ohwr__project__ppsi.md) - fit: low - Portable PTP stack ('PTP Ported to Silicon') used in White Rabbit nodes and switches; one source tree builds for bare metal and Linux.
+- [White Rabbit (OHWR project hub)](../../catalog/repos/gitlab.com__ohwr__project__white-rabbit.md) - fit: low - Umbrella OHWR project for White Rabbit, the deterministic Ethernet extension of PTP; the wiki collects specs, hardware lists, user stories and links to all WR sub-projects.
 - [White Rabbit cores (wr-cores)](../../catalog/repos/gitlab.com__ohwr__project__wr-cores.md) - fit: low - CERN Open Hardware Repository HDL cores for White Rabbit nodes and switches, including the White Rabbit PTP Core that gives sub-nanosecond synchronization over fibre Ethernet.
 
-## Documents, talks, courses, datasets (65)
+## Documents, talks, courses, datasets (71)
 
+- [3GPP TS 38.133 (ETSI TS 138 133): NR; Requirements for support of radio resource management - clause 7.4 Cell phase synchronization accuracy](../../catalog/resources/3gpp-ts-38-133-cell-phase-sync.md) - standard - fit: medium - Clause 7.4 defines cell phase synchronization accuracy for TDD as the maximum absolute deviation in frame start timing between any pair of same-frequency cells with overlapping coverage, and requires it to be better than
+- [ITU-T G.8275.1: Precision time protocol telecom profile for phase/time synchronization with full timing support from the network](../../catalog/resources/itu-t-g8275-1-ptp-full-support.md) - standard - fit: medium - The telecom PTP profile for networks where every node is a boundary or transparent clock (full on-path support), using Ethernet transport.
+- [ITU-T G.8275.2: Precision time protocol telecom profile for phase/time synchronization with partial timing support from the network](../../catalog/resources/itu-t-g8275-2-ptp-partial-support.md) - standard - fit: medium - Telecom PTP profile for networks where some nodes do not support PTP (partial timing support), carried over IPv4/IPv6 unicast.
+- [RFC 10049: Roughtime: A Protocol for Rough Time Synchronization](../../catalog/resources/rfc10049-roughtime.md) - standard - fit: medium - The published RFC version of Roughtime: signed, rough (seconds-level) time from several servers, with a chained-nonce scheme so a client can prove a server lied.
+- [BIPM Circular T](../../catalog/resources/bipm-circular-t.md) - dataset - fit: low - Monthly BIPM publication of UTC - UTC(k) for the national timing labs contributing to UTC, with uncertainties, plus related TAI data on the BIPM FTP server.
+- [ITU-T G.8273.2: Timing characteristics of telecom boundary clocks and telecom time synchronous clocks for use with full timing support from the network](../../catalog/resources/itu-t-g8273-2-tbc-tsc.md) - standard - fit: low - Performance limits for telecom boundary clocks (T-BC) and telecom time slave clocks (T-TSC): constant and dynamic time error, noise generation, tolerance and transfer, by clock class.
 - [15 CFR 734.7 - Published (Export Administration Regulations)](../../catalog/resources/ecfr-ear-734-7-published.md) - standard - The regulation text defining when information and software count as 'published' and therefore not subject to the EAR.
 - [Baseline advanced RAIM user algorithm and possible improvements](../../catalog/resources/blanch-2015-baseline-araim-user-algorithm.md) - paper - IEEE TAES 51(1) description of the baseline multi-fault, multi-constellation ARAIM user algorithm for LPV-200 vertical guidance.
 - [BeiDou Navigation Satellite System Signal-In-Space ICDs (B1I, B3I, B1C, B2a, B2b)](../../catalog/resources/beidou-icd-library.md) - standard - Official English-language ICD library for BeiDou open service signals, including the BDS-3 B1C and B2a signals that are interoperable with GPS L1C/L5 and Galileo E1/E5a, plus PPP-B2b.

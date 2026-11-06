@@ -21,6 +21,7 @@ C++ library (successor to GPSTk) from UT Austin ARL for GNSS data formats, time 
 ## Referenced by
 
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [time-transfer-tools](../../catalog/repos/groundstate__time-transfer-tools.md) (alternative_to)
 
 _Indexed by lane(s): gnss_
 

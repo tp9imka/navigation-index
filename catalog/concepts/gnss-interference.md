@@ -49,7 +49,7 @@ GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-
 - [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) - Lane ua-ru-sources: 38 resources and 12 repos, all tagged lang:uk or lang:ru.
 - [Upstream findings](../../docs/upstream-findings.md) - Defects and gaps that the hub's samples found in other people's code and data, with what a maintainer needs to act on them.
 
-## Repositories (31)
+## Repositories (32)
 
 - [GPS-SDR-SIM](../../catalog/repos/osqzss__gps-sdr-sim.md) - fit: high - Generates GPS L1 C/A baseband IQ sample files for a user-defined static or moving trajectory from a broadcast ephemeris file, for playback through an SDR.
 - [GNSS-SDR](../../catalog/repos/gnss-sdr__gnss-sdr.md) - fit: high - Full software-defined GNSS receiver built on GNU Radio: acquisition, tracking, navigation message decoding and PVT for GPS, Galileo, GLONASS and BeiDou signals from SDR front-ends or IQ files, including Galileo OSNMA sup
@@ -67,6 +67,7 @@ GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-
 - [OpenWebRX](../../catalog/repos/jketterl__openwebrx.md) - fit: medium - Multi-user web SDR receiver with waterfall display and many built-in digital decoders.
 - [OpenWebRX+](../../catalog/repos/luarvique__openwebrx.md) - fit: medium - Actively developed fork of OpenWebRX adding decoders, bookmarks and packaging improvements.
 - [multi-sdr-gps-sim](../../catalog/repos/mictronics__multi-sdr-gps-sim.md) - fit: medium - Maintained derivative of GPS-SDR-SIM that streams GPS L1 baseband on the fly to HackRF or ADALM-Pluto, or to a binary IQ file, with a curses text UI.
+- [linuxptp-daemon (OpenShift)](../../catalog/repos/openshift__linuxptp-daemon.md) - fit: medium - Kubernetes DaemonSet that manages ptp4l, phc2sys, ts2phc and timemaster per node, parses their logs into clock-state events, and for u-blox GNSS grandmasters treats a UBX-NAV-STATUS spoofing flag as GNSS loss.
 - [NMEAdesync](../../catalog/repos/zxsecurity__nmeadesync.md) - fit: medium - Proof-of-concept that feeds crafted NMEA sentences to a GPS-referenced NTP server to move its time; a red-team tool, inactive since 2017.
 - [Jammertest test plan](../../catalog/repos/npra__jammertest-plan.md) - fit: medium - Official test catalog and plan for Jammertest, Norway's annual live GNSS jamming and spoofing event, maintained by the Norwegian Public Roads Administration.
 - [GPSSpy](../../catalog/repos/hoverflyhampton__gpsspy.md) - fit: medium - Python implementation of GPS jamming detection from receiver signal-to-noise ratio, following a published real-time jamming detection method.
@@ -83,8 +84,10 @@ GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-
 - [Stanford GNSS spoof detection](../../catalog/repos/fabianr-su__stanford-gnss-spoof-detection.md) - fit: low - A single MATLAB script (DoAsimulationStudy.m) simulating direction-of-arrival spoof detection, supporting Rothmaier et al.
 - [Приемники ГНСС - GNSS receiver design handbook (MPEI)](../../catalog/repos/korogodin__gnssrec.md) - fit: low - Source of a Russian-language textbook for the MPEI course on satellite navigation user equipment by I.
 
-## Documents, talks, courses, datasets (111)
+## Documents, talks, courses, datasets (113)
 
+- [IEC61850 SV and PTP traffic under GNSS jamming](../../catalog/resources/kit-iec61850-ptp-gnss-jamming-dataset.md) - dataset - fit: medium - Jamming half of the KIT KASTEL captures: IEC 61850 Sampled Values and PTP traffic while the substation time server's GNSS is jammed, about 594 GB pcap tar on KIT RADAR, CC BY-NC 4.0, identifiers pseudonymised.
+- [IEC61850 SV and PTP traffic under GNSS time synchronization attacks](../../catalog/resources/kit-iec61850-ptp-gnss-spoofing-dataset.md) - dataset - fit: medium - Pseudonymised pcap captures of IEC 61850 Sampled Values and IEEE 1588 PTP traffic from the KIT KASTEL energy security lab while the substation's GNSS-fed time server is spoofed.
 - [2025 Was a Stress Test & Maritime AI™ Is the Only Way to Pass](../../catalog/resources/windward-2025-maritime-stress-test.md) - blog - Windward's quarter-by-quarter review of 2025 maritime risk: sanctions, dark fleet growth, flag-registry fraud and GNSS interference.
 - [28 із 37 деталей - зі США: ГУР МО розкрило склад іноземних компонентів у російських «Кометах»](../../catalog/resources/militarnyi-kometa-crpa-components-2026.md) - blog - English: '28 of 37 parts from the US: HUR disclosed foreign components in Russian Kometa modules'.
 - [Above Us Only Stars: Exposing GPS Spoofing in Russia and Syria](../../catalog/resources/c4ads-above-us-only-stars.md) - report - Open-source investigation using AIS ship tracks, public records and ISS-based measurements to map thousands of GNSS spoofing events around Russia, Crimea and Syria, many linked to protection of VIPs and bases.

@@ -47,8 +47,10 @@ Operating comms and navigation under EW: spectrum monitoring, LPI/LPD links, fal
 - [Smart-UAV-Return-GNSS-Station](../../catalog/repos/citec-spbu__smart-uav-return-gnss-station.md) - fit: low - Student project from SPbU (CITEC) on returning a UAV to its launch point when both GNSS and the ground-station link are lost, targeting a RockPi 4 companion computer.
 - [CRTClover - Clover Rescue Team backend](../../catalog/repos/devmbs__crtclover.md) - fit: low - Drone-side backend of the Clover Rescue project (CopterHack 2022, third place), which the team describes as returning the Clover to the user or takeoff point with one click when radio contact is lost.
 
-## Documents, talks, courses, datasets (60)
+## Documents, talks, courses, datasets (62)
 
+- [PTPsec: Securing the Precision Time Protocol Against Time Delay Attacks Using Cyclic Path Asymmetry Analysis](../../catalog/resources/finkenzeller-2024-ptpsec.md) - paper - fit: medium - Detects PTP time delay attacks by measuring round-trip times over redundant network paths and comparing their asymmetry, with a new measurement message on top of IEEE 1588-2019.
+- [Securing the Precision Time Protocol with SDN-enabled Cyclic Path Asymmetry Analysis](../../catalog/resources/finkenzeller-2025-ptpsec-sdn.md) - paper - fit: low - Follow-up to PTPsec that uses software-defined networking to find redundant paths dynamically in arbitrary topologies and then runs the cyclic path asymmetry check against delay attacks.
 - [12 переможців і призовий фонд у 120 000 доларів: результати Хакатону «Наступ машин»](../../catalog/resources/mod-nastup-mashyn-hackathon-2024.md) - competition - English: '12 winners and a $120,000 prize pool: results of the Onslaught of Machines hackathon'.
 - [28 із 37 деталей - зі США: ГУР МО розкрило склад іноземних компонентів у російських «Кометах»](../../catalog/resources/militarnyi-kometa-crpa-components-2026.md) - blog - English: '28 of 37 parts from the US: HUR disclosed foreign components in Russian Kometa modules'.
 - [Advanced Radio Frequency Sensing, Integrated Effects and PNT](../../catalog/resources/dasa-advanced-rf-sensing-pnt-2022.md) - competition - UK DASA themed competition (for the Bright Corvus project) seeking RF sensing and resilient PNT innovations.

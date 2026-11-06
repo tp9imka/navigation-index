@@ -27,5 +27,13 @@ A stdlib-only simulation of six GNSS-disciplined sites (TCXO, OCXO, CSAC, Rb osc
 
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [3GPP TS 38.133 (ETSI TS 138 133): NR; Requirements for support of radio resource management - clause 7.4 Cell phase synchronization accuracy](../../catalog/resources/3gpp-ts-38-133-cell-phase-sync.md) (explains)
+- [Clock Synchronization Accuracy over Mobile Networks](../../catalog/resources/edi-ptp-mobile-network-dataset.md) (dataset_for)
+- [PTPsec: Securing the Precision Time Protocol Against Time Delay Attacks Using Cyclic Path Asymmetry Analysis](../../catalog/resources/finkenzeller-2024-ptpsec.md) (explains)
+- [ITU-T G.8275.2: Precision time protocol telecom profile for phase/time synchronization with partial timing support from the network](../../catalog/resources/itu-t-g8275-2-ptp-partial-support.md) (explains)
+- [IEC61850 SV and PTP traffic under GNSS jamming](../../catalog/resources/kit-iec61850-ptp-gnss-jamming-dataset.md) (dataset_for)
+- [IEC61850 SV and PTP traffic under GNSS time synchronization attacks](../../catalog/resources/kit-iec61850-ptp-gnss-spoofing-dataset.md) (dataset_for)
+- [MIKES NorduNET NTS White Rabbit link data (UTC(MIKE) - WR(RISE))](../../catalog/resources/mikes-nordunet-white-rabbit-link-data.md) (dataset_for)
+- [Data for "PTP over wide area networks with offset measurement outlier filtering"](../../catalog/resources/uniri-wan-ptp-outlier-filtering-dataset.md) (dataset_for)
 
 _Indexed by lane(s): samples_
