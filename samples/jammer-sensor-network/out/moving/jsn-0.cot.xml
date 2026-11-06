@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event version="2.0" type="a-u-G" uid="jsn-jammer-1" how="m-f" time="2026-11-06T09:36:19.680Z" start="2026-11-06T09:36:19.680Z" stale="2026-11-06T09:46:19.680Z"><point lat="69.2872164" lon="16.0639083" hae="0.00" ce="90.4" le="9999999.0" /><detail><contact callsign="GNSS-JAM est" /><remarks>GNSS jammer estimate (grid+df) from 12/14 detecting nodes; 95% ellipse 221 x 140 m; model EIRP 11 dBm (common-mode offsets included, not a calibrated power)</remarks></detail></event>

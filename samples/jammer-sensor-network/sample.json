@@ -1,0 +1,20 @@
+{
+  "id": "sample:jammer-sensor-network",
+  "title": "Low-cost GNSS jammer sensor network: u-blox telemetry => localization => TAK and dashboard",
+  "summary": "End-to-end stdlib pipeline for the 'cheap receivers detect and localize a GNSS jammer and put it on a COP' problem. Simulated u-blox-class nodes (static surveyed sites plus vehicles that lose GNSS and fall back to dead reckoning) report the fields pyubx2 exposes (NAV-PVT fix, per-SV C/N0 drop, MON-RF agcCnt / jamInd / jammingState) as compact JSON on an MQTT-shaped topic schema. The aggregator inverts the C/N0 drop with the standard effective-C/N0 relation (J = Q Rc N0 (10^(D/10) - 1), SV-independent) and the AGC reduction into jammer power at each node, with censored 'clear' and 'all SVs lost' observations. Three localizers: weighted centroid, multistart Levenberg-Marquardt RSS least squares with unknown power (and a BIC test for two jammers), and a grid likelihood over position and power with Bayesian update over time, motion diffusion for a moving jammer, and bookkeeping that counts static-node evidence once. DF bearings from the KrakenSDR sample are triangulated with its own code and optionally fused into the grid. Propagation truth is log-distance path loss with 4-D correlated link shadowing and optional building blockage. Outputs: CoT point + 95% ellipse via tak_out.py / cot.py, sensor-node CoT, and navdash/1 tracks + zones (ellipse, model fix-loss radius, nodes) for templates/demo-dashboard. Includes a Monte Carlo of error vs node count, density and shadowing sigma, and a hardware section limited to documented u-blox monitoring fields.",
+  "concepts": ["concept:gnss-interference", "concept:rf-localization", "concept:situational-awareness", "concept:ew-resilience"],
+  "tags": ["jammer-localization", "sensor-network", "u-blox", "mon-rf", "agc", "cn0", "j/s", "rss", "least-squares", "grid-likelihood", "bayesian-filter", "censored-likelihood", "two-jammers", "moving-jammer", "shadowing", "mqtt", "json-schema", "cot", "tak", "navdash", "monte-carlo", "stdlib"],
+  "related": [
+    {"id": "sample:gnss-interference-monitor", "rel": "uses"},
+    {"id": "sample:interference-geolocation-to-tak", "rel": "uses"},
+    {"id": "sample:mavlink-to-tak-cot", "rel": "uses"},
+    {"id": "repo:semuconsulting/pyubx2", "rel": "explains"},
+    {"id": "repo:krakenrf/krakensdr_doa", "rel": "explains"},
+    {"id": "repo:z0rlord/foxhunt", "rel": "explains"},
+    {"id": "repo:brian7704/opentakserver", "rel": "explains"},
+    {"id": "repo:snstac/pytak", "rel": "explains"},
+    {"id": "res:jammertest-norway", "rel": "explains"},
+    {"id": "repo:felixott94/fraunhoferiis_jammertest2025", "rel": "explains"}
+  ],
+  "verified": "Ran 2026-11-06 on Python 3.14.7, stdlib only: 16 unittest cases OK (physics inversions and SV-independence, shadow field statistics, building clip, protocol validation incl. 8 malformed cases and topic mismatch, censored measurement kinds, noiseless LS / grid / centroid, k=2 selected only when two sources exist, no estimate without a jammer, motion diffusion, HTTP round trip with a bad line returning 207, CoT and zones from the server, ellipse ring geometry); 6 hand mutations (censor sign, Q in the inversion, BIC always/never k=2, lower censor off, LS ignoring censoring) each fail 1-5 tests. demo.py ran all three scenarios plus a buildings variant; HTTP path gives identical results to in-process; stdin path ran on 2548 dumped messages. evaluate.py ran 40 trials per configuration (~2 min). All data synthetic: no real receiver, no real jammer, no MQTT broker, no TAK client rendering of the ellipse. Model constants (noise figure, tracking threshold, AGC counts per dB, path-loss exponent) are assumptions stated in jsn_model.py."
+}

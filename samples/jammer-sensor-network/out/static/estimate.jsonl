@@ -1,0 +1,34 @@
+{"header": {"schema": "navdash/1", "track": "estimate", "role": "fused", "label": "jammer estimate (first source)", "color": "#4fc3f7", "primary": true, "r95_method": "semi-major axis of the 95% ellipse"}}
+{"t": 25.0, "lat": 69.2772922, "lon": 16.0442468, "r95_m": 239.0, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 25.0, "event": "alarm_raised", "text": "jamming detected by 8 nodes"}
+{"t": 30.0, "lat": 69.2774037, "lon": 16.0433496, "r95_m": 233.7, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 35.0, "lat": 69.2776148, "lon": 16.0421704, "r95_m": 220.2, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 40.0, "lat": 69.2774624, "lon": 16.0417389, "r95_m": 221.4, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 45.0, "lat": 69.2773158, "lon": 16.042042, "r95_m": 228.3, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 50.0, "lat": 69.2774726, "lon": 16.0422009, "r95_m": 230.2, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 55.0, "lat": 69.2773507, "lon": 16.0419693, "r95_m": 250.1, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 60.0, "lat": 69.2773467, "lon": 16.0419827, "r95_m": 246.8, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 65.0, "lat": 69.2772558, "lon": 16.0423209, "r95_m": 246.7, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 70.0, "lat": 69.2774831, "lon": 16.0424154, "r95_m": 224.0, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 75.0, "lat": 69.2773194, "lon": 16.042642, "r95_m": 235.5, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 80.0, "lat": 69.2772786, "lon": 16.0425779, "r95_m": 220.4, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 85.0, "lat": 69.2772467, "lon": 16.0427233, "r95_m": 225.2, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 90.0, "lat": 69.2773291, "lon": 16.0428504, "r95_m": 227.5, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 95.0, "lat": 69.2772887, "lon": 16.0430115, "r95_m": 220.3, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 100.0, "lat": 69.2771913, "lon": 16.0430308, "r95_m": 218.7, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 105.0, "lat": 69.2773636, "lon": 16.0424705, "r95_m": 211.8, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 110.0, "lat": 69.2774135, "lon": 16.0423269, "r95_m": 207.7, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 115.0, "lat": 69.27736, "lon": 16.0420782, "r95_m": 206.9, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 120.0, "lat": 69.2771404, "lon": 16.0423009, "r95_m": 216.1, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 125.0, "lat": 69.2770439, "lon": 16.042048, "r95_m": 219.0, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 130.0, "lat": 69.2771425, "lon": 16.0420917, "r95_m": 213.4, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 135.0, "lat": 69.2772247, "lon": 16.0423116, "r95_m": 209.2, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 140.0, "lat": 69.2772124, "lon": 16.0423305, "r95_m": 210.2, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 145.0, "lat": 69.2772185, "lon": 16.0425316, "r95_m": 210.7, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 150.0, "lat": 69.2773924, "lon": 16.0422397, "r95_m": 203.4, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 155.0, "lat": 69.2774549, "lon": 16.0421084, "r95_m": 199.4, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 160.0, "lat": 69.2773156, "lon": 16.0418654, "r95_m": 204.5, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 165.0, "lat": 69.2773395, "lon": 16.0421861, "r95_m": 202.1, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 170.0, "lat": 69.2771579, "lon": 16.0421697, "r95_m": 208.2, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 175.0, "lat": 69.2771642, "lon": 16.0426295, "r95_m": 204.7, "health": "estimate", "alarm": true, "sources": ["grid+df"]}
+{"t": 180.0, "lat": 69.2772228, "lon": 16.0422652, "r95_m": 205.1, "health": "estimate", "alarm": true, "sources": ["grid+df"]}

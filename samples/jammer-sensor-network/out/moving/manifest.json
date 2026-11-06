@@ -1,0 +1,11 @@
+{
+ "schema": "navdash/1",
+ "title": "Jammer sensor network: moving (14 nodes)",
+ "tracks": [
+  "truth-J1.jsonl",
+  "estimate.jsonl",
+  "node-v00.jsonl",
+  "node-v01.jsonl"
+ ],
+ "zones": "zones.geojson"
+}
