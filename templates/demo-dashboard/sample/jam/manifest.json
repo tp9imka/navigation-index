@@ -1,0 +1,12 @@
+{
+  "schema": "navdash/1",
+  "title": "navapp jam (seed 7, synthetic)",
+  "tracks": [
+    "truth.jsonl",
+    "fused-jam.jsonl",
+    "fused-jam-baseline.jsonl",
+    "gnss.jsonl",
+    "ins.jsonl"
+  ],
+  "zones": "zones.geojson"
+}

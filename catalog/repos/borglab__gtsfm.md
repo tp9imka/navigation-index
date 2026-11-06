@@ -10,7 +10,7 @@ End-to-end structure-from-motion pipeline built on GTSAM, with pluggable front-e
 
 **Why it matters:** Builds georeferenceable 3D maps from drone or ground imagery, which can serve as prior maps for visual localization.
 
-**Hackathon notes:** Conda environment install; runs on image folders or COLMAP-format data. Expect long runtimes on large sets - downsample.
+**Hackathon notes:** No compilation: `uv tool install .` (or `pip install .` in Python 3.12) from a recursive checkout, then `gtsfm run` opens a browser workspace with sample scenes; `gtsfm execute` is the CLI path for your own image folders. Expect long runtimes on large sets - downsample.
 
 **Concepts:** [Visual SLAM](../concepts/visual-slam.md), [Feature detection and matching](../concepts/feature-matching.md), [GIS, maps and geospatial data](../concepts/gis-mapping.md)
 

@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|
 | 416 | Python | GPL-2.0 | 2026-10-17 | False | active-research | medium |
 
-Actively maintained MCP bridge connecting AI agents to QGIS Desktop, with a broader tool set than the original qgis_mcp.
+MCP bridge that lets AI agents drive QGIS Desktop: a QGIS plugin runs a TCP socket server inside QGIS and a FastMCP server exposes about 125 tools (layers, feature editing, processing, rendering, styling, layouts/atlas, cross-layer SQL). Supports QGIS 3.28 to 4.x; the plugin installs from the QGIS plugin manager and the server runs via uvx.
 
 **Why it matters:** More recent alternative if the original QGIS MCP lags behind QGIS releases.
 

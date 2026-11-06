@@ -12,6 +12,11 @@ ESP32-based Remote ID transmitter firmware implementing ASTM F3411 broadcast (Bl
 
 **Hackathon notes:** Flash an ESP32-S3/C3 dev board; pair with opendroneid receiver-android to show detection end to end.
 
+## Deep dives
+
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
+- [ardupilot__arduremoteid](../../docs/integration-cards/ardupilot__arduremoteid.md) (integration-cards)
+
 **Concepts:** [Standards and interface specs](../concepts/standards.md), [Counter-UAS and drone detection](../concepts/counter-uas.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
 
 **Tags:** `remote-id`, `astm-f3411`, `esp32`, `opendroneid`, `dronecan`

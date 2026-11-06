@@ -14,6 +14,8 @@ Example Android app that listens for Remote ID broadcasts over Bluetooth 4/5 and
 
 ## Deep dives
 
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
+- [opendroneid__receiver-android](../../docs/integration-cards/opendroneid__receiver-android.md) (integration-cards)
 - [remote-id-droneid-captures](../../docs/dataset-cards/remote-id-droneid-captures.md) (dataset-cards)
 
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Standards and interface specs](../concepts/standards.md)

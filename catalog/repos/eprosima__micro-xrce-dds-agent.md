@@ -12,6 +12,10 @@ Agent that bridges DDS-XRCE clients on microcontrollers into a full DDS / ROS 2 
 
 **Hackathon notes:** Install via snap or build from source; run MicroXRCEAgent udp4 -p 8888 for SITL.
 
+## Deep dives
+
+- [eprosima__micro-xrce-dds-agent](../../docs/integration-cards/eprosima__micro-xrce-dds-agent.md) (integration-cards)
+
 **Concepts:** [ROS / ROS 2 robotics middleware](../concepts/ros.md)
 
 **Tags:** `dds`, `xrce`, `ros2`, `bridge`

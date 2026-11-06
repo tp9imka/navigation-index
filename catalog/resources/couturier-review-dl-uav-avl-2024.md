@@ -11,6 +11,10 @@ Survey of deep-learning approaches to UAV absolute visual localization against r
 - Good map of methods, datasets and open problems
 - Follows the same authors' 2021 review
 
+## Deep dives
+
+- [couturier-review-dl-uav-avl-2024](../../docs/paper-digests/couturier-review-dl-uav-avl-2024.md) (paper-digests)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 
 **Tags:** `survey`, `drones-journal`

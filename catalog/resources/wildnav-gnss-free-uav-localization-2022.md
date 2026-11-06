@@ -11,6 +11,10 @@ Proposes matching drone camera frames to open satellite imagery with learned fea
 - Satellite tiles + learned matcher is a workable visual GPS baseline
 - Failure cases cluster over low-texture and changed terrain
 
+## Deep dives
+
+- [wildnav-gnss-free-uav-localization-2022](../../docs/paper-digests/wildnav-gnss-free-uav-localization-2022.md) (paper-digests)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Feature detection and matching](../concepts/feature-matching.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
 
 **Tags:** `arxiv`, `uav`

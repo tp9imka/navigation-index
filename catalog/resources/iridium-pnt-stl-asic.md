@@ -9,7 +9,7 @@ Iridium broadcasts a high-power LEO timing and location signal (STL, from the Sa
 ## Key takeaways
 
 - Positioning is coarse compared to GNSS; main value is timing and an independent plausibility check
-- Vendor claim on ASIC size: 8 x 8 mm, under 0.2 g (press)
+- Vendor claim on ASIC size: 8 x 8 mm, under 0.2 g (Iridium fact sheet, Oct 2025)
 - Open LEO Doppler code in the index can use Iridium signals of opportunity without a subscription
 
 ## Deep dives

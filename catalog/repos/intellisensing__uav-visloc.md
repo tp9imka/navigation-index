@@ -15,6 +15,7 @@ Large-scale dataset of real UAV flight imagery with satellite reference maps for
 ## Deep dives
 
 - [uav-visloc](../../docs/dataset-cards/uav-visloc.md) (dataset-cards)
+- [uav-visloc-dataset-2024](../../docs/paper-digests/uav-visloc-dataset-2024.md) (paper-digests)
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 

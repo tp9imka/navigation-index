@@ -12,6 +12,11 @@ Model Context Protocol server that exposes ROS topics, services and parameters (
 
 **Hackathon notes:** Run rosbridge on the robot and point the MCP client config at the server; works with sim (Gazebo/Isaac). Add safety limits before anything flies.
 
+## Deep dives
+
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
+- [robotmcp__ros-mcp-server](../../docs/integration-cards/robotmcp__ros-mcp-server.md) (integration-cards)
+
 **Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
 
 **Tags:** `mcp`, `rosbridge`, `llm`, `ros2`

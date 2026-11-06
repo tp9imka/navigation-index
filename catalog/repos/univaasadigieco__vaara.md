@@ -31,6 +31,7 @@ University of Vaasa public GNSS dataset recorded at Jammertest 2024, released in
 
 - [Fraunhofer IIS Jammertest 2025 dataset](../repos/felixott94__fraunhoferiis_jammertest2025.md) (alternative_to)
 - [Jammertest test plan](../repos/npra__jammertest-plan.md) (integrates_with)
+- [Data-Driven Analysis of PNT Resilience: Insights and Lessons from Jammertest 2024 Vehicular Data](../resources/jammertest-2024-vehicular-pnt-resilience.md) (has_code)
 - [Jammertest - open GNSS jamming and spoofing test event (Andoya, Norway)](../resources/jammertest-norway.md) (dataset_for)
 - [Most resilient GNSS receiver: results from Jammertest in Norway](../resources/septentrio-jammertest-results.md) (dataset_for)
 

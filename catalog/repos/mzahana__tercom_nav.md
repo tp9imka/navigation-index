@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 85 | Python | ? | 2026-04-26 | False | research-prototype | high |
 
-ROS 2 package combining TERCOM-style terrain matching with an error-state Kalman filter for UAV navigation.
+ROS 2 (Humble) package for GPS-denied fixed-wing UAV navigation: a TERCOM node correlates baro + rangefinder terrain profiles against a GeoTIFF DEM and feeds fixes into a 15-state error-state Kalman filter driven by IMU, baro and velocity updates.
 
 **Why it matters:** Bridges batch terrain matching into a recursive filter that a real autopilot stack could consume.
 
-**Hackathon notes:** Good if your team runs ROS 2 with PX4/ArduPilot SITL; pair with a DEM and simulated altimeter.
+**Hackathon notes:** Tested against PX4 SITL + Gazebo via MAVROS (no ArduPilot setup documented); colcon build, then launch with a GeoTIFF DEM path and world origin. GPS is used once to initialise the filter. Needs a rangefinder and barometer, real or simulated.
 
 ## Deep dives
 

@@ -10,7 +10,7 @@ C++ SDK exposing high-level MAVLink plugins (action, mission, offboard, telemetr
 
 **Why it matters:** Clean API for companion-side autonomy against PX4 (and to a degree ArduPilot) without ROS.
 
-**Hackathon notes:** Use MAVSDK-Python for hackathon speed; mavsdk_server is bundled.
+**Hackathon notes:** For hackathon speed use the Python binding: since MAVSDK v4, `pip install mavsdk` installs a native binding built in this repo (sync API in `mavsdk`, asyncio in `mavsdk.asyncio`), with no mavsdk_server process. The older gRPC-based MAVSDK-Python with a bundled mavsdk_server lives on as `mavsdk-grpc`.
 
 **Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Autopilots and flight control](../concepts/autopilot.md)
 

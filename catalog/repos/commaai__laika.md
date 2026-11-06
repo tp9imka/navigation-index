@@ -8,9 +8,9 @@
 
 Python GNSS processing library from comma.ai that fetches orbits, clocks and atmospheric corrections automatically and computes corrected pseudoranges and positions from raw measurements.
 
-**Why it matters:** Quickest way to go from raw pseudoranges to a corrected fix in Python; used in openpilot's localizer stack.
+**Why it matters:** Quickest way to go from raw pseudoranges to a corrected fix in Python; it powered openpilot's laikad GNSS localizer until that was removed in October 2023.
 
-**Hackathon notes:** pip-installable. Correction downloads need internet (NASA CDDIS requires an Earthdata login). Good backend for Android raw data experiments.
+**Hackathon notes:** Install from a clone (`pip install .`); the PyPI 'laika' package is a 2018 0.0.1 stub. Correction downloads need internet, and NASA CDDIS needs an Earthdata login in a .netrc. Good backend for Android raw data experiments.
 
 ## Deep dives
 

@@ -12,6 +12,11 @@ MCP server bridging an LLM to a drone over MAVLink, exposing arming, takeoff, wa
 
 **Hackathon notes:** Pair with PX4 or ArduPilot SITL; never point at a real vehicle without geofence and human confirm.
 
+## Deep dives
+
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
+- [ion-g-ion__mavlinkmcp](../../docs/integration-cards/ion-g-ion__mavlinkmcp.md) (integration-cards)
+
 **Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Mission planning and routing](../concepts/mission-planning.md)
 
 **Tags:** `mcp`, `mavlink`, `mavsdk`, `llm`, `drone`

@@ -12,6 +12,10 @@ Gateway that converts ADS-B traffic from dump1090/readsb or aggregator APIs into
 
 **Hackathon notes:** Run alongside readsb on an RTL-SDR; add a filter that flags low NIC aircraft as an interference indicator.
 
+## Deep dives
+
+- [snstac__adsbcot](../../docs/integration-cards/snstac__adsbcot.md) (integration-cards)
+
 **Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Jamming and spoofing](../concepts/gnss-interference.md), [Counter-UAS and drone detection](../concepts/counter-uas.md)
 
 **Tags:** `ads-b`, `tak`, `cot`, `sdr`

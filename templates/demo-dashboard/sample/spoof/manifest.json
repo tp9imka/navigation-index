@@ -1,0 +1,12 @@
+{
+  "schema": "navdash/1",
+  "title": "navapp spoof (seed 7, synthetic)",
+  "tracks": [
+    "truth.jsonl",
+    "fused-spoof.jsonl",
+    "fused-spoof-baseline.jsonl",
+    "gnss.jsonl",
+    "ins.jsonl"
+  ],
+  "zones": "zones.geojson"
+}

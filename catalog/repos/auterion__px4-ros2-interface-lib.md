@@ -14,6 +14,7 @@ C++ library for writing PX4 flight modes and navigation-data sources in ROS 2 on
 
 ## Deep dives
 
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [auterion__px4-ros2-interface-lib](../../docs/integration-cards/auterion__px4-ros2-interface-lib.md) (integration-cards)
 
 **Concepts:** [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Autopilots and flight control](../concepts/autopilot.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)

@@ -17,6 +17,8 @@ Summary of the A2RL x DCL autonomous drone championship, won by TU Delft MAVLab 
 
 ## Referenced by
 
+- [CVAR-UPM Drone Team - A2RL](../resources/cvar-upm-a2rl-team.md) (part_of)
 - [MAVLab wins the AlphaPilot challenge](../resources/mavlab-alphapilot-win-2019.md) (same_author)
+- [On Your Own: Pro-level Autonomous Drone Racing in Uninstrumented Arenas](../resources/tii-pro-level-drone-racing-2025.md) (part_of)
 
 _Indexed by lane(s): defense-context_

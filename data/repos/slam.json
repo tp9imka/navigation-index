@@ -1649,7 +1649,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "high",
-    "hackathon_notes": "Check README for pip/ROS 2 usage; similar ergonomics to KISS-ICP.",
+    "hackathon_notes": "`pip install \"rko_lio[all]\"` then `rko_lio -v /path/to/bags` runs on ROS 1 or ROS 2 bags with a rerun viewer; a ROS 2 node is also available. You must supply IMU and LiDAR extrinsics if the bag's TF tree lacks them. No loop closure - see rko_slam for that.",
     "related": [
       {
         "id": "repo:prbonn/kiss-icp",
@@ -1901,7 +1901,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "high",
-    "hackathon_notes": "ROS 1; build a map with FAST-LIO first, then localize. Needs a rough initial pose.",
+    "hackathon_notes": "ROS 1; build a map with FAST-LIO first, then localize. Needs a rough initial pose (RViz or another sensor). The global-localization node needs Python 2.7 and Open3D 0.9, so plan for a Melodic-era environment or a container.",
     "related": [
       {
         "id": "repo:hku-mars/fast_lio",

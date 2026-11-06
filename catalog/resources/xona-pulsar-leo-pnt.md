@@ -4,7 +4,7 @@
 
 **By:** Xona Space Systems - **Year:** 2025 - **Level:** intermediate - **Access:** open
 
-Xona is building Pulsar, a commercial LEO constellation broadcasting dedicated L-band navigation signals with authentication. Pulsar-0 launched in June/July 2025 as an in-orbit demonstrator; production satellites and initial service were planned for 2026-2027 per later reporting, and the FCC granted conditional approval for the constellation.
+Xona is building Pulsar, a commercial LEO constellation broadcasting dedicated L-band navigation signals with authentication. Pulsar-0 launched in June/July 2025 as an in-orbit demonstrator; production satellites and initial service were planned for 2026-2027 per later reporting, and the FCC granted conditional approval in August 2026 (initially 16 satellites, more after a debris review).
 
 ## Key takeaways
 

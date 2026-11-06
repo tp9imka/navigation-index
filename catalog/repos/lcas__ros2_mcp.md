@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|
 | 10 | Python | Apache-2.0 | 2025-12-12 | False | research-prototype | low |
 
-ROS 2 MCP server from the Lincoln Centre for Autonomous Systems, exposing topics, services and actions to LLM agents.
+ROS 2 MCP server from the Lincoln Centre for Autonomous Systems: tools to list and echo topics, inspect message/service/action interfaces, fetch camera images for VLM analysis and send simple drive commands, plus canned analysis prompts. Runs as a ROS 2 package or via Docker Compose (SSE on port 8000).
 
 **Why it matters:** University-maintained option for agricultural/field robot agent experiments.
 

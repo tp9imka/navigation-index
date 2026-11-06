@@ -14,6 +14,7 @@ Pure JavaScript library generating MIL-STD-2525 (B/C/D/E) and APP-6 (B/D/E) mili
 
 ## Deep dives
 
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [spatialillusions__milsymbol](../../docs/integration-cards/spatialillusions__milsymbol.md) (integration-cards)
 
 **Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Standards and interface specs](../concepts/standards.md)

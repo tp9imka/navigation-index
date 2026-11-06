@@ -13,6 +13,7 @@ Introduces the drone/satellite/ground benchmark that most drone cross-view geo-l
 ## Deep dives
 
 - [university-1652](../../docs/dataset-cards/university-1652.md) (dataset-cards)
+- [university-1652-benchmark-2020](../../docs/paper-digests/university-1652-benchmark-2020.md) (paper-digests)
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 

@@ -14,6 +14,7 @@ Lightweight C++ daemon that routes MAVLink between serial, UDP and TCP endpoints
 
 ## Deep dives
 
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [mavlink-router__mavlink-router](../../docs/integration-cards/mavlink-router__mavlink-router.md) (integration-cards)
 
 **Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)

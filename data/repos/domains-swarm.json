@@ -2837,7 +2837,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "high",
-    "hackathon_notes": "Arduino toolchain; flash and read decoded drones over serial.",
+    "hackathon_notes": "PlatformIO project for VS Code (not the Arduino IDE), developed on a TTGO ESP32 board with a 1.14-inch LCD; it shows lat/lon of one UAV on the display.",
     "related": [
       {
         "id": "repo:sxjack/uav_electronic_ids",

@@ -16,6 +16,7 @@ Lightweight local feature extractor and matcher (CVPR 2024) designed for speed o
 
 - [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
 - [verlab__accelerated_features](../../docs/integration-cards/verlab__accelerated_features.md) (integration-cards)
+- [xfeat-2024](../../docs/paper-digests/xfeat-2024.md) (paper-digests)
 
 **Concepts:** [Feature detection and matching](../concepts/feature-matching.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 

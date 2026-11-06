@@ -16,6 +16,7 @@ Universal visual place recognition using foundation-model (DINOv2) features with
 
 - [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
 - [anyloc__anyloc](../../docs/integration-cards/anyloc__anyloc.md) (integration-cards)
+- [anyloc-universal-vpr-2023](../../docs/paper-digests/anyloc-universal-vpr-2023.md) (paper-digests)
 
 **Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
 

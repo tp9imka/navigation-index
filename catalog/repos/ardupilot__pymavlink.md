@@ -14,6 +14,7 @@ Python MAVLink implementation plus tools for connections, log parsing (DataFlash
 
 ## Deep dives
 
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [ardupilot__pymavlink](../../docs/integration-cards/ardupilot__pymavlink.md) (integration-cards)
 
 **Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)

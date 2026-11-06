@@ -14,6 +14,7 @@ Qt/QML cross-platform GCS (desktop, Android, iOS) for PX4 and ArduPilot: setup, 
 
 ## Deep dives
 
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [mavlink__qgroundcontrol](../../docs/integration-cards/mavlink__qgroundcontrol.md) (integration-cards)
 
 **Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Mission planning and routing](../concepts/mission-planning.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)

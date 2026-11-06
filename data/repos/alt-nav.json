@@ -1100,7 +1100,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "high",
-    "hackathon_notes": "pip install; use SuperPoint+LightGlue between a drone frame and top-k retrieved tiles, then RANSAC homography.",
+    "hackathon_notes": "Not on PyPI: install with `git clone https://github.com/cvg/LightGlue && pip install -e .`, or use the Hugging Face Transformers port. Use SuperPoint+LightGlue between a drone frame and top-k retrieved tiles, then RANSAC homography.",
     "related": [
       {
         "id": "repo:cvg/glue-factory",
@@ -1393,7 +1393,7 @@
     "kind": "repo",
     "name": "tercom_nav (TERCOM + ESKF)",
     "url": "https://github.com/mzahana/tercom_nav",
-    "summary": "ROS 2 package combining TERCOM-style terrain matching with an error-state Kalman filter for UAV navigation.",
+    "summary": "ROS 2 (Humble) package for GPS-denied fixed-wing UAV navigation: a TERCOM node correlates baro + rangefinder terrain profiles against a GeoTIFF DEM and feeds fixes into a 15-state error-state Kalman filter driven by IMU, baro and velocity updates.",
     "why_it_matters": "Bridges batch terrain matching into a recursive filter that a real autopilot stack could consume.",
     "concepts": [
       "concept:terrain-nav",
@@ -1411,7 +1411,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "high",
-    "hackathon_notes": "Good if your team runs ROS 2 with PX4/ArduPilot SITL; pair with a DEM and simulated altimeter.",
+    "hackathon_notes": "Tested against PX4 SITL + Gazebo via MAVROS (no ArduPilot setup documented); colcon build, then launch with a GeoTIFF DEM path and world origin. GPS is used once to initialise the filter. Needs a rangefinder and barometer, real or simulated.",
     "related": [
       {
         "id": "repo:alti3/python-tercom",
@@ -1532,7 +1532,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "high",
-    "hackathon_notes": "Install Julia and run the documented examples on the challenge flight data; compensation + EKF in a day.",
+    "hackathon_notes": "Install Julia, Pkg.add(\"MagNav\") and run the documented examples on the challenge flight data; compensation + EKF in a day. The DAF-MIT project has concluded and the package now gets maintenance-only changes, so do not expect fixes for new issues.",
     "related": [
       {
         "id": "repo:powerbroker2/mammal",
@@ -1553,7 +1553,7 @@
     "kind": "repo",
     "name": "MagNavPy",
     "url": "https://github.com/manasp21/magnav.py",
-    "summary": "Python port of MagNav.jl for magnetic navigation research.",
+    "summary": "Community Python port of MIT's MagNav.jl: loads flight, INS and magnetometer data and magnetic anomaly maps (with upward continuation), runs Tolles-Lawson and neural-network aircraft compensation, and provides an EKF / MagNav filter with CRLB analysis and plotting.",
     "why_it_matters": "Lets Python-only teams use the MagNav workflow without learning Julia.",
     "concepts": [
       "concept:magnetic-nav"
@@ -1568,7 +1568,7 @@
     ],
     "maturity": "research-prototype",
     "hackathon_fit": "high",
-    "hackathon_notes": "Community port; verify outputs against MagNav.jl examples.",
+    "hackathon_notes": "Community port; install from the repo (despite the README badge, magnavpy is not on PyPI) and sort out GDAL first. Verify outputs against MagNav.jl examples.",
     "related": [
       {
         "id": "repo:mit-ai-accelerator/magnav.jl",
@@ -1782,7 +1782,7 @@
     ],
     "maturity": "active-research",
     "hackathon_fit": "high",
-    "hackathon_notes": "Drop-in alternative to tetra3.",
+    "hackathon_notes": "pip install cedar-solve. Keeps tetra3's API but is not quite drop-in: follow the repo's migration notes when porting tetra3 code.",
     "related": [
       {
         "id": "repo:esa/tetra3",

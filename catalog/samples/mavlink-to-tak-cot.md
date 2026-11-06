@@ -4,7 +4,7 @@
 
 Bridges autopilot GLOBAL_POSITION_INT messages into Cursor-on-Target events so a UAV shows up as a friendly track on ATAK, WinTAK or iTAK. A stdlib-only CoT builder with unit tests is paired with a pymavlink + PyTAK bridge that targets a TAK server or Mesh SA multicast.
 
-**Verification:** cot.py and test_cot.py ran with python3.14.7 stdlib on 2026-11-06 (4 tests OK), output shown in README; bridge.py is an unverified sketch: syntax-checked only, requires pymavlink and pytak plus a MAVLink source and TAK endpoint.
+**Verification:** cot.py and 4 unit tests ran with python3.14.7 stdlib on 2026-11-06. bridge.py ran end to end on 2026-11-06 with pymavlink 2.4.50 and pytak 7.6.1 (Python 3.12.14): fake_autopilot.py (pymavlink, UDP) => bridge.py => cot_sink.py received well-formed a-f-A-M-F-Q CoT at ~1 Hz over both tcp:// and udp+wo:// (unicast to localhost). Not verified: a real autopilot or SITL, multicast 239.2.3.1, TLS, a real TAK server or ATAK/WinTAK rendering.
 
 **Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Standards and interface specs](../concepts/standards.md)
 

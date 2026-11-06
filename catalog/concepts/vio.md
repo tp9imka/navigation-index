@@ -10,7 +10,7 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) - Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold.
 
-## Repositories (62)
+## Repositories (65)
 
 - [ArduPilot](../repos/ardupilot__ardupilot.md) - fit: high - GPL autopilot covering Copter, Plane (incl.
 - [PX4 Autopilot](../repos/px4__px4-autopilot.md) - fit: high - Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, built on NuttX with a uORB pub/sub middleware.
@@ -48,11 +48,14 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [NTU VIRAL dataset](../repos/ntu-aris__ntu_viral_dataset.md) - fit: medium - Site repo for NTU VIRAL, an aerial dataset with lidars, cameras, IMU and UWB ranging from a drone.
 - [vision_landing](../repos/goodrobots__vision_landing.md) - fit: medium - Precision landing using visual fiducial targets, sending LANDING_TARGET messages to ArduPilot.
 - [PX4 OpticalFlow](../repos/px4__px4-opticalflow.md) - fit: medium - Algorithms for computing optical flow from a downward camera to produce velocity inputs for a position estimator.
+- [Race Against the Machine dataset](../repos/tii-racing__drone-racing-dataset.md) - fit: medium - Annotated dataset of fast autonomous and human-piloted quadrotor flight with visual, inertial and mocap data plus labelled racing gates, from TII.
 - [MIT VNAV labs](../repos/mit-spark__vnav-labs.md) - fit: medium - Lab assignments for MIT 16.485 Visual Navigation for Autonomous Vehicles: ROS, 3D geometry, trajectory optimization, feature tracking, two-view geometry, VIO and place recognition.
 - [ROVTIO](../repos/ntnu-arl__rovtio.md) - fit: medium - Visual-thermal-inertial odometry extending ROVIO to fuse asynchronous thermal and visual images with IMU, switching to whichever camera is informative.
 - [DEVO](../repos/tum-vision__devo.md) - fit: medium - Deep Event Visual Odometry: learned monocular event-only VO trained on simulated events, generalizing to real benchmarks (3DV 2024).
 - [RRxIO](../repos/christopherdoer__rrxio.md) - fit: medium - Radar visual/thermal inertial odometry fusing 4D mmWave radar with a visual or thermal camera and IMU for degraded visual conditions.
+- [CART - Caltech Aerial RGB-Thermal](../repos/aerorobotics__caltech-aerial-rgbt-dataset.md) - fit: medium - Aerial RGB plus thermal dataset from natural terrain (rivers, coasts, deserts, forests) with GPS and inertial data, plus benchmarks for segmentation, RGB-to-thermal translation and VIO.
 - [GNSS-Denied UAV Geolocalization (terrain-weighted)](../repos/yfs90__gnss-denied-uav-geolocalization.md) - fit: medium - Code and demos for a UAV geolocalization system that combines image matching, visual odometry and a terrain-weighted constraint optimization, intended to work day and night.
+- [SubPipe](../repos/remaro-network__subpipe-dataset.md) - fit: medium - Underwater dataset recorded by a lightweight AUV inspecting a submarine pipeline, with camera, side-scan sonar and navigation data for segmentation and visual-inertial localization.
 - [ESVIO](../repos/arclab-hku__esvio.md) - fit: medium - Event-based stereo visual-inertial odometry combining stereo event and image streams with IMU (RA-L/IROS 2023).
 - [UZH-FPV dataset tools](../repos/uzh-rpg__uzh_fpv_open.md) - fit: medium - Companion repo for the UZH-FPV drone racing dataset with scripts and info.
 - [DISO](../repos/senseroboticslab__diso.md) - fit: medium - Direct imaging sonar odometry: estimates vehicle motion directly from forward-looking imaging sonar frames without feature extraction.
@@ -75,7 +78,7 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [Smart-UAV-Return-GNSS-Station](../repos/citec-spbu__smart-uav-return-gnss-station.md) - fit: low - Student project from SPbU (CITEC) on returning a UAV to its launch point when both GNSS and the ground-station link are lost, targeting a RockPi 4 companion computer.
 - [MIT VNAV lab data](../repos/mit-spark__vnav-lab-data.md) - fit: low - Pointer repo for the ROS bag files used in MIT's Visual Navigation for Autonomous Vehicles course exercises.
 
-## Documents, talks, courses, datasets (52)
+## Documents, talks, courses, datasets (57)
 
 - [14 Lectures on Visual SLAM: From Theory to Practice](../resources/gaoxiang-14-lectures-visual-slam.md) - book - English translation of the popular Chinese visual SLAM textbook, from rigid-body motion and Lie algebra through camera models, nonlinear optimization, feature/direct VO, backend optimization, loop closure and dense mappi
 - [2025 Abu Dhabi Autonomous Racing League (A2RL) - drone championship](../resources/a2rl-2025-season.md) - doc - Summary of the A2RL x DCL autonomous drone championship, won by TU Delft MAVLab ahead of TII Racing and KAIST, including races against human pilots.
@@ -83,14 +86,17 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [AlphaPilot: Autonomous Drone Racing](../resources/alphapilot-uzh-paper.md) - paper - UZH's second-place AlphaPilot system: learned gate detection, nonlinear filtering of visual-inertial state and time-optimal trajectory planning for GPS-free racing.
 - [Auterion Skynode S and Auterion Visual Navigation](../resources/auterion-skynode-visual-navigation.md) - product - Auterion sells PX4-derived AuterionOS plus Skynode flight/mission computers.
 - [Autonomous Navigation for Flying Robots (TUM edX, AUTONAVx)](../resources/tum-autonavx.md) - course - MOOC version of the TUM flying-robots lecture with lecture videos and browser-based Python exercises on quadrotor state estimation, Kalman filtering, control and visual navigation.
+- [CART: Caltech Aerial RGB-Thermal Dataset in the Wild](../resources/cart-caltech-aerial-rgbt-2024.md) - paper - Aerial RGB-thermal dataset over natural US terrain with synchronized GPS and IMU, with benchmarks for thermal segmentation, RGB-to-thermal translation and VIO.
 - [Champion-level drone racing using deep reinforcement learning](../resources/swift-champion-drone-racing-nature.md) - paper - Swift, a quadrotor using only onboard camera and IMU with an RL-trained policy, beat human world-champion pilots in head-to-head races.
 - [cuVSLAM: CUDA accelerated visual odometry and mapping](../resources/cuvslam-2025.md) - paper - Describes NVIDIA's GPU-accelerated VO/SLAM supporting from one to many cameras with optional IMU, designed for real-time edge deployment.
+- [CVAR-UPM Drone Team - A2RL](../resources/cvar-upm-a2rl-team.md) - blog - Team page describing participation in A2RL seasons 1 and 2 using the open Aerostack2 framework, MPCC control and multi-gate visual positioning.
 - [Deep Event Visual Odometry](../resources/devo-deep-event-vo-2023.md) - paper - Learned event-only monocular VO trained on simulated events that generalizes to real event datasets.
 - [Edge-based Monocular Thermal-Inertial Odometry in Visually Degraded Environments](../resources/etio-thermal-inertial-odometry-2022.md) - paper - Thermal-inertial odometry that tracks thermal image edges instead of corner features, targeting darkness and smoke where visible cameras fail.
 - [ERF26 workshop: Innovation and developments in robotic GNSS-denied localisation for inspection & maintenance](../resources/erf26-sintef-gnss-denied-localisation-workshop.md) - talk - European Robotics Forum 2026 workshop (Stavanger) organised by SINTEF on GNSS-denied robot localisation in indoor, offshore, underground and urban-canyon settings, bringing together researchers, vendors and end users.
 - [Event-based Vision: A Survey](../resources/gallego-event-vision-survey-2019.md) - paper - Comprehensive survey of event cameras: sensing principle, algorithms (feature tracking, optical flow, VO/SLAM) and applications.
 - [FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry](../resources/fast-livo2-zheng-2024.md) - paper - Presents an error-state iterated Kalman filter that sequentially fuses LiDAR and image measurements against a shared voxel map, with exposure and plane-prior handling.
 - [Hilti SLAM Challenge](../resources/hilti-slam-challenge.md) - competition - SLAM benchmark challenge with datasets from handheld and robot-mounted multi-sensor rigs in construction sites and buildings, run with an associated ICRA workshop and public leaderboard.
+- [ICRA 2025 workshop: 25 years of aerial robotics - challenges and opportunities](../resources/icra-2025-25-years-aerial-robotics.md) - talk - ICRA 2025 workshop covering aerial perception, navigation and planning.
 - [Intel RealSense T265 / VIO tracking camera setup](../resources/ardupilot-vio-tracking-camera.md) - doc - Setup guide for using a visual-inertial tracking camera via a companion computer as ArduPilot's position source.
 - [Isaac ROS Visual SLAM documentation](../resources/isaac-ros-visual-slam-docs.md) - doc - Docs and quickstarts for NVIDIA's GPU-accelerated stereo visual-inertial odometry and SLAM package for ROS 2 on Jetson, including tutorials with Isaac Sim and RealSense cameras.
 - [Kalibr wiki: camera-IMU calibration tutorials](../resources/kalibr-wiki.md) - doc - Wiki for Kalibr covering multi-camera, camera-IMU and rolling-shutter calibration, target generation and data collection practice.
@@ -99,6 +105,7 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [MIT 16.485 Visual Navigation for Autonomous Vehicles (VNAV)](../resources/mit-vnav-16485.md) - course - MIT graduate course on the math and software of visual navigation: 3D geometry, Lie groups, quadrotor modelling and control, trajectory optimization, feature tracking, two-view geometry, nonlinear optimization, VIO and S
 - [Non-GPS Navigation](../resources/ardupilot-non-gps-navigation-docs.md) - doc - Landing page in the ArduPilot wiki listing every supported way to navigate without GNSS: optical flow, beacons, wheel encoders, visual odometry/VIO cameras, motion capture and MAVLink external position.
 - [Non-GPS Position Estimation (MAVLink messages)](../resources/ardupilot-dev-mavlink-nongps-position.md) - doc - Developer page listing the MAVLink messages ArduPilot accepts for external position/velocity estimates and their expected frames.
+- [On Your Own: Pro-level Autonomous Drone Racing in Uninstrumented Arenas](../resources/tii-pro-level-drone-racing-2025.md) - paper - Autonomous drone racing using only onboard sensing in arenas without motion capture, with released human pilot flight data.
 - [On-Manifold Preintegration for Real-Time Visual-Inertial Odometry](../resources/forster-imu-preintegration.md) - paper - Derives IMU preintegration on the SO(3) manifold with bias-correction Jacobians, enabling IMU factors between keyframes in factor-graph optimization.
 - [OpenVINS documentation](../resources/openvins-docs.md) - doc - Documentation for the OpenVINS MSCKF-based visual-inertial estimator, including derivations of the propagation and update steps, calibration, evaluation tooling and ROS usage.
 - [Optical Flow (PX4)](../resources/px4-optical-flow-docs.md) - doc - Configuring optical flow sensors and range finders for EKF2 velocity aiding in PX4.
@@ -108,7 +115,8 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [ROS and VIO tracking camera for non-GPS navigation](../resources/ardupilot-ros-vio-tracking-camera.md) - doc - Developer tutorial wiring a VIO camera through ROS and MAVROS into ArduPilot for indoor flight.
 - [Shield AI Hivemind autonomy stack](../resources/shield-ai-hivemind.md) - product - Hivemind is Shield AI's onboard autonomy software, flown on its V-BAT and on partner aircraft.
 - [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook.md) - book - Community-written handbook released in three parts during 2024-2025 and published by Cambridge University Press; the free PDF is mirrored on the editors' project page.
-- [Spleenlab VISIONAIRY perception and GNSS-free navigation software](../resources/spleenlab-visionairy.md) - product - German company Spleenlab sells VISIONAIRY, a modular perception suite (VIO, map-based relocalization, EO/IR and LiDAR SLAM) that integrates with PX4/Auterion and ROS; used by Quantum Systems and Blueflite for GNSS-denied
+- [Spleenlab VISIONAIRY perception and GNSS-free navigation software](../resources/spleenlab-visionairy.md) - product - German company Spleenlab sells VISIONAIRY, an AI perception suite for drones (vendor description: VIO, map-based relocalization, EO/IR and LiDAR SLAM) that joined the Auterion ecosystem in 2022 and integrates with PX4/Au
+- [SubPipe: A Submarine Pipeline Inspection Dataset for Segmentation and Visual-inertial Localization](../resources/subpipe-paper-2024.md) - paper - Describes an AUV dataset from a pipeline inspection mission with camera, side-scan sonar and navigation data, with VIO and segmentation baselines.
 - [The EuRoC MAV Dataset](../resources/ethz-euroc-mav-dataset.md) - dataset - Stereo camera and IMU sequences from a micro aerial vehicle in an industrial hall and a Vicon room, with laser-tracker or motion-capture ground truth.
 - [The Multi Vehicle Stereo Event Camera Dataset (MVSEC)](../resources/upenn-mvsec-dataset.md) - dataset - Stereo event cameras with IMU, lidar and ground truth on several platforms including a hexacopter and a car.
 - [The UZH-FPV Drone Racing Dataset](../resources/uzh-fpv-drone-racing-dataset.md) - dataset - High-speed, aggressive FPV drone flights with camera, event camera and IMU data, with a leaderboard and recurring state estimation competitions.

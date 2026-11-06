@@ -11,6 +11,10 @@ Introduces direct registration of raw LiDAR points in an iterated Kalman filter 
 - Raw-point registration generalizes across LiDAR types
 - ikd-Tree enables efficient incremental mapping
 
+## Deep dives
+
+- [fast-lio2-xu-2021](../../docs/paper-digests/fast-lio2-xu-2021.md) (paper-digests)
+
 **Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
 
 **Tags:** `iekf`, `ikd-tree`

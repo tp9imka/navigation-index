@@ -10,6 +10,10 @@ Shows that a simple contrastive setup with careful hard-negative sampling perfor
 
 - Data sampling matters as much as architecture
 
+## Deep dives
+
+- [sample4geo-2023](../../docs/paper-digests/sample4geo-2023.md) (paper-digests)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Place recognition and loop closure](../concepts/place-recognition.md)
 
 **Tags:** `arxiv`

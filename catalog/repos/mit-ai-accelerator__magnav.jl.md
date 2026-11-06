@@ -10,7 +10,7 @@ Julia package from the DAF-MIT AI Accelerator for airborne magnetic anomaly navi
 
 **Why it matters:** Official code behind the AFRL/MIT MagNav challenge; magnetic navigation is a leading GNSS-independent, unjammable PNT approach in DIU and AFRL programs.
 
-**Hackathon notes:** Julia install plus large data download; first run compiles slowly. Start from the example notebooks and the provided flight lines.
+**Hackathon notes:** Install Julia, Pkg.add("MagNav") and run the documented examples on the challenge flight data; compensation + EKF in a day. The DAF-MIT project has concluded and the package now gets maintenance-only changes, so do not expect fixes for new issues.
 
 ## Deep dives
 
@@ -18,6 +18,7 @@ Julia package from the DAF-MIT AI Accelerator for airborne magnetic anomaly navi
 - [mit-ai-accelerator__magnav.jl](../../docs/integration-cards/mit-ai-accelerator__magnav.jl.md) (integration-cards)
 - [afit-magnav-example-data](../../docs/dataset-cards/afit-magnav-example-data.md) (dataset-cards)
 - [magnav-challenge-data](../../docs/dataset-cards/magnav-challenge-data.md) (dataset-cards)
+- [afrl-magnav-challenge-2020](../../docs/paper-digests/afrl-magnav-challenge-2020.md) (paper-digests)
 
 **Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 

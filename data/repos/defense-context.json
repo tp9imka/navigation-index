@@ -656,7 +656,7 @@
     "kind": "repo",
     "name": "drone-mesh-mapper",
     "url": "https://github.com/colonelpanichacks/drone-mesh-mapper",
-    "summary": "ESP32 firmware and tools that sniff Wi-Fi Remote ID and relay detections over Meshtastic LoRa mesh to a mapping host.",
+    "summary": "ESP32 firmware and a Python/Flask mapper that capture Remote ID broadcasts over both BLE and Wi-Fi, relay detections over a Meshtastic LoRa mesh and plot drones and pilots on a live, offline-capable web map.",
     "why_it_matters": "Cheap, distributed, off-grid drone-awareness network - very hackathon friendly hardware.",
     "concepts": [
       "concept:counter-uas",
@@ -799,7 +799,7 @@
     "kind": "repo",
     "name": "MagNavPy",
     "url": "https://github.com/manasp21/magnav.py",
-    "summary": "Python port of MagNav.jl for magnetic navigation research.",
+    "summary": "Community Python port of MIT's MagNav.jl: loads flight, INS and magnetometer data and magnetic anomaly maps (with upward continuation), runs Tolles-Lawson and neural-network aircraft compensation, and provides an EKF / MagNav filter with CRLB analysis and plotting.",
     "why_it_matters": "Lowers the language barrier to the MagNav data and algorithms for Python-heavy teams.",
     "concepts": [
       "concept:magnetic-nav",

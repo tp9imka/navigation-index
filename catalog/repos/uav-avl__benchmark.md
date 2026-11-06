@@ -15,6 +15,7 @@ Benchmark and code for UAV absolute visual localization under low-altitude, mult
 ## Deep dives
 
 - [anyvisloc](../../docs/dataset-cards/anyvisloc.md) (dataset-cards)
+- [anyvisloc-uav-localization-benchmark-2025](../../docs/paper-digests/anyvisloc-uav-localization-benchmark-2025.md) (paper-digests)
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Feature detection and matching](../concepts/feature-matching.md), [Place recognition and loop closure](../concepts/place-recognition.md)
 

@@ -25,17 +25,19 @@ Radar odometry, radar SLAM, radar altimeters, Doppler velocity.
 - [RadarHD](../repos/akarsh-prabhakara__radarhd.md) - fit: low - Learns to generate high-resolution, lidar-like point clouds from low-cost single-chip mmWave radar.
 - [Yeti radar odometry](../repos/keenan-burnett__yeti_radar_odometry.md) - fit: low - Radar odometry for Navtech spinning radar that compensates motion distortion and Doppler effects.
 - [STEAM](../repos/utiasasrl__steam.md) - fit: low - Simultaneous Trajectory Estimation and Mapping engine from UTIAS: a C++ nonlinear least-squares library with continuous-time Gaussian-process trajectory priors on Lie groups.
-- [RINO](../repos/yangsc4063__rino.md) - fit: low - Radar-inertial odometry for scanning radar targeting accuracy and robustness (T-ASE 2025).
+- [RINO](../repos/yangsc4063__rino.md) - fit: low - Non-iterative, adaptively loosely coupled radar-inertial odometry for spinning (scanning) radar, built on the ORORA radar odometry baseline; the radar pose uncertainty from its voting step feeds a Kalman filter (T-ASE 20
 - [Gaussian-RIO](../repos/robotics-upo__gaussian-rio.md) - fit: low - 4D radar-inertial odometry using Gaussian modeling of radar points and multi-hypothesis scan matching.
 - [Open-RadVLAD](../repos/mttgdd__open-radvlad.md) - fit: low - Fast radar place recognition using VLAD-style aggregation over radar polar scans.
 
-## Documents, talks, courses, datasets (7)
+## Documents, talks, courses, datasets (9)
 
 - [4D Millimeter-Wave Radar in Autonomous Driving: A Survey](../resources/han-4d-mmwave-radar-survey-2023.md) - paper - Survey of 4D imaging radar: signal processing, datasets, calibration, perception and SLAM/odometry uses.
 - [CFEAR Radarodometry - Conservative Filtering for Efficient and Accurate Radar Odometry](../resources/cfear-radarodometry-adolfsson-2021.md) - paper - Learning-free spinning-radar odometry that keeps the strongest returns per azimuth, builds oriented surface points and registers against a keyframe history (IROS 2021).
+- [DIAT-uSAT: micro-Doppler Signature Dataset of Small Unmanned Aerial Vehicle (SUAV)](../resources/diat-musat-micro-doppler-dataset.md) - dataset - X-band continuous-wave radar micro-Doppler signature images of small UAV-like targets including quadcopter, fixed-wing RC plane, rotors and a bionic bird.
 - [From Sea to Space: Advancing Perception in Harsh Domains (ICRA 2026 workshop)](../resources/icra-2026-sea-to-space-perception-workshop.md) - talk - ICRA 2026 (Vienna) workshop on perception for underwater, space and terrestrial field robots, including localization and mapping in degraded sensing, GPS-denied global localization, novel sensors (sonar, radar, thermal, 
 - [Honeywell HGuide o480 single-card INS and HGuide i700 IMU](../resources/honeywell-hguide-o480.md) - product - HGuide o480 (May 2025) is a single-card INS for small UAVs and ground robots that accepts velocity aiding (e.g.
 - [MulRan: Multimodal Range Dataset for Urban Place Recognition](../resources/snu-mulran-dataset.md) - dataset - Urban sequences with radar and lidar for range-sensor place recognition and odometry.
 - [Oxford Radar RobotCar Dataset](../resources/oxford-radar-robotcar-dataset.md) - dataset - RobotCar route re-driven with a scanning FMCW radar plus lidars and cameras, for radar odometry and localization.
+- [Pohang Canal Dataset: A Multimodal Maritime Dataset for Autonomous Navigation in Restricted Waters](../resources/pohang-canal-dataset-2023.md) - dataset - Multimodal maritime dataset from a 7.5 km route through a narrow canal, port areas and near-coast waters, with LiDARs, marine radar, stereo, infrared and omnidirectional cameras, AHRS and RTK GPS.
 - [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook.md) - book - Community-written handbook released in three parts during 2024-2025 and published by Cambridge University Press; the free PDF is mirrored on the editors' project page.
 

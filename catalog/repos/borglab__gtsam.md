@@ -16,6 +16,9 @@ Georgia Tech factor-graph library for smoothing and mapping, with incremental so
 
 - [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
 - [borglab__gtsam](../../docs/integration-cards/borglab__gtsam.md) (integration-cards)
+- [dellaert-kaess-factor-graphs-robot-perception](../../docs/paper-digests/dellaert-kaess-factor-graphs-robot-perception.md) (paper-digests)
+- [forster-imu-preintegration](../../docs/paper-digests/forster-imu-preintegration.md) (paper-digests)
+- [kaess-isam2](../../docs/paper-digests/kaess-isam2.md) (paper-digests)
 
 **Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [GNSS/INS integration](../concepts/gnss-ins.md), [Visual SLAM](../concepts/visual-slam.md)
 

@@ -8,7 +8,7 @@ In May 2023 the Air Force and MIT flew a real-time MagNav demo on a C-17A during
 
 ## Key takeaways
 
-- Reported accuracy about 1 km - far from GNSS, but independent of RF
+- No accuracy figure is public: the linked article and the official releases defer it to a government technical report. The value shown is RF independence
 - Public dataset and Julia/Python code make this the most reproducible alt-PNT track for a hackathon
 
 ## Deep dives

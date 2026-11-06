@@ -15,6 +15,10 @@ Defines Open Service Navigation Message Authentication: how TESLA-chain MACs and
 - Receivers need loose time synchronization to verify TESLA keys
 - Defines what an authenticated vs unauthenticated navigation message means
 
+## Deep dives
+
+- [galileo-osnma](../../docs/paper-digests/galileo-osnma.md) (paper-digests)
+
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [Jamming and spoofing](../concepts/gnss-interference.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Standards and interface specs](../concepts/standards.md)
 
 **Tags:** `osnma`, `galileo`, `authentication`, `anti-spoofing`, `tesla`

@@ -10,7 +10,7 @@ Actively maintained fork of tetra3 with speed and robustness improvements, used 
 
 **Why it matters:** More maintained than upstream tetra3 for new work.
 
-**Hackathon notes:** Drop-in alternative to tetra3.
+**Hackathon notes:** pip install cedar-solve. Keeps tetra3's API but is not quite drop-in: follow the repo's migration notes when porting tetra3 code.
 
 **Concepts:** [Celestial and star-tracker navigation](../concepts/celestial-nav.md)
 

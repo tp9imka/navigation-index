@@ -8,7 +8,7 @@ US startup whose founders started at the February 2024 El Segundo Defense Tech H
 
 ## Key takeaways
 
-- Vendor claims: integration under 30 minutes; six months from hackathon to a SOCOM sale
+- Vendor claims: six months from hackathon to a SOCOM sale (YC launch post); integration under 30 minutes (company statement relayed by press)
 - Direct precedent that a hackathon visual-nav demo can become a product - and that judges have seen this pitch
 
 ## Deep dives

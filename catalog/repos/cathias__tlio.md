@@ -12,6 +12,10 @@ Tight Learned Inertial Odometry: a network regresses displacement and uncertaint
 
 **Hackathon notes:** Training data is head-mounted; expect domain gap on other platforms.
 
+## Deep dives
+
+- [tlio-paper](../../docs/paper-digests/tlio-paper.md) (paper-digests)
+
 **Concepts:** [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 
 **Tags:** `learned-inertial`, `ekf`, `pytorch`

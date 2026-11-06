@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 9 | Python | ? | 2026-01-15 | False | research-prototype | high |
 
-Python port of MagNav.jl for magnetic navigation research.
+Community Python port of MIT's MagNav.jl: loads flight, INS and magnetometer data and magnetic anomaly maps (with upward continuation), runs Tolles-Lawson and neural-network aircraft compensation, and provides an EKF / MagNav filter with CRLB analysis and plotting.
 
 **Why it matters:** Lowers the language barrier to the MagNav data and algorithms for Python-heavy teams.
 
-**Hackathon notes:** Young community port; verify results against MagNav.jl outputs before trusting.
+**Hackathon notes:** Community port; install from the repo (despite the README badge, magnavpy is not on PyPI) and sort out GDAL first. Verify outputs against MagNav.jl examples.
 
 **Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
 

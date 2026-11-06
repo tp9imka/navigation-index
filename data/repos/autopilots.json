@@ -736,7 +736,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "high",
-    "hackathon_notes": "Use MAVSDK-Python for hackathon speed; mavsdk_server is bundled.",
+    "hackathon_notes": "For hackathon speed use the Python binding: since MAVSDK v4, `pip install mavsdk` installs a native binding built in this repo (sync API in `mavsdk`, asyncio in `mavsdk.asyncio`), with no mavsdk_server process. The older gRPC-based MAVSDK-Python with a bundled mavsdk_server lives on as `mavsdk-grpc`.",
     "related": [
       {
         "id": "repo:mavlink/mavsdk-python",
@@ -1445,7 +1445,7 @@
     ],
     "maturity": "educational",
     "hackathon_fit": "high",
-    "hackathon_notes": "Runs against PX4 SITL in about an hour.",
+    "hackathon_notes": "Runs against PX4 SITL in about an hour (README pins PX4 release/1.15, ROS 2 Humble, Ubuntu 22.04). The README says the tutorial has moved to ARK-Electronics/ros2_px4_teleop_example (C++, PX4 custom modes); use that for current PX4.",
     "related": [
       {
         "id": "repo:px4/px4_msgs",

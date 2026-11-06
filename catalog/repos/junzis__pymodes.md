@@ -10,7 +10,7 @@ Python decoder for Mode S and ADS-B messages including Comm-B / EHS fields, with
 
 **Why it matters:** Decode raw Mode S yourself, including derived wind and airspeed data; underlies The 1090MHz Riddle book.
 
-**Hackathon notes:** pip install pyModeS; pairs with a Beast/raw feed from readsb.
+**Hackathon notes:** pip install pyModeS now installs the v3 rewrite (Python 3.11+): a single decode() call plus a stateful PipeDecoder for streams, and a modes CLI. Older tutorials and The 1090MHz Riddle use the v2 pms.adsb.* API; pin pyModeS<3 to follow them. Pairs with a Beast/raw feed from readsb.
 
 **Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Standards and interface specs](../concepts/standards.md)
 

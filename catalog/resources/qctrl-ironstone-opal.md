@@ -8,8 +8,8 @@ Q-CTRL's navigation product pairs quantum magnetometers with its software to mat
 
 ## Key takeaways
 
-- Vendor claims (not independent): met RNP 0.3 in flight; positioning error up to tens of times lower than a velocity-aided INS in an April 2025 flight; different multipliers appear in different Q-CTRL materials
-- Vendor claim: DO-160 qualification
+- Vendor claims (not independent): RNP 0.3 met in flight (error under 0.3 nm for 95% of a flight); the linked case study claims 50x lower positioning uncertainty than an INS over a ~500 km flight and at least 11x with the sensor inside the cabin; other Q-CTRL materials give different multipliers
+- Vendor claim: RTCA DO-160 environmental qualification - not an airworthiness or RNP operational approval
 - Underlying method is the same map-matching problem as the open AFRL/MIT MagNav challenge
 
 ## Deep dives

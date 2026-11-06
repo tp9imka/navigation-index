@@ -23,4 +23,8 @@ Three days of recorded ArduPilot developer talks; navigation-relevant sessions i
 - uses: [ArduPilot](../repos/ardupilot__ardupilot.md)
 - part_of: [Non-GPS Navigation](../resources/ardupilot-non-gps-navigation-docs.md)
 
+## Referenced by
+
+- [ArduPilot DevCon 2026 (Ottawa) programme](../resources/ardupilot-devcon-2026-ottawa.md) (same_author)
+
 _Indexed by lane(s): autopilots, learning_

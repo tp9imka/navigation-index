@@ -14,6 +14,7 @@ Introduces a dataset of real UAV flight images paired with satellite maps over v
 ## Deep dives
 
 - [uav-visloc](../../docs/dataset-cards/uav-visloc.md) (dataset-cards)
+- [uav-visloc-dataset-2024](../../docs/paper-digests/uav-visloc-dataset-2024.md) (paper-digests)
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 

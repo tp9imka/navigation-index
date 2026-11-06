@@ -31,6 +31,7 @@ Official repository of the Anti-UAV challenge and benchmark for detecting and tr
 
 - [UAV Detection and Tracking Benchmark](../repos/kostadinovshalon__uavdetectiontrackingbenchmark.md) (evaluated_on)
 - [Ultralytics YOLO](../repos/ultralytics__ultralytics.md) (evaluated_on)
+- [Drone-vs-Bird Detection Challenge](../repos/wosdetc__challenge.md) (alternative_to)
 - [Anti-UAV: A Large Multi-Modal Benchmark for UAV Tracking](../resources/anti-uav-benchmark-paper.md) (has_code)
 - [Anti-UAV Challenge](../resources/anti-uav-challenge-site.md) (uses)
 

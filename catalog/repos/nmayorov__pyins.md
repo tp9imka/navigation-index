@@ -10,7 +10,7 @@ Python package for modelling and analysing inertial navigation systems: strapdow
 
 **Why it matters:** Pure-Python INS/GNSS playground for quick outage and sensor-grade studies.
 
-**Hackathon notes:** pip-installable with docs on readthedocs. Good for scripted what-if plots (tactical vs MEMS IMU drift).
+**Hackathon notes:** pip install python-ins (the PyPI name; import as pyins), pure Python with numba; docs on readthedocs. Good for scripted what-if plots (tactical vs MEMS IMU drift).
 
 **Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [GNSS/INS integration](../concepts/gnss-ins.md), [Simulation and HIL/SITL](../concepts/simulation.md)
 

@@ -16,6 +16,7 @@ Visual, visual-inertial and multi-map SLAM supporting monocular, stereo and RGB-
 
 - [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
 - [uz-slamlab__orb_slam3](../../docs/integration-cards/uz-slamlab__orb_slam3.md) (integration-cards)
+- [orb-slam3-campos-2020](../../docs/paper-digests/orb-slam3-campos-2020.md) (paper-digests)
 
 **Concepts:** [Visual SLAM](../concepts/visual-slam.md), [Visual(-inertial) odometry](../concepts/vio.md), [Place recognition and loop closure](../concepts/place-recognition.md)
 

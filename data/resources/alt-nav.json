@@ -491,7 +491,7 @@
       "Marcin Dymczyk"
     ],
     "year": 2018,
-    "summary": "Foundational paper for hierarchical localization: global retrieval to find candidate places, then local matching for precise pose.",
+    "summary": "The HF-Net paper and foundation of hloc: global retrieval to find candidate places, then local matching for precise pose.",
     "key_takeaways": [
       "Retrieve-then-match is the scalable pattern"
     ],

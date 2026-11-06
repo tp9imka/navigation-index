@@ -1,0 +1,1444 @@
+[
+ {
+  "id": "repo:uml-marine-robotics/massmind",
+  "kind": "repo",
+  "name": "MassMIND",
+  "url": "https://github.com/uml-marine-robotics/MassMIND",
+  "summary": "Long-wave infrared image dataset of a harbour environment with semantic and instance segmentation masks for maritime scene understanding.",
+  "why_it_matters": "Thermal perception is what keeps an autonomous surface vessel aware of obstacles at night and in haze, when RGB fails.",
+  "concepts": [
+   "concept:datasets-benchmarks",
+   "concept:maritime-nav",
+   "concept:situational-awareness"
+  ],
+  "tags": [
+   "lwir",
+   "thermal",
+   "segmentation",
+   "usv"
+  ],
+  "language": "",
+  "domains": [
+   "maritime"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Download from the Google Drive links in the README; small enough to fine-tune a segmentation net in a few hours.",
+  "related": [
+   {
+    "id": "repo:lojzezust/lars_evaluator",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:lojzezust/lars_evaluator",
+  "kind": "repo",
+  "name": "LaRS evaluator",
+  "url": "https://github.com/lojzezust/LaRS_evaluator",
+  "summary": "Evaluation scripts for LaRS, a panoptic maritime obstacle detection benchmark spanning lakes, rivers and seas.",
+  "why_it_matters": "Gives a standard scoring harness for USV obstacle detection so a team can compare its model against published baselines.",
+  "concepts": [
+   "concept:datasets-benchmarks",
+   "concept:maritime-nav",
+   "concept:obstacle-avoidance"
+  ],
+  "tags": [
+   "lars",
+   "panoptic",
+   "usv",
+   "benchmark"
+  ],
+  "language": "Python",
+  "domains": [
+   "maritime"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Pair with the LaRS dataset from the project page; use the evaluator to score a YOLO/segmentation baseline.",
+  "related": [
+   {
+    "id": "repo:uml-marine-robotics/massmind",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:remaro-network/subpipe-dataset",
+  "kind": "repo",
+  "name": "SubPipe",
+  "url": "https://github.com/remaro-network/SubPipe-dataset",
+  "summary": "Underwater dataset recorded by a lightweight AUV inspecting a submarine pipeline, with camera, side-scan sonar and navigation data for segmentation and visual-inertial localization.",
+  "why_it_matters": "One of few open AUV datasets with ground-truth trajectories, useful for testing underwater VIO where GNSS never reaches.",
+  "concepts": [
+   "concept:datasets-benchmarks",
+   "concept:underwater-nav",
+   "concept:vio"
+  ],
+  "tags": [
+   "auv",
+   "pipeline",
+   "side-scan-sonar",
+   "vio"
+  ],
+  "language": "",
+  "domains": [
+   "underwater"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Large download; start with one sequence and run an off-the-shelf VIO to show drift underwater.",
+  "related": []
+ },
+ {
+  "id": "repo:aerorobotics/caltech-aerial-rgbt-dataset",
+  "kind": "repo",
+  "name": "CART - Caltech Aerial RGB-Thermal",
+  "url": "https://github.com/aerorobotics/caltech-aerial-rgbt-dataset",
+  "summary": "Aerial RGB plus thermal dataset from natural terrain (rivers, coasts, deserts, forests) with GPS and inertial data, plus benchmarks for segmentation, RGB-to-thermal translation and VIO.",
+  "why_it_matters": "Thermal-aerial data with GPS/IMU is rare; it supports night-time visual and thermal navigation research without flying your own sensor rig.",
+  "concepts": [
+   "concept:datasets-benchmarks",
+   "concept:vio",
+   "concept:visual-geolocalization"
+  ],
+  "tags": [
+   "thermal",
+   "rgbt",
+   "aerial",
+   "caltech"
+  ],
+  "language": "",
+  "domains": [
+   "air"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Use the VIO split to test thermal-inertial odometry; or train RGB-to-thermal translation to build synthetic thermal maps.",
+  "related": [
+   {
+    "id": "repo:arplaboratory/satellite-thermal-geo-localization",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:wosdetc/challenge",
+  "kind": "repo",
+  "name": "Drone-vs-Bird Detection Challenge",
+  "url": "https://github.com/wosdetc/challenge",
+  "summary": "Repository of the long-running Drone-vs-Bird challenge: annotations and instructions for a video dataset of small drones with birds as distractors.",
+  "why_it_matters": "Telling a distant drone from a bird is the core false-alarm problem in camera-based C-UAS; this is the reference benchmark.",
+  "concepts": [
+   "concept:datasets-benchmarks",
+   "concept:counter-uas",
+   "concept:target-tracking"
+  ],
+  "tags": [
+   "drone-vs-bird",
+   "video",
+   "detection",
+   "c-uas"
+  ],
+  "language": "",
+  "domains": [
+   "air"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Request the videos per README, train a small-object YOLO; the hard part is tiny targets, so tile the frames.",
+  "related": [
+   {
+    "id": "repo:zhaoj9014/anti-uav",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:dronedetectionthesis/drone-detection-dataset",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:saraalemadi/droneaudiodataset",
+  "kind": "repo",
+  "name": "DroneAudioDataset",
+  "url": "https://github.com/saraalemadi/DroneAudioDataset",
+  "summary": "Indoor recordings of drone propeller noise augmented with noise clips, organised for binary and multiclass audio drone detection.",
+  "why_it_matters": "A common baseline audio set for acoustic drone detection. Note: its licence explicitly forbids military/defence use, so check fit before building on it.",
+  "concepts": [
+   "concept:datasets-benchmarks",
+   "concept:counter-uas"
+  ],
+  "tags": [
+   "acoustic",
+   "audio",
+   "drone-detection"
+  ],
+  "language": "",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Licence restricts defence-related use - use for learning only or pick another acoustic set.",
+  "related": [
+   {
+    "id": "repo:batear-io/batear-datasets",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:dronedetectionthesis/drone-detection-dataset",
+  "kind": "repo",
+  "name": "Drone detection dataset (IR, visible, audio)",
+  "url": "https://github.com/DroneDetectionThesis/Drone-detection-dataset",
+  "summary": "Multi-sensor dataset with infrared and visible video plus audio clips of drones, birds, airplanes and helicopters, from a Swedish thesis project.",
+  "why_it_matters": "Lets a team prototype sensor fusion for C-UAS (thermal + RGB + audio) on one consistent set of targets and distractors.",
+  "concepts": [
+   "concept:datasets-benchmarks",
+   "concept:counter-uas",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "infrared",
+   "audio",
+   "multi-sensor",
+   "c-uas"
+  ],
+  "language": "",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Ready to download; good for a fused IR+audio classifier demo in a weekend.",
+  "related": [
+   {
+    "id": "repo:wosdetc/challenge",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:tesorrells/rf-drone-detection",
+  "kind": "repo",
+  "name": "RF-Drone-Detection (Georgia Tech)",
+  "url": "https://github.com/tesorrells/RF-Drone-Detection",
+  "summary": "Student project building a passive RF drone detector for a campus police department, with Wi-Fi monitoring scripts and visualization tools.",
+  "why_it_matters": "Shows a cheap passive RF detection path for drones that use Wi-Fi links.",
+  "concepts": [
+   "concept:counter-uas",
+   "concept:rf-localization"
+  ],
+  "tags": [
+   "passive-rf",
+   "wifi",
+   "drone-detection"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Needs a monitor-mode Wi-Fi adapter; works only on Wi-Fi-controlled drones, not proprietary links.",
+  "related": [
+   {
+    "id": "repo:al-sad/dronerf",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:sgluege/noisy-drone-rf-signal-classification",
+  "kind": "repo",
+  "name": "Noisy Drone RF Signal Classification",
+  "url": "https://github.com/sgluege/Noisy-Drone-RF-Signal-Classification",
+  "summary": "Loader and inspection scripts for a drone RF classification benchmark hosted on Kaggle, with samples across a range of SNRs.",
+  "why_it_matters": "SNR-labelled RF samples let you measure how a drone RF classifier degrades with distance and noise.",
+  "concepts": [
+   "concept:datasets-benchmarks",
+   "concept:counter-uas"
+  ],
+  "tags": [
+   "rf",
+   "snr",
+   "classification",
+   "kaggle"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Download from Kaggle, load with the provided PyTorch dataloader, train a small CNN in an hour.",
+  "related": [
+   {
+    "id": "repo:kitoweeknd/rfuav",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:al-sad/dronerf",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:codymq/rfclassification",
+  "kind": "repo",
+  "name": "RFClassification",
+  "url": "https://github.com/CodyMQ/RFClassification",
+  "summary": "Notebooks that classify drone presence and type from RF using DroneRF and DroneDetect data (PSD+SVM and CNN approaches), aiming at real-time use with GamutRF hardware.",
+  "why_it_matters": "Ready-made baselines on the two most-cited public drone RF datasets.",
+  "concepts": [
+   "concept:counter-uas",
+   "concept:edge-ai"
+  ],
+  "tags": [
+   "dronerf",
+   "dronedetect",
+   "svm",
+   "cnn"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Fastest path to a working RF drone classifier; includes a Raspberry Pi test script.",
+  "related": [
+   {
+    "id": "repo:al-sad/dronerf",
+    "rel": "depends_on"
+   }
+  ]
+ },
+ {
+  "id": "repo:kalit31/drone-detection-and-identification-using-rf-signals",
+  "kind": "repo",
+  "name": "Drone Detection and Identification using RF signals",
+  "url": "https://github.com/Kalit31/Drone-Detection-and-Identification-using-RF-signals",
+  "summary": "Code for an ML framework for drone detection and identification from RF signals.",
+  "why_it_matters": "Another reproducible baseline on public drone RF data to compare against.",
+  "concepts": [
+   "concept:counter-uas"
+  ],
+  "tags": [
+   "rf",
+   "ml",
+   "dronerf"
+  ],
+  "language": "Jupyter Notebook",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Notebook-based; pair with DroneRF data.",
+  "related": [
+   {
+    "id": "repo:al-sad/dronerf",
+    "rel": "depends_on"
+   }
+  ]
+ },
+ {
+  "id": "repo:saraalemadi/cnn_for_drone_detection_and_identification_using_rf",
+  "kind": "repo",
+  "name": "CNN for drone detection using RF",
+  "url": "https://github.com/saraalemadi/CNN_for_drone_detection_and_identification_using_RF",
+  "summary": "CNN code for drone detection and identification on RF spectra.",
+  "why_it_matters": "Simple CNN baseline for RF drone ID.",
+  "concepts": [
+   "concept:counter-uas"
+  ],
+  "tags": [
+   "rf",
+   "cnn"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Older code (2020); use as reference only.",
+  "related": [
+   {
+    "id": "repo:al-sad/dronerf",
+    "rel": "depends_on"
+   }
+  ]
+ },
+ {
+  "id": "repo:alicmu2024/gnss-jamming-detection-and-classification-using-machine-learning-deep-learning-and-computer-vision",
+  "kind": "repo",
+  "name": "GNSS jamming/spoofing classification notebooks",
+  "url": "https://github.com/alicmu2024/GNSS-Jamming-Detection-and-Classification-using-Machine-Learning-Deep-Learning-and-Computer-Vision",
+  "summary": "Colab notebooks that classify GNSS jamming types from spectrogram images built from a public raw-IQ jamming dataset, with ML, DL and CV approaches; companion to an arXiv paper.",
+  "why_it_matters": "Turnkey starting point for a jamming-type classifier using open data.",
+  "concepts": [
+   "concept:gnss-interference",
+   "concept:ew-resilience",
+   "concept:edge-ai"
+  ],
+  "tags": [
+   "jamming",
+   "spectrogram",
+   "colab",
+   "iq"
+  ],
+  "language": "Jupyter Notebook",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Open in Colab, download the Zenodo IQ set, and you have a classifier in an hour.",
+  "related": []
+ },
+ {
+  "id": "repo:helsinki-sda-group/towards-jammer-fingerprinting",
+  "kind": "repo",
+  "name": "Towards Jammer Fingerprinting",
+  "url": "https://github.com/helsinki-sda-group/Towards-Jammer-Fingerprinting",
+  "summary": "LSTM (Bayesian and standard) classifiers that identify individual jammers from IQ recordings, from an ICL-GNSS 2024 paper on how environment and receiver affect classification.",
+  "why_it_matters": "Fingerprinting which jammer is present is a step toward attribution and targeted mitigation.",
+  "concepts": [
+   "concept:gnss-interference",
+   "concept:ew-resilience"
+  ],
+  "tags": [
+   "jammer",
+   "fingerprinting",
+   "lstm",
+   "iq"
+  ],
+  "language": "Python",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Needs your own IQ recordings in the expected file layout; reuse the model code on Jammertest data.",
+  "related": [
+   {
+    "id": "repo:felixott94/fraunhoferiis_jammertest2025",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:zephr-xyz/sentinel1-rfi-detection",
+  "kind": "repo",
+  "name": "Sentinel-1 RFI detection",
+  "url": "https://github.com/zephr-xyz/sentinel1-rfi-detection",
+  "summary": "Pipeline that detects radio-frequency interference in Sentinel-1 SAR imagery using temporal z-scores and DEM masking, to map GNSS jamming activity from orbit.",
+  "why_it_matters": "Free satellite data as a wide-area jamming sensor - complements ADS-B based maps.",
+  "concepts": [
+   "concept:gnss-interference",
+   "concept:situational-awareness",
+   "concept:gis-mapping"
+  ],
+  "tags": [
+   "sentinel-1",
+   "sar",
+   "rfi",
+   "osint"
+  ],
+  "language": "Python",
+  "domains": [
+   "space",
+   "multi"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Pull Sentinel-1 scenes for a region and produce a jamming heatmap; good OSINT-style demo.",
+  "related": []
+ },
+ {
+  "id": "repo:z0rlord/foxhunt",
+  "kind": "repo",
+  "name": "foxhunt",
+  "url": "https://github.com/Z0rlord/foxhunt",
+  "summary": "Receive-only GNSS interference detection with radio direction finding and triangulation on Raspberry Pi and RTL-SDR.",
+  "why_it_matters": "Low-cost jammer localization is a practical defensive EW capability.",
+  "concepts": [
+   "concept:gnss-interference",
+   "concept:rf-localization"
+  ],
+  "tags": [
+   "rtl-sdr",
+   "rdf",
+   "raspberry-pi",
+   "jammer-localization"
+  ],
+  "language": "Python",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Cheap hardware; multiple nodes needed for triangulation. Receive-only, so legal to test.",
+  "related": []
+ },
+ {
+  "id": "repo:miluta7/geoveil-cn0",
+  "kind": "repo",
+  "name": "geoveil-cn0",
+  "url": "https://github.com/miluta7/geoveil-cn0",
+  "summary": "Rust library with Python API that scores GNSS signal quality via C/N0 and flags jamming, spoofing and interference across constellations.",
+  "why_it_matters": "Drop-in signal-quality monitor for a navigation stack.",
+  "concepts": [
+   "concept:gnss-interference",
+   "concept:gnss"
+  ],
+  "tags": [
+   "cn0",
+   "rust",
+   "python",
+   "monitoring"
+  ],
+  "language": "Rust",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Feed it receiver observables; good as an integrity-monitor component.",
+  "related": []
+ },
+ {
+  "id": "repo:sobu-labs/gnss-multiple-jammers-dataset",
+  "kind": "repo",
+  "name": "GNSS multiple jammers dataset",
+  "url": "https://github.com/sobu-labs/gnss-multiple-jammers-dataset",
+  "summary": "Recordings of several simultaneous chirp jammers on GPS L1, captured in isolation, for studying notch-filter (ANF) mitigation.",
+  "why_it_matters": "Multi-jammer data is rare; useful for testing mitigation filters.",
+  "concepts": [
+   "concept:gnss-interference",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "chirp",
+   "l1",
+   "anf",
+   "dataset"
+  ],
+  "language": "",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Use to test an adaptive notch filter in GNU Radio or Python.",
+  "related": []
+ },
+ {
+  "id": "repo:fahadwebd/machine-learning-based-gnss-jamming-detection-on-antartica-dataset",
+  "kind": "repo",
+  "name": "GNSS jamming detection on maritime Antarctica dataset",
+  "url": "https://github.com/FahadwebD/Machine-Learning-Based-GNSS-Jamming-Detection-On-Antartica-Dataset",
+  "summary": "Thesis code for ML jamming detection and temporal generalisation using real maritime receiver diagnostics (u-blox MON-RF, MON-SPAN, RXM-MEASX) from a public Antarctica voyage dataset.",
+  "why_it_matters": "Uses receiver-reported diagnostics a cheap u-blox already exposes, so it transfers to real hardware.",
+  "concepts": [
+   "concept:gnss-interference",
+   "concept:maritime-nav"
+  ],
+  "tags": [
+   "u-blox",
+   "maritime",
+   "jamming-detection"
+  ],
+  "language": "Python",
+  "domains": [
+   "maritime"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Reproduce on your own u-blox logs by enabling the same UBX messages.",
+  "related": []
+ },
+ {
+  "id": "repo:navsecurity/p-d-defense",
+  "kind": "repo",
+  "name": "P-D defense",
+  "url": "https://github.com/navSecurity/P-D-defense",
+  "summary": "MATLAB implementation of the power-distortion detector for GNSS spoofing and jamming.",
+  "why_it_matters": "Classic signal-level spoofing detector from the Humphreys line of work.",
+  "concepts": [
+   "concept:gnss-interference"
+  ],
+  "tags": [
+   "spoofing",
+   "power-distortion",
+   "matlab"
+  ],
+  "language": "MATLAB",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Inactive since 2020; read alongside the TEXBAT data.",
+  "related": []
+ },
+ {
+  "id": "repo:fabianr-su/stanford-gnss-spoof-detection",
+  "kind": "repo",
+  "name": "Stanford GNSS spoof detection",
+  "url": "https://github.com/fabianr-su/stanford-gnss-spoof-detection",
+  "summary": "Public code and simulations for spoof detection algorithms supporting Stanford GPS Lab publications.",
+  "why_it_matters": "Reference implementations of spoofing detection tests.",
+  "concepts": [
+   "concept:gnss-interference"
+  ],
+  "tags": [
+   "spoofing",
+   "stanford",
+   "matlab"
+  ],
+  "language": "MATLAB",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Old MATLAB; useful for algorithm reference.",
+  "related": []
+ },
+ {
+  "id": "repo:josephtule/gps-spoofing-detect",
+  "kind": "repo",
+  "name": "GPS-Spoofing-Detect",
+  "url": "https://github.com/josephtule/GPS-Spoofing-Detect",
+  "summary": "MATLAB project exploring GNSS spoofing detection methods.",
+  "why_it_matters": "Small educational example.",
+  "concepts": [
+   "concept:gnss-interference"
+  ],
+  "tags": [
+   "spoofing",
+   "matlab"
+  ],
+  "language": "MATLAB",
+  "domains": [
+   "multi"
+  ],
+  "maturity": "educational",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Reference only.",
+  "related": []
+ },
+ {
+  "id": "repo:nrc-cnrc/cuas-sensing-dataset",
+  "kind": "repo",
+  "name": "NRC UAV vs bird radar tracks",
+  "url": "https://github.com/nrc-cnrc/CUAS-sensing-dataset",
+  "summary": "Labelled real-world radar tracks of small UAVs, birds, humans and vehicles from an Echodyne EchoGuard radar over several Canadian field trials.",
+  "why_it_matters": "Radar track classification (drone vs bird) is central to C-UAS beyond micro-Doppler range; open labelled radar data is scarce.",
+  "concepts": [
+   "concept:datasets-benchmarks",
+   "concept:counter-uas",
+   "concept:target-tracking"
+  ],
+  "tags": [
+   "radar",
+   "tracks",
+   "echodyne",
+   "drone-vs-bird"
+  ],
+  "language": "",
+  "domains": [
+   "air"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Train a kinematic-feature classifier on the tracks; no RF hardware needed.",
+  "related": [
+   {
+    "id": "repo:wosdetc/challenge",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:chance1911/mmc-uav-dataset",
+  "kind": "repo",
+  "name": "MMC-UAV dataset",
+  "url": "https://github.com/Chance1911/MMC-UAV-Dataset",
+  "summary": "Multimodal low-altitude anti-drone dataset combining RGB, infrared, active radar and passive RF.",
+  "why_it_matters": "Rare dataset with all four C-UAS sensor modalities.",
+  "concepts": [
+   "concept:datasets-benchmarks",
+   "concept:counter-uas",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "multimodal",
+   "radar",
+   "rf",
+   "infrared"
+  ],
+  "language": "",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Check access instructions; data availability may be partial.",
+  "related": [
+   {
+    "id": "repo:dronedetectionthesis/drone-detection-dataset",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:lcav/audio-localization-dataset",
+  "kind": "repo",
+  "name": "Audio localization dataset (Crazyflie)",
+  "url": "https://github.com/LCAV/audio-localization-dataset",
+  "summary": "Datasets for acoustic echolocation and sound-source localization recorded on a Crazyflie drone and an e-puck robot.",
+  "why_it_matters": "Shows acoustic sensing as a localization modality on micro drones.",
+  "concepts": [
+   "concept:datasets-benchmarks",
+   "concept:indoor-pedestrian"
+  ],
+  "tags": [
+   "acoustic",
+   "crazyflie",
+   "echolocation"
+  ],
+  "language": "Python",
+  "domains": [
+   "air",
+   "ground"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Niche; useful if exploring acoustic self-localization.",
+  "related": []
+ },
+ {
+  "id": "repo:batear-io/batear-datasets",
+  "kind": "repo",
+  "name": "Batear datasets",
+  "url": "https://github.com/batear-io/batear-datasets",
+  "summary": "Acoustic datasets for drone detection on embedded devices such as ESP32-S3, including bio-acoustic interference samples.",
+  "why_it_matters": "Targets low-cost acoustic sensor nodes - the cheapest C-UAS tripwire.",
+  "concepts": [
+   "concept:datasets-benchmarks",
+   "concept:counter-uas",
+   "concept:edge-ai"
+  ],
+  "tags": [
+   "acoustic",
+   "esp32",
+   "embedded"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Pair with the Batear firmware for a microcontroller acoustic sensor demo.",
+  "related": [
+   {
+    "id": "repo:batear-io/batear",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:remete618/drone-acoustic-detection",
+  "kind": "repo",
+  "name": "drone-acoustic-detection",
+  "url": "https://github.com/remete618/drone-acoustic-detection",
+  "summary": "Open field-test toolkit for acoustic and radar detection of low-signature drones on COTS hardware, aiming at FPV detection baselines.",
+  "why_it_matters": "FPV-class detection baselines are missing in literature; this gives a reproducible method.",
+  "concepts": [
+   "concept:counter-uas",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "acoustic",
+   "radar",
+   "fpv",
+   "cots"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Follow the field protocol to measure your own detection ranges.",
+  "related": []
+ },
+ {
+  "id": "repo:yux1angji/gta-uav",
+  "kind": "repo",
+  "name": "Game4Loc / GTA-UAV",
+  "url": "https://github.com/Yux1angJi/GTA-UAV",
+  "summary": "Benchmark and code for UAV geo-localization trained on synthetic game imagery with partial-match drone-satellite pairs (AAAI 2025).",
+  "why_it_matters": "Synthetic data generation for geo-localization reduces the need for real flight data.",
+  "concepts": [
+   "concept:visual-geolocalization",
+   "concept:datasets-benchmarks",
+   "concept:simulation"
+  ],
+  "tags": [
+   "cross-view",
+   "synthetic",
+   "gta",
+   "aaai2025"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Pretrained models available; fine-tune on your area's satellite tiles.",
+  "related": [
+   {
+    "id": "repo:skyy93/sample4geo",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:layumi/university1652-baseline",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:nudt-sawlab/pilot",
+  "kind": "repo",
+  "name": "PiLoT",
+  "url": "https://github.com/nudt-sawlab/PiLoT",
+  "summary": "Neural pixel-to-3D registration for UAV ego-localization and target geo-localization against a geo-referenced 3D map; release uses 3D Gaussian Splatting map backends (CVPR 2026).",
+  "why_it_matters": "Absolute 6-DoF pose from a 3D map is a strong GNSS-denied fix for low-altitude drones.",
+  "concepts": [
+   "concept:visual-geolocalization",
+   "concept:visual-slam"
+  ],
+  "tags": [
+   "3dgs",
+   "6dof",
+   "cvpr2026",
+   "map-based"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "GPU-heavy; demo data and pretrained model provided.",
+  "related": []
+ },
+ {
+  "id": "repo:dmmm1997/fsra",
+  "kind": "repo",
+  "name": "FSRA",
+  "url": "https://github.com/Dmmm1997/FSRA",
+  "summary": "Transformer-based feature segmentation and region alignment for drone-to-satellite geo-localization (TCSVT 2021).",
+  "why_it_matters": "Widely used baseline on University-1652.",
+  "concepts": [
+   "concept:visual-geolocalization"
+  ],
+  "tags": [
+   "transformer",
+   "university-1652",
+   "cross-view"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Train on University-1652; good comparison baseline.",
+  "related": [
+   {
+    "id": "repo:layumi/university1652-baseline",
+    "rel": "evaluated_on"
+   }
+  ]
+ },
+ {
+  "id": "repo:yaxuanli-cn/pairuav",
+  "kind": "repo",
+  "name": "PairUAV",
+  "url": "https://github.com/YaxuanLi-cn/PairUAV",
+  "summary": "Baseline for last-meter UAV navigation using diffusion-refined aerial visual servoing; serves as the baseline for the ACM MM 2026 UAV workshop challenge.",
+  "why_it_matters": "Moves geo-localization from retrieval to precise relative positioning for the final approach.",
+  "concepts": [
+   "concept:visual-geolocalization",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "visual-servoing",
+   "diffusion",
+   "uavm2026"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Use the HF test set; competition baseline.",
+  "related": [
+   {
+    "id": "repo:wtyhub/uavm2024",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:layumi/uavm2023",
+  "kind": "repo",
+  "name": "UAVM 2023 challenge",
+  "url": "https://github.com/layumi/UAVM2023",
+  "summary": "Page for the ACM MM 2023 drone-satellite matching challenge on University-160k, listing team code repos and the leaderboard.",
+  "why_it_matters": "Index of open winning-team code for drone-satellite matching.",
+  "concepts": [
+   "concept:visual-geolocalization",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "challenge",
+   "university-160k",
+   "acmmm"
+  ],
+  "language": "",
+  "domains": [
+   "air"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Follow links to public team repos.",
+  "related": [
+   {
+    "id": "repo:layumi/university1652-baseline",
+    "rel": "same_org"
+   },
+   {
+    "id": "repo:hrli97/mlpn_workshop",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:huhu246/dpn",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:reza-zhu/acmmm23-solution-mbeg",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:wtyhub/uavm2024",
+  "kind": "repo",
+  "name": "UAVM 2024 challenge",
+  "url": "https://github.com/wtyhub/UAVM2024",
+  "summary": "Page for the ACM MM 2024 multi-weather drone-satellite matching challenge, listing team repos.",
+  "why_it_matters": "Adds weather robustness to cross-view geo-localization.",
+  "concepts": [
+   "concept:visual-geolocalization",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "challenge",
+   "multi-weather",
+   "acmmm"
+  ],
+  "language": "",
+  "domains": [
+   "air"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Follow links to public team repos.",
+  "related": [
+   {
+    "id": "repo:koorter/weln",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:wtyhub/musenet",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:wtyhub/musenet",
+  "kind": "repo",
+  "name": "MuseNet",
+  "url": "https://github.com/wtyhub/MuseNet",
+  "summary": "Multiple-environment self-adaptive network for aerial-view geo-localization under varied weather (Pattern Recognition 2024).",
+  "why_it_matters": "Weather robustness for drone-satellite matching.",
+  "concepts": [
+   "concept:visual-geolocalization"
+  ],
+  "tags": [
+   "multi-weather",
+   "cross-view"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Baseline for the UAVM 2024 multi-weather track.",
+  "related": [
+   {
+    "id": "repo:wtyhub/uavm2024",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:koorter/weln",
+  "kind": "repo",
+  "name": "WELN",
+  "url": "https://github.com/koorter/WELN",
+  "summary": "Siamese-network solution to the ACM MM 2024 multi-environment drone-satellite matching challenge.",
+  "why_it_matters": "Open challenge entry for weather-robust geo-localization.",
+  "concepts": [
+   "concept:visual-geolocalization"
+  ],
+  "tags": [
+   "siamese",
+   "challenge"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Weights on Baidu pan; may be hard to fetch.",
+  "related": [
+   {
+    "id": "repo:wtyhub/uavm2024",
+    "rel": "evaluated_on"
+   }
+  ]
+ },
+ {
+  "id": "repo:hrli97/mlpn_workshop",
+  "kind": "repo",
+  "name": "MLPN (UAVM 2023 entry)",
+  "url": "https://github.com/HrLi97/MLPN_workshop",
+  "summary": "Team solution for the ACM MM 2023 drone-satellite matching challenge.",
+  "why_it_matters": "Open challenge entry.",
+  "concepts": [
+   "concept:visual-geolocalization"
+  ],
+  "tags": [
+   "challenge"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Training script; needs University-1652.",
+  "related": [
+   {
+    "id": "repo:layumi/uavm2023",
+    "rel": "evaluated_on"
+   }
+  ]
+ },
+ {
+  "id": "repo:huhu246/dpn",
+  "kind": "repo",
+  "name": "DPN (UAVM 2023 entry)",
+  "url": "https://github.com/HuHu246/DPN",
+  "summary": "Submission for the ACM MM 2023 drone-satellite matching challenge.",
+  "why_it_matters": "Open challenge entry.",
+  "concepts": [
+   "concept:visual-geolocalization"
+  ],
+  "tags": [
+   "challenge"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Minimal docs.",
+  "related": [
+   {
+    "id": "repo:layumi/uavm2023",
+    "rel": "evaluated_on"
+   }
+  ]
+ },
+ {
+  "id": "repo:reza-zhu/acmmm23-solution-mbeg",
+  "kind": "repo",
+  "name": "MBEG",
+  "url": "https://github.com/Reza-Zhu/ACMMM23-Solution-MBEG",
+  "summary": "Modern-backbone efficient geo-localization solution for UAVM 2023 including distillation training.",
+  "why_it_matters": "Open entry with distillation, useful for edge deployment.",
+  "concepts": [
+   "concept:visual-geolocalization",
+   "concept:edge-ai"
+  ],
+  "tags": [
+   "distillation",
+   "challenge"
+  ],
+  "language": "Jupyter Notebook",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Was disqualified for using test data, but the method code is still useful.",
+  "related": [
+   {
+    "id": "repo:layumi/uavm2023",
+    "rel": "evaluated_on"
+   }
+  ]
+ },
+ {
+  "id": "repo:fkaneko/kaggle_google_smartphone_decimeter_challenge",
+  "kind": "repo",
+  "name": "GSDC 10th place solution",
+  "url": "https://github.com/Fkaneko/kaggle_Google_Smartphone_Decimeter_Challenge",
+  "summary": "10th-place solution for the Kaggle Google Smartphone Decimeter Challenge.",
+  "why_it_matters": "Readable Kaggle-style pipeline for smartphone GNSS post-processing.",
+  "concepts": [
+   "concept:gnss",
+   "concept:gnss-ins"
+  ],
+  "tags": [
+   "kaggle",
+   "gsdc",
+   "smartphone"
+  ],
+  "language": "Python",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Reference for feature engineering on Android GNSS logs.",
+  "related": [
+   {
+    "id": "repo:taroz/gsdc2023",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:arnauochoa/smartphone-decimeter-challenge",
+  "kind": "repo",
+  "name": "Smartphone Decimeter Challenge MATLAB package",
+  "url": "https://github.com/arnauochoa/smartphone-decimeter-challenge",
+  "summary": "MATLAB package from an ION GNSS+ 2021 decimeter challenge entry.",
+  "why_it_matters": "MATLAB route for smartphone GNSS positioning.",
+  "concepts": [
+   "concept:gnss"
+  ],
+  "tags": [
+   "matlab",
+   "gsdc"
+  ],
+  "language": "MATLAB",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Reference only.",
+  "related": [
+   {
+    "id": "repo:taroz/gsdc2023",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:akpozi/machine_learning_gnss_imu_integration",
+  "kind": "repo",
+  "name": "ML GNSS/IMU integration (GSDC 2022)",
+  "url": "https://github.com/Akpozi/Machine_Learning_GNSS_IMU_Integration",
+  "summary": "ML-based adaptive positioning to fuse smartphone GNSS and IMU, built for GSDC 2022.",
+  "why_it_matters": "Example of learned GNSS/IMU fusion on phone data.",
+  "concepts": [
+   "concept:gnss-ins",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "gsdc",
+   "imu",
+   "ml"
+  ],
+  "language": "Python",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Reference.",
+  "related": [
+   {
+    "id": "repo:taroz/gsdc2023",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:swift-nav/google-sdc-corrections",
+  "kind": "repo",
+  "name": "Google SDC corrections (Swift Navigation)",
+  "url": "https://github.com/swift-nav/google-sdc-corrections",
+  "summary": "SSR and OSR GNSS correction data for the 2021 Google Smartphone Decimeter Challenge drives, in SBP, JSON, RTCM3 and RINEX.",
+  "why_it_matters": "Real correction streams aligned to a public phone dataset - good for practising RTK/PPP on phones.",
+  "concepts": [
+   "concept:gnss-rtk-ppp",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "corrections",
+   "rtcm",
+   "ssr",
+   "osr"
+  ],
+  "language": "",
+  "domains": [
+   "ground"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Pair with GSDC 2021 data and RTKLIB.",
+  "related": []
+ },
+ {
+  "id": "repo:huang-chuan/mainsvsmagekf",
+  "kind": "repo",
+  "name": "MAINS",
+  "url": "https://github.com/Huang-Chuan/MAINSvsMAGEKF",
+  "summary": "Magnetic-field aided inertial navigation system for indoor positioning, compared against a magnetic EKF.",
+  "why_it_matters": "Magnetic field anomalies as a GNSS-free position aid indoors.",
+  "concepts": [
+   "concept:magnetic-nav",
+   "concept:ins"
+  ],
+  "tags": [
+   "magnetic",
+   "indoor",
+   "ekf"
+  ],
+  "language": "MATLAB",
+  "domains": [
+   "ground",
+   "dismounted"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "MATLAB with data; test on your own magnetometer arrays.",
+  "related": [
+   {
+    "id": "repo:huang-chuan/magnetic-field-odometry",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:huang-chuan/magnetic-field-odometry",
+  "kind": "repo",
+  "name": "Magnetic-field odometry",
+  "url": "https://github.com/Huang-Chuan/magnetic-field-odometry",
+  "summary": "Magnetic-field aided inertial navigation using a magnetometer array for odometry.",
+  "why_it_matters": "Shows magnetometer arrays as odometry where cameras fail.",
+  "concepts": [
+   "concept:magnetic-nav",
+   "concept:ins"
+  ],
+  "tags": [
+   "magnetometer-array",
+   "odometry"
+  ],
+  "language": "MATLAB",
+  "domains": [
+   "ground",
+   "dismounted"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "MATLAB reference.",
+  "related": []
+ },
+ {
+  "id": "repo:floralhercules/scalloc",
+  "kind": "repo",
+  "name": "ScalLoc",
+  "url": "https://github.com/FloralHercules/ScalLoc",
+  "summary": "Geo-localization of oblique thermal UAV image sequences against satellite maps.",
+  "why_it_matters": "Night-time thermal geo-localization with oblique cameras, closer to real FPV/ISR views.",
+  "concepts": [
+   "concept:visual-geolocalization"
+  ],
+  "tags": [
+   "thermal",
+   "oblique",
+   "sequence"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Recent; check data availability.",
+  "related": [
+   {
+    "id": "repo:floralhercules/scc-loc",
+    "rel": "same_org"
+   },
+   {
+    "id": "repo:arplaboratory/sthn",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:osrf/mbzirc",
+  "kind": "repo",
+  "name": "MBZIRC Maritime Grand Challenge simulator",
+  "url": "https://github.com/osrf/mbzirc",
+  "summary": "Simulator (Ignition Fortress + ROS 2) for the MBZIRC Maritime Grand Challenge where UAVs and USVs cooperate in a GNSS-denied environment.",
+  "why_it_matters": "Ready-made maritime GNSS-denied multi-vehicle scenario.",
+  "concepts": [
+   "concept:simulation",
+   "concept:maritime-nav",
+   "concept:multi-agent"
+  ],
+  "tags": [
+   "mbzirc",
+   "gazebo",
+   "ros2",
+   "usv"
+  ],
+  "language": "C++",
+  "domains": [
+   "maritime",
+   "air"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Built for Ubuntu 20.04 / ROS 2 Galactic; use Docker.",
+  "related": [
+   {
+    "id": "repo:osrf/vrx",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:tii-racing/drone-racing-dataset",
+  "kind": "repo",
+  "name": "Race Against the Machine dataset",
+  "url": "https://github.com/tii-racing/drone-racing-dataset",
+  "summary": "Annotated dataset of fast autonomous and human-piloted quadrotor flight with visual, inertial and mocap data plus labelled racing gates, from TII.",
+  "why_it_matters": "High-speed VIO and gate-relative state estimation data.",
+  "concepts": [
+   "concept:datasets-benchmarks",
+   "concept:vio"
+  ],
+  "tags": [
+   "drone-racing",
+   "tii",
+   "a2rl",
+   "mocap"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Use to test VIO at high speed.",
+  "related": [
+   {
+    "id": "repo:aerostack2/aerostack2",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:grupo-semear-usp/swarm_in_blocks",
+  "kind": "repo",
+  "name": "Swarm in Blocks",
+  "url": "https://github.com/Grupo-SEMEAR-USP/swarm_in_blocks",
+  "summary": "Block-programming interface for drone swarms on COEX Clover, CopterHack 2022 winner by team Atena.",
+  "why_it_matters": "Example of a winning open CopterHack project.",
+  "concepts": [
+   "concept:multi-agent",
+   "concept:mission-planning"
+  ],
+  "tags": [
+   "copterhack",
+   "clover",
+   "swarm"
+  ],
+  "language": "JavaScript",
+  "domains": [
+   "air"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Runs on Clover simulation.",
+  "related": [
+   {
+    "id": "repo:copterexpress/clover",
+    "rel": "depends_on"
+   }
+  ]
+ },
+ {
+  "id": "repo:devmbs/crtclient",
+  "kind": "repo",
+  "name": "Clover Rescue Project",
+  "url": "https://github.com/DevMBS/CRTClient",
+  "summary": "Frontend and backend from the Clover Rescue Team's CopterHack 2022 project.",
+  "why_it_matters": "Example finalist code.",
+  "concepts": [
+   "concept:mission-planning"
+  ],
+  "tags": [
+   "copterhack",
+   "clover"
+  ],
+  "language": "JavaScript",
+  "domains": [
+   "air"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Reference only.",
+  "related": [
+   {
+    "id": "repo:copterexpress/clover",
+    "rel": "depends_on"
+   }
+  ]
+ }
+]

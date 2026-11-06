@@ -33,6 +33,8 @@ Annual open field event where Norwegian agencies transmit real jamming, spoofing
 ## Referenced by
 
 - [Jammertest test plan](../repos/npra__jammertest-plan.md) (integrates_with)
+- [FGI Jammer Test 2023 Repository](../resources/fgi-jammertest-2023-repository.md) (part_of)
+- [Analyzing and Characterizing Multi-Source Interference Effects at Jammertest Norway 2025](../resources/jammertest-2025-multi-source-interference.md) (part_of)
 - [Results Jammertest 2025 - Resilient GNSS in an Era of Rising Jamming & Spoofing (webinar)](../resources/septentrio-jammertest-2025-webinar.md) (evaluates)
 - [Most resilient GNSS receiver: results from Jammertest in Norway](../resources/septentrio-jammertest-results.md) (evaluates)
 - [Jamming, spoofing and secure positioning: Jammertest insights (u-blox webinar)](../resources/ublox-jammertest-webinar.md) (evaluates)

@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 7 | IDL | NOASSERTION | 2014-06-05 | False | archived | low |
 
-DSP-based Loran-C receiver project also aimed at the Russian Chayka chain, covering pulse detection and signal tracking.
+Hobby project to build a DSP-based Loran-C receiver that can also lock onto the Russian Chayka chain. The published repo holds only KiCad hardware designs (loop antenna preamp, power supply, processing board, RF prototype); no DSP firmware or software.
 
 **Why it matters:** One of very few open receivers for low-frequency hyperbolic navigation, the basis of eLoran.
 
-**Hackathon notes:** Old code from 2014; use for algorithm reference with recorded LF IQ data.
+**Hackathon notes:** Hardware reference only, last touched 2014: the loop-antenna preamp and RF front-end schematics are the useful part for an LF receiver build. No signal processing code to reuse.
 
 **Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
 
@@ -25,7 +25,7 @@ DSP-based Loran-C receiver project also aimed at the Russian Chayka chain, cover
 ## Referenced by
 
 - [Loran-C reference signal generator](../repos/cheolj__loran-c-reference-code.md) (alternative_to)
-- [eLoran Independent Assessment Team findings (PNT Advisory Board briefing)](../resources/faa-eloran-iat-2014.md) (explains)
+- [The Global Loran / eLoran Infrastructure Evolution: A Robust and Resilient PNT Backup for GNSS](../resources/faa-eloran-iat-2014.md) (explains)
 
 _Indexed by lane(s): gap-fill_
 

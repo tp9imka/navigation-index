@@ -35,7 +35,7 @@ ROS ecosystem packages for navigation and localization.
 - [PX4 ROS 2 Interface Library](../repos/auterion__px4-ros2-interface-lib.md) - fit: high - C++ library for writing PX4 flight modes and navigation-data sources in ROS 2 on a companion computer, registered with PX4 as first-class modes.
 - [px4_msgs](../repos/px4__px4_msgs.md) - fit: high - ROS 2 message definitions mirroring PX4 uORB topics, used with the uXRCE-DDS bridge.
 - [ROS NTRIP client](../repos/lord-microstrain__ntrip_client.md) - fit: high - ROS/ROS 2 node that connects to an NTRIP caster and publishes RTCM corrections, forwarding NMEA position back to the caster.
-- [tercom_nav (TERCOM + ESKF)](../repos/mzahana__tercom_nav.md) - fit: high - ROS 2 package combining TERCOM-style terrain matching with an error-state Kalman filter for UAV navigation.
+- [tercom_nav (TERCOM + ESKF)](../repos/mzahana__tercom_nav.md) - fit: high - ROS 2 (Humble) package for GPS-denied fixed-wing UAV navigation: a TERCOM node correlates baro + rangefinder terrain profiles against a GeoTIFF DEM and feeds fixes into a 15-state error-state Kalman filter driven by IMU,
 - [ROSCon UK 2025 State Estimation workshop](../repos/locusrobotics__roscon-uk-2025-se-workshop.md) - fit: high - Materials for an eight-task ROS 2 state estimation workshop at ROSCon UK 2025, with a Docker image, recorded bags and step-by-step exercises using robot_localization and fuse.
 - [ardupilot_ros](../repos/ardupilot__ardupilot_ros.md) - fit: high - ROS 2 integration examples for ArduPilot, including Cartographer-based non-GPS navigation and Nav2 setups.
 - [grid_map](../repos/leggedrobotics__grid_map.md) - fit: high - Universal multi-layer 2.5D grid map library for mobile robots with ROS/ROS 2 integration, filters, iterators and conversion to images, point clouds and costmaps.
@@ -73,7 +73,7 @@ ROS ecosystem packages for navigation and localization.
 - [ping360_sonar ROS package](../repos/centralenantesrobotics__ping360_sonar.md) - fit: medium - ROS package that drives the Ping360 scanning sonar and publishes scans as images and laser-scan style messages.
 - [Swarm-SLAM](../repos/lajoiepy__cslam.md) - fit: medium - ROS 2 decentralized collaborative SLAM supporting LiDAR, stereo and RGB-D, with sparse inter-robot communication.
 - [Open-RMF rmf_task](../repos/open-rmf__rmf_task.md) - fit: medium - Task allocation library from Open-RMF that assigns tasks to fleets of robots, accounting for battery, travel time and task constraints.
-- [ROS MCP Server demos](../repos/robotmcp__demos-ros-mcp-server.md) - fit: medium - Demos and tutorials for connecting LLMs to robots via the ROS MCP server, including simulated mobile robots.
+- [ROS MCP Server demos](../repos/robotmcp__demos-ros-mcp-server.md) - fit: medium - Standalone demos for driving robots with natural language through the ROS MCP server: a Tugbot in a Gazebo warehouse, a Unitree Go2 with the CHAMP controller, a PX4 drone via MAVROS (Gazebo and real hardware) and TurtleB
 - [ORB_SLAM3_system_local](../repos/sasha-lobov__orb_slam3_system_local.md) - fit: medium - Pet project for local UAV navigation without GNSS: AirSim video streamed over ZeroMQ into monocular ORB-SLAM3, a ROS node converts NED/ENU frames, IMU data corrects monocular scale, and a PID controller tracks a trajecto
 - [MoveIt 2](../repos/moveit__moveit2.md) - fit: low - Motion planning framework for ROS 2 manipulators: kinematics, collision checking, planners (OMPL, Pilz, STOMP) and real-time servoing.
 - [ROS-LLM](../repos/auromix__ros-llm.md) - fit: low - Framework for natural-language interaction with ROS robots, letting an LLM call robot functions and chain behaviors.
@@ -82,7 +82,7 @@ ROS ecosystem packages for navigation and localization.
 - [gnss_comm](../repos/hkust-aerial-robotics__gnss_comm.md) - fit: low - C++/ROS definitions and utilities for raw GNSS measurement processing (ephemeris, satellite positions, pseudorange models) used by GVINS.
 - [Water Linked DVL A50 ROS driver](../repos/waterlinked__dvl-a50-ros-driver.md) - fit: low - ROS 1 driver publishing Water Linked DVL A50 velocity and beam data as ROS messages; now archived.
 - [Geoscan Pioneer Max](../repos/geoscan__geoscan_pioneer_max.md) - fit: low - Meta-repository from Russian vendor Geoscan for the Pioneer Max educational quadcopter: system images, ROS workspace, web control apps and guides, documented in Russian.
-- [LCAS ROS 2 MCP](../repos/lcas__ros2_mcp.md) - fit: low - ROS 2 MCP server from the Lincoln Centre for Autonomous Systems, exposing topics, services and actions to LLM agents.
+- [LCAS ROS 2 MCP](../repos/lcas__ros2_mcp.md) - fit: low - ROS 2 MCP server from the Lincoln Centre for Autonomous Systems: tools to list and echo topics, inspect message/service/action interfaces, fetch camera images for VLM analysis and send simple drive commands, plus canned 
 
 ## Documents, talks, courses, datasets (22)
 

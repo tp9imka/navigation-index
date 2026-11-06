@@ -10,7 +10,7 @@ Python library for event-based datasets and transforms, in the style of torchvis
 
 **Why it matters:** Fast access to many event datasets for learning-based event navigation.
 
-**Hackathon notes:** pip install tonic; use transforms to voxel grids.
+**Hackathon notes:** pip install tonic (or conda-forge); use transforms such as ToFrame or voxel grids. The project is looking for a new maintainer, so pin a version.
 
 ## Deep dives
 

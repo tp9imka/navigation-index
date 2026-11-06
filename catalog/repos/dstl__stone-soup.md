@@ -14,6 +14,8 @@ Open-source Python framework from UK Dstl and partners for developing, running a
 
 ## Deep dives
 
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
+- [dstl__stone-soup](../../docs/integration-cards/dstl__stone-soup.md) (integration-cards)
 - [maritime-datasets](../../docs/dataset-cards/maritime-datasets.md) (dataset-cards)
 
 **Concepts:** [Tracking and data association](../concepts/target-tracking.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Counter-UAS and drone detection](../concepts/counter-uas.md)
@@ -38,6 +40,7 @@ Open-source Python framework from UK Dstl and partners for developing, running a
 - [Stone Soup: No Longer Just an Appetiser](../resources/dstl-stone-soup-v1-fusion2023.md) (has_code)
 - [Stone Soup documentation and tutorials](../resources/stone-soup-docs.md) (explains)
 - [Stone Soup documentation and tutorials](../resources/stone-soup-docs.md) (has_code)
+- [GNSS jammer geolocation from DF bearings to TAK](../samples/interference-geolocation-to-tak.md) (uses)
 - [Stone Soup radar tracking of two UAVs with JPDA and OSPA](../samples/stone-soup-tracking.md) (uses)
 
 _Indexed by lane(s): defense-context, domains-swarm_

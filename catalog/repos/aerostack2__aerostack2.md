@@ -33,8 +33,10 @@ ROS 2 framework for autonomous multi-aerial-robot systems: platform abstraction 
 - [MRS UAV System](../repos/ctu-mrs__mrs_uav_system.md) (alternative_to)
 - [Crazyswarm2](../repos/imrclab__crazyswarm2.md) (alternative_to)
 - [PlanSys2](../repos/plansys2__ros2_planning_system.md) (integrates_with)
+- [Race Against the Machine dataset](../repos/tii-racing__drone-racing-dataset.md) (alternative_to)
 - [EGO-Swarm](../repos/zju-fast-lab__ego-planner-swarm.md) (integrates_with)
 - [Aerostack2: A Software Framework for Developing Multi-robot Aerial Systems](../resources/aerostack2-paper.md) (has_code)
+- [CVAR-UPM Drone Team - A2RL](../resources/cvar-upm-a2rl-team.md) (uses)
 
 _Indexed by lane(s): autopilots, domains-swarm, planning-gis-c2_
 

@@ -13,6 +13,7 @@ Adds uncertainty estimation to satellite-thermal homography so a navigation filt
 ## Deep dives
 
 - [thermal-datasets](../../docs/dataset-cards/thermal-datasets.md) (dataset-cards)
+- [uasthn-uncertainty-thermal-2025](../../docs/paper-digests/uasthn-uncertainty-thermal-2025.md) (paper-digests)
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
 

@@ -16,6 +16,7 @@ Learning-free spinning-radar odometry that filters returns to sparse oriented su
 
 - [boreas](../../docs/dataset-cards/boreas.md) (dataset-cards)
 - [oxford-radar-robotcar](../../docs/dataset-cards/oxford-radar-robotcar.md) (dataset-cards)
+- [cfear-radarodometry-adolfsson-2021](../../docs/paper-digests/cfear-radarodometry-adolfsson-2021.md) (paper-digests)
 
 **Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md)
 

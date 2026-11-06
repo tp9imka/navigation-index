@@ -2,7 +2,7 @@
 
 `res:dou-lapko-urban-nav-interview-2025` - blog - <https://dou.ua/lenta/interviews/developer-of-autonomous-drone/>
 
-**By:** DOU.ua - **Year:** 2025 - **Level:** intro - **Access:** open
+**By:** Eleonora Burdina, DOU.ua - **Year:** 2025 - **Level:** intro - **Access:** open
 
 English: 'Built EW-proof drone navigation at 17: the story of a Kyiv student who won the Genius Olympiad in the USA'. Describes an urban GNSS-free concept: an IMU dead-reckons, side-looking rangefinders measure distances to buildings at roughly 7th-floor height, and the ranges are matched to OpenStreetMap building geometry about once per second. Simulation in C#/MonoGame; hardware tests on a Betaflight FPV were at bench stage.
 

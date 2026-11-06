@@ -11,6 +11,10 @@ AFIT dissertation establishing airborne magnetic anomaly navigation methods and 
 - Map-matching filter design for scalar magnetometers
 - Flight-test evidence of absolute positioning from anomaly maps
 
+## Deep dives
+
+- [canciani-afit-magnetic-anomaly-dissertation-2016](../../docs/paper-digests/canciani-afit-magnetic-anomaly-dissertation-2016.md) (paper-digests)
+
 **Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md)
 
 **Tags:** `afit`, `dissertation`

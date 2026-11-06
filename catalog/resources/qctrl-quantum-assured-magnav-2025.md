@@ -11,6 +11,10 @@ Reports airborne and ground field trials of magnetic anomaly navigation using qu
 - Recent field evidence that MagNav is a practical GNSS alternative
 - Sensor quality and noise rejection drive performance
 
+## Deep dives
+
+- [qctrl-quantum-assured-magnav-2025](../../docs/paper-digests/qctrl-quantum-assured-magnav-2025.md) (paper-digests)
+
 **Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
 
 **Tags:** `arxiv`, `quantum`, `field-trial`

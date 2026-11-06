@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 1,071 | Python | ? | 2026-10-26 | False | production | high |
 
-Python API and examples for Luxonis OAK cameras, which run neural networks and stereo depth on the camera itself.
+Landing repository for Luxonis OAK cameras, which run neural networks and stereo depth on the camera; the default branch now only points to the docs, and the old examples live on the `main` branch. The current Python API (DepthAI v3) is built from luxonis/depthai-core.
 
 **Why it matters:** Puts inference and depth on the sensor, freeing the companion computer.
 
-**Hackathon notes:** pip install depthai; OAK-D required. Examples include spatial detection.
+**Hackathon notes:** `pip install depthai` (v3 API; examples in luxonis/depthai-core). OAK camera required. Older v2 tutorials and examples will not run unchanged on v3.
 
 ## Deep dives
 

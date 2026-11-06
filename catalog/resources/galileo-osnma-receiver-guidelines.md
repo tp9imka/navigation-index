@@ -16,6 +16,7 @@ Companion to the OSNMA ICD describing how a receiver should process OSNMA: time-
 
 ## Deep dives
 
+- [galileo-osnma](../../docs/paper-digests/galileo-osnma.md) (paper-digests)
 - [trends-2025-2026](../../docs/landscape/trends-2025-2026.md) (landscape)
 
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [Jamming and spoofing](../concepts/gnss-interference.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Standards and interface specs](../concepts/standards.md)

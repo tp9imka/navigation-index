@@ -23,5 +23,6 @@ UPenn GRASP seminar by Zak Kassas on opportunistic PNT from Starlink, OneWeb and
 
 - [Unveiling Starlink for PNT](../resources/ion-webinar-kozhaya.md) (part_of)
 - [LTE Receiver Design and Multipath Analysis for Navigation in Urban Environments](../resources/ion-webinar-shamaei-kassas.md) (same_author)
+- [Ad Astra: Navigation with Megaconstellation LEO Satellites (IEEE AESS video)](../resources/kassas-ad-astra-aess-video.md) (same_author)
 
 _Indexed by lane(s): learning_

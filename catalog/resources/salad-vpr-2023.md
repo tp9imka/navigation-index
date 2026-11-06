@@ -10,6 +10,10 @@ Introduces SALAD, aggregating DINOv2 local features into a global descriptor via
 
 - Strong retrieval descriptor for the coarse localization stage
 
+## Deep dives
+
+- [salad-vpr-2023](../../docs/paper-digests/salad-vpr-2023.md) (paper-digests)
+
 **Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md)
 
 **Tags:** `arxiv`

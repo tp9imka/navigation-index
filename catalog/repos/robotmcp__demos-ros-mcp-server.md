@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 8 | C++ | Apache-2.0 | 2026-07-09 | False | educational | medium |
 
-Demos and tutorials for connecting LLMs to robots via the ROS MCP server, including simulated mobile robots.
+Standalone demos for driving robots with natural language through the ROS MCP server: a Tugbot in a Gazebo warehouse, a Unitree Go2 with the CHAMP controller, a PX4 drone via MAVROS (Gazebo and real hardware) and TurtleBot3 in Ignition Gazebo.
 
 **Why it matters:** Worked examples shorten the path from install to a talking robot demo.
 
-**Hackathon notes:** Follow one demo end to end before customizing the server.
+**Hackathon notes:** Each sub-folder is a self-contained project with its own README; the PX4 demo (takeoff, patterns, orbit, RTL via MAVROS) is the most relevant. Run one demo end to end before customizing the server.
 
 **Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
 

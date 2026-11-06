@@ -31,5 +31,6 @@ Kaggle competition with raw GNSS and IMU logs from Android phones in cars, score
 ## Referenced by
 
 - [Google Smartphone Decimeter Challenge 2022](../resources/google-gsdc-2022.md) (part_of)
+- [ION Smartphone Decimeter Challenge (with Google)](../resources/ion-smartphone-decimeter-challenge.md) (part_of)
 
 _Indexed by lane(s): gnss, sim-data_

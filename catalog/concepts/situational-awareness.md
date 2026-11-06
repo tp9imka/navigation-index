@@ -4,13 +4,14 @@
 
 TAK/CoT, MIL-STD-2525/APP-6 symbology, blue force tracking, common operating picture.
 
-## Samples (3)
+## Samples (4)
 
 - [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../samples/gnss-interference-monitor.md) - A stdlib heuristic scorer turns per-epoch receiver telemetry (C/N0 across SVs, AGC, CW jamming indicator, clock and position jumps, receiver spoofing/jamming flags) into jamming and spoofing scores with stated reasons.
+- [GNSS jammer geolocation from DF bearings to TAK](../samples/interference-geolocation-to-tak.md) - Locates a GNSS interference source from KrakenSDR-style direction-of-arrival bearings taken at two fixed sites and one moving vehicle, with noise and multipath outliers.
 - [MAVLink telemetry to TAK Cursor-on-Target](../samples/mavlink-to-tak-cot.md) - Bridges autopilot GLOBAL_POSITION_INT messages into Cursor-on-Target events so a UAV shows up as a friendly track on ATAK, WinTAK or iTAK.
 - [Stone Soup radar tracking of two UAVs with JPDA and OSPA](../samples/stone-soup-tracking.md) - Simulates two small UAVs observed by a noisy bearing/range radar with clutter and tracks them with Stone Soup's Extended Kalman filter and JPDA data association.
 
-## Repositories (51)
+## Repositories (53)
 
 - [Leaflet](../repos/leaflet__leaflet.md) - fit: high - Small, simple JavaScript library for interactive raster/vector maps with a huge plugin ecosystem.
 - [CesiumJS](../repos/cesiumgs__cesium.md) - fit: high - WebGL 3D globe and map library with terrain, 3D Tiles, time-dynamic data (CZML) and accurate WGS84 rendering.
@@ -32,12 +33,13 @@ TAK/CoT, MIL-STD-2525/APP-6 symbology, blue force tracking, common operating pic
 - [pyais](../repos/m0r13n__pyais.md) - fit: high - Python library for decoding and encoding AIS NMEA sentences (AIVDM/AIVDO), including multi-part messages and streaming from sockets or files.
 - [ArduRemoteID](../repos/ardupilot__arduremoteid.md) - fit: high - ESP32-based Remote ID transmitter firmware implementing ASTM F3411 broadcast (Bluetooth and Wi-Fi) fed from MAVLink or DroneCAN.
 - [PyTAK](../repos/snstac__pytak.md) - fit: high - Python asyncio package for TAK integration: CoT send/receive over TCP, UDP, TLS and multicast, with helpers for building events.
-- [drone-mesh-mapper](../repos/colonelpanichacks__drone-mesh-mapper.md) - fit: high - ESP32 firmware and tools that sniff Wi-Fi Remote ID and relay detections over Meshtastic LoRa mesh to a mapping host.
+- [drone-mesh-mapper](../repos/colonelpanichacks__drone-mesh-mapper.md) - fit: high - ESP32 firmware and a Python/Flask mapper that capture Remote ID broadcasts over both BLE and Wi-Fi, relay detections over a Meshtastic LoRa mesh and plot drones and pilots on a live, offline-capable web map.
 - [GoATAK](../repos/kdudkov__goatak.md) - fit: high - Go implementation of a simple ATAK-compatible server and a web client, supporting CoT over TCP/UDP/SSL.
 - [DragonSync](../repos/alphafox02__dragonsync.md) - fit: high - Gateway that takes drone Remote ID / DroneID detections from WarDragon-style sensors and publishes them as CoT to TAK and other outputs.
 - [RID (ESP32 Remote ID receiver)](../repos/peterjburke__rid.md) - fit: high - ESP32 Remote ID receiver built on opendroneid-core-c and a fork of sxjack's electronic ID classes.
 - [node-CoT](../repos/dfpc-coe__node-cot.md) - fit: high - JavaScript/TypeScript library for parsing, building and converting Cursor-on-Target messages, including GeoJSON conversion and TAK protobuf.
 - [mil-sym-ts](../repos/missioncommand__mil-sym-ts.md) - fit: high - TypeScript/JavaScript renderer for MIL-STD-2525 (D and later) military symbology, producing single-point and multi-point tactical graphics for web maps.
+- [Sentinel-1 RFI detection](../repos/zephr-xyz__sentinel1-rfi-detection.md) - fit: high - Pipeline that detects radio-frequency interference in Sentinel-1 SAR imagery using temporal z-scores and DEM masking, to map GNSS jamming activity from orbit.
 - [ADSBCOT](../repos/snstac__adsbcot.md) - fit: high - Gateway that converts ADS-B traffic from dump1090/readsb or aggregator APIs into Cursor-on-Target so aircraft show in TAK.
 - [OpenLayers](../repos/openlayers__openlayers.md) - fit: medium - Feature-rich web mapping library supporting many projections, WMS/WMTS, vector tiles and editing.
 - [Gqrx](../repos/gqrx-sdr__gqrx.md) - fit: medium - Desktop SDR receiver built on GNU Radio and Qt with FFT/waterfall and demodulators.
@@ -57,6 +59,7 @@ TAK/CoT, MIL-STD-2525/APP-6 symbology, blue force tracking, common operating pic
 - [galmon](../repos/berthubert__galmon.md) - fit: medium - Open-source GNSS monitoring network and software that collects navigation data from volunteer receivers worldwide and publishes live health, ephemeris and timing statistics for Galileo, GPS, BeiDou and GLONASS.
 - [ASTERIX decoder (Croatia Control)](../repos/croatiacontrolltd__asterix.md) - fit: medium - C/C++ and Python decoder for EUROCONTROL ASTERIX surveillance data from files, stdin or network, with XML category definitions and JSON/XML output.
 - [CloudTAK](../repos/dfpc-coe__cloudtak.md) - fit: medium - Browser-based TAK-compatible common operating picture with ETL connectors that push external data feeds into TAK.
+- [MassMIND](../repos/uml-marine-robotics__massmind.md) - fit: medium - Long-wave infrared image dataset of a harbour environment with semantic and instance segmentation masks for maritime scene understanding.
 - [WarDragon docs](../repos/alphafox02__wardragon.md) - fit: medium - Documentation hub for WarDragon, an SDR-based RF sensing appliance for drone detection; open components are documented here, while commercial kits add closed features.
 - [asterix-specs](../repos/zoranbosnjak__asterix-specs.md) - fit: medium - EUROCONTROL ASTERIX category specifications in a structured machine-readable format, with generated JSON and docs.
 - [takproto](../repos/snstac__takproto.md) - fit: medium - Encode and decode TAK protobuf (TAK Protocol v1) packets, including mesh and stream formats.

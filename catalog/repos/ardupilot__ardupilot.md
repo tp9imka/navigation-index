@@ -14,6 +14,7 @@ GPL autopilot covering Copter, Plane (incl. QuadPlane VTOL), Rover, boats and Ar
 
 ## Deep dives
 
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [ardupilot__ardupilot](../../docs/integration-cards/ardupilot__ardupilot.md) (integration-cards)
 
 **Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [GNSS/INS integration](../concepts/gnss-ins.md), [Visual(-inertial) odometry](../concepts/vio.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [Maritime navigation](../concepts/maritime-nav.md), [Underwater navigation](../concepts/underwater-nav.md), [Simulation and HIL/SITL](../concepts/simulation.md)
@@ -61,6 +62,7 @@ GPL autopilot covering Copter, Plane (incl. QuadPlane VTOL), Rover, boats and Ar
 - [Rpanion-server](../repos/stephendade__rpanion-server.md) (integrates_with)
 - [vision_to_mavros](../repos/thien94__vision_to_mavros.md) (integrates_with)
 - [Non-GPS Position Estimation (MAVLink messages)](../resources/ardupilot-dev-mavlink-nongps-position.md) (explains)
+- [ArduPilot DevCon 2026 (Ottawa) programme](../resources/ardupilot-devcon-2026-ottawa.md) (explains)
 - [ArduPilot Developer Conference Kaga 2024 - schedule and YouTube links](../resources/ardupilot-devcon-kaga-2024.md) (explains)
 - [ArduPilot Developer Conference Kaga 2024 - schedule and YouTube links](../resources/ardupilot-devcon-kaga-2024.md) (uses)
 - [Extended Kalman Filter (EKF) navigation overview](../resources/ardupilot-ekf-overview.md) (explains)

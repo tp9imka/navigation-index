@@ -25,6 +25,7 @@ Low-cost edge-only acoustic drone detector on ESP32-S3 with encrypted LoRa or Et
 ## Referenced by
 
 - [VolAnti](../repos/agamrossen__volanti.md) (alternative_to)
+- [Batear datasets](../repos/batear-io__batear-datasets.md) (integrates_with)
 
 _Indexed by lane(s): domains-swarm_
 

@@ -12,6 +12,10 @@ Error-state Kalman filter implementation following Sola's quaternion ESKF formul
 
 **Hackathon notes:** Small codebase, no recent updates; read alongside the Sola report.
 
+## Deep dives
+
+- [sola-quaternion-kinematics-eskf](../../docs/paper-digests/sola-quaternion-kinematics-eskf.md) (paper-digests)
+
 **Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
 
 **Tags:** `eskf`, `quaternion`, `sola`

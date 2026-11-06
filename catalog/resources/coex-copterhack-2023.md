@@ -24,4 +24,8 @@ Russian-language page of COEX's international open-source flying-robotics contes
 
 - uses: [COEX Clover](../repos/copterexpress__clover.md)
 
+## Referenced by
+
+- [CopterHack 2022](../resources/copterhack-2022.md) (same_author)
+
 _Indexed by lane(s): ua-ru-sources_

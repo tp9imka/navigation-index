@@ -12,6 +12,10 @@ Place recognition descriptor using optimal-transport aggregation of DINOv2 featu
 
 **Hackathon notes:** Load via torch.hub, compare with AnyLoc on your tiles.
 
+## Deep dives
+
+- [salad-vpr-2023](../../docs/paper-digests/salad-vpr-2023.md) (paper-digests)
+
 **Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md)
 
 **Tags:** `dinov2`, `optimal-transport`

@@ -16,6 +16,7 @@ Python implementation of the Galileo OSNMA receiver protocol: verifies TESLA key
 
 - [_index-gnss-fusion-gis](../../docs/integration-cards/_index-gnss-fusion-gis.md) (integration-cards)
 - [algafix__osnma](../../docs/integration-cards/algafix__osnma.md) (integration-cards)
+- [galileo-osnma](../../docs/paper-digests/galileo-osnma.md) (paper-digests)
 
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Jamming and spoofing](../concepts/gnss-interference.md)
 

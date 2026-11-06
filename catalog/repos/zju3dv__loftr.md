@@ -12,6 +12,10 @@ Detector-free transformer matcher producing dense-ish correspondences, good on l
 
 **Hackathon notes:** Also available in kornia for easy use.
 
+## Deep dives
+
+- [loftr-2021](../../docs/paper-digests/loftr-2021.md) (paper-digests)
+
 **Concepts:** [Feature detection and matching](../concepts/feature-matching.md)
 
 **Tags:** `detector-free`, `transformer`

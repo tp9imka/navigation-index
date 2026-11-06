@@ -4,7 +4,7 @@
 
 Detection, segmentation, depth on embedded hardware supporting navigation.
 
-## Repositories (46)
+## Repositories (50)
 
 - [Ultralytics YOLO](../repos/ultralytics__ultralytics.md) - fit: high - Widely used Python package for YOLO-family detection, segmentation and tracking with training, export to edge runtimes and built-in trackers.
 - [Hello AI World (jetson-inference)](../repos/dusty-nv__jetson-inference.md) - fit: high - NVIDIA's guide and library for deploying detection, segmentation and depth networks with TensorRT on Jetson, with camera streaming.
@@ -17,11 +17,14 @@ Detection, segmentation, depth on embedded hardware supporting navigation.
 - [Isaac ROS Visual SLAM](../repos/nvidia-isaac-ros__isaac_ros_visual_slam.md) - fit: high - ROS 2 package wrapping NVIDIA's GPU-accelerated cuVSLAM for stereo visual(-inertial) odometry and SLAM on Jetson and x86 GPUs.
 - [GNM / ViNT / NoMaD](../repos/robodhruv__visualnav-transformer.md) - fit: high - Code and checkpoints for general visual navigation foundation models (GNM, ViNT, NoMaD) that drive robots from camera images toward image goals or explore, with ROS deployment code.
 - [elevation_mapping_cupy](../repos/leggedrobotics__elevation_mapping_cupy.md) - fit: high - GPU-accelerated elevation and traversability mapping from ETH Zurich, supporting semantic layers and learned traversability, used on ANYmal robots.
-- [DepthAI](../repos/luxonis__depthai.md) - fit: high - Python API and examples for Luxonis OAK cameras, which run neural networks and stereo depth on the camera itself.
+- [DepthAI](../repos/luxonis__depthai.md) - fit: high - Landing repository for Luxonis OAK cameras, which run neural networks and stereo depth on the camera; the default branch now only points to the docs, and the old examples live on the `main` branch.
 - [AI-IMU Dead-Reckoning](../repos/mbrossar__ai-imu-dr.md) - fit: high - Car dead reckoning from IMU only, using an invariant EKF whose noise covariances are adapted by a neural network, evaluated on KITTI.
-- [LightGlue-ONNX](../repos/fabio-sim__lightglue-onnx.md) - fit: high - ONNX export of SuperPoint/DISK + LightGlue feature matching with TensorRT and OpenVINO support.
+- [LightGlue-ONNX](../repos/fabio-sim__lightglue-onnx.md) - fit: high - ONNX export and inference of LightGlue matching with SuperPoint, DISK and ALIKED extractors (including RaCo-ALIKED-LightGlue+), with TensorRT, OpenVINO and FP8 quantization workflows.
 - [Isaac ROS nvblox](../repos/nvidia-isaac-ros__isaac_ros_nvblox.md) - fit: high - GPU-accelerated 3D reconstruction (TSDF/ESDF) that provides Nav2 local costmaps from depth cameras.
 - [Satellite-thermal geo-localization](../repos/arplaboratory__satellite-thermal-geo-localization.md) - fit: high - IROS 2023 code for long-range UAV thermal geo-localization against satellite RGB imagery, using domain adaptation to bridge thermal and visible imagery; comes with the Boson-nighttime dataset.
+- [GNSS jamming/spoofing classification notebooks](../repos/alicmu2024__gnss-jamming-detection-and-classification-using-machine-learning-deep-learning-and-computer-vision.md) - fit: high - Colab notebooks that classify GNSS jamming types from spectrogram images built from a public raw-IQ jamming dataset, with ML, DL and CV approaches; companion to an arXiv paper.
+- [Batear datasets](../repos/batear-io__batear-datasets.md) - fit: high - Acoustic datasets for drone detection on embedded devices such as ESP32-S3, including bio-acoustic interference samples.
+- [RFClassification](../repos/codymq__rfclassification.md) - fit: high - Notebooks that classify drone presence and type from RF using DroneRF and DroneDetect data (PSD+SVM and CNN approaches), aiming at real-time use with GamutRF hardware.
 - [VGGT](../repos/facebookresearch__vggt.md) - fit: medium - Visual Geometry Grounded Transformer: a feed-forward network predicting camera poses, depth and point maps from one or many images (CVPR 2025 best paper).
 - [PINTO model zoo](../repos/pinto0309__pinto_model_zoo.md) - fit: medium - Large collection of models converted between TensorFlow, TFLite, ONNX, OpenVINO, TensorRT and others.
 - [NVIDIA Isaac Sim](../repos/isaac-sim__isaacsim.md) - fit: medium - NVIDIA's Omniverse-based robot simulator, now open source, with RTX sensor simulation (cameras, lidar, IMU) and ROS 2 bridges.
@@ -46,6 +49,7 @@ Detection, segmentation, depth on embedded hardware supporting navigation.
 - [Isaac ROS DNN Inference](../repos/nvidia-isaac-ros__isaac_ros_dnn_inference.md) - fit: medium - ROS 2 packages for TensorRT and Triton inference on Jetson and x86, with encoder/decoder nodes for common model types.
 - [galileo-osnma (Rust)](../repos/daniestevez__galileo-osnma.md) - fit: medium - Rust implementation of Galileo OSNMA that can run on embedded no_std targets, with examples for live receivers.
 - [SPEED+ baseline](../repos/tpark94__speedplusbaseline.md) - fit: medium - PyTorch baselines and domain-bridging methods for spacecraft pose estimation on the SPEED+ dataset used in ESA Kelvins SPEC2021.
+- [MBEG](../repos/reza-zhu__acmmm23-solution-mbeg.md) - fit: medium - Modern-backbone efficient geo-localization solution for UAVM 2023 including distillation training.
 - [Denoise IMU Gyro](../repos/mbrossar__denoise-imu-gyro.md) - fit: low - CNN that denoises low-cost gyroscope signals to improve attitude estimation.
 - [Learned Inertial Odometry for Drone Racing](../repos/uzh-rpg__learned_inertial_model_odometry.md) - fit: low - UZH RPG code fusing a learned inertial displacement model with an EKF for drone racing state estimation.
 - [RadarHD](../repos/akarsh-prabhakara__radarhd.md) - fit: low - Learns to generate high-resolution, lidar-like point clouds from low-cost single-chip mmWave radar.

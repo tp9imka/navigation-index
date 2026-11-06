@@ -11,6 +11,10 @@ Redesigns SuperGlue-style attention matching to be faster and adaptive, stopping
 - Adaptive depth trades compute for difficulty
 - Permissive license, easy to deploy
 
+## Deep dives
+
+- [lightglue-2023](../../docs/paper-digests/lightglue-2023.md) (paper-digests)
+
 **Concepts:** [Feature detection and matching](../concepts/feature-matching.md)
 
 **Tags:** `arxiv`, `matcher`

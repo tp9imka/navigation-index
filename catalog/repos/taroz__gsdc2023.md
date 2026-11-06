@@ -30,9 +30,13 @@ Winning-team code for the Google Smartphone Decimeter Challenge 2023, using fact
 
 ## Referenced by
 
+- [ML GNSS/IMU integration (GSDC 2022)](../repos/akpozi__machine_learning_gnss_imu_integration.md) (alternative_to)
+- [Smartphone Decimeter Challenge MATLAB package](../repos/arnauochoa__smartphone-decimeter-challenge.md) (alternative_to)
+- [GSDC 10th place solution](../repos/fkaneko__kaggle_google_smartphone_decimeter_challenge.md) (alternative_to)
 - [GPS Measurement Tools (incl. GnssLogger)](../repos/google__gps-measurement-tools.md) (integrates_with)
 - [MatRTKLIB](../repos/taroz__matrtklib.md) (same_org)
 - [Google Smartphone Decimeter Challenge 2023-2024](../resources/google-gsdc-2023.md) (has_code)
+- [ION Smartphone Decimeter Challenge (with Google)](../resources/ion-smartphone-decimeter-challenge.md) (has_code)
 
 _Indexed by lane(s): gnss, sim-data_
 

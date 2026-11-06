@@ -11,6 +11,10 @@ Derives IMU preintegration on the SO(3) manifold with bias-correction Jacobians,
 - Summarise many IMU samples into one relative-motion factor
 - First-order bias correction avoids re-integration
 
+## Deep dives
+
+- [forster-imu-preintegration](../../docs/paper-digests/forster-imu-preintegration.md) (paper-digests)
+
 **Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Visual(-inertial) odometry](../concepts/vio.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
 
 **Tags:** `imu-preintegration`, `factor-graph`

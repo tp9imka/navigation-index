@@ -10,7 +10,7 @@ Map engines, tiles, DEMs, orthophotos, coordinate systems, geodesy.
 
 - [Terrain-relative navigation with a particle filter](../samples/terrain-relative-nav-pf.md) - A stdlib-only simulation of TERCOM/TRN: an aircraft with a biased INS and a radar altimeter matches its measured terrain profile against a seeded synthetic DEM with a particle filter that also estimates the INS velocity 
 
-## Repositories (41)
+## Repositories (42)
 
 - [Leaflet](../repos/leaflet__leaflet.md) - fit: high - Small, simple JavaScript library for interactive raster/vector maps with a huge plugin ecosystem.
 - [CesiumJS](../repos/cesiumgs__cesium.md) - fit: high - WebGL 3D globe and map library with terrain, 3D Tiles, time-dynamic data (CZML) and accurate WGS84 rendering.
@@ -35,6 +35,7 @@ Map engines, tiles, DEMs, orthophotos, coordinate systems, geodesy.
 - [pystac-client](../repos/stac-utils__pystac-client.md) - fit: high - Python client for searching STAC APIs (Earth Search, Planetary Computer and others) by area, time and properties.
 - [GIS MCP Server](../repos/mahdin75__gis-mcp.md) - fit: high - MCP server giving LLMs geospatial operations through Shapely, PyProj, GeoPandas and Rasterio: geometry ops, CRS transforms, distances and raster analysis, without a desktop GIS.
 - [mil-sym-ts](../repos/missioncommand__mil-sym-ts.md) - fit: high - TypeScript/JavaScript renderer for MIL-STD-2525 (D and later) military symbology, producing single-point and multi-point tactical graphics for web maps.
+- [Sentinel-1 RFI detection](../repos/zephr-xyz__sentinel1-rfi-detection.md) - fit: high - Pipeline that detects radio-frequency interference in Sentinel-1 SAR imagery using temporal z-scores and DEM masking, to map GNSS jamming activity from orbit.
 - [grid_map](../repos/leggedrobotics__grid_map.md) - fit: high - Universal multi-layer 2.5D grid map library for mobile robots with ROS/ROS 2 integration, filters, iterators and conversion to images, point clouds and costmaps.
 - [Hackathon-Blind-Flight (team GORIZONT)](../repos/t1gr20an06-k__hackathon-blind-flight.md) - fit: high - Russian-language hackathon solution for 'Полёт вслепую' (Blind flight): estimate aircraft position, ground speed and heading without GNSS by reconstructing a terrain profile (barometric altitude minus radar altimeter) an
 - [FlyingBlind_Hakaton](../repos/solarwarlock__flyingblind_hakaton.md) - fit: high - Second public solution to the same 'Полёт вслепую' hackathon task: web prototype that reads a GeoTIFF DEM and NMEA-0183 radar-altimeter messages, searches start point, speed and azimuth hypotheses by RMSE/correlation, an
@@ -47,7 +48,7 @@ Map engines, tiles, DEMs, orthophotos, coordinate systems, geodesy.
 - [GTSfM](../repos/borglab__gtsfm.md) - fit: medium - End-to-end structure-from-motion pipeline built on GTSAM, with pluggable front-ends (classical and learned matchers) and distributed execution via Dask.
 - [ATAK-CIV (DoD release, archived)](../repos/deptofdefense__androidtacticalassaultkit-civ.md) - fit: medium - The DoD's public source release of the civilian Android Team Awareness Kit: map engine, Cursor-on-Target messaging and plugin SDK.
 - [LLM-Geo (Autonomous GIS)](../repos/gladcolor__llm-geo.md) - fit: medium - Research prototype of an LLM-driven 'autonomous GIS' that turns a spatial question into a solution graph, generates code and executes the analysis to return maps and numbers.
-- [qgis-mcp (nkarasiak)](../repos/nkarasiak__qgis-mcp.md) - fit: medium - Actively maintained MCP bridge connecting AI agents to QGIS Desktop, with a broader tool set than the original qgis_mcp.
+- [qgis-mcp (nkarasiak)](../repos/nkarasiak__qgis-mcp.md) - fit: medium - MCP bridge that lets AI agents drive QGIS Desktop: a QGIS plugin runs a TCP socket server inside QGIS and a FastMCP server exposes about 125 tools (layers, feature editing, processing, rendering, styling, layouts/atlas, 
 - [ATAK-CIV (TAK Product Center)](../repos/tak-product-center__atak-civ.md) - fit: medium - Source of the civilian Android Team Awareness Kit maintained by the TAK Product Center: map client, plugin SDK and CoT handling.
 - [odc-stac](../repos/opendatacube__odc-stac.md) - fit: medium - Loads STAC items into xarray datasets with reprojection, resampling and mosaicking.
 - [CityNav](../repos/water-cookie__citynav.md) - fit: medium - Language-goal aerial navigation dataset over real-city 3D point clouds with geographic information, plus baselines that use map-based landmark grounding.

@@ -16,6 +16,7 @@ MSCKF-based visual-inertial navigation platform with online calibration, a simul
 
 - [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
 - [rpng__open_vins](../../docs/integration-cards/rpng__open_vins.md) (integration-cards)
+- [openvins-2020](../../docs/paper-digests/openvins-2020.md) (paper-digests)
 
 **Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Sensor calibration](../concepts/calibration.md), [Simulation and HIL/SITL](../concepts/simulation.md)
 

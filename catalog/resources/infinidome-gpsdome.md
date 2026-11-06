@@ -9,8 +9,7 @@ infiniDome sells retrofit anti-jam modules that sit between antenna elements and
 ## Key takeaways
 
 - Vendor claim: CRPA-like protection without CRPA cost or export restrictions
-- Vendor claim: '400%' jamming resilience improvement in Israeli-government-sponsored trials
-- Weight figures differ across press releases
+- Weight figures differ across press releases (500 g in the linked GPS World piece, 350 g elsewhere)
 
 ## Deep dives
 

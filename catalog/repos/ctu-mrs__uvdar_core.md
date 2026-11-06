@@ -25,6 +25,7 @@ Mutual relative localization for UAV swarms using blinking ultraviolet LEDs and 
 ## Referenced by
 
 - [MRS UAV System](../repos/ctu-mrs__mrs_uav_system.md) (integrates_with)
+- [Martin Saska - RSS 2024 Aerial Swarms workshop slides](../resources/saska-rss-2024-aerial-swarms.md) (explains)
 
 _Indexed by lane(s): domains-swarm_
 

@@ -2307,7 +2307,7 @@
     ],
     "maturity": "production",
     "hackathon_fit": "high",
-    "hackathon_notes": "pip install pyModeS; pairs with a Beast/raw feed from readsb.",
+    "hackathon_notes": "pip install pyModeS now installs the v3 rewrite (Python 3.11+): a single decode() call plus a stateful PipeDecoder for streams, and a modes CLI. Older tutorials and The 1090MHz Riddle use the v2 pms.adsb.* API; pin pyModeS<3 to follow them. Pairs with a Beast/raw feed from readsb.",
     "related": [
       {
         "id": "repo:xoolive/traffic",

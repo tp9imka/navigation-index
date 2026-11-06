@@ -10,7 +10,7 @@ LiDAR-inertial odometry aiming to work without sensor-specific modelling or heav
 
 **Why it matters:** Recent (2025-2026) LIO from the KISS-ICP group; good for unknown hardware.
 
-**Hackathon notes:** Check README for pip/ROS 2 usage; similar ergonomics to KISS-ICP.
+**Hackathon notes:** `pip install "rko_lio[all]"` then `rko_lio -v /path/to/bags` runs on ROS 1 or ROS 2 bags with a rerun viewer; a ROS 2 node is also available. You must supply IMU and LiDAR extrinsics if the bag's TF tree lacks them. No loop closure - see rko_slam for that.
 
 **Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
 

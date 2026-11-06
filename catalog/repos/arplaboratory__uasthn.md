@@ -12,6 +12,10 @@ ICRA 2025 extension of STHN that adds uncertainty estimation to satellite-therma
 
 **Hackathon notes:** Feed its uncertainty into your EKF measurement covariance.
 
+## Deep dives
+
+- [uasthn-uncertainty-thermal-2025](../../docs/paper-digests/uasthn-uncertainty-thermal-2025.md) (paper-digests)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
 
 **Tags:** `thermal`, `uncertainty`

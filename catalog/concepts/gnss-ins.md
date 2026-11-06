@@ -10,7 +10,7 @@ Loosely, tightly and deeply coupled GNSS/INS.
 
 - [GNSS/INS EKF through a GNSS outage and a spoofing walk-off](../samples/gnss-ins-ekf-outage.md) - A stdlib-only 2D loosely-coupled GNSS/INS EKF (8 states, hand-written matrix helpers) on a synthetic vehicle with biased, noisy 100 Hz IMU and 1 Hz GNSS.
 
-## Repositories (34)
+## Repositories (36)
 
 - [ArduPilot](../repos/ardupilot__ardupilot.md) - fit: high - GPL autopilot covering Copter, Plane (incl.
 - [PX4 Autopilot](../repos/px4__px4-autopilot.md) - fit: high - Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, built on NuttX with a uORB pub/sub middleware.
@@ -45,11 +45,14 @@ Loosely, tightly and deeply coupled GNSS/INS.
 - [GLIO](../repos/xikunliu-huskit__glio.md) - fit: low - Tightly coupled GNSS/LiDAR/IMU integration (PolyU) for continuous, drift-free state estimation in urban canyons.
 - [gnss_comm](../repos/hkust-aerial-robotics__gnss_comm.md) - fit: low - C++/ROS definitions and utilities for raw GNSS measurement processing (ephemeris, satellite positions, pseudorange models) used by GVINS.
 - [gps_imu_fusion](../repos/shelfcol__gps_imu_fusion.md) - fit: low - GPS/IMU fusion examples implemented with ESKF, EKF, UKF and other filters.
+- [GSDC 10th place solution](../repos/fkaneko__kaggle_google_smartphone_decimeter_challenge.md) - fit: low - 10th-place solution for the Kaggle Google Smartphone Decimeter Challenge.
+- [ML GNSS/IMU integration (GSDC 2022)](../repos/akpozi__machine_learning_gnss_imu_integration.md) - fit: low - ML-based adaptive positioning to fuse smartphone GNSS and IMU, built for GSDC 2022.
 - [graduate_work (UAV INS module thesis)](../repos/danamarkova__graduate_work.md) - fit: low - Russian graduate thesis code: 'Development of a UAV inertial navigation module using auxiliary navigation data'.
 
-## Documents, talks, courses, datasets (26)
+## Documents, talks, courses, datasets (28)
 
 - [Complex Urban Dataset](../resources/kaist-complex-urban-dataset.md) - dataset - Urban driving in dense city areas with lidar, stereo and navigation sensors where GNSS is degraded.
+- [Data-Driven Analysis of PNT Resilience: Insights and Lessons from Jammertest 2024 Vehicular Data](../resources/jammertest-2024-vehicular-pnt-resilience.md) - paper - Analyses vehicle-mounted GNSS, phone, IMU and camera data collected at Jammertest 2024.
 - [EKF Source Selection and Switching](../resources/ardupilot-ekf3-sources.md) - doc - Reference for EKF3 source parameters (position, velocity, yaw per axis) and how fusion of multiple velocity sources works.
 - [Extended Kalman Filter (EKF) navigation overview](../resources/ardupilot-ekf-overview.md) - doc - Overview of ArduPilot's EKF2/EKF3 estimators: states, sensor inputs, innovation checks, lane switching across multiple IMUs and tuning guidance.
 - [FAA SAFO 24002: Recognizing and Mitigating GPS/GNSS Disruptions](../resources/faa-safo-24002-gnss-disruptions.md) - doc - FAA Safety Alert for Operators describing jamming vs spoofing effects on aircraft systems, typical locations near conflict and counter-UAS areas, and recommended crew and operator actions.
@@ -59,6 +62,7 @@ Loosely, tightly and deeply coupled GNSS/INS.
 - [Honeywell HGuide o480 single-card INS and HGuide i700 IMU](../resources/honeywell-hguide-o480.md) - product - HGuide o480 (May 2025) is a single-card INS for small UAVs and ground robots that accepts velocity aiding (e.g.
 - [Inertial Labs VINS visual-aided INS (with Maxar Raptor)](../resources/inertial-labs-vins.md) - product - Launched June 2025, VINS combines an Inertial Labs INS with Maxar Raptor software that matches camera frames to Maxar Precision3D satellite-derived 3D maps for absolute position on long-range UAV flights.
 - [ION GNSS+ Tutorials](../resources/ion-gnss-plus-tutorials.md) - course - Pre-conference tutorial programme of ION GNSS+, the main annual GNSS technical meeting: half-day in-depth courses by field experts on topics such as GNSS signals, receivers, PPP/RTK, inertial integration and interference
+- [ION Smartphone Decimeter Challenge (with Google)](../resources/ion-smartphone-decimeter-challenge.md) - competition - ION page for the smartphone decimeter challenge listing official placings; for 2023 it lists Norizumi Motooka first, Taro Suzuki second and Jeonghyeon Yun third.
 - [LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping](../resources/lio-sam-shan-2020.md) - paper - Formulates LiDAR-inertial odometry as factor-graph smoothing with IMU preintegration, LiDAR odometry, GPS and loop-closure factors.
 - [MARS-LVIG Dataset](../resources/hku-mars-lvig-dataset.md) - dataset - Aerial robot SLAM dataset for lidar-visual-inertial-GNSS fusion, including sequences with raw GNSS measurements under different lighting.
 - [Navigating Using GPS Localization (Nav2 tutorial)](../resources/nav2-gps-navigation-tutorial.md) - doc - Nav2 tutorial on outdoor navigation with GPS: fusing GNSS, IMU and odometry with robot_localization's navsat_transform, configuring Nav2 for GPS waypoints, and demonstrating it in Gazebo.

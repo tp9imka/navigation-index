@@ -10,12 +10,13 @@ NVIDIA's CUDA-accelerated visual odometry and SLAM library supporting mono to mu
 
 **Why it matters:** The engine behind Isaac ROS Visual SLAM, now usable directly from Python.
 
-**Hackathon notes:** pip install the Python wheel on Jetson or x86 with CUDA; examples for EuRoC/KITTI.
+**Hackathon notes:** Download the prebuilt wheel (cuvslam-cu12 or -cu13) from the GitHub releases page, not PyPI; wheels cover x86_64, Jetson Orin (JetPack 6) and Jetson Thor with Python 3.10+, other combos need a source build. Needs CUDA Toolkit libraries; examples include EuRoC and KITTI.
 
 ## Deep dives
 
 - [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
 - [nvidia-isaac__cuvslam](../../docs/integration-cards/nvidia-isaac__cuvslam.md) (integration-cards)
+- [cuvslam-2025](../../docs/paper-digests/cuvslam-2025.md) (paper-digests)
 
 **Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Visual SLAM](../concepts/visual-slam.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 

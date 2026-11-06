@@ -2,7 +2,7 @@
 
 `res:jpl-rosa-paper-2024` - paper - <https://arxiv.org/abs/2410.06472>
 
-**By:** NASA JPL - **Year:** 2024 - **Level:** intro - **Access:** open
+**By:** Rob Royce, Marcel Kaufmann, Jonathan Becktor, Sangwoo Moon, et al. (NASA JPL) - **Year:** 2024 - **Level:** intro - **Access:** open
 
 Describes ROSA, an LLM agent that lets operators inspect and command ROS systems in natural language through a curated tool set, and discusses safety and operational considerations.
 

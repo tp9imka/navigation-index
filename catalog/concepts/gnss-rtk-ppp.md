@@ -10,7 +10,7 @@ Carrier-phase differential and precise point positioning, corrections (RTCM, SSR
 
 - [Public CORS RINEX to SPP vs RTK with RTKLIB demo5 and gnss_lib_py](../samples/gnss-rinex-processing.md) - Downloads one day of public NOAA NGS CORS RINEX for a rover/base pair 30 km apart, runs RTKLIB demo5 rnx2rtkp in single-point and kinematic RTK modes with exact CLI flags, and scores both against the stations' published 
 
-## Repositories (20)
+## Repositories (21)
 
 - [RTKLIB](../repos/tomojitakasu__rtklib.md) - fit: high - The original open-source GNSS positioning package by T.
 - [RTKLIB demo5 (rtklibexplorer)](../repos/rtklibexplorer__rtklib.md) - fit: high - Actively maintained RTKLIB fork tuned for low-cost receivers (especially u-blox), with many robustness fixes to ambiguity resolution, cycle-slip handling and receiver decoders.
@@ -28,6 +28,7 @@ Carrier-phase differential and precise point positioning, corrections (RTCM, SSR
 - [ntripcaster (BKG standard caster)](../repos/nunojpg__ntripcaster.md) - fit: medium - Maintained mirror of the BKG standard NTRIP broadcaster in C for distributing RTCM correction streams over HTTP.
 - [go-gnss/ntrip](../repos/go-gnss__ntrip.md) - fit: medium - Go library implementing NTRIP client, server and caster components.
 - [ntripbrowser](../repos/emlid__ntripbrowser.md) - fit: medium - Command-line tool that fetches and displays an NTRIP caster's source table, optionally filtered by distance from a coordinate.
+- [Google SDC corrections (Swift Navigation)](../repos/swift-nav__google-sdc-corrections.md) - fit: medium - SSR and OSR GNSS correction data for the 2021 Google Smartphone Decimeter Challenge drives, in SBP, JSON, RTCM3 and RINEX.
 - [GraphGNSSLib](../repos/weisongwen__graphgnsslib.md) - fit: low - Open-source GNSS positioning and RTK package using factor graph optimization, built on RTKLIB data handling and ROS.
 - [Ginan](../repos/geoscienceaustralia__ginan.md) - fit: low - Geoscience Australia's GNSS analysis toolkit for precise orbit determination and real-time/post-processed PPP, producing and consuming correction products.
 - [Node-NTRIP caster](../repos/node-ntrip__caster.md) - fit: low - TypeScript/Node.js NTRIP caster library supporting NTRIP v1 and v2.

@@ -14,6 +14,7 @@ Matches night-time UAV thermal imagery to satellite RGB maps using domain adapta
 ## Deep dives
 
 - [thermal-datasets](../../docs/dataset-cards/thermal-datasets.md) (dataset-cards)
+- [thermal-geolocalization-iros-2023](../../docs/paper-digests/thermal-geolocalization-iros-2023.md) (paper-digests)
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
 

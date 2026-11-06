@@ -29,6 +29,7 @@ Code for the RFUAV benchmark dataset for UAV detection and identification from R
 ## Referenced by
 
 - [DroneRF](../repos/al-sad__dronerf.md) (alternative_to)
+- [Noisy Drone RF Signal Classification](../repos/sgluege__noisy-drone-rf-signal-classification.md) (alternative_to)
 
 _Indexed by lane(s): domains-swarm_
 

@@ -14,6 +14,7 @@ Example ROS 2 nodes and helpers (frame transforms) for interfacing with PX4 over
 
 ## Deep dives
 
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [px4__px4_ros_com](../../docs/integration-cards/px4__px4_ros_com.md) (integration-cards)
 
 **Concepts:** [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Autopilots and flight control](../concepts/autopilot.md)

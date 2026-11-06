@@ -27,6 +27,7 @@ Multi-GNSS software receiver in MATLAB from the Finnish Geospatial Research Inst
 
 - [CU Boulder GNSS SDR Collection](../repos/gnsscusdr__cu-sdr-collection.md) (alternative_to)
 - [FGI-OSNMA](../repos/nlsfi__fgi-osnma.md) (same_org)
+- [FGI Jammer Test 2023 Repository](../resources/fgi-jammertest-2023-repository.md) (has_code)
 
 _Indexed by lane(s): gnss_
 

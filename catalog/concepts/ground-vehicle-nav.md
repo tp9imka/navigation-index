@@ -47,7 +47,7 @@ UGV/off-road autonomy stacks, localization and navigation for ground robots.
 - [WayFAST](../repos/matval__wayfast.md) - fit: low - Self-supervised traversability prediction for wheeled field robots that learns from RGB-D and estimates traction from kinodynamic models.
 - [elevation_mapping](../repos/leggedrobotics__elevation_mapping.md) - fit: low - ETH Zurich robot-centric elevation mapping for rough terrain navigation that fuses range data into a probabilistic 2.5D map.
 
-## Documents, talks, courses, datasets (18)
+## Documents, talks, courses, datasets (19)
 
 - [Advanced Navigation Boreas FOG INS with LVS laser velocity sensor](../resources/advanced-navigation-boreas.md) - product - Advanced Navigation's Boreas fibre-optic-gyro INS line, fused with its LVS laser velocity sensor or wheel odometry, is marketed for long GNSS-denied ground and maritime runs; reported trials include a US Army testbed and
 - [AI-IMU Dead-Reckoning](../resources/brossard-ai-imu-dr.md) - paper - Car localisation from IMU alone by combining an invariant EKF with a neural network that adapts measurement noise covariances (pseudo-measurements), evaluated on KITTI.
@@ -55,6 +55,7 @@ UGV/off-road autonomy stacks, localization and navigation for ground robots.
 - [Complex Urban Dataset](../resources/kaist-complex-urban-dataset.md) - dataset - Urban driving in dense city areas with lidar, stereo and navigation sensors where GNSS is degraded.
 - [Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation](../resources/hartley-contact-aided-inekf.md) - paper - Applies the invariant EKF to legged robots, fusing IMU with leg contact kinematics, and evaluates it against a quaternion EKF.
 - [DSEC: A Stereo Event Camera Dataset for Driving Scenarios](../resources/uzh-dsec-dataset.md) - dataset - Stereo event and frame cameras plus lidar and RTK GNSS on a car, including night and challenging illumination.
+- [EUDIS Defence Hackathon Klagenfurt winners (Oct 2026)](../resources/eudis-2026-klagenfurt-winners.md) - blog - Report on the Austrian site of the 5th EUDIS hackathon: IRNAS (Slovenia) won the GNSS-Denied Navigation challenge with multi-sensor fusion for a ground robot, reporting much lower path deviation after many test runs.
 - [KITTI Visual Odometry / SLAM Evaluation](../resources/kitti-odometry-benchmark.md) - dataset - Driving sequences with stereo cameras, Velodyne lidar and GPS/IMU ground truth, plus a public leaderboard for odometry.
 - [KITTI-360](../resources/kitti-360-dataset.md) - dataset - Successor to KITTI with longer suburban drives, 360-degree perception sensors and dense annotations, with GPS/IMU poses.
 - [Nav2 Documentation](../resources/nav2-docs.md) - doc - Official Nav2 documentation: concepts, configuration guides for every planner/controller/costmap plugin, tuning guide and tutorials including GPS-based navigation.

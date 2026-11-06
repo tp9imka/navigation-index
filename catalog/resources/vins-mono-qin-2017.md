@@ -11,6 +11,10 @@ Presents the VINS-Mono estimator: IMU preintegration, robust initialization, tig
 - Monocular camera + IMU recovers metric scale
 - Initialization is a key practical component
 
+## Deep dives
+
+- [vins-mono-qin-2017](../../docs/paper-digests/vins-mono-qin-2017.md) (paper-digests)
+
 **Concepts:** [Visual(-inertial) odometry](../concepts/vio.md)
 
 **Tags:** `sliding-window`, `preintegration`

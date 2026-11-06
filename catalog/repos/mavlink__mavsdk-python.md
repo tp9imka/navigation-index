@@ -14,6 +14,7 @@ Asyncio Python client for MAVSDK that wraps a bundled mavsdk_server.
 
 ## Deep dives
 
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [mavlink__mavsdk-python](../../docs/integration-cards/mavlink__mavsdk-python.md) (integration-cards)
 
 **Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Autopilots and flight control](../concepts/autopilot.md)

@@ -17,6 +17,7 @@ IROS 2023 code for long-range UAV thermal geo-localization against satellite RGB
 - [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
 - [arplaboratory__satellite-thermal-geo-localization](../../docs/integration-cards/arplaboratory__satellite-thermal-geo-localization.md) (integration-cards)
 - [thermal-datasets](../../docs/dataset-cards/thermal-datasets.md) (dataset-cards)
+- [thermal-geolocalization-iros-2023](../../docs/paper-digests/thermal-geolocalization-iros-2023.md) (paper-digests)
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 
@@ -31,6 +32,7 @@ IROS 2023 code for long-range UAV thermal geo-localization against satellite RGB
 
 ## Referenced by
 
+- [CART - Caltech Aerial RGB-Thermal](../repos/aerorobotics__caltech-aerial-rgbt-dataset.md) (alternative_to)
 - [STHN](../repos/arplaboratory__sthn.md) (extends)
 - [SCC-Loc](../repos/floralhercules__scc-loc.md) (alternative_to)
 - [Long-range UAV Thermal Geo-localization with Satellite Imagery](../resources/thermal-geolocalization-iros-2023.md) (has_code)

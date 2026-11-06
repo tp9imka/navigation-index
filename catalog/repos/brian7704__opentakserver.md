@@ -14,6 +14,7 @@ Actively developed open-source TAK server for ATAK, iTAK and WinTAK with web UI,
 
 ## Deep dives
 
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [brian7704__opentakserver](../../docs/integration-cards/brian7704__opentakserver.md) (integration-cards)
 
 **Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md)
@@ -37,6 +38,7 @@ Actively developed open-source TAK server for ATAK, iTAK and WinTAK with web UI,
 - [ATAK-CIV (TAK Product Center)](../repos/tak-product-center__atak-civ.md) (integrates_with)
 - [TAK Server (open source)](../repos/tak-product-center__server.md) (alternative_to)
 - [OpenTAKServer Documentation](../resources/opentakserver-docs.md) (explains)
+- [GNSS jammer geolocation from DF bearings to TAK](../samples/interference-geolocation-to-tak.md) (explains)
 - [MAVLink telemetry to TAK Cursor-on-Target](../samples/mavlink-to-tak-cot.md) (uses)
 
 _Indexed by lane(s): defense-context, planning-gis-c2_

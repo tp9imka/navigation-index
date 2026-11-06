@@ -12,6 +12,10 @@ Matching grounded in 3D: predicts dense correspondences and 3D pointmaps from im
 
 **Hackathon notes:** Heavy model and non-commercial license; good for offline demos.
 
+## Deep dives
+
+- [mast3r-2024](../../docs/paper-digests/mast3r-2024.md) (paper-digests)
+
 **Concepts:** [Feature detection and matching](../concepts/feature-matching.md), [Visual SLAM](../concepts/visual-slam.md)
 
 **Tags:** `3d`, `dense`, `foundation-model`

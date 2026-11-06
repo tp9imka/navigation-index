@@ -10,7 +10,7 @@ Second public solution to the same 'Полёт вслепую' hackathon task: w
 
 **Why it matters:** Shows the practical details (UTM projection, bilinear DEM sampling, weighted scoring for informative relief, flat-terrain rejection) that a TERCOM demo needs.
 
-**Hackathon notes:** rasterio + pyproj; includes a synthetic NMEA generator from a real DEM, which is handy for building test data fast. Single-commit repo.
+**Hackathon notes:** Streamlit app on rasterio + pyproj; an optional Rust core (built automatically if cargo is installed) speeds up the hypothesis search. Includes a synthetic NMEA generator from a real DEM, which is handy for building test data fast. Small repo (about a dozen commits).
 
 ## Deep dives
 

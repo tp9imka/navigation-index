@@ -10,7 +10,7 @@ SITL-first MCP server for talking to ArduPilot vehicles over MAVLink, with expli
 
 **Why it matters:** Its safety-gate design is a useful pattern for keeping an LLM from issuing unsafe flight commands.
 
-**Hackathon notes:** Small codebase; read the gating logic and reuse it in your own bridge.
+**Hackathon notes:** `pipx install ardupilot-mavlink-mcp`, point it at SITL (tcp:127.0.0.1:5760). Read-only by default; arming needs `--enable-actuation`, and real (non-loopback) links also need `--allow-real-vehicle`. Its prearm-diagnosis and single-reader-thread design are worth copying.
 
 **Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
 

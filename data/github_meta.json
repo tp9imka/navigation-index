@@ -85,6 +85,19 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:aerorobotics/caltech-aerial-rgbt-dataset": {
+  "archived": false,
+  "description": null,
+  "forks_count": 3,
+  "full_name": "aerorobotics/caltech-aerial-rgbt-dataset",
+  "html_url": "https://github.com/aerorobotics/caltech-aerial-rgbt-dataset",
+  "language": "Python",
+  "license": "NOASSERTION",
+  "pushed_at": "2025-01-10T02:46:47Z",
+  "stargazers_count": 94,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:aerostack2/aerostack2": {
   "archived": false,
   "description": "Aerostack2 is a ROS 2 framework developed to create autonomous multi-aerial-robots systems in an easy and powerful way.",
@@ -234,6 +247,19 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:akpozi/machine_learning_gnss_imu_integration": {
+  "archived": false,
+  "description": "Google Smartphone Decimeter Challenge 2022: Using machine learning (ML) based adaptive positioning approach to estimate the positions of the smartphone.",
+  "forks_count": 9,
+  "full_name": "Akpozi/Machine_Learning_GNSS_IMU_Integration",
+  "html_url": "https://github.com/Akpozi/Machine_Learning_GNSS_IMU_Integration",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2022-08-19T06:25:44Z",
+  "stargazers_count": 22,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:al-sad/dronerf": {
   "archived": false,
   "description": "This repository contains all MATLAB and Python codes used for Drones Detection and Identification using their RF signals.",
@@ -264,6 +290,19 @@
    "python",
    "spoofing"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:alicmu2024/gnss-jamming-detection-and-classification-using-machine-learning-deep-learning-and-computer-vision": {
+  "archived": false,
+  "description": "GNSS/GPS Spoofing and Jamming Detection and Classification Using Machine Learning, Deep Learning, and Computer Vision",
+  "forks_count": 8,
+  "full_name": "alicmu2024/GNSS-Jamming-Detection-and-Classification-using-Machine-Learning-Deep-Learning-and-Computer-Vision",
+  "html_url": "https://github.com/alicmu2024/GNSS-Jamming-Detection-and-Classification-using-Machine-Learning-Deep-Learning-and-Computer-Vision",
+  "language": "Jupyter Notebook",
+  "license": null,
+  "pushed_at": "2025-11-17T14:13:24Z",
+  "stargazers_count": 69,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:alinnman/celestial-navigation": {
@@ -839,6 +878,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:arnauochoa/smartphone-decimeter-challenge": {
+  "archived": false,
+  "description": "Matlab package for the Google Smartphone Decimeter Challenge at ION GNSS+ 2021.",
+  "forks_count": 2,
+  "full_name": "arnauochoa/smartphone-decimeter-challenge",
+  "html_url": "https://github.com/arnauochoa/smartphone-decimeter-challenge",
+  "language": "MATLAB",
+  "license": "MIT",
+  "pushed_at": "2023-07-05T19:43:59Z",
+  "stargazers_count": 9,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:arplaboratory/satellite-thermal-geo-localization": {
   "archived": false,
   "description": "[IROS 2023] Official repository for \"Long-range UAV Thermal Geo-localization with Satellite Imagery\"",
@@ -1105,6 +1157,19 @@
    "lora",
    "poe"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:batear-io/batear-datasets": {
+  "archived": false,
+  "description": "A benchmark audio dataset for drone detection on embedded systems.",
+  "forks_count": 5,
+  "full_name": "batear-io/batear-datasets",
+  "html_url": "https://github.com/batear-io/batear-datasets",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-04-30T15:17:54Z",
+  "stargazers_count": 12,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:behaviortree/behaviortree.cpp": {
@@ -1709,6 +1774,19 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:chance1911/mmc-uav-dataset": {
+  "archived": false,
+  "description": "MMC-UAV Dataset：A multimodal low altitude anti drone dataset based on infrared/visible light images, active radar, and passive radio frequency signals. ",
+  "forks_count": 0,
+  "full_name": "Chance1911/MMC-UAV-Dataset",
+  "html_url": "https://github.com/Chance1911/MMC-UAV-Dataset",
+  "language": null,
+  "license": null,
+  "pushed_at": "2025-10-24T02:22:06Z",
+  "stargazers_count": 5,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:chennuo0125-hit/lidar_imu_calib": {
   "archived": false,
   "description": "automatic calibration of 3D lidar and IMU extrinsics",
@@ -1823,6 +1901,19 @@
    "autonomy",
    "robotics"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:codymq/rfclassification": {
+  "archived": false,
+  "description": "Project aimed to use RF signals to detect and classify devices",
+  "forks_count": 0,
+  "full_name": "CodyMQ/RFClassification",
+  "html_url": "https://github.com/CodyMQ/RFClassification",
+  "language": null,
+  "license": "Apache-2.0",
+  "pushed_at": "2022-09-29T22:25:39Z",
+  "stargazers_count": 0,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:colonelpanichacks/drone-mesh-mapper": {
@@ -2311,6 +2402,34 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:devmbs/crtclient": {
+  "archived": false,
+  "description": "Frontend and backend for the Clover Rescue Project",
+  "forks_count": 0,
+  "full_name": "DevMBS/CRTClient",
+  "html_url": "https://github.com/DevMBS/CRTClient",
+  "language": "JavaScript",
+  "license": "NOASSERTION",
+  "pushed_at": "2022-04-18T19:20:09Z",
+  "stargazers_count": 2,
+  "topics": [
+   "clover",
+   "coex",
+   "drone",
+   "express",
+   "gps",
+   "js",
+   "mongodb",
+   "nodejs",
+   "px4",
+   "ros",
+   "roslibjs",
+   "socket-io",
+   "ui",
+   "web"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:dfpc-coe/cloudtak": {
   "archived": false,
   "description": "TAK Compatible, browser based Common Operation Picture & Situational Awareness tool",
@@ -2364,6 +2483,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:dmmm1997/fsra": {
+  "archived": false,
+  "description": "「TCSVT2021」A Transformer-Based Feature Segmentation and Region Alignment Method For UAV-View Geo-Localization",
+  "forks_count": 20,
+  "full_name": "Dmmm1997/FSRA",
+  "html_url": "https://github.com/Dmmm1997/FSRA",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2024-03-07T14:21:53Z",
+  "stargazers_count": 122,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:dronecan/libcanard": {
   "archived": false,
   "description": null,
@@ -2374,6 +2506,19 @@
   "license": "MIT",
   "pushed_at": "2025-07-13T20:42:14Z",
   "stargazers_count": 114,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:dronedetectionthesis/drone-detection-dataset": {
+  "archived": false,
+  "description": "Dataset containing IR, visible and audio data to be used to train drone detection systems.",
+  "forks_count": 66,
+  "full_name": "DroneDetectionThesis/Drone-detection-dataset",
+  "html_url": "https://github.com/DroneDetectionThesis/Drone-detection-dataset",
+  "language": "MATLAB",
+  "license": "CC0-1.0",
+  "pushed_at": "2026-04-26T22:13:30Z",
+  "stargazers_count": 343,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -2869,6 +3014,19 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:fabianr-su/stanford-gnss-spoof-detection": {
+  "archived": false,
+  "description": "Public code written for spoof detection. Algorithms and simulations to support publications.",
+  "forks_count": 3,
+  "full_name": "fabianr-su/stanford-gnss-spoof-detection",
+  "html_url": "https://github.com/fabianr-su/stanford-gnss-spoof-detection",
+  "language": "MATLAB",
+  "license": "MIT",
+  "pushed_at": "2020-01-30T23:30:50Z",
+  "stargazers_count": 14,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:fabio-sim/lightglue-onnx": {
   "archived": false,
   "description": "ONNX-compatible LightGlue: Local Feature Matching at Light Speed. Supports TensorRT, OpenVINO",
@@ -2912,6 +3070,19 @@
   "license": "NOASSERTION",
   "pushed_at": "2026-05-19T03:39:39Z",
   "stargazers_count": 14599,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:fahadwebd/machine-learning-based-gnss-jamming-detection-on-antartica-dataset": {
+  "archived": false,
+  "description": "Machine Learning-Based GNSS Jamming Detection and Temporal Generalisation Using Real-World Maritime Receiver and Spectrum Measurements",
+  "forks_count": 0,
+  "full_name": "FahadwebD/Machine-Learning-Based-GNSS-Jamming-Detection-On-Antartica-Dataset",
+  "html_url": "https://github.com/FahadwebD/Machine-Learning-Based-GNSS-Jamming-Detection-On-Antartica-Dataset",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-08-13T16:11:28Z",
+  "stargazers_count": 1,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -2973,6 +3144,25 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:fkaneko/kaggle_google_smartphone_decimeter_challenge": {
+  "archived": false,
+  "description": "10th place solution for Google Smartphone Decimeter Challenge at kaggle.",
+  "forks_count": 12,
+  "full_name": "Fkaneko/kaggle_Google_Smartphone_Decimeter_Challenge",
+  "html_url": "https://github.com/Fkaneko/kaggle_Google_Smartphone_Decimeter_Challenge",
+  "language": "Python",
+  "license": "Apache-2.0",
+  "pushed_at": "2022-05-06T01:49:24Z",
+  "stargazers_count": 30,
+  "topics": [
+   "computer-vision",
+   "convolutional-neural-networks",
+   "gnss",
+   "kaggle",
+   "short-time-fourier-transform"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:flightaware/dump1090": {
   "archived": false,
   "description": "Dump1090 is a simple Mode S decoder for RTLSDR devices",
@@ -2986,6 +3176,19 @@
   "topics": [
    "ads-b"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:floralhercules/scalloc": {
+  "archived": false,
+  "description": "Thermal Oblique UAV Sequence Geo-Localization",
+  "forks_count": 0,
+  "full_name": "FloralHercules/ScalLoc",
+  "html_url": "https://github.com/FloralHercules/ScalLoc",
+  "language": "Python",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-10-15T14:02:45Z",
+  "stargazers_count": 5,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:floralhercules/scc-loc": {
@@ -3663,6 +3866,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:grupo-semear-usp/swarm_in_blocks": {
+  "archived": false,
+  "description": "Swarm In Blocks project by team Atena - SEMEAR group.",
+  "forks_count": 1,
+  "full_name": "Grupo-SEMEAR-USP/swarm_in_blocks",
+  "html_url": "https://github.com/Grupo-SEMEAR-USP/swarm_in_blocks",
+  "language": "JavaScript",
+  "license": null,
+  "pushed_at": "2023-06-09T15:06:26Z",
+  "stargazers_count": 8,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:hailo-ai/hailo-rpi5-examples": {
   "archived": false,
   "description": null,
@@ -3738,6 +3954,19 @@
   "license": "BSD-2-Clause",
   "pushed_at": "2021-10-09T15:21:17Z",
   "stargazers_count": 30,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:helsinki-sda-group/towards-jammer-fingerprinting": {
+  "archived": false,
+  "description": "Code for \"Towards Jammer Fingerprinting: The Effect of the Environment and the Receiver to a Jammer Classification\" published in ICL-GNSS 2024",
+  "forks_count": 0,
+  "full_name": "helsinki-sda-group/Towards-Jammer-Fingerprinting",
+  "html_url": "https://github.com/helsinki-sda-group/Towards-Jammer-Fingerprinting",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2025-02-12T15:57:10Z",
+  "stargazers_count": 1,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -4161,6 +4390,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:hrli97/mlpn_workshop": {
+  "archived": false,
+  "description": null,
+  "forks_count": 1,
+  "full_name": "HrLi97/MLPN_workshop",
+  "html_url": "https://github.com/HrLi97/MLPN_workshop",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2023-07-17T14:49:15Z",
+  "stargazers_count": 5,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:hstm/terrain-nav-preprocessing": {
   "archived": false,
   "description": "Preprocessing tools for terrain-referenced navigation: DEM tile generation with controlled noise for enhanced computer vision feature detection",
@@ -4184,6 +4426,51 @@
   "license": "GPL-3.0",
   "pushed_at": "2024-06-12T07:53:51Z",
   "stargazers_count": 781,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:huang-chuan/magnetic-field-odometry": {
+  "archived": false,
+  "description": "Magnetic-Field aided Inertial Navigation System",
+  "forks_count": 8,
+  "full_name": "Huang-Chuan/magnetic-field-odometry",
+  "html_url": "https://github.com/Huang-Chuan/magnetic-field-odometry",
+  "language": "MATLAB",
+  "license": "GPL-3.0",
+  "pushed_at": "2023-10-18T15:20:47Z",
+  "stargazers_count": 17,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:huang-chuan/mainsvsmagekf": {
+  "archived": false,
+  "description": "MAINS: A Magnetic Field Aided Inertial Navigation System for Indoor Positioning",
+  "forks_count": 11,
+  "full_name": "Huang-Chuan/MAINSvsMAGEKF",
+  "html_url": "https://github.com/Huang-Chuan/MAINSvsMAGEKF",
+  "language": "MATLAB",
+  "license": "NOASSERTION",
+  "pushed_at": "2025-06-02T12:48:38Z",
+  "stargazers_count": 45,
+  "topics": [
+   "imu-sensor",
+   "indoor-positioning",
+   "magnetic-field",
+   "magnetometer",
+   "navigation"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:huhu246/dpn": {
+  "archived": false,
+  "description": "ACM MM 2023 Multimedia Drone Satellite Matching Challenge Submission",
+  "forks_count": 1,
+  "full_name": "HuHu246/DPN",
+  "html_url": "https://github.com/HuHu246/DPN",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2023-07-11T09:27:40Z",
+  "stargazers_count": 4,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -4654,6 +4941,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:josephtule/gps-spoofing-detect": {
+  "archived": false,
+  "description": "GNSS/GPS Spoofing Detection",
+  "forks_count": 9,
+  "full_name": "josephtule/GPS-Spoofing-Detect",
+  "html_url": "https://github.com/josephtule/GPS-Spoofing-Detect",
+  "language": "MATLAB",
+  "license": null,
+  "pushed_at": "2022-01-28T03:01:22Z",
+  "stargazers_count": 34,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:jsbsim-team/jsbsim": {
   "archived": false,
   "description": "An open source flight dynamics & control software library",
@@ -4758,6 +5058,26 @@
   "pushed_at": "2026-06-26T07:02:20Z",
   "stargazers_count": 618,
   "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:kalit31/drone-detection-and-identification-using-rf-signals": {
+  "archived": false,
+  "description": "Code repository for 'Machine Learning based framework for Drone Detection and Identification using RF signals'",
+  "forks_count": 4,
+  "full_name": "Kalit31/Drone-Detection-and-Identification-using-RF-signals",
+  "html_url": "https://github.com/Kalit31/Drone-Detection-and-Identification-using-RF-signals",
+  "language": "Jupyter Notebook",
+  "license": "MIT",
+  "pushed_at": "2026-01-12T15:50:14Z",
+  "stargazers_count": 16,
+  "topics": [
+   "cnn",
+   "frequency-domain-features",
+   "machine-learning",
+   "rf-signals",
+   "time-domain-features",
+   "xgboost"
+  ],
   "fetched": "2026-11-06"
  },
  "repo:kdudkov/goatak": {
@@ -4960,6 +5280,19 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:koorter/weln": {
+  "archived": false,
+  "description": null,
+  "forks_count": 1,
+  "full_name": "koorter/WELN",
+  "html_url": "https://github.com/koorter/WELN",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2024-07-11T04:34:09Z",
+  "stargazers_count": 6,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:kostadinovshalon/uavdetectiontrackingbenchmark": {
   "archived": false,
   "description": null,
@@ -5107,6 +5440,22 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:layumi/uavm2023": {
+  "archived": false,
+  "description": "ACM MM Workshop on UAVs in Multimedia: Capturing the World from a New Perspective (UAVM 2023)",
+  "forks_count": 0,
+  "full_name": "layumi/UAVM2023",
+  "html_url": "https://github.com/layumi/UAVM2023",
+  "language": null,
+  "license": null,
+  "pushed_at": "2026-07-04T03:22:12Z",
+  "stargazers_count": 13,
+  "topics": [
+   "geolocation",
+   "multimedia"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:layumi/university1652-baseline": {
   "archived": false,
   "description": "ACM Multimedia2020 University-1652: A Multi-view Multi-source Benchmark for Drone-based Geo-localization :helicopter: annotates 1652 buildings in 72 universities around the world.",
@@ -5145,6 +5494,19 @@
   "language": "Python",
   "license": "Apache-2.0",
   "pushed_at": "2025-12-12T07:55:35Z",
+  "stargazers_count": 10,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:lcav/audio-localization-dataset": {
+  "archived": false,
+  "description": "Datasets for acoustic echolocation and sound source localization on Crazyflie drone and e-puck robot.",
+  "forks_count": 2,
+  "full_name": "LCAV/audio-localization-dataset",
+  "html_url": "https://github.com/LCAV/audio-localization-dataset",
+  "language": "Python",
+  "license": "CC0-1.0",
+  "pushed_at": "2023-01-16T03:27:56Z",
   "stargazers_count": 10,
   "topics": [],
   "fetched": "2026-11-06"
@@ -5382,6 +5744,28 @@
   "pushed_at": "2025-09-16T16:41:42Z",
   "stargazers_count": 71,
   "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:lojzezust/lars_evaluator": {
+  "archived": false,
+  "description": "Evaluation scripts for the LaRS dataset",
+  "forks_count": 3,
+  "full_name": "lojzezust/lars_evaluator",
+  "html_url": "https://github.com/lojzezust/lars_evaluator",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2023-11-30T13:47:38Z",
+  "stargazers_count": 18,
+  "topics": [
+   "aquatic",
+   "benchmark",
+   "dataset",
+   "evaluation",
+   "maritime",
+   "obstacle-detection",
+   "panoptic-segmentation",
+   "semantic-segmentation"
+  ],
   "fetched": "2026-11-06"
  },
  "repo:lord-microstrain/ntrip_client": {
@@ -6213,6 +6597,30 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:miluta7/geoveil-cn0": {
+  "archived": false,
+  "description": "GNSS signal quality analysis library — CN0 scoring, jamming/spoofing/interference detection, multi-constellation support. Rust core, Python API.",
+  "forks_count": 0,
+  "full_name": "miluta7/geoveil-cn0",
+  "html_url": "https://github.com/miluta7/geoveil-cn0",
+  "language": "Rust",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-09-29T17:12:22Z",
+  "stargazers_count": 5,
+  "topics": [
+   "geospatial",
+   "gnss",
+   "gps",
+   "jamming-detection",
+   "pyo3",
+   "python",
+   "rinex",
+   "rust",
+   "signal-quality",
+   "spoofing-detection"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:missioncommand/mil-sym-ts": {
   "archived": false,
   "description": "MIL-STD-2525 D+ Renderer for JavaScript/NodeJS",
@@ -6666,6 +7074,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:navsecurity/p-d-defense": {
+  "archived": false,
+  "description": "power-distortion defense repository for GNSS spoofing and jamming detection.",
+  "forks_count": 12,
+  "full_name": "navSecurity/P-D-defense",
+  "html_url": "https://github.com/navSecurity/P-D-defense",
+  "language": "MATLAB",
+  "license": "MIT",
+  "pushed_at": "2020-03-27T03:21:14Z",
+  "stargazers_count": 30,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:nebula-autonomy/lamp": {
   "archived": false,
   "description": "Multi-robot SLAM system",
@@ -6868,6 +7289,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:nrc-cnrc/cuas-sensing-dataset": {
+  "archived": false,
+  "description": "Labelled drone (sUAS) radar tracks — Pistes radar annotées de drones sUAS",
+  "forks_count": 0,
+  "full_name": "nrc-cnrc/CUAS-sensing-dataset",
+  "html_url": "https://github.com/nrc-cnrc/CUAS-sensing-dataset",
+  "language": null,
+  "license": "CC-BY-4.0",
+  "pushed_at": "2026-10-02T18:17:38Z",
+  "stargazers_count": 1,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:ntnu-arl/aerial_gym_simulator": {
   "archived": false,
   "description": "Aerial Gym Simulator - Isaac Gym Simulator for Aerial Robots",
@@ -6986,6 +7420,19 @@
   "license": "MIT",
   "pushed_at": "2026-10-25T20:27:37Z",
   "stargazers_count": 236,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:nudt-sawlab/pilot": {
+  "archived": false,
+  "description": "Code for \"PiLoT: Neural Pixel-to-3D Registration for UAV-based Ego and Target Geo-localization\", CVPR 2026",
+  "forks_count": 17,
+  "full_name": "nudt-sawlab/PiLoT",
+  "html_url": "https://github.com/nudt-sawlab/PiLoT",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-07-04T01:41:37Z",
+  "stargazers_count": 125,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -7493,6 +7940,19 @@
   "license": "MIT",
   "pushed_at": "2022-10-04T07:41:15Z",
   "stargazers_count": 134,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:osrf/mbzirc": {
+  "archived": false,
+  "description": "Simulator for the MBZIRC Maritime Grand Challenge",
+  "forks_count": 51,
+  "full_name": "osrf/mbzirc",
+  "html_url": "https://github.com/osrf/mbzirc",
+  "language": "C++",
+  "license": "Apache-2.0",
+  "pushed_at": "2022-08-31T23:20:21Z",
+  "stargazers_count": 92,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -8250,6 +8710,51 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:remaro-network/subpipe-dataset": {
+  "archived": false,
+  "description": "A Submarine Pipeline Inspection Dataset for Segmentation and Visual-inertial Localization",
+  "forks_count": 8,
+  "full_name": "remaro-network/SubPipe-dataset",
+  "html_url": "https://github.com/remaro-network/SubPipe-dataset",
+  "language": "Jupyter Notebook",
+  "license": "GPL-3.0",
+  "pushed_at": "2024-03-28T16:51:42Z",
+  "stargazers_count": 68,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:remete618/drone-acoustic-detection": {
+  "archived": false,
+  "description": "Open-source field test toolkit for acoustic and radar detection of low-signature drones. Companion to eyepaq.com research.",
+  "forks_count": 3,
+  "full_name": "remete618/drone-acoustic-detection",
+  "html_url": "https://github.com/remete618/drone-acoustic-detection",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-03-20T00:25:21Z",
+  "stargazers_count": 4,
+  "topics": [
+   "acoustic-signal-processing",
+   "counter-uas",
+   "drone-detection",
+   "fpv",
+   "python"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:reza-zhu/acmmm23-solution-mbeg": {
+  "archived": false,
+  "description": "Workshop on UAVs in Multimedia: Capturing the World from a New Perspective. Reza Zhu's Solution: MBEG",
+  "forks_count": 3,
+  "full_name": "Reza-Zhu/ACMMM23-Solution-MBEG",
+  "html_url": "https://github.com/Reza-Zhu/ACMMM23-Solution-MBEG",
+  "language": "Jupyter Notebook",
+  "license": "MIT",
+  "pushed_at": "2024-05-17T03:10:31Z",
+  "stargazers_count": 11,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:reza-zhu/sues-200-benchmark": {
   "archived": false,
   "description": "SUES-200: A Multi-height Multi-scene Cross-view Image Benchmark Across Drone and Satellite ",
@@ -8821,6 +9326,32 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:saraalemadi/cnn_for_drone_detection_and_identification_using_rf": {
+  "archived": false,
+  "description": null,
+  "forks_count": 5,
+  "full_name": "saraalemadi/CNN_for_drone_detection_and_identification_using_RF",
+  "html_url": "https://github.com/saraalemadi/CNN_for_drone_detection_and_identification_using_RF",
+  "language": "Python",
+  "license": "GPL-3.0",
+  "pushed_at": "2020-06-22T11:30:08Z",
+  "stargazers_count": 21,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:saraalemadi/droneaudiodataset": {
+  "archived": false,
+  "description": null,
+  "forks_count": 44,
+  "full_name": "saraalemadi/DroneAudioDataset",
+  "html_url": "https://github.com/saraalemadi/DroneAudioDataset",
+  "language": null,
+  "license": "NOASSERTION",
+  "pushed_at": "2026-10-04T08:40:44Z",
+  "stargazers_count": 127,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:sasha-lobov/orb_slam3_system_local": {
   "archived": false,
   "description": "Pet-проект по исследованию и реализации системы локальной навигации БПЛА в условиях отсутствия GNSS.",
@@ -9112,6 +9643,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:sgluege/noisy-drone-rf-signal-classification": {
+  "archived": false,
+  "description": "Scripts to load and inspect the drone detection benchmark dataset",
+  "forks_count": 5,
+  "full_name": "sgluege/Noisy-Drone-RF-Signal-Classification",
+  "html_url": "https://github.com/sgluege/Noisy-Drone-RF-Signal-Classification",
+  "language": "Python",
+  "license": "GPL-3.0",
+  "pushed_at": "2024-04-25T10:16:35Z",
+  "stargazers_count": 14,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:shailab-ipec/openfly-platform": {
   "archived": false,
   "description": null,
@@ -9334,6 +9878,19 @@
    "wintak",
    "xml"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:sobu-labs/gnss-multiple-jammers-dataset": {
+  "archived": false,
+  "description": "A dataset containing recordings of multiple simultaneous chirp jammers on GPS L1 for studies on ANF-based mitigation methods. Recorded in complete isolation to ensure no risk to surroundings.",
+  "forks_count": 0,
+  "full_name": "sobu-labs/gnss-multiple-jammers-dataset",
+  "html_url": "https://github.com/sobu-labs/gnss-multiple-jammers-dataset",
+  "language": null,
+  "license": null,
+  "pushed_at": "2026-06-14T14:39:08Z",
+  "stargazers_count": 1,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:solarwarlock/flyingblind_hakaton": {
@@ -9594,6 +10151,25 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:swift-nav/google-sdc-corrections": {
+  "archived": false,
+  "description": "Google's Smartphone Decimeter Challenge (SDC) corrections",
+  "forks_count": 3,
+  "full_name": "swift-nav/google-sdc-corrections",
+  "html_url": "https://github.com/swift-nav/google-sdc-corrections",
+  "language": null,
+  "license": null,
+  "pushed_at": "2021-05-13T10:32:54Z",
+  "stargazers_count": 5,
+  "topics": [
+   "corrections",
+   "gnss",
+   "google",
+   "skylark",
+   "swiftnav"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:sxjack/uav_electronic_ids": {
   "archived": false,
   "description": "Arduino classes for various UAV electronic IDs and ATM/UTM interfaces.",
@@ -9759,6 +10335,19 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:tesorrells/rf-drone-detection": {
+  "archived": false,
+  "description": null,
+  "forks_count": 44,
+  "full_name": "tesorrells/RF-Drone-Detection",
+  "html_url": "https://github.com/tesorrells/RF-Drone-Detection",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2025-05-21T20:38:40Z",
+  "stargazers_count": 226,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:thien94/vision_to_mavros": {
   "archived": false,
   "description": "A collection of ROS and non-ROS (Python) code that converts data from vision-based system (external localization system like fiducial tags, VIO, SLAM, or depth image) to corresponding mavros topics or MAVLink messages that can be consumed by a flight control stack (with working and tested examples for ArduPilot).",
@@ -9783,6 +10372,35 @@
   "pushed_at": "2025-06-12T09:59:15Z",
   "stargazers_count": 286,
   "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:tii-racing/drone-racing-dataset": {
+  "archived": false,
+  "description": "A fully-annotated, open-design dataset of autonomous and piloted high-speed flight",
+  "forks_count": 22,
+  "full_name": "tii-racing/drone-racing-dataset",
+  "html_url": "https://github.com/tii-racing/drone-racing-dataset",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-01-25T14:55:39Z",
+  "stargazers_count": 150,
+  "topics": [
+   "autonomous-robots",
+   "computer-vision",
+   "control",
+   "dataset",
+   "drone-racing",
+   "inertial-data",
+   "motion-capture",
+   "motion-capture-data",
+   "path-planning",
+   "quadrotor",
+   "robotics",
+   "ros2",
+   "scene-understanding",
+   "vision",
+   "visual-inertial-odometry"
+  ],
   "fetched": "2026-11-06"
  },
  "repo:tixiaoshan/lio-sam": {
@@ -10056,6 +10674,26 @@
   "pushed_at": "2026-06-01T19:41:45Z",
   "stargazers_count": 189,
   "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:uml-marine-robotics/massmind": {
+  "archived": false,
+  "description": "LWIR image segmentation dataset for maritime environment",
+  "forks_count": 5,
+  "full_name": "uml-marine-robotics/MassMIND",
+  "html_url": "https://github.com/uml-marine-robotics/MassMIND",
+  "language": null,
+  "license": "NOASSERTION",
+  "pushed_at": "2023-03-22T01:25:14Z",
+  "stargazers_count": 66,
+  "topics": [
+   "asv",
+   "ir",
+   "lwir",
+   "maritime-dataset",
+   "object-detection",
+   "segmentation"
+  ],
   "fetched": "2026-11-06"
  },
  "repo:univaasadigieco/vaara": {
@@ -10829,6 +11467,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:wosdetc/challenge": {
+  "archived": false,
+  "description": null,
+  "forks_count": 17,
+  "full_name": "wosdetc/challenge",
+  "html_url": "https://github.com/wosdetc/challenge",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2022-12-16T10:01:42Z",
+  "stargazers_count": 72,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:wtyhub/lpn": {
   "archived": false,
   "description": "Pytorch implementation of Each Part Matters: Local Patterns Facilitate Cross-view Geo-localization  https://arxiv.org/abs/2008.11646",
@@ -10839,6 +11490,40 @@
   "license": "MIT",
   "pushed_at": "2026-07-06T02:34:20Z",
   "stargazers_count": 99,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:wtyhub/musenet": {
+  "archived": false,
+  "description": "[Pattern Recognition'24] Pytorch implementation of Multiple-environment Self-adaptive Network for Aerial-view Geo-localization :helicopter: https://arxiv.org/abs/2204.08381",
+  "forks_count": 3,
+  "full_name": "wtyhub/MuseNet",
+  "html_url": "https://github.com/wtyhub/MuseNet",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-07-06T02:35:29Z",
+  "stargazers_count": 48,
+  "topics": [
+   "cvusa",
+   "image-retrieval",
+   "multi-environment-geolocalization",
+   "multi-platform",
+   "pytorch",
+   "reid",
+   "university-1652"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:wtyhub/uavm2024": {
+  "archived": false,
+  "description": "ACM MM Workshop on UAVs in Multimedia: Capturing the World from a New Perspective (UAVM 2024)",
+  "forks_count": 0,
+  "full_name": "wtyhub/UAVM2024",
+  "html_url": "https://github.com/wtyhub/UAVM2024",
+  "language": null,
+  "license": null,
+  "pushed_at": "2024-10-26T01:33:18Z",
+  "stargazers_count": 3,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -10951,6 +11636,26 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:yaxuanli-cn/pairuav": {
+  "archived": false,
+  "description": "📌 Official baseline implementation of 'Last-Meter Precision Navigation for UAVs: A Diffusion-Refined Aerial Visual Servoing Approach‘, serving as the baseline for the UAVM @ ACM MM 2026 Workshop Challenge.",
+  "forks_count": 6,
+  "full_name": "YaxuanLi-cn/PairUAV",
+  "html_url": "https://github.com/YaxuanLi-cn/PairUAV",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-07-07T12:46:45Z",
+  "stargazers_count": 53,
+  "topics": [
+   "dataset",
+   "drone",
+   "geo-localization",
+   "image-retrieval",
+   "navigat",
+   "uav"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:ybgdgh/co-navgpt": {
   "archived": false,
   "description": "We proposed to explore and search for the target in unknown environment based on Large Language Model for multi-robot system.",
@@ -11019,6 +11724,38 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:yux1angji/gta-uav": {
+  "archived": false,
+  "description": "[AAAI 2025 Oral🚁] Game4Loc: A UAV Geo-Localization Benchmark from Game Data",
+  "forks_count": 21,
+  "full_name": "Yux1angJi/GTA-UAV",
+  "html_url": "https://github.com/Yux1angJi/GTA-UAV",
+  "language": "Python",
+  "license": "Apache-2.0",
+  "pushed_at": "2025-10-20T05:48:05Z",
+  "stargazers_count": 177,
+  "topics": [
+   "datasets",
+   "geo-localization",
+   "uav",
+   "visual-localization",
+   "visual-place-recognition"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:z0rlord/foxhunt": {
+  "archived": false,
+  "description": "Receive-only GNSS interference detection and RDF triangulation (Pi + RTL-SDR)",
+  "forks_count": 0,
+  "full_name": "Z0rlord/foxhunt",
+  "html_url": "https://github.com/Z0rlord/foxhunt",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-07-17T11:40:58Z",
+  "stargazers_count": 1,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:zang09/orb_slam3_ros2": {
   "archived": false,
   "description": "ROS2 wrapping package for orbslam3 library",
@@ -11029,6 +11766,19 @@
   "license": null,
   "pushed_at": "2024-07-22T09:18:26Z",
   "stargazers_count": 520,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:zephr-xyz/sentinel1-rfi-detection": {
+  "archived": false,
+  "description": "Detect GPS/GNSS jamming from space using Sentinel-1 SAR radio frequency interference analysis",
+  "forks_count": 8,
+  "full_name": "zephr-xyz/sentinel1-rfi-detection",
+  "html_url": "https://github.com/zephr-xyz/sentinel1-rfi-detection",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-03-25T15:14:37Z",
+  "stargazers_count": 30,
   "topics": [],
   "fetched": "2026-11-06"
  },

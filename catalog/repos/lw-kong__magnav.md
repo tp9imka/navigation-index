@@ -15,6 +15,7 @@ A public submission repository for the JuliaCon 2020 MagNav signal-enhancement c
 ## Deep dives
 
 - [magnav-challenge-data](../../docs/dataset-cards/magnav-challenge-data.md) (dataset-cards)
+- [afrl-magnav-challenge-2020](../../docs/paper-digests/afrl-magnav-challenge-2020.md) (paper-digests)
 
 **Concepts:** [Magnetic anomaly navigation](../concepts/magnetic-nav.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 

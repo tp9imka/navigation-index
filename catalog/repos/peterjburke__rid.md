@@ -10,7 +10,7 @@ ESP32 Remote ID receiver built on opendroneid-core-c and a fork of sxjack's elec
 
 **Why it matters:** Ten-dollar Remote ID sensor node.
 
-**Hackathon notes:** Arduino toolchain; flash and read decoded drones over serial.
+**Hackathon notes:** PlatformIO project for VS Code (not the Arduino IDE), developed on a TTGO ESP32 board with a 1.14-inch LCD; it shows lat/lon of one UAV on the display.
 
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
 

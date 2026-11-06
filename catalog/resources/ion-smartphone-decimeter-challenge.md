@@ -1,0 +1,23 @@
+# ION Smartphone Decimeter Challenge (with Google)
+
+`res:ion-smartphone-decimeter-challenge` - competition - <https://www.ion.org/gnss/googlecompetition.cfm>
+
+**By:** Institute of Navigation, Google - **Year:** 2023 - **Level:** intro - **Access:** open
+
+ION page for the smartphone decimeter challenge listing official placings; for 2023 it lists Norizumi Motooka first, Taro Suzuki second and Jeonghyeon Yun third.
+
+## Key takeaways
+
+- Official placings differ from the public Kaggle leaderboard
+- Winners present at ION GNSS+
+
+**Concepts:** [GNSS positioning](../concepts/gnss.md), [GNSS/INS integration](../concepts/gnss-ins.md)
+
+**Tags:** `gsdc`, `ion`, `smartphone`
+
+## Related
+
+- has_code: [GSDC 2023 solution (taroz)](../repos/taroz__gsdc2023.md)
+- part_of: [Google Smartphone Decimeter Challenge 2023-2024](../resources/google-gsdc-2023.md)
+
+_Indexed by lane(s): round3-expansion_

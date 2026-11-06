@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|
 | 271 | Python | MIT | 2026-05-27 | False | production | high |
 
-Fast Python reader for RINEX 2/3 observation and navigation files and SP3 orbits into xarray, with batch conversion to HDF5/NetCDF.
+Fast Python reader for RINEX 2/3/4 observation and navigation files (plain, gzip/Z/bz2/zip or Hatanaka-compressed) and SP3 orbits into xarray, with batch conversion to NetCDF4/HDF5.
 
 **Why it matters:** Makes RINEX data accessible in the scientific Python stack without writing parsers.
 

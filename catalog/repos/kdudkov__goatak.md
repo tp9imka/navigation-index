@@ -14,6 +14,7 @@ Go implementation of a simple ATAK-compatible server and a web client, supportin
 
 ## Deep dives
 
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [kdudkov__goatak](../../docs/integration-cards/kdudkov__goatak.md) (integration-cards)
 
 **Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md)

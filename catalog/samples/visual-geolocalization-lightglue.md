@@ -4,7 +4,7 @@
 
 Matches a nadir drone frame against a georeferenced satellite or orthophoto tile with SuperPoint + LightGlue, fits a MAGSAC homography with OpenCV, and maps the frame centre through the GeoTIFF geotransform to lat/lon. The geometry (affine geotransform, homography mapping, WGS84 UTM, haversine) is a stdlib module with unit tests; the pipeline points at UAV-VisLoc, VPAIR and University-1652 for imagery and at hloc / AnyLoc for retrieval over large maps.
 
-**Verification:** geo_math.py and test_geo_math.py ran with python3.14.7 stdlib on 2026-11-06 (12 tests OK), output shown in README; geolocalize.py is an unverified sketch: syntax-checked only, requires torch, lightglue, opencv-python, rasterio and numpy.
+**Verification:** geo_math.py and 12 unit tests ran with python3.14.7 stdlib on 2026-11-06. geolocalize.py ran on 2026-11-06 with torch 2.15.0 (CPU), LightGlue git 5a650c4, opencv-python 5.0.0.93, rasterio 1.5.2 on Python 3.12.14 against synthetic pairs cut from one public OpenAerialMap orthophoto (Tbilisi, CC-BY 4.0): 0.04-0.21 m error for yaw 0/60/135 deg, tilt and 60-150 m priors; 30.7 m error with 162 inliers when 40% of the frame was nodata at the ortho edge; a frame from a different city gave no fix (5 inliers). Frame and map come from the same survey, so this is a pipeline/geometry check, not a cross-season or real-UAV result; UAV-VisLoc/VPAIR/University-1652 were not run.
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Feature detection and matching](../concepts/feature-matching.md), [Place recognition and loop closure](../concepts/place-recognition.md), [Geodesy and coordinate frames](../concepts/geodesy.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
 

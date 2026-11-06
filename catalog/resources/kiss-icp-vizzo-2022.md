@@ -11,6 +11,10 @@ Argues that a carefully engineered point-to-point ICP with motion compensation a
 - Few parameters, works across sensors and platforms
 - Strong baseline before reaching for complex pipelines
 
+## Deep dives
+
+- [kiss-icp-vizzo-2022](../../docs/paper-digests/kiss-icp-vizzo-2022.md) (paper-digests)
+
 **Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
 
 **Tags:** `icp`

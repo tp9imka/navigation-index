@@ -149,8 +149,8 @@
     "year": 2025,
     "summary": "Q-CTRL's navigation product pairs quantum magnetometers with its software to match measured crustal magnetic anomalies against maps (MagNav). The company reports flight, ground and maritime trials and positions it as a GNSS backup for aviation, including work with Airbus.",
     "key_takeaways": [
-      "Vendor claims (not independent): met RNP 0.3 in flight; positioning error up to tens of times lower than a velocity-aided INS in an April 2025 flight; different multipliers appear in different Q-CTRL materials",
-      "Vendor claim: DO-160 qualification",
+      "Vendor claims (not independent): RNP 0.3 met in flight (error under 0.3 nm for 95% of a flight); the linked case study claims 50x lower positioning uncertainty than an INS over a ~500 km flight and at least 11x with the sensor inside the cabin; other Q-CTRL materials give different multipliers",
+      "Vendor claim: RTCA DO-160 environmental qualification - not an airworthiness or RNP operational approval",
       "Underlying method is the same map-matching problem as the open AFRL/MIT MagNav challenge"
     ],
     "concepts": [
@@ -194,9 +194,9 @@
       "SandboxAQ"
     ],
     "year": 2025,
-    "summary": "AQNav is SandboxAQ's magnetic anomaly navigation system: magnetometers plus learned compensation, matched against magnetic anomaly maps. Flight-tested with Acubed (Airbus) on a Beechcraft Baron using public maps, with the USAF on C-17/C-130J, and in 2026 on a Northrop Grumman Lumberjack drone.",
+    "summary": "AQNav is SandboxAQ's magnetic anomaly navigation system: magnetometers plus learned compensation, matched against magnetic anomaly maps. Flight-tested with Acubed (Airbus) on a Beechcraft Baron using public maps, and, per later SandboxAQ announcements, with the USAF on C-17/C-130J and in 2026 on a Northrop Grumman Lumberjack drone.",
     "key_takeaways": [
-      "Vendor claims: RNP 2 compliance over 150+ flight hours; outperformed free-inertial INS on all >2 h flights",
+      "Vendor claims (July 2025 Acubed campaign, 150+ flight hours on a Beechcraft Baron 58 with the public NAMAM map): within RNP 2 100% of the time and RNP 1 95%; outperformed INS without GNSS on every flight over 2 h",
       "Sept 2026 drone test announcement gave no error figures (noted by press)",
       "Accepted into the 2025 NATO DIANA cohort (vendor/press)"
     ],
@@ -236,7 +236,7 @@
       "Xona Space Systems"
     ],
     "year": 2025,
-    "summary": "Xona is building Pulsar, a commercial LEO constellation broadcasting dedicated L-band navigation signals with authentication. Pulsar-0 launched in June/July 2025 as an in-orbit demonstrator; production satellites and initial service were planned for 2026-2027 per later reporting, and the FCC granted conditional approval for the constellation.",
+    "summary": "Xona is building Pulsar, a commercial LEO constellation broadcasting dedicated L-band navigation signals with authentication. Pulsar-0 launched in June/July 2025 as an in-orbit demonstrator; production satellites and initial service were planned for 2026-2027 per later reporting, and the FCC granted conditional approval in August 2026 (initially 16 satellites, more after a debris review).",
     "key_takeaways": [
       "LEO PNT signals are stronger at the ground than MEO GNSS, which is the anti-jam argument",
       "Service is not yet generally available; dates in press reports conflict",
@@ -321,7 +321,7 @@
     "summary": "Iridium broadcasts a high-power LEO timing and location signal (STL, from the Satelles acquisition) usable as a GNSS backup and cross-check. A dedicated PNT ASIC was unveiled in October 2025 and announced commercially available in July 2026; integrators include Solace and Skyband, and VectorNav/NAL Research announced STL-aided INS work in 2025.",
     "key_takeaways": [
       "Positioning is coarse compared to GNSS; main value is timing and an independent plausibility check",
-      "Vendor claim on ASIC size: 8 x 8 mm, under 0.2 g (press)",
+      "Vendor claim on ASIC size: 8 x 8 mm, under 0.2 g (Iridium fact sheet, Oct 2025)",
       "Open LEO Doppler code in the index can use Iridium signals of opportunity without a subscription"
     ],
     "concepts": [
@@ -458,7 +458,7 @@
     "year": 2026,
     "summary": "Advanced Navigation's Boreas fibre-optic-gyro INS line, fused with its LVS laser velocity sensor or wheel odometry, is marketed for long GNSS-denied ground and maritime runs; reported trials include a US Army testbed and an underground mine.",
     "key_takeaways": [
-      "Vendor/press claims: about 11.7 m error over 65 km with GNSS jammed (wheel-encoder config); sub-0.1% of distance in a mine trial",
+      "Vendor/press claims: 11.7 m error over 65 km with GNSS jammed (wheel-encoder config, US Army testbed, linked article); better than 0.1% of distance travelled in BHP's Callio mine trial (Advanced Navigation case study)",
       "Strategy is inertial-centric dead reckoning with velocity aiding, not vision"
     ],
     "concepts": [
@@ -768,8 +768,7 @@
     "summary": "infiniDome sells retrofit anti-jam modules that sit between antenna elements and a commercial GNSS receiver on small drones and vehicles; GPSdome 2 is dual-band with up to four elements for nulling several jammer directions.",
     "key_takeaways": [
       "Vendor claim: CRPA-like protection without CRPA cost or export restrictions",
-      "Vendor claim: '400%' jamming resilience improvement in Israeli-government-sponsored trials",
-      "Weight figures differ across press releases"
+      "Weight figures differ across press releases (500 g in the linked GPS World piece, 350 g elsewhere)"
     ],
     "concepts": [
       "concept:gnss-interference",
@@ -905,7 +904,7 @@
     "year": 2024,
     "summary": "US startup whose founders started at the February 2024 El Segundo Defense Tech Hackathon (Aviation Week coverage). Its VNS uses a camera, an IMU and pre-loaded satellite imagery to estimate position and feeds the drone a substitute GPS signal.",
     "key_takeaways": [
-      "Vendor claims: integration under 30 minutes; six months from hackathon to a SOCOM sale",
+      "Vendor claims: six months from hackathon to a SOCOM sale (YC launch post); integration under 30 minutes (company statement relayed by press)",
       "Direct precedent that a hackathon visual-nav demo can become a product - and that judges have seen this pitch"
     ],
     "concepts": [
@@ -953,8 +952,8 @@
     "authors": [
       "Spleenlab"
     ],
-    "year": 2024,
-    "summary": "German company Spleenlab sells VISIONAIRY, a modular perception suite (VIO, map-based relocalization, EO/IR and LiDAR SLAM) that integrates with PX4/Auterion and ROS; used by Quantum Systems and Blueflite for GNSS-denied navigation.",
+    "year": 2022,
+    "summary": "German company Spleenlab sells VISIONAIRY, an AI perception suite for drones (vendor description: VIO, map-based relocalization, EO/IR and LiDAR SLAM) that joined the Auterion ecosystem in 2022 and integrates with PX4/Auterion and ROS. Quantum Systems later acquired Spleenlab and uses it for GNSS-denied navigation (press).",
     "key_takeaways": [
       "Vendor description only; no published accuracy",
       "Module list mirrors what open VIO + VPR repos offer"
@@ -999,7 +998,7 @@
     "authors": [
       "UAVOS"
     ],
-    "year": 2025,
+    "year": 2026,
     "summary": "UAVOS markets NavAI as an add-on vision-based navigation module for UAS in GNSS-degraded conditions (GPS World product announcement).",
     "key_takeaways": [
       "Product announcement; performance figures not verified here"
@@ -1110,7 +1109,7 @@
     "year": 2023,
     "summary": "In May 2023 the Air Force and MIT flew a real-time MagNav demo on a C-17A during exercise Golden Phoenix, training the compensation network in flight on a laptop. Follows the open MagNav challenge problem and dataset.",
     "key_takeaways": [
-      "Reported accuracy about 1 km - far from GNSS, but independent of RF",
+      "No accuracy figure is public: the linked article and the official releases defer it to a government technical report. The value shown is RF independence",
       "Public dataset and Julia/Python code make this the most reproducible alt-PNT track for a hackathon"
     ],
     "concepts": [
@@ -1240,7 +1239,7 @@
       "European Space Agency"
     ],
     "year": 2025,
-    "summary": "ESA's PNT R&D programme funding industry projects including GNSS-independent PNT; 2025 examples include ALL.SPACE (EUR 950k, signals of opportunity from a multi-orbit terminal, with GMV NSL) and maritime alt-PNT via VDES and R-Mode.",
+    "summary": "ESA's PNT R&D programme funding industry projects including GNSS-independent PNT; 2025 examples include ALL.SPACE (EUR 950k per the October 2025 ALL.SPACE announcement, signals of opportunity from a multi-orbit terminal, with GMV NSL) and maritime alt-PNT via VDES and R-Mode.",
     "key_takeaways": [
       "Permanent open call route for European companies",
       "Shows European emphasis on SoOP and terrestrial backups"

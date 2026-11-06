@@ -27,6 +27,7 @@ Czech Technical University's multi-robot UAV platform with control, estimation (
 
 - [Aerostack2](../repos/aerostack2__aerostack2.md) (alternative_to)
 - [UVDAR](../repos/ctu-mrs__uvdar_core.md) (extends)
+- [Kilometer-Scale GNSS-Denied UAV Navigation via Heightmap Gradients: A Winning System from the SPRIN-D Challenge](../resources/sprind-heightmap-gradients-2025.md) (uses)
 
 _Indexed by lane(s): domains-swarm_
 

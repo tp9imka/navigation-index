@@ -11,6 +11,10 @@ Describes ORB-SLAM3's tightly integrated visual-inertial SLAM, MAP-based IMU ini
 - Multi-map atlas lets the system restart and later merge maps
 - Supports pinhole and fisheye models
 
+## Deep dives
+
+- [orb-slam3-campos-2020](../../docs/paper-digests/orb-slam3-campos-2020.md) (paper-digests)
+
 **Concepts:** [Visual SLAM](../concepts/visual-slam.md), [Visual(-inertial) odometry](../concepts/vio.md)
 
 **Tags:** `orb-slam`

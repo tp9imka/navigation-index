@@ -10,7 +10,7 @@ Real-world GNSS interference recordings from Jammertest 2025 at Andoya, Norway, 
 
 **Why it matters:** Rare open real-world interference data from live jamming trials, suited to training and testing interference detectors and classifiers.
 
-**Hackathon notes:** Download the data and start with the provided Python loaders; pick one scenario class to build a jamming/spoofing classifier within a day.
+**Hackathon notes:** Data is chunked HDF5 under dataset/ (Git LFS; the README points to an identical GitLab mirror for the full download) plus train/test split lists. There are no loader modules - the README only gives an h5py inspection snippet, so budget time to write your own loader before building a jamming/spoofing classifier on one scenario class.
 
 ## Deep dives
 
@@ -29,8 +29,11 @@ Real-world GNSS interference recordings from Jammertest 2025 at Andoya, Norway, 
 
 ## Referenced by
 
+- [Towards Jammer Fingerprinting](../repos/helsinki-sda-group__towards-jammer-fingerprinting.md) (integrates_with)
 - [Jammertest test plan](../repos/npra__jammertest-plan.md) (integrates_with)
 - [VAARA Jammertest dataset](../repos/univaasadigieco__vaara.md) (alternative_to)
+- [GNSS Interference Spectrum Highway Dataset 1](../resources/fraunhofer-gnss-interference-highway-dataset.md) (same_author)
+- [Analyzing and Characterizing Multi-Source Interference Effects at Jammertest Norway 2025](../resources/jammertest-2025-multi-source-interference.md) (uses)
 - [Jammertest - open GNSS jamming and spoofing test event (Andoya, Norway)](../resources/jammertest-norway.md) (dataset_for)
 - [Most resilient GNSS receiver: results from Jammertest in Norway](../resources/septentrio-jammertest-results.md) (dataset_for)
 

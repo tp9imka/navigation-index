@@ -13,6 +13,10 @@ Foundations and Trends monograph (free author PDF) explaining SLAM and sensor fu
 - Why smoothing beats filtering for multi-sensor nav
 - Direct conceptual guide to GTSAM
 
+## Deep dives
+
+- [dellaert-kaess-factor-graphs-robot-perception](../../docs/paper-digests/dellaert-kaess-factor-graphs-robot-perception.md) (paper-digests)
+
 **Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Visual SLAM](../concepts/visual-slam.md), [GNSS/INS integration](../concepts/gnss-ins.md)
 
 **Tags:** `factor-graph`, `gtsam`, `isam`

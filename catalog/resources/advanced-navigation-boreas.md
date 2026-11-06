@@ -8,7 +8,7 @@ Advanced Navigation's Boreas fibre-optic-gyro INS line, fused with its LVS laser
 
 ## Key takeaways
 
-- Vendor/press claims: about 11.7 m error over 65 km with GNSS jammed (wheel-encoder config); sub-0.1% of distance in a mine trial
+- Vendor/press claims: 11.7 m error over 65 km with GNSS jammed (wheel-encoder config, US Army testbed, linked article); better than 0.1% of distance travelled in BHP's Callio mine trial (Advanced Navigation case study)
 - Strategy is inertial-centric dead reckoning with velocity aiding, not vision
 
 ## Deep dives

@@ -12,6 +12,10 @@ Landmark ION GNSS 2008 paper that built a receiver-based civil GPS spoofer and a
 - Simple checks are insufficient against a sophisticated spoofer
 - Motivates cryptographic and signal-level defenses
 
+## Deep dives
+
+- [humphreys-2008-assessing-spoofing-threat](../../docs/paper-digests/humphreys-2008-assessing-spoofing-threat.md) (paper-digests)
+
 **Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
 
 **Tags:** `spoofing`, `humphreys`, `ion-gnss`

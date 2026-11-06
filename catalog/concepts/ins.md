@@ -11,7 +11,7 @@ Strapdown mechanization, IMU error models, calibration, dead reckoning.
 - [PX4 SITL GPS denial: inject, measure drift, recover](../samples/px4-sitl-gps-denial.md) - Flies a square mission in PX4 SITL (Gazebo gz_x500), turns the GPS off mid-mission with MAVSDK failure injection, logs EKF2 health and estimated vs ground-truth position, then restores GPS and returns home.
 - [Terrain-relative navigation with a particle filter](../samples/terrain-relative-nav-pf.md) - A stdlib-only simulation of TERCOM/TRN: an aircraft with a biased INS and a radar altimeter matches its measured terrain profile against a seeded synthetic DEM with a particle filter that also estimates the INS velocity 
 
-## Repositories (67)
+## Repositories (69)
 
 - [FAST-LIO / FAST-LIO2](../repos/hku-mars__fast_lio.md) - fit: high - Computationally efficient LiDAR-inertial odometry using an iterated error-state Kalman filter and incremental k-d tree map, mapping raw points directly.
 - [GTSAM](../repos/borglab__gtsam.md) - fit: high - Georgia Tech factor-graph library for smoothing and mapping, with incremental solvers (iSAM2) and a full IMU preintegration factor set.
@@ -34,7 +34,7 @@ Strapdown mechanization, IMU error models, calibration, dead reckoning.
 - [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md) - fit: high - Julia package from the DAF-MIT AI Accelerator for airborne magnetic anomaly navigation: flight/INS data import or simulation, anomaly maps, aircraft magnetic compensation (Tolles-Lawson and neural models) and navigation 
 - [PyShoe](../repos/utiasstars__pyshoe.md) - fit: high - Open Python foot-mounted INS from UTIAS with a public inertial dataset and several zero-velocity detectors, including learned ones.
 - [pyins](../repos/nmayorov__pyins.md) - fit: high - Python package for modelling and analysing inertial navigation systems: strapdown integration, error models, Kalman-filter aiding and sensor simulation.
-- [IEZ (INS-EKF-ZUPT)](../repos/pajaraca__iez.md) - fit: high - MATLAB implementation of a foot-mounted INS with EKF and zero-velocity updates for pedestrian dead reckoning, with sample datasets from two foot-mounted MPU6050 IMUs.
+- [IEZ (INS-EKF-ZUPT)](../repos/pajaraca__iez.md) - fit: high - Python implementation (one 9-state script, plus ESP32 logger firmware) of a foot-mounted INS with EKF and zero-velocity updates for pedestrian dead reckoning, with sample datasets from two foot-mounted MPU6050 IMUs.
 - [allan-variance (Python)](../repos/nmayorov__allan-variance.md) - fit: high - Small Python package computing Allan variance and fitting standard noise parameters.
 - [Diploma: LoRa local navigation system (MIPT 2026)](../repos/roosmax__diploma.md) - fit: high - MIPT (FAKT) 2026 diploma: local navigation for a UAV under GNSS suppression, correcting a strapdown INS with LoRa two-way-ranging (TWR) distances to ground beacons.
 - [ESP-Drone](../repos/espressif__esp-drone.md) - fit: medium - Espressif's mini quadcopter firmware for ESP32/ESP32-S2/S3, derived from Crazyflie code, controlled over Wi-Fi.
@@ -60,11 +60,12 @@ Strapdown mechanization, IMU error models, calibration, dead reckoning.
 - [AirIMU](../repos/haleqiu__airimu.md) - fit: medium - Learns IMU error correction and uncertainty with a network, combined with differentiable IMU preintegration (CMU AirLab).
 - [ROSflight firmware](../repos/rosflight__rosflight_firmware.md) - fit: medium - Lean research autopilot (BYU) that keeps only attitude estimation and low-level control on the flight board and pushes everything else to a ROS companion.
 - [Go-RIO](../repos/wooseongy__go-rio.md) - fit: medium - Ground-optimized 4D radar-inertial odometry integrating continuous velocity via Gaussian processes (ICRA 2025 best paper finalist).
+- [MAINS](../repos/huang-chuan__mainsvsmagekf.md) - fit: medium - Magnetic-field aided inertial navigation system for indoor positioning, compared against a magnetic EKF.
 - [ZUPT-aided INS (OpenShoe MATLAB)](../repos/hcarlsso__zupt-aided-ins.md) - fit: medium - MATLAB implementation of the OpenShoe zero-velocity-aided foot-mounted INS with several zero-velocity detectors (SHOE, acceleration variance and magnitude, angular rate energy).
 - [Water Linked DVL Python](../repos/waterlinked__dvl-python.md) - fit: medium - Example Python code for talking to Water Linked DVLs over their serial and TCP/JSON protocols, parsing velocity and dead-reckoning reports.
 - [strapdown-rs](../repos/jbrodovsky__strapdown-rs.md) - fit: medium - Rust implementation of a strapdown inertial navigation system, aimed at simulation and research on INS behaviour.
 - [AuvEstimator](../repos/alliwong__auvestimator.md) - fit: medium - Work-in-progress EKF that fuses DVL, IMU and barometer data for AUV state estimation, with a ROS wrapper.
-- [MPU6050 ZUPT](../repos/mtahakoroglu__mpu6050_zupt.md) - fit: medium - Arduino/MPU6050 library implementing several open-source foot-mounted INS and zero-velocity detection algorithms.
+- [MPU6050 ZUPT](../repos/mtahakoroglu__mpu6050_zupt.md) - fit: medium - Arduino library forked from MPU6050_tockn that reads and calibrates an MPU6050 and streams angles and time series to Python plotting scripts.
 - [Paparazzi UAV](../repos/paparazzi__paparazzi.md) - fit: low - Long-running academic autopilot (ENAC, TU Delft and others) for fixed-wing, rotorcraft and hybrids, with its own ground segment, flight-plan language and INS modules.
 - [kalibr_allan (archived)](../repos/rpng__kalibr_allan.md) - fit: low - MATLAB scripts producing IMU Allan standard deviation charts and Kalibr-ready noise values.
 - [PX4 ECL (Estimation & Control Library)](../repos/px4__px4-ecl.md) - fit: low - Former home of PX4's estimation and control library including the EKF2 navigation filter; archived after the code moved into PX4-Autopilot.
@@ -79,6 +80,7 @@ Strapdown mechanization, IMU error models, calibration, dead reckoning.
 - [iekf (contagon)](../repos/contagon__iekf.md) - fit: low - Invariant Kalman filter implementation on SE(2) and SE(3).
 - [AV-Matlab-SW](../repos/jaffarrell__av-matlab-sw.md) - fit: low - MATLAB software for Allan variance calculations accompanying a published article on IMU noise characterisation (Farrell et al.).
 - [Gaussian-RIO](../repos/robotics-upo__gaussian-rio.md) - fit: low - 4D radar-inertial odometry using Gaussian modeling of radar points and multi-hypothesis scan matching.
+- [Magnetic-field odometry](../repos/huang-chuan__magnetic-field-odometry.md) - fit: low - Magnetic-field aided inertial navigation using a magnetometer array for odometry.
 - [graduate_work (UAV INS module thesis)](../repos/danamarkova__graduate_work.md) - fit: low - Russian graduate thesis code: 'Development of a UAV inertial navigation module using auxiliary navigation data'.
 
 ## Documents, talks, courses, datasets (40)
@@ -104,7 +106,7 @@ Strapdown mechanization, IMU error models, calibration, dead reckoning.
 - [Kalibr wiki: IMU Noise Model](../resources/kalibr-imu-noise-model-wiki.md) - doc - Practical explanation of white noise and random-walk bias parameters for IMUs, how to convert datasheet values to continuous/discrete form and how to inflate them for real use.
 - [Kalman and Bayesian Filters in Python](../resources/labbe-kalman-bayesian-filters-python.md) - book - Free interactive book as Jupyter notebooks: g-h filters, discrete Bayes, univariate and multivariate Kalman filters, EKF, UKF, particle filters and smoothers, all with runnable code built on the companion FilterPy librar
 - [On-Manifold Preintegration for Real-Time Visual-Inertial Odometry](../resources/forster-imu-preintegration.md) - paper - Derives IMU preintegration on the SO(3) manifold with bias-correction Jacobians, enabling IMU factors between keyframes in factor-graph optimization.
-- [OpenShoe: open source embedded foot-mounted INS](../resources/openshoe-foot-mounted-ins-2012.md) - doc - Project site for OpenShoe, an open hardware and software ZUPT-aided foot-mounted INS module, described in the PLANS 2012 paper 'Foot-mounted INS for Everybody' and follow-up IPIN 2014 work.
+- [OpenShoe: open source embedded foot-mounted INS](../resources/openshoe-foot-mounted-ins-2012.md) - doc - Project site (offline since 2026; archived copy) for OpenShoe, an open hardware and software ZUPT-aided foot-mounted INS module, described in the PLANS 2012 paper 'Foot-mounted INS for Everybody' and follow-up IPIN 2014 
 - [Principles of GNSS, Inertial, and Multisensor Integrated Navigation Systems, Second Edition](../resources/groves-pnt-book-2e.md) - book - Standard reference on satellite, inertial and terrestrial radio navigation and their integration, including INS/GNSS integration architectures, dead reckoning, feature matching and integrity monitoring.
 - [Quantum Sensors for Navigation, From Physics to Field Deployment](../resources/ion-webinar-kealy.md) - talk - Overview of quantum sensing for navigation (atom interferometers, quantum magnetometers, clocks) and what it takes to move them from lab to field.
 - [Quaternion kinematics for the error-state Kalman filter](../resources/sola-quaternion-kinematics-eskf.md) - paper - Long tutorial report covering quaternion conventions, rotation perturbations and their derivatives, and a full derivation of an IMU-driven error-state Kalman filter including the reset step.

@@ -5,7 +5,11 @@
   "title": "Enabling Novel Mission Operations and Interactions with ROSA: The Robot Operating System Agent",
   "url": "https://arxiv.org/abs/2410.06472",
   "authors": [
-   "NASA JPL"
+   "Rob Royce",
+   "Marcel Kaufmann",
+   "Jonathan Becktor",
+   "Sangwoo Moon",
+   "et al. (NASA JPL)"
   ],
   "year": 2024,
   "summary": "Describes ROSA, an LLM agent that lets operators inspect and command ROS systems in natural language through a curated tool set, and discusses safety and operational considerations.",
@@ -37,7 +41,11 @@
   "title": "OpenFly: A Comprehensive Platform for Aerial Vision-Language Navigation",
   "url": "https://arxiv.org/abs/2502.18041",
   "authors": [
-   "OpenFly authors"
+   "Yunpeng Gao",
+   "Chenhui Li",
+   "Zhongrui You",
+   "Junli Liu",
+   "et al."
   ],
   "year": 2025,
   "summary": "Presents a multi-engine aerial VLN platform with automated data generation, a large outdoor benchmark and a keyframe-aware VLN model.",
@@ -416,12 +424,15 @@
   "id": "res:openshoe-foot-mounted-ins-2012",
   "kind": "doc",
   "title": "OpenShoe: open source embedded foot-mounted INS",
-  "url": "https://openshoe.org",
+  "url": "https://web.archive.org/web/20260311170324/http://openshoe.org/",
   "authors": [
-   "Nilsson, Skog, Hari, Handel (KTH / IISc)"
+   "John-Olof Nilsson",
+   "Isaac Skog",
+   "K. V. S. Hari",
+   "Peter Händel"
   ],
   "year": 2012,
-  "summary": "Project site for OpenShoe, an open hardware and software ZUPT-aided foot-mounted INS module, described in the PLANS 2012 paper 'Foot-mounted INS for Everybody' and follow-up IPIN 2014 work.",
+  "summary": "Project site (offline since 2026; archived copy) for OpenShoe, an open hardware and software ZUPT-aided foot-mounted INS module, described in the PLANS 2012 paper 'Foot-mounted INS for Everybody' and follow-up IPIN 2014 work.",
   "key_takeaways": [
    "Open hardware + firmware for ZUPT-aided INS",
    "Module reports per-step displacement and heading change"
@@ -485,7 +496,11 @@
   "title": "cuVSLAM: CUDA accelerated visual odometry and mapping",
   "url": "https://arxiv.org/abs/2506.04359",
   "authors": [
-   "NVIDIA"
+   "Alexander Korovko",
+   "Dmitry Slepichev",
+   "Alexander Efitorov",
+   "Aigul Dzhumamuratova",
+   "et al. (NVIDIA)"
   ],
   "year": 2025,
   "summary": "Describes NVIDIA's GPU-accelerated VO/SLAM supporting from one to many cameras with optional IMU, designed for real-time edge deployment.",
@@ -552,16 +567,16 @@
  {
   "id": "res:faa-eloran-iat-2014",
   "kind": "talk",
-  "title": "eLoran Independent Assessment Team findings (PNT Advisory Board briefing)",
+  "title": "The Global Loran / eLoran Infrastructure Evolution: A Robust and Resilient PNT Backup for GNSS",
   "url": "https://archive.gps.gov/governance/advisory/meetings/2014-06/narins.pdf",
   "authors": [
-   "M. Narins, FAA"
+   "Mitch Narins (FAA)"
   ],
   "year": 2014,
-  "summary": "Briefing to the US Space-Based PNT Advisory Board summarizing the 2006-2008 independent assessment of eLoran as a GPS backup, its accuracy and its independent failure modes.",
+  "summary": "Briefing by the FAA's chief navigation systems engineer to the US Space-Based PNT Advisory Board (3 June 2014) on the history of Loran/eLoran and the findings of the 2006-2008 Independent Assessment Team, which judged eLoran a viable independent backup to GPS.",
   "key_takeaways": [
    "eLoran has different physical failure modes than GNSS",
-   "Recommended as backup for timing and harbor navigation"
+   "IAT found eLoran meets non-precision approach (RNP 0.3), harbor entrance (10-20 m) and Stratum 1 timing needs"
   ],
   "concepts": [
    "concept:assured-pnt",

@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 822 | Python | Apache-2.0 | 2026-07-30 | False | production | high |
 
-ONNX export of SuperPoint/DISK + LightGlue feature matching with TensorRT and OpenVINO support.
+ONNX export and inference of LightGlue matching with SuperPoint, DISK and ALIKED extractors (including RaCo-ALIKED-LightGlue+), with TensorRT, OpenVINO and FP8 quantization workflows.
 
 **Why it matters:** Fast learned matching on embedded hardware for visual geolocalization and VO.
 
-**Hackathon notes:** Download prebuilt ONNX models; run with onnxruntime-gpu or TensorRT.
+**Hackathon notes:** Download prebuilt ONNX models from Releases and run with onnxruntime-gpu or TensorRT; for export, the repo now uses uv (uv sync with export/cuda/trt groups) and a lightglue-onnx CLI.
 
 ## Deep dives
 

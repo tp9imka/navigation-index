@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|
 | 1,168 | Jupyter Notebook | MIT | 2026-03-10 | False | active-research | medium |
 
-Open platform for building and evaluating generalist navigation foundation models, covering VLN and related embodied navigation tasks with training and benchmarks.
+PyTorch toolbox for embodied navigation on Habitat and Isaac Sim, covering vision-language navigation (VLN-CE and continuous-trajectory VLN) and point, image or trajectory goal navigation, with 10+ baselines, 6 benchmarks, the InternData-N1 dataset and the InternVLA-N1 dual-system model.
 
 **Why it matters:** Brings recent VLA-style navigation models into one toolkit.
 

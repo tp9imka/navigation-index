@@ -2,7 +2,7 @@
 
 `res:uavos-navai` - product - <https://www.gpsworld.com/uavos-introduces-navai-vision-based-navigation-module-for-gnss-degraded-uas-operations/>
 
-**By:** UAVOS - **Year:** 2025 - **Level:** intermediate - **Access:** open
+**By:** UAVOS - **Year:** 2026 - **Level:** intermediate - **Access:** open
 
 UAVOS markets NavAI as an add-on vision-based navigation module for UAS in GNSS-degraded conditions (GPS World product announcement).
 

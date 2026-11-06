@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nav Demo Dashboard</title>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"
+      onerror="this.onerror=null;this.href='vendor/maplibre-gl.css'">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:,">
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"
+        onerror="document.write('<script src=&quot;vendor/maplibre-gl.js&quot;><\/script>')"></script>
+<script src="https://unpkg.com/milsymbol@3.0.4/dist/milsymbol.js"
+        onerror="document.write('<script src=&quot;vendor/milsymbol.js&quot;><\/script>')"></script>
+<script src="https://unpkg.com/pmtiles@4.4.1/dist/pmtiles.js"
+        onerror="document.write('<script src=&quot;vendor/pmtiles.js&quot;><\/script>')"></script>
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <span id="title">Nav demo</span>
+    <span id="status-pill" class="pill">NO DATA</span>
+    <span class="spacer"></span>
+    <label class="btn">Load files<input id="file-input" type="file" multiple accept=".jsonl,.json,.geojson" hidden></label>
+    <button id="btn-sample" class="btn">Sample: spoof</button>
+    <button id="btn-sample-jam" class="btn">Sample: jam</button>
+    <button id="btn-follow" class="btn toggle on" title="Keep the vehicle centred (F)">Follow</button>
+    <button id="btn-shot" class="btn" title="Save map + overlays as PNG (S)">Screenshot</button>
+  </header>
+  <main id="map"></main>
+  <aside id="side">
+    <section>
+      <h2>Metrics <small id="metric-ref"></small></h2>
+      <div class="metrics">
+        <div class="m"><span class="k">Time</span><span class="v" id="m-time">-</span></div>
+        <div class="m"><span class="k">Health</span><span class="v" id="m-health">-</span></div>
+        <div class="m"><span class="k">Error now</span><span class="v" id="m-err">-</span></div>
+        <div class="m"><span class="k">Max error</span><span class="v" id="m-maxerr">-</span></div>
+        <div class="m"><span class="k">95% radius</span><span class="v" id="m-r95">-</span></div>
+        <div class="m"><span class="k">PL / AL</span><span class="v" id="m-pl">-</span></div>
+        <div class="m"><span class="k">Alarms</span><span class="v" id="m-alarms">-</span></div>
+        <div class="m"><span class="k">Sources</span><span class="v" id="m-src">-</span></div>
+      </div>
+      <div id="m-flag" class="flag"></div>
+    </section>
+    <section>
+      <h2>Tracks</h2>
+      <ul id="tracks"></ul>
+    </section>
+    <section class="grow">
+      <h2>Events</h2>
+      <ul id="events"></ul>
+    </section>
+  </aside>
+  <footer id="transport">
+    <button id="btn-play" class="btn big" title="Play / pause (Space)">Play</button>
+    <select id="speed" title="Replay speed">
+      <option value="0.5">0.5x</option><option value="1">1x</option><option value="2">2x</option>
+      <option value="5" selected>5x</option><option value="10">10x</option><option value="20">20x</option>
+    </select>
+    <div id="scrub-wrap">
+      <div id="ticks"></div>
+      <input id="scrub" type="range" min="0" max="0" step="0.1" value="0">
+    </div>
+    <span id="clock">0.0 / 0.0 s</span>
+  </footer>
+  <div id="drop-hint">Drop .jsonl / .geojson files</div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

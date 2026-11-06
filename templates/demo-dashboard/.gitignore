@@ -1,0 +1,4 @@
+vendor/
+tiles/
+*.pmtiles
+__pycache__/

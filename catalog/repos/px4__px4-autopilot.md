@@ -14,6 +14,7 @@ Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, buil
 
 ## Deep dives
 
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [px4__px4-autopilot](../../docs/integration-cards/px4__px4-autopilot.md) (integration-cards)
 
 **Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [GNSS/INS integration](../concepts/gnss-ins.md), [Visual(-inertial) odometry](../concepts/vio.md), [Simulation and HIL/SITL](../concepts/simulation.md)

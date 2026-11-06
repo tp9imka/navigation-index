@@ -4,11 +4,15 @@
 
 **By:** Paul-Edouard Sarlin, Cesar Cadena, Roland Siegwart, Marcin Dymczyk - **Year:** 2018 - **Level:** intermediate - **Access:** open
 
-Foundational paper for hierarchical localization: global retrieval to find candidate places, then local matching for precise pose.
+The HF-Net paper and foundation of hloc: global retrieval to find candidate places, then local matching for precise pose.
 
 ## Key takeaways
 
 - Retrieve-then-match is the scalable pattern
+
+## Deep dives
+
+- [hloc-coarse-to-fine-2018](../../docs/paper-digests/hloc-coarse-to-fine-2018.md) (paper-digests)
 
 **Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md), [Feature detection and matching](../concepts/feature-matching.md)
 

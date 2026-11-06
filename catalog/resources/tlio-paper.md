@@ -10,6 +10,10 @@ Combines a network that predicts displacement and uncertainty from IMU data with
 
 - Learned measurement plus learned uncertainty in a filter
 
+## Deep dives
+
+- [tlio-paper](../../docs/paper-digests/tlio-paper.md) (paper-digests)
+
 **Concepts:** [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 
 **Tags:** `learned-inertial`

@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 118 | Python | Apache-2.0 | 2026-07-08 | False | research-prototype | high |
 
-Framework for LLM-based drone task planning that compiles natural-language requests into a compact robot language (MiniSpec) executed on a DJI Tello with vision services.
+LLM-based robot control framework: an OpenAI model turns a natural-language request plus a YOLO scene description into a short Python plan built from the robot's registered skills, which is then executed. Ships wrappers for a virtual webcam robot, DJI Tello, Unitree Go2 and Petoi.
 
 **Why it matters:** Shows how to constrain LLM output into a small, verifiable command language for drones, cutting latency and risk.
 
-**Hackathon notes:** Works with a cheap Tello and a GPU box for YOLO; virtual mode exists. Swap the backend for MAVSDK to target PX4.
+**Hackathon notes:** `pip install -e .`, add an OpenAI key and run `typefly-run`; the default virtual robot uses a webcam, so no hardware is needed. A Tello needs both a Wi-Fi and an ethernet adapter. Swap in a MAVSDK-based robot wrapper to target PX4.
 
 **Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [Mission planning and routing](../concepts/mission-planning.md)
 

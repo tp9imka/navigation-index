@@ -14,6 +14,7 @@ Python asyncio package for TAK integration: CoT send/receive over TCP, UDP, TLS 
 
 ## Deep dives
 
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [snstac__pytak](../../docs/integration-cards/snstac__pytak.md) (integration-cards)
 
 **Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Standards and interface specs](../concepts/standards.md)
@@ -42,6 +43,7 @@ Python asyncio package for TAK integration: CoT send/receive over TCP, UDP, TLS 
 - [Cursor-on-Target Message Router User's Guide](../resources/mitre-cot-users-guide.md) (explains)
 - [PyTAK documentation](../resources/pytak-docs.md) (explains)
 - [TAK Protocol (takproto) - protobuf encoding of CoT](../resources/tak-protocol-takproto.md) (has_code)
+- [GNSS jammer geolocation from DF bearings to TAK](../samples/interference-geolocation-to-tak.md) (explains)
 - [MAVLink telemetry to TAK Cursor-on-Target](../samples/mavlink-to-tak-cot.md) (uses)
 
 _Indexed by lane(s): defense-context, planning-gis-c2_

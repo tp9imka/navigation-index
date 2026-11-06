@@ -16,6 +16,7 @@ Minimal LiDAR odometry based on point-to-point ICP with adaptive thresholding, w
 
 - [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
 - [prbonn__kiss-icp](../../docs/integration-cards/prbonn__kiss-icp.md) (integration-cards)
+- [kiss-icp-vizzo-2022](../../docs/paper-digests/kiss-icp-vizzo-2022.md) (paper-digests)
 
 **Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md)
 

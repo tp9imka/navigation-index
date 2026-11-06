@@ -4,13 +4,13 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 81 | Java | ? | 2026-03-02 | False | research-prototype | medium |
+| 81 | Java | ? | 2026-03-02 | False | archived | medium |
 
 Android app implementing pedestrian dead reckoning with step detection and orientation from phone sensors.
 
 **Why it matters:** Phone-native PDR demo you can install and walk with during a hackathon.
 
-**Hackathon notes:** Build with Android Studio; fuse with Wi-Fi or UWB for correction.
+**Hackathon notes:** The author marks it unmaintained (written in 2014). It is an Eclipse ADT project, so expect to import and migrate it into Android Studio, and the manifest lacks a Google Maps API key. Use the step-detection and heading code as reference; fuse with Wi-Fi or UWB for correction.
 
 **Concepts:** [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md)
 

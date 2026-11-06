@@ -22,6 +22,10 @@ Zero-shot UAV thermal geo-localization against satellite imagery without thermal
 
 - alternative_to: [Satellite-thermal geo-localization](../repos/arplaboratory__satellite-thermal-geo-localization.md)
 
+## Referenced by
+
+- [ScalLoc](../repos/floralhercules__scalloc.md) (same_org)
+
 _Indexed by lane(s): alt-nav_
 
 _GitHub metadata fetched 2026-11-06._

@@ -15,6 +15,7 @@ Deep homography estimation for aligning UAV thermal images to satellite maps (RA
 ## Deep dives
 
 - [thermal-datasets](../../docs/dataset-cards/thermal-datasets.md) (dataset-cards)
+- [sthn-thermal-homography-2024](../../docs/paper-digests/sthn-thermal-homography-2024.md) (paper-digests)
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Feature detection and matching](../concepts/feature-matching.md)
 
@@ -31,6 +32,7 @@ Deep homography estimation for aligning UAV thermal images to satellite maps (RA
 
 - [Satellite-thermal geo-localization](../repos/arplaboratory__satellite-thermal-geo-localization.md) (same_org)
 - [UASTHN](../repos/arplaboratory__uasthn.md) (extends)
+- [ScalLoc](../repos/floralhercules__scalloc.md) (alternative_to)
 - [KF-HomoVAL](../repos/lizhipro__kf-homoval.md) (alternative_to)
 - [STHN: Deep Homography Estimation for UAV Thermal Geo-localization with Satellite Imagery](../resources/sthn-thermal-homography-2024.md) (has_code)
 

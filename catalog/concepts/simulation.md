@@ -10,7 +10,7 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [GNSS/INS EKF through a GNSS outage and a spoofing walk-off](../samples/gnss-ins-ekf-outage.md) - A stdlib-only 2D loosely-coupled GNSS/INS EKF (8 states, hand-written matrix helpers) on a synthetic vehicle with biased, noisy 100 Hz IMU and 1 Hz GNSS.
 - [PX4 SITL GPS denial: inject, measure drift, recover](../samples/px4-sitl-gps-denial.md) - Flies a square mission in PX4 SITL (Gazebo gz_x500), turns the GPS off mid-mission with MAVSDK failure injection, logs EKF2 health and estimated vs ground-truth position, then restores GPS and returns home.
 
-## Repositories (72)
+## Repositories (74)
 
 - [ArduPilot](../repos/ardupilot__ardupilot.md) - fit: high - GPL autopilot covering Copter, Plane (incl.
 - [CARLA](../repos/carla-simulator__carla.md) - fit: high - Open-source autonomous-driving simulator on Unreal with camera, lidar, radar, GNSS and IMU sensors, traffic and weather control.
@@ -28,6 +28,7 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [Stonefish](../repos/patrykcieslak__stonefish.md) - fit: high - C++ simulation library for marine robotics with hydrodynamics, underwater rendering and sensors including DVL, USBL, multibeam and forward-looking sonar; has a ROS wrapper.
 - [RotorPy](../repos/spencerfolk__rotorpy.md) - fit: high - Python multirotor simulator with aerodynamic effects (drag, wind) for education and research.
 - [ardupilot_gazebo](../repos/ardupilot__ardupilot_gazebo.md) - fit: high - Gazebo Sim plugins and models that connect ArduPilot SITL to Gazebo physics for copters, rovers and boats.
+- [Game4Loc / GTA-UAV](../repos/yux1angji__gta-uav.md) - fit: high - Benchmark and code for UAV geo-localization trained on synthetic game imagery with partial-match drone-satellite pairs (AAAI 2025).
 - [tartanairpy](../repos/castacks__tartanairpy.md) - fit: high - Python package for downloading, customizing and iterating the TartanAir-V2 synthetic dataset.
 - [pyins](../repos/nmayorov__pyins.md) - fit: high - Python package for modelling and analysing inertial navigation systems: strapdown integration, error models, Kalman-filter aiding and sensor simulation.
 - [NTNU colav-simulator](../repos/ntnu-itk-autonomous-ship-lab__colav-simulator.md) - fit: high - Python framework from the NTNU Autoship centre for simulating and evaluating autonomous ship collision avoidance controllers, open-sourced in autumn 2025, with scenario generation and evaluation tooling.
@@ -38,7 +39,7 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [NVIDIA Isaac Sim](../repos/isaac-sim__isaacsim.md) - fit: medium - NVIDIA's Omniverse-based robot simulator, now open source, with RTX sensor simulation (cameras, lidar, IMU) and ROS 2 bridges.
 - [JSBSim](../repos/jsbsim-team__jsbsim.md) - fit: medium - Open-source flight dynamics model library for fixed-wing and other aircraft, used by FlightGear and as an ArduPilot SITL backend.
 - [PromptCraft-Robotics](../repos/microsoft__promptcraft-robotics.md) - fit: medium - Microsoft's collection of prompts and an AirSim-based ChatGPT drone simulator accompanying the 'ChatGPT for Robotics' work.
-- [InternNav](../repos/internrobotics__internnav.md) - fit: medium - Open platform for building and evaluating generalist navigation foundation models, covering VLN and related embodied navigation tasks with training and benchmarks.
+- [InternNav](../repos/internrobotics__internnav.md) - fit: medium - PyTorch toolbox for embodied navigation on Habitat and Isaac Sim, covering vision-language navigation (VLN-CE and continuous-trajectory VLN) and point, image or trajectory goal navigation, with 10+ baselines, 6 benchmark
 - [Project AirSim](../repos/iamaisim__projectairsim.md) - fit: medium - Open-source release of Project AirSim, the rewrite and successor of AirSim, for building and testing autonomous aerial systems in high-fidelity Unreal environments.
 - [Pegasus Simulator](../repos/pegasussimulator__pegasussimulator.md) - fit: medium - Framework on top of NVIDIA Isaac Sim for simulating multirotors with PX4 in the loop and Python-defined vehicles and sensors.
 - [Aerial Gym Simulator](../repos/ntnu-arl__aerial_gym_simulator.md) - fit: medium - GPU-parallel aerial-robot simulator from NTNU ARL built on NVIDIA Isaac Gym, with depth/range sensors and RL navigation examples.
@@ -57,6 +58,7 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [PX4 Gazebo models](../repos/px4__px4-gazebo-models.md) - fit: medium - Model and world repository for the new Gazebo, used by PX4 SITL targets such as gz_x500.
 - [jMAVSim](../repos/px4__jmavsim.md) - fit: medium - Lightweight Java multirotor simulator that speaks MAVLink to PX4, without a 3D-world physics engine.
 - [ROSflight ROS packages](../repos/rosflight__rosflight_ros_pkgs.md) - fit: medium - ROS 2 interface, simulator and utilities for the ROSflight autopilot.
+- [MBZIRC Maritime Grand Challenge simulator](../repos/osrf__mbzirc.md) - fit: medium - Simulator (Ignition Fortress + ROS 2) for the MBZIRC Maritime Grand Challenge where UAVs and USVs cooperate in a GNSS-denied environment.
 - [Crazyflie simulation](../repos/bitcraze__crazyflie-simulation.md) - fit: medium - Simulation models and tooling for Crazyflie in Webots and Gazebo.
 - [ardupilot_gz](../repos/ardupilot__ardupilot_gz.md) - fit: medium - ROS 2 + Gazebo packages for ArduPilot SITL integration and testing.
 - [BenchNav](../repos/masafumiendo__benchnav.md) - fit: medium - Gymnasium-based PyTorch simulator for benchmarking off-road navigation planners under uncertain, probabilistic traversability, with synthetic terrain generation.
@@ -85,11 +87,12 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [Beidou-SDR-SIM](../repos/haiyang-wong__beidou-sdr-sim.md) - fit: low - Open-source generator for BeiDou B1C baseband signals for SDR playback or file output.
 - [graduate_work (UAV INS module thesis)](../repos/danamarkova__graduate_work.md) - fit: low - Russian graduate thesis code: 'Development of a UAV inertial navigation module using auxiliary navigation data'.
 
-## Documents, talks, courses, datasets (14)
+## Documents, talks, courses, datasets (15)
 
 - [AirSim Documentation](../resources/microsoft-airsim-docs.md) - doc - Docs for AirSim covering setup, APIs, sensor configuration and PX4/ArduPilot integration.
 - [ArduPilot SITL Simulator (Software in the Loop)](../resources/ardupilot-sitl-docs.md) - doc - Developer docs for running ArduPilot vehicles in SITL, connecting GCS and external simulators.
 - [Champion-level drone racing using deep reinforcement learning](../resources/swift-champion-drone-racing-nature.md) - paper - Swift, a quadrotor using only onboard camera and IMU with an RL-trained policy, beat human world-champion pilots in head-to-head races.
+- [Game4Loc: A UAV Geo-Localization Benchmark from Game Data](../resources/game4loc-2024.md) - paper - Builds a large synthetic drone-satellite dataset from a video game with partial-match pairs and trains weighted contrastive geo-localization.
 - [Gazebo documentation and tutorials](../resources/gazebo-docs-tutorials.md) - doc - Official Gazebo (gz) docs and tutorials: building worlds, sensors (IMU, GPS/NavSat, cameras, LiDAR), ROS 2 bridging and plugins.
 - [HACKtheMACHINE Unmanned (ONR / NavalX)](../resources/onr-hackthemachine-unmanned-2021.md) - competition - US Navy prize challenge on unmanned and autonomous systems with tracks on securing a simulated autopilot, separating benign from malicious data, and model-based mission requirements.
 - [HoloOcean Documentation](../resources/byu-holoocean-docs.md) - doc - Install guide, sensor reference (sonar, DVL, IMU, depth) and examples for the HoloOcean underwater simulator.

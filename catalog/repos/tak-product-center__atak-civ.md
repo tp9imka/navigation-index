@@ -32,6 +32,7 @@ Source of the civilian Android Team Awareness Kit maintained by the TAK Product 
 - [Cursor on Target (NDIA briefing)](../resources/cot-niessen-ndia-2008.md) (has_code)
 - [TAK.gov - Team Awareness Kit portal](../resources/tak-gov.md) (explains)
 - [TAK Protocol (takproto) - protobuf encoding of CoT](../resources/tak-protocol-takproto.md) (has_code)
+- [GNSS jammer geolocation from DF bearings to TAK](../samples/interference-geolocation-to-tak.md) (explains)
 - [MAVLink telemetry to TAK Cursor-on-Target](../samples/mavlink-to-tak-cot.md) (uses)
 
 _Indexed by lane(s): defense-context, planning-gis-c2_

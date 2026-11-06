@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|
 | 57 | Python | ? | 2022-08-15 | False | educational | high |
 
-MATLAB implementation of a foot-mounted INS with EKF and zero-velocity updates for pedestrian dead reckoning, with sample datasets from two foot-mounted MPU6050 IMUs.
+Python implementation (one 9-state script, plus ESP32 logger firmware) of a foot-mounted INS with EKF and zero-velocity updates for pedestrian dead reckoning, with sample datasets from two foot-mounted MPU6050 IMUs.
 
 **Why it matters:** Compact reference for the standard ZUPT pedestrian tracker that underpins dismounted soldier navigation.
 
@@ -14,7 +14,7 @@ MATLAB implementation of a foot-mounted INS with EKF and zero-velocity updates f
 
 **Concepts:** [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
 
-**Tags:** `zupt`, `foot-mounted`, `pdr`, `ekf`, `matlab`
+**Tags:** `zupt`, `foot-mounted`, `pdr`, `ekf`, `python`
 
 **Domains:** dismounted
 

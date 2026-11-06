@@ -14,6 +14,7 @@ ROS and Python scripts that convert external localisation (fiducials, T265 VIO, 
 
 ## Deep dives
 
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [thien94__vision_to_mavros](../../docs/integration-cards/thien94__vision_to_mavros.md) (integration-cards)
 
 **Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)

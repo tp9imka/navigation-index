@@ -10,7 +10,7 @@ Header-only C++11 library for Lie theory (SO2, SE2, SO3, SE3, SE_2(3) and more) 
 
 **Why it matters:** Correct on-manifold Jacobians for custom ESKF or factor-graph code.
 
-**Hackathon notes:** Header-only; Python bindings via pip/conda. Use alongside the micro Lie theory paper.
+**Hackathon notes:** Header-only C++; Python bindings (manifpy) via conda install -c conda-forge manifpy or pip install from a clone - there is no PyPI package. Use alongside the micro Lie theory paper.
 
 **Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
 

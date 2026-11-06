@@ -30,6 +30,8 @@ ROS-based software stack and Raspberry Pi image for the Clover educational quadc
 
 ## Referenced by
 
+- [Clover Rescue Project](../repos/devmbs__crtclient.md) (depends_on)
+- [Swarm in Blocks](../repos/grupo-semear-usp__swarm_in_blocks.md) (depends_on)
 - [Навигация по карте маркеров · Clover](../resources/coex-clover-docs-aruco-map-ru.md) (part_of)
 - [Навигация по Optical Flow · Clover](../resources/coex-clover-docs-optical-flow-ru.md) (part_of)
 - [CopterHack 2023](../resources/coex-copterhack-2023.md) (uses)

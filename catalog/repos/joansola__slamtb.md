@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|
 | 263 | MATLAB | GPL-3.0 | 2023-02-06 | False | educational | low |
 
-Joan Sola's MATLAB EKF-SLAM toolbox with landmark parameterizations (points, lines, inverse depth) and simulated or real sensor support, written for teaching and prototyping.
+Joan Sola's MATLAB SLAM toolbox with EKF-SLAM (`ekf` branch) and graph-SLAM (`graph` branch) variants, landmark parameterizations (points, lines, inverse depth) and simulated or real sensor support, written for teaching and prototyping.
 
 **Why it matters:** Readable reference for EKF-SLAM landmark handling, by the author of the widely cited Lie theory and quaternion kinematics notes.
 

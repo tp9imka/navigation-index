@@ -11,6 +11,10 @@ Introduces the Bayes tree and the iSAM2 algorithm for incremental nonlinear smoo
 - Incremental updates without periodic batch steps
 - Bayes tree data structure
 
+## Deep dives
+
+- [kaess-isam2](../../docs/paper-digests/kaess-isam2.md) (paper-digests)
+
 **Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
 
 **Tags:** `isam2`, `factor-graph`

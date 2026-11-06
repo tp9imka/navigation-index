@@ -12,6 +12,10 @@ Learning-based inertial odometry for UAVs that improves feature observability by
 
 **Hackathon notes:** Recent research code; check README for datasets.
 
+## Deep dives
+
+- [airio-paper](../../docs/paper-digests/airio-paper.md) (paper-digests)
+
 **Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 
 **Tags:** `learned-inertial`, `uav`, `pytorch`

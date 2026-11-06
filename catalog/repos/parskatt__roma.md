@@ -16,6 +16,7 @@ Robust dense feature matcher (CVPR 2024) estimating pixel-dense warps with certa
 
 - [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
 - [parskatt__roma](../../docs/integration-cards/parskatt__roma.md) (integration-cards)
+- [roma-dense-matching-2023](../../docs/paper-digests/roma-dense-matching-2023.md) (paper-digests)
 
 **Concepts:** [Feature detection and matching](../concepts/feature-matching.md)
 

@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|
 | 244 | Python | MIT | 2026-11-04 | False | active-research | high |
 
-ESP32 firmware and tools that sniff Wi-Fi Remote ID and relay detections over Meshtastic LoRa mesh to a mapping host.
+ESP32 firmware and a Python/Flask mapper that capture Remote ID broadcasts over both BLE and Wi-Fi, relay detections over a Meshtastic LoRa mesh and plot drones and pilots on a live, offline-capable web map.
 
 **Why it matters:** Cheap, distributed, off-grid drone-awareness network - very hackathon friendly hardware.
 

@@ -15,6 +15,8 @@ jobs:
           python3 tools/build.py | tee build.log
           grep -q "dangling: 0 bad concepts: 0" build.log
           git diff --stat --exit-code -- catalog INDEX.md graph/graph.json index llms.txt reports
+      - name: Links resolve
+        run: python3 tools/check_links.py
       - name: Stdlib sample tests
         run: |
           make -C templates/project-repo test

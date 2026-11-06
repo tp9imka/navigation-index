@@ -11,6 +11,10 @@ Opportunistic navigation using Starlink downlink signals without cooperation fro
 - Starlink is usable for navigation without operator support
 - Signal structure must be partly estimated blind
 
+## Deep dives
+
+- [kassas-starlink-navigation](../../docs/paper-digests/kassas-starlink-navigation.md) (paper-digests)
+
 **Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [Space and orbital navigation](../concepts/space-nav.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
 
 **Tags:** `starlink`, `leo`, `kassas`, `opportunistic`

@@ -6,13 +6,15 @@ Operating comms and navigation under EW: spectrum monitoring, LPI/LPD links, fal
 
 **Parent:** [Assured / resilient PNT](../concepts/assured-pnt.md)
 
-## Samples (1)
+## Samples (2)
 
 - [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../samples/gnss-interference-monitor.md) - A stdlib heuristic scorer turns per-epoch receiver telemetry (C/N0 across SVs, AGC, CW jamming indicator, clock and position jumps, receiver spoofing/jamming flags) into jamming and spoofing scores with stated reasons.
+- [GNSS jammer geolocation from DF bearings to TAK](../samples/interference-geolocation-to-tak.md) - Locates a GNSS interference source from KrakenSDR-style direction-of-arrival bearings taken at two fixed sites and one moving vehicle, with noise and multipath outliers.
 
-## Repositories (13)
+## Repositories (15)
 
 - [KrakenSDR DoA DSP](../repos/krakenrf__krakensdr_doa.md) - fit: high - Direction-of-arrival processing and web UI for the five-channel coherent KrakenSDR, producing bearings to RF emitters.
+- [GNSS jamming/spoofing classification notebooks](../repos/alicmu2024__gnss-jamming-detection-and-classification-using-machine-learning-deep-learning-and-computer-vision.md) - fit: high - Colab notebooks that classify GNSS jamming types from spectrogram images built from a public raw-IQ jamming dataset, with ML, DL and CV approaches; companion to an arXiv paper.
 - [Fraunhofer IIS Jammertest 2025 dataset](../repos/felixott94__fraunhoferiis_jammertest2025.md) - fit: high - Real-world GNSS interference recordings from Jammertest 2025 at Andoya, Norway, covering jamming, spoofing, meaconing and multi-emitter scenarios, with metadata for classification, characterization and direction finding.
 - [ExpressLRS](../repos/expresslrs__expresslrs.md) - fit: medium - Open-source LoRa/FLRC radio control link (2.4 GHz and sub-GHz) with high packet rates, telemetry and MAVLink passthrough modes.
 - [OpenHD](../repos/openhd__openhd.md) - fit: medium - Open-source long-range digital HD video and telemetry link over Wi-Fi adapters in monitor mode (wifibroadcast-style), for air and ground units.
@@ -23,10 +25,11 @@ Operating comms and navigation under EW: spectrum monitoring, LPI/LPD links, fal
 - [UVDAR](../repos/ctu-mrs__uvdar_core.md) - fit: medium - Mutual relative localization for UAV swarms using blinking ultraviolet LEDs and UV-sensitive cameras, from CTU MRS.
 - [Jammertest test plan](../repos/npra__jammertest-plan.md) - fit: medium - Official test catalog and plan for Jammertest, Norway's annual live GNSS jamming and spoofing event, maintained by the Norwegian Public Roads Administration.
 - [GPSSpy](../repos/hoverflyhampton__gpsspy.md) - fit: medium - Python implementation of GPS jamming detection from receiver signal-to-noise ratio, following a published real-time jamming detection method.
+- [Towards Jammer Fingerprinting](../repos/helsinki-sda-group__towards-jammer-fingerprinting.md) - fit: medium - LSTM (Bayesian and standard) classifiers that identify individual jammers from IQ recordings, from an ICL-GNSS 2024 paper on how environment and receiver affect classification.
 - [SiK radio firmware](../repos/ardupilot__sik.md) - fit: low - Firmware and tools for Si1000-based telemetry radios (3DR/RFD900 class) carrying MAVLink.
 - [Smart-UAV-Return-GNSS-Station](../repos/citec-spbu__smart-uav-return-gnss-station.md) - fit: low - Student project from SPbU (CITEC) on returning a UAV to its launch point when both GNSS and the ground-station link are lost, targeting a RockPi 4 companion computer.
 
-## Documents, talks, courses, datasets (51)
+## Documents, talks, courses, datasets (52)
 
 - [12 переможців і призовий фонд у 120 000 доларів: результати Хакатону «Наступ машин»](../resources/mod-nastup-mashyn-hackathon-2024.md) - competition - English: '12 winners and a $120,000 prize pool: results of the Onslaught of Machines hackathon'.
 - [Assessing the Spoofing Threat: Development of a Portable GPS Civilian Spoofer](../resources/humphreys-2008-assessing-spoofing-threat.md) - paper - Landmark ION GNSS 2008 paper that built a receiver-based civil GPS spoofer and analysed how hard it is to detect, kicking off modern civil spoofing defense research.
@@ -61,6 +64,7 @@ Operating comms and navigation under EW: spectrum monitoring, LPI/LPD links, fal
 - [Space Threat Assessment 2024](../resources/csis-space-threat-assessment-2024.md) - report - Previous edition of the CSIS counterspace assessment; useful to see how GNSS interference reporting escalated between years.
 - [Space Threat Assessment 2025](../resources/csis-space-threat-assessment-2025.md) - report - Annual CSIS Aerospace Security Project review of counterspace capabilities, with sections on GPS jamming and spoofing in Eastern Europe and the Middle East.
 - [The invisible war: Inside the electronic warfare arms race that could shape course of the war](../resources/kyiv-independent-invisible-war-ew.md) - blog - Long-form reporting on the EW and counter-EW cycle in Ukraine, covering jamming of drones and navigation and the rapid iteration of countermeasures.
+- [Trends and Challenges in Next-Generation GNSS Interference Management](../resources/gnss-interference-management-trends-2025.md) - paper - Survey of interference detection, classification, localization and mitigation trends, including open datasets such as Jammertest recordings.
 - [UAVs: ISR, Deterrence and War (IISS Strategic Dossier)](../resources/iiss-uavs-isr-deterrence-war-2026.md) - report - IISS dossier on military UAV use, noting that GNSS is often effectively unavailable near the front line in Ukraine and that visual scene-matching navigation is a growing response.
 - [Ukraine's Autonomous Killer Drones Defeat Electronic Warfare](../resources/ieee-spectrum-ukraine-drones-ew-2025.md) - blog - Reporting on how Ukrainian drone developers respond to pervasive jamming of radio links and satellite navigation, including onboard optical navigation that keeps the drone flying after links are lost.
 - [Ukraine's Brave1, NATO launch EUR 10M competition for counter-drone technology](../resources/brave1-nato-counter-drone-ew-competition.md) - blog - Coverage of a Brave1-NATO competition funding counter-drone technology and navigation that works under electronic warfare.

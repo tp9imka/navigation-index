@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 1 | C++ | MIT | 2024-07-02 | False | research-prototype | medium |
 
-Arduino/MPU6050 library implementing several open-source foot-mounted INS and zero-velocity detection algorithms.
+Arduino library forked from MPU6050_tockn that reads and calibrates an MPU6050 and streams angles and time series to Python plotting scripts. The README says foot-mounted INS / ZUPT support is planned but the repo is under construction; no zero-velocity detector or INS code is in it yet.
 
 **Why it matters:** Low-cost hardware path to a working foot-mounted INS demo.
 
-**Hackathon notes:** Needs an MPU6050 and microcontroller; expect heading drift without magnetometer aiding.
+**Hackathon notes:** Only the IMU reading and calibration part exists; you would write the ZUPT detector and INS yourself (see pajaraca/IEZ or OpenShoe for the algorithm). Needs an MPU6050 and an Arduino-class board; expect heading drift without magnetometer aiding.
 
 **Concepts:** [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
 

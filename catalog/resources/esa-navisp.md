@@ -4,7 +4,7 @@
 
 **By:** European Space Agency - **Year:** 2025 - **Level:** intermediate - **Access:** open
 
-ESA's PNT R&D programme funding industry projects including GNSS-independent PNT; 2025 examples include ALL.SPACE (EUR 950k, signals of opportunity from a multi-orbit terminal, with GMV NSL) and maritime alt-PNT via VDES and R-Mode.
+ESA's PNT R&D programme funding industry projects including GNSS-independent PNT; 2025 examples include ALL.SPACE (EUR 950k per the October 2025 ALL.SPACE announcement, signals of opportunity from a multi-orbit terminal, with GMV NSL) and maritime alt-PNT via VDES and R-Mode.
 
 ## Key takeaways
 

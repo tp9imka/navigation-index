@@ -15,7 +15,7 @@ Star trackers, sun/sky polarization, celestial fixes.
 - [OpenStarTracker](../repos/ubnanosatlab__openstartracker.md) - fit: medium - Open-source star tracker using a Bayesian star identification approach, developed by the University at Buffalo Nanosatellite Lab.
 - [NASA COTS Star Tracker](../repos/nasa__cots-star-tracker.md) - fit: medium - NASA software for building a star tracker from commercial off-the-shelf cameras, including calibration and attitude solution.
 - [LOST](../repos/uwcubesat__lost.md) - fit: medium - Open-source star tracker (C++) covering centroiding, star identification and attitude estimation, from the UW CubeSat team.
-- [celnav](../repos/ms8r__celnav.md) - fit: medium - Python celestial navigation tools for cruising sailors: sight reduction, almanac data and fix computation.
+- [celnav](../repos/ms8r__celnav.md) - fit: medium - Small Tkinter desktop app for celestial navigation on a boat: computes the Nautical Almanac daily-page data with PyEphem, reduces sights and fixes position from two LOPs, correcting for vessel motion between sights.
 - [celestial-navigation toolkit](../repos/alinnman__celestial-navigation.md) - fit: medium - Python toolkit for classic celestial navigation sight reduction, usable offline on a phone.
 - [ccompass](../repos/benjaminpotter__ccompass.md) - fit: medium - Header-only C library for processing sky polarization images to support heading estimation; successor to compyss.
 - [SPEL Open Star Tracker](../repos/spel-uchile__star_tracker.md) - fit: low - Open star tracker software from the University of Chile space lab, flown on SUCHAI nanosatellites.

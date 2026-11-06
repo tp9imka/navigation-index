@@ -2,7 +2,7 @@
 
 `res:cuvslam-2025` - paper - <https://arxiv.org/abs/2506.04359>
 
-**By:** NVIDIA - **Year:** 2025 - **Level:** intermediate - **Access:** open
+**By:** Alexander Korovko, Dmitry Slepichev, Alexander Efitorov, Aigul Dzhumamuratova, et al. (NVIDIA) - **Year:** 2025 - **Level:** intermediate - **Access:** open
 
 Describes NVIDIA's GPU-accelerated VO/SLAM supporting from one to many cameras with optional IMU, designed for real-time edge deployment.
 
@@ -10,6 +10,10 @@ Describes NVIDIA's GPU-accelerated VO/SLAM supporting from one to many cameras w
 
 - Multi-camera rigs supported
 - Runs in real time on Jetson
+
+## Deep dives
+
+- [cuvslam-2025](../../docs/paper-digests/cuvslam-2025.md) (paper-digests)
 
 **Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Visual SLAM](../concepts/visual-slam.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 

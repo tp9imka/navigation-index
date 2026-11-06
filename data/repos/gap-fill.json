@@ -60,7 +60,7 @@
   ],
   "maturity": "active-research",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Conda environment install; runs on image folders or COLMAP-format data. Expect long runtimes on large sets - downsample.",
+  "hackathon_notes": "No compilation: `uv tool install .` (or `pip install .` in Python 3.12) from a recursive checkout, then `gtsfm run` opens a browser workspace with sample scenes; `gtsfm execute` is the CLI path for your own image folders. Expect long runtimes on large sets - downsample.",
   "related": [
    {
     "id": "repo:borglab/gtsam",
@@ -158,7 +158,7 @@
   ],
   "maturity": "active-research",
   "hackathon_fit": "high",
-  "hackathon_notes": "Download the data and start with the provided Python loaders; pick one scenario class to build a jamming/spoofing classifier within a day.",
+  "hackathon_notes": "Data is chunked HDF5 under dataset/ (Git LFS; the README points to an identical GitLab mirror for the full download) plus train/test split lists. There are no loader modules - the README only gives an h5py inspection snippet, so budget time to write your own loader before building a jamming/spoofing classifier on one scenario class.",
   "related": [
    {
     "id": "repo:npra/jammertest-plan",
@@ -286,7 +286,7 @@
   "kind": "repo",
   "name": "SLAM Toolbox (MATLAB)",
   "url": "https://github.com/joansola/slamtb",
-  "summary": "Joan Sola's MATLAB EKF-SLAM toolbox with landmark parameterizations (points, lines, inverse depth) and simulated or real sensor support, written for teaching and prototyping.",
+  "summary": "Joan Sola's MATLAB SLAM toolbox with EKF-SLAM (`ekf` branch) and graph-SLAM (`graph` branch) variants, landmark parameterizations (points, lines, inverse depth) and simulated or real sensor support, written for teaching and prototyping.",
   "why_it_matters": "Readable reference for EKF-SLAM landmark handling, by the author of the widely cited Lie theory and quaternion kinematics notes.",
   "concepts": [
    "concept:visual-slam",
@@ -800,7 +800,7 @@
   "kind": "repo",
   "name": "ROS MCP Server demos",
   "url": "https://github.com/robotmcp/demos-ros-mcp-server",
-  "summary": "Demos and tutorials for connecting LLMs to robots via the ROS MCP server, including simulated mobile robots.",
+  "summary": "Standalone demos for driving robots with natural language through the ROS MCP server: a Tugbot in a Gazebo warehouse, a Unitree Go2 with the CHAMP controller, a PX4 drone via MAVROS (Gazebo and real hardware) and TurtleBot3 in Ignition Gazebo.",
   "why_it_matters": "Worked examples shorten the path from install to a talking robot demo.",
   "concepts": [
    "concept:llm-agents-robotics",
@@ -817,7 +817,7 @@
   ],
   "maturity": "educational",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Follow one demo end to end before customizing the server.",
+  "hackathon_notes": "Each sub-folder is a self-contained project with its own README; the PX4 demo (takeoff, patterns, orbit, RTL via MAVROS) is the most relevant. Run one demo end to end before customizing the server.",
   "related": [
    {
     "id": "repo:robotmcp/ros-mcp-server",
@@ -847,7 +847,7 @@
   ],
   "maturity": "active-research",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Build in a ROS 2 workspace; check supported distros in README.",
+  "hackathon_notes": "Fastest path is the Docker image (wisevision/ros2_mcp:jazzy or :humble) as the MCP client's stdio command - ROS 2 does not need to be installed on the host. Start with ROS2_MCP_READONLY=1 so the agent can inspect but not publish.",
   "related": [
    {
     "id": "repo:robotmcp/ros-mcp-server",
@@ -864,7 +864,7 @@
   "kind": "repo",
   "name": "LCAS ROS 2 MCP",
   "url": "https://github.com/LCAS/ros2_mcp",
-  "summary": "ROS 2 MCP server from the Lincoln Centre for Autonomous Systems, exposing topics, services and actions to LLM agents.",
+  "summary": "ROS 2 MCP server from the Lincoln Centre for Autonomous Systems: tools to list and echo topics, inspect message/service/action interfaces, fetch camera images for VLM analysis and send simple drive commands, plus canned analysis prompts. Runs as a ROS 2 package or via Docker Compose (SSE on port 8000).",
   "why_it_matters": "University-maintained option for agricultural/field robot agent experiments.",
   "concepts": [
    "concept:llm-agents-robotics",
@@ -989,7 +989,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Small codebase; read the gating logic and reuse it in your own bridge.",
+  "hackathon_notes": "`pipx install ardupilot-mavlink-mcp`, point it at SITL (tcp:127.0.0.1:5760). Read-only by default; arming needs `--enable-actuation`, and real (non-loopback) links also need `--allow-real-vehicle`. Its prearm-diagnosis and single-reader-thread design are worth copying.",
   "related": [
    {
     "id": "repo:ion-g-ion/mavlinkmcp",
@@ -1037,7 +1037,7 @@
   "kind": "repo",
   "name": "qgis-mcp (nkarasiak)",
   "url": "https://github.com/nkarasiak/qgis-mcp",
-  "summary": "Actively maintained MCP bridge connecting AI agents to QGIS Desktop, with a broader tool set than the original qgis_mcp.",
+  "summary": "MCP bridge that lets AI agents drive QGIS Desktop: a QGIS plugin runs a TCP socket server inside QGIS and a FastMCP server exposes about 125 tools (layers, feature editing, processing, rendering, styling, layouts/atlas, cross-layer SQL). Supports QGIS 3.28 to 4.x; the plugin installs from the QGIS plugin manager and the server runs via uvx.",
   "why_it_matters": "More recent alternative if the original QGIS MCP lags behind QGIS releases.",
   "concepts": [
    "concept:llm-agents-robotics",
@@ -1130,7 +1130,7 @@
   "kind": "repo",
   "name": "TypeFly",
   "url": "https://github.com/typefly/TypeFly",
-  "summary": "Framework for LLM-based drone task planning that compiles natural-language requests into a compact robot language (MiniSpec) executed on a DJI Tello with vision services.",
+  "summary": "LLM-based robot control framework: an OpenAI model turns a natural-language request plus a YOLO scene description into a short Python plan built from the robot's registered skills, which is then executed. Ships wrappers for a virtual webcam robot, DJI Tello, Unitree Go2 and Petoi.",
   "why_it_matters": "Shows how to constrain LLM output into a small, verifiable command language for drones, cutting latency and risk.",
   "concepts": [
    "concept:llm-agents-robotics",
@@ -1148,7 +1148,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "high",
-  "hackathon_notes": "Works with a cheap Tello and a GPU box for YOLO; virtual mode exists. Swap the backend for MAVSDK to target PX4.",
+  "hackathon_notes": "`pip install -e .`, add an OpenAI key and run `typefly-run`; the default virtual robot uses a webcam, so no hardware is needed. A Tello needs both a Wi-Fi and an ethernet adapter. Swap in a MAVSDK-based robot wrapper to target PX4.",
   "related": [
    {
     "id": "repo:microsoft/promptcraft-robotics",
@@ -1374,7 +1374,7 @@
   "kind": "repo",
   "name": "3DG-VLN",
   "url": "https://github.com/xuefanfu/3DG-VLN",
-  "summary": "UAV vision-language navigation framework using 3D grounding for more precise goal localization (2026 research code).",
+  "summary": "UAV vision-language navigation method that feeds high-resolution front and downward views plus a coarse 3D target direction, updated online, into waypoint prediction for precise see-and-reach flight. Releases the UAV-VLN-FOV benchmark (2,717 trajectories, seen/unseen-object/unseen-scene splits), code and weights; runs in AirSim with TravelUAV environments.",
   "why_it_matters": "Recent aerial VLN method to compare against benchmark baselines.",
   "concepts": [
    "concept:llm-agents-robotics"
@@ -1404,7 +1404,7 @@
   "kind": "repo",
   "name": "InternNav",
   "url": "https://github.com/InternRobotics/InternNav",
-  "summary": "Open platform for building and evaluating generalist navigation foundation models, covering VLN and related embodied navigation tasks with training and benchmarks.",
+  "summary": "PyTorch toolbox for embodied navigation on Habitat and Isaac Sim, covering vision-language navigation (VLN-CE and continuous-trajectory VLN) and point, image or trajectory goal navigation, with 10+ baselines, 6 benchmarks, the InternData-N1 dataset and the InternVLA-N1 dual-system model.",
   "why_it_matters": "Brings recent VLA-style navigation models into one toolkit.",
   "concepts": [
    "concept:llm-agents-robotics",
@@ -1673,7 +1673,7 @@
   "kind": "repo",
   "name": "IEZ (INS-EKF-ZUPT)",
   "url": "https://github.com/pajaraca/IEZ",
-  "summary": "MATLAB implementation of a foot-mounted INS with EKF and zero-velocity updates for pedestrian dead reckoning, with sample datasets from two foot-mounted MPU6050 IMUs.",
+  "summary": "Python implementation (one 9-state script, plus ESP32 logger firmware) of a foot-mounted INS with EKF and zero-velocity updates for pedestrian dead reckoning, with sample datasets from two foot-mounted MPU6050 IMUs.",
   "why_it_matters": "Compact reference for the standard ZUPT pedestrian tracker that underpins dismounted soldier navigation.",
   "concepts": [
    "concept:indoor-pedestrian",
@@ -1684,9 +1684,9 @@
    "foot-mounted",
    "pdr",
    "ekf",
-   "matlab"
+   "python"
   ],
-  "language": "MATLAB",
+  "language": "Python",
   "domains": [
    "dismounted"
   ],
@@ -1709,7 +1709,7 @@
   "kind": "repo",
   "name": "MPU6050 ZUPT",
   "url": "https://github.com/mtahakoroglu/MPU6050_ZUPT",
-  "summary": "Arduino/MPU6050 library implementing several open-source foot-mounted INS and zero-velocity detection algorithms.",
+  "summary": "Arduino library forked from MPU6050_tockn that reads and calibrates an MPU6050 and streams angles and time series to Python plotting scripts. The README says foot-mounted INS / ZUPT support is planned but the repo is under construction; no zero-velocity detector or INS code is in it yet.",
   "why_it_matters": "Low-cost hardware path to a working foot-mounted INS demo.",
   "concepts": [
    "concept:indoor-pedestrian",
@@ -1727,7 +1727,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Needs an MPU6050 and microcontroller; expect heading drift without magnetometer aiding.",
+  "hackathon_notes": "Only the IMU reading and calibration part exists; you would write the ZUPT detector and INS yourself (see pajaraca/IEZ or OpenShoe for the algorithm). Needs an MPU6050 and an Arduino-class board; expect heading drift without magnetometer aiding.",
   "related": [
    {
     "id": "repo:pajaraca/iez",
@@ -1740,7 +1740,7 @@
   "kind": "repo",
   "name": "OpenPDR",
   "url": "https://github.com/wuzhiguocarter/OpenPDR",
-  "summary": "Device-independent pedestrian dead reckoning library: step detection, step length estimation and heading for smartphone-style sensors.",
+  "summary": "Planned device-independent pedestrian dead reckoning platform that never got past its outline: the repo holds MATLAB ellipsoid-fit accelerometer and magnetometer calibration scripts with sample logs, an Allan-variance note, and reference papers on filtering and AHRS. No step detection or step-length code is present.",
   "why_it_matters": "Simple step-and-heading baseline for phone-based indoor navigation.",
   "concepts": [
    "concept:indoor-pedestrian"
@@ -1756,7 +1756,7 @@
   ],
   "maturity": "archived",
   "hackathon_fit": "low",
-  "hackathon_notes": "Unmaintained since 2017; use for algorithm reference.",
+  "hackathon_notes": "Unmaintained since 2017. Only the ellipsoid-fit IMU/magnetometer calibration scripts are reusable; for actual PDR code look elsewhere.",
   "related": [
    {
     "id": "repo:aureliencousin/pdr",
@@ -1783,9 +1783,9 @@
   "domains": [
    "dismounted"
   ],
-  "maturity": "research-prototype",
+  "maturity": "archived",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Build with Android Studio; fuse with Wi-Fi or UWB for correction.",
+  "hackathon_notes": "The author marks it unmaintained (written in 2014). It is an Eclipse ADT project, so expect to import and migrate it into Android Studio, and the manifest lacks a Google Maps API key. Use the step-detection and heading code as reference; fuse with Wi-Fi or UWB for correction.",
   "related": [
    {
     "id": "repo:wuzhiguocarter/openpdr",
@@ -1919,7 +1919,7 @@
   "kind": "repo",
   "name": "celnav",
   "url": "https://github.com/ms8r/celnav",
-  "summary": "Python celestial navigation tools for cruising sailors: sight reduction, almanac data and fix computation.",
+  "summary": "Small Tkinter desktop app for celestial navigation on a boat: computes the Nautical Almanac daily-page data with PyEphem, reduces sights and fixes position from two LOPs, correcting for vessel motion between sights.",
   "why_it_matters": "Scriptable sight reduction for a GNSS-free position fix.",
   "concepts": [
    "concept:celestial-nav",
@@ -1935,9 +1935,9 @@
   "domains": [
    "maritime"
   ],
-  "maturity": "research-prototype",
+  "maturity": "archived",
   "hackathon_fit": "medium",
-  "hackathon_notes": "Pure Python; combine with a camera-based star or sun altitude to automate a fix.",
+  "hackathon_notes": "Python 2 code (imports ConfigParser, Tkinter) with no commits since 2018; port the celnav.py core to Python 3 or use it as an algorithm reference. Pair with a camera-based sun or star altitude to automate a fix.",
   "related": [
    {
     "id": "repo:alinnman/celestial-navigation",
@@ -2123,7 +2123,7 @@
    "doppler",
    "ros"
   ],
-  "language": "Fortran",
+  "language": "C++",
   "domains": [
    "air",
    "ground"
@@ -2277,7 +2277,7 @@
   "kind": "repo",
   "name": "RINO",
   "url": "https://github.com/yangsc4063/rino",
-  "summary": "Radar-inertial odometry for scanning radar targeting accuracy and robustness (T-ASE 2025).",
+  "summary": "Non-iterative, adaptively loosely coupled radar-inertial odometry for spinning (scanning) radar, built on the ORORA radar odometry baseline; the radar pose uncertainty from its voting step feeds a Kalman filter (T-ASE 2025).",
   "why_it_matters": "Recent scanning-radar inertial method to benchmark against.",
   "concepts": [
    "concept:radar-nav",
@@ -2294,7 +2294,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "low",
-  "hackathon_notes": "Research code; check dataset requirements.",
+  "hackathon_notes": "ROS Noetic / Ubuntu 20.04, catkin build, Sophus built manually. Replay MulRan with its file player (radar + IMU); a Boreas demo is shown.",
   "related": [
    {
     "id": "repo:utiasasrl/steam_icp",
@@ -2475,7 +2475,7 @@
   "kind": "repo",
   "name": "pylgrim",
   "url": "https://github.com/kirienko/pylgrim",
-  "summary": "GNSS software receiver written in Python for learning acquisition, tracking and positioning.",
+  "summary": "Playground GNSS positioning code in Python/numpy that computes a static GPS position (50-100 m accuracy per the README) from RINEX 2.11 observations, with parsers for RINEX nav/obs, SP3 and IONEX plus Klobuchar, IONEX and VMF1 delay models. Works on RINEX files, not raw IF samples, so there is no acquisition or tracking stage.",
   "why_it_matters": "Python-readable receiver chain for teaching and quick experiments.",
   "concepts": [
    "concept:gnss-sdr",
@@ -2505,7 +2505,7 @@
   "kind": "repo",
   "name": "GNSS-DSP-tools",
   "url": "https://github.com/pmonta/GNSS-DSP-tools",
-  "summary": "Python code generators, acquisition and tracking for many GNSS signals (GPS, Galileo, GLONASS, BeiDou, NavIC and more) operating on IQ recordings.",
+  "summary": "Python code generators, acquisition and tracking scripts for GPS, Galileo, GLONASS, BeiDou and Xona Pulsar LEO signals, operating on IQ recordings.",
   "why_it_matters": "Broadest signal coverage among lightweight SDR toolkits; quick to test a new recording.",
   "concepts": [
    "concept:gnss-sdr",
@@ -2523,7 +2523,7 @@
   ],
   "maturity": "active-research",
   "hackathon_fit": "high",
-  "hackathon_notes": "Run acquire-*.py on an IQ file from any SDR; no build needed.",
+  "hackathon_notes": "Install numpy, scipy and numba (conda is the easy route), then run acquire-<system>-<signal>.py or track-*.py on an IQ file from any SDR. No compile step beyond Numba's JIT.",
   "related": [
    {
     "id": "repo:gnss-sdr/gnss-sdr",
@@ -2855,7 +2855,7 @@
   ],
   "maturity": "production",
   "hackathon_fit": "medium",
-  "hackathon_notes": "pip install tonic; use transforms to voxel grids.",
+  "hackathon_notes": "pip install tonic (or conda-forge); use transforms such as ToFrame or voxel grids. The project is looking for a new maintainer, so pin a version.",
   "related": [
    {
     "id": "repo:prophesee-ai/openeb",
@@ -2884,7 +2884,7 @@
   ],
   "maturity": "active-research",
   "hackathon_fit": "high",
-  "hackathon_notes": "pip install; feed it drone footage to create event sequences.",
+  "hackathon_notes": "Not on PyPI: create a conda env, install CUDA PyTorch, then `pip install -e .` from a clone (or use the Colab notebook). Needs a GPU; conversion runs far slower than real time, so test with --stop on a short clip of drone footage first.",
   "related": [
    {
     "id": "repo:uzh-rpg/rpg_esim",
@@ -2951,7 +2951,7 @@
   "kind": "repo",
   "name": "LoranC receiver",
   "url": "https://github.com/romavis/LoranC",
-  "summary": "DSP-based Loran-C receiver project also aimed at the Russian Chayka chain, covering pulse detection and signal tracking.",
+  "summary": "Hobby project to build a DSP-based Loran-C receiver that can also lock onto the Russian Chayka chain. The published repo holds only KiCad hardware designs (loop antenna preamp, power supply, processing board, RF prototype); no DSP firmware or software.",
   "why_it_matters": "One of very few open receivers for low-frequency hyperbolic navigation, the basis of eLoran.",
   "concepts": [
    "concept:signals-of-opportunity",
@@ -2964,14 +2964,14 @@
    "lf",
    "dsp"
   ],
-  "language": "IDL",
+  "language": "KiCad",
   "domains": [
    "maritime",
    "multi"
   ],
   "maturity": "archived",
   "hackathon_fit": "low",
-  "hackathon_notes": "Old code from 2014; use for algorithm reference with recorded LF IQ data.",
+  "hackathon_notes": "Hardware reference only, last touched 2014: the loop-antenna preamp and RF front-end schematics are the useful part for an LF receiver build. No signal processing code to reuse.",
   "related": [
    {
     "id": "repo:cheolj/loran-c-reference-code",
@@ -3234,7 +3234,7 @@
   ],
   "maturity": "production",
   "hackathon_fit": "high",
-  "hackathon_notes": "pip install the Python wheel on Jetson or x86 with CUDA; examples for EuRoC/KITTI.",
+  "hackathon_notes": "Download the prebuilt wheel (cuvslam-cu12 or -cu13) from the GitHub releases page, not PyPI; wheels cover x86_64, Jetson Orin (JetPack 6) and Jetson Thor with Python 3.10+, other combos need a source build. Needs CUDA Toolkit libraries; examples include EuRoC and KITTI.",
   "related": [
    {
     "id": "repo:nvidia-isaac-ros/isaac_ros_visual_slam",
@@ -3251,7 +3251,7 @@
   "kind": "repo",
   "name": "LightGlue-ONNX",
   "url": "https://github.com/fabio-sim/LightGlue-ONNX",
-  "summary": "ONNX export of SuperPoint/DISK + LightGlue feature matching with TensorRT and OpenVINO support.",
+  "summary": "ONNX export and inference of LightGlue matching with SuperPoint, DISK and ALIKED extractors (including RaCo-ALIKED-LightGlue+), with TensorRT, OpenVINO and FP8 quantization workflows.",
   "why_it_matters": "Fast learned matching on embedded hardware for visual geolocalization and VO.",
   "concepts": [
    "concept:edge-ai",
@@ -3271,7 +3271,7 @@
   ],
   "maturity": "production",
   "hackathon_fit": "high",
-  "hackathon_notes": "Download prebuilt ONNX models; run with onnxruntime-gpu or TensorRT.",
+  "hackathon_notes": "Download prebuilt ONNX models from Releases and run with onnxruntime-gpu or TensorRT; for export, the repo now uses uv (uv sync with export/cuda/trt groups) and a lightglue-onnx CLI.",
   "related": [
    {
     "id": "repo:cvg/lightglue",
@@ -3343,7 +3343,7 @@
   "kind": "repo",
   "name": "DepthAI",
   "url": "https://github.com/luxonis/depthai",
-  "summary": "Python API and examples for Luxonis OAK cameras, which run neural networks and stereo depth on the camera itself.",
+  "summary": "Landing repository for Luxonis OAK cameras, which run neural networks and stereo depth on the camera; the default branch now only points to the docs, and the old examples live on the `main` branch. The current Python API (DepthAI v3) is built from luxonis/depthai-core.",
   "why_it_matters": "Puts inference and depth on the sensor, freeing the companion computer.",
   "concepts": [
    "concept:edge-ai"
@@ -3360,7 +3360,7 @@
   ],
   "maturity": "production",
   "hackathon_fit": "high",
-  "hackathon_notes": "pip install depthai; OAK-D required. Examples include spatial detection.",
+  "hackathon_notes": "`pip install depthai` (v3 API; examples in luxonis/depthai-core). OAK camera required. Older v2 tutorials and examples will not run unchanged on v3.",
   "related": [
    {
     "id": "repo:luxonis/depthai-ros",

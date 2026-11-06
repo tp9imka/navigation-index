@@ -16,6 +16,7 @@ Toolbox for hierarchical visual localization: global retrieval (NetVLAD etc.) to
 
 - [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
 - [cvg__hierarchical-localization](../../docs/integration-cards/cvg__hierarchical-localization.md) (integration-cards)
+- [hloc-coarse-to-fine-2018](../../docs/paper-digests/hloc-coarse-to-fine-2018.md) (paper-digests)
 
 **Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md), [Feature detection and matching](../concepts/feature-matching.md), [Visual SLAM](../concepts/visual-slam.md)
 

@@ -14,6 +14,7 @@ Command-line, module-based ground station and MAVLink proxy with map, console an
 
 ## Deep dives
 
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [ardupilot__mavproxy](../../docs/integration-cards/ardupilot__mavproxy.md) (integration-cards)
 
 **Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Mission planning and routing](../concepts/mission-planning.md)

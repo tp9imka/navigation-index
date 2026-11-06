@@ -39,7 +39,7 @@ ICDs, STANAGs, RTCM, NMEA, MAVLink, CoT, ASTERIX, interoperability specs.
 - [RINEX LEO extension proposal](../repos/rokubun__rinex_leo.md) - fit: low - Proposal for RINEX format modifications to carry LEO-PNT observables and ephemeris.
 - [MAAST for ARAIM](../repos/stanford-gps-lab__maast_for_araim_2.md) - fit: low - Stanford GPS Lab MATLAB toolset that evaluates Advanced RAIM availability and protection levels over service areas.
 
-## Documents, talks, courses, datasets (48)
+## Documents, talks, courses, datasets (49)
 
 - [15 CFR 734.7 - Published (Export Administration Regulations)](../resources/ecfr-ear-734-7-published.md) - standard - The regulation text defining when information and software count as 'published' and therefore not subject to the EAR.
 - [BeiDou Navigation Satellite System Signal-In-Space ICDs (B1I, B3I, B1C, B2a, B2b)](../resources/beidou-icd-library.md) - standard - Official English-language ICD library for BeiDou open service signals, including the BDS-3 B1C and B2a signals that are interoperable with GPS L1C/L5 and Galileo E1/E5a, plus PPP-B2b.
@@ -85,6 +85,7 @@ ICDs, STANAGs, RTCM, NMEA, MAVLink, CoT, ASTERIX, interoperability specs.
 - [Resilient PNT Conformance Framework](../resources/dhs-resilient-pnt-conformance-framework.md) - standard - Defines four cumulative resilience levels for PNT user equipment based on prevent, respond and recover behaviours, so buyers and vendors can describe how a receiver behaves under jamming or spoofing.
 - [RTCM 10403.x Differential GNSS (DGNSS) Services - Version 3](../resources/rtcm-sc104-standards.md) - standard - The paid-access RTCM v3 standard that defines the binary messages used to stream GNSS corrections and observations (legacy RTK 1001-1012, MSM 1-7 per constellation, ephemerides, SSR).
 - [Signal K Specification](../resources/signalk-spec.md) - standard - Published Signal K specification describing the JSON data model, REST and streaming APIs for marine data.
+- [SoftServe engineers win TIDE NATO Hackathon 2023 challenge](../resources/nato-tide-hackathon-2023-suav-visual-nav.md) - blog - Coverage of the 2023 NATO TIDE hackathon in Warsaw, which included a Small UAV Visual Navigation Concept Development challenge alongside others.
 - [SpatioTemporal Asset Catalog (STAC) specification](../resources/stac-spec.md) - standard - Specification and ecosystem site for STAC, the common way to describe and search geospatial imagery and DEM assets.
 - [STANAG 4586 - Standard Interfaces of UAV Control System (UCS) for NATO UAV Interoperability](../resources/stanag-4586-overview.md) - doc - Public overview of NATO's UAS interoperability standard, which defines a core UCS, a vehicle-specific module and five levels of interoperability from receiving payload data up to full flight control including launch and 
 - [TAK Protocol (takproto) - protobuf encoding of CoT](../resources/tak-protocol-takproto.md) - doc - Documentation of the TAK protocol used by ATAK and TAK Server: how CoT events are framed and carried as protocol buffers over mesh (UDP multicast) and streaming (TCP/TLS) transports, alongside legacy XML.

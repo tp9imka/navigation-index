@@ -11,7 +11,7 @@ GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 - [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../samples/gnss-interference-monitor.md) - A stdlib heuristic scorer turns per-epoch receiver telemetry (C/N0 across SVs, AGC, CW jamming indicator, clock and position jumps, receiver spoofing/jamming flags) into jamming and spoofing scores with stated reasons.
 - [Public CORS RINEX to SPP vs RTK with RTKLIB demo5 and gnss_lib_py](../samples/gnss-rinex-processing.md) - Downloads one day of public NOAA NGS CORS RINEX for a rover/base pair 30 km apart, runs RTKLIB demo5 rnx2rtkp in single-point and kinematic RTK modes with exact CLI flags, and scores both against the stations' published 
 
-## Repositories (61)
+## Repositories (64)
 
 - [GPS-SDR-SIM](../repos/osqzss__gps-sdr-sim.md) - fit: high - Generates GPS L1 C/A baseband IQ sample files for a user-defined static or moving trajectory from a broadcast ephemeris file, for playback through an SDR.
 - [RTKLIB](../repos/tomojitakasu__rtklib.md) - fit: high - The original open-source GNSS positioning package by T.
@@ -22,11 +22,11 @@ GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 - [laika](../repos/commaai__laika.md) - fit: high - Python GNSS processing library from comma.ai that fetches orbits, clocks and atmospheric corrections automatically and computes corrected pseudoranges and positions from raw measurements.
 - [UrbanNav](../repos/ipnl-polyu__urbannavdataset.md) - fit: high - Open multisensor urban positioning dataset from PolyU IPNL with GNSS, IMU, lidar and camera in deep urban canyons.
 - [ublox ROS driver](../repos/kumarrobotics__ublox.md) - fit: high - ROS driver for u-blox receivers that publishes fixes, raw measurements and receiver status as ROS messages.
-- [georinex](../repos/geospace-code__georinex.md) - fit: high - Fast Python reader for RINEX 2/3 observation and navigation files and SP3 orbits into xarray, with batch conversion to HDF5/NetCDF.
+- [georinex](../repos/geospace-code__georinex.md) - fit: high - Fast Python reader for RINEX 2/3/4 observation and navigation files (plain, gzip/Z/bz2/zip or Hatanaka-compressed) and SP3 orbits into xarray, with batch conversion to NetCDF4/HDF5.
 - [gnss_lib_py](../repos/stanford-navlab__gnss_lib_py.md) - fit: high - Modular Python library from Stanford NavLab for parsing, analyzing and visualizing GNSS data (Android logs, RINEX, NMEA, SP3/CLK) with baseline positioning algorithms and fault detection examples.
 - [pyubx2](../repos/semuconsulting__pyubx2.md) - fit: high - Python library for parsing and generating u-blox UBX protocol messages, including configuration (CFG-VALSET) and raw measurement (RXM-RAWX) messages.
 - [pygnssutils](../repos/semuconsulting__pygnssutils.md) - fit: high - Python CLI and library utilities for reading, parsing and broadcasting GNSS streams, including an NTRIP client and caster/server and a socket server.
-- [GNSS-DSP-tools](../repos/pmonta__gnss-dsp-tools.md) - fit: high - Python code generators, acquisition and tracking for many GNSS signals (GPS, Galileo, GLONASS, BeiDou, NavIC and more) operating on IQ recordings.
+- [GNSS-DSP-tools](../repos/pmonta__gnss-dsp-tools.md) - fit: high - Python code generators, acquisition and tracking scripts for GPS, Galileo, GLONASS, BeiDou and Xona Pulsar LEO signals, operating on IQ recordings.
 - [ROS NTRIP client](../repos/lord-microstrain__ntrip_client.md) - fit: high - ROS/ROS 2 node that connects to an NTRIP caster and publishes RTCM corrections, forwarding NMEA position back to the caster.
 - [pyrtcm](../repos/semuconsulting__pyrtcm.md) - fit: high - Python parser for RTCM 3 messages (MSM observations, station info, ephemerides, SSR).
 - [pynmeagps](../repos/semuconsulting__pynmeagps.md) - fit: high - Python library for parsing and generating NMEA 0183 GNSS sentences, including proprietary variants.
@@ -55,6 +55,7 @@ GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 - [SoftGNSS-python](../repos/perrysou__softgnss-python.md) - fit: medium - Python port of the SoftGNSS software-defined GPS receiver toolkit.
 - [ntripbrowser](../repos/emlid__ntripbrowser.md) - fit: medium - Command-line tool that fetches and displays an NTRIP caster's source table, optionally filtered by distance from a coordinate.
 - [RAIM (MATLAB)](../repos/michaelbeechan__raim.md) - fit: medium - MATLAB implementation of classic receiver autonomous integrity monitoring (fault detection and exclusion) for GNSS positioning.
+- [geoveil-cn0](../repos/miluta7__geoveil-cn0.md) - fit: medium - Rust library with Python API that scores GNSS signal quality via C/N0 and flags jamming, spoofing and interference across constellations.
 - [openpilot](../repos/commaai__openpilot.md) - fit: low - Open driver-assistance robotics stack whose localization uses GNSS (via laika) fused with IMU and vision.
 - [GraphGNSSLib](../repos/weisongwen__graphgnsslib.md) - fit: low - Open-source GNSS positioning and RTK package using factor graph optimization, built on RTKLIB data handling and ROS.
 - [GNSS-SDRLIB](../repos/taroz__gnss-sdrlib.md) - fit: low - Older open-source GNSS software receiver library in C with a GUI, supporting several front-ends and real-time RTKLIB output.
@@ -68,14 +69,16 @@ GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 - [Node-NTRIP caster](../repos/node-ntrip__caster.md) - fit: low - TypeScript/Node.js NTRIP caster library supporting NTRIP v1 and v2.
 - [gnssanalysis](../repos/geoscienceaustralia__gnssanalysis.md) - fit: low - Geoscience Australia Python module of utilities for reading and comparing GNSS products (SP3, CLK, SINEX, Ginan outputs) and computing differences/statistics.
 - [GPS L1 Direct Position Estimation module](../repos/sergio-vicenzo__gpsl1-dpemodule.md) - fit: low - Plug-in module adding Direct Position Estimation (positioning directly in the correlation domain) to MATLAB two-step software receivers such as SoftGNSS.
-- [pylgrim](../repos/kirienko__pylgrim.md) - fit: low - GNSS software receiver written in Python for learning acquisition, tracking and positioning.
+- [GSDC 10th place solution](../repos/fkaneko__kaggle_google_smartphone_decimeter_challenge.md) - fit: low - 10th-place solution for the Kaggle Google Smartphone Decimeter Challenge.
+- [pylgrim](../repos/kirienko__pylgrim.md) - fit: low - Playground GNSS positioning code in Python/numpy that computes a static GPS position (50-100 m accuracy per the README) from RINEX 2.11 observations, with parsers for RINEX nav/obs, SP3 and IONEX plus Klobuchar, IONEX an
 - [GraphGNSSLib LEO](../repos/gao-tech1__graphgnsslib_leo_v1.2.md) - fit: low - Factor-graph positioning combining GNSS and LEO satellite measurements, extending GraphGNSSLib.
 - [FGI-OSNMA](../repos/nlsfi__fgi-osnma.md) - fit: low - Python OSNMA implementation from the Finnish Geospatial Research Institute designed for flexibility and integration with receivers.
+- [Smartphone Decimeter Challenge MATLAB package](../repos/arnauochoa__smartphone-decimeter-challenge.md) - fit: low - MATLAB package from an ION GNSS+ 2021 decimeter challenge entry.
 - [MAAST for ARAIM](../repos/stanford-gps-lab__maast_for_araim_2.md) - fit: low - Stanford GPS Lab MATLAB toolset that evaluates Advanced RAIM availability and protection levels over service areas.
 - [OSNMA_ublox](../repos/axelbjork__osnma_ublox.md) - fit: low - Jupyter-based real-time OSNMA authentication of u-blox receiver data in Python.
 - [Beidou-SDR-SIM](../repos/haiyang-wong__beidou-sdr-sim.md) - fit: low - Open-source generator for BeiDou B1C baseband signals for SDR playback or file output.
 
-## Documents, talks, courses, datasets (45)
+## Documents, talks, courses, datasets (47)
 
 - [2025 PNT Symposium - Day 2 Invited Speaker Presentation Videos](../resources/stanford-pnt-symposium-2025-invited-videos.md) - video - Video album of invited speaker talks from the 2025 Stanford PNT Symposium, featuring speakers such as Brad Parkinson and Jade Morton.
 - [A Software-Defined GPS and Galileo Receiver: A Single-Frequency Approach](../resources/borre-software-defined-gps-galileo-receiver.md) - book - Classic textbook that walks through a complete MATLAB GPS software receiver: acquisition, code/carrier tracking, navigation decoding and positioning.
@@ -100,9 +103,11 @@ GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 - [GPS Standard Positioning Service (SPS) Performance Standard, 5th Edition](../resources/gps-sps-performance-standard-2020.md) - standard - The formal commitment the US government makes about civil GPS signal-in-space accuracy, availability, continuity and integrity.
 - [GPS: An Introduction to Satellite Navigation, with an interactive Worldwide Laboratory using Smartphones](../resources/stanford-gps-mooc-van-diggelen-enge.md) - course - Stanford MOOC (originally on Coursera) now freely available as a long video series: how GPS works, pseudoranges, orbits and signals, receiver design, assisted GPS and the future of GNSS, with smartphone-based labs.
 - [International Committee on GNSS (ICG)](../resources/unoosa-icg.md) - doc - UN forum where GNSS providers coordinate compatibility, interoperability and spectrum protection, including interference detection and mitigation work.
+- [ION GNSS+ 2025: Galileo at 30 and the Future of Resilient PNT](../resources/insidegnss-ion-gnss-2025-galileo-resilient-pnt.md) - blog - Report on the ION GNSS+ 2025 plenary (Galileo history keynote) and the conference focus on GNSS vulnerabilities, assured PNT and LEO PNT pathfinders.
 - [ION GNSS+ Short Courses (GPS/GNSS 101 and more)](../resources/ion-gnss-plus-short-courses.md) - course - Short courses run at ION GNSS+ for registered attendees, including a GPS/GNSS 101 course taught by John Raquet and a space applications of GNSS course by Penina Axelrad.
 - [ION GNSS+ Tutorials](../resources/ion-gnss-plus-tutorials.md) - course - Pre-conference tutorial programme of ION GNSS+, the main annual GNSS technical meeting: half-day in-depth courses by field experts on topics such as GNSS signals, receivers, PPP/RTK, inertial integration and interference
 - [ION Online Tutorial: The Basics of Satellite Navigation](../resources/ion-online-tutorial-basics-satnav.md) - course - ION's free online tutorial introducing satellite navigation fundamentals: trilateration with pseudoranges, clocks, signals, error sources and augmentation.
+- [ION Smartphone Decimeter Challenge (with Google)](../resources/ion-smartphone-decimeter-challenge.md) - competition - ION page for the smartphone decimeter challenge listing official placings; for 2023 it lists Norizumi Motooka first, Taro Suzuki second and Jeonghyeon Yun third.
 - [IS-GPS-200N: NAVSTAR GPS Space Segment / Navigation User Segment Interfaces](../resources/gps-is-gps-200n.md) - standard - The master interface specification for the legacy GPS L1 C/A and L2C (and P(Y) at the public level) signals: code generation, signal structure, and the full LNAV/CNAV navigation message bit layouts.
 - [IS-GPS-705J: NAVSTAR GPS Space Segment / User Segment L5 Interfaces](../resources/gps-is-gps-705j.md) - standard - Interface specification for the GPS L5 safety-of-life band signal: I5/Q5 codes, the L5 CNAV message, and signal characteristics.
 - [IS-GPS-800J: NAVSTAR GPS Space Segment / User Segment L1C Interfaces](../resources/gps-is-gps-800j.md) - standard - Interface specification for the modernized L1C civil signal designed for interoperability with Galileo E1 and other GNSS: BOC/TMBOC modulation, Weil-code ranging codes, and the CNAV-2 message.

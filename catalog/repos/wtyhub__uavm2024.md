@@ -1,0 +1,35 @@
+# UAVM 2024 challenge
+
+`repo:wtyhub/uavm2024` - <https://github.com/wtyhub/UAVM2024>
+
+| stars | language | license | last push | archived | maturity | hackathon fit |
+|---|---|---|---|---|---|---|
+| 3 |  | ? | 2024-10-26 | False | active-research | medium |
+
+Page for the ACM MM 2024 multi-weather drone-satellite matching challenge, listing team repos.
+
+**Why it matters:** Adds weather robustness to cross-view geo-localization.
+
+**Hackathon notes:** Follow links to public team repos.
+
+**Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
+
+**Tags:** `challenge`, `multi-weather`, `acmmm`
+
+**Domains:** air
+
+## Related
+
+- integrates_with: [WELN](../repos/koorter__weln.md)
+- same_org: [MuseNet](../repos/wtyhub__musenet.md)
+
+## Referenced by
+
+- [WELN](../repos/koorter__weln.md) (evaluated_on)
+- [MuseNet](../repos/wtyhub__musenet.md) (same_org)
+- [PairUAV](../repos/yaxuanli-cn__pairuav.md) (same_org)
+- [ACM MM 2024 Multi-weather Drone Satellite Matching Challenge (UAVM 2024)](../resources/uavm-2024-codalab.md) (has_code)
+
+_Indexed by lane(s): round3-expansion_
+
+_GitHub metadata fetched 2026-11-06._

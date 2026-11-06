@@ -16,6 +16,7 @@ Computationally efficient LiDAR-inertial odometry using an iterated error-state 
 
 - [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
 - [hku-mars__fast_lio](../../docs/integration-cards/hku-mars__fast_lio.md) (integration-cards)
+- [fast-lio2-xu-2021](../../docs/paper-digests/fast-lio2-xu-2021.md) (paper-digests)
 
 **Concepts:** [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
 

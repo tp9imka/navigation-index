@@ -14,6 +14,10 @@ Long tutorial report covering quaternion conventions, rotation perturbations and
 - Standard reference for implementing an INS/ESKF
 - Covers local vs global perturbation conventions
 
+## Deep dives
+
+- [sola-quaternion-kinematics-eskf](../../docs/paper-digests/sola-quaternion-kinematics-eskf.md) (paper-digests)
+
 **Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [GNSS/INS integration](../concepts/gnss-ins.md)
 
 **Tags:** `eskf`, `quaternion`, `tutorial`, `imu`, `sola`

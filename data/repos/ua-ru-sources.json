@@ -133,7 +133,7 @@
   ],
   "maturity": "research-prototype",
   "hackathon_fit": "high",
-  "hackathon_notes": "rasterio + pyproj; includes a synthetic NMEA generator from a real DEM, which is handy for building test data fast. Single-commit repo.",
+  "hackathon_notes": "Streamlit app on rasterio + pyproj; an optional Rust core (built automatically if cargo is installed) speeds up the hypothesis search. Includes a synthetic NMEA generator from a real DEM, which is handy for building test data fast. Small repo (about a dozen commits).",
   "related": [
    {
     "id": "repo:t1gr20an06-k/hackathon-blind-flight",
@@ -375,7 +375,7 @@
   "domains": [
    "air"
   ],
-  "maturity": "educational",
+  "maturity": "archived",
   "hackathon_fit": "low",
   "hackathon_notes": "Hardware-specific; useful only as reference for packaging and docs. Last push March 2024.",
   "related": []

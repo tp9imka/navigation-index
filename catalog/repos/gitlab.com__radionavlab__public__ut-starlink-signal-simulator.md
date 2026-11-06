@@ -12,6 +12,10 @@ MATLAB-style utility functions from UT Austin's Radionavigation Lab for simulati
 
 **Hackathon notes:** Small codebase; pair with the Humphreys Starlink signal-structure paper.
 
+## Deep dives
+
+- [humphreys-2023-starlink-signal-structure](../../docs/paper-digests/humphreys-2023-starlink-signal-structure.md) (paper-digests)
+
 **Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [Space and orbital navigation](../concepts/space-nav.md), [Simulation and HIL/SITL](../concepts/simulation.md)
 
 **Tags:** `starlink`, `leo-pnt`, `ku-band`, `ofdm`

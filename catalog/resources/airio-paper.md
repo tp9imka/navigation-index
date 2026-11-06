@@ -11,6 +11,10 @@ UAV-focused learned inertial odometry that changes how IMU data are represented 
 - IMU-only odometry for drones
 - Representation choice matters for UAV learned IO
 
+## Deep dives
+
+- [airio-paper](../../docs/paper-digests/airio-paper.md) (paper-digests)
+
 **Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 
 **Tags:** `learned-inertial`, `uav`

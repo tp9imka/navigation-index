@@ -10,6 +10,10 @@ Lightweight feature extraction and matching architecture aimed at real-time use 
 
 - Real-time matching without a big GPU
 
+## Deep dives
+
+- [xfeat-2024](../../docs/paper-digests/xfeat-2024.md) (paper-digests)
+
 **Concepts:** [Feature detection and matching](../concepts/feature-matching.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 
 **Tags:** `arxiv`, `lightweight`

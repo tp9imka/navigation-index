@@ -10,6 +10,10 @@ Dense matcher combining foundation-model coarse features with fine refinement, r
 
 - Dense warps + certainty help on cross-season, cross-sensor pairs
 
+## Deep dives
+
+- [roma-dense-matching-2023](../../docs/paper-digests/roma-dense-matching-2023.md) (paper-digests)
+
 **Concepts:** [Feature detection and matching](../concepts/feature-matching.md)
 
 **Tags:** `arxiv`, `dense`

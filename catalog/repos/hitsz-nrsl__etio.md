@@ -12,6 +12,10 @@ Edge-based monocular thermal-inertial odometry that tracks thermal edges for vis
 
 **Hackathon notes:** Code released with the paper; try on public thermal datasets first.
 
+## Deep dives
+
+- [etio-thermal-inertial-odometry-2022](../../docs/paper-digests/etio-thermal-inertial-odometry-2022.md) (paper-digests)
+
 **Concepts:** [Visual(-inertial) odometry](../concepts/vio.md)
 
 **Tags:** `thermal`, `edges`, `degraded-visual`

@@ -12,6 +12,10 @@ Optimization-based monocular visual-inertial estimator with sliding-window bundl
 
 **Hackathon notes:** ROS 1 only and no longer maintained; run in a Melodic/Noetic container. Sensitive to time sync and initialization motion.
 
+## Deep dives
+
+- [vins-mono-qin-2017](../../docs/paper-digests/vins-mono-qin-2017.md) (paper-digests)
+
 **Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Visual SLAM](../concepts/visual-slam.md)
 
 **Tags:** `sliding-window`, `ceres`, `ros1`, `loop-closure`

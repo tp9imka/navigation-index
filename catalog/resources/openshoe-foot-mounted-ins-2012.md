@@ -1,10 +1,10 @@
 # OpenShoe: open source embedded foot-mounted INS
 
-`res:openshoe-foot-mounted-ins-2012` - doc - <https://openshoe.org>
+`res:openshoe-foot-mounted-ins-2012` - doc - <https://web.archive.org/web/20260311170324/http://openshoe.org/>
 
-**By:** Nilsson, Skog, Hari, Handel (KTH / IISc) - **Year:** 2012 - **Level:** intermediate - **Access:** open
+**By:** John-Olof Nilsson, Isaac Skog, K. V. S. Hari, Peter Händel - **Year:** 2012 - **Level:** intermediate - **Access:** open
 
-Project site for OpenShoe, an open hardware and software ZUPT-aided foot-mounted INS module, described in the PLANS 2012 paper 'Foot-mounted INS for Everybody' and follow-up IPIN 2014 work.
+Project site (offline since 2026; archived copy) for OpenShoe, an open hardware and software ZUPT-aided foot-mounted INS module, described in the PLANS 2012 paper 'Foot-mounted INS for Everybody' and follow-up IPIN 2014 work.
 
 ## Key takeaways
 

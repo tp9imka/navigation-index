@@ -1,8 +1,8 @@
 # Real-World Spoofing Detection (ION ITM 2025)
 
-`res:kreizis-ion-itm-2025-spoofing` - paper - <https://web.stanford.edu/group/scpnt/gpslab/pubs/papers/Kreizis_ION_ITM_2025_Real_World_Spoofing_Detection.pdf>
+`res:kreizis-ion-itm-2025-spoofing` - paper - <https://web.stanford.edu/group/scpnt/gpslab/pubs/papers/Kriezis_ION_ITM_2025_Real_World_Spoofing_Detection.pdf>
 
-**By:** Kreizis et al., Stanford GPS Lab - **Year:** 2025 - **Level:** advanced - **Access:** open
+**By:** Kriezis et al., Stanford GPS Lab - **Year:** 2025 - **Level:** advanced - **Access:** open
 
 Analyses a real spoofing event in the Mediterranean recorded on low-cost u-blox F9P receivers and evaluates detection approaches on that live data rather than a simulator.
 
@@ -10,6 +10,10 @@ Analyses a real spoofing event in the Mediterranean recorded on low-cost u-blox 
 
 - Real spoofing captured on commodity hardware
 - Shows which detection cues actually fire in the wild
+
+## Deep dives
+
+- [kreizis-ion-itm-2025-spoofing](../../docs/paper-digests/kreizis-ion-itm-2025-spoofing.md) (paper-digests)
 
 **Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md)
 

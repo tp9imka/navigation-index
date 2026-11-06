@@ -11,6 +11,10 @@ Analyzes positioning from carrier Doppler measurements of a large LEO constellat
 - Doppler-only LEO positioning is geometrically viable
 - Needs many satellites in view; mega-constellations supply them
 
+## Deep dives
+
+- [psiaki-transit-on-steroids-2021](../../docs/paper-digests/psiaki-transit-on-steroids-2021.md) (paper-digests)
+
 **Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md)
 
 **Tags:** `ion`, `navigation-journal`, `leo`

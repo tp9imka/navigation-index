@@ -4,13 +4,13 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 25 | Python | ? | 2024-08-20 | False | research-prototype | medium |
+| 25 | Python | ? | 2024-08-20 | False | archived | medium |
 
-Python celestial navigation tools for cruising sailors: sight reduction, almanac data and fix computation.
+Small Tkinter desktop app for celestial navigation on a boat: computes the Nautical Almanac daily-page data with PyEphem, reduces sights and fixes position from two LOPs, correcting for vessel motion between sights.
 
 **Why it matters:** Scriptable sight reduction for a GNSS-free position fix.
 
-**Hackathon notes:** Pure Python; combine with a camera-based star or sun altitude to automate a fix.
+**Hackathon notes:** Python 2 code (imports ConfigParser, Tkinter) with no commits since 2018; port the celnav.py core to Python 3 or use it as an algorithm reference. Pair with a camera-based sun or star altitude to automate a fix.
 
 **Concepts:** [Celestial and star-tracker navigation](../concepts/celestial-nav.md), [Maritime navigation](../concepts/maritime-nav.md)
 

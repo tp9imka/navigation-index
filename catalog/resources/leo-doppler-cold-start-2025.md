@@ -10,6 +10,10 @@ Formulates LEO Doppler positioning as an optimization solvable by semidefinite r
 
 - Removes the initialization problem in Doppler positioning
 
+## Deep dives
+
+- [leo-doppler-cold-start-2025](../../docs/paper-digests/leo-doppler-cold-start-2025.md) (paper-digests)
+
 **Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md)
 
 **Tags:** `arxiv`, `leo`, `optimization`

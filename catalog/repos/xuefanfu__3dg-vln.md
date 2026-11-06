@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|
 | 38 | Python | ? | 2026-09-13 | False | research-prototype | low |
 
-UAV vision-language navigation framework using 3D grounding for more precise goal localization (2026 research code).
+UAV vision-language navigation method that feeds high-resolution front and downward views plus a coarse 3D target direction, updated online, into waypoint prediction for precise see-and-reach flight. Releases the UAV-VLN-FOV benchmark (2,717 trajectories, seen/unseen-object/unseen-scene splits), code and weights; runs in AirSim with TravelUAV environments.
 
 **Why it matters:** Recent aerial VLN method to compare against benchmark baselines.
 

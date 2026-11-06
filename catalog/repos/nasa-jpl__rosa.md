@@ -12,6 +12,11 @@ NASA JPL's LangChain-based AI agent that lets operators query and command ROS 1 
 
 **Hackathon notes:** pip install jpl-rosa; demo runs against turtlesim in Docker. Add custom tools for your MAVROS/Nav2 topics.
 
+## Deep dives
+
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
+- [nasa-jpl__rosa](../../docs/integration-cards/nasa-jpl__rosa.md) (integration-cards)
+
 **Concepts:** [LLM agents for robotics and navigation](../concepts/llm-agents-robotics.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
 
 **Tags:** `llm`, `langchain`, `agent`, `jpl`, `ros2`

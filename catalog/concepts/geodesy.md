@@ -20,7 +20,7 @@ Datums, projections, ECEF/ENU/NED, MGRS, geoid models.
 - [AHRS (Python)](../repos/mayitzin__ahrs.md) - fit: high - Python collection of attitude estimation algorithms (Madgwick, Mahony, complementary, EKF, QUEST, TRIAD and more) plus utilities such as the World Magnetic Model and WGS84.
 - [GeographicLib](../repos/geographiclib__geographiclib.md) - fit: high - C++ library for accurate geodesic problems, UTM/UPS/MGRS conversions, geoid heights, gravity and magnetic field models.
 - [pymap3d](../repos/geospace-code__pymap3d.md) - fit: high - Pure-Python 3D coordinate conversions: geodetic, ECEF, ENU, NED, AER, ECI, with optional NumPy vectorization.
-- [georinex](../repos/geospace-code__georinex.md) - fit: high - Fast Python reader for RINEX 2/3 observation and navigation files and SP3 orbits into xarray, with batch conversion to HDF5/NetCDF.
+- [georinex](../repos/geospace-code__georinex.md) - fit: high - Fast Python reader for RINEX 2/3/4 observation and navigation files (plain, gzip/Z/bz2/zip or Hatanaka-compressed) and SP3 orbits into xarray, with batch conversion to NetCDF4/HDF5.
 - [GIS MCP Server](../repos/mahdin75__gis-mcp.md) - fit: high - MCP server giving LLMs geospatial operations through Shapely, PyProj, GeoPandas and Rasterio: geometry ops, CRS transforms, distances and raster analysis, without a desktop GIS.
 - [mgrs (Python)](../repos/hobuinc__mgrs.md) - fit: high - Python library converting between latitude/longitude and MGRS grid references, built on NGA GEOTRANS 3.10 (now a Rust port exposed through a pybind11 extension).
 - [PRIDE PPP-AR](../repos/pridelab__pride-pppar.md) - fit: medium - Wuhan University's open-source multi-GNSS precise point positioning package with ambiguity resolution, aimed at geodetic-grade post-processing.

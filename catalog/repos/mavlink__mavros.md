@@ -14,6 +14,7 @@ ROS/ROS 2 node bridging MAVLink to ROS topics and services, with GCS proxy; wide
 
 ## Deep dives
 
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
 - [mavlink__mavros](../../docs/integration-cards/mavlink__mavros.md) (integration-cards)
 
 **Concepts:** [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Visual(-inertial) odometry](../concepts/vio.md)

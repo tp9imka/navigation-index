@@ -6,7 +6,7 @@ Mapping and localization with loop closure from cameras.
 
 **Parent:** [Visual(-inertial) odometry](../concepts/vio.md)
 
-## Repositories (47)
+## Repositories (48)
 
 - [PythonRobotics](../repos/atsushisakai__pythonrobotics.md) - fit: high - Large collection of readable Python implementations of robotics algorithms: localization (EKF, particle filter), SLAM, path planning (A*, RRT*, D*, state lattice), path tracking and more, with animations.
 - [ORB-SLAM3](../repos/uz-slamlab__orb_slam3.md) - fit: high - Visual, visual-inertial and multi-map SLAM supporting monocular, stereo and RGB-D cameras with pinhole and fisheye models, using a map atlas to survive tracking loss.
@@ -41,6 +41,7 @@ Mapping and localization with loop closure from cameras.
 - [GTSfM](../repos/borglab__gtsfm.md) - fit: medium - End-to-end structure-from-motion pipeline built on GTSAM, with pluggable front-ends (classical and learned matchers) and distributed execution via Dask.
 - [OKVIS2](../repos/ethz-mrl__okvis2.md) - fit: medium - Keyframe-based visual-inertial SLAM with loop closure and a realtime scalable factor-graph design; second generation of OKVIS.
 - [MIT VNAV labs](../repos/mit-spark__vnav-labs.md) - fit: medium - Lab assignments for MIT 16.485 Visual Navigation for Autonomous Vehicles: ROS, 3D geometry, trajectory optimization, feature tracking, two-view geometry, VIO and place recognition.
+- [PiLoT](../repos/nudt-sawlab__pilot.md) - fit: medium - Neural pixel-to-3D registration for UAV ego-localization and target geo-localization against a geo-referenced 3D map; release uses 3D Gaussian Splatting map backends (CVPR 2026).
 - [DEVO](../repos/tum-vision__devo.md) - fit: medium - Deep Event Visual Odometry: learned monocular event-only VO trained on simulated events, generalizing to real benchmarks (3DV 2024).
 - [Hilti SLAM Challenge 2022](../repos/hilti-research__hilti-slam-challenge-2022.md) - fit: medium - Repository for the 2022 Hilti SLAM Challenge with dataset info and evaluation tooling.
 - [Swarm-SLAM](../repos/lajoiepy__cslam.md) - fit: medium - ROS 2 decentralized collaborative SLAM supporting LiDAR, stereo and RGB-D, with sparse inter-robot communication.
@@ -53,7 +54,7 @@ Mapping and localization with loop closure from cameras.
 - [ESVO](../repos/hkust-aerial-robotics__esvo.md) - fit: low - Event-based stereo visual odometry using spatio-temporal consistency of two event cameras for mapping and tracking.
 - [D2SLAM](../repos/hkust-aerial-robotics__d2slam.md) - fit: low - Decentralized and distributed collaborative visual-inertial SLAM for aerial swarms from HKUST.
 - [Kimera-Multi](../repos/mit-spark__kimera-multi.md) - fit: low - Index repo for Kimera-Multi, a distributed multi-robot metric-semantic SLAM system with robust distributed pose-graph optimization.
-- [SLAM Toolbox (MATLAB)](../repos/joansola__slamtb.md) - fit: low - Joan Sola's MATLAB EKF-SLAM toolbox with landmark parameterizations (points, lines, inverse depth) and simulated or real sensor support, written for teaching and prototyping.
+- [SLAM Toolbox (MATLAB)](../repos/joansola__slamtb.md) - fit: low - Joan Sola's MATLAB SLAM toolbox with EKF-SLAM (`ekf` branch) and graph-SLAM (`graph` branch) variants, landmark parameterizations (points, lines, inverse depth) and simulated or real sensor support, written for teaching 
 - [EMVS](../repos/uzh-rpg__rpg_emvs.md) - fit: low - Event-based multi-view stereo: semi-dense 3D reconstruction from a moving event camera with known poses (IJCV 2018).
 
 ## Documents, talks, courses, datasets (33)
@@ -82,7 +83,7 @@ Mapping and localization with loop closure from cameras.
 - [Robot Mapping - WS 2013/14 course page (slides, exercises)](../resources/freiburg-robot-mapping-course.md) - course - Course page that accompanies the Robot Mapping lecture videos, with lecture slides and programming exercises (EKF-SLAM, UKF, FastSLAM, least-squares calibration, graph-SLAM) in Octave/Matlab.
 - [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook.md) - book - Community-written handbook released in three parts during 2024-2025 and published by Cambridge University Press; the free PDF is mirrored on the editors' project page.
 - [SLAM toolbox for Matlab (EKF-SLAM teaching code)](../resources/sola-slamtb-ekf-slam-toolbox.md) - course - Solà's Matlab EKF-SLAM toolbox, used as teaching material for his SLAM courses: modular robots, sensors, landmark parameterizations (including inverse-depth points and lines) and graph-SLAM variants.
-- [Spleenlab VISIONAIRY perception and GNSS-free navigation software](../resources/spleenlab-visionairy.md) - product - German company Spleenlab sells VISIONAIRY, a modular perception suite (VIO, map-based relocalization, EO/IR and LiDAR SLAM) that integrates with PX4/Auterion and ROS; used by Quantum Systems and Blueflite for GNSS-denied
+- [Spleenlab VISIONAIRY perception and GNSS-free navigation software](../resources/spleenlab-visionairy.md) - product - German company Spleenlab sells VISIONAIRY, an AI perception suite for drones (vendor description: VIO, map-based relocalization, EO/IR and LiDAR SLAM) that joined the Auterion ecosystem in 2022 and integrates with PX4/Au
 - [State Estimation for Robotics (Second Edition)](../resources/barfoot-state-estimation-robotics-2e.md) - book - Textbook on probabilistic estimation for robotics, from linear-Gaussian filtering and batch estimation to matrix Lie groups for 3D pose; the second edition adds variational inference and inertial navigation material.
 - [Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems](../resources/swarm-slam-paper.md) - paper - Decentralized collaborative SLAM aimed at swarms, prioritizing which inter-robot loop closures to compute and share to limit communication.
 - [TartanAir: A Dataset to Push the Limits of Visual SLAM](../resources/cmu-tartanair-dataset.md) - dataset - Large synthetic dataset rendered in AirSim/Unreal environments with challenging lighting, weather and motion, with perfect ground truth for many modalities.

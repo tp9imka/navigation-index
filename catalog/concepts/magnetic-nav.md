@@ -10,16 +10,18 @@ MagNav: matching magnetometer readings to crustal anomaly maps; aircraft compens
 
 - [MagNav.jl quickstart: Tolles-Lawson and EKF on the SGL 2020 flight](../samples/magnav-quickstart.md) - A Julia walkthrough with MagNav.jl that downloads the public SGL 2020 challenge flight and Ottawa anomaly maps, compensates the scalar magnetometer with Tolles-Lawson on a calibration box, and runs the MagNav EKF against
 
-## Repositories (8)
+## Repositories (10)
 
 - [MagNav.jl](../repos/mit-ai-accelerator__magnav.jl.md) - fit: high - Julia package from the DAF-MIT AI Accelerator for airborne magnetic anomaly navigation: flight/INS data import or simulation, anomaly maps, aircraft magnetic compensation (Tolles-Lawson and neural models) and navigation 
-- [MagNavPy](../repos/manasp21__magnav.py.md) - fit: high - Python port of MagNav.jl for magnetic navigation research.
+- [MagNavPy](../repos/manasp21__magnav.py.md) - fit: high - Community Python port of MIT's MagNav.jl: loads flight, INS and magnetometer data and magnetic anomaly maps (with upward continuation), runs Tolles-Lawson and neural-network aircraft compensation, and provides an EKF / M
 - [AFIT MagNav example data](../repos/afit-eeng-magnav__example-data.md) - fit: high - Sample data for MagNav work: MIT-AIA anomaly maps, a challenge flight, North American magnetic anomaly grids and geoid files.
 - [MagNav deep-learning compensation](../repos/naatyu__magnav.md) - fit: medium - Deep-learning approach to aircraft magnetic disturbance compensation built around the MagNav challenge data.
+- [MAINS](../repos/huang-chuan__mainsvsmagekf.md) - fit: medium - Magnetic-field aided inertial navigation system for indoor positioning, compared against a magnetic EKF.
 - [MagNav challenge submission (lw-kong)](../repos/lw-kong__magnav.md) - fit: medium - A public submission repository for the JuliaCon 2020 MagNav signal-enhancement challenge, implementing a learned aircraft-field compensation.
 - [MAMMAL](../repos/powerbroker2__mammal.md) - fit: medium - Python package (Magnetic Anomaly Map Matching Airborne and Land) for simulating and processing aeromagnetic survey data and building anomaly maps for MagNav.
 - [Rao-Blackwellized SLAM smoothing (magnetic)](../repos/manonkok__rao-blackwellized-slam-smoothing.md) - fit: medium - MATLAB code for Rao-Blackwellized particle smoothing for SLAM, including magnetic field mapping and map-matching localization with a magnetometer.
 - [DroneMagNav](../repos/ajisrawi__dronemagnav.md) - fit: medium - Open hardware + firmware design for a drone magnetic-anomaly navigation board (ESP32-S3, magnetometer, IMU, baro) running particle-filter matching against a global anomaly map and feeding position to a flight controller 
+- [Magnetic-field odometry](../repos/huang-chuan__magnetic-field-odometry.md) - fit: low - Magnetic-field aided inertial navigation using a magnetometer array for odometry.
 
 ## Documents, talks, courses, datasets (23)
 

@@ -12,6 +12,11 @@ Direction-of-arrival processing and web UI for the five-channel coherent KrakenS
 
 **Hackathon notes:** Needs KrakenSDR hardware (or recorded IQ). Prebuilt Raspberry Pi images exist (check the KrakenRF docs). Multiple stations plus Stone Soup gives triangulated emitter tracks.
 
+## Deep dives
+
+- [_index-flight-c2](../../docs/integration-cards/_index-flight-c2.md) (integration-cards)
+- [krakenrf__krakensdr_doa](../../docs/integration-cards/krakenrf__krakensdr_doa.md) (integration-cards)
+
 **Concepts:** [RF localization and direction finding](../concepts/rf-localization.md), [Jamming and spoofing](../concepts/gnss-interference.md), [Counter-UAS and drone detection](../concepts/counter-uas.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
 
 **Tags:** `direction-finding`, `doa`, `music`, `sdr`, `krakensdr`
@@ -29,6 +34,7 @@ Direction-of-arrival processing and web UI for the five-channel coherent KrakenS
 - [Heimdall DAQ firmware](../repos/krakenrf__heimdall_daq_fw.md) (same_org)
 - [Researchers home in on origins of Russia's Baltic GPS jamming](../resources/defensenews-baltic-jamming-origins-2025.md) (uses)
 - [infiniDome GPSdome / GPSdome 2 small-UAS anti-jam module](../resources/infinidome-gpsdome.md) (alternative_to)
+- [GNSS jammer geolocation from DF bearings to TAK](../samples/interference-geolocation-to-tak.md) (uses)
 
 _Indexed by lane(s): defense-context_
 

@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 60 | Matlab | ? | 2017-07-05 | False | archived | low |
 
-Device-independent pedestrian dead reckoning library: step detection, step length estimation and heading for smartphone-style sensors.
+Planned device-independent pedestrian dead reckoning platform that never got past its outline: the repo holds MATLAB ellipsoid-fit accelerometer and magnetometer calibration scripts with sample logs, an Allan-variance note, and reference papers on filtering and AHRS. No step detection or step-length code is present.
 
 **Why it matters:** Simple step-and-heading baseline for phone-based indoor navigation.
 
-**Hackathon notes:** Unmaintained since 2017; use for algorithm reference.
+**Hackathon notes:** Unmaintained since 2017. Only the ellipsoid-fit IMU/magnetometer calibration scripts are reusable; for actual PDR code look elsewhere.
 
 **Concepts:** [Indoor and pedestrian navigation](../concepts/indoor-pedestrian.md)
 

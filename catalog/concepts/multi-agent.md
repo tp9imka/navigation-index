@@ -4,13 +4,13 @@
 
 Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 
-## Repositories (40)
+## Repositories (42)
 
 - [EGO-Swarm](../repos/zju-fast-lab__ego-planner-swarm.md) - fit: high - Decentralized multi-quadrotor extension of EGO-Planner with inter-agent collision avoidance and trajectory sharing over a network.
 - [gym-pybullet-drones](../repos/learnsyslab__gym-pybullet-drones.md) - fit: high - Gymnasium environments on PyBullet for single and multi-agent quadcopter control and RL (formerly under utiasDSL).
 - [Crazyflie firmware](../repos/bitcraze__crazyflie-firmware.md) - fit: high - Firmware for the Crazyflie nano quad, Bolt and the Roadrunner positioning tag, with EKF and complementary estimators supporting UWB Loco positioning, Lighthouse, Flow deck and mocap.
 - [cflib (Crazyflie Python library)](../repos/bitcraze__crazyflie-lib-python.md) - fit: high - Python API to connect, log, set parameters and send setpoints/high-level commands to Crazyflies over Crazyradio or USB.
-- [drone-mesh-mapper](../repos/colonelpanichacks__drone-mesh-mapper.md) - fit: high - ESP32 firmware and tools that sniff Wi-Fi Remote ID and relay detections over Meshtastic LoRa mesh to a mapping host.
+- [drone-mesh-mapper](../repos/colonelpanichacks__drone-mesh-mapper.md) - fit: high - ESP32 firmware and a Python/Flask mapper that capture Remote ID broadcasts over both BLE and Wi-Fi, relay detections over a Meshtastic LoRa mesh and plot drones and pilots on a live, offline-capable web map.
 - [MOOS-IvP](../repos/moos-ivp__moos-ivp.md) - fit: high - Long-running autonomy middleware (MOOS) plus the IvP Helm behaviour-based multi-objective decision engine, used widely for autonomous marine vehicles, including COLREGs-aware collision avoidance behaviours.
 - [CBBA (Python)](../repos/inmo-jang__consensus-based-bundle-algorithm.md) - fit: high - Python implementation of the Consensus-Based Bundle Algorithm for decentralized multi-agent task allocation with plotting examples.
 - [RACER - multi-UAV exploration](../repos/robotics-star-lab__racer.md) - fit: medium - Rapid collaborative exploration with multiple UAVs: decomposes unknown space and allocates exploration regions between drones with pairwise communication.
@@ -26,12 +26,14 @@ Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 - [Crazyswarm2](../repos/imrclab__crazyswarm2.md) - fit: medium - ROS 2 framework for flying many Crazyflie nano-quadrotors with motion capture or onboard localization, including simulation backends.
 - [ROS2swarm](../repos/ros2swarm__ros2swarm.md) - fit: medium - ROS 2 package providing a library of swarm behaviours (aggregation, dispersion, flocking) and an easy-to-extend framework, tested on TurtleBot-class robots.
 - [Co-NavGPT](../repos/ybgdgh__co-navgpt.md) - fit: medium - Multi-robot exploration and object search where an LLM assigns frontier goals to robots from a merged semantic map.
+- [MBZIRC Maritime Grand Challenge simulator](../repos/osrf__mbzirc.md) - fit: medium - Simulator (Ignition Fortress + ROS 2) for the MBZIRC Maritime Grand Challenge where UAVs and USVs cooperate in a GNSS-denied environment.
 - [Crazyflie simulation](../repos/bitcraze__crazyflie-simulation.md) - fit: medium - Simulation models and tooling for Crazyflie in Webots and Gazebo.
 - [Swarm-SLAM](../repos/lajoiepy__cslam.md) - fit: medium - ROS 2 decentralized collaborative SLAM supporting LiDAR, stereo and RGB-D, with sparse inter-robot communication.
 - [MILUV devkit](../repos/decargroup__miluv.md) - fit: medium - Python devkit for MILUV, a multi-UAV indoor localization dataset with UWB ranging (including inter-robot), vision and IMU data.
 - [Open-RMF rmf_task](../repos/open-rmf__rmf_task.md) - fit: medium - Task allocation library from Open-RMF that assigns tasks to fleets of robots, accounting for battery, travel time and task constraints.
 - [UVDAR](../repos/ctu-mrs__uvdar_core.md) - fit: medium - Mutual relative localization for UAV swarms using blinking ultraviolet LEDs and UV-sensitive cameras, from CTU MRS.
 - [Swarm relative localization (ETH PBL)](../repos/eth-pbl__swarm-relative-localization.md) - fit: medium - Infrastructure-less relative localization for decentralized swarm formation of nano-drones using UWB ranging (IROS 2023).
+- [Swarm in Blocks](../repos/grupo-semear-usp__swarm_in_blocks.md) - fit: medium - Block-programming interface for drone swarms on COEX Clover, CopterHack 2022 winner by team Atena.
 - [UWB Software Library (USL)](../repos/vladniculescu__uwb-software-library.md) - fit: medium - FreeRTOS UWB library for DW1000 on Crazyflie providing double-sided two-way ranging and UWB data messaging between drones.
 - [CoLRIO](../repos/pengyu-team__co-lrio.md) - fit: medium - ROS 2 centralized lidar-ranging-inertial state estimation for robotic swarms that offloads optimization to a server and uses UWB inter-robot ranges (ICRA 2024).
 - [maplab](../repos/ethz-asl__maplab.md) - fit: low - Modular multi-session, multi-modal mapping framework with map merging, optimization and localization against saved maps.
@@ -47,12 +49,13 @@ Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 - [DPGO](../repos/mit-acl__dpgo.md) - fit: low - Distributed pose-graph optimization library with certifiably correct solutions for multi-robot SLAM.
 - [Kimera-Distributed](../repos/mit-spark__kimera-distributed.md) - fit: low - Distributed back end of Kimera-Multi handling inter-robot loop closures and distributed optimization.
 
-## Documents, talks, courses, datasets (19)
+## Documents, talks, courses, datasets (21)
 
 - [12 переможців і призовий фонд у 120 000 доларів: результати Хакатону «Наступ машин»](../resources/mod-nastup-mashyn-hackathon-2024.md) - competition - English: '12 winners and a $120,000 prize pool: results of the Onslaught of Machines hackathon'.
 - [A Multi-Robot Platform for Robotic Triage Combining Onboard Sensing and Foundation Models](../resources/arxiv-multi-robot-triage-platform.md) - paper - Technical report from a DARPA Triage Challenge team describing a multi-robot system and fine-tuned open vision-language models for injury identification.
 - [Aerostack2: A Software Framework for Developing Multi-robot Aerial Systems](../resources/aerostack2-paper.md) - paper - Describes the Aerostack2 ROS 2 architecture for aerial robotics: platform abstraction, behaviors, mission specification and multi-robot support.
 - [Cooperative Localization for GNSS-Denied Subterranean Navigation: A UAV-UGV Team Approach](../resources/ion-webinar-gross.md) - talk - West Virginia University work on UAV and UGV teams sharing ranging and odometry to localize jointly in GNSS-denied underground environments.
+- [CopterHack 2022](../resources/copterhack-2022.md) - competition - Results page for CopterHack 2022, an open-source drone project competition on the Clover platform; Atena (Swarm in Blocks) won.
 - [CopterHack 2023](../resources/coex-copterhack-2023.md) - competition - Russian-language page of COEX's international open-source flying-robotics contest built on the Clover platform: format (teams develop open-source projects over months with expert feedback), final standings and links to p
 - [Crazyswarm2 documentation](../resources/crazyswarm2-docs.md) - doc - Docs for Crazyswarm2 with installation, simulation backends, swarm configuration and tutorials.
 - [DARPA Subterranean (SubT) Challenge](../resources/darpa-subt-challenge.md) - competition - DARPA's 2018-2021 challenge for autonomous robot teams mapping and searching tunnels, urban underground and caves with no GNSS and degraded comms; systems and virtual tracks.
@@ -61,6 +64,7 @@ Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 - [EUDIS Defence Hackathon, 5th edition (Oct 2026) - GNSS-denied navigation challenge](../resources/eudis-defence-hackathon-2026.md) - program - EU-funded 48-hour hackathon held 15-17 October 2026 at eight sites under the theme 'Autonomy on the Battlefield'.
 - [Kimera-Multi: Robust, Distributed, Dense Metric-Semantic SLAM for Multi-Robot Systems](../resources/kimera-multi-tian-2021.md) - paper - Distributed multi-robot SLAM where robots exchange compact information peer to peer and jointly optimize with outlier-robust distributed pose-graph optimization.
 - [Loco Positioning System documentation](../resources/bitcraze-loco-positioning.md) - doc - Bitcraze documentation for its UWB positioning system covering anchor placement, two-way ranging versus TDoA modes and configuration with Crazyflies.
+- [Martin Saska - RSS 2024 Aerial Swarms workshop slides](../resources/saska-rss-2024-aerial-swarms.md) - talk - Slides from the RSS 2024 aerial swarms workshop discussing reliable GNSS-denied relative localization for swarms.
 - [MIT 2.680 Unmanned Marine Vehicle Autonomy, Sensing and Communications](../resources/mit-2680-marine-autonomy.md) - course - MIT course site with lectures and hands-on labs built on MOOS-IvP, covering behaviour-based autonomy, multi-vehicle coordination, collision avoidance and marine sensing.
 - [NeBula: Quest for Robotic Autonomy in Challenging Environments; TEAM CoSTAR at the DARPA Subterranean Challenge](../resources/nebula-costar-subt-paper.md) - paper - Describes the NeBula belief-space autonomy stack: multi-modal positioning, mapping, traversability, risk-aware mission planning and multi-robot reasoning; CoSTAR won the Urban circuit.
 - [Onboard Ranging-based Relative Localization and Stability for Lightweight Aerial Swarms](../resources/li-onboard-relative-localization-swarms.md) - paper - Presents onboard UWB ranging with an EKF for relative localization among small quadrotors, with a stability analysis of formation control built on those estimates.

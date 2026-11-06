@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | 72 | C++ | ? | 2025-09-18 | False | research-prototype | low |
 
-Radar-inertial odometry for scanning radar targeting accuracy and robustness (T-ASE 2025).
+Non-iterative, adaptively loosely coupled radar-inertial odometry for spinning (scanning) radar, built on the ORORA radar odometry baseline; the radar pose uncertainty from its voting step feeds a Kalman filter (T-ASE 2025).
 
 **Why it matters:** Recent scanning-radar inertial method to benchmark against.
 
-**Hackathon notes:** Research code; check dataset requirements.
+**Hackathon notes:** ROS Noetic / Ubuntu 20.04, catkin build, Sophus built manually. Replay MulRan with its file player (radar + IMU); a Boreas demo is shown.
 
 **Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
 

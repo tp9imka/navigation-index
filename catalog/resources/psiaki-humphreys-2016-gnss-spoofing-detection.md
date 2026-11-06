@@ -12,6 +12,10 @@ Proceedings of the IEEE survey of spoofing attack types and detection/mitigation
 - Multi-antenna angle-of-arrival checks are powerful
 - Combining several weak tests beats any single test
 
+## Deep dives
+
+- [psiaki-humphreys-2016-gnss-spoofing-detection](../../docs/paper-digests/psiaki-humphreys-2016-gnss-spoofing-detection.md) (paper-digests)
+
 **Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Electronic warfare resilience](../concepts/ew-resilience.md)
 
 **Tags:** `spoofing`, `survey`, `proc-ieee`

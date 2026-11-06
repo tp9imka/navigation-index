@@ -2,7 +2,7 @@
 
 `res:openfly-aerial-vln-2025` - paper - <https://arxiv.org/abs/2502.18041>
 
-**By:** OpenFly authors - **Year:** 2025 - **Level:** advanced - **Access:** open
+**By:** Yunpeng Gao, Chenhui Li, Zhongrui You, Junli Liu, et al. - **Year:** 2025 - **Level:** advanced - **Access:** open
 
 Presents a multi-engine aerial VLN platform with automated data generation, a large outdoor benchmark and a keyframe-aware VLN model.
 

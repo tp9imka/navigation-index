@@ -34,7 +34,7 @@ Python library of Kalman filters (linear, extended, unscented, ensemble), smooth
 - [Kalman and Bayesian Filters in Python (book)](../repos/rlabbe__kalman-and-bayesian-filters-in-python.md) (depends_on)
 - [sfwa UKF](../repos/sfwa__ukf.md) (alternative_to)
 - [Kalman and Bayesian Filters in Python](../resources/labbe-kalman-bayesian-filters-python.md) (has_code)
-- [GNSS/INS EKF through a GNSS outage and a spoofing walk-off](../samples/gnss-ins-ekf-outage.md) (explains)
+- [GNSS/INS EKF through a GNSS outage and a spoofing walk-off](../samples/gnss-ins-ekf-outage.md) (uses)
 
 _Indexed by lane(s): ins-fusion_
 

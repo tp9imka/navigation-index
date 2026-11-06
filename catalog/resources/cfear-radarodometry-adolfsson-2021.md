@@ -11,6 +11,10 @@ Learning-free spinning-radar odometry that keeps the strongest returns per azimu
 - Simple filtering beats heavier radar pipelines
 - Runs fast on a single CPU thread per the authors
 
+## Deep dives
+
+- [cfear-radarodometry-adolfsson-2021](../../docs/paper-digests/cfear-radarodometry-adolfsson-2021.md) (paper-digests)
+
 **Concepts:** [Radar navigation and odometry](../concepts/radar-nav.md)
 
 **Tags:** `spinning-radar`

@@ -1,15 +1,15 @@
-# eLoran Independent Assessment Team findings (PNT Advisory Board briefing)
+# The Global Loran / eLoran Infrastructure Evolution: A Robust and Resilient PNT Backup for GNSS
 
 `res:faa-eloran-iat-2014` - talk - <https://archive.gps.gov/governance/advisory/meetings/2014-06/narins.pdf>
 
-**By:** M. Narins, FAA - **Year:** 2014 - **Level:** intro - **Access:** open
+**By:** Mitch Narins (FAA) - **Year:** 2014 - **Level:** intro - **Access:** open
 
-Briefing to the US Space-Based PNT Advisory Board summarizing the 2006-2008 independent assessment of eLoran as a GPS backup, its accuracy and its independent failure modes.
+Briefing by the FAA's chief navigation systems engineer to the US Space-Based PNT Advisory Board (3 June 2014) on the history of Loran/eLoran and the findings of the 2006-2008 Independent Assessment Team, which judged eLoran a viable independent backup to GPS.
 
 ## Key takeaways
 
 - eLoran has different physical failure modes than GNSS
-- Recommended as backup for timing and harbor navigation
+- IAT found eLoran meets non-precision approach (RNP 0.3), harbor entrance (10-20 m) and Stratum 1 timing needs
 
 **Concepts:** [Assured / resilient PNT](../concepts/assured-pnt.md), [Timing and time transfer](../concepts/timing.md), [Signals of opportunity](../concepts/signals-of-opportunity.md)
 

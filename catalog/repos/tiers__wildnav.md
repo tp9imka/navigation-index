@@ -16,6 +16,7 @@ Python pipeline that localizes a drone by matching its downward camera frames ag
 
 - [_index-perception-altnav](../../docs/integration-cards/_index-perception-altnav.md) (integration-cards)
 - [tiers__wildnav](../../docs/integration-cards/tiers__wildnav.md) (integration-cards)
+- [wildnav-gnss-free-uav-localization-2022](../../docs/paper-digests/wildnav-gnss-free-uav-localization-2022.md) (paper-digests)
 
 **Concepts:** [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md), [Feature detection and matching](../concepts/feature-matching.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
 

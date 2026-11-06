@@ -25,4 +25,8 @@ EU-funded 48-hour hackathon held 15-17 October 2026 at eight sites under the the
 
 - cites: [EUDIS Defence Hackathon, 3rd edition (with BraveTech EU)](../resources/eudis-defence-hackathon-2025.md)
 
+## Referenced by
+
+- [EUDIS Defence Hackathon Klagenfurt winners (Oct 2026)](../resources/eudis-2026-klagenfurt-winners.md) (part_of)
+
 _Indexed by lane(s): landscape_

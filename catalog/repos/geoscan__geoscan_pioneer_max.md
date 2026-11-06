@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 14 | CMake | MIT | 2024-03-15 | True | educational | low |
+| 14 | CMake | MIT | 2024-03-15 | True | archived | low |
 
 Meta-repository from Russian vendor Geoscan for the Pioneer Max educational quadcopter: system images, ROS workspace, web control apps and guides, documented in Russian.
 

@@ -11,6 +11,10 @@ Thermal-inertial odometry that tracks thermal image edges instead of corner feat
 - Thermal edges are more stable than corners in low-contrast IR
 - Relevant for night and obscurant operations
 
+## Deep dives
+
+- [etio-thermal-inertial-odometry-2022](../../docs/paper-digests/etio-thermal-inertial-odometry-2022.md) (paper-digests)
+
 **Concepts:** [Visual(-inertial) odometry](../concepts/vio.md)
 
 **Tags:** `thermal`, `degraded-visual`

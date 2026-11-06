@@ -11,6 +11,10 @@ Car localisation from IMU alone by combining an invariant EKF with a neural netw
 - Learned covariances, classical filter structure
 - IMU-only ground vehicle dead reckoning
 
+## Deep dives
+
+- [brossard-ai-imu-dr](../../docs/paper-digests/brossard-ai-imu-dr.md) (paper-digests)
+
 **Concepts:** [Inertial navigation (INS/IMU)](../concepts/ins.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md), [Onboard / edge AI perception](../concepts/edge-ai.md)
 
 **Tags:** `inekf`, `learned-covariance`
