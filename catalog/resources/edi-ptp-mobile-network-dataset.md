@@ -21,4 +21,8 @@ PTPv2 (PTPd) time synchronization between two hosts across mobile networks inclu
 - evaluates: [PTPd](../../catalog/repos/ptpd__ptpd.md)
 - dataset_for: [Network of GNSS-disciplined clocks: holdover from peers, spoof isolation by cross-node consistency, ADEV-weighted ensemble](../../catalog/samples/timing-network-holdover.md)
 
+## Referenced by
+
+- [Network of GNSS-disciplined clocks: holdover from peers, spoof isolation by cross-node consistency, ADEV-weighted ensemble](../../catalog/samples/timing-network-holdover.md) (uses)
+
 _Indexed by lane(s): timing-network_

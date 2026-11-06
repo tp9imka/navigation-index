@@ -26,6 +26,7 @@ Older open-source PTPv2 daemon; the repository has been inactive since 2022.
 
 - [linuxptp](../../catalog/repos/nwtime__linuxptp.md) (alternative_to)
 - [Clock Synchronization Accuracy over Mobile Networks](../../catalog/resources/edi-ptp-mobile-network-dataset.md) (evaluates)
+- [Network of GNSS-disciplined clocks: holdover from peers, spoof isolation by cross-node consistency, ADEV-weighted ensemble](../../catalog/samples/timing-network-holdover.md) (evaluates)
 
 _Indexed by lane(s): timing_
 
