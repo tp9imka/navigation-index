@@ -25,23 +25,25 @@
      "coverage_s": 957,
      "fix_fraction": 0.994,
      "detected": true,
-     "ttd_s": -299,
-     "first_alert_utc": "08:07:59",
+     "ttd_s": 159,
+     "first_alert_utc": "08:15:37",
      "first_detectors": [
-      "pos_drift"
+      "cn0_step"
      ],
-     "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 1.0,
-     "alarm_epoch_fraction": 1.0,
+     "alarm_latched_at_start": false,
+     "alert_epoch_fraction": 0.119,
+     "alarm_epoch_fraction": 0.161,
      "families": {
-      "spoofing": 952,
-      "jamming": 62,
-      "lost-fix": 6
+      "jamming": 114,
+      "lost-fix": 6,
+      "spoofing": 8
      },
      "detector_epochs": {
-      "pos_drift": 952,
-      "cn0_drop": 62,
+      "cn0_step": 114,
+      "cn0_drop": 41,
+      "pos_drift": 7,
       "lost_fix": 6,
+      "vel_jump": 2,
       "position_jump": 1
      },
      "sub_alert_epochs": {},
@@ -58,26 +60,30 @@
      "coverage_s": 982,
      "fix_fraction": 0.999,
      "detected": true,
-     "ttd_s": -212,
-     "first_alert_utc": "08:28:56",
+     "ttd_s": 417,
+     "first_alert_utc": "08:39:25",
      "first_detectors": [
-      "pos_drift"
+      "cn0_step"
      ],
-     "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 0.989,
-     "alarm_epoch_fraction": 0.998,
+     "alarm_latched_at_start": false,
+     "alert_epoch_fraction": 0.178,
+     "alarm_epoch_fraction": 0.219,
      "families": {
-      "spoofing": 971,
-      "jamming": 83,
-      "lost-fix": 1
+      "jamming": 175,
+      "lost-fix": 1,
+      "spoofing": 2
      },
      "detector_epochs": {
-      "pos_drift": 971,
-      "cn0_drop": 83,
+      "cn0_step": 175,
+      "cn0_drop": 61,
       "position_jump": 8,
+      "vel_jump": 4,
+      "pos_drift": 2,
       "lost_fix": 1
      },
-     "sub_alert_epochs": {},
+     "sub_alert_epochs": {
+      "cn0_rise": 1
+     },
      "max_time_jump_s": 0.0
     },
     {
@@ -91,25 +97,29 @@
      "coverage_s": 952,
      "fix_fraction": 0.997,
      "detected": true,
-     "ttd_s": -299,
-     "first_alert_utc": "09:04:06",
+     "ttd_s": 182,
+     "first_alert_utc": "09:12:07",
      "first_detectors": [
-      "pos_drift"
+      "cn0_step"
      ],
-     "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 1.0,
-     "alarm_epoch_fraction": 1.0,
+     "alarm_latched_at_start": false,
+     "alert_epoch_fraction": 0.346,
+     "alarm_epoch_fraction": 0.391,
      "families": {
-      "spoofing": 950,
-      "jamming": 158,
-      "lost-fix": 3
+      "jamming": 330,
+      "lost-fix": 3,
+      "spoofing": 12
      },
      "detector_epochs": {
-      "pos_drift": 950,
-      "cn0_drop": 158,
-      "lost_fix": 3
+      "cn0_step": 330,
+      "cn0_drop": 91,
+      "pos_drift": 12,
+      "lost_fix": 3,
+      "vel_jump": 1
      },
-     "sub_alert_epochs": {},
+     "sub_alert_epochs": {
+      "cn0_rise": 1
+     },
      "max_time_jump_s": 0.0
     },
     {
@@ -123,24 +133,25 @@
      "coverage_s": 965,
      "fix_fraction": 1.0,
      "detected": true,
-     "ttd_s": -100,
-     "first_alert_utc": "09:24:58",
+     "ttd_s": 521,
+     "first_alert_utc": "09:35:19",
      "first_detectors": [
-      "pos_drift"
+      "cn0_step"
      ],
-     "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 0.949,
-     "alarm_epoch_fraction": 0.996,
+     "alarm_latched_at_start": false,
+     "alert_epoch_fraction": 0.086,
+     "alarm_epoch_fraction": 0.145,
      "families": {
-      "spoofing": 866,
-      "jamming": 61
+      "jamming": 83
      },
      "detector_epochs": {
-      "pos_drift": 866,
-      "cn0_drop": 61,
+      "cn0_step": 83,
+      "cn0_drop": 35,
       "cn0_uniform": 1
      },
-     "sub_alert_epochs": {},
+     "sub_alert_epochs": {
+      "cn0_rise": 5
+     },
      "max_time_jump_s": 0.0
     }
    ],
@@ -148,15 +159,15 @@
    "no_logged_test": {
     "epochs": 5730,
     "hours": 1.59,
-    "alarm_raises": 2,
-    "raises_per_hour": 1.3,
-    "alert_epochs": 4934,
-    "alarm_epoch_fraction": 0.863,
+    "alarm_raises": 4,
+    "raises_per_hour": 2.5,
+    "alert_epochs": 1572,
+    "alarm_epoch_fraction": 0.284,
     "detector_epochs": {
-     "pos_drift": 4370,
+     "cn0_step": 1551,
      "lost_fix": 571,
-     "cn0_drop": 560,
-     "cn0_rise": 15,
+     "cn0_drop": 500,
+     "pos_drift": 242,
      "cn0_uniform": 4
     },
     "sub_alert_epochs": {}
@@ -182,26 +193,24 @@
      "coverage_s": 1345,
      "fix_fraction": 1.0,
      "detected": true,
-     "ttd_s": 368,
-     "first_alert_utc": "12:11:18",
+     "ttd_s": 365,
+     "first_alert_utc": "12:11:15",
      "first_detectors": [
-      "cn0_drop"
+      "cn0_step"
      ],
      "alarm_latched_at_start": false,
-     "alert_epoch_fraction": 0.401,
-     "alarm_epoch_fraction": 0.724,
+     "alert_epoch_fraction": 0.202,
+     "alarm_epoch_fraction": 0.27,
      "families": {
-      "jamming": 164,
-      "spoofing": 403
+      "jamming": 272
      },
      "detector_epochs": {
-      "pos_drift": 403,
-      "cn0_rise": 252,
-      "cn0_drop": 164,
+      "cn0_step": 272,
+      "cn0_drop": 198,
       "cn0_uniform": 1
      },
      "sub_alert_epochs": {
-      "cn0_rise": 365
+      "cn0_rise": 5
      },
      "max_time_jump_s": 0.0
     },
@@ -219,27 +228,27 @@
      "ttd_s": -131,
      "first_alert_utc": "12:28:17",
      "first_detectors": [
-      "cn0_drop"
+      "cn0_drop",
+      "cn0_step"
      ],
-     "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 0.878,
-     "alarm_epoch_fraction": 0.997,
+     "alarm_latched_at_start": false,
+     "alert_epoch_fraction": 0.759,
+     "alarm_epoch_fraction": 0.787,
      "families": {
-      "jamming": 875,
-      "spoofing": 628,
+      "jamming": 1017,
+      "spoofing": 178,
       "lost-fix": 53
      },
      "detector_epochs": {
-      "cn0_drop": 875,
-      "pos_drift": 628,
-      "cn0_rise": 192,
+      "cn0_step": 1017,
+      "cn0_drop": 961,
+      "pos_drift": 178,
       "cn0_uniform": 59,
       "lost_fix": 53,
-      "position_jump": 2
+      "position_jump": 2,
+      "vel_jump": 1
      },
-     "sub_alert_epochs": {
-      "cn0_rise": 118
-     },
+     "sub_alert_epochs": {},
      "max_time_jump_s": 0.0
     }
    ],
@@ -275,23 +284,25 @@
      "coverage_s": 654,
      "fix_fraction": 1.0,
      "detected": true,
-     "ttd_s": -275,
-     "first_alert_utc": "08:01:25",
+     "ttd_s": 1,
+     "first_alert_utc": "08:06:01",
      "first_detectors": [
-      "pos_drift"
+      "cn0_drop",
+      "cn0_step"
      ],
-     "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 0.866,
-     "alarm_epoch_fraction": 0.976,
+     "alarm_latched_at_start": false,
+     "alert_epoch_fraction": 0.525,
+     "alarm_epoch_fraction": 0.548,
      "families": {
-      "spoofing": 225,
       "jamming": 344
      },
      "detector_epochs": {
-      "cn0_drop": 344,
-      "pos_drift": 225
+      "cn0_step": 344,
+      "cn0_drop": 343
      },
-     "sub_alert_epochs": {},
+     "sub_alert_epochs": {
+      "cn0_rise": 3
+     },
      "max_time_jump_s": 0.0
     },
     {
@@ -308,18 +319,18 @@
      "ttd_s": -220,
      "first_alert_utc": "08:56:19",
      "first_detectors": [
-      "cn0_drop"
+      "cn0_drop",
+      "cn0_step"
      ],
      "alarm_latched_at_start": false,
-     "alert_epoch_fraction": 0.994,
+     "alert_epoch_fraction": 0.999,
      "alarm_epoch_fraction": 0.999,
      "families": {
-      "jamming": 1237,
-      "spoofing": 532
+      "jamming": 1337
      },
      "detector_epochs": {
-      "cn0_drop": 1237,
-      "pos_drift": 532
+      "cn0_step": 1337,
+      "cn0_drop": 785
      },
      "sub_alert_epochs": {},
      "max_time_jump_s": 0.0
@@ -335,23 +346,25 @@
      "coverage_s": 1002,
      "fix_fraction": 1.0,
      "detected": true,
-     "ttd_s": -299,
-     "first_alert_utc": "09:46:01",
+     "ttd_s": 1,
+     "first_alert_utc": "09:51:01",
      "first_detectors": [
-      "pos_drift"
+      "cn0_drop",
+      "cn0_step"
      ],
-     "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 1.0,
-     "alarm_epoch_fraction": 1.0,
+     "alarm_latched_at_start": false,
+     "alert_epoch_fraction": 0.997,
+     "alarm_epoch_fraction": 0.999,
      "families": {
-      "spoofing": 345,
       "jamming": 1000
      },
      "detector_epochs": {
-      "cn0_drop": 1000,
-      "pos_drift": 345
+      "cn0_step": 1000,
+      "cn0_drop": 719
      },
-     "sub_alert_epochs": {},
+     "sub_alert_epochs": {
+      "cn0_rise": 2
+     },
      "max_time_jump_s": 0.0
     },
     {
@@ -364,21 +377,15 @@
      "covered": true,
      "coverage_s": 735,
      "fix_fraction": 1.0,
-     "detected": true,
-     "ttd_s": -207,
-     "first_alert_utc": "10:07:43",
-     "first_detectors": [
-      "pos_drift"
-     ],
-     "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 0.985,
-     "alarm_epoch_fraction": 0.997,
-     "families": {
-      "spoofing": 725
-     },
-     "detector_epochs": {
-      "pos_drift": 725
-     },
+     "detected": false,
+     "ttd_s": null,
+     "first_alert_utc": null,
+     "first_detectors": null,
+     "alarm_latched_at_start": false,
+     "alert_epoch_fraction": 0.0,
+     "alarm_epoch_fraction": 0.0,
+     "families": {},
+     "detector_epochs": {},
      "sub_alert_epochs": {},
      "max_time_jump_s": 0.0
     },
@@ -393,21 +400,21 @@
      "coverage_s": 1260,
      "fix_fraction": 1.0,
      "detected": true,
-     "ttd_s": -299,
-     "first_alert_utc": "10:25:02",
+     "ttd_s": 0,
+     "first_alert_utc": "10:30:01",
      "first_detectors": [
-      "pos_drift"
+      "cn0_drop",
+      "cn0_step"
      ],
-     "alarm_latched_at_start": true,
+     "alarm_latched_at_start": false,
      "alert_epoch_fraction": 1.0,
      "alarm_epoch_fraction": 1.0,
      "families": {
-      "jamming": 1261,
-      "spoofing": 1261
+      "jamming": 1261
      },
      "detector_epochs": {
       "cn0_drop": 1261,
-      "pos_drift": 1261
+      "cn0_step": 1261
      },
      "sub_alert_epochs": {},
      "max_time_jump_s": 0.0
@@ -416,27 +423,25 @@
    "quiet": {
     "epochs": 736,
     "hours": 0.2,
-    "alarm_raises": 1,
-    "raises_per_hour": 4.9,
-    "alert_epochs": 725,
-    "alarm_epoch_fraction": 0.997,
-    "detector_epochs": {
-     "pos_drift": 725
-    },
+    "alarm_raises": 0,
+    "raises_per_hour": 0.0,
+    "alert_epochs": 0,
+    "alarm_epoch_fraction": 0.0,
+    "detector_epochs": {},
     "sub_alert_epochs": {}
    },
    "no_logged_test": {
     "epochs": 3346,
     "hours": 0.93,
-    "alarm_raises": 2,
-    "raises_per_hour": 2.2,
-    "alert_epochs": 1116,
-    "alarm_epoch_fraction": 0.34,
+    "alarm_raises": 1,
+    "raises_per_hour": 1.1,
+    "alert_epochs": 200,
+    "alarm_epoch_fraction": 0.067,
     "detector_epochs": {
-     "pos_drift": 1116
+     "cn0_step": 200
     },
     "sub_alert_epochs": {
-     "cn0_rise": 214
+     "cn0_rise": 3
     }
    }
   },
@@ -460,21 +465,21 @@
      "coverage_s": 1411,
      "fix_fraction": 1.0,
      "detected": true,
-     "ttd_s": -100,
-     "first_alert_utc": "12:45:01",
+     "ttd_s": 1,
+     "first_alert_utc": "12:46:42",
      "first_detectors": [
-      "pos_drift"
+      "cn0_drop",
+      "cn0_step"
      ],
-     "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 0.994,
-     "alarm_epoch_fraction": 1.0,
+     "alarm_latched_at_start": false,
+     "alert_epoch_fraction": 0.996,
+     "alarm_epoch_fraction": 0.999,
      "families": {
-      "spoofing": 1309,
-      "jamming": 1164
+      "jamming": 1406
      },
      "detector_epochs": {
-      "pos_drift": 1309,
-      "cn0_drop": 1164
+      "cn0_step": 1406,
+      "cn0_drop": 1095
      },
      "sub_alert_epochs": {},
      "max_time_jump_s": 0.0
@@ -490,27 +495,32 @@
      "coverage_s": 1702,
      "fix_fraction": 0.928,
      "detected": true,
-     "ttd_s": -299,
-     "first_alert_utc": "13:11:40",
+     "ttd_s": -256,
+     "first_alert_utc": "13:12:23",
      "first_detectors": [
-      "pos_drift"
+      "cn0_drop",
+      "cn0_step"
      ],
-     "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 0.973,
-     "alarm_epoch_fraction": 0.998,
+     "alarm_latched_at_start": false,
+     "alert_epoch_fraction": 0.922,
+     "alarm_epoch_fraction": 0.941,
      "families": {
-      "spoofing": 804,
-      "jamming": 1528,
+      "jamming": 1553,
+      "spoofing": 370,
       "lost-fix": 122
      },
      "detector_epochs": {
-      "cn0_drop": 1528,
-      "pos_drift": 804,
+      "cn0_step": 1553,
+      "cn0_drop": 1467,
+      "pos_drift": 370,
       "cn0_uniform": 130,
       "lost_fix": 122,
+      "cn0_rise": 13,
       "position_jump": 1
      },
-     "sub_alert_epochs": {},
+     "sub_alert_epochs": {
+      "cn0_rise": 14
+     },
      "max_time_jump_s": 0.0
     },
     {
@@ -524,23 +534,25 @@
      "coverage_s": 1459,
      "fix_fraction": 0.709,
      "detected": true,
-     "ttd_s": -299,
-     "first_alert_utc": "13:47:25",
+     "ttd_s": -2,
+     "first_alert_utc": "13:52:22",
      "first_detectors": [
-      "pos_drift"
+      "cn0_drop",
+      "cn0_step"
      ],
      "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 0.841,
-     "alarm_epoch_fraction": 0.973,
+     "alert_epoch_fraction": 0.54,
+     "alarm_epoch_fraction": 0.56,
      "families": {
-      "jamming": 755,
-      "spoofing": 530,
+      "jamming": 788,
+      "spoofing": 31,
       "lost-fix": 425
      },
      "detector_epochs": {
-      "cn0_drop": 755,
-      "pos_drift": 530,
+      "cn0_step": 787,
+      "cn0_drop": 745,
       "lost_fix": 425,
+      "pos_drift": 31,
       "cn0_uniform": 28
      },
      "sub_alert_epochs": {},
@@ -553,12 +565,13 @@
     "hours": 0.45,
     "alarm_raises": 1,
     "raises_per_hour": 2.2,
-    "alert_epochs": 100,
-    "alarm_epoch_fraction": 0.073,
+    "alert_epochs": 110,
+    "alarm_epoch_fraction": 0.083,
     "detector_epochs": {
+     "cn0_step": 105,
      "cn0_drop": 100,
      "cn0_uniform": 47,
-     "pos_drift": 34,
+     "pos_drift": 33,
      "lost_fix": 8
     },
     "sub_alert_epochs": {}
@@ -587,18 +600,18 @@
      "ttd_s": -126,
      "first_alert_utc": "14:47:57",
      "first_detectors": [
-      "cn0_drop"
+      "cn0_drop",
+      "cn0_step"
      ],
-     "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 0.928,
-     "alarm_epoch_fraction": 0.988,
+     "alarm_latched_at_start": false,
+     "alert_epoch_fraction": 0.235,
+     "alarm_epoch_fraction": 0.29,
      "families": {
-      "spoofing": 691,
-      "jamming": 85
+      "jamming": 180
      },
      "detector_epochs": {
-      "pos_drift": 691,
-      "cn0_drop": 85
+      "cn0_step": 180,
+      "cn0_drop": 88
      },
      "sub_alert_epochs": {},
      "max_time_jump_s": 0.0
@@ -614,21 +627,20 @@
      "coverage_s": 966,
      "fix_fraction": 1.0,
      "detected": true,
-     "ttd_s": -191,
-     "first_alert_utc": "15:02:49",
+     "ttd_s": -175,
+     "first_alert_utc": "15:03:05",
      "first_detectors": [
-      "pos_drift"
+      "cn0_step"
      ],
-     "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 0.943,
-     "alarm_epoch_fraction": 0.99,
+     "alarm_latched_at_start": false,
+     "alert_epoch_fraction": 0.019,
+     "alarm_epoch_fraction": 0.057,
      "families": {
-      "spoofing": 912,
-      "jamming": 5
+      "jamming": 18
      },
      "detector_epochs": {
-      "pos_drift": 912,
-      "cn0_drop": 5
+      "cn0_step": 18,
+      "cn0_drop": 7
      },
      "sub_alert_epochs": {},
      "max_time_jump_s": 0.0
@@ -644,22 +656,24 @@
      "coverage_s": 1116,
      "fix_fraction": 0.95,
      "detected": true,
-     "ttd_s": -299,
-     "first_alert_utc": "15:23:53",
+     "ttd_s": -1,
+     "first_alert_utc": "15:28:51",
      "first_detectors": [
-      "pos_drift"
+      "cn0_drop",
+      "cn0_step"
      ],
      "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 0.959,
-     "alarm_epoch_fraction": 0.993,
+     "alert_epoch_fraction": 0.492,
+     "alarm_epoch_fraction": 0.546,
      "families": {
-      "jamming": 349,
-      "spoofing": 935,
+      "jamming": 550,
+      "spoofing": 57,
       "lost-fix": 56
      },
      "detector_epochs": {
-      "pos_drift": 935,
-      "cn0_drop": 349,
+      "cn0_step": 550,
+      "cn0_drop": 355,
+      "pos_drift": 57,
       "lost_fix": 56,
       "cn0_uniform": 45
      },
@@ -699,28 +713,29 @@
      "coverage_s": 1035,
      "fix_fraction": 0.877,
      "detected": true,
-     "ttd_s": 990,
-     "first_alert_utc": "07:26:30",
+     "ttd_s": 742,
+     "first_alert_utc": "07:22:22",
      "first_detectors": [
-      "pos_drift"
+      "cn0_step"
      ],
      "alarm_latched_at_start": false,
-     "alert_epoch_fraction": 0.256,
-     "alarm_epoch_fraction": 0.473,
+     "alert_epoch_fraction": 0.603,
+     "alarm_epoch_fraction": 0.654,
      "families": {
-      "spoofing": 138,
-      "lost-fix": 127,
-      "jamming": 3
+      "jamming": 617,
+      "spoofing": 208,
+      "lost-fix": 127
      },
      "detector_epochs": {
-      "pos_drift": 138,
+      "cn0_step": 617,
+      "pos_drift": 207,
+      "cn0_drop": 150,
       "lost_fix": 127,
-      "cn0_rise": 19,
-      "cn0_drop": 3,
+      "cn0_rise": 75,
       "clock_jump": 2
      },
      "sub_alert_epochs": {
-      "cn0_rise": 155
+      "cn0_rise": 34
      },
      "max_time_jump_s": 900.0099999904633
     },
@@ -735,25 +750,22 @@
      "coverage_s": 899,
      "fix_fraction": 1.0,
      "detected": true,
-     "ttd_s": 101,
-     "first_alert_utc": "07:51:41",
+     "ttd_s": 8,
+     "first_alert_utc": "07:50:08",
      "first_detectors": [
-      "pos_drift"
+      "cn0_step"
      ],
-     "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 0.81,
-     "alarm_epoch_fraction": 0.993,
+     "alarm_latched_at_start": false,
+     "alert_epoch_fraction": 0.992,
+     "alarm_epoch_fraction": 0.992,
      "families": {
-      "spoofing": 648,
-      "jamming": 157
+      "jamming": 893
      },
      "detector_epochs": {
-      "pos_drift": 648,
-      "cn0_drop": 157
+      "cn0_step": 893,
+      "cn0_drop": 289
      },
-     "sub_alert_epochs": {
-      "cn0_rise": 49
-     },
+     "sub_alert_epochs": {},
      "max_time_jump_s": 0.0
     },
     {
@@ -767,19 +779,20 @@
      "coverage_s": 904,
      "fix_fraction": 1.0,
      "detected": true,
-     "ttd_s": 6,
-     "first_alert_utc": "08:20:16",
+     "ttd_s": -2,
+     "first_alert_utc": "08:20:08",
      "first_detectors": [
-      "cn0_drop"
+      "cn0_step"
      ],
      "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 0.992,
+     "alert_epoch_fraction": 1.0,
      "alarm_epoch_fraction": 1.0,
      "families": {
-      "jamming": 898
+      "jamming": 905
      },
      "detector_epochs": {
-      "cn0_drop": 898
+      "cn0_step": 905,
+      "cn0_drop": 900
      },
      "sub_alert_epochs": {},
      "max_time_jump_s": 0.0
@@ -789,16 +802,12 @@
    "no_logged_test": {
     "epochs": 894,
     "hours": 0.25,
-    "alarm_raises": 2,
-    "raises_per_hour": 8.1,
-    "alert_epochs": 262,
-    "alarm_epoch_fraction": 0.996,
-    "detector_epochs": {
-     "pos_drift": 262
-    },
-    "sub_alert_epochs": {
-     "cn0_rise": 610
-    }
+    "alarm_raises": 0,
+    "raises_per_hour": 0.0,
+    "alert_epochs": 0,
+    "alarm_epoch_fraction": 0.0,
+    "detector_epochs": {},
+    "sub_alert_epochs": {}
    },
    "static_fix_error": {
     "reference": [
@@ -855,18 +864,26 @@
       "lost_fix"
      ],
      "alarm_latched_at_start": false,
-     "alert_epoch_fraction": 0.975,
+     "alert_epoch_fraction": 0.976,
      "alarm_epoch_fraction": 0.99,
      "families": {
-      "lost-fix": 852
+      "lost-fix": 852,
+      "spoofing": 10,
+      "jamming": 77
      },
      "detector_epochs": {
       "lost_fix": 852,
+      "cn0_rise": 497,
+      "cn0_drop": 77,
+      "clock_drift": 6,
       "clock_jump": 3,
+      "position_jump": 1,
+      "vel_jump": 1,
       "cn0_uniform": 1
      },
      "sub_alert_epochs": {
-      "position_jump": 1
+      "vel_jump": 6,
+      "cn0_rise": 1
      },
      "max_time_jump_s": 1.9900000095367432
     }
@@ -875,17 +892,18 @@
    "no_logged_test": {
     "epochs": 3718,
     "hours": 1.03,
-    "alarm_raises": 0,
-    "raises_per_hour": 0.0,
-    "alert_epochs": 3718,
-    "alarm_epoch_fraction": 1.0,
+    "alarm_raises": 6,
+    "raises_per_hour": 5.8,
+    "alert_epochs": 339,
+    "alarm_epoch_fraction": 0.112,
     "detector_epochs": {
-     "pos_drift": 3714,
-     "cn0_rise": 3425,
-     "cn0_drop": 5,
+     "cn0_step": 334,
+     "cn0_drop": 313,
      "lost_fix": 4
     },
-    "sub_alert_epochs": {}
+    "sub_alert_epochs": {
+     "cn0_rise": 70
+    }
    },
    "static_fix_error": {
     "reference": [

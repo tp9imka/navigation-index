@@ -79,21 +79,23 @@ class Epochs(unittest.TestCase):
 
 
 class ReplayFindings(unittest.TestCase):
-    """The three effects seen on the real logs, reproduced on the fixture."""
+    """The effects seen on the real logs, reproduced on the fixture (two of them fixed in the scorer since)."""
 
-    def test_staircase_evades_cn0_drop(self):
+    def test_staircase_caught_by_cn0_step(self):
+        # the scorer at dae8229 missed this (each step under the 6 dB rule); cn0_step accumulates it
         for argv in (["--no-pos-drift"], ["--no-pos-drift", "--baseline-max-score", "0.3"]):
             w, _ = windows_by_test(argv)
-            self.assertFalse(w["staircase"]["detected"], argv)
+            self.assertTrue(w["staircase"]["detected"], argv)
+            self.assertIn("cn0_step", w["staircase"]["detector_epochs"], argv)
+            self.assertNotIn("cn0_drop", w["staircase"]["first_detectors"], argv)
 
-    def test_baseline_lockout_hides_step_drop(self):
-        w, _ = windows_by_test(["--no-pos-drift"])
-        self.assertFalse(w["step_drop"]["detected"])
-        self.assertGreater(w["staircase"]["epochs"], 0)
-        w, _ = windows_by_test(["--no-pos-drift", "--baseline-max-score", "0.3"])
-        self.assertTrue(w["step_drop"]["detected"])
-        self.assertLessEqual(w["step_drop"]["ttd_s"], 1)
-        self.assertIn("cn0_drop", w["step_drop"]["detector_epochs"])
+    def test_step_drop_after_recovery_no_longer_locked_out(self):
+        # was missed in C: a cn0_rise sub-alert froze the baseline for good; the runtime 0.3 override is not needed now
+        for argv in (["--no-pos-drift"], ["--no-pos-drift", "--baseline-max-score", "0.3"]):
+            w, _ = windows_by_test(argv)
+            self.assertTrue(w["step_drop"]["detected"], argv)
+            self.assertLessEqual(w["step_drop"]["ttd_s"], 1, argv)
+            self.assertIn("cn0_drop", w["step_drop"]["detector_epochs"], argv)
 
     def test_receiver_time_jump_reaches_clock_jump(self):
         w, _ = windows_by_test(["--no-pos-drift"])

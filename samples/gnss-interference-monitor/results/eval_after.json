@@ -1,0 +1,459 @@
+{
+ "scorer": "scorer.py",
+ "brdc": false,
+ "split": "all",
+ "results": [
+  {
+   "file": "ublox_2024-09-10T073207Z0000",
+   "set": "tune",
+   "epochs": 11098,
+   "ephemeris": null,
+   "windows": [
+    {
+     "test": "1.10.6a",
+     "kind": "jam",
+     "detected": true,
+     "ttd_s": 159,
+     "latched_at_start": false,
+     "alert_epoch_fraction": 0.119,
+     "detectors": {
+      "cn0_step": 114,
+      "cn0_drop": 41,
+      "pos_drift": 7,
+      "lost_fix": 6,
+      "vel_jump": 2,
+      "position_jump": 1
+     }
+    },
+    {
+     "test": "1.10.6b",
+     "kind": "jam",
+     "detected": true,
+     "ttd_s": 417,
+     "latched_at_start": false,
+     "alert_epoch_fraction": 0.178,
+     "detectors": {
+      "cn0_step": 175,
+      "cn0_drop": 61,
+      "position_jump": 8,
+      "vel_jump": 4,
+      "pos_drift": 2,
+      "lost_fix": 1
+     }
+    },
+    {
+     "test": "1.10.6c",
+     "kind": "jam",
+     "detected": true,
+     "ttd_s": 182,
+     "latched_at_start": false,
+     "alert_epoch_fraction": 0.346,
+     "detectors": {
+      "cn0_step": 330,
+      "cn0_drop": 91,
+      "pos_drift": 12,
+      "lost_fix": 3,
+      "vel_jump": 1
+     }
+    },
+    {
+     "test": "1.10.6d",
+     "kind": "jam",
+     "detected": true,
+     "ttd_s": 521,
+     "latched_at_start": false,
+     "alert_epoch_fraction": 0.086,
+     "detectors": {
+      "cn0_step": 83,
+      "cn0_drop": 35,
+      "cn0_uniform": 1
+     }
+    }
+   ],
+   "quiet": null,
+   "no_logged_test": {
+    "epochs": 5730,
+    "hours": 1.59,
+    "alarm_raises": 4,
+    "raises_per_hour": 2.5,
+    "alert_epochs": 1572,
+    "alarm_epoch_fraction": 0.284,
+    "detector_epochs": {
+     "cn0_step": 1551,
+     "lost_fix": 571,
+     "cn0_drop": 500,
+     "pos_drift": 242,
+     "cn0_uniform": 4
+    },
+    "sub_alert_epochs": {}
+   }
+  },
+  {
+   "file": "ublox_2024-09-10T115512Z0000",
+   "set": "holdout",
+   "epochs": 3455,
+   "ephemeris": null,
+   "windows": [
+    {
+     "test": "1.10.3",
+     "kind": "jam",
+     "detected": true,
+     "ttd_s": 365,
+     "latched_at_start": false,
+     "alert_epoch_fraction": 0.202,
+     "detectors": {
+      "cn0_step": 272,
+      "cn0_drop": 198,
+      "cn0_uniform": 1
+     }
+    },
+    {
+     "test": "1.10.4",
+     "kind": "jam",
+     "detected": true,
+     "ttd_s": -131,
+     "latched_at_start": false,
+     "alert_epoch_fraction": 0.759,
+     "detectors": {
+      "cn0_step": 1028,
+      "cn0_drop": 971,
+      "pos_drift": 178,
+      "cn0_uniform": 59,
+      "lost_fix": 53,
+      "position_jump": 2,
+      "vel_jump": 1
+     }
+    }
+   ],
+   "quiet": null,
+   "no_logged_test": {
+    "epochs": 298,
+    "hours": 0.08,
+    "alarm_raises": 0,
+    "raises_per_hour": 0.0,
+    "alert_epochs": 0,
+    "alarm_epoch_fraction": 0.0,
+    "detector_epochs": {},
+    "sub_alert_epochs": {}
+   }
+  },
+  {
+   "file": "ublox_2024-09-11T075704",
+   "set": "holdout",
+   "epochs": 10689,
+   "ephemeris": null,
+   "windows": [
+    {
+     "test": "2.6.1a",
+     "kind": "spoof",
+     "detected": true,
+     "ttd_s": 1,
+     "latched_at_start": false,
+     "alert_epoch_fraction": 0.525,
+     "detectors": {
+      "cn0_step": 344,
+      "cn0_drop": 343
+     }
+    },
+    {
+     "test": "2.6.2",
+     "kind": "spoof",
+     "detected": true,
+     "ttd_s": -220,
+     "latched_at_start": false,
+     "alert_epoch_fraction": 0.999,
+     "detectors": {
+      "cn0_step": 1521,
+      "cn0_drop": 966
+     }
+    },
+    {
+     "test": "2.6.3",
+     "kind": "spoof",
+     "detected": true,
+     "ttd_s": 1,
+     "latched_at_start": false,
+     "alert_epoch_fraction": 0.997,
+     "detectors": {
+      "cn0_step": 1000,
+      "cn0_drop": 719
+     }
+    },
+    {
+     "test": "0.0.1",
+     "kind": "quiet",
+     "detected": false,
+     "ttd_s": null,
+     "latched_at_start": false,
+     "alert_epoch_fraction": 0.0,
+     "detectors": {}
+    },
+    {
+     "test": "2.6.1b",
+     "kind": "spoof",
+     "detected": true,
+     "ttd_s": 0,
+     "latched_at_start": false,
+     "alert_epoch_fraction": 1.0,
+     "detectors": {
+      "cn0_drop": 1261,
+      "cn0_step": 1261
+     }
+    }
+   ],
+   "quiet": {
+    "epochs": 736,
+    "hours": 0.2,
+    "alarm_raises": 0,
+    "raises_per_hour": 0.0,
+    "alert_epochs": 0,
+    "alarm_epoch_fraction": 0.0,
+    "detector_epochs": {},
+    "sub_alert_epochs": {}
+   },
+   "no_logged_test": {
+    "epochs": 3346,
+    "hours": 0.93,
+    "alarm_raises": 1,
+    "raises_per_hour": 1.1,
+    "alert_epochs": 200,
+    "alarm_epoch_fraction": 0.067,
+    "detector_epochs": {
+     "cn0_step": 200
+    },
+    "sub_alert_epochs": {
+     "cn0_rise": 3
+    }
+   }
+  },
+  {
+   "file": "ublox_2024-09-11T122113",
+   "set": "tune",
+   "epochs": 7625,
+   "ephemeris": null,
+   "windows": [
+    {
+     "test": "0.3.1a",
+     "kind": "jam",
+     "detected": true,
+     "ttd_s": 1,
+     "latched_at_start": false,
+     "alert_epoch_fraction": 0.996,
+     "detectors": {
+      "cn0_step": 1406,
+      "cn0_drop": 1095
+     }
+    },
+    {
+     "test": "0.3.1b",
+     "kind": "jam",
+     "detected": true,
+     "ttd_s": -256,
+     "latched_at_start": false,
+     "alert_epoch_fraction": 0.922,
+     "detectors": {
+      "cn0_step": 1563,
+      "cn0_drop": 1476,
+      "pos_drift": 370,
+      "cn0_uniform": 130,
+      "lost_fix": 122,
+      "cn0_rise": 13,
+      "position_jump": 1
+     }
+    },
+    {
+     "test": "0.3.1c",
+     "kind": "jam",
+     "detected": true,
+     "ttd_s": -2,
+     "latched_at_start": true,
+     "alert_epoch_fraction": 0.54,
+     "detectors": {
+      "cn0_step": 789,
+      "cn0_drop": 747,
+      "lost_fix": 425,
+      "pos_drift": 31,
+      "cn0_uniform": 28
+     }
+    }
+   ],
+   "quiet": null,
+   "no_logged_test": {
+    "epochs": 1624,
+    "hours": 0.45,
+    "alarm_raises": 1,
+    "raises_per_hour": 2.2,
+    "alert_epochs": 110,
+    "alarm_epoch_fraction": 0.083,
+    "detector_epochs": {
+     "cn0_step": 105,
+     "cn0_drop": 100,
+     "cn0_uniform": 47,
+     "pos_drift": 33,
+     "lost_fix": 8
+    },
+    "sub_alert_epochs": {}
+   }
+  },
+  {
+   "file": "ublox_2024-09-11T143312",
+   "set": "holdout",
+   "epochs": 4456,
+   "ephemeris": null,
+   "windows": [
+    {
+     "test": "0.3.1d",
+     "kind": "jam",
+     "detected": true,
+     "ttd_s": -126,
+     "latched_at_start": false,
+     "alert_epoch_fraction": 0.235,
+     "detectors": {
+      "cn0_step": 266,
+      "cn0_drop": 168
+     }
+    },
+    {
+     "test": "0.3.1e",
+     "kind": "jam",
+     "detected": true,
+     "ttd_s": -175,
+     "latched_at_start": false,
+     "alert_epoch_fraction": 0.019,
+     "detectors": {
+      "cn0_step": 52,
+      "cn0_drop": 9
+     }
+    },
+    {
+     "test": "0.3.1f",
+     "kind": "jam",
+     "detected": true,
+     "ttd_s": -1,
+     "latched_at_start": true,
+     "alert_epoch_fraction": 0.492,
+     "detectors": {
+      "cn0_step": 551,
+      "cn0_drop": 356,
+      "pos_drift": 57,
+      "lost_fix": 56,
+      "cn0_uniform": 45
+     }
+    }
+   ],
+   "quiet": null,
+   "no_logged_test": {
+    "epochs": 711,
+    "hours": 0.2,
+    "alarm_raises": 0,
+    "raises_per_hour": 0.0,
+    "alert_epochs": 0,
+    "alarm_epoch_fraction": 0.0,
+    "detector_epochs": {},
+    "sub_alert_epochs": {}
+   }
+  },
+  {
+   "file": "ublox_2024-09-12T071744",
+   "set": "holdout",
+   "epochs": 5235,
+   "ephemeris": null,
+   "windows": [
+    {
+     "test": "2.4.2",
+     "kind": "spoof",
+     "detected": true,
+     "ttd_s": 742,
+     "latched_at_start": false,
+     "alert_epoch_fraction": 0.603,
+     "detectors": {
+      "cn0_step": 617,
+      "pos_drift": 207,
+      "cn0_drop": 150,
+      "lost_fix": 127,
+      "cn0_rise": 75,
+      "clock_jump": 2
+     }
+    },
+    {
+     "test": "2.4.3",
+     "kind": "spoof",
+     "detected": true,
+     "ttd_s": 8,
+     "latched_at_start": false,
+     "alert_epoch_fraction": 0.992,
+     "detectors": {
+      "cn0_step": 893,
+      "cn0_drop": 289
+     }
+    },
+    {
+     "test": "2.4.12",
+     "kind": "spoof",
+     "detected": true,
+     "ttd_s": -2,
+     "latched_at_start": true,
+     "alert_epoch_fraction": 1.0,
+     "detectors": {
+      "cn0_step": 908,
+      "cn0_drop": 900
+     }
+    }
+   ],
+   "quiet": null,
+   "no_logged_test": {
+    "epochs": 894,
+    "hours": 0.25,
+    "alarm_raises": 0,
+    "raises_per_hour": 0.0,
+    "alert_epochs": 0,
+    "alarm_epoch_fraction": 0.0,
+    "detector_epochs": {},
+    "sub_alert_epochs": {}
+   }
+  },
+  {
+   "file": "ublox_2024-09-12T085023",
+   "set": "tune",
+   "epochs": 4892,
+   "ephemeris": null,
+   "windows": [
+    {
+     "test": "2.4.13",
+     "kind": "spoof",
+     "detected": true,
+     "ttd_s": 24,
+     "latched_at_start": false,
+     "alert_epoch_fraction": 0.976,
+     "detectors": {
+      "lost_fix": 852,
+      "cn0_rise": 497,
+      "cn0_drop": 77,
+      "clock_drift": 6,
+      "clock_jump": 3,
+      "position_jump": 1,
+      "vel_jump": 1,
+      "cn0_uniform": 1
+     }
+    }
+   ],
+   "quiet": null,
+   "no_logged_test": {
+    "epochs": 3718,
+    "hours": 1.03,
+    "alarm_raises": 6,
+    "raises_per_hour": 5.8,
+    "alert_epochs": 339,
+    "alarm_epoch_fraction": 0.112,
+    "detector_epochs": {
+     "cn0_step": 334,
+     "cn0_drop": 313,
+     "lost_fix": 4
+    },
+    "sub_alert_epochs": {
+     "cn0_rise": 70
+    }
+   }
+  }
+ ]
+}

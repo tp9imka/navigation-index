@@ -35,10 +35,11 @@
      "alarm_epoch_fraction": 1.0,
      "families": {
       "spoofing": 645,
-      "jamming": 344
+      "jamming": 345
      },
      "detector_epochs": {
       "clock_drift": 645,
+      "cn0_step": 345,
       "cn0_drop": 344
      },
      "sub_alert_epochs": {},
@@ -62,17 +63,18 @@
       "cn0_rise"
      ],
      "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 0.982,
-     "alarm_epoch_fraction": 0.999,
+     "alert_epoch_fraction": 0.999,
+     "alarm_epoch_fraction": 1.0,
      "families": {
-      "spoofing": 278,
-      "jamming": 1190
+      "spoofing": 172,
+      "jamming": 1337
      },
      "detector_epochs": {
-      "cn0_drop": 1190,
-      "clock_drift": 278,
+      "cn0_step": 1337,
+      "cn0_drop": 1035,
+      "clock_drift": 172,
       "clock_jump": 72,
-      "cn0_rise": 2
+      "cn0_rise": 1
      },
      "sub_alert_epochs": {},
      "max_time_jump_s": 0.0
@@ -95,20 +97,20 @@
       "cn0_rise"
      ],
      "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 0.983,
+     "alert_epoch_fraction": 0.999,
      "alarm_epoch_fraction": 1.0,
      "families": {
-      "spoofing": 229,
-      "jamming": 979
+      "spoofing": 233,
+      "jamming": 1000
      },
      "detector_epochs": {
-      "cn0_drop": 979,
-      "clock_jump": 270,
-      "clock_drift": 229,
+      "cn0_step": 1000,
+      "cn0_drop": 737,
+      "clock_jump": 273,
+      "clock_drift": 233,
       "cn0_rise": 1
      },
      "sub_alert_epochs": {
-      "clock_jump": 3,
       "cn0_rise": 1
      },
      "max_time_jump_s": 0.0
@@ -124,24 +126,21 @@
      "coverage_s": 735,
      "fix_fraction": 1.0,
      "detected": true,
-     "ttd_s": -195,
-     "first_alert_utc": "10:07:55",
+     "ttd_s": -190,
+     "first_alert_utc": "10:08:00",
      "first_detectors": [
       "clock_drift"
      ],
      "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 0.484,
-     "alarm_epoch_fraction": 0.514,
+     "alert_epoch_fraction": 0.459,
+     "alarm_epoch_fraction": 0.501,
      "families": {
-      "spoofing": 356
+      "spoofing": 338
      },
      "detector_epochs": {
-      "clock_drift": 356,
-      "cn0_rise": 16
+      "clock_drift": 338
      },
-     "sub_alert_epochs": {
-      "cn0_rise": 1
-     },
+     "sub_alert_epochs": {},
      "max_time_jump_s": 0.0
     },
     {
@@ -169,6 +168,7 @@
      },
      "detector_epochs": {
       "cn0_drop": 1261,
+      "cn0_step": 1261,
       "clock_drift": 59,
       "clock_jump": 4
      },
@@ -181,29 +181,26 @@
     "hours": 0.2,
     "alarm_raises": 1,
     "raises_per_hour": 4.9,
-    "alert_epochs": 356,
-    "alarm_epoch_fraction": 0.514,
+    "alert_epochs": 338,
+    "alarm_epoch_fraction": 0.501,
     "detector_epochs": {
-     "clock_drift": 356,
-     "cn0_rise": 16
+     "clock_drift": 338
     },
-    "sub_alert_epochs": {
-     "cn0_rise": 1
-    }
+    "sub_alert_epochs": {}
    },
    "no_logged_test": {
     "epochs": 3346,
     "hours": 0.93,
-    "alarm_raises": 7,
-    "raises_per_hour": 7.5,
-    "alert_epochs": 2471,
-    "alarm_epoch_fraction": 0.78,
+    "alarm_raises": 4,
+    "raises_per_hour": 4.3,
+    "alert_epochs": 2483,
+    "alarm_epoch_fraction": 0.906,
     "detector_epochs": {
-     "clock_drift": 2471,
-     "cn0_rise": 1680
+     "clock_drift": 2373,
+     "cn0_rise": 1686,
+     "cn0_step": 111
     },
     "sub_alert_epochs": {
-     "cn0_rise": 30,
      "clock_jump": 20
     }
    }
@@ -234,23 +231,24 @@
       "clock_drift"
      ],
      "alarm_latched_at_start": false,
-     "alert_epoch_fraction": 0.332,
+     "alert_epoch_fraction": 0.702,
      "alarm_epoch_fraction": 0.988,
      "families": {
-      "spoofing": 184,
-      "jamming": 170,
+      "spoofing": 147,
+      "jamming": 675,
       "lost-fix": 127
      },
      "detector_epochs": {
-      "cn0_drop": 170,
+      "cn0_step": 675,
+      "cn0_drop": 345,
       "clock_drift": 147,
       "lost_fix": 127,
-      "clock_jump": 60,
-      "cn0_rise": 60
+      "clock_jump": 86,
+      "cn0_rise": 2
      },
      "sub_alert_epochs": {
-      "cn0_rise": 140,
-      "clock_jump": 51
+      "clock_jump": 25,
+      "cn0_rise": 21
      },
      "max_time_jump_s": 900.0099999904633
     },
@@ -268,25 +266,22 @@
      "ttd_s": -109,
      "first_alert_utc": "07:48:11",
      "first_detectors": [
-      "clock_drift",
-      "cn0_rise"
+      "clock_drift"
      ],
      "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 0.381,
+     "alert_epoch_fraction": 1.0,
      "alarm_epoch_fraction": 1.0,
      "families": {
       "spoofing": 251,
-      "jamming": 136
+      "jamming": 894
      },
      "detector_epochs": {
-      "clock_drift": 251,
-      "cn0_drop": 136,
-      "clock_jump": 12,
-      "cn0_rise": 11
+      "cn0_step": 894,
+      "clock_jump": 482,
+      "cn0_drop": 283,
+      "clock_drift": 251
      },
-     "sub_alert_epochs": {
-      "clock_jump": 470
-     },
+     "sub_alert_epochs": {},
      "max_time_jump_s": 0.0
     },
     {
@@ -307,21 +302,19 @@
       "cn0_rise"
      ],
      "alarm_latched_at_start": true,
-     "alert_epoch_fraction": 0.98,
+     "alert_epoch_fraction": 1.0,
      "alarm_epoch_fraction": 1.0,
      "families": {
       "spoofing": 220,
-      "jamming": 877
+      "jamming": 900
      },
      "detector_epochs": {
-      "cn0_drop": 877,
+      "cn0_step": 900,
+      "cn0_drop": 874,
       "clock_drift": 220,
-      "clock_jump": 200,
-      "cn0_rise": 1
+      "clock_jump": 205
      },
-     "sub_alert_epochs": {
-      "clock_jump": 5
-     },
+     "sub_alert_epochs": {},
      "max_time_jump_s": 0.0
     }
    ],
@@ -331,16 +324,14 @@
     "hours": 0.25,
     "alarm_raises": 0,
     "raises_per_hour": 0.0,
-    "alert_epochs": 533,
+    "alert_epochs": 494,
     "alarm_epoch_fraction": 1.0,
     "detector_epochs": {
      "clock_drift": 494,
-     "cn0_rise": 448,
-     "clock_jump": 39
+     "cn0_rise": 310
     },
     "sub_alert_epochs": {
-     "cn0_rise": 300,
-     "clock_jump": 61
+     "clock_jump": 100
     }
    },
    "static_fix_error": {
@@ -398,18 +389,26 @@
       "lost_fix"
      ],
      "alarm_latched_at_start": false,
-     "alert_epoch_fraction": 0.975,
+     "alert_epoch_fraction": 0.976,
      "alarm_epoch_fraction": 0.99,
      "families": {
-      "lost-fix": 852
+      "lost-fix": 852,
+      "spoofing": 18,
+      "jamming": 77
      },
      "detector_epochs": {
       "lost_fix": 852,
+      "cn0_rise": 497,
+      "cn0_drop": 77,
       "clock_jump": 18,
+      "clock_drift": 16,
+      "position_jump": 1,
+      "vel_jump": 1,
       "cn0_uniform": 1
      },
      "sub_alert_epochs": {
-      "position_jump": 1
+      "vel_jump": 6,
+      "cn0_rise": 1
      },
      "max_time_jump_s": 1.9900000095367432
     }
@@ -418,20 +417,21 @@
    "no_logged_test": {
     "epochs": 3718,
     "hours": 1.03,
-    "alarm_raises": 17,
-    "raises_per_hour": 16.5,
-    "alert_epochs": 1728,
-    "alarm_epoch_fraction": 0.578,
+    "alarm_raises": 0,
+    "raises_per_hour": 0.0,
+    "alert_epochs": 2909,
+    "alarm_epoch_fraction": 1.0,
     "detector_epochs": {
-     "clock_drift": 1088,
-     "cn0_drop": 856,
-     "clock_jump": 412,
-     "cn0_rise": 112,
+     "clock_drift": 2542,
+     "cn0_rise": 2200,
+     "cn0_drop": 387,
+     "cn0_step": 364,
+     "clock_jump": 276,
      "lost_fix": 4
     },
     "sub_alert_epochs": {
-     "clock_jump": 137,
-     "cn0_rise": 13
+     "clock_jump": 273,
+     "cn0_rise": 34
     }
    },
    "static_fix_error": {

@@ -3,7 +3,8 @@
 import random
 import unittest
 
-from scorer import BASELINE_MIN_EPOCHS, CLEAR_EPOCHS, Epoch, InterferenceScorer
+from scorer import (BASELINE_MIN_EPOCHS, CLEAR_EPOCHS, CN0_FROZEN_ALPHA, CN0_INNOV_CLIP_DB, Epoch,
+                    InterferenceScorer)
 
 # Open-sky C/N0 rises with elevation; a real sky spreads ~15 dB across SVs.
 SKY = {"G01": 47.0, "G03": 44.0, "G07": 41.0, "G08": 38.0, "G11": 35.0,
@@ -58,12 +59,17 @@ class ScorerTests(unittest.TestCase):
     def test_jamming_does_not_pollute_baseline(self):
         sc, t = warmed_scorer(self.rng)
         base_before = dict(sc.base_cn0)
-        for k in range(20):
+        n = 20
+        for k in range(n):
             ep = clean_epoch(t + k, self.rng)
             ep.cn0 = {sv: c - 15.0 for sv, c in ep.cn0.items()}
             ep.agc_cnt = AGC0 * 0.4
             sc.assess(ep)
-        self.assertEqual(sc.base_cn0, base_before)
+        # only the bounded frozen-baseline drift (CN0_FROZEN_ALPHA x clipped innovation) is allowed
+        bound = n * CN0_FROZEN_ALPHA * CN0_INNOV_CLIP_DB + 1e-9
+        for sv, b in base_before.items():
+            self.assertLessEqual(b - sc.base_cn0[sv], bound, sv)
+            self.assertLess(b - sc.base_cn0[sv], 0.5)
 
     def test_spoofer_uniform_power_clock_and_position_jump(self):
         sc, t = warmed_scorer(self.rng)
@@ -107,12 +113,14 @@ DRAG_ACCEL = 0.5  # m/s^2, the gnss-signal-chain dragoff value
 WARMUP = BASELINE_MIN_EPOCHS + 20
 
 
-def nav_epoch(t, rng, north_m=0.0, east_m=0.0, vn=0.0, ve=0.0, ref=None, clk_extra_ns=0.0):
-    """Navigation-only epoch around (LAT0, LON0); position noise, Doppler velocity, clock without reported drift."""
+def nav_epoch(t, rng, north_m=0.0, east_m=0.0, vn=0.0, ve=0.0, ref=None, clk_extra_ns=0.0, with_vel=True):
+    """Navigation-only epoch around (LAT0, LON0); position noise, Doppler velocity (unless with_vel=False,
+    a receiver that reports none), clock without reported drift."""
     lat = LAT0 + (north_m + rng.gauss(0, POS_NOISE_M)) * DEG_PER_M
     lon = LON0 + (east_m + rng.gauss(0, POS_NOISE_M)) * DEG_PER_M / 0.6157  # cos(52 deg)
+    vel_n, vel_e = vn + rng.gauss(0, VEL_NOISE_MPS), ve + rng.gauss(0, VEL_NOISE_MPS)
     ep = Epoch(t=t, lat=lat, lon=lon, fix_ok=True,
-               vel_n=vn + rng.gauss(0, VEL_NOISE_MPS), vel_e=ve + rng.gauss(0, VEL_NOISE_MPS),
+               vel_n=vel_n if with_vel else None, vel_e=vel_e if with_vel else None,
                clk_bias_ns=1000.0 + 50.0 * t + clk_extra_ns + rng.gauss(0, CLK_NOISE_NS))
     if ref is not None:
         ep.ref_vel_n, ep.ref_vel_e = ref
@@ -131,13 +139,14 @@ class ConsistencyTests(unittest.TestCase):
     def setUp(self):
         self.rng = random.Random(7)
 
-    def drag(self, ref, n=60, accel=DRAG_ACCEL):
+    def drag(self, ref, n=60, accel=DRAG_ACCEL, with_vel=True):
         sc = InterferenceScorer()
-        run(sc, [nav_epoch(float(t), self.rng, ref=ref) for t in range(WARMUP)])
+        run(sc, [nav_epoch(float(t), self.rng, ref=ref, with_vel=with_vel) for t in range(WARMUP)])
         out = []
         for k in range(n):
             d = 0.5 * accel * k * k
-            out.append(sc.assess(nav_epoch(float(WARMUP + k), self.rng, east_m=d, ve=accel * k, ref=ref)))
+            out.append(sc.assess(nav_epoch(float(WARMUP + k), self.rng, east_m=d, ve=accel * k, ref=ref,
+                                           with_vel=with_vel)))
         return out
 
     def test_very_slow_drag_external_reference(self):
@@ -148,21 +157,26 @@ class ConsistencyTests(unittest.TestCase):
         self.assertLessEqual(t - WARMUP, 60)
 
     def test_slow_drag_cv_prior(self):
-        res = self.drag(ref=None)
+        res = self.drag(ref=None, with_vel=False)
         t = first_hit(res, "pos_drift")
         self.assertIsNotNone(t)
         self.assertLessEqual(t - WARMUP, 15)
         self.assertFalse(any(x.detector in ("position_jump", "clock_jump") for a in res for x in a.alerts))
 
     def test_slow_drag_external_reference_faster(self):
-        cv = first_hit(self.drag(ref=None), "pos_drift")
+        cv = first_hit(self.drag(ref=None, with_vel=False), "pos_drift")
         self.rng = random.Random(7)
         res = self.drag(ref=(0.0, 0.0))
         ext = min(first_hit(res, "pos_drift"), first_hit(res, "vel_mismatch"))
         self.assertLess(ext, cv)
 
+    def test_coherent_drag_invisible_to_doppler_reference(self):
+        # documented limit: position and Doppler moved together look like real motion without an external reference
+        res = self.drag(ref=None, with_vel=True)
+        self.assertIsNone(first_hit(res, "pos_drift"))
+
     def test_alarm_has_no_silent_epochs_during_drag(self):
-        res = self.drag(ref=None)
+        res = self.drag(ref=None, with_vel=False)
         start = next(i for i, a in enumerate(res) if a.alarm.active)
         self.assertTrue(all(a.alarm.active for a in res[start:]))
         self.assertIn("pos_drift", res[-1].alarm.causes)
@@ -282,14 +296,19 @@ class LostFixAndAlarmTests(unittest.TestCase):
         res = [sc.assess(Epoch(t=t + k, fix_ok=False)) for k in range(3 * CLEAR_EPOCHS)]
         self.assertTrue(all(a.alarm.active for a in res))
 
-    def test_baseline_frozen_while_alarm_latched(self):
+    def test_baseline_frozen_by_power_evidence_not_by_other_alarms(self):
         sc, t = warmed_scorer(self.rng)
         ep = clean_epoch(t, self.rng)
         ep.spoof_det_state = 2
         sc.assess(ep)
         n = sc.clean_epochs
-        sc.assess(clean_epoch(t + 1, self.rng))
-        self.assertEqual(sc.clean_epochs, n)
+        a = sc.assess(clean_epoch(t + 1, self.rng))
+        self.assertTrue(a.alarm.active)
+        self.assertEqual(sc.clean_epochs, n + 1)  # a spoofing-flag alarm does not stale the C/N0 baseline
+        ep = clean_epoch(t + 2, self.rng)
+        ep.cn0 = {sv: c - 15.0 for sv, c in ep.cn0.items()}
+        sc.assess(ep)
+        self.assertEqual(sc.clean_epochs, n + 1)  # jamming evidence does
 
     def test_acknowledge_clears_and_reanchors(self):
         sc, t = warmed_scorer(self.rng)

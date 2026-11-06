@@ -106,6 +106,14 @@ python3 make_fixture.py && python3 replay.py --data fixtures --labels fixtures/l
 
 ## Results
 
+Two scorer revisions. **Before** = `scorer.py` at git `dae8229`, the revision this sample was
+built against; its five result files are kept in `results/before_dae8229/`. **Now** = the
+reworked scorer (2026-11-06) that fixes findings 1-3 and adds an ephemeris check (finding on
+SPP below); `results/*.json` hold the re-run. `replay.py` itself is unchanged; with the new
+scorer `--baseline-max-score` only moves the alarm clear threshold, so D equals C apart from
+alarm-clear timing. Per-detector TP/FP tables with a tune/holdout split, and the ephemeris
+check on these logs, are in the [monitor's real-data evaluation](../gnss-interference-monitor/README.md#real-data-evaluation-jammertest-2024).
+
 Ran 2026-11-06: replay on Python 3.14.7 (stdlib), RTKLIB demo5 v2.5.1 in Docker.
 
 Columns: `yes T s` = first non-clean verdict T seconds after the logged start (negative = before
@@ -113,44 +121,50 @@ it; alerts count from max(start - 300 s, previous window end)); `L` = an alarm w
 latched at the logged start, so T says little; `%` = share of window epochs with a non-clean
 verdict; then the top 2 detectors by alerting epochs.
 
-| Test (UTC) | Attack | A as shipped | C pos_drift off | D = C + baseline what-if | Receiver NMEA fix |
-|---|---|---|---|---|---|
-| 1.10.6a 08:12-08:28 d10 | drive past 3 parked multi-band jammers (0.4-1 W) | yes -299 L (100%) pos_drift, cn0_drop | yes 226 (1%) lost_fix | yes 226 (1%) lost_fix | moving, no truth |
-| 1.10.6b 08:32-08:48 | same, all 3 on | yes -212 L (99%) | yes 567 L (0%) cn0_rise, position_jump | yes 556 (6%) cn0_drop, position_jump | " |
-| 1.10.6c 09:09-09:24 | same, antennas flat | yes -299 L (100%) | yes 222 L (1%) | yes 193 (8%) cn0_drop, lost_fix | " |
-| 1.10.6d 09:26-09:42 | same | yes -100 L (95%) | yes 543 L (1%) | yes 533 (3%) cn0_drop, cn0_uniform | " |
-| 1.10.3 12:05-12:27 d10 | start beside dual-band jammer S2.4, drive away | yes 368 (40%) pos_drift, cn0_rise | yes 368 (9%) cn0_drop | yes 368 (14%) cn0_drop, cn0_uniform | " |
-| 1.10.4 12:30-12:58 | same, H6.5 1-1.6 W | yes -131 L (88%) | yes -129 L (16%) | yes -131 (25%) cn0_drop, cn0_uniform | " |
-| 2.6.1a 08:06-08:16 d11 | spoofer M1.1 in a car, ~1 min on | yes -275 L (87%) | yes 1 (52%) cn0_drop | yes 1 (52%) cn0_drop | 0.8 m median, 1.1 m max (stationary) |
-| 2.6.2 08:59-09:22 | spoofer, fixed spoofed position, no initial jamming | yes -220 (99%) cn0_drop, pos_drift | yes -220 (89%) cn0_drop | yes -220 (89%) cn0_drop | 1.1 / 1.3 m (stationary part) |
-| 2.6.3 09:51-10:07 | spoofer moving, "sea spoofing" | yes -299 L (100%) | yes 1 (29%) cn0_drop | yes 1 (100%) cn0_drop | 0.5 / 0.7 m (first 3 min) |
-| **0.0.1 10:11-10:23** | **quiet** | **yes -207 L (98%) pos_drift** | **no** | **no** | driving |
-| 2.6.1b 10:30-10:51 | spoofer, motorcade stationary | yes -299 L (100%) | **no** | yes 0 (100%) cn0_drop | 1.6 / 3.2 m |
-| 0.3.1a 12:46-13:10 d11 | jammer H3.2 in the convoy | yes -100 L (99%) | yes 1 (23%) cn0_drop | yes 1 (26%) cn0_drop | moving |
-| 0.3.1b 13:16-13:45 | H6.5 in the convoy | yes -299 L (97%) | yes 244 (10%) | yes -256 (86%) cn0_drop, cn0_uniform | " |
-| 0.3.1c 13:52-14:16 | stationary demo H3.2 | yes -299 L (84%) | yes 257 L (29%) | yes -2 L (52%) cn0_drop, lost_fix | " |
-| 0.3.1d 14:50-15:02 | passes H3.2 at varying speed | yes -126 L (93%) | yes -126 (9%) cn0_drop | yes -126 (9%) cn0_drop | " |
-| 0.3.1e 15:06-15:22 | H6.5 **with L1 switched off** | yes -191 L (94%) | **no** | yes 21 (0%, 5 epochs) cn0_drop | " |
-| 0.3.1f 15:28-15:51 | 3 fixed jammers on the route | yes -299 L (96%) | yes -1 L (18%) | yes -1 L (26%) cn0_drop, lost_fix | " |
-| 2.4.2* 07:10-07:35 d12 | time offset +15 min, power ramp | yes 990 (26%) pos_drift, lost_fix | yes 1154 (12%) lost_fix, cn0_rise | yes 1154 (12%) lost_fix, cn0_rise | 1.3 m median, **1288 m max**, no fix in 12% of the logged part |
-| 2.4.3* 07:50-08:05 | time offset -3 min, power jump | yes 101 L (81%) pos_drift, cn0_drop | **no** | **no** | 2.1 / 8.7 m |
-| 2.4.12 08:20-08:35 | static, pseudorange ramp 9 ns/s | yes 6 L (99%) cn0_drop | **no** | yes 6 (99%) cn0_drop | 3.7 / 6.8 m |
-| 2.4.13 08:50-09:05 | jamming then spoofing, ramp | yes 24 (98%) lost_fix, clock_jump | same | same | fix in 2.5% of the window, 79.5 / 258 m |
+| Test (UTC) | Attack | A before | C before (pos_drift off) | A now | B now (static ref, d12) | Receiver NMEA fix |
+|---|---|---|---|---|---|---|
+| 1.10.6a 08:12-08:28 d10 | drive past 3 parked multi-band jammers (0.4-1 W) | yes -299 L (100%) pos_drift, cn0_drop | yes 226 (1%) lost_fix | yes 159 (12%) cn0_step, cn0_drop | = A | moving, no truth |
+| 1.10.6b 08:32-08:48 | same, all 3 on | yes -212 L (99%) | yes 567 L (0%) cn0_rise, position_jump | yes 417 (18%) cn0_step, cn0_drop | = A | " |
+| 1.10.6c 09:09-09:24 | same, antennas flat | yes -299 L (100%) | yes 222 L (1%) | yes 182 (35%) cn0_step, cn0_drop | = A | " |
+| 1.10.6d 09:26-09:42 | same | yes -100 L (95%) | yes 543 L (1%) | yes 521 (9%) cn0_step, cn0_drop | = A | " |
+| 1.10.3 12:05-12:27 d10 | start beside dual-band jammer S2.4, drive away | yes 368 (40%) pos_drift, cn0_rise | yes 368 (9%) cn0_drop | yes 365 (20%) cn0_step, cn0_drop | = A | " |
+| 1.10.4 12:30-12:58 | same, H6.5 1-1.6 W | yes -131 L (88%) | yes -129 L (16%) | yes -131 (76%) cn0_step, cn0_drop | = A | " |
+| 2.6.1a 08:06-08:16 d11 | spoofer M1.1 in a car, ~1 min on | yes -275 L (87%) | yes 1 (52%) cn0_drop | yes 1 (52%) cn0_step, cn0_drop | = A | 0.8 m median, 1.1 m max (stationary) |
+| 2.6.2 08:59-09:22 | spoofer, fixed spoofed position, no initial jamming | yes -220 (99%) cn0_drop, pos_drift | yes -220 (89%) cn0_drop | yes -220 (100%) cn0_step, cn0_drop | = A | 1.1 / 1.3 m (stationary part) |
+| 2.6.3 09:51-10:07 | spoofer moving, "sea spoofing" | yes -299 L (100%) | yes 1 (29%) cn0_drop | yes 1 (100%) cn0_step, cn0_drop | = A | 0.5 / 0.7 m (first 3 min) |
+| **0.0.1 10:11-10:23** | **quiet** | **yes -207 L (98%) pos_drift** | **no** | **no** | **no** | driving |
+| 2.6.1b 10:30-10:51 | spoofer, motorcade stationary | yes -299 L (100%) | **no** | yes 0 (100%) cn0_drop, cn0_step | = A | 1.6 / 3.2 m |
+| 0.3.1a 12:46-13:10 d11 | jammer H3.2 in the convoy | yes -100 L (99%) | yes 1 (23%) cn0_drop | yes 1 (100%) cn0_step, cn0_drop | = A | moving |
+| 0.3.1b 13:16-13:45 | H6.5 in the convoy | yes -299 L (97%) | yes 244 (10%) | yes -256 (92%) cn0_step, cn0_drop | = A | " |
+| 0.3.1c 13:52-14:16 | stationary demo H3.2 | yes -299 L (84%) | yes 257 L (29%) | yes -2 L (54%) cn0_step, cn0_drop | = A | " |
+| 0.3.1d 14:50-15:02 | passes H3.2 at varying speed | yes -126 L (93%) | yes -126 (9%) cn0_drop | yes -126 (24%) cn0_step, cn0_drop | = A | " |
+| 0.3.1e 15:06-15:22 | H6.5 **with L1 switched off** | yes -191 L (94%) | **no** | yes -175 (2%) cn0_step, cn0_drop | = A | " |
+| 0.3.1f 15:28-15:51 | 3 fixed jammers on the route | yes -299 L (96%) | yes -1 L (18%) | yes -1 L (49%) cn0_step, cn0_drop | = A | " |
+| 2.4.2* 07:10-07:35 d12 | time offset +15 min, power ramp | yes 990 (26%) pos_drift, lost_fix | yes 1154 (12%) lost_fix, cn0_rise | yes 742 (60%) cn0_step, pos_drift | = A | 1.3 m median, **1288 m max**, no fix in 12% of the logged part |
+| 2.4.3* 07:50-08:05 | time offset -3 min, power jump | yes 101 L (81%) pos_drift, cn0_drop | **no** | yes 8 (99%) cn0_step, cn0_drop | = A | 2.1 / 8.7 m |
+| 2.4.12 08:20-08:35 | static, pseudorange ramp 9 ns/s | yes 6 L (99%) cn0_drop | **no** | yes -2 L (100%) cn0_step, cn0_drop | = A | 3.7 / 6.8 m |
+| 2.4.13 08:50-09:05 | jamming then spoofing, ramp | yes 24 (98%) lost_fix, clock_jump | same | yes 24 (98%) lost_fix, cn0_rise | yes 24 (99%) | fix in 2.5% of the window, 79.5 / 258 m |
 
 \* label from the shifted plan. 2.4.13: the log starts 08:50:23, 15 s after the logged start.
 Static reference for day 12 = median receiver fix more than 120 s from every window (spread:
 0.4 m median, 1.7 m max on `Test_1`); day 11 stationary spans use the clean minutes just before.
+"= A": same cell as A now (B differs from A only on the static day-12 files). C now and D now
+equal A now in every attack slot (the new `pos_drift` only fires alongside C/N0 detectors there).
 
 Alarm time outside labelled windows ("no logged test", **not guaranteed quiet**):
 
-| File | Hours | A as shipped | C | D |
-|---|---|---|---|---|
-| d10 07:32-10:42 (2 Hz, driving) | 1.59 | 2 raises, alarm 86% of the time (pos_drift, lost_fix) | 1 raise, 52% (cn0_rise sub-alerts keep it latched) | 2 raises, 25% (lost_fix, cn0_drop) |
-| d11 morning | 0.93 | 2 raises, 34% (pos_drift) | 0 | 0 |
-| d11 afternoon 1 | 0.45 | 1 raise, 7% | 0 raises, 24% | 1 raise, 7% |
-| d10 test 2, d11 afternoon 2 | 0.28 | 0 | 0 | 0 |
-| d12 07:17-08:45 (static) | 0.25 | 2 raises, 100% (pos_drift) | 0 raises, 34% (latched from 2.4.2) | 0 |
-| d12 08:50-10:12 (unlogged plan tests) | 1.03 | 0 raises, 100% | 0 raises, 93% | 5 raises, 13% (cn0_drop, lost_fix) |
+| File | Hours | A before | A now (= C, D now) | B now | F now (SPP clock) |
+|---|---|---|---|---|---|
+| d10 07:32-10:42 (2 Hz, driving) | 1.59 | 2 raises, alarm 86% of the time (pos_drift, lost_fix) | 4 raises, 28% (cn0_step, lost_fix) | = A | n/a |
+| d11 morning | 0.93 | 2 raises, 34% (pos_drift) | 1 raise, 7% (cn0_step) | = A | 4 raises, 91% (clock_drift, cn0_rise) |
+| d11 afternoon 1 | 0.45 | 1 raise, 7% | 1 raise, 8% (cn0_step, cn0_drop) | = A | n/a |
+| d10 test 2, d11 afternoon 2 | 0.28 | 0 | 0 | 0 | n/a |
+| d12 07:17-08:45 (static) | 0.25 | 2 raises, 100% (pos_drift) | 0 | 0 | 0 raises, 100% (clock_drift) |
+| d12 08:50-10:12 (unlogged plan tests) | 1.03 | 0 raises, 100% (pos_drift, cn0_rise) | 6 raises, 11% (cn0_step, cn0_drop) | 4 raises, 98% (pos_drift, cn0_rise) | 0 raises, 100% (clock_drift) |
+
+B on day-12 `Test_2` stays on through 09:05-10:12 where the receiver fix wanders up to 2834 m
+during unlogged plan tests (external static reference; plausibly real, see finding 1). F, the
+RTKLIB SPP clock as input, is as noisy as before (finding 6).
 
 ### RTKLIB SPP during the attacks
 
@@ -172,7 +186,11 @@ right for the same span.
 With the navigation data **the receiver itself decoded** (`convbin -n`, the default path), the
 day-12 SPP median error is 276 km in every window and 2.6.1a's is 38.6 km: the spoofers'
 synthetic ephemerides end up in the RINEX nav file and poison solutions even for real signals.
-Use an independent ephemeris source when post-processing data that may contain spoofing.
+Use an independent ephemeris source when post-processing data that may contain spoofing. The
+monitor's `ephemeris_check.py` now does this on the fly: it decodes the GPS subframes in these logs
+(0 parity failures) and flags SVs whose decoded orbit/clock disagrees with IGS BRDC; spoofer
+ephemerides (276 km to 53 000 km off) show up in 7 of the 8 spoofing slots and never on the
+jamming-only days ([evaluation](../gnss-interference-monitor/README.md#real-data-evaluation-jammertest-2024)).
 
 ## Findings
 
@@ -184,6 +202,10 @@ Use an independent ephemeris source when post-processing data that may contain s
    (variant B) pos_drift raised no alarm in the 0.25 h outside windows on `Test_1` and did not fire on
    2.4.3 or 2.4.12, where the receiver fix moved at most 8.7 m; on `Test_2` it stays on through
    09:05-10:12, where the fix wanders up to 2834 m during unlogged plan tests (plausibly real).
+   **Status (2026-11-06): fixed in the scorer.** Without an external reference `pos_drift` now
+   compares the fix with the receiver's own reported velocity over 10 s windows; the quiet
+   window reads 0 % and pos_drift false-alert epochs fell from 10220 to 275 over all no-logged-test
+   time. Cost: a drag that moves position and Doppler together needs an external reference.
 2. **Baseline lock-out (scorer defect, found on real data, reproduced in the fixture).**
    `cn0_rise` has weight 0.3: above `BASELINE_MAX_SCORE` (0.2) but under the 0.5 alert threshold.
    After C/N0 recovers from a slow decline the baseline is still low, `cn0_rise` fires, the verdict
@@ -192,12 +214,17 @@ Use an independent ephemeris source when post-processing data that may contain s
    undetected. With the threshold at 0.3 (variant D, runtime override only) they are detected at
    0-21 s. A fix in `scorer.py` could exclude `cn0_rise` from the learning gate or let the baseline
    decay toward the current sky after N clean verdicts; not changed here (another sample owns it).
+   **Status: fixed in the scorer.** Spoofing sub-alerts no longer stop baseline learning, a frozen
+   baseline still learns upward at full rate and downward at a bounded rate, and the baseline is
+   per SV with clipped innovations; 2.6.1b, 2.4.12 and 0.3.1e are detected without the what-if.
 3. **Staircase power evades `cn0_drop`.** 2.4.3 lowered the median C/N0 by 2-6 dB per step over
    07:50:02-07:50:16 (42 => 30 dB-Hz); each step is under the 6 dB rule and the EWMA baseline
    (alpha 0.1) follows. The 08:00:18 step (31 => 18 dB-Hz median) hit fewer than 75 % of the SVs by
    6 dB, so it also stayed clean. Missed in every variant except where pos_drift or SPP clock alarms
    were already on. The synthetic jamming episode was a single step, so the unit tests never covered
    this.
+   **Status: fixed in the scorer.** `cn0_step`, a CUSUM on the median per-SV C/N0 deviation
+   (and `agc_step` on AGC), catches 2.4.3 8 s after the plan-shifted start.
 4. **Spoofing showed up as a C/N0 drop, not a rise, and the receiver was rarely captured.** In the
    2.6.x motorcade spoofing tests the u-blox kept its true position (stationary error <= 3.2 m) while
    the field notes say the test car's own navigation was spoofed; every detection was `cn0_drop`,
@@ -218,6 +245,8 @@ Use an independent ephemeris source when post-processing data that may contain s
 
 ### Synthetic prediction vs real
 
+As found with the scorer at `dae8229` (rows 3 and 6 are what the rework addressed):
+
 | Synthetic claim (gnss-interference-monitor README) | Real Jammertest 2024 replay |
 |---|---|
 | Jamming detected at onset by cn0_drop + AGC + jamInd (score 1.0) | No AGC/jamInd in these logs (no MON-RF; MON-SPAN only on day 10, unused). In D, 19 of 20 attack slots raised an alert and cn0_drop (alone it reaches exactly the 0.5 threshold) was among the alerting detectors in 17; onset times are relative to coarse slots |
@@ -235,9 +264,11 @@ python3 -m unittest -v test_real_attack_replay.py
 
 13 tests on the synthetic VAARA-shaped stream (`make_fixture.py`, built in memory): framing with
 binary `$` bytes and a truncated trailing frame, L1/SBAS selection, the time axis across a +900 s
-jump and a no-time gap, the four replay findings (staircase missed in C and D, step drop missed in C
-and caught in D, time jump => `clock_jump` only with the receiver-time clock, quiet window clean in
-A/B/D), static fix error, and the SPP `.pos`/`$CLK` readers.
+jump and a no-time gap, the replay findings (staircase now caught by `cn0_step` in C and D, step
+drop after recovery now caught in C without the baseline what-if; both were missed with the scorer
+at `dae8229`; time jump => `clock_jump` only with the receiver-time clock, quiet window clean in
+A/B/D), static fix error, and the SPP `.pos`/`$CLK` readers. With the reworked scorer the two
+tests that pinned the old defects were rewritten to pin the fixes.
 Observed 2026-11-06: `/opt/homebrew/bin/python3` (3.14.7, no packages) `Ran 13 tests OK (skipped=1)`;
 venv with pyubx2 1.4.1 (Python 3.13) `Ran 13 tests OK`. Mutation check (each alone, on a copy):
 `MAX_STEP_S = 5000` fails 3 tests, dropping the baseline override fails 1, GPS L1 signal id "5"
