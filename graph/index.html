@@ -37,6 +37,9 @@ const REPO_BASE = "../";
 let G, network, data;
 fetch("graph.json").then(r => r.json()).then(g => { G = g; init(); });
 
+const LAYOUT_ITERATIONS = 200;
+const SEARCH_DEBOUNCE_MS = 250;
+function setInfo(t) { const el = document.getElementById("info"); if (!el.querySelector("h2")) el.textContent = t; }
 function color(k) { return COLORS[k] || RES_COLOR; }
 function size(n) { return n.kind === "concept" ? 28 : n.kind === "sample" ? 16 : 8 + Math.min(14, Math.log10((n.stars || 1)) * 3); }
 
@@ -44,7 +47,8 @@ function init() {
   const sel = document.getElementById("concept");
   G.nodes.filter(n => n.kind === "concept").sort((a,b)=>a.label.localeCompare(b.label))
     .forEach(c => sel.add(new Option(c.label, c.id)));
-  ["q","concept","kind"].forEach(id => document.getElementById(id).addEventListener("input", render));
+  let t;
+  ["q","concept","kind"].forEach(id => document.getElementById(id).addEventListener("input", () => { clearTimeout(t); t = setTimeout(render, SEARCH_DEBOUNCE_MS); }));
   render();
 }
 
@@ -64,11 +68,25 @@ function render() {
     G.edges.forEach(e => { if (keep.has(e.source) && keep.has(e.target)) { used.add(e.source); used.add(e.target); } });
     G.nodes.forEach(n => { if (n.kind === "concept" && !used.has(n.id) && n.id !== focus) keep.delete(n.id); });
   }
-  const nodes = G.nodes.filter(n => keep.has(n.id)).map(n => ({ id:n.id, label: n.kind === "concept" || n.kind === "sample" ? n.label : "", title:n.label, color:color(n.kind), size:size(n), shape:"dot", font:{ color:getComputedStyle(document.body).color } }));
+  const fg = getComputedStyle(document.body).color;
+  const nodes = G.nodes.filter(n => keep.has(n.id)).map(n => ({ id:n.id, label: n.kind === "concept" || n.kind === "sample" ? n.label : "", title:n.label, color:color(n.kind), size:size(n), shape:"dot", font:{ color:fg } }));
   const edges = G.edges.filter(e => keep.has(e.source) && keep.has(e.target)).map(e => ({ from:e.source, to:e.target, color:{ opacity:0.25 }, title:e.rel }));
   data = { nodes:new vis.DataSet(nodes), edges:new vis.DataSet(edges) };
   if (network) network.destroy();
-  network = new vis.Network(document.getElementById("net"), data, { physics:{ solver:"forceAtlas2Based", stabilization:{ iterations:150 } }, interaction:{ hover:true } });
+  // Lay out once, then freeze: continuous physics on ~1.6k nodes / 8.6k edges kept the page at a few fps.
+  // Straight edges avoid vis's hidden per-edge support nodes; edges hide while dragging/zooming.
+  network = new vis.Network(document.getElementById("net"), data, {
+    layout:{ improvedLayout:false },
+    physics:{ solver:"forceAtlas2Based", forceAtlas2Based:{ gravitationalConstant:-60, springLength:80 },
+              stabilization:{ iterations:LAYOUT_ITERATIONS, updateInterval:50 } },
+    edges:{ smooth:false, width:0.5 },
+    interaction:{ hover:false, hideEdgesOnDrag:true, hideEdgesOnZoom:true, tooltipDelay:200 },
+  });
+  setInfo(`Laying out ${nodes.length} nodes...`);
+  network.once("stabilizationIterationsDone", () => {
+    network.setOptions({ physics:false });
+    setInfo(`${nodes.length} nodes, ${edges.length} edges. Click a node for details.`);
+  });
   network.on("click", p => p.nodes.length && show(p.nodes[0]));
 }
 
