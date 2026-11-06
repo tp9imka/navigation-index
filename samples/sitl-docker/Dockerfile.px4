@@ -1,0 +1,22 @@
+# Headless PX4 SITL with SIH (simulation-in-hardware): physics runs inside PX4, no Gazebo, no GUI.
+# Multi-stage: a plain Ubuntu builder (the official px4io/px4-dev image is ~11 GB on disk
+# because it carries the NuttX toolchains) and a small runtime with only bin/ and etc/.
+FROM ubuntu:24.04 AS build
+ARG PX4_TAG=v1.17.0
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        git ca-certificates cmake ninja-build g++ make python3 python3-pip python3-dev \
+        python3-venv rsync zip file \
+    && rm -rf /var/lib/apt/lists/*
+RUN git clone --depth 1 --branch ${PX4_TAG} --recurse-submodules --shallow-submodules \
+        https://github.com/PX4/PX4-Autopilot.git /PX4-Autopilot
+WORKDIR /PX4-Autopilot
+RUN pip3 install --no-cache-dir --break-system-packages -r Tools/setup/requirements.txt
+RUN make px4_sitl_default
+
+FROM ubuntu:24.04
+COPY --from=build /PX4-Autopilot/build/px4_sitl_default/bin /px4/bin
+COPY --from=build /PX4-Autopilot/build/px4_sitl_default/etc /px4/etc
+COPY px4-entrypoint.sh /usr/local/bin/px4-entrypoint.sh
+EXPOSE 14540/udp 14550/udp
+ENTRYPOINT ["/usr/local/bin/px4-entrypoint.sh"]

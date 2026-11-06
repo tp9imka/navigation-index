@@ -31,6 +31,7 @@ ICRA 2025 extension of STHN that adds uncertainty estimation to satellite-therma
 - [Satellite-thermal geo-localization](../repos/arplaboratory__satellite-thermal-geo-localization.md) (same_org)
 - [STHN](../repos/arplaboratory__sthn.md) (same_org)
 - [UASTHN: Uncertainty-Aware Deep Homography Estimation for UAV Satellite-Thermal Geo-localization](../resources/uasthn-uncertainty-thermal-2025.md) (has_code)
+- [Integrity monitoring for alt-PNT: solution-separation FDE, protection levels and a Stanford diagram](../samples/altpnt-integrity.md) (explains)
 
 _Indexed by lane(s): alt-nav_
 

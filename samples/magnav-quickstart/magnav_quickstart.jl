@@ -1,7 +1,7 @@
 # MagNav quickstart: SGL 2020 challenge flight -> Tolles-Lawson -> EKF vs anomaly map.
 #
-# Unverified sketch (Julia was not available when this was written). Function names
-# follow MagNav.jl v1.3.5 examples/pluto_sgl.jl and src/ exports.
+# Ran with Julia 1.11.9 and MagNav.jl v1.3.5 in the julia:1.11 Docker image (see README).
+# Follows MagNav.jl examples/pluto_sgl.jl.
 #
 # Usage (needs examples/dataframes/*.csv from a MagNav.jl clone):
 #   julia --project=. magnav_quickstart.jl /path/to/MagNav.jl/examples
@@ -53,7 +53,8 @@ ins = get_ins(xyz, ind; N_zero_ll = 1)
 map_val += (xyz.diurnal + xyz.igrf)[ind]  # map holds anomaly only; add core (IGRF) + diurnal
 
 println("map - mag std [nT]: uncompensated $(round(std(map_val - mag_1_uc), digits=2)), " *
-        "Tolles-Lawson $(round(std(map_val - mag_1_c), digits=2))")
+        "Tolles-Lawson $(round(std(map_val - mag_1_c), digits=2)), " *
+        "SGL-compensated $(round(std(map_val - xyz.mag_1_c[ind]), digits=2))")
 
 (P0, Qd, R) = create_model(traj.dt, traj.lat[1];
                            init_pos_sigma = 0.1,

@@ -12,6 +12,11 @@ Actively maintained fork of tetra3 with speed and robustness improvements, used 
 
 **Hackathon notes:** pip install cedar-solve. Keeps tetra3's API but is not quite drop-in: follow the repo's migration notes when porting tetra3 code.
 
+## Deep dives
+
+- [_index-round3](../../docs/integration-cards/_index-round3.md) (integration-cards)
+- [smroid__cedar-solve](../../docs/integration-cards/smroid__cedar-solve.md) (integration-cards)
+
 **Concepts:** [Celestial and star-tracker navigation](../concepts/celestial-nav.md)
 
 **Tags:** `star-tracker`, `tetra3-fork`

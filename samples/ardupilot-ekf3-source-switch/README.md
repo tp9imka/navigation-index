@@ -13,25 +13,27 @@ time so you can see what the EKF thinks of its own position.
 
 | Repo | Why |
 |---|---|
-| `repo:ardupilot/ardupilot` | ArduCopter firmware, SITL, `sim_vehicle.py`, the vicon simulator, EKF3. |
+| `repo:ardupilot/ardupilot` | ArduCopter firmware, SITL, the vicon simulator, EKF3. |
 | `repo:ardupilot/pymavlink` | MAVLink client used by `source_switch.py`. |
-| `repo:ardupilot/mavproxy` | GCS that `sim_vehicle.py` starts (`--console --map`). |
+| `repo:ardupilot/mavproxy` | Optional GCS if you start SITL with `sim_vehicle.py --console --map` instead of Docker. |
 | `repo:mavlink/mavlink` | `ardupilotmega.xml` defines `EKF_STATUS_REPORT` (193), `EKF_STATUS_FLAGS`, `MAV_CMD_SET_EKF_SOURCE_SET` (42007). |
 
 ## Files
 
 - `ekf_flags.py` - stdlib decoder for `EKF_STATUS_REPORT` flags and variances.
 - `test_ekf_flags.py` - 6 unit tests.
-- `source_switch.py` - pymavlink flight script (sketch, needs SITL).
+- `source_switch.py` - pymavlink flight script. `--setup` writes the parameters and
+  reboots; the second run flies. `--no-switch` is the contrast run (GPS cut, no source
+  switch). Writes a CSV with flags, variances, GPS fix type and local north/east.
 
 ## Prerequisites
 
-- An ArduPilot checkout with the SITL toolchain, set up per the ArduPilot wiki
-  "Setting up SITL on Linux" (`Tools/environment_install/install-prereqs-ubuntu.sh -y`).
-- `pip install pymavlink` (already present after install-prereqs).
-- Python 3.10+. Only `ekf_flags.py` and its tests run on the stdlib alone.
+- Docker, for the SITL: `samples/sitl-docker` builds ArduCopter `Copter-4.6.3` headless
+  (no `sim_vehicle.py`, no MAVProxy) with the vicon simulator on SERIAL5.
+- Python 3.10+ with `pymavlink` (ran with pymavlink 2.4.50 on python3.12). Only
+  `ekf_flags.py` and its tests run on the stdlib alone.
 
-## Run the stdlib part (verified)
+## Run the stdlib part
 
 ```sh
 cd samples/ardupilot-ekf3-source-switch
@@ -50,47 +52,98 @@ OK
 0x833f: ATTITUDE | VELOCITY_HORIZ | VELOCITY_VERT | POS_HORIZ_REL | POS_HORIZ_ABS | POS_VERT_ABS | PRED_POS_HORIZ_REL | PRED_POS_HORIZ_ABS | GPS_GLITCHING
 ```
 
-The three flag values are hand-built examples (healthy GPS flight, constant-position
-dead reckoning, GPS glitch), not values captured from SITL.
+The three flag values above are hand-built examples. `0x033f` and `0x00a7` / `0x0025`
+also show up in the real SITL runs below.
 
-## Run the SITL flight (unverified sketch)
+## Run the SITL flight (ran 2026-11-06)
 
-1. Start SITL with the vicon simulator on SERIAL5 (same arguments the autotest
-   `GPSViconSwitching` uses):
+```sh
+docker build -f samples/sitl-docker/Dockerfile.ardupilot -t nav-sitl-ardupilot:copter-4.6.3 samples/sitl-docker
+docker run --rm -d --name ap -p 5760:5760 -p 5762:5762 -p 5763:5763 nav-sitl-ardupilot:copter-4.6.3
 
-   ```sh
-   cd ardupilot/ArduCopter
-   ../Tools/autotest/sim_vehicle.py -v ArduCopter -A "--serial5=sim:vicon:" --console --map
-   ```
+cd samples/ardupilot-ekf3-source-switch
+python3 source_switch.py --connect tcp:127.0.0.1:5762 --setup   # params + reboot
+python3 source_switch.py --connect tcp:127.0.0.1:5762            # fly, ~100 s
+```
 
-2. In another terminal, write the source-set parameters and reboot:
+Or `docker compose up -d ardupilot` from `samples/sitl-docker`. Recreate the container
+(`docker rm -f ap` + `docker run`) before each flight: a run ends in RTL, and a fresh
+container plus `--setup` is the clean start.
 
-   ```sh
-   python3 samples/ardupilot-ekf3-source-switch/source_switch.py --setup
-   ```
+`SETUP_PARAMS` in `source_switch.py` is the full list. Set 1 = GPS (`EK3_SRC1_POSXY=3`,
+`VELXY=3`, `POSZ=1` baro, `VELZ=3`, `YAW=1` compass), set 2 = ExternalNav
+(`EK3_SRC2_POSXY=6`, `VELXY=6`, `POSZ=1`, `VELZ=6`, `YAW=6`), `EK3_SRC_OPTIONS=0`,
+`RC8_OPTION=90`, `VISO_TYPE=2`, `SERIAL5_PROTOCOL=2`.
 
-   `SETUP_PARAMS` in `source_switch.py` is the full list. Key values: set 1 = GPS
-   (`EK3_SRC1_POSXY=3`, `VELXY=3`, `POSZ=1` baro, `VELZ=3`, `YAW=1` compass), set 2 =
-   ExternalNav (`EK3_SRC2_POSXY=6`, `VELXY=6`, `POSZ=1`, `VELZ=6`, `YAW=6`),
-   `EK3_SRC_OPTIONS=0`, `RC8_OPTION=90`, `VISO_TYPE=2`, `SERIAL5_PROTOCOL=2`.
+Observed (ArduCopter Copter-4.6.3 SITL in Docker on linux/arm64, pymavlink 2.4.50,
+abridged: one EKF line per second, repeated lines cut):
 
-3. When MAVProxy shows the vehicle back up, fly:
+```
+command MAV_CMD_SET_MESSAGE_INTERVAL => MAV_RESULT_ACCEPTED   (x4)
+command MAV_CMD_SET_EKF_SOURCE_SET => MAV_RESULT_ACCEPTED
+  STATUSTEXT: Arm: AHRS: waiting for home        (16 pre-arm refusals over ~25 s, also
+  STATUSTEXT: Arm: Gyros inconsistent             "Accels inconsistent" and
+  STATUSTEXT: Arm: VisOdom: yaw diff 10.8 deg (>10)   while SITL settles)
+  STATUSTEXT: EKF3 IMU0 origin set
+  STATUSTEXT: VisOdom: yaw shifted 2 to 355 deg
+  STATUSTEXT: Arming motors
+armed
+command MAV_CMD_NAV_TAKEOFF => MAV_RESULT_ACCEPTED
+  [gps] gps_fix=6 ne=(0.0,-0.0) flags=0x033f pos=abs vel=0.01(good) pos_h=0.00(good) pos_v=0.00(good) mag=0.02(good)
+command MAV_CMD_SET_EKF_SOURCE_SET => MAV_RESULT_ACCEPTED
+param SIM_GPS_DISABLE = 1
+  [extnav-no-gps] gps_fix=1 ne=(0.3,-0.0) flags=0x033f pos=abs vel=0.06(good) pos_h=0.02(good) pos_v=0.00(good) mag=0.03(good)
+  [extnav-no-gps] gps_fix=1 ne=(8.1,-0.0) flags=0x033f pos=abs vel=0.06(good) pos_h=0.01(good) pos_v=0.00(good) mag=0.02(good)
+  [extnav-no-gps] gps_fix=1 ne=(15.5,0.0) flags=0x033f pos=abs vel=0.01(good) pos_h=0.00(good) pos_v=0.00(good) mag=0.02(good)
+  [extnav-no-gps] gps_fix=1 ne=(15.0,-0.0) flags=0x033f pos=abs vel=0.01(good) pos_h=0.00(good) pos_v=0.00(good) mag=0.02(good)
+param SIM_GPS_DISABLE = 0
+  [gps-back-extnav] gps_fix=6 ne=(15.0,-0.0) flags=0x033f pos=abs vel=0.01(good) pos_h=0.00(good) pos_v=0.00(good) mag=0.02(good)
+command MAV_CMD_SET_EKF_SOURCE_SET => MAV_RESULT_ACCEPTED
+  [gps-restored] gps_fix=6 ne=(15.0,-0.0) flags=0x033f pos=abs vel=0.01(good) pos_h=0.00(good) pos_v=0.00(good) mag=0.00(good)
+RTL commanded; EKF log written to ekf_status_log.csv
+```
 
-   ```sh
-   python3 samples/ardupilot-ekf3-source-switch/source_switch.py
-   # or use the RC aux switch path instead of the MAVLink command:
-   python3 samples/ardupilot-ekf3-source-switch/source_switch.py --switch-via rc
-   ```
+How to read it: `gps_fix=1` is GPS_RAW_INT "no fix" after `SIM_GPS_DISABLE=1` (this is
+4.6, so the script fell back from `SIM_GPS1_ENABLE`). With source set 2 the EKF keeps
+`POS_HORIZ_ABS` (flags `0x033f`) and all normalized variances stay under 0.1 for the
+whole 30 s, and the copter flies the 15 m north leg and holds it. The CSV had 330 rows
+(51 gps, 152 extnav-no-gps, 51 gps-back-extnav, 76 gps-restored at 5 Hz). No
+"using external nav" STATUSTEXT appeared on the in-flight source switch; that text was
+seen only at EKF start (see `samples/vio-to-mavlink-bridge`).
 
-The script connects on `tcp:127.0.0.1:5762` (SITL SERIAL1) so it does not fight
-MAVProxy for port 5760.
+### Contrast run: GPS cut without the source switch
 
-Expected (not observed here): MAVProxy prints `EKF3 IMU0 is using external nav data`
-after the switch (that text is in `libraries/AP_NavEKF3/AP_NavEKF3_Control.cpp`), the
-vehicle stays in GUIDED and flies the north leg with GPS off, and the CSV
-`ekf_status_log.csv` shows variances staying below 0.5 in the `extnav-no-gps` phase.
-For a contrast run, skip the source switch (comment out `v.set_source_set(2, via)`):
-the EKF should lose `POS_HORIZ_ABS` and the vehicle fall into an EKF or GPS failsafe.
+```sh
+python3 source_switch.py --connect tcp:127.0.0.1:5762 --no-switch --log ekf_noswitch.csv
+```
+
+Observed (same setup, fresh container, abridged):
+
+```
+param SIM_GPS_DISABLE = 1
+  [gps-only-no-gps] gps_fix=1 ne=(0.7,0.0) flags=0x033f pos=abs ...
+  [gps-only-no-gps] gps_fix=1 ne=(15.3,0.0) flags=0x033f pos=abs ...
+  [gps-only-no-gps] gps_fix=1 ne=(15.4,0.0) flags=0x0025 pos=NONE ...
+  [gps-only-no-gps] STATUSTEXT: EKF variance
+  [gps-only-no-gps] STATUSTEXT: EKF Failsafe: changed to LAND Mode
+  [gps-only-no-gps] STATUSTEXT: EKF3 IMU0 stopped aiding
+  [gps-only-no-gps] gps_fix=1 ne=(14.5,0.2) flags=0x00a7 pos=NONE ...
+  [gps-only-no-gps] STATUSTEXT: SmartRTL deactivated: bad position
+param SIM_GPS_DISABLE = 0
+  [gps-back] STATUSTEXT: EKF3 IMU0 is using GPS
+  [gps-back] STATUSTEXT: Disarming motors
+  [gps-back] STATUSTEXT: EKF Failsafe Cleared
+  [gps-back] gps_fix=6 ne=(17.3,-2.1) flags=0x033f pos=abs ...
+```
+
+On GPS only, the EKF coasts for ~6 s (position still flagged absolute while it dead
+reckons), then drops horizontal position (`0x0025`, later `0x00a7` = CONST_POS_MODE),
+the EKF failsafe switches to LAND, and the copter lands and disarms. When GPS returns
+the local position jumps from (14.5, 0.2) to (17.3, -2.1): about 3.6 m of
+dead-reckoning error the EKF had not reported. The variance fields stayed "good" the
+whole time, so watch the flags, not only the variances.
+
+Not run: `--switch-via rc` (RC8 aux switch path).
 
 ## How the two switch paths work
 
@@ -135,5 +188,10 @@ works on real hardware.
   boot; without GPS you must send `SET_GPS_GLOBAL_ORIGIN` first.
 - The variance values in `EKF_STATUS_REPORT` are normalized test ratios, not m^2;
   the 0.5 / 0.8 thresholds come from the comment in `ardupilotmega.xml`.
-- `EKF_STATUS_REPORT` is requested explicitly with `MAV_CMD_SET_MESSAGE_INTERVAL`, so
-  the script does not depend on `SRn_EXTRA3` stream rates.
+- pymavlink requests no telemetry streams. The first version of this script waited for
+  `GLOBAL_POSITION_INT` that never came on SERIAL1; it now requests every message it
+  reads with `MAV_CMD_SET_MESSAGE_INTERVAL`.
+- Arming fails for ~20-30 s after SITL boot. `arducopter_arm()` + `motors_armed_wait()`
+  from pymavlink sends once and then blocks forever; `Vehicle.arm()` retries and prints
+  the pre-arm reasons.
+- `Arm: Logging failed` in Docker means the Docker VM disk is full.

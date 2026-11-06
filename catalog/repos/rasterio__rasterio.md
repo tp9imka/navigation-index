@@ -34,6 +34,7 @@ Pythonic raster I/O on top of GDAL: read/write GeoTIFF and COG, windowed reads, 
 - [GDAL](../repos/osgeo__gdal.md) (integrates_with)
 - [pystac-client](../repos/stac-utils__pystac-client.md) (integrates_with)
 - [Copernicus DEM on AWS Open Data](../resources/copernicus-dem-aws.md) (uses)
+- [License-clean drone frame to orthophoto geolocalization (ALIKED / DISK / SIFT + LightGlue)](../samples/geoloc-license-clean.md) (uses)
 - [Terrain-relative navigation with a particle filter](../samples/terrain-relative-nav-pf.md) (uses)
 - [Drone frame to orthophoto geolocalization with LightGlue](../samples/visual-geolocalization-lightglue.md) (uses)
 

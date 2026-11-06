@@ -14,6 +14,7 @@ ROS 2 integration examples for ArduPilot, including Cartographer-based non-GPS n
 
 ## Deep dives
 
+- [_index-round3](../../docs/integration-cards/_index-round3.md) (integration-cards)
 - [ardupilot__ardupilot_ros](../../docs/integration-cards/ardupilot__ardupilot_ros.md) (integration-cards)
 
 **Concepts:** [ROS / ROS 2 robotics middleware](../concepts/ros.md), [LiDAR odometry and SLAM](../concepts/lidar-slam.md), [Autopilots and flight control](../concepts/autopilot.md)

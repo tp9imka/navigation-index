@@ -34,6 +34,7 @@ Asyncio Python client for MAVSDK that wraps a bundled mavsdk_server.
 - [MAVLinkMCP](../repos/ion-g-ion__mavlinkmcp.md) (depends_on)
 - [MAVSDK](../repos/mavlink__mavsdk.md) (integrates_with)
 - [PX4 SITL GPS denial: inject, measure drift, recover](../samples/px4-sitl-gps-denial.md) (uses)
+- [Headless SITL in Docker: ArduCopter and PX4 SIH with one compose file](../samples/sitl-docker.md) (uses)
 
 _Indexed by lane(s): autopilots_
 

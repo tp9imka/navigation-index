@@ -22,6 +22,10 @@ Photogrammetry toolkit that turns aerial images into orthophotos, point clouds, 
 
 - depends_on: [GDAL](../repos/osgeo__gdal.md)
 
+## Referenced by
+
+- [License-clean drone frame to orthophoto geolocalization (ALIKED / DISK / SIFT + LightGlue)](../samples/geoloc-license-clean.md) (explains)
+
 _Indexed by lane(s): planning-gis-c2_
 
 _GitHub metadata fetched 2026-11-06._

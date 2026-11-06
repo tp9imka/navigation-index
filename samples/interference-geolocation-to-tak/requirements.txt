@@ -1,0 +1,5 @@
+# Stdlib only: geo.py, kraken.py, scenario.py, triangulate.py, tak_out.py, locate.py (--method ls)
+# Stone Soup estimators (--method pf|ukf|all); version that was run:
+stonesoup==1.9.1
+# Optional, only for kraken.listen_ws() on a live KrakenSDR in "Kraken Pro Local" mode (not run):
+# websockets

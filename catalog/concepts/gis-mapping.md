@@ -6,8 +6,9 @@ Map engines, tiles, DEMs, orthophotos, coordinate systems, geodesy.
 
 **Sub-concepts:** [Geodesy and coordinate frames](../concepts/geodesy.md)
 
-## Samples (1)
+## Samples (2)
 
+- [License-clean drone frame to orthophoto geolocalization (ALIKED / DISK / SIFT + LightGlue)](../samples/geoloc-license-clean.md) - Drone frame => NAIP orthophoto => lat/lon using only permissively licensed parts: ALIKED (BSD-3), DISK and LightGlue weights (Apache-2.0), OpenCV SIFT and MAGSAC (Apache-2.0), rasterio, public-domain NAIP from Microsoft 
 - [Terrain-relative navigation with a particle filter](../samples/terrain-relative-nav-pf.md) - A stdlib-only simulation of TERCOM/TRN: an aircraft with a biased INS and a radar altimeter matches its measured terrain profile against a seeded synthetic DEM with a particle filter that also estimates the INS velocity 
 
 ## Repositories (42)

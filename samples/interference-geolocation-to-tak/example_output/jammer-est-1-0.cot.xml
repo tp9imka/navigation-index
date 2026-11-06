@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event version="2.0" type="a-u-G" uid="jammer-est-1" how="m-f" time="2026-11-06T07:32:00.646Z" start="2026-11-06T07:32:00.646Z" stale="2026-11-06T07:42:00.646Z"><point lat="52.0799904" lon="5.1202001" hae="0.00" ce="20.0" le="9999999.0" /><detail><contact callsign="GNSS-JAM est" /><remarks>GNSS interference source estimate (ls, 789/900 bearings). 95% ellipse 49 x 33 m.</remarks></detail></event>

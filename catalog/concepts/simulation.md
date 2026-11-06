@@ -4,11 +4,12 @@
 
 Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simulators.
 
-## Samples (3)
+## Samples (4)
 
-- [ArduPilot EKF3 source-set switch under GPS denial](../samples/ardupilot-ekf3-source-switch.md) - Flies ArduCopter SITL on GPS, switches EKF3 to an external-nav source set (SITL vicon) with MAV_CMD_SET_EKF_SOURCE_SET or an RC aux switch, cuts simulated GPS, keeps flying, then restores it.
+- [ArduPilot EKF3 source-set switch under GPS denial](../samples/ardupilot-ekf3-source-switch.md) - Flies ArduCopter SITL on GPS, switches EKF3 to an external-nav source set (SITL vicon) with MAV_CMD_SET_EKF_SOURCE_SET, cuts simulated GPS, flies a 15 m leg, then restores it.
 - [GNSS/INS EKF through a GNSS outage and a spoofing walk-off](../samples/gnss-ins-ekf-outage.md) - A stdlib-only 2D loosely-coupled GNSS/INS EKF (8 states, hand-written matrix helpers) on a synthetic vehicle with biased, noisy 100 Hz IMU and 1 Hz GNSS.
-- [PX4 SITL GPS denial: inject, measure drift, recover](../samples/px4-sitl-gps-denial.md) - Flies a square mission in PX4 SITL (Gazebo gz_x500), turns the GPS off mid-mission with MAVSDK failure injection, logs EKF2 health and estimated vs ground-truth position, then restores GPS and returns home.
+- [Headless SITL in Docker: ArduCopter and PX4 SIH with one compose file](../samples/sitl-docker.md) - Dockerfiles and a compose file that run ArduCopter 4.6.3 SITL (with a simulated vicon for ExternalNav) and PX4 v1.17.0 SIH quadrotor without Gazebo or a GUI, plus a Python client image with pymavlink and mavsdk-grpc that
+- [PX4 SITL GPS denial: inject, measure drift, recover](../samples/px4-sitl-gps-denial.md) - Flies a square mission in PX4 SITL (SIH quadrotor, headless; Gazebo also works per PX4 docs), denies GPS mid-mission, logs EKF2 health and estimated vs ground-truth position, then restores GPS and returns home.
 
 ## Repositories (74)
 

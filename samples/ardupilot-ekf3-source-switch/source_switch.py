@@ -27,6 +27,7 @@ RC_PWM_FOR_SET = {1: 1000, 2: 1500, 3: 2000}  # RCx_OPTION=90: low / mid / high
 RC_IGNORE = 65535
 POSITION_ONLY_MASK = 0b110111111000  # ignore velocity, accel, yaw, yaw rate
 TIMEOUT_S = 60.0
+ARM_RETRY_S = 2.0
 
 SETUP_PARAMS = {
     # From Tools/autotest/arducopter.py GPSViconSwitching and the ArduPilot
@@ -70,6 +71,24 @@ class Vehicle:
         result_name = mavutil.mavlink.enums["MAV_RESULT"][result].name if ack else "no ACK"
         print(f"command {name} => {result_name}")
         return result == mavutil.mavlink.MAV_RESULT_ACCEPTED
+
+    def arm(self):
+        """Retries until pre-arm checks pass (they fail for a while after boot)."""
+        deadline = time.time() + TIMEOUT_S
+        while time.time() < deadline:
+            self.m.mav.command_long_send(self.m.target_system, self.m.target_component,
+                                         mavutil.mavlink.MAV_CMD_COMPONENT_ARM_DISARM,
+                                         0, 1, 0, 0, 0, 0, 0, 0)
+            retry_at = time.time() + ARM_RETRY_S
+            while time.time() < retry_at:
+                msg = self.m.recv_match(type=["STATUSTEXT", "HEARTBEAT"], blocking=True,
+                                        timeout=0.5)
+                if msg and msg.get_type() == "STATUSTEXT":
+                    print(f"  STATUSTEXT: {msg.text}")
+                if self.m.motors_armed():
+                    print("armed")
+                    return
+        raise TimeoutError("arming")
 
     def get_param(self, name):
         self.m.mav.param_request_read_send(self.m.target_system, self.m.target_component,
@@ -151,7 +170,7 @@ def wait_for(v, predicate, what):
     raise TimeoutError(what)
 
 
-def fly(v, via, log_path):
+def fly(v, via, log_path, switch=True):
     # pymavlink requests no streams, so ask for every message this script reads.
     for msg_id in (EKF_STATUS_REPORT_ID, GLOBAL_POSITION_INT_ID, GPS_RAW_INT_ID,
                    LOCAL_POSITION_NED_ID):
@@ -160,8 +179,7 @@ def fly(v, via, log_path):
     wait_for(v, ekf_flags.has_absolute_position, "EKF absolute position before arming")
 
     v.m.set_mode("GUIDED")
-    v.m.arducopter_arm()
-    v.m.motors_armed_wait()
+    v.arm()
     v.command(mavutil.mavlink.MAV_CMD_NAV_TAKEOFF, 0, 0, 0, 0, 0, 0, TAKEOFF_ALT_M)
     while True:
         pos = v.m.recv_match(type="GLOBAL_POSITION_INT", blocking=True, timeout=TIMEOUT_S)
@@ -176,15 +194,16 @@ def fly(v, via, log_path):
                    ["gps_fix", "north_m", "east_m"])
         log_phase(v, w, "gps", PHASE_GPS_S)
 
-        v.set_source_set(2, via)
+        if switch:
+            v.set_source_set(2, via)
         set_sim_gps(v, enabled=False)
         v.m.mav.set_position_target_local_ned_send(
             0, v.m.target_system, v.m.target_component, mavutil.mavlink.MAV_FRAME_LOCAL_NED,
             POSITION_ONLY_MASK, LEG_NORTH_M, 0, -TAKEOFF_ALT_M, 0, 0, 0, 0, 0, 0, 0, 0)
-        log_phase(v, w, "extnav-no-gps", PHASE_DENIED_S)
+        log_phase(v, w, "extnav-no-gps" if switch else "gps-only-no-gps", PHASE_DENIED_S)
 
         set_sim_gps(v, enabled=True)
-        log_phase(v, w, "gps-back-extnav", PHASE_GPS_S)
+        log_phase(v, w, "gps-back-extnav" if switch else "gps-back", PHASE_GPS_S)
         v.set_source_set(1, via)
         log_phase(v, w, "gps-restored", PHASE_RESTORED_S)
 
@@ -199,6 +218,8 @@ def main():
     p.add_argument("--switch-via", choices=("cmd", "rc"), default="cmd",
                    help="MAV_CMD_SET_EKF_SOURCE_SET or RC8 aux switch (RC8_OPTION=90)")
     p.add_argument("--log", default="ekf_status_log.csv")
+    p.add_argument("--no-switch", action="store_true",
+                   help="contrast run: cut GPS but stay on source set 1")
     args = p.parse_args()
 
     v = Vehicle(args.connect)
@@ -209,7 +230,7 @@ def main():
         v.command(mavutil.mavlink.MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN, 1)
         print("rebooting; rerun without --setup once SITL is back")
         return
-    fly(v, args.switch_via, args.log)
+    fly(v, args.switch_via, args.log, switch=not args.no_switch)
 
 
 if __name__ == "__main__":

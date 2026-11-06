@@ -77,6 +77,7 @@ Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, buil
 - [PX4 Autopilot YouTube channel](../resources/px4-youtube-channel.md) (uses)
 - [PX4 state estimation update (PX4 Developer Summit Virtual 2020)](../resources/riseborough-px4-state-estimation-2020.md) (explains)
 - [PX4 SITL GPS denial: inject, measure drift, recover](../samples/px4-sitl-gps-denial.md) (uses)
+- [Headless SITL in Docker: ArduCopter and PX4 SIH with one compose file](../samples/sitl-docker.md) (uses)
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) (uses)
 
 _Indexed by lane(s): autopilots_

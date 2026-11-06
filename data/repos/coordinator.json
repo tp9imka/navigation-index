@@ -1,0 +1,18 @@
+[
+ {
+  "id": "repo:luxonis/depthai-core",
+  "kind": "repo",
+  "name": "DepthAI Core",
+  "url": "https://github.com/luxonis/depthai-core",
+  "summary": "C++ core library and Python bindings for Luxonis OAK cameras: on-device stereo depth, neural inference and feature tracking pipelines.",
+  "why_it_matters": "OAK cameras give a small UAS or UGV onboard stereo depth and feature tracking without a GPU, a cheap input for VIO and obstacle avoidance when GNSS is gone.",
+  "concepts": ["concept:edge-ai", "concept:vio"],
+  "tags": ["oak", "stereo", "depth", "python", "c++"],
+  "language": "C++",
+  "domains": ["air", "ground"],
+  "maturity": "production",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "The luxonis/depthai repo is a placeholder; real code and examples live here. Needs OAK hardware.",
+  "related": [{"id": "repo:luxonis/depthai", "rel": "same_org"}]
+ }
+]

@@ -4,9 +4,11 @@
 
 Matching UAV/ground imagery to satellite orthophotos or maps for absolute position without GNSS.
 
-## Samples (1)
+## Samples (3)
 
 - [Drone frame to orthophoto geolocalization with LightGlue](../samples/visual-geolocalization-lightglue.md) - Matches a nadir drone frame against a georeferenced satellite or orthophoto tile with SuperPoint + LightGlue, fits a MAGSAC homography with OpenCV, and maps the frame centre through the GeoTIFF geotransform to lat/lon.
+- [Integrity monitoring for alt-PNT: solution-separation FDE, protection levels and a Stanford diagram](../samples/altpnt-integrity.md) - A stdlib-only simulated UAV flight with INS, VIO-like velocity, intermittent visual-geolocalization fixes (repetitive-texture outliers, map-misregistration bias, dropouts over water), optional coarse MagNav-like fixes an
+- [License-clean drone frame to orthophoto geolocalization (ALIKED / DISK / SIFT + LightGlue)](../samples/geoloc-license-clean.md) - Drone frame => NAIP orthophoto => lat/lon using only permissively licensed parts: ALIKED (BSD-3), DISK and LightGlue weights (Apache-2.0), OpenCV SIFT and MAGSAC (Apache-2.0), rasterio, public-domain NAIP from Microsoft 
 
 ## Repositories (50)
 

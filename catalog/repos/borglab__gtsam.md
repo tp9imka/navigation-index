@@ -51,6 +51,7 @@ Georgia Tech factor-graph library for smoothing and mapping, with incremental so
 - [Shield AI Hivemind autonomy stack](../resources/shield-ai-hivemind.md) (alternative_to)
 - [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook.md) (explains)
 - [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook.md) (uses)
+- [Integrity monitoring for alt-PNT: solution-separation FDE, protection levels and a Stanford diagram](../samples/altpnt-integrity.md) (explains)
 - [GNSS/INS EKF through a GNSS outage and a spoofing walk-off](../samples/gnss-ins-ekf-outage.md) (explains)
 
 _Indexed by lane(s): ins-fusion_

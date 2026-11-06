@@ -26,6 +26,7 @@ MATLAB implementation of classic receiver autonomous integrity monitoring (fault
 
 - [MAAST for ARAIM](../repos/stanford-gps-lab__maast_for_araim_2.md) (alternative_to)
 - [Navipedia - ESA GNSS encyclopedia](../resources/navipedia.md) (explains)
+- [Integrity monitoring for alt-PNT: solution-separation FDE, protection levels and a Stanford diagram](../samples/altpnt-integrity.md) (explains)
 
 _Indexed by lane(s): gnss_
 

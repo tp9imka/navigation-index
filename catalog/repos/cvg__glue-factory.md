@@ -25,6 +25,7 @@ Training library for local feature detection and matching (trains LightGlue and 
 ## Referenced by
 
 - [LightGlue](../repos/cvg__lightglue.md) (same_org)
+- [License-clean drone frame to orthophoto geolocalization (ALIKED / DISK / SIFT + LightGlue)](../samples/geoloc-license-clean.md) (explains)
 
 _Indexed by lane(s): alt-nav_
 

@@ -25,6 +25,7 @@ Stanford GPS Lab MATLAB toolset that evaluates Advanced RAIM availability and pr
 ## Referenced by
 
 - [RAIM (MATLAB)](../repos/michaelbeechan__raim.md) (alternative_to)
+- [Integrity monitoring for alt-PNT: solution-separation FDE, protection levels and a Stanford diagram](../samples/altpnt-integrity.md) (explains)
 
 _Indexed by lane(s): gnss_
 

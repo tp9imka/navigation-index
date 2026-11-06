@@ -9,6 +9,7 @@ import argparse
 import csv
 import json
 import math
+import os
 import sys
 import time
 
@@ -120,6 +121,9 @@ def main(argv=None):
             print(json.dumps(out))
         return 0
 
+    # ODOMETRY (id 331) exists only in the MAVLink 2 dialect, which pymavlink loads
+    # when MAVLINK20 is set before import.
+    os.environ.setdefault("MAVLINK20", "1")
     from pymavlink import mavutil  # imported late so --dry-run works without it
 
     conn = mavutil.mavlink_connection(

@@ -12,6 +12,11 @@ ROS framework for sensor fusion as factor-graph optimization: plugin sensor mode
 
 **Hackathon notes:** Use the fuse tutorials or the ROSCon UK 2025 workshop Docker image; plugin config in YAML. Ceres dependency builds slowly.
 
+## Deep dives
+
+- [_index-round3](../../docs/integration-cards/_index-round3.md) (integration-cards)
+- [locusrobotics__fuse](../../docs/integration-cards/locusrobotics__fuse.md) (integration-cards)
+
 **Concepts:** [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md), [Ground vehicle autonomy](../concepts/ground-vehicle-nav.md)
 
 **Tags:** `factor-graph`, `ceres`, `fixed-lag`, `ros2`

@@ -12,6 +12,11 @@ Galileo E1-B/E5b signal simulator with OSNMA authentication data embedded, confi
 
 **Hackathon notes:** Use file sink output into GNSS-SDR plus OSNMAlib for a full authenticate-or-alarm pipeline without RF. Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.
 
+## Deep dives
+
+- [_index-round3](../../docs/integration-cards/_index-round3.md) (integration-cards)
+- [haiyang-wong__osnma-sdr-sim](../../docs/integration-cards/haiyang-wong__osnma-sdr-sim.md) (integration-cards)
+
 **Concepts:** [GNSS positioning](../concepts/gnss.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Simulation and HIL/SITL](../concepts/simulation.md), [Jamming and spoofing](../concepts/gnss-interference.md)
 
 **Tags:** `osnma`, `galileo`, `usrp`, `simulator`

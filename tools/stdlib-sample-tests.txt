@@ -5,3 +5,5 @@ px4-sitl-gps-denial
 vio-to-mavlink-bridge
 visual-geolocalization-lightglue
 gnss-rinex-processing
+altpnt-integrity
+interference-geolocation-to-tak

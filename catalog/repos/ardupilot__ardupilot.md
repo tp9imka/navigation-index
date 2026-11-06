@@ -85,6 +85,7 @@ GPL autopilot covering Copter, Plane (incl. QuadPlane VTOL), Rover, boats and Ar
 - [MAVLink Mission Protocol](../resources/mavlink-mission-protocol.md) (uses)
 - [Developer Unconference - Paul Riseborough (EKF)](../resources/riseborough-ardupilot-unconference-2017-ekf.md) (explains)
 - [ArduPilot EKF3 source-set switch under GPS denial](../samples/ardupilot-ekf3-source-switch.md) (uses)
+- [Headless SITL in Docker: ArduCopter and PX4 SIH with one compose file](../samples/sitl-docker.md) (uses)
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) (uses)
 
 _Indexed by lane(s): autopilots, domains-swarm_

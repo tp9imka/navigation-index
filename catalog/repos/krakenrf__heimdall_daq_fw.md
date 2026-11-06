@@ -12,6 +12,11 @@ Coherent multichannel SDR acquisition chain (sync, calibration, decimation) unde
 
 **Hackathon notes:** Installed as part of the KrakenSDR image; modify only if building custom DSP.
 
+## Deep dives
+
+- [_index-round3](../../docs/integration-cards/_index-round3.md) (integration-cards)
+- [krakenrf__heimdall_daq_fw](../../docs/integration-cards/krakenrf__heimdall_daq_fw.md) (integration-cards)
+
 **Concepts:** [RF localization and direction finding](../concepts/rf-localization.md), [Sensor calibration](../concepts/calibration.md)
 
 **Tags:** `sdr`, `coherent`, `daq`

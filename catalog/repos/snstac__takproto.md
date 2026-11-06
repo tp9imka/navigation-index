@@ -14,6 +14,7 @@ Encode and decode TAK protobuf (TAK Protocol v1) packets, including mesh and str
 
 ## Deep dives
 
+- [_index-round3](../../docs/integration-cards/_index-round3.md) (integration-cards)
 - [snstac__takproto](../../docs/integration-cards/snstac__takproto.md) (integration-cards)
 
 **Concepts:** [Situational awareness and C2 interop](../concepts/situational-awareness.md), [Standards and interface specs](../concepts/standards.md)

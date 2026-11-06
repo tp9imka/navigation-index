@@ -29,6 +29,7 @@ Landing repository for Luxonis OAK cameras, which run neural networks and stereo
 
 ## Referenced by
 
+- [DepthAI Core](../repos/luxonis__depthai-core.md) (same_org)
 - [DepthAI ROS](../repos/luxonis__depthai-ros.md) (depends_on)
 
 _Indexed by lane(s): gap-fill_

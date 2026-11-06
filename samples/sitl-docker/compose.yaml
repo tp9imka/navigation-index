@@ -1,0 +1,36 @@
+# One-command headless SITL for the navigation-index samples.
+#   docker compose up -d ardupilot     # ArduCopter 4.6.3, TCP 5760/5762/5763, vicon on SERIAL5
+#   docker compose up -d px4           # PX4 v1.17.0 SIH quadrotor, MAVLink over UDP
+#   docker compose run --rm client ... # Python client (pymavlink, mavsdk-grpc) inside px4's network namespace
+services:
+  ardupilot:
+    build:
+      context: .
+      dockerfile: Dockerfile.ardupilot
+    image: nav-sitl-ardupilot:copter-4.6.3
+    ports:
+      - "5760:5760"
+      - "5762:5762"
+      - "5763:5763"
+
+  px4:
+    build:
+      context: .
+      dockerfile: Dockerfile.px4
+    image: nav-sitl-px4:v1.17.0
+    environment:
+      PX4_SIM_MODEL: sihsim_quadx
+
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    image: nav-sitl-client:latest
+    profiles: ["client"]
+    # PX4 SITL only talks MAVLink on localhost, so the client shares px4's network stack.
+    # ArduPilot is still reachable as tcp:ardupilot:5762 through the compose network.
+    network_mode: "service:px4"
+    depends_on: [px4]
+    volumes:
+      - ..:/samples
+    working_dir: /samples

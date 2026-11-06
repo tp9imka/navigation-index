@@ -4,9 +4,10 @@
 
 Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 
-## Samples (1)
+## Samples (2)
 
 - [Drone frame to orthophoto geolocalization with LightGlue](../samples/visual-geolocalization-lightglue.md) - Matches a nadir drone frame against a georeferenced satellite or orthophoto tile with SuperPoint + LightGlue, fits a MAGSAC homography with OpenCV, and maps the frame centre through the GeoTIFF geotransform to lat/lon.
+- [License-clean drone frame to orthophoto geolocalization (ALIKED / DISK / SIFT + LightGlue)](../samples/geoloc-license-clean.md) - Drone frame => NAIP orthophoto => lat/lon using only permissively licensed parts: ALIKED (BSD-3), DISK and LightGlue weights (Apache-2.0), OpenCV SIFT and MAGSAC (Apache-2.0), rasterio, public-domain NAIP from Microsoft 
 
 ## Repositories (32)
 

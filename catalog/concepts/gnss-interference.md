@@ -6,11 +6,12 @@ GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-
 
 **Parent:** [GNSS positioning](../concepts/gnss.md)
 
-## Samples (3)
+## Samples (4)
 
 - [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../samples/gnss-interference-monitor.md) - A stdlib heuristic scorer turns per-epoch receiver telemetry (C/N0 across SVs, AGC, CW jamming indicator, clock and position jumps, receiver spoofing/jamming flags) into jamming and spoofing scores with stated reasons.
 - [GNSS jammer geolocation from DF bearings to TAK](../samples/interference-geolocation-to-tak.md) - Locates a GNSS interference source from KrakenSDR-style direction-of-arrival bearings taken at two fixed sites and one moving vehicle, with noise and multipath outliers.
 - [GNSS/INS EKF through a GNSS outage and a spoofing walk-off](../samples/gnss-ins-ekf-outage.md) - A stdlib-only 2D loosely-coupled GNSS/INS EKF (8 states, hand-written matrix helpers) on a synthetic vehicle with biased, noisy 100 Hz IMU and 1 Hz GNSS.
+- [Integrity monitoring for alt-PNT: solution-separation FDE, protection levels and a Stanford diagram](../samples/altpnt-integrity.md) - A stdlib-only simulated UAV flight with INS, VIO-like velocity, intermittent visual-geolocalization fixes (repetitive-texture outliers, map-misregistration bias, dropouts over water), optional coarse MagNav-like fixes an
 
 ## Repositories (28)
 

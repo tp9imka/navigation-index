@@ -6,11 +6,12 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 
 **Sub-concepts:** [Visual SLAM](../concepts/visual-slam.md)
 
-## Samples (1)
+## Samples (2)
 
+- [Integrity monitoring for alt-PNT: solution-separation FDE, protection levels and a Stanford diagram](../samples/altpnt-integrity.md) - A stdlib-only simulated UAV flight with INS, VIO-like velocity, intermittent visual-geolocalization fixes (repetitive-texture outliers, map-misregistration bias, dropouts over water), optional coarse MagNav-like fixes an
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) - Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold.
 
-## Repositories (65)
+## Repositories (66)
 
 - [ArduPilot](../repos/ardupilot__ardupilot.md) - fit: high - GPL autopilot covering Copter, Plane (incl.
 - [PX4 Autopilot](../repos/px4__px4-autopilot.md) - fit: high - Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, built on NuttX with a uORB pub/sub middleware.
@@ -43,6 +44,7 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [GICI-LIB](../repos/chichengcn__gici-open.md) - fit: medium - GNSS/INS/Camera integrated navigation library supporting a range of GNSS modes (SPP, RTK, PPP and variants) tightly fused with inertial and visual data via factor graph optimization.
 - [COVINS / COVINS-G](../repos/v4rl-ucy__covins.md) - fit: medium - Centralized collaborative visual-inertial SLAM where agents run VIO and a server merges maps; COVINS-G is VIO-front-end agnostic.
 - [OKVIS2-X](../repos/ethz-mrl__okvis2-x.md) - fit: medium - Extension of OKVIS2 that can additionally use dense depth or LiDAR and fuse GNSS.
+- [DepthAI Core](../repos/luxonis__depthai-core.md) - fit: medium - C++ core library and Python bindings for Luxonis OAK cameras: on-device stereo depth, neural inference and feature tracking pipelines.
 - [GVINS dataset](../repos/hkust-aerial-robotics__gvins-dataset.md) - fit: medium - Dataset with synchronized visual, inertial and raw GNSS measurements released with GVINS.
 - [OKVIS2](../repos/ethz-mrl__okvis2.md) - fit: medium - Keyframe-based visual-inertial SLAM with loop closure and a realtime scalable factor-graph design; second generation of OKVIS.
 - [NTU VIRAL dataset](../repos/ntu-aris__ntu_viral_dataset.md) - fit: medium - Site repo for NTU VIRAL, an aerial dataset with lidars, cameras, IMU and UWB ranging from a drone.

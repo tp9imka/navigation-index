@@ -2,9 +2,9 @@
 
 `sample:vio-to-mavlink-bridge` - code and walkthrough in [samples/vio-to-mavlink-bridge](../../samples/vio-to-mavlink-bridge/)
 
-Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold. The frame conversion (ENU/FLU to NED/FRD, world to body velocity, MAVLink covariance layout) is a stdlib module with unit tests, and the pymavlink sender is a thin sketch on top.
+Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold. The frame conversion (ENU/FLU to NED/FRD, world to body velocity, MAVLink covariance layout) is a stdlib module with unit tests, and the pymavlink sender plus small set_params / watch_ekf helpers sit on top.
 
-**Verification:** frames.py and test_frames.py ran with python3.14.7 stdlib on 2026-11-06 (8 tests OK), and bridge.py --dry-run ran on example_pose_enu.csv; output shown in README. The pymavlink send path and the SITL parameter recipes are an unverified sketch: syntax-checked only, requires pymavlink and a PX4 or ArduPilot SITL.
+**Verification:** Ran on 2026-11-06: frames.py tests (8 OK) and --dry-run on python3.14.7; the pymavlink ODOMETRY path ran against ArduCopter 4.6.3 SITL (EKF3 'is using external nav data', flags 0x033f) and PX4 v1.17.0 SIH (estimator_status_flags cs_ev_pos/cs_ev_hgt/cs_ev_yaw/cs_ev_vel True), both in Docker from samples/sitl-docker with pymavlink 2.4.50. Only a stationary pose was streamed; no flight on vision was tested. --msg vpe not run.
 
 **Concepts:** [Visual(-inertial) odometry](../concepts/vio.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md), [Autopilots and flight control](../concepts/autopilot.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
 

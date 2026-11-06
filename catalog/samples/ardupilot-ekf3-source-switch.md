@@ -2,9 +2,9 @@
 
 `sample:ardupilot-ekf3-source-switch` - code and walkthrough in [samples/ardupilot-ekf3-source-switch](../../samples/ardupilot-ekf3-source-switch/)
 
-Flies ArduCopter SITL on GPS, switches EKF3 to an external-nav source set (SITL vicon) with MAV_CMD_SET_EKF_SOURCE_SET or an RC aux switch, cuts simulated GPS, keeps flying, then restores it. EKF_STATUS_REPORT is logged throughout, decoded by a stdlib module with unit tests.
+Flies ArduCopter SITL on GPS, switches EKF3 to an external-nav source set (SITL vicon) with MAV_CMD_SET_EKF_SOURCE_SET, cuts simulated GPS, flies a 15 m leg, then restores it. A --no-switch contrast run shows the EKF losing position and the EKF failsafe landing the copter. EKF_STATUS_REPORT, GPS fix and local position are logged throughout; the flag decoder is stdlib with unit tests.
 
-**Verification:** ekf_flags.py and test_ekf_flags.py ran with python3.14.7 stdlib on 2026-11-06 (6 tests OK), output shown in README. source_switch.py is an unverified sketch: syntax-checked only, requires pymavlink and ArduPilot SITL (sim_vehicle.py with the vicon simulator); parameter names were checked against ArduPilot master and the ArduPilot-4.6 branch source on 2026-11-06.
+**Verification:** Ran on 2026-11-06 against ArduCopter Copter-4.6.3 SITL in Docker (samples/sitl-docker, linux/arm64) with pymavlink 2.4.50 on python3.12: source switch accepted, EKF kept POS_HORIZ_ABS with GPS fix_type 1 for 30 s and flew the 15 m leg; --no-switch lost position after ~6 s and triggered 'EKF Failsafe: changed to LAND Mode'. Output in README. ekf_flags.py tests (6) pass on python3.14.7. --switch-via rc not run.
 
 **Concepts:** [Autopilots and flight control](../concepts/autopilot.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [Assured / resilient PNT](../concepts/assured-pnt.md), [Simulation and HIL/SITL](../concepts/simulation.md), [MAVLink, ground control and C2 links](../concepts/mavlink-gcs.md)
 

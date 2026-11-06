@@ -6,7 +6,7 @@ Feed an external pose source - a VIO / SLAM estimator, a mocap system, or a CSV 
 into PX4 EKF2 or ArduPilot EKF3 as `VISION_POSITION_ESTIMATE` or `ODOMETRY`, so the
 autopilot can hold position with GPS denied. The part everyone gets wrong is the frame
 conversion, so that part lives in a small stdlib module with unit tests. The MAVLink
-sender is a thin sketch on top.
+sender is a thin layer on top.
 
 ## Repos used
 
@@ -27,17 +27,21 @@ sender is a thin sketch on top.
   body vector in ENU then converting equals converting then rotating in NED.
 - `bridge.py` - replays a CSV `t,x,y,z,qw,qx,qy,qz` (ENU world, FLU body, quaternion
   w-first). `--dry-run` prints converted fields as JSON lines (stdlib only); otherwise
-  sends via pymavlink.
+  sends via pymavlink. It sets `MAVLINK20=1` before importing pymavlink: `ODOMETRY`
+  (id 331) is MAVLink 2 only, and without it pymavlink fails with
+  `'MAVLink' object has no attribute 'odometry_send'` (seen on the first SITL run).
+- `set_params.py` - set parameters over MAVLink and reboot (pymavlink).
+- `watch_ekf.py` - print STATUSTEXT and ArduPilot EKF flags / local position (pymavlink).
 - `example_pose_enu.csv` - 2 s of a 2 m radius circle at 1.5 m altitude, 10 Hz,
   heading tangent to the path, counterclockwise seen from above.
 
 ## Prerequisites
 
 - Python 3.10+ (tested on 3.14.7). Unit tests and `--dry-run` need nothing else.
-- For sending: `pip install pymavlink` (sketch; tested against no particular version)
-  plus a running PX4 or ArduPilot SITL, or a real autopilot.
+- For sending: `pip install pymavlink` (ran with 2.4.50) plus a running PX4 or
+  ArduPilot SITL (`samples/sitl-docker`), or a real autopilot.
 
-## Run (stdlib, verified)
+## Run (stdlib)
 
 ```sh
 cd samples/vio-to-mavlink-bridge
@@ -66,7 +70,7 @@ yaw. Body-frame forward speed is ~1 m/s (radius 2 m x 0.5 rad/s), sideways ~0. T
 row has no previous sample, so velocity is NaN (the JSON line is therefore not strict
 JSON).
 
-## Run against SITL (unverified sketch)
+## Run against SITL (ran 2026-11-06)
 
 The CSV circle is a format demo, not a flyable input: an EKF rejects vision data that
 disagrees with what the IMU sees. For a live check, keep the vehicle on the ground and
@@ -76,49 +80,85 @@ stream a constant pose, then confirm the EKF fuses it.
 python3 -c "print('t,x,y,z,qw,qx,qy,qz'); [print(f'{i/30:.4f},0,0,0,0.7071068,0,0,0.7071068') for i in range(30)]" > still.csv
 ```
 
-That pose is "at origin, facing north" in ENU.
+That pose is "at origin, facing north" in ENU. Both SITLs come from
+`samples/sitl-docker`. `set_params.py` and `watch_ekf.py` are small pymavlink helpers in
+this folder (no MAVProxy needed).
 
-PX4 (`make px4_sitl gz_x500`, see `samples/px4-sitl-gps-denial`). In the `pxh>` shell:
-
-```
-param set EKF2_EV_CTRL 15
-param set EKF2_HGT_REF 3
-param set EKF2_GPS_CTRL 0
-```
-
-Restart SITL, then:
+### ArduPilot (ArduCopter Copter-4.6.3 SITL)
 
 ```sh
-python3 bridge.py still.csv --loop --msg odom --frame frd --connect udpout:127.0.0.1:14580
+docker run --rm -d --name ap -p 5760:5760 -p 5762:5762 -p 5763:5763 nav-sitl-ardupilot:copter-4.6.3
+python3 set_params.py --connect tcp:127.0.0.1:5762 VISO_TYPE=1 EK3_SRC1_POSXY=6 \
+    EK3_SRC1_VELXY=6 EK3_SRC1_POSZ=1 EK3_SRC1_VELZ=6 EK3_SRC1_YAW=6 --reboot
+python3 bridge.py still.csv --loop --msg odom --connect tcp:127.0.0.1:5762 &
+python3 watch_ekf.py --connect tcp:127.0.0.1:5763 --seconds 30
 ```
 
-In `pxh>`: `listener vehicle_visual_odometry` should show the stream, and
-`listener estimator_status_flags` should show `cs_ev_pos: True` once fused.
-`EKF2_EV_CTRL` bits are horizontal position, vertical position, velocity, yaw - check
-the parameter reference for your PX4 version before relying on 15. Port 14580 is the
-PX4 SITL onboard MAVLink port (`ROMFS/px4fmu_common/init.d-posix/px4-rc.mavlink`).
-
-ArduPilot (`sim_vehicle.py -v ArduCopter --console --map`, see
-`samples/ardupilot-ekf3-source-switch`). In MAVProxy:
+Observed (pymavlink 2.4.50, python3.12):
 
 ```
-param set VISO_TYPE 1
-param set EK3_SRC1_POSXY 6
-param set EK3_SRC1_VELXY 6
-param set EK3_SRC1_POSZ 1
-param set EK3_SRC1_VELZ 6
-param set EK3_SRC1_YAW 6
-reboot
+ekf flags=0x00a7 horiz=none CONST_POS_MODE pos_h_var=0.01 local_ned=n/a
+STATUSTEXT: EKF3 IMU0 yaw aligned
+STATUSTEXT: EKF3 IMU0 is using external nav data
+STATUSTEXT: EKF3 IMU0 initial pos NED = 0.0,0.0,-0.0 (m)
+STATUSTEXT: EKF3 IMU1 yaw aligned
+STATUSTEXT: EKF3 IMU1 is using external nav data
+STATUSTEXT: EKF3 IMU1 initial pos NED = 0.0,0.0,-0.0 (m)
+ekf flags=0x033f horiz=abs pos_h_var=0.00 local_ned=(0.00, -0.00, 0.01)
+ekf flags=0x033f horiz=abs pos_h_var=0.00 local_ned=(-0.00, 0.00, 0.01)
 ```
+
+Before the bridge starts, the same watcher shows `PreArm: VisOdom: not healthy` and
+`CONST_POS_MODE`. ArduPilot only accepts `ODOMETRY` with
+`frame_id=MAV_FRAME_LOCAL_FRD` and `child_frame_id=MAV_FRAME_BODY_FRD`
+(`GCS_MAVLINK::handle_odometry` in `libraries/GCS_MAVLink/GCS_Common.cpp`), which is what
+`--frame frd` sends. The SITL GPS stays on here and sets the EKF origin; with no GPS at
+all you must send `SET_GPS_GLOBAL_ORIGIN` first.
+
+### PX4 (v1.17.0, SIH quadrotor)
+
+PX4 SITL only talks MAVLink on localhost, so the bridge runs in a container that shares
+the PX4 network namespace (`client` in `samples/sitl-docker/compose.yaml`). Run from the
+repo root.
 
 ```sh
-python3 bridge.py still.csv --loop --msg odom --connect tcp:127.0.0.1:5762
+docker run -d --name px4 nav-sitl-px4:v1.17.0
+docker exec px4 sh -c 'cd /px4/rootfs && /px4/bin/px4-param set EKF2_EV_CTRL 15 &&
+    /px4/bin/px4-param set EKF2_HGT_REF 3 && /px4/bin/px4-param set EKF2_GPS_CTRL 0'
+docker restart px4
+docker run -d --name px4client --network container:px4 --entrypoint sleep nav-sitl-client:latest infinity
+docker cp samples/vio-to-mavlink-bridge px4client:/vio   # includes still.csv created above
+docker exec -d px4client python /vio/bridge.py /vio/still.csv --loop --msg odom --frame frd \
+    --connect udpout:127.0.0.1:14580
+docker exec px4 sh -c 'cd /px4/rootfs && /px4/bin/px4-listener vehicle_visual_odometry 1 &&
+    /px4/bin/px4-listener estimator_status_flags 1'
 ```
 
-ArduPilot only accepts `ODOMETRY` with `frame_id=MAV_FRAME_LOCAL_FRD` and
-`child_frame_id=MAV_FRAME_BODY_FRD` (`GCS_MAVLINK::handle_odometry` in
-`libraries/GCS_MAVLink/GCS_Common.cpp`), which is what `--frame frd` sends. Watch for
-the GCS message "EKF3 IMU0 is using external nav data".
+Observed (abridged to the relevant fields):
+
+```
+TOPIC: vehicle_visual_odometry
+    position: [0.00000, 0.00000, -0.00000]
+    q: [1.00000, -0.00000, -0.00000, -0.00000] (Roll: 0.0 deg, Pitch: -0.0 deg, Yaw: 0.0 deg)
+    position_variance: [0.00250, 0.00250, 0.00250]
+    pose_frame: 2
+TOPIC: estimator_status_flags
+    cs_tilt_align: True
+    cs_ev_pos: True
+    cs_ev_yaw: True
+    cs_ev_hgt: True
+    cs_ev_vel: True
+    cs_ev_yaw_fault: False
+```
+
+`position_variance` 0.0025 is the default `--pos-std 0.05` squared, and `pose_frame: 2`
+is FRD, so the covariance layout and frame id survived the trip. Params persist across
+`docker restart` (stored in `/px4/rootfs`), not across `docker rm`. `EKF2_EV_CTRL` bits
+are horizontal position, vertical position, velocity, yaw. Port 14580 is the PX4 SITL
+onboard MAVLink port (`ROMFS/px4fmu_common/init.d-posix/px4-rc.mavlink`; SITL prints
+`mode: Onboard ... on udp port 14580 remote port 14540`).
+
+Not tested: `--msg vpe`, a moving pose, flying on vision, `--frame ned`.
 
 ## Feeding it from ROS 2 instead of CSV (sketch)
 

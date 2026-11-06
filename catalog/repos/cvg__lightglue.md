@@ -44,6 +44,7 @@ Fast learned local feature matcher (ICCV 2023) that adapts its depth to pair dif
 - [AnyVisLoc benchmark](../repos/uav-avl__benchmark.md) (evaluated_on)
 - [XFeat](../repos/verlab__accelerated_features.md) (alternative_to)
 - [LightGlue: Local Feature Matching at Light Speed](../resources/lightglue-2023.md) (has_code)
+- [License-clean drone frame to orthophoto geolocalization (ALIKED / DISK / SIFT + LightGlue)](../samples/geoloc-license-clean.md) (uses)
 - [Drone frame to orthophoto geolocalization with LightGlue](../samples/visual-geolocalization-lightglue.md) (uses)
 
 _Indexed by lane(s): alt-nav_

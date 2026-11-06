@@ -1,0 +1,16 @@
+{
+  "id": "sample:interference-geolocation-to-tak",
+  "title": "GNSS jammer geolocation from DF bearings to TAK",
+  "summary": "Locates a GNSS interference source from KrakenSDR-style direction-of-arrival bearings taken at two fixed sites and one moving vehicle, with noise and multipath outliers. A stdlib robust least-squares triangulation (RANSAC + Gauss-Newton + outlier rejection) runs alongside Stone Soup particle filter and UKF estimators; the fix and its 95% error ellipse go out as Cursor-on-Target events (point + u-d-c-e ellipse) so the emitter can be reported on ATAK/WinTAK. An adapter reads the real krakensdr_doa JSON (websocket) and CSV (DOA_value.html) outputs with the bearing convention taken from its source.",
+  "concepts": ["concept:gnss-interference", "concept:rf-localization", "concept:target-tracking", "concept:situational-awareness", "concept:ew-resilience"],
+  "tags": ["jammer", "direction-finding", "doa", "krakensdr", "triangulation", "bearing-only", "stone-soup", "particle-filter", "ukf", "cot", "tak", "error-ellipse"],
+  "related": [
+    {"id": "repo:krakenrf/krakensdr_doa", "rel": "uses"},
+    {"id": "repo:krakenrf/heimdall_daq_fw", "rel": "explains"},
+    {"id": "repo:dstl/stone-soup", "rel": "uses"},
+    {"id": "repo:snstac/pytak", "rel": "explains"},
+    {"id": "repo:brian7704/opentakserver", "rel": "explains"},
+    {"id": "repo:tak-product-center/atak-civ", "rel": "explains"}
+  ],
+  "verified": "Ran 2026-11-06: 11 unittest cases OK with python3.14.7 stdlib (geo, Kraken JSON/CSV parsing incl. HTTP poll against a local server, triangulation, ellipse, CoT build, UDP send to localhost); locate.py --method all ran with Python 3.12.14 + stonesoup 1.9.1 on synthetic data, outputs in README. Not run: a live KrakenSDR, the websocket listener (needs websockets), and rendering of the CoT ellipse on an ATAK/WinTAK client (ellipse angle convention unverified)."
+}

@@ -4,7 +4,7 @@
 
 A Julia walkthrough with MagNav.jl that downloads the public SGL 2020 challenge flight and Ottawa anomaly maps, compensates the scalar magnetometer with Tolles-Lawson on a calibration box, and runs the MagNav EKF against the map, printing INS-only vs EKF error and the CRLB. The README explains why magnetic anomaly navigation resists jamming and spoofing, and where it breaks down (map coverage, altitude, aircraft noise, temporal variation).
 
-**Verification:** unverified sketch: never run, Julia not installed; function names and signatures checked against MagNav.jl v1.3.5 examples and src on 2026-11-06; requires Julia 1.10+, MagNav.jl, CSV.jl, DataFrames.jl and the package's data artifacts.
+**Verification:** Ran on 2026-11-06 in the julia:1.11 Docker image (Julia 1.11.9, linux/arm64) with MagNav.jl v1.3.5, CSV v1.3.0, DataFrames v1.8.2 and FFTA pinned to 0.2.1 (FFTA 0.3.2 breaks precompilation of GlobalSensitivity): EKF DRMS 31.2 m vs INS-only final error 218.8 m on line 1006.08 with map Eastern_395. Output in README. Artifacts downloaded: sgl_2020_train ~563 MB and ottawa_area_maps ~1.2 GB on disk, plus EMAG2 ~0.5 GB pulled during precompile.
 
 ## Deep dives
 

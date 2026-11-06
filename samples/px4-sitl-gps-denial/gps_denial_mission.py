@@ -2,8 +2,12 @@
 """PX4 SITL: fly a square mission, switch the GPS off mid-mission with MAVSDK failure
 injection, log EKF2 health and position vs ground truth, restore GPS, return home.
 
-Requires `pip install mavsdk-grpc` and a running `make px4_sitl gz_x500`.
+Requires `pip install mavsdk-grpc` and a running PX4 SITL (SIH or Gazebo).
 Writes a CSV that drift.py summarizes.
+
+GPS denial: MAV_CMD_INJECT_FAILURE first. PX4 v1.17 SITL does not acknowledge it for
+GPS under SIH (commander's FailureInjector handles motors only), so --deny-via auto
+falls back to SIM_GPS_USED=0, which makes the simulated receiver report no fix.
 """
 import argparse
 import asyncio
@@ -12,7 +16,7 @@ import math
 import time
 
 from mavsdk_grpc import System
-from mavsdk_grpc.failure import FailureType, FailureUnit
+from mavsdk_grpc.failure import FailureError, FailureType, FailureUnit
 from mavsdk_grpc.mission import MissionItem, MissionPlan
 
 import drift
@@ -25,6 +29,8 @@ DEFAULT_DENIAL_S = 15.0
 RECOVERY_TIMEOUT_S = 60.0
 LOG_RATE_HZ = 5.0
 GPS_INSTANCE = 0
+SIM_GPS_SATS_PARAM = "SIM_GPS_USED"
+SIM_GPS_NO_FIX_SATS = 0
 
 
 class FlightLog:
@@ -99,6 +105,24 @@ async def wait_until(aiter_fn, predicate):
             return item
 
 
+async def set_gps(drone, enabled, method, sats_on):
+    """Returns the method that worked: 'failure' or 'sim-param'."""
+    if method in ("auto", "failure"):
+        try:
+            await drone.failure.inject(FailureUnit.SENSOR_GPS,
+                                       FailureType.OK if enabled else FailureType.OFF,
+                                       instance=GPS_INSTANCE)
+            return "failure"
+        except FailureError as exc:
+            if method == "failure":
+                raise
+            print(f"failure injection not available ({exc}); "
+                  f"using {SIM_GPS_SATS_PARAM}")
+    await drone.param.set_param_int(SIM_GPS_SATS_PARAM,
+                                    sats_on if enabled else SIM_GPS_NO_FIX_SATS)
+    return "sim-param"
+
+
 async def run(args):
     drone = System()
     await drone.connect(system_address=args.connect)
@@ -108,6 +132,9 @@ async def run(args):
     home = await wait_until(drone.telemetry.home, lambda p: not math.isnan(p.latitude_deg))
 
     await drone.param.set_param_int("SYS_FAILURE_EN", 1)
+    sats_on = None
+    if args.deny_via != "failure":
+        sats_on = await drone.param.get_param_int(SIM_GPS_SATS_PARAM)
     await drone.mission.set_return_to_launch_after_mission(True)
     await drone.mission.upload_mission(square_mission(home.latitude_deg, home.longitude_deg))
     for setter in (drone.telemetry.set_rate_position, drone.telemetry.set_rate_ground_truth):
@@ -125,14 +152,14 @@ async def run(args):
     await drone.mission.start_mission()
     await wait_until(drone.mission.mission_progress, lambda m: m.current >= DENY_AT_WAYPOINT)
 
-    print(f"-- GPS OFF for {args.denial_s:.0f} s")
+    method = await set_gps(drone, False, args.deny_via, sats_on)
     log.phase = drift.DENIED_PHASE
-    await drone.failure.inject(FailureUnit.SENSOR_GPS, FailureType.OFF, instance=GPS_INSTANCE)
+    print(f"-- GPS denied via {method} for {args.denial_s:.0f} s")
     await asyncio.sleep(args.denial_s)
 
-    print("-- GPS restored")
+    await set_gps(drone, True, method, sats_on)
     log.phase = "recovery"
-    await drone.failure.inject(FailureUnit.SENSOR_GPS, FailureType.OK, instance=GPS_INSTANCE)
+    print("-- GPS restored")
     try:
         await asyncio.wait_for(
             wait_until(drone.telemetry.health, lambda h: h.is_global_position_ok),
@@ -159,6 +186,8 @@ def main():
     p.add_argument("--connect", default="udpin://0.0.0.0:14540")
     p.add_argument("--denial-s", type=float, default=DEFAULT_DENIAL_S)
     p.add_argument("--log", default="flight_log.csv")
+    p.add_argument("--deny-via", choices=("auto", "failure", "sim-param"), default="auto",
+                   help="MAV_CMD_INJECT_FAILURE, SIM_GPS_USED=0, or failure then fallback")
     asyncio.run(run(p.parse_args()))
 
 

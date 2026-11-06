@@ -12,6 +12,11 @@ Gateway that takes drone Remote ID / DroneID detections from WarDragon-style sen
 
 **Hackathon notes:** Read it as a reference architecture even without the WarDragon kit; reuse its CoT mapping for your own detector.
 
+## Deep dives
+
+- [_index-round3](../../docs/integration-cards/_index-round3.md) (integration-cards)
+- [alphafox02__dragonsync](../../docs/integration-cards/alphafox02__dragonsync.md) (integration-cards)
+
 **Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md)
 
 **Tags:** `remote-id`, `tak`, `cot`, `sensor-gateway`, `droneid`, `adsb`

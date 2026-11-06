@@ -39,6 +39,7 @@ Python MAVLink implementation plus tools for connections, log parsing (DataFlash
 - [Non-GPS Position Estimation (MAVLink messages)](../resources/ardupilot-dev-mavlink-nongps-position.md) (uses)
 - [ArduPilot EKF3 source-set switch under GPS denial](../samples/ardupilot-ekf3-source-switch.md) (uses)
 - [MAVLink telemetry to TAK Cursor-on-Target](../samples/mavlink-to-tak-cot.md) (uses)
+- [Headless SITL in Docker: ArduCopter and PX4 SIH with one compose file](../samples/sitl-docker.md) (uses)
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../samples/vio-to-mavlink-bridge.md) (uses)
 
 _Indexed by lane(s): autopilots_

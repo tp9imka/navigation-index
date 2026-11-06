@@ -12,6 +12,11 @@ Optimization-based GNSS/INS integration from Wuhan University i2Nav, using IMU p
 
 **Hackathon notes:** Same data formats as KF-GINS, so run both on one dataset for a side-by-side comparison.
 
+## Deep dives
+
+- [_index-round3](../../docs/integration-cards/_index-round3.md) (integration-cards)
+- [i2nav-whu__ob_gins](../../docs/integration-cards/i2nav-whu__ob_gins.md) (integration-cards)
+
 **Concepts:** [GNSS/INS integration](../concepts/gnss-ins.md), [Inertial navigation (INS/IMU)](../concepts/ins.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md)
 
 **Tags:** `factor-graph`, `imu-preintegration`, `ceres`, `i2nav`

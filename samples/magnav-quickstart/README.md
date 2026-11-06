@@ -14,12 +14,9 @@ Run airborne magnetic anomaly navigation end to end on real flight data with
 
 ## Status
 
-`magnav_quickstart.jl` is an **unverified sketch**: Julia was not installed where it was
-written, so it has never been run. Function names and arguments were checked on
-2026-11-06 against MagNav.jl v1.3.5 (`Project.toml`), `examples/pluto_sgl.jl`,
-`examples/simple_magnav.jl`, the `export` list in `src/MagNav.jl`, and the signatures of
-`get_ind`, `create_TL_coef`, `create_TL_A`, `get_XYZ20`, `get_map`, `run_filt` in `src/`.
-No output is shown below because none was observed.
+Ran on 2026-11-06 in the official `julia:1.11` Docker image (Julia 1.11.9, linux/arm64 on
+Apple Silicon) with MagNav.jl v1.3.5, CSV v1.3.0, DataFrames v1.8.2. One dependency pin
+was needed (FFTA, see Pitfalls). Output below is copied from the run.
 
 ## Why MagNav is jam-proof, and where it stops working
 
@@ -58,26 +55,49 @@ water and at night, unlike vision.
 
 ## Prerequisites
 
-- Julia LTS (1.10) or current stable, from https://julialang.org/downloads/ (juliaup).
-- Disk and network for the artifacts. `sgl_2020_train` and `ottawa_area_maps` download
-  on first use; sizes and URLs are in the package's `Artifacts.toml` (the full dataset is
-  also on Zenodo, doi 10.5281/zenodo.4271803).
+- Julia 1.10+ (ran with 1.11.9), or just Docker with the `julia:1.11` image.
+- Disk: the Julia depot ended at 5.8 GB (4.1 GB artifacts, 1.3 GB precompile cache,
+  276 MB packages). Data artifacts on disk: `sgl_2020_train` ~563 MB, `ottawa_area_maps`
+  ~1.2 GB (Eastern_395.h5 alone is 275 MB), plus `EMAG2` ~0.5 GB that MagNav downloads
+  during precompilation. Measured with `du`, not from the package docs.
+- Memory: the first attempt was OOM-killed (exit 137) in a Docker VM with 7.7 GB shared
+  by other containers. `--heap-size-hint=2500M` and `JULIA_NUM_THREADS=1` fixed it.
+- Time on this machine: install + precompile took roughly 10 min across the two
+  `Pkg.add` calls (not timed precisely); artifact download not timed separately; the
+  script itself 43 s once everything was cached.
 - The data is under a USAF Data Sharing Agreement: non-profit research, education, or
   US government purposes only. Read `readmes/DATA_SHARING_AGREEMENT.md` before using it
   in a commercial hackathon entry.
 
-## Run
+## Run (Docker, as verified)
+
+The script needs `examples/dataframes/*.csv` from a MagNav.jl clone (19 MB).
 
 ```bash
-git clone https://github.com/MIT-AI-Accelerator/MagNav.jl.git /tmp/MagNav.jl   # for examples/dataframes/*.csv
-cd samples/magnav-quickstart
-julia --project=. -e 'using Pkg; Pkg.add(["MagNav", "CSV", "DataFrames"])'
-julia --project=. magnav_quickstart.jl /tmp/MagNav.jl/examples
+git clone --depth 1 https://github.com/MIT-AI-Accelerator/MagNav.jl.git ~/MagNav.jl
+docker run -d --name magnav -v magnav-depot:/root/.julia julia:1.11 sleep infinity
+docker exec magnav mkdir -p /work /examples /sample
+docker cp ~/MagNav.jl/examples/dataframes magnav:/examples/
+docker cp samples/magnav-quickstart/magnav_quickstart.jl magnav:/sample/
+docker exec magnav sh -c 'cd /work && julia --project=/work -e "using Pkg;
+    Pkg.add([\"MagNav\", \"CSV\", \"DataFrames\"]);
+    Pkg.add(name=\"FFTA\", version=\"0.2\")"'
+docker exec magnav sh -c 'cd /work && JULIA_NUM_THREADS=1 julia --heap-size-hint=2500M \
+    --project=/work /sample/magnav_quickstart.jl /examples'
 ```
 
-Alternative without a local Julia install: the package's Docker image
-(`ghcr.io/mit-ai-accelerator/magnav.jl`, JupyterLab on port 8888) ships Julia, MagNav.jl and
-the example notebooks; `examples/pluto_sgl.jl` covers the same flow interactively.
+These are the steps that ran, consolidated into one listing (the run used the same
+container, `Pkg.add` calls and script invocation, issued over several commands). The
+first `Pkg.add` prints a precompile failure for GlobalSensitivity; the FFTA pin in
+the second `Pkg.add` re-resolves and precompiles cleanly. Bind mounts work too
+(`-v "$PWD":/sample`) as long as the path is shared with Docker Desktop; `/tmp` on macOS
+is not by default, which is why this uses `docker cp`.
+
+Native Julia: same two `Pkg.add` calls in `julia --project=.`, then
+`julia --project=. magnav_quickstart.jl ~/MagNav.jl/examples`. Not run natively here.
+
+The package also publishes a Docker image (`ghcr.io/mit-ai-accelerator/magnav.jl`,
+JupyterLab on port 8888) per its README; not tried here.
 
 ## What the script does
 
@@ -90,22 +110,51 @@ the example notebooks; `examples/pluto_sgl.jl` covers the same flow interactivel
 | Map | `get_map(MagNav.ottawa_area_maps(:Eastern_395))`, `get_map_val(mapS, traj; return_itp = true)` | anomaly map + interpolant; IGRF and diurnal added back |
 | Filter | `create_model(...)`, `run_filt(traj, ins, mag_1_c, itp_mapS, :ekf; P0, Qd, R, core = true)` | returns `(crlb_out, ins_out, filt_out)` |
 
-## Expected output shape (not observed)
+## Observed output (2026-11-06)
 
 ```
-flight Flt1006, line 1006.08, map Eastern_395, <N> samples
-map - mag std [nT]: uncompensated <x>, Tolles-Lawson <y>
+[ Info: reading in XYZ20 data: /root/.julia/artifacts/0e129dcdd8b6f8b14581407e3f57ead6c82b24c2/sgl_2020_train/Flt1006_train.h5
+[ Info: radar field contains NaNs
+  ... (topo, drape, mag_6_uc, ogs_mag, ogs_alt also contain NaNs)
+[ Info: CRLB DRMS error = 13 m
+[ Info: INS  DRMS error = 137 m
+[ Info: FILT DRMS error = 31 m
+flight Flt1006, line 1006.08, map Eastern_395, 8391 samples
+map - mag std [nT]: uncompensated 4.63, Tolles-Lawson 5.84, SGL-compensated 5.65
 t [min]  INS err [m]  MagNav EKF err [m]  CRLB [m]
-0.0      ...
-...
-EKF DRMS over line: <z> m; INS final error: <w> m
+0.0      0.0          0.0                 0.1
+1.0      19.0         18.1                9.1
+2.0      38.3         55.4                17.4
+3.0      58.3         43.6                14.3
+4.0      75.2         34.7                8.9
+5.0      93.3         26.1                13.7
+6.0      108.8        40.4                19.3
+7.0      126.3        45.9                16.8
+8.0      143.5        15.2                9.8
+9.0      159.0        27.3                12.8
+10.0     174.3        17.8                9.7
+11.0     187.2        30.0                10.0
+12.0     198.5        16.2                8.7
+13.0     208.2        16.4                9.5
+EKF DRMS over line: 31.2 m; INS final error: 218.8 m
 ```
 
-What should hold if it works: the Tolles-Lawson std is well below the uncompensated std;
-INS error grows over the line while the EKF error stays bounded and near the CRLB. If
-EKF error sits far above the CRLB, raise `MEAS_VAR_NT2` (compensation worse than assumed).
-For reference, the package's own `simple_magnav.jl` says its bundled example should show
-about 7 m navigation error; that is a different dataset and setup.
+Two runs gave identical numbers (`seed!(33)`).
+
+How to read it:
+
+- Over the 14 min line (8391 samples at 10 Hz), INS-only error grows to 219 m. The MagNav
+  EKF stays between 15 and 55 m, DRMS 31 m, about 2.4x the CRLB DRMS of 13 m. That
+  matches the package's own `run_filt` summary lines (`FILT DRMS error = 31 m`).
+- On this line Tolles-Lawson did **not** lower the map residual: 4.63 nT uncompensated
+  vs 5.84 nT with the ridge fit from calibration box 1006.04, and 5.65 nT with SGL's
+  own compensation (`xyz.mag_1_c`). Mag 1 is on the tail stinger, far from the
+  aircraft's own field, so there is little to remove; the std mostly reflects map error
+  and the fit's own noise. The in-cabin magnetometers (`mag_3_uc`..`mag_5_uc`) are where
+  compensation matters. This contradicts the expectation written in an earlier version
+  of this README ("TL std well below uncompensated"); not investigated further.
+- The filter still used the Tolles-Lawson signal (`mag_1_c`); swapping in `mag_1_uc`
+  is a one-line change worth trying.
 
 ## Hackathon extensions
 
@@ -127,6 +176,13 @@ about 7 m navigation error; that is a different dataset and setup.
   `~/.julia/artifacts` to the `git-tree-sha1` from `Artifacts.toml`.
 - First run is slow (package precompilation plus artifact downloads); do it before the
   hackathon clock starts.
+- **FFTA 0.3.x breaks precompilation** (seen 2026-11-06 with a fresh resolve):
+  `MethodError: plan_rfft(::Matrix{Float64}, ::Int64) is ambiguous` between FFTA 0.3.2
+  and FFTW, raised while precompiling GlobalSensitivity (pulled in through
+  KernelDensity => FFTA), so `using MagNav` fails. `Pkg.add(name="FFTA", version="0.2")`
+  (resolved to 0.2.1) fixed it.
+- Out-of-memory kill (exit 137, just `Killed`) in Docker: give Julia a heap hint
+  (`--heap-size-hint=2500M`) or raise the Docker VM memory.
 - `ins` from `get_ins(xyz, ind; N_zero_ll = 1)` is re-zeroed to GPS at the first sample
   of the line, so INS error starts at 0. That is a best case for the initial fix.
 - `core = true` makes the filter include the core (IGRF) field in its predicted

@@ -5871,6 +5871,19 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:luxonis/depthai-core": {
+  "archived": false,
+  "description": "DepthAI C++ Library",
+  "forks_count": 201,
+  "full_name": "luxonis/depthai-core",
+  "html_url": "https://github.com/luxonis/depthai-core",
+  "language": "C++",
+  "license": "MIT",
+  "pushed_at": "2026-11-06T07:49:18Z",
+  "stargazers_count": 366,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:luxonis/depthai-ros": {
   "archived": false,
   "description": "Official ROS Driver for DepthAI Sensors.",

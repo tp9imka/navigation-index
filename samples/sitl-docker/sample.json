@@ -1,0 +1,41 @@
+{
+  "id": "sample:sitl-docker",
+  "title": "Headless SITL in Docker: ArduCopter and PX4 SIH with one compose file",
+  "summary": "Dockerfiles and a compose file that run ArduCopter 4.6.3 SITL (with a simulated vicon for ExternalNav) and PX4 v1.17.0 SIH quadrotor without Gazebo or a GUI, plus a Python client image with pymavlink and mavsdk-grpc that shares the PX4 network namespace. Built and flown on linux/arm64 (Apple Silicon).",
+  "concepts": [
+    "concept:simulation",
+    "concept:autopilot",
+    "concept:mavlink-gcs"
+  ],
+  "tags": [
+    "docker",
+    "compose",
+    "sitl",
+    "sih",
+    "ardupilot",
+    "px4",
+    "headless",
+    "arm64",
+    "mavsdk",
+    "pymavlink"
+  ],
+  "related": [
+    {
+      "id": "repo:ardupilot/ardupilot",
+      "rel": "uses"
+    },
+    {
+      "id": "repo:px4/px4-autopilot",
+      "rel": "uses"
+    },
+    {
+      "id": "repo:mavlink/mavsdk-python",
+      "rel": "uses"
+    },
+    {
+      "id": "repo:ardupilot/pymavlink",
+      "rel": "uses"
+    }
+  ],
+  "verified": "Built and ran on 2026-11-06 with Docker 29.5.2 on Apple Silicon (linux/arm64): both SITL images built, the ArduPilot, PX4 and VIO bridge samples flew against them, and docker compose (v5.7.0, run from the docker:29-cli image) brought both services up and a client container reached both. amd64 not tested."
+}

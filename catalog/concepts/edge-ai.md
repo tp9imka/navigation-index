@@ -4,7 +4,7 @@
 
 Detection, segmentation, depth on embedded hardware supporting navigation.
 
-## Repositories (50)
+## Repositories (51)
 
 - [Ultralytics YOLO](../repos/ultralytics__ultralytics.md) - fit: high - Widely used Python package for YOLO-family detection, segmentation and tracking with training, export to edge runtimes and built-in trackers.
 - [Hello AI World (jetson-inference)](../repos/dusty-nv__jetson-inference.md) - fit: high - NVIDIA's guide and library for deploying detection, segmentation and depth networks with TensorRT on Jetson, with camera streaming.
@@ -40,6 +40,7 @@ Detection, segmentation, depth on embedded hardware supporting navigation.
 - [Batear](../repos/batear-io__batear.md) - fit: medium - Low-cost edge-only acoustic drone detector on ESP32-S3 with encrypted LoRa or Ethernet alerting.
 - [RoNIN](../repos/sachini__ronin.md) - fit: medium - Robust Neural Inertial Navigation: smartphone IMU dataset and baseline networks (ResNet, LSTM, TCN) regressing pedestrian velocity from IMU.
 - [TLIO](../repos/cathias__tlio.md) - fit: medium - Tight Learned Inertial Odometry: a network regresses displacement and uncertainty from IMU windows, fused in a stochastic-cloning EKF.
+- [DepthAI Core](../repos/luxonis__depthai-core.md) - fit: medium - C++ core library and Python bindings for Luxonis OAK cameras: on-device stereo depth, neural inference and feature tracking pipelines.
 - [DepthAI ROS](../repos/luxonis__depthai-ros.md) - fit: medium - ROS 1/2 driver for Luxonis OAK cameras publishing depth, detections and IMU.
 - [MixVPR](../repos/amaralibey__mixvpr.md) - fit: medium - WACV 2023 place recognition descriptor built by MLP feature mixing; lightweight and fast.
 - [Wild Visual Navigation](../repos/leggedrobotics__wild_visual_navigation.md) - fit: medium - System that learns visual traversability online from pre-trained vision features and robot self-supervision, deployed on legged robots in forests.

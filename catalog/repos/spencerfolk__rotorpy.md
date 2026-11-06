@@ -12,6 +12,11 @@ Python multirotor simulator with aerodynamic effects (drag, wind) for education 
 
 **Hackathon notes:** pip installable, runs on a laptop. Has IMU and mocap-style sensor models; add your own estimator in Python.
 
+## Deep dives
+
+- [_index-round3](../../docs/integration-cards/_index-round3.md) (integration-cards)
+- [spencerfolk__rotorpy](../../docs/integration-cards/spencerfolk__rotorpy.md) (integration-cards)
+
 **Concepts:** [Simulation and HIL/SITL](../concepts/simulation.md), [Inertial navigation (INS/IMU)](../concepts/ins.md)
 
 **Tags:** `python`, `multirotor`, `aerodynamics`, `wind`
