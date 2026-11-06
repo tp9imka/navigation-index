@@ -76,7 +76,7 @@ async function load() {
 // arithmetic order identical. `python3 tools/search_eval.py --parity` runs this block under node.
 const FIELDS = ["name", "tags", "concepts", "summary", "why", "notes", "takeaways", "lang", "kind", "deep"];
 const FIELD_W = { name: 4.0, tags: 1.5, concepts: 1.5, summary: 1.5, why: 0.7, notes: 0.5, takeaways: 0.7, lang: 1.0, kind: 1.0, deep: 1.0 };
-const FIELD_B = { name: 0.3, tags: 0.3, concepts: 0.0, summary: 0.6, why: 0.6, notes: 0.6, takeaways: 0.6, lang: 0.0, kind: 0.0, deep: 0.75 };
+const FIELD_B = { name: 0.3, tags: 0.5, concepts: 0.0, summary: 0.8, why: 0.6, notes: 0.6, takeaways: 0.6, lang: 0.0, kind: 0.0, deep: 0.75 };
 const K1 = 1.2, CONCEPT_MIN = 0.5, CONCEPT_W = 2.5;
 const PRIOR_FIT = { high: 0.4, medium: 0.15 }, PRIOR_RAN = 0.4;
 const DEEP_DOC_MAX_ABOUT = 4;
@@ -84,7 +84,7 @@ const DEEP_DOC_CHARS = 1500, GUIDE_BODY_CHARS = 6000;
 const STOP = new Set(("a an and are as at be by for from in into is it of on or the to with via using none " +
   "all any but can do does have has how if its not our should so than that their them then there they this we what when where which who will you your").split(" "));
 const SYNONYM = { gps: "gnss", drone: "uav", uas: "uav", suas: "uav", quadcopter: "uav", quadrotor: "uav", multirotor: "uav", ladar: "lidar", harbour: "harbor", defence: "defense", ship: "vessel", boat: "vessel" };
-const NORMALIZE = [[/isation/g, "ization"], [/geo[\s_-]+locali[sz]ation/g, "geolocalization"], [/geo[\s_-]+locali[sz]e/g, "geolocalize"]];
+const NORMALIZE = [[/isation/g, "ization"], [/fixed[\s_-]+wing/g, "fixedwing"], [/geo[\s_-]+locali[sz]ation/g, "geolocalization"], [/geo[\s_-]+locali[sz]e/g, "geolocalize"]];
 
 function stem(t) {
   const syn = w => Object.prototype.hasOwnProperty.call(SYNONYM, w);
@@ -103,6 +103,17 @@ function tokens(text) {
   text = String(text || "").toLowerCase();
   for (const [rx, rep] of NORMALIZE) text = text.replace(rx, rep);
   return text.split(/[^a-z0-9]+/).filter(t => t && !STOP.has(t)).map(stem);
+}
+
+const DOMAIN_WORDS = "uav fixedwing usv ugv uuv auv vessel maritime harbor underwater subsea indoor underground " +
+  "tunnel subterranean dismounted pedestrian soldier night timing clock";
+const DOMAIN_TERMS = new Set(DOMAIN_WORDS.split(" ").map(stem));
+const DOMAIN_W = 2.0, LONG_QUERY_TERMS = 6;
+
+function queryTerms(query) {
+  const q = [...new Set(tokens(query))];
+  const long = q.length >= LONG_QUERY_TERMS;
+  return q.map(t => [t, long && DOMAIN_TERMS.has(t) ? DOMAIN_W : 1.0]);
 }
 
 function buildRanker(entries) {
@@ -156,7 +167,7 @@ function buildRanker(entries) {
 
   function score(x, q, cboost) {
     let base = 0.0;
-    for (const t of q) {
+    for (const [t, qw] of q) {
       let tfw = 0.0;
       for (const k of FIELDS) {
         const c = x.tf[k].get(t);
@@ -165,7 +176,7 @@ function buildRanker(entries) {
           tfw += FIELD_W[k] * c / norm;
         }
       }
-      if (tfw > 0) base += idf(t) * tfw / (K1 + tfw);
+      if (tfw > 0) base += qw * idf(t) * tfw / (K1 + tfw);
     }
     if (base <= 0) return 0.0;
     let best = 0.0;
@@ -174,14 +185,14 @@ function buildRanker(entries) {
   }
 
   function rank(query) {
-    const q = [...new Set(tokens(query))];
+    const q = queryTerms(query);
     if (!q.length) return [];
     let total = 0;
-    for (const t of q) total += idf(t);
+    for (const [t, qw] of q) total += qw * idf(t);
     const cboost = new Map();
     for (const [cid, toks] of conceptTokens) {
       let m = 0;
-      for (const t of q) if (toks.has(t)) m += idf(t);
+      for (const [t, qw] of q) if (toks.has(t)) m += qw * idf(t);
       m = m / total;
       if (m >= CONCEPT_MIN) cboost.set(cid, m);
     }

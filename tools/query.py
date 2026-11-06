@@ -4,8 +4,10 @@
   query.py search "visual geolocalization satellite"   ranked keyword search
   query.py search lightglue --kind repo --fit high      with filters
   query.py concept concept:magnetic-nav                 everything about a concept
-  query.py search "USV keeps navigating in a spoofed harbour"   a problem statement works too:
-                                                      guides (kind guide), samples and repos rank together
+  query.py search "usv spoofing harbor"               guides (kind guide), samples and repos rank together
+For a problem statement, read docs/problem-statement-decoder.md first and search with each matching
+row's keywords. Pasting the whole statement works less well: long queries up-weight platform words
+(DOMAIN_WORDS) but generic GNSS terms still pull in broad records.
   query.py show repo:px4/px4-autopilot                  full record
   query.py neighbors repo:px4/px4-autopilot --depth 2   graph walk
   query.py concepts                                     list concept ids with counts
@@ -25,7 +27,7 @@ ROOT = Path(__file__).resolve().parent.parent
 FIELDS = ("name", "tags", "concepts", "summary", "why", "notes", "takeaways", "lang", "kind", "deep")
 FIELD_W = {"name": 4.0, "tags": 1.5, "concepts": 1.5, "summary": 1.5, "why": 0.7, "notes": 0.5,
            "takeaways": 0.7, "lang": 1.0, "kind": 1.0, "deep": 1.0}
-FIELD_B = {"name": 0.3, "tags": 0.3, "concepts": 0.0, "summary": 0.6, "why": 0.6, "notes": 0.6,
+FIELD_B = {"name": 0.3, "tags": 0.5, "concepts": 0.0, "summary": 0.8, "why": 0.6, "notes": 0.6,
            "takeaways": 0.6, "lang": 0.0, "kind": 0.0, "deep": 0.75}
 K1 = 1.2
 CONCEPT_MIN = 0.5  # idf-weighted share of the query a concept name must cover to boost its members
@@ -42,8 +44,15 @@ SYNONYM = {"gps": "gnss", "drone": "uav", "uas": "uav", "suas": "uav", "quadcopt
            "quadrotor": "uav", "multirotor": "uav", "ladar": "lidar", "harbour": "harbor",
            "defence": "defense", "ship": "vessel", "boat": "vessel"}
 NORMALIZE = ((re.compile(r"isation"), "ization"),
+             (re.compile(r"fixed[\s_-]+wing"), "fixedwing"),
              (re.compile(r"geo[\s_-]+locali[sz]ation"), "geolocalization"),
              (re.compile(r"geo[\s_-]+locali[sz]e"), "geolocalize"))
+# Platform, environment and timing words decide which samples apply to a statement; in a long query
+# they are drowned by generic GNSS / spoofing terms that every record shares.
+DOMAIN_WORDS = ("uav fixedwing usv ugv uuv auv vessel maritime harbor underwater subsea indoor underground "
+                "tunnel subterranean dismounted pedestrian soldier night timing clock")
+DOMAIN_W = 2.0
+LONG_QUERY_TERMS = 6  # distinct query tokens from which a query is treated as a statement
 
 
 def stem(t):
@@ -66,11 +75,25 @@ def stem(t):
     return SYNONYM.get(t, t)
 
 
-def tokens(text):
+DOMAIN_TERMS = frozenset(stem(w) for w in DOMAIN_WORDS.split())
+
+
+def words(text):
     text = text.lower()
     for rx, rep in NORMALIZE:
         text = rx.sub(rep, text)
-    return [stem(t) for t in re.split(r"[^a-z0-9]+", text) if t and t not in STOP]
+    return [t for t in re.split(r"[^a-z0-9]+", text) if t and t not in STOP]
+
+
+def tokens(text):
+    return [stem(t) for t in words(text)]
+
+
+def query_terms(query):
+    """[(token, weight)]: distinct tokens; in a long query, domain terms weigh DOMAIN_W."""
+    q = list(dict.fromkeys(tokens(query)))
+    long = len(q) >= LONG_QUERY_TERMS
+    return [(t, DOMAIN_W if long and t in DOMAIN_TERMS else 1.0) for t in q]
 
 
 def md_plain(text):  # same as build.md_plain
@@ -130,7 +153,7 @@ class Ranker:
 
     def score(self, e, q, cboost):
         base = 0.0
-        for t in q:
+        for t, qw in q:
             tfw = 0.0
             for f in FIELDS:
                 c = e["tf"][f].get(t)
@@ -138,7 +161,7 @@ class Ranker:
                     norm = 1 - FIELD_B[f] + FIELD_B[f] * len(e["f"][f]) / self.avg[f]
                     tfw += FIELD_W[f] * c / norm
             if tfw > 0:
-                base += self.idf_of(t) * tfw / (K1 + tfw)
+                base += qw * self.idf_of(t) * tfw / (K1 + tfw)
         if base <= 0:
             return 0.0
         best = 0.0
@@ -148,13 +171,13 @@ class Ranker:
 
     def rank(self, query):
         """[(score, entry)] best first."""
-        q = list(dict.fromkeys(tokens(query)))
+        q = query_terms(query)
         if not q:
             return []
-        total = sum(self.idf_of(t) for t in q)
+        total = sum(qw * self.idf_of(t) for t, qw in q)
         cboost = {}
         for cid, toks in self.concept_tokens.items():
-            m = sum(self.idf_of(t) for t in q if t in toks) / total
+            m = sum(qw * self.idf_of(t) for t, qw in q if t in toks) / total
             if m >= CONCEPT_MIN:
                 cboost[cid] = m
         hits = []

@@ -60,6 +60,27 @@ def tracked_files(files):
 
 
 SAMPLE_OVERRIDES = "samples/_meta_overrides.json"
+# samples/README.md columns; a sample with none of them is an error, a partial one a warning
+SAMPLE_TABLE_FIELDS = ("verified_status", "deps", "first_command", "group", "key_result", "input", "runtime")
+# AGENTS.md: every sample is linked from both pages (warning until the backlog is linked)
+SAMPLE_LINK_PAGES = ("docs/evidence-matrix.md", "docs/problem-statement-decoder.md")
+
+
+def check_samples(samples):
+    """Warn about missing table fields and unlinked samples; return samples with no table field at all."""
+    fatal = []
+    pages = {p: (ROOT / p).read_text() if (ROOT / p).exists() else "" for p in SAMPLE_LINK_PAGES}
+    for s in sorted(samples, key=lambda x: x["_dir"]):
+        d = s["_dir"]
+        missing = [k for k in SAMPLE_TABLE_FIELDS if not s.get(k)]
+        if len(missing) == len(SAMPLE_TABLE_FIELDS):
+            fatal.append(d)
+        elif missing:
+            print(f"warning: samples/{d}/sample.json lacks {', '.join(missing)}", file=sys.stderr)
+        unlinked = [p for p, text in pages.items() if not re.search(rf"samples/{re.escape(d)}(?![a-z0-9-])", text)]
+        if unlinked:
+            print(f"warning: sample {d} is not linked from {', '.join(unlinked)}", file=sys.stderr)
+    return fatal
 
 
 def load_samples():
@@ -377,6 +398,9 @@ def main():
     repos, repo_dups = merge(load_lane_dir("repos"), aliases)
     resources, res_dups = merge(raw_resources, aliases)
     samples, _ = merge(load_samples(), aliases)
+    empty = check_samples(samples.values())
+    if empty:
+        sys.exit(f"error: sample.json without any of {', '.join(SAMPLE_TABLE_FIELDS)}: {', '.join(empty)}")
     for r in repos.values():
         r["_stars"] = meta.get(r["id"], {}).get("stargazers_count")
     nodes = {c["id"]: {**c, "kind": "concept"} for c in concepts}
@@ -596,9 +620,10 @@ def write_llms(nodes, concepts, members):
         f"{nres} documents, talks, courses and datasets, {nsample} usage samples and {nguide} guides, "
         f"linked in one graph over {len(concepts)} concepts.",
         "",
-        "Read AGENTS.md for how to query and extend. Query without reading everything: "
-        "`python3 tools/query.py search \"<terms or the problem statement>\"` or the MCP server tools/mcp_server.py. "
-        "Guides (kind `guide`) are searchable like any other node.",
+        "Read AGENTS.md for how to query and extend. For a problem statement, read "
+        "docs/problem-statement-decoder.md, pick its rows, then search with each row's keywords: "
+        "`python3 tools/query.py search \"<keywords>\"` or the MCP server tools/mcp_server.py "
+        "(its `read` tool returns any guide or sample README). Guides (kind `guide`) are searchable like any other node.",
         "",
         "## Entry points",
         "",
