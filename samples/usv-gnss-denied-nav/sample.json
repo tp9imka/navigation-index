@@ -1,0 +1,19 @@
+{
+  "id": "sample:usv-gnss-denied-nav",
+  "title": "USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund",
+  "summary": "A simulated USV runs a 19.6 km transit over real geography (Lillgrund => Drogden channel => Copenhagen approach) built from OpenStreetMap coastline, Oresund bridge, wind turbines and seamarks, with 75 min of real Danish Maritime Authority AIS traffic as radar targets. Compass + bottom-track speed log dead reckoning, a 720-azimuth marine radar ray-cast with clutter, incidence-dependent detection and ship occlusion, likelihood-field + point-to-line ICP matching of returns to the chart (with degenerate, ambiguous and few-return checks), a 4-state EKF that also calibrates compass bias from matched heading, and a monitor (solution separation + 30 s GNSS-vs-radar/DR mean test, exclusion only when the GNSS-free filter has recent radar fixes). Over 5 seeds a slow GNSS drag (0.003 m/s^2 to 0.6 m/s) is excluded 125-131 s after onset near the coast at a 23-26 m offset (max error 10-25 m vs 1391-1395 m for GNSS+DR and for a single filter with radar but only innovation gates); onset in open water is caught at 202-250 s (max 71-102 m); a 1.5 km radar range makes it fail (175-1024 m). Zero false alarms in 25 runs. Writes navdash/1 JSONL for templates/demo-dashboard and own-ship CoT via the mavlink-to-tak-cot builder; README maps the pieces onto OpenCPN/radar_pi, Signal K, colav-simulator and MOOS-IvP.",
+  "concepts": ["concept:maritime-nav", "concept:assured-pnt", "concept:radar-nav", "concept:gnss-interference", "concept:sensor-fusion"],
+  "tags": ["usv", "marine-radar", "radar-chart-matching", "icp", "likelihood-field", "dead-reckoning", "dvl", "compass-bias", "spoofing", "jamming", "solution-separation", "fde", "integrity", "openstreetmap", "overpass", "danish-maritime-authority", "ais", "oresund", "copenhagen", "navdash", "cot", "tak", "stdlib"],
+  "related": [
+    {"id": "repo:opencpn/opencpn", "rel": "explains"},
+    {"id": "repo:opencpn-radar-pi/radar_pi", "rel": "explains"},
+    {"id": "repo:signalk/signalk-server", "rel": "explains"},
+    {"id": "repo:signalk/signalk-to-nmea0183", "rel": "explains"},
+    {"id": "repo:ntnu-itk-autonomous-ship-lab/colav-simulator", "rel": "explains"},
+    {"id": "repo:moos-ivp/moos-ivp", "rel": "explains"},
+    {"id": "repo:dan11003/cfear_radarodometry", "rel": "explains"},
+    {"id": "res:pohang-canal-dataset-2023", "rel": "explains"},
+    {"id": "res:dlr-r-mode-baltic", "rel": "explains"}
+  ],
+  "verified": "Ran 2026-11-06 on macOS with python 3.14.7 stdlib: 15 unit tests pass and three negative controls (detection off, degeneracy check off, isolation rule off) each make the targeted test fail; run.py for 5 scenarios x 4 configurations x 5 seeds, numbers in the README come from example_output/summary_5seeds.*; plot.py with matplotlib 3.11.2 (python 3.13.15); example_output/spoof-coastal loaded in templates/demo-dashboard in headless Chrome (metrics panel read). Fixtures built from Overpass (OSM) and a locally downloaded DMA AIS file for 2026-10-20. Not done: real radar data, S-57 ENC input, CoT in a TAK client, running any of the linked maritime stacks. Sensors, radar and attacks are simulated; the simulated world equals the OSM chart apart from buoy offsets, so radar fix errors are optimistic."
+}

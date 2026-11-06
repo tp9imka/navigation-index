@@ -1,0 +1,1263 @@
+[
+ {
+  "scenario": "clean",
+  "attack": {
+   "kind": "none",
+   "t_start": 1000000000.0,
+   "t_end": 1000000000.0,
+   "drag_accel": 0.003,
+   "drag_rate": 0.6,
+   "drag_dir_deg": 270.0
+  },
+  "duration_s": 3923.0,
+  "distance_km": 19.614999999999867,
+  "configs": {
+   "dr": {
+    "all": {
+     "rms": 302.14005455623226,
+     "p95": 504.6035759699061,
+     "max": 532.7466370584063,
+     "final": 532.7466370584063
+    },
+    "alarms": 0,
+    "false_alarms": 0,
+    "false_exclusions": 0,
+    "detection_s": null,
+    "exclusion_s": null,
+    "events": []
+   },
+   "gnss_dr": {
+    "all": {
+     "rms": 3.127228839409057,
+     "p95": 5.399634925725586,
+     "max": 6.037992811641075,
+     "final": 3.067810874586654
+    },
+    "alarms": 0,
+    "false_alarms": 0,
+    "false_exclusions": 0,
+    "detection_s": null,
+    "exclusion_s": null,
+    "events": []
+   },
+   "single": {
+    "all": {
+     "rms": 2.9918481970043955,
+     "p95": 5.156901742828918,
+     "max": 6.037992811641075,
+     "final": 3.0251313910513495
+    },
+    "alarms": 0,
+    "false_alarms": 0,
+    "false_exclusions": 0,
+    "detection_s": null,
+    "exclusion_s": null,
+    "events": []
+   },
+   "monitor": {
+    "all": {
+     "rms": 2.989678335938989,
+     "p95": 5.143736866755408,
+     "max": 6.037992811641075,
+     "final": 3.0258405303127693
+    },
+    "alarms": 0,
+    "false_alarms": 0,
+    "false_exclusions": 0,
+    "detection_s": null,
+    "exclusion_s": null,
+    "events": [],
+    "gnss_free_subfilter": {
+     "rms": 5.304358542299022,
+     "p95": 8.876042901406578,
+     "max": 34.51253231205218,
+     "final": 0.9998544035831952
+    }
+   }
+  },
+  "radar_by_leg": [
+   {
+    "leg": 0,
+    "name": "open water by Lillgrund",
+    "scans": 139,
+    "reasons": {
+     "few_returns": 42,
+     "no_chart_match": 8,
+     "few_inliers": 13,
+     "ok": 75,
+     "degenerate": 1
+    },
+    "fix_err_median_m": 3.6537003125145366,
+    "fix_err_p95_m": 8.597028149172163
+   },
+   {
+    "leg": 1,
+    "name": "Drogden south",
+    "scans": 240,
+    "reasons": {
+     "ok": 238,
+     "ambiguous": 2
+    },
+    "fix_err_median_m": 1.8107614346613423,
+    "fix_err_p95_m": 4.809513866193228
+   },
+   {
+    "leg": 2,
+    "name": "Drogden channel",
+    "scans": 166,
+    "reasons": {
+     "ok": 166
+    },
+    "fix_err_median_m": 2.042925313487875,
+    "fix_err_p95_m": 4.741382832086059
+   },
+   {
+    "leg": 3,
+    "name": "off Kastrup",
+    "scans": 164,
+    "reasons": {
+     "ok": 164
+    },
+    "fix_err_median_m": 1.6620656848725281,
+    "fix_err_p95_m": 3.588715550775295
+   },
+   {
+    "leg": 4,
+    "name": "Kongedybet / Middelgrunden",
+    "scans": 77,
+    "reasons": {
+     "ok": 77
+    },
+    "fix_err_median_m": 1.0706663659483122,
+    "fix_err_p95_m": 3.0761723366565836
+   }
+  ],
+  "radar_fixes_rejected_by_subfilter_gate": 0,
+  "seed": 1,
+  "radar": "default"
+ },
+ {
+  "scenario": "spoof-coastal",
+  "attack": {
+   "kind": "spoof",
+   "t_start": 1500,
+   "t_end": 1000000000.0,
+   "drag_accel": 0.003,
+   "drag_rate": 0.6,
+   "drag_dir_deg": 270.0
+  },
+  "duration_s": 3923.0,
+  "distance_km": 19.614999999999867,
+  "configs": {
+   "dr": {
+    "all": {
+     "rms": 302.14005455623226,
+     "p95": 504.6035759699061,
+     "max": 532.7466370584063,
+     "final": 532.7466370584063
+    },
+    "during_attack": {
+     "rms": 374.0141262929239,
+     "p95": 515.6240185356277,
+     "max": 532.7466370584063,
+     "final": 532.7466370584063
+    },
+    "alarms": 0,
+    "false_alarms": 0,
+    "false_exclusions": 0,
+    "detection_s": null,
+    "exclusion_s": null,
+    "events": []
+   },
+   "gnss_dr": {
+    "all": {
+     "rms": 618.1335504958682,
+     "p95": 1277.3421601861382,
+     "max": 1392.1587043960785,
+     "final": 1392.1587043960785
+    },
+    "during_attack": {
+     "rms": 786.3780481191238,
+     "p95": 1319.9210710737173,
+     "max": 1392.1587043960785,
+     "final": 1392.1587043960785
+    },
+    "alarms": 0,
+    "false_alarms": 0,
+    "false_exclusions": 0,
+    "detection_s": null,
+    "exclusion_s": null,
+    "events": [
+     {
+      "t": 1632.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1687.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1735.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1787.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1845.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1895.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1945.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2006.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2062.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2118.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2177.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2239.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2298.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2377.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2464.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     }
+    ]
+   },
+   "single": {
+    "all": {
+     "rms": 618.0369657412834,
+     "p95": 1277.2259930649725,
+     "max": 1392.092103179566,
+     "final": 1392.092103179566
+    },
+    "during_attack": {
+     "rms": 786.2553115448864,
+     "p95": 1319.8376633982614,
+     "max": 1392.092103179566,
+     "final": 1392.092103179566
+    },
+    "alarms": 0,
+    "false_alarms": 0,
+    "false_exclusions": 0,
+    "detection_s": null,
+    "exclusion_s": null,
+    "events": [
+     {
+      "t": 1632.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1687.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1732.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1785.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1837.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1888.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1942.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2003.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2062.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2118.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2173.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2235.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2291.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2362.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2423.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2495.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     }
+    ]
+   },
+   "monitor": {
+    "all": {
+     "rms": 2.088673599414533,
+     "p95": 4.848879731918216,
+     "max": 9.975224748801143,
+     "final": 0.9998544035831952
+    },
+    "during_attack": {
+     "rms": 1.4874192160506172,
+     "p95": 2.444515005387254,
+     "max": 9.975224748801143,
+     "final": 0.9998544035831952
+    },
+    "alarms": 1,
+    "false_alarms": 0,
+    "false_exclusions": 0,
+    "detection_s": 130.0,
+    "exclusion_s": 130.0,
+    "spoof_offset_at_detection_m": 25.35,
+    "events": [
+     {
+      "t": 1630.0,
+      "event": "spoof_suspected",
+      "text": "GNSS-vs-radar/DR offset test 26 over 23.03 for 3 s, GNSS excluded"
+     }
+    ],
+    "gnss_free_subfilter": {
+     "rms": 5.304358542299022,
+     "p95": 8.876042901406578,
+     "max": 34.51253231205218,
+     "final": 0.9998544035831952
+    }
+   }
+  },
+  "radar_by_leg": [
+   {
+    "leg": 0,
+    "name": "open water by Lillgrund",
+    "scans": 139,
+    "reasons": {
+     "few_returns": 42,
+     "no_chart_match": 8,
+     "few_inliers": 13,
+     "ok": 75,
+     "degenerate": 1
+    },
+    "fix_err_median_m": 3.6537003125145366,
+    "fix_err_p95_m": 8.597028149172163
+   },
+   {
+    "leg": 1,
+    "name": "Drogden south",
+    "scans": 240,
+    "reasons": {
+     "ok": 238,
+     "ambiguous": 2
+    },
+    "fix_err_median_m": 1.8107614346613423,
+    "fix_err_p95_m": 4.809513866193228
+   },
+   {
+    "leg": 2,
+    "name": "Drogden channel",
+    "scans": 166,
+    "reasons": {
+     "ok": 166
+    },
+    "fix_err_median_m": 2.042925313487875,
+    "fix_err_p95_m": 4.741382832086059
+   },
+   {
+    "leg": 3,
+    "name": "off Kastrup",
+    "scans": 164,
+    "reasons": {
+     "ok": 164
+    },
+    "fix_err_median_m": 1.6620656848725281,
+    "fix_err_p95_m": 3.588715550775295
+   },
+   {
+    "leg": 4,
+    "name": "Kongedybet / Middelgrunden",
+    "scans": 77,
+    "reasons": {
+     "ok": 77
+    },
+    "fix_err_median_m": 1.0706663659483122,
+    "fix_err_p95_m": 3.0761723366565836
+   }
+  ],
+  "radar_fixes_rejected_by_subfilter_gate": 0,
+  "seed": 1,
+  "radar": "default"
+ },
+ {
+  "scenario": "spoof-open",
+  "attack": {
+   "kind": "spoof",
+   "t_start": 60,
+   "t_end": 1000000000.0,
+   "drag_accel": 0.003,
+   "drag_rate": 0.6,
+   "drag_dir_deg": 270.0
+  },
+  "duration_s": 3923.0,
+  "distance_km": 19.614999999999867,
+  "configs": {
+   "dr": {
+    "all": {
+     "rms": 302.14005455623226,
+     "p95": 504.6035759699061,
+     "max": 532.7466370584063,
+     "final": 532.7466370584063
+    },
+    "during_attack": {
+     "rms": 304.47392250275783,
+     "p95": 505.02497977028685,
+     "max": 532.7466370584063,
+     "final": 532.7466370584063
+    },
+    "alarms": 0,
+    "false_alarms": 0,
+    "false_exclusions": 0,
+    "detection_s": null,
+    "exclusion_s": null,
+    "events": []
+   },
+   "gnss_dr": {
+    "all": {
+     "rms": 1276.3721220916168,
+     "p95": 2137.4102036847894,
+     "max": 2259.694513041332,
+     "final": 2259.694513041332
+    },
+    "during_attack": {
+     "rms": 1286.2334930234615,
+     "p95": 2139.3443046170883,
+     "max": 2259.694513041332,
+     "final": 2259.694513041332
+    },
+    "alarms": 0,
+    "false_alarms": 0,
+    "false_exclusions": 0,
+    "detection_s": null,
+    "exclusion_s": null,
+    "events": [
+     {
+      "t": 260.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 329.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 426.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 538.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 807.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     }
+    ]
+   },
+   "single": {
+    "all": {
+     "rms": 1276.3681700651923,
+     "p95": 2137.4102036845566,
+     "max": 2259.691877470291,
+     "final": 2259.691877470291
+    },
+    "during_attack": {
+     "rms": 1286.229510463262,
+     "p95": 2139.344304616858,
+     "max": 2259.691877470291,
+     "final": 2259.691877470291
+    },
+    "alarms": 0,
+    "false_alarms": 0,
+    "false_exclusions": 0,
+    "detection_s": null,
+    "exclusion_s": null,
+    "events": [
+     {
+      "t": 260.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 329.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 426.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 538.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 807.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     }
+    ]
+   },
+   "monitor": {
+    "all": {
+     "rms": 9.573195700137196,
+     "p95": 4.0433990919364655,
+     "max": 81.5981622847244,
+     "final": 0.9998544035831952
+    },
+    "during_attack": {
+     "rms": 9.646144119069023,
+     "p95": 4.6127072508483655,
+     "max": 81.5981622847244,
+     "final": 0.9998544035831952
+    },
+    "alarms": 2,
+    "false_alarms": 0,
+    "false_exclusions": 0,
+    "detection_s": 207.0,
+    "exclusion_s": 250.0,
+    "spoof_offset_at_detection_m": 64.2,
+    "events": [
+     {
+      "t": 260.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 267.0,
+      "event": "alarm_raised",
+      "text": "GNSS-vs-radar/DR offset test 56: GNSS and radar/DR disagree, only 1 radar fixes in 60 s, cannot isolate"
+     },
+     {
+      "t": 310.0,
+      "event": "spoof_suspected",
+      "text": "solution separation 123 over 23.03 for 3 s, GNSS excluded"
+     }
+    ],
+    "gnss_free_subfilter": {
+     "rms": 5.304358542299022,
+     "p95": 8.876042901406578,
+     "max": 34.51253231205218,
+     "final": 0.9998544035831952
+    }
+   }
+  },
+  "radar_by_leg": [
+   {
+    "leg": 0,
+    "name": "open water by Lillgrund",
+    "scans": 139,
+    "reasons": {
+     "few_returns": 42,
+     "no_chart_match": 8,
+     "few_inliers": 13,
+     "ok": 75,
+     "degenerate": 1
+    },
+    "fix_err_median_m": 3.6537003125145366,
+    "fix_err_p95_m": 8.597028149172163
+   },
+   {
+    "leg": 1,
+    "name": "Drogden south",
+    "scans": 240,
+    "reasons": {
+     "ok": 238,
+     "ambiguous": 2
+    },
+    "fix_err_median_m": 1.8107614346613423,
+    "fix_err_p95_m": 4.809513866193228
+   },
+   {
+    "leg": 2,
+    "name": "Drogden channel",
+    "scans": 166,
+    "reasons": {
+     "ok": 166
+    },
+    "fix_err_median_m": 2.042925313487875,
+    "fix_err_p95_m": 4.741382832086059
+   },
+   {
+    "leg": 3,
+    "name": "off Kastrup",
+    "scans": 164,
+    "reasons": {
+     "ok": 164
+    },
+    "fix_err_median_m": 1.6620656848725281,
+    "fix_err_p95_m": 3.588715550775295
+   },
+   {
+    "leg": 4,
+    "name": "Kongedybet / Middelgrunden",
+    "scans": 77,
+    "reasons": {
+     "ok": 77
+    },
+    "fix_err_median_m": 1.0706663659483122,
+    "fix_err_p95_m": 3.0761723366565836
+   }
+  ],
+  "radar_fixes_rejected_by_subfilter_gate": 0,
+  "seed": 1,
+  "radar": "default"
+ },
+ {
+  "scenario": "jam",
+  "attack": {
+   "kind": "jam",
+   "t_start": 1200,
+   "t_end": 1000000000.0,
+   "drag_accel": 0.003,
+   "drag_rate": 0.6,
+   "drag_dir_deg": 270.0
+  },
+  "duration_s": 3923.0,
+  "distance_km": 19.614999999999867,
+  "configs": {
+   "dr": {
+    "all": {
+     "rms": 302.14005455623226,
+     "p95": 504.6035759699061,
+     "max": 532.7466370584063,
+     "final": 532.7466370584063
+    },
+    "during_attack": {
+     "rms": 357.6211759181544,
+     "p95": 513.3701129306769,
+     "max": 532.7466370584063,
+     "final": 532.7466370584063
+    },
+    "alarms": 0,
+    "false_alarms": 0,
+    "false_exclusions": 0,
+    "detection_s": null,
+    "exclusion_s": null,
+    "events": []
+   },
+   "gnss_dr": {
+    "all": {
+     "rms": 17.474643676284952,
+     "p95": 29.903756103131556,
+     "max": 33.58115130867156,
+     "final": 33.58115130867156
+    },
+    "during_attack": {
+     "rms": 20.843048281486134,
+     "p95": 30.53545411975615,
+     "max": 33.58115130867156,
+     "final": 33.58115130867156
+    },
+    "alarms": 0,
+    "false_alarms": 0,
+    "false_exclusions": 0,
+    "detection_s": null,
+    "exclusion_s": null,
+    "events": []
+   },
+   "single": {
+    "all": {
+     "rms": 2.1316040211181537,
+     "p95": 4.64058906290459,
+     "max": 5.948493194705096,
+     "final": 0.9997847274540947
+    },
+    "during_attack": {
+     "rms": 1.2082864581564308,
+     "p95": 2.915754553837357,
+     "max": 3.551935655373623,
+     "final": 0.9997847274540947
+    },
+    "alarms": 0,
+    "false_alarms": 0,
+    "false_exclusions": 0,
+    "detection_s": null,
+    "exclusion_s": null,
+    "events": []
+   },
+   "monitor": {
+    "all": {
+     "rms": 2.131694210148265,
+     "p95": 4.638187030872718,
+     "max": 5.950535225764017,
+     "final": 0.999786729390439
+    },
+    "during_attack": {
+     "rms": 1.2112794531909292,
+     "p95": 2.9085651549239318,
+     "max": 3.5546981390370234,
+     "final": 0.999786729390439
+    },
+    "alarms": 0,
+    "false_alarms": 0,
+    "false_exclusions": 0,
+    "detection_s": null,
+    "exclusion_s": null,
+    "events": [],
+    "gnss_free_subfilter": {
+     "rms": 5.304358542299022,
+     "p95": 8.876042901406578,
+     "max": 34.51253231205218,
+     "final": 0.9998544035831952
+    }
+   }
+  },
+  "radar_by_leg": [
+   {
+    "leg": 0,
+    "name": "open water by Lillgrund",
+    "scans": 139,
+    "reasons": {
+     "few_returns": 42,
+     "no_chart_match": 8,
+     "few_inliers": 13,
+     "ok": 75,
+     "degenerate": 1
+    },
+    "fix_err_median_m": 3.6537003125145366,
+    "fix_err_p95_m": 8.597028149172163
+   },
+   {
+    "leg": 1,
+    "name": "Drogden south",
+    "scans": 240,
+    "reasons": {
+     "ok": 238,
+     "ambiguous": 2
+    },
+    "fix_err_median_m": 1.8107614346613423,
+    "fix_err_p95_m": 4.809513866193228
+   },
+   {
+    "leg": 2,
+    "name": "Drogden channel",
+    "scans": 166,
+    "reasons": {
+     "ok": 166
+    },
+    "fix_err_median_m": 2.042925313487875,
+    "fix_err_p95_m": 4.741382832086059
+   },
+   {
+    "leg": 3,
+    "name": "off Kastrup",
+    "scans": 164,
+    "reasons": {
+     "ok": 164
+    },
+    "fix_err_median_m": 1.6620656848725281,
+    "fix_err_p95_m": 3.588715550775295
+   },
+   {
+    "leg": 4,
+    "name": "Kongedybet / Middelgrunden",
+    "scans": 77,
+    "reasons": {
+     "ok": 77
+    },
+    "fix_err_median_m": 1.0706663659483122,
+    "fix_err_p95_m": 3.0761723366565836
+   }
+  ],
+  "radar_fixes_rejected_by_subfilter_gate": 0,
+  "seed": 1,
+  "radar": "default"
+ },
+ {
+  "scenario": "spoof-coastal-1500m",
+  "attack": {
+   "kind": "spoof",
+   "t_start": 1500,
+   "t_end": 1000000000.0,
+   "drag_accel": 0.003,
+   "drag_rate": 0.6,
+   "drag_dir_deg": 270.0
+  },
+  "duration_s": 3923.0,
+  "distance_km": 19.614999999999867,
+  "configs": {
+   "dr": {
+    "all": {
+     "rms": 302.14005455623226,
+     "p95": 504.6035759699061,
+     "max": 532.7466370584063,
+     "final": 532.7466370584063
+    },
+    "during_attack": {
+     "rms": 374.0141262929239,
+     "p95": 515.6240185356277,
+     "max": 532.7466370584063,
+     "final": 532.7466370584063
+    },
+    "alarms": 0,
+    "false_alarms": 0,
+    "false_exclusions": 0,
+    "detection_s": null,
+    "exclusion_s": null,
+    "events": []
+   },
+   "gnss_dr": {
+    "all": {
+     "rms": 618.1335504958682,
+     "p95": 1277.3421601861382,
+     "max": 1392.1587043960785,
+     "final": 1392.1587043960785
+    },
+    "during_attack": {
+     "rms": 786.3780481191238,
+     "p95": 1319.9210710737173,
+     "max": 1392.1587043960785,
+     "final": 1392.1587043960785
+    },
+    "alarms": 0,
+    "false_alarms": 0,
+    "false_exclusions": 0,
+    "detection_s": null,
+    "exclusion_s": null,
+    "events": [
+     {
+      "t": 1632.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1687.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1735.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1787.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1845.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1895.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1945.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2006.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2062.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2118.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2177.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2239.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2298.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2377.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2464.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     }
+    ]
+   },
+   "single": {
+    "all": {
+     "rms": 618.1612997989442,
+     "p95": 1277.3781005231942,
+     "max": 1392.175668567004,
+     "final": 1392.175668567004
+    },
+    "during_attack": {
+     "rms": 786.4133505586608,
+     "p95": 1319.9426711734498,
+     "max": 1392.175668567004,
+     "final": 1392.175668567004
+    },
+    "alarms": 0,
+    "false_alarms": 0,
+    "false_exclusions": 0,
+    "detection_s": null,
+    "exclusion_s": null,
+    "events": [
+     {
+      "t": 1632.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1687.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1735.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1787.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1845.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1895.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1945.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2006.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2062.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2118.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2177.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2239.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2298.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2377.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2464.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     }
+    ]
+   },
+   "monitor": {
+    "all": {
+     "rms": 392.11301003831716,
+     "p95": 907.0080440177268,
+     "max": 1023.6088125632143,
+     "final": 133.98463804578967
+    },
+    "during_attack": {
+     "rms": 498.83585794030796,
+     "p95": 949.8122362230358,
+     "max": 1023.6088125632143,
+     "final": 133.98463804578967
+    },
+    "alarms": 2,
+    "false_alarms": 0,
+    "false_exclusions": 0,
+    "detection_s": 592.0,
+    "exclusion_s": 1810.0,
+    "spoof_offset_at_detection_m": 295.2,
+    "events": [
+     {
+      "t": 1632.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1687.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1735.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1787.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1845.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1895.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 1945.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2006.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2062.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2092.0,
+      "event": "alarm_raised",
+      "text": "GNSS-vs-radar/DR offset test 5389: GNSS and radar/DR disagree, only 1 radar fixes in 60 s, cannot isolate"
+     },
+     {
+      "t": 2118.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2177.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2239.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2298.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2377.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 2464.0,
+      "event": "gnss_reset",
+      "text": "GNSS gated out 10 s, position reset to GNSS"
+     },
+     {
+      "t": 3310.0,
+      "event": "spoof_suspected",
+      "text": "solution separation 31313 over 23.03 for 3 s, GNSS excluded"
+     }
+    ],
+    "gnss_free_subfilter": {
+     "rms": 172.77942334198195,
+     "p95": 254.92524401069426,
+     "max": 271.78073786303867,
+     "final": 133.98463804578967
+    }
+   }
+  },
+  "radar_by_leg": [
+   {
+    "leg": 0,
+    "name": "open water by Lillgrund",
+    "scans": 139,
+    "reasons": {
+     "few_returns": 139
+    }
+   },
+   {
+    "leg": 1,
+    "name": "Drogden south",
+    "scans": 240,
+    "reasons": {
+     "few_returns": 172,
+     "no_chart_match": 47,
+     "few_inliers": 18,
+     "degenerate": 3
+    }
+   },
+   {
+    "leg": 2,
+    "name": "Drogden channel",
+    "scans": 166,
+    "reasons": {
+     "few_inliers": 8,
+     "no_chart_match": 49,
+     "few_returns": 15,
+     "degenerate": 37,
+     "ambiguous": 6,
+     "ok": 51
+    },
+    "fix_err_median_m": 4.3549991586110375,
+    "fix_err_p95_m": 14.934094042338339
+   },
+   {
+    "leg": 3,
+    "name": "off Kastrup",
+    "scans": 164,
+    "reasons": {
+     "few_returns": 89,
+     "no_chart_match": 7,
+     "few_inliers": 4,
+     "degenerate": 12,
+     "ok": 39,
+     "ambiguous": 13
+    },
+    "fix_err_median_m": 1.9425390802764981,
+    "fix_err_p95_m": 109.95337131349629
+   },
+   {
+    "leg": 4,
+    "name": "Kongedybet / Middelgrunden",
+    "scans": 77,
+    "reasons": {
+     "no_chart_match": 56,
+     "ok": 16,
+     "ambiguous": 5
+    },
+    "fix_err_median_m": 1.4281015488997653,
+    "fix_err_p95_m": 148.9070827878272
+   }
+  ],
+  "radar_fixes_rejected_by_subfilter_gate": 98,
+  "seed": 1,
+  "radar": {
+   "max_range": 1500.0
+  }
+ }
+]

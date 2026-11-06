@@ -16,3 +16,4 @@ remote-id-to-tak
 jammer-sensor-network
 dismounted-foot-ins
 blind-flight-bench
+usv-gnss-denied-nav

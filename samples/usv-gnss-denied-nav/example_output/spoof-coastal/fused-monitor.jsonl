@@ -1,0 +1,791 @@
+{"header": {"schema": "navdash/1", "track": "fused-monitor", "role": "fused", "label": "Fused + monitor", "color": "#4fc3f7", "alert_limit_m": 50.0, "pl_method": "4.80 x filter sigma_major, not certified", "r95_method": "2.45 x filter sigma_major", "primary": true}}
+{"t": 0.0, "lat": 55.5301874, "lon": 12.7316543, "r95_m": 6.3, "pl_m": 12.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 5.0, "lat": 55.5303846, "lon": 12.7314695, "r95_m": 3.3, "pl_m": 6.5, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 10.0, "lat": 55.5305866, "lon": 12.7312796, "r95_m": 3.3, "pl_m": 6.4, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 15.0, "lat": 55.5307758, "lon": 12.7310827, "r95_m": 3.1, "pl_m": 6.1, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 20.0, "lat": 55.5309621, "lon": 12.7308966, "r95_m": 2.9, "pl_m": 5.7, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 25.0, "lat": 55.5311575, "lon": 12.7307092, "r95_m": 2.7, "pl_m": 5.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 30.0, "lat": 55.5313546, "lon": 12.7305157, "r95_m": 2.5, "pl_m": 4.9, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 35.0, "lat": 55.5315518, "lon": 12.7303271, "r95_m": 2.4, "pl_m": 4.6, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 40.0, "lat": 55.5317445, "lon": 12.7301387, "r95_m": 2.2, "pl_m": 4.4, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 45.0, "lat": 55.5319443, "lon": 12.7299477, "r95_m": 2.1, "pl_m": 4.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 50.0, "lat": 55.5321421, "lon": 12.7297497, "r95_m": 2.0, "pl_m": 4.0, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 55.0, "lat": 55.5323359, "lon": 12.7295595, "r95_m": 1.9, "pl_m": 3.8, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 60.0, "lat": 55.5325288, "lon": 12.7293704, "r95_m": 1.9, "pl_m": 3.7, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 65.0, "lat": 55.5327248, "lon": 12.7291716, "r95_m": 1.8, "pl_m": 3.5, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 70.0, "lat": 55.5329177, "lon": 12.7289773, "r95_m": 1.7, "pl_m": 3.4, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 75.0, "lat": 55.5331133, "lon": 12.7287768, "r95_m": 1.7, "pl_m": 3.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 80.0, "lat": 55.5333131, "lon": 12.7285829, "r95_m": 1.6, "pl_m": 3.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 85.0, "lat": 55.5335087, "lon": 12.7283898, "r95_m": 1.6, "pl_m": 3.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 90.0, "lat": 55.5337021, "lon": 12.728194, "r95_m": 1.6, "pl_m": 3.1, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 95.0, "lat": 55.5339, "lon": 12.7279936, "r95_m": 1.5, "pl_m": 3.0, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 100.0, "lat": 55.5340972, "lon": 12.7277929, "r95_m": 1.5, "pl_m": 3.0, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 105.0, "lat": 55.5342936, "lon": 12.7276014, "r95_m": 1.5, "pl_m": 2.9, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 110.0, "lat": 55.5344918, "lon": 12.727409, "r95_m": 1.5, "pl_m": 2.9, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 115.0, "lat": 55.5346894, "lon": 12.7272159, "r95_m": 1.4, "pl_m": 2.8, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 120.0, "lat": 55.5348875, "lon": 12.7270245, "r95_m": 1.4, "pl_m": 2.8, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 125.0, "lat": 55.535085, "lon": 12.7268361, "r95_m": 1.4, "pl_m": 2.7, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 130.0, "lat": 55.5352845, "lon": 12.7266451, "r95_m": 1.4, "pl_m": 2.7, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 135.0, "lat": 55.53548, "lon": 12.726455, "r95_m": 1.4, "pl_m": 2.7, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 140.0, "lat": 55.5356756, "lon": 12.726264, "r95_m": 1.3, "pl_m": 2.6, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 145.0, "lat": 55.5358727, "lon": 12.7260724, "r95_m": 1.3, "pl_m": 2.6, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 150.0, "lat": 55.5360682, "lon": 12.7258765, "r95_m": 1.3, "pl_m": 2.6, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 155.0, "lat": 55.5362624, "lon": 12.7256861, "r95_m": 1.3, "pl_m": 2.5, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 160.0, "lat": 55.5364593, "lon": 12.7254902, "r95_m": 1.3, "pl_m": 2.5, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 165.0, "lat": 55.5366569, "lon": 12.7252944, "r95_m": 1.3, "pl_m": 2.5, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 170.0, "lat": 55.536849, "lon": 12.7250977, "r95_m": 1.3, "pl_m": 2.5, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 175.0, "lat": 55.5370474, "lon": 12.7249022, "r95_m": 1.3, "pl_m": 2.5, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 180.0, "lat": 55.5372428, "lon": 12.7247102, "r95_m": 1.2, "pl_m": 2.4, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 185.0, "lat": 55.5374409, "lon": 12.7245167, "r95_m": 1.2, "pl_m": 2.4, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 190.0, "lat": 55.5376386, "lon": 12.7243228, "r95_m": 1.2, "pl_m": 2.4, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 195.0, "lat": 55.5378351, "lon": 12.7241321, "r95_m": 1.2, "pl_m": 2.4, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 200.0, "lat": 55.5380285, "lon": 12.7239405, "r95_m": 1.2, "pl_m": 2.4, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 205.0, "lat": 55.5382247, "lon": 12.7237492, "r95_m": 1.2, "pl_m": 2.4, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 210.0, "lat": 55.5384196, "lon": 12.7235564, "r95_m": 1.2, "pl_m": 2.4, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 215.0, "lat": 55.5386127, "lon": 12.7233608, "r95_m": 1.2, "pl_m": 2.4, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 220.0, "lat": 55.5388067, "lon": 12.7231626, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 225.0, "lat": 55.5390022, "lon": 12.7229713, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 230.0, "lat": 55.5391974, "lon": 12.7227774, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 235.0, "lat": 55.5393945, "lon": 12.7225816, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 240.0, "lat": 55.5395916, "lon": 12.7223859, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 245.0, "lat": 55.5397873, "lon": 12.7221868, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 250.0, "lat": 55.5399842, "lon": 12.7219909, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 255.0, "lat": 55.5401793, "lon": 12.7217986, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 260.0, "lat": 55.5403738, "lon": 12.7216045, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 265.0, "lat": 55.540568, "lon": 12.7214069, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 270.0, "lat": 55.5407628, "lon": 12.7212077, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 275.0, "lat": 55.5409586, "lon": 12.721013, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 280.0, "lat": 55.5411538, "lon": 12.7208149, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 285.0, "lat": 55.5413489, "lon": 12.7206186, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 290.0, "lat": 55.5415443, "lon": 12.7204206, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 295.0, "lat": 55.5417396, "lon": 12.7202258, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 300.0, "lat": 55.541936, "lon": 12.7200264, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 305.0, "lat": 55.5421307, "lon": 12.719829, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 310.0, "lat": 55.5423255, "lon": 12.7196333, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 315.0, "lat": 55.542519, "lon": 12.7194385, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 320.0, "lat": 55.5427154, "lon": 12.7192385, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 325.0, "lat": 55.5429101, "lon": 12.7190358, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 330.0, "lat": 55.5431033, "lon": 12.7188349, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 335.0, "lat": 55.5432962, "lon": 12.718636, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 340.0, "lat": 55.5434918, "lon": 12.7184352, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 345.0, "lat": 55.5436903, "lon": 12.7182366, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 350.0, "lat": 55.5438837, "lon": 12.7180406, "r95_m": 1.1, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 355.0, "lat": 55.5440771, "lon": 12.7178457, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 360.0, "lat": 55.5442694, "lon": 12.7176511, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 365.0, "lat": 55.5444619, "lon": 12.717458, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 370.0, "lat": 55.5446551, "lon": 12.7172644, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 375.0, "lat": 55.5448487, "lon": 12.7170682, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 380.0, "lat": 55.5450406, "lon": 12.7168694, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 385.0, "lat": 55.5452325, "lon": 12.7166731, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 390.0, "lat": 55.5454258, "lon": 12.7164781, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 395.0, "lat": 55.5456172, "lon": 12.7162847, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 400.0, "lat": 55.5458085, "lon": 12.7160922, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 405.0, "lat": 55.5460032, "lon": 12.7159004, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 410.0, "lat": 55.5461937, "lon": 12.7157048, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 415.0, "lat": 55.5463858, "lon": 12.7155085, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 420.0, "lat": 55.546579, "lon": 12.7153176, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 425.0, "lat": 55.5467707, "lon": 12.7151255, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 430.0, "lat": 55.5469657, "lon": 12.7149282, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 435.0, "lat": 55.5471584, "lon": 12.7147309, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 440.0, "lat": 55.5473499, "lon": 12.7145304, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 445.0, "lat": 55.5475451, "lon": 12.714337, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 450.0, "lat": 55.5477406, "lon": 12.7141417, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 455.0, "lat": 55.5479374, "lon": 12.7139445, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 460.0, "lat": 55.5481331, "lon": 12.713745, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 465.0, "lat": 55.5483305, "lon": 12.7135469, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 470.0, "lat": 55.5485308, "lon": 12.7133429, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 475.0, "lat": 55.5487285, "lon": 12.7131441, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 480.0, "lat": 55.5489263, "lon": 12.7129439, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 485.0, "lat": 55.5491238, "lon": 12.7127454, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 490.0, "lat": 55.5493186, "lon": 12.71255, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 495.0, "lat": 55.549515, "lon": 12.7123522, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 500.0, "lat": 55.5497111, "lon": 12.7121551, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 505.0, "lat": 55.5499079, "lon": 12.7119584, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 510.0, "lat": 55.5501022, "lon": 12.7117621, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 515.0, "lat": 55.5502988, "lon": 12.7115662, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 520.0, "lat": 55.5504954, "lon": 12.7113722, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 525.0, "lat": 55.550691, "lon": 12.7111768, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 530.0, "lat": 55.5508867, "lon": 12.7109839, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 535.0, "lat": 55.5510849, "lon": 12.7107903, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 540.0, "lat": 55.5512823, "lon": 12.710595, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 545.0, "lat": 55.5514784, "lon": 12.710404, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 550.0, "lat": 55.5516748, "lon": 12.7102066, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 555.0, "lat": 55.551871, "lon": 12.7100143, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 560.0, "lat": 55.5520647, "lon": 12.7098197, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 565.0, "lat": 55.5522622, "lon": 12.7096246, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 570.0, "lat": 55.5524587, "lon": 12.709428, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 575.0, "lat": 55.5526537, "lon": 12.7092298, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 580.0, "lat": 55.5528506, "lon": 12.7090375, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 585.0, "lat": 55.553047, "lon": 12.7088427, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 590.0, "lat": 55.5532412, "lon": 12.7086531, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 595.0, "lat": 55.5534356, "lon": 12.7084596, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 600.0, "lat": 55.5536303, "lon": 12.7082646, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 605.0, "lat": 55.5538254, "lon": 12.7080709, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 610.0, "lat": 55.5540194, "lon": 12.7078729, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 615.0, "lat": 55.5542155, "lon": 12.7076812, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 620.0, "lat": 55.5544124, "lon": 12.7074869, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 625.0, "lat": 55.5546069, "lon": 12.7072882, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 630.0, "lat": 55.5548018, "lon": 12.7070906, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 635.0, "lat": 55.5549993, "lon": 12.7068942, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 640.0, "lat": 55.5551954, "lon": 12.7067004, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 645.0, "lat": 55.5553894, "lon": 12.7065057, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 650.0, "lat": 55.5555825, "lon": 12.7063102, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 655.0, "lat": 55.5557751, "lon": 12.7061159, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 660.0, "lat": 55.555968, "lon": 12.7059194, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 660.0, "lat": 55.555968, "lon": 12.7059201, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 665.0, "lat": 55.5561808, "lon": 12.7057826, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 670.0, "lat": 55.556399, "lon": 12.7056848, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 675.0, "lat": 55.5566175, "lon": 12.7055869, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 680.0, "lat": 55.5568363, "lon": 12.7054941, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 685.0, "lat": 55.5570525, "lon": 12.705399, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 690.0, "lat": 55.5572703, "lon": 12.7053048, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 695.0, "lat": 55.5574894, "lon": 12.7052215, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 700.0, "lat": 55.5577089, "lon": 12.7051558, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 705.0, "lat": 55.5579319, "lon": 12.7050953, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 710.0, "lat": 55.5581555, "lon": 12.7050455, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 715.0, "lat": 55.55838, "lon": 12.7050046, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 720.0, "lat": 55.5586025, "lon": 12.7049708, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 725.0, "lat": 55.5588265, "lon": 12.7049391, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 730.0, "lat": 55.5590498, "lon": 12.7049123, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 735.0, "lat": 55.559273, "lon": 12.7048909, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 740.0, "lat": 55.5594979, "lon": 12.7048709, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 745.0, "lat": 55.5597213, "lon": 12.7048546, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 750.0, "lat": 55.5599443, "lon": 12.7048347, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 755.0, "lat": 55.5601695, "lon": 12.7048196, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 760.0, "lat": 55.5603951, "lon": 12.7048082, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 765.0, "lat": 55.560621, "lon": 12.7048007, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 770.0, "lat": 55.560847, "lon": 12.7047941, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 775.0, "lat": 55.5610715, "lon": 12.7047901, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 780.0, "lat": 55.5612962, "lon": 12.7047839, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 785.0, "lat": 55.5615212, "lon": 12.7047822, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 790.0, "lat": 55.5617475, "lon": 12.7047825, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 795.0, "lat": 55.5619734, "lon": 12.7047801, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 800.0, "lat": 55.5621981, "lon": 12.7047746, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 805.0, "lat": 55.5624197, "lon": 12.7047761, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 810.0, "lat": 55.5626438, "lon": 12.7047781, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 815.0, "lat": 55.5628697, "lon": 12.7047764, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 820.0, "lat": 55.5630904, "lon": 12.7047785, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 825.0, "lat": 55.5633127, "lon": 12.7047748, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 830.0, "lat": 55.5635376, "lon": 12.7047737, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 835.0, "lat": 55.5637617, "lon": 12.7047732, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 840.0, "lat": 55.5639882, "lon": 12.7047732, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 845.0, "lat": 55.5642126, "lon": 12.7047754, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 850.0, "lat": 55.564438, "lon": 12.704778, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 855.0, "lat": 55.5646629, "lon": 12.7047809, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 860.0, "lat": 55.5648859, "lon": 12.7047829, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 865.0, "lat": 55.5651102, "lon": 12.704783, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 870.0, "lat": 55.5653345, "lon": 12.7047859, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 875.0, "lat": 55.5655589, "lon": 12.7047877, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 880.0, "lat": 55.5657819, "lon": 12.7047862, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 885.0, "lat": 55.5660033, "lon": 12.7047872, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 890.0, "lat": 55.5662271, "lon": 12.7047895, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 895.0, "lat": 55.5664544, "lon": 12.7047867, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 900.0, "lat": 55.5666783, "lon": 12.7047849, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 905.0, "lat": 55.5669027, "lon": 12.7047889, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 910.0, "lat": 55.567126, "lon": 12.7047917, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 915.0, "lat": 55.5673482, "lon": 12.7047919, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 920.0, "lat": 55.5675725, "lon": 12.7047926, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 925.0, "lat": 55.5677983, "lon": 12.7047919, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 930.0, "lat": 55.5680242, "lon": 12.704791, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 935.0, "lat": 55.5682485, "lon": 12.7047883, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 940.0, "lat": 55.5684741, "lon": 12.7047826, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 945.0, "lat": 55.568699, "lon": 12.7047799, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 950.0, "lat": 55.5689238, "lon": 12.70478, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 955.0, "lat": 55.5691492, "lon": 12.704781, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 960.0, "lat": 55.5693753, "lon": 12.7047805, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 965.0, "lat": 55.5696006, "lon": 12.704778, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 970.0, "lat": 55.5698267, "lon": 12.7047761, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 975.0, "lat": 55.570054, "lon": 12.7047746, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 980.0, "lat": 55.5702816, "lon": 12.7047736, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 985.0, "lat": 55.5705082, "lon": 12.7047711, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 990.0, "lat": 55.5707339, "lon": 12.7047678, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 995.0, "lat": 55.5709563, "lon": 12.7047669, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1000.0, "lat": 55.5711822, "lon": 12.7047687, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1005.0, "lat": 55.5714059, "lon": 12.7047698, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1010.0, "lat": 55.5716285, "lon": 12.7047704, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1015.0, "lat": 55.5718498, "lon": 12.7047722, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1020.0, "lat": 55.5720697, "lon": 12.7047712, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1025.0, "lat": 55.5722918, "lon": 12.7047759, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1030.0, "lat": 55.5725122, "lon": 12.7047766, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1035.0, "lat": 55.5727352, "lon": 12.7047788, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1040.0, "lat": 55.5729595, "lon": 12.7047774, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1045.0, "lat": 55.5731831, "lon": 12.704773, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1050.0, "lat": 55.5734063, "lon": 12.7047704, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1055.0, "lat": 55.57363, "lon": 12.7047681, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1060.0, "lat": 55.573853, "lon": 12.7047651, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1065.0, "lat": 55.5740766, "lon": 12.7047632, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1070.0, "lat": 55.5742992, "lon": 12.7047642, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1075.0, "lat": 55.5745232, "lon": 12.7047614, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1080.0, "lat": 55.5747453, "lon": 12.7047627, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1085.0, "lat": 55.5749703, "lon": 12.7047643, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1090.0, "lat": 55.5751935, "lon": 12.7047653, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1095.0, "lat": 55.5754198, "lon": 12.7047632, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1100.0, "lat": 55.5756463, "lon": 12.7047641, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1105.0, "lat": 55.5758719, "lon": 12.704763, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1110.0, "lat": 55.5760999, "lon": 12.704763, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1115.0, "lat": 55.5763247, "lon": 12.7047647, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1120.0, "lat": 55.5765499, "lon": 12.7047636, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1125.0, "lat": 55.5767739, "lon": 12.7047626, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1130.0, "lat": 55.5769973, "lon": 12.7047608, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1135.0, "lat": 55.5772212, "lon": 12.7047597, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1140.0, "lat": 55.5774436, "lon": 12.704756, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1145.0, "lat": 55.577669, "lon": 12.704756, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1150.0, "lat": 55.577894, "lon": 12.7047565, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1155.0, "lat": 55.5781186, "lon": 12.7047545, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1160.0, "lat": 55.5783417, "lon": 12.7047507, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1165.0, "lat": 55.5785668, "lon": 12.70475, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1170.0, "lat": 55.5787926, "lon": 12.7047489, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1175.0, "lat": 55.579015, "lon": 12.7047487, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1180.0, "lat": 55.5792406, "lon": 12.7047444, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1185.0, "lat": 55.5794653, "lon": 12.7047435, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1190.0, "lat": 55.5796926, "lon": 12.704744, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1195.0, "lat": 55.5799191, "lon": 12.7047452, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1200.0, "lat": 55.580145, "lon": 12.7047426, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1205.0, "lat": 55.5803712, "lon": 12.7047433, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1210.0, "lat": 55.5805953, "lon": 12.704743, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1215.0, "lat": 55.580823, "lon": 12.7047453, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1220.0, "lat": 55.5810491, "lon": 12.7047448, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1225.0, "lat": 55.5812773, "lon": 12.7047417, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1230.0, "lat": 55.5815039, "lon": 12.7047385, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1235.0, "lat": 55.58173, "lon": 12.7047368, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1240.0, "lat": 55.5819606, "lon": 12.7047359, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1245.0, "lat": 55.5821872, "lon": 12.7047306, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1250.0, "lat": 55.5824128, "lon": 12.7047284, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1255.0, "lat": 55.5826374, "lon": 12.7047262, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1260.0, "lat": 55.5828612, "lon": 12.7047249, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1265.0, "lat": 55.583087, "lon": 12.7047229, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1270.0, "lat": 55.5833128, "lon": 12.7047237, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1275.0, "lat": 55.5835377, "lon": 12.7047223, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1280.0, "lat": 55.5837617, "lon": 12.7047203, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1285.0, "lat": 55.5839856, "lon": 12.7047168, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1290.0, "lat": 55.584212, "lon": 12.7047158, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1295.0, "lat": 55.584435, "lon": 12.7047124, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1300.0, "lat": 55.5846596, "lon": 12.7047095, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1305.0, "lat": 55.5848839, "lon": 12.7047088, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1310.0, "lat": 55.5851069, "lon": 12.7047105, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1315.0, "lat": 55.5853318, "lon": 12.7047089, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1320.0, "lat": 55.5855549, "lon": 12.704707, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1325.0, "lat": 55.5857797, "lon": 12.7047087, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1330.0, "lat": 55.5860016, "lon": 12.7047079, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1335.0, "lat": 55.5862231, "lon": 12.7047067, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1340.0, "lat": 55.5864467, "lon": 12.7047058, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1345.0, "lat": 55.5866707, "lon": 12.7047079, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1350.0, "lat": 55.5868946, "lon": 12.7047052, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1355.0, "lat": 55.5871195, "lon": 12.7046996, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1360.0, "lat": 55.5873463, "lon": 12.7046969, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1365.0, "lat": 55.5875724, "lon": 12.7046974, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1370.0, "lat": 55.5877996, "lon": 12.7046968, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1375.0, "lat": 55.5880228, "lon": 12.7046972, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1380.0, "lat": 55.5882459, "lon": 12.7046976, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1385.0, "lat": 55.5884697, "lon": 12.7046988, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1390.0, "lat": 55.5886928, "lon": 12.7046998, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1395.0, "lat": 55.5889156, "lon": 12.7046986, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1400.0, "lat": 55.5891389, "lon": 12.7047012, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1405.0, "lat": 55.5893635, "lon": 12.7047008, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1410.0, "lat": 55.5895898, "lon": 12.7047032, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1415.0, "lat": 55.5898139, "lon": 12.7047011, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1420.0, "lat": 55.5900392, "lon": 12.7047005, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1425.0, "lat": 55.5902654, "lon": 12.7047041, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1430.0, "lat": 55.5904899, "lon": 12.7047068, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1435.0, "lat": 55.5907152, "lon": 12.704709, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1440.0, "lat": 55.5909418, "lon": 12.7047095, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1445.0, "lat": 55.5911672, "lon": 12.7047111, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1450.0, "lat": 55.5913926, "lon": 12.7047126, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1455.0, "lat": 55.5916188, "lon": 12.7047168, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1460.0, "lat": 55.5918454, "lon": 12.704719, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1465.0, "lat": 55.5920735, "lon": 12.704719, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1470.0, "lat": 55.5922999, "lon": 12.7047198, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1475.0, "lat": 55.5925252, "lon": 12.7047193, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1480.0, "lat": 55.5927523, "lon": 12.7047199, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1485.0, "lat": 55.5929791, "lon": 12.7047198, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1490.0, "lat": 55.5932019, "lon": 12.704724, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1495.0, "lat": 55.593426, "lon": 12.7047277, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1500.0, "lat": 55.5936503, "lon": 12.7047289, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1505.0, "lat": 55.5938764, "lon": 12.7047311, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1510.0, "lat": 55.5941003, "lon": 12.7047344, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1515.0, "lat": 55.5943236, "lon": 12.7047369, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1520.0, "lat": 55.5945474, "lon": 12.7047398, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1525.0, "lat": 55.5947715, "lon": 12.7047409, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1530.0, "lat": 55.5949945, "lon": 12.7047417, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1535.0, "lat": 55.5952177, "lon": 12.7047416, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1540.0, "lat": 55.5954442, "lon": 12.7047439, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1545.0, "lat": 55.5956687, "lon": 12.7047433, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1550.0, "lat": 55.5958931, "lon": 12.7047408, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1555.0, "lat": 55.5961154, "lon": 12.7047383, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1560.0, "lat": 55.5963391, "lon": 12.704731, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1565.0, "lat": 55.5965641, "lon": 12.7047256, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1570.0, "lat": 55.5967891, "lon": 12.7047178, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1575.0, "lat": 55.5970144, "lon": 12.7047102, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1580.0, "lat": 55.5972415, "lon": 12.7047012, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1585.0, "lat": 55.5974642, "lon": 12.7046884, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1590.0, "lat": 55.5976878, "lon": 12.7046758, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1595.0, "lat": 55.5979106, "lon": 12.7046631, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1600.0, "lat": 55.5981334, "lon": 12.7046504, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1605.0, "lat": 55.5983575, "lon": 12.7046406, "r95_m": 1.1, "pl_m": 2.2, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1610.0, "lat": 55.5985812, "lon": 12.7046272, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1615.0, "lat": 55.5988032, "lon": 12.7046135, "r95_m": 1.2, "pl_m": 2.3, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1620.0, "lat": 55.599028, "lon": 12.7046089, "r95_m": 1.2, "pl_m": 2.4, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1625.0, "lat": 55.5992527, "lon": 12.7046042, "r95_m": 1.3, "pl_m": 2.5, "health": "trusted", "alarm": false, "sources": ["dr", "gnss", "radar"]}
+{"t": 1630.0, "lat": 55.599473, "lon": 12.704748, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1635.0, "lat": 55.5996978, "lon": 12.70475, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1640.0, "lat": 55.5999209, "lon": 12.7047532, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1645.0, "lat": 55.6001456, "lon": 12.7047554, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1650.0, "lat": 55.6003701, "lon": 12.704754, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1655.0, "lat": 55.6005953, "lon": 12.7047579, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1660.0, "lat": 55.6008191, "lon": 12.7047578, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1665.0, "lat": 55.6010441, "lon": 12.704757, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1670.0, "lat": 55.6012673, "lon": 12.7047548, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1675.0, "lat": 55.6014914, "lon": 12.7047538, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1680.0, "lat": 55.6017172, "lon": 12.704755, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1685.0, "lat": 55.6019424, "lon": 12.7047554, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1690.0, "lat": 55.6021653, "lon": 12.7047565, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1695.0, "lat": 55.6023889, "lon": 12.70476, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1700.0, "lat": 55.6026133, "lon": 12.7047607, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1705.0, "lat": 55.6028352, "lon": 12.7047598, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1710.0, "lat": 55.60306, "lon": 12.704761, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1715.0, "lat": 55.6032851, "lon": 12.7047625, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1720.0, "lat": 55.6035105, "lon": 12.7047624, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1725.0, "lat": 55.6037342, "lon": 12.7047627, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1730.0, "lat": 55.6039587, "lon": 12.7047639, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1735.0, "lat": 55.6041829, "lon": 12.7047659, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1740.0, "lat": 55.6044079, "lon": 12.7047662, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1745.0, "lat": 55.6046323, "lon": 12.7047684, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1750.0, "lat": 55.6048552, "lon": 12.7047654, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1755.0, "lat": 55.6050801, "lon": 12.7047648, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1760.0, "lat": 55.6053036, "lon": 12.7047667, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1765.0, "lat": 55.6055287, "lon": 12.7047699, "r95_m": 3.6, "pl_m": 7.1, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1770.0, "lat": 55.6057532, "lon": 12.7047699, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1775.0, "lat": 55.6059765, "lon": 12.7047699, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1780.0, "lat": 55.6061993, "lon": 12.7047697, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1785.0, "lat": 55.6064242, "lon": 12.7047694, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1790.0, "lat": 55.6066508, "lon": 12.7047708, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1795.0, "lat": 55.606876, "lon": 12.7047722, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1800.0, "lat": 55.6071002, "lon": 12.704771, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1805.0, "lat": 55.6073243, "lon": 12.7047705, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1810.0, "lat": 55.6075476, "lon": 12.7047691, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1815.0, "lat": 55.6077721, "lon": 12.7047677, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1820.0, "lat": 55.607996, "lon": 12.7047678, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1825.0, "lat": 55.6082198, "lon": 12.704767, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1830.0, "lat": 55.6084455, "lon": 12.7047638, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1835.0, "lat": 55.6086713, "lon": 12.7047631, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1840.0, "lat": 55.6088975, "lon": 12.7047638, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1845.0, "lat": 55.6091206, "lon": 12.7047641, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1850.0, "lat": 55.6093445, "lon": 12.7047641, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1855.0, "lat": 55.6095696, "lon": 12.7047641, "r95_m": 3.7, "pl_m": 7.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1860.0, "lat": 55.6097927, "lon": 12.7047538, "r95_m": 3.7, "pl_m": 7.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1865.0, "lat": 55.6100161, "lon": 12.7046982, "r95_m": 3.7, "pl_m": 7.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1870.0, "lat": 55.6102375, "lon": 12.7046454, "r95_m": 3.7, "pl_m": 7.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1875.0, "lat": 55.6104603, "lon": 12.7045899, "r95_m": 3.7, "pl_m": 7.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1880.0, "lat": 55.6106814, "lon": 12.7045349, "r95_m": 3.7, "pl_m": 7.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1885.0, "lat": 55.6109045, "lon": 12.7044824, "r95_m": 3.7, "pl_m": 7.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1890.0, "lat": 55.6111248, "lon": 12.7044278, "r95_m": 3.7, "pl_m": 7.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1895.0, "lat": 55.6113466, "lon": 12.7043643, "r95_m": 3.8, "pl_m": 7.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1900.0, "lat": 55.6115719, "lon": 12.7042947, "r95_m": 3.8, "pl_m": 7.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1905.0, "lat": 55.6117927, "lon": 12.7042214, "r95_m": 3.8, "pl_m": 7.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1910.0, "lat": 55.6120099, "lon": 12.7041407, "r95_m": 3.8, "pl_m": 7.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1915.0, "lat": 55.6122282, "lon": 12.704059, "r95_m": 3.8, "pl_m": 7.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1920.0, "lat": 55.6124484, "lon": 12.7039717, "r95_m": 3.8, "pl_m": 7.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1925.0, "lat": 55.6126663, "lon": 12.70388, "r95_m": 3.8, "pl_m": 7.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1930.0, "lat": 55.612886, "lon": 12.7037877, "r95_m": 3.8, "pl_m": 7.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1935.0, "lat": 55.6131034, "lon": 12.7036939, "r95_m": 3.8, "pl_m": 7.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1940.0, "lat": 55.6133255, "lon": 12.7035986, "r95_m": 3.8, "pl_m": 7.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1945.0, "lat": 55.6135429, "lon": 12.7035032, "r95_m": 3.8, "pl_m": 7.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1950.0, "lat": 55.613762, "lon": 12.7034032, "r95_m": 3.8, "pl_m": 7.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1955.0, "lat": 55.6139798, "lon": 12.7033047, "r95_m": 3.9, "pl_m": 7.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1960.0, "lat": 55.6141961, "lon": 12.7032059, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1965.0, "lat": 55.6144125, "lon": 12.7031051, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1970.0, "lat": 55.6146304, "lon": 12.703003, "r95_m": 3.8, "pl_m": 7.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1975.0, "lat": 55.6148479, "lon": 12.7029013, "r95_m": 3.8, "pl_m": 7.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1980.0, "lat": 55.6150635, "lon": 12.7027981, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1985.0, "lat": 55.6152802, "lon": 12.7026954, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1990.0, "lat": 55.6154992, "lon": 12.7025918, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1995.0, "lat": 55.6157172, "lon": 12.7024864, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2000.0, "lat": 55.6159341, "lon": 12.7023824, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2005.0, "lat": 55.6161505, "lon": 12.7022771, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2010.0, "lat": 55.6163669, "lon": 12.7021735, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2015.0, "lat": 55.6165842, "lon": 12.7020682, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2020.0, "lat": 55.6168004, "lon": 12.7019658, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2025.0, "lat": 55.6170158, "lon": 12.701861, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2030.0, "lat": 55.6172333, "lon": 12.7017578, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2035.0, "lat": 55.6174511, "lon": 12.7016538, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2040.0, "lat": 55.617667, "lon": 12.7015484, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2045.0, "lat": 55.6178841, "lon": 12.7014398, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2050.0, "lat": 55.618101, "lon": 12.7013368, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2055.0, "lat": 55.6183194, "lon": 12.7012301, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2060.0, "lat": 55.6185367, "lon": 12.7011247, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2065.0, "lat": 55.6187523, "lon": 12.7010209, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2070.0, "lat": 55.6189672, "lon": 12.7009168, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2075.0, "lat": 55.6191838, "lon": 12.7008122, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2080.0, "lat": 55.6194, "lon": 12.7007065, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2085.0, "lat": 55.6196166, "lon": 12.7006005, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2090.0, "lat": 55.6198329, "lon": 12.7004979, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2095.0, "lat": 55.6200498, "lon": 12.7003913, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2100.0, "lat": 55.6202667, "lon": 12.7002858, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2105.0, "lat": 55.6204824, "lon": 12.7001837, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2110.0, "lat": 55.6207001, "lon": 12.7000772, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2115.0, "lat": 55.6209193, "lon": 12.6999711, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2120.0, "lat": 55.621136, "lon": 12.6998636, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2125.0, "lat": 55.6213547, "lon": 12.6997559, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2130.0, "lat": 55.6215701, "lon": 12.6996515, "r95_m": 4.0, "pl_m": 7.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2135.0, "lat": 55.6217847, "lon": 12.6995455, "r95_m": 4.0, "pl_m": 7.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2140.0, "lat": 55.6220018, "lon": 12.6994383, "r95_m": 4.0, "pl_m": 7.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2145.0, "lat": 55.6222201, "lon": 12.6993333, "r95_m": 4.0, "pl_m": 7.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2150.0, "lat": 55.6224356, "lon": 12.699227, "r95_m": 4.0, "pl_m": 7.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2155.0, "lat": 55.6226527, "lon": 12.6991196, "r95_m": 4.0, "pl_m": 7.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2160.0, "lat": 55.6228686, "lon": 12.6990122, "r95_m": 4.0, "pl_m": 7.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2165.0, "lat": 55.6230851, "lon": 12.6989095, "r95_m": 4.0, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2170.0, "lat": 55.6233024, "lon": 12.6988029, "r95_m": 4.0, "pl_m": 7.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2175.0, "lat": 55.6235159, "lon": 12.6986968, "r95_m": 4.0, "pl_m": 7.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2180.0, "lat": 55.6237326, "lon": 12.6985904, "r95_m": 4.0, "pl_m": 7.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2185.0, "lat": 55.62395, "lon": 12.6984836, "r95_m": 4.0, "pl_m": 7.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2190.0, "lat": 55.6241662, "lon": 12.6983789, "r95_m": 4.0, "pl_m": 7.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2195.0, "lat": 55.6243834, "lon": 12.6982735, "r95_m": 4.0, "pl_m": 7.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2200.0, "lat": 55.6246017, "lon": 12.6981696, "r95_m": 4.0, "pl_m": 7.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2205.0, "lat": 55.6248195, "lon": 12.6980647, "r95_m": 4.0, "pl_m": 7.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2210.0, "lat": 55.6250329, "lon": 12.6979627, "r95_m": 4.0, "pl_m": 7.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2215.0, "lat": 55.6252493, "lon": 12.6978588, "r95_m": 4.0, "pl_m": 7.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2220.0, "lat": 55.6254661, "lon": 12.6977553, "r95_m": 4.0, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2225.0, "lat": 55.6256827, "lon": 12.6976488, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2230.0, "lat": 55.6259019, "lon": 12.6975426, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2235.0, "lat": 55.6261197, "lon": 12.6974402, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2240.0, "lat": 55.6263371, "lon": 12.6973345, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2245.0, "lat": 55.6265527, "lon": 12.6972309, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2250.0, "lat": 55.6267683, "lon": 12.6971269, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2255.0, "lat": 55.6269835, "lon": 12.6970223, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2260.0, "lat": 55.6271991, "lon": 12.6969148, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2265.0, "lat": 55.6274149, "lon": 12.6968092, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2270.0, "lat": 55.6276332, "lon": 12.6967055, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2275.0, "lat": 55.6278499, "lon": 12.6966021, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2280.0, "lat": 55.6280676, "lon": 12.6964938, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2285.0, "lat": 55.628284, "lon": 12.6963898, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2290.0, "lat": 55.6284994, "lon": 12.6962846, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2295.0, "lat": 55.6287157, "lon": 12.6961791, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2300.0, "lat": 55.6289334, "lon": 12.6960727, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2305.0, "lat": 55.6291494, "lon": 12.695968, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2310.0, "lat": 55.629368, "lon": 12.6958609, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2315.0, "lat": 55.6295834, "lon": 12.6957573, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2320.0, "lat": 55.6297968, "lon": 12.695651, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2325.0, "lat": 55.6300109, "lon": 12.6955469, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2330.0, "lat": 55.6302236, "lon": 12.695443, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2335.0, "lat": 55.6304385, "lon": 12.6953359, "r95_m": 3.8, "pl_m": 7.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2340.0, "lat": 55.6306537, "lon": 12.6952303, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2345.0, "lat": 55.6308695, "lon": 12.6951252, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2350.0, "lat": 55.6310879, "lon": 12.695018, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2355.0, "lat": 55.6313062, "lon": 12.6949138, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2360.0, "lat": 55.6315219, "lon": 12.6948094, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2365.0, "lat": 55.6317369, "lon": 12.6947045, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2370.0, "lat": 55.6319508, "lon": 12.6946, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2375.0, "lat": 55.6321679, "lon": 12.6944936, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2380.0, "lat": 55.6323865, "lon": 12.6943893, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2385.0, "lat": 55.6326016, "lon": 12.6942846, "r95_m": 3.9, "pl_m": 7.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2390.0, "lat": 55.6328199, "lon": 12.6941785, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2395.0, "lat": 55.6330361, "lon": 12.6940729, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2400.0, "lat": 55.6332549, "lon": 12.6939662, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2405.0, "lat": 55.6334714, "lon": 12.693858, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2410.0, "lat": 55.6336854, "lon": 12.693751, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2415.0, "lat": 55.6339038, "lon": 12.6936482, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2420.0, "lat": 55.6341181, "lon": 12.6935408, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2425.0, "lat": 55.634337, "lon": 12.6934362, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2430.0, "lat": 55.6345547, "lon": 12.6933314, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2435.0, "lat": 55.6347703, "lon": 12.6932228, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2440.0, "lat": 55.634988, "lon": 12.6931158, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2445.0, "lat": 55.6352054, "lon": 12.6930077, "r95_m": 3.9, "pl_m": 7.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2450.0, "lat": 55.6354208, "lon": 12.6929055, "r95_m": 3.8, "pl_m": 7.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2455.0, "lat": 55.6356377, "lon": 12.6928017, "r95_m": 3.8, "pl_m": 7.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2460.0, "lat": 55.6358531, "lon": 12.6926952, "r95_m": 3.8, "pl_m": 7.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2465.0, "lat": 55.636068, "lon": 12.6925909, "r95_m": 3.8, "pl_m": 7.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2470.0, "lat": 55.6362828, "lon": 12.6924877, "r95_m": 3.8, "pl_m": 7.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2475.0, "lat": 55.6364999, "lon": 12.6923812, "r95_m": 3.8, "pl_m": 7.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2480.0, "lat": 55.6367146, "lon": 12.6922745, "r95_m": 3.8, "pl_m": 7.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2485.0, "lat": 55.6369302, "lon": 12.69217, "r95_m": 3.8, "pl_m": 7.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2490.0, "lat": 55.6371454, "lon": 12.6920656, "r95_m": 3.8, "pl_m": 7.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2495.0, "lat": 55.6373619, "lon": 12.691961, "r95_m": 3.7, "pl_m": 7.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2500.0, "lat": 55.6375773, "lon": 12.6918523, "r95_m": 3.7, "pl_m": 7.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2505.0, "lat": 55.6377919, "lon": 12.6917444, "r95_m": 3.7, "pl_m": 7.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2510.0, "lat": 55.6380076, "lon": 12.6916378, "r95_m": 3.7, "pl_m": 7.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2515.0, "lat": 55.6382227, "lon": 12.6915301, "r95_m": 3.7, "pl_m": 7.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2520.0, "lat": 55.6384405, "lon": 12.6914233, "r95_m": 3.7, "pl_m": 7.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2525.0, "lat": 55.6386575, "lon": 12.6913194, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2530.0, "lat": 55.6388761, "lon": 12.6912149, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2535.0, "lat": 55.6390932, "lon": 12.6911106, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2540.0, "lat": 55.6393108, "lon": 12.6910048, "r95_m": 3.7, "pl_m": 7.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2545.0, "lat": 55.6395264, "lon": 12.6909, "r95_m": 3.6, "pl_m": 7.1, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2550.0, "lat": 55.6397451, "lon": 12.6907959, "r95_m": 3.6, "pl_m": 7.1, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2555.0, "lat": 55.6399626, "lon": 12.690689, "r95_m": 3.6, "pl_m": 7.1, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2560.0, "lat": 55.6401791, "lon": 12.6905831, "r95_m": 3.6, "pl_m": 7.1, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2565.0, "lat": 55.6403953, "lon": 12.6904767, "r95_m": 3.6, "pl_m": 7.1, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2570.0, "lat": 55.6406114, "lon": 12.6903717, "r95_m": 3.6, "pl_m": 7.1, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2575.0, "lat": 55.640826, "lon": 12.6902669, "r95_m": 3.6, "pl_m": 7.1, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2580.0, "lat": 55.6410432, "lon": 12.6901624, "r95_m": 3.6, "pl_m": 7.1, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2585.0, "lat": 55.6412612, "lon": 12.6900556, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2590.0, "lat": 55.6414765, "lon": 12.6899491, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2595.0, "lat": 55.6416931, "lon": 12.6898444, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2600.0, "lat": 55.6419106, "lon": 12.6897387, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2605.0, "lat": 55.6421273, "lon": 12.6896297, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2610.0, "lat": 55.6423435, "lon": 12.6895238, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2615.0, "lat": 55.6425594, "lon": 12.6894174, "r95_m": 3.6, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2620.0, "lat": 55.6427772, "lon": 12.6893124, "r95_m": 3.5, "pl_m": 7.0, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2625.0, "lat": 55.642992, "lon": 12.6892068, "r95_m": 3.5, "pl_m": 6.9, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2630.0, "lat": 55.6432075, "lon": 12.6891033, "r95_m": 3.5, "pl_m": 6.9, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2635.0, "lat": 55.643425, "lon": 12.6889961, "r95_m": 3.5, "pl_m": 6.9, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2640.0, "lat": 55.6436401, "lon": 12.6888913, "r95_m": 3.5, "pl_m": 6.9, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2645.0, "lat": 55.6438581, "lon": 12.6887857, "r95_m": 3.5, "pl_m": 6.9, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2650.0, "lat": 55.644075, "lon": 12.6886786, "r95_m": 3.5, "pl_m": 6.9, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2655.0, "lat": 55.6442896, "lon": 12.6885723, "r95_m": 3.5, "pl_m": 6.9, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2660.0, "lat": 55.6445057, "lon": 12.6884664, "r95_m": 3.5, "pl_m": 6.9, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2665.0, "lat": 55.644722, "lon": 12.6883608, "r95_m": 3.5, "pl_m": 6.9, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2670.0, "lat": 55.6449377, "lon": 12.6882561, "r95_m": 3.5, "pl_m": 6.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2675.0, "lat": 55.6451546, "lon": 12.6881505, "r95_m": 3.5, "pl_m": 6.9, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2680.0, "lat": 55.6453711, "lon": 12.6880458, "r95_m": 3.5, "pl_m": 6.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2685.0, "lat": 55.6455882, "lon": 12.6879406, "r95_m": 3.5, "pl_m": 6.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2690.0, "lat": 55.645801, "lon": 12.6878119, "r95_m": 3.5, "pl_m": 6.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2695.0, "lat": 55.6460054, "lon": 12.6876411, "r95_m": 3.5, "pl_m": 6.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2700.0, "lat": 55.6462077, "lon": 12.687476, "r95_m": 3.5, "pl_m": 6.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2705.0, "lat": 55.6464108, "lon": 12.6873072, "r95_m": 3.5, "pl_m": 6.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2710.0, "lat": 55.6466145, "lon": 12.6871404, "r95_m": 3.5, "pl_m": 6.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2715.0, "lat": 55.6468176, "lon": 12.6869715, "r95_m": 3.5, "pl_m": 6.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2720.0, "lat": 55.647018, "lon": 12.6867995, "r95_m": 3.5, "pl_m": 6.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2725.0, "lat": 55.647218, "lon": 12.6866202, "r95_m": 3.5, "pl_m": 6.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2730.0, "lat": 55.6474166, "lon": 12.6864343, "r95_m": 3.5, "pl_m": 6.8, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2735.0, "lat": 55.647614, "lon": 12.6862412, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2740.0, "lat": 55.6478097, "lon": 12.6860429, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2745.0, "lat": 55.6480025, "lon": 12.6858426, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2750.0, "lat": 55.6481937, "lon": 12.685639, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2755.0, "lat": 55.6483868, "lon": 12.685434, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2760.0, "lat": 55.6485793, "lon": 12.6852228, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2765.0, "lat": 55.6487682, "lon": 12.6850104, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2770.0, "lat": 55.6489568, "lon": 12.6847981, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2775.0, "lat": 55.6491469, "lon": 12.6845834, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2780.0, "lat": 55.6493348, "lon": 12.6843665, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2785.0, "lat": 55.6495222, "lon": 12.684149, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2790.0, "lat": 55.6497099, "lon": 12.6839311, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2795.0, "lat": 55.6498999, "lon": 12.6837128, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2800.0, "lat": 55.6500874, "lon": 12.6834941, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2805.0, "lat": 55.6502742, "lon": 12.6832757, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2810.0, "lat": 55.6504606, "lon": 12.6830562, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2815.0, "lat": 55.6506465, "lon": 12.6828357, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2820.0, "lat": 55.6508329, "lon": 12.6826152, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2825.0, "lat": 55.6510208, "lon": 12.6823931, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2830.0, "lat": 55.651206, "lon": 12.68217, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2835.0, "lat": 55.6513915, "lon": 12.6819504, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2840.0, "lat": 55.6515798, "lon": 12.6817269, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2845.0, "lat": 55.6517662, "lon": 12.6815028, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2850.0, "lat": 55.6519536, "lon": 12.6812816, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2855.0, "lat": 55.6521398, "lon": 12.6810595, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2860.0, "lat": 55.6523253, "lon": 12.6808396, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2865.0, "lat": 55.6525119, "lon": 12.6806207, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2870.0, "lat": 55.6526986, "lon": 12.680401, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2875.0, "lat": 55.6528816, "lon": 12.680177, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2880.0, "lat": 55.6530692, "lon": 12.6799509, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2885.0, "lat": 55.6532553, "lon": 12.6797306, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2890.0, "lat": 55.6534411, "lon": 12.6795104, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2895.0, "lat": 55.6536256, "lon": 12.6792892, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2900.0, "lat": 55.6538135, "lon": 12.679067, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2905.0, "lat": 55.653999, "lon": 12.6788451, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2910.0, "lat": 55.6541849, "lon": 12.6786225, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2915.0, "lat": 55.6543705, "lon": 12.6783992, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2920.0, "lat": 55.6545545, "lon": 12.6781763, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2925.0, "lat": 55.6547404, "lon": 12.6779536, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2930.0, "lat": 55.6549259, "lon": 12.677733, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2935.0, "lat": 55.6551111, "lon": 12.6775107, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2940.0, "lat": 55.6552969, "lon": 12.6772887, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2945.0, "lat": 55.655483, "lon": 12.6770672, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2950.0, "lat": 55.6556708, "lon": 12.6768448, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2955.0, "lat": 55.6558582, "lon": 12.6766224, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2960.0, "lat": 55.6560427, "lon": 12.6764024, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2965.0, "lat": 55.6562295, "lon": 12.6761769, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2970.0, "lat": 55.6564147, "lon": 12.6759528, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2975.0, "lat": 55.6566022, "lon": 12.6757308, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2980.0, "lat": 55.6567884, "lon": 12.6755076, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2985.0, "lat": 55.6569734, "lon": 12.6752838, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2990.0, "lat": 55.65716, "lon": 12.6750607, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 2995.0, "lat": 55.6573461, "lon": 12.6748426, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3000.0, "lat": 55.6575333, "lon": 12.6746188, "r95_m": 3.3, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3005.0, "lat": 55.6577209, "lon": 12.6743948, "r95_m": 3.3, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3010.0, "lat": 55.6579071, "lon": 12.6741737, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3015.0, "lat": 55.6580931, "lon": 12.6739506, "r95_m": 3.3, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3020.0, "lat": 55.6582794, "lon": 12.6737284, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3025.0, "lat": 55.6584649, "lon": 12.6735083, "r95_m": 3.3, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3030.0, "lat": 55.6586519, "lon": 12.6732855, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3035.0, "lat": 55.6588379, "lon": 12.6730607, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3040.0, "lat": 55.659024, "lon": 12.6728393, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3045.0, "lat": 55.659211, "lon": 12.6726145, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3050.0, "lat": 55.6593966, "lon": 12.6723927, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3055.0, "lat": 55.6595821, "lon": 12.6721684, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3060.0, "lat": 55.6597667, "lon": 12.6719471, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3065.0, "lat": 55.6599521, "lon": 12.6717266, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3070.0, "lat": 55.6601395, "lon": 12.671504, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3075.0, "lat": 55.6603231, "lon": 12.6712834, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3080.0, "lat": 55.660511, "lon": 12.671061, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3085.0, "lat": 55.6606981, "lon": 12.6708371, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3090.0, "lat": 55.6608853, "lon": 12.6706133, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3095.0, "lat": 55.6610719, "lon": 12.6703898, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3100.0, "lat": 55.6612589, "lon": 12.6701663, "r95_m": 3.3, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3105.0, "lat": 55.6614449, "lon": 12.669942, "r95_m": 3.3, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3110.0, "lat": 55.6616304, "lon": 12.6697198, "r95_m": 3.3, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3115.0, "lat": 55.6618157, "lon": 12.669498, "r95_m": 3.3, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3120.0, "lat": 55.6620024, "lon": 12.6692727, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3125.0, "lat": 55.6621881, "lon": 12.6690474, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3130.0, "lat": 55.6623726, "lon": 12.6688223, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3135.0, "lat": 55.6625593, "lon": 12.6686004, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3140.0, "lat": 55.6627457, "lon": 12.6683776, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3145.0, "lat": 55.6629316, "lon": 12.6681555, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3150.0, "lat": 55.6631171, "lon": 12.6679327, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3155.0, "lat": 55.6633045, "lon": 12.667708, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3160.0, "lat": 55.6634883, "lon": 12.6674863, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3165.0, "lat": 55.6636736, "lon": 12.6672619, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3170.0, "lat": 55.6638599, "lon": 12.6670388, "r95_m": 3.3, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3175.0, "lat": 55.6640454, "lon": 12.6668162, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3180.0, "lat": 55.6642318, "lon": 12.6665907, "r95_m": 3.3, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3185.0, "lat": 55.664417, "lon": 12.6663696, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3190.0, "lat": 55.6646031, "lon": 12.6661499, "r95_m": 3.3, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3195.0, "lat": 55.6647885, "lon": 12.6659287, "r95_m": 3.3, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3200.0, "lat": 55.664975, "lon": 12.6657058, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3205.0, "lat": 55.6651619, "lon": 12.6654836, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3210.0, "lat": 55.6653501, "lon": 12.6652584, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3215.0, "lat": 55.665537, "lon": 12.6650349, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3220.0, "lat": 55.6657222, "lon": 12.6648106, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3225.0, "lat": 55.6659085, "lon": 12.6645905, "r95_m": 3.3, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3230.0, "lat": 55.6660935, "lon": 12.6643688, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3235.0, "lat": 55.6662791, "lon": 12.6641463, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3240.0, "lat": 55.666467, "lon": 12.6639209, "r95_m": 3.3, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3245.0, "lat": 55.6666526, "lon": 12.6636991, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3250.0, "lat": 55.6668383, "lon": 12.6634775, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3255.0, "lat": 55.6670267, "lon": 12.6632563, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3260.0, "lat": 55.6672146, "lon": 12.6630309, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3265.0, "lat": 55.667402, "lon": 12.6628084, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3270.0, "lat": 55.6675876, "lon": 12.6625851, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3275.0, "lat": 55.6677741, "lon": 12.6623597, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3280.0, "lat": 55.6679583, "lon": 12.6621412, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3285.0, "lat": 55.668144, "lon": 12.6619198, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3290.0, "lat": 55.6683281, "lon": 12.6616989, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3295.0, "lat": 55.6685155, "lon": 12.661476, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3300.0, "lat": 55.6687013, "lon": 12.6612518, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3305.0, "lat": 55.6688875, "lon": 12.6610274, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3310.0, "lat": 55.6690723, "lon": 12.6608027, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3315.0, "lat": 55.6692591, "lon": 12.6605793, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3320.0, "lat": 55.6694439, "lon": 12.6603563, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3325.0, "lat": 55.6696297, "lon": 12.6601327, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3330.0, "lat": 55.6698166, "lon": 12.6599054, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3335.0, "lat": 55.670003, "lon": 12.6596824, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3340.0, "lat": 55.6701908, "lon": 12.6594604, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3345.0, "lat": 55.6703767, "lon": 12.6592408, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3350.0, "lat": 55.6705621, "lon": 12.6590179, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3355.0, "lat": 55.6707485, "lon": 12.6587965, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3360.0, "lat": 55.6709327, "lon": 12.6585755, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3365.0, "lat": 55.6711185, "lon": 12.6583545, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3370.0, "lat": 55.6713037, "lon": 12.6581328, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3375.0, "lat": 55.671492, "lon": 12.6579082, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3380.0, "lat": 55.6716781, "lon": 12.657687, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3385.0, "lat": 55.6718629, "lon": 12.657463, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3390.0, "lat": 55.6720479, "lon": 12.6572397, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3395.0, "lat": 55.6722327, "lon": 12.6570137, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3400.0, "lat": 55.6724202, "lon": 12.6567882, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3405.0, "lat": 55.6726055, "lon": 12.6565668, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3410.0, "lat": 55.6727921, "lon": 12.6563438, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3415.0, "lat": 55.6729783, "lon": 12.6561211, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3420.0, "lat": 55.6731632, "lon": 12.6558973, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3425.0, "lat": 55.6733495, "lon": 12.6556756, "r95_m": 3.2, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3430.0, "lat": 55.6735341, "lon": 12.6554514, "r95_m": 3.2, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3435.0, "lat": 55.6737178, "lon": 12.6552274, "r95_m": 3.2, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3440.0, "lat": 55.6739043, "lon": 12.6550077, "r95_m": 3.2, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3445.0, "lat": 55.674091, "lon": 12.6547833, "r95_m": 3.2, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3450.0, "lat": 55.6742775, "lon": 12.6545586, "r95_m": 3.2, "pl_m": 6.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3455.0, "lat": 55.6744642, "lon": 12.6543343, "r95_m": 3.2, "pl_m": 6.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3460.0, "lat": 55.6746502, "lon": 12.6541139, "r95_m": 3.2, "pl_m": 6.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3465.0, "lat": 55.674836, "lon": 12.6538922, "r95_m": 3.2, "pl_m": 6.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3470.0, "lat": 55.6750227, "lon": 12.6536699, "r95_m": 3.2, "pl_m": 6.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3475.0, "lat": 55.6752079, "lon": 12.6534488, "r95_m": 3.2, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3480.0, "lat": 55.675394, "lon": 12.6532244, "r95_m": 3.2, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3485.0, "lat": 55.6755802, "lon": 12.6530011, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3490.0, "lat": 55.6757639, "lon": 12.6527801, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3495.0, "lat": 55.6759511, "lon": 12.6525579, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3500.0, "lat": 55.6761369, "lon": 12.6523371, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3505.0, "lat": 55.6763223, "lon": 12.6521174, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3510.0, "lat": 55.6765161, "lon": 12.6519164, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3515.0, "lat": 55.6767239, "lon": 12.651765, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3520.0, "lat": 55.6769317, "lon": 12.6516123, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3525.0, "lat": 55.6771404, "lon": 12.6514598, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3530.0, "lat": 55.6773488, "lon": 12.6513057, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3535.0, "lat": 55.6775572, "lon": 12.6511562, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3540.0, "lat": 55.6777649, "lon": 12.6510101, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3545.0, "lat": 55.6779718, "lon": 12.6508739, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3550.0, "lat": 55.6781848, "lon": 12.6507456, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3555.0, "lat": 55.6784001, "lon": 12.6506235, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3560.0, "lat": 55.678615, "lon": 12.6505071, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3565.0, "lat": 55.6788312, "lon": 12.6503957, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3570.0, "lat": 55.6790462, "lon": 12.6502904, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3575.0, "lat": 55.6792629, "lon": 12.6501872, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3580.0, "lat": 55.6794801, "lon": 12.6500868, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3585.0, "lat": 55.679698, "lon": 12.6499897, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3590.0, "lat": 55.6799156, "lon": 12.6498971, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3595.0, "lat": 55.6801343, "lon": 12.6498036, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3600.0, "lat": 55.6803539, "lon": 12.6497128, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3605.0, "lat": 55.6805716, "lon": 12.6496231, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3610.0, "lat": 55.6807911, "lon": 12.6495329, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3615.0, "lat": 55.6810098, "lon": 12.649448, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3620.0, "lat": 55.6812287, "lon": 12.6493596, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3625.0, "lat": 55.6814481, "lon": 12.6492738, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3630.0, "lat": 55.6816697, "lon": 12.6491852, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3635.0, "lat": 55.6818878, "lon": 12.6491002, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3640.0, "lat": 55.6821065, "lon": 12.649018, "r95_m": 3.4, "pl_m": 6.7, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3645.0, "lat": 55.6823249, "lon": 12.6489334, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3650.0, "lat": 55.6825433, "lon": 12.6488491, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3655.0, "lat": 55.6827609, "lon": 12.6487632, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3660.0, "lat": 55.6829796, "lon": 12.6486782, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3665.0, "lat": 55.6831973, "lon": 12.6485957, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3670.0, "lat": 55.6834167, "lon": 12.6485129, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3675.0, "lat": 55.6836356, "lon": 12.6484313, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3680.0, "lat": 55.6838547, "lon": 12.6483482, "r95_m": 3.4, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3685.0, "lat": 55.6840738, "lon": 12.648267, "r95_m": 3.3, "pl_m": 6.6, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3690.0, "lat": 55.6842953, "lon": 12.648183, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3695.0, "lat": 55.6845174, "lon": 12.6481003, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3700.0, "lat": 55.6847381, "lon": 12.648019, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3705.0, "lat": 55.6849563, "lon": 12.647937, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3710.0, "lat": 55.6851759, "lon": 12.6478569, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3715.0, "lat": 55.6853959, "lon": 12.6477732, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3720.0, "lat": 55.6856174, "lon": 12.6476888, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3725.0, "lat": 55.6858359, "lon": 12.6476061, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3730.0, "lat": 55.6860549, "lon": 12.6475248, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3735.0, "lat": 55.6862745, "lon": 12.6474419, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3740.0, "lat": 55.6864955, "lon": 12.6473583, "r95_m": 3.3, "pl_m": 6.5, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3745.0, "lat": 55.6867151, "lon": 12.6472762, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3750.0, "lat": 55.6869348, "lon": 12.6471966, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3755.0, "lat": 55.6871565, "lon": 12.6471128, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3760.0, "lat": 55.6873767, "lon": 12.6470315, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3765.0, "lat": 55.6875952, "lon": 12.6469496, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3770.0, "lat": 55.6878143, "lon": 12.6468658, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3775.0, "lat": 55.6880365, "lon": 12.646782, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3780.0, "lat": 55.6882578, "lon": 12.6467008, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3785.0, "lat": 55.6884763, "lon": 12.6466166, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3790.0, "lat": 55.6886961, "lon": 12.6465349, "r95_m": 3.3, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3795.0, "lat": 55.6889157, "lon": 12.6464536, "r95_m": 3.2, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3800.0, "lat": 55.689136, "lon": 12.6463706, "r95_m": 3.2, "pl_m": 6.4, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3805.0, "lat": 55.6893569, "lon": 12.6462885, "r95_m": 3.2, "pl_m": 6.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3810.0, "lat": 55.6895785, "lon": 12.6462061, "r95_m": 3.2, "pl_m": 6.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3815.0, "lat": 55.6897987, "lon": 12.6461242, "r95_m": 3.2, "pl_m": 6.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3820.0, "lat": 55.6900191, "lon": 12.6460397, "r95_m": 3.2, "pl_m": 6.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3825.0, "lat": 55.6902393, "lon": 12.6459568, "r95_m": 3.2, "pl_m": 6.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3830.0, "lat": 55.6904593, "lon": 12.6458742, "r95_m": 3.2, "pl_m": 6.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3835.0, "lat": 55.6906795, "lon": 12.6457906, "r95_m": 3.2, "pl_m": 6.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3840.0, "lat": 55.6908994, "lon": 12.645709, "r95_m": 3.2, "pl_m": 6.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3845.0, "lat": 55.6911174, "lon": 12.6456249, "r95_m": 3.2, "pl_m": 6.3, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3850.0, "lat": 55.691337, "lon": 12.6455422, "r95_m": 3.2, "pl_m": 6.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3855.0, "lat": 55.6915575, "lon": 12.64546, "r95_m": 3.2, "pl_m": 6.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3860.0, "lat": 55.6917786, "lon": 12.6453767, "r95_m": 3.2, "pl_m": 6.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3865.0, "lat": 55.6919965, "lon": 12.6452952, "r95_m": 3.2, "pl_m": 6.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3870.0, "lat": 55.6922167, "lon": 12.6452117, "r95_m": 3.2, "pl_m": 6.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3875.0, "lat": 55.6924349, "lon": 12.6451312, "r95_m": 3.2, "pl_m": 6.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3880.0, "lat": 55.6926541, "lon": 12.6450523, "r95_m": 3.2, "pl_m": 6.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3885.0, "lat": 55.6928739, "lon": 12.6449713, "r95_m": 3.2, "pl_m": 6.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3890.0, "lat": 55.6930935, "lon": 12.64489, "r95_m": 3.2, "pl_m": 6.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3895.0, "lat": 55.6933138, "lon": 12.6448071, "r95_m": 3.2, "pl_m": 6.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3900.0, "lat": 55.6935332, "lon": 12.6447258, "r95_m": 3.2, "pl_m": 6.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3905.0, "lat": 55.6937544, "lon": 12.6446456, "r95_m": 3.2, "pl_m": 6.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3910.0, "lat": 55.6939733, "lon": 12.6445625, "r95_m": 3.2, "pl_m": 6.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3915.0, "lat": 55.6941948, "lon": 12.6444808, "r95_m": 3.2, "pl_m": 6.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 3920.0, "lat": 55.6944139, "lon": 12.6443973, "r95_m": 3.2, "pl_m": 6.2, "health": "excluded", "alarm": true, "sources": ["dr", "radar"]}
+{"t": 1630.0, "event": "spoof_suspected", "text": "GNSS-vs-radar/DR offset test 26 over 23.03 for 3 s, GNSS excluded"}
+{"t": 0.0, "event": "radar_fix_lost", "text": "radar-chart fixes lost (few_returns)"}
+{"t": 345.0, "event": "source_switched", "text": "radar-chart fixes back"}
+{"t": 1500, "event": "attack_onset", "ground_truth": true, "text": "spoof starts (scenario label)"}

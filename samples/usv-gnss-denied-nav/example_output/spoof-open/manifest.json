@@ -1,0 +1,14 @@
+{
+ "title": "USV Oresund transit - spoof-open",
+ "tracks": [
+  "truth.jsonl",
+  "ins.jsonl",
+  "gnss.jsonl",
+  "radar.jsonl",
+  "fused-radar-dr.jsonl",
+  "fused-monitor.jsonl",
+  "fused-single.jsonl",
+  "fused-gnss_dr.jsonl"
+ ],
+ "zones": "zones.geojson"
+}

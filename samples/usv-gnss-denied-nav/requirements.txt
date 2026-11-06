@@ -1,0 +1,3 @@
+# core (run.py, fetch_data.py, tests): Python 3 stdlib only, tested with 3.14.7
+# optional, plot.py only (tested with matplotlib 3.11.2 on python 3.13.15):
+matplotlib
