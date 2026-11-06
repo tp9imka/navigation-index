@@ -1,6 +1,6 @@
 # KITTI (odometry, raw) and KITTI-360
 
-<!-- about: res:kitti-odometry-benchmark, res:kitti-360-dataset, repo:utiasstars/pykitti -->
+<!-- about: res:kitti-odometry-benchmark, res:kitti-360-dataset, repo:utiasstars/pykitti, sample:relative-nav-benchmark -->
 
 Karlsruhe (KIT / MPI) driving datasets. KITTI (2012) is the default stereo / lidar odometry
 benchmark; KITTI-360 (2021) re-drives suburbs of Karlsruhe with a 360-degree sensor rig and
@@ -44,6 +44,21 @@ wget $B/data_odometry_velodyne.zip  # 84.8 GB
 The S3 URLs answered HEAD without auth on 2026-11-06. KITTI-360 downloads go through
 `user_login.php` on cvlibs.net, then their download scripts.
 
+## Used in this repo
+
+[samples/relative-nav-benchmark](../../samples/relative-nav-benchmark/) part 1 (`./run.sh lidar`, `fetch_data.sh lidar`), run 2026-11-06:
+
+| Odometry seq | Raw drive | Download (HEAD) | Status |
+|---|---|---|---|
+| 04 | `2011_09_30_drive_0016_sync.zip` | 1.13 GB, + `2011_09_30_calib.zip` 4 KB + `data_odometry_poses.zip` 1.3 MB | ran |
+| 07 | `2011_09_30_drive_0027_sync.zip` | 4.42 GB | stopped: about 1 MB/s, 2.5 GB after 40 min; mapping is in place, the path never ran |
+
+- The odometry benchmark's velodyne zip is 84.8 GB, so the sample takes the raw drive behind each odometry sequence instead (04 = 2011_09_30_drive_0016, 07 = 2011_09_30_drive_0027) and the 1.3 MB odometry poses.
+- KISS-ICP 1.3.0 default config on 04: 271 scans, 393.6 m, ATE 0.23 m, final drift 0.12 % of distance, KITTI t_rel 0.41 % (04 is too short for 400-800 m segments). 12-20 s compute on an M2 Max.
+- Frames: odometry poses are in rectified cam0; KISS-ICP runs in the velodyne frame; conjugate with `T_cam0_velo`. Against OXTS the numbers agree within 2 cm.
+- Seq 04 is a short, nearly straight road: an easy lidar case. Treat 0.12 % as a best case.
+- Download rate from the S3 bucket was 1-2 MB/s per file; pull 07 or bigger well before the event.
+
 ## Loading and tooling
 
 - [pykitti](../../catalog/repos/utiasstars__pykitti.md): `pykitti.raw(basedir, '2011_09_26', '0001')`
@@ -78,3 +93,4 @@ The S3 URLs answered HEAD without auth on 2026-11-06. KITTI-360 downloads go thr
 - https://www.cvlibs.net/datasets/kitti/raw_data.php (10 Hz, sensor list)
 - https://www.cvlibs.net/datasets/kitti-360/ (73.7 km, frames, license, registration)
 - HEAD requests on the avg-kitti S3 bucket listed above (2026-11-06)
+- samples/relative-nav-benchmark/README.md and `fetch_data.sh` (seq 04 / 07 mapping, sizes, run facts)

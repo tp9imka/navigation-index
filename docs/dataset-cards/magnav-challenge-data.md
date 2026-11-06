@@ -35,9 +35,19 @@ curl -s https://zenodo.org/api/records/12723700 | python3 -c \
  "import json,sys;[print(f['links']['self']) for f in json.load(sys.stdin)['files']]" | xargs -n1 curl -LO
 ```
 
+## Used in this repo
+
+[samples/magnav-quickstart](../../samples/magnav-quickstart/), run 2026-11-06 in the official `julia:1.11` Docker image (Julia 1.11.9, linux/arm64):
+
+- Data came through MagNav.jl's artifacts, not the Zenodo URLs: `MagNav.sgl_2020_train(:Flt1006)` and `MagNav.ottawa_area_maps(:Eastern_395)`. On disk: `sgl_2020_train` about 563 MB, `ottawa_area_maps` about 1.2 GB (Eastern_395.h5 alone 275 MB), plus EMAG2 about 0.5 GB that MagNav fetches. The Julia depot ended at 5.8 GB (4.1 GB artifacts, 1.3 GB precompile cache). The script also needs `examples/dataframes/*.csv` from a MagNav.jl clone (19 MB).
+- Flt1006, line 1006.08 on Eastern_395, 8391 samples at 10 Hz (14 min): INS-only error grew to 219 m; the MagNav EKF stayed at 15-55 m, DRMS 31 m (CRLB DRMS 13 m). Two runs identical with `seed!(33)`.
+- Tolles-Lawson on the tail-stinger mag did not lower the map residual on this line (4.63 nT uncompensated vs 5.84 nT); compensation matters for the in-cabin mags.
+- First attempt was OOM-killed (exit 137) in a 7.7 GB Docker VM shared with other containers; `--heap-size-hint=2500M` and `JULIA_NUM_THREADS=1` fixed it.
+- FFTA 0.3.2 broke precompilation (`plan_rfft` method ambiguity, so `using MagNav` failed); pinning `FFTA` to 0.2 fixed it.
+
 ## Loading and tooling
 
-- Julia: [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md) downloads `sgl_2020_train`, `sgl_2021_train` and the Ottawa maps as lazy artifacts and has Tolles-Lawson, NN compensation and an EKF. Walkthrough: [magnav-quickstart](../../catalog/samples/magnav-quickstart.md) (unverified sketch, Julia not run).
+- Julia: [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md) downloads `sgl_2020_train`, `sgl_2021_train` and the Ottawa maps as lazy artifacts and has Tolles-Lawson, NN compensation and an EKF. Walkthrough: [magnav-quickstart](../../catalog/samples/magnav-quickstart.md) (ran, see below).
 - Python: `h5py.File("Flt1006_train.h5")` then list keys; field names are in the datasheet PDF.
 
 ## Hackathon fit
@@ -48,10 +58,11 @@ Idea 16 (MagNav compensation sprint): Tolles-Lawson on a calibration box, then c
 
 - License tension: public-domain notice plus an Air Force AUA that forbids redistribution and limits purpose. Do not re-host the files; link to Zenodo.
 - MagNav.jl artifact hash mismatches happen; README explains manual folder renaming. Dropbox-hosted artifacts depend on Dropbox links staying alive.
-- Ottawa maps are 0.7 GB; download before the event.
+- Ottawa maps are 0.7 GB compressed, about 1.2 GB unpacked, and the Julia depot reaches about 6 GB with precompile; download and precompile before the event.
 - Flights differ in which sensors are valid; read the per-flight readme before choosing a line.
 
 ## Sources
 
 - Zenodo API for records 4271804 and 12723700 (titles, descriptions, file sizes, LICENSE.md, DATA_SHARING_AGREEMENT.md), 2026-11-06
 - MagNav.jl README and `Artifacts.toml`; HEAD on two Dropbox artifact URLs
+- samples/magnav-quickstart/README.md (artifact sizes on disk, memory, run results)

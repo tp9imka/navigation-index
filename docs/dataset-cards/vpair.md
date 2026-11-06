@@ -1,6 +1,6 @@
 # VPAIR
 
-<!-- about: repo:aervisloc/vpair -->
+<!-- about: repo:aervisloc/vpair, res:vpair-dataset-2022, sample:relative-nav-benchmark -->
 
 Aerial visual place recognition and localization from a light aircraft above 300 m AGL,
 with each query paired to a rendered reference image with dense depth and a 6-DoF pose.
@@ -32,6 +32,15 @@ curl -L -o vpair_sample.zip "https://zenodo.org/records/6473989/files/vpair_samp
 curl -L -C - -o vpair.zip https://ltc.cvg.cit.tum.de/vpair/vpair.zip
 ```
 
+## Used in this repo
+
+[samples/relative-nav-benchmark](../../samples/relative-nav-benchmark/) part 3 (`./run.sh aerial`), run 2026-11-06, on the 0.86 GB Zenodo sample only:
+
+- Unzipped: queries 175 MB, reference renders 553 MB, distractors 185 MB. Zenodo stalled once for more than 2 minutes; `fetch_data.sh` resumes with `curl -C -`.
+- The sample has 199 consecutive nadir frames over 8.98 km at 360-403 m ellipsoid height, with 6-DoF poses (GNSS/INS-derived per the README). It ships **no intrinsics, no AGL and no timestamps**: the sample fitted heading, metres per pixel and one effective AGL (324 m, 0.42 m/px) on the first 10 steps and used frame index as time (1 s per frame).
+- SIFT + RANSAC frame-to-frame VO: image only 15.5 % of distance; with the recorded attitude 0.65 %. A +2 deg yaw bias costs 3.2 %, +5 deg 8.1 %. At about 320 m AGL the error budget is the heading reference, not the matcher (0 failed pairs, median 727 inliers).
+- So the sample doubles as a consecutive-frame nadir VO set, not only a VPR set.
+
 ## Loading and tooling
 
 - Lay queries and references out as `database/` and `queries/` folders and run
@@ -61,3 +70,4 @@ curl -L -C - -o vpair.zip https://ltc.cvg.cit.tum.de/vpair/vpair.zip
 - https://github.com/AerVisLoc/vpair README (description, counts, links, license), read 2026-11-06.
 - HEAD on https://ltc.cvg.cit.tum.de/vpair/vpair.zip; Zenodo API record 6473989.
 - arXiv 2205.11567 abstract.
+- samples/relative-nav-benchmark/README.md (unzipped sizes, missing intrinsics / timestamps, VO results)

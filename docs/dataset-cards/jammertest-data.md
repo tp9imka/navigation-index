@@ -1,6 +1,6 @@
 # Jammertest data: Fraunhofer IIS 2025 IQ, VAARA 2024 receiver logs, NPRA test plan
 
-<!-- about: res:jammertest-norway, repo:felixott94/fraunhoferiis_jammertest2025, repo:univaasadigieco/vaara, repo:npra/jammertest-plan -->
+<!-- about: res:jammertest-norway, repo:felixott94/fraunhoferiis_jammertest2025, repo:univaasadigieco/vaara, repo:npra/jammertest-plan, sample:jammer-sensor-network -->
 
 Jammertest (Andoya, Norway) is the annual authority-run live GNSS jamming/spoofing/meaconing event. Three public pieces fit together: NPRA's test catalog and per-day transmission plans (the labels), Fraunhofer IIS's labelled raw IQ from 2025, and University of Vaasa's phone and u-blox logs from 2024.
 
@@ -48,7 +48,13 @@ with h5py.File("Sample_Area1_0000000_0024999.h5") as f:
     lab = f["label"][:]             # type, power_dBm, bw_MHz, vga, band
 ```
 
-Map `type` with the README's `jammer_map` (0 CW ... 16 Chirp+Prn+Triang). VAARA phone logs load with `gnss_lib_py.AndroidRawGnss`; u-blox UBX with pyubx2 (not indexed) or RTKLIB `convbin`; join to the plan by UTC window.
+Map `type` with the README's `jammer_map` (0 CW ... 16 Chirp+Prn+Triang). VAARA phone logs load with `gnss_lib_py.AndroidRawGnss`; u-blox UBX with pyubx2 (not indexed) or RTKLIB `convbin`; join to the plan by UTC window. VAARA u-blox files mix NMEA and UBX in one stream; see "Used in this repo" for the parser gotchas.
+
+## Used in this repo
+
+- **samples/real-attack-replay** (being written in this round; on 2026-11-06 it had code but no README yet, so the facts below come from reading its code, not from a run). It replays **VAARA 2024 u-blox logs**. From its `ubx_nmea_epochs.py` docstring: those logs carry NMEA (RMC, GGA, GSA, GSV, GLL) plus UBX `RXM-RAWX`, `RXM-MEASX`, `RXM-SFRBX`, `MON-SPAN`, but **no UBX `NAV-*` messages**, so a NAV-PVT / NAV-SAT based adapter has nothing to read; pyubx2 1.4.1 raises on a `$` byte inside binary payloads, so the sample frames both protocols itself. Under time spoofing the receiver UTC jumps, so it rebuilds a monotonic time axis. Clock bias comes from an RTKLIB SPP run (`run_rtklib_spp.sh`: `convbin` => RINEX 3.04 => `rnx2rtkp`, in the `rtklib-demo5` image from [gnss-rinex-processing](../../samples/gnss-rinex-processing/)). Its `labels.json` picks 7 u-blox files across all 3 days (2024-09-10 Test_1/Test_2, 2024-09-11 Morning_Motorcade and Afternoon Test_1/Test_2, 2024-09-12 Test_1/Test_2): jamming tests 1.10.3, 1.10.4, 1.10.6a-d, 0.3.1a-f, spoofing tests 2.6.1-2.6.3 and 2.4.2, 2.4.3, 2.4.12, 2.4.13, plus one quiet window. Those 7 `.ubx.xz` blobs total about 64 MB (git tree sizes, 2026-11-06), so the replay subset is far smaller than the 1.57 GB repo. Label finding recorded there: windows not in the VAARA field log come from the NPRA 2024 plan shifted 50 min earlier, the offset between the plan and the VAARA-logged 2.4.12, cross-checked against C/N0 and receiver-time signatures. Results and run facts belong to that sample's README once written.
+- [samples/jammer-sensor-network](../../samples/jammer-sensor-network/) is simulation only; it names Jammertest (Fraunhofer IQ) as where to calibrate its AGC model.
+- No sample has pulled the Fraunhofer IQ yet.
 
 ## Hackathon fit
 

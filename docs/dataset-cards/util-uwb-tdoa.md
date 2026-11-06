@@ -32,6 +32,10 @@ curl -LO https://github.com/utiasDSL/util-uwb-dataset/releases/download/dataset-
 
 Do not run `setupscript.bash` as-is: it asks for your sudo password, apt-installs packages and pip-installs globally. The two lines above are what it does for the data.
 
+## Used in this repo
+
+Not downloaded or run by any sample yet (checked 2026-11-06). [samples/swarm-coop-localization](../../samples/swarm-coop-localization/) names UTIL as the source of measured UWB NLOS / obstacle statistics to replace its simulated Markov bias model. The size on this card is the GitHub release asset, not a download.
+
 ## Loading and tooling
 
 ```bash

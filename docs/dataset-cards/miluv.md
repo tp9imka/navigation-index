@@ -1,6 +1,6 @@
 # MILUV - multi-UAV indoor localization with UWB and vision
 
-<!-- about: repo:decargroup/miluv -->
+<!-- about: repo:decargroup/miluv, res:miluv-dataset-2025 -->
 
 McGill DECAR group dataset with three quadcopters flying together, ranging to anchors and to each other over UWB, plus cameras, IMUs and magnetometers, with mocap truth. Paper: Shalaby et al., arXiv 2504.14376 (2025): 36 experiments, 217 min of flight (arXiv abstract).
 
@@ -31,6 +31,10 @@ unzip default_3_random_0.zip    # devkit expects data/<experiment>/
 curl -s https://api.figshare.com/v2/articles/28386041 | python3 -c \
  "import json,sys;[print(f['name'],f['size'],f['download_url']) for f in json.load(sys.stdin)['files']]"
 ```
+
+## Used in this repo
+
+Not downloaded or run by any sample yet (checked 2026-11-06). [samples/swarm-coop-localization](../../samples/swarm-coop-localization/) runs on simulated ranges with a Markov NLOS bias and names MILUV as the drop-in for real inter-robot UWB ranges and ground truth (replace `sim.generate`). Sizes on this card are from the figshare API, not from a download.
 
 ## Loading and tooling
 
