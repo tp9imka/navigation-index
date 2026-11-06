@@ -30,4 +30,4 @@ e2e-visual-nav-vpair
 thermal-geolocalization
 autopilot-spoof-response
 two-source-integrity-vpair
-samples/golden-demo-fixedwing
+golden-demo-fixedwing
