@@ -1,0 +1,2620 @@
+[
+ {
+  "id": "res:julier-uhlmann-1997-covariance-intersection",
+  "kind": "paper",
+  "title": "A non-divergent estimation algorithm in the presence of unknown correlations",
+  "url": "https://doi.org/10.1109/ACC.1997.609105",
+  "authors": [
+   "Simon J. Julier",
+   "Jeffrey K. Uhlmann"
+  ],
+  "year": 1997,
+  "summary": "The original covariance intersection (CI) paper (American Control Conference 1997). It fuses two estimates whose cross-correlation is unknown by taking a convex combination of their information matrices, which stays consistent whatever the true correlation is. This is the building block behind most decentralized cooperative localization filters that cannot track inter-agent correlations.",
+  "key_takeaways": [
+   "CI gives a consistent fused estimate without knowing cross-covariance",
+   "Motivated by decentralized estimation, where a plain Kalman update double-counts shared information",
+   "Trades some conservatism for guaranteed consistency"
+  ],
+  "concepts": [
+   "concept:sensor-fusion",
+   "concept:multi-agent"
+  ],
+  "tags": [
+   "covariance-intersection",
+   "decentralized-estimation",
+   "data-fusion",
+   "classic"
+  ],
+  "level": "advanced",
+  "access": "paywalled",
+  "related": []
+ },
+ {
+  "id": "res:carrillo-arce-2013-ci-cooperative-localization",
+  "kind": "paper",
+  "title": "Decentralized multi-robot cooperative localization using covariance intersection",
+  "url": "https://doi.org/10.1109/IROS.2013.6696534",
+  "authors": [
+   "Luis C. Carrillo-Arce",
+   "Esha D. Nerurkar",
+   "Jose L. Gordillo",
+   "Stergios I. Roumeliotis"
+  ],
+  "year": 2013,
+  "summary": "IROS 2013 paper applying covariance intersection to multi-robot cooperative localization so that each robot only keeps its own state and covariance. Processing and communication scale linearly with team size, and the authors compare against the earlier split-CI method in simulation and experiments.",
+  "key_takeaways": [
+   "Each robot estimates only its own pose; CI absorbs unknown inter-robot correlations",
+   "Linear cost in the number of robots",
+   "Standard reference baseline for CI-based cooperative localization"
+  ],
+  "concepts": [
+   "concept:multi-agent",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "cooperative-localization",
+   "covariance-intersection",
+   "multi-robot"
+  ],
+  "level": "advanced",
+  "access": "paywalled",
+  "related": [
+   {
+    "id": "res:julier-uhlmann-1997-covariance-intersection",
+    "rel": "cites"
+   },
+   {
+    "id": "res:luft-2018-recursive-decentralized-localization",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:luft-2018-recursive-decentralized-localization",
+  "kind": "paper",
+  "title": "Recursive decentralized localization for multi-robot systems with asynchronous pairwise communication",
+  "url": "https://doi.org/10.1177/0278364918760698",
+  "authors": [
+   "Lukas Luft",
+   "Tobias Schubert",
+   "Stergios I. Roumeliotis",
+   "Wolfram Burgard"
+  ],
+  "year": 2018,
+  "summary": "IJRR 37(10) paper describing a fully decentralized EKF for collaborative localization that approximates inter-robot cross-correlations. Only the two robots involved in a relative measurement need to talk, no measurement history is stored, and generic measurement models are supported. Builds on the authors' RSS 2016 paper and is evaluated on real-world datasets.",
+  "key_takeaways": [
+   "Pairwise, asynchronous communication only",
+   "Keeps just the latest pose estimate per robot",
+   "Approximates cross-correlations instead of dropping them"
+  ],
+  "concepts": [
+   "concept:multi-agent",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "cooperative-localization",
+   "decentralized-ekf",
+   "multi-robot"
+  ],
+  "level": "advanced",
+  "access": "paywalled",
+  "related": [
+   {
+    "id": "res:carrillo-arce-2013-ci-cooperative-localization",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:roumeliotis-bekey-2002-distributed-multirobot-localization",
+  "kind": "paper",
+  "title": "Distributed multirobot localization",
+  "url": "https://doi.org/10.1109/TRA.2002.803461",
+  "authors": [
+   "Stergios I. Roumeliotis",
+   "George A. Bekey"
+  ],
+  "year": 2002,
+  "summary": "IEEE Transactions on Robotics and Automation 18(5) paper that decomposes the centralized cooperative-localization Kalman filter into one modified filter per robot ('collective localization'). Demonstrated on three robots and compared with a decentralized information filter. A foundational reference for exact (non-CI) distributed cooperative localization.",
+  "key_takeaways": [
+   "Centralized-equivalent estimator split across robots",
+   "Cross-correlations are handled exactly, at a communication cost",
+   "Shows accuracy gain from relative robot-to-robot measurements"
+  ],
+  "concepts": [
+   "concept:multi-agent",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "cooperative-localization",
+   "kalman-filter",
+   "multi-robot",
+   "classic"
+  ],
+  "level": "advanced",
+  "access": "paywalled",
+  "related": []
+ },
+ {
+  "id": "res:leung-barfoot-liu-2010-centralized-equivalent-localization",
+  "kind": "paper",
+  "title": "Decentralized Localization of Sparsely-Communicating Robot Networks: A Centralized-Equivalent Approach",
+  "url": "https://doi.org/10.1109/TRO.2009.2035741",
+  "authors": [
+   "Keith Y. K. Leung",
+   "Timothy D. Barfoot",
+   "Hugh H. T. Liu"
+  ],
+  "year": 2010,
+  "summary": "IEEE T-RO 26(1) paper on decentralized state estimation for robot teams that are not always fully connected. The central result is that a robot can reproduce the centralized estimate using only its own knowledge of the communication history, whenever that estimate is attainable.",
+  "key_takeaways": [
+   "Targets intermittent, sparse communication",
+   "Centralized-equivalent result when the information has actually reached the robot",
+   "Extended to cooperative SLAM in later work by the same group"
+  ],
+  "concepts": [
+   "concept:multi-agent",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "cooperative-localization",
+   "sparse-communication",
+   "multi-robot"
+  ],
+  "level": "advanced",
+  "access": "paywalled",
+  "related": []
+ },
+ {
+  "id": "res:wymeersch-2009-cooperative-localization-wireless",
+  "kind": "paper",
+  "title": "Cooperative Localization in Wireless Networks",
+  "url": "https://winslab.lids.mit.edu/wp-content/papercite-data/pdf/wymliewin-j09.pdf",
+  "authors": [
+   "Henk Wymeersch",
+   "Jaime Lien",
+   "Moe Z. Win"
+  ],
+  "year": 2009,
+  "summary": "Proceedings of the IEEE 97(2) tutorial on cooperative localization in wireless networks, applied to ultra-wideband ranging. It surveys the approaches and introduces SPAWN, a fully distributed message-passing (factor graph) algorithm with low communication overhead.",
+  "key_takeaways": [
+   "Good tutorial entry point for range-based cooperative positioning",
+   "SPAWN: distributed belief propagation over the network",
+   "UWB ranging used as the running application"
+  ],
+  "concepts": [
+   "concept:rf-localization",
+   "concept:multi-agent"
+  ],
+  "tags": [
+   "cooperative-localization",
+   "uwb",
+   "belief-propagation",
+   "spawn",
+   "tutorial"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:fox-2000-collaborative-multirobot-localization",
+  "kind": "paper",
+  "title": "A Probabilistic Approach to Collaborative Multi-Robot Localization",
+  "url": "https://doi.org/10.1023/A:1008937911390",
+  "authors": [
+   "Dieter Fox",
+   "Wolfram Burgard",
+   "Hannes Kruppa",
+   "Sebastian Thrun"
+  ],
+  "year": 2000,
+  "summary": "Autonomous Robots 8(3) paper extending sample-based Markov (Monte Carlo) localization to robot teams: when one robot detects another, both robots' beliefs are updated. Real-robot and simulation experiments show faster and more accurate global localization than single-robot localization.",
+  "key_takeaways": [
+   "Particle-filter view of cooperative localization",
+   "Robot-to-robot detections synchronize beliefs",
+   "Handles global localization, not only tracking"
+  ],
+  "concepts": [
+   "concept:multi-agent",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "cooperative-localization",
+   "monte-carlo-localization",
+   "particle-filter",
+   "classic"
+  ],
+  "level": "intermediate",
+  "access": "paywalled",
+  "related": []
+ },
+ {
+  "id": "res:kia-2016-cooperative-localization-kf-decoupling",
+  "kind": "paper",
+  "title": "Cooperative localization for mobile agents: a recursive decentralized algorithm based on Kalman filter decoupling",
+  "url": "https://arxiv.org/abs/1505.05908",
+  "authors": [
+   "Solmaz S. Kia",
+   "Stephen Rounds",
+   "Sonia Martinez"
+  ],
+  "year": 2016,
+  "summary": "Published in IEEE Control Systems Magazine 36(2), 2016. Reviews decentralization strategies for cooperative localization with a focus on how each keeps track of inter-agent correlations, then presents a decentralized implementation of the centralized EKF in which agents propagate local intermediate variables instead of cross-covariances, and the agent that takes a relative measurement acts as an interim master for the update.",
+  "key_takeaways": [
+   "Readable survey of CL decentralization strategies",
+   "Exact centralized-equivalent EKF without propagating cross-covariances",
+   "Open arXiv version"
+  ],
+  "concepts": [
+   "concept:multi-agent",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "cooperative-localization",
+   "decentralized-ekf",
+   "survey"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:zhu-kia-2019-cl-limited-connectivity",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:zhu-kia-2019-cl-limited-connectivity",
+  "kind": "paper",
+  "title": "Cooperative Localization under Limited Connectivity",
+  "url": "https://arxiv.org/abs/1904.13074",
+  "authors": [
+   "Jianan Zhu",
+   "Solmaz S. Kia"
+  ],
+  "year": 2019,
+  "summary": "IEEE T-RO 35(6) paper with two decentralized cooperative localization algorithms that do not maintain inter-agent correlations: one bounds the joint covariance to stay consistent, the other estimates the unknown cross-covariance by optimization. Only the two agents involved in a relative measurement communicate, with no network-wide connectivity requirement.",
+  "key_takeaways": [
+   "Consistent CL without tracking correlations",
+   "Pairwise communication only",
+   "Demonstrated in simulation and a robot experiment"
+  ],
+  "concepts": [
+   "concept:multi-agent",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "cooperative-localization",
+   "limited-connectivity",
+   "consistency"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:kia-2016-cooperative-localization-kf-decoupling",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:chang-2021-resilient-ci-cooperative-localization",
+  "kind": "paper",
+  "title": "Resilient and consistent multirobot cooperative localization with covariance intersection",
+  "url": "https://arxiv.org/abs/2108.08789",
+  "authors": [
+   "Tsang-Kai Chang",
+   "Kenny Chen",
+   "Ankur Mehta"
+  ],
+  "year": 2021,
+  "summary": "IEEE T-RO 38(1) paper that uses covariance intersection to separate an explicit communication update from the observation update in multirobot cooperative localization, keeping estimates consistent. It analyses when the covariance stays bounded as a function of the communication and observation graphs, and tests resilience on simulated and benchmark physical data.",
+  "key_takeaways": [
+   "Decouples communication from observation so either can fail",
+   "Covariance boundedness conditions in terms of graph topology",
+   "Directly relevant to lossy tactical links"
+  ],
+  "concepts": [
+   "concept:multi-agent",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "cooperative-localization",
+   "covariance-intersection",
+   "resilience"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:julier-uhlmann-1997-covariance-intersection",
+    "rel": "cites"
+   }
+  ]
+ },
+ {
+  "id": "res:zhu-2021-distributed-vi-cooperative-localization",
+  "kind": "paper",
+  "title": "Distributed Visual-Inertial Cooperative Localization",
+  "url": "https://arxiv.org/abs/2103.12770",
+  "authors": [
+   "Pengxiang Zhu",
+   "Patrick Geneva",
+   "Wei Ren",
+   "Guoquan Huang"
+  ],
+  "year": 2021,
+  "summary": "IROS 2021 paper on a consistent distributed visual-inertial estimator for multi-robot cooperative localization. Covariance intersection lets each robot keep only its own state and autocovariance while using common SLAM features and loop closures to other robots' past poses. Validated against a centralized counterpart in simulation and real experiments.",
+  "key_takeaways": [
+   "CI applied to visual-inertial teams, not just range sensors",
+   "Uses shared map features and inter-robot loop closures",
+   "From the RPNG group behind OpenVINS"
+  ],
+  "concepts": [
+   "concept:multi-agent",
+   "concept:vio"
+  ],
+  "tags": [
+   "cooperative-localization",
+   "covariance-intersection",
+   "visual-inertial"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:rpng/open_vins",
+    "rel": "uses"
+   }
+  ]
+ },
+ {
+  "id": "res:tu-2025-weighted-ci-range-cooperative-localization",
+  "kind": "paper",
+  "title": "Weighted Covariance Intersection for Range-based Distributed Cooperative Localization of Multi-Vehicle Systems",
+  "url": "https://arxiv.org/abs/2508.12207",
+  "authors": [
+   "Chenxin Tu",
+   "Xiaowei Cui",
+   "Gang Liu",
+   "Mingquan Lu"
+  ],
+  "year": 2025,
+  "summary": "Published in IEEE Transactions on Vehicular Technology (2026). Argues that standard CI weighting criteria break down for 3D range-based distributed cooperative localization, where state components differ strongly in scale and observability, and proposes a weighted CI criterion for GNSS-denied multi-vehicle systems.",
+  "key_takeaways": [
+   "Targets 3D range-only cooperative localization",
+   "Shows why plug-in CI criteria give unbalanced estimates",
+   "Recent (2025-2026) follow-up to the classic CI line"
+  ],
+  "concepts": [
+   "concept:multi-agent",
+   "concept:rf-localization"
+  ],
+  "tags": [
+   "cooperative-localization",
+   "covariance-intersection",
+   "ranging",
+   "gnss-denied"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:julier-uhlmann-1997-covariance-intersection",
+    "rel": "cites"
+   }
+  ]
+ },
+ {
+  "id": "res:pedroso-2026-ulss-cooperative-localization",
+  "kind": "paper",
+  "title": "Consistent Distributed Cooperative Localization for Ultra Large-Scale Multi-agent Systems",
+  "url": "https://arxiv.org/abs/2606.04872",
+  "authors": [
+   "Leonardo Pedroso",
+   "W. P. M. H. Heemels",
+   "Pedro Batista"
+  ],
+  "year": 2026,
+  "summary": "Preprint on cooperative localization for very large networks (the paper's example is satellite mega-constellations) where per-agent resources must not grow with network size. It uses overlapping covariance intersection to exploit limited structure in the cross-correlations while staying consistent, and is fully distributed.",
+  "key_takeaways": [
+   "Per-agent cost independent of team size",
+   "Overlapping CI: less conservative than plain CI",
+   "Relevant to large drone swarms as well as constellations"
+  ],
+  "concepts": [
+   "concept:multi-agent",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "cooperative-localization",
+   "covariance-intersection",
+   "scalability",
+   "swarm"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:parkinson-axelrad-1988-raim-pseudorange-residual",
+  "kind": "paper",
+  "title": "Autonomous GPS Integrity Monitoring Using the Pseudorange Residual",
+  "url": "https://doi.org/10.1002/j.2161-4296.1988.tb00955.x",
+  "authors": [
+   "Bradford W. Parkinson",
+   "Penina Axelrad"
+  ],
+  "year": 1988,
+  "summary": "NAVIGATION 35(2) paper proposing satellite failure detection and isolation from the least-squares pseudorange residual, one of the founding RAIM formulations. Detection uses the range residual test statistic when six or more satellites are in view.",
+  "key_takeaways": [
+   "Residual-based RAIM origin",
+   "Detection and isolation from the over-determined solution",
+   "Background for every later FDE scheme"
+  ],
+  "concepts": [
+   "concept:gnss",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "raim",
+   "integrity",
+   "fde",
+   "classic"
+  ],
+  "level": "advanced",
+  "access": "paywalled",
+  "related": [
+   {
+    "id": "res:brown-1992-baseline-raim",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:brown-1992-baseline-raim",
+  "kind": "paper",
+  "title": "A Baseline GPS RAIM Scheme and a Note on the Equivalence of Three RAIM Methods",
+  "url": "https://doi.org/10.1002/j.2161-4296.1992.tb02278.x",
+  "authors": [
+   "R. Grover Brown"
+  ],
+  "year": 1992,
+  "summary": "NAVIGATION 39(3) paper written as the RTCA GPS MOPS were released. It proposes a baseline RAIM scheme for performance comparisons and shows that, at equal alarm rates, the range-comparison, least-squares-residual and parity methods give identical results.",
+  "key_takeaways": [
+   "Range comparison, LS residual and parity RAIM are equivalent at equal alarm rate",
+   "Intended as a simple standard baseline, not an optimal scheme",
+   "Ties RAIM to the aviation MOPS context"
+  ],
+  "concepts": [
+   "concept:gnss",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "raim",
+   "integrity",
+   "parity-space",
+   "classic"
+  ],
+  "level": "advanced",
+  "access": "paywalled",
+  "related": [
+   {
+    "id": "repo:michaelbeechan/raim",
+    "rel": "explains"
+   }
+  ]
+ },
+ {
+  "id": "res:joerger-2014-solution-separation-vs-residual-raim",
+  "kind": "paper",
+  "title": "Solution Separation Versus Residual-Based RAIM",
+  "url": "https://doi.org/10.1002/navi.71",
+  "authors": [
+   "Mathieu Joerger",
+   "Fang-Cheng Chan",
+   "Boris Pervan"
+  ],
+  "year": 2014,
+  "summary": "NAVIGATION 61(4) paper with a step-by-step derivation of residual-based and solution-separation RAIM from common integrity and continuity risk definitions, including a parity-space view of solution separation. Solution separation can monitor better because its statistics are tailored to each fault hypothesis, but residual-based RAIM gives tighter integrity bounds in conventional efficient implementations.",
+  "key_takeaways": [
+   "Side-by-side derivation of the two main RAIM families",
+   "Parity-space interpretation of solution separation",
+   "Useful when choosing an FDE scheme for a fused alt-PNT filter"
+  ],
+  "concepts": [
+   "concept:gnss",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "raim",
+   "araim",
+   "solution-separation",
+   "integrity"
+  ],
+  "level": "advanced",
+  "access": "paywalled",
+  "related": [
+   {
+    "id": "res:blanch-2015-baseline-araim-user-algorithm",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:blanch-2015-baseline-araim-user-algorithm",
+  "kind": "paper",
+  "title": "Baseline advanced RAIM user algorithm and possible improvements",
+  "url": "https://doi.org/10.1109/TAES.2014.130739",
+  "authors": [
+   "Juan Blanch",
+   "Todd Walter",
+   "Per Enge",
+   "Young Lee",
+   "Boris Pervan",
+   "Markus Rippl",
+   "Alex Spletter",
+   "Victoria Kropp"
+  ],
+  "year": 2015,
+  "summary": "IEEE TAES 51(1) description of the baseline multi-fault, multi-constellation ARAIM user algorithm for LPV-200 vertical guidance. It covers pseudorange processing, nominal error models and prior fault probabilities to compute protection levels, how to choose which fault modes to monitor, fault exclusion, and a list of possible improvements.",
+  "key_takeaways": [
+   "The reference ARAIM user algorithm in journal form",
+   "Protection levels from solution separation over monitored fault modes",
+   "Implemented in Stanford's MAAST tool"
+  ],
+  "concepts": [
+   "concept:gnss",
+   "concept:assured-pnt",
+   "concept:standards"
+  ],
+  "tags": [
+   "araim",
+   "protection-level",
+   "integrity",
+   "multi-constellation"
+  ],
+  "level": "advanced",
+  "access": "paywalled",
+  "related": [
+   {
+    "id": "repo:stanford-gps-lab/maast_for_araim_2",
+    "rel": "has_code"
+   },
+   {
+    "id": "res:joerger-2014-solution-separation-vs-residual-raim",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:wgc-araim-interim-report-2012",
+  "kind": "report",
+  "title": "EU-U.S. Cooperation on Satellite Navigation, Working Group C, ARAIM Technical Subgroup - Interim Report (Issue 1.0)",
+  "url": "https://archive.gps.gov/policy/cooperation/europe/2013/working-group-c/ARAIM-report-1.0.pdf",
+  "authors": [
+   "EU-U.S. Cooperation on Satellite Navigation, Working Group C - ARAIM Technical Subgroup"
+  ],
+  "year": 2012,
+  "summary": "First (Milestone 1) report of the EU-US ARAIM subgroup, dated 19 December 2012, prepared by FAA, Stanford, MITRE, IIT, DLR, UniBW Munich, ESA and the European Commission. It gives an ARAIM overview, the requirements analysis for global LPV-200 vertical guidance, a reference user algorithm, first performance evaluation and the identified threats.",
+  "key_takeaways": [
+   "Why ARAIM: multi-constellation integrity with ground-supplied fault rates",
+   "LPV-200 as the driving requirement",
+   "First reference air algorithm"
+  ],
+  "concepts": [
+   "concept:gnss",
+   "concept:assured-pnt",
+   "concept:standards"
+  ],
+  "tags": [
+   "araim",
+   "integrity",
+   "aviation",
+   "eu-us"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:wgc-araim-milestone-2-report-2015",
+    "rel": "part_of"
+   }
+  ]
+ },
+ {
+  "id": "res:wgc-araim-milestone-2-report-2015",
+  "kind": "report",
+  "title": "EU-U.S. Cooperation on Satellite Navigation, Working Group C-ARAIM Technical Subgroup - Milestone 2 Report",
+  "url": "https://archive.gps.gov/policy/cooperation/europe/2015/working-group-c/ARAIM-milestone-2-report.pdf",
+  "authors": [
+   "EU-U.S. Cooperation on Satellite Navigation, Working Group C - ARAIM Technical Subgroup"
+  ],
+  "year": 2015,
+  "summary": "Final version dated 11 February 2015. Describes the candidate ARAIM architectures (Horizontal ARAIM and Offline and Online Vertical ARAIM), the Integrity Support Message (ISM) concept that lets a ground system update constellation fault rates and error models, threat allocation, and extended availability results, for comment by the aviation community.",
+  "key_takeaways": [
+   "Horizontal vs offline vs online vertical ARAIM",
+   "ISM: ground-provided integrity parameters without avionics changes",
+   "Wider URE/SISE and constellation scenarios"
+  ],
+  "concepts": [
+   "concept:gnss",
+   "concept:assured-pnt",
+   "concept:standards"
+  ],
+  "tags": [
+   "araim",
+   "integrity",
+   "ism",
+   "aviation"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:wgc-araim-milestone-3-report-2016",
+    "rel": "part_of"
+   }
+  ]
+ },
+ {
+  "id": "res:wgc-araim-milestone-3-report-2016",
+  "kind": "report",
+  "title": "EU-U.S. Cooperation on Satellite Navigation, Working Group C - ARAIM Technical Subgroup - Milestone 3 Report",
+  "url": "https://archive.gps.gov/policy/cooperation/europe/2016/working-group-c/ARAIM-milestone-3-report.pdf",
+  "authors": [
+   "EU-U.S. Cooperation on Satellite Navigation, Working Group C - ARAIM Technical Subgroup"
+  ],
+  "year": 2016,
+  "summary": "Final version dated 25 February 2016, concluding the three-phase effort. Adds the proposed ARAIM implementation roadmap, message types for H-ARAIM and for offline and online vertical ARAIM, institutional issues, the relation to SBAS, H-ARAIM availability results and the updated reference user algorithm (Annex A). Also hosted by the European Commission.",
+  "key_takeaways": [
+   "Roadmap toward ARAIM standards",
+   "Message definitions per ARAIM mode",
+   "Latest reference user algorithm in Annex A"
+  ],
+  "concepts": [
+   "concept:gnss",
+   "concept:assured-pnt",
+   "concept:standards"
+  ],
+  "tags": [
+   "araim",
+   "integrity",
+   "roadmap",
+   "aviation"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:stanford-waas-integrity-metrics-histogram",
+  "kind": "doc",
+  "title": "Stanford WAAS Laboratory - system metrics (the integrity/availability histogram behind the 'Stanford plot')",
+  "url": "https://web.stanford.edu/group/scpnt/gpslab/www/metrics.html",
+  "authors": [
+   "Stanford University GPS Laboratory"
+  ],
+  "year": null,
+  "summary": "Stanford GPS Lab page that explains the 2D histogram of true position error against protection level from its real-time WAAS implementation on the National Satellite Test Bed. It defines the normal-operation, alarm (PL above alert limit) and integrity-failure regions and offers the MATLAB plotting scripts (hplstat.m, vplstat.m). Secondary sources credit the Stanford WAAS lab with this diagram; the page itself is undated.",
+  "key_takeaways": [
+   "Axes: true error (x) vs protection level (y), log-scaled counts",
+   "Points with error above PL are integrity failures",
+   "Original MATLAB scripts for drawing the plot"
+  ],
+  "concepts": [
+   "concept:gnss",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "stanford-diagram",
+   "protection-level",
+   "waas",
+   "sbas",
+   "integrity"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:tossaint-2006-stanford-esa-integrity-diagram",
+    "rel": "explains"
+   },
+   {
+    "id": "res:stanford-gps-lab",
+    "rel": "part_of"
+   }
+  ]
+ },
+ {
+  "id": "res:tossaint-2006-stanford-esa-integrity-diagram",
+  "kind": "paper",
+  "title": "The Stanford - ESA Integrity Diagram: Focusing on SBAS Integrity",
+  "url": "https://upcommons.upc.edu/entities/publication/6bcb2d3c-733c-43ee-9ce8-03bd62cdc56e",
+  "authors": [
+   "Michel Tossaint",
+   "Jaron Samson",
+   "Felix Toran",
+   "Javier Ventura-Traveset",
+   "Jaume Sanz",
+   "Manuel Hernandez-Pajares",
+   "Jose Miguel Juan"
+  ],
+  "year": 2006,
+  "summary": "ION GNSS 2006 paper (UPC UPCommons repository record, behind a bot check) that modifies the classical Stanford plot to focus strictly on integrity, since the classical plot is not always conservative for that purpose. Also proposes an 'all-geometries' diagram and reports EGNOS measurement results under this stricter test. The Stanford-ESA diagram became a main integrity assessment tool for EGNOS.",
+  "key_takeaways": [
+   "Stanford-ESA variant is the integrity-conservative version of the Stanford plot",
+   "Used for EGNOS safety assessment",
+   "Good template for plotting alt-PNT protection levels"
+  ],
+  "concepts": [
+   "concept:gnss",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "stanford-diagram",
+   "sbas",
+   "egnos",
+   "integrity"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:navipedia-stanford-esa-integrity-diagram",
+    "rel": "explains"
+   }
+  ]
+ },
+ {
+  "id": "res:navipedia-stanford-esa-integrity-diagram",
+  "kind": "doc",
+  "title": "Navipedia: The Stanford - ESA Integrity Diagram: Focusing on SBAS Integrity",
+  "url": "https://gssc.esa.int/navipedia/index.php/The_Stanford_%E2%80%93_ESA_Integrity_Diagram:_Focusing_on_SBAS_Integrity",
+  "authors": [
+   "ESA Navipedia"
+  ],
+  "year": null,
+  "summary": "ESA Navipedia article explaining the Stanford plot (position error vs protection level) and its Stanford-ESA modification, including the definitions of misleading and hazardously misleading information used to read the diagram.",
+  "key_takeaways": [
+   "MI: error not bounded by PL while the system is available",
+   "HMI: error also exceeds the alert limit",
+   "Short open explainer to share with a team"
+  ],
+  "concepts": [
+   "concept:gnss",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "stanford-diagram",
+   "integrity",
+   "navipedia"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:tossaint-2006-stanford-esa-integrity-diagram",
+    "rel": "explains"
+   }
+  ]
+ },
+ {
+  "id": "res:ni-zhu-2018-gnss-integrity-urban-review",
+  "kind": "paper",
+  "title": "GNSS Position Integrity in Urban Environments: A Review of Literature",
+  "url": "https://hal.science/hal-01709519",
+  "authors": [
+   "Ni Zhu",
+   "Juliette Marais",
+   "David Betaille",
+   "Marion Berbineau"
+  ],
+  "year": 2018,
+  "summary": "IEEE T-ITS 19(9) review of GNSS integrity monitoring for urban transport, contrasting it with aviation integrity (multipath, NLOS, different risk definitions) and listing open research issues. Open copy on HAL.",
+  "key_takeaways": [
+   "Why aviation RAIM does not carry over directly to urban ground vehicles",
+   "Survey of urban FDE and protection-level methods",
+   "Open research problems list"
+  ],
+  "concepts": [
+   "concept:gnss",
+   "concept:assured-pnt",
+   "concept:ground-vehicle-nav"
+  ],
+  "tags": [
+   "integrity",
+   "urban",
+   "raim",
+   "review"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:bhamidipati-gao-2020-graph-slam-integrity",
+  "kind": "paper",
+  "title": "Integrity monitoring of Graph-SLAM using GPS and fish-eye camera",
+  "url": "https://doi.org/10.1002/navi.381",
+  "authors": [
+   "Sriramya Bhamidipati",
+   "Grace Xingxin Gao"
+  ],
+  "year": 2020,
+  "summary": "NAVIGATION 67(3) paper (journal version of ION GNSS+ 2019 / arXiv 1910.02165) that computes protection levels for a graph-SLAM estimator fusing GPS pseudoranges and fish-eye camera pixel intensities. Vision faults are isolated with a superpixel-based piecewise RANSAC, and protection levels come from worst-case failure slope analysis. Tested in urban and semi-urban driving.",
+  "key_takeaways": [
+   "Multi-fault integrity for joint GPS + vision",
+   "Protection levels from failure-slope analysis on linearized graph SLAM",
+   "Open arXiv preprint: 1910.02165"
+  ],
+  "concepts": [
+   "concept:assured-pnt",
+   "concept:visual-slam",
+   "concept:gnss"
+  ],
+  "tags": [
+   "integrity",
+   "protection-level",
+   "graph-slam",
+   "vision"
+  ],
+  "level": "advanced",
+  "access": "paywalled",
+  "related": [
+   {
+    "id": "res:gupta-gao-2021-data-driven-protection-levels",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:zhu-meurer-guenther-2022-integrity-visual-navigation",
+  "kind": "paper",
+  "title": "Integrity of Visual Navigation - Developments, Challenges, and Prospects",
+  "url": "https://navi.ion.org/content/69/2/navi.518",
+  "authors": [
+   "Chen Zhu",
+   "Michael Meurer",
+   "Christoph Gunther"
+  ],
+  "year": 2022,
+  "summary": "Open-access NAVIGATION 69(2) review arguing that the lack of an integrity framework is the main obstacle to using visual navigation in safety-critical roles. It reviews the state of the art and sketches a preliminary integrity description framework for feature-based visual positioning, noting that learning-based methods still lack one.",
+  "key_takeaways": [
+   "Best single review of vision integrity",
+   "Proposes how to describe integrity for feature-based VO/VIO",
+   "Flags ML-based vision as an open integrity problem"
+  ],
+  "concepts": [
+   "concept:assured-pnt",
+   "concept:vio",
+   "concept:visual-geolocalization"
+  ],
+  "tags": [
+   "integrity",
+   "visual-navigation",
+   "review",
+   "protection-level"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:gupta-gao-2021-data-driven-protection-levels",
+  "kind": "paper",
+  "title": "Data-Driven Protection Levels for Camera and 3D Map-based Safe Urban Localization",
+  "url": "https://arxiv.org/abs/2101.06379",
+  "authors": [
+   "Shubh Gupta",
+   "Grace X. Gao"
+  ],
+  "year": 2021,
+  "summary": "Computes protection levels for localization that matches camera images to a LiDAR-built 3D map, for urban areas where GNSS is unreliable. Position error is modelled as a Gaussian mixture from deep-network data-driven models with outlier weighting, and the PL is found by numerical line search. Submitted to NAVIGATION.",
+  "key_takeaways": [
+   "Protection levels for map-based visual localization, no GNSS",
+   "Learned error model plus statistical outlier weighting",
+   "Template for PLs on visual geolocalization fixes"
+  ],
+  "concepts": [
+   "concept:assured-pnt",
+   "concept:visual-geolocalization"
+  ],
+  "tags": [
+   "integrity",
+   "protection-level",
+   "camera",
+   "3d-map"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:bhamidipati-gao-2020-graph-slam-integrity",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:zhu-2026-lio-deterministic-protection-level",
+  "kind": "paper",
+  "title": "Safety-Critical LiDAR-Inertial Odometry with On-Manifold Deterministic Protection Level",
+  "url": "https://arxiv.org/abs/2605.09383",
+  "authors": [
+   "Yueqi Zhu",
+   "Yan Pan",
+   "Chufan Rui",
+   "Jiasheng Luo",
+   "Bo Zhou"
+  ],
+  "year": 2026,
+  "summary": "LiDAR-inertial odometry built on an on-manifold ellipsoidal set-membership filter under an unknown-but-bounded noise assumption. The filter's feasible sets serve as deterministic online protection levels for robot navigation.",
+  "key_takeaways": [
+   "Set-membership (bounded-error) alternative to probabilistic PLs",
+   "Closed-form link between point-cloud noise and ICP uncertainty",
+   "Online safety bound for LIO"
+  ],
+  "concepts": [
+   "concept:lidar-slam",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "integrity",
+   "protection-level",
+   "lio",
+   "set-membership"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:golden-1980-tercom",
+  "kind": "paper",
+  "title": "Terrain Contour Matching (TERCOM): A Cruise Missile Guidance Aid",
+  "url": "https://doi.org/10.1117/12.959127",
+  "authors": [
+   "Joe P. Golden"
+  ],
+  "year": 1980,
+  "summary": "Proc. SPIE 0238 paper giving a brief history of TERCOM, how terrain contour matching works (correlating a measured altitude profile against stored elevation data) and its status in 1980. It is the standard English citation for the origin of terrain-correlation navigation; this index uses it only for the navigation-update concept.",
+  "key_takeaways": [
+   "Batch profile correlation against a stored elevation map",
+   "Historic baseline that later sequential filters (SITAN, PMF, PF) improved on",
+   "Abstract only without SPIE access"
+  ],
+  "concepts": [
+   "concept:terrain-nav"
+  ],
+  "tags": [
+   "tercom",
+   "terrain-correlation",
+   "radar-altimeter",
+   "history"
+  ],
+  "level": "intro",
+  "access": "paywalled",
+  "related": [
+   {
+    "id": "repo:mzahana/tercom_nav",
+    "rel": "explains"
+   },
+   {
+    "id": "repo:alti3/python-tercom",
+    "rel": "explains"
+   }
+  ]
+ },
+ {
+  "id": "res:hostetler-andreas-1983-sitan",
+  "kind": "paper",
+  "title": "Nonlinear Kalman filtering techniques for terrain-aided navigation",
+  "url": "https://doi.org/10.1109/TAC.1983.1103232",
+  "authors": [
+   "Larry D. Hostetler",
+   "Ronald D. Andreas"
+  ],
+  "year": 1983,
+  "summary": "IEEE TAC 28(3) paper from Sandia (the SITAN line of work) on updating an INS with radar terrain-clearance measurements. It compares an EKF using local terrain slopes, a stochastic linearization fitting a least-squares plane to the terrain, and a bank of parallel reduced-order filters for large initial position uncertainty.",
+  "key_takeaways": [
+   "Sequential (Kalman) terrain aiding, unlike batch TERCOM",
+   "Terrain linearization is the core difficulty",
+   "Parallel filter bank for acquisition"
+  ],
+  "concepts": [
+   "concept:terrain-nav",
+   "concept:ins"
+  ],
+  "tags": [
+   "sitan",
+   "terrain-aided-navigation",
+   "ekf",
+   "radar-altimeter",
+   "history"
+  ],
+  "level": "advanced",
+  "access": "paywalled",
+  "related": []
+ },
+ {
+  "id": "res:bergman-1999-recursive-bayesian-estimation-thesis",
+  "kind": "report",
+  "title": "Recursive Bayesian Estimation: Navigation and Tracking Applications",
+  "url": "https://rt.isy.liu.se/research/reports/Ph.D.Thesis/PhD579.pdf",
+  "authors": [
+   "Niclas Bergman"
+  ],
+  "year": 1999,
+  "summary": "Linkoping University PhD thesis (Dissertation No. 579) on nonlinear, non-Gaussian recursive estimation motivated by terrain-aided aircraft navigation and target tracking. Covers the point-mass filter and particle filters for terrain navigation, compared with the Cramer-Rao bound. A standard English-language TRN reference with free full text.",
+  "key_takeaways": [
+   "Point-mass filter and particle filter for TRN in one place",
+   "Cramer-Rao bounds for terrain navigation",
+   "Free PDF from Linkoping"
+  ],
+  "concepts": [
+   "concept:terrain-nav",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "terrain-aided-navigation",
+   "point-mass-filter",
+   "particle-filter",
+   "thesis"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:bergman-ljung-gustafsson-1999-terrain-navigation-bayesian",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:bergman-ljung-gustafsson-1999-terrain-navigation-bayesian",
+  "kind": "paper",
+  "title": "Terrain navigation using Bayesian statistics",
+  "url": "https://doi.org/10.1109/37.768538",
+  "authors": [
+   "Niclas Bergman",
+   "Lennart Ljung",
+   "Fredrik Gustafsson"
+  ],
+  "year": 1999,
+  "summary": "IEEE Control Systems Magazine 19(3) article presenting the point-mass filter for terrain-aided aircraft navigation: a grid approximation of the position density propagated recursively. Monte Carlo and realistic simulations show near-optimal performance across terrain types; the main limit is that cost explodes with state dimension. An open copy is in Linkoping's DiVA.",
+  "key_takeaways": [
+   "The PMF handles arbitrary nonlinearity and noise in low dimension",
+   "Density shape tells you estimate quality",
+   "Real time for 2D, sometimes 3D"
+  ],
+  "concepts": [
+   "concept:terrain-nav"
+  ],
+  "tags": [
+   "terrain-aided-navigation",
+   "point-mass-filter",
+   "bayesian"
+  ],
+  "level": "intermediate",
+  "access": "paywalled",
+  "related": [
+   {
+    "id": "res:bergman-1999-recursive-bayesian-estimation-thesis",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:nordlund-gustafsson-2009-mpf-terrain-aided-navigation",
+  "kind": "paper",
+  "title": "Marginalized Particle Filter for Accurate and Reliable Terrain-Aided Navigation",
+  "url": "https://doi.org/10.1109/TAES.2009.5310306",
+  "authors": [
+   "Per-Johan Nordlund",
+   "Fredrik Gustafsson"
+  ],
+  "year": 2009,
+  "summary": "IEEE TAES 45(4) paper integrating INS and terrain-aided positioning in one marginalized (Rao-Blackwellized) particle filter: particles for the nonlinear part, Kalman filters for the conditionally linear part, plus a jointly estimated discrete mode. Simulations reach near Cramer-Rao accuracy. Open copy in Linkoping's DiVA.",
+  "key_takeaways": [
+   "Joint INS + TAP design instead of a separate TRN fix",
+   "Marginalized PF keeps the particle count manageable",
+   "Handles multimodal terrain via a mode variable"
+  ],
+  "concepts": [
+   "concept:terrain-nav",
+   "concept:ins"
+  ],
+  "tags": [
+   "terrain-aided-navigation",
+   "marginalized-particle-filter",
+   "rao-blackwellized"
+  ],
+  "level": "advanced",
+  "access": "paywalled",
+  "related": [
+   {
+    "id": "res:bergman-ljung-gustafsson-1999-terrain-navigation-bayesian",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:oh-2019-interferometric-radar-altimeter-trn",
+  "kind": "paper",
+  "title": "Accurate Measurement Calculation Method for Interferometric Radar Altimeter-Based Terrain Referenced Navigation",
+  "url": "https://www.mdpi.com/1424-8220/19/7/1688",
+  "authors": [
+   "Juhyun Oh",
+   "Chang-Ky Sung",
+   "Jungshin Lee",
+   "Sang Woo Lee",
+   "Sang Jeong Lee",
+   "Myeong-Jong Yu"
+  ],
+  "year": 2019,
+  "summary": "Open-access Sensors paper on TRN with an interferometric radar altimeter, which outputs slant range and cross-track look angle to the closest terrain point. It derives a formula for that point's 3D relative position using angle of attack and sideslip instead of Euler angles, checks it on real flight data, and shows in TRN simulation that wind otherwise biases the result.",
+  "key_takeaways": [
+   "Interferometric altimeters give range plus look angle, not just height",
+   "Wind (alpha/beta) matters for the measurement model",
+   "Real flight data used for validation"
+  ],
+  "concepts": [
+   "concept:terrain-nav",
+   "concept:radar-nav"
+  ],
+  "tags": [
+   "radar-altimeter",
+   "interferometric",
+   "terrain-referenced-navigation"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:kang-yu-2021-ira-trn-particle-filter",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:kang-yu-2021-ira-trn-particle-filter",
+  "kind": "paper",
+  "title": "Ant-Mutated Immune Particle Filter Design for Terrain Referenced Navigation with Interferometric Radar Altimeter",
+  "url": "https://www.mdpi.com/2072-4292/13/11/2189",
+  "authors": [
+   "Suktae Kang",
+   "Myeong-Jong Yu"
+  ],
+  "year": 2021,
+  "summary": "Open-access Remote Sensing paper proposing a particle filter variant (ant-colony mutation inside an immune auxiliary particle filter) to cope with low-grade interferometric radar altimeter errors in TRN. Evaluated by Monte Carlo TRN simulation on a UAV.",
+  "key_takeaways": [
+   "Targets low-cost IRA measurement errors",
+   "Particle diversity management for TRN",
+   "Simulation-only evaluation"
+  ],
+  "concepts": [
+   "concept:terrain-nav",
+   "concept:radar-nav"
+  ],
+  "tags": [
+   "radar-altimeter",
+   "particle-filter",
+   "terrain-referenced-navigation",
+   "uav"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:oh-2019-interferometric-radar-altimeter-trn",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:matousek-2023-efficient-pmf-tan",
+  "kind": "paper",
+  "title": "Design of Efficient Point-Mass Filter with Application in Terrain Aided Navigation",
+  "url": "https://arxiv.org/abs/2303.05100",
+  "authors": [
+   "J. Matousek",
+   "J. Dunik",
+   "M. Brandner"
+  ],
+  "year": 2023,
+  "summary": "FUSION 2023 paper on speeding up the time-update (prediction) step of the grid-based point-mass filter for models with linear dynamics, unifying continuous and discrete formulations. The authors report large time-complexity reductions without accuracy loss in a terrain-aided navigation example, and release MATLAB code.",
+  "key_takeaways": [
+   "Makes the PMF cheap enough for real-time TAN",
+   "MATLAB code on GitHub",
+   "Good modern successor to Bergman's PMF"
+  ],
+  "concepts": [
+   "concept:terrain-nav"
+  ],
+  "tags": [
+   "point-mass-filter",
+   "terrain-aided-navigation",
+   "matlab"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:idm-uwb/efficient-pmf",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:matousek-2026-tensor-decomposition-tan",
+  "kind": "paper",
+  "title": "Tensor Decompositions for Online Grid-Based Terrain-Aided Navigation",
+  "url": "https://arxiv.org/abs/2601.07728",
+  "authors": [
+   "J. Matousek",
+   "J. Krejci",
+   "J. Dunik",
+   "R. Zanetti"
+  ],
+  "year": 2026,
+  "summary": "Preprint (in review for FUSION 2026) that scales grid-based filters to higher state dimensions with a Lagrangian time update and low-rank tensor decompositions, exploiting block-diagonal dynamics and sparsely coupled measurements. Demonstrated on terrain-aided navigation, with reproducible MATLAB code.",
+  "key_takeaways": [
+   "Pushes grid filters beyond 2-3 dimensions",
+   "Fully reproducible experiments",
+   "Code: pesslovany/Matlab-LagrangianPMF"
+  ],
+  "concepts": [
+   "concept:terrain-nav"
+  ],
+  "tags": [
+   "point-mass-filter",
+   "tensor-decomposition",
+   "terrain-aided-navigation"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:pesslovany/matlab-lagrangianpmf",
+    "rel": "has_code"
+   },
+   {
+    "id": "res:matousek-2023-efficient-pmf-tan",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:park-bang-2025-contours-seeking-pf-trn",
+  "kind": "paper",
+  "title": "Contours-Seeking Proposal Density Particle Filter and Resilient Terrain-Referenced Navigation",
+  "url": "https://arxiv.org/abs/2608.15489",
+  "authors": [
+   "Junwoo Park",
+   "Hyochoong Bang"
+  ],
+  "year": 2025,
+  "summary": "Author's accepted version of an IEEE TAES 61(6) (Dec 2025) paper. Proposes a particle-filter proposal that nudges particles along terrain slopes toward the most probable terrain contours (Gaussian mixture random forcing plus auxiliary sampling) to fight degeneracy under multimodal likelihoods and unknown prediction bias.",
+  "key_takeaways": [
+   "Addresses PF degeneracy, the classic TRN failure mode",
+   "Robust to unknown INS bias and multimodal noise",
+   "Simulation study"
+  ],
+  "concepts": [
+   "concept:terrain-nav"
+  ],
+  "tags": [
+   "terrain-referenced-navigation",
+   "particle-filter",
+   "resilience"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:sanlan-2025-sliding-grid-tan-point-cloud",
+  "kind": "paper",
+  "title": "Terrain-Aided Navigation Without Raycasting: A Sliding Grid Approach for Point Cloud Processing",
+  "url": "https://arxiv.org/abs/2510.06470",
+  "authors": [
+   "Abdulbaki Sanlan",
+   "Fatih Erol",
+   "Murad Abu-Khalaf",
+   "Emre Koyuncu"
+  ],
+  "year": 2025,
+  "summary": "Compares two DEM-based measurement models for point-cloud (lidar-style) terrain-aided INS: classic ray casting versus a 'sliding grid' that needs no ray casting. The sliding grid gives comparable accuracy, especially at higher altitude, at much lower compute, targeting embedded hardware.",
+  "key_takeaways": [
+   "Point-cloud TAN beyond a single altimeter beam",
+   "Avoids GPU-hungry ray casting",
+   "Relevant to scanning lidar or radar altimeters"
+  ],
+  "concepts": [
+   "concept:terrain-nav",
+   "concept:edge-ai"
+  ],
+  "tags": [
+   "terrain-aided-navigation",
+   "point-cloud",
+   "dem",
+   "embedded"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:maggio-2023-vision-trn-balloon-rocket",
+  "kind": "paper",
+  "title": "Vision-Based Terrain Relative Navigation on High-Altitude Balloon and Sub-Orbital Rocket",
+  "url": "https://arxiv.org/abs/2302.08011",
+  "authors": [
+   "Dominic Maggio",
+   "Courtney Mario",
+   "Brett Streetman",
+   "Ted Steiner",
+   "Luca Carlone"
+  ],
+  "year": 2023,
+  "summary": "AIAA SciTech 2023 paper evaluating camera-based TRN that matches landmarks from a satellite image database and uses inertial data between frames. Tested on a World View high-altitude balloon descending from 33 km and on Blue Origin New Shepard NS-23 camera data, with robustness to fast rotation and cloud obstruction.",
+  "key_takeaways": [
+   "Real flight data, not simulation",
+   "Visual TRN across a large altitude range",
+   "Draper/MIT work"
+  ],
+  "concepts": [
+   "concept:terrain-nav",
+   "concept:visual-geolocalization",
+   "concept:space-nav"
+  ],
+  "tags": [
+   "terrain-relative-navigation",
+   "satellite-imagery",
+   "vision",
+   "flight-test"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:gnadt-2022-mit-phd-aeromagnetic-compensation",
+  "kind": "report",
+  "title": "Advanced Aeromagnetic Compensation Models for Airborne Magnetic Anomaly Navigation",
+  "url": "https://dspace.mit.edu/handle/1721.1/145137",
+  "authors": [
+   "Albert R. Gnadt"
+  ],
+  "year": 2022,
+  "summary": "MIT AeroAstro PhD thesis (advisor Alan Edelman) on removing the aircraft's own magnetic field so magnetic anomaly maps can be used for navigation. It studies four groups of methods: linear compensation, nonlinear (neural) compensation, online compensation and covariance-adaptive filtering. The models are implemented in MagNav.jl. DSpace terms: in copyright, educational use permitted.",
+  "key_takeaways": [
+   "The full technical background behind MagNav.jl",
+   "Compares Tolles-Lawson, neural and online compensation",
+   "Free PDF on DSpace@MIT"
+  ],
+  "concepts": [
+   "concept:magnetic-nav",
+   "concept:calibration"
+  ],
+  "tags": [
+   "magnav",
+   "aeromagnetic-compensation",
+   "tolles-lawson",
+   "thesis"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:mit-ai-accelerator/magnav.jl",
+    "rel": "has_code"
+   },
+   {
+    "id": "res:afrl-magnav-challenge-2020",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:gnadt-2022-tolles-lawson-derivation",
+  "kind": "paper",
+  "title": "Derivation and Extensions of the Tolles-Lawson Model for Aeromagnetic Compensation",
+  "url": "https://arxiv.org/abs/2212.09899",
+  "authors": [
+   "Albert R. Gnadt",
+   "Allan B. Wollaber",
+   "Aaron P. Nielsen"
+  ],
+  "year": 2022,
+  "summary": "Short open reference note that re-derives the Tolles-Lawson aircraft magnetic field model (permanent, induced and eddy-current terms), states where the assumptions enter, describes the calibration procedure, and adds a second-order correction and a way to build the vector aircraft field.",
+  "key_takeaways": [
+   "Clear derivation of the standard compensation model",
+   "Explains the calibration-box flight",
+   "Pairs with the MagNav challenge data"
+  ],
+  "concepts": [
+   "concept:magnetic-nav",
+   "concept:calibration"
+  ],
+  "tags": [
+   "magnav",
+   "tolles-lawson",
+   "aeromagnetic-compensation"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:mit-ai-accelerator/magnav.jl",
+    "rel": "has_code"
+   },
+   {
+    "id": "res:gnadt-2022-mit-phd-aeromagnetic-compensation",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:canciani-raquet-2016-absolute-positioning-magnetic-anomaly",
+  "kind": "paper",
+  "title": "Absolute Positioning Using the Earth's Magnetic Anomaly Field",
+  "url": "https://doi.org/10.1002/navi.138",
+  "authors": [
+   "Aaron Canciani",
+   "John Raquet"
+  ],
+  "year": 2016,
+  "summary": "NAVIGATION 63(2) journal paper: a particle-filter framework that aids an aircraft INS with optically pumped cesium magnetometer measurements compared against an anomaly map, while estimating the temporal variations of the field. Analyses altitude and magnetic-storm dependence with flight-test and observatory data. The article is a U.S. Government work, public domain in the USA; the related AFIT dissertation is freely available.",
+  "key_takeaways": [
+   "Particle filter on scalar anomaly measurements",
+   "Models temporal (diurnal/storm) field variation",
+   "Public-domain US Government work"
+  ],
+  "concepts": [
+   "concept:magnetic-nav",
+   "concept:ins"
+  ],
+  "tags": [
+   "magnav",
+   "particle-filter",
+   "afit"
+  ],
+  "level": "advanced",
+  "access": "paywalled",
+  "related": [
+   {
+    "id": "res:canciani-afit-magnetic-anomaly-dissertation-2016",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:canciani-raquet-2017-airborne-magnetic-anomaly-navigation",
+  "kind": "paper",
+  "title": "Airborne Magnetic Anomaly Navigation",
+  "url": "https://doi.org/10.1109/TAES.2017.2649238",
+  "authors": [
+   "Aaron Canciani",
+   "John Raquet"
+  ],
+  "year": 2017,
+  "summary": "IEEE TAES 53(1) paper describing a passive airborne navigation system (scalar magnetometer, INS, barometer, anomaly map) with a particle filter and a full measurement equation linking magnetometer readings to the map. Flight-tested over Louisa, Virginia; the authors call the reported accuracy a best case under ideal conditions.",
+  "key_takeaways": [
+   "First flight-test validation of the AFIT MagNav filter",
+   "Complete measurement equation",
+   "Best-case result, survey aircraft conditions"
+  ],
+  "concepts": [
+   "concept:magnetic-nav",
+   "concept:ins"
+  ],
+  "tags": [
+   "magnav",
+   "flight-test",
+   "particle-filter",
+   "afit"
+  ],
+  "level": "advanced",
+  "access": "paywalled",
+  "related": [
+   {
+    "id": "res:canciani-raquet-2016-absolute-positioning-magnetic-anomaly",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:canciani-2022-f16-magnav-online-calibration",
+  "kind": "paper",
+  "title": "Magnetic Navigation on an F-16 Aircraft Using Online Calibration",
+  "url": "https://doi.org/10.1109/TAES.2021.3101567",
+  "authors": [
+   "Aaron Canciani"
+  ],
+  "year": 2022,
+  "summary": "IEEE TAES 58(1) paper on magnetic anomaly navigation flown on an F-16, where the platform's magnetic interference is far larger than on survey aircraft and drifts. A combined batch and online calibration gives better accuracy than batch-only calibration on 1.5-hour flights.",
+  "key_takeaways": [
+   "Operational fighter platform, not a quiet survey aircraft",
+   "Online calibration needed for drifting platform fields",
+   "Key evidence for MagNav on military aircraft"
+  ],
+  "concepts": [
+   "concept:magnetic-nav",
+   "concept:calibration"
+  ],
+  "tags": [
+   "magnav",
+   "f-16",
+   "online-calibration",
+   "flight-test"
+  ],
+  "level": "advanced",
+  "access": "paywalled",
+  "related": [
+   {
+    "id": "res:canciani-raquet-2017-airborne-magnetic-anomaly-navigation",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:hager-2026-magnav-nn-online-calibration",
+  "kind": "paper",
+  "title": "Airborne Magnetic Anomaly Navigation with Neural-Network-Augmented Online Calibration",
+  "url": "https://arxiv.org/abs/2603.08265",
+  "authors": [
+   "Antonia Hager",
+   "Sven Nebendahl",
+   "Alexej Klushyn",
+   "Jasper Krauser",
+   "Torleiv H. Bryne",
+   "Tor Arne Johansen"
+  ],
+  "year": 2026,
+  "summary": "Published in the Journal of Guidance, Control, and Dynamics (2026). A 'cold-start' MagNav EKF that estimates kinematic states, Tolles-Lawson coefficients and the weights of a residual neural network in flight, so no calibration flight or pre-training is needed. Validated on the MagNav Challenge dataset.",
+  "key_takeaways": [
+   "No prior calibration flight",
+   "EKF update equivalent to online natural-gradient training",
+   "Physics model first, NN only for residuals"
+  ],
+  "concepts": [
+   "concept:magnetic-nav",
+   "concept:calibration",
+   "concept:edge-ai"
+  ],
+  "tags": [
+   "magnav",
+   "online-calibration",
+   "neural-network",
+   "ekf"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:magnav-zenodo-dataset",
+    "rel": "uses"
+   }
+  ]
+ },
+ {
+  "id": "res:neinavaie-khalife-kassas-2022-starlink-first-results-taes",
+  "kind": "paper",
+  "title": "Acquisition, Doppler Tracking, and Positioning With Starlink LEO Satellites: First Results",
+  "url": "https://doi.org/10.1109/TAES.2021.3127488",
+  "authors": [
+   "Mohammad Neinavaie",
+   "Joe Khalife",
+   "Zaher M. Kassas"
+  ],
+  "year": 2022,
+  "summary": "IEEE TAES 58(3) letter with the first acquisition, Doppler tracking and positioning results from Starlink downlinks without knowing the signal structure: a generalized-likelihood-ratio acquisition test and a Kalman-filter Doppler tracker, with six satellites tracked.",
+  "key_takeaways": [
+   "Blind acquisition of undisclosed Starlink signals",
+   "Doppler-only positioning works with a handful of satellites",
+   "Received the IEEE M. Barry Carlton Award"
+  ],
+  "concepts": [
+   "concept:signals-of-opportunity",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "starlink",
+   "leo",
+   "doppler",
+   "kassas"
+  ],
+  "level": "advanced",
+  "access": "paywalled",
+  "related": [
+   {
+    "id": "res:kassas-starlink-first-results-2022",
+    "rel": "same_author"
+   },
+   {
+    "id": "res:kassas-2022-starlink-carrier-phase",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:neinavaie-kassas-2024-starlink-ofdm-structure",
+  "kind": "paper",
+  "title": "Unveiling Starlink LEO Satellite OFDM-Like Signal Structure Enabling Precise Positioning",
+  "url": "https://doi.org/10.1109/TAES.2023.3265951",
+  "authors": [
+   "Mohammad Neinavaie",
+   "Zaher M. Kassas"
+  ],
+  "year": 2024,
+  "summary": "IEEE TAES 60(2) letter that estimates the structure of Starlink's OFDM-like reference signals and frame length, and proposes a blind receiver that acquires multiple satellites, estimates their reference signals and Doppler, and tracks carrier and code phase. Of six tracked satellites, three sent pure tones and three OFDM-like signals.",
+  "key_takeaways": [
+   "Blind reference-signal estimation",
+   "Carrier and code phase from Starlink",
+   "Bridges pure-tone Doppler to OFDM ranging"
+  ],
+  "concepts": [
+   "concept:signals-of-opportunity",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "starlink",
+   "leo",
+   "ofdm",
+   "blind-receiver",
+   "kassas"
+  ],
+  "level": "advanced",
+  "access": "paywalled",
+  "related": [
+   {
+    "id": "res:neinavaie-khalife-kassas-2022-starlink-first-results-taes",
+    "rel": "same_author"
+   },
+   {
+    "id": "res:kozhaya-saroufim-kassas-2025-unveiling-starlink-pnt",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:kozhaya-saroufim-kassas-2025-unveiling-starlink-pnt",
+  "kind": "paper",
+  "title": "Unveiling Starlink for PNT",
+  "url": "https://doi.org/10.33012/navi.685",
+  "authors": [
+   "Sharbel E. Kozhaya",
+   "Joe Saroufim",
+   "Zaher M. Kassas"
+  ],
+  "year": 2025,
+  "summary": "Open-access NAVIGATION 72(1) paper describing the full Starlink OFDM beacon via blind beacon estimation, the processing gain this gives over previously published sequences, achievable C/N0 for different reception setups, and the first carrier phase, Doppler and code phase observables from Starlink OFDM. Uses signal collections from 2021 to 2024 and notes step-like corrections that contaminate OFDM observables. Won the ION Samuel Burka Award.",
+  "key_takeaways": [
+   "Full beacon gives large processing gain for low-gain antennas",
+   "Pilot-tone vs OFDM observable quality compared",
+   "Open access, with an ION webinar companion"
+  ],
+  "concepts": [
+   "concept:signals-of-opportunity",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "starlink",
+   "leo",
+   "ofdm",
+   "carrier-phase",
+   "kassas"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:ion-webinar-kozhaya",
+    "rel": "same_author"
+   },
+   {
+    "id": "res:neinavaie-kassas-2024-starlink-ofdm-structure",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:iannucci-humphreys-2020-fused-leo-gnss",
+  "kind": "paper",
+  "title": "Fused Low-Earth-Orbit GNSS",
+  "url": "https://arxiv.org/abs/2009.12334",
+  "authors": [
+   "Peter A. Iannucci",
+   "Todd E. Humphreys"
+  ],
+  "year": 2020,
+  "summary": "Accepted to IEEE TAES. Proposes 'fused LEO GNSS': a cooperative PNT service hosted on a broadband mega-constellation's own transmitters, clocks and spectrum. Assesses the opportunity cost to the operator in time-space-bandwidth product and energy, concluding that a near-instantaneous-fix service would cost a small fraction of Starlink downlink capacity.",
+  "key_takeaways": [
+   "Cooperative (operator-supported) LEO PNT vs opportunistic use",
+   "Opportunity-cost argument in downlink capacity",
+   "Foundation for the UT group's LEO PNT work"
+  ],
+  "concepts": [
+   "concept:signals-of-opportunity",
+   "concept:assured-pnt",
+   "concept:space-nav"
+  ],
+  "tags": [
+   "leo",
+   "starlink",
+   "fused-leo-gnss",
+   "humphreys"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:humphreys-fused-leo-gnss-mock-2025",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:qin-2025-starlink-timing-properties",
+  "kind": "paper",
+  "title": "Timing Properties of the Starlink Ku-Band Downlink",
+  "url": "https://arxiv.org/abs/2501.05302",
+  "authors": [
+   "Wenkai Qin",
+   "Andrew M. Graff",
+   "Zachary L. Clements",
+   "Zacharias M. Komodromos",
+   "Todd E. Humphreys"
+  ],
+  "year": 2025,
+  "summary": "IEEE TAES 62 (2026) paper characterizing Starlink frame timing for pseudorange-based opportunistic PNT. It finds ns-level jitter periods (good) but also abrupt timing adjustments, episodic high-jitter periods and only loose disciplining to GPS time, which the authors judge incompatible with GPS-like PNT unless corrected, and attribute to software choices.",
+  "key_takeaways": [
+   "Starlink frame timing is disciplined to GPS time only loosely",
+   "Abrupt per-second timing jumps on v1.0/v1.5 satellites",
+   "Third-party corrections could fix it"
+  ],
+  "concepts": [
+   "concept:signals-of-opportunity",
+   "concept:timing"
+  ],
+  "tags": [
+   "starlink",
+   "leo",
+   "timing",
+   "humphreys"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:humphreys-2023-starlink-signal-structure",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:qin-psiaki-2026-starlink-pilots",
+  "kind": "paper",
+  "title": "Pilots and Other Predictable Elements of the Starlink Ku-Band Downlink",
+  "url": "https://arxiv.org/abs/2602.02627",
+  "authors": [
+   "Wenkai Qin",
+   "Mark L. Psiaki",
+   "John R. Bowman",
+   "Todd E. Humphreys"
+  ],
+  "year": 2026,
+  "summary": "Identifies dedicated edge-pilot symbols and other predictable elements in the Starlink Ku-band waveform, publishes the edge-pilot sequences, and shows most QPSK symbols follow a regular template rather than carrying user data. Exploiting these elements gives a large processing gain so compact low-gain receivers can get precise time of arrival even from side beams.",
+  "key_takeaways": [
+   "Explicit Starlink pilot sequences disclosed",
+   "Predictable frame content enables TOA with small antennas",
+   "UT Austin with Psiaki (Virginia Tech)"
+  ],
+  "concepts": [
+   "concept:signals-of-opportunity",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "starlink",
+   "leo",
+   "pilots",
+   "toa",
+   "humphreys",
+   "psiaki"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:humphreys-2023-starlink-signal-structure",
+    "rel": "same_author"
+   },
+   {
+    "id": "res:psiaki-transit-on-steroids-2021",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:graff-humphreys-2024-ofdm-positioning-unknown-payloads",
+  "kind": "paper",
+  "title": "OFDM-Based Positioning with Unknown Data Payloads: Bounds and Applications to LEO PNT",
+  "url": "https://arxiv.org/abs/2407.19106",
+  "authors": [
+   "Andrew M. Graff",
+   "Todd E. Humphreys"
+  ],
+  "year": 2024,
+  "summary": "Derives the Ziv-Zakai bound on time-of-arrival estimation for OFDM signals with both known pilots and unknown data, capturing low-SNR threshold effects that Cramer-Rao bounds miss. Evaluates maximum-likelihood and decision-directed estimators on simulated LEO non-terrestrial-network channels.",
+  "key_takeaways": [
+   "Unknown payload symbols still carry ranging information",
+   "ZZB vs CRB at low SNR",
+   "Theory for opportunistic OFDM ranging"
+  ],
+  "concepts": [
+   "concept:signals-of-opportunity"
+  ],
+  "tags": [
+   "ofdm",
+   "leo",
+   "toa",
+   "ziv-zakai-bound",
+   "humphreys"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:qin-psiaki-2026-starlink-pilots",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:stock-2023-starlink-burst-detection",
+  "kind": "paper",
+  "title": "LEO-PNT With Starlink: Development of a Burst Detection Algorithm Based on Signal Measurements",
+  "url": "https://arxiv.org/abs/2304.09535",
+  "authors": [
+   "Winfried Stock",
+   "Christian A. Hofmann",
+   "Andreas Knopp"
+  ],
+  "year": 2023,
+  "summary": "Measures Starlink signals and builds a correlation-based burst detector, then measures burst carrier frequency (Doppler) and estimates attainable positioning accuracy. The authors argue it works with an omnidirectional antenna in an operationally relevant setup.",
+  "key_takeaways": [
+   "Burst detection as the first step of Doppler positioning",
+   "Omnidirectional antenna, no dish",
+   "European (UniBw Munich) LEO-PNT work"
+  ],
+  "concepts": [
+   "concept:signals-of-opportunity",
+   "concept:gnss-sdr"
+  ],
+  "tags": [
+   "starlink",
+   "leo",
+   "doppler",
+   "burst-detection"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:park-kim-seo-2026-blind-doppler-matching",
+  "kind": "paper",
+  "title": "Clock-Shift-Aided Blind Doppler Matching in Passive SDR Monitoring Data for LEO Doppler Positioning",
+  "url": "https://arxiv.org/abs/2611.02377",
+  "authors": [
+   "Seunghyeon Park",
+   "Gaeun Kim",
+   "Jiwon Seo"
+  ],
+  "year": 2026,
+  "summary": "Associates unlabeled Doppler traces in passive SDR spectrum-monitoring scans (no raw IQ) with TLE-predicted Starlink/OneWeb satellites, using slope-consistent segments, a clock-offset search and multi-metric matching, then runs batch Doppler positioning on open UK monitoring data. Submitted to IEEE NAVICON 2026.",
+  "key_takeaways": [
+   "Positioning from spectrum waterfalls, not IQ samples",
+   "Receiver clock offset search is the key step",
+   "Uses open monitoring data"
+  ],
+  "concepts": [
+   "concept:signals-of-opportunity",
+   "concept:gnss-sdr"
+  ],
+  "tags": [
+   "leo",
+   "starlink",
+   "oneweb",
+   "doppler",
+   "tle",
+   "sdr"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:reid-2018-broadband-leo-navigation",
+  "kind": "paper",
+  "title": "Broadband LEO Constellations for Navigation",
+  "url": "https://doi.org/10.1002/navi.234",
+  "authors": [
+   "Tyler Reid",
+   "Andrew M. Neish",
+   "Todd Walter",
+   "Per Enge"
+  ],
+  "year": 2018,
+  "summary": "NAVIGATION 65(2) paper analysing how broadband LEO mega-constellations could provide navigation: stronger signals against jamming, much better satellite geometry from sheer numbers, which lets the signal-in-space range error be relaxed, and a benign radiation environment that allows COTS payloads.",
+  "key_takeaways": [
+   "Early quantitative case for LEO PNT",
+   "Geometry gain offsets worse clocks and orbits"
+  ],
+  "concepts": [
+   "concept:signals-of-opportunity",
+   "concept:space-nav",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "leo",
+   "mega-constellation",
+   "geometry",
+   "stanford"
+  ],
+  "level": "intermediate",
+  "access": "paywalled",
+  "related": []
+ },
+ {
+  "id": "res:prol-2022-leo-pnt-survey",
+  "kind": "paper",
+  "title": "Position, Navigation, and Timing (PNT) Through Low Earth Orbit (LEO) Satellites: A Survey on Current Status, Challenges, and Opportunities",
+  "url": "https://doi.org/10.1109/ACCESS.2022.3194050",
+  "authors": [
+   "Fabricio S. Prol",
+   "Ruben Morales Ferre",
+   "Zainab Saleem",
+   "Petri Valisuo",
+   "Christina Pinell",
+   "Elena Simona Lohan",
+   "Mahmoud Elsanhoury",
+   "Mohammed Elmusrati",
+   "Saiful Islam",
+   "Kaan Celikbilek",
+   "Kannan Selvan",
+   "Jaakko Yliaho",
+   "Kelly Rutledge",
+   "Arto Ojala",
+   "Luca Ferranti",
+   "Jaan Praks",
+   "M. Zahidul H. Bhuiyan",
+   "Sanna Kaasalainen",
+   "Heidi Kuusniemi"
+  ],
+  "year": 2022,
+  "summary": "Open-access IEEE Access survey of LEO-PNT: system design steps and challenges, candidate physical-layer parameters, design tools and simulators, satellite-ground channel models, and commercial prospects, written by a multidisciplinary Finnish-led team.",
+  "key_takeaways": [
+   "Broad map of the LEO-PNT design space",
+   "Lists simulators and channel models",
+   "Good starting reading for a LEO-PNT hackathon track"
+  ],
+  "concepts": [
+   "concept:signals-of-opportunity",
+   "concept:space-nav"
+  ],
+  "tags": [
+   "leo",
+   "survey",
+   "pnt"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:safi-2025-timing-spoofing-jammertest-thesis",
+  "kind": "report",
+  "title": "GNSS Timing Spoofing Detection: Methods and Analysis using Jammertest data",
+  "url": "https://osuva.uwasa.fi/handle/10024/19442",
+  "authors": [
+   "Muhammad Safi"
+  ],
+  "year": 2025,
+  "summary": "University of Vaasa master's thesis (supervised by Heidi Kuusniemi) analysing u-blox ZED-F9P data from a Jammertest 2024 timing-spoofing event. C/N0 monitoring was ineffective; pseudorange RMS and NMEA validity flags caught anomalies with false positives; an Isolation Forest model detected the spoofing with very few false alarms. Recommends validity flags as a trigger plus ML verification. The repository page sits behind a bot check.",
+  "key_takeaways": [
+   "Uses real live-spoofing data, not simulation",
+   "C/N0 alone does not reveal timing spoofing",
+   "Cheap receiver-side detection recipe"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:gnss-interference",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "timing-spoofing",
+   "jammertest",
+   "isolation-forest",
+   "u-blox",
+   "thesis"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:safi-2025-ipin-timing-spoofing-ml",
+    "rel": "same_author"
+   },
+   {
+    "id": "res:jammertest-norway",
+    "rel": "uses"
+   }
+  ]
+ },
+ {
+  "id": "res:safi-2025-ipin-timing-spoofing-ml",
+  "kind": "paper",
+  "title": "Empirical Evaluation of GNSS Timing Spoofing and Detection Using Machine Learning",
+  "url": "https://doi.org/10.1109/IPIN66788.2025.11212945",
+  "authors": [
+   "Muhammad Safi",
+   "Heidi Kuusniemi",
+   "Mahmoud Elsanhoury",
+   "Petri Valisuo"
+  ],
+  "year": 2025,
+  "summary": "IPIN 2025 paper on timing spoofing detection with Jammertest 2024 data. Position parameters were compromised at lower spoofing power than timing parameters, which could give early warning; NMEA validity flags detected much but not all of the attack; an unsupervised Isolation Forest closed the gap. Self-archived copies exist in the Vaasa and Tampere repositories.",
+  "key_takeaways": [
+   "Position degrades before time: use it as an early warning",
+   "Unsupervised detector, no labelled spoofing needed",
+   "Targets critical-infrastructure timing receivers"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:gnss-interference"
+  ],
+  "tags": [
+   "timing-spoofing",
+   "jammertest",
+   "machine-learning",
+   "critical-infrastructure"
+  ],
+  "level": "intermediate",
+  "access": "paywalled",
+  "related": [
+   {
+    "id": "res:safi-2025-timing-spoofing-jammertest-thesis",
+    "rel": "same_author"
+   },
+   {
+    "id": "res:jammertest-norway",
+    "rel": "uses"
+   }
+  ]
+ },
+ {
+  "id": "res:enan-2025-time-push-spoofing-hqc-ae",
+  "kind": "paper",
+  "title": "Quantum-Classical Hybrid Framework for Zero-Day Time-Push GNSS Spoofing Detection",
+  "url": "https://arxiv.org/abs/2508.18085",
+  "authors": [
+   "Abyad Enan",
+   "Mashrur Chowdhury",
+   "Sagar Dasgupta",
+   "Mizanur Rahman"
+  ],
+  "year": 2025,
+  "summary": "Preprint on detecting time-push spoofing against static GNSS receivers with an autoencoder (hybrid quantum-classical) trained only on authentic tracking-stage features, so it can flag unseen attack types. Compared with classical autoencoders and supervised models across simplistic, intermediate and sophisticated time-push scenarios.",
+  "key_takeaways": [
+   "Anomaly detection trained on clean data only",
+   "Focus on time-push attacks on static timing receivers",
+   "Quantum part is optional for a hackathon; the classical baseline is the useful bit"
+  ],
+  "concepts": [
+   "concept:timing",
+   "concept:gnss-interference"
+  ],
+  "tags": [
+   "timing-spoofing",
+   "time-push",
+   "autoencoder",
+   "anomaly-detection"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:miluv-dataset-2025",
+  "kind": "dataset",
+  "title": "MILUV: A Multi-UAV Indoor Localization dataset with UWB and Vision",
+  "url": "https://doi.org/10.25452/figshare.plus.28386041.v1",
+  "authors": [
+   "Mohammed Ayman Shalaby",
+   "Syed Shabbir Ahmed",
+   "Nicholas Dahdah",
+   "Charles Champagne Cossette",
+   "Jerome Le Ny",
+   "James Richard Forbes"
+  ],
+  "year": 2025,
+  "summary": "Multi-UAV indoor dataset (three quadcopters, 36 experiments) with UWB ranging including raw timestamps, channel impulse response and inter-robot ranges, stereo and downward cameras, IMU, laser height, magnetometer and motion-capture ground truth, in LOS and NLOS. Data on Figshare+ under CC BY 4.0; the devkit (decargroup/miluv) is MIT. Paper: arXiv 2504.14376.",
+  "key_takeaways": [
+   "CC BY 4.0 data, MIT devkit",
+   "Inter-robot UWB for cooperative localization tests",
+   "CIR data for NLOS classification"
+  ],
+  "concepts": [
+   "concept:rf-localization",
+   "concept:multi-agent",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "uwb",
+   "multi-uav",
+   "dataset",
+   "cir",
+   "cc-by-4.0"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:decargroup/miluv",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:rcv-uwb-relative-pose-dataset-2024",
+  "kind": "dataset",
+  "title": "Addressing Relative Pose Impact on UWB Localization: Dataset Introduction and Analysis",
+  "url": "https://arxiv.org/abs/2407.03890",
+  "authors": [
+   "Jun Hyeok Choe",
+   "Inwook Shim"
+  ],
+  "year": 2024,
+  "summary": "Short paper introducing a drone UWB dataset that isolates how the relative pose between UWB devices affects ranging: six flight sequences with two-way ranging to four anchors, a stereo VIO setup, and motion-capture ground truth for both the drone and the anchors. Data in the cjhhalla/RCV_uwb_dataset GitHub repo (rosbags on Google Drive), which has no licence file, so reuse terms are unstated.",
+  "key_takeaways": [
+   "Characterizes antenna-orientation effects on UWB range error",
+   "Useful for building a realistic UWB noise model",
+   "No explicit licence"
+  ],
+  "concepts": [
+   "concept:rf-localization",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "uwb",
+   "ranging",
+   "dataset",
+   "no-licence"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:cjhhalla/rcv_uwb_dataset",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:tiers-uwb-uav-dataset-2020",
+  "kind": "dataset",
+  "title": "UWB-based system for UAV Localization in GNSS-Denied Environments: Characterization and Dataset",
+  "url": "https://arxiv.org/abs/2003.04380",
+  "authors": [
+   "Jorge Pena Queralta",
+   "Carmen Martinez Almansa",
+   "Fabrizio Schiano",
+   "Dario Floreano",
+   "Tomi Westerlund"
+  ],
+  "year": 2020,
+  "summary": "IROS 2020 paper characterizing a low-cost, portable Decawave DWM1001 UWB system for indoor UAV flight, including anchor placement, altitude and speed effects and anchor self-calibration, with open data and methods. Data in the TIERS/uwb-drone-dataset GitHub repo, which has no licence file.",
+  "key_takeaways": [
+   "Cheap DWM1001 hardware, movable anchors",
+   "Accuracy vs anchor geometry and altitude",
+   "No explicit licence"
+  ],
+  "concepts": [
+   "concept:rf-localization",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "uwb",
+   "uav",
+   "dwm1001",
+   "dataset",
+   "no-licence"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:tiers/uwb-drone-dataset",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:gsv-cities-2022",
+  "kind": "dataset",
+  "title": "GSV-Cities: Toward Appropriate Supervised Visual Place Recognition",
+  "url": "https://arxiv.org/abs/2210.10239",
+  "authors": [
+   "Amar Ali-bey",
+   "Brahim Chaib-draa",
+   "Philippe Giguere"
+  ],
+  "year": 2022,
+  "summary": "Neurocomputing 2022 paper introducing GSV-Cities, a street-level training set covering 40+ cities over 14 years with accurate place labels, and a study of metric-learning losses for VPR training. It is the training set used by MixVPR, BoQ and several later methods. Licence: the Kaggle dataset is CC BY-NC-ND 4.0 (non-commercial, no derivatives); the GitHub code repo has no licence file.",
+  "key_takeaways": [
+   "Standard training set for modern VPR",
+   "CC BY-NC-ND 4.0: research use only",
+   "Hosted on Kaggle"
+  ],
+  "concepts": [
+   "concept:place-recognition",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "vpr",
+   "training-data",
+   "street-view",
+   "cc-by-nc-nd"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:amaralibey/gsv-cities",
+    "rel": "has_code"
+   },
+   {
+    "id": "res:mixvpr-2023",
+    "rel": "dataset_for"
+   }
+  ]
+ },
+ {
+  "id": "res:cosplace-sf-xl-2022",
+  "kind": "paper",
+  "title": "Rethinking Visual Geo-localization for Large-Scale Applications",
+  "url": "https://arxiv.org/abs/2204.02287",
+  "authors": [
+   "Gabriele Berton",
+   "Carlo Masone",
+   "Barbara Caputo"
+  ],
+  "year": 2022,
+  "summary": "CVPR 2022 paper introducing San Francisco eXtra Large (SF-XL), a city-wide geo-localization dataset, and CosPlace, which casts VPR training as classification to avoid expensive negative mining. SF-XL is obtained through a request form that states it is 'publicly available for research purposes'; no formal licence is given. The CosPlace code is MIT.",
+  "key_takeaways": [
+   "Classification training scales to city-size data",
+   "SF-XL access via form, research use",
+   "CosPlace code: MIT"
+  ],
+  "concepts": [
+   "concept:place-recognition",
+   "concept:visual-geolocalization",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "vpr",
+   "sf-xl",
+   "cosplace",
+   "training"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:gmberton/cosplace",
+    "rel": "has_code"
+   },
+   {
+    "id": "res:eigenplaces-2023",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:eigenplaces-2023",
+  "kind": "paper",
+  "title": "EigenPlaces: Training Viewpoint Robust Models for Visual Place Recognition",
+  "url": "https://arxiv.org/abs/2308.10832",
+  "authors": [
+   "Gabriele Berton",
+   "Gabriele Trivigno",
+   "Barbara Caputo",
+   "Carlo Masone"
+  ],
+  "year": 2023,
+  "summary": "ICCV 2023 paper that clusters training data to show the network the same points of interest from different viewpoints, building viewpoint robustness into global descriptors without extra supervision. Trained on SF-XL.",
+  "key_takeaways": [
+   "Viewpoint robustness, relevant to oblique aerial views",
+   "No extra labels needed",
+   "MIT-licensed code"
+  ],
+  "concepts": [
+   "concept:place-recognition",
+   "concept:visual-geolocalization"
+  ],
+  "tags": [
+   "vpr",
+   "viewpoint-robustness",
+   "sf-xl"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:gmberton/eigenplaces",
+    "rel": "has_code"
+   },
+   {
+    "id": "res:cosplace-sf-xl-2022",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:mixvpr-2023",
+  "kind": "paper",
+  "title": "MixVPR: Feature Mixing for Visual Place Recognition",
+  "url": "https://arxiv.org/abs/2303.02190",
+  "authors": [
+   "Amar Ali-bey",
+   "Brahim Chaib-draa",
+   "Philippe Giguere"
+  ],
+  "year": 2023,
+  "summary": "WACV 2023 paper proposing a holistic aggregation that mixes backbone feature maps through a cascade of feature-mixing blocks instead of NetVLAD-style local aggregation, aiming at accuracy with low latency. Trained on GSV-Cities.",
+  "key_takeaways": [
+   "Simple, fast global descriptor",
+   "Trained on GSV-Cities",
+   "Good baseline for onboard VPR"
+  ],
+  "concepts": [
+   "concept:place-recognition"
+  ],
+  "tags": [
+   "vpr",
+   "aggregation",
+   "gsv-cities"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:amaralibey/mixvpr",
+    "rel": "has_code"
+   },
+   {
+    "id": "res:gsv-cities-2022",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:deep-visual-geolocalization-benchmark-2022",
+  "kind": "paper",
+  "title": "Deep Visual Geo-localization Benchmark",
+  "url": "https://arxiv.org/abs/2204.03444",
+  "authors": [
+   "Gabriele Berton",
+   "Riccardo Mereu",
+   "Gabriele Trivigno",
+   "Carlo Masone",
+   "Gabriela Csurka",
+   "Torsten Sattler",
+   "Barbara Caputo"
+  ],
+  "year": 2022,
+  "summary": "CVPR 2022 oral presenting an open framework to build, train and test visual geo-localization pipelines with swappable backbones, aggregation and negative mining, plus a large experimental study of how each choice affects recall, runtime and memory.",
+  "key_takeaways": [
+   "Systematic guide to VPR design choices",
+   "Common evaluation protocol",
+   "MIT-licensed framework"
+  ],
+  "concepts": [
+   "concept:place-recognition",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "vpr",
+   "benchmark",
+   "training"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:gmberton/deep-visual-geo-localization-benchmark",
+    "rel": "has_code"
+   },
+   {
+    "id": "res:cosplace-sf-xl-2022",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:vpair-dataset-2022",
+  "kind": "dataset",
+  "title": "VPAIR - Aerial Visual Place Recognition and Localization in Large-scale Outdoor Environments",
+  "url": "https://arxiv.org/abs/2205.11567",
+  "authors": [
+   "Michael Schleiss",
+   "Fahmi Rouatbi",
+   "Daniel Cremers"
+  ],
+  "year": 2022,
+  "summary": "ICRA 2022 aerial-robotics workshop paper introducing VPAIR: downward camera images from a light aircraft flying above 300 m, each paired with a reference render with depth and a 6-DoF pose, over 100+ km of urban, farmland and forest terrain. Licence: the README says academic use only, commercial use prohibited (the small Zenodo sample is tagged CC BY 4.0).",
+  "key_takeaways": [
+   "Medium-altitude aerial VPR benchmark",
+   "Reference renders with depth",
+   "Academic use only"
+  ],
+  "concepts": [
+   "concept:place-recognition",
+   "concept:visual-geolocalization",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "aerial-vpr",
+   "dataset",
+   "academic-only"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:aervisloc/vpair",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:alto-dataset-2022",
+  "kind": "dataset",
+  "title": "ALTO: A Large-Scale Dataset for UAV Visual Place Recognition and Localization",
+  "url": "https://arxiv.org/abs/2207.12317",
+  "authors": [
+   "Ivan Cisneros",
+   "Peng Yin",
+   "Ji Zhang",
+   "Howie Choset",
+   "Sebastian Scherer"
+  ],
+  "year": 2022,
+  "summary": "Helicopter-flown aerial dataset over Ohio and Pennsylvania (two long trajectories) with GPS-INS ground truth, accelerometer, laser altimeter and downward RGB imagery, plus reference imagery for VPR benchmarking. The MetaSLAM/ALTO repo is BSD-3-Clause; no separate data licence is stated.",
+  "key_takeaways": [
+   "Long-range aerial VPR and registration benchmark",
+   "Includes laser altimeter (TRN-adjacent)",
+   "Repo BSD-3-Clause"
+  ],
+  "concepts": [
+   "concept:place-recognition",
+   "concept:visual-geolocalization",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "aerial-vpr",
+   "dataset",
+   "helicopter"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:metaslam/alto",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:moskalenko-2024-aerial-vpr-survey",
+  "kind": "paper",
+  "title": "Visual place recognition for aerial imagery: A survey",
+  "url": "https://arxiv.org/abs/2406.00885",
+  "authors": [
+   "Ivan Moskalenko",
+   "Anastasiia Kornilova",
+   "Gonzalo Ferrer"
+  ],
+  "year": 2024,
+  "summary": "Robotics and Autonomous Systems 183 (2025) survey and evaluation methodology for VPR on aerial imagery. Benchmarks several VPR methods and shows that the zoom level and overlap chosen when cutting satellite map tiles strongly affect results. Code in prime-slam/aero-vloc.",
+  "key_takeaways": [
+   "How to tile satellite maps for VPR matters",
+   "Hands-on benchmark with code",
+   "Directly useful for drone-to-satellite geolocalization"
+  ],
+  "concepts": [
+   "concept:place-recognition",
+   "concept:visual-geolocalization"
+  ],
+  "tags": [
+   "aerial-vpr",
+   "survey",
+   "satellite-tiles"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:prime-slam/aero-vloc",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:lased-2025-uav-vpr",
+  "kind": "paper",
+  "title": "Visual Place Recognition for Large-Scale UAV Applications",
+  "url": "https://arxiv.org/abs/2507.15089",
+  "authors": [
+   "Ioannis Tsampikos Papapetros",
+   "Ioannis Kansizoglou",
+   "Antonios Gasteratos"
+  ],
+  "year": 2025,
+  "summary": "Introduces LASED, a large aerial VPR training set of about a million images from 170,000 locations across Estonia sampled over a decade, and uses steerable (rotation-equivariant) CNNs to handle the heading ambiguity of nadir UAV images.",
+  "key_takeaways": [
+   "Multi-year aerial imagery for cross-season training",
+   "Rotation-equivariant networks for unknown heading",
+   "Aerial counterpart to GSV-Cities"
+  ],
+  "concepts": [
+   "concept:place-recognition",
+   "concept:visual-geolocalization",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "aerial-vpr",
+   "training-data",
+   "rotation-equivariance",
+   "cross-season"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:zaffar-2019-vpr-aerial-robotics",
+  "kind": "paper",
+  "title": "Are State-of-the-art Visual Place Recognition Techniques any Good for Aerial Robotics?",
+  "url": "https://arxiv.org/abs/1904.07967",
+  "authors": [
+   "Mubariz Zaffar",
+   "Ahmad Khaliq",
+   "Shoaib Ehsan",
+   "Michael Milford",
+   "Kostas Alexis",
+   "Klaus McDonald-Maier"
+  ],
+  "year": 2019,
+  "summary": "Early benchmark of eight ground-robot VPR techniques on two aerial place-recognition datasets, comparing matching performance, processing power and memory, and laying out why aerial VPR differs (viewpoint change, payload-limited compute).",
+  "key_takeaways": [
+   "Ground VPR does not transfer directly to aerial",
+   "Compute and memory as first-class metrics",
+   "Good framing for an onboard VPR budget"
+  ],
+  "concepts": [
+   "concept:place-recognition",
+   "concept:edge-ai"
+  ],
+  "tags": [
+   "aerial-vpr",
+   "benchmark"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": []
+ }
+]

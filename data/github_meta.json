@@ -455,6 +455,28 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:amaralibey/gsv-cities": {
+  "archived": false,
+  "description": "GSV-Cities: a large-scale dataset for visual place recognition",
+  "forks_count": 20,
+  "full_name": "amaralibey/gsv-cities",
+  "html_url": "https://github.com/amaralibey/gsv-cities",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2024-07-03T07:13:16Z",
+  "stargazers_count": 138,
+  "topics": [
+   "computer-vision",
+   "dataset",
+   "deep-learning",
+   "image-based-localisation",
+   "image-retrieval",
+   "metric-learning",
+   "visual-localization",
+   "visual-place-recognition"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:amaralibey/mixvpr": {
   "archived": false,
   "description": "MixVPR: Feature Mixing for Visual Place Recognition (WACV 2023)",
@@ -476,6 +498,28 @@
    "slam",
    "visual-place-recognition",
    "visual-slam"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:amaralibey/openvprlab": {
+  "archived": false,
+  "description": "An Open-source Deep Learning Framework for Visual Place Recognition",
+  "forks_count": 16,
+  "full_name": "amaralibey/OpenVPRLab",
+  "html_url": "https://github.com/amaralibey/OpenVPRLab",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2024-07-25T15:54:06Z",
+  "stargazers_count": 175,
+  "topics": [
+   "dataset",
+   "datasets",
+   "framework",
+   "image-based-localisation",
+   "image-geolocalization",
+   "image-retrieval",
+   "open-source",
+   "visual-place-recognition"
   ],
   "fetched": "2026-11-06"
  },
@@ -1947,6 +1991,19 @@
   "license": null,
   "pushed_at": "2024-06-01T19:17:55Z",
   "stargazers_count": 3,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:cjhhalla/rcv_uwb_dataset": {
+  "archived": false,
+  "description": "Addressing Relative Pose Impact on UWB Localization: Dataset Introduction and Analysis",
+  "forks_count": 0,
+  "full_name": "cjhhalla/RCV_uwb_dataset",
+  "html_url": "https://github.com/cjhhalla/RCV_uwb_dataset",
+  "language": "C++",
+  "license": null,
+  "pushed_at": "2025-09-11T09:30:58Z",
+  "stargazers_count": 6,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -4028,6 +4085,32 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:gmberton/deep-visual-geo-localization-benchmark": {
+  "archived": false,
+  "description": "Official code for CVPR 2022 (Oral) paper \"Deep Visual Geo-localization Benchmark\"",
+  "forks_count": 33,
+  "full_name": "gmberton/deep-visual-geo-localization-benchmark",
+  "html_url": "https://github.com/gmberton/deep-visual-geo-localization-benchmark",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-03-15T09:50:51Z",
+  "stargazers_count": 259,
+  "topics": [
+   "benchmark",
+   "computer-vision",
+   "datasets",
+   "deep-learning",
+   "descriptors",
+   "geolocalization",
+   "image-retrieval",
+   "localization",
+   "netvlad",
+   "place-recognition",
+   "pytorch",
+   "visual-place-recognition"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:gmberton/eigenplaces": {
   "archived": false,
   "description": "Official code for ICCV 2023 paper \"EigenPlaces: Training Viewpoint Robust Models for Visual Place Recognition\"",
@@ -5003,6 +5086,19 @@
    "unity",
    "unreal-engine"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:idm-uwb/efficient-pmf": {
+  "archived": false,
+  "description": "Efficient PMF for state estimation of systems with linear state dynamics.",
+  "forks_count": 0,
+  "full_name": "IDM-UWB/efficient-PMF",
+  "html_url": "https://github.com/IDM-UWB/efficient-PMF",
+  "language": "MATLAB",
+  "license": null,
+  "pushed_at": "2024-03-19T12:17:05Z",
+  "stargazers_count": 0,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:imrclab/crazyswarm2": {
@@ -8803,6 +8899,19 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:pesslovany/matlab-lagrangianpmf": {
+  "archived": false,
+  "description": "Lagrangian Efficient Point-Mass Filter code accompanying papers",
+  "forks_count": 2,
+  "full_name": "pesslovany/Matlab-LagrangianPMF",
+  "html_url": "https://github.com/pesslovany/Matlab-LagrangianPMF",
+  "language": "MATLAB",
+  "license": "AGPL-3.0",
+  "pushed_at": "2026-10-30T14:29:40Z",
+  "stargazers_count": 3,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:peterjburke/rid": {
   "archived": false,
   "description": "Remote ID receiver on ESP32",
@@ -8997,6 +9106,25 @@
    "positioning",
    "ppp",
    "ppp-ar"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:prime-slam/aero-vloc": {
+  "archived": false,
+  "description": "Framework for aerial imagery localization using different VPR systems",
+  "forks_count": 5,
+  "full_name": "prime-slam/aero-vloc",
+  "html_url": "https://github.com/prime-slam/aero-vloc",
+  "language": "Python",
+  "license": "Apache-2.0",
+  "pushed_at": "2024-11-28T15:43:59Z",
+  "stargazers_count": 82,
+  "topics": [
+   "aerial-imagery",
+   "aerial-robotics",
+   "localization",
+   "satellite",
+   "slam"
   ],
   "fetched": "2026-11-06"
  },
@@ -11190,6 +11318,28 @@
   "pushed_at": "2022-10-28T02:52:37Z",
   "stargazers_count": 295,
   "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:tiers/uwb-drone-dataset": {
+  "archived": false,
+  "description": "Ultra-wideband (UWB) Localization for Autonomous UAV Flight in GNSS-denied Environments",
+  "forks_count": 28,
+  "full_name": "TIERS/uwb-drone-dataset",
+  "html_url": "https://github.com/TIERS/uwb-drone-dataset",
+  "language": "C",
+  "license": null,
+  "pushed_at": "2022-09-14T09:44:50Z",
+  "stargazers_count": 110,
+  "topics": [
+   "dataset",
+   "gnss-denied-environments",
+   "localization",
+   "ros",
+   "uav",
+   "uwb",
+   "uwb-dataset",
+   "uwb-localization"
+  ],
   "fetched": "2026-11-06"
  },
  "repo:tiers/wildnav": {

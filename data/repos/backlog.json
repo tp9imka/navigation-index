@@ -1,0 +1,286 @@
+[
+ {
+  "id": "repo:amaralibey/gsv-cities",
+  "kind": "repo",
+  "name": "GSV-Cities",
+  "url": "https://github.com/amaralibey/gsv-cities",
+  "summary": "Official training and evaluation code for the GSV-Cities visual place recognition dataset (about 530k street-level images of 62k+ places across many cities), including the Conv-AP aggregator and evaluation notebooks for standard VPR benchmarks.",
+  "why_it_matters": "The standard large training set for modern VPR descriptors; training without offline triplet mining makes fine-tuning on your own imagery fast.",
+  "concepts": [
+   "concept:place-recognition",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "vpr",
+   "training",
+   "pytorch",
+   "street-view"
+  ],
+  "language": "Python",
+  "domains": [
+   "ground",
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Dataset is on Kaggle under CC BY-NC-ND 4.0 (research only); the code repo has no licence file. Use it to pretrain or fine-tune a descriptor, then adapt to aerial tiles. Last push 2024.",
+  "related": [
+   {
+    "id": "repo:amaralibey/mixvpr",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:amaralibey/openvprlab",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:amaralibey/bag-of-queries",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:amaralibey/openvprlab",
+  "kind": "repo",
+  "name": "OpenVPRLab",
+  "url": "https://github.com/amaralibey/OpenVPRLab",
+  "summary": "Modular PyTorch framework for training VPR models as data -> backbone -> aggregation -> loss, with one-command download of GSV-Cities / GSV-Cities-light, metric-learning losses, TensorBoard logging and retrieval visualizations.",
+  "why_it_matters": "Fastest route to training or fine-tuning your own place-recognition model with swappable aggregators.",
+  "concepts": [
+   "concept:place-recognition",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "vpr",
+   "training-framework",
+   "pytorch"
+  ],
+  "language": "Python",
+  "domains": [
+   "ground",
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Conda environment install; GSV-Cities-light is the quick start. MIT licence on code, but the GSV-Cities data is CC BY-NC-ND. No commits since mid-2024.",
+  "related": [
+   {
+    "id": "repo:amaralibey/gsv-cities",
+    "rel": "depends_on"
+   },
+   {
+    "id": "repo:gmberton/deep-visual-geo-localization-benchmark",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:prime-slam/aero-vloc",
+  "kind": "repo",
+  "name": "aero-vloc",
+  "url": "https://github.com/prime-slam/aero-vloc",
+  "summary": "Benchmark tool accompanying the aerial VPR survey by Moskalenko et al.: downloads satellite map tiles, localizes UAV imagery against them with AnyLoc, CosPlace, EigenPlaces, MixVPR, NetVLAD, SALAD or SelaVPR, and optionally re-ranks with LightGlue, SuperGlue or SelaVPR.",
+  "why_it_matters": "Ready-made drone-to-satellite VPR pipeline with many descriptors behind one interface, plus evidence on how tile zoom and overlap affect recall.",
+  "concepts": [
+   "concept:visual-geolocalization",
+   "concept:place-recognition"
+  ],
+  "tags": [
+   "aerial-vpr",
+   "satellite-tiles",
+   "re-ranking",
+   "benchmark"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "high",
+  "hackathon_notes": "Start from example.ipynb (download map, localize a sequence, compute recall). Some weights come from a Google Drive link, others via TorchHub. Tested on Python 3.10. Apache-2.0.",
+  "related": [
+   {
+    "id": "repo:aervisloc/vpair",
+    "rel": "evaluated_on"
+   },
+   {
+    "id": "repo:metaslam/alto",
+    "rel": "evaluated_on"
+   },
+   {
+    "id": "repo:cvg/lightglue",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:serizba/salad",
+    "rel": "integrates_with"
+   },
+   {
+    "id": "repo:gmberton/eigenplaces",
+    "rel": "integrates_with"
+   }
+  ]
+ },
+ {
+  "id": "repo:gmberton/deep-visual-geo-localization-benchmark",
+  "kind": "repo",
+  "name": "Deep Visual Geo-localization Benchmark",
+  "url": "https://github.com/gmberton/deep-visual-geo-localization-benchmark",
+  "summary": "Official code for the CVPR 2022 benchmark: a configurable training and evaluation framework for visual geo-localization where backbone, aggregation, negative mining and pre/post-processing can be swapped and measured.",
+  "why_it_matters": "Lets a team compare VPR design choices on equal footing, including runtime and memory, before committing to an onboard model.",
+  "concepts": [
+   "concept:place-recognition",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "vpr",
+   "benchmark",
+   "pytorch"
+  ],
+  "language": "Python",
+  "domains": [
+   "ground",
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Datasets must be arranged in its directory layout; the VPR-datasets-downloader repo helps. MIT licence.",
+  "related": [
+   {
+    "id": "repo:gmberton/cosplace",
+    "rel": "same_org"
+   },
+   {
+    "id": "repo:gmberton/vpr-methods-evaluation",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:pesslovany/matlab-lagrangianpmf",
+  "kind": "repo",
+  "name": "Matlab-LagrangianPMF",
+  "url": "https://github.com/pesslovany/Matlab-LagrangianPMF",
+  "summary": "MATLAB implementation of Lagrangian grid-based (point-mass) filters for terrain-aided navigation, compared against other filters on real-world-based TAN models, with code for several related papers including the tensor-decomposition variant.",
+  "why_it_matters": "State-of-the-art grid filters for terrain-aided navigation that run in real time; a strong alternative to particle filters for radar-altimeter TRN.",
+  "concepts": [
+   "concept:terrain-nav",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "point-mass-filter",
+   "terrain-aided-navigation",
+   "matlab"
+  ],
+  "language": "MATLAB",
+  "domains": [
+   "air",
+   "underwater"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Needs MATLAB; a mex file speeds the FFT time update and can be switched off. AGPL-3.0 licence matters if you ship derived code.",
+  "related": [
+   {
+    "id": "repo:idm-uwb/efficient-pmf",
+    "rel": "extends"
+   }
+  ]
+ },
+ {
+  "id": "repo:idm-uwb/efficient-pmf",
+  "kind": "repo",
+  "name": "efficient-PMF",
+  "url": "https://github.com/IDM-UWB/efficient-PMF",
+  "summary": "MATLAB code for the efficient point-mass filter (FUSION 2023) for systems with linear state dynamics, illustrated on terrain-aided navigation.",
+  "why_it_matters": "Small, readable reference implementation of a fast grid-based TAN filter.",
+  "concepts": [
+   "concept:terrain-nav"
+  ],
+  "tags": [
+   "point-mass-filter",
+   "terrain-aided-navigation",
+   "matlab"
+  ],
+  "language": "MATLAB",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "low",
+  "hackathon_notes": "Needs MATLAB; no licence file. The pesslovany/Matlab-LagrangianPMF repo is the maintained successor.",
+  "related": [
+   {
+    "id": "repo:pesslovany/matlab-lagrangianpmf",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:tiers/uwb-drone-dataset",
+  "kind": "repo",
+  "name": "UWB drone dataset (TIERS)",
+  "url": "https://github.com/TIERS/uwb-drone-dataset",
+  "summary": "Dataset, ROS nodes and DWM1001 firmware from the IROS 2020 paper on UWB localization for autonomous UAV flight: several anchor configurations, flights inside and outside the anchor hull, and an anchor auto-positioning method.",
+  "why_it_matters": "Cheap Decawave hardware recipe plus real flight data for UWB-aided GNSS-denied flight.",
+  "concepts": [
+   "concept:rf-localization",
+   "concept:datasets-benchmarks",
+   "concept:ros"
+  ],
+  "tags": [
+   "uwb",
+   "dwm1001",
+   "dataset",
+   "ros"
+  ],
+  "language": "C",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "Use the data to tune a UWB EKF before buying hardware. No licence file. Not updated since 2022.",
+  "related": [
+   {
+    "id": "repo:decargroup/miluv",
+    "rel": "alternative_to"
+   },
+   {
+    "id": "repo:williamwenda/uwb_tdoa_dataset",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:cjhhalla/rcv_uwb_dataset",
+  "kind": "repo",
+  "name": "RCV UWB relative-pose dataset",
+  "url": "https://github.com/cjhhalla/RCV_uwb_dataset",
+  "summary": "Drone UWB dataset: six flight sequences with two-way ranging to four anchors, stereo VIO, motion-capture ground truth for drone and anchors, CSV exports and an analysis tool; rosbags on Google Drive.",
+  "why_it_matters": "Shows how anchor and tag orientation bias UWB ranges, which is what breaks naive UWB models in practice.",
+  "concepts": [
+   "concept:rf-localization",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "uwb",
+   "twr",
+   "dataset",
+   "ros"
+  ],
+  "language": "C++",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "CSV files are usable without ROS. No licence file, so reuse terms are unstated.",
+  "related": [
+   {
+    "id": "repo:tiers/uwb-drone-dataset",
+    "rel": "alternative_to"
+   }
+  ]
+ }
+]
