@@ -1,0 +1,24 @@
+
+default_3_zigzag_0, anchor fault: +0.02 m/s ramp from t=120 s on the first anchored drone's ranges to anchors 0-2
+method                         target RMSE         others RMSE   det wrong false         latency s  (RMSE from t=120 s, 30 runs)
+dead-reckoning          2.314 [2.29, 2.36]  0.401 [0.21, 0.82]     0     0     0                 -
+central-robust          2.254 [2.19, 2.32]  0.826 [0.30, 1.39]     0     0     0                 -
+central-robust+gate     1.364 [0.34, 2.49]  0.677 [0.25, 1.90]     0     0     0                 -
+central-robust+ss       0.353 [0.22, 2.42]  0.304 [0.16, 2.39]    30     1     0   42.0 [40.0, 51.0]
+ci-robust               2.307 [2.27, 2.36]  1.938 [1.23, 3.85]     0     0     0                 -
+ci-robust+gate          2.441 [1.85, 3.61]  2.030 [1.25, 6.19]     0     0     0                 -
+ci-robust+vote          3.085 [0.96, 5.68]  4.342 [0.35,14.56]    30    17     0   52.8 [45.5, 70.0]
+ci-robust+ss            3.932 [0.76, 7.43]  2.913 [0.80, 7.00]    30     9     0   46.0 [42.5, 94.5]
+
+default_3_zigzag_0, NO fault (false-alarm control)
+method                         target RMSE         others RMSE   det wrong false         latency s  (RMSE from t=120 s, 30 runs)
+dead-reckoning          0.178 [0.12, 0.21]  0.401 [0.21, 0.82]     0     0     0                 -
+central-robust          0.160 [0.11, 0.19]  0.169 [0.14, 0.20]     0     0     0                 -
+central-robust+gate     0.157 [0.10, 0.19]  0.167 [0.13, 0.20]     0     0     0                 -
+central-robust+ss       0.157 [0.10, 0.19]  0.167 [0.13, 0.20]     0     0     0                 -
+ci-robust               0.178 [0.12, 0.21]  0.209 [0.17, 0.24]     0     0     0                 -
+ci-robust+gate          0.173 [0.10, 0.21]  0.208 [0.18, 0.24]     0     0     0                 -
+ci-robust+vote          0.173 [0.10, 0.21]  0.208 [0.18, 0.24]     0     0     0                 -
+ci-robust+ss            0.173 [0.10, 0.21]  0.208 [0.18, 0.24]     0     0     0                 -
+
+det = runs with a detection at or after onset; wrong = first such detection names a non-faulty drone; false = detections before onset (all runs). latency = median [min, max] s; bias at detection = latency x 0.02 m/s. 'gate' rejects fixes without logging a detection.

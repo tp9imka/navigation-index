@@ -1,0 +1,6 @@
+default_3_zigzag_0: zip 11.10 GB, 86446 members, 21 CSV (176.5 MB uncompressed)
+wrote 41.7 MB; fetched 31.4 MB over HTTP of a 11.10 GB zip
+default_3_random_0: zip 3.23 GB, 23723 members, 21 CSV (48.5 MB uncompressed)
+wrote 11.3 MB; fetched 12.6 MB over HTTP of a 3.23 GB zip
+cirObstacles_3_random_0: zip 3.15 GB, 23381 members, 24 CSV (22.9 MB uncompressed)
+wrote 4.2 MB; fetched 10.6 MB over HTTP of a 3.15 GB zip
