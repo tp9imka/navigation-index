@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # FILE-BASED ONLY: generates, mixes and processes IQ files. Never connect this to an SDR TX.
 # Builds the image, runs pipeline.sh in a container (large IQ files stay in a Docker volume),
-# copies the small outputs to ./out and scores them with the gnss-interference-monitor scorer.
+# copies the small outputs to ./out and scores them with the gnss-interference-monitor scorer (make score).
 set -euo pipefail
 cd "$(dirname "$0")"
 IMAGE=gnss-signal-chain
@@ -20,8 +20,5 @@ done
 docker start -a "$CID"
 rm -rf out && mkdir -p out
 docker cp "$CID":/work/out/. out/
-for s in ${SCENARIOS:-clean overpower jamspoof dragoff}; do
-  echo "== $s"
-  python3 score_scenario.py "out/$s.epochs.jsonl" --power-proxy "out/$s.power.csv" \
-    --rtklib-pos "out/$s.rtklib.pos" --json-out "out/$s.score.json" | tee "out/$s.score.txt"
-done
+make score SCENARIOS="${SCENARIOS:-clean overpower jamspoof dragoff}" \
+  ATTACK_T="${ATTACK_T:-75}" DRAG_ON="${DRAG_ON:-60}"

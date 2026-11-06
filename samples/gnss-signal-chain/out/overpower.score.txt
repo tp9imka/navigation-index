@@ -1,33 +1,82 @@
-    t nSV meanCN0 sdCN0    herr_m    clk_ns  jam spoof verdict / reasons
-   49   4    45.1   1.4      14.9     121.6 0.00  0.00 clean
-   72   5    43.8   2.7      11.4     -88.7 0.00  0.00 clean
-   75   5    43.9   2.7       6.1     -40.4 0.30  0.00 clean / AGC +174% vs baseline
-   76   5    39.4   2.5      10.7      15.0 0.30  0.00 clean / AGC +173% vs baseline
-   77   5    38.3   2.5       6.5      64.2 0.30  0.00 clean / AGC +174% vs baseline
-   78   5    38.3   2.8      15.4     -87.3 0.30  0.00 clean / AGC +173% vs baseline
-   79   5    38.8   2.7       4.4     -95.7 0.30  0.00 clean / AGC +174% vs baseline
-   80   5    38.5   2.9       8.8    -170.4 0.30  0.00 clean / AGC +173% vs baseline
-   81   5    38.3   2.9       9.5     -59.5 0.30  0.00 clean / AGC +174% vs baseline
-   82   5    38.3   3.2       6.9      53.4 0.30  0.00 clean / AGC +173% vs baseline
-   83   4    39.2   1.9       2.3      25.0 0.30  0.00 clean / AGC +174% vs baseline
-   84   4    39.1   2.0      33.8     286.7 0.30  0.00 clean / AGC +173% vs baseline
-   85   4    39.0   1.5       9.1     110.2 0.80  0.00 jamming / C/N0 drop >= 6 dB or lost on 4/5 SVs; AGC +173% vs baseline
-   86   4    39.7   1.5      13.0    -115.4 0.30  0.00 clean / AGC +173% vs baseline
-   87   4    39.6   1.9       6.2    -149.1 0.30  0.00 clean / AGC +174% vs baseline
-   88   4    39.7   1.9      13.2     120.9 0.30  0.00 clean / AGC +174% vs baseline
-   89   4    39.8   1.5      21.4     147.1 0.30  0.00 clean / AGC +174% vs baseline
-   90   4    40.0   1.5      12.4      29.1 0.30  0.00 clean / AGC +173% vs baseline
-   91   4    39.7   1.6      18.7    -173.0 0.30  0.00 clean / AGC +174% vs baseline
-   92   4    40.0   1.8      32.0     257.5 0.30  0.35 clean / AGC +174% vs baseline; implied speed 50 m/s
-   93   4    40.1   2.4      13.9      84.6 0.30  0.00 clean / AGC +173% vs baseline
-   94   4    39.5   1.9       7.3       7.7 0.30  0.00 clean / AGC +174% vs baseline
-   95   4    39.5   1.7      33.2     303.2 0.30  0.00 clean / AGC +174% vs baseline
-   96   4    39.6   2.4      32.7     242.7 0.30  0.00 clean / AGC +174% vs baseline
-   97   4    39.3   1.6       3.5     -80.7 0.30  0.00 clean / AGC +174% vs baseline
-   98   4    39.8   1.8      25.6     313.0 0.30  0.00 clean / AGC +173% vs baseline
-   99   4    40.0   1.9       8.2    -126.7 0.30  0.00 clean / AGC +173% vs baseline
-  100   4    39.6   1.8      21.3     161.6 0.30  0.00 clean / AGC +174% vs baseline
-  101   4    39.9   1.8      17.0     131.5 0.30  0.00 clean / AGC +174% vs baseline
-  102   4    39.3   1.9       7.9      34.6 0.30  0.00 clean / AGC +173% vs baseline
-RTKLIB rnx2rtkp SPP on GNSS-SDR RINEX: 54 common epochs, horizontal error vs truth median 8.7 m (GNSS-SDR PVT 8.7 m), last epoch 7.9 m (GNSS-SDR 7.9 m)
-epochs 54, alert epochs 1, first alert t=85.0
+    t nSV meanCN0 sdCN0    herr_m    clk_ns  jam spoof alarm verdict / reasons
+   49   7    42.7   3.0       1.2     -38.7 0.00  0.00     - clean
+   75   7    42.6   3.1       7.4     -65.3 0.30  0.00     - clean / AGC +174% vs baseline
+   76   7    38.3   2.8       7.8     -82.1 0.30  0.00     - clean / AGC +173% vs baseline
+   77   7    37.4   2.6       9.4      41.5 0.30  0.00     - clean / AGC +174% vs baseline
+   78   7    37.4   2.7       9.9     -81.6 0.30  0.00     - clean / AGC +173% vs baseline
+   79   7    37.5   3.1       2.0     -67.7 0.30  0.00     - clean / AGC +174% vs baseline
+   80   7    37.3   3.1       6.5    -101.4 0.30  0.00     - clean / AGC +173% vs baseline
+   81   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 1 s (last fix t=80, C/N0 not reported)
+      ALARM raised t=81: lost-fix
+   82   5    38.4   3.1      12.9    -160.2 0.30  0.00    ON clean / AGC +173% vs baseline
+   83   4    39.2   1.9       2.3      25.0 0.30  0.50    ON spoofing / AGC +174% vs baseline; clock rate +185.1 ns/s vs learned -4.1 ns/s (+9.4 sigma)
+   84   4    39.1   2.0      34.8     298.0 0.30  0.50    ON spoofing / AGC +173% vs baseline; clock rate +273.0 ns/s vs learned -4.1 ns/s (+13.7 sigma)
+   85   4    39.0   1.5       9.0     109.4 0.80  0.50    ON jamming+spoofing / C/N0 drop >= 6 dB or lost on 6/7 SVs; AGC +173% vs baseline; clock rate -188.6 ns/s vs learned -4.1 ns/s (-9.1 sigma)
+   86   4    39.7   1.5      13.3    -118.9 0.30  0.50    ON spoofing / AGC +173% vs baseline; clock rate -228.3 ns/s vs learned -4.1 ns/s (-11.1 sigma)
+   87   4    39.6   1.9       6.1    -148.1 0.30  0.50    ON spoofing / AGC +174% vs baseline; clock rate -29.2 ns/s vs learned -4.1 ns/s (-1.2 sigma)
+   88   4    39.7   1.9      13.2     120.3 0.30  0.50    ON spoofing / AGC +174% vs baseline; clock rate +268.4 ns/s vs learned -4.1 ns/s (+13.5 sigma)
+   89   4    39.8   1.5      21.1     145.6 0.30  0.50    ON spoofing / AGC +174% vs baseline; clock rate +25.3 ns/s vs learned -4.1 ns/s (+1.4 sigma)
+   90   4    39.9   1.5      12.3      31.7 0.30  0.50    ON spoofing / AGC +173% vs baseline; clock rate -113.9 ns/s vs learned -4.1 ns/s (-5.4 sigma)
+   91   4    39.7   1.6      18.9    -175.3 0.30  0.50    ON spoofing / AGC +174% vs baseline; clock rate -207.0 ns/s vs learned -4.1 ns/s (-10.0 sigma)
+   92   4    40.0   1.8      32.1     258.9 0.30  0.85    ON spoofing / AGC +174% vs baseline; implied speed 51 m/s; clock rate +434.2 ns/s vs learned -4.1 ns/s (+21.6 sigma)
+   93   4    40.1   2.4      13.8      83.6 0.30  0.50    ON spoofing / AGC +173% vs baseline; clock rate -175.3 ns/s vs learned -4.1 ns/s (-8.4 sigma)
+   94   4    39.5   1.9       6.8      -0.7 0.30  0.50    ON spoofing / AGC +174% vs baseline; clock rate -84.2 ns/s vs learned -4.1 ns/s (-4.0 sigma)
+   95   4    39.5   1.7      33.2     303.3 0.30  0.50    ON spoofing / AGC +174% vs baseline; clock rate +304.0 ns/s vs learned -4.1 ns/s (+15.2 sigma)
+   96   4    39.6   2.4      32.9     243.5 0.30  0.50    ON spoofing / AGC +174% vs baseline; clock rate -59.8 ns/s vs learned -4.1 ns/s (-2.7 sigma)
+   97   4    39.3   1.6       3.3     -82.9 0.30  0.50    ON spoofing / AGC +174% vs baseline; clock rate -326.4 ns/s vs learned -4.1 ns/s (-15.9 sigma)
+   98   4    39.8   1.8      25.7     314.1 0.30  0.50    ON spoofing / AGC +173% vs baseline; clock rate +396.9 ns/s vs learned -4.1 ns/s (+19.7 sigma)
+   99   4    40.0   1.9       8.1    -126.3 0.30  0.50    ON spoofing / AGC +173% vs baseline; clock rate -440.4 ns/s vs learned -4.1 ns/s (-21.5 sigma)
+  100   4    39.6   1.8      21.3     160.5 0.30  0.50    ON spoofing / AGC +174% vs baseline; clock rate +286.8 ns/s vs learned -4.1 ns/s (+14.3 sigma)
+  101   4    39.9   1.8      16.9     131.2 0.30  0.50    ON spoofing / AGC +174% vs baseline; clock rate -29.3 ns/s vs learned -4.1 ns/s (-1.2 sigma)
+  102   4    39.3   1.9       7.6      32.2 0.30  0.50    ON spoofing / AGC +173% vs baseline; clock rate -99.0 ns/s vs learned -4.1 ns/s (-4.7 sigma)
+  103   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 1 s (last fix t=102, C/N0 not reported)
+  104   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 2 s (last fix t=102, C/N0 not reported)
+  105   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 3 s (last fix t=102, C/N0 not reported)
+  106   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 4 s (last fix t=102, C/N0 not reported)
+  107   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 5 s (last fix t=102, C/N0 not reported)
+  108   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 6 s (last fix t=102, C/N0 not reported)
+  109   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 7 s (last fix t=102, C/N0 not reported)
+  110   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 8 s (last fix t=102, C/N0 not reported)
+  111   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 9 s (last fix t=102, C/N0 not reported)
+  112   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 10 s (last fix t=102, C/N0 not reported)
+  113   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 11 s (last fix t=102, C/N0 not reported)
+  114   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 12 s (last fix t=102, C/N0 not reported)
+  115   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 13 s (last fix t=102, C/N0 not reported)
+  116   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 14 s (last fix t=102, C/N0 not reported)
+  117   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 15 s (last fix t=102, C/N0 not reported)
+  118   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 16 s (last fix t=102, C/N0 not reported)
+  119   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 17 s (last fix t=102, C/N0 not reported)
+  120   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 18 s (last fix t=102, C/N0 not reported)
+  121   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 19 s (last fix t=102, C/N0 not reported)
+  122   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 20 s (last fix t=102, C/N0 not reported)
+  123   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 21 s (last fix t=102, C/N0 not reported)
+  124   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 22 s (last fix t=102, C/N0 not reported)
+  125   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 23 s (last fix t=102, C/N0 not reported)
+  126   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 24 s (last fix t=102, C/N0 not reported)
+  127   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 25 s (last fix t=102, C/N0 not reported)
+  128   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 26 s (last fix t=102, C/N0 not reported)
+  129   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 27 s (last fix t=102, C/N0 not reported)
+  130   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 28 s (last fix t=102, C/N0 not reported)
+  131   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 29 s (last fix t=102, C/N0 not reported)
+  132   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 30 s (last fix t=102, C/N0 not reported)
+  133   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 31 s (last fix t=102, C/N0 not reported)
+  134   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 32 s (last fix t=102, C/N0 not reported)
+  135   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 33 s (last fix t=102, C/N0 not reported)
+  136   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 34 s (last fix t=102, C/N0 not reported)
+  137   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 35 s (last fix t=102, C/N0 not reported)
+  138   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 36 s (last fix t=102, C/N0 not reported)
+  139   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 37 s (last fix t=102, C/N0 not reported)
+  140   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 38 s (last fix t=102, C/N0 not reported)
+  141   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 39 s (last fix t=102, C/N0 not reported)
+  142   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 40 s (last fix t=102, C/N0 not reported)
+  143   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 41 s (last fix t=102, C/N0 not reported)
+  144   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 42 s (last fix t=102, C/N0 not reported)
+  145   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 43 s (last fix t=102, C/N0 not reported)
+  146   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 44 s (last fix t=102, C/N0 not reported)
+  147   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +174% vs baseline; no fix for 45 s (last fix t=102, C/N0 not reported)
+  148   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +173% vs baseline; no fix for 46 s (last fix t=102, C/N0 not reported)
+  149   0     nan   nan       nan         - 0.30  0.00    ON lost-fix / AGC +155% vs baseline; no fix for 47 s (last fix t=102, C/N0 not reported)
+RTKLIB rnx2rtkp SPP on GNSS-SDR RINEX: 53 common epochs, horizontal error vs truth median 4.8 m (GNSS-SDR PVT 4.8 m), last epoch 7.6 m (GNSS-SDR 7.6 m)
+epochs 101 (53 with fix), alert epochs 68, false alerts before attack 0 (latched 0)
+attack t=75: first alert t=81.0, first per detector {'agc_change': 75.0, 'lost_fix': 81.0, 'clock_drift': 83.0, 'cn0_drop': 85.0, 'position_jump': 92.0}
+longest silent run after attack: instantaneous 6 epochs (75.0-80.0), latched alarm 6 epochs; after the first alert 0

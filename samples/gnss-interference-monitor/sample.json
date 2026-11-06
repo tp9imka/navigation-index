@@ -1,14 +1,17 @@
 {
   "id": "sample:gnss-interference-monitor",
   "title": "GNSS interference monitor from u-blox telemetry and ADS-B NACp",
-  "summary": "A stdlib heuristic scorer turns per-epoch receiver telemetry (C/N0 across SVs, AGC, CW jamming indicator, clock and position jumps, receiver spoofing/jamming flags) into jamming and spoofing scores with stated reasons. A pyubx2 adapter feeds it live from UBX NAV-SAT, NAV-STATUS, NAV-CLOCK, MON-RF and SEC-SIG. A second stdlib module applies the GPSJam percentage method to readsb aircraft.json NACp for area-level interference maps.",
+  "summary": "A stdlib heuristic scorer turns per-epoch receiver telemetry (C/N0 across SVs, AGC, CW jamming indicator, clock and position jumps, receiver spoofing/jamming flags) into jamming and spoofing scores, plus CUSUM consistency detectors for slow drag-off (position and Doppler velocity vs an IMU/odometry/static reference or a constant-velocity prior), clock-rate drift vs a learned oscillator rate, and lost fix as its own alert class. Alerts latch until explicit clear conditions hold, and every alert carries value, threshold, unit and evidence. A pyubx2 adapter feeds it from UBX NAV-PVT, NAV-SAT, NAV-STATUS, NAV-CLOCK, MON-RF and SEC-SIG. A second stdlib module applies the GPSJam percentage method to readsb aircraft.json NACp for area-level maps. Includes a note on what Galileo OSNMA changes.",
   "concepts": ["concept:gnss-interference", "concept:ew-resilience", "concept:assured-pnt", "concept:gnss", "concept:situational-awareness"],
-  "tags": ["jamming", "spoofing", "u-blox", "ubx", "mon-rf", "agc", "cn0", "spoofdetstate", "sec-sig", "ads-b", "nacp", "gpsjam", "readsb", "stdlib"],
+  "tags": ["jamming", "spoofing", "u-blox", "ubx", "mon-rf", "agc", "cn0", "spoofdetstate", "sec-sig", "ads-b", "nacp", "gpsjam", "readsb", "stdlib", "cusum", "drag-off", "lost-fix", "clock-drift", "latched-alarm", "osnma"],
   "related": [
     {"id": "repo:semuconsulting/pyubx2", "rel": "uses"},
     {"id": "repo:wiedehopf/readsb", "rel": "uses"},
     {"id": "repo:semuconsulting/pygnssutils", "rel": "uses"},
-    {"id": "repo:s7am1na/gnss-spoofing-dataset", "rel": "explains"}
+    {"id": "repo:s7am1na/gnss-spoofing-dataset", "rel": "explains"},
+    {"id": "repo:algafix/osnma", "rel": "explains"},
+    {"id": "res:galileo-osnma-receiver-guidelines", "rel": "explains"},
+    {"id": "sample:gnss-signal-chain", "rel": "explains"}
   ],
-  "verified": "scorer.py, adsb_area_map.py and 15 unit tests ran on 2026-11-06 (14 stdlib with python3.14.7; the full set incl. test_ubx_replay with pyubx2 1.4.1 on Python 3.12.14); negative controls: cn0_drop weight 0 fails test_broadband_jamming, disabling NAV-SAT parsing fails test_ubx_replay. ubx_monitor.py replay mode ran on a synthetic UBX capture generated with pyubx2 (gen_synthetic_ubx.py, invented values): jamming 60-89 s and spoofing 120-159 s were flagged on every epoch, clean epochs stayed clean. Not verified: live u-blox receiver (--port/--enable, CFG-VALSET), real recordings, real readsb feed."
+  "verified": "Ran 2026-11-06: 36 unit tests (29 scorer incl. 21 for the new consistency, lost-fix, latch and explanation logic with negative controls, 6 area map, 1 UBX replay) pass with pyubx2 1.4.1 on Python 3.12.14; 35 pass + 1 skipped stdlib-only on Python 3.14.7. Mutation check: disabling pos_drift, vel_mismatch, clock_drift, lost-fix, the latch, the noise-inflation cap or the CUSUM learning gate each fails 1-5 tests; letting references learn during a latched alarm fails none (not covered). Synthetic soak 20 h per mode: 0 alert epochs with the constant-velocity prior, 3 with a static reference. UBX replay of the synthetic capture: verdicts unchanged (109 clean / 30 jamming / 41 spoofing), alarm latched 60-98 s and 120-169 s with stated clear reasons. On real GNSS-SDR epochs from samples/gnss-signal-chain the drag-off was detected 6-9 s after the drag began (fix 11-21 m off) with no silent epoch afterwards, and the overpower/jam-then-spoof PVT outages raised lost-fix alarms. Not verified: live u-blox receiver, real recordings, real readsb feed, any OSNMA processing."
 }

@@ -27,6 +27,7 @@ MSGOUT_KEYS = [  # CFG-VALSET keys, generation 9+ receivers (F9/M9/M10); M8 need
 ]
 GNSS_LETTER = {0: "G", 1: "S", 2: "E", 3: "C", 5: "J", 6: "R", 7: "I"}
 MS_PER_S = 1000.0
+MM_PER_M = 1000.0
 
 
 def enable_messages(stream):
@@ -38,8 +39,10 @@ def fill(ep: Epoch, msg) -> None:
     """Copy the fields we use from one parsed UBX message into the current epoch."""
     ident = msg.identity
     if ident == "NAV-PVT":
-        if msg.fixType >= 2:
+        ep.fix_ok = msg.fixType >= 2
+        if ep.fix_ok:
             ep.lat, ep.lon = msg.lat, msg.lon  # pyubx2 applies the 1e-7 scaling
+            ep.vel_n, ep.vel_e = msg.velN / MM_PER_M, msg.velE / MM_PER_M
     elif ident == "NAV-SAT":
         for i in range(1, msg.numSvs + 1):
             cno = getattr(msg, f"cno_{i:02d}")
@@ -71,10 +74,13 @@ def run(stream, changes_only=False):
         nonlocal last_verdict
         a = scorer.assess(ep)
         counts[a.verdict] = counts.get(a.verdict, 0) + 1
-        if not changes_only or a.verdict != last_verdict:
+        alarm = "ALARM" if a.alarm.active else "-"
+        if not changes_only or (a.verdict, alarm) != last_verdict:
             print(f"t={ep.t:10.1f} {a.verdict:<17} jam={a.jam_score:.2f} "
-                  f"spoof={a.spoof_score:.2f} {'; '.join(a.reasons)}")
-        last_verdict = a.verdict
+                  f"spoof={a.spoof_score:.2f} {alarm:<5} {'; '.join(a.reasons)}")
+        if alarm == "-" and last_verdict and last_verdict[1] == "ALARM":
+            print(f"             alarm cleared: {a.alarm.clear_reason}")
+        last_verdict = (a.verdict, alarm)
 
     current_tow = None
     ep = None

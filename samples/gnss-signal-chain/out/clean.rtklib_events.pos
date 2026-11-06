@@ -1,6 +1,6 @@
 % program   : rnx2rtkp ver.EX 2.5.1
-% inp file  : /work/work/rx_clean/GSDR310h51.26O
-% inp file  : /work/work/rx_clean/GSDR310h51.26N
+% inp file  : /work/work/rx_clean/GSDR310i35.26O
+% inp file  : /work/work/rx_clean/GSDR310i35.26N
 % obs start : 2022/01/01 00:00:43.0 GPST (week2190 518443.0s)
 % obs end   : 2022/01/01 00:02:29.0 GPST (week2190 518549.0s)
 %

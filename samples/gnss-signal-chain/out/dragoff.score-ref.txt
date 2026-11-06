@@ -1,0 +1,90 @@
+    t nSV meanCN0 sdCN0    herr_m    clk_ns  jam spoof alarm verdict / reasons
+   49   4    45.1   1.4      14.8     121.5 0.00  0.00     - clean
+   66   5    47.5   1.6       4.5     -51.9 0.30  0.00     - clean / AGC +26% vs baseline
+   67   5    48.4   1.3       1.2     -38.6 0.30  0.00     - clean / AGC +45% vs baseline
+   68   5    49.1   0.9       6.3     -64.6 0.30  0.00     - clean / AGC +76% vs baseline
+   69   5    50.4   1.1       1.7     -32.7 0.30  0.30     - clean / median C/N0 rise +5.0 dB; AGC +130% vs baseline
+   70   5    50.6   1.0       5.2     -52.3 0.30  0.30     - clean / median C/N0 rise +5.5 dB; AGC +227% vs baseline
+   71   5    50.5   0.9       6.6     -67.5 0.30  0.30     - clean / median C/N0 rise +5.1 dB; AGC +227% vs baseline
+   72   5    50.2   0.5       3.7     -47.1 0.30  0.30     - clean / median C/N0 rise +4.8 dB; AGC +227% vs baseline
+   73   5    51.2   0.8       3.7     -49.6 0.30  0.30     - clean / median C/N0 rise +5.9 dB; AGC +227% vs baseline
+   74   5    50.4   0.8       2.2     -34.0 0.30  0.30     - clean / median C/N0 rise +4.9 dB; AGC +227% vs baseline
+   75   5    50.8   1.5       4.2     -54.9 0.30  0.30     - clean / median C/N0 rise +5.5 dB; AGC +227% vs baseline
+   76   5    50.7   1.6       2.8     -44.1 0.30  0.30     - clean / median C/N0 rise +5.4 dB; AGC +227% vs baseline
+   77   5    50.4   1.0       3.5     -53.7 0.30  0.30     - clean / median C/N0 rise +5.0 dB; AGC +228% vs baseline
+   78   5    50.9   0.9       0.2     -27.2 0.30  0.30     - clean / median C/N0 rise +5.7 dB; AGC +227% vs baseline
+   79   5    50.8   0.8       0.9     -33.8 0.30  0.30     - clean / median C/N0 rise +5.3 dB; AGC +227% vs baseline
+   80   5    51.2   0.7       3.4     -49.9 0.30  0.30     - clean / median C/N0 rise +5.3 dB; AGC +186% vs baseline
+   81   5    50.6   1.1       0.2     -27.2 0.30  0.30     - clean / median C/N0 rise +5.5 dB; AGC +156% vs baseline
+   82   5    49.9   0.8       0.7     -30.8 0.30  0.30     - clean / median C/N0 rise +4.1 dB; AGC +162% vs baseline
+   83   5    49.4   0.5       4.0     -43.2 0.30  0.30     - clean / median C/N0 rise +4.1 dB; AGC +161% vs baseline
+   84   5    49.5   0.4       1.9     -33.3 0.30  0.30     - clean / median C/N0 rise +4.1 dB; AGC +159% vs baseline
+   85   5    49.3   0.5       6.3     -46.3 0.30  0.00     - clean / AGC +161% vs baseline
+   86   5    49.0   0.6      10.7     -53.5 0.30  0.60    ON spoofing / AGC +162% vs baseline; GNSS velocity 3.1 m/s off reference (6.9 sigma)
+      ALARM raised t=86: spoofing
+   87   5    48.3   0.6      10.8     -28.5 0.30  0.60    ON spoofing / AGC +161% vs baseline; GNSS velocity 3.7 m/s off reference (8.4 sigma)
+   88   5    47.8   0.9      16.2     -43.8 0.30  1.00    ON spoofing / AGC +161% vs baseline; position 15 m off reference track (7.2 sigma, CUSUM 10.6); GNSS velocity 3.8 m/s off reference (8.6 sigma)
+   89   5    47.8   1.5      20.5     -50.1 0.30  1.00    ON spoofing / AGC +160% vs baseline; position 19 m off reference track (9.1 sigma, CUSUM 16.0); GNSS velocity 5.5 m/s off reference (12.4 sigma)
+   90   5    47.4   1.2      25.2     -15.2 0.30  1.00    ON spoofing / AGC +160% vs baseline; position 25 m off reference track (11.6 sigma, CUSUM 16.0); GNSS velocity 4.5 m/s off reference (10.0 sigma)
+   91   5    46.8   1.0      31.0     -52.4 0.30  1.00    ON spoofing / AGC +160% vs baseline; position 30 m off reference track (14.1 sigma, CUSUM 16.0); GNSS velocity 6.0 m/s off reference (13.4 sigma)
+   92   5    46.6   0.9      35.7     -32.4 0.30  1.00    ON spoofing / AGC +161% vs baseline; position 35 m off reference track (16.2 sigma, CUSUM 16.0); GNSS velocity 6.4 m/s off reference (14.3 sigma)
+   93   5    46.5   1.1      44.4     -60.9 0.30  1.00    ON spoofing / AGC +160% vs baseline; position 43 m off reference track (20.2 sigma, CUSUM 16.0); GNSS velocity 6.9 m/s off reference (15.4 sigma)
+   94   5    46.5   1.5      50.5     -47.7 0.30  1.00    ON spoofing / AGC +160% vs baseline; position 50 m off reference track (23.0 sigma, CUSUM 16.0); GNSS velocity 7.2 m/s off reference (16.1 sigma)
+   95   5    46.5   1.6      57.6     -46.6 0.30  1.00    ON spoofing / AGC +161% vs baseline; position 57 m off reference track (26.2 sigma, CUSUM 16.0); GNSS velocity 7.2 m/s off reference (16.1 sigma)
+   96   5    46.2   1.3      64.1     -49.7 0.30  1.00    ON spoofing / AGC +161% vs baseline; position 63 m off reference track (29.0 sigma, CUSUM 16.0); GNSS velocity 8.6 m/s off reference (19.2 sigma)
+   97   5    46.0   1.1      71.9     -40.9 0.30  1.00    ON spoofing / AGC +160% vs baseline; position 71 m off reference track (32.5 sigma, CUSUM 16.0); GNSS velocity 8.6 m/s off reference (19.2 sigma)
+   98   5    45.6   1.1      81.5     -45.8 0.30  1.00    ON spoofing / AGC +161% vs baseline; position 81 m off reference track (36.6 sigma, CUSUM 16.0); GNSS velocity 8.9 m/s off reference (19.8 sigma)
+   99   5    45.3   1.3      91.3     -55.7 0.30  1.00    ON spoofing / AGC +161% vs baseline; position 90 m off reference track (40.8 sigma, CUSUM 16.0); GNSS velocity 9.2 m/s off reference (20.7 sigma)
+  100   5    45.3   1.4      98.7     -47.7 0.30  1.00    ON spoofing / AGC +161% vs baseline; position 98 m off reference track (43.9 sigma, CUSUM 16.0); GNSS velocity 10.1 m/s off reference (22.6 sigma)
+  101   5    45.2   1.6     110.2     -51.8 0.30  1.00    ON spoofing / AGC +160% vs baseline; position 109 m off reference track (48.6 sigma, CUSUM 16.0); GNSS velocity 10.0 m/s off reference (22.4 sigma)
+  102   5    45.0   1.4     120.9     -30.9 0.30  1.00    ON spoofing / AGC +161% vs baseline; position 120 m off reference track (53.1 sigma, CUSUM 16.0); GNSS velocity 10.7 m/s off reference (24.0 sigma)
+  103   5    44.7   1.4     132.1     -29.4 0.30  1.00    ON spoofing / AGC +161% vs baseline; position 131 m off reference track (57.5 sigma, CUSUM 16.0); GNSS velocity 11.0 m/s off reference (24.6 sigma)
+  104   5    44.9   1.6     144.4     -38.4 0.30  1.00    ON spoofing / AGC +161% vs baseline; position 144 m off reference track (62.4 sigma, CUSUM 16.0); GNSS velocity 11.9 m/s off reference (26.6 sigma)
+  105   5    44.8   1.5     154.9     -44.4 0.30  1.00    ON spoofing / AGC +161% vs baseline; position 154 m off reference track (66.4 sigma, CUSUM 16.0); GNSS velocity 13.0 m/s off reference (29.1 sigma)
+  106   5    44.9   1.7     167.9     -40.5 0.30  1.00    ON spoofing / AGC +160% vs baseline; position 167 m off reference track (71.3 sigma, CUSUM 16.0); GNSS velocity 12.6 m/s off reference (28.1 sigma)
+  107   5    44.6   1.5     184.6     -48.0 0.30  1.00    ON spoofing / AGC +161% vs baseline; position 184 m off reference track (77.8 sigma, CUSUM 16.0); GNSS velocity 13.9 m/s off reference (31.1 sigma)
+  108   8    46.0   1.9     194.9     -30.6 0.30  1.00    ON spoofing / AGC +160% vs baseline; C/N0 spread only 1.9 dB over 8 SVs; position 194 m off reference track (85.0 sigma, CUSUM 16.0); GNSS velocity 14.3 m/s off reference (63.7 sigma)
+  109   8    45.9   1.9     210.5     -28.4 0.30  1.00    ON spoofing / AGC +161% vs baseline; C/N0 spread only 1.9 dB over 8 SVs; position 210 m off reference track (90.9 sigma, CUSUM 16.0); GNSS velocity 14.8 m/s off reference (66.0 sigma)
+  110   8    46.2   2.3     224.4     -43.3 0.30  1.00    ON spoofing / AGC +160% vs baseline; position 223 m off reference track (95.8 sigma, CUSUM 16.0); GNSS velocity 15.2 m/s off reference (67.4 sigma)
+  111   8    46.4   2.4     239.9     -37.9 0.30  1.00    ON spoofing / AGC +160% vs baseline; position 239 m off reference track (101.3 sigma, CUSUM 16.0); GNSS velocity 15.7 m/s off reference (69.8 sigma)
+  112   8    46.7   2.6     254.2     -32.2 0.30  1.00    ON spoofing / AGC +160% vs baseline; position 253 m off reference track (106.2 sigma, CUSUM 16.0); GNSS velocity 15.9 m/s off reference (70.9 sigma)
+  113   8    46.7   2.6     270.7     -41.9 0.30  1.00    ON spoofing / AGC +161% vs baseline; position 270 m off reference track (111.8 sigma, CUSUM 16.0); GNSS velocity 16.9 m/s off reference (75.2 sigma)
+  114   8    46.7   2.6     288.5     -31.7 0.30  1.00    ON spoofing / AGC +160% vs baseline; position 288 m off reference track (117.8 sigma, CUSUM 16.0); GNSS velocity 16.9 m/s off reference (75.3 sigma)
+  115   8    47.0   2.7     305.8     -31.8 0.30  1.00    ON spoofing / AGC +161% vs baseline; position 305 m off reference track (123.5 sigma, CUSUM 16.0); GNSS velocity 17.4 m/s off reference (77.5 sigma)
+  116   8    46.8   2.5     323.1     -34.4 0.30  1.00    ON spoofing / AGC +161% vs baseline; position 322 m off reference track (128.9 sigma, CUSUM 16.0); GNSS velocity 17.8 m/s off reference (79.3 sigma)
+  117   8    47.2   2.7     342.3     -25.2 0.30  1.00    ON spoofing / AGC +161% vs baseline; position 341 m off reference track (134.9 sigma, CUSUM 16.0); GNSS velocity 18.4 m/s off reference (81.9 sigma)
+  118   8    47.3   2.5     360.4     -32.0 0.30  1.00    ON spoofing / AGC +161% vs baseline; position 360 m off reference track (140.4 sigma, CUSUM 16.0); GNSS velocity 18.6 m/s off reference (82.9 sigma)
+  119   8    47.4   2.4     379.2     -35.3 0.30  1.00    ON spoofing / AGC +160% vs baseline; position 378 m off reference track (145.9 sigma, CUSUM 16.0); GNSS velocity 19.7 m/s off reference (87.7 sigma)
+  120   8    47.5   2.3     398.8     -30.1 0.30  1.00    ON spoofing / AGC +161% vs baseline; position 398 m off reference track (151.6 sigma, CUSUM 16.0); GNSS velocity 20.0 m/s off reference (89.0 sigma)
+  121   8    47.6   2.1     418.7     -38.5 0.30  1.00    ON spoofing / AGC +160% vs baseline; position 418 m off reference track (157.2 sigma, CUSUM 16.0); GNSS velocity 19.8 m/s off reference (88.2 sigma)
+  122   8    47.9   2.2     439.2     -28.4 0.30  1.00    ON spoofing / AGC +161% vs baseline; position 438 m off reference track (162.9 sigma, CUSUM 16.0); GNSS velocity 20.4 m/s off reference (90.5 sigma)
+  123   8    48.0   2.0     458.4     -42.8 0.30  1.00    ON spoofing / AGC +160% vs baseline; position 458 m off reference track (167.9 sigma, CUSUM 16.0); GNSS velocity 20.2 m/s off reference (89.9 sigma)
+  124   8    47.9   1.9     478.0     -38.6 0.30  1.00    ON spoofing / AGC +161% vs baseline; C/N0 spread only 1.9 dB over 8 SVs; position 477 m off reference track (173.0 sigma, CUSUM 16.0); GNSS velocity 20.1 m/s off reference (89.2 sigma)
+  125   8    48.2   1.8     499.9     -31.2 0.30  1.00    ON spoofing / AGC +161% vs baseline; C/N0 spread only 1.8 dB over 8 SVs; position 499 m off reference track (178.6 sigma, CUSUM 16.0); GNSS velocity 20.1 m/s off reference (89.6 sigma)
+  126   8    48.4   1.8     519.6     -22.8 0.30  1.00    ON spoofing / AGC +160% vs baseline; C/N0 spread only 1.8 dB over 8 SVs; position 519 m off reference track (183.4 sigma, CUSUM 16.0); GNSS velocity 20.1 m/s off reference (89.4 sigma)
+  127   8    48.6   1.7     537.6     -40.7 0.30  1.00    ON spoofing / AGC +161% vs baseline; C/N0 spread only 1.7 dB over 8 SVs; position 537 m off reference track (187.4 sigma, CUSUM 16.0); GNSS velocity 20.0 m/s off reference (88.7 sigma)
+  128   8    48.3   1.7     558.2     -37.0 0.30  1.00    ON spoofing / AGC +161% vs baseline; C/N0 spread only 1.7 dB over 8 SVs; position 557 m off reference track (192.2 sigma, CUSUM 16.0); GNSS velocity 20.0 m/s off reference (88.7 sigma)
+  129   8    49.0   1.8     578.4     -24.9 0.30  1.00    ON spoofing / AGC +161% vs baseline; C/N0 spread only 1.8 dB over 8 SVs; position 578 m off reference track (196.7 sigma, CUSUM 16.0); GNSS velocity 20.1 m/s off reference (89.2 sigma)
+  130   8    49.0   1.7     597.1     -47.9 0.30  1.00    ON spoofing / AGC +160% vs baseline; C/N0 spread only 1.7 dB over 8 SVs; position 596 m off reference track (200.5 sigma, CUSUM 16.0); GNSS velocity 20.0 m/s off reference (89.0 sigma)
+  131   8    49.0   1.7     618.9     -39.0 0.30  1.00    ON spoofing / AGC +161% vs baseline; C/N0 spread only 1.7 dB over 8 SVs; position 618 m off reference track (205.3 sigma, CUSUM 16.0); GNSS velocity 20.0 m/s off reference (88.8 sigma)
+  132   8    48.7   1.8     638.2     -30.3 0.30  1.00    ON spoofing / AGC +161% vs baseline; C/N0 spread only 1.8 dB over 8 SVs; position 637 m off reference track (209.1 sigma, CUSUM 16.0); GNSS velocity 19.8 m/s off reference (88.0 sigma)
+  133   8    48.9   1.6     658.5     -30.9 0.30  1.00    ON spoofing / AGC +160% vs baseline; C/N0 spread only 1.6 dB over 8 SVs; position 658 m off reference track (213.1 sigma, CUSUM 16.0); GNSS velocity 19.7 m/s off reference (87.5 sigma)
+  134   8    49.2   1.5     677.4     -42.1 0.30  1.00    ON spoofing / AGC +160% vs baseline; C/N0 spread only 1.5 dB over 8 SVs; position 677 m off reference track (216.6 sigma, CUSUM 16.0); GNSS velocity 20.0 m/s off reference (89.0 sigma)
+  135   8    49.2   1.5     698.7     -34.0 0.30  1.00    ON spoofing / AGC +161% vs baseline; C/N0 spread only 1.5 dB over 8 SVs; position 698 m off reference track (220.6 sigma, CUSUM 16.0); GNSS velocity 19.9 m/s off reference (88.7 sigma)
+  136   8    49.0   1.6     718.0     -38.0 0.30  1.00    ON spoofing / AGC +161% vs baseline; C/N0 spread only 1.6 dB over 8 SVs; position 717 m off reference track (224.0 sigma, CUSUM 16.0); GNSS velocity 20.3 m/s off reference (90.3 sigma)
+  137   8    49.2   1.4     738.4     -34.8 0.30  1.00    ON spoofing / AGC +161% vs baseline; C/N0 spread only 1.4 dB over 8 SVs; position 738 m off reference track (227.6 sigma, CUSUM 16.0); GNSS velocity 20.2 m/s off reference (89.7 sigma)
+  138   8    49.4   1.3     758.4     -41.6 0.30  1.00    ON spoofing / median C/N0 rise +4.7 dB; AGC +160% vs baseline; C/N0 spread only 1.3 dB over 8 SVs; position 758 m off reference track (230.9 sigma, CUSUM 16.0); GNSS velocity 19.9 m/s off reference (88.4 sigma)
+  139   8    49.7   1.4     778.4     -33.4 0.30  1.00    ON spoofing / median C/N0 rise +4.5 dB; AGC +161% vs baseline; C/N0 spread only 1.4 dB over 8 SVs; position 778 m off reference track (234.2 sigma, CUSUM 16.0); GNSS velocity 20.2 m/s off reference (89.7 sigma)
+  140   8    49.6   1.3     798.3     -29.6 0.30  1.00    ON spoofing / median C/N0 rise +4.2 dB; AGC +160% vs baseline; C/N0 spread only 1.3 dB over 8 SVs; position 797 m off reference track (237.3 sigma, CUSUM 16.0); GNSS velocity 19.9 m/s off reference (88.3 sigma)
+  141   8    49.5   1.2     818.3     -38.2 0.30  1.00    ON spoofing / median C/N0 rise +4.3 dB; AGC +161% vs baseline; C/N0 spread only 1.2 dB over 8 SVs; position 817 m off reference track (240.4 sigma, CUSUM 16.0); GNSS velocity 19.9 m/s off reference (88.3 sigma)
+  142   8    49.5   1.3     838.7     -38.6 0.30  1.00    ON spoofing / AGC +160% vs baseline; C/N0 spread only 1.3 dB over 8 SVs; position 838 m off reference track (243.5 sigma, CUSUM 16.0); GNSS velocity 20.2 m/s off reference (89.7 sigma)
+  143   8    49.7   1.2     857.8     -25.0 0.30  1.00    ON spoofing / median C/N0 rise +4.1 dB; AGC +161% vs baseline; C/N0 spread only 1.2 dB over 8 SVs; position 857 m off reference track (246.1 sigma, CUSUM 16.0); GNSS velocity 19.8 m/s off reference (88.0 sigma)
+  144   8    49.7   1.4     878.5     -28.2 0.30  1.00    ON spoofing / median C/N0 rise +4.4 dB; AGC +160% vs baseline; C/N0 spread only 1.4 dB over 8 SVs; position 878 m off reference track (249.1 sigma, CUSUM 16.0); GNSS velocity 20.1 m/s off reference (89.2 sigma)
+  145   8    49.5   1.4     898.7     -33.4 0.30  1.00    ON spoofing / median C/N0 rise +4.4 dB; AGC +160% vs baseline; C/N0 spread only 1.4 dB over 8 SVs; position 898 m off reference track (251.9 sigma, CUSUM 16.0); GNSS velocity 19.9 m/s off reference (88.4 sigma)
+  146   8    49.6   1.0     919.4     -35.1 0.30  1.00    ON spoofing / median C/N0 rise +4.7 dB; AGC +161% vs baseline; C/N0 spread only 1.0 dB over 8 SVs; position 919 m off reference track (254.8 sigma, CUSUM 16.0); GNSS velocity 20.3 m/s off reference (90.0 sigma)
+  147   8    49.1   0.9     938.6     -33.4 0.30  1.00    ON spoofing / AGC +161% vs baseline; C/N0 spread only 0.9 dB over 8 SVs; position 938 m off reference track (257.1 sigma, CUSUM 16.0); GNSS velocity 19.8 m/s off reference (88.0 sigma)
+  148   8    49.7   1.2     958.7     -31.0 0.30  1.00    ON spoofing / median C/N0 rise +4.5 dB; AGC +161% vs baseline; C/N0 spread only 1.2 dB over 8 SVs; position 958 m off reference track (259.6 sigma, CUSUM 16.0); GNSS velocity 19.8 m/s off reference (88.1 sigma)
+  149   8    49.3   1.0     977.8     -43.6 0.30  1.00    ON spoofing / AGC +143% vs baseline; C/N0 spread only 1.0 dB over 8 SVs; position 977 m off reference track (261.8 sigma, CUSUM 16.0); GNSS velocity 20.0 m/s off reference (88.9 sigma)
+epochs 101 (101 with fix), alert epochs 64, false alerts before attack 0 (latched 0)
+attack t=60: first alert t=86.0, first per detector {'agc_change': 66.0, 'cn0_rise': 69.0, 'vel_mismatch': 86.0, 'pos_drift': 88.0, 'cn0_uniform': 108.0}
+longest silent run after attack: instantaneous 26 epochs (60.0-85.0), latched alarm 26 epochs; after the first alert 0

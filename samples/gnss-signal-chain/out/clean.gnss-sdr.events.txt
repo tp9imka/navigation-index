@@ -1,2 +1,1 @@
-      1 Sent clock offset correction to observables: -0.060
-      2 Sent reset to observables
+      1 Sent clock offset correction to observables: -0.06

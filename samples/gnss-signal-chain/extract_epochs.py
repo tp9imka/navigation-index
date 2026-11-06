@@ -1,13 +1,16 @@
 """GNSS-SDR outputs => 1 Hz epochs (JSON lines) for score_scenario.py.
 
-Position and receiver clock offset come from the PVT dump (pvt.mat, MATLAB v7.3 = HDF5, needs
-h5py); per-SV C/N0 comes from the S1C column of GNSS-SDR's RINEX 3 observation file.
+Position, ECEF velocity (rotated to east/north/up), HDOP and receiver clock offset come from the
+PVT dump (pvt.mat, MATLAB v7.3 = HDF5, needs h5py); per-SV C/N0 comes from the S1C column of
+GNSS-SDR's RINEX 3 observation file.
 t is seconds since the scenario start (GPS TOW minus --t0-tow).
 """
 import argparse
 import glob
 import json
 import os
+
+import math
 
 import h5py
 
@@ -35,6 +38,14 @@ def rinex3_cn0(path):
     return out
 
 
+def ecef_to_enu_vel(vx, vy, vz, lat_deg, lon_deg):
+    lat, lon = math.radians(lat_deg), math.radians(lon_deg)
+    sl, cl, so, co = math.sin(lat), math.cos(lat), math.sin(lon), math.cos(lon)
+    return (-so * vx + co * vy,
+            -sl * co * vx - sl * so * vy + cl * vz,
+            cl * co * vx + cl * so * vy + sl * vz)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("rx_dir")
@@ -44,7 +55,8 @@ def main():
     cn0 = rinex3_cn0(obs[0]) if obs else {}
     f = h5py.File(os.path.join(a.rx_dir, "pvt.mat"), "r")
     col = {k: f[k][:].ravel() for k in ("RX_time", "latitude", "longitude", "height",
-                                        "user_clk_offset", "valid_sats")}
+                                        "user_clk_offset", "valid_sats", "vel_x", "vel_y", "vel_z",
+                                        "hdop")}
     seen, n = set(), 0
     with open(a.out, "w") as fo:
         for i, rx in enumerate(col["RX_time"]):
@@ -52,11 +64,16 @@ def main():
             if tow in seen or abs(rx - tow) > 0.011 or col["valid_sats"][i] == 0:
                 continue
             seen.add(tow)
+            lat, lon = float(col["latitude"][i]), float(col["longitude"][i])
+            ve, vn, vu = ecef_to_enu_vel(float(col["vel_x"][i]), float(col["vel_y"][i]),
+                                         float(col["vel_z"][i]), lat, lon)
             ep = {"t": tow - SCENARIO_T0_TOW,
-                  "lat": float(col["latitude"][i]), "lon": float(col["longitude"][i]),
+                  "lat": lat, "lon": lon,
                   "h": float(col["height"][i]),
                   "clk_bias_ns": float(col["user_clk_offset"][i]) * 1e9,
                   "valid_sats": int(col["valid_sats"][i]),
+                  "vel_e": round(ve, 3), "vel_n": round(vn, 3), "vel_u": round(vu, 3),
+                  "hdop": round(float(col["hdop"][i]), 2),
                   "cn0": cn0.get(tow, {})}
             fo.write(json.dumps(ep) + "\n")
             n += 1

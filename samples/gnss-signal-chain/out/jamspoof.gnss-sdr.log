@@ -12,232 +12,238 @@ GNSS signal recorded time to be processed: 149.95 [s]
 Current receiver time: 1 s
 Tracking of GPS L1 C/A signal started on channel 7 for satellite GPS PRN 15 (Block IIR-M)
 Tracking of GPS L1 C/A signal started on channel 2 for satellite GPS PRN 18 (Block III)
-Tracking of GPS L1 C/A signal started on channel 0 for satellite GPS PRN 23 (Block III)
 Tracking of GPS L1 C/A signal started on channel 1 for satellite GPS PRN 24 (Block IIF)
 Current receiver time: 2 s
 Current receiver time: 3 s
+Tracking of GPS L1 C/A signal started on channel 5 for satellite GPS PRN 23 (Block III)
+Tracking of GPS L1 C/A signal started on channel 4 for satellite GPS PRN 05 (Block IIR-M)
+Loss of lock in channel 4!
+Tracking of GPS L1 C/A signal started on channel 3 for satellite GPS PRN 21 (Block IIR)
 Current receiver time: 4 s
 Current receiver time: 5 s
 Current receiver time: 6 s
-GPS L1 C/A tracking bit synchronization locked in channel 1 for satellite GPS PRN 24 (Block IIF)
+GPS L1 C/A tracking bit synchronization locked in channel 5 for satellite GPS PRN 23 (Block III)
+Tracking of GPS L1 C/A signal started on channel 4 for satellite GPS PRN 13 (Block IIR)
 Current receiver time: 7 s
 Current receiver time: 8 s
-Tracking of GPS L1 C/A signal started on channel 6 for satellite GPS PRN 05 (Block IIR-M)
+Tracking of GPS L1 C/A signal started on channel 0 for satellite GPS PRN 05 (Block IIR-M)
 Current receiver time: 9 s
 Current receiver time: 10 s
 Current receiver time: 11 s
 Current receiver time: 12 s
 Current receiver time: 13 s
-New GPS NAV message received in channel 1: subframe 2 from satellite GPS PRN 24 (Block IIF) with CN0=47 dB-Hz
+New GPS NAV message received in channel 5: subframe 2 from satellite GPS PRN 23 (Block III) with CN0=43 dB-Hz
+GPS L1 C/A tracking bit synchronization locked in channel 1 for satellite GPS PRN 24 (Block IIF)
 GPS L1 C/A tracking bit synchronization locked in channel 7 for satellite GPS PRN 15 (Block IIR-M)
-GPS L1 C/A tracking bit synchronization locked in channel 0 for satellite GPS PRN 23 (Block III)
-GPS L1 C/A tracking bit synchronization locked in channel 2 for satellite GPS PRN 18 (Block III)
 Current receiver time: 14 s
 Current receiver time: 15 s
 Current receiver time: 16 s
 Current receiver time: 17 s
+Loss of lock in channel 2!
+Tracking of GPS L1 C/A signal started on channel 2 for satellite GPS PRN 18 (Block III)
 Current receiver time: 18 s
+GPS L1 C/A tracking bit synchronization locked in channel 2 for satellite GPS PRN 18 (Block III)
 Current receiver time: 19 s
-New GPS NAV message received in channel 0: subframe 3 from satellite GPS PRN 23 (Block III) with CN0=44 dB-Hz
-New GPS NAV message received in channel 2: subframe 3 from satellite GPS PRN 18 (Block III) with CN0=46 dB-Hz
-New GPS NAV message received in channel 1: subframe 3 from satellite GPS PRN 24 (Block IIF) with CN0=47 dB-Hz
 New GPS NAV message received in channel 7: subframe 3 from satellite GPS PRN 15 (Block IIR-M) with CN0=44 dB-Hz
+New GPS NAV message received in channel 1: subframe 3 from satellite GPS PRN 24 (Block IIF) with CN0=47 dB-Hz
+New GPS NAV message received in channel 5: subframe 3 from satellite GPS PRN 23 (Block III) with CN0=44 dB-Hz
+GPS L1 C/A tracking bit synchronization locked in channel 4 for satellite GPS PRN 13 (Block IIR)
+Loss of lock in channel 3!
 Current receiver time: 20 s
 Current receiver time: 21 s
 Current receiver time: 22 s
-GPS L1 C/A tracking bit synchronization locked in channel 6 for satellite GPS PRN 05 (Block IIR-M)
+GPS L1 C/A tracking bit synchronization locked in channel 0 for satellite GPS PRN 05 (Block IIR-M)
 Current receiver time: 23 s
 Current receiver time: 24 s
 Current receiver time: 25 s
-New GPS NAV message received in channel 2: subframe 4 from satellite GPS PRN 18 (Block III) with CN0=45 dB-Hz
-New GPS NAV message received in channel 0: subframe 4 from satellite GPS PRN 23 (Block III) with CN0=44 dB-Hz
-New GPS NAV message received in channel 7: subframe 4 from satellite GPS PRN 15 (Block IIR-M) with CN0=44 dB-Hz
 New GPS NAV message received in channel 1: subframe 4 from satellite GPS PRN 24 (Block IIF) with CN0=47 dB-Hz
+New GPS NAV message received in channel 2: subframe 4 from satellite GPS PRN 18 (Block III) with CN0=45 dB-Hz
+New GPS NAV message received in channel 5: subframe 4 from satellite GPS PRN 23 (Block III) with CN0=44 dB-Hz
+New GPS NAV message received in channel 7: subframe 4 from satellite GPS PRN 15 (Block IIR-M) with CN0=44 dB-Hz
+New GPS NAV message received in channel 4: subframe 4 from satellite GPS PRN 13 (Block IIR) with CN0=40 dB-Hz
 Current receiver time: 26 s
 Current receiver time: 27 s
 Current receiver time: 28 s
 Current receiver time: 29 s
 Current receiver time: 30 s
 Current receiver time: 31 s
-New GPS NAV message received in channel 1: subframe 5 from satellite GPS PRN 24 (Block IIF) with CN0=47 dB-Hz
 New GPS NAV message received in channel 2: subframe 5 from satellite GPS PRN 18 (Block III) with CN0=46 dB-Hz
-New GPS NAV message received in channel 0: subframe 5 from satellite GPS PRN 23 (Block III) with CN0=44 dB-Hz
+New GPS NAV message received in channel 5: subframe 5 from satellite GPS PRN 23 (Block III) with CN0=44 dB-Hz
 New GPS NAV message received in channel 7: subframe 5 from satellite GPS PRN 15 (Block IIR-M) with CN0=44 dB-Hz
-New GPS NAV message received in channel 6: subframe 5 from satellite GPS PRN 05 (Block IIR-M) with CN0=40 dB-Hz
+New GPS NAV message received in channel 0: subframe 5 from satellite GPS PRN 05 (Block IIR-M) with CN0=40 dB-Hz
+New GPS NAV message received in channel 1: subframe 5 from satellite GPS PRN 24 (Block IIF) with CN0=47 dB-Hz
+New GPS NAV message received in channel 4: subframe 5 from satellite GPS PRN 13 (Block IIR) with CN0=39 dB-Hz
 Current receiver time: 32 s
 Current receiver time: 33 s
 Current receiver time: 34 s
 Current receiver time: 35 s
 Current receiver time: 36 s
 Current receiver time: 37 s
-New GPS NAV message received in channel 0: subframe 1 from satellite GPS PRN 23 (Block III) with CN0=44 dB-Hz
 New GPS NAV message received in channel 1: subframe 1 from satellite GPS PRN 24 (Block IIF) with CN0=47 dB-Hz
-New GPS NAV message received in channel 6: subframe 1 from satellite GPS PRN 05 (Block IIR-M) with CN0=40 dB-Hz
-New GPS NAV message received in channel 7: subframe 1 from satellite GPS PRN 15 (Block IIR-M) with CN0=44 dB-Hz
 New GPS NAV message received in channel 2: subframe 1 from satellite GPS PRN 18 (Block III) with CN0=46 dB-Hz
+New GPS NAV message received in channel 4: subframe 1 from satellite GPS PRN 13 (Block IIR) with CN0=40 dB-Hz
+New GPS NAV message received in channel 5: subframe 1 from satellite GPS PRN 23 (Block III) with CN0=44 dB-Hz
+New GPS NAV message received in channel 7: subframe 1 from satellite GPS PRN 15 (Block IIR-M) with CN0=44 dB-Hz
+New GPS NAV message received in channel 0: subframe 1 from satellite GPS PRN 05 (Block IIR-M) with CN0=40 dB-Hz
 Current receiver time: 38 s
 Current receiver time: 39 s
 Current receiver time: 40 s
 Current receiver time: 41 s
 Current receiver time: 42 s
 Current receiver time: 43 s
-New GPS NAV message received in channel 7: subframe 2 from satellite GPS PRN 15 (Block IIR-M) with CN0=44 dB-Hz
 New GPS NAV message received in channel 1: subframe 2 from satellite GPS PRN 24 (Block IIF) with CN0=47 dB-Hz
-New GPS NAV message received in channel 0: subframe 2 from satellite GPS PRN 23 (Block III) with CN0=44 dB-Hz
-New GPS NAV message received in channel 2: subframe 2 from satellite GPS PRN 18 (Block III) with CN0=46 dB-Hz
-New GPS NAV message received in channel 6: subframe 2 from satellite GPS PRN 05 (Block IIR-M) with CN0=40 dB-Hz
-First position fix at 2022-Jan-01 00:00:24.100000 UTC is Lat = 30.2866 [deg], Long = 120.033 [deg], Height= 117.168 [m]
+New GPS NAV message received in channel 2: subframe 2 from satellite New GPS NAV message received in channel 5: subframe 2 from satellite GPS PRN 23 (Block III) with CN0=44 dB-Hz
+New GPS NAV message received in channel 0: subframe 2 from satellite GPS PRN 05 (Block IIR-M) with CN0=40 dB-Hz
+New GPS NAV message received in channel 4: subframe 2 from satellite GPS PRN 13 (Block IIR) with CN0=38 dB-Hz
+New GPS NAV message received in channel 7: subframe 2 from satellite GPS PRN 15 (Block IIR-M) with CN0=44 dB-Hz
+GPS PRN 18 (Block III) with CN0=46 dB-Hz
 Current receiver time: 44 s
-The RINEX Navigation file header has been updated with UTC and IONO info.
-Position at 2022-Jan-01 00:00:25.000000 UTC using 4 observations is Lat = 30.286345 [deg], Long = 120.032683 [deg], Height = 53.99 [m]
-Velocity: East: 0.32 [m/s], North: -1.17 [m/s], Up = -1.88 [m/s]
 Current receiver time: 45 s
-Position at 2022-Jan-01 00:00:26.000000 UTC using 4 observations is Lat = 30.286565 [deg], Long = 120.032665 [deg], Height = 136.05 [m]
-Velocity: East: -0.31 [m/s], North: 2.46 [m/s], Up = 5.50 [m/s]
-Tracking of GPS L1 C/A signal started on channel 4 for satellite GPS PRN 20 (Block IIR)
 Current receiver time: 46 s
-Position at 2022-Jan-01 00:00:27.000000 UTC using 4 observations is Lat = 30.286488 [deg], Long = 120.032696 [deg], Height = 86.85 [m]
-Velocity: East: 0.01 [m/s], North: -2.21 [m/s], Up = -7.41 [m/s]
 Current receiver time: 47 s
-Position at 2022-Jan-01 00:00:28.000000 UTC using 4 observations is Lat = 30.286535 [deg], Long = 120.032660 [deg], Height = 100.57 [m]
-Velocity: East: 0.64 [m/s], North: -0.91 [m/s], Up = -1.48 [m/s]
 Current receiver time: 48 s
-Position at 2022-Jan-01 00:00:29.000000 UTC using 4 observations is Lat = 30.286602 [deg], Long = 120.032627 [deg], Height = 133.08 [m]
-Velocity: East: 0.59 [m/s], North: -4.83 [m/s], Up = -17.86 [m/s]
 Current receiver time: 49 s
-New GPS NAV message received in channel 1: subframe 3 from satellite GPS PRN 24 (Block IIF) with CN0=46.68 dB-Hz
-New GPS NAV message received in channel 6: subframe 3 from satellite GPS PRN 05 (Block IIR-M) with CN0=40.23 dB-Hz
-New GPS NAV message received in channel 0: subframe 3 from satellite GPS PRN 23 (Block III) with CN0=43.52 dB-Hz
-New GPS NAV message received in channel 2: subframe 3 from satellite GPS PRN 18 (Block III) with CN0=45.57 dB-Hz
-New GPS NAV message received in channel 7: subframe 3 from satellite GPS PRN 15 (Block IIR-M) with CN0=43.51 dB-Hz
-Position at 2022-Jan-01 00:00:30.000000 UTC using 5 observations is Lat = 30.286508 [deg], Long = 120.032671 [deg], Height = 92.24 [m]
-Velocity: East: -0.24 [m/s], North: -0.75 [m/s], Up = -1.22 [m/s]
+New GPS NAV message received in channel 1: subframe 3 from satellite GPS PRN 24 (Block IIF) with CN0=47 dB-Hz
+New GPS NAV message received in channel 2: subframe 3 from satellite GPS PRN 18 (Block III) with CN0=46 dB-Hz
+New GPS NAV message received in channel 7: subframe 3 from satellite GPS PRN 15 (Block IIR-M) with CN0=44 dB-Hz
+New GPS NAV message received in channel 5: subframe 3 from satellite GPS PRN 23 (Block III) with CN0=44 dB-Hz
+New GPS NAV message received in channel 4: subframe 3 from satellite GPS PRN 13 (Block IIR) with CN0=39 dB-Hz
+New GPS NAV message received in channel 0: subframe 3 from satellite GPS PRN 05 (Block IIR-M) with CN0=40 dB-Hz
+First position fix at 2022-Jan-01 00:00:30.100000 UTC is Lat = 30.2865 [deg], Long = 120.033 [deg], Height= 94.4056 [m]
 Current receiver time: 50 s
-Position at 2022-Jan-01 00:00:31.000000 UTC using 5 observations is Lat = 30.286501 [deg], Long = 120.032679 [deg], Height = 93.73 [m]
-Velocity: East: 0.06 [m/s], North: -1.08 [m/s], Up = -3.54 [m/s]
+The RINEX Navigation file header has been updated with UTC and IONO info.
+Position at 2022-Jan-01 00:00:31.000000 UTC using 6 observations is Lat = 30.286505 [deg], Long = 120.032680 [deg], Height = 90.92 [m]
+Velocity: East: 0.00 [m/s], North: -1.79 [m/s], Up = -1.62 [m/s]
 Current receiver time: 51 s
-Position at 2022-Jan-01 00:00:32.000000 UTC using 5 observations is Lat = 30.286475 [deg], Long = 120.032665 [deg], Height = 90.51 [m]
-Velocity: East: 0.22 [m/s], North: 0.00 [m/s], Up = -0.81 [m/s]
+Position at 2022-Jan-01 00:00:32.000000 UTC using 6 observations is Lat = 30.286475 [deg], Long = 120.032666 [deg], Height = 89.61 [m]
+Velocity: East: 0.19 [m/s], North: -0.22 [m/s], Up = 0.04 [m/s]
 Current receiver time: 52 s
-Position at 2022-Jan-01 00:00:33.000000 UTC using 5 observations is Lat = 30.286473 [deg], Long = 120.032671 [deg], Height = 88.96 [m]
-Velocity: East: -0.00 [m/s], North: 0.29 [m/s], Up = 0.16 [m/s]
+Position at 2022-Jan-01 00:00:33.000000 UTC using 6 observations is Lat = 30.286471 [deg], Long = 120.032670 [deg], Height = 90.59 [m]
+Velocity: East: 0.03 [m/s], North: 0.69 [m/s], Up = -0.99 [m/s]
 Current receiver time: 53 s
-Position at 2022-Jan-01 00:00:34.000000 UTC using 5 observations is Lat = 30.286536 [deg], Long = 120.032672 [deg], Height = 100.11 [m]
-Velocity: East: 0.45 [m/s], North: 0.40 [m/s], Up = 0.79 [m/s]
+Position at 2022-Jan-01 00:00:34.000000 UTC using 6 observations is Lat = 30.286542 [deg], Long = 120.032673 [deg], Height = 96.65 [m]
+Velocity: East: 0.45 [m/s], North: 0.40 [m/s], Up = 0.78 [m/s]
 Current receiver time: 54 s
-Position at 2022-Jan-01 00:00:35.000000 UTC using 5 observations is Lat = 30.286479 [deg], Long = 120.032718 [deg], Height = 103.18 [m]
-Velocity: East: -0.24 [m/s], North: 0.58 [m/s], Up = 3.80 [m/s]
+Position at 2022-Jan-01 00:00:35.000000 UTC using 6 observations is Lat = 30.286486 [deg], Long = 120.032720 [deg], Height = 99.88 [m]
+Velocity: East: -0.23 [m/s], North: 0.86 [m/s], Up = 2.94 [m/s]
 Current receiver time: 55 s
-New GPS NAV message received in channel 0: subframe 4 from satellite GPS PRN 23 (Block III) with CN0=43.92 dB-Hz
-New GPS NAV message received in channel 2: subframe 4 from satellite GPS PRN 18 (Block III) with CN0=45.88 dB-Hz
-New GPS NAV message received in channel 6: subframe 4 from satellite GPS PRN 05 (Block IIR-M) with CN0=39.87 dB-Hz
 New GPS NAV message received in channel 1: subframe 4 from satellite GPS PRN 24 (Block IIF) with CN0=46.86 dB-Hz
+New GPS NAV message received in channel 2: subframe 4 from satellite GPS PRN 18 (Block III) with CN0=45.88 dB-Hz
 New GPS NAV message received in channel 7: subframe 4 from satellite GPS PRN 15 (Block IIR-M) with CN0=43.97 dB-Hz
-Position at 2022-Jan-01 00:00:36.000000 UTC using 5 observations is Lat = 30.286493 [deg], Long = 120.032695 [deg], Height = 97.56 [m]
-Velocity: East: -0.66 [m/s], North: 0.04 [m/s], Up = -2.04 [m/s]
+New GPS NAV message received in channel 5: subframe 4 from satellite GPS PRN 23 (Block III) with CN0=43.92 dB-Hz
+New GPS NAV message received in channel 0: subframe 4 from satellite GPS PRN 05 (Block IIR-M) with CN0=39.87 dB-Hz
+New GPS NAV message received in channel 4: subframe 4 from satellite GPS PRN 13 (Block IIR) with CN0=39.68 dB-Hz
+Position at 2022-Jan-01 00:00:36.000000 UTC using 6 observations is Lat = 30.286493 [deg], Long = 120.032695 [deg], Height = 97.25 [m]
+Velocity: East: -0.62 [m/s], North: 0.50 [m/s], Up = -3.37 [m/s]
 Current receiver time: 56 s
-Position at 2022-Jan-01 00:00:37.000000 UTC using 5 observations is Lat = 30.286463 [deg], Long = 120.032665 [deg], Height = 85.80 [m]
-Velocity: East: -0.44 [m/s], North: 0.41 [m/s], Up = 0.78 [m/s]
-Tracking of GPS L1 C/A signal started on channel 3 for satellite GPS PRN 32 (Block IIF)
+Position at 2022-Jan-01 00:00:37.000000 UTC using 6 observations is Lat = 30.286474 [deg], Long = 120.032667 [deg], Height = 79.62 [m]
+Velocity: East: -0.43 [m/s], North: 0.45 [m/s], Up = 0.68 [m/s]
 Current receiver time: 57 s
-Position at 2022-Jan-01 00:00:38.000000 UTC using 5 observations is Lat = 30.286521 [deg], Long = 120.032714 [deg], Height = 103.37 [m]
-Velocity: East: 0.19 [m/s], North: 0.11 [m/s], Up = 1.69 [m/s]
+Position at 2022-Jan-01 00:00:38.000000 UTC using 6 observations is Lat = 30.286522 [deg], Long = 120.032714 [deg], Height = 102.75 [m]
+Velocity: East: 0.22 [m/s], North: 0.51 [m/s], Up = 0.54 [m/s]
 Current receiver time: 58 s
-Position at 2022-Jan-01 00:00:39.000000 UTC using 5 observations is Lat = 30.286484 [deg], Long = 120.032630 [deg], Height = 86.91 [m]
-Velocity: East: -0.80 [m/s], North: -0.49 [m/s], Up = -1.30 [m/s]
+Position at 2022-Jan-01 00:00:39.000000 UTC using 6 observations is Lat = 30.286483 [deg], Long = 120.032630 [deg], Height = 87.08 [m]
+Velocity: East: -0.80 [m/s], North: -0.47 [m/s], Up = -1.35 [m/s]
+Tracking of GPS L1 C/A signal started on channel 6 for satellite GPS PRN 29 (Block IIR-M)
 Current receiver time: 59 s
-Position at 2022-Jan-01 00:00:40.000000 UTC using 5 observations is Lat = 30.286493 [deg], Long = 120.032716 [deg], Height = 97.60 [m]
-Velocity: East: 0.26 [m/s], North: 0.07 [m/s], Up = 0.06 [m/s]
+Position at 2022-Jan-01 00:00:40.000000 UTC using 6 observations is Lat = 30.286493 [deg], Long = 120.032716 [deg], Height = 97.89 [m]
+Velocity: East: 0.28 [m/s], North: 0.36 [m/s], Up = -0.75 [m/s]
 Current receiver time: 1 min 0 s
-Position at 2022-Jan-01 00:00:41.000000 UTC using 5 observations is Lat = 30.286512 [deg], Long = 120.032628 [deg], Height = 92.55 [m]
-Velocity: East: -0.34 [m/s], North: -0.06 [m/s], Up = 0.45 [m/s]
+Position at 2022-Jan-01 00:00:41.000000 UTC using 6 observations is Lat = 30.286519 [deg], Long = 120.032629 [deg], Height = 88.85 [m]
+Velocity: East: -0.33 [m/s], North: 0.09 [m/s], Up = 0.01 [m/s]
 Current receiver time: 1 min 1 s
+New GPS NAV message received in channel 7: subframe 5 from satellite GPS PRN 15 (Block IIR-M) with CN0=43.98 dB-Hz
+New GPS NAV message received in channel 0: subframe 5 from satellite GPS PRN 05 (Block IIR-M) with CN0=39.88 dB-Hz
 New GPS NAV message received in channel 2: subframe 5 from satellite GPS PRN 18 (Block III) with CN0=46.04 dB-Hz
 New GPS NAV message received in channel 1: subframe 5 from satellite GPS PRN 24 (Block IIF) with CN0=46.59 dB-Hz
-New GPS NAV message received in channel 6: subframe 5 from satellite GPS PRN 05 (Block IIR-M) with CN0=39.88 dB-Hz
-New GPS NAV message received in channel 0: subframe 5 from satellite GPS PRN 23 (Block III) with CN0=43.86 dB-Hz
-New GPS NAV message received in channel 7: subframe 5 from satellite GPS PRN 15 (Block IIR-M) with CN0=43.98 dB-Hz
-Position at 2022-Jan-01 00:00:42.000000 UTC using 5 observations is Lat = 30.286470 [deg], Long = 120.032664 [deg], Height = 95.43 [m]
-Velocity: East: 0.39 [m/s], North: 0.39 [m/s], Up = 1.99 [m/s]
-Loss of lock in channel 4!
+New GPS NAV message received in channel 5: subframe 5 from satellite GPS PRN 23 (Block III) with CN0=43.85 dB-Hz
+New GPS NAV message received in channel 4: subframe 5 from satellite GPS PRN 13 (Block IIR) with CN0=39.24 dB-Hz
+Position at 2022-Jan-01 00:00:42.000000 UTC using 6 observations is Lat = 30.286476 [deg], Long = 120.032666 [deg], Height = 92.65 [m]
+Velocity: East: 0.42 [m/s], North: 0.73 [m/s], Up = 1.00 [m/s]
 Current receiver time: 1 min 2 s
-Position at 2022-Jan-01 00:00:43.000000 UTC using 5 observations is Lat = 30.286521 [deg], Long = 120.032681 [deg], Height = 94.25 [m]
-Velocity: East: 0.12 [m/s], North: -0.15 [m/s], Up = 0.79 [m/s]
+Position at 2022-Jan-01 00:00:43.000000 UTC using 6 observations is Lat = 30.286516 [deg], Long = 120.032681 [deg], Height = 96.86 [m]
+Velocity: East: 0.14 [m/s], North: 0.14 [m/s], Up = -0.07 [m/s]
 Current receiver time: 1 min 3 s
-Position at 2022-Jan-01 00:00:44.000000 UTC using 5 observations is Lat = 30.286483 [deg], Long = 120.032654 [deg], Height = 89.41 [m]
-Velocity: East: 0.23 [m/s], North: 0.86 [m/s], Up = 0.63 [m/s]
+Position at 2022-Jan-01 00:00:44.000000 UTC using 6 observations is Lat = 30.286479 [deg], Long = 120.032653 [deg], Height = 91.41 [m]
+Velocity: East: 0.23 [m/s], North: 0.84 [m/s], Up = 0.68 [m/s]
 Current receiver time: 1 min 4 s
-Position at 2022-Jan-01 00:00:45.000000 UTC using 5 observations is Lat = 30.286526 [deg], Long = 120.032664 [deg], Height = 98.01 [m]
-Velocity: East: -0.67 [m/s], North: -0.07 [m/s], Up = -2.37 [m/s]
+Position at 2022-Jan-01 00:00:45.000000 UTC using 6 observations is Lat = 30.286541 [deg], Long = 120.032667 [deg], Height = 90.16 [m]
+Velocity: East: -0.70 [m/s], North: -0.35 [m/s], Up = -1.54 [m/s]
 Current receiver time: 1 min 5 s
-Position at 2022-Jan-01 00:00:46.000000 UTC using 5 observations is Lat = 30.286480 [deg], Long = 120.032645 [deg], Height = 91.37 [m]
-Velocity: East: -0.11 [m/s], North: 0.14 [m/s], Up = 0.10 [m/s]
+Position at 2022-Jan-01 00:00:46.000000 UTC using 6 observations is Lat = 30.286478 [deg], Long = 120.032644 [deg], Height = 92.17 [m]
+Velocity: East: -0.07 [m/s], North: 0.61 [m/s], Up = -1.26 [m/s]
 Current receiver time: 1 min 6 s
-Position at 2022-Jan-01 00:00:47.000000 UTC using 5 observations is Lat = 30.286520 [deg], Long = 120.032719 [deg], Height = 101.22 [m]
-Velocity: East: 0.23 [m/s], North: -0.26 [m/s], Up = -0.23 [m/s]
+Position at 2022-Jan-01 00:00:47.000000 UTC using 6 observations is Lat = 30.286523 [deg], Long = 120.032719 [deg], Height = 99.60 [m]
+Velocity: East: 0.22 [m/s], North: -0.40 [m/s], Up = 0.17 [m/s]
 Current receiver time: 1 min 7 s
-New GPS NAV message received in channel 0: subframe 1 from satellite GPS PRN 23 (Block III) with CN0=44.28 dB-Hz
-New GPS NAV message received in channel 1: subframe 1 from satellite GPS PRN 24 (Block IIF) with CN0=46.46 dB-Hz
 New GPS NAV message received in channel 2: subframe 1 from satellite GPS PRN 18 (Block III) with CN0=46.14 dB-Hz
-New GPS NAV message received in channel 6: subframe 1 from satellite GPS PRN 05 (Block IIR-M) with CN0=40.37 dB-Hz
+New GPS NAV message received in channel 1: subframe 1 from satellite GPS PRN 24 (Block IIF) with CN0=46.46 dB-Hz
 New GPS NAV message received in channel 7: subframe 1 from satellite GPS PRN 15 (Block IIR-M) with CN0=43.74 dB-Hz
-Position at 2022-Jan-01 00:00:48.000000 UTC using 5 observations is Lat = 30.286485 [deg], Long = 120.032689 [deg], Height = 100.39 [m]
-Velocity: East: 0.56 [m/s], North: 1.29 [m/s], Up = 4.86 [m/s]
+New GPS NAV message received in channel 5: subframe 1 from satellite GPS PRN 23 (Block III) with CN0=44.28 dB-Hz
+New GPS NAV message received in channel 4: subframe 1 from satellite GPS PRN 13 (Block IIR) with CN0=39.31 dB-Hz
+New GPS NAV message received in channel 0: subframe 1 from satellite GPS PRN 05 (Block IIR-M) with CN0=40.37 dB-Hz
+Position at 2022-Jan-01 00:00:48.000000 UTC using 6 observations is Lat = 30.286488 [deg], Long = 120.032689 [deg], Height = 98.55 [m]
+Velocity: East: 0.60 [m/s], North: 1.86 [m/s], Up = 3.23 [m/s]
+Tracking of GPS L1 C/A signal started on channel 3 for satellite GPS PRN 30 (Block IIF)
 Current receiver time: 1 min 8 s
-Position at 2022-Jan-01 00:00:49.000000 UTC using 5 observations is Lat = 30.286515 [deg], Long = 120.032674 [deg], Height = 96.27 [m]
-Velocity: East: -0.12 [m/s], North: -0.91 [m/s], Up = -1.93 [m/s]
+Position at 2022-Jan-01 00:00:49.000000 UTC using 6 observations is Lat = 30.286523 [deg], Long = 120.032676 [deg], Height = 92.61 [m]
+Velocity: East: -0.14 [m/s], North: -1.11 [m/s], Up = -1.35 [m/s]
 Current receiver time: 1 min 9 s
-Position at 2022-Jan-01 00:00:50.000000 UTC using 5 observations is Lat = 30.286436 [deg], Long = 120.032688 [deg], Height = 89.74 [m]
-Velocity: East: 0.20 [m/s], North: 1.01 [m/s], Up = 4.83 [m/s]
-GPS L1 C/A tracking bit synchronization locked in channel 3 for satellite GPS PRN 32 (Block IIF)
+Position at 2022-Jan-01 00:00:50.000000 UTC using 6 observations is Lat = 30.286445 [deg], Long = 120.032690 [deg], Height = 85.07 [m]
+Velocity: East: 0.25 [m/s], North: 1.69 [m/s], Up = 2.86 [m/s]
 Current receiver time: 1 min 10 s
-Position at 2022-Jan-01 00:00:51.000000 UTC using 5 observations is Lat = 30.286492 [deg], Long = 120.032667 [deg], Height = 101.13 [m]
-Velocity: East: -0.07 [m/s], North: 0.37 [m/s], Up = -0.51 [m/s]
+Position at 2022-Jan-01 00:00:51.000000 UTC using 6 observations is Lat = 30.286506 [deg], Long = 120.032670 [deg], Height = 93.75 [m]
+Velocity: East: -0.10 [m/s], North: 0.03 [m/s], Up = 0.48 [m/s]
 Current receiver time: 1 min 11 s
-Position at 2022-Jan-01 00:00:52.000000 UTC using 5 observations is Lat = 30.286453 [deg], Long = 120.032681 [deg], Height = 94.98 [m]
-Velocity: East: 0.06 [m/s], North: 0.25 [m/s], Up = 1.04 [m/s]
+Position at 2022-Jan-01 00:00:52.000000 UTC using 6 observations is Lat = 30.286462 [deg], Long = 120.032683 [deg], Height = 90.36 [m]
+Velocity: East: 0.06 [m/s], North: 0.34 [m/s], Up = 0.78 [m/s]
 Current receiver time: 1 min 12 s
-Position at 2022-Jan-01 00:00:53.000000 UTC using 5 observations is Lat = 30.286506 [deg], Long = 120.032690 [deg], Height = 110.22 [m]
-Velocity: East: 0.21 [m/s], North: -0.08 [m/s], Up = -2.57 [m/s]
+Position at 2022-Jan-01 00:00:53.000000 UTC using 6 observations is Lat = 30.286525 [deg], Long = 120.032694 [deg], Height = 100.54 [m]
+Velocity: East: 0.19 [m/s], North: -0.35 [m/s], Up = -1.75 [m/s]
 Current receiver time: 1 min 13 s
 New GPS NAV message received in channel 1: subframe 2 from satellite GPS PRN 24 (Block IIF) with CN0=46.68 dB-Hz
-New GPS NAV message received in channel 7: subframe 2 from satellite GPS PRN 15 (Block IIR-M) with CN0=43.85 dB-Hz
 New GPS NAV message received in channel 2: subframe 2 from satellite GPS PRN 18 (Block III) with CN0=45.72 dB-Hz
-New GPS NAV message received in channel 0: subframe 2 from satellite GPS PRN 23 (Block III) with CN0=43.81 dB-Hz
-New GPS NAV message received in channel 6: subframe 2 from satellite GPS PRN 05 (Block IIR-M) with CN0=39.21 dB-Hz
-Position at 2022-Jan-01 00:00:54.000000 UTC using 5 observations is Lat = 30.286499 [deg], Long = 120.032703 [deg], Height = 111.62 [m]
-Velocity: East: 0.19 [m/s], North: -0.20 [m/s], Up = -0.12 [m/s]
+New GPS NAV message received in channel 7: subframe 2 from satellite GPS PRN 15 (Block IIR-M) with CN0=43.85 dB-HzNew GPS NAV message received in channel 4: subframe 2 from satellite GPS PRN 13 (Block IIR) with CN0=39.16 dB-Hz
+New GPS NAV message received in channel 0: subframe 2 from satellite GPS PRN 05 (Block IIR-M) with CN0=39.22 dB-Hz
+New GPS NAV message received in channel 5: subframe 2 from satellite GPS PRN 23 (Block III) with CN0=43.81 dB-Hz
+
+Position at 2022-Jan-01 00:00:54.000000 UTC using 6 observations is Lat = 30.286502 [deg], Long = 120.032704 [deg], Height = 109.08 [m]
+Velocity: East: 0.24 [m/s], North: 0.44 [m/s], Up = -2.08 [m/s]
 Current receiver time: 1 min 14 s
-Position at 2022-Jan-01 00:00:55.000000 UTC using 5 observations is Lat = 30.286507 [deg], Long = 120.032658 [deg], Height = 103.24 [m]
-Velocity: East: -0.47 [m/s], North: -0.39 [m/s], Up = -1.78 [m/s]
+Position at 2022-Jan-01 00:00:55.000000 UTC using 6 observations is Lat = 30.286522 [deg], Long = 120.032660 [deg], Height = 94.79 [m]
+Velocity: East: -0.47 [m/s], North: -0.44 [m/s], Up = -1.68 [m/s]
+Loss of lock in channel 6!
 Current receiver time: 1 min 15 s
-Position at 2022-Jan-01 00:00:56.000000 UTC using 5 observations is Lat = 30.286465 [deg], Long = 120.032682 [deg], Height = 86.61 [m]
-Velocity: East: 0.61 [m/s], North: 0.06 [m/s], Up = 0.29 [m/s]
+Position at 2022-Jan-01 00:00:56.000000 UTC using 6 observations is Lat = 30.286459 [deg], Long = 120.032681 [deg], Height = 89.36 [m]
+Velocity: East: 0.62 [m/s], North: 0.12 [m/s], Up = 0.14 [m/s]
 Current receiver time: 1 min 16 s
-Position at 2022-Jan-01 00:00:57.000000 UTC using 5 observations is Lat = 30.286446 [deg], Long = 120.032631 [deg], Height = 78.43 [m]
-Velocity: East: -1.43 [m/s], North: 2.77 [m/s], Up = -6.49 [m/s]
+Position at 2022-Jan-01 00:00:57.000000 UTC using 6 observations is Lat = 30.286442 [deg], Long = 120.032630 [deg], Height = 80.44 [m]
+Velocity: East: -1.47 [m/s], North: 2.18 [m/s], Up = -4.78 [m/s]
 Current receiver time: 1 min 17 s
 Current receiver time: 1 min 18 s
 Current receiver time: 1 min 19 s
 Current receiver time: 1 min 20 s
-Loss of lock in channel 3!
 Current receiver time: 1 min 21 s
-Loss of lock in channel 6!
-Loss of lock in channel 1!
-Loss of lock in channel 7!
-Loss of lock in channel 0!
+Loss of lock in channel 4!
+Tracking of GPS L1 C/A signal started on channel 6 for satellite GPS PRN 12 (Block IIR-M)
 Loss of lock in channel 2!
-Tracking of GPS L1 C/A signal started on channel 2 for satellite GPS PRN 28 (Block IIR)
-Tracking of GPS L1 C/A signal started on channel 3 for satellite GPS PRN 29 (Block IIR-M)
-Tracking of GPS L1 C/A signal started on channel 4 for satellite GPS PRN 32 (Block IIF)
-Tracking of GPS L1 C/A signal started on channel 0 for satellite GPS PRN 20 (Block IIR)
-Tracking of GPS L1 C/A signal started on channel 6 for satellite GPS PRN 10 (Block IIF)
-Tracking of GPS L1 C/A signal started on channel 1 for satellite GPS PRN 12 (Block IIR-M)
-Tracking of GPS L1 C/A signal started on channel 5 for satellite GPS PRN 13 (Block IIR)
-Tracking of GPS L1 C/A signal started on channel 7 for satellite GPS PRN 05 (Block IIR-M)
-GPS L1 C/A tracking bit synchronization locked in channel 5 for satellite GPS PRN 13 (Block IIR)
+Loss of lock in channel 1!
+Loss of lock in channel 0!
+Tracking of GPS L1 C/A signal started on channel 4 for satellite GPS PRN 20 (Block IIR)
+Loss of lock in channel 5!
+Loss of lock in channel 7!
+Tracking of GPS L1 C/A signal started on channel 7 for satellite GPS PRN 28 (Block IIR)
+Tracking of GPS L1 C/A signal started on channel 0 for satellite GPS PRN 29 (Block IIR-M)
+Tracking of GPS L1 C/A signal started on channel 2 for satellite GPS PRN 32 (Block IIF)
+Tracking of GPS L1 C/A signal started on channel 5 for satellite GPS PRN 10 (Block IIF)
+Tracking of GPS L1 C/A signal started on channel 1 for satellite GPS PRN 13 (Block IIR)
+Loss of lock in channel 1!
+Tracking of GPS L1 C/A signal started on channel 1 for satellite GPS PRN 13 (Block IIR)
 Current receiver time: 1 min 22 s
+GPS L1 C/A tracking bit synchronization locked in channel 2 for satellite GPS PRN 32 (Block IIF)
 Current receiver time: 1 min 23 s
+Loss of lock in channel 3!
+Tracking of GPS L1 C/A signal started on channel 3 for satellite GPS PRN 18 (Block III)
 Current receiver time: 1 min 24 s
 Current receiver time: 1 min 25 s
 Current receiver time: 1 min 26 s
@@ -246,106 +252,105 @@ Current receiver time: 1 min 28 s
 Current receiver time: 1 min 29 s
 Current receiver time: 1 min 30 s
 Current receiver time: 1 min 31 s
-New GPS NAV message received in channel 5: subframe 5 from satellite GPS PRN 13 (Block IIR) with CN0=50.84 dB-Hz
+New GPS NAV message received in channel 2: subframe 5 from satellite GPS PRN 32 (Block IIF) with CN0=49.12 dB-Hz
 Current receiver time: 1 min 32 s
 Current receiver time: 1 min 33 s
 Current receiver time: 1 min 34 s
 Current receiver time: 1 min 35 s
-GPS L1 C/A tracking bit synchronization locked in channel 7 for satellite GPS PRN 05 (Block IIR-M)
-GPS L1 C/A tracking bit synchronization locked in channel 2 for satellite GPS PRN 28 (Block IIR)
+GPS L1 C/A tracking bit synchronization locked in channel 7 for satellite GPS PRN 28 (Block IIR)
+GPS L1 C/A tracking bit synchronization locked in channel 1 for satellite GPS PRN 13 (Block IIR)
 Current receiver time: 1 min 36 s
-GPS L1 C/A tracking bit synchronization locked in channel 1 for satellite GPS PRN 12 (Block IIR-M)
+GPS L1 C/A tracking bit synchronization locked in channel 6 for satellite GPS PRN 12 (Block IIR-M)
 Current receiver time: 1 min 37 s
-New GPS NAV message received in channel 5: subframe 1 from satellite GPS PRN 13 (Block IIR) with CN0=49.59 dB-Hz
-GPS L1 C/A tracking bit synchronization locked in channel 6 for satellite GPS PRN 10 (Block IIF)
-GPS L1 C/A tracking bit synchronization locked in channel 0 for satellite GPS PRN 20 (Block IIR)
-GPS L1 C/A tracking bit synchronization locked in channel 4 for satellite GPS PRN 32 (Block IIF)
-Loss of lock in channel 3!
-Tracking of GPS L1 C/A signal started on channel 3 for satellite GPS PRN 29 (Block IIR-M)
+New GPS NAV message received in channel 2: subframe 1 from satellite GPS PRN 32 (Block IIF) with CN0=50.53 dB-Hz
+GPS L1 C/A tracking bit synchronization locked in channel 3 for satellite GPS PRN 18 (Block III)
+GPS L1 C/A tracking bit synchronization locked in channel 0 for satellite GPS PRN 29 (Block IIR-M)
+GPS L1 C/A tracking bit synchronization locked in channel 5 for satellite GPS PRN 10 (Block IIF)
 Current receiver time: 1 min 38 s
 Current receiver time: 1 min 39 s
 Current receiver time: 1 min 40 s
 Current receiver time: 1 min 41 s
 Current receiver time: 1 min 42 s
+Loss of lock in channel 4!
+Tracking of GPS L1 C/A signal started on channel 4 for satellite GPS PRN 20 (Block IIR)
 Current receiver time: 1 min 43 s
-New GPS NAV message received in channel 5: subframe 2 from satellite GPS PRN 13 (Block IIR) with CN0=49.39 dB-Hz
-New GPS NAV message received in channel 2: subframe 2 from satellite GPS PRN 28 (Block IIR) with CN0=New GPS NAV message received in channel 1: subframe 2 from satellite GPS PRN 12 (Block IIR-M) with CN0=49.87 dB-Hz
-50.19 dB-Hz
-New GPS NAV message received in channel 7: subframe 2 from satellite GPS PRN 05 (Block IIR-M) with CN0=48.34 dB-Hz
-New GPS NAV message received in channel 0: subframe 2 from satellite GPS PRN 20 (Block IIR) with CN0=49.21 dB-Hz
-New GPS NAV message received in channel 4: subframe 2 from satellite GPS PRN 32 (Block IIF) with CN0=50.41 dB-Hz
-New GPS NAV message received in channel 6: subframe 2 from satellite GPS PRN 10 (Block IIF) with CN0=50.32 dB-Hz
+New GPS NAV message received in channel 7: subframe 2 from satellite GPS PRN 28 (Block IIR) with CN0=49.87 dB-Hz
+New GPS NAV message received in channel 5: subframe 2 from satellite GPS PRN 10 (Block IIF) with CN0=50.32 dB-Hz
+New GPS NAV message received in channel 3: subframe 2 from satellite GPS PRN 18 (Block III) with CN0=50.12 dB-Hz
+New GPS NAV message received in channel 1: subframe 2 from satellite GPS PRN 13 (Block IIR) with CN0=49.40 dB-Hz
+New GPS NAV message received in channel 0: subframe 2 from satellite GPS PRN 29 (Block IIR-M) with CN0=50.32 dB-Hz
+New GPS NAV message received in channel 2: subframe 2 from satellite GPS PRN 32 (Block IIF) with CN0=50.41 dB-Hz
+New GPS NAV message received in channel 6: subframe 2 from satellite GPS PRN 12 (Block IIR-M) with CN0=50.19 dB-Hz
 Current receiver time: 1 min 44 s
 Current receiver time: 1 min 45 s
 Current receiver time: 1 min 46 s
 Current receiver time: 1 min 47 s
 Current receiver time: 1 min 48 s
 Current receiver time: 1 min 49 s
-New GPS NAV message received in channel 7: subframe 3 from satellite GPS PRN 05 (Block IIR-M) with CN0=51.16 dB-Hz
-New GPS NAV message received in channel 2: subframe 3 from satellite GPS PRN 28 (Block IIR) with CN0=51.12 dB-Hz
-New GPS NAV message received in channel 1: subframe 3 from satellite GPS PRN 12 (Block IIR-M) with CN0=49.23 dB-Hz
-New GPS NAV message received in channel 0: subframe 3 from satellite GPS PRN 20 (Block IIR) with CN0=49.63 dB-Hz
-New GPS NAV message received in channel 5: subframe 3 from satellite GPS PRN 13 (Block IIR) with CN0=51.10 dB-Hz
-New GPS NAV message received in channel 6: subframe 3 from satellite GPS PRN 10 (Block IIF) with CN0=49.55 dB-Hz
-New GPS NAV message received in channel 4: subframe 3 from satellite GPS PRN 32 (Block IIF) with CN0=50.28 dB-Hz
-GPS L1 C/A tracking bit synchronization locked in channel 3 for satellite GPS PRN 29 (Block IIR-M)
+New GPS NAV message received in channel 3: subframe 3 from satellite GPS PRN 18 (Block III) with CN0=49.19 dB-Hz
+New GPS NAV message received in channel 1: subframe 3 from satellite GPS PRN 13 (Block IIR) with CN0=51.10 dB-Hz
+New GPS NAV message received in channel 6: subframe 3 from satellite GPS PRN 12 (Block IIR-M) with CN0=49.23 dB-Hz
+New GPS NAV message received in channel 2: subframe 3 from satellite GPS PRN 32 (Block IIF) with CN0=50.28 dB-Hz
+New GPS NAV message received in channel 5: subframe 3 from satellite GPS PRN 10 (Block IIF) with CN0=49.55 dB-Hz
+New GPS NAV message received in channel 7: subframe 3 from satellite GPS PRN 28 (Block IIR) with CN0=51.12 dB-Hz
+New GPS NAV message received in channel 0: subframe 3 from satellite GPS PRN 29 (Block IIR-M) with CN0=50.35 dB-Hz
 Current receiver time: 1 min 50 s
 Current receiver time: 1 min 51 s
 Current receiver time: 1 min 52 s
 Current receiver time: 1 min 53 s
 Current receiver time: 1 min 54 s
 Current receiver time: 1 min 55 s
-New GPS NAV message received in channel 7: subframe 4 from satellite GPS PRN 05 (Block IIR-M) with CN0=49.21 dB-Hz
-New GPS NAV message received in channel 5: subframe 4 from satellite GPS PRN 13 (Block IIR) with CN0=50.06 dB-Hz
-New GPS NAV message received in channel 6: subframe 4 from satellite GPS PRN 10 (Block IIF) with CN0=49.36 dB-Hz
-New GPS NAV message received in channel 4: subframe 4 from satellite GPS PRN 32 (Block IIF) with CN0=50.01 dB-Hz
-New GPS NAV message received in channel 2: subframe 4 from satellite GPS PRN 28 (Block IIR) with CN0=48.82 dB-Hz
-New GPS NAV message received in channel 3: subframe 4 from satellite GPS PRN 29 (Block IIR-M) with CN0=50.13 dB-Hz
-New GPS NAV message received in channel 1: subframe 4 from satellite GPS PRN 12 (Block IIR-M) with CN0=49.23 dB-Hz
-New GPS NAV message received in channel 0: subframe 4 from satellite GPS PRN 20 (Block IIR) with CN0=50.11 dB-Hz
+New GPS NAV message received in channel 3: subframe 4 from satellite GPS PRN 18 (Block III) with CN0=50.41 dB-Hz
+New GPS NAV message received in channel 5: subframe 4 from satellite GPS PRN 10 (Block IIF) with CN0=49.36 dB-Hz
+New GPS NAV message received in channel 2: subframe 4 from satellite GPS PRN 32 (Block IIF) with CN0=50.01 dB-Hz
+New GPS NAV message received in channel 1: subframe 4 from satellite GPS PRN 13 (Block IIR) with CN0=50.06 dB-Hz
+New GPS NAV message received in channel 6: subframe 4 from satellite GPS PRN 12 (Block IIR-M) with CN0=49.23 dB-Hz
+New GPS NAV message received in channel 7: subframe 4 from satellite GPS PRN 28 (Block IIR) with CN0=48.82 dB-Hz
+New GPS NAV message received in channel 0: subframe 4 from satellite GPS PRN 29 (Block IIR-M) with CN0=50.13 dB-Hz
+GPS L1 C/A tracking bit synchronization locked in channel 4 for satellite GPS PRN 20 (Block IIR)
 Current receiver time: 1 min 56 s
 Current receiver time: 1 min 57 s
 Current receiver time: 1 min 58 s
 Current receiver time: 1 min 59 s
 Current receiver time: 2 min 0 s
 Current receiver time: 2 min 1 s
-New GPS NAV message received in channel 5: subframe 5 from satellite GPS PRN 13 (Block IIR) with CN0=50.54 dB-Hz
-New GPS NAV message received in channel 2: subframe 5 from satellite GPS PRN 28 (Block IIR) with CN0=50.20 dB-Hz
-New GPS NAV message received in channel 7: subframe 5 from satellite GPS PRN 05 (Block IIR-M) with CN0=49.28 dB-Hz
-New GPS NAV message received in channel 1: subframe 5 from satellite GPS PRN 12 (Block IIR-M) with CN0=48.55 dB-Hz
-New GPS NAV message received in channel 0: subframe 5 from satellite GPS PRN 20 (Block IIR) with CN0=49.95 dB-Hz
-New GPS NAV message received in channel 6: subframe 5 from satellite GPS PRN 10 (Block IIF) with CN0=49.25 dB-Hz
-New GPS NAV message received in channel 3: subframe 5 from satellite GPS PRN 29 (Block IIR-M) with CN0=49.54 dB-Hz
-New GPS NAV message received in channel 4: subframe 5 from satellite GPS PRN 32 (Block IIF) with CN0=50.66 dB-Hz
+New GPS NAV message received in channel 5: subframe 5 from satellite GPS PRN 10 (Block IIF) with CN0=49.25 dB-Hz
+New GPS NAV message received in channel 1: subframe 5 from satellite GPS PRN 13 (Block IIR) with CN0=50.54 dB-Hz
+New GPS NAV message received in channel 3: subframe 5 from satellite GPS PRN 18 (Block III) with CN0=49.40 dB-Hz
+New GPS NAV message received in channel 7: subframe 5 from satellite GPS PRN 28 (Block IIR) with CN0=50.20 dB-Hz
+New GPS NAV message received in channel 6: subframe 5 from satellite GPS PRN 12 (Block IIR-M) with CN0=48.55 dB-Hz
+New GPS NAV message received in channel 0: subframe 5 from satellite GPS PRN 29 (Block IIR-M) with CN0=49.54 dB-Hz
+New GPS NAV message received in channel 2: subframe 5 from satellite GPS PRN 32 (Block IIF) with CN0=50.66 dB-Hz
+New GPS NAV message received in channel 4: subframe 5 from satellite GPS PRN 20 (Block IIR) with CN0=49.95 dB-Hz
 Current receiver time: 2 min 2 s
 Current receiver time: 2 min 3 s
 Current receiver time: 2 min 4 s
 Current receiver time: 2 min 5 s
 Current receiver time: 2 min 6 s
 Current receiver time: 2 min 7 s
-New GPS NAV message received in channel 7: subframe 1 from satellite GPS PRN 05 (Block IIR-M) with CN0=49.56 dB-Hz
-New GPS NAV message received in channel 5: subframe 1 from satellite GPS PRN 13 (Block IIR) with CN0=49.35 dB-Hz
-New GPS NAV message received in channel 4: subframe 1 from satellite GPS PRN 32 (Block IIF) with CN0=49.52 dB-Hz
-New GPS NAV message received in channel 2: subframe 1 from satellite GPS PRN 28 (Block IIR) with CN0=50.94 dB-Hz
+New GPS NAV message received in channel 1: subframe 1 from satellite GPS PRN 13 (Block IIR) with CN0=49.35 dB-Hz
+New GPS NAV message received in channel 3: subframe 1 from satellite GPS PRN 18 (Block III) with CN0=49.25 dB-Hz
+New GPS NAV message received in channel 5: subframe 1 from satellite GPS PRN 10 (Block IIF) with CN0=49.03 dB-Hz
+New GPS NAV message received in channel 2: subframe 1 from satellite GPS PRN 32 (Block IIF) with CN0=49.52 dB-Hz
+New GPS NAV message received in channel 6: subframe 1 from satellite GPS PRN 12 (Block IIR-M) with CN0=49.76 dB-Hz
+New GPS NAV message received in channel 7: subframe 1 from satellite GPS PRN 28 (Block IIR) with CN0=50.94 dB-Hz
+New GPS NAV message received in channel 0: subframe 1 from satellite GPS PRN 29 (Block IIR-M) with CN0=49.88 dB-Hz
 Satellite GPS PRN 28 (Block IIR) reports an unhealthy status, not used for navigation
-New GPS NAV message received in channel 3: subframe 1 from satellite GPS PRN 29 (Block IIR-M) with CN0=49.88 dB-Hz
-New GPS NAV message received in channel 0: subframe 1 from satellite GPS PRN 20 (Block IIR) with CN0=48.35 dB-Hz
-New GPS NAV message received in channel 1: subframe 1 from satellite GPS PRN 12 (Block IIR-M) with CN0=49.76 dB-Hz
-New GPS NAV message received in channel 6: subframe 1 from satellite GPS PRN 10 (Block IIF) with CN0=49.03 dB-Hz
+New GPS NAV message received in channel 4: subframe 1 from satellite GPS PRN 20 (Block IIR) with CN0=48.35 dB-Hz
 Current receiver time: 2 min 8 s
 Current receiver time: 2 min 9 s
 Current receiver time: 2 min 10 s
 Current receiver time: 2 min 11 s
 Current receiver time: 2 min 12 s
 Current receiver time: 2 min 13 s
-New GPS NAV message received in channel 5: subframe 2 from satellite GPS PRN 13 (Block IIR) with CN0=50.21 dB-Hz
-New GPS NAV message received in channel 0: subframe 2 from satellite GPS PRN 20 (Block IIR) with CN0=50.26 dB-Hz
-New GPS NAV message received in channel 6: subframe 2 from satellite GPS PRN 10 (Block IIF) with CN0=48.75 dB-Hz
-New GPS NAV message received in channel 4: subframe 2 from satellite GPS PRN 32 (Block IIF) with CN0=49.25 dB-Hz
-New GPS NAV message received in channel 7: subframe 2 from satellite GPS PRN 05 (Block IIR-M) with CN0=50.81 dB-Hz
-New GPS NAV message received in channel 3: subframe 2 from satellite GPS PRN 29 (Block IIR-M) with CN0=49.62 dB-Hz
-New GPS NAV message received in channel 2: subframe 2 from satellite GPS PRN 28 (Block IIR) with CN0=51.05 dB-Hz
-New GPS NAV message received in channel 1: subframe 2 from satellite GPS PRN 12 (Block IIR-M) with CN0=48.61 dB-Hz
+New GPS NAV message received in channel 3: subframe 2 from satellite GPS PRN 18 (Block III) with CN0=49.04 dB-Hz
+New GPS NAV message received in channel 1: subframe 2 from satellite GPS PRN 13 (Block IIR) with CN0=50.21 dB-Hz
+New GPS NAV message received in channel 6: subframe 2 from satellite GPS PRN 12 (Block IIR-M) with CN0=48.61 dB-Hz
+New GPS NAV message received in channel 4: subframe 2 from satellite GPS PRN 20 (Block IIR) with CN0=50.26 dB-Hz
+New GPS NAV message received in channel 2: subframe 2 from satellite GPS PRN 32 (Block IIF) with CN0=49.25 dB-Hz
+New GPS NAV message received in channel 7: subframe 2 from satellite GPS PRN 28 (Block IIR) with CN0=51.05 dB-Hz
+New GPS NAV message received in channel 0: subframe 2 from satellite GPS PRN 29 (Block IIR-M) with CN0=49.62 dB-Hz
+New GPS NAV message received in channel 5: subframe 2 from satellite GPS PRN 10 (Block IIF) with CN0=48.75 dB-Hz
 Satellite GPS PRN 28 (Block IIR) reports an unhealthy status, not used for navigation
 Current receiver time: 2 min 14 s
 Current receiver time: 2 min 15 s
@@ -353,14 +358,14 @@ Current receiver time: 2 min 16 s
 Current receiver time: 2 min 17 s
 Current receiver time: 2 min 18 s
 Current receiver time: 2 min 19 s
-New GPS NAV message received in channel 5: subframe 3 from satellite GPS PRN 13 (Block IIR) with CN0=50.47 dB-Hz
-New GPS NAV message received in channel 6: subframe 3 from satellite GPS PRN 10 (Block IIF) with CN0=49.14 dB-Hz
-New GPS NAV message received in channel 1: subframe 3 from satellite GPS PRN 12 (Block IIR-M) with CN0=49.17 dB-Hz
-New GPS NAV message received in channel 2: subframe 3 from satellite GPS PRN 28 (Block IIR) with CN0=49.57 dB-Hz
-New GPS NAV message received in channel 0: subframe 3 from satellite GPS PRN 20 (Block IIR) with CN0=50.59 dB-Hz
-New GPS NAV message received in channel 3: subframe 3 from satellite GPS PRN 29 (Block IIR-M) with CN0=50.72 dB-Hz
-New GPS NAV message received in channel 4: subframe 3 from satellite GPS PRN 32 (Block IIF) with CN0=49.22 dB-Hz
-New GPS NAV message received in channel 7: subframe 3 from satellite GPS PRN 05 (Block IIR-M) with CN0=49.97 dB-Hz
+New GPS NAV message received in channel 3: subframe 3 from satellite GPS PRN 18 (Block III) with CN0=49.61 dB-Hz
+New GPS NAV message received in channel 6: subframe 3 from satellite GPS PRN 12 (Block IIR-M) with CN0=49.17 dB-Hz
+New GPS NAV message received in channel 4: subframe 3 from satellite GPS PRN 20 (Block IIR) with CN0=50.59 dB-Hz
+New GPS NAV message received in channel 0: subframe 3 from satellite GPS PRN 29 (Block IIR-M) with CN0=50.72 dB-Hz
+New GPS NAV message received in channel 5: subframe 3 from satellite GPS PRN 10 (Block IIF) with CN0=49.14 dB-Hz
+New GPS NAV message received in channel 1: subframe 3 from satellite GPS PRN 13 (Block IIR) with CN0=50.47 dB-Hz
+New GPS NAV message received in channel 2: subframe 3 from satellite GPS PRN 32 (Block IIF) with CN0=49.22 dB-Hz
+New GPS NAV message received in channel 7: subframe 3 from satellite GPS PRN 28 (Block IIR) with CN0=49.57 dB-Hz
 Satellite GPS PRN 28 (Block IIR) reports an unhealthy status, not used for navigation
 Current receiver time: 2 min 20 s
 Current receiver time: 2 min 21 s
@@ -368,14 +373,14 @@ Current receiver time: 2 min 22 s
 Current receiver time: 2 min 23 s
 Current receiver time: 2 min 24 s
 Current receiver time: 2 min 25 s
-New GPS NAV message received in channel 7: subframe 4 from satellite GPS PRN 05 (Block IIR-M) with CN0=51.07 dB-Hz
-New GPS NAV message received in channel 6: subframe 4 from satellite GPS PRN 10 (Block IIF) with CN0=50.50 dB-Hz
-New GPS NAV message received in channel 2: subframe 4 from satellite GPS PRN 28 (Block IIR) with CN0=51.05 dB-Hz
-New GPS NAV message received in channel 5: subframe 4 from satellite GPS PRN 13 (Block IIR) with CN0=51.17 dB-Hz
-New GPS NAV message received in channel 4: subframe 4 from satellite GPS PRN 32 (Block IIF) with CN0=50.16 dB-Hz
-New GPS NAV message received in channel 1: subframe 4 from satellite GPS PRN 12 (Block IIR-M) with CN0=50.17 dB-Hz
-New GPS NAV message received in channel 3: subframe 4 from satellite GPS PRN 29 (Block IIR-M) with CN0=51.64 dB-Hz
-New GPS NAV message received in channel 0: subframe 4 from satellite GPS PRN 20 (Block IIR) with CN0=50.17 dB-Hz
+New GPS NAV message received in channel 3: subframe 4 from satellite GPS PRN 18 (Block III) with CN0=50.59 dB-Hz
+New GPS NAV message received in channel 1: subframe 4 from satellite GPS PRN 13 (Block IIR) with CN0=51.17 dB-Hz
+New GPS NAV message received in channel 5: subframe 4 from satellite GPS PRN 10 (Block IIF) with CN0=50.50 dB-Hz
+New GPS NAV message received in channel 6: subframe 4 from satellite GPS PRN 12 (Block IIR-M) with CN0=50.17 dB-Hz
+New GPS NAV message received in channel 4: subframe 4 from satellite GPS PRN 20 (Block IIR) with CN0=50.17 dB-Hz
+New GPS NAV message received in channel 0: subframe 4 from satellite GPS PRN 29 (Block IIR-M) with CN0=51.64 dB-Hz
+New GPS NAV message received in channel 7: subframe 4 from satellite GPS PRN 28 (Block IIR) with CN0=51.05 dB-Hz
+New GPS NAV message received in channel 2: subframe 4 from satellite GPS PRN 32 (Block IIF) with CN0=50.16 dB-Hz
 Current receiver time: 2 min 26 s
 Current receiver time: 2 min 27 s
 Current receiver time: 2 min 28 s
@@ -383,5 +388,5 @@ Current receiver time: 2 min 29 s
 Current receiver time: 2 min 30 s
 Stopping GNSS-SDR, please wait!
 Generating .mat file for /work/work/rx_jamspoof/pvt.dat
-Total GNSS-SDR run time: 14.42 [seconds]
+Total GNSS-SDR run time: 20.218460 [seconds]
 GNSS-SDR program ended.

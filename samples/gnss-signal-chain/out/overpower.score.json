@@ -1,712 +1,104 @@
-{
+{"metrics": {"epochs": 101, "fix_epochs": 53, "alert_epochs": 68, "false_alert_epochs": 0, "false_alarm_epochs": 0, "attack_t": 75.0, "first_alert_t": 81.0, "time_to_detect_s": 6.0, "first_by_detector": {"agc_change": 75.0, "lost_fix": 81.0, "clock_drift": 83.0, "cn0_drop": 85.0, "position_jump": 92.0}, "silent_instant": {"epochs": 6, "from_t": 75.0, "to_t": 80.0}, "silent_latched": {"epochs": 6, "from_t": 75.0, "to_t": 80.0}, "silent_latched_after_first_alert": 0},
  "epochs": [
-  {
-   "t": 49.0,
-   "n_sv": 4,
-   "mean_cn0": 45.1,
-   "sd_cn0": 1.4,
-   "herr_m": 14.9,
-   "clk_bias_ns": 121.6,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 50.0,
-   "n_sv": 4,
-   "mean_cn0": 45.1,
-   "sd_cn0": 1.4,
-   "herr_m": 7.2,
-   "clk_bias_ns": -75.4,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 51.0,
-   "n_sv": 4,
-   "mean_cn0": 44.9,
-   "sd_cn0": 1.1,
-   "herr_m": 11.8,
-   "clk_bias_ns": -132.1,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 52.0,
-   "n_sv": 4,
-   "mean_cn0": 45.0,
-   "sd_cn0": 1.2,
-   "herr_m": 0.8,
-   "clk_bias_ns": -46.9,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 53.0,
-   "n_sv": 4,
-   "mean_cn0": 44.9,
-   "sd_cn0": 1.4,
-   "herr_m": 15.7,
-   "clk_bias_ns": -124.9,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 54.0,
-   "n_sv": 4,
-   "mean_cn0": 45.2,
-   "sd_cn0": 1.2,
-   "herr_m": 8.2,
-   "clk_bias_ns": -85.3,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 55.0,
-   "n_sv": 4,
-   "mean_cn0": 45.0,
-   "sd_cn0": 1.2,
-   "herr_m": 2.0,
-   "clk_bias_ns": 15.0,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 56.0,
-   "n_sv": 4,
-   "mean_cn0": 45.0,
-   "sd_cn0": 1.2,
-   "herr_m": 8.7,
-   "clk_bias_ns": 58.3,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 57.0,
-   "n_sv": 4,
-   "mean_cn0": 45.1,
-   "sd_cn0": 1.2,
-   "herr_m": 7.1,
-   "clk_bias_ns": 26.6,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 58.0,
-   "n_sv": 4,
-   "mean_cn0": 44.8,
-   "sd_cn0": 1.3,
-   "herr_m": 8.4,
-   "clk_bias_ns": -75.2,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 59.0,
-   "n_sv": 4,
-   "mean_cn0": 45.0,
-   "sd_cn0": 1.4,
-   "herr_m": 6.1,
-   "clk_bias_ns": -97.4,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 60.0,
-   "n_sv": 4,
-   "mean_cn0": 45.1,
-   "sd_cn0": 1.3,
-   "herr_m": 2.6,
-   "clk_bias_ns": -12.7,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 61.0,
-   "n_sv": 4,
-   "mean_cn0": 45.0,
-   "sd_cn0": 1.1,
-   "herr_m": 12.6,
-   "clk_bias_ns": -175.5,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 62.0,
-   "n_sv": 4,
-   "mean_cn0": 45.1,
-   "sd_cn0": 1.2,
-   "herr_m": 1.9,
-   "clk_bias_ns": -11.6,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 63.0,
-   "n_sv": 4,
-   "mean_cn0": 45.1,
-   "sd_cn0": 1.3,
-   "herr_m": 8.3,
-   "clk_bias_ns": -128.0,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 64.0,
-   "n_sv": 4,
-   "mean_cn0": 45.0,
-   "sd_cn0": 1.2,
-   "herr_m": 4.8,
-   "clk_bias_ns": 22.5,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 65.0,
-   "n_sv": 4,
-   "mean_cn0": 45.2,
-   "sd_cn0": 1.3,
-   "herr_m": 13.1,
-   "clk_bias_ns": 105.5,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 66.0,
-   "n_sv": 4,
-   "mean_cn0": 45.2,
-   "sd_cn0": 1.1,
-   "herr_m": 7.4,
-   "clk_bias_ns": -57.9,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 67.0,
-   "n_sv": 4,
-   "mean_cn0": 45.2,
-   "sd_cn0": 1.2,
-   "herr_m": 8.1,
-   "clk_bias_ns": 47.0,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 68.0,
-   "n_sv": 4,
-   "mean_cn0": 45.1,
-   "sd_cn0": 1.1,
-   "herr_m": 4.5,
-   "clk_bias_ns": 82.7,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 69.0,
-   "n_sv": 4,
-   "mean_cn0": 45.2,
-   "sd_cn0": 1.3,
-   "herr_m": 0.7,
-   "clk_bias_ns": -0.7,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 70.0,
-   "n_sv": 4,
-   "mean_cn0": 45.1,
-   "sd_cn0": 1.2,
-   "herr_m": 21.8,
-   "clk_bias_ns": -187.5,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 71.0,
-   "n_sv": 4,
-   "mean_cn0": 45.0,
-   "sd_cn0": 1.3,
-   "herr_m": 19.7,
-   "clk_bias_ns": -181.5,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 72.0,
-   "n_sv": 5,
-   "mean_cn0": 43.8,
-   "sd_cn0": 2.7,
-   "herr_m": 11.4,
-   "clk_bias_ns": -88.7,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 73.0,
-   "n_sv": 5,
-   "mean_cn0": 44.0,
-   "sd_cn0": 2.6,
-   "herr_m": 7.4,
-   "clk_bias_ns": -73.5,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 74.0,
-   "n_sv": 5,
-   "mean_cn0": 43.8,
-   "sd_cn0": 2.5,
-   "herr_m": 3.0,
-   "clk_bias_ns": -26.7,
-   "jam_score": 0,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": []
-  },
-  {
-   "t": 75.0,
-   "n_sv": 5,
-   "mean_cn0": 43.9,
-   "sd_cn0": 2.7,
-   "herr_m": 6.1,
-   "clk_bias_ns": -40.4,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +174% vs baseline"
-   ]
-  },
-  {
-   "t": 76.0,
-   "n_sv": 5,
-   "mean_cn0": 39.4,
-   "sd_cn0": 2.5,
-   "herr_m": 10.7,
-   "clk_bias_ns": 15.0,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +173% vs baseline"
-   ]
-  },
-  {
-   "t": 77.0,
-   "n_sv": 5,
-   "mean_cn0": 38.3,
-   "sd_cn0": 2.5,
-   "herr_m": 6.5,
-   "clk_bias_ns": 64.2,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +174% vs baseline"
-   ]
-  },
-  {
-   "t": 78.0,
-   "n_sv": 5,
-   "mean_cn0": 38.3,
-   "sd_cn0": 2.8,
-   "herr_m": 15.4,
-   "clk_bias_ns": -87.3,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +173% vs baseline"
-   ]
-  },
-  {
-   "t": 79.0,
-   "n_sv": 5,
-   "mean_cn0": 38.8,
-   "sd_cn0": 2.7,
-   "herr_m": 4.4,
-   "clk_bias_ns": -95.7,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +174% vs baseline"
-   ]
-  },
-  {
-   "t": 80.0,
-   "n_sv": 5,
-   "mean_cn0": 38.5,
-   "sd_cn0": 2.9,
-   "herr_m": 8.8,
-   "clk_bias_ns": -170.4,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +173% vs baseline"
-   ]
-  },
-  {
-   "t": 81.0,
-   "n_sv": 5,
-   "mean_cn0": 38.3,
-   "sd_cn0": 2.9,
-   "herr_m": 9.5,
-   "clk_bias_ns": -59.5,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +174% vs baseline"
-   ]
-  },
-  {
-   "t": 82.0,
-   "n_sv": 5,
-   "mean_cn0": 38.3,
-   "sd_cn0": 3.2,
-   "herr_m": 6.9,
-   "clk_bias_ns": 53.4,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +173% vs baseline"
-   ]
-  },
-  {
-   "t": 83.0,
-   "n_sv": 4,
-   "mean_cn0": 39.2,
-   "sd_cn0": 1.9,
-   "herr_m": 2.3,
-   "clk_bias_ns": 25.0,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +174% vs baseline"
-   ]
-  },
-  {
-   "t": 84.0,
-   "n_sv": 4,
-   "mean_cn0": 39.1,
-   "sd_cn0": 2.0,
-   "herr_m": 33.8,
-   "clk_bias_ns": 286.7,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +173% vs baseline"
-   ]
-  },
-  {
-   "t": 85.0,
-   "n_sv": 4,
-   "mean_cn0": 39.0,
-   "sd_cn0": 1.5,
-   "herr_m": 9.1,
-   "clk_bias_ns": 110.2,
-   "jam_score": 0.8,
-   "spoof_score": 0,
-   "verdict": "jamming",
-   "reasons": [
-    "C/N0 drop >= 6 dB or lost on 4/5 SVs",
-    "AGC +173% vs baseline"
-   ]
-  },
-  {
-   "t": 86.0,
-   "n_sv": 4,
-   "mean_cn0": 39.7,
-   "sd_cn0": 1.5,
-   "herr_m": 13.0,
-   "clk_bias_ns": -115.4,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +173% vs baseline"
-   ]
-  },
-  {
-   "t": 87.0,
-   "n_sv": 4,
-   "mean_cn0": 39.6,
-   "sd_cn0": 1.9,
-   "herr_m": 6.2,
-   "clk_bias_ns": -149.1,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +174% vs baseline"
-   ]
-  },
-  {
-   "t": 88.0,
-   "n_sv": 4,
-   "mean_cn0": 39.7,
-   "sd_cn0": 1.9,
-   "herr_m": 13.2,
-   "clk_bias_ns": 120.9,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +174% vs baseline"
-   ]
-  },
-  {
-   "t": 89.0,
-   "n_sv": 4,
-   "mean_cn0": 39.8,
-   "sd_cn0": 1.5,
-   "herr_m": 21.4,
-   "clk_bias_ns": 147.1,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +174% vs baseline"
-   ]
-  },
-  {
-   "t": 90.0,
-   "n_sv": 4,
-   "mean_cn0": 40.0,
-   "sd_cn0": 1.5,
-   "herr_m": 12.4,
-   "clk_bias_ns": 29.1,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +173% vs baseline"
-   ]
-  },
-  {
-   "t": 91.0,
-   "n_sv": 4,
-   "mean_cn0": 39.7,
-   "sd_cn0": 1.6,
-   "herr_m": 18.7,
-   "clk_bias_ns": -173.0,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +174% vs baseline"
-   ]
-  },
-  {
-   "t": 92.0,
-   "n_sv": 4,
-   "mean_cn0": 40.0,
-   "sd_cn0": 1.8,
-   "herr_m": 32.0,
-   "clk_bias_ns": 257.5,
-   "jam_score": 0.3,
-   "spoof_score": 0.35,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +174% vs baseline",
-    "implied speed 50 m/s"
-   ]
-  },
-  {
-   "t": 93.0,
-   "n_sv": 4,
-   "mean_cn0": 40.1,
-   "sd_cn0": 2.4,
-   "herr_m": 13.9,
-   "clk_bias_ns": 84.6,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +173% vs baseline"
-   ]
-  },
-  {
-   "t": 94.0,
-   "n_sv": 4,
-   "mean_cn0": 39.5,
-   "sd_cn0": 1.9,
-   "herr_m": 7.3,
-   "clk_bias_ns": 7.7,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +174% vs baseline"
-   ]
-  },
-  {
-   "t": 95.0,
-   "n_sv": 4,
-   "mean_cn0": 39.5,
-   "sd_cn0": 1.7,
-   "herr_m": 33.2,
-   "clk_bias_ns": 303.2,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +174% vs baseline"
-   ]
-  },
-  {
-   "t": 96.0,
-   "n_sv": 4,
-   "mean_cn0": 39.6,
-   "sd_cn0": 2.4,
-   "herr_m": 32.7,
-   "clk_bias_ns": 242.7,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +174% vs baseline"
-   ]
-  },
-  {
-   "t": 97.0,
-   "n_sv": 4,
-   "mean_cn0": 39.3,
-   "sd_cn0": 1.6,
-   "herr_m": 3.5,
-   "clk_bias_ns": -80.7,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +174% vs baseline"
-   ]
-  },
-  {
-   "t": 98.0,
-   "n_sv": 4,
-   "mean_cn0": 39.8,
-   "sd_cn0": 1.8,
-   "herr_m": 25.6,
-   "clk_bias_ns": 313.0,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +173% vs baseline"
-   ]
-  },
-  {
-   "t": 99.0,
-   "n_sv": 4,
-   "mean_cn0": 40.0,
-   "sd_cn0": 1.9,
-   "herr_m": 8.2,
-   "clk_bias_ns": -126.7,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +173% vs baseline"
-   ]
-  },
-  {
-   "t": 100.0,
-   "n_sv": 4,
-   "mean_cn0": 39.6,
-   "sd_cn0": 1.8,
-   "herr_m": 21.3,
-   "clk_bias_ns": 161.6,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +174% vs baseline"
-   ]
-  },
-  {
-   "t": 101.0,
-   "n_sv": 4,
-   "mean_cn0": 39.9,
-   "sd_cn0": 1.8,
-   "herr_m": 17.0,
-   "clk_bias_ns": 131.5,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +174% vs baseline"
-   ]
-  },
-  {
-   "t": 102.0,
-   "n_sv": 4,
-   "mean_cn0": 39.3,
-   "sd_cn0": 1.9,
-   "herr_m": 7.9,
-   "clk_bias_ns": 34.6,
-   "jam_score": 0.3,
-   "spoof_score": 0,
-   "verdict": "clean",
-   "reasons": [
-    "AGC +173% vs baseline"
-   ]
-  }
- ],
- "first_alert_t": 85.0,
- "alert_epochs": 1
-}
+{"t": 49.0, "fix": true, "n_sv": 7, "mean_cn0": 42.7, "sd_cn0": 3.0, "herr_m": 1.2, "clk_bias_ns": -38.7, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 50.0, "fix": true, "n_sv": 7, "mean_cn0": 42.7, "sd_cn0": 3.0, "herr_m": 2.8, "clk_bias_ns": -33.9, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 51.0, "fix": true, "n_sv": 7, "mean_cn0": 42.7, "sd_cn0": 2.7, "herr_m": 3.6, "clk_bias_ns": -30.9, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 52.0, "fix": true, "n_sv": 7, "mean_cn0": 42.6, "sd_cn0": 3.0, "herr_m": 4.3, "clk_bias_ns": -21.4, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 53.0, "fix": true, "n_sv": 7, "mean_cn0": 42.5, "sd_cn0": 2.9, "herr_m": 3.9, "clk_bias_ns": -57.0, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 54.0, "fix": true, "n_sv": 7, "mean_cn0": 42.7, "sd_cn0": 3.0, "herr_m": 2.1, "clk_bias_ns": -25.1, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 55.0, "fix": true, "n_sv": 7, "mean_cn0": 42.7, "sd_cn0": 2.8, "herr_m": 3.3, "clk_bias_ns": -67.2, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 56.0, "fix": true, "n_sv": 7, "mean_cn0": 42.6, "sd_cn0": 3.0, "herr_m": 1.4, "clk_bias_ns": -35.7, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 57.0, "fix": true, "n_sv": 7, "mean_cn0": 42.6, "sd_cn0": 3.0, "herr_m": 2.7, "clk_bias_ns": -37.6, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 58.0, "fix": true, "n_sv": 7, "mean_cn0": 42.5, "sd_cn0": 2.8, "herr_m": 2.4, "clk_bias_ns": -35.7, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 59.0, "fix": true, "n_sv": 7, "mean_cn0": 42.6, "sd_cn0": 3.0, "herr_m": 2.9, "clk_bias_ns": -28.7, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 60.0, "fix": true, "n_sv": 7, "mean_cn0": 42.7, "sd_cn0": 3.0, "herr_m": 3.7, "clk_bias_ns": -40.2, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 61.0, "fix": true, "n_sv": 7, "mean_cn0": 42.5, "sd_cn0": 3.0, "herr_m": 3.5, "clk_bias_ns": -9.3, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 62.0, "fix": true, "n_sv": 7, "mean_cn0": 42.6, "sd_cn0": 3.1, "herr_m": 4.6, "clk_bias_ns": -48.5, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 63.0, "fix": true, "n_sv": 7, "mean_cn0": 42.6, "sd_cn0": 3.0, "herr_m": 4.8, "clk_bias_ns": -28.1, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 64.0, "fix": true, "n_sv": 7, "mean_cn0": 42.6, "sd_cn0": 2.9, "herr_m": 3.6, "clk_bias_ns": -37.9, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 65.0, "fix": true, "n_sv": 7, "mean_cn0": 42.8, "sd_cn0": 2.9, "herr_m": 1.4, "clk_bias_ns": -40.1, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 66.0, "fix": true, "n_sv": 7, "mean_cn0": 42.8, "sd_cn0": 2.9, "herr_m": 1.9, "clk_bias_ns": -22.6, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 67.0, "fix": true, "n_sv": 7, "mean_cn0": 42.8, "sd_cn0": 2.9, "herr_m": 2.2, "clk_bias_ns": -35.3, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 68.0, "fix": true, "n_sv": 7, "mean_cn0": 42.6, "sd_cn0": 3.0, "herr_m": 6.9, "clk_bias_ns": -69.1, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 69.0, "fix": true, "n_sv": 7, "mean_cn0": 42.8, "sd_cn0": 3.0, "herr_m": 1.2, "clk_bias_ns": -34.3, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 70.0, "fix": true, "n_sv": 7, "mean_cn0": 42.6, "sd_cn0": 3.1, "herr_m": 4.7, "clk_bias_ns": -42.4, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 71.0, "fix": true, "n_sv": 7, "mean_cn0": 42.6, "sd_cn0": 3.0, "herr_m": 2.4, "clk_bias_ns": -33.2, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 72.0, "fix": true, "n_sv": 7, "mean_cn0": 42.5, "sd_cn0": 3.0, "herr_m": 2.8, "clk_bias_ns": -22.8, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 73.0, "fix": true, "n_sv": 7, "mean_cn0": 42.6, "sd_cn0": 3.1, "herr_m": 3.0, "clk_bias_ns": -29.3, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 74.0, "fix": true, "n_sv": 7, "mean_cn0": 42.5, "sd_cn0": 3.0, "herr_m": 5.0, "clk_bias_ns": -34.8, "jam_score": 0, "spoof_score": 0, "verdict": "clean", "detectors": [], "explain": [], "alarm": false, "alarm_since_t": null},
+{"t": 75.0, "fix": true, "n_sv": 7, "mean_cn0": 42.6, "sd_cn0": 3.1, "herr_m": 7.4, "clk_bias_ns": -65.3, "jam_score": 0.3, "spoof_score": 0, "verdict": "clean", "detectors": ["agc_change"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.97, "baseline": 157.5}], "alarm": false, "alarm_since_t": null},
+{"t": 76.0, "fix": true, "n_sv": 7, "mean_cn0": 38.3, "sd_cn0": 2.8, "herr_m": 7.8, "clk_bias_ns": -82.1, "jam_score": 0.3, "spoof_score": 0, "verdict": "clean", "detectors": ["agc_change"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.6, "baseline": 157.5}], "alarm": false, "alarm_since_t": null},
+{"t": 77.0, "fix": true, "n_sv": 7, "mean_cn0": 37.4, "sd_cn0": 2.6, "herr_m": 9.4, "clk_bias_ns": 41.5, "jam_score": 0.3, "spoof_score": 0, "verdict": "clean", "detectors": ["agc_change"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.74, "baseline": 157.5}], "alarm": false, "alarm_since_t": null},
+{"t": 78.0, "fix": true, "n_sv": 7, "mean_cn0": 37.4, "sd_cn0": 2.7, "herr_m": 9.9, "clk_bias_ns": -81.6, "jam_score": 0.3, "spoof_score": 0, "verdict": "clean", "detectors": ["agc_change"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.56, "baseline": 157.5}], "alarm": false, "alarm_since_t": null},
+{"t": 79.0, "fix": true, "n_sv": 7, "mean_cn0": 37.5, "sd_cn0": 3.1, "herr_m": 2.0, "clk_bias_ns": -67.7, "jam_score": 0.3, "spoof_score": 0, "verdict": "clean", "detectors": ["agc_change"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 431.22, "baseline": 157.5}], "alarm": false, "alarm_since_t": null},
+{"t": 80.0, "fix": true, "n_sv": 7, "mean_cn0": 37.3, "sd_cn0": 3.1, "herr_m": 6.5, "clk_bias_ns": -101.4, "jam_score": 0.3, "spoof_score": 0, "verdict": "clean", "detectors": ["agc_change"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.45, "baseline": 157.5}], "alarm": false, "alarm_since_t": null},
+{"t": 81.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 431.0, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 1 s (last fix t=80, C/N0 not reported)", "value": 1.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 1.0, "last_fix_t": 80.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 82.0, "fix": true, "n_sv": 5, "mean_cn0": 38.4, "sd_cn0": 3.1, "herr_m": 12.9, "clk_bias_ns": -160.2, "jam_score": 0.3, "spoof_score": 0, "verdict": "clean", "detectors": ["agc_change"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.46, "baseline": 157.5}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 83.0, "fix": true, "n_sv": 4, "mean_cn0": 39.2, "sd_cn0": 1.9, "herr_m": 2.3, "clk_bias_ns": 25.0, "jam_score": 0.3, "spoof_score": 0.5, "verdict": "spoofing", "detectors": ["agc_change", "clock_drift"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.98, "baseline": 157.5}, {"detector": "clock_drift", "family": "spoofing", "message": "clock rate +185.1 ns/s vs learned -4.1 ns/s (+9.4 sigma)", "value": 189.2, "threshold": 10.11, "unit": "ns/s", "rate_ns_s": 185.1, "expected_ns_s": -4.1, "sigma_ns_s": 20.2, "cusum": 8.9}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 84.0, "fix": true, "n_sv": 4, "mean_cn0": 39.1, "sd_cn0": 2.0, "herr_m": 34.8, "clk_bias_ns": 298.0, "jam_score": 0.3, "spoof_score": 0.5, "verdict": "spoofing", "detectors": ["agc_change", "clock_drift"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.66, "baseline": 157.5}, {"detector": "clock_drift", "family": "spoofing", "message": "clock rate +273.0 ns/s vs learned -4.1 ns/s (+13.7 sigma)", "value": 277.1, "threshold": 10.11, "unit": "ns/s", "rate_ns_s": 273.0, "expected_ns_s": -4.1, "sigma_ns_s": 20.2, "cusum": 16.0}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 85.0, "fix": true, "n_sv": 4, "mean_cn0": 39.0, "sd_cn0": 1.5, "herr_m": 9.0, "clk_bias_ns": 109.4, "jam_score": 0.8, "spoof_score": 0.5, "verdict": "jamming+spoofing", "detectors": ["cn0_drop", "agc_change", "clock_drift"], "explain": [{"detector": "cn0_drop", "family": "jamming", "message": "C/N0 drop >= 6 dB or lost on 6/7 SVs", "value": 0.86, "threshold": 0.75, "unit": "fraction of SVs", "dropped_or_lost": 6, "baseline_svs": 7}, {"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.5, "baseline": 157.5}, {"detector": "clock_drift", "family": "spoofing", "message": "clock rate -188.6 ns/s vs learned -4.1 ns/s (-9.1 sigma)", "value": -184.52, "threshold": 10.11, "unit": "ns/s", "rate_ns_s": -188.6, "expected_ns_s": -4.1, "sigma_ns_s": 20.2, "cusum": 14.3}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 86.0, "fix": true, "n_sv": 4, "mean_cn0": 39.7, "sd_cn0": 1.5, "herr_m": 13.3, "clk_bias_ns": -118.9, "jam_score": 0.3, "spoof_score": 0.5, "verdict": "spoofing", "detectors": ["agc_change", "clock_drift"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.59, "baseline": 157.5}, {"detector": "clock_drift", "family": "spoofing", "message": "clock rate -228.3 ns/s vs learned -4.1 ns/s (-11.1 sigma)", "value": -224.18, "threshold": 10.11, "unit": "ns/s", "rate_ns_s": -228.3, "expected_ns_s": -4.1, "sigma_ns_s": 20.2, "cusum": 16.0}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 87.0, "fix": true, "n_sv": 4, "mean_cn0": 39.6, "sd_cn0": 1.9, "herr_m": 6.1, "clk_bias_ns": -148.1, "jam_score": 0.3, "spoof_score": 0.5, "verdict": "spoofing", "detectors": ["agc_change", "clock_drift"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.97, "baseline": 157.5}, {"detector": "clock_drift", "family": "spoofing", "message": "clock rate -29.2 ns/s vs learned -4.1 ns/s (-1.2 sigma)", "value": -25.15, "threshold": 10.11, "unit": "ns/s", "rate_ns_s": -29.2, "expected_ns_s": -4.1, "sigma_ns_s": 20.2, "cusum": 16.0}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 88.0, "fix": true, "n_sv": 4, "mean_cn0": 39.7, "sd_cn0": 1.9, "herr_m": 13.2, "clk_bias_ns": 120.3, "jam_score": 0.3, "spoof_score": 0.5, "verdict": "spoofing", "detectors": ["agc_change", "clock_drift"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.74, "baseline": 157.5}, {"detector": "clock_drift", "family": "spoofing", "message": "clock rate +268.4 ns/s vs learned -4.1 ns/s (+13.5 sigma)", "value": 272.49, "threshold": 10.12, "unit": "ns/s", "rate_ns_s": 268.4, "expected_ns_s": -4.1, "sigma_ns_s": 20.2, "cusum": 16.0}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 89.0, "fix": true, "n_sv": 4, "mean_cn0": 39.8, "sd_cn0": 1.5, "herr_m": 21.1, "clk_bias_ns": 145.6, "jam_score": 0.3, "spoof_score": 0.5, "verdict": "spoofing", "detectors": ["agc_change", "clock_drift"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.75, "baseline": 157.5}, {"detector": "clock_drift", "family": "spoofing", "message": "clock rate +25.3 ns/s vs learned -4.1 ns/s (+1.4 sigma)", "value": 29.34, "threshold": 10.12, "unit": "ns/s", "rate_ns_s": 25.3, "expected_ns_s": -4.1, "sigma_ns_s": 20.2, "cusum": 16.0}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 90.0, "fix": true, "n_sv": 4, "mean_cn0": 39.9, "sd_cn0": 1.5, "herr_m": 12.3, "clk_bias_ns": 31.7, "jam_score": 0.3, "spoof_score": 0.5, "verdict": "spoofing", "detectors": ["agc_change", "clock_drift"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.48, "baseline": 157.5}, {"detector": "clock_drift", "family": "spoofing", "message": "clock rate -113.9 ns/s vs learned -4.1 ns/s (-5.4 sigma)", "value": -109.78, "threshold": 10.12, "unit": "ns/s", "rate_ns_s": -113.9, "expected_ns_s": -4.1, "sigma_ns_s": 20.2, "cusum": 16.0}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 91.0, "fix": true, "n_sv": 4, "mean_cn0": 39.7, "sd_cn0": 1.6, "herr_m": 18.9, "clk_bias_ns": -175.3, "jam_score": 0.3, "spoof_score": 0.5, "verdict": "spoofing", "detectors": ["agc_change", "clock_drift"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.71, "baseline": 157.5}, {"detector": "clock_drift", "family": "spoofing", "message": "clock rate -207.0 ns/s vs learned -4.1 ns/s (-10.0 sigma)", "value": -202.93, "threshold": 10.13, "unit": "ns/s", "rate_ns_s": -207.0, "expected_ns_s": -4.1, "sigma_ns_s": 20.3, "cusum": 16.0}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 92.0, "fix": true, "n_sv": 4, "mean_cn0": 40.0, "sd_cn0": 1.8, "herr_m": 32.1, "clk_bias_ns": 258.9, "jam_score": 0.3, "spoof_score": 0.85, "verdict": "spoofing", "detectors": ["agc_change", "position_jump", "clock_drift"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.94, "baseline": 157.5}, {"detector": "position_jump", "family": "spoofing", "message": "implied speed 51 m/s", "value": 50.76, "threshold": 50.0, "unit": "m/s"}, {"detector": "clock_drift", "family": "spoofing", "message": "clock rate +434.2 ns/s vs learned -4.1 ns/s (+21.6 sigma)", "value": 438.24, "threshold": 10.13, "unit": "ns/s", "rate_ns_s": 434.2, "expected_ns_s": -4.1, "sigma_ns_s": 20.3, "cusum": 16.0}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 93.0, "fix": true, "n_sv": 4, "mean_cn0": 40.1, "sd_cn0": 2.4, "herr_m": 13.8, "clk_bias_ns": 83.6, "jam_score": 0.3, "spoof_score": 0.5, "verdict": "spoofing", "detectors": ["agc_change", "clock_drift"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.61, "baseline": 157.5}, {"detector": "clock_drift", "family": "spoofing", "message": "clock rate -175.3 ns/s vs learned -4.1 ns/s (-8.4 sigma)", "value": -171.25, "threshold": 10.13, "unit": "ns/s", "rate_ns_s": -175.3, "expected_ns_s": -4.1, "sigma_ns_s": 20.3, "cusum": 16.0}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 94.0, "fix": true, "n_sv": 4, "mean_cn0": 39.5, "sd_cn0": 1.9, "herr_m": 6.8, "clk_bias_ns": -0.7, "jam_score": 0.3, "spoof_score": 0.5, "verdict": "spoofing", "detectors": ["agc_change", "clock_drift"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.82, "baseline": 157.5}, {"detector": "clock_drift", "family": "spoofing", "message": "clock rate -84.2 ns/s vs learned -4.1 ns/s (-4.0 sigma)", "value": -80.15, "threshold": 10.14, "unit": "ns/s", "rate_ns_s": -84.2, "expected_ns_s": -4.1, "sigma_ns_s": 20.3, "cusum": 16.0}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 95.0, "fix": true, "n_sv": 4, "mean_cn0": 39.5, "sd_cn0": 1.7, "herr_m": 33.2, "clk_bias_ns": 303.3, "jam_score": 0.3, "spoof_score": 0.5, "verdict": "spoofing", "detectors": ["agc_change", "clock_drift"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.87, "baseline": 157.5}, {"detector": "clock_drift", "family": "spoofing", "message": "clock rate +304.0 ns/s vs learned -4.1 ns/s (+15.2 sigma)", "value": 308.04, "threshold": 10.14, "unit": "ns/s", "rate_ns_s": 304.0, "expected_ns_s": -4.1, "sigma_ns_s": 20.3, "cusum": 16.0}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 96.0, "fix": true, "n_sv": 4, "mean_cn0": 39.6, "sd_cn0": 2.4, "herr_m": 32.9, "clk_bias_ns": 243.5, "jam_score": 0.3, "spoof_score": 0.5, "verdict": "spoofing", "detectors": ["agc_change", "clock_drift"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 431.03, "baseline": 157.5}, {"detector": "clock_drift", "family": "spoofing", "message": "clock rate -59.8 ns/s vs learned -4.1 ns/s (-2.7 sigma)", "value": -55.72, "threshold": 10.15, "unit": "ns/s", "rate_ns_s": -59.8, "expected_ns_s": -4.1, "sigma_ns_s": 20.3, "cusum": 16.0}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 97.0, "fix": true, "n_sv": 4, "mean_cn0": 39.3, "sd_cn0": 1.6, "herr_m": 3.3, "clk_bias_ns": -82.9, "jam_score": 0.3, "spoof_score": 0.5, "verdict": "spoofing", "detectors": ["agc_change", "clock_drift"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.94, "baseline": 157.5}, {"detector": "clock_drift", "family": "spoofing", "message": "clock rate -326.4 ns/s vs learned -4.1 ns/s (-15.9 sigma)", "value": -322.31, "threshold": 10.15, "unit": "ns/s", "rate_ns_s": -326.4, "expected_ns_s": -4.1, "sigma_ns_s": 20.3, "cusum": 16.0}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 98.0, "fix": true, "n_sv": 4, "mean_cn0": 39.8, "sd_cn0": 1.8, "herr_m": 25.7, "clk_bias_ns": 314.1, "jam_score": 0.3, "spoof_score": 0.5, "verdict": "spoofing", "detectors": ["agc_change", "clock_drift"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.48, "baseline": 157.5}, {"detector": "clock_drift", "family": "spoofing", "message": "clock rate +396.9 ns/s vs learned -4.1 ns/s (+19.7 sigma)", "value": 401.02, "threshold": 10.16, "unit": "ns/s", "rate_ns_s": 396.9, "expected_ns_s": -4.1, "sigma_ns_s": 20.3, "cusum": 16.0}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 99.0, "fix": true, "n_sv": 4, "mean_cn0": 40.0, "sd_cn0": 1.9, "herr_m": 8.1, "clk_bias_ns": -126.3, "jam_score": 0.3, "spoof_score": 0.5, "verdict": "spoofing", "detectors": ["agc_change", "clock_drift"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.6, "baseline": 157.5}, {"detector": "clock_drift", "family": "spoofing", "message": "clock rate -440.4 ns/s vs learned -4.1 ns/s (-21.5 sigma)", "value": -436.29, "threshold": 10.16, "unit": "ns/s", "rate_ns_s": -440.4, "expected_ns_s": -4.1, "sigma_ns_s": 20.3, "cusum": 16.0}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 100.0, "fix": true, "n_sv": 4, "mean_cn0": 39.6, "sd_cn0": 1.8, "herr_m": 21.3, "clk_bias_ns": 160.5, "jam_score": 0.3, "spoof_score": 0.5, "verdict": "spoofing", "detectors": ["agc_change", "clock_drift"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.67, "baseline": 157.5}, {"detector": "clock_drift", "family": "spoofing", "message": "clock rate +286.8 ns/s vs learned -4.1 ns/s (+14.3 sigma)", "value": 290.92, "threshold": 10.17, "unit": "ns/s", "rate_ns_s": 286.8, "expected_ns_s": -4.1, "sigma_ns_s": 20.3, "cusum": 16.0}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 101.0, "fix": true, "n_sv": 4, "mean_cn0": 39.9, "sd_cn0": 1.8, "herr_m": 16.9, "clk_bias_ns": 131.2, "jam_score": 0.3, "spoof_score": 0.5, "verdict": "spoofing", "detectors": ["agc_change", "clock_drift"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.82, "baseline": 157.5}, {"detector": "clock_drift", "family": "spoofing", "message": "clock rate -29.3 ns/s vs learned -4.1 ns/s (-1.2 sigma)", "value": -25.27, "threshold": 10.17, "unit": "ns/s", "rate_ns_s": -29.3, "expected_ns_s": -4.1, "sigma_ns_s": 20.3, "cusum": 16.0}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 102.0, "fix": true, "n_sv": 4, "mean_cn0": 39.3, "sd_cn0": 1.9, "herr_m": 7.6, "clk_bias_ns": 32.2, "jam_score": 0.3, "spoof_score": 0.5, "verdict": "spoofing", "detectors": ["agc_change", "clock_drift"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.46, "baseline": 157.5}, {"detector": "clock_drift", "family": "spoofing", "message": "clock rate -99.0 ns/s vs learned -4.1 ns/s (-4.7 sigma)", "value": -94.88, "threshold": 10.18, "unit": "ns/s", "rate_ns_s": -99.0, "expected_ns_s": -4.1, "sigma_ns_s": 20.4, "cusum": 16.0}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 103.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.84, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 1 s (last fix t=102, C/N0 not reported)", "value": 1.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 1.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 104.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.48, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 2 s (last fix t=102, C/N0 not reported)", "value": 2.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 2.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 105.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.33, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 3 s (last fix t=102, C/N0 not reported)", "value": 3.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 3.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 106.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.55, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 4 s (last fix t=102, C/N0 not reported)", "value": 4.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 4.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 107.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.84, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 5 s (last fix t=102, C/N0 not reported)", "value": 5.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 5.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 108.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.59, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 6 s (last fix t=102, C/N0 not reported)", "value": 6.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 6.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 109.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.98, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 7 s (last fix t=102, C/N0 not reported)", "value": 7.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 7.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 110.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.45, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 8 s (last fix t=102, C/N0 not reported)", "value": 8.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 8.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 111.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.73, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 9 s (last fix t=102, C/N0 not reported)", "value": 9.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 9.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 112.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.85, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 10 s (last fix t=102, C/N0 not reported)", "value": 10.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 10.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 113.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.84, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 11 s (last fix t=102, C/N0 not reported)", "value": 11.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 11.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 114.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.61, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 12 s (last fix t=102, C/N0 not reported)", "value": 12.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 12.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 115.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.89, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 13 s (last fix t=102, C/N0 not reported)", "value": 13.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 13.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 116.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.83, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 14 s (last fix t=102, C/N0 not reported)", "value": 14.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 14.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 117.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.93, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 15 s (last fix t=102, C/N0 not reported)", "value": 15.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 15.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 118.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.86, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 16 s (last fix t=102, C/N0 not reported)", "value": 16.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 16.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 119.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.31, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 17 s (last fix t=102, C/N0 not reported)", "value": 17.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 17.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 120.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.08, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 18 s (last fix t=102, C/N0 not reported)", "value": 18.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 18.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 121.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.69, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 19 s (last fix t=102, C/N0 not reported)", "value": 19.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 19.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 122.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.95, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 20 s (last fix t=102, C/N0 not reported)", "value": 20.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 20.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 123.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.72, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 21 s (last fix t=102, C/N0 not reported)", "value": 21.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 21.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 124.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.34, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 22 s (last fix t=102, C/N0 not reported)", "value": 22.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 22.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 125.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.88, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 23 s (last fix t=102, C/N0 not reported)", "value": 23.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 23.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 126.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.65, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 24 s (last fix t=102, C/N0 not reported)", "value": 24.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 24.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 127.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.45, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 25 s (last fix t=102, C/N0 not reported)", "value": 25.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 25.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 128.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.94, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 26 s (last fix t=102, C/N0 not reported)", "value": 26.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 26.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 129.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.73, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 27 s (last fix t=102, C/N0 not reported)", "value": 27.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 27.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 130.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.73, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 28 s (last fix t=102, C/N0 not reported)", "value": 28.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 28.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 131.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.75, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 29 s (last fix t=102, C/N0 not reported)", "value": 29.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 29.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 132.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.61, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 30 s (last fix t=102, C/N0 not reported)", "value": 30.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 30.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 133.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.17, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 31 s (last fix t=102, C/N0 not reported)", "value": 31.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 31.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 134.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.03, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 32 s (last fix t=102, C/N0 not reported)", "value": 32.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 32.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 135.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.39, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 33 s (last fix t=102, C/N0 not reported)", "value": 33.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 33.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 136.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.76, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 34 s (last fix t=102, C/N0 not reported)", "value": 34.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 34.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 137.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.86, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 35 s (last fix t=102, C/N0 not reported)", "value": 35.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 35.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 138.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.57, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 36 s (last fix t=102, C/N0 not reported)", "value": 36.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 36.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 139.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.47, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 37 s (last fix t=102, C/N0 not reported)", "value": 37.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 37.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 140.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.55, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 38 s (last fix t=102, C/N0 not reported)", "value": 38.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 38.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 141.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.7, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 39 s (last fix t=102, C/N0 not reported)", "value": 39.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 39.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 142.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.75, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 40 s (last fix t=102, C/N0 not reported)", "value": 40.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 40.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 143.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.58, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 41 s (last fix t=102, C/N0 not reported)", "value": 41.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 41.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 144.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.92, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 42 s (last fix t=102, C/N0 not reported)", "value": 42.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 42.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 145.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.64, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 43 s (last fix t=102, C/N0 not reported)", "value": 43.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 43.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 146.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.24, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 44 s (last fix t=102, C/N0 not reported)", "value": 44.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 44.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 147.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +174% vs baseline", "value": 1.74, "threshold": 0.2, "unit": "rel", "agc": 430.82, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 45 s (last fix t=102, C/N0 not reported)", "value": 45.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 45.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 148.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +173% vs baseline", "value": 1.73, "threshold": 0.2, "unit": "rel", "agc": 430.51, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 46 s (last fix t=102, C/N0 not reported)", "value": 46.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 46.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0},
+{"t": 149.0, "fix": false, "n_sv": 0, "mean_cn0": NaN, "sd_cn0": NaN, "herr_m": NaN, "clk_bias_ns": null, "jam_score": 0.3, "spoof_score": 0, "verdict": "lost-fix", "detectors": ["agc_change", "lost_fix"], "explain": [{"detector": "agc_change", "family": "jamming", "message": "AGC +155% vs baseline", "value": 1.55, "threshold": 0.2, "unit": "rel", "agc": 402.13, "baseline": 157.5}, {"detector": "lost_fix", "family": "lost-fix", "message": "no fix for 47 s (last fix t=102, C/N0 not reported)", "value": 47.0, "threshold": 0.0, "unit": "s", "since_last_fix_s": 47.0, "last_fix_t": 102.0, "n_sv_tracked": null}], "alarm": true, "alarm_since_t": 81.0}
+]}

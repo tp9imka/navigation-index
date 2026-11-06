@@ -7,6 +7,8 @@ import random
 import tempfile
 import unittest
 
+from scorer import CLEAR_EPOCHS
+
 try:
     import gen_synthetic_ubx as gen
     import ubx_monitor
@@ -30,11 +32,18 @@ class ReplayTest(unittest.TestCase):
         lines = out.getvalue().splitlines()
         rows = [l[2:].split() for l in lines if l.startswith("t=")]
         verdict = {round(float(r[0]) - gen.START_ITOW_MS / 1000): r[1] for r in rows}
+        alarm = {round(float(r[0]) - gen.START_ITOW_MS / 1000): r[4] for r in rows}
         self.assertEqual(len(verdict), gen.DURATION_S)
         self.assertTrue(all(verdict[k] == "clean" for k in range(gen.JAM[0])))
         self.assertTrue(all(verdict[k] == "jamming" for k in range(*gen.JAM)))
         self.assertTrue(all(verdict[k] == "spoofing" for k in range(*gen.SPOOF)))
         self.assertTrue(all(verdict[k] == "clean" for k in range(gen.SPOOF[1] + 1, gen.DURATION_S)))
+        # latched alarm: on from the first jammed epoch until CLEAR_EPOCHS clean epochs have passed
+        self.assertTrue(all(alarm[k] == "-" for k in range(gen.JAM[0])))
+        self.assertTrue(all(alarm[k] == "ALARM" for k in range(gen.JAM[0], gen.JAM[1] + CLEAR_EPOCHS - 1)))
+        self.assertEqual(alarm[gen.JAM[1] + CLEAR_EPOCHS - 1], "-")
+        self.assertTrue(all(alarm[k] == "ALARM" for k in range(gen.SPOOF[0], gen.SPOOF[1] + 1)))
+        self.assertEqual(alarm[gen.DURATION_S - 1], "-")
 
 
 if __name__ == "__main__":
