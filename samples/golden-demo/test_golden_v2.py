@@ -10,7 +10,10 @@ from pathlib import Path
 import ss_fde
 import to_navdash as T
 import vgeo_replay
-from companion import Spoof
+try:
+    from companion import Spoof
+except ImportError:  # companion needs pymavlink; the other tests are stdlib-only
+    Spoof = None
 
 R = {"gnss": 2.0, "vgeo": 5.0}
 
@@ -71,6 +74,7 @@ class VelocityTests(unittest.TestCase):
         self.assertFalse(res[-1]["alarm"])
 
 
+@unittest.skipIf(Spoof is None, "requires pymavlink (see requirements.txt)")
 class SpoofTests(unittest.TestCase):
     def test_position_spoof_leaves_velocity_alone(self):
         s = Spoof("position", 25.0, 1.0, 90.0)
