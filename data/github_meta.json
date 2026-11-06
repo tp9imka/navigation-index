@@ -1461,6 +1461,19 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:bolotnaya-glesenb/drone_navigation": {
+  "archived": false,
+  "description": "Автономная навигация БПЛА в симуляции: ROS 2 + PX4 + RTAB-Map SLAM + YOLO. Дипломный проект.",
+  "forks_count": 0,
+  "full_name": "BOLOTNAYA-GLESENb/drone_navigation",
+  "html_url": "https://github.com/BOLOTNAYA-GLESENb/drone_navigation",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-06-07T15:11:15Z",
+  "stargazers_count": 0,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:bopen/elevation": {
   "archived": false,
   "description": "Download, cache and clip global terrain digital elevation models: Mapzen terrain tiles, Copernicus DEM, ALOS World 3D and SRTM 30m and 90m DEMs.",
@@ -2364,6 +2377,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:danilka88/gag27062026": {
+  "archived": false,
+  "description": null,
+  "forks_count": 0,
+  "full_name": "Danilka88/gag27062026",
+  "html_url": "https://github.com/Danilka88/gag27062026",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-06-28T10:24:44Z",
+  "stargazers_count": 0,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:danipascual/gnss-matlab": {
   "archived": false,
   "description": "Matlab codes to generate GNSS PRNs, secondary codes, dataless signals and spectra. Includes real data captures and a theory summary. GPS (L1CA, L2C, L5), Gaileo (E1OS, E5), BeiDou-2 (B1I)",
@@ -2402,6 +2428,32 @@
    "ocxo",
    "oscillator"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:daryamalafeeva/srns": {
+  "archived": false,
+  "description": "Homework on course \"Features of satellite radio navigation systems GPS, GLONASS, Galileo, Beidou\"",
+  "forks_count": 3,
+  "full_name": "DaryaMalafeeva/SRNS",
+  "html_url": "https://github.com/DaryaMalafeeva/SRNS",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2022-04-29T13:21:37Z",
+  "stargazers_count": 2,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:daudalbogachiev925/visual-odometry-vio-": {
+  "archived": false,
+  "description": "Визуальная одометрия + IMU fusion для оценки позиции без GPS.",
+  "forks_count": 0,
+  "full_name": "daudalbogachiev925/Visual-Odometry-VIO-",
+  "html_url": "https://github.com/daudalbogachiev925/Visual-Odometry-VIO-",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-10-13T14:00:32Z",
+  "stargazers_count": 0,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:dc9st/librtlsdr-2freq": {
@@ -2574,6 +2626,31 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:devmbs/crtclover": {
+  "archived": false,
+  "description": "Cloverside backend for the Clover Rescue Project",
+  "forks_count": 0,
+  "full_name": "DevMBS/CRTClover",
+  "html_url": "https://github.com/DevMBS/CRTClover",
+  "language": "JavaScript",
+  "license": "MIT",
+  "pushed_at": "2022-04-14T19:04:17Z",
+  "stargazers_count": 1,
+  "topics": [
+   "clover",
+   "coex",
+   "drone",
+   "gps",
+   "js",
+   "nodejs",
+   "px4",
+   "raspberry-pi",
+   "ros",
+   "roslib",
+   "socket-io"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:dfpc-coe/cloudtak": {
   "archived": false,
   "description": "TAK Compatible, browser based Common Operation Picture & Situational Awareness tool",
@@ -2640,6 +2717,29 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:drapegnik/bsu-science": {
+  "archived": false,
+  "description": "🎓 My science works reports on FAMCS, BSU",
+  "forks_count": 4,
+  "full_name": "Drapegnik/bsu-science",
+  "html_url": "https://github.com/Drapegnik/bsu-science",
+  "language": "TeX",
+  "license": "Apache-2.0",
+  "pushed_at": "2018-07-03T15:34:11Z",
+  "stargazers_count": 0,
+  "topics": [
+   "bsu",
+   "course-project",
+   "course-work",
+   "cv",
+   "drones",
+   "famcs",
+   "latex",
+   "report",
+   "tex"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:dronecan/libcanard": {
   "archived": false,
   "description": null,
@@ -2676,6 +2776,19 @@
   "license": "Apache-2.0",
   "pushed_at": "2024-05-30T05:57:20Z",
   "stargazers_count": 1955,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:drones-voronka/drones-backend": {
+  "archived": false,
+  "description": null,
+  "forks_count": 0,
+  "full_name": "drones-voronka/drones-backend",
+  "html_url": "https://github.com/drones-voronka/drones-backend",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-06-28T10:54:25Z",
+  "stargazers_count": 0,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -2834,6 +2947,19 @@
    "ros",
    "vision"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:eliseyavdeev/hackatoncodereal": {
+  "archived": false,
+  "description": "Код автономного полета (постобработка) на вход нмеа, частота дискретизации, высота барометрическая и карта высот.",
+  "forks_count": 0,
+  "full_name": "EliseyAvdeev/HackatonCODEreal",
+  "html_url": "https://github.com/EliseyAvdeev/HackatonCODEreal",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-06-28T10:36:43Z",
+  "stargazers_count": 0,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:emlid/ntripbrowser": {
@@ -3426,6 +3552,26 @@
    "multi-object-tracking",
    "pytorch",
    "real-time"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:foxfollow/stone-navigation-emulation": {
+  "archived": false,
+  "description": "Навігатор для авто на iPhone, що веде маршрутом без GPS або з підміненим GPS",
+  "forks_count": 0,
+  "full_name": "foxfollow/stone-navigation-emulation",
+  "html_url": "https://github.com/foxfollow/stone-navigation-emulation",
+  "language": "Swift",
+  "license": "MIT",
+  "pushed_at": "2026-10-29T19:23:51Z",
+  "stargazers_count": 0,
+  "topics": [
+   "dead-reckoning",
+   "gps-spoofing",
+   "ios",
+   "mapkit",
+   "navigation",
+   "swiftui"
   ],
   "fetched": "2026-11-06"
  },
@@ -5619,6 +5765,45 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:korogodin/glnephexercise": {
+  "archived": false,
+  "description": "Учебный проект по разработке модуля расчета положения спутника ГЛОНАСС",
+  "forks_count": 10,
+  "full_name": "Korogodin/glnephexercise",
+  "html_url": "https://github.com/Korogodin/glnephexercise",
+  "language": "CMake",
+  "license": null,
+  "pushed_at": "2020-10-06T09:05:02Z",
+  "stargazers_count": 0,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:korogodin/gnssrec": {
+  "archived": false,
+  "description": "Global Navigation Satellite System Receiver Design Handbook",
+  "forks_count": 0,
+  "full_name": "Korogodin/gnssrec",
+  "html_url": "https://github.com/Korogodin/gnssrec",
+  "language": null,
+  "license": "NOASSERTION",
+  "pushed_at": "2024-05-19T11:39:09Z",
+  "stargazers_count": 2,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:korogodin/gnssrecbasics2020": {
+  "archived": false,
+  "description": "Первый семестр курса навигационных приемников, 2020 год",
+  "forks_count": 19,
+  "full_name": "Korogodin/gnssrecbasics2020",
+  "html_url": "https://github.com/Korogodin/gnssrecbasics2020",
+  "language": null,
+  "license": null,
+  "pushed_at": "2021-09-21T15:25:57Z",
+  "stargazers_count": 2,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:kostadinovshalon/uavdetectiontrackingbenchmark": {
   "archived": false,
   "description": null,
@@ -5880,6 +6065,19 @@
    "stable-baselines3",
    "uav"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:ledesha/gnss-ak_model": {
+  "archived": false,
+  "description": "Реализация модели движения потребителя, модели функционирования ГНСС и модели функционирования астрокорректора. Для диплома",
+  "forks_count": 0,
+  "full_name": "Ledesha/GNSS-AK_model",
+  "html_url": "https://github.com/Ledesha/GNSS-AK_model",
+  "language": "C++",
+  "license": null,
+  "pushed_at": "2026-02-04T10:49:52Z",
+  "stargazers_count": 0,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:leggedrobotics/elevation_mapping": {
@@ -6947,6 +7145,19 @@
    "tracking-by-detection",
    "yolo"
   ],
+  "fetched": "2026-11-06"
+ },
+ "repo:mikhraly/radioaltimeter_mcu": {
+  "archived": false,
+  "description": null,
+  "forks_count": 0,
+  "full_name": "Mikhraly/RadioAltimeter_MCU",
+  "html_url": "https://github.com/Mikhraly/RadioAltimeter_MCU",
+  "language": "C",
+  "license": null,
+  "pushed_at": "2022-10-03T14:21:54Z",
+  "stargazers_count": 0,
+  "topics": [],
   "fetched": "2026-11-06"
  },
  "repo:miluta7/geoveil-cn0": {
@@ -9128,6 +9339,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:radagastttt/terrain-relative-navigation": {
+  "archived": false,
+  "description": "система расчета траектории БПЛА",
+  "forks_count": 0,
+  "full_name": "radagastttt/terrain-relative-navigation",
+  "html_url": "https://github.com/radagastttt/terrain-relative-navigation",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-11-02T20:13:58Z",
+  "stargazers_count": 0,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:rainerkuemmerle/g2o": {
   "archived": false,
   "description": "g2o: A General Framework for Graph Optimization",
@@ -9772,6 +9996,48 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:rub1kub/where-are-we-barista": {
+  "archived": false,
+  "description": "Offline terrain-aided navigation prototype using radio-altimeter NMEA data and Copernicus DEM with TypeScript, C++, and Rust cores.",
+  "forks_count": 0,
+  "full_name": "rub1kub/where-are-we-barista",
+  "html_url": "https://github.com/rub1kub/where-are-we-barista",
+  "language": "TypeScript",
+  "license": null,
+  "pushed_at": "2026-08-31T13:42:03Z",
+  "stargazers_count": 2,
+  "topics": [
+   "cpp",
+   "geospatial",
+   "navigation",
+   "nmea",
+   "react",
+   "rust",
+   "threejs",
+   "typescript"
+  ],
+  "fetched": "2026-11-06"
+ },
+ "repo:rusaub/mvio": {
+  "archived": false,
+  "description": "Real-time Monocular Visual Inertial Odometry (MVIO) for accurate aerial state estimation.",
+  "forks_count": 14,
+  "full_name": "RusaUB/mvio",
+  "html_url": "https://github.com/RusaUB/mvio",
+  "language": "C++",
+  "license": null,
+  "pushed_at": "2026-08-27T09:17:20Z",
+  "stargazers_count": 37,
+  "topics": [
+   "aerial-robotics",
+   "computer-vision",
+   "cpp",
+   "kalman-filter",
+   "opencv",
+   "vio"
+  ],
+  "fetched": "2026-11-06"
+ },
  "repo:s7am1na/gnss-spoofing-dataset": {
   "archived": false,
   "description": "Raw GNSS measurements under spoofing attacks (L1/L5/L15) collected from consumer-grade devices.",
@@ -9859,6 +10125,19 @@
   "license": null,
   "pushed_at": "2026-05-31T11:03:05Z",
   "stargazers_count": 0,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:sasha-lobov/vinet_airsim_drone": {
+  "archived": false,
+  "description": "ViNet: Визуально-инерциальная одометрия (VIO) для навигации квадрокоптера в AirSim",
+  "forks_count": 0,
+  "full_name": "sasha-lobov/ViNet_AirSim_drone",
+  "html_url": "https://github.com/sasha-lobov/ViNet_AirSim_drone",
+  "language": "Jupyter Notebook",
+  "license": null,
+  "pushed_at": "2026-04-08T12:19:00Z",
+  "stargazers_count": 1,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -10163,6 +10442,19 @@
   "license": "MIT",
   "pushed_at": "2026-01-13T12:09:53Z",
   "stargazers_count": 381,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:shamoleg/clover": {
+  "archived": false,
+  "description": "ROS-based framework and RPi image to control PX4-powered drones 🍀",
+  "forks_count": 0,
+  "full_name": "shamoleg/clover",
+  "html_url": "https://github.com/shamoleg/clover",
+  "language": null,
+  "license": "MIT",
+  "pushed_at": "2022-11-15T15:46:44Z",
+  "stargazers_count": 0,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -10634,6 +10926,19 @@
   "license": "Apache-2.0",
   "pushed_at": "2026-11-01T03:14:18Z",
   "stargazers_count": 114,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:sviridov-aleksandr/aerial-nav": {
+  "archived": false,
+  "description": "GPS-denied навигация БПЛА по визуальным реперам через сиамскую нейронную сеть",
+  "forks_count": 0,
+  "full_name": "sviridov-aleksandr/aerial-nav",
+  "html_url": "https://github.com/sviridov-aleksandr/aerial-nav",
+  "language": null,
+  "license": null,
+  "pushed_at": "2026-09-03T22:15:04Z",
+  "stargazers_count": 0,
   "topics": [],
   "fetched": "2026-11-06"
  },
@@ -11682,6 +11987,19 @@
   "topics": [],
   "fetched": "2026-11-06"
  },
+ "repo:v-nav/clover": {
+  "archived": true,
+  "description": "ROS-based framework and RPi image to control PX4-powered drones 🍀",
+  "forks_count": 0,
+  "full_name": "v-nav/clover",
+  "html_url": "https://github.com/v-nav/clover",
+  "language": "C++",
+  "license": "MIT",
+  "pushed_at": "2021-11-01T14:45:11Z",
+  "stargazers_count": 0,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
  "repo:v4rl-ucy/covins": {
   "archived": false,
   "description": "COVINS-(G) -- A (Generic) Framework for Collaborative Visual-Inertial SLAM and Multi-Agent 3D Mapping",
@@ -11915,6 +12233,19 @@
   "license": null,
   "pushed_at": "2024-02-21T13:32:09Z",
   "stargazers_count": 9,
+  "topics": [],
+  "fetched": "2026-11-06"
+ },
+ "repo:weae-g/note-outdoor": {
+  "archived": false,
+  "description": null,
+  "forks_count": 0,
+  "full_name": "weae-g/note-outdoor",
+  "html_url": "https://github.com/weae-g/note-outdoor",
+  "language": null,
+  "license": null,
+  "pushed_at": "2025-12-07T19:45:49Z",
+  "stargazers_count": 0,
   "topics": [],
   "fetched": "2026-11-06"
  },

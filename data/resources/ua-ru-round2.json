@@ -1,0 +1,991 @@
+[
+ {
+  "id": "res:iqarium-polet-vslepuyu-hackathon-2026",
+  "kind": "competition",
+  "title": "Хакатон: трек «Робототехника и сенсорика», кейс «Полёт вслепую»",
+  "url": "https://iqarium.ru/hakatontime",
+  "authors": [
+   "ООО «ИННОКУБ»",
+   "ИЦ «Аквариум» (Krasnodar)"
+  ],
+  "year": 2026,
+  "summary": "English: 'Hackathon: Robotics and sensing track, case Blind flight'. Problem-statement page of the 48-hour hackathon held 26-28 June 2026 in Krasnodar. A commercial operator of light unmanned and optionally piloted aircraft delivering cargo to taiga, Arctic and mountain sites asks teams to build a prototype that determines coordinates, speed and heading from onboard data when GNSS degrades (high latitudes, narrow sky in gorges, jamming/spoofing near industrial zones, storms). The page itself does not name the sensors; public team repos show the case data were a radar-altimeter log (NMEA-0183 or TXT), a constant 1500 m MSL altitude and a DEM (Copernicus GLO-30 / GeoTIFF).",
+  "key_takeaways": [
+   "Civil framing: cargo delivery to remote areas, GNSS loss from geometry, latitude and interference",
+   "Input data (radar altimeter + DEM) are documented in team READMEs, not on the page",
+   "Prize fund listed as 250k/150k/100k RUB; scoring criteria not published",
+   "At least six public solution repos exist; compare them before designing a TERCOM entry"
+  ],
+  "concepts": [
+   "concept:terrain-nav",
+   "concept:assured-pnt",
+   "concept:gnss-interference"
+  ],
+  "tags": [
+   "lang:ru",
+   "hackathon",
+   "tercom",
+   "radar-altimeter",
+   "dem",
+   "2026"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:rub1kub/where-are-we-barista",
+    "rel": "has_code"
+   },
+   {
+    "id": "repo:danilka88/gag27062026",
+    "rel": "has_code"
+   },
+   {
+    "id": "repo:drones-voronka/drones-backend",
+    "rel": "has_code"
+   },
+   {
+    "id": "repo:eliseyavdeev/hackatoncodereal",
+    "rel": "has_code"
+   },
+   {
+    "id": "repo:t1gr20an06-k/hackathon-blind-flight",
+    "rel": "has_code"
+   },
+   {
+    "id": "repo:solarwarlock/flyingblind_hakaton",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:habr-kodoka-mvio-cpp-2026",
+  "kind": "blog",
+  "title": "Cистема визуально-инерциальной навигации для дрона на C++",
+  "url": "https://habr.com/ru/articles/993694/",
+  "authors": [
+   "kodoka (Habr)"
+  ],
+  "year": 2026,
+  "summary": "English: 'A visual-inertial navigation system for a drone in C++'. Walks through a monocular VIO built with OpenCV and Eigen: per-camera intrinsic calibration, ORB detection with Lucas-Kanade tracking at 30 Hz (SIFT judged too slow on a Raspberry Pi), parallax-based keyframes, essential-matrix initialisation then PnP, IMU preintegration, QR least-squares for scale and gravity with sanity bounds, and a 15-state ESKF. Includes a demo GIF; no quantitative accuracy is reported.",
+  "key_takeaways": [
+   "Track with optical flow, detect with ORB: descriptor matching every frame is too slow on small boards",
+   "Accept scale/gravity solutions only inside physical bounds (gravity near 9.81)",
+   "ESKF states: position, velocity, attitude error, accel and gyro biases",
+   "Code: RusaUB/mvio"
+  ],
+  "concepts": [
+   "concept:vio",
+   "concept:sensor-fusion",
+   "concept:ins"
+  ],
+  "tags": [
+   "lang:ru",
+   "habr",
+   "vio",
+   "eskf",
+   "opencv"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:rusaub/mvio",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:nure-nextvision-hacklab-2026",
+  "kind": "competition",
+  "title": "NextVision HackLab 2026: «Виявити. Супроводити. Перемогти.»",
+  "url": "https://nure.ua/wp-content/uploads/2026/3chelenzh-nextvision-hacklab-2026_ok.pdf",
+  "authors": [
+   "Kharkiv National University of Radio Electronics (NURE)"
+  ],
+  "year": 2026,
+  "summary": "English: 'NextVision HackLab 2026: Detect. Track. Win.' Flyer for a student hackathon on drone detection held 22-24 April 2026 at NURE in Kharkiv. Teams of three build prototypes that detect and track small, fast objects including UAVs using optical, thermal, acoustic, radar or hybrid sensing, with requirements on range, day/night and all-weather operation, and trajectory tracking. Judged on accuracy with few false alarms, noise and interference robustness, novelty and practical value.",
+  "key_takeaways": [
+   "Defensive C-UAS detection and tracking, not interception",
+   "Explicit criteria: low false-alarm rate and robustness to noise",
+   "Deliverable can be a working prototype or a conceptual model with simulation or video",
+   "Useful template for scoping a 48h C-UAS detection entry"
+  ],
+  "concepts": [
+   "concept:counter-uas",
+   "concept:target-tracking",
+   "concept:situational-awareness"
+  ],
+  "tags": [
+   "lang:uk",
+   "hackathon",
+   "drone-detection",
+   "nure",
+   "kharkiv",
+   "2026"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:ztu-kravchuk-uav-nav-without-gps-2025",
+  "kind": "paper",
+  "title": "Аналіз методів автономної навігації БПЛА в умовах відсутності GPS-сигналу",
+  "url": "https://ten.ztu.edu.ua/article/view/334764/323707",
+  "authors": [
+   "A. Kravchuk",
+   "A. Tkachuk",
+   "O. Dobrzhanskyi",
+   "Yu. Bohoiavlenska",
+   "D. Tkachuk (Zhytomyr Polytechnic)"
+  ],
+  "year": 2025,
+  "summary": "English: 'Analysis of autonomous UAV navigation methods in GPS-denied environments' (Technical Engineering, No. 1(95), 2025). Survey comparing optical flow, visual odometry, visual SLAM, IMU, lidar SLAM, radar SLAM, RF (Wi-Fi/UWB/BLE) and multi-sensor fusion on accuracy, latency, compute and power, with a summary table and a power-draw chart for small UAVs. Concludes no single method fits all conditions and names gaps: no unified test methodology, power cost, lack of realistic datasets and integration into flight controllers.",
+  "key_takeaways": [
+   "Rule-of-thumb drift figures per method (e.g. optical flow ~5% of distance, VO ~2%, VSLAM <1% with loop closure) are the authors' rough comparisons, not measurements",
+   "Recommends optical flow for small drones' stabilisation, fusion with SLAM for long missions, radar for bad weather, UWB/visual indoors",
+   "Flags the dataset gap for degraded and emergency conditions",
+   "Funded under Horizon Europe WIDE AcrossEU"
+  ],
+  "concepts": [
+   "concept:vio",
+   "concept:visual-slam",
+   "concept:sensor-fusion",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "lang:uk",
+   "survey",
+   "zhytomyr-polytechnic",
+   "gps-denied"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:kpi-hehelskyi-avrutov-uav-nav-complex-env-2025",
+  "kind": "paper",
+  "title": "Способи навігації БПЛА у складних умовах зовнішнього середовища",
+  "url": "https://mgsys.kpi.ua/article/view/334103",
+  "authors": [
+   "O. Hehelskyi",
+   "V. Avrutov (Igor Sikorsky KPI)"
+  ],
+  "year": 2025,
+  "summary": "English: 'UAV navigation methods in complex environmental conditions' (Mechanics of Gyroscopic Systems, No. 49, 2025). Reviews GNSS/IMU integration, lidar navigation, geomagnetic navigation and computer-vision methods (SLAM, visual odometry) for GPS-denied flight, listing each one's weaknesses: jamming and spoofing, lidar processing load, magnetometer calibration, and visual dependence on light and texture. Concludes that a condition-specific multi-sensor combination is needed.",
+  "key_takeaways": [
+   "KPI gyroscopic-systems department perspective: inertial core plus aiding sources",
+   "Geomagnetic navigation is included alongside vision and lidar",
+   "No single technology is universal; pick sensors per operating conditions"
+  ],
+  "concepts": [
+   "concept:gnss-ins",
+   "concept:magnetic-nav",
+   "concept:vio",
+   "concept:lidar-slam"
+  ],
+  "tags": [
+   "lang:uk",
+   "survey",
+   "kpi",
+   "gps-denied"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:lpnu-romaniv-uav-nav-telemetry-thesis-2025",
+  "kind": "report",
+  "title": "Програмна реалізація алгоритмів навігації БПЛА із використанням систем обробки телеметрії",
+  "url": "https://ena.lpnu.ua/handle/ntb/124079",
+  "authors": [
+   "V. Romaniv (Lviv Polytechnic)"
+  ],
+  "year": 2025,
+  "summary": "English: 'Software implementation of UAV navigation algorithms using telemetry processing systems'. Master's thesis that fuses GPS, IMU, barometer and optical-camera telemetry with an EKF, a complementary filter and ML-based correction, then tests three scenarios: EKF vs IMU-only, GPS+IMU+barometer fusion, and map-matching with trajectory correction under simulated GPS jamming. Implemented in Python with NumPy, OpenCV and Matplotlib.",
+  "key_takeaways": [
+   "Includes a simulated-jamming experiment measuring recovery after GPS loss",
+   "Compares EKF and complementary filter on the same telemetry",
+   "Student work; results are self-reported"
+  ],
+  "concepts": [
+   "concept:sensor-fusion",
+   "concept:gnss-ins",
+   "concept:gnss-interference"
+  ],
+  "tags": [
+   "lang:uk",
+   "thesis",
+   "lviv-polytechnic",
+   "ekf",
+   "python"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:ipu-mlsd-dolgov-autonomous-nav-problems-2025",
+  "kind": "paper",
+  "title": "Анализ проблемных направлений автономной навигации беспилотных летательных аппаратов",
+  "url": "https://mlsd2025.ipu.ru/proceedings/0784.pdf",
+  "authors": [
+   "G. A. Dolgov"
+  ],
+  "year": 2025,
+  "summary": "English: 'Analysis of problem areas in autonomous UAV navigation' (MLSD-2025 conference, ICS RAS). Reviews GNSS jamming and spoofing threats to small UAVs and three families of countermeasures: neural matching of camera imagery to a geo-referenced map or terrain model, lidar or stereo SLAM combined with neural models, and other options such as radar methods and RSSI trilateration from relay UAVs. Notes the common practical stack of ArduPilot or INAV plus a companion computer and lists observed problems, such as the volume of map tiles to store onboard and the cost and weight of 3D lidars.",
+  "key_takeaways": [
+   "Map-tile storage on board is a real constraint for VPS",
+   "Relay-UAV RSSI trilateration is mentioned as an emerging option",
+   "Author affiliation is a Russian defence test centre; content is navigation-only"
+  ],
+  "concepts": [
+   "concept:visual-geolocalization",
+   "concept:lidar-slam",
+   "concept:gnss-interference",
+   "concept:rf-localization"
+  ],
+  "tags": [
+   "lang:ru",
+   "survey",
+   "ipu-ras",
+   "ardupilot",
+   "inav"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:itmo-litvinenko-underlying-surface-nav-2025",
+  "kind": "paper",
+  "title": "Разработка метода навигации беспилотных летательных аппаратов по изображению подстилающей поверхности в условиях отсутствия сигналов внешних навигационных систем",
+  "url": "https://kmu.itmo.ru/file/download/application/45885",
+  "authors": [
+   "A. I. Litvinenko",
+   "M. Yu. Budko (supervisor), ITMO"
+  ],
+  "year": 2025,
+  "summary": "English: 'A method for UAV navigation by images of the underlying surface without external navigation signals'. Short ITMO young-scientists congress abstract (file dated January 2025): keypoint detection, FLANN matching and a transformation matrix against a reference map of the underlying surface give the UAV's local position. Tested only in Gazebo, where coordinates were fed to the flight controller and the authors report accuracy to about 2 m.",
+  "key_takeaways": [
+   "Classic keypoints + FLANN + homography, not deep features",
+   "Simulation-only result (Gazebo), about 2 m self-reported",
+   "Reviews image-matching families: correlation-extremal, keypoints, neural"
+  ],
+  "concepts": [
+   "concept:visual-geolocalization",
+   "concept:feature-matching",
+   "concept:simulation"
+  ],
+  "tags": [
+   "lang:ru",
+   "itmo",
+   "abstract",
+   "gazebo",
+   "flann"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:www1-mipt-fasetka-visual-nav-2026",
+  "kind": "blog",
+  "title": "Беспилотники научили видеть дорогу без GPS и ГЛОНАСС: «умную» навигацию создали в МФТИ",
+  "url": "https://www1.ru/news/2026/05/20/bespilotniki-naucili-videt-dorogu-bez-gps-i-glonass-umnuiu-navigaciiu-sozdali-v-mfti.html",
+  "authors": [
+   "www1.ru"
+  ],
+  "year": 2026,
+  "summary": "English: 'Drones taught to see the road without GPS and GLONASS: MIPT built smart navigation'. News on 'Фасетка' from MIPT's robotics R&D centre (NTI Foundation support): it matches temporally stable landmarks (roads, buildings, river channels, power-line pylons) to an onboard satellite map, using thermal and radar imagery for seasonal robustness, and tolerates camera tilt up to 45 degrees thanks to training on synthesised viewpoints. Claims about 6 m accuracy at 1000 m altitude in helicopter and drone tests.",
+  "key_takeaways": [
+   "Pick landmarks that change little over time",
+   "Off-nadir tolerance (45 degrees) via synthetic-view training is the stated novelty",
+   "Accuracy is a press claim, no paper cited"
+  ],
+  "concepts": [
+   "concept:visual-geolocalization",
+   "concept:place-recognition",
+   "concept:edge-ai"
+  ],
+  "tags": [
+   "lang:ru",
+   "mipt",
+   "vps",
+   "news",
+   "vendor-claims"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:spbran-konovalov-swarm-visual-nav-2025",
+  "kind": "blog",
+  "title": "Разработана система автономной визуальной навигации роя дронов",
+  "url": "https://spbran.ru/news/pdf/razrabotana-sistema-avtonomnoy-vizualnoy-navigacii-roya-dronov",
+  "authors": [
+   "SPC RAS (St Petersburg FRC RAS)"
+  ],
+  "year": 2025,
+  "summary": "English: 'A system for autonomous visual navigation of a drone swarm has been developed' (press release, 25 April 2025). SPC RAS describes a software prototype that navigates a UAV swarm from camera data under jamming or without satellite navigation, needing only ordinary satellite imagery (no height maps or geophysical fields) and no hardware beyond a video camera. Quotes postgraduate K. Konovalov.",
+  "key_takeaways": [
+   "Same author line as the NSTU route-planning-over-landmarks paper",
+   "Claims plain satellite imagery suffices as the reference",
+   "Press release; no accuracy data"
+  ],
+  "concepts": [
+   "concept:visual-geolocalization",
+   "concept:multi-agent"
+  ],
+  "tags": [
+   "lang:ru",
+   "spc-ras",
+   "swarm",
+   "press-release"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "res:nstu-konovalov-route-planning-few-landmarks-2024",
+    "rel": "same_author"
+   }
+  ]
+ },
+ {
+  "id": "res:www1-kazan-mesh-nav-grey-zone-2026",
+  "kind": "blog",
+  "title": "Систему для полёта дронов в «серой» зоне без GPS создали в России",
+  "url": "https://www1.ru/news/2026/02/04/sistemu-dlia-poleta-dronov-v-seroi-zone-bez-gps-sozdali-v-rossii.html",
+  "authors": [
+   "www1.ru"
+  ],
+  "year": 2026,
+  "summary": "English: 'A system for drone flight in the grey zone without GPS was created in Russia'. Kazan engineers, funded through the NTI Foundation, describe an adaptive wireless mesh of ground base stations and onboard modules in several frequency bands that provides positioning and control without GNSS. Claimed: up to 10 m positioning accuracy and 10-15 km range in open terrain; field trials with four base stations and two UAVs planned for end of 2026.",
+  "key_takeaways": [
+   "Terrestrial radio positioning plus comms in one mesh",
+   "Numbers are announced targets; trials not yet done at publication",
+   "Positioning algorithm not described"
+  ],
+  "concepts": [
+   "concept:rf-localization",
+   "concept:assured-pnt",
+   "concept:ew-resilience"
+  ],
+  "tags": [
+   "lang:ru",
+   "mesh",
+   "beacons",
+   "news"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:dou-deftech-forecasts-2026",
+  "kind": "blog",
+  "title": "«Очікую прориву в українській ракетній програмі». Прогнози українського deftech на 2026",
+  "url": "https://dou.ua/lenta/articles/deftech-forecasts-for-2026/",
+  "authors": [
+   "Ya. Zhakhalov (DOU)"
+  ],
+  "year": 2025,
+  "summary": "English: 'Ukrainian deftech forecasts for 2026'. Industry round-up (25 Dec 2025). Navigation-relevant views: Vyriy expects mass adoption of GPS-free navigation based on radio beacons; Athlon Avia's CTO names the lack of a compact, reliable optical system that fully replaces GNSS as the year's main disappointment; Swarmer says visual SLAM, visual navigation and optic flow fused with inertial sensors passed field tests and that GPS-denied is now a baseline condition. EW vendors discuss CRPA-equipped threats and mesh-networked drones.",
+  "key_takeaways": [
+   "Practitioners report optical navigation as still not a full GNSS replacement",
+   "Beacon navigation expected to scale in 2026",
+   "Operators value stable links and predictable behaviour under EW over range",
+   "Strike-related forecasts in the article are out of scope here"
+  ],
+  "concepts": [
+   "concept:assured-pnt",
+   "concept:ew-resilience",
+   "concept:vio",
+   "concept:rf-localization"
+  ],
+  "tags": [
+   "lang:uk",
+   "dou",
+   "industry-survey",
+   "forecast"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:militarnyi-lima-quant-anti-crpa-2026",
+  "kind": "blog",
+  "title": "В Україні створили модернізовану версію РЕБ Lima для придушення новітніх CRPA-антен - командир «Нічної варти»",
+  "url": "https://militarnyi.com/uk/news/stvoryly-modernizovanu-versiyu-reb-lima/",
+  "authors": [
+   "Militarnyi"
+  ],
+  "year": 2026,
+  "summary": "English: 'Ukraine built an upgraded Lima EW system to suppress the newest CRPA antennas'. Interview-based news (July 2026) on a counter-drone EW system: the original Lima layered navigation-antenna suppression, GNSS spoofing and anti-spoofing bypass; the Quant version is claimed to defeat multi-element CRPAs regardless of element count by exploiting that a CRPA cannot locate the source of a high-energy signal. All claims come from the unit commander; no test data.",
+  "key_takeaways": [
+   "Defensive counter-UAS view of the CRPA race: element count alone is not a guarantee",
+   "Claims are unverified interview statements",
+   "Context for why receivers need spoofing and jamming detection, not just null steering"
+  ],
+  "concepts": [
+   "concept:gnss-interference",
+   "concept:counter-uas",
+   "concept:ew-resilience"
+  ],
+  "tags": [
+   "lang:uk",
+   "militarnyi",
+   "crpa",
+   "c-uas",
+   "vendor-claims"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:militarnyi-kort-orion8-crpa-2026",
+  "kind": "blog",
+  "title": "Українська «КОРТ» розробила нову 8-канальну CRPA-антену",
+  "url": "https://militarnyi.com/uk/news/ukrayinska-kort-8-kanalnu-crpa-antenu/",
+  "authors": [
+   "Militarnyi"
+  ],
+  "year": 2026,
+  "summary": "English: 'Ukrainian KORT developed a new 8-channel CRPA antenna'. September 2026 news on Orion 8, an adaptive 8-channel CRPA that KORT integrates with Septentrio GNSS receivers and tests on its own fixed-wing drones supplied to Ukraine's Defence Forces, against various jamming types; shown at MSPO in Poland.",
+  "key_takeaways": [
+   "Domestic Ukrainian CRPA paired with a commercial high-end receiver",
+   "In final testing at publication, no performance figures",
+   "Continues the CRPA lab and element-count thread from round 1"
+  ],
+  "concepts": [
+   "concept:gnss-interference",
+   "concept:ew-resilience",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "lang:uk",
+   "militarnyi",
+   "crpa",
+   "anti-jam",
+   "septentrio"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:militarnyi-kometa-crpa-components-2026",
+  "kind": "blog",
+  "title": "28 із 37 деталей - зі США: ГУР МО розкрило склад іноземних компонентів у російських «Кометах»",
+  "url": "https://militarnyi.com/uk/news/sklad-inozemnyh-komponentiv-u-kometah/",
+  "authors": [
+   "Militarnyi",
+   "HUR MO Ukraine"
+  ],
+  "year": 2026,
+  "summary": "English: '28 of 37 parts from the US: HUR disclosed foreign components in Russian Kometa modules'. Teardown-level description of the Kometa CRPA: a patch-element array plus a processing module built around an Altera Cyclone FPGA; 16-element versions widely fielded, 20-element in preparation, and 32-element arrays documented on downed drones. Lists the origin of 37 foreign components.",
+  "key_takeaways": [
+   "CRPA = antenna array + FPGA beamforming; spatial rejection grows with element count",
+   "Gives a concrete architecture for anyone modelling anti-jam receivers",
+   "No RF front-end or channel specs disclosed"
+  ],
+  "concepts": [
+   "concept:gnss-interference",
+   "concept:ew-resilience"
+  ],
+  "tags": [
+   "lang:uk",
+   "militarnyi",
+   "crpa",
+   "kometa",
+   "fpga",
+   "teardown"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:defence-express-sky-map-2026",
+  "kind": "blog",
+  "title": "Що це за українська система Sky Map яку поспіхом ставлять американці на своїх базах, щоб захиститись від «Шахедів»",
+  "url": "https://defence-ua.com/weapon_and_tech/scho_tse_za_ukrajinska_sistema_sky_map_jaku_pospihom_stavljat_amerikantsi_na_svojih_bazah_schob_zahistitis_vid_shahediv-22685.html",
+  "authors": [
+   "Defense Express"
+  ],
+  "year": 2026,
+  "summary": "English: 'What is the Ukrainian Sky Map system that Americans are rushing to install at their bases against Shaheds'. April 2026 article on Sky Fortress's command-and-control layer that fuses air-target data from radars and a network of more than 14,000 low-cost acoustic sensors (direction finding and triangulation) into one picture on tablets for mobile fire groups and interceptor operators. Reports, citing Reuters, US deployment in the Middle East.",
+  "key_takeaways": [
+   "Low-cost distributed acoustic sensing + fusion is a proven C-UAS situational-awareness pattern",
+   "Per-sensor cost quoted at roughly 400-1000 USD",
+   "Tracking algorithms are not described"
+  ],
+  "concepts": [
+   "concept:counter-uas",
+   "concept:situational-awareness",
+   "concept:target-tracking"
+  ],
+  "tags": [
+   "lang:uk",
+   "defense-express",
+   "acoustic-sensors",
+   "c2",
+   "sky-fortress"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:mintsyfra-ai4uav-video-2024",
+  "kind": "video",
+  "title": "Автономний БпЛА без GPS та GNSS з візуальною навігаційною системою",
+  "url": "https://www.youtube.com/watch?v=0oRSCjdpHfM",
+  "authors": [
+   "Ministry of Digital Transformation of Ukraine (Warchangers)"
+  ],
+  "year": 2024,
+  "summary": "English: 'Autonomous UAV without GPS and GNSS with a visual navigation system'. Short Warchangers interview (Dec 2024) with the AI4UAV developers: a visual navigation system positioned as a GPS/GNSS alternative that works day and night, with or without maps. Chapters cover the idea, development problems, pilot training time, Brave1 support and optimisation plans. Summary from the video description.",
+  "key_takeaways": [
+   "Ukrainian VPS vendor perspective, Brave1-backed",
+   "Claims map-free and map-based modes; no figures in the description",
+   "Good for problem framing, not technical depth"
+  ],
+  "concepts": [
+   "concept:visual-geolocalization",
+   "concept:vio",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "lang:uk",
+   "youtube",
+   "ai4uav",
+   "brave1",
+   "interview"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:leti-kozlovskikh-intro-visual-odometry-2021",
+  "kind": "talk",
+  "title": "Введение в визуальную одометрию",
+  "url": "https://www.youtube.com/watch?v=kLTSzfFOs5k",
+  "authors": [
+   "E. Kozlovskikh (SPbETU LETI, MO EVM dept.)"
+  ],
+  "year": 2021,
+  "summary": "English: 'Introduction to visual odometry'. Department seminar covering the main VO problem classes and methods, results on public test datasets, and the main limitations of VO. Summary from the video description.",
+  "key_takeaways": [
+   "Russian-language entry point to VO concepts",
+   "Covers limitations explicitly, useful before choosing VO vs VPS"
+  ],
+  "concepts": [
+   "concept:vio",
+   "concept:datasets-benchmarks"
+  ],
+  "tags": [
+   "lang:ru",
+   "youtube",
+   "seminar",
+   "leti",
+   "visual-odometry"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:gma2026-terion-aerial-survey-without-gnss",
+  "kind": "talk",
+  "title": "Аэрофотосъемка без ГНСС!?",
+  "url": "https://www.youtube.com/watch?v=Qb785u258OA",
+  "authors": [
+   "A. Valiev (Terion LLC)"
+  ],
+  "year": 2026,
+  "summary": "English: 'Aerial photography without GNSS!?' Talk at the XVII 'Geodesy. Mine surveying. Aerial survey. Navigation' conference (13 Feb 2026) on doing UAV aerial survey when GNSS is unavailable. Only the title and venue are confirmed from the description; technical content not verified.",
+  "key_takeaways": [
+   "Survey-industry angle: georeferencing imagery when GNSS is denied",
+   "Description gives no method details; watch before citing"
+  ],
+  "concepts": [
+   "concept:gis-mapping",
+   "concept:gnss-interference",
+   "concept:assured-pnt"
+  ],
+  "tags": [
+   "lang:ru",
+   "youtube",
+   "conference",
+   "photogrammetry"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:gma2024-artgeo-laser-scanning-without-gnss",
+  "kind": "talk",
+  "title": "Как работать без ГНСС?! Системы лазерного сканирования",
+  "url": "https://www.youtube.com/watch?v=8onunxh9O5o",
+  "authors": [
+   "V. Shuliakovskii (ArtGeo)"
+  ],
+  "year": 2024,
+  "summary": "English: 'How to work without GNSS?! Laser scanning systems'. Talk at the XV 'Geodesy. Mine surveying. Aerial survey. Navigation' conference (15 Feb 2024) on lidar scanning workflows without GNSS. Summary from title and description only.",
+  "key_takeaways": [
+   "Lidar/SLAM scanning as a GNSS-free mapping workflow in the survey industry",
+   "Content not verified beyond the description"
+  ],
+  "concepts": [
+   "concept:lidar-slam",
+   "concept:gis-mapping"
+  ],
+  "tags": [
+   "lang:ru",
+   "youtube",
+   "conference",
+   "lidar"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:lektorium-geoscan-autonomous-drones-course",
+  "kind": "course",
+  "title": "Дроны: Автономные беспилотные воздушные системы",
+  "url": "https://www.lektorium.tv/drones",
+  "authors": [
+   "M. Alekseev (Geoscan)",
+   "M. Bakustina",
+   "Lektorium",
+   "Lyceum No. 239"
+  ],
+  "year": 2022,
+  "summary": "English: 'Drones: autonomous unmanned aerial systems'. Free self-paced Russian online course built on Geoscan competition experience: drone basics, simple programming including indoor and outdoor navigation systems, companion-computer interaction (Python, Raspberry Pi, autopilot protocol, mapping), computer vision with marker recognition and vision-based navigation, and swarm control with ROS. Lesson videos (e.g. ultrasonic local navigation, vision system) were published on YouTube in Dec 2022.",
+  "key_takeaways": [
+   "Beginner path from flight basics to vision-based navigation and swarms",
+   "Uses the Geoscan Pioneer ecosystem",
+   "Free, including certificate"
+  ],
+  "concepts": [
+   "concept:indoor-pedestrian",
+   "concept:visual-slam",
+   "concept:multi-agent",
+   "concept:ros"
+  ],
+  "tags": [
+   "lang:ru",
+   "course",
+   "geoscan",
+   "lektorium",
+   "education"
+  ],
+  "level": "intro",
+  "access": "free-registration",
+  "related": [
+   {
+    "id": "repo:geoscan/geoscan_pioneer_max",
+    "rel": "uses"
+   }
+  ]
+ },
+ {
+  "id": "res:bsu-pazhitnykh-uav-nav-diploma-slides",
+  "kind": "report",
+  "title": "Разработка алгоритмов навигации БПЛА",
+  "url": "https://drapegnik.github.io/bsu-science/diploma/presentation.pdf",
+  "authors": [
+   "I. Pazhitnykh",
+   "O. M. Kondratieva (supervisor), BSU FAMCS"
+  ],
+  "year": 2018,
+  "summary": "English: 'Development of UAV navigation algorithms'. Diploma defence slides from Belarusian State University: goal is to use the drone camera for positioning without GPS; compares SIFT, SURF and ORB, reviews SLAM and SfM 3D terrain mapping, and demonstrates SLAM + ROS + webcam + SfM localisation on a 3D map.",
+  "key_takeaways": [
+   "Student-level overview of feature choice and SLAM/SfM for GPS-free localisation",
+   "Slides only"
+  ],
+  "concepts": [
+   "concept:visual-slam",
+   "concept:feature-matching"
+  ],
+  "tags": [
+   "lang:ru",
+   "bsu",
+   "diploma",
+   "slides"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:drapegnik/bsu-science",
+    "rel": "has_code"
+   }
+  ]
+ },
+ {
+  "id": "res:nure-tesliuk-vo-uncertain-env-2024",
+  "kind": "paper",
+  "title": "Аналіз ефективності використання візуальної одометрії для навігації мобільної платформи у невизначеному середовищі",
+  "url": "https://publish.nure.ua/catalog/download/532/786/3960?inline=1",
+  "authors": [
+   "S. Tesliuk",
+   "I. Nevliudov (supervisor), NURE"
+  ],
+  "year": 2024,
+  "summary": "English: 'Analysis of the effectiveness of visual odometry for mobile platform navigation in an uncertain environment'. Short NURE conference paper weighing wheel odometry, laser/ultrasonic odometry, GNSS, INS and visual odometry for robot localisation in industrial interiors, arguing VO gives reliable localisation from the camera stream alone.",
+  "key_takeaways": [
+   "Ground-robot framing; complements the UAV papers",
+   "Brief; conceptual rather than experimental"
+  ],
+  "concepts": [
+   "concept:vio",
+   "concept:ground-vehicle-nav"
+  ],
+  "tags": [
+   "lang:uk",
+   "nure",
+   "visual-odometry",
+   "mobile-robot"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:habr-mtf02-optical-flow-sensor-2025",
+  "kind": "blog",
+  "title": "Датчик оптического потока -MTF02",
+  "url": "https://habr.com/ru/articles/935300/",
+  "authors": [
+   "Habr author"
+  ],
+  "year": 2025,
+  "summary": "English: 'MTF02 optical flow sensor'. August 2025 Habr review of the MicoAir MTF02 module, which combines an optical flow camera with a ToF rangefinder and talks MAVLink to ArduPilot and PX4, for position hold and motion sensing without GPS.",
+  "key_takeaways": [
+   "Cheap off-the-shelf flow + range module for GNSS-free hover",
+   "Integrates as a MAVLink sensor in ArduPilot/PX4"
+  ],
+  "concepts": [
+   "concept:vio",
+   "concept:autopilot"
+  ],
+  "tags": [
+   "lang:ru",
+   "habr",
+   "optical-flow",
+   "mtf02",
+   "ardupilot",
+   "px4"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": [
+   {
+    "id": "repo:ardupilot/ardupilot",
+    "rel": "uses"
+   },
+   {
+    "id": "repo:px4/px4-autopilot",
+    "rel": "uses"
+   }
+  ]
+ },
+ {
+  "id": "res:vcru-zimkov-autonomous-flight-2025",
+  "kind": "blog",
+  "title": "В поисках автономного полета",
+  "url": "https://vc.ru/2649708-v-poiskah-avtonomnogo-poleta",
+  "authors": [
+   "A. Zimkov (vc.ru)"
+  ],
+  "year": 2025,
+  "summary": "English: 'In search of autonomous flight' (15 Dec 2025). Practitioner comparison of GNSS, ultrasonic indoor positioning (Geoscan Pioneer 'Locus' as example) and optical flow plus laser rangefinder for agricultural, warehouse and indoor drones. The author picks optical flow + rangefinder on ArduPilot, mentions Holybro H-Flow and MTF-01 modules, and reports an OpenMV camera + TFMini Plus build that held autonomous hover up to 10 m.",
+  "key_takeaways": [
+   "Optical flow + rangefinder judged the most universal low-cost option",
+   "Ultrasonic systems are sensitive to beacon calibration (1 cm offsets matter)",
+   "Civil use cases only"
+  ],
+  "concepts": [
+   "concept:vio",
+   "concept:indoor-pedestrian",
+   "concept:autopilot"
+  ],
+  "tags": [
+   "lang:ru",
+   "vc.ru",
+   "optical-flow",
+   "ardupilot",
+   "openmv"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:habr-evocargo-localization-2026",
+  "kind": "blog",
+  "title": "Локализовать нельзя ошибиться. Как работает локализация в автономном транспорте и почему это - самая сложная задача. 2/2",
+  "url": "https://habr.com/ru/companies/evocargo_it/articles/1048670/",
+  "authors": [
+   "Evocargo"
+  ],
+  "year": 2026,
+  "summary": "English: 'How localization works in autonomous transport and why it is the hardest task, part 2/2' (June 2026). Evocargo, a Russian autonomous-truck company, walks through GNSS/RTK, cameras against HD maps, lidar scan-to-map matching, IMU (bias growth example), wheel odometry and auxiliary RF sources, fused with Kalman or particle filters plus integrity monitoring and spoofing detection. Lists failure modes such as snow, featureless yards, tunnels and truck jammers near toll sites, and argues localization cannot be bought off the shelf.",
+  "key_takeaways": [
+   "Localization is interpretation of conflicting data, not measurement",
+   "Truck-mounted jammers near toll sites are a real ground GNSS threat",
+   "Autoware, Apollo and robot_localization need heavy adaptation"
+  ],
+  "concepts": [
+   "concept:ground-vehicle-nav",
+   "concept:sensor-fusion",
+   "concept:lidar-slam",
+   "concept:gnss-interference"
+  ],
+  "tags": [
+   "lang:ru",
+   "habr",
+   "autonomous-trucks",
+   "integrity",
+   "hd-map"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:habr-gps-track-spoofing-filtering-2026",
+  "kind": "blog",
+  "title": "Как фильтровать GPS-треки от ложных точек: спуфинг, заморозка координат, подмена времени",
+  "url": "https://habr.com/ru/articles/1060790/",
+  "authors": [
+   "Habr author"
+  ],
+  "year": 2026,
+  "summary": "English: 'How to filter GPS tracks for false points: spoofing, frozen coordinates, time spoofing' (July 2026). A fleet-telematics backend developer's rule set: a reachability envelope instead of a fixed speed cutoff, altitude-gradient checks against a terrain database, teleport-segment boundaries, frozen-series detection, a longest-non-decreasing-odometer filter against timestamp spoofing, GPS-path vs odometer ratio with hysteresis, and cell-tower fallback. Trust order: CAN, then cell, then GPS.",
+  "key_takeaways": [
+   "Use an independent odometer to expose spoofed GPS (honest path/odometer ratio ~1.6-1.8x, a spoofed track hit 3.3x)",
+   "Judge frozen coordinates as series, not points",
+   "Store raw, filter at read time, regression-test on clean days"
+  ],
+  "concepts": [
+   "concept:gnss-interference",
+   "concept:ground-vehicle-nav",
+   "concept:sensor-fusion"
+  ],
+  "tags": [
+   "lang:ru",
+   "habr",
+   "spoofing-detection",
+   "telematics",
+   "typescript"
+  ],
+  "level": "intermediate",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:habr-ruvds-gps-jamming-spoofing-civilians-2024",
+  "kind": "blog",
+  "title": "Как джамминг и спуфинг GPS мешают мирному населению",
+  "url": "https://habr.com/ru/companies/ruvds/articles/834418/",
+  "authors": [
+   "RUVDS (Habr)"
+  ],
+  "year": 2024,
+  "summary": "English: 'How GPS jamming and spoofing affect civilians' (August 2024). Explainer opening with a regional GPS interference map and covering why weak GNSS signals are easy to jam and spoof, and the spill-over onto aviation and everyday users.",
+  "key_takeaways": [
+   "Civil-impact framing with interference-map examples",
+   "Background reading, not technical depth"
+  ],
+  "concepts": [
+   "concept:gnss-interference",
+   "concept:policy-ethics"
+  ],
+  "tags": [
+   "lang:ru",
+   "habr",
+   "jamming",
+   "spoofing",
+   "aviation"
+  ],
+  "level": "intro",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:khpi-yeriomina-sotnikov-cens-decision-function-2016",
+  "kind": "paper",
+  "title": "Формування вирішальної функції кореляційно-екстремальних систем навігації за критерієм максимуму узагальненого коефіцієнта взаємної кореляції",
+  "url": "https://repository.kpi.kharkov.ua/handle/KhPI-Press/29493",
+  "authors": [
+   "N. Yeriomina",
+   "O. Sotnikov",
+   "V. Tarshyn"
+  ],
+  "year": 2016,
+  "summary": "English: 'Forming the decision function of correlation-extremal navigation systems by the maximum generalised cross-correlation criterion' (Bulletin of NTU KhPI, No. 50, 2016). Studies how viewing geometry, mainly perspective distortion, degrades the decision function when onboard images are matched to stored references, and proposes adapting the references: per resolution element take the peak cross-correlation and combine into a generalised correlation function. Keywords cite UAVs.",
+  "key_takeaways": [
+   "'Correlation-extremal navigation' (КЕНС) is the Soviet/Ukrainian term for map-matching navigation",
+   "Perspective distortion dominates the geometric error in image matching",
+   "Background theory for TERCOM/scene-matching style entries"
+  ],
+  "concepts": [
+   "concept:terrain-nav",
+   "concept:visual-geolocalization",
+   "concept:feature-matching"
+  ],
+  "tags": [
+   "lang:uk",
+   "khpi",
+   "correlation-extremal",
+   "map-matching"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": []
+ },
+ {
+  "id": "res:drsp-mezentsev-cens-reference-image-2025",
+  "kind": "paper",
+  "title": "An analysis of approaches to determining the type of reference image for correlation-extreme aircraft navigation systems",
+  "url": "https://harvester.nas.gov.ua/Record/drspiprikievua-article-335610/Details",
+  "authors": [
+   "O. Mezentsev",
+   "V. Yuzefovych",
+   "O. Butochnov"
+  ],
+  "year": 2025,
+  "summary": "Ukrainian journal paper (Data Recording, Storage and Processing, IPRI NAS of Ukraine, 2025) on how to form reference images for correlation-extremal aircraft navigation. Argues that selective images of the Earth's surface are possible, and often preferable, as references instead of direct sighting images. Metadata from the NAS harvester record; full text not read.",
+  "key_takeaways": [
+   "Reference-map design matters as much as the matcher",
+   "Selective (feature-reduced) references proposed over raw imagery",
+   "Same research line as the 2016 generalised CENS model by these authors"
+  ],
+  "concepts": [
+   "concept:terrain-nav",
+   "concept:visual-geolocalization"
+  ],
+  "tags": [
+   "lang:uk",
+   "correlation-extremal",
+   "reference-image",
+   "nas-ukraine"
+  ],
+  "level": "advanced",
+  "access": "open",
+  "related": []
+ }
+]
