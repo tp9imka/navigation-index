@@ -36,6 +36,9 @@ uv venv .venv && uv pip install --python .venv/bin/python -r requirements.txt
 .venv/bin/python -m unittest test_osint   # 8 offline tests
 ```
 
+Without the venv, `python3 -m unittest discover` (as CI runs it) skips all 8 tests instead of
+failing on the missing h3 / numpy / rasterio imports.
+
 Defaults reproduce the run below. `--date`, `--start/--end/--step`, `--bbox` (ADS-B) and
 `--date`, `--orbit`, `--point`, `--stack-from/--stack-to`, `--no-dem` (S1) move it elsewhere. Find
 an orbit over your area with a STAC search on `sentinel-1-grd` (see `find_stack`). For the

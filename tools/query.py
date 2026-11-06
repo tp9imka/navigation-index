@@ -4,6 +4,8 @@
   query.py search "visual geolocalization satellite"   ranked keyword search
   query.py search lightglue --kind repo --fit high      with filters
   query.py concept concept:magnetic-nav                 everything about a concept
+  query.py search "USV keeps navigating in a spoofed harbour"   a problem statement works too:
+                                                      guides (kind guide), samples and repos rank together
   query.py show repo:px4/px4-autopilot                  full record
   query.py neighbors repo:px4/px4-autopilot --depth 2   graph walk
   query.py concepts                                     list concept ids with counts
@@ -33,9 +35,12 @@ PRIOR_RAN = 0.4  # samples verified by running
 DEEP_DOC_CHARS = 1500  # same cut as build.SITE_DOC_BODY, so the web UI indexes the same text
 DEEP_DOC_MAX_ABOUT = 4  # hub docs attached to more nodes than this are too generic to index per node
 DEEP_DIRS = ("docs/integration-cards/", "docs/dataset-cards/", "docs/paper-digests/", "docs/landscape/")
-STOP = frozenset("a an and are as at be by for from in into is it of on or the to with via using none".split())
+GUIDE_BODY_CHARS = 6000  # same as build.GUIDE_BODY_CHARS: a guide's own text is its deep field
+STOP = frozenset(("a an and are as at be by for from in into is it of on or the to with via using none "
+                  "all any but can do does have has how if its not our should so than that their them then there they this we what when where which who will you your").split())
 SYNONYM = {"gps": "gnss", "drone": "uav", "uas": "uav", "suas": "uav", "quadcopter": "uav",
-           "quadrotor": "uav", "multirotor": "uav", "ladar": "lidar"}
+           "quadrotor": "uav", "multirotor": "uav", "ladar": "lidar", "harbour": "harbor",
+           "defence": "defense", "ship": "vessel", "boat": "vessel"}
 NORMALIZE = ((re.compile(r"isation"), "ization"),
              (re.compile(r"geo[\s_-]+locali[sz]ation"), "geolocalization"),
              (re.compile(r"geo[\s_-]+locali[sz]e"), "geolocalize"))
@@ -45,6 +50,18 @@ def stem(t):
     if len(t) > 4 and t.endswith("ies"):
         t = t[:-3] + "y"
     elif len(t) > 3 and t.endswith("s") and not t.endswith(("ss", "us", "is")):
+        t = t[:-1]
+    if t in SYNONYM:
+        return SYNONYM[t]
+    # light -ing / -ed / -e folding so "spoofed", "spoofing" and "spoof" meet
+    cut = False
+    if len(t) > 5 and t.endswith("ing"):
+        t, cut = t[:-3], True
+    elif len(t) > 4 and t.endswith("ed"):
+        t, cut = t[:-2], True
+    if cut and len(t) > 3 and t[-1] == t[-2] and t[-1] not in "lsz":
+        t = t[:-1]
+    elif len(t) > 3 and t.endswith("e"):
         t = t[:-1]
     return SYNONYM.get(t, t)
 
@@ -74,6 +91,13 @@ def verified_ran(v):
         return False
     return bool(re.search(r"\b(ran|run on|built and ran|tests? pass)", low)) and not low.startswith(
         ("not run", "unverified", "sketch"))
+
+
+def sample_ran(r):
+    """Same rule as build.sample_status == "ran": the explicit verified_status wins over the text."""
+    if r.get("verified_status"):
+        return r["verified_status"] == "ran"
+    return verified_ran(r.get("verified"))
 
 
 class Ranker:
@@ -165,8 +189,10 @@ def record_entry(r, cname, docs):
         "lang": (r.get("github") or {}).get("language") or r.get("language") or "", "kind": r["kind"],
         "deep": " ".join(docs[d] for d in r.get("deep_dives", []) if d in docs),
     }
+    if r["kind"] == "guide" and (ROOT / r["path"]).is_file():
+        fields["deep"] = md_plain((ROOT / r["path"]).read_text())[:GUIDE_BODY_CHARS]
     prior = PRIOR_FIT.get(r.get("hackathon_fit"), 0.0)
-    if r["kind"] == "sample" and verified_ran(r.get("verified")):
+    if r["kind"] == "sample" and sample_ran(r):
         prior += PRIOR_RAN
     return {"id": r["id"], "fields": fields, "concepts": concepts, "prior": prior,
             "stars": (r.get("github") or {}).get("stargazers_count"), "ref": r}
@@ -221,7 +247,10 @@ def brief(r):
         bits.append(f"★{stars}")
     if r.get("hackathon_fit"):
         bits.append(f"fit:{r['hackathon_fit']}")
-    return " | ".join(str(b) for b in bits) + "\n    " + (r.get("summary", "")[:200]) + f"\n    {r.get('url', '')}"
+    if r.get("status"):
+        bits.append(f"status:{r['status']}" + (f", {r['deps']}" if r.get("deps") else ""))
+    where = r.get("url") or r.get("readme") or r.get("page", "")
+    return " | ".join(str(b) for b in bits) + "\n    " + (r.get("summary", "")[:200]) + f"\n    {where}"
 
 
 def main():

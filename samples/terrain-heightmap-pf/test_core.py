@@ -1,8 +1,17 @@
-import numpy as np
-import pytest
-from scipy.ndimage import gaussian_filter
+import inspect
+import tempfile
+import unittest
+from pathlib import Path
 
-import core
+try:
+    import numpy as np
+    import pytest
+    from scipy.ndimage import gaussian_filter
+
+    import core
+    HAVE_DEPS, MISSING = True, ""
+except ImportError as e:  # plain python3 without the venv
+    HAVE_DEPS, MISSING = False, str(e)
 
 
 def smooth_field(shape, seed=0, sigma=3.0):
@@ -138,3 +147,27 @@ def test_tercom_recovers_known_offset():
     de, dn, best, second = core.tercom_fix(dem, res, true_e - 120, true_n + 90, profile, 300, 15)
     assert (de, dn) == (120, -90)
     assert best < second
+
+
+# `python3 -m unittest discover` (CI, plain interpreter) does not collect pytest-style functions.
+# This class runs them under unittest and skips them without the sample venv; pytest ignores the
+# class (__test__ = False) and runs the functions directly.
+@unittest.skipUnless(HAVE_DEPS, f"needs the sample venv: {MISSING}")
+class PytestFunctions(unittest.TestCase):
+    __test__ = False
+
+
+def _as_method(fn):
+    def method(self):
+        if "tmp_path" in inspect.signature(fn).parameters:
+            with tempfile.TemporaryDirectory() as d:
+                fn(Path(d))
+        else:
+            fn()
+    method.__name__ = fn.__name__
+    return method
+
+
+for _name, _fn in list(globals().items()):
+    if _name.startswith("test_") and inspect.isfunction(_fn):
+        setattr(PytestFunctions, _name, _as_method(_fn))

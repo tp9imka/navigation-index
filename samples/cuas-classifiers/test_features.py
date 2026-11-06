@@ -1,14 +1,21 @@
 import math
 import xml.etree.ElementTree as ET
+import inspect
+import tempfile
+import unittest
+from pathlib import Path
 
-import numpy as np
-import pandas as pd
-import pytest
+try:
+    import numpy as np
+    import pandas as pd
+    import pytest
 
-import radar_features as rf_r
-import rf_features as rf_s
-
-DT = rf_r.UPDATE_DT_S
+    import radar_features as rf_r
+    import rf_features as rf_s
+    HAVE_DEPS, MISSING = True, ""
+    DT = rf_r.UPDATE_DT_S
+except ImportError as e:  # plain python3 without the venv
+    HAVE_DEPS, MISSING = False, str(e)
 
 
 def straight_track(n=50, v=(3.0, 0.0, 4.0)):
@@ -148,3 +155,27 @@ def test_cot_detection_event():
     assert float(pt.get("lon")) > -73.0
     assert ev.find("detail/track").get("course") == "0.0"
     assert "P(UAV)=0.93" in ev.find("detail/remarks").text
+
+
+# `python3 -m unittest discover` (CI, plain interpreter) does not collect pytest-style functions.
+# This class runs them under unittest and skips them without the sample venv; pytest ignores the
+# class (__test__ = False) and runs the functions directly.
+@unittest.skipUnless(HAVE_DEPS, f"needs the sample venv: {MISSING}")
+class PytestFunctions(unittest.TestCase):
+    __test__ = False
+
+
+def _as_method(fn):
+    def method(self):
+        if "tmp_path" in inspect.signature(fn).parameters:
+            with tempfile.TemporaryDirectory() as d:
+                fn(Path(d))
+        else:
+            fn()
+    method.__name__ = fn.__name__
+    return method
+
+
+for _name, _fn in list(globals().items()):
+    if _name.startswith("test_") and inspect.isfunction(_fn):
+        setattr(PytestFunctions, _name, _as_method(_fn))

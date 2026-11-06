@@ -34,7 +34,7 @@ VENV=/path/to/venv
 uv venv "$VENV" --python 3.12 && uv pip install --python "$VENV/bin/python" -r requirements.txt
 python3 download_data.py radar        # ~50 s here
 python3 download_data.py rf           # ~10 min here, needs bsdtar (macOS built-in; Debian: libarchive-tools)
-"$VENV/bin/python" -m pytest -q test_features.py
+"$VENV/bin/python" -m pytest -q test_features.py   # or: -m unittest discover (same 11 tests)
 "$VENV/bin/python" train_radar.py --save-model out/radar_model.pkl
 "$VENV/bin/python" train_rf.py --save-model out/rf_model.pkl
 "$VENV/bin/python" cuas_cot.py --model out/radar_model.pkl \

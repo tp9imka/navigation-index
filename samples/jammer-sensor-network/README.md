@@ -176,7 +176,7 @@ shadowing sigma 6 dB; error statistics over fuse steps from 60 s after jammer on
 | static jammer, 10 dBm | 324 m | 438 / 2588 m | 599 / 1090 m | 23 m | 57 m | 0.29 / 0.67 / 1.00 |
 | static + buildings | 341 m | 441 / 522 m | 576 / 976 m | no fix (one station) | 266 m | 0.29 / 0.57 / 1.00 |
 | moving jammer, 13 dBm, ~10 m/s | 407 m | 295 / 1117 m | 338 / 489 m | 94 m | 104 m | 0.88 / 0.80 / 0.93 |
-| two jammers, 12 + 12 dBm | 576 m | k=2 chosen 9 of 21 steps: 288 m per source | 889 m (single-source model) | - | - | - |
+| two jammers, 12 + 12 dBm | 576 m | k=2 chosen 9 of 21 steps: 288 m per source; k=1 in the other 12: 739 m | 889 m (single-source model) | - | - | - |
 
 Other read-outs: detection 5 s after jammer on (first fuse step) in all scenarios; model
 EIRP at the last step 9.4 dBm (grid) and 10.6 dBm (ls) for the 10 dBm jammer, 13.2 / 14.4 dBm
@@ -239,8 +239,9 @@ Shadowing sigma (16 nodes, 4 x 4 km):
   produced an estimate when DF alone had no fix.
 - **Two jammers are only separable when the data show it.** With equal 12 dBm jammers the
   k=2 model won in 9 of 21 steps (288 m per source when it did). A single-source fit lands
-  between the two (739 m). A weaker second jammer under 6 dB shadowing will often not pass
-  the BIC test at all; that sweep was not run.
+  between the two: 739 m median for least squares in the 12 steps it kept k=1, 889 m for the grid,
+  which only has a single-source model (`out/two/summary.json`). A weaker second jammer under
+  6 dB shadowing will often not pass the BIC test at all; that sweep was not run.
 - **Mobile nodes are worth more than their count** (vehicle rows above): each 100 m of
   driving adds a fresh link geometry, which is the "synthetic array" idea of Borio et al.
   (ION GNSS+ 2016, "Jammer localization: from crowdsourcing to synthetic detection"; known

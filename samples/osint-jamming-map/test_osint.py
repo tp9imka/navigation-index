@@ -2,10 +2,16 @@
 
 import unittest
 
-import numpy as np
+try:
+    import numpy as np
 
-import adsb_hexmap as A
-import s1_rfi as S
+    import adsb_hexmap as A
+    import s1_rfi as S
+    HAVE_DEPS, MISSING = True, ""
+except ImportError as e:  # plain python3 without the venv (h3, numpy, rasterio, scipy)
+    HAVE_DEPS, MISSING = False, str(e)
+
+needs_venv = unittest.skipUnless(HAVE_DEPS, f"needs the sample venv: {MISSING}")
 
 RFI_XML = """<?xml version="1.0" encoding="UTF-8"?>
 <rfi><adsHeader><polarisation>VH</polarisation><startTime>2026-10-01T04:51:03.000000</startTime>
@@ -26,6 +32,7 @@ def ac(hex_, lat, lon, nacp, typ="adsb_icao", **kw):
     return {"hex": hex_, "lat": lat, "lon": lon, "nac_p": nacp, "type": typ, "seen_pos": 1.0, **kw}
 
 
+@needs_venv
 class AdsbTest(unittest.TestCase):
     def test_percent_bad_formula(self):
         self.assertEqual(A.percent_bad(10, 0), 0.0)
@@ -61,6 +68,7 @@ class AdsbTest(unittest.TestCase):
         self.assertEqual((row["n_nic_bad"], row["n_mlat_position"]), (0, 1))
 
 
+@needs_venv
 class S1Test(unittest.TestCase):
     def test_parse_rfi_xml(self):
         x = S.parse_rfi_xml(RFI_XML)

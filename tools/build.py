@@ -4,15 +4,19 @@
 Stdlib only. Outputs (all generated, do not hand-edit):
   catalog/{repos,resources,concepts,samples}/*.md
   INDEX.md                     human index by concept
+  samples/README.md            the table between the GENERATED samples markers
   graph/graph.json             nodes + edges (the knowledge graph)
   graph/index.html             interactive graph viewer (loads graph.json)
   index/records.jsonl          one flat record per node, for LLM retrieval / grep
   llms.txt                     entry point for LLM agents
   reports/quality.md           dangling ids, duplicates, missing metadata
 """
+import argparse
 import json
 import re
-from collections import defaultdict
+import subprocess
+import sys
+from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -30,10 +34,43 @@ def load_lane_dir(sub):
     return recs
 
 
+def git_untracked(paths):
+    """Subset of paths (relative to ROOT) that git does not track; empty when git is unavailable."""
+    if not paths:
+        return set()
+    try:
+        out = subprocess.run(["git", "ls-files", "--", *paths], cwd=ROOT, capture_output=True, text=True, check=True)
+    except (OSError, subprocess.CalledProcessError):
+        return set()
+    return set(paths) - set(out.stdout.split())
+
+
+TRACKED_ONLY = False  # --tracked-only: skip untracked samples and guides, as a clean checkout would
+UNTRACKED_SKIPPED = []
+
+
+def tracked_files(files):
+    rel = [f.relative_to(ROOT).as_posix() for f in files]
+    untracked = git_untracked(rel)
+    if untracked:
+        verb = "skipped" if TRACKED_ONLY else "included (not in git: CI will not see them)"
+        print(f"warning: {len(untracked)} untracked file(s) {verb}: {', '.join(sorted(untracked))}", file=sys.stderr)
+        UNTRACKED_SKIPPED.extend(sorted(untracked))
+    return [f for f, r in zip(files, rel) if not (TRACKED_ONLY and r in untracked)]
+
+
+SAMPLE_OVERRIDES = "samples/_meta_overrides.json"
+
+
 def load_samples():
     out = []
-    for f in sorted((ROOT / "samples").glob("*/sample.json")):
+    overrides_path = ROOT / SAMPLE_OVERRIDES
+    overrides = json.loads(overrides_path.read_text()) if overrides_path.exists() else {}
+    for f in tracked_files(sorted((ROOT / "samples").glob("*/sample.json"))):
         s = json.loads(f.read_text())
+        # sample.json wins; the sidecar only fills fields a sample does not set itself yet
+        for k, v in overrides.get(f.parent.name, {}).items():
+            s.setdefault(k, v)
         s["kind"] = "sample"
         s["_dir"] = f.parent.name
         s["_lane"] = "samples"
@@ -85,6 +122,8 @@ FOLDER = {"repo": "repos", "concept": "concepts", "sample": "samples"}
 
 
 def page_path(n):
+    if n["kind"] == "guide":
+        return n["path"]
     return f"catalog/{FOLDER.get(n['kind'], 'resources')}/{slug(n['id'])}.md"
 
 
@@ -94,7 +133,7 @@ def link(nodes, nid, from_catalog=True):
         return f"`{nid}` (not indexed)"
     target = page_path(n)
     if from_catalog:
-        target = "../" + target.split("/", 1)[1]
+        target = "../../" + target
     return f"[{label(n)}]({target})"
 
 
@@ -213,15 +252,16 @@ def render_concept(c, nodes, members, children):
     mem = [nodes[m] for m in members.get(c["id"], [])]
     for kind_label, pred in (
         ("Samples", lambda x: x["kind"] == "sample"),
+        ("Guides", lambda x: x["kind"] == "guide"),
         ("Repositories", lambda x: x["kind"] == "repo"),
-        ("Documents, talks, courses, datasets", lambda x: x["kind"] not in ("repo", "sample")),
+        ("Documents, talks, courses, datasets", lambda x: x["kind"] not in ("repo", "sample", "guide")),
     ):
         group = [x for x in mem if pred(x)]
         if not group:
             continue
         lines += [f"## {kind_label} ({len(group)})", ""]
         for x in sorted(group, key=sort_key):
-            extra = f" - {x.get('kind')}" if x["kind"] not in ("repo", "sample") else ""
+            extra = f" - {x.get('kind')}" if x["kind"] not in ("repo", "sample", "guide") else ""
             fit = f" - fit: {x['hackathon_fit']}" if x.get("hackathon_fit") else ""
             lines.append(f"- {link(nodes, x['id'])}{extra}{fit} - {first_sentence(x.get('summary', ''))}")
         lines.append("")
@@ -239,8 +279,81 @@ def first_sentence(s):
     m = re.match(r"(.+?[.!?])(\s|$)", s)
     return (m.group(1) if m else s)[:220]
 
+# Top-level guides become graph nodes of kind "guide" so search finds the decoder, playbook and runbook.
+GUIDE_GLOBS = ("docs/*.md", "docs/primer/*.md", "docs/landscape/*.md")
+GUIDE_SUMMARY_CHARS = 600
+GUIDE_BODY_CHARS = 6000  # plain text indexed per guide; query.GUIDE_BODY_CHARS must match
+GUIDE_MAX_CONCEPTS = 6
+GUIDE_CONCEPT_LINK_VOTES = 5  # a link to a concept page counts as this many linked nodes tagged with it
+MD_LINK = re.compile(r"\]\(([^)\s#]+)(?:#[^)\s]*)?\)")
+
+
+def guide_id(path):
+    return "guide:" + path.removeprefix("docs/").removesuffix(".md").lower()
+
+
+def guide_files():
+    files = sorted({f for g in GUIDE_GLOBS for f in ROOT.glob(g)})
+    return tracked_files(files)
+
+
+def load_guides(nodes):
+    """Guide nodes; concepts and related ids are inferred from the links in each doc."""
+    files = guide_files()
+    by_page = {page_path(n): nid for nid, n in nodes.items()}
+    for f in files:
+        by_page[f.relative_to(ROOT).as_posix()] = guide_id(f.relative_to(ROOT).as_posix())
+    by_page.update({f"samples/{n['_dir']}": nid for nid, n in nodes.items() if n["kind"] == "sample"})
+    card_about = {}
+    for d in ATTACH_DIRS:
+        for f in (ROOT / d).glob("*.md"):
+            card_about[f.relative_to(ROOT).as_posix()] = [
+                norm_id(x.strip()) for m in ATTACH_RE.finditer(f.read_text()) for x in m.group(1).split(",")]
+    guides = {}
+    for f in files:
+        path = f.relative_to(ROOT).as_posix()
+        gid = guide_id(path)
+        title, lead, about, _ = site_doc(path)
+        linked = []
+        for target in MD_LINK.findall(f.read_text()):
+            if re.match(r"^[a-z]+:", target):
+                continue
+            rel = (f.parent / target).resolve()
+            try:
+                rel = rel.relative_to(ROOT).as_posix().rstrip("/")
+            except ValueError:
+                continue
+            m = re.match(r"(samples/[^/]+)", rel)
+            key = m.group(1) if m else rel
+            if key in by_page:
+                linked.append(by_page[key])
+            linked.extend(card_about.get(rel, []))
+        linked += about
+        linked = [x for x in linked if x != gid and (x in nodes or x.startswith("guide:"))]
+        is_concept = {x for x in linked if x in nodes and nodes[x]["kind"] == "concept"}
+        votes = Counter({c: GUIDE_CONCEPT_LINK_VOTES * n for c, n in Counter(x for x in linked if x in is_concept).items()})
+        votes.update(c for x in dict.fromkeys(linked) if x in nodes and x not in is_concept
+                     for c in nodes[x].get("concepts", []))
+        concepts = [c for c, _ in sorted(votes.items(), key=lambda kv: (-kv[1], kv[0]))[:GUIDE_MAX_CONCEPTS]]
+        related = [{"id": x, "rel": "mentions"} for x in dict.fromkeys(linked)
+                   if not (x in nodes and nodes[x]["kind"] == "concept")]
+        guides[gid] = {"id": gid, "kind": "guide", "name": title, "path": path,
+                       "summary": trim_words(re.sub(r"\s+([.,;:])", r"\1", re.sub(r"\s{2,}", " ", lead)), GUIDE_SUMMARY_CHARS), "concepts": concepts,
+                       "related": related, "_lane": "guides", "_lanes": ["guides"]}
+    return guides
+
+
+def trim_words(s, n):
+    return s if len(s) <= n else re.sub(r"\s+\S*$", "", s[:n]) + " ..."
+
+
 
 def main():
+    global TRACKED_ONLY
+    ap = argparse.ArgumentParser(description="Build the catalog, graph, records, site index and generated tables.")
+    ap.add_argument("--tracked-only", action="store_true",
+                    help="index only git-tracked samples and guides, as CI sees a clean checkout")
+    TRACKED_ONLY = ap.parse_args().tracked_only
     concepts = json.loads((DATA / "concepts.json").read_text())
     meta_path = DATA / "github_meta.json"
     meta = json.loads(meta_path.read_text()) if meta_path.exists() else {}
@@ -270,10 +383,12 @@ def main():
     nodes.update(repos)
     nodes.update(resources)
     nodes.update(samples)
+    guides = load_guides(nodes)
+    nodes.update(guides)
 
     edges, back, members = [], defaultdict(list), defaultdict(list)
     dangling, bad_concepts = defaultdict(list), defaultdict(list)
-    for n in list(repos.values()) + list(resources.values()) + list(samples.values()):
+    for n in list(repos.values()) + list(resources.values()) + list(samples.values()) + list(guides.values()):
         for c in n.get("concepts", []):
             if c not in nodes or nodes[c]["kind"] != "concept":
                 bad_concepts[c].append(n["id"])
@@ -300,6 +415,8 @@ def main():
             old.unlink()
     renderers = {"repo": render_repo, "sample": render_sample}
     for n in nodes.values():
+        if n["kind"] == "guide":
+            continue  # the guide file itself is the page
         if n["kind"] == "concept":
             text = render_concept(n, nodes, members, children)
         else:
@@ -321,10 +438,21 @@ def main():
     write_quality(nodes, repo_dups, res_dups, dangling, bad_concepts, meta)
     write_llms(nodes, concepts, members)
     write_site(nodes, edges, meta)
+    write_samples_readme(nodes)
     kinds = defaultdict(int)
     for n in nodes.values():
         kinds[n["kind"]] += 1
     print("nodes:", dict(kinds), "edges:", len(edges), "dangling:", len(dangling), "bad concepts:", len(bad_concepts))
+
+
+def plural(word):
+    if word.endswith("series"):
+        return word
+    if word.endswith(("s", "x", "ch", "sh")):
+        return word + "es"
+    if word.endswith("y") and word[-2:-1] not in "aeiou":
+        return word[:-1] + "ies"
+    return word + "s"
 
 
 def write_index(nodes, concepts, members, children):
@@ -336,7 +464,7 @@ def write_index(nodes, concepts, members, children):
         "",
         "Generated by `tools/build.py` - do not edit by hand.",
         "",
-        " - ".join(f"**{v}** {k}s" for k, v in sorted(kinds.items())),
+        " - ".join(f"**{v}** {plural(k)}" for k, v in sorted(kinds.items())),
         "",
         "Browse by concept below, open [the graph](graph/index.html), or grep `index/records.jsonl`.",
         "",
@@ -366,6 +494,60 @@ def write_index(nodes, concepts, members, children):
     (ROOT / "INDEX.md").write_text("\n".join(lines) + "\n")
 
 
+SAMPLES_BEGIN = "<!-- BEGIN GENERATED samples -->"
+SAMPLES_END = "<!-- END GENERATED samples -->"
+SAMPLE_GROUPS = (  # table order; groups not listed here follow alphabetically
+    "GNSS threats: detect, map, locate, authenticate", "Integrity and GNSS-loss response on a vehicle",
+    "Alt-PNT: absolute fixes", "Relative navigation and autopilot integration", "C2 and situational awareness",
+    "Counter-UAS detection", "Maritime", "Dismounted", "Swarm", "Timing", "LLM agents", "Infrastructure")
+SAMPLE_INPUT_LABEL = {"real": "real", "sitl": "SITL", "synthetic": "synthetic", "mixed": "mixed"}
+SAMPLE_TABLE_CONCEPTS = 3
+
+
+def cell(v):
+    return str(v).replace("|", "\\|").replace("\n", " ") if v not in (None, "") else "-"
+
+
+def sample_link_base(text, d):
+    """Rewrite links in a sample.json string (relative to the sample folder) to be relative to samples/."""
+    return re.sub(r"\]\((?!https?:|#|/)([^)]+)\)", lambda m: f"]({d}/{m.group(1)})", text)
+
+
+def write_samples_readme(nodes):
+    """Regenerate the table between the GENERATED samples markers in samples/README.md."""
+    path = ROOT / "samples" / "README.md"
+    text = path.read_text() if path.exists() else ""
+    if SAMPLES_BEGIN not in text or SAMPLES_END not in text:
+        print(f"warning: {path.relative_to(ROOT)} has no {SAMPLES_BEGIN} block, table not written", file=sys.stderr)
+        return
+    groups = defaultdict(list)
+    for n in nodes.values():
+        if n["kind"] == "sample":
+            groups[n.get("group") or "Other"].append(n)
+    order = [g for g in SAMPLE_GROUPS if g in groups] + sorted(g for g in groups if g not in SAMPLE_GROUPS)
+    out = [SAMPLES_BEGIN, "",
+           f"_Generated by `tools/build.py` from `samples/*/sample.json` and `{SAMPLE_OVERRIDES}`; "
+           "edit those, not this table._", ""]
+    for g in order:
+        out += [f"### {g}", "",
+                "| Sample | What it shows | Status | Deps | First command | Runtime | Key measured result | Input | Concepts |",
+                "|---|---|---|---|---|---|---|---|---|"]
+        for n in sorted(groups[g], key=lambda x: x["_dir"]):
+            d = n["_dir"]
+            status = n.get("verified_status") or site_verify_status(n.get("verified")) + " (derived)"
+            first = f"`{n['first_command']}`" if n.get("first_command") else "see README"
+            concepts = ", ".join(c.split(":", 1)[1] for c in n.get("concepts", [])[:SAMPLE_TABLE_CONCEPTS])
+            row = [f"[{d}]({d}/README.md)", cell(n.get("shows") or n.get("title")), status, cell(n.get("deps")),
+                   cell(first), cell(n.get("runtime")), cell(sample_link_base(n.get("key_result", ""), d)),
+                   SAMPLE_INPUT_LABEL.get(n.get("input"), "-"), cell(concepts)]
+            out.append("| " + " | ".join(row) + " |")
+        out.append("")
+    out.append(SAMPLES_END)
+    head, rest = text.split(SAMPLES_BEGIN, 1)
+    tail = rest.split(SAMPLES_END, 1)[1]
+    path.write_text(head + "\n".join(out) + tail)
+
+
 def write_graph(nodes, edges, meta):
     out = []
     for n in nodes.values():
@@ -391,6 +573,9 @@ def write_records(nodes, meta):
         for n in nodes.values():
             rec = {k: v for k, v in n.items() if not k.startswith("_")}
             rec["page"] = page_path(n)
+            if n["kind"] == "sample":
+                rec["readme"] = f"samples/{n['_dir']}/README.md"
+                rec["status"] = sample_status(n)
             if ATTACHMENTS.get(n["id"]):
                 rec["deep_dives"] = ATTACHMENTS[n["id"]]
             if n["kind"] == "repo" and n["id"] in meta:
@@ -402,37 +587,59 @@ def write_records(nodes, meta):
 def write_llms(nodes, concepts, members):
     nrepo = sum(1 for n in nodes.values() if n["kind"] == "repo")
     nsample = sum(1 for n in nodes.values() if n["kind"] == "sample")
-    nres = len(nodes) - nrepo - nsample - len(concepts)
+    nguide = sum(1 for n in nodes.values() if n["kind"] == "guide")
+    nres = len(nodes) - nrepo - nsample - nguide - len(concepts)
     lines = [
         "# navigation-index",
         "",
         f"> Knowledge hub for navigation / PNT / GNSS-denied autonomy with a defense lens: {nrepo} open-source repos, "
-        f"{nres} documents, talks, courses and datasets, {nsample} usage samples, linked in one graph over {len(concepts)} concepts.",
+        f"{nres} documents, talks, courses and datasets, {nsample} usage samples and {nguide} guides, "
+        f"linked in one graph over {len(concepts)} concepts.",
         "",
         "Read AGENTS.md for how to query and extend. Query without reading everything: "
-        "`python3 tools/query.py search \"<terms>\"` or the MCP server tools/mcp_server.py.",
+        "`python3 tools/query.py search \"<terms or the problem statement>\"` or the MCP server tools/mcp_server.py. "
+        "Guides (kind `guide`) are searchable like any other node.",
         "",
         "## Entry points",
         "",
+        "- [docs/problem-statement-decoder.md](docs/problem-statement-decoder.md): got a problem statement? start here "
+        "(statement => approach, stack, data, starting sample, risk, pitch)",
+        "- [docs/day0-runbook.md](docs/day0-runbook.md): the first three hours after the statement drops",
+        "- [samples/README.md](samples/README.md): every sample with status, deps, first command, key result",
+        "- [docs/README.md](docs/README.md): map of docs/ and read order",
         "- [AGENTS.md](AGENTS.md): how agents use and extend the hub",
         "- [INDEX.md](INDEX.md): concept tree and high hackathon-fit repos",
-        "- [docs/hackathon-playbook.md](docs/hackathon-playbook.md): project ideas, reference architectures",
-        "- [docs/reference-stacks.md](docs/reference-stacks.md): opinionated picks per capability",
-        "- [docs/primer/README.md](docs/primer/README.md): navigation primer chapters",
+        "- [docs/integration-cards/](docs/integration-cards/): per-repo install, wiring, gotchas, license",
+        "- [docs/dataset-cards/README.md](docs/dataset-cards/README.md): checked dataset sizes and licenses",
+        "- [templates/README.md](templates/README.md): team repo skeleton, demo dashboard, offline kit",
+        "- [site/index.html](site/index.html): static web UI (serve the repo root over HTTP, open /site/)",
         "- [docs/SCHEMA.md](docs/SCHEMA.md): data model",
         "- [index/records.jsonl](index/records.jsonl): every node as one JSON line",
         "- [graph/graph.json](graph/graph.json): nodes and edges",
         "",
-        "## Concepts",
+        "## Guides",
         "",
     ]
+    for n in sorted((n for n in nodes.values() if n["kind"] == "guide"), key=lambda x: x["path"]):
+        lines.append(f"- [{label(n)}]({n['path']}): {trim_words(first_sentence_full(n.get('summary', '')), LLMS_SUMMARY_CHARS)}")
+    lines += ["", "## Samples", "", "Status: ran = main path executed, partial = part ran, sketch = nothing ran.", ""]
+    for n in sorted((n for n in nodes.values() if n["kind"] == "sample"), key=lambda x: x["_dir"]):
+        status = n.get("verified_status") or site_verify_status(n.get("verified"))
+        deps = f", {n['deps']}" if n.get("deps") else ""
+        text = n.get("shows") or first_sentence_full(n.get("summary", ""))
+        lines.append(f"- [{n['_dir']}](samples/{n['_dir']}/README.md) ({status}{deps}): {trim_words(text, LLMS_SUMMARY_CHARS)}")
+    lines += ["", "## Concepts", ""]
     for c in concepts:
         lines.append(f"- [{c['name']}](catalog/concepts/{slug(c['id'])}.md): {len(members.get(c['id'], []))} items - {c['summary']}")
-    lines += ["", "## Samples", ""]
-    for n in nodes.values():
-        if n["kind"] == "sample":
-            lines.append(f"- [{label(n)}](samples/{n['_dir']}/README.md): {first_sentence(n.get('summary', ''))}")
     (ROOT / "llms.txt").write_text("\n".join(lines) + "\n")
+
+
+LLMS_SUMMARY_CHARS = 240
+
+
+def first_sentence_full(s):
+    m = re.match(r"(.+?[.!?])(\s|$)", s)
+    return m.group(1) if m else s
 
 
 def write_quality(nodes, repo_dups, res_dups, dangling, bad_concepts, meta):
@@ -455,8 +662,9 @@ def write_quality(nodes, repo_dups, res_dups, dangling, bad_concepts, meta):
     (rdir / "quality.md").write_text("\n".join(lines))
 
 
+# landscape docs are guide nodes (with a body) rather than doc entries
 DOC_KIND = {"docs/integration-cards": "integration-card", "docs/dataset-cards": "dataset-card",
-            "docs/paper-digests": "paper-digest", "docs/landscape": "landscape"}
+            "docs/paper-digests": "paper-digest"}
 SITE_DOC_SUMMARY = 400  # chars of a deep-dive doc's lead paragraph shown on its card
 SITE_DOC_BODY = 1500  # chars of plain text per deep-dive doc kept for search
 
@@ -490,6 +698,11 @@ def site_verify_status(v):
     return "sketch"
 
 
+def sample_status(n):
+    """verified_status from sample.json (or the overrides sidecar), else derived from the verified text."""
+    return n.get("verified_status") or site_verify_status(n.get("verified"))
+
+
 def write_site(nodes, edges, meta):
     """Compact search/facet index for the static web UI in site/ (site/data/index.json)."""
     ids = list(nodes)
@@ -517,7 +730,9 @@ def write_site(nodes, edges, meta):
             "hi": 1 if any(d.startswith("docs/integration-cards/") for d in dd) else None,
         }
         if n["kind"] == "sample":
-            rec.update({"v": n.get("verified", ""), "vs": site_verify_status(n.get("verified")), "sd": n.get("_dir")})
+            rec.update({"v": n.get("verified", ""), "vs": sample_status(n), "sd": n.get("_dir")})
+        if n["kind"] == "guide":
+            rec["b"] = site_doc(n["path"])[3][:GUIDE_BODY_CHARS]
         out_nodes.append({k: v for k, v in rec.items() if v not in (None, "", [], False)})
     out_docs = []
     for d, kind in DOC_KIND.items():

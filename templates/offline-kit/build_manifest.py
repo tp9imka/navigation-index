@@ -426,7 +426,12 @@ def build():
         items.append(dict(id="docker:" + img, type="docker", tier=meta["tier"], image=img, platforms=["linux/amd64", "linux/arm64"],
                           license="per image", source=", ".join(meta["sources"]), size=None, size_complete=False,
                           note="unpinned tag; pin a digest you tested" if img.endswith((":latest",)) or ":" not in img else ""))
+    seen_builds = set()
     for b in builds:
+        # Several samples reuse one image by tag; the first parsed build (sorted order) owns its context.
+        if b["image"] in seen_builds or '"' in b["context"] or "$" in b["context"]:
+            continue
+        seen_builds.add(b["image"])
         items.append(dict(id="docker-build:" + b["image"], type="docker-build", tier="standard", image=b["image"],
                           context=b["context"], dockerfile=b["dockerfile"], license="per Dockerfile contents", source=b["source"],
                           size=None, size_complete=False, note="needs network at build time; build and save the week before"))

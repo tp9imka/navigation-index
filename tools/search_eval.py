@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Evaluate search ranking against hand-judged queries (tools/search_queries.json). Stdlib only.
 
-  search_eval.py                 MRR / nDCG@10 / recall@10 for the legacy and current rankers, train vs holdout
+  search_eval.py                 MRR / nDCG@10 / recall@10 for the legacy and current rankers, train vs holdout,
+                                 plus the problem-statement subset (queries with "style": "problem-statement")
   search_eval.py -v              plus per-query rows
   search_eval.py --parity        compare top-10 of tools/query.py with site/app.js (needs node + site/data/index.json)
 """
@@ -57,6 +58,8 @@ def evaluate(recs, queries, rank, verbose=False, label=""):
         m = metrics(ranked, item["relevant"])
         by_split.setdefault(item["split"], []).append(m)
         by_split.setdefault("all", []).append(m)
+        if item.get("style"):
+            by_split.setdefault(item["style"], []).append(m)
         if verbose:
             first = next((i + 1 for i, x in enumerate(ranked) if x in set(item["relevant"])), None)
             print(f"  {label:8} {item['split']:7} {item['q'][:34]:34} rr={m['mrr']:.2f} ndcg={m['ndcg']:.2f} "
@@ -124,9 +127,11 @@ def main():
     print(f"{'ranker':8} {'split':8} {'n':>3} {'MRR':>6} {'nDCG@10':>8} {'R@10':>6}")
     for label, fn in (("legacy", legacy_rank), ("bm25f", current_rank)):
         res = evaluate(recs, queries, fn, a.verbose, label)
-        for split in ("train", "holdout", "all"):
+        for split in ("train", "holdout", "all", "problem-statement"):
+            if split not in res:
+                continue
             m = res[split]
-            print(f"{label:8} {split:8} {m['n']:3d} {m['mrr']:6.3f} {m['ndcg']:8.3f} {m['recall']:6.3f}")
+            print(f"{label:8} {split.split('-')[0]:8} {m['n']:3d} {m['mrr']:6.3f} {m['ndcg']:8.3f} {m['recall']:6.3f}")
 
 
 if __name__ == "__main__":

@@ -159,8 +159,10 @@ python3 -m unittest -v test_to_navdash test_golden_v2   # 17 tests, no SITL
 dashboard input `runs/navdash-v1/` or `runs/navdash-v2/`, Monte Carlo `runs/mc/`. The committed
 reference (`data/`, `data/v2/`, `data/mc_summary.json`) only changes with `--update-reference`.
 
-Requirements: `PYTHON` needs `pymavlink` (`pip install pymavlink==2.4.50`) for every mode. The
-unit tests also import pymavlink (via `companion.py`). `--live` and `vgeo_real.py table` need
+Requirements: `PYTHON` needs `pymavlink` (`python3 -m venv .venv && .venv/bin/pip install
+pymavlink==2.4.50`) for every mode. The unit tests run on plain `python3`: `test_golden_v2.py` guards
+the `companion.py` import (which needs pymavlink) and skips the 2 tests that use it (17 tests, 2
+skipped without pymavlink). `--live` and `vgeo_real.py table` need
 the `samples/geoloc-license-clean` requirements (torch, LightGlue, OpenCV, rasterio) and its
 data (`python ../geoloc-license-clean/download_data.py`; two NAIP GeoTIFFs, 94 MB + 27 MB).
 The replay mode only needs the committed `data/vgeo_table.json` (39 KB), stdlib.
@@ -380,7 +382,8 @@ circle around the flight area, not an emitter footprint.
 - **v1 SITL GPS has no horizontal noise** (`SIM_GPS_NOISE` only moves altitude in 4.6.3). v2's
   injected noise model is a guess, not fitted to a receiver.
 - **The Monte Carlo is small**: 4 seeds per cell, replayed vgeo, speedup 3, one host under heavy
-  load. Distributions are reported as min / median / p90 / max, not confidence intervals.
+  load. Distributions are reported as min / median / max (p90 only for the visual geoloc error), not
+  confidence intervals.
 - **TTD resolution is 1 s** (monitor epoch); times are sim time.
 - The detection threshold choices (windows, sigmas, AL) are mine for this demo, not tuned to any
   standard.

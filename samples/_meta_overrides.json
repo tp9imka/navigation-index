@@ -1,0 +1,190 @@
+{
+ "gnss-interference-monitor": {
+  "group": "GNSS threats: detect, map, locate, authenticate",
+  "shows": "Per-receiver scorer for jamming, spoofing, slow drag-off, clock drift and lost fix from u-blox telemetry; latched alarm with reasons; ADS-B NACp area map",
+  "input": "synthetic",
+  "runtime": "tests under 1 s",
+  "key_result": "[Synthetic drag](README.md#run-verified-part): static-reference mode flags a 0.02 m/s^2 drag at 38 s / 14 m; 20 h synthetic soak 0 alert epochs (CV prior). On GNSS-SDR output of simulated IQ the drag-off is caught 6-9 s after it starts"
+ },
+ "gnss-signal-chain": {
+  "group": "GNSS threats: detect, map, locate, authenticate",
+  "shows": "File-only GPS L1 IQ chain: gps-sdr-sim => spoof/jam mixer => GNSS-SDR => scorer, four scenarios",
+  "input": "synthetic",
+  "runtime": "319 s incl. image build",
+  "key_result": "[Drag-off](README.md#before--after): alert at t=89 s (CV prior) / t=86 s (static reference), 9 / 6 s after the drag starts; clean run 0 alarm epochs"
+ },
+ "jammer-sensor-network": {
+  "group": "GNSS threats: detect, map, locate, authenticate",
+  "shows": "Many cheap receivers report C/N0 drop and AGC; aggregator localizes the jammer (centroid, RSS least squares, grid Bayes, optional DF) => CoT + navdash",
+  "input": "synthetic",
+  "runtime": "demo ~40 s, evaluate ~2 min",
+  "key_result": "[16 nodes on 4 x 4 km, 6 dB shadowing](README.md#monte-carlo-evaluatepy-40-trials-per-row-one-10-s-snapshot-of-static-nodes): grid median 313 m, grid + 3 DF stations 40 m (40 trials)"
+ },
+ "interference-geolocation-to-tak": {
+  "group": "GNSS threats: detect, map, locate, authenticate",
+  "shows": "Jammer triangulation from KrakenSDR-style DF bearings (stdlib RANSAC + Gauss-Newton, Stone Soup PF/UKF) => CoT point + 95 % ellipse",
+  "input": "synthetic",
+  "runtime": "ls under 1 s; --method all ~40 s",
+  "key_result": "[3 stations, 300 s](README.md#run-all-of-this-was-run-on-2026-11-06): 14 m (ls), 12 m (pf), 8 m (ukf); truth inside the 95 % ellipse in every run (one seed)"
+ },
+ "gnss-rinex-processing": {
+  "group": "GNSS threats: detect, map, locate, authenticate",
+  "shows": "RTKLIB demo5 SPP/RTK and gnss_lib_py WLS on public NOAA CORS RINEX, scored against the NGS coordinate",
+  "input": "real",
+  "runtime": "~7 min image build, ~100 s glp",
+  "key_result": "[RTK](README.md#observed-results-2026-11-06) 0.084 / 0.055 / 0.071 m E/N/U rms, 97 % fix; SPP 0.62 / 1.24 / 1.02 m"
+ },
+ "golden-demo": {
+  "group": "Integrity and GNSS-loss response on a vehicle",
+  "shows": "ArduCopter SITL survey, GPS dragged (position or coherent); companion detects with SS + velocity test against real geoloc, switches EKF3 to ExternalNav; dashboard replay; 52-flight Monte Carlo",
+  "input": "sitl",
+  "runtime": "v2 ~8 min; MC 20 min",
+  "key_result": "[52 flights](README.md#v2-monte-carlo-ran-2026-11-06-52-flights): 24/24 monitor flights detected, 0/4 false alarms without spoof; coherent 1 m/s median TTD 2.8 s; max deviation 5.4-18.6 m (one 29.1 m) vs 24.5-86.9 m without the monitor"
+ },
+ "altpnt-integrity": {
+  "group": "Integrity and GNSS-loss response on a vehicle",
+  "shows": "Stdlib EKF (INS + VIO + visual geoloc + jammed then spoofed GNSS) with solution-separation FDE, protection level, MI/HMI, Stanford diagram",
+  "input": "synthetic",
+  "runtime": "~20 s (20 seeds)",
+  "key_result": "[20 seeds, AL 50 m](README.md#observed-output-python3147-2026-11-06): full monitor 0 MI / 0 HMI epochs at 41.7 % availability; no monitor 3217 HMI epochs"
+ },
+ "gnss-ins-ekf-outage": {
+  "group": "Integrity and GNSS-loss response on a vehicle",
+  "shows": "2D loosely coupled GNSS/INS EKF: INS-only drift, 60 s outage, spoof walk-off vs gate and latch",
+  "input": "synthetic",
+  "runtime": "under 1 s",
+  "key_result": "[60 s outage](README.md#expected-output-observed-python3147-2026-11-06): EKF max 7.7 m vs INS-only 1303.8 m; the gate never alarms on drags up to 0.5 m/s"
+ },
+ "ardupilot-ekf3-source-switch": {
+  "group": "Integrity and GNSS-loss response on a vehicle",
+  "shows": "EKF3 source-set switch to ExternalNav (SITL vicon) around a GPS cut, plus a no-switch contrast run",
+  "input": "sitl",
+  "runtime": "~100 s flight",
+  "key_result": "[With switch](README.md#run-the-sitl-flight-ran-2026-11-06): POS_HORIZ_ABS kept 30 s without GPS; [without](README.md#contrast-run-gps-cut-without-the-source-switch): ~6 s coast, then EKF failsafe LAND"
+ },
+ "visual-geolocalization-lightglue": {
+  "group": "Alt-PNT: absolute fixes",
+  "shows": "Nadir frame => orthophoto match (LightGlue, MAGSAC homography, GeoTIFF transform) => lat/lon; stdlib geometry module",
+  "input": "synthetic",
+  "runtime": "~25 s per case",
+  "key_result": "[Synthetic pairs from one real ortho](README.md#run): 0.04-0.21 m; 30.67 m wrong fix accepted at the ortho edge"
+ },
+ "geoloc-license-clean": {
+  "group": "Alt-PNT: absolute fixes",
+  "shows": "Same pipeline with permissive parts only (ALIKED / DISK / SIFT + LightGlue, NAIP maps), synthetic and real eBee frames",
+  "input": "mixed",
+  "runtime": "download ~7 min, eval ~60 min CPU",
+  "key_result": "[Synthetic](README.md#measured-results-ran-2026-11-06) same-map 0.10-0.11 m, cross-season 1.90-4.82 m median; real eBee frames 1 of 5 fixed (11.0 m)"
+ },
+ "terrain-relative-nav-pf": {
+  "group": "Alt-PNT: absolute fixes",
+  "shows": "Stdlib SIR particle filter: biased INS + radar altimeter vs a synthetic DEM, flat-terrain control",
+  "input": "synthetic",
+  "runtime": "~1.5 s",
+  "key_result": "[Seed 7](README.md#observed-output-python3147-2026-11-06): PF 4-25 m vs INS 380.3 m at 200 s; flat control 1-sigma 229-301 m"
+ },
+ "blind-flight-bench": {
+  "group": "Alt-PNT: absolute fixes",
+  "shows": "Benchmark for the 2026 Blind flight brief: 20 km radar-altimeter flights over four real GLO-30 windows, 10 navigators incl. clean-room team re-implementations",
+  "input": "synthetic",
+  "runtime": "~6 min (+ ~30 s fetch)",
+  "key_result": "[Straight, 20 km](README.md#straight-flights-all-regions-pooled): beam-aware PF 148 m median (18 % diverged) vs dead reckoning 1582 m (92 %); turns: every navigator diverges in 80-100 % of flights"
+ },
+ "magnav-quickstart": {
+  "group": "Alt-PNT: absolute fixes",
+  "shows": "MagNav.jl Tolles-Lawson + EKF on real SGL 2020 flight line 1006.08",
+  "input": "real",
+  "runtime": "43 s after ~10 min install",
+  "key_result": "[One 14 min line](README.md#observed-output-2026-11-06): EKF DRMS 31.2 m vs INS-only final 218.8 m; CRLB DRMS 13 m"
+ },
+ "relative-nav-benchmark": {
+  "group": "Relative navigation and autopilot integration",
+  "shows": "KISS-ICP, OpenVINS, mono and nadir VO on KITTI 04, UZH-FPV and VPAIR, scored with evo; fitted error models fed to altpnt-integrity",
+  "input": "real",
+  "runtime": "lidar 12-20 s + 1.13 GB; OpenVINS image ~20 min",
+  "key_result": "[Final drift](README.md#results): KISS-ICP 0.12 % of 394 m; OpenVINS 0.26 % of 278 m; nadir VO 15.5 % image-only, 0.65 % attitude-aided over 8.98 km"
+ },
+ "vio-to-mavlink-bridge": {
+  "group": "Relative navigation and autopilot integration",
+  "shows": "ENU/FLU pose => NED/FRD ODOMETRY or VISION_POSITION_ESTIMATE for EKF3 / EKF2",
+  "input": "sitl",
+  "runtime": "tests 0.002 s",
+  "key_result": "[EKF3](README.md#ardupilot-arducopter-copter-463-sitl) and [EKF2](README.md#px4-v1170-sih-quadrotor) fused a stationary ODOMETRY pose; no flight on vision"
+ },
+ "mavlink-to-tak-cot": {
+  "group": "C2 and situational awareness",
+  "shows": "MAVLink GLOBAL_POSITION_INT => CoT; stdlib builder plus pymavlink/PyTAK bridge",
+  "input": "synthetic",
+  "runtime": "tests 0.001 s",
+  "key_result": "[Offline end to end](README.md#part-2---bridge-offline-end-to-end-verified): well-formed CoT at ~1 Hz over TCP and UDP to a local sink (fake autopilot)"
+ },
+ "stone-soup-tracking": {
+  "group": "C2 and situational awareness",
+  "shows": "Stone Soup EKF + JPDA on two simulated UAVs in radar clutter, OSPA vs truth",
+  "input": "synthetic",
+  "key_result": "[One seed](README.md#observed-output-stonesoup-191-python-31214-2026-11-06): 2 tracks on 2 truths, OSPA mean 17.0 m, max 53.0 m (c = 100 m)"
+ },
+ "remote-id-to-tak": {
+  "group": "Counter-UAS detection",
+  "shows": "Stdlib Open Drone ID decoder validated against opendroneid-core-c, track table with plausibility flags, CoT via PyTAK",
+  "input": "real",
+  "runtime": "tests 0.086 s",
+  "key_result": "[Decoder](README.md#1-decoder-validated-against-opendroneid-core-c-ran-it) field-for-field equal to core-c on 500 + 500 vectors and 81 payloads from public captures"
+ },
+ "usv-gnss-denied-nav": {
+  "group": "Maritime",
+  "shows": "USV own-ship nav in the Oresund: compass + speed-log DR, simulated radar matched to the real OSM chart, monitor excludes spoofed GNSS",
+  "input": "synthetic",
+  "runtime": "tests ~1 s; run.py ~2 min",
+  "key_result": "[5 seeds](README.md#results-5-seeds-real-outputs): coastal drag excluded 125-131 s after onset, max error 10-25 m vs 1391-1395 m without the monitor; 0 false alarms in 25 runs",
+  "verified_status": "ran",
+  "deps": "stdlib",
+  "first_command": "python3 -m unittest test_core && python3 run.py"
+ },
+ "maritime-ais-spoofing": {
+  "group": "Maritime",
+  "shows": "Stdlib detectors for spoofing signatures in real Danish AIS; recall and TTD on injected episodes; GeoJSON + CoT",
+  "input": "real",
+  "runtime": "detectors 5 s on 1.7 M fixes",
+  "key_result": "[Injected episodes](README.md#results-on-injected-episodes-all-ran-2026-11-06): recall 0.79 (tuning day), 0.75 (held-out day), median TTD 7-8 s; no real spoofing found in 8.8 h"
+ },
+ "dismounted-foot-ins": {
+  "group": "Dismounted",
+  "shows": "Stdlib 15-state ZUPT EKF on 36 real pyshoe trials, cross-checked with pyshoe; corridor heading, floor, simulated UWB; CoT/navdash",
+  "input": "real",
+  "runtime": "~12 min on 11 workers",
+  "key_result": "[36 trials](README.md#result-1-stdlib-filter-vs-pyshoe-shoe-g--85e7-w--5-all-36-trials): 2.35 m ARMSE, 1.30 % final error (pyshoe 2.51 m, 1.49 %); [aided](README.md#result-3-aiding-ins15_py--shoe-85e7-all-36-trials) 1.07 m, 0.83 %"
+ },
+ "swarm-coop-localization": {
+  "group": "Swarm",
+  "shows": "6 vehicles, 2 with GNSS, UWB ranging: centralized EKF vs covariance intersection, robust ranging, spoofed-anchor detection",
+  "input": "synthetic",
+  "runtime": "~10 s",
+  "key_result": "[10 seeds](README.md#results-10-seeds): central robust team RMSE 2.0 m vs dead reckoning 49.1 m; solution separation detects the spoofed anchor in 9/10 with 1 false alarm"
+ },
+ "timing-holdover": {
+  "group": "Timing",
+  "shows": "GNSS-disciplined oscillator sim (TCXO / CSAC / OCXO / Rb): holdover error after outage, slow time-walk spoof vs internal and cross-source monitors",
+  "input": "synthetic",
+  "runtime": "~5 s",
+  "key_result": "[24 h holdover](README.md#output-ran-on-2026-11-06-python-3147-default-arguments-about-5-s), median: TCXO 59.58 us, CSAC 1.27 us, OCXO 610.0 ns, Rb 43.8 ns (no temperature term)"
+ },
+ "llm-agent-usage": {
+  "group": "LLM agents",
+  "shows": "The hub's stdlib MCP server (search / show / concept / neighbors) piped a demo session; client registration snippets",
+  "key_result": "[Demo session](README.md): 7 JSON-RPC responses (functional check, no metric)"
+ },
+ "llm-mission-agent": {
+  "group": "LLM agents",
+  "shows": "Safety-gated MAVLink MCP server (geofence, altitude band, mode allowlist, dry run) flying ArduCopter SITL; Claude tool-use loop included but not run",
+  "input": "sitl",
+  "runtime": "126 s scripted flight",
+  "key_result": "[Scripted MCP client](README.md#what-was-verified-2026-11-06): takeoff, survey upload, GPS loss => degraded health => ExternalNav switch => RTL; fence and altitude rejections fired"
+ },
+ "sitl-docker": {
+  "group": "Infrastructure",
+  "shows": "Headless ArduCopter 4.6.3 SITL and PX4 v1.17.0 SIH images, compose file, client image",
+  "runtime": "builds ~8.5 min / ~26 min",
+  "key_result": "[Images](README.md#what-was-verified-2026-11-06-docker-2952-apple-silicon-linuxarm64): ArduPilot 1.85 GB, PX4 214 MB, client 558 MB; both stacks flew the other samples"
+ }
+}

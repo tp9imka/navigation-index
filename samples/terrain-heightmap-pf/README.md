@@ -81,6 +81,8 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python run_eval.py           # ~105 s on an M2 Max; --no-sweep to skip the sweep
 # v2
 .venv/bin/python -m pytest -q test_v2.py   # ~10 s
+# or both files via unittest: .venv/bin/python -m unittest discover (22 tests;
+# plain python3 without the venv skips them all, which is what CI runs)
 .venv/bin/python run_eval_v2.py        # ~6 min; checks v1 pf_grad against out/results.json
 .venv/bin/python fetch_lidar.py        # ~100 s, 80 MB of NRW tiles into data/nrw_tiles/
 .venv/bin/python run_lidar.py          # ~3 min

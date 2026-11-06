@@ -5,9 +5,9 @@ const ROOT = "../"; // repo root relative to site/
 const PAGE_SIZE = 50;
 const FACET_COLLAPSED = 8;
 const FIT_RANK = { high: 0, medium: 1, low: 2 };
-const DOC_KINDS = { "integration-card": "integration card", "dataset-card": "dataset card", "paper-digest": "paper digest", "landscape": "landscape" };
+const DOC_KINDS = { "integration-card": "integration card", "dataset-card": "dataset card", "paper-digest": "paper digest", "guide": "guide" };
 const STAR_BUCKETS = [["10k+", 10000, Infinity], ["1k-10k", 1000, 10000], ["100-1k", 100, 1000], ["10-100", 10, 100], ["<10", 0, 10]];
-const VERIFY_LABEL = { ran: "ran", sketch: "sketch / not run", placeholder: "placeholder" };
+const VERIFY_LABEL = { ran: "ran", partial: "partly ran", sketch: "sketch / not run", pending: "pending", placeholder: "placeholder" };
 
 const FACETS = [
   { key: "kind", title: "Kind", vals: e => [e.k] },
@@ -80,14 +80,23 @@ const FIELD_B = { name: 0.3, tags: 0.3, concepts: 0.0, summary: 0.6, why: 0.6, n
 const K1 = 1.2, CONCEPT_MIN = 0.5, CONCEPT_W = 2.5;
 const PRIOR_FIT = { high: 0.4, medium: 0.15 }, PRIOR_RAN = 0.4;
 const DEEP_DOC_MAX_ABOUT = 4;
-const STOP = new Set("a an and are as at be by for from in into is it of on or the to with via using none".split(" "));
-const SYNONYM = { gps: "gnss", drone: "uav", uas: "uav", suas: "uav", quadcopter: "uav", quadrotor: "uav", multirotor: "uav", ladar: "lidar" };
+const DEEP_DOC_CHARS = 1500, GUIDE_BODY_CHARS = 6000;
+const STOP = new Set(("a an and are as at be by for from in into is it of on or the to with via using none " +
+  "all any but can do does have has how if its not our should so than that their them then there they this we what when where which who will you your").split(" "));
+const SYNONYM = { gps: "gnss", drone: "uav", uas: "uav", suas: "uav", quadcopter: "uav", quadrotor: "uav", multirotor: "uav", ladar: "lidar", harbour: "harbor", defence: "defense", ship: "vessel", boat: "vessel" };
 const NORMALIZE = [[/isation/g, "ization"], [/geo[\s_-]+locali[sz]ation/g, "geolocalization"], [/geo[\s_-]+locali[sz]e/g, "geolocalize"]];
 
 function stem(t) {
+  const syn = w => Object.prototype.hasOwnProperty.call(SYNONYM, w);
   if (t.length > 4 && t.endsWith("ies")) t = t.slice(0, -3) + "y";
   else if (t.length > 3 && t.endsWith("s") && !t.endsWith("ss") && !t.endsWith("us") && !t.endsWith("is")) t = t.slice(0, -1);
-  return Object.prototype.hasOwnProperty.call(SYNONYM, t) ? SYNONYM[t] : t;
+  if (syn(t)) return SYNONYM[t];
+  let cut = false;
+  if (t.length > 5 && t.endsWith("ing")) { t = t.slice(0, -3); cut = true; }
+  else if (t.length > 4 && t.endsWith("ed")) { t = t.slice(0, -2); cut = true; }
+  if (cut && t.length > 3 && t[t.length - 1] === t[t.length - 2] && !"lsz".includes(t[t.length - 1])) t = t.slice(0, -1);
+  else if (t.length > 3 && t.endsWith("e")) t = t.slice(0, -1);
+  return syn(t) ? SYNONYM[t] : t;
 }
 
 function tokens(text) {
@@ -99,8 +108,11 @@ function tokens(text) {
 function buildRanker(entries) {
   const cname = new Map(entries.filter(e => e.k === "concept").map(e => [e.i, e.n || ""]));
   const docBody = new Map(), users = new Map();
+  // code-point slicing, so cuts match Python's str slicing
+  const cut = (s, n) => Array.from(s || "").slice(0, n).join("");
   for (const e of entries) {
     if (e.i.startsWith("doc:")) docBody.set(e.p, e.b || "");
+    else if (e.k === "guide") docBody.set(e.p, cut(e.b, DEEP_DOC_CHARS));
     else for (const d of e.dd || []) users.set(d, (users.get(d) || 0) + 1);
   }
   const join = v => Array.isArray(v) ? v.join(" ") : String(v || "");
@@ -112,7 +124,8 @@ function buildRanker(entries) {
       : {
           name: e.n, tags: join(e.g), concepts: cs.map(c => cname.get(c) || "").join(" "), summary: join(e.s),
           why: join(e.w), notes: join(e.h), takeaways: join(e.kt), lang: e.lg || "", kind: e.k,
-          deep: (e.dd || []).filter(d => docBody.has(d) && users.get(d) <= DEEP_DOC_MAX_ABOUT).map(d => docBody.get(d)).join(" "),
+          deep: e.k === "guide" ? cut(e.b, GUIDE_BODY_CHARS)
+            : (e.dd || []).filter(d => docBody.has(d) && users.get(d) <= DEEP_DOC_MAX_ABOUT).map(d => docBody.get(d)).join(" "),
         };
     const f = {}, tf = {};
     for (const k of FIELDS) {
@@ -317,7 +330,7 @@ function fmtStars(n) {
 }
 
 function kindBadge(e) {
-  const cls = e.isDoc ? "k-doc-card" : "k-" + e.k;
+  const cls = e.isDoc || e.k === "guide" ? "k-doc-card" : "k-" + e.k;
   return `<span class="kind ${cls}">${esc(DOC_KINDS[e.k] || e.k)}</span>`;
 }
 
@@ -345,7 +358,7 @@ function trim(s, n) {
 function card(e, i) {
   const chips = (e.c || []).map(c => byId.get(c)).filter(Boolean)
     .map(c => `<button class="chip" data-concept="${esc(c.i)}">${esc(c.n)}</button>`).join("");
-  const links = [`<a href="${pageHref(e.p)}">${e.isDoc ? "Read card" : "Catalog page"}</a>`];
+  const links = [`<a href="${pageHref(e.p)}">${e.isDoc ? "Read card" : e.k === "guide" ? "Read guide" : "Catalog page"}</a>`];
   if (e.u) links.push(`<a href="${esc(e.u)}" target="_blank" rel="noopener">Source</a>`);
   if (e.sd) links.push(`<a href="${pageHref(`samples/${e.sd}/README.md`)}">Sample README</a>`);
   for (const d of e.dd || []) links.push(`<a href="${pageHref(d)}">${esc(DOC_KINDS[kindOfDoc(d)] || "doc")}</a>`);
@@ -439,7 +452,7 @@ function pageSide(e) {
   const links = [];
   if (e.u) links.push(`<a href="${esc(e.u)}" target="_blank" rel="noopener">Source</a>`);
   if (e.sd) links.push(`<a href="${pageHref(`samples/${e.sd}/README.md`)}">Sample README</a>`);
-  if (!e.isDoc && e.p !== S.page) links.push(`<a href="${pageHref(e.p)}">Catalog page</a>`);
+  if (!e.isDoc && e.p !== S.page) links.push(`<a href="${pageHref(e.p)}">${e.k === "guide" ? "Read guide" : "Catalog page"}</a>`);
   links.push(`<button class="link-btn" data-copy-show="${esc(e.i)}">Copy MCP</button>`);
   return `<div class="box"><div class="card-head">${kindBadge(e)}<strong>${esc(e.n)}</strong></div>
     <div class="id muted">${esc(e.i)}</div>${metaLine(e)}<div class="actions">${links.join("")}</div></div>

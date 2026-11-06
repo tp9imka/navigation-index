@@ -1,10 +1,19 @@
-import numpy as np
-import pytest
-from scipy.ndimage import gaussian_filter
+import inspect
+import tempfile
+import unittest
+from pathlib import Path
 
-import core
-import nav2
-import sim
+try:
+    import numpy as np
+    import pytest
+    from scipy.ndimage import gaussian_filter
+
+    import core
+    import nav2
+    import sim
+    HAVE_DEPS, MISSING = True, ""
+except ImportError as e:  # plain python3 without the venv
+    HAVE_DEPS, MISSING = False, str(e)
 
 
 def smooth_field(shape, seed=0, sigma=3.0):
@@ -87,7 +96,7 @@ def synthetic(rough):
     return 300 + (base / base.std()) * (15 if rough else 0.01), 30.0
 
 
-CFG = sim.with_(sim.Config(), methods=("pf",), feature="grad", jitter_frac=0.1, n_particles=1000)
+CFG = sim.with_(sim.Config(), methods=("pf",), feature="grad", jitter_frac=0.1, n_particles=1000) if HAVE_DEPS else None
 
 
 def test_v2_estimates_20_deg_compass_bias_on_textured_terrain():
@@ -108,3 +117,27 @@ def test_v2_gate_falls_back_to_odometry_on_flat_terrain():
     r2 = nav2.run_v2(dem, res, 2, CFG, nav2.V2(gate=False), sim.map_features(dem, CFG))
     assert r2["rec_applied"].all()
     assert np.abs(r2["err_pf"] - r2["err_odom"]).max() > 50
+
+
+# `python3 -m unittest discover` (CI, plain interpreter) does not collect pytest-style functions.
+# This class runs them under unittest and skips them without the sample venv; pytest ignores the
+# class (__test__ = False) and runs the functions directly.
+@unittest.skipUnless(HAVE_DEPS, f"needs the sample venv: {MISSING}")
+class PytestFunctions(unittest.TestCase):
+    __test__ = False
+
+
+def _as_method(fn):
+    def method(self):
+        if "tmp_path" in inspect.signature(fn).parameters:
+            with tempfile.TemporaryDirectory() as d:
+                fn(Path(d))
+        else:
+            fn()
+    method.__name__ = fn.__name__
+    return method
+
+
+for _name, _fn in list(globals().items()):
+    if _name.startswith("test_") and inspect.isfunction(_fn):
+        setattr(PytestFunctions, _name, _as_method(_fn))

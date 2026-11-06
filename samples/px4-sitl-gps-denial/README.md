@@ -176,8 +176,8 @@ How to read it:
 ```sh
 docker exec px4 sh -c 'ls /px4/rootfs/log/*/'          # one .ulg per boot
 docker exec px4 cat /px4/rootfs/log/2026-11-06/07_50_25.ulg > px4_sih.ulg
-pip install pyulog
-python3 ulog_drift.py px4_sih.ulg --deny-from 55.14 --deny-to 69.03 > ulog_drift.csv
+python3 -m venv .venv && .venv/bin/pip install pyulog==1.3.0
+.venv/bin/python ulog_drift.py px4_sih.ulg --deny-from 55.14 --deny-to 69.03 > ulog_drift.csv
 python3 drift.py ulog_drift.csv
 ```
 

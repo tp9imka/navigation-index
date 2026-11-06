@@ -1,5 +1,5 @@
 {
- "note": "Hand-judged relevance for tools/search_eval.py. Relevant ids were picked by reading records, not from ranker output. Binary relevance. split=holdout queries are never used for tuning.",
+ "note": "Hand-judged relevance for tools/search_eval.py. Relevant ids were picked by reading records, not from ranker output. Binary relevance. split=holdout queries are never used for tuning. style=problem-statement queries (added 2026-11-06) are free-text briefs; their relevant sets were written before looking at ranker output and include guide nodes.",
  "queries": [
   {"q": "visual geolocalization", "split": "train", "relevant": ["concept:visual-geolocalization", "repo:tiers/wildnav", "repo:terbouchehacene/visual_localization", "repo:hmf21/uavlocalization", "repo:uav-avl/benchmark", "sample:visual-geolocalization-lightglue"]},
   {"q": "gps spoofing detection", "split": "train", "relevant": ["res:psiaki-humphreys-2016-gnss-spoofing-detection", "res:rados-2024-jamming-spoofing-detection-review", "res:ut-texbat", "repo:s7am1na/gnss-spoofing-dataset", "res:kreizis-ion-itm-2025-spoofing", "repo:josephtule/gps-spoofing-detect"]},
@@ -30,6 +30,11 @@
   {"q": "osnma", "split": "holdout", "relevant": ["repo:algafix/osnma", "res:galileo-osnma-sis-icd", "res:galileo-osnma-receiver-guidelines", "repo:haiyang-wong/osnma-sdr-sim"]},
   {"q": "drone satellite cross-view dataset", "split": "train", "relevant": ["repo:layumi/university1652-baseline", "repo:reza-zhu/sues-200-benchmark", "repo:dmmm1997/denseuav", "repo:intellisensing/uav-visloc", "res:university-1652-benchmark-2020", "repo:yux1angji/gta-uav"]},
   {"q": "ntrip caster", "split": "train", "relevant": ["repo:nunojpg/ntripcaster", "repo:goblimey/ntripcaster", "repo:go-gnss/ntrip", "repo:node-ntrip/caster", "res:bkg-ntrip-about", "repo:semuconsulting/pygnssutils"]},
-  {"q": "pedestrian dead reckoning", "split": "holdout", "relevant": ["concept:indoor-pedestrian", "repo:aureliencousin/pdr", "repo:wuzhiguocarter/openpdr", "repo:pajaraca/iez", "repo:sachini/ronin"]}
+  {"q": "pedestrian dead reckoning", "split": "holdout", "relevant": ["concept:indoor-pedestrian", "repo:aureliencousin/pdr", "repo:wuzhiguocarter/openpdr", "repo:pajaraca/iez", "repo:sachini/ronin"]},
+  {"q": "quadcopter on a 5 km route with GNSS jammed and spoofed, show integrity to the operator", "split": "train", "style": "problem-statement", "relevant": ["guide:problem-statement-decoder", "sample:golden-demo", "sample:altpnt-integrity", "guide:integrity-monitoring", "sample:ardupilot-ekf3-source-switch"]},
+  {"q": "low-cost sensor network that detects and localizes jammers on a common operating picture", "split": "holdout", "style": "problem-statement", "relevant": ["sample:jammer-sensor-network", "sample:interference-geolocation-to-tak", "sample:gnss-interference-monitor", "guide:problem-statement-decoder", "sample:mavlink-to-tak-cot", "repo:brian7704/opentakserver", "repo:snstac/pytak"]},
+  {"q": "USV keeps navigating in a spoofed harbour", "split": "train", "style": "problem-statement", "relevant": ["sample:usv-gnss-denied-nav", "sample:maritime-ais-spoofing", "guide:problem-statement-decoder", "concept:maritime-nav", "guide:primer/08-maritime-underwater-ground", "repo:osrf/vrx"]},
+  {"q": "we have a problem statement, where do we start", "split": "train", "style": "problem-statement", "relevant": ["guide:problem-statement-decoder", "guide:day0-runbook", "guide:hackathon-playbook", "guide:readme"]},
+  {"q": "keep accurate time when GNSS timing is lost or spoofed", "split": "holdout", "style": "problem-statement", "relevant": ["guide:timing-resilience", "sample:timing-holdover", "concept:timing", "repo:nwtime/linuxptp", "repo:gitlab.com/chrony/chrony", "sample:osnma-authentication"]}
  ]
 }
