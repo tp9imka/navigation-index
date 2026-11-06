@@ -1,0 +1,1601 @@
+[
+ {
+  "autopilot": "ardupilot",
+  "config": "lua-switch",
+  "spoofed_flights": 9,
+  "clean_flights": 3,
+  "incomplete_flights": 0,
+  "safe": 6,
+  "false_alarms": 0,
+  "failsafes": 0,
+  "worst_dev_m": 27.8,
+  "worst_ekf_err_m": 27.4,
+  "median_reject_s": 3.2,
+  "rejected": 7,
+  "gnss_off_before_onset": 0,
+  "clean_max_dev_m": 3.0,
+  "clean_ekf_err_max_m": 2.8,
+  "params_ok": true,
+  "per_rate": {
+   "0.3": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     27.8,
+     27.7,
+     27.0
+    ],
+    "ekf_err_max_m": [
+     27.4,
+     27.3,
+     26.4
+    ],
+    "reject_s": [
+     null,
+     90.9,
+     null
+    ],
+    "switch_s": [
+     null,
+     90.9,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.97,
+     0.17,
+     0.94
+    ]
+   },
+   "1": {
+    "n": 3,
+    "safe": 3,
+    "max_dev_m": [
+     8.2,
+     7.8,
+     7.2
+    ],
+    "ekf_err_max_m": [
+     10.2,
+     10.3,
+     9.1
+    ],
+    "reject_s": [
+     3.2,
+     3.4,
+     3.5
+    ],
+    "switch_s": [
+     3.2,
+     3.4,
+     3.5
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.04,
+     0.04,
+     0.04
+    ]
+   },
+   "3": {
+    "n": 3,
+    "safe": 3,
+    "max_dev_m": [
+     8.5,
+     14.9,
+     9.4
+    ],
+    "ekf_err_max_m": [
+     10.1,
+     11.7,
+     9.5
+    ],
+    "reject_s": [
+     2.4,
+     2.3,
+     2.3
+    ],
+    "switch_s": [
+     2.4,
+     2.3,
+     2.3
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.02,
+     0.03,
+     0.03
+    ]
+   }
+  },
+  "rank": 1
+ },
+ {
+  "autopilot": "ardupilot",
+  "config": "lua-switch-fuse-all-vel",
+  "spoofed_flights": 9,
+  "clean_flights": 3,
+  "incomplete_flights": 0,
+  "safe": 6,
+  "false_alarms": 0,
+  "failsafes": 0,
+  "worst_dev_m": 28.1,
+  "worst_ekf_err_m": 27.9,
+  "median_reject_s": 3.2,
+  "rejected": 7,
+  "gnss_off_before_onset": 0,
+  "clean_max_dev_m": 3.1,
+  "clean_ekf_err_max_m": 2.7,
+  "params_ok": true,
+  "per_rate": {
+   "0.3": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     28.1,
+     26.5,
+     26.5
+    ],
+    "ekf_err_max_m": [
+     27.9,
+     26.1,
+     26.0
+    ],
+    "reject_s": [
+     null,
+     89.2,
+     null
+    ],
+    "switch_s": [
+     null,
+     89.2,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.98,
+     0.14,
+     0.92
+    ]
+   },
+   "1": {
+    "n": 3,
+    "safe": 3,
+    "max_dev_m": [
+     8.2,
+     8.5,
+     7.1
+    ],
+    "ekf_err_max_m": [
+     10.2,
+     10.6,
+     9.0
+    ],
+    "reject_s": [
+     3.2,
+     3.4,
+     3.4
+    ],
+    "switch_s": [
+     3.2,
+     3.4,
+     3.4
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.04,
+     0.04,
+     0.04
+    ]
+   },
+   "3": {
+    "n": 3,
+    "safe": 3,
+    "max_dev_m": [
+     8.2,
+     9.9,
+     8.0
+    ],
+    "ekf_err_max_m": [
+     10.3,
+     10.1,
+     9.5
+    ],
+    "reject_s": [
+     2.3,
+     2.3,
+     2.3
+    ],
+    "switch_s": [
+     2.3,
+     2.3,
+     2.3
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.02,
+     0.02,
+     0.02
+    ]
+   }
+  },
+  "rank": 2
+ },
+ {
+  "autopilot": "ardupilot",
+  "config": "dual-gps-affinity",
+  "spoofed_flights": 9,
+  "clean_flights": 3,
+  "incomplete_flights": 0,
+  "safe": 3,
+  "false_alarms": 0,
+  "failsafes": 0,
+  "worst_dev_m": 75.0,
+  "worst_ekf_err_m": 94.5,
+  "median_reject_s": null,
+  "rejected": 0,
+  "gnss_off_before_onset": 0,
+  "clean_max_dev_m": 3.1,
+  "clean_ekf_err_max_m": 2.8,
+  "params_ok": true,
+  "per_rate": {
+   "0.3": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     28.5,
+     28.8,
+     27.0
+    ],
+    "ekf_err_max_m": [
+     28.1,
+     28.5,
+     26.4
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.99,
+     1.0,
+     0.94
+    ]
+   },
+   "1": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     75.0,
+     75.0,
+     75.0
+    ],
+    "ekf_err_max_m": [
+     94.3,
+     94.5,
+     92.3
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     1.0,
+     1.0,
+     0.98
+    ]
+   },
+   "3": {
+    "n": 3,
+    "safe": 3,
+    "max_dev_m": [
+     2.1,
+     2.2,
+     2.4
+    ],
+    "ekf_err_max_m": [
+     1.9,
+     2.0,
+     2.4
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     -0.0,
+     -0.0,
+     0.01
+    ]
+   }
+  },
+  "rank": 3
+ },
+ {
+  "autopilot": "ardupilot",
+  "config": "dual-gps-blend",
+  "spoofed_flights": 9,
+  "clean_flights": 3,
+  "incomplete_flights": 0,
+  "safe": 3,
+  "false_alarms": 0,
+  "failsafes": 0,
+  "worst_dev_m": 75.0,
+  "worst_ekf_err_m": 75.6,
+  "median_reject_s": null,
+  "rejected": 0,
+  "gnss_off_before_onset": 0,
+  "clean_max_dev_m": 2.3,
+  "clean_ekf_err_max_m": 1.7,
+  "params_ok": true,
+  "per_rate": {
+   "0.3": {
+    "n": 3,
+    "safe": 3,
+    "max_dev_m": [
+     14.0,
+     14.5,
+     14.4
+    ],
+    "ekf_err_max_m": [
+     13.6,
+     14.0,
+     14.0
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.48,
+     0.49,
+     0.49
+    ]
+   },
+   "1": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     47.4,
+     47.5,
+     47.4
+    ],
+    "ekf_err_max_m": [
+     47.0,
+     47.1,
+     46.9
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.5,
+     0.5,
+     0.5
+    ]
+   },
+   "3": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     75.0,
+     75.0,
+     75.0
+    ],
+    "ekf_err_max_m": [
+     75.6,
+     75.0,
+     75.5
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.5,
+     0.5,
+     0.5
+    ]
+   }
+  },
+  "rank": 4
+ },
+ {
+  "autopilot": "ardupilot",
+  "config": "glitch-clip",
+  "spoofed_flights": 9,
+  "clean_flights": 3,
+  "incomplete_flights": 0,
+  "safe": 0,
+  "false_alarms": 0,
+  "failsafes": 0,
+  "worst_dev_m": 75.0,
+  "worst_ekf_err_m": 150.3,
+  "median_reject_s": null,
+  "rejected": 0,
+  "gnss_off_before_onset": 0,
+  "clean_max_dev_m": 3.0,
+  "clean_ekf_err_max_m": 2.5,
+  "params_ok": true,
+  "per_rate": {
+   "0.3": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     28.0,
+     28.2,
+     26.5
+    ],
+    "ekf_err_max_m": [
+     27.6,
+     27.9,
+     26.0
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.98,
+     0.98,
+     0.92
+    ]
+   },
+   "1": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     75.0,
+     75.0,
+     75.0
+    ],
+    "ekf_err_max_m": [
+     92.4,
+     92.5,
+     90.6
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.98,
+     0.98,
+     0.96
+    ]
+   },
+   "3": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     71.7,
+     73.7,
+     73.9
+    ],
+    "ekf_err_max_m": [
+     149.8,
+     150.0,
+     150.3
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     1.0,
+     1.0,
+     0.99
+    ]
+   }
+  },
+  "rank": 5
+ },
+ {
+  "autopilot": "ardupilot",
+  "config": "fuse-all-vel",
+  "spoofed_flights": 9,
+  "clean_flights": 3,
+  "incomplete_flights": 0,
+  "safe": 0,
+  "false_alarms": 0,
+  "failsafes": 0,
+  "worst_dev_m": 81.0,
+  "worst_ekf_err_m": 155.0,
+  "median_reject_s": null,
+  "rejected": 0,
+  "gnss_off_before_onset": 0,
+  "clean_max_dev_m": 3.1,
+  "clean_ekf_err_max_m": 2.7,
+  "params_ok": true,
+  "per_rate": {
+   "0.3": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     28.0,
+     28.2,
+     26.5
+    ],
+    "ekf_err_max_m": [
+     27.6,
+     27.9,
+     26.0
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.97,
+     0.98,
+     0.92
+    ]
+   },
+   "1": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     75.0,
+     75.0,
+     75.0
+    ],
+    "ekf_err_max_m": [
+     92.4,
+     92.7,
+     90.8
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.98,
+     0.98,
+     0.96
+    ]
+   },
+   "3": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     78.8,
+     81.0,
+     80.8
+    ],
+    "ekf_err_max_m": [
+     152.0,
+     151.5,
+     155.0
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.99,
+     1.0,
+     0.99
+    ]
+   }
+  },
+  "rank": 6
+ },
+ {
+  "autopilot": "ardupilot",
+  "config": "default",
+  "spoofed_flights": 9,
+  "clean_flights": 3,
+  "incomplete_flights": 0,
+  "safe": 0,
+  "false_alarms": 0,
+  "failsafes": 0,
+  "worst_dev_m": 83.8,
+  "worst_ekf_err_m": 153.8,
+  "median_reject_s": null,
+  "rejected": 0,
+  "gnss_off_before_onset": 0,
+  "clean_max_dev_m": 2.9,
+  "clean_ekf_err_max_m": 2.8,
+  "params_ok": true,
+  "per_rate": {
+   "0.3": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     28.5,
+     28.8,
+     27.0
+    ],
+    "ekf_err_max_m": [
+     28.1,
+     28.5,
+     26.4
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.99,
+     1.0,
+     0.94
+    ]
+   },
+   "1": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     75.0,
+     75.0,
+     75.0
+    ],
+    "ekf_err_max_m": [
+     94.3,
+     94.5,
+     92.5
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     1.0,
+     1.0,
+     0.98
+    ]
+   },
+   "3": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     82.1,
+     83.8,
+     83.7
+    ],
+    "ekf_err_max_m": [
+     152.3,
+     151.7,
+     153.8
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     1.0,
+     1.0,
+     0.99
+    ]
+   }
+  },
+  "rank": 7
+ },
+ {
+  "autopilot": "px4",
+  "config": "companion-monitor",
+  "spoofed_flights": 9,
+  "clean_flights": 3,
+  "incomplete_flights": 0,
+  "safe": 9,
+  "false_alarms": 0,
+  "failsafes": 0,
+  "worst_dev_m": 11.1,
+  "worst_ekf_err_m": 14.1,
+  "median_reject_s": 3.0,
+  "rejected": 9,
+  "gnss_off_before_onset": 0,
+  "clean_max_dev_m": 3.9,
+  "clean_ekf_err_max_m": 3.6,
+  "params_ok": true,
+  "per_rate": {
+   "0.3": {
+    "n": 3,
+    "safe": 3,
+    "max_dev_m": [
+     9.7,
+     10.8,
+     9.9
+    ],
+    "ekf_err_max_m": [
+     14.1,
+     13.1,
+     13.0
+    ],
+    "reject_s": [
+     51.0,
+     45.0,
+     44.0
+    ],
+    "switch_s": [
+     51.0,
+     45.0,
+     44.0
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.18,
+     0.12,
+     0.15
+    ]
+   },
+   "1": {
+    "n": 3,
+    "safe": 3,
+    "max_dev_m": [
+     8.6,
+     8.2,
+     8.6
+    ],
+    "ekf_err_max_m": [
+     9.3,
+     8.1,
+     8.3
+    ],
+    "reject_s": [
+     5.0,
+     3.0,
+     3.0
+    ],
+    "switch_s": [
+     5.0,
+     3.0,
+     3.0
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.05,
+     0.05,
+     0.04
+    ]
+   },
+   "3": {
+    "n": 3,
+    "safe": 3,
+    "max_dev_m": [
+     10.6,
+     8.1,
+     11.1
+    ],
+    "ekf_err_max_m": [
+     10.2,
+     8.4,
+     10.2
+    ],
+    "reject_s": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "switch_s": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.02,
+     0.04,
+     0.02
+    ]
+   }
+  },
+  "rank": 1
+ },
+ {
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1-gates3",
+  "spoofed_flights": 9,
+  "clean_flights": 3,
+  "incomplete_flights": 0,
+  "safe": 6,
+  "false_alarms": 0,
+  "failsafes": 0,
+  "worst_dev_m": 32.8,
+  "worst_ekf_err_m": 32.2,
+  "median_reject_s": 12.2,
+  "rejected": 6,
+  "gnss_off_before_onset": 0,
+  "clean_max_dev_m": 3.3,
+  "clean_ekf_err_max_m": 3.7,
+  "params_ok": true,
+  "per_rate": {
+   "0.3": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     32.8,
+     31.5,
+     31.9
+    ],
+    "ekf_err_max_m": [
+     32.2,
+     30.6,
+     31.3
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.99,
+     0.98,
+     0.98
+    ]
+   },
+   "1": {
+    "n": 3,
+    "safe": 3,
+    "max_dev_m": [
+     12.8,
+     10.5,
+     11.5
+    ],
+    "ekf_err_max_m": [
+     12.5,
+     9.7,
+     11.3
+    ],
+    "reject_s": [
+     15.0,
+     15.1,
+     14.9
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.12,
+     0.09,
+     0.1
+    ]
+   },
+   "3": {
+    "n": 3,
+    "safe": 3,
+    "max_dev_m": [
+     5.2,
+     5.9,
+     6.8
+    ],
+    "ekf_err_max_m": [
+     4.7,
+     5.6,
+     7.0
+    ],
+    "reject_s": [
+     9.4,
+     8.3,
+     9.2
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.03,
+     0.03,
+     0.04
+    ]
+   }
+  },
+  "rank": 2
+ },
+ {
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1",
+  "spoofed_flights": 9,
+  "clean_flights": 3,
+  "incomplete_flights": 0,
+  "safe": 4,
+  "false_alarms": 0,
+  "failsafes": 0,
+  "worst_dev_m": 74.8,
+  "worst_ekf_err_m": 85.5,
+  "median_reject_s": 19.4,
+  "rejected": 6,
+  "gnss_off_before_onset": 0,
+  "clean_max_dev_m": 3.8,
+  "clean_ekf_err_max_m": 2.6,
+  "params_ok": true,
+  "per_rate": {
+   "0.3": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     32.2,
+     30.5,
+     30.9
+    ],
+    "ekf_err_max_m": [
+     31.6,
+     30.0,
+     30.2
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.96,
+     0.97,
+     0.96
+    ]
+   },
+   "1": {
+    "n": 3,
+    "safe": 1,
+    "max_dev_m": [
+     70.2,
+     74.8,
+     24.7
+    ],
+    "ekf_err_max_m": [
+     69.8,
+     85.5,
+     24.0
+    ],
+    "reject_s": [
+     76.1,
+     93.3,
+     29.7
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.59,
+     0.71,
+     0.23
+    ]
+   },
+   "3": {
+    "n": 3,
+    "safe": 3,
+    "max_dev_m": [
+     5.4,
+     7.8,
+     5.8
+    ],
+    "ekf_err_max_m": [
+     5.5,
+     7.4,
+     5.9
+    ],
+    "reject_s": [
+     9.0,
+     9.2,
+     9.0
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.03,
+     0.05,
+     0.03
+    ]
+   }
+  },
+  "rank": 3
+ },
+ {
+  "autopilot": "px4",
+  "config": "default",
+  "spoofed_flights": 9,
+  "clean_flights": 3,
+  "incomplete_flights": 0,
+  "safe": 0,
+  "false_alarms": 0,
+  "failsafes": 0,
+  "worst_dev_m": 113.8,
+  "worst_ekf_err_m": 155.9,
+  "median_reject_s": null,
+  "rejected": 0,
+  "gnss_off_before_onset": 0,
+  "clean_max_dev_m": 3.2,
+  "clean_ekf_err_max_m": 2.8,
+  "params_ok": true,
+  "per_rate": {
+   "0.3": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     34.5,
+     32.0,
+     32.9
+    ],
+    "ekf_err_max_m": [
+     33.0,
+     31.3,
+     31.8
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     1.05,
+     0.99,
+     1.01
+    ]
+   },
+   "1": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     75.0,
+     75.0,
+     75.0
+    ],
+    "ekf_err_max_m": [
+     103.4,
+     104.1,
+     106.7
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     1.0,
+     0.99,
+     1.0
+    ]
+   },
+   "3": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     101.9,
+     105.8,
+     113.8
+    ],
+    "ekf_err_max_m": [
+     155.9,
+     152.7,
+     152.5
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     1.0,
+     0.99,
+     1.0
+    ]
+   }
+  },
+  "rank": 4
+ },
+ {
+  "autopilot": "px4",
+  "config": "ev-vel",
+  "spoofed_flights": 9,
+  "clean_flights": 3,
+  "incomplete_flights": 0,
+  "safe": 0,
+  "false_alarms": 0,
+  "failsafes": 0,
+  "worst_dev_m": 151.1,
+  "worst_ekf_err_m": 152.4,
+  "median_reject_s": null,
+  "rejected": 0,
+  "gnss_off_before_onset": 0,
+  "clean_max_dev_m": 4.6,
+  "clean_ekf_err_max_m": 3.3,
+  "params_ok": true,
+  "per_rate": {
+   "0.3": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     31.3,
+     31.3,
+     31.0
+    ],
+    "ekf_err_max_m": [
+     31.0,
+     30.9,
+     30.5
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.99,
+     0.98,
+     1.0
+    ]
+   },
+   "1": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     75.0,
+     75.0,
+     75.0
+    ],
+    "ekf_err_max_m": [
+     119.5,
+     117.7,
+     113.0
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.98,
+     0.99,
+     0.98
+    ]
+   },
+   "3": {
+    "n": 3,
+    "safe": 0,
+    "max_dev_m": [
+     150.2,
+     150.8,
+     151.1
+    ],
+    "ekf_err_max_m": [
+     152.4,
+     151.2,
+     151.2
+    ],
+    "reject_s": [
+     null,
+     null,
+     null
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     1.01,
+     1.0,
+     1.01
+    ]
+   }
+  },
+  "rank": 5
+ },
+ {
+  "autopilot": "px4",
+  "config": "agp-gpsmode1",
+  "spoofed_flights": 9,
+  "clean_flights": 3,
+  "incomplete_flights": 0,
+  "safe": 7,
+  "false_alarms": 3,
+  "failsafes": 0,
+  "worst_dev_m": 28.7,
+  "worst_ekf_err_m": 25.1,
+  "median_reject_s": 1.0,
+  "rejected": 9,
+  "gnss_off_before_onset": 12,
+  "clean_max_dev_m": 20.7,
+  "clean_ekf_err_max_m": 18.7,
+  "params_ok": true,
+  "per_rate": {
+   "0.3": {
+    "n": 3,
+    "safe": 3,
+    "max_dev_m": [
+     19.2,
+     19.7,
+     24.3
+    ],
+    "ekf_err_max_m": [
+     20.4,
+     18.5,
+     22.8
+    ],
+    "reject_s": [
+     0.7,
+     0.5,
+     0.4
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     -0.11,
+     -0.07,
+     -0.04
+    ]
+   },
+   "1": {
+    "n": 3,
+    "safe": 3,
+    "max_dev_m": [
+     19.2,
+     14.1,
+     22.5
+    ],
+    "ekf_err_max_m": [
+     15.6,
+     19.2,
+     22.1
+    ],
+    "reject_s": [
+     1.3,
+     1.8,
+     0.7
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.02,
+     -0.01,
+     0.0
+    ]
+   },
+   "3": {
+    "n": 3,
+    "safe": 1,
+    "max_dev_m": [
+     8.6,
+     28.7,
+     24.7
+    ],
+    "ekf_err_max_m": [
+     11.2,
+     21.6,
+     25.1
+    ],
+    "reject_s": [
+     1.0,
+     1.9,
+     1.9
+    ],
+    "switch_s": [
+     null,
+     null,
+     null
+    ],
+    "failsafe_s": [
+     null,
+     null,
+     null
+    ],
+    "capture_ratio_end": [
+     0.01,
+     -0.05,
+     -0.0
+    ]
+   }
+  },
+  "rank": 6
+ }
+]

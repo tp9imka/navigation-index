@@ -1,0 +1,5 @@
+# Aux global position (SIH sensor_agp_sim: truth + 2 m noise, eph 20 m, 2 Hz) + EKF2_GPS_MODE 1.
+# SENS_EN_AGPSIM needs a reboot. On hardware the AGP source would be a visual-geoloc module.
+SENS_EN_AGPSIM 1
+EKF2_AGP_CTRL 1
+EKF2_GPS_MODE 1

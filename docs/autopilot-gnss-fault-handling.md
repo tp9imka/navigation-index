@@ -181,3 +181,53 @@ position (and EV / flow velocity).
   `EKF2.cpp` 1709-1711) or the jump in `GLOBAL_POSITION_INT`.
 - Lane switches (`EKF3 lane switch N`) appeared at onset in most ArduPilot spoof flights.
   They are not a recovery: all lanes use the same GNSS.
+
+## Tested configurations
+
+Measured by [samples/autopilot-resilient-configs](../samples/autopilot-resilient-configs/README.md):
+13 configs x coherent drag 0.3 / 1 / 3 m/s + a clean flight x 3 seeds = 156 SITL flights,
+PX4 v1.17.0 SIH and ArduCopter 4.6.3, 2026-11-06. Same companions, survey and spoof model as
+above. "Held" = mission completed, no failsafe, EKF error and true cross-track deviation both
+<= 25 m. The second source in every config is simulated (VIO = truth + 0.1 m/s noise + fixed
+0.05 / -0.03 m/s bias; replayed real visual geolocation), so these results are as good as that
+source.
+
+| Recipe | Files | Held 0.3 / 1 / 3 m/s | GNSS out after onset | Clean false alarms |
+|---|---|---|---|---|
+| ArduPilot: Lua GPS-vs-ExternalNav check, switch to source set 2 | `configs/ardupilot/lua-switch.parm` + `scripts/gnss_extnav_switch.lua` | 0/3, 3/3, 3/3 | 2.3-3.5 s at 1-3 m/s; 91 s in one 0.3 m/s flight | 0/3 |
+| PX4: `EKF2_EV_CTRL 4` + `EKF2_GPS_MODE 1` + `EKF2_GPS_P_GATE 3` / `V_GATE 3` | `configs/px4/ev-vel-gpsmode1-gates3.params` | 0/3, 3/3, 3/3 | 14.9-15.1 s (1 m/s), 8.3-9.4 s (3 m/s) | 0/3 |
+| PX4: same, 5 SD gates | `configs/px4/ev-vel-gpsmode1.params` | 0/3, 1/3, 3/3 | 29.7-93.3 s (1 m/s), 9.0-9.2 s (3 m/s) | 0/3 |
+| ArduPilot: 2 receivers, 1 spoofed, `EK3_AFFINITY 1` | `configs/ardupilot/dual-gps-affinity.parm` | 0/3, 0/3, 3/3 | lane switch 0.1 s (3 m/s only) | 0/3 |
+| ArduPilot: 2 receivers, `GPS_AUTO_SWITCH 2` | `configs/ardupilot/dual-gps-blend.parm` | 3/3, 0/3, 0/3 | never; believed exactly half | 0/3 |
+| Reference, not onboard: companion monitor acting (PX4) | `configs/px4/companion-monitor.params` | 3/3, 3/3, 3/3 | 44-51 s, 3.0-5.0 s, 1.0 s | 0/3 |
+| No effect: `EK3_SRC_OPTIONS 1`, `EK3_GLITCH_RAD 0`, PX4 `EKF2_EV_CTRL 4` in mode 0 | | 0/9 each | never | 0/3 |
+
+What this adds to the sections above:
+
+- **A Lua applet on ArduPilot is enough for 1-3 m/s.** It needs no extra binding: ExternalNav
+  velocity is `ahrs:get_velocity_NED()` minus `ahrs:get_vel_innovations_and_variances_for_source(6)`,
+  because EKF3 computes ExternalNav velocity innovations for reporting even while source set 1
+  is active (`AP_NavEKF3_PosVelFusion.cpp` 520-528, innovation = state - observation at
+  line 488). The GPS-vs-VIO velocity difference is the difference of the two innovation
+  vectors. Dead-reckoning that velocity from the arming fix gives the position test. The
+  switch resets EKF3 onto ExternalNav at once (position-source change), so the error after
+  the switch is the reference's own (4.9-5.9 m at mission end).
+- **`EKF2_GPS_MODE 1` becomes a real defence once a second velocity source is fused.** With EV
+  velocity, a rejected GNSS position times out into `stopGnssPosFusion()` + `gnss_fault`
+  instead of a reset (`gps_control.cpp` 189-205, 272-297), and GNSS stays out while it
+  disagrees. Gates at 3 SD make a 1 m/s drag fail the velocity test from the onset; at 5 SD it
+  is a coin toss. With no GNSS left the vehicle dead-reckons on VIO: fine for the ~100 s left
+  in these missions, unbounded on a long flight.
+- **Neither autopilot caught 0.3 m/s onboard.** A drag that slow never fails a velocity test and
+  needs 80+ s to beat VIO drift on a position test. Only the external monitor with an absolute
+  reference (visual geolocation, solution separation) excluded it, at 44-51 s.
+- **Two receivers help only when one is clean.** Affinity switched lanes on a 3 m/s onset step
+  and nothing slower; blending averages the spoof in. A spoofer in view of both antennas defeats
+  both, so the second receiver needs a different defence (CRPA, authenticated signal).
+- **`EK3_SRC_OPTIONS 1` with the Lua switch** gave the same errors as without it (end error
+  5.0-5.8 m vs 4.9-5.9 m), so the warning in "Switching sources safely" did not show up in these
+  flights. Leaving it off is still the simpler choice.
+- **PX4 aux global position (`EKF2_AGP_CTRL 1`) with SIH's `sensor_agp_sim` is not usable as
+  tested**: GNSS position fusion stopped before the attack in all 12 flights with
+  `cs_gnss_hgt_fault` set, so those flights navigated on AGP alone (12-21 m deviation on clean
+  flights). Cause not diagnosed.

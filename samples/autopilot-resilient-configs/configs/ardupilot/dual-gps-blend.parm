@@ -1,0 +1,5 @@
+# Two GNSS receivers, only GPS1 spoofed in the test. GPS_AUTO_SWITCH 2: blend both by their
+# reported accuracy (equal here), so the EKF sees the average.
+GPS2_TYPE 14
+GPS2_DELAY_MS 1
+GPS_AUTO_SWITCH 2

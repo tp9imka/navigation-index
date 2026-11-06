@@ -1,0 +1,8 @@
+# Two GNSS receivers (both MAVLink GPS_INPUT here), only GPS1 spoofed in the test.
+# EK3_AFFINITY 1: each EKF3 lane uses its own GPS (lane 0 => GPS1, lane 1 => GPS2); the
+# primary lane is chosen on innovation error score. Two IMU lanes are required.
+GPS2_TYPE 14
+GPS2_DELAY_MS 1
+EK3_IMU_MASK 3
+EK3_AFFINITY 1
+GPS_AUTO_SWITCH 1

@@ -1,0 +1,8870 @@
+[
+ {
+  "case": "ardupilot-default-clean-s1",
+  "autopilot": "ardupilot",
+  "config": "default",
+  "seed": 1,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.0,
+  "ekf_err_max_m": 2.8,
+  "ekf_err_end_m": 0.3,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    44.8,
+    "Reached command #3"
+   ],
+   [
+    44.8,
+    "Mission: 4 WP"
+   ],
+   [
+    89.6,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-default-clean-s2",
+  "autopilot": "ardupilot",
+  "config": "default",
+  "seed": 2,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.9,
+  "ekf_err_max_m": 2.5,
+  "ekf_err_end_m": 1.6,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.2,
+    "Reached command #2"
+   ],
+   [
+    27.2,
+    "Mission: 3 WP"
+   ],
+   [
+    44.9,
+    "Reached command #3"
+   ],
+   [
+    44.9,
+    "Mission: 4 WP"
+   ],
+   [
+    89.7,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-default-clean-s3",
+  "autopilot": "ardupilot",
+  "config": "default",
+  "seed": 3,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.2,
+  "ekf_err_max_m": 1.8,
+  "ekf_err_end_m": 1.8,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    26.8,
+    "Reached command #2"
+   ],
+   [
+    26.8,
+    "Mission: 3 WP"
+   ],
+   [
+    44.5,
+    "Reached command #3"
+   ],
+   [
+    44.5,
+    "Mission: 4 WP"
+   ],
+   [
+    89.2,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-default-coherent-0.3-s1",
+  "autopilot": "ardupilot",
+  "config": "default",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 28.5,
+  "ekf_err_max_m": 28.1,
+  "ekf_err_end_m": 28.1,
+  "spoof_offset_end_m": 28.3,
+  "capture_ratio_end": 0.99,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    44.7,
+    "Reached command #3"
+   ],
+   [
+    44.7,
+    "Mission: 4 WP"
+   ],
+   [
+    89.6,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-default-coherent-0.3-s2",
+  "autopilot": "ardupilot",
+  "config": "default",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 28.8,
+  "ekf_err_max_m": 28.5,
+  "ekf_err_end_m": 28.5,
+  "spoof_offset_end_m": 28.4,
+  "capture_ratio_end": 1.0,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.2,
+    "Reached command #2"
+   ],
+   [
+    27.2,
+    "Mission: 3 WP"
+   ],
+   [
+    44.8,
+    "Reached command #3"
+   ],
+   [
+    44.8,
+    "Mission: 4 WP"
+   ],
+   [
+    89.7,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-default-coherent-0.3-s3",
+  "autopilot": "ardupilot",
+  "config": "default",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 27.0,
+  "ekf_err_max_m": 26.4,
+  "ekf_err_end_m": 26.4,
+  "spoof_offset_end_m": 28.2,
+  "capture_ratio_end": 0.94,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    26.8,
+    "Reached command #2"
+   ],
+   [
+    26.8,
+    "Mission: 3 WP"
+   ],
+   [
+    44.4,
+    "Reached command #3"
+   ],
+   [
+    44.4,
+    "Mission: 4 WP"
+   ],
+   [
+    89.2,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-default-coherent-1-s1",
+  "autopilot": "ardupilot",
+  "config": "default",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 94.3,
+  "ekf_err_end_m": 94.3,
+  "spoof_offset_end_m": 94.4,
+  "capture_ratio_end": 1.0,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    44.6,
+    "Reached command #3"
+   ],
+   [
+    44.6,
+    "Mission: 4 WP"
+   ],
+   [
+    89.5,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-default-coherent-1-s2",
+  "autopilot": "ardupilot",
+  "config": "default",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 94.5,
+  "ekf_err_end_m": 94.5,
+  "spoof_offset_end_m": 94.4,
+  "capture_ratio_end": 1.0,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    44.7,
+    "Reached command #3"
+   ],
+   [
+    44.7,
+    "Mission: 4 WP"
+   ],
+   [
+    89.5,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-default-coherent-1-s3",
+  "autopilot": "ardupilot",
+  "config": "default",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 92.5,
+  "ekf_err_end_m": 92.5,
+  "spoof_offset_end_m": 94.0,
+  "capture_ratio_end": 0.98,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    26.7,
+    "Reached command #2"
+   ],
+   [
+    26.7,
+    "Mission: 3 WP"
+   ],
+   [
+    44.3,
+    "Reached command #3"
+   ],
+   [
+    44.3,
+    "Mission: 4 WP"
+   ],
+   [
+    89.1,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-default-coherent-3-s1",
+  "autopilot": "ardupilot",
+  "config": "default",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 82.1,
+  "ekf_err_max_m": 152.3,
+  "ekf_err_end_m": 149.6,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 1.0,
+  "first_gps_flag_s": 1.1,
+  "gps_flag_reports": 52,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    1.1,
+    "GPS Glitch or Compass error"
+   ],
+   [
+    11.6,
+    "Glitch cleared"
+   ],
+   [
+    28.0,
+    "Reached command #2"
+   ],
+   [
+    28.0,
+    "Mission: 3 WP"
+   ],
+   [
+    45.6,
+    "Reached command #3"
+   ],
+   [
+    45.6,
+    "Mission: 4 WP"
+   ],
+   [
+    90.7,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-default-coherent-3-s2",
+  "autopilot": "ardupilot",
+  "config": "default",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 83.8,
+  "ekf_err_max_m": 151.7,
+  "ekf_err_end_m": 150.1,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 1.0,
+  "first_gps_flag_s": 1.1,
+  "gps_flag_reports": 51,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 1,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    0.6,
+    "EKF3 lane switch 1"
+   ],
+   [
+    0.6,
+    "EKF primary changed:1"
+   ],
+   [
+    1.1,
+    "GPS Glitch or Compass error"
+   ],
+   [
+    11.3,
+    "Glitch cleared"
+   ],
+   [
+    28.1,
+    "Reached command #2"
+   ],
+   [
+    28.1,
+    "Mission: 3 WP"
+   ],
+   [
+    45.6,
+    "Reached command #3"
+   ],
+   [
+    45.6,
+    "Mission: 4 WP"
+   ],
+   [
+    90.7,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-default-coherent-3-s3",
+  "autopilot": "ardupilot",
+  "config": "default",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 83.7,
+  "ekf_err_max_m": 153.8,
+  "ekf_err_end_m": 147.9,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.99,
+  "first_gps_flag_s": 1.1,
+  "gps_flag_reports": 105,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    1.1,
+    "GPS Glitch or Compass error"
+   ],
+   [
+    11.7,
+    "Glitch cleared"
+   ],
+   [
+    27.9,
+    "Reached command #2"
+   ],
+   [
+    27.9,
+    "Mission: 3 WP"
+   ],
+   [
+    45.4,
+    "Reached command #3"
+   ],
+   [
+    45.4,
+    "Mission: 4 WP"
+   ],
+   [
+    51.1,
+    "GPS Glitch or Compass error"
+   ],
+   [
+    51.2,
+    "Vibration compensation ON"
+   ],
+   [
+    51.3,
+    "Vibration compensation OFF"
+   ],
+   [
+    61.4,
+    "Glitch cleared"
+   ],
+   [
+    90.7,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-affinity-clean-s1",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-affinity",
+  "seed": 1,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.0,
+  "ekf_err_max_m": 2.8,
+  "ekf_err_end_m": 0.3,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    44.8,
+    "Reached command #3"
+   ],
+   [
+    44.8,
+    "Mission: 4 WP"
+   ],
+   [
+    89.6,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-affinity-clean-s2",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-affinity",
+  "seed": 2,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 3.1,
+  "ekf_err_max_m": 2.8,
+  "ekf_err_end_m": 1.6,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    44.8,
+    "Reached command #3"
+   ],
+   [
+    44.8,
+    "Mission: 4 WP"
+   ],
+   [
+    89.6,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-affinity-clean-s3",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-affinity",
+  "seed": 3,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.2,
+  "ekf_err_max_m": 1.8,
+  "ekf_err_end_m": 1.8,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    26.8,
+    "Reached command #2"
+   ],
+   [
+    26.8,
+    "Mission: 3 WP"
+   ],
+   [
+    44.4,
+    "Reached command #3"
+   ],
+   [
+    44.4,
+    "Mission: 4 WP"
+   ],
+   [
+    89.2,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-affinity-coherent-0.3-s1",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-affinity",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 28.5,
+  "ekf_err_max_m": 28.1,
+  "ekf_err_end_m": 28.1,
+  "spoof_offset_end_m": 28.3,
+  "capture_ratio_end": 0.99,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.2,
+    "Reached command #2"
+   ],
+   [
+    27.2,
+    "Mission: 3 WP"
+   ],
+   [
+    44.8,
+    "Reached command #3"
+   ],
+   [
+    44.8,
+    "Mission: 4 WP"
+   ],
+   [
+    89.6,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-affinity-coherent-0.3-s2",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-affinity",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 28.8,
+  "ekf_err_max_m": 28.5,
+  "ekf_err_end_m": 28.5,
+  "spoof_offset_end_m": 28.4,
+  "capture_ratio_end": 1.0,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.2,
+    "Reached command #2"
+   ],
+   [
+    27.2,
+    "Mission: 3 WP"
+   ],
+   [
+    44.8,
+    "Reached command #3"
+   ],
+   [
+    44.8,
+    "Mission: 4 WP"
+   ],
+   [
+    89.7,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-affinity-coherent-0.3-s3",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-affinity",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 27.0,
+  "ekf_err_max_m": 26.4,
+  "ekf_err_end_m": 26.4,
+  "spoof_offset_end_m": 28.2,
+  "capture_ratio_end": 0.94,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    26.8,
+    "Reached command #2"
+   ],
+   [
+    26.8,
+    "Mission: 3 WP"
+   ],
+   [
+    44.4,
+    "Reached command #3"
+   ],
+   [
+    44.4,
+    "Mission: 4 WP"
+   ],
+   [
+    89.2,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-affinity-coherent-1-s1",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-affinity",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 94.3,
+  "ekf_err_end_m": 94.3,
+  "spoof_offset_end_m": 94.4,
+  "capture_ratio_end": 1.0,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.2,
+    "Reached command #2"
+   ],
+   [
+    27.2,
+    "Mission: 3 WP"
+   ],
+   [
+    44.7,
+    "Reached command #3"
+   ],
+   [
+    44.7,
+    "Mission: 4 WP"
+   ],
+   [
+    89.6,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-affinity-coherent-1-s2",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-affinity",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 94.5,
+  "ekf_err_end_m": 94.5,
+  "spoof_offset_end_m": 94.4,
+  "capture_ratio_end": 1.0,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    44.7,
+    "Reached command #3"
+   ],
+   [
+    44.7,
+    "Mission: 4 WP"
+   ],
+   [
+    89.5,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-affinity-coherent-1-s3",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-affinity",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 92.3,
+  "ekf_err_end_m": 92.3,
+  "spoof_offset_end_m": 94.1,
+  "capture_ratio_end": 0.98,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    26.8,
+    "Reached command #2"
+   ],
+   [
+    26.8,
+    "Mission: 3 WP"
+   ],
+   [
+    44.4,
+    "Reached command #3"
+   ],
+   [
+    44.4,
+    "Mission: 4 WP"
+   ],
+   [
+    89.2,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-affinity-coherent-3-s1",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-affinity",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.1,
+  "ekf_err_max_m": 1.9,
+  "ekf_err_end_m": 0.8,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": -0.0,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 1,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    0.1,
+    "EKF3 lane switch 1"
+   ],
+   [
+    0.1,
+    "EKF primary changed:1"
+   ],
+   [
+    27.2,
+    "Reached command #2"
+   ],
+   [
+    27.2,
+    "Mission: 3 WP"
+   ],
+   [
+    44.8,
+    "Reached command #3"
+   ],
+   [
+    44.8,
+    "Mission: 4 WP"
+   ],
+   [
+    89.7,
+    "Reached command #4"
+   ]
+  ],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-affinity-coherent-3-s2",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-affinity",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.2,
+  "ekf_err_max_m": 2.0,
+  "ekf_err_end_m": 1.5,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": -0.0,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 1,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    0.1,
+    "EKF3 lane switch 1"
+   ],
+   [
+    0.1,
+    "EKF primary changed:1"
+   ],
+   [
+    27.2,
+    "Reached command #2"
+   ],
+   [
+    27.2,
+    "Mission: 3 WP"
+   ],
+   [
+    44.9,
+    "Reached command #3"
+   ],
+   [
+    44.9,
+    "Mission: 4 WP"
+   ],
+   [
+    89.8,
+    "Reached command #4"
+   ]
+  ],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-affinity-coherent-3-s3",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-affinity",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "EK3_IMU_MASK": 3.0,
+   "EK3_AFFINITY": 1.0,
+   "GPS_AUTO_SWITCH": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.4,
+  "ekf_err_max_m": 2.4,
+  "ekf_err_end_m": 2.3,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.01,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 1,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    0.1,
+    "EKF3 lane switch 1"
+   ],
+   [
+    0.1,
+    "EKF primary changed:1"
+   ],
+   [
+    26.8,
+    "Reached command #2"
+   ],
+   [
+    26.8,
+    "Mission: 3 WP"
+   ],
+   [
+    44.5,
+    "Reached command #3"
+   ],
+   [
+    44.5,
+    "Mission: 4 WP"
+   ],
+   [
+    89.3,
+    "Reached command #4"
+   ]
+  ],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-blend-clean-s1",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-blend",
+  "seed": 1,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 1.4,
+  "ekf_err_max_m": 1.7,
+  "ekf_err_end_m": 0.6,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    26.9,
+    "Reached command #2"
+   ],
+   [
+    26.9,
+    "Mission: 3 WP"
+   ],
+   [
+    44.6,
+    "Reached command #3"
+   ],
+   [
+    44.6,
+    "Mission: 4 WP"
+   ],
+   [
+    89.4,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-blend-clean-s2",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-blend",
+  "seed": 2,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 1.5,
+  "ekf_err_max_m": 1.4,
+  "ekf_err_end_m": 0.2,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.0,
+    "Reached command #2"
+   ],
+   [
+    27.0,
+    "Mission: 3 WP"
+   ],
+   [
+    44.7,
+    "Reached command #3"
+   ],
+   [
+    44.7,
+    "Mission: 4 WP"
+   ],
+   [
+    89.5,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-blend-clean-s3",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-blend",
+  "seed": 3,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.3,
+  "ekf_err_max_m": 1.2,
+  "ekf_err_end_m": 1.0,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    26.8,
+    "Reached command #2"
+   ],
+   [
+    26.8,
+    "Mission: 3 WP"
+   ],
+   [
+    44.5,
+    "Reached command #3"
+   ],
+   [
+    44.5,
+    "Mission: 4 WP"
+   ],
+   [
+    89.3,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-blend-coherent-0.3-s1",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-blend",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 14.0,
+  "ekf_err_max_m": 13.6,
+  "ekf_err_end_m": 13.6,
+  "spoof_offset_end_m": 28.3,
+  "capture_ratio_end": 0.48,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    26.9,
+    "Reached command #2"
+   ],
+   [
+    26.9,
+    "Mission: 3 WP"
+   ],
+   [
+    44.5,
+    "Reached command #3"
+   ],
+   [
+    44.5,
+    "Mission: 4 WP"
+   ],
+   [
+    89.4,
+    "Reached command #4"
+   ]
+  ],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-blend-coherent-0.3-s2",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-blend",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 14.5,
+  "ekf_err_max_m": 14.0,
+  "ekf_err_end_m": 14.0,
+  "spoof_offset_end_m": 28.4,
+  "capture_ratio_end": 0.49,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.2,
+    "Reached command #2"
+   ],
+   [
+    27.2,
+    "Mission: 3 WP"
+   ],
+   [
+    44.8,
+    "Reached command #3"
+   ],
+   [
+    44.8,
+    "Mission: 4 WP"
+   ],
+   [
+    89.6,
+    "Reached command #4"
+   ]
+  ],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-blend-coherent-0.3-s3",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-blend",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 14.4,
+  "ekf_err_max_m": 14.0,
+  "ekf_err_end_m": 14.0,
+  "spoof_offset_end_m": 28.3,
+  "capture_ratio_end": 0.49,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    26.8,
+    "Reached command #2"
+   ],
+   [
+    26.8,
+    "Mission: 3 WP"
+   ],
+   [
+    44.5,
+    "Reached command #3"
+   ],
+   [
+    44.5,
+    "Mission: 4 WP"
+   ],
+   [
+    89.3,
+    "Reached command #4"
+   ]
+  ],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-blend-coherent-1-s1",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-blend",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 47.4,
+  "ekf_err_max_m": 47.0,
+  "ekf_err_end_m": 47.0,
+  "spoof_offset_end_m": 94.4,
+  "capture_ratio_end": 0.5,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    44.7,
+    "Reached command #3"
+   ],
+   [
+    44.7,
+    "Mission: 4 WP"
+   ],
+   [
+    89.6,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-blend-coherent-1-s2",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-blend",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 47.5,
+  "ekf_err_max_m": 47.1,
+  "ekf_err_end_m": 47.1,
+  "spoof_offset_end_m": 94.4,
+  "capture_ratio_end": 0.5,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.2,
+    "Reached command #2"
+   ],
+   [
+    27.2,
+    "Mission: 3 WP"
+   ],
+   [
+    44.7,
+    "Reached command #3"
+   ],
+   [
+    44.7,
+    "Mission: 4 WP"
+   ],
+   [
+    89.6,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-blend-coherent-1-s3",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-blend",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 47.4,
+  "ekf_err_max_m": 46.9,
+  "ekf_err_end_m": 46.9,
+  "spoof_offset_end_m": 94.2,
+  "capture_ratio_end": 0.5,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    26.8,
+    "Reached command #2"
+   ],
+   [
+    26.8,
+    "Mission: 3 WP"
+   ],
+   [
+    44.5,
+    "Reached command #3"
+   ],
+   [
+    44.5,
+    "Mission: 4 WP"
+   ],
+   [
+    89.2,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-blend-coherent-3-s1",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-blend",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 75.6,
+  "ekf_err_end_m": 74.8,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.5,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    44.7,
+    "Reached command #3"
+   ],
+   [
+    44.7,
+    "Mission: 4 WP"
+   ],
+   [
+    89.5,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-blend-coherent-3-s2",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-blend",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 75.0,
+  "ekf_err_end_m": 74.8,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.5,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.0,
+    "Reached command #2"
+   ],
+   [
+    27.0,
+    "Mission: 3 WP"
+   ],
+   [
+    44.6,
+    "Reached command #3"
+   ],
+   [
+    44.6,
+    "Mission: 4 WP"
+   ],
+   [
+    89.4,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-dual-gps-blend-coherent-3-s3",
+  "autopilot": "ardupilot",
+  "config": "dual-gps-blend",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "params_echoed": {
+   "GPS2_TYPE": 14.0,
+   "GPS2_DELAY_MS": 1.0,
+   "GPS_AUTO_SWITCH": 2.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 75.5,
+  "ekf_err_end_m": 74.8,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.5,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    26.8,
+    "Reached command #2"
+   ],
+   [
+    26.8,
+    "Mission: 3 WP"
+   ],
+   [
+    44.4,
+    "Reached command #3"
+   ],
+   [
+    44.4,
+    "Mission: 4 WP"
+   ],
+   [
+    89.2,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-fuse-all-vel-clean-s1",
+  "autopilot": "ardupilot",
+  "config": "fuse-all-vel",
+  "seed": 1,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.0,
+  "ekf_err_max_m": 2.5,
+  "ekf_err_end_m": 0.1,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.2,
+    "Reached command #2"
+   ],
+   [
+    27.2,
+    "Mission: 3 WP"
+   ],
+   [
+    44.8,
+    "Reached command #3"
+   ],
+   [
+    44.8,
+    "Mission: 4 WP"
+   ],
+   [
+    89.6,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-fuse-all-vel-clean-s2",
+  "autopilot": "ardupilot",
+  "config": "fuse-all-vel",
+  "seed": 2,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 3.1,
+  "ekf_err_max_m": 2.7,
+  "ekf_err_end_m": 1.7,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    44.7,
+    "Reached command #3"
+   ],
+   [
+    44.7,
+    "Mission: 4 WP"
+   ],
+   [
+    89.6,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-fuse-all-vel-clean-s3",
+  "autopilot": "ardupilot",
+  "config": "fuse-all-vel",
+  "seed": 3,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.4,
+  "ekf_err_max_m": 1.7,
+  "ekf_err_end_m": 1.7,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.0,
+    "Reached command #2"
+   ],
+   [
+    27.0,
+    "Mission: 3 WP"
+   ],
+   [
+    44.6,
+    "Reached command #3"
+   ],
+   [
+    44.6,
+    "Mission: 4 WP"
+   ],
+   [
+    89.4,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-fuse-all-vel-coherent-0.3-s1",
+  "autopilot": "ardupilot",
+  "config": "fuse-all-vel",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 28.0,
+  "ekf_err_max_m": 27.6,
+  "ekf_err_end_m": 27.6,
+  "spoof_offset_end_m": 28.4,
+  "capture_ratio_end": 0.97,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.2,
+    "Reached command #2"
+   ],
+   [
+    27.2,
+    "Mission: 3 WP"
+   ],
+   [
+    44.7,
+    "Reached command #3"
+   ],
+   [
+    44.7,
+    "Mission: 4 WP"
+   ],
+   [
+    89.6,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-fuse-all-vel-coherent-0.3-s2",
+  "autopilot": "ardupilot",
+  "config": "fuse-all-vel",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 28.2,
+  "ekf_err_max_m": 27.9,
+  "ekf_err_end_m": 27.9,
+  "spoof_offset_end_m": 28.4,
+  "capture_ratio_end": 0.98,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.2,
+    "Reached command #2"
+   ],
+   [
+    27.2,
+    "Mission: 3 WP"
+   ],
+   [
+    44.8,
+    "Reached command #3"
+   ],
+   [
+    44.8,
+    "Mission: 4 WP"
+   ],
+   [
+    89.7,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-fuse-all-vel-coherent-0.3-s3",
+  "autopilot": "ardupilot",
+  "config": "fuse-all-vel",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 26.5,
+  "ekf_err_max_m": 26.0,
+  "ekf_err_end_m": 26.0,
+  "spoof_offset_end_m": 28.3,
+  "capture_ratio_end": 0.92,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.0,
+    "Reached command #2"
+   ],
+   [
+    27.0,
+    "Mission: 3 WP"
+   ],
+   [
+    44.6,
+    "Reached command #3"
+   ],
+   [
+    44.6,
+    "Mission: 4 WP"
+   ],
+   [
+    89.4,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-fuse-all-vel-coherent-1-s1",
+  "autopilot": "ardupilot",
+  "config": "fuse-all-vel",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 92.4,
+  "ekf_err_end_m": 92.4,
+  "spoof_offset_end_m": 94.4,
+  "capture_ratio_end": 0.98,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    44.7,
+    "Reached command #3"
+   ],
+   [
+    44.7,
+    "Mission: 4 WP"
+   ],
+   [
+    89.5,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-fuse-all-vel-coherent-1-s2",
+  "autopilot": "ardupilot",
+  "config": "fuse-all-vel",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 92.7,
+  "ekf_err_end_m": 92.7,
+  "spoof_offset_end_m": 94.5,
+  "capture_ratio_end": 0.98,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.2,
+    "Reached command #2"
+   ],
+   [
+    27.2,
+    "Mission: 3 WP"
+   ],
+   [
+    44.8,
+    "Reached command #3"
+   ],
+   [
+    44.8,
+    "Mission: 4 WP"
+   ],
+   [
+    89.7,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-fuse-all-vel-coherent-1-s3",
+  "autopilot": "ardupilot",
+  "config": "fuse-all-vel",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 90.8,
+  "ekf_err_end_m": 90.8,
+  "spoof_offset_end_m": 94.1,
+  "capture_ratio_end": 0.96,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    26.8,
+    "Reached command #2"
+   ],
+   [
+    26.8,
+    "Mission: 3 WP"
+   ],
+   [
+    44.4,
+    "Reached command #3"
+   ],
+   [
+    44.4,
+    "Mission: 4 WP"
+   ],
+   [
+    89.2,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-fuse-all-vel-coherent-3-s1",
+  "autopilot": "ardupilot",
+  "config": "fuse-all-vel",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 78.8,
+  "ekf_err_max_m": 152.0,
+  "ekf_err_end_m": 149.2,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.99,
+  "first_gps_flag_s": 51.0,
+  "gps_flag_reports": 52,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 5,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    0.1,
+    "EKF3 lane switch 1"
+   ],
+   [
+    0.1,
+    "EKF primary changed:1"
+   ],
+   [
+    10.1,
+    "EKF3 lane switch 0"
+   ],
+   [
+    10.1,
+    "EKF primary changed:0"
+   ],
+   [
+    20.1,
+    "EKF3 lane switch 1"
+   ],
+   [
+    20.1,
+    "EKF primary changed:1"
+   ],
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    30.7,
+    "EKF3 lane switch 0"
+   ],
+   [
+    30.7,
+    "EKF primary changed:0"
+   ],
+   [
+    40.8,
+    "EKF3 lane switch 1"
+   ],
+   [
+    40.8,
+    "EKF primary changed:1"
+   ],
+   [
+    44.7,
+    "Reached command #3"
+   ],
+   [
+    44.7,
+    "Mission: 4 WP"
+   ],
+   [
+    51.0,
+    "Vibration compensation ON"
+   ],
+   [
+    51.0,
+    "GPS Glitch or Compass error"
+   ],
+   [
+    61.4,
+    "Glitch cleared"
+   ],
+   [
+    66.3,
+    "Vibration compensation OFF"
+   ],
+   [
+    90.0,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-fuse-all-vel-coherent-3-s2",
+  "autopilot": "ardupilot",
+  "config": "fuse-all-vel",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 81.0,
+  "ekf_err_max_m": 151.5,
+  "ekf_err_end_m": 150.1,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 1.0,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 5,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    0.5,
+    "EKF3 lane switch 1"
+   ],
+   [
+    0.5,
+    "EKF primary changed:1"
+   ],
+   [
+    10.5,
+    "EKF3 lane switch 0"
+   ],
+   [
+    10.5,
+    "EKF primary changed:0"
+   ],
+   [
+    20.7,
+    "EKF3 lane switch 1"
+   ],
+   [
+    20.7,
+    "EKF primary changed:1"
+   ],
+   [
+    27.3,
+    "Reached command #2"
+   ],
+   [
+    27.3,
+    "Mission: 3 WP"
+   ],
+   [
+    30.7,
+    "EKF3 lane switch 0"
+   ],
+   [
+    30.7,
+    "EKF primary changed:0"
+   ],
+   [
+    41.3,
+    "EKF3 lane switch 1"
+   ],
+   [
+    41.3,
+    "EKF primary changed:1"
+   ],
+   [
+    44.8,
+    "Reached command #3"
+   ],
+   [
+    44.8,
+    "Mission: 4 WP"
+   ],
+   [
+    89.9,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-fuse-all-vel-coherent-3-s3",
+  "autopilot": "ardupilot",
+  "config": "fuse-all-vel",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 80.8,
+  "ekf_err_max_m": 155.0,
+  "ekf_err_end_m": 148.6,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.99,
+  "first_gps_flag_s": 51.0,
+  "gps_flag_reports": 54,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 6,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    0.1,
+    "EKF3 lane switch 1"
+   ],
+   [
+    0.1,
+    "EKF primary changed:1"
+   ],
+   [
+    10.1,
+    "EKF3 lane switch 0"
+   ],
+   [
+    10.1,
+    "EKF primary changed:0"
+   ],
+   [
+    20.1,
+    "EKF3 lane switch 1"
+   ],
+   [
+    20.1,
+    "EKF primary changed:1"
+   ],
+   [
+    27.0,
+    "Reached command #2"
+   ],
+   [
+    27.0,
+    "Mission: 3 WP"
+   ],
+   [
+    30.5,
+    "EKF3 lane switch 0"
+   ],
+   [
+    30.5,
+    "EKF primary changed:0"
+   ],
+   [
+    40.5,
+    "EKF3 lane switch 1"
+   ],
+   [
+    40.5,
+    "EKF primary changed:1"
+   ],
+   [
+    44.5,
+    "Reached command #3"
+   ],
+   [
+    44.5,
+    "Mission: 4 WP"
+   ],
+   [
+    50.7,
+    "EKF3 lane switch 0"
+   ],
+   [
+    50.7,
+    "EKF primary changed:0"
+   ],
+   [
+    51.0,
+    "Vibration compensation ON"
+   ],
+   [
+    51.0,
+    "GPS Glitch or Compass error"
+   ],
+   [
+    61.8,
+    "Glitch cleared"
+   ],
+   [
+    66.7,
+    "Vibration compensation OFF"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-glitch-clip-clean-s1",
+  "autopilot": "ardupilot",
+  "config": "glitch-clip",
+  "seed": 1,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.0,
+  "ekf_err_max_m": 2.5,
+  "ekf_err_end_m": 0.2,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    44.8,
+    "Reached command #3"
+   ],
+   [
+    44.8,
+    "Mission: 4 WP"
+   ],
+   [
+    89.6,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-glitch-clip-clean-s2",
+  "autopilot": "ardupilot",
+  "config": "glitch-clip",
+  "seed": 2,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 3.0,
+  "ekf_err_max_m": 2.4,
+  "ekf_err_end_m": 1.6,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.2,
+    "Reached command #2"
+   ],
+   [
+    27.2,
+    "Mission: 3 WP"
+   ],
+   [
+    44.9,
+    "Reached command #3"
+   ],
+   [
+    44.9,
+    "Mission: 4 WP"
+   ],
+   [
+    89.8,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-glitch-clip-clean-s3",
+  "autopilot": "ardupilot",
+  "config": "glitch-clip",
+  "seed": 3,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.4,
+  "ekf_err_max_m": 1.7,
+  "ekf_err_end_m": 1.7,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.0,
+    "Reached command #2"
+   ],
+   [
+    27.0,
+    "Mission: 3 WP"
+   ],
+   [
+    44.6,
+    "Reached command #3"
+   ],
+   [
+    44.6,
+    "Mission: 4 WP"
+   ],
+   [
+    89.5,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-glitch-clip-coherent-0.3-s1",
+  "autopilot": "ardupilot",
+  "config": "glitch-clip",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 28.0,
+  "ekf_err_max_m": 27.6,
+  "ekf_err_end_m": 27.6,
+  "spoof_offset_end_m": 28.3,
+  "capture_ratio_end": 0.98,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    44.7,
+    "Reached command #3"
+   ],
+   [
+    44.7,
+    "Mission: 4 WP"
+   ],
+   [
+    89.6,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-glitch-clip-coherent-0.3-s2",
+  "autopilot": "ardupilot",
+  "config": "glitch-clip",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 28.2,
+  "ekf_err_max_m": 27.9,
+  "ekf_err_end_m": 27.9,
+  "spoof_offset_end_m": 28.4,
+  "capture_ratio_end": 0.98,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.2,
+    "Reached command #2"
+   ],
+   [
+    27.2,
+    "Mission: 3 WP"
+   ],
+   [
+    44.8,
+    "Reached command #3"
+   ],
+   [
+    44.8,
+    "Mission: 4 WP"
+   ],
+   [
+    89.7,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-glitch-clip-coherent-0.3-s3",
+  "autopilot": "ardupilot",
+  "config": "glitch-clip",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 26.5,
+  "ekf_err_max_m": 26.0,
+  "ekf_err_end_m": 26.0,
+  "spoof_offset_end_m": 28.3,
+  "capture_ratio_end": 0.92,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.0,
+    "Reached command #2"
+   ],
+   [
+    27.0,
+    "Mission: 3 WP"
+   ],
+   [
+    44.6,
+    "Reached command #3"
+   ],
+   [
+    44.6,
+    "Mission: 4 WP"
+   ],
+   [
+    89.4,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-glitch-clip-coherent-1-s1",
+  "autopilot": "ardupilot",
+  "config": "glitch-clip",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 92.4,
+  "ekf_err_end_m": 92.4,
+  "spoof_offset_end_m": 94.4,
+  "capture_ratio_end": 0.98,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.2,
+    "Reached command #2"
+   ],
+   [
+    27.2,
+    "Mission: 3 WP"
+   ],
+   [
+    44.7,
+    "Reached command #3"
+   ],
+   [
+    44.7,
+    "Mission: 4 WP"
+   ],
+   [
+    89.6,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-glitch-clip-coherent-1-s2",
+  "autopilot": "ardupilot",
+  "config": "glitch-clip",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 92.5,
+  "ekf_err_end_m": 92.5,
+  "spoof_offset_end_m": 94.4,
+  "capture_ratio_end": 0.98,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    44.7,
+    "Reached command #3"
+   ],
+   [
+    44.7,
+    "Mission: 4 WP"
+   ],
+   [
+    89.5,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-glitch-clip-coherent-1-s3",
+  "autopilot": "ardupilot",
+  "config": "glitch-clip",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 90.6,
+  "ekf_err_end_m": 90.6,
+  "spoof_offset_end_m": 94.3,
+  "capture_ratio_end": 0.96,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    27.0,
+    "Reached command #2"
+   ],
+   [
+    27.0,
+    "Mission: 3 WP"
+   ],
+   [
+    44.5,
+    "Reached command #3"
+   ],
+   [
+    44.5,
+    "Mission: 4 WP"
+   ],
+   [
+    89.3,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-glitch-clip-coherent-3-s1",
+  "autopilot": "ardupilot",
+  "config": "glitch-clip",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 71.7,
+  "ekf_err_max_m": 149.8,
+  "ekf_err_end_m": 149.3,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 1.0,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 5,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    2.5,
+    "EKF3 lane switch 1"
+   ],
+   [
+    2.5,
+    "EKF primary changed:1"
+   ],
+   [
+    12.5,
+    "EKF3 lane switch 0"
+   ],
+   [
+    12.5,
+    "EKF primary changed:0"
+   ],
+   [
+    22.8,
+    "EKF3 lane switch 1"
+   ],
+   [
+    22.8,
+    "EKF primary changed:1"
+   ],
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    34.8,
+    "EKF3 lane switch 0"
+   ],
+   [
+    34.8,
+    "EKF primary changed:0"
+   ],
+   [
+    44.6,
+    "Reached command #3"
+   ],
+   [
+    44.6,
+    "Mission: 4 WP"
+   ],
+   [
+    44.8,
+    "EKF3 lane switch 1"
+   ],
+   [
+    44.8,
+    "EKF primary changed:1"
+   ],
+   [
+    89.5,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-glitch-clip-coherent-3-s2",
+  "autopilot": "ardupilot",
+  "config": "glitch-clip",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 73.7,
+  "ekf_err_max_m": 150.0,
+  "ekf_err_end_m": 150.0,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 1.0,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 5,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    0.1,
+    "EKF3 lane switch 1"
+   ],
+   [
+    0.1,
+    "EKF primary changed:1"
+   ],
+   [
+    10.8,
+    "EKF3 lane switch 0"
+   ],
+   [
+    10.8,
+    "EKF primary changed:0"
+   ],
+   [
+    20.8,
+    "EKF3 lane switch 1"
+   ],
+   [
+    20.8,
+    "EKF primary changed:1"
+   ],
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    31.5,
+    "EKF3 lane switch 0"
+   ],
+   [
+    31.5,
+    "EKF primary changed:0"
+   ],
+   [
+    41.5,
+    "EKF3 lane switch 1"
+   ],
+   [
+    41.5,
+    "EKF primary changed:1"
+   ],
+   [
+    44.7,
+    "Reached command #3"
+   ],
+   [
+    44.7,
+    "Mission: 4 WP"
+   ],
+   [
+    89.5,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-glitch-clip-coherent-3-s3",
+  "autopilot": "ardupilot",
+  "config": "glitch-clip",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "params_echoed": {
+   "EK3_SRC_OPTIONS": 1.0,
+   "EK3_GLITCH_RAD": 0.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 73.9,
+  "ekf_err_max_m": 150.3,
+  "ekf_err_end_m": 148.3,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.99,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 5,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    0.2,
+    "EKF3 lane switch 1"
+   ],
+   [
+    0.2,
+    "EKF primary changed:1"
+   ],
+   [
+    10.2,
+    "EKF3 lane switch 0"
+   ],
+   [
+    10.2,
+    "EKF primary changed:0"
+   ],
+   [
+    20.2,
+    "EKF3 lane switch 1"
+   ],
+   [
+    20.2,
+    "EKF primary changed:1"
+   ],
+   [
+    27.0,
+    "Reached command #2"
+   ],
+   [
+    27.0,
+    "Mission: 3 WP"
+   ],
+   [
+    30.6,
+    "EKF3 lane switch 0"
+   ],
+   [
+    30.6,
+    "EKF primary changed:0"
+   ],
+   [
+    40.6,
+    "EKF3 lane switch 1"
+   ],
+   [
+    40.6,
+    "EKF primary changed:1"
+   ],
+   [
+    44.6,
+    "Reached command #3"
+   ],
+   [
+    44.6,
+    "Mission: 4 WP"
+   ],
+   [
+    89.5,
+    "Reached command #4"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-clean-s1",
+  "autopilot": "ardupilot",
+  "config": "lua-switch",
+  "seed": 1,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "SCR_ENABLE": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.0,
+  "ekf_err_max_m": 2.6,
+  "ekf_err_end_m": 0.9,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    2.9,
+    "RESIL: pos 3.7 m vel 0.11 m/s"
+   ],
+   [
+    7.9,
+    "RESIL: pos 3.4 m vel 0.06 m/s"
+   ],
+   [
+    13.0,
+    "RESIL: pos 4.5 m vel 0.08 m/s"
+   ],
+   [
+    18.1,
+    "RESIL: pos 3.1 m vel 0.04 m/s"
+   ],
+   [
+    23.1,
+    "RESIL: pos 6.8 m vel 0.07 m/s"
+   ],
+   [
+    26.9,
+    "Reached command #2"
+   ],
+   [
+    26.9,
+    "Mission: 3 WP"
+   ],
+   [
+    28.2,
+    "RESIL: pos 7.6 m vel 0.19 m/s"
+   ],
+   [
+    33.3,
+    "RESIL: pos 8.0 m vel 0.04 m/s"
+   ],
+   [
+    38.3,
+    "RESIL: pos 9.2 m vel 0.13 m/s"
+   ],
+   [
+    43.4,
+    "RESIL: pos 7.9 m vel 0.04 m/s"
+   ],
+   [
+    44.5,
+    "Reached command #3"
+   ],
+   [
+    44.5,
+    "Mission: 4 WP"
+   ],
+   [
+    48.5,
+    "RESIL: pos 9.4 m vel 0.12 m/s"
+   ],
+   [
+    53.5,
+    "RESIL: pos 7.9 m vel 0.04 m/s"
+   ],
+   [
+    58.6,
+    "RESIL: pos 9.0 m vel 0.04 m/s"
+   ],
+   [
+    63.7,
+    "RESIL: pos 10.3 m vel 0.13 m/s"
+   ],
+   [
+    68.8,
+    "RESIL: pos 11.0 m vel 0.06 m/s"
+   ],
+   [
+    73.8,
+    "RESIL: pos 8.9 m vel 0.12 m/s"
+   ],
+   [
+    78.9,
+    "RESIL: pos 9.3 m vel 0.06 m/s"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-clean-s2",
+  "autopilot": "ardupilot",
+  "config": "lua-switch",
+  "seed": 2,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "SCR_ENABLE": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 3.0,
+  "ekf_err_max_m": 2.8,
+  "ekf_err_end_m": 1.6,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    2.8,
+    "RESIL: pos 1.5 m vel 0.20 m/s"
+   ],
+   [
+    7.9,
+    "RESIL: pos 0.9 m vel 0.08 m/s"
+   ],
+   [
+    13.0,
+    "RESIL: pos 0.3 m vel 0.05 m/s"
+   ],
+   [
+    18.1,
+    "RESIL: pos 2.6 m vel 0.09 m/s"
+   ],
+   [
+    23.2,
+    "RESIL: pos 2.7 m vel 0.13 m/s"
+   ],
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    28.3,
+    "RESIL: pos 4.3 m vel 0.20 m/s"
+   ],
+   [
+    33.3,
+    "RESIL: pos 4.6 m vel 0.13 m/s"
+   ],
+   [
+    38.4,
+    "RESIL: pos 5.3 m vel 0.06 m/s"
+   ],
+   [
+    43.4,
+    "RESIL: pos 4.9 m vel 0.10 m/s"
+   ],
+   [
+    44.8,
+    "Reached command #3"
+   ],
+   [
+    44.8,
+    "Mission: 4 WP"
+   ],
+   [
+    48.5,
+    "RESIL: pos 6.1 m vel 0.12 m/s"
+   ],
+   [
+    53.6,
+    "RESIL: pos 7.1 m vel 0.12 m/s"
+   ],
+   [
+    58.7,
+    "RESIL: pos 6.2 m vel 0.03 m/s"
+   ],
+   [
+    63.7,
+    "RESIL: pos 8.4 m vel 0.09 m/s"
+   ],
+   [
+    68.7,
+    "RESIL: pos 8.9 m vel 0.12 m/s"
+   ],
+   [
+    73.8,
+    "RESIL: pos 9.3 m vel 0.05 m/s"
+   ],
+   [
+    78.9,
+    "RESIL: pos 9.1 m vel 0.07 m/s"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-clean-s3",
+  "autopilot": "ardupilot",
+  "config": "lua-switch",
+  "seed": 3,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "SCR_ENABLE": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.2,
+  "ekf_err_max_m": 1.8,
+  "ekf_err_end_m": 1.8,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    3.0,
+    "RESIL: pos 1.3 m vel 0.04 m/s"
+   ],
+   [
+    8.0,
+    "RESIL: pos 3.1 m vel 0.07 m/s"
+   ],
+   [
+    13.2,
+    "RESIL: pos 2.4 m vel 0.14 m/s"
+   ],
+   [
+    18.2,
+    "RESIL: pos 2.9 m vel 0.05 m/s"
+   ],
+   [
+    23.3,
+    "RESIL: pos 2.8 m vel 0.08 m/s"
+   ],
+   [
+    26.8,
+    "Reached command #2"
+   ],
+   [
+    26.8,
+    "Mission: 3 WP"
+   ],
+   [
+    28.4,
+    "RESIL: pos 3.6 m vel 0.18 m/s"
+   ],
+   [
+    33.5,
+    "RESIL: pos 4.2 m vel 0.08 m/s"
+   ],
+   [
+    38.5,
+    "RESIL: pos 4.2 m vel 0.09 m/s"
+   ],
+   [
+    43.6,
+    "RESIL: pos 4.8 m vel 0.07 m/s"
+   ],
+   [
+    44.5,
+    "Reached command #3"
+   ],
+   [
+    44.5,
+    "Mission: 4 WP"
+   ],
+   [
+    48.6,
+    "RESIL: pos 6.5 m vel 0.12 m/s"
+   ],
+   [
+    53.7,
+    "RESIL: pos 6.0 m vel 0.11 m/s"
+   ],
+   [
+    58.8,
+    "RESIL: pos 7.5 m vel 0.06 m/s"
+   ],
+   [
+    63.8,
+    "RESIL: pos 7.6 m vel 0.09 m/s"
+   ],
+   [
+    68.9,
+    "RESIL: pos 8.1 m vel 0.07 m/s"
+   ],
+   [
+    74.0,
+    "RESIL: pos 8.1 m vel 0.03 m/s"
+   ],
+   [
+    79.0,
+    "RESIL: pos 8.8 m vel 0.04 m/s"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-coherent-0.3-s1",
+  "autopilot": "ardupilot",
+  "config": "lua-switch",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "SCR_ENABLE": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 27.8,
+  "ekf_err_max_m": 27.4,
+  "ekf_err_end_m": 27.4,
+  "spoof_offset_end_m": 28.3,
+  "capture_ratio_end": 0.97,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    2.9,
+    "RESIL: pos 3.2 m vel 0.19 m/s"
+   ],
+   [
+    8.0,
+    "RESIL: pos 2.7 m vel 0.22 m/s"
+   ],
+   [
+    13.1,
+    "RESIL: pos 2.8 m vel 0.28 m/s"
+   ],
+   [
+    18.2,
+    "RESIL: pos 3.6 m vel 0.24 m/s"
+   ],
+   [
+    23.2,
+    "RESIL: pos 2.4 m vel 0.29 m/s"
+   ],
+   [
+    26.9,
+    "Reached command #2"
+   ],
+   [
+    26.9,
+    "Mission: 3 WP"
+   ],
+   [
+    28.3,
+    "RESIL: pos 4.6 m vel 0.22 m/s"
+   ],
+   [
+    33.4,
+    "RESIL: pos 5.6 m vel 0.27 m/s"
+   ],
+   [
+    38.5,
+    "RESIL: pos 7.6 m vel 0.25 m/s"
+   ],
+   [
+    43.5,
+    "RESIL: pos 8.4 m vel 0.33 m/s"
+   ],
+   [
+    44.5,
+    "Reached command #3"
+   ],
+   [
+    44.5,
+    "Mission: 4 WP"
+   ],
+   [
+    48.6,
+    "RESIL: pos 11.8 m vel 0.27 m/s"
+   ],
+   [
+    53.7,
+    "RESIL: pos 11.7 m vel 0.28 m/s"
+   ],
+   [
+    58.8,
+    "RESIL: pos 12.1 m vel 0.27 m/s"
+   ],
+   [
+    63.9,
+    "RESIL: pos 14.0 m vel 0.21 m/s"
+   ],
+   [
+    69.0,
+    "RESIL: pos 15.4 m vel 0.24 m/s"
+   ],
+   [
+    74.0,
+    "RESIL: pos 16.9 m vel 0.15 m/s"
+   ],
+   [
+    79.0,
+    "RESIL: pos 17.5 m vel 0.24 m/s"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-coherent-0.3-s2",
+  "autopilot": "ardupilot",
+  "config": "lua-switch",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "SCR_ENABLE": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 27.7,
+  "ekf_err_max_m": 27.3,
+  "ekf_err_end_m": 6.5,
+  "spoof_offset_end_m": 28.4,
+  "capture_ratio_end": 0.17,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": 90.9,
+  "switches": 1,
+  "switch_by": "lua",
+  "reject_s": 90.9,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 1,
+  "statustext_after_onset": [
+   [
+    2.8,
+    "RESIL: pos 0.2 m vel 0.14 m/s"
+   ],
+   [
+    7.9,
+    "RESIL: pos 2.6 m vel 0.21 m/s"
+   ],
+   [
+    13.0,
+    "RESIL: pos 3.4 m vel 0.23 m/s"
+   ],
+   [
+    18.1,
+    "RESIL: pos 5.7 m vel 0.35 m/s"
+   ],
+   [
+    23.2,
+    "RESIL: pos 5.8 m vel 0.20 m/s"
+   ],
+   [
+    27.2,
+    "Reached command #2"
+   ],
+   [
+    27.2,
+    "Mission: 3 WP"
+   ],
+   [
+    28.2,
+    "RESIL: pos 7.2 m vel 0.18 m/s"
+   ],
+   [
+    33.3,
+    "RESIL: pos 8.2 m vel 0.21 m/s"
+   ],
+   [
+    38.3,
+    "RESIL: pos 7.7 m vel 0.23 m/s"
+   ],
+   [
+    43.4,
+    "RESIL: pos 10.1 m vel 0.33 m/s"
+   ],
+   [
+    44.8,
+    "Reached command #3"
+   ],
+   [
+    44.8,
+    "Mission: 4 WP"
+   ],
+   [
+    48.5,
+    "RESIL: pos 12.3 m vel 0.28 m/s"
+   ],
+   [
+    53.6,
+    "RESIL: pos 14.7 m vel 0.25 m/s"
+   ],
+   [
+    58.7,
+    "RESIL: pos 16.2 m vel 0.26 m/s"
+   ],
+   [
+    63.7,
+    "RESIL: pos 16.3 m vel 0.21 m/s"
+   ],
+   [
+    68.8,
+    "RESIL: pos 17.4 m vel 0.23 m/s"
+   ],
+   [
+    73.9,
+    "RESIL: pos 18.6 m vel 0.25 m/s"
+   ],
+   [
+    78.9,
+    "RESIL: pos 20.3 m vel 0.26 m/s"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-coherent-0.3-s3",
+  "autopilot": "ardupilot",
+  "config": "lua-switch",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "SCR_ENABLE": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 27.0,
+  "ekf_err_max_m": 26.4,
+  "ekf_err_end_m": 26.4,
+  "spoof_offset_end_m": 28.2,
+  "capture_ratio_end": 0.94,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    2.9,
+    "RESIL: pos 1.7 m vel 0.25 m/s"
+   ],
+   [
+    8.0,
+    "RESIL: pos 2.0 m vel 0.23 m/s"
+   ],
+   [
+    13.2,
+    "RESIL: pos 3.7 m vel 0.24 m/s"
+   ],
+   [
+    18.2,
+    "RESIL: pos 4.6 m vel 0.24 m/s"
+   ],
+   [
+    23.3,
+    "RESIL: pos 6.1 m vel 0.30 m/s"
+   ],
+   [
+    26.8,
+    "Reached command #2"
+   ],
+   [
+    26.8,
+    "Mission: 3 WP"
+   ],
+   [
+    28.3,
+    "RESIL: pos 5.8 m vel 0.22 m/s"
+   ],
+   [
+    33.5,
+    "RESIL: pos 6.6 m vel 0.24 m/s"
+   ],
+   [
+    38.5,
+    "RESIL: pos 8.1 m vel 0.27 m/s"
+   ],
+   [
+    43.6,
+    "RESIL: pos 9.3 m vel 0.29 m/s"
+   ],
+   [
+    44.4,
+    "Reached command #3"
+   ],
+   [
+    44.4,
+    "Mission: 4 WP"
+   ],
+   [
+    48.6,
+    "RESIL: pos 10.3 m vel 0.31 m/s"
+   ],
+   [
+    53.7,
+    "RESIL: pos 14.0 m vel 0.22 m/s"
+   ],
+   [
+    58.8,
+    "RESIL: pos 14.4 m vel 0.26 m/s"
+   ],
+   [
+    63.9,
+    "RESIL: pos 15.8 m vel 0.26 m/s"
+   ],
+   [
+    69.0,
+    "RESIL: pos 16.1 m vel 0.24 m/s"
+   ],
+   [
+    74.0,
+    "RESIL: pos 17.0 m vel 0.29 m/s"
+   ],
+   [
+    79.1,
+    "RESIL: pos 18.2 m vel 0.26 m/s"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-coherent-1-s1",
+  "autopilot": "ardupilot",
+  "config": "lua-switch",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "SCR_ENABLE": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 8.2,
+  "ekf_err_max_m": 10.2,
+  "ekf_err_end_m": 4.9,
+  "spoof_offset_end_m": 95.5,
+  "capture_ratio_end": 0.04,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": 3.2,
+  "switches": 1,
+  "switch_by": "lua",
+  "reject_s": 3.2,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 1,
+  "statustext_after_onset": [
+   [
+    2.5,
+    "RESIL: pos 3.0 m vel 0.86 m/s"
+   ],
+   [
+    3.2,
+    "RESIL: GPS rejected pos 1.7 m vel 0.86 m/s, EKF sr"
+   ],
+   [
+    3.2,
+    "c set 2"
+   ],
+   [
+    27.7,
+    "Reached command #2"
+   ],
+   [
+    27.7,
+    "Mission: 3 WP"
+   ],
+   [
+    45.3,
+    "Reached command #3"
+   ],
+   [
+    45.3,
+    "Mission: 4 WP"
+   ],
+   [
+    90.6,
+    "Reached command #4"
+   ]
+  ],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-coherent-1-s2",
+  "autopilot": "ardupilot",
+  "config": "lua-switch",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "SCR_ENABLE": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 7.8,
+  "ekf_err_max_m": 10.3,
+  "ekf_err_end_m": 5.3,
+  "spoof_offset_end_m": 95.5,
+  "capture_ratio_end": 0.04,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": 3.4,
+  "switches": 1,
+  "switch_by": "lua",
+  "reject_s": 3.4,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    3.0,
+    "RESIL: pos 3.9 m vel 0.78 m/s"
+   ],
+   [
+    3.4,
+    "RESIL: GPS rejected pos 4.4 m vel 0.77 m/s, EKF sr"
+   ],
+   [
+    3.4,
+    "c set 2"
+   ],
+   [
+    27.7,
+    "Reached command #2"
+   ],
+   [
+    27.7,
+    "Mission: 3 WP"
+   ],
+   [
+    45.3,
+    "Reached command #3"
+   ],
+   [
+    45.3,
+    "Mission: 4 WP"
+   ],
+   [
+    90.6,
+    "Reached command #4"
+   ]
+  ],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-coherent-1-s3",
+  "autopilot": "ardupilot",
+  "config": "lua-switch",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "SCR_ENABLE": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 7.2,
+  "ekf_err_max_m": 9.1,
+  "ekf_err_end_m": 5.4,
+  "spoof_offset_end_m": 95.1,
+  "capture_ratio_end": 0.04,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": 3.5,
+  "switches": 1,
+  "switch_by": "lua",
+  "reject_s": 3.5,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 1,
+  "statustext_after_onset": [
+   [
+    2.8,
+    "RESIL: pos 2.3 m vel 0.91 m/s"
+   ],
+   [
+    3.5,
+    "RESIL: GPS rejected pos 1.8 m vel 0.88 m/s, EKF sr"
+   ],
+   [
+    3.5,
+    "c set 2"
+   ],
+   [
+    27.4,
+    "Reached command #2"
+   ],
+   [
+    27.4,
+    "Mission: 3 WP"
+   ],
+   [
+    45.0,
+    "Reached command #3"
+   ],
+   [
+    45.0,
+    "Mission: 4 WP"
+   ],
+   [
+    90.2,
+    "Reached command #4"
+   ]
+  ],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-coherent-3-s1",
+  "autopilot": "ardupilot",
+  "config": "lua-switch",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "SCR_ENABLE": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 8.5,
+  "ekf_err_max_m": 10.1,
+  "ekf_err_end_m": 5.2,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.02,
+  "first_gps_flag_s": 1.1,
+  "gps_flag_reports": 6,
+  "switch_s": 2.4,
+  "switches": 1,
+  "switch_by": "lua",
+  "reject_s": 2.4,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 1,
+  "statustext_after_onset": [
+   [
+    1.1,
+    "GPS Glitch or Compass error"
+   ],
+   [
+    2.4,
+    "RESIL: GPS rejected pos 3.5 m vel 2.74 m/s, EKF sr"
+   ],
+   [
+    2.4,
+    "c set 2"
+   ],
+   [
+    2.4,
+    "Glitch cleared"
+   ],
+   [
+    28.8,
+    "Reached command #2"
+   ],
+   [
+    28.8,
+    "Mission: 3 WP"
+   ],
+   [
+    46.6,
+    "Reached command #3"
+   ],
+   [
+    46.6,
+    "Mission: 4 WP"
+   ],
+   [
+    91.8,
+    "Reached command #4"
+   ]
+  ],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-coherent-3-s2",
+  "autopilot": "ardupilot",
+  "config": "lua-switch",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "SCR_ENABLE": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 14.9,
+  "ekf_err_max_m": 11.7,
+  "ekf_err_end_m": 5.7,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.03,
+  "first_gps_flag_s": 1.2,
+  "gps_flag_reports": 6,
+  "switch_s": 2.3,
+  "switches": 1,
+  "switch_by": "lua",
+  "reject_s": 2.3,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    1.1,
+    "GPS Glitch or Compass error"
+   ],
+   [
+    2.3,
+    "RESIL: GPS rejected pos 6.9 m vel 2.74 m/s, EKF sr"
+   ],
+   [
+    2.3,
+    "c set 2"
+   ],
+   [
+    2.3,
+    "Glitch cleared"
+   ],
+   [
+    28.7,
+    "Reached command #2"
+   ],
+   [
+    28.7,
+    "Mission: 3 WP"
+   ],
+   [
+    46.4,
+    "Reached command #3"
+   ],
+   [
+    46.4,
+    "Mission: 4 WP"
+   ],
+   [
+    91.7,
+    "Reached command #4"
+   ]
+  ],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-coherent-3-s3",
+  "autopilot": "ardupilot",
+  "config": "lua-switch",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "SCR_ENABLE": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 9.4,
+  "ekf_err_max_m": 9.5,
+  "ekf_err_end_m": 5.9,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.03,
+  "first_gps_flag_s": 1.2,
+  "gps_flag_reports": 6,
+  "switch_s": 2.3,
+  "switches": 1,
+  "switch_by": "lua",
+  "reject_s": 2.3,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 1,
+  "statustext_after_onset": [
+   [
+    1.1,
+    "GPS Glitch or Compass error"
+   ],
+   [
+    2.3,
+    "RESIL: GPS rejected pos 6.9 m vel 2.81 m/s, EKF sr"
+   ],
+   [
+    2.3,
+    "c set 2"
+   ],
+   [
+    2.3,
+    "Glitch cleared"
+   ],
+   [
+    28.6,
+    "Reached command #2"
+   ],
+   [
+    28.6,
+    "Mission: 3 WP"
+   ],
+   [
+    46.4,
+    "Reached command #3"
+   ],
+   [
+    46.4,
+    "Mission: 4 WP"
+   ],
+   [
+    91.8,
+    "Reached command #4"
+   ]
+  ],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-fuse-all-vel-clean-s1",
+  "autopilot": "ardupilot",
+  "config": "lua-switch-fuse-all-vel",
+  "seed": 1,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.0,
+  "ekf_err_max_m": 2.5,
+  "ekf_err_end_m": 0.1,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    3.0,
+    "RESIL: pos 3.9 m vel 0.11 m/s"
+   ],
+   [
+    8.0,
+    "RESIL: pos 4.4 m vel 0.08 m/s"
+   ],
+   [
+    13.1,
+    "RESIL: pos 5.8 m vel 0.08 m/s"
+   ],
+   [
+    18.2,
+    "RESIL: pos 4.0 m vel 0.06 m/s"
+   ],
+   [
+    23.2,
+    "RESIL: pos 7.0 m vel 0.04 m/s"
+   ],
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    28.3,
+    "RESIL: pos 8.2 m vel 0.16 m/s"
+   ],
+   [
+    33.4,
+    "RESIL: pos 8.5 m vel 0.03 m/s"
+   ],
+   [
+    38.4,
+    "RESIL: pos 9.8 m vel 0.12 m/s"
+   ],
+   [
+    43.5,
+    "RESIL: pos 8.6 m vel 0.03 m/s"
+   ],
+   [
+    44.8,
+    "Reached command #3"
+   ],
+   [
+    44.8,
+    "Mission: 4 WP"
+   ],
+   [
+    48.6,
+    "RESIL: pos 9.8 m vel 0.11 m/s"
+   ],
+   [
+    53.7,
+    "RESIL: pos 9.0 m vel 0.05 m/s"
+   ],
+   [
+    58.8,
+    "RESIL: pos 10.2 m vel 0.03 m/s"
+   ],
+   [
+    63.8,
+    "RESIL: pos 11.1 m vel 0.14 m/s"
+   ],
+   [
+    68.9,
+    "RESIL: pos 11.5 m vel 0.05 m/s"
+   ],
+   [
+    74.0,
+    "RESIL: pos 9.1 m vel 0.10 m/s"
+   ],
+   [
+    79.1,
+    "RESIL: pos 8.2 m vel 0.05 m/s"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-fuse-all-vel-clean-s2",
+  "autopilot": "ardupilot",
+  "config": "lua-switch-fuse-all-vel",
+  "seed": 2,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 3.1,
+  "ekf_err_max_m": 2.7,
+  "ekf_err_end_m": 1.7,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    2.9,
+    "RESIL: pos 0.2 m vel 0.20 m/s"
+   ],
+   [
+    8.0,
+    "RESIL: pos 0.1 m vel 0.06 m/s"
+   ],
+   [
+    13.1,
+    "RESIL: pos 1.6 m vel 0.04 m/s"
+   ],
+   [
+    18.1,
+    "RESIL: pos 2.3 m vel 0.11 m/s"
+   ],
+   [
+    23.2,
+    "RESIL: pos 2.4 m vel 0.10 m/s"
+   ],
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    28.3,
+    "RESIL: pos 4.6 m vel 0.25 m/s"
+   ],
+   [
+    33.4,
+    "RESIL: pos 6.0 m vel 0.13 m/s"
+   ],
+   [
+    38.5,
+    "RESIL: pos 6.1 m vel 0.07 m/s"
+   ],
+   [
+    43.5,
+    "RESIL: pos 6.0 m vel 0.11 m/s"
+   ],
+   [
+    44.7,
+    "Reached command #3"
+   ],
+   [
+    44.7,
+    "Mission: 4 WP"
+   ],
+   [
+    48.6,
+    "RESIL: pos 7.3 m vel 0.11 m/s"
+   ],
+   [
+    53.7,
+    "RESIL: pos 6.5 m vel 0.15 m/s"
+   ],
+   [
+    58.7,
+    "RESIL: pos 6.9 m vel 0.05 m/s"
+   ],
+   [
+    63.9,
+    "RESIL: pos 8.1 m vel 0.09 m/s"
+   ],
+   [
+    69.0,
+    "RESIL: pos 9.5 m vel 0.09 m/s"
+   ],
+   [
+    74.0,
+    "RESIL: pos 9.1 m vel 0.07 m/s"
+   ],
+   [
+    79.1,
+    "RESIL: pos 9.5 m vel 0.10 m/s"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-fuse-all-vel-clean-s3",
+  "autopilot": "ardupilot",
+  "config": "lua-switch-fuse-all-vel",
+  "seed": 3,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.3,
+  "ekf_err_max_m": 1.7,
+  "ekf_err_end_m": 1.7,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    3.0,
+    "RESIL: pos 1.9 m vel 0.04 m/s"
+   ],
+   [
+    8.0,
+    "RESIL: pos 3.0 m vel 0.07 m/s"
+   ],
+   [
+    13.2,
+    "RESIL: pos 2.8 m vel 0.15 m/s"
+   ],
+   [
+    18.2,
+    "RESIL: pos 3.1 m vel 0.04 m/s"
+   ],
+   [
+    23.3,
+    "RESIL: pos 2.2 m vel 0.08 m/s"
+   ],
+   [
+    27.0,
+    "Reached command #2"
+   ],
+   [
+    27.0,
+    "Mission: 3 WP"
+   ],
+   [
+    28.4,
+    "RESIL: pos 3.1 m vel 0.23 m/s"
+   ],
+   [
+    33.5,
+    "RESIL: pos 2.8 m vel 0.09 m/s"
+   ],
+   [
+    38.5,
+    "RESIL: pos 3.6 m vel 0.09 m/s"
+   ],
+   [
+    43.6,
+    "RESIL: pos 4.3 m vel 0.07 m/s"
+   ],
+   [
+    44.6,
+    "Reached command #3"
+   ],
+   [
+    44.6,
+    "Mission: 4 WP"
+   ],
+   [
+    48.6,
+    "RESIL: pos 5.5 m vel 0.15 m/s"
+   ],
+   [
+    53.7,
+    "RESIL: pos 5.0 m vel 0.11 m/s"
+   ],
+   [
+    58.8,
+    "RESIL: pos 6.1 m vel 0.04 m/s"
+   ],
+   [
+    63.8,
+    "RESIL: pos 6.1 m vel 0.08 m/s"
+   ],
+   [
+    68.9,
+    "RESIL: pos 6.3 m vel 0.08 m/s"
+   ],
+   [
+    74.0,
+    "RESIL: pos 7.3 m vel 0.01 m/s"
+   ],
+   [
+    79.1,
+    "RESIL: pos 7.3 m vel 0.05 m/s"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-fuse-all-vel-coherent-0.3-s1",
+  "autopilot": "ardupilot",
+  "config": "lua-switch-fuse-all-vel",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 28.1,
+  "ekf_err_max_m": 27.9,
+  "ekf_err_end_m": 27.9,
+  "spoof_offset_end_m": 28.3,
+  "capture_ratio_end": 0.98,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    3.0,
+    "RESIL: pos 4.2 m vel 0.32 m/s"
+   ],
+   [
+    8.0,
+    "RESIL: pos 5.1 m vel 0.22 m/s"
+   ],
+   [
+    13.1,
+    "RESIL: pos 5.9 m vel 0.25 m/s"
+   ],
+   [
+    18.2,
+    "RESIL: pos 3.9 m vel 0.26 m/s"
+   ],
+   [
+    23.2,
+    "RESIL: pos 4.2 m vel 0.32 m/s"
+   ],
+   [
+    27.0,
+    "Reached command #2"
+   ],
+   [
+    27.0,
+    "Mission: 3 WP"
+   ],
+   [
+    28.3,
+    "RESIL: pos 5.2 m vel 0.20 m/s"
+   ],
+   [
+    33.4,
+    "RESIL: pos 6.0 m vel 0.19 m/s"
+   ],
+   [
+    38.5,
+    "RESIL: pos 6.4 m vel 0.32 m/s"
+   ],
+   [
+    43.5,
+    "RESIL: pos 7.0 m vel 0.40 m/s"
+   ],
+   [
+    44.6,
+    "Reached command #3"
+   ],
+   [
+    44.6,
+    "Mission: 4 WP"
+   ],
+   [
+    48.6,
+    "RESIL: pos 10.0 m vel 0.27 m/s"
+   ],
+   [
+    53.6,
+    "RESIL: pos 11.3 m vel 0.30 m/s"
+   ],
+   [
+    58.8,
+    "RESIL: pos 11.9 m vel 0.29 m/s"
+   ],
+   [
+    63.8,
+    "RESIL: pos 13.0 m vel 0.22 m/s"
+   ],
+   [
+    68.9,
+    "RESIL: pos 15.1 m vel 0.26 m/s"
+   ],
+   [
+    74.0,
+    "RESIL: pos 15.6 m vel 0.33 m/s"
+   ],
+   [
+    79.0,
+    "RESIL: pos 17.2 m vel 0.31 m/s"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-fuse-all-vel-coherent-0.3-s2",
+  "autopilot": "ardupilot",
+  "config": "lua-switch-fuse-all-vel",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 26.5,
+  "ekf_err_max_m": 26.1,
+  "ekf_err_end_m": 5.5,
+  "spoof_offset_end_m": 29.5,
+  "capture_ratio_end": 0.14,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": 89.2,
+  "switches": 1,
+  "switch_by": "lua",
+  "reject_s": 89.2,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 1,
+  "statustext_after_onset": [
+   [
+    3.0,
+    "RESIL: pos 1.5 m vel 0.14 m/s"
+   ],
+   [
+    8.0,
+    "RESIL: pos 2.2 m vel 0.25 m/s"
+   ],
+   [
+    13.1,
+    "RESIL: pos 3.4 m vel 0.28 m/s"
+   ],
+   [
+    18.2,
+    "RESIL: pos 6.6 m vel 0.33 m/s"
+   ],
+   [
+    23.2,
+    "RESIL: pos 6.2 m vel 0.21 m/s"
+   ],
+   [
+    27.1,
+    "Reached command #2"
+   ],
+   [
+    27.1,
+    "Mission: 3 WP"
+   ],
+   [
+    28.3,
+    "RESIL: pos 9.1 m vel 0.12 m/s"
+   ],
+   [
+    33.4,
+    "RESIL: pos 8.0 m vel 0.21 m/s"
+   ],
+   [
+    38.5,
+    "RESIL: pos 9.5 m vel 0.24 m/s"
+   ],
+   [
+    43.5,
+    "RESIL: pos 10.6 m vel 0.33 m/s"
+   ],
+   [
+    44.7,
+    "Reached command #3"
+   ],
+   [
+    44.7,
+    "Mission: 4 WP"
+   ],
+   [
+    48.5,
+    "RESIL: pos 12.4 m vel 0.27 m/s"
+   ],
+   [
+    53.6,
+    "RESIL: pos 13.5 m vel 0.21 m/s"
+   ],
+   [
+    58.7,
+    "RESIL: pos 17.6 m vel 0.27 m/s"
+   ],
+   [
+    63.8,
+    "RESIL: pos 17.5 m vel 0.22 m/s"
+   ],
+   [
+    68.9,
+    "RESIL: pos 18.2 m vel 0.21 m/s"
+   ],
+   [
+    73.9,
+    "RESIL: pos 20.7 m vel 0.29 m/s"
+   ],
+   [
+    79.0,
+    "RESIL: pos 21.3 m vel 0.28 m/s"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-fuse-all-vel-coherent-0.3-s3",
+  "autopilot": "ardupilot",
+  "config": "lua-switch-fuse-all-vel",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 26.5,
+  "ekf_err_max_m": 26.0,
+  "ekf_err_end_m": 26.0,
+  "spoof_offset_end_m": 28.3,
+  "capture_ratio_end": 0.92,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 0,
+  "statustext_after_onset": [
+   [
+    3.1,
+    "RESIL: pos 0.8 m vel 0.26 m/s"
+   ],
+   [
+    8.2,
+    "RESIL: pos 2.2 m vel 0.26 m/s"
+   ],
+   [
+    13.3,
+    "RESIL: pos 2.8 m vel 0.23 m/s"
+   ],
+   [
+    18.3,
+    "RESIL: pos 4.4 m vel 0.25 m/s"
+   ],
+   [
+    23.4,
+    "RESIL: pos 5.6 m vel 0.30 m/s"
+   ],
+   [
+    27.0,
+    "Reached command #2"
+   ],
+   [
+    27.0,
+    "Mission: 3 WP"
+   ],
+   [
+    28.5,
+    "RESIL: pos 6.2 m vel 0.23 m/s"
+   ],
+   [
+    33.6,
+    "RESIL: pos 6.7 m vel 0.27 m/s"
+   ],
+   [
+    38.6,
+    "RESIL: pos 8.7 m vel 0.29 m/s"
+   ],
+   [
+    43.7,
+    "RESIL: pos 9.9 m vel 0.31 m/s"
+   ],
+   [
+    44.6,
+    "Reached command #3"
+   ],
+   [
+    44.6,
+    "Mission: 4 WP"
+   ],
+   [
+    48.8,
+    "RESIL: pos 12.3 m vel 0.31 m/s"
+   ],
+   [
+    53.8,
+    "RESIL: pos 13.2 m vel 0.21 m/s"
+   ],
+   [
+    59.0,
+    "RESIL: pos 15.9 m vel 0.27 m/s"
+   ],
+   [
+    64.0,
+    "RESIL: pos 15.6 m vel 0.28 m/s"
+   ],
+   [
+    69.1,
+    "RESIL: pos 16.6 m vel 0.27 m/s"
+   ],
+   [
+    74.2,
+    "RESIL: pos 16.9 m vel 0.30 m/s"
+   ],
+   [
+    79.3,
+    "RESIL: pos 18.4 m vel 0.24 m/s"
+   ]
+  ],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-fuse-all-vel-coherent-1-s1",
+  "autopilot": "ardupilot",
+  "config": "lua-switch-fuse-all-vel",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 8.2,
+  "ekf_err_max_m": 10.2,
+  "ekf_err_end_m": 5.0,
+  "spoof_offset_end_m": 95.5,
+  "capture_ratio_end": 0.04,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": 3.2,
+  "switches": 1,
+  "switch_by": "lua",
+  "reject_s": 3.2,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 1,
+  "statustext_after_onset": [
+   [
+    3.1,
+    "RESIL: pos 0.8 m vel 0.90 m/s"
+   ],
+   [
+    3.2,
+    "RESIL: GPS rejected pos 1.2 m vel 0.89 m/s, EKF sr"
+   ],
+   [
+    3.2,
+    "c set 2"
+   ],
+   [
+    27.8,
+    "Reached command #2"
+   ],
+   [
+    27.8,
+    "Mission: 3 WP"
+   ],
+   [
+    45.4,
+    "Reached command #3"
+   ],
+   [
+    45.4,
+    "Mission: 4 WP"
+   ],
+   [
+    90.7,
+    "Reached command #4"
+   ]
+  ],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-fuse-all-vel-coherent-1-s2",
+  "autopilot": "ardupilot",
+  "config": "lua-switch-fuse-all-vel",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 8.5,
+  "ekf_err_max_m": 10.6,
+  "ekf_err_end_m": 5.7,
+  "spoof_offset_end_m": 95.6,
+  "capture_ratio_end": 0.04,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": 3.4,
+  "switches": 1,
+  "switch_by": "lua",
+  "reject_s": 3.4,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 1,
+  "statustext_after_onset": [
+   [
+    2.9,
+    "RESIL: pos 3.2 m vel 0.83 m/s"
+   ],
+   [
+    3.4,
+    "RESIL: GPS rejected pos 2.5 m vel 0.81 m/s, EKF sr"
+   ],
+   [
+    3.4,
+    "c set 2"
+   ],
+   [
+    27.7,
+    "Reached command #2"
+   ],
+   [
+    27.7,
+    "Mission: 3 WP"
+   ],
+   [
+    45.3,
+    "Reached command #3"
+   ],
+   [
+    45.3,
+    "Mission: 4 WP"
+   ],
+   [
+    90.8,
+    "Reached command #4"
+   ]
+  ],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-fuse-all-vel-coherent-1-s3",
+  "autopilot": "ardupilot",
+  "config": "lua-switch-fuse-all-vel",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 7.1,
+  "ekf_err_max_m": 9.0,
+  "ekf_err_end_m": 5.2,
+  "spoof_offset_end_m": 95.3,
+  "capture_ratio_end": 0.04,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": 3.4,
+  "switches": 1,
+  "switch_by": "lua",
+  "reject_s": 3.4,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 1,
+  "statustext_after_onset": [
+   [
+    3.0,
+    "RESIL: pos 2.1 m vel 0.95 m/s"
+   ],
+   [
+    3.4,
+    "RESIL: GPS rejected pos 1.6 m vel 0.91 m/s, EKF sr"
+   ],
+   [
+    3.4,
+    "c set 2"
+   ],
+   [
+    27.6,
+    "Reached command #2"
+   ],
+   [
+    27.6,
+    "Mission: 3 WP"
+   ],
+   [
+    45.2,
+    "Reached command #3"
+   ],
+   [
+    45.2,
+    "Mission: 4 WP"
+   ],
+   [
+    90.4,
+    "Reached command #4"
+   ]
+  ],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-fuse-all-vel-coherent-3-s1",
+  "autopilot": "ardupilot",
+  "config": "lua-switch-fuse-all-vel",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 8.2,
+  "ekf_err_max_m": 10.3,
+  "ekf_err_end_m": 5.8,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.02,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": 2.3,
+  "switches": 1,
+  "switch_by": "lua",
+  "reject_s": 2.3,
+  "lane_switches": 1,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 1,
+  "statustext_after_onset": [
+   [
+    0.1,
+    "EKF3 lane switch 1"
+   ],
+   [
+    0.1,
+    "EKF primary changed:1"
+   ],
+   [
+    2.3,
+    "RESIL: GPS rejected pos 4.0 m vel 2.70 m/s, EKF sr"
+   ],
+   [
+    2.3,
+    "c set 2"
+   ],
+   [
+    28.1,
+    "Reached command #2"
+   ],
+   [
+    28.1,
+    "Mission: 3 WP"
+   ],
+   [
+    45.8,
+    "Reached command #3"
+   ],
+   [
+    45.8,
+    "Mission: 4 WP"
+   ],
+   [
+    91.1,
+    "Reached command #4"
+   ]
+  ],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-fuse-all-vel-coherent-3-s2",
+  "autopilot": "ardupilot",
+  "config": "lua-switch-fuse-all-vel",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 9.9,
+  "ekf_err_max_m": 10.1,
+  "ekf_err_end_m": 5.5,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.02,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": 2.3,
+  "switches": 1,
+  "switch_by": "lua",
+  "reject_s": 2.3,
+  "lane_switches": 1,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 1,
+  "statustext_after_onset": [
+   [
+    0.5,
+    "EKF3 lane switch 1"
+   ],
+   [
+    0.5,
+    "EKF primary changed:1"
+   ],
+   [
+    2.3,
+    "RESIL: GPS rejected pos 6.6 m vel 2.68 m/s, EKF sr"
+   ],
+   [
+    2.3,
+    "c set 2"
+   ],
+   [
+    28.3,
+    "Reached command #2"
+   ],
+   [
+    28.3,
+    "Mission: 3 WP"
+   ],
+   [
+    46.0,
+    "Reached command #3"
+   ],
+   [
+    46.0,
+    "Mission: 4 WP"
+   ],
+   [
+    91.3,
+    "Reached command #4"
+   ]
+  ],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "ardupilot-lua-switch-fuse-all-vel-coherent-3-s3",
+  "autopilot": "ardupilot",
+  "config": "lua-switch-fuse-all-vel",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "params_echoed": {
+   "SCR_ENABLE": 1.0,
+   "EK3_SRC_OPTIONS": 1.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 8.0,
+  "ekf_err_max_m": 9.5,
+  "ekf_err_end_m": 5.6,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.02,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": 2.3,
+  "switches": 1,
+  "switch_by": "lua",
+  "reject_s": 2.3,
+  "lane_switches": 1,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": null,
+  "ekf2_flag_samples": 0,
+  "resets": 1,
+  "statustext_after_onset": [
+   [
+    0.1,
+    "EKF3 lane switch 1"
+   ],
+   [
+    0.1,
+    "EKF primary changed:1"
+   ],
+   [
+    2.3,
+    "RESIL: GPS rejected pos 6.6 m vel 2.78 m/s, EKF sr"
+   ],
+   [
+    2.3,
+    "c set 2"
+   ],
+   [
+    27.9,
+    "Reached command #2"
+   ],
+   [
+    27.9,
+    "Mission: 3 WP"
+   ],
+   [
+    45.7,
+    "Reached command #3"
+   ],
+   [
+    45.7,
+    "Mission: 4 WP"
+   ],
+   [
+    91.0,
+    "Reached command #4"
+   ]
+  ],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-agp-gpsmode1-clean-s1",
+  "autopilot": "px4",
+  "config": "agp-gpsmode1",
+  "seed": 1,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 20.7,
+  "ekf_err_max_m": 18.7,
+  "ekf_err_end_m": 0.6,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 1.5,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 1.5,
+  "gnss_off_before_onset": true,
+  "gnss_hgt_fault_seen": true,
+  "aux_gpos_seen": true,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 130,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": true
+ },
+ {
+  "case": "px4-agp-gpsmode1-clean-s2",
+  "autopilot": "px4",
+  "config": "agp-gpsmode1",
+  "seed": 2,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 15.5,
+  "ekf_err_max_m": 13.8,
+  "ekf_err_end_m": 7.2,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 0.8,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 0.8,
+  "gnss_off_before_onset": true,
+  "gnss_hgt_fault_seen": true,
+  "aux_gpos_seen": true,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 129,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": true
+ },
+ {
+  "case": "px4-agp-gpsmode1-clean-s3",
+  "autopilot": "px4",
+  "config": "agp-gpsmode1",
+  "seed": 3,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 11.9,
+  "ekf_err_max_m": 13.2,
+  "ekf_err_end_m": 6.9,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 0.9,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 0.9,
+  "gnss_off_before_onset": true,
+  "gnss_hgt_fault_seen": true,
+  "aux_gpos_seen": true,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 132,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": true
+ },
+ {
+  "case": "px4-agp-gpsmode1-coherent-0.3-s1",
+  "autopilot": "px4",
+  "config": "agp-gpsmode1",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 19.2,
+  "ekf_err_max_m": 20.4,
+  "ekf_err_end_m": 4.1,
+  "spoof_offset_end_m": 38.0,
+  "capture_ratio_end": -0.11,
+  "first_gps_flag_s": 31.4,
+  "gps_flag_reports": 126,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 0.7,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 0.7,
+  "gnss_off_before_onset": true,
+  "gnss_hgt_fault_seen": true,
+  "aux_gpos_seen": true,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 151,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-agp-gpsmode1-coherent-0.3-s2",
+  "autopilot": "px4",
+  "config": "agp-gpsmode1",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 19.7,
+  "ekf_err_max_m": 18.5,
+  "ekf_err_end_m": 2.6,
+  "spoof_offset_end_m": 37.3,
+  "capture_ratio_end": -0.07,
+  "first_gps_flag_s": 109.6,
+  "gps_flag_reports": 67,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 0.5,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 0.5,
+  "gnss_off_before_onset": true,
+  "gnss_hgt_fault_seen": true,
+  "aux_gpos_seen": true,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 116,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-agp-gpsmode1-coherent-0.3-s3",
+  "autopilot": "px4",
+  "config": "agp-gpsmode1",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 24.3,
+  "ekf_err_max_m": 22.8,
+  "ekf_err_end_m": 3.3,
+  "spoof_offset_end_m": 50.6,
+  "capture_ratio_end": -0.04,
+  "first_gps_flag_s": 27.2,
+  "gps_flag_reports": 482,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 0.4,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 0.4,
+  "gnss_off_before_onset": true,
+  "gnss_hgt_fault_seen": true,
+  "aux_gpos_seen": true,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 175,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-agp-gpsmode1-coherent-1-s1",
+  "autopilot": "px4",
+  "config": "agp-gpsmode1",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 19.2,
+  "ekf_err_max_m": 15.6,
+  "ekf_err_end_m": 3.6,
+  "spoof_offset_end_m": 139.8,
+  "capture_ratio_end": 0.02,
+  "first_gps_flag_s": 32.2,
+  "gps_flag_reports": 539,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 1.3,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 1.3,
+  "gnss_off_before_onset": true,
+  "gnss_hgt_fault_seen": true,
+  "aux_gpos_seen": true,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 160,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-agp-gpsmode1-coherent-1-s2",
+  "autopilot": "px4",
+  "config": "agp-gpsmode1",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 14.1,
+  "ekf_err_max_m": 19.2,
+  "ekf_err_end_m": 3.0,
+  "spoof_offset_end_m": 140.3,
+  "capture_ratio_end": -0.01,
+  "first_gps_flag_s": 41.6,
+  "gps_flag_reports": 493,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 1.8,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 1.8,
+  "gnss_off_before_onset": true,
+  "gnss_hgt_fault_seen": true,
+  "aux_gpos_seen": true,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 124,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-agp-gpsmode1-coherent-1-s3",
+  "autopilot": "px4",
+  "config": "agp-gpsmode1",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 22.5,
+  "ekf_err_max_m": 22.1,
+  "ekf_err_end_m": 2.9,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.0,
+  "first_gps_flag_s": 21.6,
+  "gps_flag_reports": 742,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 0.7,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 0.7,
+  "gnss_off_before_onset": true,
+  "gnss_hgt_fault_seen": true,
+  "aux_gpos_seen": true,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 154,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-agp-gpsmode1-coherent-3-s1",
+  "autopilot": "px4",
+  "config": "agp-gpsmode1",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 8.6,
+  "ekf_err_max_m": 11.2,
+  "ekf_err_end_m": 1.5,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.01,
+  "first_gps_flag_s": 11.2,
+  "gps_flag_reports": 605,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 1.0,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 1.0,
+  "gnss_off_before_onset": true,
+  "gnss_hgt_fault_seen": true,
+  "aux_gpos_seen": true,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 134,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-agp-gpsmode1-coherent-3-s2",
+  "autopilot": "px4",
+  "config": "agp-gpsmode1",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 28.7,
+  "ekf_err_max_m": 21.6,
+  "ekf_err_end_m": 7.2,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": -0.05,
+  "first_gps_flag_s": 12.6,
+  "gps_flag_reports": 752,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 1.9,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 1.9,
+  "gnss_off_before_onset": true,
+  "gnss_hgt_fault_seen": true,
+  "aux_gpos_seen": true,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 141,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-agp-gpsmode1-coherent-3-s3",
+  "autopilot": "px4",
+  "config": "agp-gpsmode1",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "SENS_EN_AGPSIM": 1,
+   "EKF2_AGP_CTRL": 1,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 24.7,
+  "ekf_err_max_m": 25.1,
+  "ekf_err_end_m": 4.6,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": -0.0,
+  "first_gps_flag_s": 13.6,
+  "gps_flag_reports": 790,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 1.9,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 1.9,
+  "gnss_off_before_onset": true,
+  "gnss_hgt_fault_seen": true,
+  "aux_gpos_seen": true,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 141,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-companion-monitor-clean-s1",
+  "autopilot": "px4",
+  "config": "companion-monitor",
+  "seed": 1,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 3.2,
+  "ekf_err_max_m": 2.5,
+  "ekf_err_end_m": 1.6,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 101,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-companion-monitor-clean-s2",
+  "autopilot": "px4",
+  "config": "companion-monitor",
+  "seed": 2,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 3.9,
+  "ekf_err_max_m": 3.6,
+  "ekf_err_end_m": 2.2,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 110,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-companion-monitor-clean-s3",
+  "autopilot": "px4",
+  "config": "companion-monitor",
+  "seed": 3,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 3.7,
+  "ekf_err_max_m": 1.8,
+  "ekf_err_end_m": 1.4,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 112,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-companion-monitor-coherent-0.3-s1",
+  "autopilot": "px4",
+  "config": "companion-monitor",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 9.7,
+  "ekf_err_max_m": 14.1,
+  "ekf_err_end_m": 5.9,
+  "spoof_offset_end_m": 32.9,
+  "capture_ratio_end": 0.18,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": 51.0,
+  "switches": 1,
+  "switch_by": "companion",
+  "reject_s": 51.0,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 52.1,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 104,
+  "resets": 1,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-companion-monitor-coherent-0.3-s2",
+  "autopilot": "px4",
+  "config": "companion-monitor",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 10.8,
+  "ekf_err_max_m": 13.1,
+  "ekf_err_end_m": 4.8,
+  "spoof_offset_end_m": 33.2,
+  "capture_ratio_end": 0.12,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": 45.0,
+  "switches": 1,
+  "switch_by": "companion",
+  "reject_s": 45.0,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 45.1,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 106,
+  "resets": 1,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-companion-monitor-coherent-0.3-s3",
+  "autopilot": "px4",
+  "config": "companion-monitor",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 9.9,
+  "ekf_err_max_m": 13.0,
+  "ekf_err_end_m": 5.3,
+  "spoof_offset_end_m": 33.3,
+  "capture_ratio_end": 0.15,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": 44.0,
+  "switches": 1,
+  "switch_by": "companion",
+  "reject_s": 44.0,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 45.1,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 115,
+  "resets": 1,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-companion-monitor-coherent-1-s1",
+  "autopilot": "px4",
+  "config": "companion-monitor",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 8.6,
+  "ekf_err_max_m": 9.3,
+  "ekf_err_end_m": 5.6,
+  "spoof_offset_end_m": 106.3,
+  "capture_ratio_end": 0.05,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": 5.0,
+  "switches": 1,
+  "switch_by": "companion",
+  "reject_s": 5.0,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 6.1,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 101,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-companion-monitor-coherent-1-s2",
+  "autopilot": "px4",
+  "config": "companion-monitor",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 8.2,
+  "ekf_err_max_m": 8.1,
+  "ekf_err_end_m": 5.7,
+  "spoof_offset_end_m": 107.5,
+  "capture_ratio_end": 0.05,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": 3.0,
+  "switches": 1,
+  "switch_by": "companion",
+  "reject_s": 3.0,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 3.1,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 104,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-companion-monitor-coherent-1-s3",
+  "autopilot": "px4",
+  "config": "companion-monitor",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 8.6,
+  "ekf_err_max_m": 8.3,
+  "ekf_err_end_m": 4.9,
+  "spoof_offset_end_m": 105.3,
+  "capture_ratio_end": 0.04,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": 3.0,
+  "switches": 1,
+  "switch_by": "companion",
+  "reject_s": 3.0,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 3.1,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 109,
+  "resets": 1,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-companion-monitor-coherent-3-s1",
+  "autopilot": "px4",
+  "config": "companion-monitor",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 10.6,
+  "ekf_err_max_m": 10.2,
+  "ekf_err_end_m": 4.6,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.02,
+  "first_gps_flag_s": 0.2,
+  "gps_flag_reports": 556,
+  "switch_s": 1.0,
+  "switches": 1,
+  "switch_by": "companion",
+  "reject_s": 1.0,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 1.1,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 104,
+  "resets": 1,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-companion-monitor-coherent-3-s2",
+  "autopilot": "px4",
+  "config": "companion-monitor",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 8.1,
+  "ekf_err_max_m": 8.4,
+  "ekf_err_end_m": 5.3,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.04,
+  "first_gps_flag_s": 0.2,
+  "gps_flag_reports": 529,
+  "switch_s": 1.0,
+  "switches": 1,
+  "switch_by": "companion",
+  "reject_s": 1.0,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 1.1,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 109,
+  "resets": 1,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-companion-monitor-coherent-3-s3",
+  "autopilot": "px4",
+  "config": "companion-monitor",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 11.1,
+  "ekf_err_max_m": 10.2,
+  "ekf_err_end_m": 4.7,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.02,
+  "first_gps_flag_s": 0.2,
+  "gps_flag_reports": 567,
+  "switch_s": 1.0,
+  "switches": 1,
+  "switch_by": "companion",
+  "reject_s": 1.0,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 2.1,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 117,
+  "resets": 1,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-default-clean-s1",
+  "autopilot": "px4",
+  "config": "default",
+  "seed": 1,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.4,
+  "ekf_err_max_m": 2.7,
+  "ekf_err_end_m": 1.3,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 105,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-default-clean-s2",
+  "autopilot": "px4",
+  "config": "default",
+  "seed": 2,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 3.2,
+  "ekf_err_max_m": 2.8,
+  "ekf_err_end_m": 2.3,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 98,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-default-clean-s3",
+  "autopilot": "px4",
+  "config": "default",
+  "seed": 3,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.3,
+  "ekf_err_max_m": 2.2,
+  "ekf_err_end_m": 1.2,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 99,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-default-coherent-0.3-s1",
+  "autopilot": "px4",
+  "config": "default",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 34.5,
+  "ekf_err_max_m": 33.0,
+  "ekf_err_end_m": 33.0,
+  "spoof_offset_end_m": 31.5,
+  "capture_ratio_end": 1.05,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 99,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-default-coherent-0.3-s2",
+  "autopilot": "px4",
+  "config": "default",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 32.0,
+  "ekf_err_max_m": 31.3,
+  "ekf_err_end_m": 31.3,
+  "spoof_offset_end_m": 31.5,
+  "capture_ratio_end": 0.99,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 98,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-default-coherent-0.3-s3",
+  "autopilot": "px4",
+  "config": "default",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 32.9,
+  "ekf_err_max_m": 31.8,
+  "ekf_err_end_m": 31.8,
+  "spoof_offset_end_m": 31.7,
+  "capture_ratio_end": 1.01,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 99,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-default-coherent-1-s1",
+  "autopilot": "px4",
+  "config": "default",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 103.4,
+  "ekf_err_end_m": 103.4,
+  "spoof_offset_end_m": 103.4,
+  "capture_ratio_end": 1.0,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 99,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-default-coherent-1-s2",
+  "autopilot": "px4",
+  "config": "default",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 104.1,
+  "ekf_err_end_m": 104.1,
+  "spoof_offset_end_m": 104.7,
+  "capture_ratio_end": 0.99,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 97,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-default-coherent-1-s3",
+  "autopilot": "px4",
+  "config": "default",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 106.7,
+  "ekf_err_end_m": 106.7,
+  "spoof_offset_end_m": 106.5,
+  "capture_ratio_end": 1.0,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 100,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-default-coherent-3-s1",
+  "autopilot": "px4",
+  "config": "default",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 101.9,
+  "ekf_err_max_m": 155.9,
+  "ekf_err_end_m": 149.6,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 1.0,
+  "first_gps_flag_s": 0.2,
+  "gps_flag_reports": 55,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 101,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-default-coherent-3-s2",
+  "autopilot": "px4",
+  "config": "default",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 105.8,
+  "ekf_err_max_m": 152.7,
+  "ekf_err_end_m": 148.6,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.99,
+  "first_gps_flag_s": 0.2,
+  "gps_flag_reports": 19,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 100,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-default-coherent-3-s3",
+  "autopilot": "px4",
+  "config": "default",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {},
+  "params_echoed": {},
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 113.8,
+  "ekf_err_max_m": 152.5,
+  "ekf_err_end_m": 149.8,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 1.0,
+  "first_gps_flag_s": 0.2,
+  "gps_flag_reports": 27,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": false,
+  "ekf2_flag_samples": 102,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-clean-s1",
+  "autopilot": "px4",
+  "config": "ev-vel",
+  "seed": 1,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.8,
+  "ekf_err_max_m": 1.6,
+  "ekf_err_end_m": 1.0,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 100,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-clean-s2",
+  "autopilot": "px4",
+  "config": "ev-vel",
+  "seed": 2,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.0,
+  "ekf_err_max_m": 2.6,
+  "ekf_err_end_m": 0.8,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 101,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-clean-s3",
+  "autopilot": "px4",
+  "config": "ev-vel",
+  "seed": 3,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 4.6,
+  "ekf_err_max_m": 3.3,
+  "ekf_err_end_m": 2.3,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 98,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-coherent-0.3-s1",
+  "autopilot": "px4",
+  "config": "ev-vel",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 31.3,
+  "ekf_err_max_m": 31.0,
+  "ekf_err_end_m": 31.0,
+  "spoof_offset_end_m": 31.5,
+  "capture_ratio_end": 0.99,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 97,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-coherent-0.3-s2",
+  "autopilot": "px4",
+  "config": "ev-vel",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 31.3,
+  "ekf_err_max_m": 30.9,
+  "ekf_err_end_m": 30.9,
+  "spoof_offset_end_m": 31.5,
+  "capture_ratio_end": 0.98,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 95,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-coherent-0.3-s3",
+  "autopilot": "px4",
+  "config": "ev-vel",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 31.0,
+  "ekf_err_max_m": 30.5,
+  "ekf_err_end_m": 30.5,
+  "spoof_offset_end_m": 30.6,
+  "capture_ratio_end": 1.0,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 95,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-coherent-1-s1",
+  "autopilot": "px4",
+  "config": "ev-vel",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 119.5,
+  "ekf_err_end_m": 119.5,
+  "spoof_offset_end_m": 121.4,
+  "capture_ratio_end": 0.98,
+  "first_gps_flag_s": 13.0,
+  "gps_flag_reports": 135,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 107,
+  "resets": 3,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-coherent-1-s2",
+  "autopilot": "px4",
+  "config": "ev-vel",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 117.7,
+  "ekf_err_end_m": 117.7,
+  "spoof_offset_end_m": 118.4,
+  "capture_ratio_end": 0.99,
+  "first_gps_flag_s": 53.6,
+  "gps_flag_reports": 47,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 104,
+  "resets": 1,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-coherent-1-s3",
+  "autopilot": "px4",
+  "config": "ev-vel",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 75.0,
+  "ekf_err_max_m": 113.0,
+  "ekf_err_end_m": 113.0,
+  "spoof_offset_end_m": 115.8,
+  "capture_ratio_end": 0.98,
+  "first_gps_flag_s": 16.2,
+  "gps_flag_reports": 45,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 105,
+  "resets": 1,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-coherent-3-s1",
+  "autopilot": "px4",
+  "config": "ev-vel",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 150.2,
+  "ekf_err_max_m": 152.4,
+  "ekf_err_end_m": 151.9,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 1.01,
+  "first_gps_flag_s": 0.2,
+  "gps_flag_reports": 250,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 119,
+  "resets": 5,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-coherent-3-s2",
+  "autopilot": "px4",
+  "config": "ev-vel",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 150.8,
+  "ekf_err_max_m": 151.2,
+  "ekf_err_end_m": 149.3,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 1.0,
+  "first_gps_flag_s": 0.2,
+  "gps_flag_reports": 250,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 112,
+  "resets": 5,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-coherent-3-s3",
+  "autopilot": "px4",
+  "config": "ev-vel",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 151.1,
+  "ekf_err_max_m": 151.2,
+  "ekf_err_end_m": 151.0,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 1.01,
+  "first_gps_flag_s": 0.2,
+  "gps_flag_reports": 253,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 116,
+  "resets": 5,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-clean-s1",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1",
+  "seed": 1,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 3.8,
+  "ekf_err_max_m": 2.5,
+  "ekf_err_end_m": 0.5,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 99,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-clean-s2",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1",
+  "seed": 2,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 2.1,
+  "ekf_err_max_m": 2.4,
+  "ekf_err_end_m": 1.5,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 96,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-clean-s3",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1",
+  "seed": 3,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 3.3,
+  "ekf_err_max_m": 2.6,
+  "ekf_err_end_m": 1.0,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 102,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-coherent-0.3-s1",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 32.2,
+  "ekf_err_max_m": 31.6,
+  "ekf_err_end_m": 31.6,
+  "spoof_offset_end_m": 32.9,
+  "capture_ratio_end": 0.96,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 99,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-coherent-0.3-s2",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 30.5,
+  "ekf_err_max_m": 30.0,
+  "ekf_err_end_m": 30.0,
+  "spoof_offset_end_m": 31.0,
+  "capture_ratio_end": 0.97,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 96,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-coherent-0.3-s3",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 30.9,
+  "ekf_err_max_m": 30.2,
+  "ekf_err_end_m": 30.2,
+  "spoof_offset_end_m": 31.6,
+  "capture_ratio_end": 0.96,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 98,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-coherent-1-s1",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 70.2,
+  "ekf_err_max_m": 69.8,
+  "ekf_err_end_m": 69.8,
+  "spoof_offset_end_m": 118.8,
+  "capture_ratio_end": 0.59,
+  "first_gps_flag_s": 15.2,
+  "gps_flag_reports": 265,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 76.1,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 76.1,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 107,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-coherent-1-s2",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 74.8,
+  "ekf_err_max_m": 85.5,
+  "ekf_err_end_m": 85.5,
+  "spoof_offset_end_m": 119.6,
+  "capture_ratio_end": 0.71,
+  "first_gps_flag_s": 18.4,
+  "gps_flag_reports": 178,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 93.3,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 93.3,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 103,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-coherent-1-s3",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 24.7,
+  "ekf_err_max_m": 24.0,
+  "ekf_err_end_m": 24.0,
+  "spoof_offset_end_m": 105.0,
+  "capture_ratio_end": 0.23,
+  "first_gps_flag_s": 19.8,
+  "gps_flag_reports": 425,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 29.7,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 29.7,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 96,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-coherent-3-s1",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 5.4,
+  "ekf_err_max_m": 5.5,
+  "ekf_err_end_m": 5.5,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.03,
+  "first_gps_flag_s": 0.2,
+  "gps_flag_reports": 524,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 9.0,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 9.0,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 97,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-coherent-3-s2",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 7.8,
+  "ekf_err_max_m": 7.4,
+  "ekf_err_end_m": 7.4,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.05,
+  "first_gps_flag_s": 0.2,
+  "gps_flag_reports": 527,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 9.2,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 9.2,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 96,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-coherent-3-s3",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 5.8,
+  "ekf_err_max_m": 5.9,
+  "ekf_err_end_m": 5.9,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.03,
+  "first_gps_flag_s": 0.2,
+  "gps_flag_reports": 529,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 9.0,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 9.0,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 99,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-gates3-clean-s1",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1-gates3",
+  "seed": 1,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 1.8,
+  "ekf_err_max_m": 2.2,
+  "ekf_err_end_m": 0.2,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 98,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-gates3-clean-s2",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1-gates3",
+  "seed": 2,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 3.3,
+  "ekf_err_max_m": 3.7,
+  "ekf_err_end_m": 1.2,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 101,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-gates3-clean-s3",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1-gates3",
+  "seed": 3,
+  "clean": true,
+  "rate_mps": null,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 3.3,
+  "ekf_err_max_m": 1.9,
+  "ekf_err_end_m": 0.1,
+  "spoof_offset_end_m": 0.0,
+  "capture_ratio_end": null,
+  "first_gps_flag_s": null,
+  "gps_flag_reports": 0,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 101,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-gates3-coherent-0.3-s1",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1-gates3",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 32.8,
+  "ekf_err_max_m": 32.2,
+  "ekf_err_end_m": 32.2,
+  "spoof_offset_end_m": 32.7,
+  "capture_ratio_end": 0.99,
+  "first_gps_flag_s": 13.6,
+  "gps_flag_reports": 6,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 100,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-gates3-coherent-0.3-s2",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1-gates3",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 31.5,
+  "ekf_err_max_m": 30.6,
+  "ekf_err_end_m": 30.6,
+  "spoof_offset_end_m": 31.1,
+  "capture_ratio_end": 0.98,
+  "first_gps_flag_s": 44.0,
+  "gps_flag_reports": 3,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 99,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-gates3-coherent-0.3-s3",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1-gates3",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 0.3,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 31.9,
+  "ekf_err_max_m": 31.3,
+  "ekf_err_end_m": 31.3,
+  "spoof_offset_end_m": 31.9,
+  "capture_ratio_end": 0.98,
+  "first_gps_flag_s": 102.4,
+  "gps_flag_reports": 1,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": null,
+  "lane_switches": 0,
+  "gnss_pos_off_s": null,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 99,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": false,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-gates3-coherent-1-s1",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1-gates3",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 12.8,
+  "ekf_err_max_m": 12.5,
+  "ekf_err_end_m": 12.5,
+  "spoof_offset_end_m": 103.5,
+  "capture_ratio_end": 0.12,
+  "first_gps_flag_s": 0.2,
+  "gps_flag_reports": 488,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 15.0,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 15.0,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 97,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-gates3-coherent-1-s2",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1-gates3",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 10.5,
+  "ekf_err_max_m": 9.7,
+  "ekf_err_end_m": 9.7,
+  "spoof_offset_end_m": 106.8,
+  "capture_ratio_end": 0.09,
+  "first_gps_flag_s": 0.2,
+  "gps_flag_reports": 512,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 15.1,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 15.1,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 102,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-gates3-coherent-1-s3",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1-gates3",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 1.0,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 11.5,
+  "ekf_err_max_m": 11.3,
+  "ekf_err_end_m": 11.3,
+  "spoof_offset_end_m": 104.2,
+  "capture_ratio_end": 0.1,
+  "first_gps_flag_s": 0.2,
+  "gps_flag_reports": 503,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 14.9,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 14.9,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 104,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-gates3-coherent-3-s1",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1-gates3",
+  "seed": 1,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 5.2,
+  "ekf_err_max_m": 4.7,
+  "ekf_err_end_m": 4.7,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.03,
+  "first_gps_flag_s": 0.2,
+  "gps_flag_reports": 522,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 9.4,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 9.4,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 98,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-gates3-coherent-3-s2",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1-gates3",
+  "seed": 2,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 5.9,
+  "ekf_err_max_m": 5.6,
+  "ekf_err_end_m": 5.6,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.03,
+  "first_gps_flag_s": 0.2,
+  "gps_flag_reports": 526,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 8.3,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 8.3,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 100,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ },
+ {
+  "case": "px4-ev-vel-gpsmode1-gates3-coherent-3-s3",
+  "autopilot": "px4",
+  "config": "ev-vel-gpsmode1-gates3",
+  "seed": 3,
+  "clean": false,
+  "rate_mps": 3.0,
+  "params_requested": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "params_echoed": {
+   "EKF2_EV_CTRL": 4,
+   "EKF2_GPS_MODE": 1,
+   "EKF2_GPS_P_GATE": 3.0,
+   "EKF2_GPS_V_GATE": 3.0
+  },
+  "outcome": "mission_complete",
+  "failsafe_s": null,
+  "max_dev_m": 6.8,
+  "ekf_err_max_m": 7.0,
+  "ekf_err_end_m": 7.0,
+  "spoof_offset_end_m": 150.0,
+  "capture_ratio_end": 0.04,
+  "first_gps_flag_s": 0.2,
+  "gps_flag_reports": 528,
+  "switch_s": null,
+  "switches": 0,
+  "switch_by": null,
+  "reject_s": 9.2,
+  "lane_switches": 0,
+  "gnss_pos_off_s": 9.2,
+  "gnss_off_before_onset": false,
+  "gnss_hgt_fault_seen": false,
+  "aux_gpos_seen": false,
+  "ev_vel_seen": true,
+  "ekf2_flag_samples": 101,
+  "resets": 0,
+  "statustext_after_onset": [],
+  "safe": true,
+  "false_alarm": false
+ }
+]

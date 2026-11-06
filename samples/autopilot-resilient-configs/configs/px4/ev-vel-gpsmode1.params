@@ -1,0 +1,4 @@
+# EV velocity + EKF2_GPS_MODE 1 (dead-reckoning): EKF2 may not reset onto GNSS while EV
+# velocity still aids (isGnssPosResetAllowed).
+EKF2_EV_CTRL 4
+EKF2_GPS_MODE 1

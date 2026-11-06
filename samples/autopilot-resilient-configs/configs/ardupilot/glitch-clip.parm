@@ -1,0 +1,4 @@
+# Fuse-all-velocities plus EK3_GLITCH_RAD 0: GPS position innovations beyond the gate are
+# clipped (variance inflated to test ratio 1) instead of rejected, and no reset-to-GPS happens.
+EK3_SRC_OPTIONS 1
+EK3_GLITCH_RAD 0

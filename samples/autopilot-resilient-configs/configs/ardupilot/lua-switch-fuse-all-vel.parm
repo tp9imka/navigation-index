@@ -1,0 +1,3 @@
+# lua-switch plus ExternalNav velocity fused while still on GPS.
+SCR_ENABLE 1
+EK3_SRC_OPTIONS 1

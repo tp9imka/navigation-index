@@ -1,0 +1,2 @@
+# External vision velocity only (ODOMETRY from the companion's VIO, position ignored).
+EKF2_EV_CTRL 4

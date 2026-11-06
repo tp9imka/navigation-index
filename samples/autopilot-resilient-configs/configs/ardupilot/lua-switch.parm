@@ -1,0 +1,4 @@
+# Onboard consistency check: scripts/gnss_extnav_switch.lua (copy to <cwd>/scripts/ on SITL,
+# APM/scripts/ on the SD card) switches EKF3 to source set 2 (ExternalNav) once when GPS
+# disagrees with ExternalNav-velocity dead reckoning. SCR_ENABLE needs a reboot.
+SCR_ENABLE 1

@@ -1,0 +1,2 @@
+# Control: golden-demo base only (copter.parm + golden.parm + inject.parm + v2.parm).
+# SRC1 = GPS position + velocity, SRC2 = ExternalNav position + velocity, EK3_SRC_OPTIONS 0.

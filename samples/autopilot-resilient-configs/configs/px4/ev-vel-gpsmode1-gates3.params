@@ -1,0 +1,5 @@
+# As ev-vel-gpsmode1 with GNSS gates at 3 SD instead of 5.
+EKF2_EV_CTRL 4
+EKF2_GPS_MODE 1
+EKF2_GPS_P_GATE 3
+EKF2_GPS_V_GATE 3

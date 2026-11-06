@@ -32,3 +32,4 @@ autopilot-spoof-response
 two-source-integrity-vpair
 golden-demo-fixedwing
 multi-source-fde
+autopilot-resilient-configs
