@@ -1,0 +1,10 @@
+{
+ "schema": "navdash/1",
+ "title": "Foot INS hallway 2018-04-11-10-39-53 (real IMU, simulated UWB)",
+ "tracks": [
+  "truth.jsonl",
+  "fused.jsonl",
+  "ins.jsonl"
+ ],
+ "zones": "zones.geojson"
+}

@@ -1,0 +1,4 @@
+data/
+out/
+results/pyshoe_markers.json
+__pycache__/
