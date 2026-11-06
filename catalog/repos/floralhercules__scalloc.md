@@ -23,6 +23,10 @@ Continuous geo-localization of oblique thermal UAV sequences against a 2D satell
 - same_org: [SCC-Loc](../../catalog/repos/floralhercules__scc-loc.md)
 - alternative_to: [STHN](../../catalog/repos/arplaboratory__sthn.md)
 
+## Referenced by
+
+- [Night / thermal UAV frame to RGB satellite geolocalization with a no-false-fix gate (ALIKED / DISK / SIFT + LightGlue, SGM baseline, Thermal-UAV)](../../catalog/samples/thermal-geolocalization.md) (explains)
+
 _Indexed by lane(s): round3-expansion_
 
 _GitHub metadata fetched 2026-11-06._

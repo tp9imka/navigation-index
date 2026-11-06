@@ -30,5 +30,6 @@ Matches night-time UAV thermal imagery to satellite RGB maps using domain adapta
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [STHN: Deep Homography Estimation for UAV Thermal Geo-localization with Satellite Imagery](../../catalog/resources/sthn-thermal-homography-2024.md) (same_author)
+- [Night / thermal UAV frame to RGB satellite geolocalization with a no-false-fix gate (ALIKED / DISK / SIFT + LightGlue, SGM baseline, Thermal-UAV)](../../catalog/samples/thermal-geolocalization.md) (explains)
 
 _Indexed by lane(s): alt-nav_

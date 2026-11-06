@@ -25,6 +25,7 @@ Zero-shot UAV thermal geo-localization against satellite imagery without thermal
 ## Referenced by
 
 - [ScalLoc](../../catalog/repos/floralhercules__scalloc.md) (same_org)
+- [Night / thermal UAV frame to RGB satellite geolocalization with a no-false-fix gate (ALIKED / DISK / SIFT + LightGlue, SGM baseline, Thermal-UAV)](../../catalog/samples/thermal-geolocalization.md) (uses)
 
 _Indexed by lane(s): alt-nav_
 

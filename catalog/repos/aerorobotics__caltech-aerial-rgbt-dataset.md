@@ -25,6 +25,7 @@ Aerial RGB plus thermal dataset from natural terrain (rivers, coasts, deserts, f
 ## Referenced by
 
 - [Caltech Aerial RGB-Thermal Dataset in the Wild](../../catalog/resources/cart-caltech-aerial-rgbt-2024.md) (has_code)
+- [Night / thermal UAV frame to RGB satellite geolocalization with a no-false-fix gate (ALIKED / DISK / SIFT + LightGlue, SGM baseline, Thermal-UAV)](../../catalog/samples/thermal-geolocalization.md) (explains)
 
 _Indexed by lane(s): round3-expansion_
 

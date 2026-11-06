@@ -39,6 +39,7 @@ IROS 2023 code for long-range UAV thermal geo-localization against satellite RGB
 - [STHN](../../catalog/repos/arplaboratory__sthn.md) (extends)
 - [SCC-Loc](../../catalog/repos/floralhercules__scc-loc.md) (alternative_to)
 - [Long-range UAV Thermal Geo-localization with Satellite Imagery](../../catalog/resources/thermal-geolocalization-iros-2023.md) (has_code)
+- [Night / thermal UAV frame to RGB satellite geolocalization with a no-false-fix gate (ALIKED / DISK / SIFT + LightGlue, SGM baseline, Thermal-UAV)](../../catalog/samples/thermal-geolocalization.md) (uses)
 
 _Indexed by lane(s): alt-nav_
 

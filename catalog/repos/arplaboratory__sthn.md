@@ -37,6 +37,7 @@ Deep homography estimation for aligning UAV thermal images to satellite maps (RA
 - [ScalLoc](../../catalog/repos/floralhercules__scalloc.md) (alternative_to)
 - [KF-HomoVAL](../../catalog/repos/lizhipro__kf-homoval.md) (alternative_to)
 - [STHN: Deep Homography Estimation for UAV Thermal Geo-localization with Satellite Imagery](../../catalog/resources/sthn-thermal-homography-2024.md) (has_code)
+- [Night / thermal UAV frame to RGB satellite geolocalization with a no-false-fix gate (ALIKED / DISK / SIFT + LightGlue, SGM baseline, Thermal-UAV)](../../catalog/samples/thermal-geolocalization.md) (explains)
 
 _Indexed by lane(s): alt-nav_
 

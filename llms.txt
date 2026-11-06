@@ -1,6 +1,6 @@
 # navigation-index
 
-> Knowledge hub for navigation / PNT / GNSS-denied autonomy with a defense lens: 768 open-source repos, 678 documents, talks, courses and datasets, 38 usage samples and 28 guides, linked in one graph over 46 concepts.
+> Knowledge hub for navigation / PNT / GNSS-denied autonomy with a defense lens: 768 open-source repos, 678 documents, talks, courses and datasets, 39 usage samples and 28 guides, linked in one graph over 46 concepts.
 
 Read AGENTS.md for how to query and extend. Query without reading everything: `python3 tools/query.py search "<terms or the problem statement>"` or the MCP server tools/mcp_server.py. Guides (kind `guide`) are searchable like any other node.
 
@@ -88,6 +88,7 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [swarm-coop-real-uwb](samples/swarm-coop-real-uwb/README.md) (ran, stdlib): Swarm-coop filters on real MILUV inter-drone UWB: real vs simulated range error, DR vs centralized vs CI, injected anchor fault and detection time
 - [terrain-heightmap-pf](samples/terrain-heightmap-pf/README.md) (ran, venv): Heightmap-gradient particle filter and radar-altimeter TERCOM on real GLO-30 terrain; v2 information gate, compass-bias state, confidence, 1 m LiDAR
 - [terrain-relative-nav-pf](samples/terrain-relative-nav-pf/README.md) (partial, stdlib): Stdlib SIR particle filter: biased INS + radar altimeter vs a synthetic DEM, flat-terrain control
+- [thermal-geolocalization](samples/thermal-geolocalization/README.md) (ran, venv): Night / thermal frame => RGB satellite fix by condition, modality-bridging preprocessing, a gate that accepted no wrong fix, CPU vs MPS timing
 - [timing-holdover](samples/timing-holdover/README.md) (ran, stdlib): GNSS-disciplined oscillator sim (TCXO / CSAC / OCXO / Rb): holdover error after outage, slow time-walk spoof vs internal and cross-source monitors
 - [usv-gnss-denied-nav](samples/usv-gnss-denied-nav/README.md) (ran, stdlib): USV own-ship nav in the Oresund: compass + speed-log DR, simulated radar matched to the real OSM chart, monitor excludes spoofed GNSS
 - [vio-to-mavlink-bridge](samples/vio-to-mavlink-bridge/README.md) (partial, stdlib): ENU/FLU pose => NED/FRD ODOMETRY or VISION_POSITION_ESTIMATE for EKF3 / EKF2
@@ -100,7 +101,7 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [RTK / PPP precise positioning](catalog/concepts/gnss-rtk-ppp.md): 39 items - Carrier-phase differential and precise point positioning, corrections (RTCM, SSR, NTRIP).
 - [Software-defined GNSS receivers](catalog/concepts/gnss-sdr.md): 34 items - Acquisition, tracking, navigation-message decoding in software on SDR front-ends.
 - [Jamming and spoofing](catalog/concepts/gnss-interference.md): 172 items - GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-jam antennas (CRPA).
-- [Assured / resilient PNT](catalog/concepts/assured-pnt.md): 246 items - Architectures that keep position, navigation and timing trustworthy under denial and deception.
+- [Assured / resilient PNT](catalog/concepts/assured-pnt.md): 247 items - Architectures that keep position, navigation and timing trustworthy under denial and deception.
 - [Timing and time transfer](catalog/concepts/timing.md): 112 items - Clocks, holdover, PTP/NTP, GNSS-disciplined oscillators, chip-scale atomic clocks.
 - [Inertial navigation (INS/IMU)](catalog/concepts/ins.md): 133 items - Strapdown mechanization, IMU error models, calibration, dead reckoning.
 - [Sensor fusion and state estimation](catalog/concepts/sensor-fusion.md): 212 items - Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integration.
@@ -111,8 +112,8 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [LiDAR odometry and SLAM](catalog/concepts/lidar-slam.md): 96 items - LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [Radar navigation and odometry](catalog/concepts/radar-nav.md): 34 items - Radar odometry, radar SLAM, radar altimeters, Doppler velocity.
 - [Place recognition and loop closure](catalog/concepts/place-recognition.md): 74 items - Global descriptors, image retrieval, LiDAR place recognition.
-- [Feature detection and matching](catalog/concepts/feature-matching.md): 64 items - Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
-- [Visual geo-localization (image-to-map)](catalog/concepts/visual-geolocalization.md): 136 items - Matching UAV/ground imagery to satellite orthophotos or maps for absolute position without GNSS.
+- [Feature detection and matching](catalog/concepts/feature-matching.md): 65 items - Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
+- [Visual geo-localization (image-to-map)](catalog/concepts/visual-geolocalization.md): 137 items - Matching UAV/ground imagery to satellite orthophotos or maps for absolute position without GNSS.
 - [Terrain-relative navigation](catalog/concepts/terrain-nav.md): 59 items - TERCOM/TRN/DSMAC-style matching of altimetry or imagery against DEM/terrain databases.
 - [Magnetic anomaly navigation](catalog/concepts/magnetic-nav.md): 45 items - MagNav: matching magnetometer readings to crustal anomaly maps; aircraft compensation.
 - [Celestial and star-tracker navigation](catalog/concepts/celestial-nav.md): 24 items - Star trackers, sun/sky polarization, celestial fixes.
@@ -135,7 +136,7 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [Simulation and HIL/SITL](catalog/concepts/simulation.md): 113 items - Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simulators.
 - [Datasets and benchmarks](catalog/concepts/datasets-benchmarks.md): 204 items - Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [ROS / ROS 2 robotics middleware](catalog/concepts/ros.md): 105 items - ROS ecosystem packages for navigation and localization.
-- [Onboard / edge AI perception](catalog/concepts/edge-ai.md): 76 items - Detection, segmentation, depth on embedded hardware supporting navigation.
+- [Onboard / edge AI perception](catalog/concepts/edge-ai.md): 77 items - Detection, segmentation, depth on embedded hardware supporting navigation.
 - [Tracking and data association](catalog/concepts/target-tracking.md): 32 items - Multi-target tracking, MHT/JPDA, track fusion (for nav-relevant awareness, not weapon guidance).
 - [Counter-UAS and drone detection](catalog/concepts/counter-uas.md): 79 items - Detecting, tracking and identifying drones (Remote ID, RF, radar, vision) - defensive.
 - [Electronic warfare resilience](catalog/concepts/ew-resilience.md): 94 items - Operating comms and navigation under EW: spectrum monitoring, LPI/LPD links, fallback modes.
