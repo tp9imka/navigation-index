@@ -1,0 +1,150 @@
+{
+  "monitor": {
+    "mode": "monitor",
+    "seed": 7,
+    "spoof": {
+      "kind": "coherent",
+      "onset_s": 25.0,
+      "rate_mps": 1.0,
+      "bearing_deg": 90.0,
+      "max_m": 150.0
+    },
+    "gps": "inject",
+    "vgeo": "replay",
+    "detector": "ss+vel",
+    "detect": {
+      "chi2": {
+        "t_s": 42.0,
+        "false_alarm": false,
+        "ttd_s": 17.0
+      },
+      "ss": {
+        "t_s": 53.0,
+        "false_alarm": false,
+        "ttd_s": 28.0
+      },
+      "vel": {
+        "t_s": 28.0,
+        "false_alarm": false,
+        "ttd_s": 3.0
+      },
+      "ss+vel": {
+        "t_s": 28.0,
+        "false_alarm": false,
+        "ttd_s": 3.0
+      },
+      "any": {
+        "t_s": 28.0,
+        "false_alarm": false,
+        "ttd_s": 3.0
+      }
+    },
+    "ss": {
+      "hpl_median_before_onset_m": 12.8,
+      "misleading_epochs": 0,
+      "epochs": 133,
+      "unavailable_epochs": 64,
+      "max_error_m": 27.7,
+      "alert_limit_m": 50.0
+    },
+    "vgeo_fixes": 75,
+    "vgeo_failures": 59,
+    "outcome": "mission_complete",
+    "mission_duration_s": 133.9,
+    "spoof_offset_at_end_m": 108.8,
+    "alarm_t_s": 28.0,
+    "time_to_detect_s": 3.0,
+    "spoof_offset_at_alarm_m": 2.9,
+    "action": "set_ekf_source_set",
+    "max_path_deviation_after_onset_m": 7.8,
+    "max_path_deviation_before_onset_m": 1.4,
+    "path_deviation_at_end_m": 5.3,
+    "max_ekf_error_m": 8.2,
+    "max_ekf_error_t_s": 72.0,
+    "statustext_after_onset": [],
+    "px4_action_params": {
+      "EKF2_GPS_CTRL": 0,
+      "EKF2_EV_CTRL": 5
+    },
+    "gps_ctrl_echo": {
+      "value": 0,
+      "t_s": 28.01
+    },
+    "ekf_gps_glitch_reports": 0,
+    "ekf_max_pos_horiz_ratio_after_onset": 0.409,
+    "ekf_pos_horiz_ratio_over_1_after_onset": 0,
+    "ekf_max_eph_after_onset_m": 1.25,
+    "ekf_reports_without_abs_pos_after_onset": 0
+  },
+  "baseline": {
+    "mode": "baseline",
+    "seed": 7,
+    "spoof": {
+      "kind": "coherent",
+      "onset_s": 25.0,
+      "rate_mps": 1.0,
+      "bearing_deg": 90.0,
+      "max_m": 150.0
+    },
+    "gps": "inject",
+    "vgeo": "replay",
+    "detector": "ss+vel",
+    "detect": {
+      "chi2": {
+        "t_s": 40.0,
+        "false_alarm": false,
+        "ttd_s": 15.0
+      },
+      "ss": {
+        "t_s": 47.0,
+        "false_alarm": false,
+        "ttd_s": 22.0
+      },
+      "vel": {
+        "t_s": 29.0,
+        "false_alarm": false,
+        "ttd_s": 4.0
+      },
+      "ss+vel": {
+        "t_s": 29.0,
+        "false_alarm": false,
+        "ttd_s": 4.0
+      },
+      "any": {
+        "t_s": 29.0,
+        "false_alarm": false,
+        "ttd_s": 4.0
+      }
+    },
+    "ss": {
+      "hpl_median_before_onset_m": 12.8,
+      "misleading_epochs": 0,
+      "epochs": 130,
+      "unavailable_epochs": 29,
+      "max_error_m": 17.8,
+      "alert_limit_m": 50.0
+    },
+    "vgeo_fixes": 78,
+    "vgeo_failures": 52,
+    "outcome": "mission_complete",
+    "mission_duration_s": 130.1,
+    "spoof_offset_at_end_m": 105.0,
+    "alarm_t_s": 29.0,
+    "time_to_detect_s": 4.0,
+    "spoof_offset_at_alarm_m": 3.9,
+    "action": "none_shadow_mode",
+    "max_path_deviation_after_onset_m": 75.0,
+    "max_path_deviation_before_onset_m": 2.4,
+    "path_deviation_at_end_m": 44.0,
+    "max_ekf_error_m": 105.7,
+    "max_ekf_error_t_s": 130.1,
+    "statustext_after_onset": [],
+    "px4_action_params": null,
+    "gps_ctrl_echo": null,
+    "ekf_gps_glitch_reports": 0,
+    "ekf_max_pos_horiz_ratio_after_onset": 0.24,
+    "ekf_pos_horiz_ratio_over_1_after_onset": 0,
+    "ekf_max_eph_after_onset_m": 0.22,
+    "ekf_reports_without_abs_pos_after_onset": 0
+  }
+}

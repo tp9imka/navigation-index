@@ -24,3 +24,4 @@ terrain-heightmap-pf
 celestial-star-tracker
 real-attack-replay
 vpr-large-area
+golden-demo-px4

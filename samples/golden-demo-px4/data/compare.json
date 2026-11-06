@@ -1,0 +1,44 @@
+{
+  "time_to_detect_s": {
+    "px4_monitor": 3.0,
+    "px4_baseline": 4.0,
+    "ardupilot_monitor": 3.0,
+    "ardupilot_baseline": 3.6
+  },
+  "spoof_offset_at_alarm_m": {
+    "px4_monitor": 2.9,
+    "px4_baseline": 3.9,
+    "ardupilot_monitor": 3.0,
+    "ardupilot_baseline": 3.5
+  },
+  "max_path_deviation_after_onset_m": {
+    "px4_monitor": 7.8,
+    "px4_baseline": 75.0,
+    "ardupilot_monitor": 6.8,
+    "ardupilot_baseline": 75.0
+  },
+  "path_deviation_at_end_m": {
+    "px4_monitor": 5.3,
+    "px4_baseline": 44.0,
+    "ardupilot_monitor": 4.4,
+    "ardupilot_baseline": 56.4
+  },
+  "max_ekf_error_m": {
+    "px4_monitor": 8.2,
+    "px4_baseline": 105.7,
+    "ardupilot_monitor": 8.0,
+    "ardupilot_baseline": 93.7
+  },
+  "outcome": {
+    "px4_monitor": "mission_complete",
+    "px4_baseline": "mission_complete",
+    "ardupilot_monitor": "mission_complete",
+    "ardupilot_baseline": "mission_complete"
+  },
+  "mission_duration_s": {
+    "px4_monitor": 133.9,
+    "px4_baseline": 130.1,
+    "ardupilot_monitor": 119.6,
+    "ardupilot_baseline": 119.1
+  }
+}

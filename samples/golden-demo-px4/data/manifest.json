@@ -1,0 +1,14 @@
+{
+  "schema": "navdash/1",
+  "title": "Golden demo PX4: SIH GPS drag (coherent, 1.0 m/s), monitor vs none",
+  "tracks": [
+    "truth.jsonl",
+    "truth-baseline.jsonl",
+    "ss-monitor.jsonl",
+    "ekf-monitor.jsonl",
+    "ekf-baseline.jsonl",
+    "gnss.jsonl",
+    "vgeo.jsonl"
+  ],
+  "zones": "zones.geojson"
+}

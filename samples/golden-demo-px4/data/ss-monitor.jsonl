@@ -1,0 +1,141 @@
+{"header": {"schema": "navdash/1", "track": "ss-monitor", "role": "fused", "label": "Companion integrity solution (SS FDE main filter) + HPL", "color": "#ffd54f", "primary": true, "alert_limit_m": 50.0, "source": "PX4 v1.17.0 SIH (sihsim_quadx, Docker), logged by companion_px4.py", "pl_method": "solution separation, samples/golden-demo/ss_fde.py (P_FA 1e-5, P_MD 1e-3, IR_ff 1e-7)", "note": "VIO dead reckoning + GNSS + visual geoloc; PL bounds this solution, not PX4 EKF2"}}
+{"t": 0.0, "lat": 41.3018049, "lon": -81.7514004, "pl_m": 12.17, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 1.0, "lat": 41.3018032, "lon": -81.7513963, "pl_m": 12.74, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 2.0, "lat": 41.3018029, "lon": -81.7513971, "pl_m": 12.84, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 3.0, "lat": 41.3018002, "lon": -81.7513996, "pl_m": 12.81, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 4.01, "lat": 41.3018009, "lon": -81.7513979, "pl_m": 12.75, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 5.01, "lat": 41.3017992, "lon": -81.7514007, "pl_m": 12.69, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 6.01, "lat": 41.3017989, "lon": -81.751402, "pl_m": 12.64, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 7.01, "lat": 41.3018041, "lon": -81.7513993, "pl_m": 12.6, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 8.01, "lat": 41.3018247, "lon": -81.7513937, "pl_m": 12.59, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 9.01, "lat": 41.3018574, "lon": -81.7513866, "pl_m": 12.59, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 10.01, "lat": 41.3019042, "lon": -81.751383, "pl_m": 12.6, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 11.01, "lat": 41.3019594, "lon": -81.751383, "pl_m": 12.63, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 12.01, "lat": 41.3020185, "lon": -81.7513821, "pl_m": 12.68, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 13.01, "lat": 41.3020785, "lon": -81.7513842, "pl_m": 12.73, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 14.01, "lat": 41.3021465, "lon": -81.751388, "pl_m": 12.79, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 15.01, "lat": 41.3022182, "lon": -81.751393, "pl_m": 12.85, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 16.01, "lat": 41.3022882, "lon": -81.7513938, "pl_m": 12.92, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 17.01, "lat": 41.3023646, "lon": -81.7513969, "pl_m": 12.98, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 18.01, "lat": 41.3024388, "lon": -81.7513994, "pl_m": 13.04, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 19.01, "lat": 41.3025163, "lon": -81.7514038, "pl_m": 13.1, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 20.01, "lat": 41.302595, "lon": -81.7514014, "pl_m": 13.16, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 21.01, "lat": 41.3026749, "lon": -81.7513957, "pl_m": 13.21, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 22.01, "lat": 41.3027543, "lon": -81.7513933, "pl_m": 13.26, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 23.01, "lat": 41.3028341, "lon": -81.7513895, "pl_m": 13.3, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 24.01, "lat": 41.3029174, "lon": -81.7513889, "pl_m": 13.34, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 25.01, "lat": 41.302999, "lon": -81.7513892, "pl_m": 13.37, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 26.01, "lat": 41.3030825, "lon": -81.7513878, "pl_m": 13.39, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 27.01, "lat": 41.3031679, "lon": -81.7513979, "pl_m": 13.96, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 28.01, "lat": 41.3032501, "lon": -81.7514098, "pl_m": 14.54, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 28.01, "event": "detected", "text": "detector vel fired"}
+{"t": 29.01, "lat": 41.3033263, "lon": -81.7514235, "pl_m": 15.12, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 30.01, "lat": 41.3033831, "lon": -81.7514337, "pl_m": 15.7, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 31.01, "lat": 41.3034178, "lon": -81.7514354, "pl_m": 16.29, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 32.01, "lat": 41.3034464, "lon": -81.7514293, "pl_m": 16.88, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 33.01, "lat": 41.303488, "lon": -81.7514207, "pl_m": 17.47, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 34.01, "lat": 41.3035518, "lon": -81.7514096, "pl_m": 18.06, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 35.01, "lat": 41.3036305, "lon": -81.7513983, "pl_m": 18.65, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 36.01, "lat": 41.3037092, "lon": -81.7513877, "pl_m": 19.25, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 37.01, "lat": 41.3037888, "lon": -81.751376, "pl_m": 19.85, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 38.01, "lat": 41.303871, "lon": -81.7513602, "pl_m": 20.44, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 39.01, "lat": 41.3039545, "lon": -81.7513513, "pl_m": 21.04, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 40.01, "lat": 41.3040394, "lon": -81.751342, "pl_m": 21.64, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 41.01, "lat": 41.3041233, "lon": -81.7513283, "pl_m": 22.24, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 42.01, "lat": 41.3042049, "lon": -81.7513108, "pl_m": 22.84, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 42.01, "event": "detected", "text": "detector chi2 fired"}
+{"t": 43.01, "lat": 41.3042905, "lon": -81.751299, "pl_m": 23.44, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 44.01, "lat": 41.3043748, "lon": -81.7512898, "pl_m": 24.04, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 45.01, "lat": 41.3044574, "lon": -81.7512821, "pl_m": 24.64, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 46.01, "lat": 41.3045416, "lon": -81.7512759, "pl_m": 25.24, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 47.01, "lat": 41.304627, "lon": -81.7512649, "pl_m": 25.84, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 48.01, "lat": 41.3047083, "lon": -81.7512575, "pl_m": 26.45, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 49.01, "lat": 41.3047952, "lon": -81.7512476, "pl_m": 27.05, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 50.01, "lat": 41.3048826, "lon": -81.7512378, "pl_m": 27.65, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 51.01, "lat": 41.3049707, "lon": -81.7512302, "pl_m": 28.26, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 52.01, "lat": 41.3050596, "lon": -81.7512232, "pl_m": 25.25, "health": "trusted", "alarm": false, "sources": ["vio", "gnss", "vgeo"]}
+{"t": 53.01, "lat": 41.3050952, "lon": -81.7514837, "pl_m": 15.85, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 53.01, "event": "ss_alert", "text": "SS FDE alert:ambiguous"}
+{"t": 53.01, "event": "detected", "text": "detector ss fired"}
+{"t": 54.01, "lat": 41.305169, "lon": -81.7514841, "pl_m": 16.22, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 55.01, "lat": 41.3052268, "lon": -81.7514806, "pl_m": 16.59, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 56.01, "lat": 41.3052698, "lon": -81.7514801, "pl_m": 16.96, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 57.01, "lat": 41.3052967, "lon": -81.7514739, "pl_m": 17.33, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 58.01, "lat": 41.3053073, "lon": -81.7514707, "pl_m": 17.7, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 59.01, "lat": 41.3053115, "lon": -81.751456, "pl_m": 18.07, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 60.01, "lat": 41.3053098, "lon": -81.7514491, "pl_m": 18.44, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 61.01, "lat": 41.3053062, "lon": -81.7514344, "pl_m": 18.81, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 62.01, "lat": 41.3053028, "lon": -81.7514127, "pl_m": 19.18, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 63.01, "lat": 41.3053001, "lon": -81.7513709, "pl_m": 19.55, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 64.01, "lat": 41.3052967, "lon": -81.7513097, "pl_m": 19.92, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 65.01, "lat": 41.3052897, "lon": -81.7512294, "pl_m": 20.29, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 66.01, "lat": 41.3052865, "lon": -81.7511347, "pl_m": 20.67, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 67.01, "lat": 41.3052863, "lon": -81.7510365, "pl_m": 21.04, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 68.01, "lat": 41.3052872, "lon": -81.7509339, "pl_m": 21.41, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 69.01, "lat": 41.3052869, "lon": -81.7508317, "pl_m": 21.78, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 70.01, "lat": 41.3052839, "lon": -81.7507304, "pl_m": 22.16, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 71.01, "lat": 41.3052791, "lon": -81.7506274, "pl_m": 22.53, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 72.01, "lat": 41.3052784, "lon": -81.7505212, "pl_m": 22.9, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 73.01, "lat": 41.3052762, "lon": -81.7504139, "pl_m": 23.28, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 74.01, "lat": 41.3052748, "lon": -81.7503033, "pl_m": 23.65, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 75.01, "lat": 41.3052729, "lon": -81.7501886, "pl_m": 24.02, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 76.01, "lat": 41.3052716, "lon": -81.7500737, "pl_m": 24.4, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 77.01, "lat": 41.3052699, "lon": -81.7499588, "pl_m": 24.77, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 78.01, "lat": 41.3052685, "lon": -81.7498624, "pl_m": 25.15, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 79.01, "lat": 41.3052657, "lon": -81.7497851, "pl_m": 25.52, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 80.01, "lat": 41.305261, "lon": -81.7497294, "pl_m": 25.9, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 81.01, "lat": 41.3052576, "lon": -81.749691, "pl_m": 26.27, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 82.01, "lat": 41.3052487, "lon": -81.7496686, "pl_m": 26.65, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 83.01, "lat": 41.3052291, "lon": -81.7496606, "pl_m": 27.02, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 84.01, "lat": 41.3052093, "lon": -81.7496514, "pl_m": 27.4, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 85.01, "lat": 41.305176, "lon": -81.7496493, "pl_m": 27.78, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 86.01, "lat": 41.3051284, "lon": -81.7496475, "pl_m": 28.15, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 87.01, "lat": 41.3050648, "lon": -81.7496479, "pl_m": 28.53, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 88.01, "lat": 41.3049958, "lon": -81.7496466, "pl_m": 28.91, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 89.01, "lat": 41.3049245, "lon": -81.7496467, "pl_m": 29.29, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 90.01, "lat": 41.3048519, "lon": -81.7496452, "pl_m": 29.66, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 91.01, "lat": 41.304776, "lon": -81.7496486, "pl_m": 30.04, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 92.01, "lat": 41.3046971, "lon": -81.7496517, "pl_m": 30.42, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 93.01, "lat": 41.3046146, "lon": -81.7496535, "pl_m": 30.8, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 94.01, "lat": 41.3045316, "lon": -81.7496534, "pl_m": 31.18, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 95.01, "lat": 41.3044454, "lon": -81.7496507, "pl_m": 31.55, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 96.01, "lat": 41.30436, "lon": -81.7496468, "pl_m": 31.93, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 97.01, "lat": 41.3042748, "lon": -81.7496442, "pl_m": 32.31, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 98.01, "lat": 41.3041853, "lon": -81.7496431, "pl_m": 32.69, "health": "unavailable", "alarm": true, "sources": ["vio"]}
+{"t": 99.01, "lat": 41.3040979, "lon": -81.7496452, "pl_m": 33.07, "health": "excluded", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 99.01, "event": "ss_readmit", "text": "SS FDE readmit:vgeo"}
+{"t": 99.01, "event": "ss_blame", "text": "SS FDE blame:gnss"}
+{"t": 100.01, "lat": 41.3040091, "lon": -81.7496473, "pl_m": 33.45, "health": "excluded", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 101.01, "lat": 41.3039197, "lon": -81.7496468, "pl_m": 33.83, "health": "excluded", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 102.01, "lat": 41.3038301, "lon": -81.7496468, "pl_m": 34.21, "health": "excluded", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 103.01, "lat": 41.3037412, "lon": -81.7496472, "pl_m": 34.59, "health": "excluded", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 104.01, "lat": 41.3036536, "lon": -81.7496465, "pl_m": 34.97, "health": "excluded", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 105.01, "lat": 41.3035657, "lon": -81.7496444, "pl_m": 35.35, "health": "excluded", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 106.01, "lat": 41.3034772, "lon": -81.7496443, "pl_m": 35.73, "health": "excluded", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 107.01, "lat": 41.3033893, "lon": -81.7496443, "pl_m": 36.12, "health": "excluded", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 108.01, "lat": 41.303299, "lon": -81.749642, "pl_m": 36.5, "health": "excluded", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 109.01, "lat": 41.3032114, "lon": -81.7496417, "pl_m": 36.88, "health": "excluded", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 110.01, "lat": 41.3031235, "lon": -81.7496411, "pl_m": 37.26, "health": "excluded", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 111.01, "lat": 41.3030324, "lon": -81.7496434, "pl_m": 37.64, "health": "excluded", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 112.01, "lat": 41.302944, "lon": -81.7496451, "pl_m": 38.02, "health": "excluded", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 113.01, "lat": 41.302856, "lon": -81.7496483, "pl_m": 38.41, "health": "excluded", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 114.01, "lat": 41.3027676, "lon": -81.7496496, "pl_m": 38.79, "health": "excluded", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 115.01, "lat": 41.3028138, "lon": -81.7496253, "pl_m": 46.25, "health": "excluded", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 116.01, "lat": 41.302768, "lon": -81.7496171, "pl_m": 50.19, "health": "unavailable", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 117.01, "lat": 41.3027042, "lon": -81.7496162, "pl_m": 52.24, "health": "unavailable", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 118.01, "lat": 41.3026291, "lon": -81.7496126, "pl_m": 53.64, "health": "unavailable", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 119.01, "lat": 41.3025502, "lon": -81.749612, "pl_m": 54.73, "health": "unavailable", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 120.01, "lat": 41.3024678, "lon": -81.7496126, "pl_m": 55.65, "health": "unavailable", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 121.01, "lat": 41.3023824, "lon": -81.7496126, "pl_m": 56.48, "health": "unavailable", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 122.01, "lat": 41.3022969, "lon": -81.7496122, "pl_m": 57.23, "health": "unavailable", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 123.01, "lat": 41.3022125, "lon": -81.7496142, "pl_m": 57.94, "health": "unavailable", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 124.01, "lat": 41.3021249, "lon": -81.7496197, "pl_m": 58.62, "health": "unavailable", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 125.01, "lat": 41.302041, "lon": -81.7496215, "pl_m": 59.27, "health": "unavailable", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 126.01, "lat": 41.3019719, "lon": -81.7496215, "pl_m": 59.9, "health": "unavailable", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 127.01, "lat": 41.3019185, "lon": -81.7496244, "pl_m": 60.52, "health": "unavailable", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 128.01, "lat": 41.3018796, "lon": -81.7496277, "pl_m": 61.13, "health": "unavailable", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 129.01, "lat": 41.3018518, "lon": -81.7496312, "pl_m": 61.73, "health": "unavailable", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 130.01, "lat": 41.3018362, "lon": -81.7496301, "pl_m": 62.32, "health": "unavailable", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 131.01, "lat": 41.3018258, "lon": -81.7496285, "pl_m": 62.9, "health": "unavailable", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 132.01, "lat": 41.3018185, "lon": -81.7496284, "pl_m": 63.48, "health": "unavailable", "alarm": true, "sources": ["vio", "vgeo"]}
+{"t": 133.01, "lat": 41.3018143, "lon": -81.7496301, "pl_m": 64.06, "health": "unavailable", "alarm": true, "sources": ["vio", "vgeo"]}
