@@ -1,0 +1,9 @@
+{
+ "title": "VPAIR: nadir VO + DINOv2 top-5 + LightGlue fixes + voting + gate",
+ "tracks": [
+  "truth.jsonl",
+  "vo_only.jsonl",
+  "fused_vote_integrity.jsonl",
+  "fixes_voted.jsonl"
+ ]
+}

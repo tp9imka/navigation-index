@@ -26,3 +26,4 @@ real-attack-replay
 vpr-large-area
 golden-demo-px4
 swarm-coop-real-uwb
+e2e-visual-nav-vpair

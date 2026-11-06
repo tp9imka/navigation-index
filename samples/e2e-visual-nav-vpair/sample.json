@@ -1,0 +1,26 @@
+{
+  "id": "sample:e2e-visual-nav-vpair",
+  "title": "End-to-end GNSS-denied visual navigation on one real flight: nadir VO + DINOv2 retrieval + LightGlue fixes + multi-frame voting + altpnt integrity (VPAIR)",
+  "summary": "Chains four sibling samples by import on the real VPAIR light-aircraft flight (199 nadir frames, 8.98 km, ~320 m AGL): attitude-aided nadir VO (with and without a 2 deg heading error), every frame DINOv2 GeM top-5 retrieval over VPAIR's orthophoto renders (other capture time, leave-own-render-out, map thinned to 45/180/360 m tile spacing, plus 200 distractors), ALIKED+LightGlue fine matching with an inlier gate, single-frame vs multi-frame voting fixes (VO carries earlier candidates forward), fused by the altpnt-integrity v2 EKF with heading/scale states and no gate, chi-square gate or solution-separation FDE. Reports error vs distance, fix availability, false fixes produced and fused, protection level and HMI, runtime per frame on M2, and exports navdash/1 for templates/demo-dashboard.",
+  "concepts": ["concept:visual-geolocalization", "concept:place-recognition", "concept:feature-matching", "concept:assured-pnt", "concept:sensor-fusion", "concept:vio"],
+  "tags": ["vpair", "nadir-vo", "dinov2", "gem", "lightglue", "aliked", "vpr", "voting", "integrity", "protection-level", "solution-separation", "chi-square-gate", "gnss-denied", "fixed-wing", "navdash", "mps"],
+  "related": [
+    {"id": "sample:relative-nav-benchmark", "rel": "uses"},
+    {"id": "sample:vpr-large-area", "rel": "uses"},
+    {"id": "sample:geoloc-license-clean", "rel": "uses"},
+    {"id": "sample:altpnt-integrity", "rel": "uses"},
+    {"id": "repo:aervisloc/vpair", "rel": "uses"},
+    {"id": "res:vpair-dataset-2022", "rel": "uses"},
+    {"id": "repo:cvg/lightglue", "rel": "uses"},
+    {"id": "repo:anyloc/anyloc", "rel": "explains"}
+  ],
+  "verified": "Ran 2026-11-06 on Apple M2 Max (Python 3.12.14, torch 2.15.0 MPS, LightGlue 5a650c4, DINOv2 ViT-S/14) on the VPAIR Zenodo sample: frontend.py twice (recorded yaw and yaw +2 deg, 231 s each for strides 1/4/8), run_fusion.py 148 configurations in 16 s, screenshot.sh headless Chrome at frames 100 and 198. After GNSS loss (8.53 km): VO only with +2 deg heading 271 m final / 156 m RMS (57.7 m final with recorded yaw); VO + single-frame strict-gate fixes 4.8 m RMS, 19 m max, 149/188 frames fixed, 0 false; 360 m map spacing 9.7 m RMS, 47 % fixed. Loose match gate without the filter gate fused 15 false fixes (errors to 65 km, 151 HMI epochs); voting and the chi-square gate each removed all false fixes in every run. Solution-separation PL median 1.25 km (1.6 % available): one absolute source cannot be protected. 0.73 s per frame. Tests: venv 15 pass; plain python3 5 pass, 10 skip. Limits: one 199-frame flight, map renders posed from the same GNSS/INS truth, map tiles on the flown track, no IMU, VO error model fitted on this flight.",
+  "verified_status": "ran",
+  "deps": "venv",
+  "first_command": ".venv/bin/python run_fusion.py --data ../relative-nav-benchmark/data/vpair",
+  "group": "Alt-PNT: absolute fixes",
+  "shows": "Full chain on one real flight: nadir VO => DINOv2 top-5 => LightGlue fixes => voting => altpnt v2 EKF + gate / solution separation, scored per km",
+  "input": "real",
+  "runtime": "front end ~4 min per pass on M2 MPS (cached in results/); fusion 16 s; data 0.86 GB shared with relative-nav-benchmark",
+  "key_result": "[+2 deg heading, 8.5 km](README.md#results): VO only 156 m RMS; + per-frame fixes 4.8 m RMS, 0 false; loose gate without filter gate 15 false fused (151 HMI epochs), voting or chi-square gate 0; solution-separation PL 1.25 km with one absolute source; 0.73 s/frame on M2"
+}

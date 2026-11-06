@@ -1,0 +1,201 @@
+{"header": {"schema": "navdash/1", "track": "fused-vote", "role": "fused", "label": "VO + voted fixes + chi-square gate (yaw +2 deg, map stride 8, loose match gate)", "color": "#4fc3f7", "primary": true, "alert_limit_m": 50.0, "pl_method": "altpnt-integrity v2 Monitor2 in gate mode: fault-free HPL only (k_ff sigma + fix bias), no fault hypotheses, not certified", "run_meta": {"time": "frame index, 1 s per frame (VPAIR has no timestamps)"}}}
+{"t": 0.0, "lat": 50.61186195, "lon": 7.22824465, "health": "trusted", "sources": ["gnss"]}
+{"t": 1.0, "lat": 50.61226314, "lon": 7.22813807, "health": "trusted", "sources": ["gnss"]}
+{"t": 2.0, "lat": 50.61266623, "lon": 7.22803587, "health": "trusted", "sources": ["gnss"]}
+{"t": 3.0, "lat": 50.61307001, "lon": 7.22793356, "health": "trusted", "sources": ["gnss"]}
+{"t": 4.0, "lat": 50.61347362, "lon": 7.22782841, "health": "trusted", "sources": ["gnss"]}
+{"t": 5.0, "lat": 50.6138766, "lon": 7.22772013, "health": "trusted", "sources": ["gnss"]}
+{"t": 6.0, "lat": 50.61428033, "lon": 7.22761219, "health": "trusted", "sources": ["gnss"]}
+{"t": 7.0, "lat": 50.61468487, "lon": 7.22750898, "health": "trusted", "sources": ["gnss"]}
+{"t": 8.0, "lat": 50.61508954, "lon": 7.22740519, "health": "trusted", "sources": ["gnss"]}
+{"t": 9.0, "lat": 50.61549208, "lon": 7.22729767, "health": "trusted", "sources": ["gnss"]}
+{"t": 10.0, "lat": 50.61589182, "lon": 7.22719034, "health": "trusted", "sources": ["gnss"]}
+{"t": 11.0, "lat": 50.61628811, "lon": 7.22709072, "pl_m": 17.76, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 12.0, "lat": 50.6166805, "lon": 7.22699774, "pl_m": 23.27, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 13.0, "lat": 50.61706971, "lon": 7.22690435, "pl_m": 30.86, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 14.0, "lat": 50.61745244, "lon": 7.22675087, "pl_m": 26.65, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 15.0, "lat": 50.61783779, "lon": 7.22662684, "pl_m": 23.89, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 16.0, "lat": 50.6182177, "lon": 7.22651863, "pl_m": 28.96, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 17.0, "lat": 50.61859983, "lon": 7.22640355, "pl_m": 24.53, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 18.0, "lat": 50.61898992, "lon": 7.22629476, "pl_m": 22.51, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 19.0, "lat": 50.61937712, "lon": 7.22618946, "pl_m": 21.45, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 20.0, "lat": 50.61976514, "lon": 7.22608913, "pl_m": 20.83, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 21.0, "lat": 50.6201826, "lon": 7.22597799, "pl_m": 20.43, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 22.0, "lat": 50.62059475, "lon": 7.2258613, "pl_m": 20.18, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 23.0, "lat": 50.62099734, "lon": 7.22574283, "pl_m": 20.01, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 24.0, "lat": 50.62138907, "lon": 7.22563058, "pl_m": 23.43, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 25.0, "lat": 50.6217897, "lon": 7.2255119, "pl_m": 21.69, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 26.0, "lat": 50.6221823, "lon": 7.22540532, "pl_m": 24.95, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 27.0, "lat": 50.62258466, "lon": 7.22529834, "pl_m": 28.41, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 28.0, "lat": 50.62298344, "lon": 7.22519088, "pl_m": 31.97, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 29.0, "lat": 50.623377, "lon": 7.22508392, "pl_m": 35.57, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 30.0, "lat": 50.62377135, "lon": 7.22497588, "pl_m": 39.18, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 31.0, "lat": 50.62416734, "lon": 7.22486205, "pl_m": 42.85, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 32.0, "lat": 50.6245634, "lon": 7.22474912, "pl_m": 46.58, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 33.0, "lat": 50.62498404, "lon": 7.22461653, "pl_m": 27.96, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 34.0, "lat": 50.62537995, "lon": 7.22449921, "pl_m": 23.2, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 35.0, "lat": 50.62578589, "lon": 7.22438254, "pl_m": 21.16, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 36.0, "lat": 50.62619089, "lon": 7.22426767, "pl_m": 24.02, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 37.0, "lat": 50.62659701, "lon": 7.22415387, "pl_m": 27.14, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 38.0, "lat": 50.6269989, "lon": 7.22404622, "pl_m": 30.36, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 39.0, "lat": 50.62739765, "lon": 7.22393805, "pl_m": 33.62, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 40.0, "lat": 50.62779449, "lon": 7.22382922, "pl_m": 36.94, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 41.0, "lat": 50.62818918, "lon": 7.2237183, "pl_m": 40.31, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 42.0, "lat": 50.62859728, "lon": 7.22360401, "pl_m": 26.85, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 43.0, "lat": 50.62898555, "lon": 7.22350222, "pl_m": 29.47, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 44.0, "lat": 50.62938006, "lon": 7.2234024, "pl_m": 23.86, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 45.0, "lat": 50.62976997, "lon": 7.22330104, "pl_m": 21.46, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 46.0, "lat": 50.63017037, "lon": 7.22319967, "pl_m": 20.3, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 47.0, "lat": 50.63056348, "lon": 7.2230993, "pl_m": 19.72, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 48.0, "lat": 50.63095422, "lon": 7.22299521, "pl_m": 22.69, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 49.0, "lat": 50.63134118, "lon": 7.22289424, "pl_m": 21.13, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 50.0, "lat": 50.63173213, "lon": 7.22279149, "pl_m": 20.23, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 51.0, "lat": 50.63212741, "lon": 7.22268635, "pl_m": 19.76, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 52.0, "lat": 50.63251929, "lon": 7.22258724, "pl_m": 19.51, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 53.0, "lat": 50.63291597, "lon": 7.22249003, "pl_m": 22.59, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 54.0, "lat": 50.63331577, "lon": 7.22239337, "pl_m": 25.85, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 55.0, "lat": 50.63371892, "lon": 7.22229319, "pl_m": 29.15, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 56.0, "lat": 50.63411402, "lon": 7.22220033, "pl_m": 32.52, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 57.0, "lat": 50.63451058, "lon": 7.22210617, "pl_m": 35.89, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 58.0, "lat": 50.63491524, "lon": 7.22201778, "pl_m": 39.32, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 59.0, "lat": 50.63532003, "lon": 7.22192975, "pl_m": 42.86, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 60.0, "lat": 50.63572437, "lon": 7.22183377, "pl_m": 46.46, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 61.0, "lat": 50.63613023, "lon": 7.22174462, "pl_m": 50.14, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 62.0, "lat": 50.63653428, "lon": 7.22165365, "pl_m": 53.89, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 63.0, "lat": 50.6369399, "lon": 7.22155778, "pl_m": 57.69, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 64.0, "lat": 50.63735126, "lon": 7.22144987, "pl_m": 61.58, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 65.0, "lat": 50.6377643, "lon": 7.22133696, "pl_m": 65.58, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 66.0, "lat": 50.63817672, "lon": 7.22122485, "pl_m": 69.67, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 67.0, "lat": 50.63858908, "lon": 7.22110977, "pl_m": 73.83, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 68.0, "lat": 50.63900338, "lon": 7.22099201, "pl_m": 78.06, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 69.0, "lat": 50.6394218, "lon": 7.22087245, "pl_m": 82.37, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 70.0, "lat": 50.63984976, "lon": 7.22074348, "pl_m": 86.78, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 71.0, "lat": 50.64027735, "lon": 7.22060251, "pl_m": 91.35, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 72.0, "lat": 50.64070444, "lon": 7.22044887, "pl_m": 96.0, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 73.0, "lat": 50.6409371, "lon": 7.22024808, "pl_m": 31.0, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 74.0, "lat": 50.64131581, "lon": 7.22001719, "pl_m": 24.12, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 75.0, "lat": 50.64171439, "lon": 7.2197763, "pl_m": 26.53, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 76.0, "lat": 50.64207391, "lon": 7.21953254, "pl_m": 22.7, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 77.0, "lat": 50.64248906, "lon": 7.21922958, "pl_m": 25.5, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 78.0, "lat": 50.64289006, "lon": 7.2189072, "pl_m": 28.73, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 79.0, "lat": 50.64327935, "lon": 7.21855594, "pl_m": 32.1, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 80.0, "lat": 50.64366392, "lon": 7.2181784, "pl_m": 35.59, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 81.0, "lat": 50.64403607, "lon": 7.21776399, "pl_m": 39.21, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 82.0, "lat": 50.64439338, "lon": 7.21733889, "pl_m": 42.95, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 83.0, "lat": 50.64474092, "lon": 7.21690697, "pl_m": 46.74, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 84.0, "lat": 50.64507265, "lon": 7.21646418, "pl_m": 50.58, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 85.0, "lat": 50.64538857, "lon": 7.21601162, "pl_m": 54.44, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 86.0, "lat": 50.6456934, "lon": 7.21554748, "pl_m": 58.31, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 87.0, "lat": 50.64598895, "lon": 7.21507238, "pl_m": 62.22, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 88.0, "lat": 50.64626922, "lon": 7.214598, "pl_m": 66.17, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 89.0, "lat": 50.64653899, "lon": 7.21411653, "pl_m": 70.1, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 90.0, "lat": 50.64680253, "lon": 7.2136264, "pl_m": 74.04, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 91.0, "lat": 50.6470616, "lon": 7.2131502, "pl_m": 78.04, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 92.0, "lat": 50.64732229, "lon": 7.21267526, "pl_m": 82.03, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 93.0, "lat": 50.64757477, "lon": 7.21218986, "pl_m": 86.08, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 94.0, "lat": 50.64781013, "lon": 7.21171783, "pl_m": 90.17, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 95.0, "lat": 50.64803519, "lon": 7.21120707, "pl_m": 94.16, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 96.0, "lat": 50.64826239, "lon": 7.21066923, "pl_m": 98.24, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 97.0, "lat": 50.64849109, "lon": 7.21011319, "pl_m": 102.53, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 98.0, "lat": 50.64871214, "lon": 7.20954963, "pl_m": 106.99, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 99.0, "lat": 50.64893086, "lon": 7.20898037, "pl_m": 111.5, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 100.0, "lat": 50.64914608, "lon": 7.20841398, "pl_m": 116.1, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 101.0, "lat": 50.6489079, "lon": 7.20809951, "pl_m": 31.35, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 102.0, "lat": 50.64910342, "lon": 7.20755483, "pl_m": 24.13, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 103.0, "lat": 50.64930717, "lon": 7.20701514, "pl_m": 21.34, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 104.0, "lat": 50.64950527, "lon": 7.20647513, "pl_m": 23.86, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 105.0, "lat": 50.64971248, "lon": 7.2059384, "pl_m": 21.55, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 106.0, "lat": 50.64991363, "lon": 7.20539559, "pl_m": 24.36, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 107.0, "lat": 50.65011134, "lon": 7.20485495, "pl_m": 27.48, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 108.0, "lat": 50.65031362, "lon": 7.20430617, "pl_m": 30.71, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 109.0, "lat": 50.65051226, "lon": 7.20376717, "pl_m": 34.06, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 110.0, "lat": 50.65071209, "lon": 7.2032306, "pl_m": 37.47, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 111.0, "lat": 50.65091839, "lon": 7.20267917, "pl_m": 40.94, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 112.0, "lat": 50.65113229, "lon": 7.20213579, "pl_m": 44.57, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 113.0, "lat": 50.65134612, "lon": 7.20160616, "pl_m": 48.28, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 114.0, "lat": 50.65156064, "lon": 7.20107541, "pl_m": 52.02, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 115.0, "lat": 50.65177526, "lon": 7.20053432, "pl_m": 55.83, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 116.0, "lat": 50.65199518, "lon": 7.1999945, "pl_m": 59.74, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 117.0, "lat": 50.65222185, "lon": 7.19946078, "pl_m": 63.75, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 118.0, "lat": 50.65244912, "lon": 7.19893103, "pl_m": 67.83, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 119.0, "lat": 50.65267613, "lon": 7.19840729, "pl_m": 71.97, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 120.0, "lat": 50.65290311, "lon": 7.19788689, "pl_m": 76.13, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 121.0, "lat": 50.65326858, "lon": 7.19740315, "pl_m": 30.36, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 122.0, "lat": 50.65351188, "lon": 7.19688808, "pl_m": 32.57, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 123.0, "lat": 50.65376071, "lon": 7.19637849, "pl_m": 35.22, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 124.0, "lat": 50.65400952, "lon": 7.19586692, "pl_m": 38.05, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 125.0, "lat": 50.65426229, "lon": 7.19536426, "pl_m": 26.28, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 126.0, "lat": 50.65451805, "lon": 7.19484614, "pl_m": 22.45, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 127.0, "lat": 50.65477817, "lon": 7.19433414, "pl_m": 20.74, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 128.0, "lat": 50.65503703, "lon": 7.19382715, "pl_m": 23.55, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 129.0, "lat": 50.65529978, "lon": 7.19332645, "pl_m": 26.64, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 130.0, "lat": 50.65556635, "lon": 7.19282819, "pl_m": 29.84, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 131.0, "lat": 50.65583948, "lon": 7.19233478, "pl_m": 33.14, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 132.0, "lat": 50.65612109, "lon": 7.19184778, "pl_m": 36.53, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 133.0, "lat": 50.65640687, "lon": 7.19137227, "pl_m": 40.03, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 134.0, "lat": 50.65667327, "lon": 7.19094266, "pl_m": 26.82, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 135.0, "lat": 50.656959, "lon": 7.19049365, "pl_m": 22.76, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 136.0, "lat": 50.6572469, "lon": 7.19004906, "pl_m": 25.45, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 137.0, "lat": 50.65753383, "lon": 7.1896274, "pl_m": 22.31, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 138.0, "lat": 50.65782294, "lon": 7.18922982, "pl_m": 20.73, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 139.0, "lat": 50.65811668, "lon": 7.18884365, "pl_m": 19.92, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 140.0, "lat": 50.65842253, "lon": 7.18845599, "pl_m": 22.76, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 141.0, "lat": 50.658736, "lon": 7.18808274, "pl_m": 25.81, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 142.0, "lat": 50.65908271, "lon": 7.18769857, "pl_m": 22.52, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 143.0, "lat": 50.65942927, "lon": 7.18733596, "pl_m": 20.9, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 144.0, "lat": 50.65976316, "lon": 7.18701064, "pl_m": 23.78, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 145.0, "lat": 50.66010531, "lon": 7.18667146, "pl_m": 21.6, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 146.0, "lat": 50.66043497, "lon": 7.18634778, "pl_m": 20.41, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 147.0, "lat": 50.66079394, "lon": 7.18600289, "pl_m": 19.77, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 148.0, "lat": 50.66112712, "lon": 7.18568815, "pl_m": 19.43, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 149.0, "lat": 50.66146542, "lon": 7.18535217, "pl_m": 19.26, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 150.0, "lat": 50.66179409, "lon": 7.18502489, "pl_m": 22.22, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 151.0, "lat": 50.66213879, "lon": 7.18468595, "pl_m": 20.87, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 152.0, "lat": 50.66247673, "lon": 7.18437254, "pl_m": 23.8, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 153.0, "lat": 50.66281502, "lon": 7.18407472, "pl_m": 26.93, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 154.0, "lat": 50.6631528, "lon": 7.18379062, "pl_m": 30.08, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 155.0, "lat": 50.66349052, "lon": 7.18351831, "pl_m": 33.25, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 156.0, "lat": 50.66382673, "lon": 7.18325141, "pl_m": 36.45, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 157.0, "lat": 50.66416594, "lon": 7.18299024, "pl_m": 39.67, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 158.0, "lat": 50.6645091, "lon": 7.182728, "pl_m": 42.95, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 159.0, "lat": 50.66485357, "lon": 7.18245842, "pl_m": 46.32, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 160.0, "lat": 50.66520001, "lon": 7.18218652, "pl_m": 49.77, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 161.0, "lat": 50.66555455, "lon": 7.18191692, "pl_m": 53.3, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 162.0, "lat": 50.66590949, "lon": 7.18164689, "pl_m": 56.94, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 163.0, "lat": 50.66626414, "lon": 7.18137894, "pl_m": 60.66, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 164.0, "lat": 50.66662204, "lon": 7.18111343, "pl_m": 64.44, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 165.0, "lat": 50.66698074, "lon": 7.18084011, "pl_m": 68.3, "health": "unavailable", "alarm": true, "sources": ["nadir-vo"]}
+{"t": 166.0, "lat": 50.66753797, "lon": 7.18036977, "pl_m": 29.96, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 167.0, "lat": 50.66793548, "lon": 7.18006174, "pl_m": 23.79, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 168.0, "lat": 50.66830349, "lon": 7.17978193, "pl_m": 26.26, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 169.0, "lat": 50.66868723, "lon": 7.17948436, "pl_m": 22.61, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 170.0, "lat": 50.66906426, "lon": 7.17918983, "pl_m": 20.88, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 171.0, "lat": 50.66943395, "lon": 7.17889491, "pl_m": 20.04, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 172.0, "lat": 50.66980745, "lon": 7.17859367, "pl_m": 19.64, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 173.0, "lat": 50.67015642, "lon": 7.17826186, "pl_m": 19.47, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 174.0, "lat": 50.67054075, "lon": 7.17797099, "pl_m": 19.4, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 175.0, "lat": 50.67092531, "lon": 7.17767358, "pl_m": 19.37, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 176.0, "lat": 50.6713043, "lon": 7.17736745, "pl_m": 22.58, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 177.0, "lat": 50.67167444, "lon": 7.1770709, "pl_m": 21.19, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 178.0, "lat": 50.67205047, "lon": 7.17676517, "pl_m": 20.36, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 179.0, "lat": 50.67242417, "lon": 7.1764516, "pl_m": 19.9, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 180.0, "lat": 50.6727926, "lon": 7.1761349, "pl_m": 19.64, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 181.0, "lat": 50.67315552, "lon": 7.1758186, "pl_m": 19.51, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 182.0, "lat": 50.67352578, "lon": 7.17550161, "pl_m": 22.68, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 183.0, "lat": 50.67389238, "lon": 7.17519913, "pl_m": 21.2, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 184.0, "lat": 50.67426518, "lon": 7.17489278, "pl_m": 24.27, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 185.0, "lat": 50.67463793, "lon": 7.17459161, "pl_m": 21.93, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 186.0, "lat": 50.67500915, "lon": 7.17428712, "pl_m": 20.67, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 187.0, "lat": 50.67537858, "lon": 7.17398565, "pl_m": 20.0, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 188.0, "lat": 50.67575218, "lon": 7.17368159, "pl_m": 23.03, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 189.0, "lat": 50.67612785, "lon": 7.17337681, "pl_m": 21.34, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 190.0, "lat": 50.67649545, "lon": 7.17307238, "pl_m": 20.37, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 191.0, "lat": 50.67687292, "lon": 7.17276609, "pl_m": 19.84, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 192.0, "lat": 50.67724784, "lon": 7.17246429, "pl_m": 22.89, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 193.0, "lat": 50.6776244, "lon": 7.17216256, "pl_m": 26.15, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 194.0, "lat": 50.6780116, "lon": 7.1718496, "pl_m": 22.75, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 195.0, "lat": 50.67839722, "lon": 7.17153359, "pl_m": 21.08, "health": "trusted", "alarm": false, "sources": ["nadir-vo", "visual-fix"]}
+{"t": 196.0, "lat": 50.67878072, "lon": 7.17121682, "pl_m": 24.1, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 197.0, "lat": 50.67916771, "lon": 7.1709053, "pl_m": 27.38, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 198.0, "lat": 50.6795589, "lon": 7.17059121, "pl_m": 30.75, "health": "trusted", "alarm": false, "sources": ["nadir-vo"]}
+{"t": 10.0, "event": "gnss_lost", "text": "end of GNSS window: VO + visual fixes from here"}
