@@ -1,0 +1,15 @@
+{
+  "id": "sample:mavlink-to-tak-cot",
+  "title": "MAVLink telemetry to TAK Cursor-on-Target",
+  "summary": "Bridges autopilot GLOBAL_POSITION_INT messages into Cursor-on-Target events so a UAV shows up as a friendly track on ATAK, WinTAK or iTAK. A stdlib-only CoT builder with unit tests is paired with a pymavlink + PyTAK bridge that targets a TAK server or Mesh SA multicast.",
+  "concepts": ["concept:situational-awareness", "concept:mavlink-gcs", "concept:standards"],
+  "tags": ["cot", "tak", "atak", "mavlink", "pytak", "uav", "blue-force-tracking"],
+  "related": [
+    {"id": "repo:ardupilot/pymavlink", "rel": "uses"},
+    {"id": "repo:snstac/pytak", "rel": "uses"},
+    {"id": "repo:freetakteam/freetakserver", "rel": "uses"},
+    {"id": "repo:brian7704/opentakserver", "rel": "uses"},
+    {"id": "repo:tak-product-center/atak-civ", "rel": "uses"}
+  ],
+  "verified": "cot.py and test_cot.py ran with python3.14.7 stdlib on 2026-11-06 (4 tests OK), output shown in README; bridge.py is an unverified sketch: syntax-checked only, requires pymavlink and pytak plus a MAVLink source and TAK endpoint."
+}

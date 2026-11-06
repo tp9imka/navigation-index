@@ -1,0 +1,3204 @@
+[
+  {
+    "id": "repo:opencpn/opencpn",
+    "kind": "repo",
+    "name": "OpenCPN",
+    "url": "https://github.com/OpenCPN/OpenCPN",
+    "summary": "Cross-platform open-source chartplotter and navigation application that displays raster and S-57 vector charts, ingests GPS and AIS feeds, and runs waypoint routes. Large plugin ecosystem.",
+    "why_it_matters": "The de facto open maritime nav display; a ready-made situational awareness front end for any surface-vessel or GNSS-denied maritime demo.",
+    "concepts": [
+      "concept:maritime-nav",
+      "concept:situational-awareness",
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "chartplotter",
+      "s57",
+      "ais",
+      "nmea0183",
+      "plugins"
+    ],
+    "language": "C++",
+    "domains": [
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Install the packaged build, feed it NMEA over UDP/TCP from your own nav filter or a simulator and you have a chart display in minutes. Writing a plugin needs the plugin SDK and a full C++ build.",
+    "related": [
+      {
+        "id": "repo:opencpn-radar-pi/radar_pi",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:signalk/signalk-server",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:jvde-github/ais-catcher",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:opencpn-radar-pi/radar_pi",
+    "kind": "repo",
+    "name": "OpenCPN radar_pi",
+    "url": "https://github.com/opencpn-radar-pi/radar_pi",
+    "summary": "OpenCPN plugin that connects to Navico and some Garmin and Raymarine marine radars and overlays radar imagery and ARPA-style targets on the chart.",
+    "why_it_matters": "Shows how real marine radar returns are pulled into an open nav display, useful for radar-aided navigation and contact tracking demos.",
+    "concepts": [
+      "concept:maritime-nav",
+      "concept:radar-nav",
+      "concept:target-tracking"
+    ],
+    "tags": [
+      "opencpn-plugin",
+      "marine-radar",
+      "arpa"
+    ],
+    "language": "C",
+    "domains": [
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs a supported radar on the network to be interesting; without hardware, study the protocol decoding and overlay code.",
+    "related": [
+      {
+        "id": "repo:opencpn/opencpn",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:m0r13n/pyais",
+    "kind": "repo",
+    "name": "pyais",
+    "url": "https://github.com/M0r13n/pyais",
+    "summary": "Python library for decoding and encoding AIS NMEA sentences (AIVDM/AIVDO), including multi-part messages and streaming from sockets or files.",
+    "why_it_matters": "The quickest path from raw AIS sentences to typed vessel positions for maritime picture building or AIS spoofing/anomaly detection.",
+    "concepts": [
+      "concept:maritime-nav",
+      "concept:situational-awareness",
+      "concept:target-tracking"
+    ],
+    "tags": [
+      "ais",
+      "nmea",
+      "decoder",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install pyais, point it at a public AIS TCP feed or a recorded NMEA file, and you have vessel tracks in an hour. Pair with AIS-catcher for live RF.",
+    "related": [
+      {
+        "id": "repo:jvde-github/ais-catcher",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:schwehr/noaadata",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:dstl/stone-soup",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:schwehr/noaadata",
+    "kind": "repo",
+    "name": "noaadata",
+    "url": "https://github.com/schwehr/noaadata",
+    "summary": "Pure-Python AIS decode and encode library from a long-time AIS researcher, with message definitions and utilities for working with NOAA and coastal AIS data.",
+    "why_it_matters": "A reference-quality alternative decoder, handy for cross-checking pyais output and for older message types.",
+    "concepts": [
+      "concept:maritime-nav"
+    ],
+    "tags": [
+      "ais",
+      "decoder",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Use mainly as a cross-check; pyais has the friendlier API.",
+    "related": [
+      {
+        "id": "repo:m0r13n/pyais",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:jvde-github/ais-catcher",
+    "kind": "repo",
+    "name": "AIS-catcher",
+    "url": "https://github.com/jvde-github/AIS-catcher",
+    "summary": "AIS receiver and decoder for cheap SDRs (RTL-SDR, Airspy, HackRF, SDRplay, SoapySDR) with a built-in web map, JSON/NMEA output and feed sharing.",
+    "why_it_matters": "Turns a 30-dollar dongle into a live maritime picture sensor, the cheapest real RF input for a maritime awareness build.",
+    "concepts": [
+      "concept:maritime-nav",
+      "concept:situational-awareness",
+      "concept:gnss-sdr"
+    ],
+    "tags": [
+      "ais",
+      "sdr",
+      "rtl-sdr",
+      "receiver"
+    ],
+    "language": "C++",
+    "domains": [
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Prebuilt binaries and Docker image; plug an RTL-SDR with a VHF antenna, run with the web viewer enabled, forward NMEA to pyais or OpenCPN. Inland sites may see few ships.",
+    "related": [
+      {
+        "id": "repo:m0r13n/pyais",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:opencpn/opencpn",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:signalk/signalk-server",
+    "kind": "repo",
+    "name": "Signal K Server",
+    "url": "https://github.com/SignalK/signalk-server",
+    "summary": "Node.js server implementing the Signal K open marine data standard: it ingests NMEA 0183, NMEA 2000 and other boat buses and republishes everything as a JSON data model over REST and WebSocket, with a plugin ecosystem.",
+    "why_it_matters": "A modern data bus for a vessel; ideal glue between sensors, your own nav filter and displays.",
+    "concepts": [
+      "concept:maritime-nav",
+      "concept:sensor-fusion",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "signalk",
+      "nmea2000",
+      "nmea0183",
+      "websocket",
+      "iot"
+    ],
+    "language": "TypeScript",
+    "domains": [
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Run via Docker or npm, enable the sample data playback, subscribe over WebSocket. Write a plugin to inject an alternative position source.",
+    "related": [
+      {
+        "id": "repo:signalk/specification",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:signalk/signalk-to-nmea0183",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:opencpn/opencpn",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:signalk/specification",
+    "kind": "repo",
+    "name": "Signal K Specification",
+    "url": "https://github.com/SignalK/specification",
+    "summary": "The JSON schema and specification for the Signal K marine data format covering navigation, environment, propulsion and other vessel data paths.",
+    "why_it_matters": "Gives a common vocabulary for maritime nav data instead of inventing one during a hackathon.",
+    "concepts": [
+      "concept:maritime-nav",
+      "concept:standards"
+    ],
+    "tags": [
+      "signalk",
+      "schema",
+      "json"
+    ],
+    "language": "JavaScript",
+    "domains": [
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Read the navigation.* paths before designing your own message format.",
+    "related": [
+      {
+        "id": "repo:signalk/signalk-server",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:signalk/signalk-to-nmea0183",
+    "kind": "repo",
+    "name": "signalk-to-nmea0183",
+    "url": "https://github.com/SignalK/signalk-to-nmea0183",
+    "summary": "Signal K server plugin that converts Signal K data back into NMEA 0183 sentences for legacy displays and autopilots.",
+    "why_it_matters": "Lets a custom position or heading source reach any off-the-shelf NMEA consumer such as OpenCPN or a chartplotter.",
+    "concepts": [
+      "concept:maritime-nav"
+    ],
+    "tags": [
+      "signalk",
+      "nmea0183",
+      "plugin"
+    ],
+    "language": "JavaScript",
+    "domains": [
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Enable in the Signal K admin UI, choose sentences, output over TCP.",
+    "related": [
+      {
+        "id": "repo:signalk/signalk-server",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:moos-ivp/moos-ivp",
+    "kind": "repo",
+    "name": "MOOS-IvP",
+    "url": "https://github.com/moos-ivp/moos-ivp",
+    "summary": "Long-running autonomy middleware (MOOS) plus the IvP Helm behaviour-based multi-objective decision engine, used widely for autonomous marine vehicles, including COLREGs-aware collision avoidance behaviours.",
+    "why_it_matters": "The academic and navy-adjacent reference for marine vehicle autonomy; much published USV/UUV collision avoidance work is built on it.",
+    "concepts": [
+      "concept:maritime-nav",
+      "concept:path-planning",
+      "concept:obstacle-avoidance",
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "moos",
+      "ivp-helm",
+      "usv",
+      "uuv",
+      "colregs",
+      "mit"
+    ],
+    "language": "C++",
+    "domains": [
+      "maritime",
+      "underwater"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Builds on Linux/macOS with CMake; the bundled alpha and heron missions run in simulation with pMarineViewer. Pair with the MIT 2.680 labs.",
+    "related": [
+      {
+        "id": "repo:d2snc/moos-ivp-masters",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:ntnu-itk-autonomous-ship-lab/colav-simulator",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:d2snc/moos-ivp-masters",
+    "kind": "repo",
+    "name": "MOOS-IvP COLREGs master's research code",
+    "url": "https://github.com/d2snc/moos-ivp-masters",
+    "summary": "MOOS-IvP applications from a 2025 master's project at Universidade de Sao Paulo implementing COLREGs-compliant collision avoidance for USVs, including a modified A* planner, a velocity-obstacle method and a virtual-contact spawner for test encounters.",
+    "why_it_matters": "Recent, field-validated COLREGs avoidance code that plugs straight into MOOS-IvP.",
+    "concepts": [
+      "concept:maritime-nav",
+      "concept:obstacle-avoidance",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "colregs",
+      "usv",
+      "velocity-obstacles",
+      "a-star",
+      "moos-ivp"
+    ],
+    "language": "C++",
+    "domains": [
+      "maritime"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Build against a MOOS-IvP tree; use pContactSpawn to stage head-on/crossing/overtaking cases.",
+    "related": [
+      {
+        "id": "repo:moos-ivp/moos-ivp",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:ntnu-itk-autonomous-ship-lab/colav-simulator",
+    "kind": "repo",
+    "name": "NTNU colav-simulator",
+    "url": "https://github.com/ntnu-itk-autonomous-ship-lab/colav-simulator",
+    "summary": "Python framework from the NTNU Autoship centre for simulating and evaluating autonomous ship collision avoidance controllers, open-sourced in autumn 2025, with scenario generation and evaluation tooling.",
+    "why_it_matters": "One of the few open, evaluation-oriented COLAV simulators from a leading autonomous ship lab; good test bench for COLREGs logic.",
+    "concepts": [
+      "concept:maritime-nav",
+      "concept:obstacle-avoidance",
+      "concept:simulation"
+    ],
+    "tags": [
+      "colav",
+      "colregs",
+      "autonomous-ship",
+      "ntnu"
+    ],
+    "language": "Python",
+    "domains": [
+      "maritime"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Python with uv; define scenarios and swap in your own planner. Pair with its VIMMJIPDA tracker for realistic target estimates.",
+    "related": [
+      {
+        "id": "repo:ntnu-itk-autonomous-ship-lab/vimmjipda",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:moos-ivp/moos-ivp",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:aavek/aeolus-ocean",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ntnu-itk-autonomous-ship-lab/vimmjipda",
+    "kind": "repo",
+    "name": "VIMMJIPDA tracker interface",
+    "url": "https://github.com/ntnu-itk-autonomous-ship-lab/vimmjipda",
+    "summary": "Interface that runs the VIMMJIPDA multi-target tracker (visibility, interacting multiple models, JIPDA) inside the NTNU colav-simulator; open-sourced November 2025.",
+    "why_it_matters": "A maritime-grade multi-target tracker connected to a collision avoidance loop, closing the sense-track-avoid chain.",
+    "concepts": [
+      "concept:target-tracking",
+      "concept:maritime-nav"
+    ],
+    "tags": [
+      "jipda",
+      "imm",
+      "multi-target-tracking",
+      "radar",
+      "ntnu"
+    ],
+    "language": "Python",
+    "domains": [
+      "maritime"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Install with uv alongside colav-simulator; the core tracker code itself lives on Code Ocean.",
+    "related": [
+      {
+        "id": "repo:ntnu-itk-autonomous-ship-lab/colav-simulator",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:dstl/stone-soup",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:aavek/aeolus-ocean",
+    "kind": "repo",
+    "name": "Aeolus Ocean",
+    "url": "https://github.com/aavek/Aeolus-Ocean",
+    "summary": "Collision avoidance simulator for COLREG-compliant autonomous ship navigation intended for use as a digital twin under varied weather and day/night conditions.",
+    "why_it_matters": "Another research testbed for COLREGs logic with environmental variation.",
+    "concepts": [
+      "concept:maritime-nav",
+      "concept:obstacle-avoidance",
+      "concept:simulation"
+    ],
+    "tags": [
+      "colregs",
+      "digital-twin",
+      "simulator"
+    ],
+    "language": "",
+    "domains": [
+      "maritime"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Little recent activity; check the README for build steps before committing time.",
+    "related": [
+      {
+        "id": "repo:ntnu-itk-autonomous-ship-lab/colav-simulator",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:osrf/vrx",
+    "kind": "repo",
+    "name": "Virtual RobotX (VRX)",
+    "url": "https://github.com/osrf/vrx",
+    "summary": "Gazebo-based simulation environment for the RobotX maritime autonomy competition, with a WAM-V USV model, waves, wind, sensors and scored tasks such as station keeping, wayfinding and perception.",
+    "why_it_matters": "The standard open USV simulator; lets a team test maritime nav and perception without a boat.",
+    "concepts": [
+      "concept:simulation",
+      "concept:maritime-nav",
+      "concept:ros"
+    ],
+    "tags": [
+      "gazebo",
+      "usv",
+      "wam-v",
+      "robotx",
+      "ros2"
+    ],
+    "language": "C++",
+    "domains": [
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Docker or ROS 2 + Gazebo install; expect an hour or two of setup. Task worlds give ready-made scoring.",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:moos-ivp/moos-ivp",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ardupilot/ardupilot",
+    "kind": "repo",
+    "name": "ArduPilot (ArduRover boat / ArduSub)",
+    "url": "https://github.com/ArduPilot/ardupilot",
+    "summary": "Open autopilot suite whose Rover firmware has a boat frame for USVs and whose ArduSub firmware drives ROVs/AUVs, both with the EKF3 navigation filter and support for external position sources.",
+    "why_it_matters": "The most deployable open USV/ROV autopilot; lets a team put a custom nav source onto a real vehicle via MAVLink.",
+    "concepts": [
+      "concept:autopilot",
+      "concept:maritime-nav",
+      "concept:underwater-nav",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "ardurover",
+      "ardusub",
+      "ekf3",
+      "mavlink",
+      "sitl"
+    ],
+    "language": "C++",
+    "domains": [
+      "maritime",
+      "underwater",
+      "ground",
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Run SITL with the boat or sub frame; inject vision/DVL positions with VISION_POSITION_ESTIMATE or GPS_INPUT MAVLink messages.",
+    "related": [
+      {
+        "id": "repo:bluerobotics/blueos",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:mavlink/mavros",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot_gazebo",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:ardupilot/ardupilot_gazebo",
+    "kind": "repo",
+    "name": "ardupilot_gazebo",
+    "url": "https://github.com/ArduPilot/ardupilot_gazebo",
+    "summary": "Gazebo Sim plugins and models that connect ArduPilot SITL to Gazebo physics for copters, rovers and boats.",
+    "why_it_matters": "Bridge for testing ArduPilot USV/rover nav in a 3D world.",
+    "concepts": [
+      "concept:simulation",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "gazebo",
+      "sitl",
+      "plugin"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground",
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Follow the ArduPilot wiki Gazebo guide; works best on Ubuntu.",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:mavlink/mavros",
+    "kind": "repo",
+    "name": "MAVROS",
+    "url": "https://github.com/mavlink/mavros",
+    "summary": "ROS gateway for MAVLink autopilots exposing state, setpoints and external pose inputs as ROS topics and services.",
+    "why_it_matters": "Standard way to connect ROS nav stacks (DVL, SLAM, UWB) to ArduPilot boats and subs.",
+    "concepts": [
+      "concept:mavlink-gcs",
+      "concept:ros"
+    ],
+    "tags": [
+      "mavlink",
+      "ros",
+      "gateway"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground",
+      "maritime",
+      "underwater"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "apt install for your ROS distro; remap your odometry into /mavros/vision_pose.",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:bluerobotics/blueos",
+    "kind": "repo",
+    "name": "BlueOS",
+    "url": "https://github.com/bluerobotics/BlueOS",
+    "summary": "Blue Robotics' onboard software platform for ROVs and USVs: web UI, ArduPilot management, MAVLink routing and a Docker extension system on a Raspberry Pi companion computer.",
+    "why_it_matters": "The default companion stack on BlueROV2 vehicles; DVL and USBL integrations ship as extensions.",
+    "concepts": [
+      "concept:autopilot",
+      "concept:underwater-nav",
+      "concept:maritime-nav"
+    ],
+    "tags": [
+      "bluerov2",
+      "companion-computer",
+      "docker",
+      "extensions"
+    ],
+    "language": "Vue",
+    "domains": [
+      "underwater",
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Most useful with a BlueROV2; extensions are Docker images, so a nav add-on can be packaged quickly.",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:waterlinked/dvl-python",
+    "kind": "repo",
+    "name": "Water Linked DVL Python",
+    "url": "https://github.com/waterlinked/dvl-python",
+    "summary": "Example Python code for talking to Water Linked DVLs over their serial and TCP/JSON protocols, parsing velocity and dead-reckoning reports.",
+    "why_it_matters": "DVL velocity is the core GNSS-free aid for underwater dead reckoning; this is the shortest route to real DVL data.",
+    "concepts": [
+      "concept:underwater-nav",
+      "concept:ins"
+    ],
+    "tags": [
+      "dvl",
+      "waterlinked",
+      "a50",
+      "driver"
+    ],
+    "language": "Python",
+    "domains": [
+      "underwater"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs a DVL or recorded JSON; protocol is simple JSON over TCP so a replay mock is easy.",
+    "related": [
+      {
+        "id": "repo:waterlinked/dvl-a50-ros-driver",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:alliwong/auvestimator",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:waterlinked/dvl-a50-ros-driver",
+    "kind": "repo",
+    "name": "Water Linked DVL A50 ROS driver",
+    "url": "https://github.com/waterlinked/dvl-a50-ros-driver",
+    "summary": "ROS 1 driver publishing Water Linked DVL A50 velocity and beam data as ROS messages; now archived.",
+    "why_it_matters": "Reference ROS integration for DVL-aided navigation.",
+    "concepts": [
+      "concept:underwater-nav",
+      "concept:ros"
+    ],
+    "tags": [
+      "dvl",
+      "ros1",
+      "driver"
+    ],
+    "language": "Python",
+    "domains": [
+      "underwater"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Archived; port the parsing to ROS 2 or use dvl-python directly.",
+    "related": [
+      {
+        "id": "repo:waterlinked/dvl-python",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:bluerobotics/ping-python",
+    "kind": "repo",
+    "name": "Ping Python",
+    "url": "https://github.com/bluerobotics/ping-python",
+    "summary": "Python library and examples for Blue Robotics Ping echosounder and Ping360 scanning sonar using the Ping protocol.",
+    "why_it_matters": "Cheap altimeter and sonar input for underwater navigation and obstacle sensing.",
+    "concepts": [
+      "concept:underwater-nav",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "sonar",
+      "echosounder",
+      "ping360"
+    ],
+    "language": "Python",
+    "domains": [
+      "underwater",
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "pip install bluerobotics-ping; requires the hardware or Ping Viewer logs.",
+    "related": [
+      {
+        "id": "repo:bluerobotics/ping-viewer",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:centralenantesrobotics/ping360_sonar",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:bluerobotics/ping-viewer",
+    "kind": "repo",
+    "name": "Ping Viewer",
+    "url": "https://github.com/bluerobotics/ping-viewer",
+    "summary": "Desktop application to view and record data from Blue Robotics Ping echosounder and Ping360 sonar.",
+    "why_it_matters": "Fast way to record sonar logs for offline SLAM or odometry experiments.",
+    "concepts": [
+      "concept:underwater-nav"
+    ],
+    "tags": [
+      "sonar",
+      "viewer",
+      "logging"
+    ],
+    "language": "C++",
+    "domains": [
+      "underwater"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Prebuilt releases; logs can be replayed into ping-python.",
+    "related": [
+      {
+        "id": "repo:bluerobotics/ping-python",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:centralenantesrobotics/ping360_sonar",
+    "kind": "repo",
+    "name": "ping360_sonar ROS package",
+    "url": "https://github.com/CentraleNantesRobotics/ping360_sonar",
+    "summary": "ROS package that drives the Ping360 scanning sonar and publishes scans as images and laser-scan style messages.",
+    "why_it_matters": "Gets low-cost scanning sonar into a ROS SLAM or obstacle pipeline.",
+    "concepts": [
+      "concept:underwater-nav",
+      "concept:ros",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "ping360",
+      "sonar",
+      "ros"
+    ],
+    "language": "C++",
+    "domains": [
+      "underwater"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs the sonar; the laser-scan output plugs into standard 2D SLAM tools.",
+    "related": [
+      {
+        "id": "repo:bluerobotics/ping-python",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:field-robotics-lab/dave",
+    "kind": "repo",
+    "name": "Project DAVE",
+    "url": "https://github.com/Field-Robotics-Lab/dave",
+    "summary": "Gazebo-based underwater simulation environment from the Naval Postgraduate School and partners, extending UUV Simulator with DVL, sonar, bathymetry and manipulation models.",
+    "why_it_matters": "Navy-funded underwater sim with realistic DVL and sonar sensors for testing AUV nav without water.",
+    "concepts": [
+      "concept:simulation",
+      "concept:underwater-nav",
+      "concept:ros"
+    ],
+    "tags": [
+      "gazebo",
+      "uuv",
+      "dvl",
+      "multibeam",
+      "nps"
+    ],
+    "language": "C++",
+    "domains": [
+      "underwater"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1 Noetic + Gazebo 11 via Docker; setup is heavy, budget half a day. A ROS 2 port has been in progress.",
+    "related": [
+      {
+        "id": "repo:uuvsimulator/uuv_simulator",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:field-robotics-lab/nps_uw_multibeam_sonar",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:patrykcieslak/stonefish",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:field-robotics-lab/nps_uw_multibeam_sonar",
+    "kind": "repo",
+    "name": "NPS underwater multibeam sonar plugin",
+    "url": "https://github.com/Field-Robotics-Lab/nps_uw_multibeam_sonar",
+    "summary": "GPU (CUDA) multibeam sonar simulation plugin for Gazebo producing physically motivated sonar imagery.",
+    "why_it_matters": "Synthetic sonar data for testing sonar odometry and SLAM.",
+    "concepts": [
+      "concept:simulation",
+      "concept:underwater-nav"
+    ],
+    "tags": [
+      "multibeam",
+      "sonar",
+      "cuda",
+      "gazebo"
+    ],
+    "language": "C++",
+    "domains": [
+      "underwater"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Needs an NVIDIA GPU; used within DAVE.",
+    "related": [
+      {
+        "id": "repo:field-robotics-lab/dave",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:uuvsimulator/uuv_simulator",
+    "kind": "repo",
+    "name": "UUV Simulator",
+    "url": "https://github.com/uuvsimulator/uuv_simulator",
+    "summary": "Gazebo/ROS packages for underwater vehicle simulation with hydrodynamics, thrusters and sensors; archived.",
+    "why_it_matters": "The ancestor of DAVE and many AUV research setups.",
+    "concepts": [
+      "concept:simulation",
+      "concept:underwater-nav"
+    ],
+    "tags": [
+      "gazebo",
+      "uuv",
+      "ros1"
+    ],
+    "language": "Python",
+    "domains": [
+      "underwater"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Archived; prefer DAVE, Stonefish or HoloOcean.",
+    "related": [
+      {
+        "id": "repo:field-robotics-lab/dave",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:patrykcieslak/stonefish",
+    "kind": "repo",
+    "name": "Stonefish",
+    "url": "https://github.com/patrykcieslak/stonefish",
+    "summary": "C++ simulation library for marine robotics with hydrodynamics, underwater rendering and sensors including DVL, USBL, multibeam and forward-looking sonar; has a ROS wrapper.",
+    "why_it_matters": "Actively maintained, lighter than Gazebo stacks, with acoustic nav sensors built in.",
+    "concepts": [
+      "concept:simulation",
+      "concept:underwater-nav"
+    ],
+    "tags": [
+      "simulator",
+      "dvl",
+      "usbl",
+      "sonar",
+      "opengl"
+    ],
+    "language": "C++",
+    "domains": [
+      "underwater",
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Build with CMake; use stonefish_ros for ROS integration. Good for a DVL+USBL EKF demo.",
+    "related": [
+      {
+        "id": "repo:field-robotics-lab/dave",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:byu-holoocean/holoocean-ros",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:byu-holoocean/holoocean-ros",
+    "kind": "repo",
+    "name": "HoloOcean ROS bridge",
+    "url": "https://github.com/byu-holoocean/holoocean-ros",
+    "summary": "ROS bridge for HoloOcean, BYU's Unreal Engine based underwater simulator with DVL, IMU, depth, sonar and acoustic modem sensors.",
+    "why_it_matters": "Photo-realistic underwater sim with multi-agent acoustic comms, useful for cooperative AUV nav.",
+    "concepts": [
+      "concept:simulation",
+      "concept:underwater-nav",
+      "concept:ros"
+    ],
+    "tags": [
+      "holoocean",
+      "unreal",
+      "sonar",
+      "dvl"
+    ],
+    "language": "Python",
+    "domains": [
+      "underwater"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "HoloOcean itself is installed via pip plus a large world package; the bridge adds ROS topics. Needs a decent GPU.",
+    "related": [
+      {
+        "id": "repo:patrykcieslak/stonefish",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:maximilian-nitsch/usbl-simulator",
+    "kind": "repo",
+    "name": "USBL Simulator",
+    "url": "https://github.com/maximilian-nitsch/USBL-Simulator",
+    "summary": "C++ library and ROS 2 node that simulates ultra-short baseline acoustic positioning measurements, with a Gazebo plugin.",
+    "why_it_matters": "USBL is the main absolute fix for submerged vehicles; simulated USBL lets a team test an aided-INS filter.",
+    "concepts": [
+      "concept:underwater-nav",
+      "concept:simulation"
+    ],
+    "tags": [
+      "usbl",
+      "acoustic",
+      "ros2",
+      "gazebo"
+    ],
+    "language": "C++",
+    "domains": [
+      "underwater"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 2 colcon build; generate USBL fixes to fuse with DVL dead reckoning.",
+    "related": [
+      {
+        "id": "repo:alliwong/auvestimator",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:patrykcieslak/stonefish",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:alliwong/auvestimator",
+    "kind": "repo",
+    "name": "AuvEstimator",
+    "url": "https://github.com/alliWong/AuvEstimator",
+    "summary": "Work-in-progress EKF that fuses DVL, IMU and barometer data for AUV state estimation, with a ROS wrapper.",
+    "why_it_matters": "Small, readable DVL-aided INS example to start a GNSS-free underwater nav filter from.",
+    "concepts": [
+      "concept:underwater-nav",
+      "concept:sensor-fusion",
+      "concept:ins"
+    ],
+    "tags": [
+      "ekf",
+      "dvl",
+      "imu",
+      "auv"
+    ],
+    "language": "Python",
+    "domains": [
+      "underwater"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Dormant since 2021; treat as a starting template, not a dependency.",
+    "related": [
+      {
+        "id": "repo:waterlinked/dvl-python",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:halajun/smarc_navigation",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:halajun/smarc_navigation",
+    "kind": "repo",
+    "name": "SMARC navigation",
+    "url": "https://github.com/halajun/smarc_navigation",
+    "summary": "Localization and SLAM components for the SMARC AUVs (KTH), including EKF localization with IMU, DVL and multibeam sonar against a feature map.",
+    "why_it_matters": "Research AUV navigation from a Swedish maritime robotics centre, showing map-aided underwater localization.",
+    "concepts": [
+      "concept:underwater-nav",
+      "concept:sensor-fusion",
+      "concept:terrain-nav"
+    ],
+    "tags": [
+      "auv",
+      "ekf",
+      "dvl",
+      "multibeam",
+      "kth"
+    ],
+    "language": "",
+    "domains": [
+      "underwater"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "ROS 1 era and dormant; read for architecture.",
+    "related": [
+      {
+        "id": "repo:alliwong/auvestimator",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:jake3991/sonar-slam",
+    "kind": "repo",
+    "name": "sonar-SLAM",
+    "url": "https://github.com/jake3991/sonar-SLAM",
+    "summary": "Underwater SLAM for robots with multibeam imaging sonar, from Stevens Institute research on BlueROV-class vehicles, combining sonar feature extraction and pose-graph optimization.",
+    "why_it_matters": "One of the more complete open sonar SLAM pipelines; directly relevant to GNSS-free underwater navigation.",
+    "concepts": [
+      "concept:underwater-nav",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "sonar-slam",
+      "multibeam",
+      "pose-graph",
+      "gtsam"
+    ],
+    "language": "Python",
+    "domains": [
+      "underwater"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1 with sample bags; budget time for dependencies.",
+    "related": [
+      {
+        "id": "repo:jinkunw/bruce",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:senseroboticslab/diso",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:jinkunw/bruce",
+    "kind": "repo",
+    "name": "BRUCE",
+    "url": "https://github.com/jinkunw/bruce",
+    "summary": "BlueROV underwater SLAM and exploration code from Stevens Institute, combining sonar-based SLAM with active exploration planning.",
+    "why_it_matters": "Predecessor to sonar-SLAM; shows SLAM-driven exploration underwater.",
+    "concepts": [
+      "concept:underwater-nav",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "sonar",
+      "exploration",
+      "bluerov"
+    ],
+    "language": "Python",
+    "domains": [
+      "underwater"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Dormant since 2020.",
+    "related": [
+      {
+        "id": "repo:jake3991/sonar-slam",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:senseroboticslab/diso",
+    "kind": "repo",
+    "name": "DISO",
+    "url": "https://github.com/SenseRoboticsLab/DISO",
+    "summary": "Direct imaging sonar odometry: estimates vehicle motion directly from forward-looking imaging sonar frames without feature extraction.",
+    "why_it_matters": "Sonar odometry is a key aid when DVL bottom-lock or vision fails in turbid water.",
+    "concepts": [
+      "concept:underwater-nav",
+      "concept:vio"
+    ],
+    "tags": [
+      "sonar-odometry",
+      "direct-method",
+      "fls"
+    ],
+    "language": "C++",
+    "domains": [
+      "underwater"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "C++ with ROS; try on the provided datasets first.",
+    "related": [
+      {
+        "id": "repo:jake3991/sonar-slam",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:vortexntnu/vortex-auv",
+    "kind": "repo",
+    "name": "Vortex AUV",
+    "url": "https://github.com/vortexntnu/vortex-auv",
+    "summary": "Guidance, navigation and control software from NTNU's student Vortex team for competition AUVs and ROVs, built on ROS 2.",
+    "why_it_matters": "A complete, actively maintained student AUV GNC stack to borrow structure from.",
+    "concepts": [
+      "concept:underwater-nav",
+      "concept:autopilot",
+      "concept:ros"
+    ],
+    "tags": [
+      "auv",
+      "gnc",
+      "ros2",
+      "robosub"
+    ],
+    "language": "C++",
+    "domains": [
+      "underwater"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 2 workspace; sim integration via their companion repos.",
+    "related": [
+      {
+        "id": "repo:patrykcieslak/stonefish",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:autowarefoundation/autoware",
+    "kind": "repo",
+    "name": "Autoware",
+    "url": "https://github.com/autowarefoundation/autoware",
+    "summary": "Meta-repository for Autoware, the open-source ROS 2 autonomous driving stack covering localization (NDT, EKF), perception, planning and control.",
+    "why_it_matters": "The biggest open ground-vehicle autonomy stack; its localization modules are a mature map-based alternative when GNSS is degraded.",
+    "concepts": [
+      "concept:ground-vehicle-nav",
+      "concept:lidar-slam",
+      "concept:sensor-fusion",
+      "concept:path-planning",
+      "concept:ros"
+    ],
+    "tags": [
+      "autoware",
+      "ndt",
+      "ros2",
+      "av"
+    ],
+    "language": "Dockerfile",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Heavy: use the Docker images and the planning simulator. For a hackathon, lift single packages such as NDT scan matcher or the EKF localizer.",
+    "related": [
+      {
+        "id": "repo:autowarefoundation/autoware_universe",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:autowarefoundation/awsim",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:apolloauto/apollo",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:autowarefoundation/autoware_universe",
+    "kind": "repo",
+    "name": "Autoware Universe",
+    "url": "https://github.com/autowarefoundation/autoware_universe",
+    "summary": "The broad package collection of Autoware with experimental and production-candidate modules, including localization, pose initialization and GNSS/IMU fusion.",
+    "why_it_matters": "Where most Autoware localization code actually lives.",
+    "concepts": [
+      "concept:ground-vehicle-nav",
+      "concept:sensor-fusion",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "autoware",
+      "localization",
+      "ekf",
+      "ndt"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Pick packages like autoware_ndt_scan_matcher and autoware_ekf_localizer and run them standalone with rosbags.",
+    "related": [
+      {
+        "id": "repo:autowarefoundation/autoware",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:autowarefoundation/awsim",
+    "kind": "repo",
+    "name": "AWSIM",
+    "url": "https://github.com/autowarefoundation/AWSIM",
+    "summary": "Unity-based digital-twin simulator for Autoware with simulated lidar, camera, GNSS and IMU.",
+    "why_it_matters": "Lets a team exercise Autoware localization without a car.",
+    "concepts": [
+      "concept:simulation",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "unity",
+      "simulator",
+      "autoware"
+    ],
+    "language": "C#",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Prebuilt binaries for Ubuntu with an NVIDIA GPU.",
+    "related": [
+      {
+        "id": "repo:autowarefoundation/autoware",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:apolloauto/apollo",
+    "kind": "repo",
+    "name": "Baidu Apollo",
+    "url": "https://github.com/ApolloAuto/apollo",
+    "summary": "Baidu's open autonomous driving platform, including the multi-sensor fusion localization module combining GNSS RTK, IMU and lidar map matching.",
+    "why_it_matters": "Its MSF localization design is a well-documented reference for GNSS/INS/lidar fusion in vehicles.",
+    "concepts": [
+      "concept:ground-vehicle-nav",
+      "concept:gnss-ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "apollo",
+      "msf-localization",
+      "rtk",
+      "av"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Very heavy to build; read the localization module docs and code rather than deploy.",
+    "related": [
+      {
+        "id": "repo:autowarefoundation/autoware",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:anybotics/grid_map",
+    "kind": "repo",
+    "name": "grid_map",
+    "url": "https://github.com/ANYbotics/grid_map",
+    "summary": "C++ library and ROS integration for multi-layer 2.5D grid maps, widely used for elevation and traversability mapping.",
+    "why_it_matters": "Standard data structure for terrain-aware off-road navigation.",
+    "concepts": [
+      "concept:ground-vehicle-nav",
+      "concept:gis-mapping",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "grid-map",
+      "elevation",
+      "ros"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground",
+      "dismounted"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "apt install ros-<distro>-grid-map; convert DEMs or point clouds to layers quickly.",
+    "related": [
+      {
+        "id": "repo:leggedrobotics/elevation_mapping_cupy",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:leggedrobotics/elevation_mapping",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:leggedrobotics/elevation_mapping",
+    "kind": "repo",
+    "name": "elevation_mapping",
+    "url": "https://github.com/leggedrobotics/elevation_mapping",
+    "summary": "ETH Zurich robot-centric elevation mapping for rough terrain navigation that fuses range data into a probabilistic 2.5D map.",
+    "why_it_matters": "Classic baseline for terrain mapping on legged and wheeled robots.",
+    "concepts": [
+      "concept:ground-vehicle-nav",
+      "concept:terrain-nav"
+    ],
+    "tags": [
+      "elevation-map",
+      "eth",
+      "rough-terrain"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "ROS 1 and dormant since 2022; prefer the GPU version.",
+    "related": [
+      {
+        "id": "repo:leggedrobotics/elevation_mapping_cupy",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:anybotics/grid_map",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:leggedrobotics/elevation_mapping_cupy",
+    "kind": "repo",
+    "name": "elevation_mapping_cupy",
+    "url": "https://github.com/leggedrobotics/elevation_mapping_cupy",
+    "summary": "GPU-accelerated elevation and traversability mapping from ETH Zurich, supporting semantic layers and learned traversability, used on ANYmal robots.",
+    "why_it_matters": "Fast terrain and traversability maps for off-road platforms; current ETH practice.",
+    "concepts": [
+      "concept:ground-vehicle-nav",
+      "concept:terrain-nav",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "elevation-map",
+      "traversability",
+      "cupy",
+      "gpu"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Needs CUDA; Docker image available. Feed a depth camera or lidar and get a traversability layer.",
+    "related": [
+      {
+        "id": "repo:anybotics/grid_map",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:leggedrobotics/wild_visual_navigation",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:leggedrobotics/traversability_estimation",
+    "kind": "repo",
+    "name": "traversability_estimation",
+    "url": "https://github.com/leggedrobotics/traversability_estimation",
+    "summary": "ETH package that computes traversability from elevation maps using slope, roughness and step-height filters.",
+    "why_it_matters": "Simple, explainable geometric traversability baseline.",
+    "concepts": [
+      "concept:ground-vehicle-nav",
+      "concept:terrain-nav"
+    ],
+    "tags": [
+      "traversability",
+      "grid-map",
+      "eth"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "ROS 1, dormant; reimplement the filters with grid_map.",
+    "related": [
+      {
+        "id": "repo:anybotics/grid_map",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:leggedrobotics/wild_visual_navigation",
+    "kind": "repo",
+    "name": "Wild Visual Navigation",
+    "url": "https://github.com/leggedrobotics/wild_visual_navigation",
+    "summary": "System that learns visual traversability online from pre-trained vision features and robot self-supervision, deployed on legged robots in forests.",
+    "why_it_matters": "Learned traversability that adapts in minutes, relevant for unstructured off-road nav.",
+    "concepts": [
+      "concept:ground-vehicle-nav",
+      "concept:edge-ai",
+      "concept:terrain-nav"
+    ],
+    "tags": [
+      "traversability",
+      "self-supervised",
+      "dino",
+      "eth"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs a GPU and a camera bag; offline demo scripts help.",
+    "related": [
+      {
+        "id": "repo:leggedrobotics/elevation_mapping_cupy",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:matval/wayfast",
+    "kind": "repo",
+    "name": "WayFAST",
+    "url": "https://github.com/matval/WayFAST",
+    "summary": "Self-supervised traversability prediction for wheeled field robots that learns from RGB-D and estimates traction from kinodynamic models.",
+    "why_it_matters": "Agricultural/field traversability learning without hand labels.",
+    "concepts": [
+      "concept:ground-vehicle-nav",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "traversability",
+      "self-supervised",
+      "field-robot"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Dormant; use for method reference.",
+    "related": [
+      {
+        "id": "repo:leggedrobotics/wild_visual_navigation",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:masafumiendo/benchnav",
+    "kind": "repo",
+    "name": "BenchNav",
+    "url": "https://github.com/masafumiendo/benchnav",
+    "summary": "Gymnasium-based PyTorch simulator for benchmarking off-road navigation planners under uncertain, probabilistic traversability, with synthetic terrain generation.",
+    "why_it_matters": "Lightweight way to compare off-road planners without a robot.",
+    "concepts": [
+      "concept:ground-vehicle-nav",
+      "concept:path-planning",
+      "concept:simulation"
+    ],
+    "tags": [
+      "off-road",
+      "benchmark",
+      "gymnasium"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground",
+      "space"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "pip install and run notebooks; plain Python, quick to start.",
+    "related": [
+      {
+        "id": "repo:leggedrobotics/wild_visual_navigation",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:unmannedlab/rellis-3d",
+    "kind": "repo",
+    "name": "RELLIS-3D",
+    "url": "https://github.com/unmannedlab/RELLIS-3D",
+    "summary": "Multi-modal off-road dataset from Texas A&M with lidar, camera, IMU and GNSS plus semantic annotations collected on a ground robot.",
+    "why_it_matters": "A standard benchmark for off-road perception and localization.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "dataset",
+      "off-road",
+      "lidar",
+      "semantic"
+    ],
+    "language": "Jupyter Notebook",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Download only the sequences you need; ROS bags are large.",
+    "related": [
+      {
+        "id": "repo:castacks/tartan_drive",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:castacks/tartan_drive",
+    "kind": "repo",
+    "name": "TartanDrive",
+    "url": "https://github.com/castacks/tartan_drive",
+    "summary": "Tools and utilities for the TartanDrive off-road driving dataset from CMU's AirLab, recorded on an ATV with multi-modal sensors.",
+    "why_it_matters": "Large-scale off-road vehicle dynamics and perception data for learning traversability.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "dataset",
+      "off-road",
+      "atv",
+      "cmu"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Data is large; use the provided loaders and a subset.",
+    "related": [
+      {
+        "id": "repo:unmannedlab/rellis-3d",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:prl-mushr/hound_core",
+    "kind": "repo",
+    "name": "HOUND",
+    "url": "https://github.com/prl-mushr/hound_core",
+    "summary": "Autonomy stack for a small-scale high-speed off-road vehicle from the UW MuSHR group, with BeamNG simulator integration and Jetson Orin deployment.",
+    "why_it_matters": "Affordable off-road platform with sim-to-real tooling.",
+    "concepts": [
+      "concept:ground-vehicle-nav",
+      "concept:path-planning",
+      "concept:simulation"
+    ],
+    "tags": [
+      "off-road",
+      "rc-car",
+      "jetson",
+      "beamng"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Docker-based install; real hardware optional. BeamNG license needed for sim.",
+    "related": [
+      {
+        "id": "repo:masafumiendo/benchnav",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:freetakteam/freetakserver",
+    "kind": "repo",
+    "name": "FreeTAKServer",
+    "url": "https://github.com/FreeTAKTeam/FreeTakServer",
+    "summary": "Open-source Python server compatible with TAK clients (ATAK, WinTAK, iTAK) that relays Cursor-on-Target positions, chat and data packages.",
+    "why_it_matters": "Gives dismounted users and robots a shared map picture; common endpoint for drone-detection and blue-force feeds.",
+    "concepts": [
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "tak",
+      "atak",
+      "cot",
+      "blue-force-tracking"
+    ],
+    "language": "Python",
+    "domains": [
+      "dismounted",
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip or Docker install; point ATAK on a phone at it and push CoT from a script.",
+    "related": [
+      {
+        "id": "repo:alphafox02/dragonsync",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:imrclab/crazyswarm2",
+    "kind": "repo",
+    "name": "Crazyswarm2",
+    "url": "https://github.com/IMRCLab/crazyswarm2",
+    "summary": "ROS 2 framework for flying many Crazyflie nano-quadrotors with motion capture or onboard localization, including simulation backends.",
+    "why_it_matters": "The standard open stack for indoor drone-swarm experiments.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:ros",
+      "concept:simulation"
+    ],
+    "tags": [
+      "crazyflie",
+      "swarm",
+      "ros2"
+    ],
+    "language": "Python",
+    "domains": [
+      "air",
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Simulation works without hardware; with Crazyflies plus Loco or Lighthouse you can fly a small swarm in a day.",
+    "related": [
+      {
+        "id": "repo:bitcraze/crazyflie-firmware",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:bitcraze/crazyflie-lib-python",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:bitcraze/crazyflie-firmware",
+    "kind": "repo",
+    "name": "Crazyflie firmware",
+    "url": "https://github.com/bitcraze/crazyflie-firmware",
+    "summary": "Firmware for the Crazyflie nano quadrotor including onboard state estimators and UWB Loco Positioning (TWR and TDoA) support.",
+    "why_it_matters": "Readable embedded EKF with UWB ranging fusion, a compact study of radio-based positioning.",
+    "concepts": [
+      "concept:autopilot",
+      "concept:rf-localization",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "crazyflie",
+      "uwb",
+      "tdoa",
+      "ekf"
+    ],
+    "language": "C",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "make and flash over Crazyradio; the kalman estimator source is a good reading target.",
+    "related": [
+      {
+        "id": "repo:bitcraze/lps-node-firmware",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:imrclab/crazyswarm2",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:bitcraze/lps-node-firmware",
+    "kind": "repo",
+    "name": "Loco Positioning node firmware",
+    "url": "https://github.com/bitcraze/lps-node-firmware",
+    "summary": "Firmware for Bitcraze Loco Positioning UWB anchors and tags (DW1000), supporting two-way ranging and TDoA modes.",
+    "why_it_matters": "Off-the-shelf UWB infrastructure for GNSS-denied indoor positioning tests.",
+    "concepts": [
+      "concept:rf-localization",
+      "concept:indoor-pedestrian"
+    ],
+    "tags": [
+      "uwb",
+      "dw1000",
+      "anchor",
+      "tdoa"
+    ],
+    "language": "C",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs Loco nodes; configure anchors with the Crazyflie client.",
+    "related": [
+      {
+        "id": "repo:bitcraze/crazyflie-firmware",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:williamwenda/uwb_tdoa_dataset",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:bitcraze/crazyflie-lib-python",
+    "kind": "repo",
+    "name": "cflib",
+    "url": "https://github.com/bitcraze/crazyflie-lib-python",
+    "summary": "Python library for communicating with Crazyflies: parameters, logging, setpoints and swarm helpers.",
+    "why_it_matters": "Quickest way to script a swarm or log UWB/estimator data.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:mavlink-gcs"
+    ],
+    "tags": [
+      "crazyflie",
+      "python",
+      "swarm"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "pip install cflib; Swarm class runs parallel commands.",
+    "related": [
+      {
+        "id": "repo:bitcraze/crazyflie-firmware",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:bitcraze/crazyflie-simulation",
+    "kind": "repo",
+    "name": "Crazyflie simulation",
+    "url": "https://github.com/bitcraze/crazyflie-simulation",
+    "summary": "Simulation models and tooling for Crazyflie in Webots and Gazebo.",
+    "why_it_matters": "Hardware-free swarm prototyping.",
+    "concepts": [
+      "concept:simulation",
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "crazyflie",
+      "webots",
+      "gazebo"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Webots is the easiest entry.",
+    "related": [
+      {
+        "id": "repo:bitcraze/crazyflie-firmware",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:aerostack2/aerostack2",
+    "kind": "repo",
+    "name": "Aerostack2",
+    "url": "https://github.com/aerostack2/aerostack2",
+    "summary": "ROS 2 framework from UPM for autonomous multi-aerial-robot systems, with platform abstraction (PX4, Crazyflie, DJI, Gazebo), behaviours, state estimation and swarm mission coordination.",
+    "why_it_matters": "Lets a team describe multi-drone missions above autopilot level and swap platforms.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:mission-planning",
+      "concept:ros"
+    ],
+    "tags": [
+      "aerostack2",
+      "ros2",
+      "multi-uav"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "apt install binaries; project_gazebo shows multi-drone missions in sim.",
+    "related": [
+      {
+        "id": "repo:imrclab/crazyswarm2",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ctu-mrs/mrs_uav_system",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ctu-mrs/mrs_uav_system",
+    "kind": "repo",
+    "name": "MRS UAV System",
+    "url": "https://github.com/ctu-mrs/mrs_uav_system",
+    "summary": "Czech Technical University's multi-robot UAV platform with control, estimation (including GNSS-denied modes), planning and simulation, field-tested in outdoor swarm deployments.",
+    "why_it_matters": "Mature outdoor-swarm stack with several localization back-ends to choose from.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:autopilot",
+      "concept:sensor-fusion",
+      "concept:ros"
+    ],
+    "tags": [
+      "mrs",
+      "ctu",
+      "swarm",
+      "px4"
+    ],
+    "language": "Shell",
+    "domains": [
+      "air",
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Install via apt; simulation tutorials are good. Moving between ROS 1 and ROS 2 versions, so check the branch.",
+    "related": [
+      {
+        "id": "repo:ctu-mrs/uvdar_core",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:aerostack2/aerostack2",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ctu-mrs/uvdar_core",
+    "kind": "repo",
+    "name": "UVDAR",
+    "url": "https://github.com/ctu-mrs/uvdar_core",
+    "summary": "Mutual relative localization for UAV swarms using blinking ultraviolet LEDs and UV-sensitive cameras, from CTU MRS.",
+    "why_it_matters": "Radio-silent relative localization, attractive when RF is jammed or must stay off.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:ew-resilience",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "relative-localization",
+      "uv-led",
+      "swarm",
+      "emcon"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs special UV hardware for real use; simulated in the MRS Gazebo setup.",
+    "related": [
+      {
+        "id": "repo:ctu-mrs/mrs_uav_system",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:buzz-lang/buzz",
+    "kind": "repo",
+    "name": "Buzz",
+    "url": "https://github.com/buzz-lang/Buzz",
+    "summary": "Domain-specific programming language for robot swarms with swarm-level primitives such as neighbour queries, virtual stigmergy and swarm membership.",
+    "why_it_matters": "Expresses swarm behaviours compactly; used with ROS and drones in MIST Lab research.",
+    "concepts": [
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "swarm-language",
+      "stigmergy",
+      "mistlab"
+    ],
+    "language": "C",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Builds cleanly; bindings to real robots require extra work.",
+    "related": [
+      {
+        "id": "repo:mistlab/swarm-slam",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:ros2swarm/ros2swarm",
+    "kind": "repo",
+    "name": "ROS2swarm",
+    "url": "https://github.com/ROS2swarm/ROS2swarm",
+    "summary": "ROS 2 package providing a library of swarm behaviours (aggregation, dispersion, flocking) and an easy-to-extend framework, tested on TurtleBot-class robots.",
+    "why_it_matters": "Ready-made ground swarm behaviours in ROS 2.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:ros"
+    ],
+    "tags": [
+      "swarm",
+      "ros2",
+      "turtlebot"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground",
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Launch in Gazebo with multiple TurtleBots.",
+    "related": [
+      {
+        "id": "repo:buzz-lang/buzz",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:mistlab/swarm-slam",
+    "kind": "repo",
+    "name": "Swarm-SLAM",
+    "url": "https://github.com/MISTLab/Swarm-SLAM",
+    "summary": "Sparse, decentralized collaborative SLAM for multi-robot systems on ROS 2, supporting lidar, stereo and RGB-D with inter-robot loop closures under limited communication.",
+    "why_it_matters": "Shared map and relative localization across a team without central infrastructure.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:visual-slam",
+      "concept:lidar-slam",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "c-slam",
+      "decentralized",
+      "ros2"
+    ],
+    "language": "Shell",
+    "domains": [
+      "ground",
+      "air",
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 2 with heavy deps; try on the provided datasets before robots.",
+    "related": [
+      {
+        "id": "repo:zhongshp/dcl-slam",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:mit-spark/kimera-multi",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:zhongshp/dcl-slam",
+    "kind": "repo",
+    "name": "DCL-SLAM",
+    "url": "https://github.com/zhongshp/DCL-SLAM",
+    "summary": "Distributed collaborative lidar SLAM for robotic swarms with lightweight LiDAR-Iris descriptors for inter-robot place recognition and minimal data exchange.",
+    "why_it_matters": "Low-bandwidth multi-robot lidar mapping.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:lidar-slam",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "c-slam",
+      "lidar",
+      "distributed"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground",
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1 package; test with multi-robot bags.",
+    "related": [
+      {
+        "id": "repo:mistlab/swarm-slam",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:pengyu-team/co-lrio",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:pengyu-team/co-lrio",
+    "kind": "repo",
+    "name": "CoLRIO",
+    "url": "https://github.com/PengYu-Team/Co-LRIO",
+    "summary": "ROS 2 centralized lidar-ranging-inertial state estimation for robotic swarms that offloads optimization to a server and uses UWB inter-robot ranges (ICRA 2024).",
+    "why_it_matters": "Shows how UWB ranging tightens swarm state estimation when GNSS is out.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:lidar-slam",
+      "concept:rf-localization",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "uwb",
+      "lidar",
+      "swarm",
+      "gtsam"
+    ],
+    "language": "",
+    "domains": [
+      "ground",
+      "air",
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 2 Foxy and GTSAM 4.2; build is sensitive to versions.",
+    "related": [
+      {
+        "id": "repo:zhongshp/dcl-slam",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:mit-spark/kimera-multi",
+    "kind": "repo",
+    "name": "Kimera-Multi",
+    "url": "https://github.com/MIT-SPARK/Kimera-Multi",
+    "summary": "Index repo for MIT SPARK's distributed multi-robot metric-semantic SLAM system with robust distributed pose-graph optimization.",
+    "why_it_matters": "Strong reference for distributed visual SLAM under outlier loop closures.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "c-slam",
+      "semantic",
+      "mit"
+    ],
+    "language": "Shell",
+    "domains": [
+      "ground",
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Many sub-repos and ROS 1; better for study than a weekend build.",
+    "related": [
+      {
+        "id": "repo:mistlab/swarm-slam",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:hkust-aerial-robotics/omni-swarm",
+    "kind": "repo",
+    "name": "Omni-swarm",
+    "url": "https://github.com/HKUST-Aerial-Robotics/Omni-swarm",
+    "summary": "Decentralized omnidirectional visual-inertial-UWB state estimation for aerial swarms from HKUST, combining VIO, UWB ranges and map-based place recognition.",
+    "why_it_matters": "Shows fusing UWB ranging with VIO for drift-bounded relative swarm localization.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:vio",
+      "concept:rf-localization"
+    ],
+    "tags": [
+      "uwb",
+      "vio",
+      "swarm",
+      "hkust"
+    ],
+    "language": "Jupyter Notebook",
+    "domains": [
+      "air",
+      "multi"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Dormant since 2022; superseded by D2SLAM.",
+    "related": [
+      {
+        "id": "repo:hkust-aerial-robotics/d2slam",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:hkust-aerial-robotics/d2slam",
+    "kind": "repo",
+    "name": "D2SLAM",
+    "url": "https://github.com/HKUST-Aerial-Robotics/D2SLAM",
+    "summary": "Decentralized and distributed collaborative visual-inertial SLAM for aerial swarms from HKUST.",
+    "why_it_matters": "Aerial swarm C-SLAM with distributed optimization.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:vio",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "swarm",
+      "c-slam",
+      "hkust"
+    ],
+    "language": "Jupyter Notebook",
+    "domains": [
+      "air",
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Needs GPUs and multi-camera rigs; study rather than deploy.",
+    "related": [
+      {
+        "id": "repo:hkust-aerial-robotics/omni-swarm",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:zju-fast-lab/ego-planner-swarm",
+    "kind": "repo",
+    "name": "EGO-Swarm",
+    "url": "https://github.com/ZJU-FAST-Lab/ego-planner-swarm",
+    "summary": "Decentralized trajectory planner for single and multiple quadrotors in cluttered environments from ZJU FAST Lab.",
+    "why_it_matters": "Popular lightweight swarm planning baseline with sim included.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:path-planning",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "swarm",
+      "trajectory",
+      "quadrotor"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "ROS 1 catkin build, runs in RViz sim within an hour.",
+    "related": [
+      {
+        "id": "repo:aerostack2/aerostack2",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:lijx10/uwb-localization",
+    "kind": "repo",
+    "name": "uwb-localization (MAV swarm)",
+    "url": "https://github.com/lijx10/uwb-localization",
+    "summary": "ROS library fusing UWB ranging with IMU for accurate 3D localization of MAV swarms, used in a 2017 drone light show.",
+    "why_it_matters": "Compact UWB+IMU fusion reference.",
+    "concepts": [
+      "concept:rf-localization",
+      "concept:multi-agent",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "uwb",
+      "imu",
+      "swarm"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "multi"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "ROS 1 and dormant since 2018.",
+    "related": [
+      {
+        "id": "repo:bitcraze/lps-node-firmware",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:eth-pbl/swarm-relative-localization",
+    "kind": "repo",
+    "name": "Swarm relative localization (ETH PBL)",
+    "url": "https://github.com/ETH-PBL/swarm-relative-localization",
+    "summary": "Infrastructure-less relative localization for decentralized swarm formation of nano-drones using UWB ranging (IROS 2023).",
+    "why_it_matters": "Relative positioning without anchors, the realistic case for field swarms.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:rf-localization"
+    ],
+    "tags": [
+      "uwb",
+      "relative-localization",
+      "crazyflie",
+      "nano-drone"
+    ],
+    "language": "Python",
+    "domains": [
+      "air",
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Crazyflie with UWB decks plus their library; Python simulation available.",
+    "related": [
+      {
+        "id": "repo:vladniculescu/uwb-software-library",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:bitcraze/crazyflie-firmware",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:vladniculescu/uwb-software-library",
+    "kind": "repo",
+    "name": "UWB Software Library (USL)",
+    "url": "https://github.com/vladniculescu/uwb-software-library",
+    "summary": "FreeRTOS UWB library for DW1000 on Crazyflie providing double-sided two-way ranging and UWB data messaging between drones.",
+    "why_it_matters": "Peer-to-peer ranging building block for anchor-free relative localization.",
+    "concepts": [
+      "concept:rf-localization",
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "uwb",
+      "dw1000",
+      "twr",
+      "crazyflie"
+    ],
+    "language": "C",
+    "domains": [
+      "air",
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Flash as Crazyflie app; ranging between two nodes in a few lines.",
+    "related": [
+      {
+        "id": "repo:eth-pbl/swarm-relative-localization",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:excitablecell/geardrones",
+    "kind": "repo",
+    "name": "GEARdrones",
+    "url": "https://github.com/Excitablecell/GEARdrones",
+    "summary": "Lightweight STM32 drone control and multi-agent localization system combining a flight controller, UWB relative localization and a monitor tool.",
+    "why_it_matters": "Low-cost hardware+software reference for UWB relative swarm localization.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:rf-localization",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "uwb",
+      "stm32",
+      "swarm"
+    ],
+    "language": "C",
+    "domains": [
+      "air",
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Custom hardware; dormant since 2023.",
+    "related": [
+      {
+        "id": "repo:eth-pbl/swarm-relative-localization",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:williamwenda/uwb_tdoa_dataset",
+    "kind": "repo",
+    "name": "UTIL UWB TDoA dataset tools",
+    "url": "https://github.com/Williamwenda/UWB_TDOA_dataset",
+    "summary": "Dataset and scripts for UWB time-difference-of-arrival measurements from Bitcraze's Loco Positioning System, collected by University of Toronto.",
+    "why_it_matters": "Real UWB data for testing ranging-based estimators without hardware.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:rf-localization"
+    ],
+    "tags": [
+      "uwb",
+      "tdoa",
+      "dataset",
+      "loco"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Download and run the provided EKF example as a baseline.",
+    "related": [
+      {
+        "id": "repo:bitcraze/lps-node-firmware",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:dstl/stone-soup",
+    "kind": "repo",
+    "name": "Stone Soup",
+    "url": "https://github.com/dstl/Stone-Soup",
+    "summary": "Open-source Python framework from UK Dstl and partners for developing, running and evaluating tracking and state estimation algorithms: Kalman variants, particle filters, JPDA, MHT, GM-PHD, track management and metrics.",
+    "why_it_matters": "The most complete open multi-target tracking toolkit; the natural backbone for radar/RF/vision drone tracking and sensor fusion.",
+    "concepts": [
+      "concept:target-tracking",
+      "concept:sensor-fusion",
+      "concept:counter-uas",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "dstl",
+      "tracking",
+      "jpda",
+      "phd",
+      "kalman",
+      "metrics"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi",
+      "air",
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install stonesoup; adapt one of the tutorials (Kalman, JPDA, GM-PHD) to your detections. Built-in metrics make an honest evaluation slide.",
+    "related": [
+      {
+        "id": "repo:erikliland/pymht",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:ntnu-itk-autonomous-ship-lab/vimmjipda",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:erikliland/pymht",
+    "kind": "repo",
+    "name": "pyMHT",
+    "url": "https://github.com/erikliland/pyMHT",
+    "summary": "Track-oriented multi-hypothesis multi-target tracker in Python developed for maritime radar tracking research.",
+    "why_it_matters": "Compact MHT implementation for comparison against Stone Soup.",
+    "concepts": [
+      "concept:target-tracking",
+      "concept:maritime-nav"
+    ],
+    "tags": [
+      "mht",
+      "radar",
+      "tracking"
+    ],
+    "language": "Python",
+    "domains": [
+      "maritime"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Dormant; useful as a readable algorithm reference.",
+    "related": [
+      {
+        "id": "repo:dstl/stone-soup",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:wmuron/motpy",
+    "kind": "repo",
+    "name": "motpy",
+    "url": "https://github.com/wmuron/motpy",
+    "summary": "Simple Python library for tracking-by-detection multi-object tracking with Kalman filters and IoU/feature association.",
+    "why_it_matters": "Fast, minimal tracker to sit behind a drone detector in a demo.",
+    "concepts": [
+      "concept:target-tracking"
+    ],
+    "tags": [
+      "mot",
+      "kalman",
+      "tracking-by-detection"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "pip install motpy; a few lines to track YOLO boxes.",
+    "related": [
+      {
+        "id": "repo:mikel-brostrom/boxmot",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:mikel-brostrom/boxmot",
+    "kind": "repo",
+    "name": "BoxMOT",
+    "url": "https://github.com/mikel-brostrom/boxmot",
+    "summary": "Pluggable collection of modern multi-object trackers (ByteTrack, BoT-SORT, OC-SORT, StrongSORT and others) for detector outputs, in Python and C++.",
+    "why_it_matters": "Drop-in visual tracking for camera-based drone detection.",
+    "concepts": [
+      "concept:target-tracking",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "mot",
+      "bytetrack",
+      "yolo",
+      "reid"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install boxmot and wrap your detector; pick ByteTrack for speed.",
+    "related": [
+      {
+        "id": "repo:foundationvision/bytetrack",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:ultralytics/ultralytics",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:foundationvision/bytetrack",
+    "kind": "repo",
+    "name": "ByteTrack",
+    "url": "https://github.com/FoundationVision/ByteTrack",
+    "summary": "ECCV 2022 multi-object tracker that associates both high- and low-confidence detections, improving tracking through occlusion.",
+    "why_it_matters": "Strong baseline for tracking small, intermittently detected drones in video.",
+    "concepts": [
+      "concept:target-tracking"
+    ],
+    "tags": [
+      "mot",
+      "eccv2022"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Use via BoxMOT or Ultralytics tracker configs rather than the original training code.",
+    "related": [
+      {
+        "id": "repo:mikel-brostrom/boxmot",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:ultralytics/ultralytics",
+    "kind": "repo",
+    "name": "Ultralytics YOLO",
+    "url": "https://github.com/ultralytics/ultralytics",
+    "summary": "Widely used Python package for YOLO-family detection, segmentation and tracking with training, export to edge runtimes and built-in trackers.",
+    "why_it_matters": "Fastest route to a custom vision drone detector trained on Anti-UAV or similar data.",
+    "concepts": [
+      "concept:edge-ai",
+      "concept:target-tracking",
+      "concept:counter-uas"
+    ],
+    "tags": [
+      "yolo",
+      "detection",
+      "tracking"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install ultralytics; fine-tune on a drone dataset in hours with a GPU. Check AGPL licensing for deployment.",
+    "related": [
+      {
+        "id": "repo:zhaoj9014/anti-uav",
+        "rel": "evaluated_on"
+      },
+      {
+        "id": "repo:mikel-brostrom/boxmot",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:zhaoj9014/anti-uav",
+    "kind": "repo",
+    "name": "Anti-UAV",
+    "url": "https://github.com/ZhaoJ9014/Anti-UAV",
+    "summary": "Official repository of the Anti-UAV challenge and benchmark for detecting and tracking UAVs in RGB and thermal infrared video, with dataset links (Anti-UAV300/410/600) and baselines.",
+    "why_it_matters": "The main public benchmark for vision-based C-UAS tracking, including thermal.",
+    "concepts": [
+      "concept:counter-uas",
+      "concept:target-tracking",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "anti-uav",
+      "thermal",
+      "benchmark",
+      "dataset"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Download a subset, train a YOLO detector plus tracker, report on their metric.",
+    "related": [
+      {
+        "id": "repo:kostadinovshalon/uavdetectiontrackingbenchmark",
+        "rel": "evaluated_on"
+      },
+      {
+        "id": "repo:ultralytics/ultralytics",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:kostadinovshalon/uavdetectiontrackingbenchmark",
+    "kind": "repo",
+    "name": "UAV Detection and Tracking Benchmark",
+    "url": "https://github.com/KostadinovShalon/UAVDetectionTrackingBenchmark",
+    "summary": "Code and configs for benchmarking drone detection and tracking across Anti-UAV, Drone-vs-Bird and MAV-VID datasets, including format converters.",
+    "why_it_matters": "Saves time on dataset wrangling for a vision C-UAS comparison.",
+    "concepts": [
+      "concept:counter-uas",
+      "concept:datasets-benchmarks",
+      "concept:target-tracking"
+    ],
+    "tags": [
+      "drone-vs-bird",
+      "mav-vid",
+      "coco"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Use the COCO conversion scripts first.",
+    "related": [
+      {
+        "id": "repo:zhaoj9014/anti-uav",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:opendroneid/opendroneid-core-c",
+    "kind": "repo",
+    "name": "Open Drone ID core C",
+    "url": "https://github.com/opendroneid/opendroneid-core-c",
+    "summary": "Reference C library for encoding and decoding ASTM F3411 / ASD-STAN Remote ID messages carried over Bluetooth and Wi-Fi.",
+    "why_it_matters": "Foundation for any Remote ID receiver; cooperative drone identification is the first layer of C-UAS awareness.",
+    "concepts": [
+      "concept:counter-uas",
+      "concept:standards",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "remote-id",
+      "astm-f3411",
+      "bluetooth",
+      "wifi"
+    ],
+    "language": "C",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Compile and link into an ESP32 or Linux sniffer; includes test vectors.",
+    "related": [
+      {
+        "id": "repo:opendroneid/receiver-android",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:opendroneid/transmitter-linux",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:opendroneid/wireshark-dissector",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:opendroneid/receiver-android",
+    "kind": "repo",
+    "name": "Open Drone ID Android receiver",
+    "url": "https://github.com/opendroneid/receiver-android",
+    "summary": "Example Android app that receives and displays Remote ID broadcasts over Bluetooth and Wi-Fi.",
+    "why_it_matters": "A phone becomes a Remote ID sensor with zero hardware.",
+    "concepts": [
+      "concept:counter-uas",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "remote-id",
+      "android",
+      "ble"
+    ],
+    "language": "Java",
+    "domains": [
+      "air",
+      "dismounted"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Build in Android Studio or use a store build; test with transmitter-linux on a laptop.",
+    "related": [
+      {
+        "id": "repo:opendroneid/opendroneid-core-c",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:opendroneid/transmitter-linux",
+    "kind": "repo",
+    "name": "Open Drone ID Linux transmitter",
+    "url": "https://github.com/opendroneid/transmitter-linux",
+    "summary": "Example Linux transmitter for Remote ID over Bluetooth and Wi-Fi.",
+    "why_it_matters": "Lets a team generate test Remote ID traffic without a drone.",
+    "concepts": [
+      "concept:counter-uas"
+    ],
+    "tags": [
+      "remote-id",
+      "test-signal"
+    ],
+    "language": "C",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs compatible Bluetooth/Wi-Fi chipsets; dormant since 2023.",
+    "related": [
+      {
+        "id": "repo:opendroneid/opendroneid-core-c",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:opendroneid/wireshark-dissector",
+    "kind": "repo",
+    "name": "Open Drone ID Wireshark dissector",
+    "url": "https://github.com/opendroneid/wireshark-dissector",
+    "summary": "Lua Wireshark dissector that decodes Remote ID broadcast frames over Wi-Fi and Bluetooth.",
+    "why_it_matters": "Debugging aid for Remote ID sniffers.",
+    "concepts": [
+      "concept:counter-uas"
+    ],
+    "tags": [
+      "remote-id",
+      "wireshark"
+    ],
+    "language": "Lua",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Drop the Lua into the Wireshark plugin folder.",
+    "related": [
+      {
+        "id": "repo:opendroneid/opendroneid-core-c",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:peterjburke/rid",
+    "kind": "repo",
+    "name": "RID (ESP32 Remote ID receiver)",
+    "url": "https://github.com/PeterJBurke/RID",
+    "summary": "ESP32 Remote ID receiver built on opendroneid-core-c and a fork of sxjack's electronic ID classes.",
+    "why_it_matters": "Ten-dollar Remote ID sensor node.",
+    "concepts": [
+      "concept:counter-uas",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "remote-id",
+      "esp32"
+    ],
+    "language": "C",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Arduino toolchain; flash and read decoded drones over serial.",
+    "related": [
+      {
+        "id": "repo:sxjack/uav_electronic_ids",
+        "rel": "fork_of"
+      },
+      {
+        "id": "repo:opendroneid/opendroneid-core-c",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:sxjack/uav_electronic_ids",
+    "kind": "repo",
+    "name": "uav_electronic_ids",
+    "url": "https://github.com/sxjack/uav_electronic_ids",
+    "summary": "Arduino classes for UAV electronic ID formats and ATM/UTM interfaces, including Remote ID transmit and receive on ESP32.",
+    "why_it_matters": "Upstream of many hobbyist Remote ID boards.",
+    "concepts": [
+      "concept:counter-uas",
+      "concept:standards"
+    ],
+    "tags": [
+      "remote-id",
+      "arduino",
+      "esp32"
+    ],
+    "language": "C",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Arduino IDE; examples cover receivers.",
+    "related": [
+      {
+        "id": "repo:opendroneid/opendroneid-core-c",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:alphafox02/dragonsync",
+    "kind": "repo",
+    "name": "DragonSync",
+    "url": "https://github.com/alphafox02/DragonSync",
+    "summary": "Gateway that converts WarDragon drone detections (Remote ID, DJI DroneID, ADS-B) into Cursor-on-Target for TAK/ATAK and optionally MQTT.",
+    "why_it_matters": "Shows the end-to-end C-UAS chain from RF sniffers into a common operating picture.",
+    "concepts": [
+      "concept:counter-uas",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "cot",
+      "tak",
+      "remote-id",
+      "droneid",
+      "adsb"
+    ],
+    "language": "Python",
+    "domains": [
+      "air",
+      "dismounted"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Designed for the WarDragon kit but runs on Linux with ZMQ inputs; pair with FreeTAKServer.",
+    "related": [
+      {
+        "id": "repo:freetakteam/freetakserver",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:alphafox02/wardragon",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:anarkiwi/samples2djidroneid",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:alphafox02/wardragon",
+    "kind": "repo",
+    "name": "WarDragon docs",
+    "url": "https://github.com/alphafox02/WarDragon",
+    "summary": "Documentation hub for WarDragon, an SDR-based RF sensing appliance for drone detection; open components are documented here, while commercial kits add closed features.",
+    "why_it_matters": "Useful architecture reference for a low-cost RF C-UAS sensor.",
+    "concepts": [
+      "concept:counter-uas",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "sdr",
+      "rf-detection",
+      "docs"
+    ],
+    "language": "HTML",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Docs only; follow links to the open component repos.",
+    "related": [
+      {
+        "id": "repo:alphafox02/dragonsync",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:alphafox02/wardragon-fpv-detect",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:alphafox02/wardragon-fpv-detect",
+    "kind": "repo",
+    "name": "WarDragon FPV energy scan",
+    "url": "https://github.com/alphafox02/wardragon-fpv-detect",
+    "summary": "GNU Radio based scanner that checks known analog FPV video frequencies for energy and publishes alerts over ZMQ; the optional confirmation detector is closed source.",
+    "why_it_matters": "Simple, explainable RF detection of FPV drones, a growing threat class.",
+    "concepts": [
+      "concept:counter-uas",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "fpv",
+      "gnuradio",
+      "sdr",
+      "energy-detection"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs GNU Radio 3.10, gr-inspector and an SDR such as Pluto.",
+    "related": [
+      {
+        "id": "repo:alphafox02/wardragon",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:anarkiwi/samples2djidroneid",
+    "kind": "repo",
+    "name": "samples2djidroneid",
+    "url": "https://github.com/anarkiwi/samples2djidroneid",
+    "summary": "Decodes DJI DroneID (OcuSync 2.0) frames from SDR I/Q recordings, building on proto17's reverse engineering and Kismet.",
+    "why_it_matters": "Recovers DJI drone and pilot location telemetry from RF, filling the gap for drones without standard Remote ID.",
+    "concepts": [
+      "concept:counter-uas",
+      "concept:rf-localization"
+    ],
+    "tags": [
+      "dji",
+      "droneid",
+      "ocusync",
+      "sdr"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs high-rate I/Q captures; decoding is slow with interference.",
+    "related": [
+      {
+        "id": "repo:proto17/dji_droneid",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:rub-syssec/dronesecurity",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:proto17/dji_droneid",
+    "kind": "repo",
+    "name": "dji_droneid",
+    "url": "https://github.com/proto17/dji_droneid",
+    "summary": "Original reverse engineering of DJI DroneID with MATLAB scripts and a GNU Radio module to demodulate frames.",
+    "why_it_matters": "Foundational work behind open DJI DroneID decoders.",
+    "concepts": [
+      "concept:counter-uas"
+    ],
+    "tags": [
+      "dji",
+      "droneid",
+      "gnuradio",
+      "matlab"
+    ],
+    "language": "MATLAB",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Use for understanding the PHY; prefer samples2djidroneid for decoding.",
+    "related": [
+      {
+        "id": "repo:anarkiwi/samples2djidroneid",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:rub-syssec/dronesecurity",
+    "kind": "repo",
+    "name": "DroneSecurity (NDSS 2023)",
+    "url": "https://github.com/RUB-SysSec/DroneSecurity",
+    "summary": "Ruhr University Bochum receiver for DJI DroneID that works live with an SDR or offline on captures, released with their NDSS 2023 security analysis.",
+    "why_it_matters": "Peer-reviewed DroneID decoder; authors note it is not being extended.",
+    "concepts": [
+      "concept:counter-uas"
+    ],
+    "tags": [
+      "dji",
+      "droneid",
+      "ndss",
+      "usrp"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Run offline on the provided samples first; live mode needs UHD and a USRP.",
+    "related": [
+      {
+        "id": "repo:anarkiwi/samples2djidroneid",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:kitoweeknd/rfuav",
+    "kind": "repo",
+    "name": "RFUAV",
+    "url": "https://github.com/kitoweeknd/RFUAV",
+    "summary": "Code for the RFUAV benchmark dataset for UAV detection and identification from RF signals, using a two-stage STFT spectrogram detection and classification model.",
+    "why_it_matters": "Recent learned RF drone classification with a public dataset.",
+    "concepts": [
+      "concept:counter-uas",
+      "concept:datasets-benchmarks",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "rf-detection",
+      "spectrogram",
+      "dataset"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Start from the provided spectrogram models; raw data size is large.",
+    "related": [
+      {
+        "id": "repo:al-sad/dronerf",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:al-sad/dronerf",
+    "kind": "repo",
+    "name": "DroneRF",
+    "url": "https://github.com/Al-Sad/DroneRF",
+    "summary": "MATLAB and Python code for drone detection and identification from RF signals, accompanying the DroneRF dataset.",
+    "why_it_matters": "Widely cited RF detection baseline.",
+    "concepts": [
+      "concept:counter-uas",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "rf-detection",
+      "dataset",
+      "matlab"
+    ],
+    "language": "MATLAB",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Dormant since 2021; good for a quick baseline classifier.",
+    "related": [
+      {
+        "id": "repo:kitoweeknd/rfuav",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:agamrossen/volanti",
+    "kind": "repo",
+    "name": "VolAnti",
+    "url": "https://github.com/agamrossen/VolAnti",
+    "summary": "Open-source acoustic drone detector that listens for propeller noise; explicitly detection and alerting only.",
+    "why_it_matters": "Acoustic sensing covers drones that emit no RF, such as fibre-optic FPVs.",
+    "concepts": [
+      "concept:counter-uas",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "acoustic",
+      "detection",
+      "embedded"
+    ],
+    "language": "C",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Breadboard build guide; new project, verify claims on your own recordings.",
+    "related": [
+      {
+        "id": "repo:batear-io/batear",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:batear-io/batear",
+    "kind": "repo",
+    "name": "Batear",
+    "url": "https://github.com/batear-io/batear",
+    "summary": "Low-cost edge-only acoustic drone detector on ESP32-S3 with encrypted LoRa or Ethernet alerting.",
+    "why_it_matters": "Cheap distributed acoustic sensor network for perimeter awareness.",
+    "concepts": [
+      "concept:counter-uas",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "acoustic",
+      "esp32",
+      "lora"
+    ],
+    "language": "C",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ESP-IDF build; tune thresholds per site.",
+    "related": [
+      {
+        "id": "repo:agamrossen/volanti",
+        "rel": "alternative_to"
+      }
+    ]
+  }
+]

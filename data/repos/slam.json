@@ -1,0 +1,2474 @@
+[
+  {
+    "id": "repo:raulmur/orb_slam2",
+    "kind": "repo",
+    "name": "ORB-SLAM2",
+    "url": "https://github.com/raulmur/ORB_SLAM2",
+    "summary": "Feature-based SLAM for monocular, stereo and RGB-D cameras using ORB features, with loop closing and relocalization against a reusable map.",
+    "why_it_matters": "The reference visual SLAM baseline most papers compare against; cheap camera-only localization when GNSS is denied.",
+    "concepts": [
+      "concept:visual-slam",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "orb",
+      "bundle-adjustment",
+      "loop-closure",
+      "c++"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Superseded by ORB-SLAM3 and no longer developed; builds need patching on modern OpenCV/Eigen. Use only to reproduce old baselines.",
+    "related": [
+      {
+        "id": "repo:uz-slamlab/orb_slam3",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:uz-slamlab/orb_slam3",
+    "kind": "repo",
+    "name": "ORB-SLAM3",
+    "url": "https://github.com/UZ-SLAMLab/ORB_SLAM3",
+    "summary": "Visual, visual-inertial and multi-map SLAM supporting monocular, stereo and RGB-D cameras with pinhole and fisheye models, using a map atlas to survive tracking loss.",
+    "why_it_matters": "Still the most cited open VI-SLAM system; a solid GNSS-denied drift baseline for drones and ground robots.",
+    "concepts": [
+      "concept:visual-slam",
+      "concept:vio",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "orb",
+      "imu",
+      "multi-map",
+      "fisheye",
+      "c++"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground",
+      "dismounted"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Build against Pangolin, OpenCV and Eigen; expect a few compile fixes. Run on EuRoC or TUM-VI first, then your own camera after Kalibr calibration. Upstream sees little activity.",
+    "related": [
+      {
+        "id": "repo:raulmur/orb_slam2",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:zang09/orb_slam3_ros2",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ethz-asl/kalibr",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:michaelgrupp/evo",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:zang09/orb_slam3_ros2",
+    "kind": "repo",
+    "name": "ORB_SLAM3_ROS2",
+    "url": "https://github.com/zang09/ORB_SLAM3_ROS2",
+    "summary": "ROS 2 wrapper package that exposes ORB-SLAM3 as nodes for monocular, stereo and RGB-D input.",
+    "why_it_matters": "Shortest path to running ORB-SLAM3 inside a ROS 2 robot stack.",
+    "concepts": [
+      "concept:visual-slam",
+      "concept:ros"
+    ],
+    "tags": [
+      "ros2",
+      "wrapper",
+      "orb-slam3"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Needs a working ORB-SLAM3 build first; check the README for the ROS 2 distro it targets before choosing your Docker base image.",
+    "related": [
+      {
+        "id": "repo:uz-slamlab/orb_slam3",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:hkust-aerial-robotics/vins-mono",
+    "kind": "repo",
+    "name": "VINS-Mono",
+    "url": "https://github.com/HKUST-Aerial-Robotics/VINS-Mono",
+    "summary": "Optimization-based monocular visual-inertial estimator with sliding-window bundle adjustment, online initialization, loop closure and pose-graph reuse.",
+    "why_it_matters": "The canonical one-camera-plus-IMU estimator; works on light UAV payloads where stereo or LiDAR is too heavy.",
+    "concepts": [
+      "concept:vio",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "sliding-window",
+      "ceres",
+      "ros1",
+      "loop-closure"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1 only and no longer maintained; run in a Melodic/Noetic container. Sensitive to time sync and initialization motion.",
+    "related": [
+      {
+        "id": "repo:hkust-aerial-robotics/vins-fusion",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:hkust-aerial-robotics/vins-fusion",
+    "kind": "repo",
+    "name": "VINS-Fusion",
+    "url": "https://github.com/HKUST-Aerial-Robotics/VINS-Fusion",
+    "summary": "Extension of VINS-Mono supporting mono+IMU, stereo, and stereo+IMU, with optional loose fusion of global sensors such as GPS.",
+    "why_it_matters": "Shows how to plug intermittent GNSS into a VIO estimator, which is the core pattern for degraded-PNT navigation.",
+    "concepts": [
+      "concept:vio",
+      "concept:sensor-fusion",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "stereo",
+      "gps-fusion",
+      "ceres",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1; use a Docker image. The global-fusion node is a good template for injecting GNSS when it is trusted and dropping it when jammed.",
+    "related": [
+      {
+        "id": "repo:hkust-aerial-robotics/vins-mono",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:rpng/open_vins",
+    "kind": "repo",
+    "name": "OpenVINS",
+    "url": "https://github.com/rpng/open_vins",
+    "summary": "MSCKF-based visual-inertial navigation platform with online calibration, a simulator, and extensive documentation for research use.",
+    "why_it_matters": "Probably the best-documented VIO codebase; filter-based, light enough for embedded boards.",
+    "concepts": [
+      "concept:vio",
+      "concept:calibration",
+      "concept:simulation"
+    ],
+    "tags": [
+      "msckf",
+      "ekf",
+      "ros1",
+      "ros2",
+      "simulator"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Supports ROS 1 and ROS 2. Its built-in simulator lets you test without hardware on day one. Docs site explains every estimator component.",
+    "related": [
+      {
+        "id": "repo:rpng/mins",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:kumarrobotics/msckf_vio",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:michaelgrupp/evo",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:rpng/mins",
+    "kind": "repo",
+    "name": "MINS",
+    "url": "https://github.com/rpng/MINS",
+    "summary": "Multi-sensor aided inertial navigation that fuses IMU with camera, LiDAR, GNSS and wheel odometry, including online spatial/temporal calibration and a multi-sensor simulator.",
+    "why_it_matters": "Directly relevant to assured PNT: one estimator that degrades gracefully as individual sensors (including GNSS) drop out.",
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:vio",
+      "concept:gnss-ins",
+      "concept:calibration"
+    ],
+    "tags": [
+      "msckf",
+      "wheel-odometry",
+      "gnss",
+      "lidar",
+      "simulator"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Start with the provided simulated data to see each sensor's contribution, then disable GNSS mid-run to demo a jamming scenario.",
+    "related": [
+      {
+        "id": "repo:rpng/open_vins",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:mit-spark/kimera-vio",
+    "kind": "repo",
+    "name": "Kimera-VIO",
+    "url": "https://github.com/MIT-SPARK/Kimera-VIO",
+    "summary": "Stereo visual-inertial odometry with a factor-graph backend, robust loop closure and real-time 3D mesh generation; the odometry core of the Kimera stack.",
+    "why_it_matters": "Gives both a pose and a lightweight 3D mesh, useful for situational-awareness displays.",
+    "concepts": [
+      "concept:vio",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "gtsam",
+      "mesh",
+      "factor-graph",
+      "stereo"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Heavier build (GTSAM, OpenGV, DBoW2); use the Docker setup. The ROS wrapper lives in a separate repo.",
+    "related": [
+      {
+        "id": "repo:mit-spark/kimera-rpgo",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:borglab/gtsam",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:mit-spark/kimera-multi",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:mit-spark/kimera-rpgo",
+    "kind": "repo",
+    "name": "Kimera-RPGO",
+    "url": "https://github.com/MIT-SPARK/Kimera-RPGO",
+    "summary": "Robust pose-graph optimization that rejects bad loop closures via pairwise consistency maximization on top of GTSAM.",
+    "why_it_matters": "Outlier-robust loop closure is what keeps a long GNSS-denied mission from corrupting its map; reusable outside Kimera.",
+    "concepts": [
+      "concept:visual-slam",
+      "concept:lidar-slam",
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "pose-graph",
+      "pcm",
+      "outlier-rejection",
+      "gtsam"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Small library; feed it any odometry + loop closure edges. Good drop-in back end for a custom front end.",
+    "related": [
+      {
+        "id": "repo:borglab/gtsam",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:vladyslavusenko/basalt",
+    "kind": "repo",
+    "name": "Basalt",
+    "url": "https://github.com/VladyslavUsenko/basalt",
+    "summary": "GitHub mirror of Basalt, a visual-inertial odometry and mapping system built around non-linear factor recovery, with calibration tools; primary development is on GitLab.",
+    "why_it_matters": "Fast, accurate stereo VIO that runs well on CPUs; also ships camera-IMU calibration.",
+    "concepts": [
+      "concept:vio",
+      "concept:calibration"
+    ],
+    "tags": [
+      "stereo",
+      "factor-recovery",
+      "gitlab-mirror"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Submit issues upstream on GitLab. Builds cleanly on Ubuntu; ROS integration is via community wrappers.",
+    "related": [
+      {
+        "id": "repo:rpng/open_vins",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:uzh-rpg/rpg_svo_pro_open",
+    "kind": "repo",
+    "name": "SVO Pro",
+    "url": "https://github.com/uzh-rpg/rpg_svo_pro_open",
+    "summary": "Open release of SVO Pro: semi-direct visual(-inertial) odometry with fisheye/omni camera support, optional global map and loop closure.",
+    "why_it_matters": "Very low-latency front end suited to fast agile flight on compute-limited drones.",
+    "concepts": [
+      "concept:vio",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "semi-direct",
+      "fisheye",
+      "ros1",
+      "agile-flight"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1 / catkin build; dormant since 2024. Good when CPU budget is tight.",
+    "related": [
+      {
+        "id": "repo:ethz-asl/rovio",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:jakobengel/dso",
+    "kind": "repo",
+    "name": "DSO (Direct Sparse Odometry)",
+    "url": "https://github.com/JakobEngel/dso",
+    "summary": "Direct monocular visual odometry that optimizes photometric error over a sparse set of pixels with joint photometric calibration.",
+    "why_it_matters": "Works in low-texture scenes where feature-based methods fail; the basis for DM-VIO and many direct methods.",
+    "concepts": [
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "direct",
+      "photometric",
+      "monocular"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "No IMU, no loop closure, scale-ambiguous; mostly useful as a building block or comparison.",
+    "related": [
+      {
+        "id": "repo:lukasvst/dm-vio",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:lukasvst/dm-vio",
+    "kind": "repo",
+    "name": "DM-VIO",
+    "url": "https://github.com/lukasvst/dm-vio",
+    "summary": "Monocular visual-inertial odometry built on DSO using delayed marginalization and pose-graph bundle adjustment for IMU initialization.",
+    "why_it_matters": "Strong monocular VIO accuracy; good for single-camera drones.",
+    "concepts": [
+      "concept:vio"
+    ],
+    "tags": [
+      "direct",
+      "delayed-marginalization",
+      "monocular"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Standalone build with an optional ROS wrapper repo. Expects photometrically calibrated input for best results.",
+    "related": [
+      {
+        "id": "repo:jakobengel/dso",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:ethz-asl/rovio",
+    "kind": "repo",
+    "name": "ROVIO",
+    "url": "https://github.com/ethz-asl/rovio",
+    "summary": "Robust visual-inertial odometry using an iterated EKF directly on image-patch photometric errors.",
+    "why_it_matters": "Long a go-to VIO on PX4/MAV research platforms because it is cheap to run.",
+    "concepts": [
+      "concept:vio"
+    ],
+    "tags": [
+      "iekf",
+      "patch-based",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1 / catkin. Lightweight; tuning of patch and feature counts matters.",
+    "related": [
+      {
+        "id": "repo:ntnu-arl/rovtio",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:kumarrobotics/msckf_vio",
+    "kind": "repo",
+    "name": "MSCKF_VIO",
+    "url": "https://github.com/KumarRobotics/msckf_vio",
+    "summary": "Stereo multi-state constraint Kalman filter VIO designed for fast autonomous flight.",
+    "why_it_matters": "Lean filter-based stereo VIO that runs comfortably on embedded CPUs.",
+    "concepts": [
+      "concept:vio"
+    ],
+    "tags": [
+      "msckf",
+      "stereo",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1; unmaintained. Tested heavily on EuRoC; good comparison point to OpenVINS.",
+    "related": [
+      {
+        "id": "repo:rpng/open_vins",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ethz-mrl/okvis2",
+    "kind": "repo",
+    "name": "OKVIS2",
+    "url": "https://github.com/ethz-mrl/okvis2",
+    "summary": "Keyframe-based visual-inertial SLAM with loop closure and a realtime scalable factor-graph design; second generation of OKVIS.",
+    "why_it_matters": "Mature research VI-SLAM from the ETH/TUM lineage with active maintenance.",
+    "concepts": [
+      "concept:vio",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "keyframe",
+      "loop-closure",
+      "factor-graph"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "CMake build; check the README for ROS integration and the camera/IMU config format for your sensor.",
+    "related": [
+      {
+        "id": "repo:ethz-mrl/okvis2-x",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:ethz-mrl/okvis2-x",
+    "kind": "repo",
+    "name": "OKVIS2-X",
+    "url": "https://github.com/ethz-mrl/OKVIS2-X",
+    "summary": "Extension of OKVIS2 that can additionally use dense depth or LiDAR and fuse GNSS.",
+    "why_it_matters": "Recent (2025-2026) multi-sensor VI-SLAM that includes GNSS fusion, matching assured-PNT architectures.",
+    "concepts": [
+      "concept:vio",
+      "concept:sensor-fusion",
+      "concept:gnss-ins",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "gnss",
+      "lidar",
+      "depth",
+      "2025"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "New codebase; expect some setup friction. Good showcase for switching GNSS on/off.",
+    "related": [
+      {
+        "id": "repo:ethz-mrl/okvis2",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:sair-lab/airslam",
+    "kind": "repo",
+    "name": "AirSLAM",
+    "url": "https://github.com/sair-lab/AirSLAM",
+    "summary": "Point-and-line visual(-inertial) SLAM using learned features, designed for illumination-robust operation, with TensorRT acceleration; successor to AirVO.",
+    "why_it_matters": "Targets lighting changes (dawn/dusk/night), a common failure mode for camera navigation.",
+    "concepts": [
+      "concept:visual-slam",
+      "concept:vio",
+      "concept:feature-matching",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "point-line",
+      "tensorrt",
+      "illumination",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs an NVIDIA GPU (TensorRT). Docker recommended.",
+    "related": [
+      {
+        "id": "repo:uz-slamlab/orb_slam3",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ethz-asl/maplab",
+    "kind": "repo",
+    "name": "maplab",
+    "url": "https://github.com/ethz-asl/maplab",
+    "summary": "Modular multi-session, multi-modal mapping framework with map merging, optimization and localization against saved maps.",
+    "why_it_matters": "Build a map once, then localize repeatedly against it; supports multi-robot and multi-session merges.",
+    "concepts": [
+      "concept:visual-slam",
+      "concept:multi-agent",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "multi-session",
+      "map-merging",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Large ROS 1 codebase; only worth it if you need persistent map management.",
+    "related": [
+      {
+        "id": "repo:rpng/open_vins",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:introlab/rtabmap",
+    "kind": "repo",
+    "name": "RTAB-Map",
+    "url": "https://github.com/introlab/rtabmap",
+    "summary": "Graph-based SLAM library and app supporting RGB-D, stereo and LiDAR, with memory management for large-scale loop closure and map reuse.",
+    "why_it_matters": "Practical all-rounder with GUI, database and localization modes; easiest way to get a working 3D map on a ground robot.",
+    "concepts": [
+      "concept:visual-slam",
+      "concept:lidar-slam",
+      "concept:place-recognition",
+      "concept:ros"
+    ],
+    "tags": [
+      "rgbd",
+      "stereo",
+      "lidar",
+      "database",
+      "gui"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground",
+      "air",
+      "dismounted"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Install via apt binaries (ROS) or the standalone app. Supports phone/iPad LiDAR capture. Save a map, then switch to localization mode.",
+    "related": [
+      {
+        "id": "repo:introlab/rtabmap_ros",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:cartographer-project/cartographer",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:introlab/rtabmap_ros",
+    "kind": "repo",
+    "name": "rtabmap_ros",
+    "url": "https://github.com/introlab/rtabmap_ros",
+    "summary": "ROS and ROS 2 integration for RTAB-Map, exposing SLAM, localization and odometry nodes.",
+    "why_it_matters": "Drop-in SLAM for ROS 2 Nav2 stacks.",
+    "concepts": [
+      "concept:visual-slam",
+      "concept:ros",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "ros2",
+      "nav2",
+      "launch"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "apt-installable for supported distros; launch examples cover common sensors.",
+    "related": [
+      {
+        "id": "repo:introlab/rtabmap",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:princeton-vl/droid-slam",
+    "kind": "repo",
+    "name": "DROID-SLAM",
+    "url": "https://github.com/princeton-vl/DROID-SLAM",
+    "summary": "Deep visual SLAM that iterates dense bundle adjustment through a recurrent update operator, for monocular, stereo and RGB-D input.",
+    "why_it_matters": "Much more robust than classic pipelines on hard sequences; strong learned baseline.",
+    "concepts": [
+      "concept:visual-slam",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "deep-learning",
+      "dense-ba",
+      "pytorch"
+    ],
+    "language": "Python",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs a large-memory NVIDIA GPU; not real-time on embedded. Pretrained weights available.",
+    "related": [
+      {
+        "id": "repo:princeton-vl/dpvo",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:rmurai0610/mast3r-slam",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:princeton-vl/dpvo",
+    "kind": "repo",
+    "name": "DPVO / DPV-SLAM",
+    "url": "https://github.com/princeton-vl/DPVO",
+    "summary": "Deep Patch Visual Odometry: learned sparse patch tracking for VO, plus DPV-SLAM with loop closure.",
+    "why_it_matters": "Lighter learned VO than DROID-SLAM, closer to real-time on a desktop GPU.",
+    "concepts": [
+      "concept:visual-slam",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "deep-learning",
+      "patch",
+      "pytorch"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "CUDA build of custom kernels; follow the conda instructions.",
+    "related": [
+      {
+        "id": "repo:princeton-vl/droid-slam",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:rmurai0610/mast3r-slam",
+    "kind": "repo",
+    "name": "MASt3R-SLAM",
+    "url": "https://github.com/rmurai0610/MASt3R-SLAM",
+    "summary": "Real-time dense monocular SLAM built on the MASt3R two-view 3D reconstruction prior, needing no fixed camera model (CVPR 2025).",
+    "why_it_matters": "Works with uncalibrated cameras, useful for opportunistic imagery from unknown cameras.",
+    "concepts": [
+      "concept:visual-slam",
+      "concept:feature-matching",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "3d-foundation-model",
+      "dense",
+      "uncalibrated",
+      "2025"
+    ],
+    "language": "Python",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Requires a capable NVIDIA GPU and model checkpoint downloads. Great demo value on handheld video.",
+    "related": [
+      {
+        "id": "repo:facebookresearch/vggt",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:princeton-vl/droid-slam",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:facebookresearch/vggt",
+    "kind": "repo",
+    "name": "VGGT",
+    "url": "https://github.com/facebookresearch/vggt",
+    "summary": "Visual Geometry Grounded Transformer: a feed-forward network predicting camera poses, depth and point maps from one or many images (CVPR 2025 best paper).",
+    "why_it_matters": "Instant pose and geometry from a handful of frames; a building block for learned relocalization and mapping.",
+    "concepts": [
+      "concept:visual-slam",
+      "concept:feature-matching",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "transformer",
+      "feed-forward",
+      "sfm",
+      "2025"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "GPU inference via PyTorch; Hugging Face demo for quick tests. Not a full SLAM system by itself.",
+    "related": [
+      {
+        "id": "repo:rmurai0610/mast3r-slam",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:muskie82/monogs",
+    "kind": "repo",
+    "name": "MonoGS (Gaussian Splatting SLAM)",
+    "url": "https://github.com/muskie82/MonoGS",
+    "summary": "Gaussian-splatting SLAM for monocular, stereo and RGB-D cameras that tracks and maps directly against a 3D Gaussian representation.",
+    "why_it_matters": "Produces photorealistic maps useful for operator situational awareness and later simulation.",
+    "concepts": [
+      "concept:visual-slam",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "3dgs",
+      "dense",
+      "pytorch"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Needs a strong GPU; not real-time on embedded hardware. Best as an offline mapping demo.",
+    "related": [
+      {
+        "id": "repo:spla-tam/splatam",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:huajianup/photo-slam",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:spla-tam/splatam",
+    "kind": "repo",
+    "name": "SplaTAM",
+    "url": "https://github.com/spla-tam/SplaTAM",
+    "summary": "Dense RGB-D SLAM that tracks and maps using 3D Gaussians and differentiable rendering (CVPR 2024).",
+    "why_it_matters": "Reference Gaussian-splatting SLAM for RGB-D sensors.",
+    "concepts": [
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "3dgs",
+      "rgbd",
+      "pytorch"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "GPU-heavy and slower than real time; good for offline indoor captures.",
+    "related": [
+      {
+        "id": "repo:muskie82/monogs",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:huajianup/photo-slam",
+    "kind": "repo",
+    "name": "Photo-SLAM",
+    "url": "https://github.com/HuajianUP/Photo-SLAM",
+    "summary": "Couples ORB-SLAM3-style geometric tracking with a photorealistic Gaussian map for monocular, stereo and RGB-D cameras (CVPR 2024).",
+    "why_it_matters": "Classic robust tracking plus a nice-looking map, closer to real time than pure splatting SLAM.",
+    "concepts": [
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "3dgs",
+      "orb-slam3",
+      "libtorch"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "LibTorch + CUDA build; check version pins carefully.",
+    "related": [
+      {
+        "id": "repo:uz-slamlab/orb_slam3",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:muskie82/monogs",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:hkust-aerial-robotics/esvo",
+    "kind": "repo",
+    "name": "ESVO",
+    "url": "https://github.com/HKUST-Aerial-Robotics/ESVO",
+    "summary": "Event-based stereo visual odometry using spatio-temporal consistency of two event cameras for mapping and tracking.",
+    "why_it_matters": "Event cameras keep working under high dynamic range and fast motion, where frame cameras blur or saturate.",
+    "concepts": [
+      "concept:vio",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "event-camera",
+      "stereo",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Needs stereo event cameras or recorded datasets; ROS 1.",
+    "related": [
+      {
+        "id": "repo:uzh-rpg/rpg_ultimate_slam_open",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:uzh-rpg/rpg_ultimate_slam_open",
+    "kind": "repo",
+    "name": "Ultimate SLAM",
+    "url": "https://github.com/uzh-rpg/rpg_ultimate_slam_open",
+    "summary": "Open-source release of Ultimate SLAM, combining events, standard frames and IMU for VIO in HDR and high-speed scenarios (RA-L 2018).",
+    "why_it_matters": "Template for fusing event cameras with frames and IMU for robust flight state estimation.",
+    "concepts": [
+      "concept:vio"
+    ],
+    "tags": [
+      "event-camera",
+      "hdr",
+      "imu",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "ROS 1 / catkin; test on event datasets before buying hardware.",
+    "related": [
+      {
+        "id": "repo:uzh-rpg/event-based_vision_resources",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:uzh-rpg/event-based_vision_resources",
+    "kind": "repo",
+    "name": "Event-based Vision Resources",
+    "url": "https://github.com/uzh-rpg/event-based_vision_resources",
+    "summary": "Community-curated list of event-camera papers, datasets, drivers, simulators and code.",
+    "why_it_matters": "Fastest way to find event-camera datasets and odometry code.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:vio"
+    ],
+    "tags": [
+      "event-camera",
+      "awesome-list"
+    ],
+    "language": "",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Use as a discovery index; not runnable code.",
+    "related": []
+  },
+  {
+    "id": "repo:arclab-hku/event_based_vo-vio-slam",
+    "kind": "repo",
+    "name": "HKU Event-based VO/VIO/SLAM",
+    "url": "https://github.com/arclab-hku/Event_based_VO-VIO-SLAM",
+    "summary": "Dataset and index of event-based VO, VIO and SLAM work from HKU ArcLab, including stereo event sequences.",
+    "why_it_matters": "Ready-made event data for testing event odometry without hardware.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:vio"
+    ],
+    "tags": [
+      "event-camera",
+      "dataset"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Download sequences as rosbags; pair with ESVO.",
+    "related": [
+      {
+        "id": "repo:hkust-aerial-robotics/esvo",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:ntnu-arl/rovtio",
+    "kind": "repo",
+    "name": "ROVTIO",
+    "url": "https://github.com/ntnu-arl/rovtio",
+    "summary": "Visual-thermal-inertial odometry extending ROVIO to fuse asynchronous thermal and visual images with IMU, switching to whichever camera is informative.",
+    "why_it_matters": "Thermal keeps odometry alive in darkness and smoke; NTNU ARL targets subterranean and degraded environments.",
+    "concepts": [
+      "concept:vio",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "thermal",
+      "night",
+      "smoke",
+      "iekf"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs a thermal camera synced to IMU (or their datasets). Thermal calibration targets need a heated pattern.",
+    "related": [
+      {
+        "id": "repo:ethz-asl/rovio",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:hitsz-nrsl/etio",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:christopherdoer/rrxio",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:hitsz-nrsl/etio",
+    "kind": "repo",
+    "name": "ETIO",
+    "url": "https://github.com/HITSZ-NRSL/ETIO",
+    "summary": "Edge-based monocular thermal-inertial odometry that tracks thermal edges for visually degraded environments.",
+    "why_it_matters": "Low-cost night/smoke navigation from a single thermal camera plus IMU.",
+    "concepts": [
+      "concept:vio"
+    ],
+    "tags": [
+      "thermal",
+      "edges",
+      "degraded-visual"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Code released with the paper; try on public thermal datasets first.",
+    "related": [
+      {
+        "id": "repo:ntnu-arl/rovtio",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:christopherdoer/rrxio",
+    "kind": "repo",
+    "name": "RRxIO",
+    "url": "https://github.com/christopherdoer/rrxio",
+    "summary": "Radar visual/thermal inertial odometry fusing 4D mmWave radar with a visual or thermal camera and IMU for degraded visual conditions.",
+    "why_it_matters": "Radar plus thermal is a strong combination for fog, smoke and darkness.",
+    "concepts": [
+      "concept:radar-nav",
+      "concept:vio",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "thermal",
+      "4d-radar",
+      "ekf",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1; datasets released by the author. Good for a degraded-visibility demo.",
+    "related": [
+      {
+        "id": "repo:christopherdoer/rio",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:ntnu-arl/rovtio",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:christopherdoer/rio",
+    "kind": "repo",
+    "name": "RIO",
+    "url": "https://github.com/christopherdoer/rio",
+    "summary": "EKF-based radar-inertial odometry using 4D mmWave radar ego-velocity measurements.",
+    "why_it_matters": "Cheap automotive radars give velocity in fog/smoke/darkness; a minimal radar odometry template.",
+    "concepts": [
+      "concept:radar-nav",
+      "concept:ins"
+    ],
+    "tags": [
+      "4d-radar",
+      "mmwave",
+      "ekf",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1; uses the author's radar ego-velocity estimator. Works with TI mmWave-class sensors.",
+    "related": [
+      {
+        "id": "repo:christopherdoer/rrxio",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:zhuge2333/4dradarslam",
+    "kind": "repo",
+    "name": "4DRadarSLAM",
+    "url": "https://github.com/zhuge2333/4DRadarSLAM",
+    "summary": "4D radar SLAM with scan-to-scan registration, loop closure and pose-graph optimization, released with an NTU 4D radar dataset.",
+    "why_it_matters": "One of the few full SLAM pipelines for 4D imaging radar, the all-weather sensor for ground vehicles.",
+    "concepts": [
+      "concept:radar-nav",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "4d-radar",
+      "gicp",
+      "pose-graph",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1; structured like hdl_graph_slam. Test on their dataset first.",
+    "related": [
+      {
+        "id": "repo:koide3/hdl_graph_slam",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:dan11003/cfear_radarodometry",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:dan11003/cfear_radarodometry",
+    "kind": "repo",
+    "name": "CFEAR Radarodometry",
+    "url": "https://github.com/dan11003/CFEAR_Radarodometry",
+    "summary": "Learning-free spinning-radar odometry that filters returns to sparse oriented surface points and registers against keyframes.",
+    "why_it_matters": "Strong baseline for spinning (Navtech-style) radar odometry; robust in weather that defeats LiDAR.",
+    "concepts": [
+      "concept:radar-nav"
+    ],
+    "tags": [
+      "spinning-radar",
+      "oxford-radar",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1; benchmarked on Oxford Radar RobotCar and Boreas.",
+    "related": [
+      {
+        "id": "repo:zhuge2333/4dradarslam",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:wooseongy/go-rio",
+    "kind": "repo",
+    "name": "Go-RIO",
+    "url": "https://github.com/wooseongY/Go-RIO",
+    "summary": "Ground-optimized 4D radar-inertial odometry integrating continuous velocity via Gaussian processes (ICRA 2025 best paper finalist).",
+    "why_it_matters": "Recent state of the art for 4D radar odometry on ground vehicles.",
+    "concepts": [
+      "concept:radar-nav",
+      "concept:ins"
+    ],
+    "tags": [
+      "4d-radar",
+      "gaussian-process",
+      "2025"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Recent code; check sensor assumptions against your radar.",
+    "related": [
+      {
+        "id": "repo:christopherdoer/rio",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:robotics-upo/gaussian-rio",
+    "kind": "repo",
+    "name": "Gaussian-RIO",
+    "url": "https://github.com/robotics-upo/gaussian-rio",
+    "summary": "4D radar-inertial odometry using Gaussian modeling of radar points and multi-hypothesis scan matching.",
+    "why_it_matters": "Another recent open 4D radar odometry baseline, useful for comparison.",
+    "concepts": [
+      "concept:radar-nav",
+      "concept:ins"
+    ],
+    "tags": [
+      "4d-radar",
+      "scan-matching"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Small research codebase; read the paper before integrating.",
+    "related": [
+      {
+        "id": "repo:wooseongy/go-rio",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:tixiaoshan/lio-sam",
+    "kind": "repo",
+    "name": "LIO-SAM",
+    "url": "https://github.com/TixiaoShan/LIO-SAM",
+    "summary": "Tightly coupled LiDAR-inertial odometry via factor-graph smoothing, with optional GPS factors and loop closure.",
+    "why_it_matters": "Popular LIO with built-in GNSS factors; the template for LiDAR+INS+intermittent GNSS.",
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:sensor-fusion",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "gtsam",
+      "factor-graph",
+      "gps",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "ROS 1 main branch, community ROS 2 branch. Needs a 9-axis IMU and careful extrinsics.",
+    "related": [
+      {
+        "id": "repo:borglab/gtsam",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:hku-mars/fast_lio",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:gisbi-kim/scancontext",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:hku-mars/fast_lio",
+    "kind": "repo",
+    "name": "FAST-LIO / FAST-LIO2",
+    "url": "https://github.com/hku-mars/FAST_LIO",
+    "summary": "Computationally efficient LiDAR-inertial odometry using an iterated error-state Kalman filter and incremental k-d tree map, mapping raw points directly.",
+    "why_it_matters": "The default LIO in many field robots; runs on ARM boards and supports solid-state and spinning LiDARs.",
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:ins"
+    ],
+    "tags": [
+      "iekf",
+      "ikd-tree",
+      "livox",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Easiest LIO to get running; Livox drivers supported. No loop closure; pair with a localization or loop-closure add-on.",
+    "related": [
+      {
+        "id": "repo:hku-mars/point-lio",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:hviktortsoi/fast_lio_localization",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:livox-sdk/livox_ros_driver2",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:gaoxiang12/faster-lio",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:hku-mars/point-lio",
+    "kind": "repo",
+    "name": "Point-LIO",
+    "url": "https://github.com/hku-mars/Point-LIO",
+    "summary": "High-bandwidth LiDAR-inertial odometry that updates the state point by point, tolerating aggressive motion and IMU saturation.",
+    "why_it_matters": "Handles violent motion (agile drones, vibration) where frame-based LIO breaks.",
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:ins"
+    ],
+    "tags": [
+      "point-wise",
+      "high-bandwidth",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Same ecosystem as FAST-LIO; try when FAST-LIO diverges on aggressive motion.",
+    "related": [
+      {
+        "id": "repo:hku-mars/fast_lio",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:hku-mars/fast-livo2",
+    "kind": "repo",
+    "name": "FAST-LIVO2",
+    "url": "https://github.com/hku-mars/FAST-LIVO2",
+    "summary": "Direct LiDAR-inertial-visual odometry fusing LiDAR, camera and IMU in a sequential ESIKF update with a unified voxel map.",
+    "why_it_matters": "High-accuracy colored mapping that stays robust when either LiDAR or camera degrades.",
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:vio",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "lidar-visual",
+      "esikf",
+      "colored-map"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs hardware-synced LiDAR+camera; datasets available.",
+    "related": [
+      {
+        "id": "repo:hku-mars/r3live",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:hku-mars/fast_lio",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:hku-mars/r3live",
+    "kind": "repo",
+    "name": "R3LIVE",
+    "url": "https://github.com/hku-mars/r3live",
+    "summary": "Tightly coupled LiDAR-inertial-visual estimation and RGB-colored mapping package.",
+    "why_it_matters": "Produces dense colored maps useful for operator displays and mapping.",
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:vio",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "lidar-visual",
+      "colored-map",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "ROS 1, heavy on dependencies; FAST-LIVO2 is the newer alternative.",
+    "related": [
+      {
+        "id": "repo:hku-mars/fast-livo2",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:hku-mars/lidar_imu_init",
+    "kind": "repo",
+    "name": "LI-Init",
+    "url": "https://github.com/hku-mars/LiDAR_IMU_Init",
+    "summary": "Real-time LiDAR-IMU initialization estimating temporal offset and extrinsics without a calibration target.",
+    "why_it_matters": "Removes the extrinsic-calibration blocker when bolting a LiDAR and IMU onto a new platform.",
+    "concepts": [
+      "concept:calibration",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "extrinsics",
+      "time-offset",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Wave the rig around for a minute; feed results into FAST-LIO.",
+    "related": [
+      {
+        "id": "repo:hku-mars/fast_lio",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:prbonn/kiss-icp",
+    "kind": "repo",
+    "name": "KISS-ICP",
+    "url": "https://github.com/PRBonn/kiss-icp",
+    "summary": "Minimal LiDAR odometry based on point-to-point ICP with adaptive thresholding, working across sensors with few parameters.",
+    "why_it_matters": "Works out of the box on almost any LiDAR without IMU; ideal hackathon starting point.",
+    "concepts": [
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "icp",
+      "python",
+      "ros2",
+      "pip"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground",
+      "air",
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "`pip install kiss-icp` and run on a rosbag or KITTI folder in minutes. Add KISS-SLAM for loop closure.",
+    "related": [
+      {
+        "id": "repo:prbonn/kiss-slam",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:prbonn/mapclosures",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:michaelgrupp/evo",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:prbonn/kiss-slam",
+    "kind": "repo",
+    "name": "KISS-SLAM",
+    "url": "https://github.com/PRBonn/kiss-slam",
+    "summary": "LiDAR SLAM that adds loop closure and pose-graph optimization on top of KISS-ICP odometry.",
+    "why_it_matters": "Full LiDAR SLAM with the same low-configuration philosophy.",
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "pip",
+      "loop-closure",
+      "pose-graph"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Pip-installable; quick to demo on outdoor bags.",
+    "related": [
+      {
+        "id": "repo:prbonn/kiss-icp",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:prbonn/mapclosures",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:prbonn/mapclosures",
+    "kind": "repo",
+    "name": "MapClosures",
+    "url": "https://github.com/PRBonn/MapClosures",
+    "summary": "Loop-closure detection using bird's-eye-view density images of local LiDAR maps.",
+    "why_it_matters": "Sensor-agnostic loop closure that plugs into any LiDAR odometry.",
+    "concepts": [
+      "concept:place-recognition",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "loop-closure",
+      "bev",
+      "pip"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Python bindings via pip.",
+    "related": [
+      {
+        "id": "repo:prbonn/kiss-icp",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:prbonn/rko_lio",
+    "kind": "repo",
+    "name": "RKO-LIO",
+    "url": "https://github.com/PRBonn/rko_lio",
+    "summary": "LiDAR-inertial odometry aiming to work without sensor-specific modelling or heavy tuning.",
+    "why_it_matters": "Recent (2025-2026) LIO from the KISS-ICP group; good for unknown hardware.",
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:ins"
+    ],
+    "tags": [
+      "imu",
+      "pip",
+      "ros2",
+      "2025"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Check README for pip/ROS 2 usage; similar ergonomics to KISS-ICP.",
+    "related": [
+      {
+        "id": "repo:prbonn/kiss-icp",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:hku-mars/fast_lio",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:robustfieldautonomylab/lego-loam",
+    "kind": "repo",
+    "name": "LeGO-LOAM",
+    "url": "https://github.com/RobustFieldAutonomyLab/LeGO-LOAM",
+    "summary": "Lightweight ground-optimized LiDAR odometry and mapping that segments ground to speed up feature extraction on UGVs.",
+    "why_it_matters": "Classic UGV LiDAR SLAM for rough terrain on modest compute.",
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "loam",
+      "ground-segmentation",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "ROS 1 only, unmaintained, tuned for Velodyne VLP-16. Use LIO-SAM or KISS-ICP instead unless reproducing baselines.",
+    "related": [
+      {
+        "id": "repo:tixiaoshan/lio-sam",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:cartographer-project/cartographer",
+    "kind": "repo",
+    "name": "Cartographer",
+    "url": "https://github.com/cartographer-project/cartographer",
+    "summary": "Real-time 2D and 3D SLAM with submaps and branch-and-bound loop closure across many sensor configurations.",
+    "why_it_matters": "Widely deployed 2D LiDAR SLAM for indoor and warehouse robots.",
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "2d-slam",
+      "submaps",
+      "ros"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Project is in maintenance mode with little activity. Still available via ROS packages and works for 2D indoor mapping.",
+    "related": [
+      {
+        "id": "repo:introlab/rtabmap",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:koide3/glim",
+    "kind": "repo",
+    "name": "GLIM",
+    "url": "https://github.com/koide3/glim",
+    "summary": "Versatile point-cloud localization and mapping framework with GPU-accelerated factor graphs, supporting many range sensors and optional IMU.",
+    "why_it_matters": "Modern, maintained 3D mapping with GPU speedups and an extensible module system.",
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "gpu",
+      "factor-graph",
+      "ros2"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Prebuilt packages exist for ROS 2; GPU optional but recommended.",
+    "related": [
+      {
+        "id": "repo:koide3/fast_gicp",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:koide3/hdl_graph_slam",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:koide3/fast_gicp",
+    "kind": "repo",
+    "name": "fast_gicp",
+    "url": "https://github.com/koide3/fast_gicp",
+    "summary": "Collection of fast GICP and VGICP point-cloud registration implementations, multithreaded and CUDA.",
+    "why_it_matters": "Fast scan registration building block used by many LiDAR and radar SLAM systems.",
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "gicp",
+      "vgicp",
+      "cuda"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Successor library small_gicp is more actively maintained.",
+    "related": [
+      {
+        "id": "repo:koide3/small_gicp",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:koide3/small_gicp",
+    "kind": "repo",
+    "name": "small_gicp",
+    "url": "https://github.com/koide3/small_gicp",
+    "summary": "Efficient, parallel point-cloud registration library (GICP, ICP variants) with C++ and Python APIs.",
+    "why_it_matters": "Pip-installable registration to build your own LiDAR odometry or map-based relocalization fast.",
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "icp",
+      "gicp",
+      "python",
+      "pip"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "`pip install small_gicp`; good for scan-to-map localization prototypes.",
+    "related": [
+      {
+        "id": "repo:koide3/fast_gicp",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:gaoxiang12/faster-lio",
+    "kind": "repo",
+    "name": "Faster-LIO",
+    "url": "https://github.com/gaoxiang12/faster-lio",
+    "summary": "Lightweight tightly coupled LiDAR-inertial odometry using parallel sparse incremental voxels instead of a k-d tree.",
+    "why_it_matters": "Faster variant of the FAST-LIO design for constrained compute.",
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:ins"
+    ],
+    "tags": [
+      "ivox",
+      "iekf",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1; same config style as FAST-LIO.",
+    "related": [
+      {
+        "id": "repo:hku-mars/fast_lio",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:vectr-ucla/direct_lidar_inertial_odometry",
+    "kind": "repo",
+    "name": "DLIO",
+    "url": "https://github.com/vectr-ucla/direct_lidar_inertial_odometry",
+    "summary": "Lightweight LiDAR-inertial odometry with coarse-to-fine continuous-time motion correction (ICRA 2023).",
+    "why_it_matters": "Accurate and compute-light LIO for aerial and ground robots.",
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:ins"
+    ],
+    "tags": [
+      "continuous-time",
+      "deskew",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1 main; check community ROS 2 forks.",
+    "related": [
+      {
+        "id": "repo:hku-mars/fast_lio",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:hviktortsoi/fast_lio_localization",
+    "kind": "repo",
+    "name": "FAST_LIO_LOCALIZATION",
+    "url": "https://github.com/HViktorTsoi/FAST_LIO_LOCALIZATION",
+    "summary": "Relocalization in a prebuilt map using FAST-LIO odometry plus global scan-to-map registration.",
+    "why_it_matters": "Localize in a map you surveyed earlier, the standard pattern for GNSS-denied ground ops in known areas.",
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:place-recognition",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "relocalization",
+      "prior-map",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "ROS 1; build a map with FAST-LIO first, then localize. Needs a rough initial pose.",
+    "related": [
+      {
+        "id": "repo:hku-mars/fast_lio",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:gisbi-kim/scancontext",
+    "kind": "repo",
+    "name": "Scan Context",
+    "url": "https://github.com/gisbi-kim/scancontext",
+    "summary": "LiDAR global place descriptor for loop detection and relocalization (backup of the original IRAP KAIST repo).",
+    "why_it_matters": "Simple, widely used LiDAR loop-closure descriptor; plugs into most LiDAR SLAM.",
+    "concepts": [
+      "concept:place-recognition",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "descriptor",
+      "loop-closure",
+      "matlab",
+      "c++"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Header-only style C++; SC-LIO-SAM shows integration.",
+    "related": [
+      {
+        "id": "repo:gisbi-kim/sc-lio-sam",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:gisbi-kim/sc-lio-sam",
+    "kind": "repo",
+    "name": "SC-LIO-SAM",
+    "url": "https://github.com/gisbi-kim/SC-LIO-SAM",
+    "summary": "LIO-SAM combined with Scan Context loop closure for more reliable large-scale LiDAR-inertial SLAM.",
+    "why_it_matters": "Practical recipe for adding a global descriptor to an existing LIO.",
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "lio-sam",
+      "scan-context",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1; same setup as LIO-SAM.",
+    "related": [
+      {
+        "id": "repo:tixiaoshan/lio-sam",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:gisbi-kim/scancontext",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:hku-mars/std",
+    "kind": "repo",
+    "name": "STD",
+    "url": "https://github.com/hku-mars/STD",
+    "summary": "Stable Triangle Descriptor for 3D point-cloud place recognition and loop closure.",
+    "why_it_matters": "Works with solid-state LiDARs and small fields of view where Scan Context struggles.",
+    "concepts": [
+      "concept:place-recognition",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "descriptor",
+      "livox",
+      "loop-closure"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1 demos; integrates with FAST-LIO.",
+    "related": [
+      {
+        "id": "repo:hku-mars/fast_lio",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:mit-spark/teaser-plusplus",
+    "kind": "repo",
+    "name": "TEASER++",
+    "url": "https://github.com/MIT-SPARK/TEASER-plusplus",
+    "summary": "Certifiable, outlier-robust point-cloud registration library with C++, Python and MATLAB bindings.",
+    "why_it_matters": "Global registration that tolerates extreme outlier rates, useful for map-to-map alignment and relocalization.",
+    "concepts": [
+      "concept:feature-matching",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "registration",
+      "certifiable",
+      "python"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs correspondences (e.g. FPFH) as input; Python bindings make it quick to prototype.",
+    "related": [
+      {
+        "id": "repo:url-kaist/quatro",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:url-kaist/quatro",
+    "kind": "repo",
+    "name": "Quatro",
+    "url": "https://github.com/url-kaist/Quatro",
+    "summary": "Fast, robust global registration for terrestrial robots that assumes near-planar motion to cut degrees of freedom.",
+    "why_it_matters": "Faster global relocalization for ground vehicles.",
+    "concepts": [
+      "concept:feature-matching",
+      "concept:lidar-slam",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "registration",
+      "ground-robot"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Smaller research codebase; pair with KISS-ICP.",
+    "related": [
+      {
+        "id": "repo:mit-spark/teaser-plusplus",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ntnu-arl/mimosa",
+    "kind": "repo",
+    "name": "MIMOSA",
+    "url": "https://github.com/ntnu-arl/mimosa",
+    "summary": "Tightly coupled sliding-window factor-graph fusion of IMU with LiDAR (geometric and photometric), radar radial-speed factors and external odometry such as VIO.",
+    "why_it_matters": "From the group behind DARPA SubT field robots; relevant to smoke/dark/dust scenarios.",
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:lidar-slam",
+      "concept:radar-nav"
+    ],
+    "tags": [
+      "multi-modal",
+      "subterranean",
+      "2025"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS Noetic; publishes nav_msgs/Odometry. Radar factor lets you keep velocity constraints when LiDAR is blinded by dust or smoke.",
+    "related": [
+      {
+        "id": "repo:ntnu-arl/rovtio",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:livox-sdk/livox_ros_driver2",
+    "kind": "repo",
+    "name": "livox_ros_driver2",
+    "url": "https://github.com/Livox-SDK/livox_ros_driver2",
+    "summary": "ROS 1/ROS 2 driver for Livox LiDARs such as Mid-360 and HAP.",
+    "why_it_matters": "Mid-360 is a common cheap LiDAR for drones; you need this driver to feed FAST-LIO and friends.",
+    "concepts": [
+      "concept:ros",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "driver",
+      "mid-360",
+      "ros2"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Build with the Livox SDK2; set the custom message format expected by FAST-LIO.",
+    "related": [
+      {
+        "id": "repo:hku-mars/fast_lio",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:koide3/hdl_graph_slam",
+    "kind": "repo",
+    "name": "hdl_graph_slam",
+    "url": "https://github.com/koide3/hdl_graph_slam",
+    "summary": "3D LiDAR graph SLAM with NDT/GICP scan matching odometry, loop detection and optional GPS, IMU and floor-plane constraints.",
+    "why_it_matters": "Simple, hackable graph SLAM that 4DRadarSLAM and others build on; GPS constraints make it handy for mixed GNSS/denied runs.",
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "graph-slam",
+      "ndt",
+      "gicp",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1; GLIM is the author's newer framework.",
+    "related": [
+      {
+        "id": "repo:koide3/glim",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:koide3/fast_gicp",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:mit-spark/kimera-multi",
+    "kind": "repo",
+    "name": "Kimera-Multi",
+    "url": "https://github.com/MIT-SPARK/Kimera-Multi",
+    "summary": "Index repo for Kimera-Multi, a distributed multi-robot metric-semantic SLAM system with robust distributed pose-graph optimization.",
+    "why_it_matters": "Multi-robot mapping with peer-to-peer communication is core to swarm and team operations.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "distributed",
+      "semantic",
+      "ros1"
+    ],
+    "language": "Shell",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Multi-repo install; budget a full day. Use their datasets for a demo.",
+    "related": [
+      {
+        "id": "repo:mit-spark/kimera-vio",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:mit-spark/kimera-distributed",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:mit-acl/dpgo",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:mit-spark/kimera-distributed",
+    "kind": "repo",
+    "name": "Kimera-Distributed",
+    "url": "https://github.com/MIT-SPARK/Kimera-Distributed",
+    "summary": "Distributed back end of Kimera-Multi handling inter-robot loop closures and distributed optimization.",
+    "why_it_matters": "Reusable distributed SLAM back end.",
+    "concepts": [
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "distributed",
+      "pose-graph"
+    ],
+    "language": "",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Used through Kimera-Multi.",
+    "related": [
+      {
+        "id": "repo:mit-spark/kimera-multi",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:mit-acl/dpgo",
+    "kind": "repo",
+    "name": "DPGO",
+    "url": "https://github.com/mit-acl/dpgo",
+    "summary": "Distributed pose-graph optimization library with certifiably correct solutions for multi-robot SLAM.",
+    "why_it_matters": "Solver core for decentralized multi-robot SLAM.",
+    "concepts": [
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "distributed",
+      "optimization",
+      "certifiable"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Library only; feed it pose graphs from each robot.",
+    "related": []
+  },
+  {
+    "id": "repo:lajoiepy/cslam",
+    "kind": "repo",
+    "name": "Swarm-SLAM",
+    "url": "https://github.com/lajoiepy/cslam",
+    "summary": "ROS 2 decentralized collaborative SLAM supporting LiDAR, stereo and RGB-D, with sparse inter-robot communication.",
+    "why_it_matters": "Designed for bandwidth-limited swarms, a realistic constraint under jamming.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:visual-slam",
+      "concept:lidar-slam",
+      "concept:ros"
+    ],
+    "tags": [
+      "ros2",
+      "decentralized",
+      "swarm"
+    ],
+    "language": "Python",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 2; experiments run on recorded multi-robot datasets. Pick one sensor type to start.",
+    "related": [
+      {
+        "id": "repo:mit-spark/kimera-multi",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:v4rl-ucy/covins",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:v4rl-ucy/covins",
+    "kind": "repo",
+    "name": "COVINS / COVINS-G",
+    "url": "https://github.com/v4rl-ucy/covins",
+    "summary": "Centralized collaborative visual-inertial SLAM where agents run VIO and a server merges maps; COVINS-G is VIO-front-end agnostic.",
+    "why_it_matters": "Pattern for drones sharing maps through a ground station.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:vio"
+    ],
+    "tags": [
+      "centralized",
+      "map-merging",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1 + Docker; COVINS-G can take poses from any VIO such as OpenVINS.",
+    "related": [
+      {
+        "id": "repo:rpng/open_vins",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:lajoiepy/cslam",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:hkust-aerial-robotics/d2slam",
+    "kind": "repo",
+    "name": "D2SLAM",
+    "url": "https://github.com/HKUST-Aerial-Robotics/D2SLAM",
+    "summary": "Decentralized and distributed collaborative visual-inertial SLAM for aerial swarms.",
+    "why_it_matters": "Swarm-scale relative localization and mapping for UAV teams.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:vio"
+    ],
+    "tags": [
+      "swarm",
+      "decentralized",
+      "uav"
+    ],
+    "language": "Jupyter Notebook",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Heavy setup; mainly useful as a design reference.",
+    "related": [
+      {
+        "id": "repo:lajoiepy/cslam",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:michaelgrupp/evo",
+    "kind": "repo",
+    "name": "evo",
+    "url": "https://github.com/MichaelGrupp/evo",
+    "summary": "Python package and CLI for evaluating odometry and SLAM trajectories (ATE/RPE, alignment, plotting) in TUM, KITTI, EuRoC and ROS bag formats.",
+    "why_it_matters": "Every hackathon claim about drift needs numbers; evo produces them in minutes.",
+    "concepts": [
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "ate",
+      "rpe",
+      "pip",
+      "plotting"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "`pip install evo`. Use `evo_ape` with `-as` for monocular scale alignment.",
+    "related": [
+      {
+        "id": "repo:uzh-rpg/rpg_trajectory_evaluation",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:uzh-rpg/rpg_trajectory_evaluation",
+    "kind": "repo",
+    "name": "rpg_trajectory_evaluation",
+    "url": "https://github.com/uzh-rpg/rpg_trajectory_evaluation",
+    "summary": "Toolbox for quantitative trajectory evaluation of VO/VIO, implementing the alignment and relative-error protocol from Zhang & Scaramuzza (IROS 2018).",
+    "why_it_matters": "Reference for how to evaluate VIO properly by segment length.",
+    "concepts": [
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "evaluation",
+      "relative-error"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Works without ROS; evo is easier day to day.",
+    "related": [
+      {
+        "id": "repo:michaelgrupp/evo",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ethz-asl/kalibr",
+    "kind": "repo",
+    "name": "Kalibr",
+    "url": "https://github.com/ethz-asl/kalibr",
+    "summary": "Toolbox for camera intrinsic, multi-camera and camera-IMU spatial/temporal calibration.",
+    "why_it_matters": "Bad calibration is the number-one reason VIO fails on custom rigs.",
+    "concepts": [
+      "concept:calibration",
+      "concept:vio"
+    ],
+    "tags": [
+      "camera-imu",
+      "aprilgrid",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Use the Docker image; print an AprilGrid and record a slow, well-excited bag.",
+    "related": [
+      {
+        "id": "repo:uz-slamlab/orb_slam3",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:rpng/open_vins",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:gaoxiang12/slambook-en",
+    "kind": "repo",
+    "name": "14 Lectures on Visual SLAM (English)",
+    "url": "https://github.com/gaoxiang12/slambook-en",
+    "summary": "English edition of Gao Xiang's open textbook on visual SLAM, from geometry and Lie groups to back-end optimization.",
+    "why_it_matters": "Best free practical intro for a team ramping up on SLAM in a weekend.",
+    "concepts": [
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "textbook",
+      "lie-groups",
+      "tutorial"
+    ],
+    "language": "TeX",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "PDF and code exercises (slambook2 repo).",
+    "related": []
+  }
+]

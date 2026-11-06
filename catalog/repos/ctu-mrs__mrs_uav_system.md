@@ -1,0 +1,33 @@
+# MRS UAV System
+
+`repo:ctu-mrs/mrs_uav_system` - <https://github.com/ctu-mrs/mrs_uav_system>
+
+| stars | language | license | last push | archived | maturity | hackathon fit |
+|---|---|---|---|---|---|---|
+| 650 | Shell | BSD-3-Clause | 2026-10-22 | False | production | medium |
+
+Czech Technical University's multi-robot UAV platform with control, estimation (including GNSS-denied modes), planning and simulation, field-tested in outdoor swarm deployments.
+
+**Why it matters:** Mature outdoor-swarm stack with several localization back-ends to choose from.
+
+**Hackathon notes:** Install via apt; simulation tutorials are good. Moving between ROS 1 and ROS 2 versions, so check the branch.
+
+**Concepts:** [Swarms and multi-agent navigation](../concepts/multi-agent.md), [Autopilots and flight control](../concepts/autopilot.md), [Sensor fusion and state estimation](../concepts/sensor-fusion.md), [ROS / ROS 2 robotics middleware](../concepts/ros.md)
+
+**Tags:** `mrs`, `ctu`, `swarm`, `px4`
+
+**Domains:** air, multi
+
+## Related
+
+- integrates_with: [UVDAR](../repos/ctu-mrs__uvdar_core.md)
+- alternative_to: [Aerostack2](../repos/aerostack2__aerostack2.md)
+
+## Referenced by
+
+- [Aerostack2](../repos/aerostack2__aerostack2.md) (alternative_to)
+- [UVDAR](../repos/ctu-mrs__uvdar_core.md) (extends)
+
+_Indexed by lane(s): domains-swarm_
+
+_GitHub metadata fetched 2026-11-06._

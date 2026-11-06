@@ -1,0 +1,2242 @@
+[
+  {
+    "id": "repo:px4/px4-autopilot",
+    "kind": "repo",
+    "name": "PX4 Autopilot",
+    "url": "https://github.com/PX4/PX4-Autopilot",
+    "summary": "Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, built on NuttX with a uORB pub/sub middleware. Its EKF2 estimator fuses IMU, GNSS, baro, magnetometer, optical flow, range finders and external vision.",
+    "why_it_matters": "The most common permissive-licensed (BSD) autopilot base for defense and commercial UAS; EKF2 external-vision and flow fusion is the standard route to GPS-denied flight.",
+    "concepts": [
+      "concept:autopilot",
+      "concept:sensor-fusion",
+      "concept:gnss-ins",
+      "concept:vio",
+      "concept:simulation"
+    ],
+    "tags": [
+      "ekf2",
+      "uorb",
+      "nuttx",
+      "vtol",
+      "sitl"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground",
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Run `make px4_sitl gz_x500` for SITL with Gazebo in under an hour. Feed VIO/SLAM poses via the ROS 2 uXRCE-DDS bridge or MAVLink ODOMETRY; disable GPS with EKF2_GPS_CTRL to test GPS-denied behaviour.",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:mavlink/mavsdk",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:mavlink/qgroundcontrol",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:px4/px4_msgs",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:eprosima/micro-xrce-dds-agent",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:px4/px4-ecl",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:px4/flight_review",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:ardupilot/ardupilot",
+    "kind": "repo",
+    "name": "ArduPilot",
+    "url": "https://github.com/ArduPilot/ardupilot",
+    "summary": "GPL autopilot covering Copter, Plane (incl. QuadPlane VTOL), Rover, boats and ArduSub, plus AP_Periph CAN peripherals. EKF3 supports switchable source sets, so GNSS, optical flow, beacons, wheel odometry and external vision can be swapped in flight.",
+    "why_it_matters": "Very broad vehicle coverage and mature non-GPS navigation docs; EKF3 source switching (EK3_SRCn_*) is directly useful for GNSS-loss and spoofing-resilience experiments.",
+    "concepts": [
+      "concept:autopilot",
+      "concept:sensor-fusion",
+      "concept:gnss-ins",
+      "concept:vio",
+      "concept:ground-vehicle-nav",
+      "concept:maritime-nav",
+      "concept:underwater-nav",
+      "concept:simulation"
+    ],
+    "tags": [
+      "ekf3",
+      "arducopter",
+      "arduplane",
+      "ardurover",
+      "ardusub",
+      "lua-scripting",
+      "sitl"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground",
+      "maritime",
+      "underwater"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "`sim_vehicle.py -v ArduCopter --console --map` gives SITL in minutes. Lua scripting lets you add behaviour on the flight controller without a fork. Use SIM_GPS1_ENABLE=0 / EK3_SRC1_* to simulate GNSS denial.",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:ardupilot/pymavlink",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ardupilot/mavproxy",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ardupilot/missionplanner",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot_gazebo",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ardupilot/arduremoteid",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot_ros",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:inavflight/inav",
+    "kind": "repo",
+    "name": "INAV",
+    "url": "https://github.com/iNavFlight/inav",
+    "summary": "Navigation-focused fork of the Cleanflight/Betaflight lineage for small multirotors, fixed-wing and rovers, adding GPS position hold, return-to-home and waypoint missions on cheap F4/F7/H7 boards.",
+    "why_it_matters": "Lowest-cost path to GNSS waypoint navigation on FPV-class airframes; useful to show how small drones behave on GNSS loss and how RTH failsafes work.",
+    "concepts": [
+      "concept:autopilot",
+      "concept:gnss-ins",
+      "concept:mission-planning"
+    ],
+    "tags": [
+      "fpv",
+      "fixed-wing",
+      "rth",
+      "waypoints",
+      "msp"
+    ],
+    "language": "C",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Configure with INAV Configurator; supports MSP and a MAVLink telemetry subset. SITL exists but is less polished than PX4/ArduPilot. Good for physical demos on cheap hardware.",
+    "related": [
+      {
+        "id": "repo:betaflight/betaflight",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:expresslrs/expresslrs",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:betaflight/betaflight",
+    "kind": "repo",
+    "name": "Betaflight",
+    "url": "https://github.com/betaflight/betaflight",
+    "summary": "Racing/freestyle-oriented flight controller firmware focused on attitude control and low-latency filtering; GPS rescue mode is its main navigation feature.",
+    "why_it_matters": "Dominant firmware on FPV drones seen in current conflicts; understanding its limited navigation (GPS Rescue only) matters for C-UAS and EW-impact analysis.",
+    "concepts": [
+      "concept:autopilot",
+      "concept:counter-uas"
+    ],
+    "tags": [
+      "fpv",
+      "racing",
+      "gps-rescue",
+      "msp"
+    ],
+    "language": "C",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Not a navigation platform; use for FPV-class hardware or to study how small drones react to link loss and GNSS jamming.",
+    "related": [
+      {
+        "id": "repo:inavflight/inav",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:expresslrs/expresslrs",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:paparazzi/paparazzi",
+    "kind": "repo",
+    "name": "Paparazzi UAV",
+    "url": "https://github.com/paparazzi/paparazzi",
+    "summary": "Long-running academic autopilot (ENAC, TU Delft and others) for fixed-wing, rotorcraft and hybrids, with its own ground segment, flight-plan language and INS modules.",
+    "why_it_matters": "Strong research heritage in fixed-wing and micro air vehicles, including vision-based and swarm experiments; a non-MAVLink reference architecture.",
+    "concepts": [
+      "concept:autopilot",
+      "concept:ins",
+      "concept:mission-planning",
+      "concept:simulation",
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "enac",
+      "tu-delft",
+      "fixed-wing",
+      "flight-plans",
+      "ivy-bus"
+    ],
+    "language": "C",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Toolchain and ground station setup takes hours; pick only if you know it already. Flight-plan XML is a nice example of declarative mission logic.",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:librepilot/librepilot",
+    "kind": "repo",
+    "name": "LibrePilot",
+    "url": "https://github.com/librepilot/LibrePilot",
+    "summary": "GitHub mirror of LibrePilot, the community continuation of OpenPilot for CC3D/Revolution boards, with the GCS bundled. Main development was on Bitbucket and has been quiet for years.",
+    "why_it_matters": "Historical reference for the OpenPilot-era INS13 estimator and UAVTalk protocol; not a base for new work.",
+    "concepts": [
+      "concept:autopilot",
+      "concept:ins"
+    ],
+    "tags": [
+      "openpilot-lineage",
+      "uavtalk",
+      "cc3d",
+      "revolution"
+    ],
+    "language": "C",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Read-only reference. Hardware is end-of-life.",
+    "related": [
+      {
+        "id": "repo:openpilot/openpilot",
+        "rel": "fork_of"
+      }
+    ]
+  },
+  {
+    "id": "repo:openpilot/openpilot",
+    "kind": "repo",
+    "name": "OpenPilot (mirror)",
+    "url": "https://github.com/openpilot/OpenPilot",
+    "summary": "Mirror of the original OpenPilot flight controller project (not comma.ai's openpilot), frozen since 2015.",
+    "why_it_matters": "Origin of the TauLabs, dRonin and LibrePilot family; historical only.",
+    "concepts": [
+      "concept:autopilot"
+    ],
+    "tags": [
+      "openpilot",
+      "uavtalk",
+      "history"
+    ],
+    "language": "C",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Historical reference only.",
+    "related": []
+  },
+  {
+    "id": "repo:nickrehm/drehmflight",
+    "kind": "repo",
+    "name": "dRehmFlight VTOL",
+    "url": "https://github.com/nickrehm/dRehmFlight",
+    "summary": "Single-file Arduino/Teensy flight controller for small VTOL and multirotor craft, written to be read and modified by students.",
+    "why_it_matters": "Easiest flight-control code to understand end to end; good for teaching attitude estimation (Madgwick) and control loops in a weekend.",
+    "concepts": [
+      "concept:autopilot",
+      "concept:ins"
+    ],
+    "tags": [
+      "teensy",
+      "arduino",
+      "vtol",
+      "madgwick",
+      "educational"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Flash to a Teensy with an MPU6050/9250 IMU; no navigation or MAVLink, so pair with a companion for anything beyond stabilisation.",
+    "related": [
+      {
+        "id": "repo:espressif/esp-drone",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:bitcraze/crazyflie-firmware",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:espressif/esp-drone",
+    "kind": "repo",
+    "name": "ESP-Drone",
+    "url": "https://github.com/espressif/esp-drone",
+    "summary": "Espressif's mini quadcopter firmware for ESP32/ESP32-S2/S3, derived from Crazyflie code, controlled over Wi-Fi.",
+    "why_it_matters": "Very cheap, hackable airframe with Wi-Fi control; usable for indoor swarm or RF experiments.",
+    "concepts": [
+      "concept:autopilot",
+      "concept:ins"
+    ],
+    "tags": [
+      "esp32",
+      "wifi",
+      "crazyflie-derived",
+      "mini-drone"
+    ],
+    "language": "C",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Builds with ESP-IDF; supports optical-flow deck style positioning only with extra sensors. Expect tuning effort on DIY frames.",
+    "related": [
+      {
+        "id": "repo:bitcraze/crazyflie-firmware",
+        "rel": "fork_of"
+      },
+      {
+        "id": "repo:nickrehm/drehmflight",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:bitcraze/crazyflie-firmware",
+    "kind": "repo",
+    "name": "Crazyflie firmware",
+    "url": "https://github.com/bitcraze/crazyflie-firmware",
+    "summary": "Firmware for the Crazyflie nano quad, Bolt and the Roadrunner positioning tag, with EKF and complementary estimators supporting UWB Loco positioning, Lighthouse, Flow deck and mocap.",
+    "why_it_matters": "Mature indoor research platform where UWB/Lighthouse localisation and GPS-free estimation are first-class; widely used in swarm papers.",
+    "concepts": [
+      "concept:autopilot",
+      "concept:sensor-fusion",
+      "concept:rf-localization",
+      "concept:indoor-pedestrian",
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "crazyflie",
+      "uwb",
+      "lighthouse",
+      "flow-deck",
+      "kalman",
+      "nano-drone"
+    ],
+    "language": "C",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "If you have Crazyflies, the Python lib gets you scripted flights in an hour. UWB Loco anchors make a good GNSS-denied testbed. Simulation via crazyswarm2 or the official SIL.",
+    "related": [
+      {
+        "id": "repo:bitcraze/crazyflie-lib-python",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:imrclab/crazyswarm2",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:espressif/esp-drone",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:bitcraze/crazyflie-lib-python",
+    "kind": "repo",
+    "name": "cflib (Crazyflie Python library)",
+    "url": "https://github.com/bitcraze/crazyflie-lib-python",
+    "summary": "Python API to connect, log, set parameters and send setpoints/high-level commands to Crazyflies over Crazyradio or USB.",
+    "why_it_matters": "Fastest way to script autonomy experiments on nano drones.",
+    "concepts": [
+      "concept:autopilot",
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "python",
+      "crazyflie",
+      "crazyradio"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install cflib; works without ROS.",
+    "related": [
+      {
+        "id": "repo:bitcraze/crazyflie-firmware",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:imrclab/crazyswarm2",
+    "kind": "repo",
+    "name": "Crazyswarm2",
+    "url": "https://github.com/IMRCLab/crazyswarm2",
+    "summary": "ROS 2 stack for flying large swarms of Crazyflies, with simulation backends and Python scripting.",
+    "why_it_matters": "Ready-made multi-agent testbed for coordinated indoor flight and formation experiments.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:ros",
+      "concept:simulation"
+    ],
+    "tags": [
+      "ros2",
+      "swarm",
+      "crazyflie"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs ROS 2 Humble/Jazzy; the sim backend lets you test without hardware.",
+    "related": [
+      {
+        "id": "repo:bitcraze/crazyflie-firmware",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:bitcraze/crazyflie-lib-python",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:aerostack2/aerostack2",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:rosflight/rosflight_firmware",
+    "kind": "repo",
+    "name": "ROSflight firmware",
+    "url": "https://github.com/rosflight/rosflight_firmware",
+    "summary": "Lean research autopilot (BYU) that keeps only attitude estimation and low-level control on the flight board and pushes everything else to a ROS companion.",
+    "why_it_matters": "Clean split between embedded and onboard autonomy; good for teams who want full control of the estimator on the companion.",
+    "concepts": [
+      "concept:autopilot",
+      "concept:ins",
+      "concept:ros"
+    ],
+    "tags": [
+      "byu",
+      "research",
+      "fixed-wing",
+      "multirotor"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Use with rosflight_ros_pkgs; includes a simulator so hardware is optional.",
+    "related": [
+      {
+        "id": "repo:rosflight/rosflight_ros_pkgs",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:rosflight/rosflight_ros_pkgs",
+    "kind": "repo",
+    "name": "ROSflight ROS packages",
+    "url": "https://github.com/rosflight/rosflight_ros_pkgs",
+    "summary": "ROS 2 interface, simulator and utilities for the ROSflight autopilot.",
+    "why_it_matters": "Companion-side half of ROSflight, where navigation and autonomy live.",
+    "concepts": [
+      "concept:ros",
+      "concept:simulation"
+    ],
+    "tags": [
+      "ros2",
+      "rosflight"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Start with the sim launch files.",
+    "related": [
+      {
+        "id": "repo:rosflight/rosflight_firmware",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:px4/px4-ecl",
+    "kind": "repo",
+    "name": "PX4 ECL (Estimation & Control Library)",
+    "url": "https://github.com/PX4/PX4-ECL",
+    "summary": "Former standalone home of PX4's EKF2 and related estimation/control code; archived after the code moved into PX4-Autopilot.",
+    "why_it_matters": "Its history and docs remain a readable reference for the EKF2 derivation (SymPy-generated equations).",
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:gnss-ins",
+      "concept:ins"
+    ],
+    "tags": [
+      "ekf2",
+      "estimator",
+      "sympy"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Read the current EKF2 in PX4-Autopilot src/modules/ekf2 instead; use this for history.",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:px4/px4-opticalflow",
+    "kind": "repo",
+    "name": "PX4 OpticalFlow",
+    "url": "https://github.com/PX4/PX4-OpticalFlow",
+    "summary": "Algorithms for computing optical flow from a downward camera to produce velocity inputs for a position estimator.",
+    "why_it_matters": "Optical flow plus range finder is the cheapest GNSS-free velocity source for low-altitude hover and drift control.",
+    "concepts": [
+      "concept:vio",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "optical-flow",
+      "px4flow",
+      "camera"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Can run on a companion and publish OPTICAL_FLOW_RAD over MAVLink; check activity before depending on it.",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:mavlink/mavlink",
+    "kind": "repo",
+    "name": "MAVLink",
+    "url": "https://github.com/mavlink/mavlink",
+    "summary": "Message definitions (XML dialects) and the pymavlink-based generator for the MAVLink micro air vehicle protocol, used by PX4, ArduPilot and most GCS tools.",
+    "why_it_matters": "The lingua franca of open-source UAS; any GCS, companion, Remote ID or C-UAS sensor integration ends up speaking it.",
+    "concepts": [
+      "concept:mavlink-gcs",
+      "concept:standards"
+    ],
+    "tags": [
+      "protocol",
+      "xml",
+      "dialects",
+      "generator"
+    ],
+    "language": "Python",
+    "domains": [
+      "air",
+      "ground",
+      "maritime",
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Add a custom dialect XML and regenerate bindings to prototype new messages (e.g. a jamming-detection report).",
+    "related": [
+      {
+        "id": "repo:ardupilot/pymavlink",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:mavlink/mavlink-devguide",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:mavlink/mavlink-devguide",
+    "kind": "repo",
+    "name": "MAVLink Developer Guide",
+    "url": "https://github.com/mavlink/mavlink-devguide",
+    "summary": "Source of the mavlink.io documentation: protocol, microservices (mission, parameters, camera, Open Drone ID) and message reference.",
+    "why_it_matters": "Canonical reference when wiring new sensors or services over MAVLink.",
+    "concepts": [
+      "concept:mavlink-gcs",
+      "concept:standards"
+    ],
+    "tags": [
+      "docs",
+      "microservices"
+    ],
+    "language": "Markdown",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Read the microservice pages before implementing anything stateful.",
+    "related": [
+      {
+        "id": "repo:mavlink/mavlink",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:ardupilot/pymavlink",
+    "kind": "repo",
+    "name": "pymavlink",
+    "url": "https://github.com/ArduPilot/pymavlink",
+    "summary": "Python MAVLink implementation plus tools for connections, log parsing (DataFlash/tlog) and code generation.",
+    "why_it_matters": "Quickest path to scripting a vehicle or parsing flight logs to evaluate estimator behaviour under GNSS loss.",
+    "concepts": [
+      "concept:mavlink-gcs"
+    ],
+    "tags": [
+      "python",
+      "logs",
+      "dataflash",
+      "tlog"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install pymavlink; mavutil.mavlink_connection('udp:...') against SITL works in minutes.",
+    "related": [
+      {
+        "id": "repo:mavlink/mavlink",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:ardupilot/mavproxy",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:dronekit/dronekit-python",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:mavlink/mavsdk",
+    "kind": "repo",
+    "name": "MAVSDK",
+    "url": "https://github.com/mavlink/MAVSDK",
+    "summary": "C++ SDK exposing high-level MAVLink plugins (action, mission, offboard, telemetry, camera) with a gRPC server for other languages.",
+    "why_it_matters": "Clean API for companion-side autonomy against PX4 (and to a degree ArduPilot) without ROS.",
+    "concepts": [
+      "concept:mavlink-gcs",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "sdk",
+      "grpc",
+      "offboard",
+      "c++"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Use MAVSDK-Python for hackathon speed; mavsdk_server is bundled.",
+    "related": [
+      {
+        "id": "repo:mavlink/mavsdk-python",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:mavlink/mavros",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:mavlink/mavsdk-python",
+    "kind": "repo",
+    "name": "MAVSDK-Python",
+    "url": "https://github.com/mavlink/MAVSDK-Python",
+    "summary": "Asyncio Python client for MAVSDK that wraps a bundled mavsdk_server.",
+    "why_it_matters": "Probably the fastest way to script missions or offboard control against PX4 SITL.",
+    "concepts": [
+      "concept:mavlink-gcs",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "python",
+      "asyncio",
+      "offboard"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install mavsdk; examples cover takeoff, missions, offboard velocity.",
+    "related": [
+      {
+        "id": "repo:mavlink/mavsdk",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:dronekit/dronekit-python",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:mavlink/mavros",
+    "kind": "repo",
+    "name": "MAVROS",
+    "url": "https://github.com/mavlink/mavros",
+    "summary": "ROS/ROS 2 node bridging MAVLink to ROS topics and services, with GCS proxy; widely used to push vision/SLAM poses into PX4 or ArduPilot.",
+    "why_it_matters": "Standard glue between ROS-based VIO/SLAM and a flight controller for GPS-denied navigation.",
+    "concepts": [
+      "concept:mavlink-gcs",
+      "concept:ros",
+      "concept:vio"
+    ],
+    "tags": [
+      "ros",
+      "ros2",
+      "bridge",
+      "vision_pose"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground",
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Publish to /mavros/vision_pose/pose or odometry topics; mind ENU/NED frame conversions.",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:thien94/vision_to_mavros",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:px4/px4_ros_com",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:rpng/open_vins",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:mavlink-router/mavlink-router",
+    "kind": "repo",
+    "name": "mavlink-router",
+    "url": "https://github.com/mavlink-router/mavlink-router",
+    "summary": "Lightweight C++ daemon that routes MAVLink between serial, UDP and TCP endpoints with filtering and logging.",
+    "why_it_matters": "Typical companion-computer plumbing to share one flight-controller link between GCS, autonomy and loggers.",
+    "concepts": [
+      "concept:mavlink-gcs"
+    ],
+    "tags": [
+      "router",
+      "companion",
+      "udp",
+      "serial"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Build with meson; one config file. Run it before attaching multiple clients.",
+    "related": [
+      {
+        "id": "repo:bluenviron/mavp2p",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:ardupilot/mavproxy",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:bluenviron/mavp2p",
+    "kind": "repo",
+    "name": "mavp2p",
+    "url": "https://github.com/bluenviron/mavp2p",
+    "summary": "Single-binary Go MAVLink router/proxy supporting serial, UDP and TCP with deduplication.",
+    "why_it_matters": "Zero-dependency alternative to mavlink-router; easy to drop on any companion.",
+    "concepts": [
+      "concept:mavlink-gcs"
+    ],
+    "tags": [
+      "go",
+      "router",
+      "single-binary"
+    ],
+    "language": "Go",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Download the release binary and run; no build.",
+    "related": [
+      {
+        "id": "repo:bluenviron/gomavlib",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:mavlink-router/mavlink-router",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:bluenviron/gomavlib",
+    "kind": "repo",
+    "name": "gomavlib",
+    "url": "https://github.com/bluenviron/gomavlib",
+    "summary": "Go MAVLink v1/v2 library with dialect generation and multiple transports.",
+    "why_it_matters": "Good for writing small, robust Go services (telemetry relays, sensor bridges).",
+    "concepts": [
+      "concept:mavlink-gcs"
+    ],
+    "tags": [
+      "go",
+      "library"
+    ],
+    "language": "Go",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Go modules; examples for reading/writing messages.",
+    "related": [
+      {
+        "id": "repo:bluenviron/mavp2p",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:mavlink/rust-mavlink",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:mavlink/rust-mavlink",
+    "kind": "repo",
+    "name": "rust-mavlink",
+    "url": "https://github.com/mavlink/rust-mavlink",
+    "summary": "Rust implementation of MAVLink with generated dialects and serial/UDP/TCP connections.",
+    "why_it_matters": "Memory-safe option for ground or embedded services.",
+    "concepts": [
+      "concept:mavlink-gcs"
+    ],
+    "tags": [
+      "rust",
+      "library"
+    ],
+    "language": "Rust",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "cargo add mavlink.",
+    "related": [
+      {
+        "id": "repo:mavlink/mavlink",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:bluenviron/gomavlib",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ardupilot/node-mavlink",
+    "kind": "repo",
+    "name": "node-mavlink",
+    "url": "https://github.com/ArduPilot/node-mavlink",
+    "summary": "TypeScript/Node.js MAVLink bindings and tools.",
+    "why_it_matters": "Handy for web dashboards and Node-based ground tools.",
+    "concepts": [
+      "concept:mavlink-gcs"
+    ],
+    "tags": [
+      "typescript",
+      "node"
+    ],
+    "language": "TypeScript",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "npm install; works over serial/UDP/TCP.",
+    "related": [
+      {
+        "id": "repo:mavlink/mavlink",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:dronekit/dronekit-python",
+    "kind": "repo",
+    "name": "DroneKit-Python",
+    "url": "https://github.com/dronekit/dronekit-python",
+    "summary": "Older high-level Python API for MAVLink vehicles, built on pymavlink; maintenance has slowed (last push 2024).",
+    "why_it_matters": "Many tutorials still use it; fine for simple ArduPilot scripts but prefer pymavlink or MAVSDK for new work.",
+    "concepts": [
+      "concept:mavlink-gcs",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "python",
+      "legacy"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Has compatibility issues with recent Python versions; pin Python 3.9/3.10 or avoid.",
+    "related": [
+      {
+        "id": "repo:ardupilot/pymavlink",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:mavlink/mavsdk-python",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ardupilot/mavproxy",
+    "kind": "repo",
+    "name": "MAVProxy",
+    "url": "https://github.com/ArduPilot/MAVProxy",
+    "summary": "Command-line, module-based ground station and MAVLink proxy with map, console and many plugins.",
+    "why_it_matters": "Default SITL console for ArduPilot; scriptable modules make it easy to prototype operator-side tools.",
+    "concepts": [
+      "concept:mavlink-gcs",
+      "concept:mission-planning"
+    ],
+    "tags": [
+      "gcs",
+      "cli",
+      "modules",
+      "proxy"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Comes with sim_vehicle.py; write a module to add custom displays or alerts (e.g. GNSS anomaly warnings).",
+    "related": [
+      {
+        "id": "repo:ardupilot/pymavlink",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:mavlink-router/mavlink-router",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:mavlink/qgroundcontrol",
+    "kind": "repo",
+    "name": "QGroundControl",
+    "url": "https://github.com/mavlink/qgroundcontrol",
+    "summary": "Qt/QML cross-platform GCS (desktop, Android, iOS) for PX4 and ArduPilot: setup, mission planning, video and telemetry.",
+    "why_it_matters": "Most common open GCS; a base for custom operator UIs, including Remote ID display.",
+    "concepts": [
+      "concept:mavlink-gcs",
+      "concept:mission-planning",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "gcs",
+      "qt",
+      "qml",
+      "mission-planning"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground",
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Use prebuilt binaries for SITL; custom builds take a few hours to set up Qt.",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ardupilot/missionplanner",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:ardupilot/apm_planner",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ardupilot/missionplanner",
+    "kind": "repo",
+    "name": "Mission Planner",
+    "url": "https://github.com/ArduPilot/MissionPlanner",
+    "summary": "Windows-centric C#/.NET GCS for ArduPilot with deep parameter, log-analysis and mission tooling.",
+    "why_it_matters": "Feature-richest ArduPilot GCS; the EKF and GPS status views are useful during GNSS-denial tests.",
+    "concepts": [
+      "concept:mavlink-gcs",
+      "concept:mission-planning"
+    ],
+    "tags": [
+      "gcs",
+      "csharp",
+      "windows"
+    ],
+    "language": "C#",
+    "domains": [
+      "air",
+      "ground",
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Windows best; runs under Mono on Linux/mac with caveats.",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:mavlink/qgroundcontrol",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ardupilot/apm_planner",
+    "kind": "repo",
+    "name": "APM Planner 2",
+    "url": "https://github.com/ArduPilot/apm_planner",
+    "summary": "Qt-based cross-platform ArduPilot GCS, now largely in maintenance mode.",
+    "why_it_matters": "Alternative GCS mainly of historical interest.",
+    "concepts": [
+      "concept:mavlink-gcs"
+    ],
+    "tags": [
+      "gcs",
+      "qt"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Prefer QGroundControl or Mission Planner.",
+    "related": [
+      {
+        "id": "repo:mavlink/qgroundcontrol",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:ardupilot/missionplanner",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:px4/flight_review",
+    "kind": "repo",
+    "name": "PX4 Flight Review",
+    "url": "https://github.com/PX4/flight_review",
+    "summary": "Web app for uploading and plotting PX4 ULog flight logs, including estimator innovations and test ratios.",
+    "why_it_matters": "Fast way to judge whether EKF2 is healthy when fusing a new vision or flow source.",
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:mavlink-gcs"
+    ],
+    "tags": [
+      "ulog",
+      "log-analysis",
+      "bokeh"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Use the hosted instance or run locally with Docker.",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ardupilot/uavlogviewer",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ardupilot/uavlogviewer",
+    "kind": "repo",
+    "name": "UAV Log Viewer",
+    "url": "https://github.com/ArduPilot/UAVLogViewer",
+    "summary": "Browser-based viewer for ArduPilot DataFlash and MAVLink logs (also reads PX4 ULog), with 3D replay and plotting.",
+    "why_it_matters": "Quick post-flight review of EKF3 innovations and source switching.",
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:mavlink-gcs"
+    ],
+    "tags": [
+      "log-analysis",
+      "web",
+      "cesium"
+    ],
+    "language": "JavaScript",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Hosted at plot.ardupilot.org; no install.",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:px4/flight_review",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ardupilot/methodicconfigurator",
+    "kind": "repo",
+    "name": "ArduPilot Methodic Configurator",
+    "url": "https://github.com/ArduPilot/MethodicConfigurator",
+    "summary": "Guided step-by-step parameter configuration tool for ArduPilot vehicles.",
+    "why_it_matters": "Reduces setup mistakes on new airframes, which matter more than code in short builds.",
+    "concepts": [
+      "concept:autopilot"
+    ],
+    "tags": [
+      "configuration",
+      "parameters"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Use when building physical ArduPilot vehicles.",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:px4/px4_msgs",
+    "kind": "repo",
+    "name": "px4_msgs",
+    "url": "https://github.com/PX4/px4_msgs",
+    "summary": "ROS 2 message definitions mirroring PX4 uORB topics, used with the uXRCE-DDS bridge.",
+    "why_it_matters": "Required to talk to PX4 natively from ROS 2 (e.g. VehicleOdometry for external vision).",
+    "concepts": [
+      "concept:ros",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "ros2",
+      "uorb",
+      "dds"
+    ],
+    "language": "CMake",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Match the branch to your PX4 version or messages will mismatch.",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:px4/px4_ros_com",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:eprosima/micro-xrce-dds-agent",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:px4/px4_ros_com",
+    "kind": "repo",
+    "name": "px4_ros_com",
+    "url": "https://github.com/PX4/px4_ros_com",
+    "summary": "Example ROS 2 nodes and helpers (frame transforms) for interfacing with PX4 over DDS.",
+    "why_it_matters": "Starting templates for offboard control and sending odometry into PX4.",
+    "concepts": [
+      "concept:ros",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "ros2",
+      "examples",
+      "offboard"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Clone alongside px4_msgs into a colcon workspace.",
+    "related": [
+      {
+        "id": "repo:px4/px4_msgs",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:mavlink/mavros",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:auterion/px4-ros2-interface-lib",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:eprosima/micro-xrce-dds-agent",
+    "kind": "repo",
+    "name": "Micro XRCE-DDS Agent",
+    "url": "https://github.com/eProsima/Micro-XRCE-DDS-Agent",
+    "summary": "Agent that bridges DDS-XRCE clients on microcontrollers into a full DDS / ROS 2 graph; PX4 and ArduPilot use it for native ROS 2.",
+    "why_it_matters": "Core link in the PX4 and ArduPilot ROS 2 (DDS) paths.",
+    "concepts": [
+      "concept:ros"
+    ],
+    "tags": [
+      "dds",
+      "xrce",
+      "ros2",
+      "bridge"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Install via snap or build from source; run MicroXRCEAgent udp4 -p 8888 for SITL.",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:px4/px4_msgs",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:auterion/px4-ros2-interface-lib",
+    "kind": "repo",
+    "name": "PX4 ROS 2 Interface Library",
+    "url": "https://github.com/Auterion/px4-ros2-interface-lib",
+    "summary": "C++ library for writing PX4 flight modes and navigation-data sources in ROS 2 on a companion computer, registered with PX4 as first-class modes.",
+    "why_it_matters": "Lets a team ship a custom autonomy mode or inject a local/global position estimate (e.g. a visual geolocalisation fix) cleanly into PX4.",
+    "concepts": [
+      "concept:ros",
+      "concept:autopilot",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "ros2",
+      "flight-modes",
+      "companion",
+      "auterion"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Needs recent PX4 (1.15+) and matching px4_msgs; examples include custom modes and external navigation interfaces.",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:px4/px4_msgs",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:ark-electronics/ros2_px4_offboard_example",
+    "kind": "repo",
+    "name": "ROS2 PX4 Offboard Example",
+    "url": "https://github.com/ARK-Electronics/ROS2_PX4_Offboard_Example",
+    "summary": "Small example of driving PX4 velocity setpoints from ROS 2 teleop, with SITL launch files.",
+    "why_it_matters": "Good minimal starter for a ROS 2 offboard demo.",
+    "concepts": [
+      "concept:ros",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "ros2",
+      "offboard",
+      "example"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Runs against PX4 SITL in about an hour.",
+    "related": [
+      {
+        "id": "repo:px4/px4_msgs",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:ardupilot/ardupilot_ros",
+    "kind": "repo",
+    "name": "ardupilot_ros",
+    "url": "https://github.com/ArduPilot/ardupilot_ros",
+    "summary": "ROS 2 integration examples for ArduPilot, including Cartographer-based non-GPS navigation and Nav2 setups.",
+    "why_it_matters": "Directly targets lidar-SLAM-fed GPS-free flight on ArduPilot.",
+    "concepts": [
+      "concept:ros",
+      "concept:lidar-slam",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "ros2",
+      "dds",
+      "cartographer",
+      "non-gps"
+    ],
+    "language": "Python",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Use with ardupilot_gz for simulation; follow the wiki ROS 2 pages.",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot_gz",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:eprosima/micro-xrce-dds-agent",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:ardupilot/ardupilot_gz",
+    "kind": "repo",
+    "name": "ardupilot_gz",
+    "url": "https://github.com/ArduPilot/ardupilot_gz",
+    "summary": "ROS 2 + Gazebo packages for ArduPilot SITL integration and testing.",
+    "why_it_matters": "Gives a ready simulated vehicle with lidar/cameras for ROS 2 navigation experiments.",
+    "concepts": [
+      "concept:simulation",
+      "concept:ros"
+    ],
+    "tags": [
+      "gazebo",
+      "ros2",
+      "sitl"
+    ],
+    "language": "Python",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Target ROS 2 Humble + Gazebo Harmonic per the README.",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot_gazebo",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot_ros",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:ardupilot/ardupilot_gazebo",
+    "kind": "repo",
+    "name": "ardupilot_gazebo",
+    "url": "https://github.com/ArduPilot/ardupilot_gazebo",
+    "summary": "Gazebo Sim plugins and models for ArduPilot SITL vehicles.",
+    "why_it_matters": "Needed for camera/lidar-equipped simulated vehicles to test vision-based navigation.",
+    "concepts": [
+      "concept:simulation"
+    ],
+    "tags": [
+      "gazebo",
+      "sitl",
+      "plugins"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground",
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Build the plugin and set GZ_SIM_SYSTEM_PLUGIN_PATH; then run SITL with -f JSON.",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:px4/px4-sitl_gazebo-classic",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:px4/px4-sitl_gazebo-classic",
+    "kind": "repo",
+    "name": "PX4 SITL Gazebo Classic",
+    "url": "https://github.com/PX4/PX4-SITL_gazebo-classic",
+    "summary": "Plugins, models and worlds for PX4 SITL/HITL on Gazebo Classic, including flow, depth and VIO-style sensors.",
+    "why_it_matters": "Many GPS-denied tutorials still rely on its optical-flow and vision plugins.",
+    "concepts": [
+      "concept:simulation"
+    ],
+    "tags": [
+      "gazebo-classic",
+      "sitl",
+      "hitl"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground",
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Gazebo Classic is end-of-life; prefer new Gazebo (PX4-gazebo-models) unless you need a specific plugin.",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:px4/px4-avoidance",
+    "kind": "repo",
+    "name": "PX4 Avoidance",
+    "url": "https://github.com/PX4/PX4-Avoidance",
+    "summary": "Archived ROS nodes for local planning, global planning and safe landing using depth sensors with PX4.",
+    "why_it_matters": "Still a useful reference for obstacle avoidance architectures, but unmaintained.",
+    "concepts": [
+      "concept:obstacle-avoidance",
+      "concept:ros"
+    ],
+    "tags": [
+      "ros1",
+      "local-planner",
+      "safe-landing"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "ROS 1 only; read for design ideas.",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:stephendade/rpanion-server",
+    "kind": "repo",
+    "name": "Rpanion-server",
+    "url": "https://github.com/stephendade/Rpanion-server",
+    "summary": "Web-based companion-computer manager for MAVLink vehicles: telemetry routing, video streaming, logging and network config on Raspberry Pi/Jetson.",
+    "why_it_matters": "Turnkey companion setup so the team spends time on navigation code rather than plumbing.",
+    "concepts": [
+      "concept:mavlink-gcs"
+    ],
+    "tags": [
+      "companion",
+      "raspberry-pi",
+      "video",
+      "web"
+    ],
+    "language": "JavaScript",
+    "domains": [
+      "air",
+      "ground",
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Flash the prebuilt image to a Pi; manage routing in the browser.",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:bluerobotics/blueos",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:mavlink-router/mavlink-router",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:bluerobotics/blueos",
+    "kind": "repo",
+    "name": "BlueOS",
+    "url": "https://github.com/bluerobotics/BlueOS",
+    "summary": "Docker-based companion OS from Blue Robotics for ROVs, boats and other vehicles, with extensions, MAVLink routing and web UIs; ArduPilot-centred.",
+    "why_it_matters": "Strong base for maritime/underwater vehicle builds; extension system makes adding a nav service easy.",
+    "concepts": [
+      "concept:mavlink-gcs",
+      "concept:underwater-nav",
+      "concept:maritime-nav"
+    ],
+    "tags": [
+      "companion",
+      "docker",
+      "rov",
+      "usv",
+      "extensions"
+    ],
+    "language": "Python",
+    "domains": [
+      "maritime",
+      "underwater",
+      "ground",
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Flash to a Pi 4; write an extension container for your algorithm.",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:stephendade/rpanion-server",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:mavlink/mavlink-camera-manager",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:mavlink/mavlink-camera-manager",
+    "kind": "repo",
+    "name": "MAVLink Camera Manager",
+    "url": "https://github.com/mavlink/mavlink-camera-manager",
+    "summary": "Rust service that exposes cameras as MAVLink camera components and streams video (RTSP/UDP) to GCS.",
+    "why_it_matters": "Makes onboard cameras discoverable to QGC and BlueOS without custom code.",
+    "concepts": [
+      "concept:mavlink-gcs"
+    ],
+    "tags": [
+      "rust",
+      "video",
+      "camera-protocol"
+    ],
+    "language": "Rust",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Runs standalone or inside BlueOS.",
+    "related": [
+      {
+        "id": "repo:bluerobotics/blueos",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:mavlink/qgroundcontrol",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:thien94/vision_to_mavros",
+    "kind": "repo",
+    "name": "vision_to_mavros",
+    "url": "https://github.com/thien94/vision_to_mavros",
+    "summary": "ROS and Python scripts that convert external localisation (fiducials, T265 VIO, SLAM, depth) into MAVROS/MAVLink pose messages, tested on ArduPilot.",
+    "why_it_matters": "Proven recipe for feeding vision-based localisation into ArduPilot EKF3 for GPS-denied flight; came out of GSoC work.",
+    "concepts": [
+      "concept:vio",
+      "concept:mavlink-gcs",
+      "concept:ros"
+    ],
+    "tags": [
+      "t265",
+      "vision_position_estimate",
+      "apriltag",
+      "gsoc"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Old (2022) but simple; adapt the non-ROS T265 script to any VIO source.",
+    "related": [
+      {
+        "id": "repo:mavlink/mavros",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:goodrobots/vision_landing",
+    "kind": "repo",
+    "name": "vision_landing",
+    "url": "https://github.com/goodrobots/vision_landing",
+    "summary": "Precision landing using visual fiducial targets, sending LANDING_TARGET messages to ArduPilot.",
+    "why_it_matters": "Example of vision-based terminal approach for recovery/landing without GNSS accuracy.",
+    "concepts": [
+      "concept:vio",
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "precision-landing",
+      "aruco",
+      "landing_target"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs OpenCV and a camera on the companion; inactive since 2023.",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:openhd/openhd",
+    "kind": "repo",
+    "name": "OpenHD",
+    "url": "https://github.com/OpenHD/OpenHD",
+    "summary": "Open-source long-range digital HD video and telemetry link over Wi-Fi adapters in monitor mode (wifibroadcast-style), for air and ground units.",
+    "why_it_matters": "Low-cost resilient video/telemetry downlink for situational awareness; also a reference for link behaviour under interference.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:ew-resilience",
+      "concept:mavlink-gcs"
+    ],
+    "tags": [
+      "wifibroadcast",
+      "video",
+      "telemetry",
+      "long-range"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs supported Wi-Fi cards (RTL8812AU) and SBCs; budget a few hours for imaging.",
+    "related": [
+      {
+        "id": "repo:svpcom/wfb-ng",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:svpcom/wfb-ng",
+    "kind": "repo",
+    "name": "WFB-ng",
+    "url": "https://github.com/svpcom/wfb-ng",
+    "summary": "Long-range packet radio link over raw Wi-Fi injection with FEC, carrying video, MAVLink and IP tunnels.",
+    "why_it_matters": "Unidirectional broadcast-style link with FEC is more robust to interference than plain Wi-Fi; useful for EW-resilient telemetry experiments.",
+    "concepts": [
+      "concept:ew-resilience",
+      "concept:mavlink-gcs",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "wifibroadcast",
+      "fec",
+      "raw-wifi",
+      "telemetry"
+    ],
+    "language": "Python",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Install on Linux with compatible RTL8812AU/EU cards; key pairs per link.",
+    "related": [
+      {
+        "id": "repo:openhd/openhd",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:expresslrs/expresslrs",
+    "kind": "repo",
+    "name": "ExpressLRS",
+    "url": "https://github.com/ExpressLRS/ExpressLRS",
+    "summary": "Open-source LoRa/FLRC radio control link (2.4 GHz and sub-GHz) with high packet rates, telemetry and MAVLink passthrough modes.",
+    "why_it_matters": "Dominant open RC link in FPV; its behaviour under jamming and its telemetry options matter for EW-resilience and C-UAS work.",
+    "concepts": [
+      "concept:ew-resilience",
+      "concept:counter-uas"
+    ],
+    "tags": [
+      "lora",
+      "rc-link",
+      "crsf",
+      "sx128x",
+      "sx127x"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Flash with ExpressLRS Configurator; receivers are cheap.",
+    "related": [
+      {
+        "id": "repo:olliw42/mlrs",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:betaflight/betaflight",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:olliw42/mlrs",
+    "kind": "repo",
+    "name": "mLRS",
+    "url": "https://github.com/olliw42/mLRS",
+    "summary": "LoRa-based bidirectional link carrying RC and full MAVLink serial data on 2.4 GHz, 868/915 MHz and 433 MHz.",
+    "why_it_matters": "Combines control and telemetry over long-range LoRa for ArduPilot/PX4, which is useful where Wi-Fi links fail.",
+    "concepts": [
+      "concept:mavlink-gcs",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "lora",
+      "mavlink",
+      "telemetry",
+      "rc-link"
+    ],
+    "language": "C",
+    "domains": [
+      "air",
+      "ground",
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Supports several off-the-shelf modules; read the hardware list first.",
+    "related": [
+      {
+        "id": "repo:expresslrs/expresslrs",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:ardupilot/sik",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:ardupilot/sik",
+    "kind": "repo",
+    "name": "SiK radio firmware",
+    "url": "https://github.com/ArduPilot/SiK",
+    "summary": "Firmware and tools for Si1000-based telemetry radios (3DR/RFD900 class) carrying MAVLink.",
+    "why_it_matters": "Classic serial telemetry radio stack; frequency-hopping config is relevant to link robustness.",
+    "concepts": [
+      "concept:mavlink-gcs",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "telemetry",
+      "fhss",
+      "rfd900",
+      "si1000"
+    ],
+    "language": "C",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Mostly use stock firmware; configure via AT commands or Mission Planner.",
+    "related": [
+      {
+        "id": "repo:olliw42/mlrs",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ardupilot/arduremoteid",
+    "kind": "repo",
+    "name": "ArduRemoteID",
+    "url": "https://github.com/ArduPilot/ArduRemoteID",
+    "summary": "ESP32-based Remote ID transmitter firmware implementing ASTM F3411 broadcast (Bluetooth and Wi-Fi) fed from MAVLink or DroneCAN.",
+    "why_it_matters": "Cheap compliant Remote ID broadcasting, and the transmitter side of any Remote ID-based C-UAS awareness demo.",
+    "concepts": [
+      "concept:standards",
+      "concept:counter-uas",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "remote-id",
+      "astm-f3411",
+      "esp32",
+      "opendroneid",
+      "dronecan"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Flash an ESP32-S3/C3 dev board; pair with opendroneid receiver-android to show detection end to end.",
+    "related": [
+      {
+        "id": "repo:opendroneid/opendroneid-core-c",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:opendroneid/receiver-android",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:opendroneid/opendroneid-core-c",
+    "kind": "repo",
+    "name": "Open Drone ID Core C",
+    "url": "https://github.com/opendroneid/opendroneid-core-c",
+    "summary": "C library to encode and decode Remote ID messages per ASTM F3411 / ASD-STAN EN 4709-002, plus MAVLink wrappers.",
+    "why_it_matters": "Foundation for building Remote ID transmitters, receivers and sensor integrations.",
+    "concepts": [
+      "concept:standards",
+      "concept:counter-uas",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "remote-id",
+      "astm-f3411",
+      "en4709"
+    ],
+    "language": "C",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Plain C, easy to embed; includes test vectors.",
+    "related": [
+      {
+        "id": "repo:ardupilot/arduremoteid",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:opendroneid/receiver-android",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:opendroneid/transmitter-linux",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:opendroneid/receiver-android",
+    "kind": "repo",
+    "name": "OpenDroneID Android receiver",
+    "url": "https://github.com/opendroneid/receiver-android",
+    "summary": "Example Android app that receives Remote ID over Bluetooth 4/5 and Wi-Fi Beacon/NaN and shows drones on a map.",
+    "why_it_matters": "Turns a phone into a passive drone detector; quick situational-awareness / C-UAS demo.",
+    "concepts": [
+      "concept:counter-uas",
+      "concept:situational-awareness",
+      "concept:standards"
+    ],
+    "tags": [
+      "remote-id",
+      "android",
+      "bluetooth",
+      "wifi-nan"
+    ],
+    "language": "Java",
+    "domains": [
+      "air",
+      "dismounted"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Install the APK; Wi-Fi NaN support depends on the phone.",
+    "related": [
+      {
+        "id": "repo:opendroneid/opendroneid-core-c",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:ardupilot/arduremoteid",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:opendroneid/transmitter-linux",
+    "kind": "repo",
+    "name": "OpenDroneID Linux transmitter",
+    "url": "https://github.com/opendroneid/transmitter-linux",
+    "summary": "Example Linux transmitter for Remote ID over Bluetooth and Wi-Fi.",
+    "why_it_matters": "Lets a companion computer broadcast Remote ID for testing receivers.",
+    "concepts": [
+      "concept:standards",
+      "concept:counter-uas"
+    ],
+    "tags": [
+      "remote-id",
+      "linux",
+      "bluetooth"
+    ],
+    "language": "C",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Inactive since 2023; fine for lab testing.",
+    "related": [
+      {
+        "id": "repo:opendroneid/opendroneid-core-c",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:sxjack/uav_electronic_ids",
+    "kind": "repo",
+    "name": "uav_electronic_ids",
+    "url": "https://github.com/sxjack/uav_electronic_ids",
+    "summary": "Arduino classes for several UAV electronic ID formats (ASTM/EU Remote ID, French ID) and UTM interfaces, with ESP32 examples.",
+    "why_it_matters": "Small, readable alternative Remote ID implementation, including receiver-side sketches.",
+    "concepts": [
+      "concept:standards",
+      "concept:counter-uas"
+    ],
+    "tags": [
+      "remote-id",
+      "arduino",
+      "esp32"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Arduino IDE; inactive since early 2024.",
+    "related": [
+      {
+        "id": "repo:opendroneid/opendroneid-core-c",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:ardupilot/arduremoteid",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:dronecan/libcanard",
+    "kind": "repo",
+    "name": "DroneCAN libcanard",
+    "url": "https://github.com/dronecan/libcanard",
+    "summary": "Minimal C implementation of the DroneCAN protocol used for GNSS, compass, airspeed and other peripherals on CAN.",
+    "why_it_matters": "Needed to build custom CAN sensors (e.g. an alternative nav sensor) that ArduPilot/PX4 can consume.",
+    "concepts": [
+      "concept:standards",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "dronecan",
+      "can",
+      "embedded"
+    ],
+    "language": "C",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Use with dronecan/DSDL; mostly for hardware teams.",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:aerostack2/aerostack2",
+    "kind": "repo",
+    "name": "Aerostack2",
+    "url": "https://github.com/aerostack2/aerostack2",
+    "summary": "ROS 2 framework for autonomous single and multi-aerial-robot systems with behaviours, state estimation plugins and platform adapters (PX4, Crazyflie, DJI, Gazebo).",
+    "why_it_matters": "A complete companion-side autonomy architecture, handy for multi-UAV missions without starting from scratch.",
+    "concepts": [
+      "concept:ros",
+      "concept:multi-agent",
+      "concept:mission-planning"
+    ],
+    "tags": [
+      "ros2",
+      "behaviour-trees",
+      "multi-uav",
+      "upm"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Docker images exist; expect a learning curve for its behaviour system.",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:imrclab/crazyswarm2",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:bitcraze/crazyflie-firmware",
+        "rel": "integrates_with"
+      }
+    ]
+  }
+]

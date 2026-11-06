@@ -1,0 +1,715 @@
+[
+  {
+    "id": "res:slam-handbook-carlone-2025",
+    "kind": "book",
+    "title": "SLAM Handbook: From Localization and Mapping to Spatial Intelligence",
+    "url": "https://github.com/SLAM-Handbook-contributors/slam-handbook-public-release",
+    "authors": [
+      "Luca Carlone",
+      "Ayoung Kim",
+      "Timothy Barfoot",
+      "Daniel Cremers",
+      "Frank Dellaert"
+    ],
+    "year": 2025,
+    "summary": "Edited community handbook covering SLAM foundations (factor graphs, state representations), sensor-specific pipelines (visual, LiDAR, inertial, leg odometry) and spatial AI topics such as learned SLAM and NeRF/Gaussian-splatting maps. Released openly in parts before the Cambridge University Press edition.",
+    "key_takeaways": [
+      "Single up-to-date reference spanning classic estimation and learned methods",
+      "Free chapter PDFs on GitHub"
+    ],
+    "concepts": [
+      "concept:visual-slam",
+      "concept:lidar-slam",
+      "concept:vio",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "handbook",
+      "factor-graphs",
+      "spatial-ai"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:borglab/gtsam",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:cadena-slam-past-present-future-2016",
+    "kind": "paper",
+    "title": "Past, Present, and Future of Simultaneous Localization And Mapping: Towards the Robust-Perception Age",
+    "url": "https://arxiv.org/abs/1606.05830",
+    "authors": [
+      "Cesar Cadena",
+      "Luca Carlone",
+      "Henry Carrillo",
+      "et al."
+    ],
+    "year": 2016,
+    "summary": "Landmark survey that frames modern SLAM as factor-graph MAP estimation and discusses robustness, scalability, representations and open problems.",
+    "key_takeaways": [
+      "Standard framing of front end vs back end",
+      "Robustness to outliers and long-term operation remain the hard problems"
+    ],
+    "concepts": [
+      "concept:visual-slam",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "survey"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:huang-vins-concise-review-2019",
+    "kind": "paper",
+    "title": "Visual-Inertial Navigation: A Concise Review",
+    "url": "https://arxiv.org/abs/1906.02650",
+    "authors": [
+      "Guoquan Huang"
+    ],
+    "year": 2019,
+    "summary": "Compact review of visual-inertial navigation: filtering vs optimization, observability, calibration and representative systems.",
+    "key_takeaways": [
+      "Explains why MSCKF-style filters and sliding-window optimizers coexist",
+      "Observability and consistency drive estimator design"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:ins"
+    ],
+    "tags": [
+      "survey",
+      "msckf"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:rpng/open_vins",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:orb-slam3-campos-2020",
+    "kind": "paper",
+    "title": "ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM",
+    "url": "https://arxiv.org/abs/2007.11898",
+    "authors": [
+      "Carlos Campos",
+      "Richard Elvira",
+      "Juan J. Gómez Rodríguez",
+      "José M. M. Montiel",
+      "Juan D. Tardós"
+    ],
+    "year": 2020,
+    "summary": "Describes ORB-SLAM3's tightly integrated visual-inertial SLAM, MAP-based IMU initialization and the multi-map Atlas that recovers from tracking loss.",
+    "key_takeaways": [
+      "Multi-map atlas lets the system restart and later merge maps",
+      "Supports pinhole and fisheye models"
+    ],
+    "concepts": [
+      "concept:visual-slam",
+      "concept:vio"
+    ],
+    "tags": [
+      "orb-slam"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:uz-slamlab/orb_slam3",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:vins-mono-qin-2017",
+    "kind": "paper",
+    "title": "VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator",
+    "url": "https://arxiv.org/abs/1708.03852",
+    "authors": [
+      "Tong Qin",
+      "Peiliang Li",
+      "Shaojie Shen"
+    ],
+    "year": 2017,
+    "summary": "Presents the VINS-Mono estimator: IMU preintegration, robust initialization, tightly coupled sliding-window optimization, relocalization and global pose graph.",
+    "key_takeaways": [
+      "Monocular camera + IMU recovers metric scale",
+      "Initialization is a key practical component"
+    ],
+    "concepts": [
+      "concept:vio"
+    ],
+    "tags": [
+      "sliding-window",
+      "preintegration"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:hkust-aerial-robotics/vins-mono",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:fast-lio2-xu-2021",
+    "kind": "paper",
+    "title": "FAST-LIO2: Fast Direct LiDAR-inertial Odometry",
+    "url": "https://arxiv.org/abs/2107.06829",
+    "authors": [
+      "Wei Xu",
+      "Yixi Cai",
+      "Dongjiao He",
+      "Jiarong Lin",
+      "Fu Zhang"
+    ],
+    "year": 2021,
+    "summary": "Introduces direct registration of raw LiDAR points in an iterated Kalman filter with an incremental k-d tree map, avoiding hand-crafted feature extraction.",
+    "key_takeaways": [
+      "Raw-point registration generalizes across LiDAR types",
+      "ikd-Tree enables efficient incremental mapping"
+    ],
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:ins"
+    ],
+    "tags": [
+      "iekf",
+      "ikd-tree"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:hku-mars/fast_lio",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:lio-sam-shan-2020",
+    "kind": "paper",
+    "title": "LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping",
+    "url": "https://arxiv.org/abs/2007.00258",
+    "authors": [
+      "Tixiao Shan",
+      "Brendan Englot",
+      "Drew Meyers",
+      "Wei Wang",
+      "Carlo Ratti",
+      "Daniela Rus"
+    ],
+    "year": 2020,
+    "summary": "Formulates LiDAR-inertial odometry as factor-graph smoothing with IMU preintegration, LiDAR odometry, GPS and loop-closure factors.",
+    "key_takeaways": [
+      "Factor graphs make it straightforward to add or drop GNSS",
+      "Keyframe-local scan matching keeps it real time"
+    ],
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:sensor-fusion",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "factor-graph",
+      "gtsam"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tixiaoshan/lio-sam",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:kiss-icp-vizzo-2022",
+    "kind": "paper",
+    "title": "KISS-ICP: In Defense of Point-to-Point ICP -- Simple, Accurate, and Robust Registration If Done the Right Way",
+    "url": "https://arxiv.org/abs/2209.15397",
+    "authors": [
+      "Ignacio Vizzo",
+      "Tiziano Guadagnino",
+      "Benedikt Mersch",
+      "et al."
+    ],
+    "year": 2022,
+    "summary": "Argues that a carefully engineered point-to-point ICP with motion compensation and adaptive thresholds matches far more complex LiDAR odometry across platforms.",
+    "key_takeaways": [
+      "Few parameters, works across sensors and platforms",
+      "Strong baseline before reaching for complex pipelines"
+    ],
+    "concepts": [
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "icp"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:prbonn/kiss-icp",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:fast-livo2-zheng-2024",
+    "kind": "paper",
+    "title": "FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry",
+    "url": "https://arxiv.org/abs/2408.14035",
+    "authors": [
+      "Chunran Zheng",
+      "Wei Xu",
+      "Zuhao Zou",
+      "et al."
+    ],
+    "year": 2024,
+    "summary": "Presents an error-state iterated Kalman filter that sequentially fuses LiDAR and image measurements against a shared voxel map, with exposure and plane-prior handling.",
+    "key_takeaways": [
+      "Sequential updates handle LiDAR/camera dimension mismatch",
+      "Robust when one modality degrades"
+    ],
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:vio",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "lidar-visual"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:hku-mars/fast-livo2",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:droid-slam-teed-2021",
+    "kind": "paper",
+    "title": "DROID-SLAM: Deep Visual SLAM for Monocular, Stereo, and RGB-D Cameras",
+    "url": "https://arxiv.org/abs/2108.10869",
+    "authors": [
+      "Zachary Teed",
+      "Jia Deng"
+    ],
+    "year": 2021,
+    "summary": "Learned SLAM that iteratively refines poses and depth through a differentiable dense bundle adjustment layer.",
+    "key_takeaways": [
+      "Big robustness gains on hard sequences",
+      "GPU-heavy"
+    ],
+    "concepts": [
+      "concept:visual-slam",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "deep-learning"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:princeton-vl/droid-slam",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:mast3r-slam-murai-2024",
+    "kind": "paper",
+    "title": "MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors",
+    "url": "https://arxiv.org/abs/2412.12392",
+    "authors": [
+      "Riku Murai",
+      "Eric Dexheimer",
+      "Andrew J. Davison"
+    ],
+    "year": 2024,
+    "summary": "Builds a real-time dense monocular SLAM system on the MASt3R two-view reconstruction prior, without assuming a fixed parametric camera model.",
+    "key_takeaways": [
+      "3D foundation models can serve as SLAM front ends",
+      "Works with uncalibrated video"
+    ],
+    "concepts": [
+      "concept:visual-slam",
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "foundation-model",
+      "cvpr-2025"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:rmurai0610/mast3r-slam",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:kimera-rosinol-2019",
+    "kind": "paper",
+    "title": "Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping",
+    "url": "https://arxiv.org/abs/1910.02490",
+    "authors": [
+      "Antoni Rosinol",
+      "Marcus Abate",
+      "Yun Chang",
+      "Luca Carlone"
+    ],
+    "year": 2019,
+    "summary": "Describes the Kimera stack: VIO, robust pose-graph optimization, mesh reconstruction and semantic mapping in one open library.",
+    "key_takeaways": [
+      "Metric-semantic maps on CPU in real time",
+      "Modular: VIO, RPGO, mesher, semantics"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:visual-slam",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "semantic",
+      "mesh"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mit-spark/kimera-vio",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:mit-spark/kimera-rpgo",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:kimera-multi-tian-2021",
+    "kind": "paper",
+    "title": "Kimera-Multi: Robust, Distributed, Dense Metric-Semantic SLAM for Multi-Robot Systems",
+    "url": "https://arxiv.org/abs/2106.14386",
+    "authors": [
+      "Yulun Tian",
+      "Yun Chang",
+      "Fernando Herrera Arias",
+      "et al."
+    ],
+    "year": 2021,
+    "summary": "Distributed multi-robot SLAM where robots exchange compact information peer to peer and jointly optimize with outlier-robust distributed pose-graph optimization.",
+    "key_takeaways": [
+      "Peer-to-peer, no central server",
+      "Robust to bad inter-robot loop closures"
+    ],
+    "concepts": [
+      "concept:multi-agent",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "distributed"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mit-spark/kimera-multi",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:mit-acl/dpgo",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:swarm-slam-lajoie-2023",
+    "kind": "paper",
+    "title": "Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems",
+    "url": "https://arxiv.org/abs/2301.06230",
+    "authors": [
+      "Pierre-Yves Lajoie",
+      "Giovanni Beltrame"
+    ],
+    "year": 2023,
+    "summary": "Decentralized collaborative SLAM aimed at swarms, prioritizing which inter-robot loop closures to compute and share to limit communication.",
+    "key_takeaways": [
+      "Communication budget is a first-class design constraint",
+      "Supports LiDAR, stereo and RGB-D"
+    ],
+    "concepts": [
+      "concept:multi-agent",
+      "concept:lidar-slam",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "swarm",
+      "ros2"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:lajoiepy/cslam",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:gallego-event-vision-survey-2019",
+    "kind": "paper",
+    "title": "Event-based Vision: A Survey",
+    "url": "https://arxiv.org/abs/1904.08405",
+    "authors": [
+      "Guillermo Gallego",
+      "Tobi Delbruck",
+      "Garrick Orchard",
+      "et al."
+    ],
+    "year": 2019,
+    "summary": "Comprehensive survey of event cameras: sensing principle, algorithms (feature tracking, optical flow, VO/SLAM) and applications.",
+    "key_takeaways": [
+      "Microsecond latency and high dynamic range",
+      "Algorithms must be redesigned for asynchronous data"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "event-camera",
+      "survey"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:uzh-rpg/event-based_vision_resources",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:tosi-nerf-3dgs-slam-survey-2024",
+    "kind": "paper",
+    "title": "How NeRFs and 3D Gaussian Splatting are Reshaping SLAM: a Survey",
+    "url": "https://arxiv.org/abs/2402.13255",
+    "authors": [
+      "Fabio Tosi",
+      "Youmin Zhang",
+      "Ziren Gong",
+      "et al."
+    ],
+    "year": 2024,
+    "summary": "Survey of SLAM methods that use neural radiance fields or 3D Gaussian splatting as the map representation, organized by sensor and technique.",
+    "key_takeaways": [
+      "Radiance-field maps trade compute for photorealism",
+      "Most methods are GPU-bound and not yet embedded-ready"
+    ],
+    "concepts": [
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "3dgs",
+      "nerf",
+      "survey"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:muskie82/monogs",
+        "rel": "cites"
+      },
+      {
+        "id": "repo:spla-tam/splatam",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:gaussian-splatting-slam-matsuki-2023",
+    "kind": "paper",
+    "title": "Gaussian Splatting SLAM",
+    "url": "https://arxiv.org/abs/2312.06741",
+    "authors": [
+      "Hidenobu Matsuki",
+      "Riku Murai",
+      "Paul H. J. Kelly",
+      "Andrew J. Davison"
+    ],
+    "year": 2023,
+    "summary": "Monocular and RGB-D SLAM that tracks and maps directly against 3D Gaussians using analytic Jacobians for camera pose optimization.",
+    "key_takeaways": [
+      "Single representation for tracking, mapping and rendering"
+    ],
+    "concepts": [
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "3dgs",
+      "cvpr-2024"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:muskie82/monogs",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:lee-lidar-odometry-survey-2023",
+    "kind": "paper",
+    "title": "LiDAR Odometry Survey: Recent Advancements and Remaining Challenges",
+    "url": "https://arxiv.org/abs/2312.17487",
+    "authors": [
+      "Dongjae Lee",
+      "Minwoo Jung",
+      "Wooseong Yang",
+      "Ayoung Kim"
+    ],
+    "year": 2023,
+    "summary": "Survey of LiDAR-only, LiDAR-inertial and multi-sensor LiDAR odometry, with discussion of datasets, evaluation and open challenges such as degeneracy.",
+    "key_takeaways": [
+      "Taxonomy of LiDAR, LiDAR-inertial and LiDAR-plus-other fusion",
+      "Geometric degeneracy (tunnels, open fields) is a key open issue"
+    ],
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "survey"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:hku-mars/fast_lio",
+        "rel": "cites"
+      },
+      {
+        "id": "repo:prbonn/kiss-icp",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:han-4d-mmwave-radar-survey-2023",
+    "kind": "paper",
+    "title": "4D Millimeter-Wave Radar in Autonomous Driving: A Survey",
+    "url": "https://arxiv.org/abs/2306.04242",
+    "authors": [
+      "Zeyu Han",
+      "Jiahao Wang",
+      "Zikun Xu",
+      "et al."
+    ],
+    "year": 2023,
+    "summary": "Survey of 4D imaging radar: signal processing, datasets, calibration, perception and SLAM/odometry uses.",
+    "key_takeaways": [
+      "4D radar adds elevation and works in adverse weather",
+      "Sparse, noisy point clouds need radar-specific methods"
+    ],
+    "concepts": [
+      "concept:radar-nav",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "4d-radar",
+      "survey"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:zhuge2333/4dradarslam",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:cfear-radarodometry-adolfsson-2021",
+    "kind": "paper",
+    "title": "CFEAR Radarodometry - Conservative Filtering for Efficient and Accurate Radar Odometry",
+    "url": "https://arxiv.org/abs/2105.01457",
+    "authors": [
+      "Daniel Adolfsson",
+      "Martin Magnusson",
+      "Anas Alhashimi",
+      "Achim J. Lilienthal",
+      "Henrik Andreasson"
+    ],
+    "year": 2021,
+    "summary": "Learning-free spinning-radar odometry that keeps the strongest returns per azimuth, builds oriented surface points and registers against a keyframe history (IROS 2021).",
+    "key_takeaways": [
+      "Simple filtering beats heavier radar pipelines",
+      "Runs fast on a single CPU thread per the authors"
+    ],
+    "concepts": [
+      "concept:radar-nav"
+    ],
+    "tags": [
+      "spinning-radar"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:dan11003/cfear_radarodometry",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:etio-thermal-inertial-odometry-2022",
+    "kind": "paper",
+    "title": "Edge-based Monocular Thermal-Inertial Odometry in Visually Degraded Environments",
+    "url": "https://arxiv.org/abs/2210.10033",
+    "authors": [
+      "Yu Wang",
+      "et al."
+    ],
+    "year": 2022,
+    "summary": "Thermal-inertial odometry that tracks thermal image edges instead of corner features, targeting darkness and smoke where visible cameras fail.",
+    "key_takeaways": [
+      "Thermal edges are more stable than corners in low-contrast IR",
+      "Relevant for night and obscurant operations"
+    ],
+    "concepts": [
+      "concept:vio"
+    ],
+    "tags": [
+      "thermal",
+      "degraded-visual"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:hitsz-nrsl/etio",
+        "rel": "has_code"
+      }
+    ]
+  }
+]

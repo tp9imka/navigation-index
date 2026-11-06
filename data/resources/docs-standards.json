@@ -1,0 +1,2973 @@
+[
+  {
+    "id": "res:gps-is-gps-200n",
+    "kind": "standard",
+    "title": "IS-GPS-200N: NAVSTAR GPS Space Segment / Navigation User Segment Interfaces",
+    "url": "https://archive.gps.gov/technical/icwg/IS-GPS-200N.pdf",
+    "authors": [
+      "US Space Force / GPS ICWG"
+    ],
+    "year": 2022,
+    "summary": "The master interface specification for the legacy GPS L1 C/A and L2C (and P(Y) at the public level) signals: code generation, signal structure, and the full LNAV/CNAV navigation message bit layouts. Every GPS receiver, simulator and spoofing detector ultimately decodes against this document.",
+    "key_takeaways": [
+      "Defines LNAV subframe and CNAV message formats bit-for-bit",
+      "Ephemeris, clock and ionosphere parameter algorithms live here",
+      "Revisions are managed through the public ICWG process"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:standards"
+    ],
+    "tags": [
+      "icd",
+      "gps",
+      "l1-ca",
+      "l2c",
+      "navigation-message"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tomojitakasu/rtklib",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:rtklibexplorer/rtklib",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:gnss-sdr/gnss-sdr",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:osqzss/gps-sdr-sim",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:gps-is-gps-705j",
+    "kind": "standard",
+    "title": "IS-GPS-705J: NAVSTAR GPS Space Segment / User Segment L5 Interfaces",
+    "url": "https://archive.gps.gov/technical/icwg/IS-GPS-705J.pdf",
+    "authors": [
+      "US Space Force / GPS ICWG"
+    ],
+    "year": 2022,
+    "summary": "Interface specification for the GPS L5 safety-of-life band signal: I5/Q5 codes, the L5 CNAV message, and signal characteristics. L5's higher chipping rate and wider band make it more robust to narrowband interference than L1 C/A.",
+    "key_takeaways": [
+      "Defines the L5 dataless pilot (Q5) and data (I5) channels",
+      "CNAV message types shared with L2C",
+      "Draft uprevisions were discussed at the 2025 public ICWG"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:standards"
+    ],
+    "tags": [
+      "icd",
+      "gps",
+      "l5",
+      "cnav"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:gnss-sdr/gnss-sdr",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:gps-is-gps-800j",
+    "kind": "standard",
+    "title": "IS-GPS-800J: NAVSTAR GPS Space Segment / User Segment L1C Interfaces",
+    "url": "https://archive.gps.gov/technical/icwg/IS-GPS-800J.pdf",
+    "authors": [
+      "US Space Force / GPS ICWG"
+    ],
+    "year": 2022,
+    "summary": "Interface specification for the modernized L1C civil signal designed for interoperability with Galileo E1 and other GNSS: BOC/TMBOC modulation, Weil-code ranging codes, and the CNAV-2 message.",
+    "key_takeaways": [
+      "L1C uses a pilot plus data component, like Galileo E1",
+      "CNAV-2 adds FEC-coded subframes",
+      "Key reference for multi-GNSS L1 receiver design"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:standards"
+    ],
+    "tags": [
+      "icd",
+      "gps",
+      "l1c",
+      "cnav-2"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:gnss-sdr/gnss-sdr",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:gps-icwg-document-index",
+    "kind": "doc",
+    "title": "GPS Interface Control Documents (ICWG index)",
+    "url": "https://archive.gps.gov/technical/icwg/",
+    "authors": [
+      "US Space Force / GPS.gov"
+    ],
+    "year": 2025,
+    "summary": "Index page for the public GPS ICDs and ISs (200, 705, 800, 870 etc.), change notices and public ICWG meeting material. Useful to find the current revision and pending changes such as integrity support message formats.",
+    "key_takeaways": [
+      "Single place to check which revision is in force",
+      "Hosts proposed change notices and meeting redlines"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:standards"
+    ],
+    "tags": [
+      "icd",
+      "gps",
+      "icwg"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:gps-sps-performance-standard-2020",
+    "kind": "standard",
+    "title": "GPS Standard Positioning Service (SPS) Performance Standard, 5th Edition",
+    "url": "https://archive.gps.gov/technical/ps/2020-SPS-performance-standard.pdf",
+    "authors": [
+      "US DoD"
+    ],
+    "year": 2020,
+    "summary": "The formal commitment the US government makes about civil GPS signal-in-space accuracy, availability, continuity and integrity. It is the baseline to compare against when judging whether a receiver anomaly is the signal or interference.",
+    "key_takeaways": [
+      "States guaranteed SIS user range error and availability levels",
+      "Defines what counts as a major service failure",
+      "Basis for RAIM and integrity assumptions in aviation"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:standards",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "gps",
+      "performance-standard",
+      "integrity"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:galileo-os-sis-icd-2-1",
+    "kind": "standard",
+    "title": "Galileo Open Service Signal-In-Space Interface Control Document (OS SIS ICD) Issue 2.1",
+    "url": "https://www.gsc-europa.eu/sites/default/files/sites/all/files/Galileo_OS_SIS_ICD_v2.1.pdf",
+    "authors": [
+      "EU / European GNSS Service Centre"
+    ],
+    "year": 2023,
+    "summary": "Specification of the Galileo open service signals (E1, E5a, E5b, E6 at the structure level) and the F/NAV and I/NAV navigation messages. Needed for any multi-constellation receiver or Galileo decoder.",
+    "key_takeaways": [
+      "Defines I/NAV and F/NAV page layouts",
+      "Ranging code and modulation details for E1 and E5",
+      "Newer issues are listed in the GSC reference documents library"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:standards"
+    ],
+    "tags": [
+      "icd",
+      "galileo",
+      "e1",
+      "e5",
+      "inav"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tomojitakasu/rtklib",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:rtklibexplorer/rtklib",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:gnss-sdr/gnss-sdr",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:galileo-osnma-sis-icd",
+    "kind": "standard",
+    "title": "Galileo OSNMA Signal-In-Space Interface Control Document Issue 1.1",
+    "url": "https://www.gsc-europa.eu/sites/default/files/sites/all/files/Galileo_OSNMA_SIS_ICD_v1.1.pdf",
+    "authors": [
+      "EU / European GNSS Service Centre"
+    ],
+    "year": 2023,
+    "summary": "Defines Open Service Navigation Message Authentication: how TESLA-chain MACs and keys are embedded in spare I/NAV bits so a receiver can cryptographically verify that navigation data came from Galileo. It is the first civil GNSS data-authentication service in operation.",
+    "key_takeaways": [
+      "Uses a TESLA key chain with delayed key disclosure",
+      "Authenticates navigation data, not the ranging signal itself",
+      "Requires loose time sync and a public key obtained out of band"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-interference",
+      "concept:assured-pnt",
+      "concept:standards"
+    ],
+    "tags": [
+      "osnma",
+      "galileo",
+      "authentication",
+      "anti-spoofing",
+      "tesla"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:daniestevez/galileo-osnma",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:algafix/osnma",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:nlsfi/fgi-osnma",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:axelbjork/osnma_ublox",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:galileo-osnma-receiver-guidelines",
+    "kind": "standard",
+    "title": "Galileo OSNMA Receiver Guidelines Issue 1.3",
+    "url": "https://www.gsc-europa.eu/sites/default/files/sites/all/files/Galileo_OSNMA_Receiver_Guidelines_v1.3.pdf",
+    "authors": [
+      "EU / European GNSS Service Centre"
+    ],
+    "year": 2023,
+    "summary": "Companion to the OSNMA ICD describing how a receiver should process OSNMA: time-sync requirements, key and Merkle-tree handling, verification procedures and how to report authentication status to the user.",
+    "key_takeaways": [
+      "Spells out the receiver time-sync assumption that OSNMA security depends on",
+      "Covers cold start, key renewal and chain transitions",
+      "Practical checklist for implementing OSNMA in software"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-interference",
+      "concept:assured-pnt",
+      "concept:standards"
+    ],
+    "tags": [
+      "osnma",
+      "galileo",
+      "receiver",
+      "anti-spoofing"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:daniestevez/galileo-osnma",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:algafix/osnma",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:nlsfi/fgi-osnma",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:axelbjork/osnma_ublox",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:galileo-osnma-sis-icd",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:galileo-osnma-service-page",
+    "kind": "doc",
+    "title": "Galileo Open Service Navigation Message Authentication (OSNMA) - service page",
+    "url": "https://www.gsc-europa.eu/galileo/services/galileo-open-service-navigation-message-authentication-osnma",
+    "authors": [
+      "European GNSS Service Centre"
+    ],
+    "year": 2025,
+    "summary": "Official landing page for the OSNMA service with status, public key and Merkle tree downloads, and links to the ICD and guidelines.",
+    "key_takeaways": [
+      "Where to get the current OSNMA public key and Merkle root",
+      "Links to service notices and documentation"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "osnma",
+      "galileo",
+      "service"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:daniestevez/galileo-osnma",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:algafix/osnma",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:nlsfi/fgi-osnma",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:axelbjork/osnma_ublox",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:galileo-has-sis-icd",
+    "kind": "standard",
+    "title": "Galileo High Accuracy Service Signal-In-Space ICD (HAS SIS ICD) Issue 1.0",
+    "url": "https://www.gsc-europa.eu/sites/default/files/sites/all/files/Galileo_HAS_SIS_ICD_v1.0.pdf",
+    "authors": [
+      "EU / European GNSS Service Centre"
+    ],
+    "year": 2022,
+    "summary": "Defines the free Galileo High Accuracy Service: PPP orbit, clock and bias corrections broadcast on E6-B (and via internet), including message structure and Reed-Solomon encoding.",
+    "key_takeaways": [
+      "Free PPP corrections broadcast from the satellites themselves",
+      "Enables decimetre-level PPP without a ground subscription",
+      "E6-B message decoding details for receiver builders"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp",
+      "concept:standards"
+    ],
+    "tags": [
+      "galileo",
+      "has",
+      "ppp",
+      "e6"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tomojitakasu/rtklib",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:rtklibexplorer/rtklib",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:gsc-programme-reference-documents",
+    "kind": "doc",
+    "title": "European GNSS Service Centre - Programme Reference Documents",
+    "url": "https://www.gsc-europa.eu/electronic-library/programme-reference-documents",
+    "authors": [
+      "European GNSS Service Centre"
+    ],
+    "year": 2025,
+    "summary": "Library of current Galileo ICDs, service definition documents and receiver guidelines (OS, HAS, OSNMA, SAR). Check here for the latest issue numbers before implementing.",
+    "key_takeaways": [
+      "Authoritative versions of all public Galileo specs",
+      "Includes service definition documents with committed performance"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:standards"
+    ],
+    "tags": [
+      "galileo",
+      "library"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:beidou-icd-library",
+    "kind": "standard",
+    "title": "BeiDou Navigation Satellite System Signal-In-Space ICDs (B1I, B3I, B1C, B2a, B2b)",
+    "url": "http://en.beidou.gov.cn/SYSTEMS/ICD/",
+    "authors": [
+      "China Satellite Navigation Office"
+    ],
+    "year": 2020,
+    "summary": "Official English-language ICD library for BeiDou open service signals, including the BDS-3 B1C and B2a signals that are interoperable with GPS L1C/L5 and Galileo E1/E5a, plus PPP-B2b.",
+    "key_takeaways": [
+      "BDS-3 B1C and B2a are designed for multi-GNSS interoperability",
+      "PPP-B2b carries free regional precise corrections",
+      "The BeiDou site is the official distribution channel"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:standards"
+    ],
+    "tags": [
+      "icd",
+      "beidou",
+      "bds-3",
+      "b1c",
+      "b2a"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tomojitakasu/rtklib",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:rtklibexplorer/rtklib",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:gnss-sdr/gnss-sdr",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:qzss-is-qzss",
+    "kind": "standard",
+    "title": "QZSS Performance Standards and Interface Specifications (IS-QZSS)",
+    "url": "https://qzss.go.jp/en/technical/ps-is-qzss/ps-is-qzss.html",
+    "authors": [
+      "Cabinet Office, Government of Japan"
+    ],
+    "year": 2024,
+    "summary": "Japan's QZSS interface specifications covering GPS-compatible signals, the L6 CLAS centimetre-level augmentation and MADOCA PPP services.",
+    "key_takeaways": [
+      "QZSS signals are GPS-interoperable and improve urban-canyon availability in Asia-Oceania",
+      "CLAS and MADOCA give free precise positioning corrections",
+      "Specs are published openly by the Cabinet Office"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp",
+      "concept:standards"
+    ],
+    "tags": [
+      "qzss",
+      "clas",
+      "madoca",
+      "l6"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tomojitakasu/rtklib",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:rtklibexplorer/rtklib",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:rtcm-sc104-standards",
+    "kind": "standard",
+    "title": "RTCM 10403.x Differential GNSS (DGNSS) Services - Version 3",
+    "url": "https://www.rtcm.org/",
+    "authors": [
+      "RTCM Special Committee 104"
+    ],
+    "year": 2023,
+    "summary": "The paid-access RTCM v3 standard that defines the binary messages used to stream GNSS corrections and observations (legacy RTK 1001-1012, MSM 1-7 per constellation, ephemerides, SSR). Practically every NTRIP caster and RTK base station speaks it.",
+    "key_takeaways": [
+      "MSM messages replaced legacy observation messages and align with RINEX 3",
+      "MSM4/MSM7 are the common choices for RTK",
+      "Standard itself is purchased; open parsers document much of it"
+    ],
+    "concepts": [
+      "concept:gnss-rtk-ppp",
+      "concept:standards"
+    ],
+    "tags": [
+      "rtcm3",
+      "msm",
+      "ntrip",
+      "rtk"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "repo:tomojitakasu/rtklib",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:rtklibexplorer/rtklib",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:semuconsulting/pyrtcm",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:navipedia-rtk-standards",
+    "kind": "doc",
+    "title": "Navipedia: RTK Standards",
+    "url": "https://gssc.esa.int/navipedia/index.php/RTK_Standards",
+    "authors": [
+      "ESA Navipedia"
+    ],
+    "year": 2011,
+    "summary": "Free encyclopedia overview of the RTCM correction message families and transport (NTRIP) used for real-time kinematic positioning. A good orientation before buying or parsing the RTCM standard.",
+    "key_takeaways": [
+      "Explains the role of RTCM 2.x vs 3.x messages",
+      "Covers NTRIP for internet transport"
+    ],
+    "concepts": [
+      "concept:gnss-rtk-ppp",
+      "concept:standards"
+    ],
+    "tags": [
+      "navipedia",
+      "rtcm",
+      "ntrip"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tomojitakasu/rtklib",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:rtklibexplorer/rtklib",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:rtcm-sc104-standards",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:nmea-0183-standard",
+    "kind": "standard",
+    "title": "NMEA 0183 Interface Standard",
+    "url": "https://www.nmea.org/nmea-0183.html",
+    "authors": [
+      "National Marine Electronics Association"
+    ],
+    "year": 2023,
+    "summary": "The ASCII serial sentence standard (GGA, RMC, GSA, GSV, VTG...) used by nearly all GNSS receivers and marine electronics. The official standard is sold; open references cover the common sentences.",
+    "key_takeaways": [
+      "Talker IDs distinguish GPS, GLONASS, Galileo, BeiDou and multi-GNSS output",
+      "Checksummed ASCII over serial, easy to parse and to fake",
+      "Still the lowest-common-denominator GNSS output"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:maritime-nav",
+      "concept:standards"
+    ],
+    "tags": [
+      "nmea0183",
+      "serial",
+      "marine"
+    ],
+    "level": "intro",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "repo:semuconsulting/pynmeagps",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:nmea-2000-standard",
+    "kind": "standard",
+    "title": "NMEA 2000 Standard (CAN-based marine network)",
+    "url": "https://www.nmea.org/nmea-2000.html",
+    "authors": [
+      "National Marine Electronics Association"
+    ],
+    "year": 2023,
+    "summary": "CAN bus based marine network standard that carries position, heading, AIS and engine data as PGNs between devices. Paid standard; the community has reverse-documented many PGNs.",
+    "key_takeaways": [
+      "PGNs carry GNSS position, COG/SOG, heading and AIS",
+      "Plug-and-play backbone on modern vessels",
+      "Unauthenticated bus, relevant to maritime spoofing resilience"
+    ],
+    "concepts": [
+      "concept:maritime-nav",
+      "concept:standards"
+    ],
+    "tags": [
+      "nmea2000",
+      "can",
+      "pgn",
+      "marine"
+    ],
+    "level": "intermediate",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "repo:canboat/canboat",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:gpsd-nmea-revealed",
+    "kind": "doc",
+    "title": "NMEA Revealed (gpsd project)",
+    "url": "https://gpsd.gitlab.io/gpsd/NMEA.html",
+    "authors": [
+      "Eric S. Raymond / gpsd project"
+    ],
+    "year": 2024,
+    "summary": "A free, detailed field-by-field reference to NMEA 0183 sentences as actually emitted by real receivers, including vendor quirks and version differences. The practical substitute for the paywalled standard.",
+    "key_takeaways": [
+      "Documents real-world deviations from the standard",
+      "Covers talker IDs for multi-GNSS output",
+      "Written by gpsd maintainers who parse these daily"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:standards"
+    ],
+    "tags": [
+      "nmea0183",
+      "gpsd",
+      "reference"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:gitlab.com/gpsd/gpsd",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:semuconsulting/pynmeagps",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:nmea-0183-standard",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:mavlink-developer-guide",
+    "kind": "doc",
+    "title": "MAVLink Developer Guide",
+    "url": "https://mavlink.io/en/",
+    "authors": [
+      "MAVLink project / Dronecode"
+    ],
+    "year": 2025,
+    "summary": "Official documentation for the MAVLink micro air vehicle messaging protocol: message definitions, microservices (mission, parameters, camera, FTP), dialects and code generators.",
+    "key_takeaways": [
+      "Lightweight binary protocol between autopilots, GCS and companion computers",
+      "Microservices define stateful exchanges like mission upload",
+      "Generators produce bindings for C, Python, Rust and more"
+    ],
+    "concepts": [
+      "concept:mavlink-gcs",
+      "concept:autopilot",
+      "concept:standards"
+    ],
+    "tags": [
+      "mavlink",
+      "protocol",
+      "uav",
+      "dronecode"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mavlink/mavlink",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:mavlink/mavsdk",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "uses"
+      },
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:mavlink-common-messages",
+    "kind": "doc",
+    "title": "MAVLink Common Message Set (common.xml)",
+    "url": "https://mavlink.io/en/messages/common.html",
+    "authors": [
+      "MAVLink project / Dronecode"
+    ],
+    "year": 2025,
+    "summary": "Reference of all messages and commands in the common dialect, including GPS_RAW_INT, GPS_INPUT for injecting external position, ODOMETRY and VISION_POSITION_ESTIMATE for non-GNSS navigation sources.",
+    "key_takeaways": [
+      "GPS_INPUT and VISION_POSITION_ESTIMATE are the hooks for feeding alternative PNT into an autopilot",
+      "ODOMETRY carries full pose plus covariance",
+      "Enumerations document EKF and GPS fix status flags"
+    ],
+    "concepts": [
+      "concept:mavlink-gcs",
+      "concept:autopilot",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "mavlink",
+      "messages",
+      "gps_input",
+      "odometry"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mavlink/mavlink",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:mavlink/mavsdk",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "uses"
+      },
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:mavlink-2-signing",
+    "kind": "doc",
+    "title": "MAVLink 2 and Message Signing",
+    "url": "https://mavlink.io/en/guide/message_signing.html",
+    "authors": [
+      "MAVLink project / Dronecode"
+    ],
+    "year": 2025,
+    "summary": "Describes MAVLink 2 packet signing: a shared-secret SHA-256 based signature and timestamp appended to frames to authenticate the link and resist replay.",
+    "key_takeaways": [
+      "Signing authenticates but does not encrypt traffic",
+      "Key distribution is left to the integrator",
+      "Relevant for hardening drone C2 links against injection"
+    ],
+    "concepts": [
+      "concept:mavlink-gcs",
+      "concept:ew-resilience",
+      "concept:standards"
+    ],
+    "tags": [
+      "mavlink2",
+      "signing",
+      "security",
+      "c2-link"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mavlink/mavlink",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:mavlink/mavsdk",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "uses"
+      },
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "uses"
+      },
+      {
+        "id": "res:mavlink-developer-guide",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:mavlink-mission-protocol",
+    "kind": "doc",
+    "title": "MAVLink Mission Protocol",
+    "url": "https://mavlink.io/en/services/mission.html",
+    "authors": [
+      "MAVLink project / Dronecode"
+    ],
+    "year": 2025,
+    "summary": "The microservice used to upload, download and clear waypoint missions, geofences and rally points between a GCS and an autopilot, with its handshake and retry rules.",
+    "key_takeaways": [
+      "Defines MISSION_COUNT / MISSION_ITEM_INT handshake",
+      "Same protocol carries geofence and rally point plans"
+    ],
+    "concepts": [
+      "concept:mavlink-gcs",
+      "concept:mission-planning"
+    ],
+    "tags": [
+      "mavlink",
+      "mission",
+      "waypoints",
+      "geofence"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mavlink/mavlink",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:mavlink/mavsdk",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "uses"
+      },
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "uses"
+      },
+      {
+        "id": "res:mavlink-developer-guide",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:cot-niessen-ndia-2008",
+    "kind": "talk",
+    "title": "Cursor on Target (NDIA briefing)",
+    "url": "https://ndia.dtic.mil/wp-content/uploads/2008/USCG/Wednesday/2NiessenCursorOnTarget.pdf",
+    "authors": [
+      "MITRE (Niessen)"
+    ],
+    "year": 2008,
+    "summary": "Briefing introducing the Cursor on Target XML event schema: the minimal event/point/detail model for exchanging what-when-where of tracked entities between C2 systems.",
+    "key_takeaways": [
+      "Base schema is tiny: event, point, detail",
+      "Type strings follow a hierarchical a-f-G-... code derived from symbology",
+      "Extensibility lives in the detail element"
+    ],
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:standards"
+    ],
+    "tags": [
+      "cot",
+      "cursor-on-target",
+      "xml",
+      "c2"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:deptofdefense/androidtacticalassaultkit-civ",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:tak-product-center/atak-civ",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:snstac/pytak",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:tak-protocol-takproto",
+    "kind": "doc",
+    "title": "TAK Protocol (takproto) - protobuf encoding of CoT",
+    "url": "https://github.com/deptofdefense/AndroidTacticalAssaultKit-CIV/blob/main/takproto/README.md",
+    "authors": [
+      "US DoD / TAK Product Center"
+    ],
+    "year": 2020,
+    "summary": "Documentation of the TAK protocol used by ATAK and TAK Server: how CoT events are framed and carried as protocol buffers over mesh (UDP multicast) and streaming (TCP/TLS) transports, alongside legacy XML.",
+    "key_takeaways": [
+      "Explains version negotiation between XML and protobuf CoT",
+      "Mesh vs streaming framing headers",
+      "Essential to get a custom app talking to ATAK"
+    ],
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:standards"
+    ],
+    "tags": [
+      "tak",
+      "cot",
+      "protobuf",
+      "atak"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:deptofdefense/androidtacticalassaultkit-civ",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:tak-product-center/atak-civ",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:snstac/pytak",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:cot-niessen-ndia-2008",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:stanag-4586-overview",
+    "kind": "doc",
+    "title": "STANAG 4586 - Standard Interfaces of UAV Control System (UCS) for NATO UAV Interoperability",
+    "url": "https://en.wikipedia.org/wiki/STANAG_4586",
+    "authors": [
+      "NATO (summary: Wikipedia)"
+    ],
+    "year": 2017,
+    "summary": "Public overview of NATO's UAS interoperability standard, which defines a core UCS, a vehicle-specific module and five levels of interoperability from receiving payload data up to full flight control including launch and recovery.",
+    "key_takeaways": [
+      "LOI 1-3 cover payload data and control; LOI 4-5 cover flight control",
+      "Vehicle Specific Module isolates proprietary air vehicle interfaces",
+      "Full text distributed via NATO / national channels"
+    ],
+    "concepts": [
+      "concept:mavlink-gcs",
+      "concept:standards",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "stanag-4586",
+      "nato",
+      "uas",
+      "interoperability"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:nato-standardization-topic",
+    "kind": "doc",
+    "title": "NATO Standardization (topic page)",
+    "url": "https://www.nato.int/cps/en/natohq/topics_69269.htm",
+    "authors": [
+      "NATO"
+    ],
+    "year": 2024,
+    "summary": "NATO's public explanation of how STANAGs and Allied publications are produced and ratified, and how interoperability standards flow into national forces. Starting point for locating public STANAG/AP summaries.",
+    "key_takeaways": [
+      "STANAGs record national agreement to implement an Allied publication",
+      "Most full texts are restricted; summaries and some APs are public"
+    ],
+    "concepts": [
+      "concept:standards",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "nato",
+      "stanag",
+      "standardization"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:app-6-joint-military-symbology",
+    "kind": "doc",
+    "title": "NATO Joint Military Symbology (APP-6) - overview",
+    "url": "https://en.wikipedia.org/wiki/NATO_Joint_Military_Symbology",
+    "authors": [
+      "NATO (summary: Wikipedia)"
+    ],
+    "year": 2023,
+    "summary": "Overview of APP-6, the NATO standard for map symbols of units, equipment and tactical graphics, now at edition E and aligned with the US MIL-STD-2525 family. Explains frames, affiliation colours and the symbol identification code.",
+    "key_takeaways": [
+      "Affiliation (friend/hostile/neutral/unknown) is encoded by frame shape and colour",
+      "APP-6 and MIL-STD-2525 share a common symbol code structure",
+      "Open renderers implement it for COP displays"
+    ],
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:gis-mapping",
+      "concept:standards"
+    ],
+    "tags": [
+      "app-6",
+      "milsymbol",
+      "nato",
+      "cop"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:spatialillusions/milsymbol",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:missioncommand/mil-sym-ts",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:mil-std-2525-overview",
+    "kind": "doc",
+    "title": "MIL-STD-2525 Joint Military Symbology - overview",
+    "url": "https://en.wikipedia.org/wiki/MIL-STD-2525",
+    "authors": [
+      "US DoD (summary: Wikipedia)"
+    ],
+    "year": 2023,
+    "summary": "Summary of the US military symbology standard and its revisions (2525B through E), including the SIDC code formats that symbol renderers and CoT type strings map onto.",
+    "key_takeaways": [
+      "2525D/E moved to a numeric 20/30-digit SIDC",
+      "Basis for symbology in TAK and many C2 tools"
+    ],
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:standards"
+    ],
+    "tags": [
+      "mil-std-2525",
+      "sidc",
+      "symbology"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:spatialillusions/milsymbol",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:missioncommand/mil-sym-ts",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:app-6-joint-military-symbology",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:eo-13905-responsible-pnt",
+    "kind": "standard",
+    "title": "Executive Order 13905: Strengthening National Resilience Through Responsible Use of PNT Services",
+    "url": "https://www.federalregister.gov/documents/2020/02/18/2020-03337/strengthening-national-resilience-through-responsible-use-of-positioning-navigation-and-timing-services",
+    "authors": [
+      "The White House"
+    ],
+    "year": 2020,
+    "summary": "US executive order that defines 'responsible use of PNT' and tasks Commerce/NIST, DHS and others to produce PNT profiles, identify critical infrastructure dependencies and pilot-test resilience. It is the root of NIST IR 8323 and the DHS conformance framework.",
+    "key_takeaways": [
+      "Treats PNT disruption as a critical infrastructure risk",
+      "Directs creation of voluntary PNT profiles",
+      "Calls for testing PNT resilience in federal contracts"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:policy-ethics",
+      "concept:timing"
+    ],
+    "tags": [
+      "executive-order",
+      "eo-13905",
+      "policy",
+      "critical-infrastructure"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:nist-ir-8323r1-pnt-profile",
+    "kind": "standard",
+    "title": "NIST IR 8323r1: Foundational PNT Profile - Applying the Cybersecurity Framework for the Responsible Use of PNT Services",
+    "url": "https://csrc.nist.gov/pubs/ir/8323/r1/final",
+    "authors": [
+      "NIST"
+    ],
+    "year": 2023,
+    "summary": "Maps the NIST Cybersecurity Framework functions (identify, protect, detect, respond, recover) onto systems that produce or consume PNT data. A checklist-style profile for building resilient PNT into an architecture.",
+    "key_takeaways": [
+      "Revision 1 supersedes the 2021 original",
+      "Organized around CSF functions, applicable to both GNSS and non-GNSS sources",
+      "NIST has signalled alignment with CSF 2.0"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:policy-ethics",
+      "concept:timing",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "nist",
+      "cybersecurity-framework",
+      "pnt-profile"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:eo-13905-responsible-pnt",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:dhs-resilient-pnt-conformance-framework",
+    "kind": "standard",
+    "title": "Resilient PNT Conformance Framework (v1.0)",
+    "url": "https://dhs.gov/sites/default/files/publications/2020_12_resilient_pnt_conformance_framework.pdf",
+    "authors": [
+      "DHS Science and Technology Directorate"
+    ],
+    "year": 2020,
+    "summary": "Defines four cumulative resilience levels for PNT user equipment based on prevent, respond and recover behaviours, so buyers and vendors can describe how a receiver behaves under jamming or spoofing.",
+    "key_takeaways": [
+      "Levels escalate from basic recovery to full prevention and response",
+      "Scope is PNT-producing equipment, not downstream consumers",
+      "A later v2.0 was reported in 2022 with evaluation guidance"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:gnss-interference",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "dhs",
+      "resilience-levels",
+      "conformance",
+      "receiver"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:eo-13905-responsible-pnt",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:dhs-resilient-pnt-reference-architecture",
+    "kind": "standard",
+    "title": "Resilient PNT Reference Architecture",
+    "url": "https://dhs.gov/science-and-technology/publication/resilient-pnt-reference-architecture",
+    "authors": [
+      "DHS Science and Technology Directorate"
+    ],
+    "year": 2022,
+    "summary": "Companion to the conformance framework describing architectural patterns (source diversity, integrity checking, holdover) that map to its resilience levels.",
+    "key_takeaways": [
+      "Architectural guidance for multi-source PNT",
+      "Mapped to conformance framework levels"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:sensor-fusion",
+      "concept:timing"
+    ],
+    "tags": [
+      "dhs",
+      "architecture",
+      "resilience"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:dhs-resilient-pnt-conformance-framework",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:dhs-st-pnt-program",
+    "kind": "doc",
+    "title": "DHS S&T Positioning, Navigation, and Timing Program",
+    "url": "https://dhs.gov/science-and-technology/pnt-program",
+    "authors": [
+      "DHS Science and Technology Directorate"
+    ],
+    "year": 2025,
+    "summary": "Program hub for DHS PNT work: conformance framework, reference architecture, timing guidance and test events for critical infrastructure.",
+    "key_takeaways": [
+      "Links all DHS resilient PNT publications",
+      "Shows the civil critical-infrastructure angle of PNT resilience"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:timing",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "dhs",
+      "program"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:dhs-resilient-pnt-conformance-framework",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:dodd-4650-05-pnt",
+    "kind": "standard",
+    "title": "DoD Directive 4650.05: Positioning, Navigation, and Timing (PNT)",
+    "url": "https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodd/465005p.pdf",
+    "authors": [
+      "US Department of Defense"
+    ],
+    "year": 2023,
+    "summary": "DoD policy directive governing the department's PNT enterprise, including the PNT Oversight Council and responsibilities for assured PNT and navigation warfare. Change 3 (2023) updated the oversight structure.",
+    "key_takeaways": [
+      "Establishes the DoD PNT Oversight Council",
+      "Assigns responsibilities for PNT and navigation warfare"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:policy-ethics",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "dod",
+      "directive",
+      "navwar",
+      "policy"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:gao-21-320sp-gps-alternatives",
+    "kind": "report",
+    "title": "GAO-21-320SP: Defense Navigation Capabilities - DOD Is Developing PNT Alternatives to GPS",
+    "url": "https://www.gao.gov/products/gao-21-320sp",
+    "authors": [
+      "US Government Accountability Office"
+    ],
+    "year": 2021,
+    "summary": "Technology assessment of DoD's alternative PNT efforts (inertial, vision, celestial, magnetic, signals of opportunity, clocks), with maturity status and challenges. A concise government map of the alt-PNT landscape.",
+    "key_takeaways": [
+      "DOD keeps GPS at the core and adds complements",
+      "Reviews maturity of many alt-PNT technology families",
+      "Flags integration and testing as recurring challenges"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:ins",
+      "concept:signals-of-opportunity",
+      "concept:celestial-nav",
+      "concept:magnetic-nav",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "gao",
+      "dod",
+      "alt-pnt",
+      "technology-assessment"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:us-national-pnt-rd-plan-2021",
+    "kind": "report",
+    "title": "National Positioning, Navigation, and Timing Resilience R&D Plan",
+    "url": "https://bidenwhitehouse.archives.gov/wp-content/uploads/2021/08/Position_Navigation_Timing_RD_Plan-August-2021-1.pdf",
+    "authors": [
+      "US National Science and Technology Council"
+    ],
+    "year": 2021,
+    "summary": "Federal R&D plan responding to EO 13905, laying out research priorities for resilient PNT: threat detection, alternative sources, timing distribution and integrity.",
+    "key_takeaways": [
+      "Identifies federal R&D priorities for PNT resilience",
+      "Ties research areas back to EO 13905"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:policy-ethics",
+      "concept:timing"
+    ],
+    "tags": [
+      "ostp",
+      "r-and-d-plan",
+      "policy"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:eo-13905-responsible-pnt",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:dot-complementary-pnt-action-plan-2023",
+    "kind": "report",
+    "title": "DOT Complementary PNT Action Plan",
+    "url": "https://www.transportation.gov/sites/dot.gov/files/2023-09/DOT%20Complementary%20PNT%20Action%20Plan.pdf",
+    "authors": [
+      "US Department of Transportation / Volpe Center"
+    ],
+    "year": 2023,
+    "summary": "US DOT plan to drive adoption of complementary PNT for transportation and critical infrastructure via stakeholder engagement, specifications, field trials and test ranges.",
+    "key_takeaways": [
+      "Five lines of effort starting with engagement and standards",
+      "Leads to field testing of commercial CPNT technologies"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:signals-of-opportunity",
+      "concept:timing",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "dot",
+      "cpnt",
+      "volpe",
+      "policy"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:rand-rr2970-resilient-pnt",
+    "kind": "report",
+    "title": "Analyzing a More Resilient National Positioning, Navigation, and Timing Capability (RR-2970)",
+    "url": "https://www.rand.org/pubs/research_reports/RR2970.html",
+    "authors": [
+      "RAND Corporation"
+    ],
+    "year": 2021,
+    "summary": "DHS-sponsored RAND study of civil US PNT dependence that argues GPS is not the only PNT source in practice and that no single system is a perfect backup. It is a deliberately contrarian counterweight to the 'GPS loss is catastrophic' framing.",
+    "key_takeaways": [
+      "Realistic adaptation lowers estimated economic cost of GPS loss",
+      "High bar for a large government-funded GPS backup",
+      "Recommends modest investment in threat detection"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "rand",
+      "think-tank",
+      "economics",
+      "civil-pnt"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:jrc-assessing-apnt-2023",
+    "kind": "report",
+    "title": "Assessing Alternative Positioning, Navigation and Timing Technologies for Potential Deployment in the EU",
+    "url": "https://rntfnd.org/wp-content/uploads/EU-Assessing-APNT-March-2023.pdf",
+    "authors": [
+      "European Commission Joint Research Centre"
+    ],
+    "year": 2023,
+    "summary": "JRC test campaign at Ispra of commercial alternative PNT systems (terrestrial beacons, LEO, eLoran-like, fibre timing and others) for DG DEFIS. One of the few side-by-side public evaluations of A-PNT products.",
+    "key_takeaways": [
+      "Mature commercial A-PNT already exists for positioning or timing",
+      "Recommends a system-of-systems approach",
+      "Warns the diverse tests do not allow a fair head-to-head ranking"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:signals-of-opportunity",
+      "concept:timing",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "jrc",
+      "eu",
+      "a-pnt",
+      "test-campaign"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:jrc-complementary-pnt-page",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:jrc-complementary-pnt-page",
+    "kind": "doc",
+    "title": "JRC Complementary Position, Navigation and Timing",
+    "url": "https://joint-research-centre.ec.europa.eu/scientific-activities/complementary-position-navigation-and-timing_en",
+    "authors": [
+      "European Commission Joint Research Centre"
+    ],
+    "year": 2023,
+    "summary": "JRC activity page hosting the A-PNT assessment report with per-vendor appendices and related EU complementary PNT work.",
+    "key_takeaways": [
+      "Official host for the report and vendor appendices"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "jrc",
+      "eu",
+      "cpnt"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:unoosa-icg",
+    "kind": "doc",
+    "title": "International Committee on GNSS (ICG)",
+    "url": "https://www.unoosa.org/oosa/en/ourwork/icg/icg.html",
+    "authors": [
+      "UN Office for Outer Space Affairs"
+    ],
+    "year": 2025,
+    "summary": "UN forum where GNSS providers coordinate compatibility, interoperability and spectrum protection, including interference detection and mitigation work.",
+    "key_takeaways": [
+      "Venue for multi-GNSS interoperability agreements",
+      "Hosts work on interference detection and mitigation"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-interference",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "un",
+      "icg",
+      "interoperability"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:easa-sib-2022-02r4",
+    "kind": "standard",
+    "title": "EASA Safety Information Bulletin 2022-02R4: GNSS Outage and Alterations Leading to Communication / Navigation / Surveillance Degradation",
+    "url": "https://ad.easa.europa.eu/ad/2022-02R4",
+    "authors": [
+      "European Union Aviation Safety Agency"
+    ],
+    "year": 2026,
+    "summary": "EASA's running bulletin on GNSS jamming and spoofing affecting aviation since February 2022, with recommendations for authorities, ANSPs, operators and manufacturers. Revision 4 is the current issue.",
+    "key_takeaways": [
+      "Spoofing is treated as the harder-to-detect, higher-risk threat",
+      "Recommendations are informational, not mandatory",
+      "Affected FIRs are tracked on the EASA website"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:policy-ethics",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "easa",
+      "sib",
+      "aviation",
+      "spoofing",
+      "jamming"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:easa-iata-gnss-interference-plan-2025",
+    "kind": "report",
+    "title": "EASA and IATA comprehensive plan to mitigate the risks of GNSS interference",
+    "url": "https://www.easa.europa.eu/en/newsroom-and-events/press-releases/easa-and-iata-publish-comprehensive-plan-mitigate-risks-gnss",
+    "authors": [
+      "EASA",
+      "IATA"
+    ],
+    "year": 2025,
+    "summary": "Joint plan from a 2025 EASA/IATA workshop covering reporting, prevention and mitigation, infrastructure and airspace management, and coordination for GNSS interference.",
+    "key_takeaways": [
+      "Standard radio calls and NOTAM Q-codes for interference",
+      "Tighter controls on jammer sales",
+      "Keep a minimum network of conventional navaids as backup"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:policy-ethics",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "easa",
+      "iata",
+      "aviation",
+      "mitigation-plan"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:easa-sib-2022-02r4",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:faa-gps-reports",
+    "kind": "doc",
+    "title": "FAA GPS/GNSS Interference Reports and Anomaly Reporting",
+    "url": "https://www.faa.gov/air_traffic/nas/gps_reports",
+    "authors": [
+      "Federal Aviation Administration"
+    ],
+    "year": 2025,
+    "summary": "FAA page for reporting and reviewing GPS anomalies and interference events, with links to notices about planned GPS interference testing and operator guidance.",
+    "key_takeaways": [
+      "Where US pilots file post-flight interference reports",
+      "Links to GPS test NOTAM information"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "faa",
+      "rfi",
+      "reporting",
+      "aviation"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:faa-safo-24002",
+    "kind": "standard",
+    "title": "FAA SAFO 24002: Recognizing and Mitigating GPS/GNSS Disruptions",
+    "url": "https://www.faa.gov/other_visit/aviation_industry/airline_operators/airline_safety/safo/all_safos/SAFO24002.pdf",
+    "authors": [
+      "Federal Aviation Administration"
+    ],
+    "year": 2024,
+    "summary": "Safety alert for operators describing how jamming and spoofing manifest in the cockpit and what crews should do: revert to conventional procedures, report to ATC, and file written reports.",
+    "key_takeaways": [
+      "Describes cockpit symptoms of jamming vs spoofing",
+      "Advises readiness to use conventional navaids",
+      "Later FAA guidance revisions followed in 2026"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "faa",
+      "safo",
+      "aviation",
+      "spoofing"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:faa-gps-reports",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:icao-gnss-rfi-workshop-presentation",
+    "kind": "talk",
+    "title": "ICAO workshop presentation: GNSS Radio Frequency Interference",
+    "url": "https://www.icao.int/sites/default/files/safety/FSMP/MeetingDocs/FSMP%20WG23/Presentations/5.02_Workshop-Presentation_GNSS-RFI.pdf",
+    "authors": [
+      "ICAO Flight Safety Measures Panel"
+    ],
+    "year": 2024,
+    "summary": "ICAO panel presentation on GNSS RFI impacts on flight operations and the regulatory response, from the Flight Safety Measures Panel working group.",
+    "key_takeaways": [
+      "Summarizes operational impacts on avionics",
+      "Frames the ICAO-level mitigation agenda"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "icao",
+      "rfi",
+      "aviation"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:opsgroup-gps-spoofing-final-report",
+    "kind": "report",
+    "title": "OPSGROUP GPS Spoofing Workgroup Final Report",
+    "url": "https://ops.group/blog/gps-spoofing-final-report/",
+    "authors": [
+      "OPSGROUP GPS Spoofing Workgroup"
+    ],
+    "year": 2024,
+    "summary": "Large practitioner-driven report on airliner GPS spoofing, built from crew surveys and incident data, with recommendations to manufacturers, regulators and operators. The best ground-truth account of what spoofing does to real avionics.",
+    "key_takeaways": [
+      "Spoofing can leave systems like terrain warning degraded after GPS returns",
+      "Receivers may retain corrupted data after an event",
+      "Argues for retaining ground-based navaids"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "opsgroup",
+      "aviation",
+      "spoofing",
+      "survey"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:skybrary-gnss-jamming-spoofing",
+    "kind": "doc",
+    "title": "SKYbrary: GNSS Jamming and Spoofing",
+    "url": "https://skybrary.aero/articles/gnss-jamming-and-spoofing",
+    "authors": [
+      "SKYbrary / EUROCONTROL"
+    ],
+    "year": 2025,
+    "summary": "Aviation safety wiki article explaining jamming vs spoofing, their effects on aircraft systems and the regulatory material around them, with links to bulletins and incident reports.",
+    "key_takeaways": [
+      "Plain-language intro to the aviation impact",
+      "Links to EASA/FAA/ICAO references"
+    ],
+    "concepts": [
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "skybrary",
+      "aviation",
+      "explainer"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:easa-sib-2022-02r4",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:darpa-adaptable-navigation-systems",
+    "kind": "doc",
+    "title": "DARPA Adaptable Navigation Systems (ANS)",
+    "url": "https://www.darpa.mil/research/programs/adaptable-navigation-systems",
+    "authors": [
+      "DARPA"
+    ],
+    "year": 2010,
+    "summary": "DARPA program page for ANS, which pursued plug-and-play fusion of navigation sensors and signals of opportunity plus better inertial sensors (cold atom) so platforms can navigate without GPS.",
+    "key_takeaways": [
+      "Combined ASPN-style sensor fusion with new IMU technology",
+      "Explicit focus on reconfigurable multi-sensor navigation"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:sensor-fusion",
+      "concept:ins",
+      "concept:signals-of-opportunity"
+    ],
+    "tags": [
+      "darpa",
+      "ans",
+      "alt-pnt"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:darpa-aspn-insidegnss",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:darpa-aspn-insidegnss",
+    "kind": "blog",
+    "title": "DARPA Seeks PNT Robustness, Flexibility with All Source Positioning and Navigation Program",
+    "url": "https://insidegnss.com/darpa-seeks-pnt-robustness-flexibility-with-all-source-positioning-and-navigation-program/",
+    "authors": [
+      "Inside GNSS"
+    ],
+    "year": 2012,
+    "summary": "Trade-press account of DARPA's ASPN program, which aimed at navigation software architectures that fuse any combination of sensors in plug-and-play fashion.",
+    "key_takeaways": [
+      "Phase 1 built algorithms and a software architecture",
+      "Phase 2 targeted real-time fusion on SWaP-representative hardware"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "darpa",
+      "aspn",
+      "plug-and-play",
+      "fusion"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:darpa-rockn",
+    "kind": "doc",
+    "title": "DARPA Robust Optical Clock Network (ROCkN)",
+    "url": "https://www.darpa.mil/research/programs/robust-optical-clock-network",
+    "authors": [
+      "DARPA"
+    ],
+    "year": 2022,
+    "summary": "Program to field low-SWaP optical atomic clocks with timing holdover beyond GPS satellite clocks, in a portable airborne variant and a transportable land/sea variant, to keep precise time without GNSS.",
+    "key_takeaways": [
+      "Two technical areas: portable and transportable clocks",
+      "Two two-year phases from physics package to operational clock"
+    ],
+    "concepts": [
+      "concept:timing",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "darpa",
+      "rockn",
+      "optical-clock",
+      "holdover"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:darpa-rockn-insidegnss",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:darpa-rockn-insidegnss",
+    "kind": "blog",
+    "title": "DARPA's ROCkN Program Targets GNSS-Free Precision Timing in Contested Environments",
+    "url": "https://insidegnss.com/darpas-rockn-program-targets-gnss-free-precision-timing-in-contested-environments/",
+    "authors": [
+      "Inside GNSS"
+    ],
+    "year": 2025,
+    "summary": "Progress report on ROCkN field tests, including optical clock hardware flown on aircraft and deployed aboard a ship.",
+    "key_takeaways": [
+      "Reports field synchronization and platform trials",
+      "Shows optical clocks leaving the lab"
+    ],
+    "concepts": [
+      "concept:timing",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "darpa",
+      "rockn",
+      "optical-clock"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:darpa-rockn",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:magnav-challenge-site",
+    "kind": "competition",
+    "title": "MagNav Challenge Problem (DAF-MIT AI Accelerator)",
+    "url": "https://magnav.mit.edu/",
+    "authors": [
+      "DAF-MIT AI Accelerator / AFRL"
+    ],
+    "year": 2021,
+    "summary": "Challenge site for airborne magnetic anomaly navigation: compensate the aircraft's own magnetic field out of magnetometer data so the remaining crustal anomaly can be map-matched for GPS-free navigation. Challenge is closed but data and code remain.",
+    "key_takeaways": [
+      "Scored against a professionally compensated tail-stinger magnetometer",
+      "Real flight data from survey aircraft",
+      "Directly reusable as a hackathon benchmark"
+    ],
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:assured-pnt",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "magnav",
+      "afrl",
+      "mit",
+      "airborne",
+      "challenge"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mit-ai-accelerator/magnav.jl",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:magnav-signal-enhancement-arxiv",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:magnav-signal-enhancement-arxiv",
+    "kind": "paper",
+    "title": "Signal Enhancement for Magnetic Navigation Challenge Problem",
+    "url": "https://arxiv.org/abs/2007.12158",
+    "authors": [
+      "Gnadt, Belarge, et al."
+    ],
+    "year": 2020,
+    "summary": "Paper defining the MagNav challenge: the physics of aircraft magnetic interference, the Tolles-Lawson baseline compensation, the dataset, and evaluation, framing it as a physics-informed ML problem.",
+    "key_takeaways": [
+      "Tolles-Lawson is the classical baseline to beat",
+      "Scalar magnetometer mixes Earth core, crustal anomaly and aircraft fields",
+      "Dataset released on Zenodo"
+    ],
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "magnav",
+      "tolles-lawson",
+      "ml",
+      "arxiv"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mit-ai-accelerator/magnav.jl",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:magnav-zenodo-dataset",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:magnav-zenodo-dataset",
+    "kind": "dataset",
+    "title": "MagNav Challenge flight dataset (Zenodo)",
+    "url": "https://zenodo.org/records/4271804",
+    "authors": [
+      "DAF-MIT AI Accelerator / AFRL"
+    ],
+    "year": 2020,
+    "summary": "Zenodo record holding the MagNav challenge flight data: magnetometer, INS, GPS truth and map data from survey flights.",
+    "key_takeaways": [
+      "HDF5 flight lines with truth position",
+      "Paired with MagNav.jl loaders"
+    ],
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "magnav",
+      "dataset",
+      "zenodo"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mit-ai-accelerator/magnav.jl",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:magnav-signal-enhancement-arxiv",
+        "rel": "dataset_for"
+      }
+    ]
+  },
+  {
+    "id": "res:daf-ai-challenges-arxiv",
+    "kind": "paper",
+    "title": "Developing a Series of AI Challenges for the United States Department of the Air Force",
+    "url": "https://arxiv.org/abs/2207.07033",
+    "authors": [
+      "DAF-MIT AI Accelerator"
+    ],
+    "year": 2022,
+    "summary": "Describes the Air Force AI challenge series including MagNav, covering both the compensation stage and a navigation stage that turns cleaned readings into position estimates.",
+    "key_takeaways": [
+      "MagNav split into compensation and navigation sub-challenges",
+      "Context on how DAF releases open benchmarks"
+    ],
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "magnav",
+      "afrl",
+      "challenge"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mit-ai-accelerator/magnav.jl",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:magnav-challenge-site",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:novatel-gajt-410ml-sheet",
+    "kind": "doc",
+    "title": "NovAtel GAJT-410ML Anti-Jam Antenna Product Sheet",
+    "url": "https://hexagondownloads.blob.core.windows.net/public/Novatel/assets/Documents/Papers/GAJT-410ML-Product-Sheet/GAJT-410ML-Product-Sheet.pdf",
+    "authors": [
+      "NovAtel / Hexagon"
+    ],
+    "year": 2023,
+    "summary": "Datasheet for a compact CRPA anti-jam antenna that combines an antenna array and null-forming electronics for land vehicles and small platforms, protecting GPS and Galileo bands and supporting M-code.",
+    "key_takeaways": [
+      "Null-steering CRPA as a drop-in in front of an existing receiver",
+      "Shows typical number of nulls and suppression claims for this class"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:ew-resilience",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "crpa",
+      "anti-jam",
+      "novatel",
+      "gajt",
+      "nulling"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:novatel-gajt-710ml",
+    "kind": "doc",
+    "title": "NovAtel GAJT-710ML anti-jam antenna",
+    "url": "https://novatel.com/products/anti-jam-antenna-systems-gajt/gajt-710ml-anti-jam-antenna",
+    "authors": [
+      "NovAtel / Hexagon"
+    ],
+    "year": 2024,
+    "summary": "Product page for the larger 7-element GAJT CRPA unit in a hardened enclosure for land vehicles and fixed sites.",
+    "key_takeaways": [
+      "More elements give more simultaneous nulls",
+      "Typical military vehicle CRPA form factor"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "crpa",
+      "anti-jam",
+      "novatel",
+      "gajt"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:novatel-gajt-410ml-sheet",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:septentrio-aim-plus",
+    "kind": "doc",
+    "title": "Septentrio AIM+ GNSS jamming and spoofing protection",
+    "url": "https://www.septentrio.com/aim",
+    "authors": [
+      "Septentrio"
+    ],
+    "year": 2025,
+    "summary": "Vendor explanation of AIM+ interference monitoring and mitigation: narrowband and wideband (chirp) jamming suppression in the receiver's signal processing plus layered spoofing detection including Galileo OSNMA.",
+    "key_takeaways": [
+      "Single-antenna, in-receiver mitigation rather than CRPA",
+      "Tiered feature levels",
+      "OSNMA is one of the anti-spoofing layers"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:ew-resilience",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "septentrio",
+      "aim+",
+      "anti-jam",
+      "anti-spoofing",
+      "osnma"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:galileo-osnma-sis-icd",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:septentrio-jammertest-results",
+    "kind": "blog",
+    "title": "Most resilient GNSS receiver: results from Jammertest in Norway",
+    "url": "https://www.septentrio.com/en/learn-more/insights/most-secure-gnss-receiver-results-jammertest-norway",
+    "authors": [
+      "Septentrio"
+    ],
+    "year": 2023,
+    "summary": "Vendor write-up of its receivers' behaviour during the Jammertest live jamming and spoofing campaign in Norway. Read as a vendor claim, but useful for the scenario descriptions.",
+    "key_takeaways": [
+      "Describes live jamming and spoofing scenarios",
+      "Vendor-authored results, not independent"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "septentrio",
+      "jammertest",
+      "field-test"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:npra/jammertest-plan",
+        "rel": "dataset_for"
+      },
+      {
+        "id": "repo:univaasadigieco/vaara",
+        "rel": "dataset_for"
+      },
+      {
+        "id": "repo:felixott94/fraunhoferiis_jammertest2025",
+        "rel": "dataset_for"
+      },
+      {
+        "id": "res:jammertest-norway",
+        "rel": "evaluates"
+      }
+    ]
+  },
+  {
+    "id": "res:ublox-looming-threat-jamming-spoofing",
+    "kind": "blog",
+    "title": "The looming threat of GPS jamming and spoofing (u-blox insights)",
+    "url": "https://www.u-blox.com/en/blogs/insights/looming-threat-gps-jamming-and-spoofing",
+    "authors": [
+      "u-blox"
+    ],
+    "year": 2023,
+    "summary": "u-blox explainer on how jamming and spoofing affect mass-market receivers and which receiver-side defences (multi-band, multi-constellation, signal monitoring) help.",
+    "key_takeaways": [
+      "Spoofing many signals consistently is harder with multi-GNSS",
+      "Mass-market receivers expose jamming/spoofing indicators that apps can read"
+    ],
+    "concepts": [
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "u-blox",
+      "spoofing",
+      "jamming",
+      "mass-market"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:axelbjork/osnma_ublox",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:protecting-gnss-intentional-interference-arxiv",
+    "kind": "paper",
+    "title": "White Paper: Protecting GNSS Against Intentional Interference",
+    "url": "https://arxiv.org/abs/2208.11555",
+    "authors": [
+      "Academic GNSS security community"
+    ],
+    "year": 2022,
+    "summary": "Open white paper summarizing the threat of jamming and spoofing to civil GNSS and the countermeasure landscape (signal authentication, antenna arrays, consistency checks, regulation).",
+    "key_takeaways": [
+      "Taxonomy of intentional interference",
+      "Argues for layered defence and authentication"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:assured-pnt",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "white-paper",
+      "spoofing",
+      "jamming",
+      "arxiv"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:navipedia",
+    "kind": "doc",
+    "title": "Navipedia - ESA GNSS encyclopedia",
+    "url": "https://gssc.esa.int/navipedia/index.php/Main_Page",
+    "authors": [
+      "European Space Agency"
+    ],
+    "year": 2025,
+    "summary": "ESA's free wiki covering GNSS fundamentals, systems, signals, receivers, augmentation and applications. The fastest authoritative lookup for any GNSS term.",
+    "key_takeaways": [
+      "Peer-reviewed style articles maintained by ESA",
+      "Covers GPS, Galileo, GLONASS, BeiDou, SBAS"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:geodesy"
+    ],
+    "tags": [
+      "navipedia",
+      "esa",
+      "encyclopedia"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:navipedia-osnma",
+    "kind": "doc",
+    "title": "Navipedia: Galileo Open Service Navigation Message Authentication",
+    "url": "https://gssc.esa.int/navipedia/index.php/Galileo_Open_Service_Navigation_Message_Authentication",
+    "authors": [
+      "European Space Agency"
+    ],
+    "year": 2023,
+    "summary": "Navipedia article explaining OSNMA's design and status in plain terms before you tackle the ICD.",
+    "key_takeaways": [
+      "Gentle introduction to TESLA-based navigation message authentication"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-interference",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "navipedia",
+      "osnma"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:daniestevez/galileo-osnma",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:algafix/osnma",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:nlsfi/fgi-osnma",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:axelbjork/osnma_ublox",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:galileo-osnma-sis-icd",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:esa-gnss-data-processing-vol1",
+    "kind": "book",
+    "title": "GNSS Data Processing, Vol. I: Fundamentals and Algorithms (ESA TM-23)",
+    "url": "https://gssc.esa.int/navipedia/GNSS_Book/ESA_GNSS-Book_TM-23_Vol_I.pdf",
+    "authors": [
+      "J. Sanz Subirana, J.M. Juan Zornoza, M. Hernandez-Pajares (ESA)"
+    ],
+    "year": 2013,
+    "summary": "Free ESA textbook covering GNSS measurement modelling, SPP, differential positioning and PPP algorithms with full equations. Pairs with the gLAB tool.",
+    "key_takeaways": [
+      "Complete measurement model incl. clocks, troposphere, ionosphere",
+      "SPP through PPP derivations",
+      "Designed to accompany gLAB exercises"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp",
+      "concept:geodesy"
+    ],
+    "tags": [
+      "textbook",
+      "esa",
+      "ppp",
+      "free-book"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tomojitakasu/rtklib",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:rtklibexplorer/rtklib",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:esa-gnss-data-processing-vol2",
+    "kind": "book",
+    "title": "GNSS Data Processing, Vol. II: Laboratory Exercises (ESA TM-23)",
+    "url": "https://gssc.esa.int/navipedia/GNSS_Book/ESA_GNSS-Book_TM-23_Vol_II.pdf",
+    "authors": [
+      "J. Sanz Subirana, J.M. Juan Zornoza, M. Hernandez-Pajares (ESA)"
+    ],
+    "year": 2013,
+    "summary": "Hands-on lab volume with step-by-step exercises on real data using the gLAB software, from SPP to carrier-phase PPP.",
+    "key_takeaways": [
+      "Ready-made labs usable as a GNSS bootcamp",
+      "Real RINEX data throughout"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp"
+    ],
+    "tags": [
+      "textbook",
+      "labs",
+      "glab",
+      "esa"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tomojitakasu/rtklib",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:rtklibexplorer/rtklib",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:esa-gnss-data-processing-vol1",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:borre-software-defined-gps-galileo-receiver",
+    "kind": "book",
+    "title": "A Software-Defined GPS and Galileo Receiver: A Single-Frequency Approach",
+    "url": "https://ccar.colorado.edu/gnss",
+    "authors": [
+      "K. Borre, D. Akos, N. Bertelsen, P. Rinder, S.H. Jensen"
+    ],
+    "year": 2007,
+    "summary": "Classic textbook that walks through a complete MATLAB GPS software receiver: acquisition, code/carrier tracking, navigation decoding and positioning. The linked University of Colorado page is the official support site for the book's code.",
+    "key_takeaways": [
+      "The canonical entry point to SDR GNSS receivers",
+      "MATLAB code makes every loop inspectable",
+      "Foundation for many later open SDR receivers"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-sdr"
+    ],
+    "tags": [
+      "textbook",
+      "sdr",
+      "matlab",
+      "borre",
+      "softgnss"
+    ],
+    "level": "intermediate",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "repo:gnsscusdr/cu-sdr-collection",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:gnss-sdr/gnss-sdr",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:stanford-scpnt",
+    "kind": "doc",
+    "title": "Stanford Center for Position, Navigation and Time (SCPNT) / GPS Lab",
+    "url": "https://web.stanford.edu/group/scpnt/",
+    "authors": [
+      "Stanford University"
+    ],
+    "year": 2025,
+    "summary": "Home of the Stanford GPS Lab and the annual PNT symposium; hosts papers and presentations on integrity, interference monitoring, spoofing and alternative PNT.",
+    "key_takeaways": [
+      "Annual symposium talks are a good snapshot of the field",
+      "Lab papers on aviation integrity and RFI localization"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-interference",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "stanford",
+      "scpnt",
+      "gps-lab",
+      "symposium"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:stanford-gps-lab",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:stanford-gps-lab",
+    "kind": "doc",
+    "title": "Stanford GPS Laboratory",
+    "url": "https://gps.stanford.edu/",
+    "authors": [
+      "Stanford University"
+    ],
+    "year": 2025,
+    "summary": "Research group site with publications and theses on GNSS integrity, interference detection and localization, and navigation for aviation.",
+    "key_takeaways": [
+      "Thesis archive is a deep free resource",
+      "Publications on GNSS RFI detection and localization"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "stanford",
+      "gps-lab",
+      "theses"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:stanford-navlab",
+    "kind": "doc",
+    "title": "Stanford NAV Lab (Grace Gao)",
+    "url": "https://navlab.stanford.edu/",
+    "authors": [
+      "Stanford University"
+    ],
+    "year": 2025,
+    "summary": "Grace Gao's lab working on robust navigation for autonomous systems: GNSS in urban environments, sensor fusion, integrity and lunar PNT. Course and paper material is linked from here.",
+    "key_takeaways": [
+      "Research on GNSS+vision/lidar fusion and integrity",
+      "Home of AA272-related teaching on smartphone GNSS"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:sensor-fusion",
+      "concept:space-nav"
+    ],
+    "tags": [
+      "stanford",
+      "navlab",
+      "autonomy"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:kreizis-ion-itm-2025-spoofing",
+    "kind": "paper",
+    "title": "Real-World Spoofing Detection (ION ITM 2025)",
+    "url": "https://web.stanford.edu/group/scpnt/gpslab/pubs/papers/Kreizis_ION_ITM_2025_Real_World_Spoofing_Detection.pdf",
+    "authors": [
+      "Kreizis et al., Stanford GPS Lab"
+    ],
+    "year": 2025,
+    "summary": "Analyses a real spoofing event in the Mediterranean recorded on low-cost u-blox F9P receivers and evaluates detection approaches on that live data rather than a simulator.",
+    "key_takeaways": [
+      "Real spoofing captured on commodity hardware",
+      "Shows which detection cues actually fire in the wild"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "spoofing",
+      "detection",
+      "u-blox",
+      "ion-itm"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tomojitakasu/rtklib",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:rtklibexplorer/rtklib",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:rados-2024-jamming-spoofing-detection-review",
+    "kind": "paper",
+    "title": "Recent Advances on Jamming and Spoofing Detection in GNSS",
+    "url": "https://www.mdpi.com/1424-8220/24/13/4210",
+    "authors": [
+      "K. Rados, M. Brkic, D. Begusic"
+    ],
+    "year": 2024,
+    "summary": "Open-access Sensors review of GNSS jamming and spoofing detection methods, finding machine learning is now the dominant approach, and covering combined jamming-plus-spoofing scenarios.",
+    "key_takeaways": [
+      "ML-based detection dominates recent work",
+      "Separates jamming-only, spoofing-only and combined attacks"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "survey",
+      "spoofing-detection",
+      "ml",
+      "mdpi"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:burbank-2024-gps-attacks-review",
+    "kind": "paper",
+    "title": "Detecting and Mitigating Attacks on GPS Devices",
+    "url": "https://www.mdpi.com/1424-8220/24/17/5529",
+    "authors": [
+      "J. Burbank, T. Greene, N. Kaabouch"
+    ],
+    "year": 2024,
+    "summary": "Open-access review of GPS attack detection and mitigation focused on the GPS-denied case, including the alternative sensors and methods used to keep navigating.",
+    "key_takeaways": [
+      "Covers both detection and what to fall back on",
+      "Does not cover timing-only alternatives"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:assured-pnt",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "survey",
+      "gps-denied",
+      "mdpi"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:lu-2024-spoofing-antispoofing-overview",
+    "kind": "paper",
+    "title": "Overview of satellite navigation spoofing and anti-spoofing techniques",
+    "url": "https://www.frontiersin.org/journals/physics/articles/10.3389/fphy.2024.1428544/full",
+    "authors": [
+      "Lu and Lu"
+    ],
+    "year": 2024,
+    "summary": "Open-access Frontiers in Physics overview grouping anti-spoofing countermeasures into detection, identification, suppression and localization of the spoofer.",
+    "key_takeaways": [
+      "Four-stage countermeasure taxonomy",
+      "Contrasts spoofing with suppression jamming"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "survey",
+      "anti-spoofing",
+      "frontiers"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:leo-soop-positioning-survey-2025",
+    "kind": "paper",
+    "title": "Survey on positioning technology based on signal of opportunity from low earth orbit",
+    "url": "https://www.frontiersin.org/journals/physics/articles/10.3389/fphy.2025.1592447/full",
+    "authors": [
+      "Frontiers in Physics authors"
+    ],
+    "year": 2025,
+    "summary": "Open-access survey of LEO signals-of-opportunity positioning: Doppler methods, error sources, and extracting observables from signals never designed for navigation (unknown codes, poor onboard clocks).",
+    "key_takeaways": [
+      "Doppler positioning is the workhorse for LEO SoOP",
+      "Unknown modulation and clock quality are the core difficulties"
+    ],
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:space-nav",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "survey",
+      "leo",
+      "starlink",
+      "doppler"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:kassas-starlink-navigation",
+    "kind": "paper",
+    "title": "Enter LEO on the GNSS Stage: Navigation with Starlink Satellites",
+    "url": "https://escholarship.org/content/qt9td3n8wd/qt9td3n8wd.pdf",
+    "authors": [
+      "Z. Kassas, M. Neinavaie, et al."
+    ],
+    "year": 2021,
+    "summary": "Opportunistic navigation using Starlink downlink signals without cooperation from the operator, describing two ways to extract navigation observables from unknown signals.",
+    "key_takeaways": [
+      "Starlink is usable for navigation without operator support",
+      "Signal structure must be partly estimated blind"
+    ],
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:space-nav",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "starlink",
+      "leo",
+      "kassas",
+      "opportunistic"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:kassas-multi-constellation-leo",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:kassas-multi-constellation-leo",
+    "kind": "paper",
+    "title": "Navigation with Multi-Constellation LEO Satellite Signals of Opportunity: Starlink, OneWeb, Orbcomm, and Iridium",
+    "url": "https://people.engineering.osu.edu/sites/default/files/2023-05/Kassas_Navigation_with_multi_constellation_LEO_satellite_signals_of_opportunity_Starlink_OneWeb_Orbcomm_and_Iridium.pdf",
+    "authors": [
+      "Z. Kassas et al."
+    ],
+    "year": 2023,
+    "summary": "Experimental multi-constellation LEO SoOP navigation combining four commercial constellations, using the simultaneous tracking and navigation (STAN) framework.",
+    "key_takeaways": [
+      "Combining constellations improves geometry and accuracy",
+      "STAN estimates satellite states and receiver state together"
+    ],
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:space-nav",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "leo",
+      "starlink",
+      "oneweb",
+      "iridium",
+      "stan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:rusi-preliminary-lessons-ukraine-2022",
+    "kind": "report",
+    "title": "Preliminary Lessons in Conventional Warfighting from Russia's Invasion of Ukraine: February-July 2022",
+    "url": "https://rusi.org/explore-our-research/publications/special-resources/preliminary-lessons-conventional-warfighting-russias-invasion-ukraine-february-july-2022",
+    "authors": [
+      "J. Watling, N. Reynolds (RUSI)"
+    ],
+    "year": 2022,
+    "summary": "RUSI analysis of the first months of the war, including the scale of Russian electronic warfare and its effect on Ukrainian UAV survival and GNSS-dependent systems.",
+    "key_takeaways": [
+      "EW is a dominant factor in small-UAV attrition",
+      "Lessons for resilience of navigation and C2 links"
+    ],
+    "concepts": [
+      "concept:ew-resilience",
+      "concept:gnss-interference",
+      "concept:counter-uas",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "rusi",
+      "ukraine",
+      "ew",
+      "think-tank"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:rusi-meatgrinder-2023",
+    "kind": "report",
+    "title": "Meatgrinder: Russian Tactics in the Second Year of Its Invasion of Ukraine",
+    "url": "https://www.rusi.org/explore-our-research/publications/special-resources/meatgrinder-russian-tactics-second-year-its-invasion-ukraine",
+    "authors": [
+      "J. Watling, N. Reynolds (RUSI)"
+    ],
+    "year": 2023,
+    "summary": "RUSI report on Russian adaptation in 2023, with a substantial section on electronic warfare density along the front and its impact on drones and GNSS-guided systems.",
+    "key_takeaways": [
+      "Describes dense, layered Russian EW deployment",
+      "Drone attrition to EW drives demand for non-GNSS navigation"
+    ],
+    "concepts": [
+      "concept:ew-resilience",
+      "concept:gnss-interference",
+      "concept:counter-uas",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "rusi",
+      "ukraine",
+      "ew",
+      "drones"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:rusi-preliminary-lessons-ukraine-2022",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:csis-space-threat-assessment-2025",
+    "kind": "report",
+    "title": "Space Threat Assessment 2025",
+    "url": "https://www.csis.org/analysis/space-threat-assessment-2025",
+    "authors": [
+      "CSIS Aerospace Security Project"
+    ],
+    "year": 2025,
+    "summary": "Annual open-source assessment of counterspace capabilities by country, including electronic counterspace such as GNSS jamming and spoofing.",
+    "key_takeaways": [
+      "Country-by-country counterspace inventory",
+      "Tracks GNSS electronic attack incidents year over year"
+    ],
+    "concepts": [
+      "concept:ew-resilience",
+      "concept:gnss-interference",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "csis",
+      "counterspace",
+      "think-tank"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:csis-space-threat-assessment-2024",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:csis-space-threat-assessment-2024",
+    "kind": "report",
+    "title": "Space Threat Assessment 2024",
+    "url": "https://www.csis.org/analysis/space-threat-assessment-2024",
+    "authors": [
+      "CSIS Aerospace Security Project"
+    ],
+    "year": 2024,
+    "summary": "Previous edition of the CSIS counterspace assessment; useful to see how GNSS interference reporting escalated between years.",
+    "key_takeaways": [
+      "Baseline for year-over-year comparison"
+    ],
+    "concepts": [
+      "concept:ew-resilience",
+      "concept:gnss-interference",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "csis",
+      "counterspace"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:c4ads-above-us-only-stars",
+    "kind": "report",
+    "title": "Above Us Only Stars: Exposing GPS Spoofing in Russia and Syria",
+    "url": "https://c4ads.org/reports/above-us-only-stars/",
+    "authors": [
+      "C4ADS"
+    ],
+    "year": 2019,
+    "summary": "OSINT investigation that used AIS ship tracks and other data to document systematic Russian GNSS spoofing around sensitive sites and in Syria. A model for detecting spoofing from public tracking data.",
+    "key_takeaways": [
+      "AIS position anomalies reveal spoofing at scale",
+      "Methodology is reproducible with public data"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:maritime-nav",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "c4ads",
+      "osint",
+      "ais",
+      "spoofing",
+      "russia"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:defensenews-baltic-jamming-origins-2025",
+    "kind": "blog",
+    "title": "Researchers home in on origins of Russia's Baltic GPS jamming",
+    "url": "https://www.defensenews.com/global/europe/2025/07/02/researchers-home-in-on-origins-of-russias-baltic-gps-jamming/",
+    "authors": [
+      "Defense News"
+    ],
+    "year": 2025,
+    "summary": "Report on Polish research tracing Baltic GNSS jamming to emitters in the Kaliningrad region, with context on the effects on aviation and shipping.",
+    "key_takeaways": [
+      "Emitter localization from distributed measurements",
+      "Shows the Baltic as a persistent interference zone"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:ew-resilience",
+      "concept:rf-localization"
+    ],
+    "tags": [
+      "baltic",
+      "kaliningrad",
+      "jamming",
+      "news"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:gpsjam-org",
+    "kind": "dataset",
+    "title": "GPSJam - daily GPS interference map",
+    "url": "https://gpsjam.org/",
+    "authors": [
+      "John Wiseman"
+    ],
+    "year": 2025,
+    "summary": "Public daily map of likely GPS interference derived from ADS-B navigation accuracy reports broadcast by aircraft. Great for spotting conflict-zone interference and as a data source for hackathon dashboards.",
+    "key_takeaways": [
+      "Derived from ADS-B NIC/NACp degradation",
+      "Hex-binned daily snapshots"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:situational-awareness",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "gpsjam",
+      "ads-b",
+      "map",
+      "osint"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:jammertest-norway",
+    "kind": "competition",
+    "title": "Jammertest - open GNSS jamming and spoofing test event (Andoya, Norway)",
+    "url": "https://jammertest.no/",
+    "authors": [
+      "Norwegian Communications Authority, FFI, NPRA and partners"
+    ],
+    "year": 2025,
+    "summary": "Annual open field event where Norwegian agencies transmit real jamming, spoofing and meaconing so vendors and researchers can test PNT equipment. The public test catalogue and community datasets make it the best source of real interference recordings.",
+    "key_takeaways": [
+      "Real over-the-air jamming and spoofing in a controlled area",
+      "Published test catalogue and plan",
+      "Participants release datasets on GitHub"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:datasets-benchmarks",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "jammertest",
+      "norway",
+      "field-test",
+      "spoofing"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:npra/jammertest-plan",
+        "rel": "dataset_for"
+      },
+      {
+        "id": "repo:univaasadigieco/vaara",
+        "rel": "dataset_for"
+      },
+      {
+        "id": "repo:felixott94/fraunhoferiis_jammertest2025",
+        "rel": "dataset_for"
+      }
+    ]
+  }
+]

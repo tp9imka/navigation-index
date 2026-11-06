@@ -1,0 +1,2385 @@
+[
+  {
+    "id": "repo:ros-navigation/navigation2",
+    "kind": "repo",
+    "name": "Nav2 (ROS 2 Navigation)",
+    "url": "https://github.com/ros-navigation/navigation2",
+    "summary": "The standard ROS 2 navigation stack: behavior-tree driven navigator, global planners (NavFn, Smac hybrid-A*/lattice, Theta*), local controllers (DWB, MPPI, Regulated Pure Pursuit), costmaps, recovery behaviors and waypoint following, including GPS waypoints via robot_localization.",
+    "why_it_matters": "Default autonomy layer for ground robots in ROS 2; the place to plug a GNSS-denied localization source and still get full point-to-point and waypoint missions.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:obstacle-avoidance",
+      "concept:ground-vehicle-nav",
+      "concept:ros"
+    ],
+    "tags": [
+      "nav2",
+      "ros2",
+      "costmap",
+      "mppi",
+      "smac-planner",
+      "behavior-tree"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "apt install ros-<distro>-navigation2 plus nav2_bringup gives a Gazebo TurtleBot demo in under an hour. Swap AMCL for your own localization by publishing map->odom TF. Tuning params YAML is the main time sink.",
+    "related": [
+      {
+        "id": "repo:open-navigation/opennav_coverage",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:behaviortree/behaviortree.cpp",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:stevemacenski/spatio_temporal_voxel_layer",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ompl/ompl",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:open-navigation/opennav_coverage",
+    "kind": "repo",
+    "name": "opennav_coverage",
+    "url": "https://github.com/open-navigation/opennav_coverage",
+    "summary": "Nav2-compatible complete-coverage task server and navigator built on Fields2Cover, with behavior-tree utilities for field/area coverage and row following.",
+    "why_it_matters": "Gives Nav2 robots area-search and survey patterns (boustrophedon sweeps over a polygon) out of the box, useful for search, mapping and route clearance scenarios.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:mission-planning",
+      "concept:ground-vehicle-nav",
+      "concept:ros"
+    ],
+    "tags": [
+      "coverage",
+      "nav2",
+      "fields2cover",
+      "boustrophedon"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs a source build of Fields2Cover; send a polygon in GPS or map frame and get a coverage route. Best for flat open terrain.",
+    "related": [
+      {
+        "id": "repo:ros-navigation/navigation2",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:fields2cover/fields2cover",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:ompl/ompl",
+    "kind": "repo",
+    "name": "OMPL - Open Motion Planning Library",
+    "url": "https://github.com/ompl/ompl",
+    "summary": "Library of sampling-based motion planners (RRT, RRT*, PRM, BIT*, informed variants, kinodynamic planners) with a clean state-space abstraction and Python bindings.",
+    "why_it_matters": "The reference implementation for sampling-based planning; underpins MoveIt and many UAV/UGV planners, so it is the quickest way to get a correct baseline planner.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "rrt",
+      "prm",
+      "sampling-based",
+      "python-bindings"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip wheels exist for the Python bindings; define a state validity checker against your occupancy grid or DEM and you have a planner in an afternoon.",
+    "related": [
+      {
+        "id": "repo:atsushisakai/pythonrobotics",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:moveit/moveit2",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:zju-fast-lab/ego-planner",
+    "kind": "repo",
+    "name": "EGO-Planner",
+    "url": "https://github.com/zju-fast-lab/ego-planner",
+    "summary": "ESDF-free gradient-based local planner for quadrotors from ZJU FAST Lab: optimizes B-spline trajectories using collision terms computed only where the trajectory hits obstacles.",
+    "why_it_matters": "Lightweight onboard replanning for small drones flying through clutter; widely reused baseline for agile UAV navigation in unknown environments.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:obstacle-avoidance",
+      "concept:ros"
+    ],
+    "tags": [
+      "quadrotor",
+      "b-spline",
+      "local-planner",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS1 (Noetic) with a bundled simulator; runs on a laptop. Porting to ROS 2 / PX4 needs a bridge. Good for a demo of reactive flight in a random forest map.",
+    "related": [
+      {
+        "id": "repo:zju-fast-lab/ego-planner-swarm",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:hkust-aerial-robotics/fast-planner",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:zju-fast-lab/gcopter",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:zju-fast-lab/ego-planner-swarm",
+    "kind": "repo",
+    "name": "EGO-Swarm",
+    "url": "https://github.com/zju-fast-lab/ego-planner-swarm",
+    "summary": "Decentralized multi-quadrotor extension of EGO-Planner with inter-agent collision avoidance and trajectory sharing over a network.",
+    "why_it_matters": "Open reference for drone swarms that coordinate paths without a central server, relevant to contested comms scenarios.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:multi-agent",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "swarm",
+      "decentralized",
+      "quadrotor"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Simulation launches many drones on one machine; trajectory broadcast assumes reliable comms - an interesting knob to degrade in a hackathon.",
+    "related": [
+      {
+        "id": "repo:zju-fast-lab/ego-planner",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:hkust-aerial-robotics/fast-planner",
+    "kind": "repo",
+    "name": "Fast-Planner",
+    "url": "https://github.com/hkust-aerial-robotics/fast-planner",
+    "summary": "HKUST quadrotor planning framework: kinodynamic A* front-end plus B-spline optimization, with topological and perception-aware variants for fast flight in unknown environments.",
+    "why_it_matters": "Classic baseline that most later UAV planners compare against; modular enough to reuse its mapping (ESDF) and search components.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:obstacle-avoidance",
+      "concept:ros"
+    ],
+    "tags": [
+      "kinodynamic-a-star",
+      "b-spline",
+      "esdf",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS1 + Gazebo-free lightweight sim; builds in minutes on Ubuntu 20.04. Expect NLopt dependency friction.",
+    "related": [
+      {
+        "id": "repo:hkust-aerial-robotics/fuel",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:zju-fast-lab/ego-planner",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:hkust-aerial-robotics/fuel",
+    "kind": "repo",
+    "name": "FUEL - Fast UAV Exploration",
+    "url": "https://github.com/hkust-aerial-robotics/fuel",
+    "summary": "Frontier-information-structure based autonomous exploration for quadrotors, combining global tour planning over frontiers with local viewpoint refinement.",
+    "why_it_matters": "Autonomous mapping of unknown buildings or terrain without GNSS or prior map, a core reconnaissance capability.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:mission-planning",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "exploration",
+      "frontier",
+      "quadrotor"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Bundled sim; pairs naturally with a VIO/LiDAR odometry source from other lanes.",
+    "related": [
+      {
+        "id": "repo:hkust-aerial-robotics/fast-planner",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:robotics-star-lab/racer",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:robotics-star-lab/racer",
+    "kind": "repo",
+    "name": "RACER - multi-UAV exploration",
+    "url": "https://github.com/robotics-star-lab/racer",
+    "summary": "Rapid collaborative exploration with multiple UAVs: decomposes unknown space and allocates exploration regions between drones with pairwise communication.",
+    "why_it_matters": "A worked example of multi-robot task allocation for exploration under limited comms.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:multi-agent",
+      "concept:mission-planning"
+    ],
+    "tags": [
+      "exploration",
+      "task-allocation",
+      "multi-uav"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Same toolchain as FUEL; run 2-4 drones in sim and vary comm range.",
+    "related": [
+      {
+        "id": "repo:hkust-aerial-robotics/fuel",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:zju-fast-lab/gcopter",
+    "kind": "repo",
+    "name": "GCOPTER",
+    "url": "https://github.com/zju-fast-lab/gcopter",
+    "summary": "General-purpose multicopter trajectory optimizer (MINCO) handling safe-corridor constraints and dynamic limits with spatial-temporal deformation.",
+    "why_it_matters": "Efficient, well-documented trajectory optimizer to turn waypoint paths into flyable minimum-control trajectories.",
+    "concepts": [
+      "concept:path-planning"
+    ],
+    "tags": [
+      "minco",
+      "trajectory-optimization",
+      "safe-flight-corridor"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Header-heavy C++ with ROS1 examples; best used as a library behind your own front-end.",
+    "related": [
+      {
+        "id": "repo:zju-fast-lab/ego-planner",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:ntnu-arl/gbplanner_ros",
+    "kind": "repo",
+    "name": "GBPlanner",
+    "url": "https://github.com/ntnu-arl/gbplanner_ros",
+    "summary": "NTNU ARL graph-based exploration planner for subterranean environments, used in the DARPA SubT challenge on legged and aerial robots.",
+    "why_it_matters": "Exploration and return-home planning in GNSS-denied tunnels and caves, battle-tested in SubT.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:mission-planning",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "exploration",
+      "subterranean",
+      "darpa-subt"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS workspace with Gazebo SubT-like worlds; heavy but realistic.",
+    "related": [
+      {
+        "id": "repo:hkust-aerial-robotics/fuel",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:hongbiaoz/autonomous_exploration_development_environment",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:hongbiaoz/autonomous_exploration_development_environment",
+    "kind": "repo",
+    "name": "CMU Autonomous Exploration Development Environment",
+    "url": "https://github.com/hongbiaoz/autonomous_exploration_development_environment",
+    "summary": "CMU ground-robot development environment with simulated worlds, terrain analysis, local planner and waypoint tools used for exploration research (TARE, FAR planner).",
+    "why_it_matters": "Ready-made outdoor/indoor ground autonomy sandbox with terrain traversability built in.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:ground-vehicle-nav",
+      "concept:simulation",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "terrain-analysis",
+      "exploration",
+      "cmu"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Download the Unity/Gazebo environment and run; the local planner and terrain analysis nodes are reusable standalone.",
+    "related": [
+      {
+        "id": "repo:ntnu-arl/gbplanner_ros",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:kumarrobotics/kr_autonomous_flight",
+    "kind": "repo",
+    "name": "KR Autonomous Flight",
+    "url": "https://github.com/kumarrobotics/kr_autonomous_flight",
+    "summary": "UPenn Kumar Robotics end-to-end autonomy stack for GPS-denied quadrotors: state estimation, mapping, planning and control in one system.",
+    "why_it_matters": "Full reference stack for flying without GNSS in forests and under canopy, from a lab with many field deployments.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:vio",
+      "concept:obstacle-avoidance",
+      "concept:ros"
+    ],
+    "tags": [
+      "gps-denied",
+      "quadrotor",
+      "full-stack"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Docker images help; large build. Use it to see how estimation and planning are glued, or reuse the planner.",
+    "related": [
+      {
+        "id": "repo:hkust-aerial-robotics/fast-planner",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:mit-acl/mader",
+    "kind": "repo",
+    "name": "MADER",
+    "url": "https://github.com/mit-acl/mader",
+    "summary": "MIT ACL decentralized and asynchronous trajectory planner for multiple UAVs in dynamic environments with obstacle and agent avoidance.",
+    "why_it_matters": "Multi-agent planning without synchronized clocks or central coordination, closer to real comms constraints.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:multi-agent",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "decentralized",
+      "asynchronous",
+      "multi-uav"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "No commits since 2022; ROS1. Use for ideas rather than code reuse.",
+    "related": [
+      {
+        "id": "repo:zju-fast-lab/ego-planner-swarm",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:aerostack2/aerostack2",
+    "kind": "repo",
+    "name": "Aerostack2",
+    "url": "https://github.com/aerostack2/aerostack2",
+    "summary": "ROS 2 framework for autonomous multi-aerial-robot systems: platform abstraction (PX4, DJI, Crazyflie, Gazebo), behaviors, mission scripting in Python and BT, and multi-drone coordination.",
+    "why_it_matters": "One of the few ROS 2 native UAV mission frameworks that spans simulation to several real autopilots, good for multi-drone mission demos.",
+    "concepts": [
+      "concept:mission-planning",
+      "concept:multi-agent",
+      "concept:autopilot",
+      "concept:ros"
+    ],
+    "tags": [
+      "ros2",
+      "uav",
+      "mission-api",
+      "behavior-tree",
+      "px4"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Binary packages for Humble; Python mission API lets you script takeoff/goto/land for several drones quickly.",
+    "related": [
+      {
+        "id": "repo:plansys2/ros2_planning_system",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:behaviortree/behaviortree.cpp",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:plansys2/ros2_planning_system",
+    "kind": "repo",
+    "name": "PlanSys2",
+    "url": "https://github.com/plansys2/ros2_planning_system",
+    "summary": "PDDL-based symbolic planning system for ROS 2: domain/problem management, plan generation with off-the-shelf planners and execution via behavior trees.",
+    "why_it_matters": "Turns high-level mission goals (visit, inspect, deliver) into executable action sequences, the missing layer above Nav2.",
+    "concepts": [
+      "concept:mission-planning",
+      "concept:ros",
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "pddl",
+      "task-planning",
+      "behavior-tree",
+      "ros2"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "apt-installable; write a PDDL domain and wrap Nav2 goals as actions. Learning PDDL is the time cost.",
+    "related": [
+      {
+        "id": "repo:ros-navigation/navigation2",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:behaviortree/behaviortree.cpp",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:aerostack2/aerostack2",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:behaviortree/behaviortree.cpp",
+    "kind": "repo",
+    "name": "BehaviorTree.CPP",
+    "url": "https://github.com/behaviortree/behaviortree.cpp",
+    "summary": "C++ behavior tree library with XML trees, async actions, logging and the Groot editor; the execution engine inside Nav2 and many mission frameworks.",
+    "why_it_matters": "Standard way to compose navigation, fallback and recovery logic into readable mission trees.",
+    "concepts": [
+      "concept:mission-planning",
+      "concept:ros"
+    ],
+    "tags": [
+      "behavior-tree",
+      "groot",
+      "mission-logic"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Header-friendly library; Groot2 GUI helps demo mission logic to judges.",
+    "related": [
+      {
+        "id": "repo:ros-navigation/navigation2",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:atsushisakai/pythonrobotics",
+    "kind": "repo",
+    "name": "PythonRobotics",
+    "url": "https://github.com/atsushisakai/pythonrobotics",
+    "summary": "Large collection of readable Python implementations of robotics algorithms: localization (EKF, particle filter), SLAM, path planning (A*, RRT*, D*, state lattice), path tracking and more, with animations.",
+    "why_it_matters": "Best teaching and prototyping resource; copy a planner or filter into a hackathon prototype in minutes.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:sensor-fusion",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "education",
+      "a-star",
+      "rrt",
+      "ekf",
+      "particle-filter"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Pure numpy/matplotlib; no build. Good for a quick 2D planner over a rasterized DEM.",
+    "related": [
+      {
+        "id": "repo:ompl/ompl",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:fields2cover/fields2cover",
+    "kind": "repo",
+    "name": "Fields2Cover",
+    "url": "https://github.com/fields2cover/fields2cover",
+    "summary": "Modular coverage path planning library: headland generation, swath generation, route ordering (boustrophedon, snake, spiral) and Dubins/Reeds-Shepp path smoothing, with Python bindings.",
+    "why_it_matters": "Ready coverage planner for area search or survey patterns by ground or air vehicles.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:mission-planning"
+    ],
+    "tags": [
+      "coverage",
+      "boustrophedon",
+      "dubins",
+      "python-bindings"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground",
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Build from source with GDAL dependency; Python bindings let you produce a sweep over a GeoJSON polygon quickly.",
+    "related": [
+      {
+        "id": "repo:open-navigation/opennav_coverage",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ethz-asl/polygon_coverage_planning",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ethz-asl/polygon_coverage_planning",
+    "kind": "repo",
+    "name": "polygon_coverage_planning",
+    "url": "https://github.com/ethz-asl/polygon_coverage_planning",
+    "summary": "ETH ASL coverage planner for polygons with holes that treats boustrophedon sweep selection as a generalized TSP, aimed at UAV survey.",
+    "why_it_matters": "Handles no-fly holes inside a survey area, which simple lawnmower generators do not.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:mission-planning"
+    ],
+    "tags": [
+      "coverage",
+      "gtsp",
+      "uav-survey",
+      "cgal"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS1 + CGAL; last push 2023. Use as a reference or run offline to produce waypoint lists.",
+    "related": [
+      {
+        "id": "repo:fields2cover/fields2cover",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:leggedrobotics/elevation_mapping_cupy",
+    "kind": "repo",
+    "name": "Elevation Mapping CuPy",
+    "url": "https://github.com/leggedrobotics/elevation_mapping_cupy",
+    "summary": "GPU elevation mapping from depth/LiDAR with traversability estimation and semantic layers, used on ANYmal legged robots.",
+    "why_it_matters": "Terrain-aware planning for off-road robots needs a live elevation and traversability map; this is the modern GPU version.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:ground-vehicle-nav",
+      "concept:gis-mapping",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "elevation-map",
+      "traversability",
+      "gpu",
+      "cupy"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs NVIDIA GPU and CuPy; Jetson supported. Outputs grid_map layers consumable by planners.",
+    "related": [
+      {
+        "id": "repo:leggedrobotics/grid_map",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:leggedrobotics/grid_map",
+    "kind": "repo",
+    "name": "grid_map",
+    "url": "https://github.com/leggedrobotics/grid_map",
+    "summary": "Universal multi-layer 2.5D grid map library for mobile robots with ROS/ROS 2 integration, filters, iterators and conversion to images, point clouds and costmaps.",
+    "why_it_matters": "Common data structure for elevation, slope and cost layers - the glue between DEMs and planners.",
+    "concepts": [
+      "concept:gis-mapping",
+      "concept:path-planning",
+      "concept:ros"
+    ],
+    "tags": [
+      "grid-map",
+      "elevation",
+      "costmap"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Available as ROS 2 binaries; load a GeoTIFF DEM (via GDAL) into a grid_map layer for terrain-aware costs.",
+    "related": [
+      {
+        "id": "repo:leggedrobotics/elevation_mapping_cupy",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:osgeo/gdal",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:stevemacenski/spatio_temporal_voxel_layer",
+    "kind": "repo",
+    "name": "Spatio-Temporal Voxel Layer",
+    "url": "https://github.com/stevemacenski/spatio_temporal_voxel_layer",
+    "summary": "Nav2 costmap layer using OpenVDB voxel grids with time decay to represent 3D obstacles from depth and LiDAR sensors.",
+    "why_it_matters": "Better 3D obstacle handling for ground robots in dynamic environments than the default voxel layer.",
+    "concepts": [
+      "concept:obstacle-avoidance",
+      "concept:ros"
+    ],
+    "tags": [
+      "costmap",
+      "openvdb",
+      "nav2"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Drop-in Nav2 plugin via apt.",
+    "related": [
+      {
+        "id": "repo:ros-navigation/navigation2",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:inmo-jang/consensus-based-bundle-algorithm",
+    "kind": "repo",
+    "name": "CBBA (Python)",
+    "url": "https://github.com/inmo-jang/consensus-based-bundle-algorithm",
+    "summary": "Python implementation of the Consensus-Based Bundle Algorithm for decentralized multi-agent task allocation with plotting examples.",
+    "why_it_matters": "CBBA is the classic decentralized auction for assigning tasks to UAV teams; this is an easy-to-read starting point.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:mission-planning"
+    ],
+    "tags": [
+      "cbba",
+      "task-allocation",
+      "auction"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "high",
+    "hackathon_notes": "numpy + matplotlib only; wrap in a ROS 2 node or call from a mission script to assign search cells to drones.",
+    "related": [
+      {
+        "id": "repo:open-rmf/rmf_task",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:open-rmf/rmf_task",
+    "kind": "repo",
+    "name": "Open-RMF rmf_task",
+    "url": "https://github.com/open-rmf/rmf_task",
+    "summary": "Task allocation library from Open-RMF that assigns tasks to fleets of robots, accounting for battery, travel time and task constraints.",
+    "why_it_matters": "Production-grade multi-robot task allocation with a fleet-level view, transferable from logistics to multi-vehicle missions.",
+    "concepts": [
+      "concept:multi-agent",
+      "concept:mission-planning",
+      "concept:ros"
+    ],
+    "tags": [
+      "fleet-management",
+      "task-allocation",
+      "open-rmf"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Part of the larger Open-RMF stack; worth it only if you want fleet management, otherwise use CBBA.",
+    "related": [
+      {
+        "id": "repo:inmo-jang/consensus-based-bundle-algorithm",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:osgeo/gdal",
+    "kind": "repo",
+    "name": "GDAL",
+    "url": "https://github.com/osgeo/gdal",
+    "summary": "Translator library and CLI tools for raster and vector geospatial formats (GeoTIFF, COG, GeoPackage, Shapefile, KML and hundreds more) with reprojection, warping and DEM utilities.",
+    "why_it_matters": "Every map, DEM and imagery pipeline goes through GDAL; gdalwarp, gdaldem and gdal_translate cover most reference-map preparation.",
+    "concepts": [
+      "concept:gis-mapping",
+      "concept:geodesy"
+    ],
+    "tags": [
+      "raster",
+      "vector",
+      "geotiff",
+      "cog",
+      "gdaldem"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Use conda or the OSGeo Docker image to avoid version mismatches between GDAL and Python bindings.",
+    "related": [
+      {
+        "id": "repo:osgeo/proj",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:rasterio/rasterio",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:qgis/qgis",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:osgeo/proj",
+    "kind": "repo",
+    "name": "PROJ",
+    "url": "https://github.com/osgeo/proj",
+    "summary": "Cartographic projection and coordinate transformation library with datum grids, time-dependent transformations and a pipeline syntax.",
+    "why_it_matters": "Correct datum and projection handling (WGS84, ITRF, local grids, UTM) is foundational for any nav system that mixes map sources.",
+    "concepts": [
+      "concept:geodesy",
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "crs",
+      "datum",
+      "utm",
+      "itrf"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Bundle the proj-data grids offline if your demo has no internet.",
+    "related": [
+      {
+        "id": "repo:pyproj4/pyproj",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:osgeo/gdal",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:pyproj4/pyproj",
+    "kind": "repo",
+    "name": "pyproj",
+    "url": "https://github.com/pyproj4/pyproj",
+    "summary": "Python interface to PROJ for CRS definitions, coordinate transformations and geodesic computations.",
+    "why_it_matters": "Default Python tool for lat/lon <-> UTM/ECEF/local conversions in nav prototypes.",
+    "concepts": [
+      "concept:geodesy"
+    ],
+    "tags": [
+      "crs",
+      "transformer",
+      "geod"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install pyproj ships PROJ inside the wheel; reuse a Transformer object for speed.",
+    "related": [
+      {
+        "id": "repo:osgeo/proj",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:geospace-code/pymap3d",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:rasterio/rasterio",
+    "kind": "repo",
+    "name": "Rasterio",
+    "url": "https://github.com/rasterio/rasterio",
+    "summary": "Pythonic raster I/O on top of GDAL: read/write GeoTIFF and COG, windowed reads, masks and affine georeferencing.",
+    "why_it_matters": "Easiest way to sample a DEM or orthophoto at a coordinate for terrain-referenced or visual navigation experiments.",
+    "concepts": [
+      "concept:gis-mapping",
+      "concept:terrain-nav"
+    ],
+    "tags": [
+      "geotiff",
+      "dem",
+      "raster"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip wheels include GDAL; use windowed reads to crop tiles around a vehicle position.",
+    "related": [
+      {
+        "id": "repo:osgeo/gdal",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:bopen/elevation",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:qgis/qgis",
+    "kind": "repo",
+    "name": "QGIS",
+    "url": "https://github.com/qgis/qgis",
+    "summary": "Desktop open-source GIS for viewing, editing, analyzing and printing geospatial data, extensible via Python plugins.",
+    "why_it_matters": "The analyst's workbench for building mission areas, inspecting DEMs and checking flight logs on a map.",
+    "concepts": [
+      "concept:gis-mapping",
+      "concept:mission-planning"
+    ],
+    "tags": [
+      "desktop-gis",
+      "pyqgis",
+      "plugins"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Install the LTR build; draw AOIs and export GeoJSON for planners. QGIS loads MBTiles/PMTiles for offline basemaps.",
+    "related": [
+      {
+        "id": "repo:osgeo/gdal",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:osgeo/proj",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:cesiumgs/cesium",
+    "kind": "repo",
+    "name": "CesiumJS",
+    "url": "https://github.com/cesiumgs/cesium",
+    "summary": "WebGL 3D globe and map library with terrain, 3D Tiles, time-dynamic data (CZML) and accurate WGS84 rendering.",
+    "why_it_matters": "Best open web option for a 3D situational awareness view with terrain and flight paths; widely used in defense demos.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "3d-globe",
+      "3d-tiles",
+      "czml",
+      "webgl"
+    ],
+    "language": "JavaScript",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "npm install cesium. Default imagery/terrain use Cesium ion (token); for offline, serve your own quantized-mesh terrain and tiles.",
+    "related": [
+      {
+        "id": "repo:geo-data/cesium-terrain-builder",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:maplibre/maplibre-gl-js",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:geo-data/cesium-terrain-builder",
+    "kind": "repo",
+    "name": "Cesium Terrain Builder",
+    "url": "https://github.com/geo-data/cesium-terrain-builder",
+    "summary": "Command-line tools to convert GDAL-readable DEMs into Cesium terrain tiles (heightmap and quantized-mesh with the docker variant).",
+    "why_it_matters": "Turns a Copernicus/SRTM DEM into offline 3D terrain for a CesiumJS display without internet.",
+    "concepts": [
+      "concept:gis-mapping",
+      "concept:terrain-nav"
+    ],
+    "tags": [
+      "quantized-mesh",
+      "dem",
+      "offline-terrain"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Unmaintained since 2023; use the tum-gis docker image to avoid build pain.",
+    "related": [
+      {
+        "id": "repo:cesiumgs/cesium",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:osgeo/gdal",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:maplibre/maplibre-gl-js",
+    "kind": "repo",
+    "name": "MapLibre GL JS",
+    "url": "https://github.com/maplibre/maplibre-gl-js",
+    "summary": "Open-source WebGL vector tile map renderer (fork of Mapbox GL JS v1) with styles, 3D terrain and globe view.",
+    "why_it_matters": "Fast, license-clean 2D/2.5D web map for C2 dashboards, works fully offline with your own tiles.",
+    "concepts": [
+      "concept:gis-mapping",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "vector-tiles",
+      "webgl",
+      "maplibre-style"
+    ],
+    "language": "TypeScript",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Pair with martin or tileserver-gl and a PMTiles extract for an offline basemap.",
+    "related": [
+      {
+        "id": "repo:maplibre/martin",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:maptiler/tileserver-gl",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:protomaps/pmtiles",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:openlayers/openlayers",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:openlayers/openlayers",
+    "kind": "repo",
+    "name": "OpenLayers",
+    "url": "https://github.com/openlayers/openlayers",
+    "summary": "Feature-rich web mapping library supporting many projections, WMS/WMTS, vector tiles and editing.",
+    "why_it_matters": "Strong choice when you need non-Web-Mercator projections or OGC services in a C2 web UI.",
+    "concepts": [
+      "concept:gis-mapping",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "web-map",
+      "ogc",
+      "projections"
+    ],
+    "language": "JavaScript",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "npm install ol; integrates with proj4js for custom CRS.",
+    "related": [
+      {
+        "id": "repo:leaflet/leaflet",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:maplibre/maplibre-gl-js",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:leaflet/leaflet",
+    "kind": "repo",
+    "name": "Leaflet",
+    "url": "https://github.com/leaflet/leaflet",
+    "summary": "Small, simple JavaScript library for interactive raster/vector maps with a huge plugin ecosystem.",
+    "why_it_matters": "Quickest route to a working map with markers and tracks in a hackathon UI.",
+    "concepts": [
+      "concept:gis-mapping",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "web-map",
+      "plugins"
+    ],
+    "language": "JavaScript",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Works with milsymbol to render unit icons as markers.",
+    "related": [
+      {
+        "id": "repo:spatialillusions/milsymbol",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:openlayers/openlayers",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:visgl/deck.gl",
+    "kind": "repo",
+    "name": "deck.gl",
+    "url": "https://github.com/visgl/deck.gl",
+    "summary": "GPU-powered large-scale data visualization framework with layers for points, paths, trips, hexbins and 3D tiles, usable over MapLibre or standalone.",
+    "why_it_matters": "Renders thousands of tracks (ADS-B, AIS, swarm telemetry) smoothly for a common operating picture.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "webgl2",
+      "visualization",
+      "trips-layer"
+    ],
+    "language": "TypeScript",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Use TripsLayer for animated track histories; integrates with React.",
+    "related": [
+      {
+        "id": "repo:maplibre/maplibre-gl-js",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:project-osrm/osrm-backend",
+    "kind": "repo",
+    "name": "OSRM",
+    "url": "https://github.com/project-osrm/osrm-backend",
+    "summary": "High-performance road routing engine on OpenStreetMap data using contraction hierarchies or multi-level Dijkstra.",
+    "why_it_matters": "Offline road routing for ground vehicle convoy and logistics planning.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:ground-vehicle-nav",
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "routing",
+      "osm",
+      "contraction-hierarchies"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Docker image + a Geofabrik regional extract gives a routing API in under an hour.",
+    "related": [
+      {
+        "id": "repo:valhalla/valhalla",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:graphhopper/graphhopper",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:valhalla/valhalla",
+    "kind": "repo",
+    "name": "Valhalla",
+    "url": "https://github.com/valhalla/valhalla",
+    "summary": "Tiled OSM routing engine with dynamic costing per request (auto, truck, pedestrian, bicycle), isochrones and map matching.",
+    "why_it_matters": "Request-time costing makes it easy to avoid areas or prefer terrain types, and its map-matching snaps noisy tracks to roads.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:ground-vehicle-nav",
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "routing",
+      "isochrones",
+      "map-matching",
+      "osm"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground",
+      "dismounted"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Docker images available; build tiles for a region once and run offline. Elevation tiles enable grade-aware costing.",
+    "related": [
+      {
+        "id": "repo:project-osrm/osrm-backend",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:graphhopper/graphhopper",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:graphhopper/graphhopper",
+    "kind": "repo",
+    "name": "GraphHopper",
+    "url": "https://github.com/graphhopper/graphhopper",
+    "summary": "Java OSM routing engine usable as library or server, with custom models for per-request costing and map matching.",
+    "why_it_matters": "Embeddable routing on JVM/Android, relevant for on-device dismounted navigation apps.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:ground-vehicle-nav",
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "routing",
+      "osm",
+      "android",
+      "custom-model"
+    ],
+    "language": "Java",
+    "domains": [
+      "ground",
+      "dismounted"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Single jar + OSM pbf; custom model JSON lets you penalize road classes or areas.",
+    "related": [
+      {
+        "id": "repo:valhalla/valhalla",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:gboeing/osmnx",
+    "kind": "repo",
+    "name": "OSMnx",
+    "url": "https://github.com/gboeing/osmnx",
+    "summary": "Download, model and analyze street networks and other OSM features as NetworkX graphs.",
+    "why_it_matters": "Rapid road/path graph construction for planners and task allocation experiments in Python.",
+    "concepts": [
+      "concept:gis-mapping",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "osm",
+      "networkx",
+      "street-network"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground",
+      "dismounted"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install osmnx; needs internet for Overpass unless you load a local OSM file.",
+    "related": [
+      {
+        "id": "repo:project-osrm/osrm-backend",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:bopen/elevation",
+    "kind": "repo",
+    "name": "elevation",
+    "url": "https://github.com/bopen/elevation",
+    "summary": "CLI/Python tool to download, cache and clip global DEMs (SRTM, Copernicus DEM and others) for a bounding box.",
+    "why_it_matters": "One-command DEM for an AOI, the first input for terrain-referenced navigation and terrain-aware planning.",
+    "concepts": [
+      "concept:terrain-nav",
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "dem",
+      "srtm",
+      "copernicus-dem"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Needs GDAL on PATH; eio clip --bounds ... produces a GeoTIFF.",
+    "related": [
+      {
+        "id": "repo:rasterio/rasterio",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:osgeo/gdal",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:maptiler/tileserver-gl",
+    "kind": "repo",
+    "name": "TileServer GL",
+    "url": "https://github.com/maptiler/tileserver-gl",
+    "summary": "Vector and raster tile server that serves MBTiles/PMTiles with GL styles and renders raster tiles server-side with MapLibre Native.",
+    "why_it_matters": "Simplest offline basemap server for field laptops and TAK clients needing raster tiles.",
+    "concepts": [
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "tile-server",
+      "mbtiles",
+      "offline"
+    ],
+    "language": "JavaScript",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "docker run maptiler/tileserver-gl with an mbtiles file; also gives WMTS for QGIS.",
+    "related": [
+      {
+        "id": "repo:maplibre/martin",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:maplibre/maplibre-gl-js",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:maplibre/martin",
+    "kind": "repo",
+    "name": "Martin",
+    "url": "https://github.com/maplibre/martin",
+    "summary": "Fast Rust tile server for PostGIS, MBTiles and PMTiles sources, with tile generation and mbtiles tooling.",
+    "why_it_matters": "Serves live PostGIS layers (tracks, zones) as vector tiles alongside static basemaps.",
+    "concepts": [
+      "concept:gis-mapping",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "tile-server",
+      "postgis",
+      "pmtiles",
+      "rust"
+    ],
+    "language": "Rust",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Single binary or docker; point at a PostGIS table to stream dynamic features.",
+    "related": [
+      {
+        "id": "repo:maptiler/tileserver-gl",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:protomaps/pmtiles",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:protomaps/pmtiles",
+    "kind": "repo",
+    "name": "PMTiles",
+    "url": "https://github.com/protomaps/pmtiles",
+    "summary": "Single-file tile archive format and tooling, served by HTTP range requests from static storage, with JS/Go readers and extraction CLI.",
+    "why_it_matters": "Ship an entire regional basemap as one file on a USB stick or static server - ideal for disconnected ops.",
+    "concepts": [
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "pmtiles",
+      "offline",
+      "static-hosting"
+    ],
+    "language": "TypeScript",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pmtiles extract from a planet build to cut your AOI; load with the MapLibre protocol plugin.",
+    "related": [
+      {
+        "id": "repo:maplibre/maplibre-gl-js",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:onthegomap/planetiler",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:onthegomap/planetiler",
+    "kind": "repo",
+    "name": "Planetiler",
+    "url": "https://github.com/onthegomap/planetiler",
+    "summary": "Fast vector tile generator that builds OpenMapTiles-compatible tilesets from OSM extracts on a single machine.",
+    "why_it_matters": "Build your own up-to-date offline basemap for an AOI in minutes.",
+    "concepts": [
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "vector-tiles",
+      "osm",
+      "openmaptiles"
+    ],
+    "language": "Java",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "java -jar planetiler.jar --area=<region> outputs mbtiles or pmtiles.",
+    "related": [
+      {
+        "id": "repo:protomaps/pmtiles",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:maptiler/tileserver-gl",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:hobuinc/mgrs",
+    "kind": "repo",
+    "name": "mgrs (Python)",
+    "url": "https://github.com/hobuinc/mgrs",
+    "summary": "Python library converting between latitude/longitude and MGRS grid references, wrapping the GeoTrans C code.",
+    "why_it_matters": "MGRS is the grid language of military users; needed for any C2 UI or report generator.",
+    "concepts": [
+      "concept:geodesy",
+      "concept:standards"
+    ],
+    "tags": [
+      "mgrs",
+      "utm",
+      "grid-reference"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install mgrs; mind the precision argument for 1 m vs 10 m references.",
+    "related": [
+      {
+        "id": "repo:geographiclib/geographiclib",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:geographiclib/geographiclib",
+    "kind": "repo",
+    "name": "GeographicLib",
+    "url": "https://github.com/geographiclib/geographiclib",
+    "summary": "C++ library for accurate geodesic problems, UTM/UPS/MGRS conversions, geoid heights, gravity and magnetic field models.",
+    "why_it_matters": "Gold-standard geodesy: geodesic distances, geoid (EGM96/2008) undulation for GNSS height vs DEM height, and MGRS.",
+    "concepts": [
+      "concept:geodesy"
+    ],
+    "tags": [
+      "geodesic",
+      "geoid",
+      "mgrs",
+      "egm2008"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Python and JS ports exist (geographiclib-python, geographiclib-js); geoid datasets download separately.",
+    "related": [
+      {
+        "id": "repo:hobuinc/mgrs",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:geospace-code/pymap3d",
+    "kind": "repo",
+    "name": "pymap3d",
+    "url": "https://github.com/geospace-code/pymap3d",
+    "summary": "Pure-Python 3D coordinate conversions: geodetic, ECEF, ENU, NED, AER, ECI, with optional NumPy vectorization.",
+    "why_it_matters": "The everyday tool for converting GNSS fixes into a local ENU/NED frame for fusion and planning.",
+    "concepts": [
+      "concept:geodesy",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "ecef",
+      "enu",
+      "ned",
+      "aer"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install pymap3d; no compiled deps.",
+    "related": [
+      {
+        "id": "repo:pyproj4/pyproj",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:sentinel-hub/sentinelhub-py",
+    "kind": "repo",
+    "name": "sentinelhub-py",
+    "url": "https://github.com/sentinel-hub/sentinelhub-py",
+    "summary": "Python client for Sentinel Hub and Copernicus Data Space services to search, download and process Sentinel and other satellite imagery.",
+    "why_it_matters": "Pull recent satellite imagery of an AOI to build reference maps for visual geolocalization.",
+    "concepts": [
+      "concept:gis-mapping",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "sentinel-2",
+      "copernicus",
+      "satellite-imagery"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs free Copernicus Data Space or Sentinel Hub credentials; set up before the event.",
+    "related": [
+      {
+        "id": "repo:stac-utils/pystac-client",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:stac-utils/pystac-client",
+    "kind": "repo",
+    "name": "pystac-client",
+    "url": "https://github.com/stac-utils/pystac-client",
+    "summary": "Python client for searching STAC APIs (Earth Search, Planetary Computer and others) by area, time and properties.",
+    "why_it_matters": "Credential-free path to Sentinel-2, Landsat and Copernicus DEM tiles via public STAC catalogs.",
+    "concepts": [
+      "concept:gis-mapping",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "stac",
+      "satellite-imagery",
+      "cog"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Search Earth Search (AWS) without a key and read COGs directly with rasterio.",
+    "related": [
+      {
+        "id": "repo:opendatacube/odc-stac",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:rasterio/rasterio",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:opendatacube/odc-stac",
+    "kind": "repo",
+    "name": "odc-stac",
+    "url": "https://github.com/opendatacube/odc-stac",
+    "summary": "Loads STAC items into xarray datasets with reprojection, resampling and mosaicking.",
+    "why_it_matters": "Turn a STAC search into a ready, aligned raster stack for map-matching experiments.",
+    "concepts": [
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "stac",
+      "xarray",
+      "mosaic"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Works with Dask for larger AOIs.",
+    "related": [
+      {
+        "id": "repo:stac-utils/pystac-client",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:opendronemap/odm",
+    "kind": "repo",
+    "name": "OpenDroneMap (ODM)",
+    "url": "https://github.com/opendronemap/odm",
+    "summary": "Photogrammetry toolkit that turns aerial images into orthophotos, point clouds, 3D models and DEMs.",
+    "why_it_matters": "Build your own up-to-date reference orthophoto and DSM from a survey flight for visual and terrain navigation.",
+    "concepts": [
+      "concept:gis-mapping",
+      "concept:terrain-nav",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "photogrammetry",
+      "orthophoto",
+      "dsm"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "docker run opendronemap/odm on a folder of images; WebODM gives a GUI. Processing time scales with image count.",
+    "related": [
+      {
+        "id": "repo:osgeo/gdal",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:tak-product-center/server",
+    "kind": "repo",
+    "name": "TAK Server (open source)",
+    "url": "https://github.com/tak-product-center/server",
+    "summary": "Open-source release of the TAK Server from the TAK Product Center: the federation and message routing server for ATAK/WinTAK/iTAK clients, handling CoT, data packages, missions and video.",
+    "why_it_matters": "Reference C2 backend used by many government users; integrating with it makes a demo interoperable with fielded TAK clients.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:standards"
+    ],
+    "tags": [
+      "tak",
+      "cot",
+      "federation",
+      "java"
+    ],
+    "language": "Java",
+    "domains": [
+      "multi",
+      "dismounted"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Java + PostgreSQL + certificate setup is the main hurdle; use a docker recipe and allow several hours.",
+    "related": [
+      {
+        "id": "repo:tak-product-center/atak-civ",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:freetakteam/freetakserver",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:brian7704/opentakserver",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:tak-product-center/atak-civ",
+    "kind": "repo",
+    "name": "ATAK-CIV",
+    "url": "https://github.com/tak-product-center/atak-civ",
+    "summary": "Source of the civilian Android Team Awareness Kit maintained by the TAK Product Center: map client, plugin SDK and CoT handling.",
+    "why_it_matters": "The most widely used open tactical map client; plugins let you inject nav and sensor data into a fielded UI.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "atak",
+      "android",
+      "plugin-sdk",
+      "cot"
+    ],
+    "language": "Java",
+    "domains": [
+      "dismounted",
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Building plugins needs the SDK and signing setup; for a hackathon, sending CoT to stock ATAK from the Play Store is far faster.",
+    "related": [
+      {
+        "id": "repo:snstac/pytak",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:freetakteam/freetakserver",
+    "kind": "repo",
+    "name": "FreeTAKServer",
+    "url": "https://github.com/freetakteam/freetakserver",
+    "summary": "Python TAK-compatible situational awareness server supporting CoT routing, data packages, ExCheck and a REST API, with a web UI.",
+    "why_it_matters": "Lightweight alternative to the official TAK Server for small exercises and demos.",
+    "concepts": [
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "tak",
+      "cot",
+      "python",
+      "rest-api"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi",
+      "dismounted"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "pip/ZeroTouch installer; note no commits since late 2024, so check open issues before relying on it.",
+    "related": [
+      {
+        "id": "repo:brian7704/opentakserver",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:tak-product-center/server",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:brian7704/opentakserver",
+    "kind": "repo",
+    "name": "OpenTAKServer",
+    "url": "https://github.com/brian7704/opentakserver",
+    "summary": "Actively developed open-source TAK server for ATAK, iTAK and WinTAK with web UI, video streaming integration, Meshtastic support and certificate enrollment.",
+    "why_it_matters": "The easiest TAK backend to stand up in 2025-2026 with active maintenance.",
+    "concepts": [
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "tak",
+      "cot",
+      "meshtastic",
+      "video"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi",
+      "dismounted"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Installer scripts for Ubuntu/RPi; get clients connected in about an hour.",
+    "related": [
+      {
+        "id": "repo:freetakteam/freetakserver",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:tak-product-center/server",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:kdudkov/goatak",
+    "kind": "repo",
+    "name": "GoATAK",
+    "url": "https://github.com/kdudkov/goatak",
+    "summary": "Go implementation of a simple ATAK-compatible server and a web client, supporting CoT over TCP/UDP/SSL.",
+    "why_it_matters": "Single static binary TAK server and browser client - minimal footprint for edge devices.",
+    "concepts": [
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "tak",
+      "go",
+      "web-client"
+    ],
+    "language": "Go",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "go build or release binary; web map client is handy for judges without ATAK installed.",
+    "related": [
+      {
+        "id": "repo:brian7704/opentakserver",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:dfpc-coe/cloudtak",
+    "kind": "repo",
+    "name": "CloudTAK",
+    "url": "https://github.com/dfpc-coe/cloudtak",
+    "summary": "Browser-based TAK-compatible common operating picture with ETL connectors that push external data feeds into TAK.",
+    "why_it_matters": "Shows how to bridge arbitrary data sources (sensors, APIs) into a TAK network with a web COP.",
+    "concepts": [
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "tak",
+      "cop",
+      "etl",
+      "web"
+    ],
+    "language": "TypeScript",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "AWS-oriented deployment; locally, reuse its node-CoT library and connector patterns.",
+    "related": [
+      {
+        "id": "repo:dfpc-coe/node-cot",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:tak-product-center/server",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:dfpc-coe/node-cot",
+    "kind": "repo",
+    "name": "node-CoT",
+    "url": "https://github.com/dfpc-coe/node-cot",
+    "summary": "JavaScript/TypeScript library for parsing, building and converting Cursor-on-Target messages, including GeoJSON conversion and TAK protobuf.",
+    "why_it_matters": "Quickest way to emit CoT from a Node/web app.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:standards"
+    ],
+    "tags": [
+      "cot",
+      "geojson",
+      "typescript"
+    ],
+    "language": "TypeScript",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "npm install @tak-ps/node-cot.",
+    "related": [
+      {
+        "id": "repo:dfpc-coe/cloudtak",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:snstac/pytak",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:snstac/pytak",
+    "kind": "repo",
+    "name": "PyTAK",
+    "url": "https://github.com/snstac/pytak",
+    "summary": "Python asyncio package for TAK integration: CoT send/receive over TCP, UDP, TLS and multicast, with helpers for building events.",
+    "why_it_matters": "The go-to library for pushing vehicle positions, alerts or detections into ATAK from a Python nav stack.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:standards"
+    ],
+    "tags": [
+      "cot",
+      "tak",
+      "asyncio"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install pytak; a 30-line script can stream a drone's estimated position to ATAK via multicast.",
+    "related": [
+      {
+        "id": "repo:snstac/takproto",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:snstac/adsbcot",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:brian7704/opentakserver",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:snstac/takproto",
+    "kind": "repo",
+    "name": "takproto",
+    "url": "https://github.com/snstac/takproto",
+    "summary": "Encode and decode TAK protobuf (TAK Protocol v1) packets, including mesh and stream formats.",
+    "why_it_matters": "Needed when talking to modern TAK clients that prefer protobuf over XML CoT.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:standards"
+    ],
+    "tags": [
+      "tak-protocol",
+      "protobuf"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "pip install takproto.",
+    "related": [
+      {
+        "id": "repo:snstac/pytak",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:snstac/adsbcot",
+    "kind": "repo",
+    "name": "adsbcot",
+    "url": "https://github.com/snstac/adsbcot",
+    "summary": "Gateway that converts ADS-B data (dump1090/readsb JSON, ADSBExchange-style feeds) into CoT for display in TAK.",
+    "why_it_matters": "Airspace awareness in TAK in minutes, useful context for UAV ops and C-UAS deconfliction.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:counter-uas"
+    ],
+    "tags": [
+      "ads-b",
+      "cot",
+      "tak"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Point at a local readsb aircraft.json and a TAK server URL.",
+    "related": [
+      {
+        "id": "repo:wiedehopf/readsb",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:snstac/pytak",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:nervsystems/cotlib",
+    "kind": "repo",
+    "name": "cotlib (Go)",
+    "url": "https://github.com/nervsystems/cotlib",
+    "summary": "Go library for parsing, validating and generating Cursor-on-Target XML with security-focused input limits and optional schema validation.",
+    "why_it_matters": "Hardened CoT parsing for Go services that accept untrusted network input.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:standards"
+    ],
+    "tags": [
+      "cot",
+      "go",
+      "validation"
+    ],
+    "language": "Go",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Schema validation needs libxml2 and CGO.",
+    "related": [
+      {
+        "id": "repo:dfpc-coe/node-cot",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:spatialillusions/milsymbol",
+    "kind": "repo",
+    "name": "milsymbol",
+    "url": "https://github.com/spatialillusions/milsymbol",
+    "summary": "Pure JavaScript library generating MIL-STD-2525 (B/C/D/E) and APP-6 (B/D/E) military symbols as SVG or canvas.",
+    "why_it_matters": "Renders correct unit and track symbology on any web map without licensed assets.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:standards"
+    ],
+    "tags": [
+      "mil-std-2525",
+      "app-6",
+      "svg",
+      "symbology"
+    ],
+    "language": "JavaScript",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "npm install milsymbol; new ms.Symbol(sidc).asSVG() drops straight into a Leaflet or MapLibre marker.",
+    "related": [
+      {
+        "id": "repo:leaflet/leaflet",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:esri/joint-military-symbology-xml",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:esri/joint-military-symbology-xml",
+    "kind": "repo",
+    "name": "Joint Military Symbology XML",
+    "url": "https://github.com/esri/joint-military-symbology-xml",
+    "summary": "Esri data encapsulation of MIL-STD-2525D and APP-6(D) symbology: symbol IDs, entity tables and SVG assets.",
+    "why_it_matters": "Machine-readable symbol tables useful for validating SIDCs or building your own renderer.",
+    "concepts": [
+      "concept:standards",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "mil-std-2525d",
+      "app-6d",
+      "sidc"
+    ],
+    "language": "C#",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Archived in 2024; data still useful.",
+    "related": [
+      {
+        "id": "repo:spatialillusions/milsymbol",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:croatiacontrolltd/asterix",
+    "kind": "repo",
+    "name": "ASTERIX decoder (Croatia Control)",
+    "url": "https://github.com/croatiacontrolltd/asterix",
+    "summary": "C/C++ and Python decoder for EUROCONTROL ASTERIX surveillance data from files, stdin or network, with XML category definitions and JSON/XML output.",
+    "why_it_matters": "ASTERIX is the format real radars and ATC surveillance use; decoding it lets a demo ingest professional air picture feeds.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:target-tracking",
+      "concept:standards"
+    ],
+    "tags": [
+      "asterix",
+      "eurocontrol",
+      "radar",
+      "surveillance"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Python module is on PyPI as asterix_decoder; feed it recorded or live UDP ASTERIX and get JSON per record.",
+    "related": [
+      {
+        "id": "repo:zoranbosnjak/asterix-specs",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:zoranbosnjak/asterix-specs",
+    "kind": "repo",
+    "name": "asterix-specs",
+    "url": "https://github.com/zoranbosnjak/asterix-specs",
+    "summary": "EUROCONTROL ASTERIX category specifications in a structured machine-readable format, with generated JSON and docs.",
+    "why_it_matters": "Authoritative-structured spec source for building ASTERIX encoders/decoders in any language.",
+    "concepts": [
+      "concept:standards",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "asterix",
+      "spec",
+      "codegen"
+    ],
+    "language": "Haskell",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Companion asterix-libs repo has generated Python libraries.",
+    "related": [
+      {
+        "id": "repo:croatiacontrolltd/asterix",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:wiedehopf/readsb",
+    "kind": "repo",
+    "name": "readsb",
+    "url": "https://github.com/wiedehopf/readsb",
+    "summary": "ADS-B/Mode S decoder for RTL-SDR and other receivers with networking, JSON output, MLAT support and aggregation features.",
+    "why_it_matters": "Cheap RTL-SDR plus readsb gives a live local air picture for airspace deconfliction.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:counter-uas",
+      "concept:gnss-sdr"
+    ],
+    "tags": [
+      "ads-b",
+      "mode-s",
+      "rtl-sdr"
+    ],
+    "language": "C",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Install via the wiedehopf script on Raspberry Pi; pairs with tar1090.",
+    "related": [
+      {
+        "id": "repo:wiedehopf/tar1090",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:snstac/adsbcot",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:wiedehopf/tar1090",
+    "kind": "repo",
+    "name": "tar1090",
+    "url": "https://github.com/wiedehopf/tar1090",
+    "summary": "Improved web interface for readsb/dump1090 with track history, filtering and overlays.",
+    "why_it_matters": "Instant browser air picture during a demo.",
+    "concepts": [
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "ads-b",
+      "web-ui"
+    ],
+    "language": "JavaScript",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "One install script; serves on the receiver.",
+    "related": [
+      {
+        "id": "repo:wiedehopf/readsb",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:junzis/pymodes",
+    "kind": "repo",
+    "name": "pyModeS",
+    "url": "https://github.com/junzis/pymodes",
+    "summary": "Python decoder for Mode S and ADS-B messages including Comm-B / EHS fields, with live streaming tools.",
+    "why_it_matters": "Decode raw Mode S yourself, including derived wind and airspeed data; underlies The 1090MHz Riddle book.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:standards"
+    ],
+    "tags": [
+      "mode-s",
+      "ads-b",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install pyModeS; pairs with a Beast/raw feed from readsb.",
+    "related": [
+      {
+        "id": "repo:xoolive/traffic",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:wiedehopf/readsb",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:xoolive/traffic",
+    "kind": "repo",
+    "name": "traffic",
+    "url": "https://github.com/xoolive/traffic",
+    "summary": "Toolbox for processing and analyzing air traffic trajectories: OpenSky access, filtering, resampling, airspace intersection and visualization.",
+    "why_it_matters": "Analyze flight tracks and airspace structures for airspace awareness or UAV deconfliction studies.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:target-tracking"
+    ],
+    "tags": [
+      "air-traffic",
+      "trajectories",
+      "opensky"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "pip install traffic; OpenSky historical data needs an account.",
+    "related": [
+      {
+        "id": "repo:junzis/pymodes",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:openskynetwork/opensky-api",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:openskynetwork/opensky-api",
+    "kind": "repo",
+    "name": "OpenSky API clients",
+    "url": "https://github.com/openskynetwork/opensky-api",
+    "summary": "Python and Java bindings for the OpenSky Network REST API for live and recent aircraft states.",
+    "why_it_matters": "Free crowd-sourced air picture when no local receiver is available.",
+    "concepts": [
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "opensky",
+      "ads-b",
+      "api"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Anonymous access is rate-limited; register for more.",
+    "related": [
+      {
+        "id": "repo:xoolive/traffic",
+        "rel": "integrates_with"
+      }
+    ]
+  }
+]

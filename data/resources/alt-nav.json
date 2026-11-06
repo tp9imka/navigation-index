@@ -1,0 +1,1076 @@
+[
+  {
+    "id": "res:wildnav-gnss-free-uav-localization-2022",
+    "kind": "paper",
+    "title": "Vision-based GNSS-Free Localization for UAVs in the Wild",
+    "url": "https://arxiv.org/abs/2210.09727",
+    "authors": [
+      "TIERS lab, University of Turku"
+    ],
+    "year": 2022,
+    "summary": "Proposes matching drone camera frames to open satellite imagery with learned feature matching to get absolute position without GNSS, evaluated on flights over non-urban areas.",
+    "key_takeaways": [
+      "Satellite tiles + learned matcher is a workable visual GPS baseline",
+      "Failure cases cluster over low-texture and changed terrain"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:feature-matching",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "arxiv",
+      "uav"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tiers/wildnav",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:anyloc-universal-vpr-2023",
+    "kind": "paper",
+    "title": "AnyLoc: Towards Universal Visual Place Recognition",
+    "url": "https://arxiv.org/abs/2308.00688",
+    "authors": [
+      "Keetha et al."
+    ],
+    "year": 2023,
+    "summary": "Shows that unsupervised aggregation of foundation-model (DINOv2) features gives place recognition that generalizes across domains including aerial imagery, without VPR-specific training.",
+    "key_takeaways": [
+      "Foundation features + VLAD work training-free",
+      "Aerial domain included in the evaluation"
+    ],
+    "concepts": [
+      "concept:place-recognition",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "arxiv",
+      "dinov2"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:anyloc/anyloc",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:anyvisloc-uav-localization-benchmark-2025",
+    "kind": "paper",
+    "title": "Exploring the best way for UAV visual localization under Low-altitude Multi-view Observation Condition: a Benchmark",
+    "url": "https://arxiv.org/abs/2503.10692",
+    "authors": [
+      "Yibin Ye",
+      "Xichao Teng",
+      "Shuo Chen et al."
+    ],
+    "year": 2025,
+    "summary": "Builds a benchmark for low-altitude, oblique-view UAV absolute visual localization and systematically compares retrieval, matching and refinement choices.",
+    "key_takeaways": [
+      "Low-altitude oblique views are much harder than nadir",
+      "Gives evidence for picking retrieval/matcher combos"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:datasets-benchmarks",
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "arxiv",
+      "benchmark",
+      "2025"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:uav-avl/benchmark",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:uav-visloc-dataset-2024",
+    "kind": "paper",
+    "title": "UAV-VisLoc: A Large-scale Dataset for UAV Visual Localization",
+    "url": "https://arxiv.org/abs/2405.11936",
+    "authors": [
+      "Wenjia Xu",
+      "Yaxuan Yao",
+      "Jiaqi Cao et al."
+    ],
+    "year": 2024,
+    "summary": "Introduces a dataset of real UAV flight images paired with satellite maps over varied terrain for evaluating UAV visual localization.",
+    "key_takeaways": [
+      "Real flights with ground truth",
+      "Covers terrain types beyond cities"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "arxiv",
+      "dataset"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:intellisensing/uav-visloc",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:thermal-geolocalization-iros-2023",
+    "kind": "paper",
+    "title": "Long-range UAV Thermal Geo-localization with Satellite Imagery",
+    "url": "https://arxiv.org/abs/2306.02994",
+    "authors": [
+      "Jiuhong Xiao",
+      "Daniel Tortei",
+      "Eloy Roura",
+      "Giuseppe Loianno"
+    ],
+    "year": 2023,
+    "summary": "Matches night-time UAV thermal imagery to satellite RGB maps using domain adaptation to cope with scarce paired thermal-satellite data; releases code and a nighttime dataset.",
+    "key_takeaways": [
+      "Night visual GPS is possible via thermal-to-RGB matching",
+      "Domain adaptation offsets missing paired data"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "arxiv",
+      "thermal",
+      "night"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:arplaboratory/satellite-thermal-geo-localization",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:sthn-thermal-homography-2024",
+    "kind": "paper",
+    "title": "STHN: Deep Homography Estimation for UAV Thermal Geo-localization with Satellite Imagery",
+    "url": "https://arxiv.org/abs/2405.20470",
+    "authors": [
+      "Jiuhong Xiao",
+      "Giuseppe Loianno et al."
+    ],
+    "year": 2024,
+    "summary": "Refines thermal-to-satellite localization with learned homography estimation for precise alignment.",
+    "key_takeaways": [
+      "Coarse-to-fine: retrieval then homography"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "arxiv",
+      "thermal"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:arplaboratory/sthn",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:thermal-geolocalization-iros-2023",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:uasthn-uncertainty-thermal-2025",
+    "kind": "paper",
+    "title": "UASTHN: Uncertainty-Aware Deep Homography Estimation for UAV Satellite-Thermal Geo-localization",
+    "url": "https://arxiv.org/abs/2502.01035",
+    "authors": [
+      "Jiuhong Xiao",
+      "Giuseppe Loianno et al."
+    ],
+    "year": 2025,
+    "summary": "Adds uncertainty estimation to satellite-thermal homography so a navigation filter can weight or reject visual fixes.",
+    "key_takeaways": [
+      "Uncertainty makes visual fixes filter-ready"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "arxiv",
+      "thermal",
+      "uncertainty"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:arplaboratory/uasthn",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:sthn-thermal-homography-2024",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:university-1652-benchmark-2020",
+    "kind": "paper",
+    "title": "University-1652: A Multi-view Multi-source Benchmark for Drone-based Geo-localization",
+    "url": "https://arxiv.org/abs/2002.12186",
+    "authors": [
+      "Zhedong Zheng",
+      "Yunchao Wei",
+      "Yi Yang"
+    ],
+    "year": 2020,
+    "summary": "Introduces the drone/satellite/ground benchmark that most drone cross-view geo-localization work evaluates on.",
+    "key_takeaways": [
+      "Defines drone->satellite and satellite->drone retrieval tasks"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "arxiv",
+      "dataset"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:layumi/university1652-baseline",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:sues-200-benchmark-2022",
+    "kind": "paper",
+    "title": "SUES-200: A Multi-height Multi-scene Cross-view Image Benchmark Across Drone and Satellite",
+    "url": "https://arxiv.org/abs/2204.10704",
+    "authors": [
+      "Runzhe Zhu et al."
+    ],
+    "year": 2022,
+    "summary": "Drone-satellite benchmark with imagery at several flight heights across varied scenes.",
+    "key_takeaways": [
+      "Altitude changes strongly affect retrieval accuracy"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "arxiv",
+      "dataset"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:reza-zhu/sues-200-benchmark",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:sample4geo-2023",
+    "kind": "paper",
+    "title": "Sample4Geo: Hard Negative Sampling For Cross-View Geo-Localisation",
+    "url": "https://arxiv.org/abs/2303.11851",
+    "authors": [
+      "Fabian Deuser et al."
+    ],
+    "year": 2023,
+    "summary": "Shows that a simple contrastive setup with careful hard-negative sampling performs strongly on cross-view geo-localization benchmarks.",
+    "key_takeaways": [
+      "Data sampling matters as much as architecture"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "arxiv"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:skyy93/sample4geo",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:lightglue-2023",
+    "kind": "paper",
+    "title": "LightGlue: Local Feature Matching at Light Speed",
+    "url": "https://arxiv.org/abs/2306.13643",
+    "authors": [
+      "Philipp Lindenberger",
+      "Paul-Edouard Sarlin",
+      "Marc Pollefeys"
+    ],
+    "year": 2023,
+    "summary": "Redesigns SuperGlue-style attention matching to be faster and adaptive, stopping early on easy pairs.",
+    "key_takeaways": [
+      "Adaptive depth trades compute for difficulty",
+      "Permissive license, easy to deploy"
+    ],
+    "concepts": [
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "arxiv",
+      "matcher"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:cvg/lightglue",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:roma-dense-matching-2023",
+    "kind": "paper",
+    "title": "RoMa: Robust Dense Feature Matching",
+    "url": "https://arxiv.org/abs/2305.15404",
+    "authors": [
+      "Johan Edstedt et al."
+    ],
+    "year": 2023,
+    "summary": "Dense matcher combining foundation-model coarse features with fine refinement, robust to large appearance change.",
+    "key_takeaways": [
+      "Dense warps + certainty help on cross-season, cross-sensor pairs"
+    ],
+    "concepts": [
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "arxiv",
+      "dense"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:parskatt/roma",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:mast3r-2024",
+    "kind": "paper",
+    "title": "Grounding Image Matching in 3D with MASt3R",
+    "url": "https://arxiv.org/abs/2406.09756",
+    "authors": [
+      "Vincent Leroy",
+      "Yohann Cabon",
+      "Jerome Revaud"
+    ],
+    "year": 2024,
+    "summary": "Frames matching as a 3D problem on top of DUSt3R, producing dense matches robust to extreme viewpoint change.",
+    "key_takeaways": [
+      "3D reasoning handles oblique-vs-nadir gaps"
+    ],
+    "concepts": [
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "arxiv",
+      "3d"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:naver/mast3r",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:xfeat-2024",
+    "kind": "paper",
+    "title": "XFeat: Accelerated Features for Lightweight Image Matching",
+    "url": "https://arxiv.org/abs/2404.19174",
+    "authors": [
+      "Guilherme Potje et al."
+    ],
+    "year": 2024,
+    "summary": "Lightweight feature extraction and matching architecture aimed at real-time use on constrained hardware.",
+    "key_takeaways": [
+      "Real-time matching without a big GPU"
+    ],
+    "concepts": [
+      "concept:feature-matching",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "arxiv",
+      "lightweight"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:verlab/accelerated_features",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:salad-vpr-2023",
+    "kind": "paper",
+    "title": "Optimal Transport Aggregation for Visual Place Recognition",
+    "url": "https://arxiv.org/abs/2311.15937",
+    "authors": [
+      "Sergio Izquierdo",
+      "Javier Civera"
+    ],
+    "year": 2023,
+    "summary": "Introduces SALAD, aggregating DINOv2 local features into a global descriptor via optimal transport.",
+    "key_takeaways": [
+      "Strong retrieval descriptor for the coarse localization stage"
+    ],
+    "concepts": [
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "arxiv"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:serizba/salad",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:hloc-coarse-to-fine-2018",
+    "kind": "paper",
+    "title": "From Coarse to Fine: Robust Hierarchical Localization at Large Scale",
+    "url": "https://arxiv.org/abs/1812.03506",
+    "authors": [
+      "Paul-Edouard Sarlin",
+      "Cesar Cadena",
+      "Roland Siegwart",
+      "Marcin Dymczyk"
+    ],
+    "year": 2018,
+    "summary": "Foundational paper for hierarchical localization: global retrieval to find candidate places, then local matching for precise pose.",
+    "key_takeaways": [
+      "Retrieve-then-match is the scalable pattern"
+    ],
+    "concepts": [
+      "concept:place-recognition",
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "arxiv"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:cvg/hierarchical-localization",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:couturier-review-dl-uav-avl-2024",
+    "kind": "paper",
+    "title": "A Review on Deep Learning for UAV Absolute Visual Localization",
+    "url": "https://www.mdpi.com/2504-446X/8/11/622",
+    "authors": [
+      "Andy Couturier",
+      "Moulay A. Akhloufi"
+    ],
+    "year": 2024,
+    "summary": "Survey of deep-learning approaches to UAV absolute visual localization against reference maps since 2019, in the journal Drones.",
+    "key_takeaways": [
+      "Good map of methods, datasets and open problems",
+      "Follows the same authors' 2021 review"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "survey",
+      "drones-journal"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:afrl-magnav-challenge-2020",
+    "kind": "paper",
+    "title": "Signal Enhancement for Magnetic Navigation Challenge Problem",
+    "url": "https://arxiv.org/abs/2007.12158",
+    "authors": [
+      "Albert R. Gnadt",
+      "Joseph Belarge",
+      "Aaron Canciani et al."
+    ],
+    "year": 2020,
+    "summary": "Defines the MagNav challenge from the DAF-MIT AI Accelerator: separate the Earth's magnetic anomaly signal from aircraft interference using real flight data, framed as a scientific machine-learning problem.",
+    "key_takeaways": [
+      "Aircraft magnetic compensation is the core difficulty",
+      "Provides real survey-flight data and a baseline"
+    ],
+    "concepts": [
+      "concept:magnetic-nav"
+    ],
+    "tags": [
+      "arxiv",
+      "afrl",
+      "mit",
+      "challenge"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mit-ai-accelerator/magnav.jl",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:magnav-jl-docs",
+    "kind": "doc",
+    "title": "MagNav.jl documentation",
+    "url": "https://mit-ai-accelerator.github.io/MagNav.jl/stable/",
+    "authors": [
+      "DAF-MIT AI Accelerator"
+    ],
+    "year": 2024,
+    "summary": "Documentation and examples for MagNav.jl covering data loading, compensation models, map handling and navigation filters.",
+    "key_takeaways": [
+      "Fastest route to running MagNav examples"
+    ],
+    "concepts": [
+      "concept:magnetic-nav"
+    ],
+    "tags": [
+      "julia",
+      "docs"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mit-ai-accelerator/magnav.jl",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:mit-cap-magnav-page",
+    "kind": "doc",
+    "title": "MagNav - MIT CSAIL open-source technologies",
+    "url": "https://cap.csail.mit.edu/members/research/open-source-technologies/magnav",
+    "authors": [
+      "MIT CSAIL"
+    ],
+    "year": 2023,
+    "summary": "Overview page for MagNav as an open-source technology from the DAF-MIT AI Accelerator.",
+    "key_takeaways": [
+      "Context on program origin and goals"
+    ],
+    "concepts": [
+      "concept:magnetic-nav"
+    ],
+    "tags": [
+      "mit",
+      "overview"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mit-ai-accelerator/magnav.jl",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:canciani-afit-magnetic-anomaly-dissertation-2016",
+    "kind": "report",
+    "title": "Absolute Positioning Using the Earth's Magnetic Anomaly Field",
+    "url": "https://scholar.afit.edu/etd/251",
+    "authors": [
+      "Aaron J. Canciani"
+    ],
+    "year": 2016,
+    "summary": "AFIT dissertation establishing airborne magnetic anomaly navigation methods and flight-test evaluation, the basis for later AFRL/MIT MagNav work.",
+    "key_takeaways": [
+      "Map-matching filter design for scalar magnetometers",
+      "Flight-test evidence of absolute positioning from anomaly maps"
+    ],
+    "concepts": [
+      "concept:magnetic-nav"
+    ],
+    "tags": [
+      "afit",
+      "dissertation"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:afrl-magnav-challenge-2020",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:insidegnss-magnav-flight-tests-2020",
+    "kind": "blog",
+    "title": "Magnetic Sensors in Flight Tests as Alternative PNT to GNSS",
+    "url": "https://insidegnss.com/183615-2/",
+    "authors": [
+      "Inside GNSS"
+    ],
+    "year": 2020,
+    "summary": "Trade-press overview of Air Force magnetic navigation flight testing and the research path from AFIT to operational trials.",
+    "key_takeaways": [
+      "MagNav moved from lab to aircraft tests"
+    ],
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "insidegnss",
+      "flight-test"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:canciani-afit-magnetic-anomaly-dissertation-2016",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:qctrl-quantum-assured-magnav-2025",
+    "kind": "paper",
+    "title": "Quantum-assured magnetic navigation achieves positioning accuracy better than a strategic-grade INS in airborne and ground-based field trials",
+    "url": "https://arxiv.org/abs/2504.08167",
+    "authors": [
+      "Murat Muradoglu",
+      "Mattias T. Johnsson",
+      "Nathanial M. Wilson et al."
+    ],
+    "year": 2025,
+    "summary": "Reports airborne and ground field trials of magnetic anomaly navigation using quantum magnetometers with map-matching, comparing against strategic-grade inertial navigation.",
+    "key_takeaways": [
+      "Recent field evidence that MagNav is a practical GNSS alternative",
+      "Sensor quality and noise rejection drive performance"
+    ],
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "arxiv",
+      "quantum",
+      "field-trial"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:darpa-adaptable-navigation-systems",
+    "kind": "doc",
+    "title": "Adaptable Navigation Systems (ANS)",
+    "url": "https://www.darpa.mil/research/programs/adaptable-navigation-systems",
+    "authors": [
+      "DARPA"
+    ],
+    "year": 2014,
+    "summary": "DARPA program page for ANS, which pursued GPS-quality PNT in denied environments through precision inertial sensors (PINS) and the All Source Positioning and Navigation (ASPN) sensor-fusion effort.",
+    "key_takeaways": [
+      "ASPN aimed at plug-and-play fusion of many nav sensors",
+      "Framed GNSS denial as a core military problem"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:sensor-fusion",
+      "concept:ins"
+    ],
+    "tags": [
+      "darpa",
+      "aspn",
+      "program"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:insidegnss-darpa-aspn",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:insidegnss-darpa-aspn",
+    "kind": "blog",
+    "title": "DARPA Seeks PNT Robustness, Flexibility with All Source Positioning and Navigation Program",
+    "url": "https://insidegnss.com/darpa-seeks-pnt-robustness-flexibility-with-all-source-positioning-and-navigation-program/",
+    "authors": [
+      "Inside GNSS"
+    ],
+    "year": 2012,
+    "summary": "Background article on DARPA ASPN: a navigation architecture that accepts arbitrary combinations of sensors (cameras, magnetometers, radios, IMUs) with rapid reconfiguration.",
+    "key_takeaways": [
+      "Shows the plug-and-play sensor-fusion goal that later GNSS-denied architectures inherit"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:sensor-fusion",
+      "concept:standards"
+    ],
+    "tags": [
+      "darpa",
+      "aspn"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:darpa-adaptable-navigation-systems",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:psiaki-transit-on-steroids-2021",
+    "kind": "paper",
+    "title": "Navigation using carrier Doppler shift from a LEO constellation: TRANSIT on steroids",
+    "url": "https://navi.ion.org/content/68/3/621",
+    "authors": [
+      "Mark L. Psiaki"
+    ],
+    "year": 2021,
+    "summary": "Analyzes positioning from carrier Doppler measurements of a large LEO constellation with a batch filter estimating position, velocity and clock terms, showing accuracy potentially comparable to pseudorange GNSS.",
+    "key_takeaways": [
+      "Doppler-only LEO positioning is geometrically viable",
+      "Needs many satellites in view; mega-constellations supply them"
+    ],
+    "concepts": [
+      "concept:signals-of-opportunity"
+    ],
+    "tags": [
+      "ion",
+      "navigation-journal",
+      "leo"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:kassas-starlink-first-results-2022",
+    "kind": "paper",
+    "title": "Exploiting Starlink Signals for Navigation: First Results",
+    "url": "https://ece.osu.edu/sites/default/files/2022-09/Exploiting_Starlink_signals_for_navigation_first_results.pdf",
+    "authors": [
+      "Zaher M. Kassas et al."
+    ],
+    "year": 2021,
+    "summary": "Early experimental demonstration of opportunistic positioning by tracking Doppler from Starlink satellites, without cooperation from the operator.",
+    "key_takeaways": [
+      "Starlink can be used as an uncooperative PNT source",
+      "Ephemeris error is a dominant limitation"
+    ],
+    "concepts": [
+      "concept:signals-of-opportunity"
+    ],
+    "tags": [
+      "starlink",
+      "leo",
+      "kassas"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:przemyslawpiekarski/starlink-leo-pnt",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:kassas-starlink-blind-doppler-2023",
+    "kind": "paper",
+    "title": "Positioning with Starlink LEO Satellites: A Blind Doppler Spectral Approach",
+    "url": "https://people.engineering.osu.edu/sites/default/files/2023-08/Kassas_Positioning_with_Starlink_LEO_satellites_A_blind_Doppler_spectral_approach.pdf",
+    "authors": [
+      "Sharbel Kozhaya",
+      "Zaher M. Kassas"
+    ],
+    "year": 2023,
+    "summary": "Estimates Doppler from Starlink downlinks blindly in the frequency domain without knowing the signal structure, and uses it for positioning from a poor initial estimate.",
+    "key_takeaways": [
+      "Blind spectral Doppler avoids needing proprietary signal details"
+    ],
+    "concepts": [
+      "concept:signals-of-opportunity"
+    ],
+    "tags": [
+      "starlink",
+      "doppler",
+      "kassas"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:kassas-starlink-first-results-2022",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:leo-doppler-cold-start-2025",
+    "kind": "paper",
+    "title": "Initialization-Free LEO Doppler Positioning via Semidefinite Relaxation: A Cold-Start Approach",
+    "url": "https://arxiv.org/abs/2509.17198",
+    "authors": [
+      "Baoshan Song",
+      "Weisong Wen",
+      "Qi Zhang et al."
+    ],
+    "year": 2025,
+    "summary": "Formulates LEO Doppler positioning as an optimization solvable by semidefinite relaxation so it does not need a good initial position guess.",
+    "key_takeaways": [
+      "Removes the initialization problem in Doppler positioning"
+    ],
+    "concepts": [
+      "concept:signals-of-opportunity"
+    ],
+    "tags": [
+      "arxiv",
+      "leo",
+      "optimization"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:psiaki-transit-on-steroids-2021",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:dot-complementary-pnt-report-2021",
+    "kind": "report",
+    "title": "Complementary PNT and GPS Backup Technologies Demonstration Report",
+    "url": "https://rosap.ntl.bts.gov/view/dot/55765",
+    "authors": [
+      "U.S. DOT Volpe Center"
+    ],
+    "year": 2021,
+    "summary": "Field demonstration of 11 GPS-backup technologies (including eLoran, terrestrial beacons, LEO and fiber timing) against defined scenarios, delivered to Congress.",
+    "key_takeaways": [
+      "No single technology fully backs up GPS",
+      "eLoran fails differently from GNSS, which is its value"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:signals-of-opportunity",
+      "concept:timing"
+    ],
+    "tags": [
+      "eloran",
+      "dot",
+      "gps-backup"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:tetra3-docs",
+    "kind": "doc",
+    "title": "tetra3 documentation",
+    "url": "https://tetra3.readthedocs.io/en/latest/",
+    "authors": [
+      "European Space Agency"
+    ],
+    "year": 2023,
+    "summary": "Usage and API documentation for the tetra3 lost-in-space star plate solver, including database generation and solving images.",
+    "key_takeaways": [
+      "Database generation controls speed vs field-of-view range"
+    ],
+    "concepts": [
+      "concept:celestial-nav"
+    ],
+    "tags": [
+      "star-tracker",
+      "docs"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:esa/tetra3",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:opensky-sky-polarization-simulator-2024",
+    "kind": "paper",
+    "title": "OpenSky: A Modular and Open-Source Simulator of Sky Polarization Measurements",
+    "url": "https://doi.org/10.1109/TIM.2024.3374965",
+    "authors": [
+      "Antoine Moutenet",
+      "Leo Poughon",
+      "Bruno Toulon",
+      "Julien R. Serres",
+      "Stephane Viollet"
+    ],
+    "year": 2024,
+    "summary": "Open simulator of what a polarimetric camera sees of the sky (intensity, angle and degree of polarization), validated against real captures, for developing polarization compasses.",
+    "key_takeaways": [
+      "Lets you test sky-polarization heading without field data"
+    ],
+    "concepts": [
+      "concept:celestial-nav",
+      "concept:simulation"
+    ],
+    "tags": [
+      "polarization",
+      "ieee-tim"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "repo:benjaminpotter/ccompass",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:ieee-spectrum-ukraine-drones-ew-2025",
+    "kind": "blog",
+    "title": "Ukraine's Autonomous Killer Drones Defeat Electronic Warfare",
+    "url": "https://spectrum.ieee.org/ukraine-killer-drones",
+    "authors": [
+      "IEEE Spectrum"
+    ],
+    "year": 2025,
+    "summary": "Reporting on how Ukrainian drone developers respond to pervasive jamming of radio links and satellite navigation, including onboard optical navigation that keeps the drone flying after links are lost.",
+    "key_takeaways": [
+      "Jamming makes onboard, map-based navigation a front-line requirement",
+      "Optical navigation is spreading to cheap drones"
+    ],
+    "concepts": [
+      "concept:ew-resilience",
+      "concept:visual-geolocalization",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "ukraine",
+      "jamming",
+      "reporting"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:iiss-uavs-isr-deterrence-war-2026",
+    "kind": "report",
+    "title": "UAVs: ISR, Deterrence and War (IISS Strategic Dossier)",
+    "url": "https://www.iiss.org/globalassets/media-library---content--migration/files/publications---free-files/strategic-dossier/uavs-2026/iiss_uavs-isr-deterrence-and-war_032026.pdf",
+    "authors": [
+      "International Institute for Strategic Studies"
+    ],
+    "year": 2026,
+    "summary": "IISS dossier on military UAV use, noting that GNSS is often effectively unavailable near the front line in Ukraine and that visual scene-matching navigation is a growing response.",
+    "key_takeaways": [
+      "GNSS denial is the operating norm near the front",
+      "Scene-matching navigation has decades of lineage"
+    ],
+    "concepts": [
+      "concept:ew-resilience",
+      "concept:assured-pnt",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "iiss",
+      "ukraine",
+      "policy"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:militarnyi-vermeer-optical-nav-2025",
+    "kind": "blog",
+    "title": "Ukrainian Drones Use Vermeer Optical Navigation System",
+    "url": "https://militarnyi.com/en/news/ukrainian-drones-use-vermeer-optical-navigation-system",
+    "authors": [
+      "Militarnyi"
+    ],
+    "year": 2025,
+    "summary": "Ukrainian defense outlet reporting that a US company's optical (visual) navigation system is being integrated into Ukrainian reconnaissance and strike drones.",
+    "key_takeaways": [
+      "Commercial visual-navigation modules are reaching the field"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "ukraine",
+      "industry"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  }
+]

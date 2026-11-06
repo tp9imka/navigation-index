@@ -1,0 +1,2138 @@
+[
+  {
+    "id": "repo:tiers/wildnav",
+    "kind": "repo",
+    "name": "WildNav",
+    "url": "https://github.com/TIERS/wildnav",
+    "summary": "Python pipeline that localizes a drone by matching its downward camera frames against georeferenced satellite map tiles with SuperGlue, then converts the best match into GPS coordinates. Companion code to the 'Vision-based GNSS-Free Localization for UAVs in the Wild' paper.",
+    "why_it_matters": "The canonical small, readable reference for absolute visual localization over non-urban terrain - exactly the 'visual GPS' building block a GNSS-denied team needs.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:feature-matching",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "uav",
+      "satellite-map",
+      "superglue",
+      "gnss-free"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Clone, drop in your own map tiles with corner coordinates and a few drone photos; runs on a laptop GPU. Brute-force tile search is slow - add a retrieval stage (AnyLoc/SALAD) to prune candidates.",
+    "related": [
+      {
+        "id": "repo:magicleap/supergluepretrainednetwork",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:terbouchehacene/visual_localization",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:cvg/lightglue",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:terbouchehacene/visual_localization",
+    "kind": "repo",
+    "name": "visual_localization (GNSS-free UAV)",
+    "url": "https://github.com/TerboucheHacene/visual_localization",
+    "summary": "A cleaner reimplementation of the WildNav idea: match UAV images to satellite tiles with SuperPoint/SuperGlue-style matchers and estimate geographic position.",
+    "why_it_matters": "Packaged, modular take on the WildNav approach that is easier to extend with newer matchers.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "uav",
+      "satellite-map",
+      "superpoint"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Good starting skeleton if WildNav's scripts feel too ad hoc; swap the matcher for LightGlue or XFeat for speed.",
+    "related": [
+      {
+        "id": "repo:tiers/wildnav",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:cvg/lightglue",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:hmf21/uavlocalization",
+    "kind": "repo",
+    "name": "UAVLocalization (map retrieval + alignment)",
+    "url": "https://github.com/hmf21/UAVLocalization",
+    "summary": "Geo-localization system for aerial platforms that first retrieves the right satellite map region with a deep descriptor and then aligns the drone orthophoto to it to extract coordinates; evaluated on reorganized public AgEagle datasets and a field test.",
+    "why_it_matters": "Shows the two-stage retrieve-then-align architecture end to end with field data, the design most practical systems converge on.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:place-recognition",
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "uav",
+      "retrieval",
+      "alignment",
+      "pytorch"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Use its pipeline layout as the backbone of a demo; datasets need a separate download. Conda env file provided.",
+    "related": [
+      {
+        "id": "repo:tiers/wildnav",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:anyloc/anyloc",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:uav-avl/benchmark",
+    "kind": "repo",
+    "name": "AnyVisLoc benchmark",
+    "url": "https://github.com/UAV-AVL/Benchmark",
+    "summary": "Benchmark and code for UAV absolute visual localization under low-altitude, multi-view (oblique) observation, comparing retrieval and matching combinations against aerial and satellite reference maps.",
+    "why_it_matters": "One of the most up-to-date (2025) systematic comparisons of what actually works for low-altitude drones, which is the regime of small tactical UAVs.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:datasets-benchmarks",
+      "concept:feature-matching",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "benchmark",
+      "oblique-view",
+      "low-altitude",
+      "2025"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Read its results before choosing a retrieval/matcher combo; reuse its evaluation scripts to score your own pipeline.",
+    "related": [
+      {
+        "id": "repo:uav-avl/u2s-cvgl",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:cvg/lightglue",
+        "rel": "evaluated_on"
+      },
+      {
+        "id": "repo:parskatt/roma",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:uav-avl/u2s-cvgl",
+    "kind": "repo",
+    "name": "U2S-CVGL (scale-aware UAV-to-satellite)",
+    "url": "https://github.com/UAV-AVL/U2S-CVGL",
+    "summary": "Scale-aware cross-view geo-localization method for matching UAV views to satellite imagery when the altitude-driven scale difference is unknown.",
+    "why_it_matters": "Scale mismatch is one of the main failure modes when flight altitude is uncertain; this targets it directly.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "cross-view",
+      "scale",
+      "uav",
+      "satellite"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Research code; useful if your demo flies at varying altitudes and fixed-scale tiles break.",
+    "related": [
+      {
+        "id": "repo:uav-avl/benchmark",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:yfs90/gnss-denied-uav-geolocalization",
+    "kind": "repo",
+    "name": "GNSS-Denied UAV Geolocalization (terrain-weighted)",
+    "url": "https://github.com/YFS90/GNSS-Denied-UAV-Geolocalization",
+    "summary": "Code and demos for a UAV geolocalization system that combines image matching, visual odometry and a terrain-weighted constraint optimization, intended to work day and night.",
+    "why_it_matters": "Fuses absolute map matches with relative VO and terrain constraints - the hybrid structure a real GNSS-denied nav stack needs.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:terrain-nav",
+      "concept:sensor-fusion",
+      "concept:vio"
+    ],
+    "tags": [
+      "uav",
+      "optimization",
+      "terrain",
+      "night"
+    ],
+    "language": "",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Check what is actually released before planning around it; mainly a reference for the fusion design.",
+    "related": [
+      {
+        "id": "repo:yusufgunel/geoanchor",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:yusufgunel/geoanchor",
+    "kind": "repo",
+    "name": "GeoAnchor",
+    "url": "https://github.com/YusufGUNEL/GeoAnchor",
+    "summary": "Recent project fusing visual odometry with satellite-map matching in a particle filter for GNSS-denied UAV flight, with an explicit notion of when the map match should not be trusted; evaluated on UAV-VisLoc flights and with a browser demo.",
+    "why_it_matters": "Directly addresses the practical problem that per-frame map matching often fails (water, farmland, repetitive texture), and shows how to bridge with VO.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:sensor-fusion",
+      "concept:vio",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "particle-filter",
+      "uav-visloc",
+      "2026"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Very recent single-author project; good blueprint for a 48h demo combining VO drift with intermittent absolute fixes. Verify numbers yourself.",
+    "related": [
+      {
+        "id": "repo:intellisensing/uav-visloc",
+        "rel": "evaluated_on"
+      },
+      {
+        "id": "repo:yfs90/gnss-denied-uav-geolocalization",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:lizhipro/kf-homoval",
+    "kind": "repo",
+    "name": "KF-HomoVAL",
+    "url": "https://github.com/lizhipro/KF-HomoVAL",
+    "summary": "6-DoF absolute visual localization for UAVs built on deep homography estimation between the drone view and a reference map, smoothed with a Kalman filter.",
+    "why_it_matters": "Homography-based registration gives full pose, not just a location, which helps when the camera is not nadir.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "homography",
+      "kalman",
+      "6dof"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Pair with the STHN family for comparison; expect to retrain on your imagery.",
+    "related": [
+      {
+        "id": "repo:arplaboratory/sthn",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:arborisers/uavision",
+    "kind": "repo",
+    "name": "UAVision",
+    "url": "https://github.com/ArboriseRS/UAVision",
+    "summary": "Map-matching-based visual localization software for UAVs in GNSS-denied settings, shipped with a GUI front end and demo.",
+    "why_it_matters": "One of the few projects packaged as an operator-facing tool rather than a paper repo.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "gui",
+      "map-matching"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Useful for UI inspiration and a quick demo; inspect the matcher it uses before relying on accuracy.",
+    "related": [
+      {
+        "id": "repo:tiers/wildnav",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:rtwotwo/visual-locator",
+    "kind": "repo",
+    "name": "Visual Locator",
+    "url": "https://github.com/Rtwotwo/Visual-Locator",
+    "summary": "Absolute drone positioning by image retrieval (SelaVPR-style ViT features) over cropped satellite tiles followed by registration with SIFT+RANSAC or SuperPoint+SuperGlue.",
+    "why_it_matters": "Clean example of a retrieval + registration pipeline that compares classic and learned matchers side by side.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:place-recognition",
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "retrieval",
+      "registration",
+      "selavpr"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Training described used a multi-GPU server; for a hackathon reuse pretrained weights and the pipeline code only.",
+    "related": [
+      {
+        "id": "repo:lu-feng/selavpr",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:magicleap/supergluepretrainednetwork",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:m-hamza-mughal/aerial-template-matching",
+    "kind": "repo",
+    "name": "Aerial Template Matching",
+    "url": "https://github.com/m-hamza-mughal/Aerial-Template-Matching",
+    "summary": "Classical template-matching approach for locating an aerial image inside a larger reference image, built on OpenCV.",
+    "why_it_matters": "A zero-training baseline to compare learned matchers against; mirrors classic DSMAC-style scene correlation in spirit.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "opencv",
+      "template-matching",
+      "classic"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Runs instantly; good as a fallback or ablation baseline in a demo.",
+    "related": [
+      {
+        "id": "repo:ayushmankumar7/tercom-python",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:topo-epfl/crossloc",
+    "kind": "repo",
+    "name": "CrossLoc",
+    "url": "https://github.com/TOPO-EPFL/CrossLoc",
+    "summary": "CVPR 2022 cross-modal visual representation learning for absolute camera localization of aerial imagery, trained largely on synthetic data rendered from geodata.",
+    "why_it_matters": "Shows that synthetic renders from DEM/orthophoto can train localizers for real flights - a cheap way to cover new terrain.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:simulation"
+    ],
+    "tags": [
+      "synthetic-data",
+      "cross-modal",
+      "aerial"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Older and heavy to set up; read for the synthetic-data idea.",
+    "related": []
+  },
+  {
+    "id": "repo:luoxubo/jointloc",
+    "kind": "repo",
+    "name": "JointLoc",
+    "url": "https://github.com/LuoXubo/JointLoc",
+    "summary": "Real-time visual localization framework for planetary UAVs that jointly uses relative and absolute pose estimation against orbital maps.",
+    "why_it_matters": "Planetary flight is the purest GNSS-free case; the joint relative+absolute design transfers to Earth.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:space-nav",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "planetary",
+      "mars",
+      "real-time"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "space"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "C++ build; mostly a design reference.",
+    "related": []
+  },
+  {
+    "id": "repo:layumi/university1652-baseline",
+    "kind": "repo",
+    "name": "University-1652 baseline",
+    "url": "https://github.com/layumi/University1652-Baseline",
+    "summary": "Dataset and baseline code for drone-based geo-localization across drone, satellite and ground views of university buildings worldwide.",
+    "why_it_matters": "The standard drone-to-satellite retrieval benchmark; most cross-view papers report on it.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:datasets-benchmarks",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "cross-view",
+      "drone",
+      "satellite",
+      "benchmark"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Dataset requires a request form; the synthetic drone views are building-centric, not wide-area terrain.",
+    "related": [
+      {
+        "id": "repo:reza-zhu/sues-200-benchmark",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:skyy93/sample4geo",
+        "rel": "evaluated_on"
+      },
+      {
+        "id": "repo:wtyhub/lpn",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:reza-zhu/sues-200-benchmark",
+    "kind": "repo",
+    "name": "SUES-200 benchmark",
+    "url": "https://github.com/Reza-Zhu/SUES-200-Benchmark",
+    "summary": "Multi-height, multi-scene drone-satellite cross-view dataset and evaluation code, capturing drone imagery at several altitudes.",
+    "why_it_matters": "Adds altitude variation that University-1652 lacks - closer to real flight profiles.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "cross-view",
+      "multi-height",
+      "dataset"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Use as a second evaluation set alongside University-1652.",
+    "related": [
+      {
+        "id": "repo:layumi/university1652-baseline",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:dmmm1997/denseuav",
+    "kind": "repo",
+    "name": "DenseUAV",
+    "url": "https://github.com/Dmmm1997/DenseUAV",
+    "summary": "Dataset and baseline (TIP 2023) for UAV self-positioning in low-altitude urban environments using dense sampling of drone and satellite views.",
+    "why_it_matters": "Targets self-positioning (where am I) rather than target retrieval, with dense reference sampling.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "urban",
+      "self-positioning",
+      "dataset"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Good dataset for training a retrieval head for urban flights.",
+    "related": [
+      {
+        "id": "repo:layumi/university1652-baseline",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:skyy93/sample4geo",
+    "kind": "repo",
+    "name": "Sample4Geo",
+    "url": "https://github.com/Skyy93/Sample4Geo",
+    "summary": "Cross-view geo-localization training with hard negative sampling, reporting strong results on drone-satellite and street-satellite benchmarks with a simple contrastive setup.",
+    "why_it_matters": "A strong, simple baseline that is easy to retrain for your own drone/satellite pairs.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "contrastive",
+      "hard-negatives",
+      "cross-view"
+    ],
+    "language": "Python",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Pretrained checkpoints help; fine-tune on your tile set if time allows.",
+    "related": [
+      {
+        "id": "repo:layumi/university1652-baseline",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:wtyhub/lpn",
+    "kind": "repo",
+    "name": "LPN (Local Pattern Network)",
+    "url": "https://github.com/wtyhub/LPN",
+    "summary": "PyTorch implementation of a cross-view geo-localization method that pools features in rings around the image center to capture contextual local patterns.",
+    "why_it_matters": "Widely used baseline in drone-satellite retrieval; useful to understand rotation-robust pooling.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "cross-view",
+      "baseline"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Mainly as a comparison baseline.",
+    "related": [
+      {
+        "id": "repo:layumi/university1652-baseline",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:intellisensing/uav-visloc",
+    "kind": "repo",
+    "name": "UAV-VisLoc dataset",
+    "url": "https://github.com/IntelliSensing/UAV-VisLoc",
+    "summary": "Large-scale dataset of real UAV flight imagery with satellite reference maps for UAV visual localization across varied terrain.",
+    "why_it_matters": "Real nadir-ish drone frames with ground truth over large, non-urban areas - the closest public match to a GNSS-denied flight test.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "dataset",
+      "uav",
+      "satellite"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Best dataset to test a visual-GPS demo; pick one flight and its map, run your matcher, plot error vs ground truth.",
+    "related": [
+      {
+        "id": "repo:yusufgunel/geoanchor",
+        "rel": "evaluated_on"
+      },
+      {
+        "id": "repo:tiers/wildnav",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:arplaboratory/satellite-thermal-geo-localization",
+    "kind": "repo",
+    "name": "Satellite-thermal geo-localization",
+    "url": "https://github.com/arplaboratory/satellite-thermal-geo-localization",
+    "summary": "IROS 2023 code for long-range UAV thermal geo-localization against satellite RGB imagery, using domain adaptation to bridge thermal and visible imagery; comes with the Boson-nighttime dataset.",
+    "why_it_matters": "Night flight is when GNSS-denied UAVs are most exposed; this is the main open line of work for thermal-to-satellite matching.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "thermal",
+      "night",
+      "domain-adaptation"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Dataset on Hugging Face (gated). Use the pretrained model to show night-time matching in a demo.",
+    "related": [
+      {
+        "id": "repo:arplaboratory/sthn",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:arplaboratory/uasthn",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:arplaboratory/sthn",
+    "kind": "repo",
+    "name": "STHN",
+    "url": "https://github.com/arplaboratory/STHN",
+    "summary": "Deep homography estimation for aligning UAV thermal images to satellite maps (RA-L 2024), refining coarse geo-localization into precise alignment.",
+    "why_it_matters": "Turns a coarse thermal match into an accurate position fix.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "thermal",
+      "homography"
+    ],
+    "language": "Jupyter Notebook",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Combine with the IROS 2023 retrieval stage from the same lab.",
+    "related": [
+      {
+        "id": "repo:arplaboratory/satellite-thermal-geo-localization",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:arplaboratory/uasthn",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:arplaboratory/uasthn",
+    "kind": "repo",
+    "name": "UASTHN",
+    "url": "https://github.com/arplaboratory/UASTHN",
+    "summary": "ICRA 2025 extension of STHN that adds uncertainty estimation to satellite-thermal homography, so the system can say when a fix is unreliable.",
+    "why_it_matters": "Calibrated uncertainty is what lets a nav filter safely ingest visual fixes.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "thermal",
+      "uncertainty"
+    ],
+    "language": "Jupyter Notebook",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Feed its uncertainty into your EKF measurement covariance.",
+    "related": [
+      {
+        "id": "repo:arplaboratory/sthn",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:floralhercules/scc-loc",
+    "kind": "repo",
+    "name": "SCC-Loc",
+    "url": "https://github.com/FloralHercules/SCC-Loc",
+    "summary": "Zero-shot UAV thermal geo-localization against satellite imagery without thermal-specific training.",
+    "why_it_matters": "Zero-shot avoids collecting paired thermal data, a common blocker.",
+    "concepts": [
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "thermal",
+      "zero-shot"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Very recent; check release completeness.",
+    "related": [
+      {
+        "id": "repo:arplaboratory/satellite-thermal-geo-localization",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:connorlee77/seasonally-invariant-image-transform",
+    "kind": "repo",
+    "name": "Seasonally invariant transform (visual TRN)",
+    "url": "https://github.com/connorlee77/seasonally-invariant-image-transform",
+    "summary": "Training code for a learned image transform that makes aerial imagery robust to seasonal appearance change for visual terrain-relative navigation.",
+    "why_it_matters": "Reference maps are often from a different season than the flight; this attacks that gap.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:terrain-nav"
+    ],
+    "tags": [
+      "seasonal",
+      "trn",
+      "jpl"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Older; reference for appearance-change preprocessing.",
+    "related": []
+  },
+  {
+    "id": "repo:panagiotisq/cell",
+    "kind": "repo",
+    "name": "CELL",
+    "url": "https://github.com/panagiotisq/CELL",
+    "summary": "Event camera localization in prior lidar maps with confidence weighting.",
+    "why_it_matters": "Event cameras keep working in low light and fast motion, relevant for night localization against a prior map.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "event-camera",
+      "lidar-map"
+    ],
+    "language": "C",
+    "domains": [
+      "ground",
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Requires event camera data; mostly a reference.",
+    "related": []
+  },
+  {
+    "id": "repo:anyloc/anyloc",
+    "kind": "repo",
+    "name": "AnyLoc",
+    "url": "https://github.com/AnyLoc/AnyLoc",
+    "summary": "Universal visual place recognition using foundation-model (DINOv2) features with VLAD/GeM aggregation, working across aerial, underwater, indoor and outdoor domains without task-specific training.",
+    "why_it_matters": "Training-free retrieval that already works on aerial imagery - the fastest way to get a coarse 'which tile am I over' stage.",
+    "concepts": [
+      "concept:place-recognition",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "dinov2",
+      "vlad",
+      "training-free"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Extract descriptors for your satellite tiles offline, query with drone frames; then refine with LightGlue/RoMa.",
+    "related": [
+      {
+        "id": "repo:cvg/lightglue",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:serizba/salad",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:cvg/hierarchical-localization",
+    "kind": "repo",
+    "name": "hloc",
+    "url": "https://github.com/cvg/Hierarchical-Localization",
+    "summary": "Toolbox for hierarchical visual localization: global retrieval (NetVLAD etc.) to find candidate images, then local feature matching (SuperPoint, LightGlue...) and PnP against an SfM model.",
+    "why_it_matters": "The standard plumbing for coarse-to-fine localization; ready-made wrappers for most retrieval and matching models.",
+    "concepts": [
+      "concept:place-recognition",
+      "concept:feature-matching",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "sfm",
+      "colmap",
+      "retrieval",
+      "pnp"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Use its retrieval + matching APIs even without the SfM part; pip-installable.",
+    "related": [
+      {
+        "id": "repo:cvg/lightglue",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:magicleap/supergluepretrainednetwork",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:gmberton/eigenplaces",
+    "kind": "repo",
+    "name": "EigenPlaces",
+    "url": "https://github.com/gmberton/EigenPlaces",
+    "summary": "ICCV 2023 visual place recognition training method for viewpoint-robust descriptors.",
+    "why_it_matters": "Viewpoint robustness matters when drone heading and tilt vary against nadir satellite tiles.",
+    "concepts": [
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "vpr",
+      "viewpoint"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Pretrained models loadable via torch.hub.",
+    "related": [
+      {
+        "id": "repo:gmberton/cosplace",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:gmberton/vpr-methods-evaluation",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:gmberton/cosplace",
+    "kind": "repo",
+    "name": "CosPlace",
+    "url": "https://github.com/gmberton/CosPlace",
+    "summary": "CVPR 2022 large-scale visual geo-localization treating place recognition as classification over geographic cells.",
+    "why_it_matters": "Scales to very large maps, a useful framing for country-sized reference databases.",
+    "concepts": [
+      "concept:place-recognition",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "vpr",
+      "large-scale"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "torch.hub weights available.",
+    "related": [
+      {
+        "id": "repo:gmberton/eigenplaces",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:serizba/salad",
+    "kind": "repo",
+    "name": "SALAD",
+    "url": "https://github.com/serizba/salad",
+    "summary": "Place recognition descriptor using optimal-transport aggregation of DINOv2 features.",
+    "why_it_matters": "Among the strongest off-the-shelf retrieval descriptors; good drop-in for the coarse stage.",
+    "concepts": [
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "dinov2",
+      "optimal-transport"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Load via torch.hub, compare with AnyLoc on your tiles.",
+    "related": [
+      {
+        "id": "repo:anyloc/anyloc",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:amaralibey/bag-of-queries",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:amaralibey/mixvpr",
+    "kind": "repo",
+    "name": "MixVPR",
+    "url": "https://github.com/amaralibey/MixVPR",
+    "summary": "WACV 2023 place recognition descriptor built by MLP feature mixing; lightweight and fast.",
+    "why_it_matters": "Compact descriptors suit embedded retrieval on a drone.",
+    "concepts": [
+      "concept:place-recognition",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "vpr",
+      "lightweight"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Fast inference; good for an onboard-feasibility story.",
+    "related": [
+      {
+        "id": "repo:amaralibey/bag-of-queries",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:amaralibey/bag-of-queries",
+    "kind": "repo",
+    "name": "BoQ",
+    "url": "https://github.com/amaralibey/Bag-of-Queries",
+    "summary": "CVPR 2024 place recognition with a bag of learnable global queries over backbone features.",
+    "why_it_matters": "Recent strong retrieval model with simple usage.",
+    "concepts": [
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "vpr",
+      "transformer"
+    ],
+    "language": "Jupyter Notebook",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "torch.hub available.",
+    "related": [
+      {
+        "id": "repo:amaralibey/mixvpr",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:lu-feng/selavpr",
+    "kind": "repo",
+    "name": "SelaVPR",
+    "url": "https://github.com/Lu-Feng/SelaVPR",
+    "summary": "ICLR 2024 method adapting pretrained foundation models for place recognition with lightweight adapters, producing both global and local features.",
+    "why_it_matters": "Global+local output lets one model do retrieval and re-ranking.",
+    "concepts": [
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "adapter",
+      "foundation-model"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Used by Visual-Locator for UAV retrieval.",
+    "related": [
+      {
+        "id": "repo:rtwotwo/visual-locator",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:gmberton/vpr-methods-evaluation",
+    "kind": "repo",
+    "name": "VPR methods evaluation",
+    "url": "https://github.com/gmberton/VPR-methods-evaluation",
+    "summary": "Wrapper exposing many state-of-the-art place recognition models behind one interface so you can switch models with one parameter.",
+    "why_it_matters": "Fastest way to benchmark several retrieval models on your own drone/satellite set.",
+    "concepts": [
+      "concept:place-recognition",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "wrapper",
+      "benchmark"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Point it at a folder of tiles and queries; compare recall in an hour.",
+    "related": [
+      {
+        "id": "repo:gmberton/eigenplaces",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:serizba/salad",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:anyloc/anyloc",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:cvg/lightglue",
+    "kind": "repo",
+    "name": "LightGlue",
+    "url": "https://github.com/cvg/LightGlue",
+    "summary": "Fast learned local feature matcher (ICCV 2023) that adapts its depth to pair difficulty; works with SuperPoint, DISK, ALIKED and SIFT features.",
+    "why_it_matters": "The default fine-matching stage for drone-to-tile registration today: accurate and fast enough for near-real-time.",
+    "concepts": [
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "matcher",
+      "superpoint",
+      "fast"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install; use SuperPoint+LightGlue between a drone frame and top-k retrieved tiles, then RANSAC homography.",
+    "related": [
+      {
+        "id": "repo:cvg/glue-factory",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:magicleap/supergluepretrainednetwork",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:cvg/hierarchical-localization",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:cvg/glue-factory",
+    "kind": "repo",
+    "name": "Glue Factory",
+    "url": "https://github.com/cvg/glue-factory",
+    "summary": "Training library for local feature detection and matching (trains LightGlue and others).",
+    "why_it_matters": "Lets you fine-tune a matcher on aerial/satellite pairs if off-the-shelf models struggle.",
+    "concepts": [
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "training",
+      "matcher"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Training takes longer than a hackathon; use for post-event work.",
+    "related": [
+      {
+        "id": "repo:cvg/lightglue",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:magicleap/supergluepretrainednetwork",
+    "kind": "repo",
+    "name": "SuperGlue (pretrained)",
+    "url": "https://github.com/magicleap/SuperGluePretrainedNetwork",
+    "summary": "Pretrained SuperGlue graph-neural-network matcher with SuperPoint features (CVPR 2020).",
+    "why_it_matters": "Used by WildNav and many UAV localization repos; non-commercial license limits reuse.",
+    "concepts": [
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "superglue",
+      "gnn"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Prefer LightGlue (permissive license, faster) unless replicating WildNav exactly.",
+    "related": [
+      {
+        "id": "repo:magicleap/superpointpretrainednetwork",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:cvg/lightglue",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:magicleap/superpointpretrainednetwork",
+    "kind": "repo",
+    "name": "SuperPoint (pretrained)",
+    "url": "https://github.com/magicleap/SuperPointPretrainedNetwork",
+    "summary": "Pretrained SuperPoint keypoint detector and descriptor.",
+    "why_it_matters": "Feature front end for SuperGlue/LightGlue pipelines.",
+    "concepts": [
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "keypoints"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Most users get SuperPoint via LightGlue/hloc now.",
+    "related": [
+      {
+        "id": "repo:magicleap/supergluepretrainednetwork",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:zju3dv/loftr",
+    "kind": "repo",
+    "name": "LoFTR",
+    "url": "https://github.com/zju3dv/LoFTR",
+    "summary": "Detector-free transformer matcher producing dense-ish correspondences, good on low-texture scenes.",
+    "why_it_matters": "Low-texture terrain (fields, desert) breaks keypoint matchers; detector-free matching helps.",
+    "concepts": [
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "detector-free",
+      "transformer"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Also available in kornia for easy use.",
+    "related": [
+      {
+        "id": "repo:parskatt/roma",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:parskatt/roma",
+    "kind": "repo",
+    "name": "RoMa",
+    "url": "https://github.com/Parskatt/RoMa",
+    "summary": "Robust dense feature matcher (CVPR 2024) estimating pixel-dense warps with certainties, strong under large appearance change.",
+    "why_it_matters": "Handles season, lighting and sensor differences between drone frames and satellite imagery better than sparse matchers, at higher compute cost.",
+    "concepts": [
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "dense",
+      "dinov2",
+      "robust"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Use as the accurate-but-slow verifier on the top retrieval hit; GPU recommended.",
+    "related": [
+      {
+        "id": "repo:zju3dv/loftr",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:cvg/lightglue",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:naver/mast3r",
+    "kind": "repo",
+    "name": "MASt3R",
+    "url": "https://github.com/naver/mast3r",
+    "summary": "Matching grounded in 3D: predicts dense correspondences and 3D pointmaps from image pairs, building on DUSt3R.",
+    "why_it_matters": "Robust to extreme viewpoint change (oblique drone view vs nadir satellite) because it reasons in 3D.",
+    "concepts": [
+      "concept:feature-matching",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "3d",
+      "dense",
+      "foundation-model"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Heavy model and non-commercial license; good for offline demos.",
+    "related": []
+  },
+  {
+    "id": "repo:verlab/accelerated_features",
+    "kind": "repo",
+    "name": "XFeat",
+    "url": "https://github.com/verlab/accelerated_features",
+    "summary": "Lightweight local feature extractor and matcher (CVPR 2024) designed for speed on constrained hardware.",
+    "why_it_matters": "Fits onboard compute on small drones where LightGlue on GPU is not available.",
+    "concepts": [
+      "concept:feature-matching",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "lightweight",
+      "cpu"
+    ],
+    "language": "Jupyter Notebook",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Runs on CPU in real time; good for an embedded/Jetson story.",
+    "related": [
+      {
+        "id": "repo:cvg/lightglue",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:gmberton/vismatch",
+    "kind": "repo",
+    "name": "vismatch (image-matching-models)",
+    "url": "https://github.com/gmberton/vismatch",
+    "summary": "Wrapper exposing 50+ image matching models behind one interface (formerly image-matching-models).",
+    "why_it_matters": "Swap SIFT, LightGlue, LoFTR, RoMa, MASt3R etc. with one line to find the best matcher for your imagery.",
+    "concepts": [
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "wrapper",
+      "benchmark"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Best first stop for matcher selection during the hackathon.",
+    "related": [
+      {
+        "id": "repo:cvg/lightglue",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:parskatt/roma",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:naver/mast3r",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:alti3/python-tercom",
+    "kind": "repo",
+    "name": "python-tercom",
+    "url": "https://github.com/alti3/python-tercom",
+    "summary": "Python demo of TERCOM terrain contour matching: simulate a radar-altimeter profile over a DEM and correlate it against the map to recover position.",
+    "why_it_matters": "Smallest end-to-end TERCOM sim to understand and extend for a DEM-matching demo.",
+    "concepts": [
+      "concept:terrain-nav"
+    ],
+    "tags": [
+      "tercom",
+      "dem",
+      "radar-altimeter",
+      "simulation"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Load an SRTM/Copernicus DEM tile, generate a profile, show the correlation surface; an afternoon's work.",
+    "related": [
+      {
+        "id": "repo:sotostrk/tercom-via-particle-filter-uav-state-estimation-mae6760-project-",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:mzahana/tercom_nav",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:mzahana/tercom_nav",
+    "kind": "repo",
+    "name": "tercom_nav (TERCOM + ESKF)",
+    "url": "https://github.com/mzahana/tercom_nav",
+    "summary": "ROS 2 package combining TERCOM-style terrain matching with an error-state Kalman filter for UAV navigation.",
+    "why_it_matters": "Bridges batch terrain matching into a recursive filter that a real autopilot stack could consume.",
+    "concepts": [
+      "concept:terrain-nav",
+      "concept:sensor-fusion",
+      "concept:ros"
+    ],
+    "tags": [
+      "ros2",
+      "eskf",
+      "tercom"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Good if your team runs ROS 2 with PX4/ArduPilot SITL; pair with a DEM and simulated altimeter.",
+    "related": [
+      {
+        "id": "repo:alti3/python-tercom",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:sotostrk/tercom-via-particle-filter-uav-state-estimation-mae6760-project-",
+    "kind": "repo",
+    "name": "TERCOM via particle filter",
+    "url": "https://github.com/sotostrk/TERCOM-via-Particle-Filter-UAV-State-Estimation-MAE6760-Project-",
+    "summary": "MATLAB SIR particle filter estimating UAV position from terrain contour matching in GPS-denied flight.",
+    "why_it_matters": "Particle filters handle the multimodal ambiguity of terrain matching better than a single correlation peak.",
+    "concepts": [
+      "concept:terrain-nav",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "particle-filter",
+      "matlab",
+      "tercom"
+    ],
+    "language": "MATLAB",
+    "domains": [
+      "air"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Port the filter loop to Python for a demo.",
+    "related": [
+      {
+        "id": "repo:alti3/python-tercom",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ayushmankumar7/tercom-python",
+    "kind": "repo",
+    "name": "TERCOM-python (TERCOM + DSMAC)",
+    "url": "https://github.com/ayushmankumar7/TERCOM-python",
+    "summary": "OpenCV-based demo of map-based navigation combining terrain contour matching with scene-matching area correlation.",
+    "why_it_matters": "Shows both classic map-matching families side by side.",
+    "concepts": [
+      "concept:terrain-nav",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "tercom",
+      "dsmac",
+      "opencv"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Small educational code; use for concept slides and quick baselines.",
+    "related": [
+      {
+        "id": "repo:alti3/python-tercom",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:hstm/terrain-nav-preprocessing",
+    "kind": "repo",
+    "name": "terrain-nav-preprocessing",
+    "url": "https://github.com/hstm/terrain-nav-preprocessing",
+    "summary": "Preprocessing tools for terrain-referenced navigation, generating DEM tiles with controlled noise for training and evaluation.",
+    "why_it_matters": "Saves time preparing DEM data for TRN experiments.",
+    "concepts": [
+      "concept:terrain-nav",
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "dem",
+      "preprocessing"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Use to build synthetic DEM test sets.",
+    "related": [
+      {
+        "id": "repo:alti3/python-tercom",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:mit-ai-accelerator/magnav.jl",
+    "kind": "repo",
+    "name": "MagNav.jl",
+    "url": "https://github.com/MIT-AI-Accelerator/MagNav.jl",
+    "summary": "Julia package from the DAF-MIT AI Accelerator for airborne magnetic anomaly navigation: flight/INS data import or simulation, anomaly maps, aircraft magnetic compensation (Tolles-Lawson and neural models) and navigation filters.",
+    "why_it_matters": "The reference open toolkit for MagNav, with real flight data from the challenge problem; magnetic nav is unjammable by RF.",
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:sensor-fusion",
+      "concept:ins"
+    ],
+    "tags": [
+      "julia",
+      "magnav",
+      "afrl",
+      "tolles-lawson"
+    ],
+    "language": "Julia",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Install Julia and run the documented examples on the challenge flight data; compensation + EKF in a day.",
+    "related": [
+      {
+        "id": "repo:powerbroker2/mammal",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:manasp21/magnav.py",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:afit-eeng-magnav/example-data",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:manasp21/magnav.py",
+    "kind": "repo",
+    "name": "MagNavPy",
+    "url": "https://github.com/manasp21/magnav.py",
+    "summary": "Python port of MagNav.jl for magnetic navigation research.",
+    "why_it_matters": "Lets Python-only teams use the MagNav workflow without learning Julia.",
+    "concepts": [
+      "concept:magnetic-nav"
+    ],
+    "tags": [
+      "python",
+      "port"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Community port; verify outputs against MagNav.jl examples.",
+    "related": [
+      {
+        "id": "repo:mit-ai-accelerator/magnav.jl",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:powerbroker2/mammal",
+    "kind": "repo",
+    "name": "MAMMAL",
+    "url": "https://github.com/PowerBroker2/MAMMAL",
+    "summary": "Python package (Magnetic Anomaly Map Matching Airborne and Land) for simulating and processing aeromagnetic survey data and building anomaly maps for MagNav.",
+    "why_it_matters": "Map creation is the hidden half of MagNav; this covers it in Python.",
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "python",
+      "anomaly-map",
+      "survey"
+    ],
+    "language": "Python",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Use to generate maps or simulated surveys feeding a particle filter.",
+    "related": [
+      {
+        "id": "repo:mit-ai-accelerator/magnav.jl",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:afit-eeng-magnav/example-data",
+    "kind": "repo",
+    "name": "AFIT MagNav example data",
+    "url": "https://github.com/AFIT-EENG-MagNav/example-data",
+    "summary": "Sample data for MagNav work: MIT-AIA anomaly maps, a challenge flight, North American magnetic anomaly grids and geoid files.",
+    "why_it_matters": "Ready-made data so a team can start without hunting for maps.",
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "data",
+      "anomaly-map",
+      "afit"
+    ],
+    "language": "",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Grab these files first.",
+    "related": [
+      {
+        "id": "repo:mit-ai-accelerator/magnav.jl",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:manonkok/rao-blackwellized-slam-smoothing",
+    "kind": "repo",
+    "name": "Rao-Blackwellized SLAM smoothing (magnetic)",
+    "url": "https://github.com/manonkok/Rao-Blackwellized-SLAM-smoothing",
+    "summary": "MATLAB code for Rao-Blackwellized particle smoothing for SLAM, including magnetic field mapping and map-matching localization with a magnetometer.",
+    "why_it_matters": "Clean academic reference for magnetic field SLAM and particle-filter matching at small scale.",
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:indoor-pedestrian",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "particle-filter",
+      "magnetic-slam",
+      "matlab"
+    ],
+    "language": "MATLAB",
+    "domains": [
+      "dismounted",
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Good for understanding magnetic map matching quickly.",
+    "related": []
+  },
+  {
+    "id": "repo:naatyu/magnav",
+    "kind": "repo",
+    "name": "MagNav deep-learning compensation",
+    "url": "https://github.com/naatyu/MagNav",
+    "summary": "Deep-learning approach to aircraft magnetic disturbance compensation built around the MagNav challenge data.",
+    "why_it_matters": "Compensation quality dominates MagNav accuracy; shows a learned alternative to Tolles-Lawson.",
+    "concepts": [
+      "concept:magnetic-nav"
+    ],
+    "tags": [
+      "compensation",
+      "deep-learning",
+      "challenge"
+    ],
+    "language": "Jupyter Notebook",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Notebooks run on challenge data.",
+    "related": [
+      {
+        "id": "repo:mit-ai-accelerator/magnav.jl",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:ajisrawi/dronemagnav",
+    "kind": "repo",
+    "name": "DroneMagNav",
+    "url": "https://github.com/ajisrawi/dronemagnav",
+    "summary": "Open hardware + firmware design for a drone magnetic-anomaly navigation board (ESP32-S3, magnetometer, IMU, baro) running particle-filter matching against a global anomaly map and feeding position to a flight controller over MAVLink.",
+    "why_it_matters": "Rare example of MagNav pushed down to cheap drone hardware with an autopilot interface.",
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:autopilot",
+      "concept:mavlink-gcs"
+    ],
+    "tags": [
+      "esp32",
+      "kicad",
+      "mavlink",
+      "particle-filter"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Very recent single-author project; hardware not validated in flight per what we could see. Global anomaly maps are coarse, so expect km-level, not meter-level, results on small drones.",
+    "related": [
+      {
+        "id": "repo:mit-ai-accelerator/magnav.jl",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:esa/tetra3",
+    "kind": "repo",
+    "name": "tetra3",
+    "url": "https://github.com/esa/tetra3",
+    "summary": "Fast lost-in-space plate solver for star trackers from ESA: identifies stars in an image and returns attitude using a precomputed pattern database.",
+    "why_it_matters": "Star-based attitude (and with time + gravity vector, position) is jam-proof; tetra3 is the easiest open solver.",
+    "concepts": [
+      "concept:celestial-nav",
+      "concept:space-nav"
+    ],
+    "tags": [
+      "star-tracker",
+      "plate-solver",
+      "esa"
+    ],
+    "language": "Python",
+    "domains": [
+      "space",
+      "air",
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install; solve sample images in minutes. Combine attitude with a level sensor and clock for a celestial fix demo.",
+    "related": [
+      {
+        "id": "repo:smroid/cedar-solve",
+        "rel": "fork_of"
+      },
+      {
+        "id": "repo:ubnanosatlab/openstartracker",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:smroid/cedar-solve",
+    "kind": "repo",
+    "name": "cedar-solve",
+    "url": "https://github.com/smroid/cedar-solve",
+    "summary": "Actively maintained fork of tetra3 with speed and robustness improvements, used in the Cedar telescope-aiming product.",
+    "why_it_matters": "More maintained than upstream tetra3 for new work.",
+    "concepts": [
+      "concept:celestial-nav"
+    ],
+    "tags": [
+      "star-tracker",
+      "tetra3-fork"
+    ],
+    "language": "Python",
+    "domains": [
+      "space",
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Drop-in alternative to tetra3.",
+    "related": [
+      {
+        "id": "repo:esa/tetra3",
+        "rel": "fork_of"
+      }
+    ]
+  },
+  {
+    "id": "repo:ubnanosatlab/openstartracker",
+    "kind": "repo",
+    "name": "OpenStarTracker",
+    "url": "https://github.com/UBNanosatLab/openstartracker",
+    "summary": "Open-source star tracker using a Bayesian star identification approach, developed by the University at Buffalo Nanosatellite Lab.",
+    "why_it_matters": "Full camera-to-attitude pipeline with calibration, proven on small-satellite hardware.",
+    "concepts": [
+      "concept:celestial-nav",
+      "concept:space-nav"
+    ],
+    "tags": [
+      "star-tracker",
+      "cubesat"
+    ],
+    "language": "Python",
+    "domains": [
+      "space"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Calibration step needed for your camera; budget a few hours.",
+    "related": [
+      {
+        "id": "repo:esa/tetra3",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:uwcubesat/lost",
+    "kind": "repo",
+    "name": "LOST",
+    "url": "https://github.com/UWCubeSat/lost",
+    "summary": "Open-source star tracker (C++) covering centroiding, star identification and attitude estimation, from the UW CubeSat team.",
+    "why_it_matters": "Compiled, modular alternative for embedded targets.",
+    "concepts": [
+      "concept:celestial-nav",
+      "concept:space-nav"
+    ],
+    "tags": [
+      "star-tracker",
+      "c++"
+    ],
+    "language": "C++",
+    "domains": [
+      "space"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Build with make; includes test images.",
+    "related": [
+      {
+        "id": "repo:esa/tetra3",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:nasa/cots-star-tracker",
+    "kind": "repo",
+    "name": "NASA COTS Star Tracker",
+    "url": "https://github.com/nasa/COTS-Star-Tracker",
+    "summary": "NASA software for building a star tracker from commercial off-the-shelf cameras, including calibration and attitude solution.",
+    "why_it_matters": "Directly aimed at cheap COTS cameras - the hardware a hackathon team will have.",
+    "concepts": [
+      "concept:celestial-nav",
+      "concept:space-nav",
+      "concept:calibration"
+    ],
+    "tags": [
+      "nasa",
+      "cots",
+      "star-tracker"
+    ],
+    "language": "Python",
+    "domains": [
+      "space",
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Follow its calibration workflow with a phone or Pi camera.",
+    "related": [
+      {
+        "id": "repo:esa/tetra3",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:gregtozzi/deep_learning_celnav",
+    "kind": "repo",
+    "name": "Deep learning celestial navigation",
+    "url": "https://github.com/gregtozzi/deep_learning_celnav",
+    "summary": "Exploratory project on automating celestial navigation with deep learning and edge inference on synthetic sky images.",
+    "why_it_matters": "Shows a learning-based route from sky images to position.",
+    "concepts": [
+      "concept:celestial-nav",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "deep-learning",
+      "maritime"
+    ],
+    "language": "Jupyter Notebook",
+    "domains": [
+      "maritime",
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Concept reference.",
+    "related": []
+  },
+  {
+    "id": "repo:alinnman/celestial-navigation",
+    "kind": "repo",
+    "name": "celestial-navigation toolkit",
+    "url": "https://github.com/alinnman/celestial-navigation",
+    "summary": "Python toolkit for classic celestial navigation sight reduction, usable offline on a phone.",
+    "why_it_matters": "Ground-truth math for turning star/sun sightings into a position.",
+    "concepts": [
+      "concept:celestial-nav",
+      "concept:maritime-nav"
+    ],
+    "tags": [
+      "sight-reduction",
+      "offline"
+    ],
+    "language": "Python",
+    "domains": [
+      "maritime",
+      "dismounted"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Pair with a star tracker output to compute position.",
+    "related": [
+      {
+        "id": "repo:esa/tetra3",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:benjaminpotter/ccompass",
+    "kind": "repo",
+    "name": "ccompass",
+    "url": "https://github.com/benjaminpotter/ccompass",
+    "summary": "Header-only C library for processing sky polarization images to support heading estimation; successor to compyss.",
+    "why_it_matters": "Polarization compass gives heading without magnetometers or GNSS, robust to magnetic disturbance.",
+    "concepts": [
+      "concept:celestial-nav"
+    ],
+    "tags": [
+      "polarization",
+      "heading",
+      "c"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground",
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs a polarization camera (or simulated images).",
+    "related": []
+  },
+  {
+    "id": "repo:przemyslawpiekarski/starlink-leo-pnt",
+    "kind": "repo",
+    "name": "Starlink LEO-PNT",
+    "url": "https://github.com/przemyslawpiekarski/starlink-leo-pnt",
+    "summary": "Passive positioning using Starlink downlink signals as signals of opportunity: SDR capture, blind OFDM analysis, Doppler extraction, TDOA/FDOA solver and EKF with TLE-based orbits.",
+    "why_it_matters": "One of the very few open end-to-end attempts at Starlink-based PNT, a hot GNSS-alternative topic.",
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:gnss-sdr",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "starlink",
+      "leo",
+      "doppler",
+      "sdr"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground",
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Needs an SDR that covers Ku-band via LNB, or use the simulation path with TLEs. Treat claims as unverified.",
+    "related": [
+      {
+        "id": "repo:voskavoj/dp",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:xyangll/leospine",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:voskavoj/dp",
+    "kind": "repo",
+    "name": "LEO SoOP positioning thesis (Voska)",
+    "url": "https://github.com/voskavoj/DP",
+    "summary": "Diploma thesis materials on signals-of-opportunity positioning from LEO satellites using Doppler shift and TLE-based orbits.",
+    "why_it_matters": "Readable derivation plus code for Doppler positioning from LEO constellations.",
+    "concepts": [
+      "concept:signals-of-opportunity"
+    ],
+    "tags": [
+      "leo",
+      "doppler",
+      "thesis"
+    ],
+    "language": "TeX",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Use as the math reference for a Doppler-positioning simulator.",
+    "related": [
+      {
+        "id": "repo:przemyslawpiekarski/starlink-leo-pnt",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:xyangll/leospine",
+    "kind": "repo",
+    "name": "LEO-SPINE",
+    "url": "https://github.com/xyangll/LEOSPINE",
+    "summary": "Open toolkit for LEO/MEO/GEO constellation simulation and single/multi-satellite positioning.",
+    "why_it_matters": "Lets a team simulate LEO-based positioning geometry and accuracy without hardware.",
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:simulation"
+    ],
+    "tags": [
+      "leo",
+      "simulation"
+    ],
+    "language": "JavaScript",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Browser-friendly; good for visualizing LEO coverage in a pitch.",
+    "related": [
+      {
+        "id": "repo:gao-tech1/graphgnsslib_leo_v1.2",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:gao-tech1/graphgnsslib_leo_v1.2",
+    "kind": "repo",
+    "name": "GraphGNSSLib LEO",
+    "url": "https://github.com/Gao-tech1/GraphGNSSLib_LEO_V1.2",
+    "summary": "Factor-graph positioning combining GNSS and LEO satellite measurements, extending GraphGNSSLib.",
+    "why_it_matters": "Shows how LEO observations slot into a factor graph alongside degraded GNSS.",
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:gnss",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "factor-graph",
+      "leo"
+    ],
+    "language": "C",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "C/ROS build; reference.",
+    "related": [
+      {
+        "id": "repo:xyangll/leospine",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ita97/a-tutorial-on-5g-positioning",
+    "kind": "repo",
+    "name": "A Tutorial on 5G Positioning (code)",
+    "url": "https://github.com/Ita97/A-tutorial-on-5G-positioning",
+    "summary": "MATLAB simulation code accompanying an IEEE tutorial on 5G positioning (timing, angle and multi-cell methods).",
+    "why_it_matters": "Cellular positioning is a fallback PNT source; this is a didactic, runnable starting point.",
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:rf-localization"
+    ],
+    "tags": [
+      "5g",
+      "matlab",
+      "tutorial"
+    ],
+    "language": "MATLAB",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "MATLAB needed (Octave may partly work).",
+    "related": []
+  },
+  {
+    "id": "repo:jks-prv/kiwisdr",
+    "kind": "repo",
+    "name": "KiwiSDR",
+    "url": "https://github.com/jks-prv/KiwiSDR",
+    "summary": "Web-accessible shortwave SDR receiver (10 kHz - 30 MHz) with built-in software GPS and a Loran-C/eLoran monitor extension.",
+    "why_it_matters": "Public KiwiSDR network offers remote access to LF signals for eLoran/Loran experiments without owning hardware.",
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:timing"
+    ],
+    "tags": [
+      "sdr",
+      "loran",
+      "lf"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Use public KiwiSDR receivers to look at LF navigation signals; not a positioning solver.",
+    "related": []
+  }
+]

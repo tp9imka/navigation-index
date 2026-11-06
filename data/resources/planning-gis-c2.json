@@ -1,0 +1,730 @@
+[
+  {
+    "id": "res:nav2-docs",
+    "kind": "doc",
+    "title": "Nav2 Documentation",
+    "url": "https://docs.nav2.org/",
+    "authors": [
+      "Open Navigation / Nav2 maintainers"
+    ],
+    "year": 2026,
+    "summary": "Official Nav2 documentation: concepts, configuration guides for every planner/controller/costmap plugin, tuning guide and tutorials including GPS-based navigation.",
+    "key_takeaways": [
+      "Tuning guide explains planner/controller trade-offs",
+      "Tutorials cover writing custom plugins and outdoor GPS waypoints"
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:ros",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "nav2",
+      "ros2"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ros-navigation/navigation2",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:nav2-roscon-talks",
+    "kind": "talk",
+    "title": "Nav2 ROSCon Talks (index)",
+    "url": "https://docs.nav2.org/jazzy/community/roscon_talks/",
+    "authors": [
+      "Nav2 team and community"
+    ],
+    "year": 2025,
+    "summary": "Curated index of ROSCon talks by the Nav2 team and community from 2018 onward, covering features such as Smac planners and the MPPI controller plus tuning and deployment advice.",
+    "key_takeaways": [
+      "Single entry point for Nav2 conference talks",
+      "Talks on MPPI and Smac planners explain design rationale"
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:ros"
+    ],
+    "tags": [
+      "roscon",
+      "nav2",
+      "video"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ros-navigation/navigation2",
+        "rel": "explains"
+      },
+      {
+        "id": "res:nav2-docs",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:macenski-marathon2-nav2",
+    "kind": "paper",
+    "title": "The Marathon 2: A Navigation System",
+    "url": "https://arxiv.org/abs/2003.00368",
+    "authors": [
+      "Steve Macenski",
+      "Francisco Martin",
+      "Ruffin White",
+      "Jonatan Gines Clavero"
+    ],
+    "year": 2020,
+    "summary": "Paper introducing Nav2: behavior-tree based navigation architecture for ROS 2, its design choices and a long-duration campus deployment test.",
+    "key_takeaways": [
+      "Explains why Nav2 uses behavior trees and lifecycle nodes",
+      "Describes long-running real-world validation"
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:ros",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "nav2",
+      "behavior-tree"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ros-navigation/navigation2",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:macenski-ros2-algorithms-survey",
+    "kind": "paper",
+    "title": "From the Desks of ROS Maintainers: A Survey of Modern & Capable Mobile Robotics Algorithms in the Robot Operating System 2",
+    "url": "https://arxiv.org/abs/2307.15236",
+    "authors": [
+      "Steve Macenski",
+      "Tom Moore",
+      "David V. Lu",
+      "Alexey Merzlyakov",
+      "Michael Ferguson"
+    ],
+    "year": 2023,
+    "summary": "Survey by ROS maintainers of the mobile robotics algorithms available in ROS 2: localization, SLAM, planning, control and perception packages, with their maturity and use.",
+    "key_takeaways": [
+      "Map of which ROS 2 packages are production-ready",
+      "Good orientation before choosing a localization or planning stack"
+    ],
+    "concepts": [
+      "concept:ros",
+      "concept:path-planning",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "survey",
+      "ros2"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ros-navigation/navigation2",
+        "rel": "explains"
+      },
+      {
+        "id": "res:macenski-marathon2-nav2",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:ompl-site",
+    "kind": "doc",
+    "title": "The Open Motion Planning Library (OMPL) website",
+    "url": "https://ompl.kavrakilab.org/",
+    "authors": [
+      "Kavraki Lab, Rice University"
+    ],
+    "year": 2026,
+    "summary": "Official OMPL documentation with planner catalogue, tutorials, Python binding guide and benchmarking tools.",
+    "key_takeaways": [
+      "Tutorials show how to define state spaces and validity checkers",
+      "Built-in benchmarking compares planners on your problem"
+    ],
+    "concepts": [
+      "concept:path-planning"
+    ],
+    "tags": [
+      "ompl",
+      "sampling-based"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ompl/ompl",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:zhou-ego-planner-paper",
+    "kind": "paper",
+    "title": "EGO-Planner: An ESDF-free Gradient-based Local Planner for Quadrotors",
+    "url": "https://arxiv.org/abs/2008.08835",
+    "authors": [
+      "Xin Zhou",
+      "Zhepei Wang",
+      "Hongkai Ye",
+      "Chao Xu",
+      "Fei Gao"
+    ],
+    "year": 2020,
+    "summary": "Introduces a local planner that avoids building a full Euclidean signed distance field, computing collision penalties only from obstacles the trajectory intersects, cutting onboard compute.",
+    "key_takeaways": [
+      "ESDF-free collision cost reduces mapping overhead",
+      "Fits small onboard computers for agile flight"
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "quadrotor",
+      "b-spline"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:zju-fast-lab/ego-planner",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:zhou-fast-planner-paper",
+    "kind": "paper",
+    "title": "Robust and Efficient Quadrotor Trajectory Generation for Fast Autonomous Flight",
+    "url": "https://arxiv.org/abs/1907.01531",
+    "authors": [
+      "Boyu Zhou",
+      "Fei Gao",
+      "Luqi Wang",
+      "Chuhao Liu",
+      "Shaojie Shen"
+    ],
+    "year": 2019,
+    "summary": "Fast-Planner paper: kinodynamic path search front-end plus B-spline optimization and time adjustment for fast quadrotor flight in unknown environments.",
+    "key_takeaways": [
+      "Front-end/back-end split is the template many later planners follow"
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "quadrotor",
+      "kinodynamic"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:hkust-aerial-robotics/fast-planner",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:aerostack2-paper",
+    "kind": "paper",
+    "title": "Aerostack2: A Software Framework for Developing Multi-robot Aerial Systems",
+    "url": "https://arxiv.org/abs/2303.18237",
+    "authors": [
+      "Miguel Fernandez-Cortizas",
+      "Martin Molina",
+      "Pedro Arias-Perez",
+      "Rafael Perez-Segui",
+      "David Perez-Saura",
+      "Pascual Campoy"
+    ],
+    "year": 2023,
+    "summary": "Describes the Aerostack2 ROS 2 architecture for aerial robotics: platform abstraction, behaviors, mission specification and multi-robot support.",
+    "key_takeaways": [
+      "Platform abstraction lets the same mission run on several autopilots and simulators"
+    ],
+    "concepts": [
+      "concept:mission-planning",
+      "concept:multi-agent",
+      "concept:ros"
+    ],
+    "tags": [
+      "aerostack2",
+      "uav"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:aerostack2/aerostack2",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:plansys2-paper",
+    "kind": "paper",
+    "title": "PlanSys2: A Planning System Framework for ROS2",
+    "url": "https://arxiv.org/abs/2107.00376",
+    "authors": [
+      "Francisco Martin",
+      "Jonatan Gines Clavero",
+      "Vicente Matellan",
+      "Francisco J. Rodriguez"
+    ],
+    "year": 2021,
+    "summary": "Presents PlanSys2, a PDDL planning and execution framework for ROS 2 that compiles plans into behavior trees and supports multi-robot execution.",
+    "key_takeaways": [
+      "Shows how symbolic task planning connects to Nav2 actions"
+    ],
+    "concepts": [
+      "concept:mission-planning",
+      "concept:ros"
+    ],
+    "tags": [
+      "pddl",
+      "task-planning"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:plansys2/ros2_planning_system",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:fields2cover-paper",
+    "kind": "paper",
+    "title": "Fields2Cover: An open-source coverage path planning library for unmanned agricultural vehicles",
+    "url": "https://arxiv.org/abs/2210.07838",
+    "authors": [
+      "Gonzalo Mier",
+      "Joao Valente",
+      "Sytze de Bruin"
+    ],
+    "year": 2022,
+    "summary": "Paper behind the Fields2Cover library: modular coverage pipeline (headlands, swaths, route ordering, path smoothing) and benchmark of its components.",
+    "key_takeaways": [
+      "Coverage planning decomposes cleanly into swath generation, ordering and turning"
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:mission-planning"
+    ],
+    "tags": [
+      "coverage"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:fields2cover/fields2cover",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:mitre-cot-users-guide",
+    "kind": "doc",
+    "title": "Cursor-on-Target Message Router User's Guide",
+    "url": "https://www.mitre.org/sites/default/files/pdf/09_4937.pdf",
+    "authors": [
+      "MITRE"
+    ],
+    "year": 2009,
+    "summary": "MITRE guide describing Cursor-on-Target: the base Event schema (what, where, when), its mandatory fields, sub-schema extensions and the message router used to distribute CoT.",
+    "key_takeaways": [
+      "CoT base event is deliberately terse with a small set of mandatory fields",
+      "Type strings follow a hierarchical code derived from MIL-STD-2525"
+    ],
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:standards"
+    ],
+    "tags": [
+      "cot",
+      "xml",
+      "mitre"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:snstac/pytak",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:dfpc-coe/node-cot",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:butler-cot-developer-guide",
+    "kind": "doc",
+    "title": "Developer's Guide to Cursor on Target",
+    "url": "https://apps.dtic.mil/sti/pdfs/ADA637348.pdf",
+    "authors": [
+      "Mike Butler (MITRE)"
+    ],
+    "year": 2005,
+    "summary": "Introductory developer guide to CoT's objectives, message structure, implementation patterns and limitations.",
+    "key_takeaways": [
+      "Explains the what/where/when design philosophy",
+      "Good primer before writing a CoT producer"
+    ],
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:standards"
+    ],
+    "tags": [
+      "cot",
+      "dtic"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:mitre-cot-users-guide",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:cot-types-collection",
+    "kind": "dataset",
+    "title": "cot-types: Collection of Cursor-on-Target types",
+    "url": "https://github.com/dB-SPL/cot-types",
+    "authors": [
+      "dB-SPL"
+    ],
+    "year": 2024,
+    "summary": "Community-compiled list of CoT type strings with mappings to other message formats, useful when choosing the 'type' attribute for tracks.",
+    "key_takeaways": [
+      "Pick correct atom/friend/hostile type codes for your tracks"
+    ],
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:standards"
+    ],
+    "tags": [
+      "cot",
+      "type-codes"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:mitre-cot-users-guide",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:mil-std-2525d",
+    "kind": "standard",
+    "title": "MIL-STD-2525D Joint Military Symbology",
+    "url": "https://www.jcs.mil/Portals/36/Documents/Doctrine/Other_Pubs/ms_2525d.pdf",
+    "authors": [
+      "US Department of Defense"
+    ],
+    "year": 2014,
+    "summary": "US DoD standard defining military symbology (frames, icons, modifiers and the symbol identification code) for C2 displays. Revision E (2022) is current and sold through standards resellers; 2525D was published openly on jcs.mil.",
+    "key_takeaways": [
+      "SIDC structure drives symbol rendering in milsymbol",
+      "Know which revision your consumers expect (2525C vs D/E codes differ)"
+    ],
+    "concepts": [
+      "concept:standards",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "mil-std-2525",
+      "symbology",
+      "sidc"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:spatialillusions/milsymbol",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:esri/joint-military-symbology-xml",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:tak-gov",
+    "kind": "doc",
+    "title": "TAK.gov - Team Awareness Kit portal",
+    "url": "https://tak.gov/",
+    "authors": [
+      "TAK Product Center"
+    ],
+    "year": 2026,
+    "summary": "Official TAK portal for ATAK/WinTAK/iTAK/TAK Server downloads, plugin SDKs and documentation; most materials require free registration.",
+    "key_takeaways": [
+      "Register early - SDK and server downloads are behind an account"
+    ],
+    "concepts": [
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "tak",
+      "atak",
+      "sdk"
+    ],
+    "level": "intro",
+    "access": "free-registration",
+    "related": [
+      {
+        "id": "repo:tak-product-center/server",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:tak-product-center/atak-civ",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:opentakserver-docs",
+    "kind": "doc",
+    "title": "OpenTAKServer Documentation",
+    "url": "https://docs.opentakserver.io/",
+    "authors": [
+      "OpenTAKServer project"
+    ],
+    "year": 2026,
+    "summary": "Installation and configuration docs for OpenTAKServer, including client enrollment, certificates and integrations.",
+    "key_takeaways": [
+      "Step-by-step install on Ubuntu or Raspberry Pi"
+    ],
+    "concepts": [
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "tak",
+      "server"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:brian7704/opentakserver",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:pytak-docs",
+    "kind": "doc",
+    "title": "PyTAK documentation",
+    "url": "https://pytak.readthedocs.io/",
+    "authors": [
+      "SNS (Sensors & Signals)"
+    ],
+    "year": 2026,
+    "summary": "Docs and examples for PyTAK: configuration, transports (TCP/UDP/TLS/multicast) and writing CoT producers.",
+    "key_takeaways": [
+      "Example scripts are a minimal template for pushing positions to TAK"
+    ],
+    "concepts": [
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "cot",
+      "python"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:snstac/pytak",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:junzis-1090mhz-riddle",
+    "kind": "book",
+    "title": "The 1090 Megahertz Riddle: A Guide to Decoding Mode S and ADS-B Signals",
+    "url": "https://mode-s.org/1090mhz/",
+    "authors": [
+      "Junzi Sun"
+    ],
+    "year": 2021,
+    "summary": "Open book explaining Mode S and ADS-B message structure, position decoding (CPR), Comm-B registers and Mode S surveillance, with pyModeS examples.",
+    "key_takeaways": [
+      "CPR position decoding explained step by step",
+      "Covers enhanced surveillance fields beyond basic ADS-B"
+    ],
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:standards"
+    ],
+    "tags": [
+      "ads-b",
+      "mode-s"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:junzis/pymodes",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:eurocontrol-asterix",
+    "kind": "standard",
+    "title": "EUROCONTROL ASTERIX",
+    "url": "https://www.eurocontrol.int/asterix",
+    "authors": [
+      "EUROCONTROL"
+    ],
+    "year": 2026,
+    "summary": "EUROCONTROL home of the ASTERIX surveillance data exchange format, with category specifications for radar, ADS-B, MLAT and system tracks.",
+    "key_takeaways": [
+      "Categories (e.g. 048 radar, 021 ADS-B, 062 system tracks) define the binary layouts"
+    ],
+    "concepts": [
+      "concept:standards",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "asterix",
+      "surveillance"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:croatiacontrolltd/asterix",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:zoranbosnjak/asterix-specs",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:stac-spec",
+    "kind": "standard",
+    "title": "SpatioTemporal Asset Catalog (STAC) specification",
+    "url": "https://stacspec.org/",
+    "authors": [
+      "STAC community"
+    ],
+    "year": 2026,
+    "summary": "Specification and ecosystem site for STAC, the common way to describe and search geospatial imagery and DEM assets.",
+    "key_takeaways": [
+      "Public STAC APIs give key-free access to Sentinel-2 and Copernicus DEM"
+    ],
+    "concepts": [
+      "concept:gis-mapping",
+      "concept:standards"
+    ],
+    "tags": [
+      "stac"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:stac-utils/pystac-client",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:copernicus-dem-aws",
+    "kind": "dataset",
+    "title": "Copernicus DEM on AWS Open Data",
+    "url": "https://registry.opendata.aws/copernicus-dem/",
+    "authors": [
+      "ESA / Copernicus",
+      "AWS Open Data"
+    ],
+    "year": 2026,
+    "summary": "Registry entry for the Copernicus global DEM (GLO-30/GLO-90) hosted as cloud-optimized GeoTIFFs on AWS, freely accessible without an account.",
+    "key_takeaways": [
+      "Global 30 m DEM as COGs - sample directly with rasterio",
+      "Good default terrain for terrain-referenced nav and planning"
+    ],
+    "concepts": [
+      "concept:terrain-nav",
+      "concept:gis-mapping",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "dem",
+      "copernicus",
+      "cog"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:bopen/elevation",
+        "rel": "uses"
+      },
+      {
+        "id": "repo:rasterio/rasterio",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:geographiclib-docs",
+    "kind": "doc",
+    "title": "GeographicLib documentation",
+    "url": "https://geographiclib.sourceforge.io/",
+    "authors": [
+      "Charles Karney"
+    ],
+    "year": 2026,
+    "summary": "Documentation and background on geodesics, map projections, geoid and gravity models implemented in GeographicLib, plus online calculators.",
+    "key_takeaways": [
+      "Geoid undulation matters when comparing GNSS ellipsoid heights to DEM heights"
+    ],
+    "concepts": [
+      "concept:geodesy"
+    ],
+    "tags": [
+      "geodesic",
+      "geoid"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:geographiclib/geographiclib",
+        "rel": "explains"
+      }
+    ]
+  }
+]

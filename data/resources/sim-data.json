@@ -1,0 +1,972 @@
+[
+  {
+    "id": "res:ethz-euroc-mav-dataset",
+    "kind": "dataset",
+    "title": "The EuRoC MAV Dataset",
+    "url": "https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets",
+    "authors": [
+      "ETH Zurich ASL"
+    ],
+    "year": 2016,
+    "summary": "Stereo camera and IMU sequences from a micro aerial vehicle in an industrial hall and a Vicon room, with laser-tracker or motion-capture ground truth. The baseline benchmark for VIO.",
+    "key_takeaways": [
+      "Sensors: stereo grayscale, IMU",
+      "Size class: small (GB range)",
+      "Use for first VIO sanity checks"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:vio"
+    ],
+    "tags": [
+      "euroc",
+      "mav",
+      "indoor"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:michaelgrupp/evo",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:kitti-odometry-benchmark",
+    "kind": "dataset",
+    "title": "KITTI Visual Odometry / SLAM Evaluation",
+    "url": "https://www.cvlibs.net/datasets/kitti/eval_odometry.php",
+    "authors": [
+      "KIT",
+      "Toyota Technological Institute"
+    ],
+    "year": 2012,
+    "summary": "Driving sequences with stereo cameras, Velodyne lidar and GPS/IMU ground truth, plus a public leaderboard for odometry.",
+    "key_takeaways": [
+      "Sensors: stereo, lidar, GPS/IMU",
+      "Size class: large",
+      "License: CC BY-NC-SA per site"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:ground-vehicle-nav",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "kitti",
+      "driving",
+      "odometry"
+    ],
+    "level": "intro",
+    "access": "free-registration",
+    "related": [
+      {
+        "id": "repo:utiasstars/pykitti",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:kitti-360-dataset",
+    "kind": "dataset",
+    "title": "KITTI-360",
+    "url": "https://www.cvlibs.net/datasets/kitti-360/",
+    "authors": [
+      "KIT",
+      "University of Tuebingen"
+    ],
+    "year": 2021,
+    "summary": "Successor to KITTI with longer suburban drives, 360-degree perception sensors and dense annotations, with GPS/IMU poses.",
+    "key_takeaways": [
+      "Sensors: perspective and fisheye cameras, lidar, GPS/IMU",
+      "Size class: very large"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "kitti",
+      "driving"
+    ],
+    "level": "intermediate",
+    "access": "free-registration",
+    "related": []
+  },
+  {
+    "id": "res:tum-vi-benchmark",
+    "kind": "dataset",
+    "title": "TUM VI Benchmark for Visual-Inertial Odometry",
+    "url": "https://cvg.cit.tum.de/data/datasets/visual-inertial-dataset",
+    "authors": [
+      "TU Munich"
+    ],
+    "year": 2018,
+    "summary": "Handheld stereo camera and IMU sequences indoors and outdoors with photometric calibration; ground truth only at start and end for long sequences.",
+    "key_takeaways": [
+      "Sensors: stereo camera, IMU",
+      "Size class: medium",
+      "Good for long-term drift tests"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:vio"
+    ],
+    "tags": [
+      "tum",
+      "handheld"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:tum-rgbd-benchmark",
+    "kind": "dataset",
+    "title": "TUM RGB-D SLAM Dataset and Benchmark",
+    "url": "https://cvg.cit.tum.de/data/datasets/rgbd-dataset",
+    "authors": [
+      "TU Munich"
+    ],
+    "year": 2012,
+    "summary": "Kinect RGB-D sequences with motion-capture ground truth and evaluation tools; the trajectory format is used widely by other tools.",
+    "key_takeaways": [
+      "Sensors: RGB-D, accelerometer",
+      "Size class: medium"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "tum",
+      "rgbd",
+      "indoor"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:michaelgrupp/evo",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:uzh-fpv-drone-racing-dataset",
+    "kind": "dataset",
+    "title": "The UZH-FPV Drone Racing Dataset",
+    "url": "https://fpv.ifi.uzh.ch/",
+    "authors": [
+      "University of Zurich RPG"
+    ],
+    "year": 2019,
+    "summary": "High-speed, aggressive FPV drone flights with camera, event camera and IMU data, with a leaderboard and recurring state estimation competitions.",
+    "key_takeaways": [
+      "Sensors: cameras, event camera, IMU",
+      "Size class: medium",
+      "Hard for most VIO pipelines"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:vio"
+    ],
+    "tags": [
+      "drone-racing",
+      "event-camera"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:uzh-rpg/uzh_fpv_open",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:zurich-urban-mav-dataset",
+    "kind": "dataset",
+    "title": "The Zurich Urban Micro Aerial Vehicle Dataset",
+    "url": "https://rpg.ifi.uzh.ch/zurichmavdataset.html",
+    "authors": [
+      "University of Zurich RPG"
+    ],
+    "year": 2017,
+    "summary": "Low-altitude urban MAV flight over streets with camera, IMU and GPS plus Google Street View imagery for appearance-based localization.",
+    "key_takeaways": [
+      "Sensors: camera, IMU, GPS",
+      "Use for aerial-to-street-view localization"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "urban",
+      "mav",
+      "street-view"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:ori-newer-college-dataset",
+    "kind": "dataset",
+    "title": "Newer College Dataset",
+    "url": "https://ori-drs.github.io/newer-college-dataset/",
+    "authors": [
+      "Oxford Robotics Institute"
+    ],
+    "year": 2020,
+    "summary": "Handheld lidar plus stereo and multi-camera sequences around New College, Oxford, with precise ground truth from a survey-grade prior map. Now hosted on Hugging Face.",
+    "key_takeaways": [
+      "Sensors: lidar, stereo, multi-camera, IMUs",
+      "Size class: large"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "oxford",
+      "handheld",
+      "lidar"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:midair-synthetic-drone-dataset",
+    "kind": "dataset",
+    "title": "Mid-Air Dataset",
+    "url": "https://midair.ulg.ac.be/",
+    "authors": [
+      "University of Liege"
+    ],
+    "year": 2019,
+    "summary": "Synthetic low-altitude quadcopter flights with RGB, depth, normals, semantics and stereo plus navigation sensors, each trajectory recorded under several weather and season conditions.",
+    "key_takeaways": [
+      "Sensors (simulated): RGB, depth, IMU, GPS",
+      "Size class: large",
+      "Built on AirSim"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:simulation"
+    ],
+    "tags": [
+      "synthetic",
+      "airsim",
+      "weather"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:microsoft/airsim",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:cmu-tartanair-dataset",
+    "kind": "dataset",
+    "title": "TartanAir: A Dataset to Push the Limits of Visual SLAM",
+    "url": "https://theairlab.org/tartanair-dataset/",
+    "authors": [
+      "CMU AirLab"
+    ],
+    "year": 2020,
+    "summary": "Large synthetic dataset rendered in AirSim/Unreal environments with challenging lighting, weather and motion, with perfect ground truth for many modalities.",
+    "key_takeaways": [
+      "Sensors (simulated): stereo, depth, flow, lidar, IMU",
+      "Size class: very large"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:simulation",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "synthetic",
+      "tartanair"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:castacks/tartanairpy",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:cmu-subt-mrs-dataset",
+    "kind": "dataset",
+    "title": "SubT-MRS Dataset",
+    "url": "https://superodometry.com/datasets",
+    "authors": [
+      "CMU AirLab"
+    ],
+    "year": 2024,
+    "summary": "Multi-robot, multi-modal SLAM data in degraded environments - caves, tunnels, urban and off-road - with RGB, lidar, thermal and inertial sensing; used in ICCV SLAM challenges.",
+    "key_takeaways": [
+      "Sensors: RGB, lidar, thermal, IMU",
+      "Domains: subterranean, off-road",
+      "Size class: large"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:lidar-slam",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "subt",
+      "degraded",
+      "thermal"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:darpa-subt-reference-datasets",
+    "kind": "dataset",
+    "title": "DARPA SubT Reference Datasets",
+    "url": "https://bitbucket.org/subtchallenge/subt_reference_datasets",
+    "authors": [
+      "DARPA Subterranean Challenge"
+    ],
+    "year": 2019,
+    "summary": "Reference sensor datasets and artifact data released for the DARPA Subterranean Challenge, hosted on Bitbucket.",
+    "key_takeaways": [
+      "Sensors: lidar, cameras, IMU from SubT-style robots",
+      "GNSS-denied underground"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "darpa",
+      "subt",
+      "underground"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:mit-magnav-challenge-data",
+    "kind": "dataset",
+    "title": "Signal Enhancement for Magnetic Navigation Challenge Problem",
+    "url": "https://magnav.mit.edu/",
+    "authors": [
+      "MIT",
+      "US Air Force"
+    ],
+    "year": 2020,
+    "summary": "Challenge problem and airborne flight data for separating aircraft magnetic interference from the Earth's anomaly field so that magnetometers can be used for navigation against anomaly maps.",
+    "key_takeaways": [
+      "Sensors: scalar and vector magnetometers, INS, GPS truth",
+      "Domain: airborne",
+      "Code: MagNav.jl"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:magnetic-nav"
+    ],
+    "tags": [
+      "magnav",
+      "afrl",
+      "airborne"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mit-ai-accelerator/magnav.jl",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:google-smartphone-decimeter-2023",
+    "kind": "competition",
+    "title": "Google Smartphone Decimeter Challenge 2023-2024",
+    "url": "https://www.kaggle.com/competitions/smartphone-decimeter-2023",
+    "authors": [
+      "Google",
+      "ION"
+    ],
+    "year": 2023,
+    "summary": "Kaggle competition with raw GNSS and IMU logs from Android phones in cars, scored on positioning accuracy against high-grade truth.",
+    "key_takeaways": [
+      "Sensors: phone raw GNSS, IMU",
+      "Size class: medium",
+      "Kaggle account required"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:gnss",
+      "concept:gnss-rtk-ppp"
+    ],
+    "tags": [
+      "gsdc",
+      "kaggle",
+      "smartphone"
+    ],
+    "level": "intermediate",
+    "access": "free-registration",
+    "related": [
+      {
+        "id": "repo:taroz/gsdc2023",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:google/gps-measurement-tools",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:google-smartphone-decimeter-2022",
+    "kind": "competition",
+    "title": "Google Smartphone Decimeter Challenge 2022",
+    "url": "https://www.kaggle.com/competitions/smartphone-decimeter-2022",
+    "authors": [
+      "Google",
+      "ION"
+    ],
+    "year": 2022,
+    "summary": "Earlier edition of the smartphone GNSS positioning competition with Android raw measurement logs and ground truth.",
+    "key_takeaways": [
+      "Sensors: phone raw GNSS, IMU",
+      "Kaggle account required"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:gnss"
+    ],
+    "tags": [
+      "gsdc",
+      "kaggle"
+    ],
+    "level": "intermediate",
+    "access": "free-registration",
+    "related": [
+      {
+        "id": "res:google-smartphone-decimeter-2023",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:oxford-robotcar-dataset",
+    "kind": "dataset",
+    "title": "Oxford RobotCar Dataset",
+    "url": "https://robotcar-dataset.robots.ox.ac.uk/",
+    "authors": [
+      "Oxford Robotics Institute"
+    ],
+    "year": 2016,
+    "summary": "Repeated drives of the same Oxford route over a year in all weather, with cameras, lidar and GPS/INS.",
+    "key_takeaways": [
+      "Sensors: cameras, lidar, GPS/INS",
+      "Size class: very large",
+      "License: non-commercial per site"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:ground-vehicle-nav",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "oxford",
+      "long-term"
+    ],
+    "level": "intermediate",
+    "access": "free-registration",
+    "related": [
+      {
+        "id": "repo:ori-mrg/robotcar-dataset-sdk",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:oxford-radar-robotcar-dataset",
+    "kind": "dataset",
+    "title": "Oxford Radar RobotCar Dataset",
+    "url": "https://oxford-robotics-institute.github.io/radar-robotcar-dataset/",
+    "authors": [
+      "Oxford Robotics Institute"
+    ],
+    "year": 2020,
+    "summary": "RobotCar route re-driven with a scanning FMCW radar plus lidars and cameras, for radar odometry and localization.",
+    "key_takeaways": [
+      "Sensors: FMCW radar, lidar, cameras, GPS/INS",
+      "Size class: large"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:radar-nav"
+    ],
+    "tags": [
+      "radar",
+      "oxford"
+    ],
+    "level": "advanced",
+    "access": "free-registration",
+    "related": []
+  },
+  {
+    "id": "res:snu-mulran-dataset",
+    "kind": "dataset",
+    "title": "MulRan: Multimodal Range Dataset for Urban Place Recognition",
+    "url": "https://sites.google.com/view/mulran-pr",
+    "authors": [
+      "SNU RPM Robotics Lab",
+      "KAIST"
+    ],
+    "year": 2020,
+    "summary": "Urban sequences with radar and lidar for range-sensor place recognition and odometry.",
+    "key_takeaways": [
+      "Sensors: radar, lidar, GPS, IMU",
+      "Size class: large"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:radar-nav",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "radar",
+      "lidar",
+      "korea"
+    ],
+    "level": "intermediate",
+    "access": "free-registration",
+    "related": []
+  },
+  {
+    "id": "res:snu-helipr-dataset",
+    "kind": "dataset",
+    "title": "HeLiPR: Heterogeneous LiDAR Dataset for inter-LiDAR Place Recognition",
+    "url": "https://sites.google.com/view/heliprdataset",
+    "authors": [
+      "SNU RPM Robotics Lab"
+    ],
+    "year": 2024,
+    "summary": "Same routes captured with Ouster, Aeva, Livox and Velodyne lidars to test place recognition across different lidar types.",
+    "key_takeaways": [
+      "Sensors: four lidar types, IMU, GNSS/INS",
+      "Use for cross-sensor relocalization"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:place-recognition",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "lidar",
+      "heterogeneous"
+    ],
+    "level": "advanced",
+    "access": "free-registration",
+    "related": []
+  },
+  {
+    "id": "res:kaist-complex-urban-dataset",
+    "kind": "dataset",
+    "title": "Complex Urban Dataset",
+    "url": "https://sites.google.com/view/complex-urban-dataset",
+    "authors": [
+      "KAIST"
+    ],
+    "year": 2019,
+    "summary": "Urban driving in dense city areas with lidar, stereo and navigation sensors where GNSS is degraded.",
+    "key_takeaways": [
+      "Sensors: lidars, stereo, GNSS, IMU, wheel encoders",
+      "Size class: large"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:ground-vehicle-nav",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "urban",
+      "korea"
+    ],
+    "level": "intermediate",
+    "access": "free-registration",
+    "related": []
+  },
+  {
+    "id": "res:polyu-urbanloco-dataset",
+    "kind": "dataset",
+    "title": "UrbanLoco: A Full Sensor Suite Dataset for Mapping and Localization in Urban Scenes",
+    "url": "https://advdataset2019.wixsite.com/urbanloco",
+    "authors": [
+      "UC Berkeley",
+      "PolyU"
+    ],
+    "year": 2020,
+    "summary": "Driving data from Hong Kong and California urban canyons with a full sensor suite, targeted at GNSS outliers and degraded localization.",
+    "key_takeaways": [
+      "Sensors: lidar, cameras, GNSS, IMU",
+      "Focus: dense urban GNSS failure"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "urban-canyon",
+      "hong-kong",
+      "california"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:umich-nclt-dataset",
+    "kind": "dataset",
+    "title": "The University of Michigan North Campus Long-Term Vision and LIDAR Dataset",
+    "url": "http://robots.engin.umich.edu/nclt/",
+    "authors": [
+      "University of Michigan"
+    ],
+    "year": 2016,
+    "summary": "Segway robot sessions over many months on one campus with lidar, omnidirectional camera, GPS, IMU and odometry.",
+    "key_takeaways": [
+      "Sensors: Velodyne HDL-32E, Ladybug3, GPS/RTK, IMU",
+      "Long-term change over seasons"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:lidar-slam",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "long-term",
+      "campus"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:mcd-multi-campus-dataset",
+    "kind": "dataset",
+    "title": "MCD: Diverse Large-Scale Multi-Campus Dataset for Robot Perception",
+    "url": "https://mcdviral.github.io/",
+    "authors": [
+      "Nguyen et al."
+    ],
+    "year": 2024,
+    "summary": "Multi-campus sequences in Asia and Europe across seasons with two lidar types, stereo, IMUs, UWB and survey-grade prior maps.",
+    "key_takeaways": [
+      "Sensors: lidar, stereo, IMU, UWB",
+      "Ground truth: continuous-time with prior maps"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "campus",
+      "uwb"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mcdviral/mcdviral.github.io",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:hilti-slam-challenge-site",
+    "kind": "competition",
+    "title": "Hilti SLAM Challenge",
+    "url": "https://hilti-challenge.com/",
+    "authors": [
+      "Hilti"
+    ],
+    "year": 2021,
+    "summary": "Recurring SLAM challenge on construction sites with handheld and robot-mounted sensor rigs and millimetre-level ground truth.",
+    "key_takeaways": [
+      "Sensors: lidar, cameras, IMU",
+      "GNSS-denied indoor"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:lidar-slam",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "hilti",
+      "challenge"
+    ],
+    "level": "advanced",
+    "access": "free-registration",
+    "related": [
+      {
+        "id": "repo:hilti-research/hilti-slam-challenge-2022",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:hilti-research/hilti-slam-challenge-2023",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:vector-event-slam-benchmark",
+    "kind": "dataset",
+    "title": "VECtor: A Versatile Event-Centric Benchmark for Multi-Sensor SLAM",
+    "url": "https://star-datasets.github.io/vector/",
+    "authors": [
+      "ShanghaiTech"
+    ],
+    "year": 2022,
+    "summary": "Hardware-synchronized event stereo, regular stereo, RGB-D, lidar and IMU across different motion and lighting, with 6-DoF ground truth.",
+    "key_takeaways": [
+      "Sensors: event stereo, stereo, RGB-D, lidar, IMU"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:vio"
+    ],
+    "tags": [
+      "event-camera"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:uzh-dsec-dataset",
+    "kind": "dataset",
+    "title": "DSEC: A Stereo Event Camera Dataset for Driving Scenarios",
+    "url": "https://dsec.ifi.uzh.ch/",
+    "authors": [
+      "University of Zurich RPG"
+    ],
+    "year": 2021,
+    "summary": "Stereo event and frame cameras plus lidar and RTK GNSS on a car, including night and challenging illumination.",
+    "key_takeaways": [
+      "Sensors: stereo event, stereo RGB, lidar, RTK GNSS",
+      "Good for low-light perception"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "event-camera",
+      "driving"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:upenn-mvsec-dataset",
+    "kind": "dataset",
+    "title": "The Multi Vehicle Stereo Event Camera Dataset (MVSEC)",
+    "url": "https://daniilidis-group.github.io/mvsec/",
+    "authors": [
+      "University of Pennsylvania"
+    ],
+    "year": 2018,
+    "summary": "Stereo event cameras with IMU, lidar and ground truth on several platforms including a hexacopter and a car.",
+    "key_takeaways": [
+      "Sensors: stereo event, IMU, lidar, GPS",
+      "Platforms: drone, car, motorcycle, handheld"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:vio"
+    ],
+    "tags": [
+      "event-camera",
+      "multi-platform"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:hku-mars-lvig-dataset",
+    "kind": "dataset",
+    "title": "MARS-LVIG Dataset",
+    "url": "https://mars.hku.hk/dataset.html",
+    "authors": [
+      "HKU MaRS Lab"
+    ],
+    "year": 2024,
+    "summary": "Aerial robot SLAM dataset for lidar-visual-inertial-GNSS fusion, including sequences with raw GNSS measurements under different lighting.",
+    "key_takeaways": [
+      "Sensors: lidar, camera, IMU, GNSS (incl. raw)",
+      "Domain: aerial over large outdoor areas"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:lidar-slam",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "aerial",
+      "lidar",
+      "gnss-raw"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:hku-mars/marsim",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:px4-simulation-docs",
+    "kind": "doc",
+    "title": "PX4 User Guide - Simulation",
+    "url": "https://docs.px4.io/main/en/simulation/",
+    "authors": [
+      "PX4 / Dronecode"
+    ],
+    "summary": "Official guide to running PX4 in SITL and HITL with Gazebo, jMAVSim and other simulators, including multi-vehicle setups.",
+    "key_takeaways": [
+      "Start here for PX4 SITL",
+      "Covers Gazebo, jMAVSim and community sims"
+    ],
+    "concepts": [
+      "concept:simulation",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "px4",
+      "sitl"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:gazebosim/gz-sim",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:px4/jmavsim",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:ardupilot-sitl-docs",
+    "kind": "doc",
+    "title": "ArduPilot SITL Simulator (Software in the Loop)",
+    "url": "https://ardupilot.org/dev/docs/sitl-simulator-software-in-the-loop.html",
+    "authors": [
+      "ArduPilot"
+    ],
+    "summary": "Developer docs for running ArduPilot vehicles in SITL, connecting GCS and external simulators.",
+    "key_takeaways": [
+      "sim_vehicle.py workflow",
+      "Lists supported external simulators"
+    ],
+    "concepts": [
+      "concept:simulation",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "ardupilot",
+      "sitl"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot_gazebo",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:byu-holoocean-docs",
+    "kind": "doc",
+    "title": "HoloOcean Documentation",
+    "url": "https://holoocean.readthedocs.io/",
+    "authors": [
+      "BYU FRoSt Lab"
+    ],
+    "summary": "Install guide, sensor reference (sonar, DVL, IMU, depth) and examples for the HoloOcean underwater simulator.",
+    "key_takeaways": [
+      "Covers sonar and DVL sensor configs",
+      "Multi-agent and acoustic comms examples"
+    ],
+    "concepts": [
+      "concept:simulation",
+      "concept:underwater-nav"
+    ],
+    "tags": [
+      "holoocean",
+      "underwater"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:byu-holoocean/holoocean-docs",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:microsoft-airsim-docs",
+    "kind": "doc",
+    "title": "AirSim Documentation",
+    "url": "https://microsoft.github.io/AirSim/",
+    "authors": [
+      "Microsoft"
+    ],
+    "summary": "Docs for AirSim covering setup, APIs, sensor configuration and PX4/ArduPilot integration.",
+    "key_takeaways": [
+      "Sensor settings via settings.json",
+      "Notes on the project's end of active development"
+    ],
+    "concepts": [
+      "concept:simulation"
+    ],
+    "tags": [
+      "airsim",
+      "unreal"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:microsoft/airsim",
+        "rel": "explains"
+      }
+    ]
+  }
+]

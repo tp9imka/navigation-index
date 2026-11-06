@@ -1,0 +1,15 @@
+{
+  "id": "sample:terrain-relative-nav-pf",
+  "title": "Terrain-relative navigation with a particle filter",
+  "summary": "A stdlib-only simulation of TERCOM/TRN: an aircraft with a biased INS and a radar altimeter matches its measured terrain profile against a seeded synthetic DEM with a particle filter that also estimates the INS velocity bias. Prints INS-only vs PF error over time, includes a flat-terrain control, and a rasterio loader for Copernicus GLO-30 tiles.",
+  "concepts": ["concept:terrain-nav", "concept:ins", "concept:sensor-fusion", "concept:assured-pnt", "concept:gis-mapping"],
+  "tags": ["tercom", "trn", "particle-filter", "radar-altimeter", "dem", "copernicus-glo30", "stdlib", "python"],
+  "related": [
+    {"id": "repo:alti3/python-tercom", "rel": "explains"},
+    {"id": "repo:sotostrk/tercom-via-particle-filter-uav-state-estimation-mae6760-project-", "rel": "explains"},
+    {"id": "repo:mzahana/tercom_nav", "rel": "explains"},
+    {"id": "repo:hstm/terrain-nav-preprocessing", "rel": "explains"},
+    {"id": "repo:rasterio/rasterio", "rel": "uses"}
+  ],
+  "verified": "terrain.py and trn_pf.py ran with python3.14.7 stdlib on 2026-11-06, output shown in README; dem_rasterio.py is an unverified sketch: syntax-checked only, requires rasterio (the GLO-30 tile URL returned HTTP 200 on 2026-11-06)."
+}

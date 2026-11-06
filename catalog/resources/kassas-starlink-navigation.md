@@ -1,0 +1,22 @@
+# Enter LEO on the GNSS Stage: Navigation with Starlink Satellites
+
+`res:kassas-starlink-navigation` - paper - <https://escholarship.org/content/qt9td3n8wd/qt9td3n8wd.pdf>
+
+**By:** Z. Kassas, M. Neinavaie, et al. - **Year:** 2021 - **Level:** advanced - **Access:** open
+
+Opportunistic navigation using Starlink downlink signals without cooperation from the operator, describing two ways to extract navigation observables from unknown signals.
+
+## Key takeaways
+
+- Starlink is usable for navigation without operator support
+- Signal structure must be partly estimated blind
+
+**Concepts:** [Signals of opportunity](../concepts/signals-of-opportunity.md), [Space and orbital navigation](../concepts/space-nav.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+
+**Tags:** `starlink`, `leo`, `kassas`, `opportunistic`
+
+## Related
+
+- same_author: [Navigation with Multi-Constellation LEO Satellite Signals of Opportunity: Starlink, OneWeb, Orbcomm, and Iridium](../resources/kassas-multi-constellation-leo.md)
+
+_Indexed by lane(s): docs-standards_

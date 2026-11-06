@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navigation Graph</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.9/standalone/umd/vis-network.min.js"></script>
+<style>
+  :root { --bg:#f7f7f5; --fg:#1d1d1b; --muted:#6b6b66; --panel:#ffffff; --line:#d9d9d4; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#151514; --fg:#ecece8; --muted:#9a9a94; --panel:#1f1f1d; --line:#33332f; } }
+  * { box-sizing:border-box; }
+  body { margin:0; font:14px/1.4 system-ui, sans-serif; background:var(--bg); color:var(--fg); display:flex; height:100vh; }
+  #side { width:340px; max-width:45vw; padding:16px; border-right:1px solid var(--line); overflow:auto; background:var(--panel); }
+  #net { flex:1; }
+  input, select { width:100%; padding:6px 8px; margin:4px 0 10px; background:var(--bg); color:var(--fg); border:1px solid var(--line); border-radius:6px; }
+  h1 { font-size:16px; margin:0 0 8px; }
+  .muted { color:var(--muted); font-size:12px; }
+  a { color:inherit; }
+  #info h2 { font-size:15px; margin:12px 0 4px; }
+  @media (max-width: 700px) { body { flex-direction:column; } #side { width:100%; max-width:none; height:40vh; } }
+</style>
+</head>
+<body>
+<div id="side">
+  <h1>Navigation knowledge graph</h1>
+  <div class="muted">Concepts (large) link repos, docs and samples. Click a node for details.</div>
+  <label>Search<input id="q" placeholder="e.g. lightglue, magnav, rtk"></label>
+  <label>Concept focus<select id="concept"><option value="">all</option></select></label>
+  <label>Kinds<select id="kind"><option value="">all</option><option>repo</option><option>sample</option><option value="res">documents/talks/courses</option></select></label>
+  <div id="info" class="muted"></div>
+</div>
+<div id="net"></div>
+<script>
+const COLORS = { concept:"#c2410c", repo:"#2563eb", sample:"#16a34a" };
+const RES_COLOR = "#9333ea";
+const REPO_BASE = "../";
+let G, network, data;
+fetch("graph.json").then(r => r.json()).then(g => { G = g; init(); });
+
+function color(k) { return COLORS[k] || RES_COLOR; }
+function size(n) { return n.kind === "concept" ? 28 : n.kind === "sample" ? 16 : 8 + Math.min(14, Math.log10((n.stars || 1)) * 3); }
+
+function init() {
+  const sel = document.getElementById("concept");
+  G.nodes.filter(n => n.kind === "concept").sort((a,b)=>a.label.localeCompare(b.label))
+    .forEach(c => sel.add(new Option(c.label, c.id)));
+  ["q","concept","kind"].forEach(id => document.getElementById(id).addEventListener("input", render));
+  render();
+}
+
+function render() {
+  const q = document.getElementById("q").value.toLowerCase().trim();
+  const focus = document.getElementById("concept").value;
+  const kind = document.getElementById("kind").value;
+  let keep = new Set(G.nodes.filter(n => {
+    if (kind === "res" && ["repo","sample","concept"].includes(n.kind)) return n.kind === "concept";
+    if (kind && kind !== "res" && n.kind !== kind && n.kind !== "concept") return false;
+    if (focus && n.kind !== "concept" && !n.concepts.includes(focus)) return false;
+    if (q && n.kind !== "concept" && !n.label.toLowerCase().includes(q) && !n.id.includes(q)) return false;
+    return true;
+  }).map(n => n.id));
+  if (focus || q) {
+    const used = new Set();
+    G.edges.forEach(e => { if (keep.has(e.source) && keep.has(e.target)) { used.add(e.source); used.add(e.target); } });
+    G.nodes.forEach(n => { if (n.kind === "concept" && !used.has(n.id) && n.id !== focus) keep.delete(n.id); });
+  }
+  const nodes = G.nodes.filter(n => keep.has(n.id)).map(n => ({ id:n.id, label: n.kind === "concept" || n.kind === "sample" ? n.label : "", title:n.label, color:color(n.kind), size:size(n), shape:"dot", font:{ color:getComputedStyle(document.body).color } }));
+  const edges = G.edges.filter(e => keep.has(e.source) && keep.has(e.target)).map(e => ({ from:e.source, to:e.target, color:{ opacity:0.25 }, title:e.rel }));
+  data = { nodes:new vis.DataSet(nodes), edges:new vis.DataSet(edges) };
+  if (network) network.destroy();
+  network = new vis.Network(document.getElementById("net"), data, { physics:{ solver:"forceAtlas2Based", stabilization:{ iterations:150 } }, interaction:{ hover:true } });
+  network.on("click", p => p.nodes.length && show(p.nodes[0]));
+}
+
+function show(id) {
+  const n = G.nodes.find(x => x.id === id);
+  const nb = G.edges.filter(e => e.source === id || e.target === id).map(e => {
+    const o = G.nodes.find(x => x.id === (e.source === id ? e.target : e.source));
+    return o ? `<li>${e.rel}: ${o.label}</li>` : "";
+  }).join("");
+  document.getElementById("info").innerHTML =
+    `<h2>${n.label}</h2><div>${n.kind} - <code>${n.id}</code></div>` +
+    (n.url ? `<div><a href="${n.url}" target="_blank" rel="noopener">source</a> - ` : "<div>") +
+    `<a href="${REPO_BASE}${n.page}">catalog page</a></div>` +
+    (n.stars ? `<div>stars: ${n.stars}</div>` : "") + `<ul>${nb}</ul>`;
+}
+</script>
+</body>
+</html>

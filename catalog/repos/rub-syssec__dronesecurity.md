@@ -1,0 +1,34 @@
+# DroneSecurity (DJI DroneID receiver)
+
+`repo:rub-syssec/dronesecurity` - <https://github.com/RUB-SysSec/DroneSecurity>
+
+| stars | language | license | last push | archived | maturity | hackathon fit |
+|---|---|---|---|---|---|---|
+| 1,333 | Python | AGPL-3.0 | 2023-03-10 | False | research-prototype | medium |
+
+Ruhr University Bochum receiver for DJI DroneID that works live with an SDR or offline on captures, released with their NDSS 2023 security analysis.
+
+**Why it matters:** Shows how passive decoding of drone telemetry supports detection and localization of DJI aircraft, a common C-UAS need.
+
+**Hackathon notes:** Requires a wideband SDR (e.g. USRP/BladeRF) and recorded or live captures; sample captures ease offline work.
+
+**Concepts:** [Counter-UAS and drone detection](../concepts/counter-uas.md), [Situational awareness and C2 interop](../concepts/situational-awareness.md), [RF localization and direction finding](../concepts/rf-localization.md)
+
+**Tags:** `dji`, `droneid`, `sdr`, `ndss`, `usrp`
+
+**Domains:** air
+
+## Related
+
+- evaluated_on: [Drone Security and the Mysterious Case of DJI's DroneID](../resources/ndss-2023-dji-droneid.md)
+- alternative_to: [samples2djidroneid](../repos/anarkiwi__samples2djidroneid.md)
+
+## Referenced by
+
+- [samples2djidroneid](../repos/anarkiwi__samples2djidroneid.md) (alternative_to)
+- [Drone Security and the Mysterious Case of DJI's DroneID](../resources/ndss-2023-dji-droneid.md) (has_code)
+- [Drone Security and the Mysterious Case of DJI's DroneID](../resources/ndss2023-dji-droneid.md) (has_code)
+
+_Indexed by lane(s): defense-context, domains-swarm_
+
+_GitHub metadata fetched 2026-11-06._

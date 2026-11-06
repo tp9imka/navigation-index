@@ -1,0 +1,1898 @@
+[
+  {
+    "id": "repo:tomojitakasu/rtklib",
+    "kind": "repo",
+    "name": "RTKLIB",
+    "url": "https://github.com/tomojitakasu/RTKLIB",
+    "summary": "The original open-source GNSS positioning package by T. Takasu: SPP, DGNSS, RTK, PPK and PPP engines in portable C, plus CLI tools (rnx2rtkp, rtkrcv, str2str, convbin) and Windows GUIs.",
+    "why_it_matters": "The reference implementation most GNSS research and low-cost RTK work is built on; reading its rtkpos.c is the fastest way to understand RTK.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp"
+    ],
+    "tags": [
+      "rtk",
+      "ppk",
+      "ppp",
+      "rinex",
+      "rtcm",
+      "c"
+    ],
+    "language": "C",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Use str2str to relay NTRIP/serial streams and rnx2rtkp for post-processing. Upstream is quiet since 2024; prefer the demo5 fork for current receivers.",
+    "related": [
+      {
+        "id": "repo:rtklibexplorer/rtklib",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:rtklibexplorer/rtklib-py",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:rtklibexplorer/rtklib",
+    "kind": "repo",
+    "name": "RTKLIB demo5 (rtklibexplorer)",
+    "url": "https://github.com/rtklibexplorer/RTKLIB",
+    "summary": "Actively maintained RTKLIB fork tuned for low-cost receivers (especially u-blox), with many robustness fixes to ambiguity resolution, cycle-slip handling and receiver decoders.",
+    "why_it_matters": "The practical default for RTK/PPK with cheap F9P-class hardware; well documented through the rtklibexplorer blog.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp"
+    ],
+    "tags": [
+      "rtk",
+      "ppk",
+      "demo5",
+      "u-blox",
+      "rtklib-fork"
+    ],
+    "language": "C",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Prebuilt Windows binaries and Linux builds are easy. Pair with a u-blox F9P and a free NTRIP caster for cm-level fixes in an afternoon.",
+    "related": [
+      {
+        "id": "repo:tomojitakasu/rtklib",
+        "rel": "fork_of"
+      },
+      {
+        "id": "repo:rtklibexplorer/rtklib-py",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:rtklibexplorer/rtklib-py",
+    "kind": "repo",
+    "name": "rtklib-py",
+    "url": "https://github.com/rtklibexplorer/rtklib-py",
+    "summary": "Python port of the demo5 RTKLIB positioning core, currently focused on post-processed kinematic (PPK) solutions.",
+    "why_it_matters": "Readable Python version of RTK math, good for teaching, prototyping new filters or swapping in ML components.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp"
+    ],
+    "tags": [
+      "ppk",
+      "python",
+      "rtklib-port"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Slow compared to C RTKLIB and PPK only; last pushed 2023. Ideal for instrumenting or modifying the filter during a hackathon.",
+    "related": [
+      {
+        "id": "repo:rtklibexplorer/rtklib",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:taroz/matrtklib",
+    "kind": "repo",
+    "name": "MatRTKLIB",
+    "url": "https://github.com/taroz/MatRTKLIB",
+    "summary": "MATLAB wrapper exposing RTKLIB functions and data structures (observations, navigation data, solutions) as MATLAB objects.",
+    "why_it_matters": "Lets MATLAB users script RTKLIB processing and analysis without writing C.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp"
+    ],
+    "tags": [
+      "matlab",
+      "rtklib-wrapper"
+    ],
+    "language": "MATLAB",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Requires MATLAB. Useful if the team already lives in MATLAB for analysis plots.",
+    "related": [
+      {
+        "id": "repo:tomojitakasu/rtklib",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:taroz/gsdc2023",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:gnss-sdr/gnss-sdr",
+    "kind": "repo",
+    "name": "GNSS-SDR",
+    "url": "https://github.com/gnss-sdr/gnss-sdr",
+    "summary": "Full software-defined GNSS receiver built on GNU Radio: acquisition, tracking, navigation message decoding and PVT for GPS, Galileo, GLONASS and BeiDou signals from SDR front-ends or IQ files, including Galileo OSNMA support.",
+    "why_it_matters": "The most complete open receiver for experimenting with signal-level defenses (tracking monitors, authentication, interference) on real or simulated IQ.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-sdr",
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "gnu-radio",
+      "receiver",
+      "osnma",
+      "iq",
+      "c++"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Install from distro packages (apt install gnss-sdr) to skip a long build. Feed it GPS-SDR-SIM or recorded IQ files; works with HackRF/USRP/RTL-SDR front-ends.",
+    "related": [
+      {
+        "id": "repo:osqzss/gps-sdr-sim",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:algafix/osnma",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:haiyang-wong/osnma-sdr-sim",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:tomojitakasu/pocketsdr",
+    "kind": "repo",
+    "name": "PocketSDR",
+    "url": "https://github.com/tomojitakasu/PocketSDR",
+    "summary": "Open hardware GNSS front-end plus a software receiver (Python and C) by the RTKLIB author, supporting a wide range of GNSS signals across L1/L2/L5/L6 bands.",
+    "why_it_matters": "Cheap path to multi-band raw IF capture and a readable receiver implementation, ideal for signal-level research.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-sdr"
+    ],
+    "tags": [
+      "front-end",
+      "open-hardware",
+      "sdr",
+      "multi-band"
+    ],
+    "language": "C",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Software runs on recorded IF without the hardware; building the board is out of hackathon scope unless pre-built.",
+    "related": [
+      {
+        "id": "repo:tomojitakasu/rtklib",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:gnss-sdr/gnss-sdr",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:taroz/gnss-sdrlib",
+    "kind": "repo",
+    "name": "GNSS-SDRLIB",
+    "url": "https://github.com/taroz/GNSS-SDRLIB",
+    "summary": "Older open-source GNSS software receiver library in C with a GUI, supporting several front-ends and real-time RTKLIB output.",
+    "why_it_matters": "Compact receiver codebase that is easier to read than GNSS-SDR; historically a common teaching receiver.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-sdr"
+    ],
+    "tags": [
+      "receiver",
+      "c",
+      "legacy"
+    ],
+    "language": "C",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Not updated since 2015 (repo not formally archived). Use for reference only; prefer PocketSDR or GNSS-SDR for live work.",
+    "related": [
+      {
+        "id": "repo:tomojitakasu/pocketsdr",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:nlsfi/fgi-gsrx",
+    "kind": "repo",
+    "name": "FGI-GSRx",
+    "url": "https://github.com/nlsfi/FGI-GSRx",
+    "summary": "Multi-GNSS software receiver in MATLAB from the Finnish Geospatial Research Institute, with modular acquisition, tracking and navigation stages.",
+    "why_it_matters": "MATLAB receiver suitable for quick algorithm swaps (e.g. new tracking or interference mitigation) with readable code.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-sdr"
+    ],
+    "tags": [
+      "matlab",
+      "receiver",
+      "fgi"
+    ],
+    "language": "MATLAB",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs MATLAB and IQ files; slow but transparent.",
+    "related": [
+      {
+        "id": "repo:nlsfi/fgi-osnma",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:tmboc/softgnss",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:tmboc/softgnss",
+    "kind": "repo",
+    "name": "SoftGNSS v3.0 (maintained copy)",
+    "url": "https://github.com/TMBOC/SoftGNSS",
+    "summary": "Maintained copy of the classic Borre/Akos SoftGNSS MATLAB GPS L1 receiver with updates for several sampler front-ends.",
+    "why_it_matters": "The receiver code that accompanies the standard textbook on software GPS receivers; the canonical teaching codebase.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-sdr"
+    ],
+    "tags": [
+      "matlab",
+      "gps-l1",
+      "textbook"
+    ],
+    "language": "MATLAB",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Good for learning acquisition and tracking loops on a sample data file.",
+    "related": [
+      {
+        "id": "repo:perrysou/softgnss-python",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:perrysou/softgnss-python",
+    "kind": "repo",
+    "name": "SoftGNSS-python",
+    "url": "https://github.com/perrysou/SoftGNSS-python",
+    "summary": "Python port of the SoftGNSS software-defined GPS receiver toolkit.",
+    "why_it_matters": "Python version of the textbook receiver; easier for teams without MATLAB.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-sdr"
+    ],
+    "tags": [
+      "python",
+      "gps-l1",
+      "receiver"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Not updated since 2023; fine for offline IQ experiments.",
+    "related": [
+      {
+        "id": "repo:tmboc/softgnss",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:sergio-vicenzo/gpsl1-dpemodule",
+    "kind": "repo",
+    "name": "GPS L1 Direct Position Estimation module",
+    "url": "https://github.com/Sergio-Vicenzo/GPSL1-DPEmodule",
+    "summary": "Plug-in module adding Direct Position Estimation (positioning directly in the correlation domain) to MATLAB two-step software receivers such as SoftGNSS.",
+    "why_it_matters": "DPE is studied for robustness in weak-signal, multipath and interference conditions; this is one of few open implementations.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-sdr",
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "dpe",
+      "matlab",
+      "research"
+    ],
+    "language": "MATLAB",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Research code; computationally heavy. Useful as a stretch comparison against conventional tracking.",
+    "related": [
+      {
+        "id": "repo:tmboc/softgnss",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:commaai/laika",
+    "kind": "repo",
+    "name": "laika",
+    "url": "https://github.com/commaai/laika",
+    "summary": "Python GNSS processing library from comma.ai that fetches orbits, clocks and atmospheric corrections automatically and computes corrected pseudoranges and positions from raw measurements.",
+    "why_it_matters": "Quickest way to go from raw pseudoranges to a corrected fix in Python; used in openpilot's localizer stack.",
+    "concepts": [
+      "concept:gnss"
+    ],
+    "tags": [
+      "python",
+      "pseudorange",
+      "corrections",
+      "comma-ai"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip-installable. Correction downloads need internet (NASA CDDIS requires an Earthdata login). Good backend for Android raw data experiments.",
+    "related": [
+      {
+        "id": "repo:commaai/openpilot",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:stanford-navlab/gnss_lib_py",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:stanford-navlab/gnss_lib_py",
+    "kind": "repo",
+    "name": "gnss_lib_py",
+    "url": "https://github.com/Stanford-NavLab/gnss_lib_py",
+    "summary": "Modular Python library from Stanford NavLab for parsing, analyzing and visualizing GNSS data (Android logs, RINEX, NMEA, SP3/CLK) with baseline positioning algorithms and fault detection examples.",
+    "why_it_matters": "Strong Python base for smartphone GNSS work and for prototyping integrity/fault detection.",
+    "concepts": [
+      "concept:gnss",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "python",
+      "android",
+      "rinex",
+      "fde"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install gnss-lib-py; tutorials load GSDC data directly. Very good fit for a 24h spoofing-detection or integrity notebook.",
+    "related": [
+      {
+        "id": "repo:google/gps-measurement-tools",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:commaai/laika",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:geospace-code/georinex",
+    "kind": "repo",
+    "name": "georinex",
+    "url": "https://github.com/geospace-code/georinex",
+    "summary": "Fast Python reader for RINEX 2/3 observation and navigation files and SP3 orbits into xarray, with batch conversion to HDF5/NetCDF.",
+    "why_it_matters": "Makes RINEX data accessible in the scientific Python stack without writing parsers.",
+    "concepts": [
+      "concept:gnss",
+      "concept:geodesy"
+    ],
+    "tags": [
+      "rinex",
+      "xarray",
+      "python",
+      "sp3"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install georinex. Use it to load public CORS/IGS RINEX for analysis or ML features.",
+    "related": [
+      {
+        "id": "repo:stanford-navlab/gnss_lib_py",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:geoscienceaustralia/gnssanalysis",
+    "kind": "repo",
+    "name": "gnssanalysis",
+    "url": "https://github.com/GeoscienceAustralia/gnssanalysis",
+    "summary": "Geoscience Australia Python module of utilities for reading and comparing GNSS products (SP3, CLK, SINEX, Ginan outputs) and computing differences/statistics.",
+    "why_it_matters": "Companion tooling for evaluating precise orbit/clock products and PPP outputs.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp",
+      "concept:geodesy"
+    ],
+    "tags": [
+      "python",
+      "sp3",
+      "sinex",
+      "ginan"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Niche; useful if comparing PPP solutions or product quality.",
+    "related": [
+      {
+        "id": "repo:geoscienceaustralia/ginan",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:pridelab/pride-pppar",
+    "kind": "repo",
+    "name": "PRIDE PPP-AR",
+    "url": "https://github.com/PrideLab/PRIDE-PPPAR",
+    "summary": "Wuhan University's open-source multi-GNSS precise point positioning package with ambiguity resolution, aimed at geodetic-grade post-processing.",
+    "why_it_matters": "Free PPP-AR gives cm-level positions without a local base station, a key capability where RTK networks are unavailable.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp",
+      "concept:geodesy"
+    ],
+    "tags": [
+      "ppp-ar",
+      "post-processing",
+      "multi-gnss"
+    ],
+    "language": "C",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Linux build; needs precise products downloaded. Post-processing only, so plan for hours of data.",
+    "related": [
+      {
+        "id": "repo:geoscienceaustralia/ginan",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:geoscienceaustralia/ginan",
+    "kind": "repo",
+    "name": "Ginan",
+    "url": "https://github.com/GeoscienceAustralia/ginan",
+    "summary": "Geoscience Australia's GNSS analysis toolkit for precise orbit determination and real-time/post-processed PPP, producing and consuming correction products.",
+    "why_it_matters": "Government-backed open PPP and product-generation engine; relevant for sovereign correction services.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp",
+      "concept:geodesy"
+    ],
+    "tags": [
+      "ppp",
+      "pod",
+      "c++",
+      "positioning-australia"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Heavy build and configuration; Docker images help. Overkill for most 48h builds.",
+    "related": [
+      {
+        "id": "repo:geoscienceaustralia/gnssanalysis",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:pridelab/pride-pppar",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:sgl-ut/gnsstk",
+    "kind": "repo",
+    "name": "GNSSTk",
+    "url": "https://github.com/SGL-UT/gnsstk",
+    "summary": "C++ library (successor to GPSTk) from UT Austin ARL for GNSS data formats, time systems, ephemeris handling and positioning algorithms, with Python bindings.",
+    "why_it_matters": "Long-lived, carefully engineered GNSS core library used in US research and monitoring work.",
+    "concepts": [
+      "concept:gnss",
+      "concept:timing",
+      "concept:geodesy"
+    ],
+    "tags": [
+      "c++",
+      "rinex",
+      "time-systems",
+      "gpstk"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Build is CMake-heavy; use for robust format and time handling rather than quick demos.",
+    "related": []
+  },
+  {
+    "id": "repo:semuconsulting/pyubx2",
+    "kind": "repo",
+    "name": "pyubx2",
+    "url": "https://github.com/semuconsulting/pyubx2",
+    "summary": "Python library for parsing and generating u-blox UBX protocol messages, including configuration (CFG-VALSET) and raw measurement (RXM-RAWX) messages.",
+    "why_it_matters": "Standard way to talk to u-blox receivers from Python: configure, log raw data and read jamming/spoofing status fields (MON-HW, NAV-STATUS).",
+    "concepts": [
+      "concept:gnss",
+      "concept:standards"
+    ],
+    "tags": [
+      "ubx",
+      "u-blox",
+      "python",
+      "parser"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install pyubx2. Read MON-RF jamming indicators and NAV-STATUS spoof flags to build a live interference monitor quickly.",
+    "related": [
+      {
+        "id": "repo:semuconsulting/pyrtcm",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:semuconsulting/pygpsclient",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:semuconsulting/pyrtcm",
+    "kind": "repo",
+    "name": "pyrtcm",
+    "url": "https://github.com/semuconsulting/pyrtcm",
+    "summary": "Python parser for RTCM 3 messages (MSM observations, station info, ephemerides, SSR).",
+    "why_it_matters": "Lets teams inspect and manipulate correction streams from NTRIP casters in Python.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp",
+      "concept:standards"
+    ],
+    "tags": [
+      "rtcm3",
+      "python",
+      "parser"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install pyrtcm. Combine with pygnssutils' NTRIP client for live streams.",
+    "related": [
+      {
+        "id": "repo:semuconsulting/pyubx2",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:semuconsulting/pynmeagps",
+    "kind": "repo",
+    "name": "pynmeagps",
+    "url": "https://github.com/semuconsulting/pynmeagps",
+    "summary": "Python library for parsing and generating NMEA 0183 GNSS sentences, including proprietary variants.",
+    "why_it_matters": "NMEA is what most autopilots and COTS receivers emit; this is a well-maintained parser/generator.",
+    "concepts": [
+      "concept:gnss",
+      "concept:standards"
+    ],
+    "tags": [
+      "nmea",
+      "python",
+      "parser"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install pynmeagps. Can also generate NMEA to feed test positions into a downstream system.",
+    "related": [
+      {
+        "id": "repo:semuconsulting/pyubx2",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:knio/pynmea2",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:semuconsulting/pygpsclient",
+    "kind": "repo",
+    "name": "PyGPSClient",
+    "url": "https://github.com/semuconsulting/PyGPSClient",
+    "summary": "Cross-platform Python GUI GNSS client that displays and configures receivers over NMEA, UBX, RTCM3 and other protocols, with built-in NTRIP and SPARTN clients.",
+    "why_it_matters": "Fast visual tool for checking receiver state, satellite C/N0 and corrections during field tests.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp"
+    ],
+    "tags": [
+      "gui",
+      "ntrip",
+      "u-blox",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install pygpsclient. Good bench tool to watch C/N0 drop during a jamming test in a shielded setup.",
+    "related": [
+      {
+        "id": "repo:semuconsulting/pyubx2",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:semuconsulting/pygnssutils",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:semuconsulting/pygnssutils",
+    "kind": "repo",
+    "name": "pygnssutils",
+    "url": "https://github.com/semuconsulting/pygnssutils",
+    "summary": "Python CLI and library utilities for reading, parsing and broadcasting GNSS streams, including an NTRIP client and caster/server and a socket server.",
+    "why_it_matters": "Glue for building correction pipelines and logging tools without writing protocol code.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp"
+    ],
+    "tags": [
+      "ntrip",
+      "cli",
+      "python",
+      "spartn"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install pygnssutils; gnssntripclient gets you RTCM from a caster in one command.",
+    "related": [
+      {
+        "id": "repo:semuconsulting/pyrtcm",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:nunojpg/ntripcaster",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:knio/pynmea2",
+    "kind": "repo",
+    "name": "pynmea2",
+    "url": "https://github.com/Knio/pynmea2",
+    "summary": "Lightweight Python library for parsing NMEA 0183 sentences.",
+    "why_it_matters": "Widely used minimal NMEA parser.",
+    "concepts": [
+      "concept:gnss",
+      "concept:standards"
+    ],
+    "tags": [
+      "nmea",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "pip install pynmea2; simpler than pynmeagps but less coverage.",
+    "related": [
+      {
+        "id": "repo:semuconsulting/pynmeagps",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:gitlab.com/gpsd/gpsd",
+    "kind": "repo",
+    "name": "gpsd",
+    "url": "https://gitlab.com/gpsd/gpsd",
+    "summary": "Service daemon that monitors GNSS receivers over serial/USB/network and serves decoded fixes, satellites and timing to client applications via JSON over TCP.",
+    "why_it_matters": "The standard Linux GNSS middleware; used for timing (with ntpd/chrony and PPS) and for multiplexing receivers to multiple apps.",
+    "concepts": [
+      "concept:gnss",
+      "concept:timing"
+    ],
+    "tags": [
+      "daemon",
+      "linux",
+      "pps",
+      "ntp"
+    ],
+    "language": "C",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "apt install gpsd gpsd-clients; cgps/gpsmon give instant status. Use it for PPS timing demos.",
+    "related": []
+  },
+  {
+    "id": "repo:kumarrobotics/ublox",
+    "kind": "repo",
+    "name": "ublox ROS driver",
+    "url": "https://github.com/KumarRobotics/ublox",
+    "summary": "ROS driver for u-blox receivers that publishes fixes, raw measurements and receiver status as ROS messages.",
+    "why_it_matters": "Common bridge from u-blox hardware into ROS-based autonomy stacks.",
+    "concepts": [
+      "concept:gnss",
+      "concept:ros"
+    ],
+    "tags": [
+      "ros",
+      "u-blox",
+      "driver"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground",
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Available as a ROS package; check the branch for ROS 1 vs ROS 2.",
+    "related": [
+      {
+        "id": "repo:lord-microstrain/ntrip_client",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:sparkfun/sparkfun_u-blox_gnss_v3",
+    "kind": "repo",
+    "name": "SparkFun u-blox GNSS v3 Arduino library",
+    "url": "https://github.com/sparkfun/SparkFun_u-blox_GNSS_v3",
+    "summary": "Arduino library for u-blox GNSS modules over I2C/SPI/serial, covering configuration, high-precision fixes and RTK correction input.",
+    "why_it_matters": "Easiest embedded route to an RTK-capable microcontroller node (ESP32 + F9P).",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp"
+    ],
+    "tags": [
+      "arduino",
+      "esp32",
+      "u-blox",
+      "embedded"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground",
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Many examples, including NTRIP over Wi-Fi on ESP32. Good for a low-cost rover or base station.",
+    "related": [
+      {
+        "id": "repo:u-blox/ubxlib",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:u-blox/ubxlib",
+    "kind": "repo",
+    "name": "ubxlib",
+    "url": "https://github.com/u-blox/ubxlib",
+    "summary": "u-blox's portable C libraries for building applications on their GNSS and cellular modules across MCU platforms.",
+    "why_it_matters": "Vendor-maintained abstraction for u-blox hardware on embedded targets.",
+    "concepts": [
+      "concept:gnss"
+    ],
+    "tags": [
+      "u-blox",
+      "embedded",
+      "c"
+    ],
+    "language": "C",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Repository is archived; prefer the SparkFun library or pyubx2.",
+    "related": [
+      {
+        "id": "repo:sparkfun/sparkfun_u-blox_gnss_v3",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:nunojpg/ntripcaster",
+    "kind": "repo",
+    "name": "ntripcaster (BKG standard caster)",
+    "url": "https://github.com/nunojpg/ntripcaster",
+    "summary": "Maintained mirror of the BKG standard NTRIP broadcaster in C for distributing RTCM correction streams over HTTP.",
+    "why_it_matters": "Self-hosted correction distribution for a private RTK network, e.g. in a contested area without public casters.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp"
+    ],
+    "tags": [
+      "ntrip",
+      "caster",
+      "rtcm",
+      "c"
+    ],
+    "language": "C",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Builds with autotools; pair with str2str from RTKLIB as the source.",
+    "related": [
+      {
+        "id": "repo:goblimey/ntripcaster",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:tomojitakasu/rtklib",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:goblimey/ntripcaster",
+    "kind": "repo",
+    "name": "ntripcaster Docker",
+    "url": "https://github.com/goblimey/ntripcaster",
+    "summary": "Dockerfile and instructions to build and run the BKG NTRIP caster in a container.",
+    "why_it_matters": "Fastest way to stand up your own caster.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp"
+    ],
+    "tags": [
+      "ntrip",
+      "docker"
+    ],
+    "language": "Dockerfile",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "docker build and go; last updated 2024.",
+    "related": [
+      {
+        "id": "repo:nunojpg/ntripcaster",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:go-gnss/ntrip",
+    "kind": "repo",
+    "name": "go-gnss/ntrip",
+    "url": "https://github.com/go-gnss/ntrip",
+    "summary": "Go library implementing NTRIP client, server and caster components.",
+    "why_it_matters": "Modern, embeddable NTRIP implementation for building custom correction services.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp"
+    ],
+    "tags": [
+      "ntrip",
+      "go"
+    ],
+    "language": "Go",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Use as a library inside a Go backend; smaller community than BKG caster.",
+    "related": [
+      {
+        "id": "repo:nunojpg/ntripcaster",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:lord-microstrain/ntrip_client",
+    "kind": "repo",
+    "name": "ROS NTRIP client",
+    "url": "https://github.com/LORD-MicroStrain/ntrip_client",
+    "summary": "ROS/ROS 2 node that connects to an NTRIP caster and publishes RTCM corrections, forwarding NMEA position back to the caster.",
+    "why_it_matters": "Standard glue to get RTK corrections into a ROS robot.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp",
+      "concept:ros"
+    ],
+    "tags": [
+      "ntrip",
+      "ros2",
+      "rtcm"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground",
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "apt-installable ROS package; works with any receiver driver accepting RTCM topics.",
+    "related": [
+      {
+        "id": "repo:kumarrobotics/ublox",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:emlid/ntripbrowser",
+    "kind": "repo",
+    "name": "ntripbrowser",
+    "url": "https://github.com/emlid/ntripbrowser",
+    "summary": "Command-line tool that fetches and displays an NTRIP caster's source table, optionally filtered by distance from a coordinate.",
+    "why_it_matters": "Quick way to find the nearest public base station mountpoint.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp"
+    ],
+    "tags": [
+      "ntrip",
+      "cli",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "pip install ntripbrowser; point at rtk2go or a national caster.",
+    "related": []
+  },
+  {
+    "id": "repo:node-ntrip/caster",
+    "kind": "repo",
+    "name": "Node-NTRIP caster",
+    "url": "https://github.com/Node-NTRIP/caster",
+    "summary": "TypeScript/Node.js NTRIP caster library supporting NTRIP v1 and v2.",
+    "why_it_matters": "JS option for web-stack teams building a correction relay.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp"
+    ],
+    "tags": [
+      "ntrip",
+      "nodejs",
+      "typescript"
+    ],
+    "language": "TypeScript",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Last updated 2023; fine for demos.",
+    "related": [
+      {
+        "id": "repo:nunojpg/ntripcaster",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:google/gps-measurement-tools",
+    "kind": "repo",
+    "name": "GPS Measurement Tools (incl. GnssLogger)",
+    "url": "https://github.com/google/gps-measurement-tools",
+    "summary": "Google's Android raw GNSS measurement tooling: the GnssLogger app source, MATLAB analysis tools for pseudorange processing, and a rinex converter.",
+    "why_it_matters": "The canonical way to capture raw pseudoranges and carrier phase from phones, the basis for smartphone spoofing and integrity research.",
+    "concepts": [
+      "concept:gnss",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "android",
+      "gnsslogger",
+      "raw-measurements",
+      "matlab"
+    ],
+    "language": "Java",
+    "domains": [
+      "dismounted",
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Install GnssLogger from the Play Store and log on any recent Android phone; parse logs with gnss_lib_py.",
+    "related": [
+      {
+        "id": "repo:stanford-navlab/gnss_lib_py",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:taroz/gsdc2023",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:taroz/gsdc2023",
+    "kind": "repo",
+    "name": "GSDC 2023 solution (taroz)",
+    "url": "https://github.com/taroz/gsdc2023",
+    "summary": "Winning-team code for the Google Smartphone Decimeter Challenge 2023, using factor-graph style smartphone GNSS/IMU processing in MATLAB.",
+    "why_it_matters": "Shows what state-of-the-art smartphone positioning looks like on a public benchmark.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-ins",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "gsdc",
+      "smartphone",
+      "matlab",
+      "factor-graph"
+    ],
+    "language": "MATLAB",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs MATLAB and the Kaggle dataset; use as a baseline to compare against.",
+    "related": [
+      {
+        "id": "repo:taroz/gtsam_gnss",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:google/gps-measurement-tools",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:osqzss/gps-sdr-sim",
+    "kind": "repo",
+    "name": "GPS-SDR-SIM",
+    "url": "https://github.com/osqzss/gps-sdr-sim",
+    "summary": "Generates GPS L1 C/A baseband IQ sample files for a user-defined static or moving trajectory from a broadcast ephemeris file, for playback through an SDR.",
+    "why_it_matters": "The standard open test-signal generator for evaluating receiver behavior under simulated or spoofed conditions. Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-interference",
+      "concept:simulation"
+    ],
+    "tags": [
+      "simulator",
+      "iq",
+      "hackrf",
+      "gps-l1"
+    ],
+    "language": "C",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Generate IQ files and feed GNSS-SDR directly (no RF needed) to test detectors. Repository archived in 2025 but still works. Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.",
+    "related": [
+      {
+        "id": "repo:gnss-sdr/gnss-sdr",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:mictronics/multi-sdr-gps-sim",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:osqzss/bladegps",
+    "kind": "repo",
+    "name": "bladeGPS",
+    "url": "https://github.com/osqzss/bladeGPS",
+    "summary": "Real-time GPS L1 signal simulator variant of GPS-SDR-SIM for bladeRF hardware.",
+    "why_it_matters": "Real-time variant for interactive receiver testing. Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.",
+    "concepts": [
+      "concept:gnss",
+      "concept:simulation"
+    ],
+    "tags": [
+      "simulator",
+      "bladerf"
+    ],
+    "language": "C",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.",
+    "related": [
+      {
+        "id": "repo:osqzss/gps-sdr-sim",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:osqzss/limegps",
+    "kind": "repo",
+    "name": "LimeGPS",
+    "url": "https://github.com/osqzss/LimeGPS",
+    "summary": "Real-time GPS L1 signal simulator variant for LimeSDR.",
+    "why_it_matters": "Same as bladeGPS for LimeSDR users. Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.",
+    "concepts": [
+      "concept:gnss",
+      "concept:simulation"
+    ],
+    "tags": [
+      "simulator",
+      "limesdr"
+    ],
+    "language": "C",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.",
+    "related": [
+      {
+        "id": "repo:osqzss/gps-sdr-sim",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:mictronics/multi-sdr-gps-sim",
+    "kind": "repo",
+    "name": "multi-sdr-gps-sim",
+    "url": "https://github.com/Mictronics/multi-sdr-gps-sim",
+    "summary": "Maintained derivative of GPS-SDR-SIM that streams GPS L1 baseband on the fly to several SDRs (HackRF, ADALM-Pluto, bladeRF) or files.",
+    "why_it_matters": "More current option than the archived original for building test rigs. Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.",
+    "concepts": [
+      "concept:gnss",
+      "concept:simulation",
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "simulator",
+      "hackrf",
+      "pluto"
+    ],
+    "language": "C",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.",
+    "related": [
+      {
+        "id": "repo:osqzss/gps-sdr-sim",
+        "rel": "fork_of"
+      }
+    ]
+  },
+  {
+    "id": "repo:haiyang-wong/osnma-sdr-sim",
+    "kind": "repo",
+    "name": "OSNMA-SDR-SIM",
+    "url": "https://github.com/Haiyang-Wong/OSNMA-SDR-SIM",
+    "summary": "Galileo E1-B/E5b signal simulator with OSNMA authentication data embedded, configurable OSNMA parameters and USRP or file output, tested against GNSS-SDR and OSNMAlib.",
+    "why_it_matters": "Rare open tool to generate authenticated (and deliberately broken) Galileo signals for testing OSNMA-aware receivers.",
+    "concepts": [
+      "concept:gnss",
+      "concept:assured-pnt",
+      "concept:simulation",
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "osnma",
+      "galileo",
+      "usrp",
+      "simulator"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Use file sink output into GNSS-SDR plus OSNMAlib for a full authenticate-or-alarm pipeline without RF. Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.",
+    "related": [
+      {
+        "id": "repo:algafix/osnma",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:gnss-sdr/gnss-sdr",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:haiyang-wong/beidou-sdr-sim",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:haiyang-wong/beidou-sdr-sim",
+    "kind": "repo",
+    "name": "Beidou-SDR-SIM",
+    "url": "https://github.com/Haiyang-Wong/Beidou-SDR-SIM",
+    "summary": "Open-source generator for BeiDou B1C baseband signals for SDR playback or file output.",
+    "why_it_matters": "Extends signal simulation testing beyond GPS to BeiDou.",
+    "concepts": [
+      "concept:gnss",
+      "concept:simulation"
+    ],
+    "tags": [
+      "beidou",
+      "b1c",
+      "simulator"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Cabled or shielded-enclosure use only: radiating GNSS signals over the air is illegal in most jurisdictions.",
+    "related": [
+      {
+        "id": "repo:haiyang-wong/osnma-sdr-sim",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:algafix/osnma",
+    "kind": "repo",
+    "name": "OSNMAlib",
+    "url": "https://github.com/Algafix/OSNMA",
+    "summary": "Python implementation of the Galileo OSNMA receiver protocol: verifies TESLA key chains and MACs on navigation data from several input formats (u-blox, Septentrio, GNSS-SDR, files).",
+    "why_it_matters": "Most practical open tool to add navigation message authentication to a Galileo-capable receiver pipeline.",
+    "concepts": [
+      "concept:gnss",
+      "concept:assured-pnt",
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "osnma",
+      "galileo",
+      "authentication",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Works live with a u-blox receiver outputting SFRBX; needs the public key and Merkle root from the GSC. Good basis for an 'authenticated position' demo.",
+    "related": [
+      {
+        "id": "repo:daniestevez/galileo-osnma",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:gnss-sdr/gnss-sdr",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:daniestevez/galileo-osnma",
+    "kind": "repo",
+    "name": "galileo-osnma (Rust)",
+    "url": "https://github.com/daniestevez/galileo-osnma",
+    "summary": "Rust implementation of Galileo OSNMA that can run on embedded no_std targets, with examples for live receivers.",
+    "why_it_matters": "Lightweight, memory-safe OSNMA verifier suitable for embedding in drones or edge devices.",
+    "concepts": [
+      "concept:gnss",
+      "concept:assured-pnt",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "osnma",
+      "rust",
+      "embedded",
+      "galileo"
+    ],
+    "language": "Rust",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Cargo build; includes a u-blox-based example. Embedded angle is a differentiator.",
+    "related": [
+      {
+        "id": "repo:algafix/osnma",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:nlsfi/fgi-osnma",
+    "kind": "repo",
+    "name": "FGI-OSNMA",
+    "url": "https://github.com/nlsfi/fgi-osnma",
+    "summary": "Python OSNMA implementation from the Finnish Geospatial Research Institute designed for flexibility and integration with receivers.",
+    "why_it_matters": "Second independent Python OSNMA implementation for cross-checking.",
+    "concepts": [
+      "concept:gnss",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "osnma",
+      "python",
+      "fgi"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Not updated since 2023; check against current ICD version.",
+    "related": [
+      {
+        "id": "repo:algafix/osnma",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:nlsfi/fgi-gsrx",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:axelbjork/osnma_ublox",
+    "kind": "repo",
+    "name": "OSNMA_ublox",
+    "url": "https://github.com/AxelBjork/OSNMA_ublox",
+    "summary": "Jupyter-based real-time OSNMA authentication of u-blox receiver data in Python.",
+    "why_it_matters": "Small, readable OSNMA example from the test phase.",
+    "concepts": [
+      "concept:gnss",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "osnma",
+      "u-blox",
+      "notebook"
+    ],
+    "language": "Jupyter Notebook",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Inactive since 2022, predates OSNMA public service; use for learning only.",
+    "related": [
+      {
+        "id": "repo:algafix/osnma",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:berthubert/galmon",
+    "kind": "repo",
+    "name": "galmon",
+    "url": "https://github.com/berthubert/galmon",
+    "summary": "Open-source GNSS monitoring network and software that collects navigation data from volunteer receivers worldwide and publishes live health, ephemeris and timing statistics for Galileo, GPS, BeiDou and GLONASS.",
+    "why_it_matters": "Independent constellation monitoring, valuable for spotting anomalies and checking broadcast data integrity.",
+    "concepts": [
+      "concept:gnss",
+      "concept:assured-pnt",
+      "concept:timing",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "monitoring",
+      "galileo",
+      "u-blox",
+      "dashboard"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Run a feeder with a u-blox receiver, or just consume the public galmon.eu data.",
+    "related": []
+  },
+  {
+    "id": "repo:hoverflyhampton/gpsspy",
+    "kind": "repo",
+    "name": "GPSSpy",
+    "url": "https://github.com/HoverflyHampton/GPSSpy",
+    "summary": "Python implementation of GPS jamming detection from receiver signal-to-noise ratio, following a published real-time jamming detection method.",
+    "why_it_matters": "Simple, explainable C/N0-based jamming detector to start from.",
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "jamming-detection",
+      "snr",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Small codebase from 2021; adapt to read C/N0 from pyubx2 or Android logs.",
+    "related": [
+      {
+        "id": "repo:semuconsulting/pyubx2",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:s7am1na/gnss-spoofing-dataset",
+    "kind": "repo",
+    "name": "Multi-frequency GNSS spoofing raw dataset",
+    "url": "https://github.com/S7AM1NA/GNSS-Spoofing-Dataset",
+    "summary": "Raw GNSS measurement logs from Android phones and smartwatches recorded under spoofing scenarios on L1, L5 and dual-band.",
+    "why_it_matters": "Labelled smartphone spoofing data is scarce; this enables training and testing detectors without generating signals.",
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:datasets-benchmarks",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "spoofing",
+      "dataset",
+      "android",
+      "l5"
+    ],
+    "language": "",
+    "domains": [
+      "dismounted"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Load logs with gnss_lib_py and build a consistency-check or ML detector. Verify labelling and scenario details in the README before trusting results.",
+    "related": [
+      {
+        "id": "repo:stanford-navlab/gnss_lib_py",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:google/gps-measurement-tools",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:stanford-gps-lab/maast_for_araim_2",
+    "kind": "repo",
+    "name": "MAAST for ARAIM",
+    "url": "https://github.com/stanford-gps-lab/maast_for_araim_2",
+    "summary": "Stanford GPS Lab MATLAB toolset that evaluates Advanced RAIM availability and protection levels over service areas.",
+    "why_it_matters": "Reference-grade integrity tooling from the lab behind much ARAIM research.",
+    "concepts": [
+      "concept:gnss",
+      "concept:assured-pnt",
+      "concept:standards"
+    ],
+    "tags": [
+      "araim",
+      "integrity",
+      "matlab",
+      "aviation"
+    ],
+    "language": "MATLAB",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "low",
+    "hackathon_notes": "MATLAB; heavy on aviation integrity concepts. Use for coverage maps of integrity availability.",
+    "related": [
+      {
+        "id": "repo:michaelbeechan/raim",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:michaelbeechan/raim",
+    "kind": "repo",
+    "name": "RAIM (MATLAB)",
+    "url": "https://github.com/MichaelBeechan/RAIM",
+    "summary": "MATLAB implementation of classic receiver autonomous integrity monitoring (fault detection and exclusion) for GNSS positioning.",
+    "why_it_matters": "Compact RAIM example to adapt for spoofing/fault detection logic.",
+    "concepts": [
+      "concept:gnss",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "raim",
+      "fde",
+      "matlab"
+    ],
+    "language": "MATLAB",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Small and readable; port the residual test to Python for a quick FDE demo.",
+    "related": [
+      {
+        "id": "repo:stanford-gps-lab/maast_for_araim_2",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:taroz/gtsam_gnss",
+    "kind": "repo",
+    "name": "gtsam_gnss",
+    "url": "https://github.com/taroz/gtsam_gnss",
+    "summary": "Custom GTSAM factors and MATLAB wrappers for GNSS factor-graph positioning, including pseudorange, Doppler and carrier-phase factors with ambiguity estimation.",
+    "why_it_matters": "Factor graphs are a robust way to fuse GNSS with other sensors and reject outliers.",
+    "concepts": [
+      "concept:gnss",
+      "concept:sensor-fusion",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "factor-graph",
+      "gtsam",
+      "matlab"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Requires the author's GTSAM fork and MATLAB; under active development.",
+    "related": [
+      {
+        "id": "repo:borglab/gtsam",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:weisongwen/graphgnsslib",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:weisongwen/graphgnsslib",
+    "kind": "repo",
+    "name": "GraphGNSSLib",
+    "url": "https://github.com/weisongwen/GraphGNSSLib",
+    "summary": "Open-source GNSS positioning and RTK package using factor graph optimization, built on RTKLIB data handling and ROS.",
+    "why_it_matters": "Shows FGO-based GNSS positioning outperforming filters in urban canyons; good research baseline.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp",
+      "concept:sensor-fusion",
+      "concept:ros"
+    ],
+    "tags": [
+      "factor-graph",
+      "rtk",
+      "ros",
+      "urban"
+    ],
+    "language": "C",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "ROS 1 era code (last push 2022); expect build friction.",
+    "related": [
+      {
+        "id": "repo:tomojitakasu/rtklib",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:taroz/gtsam_gnss",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:hkust-aerial-robotics/gnss_comm",
+    "kind": "repo",
+    "name": "gnss_comm",
+    "url": "https://github.com/HKUST-Aerial-Robotics/gnss_comm",
+    "summary": "C++/ROS definitions and utilities for raw GNSS measurement processing (ephemeris, satellite positions, pseudorange models) used by GVINS.",
+    "why_it_matters": "Reusable raw GNSS building blocks for tightly coupled GNSS-visual-inertial fusion.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-ins",
+      "concept:ros"
+    ],
+    "tags": [
+      "raw-measurements",
+      "ros",
+      "c++"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "ROS 1; stable but unmaintained since 2022.",
+    "related": [
+      {
+        "id": "repo:hkust-aerial-robotics/gvins",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:gitlab.com/radionavlab/public/ut-starlink-signal-simulator",
+    "kind": "repo",
+    "name": "UT Starlink signal simulator",
+    "url": "https://gitlab.com/radionavlab/public/ut-starlink-signal-simulator",
+    "summary": "MATLAB-style utility functions from UT Austin's Radionavigation Lab for simulating Starlink Ku-band downlink signals, with playground examples.",
+    "why_it_matters": "Lets teams experiment with Starlink as a signal of opportunity for PNT without capturing real Ku-band data.",
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:space-nav",
+      "concept:simulation"
+    ],
+    "tags": [
+      "starlink",
+      "leo-pnt",
+      "ku-band",
+      "ofdm"
+    ],
+    "language": "MATLAB",
+    "domains": [
+      "space",
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Small codebase; pair with the Humphreys Starlink signal-structure paper.",
+    "related": [
+      {
+        "id": "repo:przemyslawpiekarski/starlink-leo-pnt",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:przemyslawpiekarski/starlink-leo-pnt",
+    "kind": "repo",
+    "name": "Starlink LEO-PNT",
+    "url": "https://github.com/przemyslawpiekarski/starlink-leo-pnt",
+    "summary": "Python project for passive positioning from Starlink downlink signals: TDOA/Doppler solvers, EKF, clock estimation and SDR capture tooling, with a dashboard.",
+    "why_it_matters": "Recent hobbyist/research attempt at LEO signals-of-opportunity positioning end to end.",
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:space-nav",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "starlink",
+      "leo-pnt",
+      "tdoa",
+      "doppler"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Single-author 2026 project; claims are unverified. Use as scaffolding, validate results yourself.",
+    "related": [
+      {
+        "id": "repo:gitlab.com/radionavlab/public/ut-starlink-signal-simulator",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:rokubun/rinex_leo",
+    "kind": "repo",
+    "name": "RINEX LEO extension proposal",
+    "url": "https://github.com/rokubun/rinex_leo",
+    "summary": "Proposal for RINEX format modifications to carry LEO-PNT observables and ephemeris.",
+    "why_it_matters": "Shows how LEO-PNT data might be standardized into existing GNSS tooling.",
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:standards"
+    ],
+    "tags": [
+      "rinex",
+      "leo-pnt",
+      "format"
+    ],
+    "language": "",
+    "domains": [
+      "space"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Archived; read-only reference.",
+    "related": []
+  },
+  {
+    "id": "repo:taroz/gnss-radar",
+    "kind": "repo",
+    "name": "GNSS-Radar",
+    "url": "https://github.com/taroz/GNSS-Radar",
+    "summary": "Web application showing current GNSS satellite positions (sky plot) for a location and time across constellations.",
+    "why_it_matters": "Quick visibility planning tool for field tests.",
+    "concepts": [
+      "concept:gnss",
+      "concept:mission-planning"
+    ],
+    "tags": [
+      "skyplot",
+      "web",
+      "visibility"
+    ],
+    "language": "JavaScript",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Use the hosted site or run locally for offline sky plots.",
+    "related": []
+  },
+  {
+    "id": "repo:commaai/openpilot",
+    "kind": "repo",
+    "name": "openpilot",
+    "url": "https://github.com/commaai/openpilot",
+    "summary": "Open driver-assistance robotics stack whose localization uses GNSS (via laika) fused with IMU and vision.",
+    "why_it_matters": "Real-world example of GNSS feeding a production fusion pipeline on consumer hardware.",
+    "concepts": [
+      "concept:gnss",
+      "concept:sensor-fusion",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "adas",
+      "localization",
+      "comma-ai"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Large codebase; study locationd and its use of laika rather than running the full stack.",
+    "related": [
+      {
+        "id": "repo:commaai/laika",
+        "rel": "depends_on"
+      }
+    ]
+  }
+]

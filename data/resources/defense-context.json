@@ -1,0 +1,1891 @@
+[
+  {
+    "id": "res:opsgroup-gps-spoofing-final-report-2024",
+    "kind": "report",
+    "title": "GPS Spoofing WorkGroup 2024 - Final Report",
+    "url": "https://ops.group/blog/gps-spoofing-final-report/",
+    "authors": [
+      "OPSGROUP"
+    ],
+    "year": 2024,
+    "summary": "Crowd-sourced industry report from a six-week OPSGROUP workgroup of pilots, controllers, regulators and manufacturers on GPS spoofing hitting civil flights, mainly near Middle East and Black Sea / Baltic conflict areas. Comes with crew guidance and a technical guide.",
+    "key_takeaways": [
+      "Spoofing degrades terrain-warning (EGPWS) functions, which may stay wrong after GPS returns",
+      "No quick fix: mitigation is crew awareness, procedures and keeping ground navaids",
+      "Strong evidence that integrity monitoring and 'is my position plausible?' checks matter more than raw accuracy"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:assured-pnt",
+      "concept:ins"
+    ],
+    "tags": [
+      "aviation",
+      "spoofing",
+      "opsgroup",
+      "crew-guidance"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:easa-sib-2022-02-gnss-outages",
+        "rel": "cites"
+      },
+      {
+        "id": "res:faa-safo-24002-gnss-disruptions",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:easa-sib-2022-02-gnss-outages",
+    "kind": "doc",
+    "title": "EASA SIB 2022-02R3: Global Navigation Satellite System Outage and Alterations Leading to Communication / Navigation / Surveillance Degradation",
+    "url": "https://ad.easa.europa.eu/blob/EASA_SIB_2022_02_R3.pdf/SIB_2022-02R3_1",
+    "authors": [
+      "EASA"
+    ],
+    "year": 2024,
+    "summary": "EASA's safety information bulletin on GNSS jamming and spoofing affecting aircraft, revised repeatedly since 2022 as interference spread around conflict zones. Lists symptoms and recommendations for authorities, ANSPs, operators and manufacturers; later revisions (R4) followed.",
+    "key_takeaways": [
+      "Spoofing is harder for crews to detect than jamming and so the bigger safety risk",
+      "Recommends cross-checking with non-GNSS navaids and reporting events",
+      "Affected flight information regions are tracked on EASA's GNSS page"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:standards"
+    ],
+    "tags": [
+      "easa",
+      "aviation",
+      "bulletin",
+      "regulation"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:easa-gnss-outages-page",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:easa-gnss-outages-page",
+    "kind": "doc",
+    "title": "EASA - Global Navigation Satellite System outages and alterations",
+    "url": "https://www.easa.europa.eu/en/domains/air-operations/global-navigation-satellite-system-outages-and-alterations",
+    "authors": [
+      "EASA"
+    ],
+    "year": 2025,
+    "summary": "EASA's landing page for GNSS interference: current SIB revision, affected regions and related guidance and workshops.",
+    "key_takeaways": [
+      "Single place to check the current bulletin revision",
+      "Links civil-aviation guidance to the interference geography"
+    ],
+    "concepts": [
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "easa",
+      "aviation"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:easa-sib-2022-02-gnss-outages",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:easa-iata-gnss-interference-plan-2025",
+    "kind": "report",
+    "title": "EASA and IATA comprehensive plan to mitigate the risks of GNSS interference",
+    "url": "https://www.iata.org/en/pressroom/2025-releases/2025-06-18-01/",
+    "authors": [
+      "IATA",
+      "EASA"
+    ],
+    "year": 2025,
+    "summary": "Joint plan from a May 2025 EASA/IATA workshop setting out actions on reporting and monitoring, prevention and mitigation, airspace/infrastructure (backup navaids) and civil-military coordination against GNSS interference.",
+    "key_takeaways": [
+      "Four pillars: reporting, prevention, infrastructure, coordination",
+      "Retaining conventional navaids is explicitly part of resilience",
+      "Calls for better civil-military sharing of interference data"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:assured-pnt",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "iata",
+      "easa",
+      "aviation",
+      "policy"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:easa-sib-2022-02-gnss-outages",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:faa-safo-24002-gnss-disruptions",
+    "kind": "doc",
+    "title": "FAA SAFO 24002: Recognizing and Mitigating GPS/GNSS Disruptions",
+    "url": "https://nbaa.org/wp-content/uploads/2024/02/SAFO24002.pdf",
+    "authors": [
+      "US Federal Aviation Administration"
+    ],
+    "year": 2024,
+    "summary": "FAA Safety Alert for Operators describing jamming vs spoofing effects on aircraft systems, typical locations near conflict and counter-UAS areas, and recommended crew and operator actions.",
+    "key_takeaways": [
+      "Hybrid GPS/inertial solutions can also be corrupted by spoofing",
+      "Revert to conventional procedures and report to ATC",
+      "Disruptions cluster around conflict zones and C-UAS protection areas"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "faa",
+      "aviation",
+      "safety-alert"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:easa-sib-2022-02-gnss-outages",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:skybrary-gnss-jamming-spoofing",
+    "kind": "doc",
+    "title": "SKYbrary - GNSS Jamming and Spoofing",
+    "url": "https://skybrary.aero/articles/gnss-jamming-and-spoofing",
+    "authors": [
+      "SKYbrary"
+    ],
+    "year": 2024,
+    "summary": "Aviation-safety wiki article explaining jamming and spoofing, observed effects on aircraft avionics and links to regulator guidance.",
+    "key_takeaways": [
+      "Good primer on how interference propagates through avionics",
+      "Collects links to EASA, FAA and ICAO material"
+    ],
+    "concepts": [
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "aviation",
+      "primer"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:c4ads-above-us-only-stars",
+    "kind": "report",
+    "title": "Above Us Only Stars: Exposing GPS Spoofing in Russia and Syria",
+    "url": "https://c4ads.org/reports/above-us-only-stars/",
+    "authors": [
+      "C4ADS"
+    ],
+    "year": 2019,
+    "summary": "Open-source investigation using AIS ship tracks, public records and ISS-based measurements to map thousands of GNSS spoofing events around Russia, Crimea and Syria, many linked to protection of VIPs and bases.",
+    "key_takeaways": [
+      "Shows how public data (AIS) reveals spoofing via impossible tracks",
+      "Spoofing used for airspace denial around military facilities",
+      "A model for OSINT-style interference detection projects"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:maritime-nav",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "osint",
+      "ais",
+      "spoofing",
+      "russia",
+      "syria"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:gpsjam-org",
+    "kind": "dataset",
+    "title": "GPSJam - daily GPS interference map",
+    "url": "https://gpsjam.org/faq/",
+    "authors": [
+      "John Wiseman"
+    ],
+    "year": 2022,
+    "summary": "Daily world map of likely GPS interference derived from ADS-B navigation-integrity reports (NIC/NACp) aggregated into hexagons from community flight-tracking data. The FAQ documents the method and its blind spots.",
+    "key_takeaways": [
+      "Interference is inferred from aircraft self-reported integrity, not measured RF",
+      "Empty cells mean no data, not no jamming",
+      "Easy to reproduce with your own ADS-B receiver"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:situational-awareness",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "ads-b",
+      "nic",
+      "map",
+      "osint"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:wiedehopf/readsb",
+        "rel": "uses"
+      },
+      {
+        "id": "repo:snstac/adsbcot",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:bellingcat-toolkit-gpsjam",
+    "kind": "doc",
+    "title": "Bellingcat OSINT Toolkit - GPSJam",
+    "url": "https://bellingcat.gitbook.io/toolkit/more/all-tools/gpsjam",
+    "authors": [
+      "Bellingcat"
+    ],
+    "year": 2024,
+    "summary": "Bellingcat's toolkit entry on using GPSJam for open-source investigations, with notes on limitations and interpretation.",
+    "key_takeaways": [
+      "Frames interference maps as OSINT evidence with caveats",
+      "Useful for teams building verification workflows"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "osint",
+      "bellingcat"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:gpsjam-org",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:insidegnss-adsb-interference-mapping",
+    "kind": "blog",
+    "title": "ADS-B Data Analysis for GNSS Interference Mapping",
+    "url": "https://insidegnss.com/?p=197872",
+    "authors": [
+      "Inside GNSS"
+    ],
+    "year": 2024,
+    "summary": "Trade-press article on using ADS-B integrity data to detect and map GNSS interference regions.",
+    "key_takeaways": [
+      "ADS-B is an existing, free sensor network for interference awareness",
+      "Method details help design your own detector"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "ads-b",
+      "mapping"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:gpsjam-org",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:spire-gnss-interference-russia-kaliningrad",
+    "kind": "report",
+    "title": "GNSS interference report: Russia 2024/2025 - Part 1: Kaliningrad and the Baltic Sea",
+    "url": "https://spire.com/blog/space-reconnaissance/gnss-interference-report-russia/",
+    "authors": [
+      "Spire"
+    ],
+    "year": 2025,
+    "summary": "Spire analysis using satellite-received ADS-B integrity metrics and RF data to characterize persistent interference around Kaliningrad and over the Baltic.",
+    "key_takeaways": [
+      "Satellite ADS-B extends interference monitoring over sea areas",
+      "Kaliningrad is a persistent Baltic interference zone"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "baltic",
+      "kaliningrad",
+      "satellite-ads-b",
+      "spire"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:defensenews-baltic-jamming-origins-2025",
+    "kind": "blog",
+    "title": "Researchers home in on origins of Russia's Baltic GPS jamming",
+    "url": "https://www.defensenews.com/global/europe/2025/07/02/researchers-home-in-on-origins-of-russias-baltic-gps-jamming/",
+    "authors": [
+      "Defense News"
+    ],
+    "year": 2025,
+    "summary": "Reporting on Gdynia Maritime University and DLR work combining ground monitoring stations with aviation data to localize Baltic jamming emitters.",
+    "key_takeaways": [
+      "Emitter localization from distributed monitors plus ADS-B is feasible",
+      "Baltic interference has shifted to include spoofing"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:rf-localization"
+    ],
+    "tags": [
+      "baltic",
+      "dlr",
+      "localization"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:krakenrf/krakensdr_doa",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:utexas-spoofing-commercial-flights",
+    "kind": "blog",
+    "title": "Spoofing now affecting commercial flights",
+    "url": "https://radionavlab.ae.utexas.edu/spoofing-now-affecting-commercial-flights/",
+    "authors": [
+      "UT Austin Radionavigation Laboratory"
+    ],
+    "year": 2023,
+    "summary": "Post from Todd Humphreys' lab on spoofing incidents hitting commercial aircraft and what they show about receiver and avionics vulnerability.",
+    "key_takeaways": [
+      "Academic view on why civil receivers accept spoofed signals",
+      "Points toward authentication and cross-checks as defenses"
+    ],
+    "concepts": [
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "ut-austin",
+      "spoofing",
+      "aviation"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:rin-gps-spoofing-civil-aviation-2024",
+    "kind": "talk",
+    "title": "GPS Spoofing in the Civil Aviation Sector (RIN 2024)",
+    "url": "https://rin.org.uk/mpage/GPS_Spoofing_in_the_Civil_Aviation_Sector",
+    "authors": [
+      "Royal Institute of Navigation"
+    ],
+    "year": 2024,
+    "summary": "Royal Institute of Navigation event microsite gathering expert talks on spoofing affecting airlines and possible mitigations.",
+    "key_takeaways": [
+      "UK navigation-community perspective",
+      "Covers detection, operations and policy angles"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "rin",
+      "aviation",
+      "uk"
+    ],
+    "level": "intermediate",
+    "access": "free-registration",
+    "related": []
+  },
+  {
+    "id": "res:windward-2025-maritime-stress-test",
+    "kind": "blog",
+    "title": "Windward - 2025 maritime stress test",
+    "url": "https://windward.ai/blog/2025-maritime-stress-test/",
+    "authors": [
+      "Windward"
+    ],
+    "year": 2025,
+    "summary": "Maritime-intelligence review of 2025 including large-scale GNSS jamming and spoofing in the Gulf and Strait of Hormuz after the June 2025 Israel-Iran strikes.",
+    "key_takeaways": [
+      "Hundreds of ships per day affected at the peak",
+      "AIS anomalies are the main public signal of GNSS manipulation at sea"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:maritime-nav",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "hormuz",
+      "maritime",
+      "ais",
+      "middle-east"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:c4ads-above-us-only-stars",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:rusi-meatgrinder-2023",
+    "kind": "report",
+    "title": "Meatgrinder: Russian Tactics in the Second Year of Its Invasion of Ukraine",
+    "url": "https://www.rusi.org/explore-our-research/publications/special-resources/meatgrinder-russian-tactics-second-year-its-invasion-ukraine",
+    "authors": [
+      "Jack Watling",
+      "Nick Reynolds"
+    ],
+    "year": 2023,
+    "summary": "RUSI special report on Russian battlefield adaptation, including the density of Russian electronic warfare and its heavy effect on Ukrainian UAVs, with a widely cited estimate of around 10,000 drone losses per month.",
+    "key_takeaways": [
+      "Dense EW coverage along the front is weighted toward defeating UAVs",
+      "Loss figures came from interviews and are contested",
+      "Explains why EW-resilient navigation became a top Ukrainian requirement"
+    ],
+    "concepts": [
+      "concept:ew-resilience",
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "rusi",
+      "ukraine",
+      "ew",
+      "uav"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:csis-space-threat-assessment-2025",
+    "kind": "report",
+    "title": "Space Threat Assessment 2025",
+    "url": "https://www.csis.org/analysis/space-threat-assessment-2025",
+    "authors": [
+      "Clayton Swope",
+      "Kari A. Bingen",
+      "Makena Young",
+      "Kendra LaFave"
+    ],
+    "year": 2025,
+    "summary": "Annual CSIS Aerospace Security Project review of counterspace capabilities, with sections on GPS jamming and spoofing in Eastern Europe and the Middle East.",
+    "key_takeaways": [
+      "Puts terrestrial GNSS jamming in the wider counterspace picture",
+      "Useful citation for problem framing in pitches"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "csis",
+      "counterspace",
+      "policy"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:kyiv-independent-invisible-war-ew",
+    "kind": "blog",
+    "title": "The invisible war: Inside the electronic warfare arms race that could shape course of the war",
+    "url": "https://kyivindependent.com/the-invisible-war-inside-the-electronic-warfare-arms-race-that-could-shape-course-of-the-war",
+    "authors": [
+      "Kyiv Independent"
+    ],
+    "year": 2024,
+    "summary": "Long-form reporting on the EW and counter-EW cycle in Ukraine, covering jamming of drones and navigation and the rapid iteration of countermeasures.",
+    "key_takeaways": [
+      "Adaptation cycles are measured in weeks",
+      "Frequency agility and non-GNSS navigation are recurring answers"
+    ],
+    "concepts": [
+      "concept:ew-resilience",
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "ukraine",
+      "ew",
+      "drones"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:therecord-ukraine-spoofing-civilian-phones",
+    "kind": "blog",
+    "title": "Ukrainian military's anti-drone GPS spoofing spills into civilians' phones",
+    "url": "https://therecord.media/ukraine-anti-drone-gps-spoofing-affects-civilian-mobile-phones",
+    "authors": [
+      "The Record"
+    ],
+    "year": 2024,
+    "summary": "Report on Ukraine's nationwide defensive spoofing against incoming drones and missiles, and its side effects on civilian devices' location and time.",
+    "key_takeaways": [
+      "Defensive spoofing has collateral effects on civil PNT and timing",
+      "Any consumer-grade nav stack must tolerate wrong GNSS"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:timing"
+    ],
+    "tags": [
+      "ukraine",
+      "spoofing",
+      "civilian-impact"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:militarnyi-vermeer-optical-navigation",
+    "kind": "blog",
+    "title": "Ukrainian drones use Vermeer optical navigation system",
+    "url": "https://militarnyi.com/?p=292033",
+    "authors": [
+      "Militarnyi"
+    ],
+    "year": 2025,
+    "summary": "Ukrainian defense outlet report on a visual positioning system integrated on drones used by Ukrainian forces for operation when GNSS is jammed.",
+    "key_takeaways": [
+      "Vision-based absolute positioning against reference imagery is being fielded",
+      "Vendor claims are not independently tested"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:assured-pnt",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "ukraine",
+      "visual-navigation",
+      "industry"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:nato-diana-10-challenges-2025",
+    "kind": "doc",
+    "title": "NATO DIANA unveils 10 new challenges to accelerate dual-use technology breakthroughs",
+    "url": "https://www.diana.nato.int/connect/nato-diana-unveils-10-new-challenges-to-accelerate-dualuse-technology-breakthroughs.html",
+    "authors": [
+      "NATO DIANA"
+    ],
+    "year": 2025,
+    "summary": "Announcement of DIANA's 2026 challenge programme topics, including operating in contested electromagnetic environments, with problem statements that describe what NATO wants solved.",
+    "key_takeaways": [
+      "Problem statements stress dual-use and resilience in contested spectrum",
+      "Good template for writing a hackathon pitch in NATO language"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:ew-resilience",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "nato",
+      "diana",
+      "challenge",
+      "dual-use"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:nato-diana-secure-comms-navigation",
+    "kind": "blog",
+    "title": "NATO DIANA's breakthrough solutions for secure communication and navigation",
+    "url": "https://www.diana.nato.int/connect/nato-dianas-breakthrough-solutions-for-secure-communication-and-navigation-4.html",
+    "authors": [
+      "NATO DIANA"
+    ],
+    "year": 2025,
+    "summary": "DIANA feature on cohort companies working on resilient navigation and secure communications, illustrating which approaches made it through selection.",
+    "key_takeaways": [
+      "Shows the spread of selected approaches: magnetic, quantum, LEO PNT, vision",
+      "Selection favors deployable, testable dual-use products"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:magnetic-nav",
+      "concept:signals-of-opportunity"
+    ],
+    "tags": [
+      "nato",
+      "diana",
+      "cohort"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:brave1-nato-counter-drone-ew-competition",
+    "kind": "blog",
+    "title": "Ukraine's Brave1, NATO launch EUR 10M competition for counter-drone technology",
+    "url": "https://www.kyivpost.com/post/72587",
+    "authors": [
+      "Kyiv Post"
+    ],
+    "year": 2025,
+    "summary": "Coverage of a Brave1-NATO competition funding counter-drone technology and navigation that works under electronic warfare.",
+    "key_takeaways": [
+      "Brave1 frames navigation under EW as a top battlefield need",
+      "Competitions emphasize rapid field testing"
+    ],
+    "concepts": [
+      "concept:counter-uas",
+      "concept:ew-resilience",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "brave1",
+      "ukraine",
+      "nato",
+      "competition"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:militarnyi-anti-drone-hackathon-ukraine",
+    "kind": "blog",
+    "title": "В Україні провели хакатон зі створення антидронових рішень (Anti-drone hackathon held in Ukraine)",
+    "url": "https://militarnyi.com/uk/news/v-ukrayini-provely-hakaton-zi-stvorennya-antydronovyh-rishen/",
+    "authors": [
+      "Militarnyi"
+    ],
+    "year": 2024,
+    "summary": "Ukrainian-language report on a defense hackathon focused on counter-drone solutions.",
+    "key_takeaways": [
+      "Ukrainian hackathons are short, problem-driven and tied to frontline users",
+      "Detection and EW-resilience recur as tracks"
+    ],
+    "concepts": [
+      "concept:counter-uas",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "brave1",
+      "hackathon",
+      "ukraine"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:diu-transition-quantum-sensing-2024",
+    "kind": "blog",
+    "title": "DIU solicitation: Transition of Quantum Sensing for navigation",
+    "url": "https://defensescoop.com/2024/05/09/diu-transition-quantum-sensors-emerging-technologies-portfolio/",
+    "authors": [
+      "DefenseScoop"
+    ],
+    "year": 2024,
+    "summary": "Coverage of DIU's Transition of Quantum Sensing call seeking quantum inertial sensors and magnetometers to extend navigation holdover when GPS is unavailable.",
+    "key_takeaways": [
+      "DIU's stated value: reduced drift means longer holdover without GPS",
+      "Lines of effort: inertial, magnetometers, technology insertion",
+      "Magnetic anomaly navigation is a funded transition path"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:ins",
+      "concept:magnetic-nav"
+    ],
+    "tags": [
+      "diu",
+      "quantum",
+      "solicitation"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:afrl-mit-magnav-challenge-paper",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:darpa-roqs-2024",
+    "kind": "blog",
+    "title": "DARPA eying new quantum sensing program: Robust Quantum Sensors (RoQS)",
+    "url": "https://defensescoop.com/2024/12/30/darpa-eying-new-quantum-sensing-program-robust-quantum-sensors-roqs/",
+    "authors": [
+      "DefenseScoop"
+    ],
+    "year": 2024,
+    "summary": "Report on DARPA's RoQS program to make quantum sensors robust to platform interference so they can support navigation without GPS on real vehicles.",
+    "key_takeaways": [
+      "Platform noise, not lab sensitivity, is the barrier DARPA targets",
+      "Context for why classical magnetic compensation still matters"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:ins",
+      "concept:magnetic-nav"
+    ],
+    "tags": [
+      "darpa",
+      "quantum",
+      "roqs"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:darpa-aspn-briefing-2019",
+    "kind": "talk",
+    "title": "DARPA PNT programs briefing to the National Space-Based PNT Advisory Board (2019)",
+    "url": "https://www.GPS.gov/governance/advisory/meetings/2019-06/burke.pdf",
+    "authors": [
+      "DARPA"
+    ],
+    "year": 2019,
+    "summary": "DARPA slide deck summarizing its PNT portfolio, including All Source Positioning and Navigation (ASPN), a plug-and-play architecture for fusing non-traditional sensors when GPS is denied.",
+    "key_takeaways": [
+      "ASPN pushes sensor-agnostic, plug-and-play fusion",
+      "Shows the long-running DoD interest in all-source navigation"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:assured-pnt",
+      "concept:signals-of-opportunity"
+    ],
+    "tags": [
+      "darpa",
+      "aspn",
+      "all-source"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:edf-2024-drone-navigation-challenge",
+    "kind": "competition",
+    "title": "EDF-2024-LS-RA-CHALLENGE-SENS-RADNP: Multi-sensor integration for robust autonomous drone navigation",
+    "url": "https://www.grantbite.com/en/funding/edf-2024-drone-navigation-challenge-funding",
+    "authors": [
+      "European Defence Fund"
+    ],
+    "year": 2024,
+    "summary": "European Defence Fund technological-challenge topic on multi-sensor integration for autonomous drone navigation in GNSS-denied or contested environments, run as an organized competition with evaluation campaigns. Listing via an aggregator; confirm details on the EU Funding and Tenders portal.",
+    "key_takeaways": [
+      "EU frames GNSS-denied drone navigation as a benchmarked challenge",
+      "Multi-sensor fusion, not a single sensor, is the ask"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:assured-pnt",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "edf",
+      "eu",
+      "challenge",
+      "drone"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:edf21-navguard-factsheet",
+    "kind": "doc",
+    "title": "EDF 2021 NAVGUARD project factsheet",
+    "url": "https://defence-industry-space.ec.europa.eu/system/files/2023-01/Factsheet_EDF21_Navguard.pdf",
+    "authors": [
+      "European Commission"
+    ],
+    "year": 2023,
+    "summary": "Factsheet for an EDF-funded project developing ground and space-based detection of illegitimate activity in GNSS bands.",
+    "key_takeaways": [
+      "Interference detection and monitoring is a funded European priority",
+      "Pairs well with ADS-B/SDR monitoring hackathon ideas"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "edf",
+      "navguard",
+      "monitoring"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:dasa-advanced-rf-sensing-pnt-2022",
+    "kind": "competition",
+    "title": "DASA competition: Advanced Radio Frequency Sensing, Integrated Effects and PNT",
+    "url": "https://www.techuk.org/resource/new-competition-advanced-radio-frequency-sensing-integrated-effects-and-pnt.html",
+    "authors": [
+      "UK Defence and Security Accelerator",
+      "Dstl"
+    ],
+    "year": 2022,
+    "summary": "UK DASA themed competition (for the Bright Corvus project) seeking RF sensing and resilient PNT innovations.",
+    "key_takeaways": [
+      "UK MOD treats RF sensing and PNT as one problem space",
+      "Example of UK-style challenge framing"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "dasa",
+      "dstl",
+      "uk",
+      "competition"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:uk-pnt-growth-government-response-2025",
+    "kind": "report",
+    "title": "Positioning, navigation and timing growth: government response",
+    "url": "https://www.gov.uk/government/calls-for-evidence/positioning-navigation-and-timing-growth/outcome/positioning-navigation-and-timing-growth-government-response",
+    "authors": [
+      "UK Government"
+    ],
+    "year": 2025,
+    "summary": "UK government response on growing the resilient PNT sector, following its national PNT framework work.",
+    "key_takeaways": [
+      "UK policy treats resilient PNT as both security and export opportunity",
+      "Useful framing for dual-use pitches"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "uk",
+      "policy",
+      "pnt"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:dhs-resilient-pnt-conformance-framework",
+    "kind": "standard",
+    "title": "Resilient PNT Conformance Framework",
+    "url": "https://dhs.gov/sites/default/files/publications/2020_12_resilient_pnt_conformance_framework.pdf",
+    "authors": [
+      "DHS Science and Technology Directorate"
+    ],
+    "year": 2020,
+    "summary": "Outcome-based framework defining four levels of resilience for PNT equipment (from recovery to full threat tolerance), developed under Executive Order 13905.",
+    "key_takeaways": [
+      "Gives vocabulary to grade your solution: prevent, respond, recover",
+      "Solution-agnostic, so it fits any sensor mix",
+      "Later versions and an IEEE standards effort followed"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:standards",
+      "concept:timing"
+    ],
+    "tags": [
+      "dhs",
+      "eo-13905",
+      "resilience-levels"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:nist-ir-8323-pnt-profile",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:nist-ir-8323-pnt-profile",
+    "kind": "standard",
+    "title": "NISTIR 8323: Foundational PNT Profile - Applying the Cybersecurity Framework for the Responsible Use of PNT Services",
+    "url": "https://nvlpubs.nist.gov/nistpubs/ir/2021/NIST.IR.8323.pdf",
+    "authors": [
+      "NIST"
+    ],
+    "year": 2021,
+    "summary": "Maps the NIST Cybersecurity Framework onto systems that consume PNT, giving identify/protect/detect/respond/recover practices for GNSS dependence.",
+    "key_takeaways": [
+      "Treats GNSS as an untrusted external input",
+      "Detection and recovery practices map directly to hackathon features"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:standards",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "nist",
+      "cybersecurity-framework",
+      "eo-13905"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:onr-hackthemachine-unmanned-2021",
+    "kind": "competition",
+    "title": "HACKtheMACHINE Unmanned (ONR / NavalX)",
+    "url": "https://www.onr.navy.mil/media-center/news-releases/navys-hackthemachine-challenge-seeks-new-ideas-unmanned-autonomous-tech",
+    "authors": [
+      "Office of Naval Research"
+    ],
+    "year": 2021,
+    "summary": "US Navy prize challenge on unmanned and autonomous systems with tracks on securing a simulated autopilot, separating benign from malicious data, and model-based mission requirements.",
+    "key_takeaways": [
+      "Navy judges reward working prototypes on realistic simulated systems",
+      "Cyber-resilience of autopilots is treated as part of autonomy"
+    ],
+    "concepts": [
+      "concept:autopilot",
+      "concept:simulation",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "navy",
+      "hackthemachine",
+      "prize-challenge"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:afrl-hack-a-sat-2022",
+    "kind": "competition",
+    "title": "Space Security Challenge 2022: Hack-A-Sat 3",
+    "url": "https://www.afrl.af.mil/News/Article/3002762/space-security-challenge-2022-hack-a-sat-3-registration-opens/",
+    "authors": [
+      "AFRL",
+      "US Space Force"
+    ],
+    "year": 2022,
+    "summary": "AFRL/Space Force capture-the-flag on satellite and ground-segment security; challenge code from several editions has been released publicly.",
+    "key_takeaways": [
+      "Space-segment security is part of assured PNT",
+      "Released challenges are good training material"
+    ],
+    "concepts": [
+      "concept:space-nav",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "afrl",
+      "space-force",
+      "ctf"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:darpa-subt-challenge",
+    "kind": "competition",
+    "title": "DARPA Subterranean (SubT) Challenge",
+    "url": "https://www.darpa.mil/research/challenges/subterranean",
+    "authors": [
+      "DARPA"
+    ],
+    "year": 2021,
+    "summary": "DARPA's 2018-2021 challenge for autonomous robot teams mapping and searching tunnels, urban underground and caves with no GNSS and degraded comms; systems and virtual tracks.",
+    "key_takeaways": [
+      "Scoring rewarded accurate localization of reported artifacts, not just coverage",
+      "Heterogeneous teams (legged + aerial) won",
+      "Communication-denied autonomy was decisive"
+    ],
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:multi-agent",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "darpa",
+      "subt",
+      "challenge"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:osrf/subt",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:cerberus-subt-final-paper",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:darpa-triage-challenge",
+    "kind": "competition",
+    "title": "DARPA Triage Challenge",
+    "url": "https://www.darpa.mil/research/challenges/darpa-triage-challenge",
+    "authors": [
+      "DARPA"
+    ],
+    "year": 2025,
+    "summary": "DARPA challenge for autonomous systems that find and assess casualties in mass-casualty scenes, combining drones and ground robots navigating degraded, GNSS-unreliable environments.",
+    "key_takeaways": [
+      "Humanitarian defense use-case with navigation plus perception",
+      "Team directory helps find open contributions"
+    ],
+    "concepts": [
+      "concept:multi-agent",
+      "concept:situational-awareness",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "darpa",
+      "triage",
+      "search-and-rescue"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:arxiv-multi-robot-triage-platform",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:arxiv-multi-robot-triage-platform",
+    "kind": "paper",
+    "title": "A Multi-Robot Platform for Robotic Triage",
+    "url": "https://arxiv.org/abs/2512.08754",
+    "authors": [
+      "DARPA Triage Challenge team"
+    ],
+    "year": 2025,
+    "summary": "Technical report from a DARPA Triage Challenge team describing a multi-robot system and fine-tuned open vision-language models for injury identification.",
+    "key_takeaways": [
+      "Shows how a challenge team integrates navigation, perception and VLMs",
+      "Open-model fine-tuning is viable under challenge time budgets"
+    ],
+    "concepts": [
+      "concept:multi-agent",
+      "concept:edge-ai",
+      "concept:llm-agents-robotics"
+    ],
+    "tags": [
+      "darpa-triage",
+      "vlm",
+      "multi-robot"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:darpa-triage-challenge",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:afrl-mit-magnav-challenge-paper",
+    "kind": "paper",
+    "title": "Signal Enhancement for Magnetic Navigation Challenge Problem",
+    "url": "https://arxiv.org/abs/2007.12158",
+    "authors": [
+      "Albert R. Gnadt",
+      "et al. (MIT / USAF AI Accelerator)"
+    ],
+    "year": 2020,
+    "summary": "Defines the AFRL/MIT MagNav challenge: remove the aircraft's own magnetic field from airborne magnetometer data so the Earth's anomaly field can be used for navigation, with released flight data and a scientific-ML baseline.",
+    "key_takeaways": [
+      "Problem is compensation, the hard step before map matching",
+      "Physics (Tolles-Lawson) plus ML beat either alone",
+      "Data and baseline code are open"
+    ],
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:assured-pnt",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "afrl",
+      "mit",
+      "magnav",
+      "challenge"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mit-ai-accelerator/magnav.jl",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:lw-kong/magnav",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:magnav-sgs-flight-data",
+        "rel": "dataset_for"
+      }
+    ]
+  },
+  {
+    "id": "res:magnav-sgs-flight-data",
+    "kind": "dataset",
+    "title": "MagNav challenge flight data (Sander Geophysics, Zenodo)",
+    "url": "https://zenodo.org/records/12723700",
+    "authors": [
+      "MIT",
+      "Department of the Air Force",
+      "Sander Geophysics"
+    ],
+    "year": 2024,
+    "summary": "Zenodo record of airborne magnetometer, INS and GNSS flight data with datasheets, collected for the MagNav challenge.",
+    "key_takeaways": [
+      "Real flight lines with multiple magnetometers",
+      "Ground truth from GNSS for evaluating nav error"
+    ],
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "dataset",
+      "magnav",
+      "zenodo"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:afrl-mit-magnav-challenge-paper",
+        "rel": "dataset_for"
+      }
+    ]
+  },
+  {
+    "id": "res:cerberus-subt-final-paper",
+    "kind": "paper",
+    "title": "Team CERBERUS Wins the DARPA Subterranean Challenge: Technical Overview and Lessons Learned",
+    "url": "https://arxiv.org/abs/2207.04914",
+    "authors": [
+      "Team CERBERUS (NTNU, ETH Zurich, UNR, Oxford, et al.)"
+    ],
+    "year": 2022,
+    "summary": "Winning team's description of its legged-plus-aerial system: multi-modal perception, robust localization and mapping, exploration planning and artifact detection, with lessons from the final.",
+    "key_takeaways": [
+      "Robust multi-sensor odometry and exploration were key",
+      "Field-hardening and operator workflow mattered as much as algorithms"
+    ],
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:path-planning",
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "darpa-subt",
+      "cerberus",
+      "winner"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ntnu-arl/gbplanner_ros",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:cerberus-tunnel-urban-paper",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:cerberus-tunnel-urban-paper",
+    "kind": "paper",
+    "title": "CERBERUS: Autonomous Legged and Aerial Robotic Exploration in the Tunnel and Urban Circuits of the DARPA Subterranean Challenge",
+    "url": "https://arxiv.org/abs/2201.07067",
+    "authors": [
+      "Team CERBERUS"
+    ],
+    "year": 2022,
+    "summary": "Field Robotics paper covering CERBERUS' systems and results in the earlier SubT circuits, including perception, planning and artifact reporting.",
+    "key_takeaways": [
+      "Documents the iteration path to the winning system"
+    ],
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "darpa-subt",
+      "cerberus"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ntnu-arl/mbplanner_ros",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:nebula-costar-subt-paper",
+    "kind": "paper",
+    "title": "NeBula: Quest for Robotic Autonomy in Challenging Environments; TEAM CoSTAR at the DARPA Subterranean Challenge",
+    "url": "https://arxiv.org/abs/2103.11470",
+    "authors": [
+      "Team CoSTAR (NASA JPL et al.)"
+    ],
+    "year": 2021,
+    "summary": "Describes the NeBula belief-space autonomy stack: multi-modal positioning, mapping, traversability, risk-aware mission planning and multi-robot reasoning; CoSTAR won the Urban circuit.",
+    "key_takeaways": [
+      "Reasoning over uncertainty in localization improves mission decisions",
+      "Redundant odometry sources were essential underground"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:lidar-slam",
+      "concept:mission-planning",
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "darpa-subt",
+      "costar",
+      "jpl"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:nebula-autonomy/lamp",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:alphapilot-uzh-paper",
+    "kind": "paper",
+    "title": "AlphaPilot: Autonomous Drone Racing",
+    "url": "https://arxiv.org/abs/2005.12813",
+    "authors": [
+      "Philipp Foehn",
+      "Davide Scaramuzza",
+      "et al."
+    ],
+    "year": 2020,
+    "summary": "UZH's second-place AlphaPilot system: learned gate detection, nonlinear filtering of visual-inertial state and time-optimal trajectory planning for GPS-free racing.",
+    "key_takeaways": [
+      "Vision-inertial state estimation, not GNSS, drove the race",
+      "Splitting perception and planning made it robust"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:path-planning",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "alphapilot",
+      "drone-racing",
+      "uzh"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:uzh-rpg/rpg_time_optimal",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:mavlab-alphapilot-win-2019",
+    "kind": "blog",
+    "title": "MAVLab wins the AlphaPilot challenge",
+    "url": "https://mavlab.tudelft.nl/mavlab-wins-the-alpha-pilot-challenge/",
+    "authors": [
+      "TU Delft MAVLab"
+    ],
+    "year": 2019,
+    "summary": "TU Delft MAVLab's account of winning the 2019 Lockheed Martin AlphaPilot / AIRR autonomous drone race.",
+    "key_takeaways": [
+      "Lightweight onboard estimation can beat heavier stacks",
+      "Same lab later won A2RL 2025"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "alphapilot",
+      "mavlab",
+      "winner"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:a2rl-2025-season",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:swift-champion-drone-racing-nature",
+    "kind": "paper",
+    "title": "Champion-level drone racing using deep reinforcement learning",
+    "url": "https://www.nature.com/articles/s41586-023-06419-4",
+    "authors": [
+      "Elia Kaufmann",
+      "et al. (UZH, Intel Labs)"
+    ],
+    "year": 2023,
+    "summary": "Swift, a quadrotor using only onboard camera and IMU with an RL-trained policy, beat human world-champion pilots in head-to-head races.",
+    "key_takeaways": [
+      "Onboard VIO plus learned control reached human-champion level",
+      "Sim-to-real with residual models from real data"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:edge-ai",
+      "concept:simulation"
+    ],
+    "tags": [
+      "drone-racing",
+      "reinforcement-learning",
+      "nature"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "repo:uzh-rpg/flightmare",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:a2rl-2025-season",
+    "kind": "doc",
+    "title": "2025 Abu Dhabi Autonomous Racing League (A2RL) - drone championship",
+    "url": "https://en.wikipedia.org/wiki/2025_Abu_Dhabi_Autonomous_Racing_League",
+    "authors": [
+      "Wikipedia"
+    ],
+    "year": 2025,
+    "summary": "Summary of the A2RL x DCL autonomous drone championship, won by TU Delft MAVLab ahead of TII Racing and KAIST, including races against human pilots.",
+    "key_takeaways": [
+      "Standardized drone and camera-only sensing put the focus on estimation and control",
+      "University labs still beat well-funded teams"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:autopilot",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "a2rl",
+      "drone-racing",
+      "uae"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:kelvins-spec2019-paper",
+    "kind": "paper",
+    "title": "Satellite Pose Estimation Challenge: Dataset, Competition Design and Results",
+    "url": "https://arxiv.org/abs/1911.02050",
+    "authors": [
+      "Mate Kisantal",
+      "et al. (ESA, Stanford SLAB)"
+    ],
+    "year": 2019,
+    "summary": "ESA Kelvins / Stanford competition on monocular spacecraft pose estimation, analyzing 48 entries.",
+    "key_takeaways": [
+      "Keypoint detection plus PnP beat direct pose regression",
+      "Shows how ESA designs and scores a navigation competition"
+    ],
+    "concepts": [
+      "concept:space-nav",
+      "concept:datasets-benchmarks",
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "esa-kelvins",
+      "spec2019",
+      "pose-estimation"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:kelvins-pose-estimation-2021",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:kelvins-pose-estimation-2021",
+    "kind": "competition",
+    "title": "ESA Kelvins Satellite Pose Estimation Competition 2021 (SPEED+)",
+    "url": "https://kelvins.esa.int/pose-estimation-2021/challenge/",
+    "authors": [
+      "ESA Advanced Concepts Team",
+      "Stanford SLAB"
+    ],
+    "year": 2021,
+    "summary": "Follow-up Kelvins challenge focused on bridging the domain gap: train on synthetic images, test on hardware-in-the-loop lightbox and sunlamp images.",
+    "key_takeaways": [
+      "Sim-to-real gap is the core difficulty judges scored",
+      "Kelvins pages document rules and metrics"
+    ],
+    "concepts": [
+      "concept:space-nav",
+      "concept:datasets-benchmarks",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "esa-kelvins",
+      "spec2021",
+      "speedplus"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tpark94/speedplusbaseline",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:stone-soup-docs",
+    "kind": "doc",
+    "title": "Stone Soup documentation and tutorials",
+    "url": "https://stonesoup.readthedocs.io/en/latest/",
+    "authors": [
+      "Dstl",
+      "Stone Soup community"
+    ],
+    "year": 2025,
+    "summary": "Official docs for Dstl's tracking framework with tutorials on Kalman, particle and multi-target trackers, data association and metrics.",
+    "key_takeaways": [
+      "Tutorial path from single-target Kalman to multi-target",
+      "Metrics module helps score your fusion objectively"
+    ],
+    "concepts": [
+      "concept:target-tracking",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "dstl",
+      "docs",
+      "tutorial"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:dstl/stone-soup",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:ndss-2023-dji-droneid",
+    "kind": "paper",
+    "title": "Drone Security and the Mysterious Case of DJI's DroneID",
+    "url": "https://www.ndss-symposium.org/ndss-paper/drone-security-and-the-mysterious-case-of-djis-droneid/",
+    "authors": [
+      "Nico Schiller",
+      "et al. (Ruhr University Bochum, CISPA)"
+    ],
+    "year": 2023,
+    "summary": "Reverse-engineers DJI's DroneID broadcast, shows it is unencrypted, and builds an SDR receiver that decodes drone and pilot positions.",
+    "key_takeaways": [
+      "Passive decoding enables detection and localization of DJI drones",
+      "Security analysis of drone firmware and protocols"
+    ],
+    "concepts": [
+      "concept:counter-uas",
+      "concept:rf-localization"
+    ],
+    "tags": [
+      "dji",
+      "droneid",
+      "ndss",
+      "sdr"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:rub-syssec/dronesecurity",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:faa-remote-id",
+    "kind": "doc",
+    "title": "FAA - Remote Identification of Drones",
+    "url": "https://www.faa.gov/uas/getting_started/remote_id",
+    "authors": [
+      "US Federal Aviation Administration"
+    ],
+    "year": 2024,
+    "summary": "FAA guidance on the Remote ID rule: what drones must broadcast, standard vs broadcast-module compliance and operator obligations.",
+    "key_takeaways": [
+      "Remote ID gives a lawful, cooperative signal for drone awareness",
+      "Defines what fields you can expect to decode"
+    ],
+    "concepts": [
+      "concept:counter-uas",
+      "concept:standards",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "remote-id",
+      "faa",
+      "regulation"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:opendroneid/opendroneid-core-c",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:linux-foundation-ear-open-source",
+    "kind": "doc",
+    "title": "The EAR and Open Source Software",
+    "url": "https://bestpractices.linuxfoundation.org/export/ear-oss.html",
+    "authors": [
+      "Linux Foundation"
+    ],
+    "year": 2024,
+    "summary": "Practical guide to how US Export Administration Regulations treat published open-source code, including the separate notification step for encryption.",
+    "key_takeaways": [
+      "Code published without restriction is generally outside the EAR",
+      "Encryption source has an extra BIS/NSA notification step",
+      "Private repos shared with foreign nationals can count as exports"
+    ],
+    "concepts": [
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "export-control",
+      "ear",
+      "open-source"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ecfr-ear-734-7-published",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:ecfr-ear-734-7-published",
+    "kind": "standard",
+    "title": "15 CFR 734.7 - Published (Export Administration Regulations)",
+    "url": "https://www.ecfr.gov/current/title-15/subtitle-B/chapter-VII/subchapter-C/part-734/section-734.7",
+    "authors": [
+      "US Bureau of Industry and Security"
+    ],
+    "year": 2024,
+    "summary": "The regulation text defining when information and software count as 'published' and therefore not subject to the EAR.",
+    "key_takeaways": [
+      "Primary source to cite in an export-control slide",
+      "Read with 734.3(b)(3) and 742.15(b)"
+    ],
+    "concepts": [
+      "concept:policy-ethics",
+      "concept:standards"
+    ],
+    "tags": [
+      "ear",
+      "regulation",
+      "bis"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:eff-export-encryption-source-explained",
+    "kind": "blog",
+    "title": "U.S. Export Controls and Published Encryption Source Code Explained",
+    "url": "https://www.eff.org/deeplinks/2019/08/us-export-controls-and-published-encryption-source-code-explained",
+    "authors": [
+      "Electronic Frontier Foundation"
+    ],
+    "year": 2019,
+    "summary": "EFF explainer on the 2016-era EAR changes for published encryption source and when email notification is still needed.",
+    "key_takeaways": [
+      "Relevant if your PNT code includes signal authentication crypto"
+    ],
+    "concepts": [
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "export-control",
+      "encryption",
+      "eff"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:linux-foundation-ear-open-source",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:stonybrook-export-publicly-available",
+    "kind": "doc",
+    "title": "Regulatory Definitions of Publicly Available, Public Domain, and Published (ITAR/EAR)",
+    "url": "https://www.stonybrook.edu/research-security/export-controls/reference_guides/publicly-available.html",
+    "authors": [
+      "Stony Brook University Research Security"
+    ],
+    "year": 2024,
+    "summary": "University compliance guide comparing ITAR public-domain (22 CFR 120.34) and EAR published definitions and the fundamental-research exclusion.",
+    "key_takeaways": [
+      "ITAR-controlled data cannot simply be put in the public domain by an individual",
+      "Fundamental-research protection can be lost via publication restrictions",
+      "Military GNSS items (e.g. M-code receivers, some anti-jam antenna tech) may be ITAR or EAR controlled - keep hackathon code on public civil signals and published methods"
+    ],
+    "concepts": [
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "itar",
+      "ear",
+      "fundamental-research"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:dod-ai-ethical-principles-2020",
+    "kind": "doc",
+    "title": "DOD adopts 5 principles of artificial intelligence ethics",
+    "url": "https://www.army.mil/article/233690/dod_adopts_5_principles_of_artificial_intelligence_ethics",
+    "authors": [
+      "US Department of Defense"
+    ],
+    "year": 2020,
+    "summary": "Announcement of the DoD's AI ethical principles - responsible, equitable, traceable, reliable, governable - recommended by the Defense Innovation Board.",
+    "key_takeaways": [
+      "Traceable and governable map to logging and safe fallback in nav autonomy",
+      "Judges increasingly ask how an AI component can be disengaged"
+    ],
+    "concepts": [
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "dod",
+      "responsible-ai",
+      "ethics"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:nato-ai-strategy-principles-2021",
+    "kind": "doc",
+    "title": "Summary of the NATO Artificial Intelligence Strategy (Principles of Responsible Use)",
+    "url": "https://www.nato.int/cps/en/natohq/official_texts_187617.htm",
+    "authors": [
+      "NATO"
+    ],
+    "year": 2021,
+    "summary": "NATO's 2021 AI strategy summary setting six principles of responsible use: lawfulness, responsibility and accountability, explainability and traceability, reliability, governability, bias mitigation.",
+    "key_takeaways": [
+      "Applies across the whole AI lifecycle",
+      "Expect a NATO-flavored jury to probe reliability and governability"
+    ],
+    "concepts": [
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "nato",
+      "responsible-ai",
+      "strategy"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:dodd-3000-09-autonomy-weapons-2023",
+    "kind": "standard",
+    "title": "DoD Directive 3000.09: Autonomy in Weapon Systems (2023 reissue)",
+    "url": "https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodd/300009p.PDF",
+    "authors": [
+      "US Department of Defense"
+    ],
+    "year": 2023,
+    "summary": "DoD policy governing development and use of autonomous and semi-autonomous weapon systems, reissued January 2023. Cited here as the boundary marker: navigation and awareness tools are outside its scope, weapon autonomy is not.",
+    "key_takeaways": [
+      "Clear line between navigation/autonomy for mobility and weapon autonomy",
+      "Keep hackathon scope on the navigation and awareness side"
+    ],
+    "concepts": [
+      "concept:policy-ethics",
+      "concept:standards"
+    ],
+    "tags": [
+      "dod",
+      "autonomy",
+      "policy"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:eu-dual-use-regulation-2021-821",
+    "kind": "standard",
+    "title": "Regulation (EU) 2021/821 - Dual-use export control regime",
+    "url": "https://eur-lex.europa.eu/eli/reg/2021/821/oj",
+    "authors": [
+      "European Union"
+    ],
+    "year": 2021,
+    "summary": "The EU's recast dual-use export control regulation covering items, software and technology including navigation and avionics categories, with public-domain and basic-research de-control notes.",
+    "key_takeaways": [
+      "Category 7 covers navigation and avionics items",
+      "Public-domain and basic scientific research notes protect open publication"
+    ],
+    "concepts": [
+      "concept:policy-ethics",
+      "concept:standards"
+    ],
+    "tags": [
+      "eu",
+      "dual-use",
+      "export-control"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:eu-recommendation-2021-1700-research",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:eu-recommendation-2021-1700-research",
+    "kind": "doc",
+    "title": "Commission Recommendation (EU) 2021/1700 on internal compliance programmes for controls of research involving dual-use items",
+    "url": "https://eur-lex.europa.eu/eli/reco/2021/1700/oj/eng",
+    "authors": [
+      "European Commission"
+    ],
+    "year": 2021,
+    "summary": "Non-binding guidance helping universities and researchers spot and manage dual-use export risks, with scenarios, red flags and FAQs.",
+    "key_takeaways": [
+      "Practical red-flag checklist for collaborative or international teams",
+      "Contact national authority when control status is unclear"
+    ],
+    "concepts": [
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "eu",
+      "dual-use",
+      "research-compliance"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:eu-dual-use-regulation-2021-821",
+        "rel": "explains"
+      }
+    ]
+  }
+]

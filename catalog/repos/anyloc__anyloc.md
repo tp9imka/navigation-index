@@ -1,0 +1,35 @@
+# AnyLoc
+
+`repo:anyloc/anyloc` - <https://github.com/AnyLoc/AnyLoc>
+
+| stars | language | license | last push | archived | maturity | hackathon fit |
+|---|---|---|---|---|---|---|
+| 649 | Python | BSD-3-Clause | 2024-03-13 | False | research-prototype | high |
+
+Universal visual place recognition using foundation-model (DINOv2) features with VLAD/GeM aggregation, working across aerial, underwater, indoor and outdoor domains without task-specific training.
+
+**Why it matters:** Training-free retrieval that already works on aerial imagery - the fastest way to get a coarse 'which tile am I over' stage.
+
+**Hackathon notes:** Extract descriptors for your satellite tiles offline, query with drone frames; then refine with LightGlue/RoMa.
+
+**Concepts:** [Place recognition and loop closure](../concepts/place-recognition.md), [Visual geo-localization (image-to-map)](../concepts/visual-geolocalization.md)
+
+**Tags:** `dinov2`, `vlad`, `training-free`
+
+**Domains:** multi
+
+## Related
+
+- integrates_with: [LightGlue](../repos/cvg__lightglue.md)
+- alternative_to: [SALAD](../repos/serizba__salad.md)
+
+## Referenced by
+
+- [VPR methods evaluation](../repos/gmberton__vpr-methods-evaluation.md) (integrates_with)
+- [UAVLocalization (map retrieval + alignment)](../repos/hmf21__uavlocalization.md) (alternative_to)
+- [SALAD](../repos/serizba__salad.md) (alternative_to)
+- [AnyLoc: Towards Universal Visual Place Recognition](../resources/anyloc-universal-vpr-2023.md) (has_code)
+
+_Indexed by lane(s): alt-nav_
+
+_GitHub metadata fetched 2026-11-06._

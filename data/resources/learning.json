@@ -1,0 +1,3096 @@
+[
+  {
+    "id": "res:stachniss-mobile-robotics-online-training",
+    "kind": "lecture-series",
+    "title": "Online Training: Mobile Robotics (Basics + Robotics blocks)",
+    "url": "https://www.ipb.uni-bonn.de/online-training-robotics/",
+    "authors": [
+      "Cyrill Stachniss",
+      "University of Bonn"
+    ],
+    "year": 2020,
+    "summary": "A curated self-study path of short recorded lectures from Bonn's Photogrammetry & Robotics lab, going from linear algebra, rotations and least squares through Bayes filters, EKF localization, particle filters, ICP, RANSAC and graph-based SLAM. Each topic pairs a '5 Minutes with Cyrill' teaser with a full-length lecture.",
+    "key_takeaways": [
+      "Fastest structured on-ramp to probabilistic state estimation",
+      "Covers EKF/MCL localization and pose-graph SLAM end to end",
+      "Links the older full SLAM course playlist"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:visual-slam",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "stachniss",
+      "bonn",
+      "kalman",
+      "particle-filter",
+      "youtube"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:stachniss-slam-course-2013",
+        "rel": "part_of"
+      },
+      {
+        "id": "res:stachniss-youtube-channel",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:stachniss-slam-course-2013",
+    "kind": "lecture-series",
+    "title": "Robot Mapping (SLAM course) WS 2013/14",
+    "url": "https://www.youtube.com/playlist?list=PLgnQpQtFTOGQrZ4O5QzbIHgl3b1JHimN_",
+    "authors": [
+      "Cyrill Stachniss",
+      "University of Freiburg"
+    ],
+    "year": 2013,
+    "summary": "Full semester recording of the Freiburg Robot Mapping course: EKF-SLAM, sparse extended information filters, FastSLAM, grid-based mapping, least-squares and graph-based SLAM, and front-end/back-end design. Still one of the most-cited free SLAM courses.",
+    "key_takeaways": [
+      "Classic derivations of EKF-SLAM and FastSLAM",
+      "Graph-SLAM via least squares, robust kernels",
+      "Slides and Octave exercises on the course page"
+    ],
+    "concepts": [
+      "concept:visual-slam",
+      "concept:lidar-slam",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "slam",
+      "freiburg",
+      "graph-slam",
+      "fastslam"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:freiburg-robot-mapping-course",
+        "rel": "explains"
+      },
+      {
+        "id": "res:stachniss-youtube-channel",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:freiburg-robot-mapping-course",
+    "kind": "course",
+    "title": "Robot Mapping - WS 2013/14 course page (slides, exercises)",
+    "url": "http://ais.informatik.uni-freiburg.de/teaching/ws13/mapping/",
+    "authors": [
+      "Cyrill Stachniss",
+      "Wolfram Burgard",
+      "University of Freiburg"
+    ],
+    "year": 2013,
+    "summary": "Course page that accompanies the Robot Mapping lecture videos, with lecture slides and programming exercises (EKF-SLAM, UKF, FastSLAM, least-squares calibration, graph-SLAM) in Octave/Matlab.",
+    "key_takeaways": [
+      "Hands-on exercises missing from the video playlist",
+      "Good template for a 1-day SLAM crash course"
+    ],
+    "concepts": [
+      "concept:visual-slam",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "slam",
+      "exercises",
+      "octave"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:stachniss-slam-course-2013",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:stachniss-photogrammetry-i-ii",
+    "kind": "lecture-series",
+    "title": "Photogrammetry I & II",
+    "url": "https://www.ipb.uni-bonn.de/photogrammetry-i-ii/",
+    "authors": [
+      "Cyrill Stachniss",
+      "University of Bonn"
+    ],
+    "year": 2016,
+    "summary": "Recorded two-semester photogrammetry course (2015/16 playlist): camera models, direct linear transform, projective geometry, epipolar geometry, bundle adjustment, and image-based 3D reconstruction. The geometric backbone for visual navigation and map-matching against imagery.",
+    "key_takeaways": [
+      "Camera calibration and orientation from first principles",
+      "Bundle adjustment as used in VIO and visual geolocalization",
+      "Useful before attempting aerial image-to-map registration"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:calibration",
+      "concept:feature-matching",
+      "concept:geodesy"
+    ],
+    "tags": [
+      "photogrammetry",
+      "bundle-adjustment",
+      "bonn"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:stachniss-youtube-channel",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:stachniss-youtube-channel",
+    "kind": "video",
+    "title": "Cyrill Stachniss YouTube channel (incl. '5 Minutes with Cyrill')",
+    "url": "https://www.youtube.com/@CyrillStachniss",
+    "authors": [
+      "Cyrill Stachniss"
+    ],
+    "year": 2024,
+    "summary": "Channel hosting Stachniss's full lecture courses plus the '5 Minutes with Cyrill' series of short explainers on single concepts (Kalman filter, factor graphs, ICP, RANSAC, SIFT, occupancy grids).",
+    "key_takeaways": [
+      "Short explainers ideal for onboarding teammates during a hackathon",
+      "Also hosts newer courses on LiDAR and photogrammetric vision"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:visual-slam",
+      "concept:lidar-slam",
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "youtube",
+      "explainers"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:scaramuzza-vision-algorithms-mobile-robotics",
+    "kind": "course",
+    "title": "Vision Algorithms for Mobile Robotics (UZH/ETH)",
+    "url": "https://rpg.ifi.uzh.ch/teaching.html",
+    "authors": [
+      "Davide Scaramuzza",
+      "Robotics and Perception Group, UZH"
+    ],
+    "year": 2026,
+    "summary": "Graduate course building a monocular visual odometry pipeline step by step: image formation, calibration, feature detection, two-view geometry, P3P+RANSAC, bundle adjustment, KLT tracking, place recognition, visual-inertial fusion and event cameras. Slides and Matlab/Python exercises with solutions are public; recordings go to the UZH platform.",
+    "key_takeaways": [
+      "Exercises culminate in a working mini VO pipeline",
+      "Covers place recognition and VIO fusion",
+      "Python templates available alongside Matlab"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:feature-matching",
+      "concept:calibration",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "scaramuzza",
+      "uzh",
+      "visual-odometry",
+      "event-camera"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:uzh-rpg/rpg_svo_pro_open",
+        "rel": "uses"
+      },
+      {
+        "id": "repo:uzh-rpg/rpg_trajectory_evaluation",
+        "rel": "uses"
+      },
+      {
+        "id": "res:scaramuzza-vo-tutorial",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:scaramuzza-vo-tutorial",
+    "kind": "paper",
+    "title": "Visual Odometry: Part I - The First 30 Years and Fundamentals / Part II - Matching, Robustness, Optimization, and Applications",
+    "url": "https://rpg.ifi.uzh.ch/docs/VO_Part_I_Scaramuzza.pdf",
+    "authors": [
+      "Davide Scaramuzza",
+      "Friedrich Fraundorfer"
+    ],
+    "year": 2011,
+    "summary": "Two-part IEEE Robotics & Automation Magazine tutorial (Part II at rpg.ifi.uzh.ch/docs/VO_Part_II_Scaramuzza.pdf). Explains the VO problem formulation, 2D-2D/3D-2D motion estimation, feature matching, outlier rejection and local optimization in a compact, readable form.",
+    "key_takeaways": [
+      "Best single-read primer on VO design choices",
+      "Part II covers RANSAC and windowed bundle adjustment"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "visual-odometry",
+      "tutorial",
+      "ieee-ram"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:scaramuzza-vision-algorithms-mobile-robotics",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:mit-vnav-16485",
+    "kind": "course",
+    "title": "MIT 16.485 Visual Navigation for Autonomous Vehicles (VNAV)",
+    "url": "https://vnav.mit.edu/",
+    "authors": [
+      "Luca Carlone",
+      "MIT SPARK Lab"
+    ],
+    "year": 2023,
+    "summary": "MIT graduate course on the math and software of visual navigation: 3D geometry, Lie groups, quadrotor modelling and control, trajectory optimization, feature tracking, two-view geometry, nonlinear optimization, VIO and SLAM. Lecture slides/notes and ROS 2 based lab handouts are public, with lab code on GitHub.",
+    "key_takeaways": [
+      "Labs walk from ROS basics to a quadrotor VIO stack",
+      "Strong on certifiable/robust estimation",
+      "Lecture notes downloadable per topic"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:visual-slam",
+      "concept:path-planning",
+      "concept:ros"
+    ],
+    "tags": [
+      "mit",
+      "carlone",
+      "quadrotor",
+      "lie-groups"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mit-spark/vnav-labs",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:mit-spark/vnav-lab-data",
+        "rel": "uses"
+      },
+      {
+        "id": "repo:mit-spark/kimera-vio",
+        "rel": "uses"
+      },
+      {
+        "id": "res:slam-handbook",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:tum-visual-navigation-flying-robots",
+    "kind": "lecture-series",
+    "title": "Visual Navigation for Flying Robots (TUM, 2013)",
+    "url": "https://cvg.cit.tum.de/teaching/ss2013/visnav2013",
+    "authors": [
+      "Jürgen Sturm",
+      "Daniel Cremers",
+      "TU Munich Computer Vision Group"
+    ],
+    "year": 2013,
+    "summary": "Award-winning TUM lecture on making quadrotors navigate with cameras: 3D geometry, sensors, state estimation, visual motion estimation, SLAM, dense reconstruction, planning and exploration. Each lecture has slides and a recorded video.",
+    "key_takeaways": [
+      "Compact quadrotor-centric syllabus",
+      "Bridges control, estimation and visual SLAM"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:visual-slam",
+      "concept:autopilot",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "tum",
+      "quadrotor",
+      "sturm",
+      "cremers"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:tum-autonavx",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:tum-autonavx",
+    "kind": "course",
+    "title": "Autonomous Navigation for Flying Robots (TUM edX, AUTONAVx)",
+    "url": "https://cvg.cit.tum.de/teaching/ss2015/autonavx",
+    "authors": [
+      "Jürgen Sturm",
+      "Daniel Cremers",
+      "TU Munich"
+    ],
+    "year": 2015,
+    "summary": "MOOC version of the TUM flying-robots lecture with lecture videos and browser-based Python exercises on quadrotor state estimation, Kalman filtering, control and visual navigation.",
+    "key_takeaways": [
+      "Lighter-weight than the full lecture",
+      "Python exercise format is easy to adapt"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:vio",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "mooc",
+      "edx",
+      "quadrotor"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:tum-visual-navigation-flying-robots",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:labbe-kalman-bayesian-filters-python",
+    "kind": "book",
+    "title": "Kalman and Bayesian Filters in Python",
+    "url": "https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python",
+    "authors": [
+      "Roger R. Labbe Jr."
+    ],
+    "year": 2020,
+    "summary": "Free interactive book as Jupyter notebooks: g-h filters, discrete Bayes, univariate and multivariate Kalman filters, EKF, UKF, particle filters and smoothers, all with runnable code built on the companion FilterPy library.",
+    "key_takeaways": [
+      "Intuition-first, code-first; ideal for teammates new to filtering",
+      "Notebooks run in Binder or locally",
+      "FilterPy gives drop-in KF/EKF/UKF classes for prototypes"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:ins",
+      "concept:target-tracking"
+    ],
+    "tags": [
+      "kalman",
+      "ukf",
+      "particle-filter",
+      "jupyter",
+      "python"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:rlabbe/kalman-and-bayesian-filters-in-python",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:rlabbe/filterpy",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:kalmanfilter-net-tutorial",
+    "kind": "blog",
+    "title": "Kalman Filter Tutorial (kalmanfilter.net)",
+    "url": "https://www.kalmanfilter.net/",
+    "authors": [
+      "Alex Becker"
+    ],
+    "year": 2023,
+    "summary": "Free web tutorial deriving the Kalman filter through worked numerical examples (alpha-beta filter, 1D and multidimensional KF, EKF, UKF), written for engineers who want the equations without heavy theory.",
+    "key_takeaways": [
+      "Numeric step-by-step examples you can check by hand",
+      "Good companion to Labbe for tracking problems"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:target-tracking"
+    ],
+    "tags": [
+      "kalman",
+      "tutorial"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:labbe-kalman-bayesian-filters-python",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:slam-handbook",
+    "kind": "book",
+    "title": "SLAM Handbook: From Localization and Mapping to Spatial Intelligence",
+    "url": "https://github.com/SLAM-Handbook-contributors/slam-handbook-public-release",
+    "authors": [
+      "Luca Carlone",
+      "Ayoung Kim",
+      "Timothy Barfoot",
+      "Daniel Cremers",
+      "Frank Dellaert (eds.)"
+    ],
+    "year": 2025,
+    "summary": "Community-written handbook released in three parts during 2024-2025 and published by Cambridge University Press; the free PDF is mirrored on the editors' project page. Covers factor graphs, Lie groups, robust estimation, certifiable methods, visual/LiDAR/radar/event-based SLAM, and learned spatial representations.",
+    "key_takeaways": [
+      "Most current one-stop reference on SLAM (2025)",
+      "Chapters on non-visual sensors such as radar",
+      "Free PDF; GitHub repo tracks newest release"
+    ],
+    "concepts": [
+      "concept:visual-slam",
+      "concept:lidar-slam",
+      "concept:radar-nav",
+      "concept:vio",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "slam",
+      "handbook",
+      "factor-graph"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:slam-handbook-contributors/slam-handbook-public-release",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:borglab/gtsam",
+        "rel": "uses"
+      },
+      {
+        "id": "res:mit-vnav-16485",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:barfoot-state-estimation-robotics-2e",
+    "kind": "book",
+    "title": "State Estimation for Robotics (2nd edition)",
+    "url": "https://asrl.utias.utoronto.ca/~tdb/bib/barfoot_ser24.pdf",
+    "authors": [
+      "Timothy D. Barfoot"
+    ],
+    "year": 2024,
+    "summary": "Free author PDF of the standard graduate text on robot state estimation: Gaussian estimation, nonlinear batch and recursive filters, matrix Lie groups for 3D pose, and pose-graph/bundle adjustment applications.",
+    "key_takeaways": [
+      "Rigorous treatment of SE(3) uncertainty",
+      "Bridges filtering and batch optimization"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:ins",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "lie-groups",
+      "estimation",
+      "utias"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:utiasasrl/steam",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:slam-handbook",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:dellaert-kaess-factor-graphs",
+    "kind": "book",
+    "title": "Factor Graphs for Robot Perception",
+    "url": "https://www.cs.cmu.edu/~kaess/pub/Dellaert17fnt.pdf",
+    "authors": [
+      "Frank Dellaert",
+      "Michael Kaess"
+    ],
+    "year": 2017,
+    "summary": "Foundations and Trends monograph (free author PDF) explaining SLAM and sensor fusion as inference on factor graphs, with incremental smoothing (iSAM) and the reasoning behind the GTSAM library.",
+    "key_takeaways": [
+      "Why smoothing beats filtering for multi-sensor nav",
+      "Direct conceptual guide to GTSAM"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:visual-slam",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "factor-graph",
+      "isam",
+      "gtsam"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:borglab/gtsam",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:gtsam-tutorial-intro",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:gtsam-tutorial-intro",
+    "kind": "doc",
+    "title": "GTSAM Tutorial: Factor Graphs and GTSAM",
+    "url": "https://gtsam.org/tutorials/intro.html",
+    "authors": [
+      "Frank Dellaert",
+      "Georgia Tech Borg Lab"
+    ],
+    "year": 2020,
+    "summary": "Hands-on introduction to the GTSAM library: modelling robot odometry, landmark and pose-graph SLAM as factor graphs, solving with Levenberg-Marquardt or iSAM2, and reading marginal covariances, with C++ and Python snippets.",
+    "key_takeaways": [
+      "Shortest path to a working pose-graph in Python",
+      "Pattern reusable for GNSS/INS/visual factor fusion"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:visual-slam",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "gtsam",
+      "python",
+      "c++"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:borglab/gtsam",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:dellaert-kaess-factor-graphs",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:sola-micro-lie-theory",
+    "kind": "paper",
+    "title": "A micro Lie theory for state estimation in robotics",
+    "url": "https://arxiv.org/abs/1812.01537",
+    "authors": [
+      "Joan Solà",
+      "Jeremie Deray",
+      "Dinesh Atchuthan"
+    ],
+    "year": 2018,
+    "summary": "Tutorial paper giving just enough Lie theory (groups, exponential map, adjoint, Jacobians, uncertainty on manifolds) to write correct estimators for 3D pose; it is the basis of Solà's 'Lie theory for the roboticist' course and the manif library.",
+    "key_takeaways": [
+      "Ready-to-use Jacobians for SO(3)/SE(3)",
+      "Fixes the most common EKF-on-rotations mistakes"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:ins",
+      "concept:vio"
+    ],
+    "tags": [
+      "lie-groups",
+      "sola",
+      "manifolds"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:artivis/manif",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:sola-quaternion-eskf",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:sola-quaternion-eskf",
+    "kind": "paper",
+    "title": "Quaternion kinematics for the error-state Kalman filter",
+    "url": "https://arxiv.org/abs/1711.02508",
+    "authors": [
+      "Joan Solà"
+    ],
+    "year": 2017,
+    "summary": "Widely used tutorial on quaternion algebra, rotation integration and the error-state Kalman filter for IMU-driven navigation, including full IMU+GPS-style ESKF derivations.",
+    "key_takeaways": [
+      "Standard reference for implementing an INS/ESKF",
+      "Covers local vs global perturbation conventions"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:gnss-ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "eskf",
+      "quaternion",
+      "imu",
+      "sola"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:sola-micro-lie-theory",
+        "rel": "same_author"
+      },
+      {
+        "id": "repo:joansola/slamtb",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:sola-slamtb-ekf-slam-toolbox",
+    "kind": "course",
+    "title": "SLAM toolbox for Matlab (EKF-SLAM teaching code)",
+    "url": "https://github.com/joansola/slamtb",
+    "authors": [
+      "Joan Solà"
+    ],
+    "year": 2013,
+    "summary": "Solà's Matlab EKF-SLAM toolbox, used as teaching material for his SLAM courses: modular robots, sensors, landmark parameterizations (including inverse-depth points and lines) and graph-SLAM variants. Old but clear code for learning.",
+    "key_takeaways": [
+      "Readable reference implementation of EKF-SLAM",
+      "Shows landmark parameterization trade-offs"
+    ],
+    "concepts": [
+      "concept:visual-slam",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "matlab",
+      "ekf-slam",
+      "teaching"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:joansola/slamtb",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:sola-micro-lie-theory",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:gaoxiang-14-lectures-visual-slam",
+    "kind": "book",
+    "title": "14 Lectures on Visual SLAM: From Theory to Practice",
+    "url": "https://github.com/gaoxiang12/slambook-en",
+    "authors": [
+      "Xiang Gao",
+      "Tao Zhang"
+    ],
+    "year": 2021,
+    "summary": "English translation of the popular Chinese visual SLAM textbook, from rigid-body motion and Lie algebra through camera models, nonlinear optimization, feature/direct VO, backend optimization, loop closure and dense mapping, each with C++ examples.",
+    "key_takeaways": [
+      "Code-heavy: every chapter compiles",
+      "Good bridge from theory to ORB-SLAM-style systems"
+    ],
+    "concepts": [
+      "concept:visual-slam",
+      "concept:vio",
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "slam",
+      "c++",
+      "textbook"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:gaoxiang12/slambook-en",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:gaoxiang12/slambook2",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:coursera-state-estimation-localization-sdc",
+    "kind": "course",
+    "title": "State Estimation and Localization for Self-Driving Cars (Coursera)",
+    "url": "https://www.coursera.org/learn/state-estimation-localization-self-driving-cars",
+    "authors": [
+      "University of Toronto",
+      "Steven Waslander",
+      "Jonathan Kelly"
+    ],
+    "year": 2019,
+    "summary": "Course 2 of the UofT Self-Driving Cars specialization: least squares, KF/EKF/ES-EKF/UKF, IMU and GNSS sensor models, LiDAR scan matching with ICP, culminating in an error-state EKF that fuses IMU, GNSS and LiDAR on CARLA data.",
+    "key_takeaways": [
+      "Final project is a ready template for GNSS/IMU/LiDAR fusion",
+      "Explicit error-state EKF derivation",
+      "Free to audit"
+    ],
+    "concepts": [
+      "concept:gnss-ins",
+      "concept:sensor-fusion",
+      "concept:lidar-slam",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "coursera",
+      "es-ekf",
+      "carla"
+    ],
+    "level": "intermediate",
+    "access": "free-registration",
+    "related": [
+      {
+        "id": "res:coursera-self-driving-cars-specialization",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:coursera-self-driving-cars-specialization",
+    "kind": "course",
+    "title": "Self-Driving Cars Specialization (University of Toronto)",
+    "url": "https://www.coursera.org/specializations/self-driving-cars",
+    "authors": [
+      "University of Toronto"
+    ],
+    "year": 2019,
+    "summary": "Four-course specialization covering vehicle dynamics and control, state estimation and localization, visual perception, and motion planning, using the CARLA simulator for assignments.",
+    "key_takeaways": [
+      "End-to-end autonomy pipeline in one program",
+      "CARLA-based assignments transfer to hackathon sims"
+    ],
+    "concepts": [
+      "concept:ground-vehicle-nav",
+      "concept:sensor-fusion",
+      "concept:path-planning",
+      "concept:simulation"
+    ],
+    "tags": [
+      "coursera",
+      "carla",
+      "autonomous-driving"
+    ],
+    "level": "intermediate",
+    "access": "free-registration",
+    "related": []
+  },
+  {
+    "id": "res:stanford-gps-mooc-van-diggelen-enge",
+    "kind": "course",
+    "title": "GPS: An Introduction to Satellite Navigation, with an interactive Worldwide Laboratory using Smartphones",
+    "url": "https://sites.google.com/view/frankvandiggelen/gps-mooc",
+    "authors": [
+      "Frank van Diggelen",
+      "Per Enge",
+      "Stanford University"
+    ],
+    "year": 2014,
+    "summary": "Stanford MOOC (originally on Coursera) now freely available as a long video series: how GPS works, pseudoranges, orbits and signals, receiver design, assisted GPS and the future of GNSS, with smartphone-based labs.",
+    "key_takeaways": [
+      "Best intro to pseudoranges and receiver basics",
+      "Smartphone labs pair with Android raw GNSS measurements"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-sdr",
+      "concept:timing"
+    ],
+    "tags": [
+      "stanford",
+      "mooc",
+      "smartphone"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:google/gps-measurement-tools",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:chalmers-sensor-fusion-nonlinear-filtering",
+    "kind": "course",
+    "title": "Sensor Fusion and Non-linear Filtering for Automotive Systems (edX)",
+    "url": "https://www.edx.org/learn/mechanical-engineering/chalmers-university-of-technology-sensor-fusion-and-non-linear-filtering-for-automotive-systems",
+    "authors": [
+      "Lars Hammarstrand",
+      "Chalmers University of Technology"
+    ],
+    "year": 2019,
+    "summary": "Self-paced edX course on Bayesian filtering: state-space and motion/measurement models, Kalman filter, EKF/UKF/CKF, and particle filters, with Matlab assignments building a personal filtering toolbox.",
+    "key_takeaways": [
+      "Rigorous but practical nonlinear filtering",
+      "Pairs with Chalmers' multi-object tracking course"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "edx",
+      "chalmers",
+      "particle-filter"
+    ],
+    "level": "intermediate",
+    "access": "free-registration",
+    "related": [
+      {
+        "id": "res:chalmers-multi-object-tracking",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:chalmers-multi-object-tracking",
+    "kind": "course",
+    "title": "Multi-Object Tracking for Automotive Systems (edX)",
+    "url": "https://www.edx.org/learn/engineering/chalmers-university-of-technology-multi-object-tracking-for-automotive-systems",
+    "authors": [
+      "Karl Granström",
+      "Lennart Svensson",
+      "Chalmers University of Technology"
+    ],
+    "year": 2019,
+    "summary": "edX course on single- and multi-object tracking: data association, GNN/JPDA/MHT, random finite sets and PMBM filters, with Matlab assignments. Relevant for situational awareness and C-UAS track management.",
+    "key_takeaways": [
+      "Modern RFS/PMBM trackers explained",
+      "Direct use for radar/EO track fusion"
+    ],
+    "concepts": [
+      "concept:target-tracking",
+      "concept:situational-awareness",
+      "concept:counter-uas"
+    ],
+    "tags": [
+      "edx",
+      "mht",
+      "pmbm",
+      "tracking"
+    ],
+    "level": "advanced",
+    "access": "free-registration",
+    "related": [
+      {
+        "id": "res:chalmers-sensor-fusion-nonlinear-filtering",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:udacity-ai-for-robotics-cs373",
+    "kind": "course",
+    "title": "Artificial Intelligence for Robotics (Udacity CS373)",
+    "url": "https://www.udacity.com/course/artificial-intelligence-for-robotics--cs373",
+    "authors": [
+      "Sebastian Thrun",
+      "Udacity"
+    ],
+    "year": 2012,
+    "summary": "Free classic course by Sebastian Thrun programming robot localization (histogram filter, Kalman filter, particle filter), search/planning, PID control and GraphSLAM in Python.",
+    "key_takeaways": [
+      "Gentle, code-along intro to localization filters",
+      "Particle-filter lesson is a 1-hour hackathon primer"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:path-planning",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "udacity",
+      "thrun",
+      "particle-filter",
+      "python"
+    ],
+    "level": "intro",
+    "access": "free-registration",
+    "related": []
+  },
+  {
+    "id": "res:mathworks-understanding-sensor-fusion-tracking",
+    "kind": "video",
+    "title": "Understanding Sensor Fusion and Tracking (MATLAB Tech Talks)",
+    "url": "https://in.mathworks.com/academia/courseware/sensor-fusion-tech-talks.html",
+    "authors": [
+      "Brian Douglas",
+      "MathWorks"
+    ],
+    "year": 2020,
+    "summary": "Short video series on sensor fusion for autonomous systems: what sensor fusion is, IMU/magnetometer orientation estimation, fusing GPS and IMU for pose with an asynchronous EKF, single- and multi-object tracking, and track-level fusion.",
+    "key_takeaways": [
+      "Clear 10-15 minute visual explanations",
+      "GPS+IMU episode maps directly to a nav-filter build"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:gnss-ins",
+      "concept:target-tracking"
+    ],
+    "tags": [
+      "matlab",
+      "tech-talks",
+      "video"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:stanford-pnt-symposium-2025",
+    "kind": "talk",
+    "title": "Stanford PNT Symposium 2025 (19th annual)",
+    "url": "https://scpnt.stanford.edu/about-annual-pnt-symposium/2025-pnt-symposium",
+    "authors": [
+      "Stanford Center for Position, Navigation and Time"
+    ],
+    "year": 2025,
+    "summary": "Annual Stanford SCPNT symposium page (8-9 October 2025) with the agenda and links to recorded student talks (Day 1) and invited speaker talks (Day 2), plus downloadable slides for many presentations.",
+    "key_takeaways": [
+      "Current state of GNSS integrity, resilience and alt-PNT from leading labs",
+      "Student talks are a good source of fresh project ideas"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:assured-pnt",
+      "concept:gnss-interference",
+      "concept:timing"
+    ],
+    "tags": [
+      "stanford",
+      "scpnt",
+      "symposium"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:stanford-pnt-symposium-2025-invited-videos",
+        "rel": "part_of"
+      },
+      {
+        "id": "res:stanford-scpnt-video-gallery",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:stanford-pnt-symposium-2025-invited-videos",
+    "kind": "video",
+    "title": "2025 PNT Symposium - Day 2 Invited Speaker Presentation Videos",
+    "url": "https://scpnt.stanford.edu/scpnt-photo-and-video-gallery-overview/scpnt-video-albums/2025-pnt-symposium-day-2-invited-speaker",
+    "authors": [
+      "Stanford SCPNT"
+    ],
+    "year": 2025,
+    "summary": "Video album of invited speaker talks from the 2025 Stanford PNT Symposium, featuring speakers such as Brad Parkinson and Jade Morton.",
+    "key_takeaways": [
+      "Primary-source talks on the direction of GPS and resilient PNT"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "stanford",
+      "video",
+      "invited-talks"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:stanford-pnt-symposium-2025",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:stanford-pnt-symposium-2024",
+    "kind": "talk",
+    "title": "Stanford PNT Symposium 2024 (18th annual)",
+    "url": "https://scpnt.stanford.edu/about-annual-pnt-symposium/2024-pnt-symposium",
+    "authors": [
+      "Stanford SCPNT"
+    ],
+    "year": 2024,
+    "summary": "Page for the 28-29 October 2024 symposium with agenda, student and invited-speaker video albums, and slides; topics span GNSS, inertial sensing, timing and alternative navigation.",
+    "key_takeaways": [
+      "Year-over-year view of resilient PNT research",
+      "Slides downloadable for many talks"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:ins",
+      "concept:timing",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "stanford",
+      "scpnt",
+      "symposium"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:stanford-scpnt-video-gallery",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:stanford-scpnt-video-gallery",
+    "kind": "video",
+    "title": "SCPNT Photo and Video Gallery (PNT Symposium recordings archive)",
+    "url": "https://scpnt.stanford.edu/scpnt-photo-and-video-gallery-overview",
+    "authors": [
+      "Stanford SCPNT"
+    ],
+    "year": 2025,
+    "summary": "Archive index of Stanford PNT Symposium recordings going back to 2007, organised by year into student and invited-speaker albums.",
+    "key_takeaways": [
+      "Deep back-catalogue of GNSS and PNT talks"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:assured-pnt",
+      "concept:timing"
+    ],
+    "tags": [
+      "stanford",
+      "archive"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:ion-gnss-plus-tutorials",
+    "kind": "course",
+    "title": "ION GNSS+ Tutorials",
+    "url": "https://www.ion.org/gnss/tutorials.cfm",
+    "authors": [
+      "Institute of Navigation"
+    ],
+    "year": 2025,
+    "summary": "Pre-conference tutorial programme of ION GNSS+, the main annual GNSS technical meeting: half-day in-depth courses by field experts on topics such as GNSS signals, receivers, PPP/RTK, inertial integration and interference.",
+    "key_takeaways": [
+      "Expert-taught deep dives; topics change yearly",
+      "Paid add-on to conference registration"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp",
+      "concept:gnss-ins",
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "ion",
+      "gnss-plus",
+      "tutorial"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "res:ion-gnss-plus-short-courses",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:ion-gnss-plus-short-courses",
+    "kind": "course",
+    "title": "ION GNSS+ Short Courses (GPS/GNSS 101 and more)",
+    "url": "https://www.ion.org/gnss/short-courses.cfm",
+    "authors": [
+      "Institute of Navigation"
+    ],
+    "year": 2025,
+    "summary": "Short courses run at ION GNSS+ for registered attendees, including a GPS/GNSS 101 course taught by John Raquet and a space applications of GNSS course by Penina Axelrad.",
+    "key_takeaways": [
+      "Fast fundamentals refresh for newcomers attending ION GNSS+"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:space-nav"
+    ],
+    "tags": [
+      "ion",
+      "short-course"
+    ],
+    "level": "intro",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "res:ion-gnss-plus-tutorials",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:ion-online-tutorial-basics-satnav",
+    "kind": "course",
+    "title": "ION Online Tutorial: The Basics of Satellite Navigation",
+    "url": "https://www.ion.org/publications/online-tutorial-basics.cfm",
+    "authors": [
+      "Institute of Navigation"
+    ],
+    "year": 2020,
+    "summary": "ION's free online tutorial introducing satellite navigation fundamentals: trilateration with pseudoranges, clocks, signals, error sources and augmentation.",
+    "key_takeaways": [
+      "Free, short, authoritative intro"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:timing"
+    ],
+    "tags": [
+      "ion",
+      "intro"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:ion-webinar-series",
+    "kind": "lecture-series",
+    "title": "ION Webinar Series (archive and YouTube recordings)",
+    "url": "https://www.ion.org/publications/webinars.cfm",
+    "authors": [
+      "Institute of Navigation"
+    ],
+    "year": 2025,
+    "summary": "Running ION webinar programme with summary pages per talk and a YouTube playlist of past recordings (youtube.com/playlist?list=PLPiP0PPIY2x4k1OemLZH8_OJPyLjGLYFY). Topics include GNSS spoofing and jamming, LEO PNT, signals of opportunity, quantum sensors and GNSS-denied robotics.",
+    "key_takeaways": [
+      "Hour-long talks from active researchers, free",
+      "Strong coverage of spoofing detection and LEO PNT"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:assured-pnt",
+      "concept:signals-of-opportunity",
+      "concept:space-nav"
+    ],
+    "tags": [
+      "ion",
+      "webinar",
+      "youtube"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:ion-webinar-humphreys",
+    "kind": "talk",
+    "title": "First results from three years of GNSS interference monitoring from low Earth orbit",
+    "url": "https://www.ion.org/publications/webinar-humphreys.cfm",
+    "authors": [
+      "Todd E. Humphreys",
+      "Lakshay Narula"
+    ],
+    "year": 2022,
+    "summary": "UT Radionavigation Lab results from detecting and geolocating terrestrial GNSS jammers using receivers on LEO satellites, revealing persistent interference hotspots in conflict regions.",
+    "key_takeaways": [
+      "Space-based RFI monitoring is practical",
+      "Maps of jamming hotspots tied to conflict zones"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:space-nav",
+      "concept:rf-localization"
+    ],
+    "tags": [
+      "humphreys",
+      "jamming",
+      "leo",
+      "ion",
+      "webinar"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ion-webinar-series",
+        "rel": "part_of"
+      },
+      {
+        "id": "res:ted-humphreys-how-to-fool-a-gps",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:ion-webinar-kozhaya",
+    "kind": "talk",
+    "title": "Unveiling Starlink for PNT",
+    "url": "https://www.ion.org/publications/webinar-kozhaya.cfm",
+    "authors": [
+      "Sharbel Kozhaya"
+    ],
+    "year": 2025,
+    "summary": "Presents work on exploiting Starlink downlink signals for opportunistic positioning, including signal structure discovery and Doppler/pseudorange-based navigation results.",
+    "key_takeaways": [
+      "Starlink can serve as an alt-PNT source without operator cooperation"
+    ],
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:space-nav",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "starlink",
+      "leo-pnt",
+      "ion",
+      "webinar"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ion-webinar-series",
+        "rel": "part_of"
+      },
+      {
+        "id": "res:kassas-ad-astra-leo-grasp-2024",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:ion-webinar-psiaki",
+    "kind": "talk",
+    "title": "Navigation using carrier Doppler shift from a LEO constellation: TRANSIT on steroids",
+    "url": "https://www.ion.org/publications/webinar-psiaki.cfm",
+    "authors": [
+      "Mark L. Psiaki"
+    ],
+    "year": 2021,
+    "summary": "Analysis of Doppler-only positioning from large LEO constellations, revisiting the TRANSIT concept with modern megaconstellations and quantifying achievable accuracy.",
+    "key_takeaways": [
+      "Doppler positioning theory for LEO PNT"
+    ],
+    "concepts": [
+      "concept:space-nav",
+      "concept:signals-of-opportunity"
+    ],
+    "tags": [
+      "doppler",
+      "leo-pnt",
+      "ion",
+      "webinar"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ion-webinar-series",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:ion-webinar-baron",
+    "kind": "talk",
+    "title": "Implementation and Accuracy of Doppler Navigation with LEO Satellites",
+    "url": "https://www.ion.org/publications/webinar-baron.cfm",
+    "authors": [
+      "Ariel Baron"
+    ],
+    "year": 2024,
+    "summary": "Implementation-focused talk on navigating with Doppler measurements from LEO satellites and the accuracy achieved in practice.",
+    "key_takeaways": [
+      "Practical error budget for LEO Doppler nav"
+    ],
+    "concepts": [
+      "concept:space-nav",
+      "concept:signals-of-opportunity"
+    ],
+    "tags": [
+      "doppler",
+      "leo-pnt",
+      "ion",
+      "webinar"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ion-webinar-series",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:ion-webinar-akos",
+    "kind": "talk",
+    "title": "Detecting GNSS Jamming and Spoofing on Android Devices",
+    "url": "https://www.ion.org/publications/webinar-akos.cfm",
+    "authors": [
+      "Dennis Akos"
+    ],
+    "year": 2022,
+    "summary": "Shows how Android raw GNSS measurements (AGC, C/N0, pseudoranges) can flag jamming and spoofing on commodity phones.",
+    "key_takeaways": [
+      "Phones can be cheap distributed interference sensors"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:gnss"
+    ],
+    "tags": [
+      "android",
+      "spoofing-detection",
+      "ion",
+      "webinar"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ion-webinar-series",
+        "rel": "part_of"
+      },
+      {
+        "id": "repo:google/gps-measurement-tools",
+        "rel": "uses"
+      },
+      {
+        "id": "res:android-gnss-spoof-jam-detection",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:ion-webinar-hendeby",
+    "kind": "talk",
+    "title": "Results on GNSS Spoofing Mitigation Using Multiple Receivers",
+    "url": "https://www.ion.org/publications/webinar-hendeby.cfm",
+    "authors": [
+      "Gustaf Hendeby"
+    ],
+    "year": 2022,
+    "summary": "Spoofing detection and mitigation using several spatially separated receivers, exploiting the fact that a single spoofer produces geometrically inconsistent measurements.",
+    "key_takeaways": [
+      "Multi-antenna/multi-receiver consistency checks"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "spoofing-detection",
+      "multi-receiver",
+      "ion",
+      "webinar"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ion-webinar-series",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:ion-webinar-rothmaier",
+    "kind": "talk",
+    "title": "GNSS Spoofing Detection through Spatial Processing",
+    "url": "https://www.ion.org/publications/webinar-rothmaier.cfm",
+    "authors": [
+      "Fabian Rothmaier"
+    ],
+    "year": 2021,
+    "summary": "Stanford work on detecting spoofing from spatial signal characteristics (angle-of-arrival consistency) using antenna motion or arrays.",
+    "key_takeaways": [
+      "Direction-of-arrival is a strong spoofing discriminator"
+    ],
+    "concepts": [
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "spoofing-detection",
+      "aoa",
+      "ion",
+      "webinar"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ion-webinar-series",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:ion-webinar-calatrava",
+    "kind": "talk",
+    "title": "Robust Interference Mitigation in GNSS Snapshot Receivers",
+    "url": "https://www.ion.org/publications/webinar-calatrava.cfm",
+    "authors": [
+      "Helena Calatrava"
+    ],
+    "year": 2025,
+    "summary": "Interference mitigation techniques adapted to snapshot (short-capture) GNSS receivers used in low-power and IoT devices.",
+    "key_takeaways": [
+      "Snapshot receivers need different mitigation than tracking receivers"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:gnss-sdr"
+    ],
+    "tags": [
+      "snapshot-receiver",
+      "mitigation",
+      "ion",
+      "webinar"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ion-webinar-series",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:ion-webinar-navon",
+    "kind": "talk",
+    "title": "A Robust Approach to Vision-Based Terrain-Aided Localization",
+    "url": "https://www.ion.org/publications/webinar-navon.cfm",
+    "authors": [
+      "Dan Navon"
+    ],
+    "year": 2025,
+    "summary": "Vision-based terrain-aided localization for aircraft, matching onboard imagery against terrain/map references as a GNSS-independent position source.",
+    "key_takeaways": [
+      "Map-matching as a GNSS-denied position fix"
+    ],
+    "concepts": [
+      "concept:terrain-nav",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "vision",
+      "terrain-aided",
+      "ion",
+      "webinar"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ion-webinar-series",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:ion-webinar-gross",
+    "kind": "talk",
+    "title": "Cooperative Localization for GNSS-Denied Subterranean Navigation: A UAV-UGV Team Approach",
+    "url": "https://www.ion.org/publications/webinar-gross.cfm",
+    "authors": [
+      "Jason Gross"
+    ],
+    "year": 2025,
+    "summary": "West Virginia University work on UAV and UGV teams sharing ranging and odometry to localize jointly in GNSS-denied underground environments.",
+    "key_takeaways": [
+      "Cooperative ranging reduces drift in heterogeneous teams"
+    ],
+    "concepts": [
+      "concept:multi-agent",
+      "concept:sensor-fusion",
+      "concept:rf-localization"
+    ],
+    "tags": [
+      "subterranean",
+      "uav-ugv",
+      "ion",
+      "webinar"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ion-webinar-series",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:ion-webinar-brink",
+    "kind": "talk",
+    "title": "Relative navigation of fixed-wing aircraft in GPS-denied environments",
+    "url": "https://www.ion.org/publications/webinar-brink.cfm",
+    "authors": [
+      "Kevin Brink"
+    ],
+    "year": 2020,
+    "summary": "AFRL perspective on relative navigation for fixed-wing aircraft without GPS, keeping estimation consistent by working in a relative frame with periodic global updates.",
+    "key_takeaways": [
+      "Relative navigation frames tame unobservable global drift"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:assured-pnt",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "afrl",
+      "fixed-wing",
+      "relative-nav",
+      "ion",
+      "webinar"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ion-webinar-series",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:ion-webinar-kealy",
+    "kind": "talk",
+    "title": "Quantum Sensors for Navigation, From Physics to Field Deployment",
+    "url": "https://www.ion.org/publications/webinar-kealy.cfm",
+    "authors": [
+      "Allison Kealy",
+      "Andrew Greentree"
+    ],
+    "year": 2025,
+    "summary": "Overview of quantum sensing for navigation (atom interferometers, quantum magnetometers, clocks) and what it takes to move them from lab to field.",
+    "key_takeaways": [
+      "Realistic timeline for quantum inertial and magnetic nav"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:magnetic-nav",
+      "concept:timing"
+    ],
+    "tags": [
+      "quantum",
+      "sensors",
+      "ion",
+      "webinar"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ion-webinar-series",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:ion-webinar-tpn",
+    "kind": "talk",
+    "title": "Should It Be TPN? Prioritizing Timing in Positioning and Navigation",
+    "url": "https://www.ion.org/publications/webinar-tpn.cfm",
+    "authors": [
+      "Todd E. Humphreys",
+      "Charles Barry"
+    ],
+    "year": 2026,
+    "summary": "Webinar arguing for timing as the foundation of resilient PNT, covering precision terrestrial time distribution and timing/positioning from current and future LEO constellations.",
+    "key_takeaways": [
+      "Timing resilience underpins telecom and power grid",
+      "LEO as a timing source"
+    ],
+    "concepts": [
+      "concept:timing",
+      "concept:assured-pnt",
+      "concept:space-nav"
+    ],
+    "tags": [
+      "humphreys",
+      "timing",
+      "leo-pnt",
+      "ion",
+      "webinar"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ion-webinar-series",
+        "rel": "part_of"
+      },
+      {
+        "id": "res:ion-webinar-humphreys",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:ion-webinar-shamaei-kassas",
+    "kind": "talk",
+    "title": "LTE Receiver Design and Multipath Analysis for Navigation in Urban Environments",
+    "url": "https://www.ion.org/publications/webinar-shamaei-kassas.cfm",
+    "authors": [
+      "Kimia Shamaei",
+      "Zak Kassas"
+    ],
+    "year": 2019,
+    "summary": "Design of a software receiver that extracts navigation observables from cellular LTE signals and analysis of multipath effects in urban settings.",
+    "key_takeaways": [
+      "Cellular signals of opportunity are viable in cities"
+    ],
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:rf-localization",
+      "concept:gnss-sdr"
+    ],
+    "tags": [
+      "lte",
+      "kassas",
+      "sdr",
+      "ion",
+      "webinar"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ion-webinar-series",
+        "rel": "part_of"
+      },
+      {
+        "id": "res:kassas-ad-astra-leo-grasp-2024",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:ion-webinar-gipson",
+    "kind": "talk",
+    "title": "Resilience Monitoring for Multi-Filter All-Source Navigation Framework With Assurance",
+    "url": "https://www.ion.org/publications/webinar-gipson.cfm",
+    "authors": [
+      "Jonathon Gipson"
+    ],
+    "year": 2023,
+    "summary": "AFIT research on all-source navigation that runs multiple filters and monitors sensor integrity to detect and isolate faulty or spoofed inputs.",
+    "key_takeaways": [
+      "Plug-and-play all-source nav with integrity monitoring"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "all-source",
+      "integrity",
+      "afit",
+      "ion",
+      "webinar"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ion-webinar-series",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:ion-webinar-MarRINav",
+    "kind": "talk",
+    "title": "When GNSS fails, what will you do? MarRINav!",
+    "url": "https://www.ion.org/publications/webinar-MarRINav.cfm",
+    "authors": [
+      "Jonathan Turner",
+      "Alan Grant",
+      "Dana Goward"
+    ],
+    "year": 2020,
+    "summary": "UK maritime resilient navigation study (MarRINav) on backups for GNSS at sea, including eLoran and R-Mode style terrestrial systems; co-sponsored by the RNT Foundation.",
+    "key_takeaways": [
+      "Maritime PNT backup architecture options"
+    ],
+    "concepts": [
+      "concept:maritime-nav",
+      "concept:assured-pnt",
+      "concept:signals-of-opportunity"
+    ],
+    "tags": [
+      "maritime",
+      "eloran",
+      "r-mode",
+      "ion",
+      "webinar"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ion-webinar-series",
+        "rel": "part_of"
+      },
+      {
+        "id": "res:39c3-baltic-jammer-r-mode",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:ted-humphreys-how-to-fool-a-gps",
+    "kind": "talk",
+    "title": "How to fool a GPS (TEDxAustin)",
+    "url": "https://www.ted.com/talks/todd_humphreys_how_to_fool_a_gps",
+    "authors": [
+      "Todd Humphreys"
+    ],
+    "year": 2012,
+    "summary": "Accessible TEDx talk from the head of UT Austin's Radionavigation Lab on GPS jamming and spoofing and why civil GPS is trivially counterfeitable, given around the time of his lab's drone and yacht spoofing demonstrations.",
+    "key_takeaways": [
+      "Why unauthenticated civil GNSS is a systemic risk",
+      "Good opener for a resilient-PNT pitch"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "humphreys",
+      "spoofing",
+      "ted"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ut-radionavigation-lab",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:ut-radionavigation-lab",
+    "kind": "blog",
+    "title": "UT Austin Radionavigation Laboratory (talks, papers, news)",
+    "url": "https://radionavlab.ae.utexas.edu/",
+    "authors": [
+      "Todd Humphreys",
+      "UT Radionavigation Lab"
+    ],
+    "year": 2026,
+    "summary": "Lab site of Todd Humphreys' group, indexing talks, briefings and papers on GNSS spoofing detection, LEO interference monitoring, Starlink-based PNT and precise automotive positioning.",
+    "key_takeaways": [
+      "Hub for Humphreys' talks on spoofing and LEO PNT",
+      "Papers on spoofing detection are linked from here"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:space-nav",
+      "concept:signals-of-opportunity",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "humphreys",
+      "utexas",
+      "spoofing",
+      "leo-pnt"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ion-webinar-humphreys",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:kassas-ad-astra-leo-grasp-2024",
+    "kind": "talk",
+    "title": "Ad Astra: Navigation with Megaconstellation LEO Satellites (GRASP on Robotics)",
+    "url": "https://www.grasp.upenn.edu/events/fall-2024-grasp-on-robotics-zak-kassas/",
+    "authors": [
+      "Zak Kassas"
+    ],
+    "year": 2024,
+    "summary": "UPenn GRASP seminar by Zak Kassas on opportunistic PNT from Starlink, OneWeb and other LEO megaconstellations, addressing unknown signal structure, poor ephemerides and clock instability with his STAN (simultaneous tracking and navigation) framework validated on ground and aerial vehicles.",
+    "key_takeaways": [
+      "LEO signals of opportunity as a GNSS backup",
+      "Covers SDR receiver design to navigation filter"
+    ],
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:space-nav",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "kassas",
+      "leo-pnt",
+      "starlink"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ion-webinar-shamaei-kassas",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:defcon23-low-cost-gps-spoofing-sdr",
+    "kind": "talk",
+    "title": "Low-cost GPS simulator: GPS spoofing by SDR (DEF CON 23)",
+    "url": "https://infocondb.org/con/def-con/def-con-23/low-cost-gps-simulator-gps-spoofing-by-sdr",
+    "authors": [
+      "Lin Huang",
+      "Qing Yang",
+      "Qihoo 360 Unicorn Team"
+    ],
+    "year": 2015,
+    "summary": "DEF CON 23 talk showing that open-source tools and cheap SDRs can generate counterfeit GPS L1 signals that fool phones and a consumer drone; the speakers end with defensive advice such as multi-constellation positioning and spoofing detection in chipsets.",
+    "key_takeaways": [
+      "Shows how low the barrier to civil GPS spoofing is",
+      "Motivates detection and multi-source fusion in any drone build"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "defcon",
+      "spoofing",
+      "sdr",
+      "security"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:osqzss/gps-sdr-sim",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:39c3-baltic-jammer-r-mode",
+    "kind": "talk",
+    "title": "Who cares about the Baltic Jammer? Terrestrial Navigation in the Baltic Sea Region (39C3)",
+    "url": "https://media.ccc.de/v/39c3-who-cares-about-the-baltic-jammer-terrestrial-navigation-in-the-baltic-sea-region",
+    "authors": [
+      "Niklas Hehenkamp",
+      "DLR team"
+    ],
+    "year": 2025,
+    "summary": "39th Chaos Communication Congress talk from DLR researchers on R-Mode, a terrestrial maritime navigation backup built on existing radio beacons and coastal infrastructure, tested in the heavily jammed Baltic. Covers real-world jamming impacts, transmitter/receiver build-out and the path from research to critical infrastructure.",
+    "key_takeaways": [
+      "Concrete view of Baltic jamming/spoofing effects on ships, aircraft, timing",
+      "Terrestrial backups as an alternative to space-based ones"
+    ],
+    "concepts": [
+      "concept:maritime-nav",
+      "concept:gnss-interference",
+      "concept:signals-of-opportunity",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "ccc",
+      "r-mode",
+      "baltic",
+      "dlr"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ion-webinar-MarRINav",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:android-gnss-spoof-jam-detection",
+    "kind": "doc",
+    "title": "Detect GNSS jamming and spoofing (Android developer guide)",
+    "url": "https://developer.android.com/develop/sensors-and-location/sensors/gnss-spoof-jam",
+    "authors": [
+      "Google Android"
+    ],
+    "year": 2024,
+    "summary": "Android developer documentation on the platform APIs and signals that apps can use to detect GNSS jamming and spoofing on phones.",
+    "key_takeaways": [
+      "Phone-based interference sensing for a hackathon prototype",
+      "No custom hardware needed"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "android",
+      "spoofing-detection"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:google/gps-measurement-tools",
+        "rel": "uses"
+      },
+      {
+        "id": "res:ion-webinar-akos",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:jammertest-norway",
+    "kind": "competition",
+    "title": "Jammertest - open GNSS resilience test (Norway)",
+    "url": "https://jammertest.no/",
+    "authors": [
+      "Norwegian public authorities (NPRA, Nkom, FFI and others)"
+    ],
+    "year": 2026,
+    "summary": "Annual open live-fire GNSS jamming and spoofing test event at Andøya, Norway, where industry and researchers test receivers against real interference. The test plan and test catalog are published openly on GitHub.",
+    "key_takeaways": [
+      "Real jamming/spoofing scenarios documented in the public test plan",
+      "Use the catalog to design realistic sim scenarios"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:ew-resilience",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "jammertest",
+      "norway",
+      "live-test"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:npra/jammertest-plan",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:septentrio-jammertest-2025-webinar",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:septentrio-jammertest-2025-webinar",
+    "kind": "talk",
+    "title": "Results Jammertest 2025 - Resilient GNSS in an Era of Rising Jamming & Spoofing (webinar)",
+    "url": "https://septentrio.com/en/learn-more/webinars/webinar-results-jammertest-2025-resilient-gnss-era-rising-jamming-spoofing",
+    "authors": [
+      "Septentrio",
+      "GPS Innovation Alliance",
+      "UVify"
+    ],
+    "year": 2026,
+    "summary": "On-demand vendor webinar reviewing receiver behaviour during the high-power interference trials of Jammertest 2025 in Norway, with speakers from Septentrio, the GPS Innovation Alliance and drone maker UVify.",
+    "key_takeaways": [
+      "Field results under interference levels like Baltic/Eastern Europe",
+      "Vendor view; treat claims accordingly"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "jammertest",
+      "septentrio",
+      "webinar"
+    ],
+    "level": "intermediate",
+    "access": "free-registration",
+    "related": [
+      {
+        "id": "res:jammertest-norway",
+        "rel": "evaluates"
+      }
+    ]
+  },
+  {
+    "id": "res:ublox-jammertest-webinar",
+    "kind": "talk",
+    "title": "Jamming, spoofing and secure positioning: Jammertest insights (u-blox webinar)",
+    "url": "https://www.u-blox.com/en/webinars/jamming-spoofing-secure-positioning-jammertest",
+    "authors": [
+      "u-blox"
+    ],
+    "year": 2025,
+    "summary": "On-demand u-blox webinar on what multi-band receiver testing at Jammertest revealed about positioning continuity under interference and hybrid spoofing detection.",
+    "key_takeaways": [
+      "Multi-band receivers and spoofing detection in mass-market chips"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "jammertest",
+      "u-blox",
+      "webinar"
+    ],
+    "level": "intermediate",
+    "access": "free-registration",
+    "related": [
+      {
+        "id": "res:jammertest-norway",
+        "rel": "evaluates"
+      }
+    ]
+  },
+  {
+    "id": "res:policytracker-gnss-vulnerabilities-podcast",
+    "kind": "podcast",
+    "title": "GNSS vulnerabilities explained (PolicyTracker Spectrum Podcast)",
+    "url": "https://www.policytracker.com/?p=84684",
+    "authors": [
+      "PolicyTracker",
+      "Logan Scott"
+    ],
+    "year": 2025,
+    "summary": "Spectrum-policy podcast episode with PNT consultant Logan Scott on GNSS jamming, spoofing, adjacent-band interference and mitigations, and the global rise in spoofing incidents affecting aviation.",
+    "key_takeaways": [
+      "Policy and spectrum angle on GNSS interference"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "podcast",
+      "spectrum"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:crows-nest-goward-gps-threats-podcast",
+    "kind": "podcast",
+    "title": "From the Crows' Nest - growing threats to GPS/GNSS (Dana Goward)",
+    "url": "https://share.transistor.fm/s/2f3315c7",
+    "authors": [
+      "Association of Old Crows",
+      "Ken Miller",
+      "Dana Goward"
+    ],
+    "year": 2025,
+    "summary": "Episode of the Association of Old Crows electronic warfare podcast in which RNT Foundation president Dana Goward discusses threats to GPS and the case for terrestrial and other backups.",
+    "key_takeaways": [
+      "EW-community framing of PNT resilience"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:ew-resilience",
+      "concept:assured-pnt",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "podcast",
+      "aoc",
+      "ew"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:geospatial-fm-goward-podcast",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:geospatial-fm-goward-podcast",
+    "kind": "podcast",
+    "title": "Dana A. Goward on Geospatial FM podcast (RNT Foundation)",
+    "url": "https://rntfnd.org/2025/07/23/rnt-foundation-president-dana-a-goward-speak-to-geospatial-fm-podcast/",
+    "authors": [
+      "Resilient Navigation and Timing Foundation",
+      "Dana A. Goward"
+    ],
+    "year": 2025,
+    "summary": "RNT Foundation post linking Dana Goward's Geospatial FM podcast appearance on GPS vulnerability and national PNT resilience policy.",
+    "key_takeaways": [
+      "Advocacy perspective on eLoran and PNT backups"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:policy-ethics",
+      "concept:timing"
+    ],
+    "tags": [
+      "podcast",
+      "rntf"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:eudis-defence-hackathon-2025",
+    "kind": "competition",
+    "title": "EUDIS Defence Hackathon, 3rd edition (with BraveTech EU)",
+    "url": "https://defence-industry-space.ec.europa.eu/join-third-edition-eudis-defence-hackathon-powered-bravetecheu-2025-10-09_en",
+    "authors": [
+      "European Commission DG DEFIS",
+      "BraveTech EU"
+    ],
+    "year": 2025,
+    "summary": "EU defence hackathon (17-19 October 2025, eight locations) with challenges on protecting space assets, space for defence (including navigation and coordination) and sovereign aerospace including drone countermeasures; a recorded pre-hackathon webinar is on YouTube (watch?v=gLrCkk6XEuY).",
+    "key_takeaways": [
+      "Shows how EU frames navigation and C-UAS challenge statements",
+      "Pre-hackathon webinar recording available"
+    ],
+    "concepts": [
+      "concept:counter-uas",
+      "concept:assured-pnt",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "hackathon",
+      "eu",
+      "brave1",
+      "ukraine"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:ngrn-ukraine-deftech-2025",
+    "kind": "blog",
+    "title": "Ukraine's DefTech at the End of 2025: From Drone Mass to Systems Warfare",
+    "url": "https://www.newgeopolitics.org/2025/12/28/ukraines-deftech-at-the-end-of-2025-from-drone-mass-to-systems-warfare/",
+    "authors": [
+      "New Geopolitics Research Network"
+    ],
+    "year": 2025,
+    "summary": "Analysis of Ukraine's defence-tech ecosystem at the end of 2025, noting that GNSS-denied operation is now the norm and expecting broad adoption of radio-beacon, visual and fused alternative navigation in 2026.",
+    "key_takeaways": [
+      "GNSS denial is a baseline requirement in current conflict",
+      "Context for prioritising alt-nav in hackathon scope"
+    ],
+    "concepts": [
+      "concept:ew-resilience",
+      "concept:assured-pnt",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "ukraine",
+      "deftech",
+      "analysis"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:nav2-gps-navigation-tutorial",
+    "kind": "doc",
+    "title": "Navigating Using GPS Localization (Nav2 tutorial)",
+    "url": "https://docs.nav2.org/rolling/tutorials/general_tutorials/navigation2_with_gps/navigation2_with_gps/",
+    "authors": [
+      "Open Navigation",
+      "Nav2 contributors"
+    ],
+    "year": 2024,
+    "summary": "Nav2 tutorial on outdoor navigation with GPS: fusing GNSS, IMU and odometry with robot_localization's navsat_transform, configuring Nav2 for GPS waypoints, and demonstrating it in Gazebo.",
+    "key_takeaways": [
+      "Shortest working path to GPS waypoint following on a ROS 2 robot",
+      "Shows datum and frame setup that trips people up"
+    ],
+    "concepts": [
+      "concept:ros",
+      "concept:gnss-ins",
+      "concept:ground-vehicle-nav",
+      "concept:mission-planning"
+    ],
+    "tags": [
+      "nav2",
+      "ros2",
+      "gps",
+      "robot_localization"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ros-navigation/navigation2",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:cra-ros-pkg/robot_localization",
+        "rel": "uses"
+      },
+      {
+        "id": "repo:ros-navigation/navigation2_tutorials",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:nav2-roscon-uk-2025-state-estimation-workshop",
+    "kind": "masterclass",
+    "title": "ROSCon UK 2025 - State Estimation for Mobile Robotics Workshop",
+    "url": "https://docs.nav2.org/rolling/tutorials/general_tutorials/roscon_uk_2025_state_estimation/",
+    "authors": [
+      "Locus Robotics",
+      "Open Navigation"
+    ],
+    "year": 2025,
+    "summary": "Hands-on workshop material comparing two ROS 2 state-estimation approaches: Kalman filtering with robot_localization (EKF/UKF, covariance tuning, frames, rate handling) and factor-graph fixed-lag smoothing with fuse. Exercises and solutions are in a public repo.",
+    "key_takeaways": [
+      "Filter vs smoother trade-offs with runnable exercises",
+      "Directly reusable configs for IMU/odom/GPS fusion"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:ros",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "roscon",
+      "fuse",
+      "robot_localization",
+      "workshop"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:locusrobotics/roscon-uk-2025-se-workshop",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:locusrobotics/fuse",
+        "rel": "uses"
+      },
+      {
+        "id": "repo:cra-ros-pkg/robot_localization",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:nav2-robot-localization-setup-guide",
+    "kind": "doc",
+    "title": "Nav2 first-time robot setup: Odometry and robot_localization",
+    "url": "https://docs.nav2.org/rolling/configuration_and_development/first_time_robot_setup_guide/odom/setup_robot_localization/",
+    "authors": [
+      "Open Navigation"
+    ],
+    "year": 2024,
+    "summary": "Setup guide for fusing wheel odometry and IMU with robot_localization's EKF to produce the odom frame Nav2 expects.",
+    "key_takeaways": [
+      "Minimal correct EKF config for a new robot"
+    ],
+    "concepts": [
+      "concept:ros",
+      "concept:sensor-fusion",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "nav2",
+      "robot_localization",
+      "ekf"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:cra-ros-pkg/robot_localization",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:nav2-roscon-talks-index",
+    "kind": "video",
+    "title": "Nav2 ROSCon Talks index",
+    "url": "https://docs.nav2.org/rolling/community/roscon_talks/",
+    "authors": [
+      "Open Navigation",
+      "Nav2 community"
+    ],
+    "year": 2026,
+    "summary": "Index of ROSCon talks by Nav2 developers and the community (Vimeo links), including SLAM Toolbox and large-scale indoor mapping talks.",
+    "key_takeaways": [
+      "Curated entry point into ROSCon navigation videos"
+    ],
+    "concepts": [
+      "concept:ros",
+      "concept:path-planning",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "roscon",
+      "nav2",
+      "vimeo"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ros-navigation/navigation2",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:robot-localization-docs",
+    "kind": "doc",
+    "title": "robot_localization package documentation",
+    "url": "https://docs.ros.org/en/melodic/api/robot_localization/html/index.html",
+    "authors": [
+      "Tom Moore",
+      "robot_localization contributors"
+    ],
+    "year": 2019,
+    "summary": "Documentation for the widely used ROS EKF/UKF state estimation package, including state-estimation node configuration, sensor integration, and navsat_transform for GPS.",
+    "key_takeaways": [
+      "Explains covariance and frame conventions in depth",
+      "navsat_transform page is essential for GPS fusion"
+    ],
+    "concepts": [
+      "concept:ros",
+      "concept:sensor-fusion",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "robot_localization",
+      "ekf",
+      "ukf"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:cra-ros-pkg/robot_localization",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:roscon-2023-videos",
+    "kind": "video",
+    "title": "ROSCon 2023 videos and slides",
+    "url": "https://discourse.openrobotics.org/t/roscon-2023-videos-and-slides-now-available/34575",
+    "authors": [
+      "Open Robotics"
+    ],
+    "year": 2023,
+    "summary": "Announcement and index of ROSCon 2023 recordings and slides, including navigation talks such as bidirectional navigation with Nav2 and localization on 3D mesh surfaces.",
+    "key_takeaways": [
+      "One place to find localization/navigation ROSCon talks"
+    ],
+    "concepts": [
+      "concept:ros",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "roscon",
+      "video"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:roscon-2024",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:roscon-2024",
+    "kind": "talk",
+    "title": "ROSCon 2024 (Odense) programme and recordings",
+    "url": "https://roscon.ros.org/2024/",
+    "authors": [
+      "Open Robotics"
+    ],
+    "year": 2024,
+    "summary": "ROSCon 2024 site with the programme and links to recorded talks, including localization talks such as Ekumen's Beluga particle-filter localization library.",
+    "key_takeaways": [
+      "Recent ROS 2 localization tooling talks"
+    ],
+    "concepts": [
+      "concept:ros",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "roscon",
+      "beluga",
+      "amcl"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ekumen-os/beluga",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:px4-developer-summit",
+    "kind": "talk",
+    "title": "PX4 Developer Summit (talks and recordings)",
+    "url": "https://events.linuxfoundation.org/px4-developer-summit/",
+    "authors": [
+      "Dronecode Foundation",
+      "Linux Foundation"
+    ],
+    "year": 2025,
+    "summary": "Annual PX4 developer conference; recordings are posted on the PX4 YouTube channel. The 2025 Atlanta programme included an EKF2 session on handling multiple data sources with 'reset by fusion' rather than hard resets.",
+    "key_takeaways": [
+      "Primary source on EKF2 design changes",
+      "Talks on external vision/non-GNSS aiding in PX4"
+    ],
+    "concepts": [
+      "concept:autopilot",
+      "concept:sensor-fusion",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "px4",
+      "ekf2",
+      "dronecode"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "uses"
+      },
+      {
+        "id": "res:px4-youtube-channel",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:px4-youtube-channel",
+    "kind": "video",
+    "title": "PX4 Autopilot YouTube channel",
+    "url": "https://www.youtube.com/@PX4Autopilot",
+    "authors": [
+      "PX4 / Dronecode"
+    ],
+    "year": 2025,
+    "summary": "Official channel with PX4 Developer Summit recordings, dev calls and feature demos.",
+    "key_takeaways": [
+      "Search 'EKF2' for estimator deep dives"
+    ],
+    "concepts": [
+      "concept:autopilot",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "px4",
+      "youtube"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:px4-ekf2-guide",
+    "kind": "doc",
+    "title": "Using PX4's Navigation Filter (EKF2)",
+    "url": "https://docs.px4.io/main/en/advanced_config/tuning_the_ecl_ekf.html",
+    "authors": [
+      "PX4 Dev Team"
+    ],
+    "year": 2025,
+    "summary": "PX4 guide to its EKF2 estimator: which sensors it fuses (IMU, GNSS, baro, mag, optical flow, external vision, range), how to configure and tune them, and how to read innovation logs.",
+    "key_takeaways": [
+      "How to feed VIO/visual positioning into PX4 instead of GNSS",
+      "Innovation test tuning for spoof/glitch rejection"
+    ],
+    "concepts": [
+      "concept:autopilot",
+      "concept:gnss-ins",
+      "concept:sensor-fusion",
+      "concept:vio"
+    ],
+    "tags": [
+      "px4",
+      "ekf2",
+      "docs"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:px4/px4-ecl",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:px4-simulation-docs",
+    "kind": "doc",
+    "title": "PX4 Simulation (Gazebo, SITL) documentation",
+    "url": "https://docs.px4.io/main/en/simulation/",
+    "authors": [
+      "PX4 Dev Team"
+    ],
+    "year": 2025,
+    "summary": "How to run PX4 software-in-the-loop with Gazebo and other simulators, including multi-vehicle setups and connecting ROS 2 and ground stations.",
+    "key_takeaways": [
+      "Fastest way to test nav changes without hardware"
+    ],
+    "concepts": [
+      "concept:simulation",
+      "concept:autopilot",
+      "concept:mavlink-gcs"
+    ],
+    "tags": [
+      "px4",
+      "sitl",
+      "gazebo"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "uses"
+      },
+      {
+        "id": "repo:gazebosim/gz-sim",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:ardupilot-devcon-2024-kaga",
+    "kind": "talk",
+    "title": "ArduPilot Developer Conference Kaga 2024 (schedule and YouTube links)",
+    "url": "https://discuss.ardupilot.org/t/ardupilot-developer-conference-kaga-2024-schedule-and-youtube-links/125384",
+    "authors": [
+      "ArduPilot Dev Team"
+    ],
+    "year": 2024,
+    "summary": "Three days of recorded ArduPilot developer talks; navigation-relevant sessions include 'High Altitude Non-GPS' (Sanket Sharma), 'CINS (DCM replacement)' (Pieter Van Goor, ANU), indoor flight and position offsets. Day 2 stream: youtube.com/live/jbRQSE0r9L8.",
+    "key_takeaways": [
+      "Primary-source talk on high-altitude GPS-free flight",
+      "New CINS attitude/position estimator explained"
+    ],
+    "concepts": [
+      "concept:autopilot",
+      "concept:sensor-fusion",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "ardupilot",
+      "non-gps",
+      "devcon"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "uses"
+      },
+      {
+        "id": "res:ardupilot-non-gps-navigation-docs",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:ardupilot-non-gps-navigation-docs",
+    "kind": "doc",
+    "title": "ArduPilot Non-GPS Navigation",
+    "url": "https://ardupilot.org/copter/docs/common-non-gps-navigation-landing-page.html",
+    "authors": [
+      "ArduPilot Dev Team"
+    ],
+    "year": 2025,
+    "summary": "ArduPilot documentation hub for flying without GPS: optical flow, visual odometry cameras, motion capture, beacons/UWB, wheel encoders and external navigation via MAVLink/ROS.",
+    "key_takeaways": [
+      "Menu of supported GPS-free aiding sources",
+      "Guides for feeding external pose into EKF3"
+    ],
+    "concepts": [
+      "concept:autopilot",
+      "concept:vio",
+      "concept:assured-pnt",
+      "concept:rf-localization"
+    ],
+    "tags": [
+      "ardupilot",
+      "ekf3",
+      "optical-flow"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:gazebo-docs-tutorials",
+    "kind": "doc",
+    "title": "Gazebo documentation and tutorials",
+    "url": "https://gazebosim.org/docs",
+    "authors": [
+      "Open Robotics",
+      "Gazebo contributors"
+    ],
+    "year": 2025,
+    "summary": "Official Gazebo (gz) docs and tutorials: building worlds, sensors (IMU, GPS/NavSat, cameras, LiDAR), ROS 2 bridging and plugins.",
+    "key_takeaways": [
+      "NavSat and IMU sensors enable GNSS-denied scenario testing"
+    ],
+    "concepts": [
+      "concept:simulation",
+      "concept:ros"
+    ],
+    "tags": [
+      "gazebo",
+      "simulation",
+      "tutorial"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:gazebosim/gz-sim",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:isaac-ros-visual-slam-docs",
+    "kind": "doc",
+    "title": "Isaac ROS Visual SLAM documentation",
+    "url": "https://nvidia-isaac-ros.github.io/repositories_and_packages/isaac_ros_visual_slam/index.html",
+    "authors": [
+      "NVIDIA"
+    ],
+    "year": 2025,
+    "summary": "Docs and quickstarts for NVIDIA's GPU-accelerated stereo visual-inertial odometry and SLAM package for ROS 2 on Jetson, including tutorials with Isaac Sim and RealSense cameras.",
+    "key_takeaways": [
+      "Real-time VIO on Jetson with minimal setup",
+      "Isaac Sim tutorials for testing without hardware"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:visual-slam",
+      "concept:edge-ai",
+      "concept:ros"
+    ],
+    "tags": [
+      "nvidia",
+      "isaac",
+      "jetson",
+      "cuvslam"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:nvidia-isaac-ros/isaac_ros_visual_slam",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:openvins-docs",
+    "kind": "doc",
+    "title": "OpenVINS documentation",
+    "url": "https://docs.openvins.com/",
+    "authors": [
+      "Robot Perception and Navigation Group, University of Delaware"
+    ],
+    "year": 2024,
+    "summary": "Documentation for the OpenVINS MSCKF-based visual-inertial estimator, including derivations of the propagation and update steps, calibration, evaluation tooling and ROS usage.",
+    "key_takeaways": [
+      "Doubles as a VIO textbook with derivations",
+      "Evaluation tools for comparing trajectories"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:calibration",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "msckf",
+      "openvins",
+      "docs"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:rpng/open_vins",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:kalibr-wiki",
+    "kind": "doc",
+    "title": "Kalibr wiki: camera-IMU calibration tutorials",
+    "url": "https://github.com/ethz-asl/kalibr/wiki",
+    "authors": [
+      "ETH Zurich ASL"
+    ],
+    "year": 2024,
+    "summary": "Wiki for Kalibr covering multi-camera, camera-IMU and rolling-shutter calibration, target generation and data collection practice.",
+    "key_takeaways": [
+      "Bad calibration ruins VIO; this is the standard workflow"
+    ],
+    "concepts": [
+      "concept:calibration",
+      "concept:vio"
+    ],
+    "tags": [
+      "kalibr",
+      "camera-imu"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ethz-asl/kalibr",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:esa-navipedia",
+    "kind": "doc",
+    "title": "Navipedia (ESA GNSS wiki)",
+    "url": "https://gssc.esa.int/navipedia/",
+    "authors": [
+      "European Space Agency"
+    ],
+    "year": 2024,
+    "summary": "ESA-maintained wiki on GNSS: systems, signals, receivers, error sources, positioning algorithms (SPP, DGNSS, RTK, PPP), augmentation and applications.",
+    "key_takeaways": [
+      "Reliable quick reference for GNSS equations",
+      "Covers Galileo signal and service details"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp",
+      "concept:geodesy"
+    ],
+    "tags": [
+      "esa",
+      "wiki",
+      "galileo"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:gnss-sdr-tutorials",
+    "kind": "doc",
+    "title": "GNSS-SDR tutorials",
+    "url": "https://gnss-sdr.org/docs/tutorials/",
+    "authors": [
+      "GNSS-SDR project (CTTC)"
+    ],
+    "year": 2024,
+    "summary": "Tutorials for the open-source GNSS-SDR software receiver: signal acquisition and tracking, configuring front ends, processing recorded IQ files, and generating observables and PVT.",
+    "key_takeaways": [
+      "Learn receiver internals with real IQ data",
+      "Base for interference-detection experiments"
+    ],
+    "concepts": [
+      "concept:gnss-sdr",
+      "concept:gnss",
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "gnss-sdr",
+      "sdr",
+      "tutorial"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:gnss-sdr/gnss-sdr",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:rtklibexplorer-blog",
+    "kind": "blog",
+    "title": "rtklibexplorer blog (low-cost RTK/PPK with RTKLIB)",
+    "url": "https://rtklibexplorer.wordpress.com/",
+    "authors": [
+      "Tim Everett"
+    ],
+    "year": 2025,
+    "summary": "Long-running practitioner blog on getting centimetre-level RTK/PPK from low-cost u-blox receivers with the demo5 RTKLIB fork, with configuration walk-throughs and data analysis.",
+    "key_takeaways": [
+      "Practical RTK tuning tips you will not find in papers",
+      "Maintainer of the demo5 RTKLIB fork"
+    ],
+    "concepts": [
+      "concept:gnss-rtk-ppp",
+      "concept:gnss"
+    ],
+    "tags": [
+      "rtklib",
+      "rtk",
+      "ppk",
+      "u-blox"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:rtklibexplorer/rtklib",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:tomojitakasu/rtklib",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:hilti-slam-challenge",
+    "kind": "competition",
+    "title": "Hilti SLAM Challenge",
+    "url": "https://hilti-challenge.com/",
+    "authors": [
+      "Hilti",
+      "University of Oxford",
+      "University of Bonn"
+    ],
+    "year": 2023,
+    "summary": "SLAM benchmark challenge with datasets from handheld and robot-mounted multi-sensor rigs in construction sites and buildings, run with an associated ICRA workshop and public leaderboard.",
+    "key_takeaways": [
+      "Hard GNSS-denied indoor sequences with accurate ground truth"
+    ],
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:vio",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "benchmark",
+      "slam",
+      "icra"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:visual-localization-benchmark",
+    "kind": "competition",
+    "title": "Long-Term Visual Localization benchmark",
+    "url": "https://www.visuallocalization.net/",
+    "authors": [
+      "Torsten Sattler",
+      "ETH/CTU and collaborators"
+    ],
+    "year": 2023,
+    "summary": "Benchmark and workshop series for 6-DoF visual localization under changing conditions (day/night, seasons), with standard datasets and an evaluation server.",
+    "key_takeaways": [
+      "Standard evaluation for map-based visual relocalization"
+    ],
+    "concepts": [
+      "concept:place-recognition",
+      "concept:visual-geolocalization",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "benchmark",
+      "relocalization"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:cvg/hierarchical-localization",
+        "rel": "evaluates"
+      }
+    ]
+  },
+  {
+    "id": "res:cvpr-image-matching-workshop",
+    "kind": "talk",
+    "title": "Image Matching: Local Features & Beyond (CVPR workshop)",
+    "url": "https://image-matching-workshop.github.io/",
+    "authors": [
+      "Image Matching Workshop organizers"
+    ],
+    "year": 2025,
+    "summary": "Recurring CVPR workshop and Kaggle challenge on feature matching and structure-from-motion, with invited talks and recordings, covering the matchers used in visual geolocalization and VIO.",
+    "key_takeaways": [
+      "State of the art in learned matchers (SuperPoint/LightGlue family)"
+    ],
+    "concepts": [
+      "concept:feature-matching",
+      "concept:visual-geolocalization",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "cvpr",
+      "workshop",
+      "matching"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:cvg/hierarchical-localization",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:icra-2026-sea-to-space-perception-workshop",
+    "kind": "talk",
+    "title": "From Sea to Space: Advancing Perception in Harsh Domains (ICRA 2026 workshop)",
+    "url": "https://sites.google.com/view/icra-2026-s2s-perception/",
+    "authors": [
+      "Katie Skinner",
+      "Giancarlo Troni",
+      "Tat-Jun Chin",
+      "Ayoung Kim",
+      "et al."
+    ],
+    "year": 2026,
+    "summary": "ICRA 2026 (Vienna) workshop on perception for underwater, space and terrestrial field robots, including localization and mapping in degraded sensing, GPS-denied global localization, novel sensors (sonar, radar, thermal, event) and edge-efficient perception.",
+    "key_takeaways": [
+      "Cross-domain view of degraded-sensing localization",
+      "Speaker list points to active groups"
+    ],
+    "concepts": [
+      "concept:underwater-nav",
+      "concept:space-nav",
+      "concept:radar-nav",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "icra",
+      "workshop",
+      "harsh-environments"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:erf26-sintef-gnss-denied-localisation-workshop",
+    "kind": "talk",
+    "title": "ERF26 workshop: Innovation and developments in robotic GNSS-denied localisation for inspection & maintenance",
+    "url": "https://www.sintef.no/en/events/archive/2026/erf26-workshop-innovation-and-developments-in-robotic-gnss-denied-localisation-for-inspection-maintenance/",
+    "authors": [
+      "SINTEF"
+    ],
+    "year": 2026,
+    "summary": "European Robotics Forum 2026 workshop (Stavanger) organised by SINTEF on GNSS-denied robot localisation in indoor, offshore, underground and urban-canyon settings, bringing together researchers, vendors and end users.",
+    "key_takeaways": [
+      "Industry-side view of deployable GNSS-denied localisation"
+    ],
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:vio",
+      "concept:maritime-nav"
+    ],
+    "tags": [
+      "erf",
+      "sintef",
+      "workshop"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  }
+]

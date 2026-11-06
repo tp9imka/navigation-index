@@ -1,0 +1,2037 @@
+[
+  {
+    "id": "repo:borglab/gtsam",
+    "kind": "repo",
+    "name": "GTSAM",
+    "url": "https://github.com/borglab/gtsam",
+    "summary": "Georgia Tech factor-graph library for smoothing and mapping, with incremental solvers (iSAM2) and a full IMU preintegration factor set. Ships Python bindings and navigation examples combining IMU with GPS-style measurements.",
+    "why_it_matters": "The default backbone for building a custom GNSS/INS or multi-sensor navigation estimator where you add or drop sensor factors as GNSS degrades.",
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:ins",
+      "concept:gnss-ins",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "factor-graph",
+      "isam2",
+      "imu-preintegration",
+      "python"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install gtsam gives Python bindings; start from the ImuFactor examples and add a GNSS position factor. Noise model tuning is where time goes.",
+    "related": [
+      {
+        "id": "repo:ceres-solver/ceres-solver",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:rainerkuemmerle/g2o",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:tixiaoshan/lio-sam",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:borglab/gtsfm",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:ceres-solver/ceres-solver",
+    "kind": "repo",
+    "name": "Ceres Solver",
+    "url": "https://github.com/ceres-solver/ceres-solver",
+    "summary": "Google's nonlinear least-squares and general optimization library with automatic differentiation and robust loss functions.",
+    "why_it_matters": "Used as the solver under many VIO and GNSS/INS optimizers (VINS-Fusion, OB_GINS); good for writing your own sliding-window estimator.",
+    "concepts": [
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "nonlinear-least-squares",
+      "autodiff",
+      "bundle-adjustment"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Solid but you write the residuals yourself. Pair with an existing IMU preintegration residual (e.g. from OB_GINS) rather than deriving from scratch.",
+    "related": [
+      {
+        "id": "repo:borglab/gtsam",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:i2nav-whu/ob_gins",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:hkust-aerial-robotics/vins-fusion",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:rainerkuemmerle/g2o",
+    "kind": "repo",
+    "name": "g2o",
+    "url": "https://github.com/RainerKuemmerle/g2o",
+    "summary": "General framework for graph optimization, widely used for pose-graph SLAM back ends.",
+    "why_it_matters": "Lightweight pose-graph back end when you need loop closure or map alignment on top of an inertial front end.",
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "pose-graph",
+      "graph-optimization"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Best for pose graphs; IMU factors are less turnkey than in GTSAM.",
+    "related": [
+      {
+        "id": "repo:borglab/gtsam",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:ceres-solver/ceres-solver",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:cra-ros-pkg/robot_localization",
+    "kind": "repo",
+    "name": "robot_localization",
+    "url": "https://github.com/cra-ros-pkg/robot_localization",
+    "summary": "ROS package with EKF and UKF state estimation nodes that fuse any number of odometry, IMU, pose and GNSS inputs, plus a navsat_transform node for GPS-to-map conversion.",
+    "why_it_matters": "Fastest route to a working fused odometry on a ROS ground robot or drone; the usual baseline before writing a custom filter.",
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:ins",
+      "concept:gnss-ins",
+      "concept:ros",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "ekf",
+      "ukf",
+      "ros2",
+      "navsat"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground",
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "apt install on ROS 2; mostly YAML config. Common gotcha: frame conventions (REP-103/105) and double-counting velocities.",
+    "related": [
+      {
+        "id": "repo:ethz-asl/ethzasl_msf",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:ccnyroboticslab/imu_tools",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:rlabbe/filterpy",
+    "kind": "repo",
+    "name": "FilterPy",
+    "url": "https://github.com/rlabbe/filterpy",
+    "summary": "Python library of Kalman filters (linear, extended, unscented, ensemble), smoothers, particle filtering helpers and related estimators.",
+    "why_it_matters": "Quick prototyping of filters in notebooks before porting to embedded code.",
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:target-tracking"
+    ],
+    "tags": [
+      "kalman-filter",
+      "ukf",
+      "ekf",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install filterpy. Not Lie-group aware, so handle attitude error states manually or use navlie/manif for that.",
+    "related": [
+      {
+        "id": "repo:rlabbe/kalman-and-bayesian-filters-in-python",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:decargroup/navlie",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:rlabbe/kalman-and-bayesian-filters-in-python",
+    "kind": "repo",
+    "name": "Kalman and Bayesian Filters in Python (book)",
+    "url": "https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python",
+    "summary": "Free interactive book of Jupyter notebooks teaching Kalman, EKF, UKF and particle filters with an intuition-first approach.",
+    "why_it_matters": "Fastest onboarding for team members new to estimation.",
+    "concepts": [
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "book",
+      "notebooks",
+      "kalman-filter"
+    ],
+    "language": "Jupyter Notebook",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Run the notebooks locally or in Binder; chapters on UKF and EKF are enough for a hackathon.",
+    "related": [
+      {
+        "id": "repo:rlabbe/filterpy",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:sfwa/ukf",
+    "kind": "repo",
+    "name": "sfwa UKF",
+    "url": "https://github.com/sfwa/ukf",
+    "summary": "Templated C++ unscented Kalman filter library for state and parameter estimation, including square-root variants, aimed at embedded use.",
+    "why_it_matters": "Option for an embedded UKF attitude/navigation filter with compile-time state definitions.",
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:ins"
+    ],
+    "tags": [
+      "ukf",
+      "eigen",
+      "embedded"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Heavy template code; worth it only if you specifically need a UKF on a microcontroller-class target.",
+    "related": [
+      {
+        "id": "repo:rlabbe/filterpy",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ethz-asl/ethzasl_msf",
+    "kind": "repo",
+    "name": "ethzasl_msf (Multi Sensor Fusion)",
+    "url": "https://github.com/ethz-asl/ethzasl_msf",
+    "summary": "Modular EKF framework from ETH ASL for fusing IMU propagation with pose, position and other sensor updates, with delayed-measurement handling.",
+    "why_it_matters": "Classic MAV state estimator that shows how to fuse delayed vision/GPS measurements into an IMU-driven filter.",
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:ins",
+      "concept:ros"
+    ],
+    "tags": [
+      "ekf",
+      "mav",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1 era; building on modern distros takes effort. Read it for the design more than to run it.",
+    "related": [
+      {
+        "id": "repo:aau-cns/mars_lib",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:cra-ros-pkg/robot_localization",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:ethz-asl/rovio",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:aau-cns/mars_lib",
+    "kind": "repo",
+    "name": "MaRS (Modular and Robust Sensor-Fusion)",
+    "url": "https://github.com/aau-cns/mars_lib",
+    "summary": "Modular IMU-driven sensor-fusion framework from University of Klagenfurt designed so sensors can be added, removed or fail at runtime without reworking the core filter.",
+    "why_it_matters": "Directly relevant to graceful degradation when GNSS or another aiding sensor drops out.",
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:ins",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "ekf",
+      "modular",
+      "uav"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Core library builds standalone; ROS wrapper exists separately. Good fit for a sensor-dropout demo.",
+    "related": [
+      {
+        "id": "repo:ethz-asl/ethzasl_msf",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:aau-cns/cnspy_trajectory_evaluation",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:i2nav-whu/kf-gins",
+    "kind": "repo",
+    "name": "KF-GINS",
+    "url": "https://github.com/i2Nav-WHU/KF-GINS",
+    "summary": "Wuhan University i2Nav reference implementation of loosely coupled GNSS/INS integration with an error-state EKF, with sample data and documentation.",
+    "why_it_matters": "Clean, readable GNSS/INS baseline in the PSINS/Groves tradition; ideal to adapt for GNSS-outage experiments.",
+    "concepts": [
+      "concept:gnss-ins",
+      "concept:ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "ekf",
+      "loosely-coupled",
+      "i2nav"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground",
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Builds with CMake and Eigen; includes demo dataset. Simulate outages by masking GNSS epochs and watch drift.",
+    "related": [
+      {
+        "id": "repo:i2nav-whu/ob_gins",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:rodralez/navego",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:i2nav-whu/ob_gins",
+    "kind": "repo",
+    "name": "OB_GINS",
+    "url": "https://github.com/i2Nav-WHU/OB_GINS",
+    "summary": "Optimization-based GNSS/INS integration from Wuhan University i2Nav, using IMU preintegration in a sliding-window factor graph solved with Ceres.",
+    "why_it_matters": "Shows the optimization alternative to KF-GINS on the same problem, useful for comparing filter vs smoother under outages.",
+    "concepts": [
+      "concept:gnss-ins",
+      "concept:ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "factor-graph",
+      "imu-preintegration",
+      "ceres",
+      "i2nav"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground",
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Same data formats as KF-GINS, so run both on one dataset for a side-by-side comparison.",
+    "related": [
+      {
+        "id": "repo:i2nav-whu/kf-gins",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:ceres-solver/ceres-solver",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:borglab/gtsam",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:i2nav-whu/ic-gvins",
+    "kind": "repo",
+    "name": "IC-GVINS",
+    "url": "https://github.com/i2Nav-WHU/IC-GVINS",
+    "summary": "INS-centric GNSS-visual-inertial navigation system from i2Nav, where the precise INS drives the visual front end and GNSS is fused in a factor graph.",
+    "why_it_matters": "Template for camera-aided INS that keeps working through GNSS denial.",
+    "concepts": [
+      "concept:gnss-ins",
+      "concept:vio",
+      "concept:ins"
+    ],
+    "tags": [
+      "gnss-visual-inertial",
+      "factor-graph",
+      "i2nav"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground",
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS-based; heavier setup than KF-GINS. Use their datasets first.",
+    "related": [
+      {
+        "id": "repo:i2nav-whu/le-vins",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:chichengcn/gici-open",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:i2nav-whu/le-vins",
+    "kind": "repo",
+    "name": "LE-VINS",
+    "url": "https://github.com/i2Nav-WHU/LE-VINS",
+    "summary": "INS-centric visual-inertial navigation with LiDAR depth enhancement for visual features, from i2Nav.",
+    "why_it_matters": "Shows LiDAR-aided VIO in the same INS-centric architecture as IC-GVINS.",
+    "concepts": [
+      "concept:vio",
+      "concept:ins",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "lidar-enhanced",
+      "i2nav"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Needs camera+LiDAR+IMU data; research code.",
+    "related": [
+      {
+        "id": "repo:i2nav-whu/ic-gvins",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:rodralez/navego",
+    "kind": "repo",
+    "name": "NaveGo",
+    "url": "https://github.com/rodralez/NaveGo",
+    "summary": "Open MATLAB/GNU Octave toolbox for simulating and processing integrated INS/GNSS navigation, including IMU error modelling and Allan variance analysis.",
+    "why_it_matters": "Quick offline analysis and simulation of INS/GNSS without compiling anything.",
+    "concepts": [
+      "concept:gnss-ins",
+      "concept:ins",
+      "concept:simulation",
+      "concept:calibration"
+    ],
+    "tags": [
+      "matlab",
+      "octave",
+      "allan-variance",
+      "toolbox"
+    ],
+    "language": "MATLAB",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Works in Octave if no MATLAB licence. Last push 2024, so treat as stable rather than evolving.",
+    "related": [
+      {
+        "id": "repo:i2nav-whu/kf-gins",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:aceinna/gnss-ins-sim",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:chichengcn/gici-open",
+    "kind": "repo",
+    "name": "GICI-LIB",
+    "url": "https://github.com/chichengcn/gici-open",
+    "summary": "GNSS/INS/Camera integrated navigation library supporting a range of GNSS modes (SPP, RTK, PPP and variants) tightly fused with inertial and visual data via factor graph optimization.",
+    "why_it_matters": "One of the most complete open tightly coupled GNSS/INS/vision stacks; good for showing positioning robustness in degraded GNSS.",
+    "concepts": [
+      "concept:gnss-ins",
+      "concept:gnss-rtk-ppp",
+      "concept:vio",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "tightly-coupled",
+      "rtk",
+      "ppp",
+      "factor-graph"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground",
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Large codebase; run on the provided dataset first. Config files are the main interface.",
+    "related": [
+      {
+        "id": "repo:i2nav-whu/ic-gvins",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:tomojitakasu/rtklib",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:weisongwen/graphgnsslib",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:xikunliu-huskit/glio",
+    "kind": "repo",
+    "name": "GLIO",
+    "url": "https://github.com/XikunLiu-huskit/GLIO",
+    "summary": "Tightly coupled GNSS/LiDAR/IMU integration (PolyU) for continuous, drift-free state estimation in urban canyons.",
+    "why_it_matters": "Shows how raw GNSS measurements can be kept in the loop even when only a few satellites are visible.",
+    "concepts": [
+      "concept:gnss-ins",
+      "concept:lidar-slam",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "tightly-coupled",
+      "urban-canyon",
+      "ros"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "ROS 1 research code; needs raw GNSS observables in the data.",
+    "related": [
+      {
+        "id": "repo:weisongwen/graphgnsslib",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:tixiaoshan/lio-sam",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:weisongwen/graphgnsslib",
+    "kind": "repo",
+    "name": "GraphGNSSLib",
+    "url": "https://github.com/weisongwen/GraphGNSSLib",
+    "summary": "Open package for GNSS single point positioning and RTK using factor graph optimization instead of an EKF (PolyU).",
+    "why_it_matters": "Useful base for GNSS factors that can be combined with inertial factors in a single graph.",
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "factor-graph",
+      "rtk",
+      "ceres",
+      "ros"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "ROS 1 + Ceres; uses RTKLIB internals for observation handling.",
+    "related": [
+      {
+        "id": "repo:tomojitakasu/rtklib",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:xikunliu-huskit/glio",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:nmayorov/pyins",
+    "kind": "repo",
+    "name": "pyins",
+    "url": "https://github.com/nmayorov/pyins",
+    "summary": "Python package for modelling and analysing inertial navigation systems: strapdown integration, error models, Kalman-filter aiding and sensor simulation.",
+    "why_it_matters": "Pure-Python INS/GNSS playground for quick outage and sensor-grade studies.",
+    "concepts": [
+      "concept:ins",
+      "concept:gnss-ins",
+      "concept:simulation"
+    ],
+    "tags": [
+      "strapdown",
+      "python",
+      "error-model"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip-installable with docs on readthedocs. Good for scripted what-if plots (tactical vs MEMS IMU drift).",
+    "related": [
+      {
+        "id": "repo:aceinna/gnss-ins-sim",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:nmayorov/allan-variance",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:jbrodovsky/strapdown-rs",
+    "kind": "repo",
+    "name": "strapdown-rs",
+    "url": "https://github.com/jbrodovsky/strapdown-rs",
+    "summary": "Rust implementation of a strapdown inertial navigation system, aimed at simulation and research on INS behaviour.",
+    "why_it_matters": "Lesser-known, actively developed Rust INS; memory-safe option for embedded or simulation pipelines.",
+    "concepts": [
+      "concept:ins",
+      "concept:simulation"
+    ],
+    "tags": [
+      "rust",
+      "strapdown"
+    ],
+    "language": "Rust",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "cargo build; small and readable. Check the crate docs for current API.",
+    "related": [
+      {
+        "id": "repo:nmayorov/pyins",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:px4/px4-ecl",
+    "kind": "repo",
+    "name": "PX4-ECL (archived)",
+    "url": "https://github.com/PX4/PX4-ECL",
+    "summary": "Former home of PX4's estimation and control library including the EKF2 navigation filter; archived after the code moved into PX4-Autopilot.",
+    "why_it_matters": "Historical reference for a widely flown 24-state EKF; use the PX4-Autopilot tree for current code.",
+    "concepts": [
+      "concept:ins",
+      "concept:gnss-ins",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "ekf2",
+      "px4",
+      "archived"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Read-only reference; current EKF2 lives under src/modules/ekf2 in PX4-Autopilot.",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:eliatarasov/eskf",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:je310/eskf",
+    "kind": "repo",
+    "name": "ESKF (je310)",
+    "url": "https://github.com/je310/ESKF",
+    "summary": "Error-state Kalman filter implementation following Sola's quaternion ESKF formulation.",
+    "why_it_matters": "Compact code reference for Sola's equations when writing your own ESKF.",
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "eskf",
+      "quaternion",
+      "sola"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Small codebase, no recent updates; read alongside the Sola report.",
+    "related": [
+      {
+        "id": "repo:eliatarasov/eskf",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:eliatarasov/eskf",
+    "kind": "repo",
+    "name": "ESKF ROS (EliaTarasov)",
+    "url": "https://github.com/EliaTarasov/ESKF",
+    "summary": "ROS error-state Kalman filter derived from PX4/ecl that fuses IMU with GPS, magnetometer, vision pose and optical flow.",
+    "why_it_matters": "PX4-style estimator outside the autopilot, easy to feed from a bag.",
+    "concepts": [
+      "concept:ins",
+      "concept:gnss-ins",
+      "concept:ros"
+    ],
+    "tags": [
+      "eskf",
+      "px4",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1, unmaintained since 2019.",
+    "related": [
+      {
+        "id": "repo:px4/px4-ecl",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:je310/eskf",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ydsf16/imu_gps_localization",
+    "kind": "repo",
+    "name": "imu_gps_localization",
+    "url": "https://github.com/ydsf16/imu_gps_localization",
+    "summary": "Error-state Kalman filter fusing IMU and GPS for localization, small and readable.",
+    "why_it_matters": "Minimal ESKF GNSS/IMU example good for a first hackathon filter.",
+    "concepts": [
+      "concept:gnss-ins",
+      "concept:ins"
+    ],
+    "tags": [
+      "eskf",
+      "ros"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Small ROS project; easy to strip ROS and port.",
+    "related": [
+      {
+        "id": "repo:zm0612/eskf-gps-imu-fusion",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:cggos/imu_x_fusion",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:zm0612/eskf-gps-imu-fusion",
+    "kind": "repo",
+    "name": "eskf-gps-imu-fusion",
+    "url": "https://github.com/zm0612/eskf-gps-imu-fusion",
+    "summary": "ESKF fusing GPS and IMU for improved positioning, with documentation in Chinese.",
+    "why_it_matters": "Another compact ESKF reference with a worked dataset.",
+    "concepts": [
+      "concept:gnss-ins",
+      "concept:ins"
+    ],
+    "tags": [
+      "eskf",
+      "chinese-docs"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Standalone CMake build; docs are in Chinese.",
+    "related": [
+      {
+        "id": "repo:ydsf16/imu_gps_localization",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:cggos/imu_x_fusion",
+    "kind": "repo",
+    "name": "imu_x_fusion",
+    "url": "https://github.com/cggos/imu_x_fusion",
+    "summary": "Loosely coupled IMU + GNSS / 6-DoF odometry fusion with multiple estimators side by side (ESKF, IEKF, UKF variants, MAP).",
+    "why_it_matters": "Lets you compare filter variants on the same inputs with little code.",
+    "concepts": [
+      "concept:gnss-ins",
+      "concept:ins",
+      "concept:sensor-fusion",
+      "concept:ros"
+    ],
+    "tags": [
+      "eskf",
+      "iekf",
+      "ukf",
+      "comparison"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "high",
+    "hackathon_notes": "ROS package; swap estimator by config to compare behaviour.",
+    "related": [
+      {
+        "id": "repo:ydsf16/imu_gps_localization",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:shelfcol/gps_imu_fusion",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:shelfcol/gps_imu_fusion",
+    "kind": "repo",
+    "name": "gps_imu_fusion",
+    "url": "https://github.com/Shelfcol/gps_imu_fusion",
+    "summary": "GPS/IMU fusion examples implemented with ESKF, EKF, UKF and other filters.",
+    "why_it_matters": "Small comparison set of filter types for GNSS/IMU.",
+    "concepts": [
+      "concept:gnss-ins",
+      "concept:ins"
+    ],
+    "tags": [
+      "eskf",
+      "ekf",
+      "ukf"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Inactive since 2022; use as reading material.",
+    "related": [
+      {
+        "id": "repo:cggos/imu_x_fusion",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:rosshartley/invariant-ekf",
+    "kind": "repo",
+    "name": "invariant-ekf (Hartley InEKF)",
+    "url": "https://github.com/RossHartley/invariant-ekf",
+    "summary": "C++ library implementing the invariant EKF for aided inertial navigation, including contact-aided legged-robot state estimation.",
+    "why_it_matters": "Reference InEKF implementation; invariant filters behave better than standard EKF under large initial errors.",
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "inekf",
+      "lie-group",
+      "legged"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Last push 2019; still compiles with Eigen. Pairs with the Hartley 2019 paper.",
+    "related": [
+      {
+        "id": "repo:umich-curly/drift",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:contagon/iekf",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:umich-curly/drift",
+    "kind": "repo",
+    "name": "DRIFT",
+    "url": "https://github.com/UMich-CURLY/drift",
+    "summary": "Symmetry-preserving (invariant) state estimation library from University of Michigan for legged, wheeled and other robots, with real-time ROS support.",
+    "why_it_matters": "Maintained InEKF stack for proprioceptive dead reckoning when GNSS and vision are unavailable.",
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion",
+      "concept:ground-vehicle-nav",
+      "concept:ros"
+    ],
+    "tags": [
+      "inekf",
+      "dead-reckoning",
+      "legged",
+      "wheeled"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Has ROS examples; try on a wheeled robot bag for GNSS-free odometry.",
+    "related": [
+      {
+        "id": "repo:rosshartley/invariant-ekf",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:contagon/iekf",
+    "kind": "repo",
+    "name": "iekf (contagon)",
+    "url": "https://github.com/contagon/iekf",
+    "summary": "Invariant Kalman filter implementation on SE(2) and SE(3).",
+    "why_it_matters": "Small Python-side InEKF example for learning.",
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "inekf",
+      "se3",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Small research repo; use for learning the algorithm.",
+    "related": [
+      {
+        "id": "repo:rosshartley/invariant-ekf",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:aceinna/gnss-ins-sim",
+    "kind": "repo",
+    "name": "gnss-ins-sim",
+    "url": "https://github.com/Aceinna/gnss-ins-sim",
+    "summary": "Aceinna's GNSS/INS simulator: generates trajectories and corrupted IMU/GNSS/magnetometer data from sensor error models and runs user algorithms on it.",
+    "why_it_matters": "Generate controlled IMU data for outage and sensor-grade experiments without hardware.",
+    "concepts": [
+      "concept:simulation",
+      "concept:ins",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "imu-simulation",
+      "trajectory",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Pure Python; define a motion profile CSV and sensor grade, then plug your filter in as an algorithm.",
+    "related": [
+      {
+        "id": "repo:nmayorov/pyins",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:rodralez/navego",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ori-drs/allan_variance_ros",
+    "kind": "repo",
+    "name": "allan_variance_ros",
+    "url": "https://github.com/ori-drs/allan_variance_ros",
+    "summary": "ROS tool (Oxford DRS) that computes Allan deviation plots from an IMU bag and outputs noise parameters in a Kalibr-compatible format.",
+    "why_it_matters": "Needed to get realistic IMU noise values for any filter or VIO setup.",
+    "concepts": [
+      "concept:calibration",
+      "concept:ins",
+      "concept:ros"
+    ],
+    "tags": [
+      "allan-variance",
+      "imu-noise",
+      "kalibr"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Record a few hours of static IMU data before the event; the analysis itself is quick.",
+    "related": [
+      {
+        "id": "repo:gaowenliang/imu_utils",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:ethz-asl/kalibr",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:gaowenliang/imu_utils",
+    "kind": "repo",
+    "name": "imu_utils",
+    "url": "https://github.com/gaowenliang/imu_utils",
+    "summary": "ROS package for analysing IMU performance with Allan variance to estimate noise and bias instability.",
+    "why_it_matters": "Common alternative to allan_variance_ros in VIO workflows.",
+    "concepts": [
+      "concept:calibration",
+      "concept:ins",
+      "concept:ros"
+    ],
+    "tags": [
+      "allan-variance",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS 1, depends on Ceres; needs long static logs.",
+    "related": [
+      {
+        "id": "repo:ori-drs/allan_variance_ros",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:rpng/kalibr_allan",
+    "kind": "repo",
+    "name": "kalibr_allan (archived)",
+    "url": "https://github.com/rpng/kalibr_allan",
+    "summary": "MATLAB scripts producing IMU Allan standard deviation charts and Kalibr-ready noise values.",
+    "why_it_matters": "Historical reference for IMU noise characterisation.",
+    "concepts": [
+      "concept:calibration",
+      "concept:ins"
+    ],
+    "tags": [
+      "allan-variance",
+      "matlab",
+      "archived"
+    ],
+    "language": "MATLAB",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Archived; prefer allan_variance_ros.",
+    "related": [
+      {
+        "id": "repo:ori-drs/allan_variance_ros",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:nmayorov/allan-variance",
+    "kind": "repo",
+    "name": "allan-variance (Python)",
+    "url": "https://github.com/nmayorov/allan-variance",
+    "summary": "Small Python package computing Allan variance and fitting standard noise parameters.",
+    "why_it_matters": "Quick no-ROS Allan analysis in a notebook.",
+    "concepts": [
+      "concept:calibration",
+      "concept:ins"
+    ],
+    "tags": [
+      "allan-variance",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install; feed a numpy array of static IMU samples.",
+    "related": [
+      {
+        "id": "repo:nmayorov/pyins",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:ori-drs/allan_variance_ros",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:jaffarrell/av-matlab-sw",
+    "kind": "repo",
+    "name": "AV-Matlab-SW",
+    "url": "https://github.com/jaffarrell/AV-Matlab-SW",
+    "summary": "MATLAB software for Allan variance calculations accompanying a published article on IMU noise characterisation (Farrell et al.).",
+    "why_it_matters": "Deeper treatment of Allan variance pitfalls than the typical tool.",
+    "concepts": [
+      "concept:calibration",
+      "concept:ins"
+    ],
+    "tags": [
+      "allan-variance",
+      "matlab"
+    ],
+    "language": "MATLAB",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Read with the paper; MATLAB required.",
+    "related": [
+      {
+        "id": "repo:nmayorov/allan-variance",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ethz-asl/kalibr",
+    "kind": "repo",
+    "name": "Kalibr",
+    "url": "https://github.com/ethz-asl/kalibr",
+    "summary": "ETH ASL calibration toolbox for multi-camera and camera-IMU systems (extrinsics and time offset), plus IMU intrinsics and rolling-shutter calibration.",
+    "why_it_matters": "Standard way to calibrate a camera-IMU rig before running any VIO.",
+    "concepts": [
+      "concept:calibration",
+      "concept:vio",
+      "concept:ros"
+    ],
+    "tags": [
+      "camera-imu",
+      "extrinsics",
+      "time-offset"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Use the Docker image to avoid ROS 1 build pain; print an AprilGrid target in advance.",
+    "related": [
+      {
+        "id": "repo:unsigned-long/ikalibr",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:ori-drs/allan_variance_ros",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:rpng/open_vins",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:unsigned-long/ikalibr",
+    "kind": "repo",
+    "name": "iKalibr",
+    "url": "https://github.com/Unsigned-Long/iKalibr",
+    "summary": "Continuous-time, targetless multi-sensor calibration framework (IMU, cameras, LiDAR, radar, RGB-D, event cameras) estimating extrinsics and time offsets (IEEE T-RO 2025).",
+    "why_it_matters": "Calibrate a full heterogeneous rig, including radar, in one tool.",
+    "concepts": [
+      "concept:calibration",
+      "concept:sensor-fusion",
+      "concept:ros"
+    ],
+    "tags": [
+      "spatiotemporal",
+      "continuous-time",
+      "radar",
+      "lidar"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS-based with many dependencies; budget setup time.",
+    "related": [
+      {
+        "id": "repo:ethz-asl/kalibr",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:april-zju/lidar_imu_calib",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:kyle-ak/imu_tk",
+    "kind": "repo",
+    "name": "imu_tk",
+    "url": "https://github.com/Kyle-ak/imu_tk",
+    "summary": "Tool for calibrating IMU intrinsics (misalignment, scale factors and biases of accelerometer and gyro) from a sequence of static poses, without a turntable.",
+    "why_it_matters": "Cheap way to improve MEMS IMU accuracy before deploying a filter.",
+    "concepts": [
+      "concept:calibration",
+      "concept:ins"
+    ],
+    "tags": [
+      "imu-intrinsics",
+      "multi-position"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs Ceres; collect static poses in many orientations with short rotations between.",
+    "related": [
+      {
+        "id": "repo:ethz-asl/kalibr",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:chennuo0125-hit/lidar_imu_calib",
+    "kind": "repo",
+    "name": "lidar_imu_calib",
+    "url": "https://github.com/chennuo0125-HIT/lidar_imu_calib",
+    "summary": "Automatic calibration of the extrinsic rotation between a 3D LiDAR and an IMU.",
+    "why_it_matters": "Quick LiDAR-IMU rotation estimate for LIO setups.",
+    "concepts": [
+      "concept:calibration",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "lidar-imu",
+      "extrinsics",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Inactive since 2021; rotation only.",
+    "related": [
+      {
+        "id": "repo:april-zju/lidar_imu_calib",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:hku-mars/lidar_imu_init",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:april-zju/lidar_imu_calib",
+    "kind": "repo",
+    "name": "LI-Calib",
+    "url": "https://github.com/APRIL-ZJU/lidar_IMU_calib",
+    "summary": "Targetless LiDAR-IMU calibration based on continuous-time batch estimation (IROS 2020).",
+    "why_it_matters": "Full LiDAR-IMU extrinsics without a target.",
+    "concepts": [
+      "concept:calibration",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "lidar-imu",
+      "continuous-time",
+      "b-spline"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "ROS 1; needs a sequence with rich excitation.",
+    "related": [
+      {
+        "id": "repo:chennuo0125-hit/lidar_imu_calib",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:unsigned-long/ikalibr",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:hku-mars/lidar_imu_init",
+    "kind": "repo",
+    "name": "LiDAR_IMU_Init",
+    "url": "https://github.com/hku-mars/LiDAR_IMU_Init",
+    "summary": "Real-time LiDAR-inertial initialization estimating extrinsics, time offset, gravity and IMU bias online (IROS 2022).",
+    "why_it_matters": "Gets a LIO system calibrated in the field without a separate offline step.",
+    "concepts": [
+      "concept:calibration",
+      "concept:lidar-slam",
+      "concept:ins"
+    ],
+    "tags": [
+      "lidar-imu",
+      "online-init",
+      "fast-lio"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground",
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Builds like FAST_LIO; feed a bag with aggressive motion at start.",
+    "related": [
+      {
+        "id": "repo:hku-mars/fast_lio",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:april-zju/lidar_imu_calib",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:mayitzin/ahrs",
+    "kind": "repo",
+    "name": "AHRS (Python)",
+    "url": "https://github.com/Mayitzin/ahrs",
+    "summary": "Python collection of attitude estimation algorithms (Madgwick, Mahony, complementary, EKF, QUEST, TRIAD and more) plus utilities such as the World Magnetic Model and WGS84.",
+    "why_it_matters": "One import to compare attitude filters on your IMU log.",
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion",
+      "concept:geodesy"
+    ],
+    "tags": [
+      "ahrs",
+      "madgwick",
+      "mahony",
+      "wmm"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install ahrs; numpy arrays in, quaternions out.",
+    "related": [
+      {
+        "id": "repo:xiotechnologies/fusion",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:morgil/madgwick_py",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:xiotechnologies/fusion",
+    "kind": "repo",
+    "name": "x-io Fusion",
+    "url": "https://github.com/xioTechnologies/Fusion",
+    "summary": "x-io Technologies' C AHRS library (revised Madgwick-style algorithm) with gyro offset correction, acceleration and magnetic disturbance rejection, and Python bindings.",
+    "why_it_matters": "Production-grade embedded attitude filter with disturbance rejection, from the Madgwick filter's originators.",
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "ahrs",
+      "madgwick",
+      "embedded",
+      "c"
+    ],
+    "language": "C",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Drop the C files into firmware or pip install imufusion for Python prototyping.",
+    "related": [
+      {
+        "id": "repo:mayitzin/ahrs",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:arduino-libraries/madgwickahrs",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:arduino-libraries/madgwickahrs",
+    "kind": "repo",
+    "name": "MadgwickAHRS (Arduino)",
+    "url": "https://github.com/arduino-libraries/MadgwickAHRS",
+    "summary": "Official Arduino library implementing the Madgwick AHRS filter.",
+    "why_it_matters": "Fastest hardware demo of attitude estimation on a microcontroller.",
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "ahrs",
+      "arduino",
+      "madgwick"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Install from the Arduino library manager; set sample rate correctly.",
+    "related": [
+      {
+        "id": "repo:xiotechnologies/fusion",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:morgil/madgwick_py",
+    "kind": "repo",
+    "name": "madgwick_py",
+    "url": "https://github.com/morgil/madgwick_py",
+    "summary": "Minimal Python implementation of Madgwick's IMU and AHRS algorithms.",
+    "why_it_matters": "Readable algorithm reference.",
+    "concepts": [
+      "concept:ins"
+    ],
+    "tags": [
+      "ahrs",
+      "madgwick",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Tiny, unmaintained; use for reading.",
+    "related": [
+      {
+        "id": "repo:mayitzin/ahrs",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ccnyroboticslab/imu_tools",
+    "kind": "repo",
+    "name": "imu_tools",
+    "url": "https://github.com/CCNYRoboticsLab/imu_tools",
+    "summary": "ROS tools for IMUs: Madgwick and complementary orientation filters and an RViz IMU visualisation plugin.",
+    "why_it_matters": "Standard ROS orientation filter feeding robot_localization.",
+    "concepts": [
+      "concept:ins",
+      "concept:ros"
+    ],
+    "tags": [
+      "ahrs",
+      "ros2",
+      "madgwick",
+      "complementary"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "apt install on ROS 2.",
+    "related": [
+      {
+        "id": "repo:cra-ros-pkg/robot_localization",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:hcarlsso/zupt-aided-ins",
+    "kind": "repo",
+    "name": "ZUPT-aided INS (OpenShoe MATLAB)",
+    "url": "https://github.com/hcarlsso/ZUPT-aided-INS",
+    "summary": "MATLAB implementation of the OpenShoe zero-velocity-aided foot-mounted INS with several zero-velocity detectors (SHOE, acceleration variance and magnitude, angular rate energy).",
+    "why_it_matters": "Reference for dismounted soldier / first responder navigation without GNSS.",
+    "concepts": [
+      "concept:indoor-pedestrian",
+      "concept:ins"
+    ],
+    "tags": [
+      "zupt",
+      "foot-mounted",
+      "openshoe"
+    ],
+    "language": "MATLAB",
+    "domains": [
+      "dismounted"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Works with any foot-mounted IMU log; sample data included. No updates since 2021.",
+    "related": [
+      {
+        "id": "repo:utiasstars/pyshoe",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:utiasstars/pyshoe",
+    "kind": "repo",
+    "name": "PyShoe",
+    "url": "https://github.com/utiasSTARS/pyshoe",
+    "summary": "Open Python foot-mounted INS from UTIAS with a public inertial dataset and several zero-velocity detectors, including learned ones.",
+    "why_it_matters": "Ready-to-run dismounted navigation pipeline with data for evaluation.",
+    "concepts": [
+      "concept:indoor-pedestrian",
+      "concept:ins",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "zupt",
+      "foot-mounted",
+      "dataset"
+    ],
+    "language": "Python",
+    "domains": [
+      "dismounted"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Python; dataset download needed. Strap an IMU to a boot and compare detectors.",
+    "related": [
+      {
+        "id": "repo:hcarlsso/zupt-aided-ins",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:utiasstars/liegroups",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:sachini/ronin",
+    "kind": "repo",
+    "name": "RoNIN",
+    "url": "https://github.com/Sachini/ronin",
+    "summary": "Robust Neural Inertial Navigation: smartphone IMU dataset and baseline networks (ResNet, LSTM, TCN) regressing pedestrian velocity from IMU.",
+    "why_it_matters": "Main benchmark and baselines for learned pedestrian inertial navigation.",
+    "concepts": [
+      "concept:indoor-pedestrian",
+      "concept:edge-ai",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "learned-inertial",
+      "smartphone",
+      "pytorch"
+    ],
+    "language": "Python",
+    "domains": [
+      "dismounted"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "PyTorch; dataset is large. Pretrained models give a quick baseline.",
+    "related": [
+      {
+        "id": "repo:cathias/tlio",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:royinajayanth/eqnio",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:cathias/tlio",
+    "kind": "repo",
+    "name": "TLIO",
+    "url": "https://github.com/CathIAS/TLIO",
+    "summary": "Tight Learned Inertial Odometry: a network regresses displacement and uncertainty from IMU windows, fused in a stochastic-cloning EKF.",
+    "why_it_matters": "Strong blueprint for combining a learned motion prior with a classical filter.",
+    "concepts": [
+      "concept:indoor-pedestrian",
+      "concept:ins",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "learned-inertial",
+      "ekf",
+      "pytorch"
+    ],
+    "language": "Python",
+    "domains": [
+      "dismounted"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Training data is head-mounted; expect domain gap on other platforms.",
+    "related": [
+      {
+        "id": "repo:sachini/ronin",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:royinajayanth/eqnio",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:mbrossar/ai-imu-dr",
+    "kind": "repo",
+    "name": "AI-IMU Dead-Reckoning",
+    "url": "https://github.com/mbrossar/ai-imu-dr",
+    "summary": "Car dead reckoning from IMU only, using an invariant EKF whose noise covariances are adapted by a neural network, evaluated on KITTI.",
+    "why_it_matters": "Ground vehicle navigation through GNSS outages using only the IMU.",
+    "concepts": [
+      "concept:ins",
+      "concept:ground-vehicle-nav",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "inekf",
+      "learned-covariance",
+      "kitti"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "PyTorch; KITTI raw data needed. Clear demo of IMU-only drift reduction.",
+    "related": [
+      {
+        "id": "repo:mbrossar/denoise-imu-gyro",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:rosshartley/invariant-ekf",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:mbrossar/denoise-imu-gyro",
+    "kind": "repo",
+    "name": "Denoise IMU Gyro",
+    "url": "https://github.com/mbrossar/denoise-imu-gyro",
+    "summary": "CNN that denoises low-cost gyroscope signals to improve attitude estimation.",
+    "why_it_matters": "Shows learned correction for cheap MEMS gyros.",
+    "concepts": [
+      "concept:ins",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "cnn",
+      "gyro",
+      "attitude"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Inactive since 2020; trained on EuRoC/TUM-VI.",
+    "related": [
+      {
+        "id": "repo:mbrossar/ai-imu-dr",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:haleqiu/airimu",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:haleqiu/airimu",
+    "kind": "repo",
+    "name": "AirIMU",
+    "url": "https://github.com/haleqiu/AirIMU",
+    "summary": "Learns IMU error correction and uncertainty with a network, combined with differentiable IMU preintegration (CMU AirLab).",
+    "why_it_matters": "Learned IMU correction that feeds uncertainty into classical estimators.",
+    "concepts": [
+      "concept:ins",
+      "concept:edge-ai",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "learned-inertial",
+      "pypose",
+      "uncertainty"
+    ],
+    "language": "Python",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "PyTorch and PyPose; pretrained models available.",
+    "related": [
+      {
+        "id": "repo:air-io/air-io",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:mbrossar/denoise-imu-gyro",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:air-io/air-io",
+    "kind": "repo",
+    "name": "AirIO",
+    "url": "https://github.com/Air-IO/Air-IO",
+    "summary": "Learning-based inertial odometry for UAVs that improves feature observability by changing the IMU data representation (IEEE RA-L 2025).",
+    "why_it_matters": "Recent IMU-only drone odometry for GNSS-denied flight.",
+    "concepts": [
+      "concept:ins",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "learned-inertial",
+      "uav",
+      "pytorch"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Recent research code; check README for datasets.",
+    "related": [
+      {
+        "id": "repo:haleqiu/airimu",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:uzh-rpg/learned_inertial_model_odometry",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:royinajayanth/eqnio",
+    "kind": "repo",
+    "name": "EqNIO",
+    "url": "https://github.com/RoyinaJayanth/EqNIO",
+    "summary": "Subequivariant neural inertial odometry (ICLR 2025) that canonicalises IMU data so networks generalise across orientations; applied on top of TLIO and RoNIN.",
+    "why_it_matters": "State of the art learned inertial odometry with released code.",
+    "concepts": [
+      "concept:indoor-pedestrian",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "learned-inertial",
+      "equivariance"
+    ],
+    "language": "Python",
+    "domains": [
+      "dismounted"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Builds on TLIO/RoNIN pipelines; set those up first.",
+    "related": [
+      {
+        "id": "repo:cathias/tlio",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:sachini/ronin",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:uzh-rpg/learned_inertial_model_odometry",
+    "kind": "repo",
+    "name": "Learned Inertial Odometry for Drone Racing",
+    "url": "https://github.com/uzh-rpg/learned_inertial_model_odometry",
+    "summary": "UZH RPG code fusing a learned inertial displacement model with an EKF for drone racing state estimation.",
+    "why_it_matters": "Shows learned IO on aggressive UAV flight.",
+    "concepts": [
+      "concept:ins",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "learned-inertial",
+      "drone-racing",
+      "ekf"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Research code; datasets from UZH.",
+    "related": [
+      {
+        "id": "repo:air-io/air-io",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:artivis/manif",
+    "kind": "repo",
+    "name": "manif",
+    "url": "https://github.com/artivis/manif",
+    "summary": "Header-only C++11 library for Lie theory (SO2, SE2, SO3, SE3, SE_2(3) and more) with Jacobians, built around Sola's micro Lie theory paper; Python bindings available.",
+    "why_it_matters": "Correct on-manifold Jacobians for custom ESKF or factor-graph code.",
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:ins"
+    ],
+    "tags": [
+      "lie-group",
+      "jacobians",
+      "header-only"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Header-only; Python bindings via pip/conda. Use alongside the micro Lie theory paper.",
+    "related": [
+      {
+        "id": "repo:strasdat/sophus",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:decargroup/navlie",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:strasdat/sophus",
+    "kind": "repo",
+    "name": "Sophus",
+    "url": "https://github.com/strasdat/Sophus",
+    "summary": "C++ Lie group library (SO2, SE2, SO3, SE3, Sim3) built on Eigen, used in many SLAM and VIO systems.",
+    "why_it_matters": "De facto Lie group dependency in SLAM codebases.",
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "lie-group",
+      "eigen"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Header-mostly; widely packaged.",
+    "related": [
+      {
+        "id": "repo:artivis/manif",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:utiasstars/liegroups",
+    "kind": "repo",
+    "name": "liegroups (Python)",
+    "url": "https://github.com/utiasSTARS/liegroups",
+    "summary": "Python implementation of SO2, SE2, SO3 and SE3 matrix Lie groups with numpy and PyTorch backends.",
+    "why_it_matters": "Lie group operations inside PyTorch for learned estimators.",
+    "concepts": [
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "lie-group",
+      "pytorch",
+      "numpy"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "pip install from source; small and stable.",
+    "related": [
+      {
+        "id": "repo:artivis/manif",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:utiasstars/pyshoe",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:decargroup/navlie",
+    "kind": "repo",
+    "name": "navlie",
+    "url": "https://github.com/decargroup/navlie",
+    "summary": "Python state estimation package on Lie groups (McGill DECAR): EKF, iterated EKF, sigma-point filters, batch estimation, and IMU kinematics models.",
+    "why_it_matters": "Fastest way to prototype on-manifold INS filters in Python.",
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:ins"
+    ],
+    "tags": [
+      "lie-group",
+      "ekf",
+      "iekf",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install; has IMU and GNSS-like examples.",
+    "related": [
+      {
+        "id": "repo:rlabbe/filterpy",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:artivis/manif",
+        "rel": "alternative_to"
+      }
+    ]
+  }
+]

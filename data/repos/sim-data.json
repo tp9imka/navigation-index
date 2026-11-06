@@ -1,0 +1,1903 @@
+[
+  {
+    "id": "repo:gazebosim/gz-sim",
+    "kind": "repo",
+    "name": "Gazebo Sim (gz-sim)",
+    "url": "https://github.com/gazebosim/gz-sim",
+    "summary": "Current-generation Gazebo robotics simulator with pluggable physics, rendering and a large sensor library (IMU, GPS/NavSat, lidar, cameras, magnetometer, altimeter). Successor to Gazebo Classic.",
+    "why_it_matters": "The default SITL backend for both PX4 and ArduPilot today; the place to inject sensor noise, GNSS dropouts and degraded conditions into a full autopilot stack.",
+    "concepts": [
+      "concept:simulation",
+      "concept:autopilot",
+      "concept:ros"
+    ],
+    "tags": [
+      "gazebo",
+      "sitl",
+      "sensors",
+      "physics"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground",
+      "maritime",
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Install a binary release (Harmonic or later) plus ros_gz. Pair with PX4 'make px4_sitl gz_x500' or ardupilot_gazebo. GPU helps for camera sensors; headless server mode works for CI.",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:gazebosim/ros_gz",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot_gazebo",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:px4/px4-gazebo-models",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:gazebosim/ros_gz",
+    "kind": "repo",
+    "name": "ros_gz bridge",
+    "url": "https://github.com/gazebosim/ros_gz",
+    "summary": "Bridge packages that relay topics, services and clock between Gazebo Sim transport and ROS 1/ROS 2.",
+    "why_it_matters": "Needed whenever a ROS 2 navigation or SLAM stack has to consume simulated sensor streams from Gazebo.",
+    "concepts": [
+      "concept:simulation",
+      "concept:ros"
+    ],
+    "tags": [
+      "gazebo",
+      "ros2",
+      "bridge"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Use parameter_bridge with a YAML of topic mappings. Match the ros_gz branch to your ROS 2 distro and Gazebo release or builds fail.",
+    "related": [
+      {
+        "id": "repo:gazebosim/gz-sim",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:px4/px4-sitl_gazebo-classic",
+    "kind": "repo",
+    "name": "PX4 SITL Gazebo Classic plugins",
+    "url": "https://github.com/PX4/PX4-SITL_gazebo-classic",
+    "summary": "Plugins, vehicle models and worlds that connect PX4 SITL/HITL to Gazebo Classic, including GPS, IMU, magnetometer, barometer and optical-flow plugins.",
+    "why_it_matters": "Large existing corpus of tutorials and research setups still target it; the GPS plugin is a common starting point for spoofing and jamming experiments in sim.",
+    "concepts": [
+      "concept:simulation",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "px4",
+      "gazebo-classic",
+      "sitl",
+      "hitl"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground",
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Works with Ubuntu 20.04/22.04 and Gazebo 11. Gazebo Classic has reached end of life, so prefer gz-sim for new builds unless you need a specific legacy model.",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:gazebosim/gz-sim",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:px4/px4-gazebo-models",
+    "kind": "repo",
+    "name": "PX4 Gazebo models",
+    "url": "https://github.com/PX4/PX4-gazebo-models",
+    "summary": "Model and world repository for the new Gazebo, used by PX4 SITL targets such as gz_x500.",
+    "why_it_matters": "Shows how PX4 vehicles and sensors are described for gz-sim; the starting point for adding custom sensors to a PX4 airframe.",
+    "concepts": [
+      "concept:simulation",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "px4",
+      "gazebo",
+      "models",
+      "sdf"
+    ],
+    "language": "Python",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Fetched automatically by PX4 SITL. Fork and edit SDF to add cameras or change sensor noise.",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:gazebosim/gz-sim",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:px4/jmavsim",
+    "kind": "repo",
+    "name": "jMAVSim",
+    "url": "https://github.com/PX4/jMAVSim",
+    "summary": "Lightweight Java multirotor simulator that speaks MAVLink to PX4, without a 3D-world physics engine.",
+    "why_it_matters": "Fastest way to get a PX4 SITL quad flying for MAVLink, GCS or mission-logic work when sensors and worlds do not matter.",
+    "concepts": [
+      "concept:simulation",
+      "concept:mavlink-gcs"
+    ],
+    "tags": [
+      "px4",
+      "mavlink",
+      "java",
+      "sitl"
+    ],
+    "language": "Java",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Runs with 'make px4_sitl jmavsim'. Needs a JDK. No cameras or lidar, so not for perception work.",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:gazebosim/gz-sim",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ardupilot/ardupilot_gazebo",
+    "kind": "repo",
+    "name": "ArduPilot Gazebo plugin",
+    "url": "https://github.com/ArduPilot/ardupilot_gazebo",
+    "summary": "Plugins and models connecting ArduPilot SITL to Gazebo Sim over the JSON SITL interface.",
+    "why_it_matters": "Brings ArduPilot vehicles (copter, plane, rover, boat) into gz-sim with realistic sensors for nav and autonomy testing.",
+    "concepts": [
+      "concept:simulation",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "ardupilot",
+      "gazebo",
+      "sitl"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground",
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Build against your Gazebo release, run sim_vehicle.py with '-f gazebo-iris --model JSON'. Follow the README's environment variables for model paths.",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:gazebosim/gz-sim",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ardupilot/sitl_models",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:ardupilot/sitl_models",
+    "kind": "repo",
+    "name": "ArduPilot SITL Models",
+    "url": "https://github.com/ArduPilot/SITL_Models",
+    "summary": "Collection of aircraft and vehicle models and parameter files for ArduPilot SITL across several simulator backends.",
+    "why_it_matters": "Ready-made airframes (including fixed-wing and VTOL) save hours when a hackathon scenario needs something other than a quadcopter.",
+    "concepts": [
+      "concept:simulation",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "ardupilot",
+      "sitl",
+      "models"
+    ],
+    "language": "HTML",
+    "domains": [
+      "air",
+      "ground",
+      "maritime"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Pick a model folder and follow its readme; each lists the backend it targets.",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot_gazebo",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:microsoft/airsim",
+    "kind": "repo",
+    "name": "AirSim",
+    "url": "https://github.com/microsoft/AirSim",
+    "summary": "Unreal Engine based simulator for drones and cars with camera, depth, lidar, IMU, GPS, barometer and magnetometer models and a Python/C++ API. Microsoft wound down development and pointed users to Project AirSim.",
+    "why_it_matters": "Still the most widely used photorealistic drone sim in research papers; many visual-nav and geolocalization datasets were rendered with it.",
+    "concepts": [
+      "concept:simulation",
+      "concept:vio"
+    ],
+    "tags": [
+      "unreal",
+      "airsim",
+      "photorealistic",
+      "px4"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Prebuilt binary environments are the quickest path. Building from source requires a matching old Unreal version. For new work prefer Colosseum or Project AirSim.",
+    "related": [
+      {
+        "id": "repo:codexlabsllc/colosseum",
+        "rel": "fork_of"
+      },
+      {
+        "id": "repo:iamaisim/projectairsim",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:codexlabsllc/colosseum",
+    "kind": "repo",
+    "name": "Colosseum (AirSim fork)",
+    "url": "https://github.com/CodexLabsLLC/Colosseum",
+    "summary": "Community fork of AirSim that moved it to newer Unreal Engine 5 releases. The GitHub repository is now marked archived.",
+    "why_it_matters": "Was the main path to run AirSim on UE5; useful as a reference port even though it is no longer maintained.",
+    "concepts": [
+      "concept:simulation"
+    ],
+    "tags": [
+      "airsim",
+      "unreal5",
+      "fork"
+    ],
+    "language": "C++",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Archived on GitHub, so expect unanswered issues. Use only if you need its UE5 changes specifically.",
+    "related": [
+      {
+        "id": "repo:microsoft/airsim",
+        "rel": "fork_of"
+      },
+      {
+        "id": "repo:iamaisim/projectairsim",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:iamaisim/projectairsim",
+    "kind": "repo",
+    "name": "Project AirSim",
+    "url": "https://github.com/iamaisim/ProjectAirSim",
+    "summary": "Open-source release of Project AirSim, the rewrite and successor of AirSim, for building and testing autonomous aerial systems in high-fidelity Unreal environments.",
+    "why_it_matters": "The actively developed line of the AirSim family, relevant for photorealistic aerial perception and autonomy testing.",
+    "concepts": [
+      "concept:simulation"
+    ],
+    "tags": [
+      "airsim",
+      "unreal",
+      "autonomy"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Check its docs for supported Unreal version and OS. Heavier setup than AirSim binaries; budget several hours.",
+    "related": [
+      {
+        "id": "repo:microsoft/airsim",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:codexlabsllc/colosseum",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:uzh-rpg/flightmare",
+    "kind": "repo",
+    "name": "Flightmare",
+    "url": "https://github.com/uzh-rpg/flightmare",
+    "summary": "Quadrotor simulator from UZH RPG with a decoupled Unity renderer and fast dynamics, aimed at RL and vision-based agile flight.",
+    "why_it_matters": "Lets you train vision-based or state-based quadrotor policies with many parallel environments.",
+    "concepts": [
+      "concept:simulation",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "quadrotor",
+      "unity",
+      "rl",
+      "agile-flight"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Last updated 2024 and ROS1-oriented; expect dependency fixing. Unity renderer binaries are separate downloads.",
+    "related": [
+      {
+        "id": "repo:mit-aera/flightgoggles",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:learnsyslab/gym-pybullet-drones",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:mit-aera/flightgoggles",
+    "kind": "repo",
+    "name": "FlightGoggles",
+    "url": "https://github.com/mit-aera/FlightGoggles",
+    "summary": "Unity3D and ROS framework from MIT for photorealistic camera rendering with real or simulated vehicle dynamics in the loop.",
+    "why_it_matters": "Pioneered vehicle-in-the-loop rendering: fly a real drone in a mocap room while feeding it synthetic imagery.",
+    "concepts": [
+      "concept:simulation",
+      "concept:vio"
+    ],
+    "tags": [
+      "unity",
+      "hil",
+      "photorealistic",
+      "ros"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Not actively maintained since 2024; ROS1. Mostly of interest as a reference or alongside the Blackbird dataset.",
+    "related": [
+      {
+        "id": "repo:mit-aera/blackbird-dataset",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:uzh-rpg/flightmare",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:pegasussimulator/pegasussimulator",
+    "kind": "repo",
+    "name": "Pegasus Simulator",
+    "url": "https://github.com/PegasusSimulator/PegasusSimulator",
+    "summary": "Framework on top of NVIDIA Isaac Sim for simulating multirotors with PX4 in the loop and Python-defined vehicles and sensors.",
+    "why_it_matters": "Gives PX4 users photorealistic, GPU-accelerated Omniverse rendering while keeping the real autopilot stack.",
+    "concepts": [
+      "concept:simulation",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "isaac-sim",
+      "px4",
+      "omniverse",
+      "multirotor"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs an RTX GPU and an Isaac Sim install; match Pegasus release to the Isaac Sim version listed in its docs.",
+    "related": [
+      {
+        "id": "repo:isaac-sim/isaacsim",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:isaac-sim/isaacsim",
+    "kind": "repo",
+    "name": "NVIDIA Isaac Sim",
+    "url": "https://github.com/isaac-sim/IsaacSim",
+    "summary": "NVIDIA's Omniverse-based robot simulator, now open source, with RTX sensor simulation (cameras, lidar, IMU) and ROS 2 bridges.",
+    "why_it_matters": "Base layer for Pegasus, OmniDrones and Isaac Lab; strong for synthetic data generation for perception models.",
+    "concepts": [
+      "concept:simulation",
+      "concept:ros",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "omniverse",
+      "nvidia",
+      "rtx",
+      "synthetic-data"
+    ],
+    "language": "Python",
+    "domains": [
+      "air",
+      "ground",
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "RTX GPU and a lot of disk required. Use the prebuilt container or pip install rather than building from source in a hackathon.",
+    "related": [
+      {
+        "id": "repo:isaac-sim/isaaclab",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:pegasussimulator/pegasussimulator",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:btx0424/omnidrones",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:isaac-sim/isaaclab",
+    "kind": "repo",
+    "name": "Isaac Lab",
+    "url": "https://github.com/isaac-sim/IsaacLab",
+    "summary": "Robot-learning framework on Isaac Sim for massively parallel RL and imitation learning, with navigation and locomotion task examples.",
+    "why_it_matters": "Fast route to training learned navigation or locomotion policies with thousands of parallel simulated robots.",
+    "concepts": [
+      "concept:simulation",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "rl",
+      "isaac-sim",
+      "gpu",
+      "learning"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground",
+      "air",
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Install via pip on a supported Isaac Sim version. Start from an existing nav task config rather than writing environments from scratch.",
+    "related": [
+      {
+        "id": "repo:isaac-sim/isaacsim",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:ntnu-arl/aerial_gym_simulator",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:carla-simulator/carla",
+    "kind": "repo",
+    "name": "CARLA",
+    "url": "https://github.com/carla-simulator/carla",
+    "summary": "Open-source autonomous-driving simulator on Unreal with camera, lidar, radar, GNSS and IMU sensors, traffic and weather control.",
+    "why_it_matters": "Standard ground-vehicle testbed for localization and planning under weather, night and sensor-degradation conditions.",
+    "concepts": [
+      "concept:simulation",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "driving",
+      "unreal",
+      "lidar",
+      "radar",
+      "gnss"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Use packaged releases and the Python client; the ROS 2 bridge is separate. A decent GPU is required.",
+    "related": []
+  },
+  {
+    "id": "repo:ethz-asl/rotors_simulator",
+    "kind": "repo",
+    "name": "RotorS",
+    "url": "https://github.com/ethz-asl/rotors_simulator",
+    "summary": "Gazebo Classic MAV simulator from ETH ASL with multirotor models, IMU and odometry sensor plugins and example controllers.",
+    "why_it_matters": "Classic reference for MAV sim used in many VIO and planning papers; its IMU noise models are still frequently copied.",
+    "concepts": [
+      "concept:simulation"
+    ],
+    "tags": [
+      "gazebo-classic",
+      "ros1",
+      "mav"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "ROS1 and Gazebo Classic only; use for reproducing older papers rather than new builds.",
+    "related": [
+      {
+        "id": "repo:gazebosim/gz-sim",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ntnu-arl/aerial_gym_simulator",
+    "kind": "repo",
+    "name": "Aerial Gym Simulator",
+    "url": "https://github.com/ntnu-arl/aerial_gym_simulator",
+    "summary": "GPU-parallel aerial-robot simulator from NTNU ARL built on NVIDIA Isaac Gym, with depth/range sensors and RL navigation examples.",
+    "why_it_matters": "Train learned obstacle avoidance and navigation for drones at scale with simulated depth cameras and lidar.",
+    "concepts": [
+      "concept:simulation",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "isaac-gym",
+      "rl",
+      "drones",
+      "gpu"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Needs NVIDIA GPU and Isaac Gym preview (a legacy package); check README for current install path.",
+    "related": [
+      {
+        "id": "repo:btx0424/omnidrones",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:learnsyslab/gym-pybullet-drones",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:learnsyslab/gym-pybullet-drones",
+    "kind": "repo",
+    "name": "gym-pybullet-drones",
+    "url": "https://github.com/learnsyslab/gym-pybullet-drones",
+    "summary": "Gymnasium environments on PyBullet for single and multi-agent quadcopter control and RL (formerly under utiasDSL).",
+    "why_it_matters": "Lowest-friction multi-drone RL sandbox: pure Python, CPU-only, quick to modify.",
+    "concepts": [
+      "concept:simulation",
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "pybullet",
+      "gymnasium",
+      "rl",
+      "crazyflie"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install in a venv and run examples within minutes. No photorealistic sensors; good for control, swarming and planning logic.",
+    "related": [
+      {
+        "id": "repo:spencerfolk/rotorpy",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:ntnu-arl/aerial_gym_simulator",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:btx0424/omnidrones",
+    "kind": "repo",
+    "name": "OmniDrones",
+    "url": "https://github.com/btx0424/OmniDrones",
+    "summary": "GPU-parallel drone simulation and RL platform built on Isaac Sim.",
+    "why_it_matters": "Supports multi-drone and transport tasks with vectorized environments for learning-based autonomy.",
+    "concepts": [
+      "concept:simulation",
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "isaac-sim",
+      "rl",
+      "drones"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Pinned to specific Isaac Sim versions; check compatibility before investing time.",
+    "related": [
+      {
+        "id": "repo:isaac-sim/isaacsim",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:ntnu-arl/aerial_gym_simulator",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:spencerfolk/rotorpy",
+    "kind": "repo",
+    "name": "RotorPy",
+    "url": "https://github.com/spencerfolk/rotorpy",
+    "summary": "Python multirotor simulator with aerodynamic effects (drag, wind) for education and research.",
+    "why_it_matters": "Good for studying estimator and controller behaviour under wind and disturbances without a game engine.",
+    "concepts": [
+      "concept:simulation",
+      "concept:ins"
+    ],
+    "tags": [
+      "python",
+      "multirotor",
+      "aerodynamics",
+      "wind"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip installable, runs on a laptop. Has IMU and mocap-style sensor models; add your own estimator in Python.",
+    "related": [
+      {
+        "id": "repo:learnsyslab/gym-pybullet-drones",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:cyberbotics/webots",
+    "kind": "repo",
+    "name": "Webots",
+    "url": "https://github.com/cyberbotics/webots",
+    "summary": "General-purpose open-source robot simulator with many robot models and sensors including GPS, compass, IMU, lidar and radar.",
+    "why_it_matters": "Cross-platform and easy to install; good for ground and multi-robot nav demos with ROS 2 integration.",
+    "concepts": [
+      "concept:simulation",
+      "concept:ros"
+    ],
+    "tags": [
+      "webots",
+      "ros2",
+      "robots"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground",
+      "air",
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Installers for Windows, macOS and Linux. webots_ros2 package for ROS 2. Less common in aerial autonomy.",
+    "related": [
+      {
+        "id": "repo:gazebosim/gz-sim",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:patrykcieslak/stonefish",
+    "kind": "repo",
+    "name": "Stonefish",
+    "url": "https://github.com/patrykcieslak/stonefish",
+    "summary": "C++ simulation library for marine robotics with hydrodynamics and underwater sensors such as DVL, sonars, pressure, IMU and cameras.",
+    "why_it_matters": "One of the few open sims with credible underwater nav sensors for AUV dead reckoning and sonar-based localization work.",
+    "concepts": [
+      "concept:simulation",
+      "concept:underwater-nav",
+      "concept:maritime-nav"
+    ],
+    "tags": [
+      "auv",
+      "marine",
+      "dvl",
+      "sonar"
+    ],
+    "language": "C++",
+    "domains": [
+      "underwater",
+      "maritime"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Use with stonefish_ros or stonefish_ros2. Requires OpenGL 4.3 capable GPU.",
+    "related": [
+      {
+        "id": "repo:field-robotics-lab/dave",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:byu-holoocean/holoocean-docs",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:byu-holoocean/holoocean-docs",
+    "kind": "repo",
+    "name": "HoloOcean (documentation)",
+    "url": "https://github.com/byu-holoocean/holoocean-docs",
+    "summary": "Documentation repository for HoloOcean, BYU's Unreal-based underwater simulator with sonar, DVL, IMU, depth and camera sensors and multi-agent support. The simulator code itself is not hosted in this repo.",
+    "why_it_matters": "Photorealistic underwater sim aimed at marine navigation and SLAM research, including acoustic modems for multi-agent setups.",
+    "concepts": [
+      "concept:simulation",
+      "concept:underwater-nav"
+    ],
+    "tags": [
+      "underwater",
+      "unreal",
+      "sonar",
+      "dvl"
+    ],
+    "language": "HTML",
+    "domains": [
+      "underwater"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Follow the installation page of the docs; Python package plus downloadable worlds. Heavy GPU load for sonar rendering.",
+    "related": [
+      {
+        "id": "repo:patrykcieslak/stonefish",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:field-robotics-lab/dave",
+    "kind": "repo",
+    "name": "Project DAVE",
+    "url": "https://github.com/Field-Robotics-Lab/dave",
+    "summary": "Gazebo-based underwater simulation environment with sensor plugins (multibeam sonar, DVL) and UUV models, building on UUV Simulator.",
+    "why_it_matters": "Useful starting point for underwater navigation testing with DVL and sonar in a ROS stack.",
+    "concepts": [
+      "concept:simulation",
+      "concept:underwater-nav"
+    ],
+    "tags": [
+      "underwater",
+      "gazebo",
+      "dvl",
+      "sonar"
+    ],
+    "language": "C++",
+    "domains": [
+      "underwater"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Last updated 2024 and ROS1/Gazebo Classic based; Docker is the realistic path.",
+    "related": [
+      {
+        "id": "repo:uuvsimulator/uuv_simulator",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:patrykcieslak/stonefish",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:uuvsimulator/uuv_simulator",
+    "kind": "repo",
+    "name": "UUV Simulator",
+    "url": "https://github.com/uuvsimulator/uuv_simulator",
+    "summary": "Gazebo/ROS packages for unmanned underwater vehicles with hydrodynamics and thrusters. Archived on GitHub.",
+    "why_it_matters": "Many underwater-nav papers and DAVE build on it; useful for reference models.",
+    "concepts": [
+      "concept:simulation",
+      "concept:underwater-nav"
+    ],
+    "tags": [
+      "underwater",
+      "gazebo-classic",
+      "ros1"
+    ],
+    "language": "Python",
+    "domains": [
+      "underwater"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Archived and tied to old ROS/Gazebo; use Stonefish or DAVE instead.",
+    "related": [
+      {
+        "id": "repo:field-robotics-lab/dave",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:osrf/vrx",
+    "kind": "repo",
+    "name": "Virtual RobotX (VRX)",
+    "url": "https://github.com/osrf/vrx",
+    "summary": "Simulation environment for the RobotX maritime challenge with a WAM-V surface vessel, waves, wind and GPS/IMU/camera/lidar sensors.",
+    "why_it_matters": "Ready-made surface-vessel sim with nav and perception tasks; good for maritime autonomy demos.",
+    "concepts": [
+      "concept:simulation",
+      "concept:maritime-nav"
+    ],
+    "tags": [
+      "usv",
+      "maritime",
+      "gazebo",
+      "robotx"
+    ],
+    "language": "C++",
+    "domains": [
+      "maritime"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Current branch targets gz-sim and ROS 2. Task worlds (station keeping, wayfinding) work as hackathon challenges out of the box.",
+    "related": [
+      {
+        "id": "repo:gazebosim/gz-sim",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:genrobo/grid-playground",
+    "kind": "repo",
+    "name": "GRID playground (AirGen)",
+    "url": "https://github.com/GenRobo/GRID-playground",
+    "summary": "Notebooks and examples for the GRID platform from Scaled Foundations, which pairs the AirSim-derived AirGen simulator with foundation-model perception and LLM-driven robot control.",
+    "why_it_matters": "Shows a sim plus foundation-model workflow for aerial autonomy, close to 'LLM in the loop' hackathon ideas.",
+    "concepts": [
+      "concept:simulation",
+      "concept:llm-agents-robotics"
+    ],
+    "tags": [
+      "airgen",
+      "airsim",
+      "foundation-models",
+      "llm"
+    ],
+    "language": "Jupyter Notebook",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Uses the hosted GRID platform for the sim side; check account requirements before relying on it.",
+    "related": [
+      {
+        "id": "repo:microsoft/airsim",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:jsbsim-team/jsbsim",
+    "kind": "repo",
+    "name": "JSBSim",
+    "url": "https://github.com/JSBSim-Team/jsbsim",
+    "summary": "Open-source flight dynamics model library for fixed-wing and other aircraft, used by FlightGear and as an ArduPilot SITL backend.",
+    "why_it_matters": "Credible fixed-wing dynamics for testing navigation filters on aircraft profiles rather than quadcopters.",
+    "concepts": [
+      "concept:simulation"
+    ],
+    "tags": [
+      "flight-dynamics",
+      "fixed-wing",
+      "fdm"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Python bindings via pip. Combine with ArduPilot SITL for an autopilot loop.",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:hku-mars/marsim",
+    "kind": "repo",
+    "name": "MARSIM",
+    "url": "https://github.com/hku-mars/MARSIM",
+    "summary": "Lightweight point-realistic lidar simulator for UAVs from HKU MaRS, supporting rotating and solid-state lidar patterns.",
+    "why_it_matters": "Fast way to test lidar-based UAV navigation and planning without a full game-engine sim.",
+    "concepts": [
+      "concept:simulation",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "lidar",
+      "uav",
+      "ros"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS based; runs on CPU or modest GPU. Pairs well with FAST-LIO-style stacks.",
+    "related": []
+  },
+  {
+    "id": "repo:uzh-rpg/rpg_esim",
+    "kind": "repo",
+    "name": "ESIM",
+    "url": "https://github.com/uzh-rpg/rpg_esim",
+    "summary": "Event camera simulator from UZH RPG that renders event streams from simulated scenes.",
+    "why_it_matters": "Generates event-camera data for high-speed or low-light VIO research without hardware.",
+    "concepts": [
+      "concept:simulation",
+      "concept:vio"
+    ],
+    "tags": [
+      "event-camera",
+      "simulator",
+      "ros"
+    ],
+    "language": "C",
+    "domains": [
+      "air",
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "ROS1 and older build tooling. For converting existing video to events, rpg_vid2e is easier.",
+    "related": []
+  },
+  {
+    "id": "repo:aceinna/gnss-ins-sim",
+    "kind": "repo",
+    "name": "gnss-ins-sim",
+    "url": "https://github.com/Aceinna/gnss-ins-sim",
+    "summary": "Python GNSS/INS simulator that generates trajectories, IMU/GNSS/magnetometer measurements with configurable error models, and runs navigation algorithms on them.",
+    "why_it_matters": "Quick way to produce synthetic IMU and GNSS data with known truth to test filters and dead reckoning under GNSS outage.",
+    "concepts": [
+      "concept:simulation",
+      "concept:gnss-ins",
+      "concept:ins"
+    ],
+    "tags": [
+      "imu",
+      "gnss",
+      "simulation",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Pure Python; define a motion profile CSV and IMU grade, then run. Last updated 2024 but stable.",
+    "related": []
+  },
+  {
+    "id": "repo:michaelgrupp/evo",
+    "kind": "repo",
+    "name": "evo",
+    "url": "https://github.com/MichaelGrupp/evo",
+    "summary": "Python package and CLI for evaluating and plotting odometry and SLAM trajectories (APE, RPE) across TUM, KITTI, EuRoC and ROS bag formats.",
+    "why_it_matters": "The default way to score a nav or SLAM result against ground truth; essential for any demo that claims accuracy.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:visual-slam",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "evaluation",
+      "ate",
+      "rpe",
+      "trajectory"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install evo. Run evo_ape with alignment flags; it reads most dataset ground-truth formats directly.",
+    "related": [
+      {
+        "id": "repo:uzh-rpg/rpg_trajectory_evaluation",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:uzh-rpg/rpg_trajectory_evaluation",
+    "kind": "repo",
+    "name": "rpg_trajectory_evaluation",
+    "url": "https://github.com/uzh-rpg/rpg_trajectory_evaluation",
+    "summary": "Toolbox from UZH RPG for quantitative VO/VIO trajectory evaluation with several alignment modes and multi-run statistics.",
+    "why_it_matters": "Implements the alignment conventions used in many VIO benchmarks; good for apples-to-apples comparisons.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:vio"
+    ],
+    "tags": [
+      "evaluation",
+      "vio",
+      "trajectory"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Old Python 2 era code, ROS optional. evo is easier for quick use.",
+    "related": [
+      {
+        "id": "repo:michaelgrupp/evo",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:utiasstars/pykitti",
+    "kind": "repo",
+    "name": "pykitti",
+    "url": "https://github.com/utiasSTARS/pykitti",
+    "summary": "Python loaders for the KITTI raw and odometry datasets.",
+    "why_it_matters": "Removes boilerplate when using KITTI's GPS/IMU, lidar and stereo data for localization experiments.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "kitti",
+      "loader",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install pykitti and point it at the dataset folders.",
+    "related": []
+  },
+  {
+    "id": "repo:uzh-rpg/uzh_fpv_open",
+    "kind": "repo",
+    "name": "UZH-FPV dataset tools",
+    "url": "https://github.com/uzh-rpg/uzh_fpv_open",
+    "summary": "Companion repo for the UZH-FPV drone racing dataset with scripts and info.",
+    "why_it_matters": "Aggressive high-speed drone sequences stress VIO well beyond EuRoC.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:vio"
+    ],
+    "tags": [
+      "uzh-fpv",
+      "drone-racing",
+      "vio"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Inactive since 2020; dataset itself is on the UZH site.",
+    "related": [
+      {
+        "id": "repo:uzh-rpg/rpg_trajectory_evaluation",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:hilti-research/hilti-slam-challenge-2022",
+    "kind": "repo",
+    "name": "Hilti SLAM Challenge 2022",
+    "url": "https://github.com/Hilti-Research/hilti-slam-challenge-2022",
+    "summary": "Repository for the 2022 Hilti SLAM Challenge with dataset info and evaluation tooling.",
+    "why_it_matters": "Construction-site sequences with accurate ground truth; a strong test of lidar/visual-inertial SLAM in GNSS-denied indoor spaces.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:lidar-slam",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "hilti",
+      "slam",
+      "challenge"
+    ],
+    "language": "Python",
+    "domains": [
+      "dismounted",
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Download bags from the challenge site; scoring scripts in repo.",
+    "related": [
+      {
+        "id": "repo:hilti-research/hilti-slam-challenge-2023",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:hilti-research/hilti-slam-challenge-2023",
+    "kind": "repo",
+    "name": "Hilti SLAM Challenge 2023",
+    "url": "https://github.com/Hilti-Research/hilti-slam-challenge-2023",
+    "summary": "Repository for the 2023 Hilti SLAM Challenge, including multi-session sequences.",
+    "why_it_matters": "Multi-session data is useful for map reuse and relocalization experiments.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:lidar-slam",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "hilti",
+      "slam",
+      "multi-session"
+    ],
+    "language": "Python",
+    "domains": [
+      "dismounted",
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Same workflow as 2022; check the challenge site for current download links.",
+    "related": [
+      {
+        "id": "repo:hilti-research/hilti-slam-challenge-2022",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:mcdviral/mcdviral.github.io",
+    "kind": "repo",
+    "name": "MCD: Multi-Campus Dataset",
+    "url": "https://github.com/mcdviral/mcdviral.github.io",
+    "summary": "Site repo for MCD, a multi-campus dataset across Asia and Europe with spinning and non-repetitive lidar, stereo cameras, IMUs, UWB ranging, survey-grade prior maps and continuous-time ground truth.",
+    "why_it_matters": "Covers localization against prior maps and UWB-aided fusion in large outdoor areas.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:lidar-slam",
+      "concept:rf-localization"
+    ],
+    "tags": [
+      "lidar",
+      "uwb",
+      "prior-map"
+    ],
+    "language": "SCSS",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Data downloads and tutorials are linked from the site.",
+    "related": [
+      {
+        "id": "repo:ntu-aris/ntu_viral_dataset",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:ntu-aris/ntu_viral_dataset",
+    "kind": "repo",
+    "name": "NTU VIRAL dataset",
+    "url": "https://github.com/ntu-aris/ntu_viral_dataset",
+    "summary": "Site repo for NTU VIRAL, an aerial dataset with lidars, cameras, IMU and UWB ranging from a drone.",
+    "why_it_matters": "Rare UWB-equipped drone dataset for range-aided fusion experiments.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:vio",
+      "concept:rf-localization"
+    ],
+    "tags": [
+      "uwb",
+      "drone",
+      "lidar",
+      "imu"
+    ],
+    "language": "SCSS",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS bags; download links on the site.",
+    "related": [
+      {
+        "id": "repo:mcdviral/mcdviral.github.io",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:sjtu-visys/m2dgr",
+    "kind": "repo",
+    "name": "M2DGR",
+    "url": "https://github.com/SJTU-ViSYS/M2DGR",
+    "summary": "Multi-modal, multi-scenario ground robot dataset from SJTU with cameras, lidar, IMU, GNSS and more, indoor and outdoor.",
+    "why_it_matters": "Indoor/outdoor transitions with GNSS make it useful for testing GNSS-loss handling in fusion.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:sensor-fusion",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "ground-robot",
+      "gnss",
+      "lidar",
+      "ros-bag"
+    ],
+    "language": null,
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS bags; check repo for download mirrors.",
+    "related": []
+  },
+  {
+    "id": "repo:hkust-aerial-robotics/gvins-dataset",
+    "kind": "repo",
+    "name": "GVINS dataset",
+    "url": "https://github.com/HKUST-Aerial-Robotics/GVINS-Dataset",
+    "summary": "Dataset with synchronized visual, inertial and raw GNSS measurements released with GVINS.",
+    "why_it_matters": "One of few datasets with raw GNSS pseudoranges plus camera and IMU, needed for tightly coupled GNSS-VIO.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:gnss-ins",
+      "concept:vio"
+    ],
+    "tags": [
+      "gnss-raw",
+      "vio",
+      "rosbag"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground",
+      "dismounted"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS bags with custom GNSS message types; install the gnss_comm package.",
+    "related": [
+      {
+        "id": "repo:hkust-aerial-robotics/gvins",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:ipnl-polyu/urbannavdataset",
+    "kind": "repo",
+    "name": "UrbanNav",
+    "url": "https://github.com/IPNL-POLYU/UrbanNavDataset",
+    "summary": "Open multisensor urban positioning dataset from PolyU IPNL with GNSS, IMU, lidar and camera in deep urban canyons.",
+    "why_it_matters": "Benchmark for GNSS multipath and NLOS mitigation in cities.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:gnss",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "urban-canyon",
+      "gnss",
+      "nlos",
+      "hong-kong"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground",
+      "dismounted"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Pick one Hong Kong sequence and run an RTKLIB plus loosely coupled baseline to show urban degradation.",
+    "related": []
+  },
+  {
+    "id": "repo:metaslam/alto",
+    "kind": "repo",
+    "name": "ALTO",
+    "url": "https://github.com/MetaSLAM/ALTO",
+    "summary": "Aerial-view, large-scale, terrain-oriented dataset for aerial place recognition and localization.",
+    "why_it_matters": "Directly targets UAV localization over terrain when GNSS is unavailable.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:terrain-nav",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "aerial",
+      "vpr",
+      "terrain"
+    ],
+    "language": null,
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Inactive since 2022; check that the download links still work before planning around it.",
+    "related": []
+  },
+  {
+    "id": "repo:aervisloc/vpair",
+    "kind": "repo",
+    "name": "VPAIR",
+    "url": "https://github.com/AerVisLoc/vpair",
+    "summary": "Repo for VPAIR, an aerial visual place recognition dataset matching low-altitude flight imagery to reference orthophotos.",
+    "why_it_matters": "Benchmark for UAV visual geolocalization against georeferenced maps.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:visual-geolocalization",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "aerial",
+      "vpr",
+      "orthophoto"
+    ],
+    "language": null,
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Small enough to evaluate quickly with VPR-methods-evaluation.",
+    "related": [
+      {
+        "id": "repo:gmberton/vpr-methods-evaluation",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:intellisensing/uav-visloc",
+    "kind": "repo",
+    "name": "UAV-VisLoc",
+    "url": "https://github.com/IntelliSensing/UAV-VisLoc",
+    "summary": "Large-scale dataset of UAV images paired with satellite maps for absolute visual localization.",
+    "why_it_matters": "Fits the 'locate the drone from its camera and a satellite map' GNSS-denied scenario.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "uav",
+      "satellite",
+      "absolute-localization"
+    ],
+    "language": null,
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Dataset only, no baseline code; pair with a feature matcher or VPR model.",
+    "related": []
+  },
+  {
+    "id": "repo:layumi/university1652-baseline",
+    "kind": "repo",
+    "name": "University-1652",
+    "url": "https://github.com/layumi/University1652-Baseline",
+    "summary": "Benchmark and baseline code for drone-based geolocalization with drone, satellite and ground views of university buildings.",
+    "why_it_matters": "Most cited drone-to-satellite cross-view benchmark; baselines train on a single GPU.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "cross-view",
+      "drone",
+      "satellite"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Request dataset access via the form in README early - it is not instant.",
+    "related": [
+      {
+        "id": "repo:reza-zhu/sues-200-benchmark",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:dmmm1997/denseuav",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:reza-zhu/sues-200-benchmark",
+    "kind": "repo",
+    "name": "SUES-200",
+    "url": "https://github.com/Reza-Zhu/SUES-200-Benchmark",
+    "summary": "Cross-view drone-satellite benchmark with images at multiple flight heights and scene types.",
+    "why_it_matters": "Lets you measure how cross-view geolocalization degrades with altitude.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "cross-view",
+      "multi-height"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Comparable training pipeline to University-1652.",
+    "related": [
+      {
+        "id": "repo:layumi/university1652-baseline",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:dmmm1997/denseuav",
+    "kind": "repo",
+    "name": "DenseUAV",
+    "url": "https://github.com/Dmmm1997/DenseUAV",
+    "summary": "Dataset and baseline for vision-based UAV self-positioning in low-altitude urban environments (TIP 2023).",
+    "why_it_matters": "Frames geolocalization as dense position estimation rather than building retrieval.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "uav",
+      "self-positioning",
+      "urban"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Baseline is PyTorch; GPU needed for training.",
+    "related": [
+      {
+        "id": "repo:layumi/university1652-baseline",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:hmf21/aerialvl",
+    "kind": "repo",
+    "name": "AerialVL",
+    "url": "https://github.com/hmf21/AerialVL",
+    "summary": "Visual geo-localization dataset and code designed for aerial vehicles.",
+    "why_it_matters": "Another aerial-to-map benchmark with sequential flights, useful for testing filtering over VPR outputs.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "aerial",
+      "vpr",
+      "sequence"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Check README for map tile download steps.",
+    "related": []
+  },
+  {
+    "id": "repo:mapillary/mapillary_sls",
+    "kind": "repo",
+    "name": "Mapillary SLS",
+    "url": "https://github.com/mapillary/mapillary_sls",
+    "summary": "Tools for the Mapillary Street-level Sequences dataset for lifelong visual place recognition.",
+    "why_it_matters": "Large, diverse street-level VPR benchmark used to train many current VPR models.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "vpr",
+      "street-level",
+      "sequences"
+    ],
+    "language": "Jupyter Notebook",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Dataset download needs registration on Mapillary.",
+    "related": [
+      {
+        "id": "repo:gmberton/vpr-methods-evaluation",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:mubarizzaffar/vpr-bench",
+    "kind": "repo",
+    "name": "VPR-Bench",
+    "url": "https://github.com/MubarizZaffar/VPR-Bench",
+    "summary": "Open-source visual place recognition evaluation framework from the IJCV paper, with many datasets and techniques integrated.",
+    "why_it_matters": "Ready harness to compare VPR methods across conditions and viewpoints.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "vpr",
+      "benchmark",
+      "evaluation"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Older dependencies; consider VPR-methods-evaluation for modern models.",
+    "related": [
+      {
+        "id": "repo:gmberton/vpr-methods-evaluation",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:gmberton/vpr-methods-evaluation",
+    "kind": "repo",
+    "name": "VPR-methods-evaluation",
+    "url": "https://github.com/gmberton/VPR-methods-evaluation",
+    "summary": "Wrapper to run and evaluate many state-of-the-art VPR models on any image database/query split by changing one parameter.",
+    "why_it_matters": "Quickest way to get a strong VPR baseline on your own aerial or street imagery.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:place-recognition",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "vpr",
+      "evaluation",
+      "pytorch"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Format your data as database/queries folders with UTM in filenames; GPU recommended.",
+    "related": [
+      {
+        "id": "repo:mubarizzaffar/vpr-bench",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:castacks/tartanairpy",
+    "kind": "repo",
+    "name": "tartanairpy",
+    "url": "https://github.com/castacks/tartanairpy",
+    "summary": "Python package for downloading, customizing and iterating the TartanAir-V2 synthetic dataset.",
+    "why_it_matters": "TartanAir's photorealistic scenes with weather and lighting variety stress-test SLAM and VO.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:simulation",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "tartanair",
+      "synthetic",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "air",
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Download only the environments and modalities you need - full set is very large.",
+    "related": []
+  },
+  {
+    "id": "repo:utiasasrl/pyboreas",
+    "kind": "repo",
+    "name": "pyboreas",
+    "url": "https://github.com/utiasASRL/pyboreas",
+    "summary": "Devkit for the Boreas multi-season driving dataset with radar, lidar, camera and GNSS/INS ground truth.",
+    "why_it_matters": "Radar plus lidar over seasons and snow suits all-weather localization work.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:radar-nav",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "radar",
+      "lidar",
+      "winter",
+      "devkit"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Data is hosted on S3; download selected sequences.",
+    "related": []
+  },
+  {
+    "id": "repo:ori-mrg/robotcar-dataset-sdk",
+    "kind": "repo",
+    "name": "Oxford RobotCar SDK",
+    "url": "https://github.com/ori-mrg/robotcar-dataset-sdk",
+    "summary": "SDK for the Oxford RobotCar dataset with loaders and projection tools.",
+    "why_it_matters": "Long-term, all-condition driving data is a staple for localization and place recognition research.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "oxford",
+      "robotcar",
+      "sdk"
+    ],
+    "language": "MATLAB",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Inactive since 2022; Python and MATLAB helpers still work.",
+    "related": []
+  },
+  {
+    "id": "repo:mit-aera/blackbird-dataset",
+    "kind": "repo",
+    "name": "Blackbird dataset",
+    "url": "https://github.com/mit-aera/Blackbird-Dataset",
+    "summary": "MIT dataset of aggressive indoor quadrotor flights with real IMU and motor data and rendered camera imagery.",
+    "why_it_matters": "Combines real flight dynamics with synthetic vision, good for VIO under aggressive motion.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:vio"
+    ],
+    "tags": [
+      "quadrotor",
+      "aggressive",
+      "synthetic-vision"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Inactive since 2022; download scripts may need adaptation.",
+    "related": [
+      {
+        "id": "repo:mit-aera/flightgoggles",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:google/gps-measurement-tools",
+    "kind": "repo",
+    "name": "GPS Measurement Tools",
+    "url": "https://github.com/google/gps-measurement-tools",
+    "summary": "Google's tools for logging and analysing raw GNSS measurements from Android phones, including the GnssLogger app and MATLAB analysis code.",
+    "why_it_matters": "Basis for collecting your own smartphone raw GNSS data, the same format as the Smartphone Decimeter Challenge.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:gnss"
+    ],
+    "tags": [
+      "android",
+      "raw-gnss",
+      "gnsslogger"
+    ],
+    "language": "Java",
+    "domains": [
+      "dismounted",
+      "ground"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Install GnssLogger on an Android phone and log raw measurements during the event.",
+    "related": [
+      {
+        "id": "repo:taroz/gsdc2023",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:taroz/gsdc2023",
+    "kind": "repo",
+    "name": "GSDC 2023 solution (taroz)",
+    "url": "https://github.com/taroz/gsdc2023",
+    "summary": "Published solution code for the Google Smartphone Decimeter Challenge 2023 by Taro Suzuki.",
+    "why_it_matters": "Strong reference pipeline for precise smartphone GNSS positioning.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:gnss",
+      "concept:gnss-rtk-ppp"
+    ],
+    "tags": [
+      "gsdc",
+      "smartphone",
+      "kaggle"
+    ],
+    "language": "MATLAB",
+    "domains": [
+      "ground",
+      "dismounted"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "MATLAB required. Read it for the pipeline design even if you reimplement in Python.",
+    "related": [
+      {
+        "id": "repo:google/gps-measurement-tools",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:mit-ai-accelerator/magnav.jl",
+    "kind": "repo",
+    "name": "MagNav.jl",
+    "url": "https://github.com/MIT-AI-Accelerator/MagNav.jl",
+    "summary": "Julia package for airborne magnetic anomaly navigation, released with the MagNav challenge data and baseline models.",
+    "why_it_matters": "The open entry point to the AFRL/MIT magnetic navigation challenge data.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:magnetic-nav"
+    ],
+    "tags": [
+      "julia",
+      "magnav",
+      "afrl"
+    ],
+    "language": "Julia",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Julia install required; data downloads via the package's artifacts.",
+    "related": []
+  }
+]

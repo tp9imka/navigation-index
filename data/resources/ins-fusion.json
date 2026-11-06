@@ -1,0 +1,603 @@
+[
+  {
+    "id": "res:sola-quaternion-kinematics-eskf",
+    "kind": "paper",
+    "title": "Quaternion kinematics for the error-state Kalman filter",
+    "url": "https://arxiv.org/abs/1711.02508",
+    "authors": [
+      "Joan Solà"
+    ],
+    "year": 2017,
+    "summary": "Long tutorial report covering quaternion conventions, rotation perturbations and their derivatives, and a full derivation of an IMU-driven error-state Kalman filter including the reset step.",
+    "key_takeaways": [
+      "Pins down Hamilton vs JPL quaternion conventions",
+      "Step-by-step ESKF prediction, correction and reset",
+      "Global vs local error definitions"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "eskf",
+      "quaternion",
+      "tutorial"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:je310/eskf",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:artivis/manif",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:sola-micro-lie-theory",
+    "kind": "paper",
+    "title": "A micro Lie theory for state estimation in robotics",
+    "url": "https://arxiv.org/abs/1812.01537",
+    "authors": [
+      "Joan Solà",
+      "Jeremie Deray",
+      "Dinesh Atchuthan"
+    ],
+    "year": 2018,
+    "summary": "Compact introduction to the subset of Lie theory needed for estimation: exp/log maps, plus/minus operators, adjoints and Jacobians on common groups.",
+    "key_takeaways": [
+      "Unified plus/minus notation for manifold states",
+      "Ready-to-use Jacobians for SO(3), SE(3) and others"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:ins"
+    ],
+    "tags": [
+      "lie-group",
+      "jacobians"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:artivis/manif",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:groves-pnt-book-2e",
+    "kind": "book",
+    "title": "Principles of GNSS, Inertial, and Multisensor Integrated Navigation Systems, Second Edition",
+    "url": "https://uk.artechhouse.com/Principles-of-GNSS-Inertial-and-Multisensor-Integrated-Navigation-Systems-Second-Edition-P2033.aspx",
+    "authors": [
+      "Paul D. Groves"
+    ],
+    "year": 2013,
+    "summary": "Standard reference on satellite, inertial and terrestrial radio navigation and their integration, including INS/GNSS integration architectures, dead reckoning, feature matching and integrity monitoring.",
+    "key_takeaways": [
+      "Loose, tight and deep INS/GNSS coupling explained",
+      "Covers fault detection and integrity",
+      "Companion MATLAB simulation software for buyers"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:gnss-ins",
+      "concept:gnss",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "textbook",
+      "pnt"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "repo:i2nav-whu/kf-gins",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:rodralez/navego",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:titterton-weston-strapdown-ins-2e",
+    "kind": "book",
+    "title": "Strapdown Inertial Navigation Technology, 2nd Edition",
+    "url": "https://shop.theiet.org/strapdn-inertial-navig-t-2ed",
+    "authors": [
+      "David Titterton",
+      "John Weston"
+    ],
+    "year": 2004,
+    "summary": "Classic IET text on strapdown inertial navigation: sensor technologies, mechanisation, error propagation and compensation, and aided navigation.",
+    "key_takeaways": [
+      "Physical principles and error growth of INS",
+      "Sensor technology from mechanical gyros to MEMS"
+    ],
+    "concepts": [
+      "concept:ins"
+    ],
+    "tags": [
+      "textbook",
+      "strapdown"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "repo:nmayorov/pyins",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:barfoot-state-estimation-robotics-2e",
+    "kind": "book",
+    "title": "State Estimation for Robotics (Second Edition)",
+    "url": "http://asrl.utias.utoronto.ca/~tdb/bib/barfoot_ser24.pdf",
+    "authors": [
+      "Timothy D. Barfoot"
+    ],
+    "year": 2024,
+    "summary": "Textbook on probabilistic estimation for robotics, from linear-Gaussian filtering and batch estimation to matrix Lie groups for 3D pose; the second edition adds variational inference and inertial navigation material. Author hosts a PDF; print edition from Cambridge University Press.",
+    "key_takeaways": [
+      "Batch vs recursive estimation from first principles",
+      "Matrix Lie groups for pose and uncertainty",
+      "New inertial navigation section in 2nd edition"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:ins"
+    ],
+    "tags": [
+      "textbook",
+      "lie-group",
+      "batch-estimation"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:utiasstars/liegroups",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:dellaert-kaess-factor-graphs-robot-perception",
+    "kind": "paper",
+    "title": "Factor Graphs for Robot Perception",
+    "url": "https://www.cs.cmu.edu/~kaess/pub/Dellaert17fnt.pdf",
+    "authors": [
+      "Frank Dellaert",
+      "Michael Kaess"
+    ],
+    "year": 2017,
+    "summary": "Monograph (Foundations and Trends in Robotics) introducing factor graphs for SLAM and estimation, sparse linear algebra behind them, and incremental smoothing.",
+    "key_takeaways": [
+      "Why sparsity makes smoothing tractable",
+      "From batch to incremental (iSAM) inference"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "factor-graph",
+      "gtsam",
+      "isam"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:borglab/gtsam",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:kaess-isam2",
+    "kind": "paper",
+    "title": "iSAM2: Incremental Smoothing and Mapping Using the Bayes Tree",
+    "url": "https://www.cs.cmu.edu/~kaess/pub/Kaess12ijrr.pdf",
+    "authors": [
+      "Michael Kaess",
+      "Hordur Johannsson",
+      "Richard Roberts",
+      "Viorela Ila",
+      "John Leonard",
+      "Frank Dellaert"
+    ],
+    "year": 2012,
+    "summary": "Introduces the Bayes tree and the iSAM2 algorithm for incremental nonlinear smoothing with fluid relinearization, the engine behind GTSAM's online estimators.",
+    "key_takeaways": [
+      "Incremental updates without periodic batch steps",
+      "Bayes tree data structure"
+    ],
+    "concepts": [
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "isam2",
+      "factor-graph"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:borglab/gtsam",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:dellaert-kaess-factor-graphs-robot-perception",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:forster-imu-preintegration",
+    "kind": "paper",
+    "title": "On-Manifold Preintegration for Real-Time Visual-Inertial Odometry",
+    "url": "https://arxiv.org/abs/1512.02363",
+    "authors": [
+      "Christian Forster",
+      "Luca Carlone",
+      "Frank Dellaert",
+      "Davide Scaramuzza"
+    ],
+    "year": 2015,
+    "summary": "Derives IMU preintegration on the SO(3) manifold with bias-correction Jacobians, enabling IMU factors between keyframes in factor-graph optimization.",
+    "key_takeaways": [
+      "Summarise many IMU samples into one relative-motion factor",
+      "First-order bias correction avoids re-integration"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:vio",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "imu-preintegration",
+      "factor-graph"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:borglab/gtsam",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:i2nav-whu/ob_gins",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:barrau-bonnabel-invariant-ekf",
+    "kind": "paper",
+    "title": "The invariant extended Kalman filter as a stable observer",
+    "url": "https://arxiv.org/abs/1410.1465",
+    "authors": [
+      "Axel Barrau",
+      "Silvère Bonnabel"
+    ],
+    "year": 2014,
+    "summary": "Foundational paper showing that for group-affine systems the invariant EKF has error dynamics independent of the trajectory, giving stability guarantees standard EKFs lack.",
+    "key_takeaways": [
+      "Error defined on the Lie group, not in vector space",
+      "Better consistency under large initial errors"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "inekf",
+      "observer",
+      "lie-group"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:rosshartley/invariant-ekf",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:umich-curly/drift",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:hartley-contact-aided-inekf",
+    "kind": "paper",
+    "title": "Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation",
+    "url": "https://arxiv.org/abs/1904.09251",
+    "authors": [
+      "Ross Hartley",
+      "Maani Ghaffari",
+      "Ryan M. Eustice",
+      "Jessy W. Grizzle"
+    ],
+    "year": 2019,
+    "summary": "Applies the invariant EKF to legged robots, fusing IMU with leg contact kinematics, and evaluates it against a quaternion EKF.",
+    "key_takeaways": [
+      "Contact points as extra states in the group",
+      "Faster convergence than quaternion EKF"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "inekf",
+      "legged",
+      "proprioceptive"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:rosshartley/invariant-ekf",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:barrau-bonnabel-invariant-ekf",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:brossard-ai-imu-dr",
+    "kind": "paper",
+    "title": "AI-IMU Dead-Reckoning",
+    "url": "https://arxiv.org/abs/1904.06064",
+    "authors": [
+      "Martin Brossard",
+      "Axel Barrau",
+      "Silvère Bonnabel"
+    ],
+    "year": 2019,
+    "summary": "Car localisation from IMU alone by combining an invariant EKF with a neural network that adapts measurement noise covariances (pseudo-measurements), evaluated on KITTI.",
+    "key_takeaways": [
+      "Learned covariances, classical filter structure",
+      "IMU-only ground vehicle dead reckoning"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:ground-vehicle-nav",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "inekf",
+      "learned-covariance"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mbrossar/ai-imu-dr",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:tlio-paper",
+    "kind": "paper",
+    "title": "TLIO: Tight Learned Inertial Odometry",
+    "url": "https://arxiv.org/abs/2007.01867",
+    "authors": [
+      "Wenxin Liu",
+      "David Caruso",
+      "Eddy Ilg",
+      "Jing Dong",
+      "Anastasios I. Mourikis",
+      "Kostas Daniilidis",
+      "Vijay Kumar",
+      "Jakob Engel"
+    ],
+    "year": 2020,
+    "summary": "Combines a network that predicts displacement and uncertainty from IMU data with an EKF, for pedestrian inertial odometry.",
+    "key_takeaways": [
+      "Learned measurement plus learned uncertainty in a filter"
+    ],
+    "concepts": [
+      "concept:indoor-pedestrian",
+      "concept:ins",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "learned-inertial"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:cathias/tlio",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:ronin-paper",
+    "kind": "paper",
+    "title": "RoNIN: Robust Neural Inertial Navigation in the Wild: Benchmark, Evaluations, and New Methods",
+    "url": "https://arxiv.org/abs/1905.12853",
+    "authors": [
+      "Sachini Herath",
+      "Hang Yan",
+      "Yasutaka Furukawa"
+    ],
+    "year": 2019,
+    "summary": "Introduces a large smartphone IMU dataset with ground truth and benchmarks neural architectures for pedestrian velocity regression.",
+    "key_takeaways": [
+      "Benchmark dataset for learned pedestrian navigation",
+      "Body-frame heading-agnostic representation"
+    ],
+    "concepts": [
+      "concept:indoor-pedestrian",
+      "concept:datasets-benchmarks",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "learned-inertial",
+      "smartphone"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:sachini/ronin",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:airio-paper",
+    "kind": "paper",
+    "title": "AirIO: Learning Inertial Odometry with Enhanced IMU Feature Observability",
+    "url": "https://arxiv.org/abs/2501.15659",
+    "authors": [
+      "Yuheng Qiu",
+      "Can Xu",
+      "Yutian Chen",
+      "Shibo Zhao",
+      "Junyi Geng",
+      "Sebastian Scherer"
+    ],
+    "year": 2025,
+    "summary": "UAV-focused learned inertial odometry that changes how IMU data are represented to the network to make motion features more observable.",
+    "key_takeaways": [
+      "IMU-only odometry for drones",
+      "Representation choice matters for UAV learned IO"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "learned-inertial",
+      "uav"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:air-io/air-io",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:kalibr-imu-noise-model-wiki",
+    "kind": "doc",
+    "title": "Kalibr wiki: IMU Noise Model",
+    "url": "https://github.com/ethz-asl/kalibr/wiki/IMU-Noise-Model",
+    "authors": [
+      "ETH ASL"
+    ],
+    "summary": "Practical explanation of white noise and random-walk bias parameters for IMUs, how to convert datasheet values to continuous/discrete form and how to inflate them for real use.",
+    "key_takeaways": [
+      "Continuous vs discrete noise density conversion",
+      "Inflate Allan-derived noise for real-world use"
+    ],
+    "concepts": [
+      "concept:calibration",
+      "concept:ins"
+    ],
+    "tags": [
+      "imu-noise",
+      "allan-variance"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ethz-asl/kalibr",
+        "rel": "part_of"
+      },
+      {
+        "id": "repo:ori-drs/allan_variance_ros",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:gtsam-intro-tutorial",
+    "kind": "doc",
+    "title": "Factor Graphs and GTSAM: A Hands-on Introduction",
+    "url": "https://gtsam.org/tutorials/intro.html",
+    "authors": [
+      "Frank Dellaert"
+    ],
+    "summary": "Official GTSAM tutorial walking through factor graph modelling with odometry, landmark and pose-graph examples in C++ and Python.",
+    "key_takeaways": [
+      "Best first hour with GTSAM"
+    ],
+    "concepts": [
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "gtsam",
+      "tutorial"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:borglab/gtsam",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:madgwick-orientation-filter-report",
+    "kind": "report",
+    "title": "An efficient orientation filter for inertial and inertial/magnetic sensor arrays",
+    "url": "https://x-io.co.uk/downloads/madgwick_internal_report.pdf",
+    "authors": [
+      "Sebastian O. H. Madgwick"
+    ],
+    "year": 2010,
+    "summary": "Internal report introducing the gradient-descent orientation filter now known as the Madgwick filter, for IMU and MARG sensors.",
+    "key_takeaways": [
+      "Low computational cost attitude filter",
+      "Single tuning parameter"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "ahrs",
+      "madgwick"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:xiotechnologies/fusion",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:arduino-libraries/madgwickahrs",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:mayitzin/ahrs",
+        "rel": "has_code"
+      }
+    ]
+  }
+]

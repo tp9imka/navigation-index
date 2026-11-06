@@ -1,0 +1,34 @@
+# TARE Planner (CMU Explorer)
+
+`repo:caochao39/tare_planner` - <https://github.com/caochao39/tare_planner>
+
+| stars | language | license | last push | archived | maturity | hackathon fit |
+|---|---|---|---|---|---|---|
+| 743 | C++ | ? | 2026-05-25 | False | active-research | high |
+
+Hierarchical exploration planner from CMU's Team Explorer, which earned the most-sectors-explored award at the SubT final.
+
+**Why it matters:** Well-documented, high-performing exploration planner that runs on top of a ready simulation stack.
+
+**Hackathon notes:** Install the companion development environment first; ROS1 and ROS2 branches exist. Runs in sim on a laptop.
+
+**Concepts:** [Path and motion planning](../concepts/path-planning.md), [Mission planning and routing](../concepts/mission-planning.md)
+
+**Tags:** `darpa-subt`, `explorer`, `cmu`, `exploration`, `ros`
+
+**Domains:** ground
+
+## Related
+
+- depends_on: [CMU Autonomous Exploration Development Environment](../repos/hongbiaoz__autonomous_exploration_development_environment.md)
+- same_org: [FAR Planner](../repos/michaelfyang__far_planner.md)
+- alternative_to: [GBPlanner (CERBERUS)](../repos/ntnu-arl__gbplanner_ros.md)
+
+## Referenced by
+
+- [CMU Autonomous Exploration Development Environment](../repos/hongbiaoz__autonomous_exploration_development_environment.md) (integrates_with)
+- [DARPA SubT Virtual Challenge](../repos/osrf__subt.md) (alternative_to)
+
+_Indexed by lane(s): defense-context_
+
+_GitHub metadata fetched 2026-11-06._

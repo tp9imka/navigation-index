@@ -1,0 +1,8 @@
+{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"pipe-test","version":"0"}}}
+{"jsonrpc":"2.0","method":"notifications/initialized"}
+{"jsonrpc":"2.0","id":2,"method":"tools/list"}
+{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"search","arguments":{"query":"gnss-denied fixed-wing visual geolocalization","kind":"repo","limit":3}}}
+{"jsonrpc":"2.0","id":4,"method":"tools/call","params":{"name":"concept","arguments":{"id":"concept:terrain-nav","fit":"high","limit":2}}}
+{"jsonrpc":"2.0","id":5,"method":"tools/call","params":{"name":"neighbors","arguments":{"id":"repo:snstac/pytak","limit":2}}}
+{"jsonrpc":"2.0","id":6,"method":"tools/call","params":{"name":"show","arguments":{"id":"repo:nope/nope"}}}
+{"jsonrpc":"2.0","id":7,"method":"bogus"}

@@ -1,0 +1,31 @@
+# signalk-to-nmea0183
+
+`repo:signalk/signalk-to-nmea0183` - <https://github.com/SignalK/signalk-to-nmea0183>
+
+| stars | language | license | last push | archived | maturity | hackathon fit |
+|---|---|---|---|---|---|---|
+| 18 | TypeScript | Apache-2.0 | 2026-10-31 | False | production | medium |
+
+Signal K server plugin that converts Signal K data back into NMEA 0183 sentences for legacy displays and autopilots.
+
+**Why it matters:** Lets a custom position or heading source reach any off-the-shelf NMEA consumer such as OpenCPN or a chartplotter.
+
+**Hackathon notes:** Enable in the Signal K admin UI, choose sentences, output over TCP.
+
+**Concepts:** [Maritime navigation](../concepts/maritime-nav.md)
+
+**Tags:** `signalk`, `nmea0183`, `plugin`
+
+**Domains:** maritime
+
+## Related
+
+- extends: [Signal K Server](../repos/signalk__signalk-server.md)
+
+## Referenced by
+
+- [Signal K Server](../repos/signalk__signalk-server.md) (integrates_with)
+
+_Indexed by lane(s): domains-swarm_
+
+_GitHub metadata fetched 2026-11-06._

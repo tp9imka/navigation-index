@@ -1,0 +1,732 @@
+[
+  {
+    "id": "res:dstl-stone-soup-docs",
+    "kind": "doc",
+    "title": "Stone Soup documentation and tutorials",
+    "url": "https://stonesoup.readthedocs.io/en/latest/",
+    "authors": [
+      "Dstl",
+      "Stone Soup contributors"
+    ],
+    "year": 2026,
+    "summary": "Official docs for the Stone Soup tracking framework with step-by-step tutorials from a single-target Kalman filter through data association (PDA, JPDA), multi-hypothesis tracking, GM-PHD, track initiation/deletion, sensor management and performance metrics.",
+    "key_takeaways": [
+      "Tutorials double as a self-paced multi-target tracking course",
+      "Metrics module (OSPA, SIAP) gives defensible evaluation numbers",
+      "Sensor and simulator components let you test without real radar"
+    ],
+    "concepts": [
+      "concept:target-tracking",
+      "concept:sensor-fusion",
+      "concept:counter-uas"
+    ],
+    "tags": [
+      "dstl",
+      "tutorials",
+      "python"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:dstl/stone-soup",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:dstl-stone-soup-v1-fusion2023",
+    "kind": "paper",
+    "title": "Stone Soup: No Longer Just an Appetiser",
+    "url": "https://livrepository.liverpool.ac.uk/id/eprint/3173692",
+    "authors": [
+      "Stone Soup team (Dstl, University of Liverpool and partners)"
+    ],
+    "year": 2023,
+    "summary": "FUSION 2023 paper announcing Stone Soup version 1.0, describing the framework's stable architecture and its use across the tracking community.",
+    "key_takeaways": [
+      "Marks the stable 1.0 API",
+      "Background on why defence labs backed an open tracking testbed"
+    ],
+    "concepts": [
+      "concept:target-tracking",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "dstl",
+      "fusion2023"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:dstl/stone-soup",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:dstl-stone-soup-docs",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:mit-2680-marine-autonomy",
+    "kind": "course",
+    "title": "MIT 2.680 Unmanned Marine Vehicle Autonomy, Sensing and Communications",
+    "url": "https://oceanai.mit.edu/2.680/pmwiki/pmwiki.php",
+    "authors": [
+      "MIT (M. Benjamin and colleagues)"
+    ],
+    "year": 2025,
+    "summary": "MIT course site with lectures and hands-on labs built on MOOS-IvP, covering behaviour-based autonomy, multi-vehicle coordination, collision avoidance and marine sensing.",
+    "key_takeaways": [
+      "Lab sequence is a ready MOOS-IvP onboarding path",
+      "Includes COLREGs-style collision avoidance behaviours"
+    ],
+    "concepts": [
+      "concept:maritime-nav",
+      "concept:multi-agent",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "moos-ivp",
+      "mit",
+      "course"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:moos-ivp/moos-ivp",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:moos-ivp-docs",
+    "kind": "doc",
+    "title": "MOOS-IvP documentation wiki",
+    "url": "https://oceanai.mit.edu/moos-ivp/pmwiki/pmwiki.php",
+    "authors": [
+      "MIT Ocean AI Lab"
+    ],
+    "year": 2025,
+    "summary": "Documentation hub for MOOS-IvP with install guides, the IvP Helm manual, behaviour and app references and example missions.",
+    "key_takeaways": [
+      "Helm manual explains multi-objective behaviour arbitration",
+      "Mission files are simple text, quick to adapt"
+    ],
+    "concepts": [
+      "concept:maritime-nav",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "moos-ivp",
+      "docs"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:moos-ivp/moos-ivp",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:imo-colregs",
+    "kind": "standard",
+    "title": "COLREGs - Convention on the International Regulations for Preventing Collisions at Sea, 1972",
+    "url": "https://www.imo.org/en/About/Conventions/Pages/COLREG.aspx",
+    "authors": [
+      "International Maritime Organization"
+    ],
+    "year": 1972,
+    "summary": "IMO page for the collision regulations that define give-way and stand-on duties, lights and signals; the rule set autonomous surface vessels must encode.",
+    "key_takeaways": [
+      "Rules 13-17 (overtaking, head-on, crossing) drive most USV avoidance logic",
+      "Rules are written for human judgement, which makes formalization hard"
+    ],
+    "concepts": [
+      "concept:maritime-nav",
+      "concept:standards",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "colregs",
+      "imo",
+      "regulation"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ntnu-itk-autonomous-ship-lab/colav-simulator",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:d2snc/moos-ivp-masters",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:itu-r-m1371-ais",
+    "kind": "standard",
+    "title": "ITU-R M.1371 - Technical characteristics for an automatic identification system using TDMA in the VHF maritime mobile band",
+    "url": "https://www.itu.int/rec/R-REC-M.1371",
+    "authors": [
+      "ITU-R"
+    ],
+    "year": 2014,
+    "summary": "The ITU recommendation defining AIS radio, TDMA access and message formats that decoders such as pyais implement.",
+    "key_takeaways": [
+      "Defines message types 1-27 decoded by pyais and AIS-catcher",
+      "AIS is unauthenticated, so spoofing detection is an open problem"
+    ],
+    "concepts": [
+      "concept:maritime-nav",
+      "concept:standards",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "ais",
+      "itu"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:m0r13n/pyais",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:jvde-github/ais-catcher",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:signalk-spec",
+    "kind": "standard",
+    "title": "Signal K Specification",
+    "url": "https://signalk.org/specification/latest/",
+    "authors": [
+      "Signal K project"
+    ],
+    "year": 2025,
+    "summary": "Published Signal K specification describing the JSON data model, REST and streaming APIs for marine data.",
+    "key_takeaways": [
+      "Defines navigation.* paths for position, attitude and speed",
+      "WebSocket delta stream is easy to consume from any language"
+    ],
+    "concepts": [
+      "concept:maritime-nav",
+      "concept:standards"
+    ],
+    "tags": [
+      "signalk",
+      "json"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:signalk/specification",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:signalk/signalk-server",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:ardusub-docs",
+    "kind": "doc",
+    "title": "ArduSub documentation",
+    "url": "https://www.ardusub.com/",
+    "authors": [
+      "ArduPilot / Blue Robotics"
+    ],
+    "year": 2025,
+    "summary": "User and developer documentation for ArduSub, covering ROV configuration, sensors, and integration of external positioning such as DVL and USBL via MAVLink.",
+    "key_takeaways": [
+      "Explains how external position sources feed the EKF on a sub",
+      "Good companion to BlueOS extensions"
+    ],
+    "concepts": [
+      "concept:underwater-nav",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "ardusub",
+      "rov"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:bluerobotics/blueos",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:waterlinked-docs",
+    "kind": "doc",
+    "title": "Water Linked documentation (DVL and Underwater GPS)",
+    "url": "https://docs.waterlinked.com/",
+    "authors": [
+      "Water Linked"
+    ],
+    "year": 2025,
+    "summary": "Vendor documentation for Water Linked DVLs and Underwater GPS (USBL-style) systems, including the JSON-over-TCP and serial protocols.",
+    "key_takeaways": [
+      "DVL reports velocity and dead-reckoning over JSON/TCP",
+      "Check firmware version against protocol version"
+    ],
+    "concepts": [
+      "concept:underwater-nav",
+      "concept:ins"
+    ],
+    "tags": [
+      "dvl",
+      "usbl",
+      "waterlinked",
+      "protocol"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:waterlinked/dvl-python",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:autoware-docs",
+    "kind": "doc",
+    "title": "Autoware documentation",
+    "url": "https://autowarefoundation.github.io/autoware-documentation/main/",
+    "authors": [
+      "Autoware Foundation"
+    ],
+    "year": 2026,
+    "summary": "Official Autoware documentation with architecture, installation, tutorials and design notes for localization, perception and planning components.",
+    "key_takeaways": [
+      "Localization design docs explain NDT plus EKF fusion",
+      "Planning simulator tutorial runs without hardware"
+    ],
+    "concepts": [
+      "concept:ground-vehicle-nav",
+      "concept:lidar-slam",
+      "concept:ros"
+    ],
+    "tags": [
+      "autoware",
+      "docs"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:autowarefoundation/autoware",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:rellis3d-paper",
+    "kind": "paper",
+    "title": "RELLIS-3D Dataset: Data, Benchmarks and Analysis",
+    "url": "https://arxiv.org/abs/2011.12954",
+    "authors": [
+      "Jiang et al., Texas A&M"
+    ],
+    "year": 2020,
+    "summary": "Paper introducing the RELLIS-3D multimodal off-road dataset with annotated lidar and images and baseline results.",
+    "key_takeaways": [
+      "Off-road semantics differ sharply from urban datasets",
+      "Includes GNSS/IMU for localization work"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "off-road",
+      "dataset"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:unmannedlab/rellis-3d",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:wild-visual-navigation-paper",
+    "kind": "paper",
+    "title": "Wild Visual Navigation: Fast Traversability Learning via Pre-Trained Models and Online Self-Supervision",
+    "url": "https://arxiv.org/abs/2404.07110",
+    "authors": [
+      "Mattamala, Frey et al., ETH Zurich / Oxford"
+    ],
+    "year": 2024,
+    "summary": "Describes learning visual traversability online from pre-trained features and robot experience, adapting within minutes in forests and grassland.",
+    "key_takeaways": [
+      "Self-supervision removes manual traversability labels",
+      "Pre-trained vision features make online learning feasible"
+    ],
+    "concepts": [
+      "concept:ground-vehicle-nav",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "traversability",
+      "eth"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:leggedrobotics/wild_visual_navigation",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:bitcraze-loco-positioning",
+    "kind": "doc",
+    "title": "Loco Positioning System documentation",
+    "url": "https://www.bitcraze.io/documentation/system/positioning/loco-positioning-system/",
+    "authors": [
+      "Bitcraze"
+    ],
+    "year": 2025,
+    "summary": "Bitcraze documentation for its UWB positioning system covering anchor placement, two-way ranging versus TDoA modes and configuration with Crazyflies.",
+    "key_takeaways": [
+      "TDoA scales to many tags, TWR is simpler",
+      "Anchor geometry dominates accuracy"
+    ],
+    "concepts": [
+      "concept:rf-localization",
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "uwb",
+      "loco",
+      "tdoa"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:bitcraze/lps-node-firmware",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:bitcraze/crazyflie-firmware",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:util-uwb-dataset",
+    "kind": "dataset",
+    "title": "UTIL: UWB TDoA dataset",
+    "url": "https://utiasdsl.github.io/util-uwb-dataset/",
+    "authors": [
+      "University of Toronto Dynamic Systems Lab"
+    ],
+    "year": 2022,
+    "summary": "Project page for a UWB TDoA dataset collected with Loco Positioning hardware, with ground truth for evaluating indoor UWB localization.",
+    "key_takeaways": [
+      "Real UWB data including non-line-of-sight effects",
+      "Useful to benchmark estimators before buying hardware"
+    ],
+    "concepts": [
+      "concept:rf-localization",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "uwb",
+      "tdoa",
+      "dataset"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:williamwenda/uwb_tdoa_dataset",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:crazyswarm2-docs",
+    "kind": "doc",
+    "title": "Crazyswarm2 documentation",
+    "url": "https://imrclab.github.io/crazyswarm2/",
+    "authors": [
+      "IMRC Lab"
+    ],
+    "year": 2025,
+    "summary": "Docs for Crazyswarm2 with installation, simulation backends, swarm configuration and tutorials.",
+    "key_takeaways": [
+      "Simulation mode lets you prototype swarm logic on a laptop"
+    ],
+    "concepts": [
+      "concept:multi-agent",
+      "concept:ros"
+    ],
+    "tags": [
+      "crazyflie",
+      "swarm"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:imrclab/crazyswarm2",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:li-onboard-relative-localization-swarms",
+    "kind": "paper",
+    "title": "Onboard Ranging-based Relative Localization and Stability for Lightweight Aerial Swarms",
+    "url": "https://arxiv.org/abs/2003.05853",
+    "authors": [
+      "Shushuai Li et al. (TU Delft MAVLab)"
+    ],
+    "year": 2020,
+    "summary": "Presents onboard UWB ranging with an EKF for relative localization among small quadrotors, with a stability analysis of formation control built on those estimates.",
+    "key_takeaways": [
+      "Relative localization needs no anchors",
+      "Observability depends on relative motion between agents"
+    ],
+    "concepts": [
+      "concept:multi-agent",
+      "concept:rf-localization"
+    ],
+    "tags": [
+      "uwb",
+      "relative-localization",
+      "crazyflie"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:bitcraze/crazyflie-firmware",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:swarm-slam-paper",
+    "kind": "paper",
+    "title": "Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems",
+    "url": "https://arxiv.org/abs/2301.06230",
+    "authors": [
+      "Lajoie, Beltrame (MIST Lab, Polytechnique Montreal)"
+    ],
+    "year": 2023,
+    "summary": "Paper behind Swarm-SLAM, focusing on sparse inter-robot communication and decentralized loop closure selection.",
+    "key_takeaways": [
+      "Budgeted loop-closure exchange keeps bandwidth low",
+      "Works across lidar, stereo and RGB-D"
+    ],
+    "concepts": [
+      "concept:multi-agent",
+      "concept:visual-slam",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "c-slam"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mistlab/swarm-slam",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:dcl-slam-paper",
+    "kind": "paper",
+    "title": "DCL-SLAM: A Distributed Collaborative LiDAR SLAM Framework for a Robotic Swarm",
+    "url": "https://arxiv.org/abs/2210.11978",
+    "authors": [
+      "Zhong et al."
+    ],
+    "year": 2022,
+    "summary": "Describes a fully distributed lidar C-SLAM using compact descriptors for inter-robot place recognition.",
+    "key_takeaways": [
+      "Compact LiDAR-Iris descriptors reduce data exchange"
+    ],
+    "concepts": [
+      "concept:multi-agent",
+      "concept:lidar-slam",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "c-slam",
+      "lidar"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:zhongshp/dcl-slam",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:anti-uav-benchmark-paper",
+    "kind": "paper",
+    "title": "Anti-UAV: A Large Multi-Modal Benchmark for UAV Tracking",
+    "url": "https://arxiv.org/abs/2101.08466",
+    "authors": [
+      "Jiang, Zhao et al."
+    ],
+    "year": 2021,
+    "summary": "Introduces the Anti-UAV RGB and thermal infrared video benchmark for UAV tracking and an evaluation protocol.",
+    "key_takeaways": [
+      "Thermal IR matters for night and small-target tracking",
+      "Targets frequently disappear, so trackers must handle absence"
+    ],
+    "concepts": [
+      "concept:counter-uas",
+      "concept:target-tracking",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "anti-uav",
+      "thermal"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:zhaoj9014/anti-uav",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:anti-uav-challenge-site",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:anti-uav-challenge-site",
+    "kind": "competition",
+    "title": "Anti-UAV Challenge",
+    "url": "https://anti-uav.github.io/",
+    "authors": [
+      "Anti-UAV workshop organizers"
+    ],
+    "year": 2025,
+    "summary": "Site for the recurring Anti-UAV workshop and challenge with tracks for single and multiple UAV tracking in infrared video.",
+    "key_takeaways": [
+      "Leaderboards give a reference point for hackathon results"
+    ],
+    "concepts": [
+      "concept:counter-uas",
+      "concept:target-tracking"
+    ],
+    "tags": [
+      "challenge",
+      "workshop"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:zhaoj9014/anti-uav",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:ndss2023-dji-droneid",
+    "kind": "paper",
+    "title": "Drone Security and the Mysterious Case of DJI's DroneID",
+    "url": "https://www.ndss-symposium.org/ndss-paper/drone-security-and-the-mysterious-case-of-djis-droneid/",
+    "authors": [
+      "Schiller et al., Ruhr University Bochum / CISPA"
+    ],
+    "year": 2023,
+    "summary": "Security analysis of DJI drones that reverse-engineers the DroneID broadcast and shows it is unencrypted, with an open receiver released.",
+    "key_takeaways": [
+      "DroneID leaks drone and pilot position in the clear",
+      "Decoding needs SDR captures at high sample rates"
+    ],
+    "concepts": [
+      "concept:counter-uas"
+    ],
+    "tags": [
+      "dji",
+      "droneid",
+      "ndss"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:rub-syssec/dronesecurity",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:anarkiwi/samples2djidroneid",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:faa-remote-id",
+    "kind": "doc",
+    "title": "FAA Remote ID for drone pilots",
+    "url": "https://www.faa.gov/uas/getting_started/remote_id",
+    "authors": [
+      "US Federal Aviation Administration"
+    ],
+    "year": 2024,
+    "summary": "FAA overview of the US Remote ID rule, broadcast modules and compliance, the regulatory backdrop for cooperative drone detection.",
+    "key_takeaways": [
+      "Standard Remote ID broadcasts drone and control station location",
+      "Non-compliant drones need non-cooperative detection"
+    ],
+    "concepts": [
+      "concept:counter-uas",
+      "concept:policy-ethics",
+      "concept:standards"
+    ],
+    "tags": [
+      "remote-id",
+      "faa",
+      "regulation"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:opendroneid/opendroneid-core-c",
+        "rel": "explains"
+      }
+    ]
+  }
+]

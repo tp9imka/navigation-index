@@ -1,0 +1,67 @@
+# Path and motion planning
+
+`concept:path-planning`
+
+Global/local planners, sampling and search based planning, trajectory optimization.
+
+**Sub-concepts:** [Mission planning and routing](../concepts/mission-planning.md), [Obstacle avoidance and collision avoidance](../concepts/obstacle-avoidance.md)
+
+## Repositories (34)
+
+- [PythonRobotics](../repos/atsushisakai__pythonrobotics.md) - fit: high - Large collection of readable Python implementations of robotics algorithms: localization (EKF, particle filter), SLAM, path planning (A*, RRT*, D*, state lattice), path tracking and more, with animations.
+- [OSRM](../repos/project-osrm__osrm-backend.md) - fit: high - High-performance road routing engine on OpenStreetMap data using contraction hierarchies or multi-level Dijkstra.
+- [Valhalla](../repos/valhalla__valhalla.md) - fit: high - Tiled OSM routing engine with dynamic costing per request (auto, truck, pedestrian, bicycle), isochrones and map matching.
+- [OSMnx](../repos/gboeing__osmnx.md) - fit: high - Download, model and analyze street networks and other OSM features as NetworkX graphs.
+- [Nav2 (ROS 2 Navigation)](../repos/ros-navigation__navigation2.md) - fit: high - The standard ROS 2 navigation stack: behavior-tree driven navigator, global planners (NavFn, Smac hybrid-A*/lattice, Theta*), local controllers (DWB, MPPI, Regulated Pure Pursuit), costmaps, recovery behaviors and waypoi
+- [grid_map](../repos/anybotics__grid_map.md) - fit: high - C++ library and ROS integration for multi-layer 2.5D grid maps, widely used for elevation and traversability mapping.
+- [EGO-Swarm](../repos/zju-fast-lab__ego-planner-swarm.md) - fit: high - Decentralized multi-quadrotor extension of EGO-Planner with inter-agent collision avoidance and trajectory sharing over a network.
+- [OMPL - Open Motion Planning Library](../repos/ompl__ompl.md) - fit: high - Library of sampling-based motion planners (RRT, RRT*, PRM, BIT*, informed variants, kinodynamic planners) with a clean state-space abstraction and Python bindings.
+- [elevation_mapping_cupy](../repos/leggedrobotics__elevation_mapping_cupy.md) - fit: high - GPU-accelerated elevation and traversability mapping from ETH Zurich, supporting semantic layers and learned traversability, used on ANYmal robots.
+- [CMU Autonomous Exploration Development Environment](../repos/hongbiaoz__autonomous_exploration_development_environment.md) - fit: high - CMU ground-robot development environment with simulated worlds, terrain analysis, local planner and waypoint tools used for exploration research (TARE, FAR planner).
+- [Fields2Cover](../repos/fields2cover__fields2cover.md) - fit: high - Modular coverage path planning library: headland generation, swath generation, route ordering (boustrophedon, snake, spiral) and Dubins/Reeds-Shepp path smoothing, with Python bindings.
+- [TARE Planner (CMU Explorer)](../repos/caochao39__tare_planner.md) - fit: high - Hierarchical exploration planner from CMU's Team Explorer, which earned the most-sectors-explored award at the SubT final.
+- [MOOS-IvP](../repos/moos-ivp__moos-ivp.md) - fit: high - Long-running autonomy middleware (MOOS) plus the IvP Helm behaviour-based multi-objective decision engine, used widely for autonomous marine vehicles, including COLREGs-aware collision avoidance behaviours.
+- [grid_map](../repos/leggedrobotics__grid_map.md) - fit: high - Universal multi-layer 2.5D grid map library for mobile robots with ROS/ROS 2 integration, filters, iterators and conversion to images, point clouds and costmaps.
+- [Autoware](../repos/autowarefoundation__autoware.md) - fit: medium - Meta-repository for Autoware, the open-source ROS 2 autonomous driving stack covering localization (NDT, EKF), perception, planning and control.
+- [Isaac Lab](../repos/isaac-sim__isaaclab.md) - fit: medium - Robot-learning framework on Isaac Sim for massively parallel RL and imitation learning, with navigation and locomotion task examples.
+- [GraphHopper](../repos/graphhopper__graphhopper.md) - fit: medium - Java OSM routing engine usable as library or server, with custom models for per-request costing and map matching.
+- [Fast-Planner](../repos/hkust-aerial-robotics__fast-planner.md) - fit: medium - HKUST quadrotor planning framework: kinodynamic A* front-end plus B-spline optimization, with topological and perception-aware variants for fast flight in unknown environments.
+- [EGO-Planner](../repos/zju-fast-lab__ego-planner.md) - fit: medium - ESDF-free gradient-based local planner for quadrotors from ZJU FAST Lab: optimizes B-spline trajectories using collision terms computed only where the trajectory hits obstacles.
+- [FUEL - Fast UAV Exploration](../repos/hkust-aerial-robotics__fuel.md) - fit: medium - Frontier-information-structure based autonomous exploration for quadrotors, combining global tour planning over frontiers with local viewpoint refinement.
+- [FAR Planner](../repos/michaelfyang__far_planner.md) - fit: medium - Visibility-graph route planner for known and unknown environments from the CMU SubT team.
+- [GBPlanner (CERBERUS)](../repos/ntnu-arl__gbplanner_ros.md) - fit: medium - NTNU ARL graph-based exploration planner for subterranean environments, used in the DARPA SubT challenge on legged and aerial robots.
+- [RACER - multi-UAV exploration](../repos/robotics-star-lab__racer.md) - fit: medium - Rapid collaborative exploration with multiple UAVs: decomposes unknown space and allocates exploration regions between drones with pairwise communication.
+- [KR Autonomous Flight](../repos/kumarrobotics__kr_autonomous_flight.md) - fit: medium - UPenn Kumar Robotics end-to-end autonomy stack for GPS-denied quadrotors: state estimation, mapping, planning and control in one system.
+- [polygon_coverage_planning](../repos/ethz-asl__polygon_coverage_planning.md) - fit: medium - ETH ASL coverage planner for polygons with holes that treats boustrophedon sweep selection as a generalized TSP, aimed at UAV survey.
+- [opennav_coverage](../repos/open-navigation__opennav_coverage.md) - fit: medium - Nav2-compatible complete-coverage task server and navigator built on Fields2Cover, with behavior-tree utilities for field/area coverage and row following.
+- [BenchNav](../repos/masafumiendo__benchnav.md) - fit: medium - Gymnasium-based PyTorch simulator for benchmarking off-road navigation planners under uncertain, probabilistic traversability, with synthetic terrain generation.
+- [HOUND](../repos/prl-mushr__hound_core.md) - fit: medium - Autonomy stack for a small-scale high-speed off-road vehicle from the UW MuSHR group, with BeamNG simulator integration and Jetson Orin deployment.
+- [MOOS-IvP COLREGs master's research code](../repos/d2snc__moos-ivp-masters.md) - fit: medium - MOOS-IvP applications from a 2025 master's project at Universidade de Sao Paulo implementing COLREGs-compliant collision avoidance for USVs, including a modified A* planner, a velocity-obstacle method and a virtual-conta
+- [GCOPTER](../repos/zju-fast-lab__gcopter.md) - fit: low - General-purpose multicopter trajectory optimizer (MINCO) handling safe-corridor constraints and dynamic limits with spatial-temporal deformation.
+- [MADER](../repos/mit-acl__mader.md) - fit: low - MIT ACL decentralized and asynchronous trajectory planner for multiple UAVs in dynamic environments with obstacle and agent avoidance.
+- [MBPlanner](../repos/ntnu-arl__mbplanner_ros.md) - fit: low - Motion-primitive based exploration planner for fast aerial robots in confined spaces, used in CERBERUS flying platforms.
+- [Time-optimal quadrotor planning](../repos/uzh-rpg__rpg_time_optimal.md) - fit: low - Code for computing time-optimal quadrotor trajectories through waypoints, from the UZH group that placed second in AlphaPilot and built Swift.
+- [BRUCE](../repos/jinkunw__bruce.md) - fit: low - BlueROV underwater SLAM and exploration code from Stevens Institute, combining sonar-based SLAM with active exploration planning.
+
+## Documents, talks, courses, datasets (19)
+
+- [AlphaPilot: Autonomous Drone Racing](../resources/alphapilot-uzh-paper.md) - paper - UZH's second-place AlphaPilot system: learned gate detection, nonlinear filtering of visual-inertial state and time-optimal trajectory planning for GPS-free racing.
+- [Artificial Intelligence for Robotics (Udacity CS373)](../resources/udacity-ai-for-robotics-cs373.md) - course - Free classic course by Sebastian Thrun programming robot localization (histogram filter, Kalman filter, particle filter), search/planning, PID control and GraphSLAM in Python.
+- [CERBERUS: Autonomous Legged and Aerial Robotic Exploration in the Tunnel and Urban Circuits of the DARPA Subterranean Challenge](../resources/cerberus-tunnel-urban-paper.md) - paper - Field Robotics paper covering CERBERUS' systems and results in the earlier SubT circuits, including perception, planning and artifact reporting.
+- [EGO-Planner: An ESDF-free Gradient-based Local Planner for Quadrotors](../resources/zhou-ego-planner-paper.md) - paper - Introduces a local planner that avoids building a full Euclidean signed distance field, computing collision penalties only from obstacles the trajectory intersects, cutting onboard compute.
+- [Fields2Cover: An open-source coverage path planning library for unmanned agricultural vehicles](../resources/fields2cover-paper.md) - paper - Paper behind the Fields2Cover library: modular coverage pipeline (headlands, swaths, route ordering, path smoothing) and benchmark of its components.
+- [From the Desks of ROS Maintainers: A Survey of Modern & Capable Mobile Robotics Algorithms in the Robot Operating System 2](../resources/macenski-ros2-algorithms-survey.md) - paper - Survey by ROS maintainers of the mobile robotics algorithms available in ROS 2: localization, SLAM, planning, control and perception packages, with their maturity and use.
+- [GSoC 2022: Update ROS integration for Non-GPS navigation and off-board path planning](../resources/ardupilot-gsoc2022-ros-non-gps.md) - blog - Wrap-up of a GSoC project updating ArduPilot's ROS integration for lidar/SLAM-based non-GPS navigation and off-board planning.
+- [MIT 16.485 Visual Navigation for Autonomous Vehicles (VNAV)](../resources/mit-vnav-16485.md) - course - MIT graduate course on the math and software of visual navigation: 3D geometry, Lie groups, quadrotor modelling and control, trajectory optimization, feature tracking, two-view geometry, nonlinear optimization, VIO and S
+- [MOOS-IvP documentation wiki](../resources/moos-ivp-docs.md) - doc - Documentation hub for MOOS-IvP with install guides, the IvP Helm manual, behaviour and app references and example missions.
+- [Nav2 Documentation](../resources/nav2-docs.md) - doc - Official Nav2 documentation: concepts, configuration guides for every planner/controller/costmap plugin, tuning guide and tutorials including GPS-based navigation.
+- [Nav2 ROSCon Talks (index)](../resources/nav2-roscon-talks.md) - talk - Curated index of ROSCon talks by the Nav2 team and community from 2018 onward, covering features such as Smac planners and the MPPI controller plus tuning and deployment advice.
+- [Nav2 ROSCon Talks index](../resources/nav2-roscon-talks-index.md) - video - Index of ROSCon talks by Nav2 developers and the community (Vimeo links), including SLAM Toolbox and large-scale indoor mapping talks.
+- [Robust and Efficient Quadrotor Trajectory Generation for Fast Autonomous Flight](../resources/zhou-fast-planner-paper.md) - paper - Fast-Planner paper: kinodynamic path search front-end plus B-spline optimization and time adjustment for fast quadrotor flight in unknown environments.
+- [ROSCon 2023 videos and slides](../resources/roscon-2023-videos.md) - video - Announcement and index of ROSCon 2023 recordings and slides, including navigation talks such as bidirectional navigation with Nav2 and localization on 3D mesh surfaces.
+- [Self-Driving Cars Specialization (University of Toronto)](../resources/coursera-self-driving-cars-specialization.md) - course - Four-course specialization covering vehicle dynamics and control, state estimation and localization, visual perception, and motion planning, using the CARLA simulator for assignments.
+- [Team CERBERUS Wins the DARPA Subterranean Challenge: Technical Overview and Lessons Learned](../resources/cerberus-subt-final-paper.md) - paper - Winning team's description of its legged-plus-aerial system: multi-modal perception, robust localization and mapping, exploration planning and artifact detection, with lessons from the final.
+- [The Marathon 2: A Navigation System](../resources/macenski-marathon2-nav2.md) - paper - Paper introducing Nav2: behavior-tree based navigation architecture for ROS 2, its design choices and a long-duration campus deployment test.
+- [The Open Motion Planning Library (OMPL) website](../resources/ompl-site.md) - doc - Official OMPL documentation with planner catalogue, tutorials, Python binding guide and benchmarking tools.
+- [Visual Navigation for Flying Robots (TUM, 2013)](../resources/tum-visual-navigation-flying-robots.md) - lecture-series - Award-winning TUM lecture on making quadrotors navigate with cameras: 3D geometry, sensors, state estimation, visual motion estimation, SLAM, dense reconstruction, planning and exploration.
+

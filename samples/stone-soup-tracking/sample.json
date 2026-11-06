@@ -1,0 +1,11 @@
+{
+  "id": "sample:stone-soup-tracking",
+  "title": "Stone Soup radar tracking of two UAVs with JPDA and OSPA",
+  "summary": "Simulates two small UAVs observed by a noisy bearing/range radar with clutter and tracks them with Stone Soup's Extended Kalman filter and JPDA data association. Track quality is scored against ground truth with the OSPA metric, the detect-and-track layer of a counter-UAS airspace picture.",
+  "concepts": ["concept:target-tracking", "concept:counter-uas", "concept:situational-awareness"],
+  "tags": ["stone-soup", "jpda", "ekf", "ospa", "radar", "c-uas", "airspace-awareness"],
+  "related": [
+    {"id": "repo:dstl/stone-soup", "rel": "uses"}
+  ],
+  "verified": "unverified sketch: syntax-checked only with python3.14.7 on 2026-11-06; requires stonesoup (numpy, scipy). Class names checked against Stone Soup tutorials 02, 08 and the Metrics example."
+}

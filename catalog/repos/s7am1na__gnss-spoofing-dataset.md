@@ -1,0 +1,28 @@
+# Multi-frequency GNSS spoofing raw dataset
+
+`repo:s7am1na/gnss-spoofing-dataset` - <https://github.com/S7AM1NA/GNSS-Spoofing-Dataset>
+
+| stars | language | license | last push | archived | maturity | hackathon fit |
+|---|---|---|---|---|---|---|
+| 4 |  | MIT | 2025-12-07 | False | research-prototype | high |
+
+Raw GNSS measurement logs from Android phones and smartwatches recorded under spoofing scenarios on L1, L5 and dual-band.
+
+**Why it matters:** Labelled smartphone spoofing data is scarce; this enables training and testing detectors without generating signals.
+
+**Hackathon notes:** Load logs with gnss_lib_py and build a consistency-check or ML detector. Verify labelling and scenario details in the README before trusting results.
+
+**Concepts:** [Jamming and spoofing](../concepts/gnss-interference.md), [Datasets and benchmarks](../concepts/datasets-benchmarks.md), [Assured / resilient PNT](../concepts/assured-pnt.md)
+
+**Tags:** `spoofing`, `dataset`, `android`, `l5`
+
+**Domains:** dismounted
+
+## Related
+
+- integrates_with: [gnss_lib_py](../repos/stanford-navlab__gnss_lib_py.md)
+- depends_on: [GPS Measurement Tools (incl. GnssLogger)](../repos/google__gps-measurement-tools.md)
+
+_Indexed by lane(s): gnss_
+
+_GitHub metadata fetched 2026-11-06._

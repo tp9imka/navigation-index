@@ -1,0 +1,757 @@
+[
+  {
+    "id": "res:ardupilot-non-gps-navigation-docs",
+    "kind": "doc",
+    "title": "Non-GPS Navigation",
+    "url": "https://ardupilot.org/copter/docs/common-non-gps-navigation-landing-page.html",
+    "authors": [
+      "ArduPilot Dev Team"
+    ],
+    "year": null,
+    "summary": "Landing page in the ArduPilot wiki listing every supported way to navigate without GNSS: optical flow, beacons, wheel encoders, visual odometry/VIO cameras, motion capture and MAVLink external position.",
+    "key_takeaways": [
+      "Single index of all ArduPilot GPS-free position sources",
+      "Each method links to its sensor-specific setup page"
+    ],
+    "concepts": [
+      "concept:autopilot",
+      "concept:vio",
+      "concept:sensor-fusion",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "ardupilot",
+      "non-gps",
+      "ekf3"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:ardupilot-gps-non-gps-transitions",
+    "kind": "doc",
+    "title": "GPS / Non-GPS Transitions",
+    "url": "https://ardupilot.org/copter/docs/common-non-gps-to-gps.html",
+    "authors": [
+      "ArduPilot Dev Team"
+    ],
+    "year": null,
+    "summary": "Explains configuring EKF3 with two source sets (e.g. GPS and external nav/optical flow) and switching between them in flight via RC switch, Lua script or MAVLink.",
+    "key_takeaways": [
+      "EK3_SRCn_* defines up to three source sets",
+      "Switching can be automated with Lua for GNSS-loss handling"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:assured-pnt",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "ekf3",
+      "source-switching",
+      "lua"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:ardupilot-ekf3-sources",
+    "kind": "doc",
+    "title": "EKF Source Selection and Switching",
+    "url": "https://ardupilot.org/copter/docs/common-ekf-sources.html",
+    "authors": [
+      "ArduPilot Dev Team"
+    ],
+    "year": null,
+    "summary": "Reference for EKF3 source parameters (position, velocity, yaw per axis) and how fusion of multiple velocity sources works.",
+    "key_takeaways": [
+      "Per-axis source selection for position, velocity and yaw",
+      "Basis for GNSS-denied and spoofing-resilience configs"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:gnss-ins",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "ekf3",
+      "parameters"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:ardupilot-ekf-overview",
+    "kind": "doc",
+    "title": "Extended Kalman Filter (EKF) navigation overview",
+    "url": "https://ardupilot.org/copter/docs/common-apm-navigation-extended-kalman-filter-overview.html",
+    "authors": [
+      "ArduPilot Dev Team"
+    ],
+    "year": null,
+    "summary": "Overview of ArduPilot's EKF2/EKF3 estimators: states, sensor inputs, innovation checks, lane switching across multiple IMUs and tuning guidance.",
+    "key_takeaways": [
+      "Multiple EKF cores run per IMU with automatic lane switching",
+      "Innovation gates reject inconsistent sensor data"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:ins",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "ekf3",
+      "ekf2",
+      "estimator"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:ardupilot-vio-tracking-camera",
+    "kind": "doc",
+    "title": "Intel RealSense T265 / VIO tracking camera setup",
+    "url": "https://ardupilot.org/copter/docs/common-vio-tracking-camera.html",
+    "authors": [
+      "ArduPilot Dev Team"
+    ],
+    "year": null,
+    "summary": "Setup guide for using a visual-inertial tracking camera via a companion computer as ArduPilot's position source.",
+    "key_takeaways": [
+      "Pose sent as VISION_POSITION_ESTIMATE / ODOMETRY",
+      "Covers frame alignment and EKF origin setting"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "t265",
+      "companion",
+      "external-nav"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:thien94/vision_to_mavros",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:ardupilot-dev-mavlink-nongps-position",
+    "kind": "doc",
+    "title": "Non-GPS Position Estimation (MAVLink messages)",
+    "url": "https://ardupilot.org/dev/docs/mavlink-nongps-position-estimation.html",
+    "authors": [
+      "ArduPilot Dev Team"
+    ],
+    "year": null,
+    "summary": "Developer page listing the MAVLink messages ArduPilot accepts for external position/velocity estimates and their expected frames.",
+    "key_takeaways": [
+      "Lists VISION_POSITION_ESTIMATE, VISION_SPEED_ESTIMATE, ODOMETRY, GPS_INPUT",
+      "Starting point for writing your own nav source"
+    ],
+    "concepts": [
+      "concept:mavlink-gcs",
+      "concept:vio",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "mavlink",
+      "external-nav"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:ardupilot/pymavlink",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:ardupilot-optical-flow-setup",
+    "kind": "doc",
+    "title": "Optical Flow Sensor setup",
+    "url": "https://ardupilot.org/copter/docs/common-optical-flow-sensor-setup.html",
+    "authors": [
+      "ArduPilot Dev Team"
+    ],
+    "year": null,
+    "summary": "How to install, calibrate and configure an optical flow sensor with a rangefinder as an ArduPilot velocity source.",
+    "key_takeaways": [
+      "Flow plus rangefinder gives low-altitude velocity without GNSS",
+      "Calibration step aligns flow and gyro rates"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "optical-flow",
+      "rangefinder"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:ardupilot-ros-vio-tracking-camera",
+    "kind": "doc",
+    "title": "ROS and VIO tracking camera for non-GPS navigation",
+    "url": "https://ardupilot.org/dev/docs/ros-vio-tracking-camera.html",
+    "authors": [
+      "ArduPilot Dev Team"
+    ],
+    "year": null,
+    "summary": "Developer tutorial wiring a VIO camera through ROS and MAVROS into ArduPilot for indoor flight.",
+    "key_takeaways": [
+      "End-to-end ROS pipeline into EKF3",
+      "Frame transforms are the usual failure point"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:ros",
+      "concept:mavlink-gcs"
+    ],
+    "tags": [
+      "ros",
+      "mavros",
+      "t265"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mavlink/mavros",
+        "rel": "uses"
+      },
+      {
+        "id": "repo:thien94/vision_to_mavros",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:px4-ekf2-tuning-guide",
+    "kind": "doc",
+    "title": "Using the ECL EKF (EKF2)",
+    "url": "https://docs.px4.io/main/en/advanced_config/tuning_the_ecl_ekf.html",
+    "authors": [
+      "PX4 Dev Team"
+    ],
+    "year": null,
+    "summary": "PX4's main EKF2 guide: states, sensor fusion options (GNSS, flow, external vision, range, airspeed), aiding modes, innovation monitoring and tuning.",
+    "key_takeaways": [
+      "Explains which aiding sources are required for position control",
+      "Shows how to read innovations in logs"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:gnss-ins",
+      "concept:ins",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "ekf2",
+      "px4",
+      "tuning"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:px4/flight_review",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:px4-external-position-estimation",
+    "kind": "doc",
+    "title": "Using Vision or Motion Capture Systems for Position Estimation",
+    "url": "https://docs.px4.io/main/en/ros/external_position_estimation.html",
+    "authors": [
+      "PX4 Dev Team"
+    ],
+    "year": null,
+    "summary": "How to feed external vision or mocap poses into PX4 EKF2 via MAVLink or ROS, including frame conventions and EKF2_EV_* parameters.",
+    "key_takeaways": [
+      "ODOMETRY / VISION_POSITION_ESTIMATE inputs",
+      "Frame handling ENU vs NED"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:sensor-fusion",
+      "concept:ros"
+    ],
+    "tags": [
+      "external-vision",
+      "mocap",
+      "px4"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:mavlink/mavros",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:px4-visual-inertial-odometry",
+    "kind": "doc",
+    "title": "Visual Inertial Odometry (VIO) in PX4",
+    "url": "https://docs.px4.io/main/en/computer_vision/visual_inertial_odometry.html",
+    "authors": [
+      "PX4 Dev Team"
+    ],
+    "year": null,
+    "summary": "Guide to setting up a VIO pipeline on a companion computer and fusing it in PX4 for GPS-free flight.",
+    "key_takeaways": [
+      "Companion runs VIO, PX4 fuses it",
+      "Includes check procedure before flight"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "vio",
+      "companion",
+      "px4"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:px4-optical-flow-docs",
+    "kind": "doc",
+    "title": "Optical Flow (PX4)",
+    "url": "https://docs.px4.io/main/en/sensor/optical_flow.html",
+    "authors": [
+      "PX4 Dev Team"
+    ],
+    "year": null,
+    "summary": "Configuring optical flow sensors and range finders for EKF2 velocity aiding in PX4.",
+    "key_takeaways": [
+      "Flow needs a distance sensor for scale",
+      "Lists supported sensors and EKF2 params"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "optical-flow",
+      "px4"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:px4/px4-opticalflow",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:px4-remote-id-docs",
+    "kind": "doc",
+    "title": "Remote ID (Open Drone ID) in PX4",
+    "url": "https://docs.px4.io/main/en/peripherals/remote_id.html",
+    "authors": [
+      "PX4 Dev Team"
+    ],
+    "year": null,
+    "summary": "PX4 documentation for connecting Remote ID modules over MAVLink or DroneCAN and related failsafe behaviour.",
+    "key_takeaways": [
+      "Supports MAVLink and CAN Remote ID modules",
+      "Covers arming checks"
+    ],
+    "concepts": [
+      "concept:standards",
+      "concept:counter-uas"
+    ],
+    "tags": [
+      "remote-id",
+      "px4"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:ardupilot/arduremoteid",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:ardupilot-remote-id-docs",
+    "kind": "doc",
+    "title": "Remote ID (ArduPilot)",
+    "url": "https://ardupilot.org/copter/docs/common-remoteid.html",
+    "authors": [
+      "ArduPilot Dev Team"
+    ],
+    "year": null,
+    "summary": "ArduPilot wiki page on Remote ID modules, including ArduRemoteID setup and compliance notes.",
+    "key_takeaways": [
+      "Uses OpenDroneID MAVLink/DroneCAN messages",
+      "Lists supported transponder hardware"
+    ],
+    "concepts": [
+      "concept:standards",
+      "concept:counter-uas"
+    ],
+    "tags": [
+      "remote-id",
+      "ardupilot"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:ardupilot/arduremoteid",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:mavlink-opendroneid-microservice",
+    "kind": "doc",
+    "title": "Open Drone ID (MAVLink microservice)",
+    "url": "https://mavlink.io/en/services/opendroneid.html",
+    "authors": [
+      "MAVLink project"
+    ],
+    "year": null,
+    "summary": "Defines the MAVLink messages and flow for Remote ID between flight controller, GCS and transponder.",
+    "key_takeaways": [
+      "Maps ASTM F3411 messages to MAVLink",
+      "Clarifies which component sends what"
+    ],
+    "concepts": [
+      "concept:standards",
+      "concept:mavlink-gcs",
+      "concept:counter-uas"
+    ],
+    "tags": [
+      "remote-id",
+      "mavlink"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mavlink/mavlink",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:opendroneid/opendroneid-core-c",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:riseborough-px4-state-estimation-2020",
+    "kind": "talk",
+    "title": "PX4 state estimation update (PX4 Developer Summit Virtual 2020)",
+    "url": "https://px4.io/wp-content/uploads/2020/07/Paul-Riseborough-PX4-state-estimation-update.pdf",
+    "authors": [
+      "Paul Riseborough"
+    ],
+    "year": 2020,
+    "summary": "Slide deck from the EKF2 lead developer covering estimator changes, including operation without GPS and handling of non-GPS aiding sensors.",
+    "key_takeaways": [
+      "Primary-source view of EKF2 design choices",
+      "Covers non-GPS aiding behaviour"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:gnss-ins",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "px4-dev-summit",
+      "ekf2",
+      "slides"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:px4-dev-summit-2025-playlist",
+    "kind": "video",
+    "title": "PX4 Developer Summit 2025 recordings",
+    "url": "https://www.youtube.com/playlist?list=PLYy2pGCdhu7zVkfXvJkAEbT0V6CoyakMg",
+    "authors": [
+      "Dronecode Foundation"
+    ],
+    "year": 2025,
+    "summary": "YouTube playlist of 2025 PX4 Developer Summit talks; the program included GNSS and navigation sessions, among them a talk on structure-aided visual localisation for PX4 indoors (SAVLoc).",
+    "key_takeaways": [
+      "Recent community work on estimation and navigation",
+      "Recordings published gradually per Dronecode"
+    ],
+    "concepts": [
+      "concept:autopilot",
+      "concept:vio",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "px4-dev-summit",
+      "talks"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "explains"
+      },
+      {
+        "id": "res:dronecode-px4-dev-summit-2025-recap",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:dronecode-px4-dev-summit-2025-recap",
+    "kind": "blog",
+    "title": "PX4 Developer Summit 2025 Recap",
+    "url": "https://dronecode.org/px4-developer-summit-2025-recap/",
+    "authors": [
+      "Dronecode Foundation"
+    ],
+    "year": 2025,
+    "summary": "Dronecode recap of the 2025 summit, pointing to the schedule and recordings.",
+    "key_takeaways": [
+      "Index into 2025 summit content"
+    ],
+    "concepts": [
+      "concept:autopilot"
+    ],
+    "tags": [
+      "px4-dev-summit"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:ardupilot-devcon-kaga-2024",
+    "kind": "talk",
+    "title": "ArduPilot Developer Conference Kaga 2024 - schedule and YouTube links",
+    "url": "https://discuss.ardupilot.org/t/ardupilot-developer-conference-kaga-2024-schedule-and-youtube-links/125384",
+    "authors": [
+      "ArduPilot community"
+    ],
+    "year": 2024,
+    "summary": "Schedule and day-by-day livestream recordings of the 2024 ArduPilot developer conference in Japan, including a 'High Altitude Non-GPS' session and a talk on a CINS (DCM replacement) attitude estimator.",
+    "key_takeaways": [
+      "Day 2 stream contains the non-GPS talk",
+      "Shows current ArduPilot estimator work"
+    ],
+    "concepts": [
+      "concept:autopilot",
+      "concept:assured-pnt",
+      "concept:ins"
+    ],
+    "tags": [
+      "ardupilot-conference",
+      "talks",
+      "non-gps"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:riseborough-ardupilot-unconference-2017-ekf",
+    "kind": "talk",
+    "title": "Developer Unconference - Paul Riseborough (EKF)",
+    "url": "https://discuss.ardupilot.org/t/developer-unconference-paul-riseborough/15922",
+    "authors": [
+      "Paul Riseborough"
+    ],
+    "year": 2017,
+    "summary": "Forum post for the EKF talk at the 2017 ArduPilot developer un-conference in Canberra, given by the main author of ArduPilot's EKF.",
+    "key_takeaways": [
+      "Design rationale behind ArduPilot's EKF",
+      "Older but still the clearest primer"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:ins"
+    ],
+    "tags": [
+      "ardupilot-conference",
+      "ekf"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:ardupilot-gsoc2022-ros-non-gps",
+    "kind": "blog",
+    "title": "GSoC 2022: Update ROS integration for Non-GPS navigation and off-board path planning",
+    "url": "https://discuss.ardupilot.org/t/gsoc-2022-wrapping-up-update-ros-integration-for-non-gps-navigation-and-off-board-path-planning/90701",
+    "authors": [
+      "ArduPilot GSoC 2022"
+    ],
+    "year": 2022,
+    "summary": "Wrap-up of a GSoC project updating ArduPilot's ROS integration for lidar/SLAM-based non-GPS navigation and off-board planning.",
+    "key_takeaways": [
+      "Cartographer SLAM feeding EKF3",
+      "Basis for later ardupilot_ros work"
+    ],
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:ros",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "gsoc",
+      "ros",
+      "non-gps"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot_ros",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:hyams-gps-denied-rth-lora-ranging",
+    "kind": "blog",
+    "title": "GPS-denied RTH for MAVLink systems using LoRa radio ranging",
+    "url": "https://discuss.ardupilot.org/t/sam-hyamss-gps-denied-rth-for-mavlink-systems-using-lora-radio-ranging/130709",
+    "authors": [
+      "Sam Hyams"
+    ],
+    "year": 2025,
+    "summary": "Blog (shared on ArduPilot Discourse) on returning a plane home without GPS using range measurements from a LoRa radio to a ground beacon; discussion covers multilateration and EKF3 range fusion.",
+    "key_takeaways": [
+      "Radio ranging as a cheap GNSS backup for RTH",
+      "Needs multiple beacons for a full position fix"
+    ],
+    "concepts": [
+      "concept:rf-localization",
+      "concept:assured-pnt",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "lora",
+      "ranging",
+      "rth"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "uses"
+      }
+    ]
+  }
+]

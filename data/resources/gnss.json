@@ -1,0 +1,865 @@
+[
+  {
+    "id": "res:gps-is-gps-200n",
+    "kind": "standard",
+    "title": "IS-GPS-200N: Navstar GPS Space Segment/Navigation User Segment Interfaces",
+    "url": "https://archive.gps.gov/technical/icwg/IS-GPS-200N.pdf",
+    "authors": [
+      "US Space Force GPS Directorate"
+    ],
+    "year": 2022,
+    "summary": "The interface specification defining GPS L1/L2 signals, PRN codes and the legacy and CNAV navigation messages that every GPS receiver implements.",
+    "key_takeaways": [
+      "Authoritative source for ephemeris and clock equations",
+      "Defines L1 C/A and L2C signal structure",
+      "Needed to build or audit any navigation message decoder"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:standards"
+    ],
+    "tags": [
+      "icd",
+      "gps",
+      "l1",
+      "l2c"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:gnss-sdr/gnss-sdr",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:osqzss/gps-sdr-sim",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:gps-icwg-archive",
+    "kind": "doc",
+    "title": "GPS Interface Control Documents (archive.gps.gov)",
+    "url": "https://archive.gps.gov/technical/icwg/",
+    "authors": [
+      "GPS.gov"
+    ],
+    "year": 2022,
+    "summary": "Index of current GPS interface specifications, including IS-GPS-200 (L1/L2), IS-GPS-705 (L5) and IS-GPS-800 (L1C).",
+    "key_takeaways": [
+      "Single entry point for all GPS signal ICDs",
+      "Historic versions also linked"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:standards"
+    ],
+    "tags": [
+      "icd",
+      "gps",
+      "l5",
+      "l1c"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:gps-is-gps-200n",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:galileo-os-sis-icd-2-1",
+    "kind": "standard",
+    "title": "Galileo Open Service Signal-In-Space ICD (OS SIS ICD) v2.1",
+    "url": "https://www.gsc-europa.eu/sites/default/files/sites/all/files/Galileo_OS_SIS_ICD_v2.1.pdf",
+    "authors": [
+      "European Union / EUSPA"
+    ],
+    "year": 2023,
+    "summary": "Defines Galileo E1, E5a, E5b open service signals, spreading codes and the F/NAV and I/NAV navigation messages.",
+    "key_takeaways": [
+      "Required for decoding Galileo navigation data",
+      "I/NAV is the carrier for OSNMA bits"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:standards"
+    ],
+    "tags": [
+      "icd",
+      "galileo",
+      "e1",
+      "e5"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:gnss-sdr/gnss-sdr",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:galileo-osnma-sis-icd-1-1",
+    "kind": "standard",
+    "title": "Galileo OSNMA Signal-In-Space ICD v1.1",
+    "url": "https://www.gsc-europa.eu/sites/default/files/sites/all/files/Galileo_OSNMA_SIS_ICD_v1.1.pdf",
+    "authors": [
+      "European Union / EUSPA"
+    ],
+    "year": 2023,
+    "summary": "Specifies Galileo Open Service Navigation Message Authentication: the TESLA-based key chain, MAC and key messages carried in I/NAV, and the public key/Merkle tree structure.",
+    "key_takeaways": [
+      "Civil signal authentication is available today on Galileo E1-B",
+      "Receivers need loose time synchronization to verify TESLA keys",
+      "Defines what an authenticated vs unauthenticated navigation message means"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:gnss",
+      "concept:standards"
+    ],
+    "tags": [
+      "osnma",
+      "galileo",
+      "authentication",
+      "tesla"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:algafix/osnma",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:daniestevez/galileo-osnma",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:nlsfi/fgi-osnma",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:haiyang-wong/osnma-sdr-sim",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:galileo-osnma-receiver-guidelines-1-3",
+    "kind": "standard",
+    "title": "Galileo OSNMA Receiver Guidelines v1.3",
+    "url": "https://www.gsc-europa.eu/sites/default/files/sites/all/files/Galileo_OSNMA_Receiver_Guidelines_v1.3.pdf",
+    "authors": [
+      "European Union / EUSPA"
+    ],
+    "year": 2024,
+    "summary": "Implementation guidance for OSNMA receivers covering time synchronization requirements, cryptographic material handling, and how to use authentication results in the position solution.",
+    "key_takeaways": [
+      "Explains which attacks OSNMA does and does not stop (e.g. replay/meaconing limits)",
+      "Covers key renewal and alert handling"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:standards"
+    ],
+    "tags": [
+      "osnma",
+      "galileo",
+      "receiver"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:galileo-osnma-sis-icd-1-1",
+        "rel": "part_of"
+      },
+      {
+        "id": "repo:algafix/osnma",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:gsc-osnma-service-page",
+    "kind": "doc",
+    "title": "Galileo OSNMA service page (GSC)",
+    "url": "https://www.gsc-europa.eu/galileo/services/galileo-open-service-navigation-message-authentication-osnma",
+    "authors": [
+      "European GNSS Service Centre"
+    ],
+    "year": 2025,
+    "summary": "Official entry point for OSNMA status, public keys, Merkle tree root and related documentation.",
+    "key_takeaways": [
+      "Where to download the cryptographic material receivers need"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:gnss"
+    ],
+    "tags": [
+      "osnma",
+      "galileo"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:galileo-osnma-sis-icd-1-1",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:gsc-programme-reference-documents",
+    "kind": "doc",
+    "title": "Galileo programme reference documents (GSC electronic library)",
+    "url": "https://www.gsc-europa.eu/electronic-library/programme-reference-documents",
+    "authors": [
+      "European GNSS Service Centre"
+    ],
+    "year": 2025,
+    "summary": "Library of Galileo ICDs, service definition documents and performance reports for OS, HAS, OSNMA and SAR.",
+    "key_takeaways": [
+      "Includes the HAS (High Accuracy Service) ICD for free PPP corrections"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:standards"
+    ],
+    "tags": [
+      "galileo",
+      "icd",
+      "has"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:esa-navipedia",
+    "kind": "doc",
+    "title": "Navipedia",
+    "url": "https://gssc.esa.int/navipedia/index.php/Main_Page",
+    "authors": [
+      "ESA"
+    ],
+    "year": 2011,
+    "summary": "ESA's wiki on GNSS fundamentals, systems, signals, algorithms and applications, including integrity (RAIM), PPP and interference topics.",
+    "key_takeaways": [
+      "Best free reference for GNSS concepts",
+      "Good RAIM and error-model explanations"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-rtk-ppp",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "wiki",
+      "esa",
+      "reference"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:michaelbeechan/raim",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:euspa-gnss-market-user-reports",
+    "kind": "report",
+    "title": "EUSPA GNSS Market and User Technology Reports",
+    "url": "https://gsc-europa.eu/electronic-library/gnss-market-and-user-reports",
+    "authors": [
+      "EUSPA"
+    ],
+    "year": 2024,
+    "summary": "Download page for EUSPA's market reports and GNSS User Technology Reports, which survey receiver, antenna and resilience technology trends.",
+    "key_takeaways": [
+      "User Technology Report covers anti-jamming, authentication and multi-constellation trends",
+      "Useful for framing a pitch"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:assured-pnt",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "euspa",
+      "market",
+      "user-technology"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:gpsjam-org",
+    "kind": "dataset",
+    "title": "GPSJam: daily maps of GPS interference",
+    "url": "https://gpsjam.org/",
+    "authors": [
+      "John Wiseman"
+    ],
+    "year": 2022,
+    "summary": "Daily world maps of likely GPS interference derived from aircraft ADS-B navigation accuracy reports (NIC/NACp) collected by ADS-B Exchange.",
+    "key_takeaways": [
+      "Shows persistent interference zones (Baltic, Middle East, Black Sea)",
+      "Method is indirect: inferred from aircraft-reported accuracy"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:situational-awareness",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "ads-b",
+      "jamming",
+      "map"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:fr24-gps-jamming-map",
+    "kind": "dataset",
+    "title": "Flightradar24 GPS jamming map",
+    "url": "https://www.flightradar24.com/data/gps-jamming",
+    "authors": [
+      "Flightradar24"
+    ],
+    "year": 2024,
+    "summary": "Flightradar24's map of GNSS interference, computed from navigation integrity category values broadcast by aircraft over its receiver network.",
+    "key_takeaways": [
+      "Grey areas mean insufficient flights or receivers, not absence of jamming",
+      "Covers all GNSS, not just GPS"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "ads-b",
+      "jamming",
+      "map"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:humphreys-2008-assessing-spoofing-threat",
+    "kind": "paper",
+    "title": "Assessing the Spoofing Threat: Development of a Portable GPS Civilian Spoofer",
+    "url": "https://rnl.ae.utexas.edu/images/stories/files/papers/ion2008r01_for_distributionW.pdf",
+    "authors": [
+      "Todd E. Humphreys",
+      "Brent M. Ledvina",
+      "Mark L. Psiaki",
+      "Brady W. O'Hanlon",
+      "Paul M. Kintner"
+    ],
+    "year": 2008,
+    "summary": "Landmark ION GNSS 2008 paper that built a receiver-based civil GPS spoofer and analysed how hard it is to detect, kicking off modern civil spoofing defense research.",
+    "key_takeaways": [
+      "Receiver-based spoofers can align with authentic signals and drag the victim smoothly",
+      "Simple checks are insufficient against a sophisticated spoofer",
+      "Motivates cryptographic and signal-level defenses"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:assured-pnt",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "spoofing",
+      "humphreys",
+      "ion-gnss"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:psiaki-humphreys-2016-gnss-spoofing-detection",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:psiaki-humphreys-2016-gnss-spoofing-detection",
+    "kind": "paper",
+    "title": "GNSS Spoofing and Detection",
+    "url": "https://doi.org/10.1109/JPROC.2016.2526658",
+    "authors": [
+      "Mark L. Psiaki",
+      "Todd E. Humphreys"
+    ],
+    "year": 2016,
+    "summary": "Proceedings of the IEEE survey of spoofing attack types and detection/mitigation techniques, from navigation-data checks to signal distortion monitoring and multi-antenna methods.",
+    "key_takeaways": [
+      "Taxonomy of defenses: cryptographic, signal-processing, geometric",
+      "Multi-antenna angle-of-arrival checks are powerful",
+      "Combining several weak tests beats any single test"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:assured-pnt",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "spoofing",
+      "survey",
+      "proc-ieee"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "res:humphreys-2008-assessing-spoofing-threat",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:ut-texbat",
+    "kind": "dataset",
+    "title": "TEXBAT: Texas Spoofing Test Battery",
+    "url": "https://radionavlab.ae.utexas.edu/texbat/",
+    "authors": [
+      "UT Austin Radionavigation Lab"
+    ],
+    "year": 2012,
+    "summary": "Public set of recorded high-rate IQ files of GPS L1 spoofing scenarios (static and dynamic, time and position push) used as a standard benchmark for spoofing detection.",
+    "key_takeaways": [
+      "De facto benchmark for signal-level spoofing detectors",
+      "Recordings are large IQ files suitable for GNSS-SDR"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:datasets-benchmarks",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "spoofing",
+      "iq",
+      "benchmark"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:psiaki-humphreys-2016-gnss-spoofing-detection",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:humphreys-2023-starlink-signal-structure",
+    "kind": "paper",
+    "title": "Signal Structure of the Starlink Ku-Band Downlink",
+    "url": "https://arxiv.org/abs/2210.11578",
+    "authors": [
+      "Todd E. Humphreys",
+      "et al."
+    ],
+    "year": 2023,
+    "summary": "Reverse-engineers the Starlink Ku-band downlink as OFDM and identifies synchronization sequences usable for opportunistic ranging and positioning.",
+    "key_takeaways": [
+      "Starlink frames contain known sequences usable as pilots",
+      "Enables LEO signals-of-opportunity PNT without operator cooperation"
+    ],
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:space-nav",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "starlink",
+      "leo-pnt",
+      "ofdm"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:gitlab.com/radionavlab/public/ut-starlink-signal-simulator",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:kassas-2022-starlink-carrier-phase",
+    "kind": "paper",
+    "title": "The First Carrier Phase Tracking and Positioning Results With Starlink LEO Satellite Signals",
+    "url": "https://ece.osu.edu/sites/default/files/2022-09/The_first_carrier_phase_tracking_and_positioning_results_with_Starlink_LEO_satellite_Signals.pdf",
+    "authors": [
+      "Joe Khalife",
+      "Mohammad Neinavaie",
+      "Zaher M. Kassas"
+    ],
+    "year": 2022,
+    "summary": "IEEE TAES letter showing carrier-phase tracking of Starlink signals with unknown structure and positioning from several satellites.",
+    "key_takeaways": [
+      "Positioning from Starlink is feasible without knowing the signal format",
+      "Accuracy reported at metre level with known altitude"
+    ],
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:space-nav"
+    ],
+    "tags": [
+      "starlink",
+      "leo-pnt",
+      "carrier-phase"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:humphreys-2023-starlink-signal-structure",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:google-gsdc-2023",
+    "kind": "competition",
+    "title": "Google Smartphone Decimeter Challenge 2023-2024",
+    "url": "https://www.kaggle.com/competitions/smartphone-decimeter-2023",
+    "authors": [
+      "Google",
+      "ION"
+    ],
+    "year": 2023,
+    "summary": "Kaggle competition with Android raw GNSS and IMU logs plus ground truth, aiming at decimeter-level smartphone positioning.",
+    "key_takeaways": [
+      "Large public smartphone GNSS dataset with truth",
+      "Winning solutions used factor graphs and carrier phase"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "android",
+      "kaggle",
+      "gsdc"
+    ],
+    "level": "intermediate",
+    "access": "free-registration",
+    "related": [
+      {
+        "id": "repo:taroz/gsdc2023",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:stanford-navlab/gnss_lib_py",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:google-gsdc-2022",
+    "kind": "competition",
+    "title": "Google Smartphone Decimeter Challenge 2022",
+    "url": "https://www.kaggle.com/competitions/smartphone-decimeter-2022",
+    "authors": [
+      "Google",
+      "ION"
+    ],
+    "year": 2022,
+    "summary": "Earlier edition of the smartphone decimeter challenge with raw GNSS logs from multiple phones on US highways.",
+    "key_takeaways": [
+      "Good secondary dataset for testing detectors on diverse phones"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "android",
+      "kaggle",
+      "gsdc"
+    ],
+    "level": "intermediate",
+    "access": "free-registration",
+    "related": [
+      {
+        "id": "res:google-gsdc-2023",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:google-android-raw-gnss-datasets",
+    "kind": "paper",
+    "title": "Android Raw GNSS Measurement Datasets for Precise Positioning",
+    "url": "https://research.google/pubs/android-raw-gnss-measurement-datasets-for-precise-positioning/",
+    "authors": [
+      "Google Android GPS team"
+    ],
+    "year": 2020,
+    "summary": "ION GNSS+ 2020 paper releasing the first public Android raw GNSS datasets with corrections and ground truth, the origin of the GSDC series.",
+    "key_takeaways": [
+      "Describes data collection and ground truth",
+      "Basis for all later GSDC editions"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "android",
+      "dataset"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:google-gsdc-2022",
+        "rel": "dataset_for"
+      },
+      {
+        "id": "repo:google/gps-measurement-tools",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:android-raw-gnss-developer-guide",
+    "kind": "doc",
+    "title": "Android raw GNSS measurements developer guide",
+    "url": "https://developer.android.com/develop/sensors-and-location/sensors/gnss",
+    "authors": [
+      "Google"
+    ],
+    "year": 2024,
+    "summary": "Android documentation on the GnssMeasurement API: which phones expose pseudorange, carrier phase and AGC, and how to log them.",
+    "key_takeaways": [
+      "AGC and C/N0 fields support jamming detection on phones",
+      "Duty cycling must be disabled for continuous carrier phase"
+    ],
+    "concepts": [
+      "concept:gnss",
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "android",
+      "api"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:google/gps-measurement-tools",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:bkg-ntrip-about",
+    "kind": "doc",
+    "title": "NTRIP: Networked Transport of RTCM via Internet Protocol (BKG)",
+    "url": "https://igs.bkg.bund.de/ntrip/about",
+    "authors": [
+      "BKG"
+    ],
+    "year": 2024,
+    "summary": "BKG's overview of the NTRIP protocol for streaming GNSS corrections, with links to its caster, client and server software.",
+    "key_takeaways": [
+      "NTRIP is HTTP-based streaming of RTCM",
+      "BKG maintains the reference caster"
+    ],
+    "concepts": [
+      "concept:gnss-rtk-ppp",
+      "concept:standards"
+    ],
+    "tags": [
+      "ntrip",
+      "rtcm",
+      "bkg"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:nunojpg/ntripcaster",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:bkg-bnc",
+    "kind": "doc",
+    "title": "BKG Ntrip Client (BNC)",
+    "url": "https://igs.bkg.bund.de/ntrip/bnc",
+    "authors": [
+      "BKG"
+    ],
+    "year": 2024,
+    "summary": "Page for BNC, BKG's multi-stream NTRIP client that records, decodes, converts to RINEX, monitors and can compute real-time PPP from correction streams.",
+    "key_takeaways": [
+      "Swiss-army tool for real-time correction streams",
+      "Can monitor stream latency and outages"
+    ],
+    "concepts": [
+      "concept:gnss-rtk-ppp",
+      "concept:gnss"
+    ],
+    "tags": [
+      "ntrip",
+      "bnc",
+      "ppp",
+      "rinex"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:bkg-ntrip-about",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:gnss-sdr-docs",
+    "kind": "doc",
+    "title": "GNSS-SDR documentation",
+    "url": "https://gnss-sdr.org/docs/",
+    "authors": [
+      "GNSS-SDR project"
+    ],
+    "year": 2025,
+    "summary": "Tutorials and reference for configuring the GNSS-SDR receiver, including signal processing blocks, front-end setup and monitoring outputs.",
+    "key_takeaways": [
+      "Step-by-step first-fix tutorials with sample files",
+      "Explains each receiver block for modification"
+    ],
+    "concepts": [
+      "concept:gnss-sdr"
+    ],
+    "tags": [
+      "tutorial",
+      "receiver"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:gnss-sdr/gnss-sdr",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:rtklibexplorer-blog",
+    "kind": "blog",
+    "title": "rtklibexplorer blog",
+    "url": "https://rtklibexplorer.wordpress.com/",
+    "authors": [
+      "Tim Everett"
+    ],
+    "year": 2016,
+    "summary": "Long-running practical blog on low-cost RTK/PPK with RTKLIB demo5, u-blox receivers and smartphone data.",
+    "key_takeaways": [
+      "Configuration recipes that save hours",
+      "Honest comparisons of receivers and settings"
+    ],
+    "concepts": [
+      "concept:gnss-rtk-ppp"
+    ],
+    "tags": [
+      "rtk",
+      "u-blox",
+      "demo5"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:rtklibexplorer/rtklib",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:igs-products",
+    "kind": "doc",
+    "title": "IGS products",
+    "url": "https://igs.org/products/",
+    "authors": [
+      "International GNSS Service"
+    ],
+    "year": 2025,
+    "summary": "Catalog of International GNSS Service precise orbits, clocks, biases and atmospheric products used by PPP and precise processing.",
+    "key_takeaways": [
+      "Precise products are free",
+      "Product latency ranges from real-time to final"
+    ],
+    "concepts": [
+      "concept:gnss-rtk-ppp",
+      "concept:geodesy"
+    ],
+    "tags": [
+      "igs",
+      "sp3",
+      "clock",
+      "ppp"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:geoscienceaustralia/ginan",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:borre-software-defined-gps-galileo-receiver",
+    "kind": "book",
+    "title": "A Software-Defined GPS and Galileo Receiver: A Single-Frequency Approach",
+    "url": "https://link.springer.com/book/10.1007/978-0-8176-4540-3",
+    "authors": [
+      "Kai Borre",
+      "Dennis M. Akos",
+      "Nicolaj Bertelsen",
+      "Peter Rinder",
+      "Søren Holdt Jensen"
+    ],
+    "year": 2007,
+    "summary": "Textbook walking through a complete software GPS L1 receiver in MATLAB, from acquisition to position, the origin of SoftGNSS.",
+    "key_takeaways": [
+      "Teaches acquisition and tracking loops by code",
+      "Still the standard SDR GNSS teaching text"
+    ],
+    "concepts": [
+      "concept:gnss-sdr",
+      "concept:gnss"
+    ],
+    "tags": [
+      "textbook",
+      "sdr",
+      "matlab"
+    ],
+    "level": "intermediate",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "repo:tmboc/softgnss",
+        "rel": "has_code"
+      }
+    ]
+  }
+]

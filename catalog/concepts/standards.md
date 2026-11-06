@@ -1,0 +1,92 @@
+# Standards and interface specs
+
+`concept:standards`
+
+ICDs, STANAGs, RTCM, NMEA, MAVLink, CoT, ASTERIX, interoperability specs.
+
+## Samples (1)
+
+- [MAVLink telemetry to TAK Cursor-on-Target](../samples/mavlink-to-tak-cot.md) - Bridges autopilot GLOBAL_POSITION_INT messages into Cursor-on-Target events so a UAV shows up as a friendly track on ATAK, WinTAK or iTAK.
+
+## Repositories (26)
+
+- [MAVLink](../repos/mavlink__mavlink.md) - fit: high - Message definitions (XML dialects) and the pymavlink-based generator for the MAVLink micro air vehicle protocol, used by PX4, ArduPilot and most GCS tools.
+- [milsymbol](../repos/spatialillusions__milsymbol.md) - fit: high - Pure JavaScript library generating MIL-STD-2525 (B/C/D/E) and APP-6 (B/D/E) military symbols as SVG or canvas.
+- [pyModeS](../repos/junzis__pymodes.md) - fit: high - Python decoder for Mode S and ADS-B messages including Comm-B / EHS fields, with live streaming tools.
+- [OpenDroneID Android receiver](../repos/opendroneid__receiver-android.md) - fit: high - Example Android app that listens for Remote ID broadcasts over Bluetooth 4/5 and Wi-Fi Beacon/NaN and shows drones and operators on a map.
+- [Open Drone ID Core C](../repos/opendroneid__opendroneid-core-c.md) - fit: high - Reference C library for encoding and decoding ASTM F3411 / ASD-STAN Remote ID messages (location, operator, system, auth) for Bluetooth and Wi-Fi broadcast.
+- [ArduRemoteID](../repos/ardupilot__arduremoteid.md) - fit: high - ESP32-based Remote ID transmitter firmware implementing ASTM F3411 broadcast (Bluetooth and Wi-Fi) fed from MAVLink or DroneCAN.
+- [PyTAK](../repos/snstac__pytak.md) - fit: high - Python asyncio package for TAK integration: CoT send/receive over TCP, UDP, TLS and multicast, with helpers for building events.
+- [pyubx2](../repos/semuconsulting__pyubx2.md) - fit: high - Python library for parsing and generating u-blox UBX protocol messages, including configuration (CFG-VALSET) and raw measurement (RXM-RAWX) messages.
+- [mgrs (Python)](../repos/hobuinc__mgrs.md) - fit: high - Python library converting between latitude/longitude and MGRS grid references, wrapping the GeoTrans C code.
+- [pyrtcm](../repos/semuconsulting__pyrtcm.md) - fit: high - Python parser for RTCM 3 messages (MSM observations, station info, ephemerides, SSR).
+- [pynmeagps](../repos/semuconsulting__pynmeagps.md) - fit: high - Python library for parsing and generating NMEA 0183 GNSS sentences, including proprietary variants.
+- [node-CoT](../repos/dfpc-coe__node-cot.md) - fit: high - JavaScript/TypeScript library for parsing, building and converting Cursor-on-Target messages, including GeoJSON conversion and TAK protobuf.
+- [TAK Server (open source)](../repos/tak-product-center__server.md) - fit: medium - Open-source release of the TAK Server from the TAK Product Center: the federation and message routing server for ATAK/WinTAK/iTAK clients, handling CoT, data packages, missions and video.
+- [pynmea2](../repos/knio__pynmea2.md) - fit: medium - Lightweight Python library for parsing NMEA 0183 sentences.
+- [ASTERIX decoder (Croatia Control)](../repos/croatiacontrolltd__asterix.md) - fit: medium - C/C++ and Python decoder for EUROCONTROL ASTERIX surveillance data from files, stdin or network, with XML category definitions and JSON/XML output.
+- [MAVLink Developer Guide](../repos/mavlink__mavlink-devguide.md) - fit: medium - Source of the mavlink.io documentation: protocol, microservices (mission, parameters, camera, Open Drone ID) and message reference.
+- [uav_electronic_ids](../repos/sxjack__uav_electronic_ids.md) - fit: medium - Arduino classes for several UAV electronic ID formats (ASTM/EU Remote ID, French ID) and UTM interfaces, with ESP32 examples.
+- [Signal K Specification](../repos/signalk__specification.md) - fit: medium - The JSON schema and specification for the Signal K marine data format covering navigation, environment, propulsion and other vessel data paths.
+- [OpenDroneID Linux transmitter](../repos/opendroneid__transmitter-linux.md) - fit: medium - Example Linux transmitter for Remote ID over Bluetooth and Wi-Fi.
+- [asterix-specs](../repos/zoranbosnjak__asterix-specs.md) - fit: medium - EUROCONTROL ASTERIX category specifications in a structured machine-readable format, with generated JSON and docs.
+- [takproto](../repos/snstac__takproto.md) - fit: medium - Encode and decode TAK protobuf (TAK Protocol v1) packets, including mesh and stream formats.
+- [cotlib (Go)](../repos/nervsystems__cotlib.md) - fit: medium - Go library for parsing, validating and generating Cursor-on-Target XML with security-focused input limits and optional schema validation.
+- [Joint Military Symbology XML](../repos/esri__joint-military-symbology-xml.md) - fit: low - Esri data encapsulation of MIL-STD-2525D and APP-6(D) symbology: symbol IDs, entity tables and SVG assets.
+- [DroneCAN libcanard](../repos/dronecan__libcanard.md) - fit: low - Minimal C implementation of the DroneCAN protocol used for GNSS, compass, airspeed and other peripherals on CAN.
+- [RINEX LEO extension proposal](../repos/rokubun__rinex_leo.md) - fit: low - Proposal for RINEX format modifications to carry LEO-PNT observables and ephemeris.
+- [MAAST for ARAIM](../repos/stanford-gps-lab__maast_for_araim_2.md) - fit: low - Stanford GPS Lab MATLAB toolset that evaluates Advanced RAIM availability and protection levels over service areas.
+
+## Documents, talks, courses, datasets (50)
+
+- [15 CFR 734.7 - Published (Export Administration Regulations)](../resources/ecfr-ear-734-7-published.md) - standard - The regulation text defining when information and software count as 'published' and therefore not subject to the EAR.
+- [BeiDou Navigation Satellite System Signal-In-Space ICDs (B1I, B3I, B1C, B2a, B2b)](../resources/beidou-icd-library.md) - standard - Official English-language ICD library for BeiDou open service signals, including the BDS-3 B1C and B2a signals that are interoperable with GPS L1C/L5 and Galileo E1/E5a, plus PPP-B2b.
+- [COLREGs - Convention on the International Regulations for Preventing Collisions at Sea, 1972](../resources/imo-colregs.md) - standard - IMO page for the collision regulations that define give-way and stand-on duties, lights and signals; the rule set autonomous surface vessels must encode.
+- [cot-types: Collection of Cursor-on-Target types](../resources/cot-types-collection.md) - dataset - Community-compiled list of CoT type strings with mappings to other message formats, useful when choosing the 'type' attribute for tracks.
+- [Cursor on Target (NDIA briefing)](../resources/cot-niessen-ndia-2008.md) - talk - Briefing introducing the Cursor on Target XML event schema: the minimal event/point/detail model for exchanging what-when-where of tracked entities between C2 systems.
+- [Cursor-on-Target Message Router User's Guide](../resources/mitre-cot-users-guide.md) - doc - MITRE guide describing Cursor-on-Target: the base Event schema (what, where, when), its mandatory fields, sub-schema extensions and the message router used to distribute CoT.
+- [DARPA Seeks PNT Robustness, Flexibility with All Source Positioning and Navigation Program](../resources/insidegnss-darpa-aspn.md) - blog - Background article on DARPA ASPN: a navigation architecture that accepts arbitrary combinations of sensors (cameras, magnetometers, radios, IMUs) with rapid reconfiguration.
+- [Developer's Guide to Cursor on Target](../resources/butler-cot-developer-guide.md) - doc - Introductory developer guide to CoT's objectives, message structure, implementation patterns and limitations.
+- [DoD Directive 3000.09: Autonomy in Weapon Systems (2023 reissue)](../resources/dodd-3000-09-autonomy-weapons-2023.md) - standard - DoD policy governing development and use of autonomous and semi-autonomous weapon systems, reissued January 2023.
+- [EASA SIB 2022-02R3: Global Navigation Satellite System Outage and Alterations Leading to Communication / Navigation / Surveillance Degradation](../resources/easa-sib-2022-02-gnss-outages.md) - doc - EASA's safety information bulletin on GNSS jamming and spoofing affecting aircraft, revised repeatedly since 2022 as interference spread around conflict zones.
+- [EUROCONTROL ASTERIX](../resources/eurocontrol-asterix.md) - standard - EUROCONTROL home of the ASTERIX surveillance data exchange format, with category specifications for radar, ADS-B, MLAT and system tracks.
+- [European GNSS Service Centre - Programme Reference Documents](../resources/gsc-programme-reference-documents.md) - doc - Library of current Galileo ICDs, service definition documents and receiver guidelines (OS, HAS, OSNMA, SAR).
+- [FAA - Remote Identification of Drones](../resources/faa-remote-id.md) - doc - FAA guidance on the Remote ID rule: what drones must broadcast, standard vs broadcast-module compliance and operator obligations.
+- [Galileo High Accuracy Service Signal-In-Space ICD (HAS SIS ICD) Issue 1.0](../resources/galileo-has-sis-icd.md) - standard - Defines the free Galileo High Accuracy Service: PPP orbit, clock and bias corrections broadcast on E6-B (and via internet), including message structure and Reed-Solomon encoding.
+- [Galileo Open Service Signal-In-Space Interface Control Document (OS SIS ICD) Issue 2.1](../resources/galileo-os-sis-icd-2-1.md) - standard - Specification of the Galileo open service signals (E1, E5a, E5b, E6 at the structure level) and the F/NAV and I/NAV navigation messages.
+- [Galileo OSNMA Receiver Guidelines Issue 1.3](../resources/galileo-osnma-receiver-guidelines.md) - standard - Companion to the OSNMA ICD describing how a receiver should process OSNMA: time-sync requirements, key and Merkle-tree handling, verification procedures and how to report authentication status to the user.
+- [Galileo OSNMA Receiver Guidelines v1.3](../resources/galileo-osnma-receiver-guidelines-1-3.md) - standard - Implementation guidance for OSNMA receivers covering time synchronization requirements, cryptographic material handling, and how to use authentication results in the position solution.
+- [Galileo OSNMA Signal-In-Space ICD v1.1](../resources/galileo-osnma-sis-icd-1-1.md) - standard - Specifies Galileo Open Service Navigation Message Authentication: the TESLA-based key chain, MAC and key messages carried in I/NAV, and the public key/Merkle tree structure.
+- [Galileo OSNMA Signal-In-Space Interface Control Document Issue 1.1](../resources/galileo-osnma-sis-icd.md) - standard - Defines Open Service Navigation Message Authentication: how TESLA-chain MACs and keys are embedded in spare I/NAV bits so a receiver can cryptographically verify that navigation data came from Galileo.
+- [GPS Interface Control Documents (archive.gps.gov)](../resources/gps-icwg-archive.md) - doc - Index of current GPS interface specifications, including IS-GPS-200 (L1/L2), IS-GPS-705 (L5) and IS-GPS-800 (L1C).
+- [GPS Interface Control Documents (ICWG index)](../resources/gps-icwg-document-index.md) - doc - Index page for the public GPS ICDs and ISs (200, 705, 800, 870 etc.), change notices and public ICWG meeting material.
+- [GPS Standard Positioning Service (SPS) Performance Standard, 5th Edition](../resources/gps-sps-performance-standard-2020.md) - standard - The formal commitment the US government makes about civil GPS signal-in-space accuracy, availability, continuity and integrity.
+- [IS-GPS-200N: NAVSTAR GPS Space Segment / Navigation User Segment Interfaces](../resources/gps-is-gps-200n.md) - standard - The master interface specification for the legacy GPS L1 C/A and L2C (and P(Y) at the public level) signals: code generation, signal structure, and the full LNAV/CNAV navigation message bit layouts.
+- [IS-GPS-705J: NAVSTAR GPS Space Segment / User Segment L5 Interfaces](../resources/gps-is-gps-705j.md) - standard - Interface specification for the GPS L5 safety-of-life band signal: I5/Q5 codes, the L5 CNAV message, and signal characteristics.
+- [IS-GPS-800J: NAVSTAR GPS Space Segment / User Segment L1C Interfaces](../resources/gps-is-gps-800j.md) - standard - Interface specification for the modernized L1C civil signal designed for interoperability with Galileo E1 and other GNSS: BOC/TMBOC modulation, Weil-code ranging codes, and the CNAV-2 message.
+- [ITU-R M.1371 - Technical characteristics for an automatic identification system using TDMA in the VHF maritime mobile band](../resources/itu-r-m1371-ais.md) - standard - The ITU recommendation defining AIS radio, TDMA access and message formats that decoders such as pyais implement.
+- [MAVLink 2 and Message Signing](../resources/mavlink-2-signing.md) - doc - Describes MAVLink 2 packet signing: a shared-secret SHA-256 based signature and timestamp appended to frames to authenticate the link and resist replay.
+- [MAVLink Developer Guide](../resources/mavlink-developer-guide.md) - doc - Official documentation for the MAVLink micro air vehicle messaging protocol: message definitions, microservices (mission, parameters, camera, FTP), dialects and code generators.
+- [MIL-STD-2525 Joint Military Symbology - overview](../resources/mil-std-2525-overview.md) - doc - Summary of the US military symbology standard and its revisions (2525B through E), including the SIDC code formats that symbol renderers and CoT type strings map onto.
+- [MIL-STD-2525D Joint Military Symbology](../resources/mil-std-2525d.md) - standard - US DoD standard defining military symbology (frames, icons, modifiers and the symbol identification code) for C2 displays.
+- [NATO Joint Military Symbology (APP-6) - overview](../resources/app-6-joint-military-symbology.md) - doc - Overview of APP-6, the NATO standard for map symbols of units, equipment and tactical graphics, now at edition E and aligned with the US MIL-STD-2525 family.
+- [NATO Standardization (topic page)](../resources/nato-standardization-topic.md) - doc - NATO's public explanation of how STANAGs and Allied publications are produced and ratified, and how interoperability standards flow into national forces.
+- [Navipedia: RTK Standards](../resources/navipedia-rtk-standards.md) - doc - Free encyclopedia overview of the RTCM correction message families and transport (NTRIP) used for real-time kinematic positioning.
+- [NISTIR 8323: Foundational PNT Profile - Applying the Cybersecurity Framework for the Responsible Use of PNT Services](../resources/nist-ir-8323-pnt-profile.md) - standard - Maps the NIST Cybersecurity Framework onto systems that consume PNT, giving identify/protect/detect/respond/recover practices for GNSS dependence.
+- [NMEA 0183 Interface Standard](../resources/nmea-0183-standard.md) - standard - The ASCII serial sentence standard (GGA, RMC, GSA, GSV, VTG...) used by nearly all GNSS receivers and marine electronics.
+- [NMEA 2000 Standard (CAN-based marine network)](../resources/nmea-2000-standard.md) - standard - CAN bus based marine network standard that carries position, heading, AIS and engine data as PGNs between devices.
+- [NMEA Revealed (gpsd project)](../resources/gpsd-nmea-revealed.md) - doc - A free, detailed field-by-field reference to NMEA 0183 sentences as actually emitted by real receivers, including vendor quirks and version differences.
+- [NTRIP: Networked Transport of RTCM via Internet Protocol (BKG)](../resources/bkg-ntrip-about.md) - doc - BKG's overview of the NTRIP protocol for streaming GNSS corrections, with links to its caster, client and server software.
+- [Open Drone ID (MAVLink microservice)](../resources/mavlink-opendroneid-microservice.md) - doc - Defines the MAVLink messages and flow for Remote ID between flight controller, GCS and transponder.
+- [QZSS Performance Standards and Interface Specifications (IS-QZSS)](../resources/qzss-is-qzss.md) - standard - Japan's QZSS interface specifications covering GPS-compatible signals, the L6 CLAS centimetre-level augmentation and MADOCA PPP services.
+- [Regulation (EU) 2021/821 - Dual-use export control regime](../resources/eu-dual-use-regulation-2021-821.md) - standard - The EU's recast dual-use export control regulation covering items, software and technology including navigation and avionics categories, with public-domain and basic-research de-control notes.
+- [Remote ID (ArduPilot)](../resources/ardupilot-remote-id-docs.md) - doc - ArduPilot wiki page on Remote ID modules, including ArduRemoteID setup and compliance notes.
+- [Remote ID (Open Drone ID) in PX4](../resources/px4-remote-id-docs.md) - doc - PX4 documentation for connecting Remote ID modules over MAVLink or DroneCAN and related failsafe behaviour.
+- [Resilient PNT Conformance Framework](../resources/dhs-resilient-pnt-conformance-framework.md) - standard - Defines four cumulative resilience levels for PNT user equipment based on prevent, respond and recover behaviours, so buyers and vendors can describe how a receiver behaves under jamming or spoofing.
+- [RTCM 10403.x Differential GNSS (DGNSS) Services - Version 3](../resources/rtcm-sc104-standards.md) - standard - The paid-access RTCM v3 standard that defines the binary messages used to stream GNSS corrections and observations (legacy RTK 1001-1012, MSM 1-7 per constellation, ephemerides, SSR).
+- [Signal K Specification](../resources/signalk-spec.md) - standard - Published Signal K specification describing the JSON data model, REST and streaming APIs for marine data.
+- [SpatioTemporal Asset Catalog (STAC) specification](../resources/stac-spec.md) - standard - Specification and ecosystem site for STAC, the common way to describe and search geospatial imagery and DEM assets.
+- [STANAG 4586 - Standard Interfaces of UAV Control System (UCS) for NATO UAV Interoperability](../resources/stanag-4586-overview.md) - doc - Public overview of NATO's UAS interoperability standard, which defines a core UCS, a vehicle-specific module and five levels of interoperability from receiving payload data up to full flight control including launch and 
+- [TAK Protocol (takproto) - protobuf encoding of CoT](../resources/tak-protocol-takproto.md) - doc - Documentation of the TAK protocol used by ATAK and TAK Server: how CoT events are framed and carried as protocol buffers over mesh (UDP multicast) and streaming (TCP/TLS) transports, alongside legacy XML.
+- [The 1090 Megahertz Riddle: A Guide to Decoding Mode S and ADS-B Signals](../resources/junzis-1090mhz-riddle.md) - book - Open book explaining Mode S and ADS-B message structure, position decoding (CPR), Comm-B registers and Mode S surveillance, with pyModeS examples.
+

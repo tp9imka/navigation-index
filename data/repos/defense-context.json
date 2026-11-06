@@ -1,0 +1,1195 @@
+[
+  {
+    "id": "repo:dstl/stone-soup",
+    "kind": "repo",
+    "name": "Stone Soup",
+    "url": "https://github.com/dstl/Stone-Soup",
+    "summary": "UK Dstl's open Python framework for building and benchmarking multi-target trackers: Kalman/particle filters, data association, track initiation and metrics in composable components.",
+    "why_it_matters": "A government-backed, permissively developed tracking toolkit - the closest thing to a reference library for situational-awareness fusion that defense judges will recognize.",
+    "concepts": [
+      "concept:target-tracking",
+      "concept:sensor-fusion",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "dstl",
+      "kalman",
+      "particle-filter",
+      "python",
+      "tracking"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install stonesoup; tutorials run in Jupyter. Good for fusing ADS-B, Remote ID or DF bearings into tracks on a common picture within a day. Keep it to air-picture awareness, not fire control.",
+    "related": [
+      {
+        "id": "repo:snstac/adsbcot",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:krakenrf/krakensdr_doa",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:opendroneid/opendroneid-core-c",
+    "kind": "repo",
+    "name": "Open Drone ID Core C",
+    "url": "https://github.com/opendroneid/opendroneid-core-c",
+    "summary": "Reference C library for encoding and decoding ASTM F3411 / ASD-STAN Remote ID messages (location, operator, system, auth) for Bluetooth and Wi-Fi broadcast.",
+    "why_it_matters": "Remote ID is the cooperative layer of airspace awareness and counter-UAS; this library is the canonical message implementation.",
+    "concepts": [
+      "concept:counter-uas",
+      "concept:situational-awareness",
+      "concept:standards"
+    ],
+    "tags": [
+      "remote-id",
+      "astm-f3411",
+      "bluetooth",
+      "wifi",
+      "uas"
+    ],
+    "language": "C",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Builds with CMake in minutes; pair with an ESP32 or phone receiver to decode drone broadcasts and push them to a map or TAK.",
+    "related": [
+      {
+        "id": "repo:opendroneid/receiver-android",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:alphafox02/dragonsync",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:colonelpanichacks/drone-mesh-mapper",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:opendroneid/receiver-android",
+    "kind": "repo",
+    "name": "Open Drone ID Android Receiver",
+    "url": "https://github.com/opendroneid/receiver-android",
+    "summary": "Example Android app that listens for Remote ID broadcasts over Bluetooth 4/5 and Wi-Fi Beacon/NaN and shows drones and operators on a map.",
+    "why_it_matters": "Fastest way to get a working cooperative drone-detection sensor in a hackathon using only phones.",
+    "concepts": [
+      "concept:counter-uas",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "remote-id",
+      "android",
+      "bluetooth"
+    ],
+    "language": "Java",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Sideload on a recent Android phone; Wi-Fi NaN support depends on handset. Extend to forward detections as CoT to a TAK server.",
+    "related": [
+      {
+        "id": "repo:opendroneid/opendroneid-core-c",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:snstac/pytak",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:deptofdefense/androidtacticalassaultkit-civ",
+    "kind": "repo",
+    "name": "ATAK-CIV (DoD release, archived)",
+    "url": "https://github.com/deptofdefense/AndroidTacticalAssaultKit-CIV",
+    "summary": "The DoD's public source release of the civilian Android Team Awareness Kit: map engine, Cursor-on-Target messaging and plugin SDK.",
+    "why_it_matters": "TAK is the de facto common operating picture across US/NATO units, so a plugin or CoT feed is an instantly legible demo for defense judges.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "atak",
+      "tak",
+      "cot",
+      "android",
+      "plugin-sdk"
+    ],
+    "language": "Java",
+    "domains": [
+      "dismounted",
+      "multi"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Archived; use the TAK Product Center repo for current code. Building ATAK from source is heavy - develop a plugin against a prebuilt SDK instead.",
+    "related": [
+      {
+        "id": "repo:tak-product-center/atak-civ",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:tak-product-center/atak-civ",
+    "kind": "repo",
+    "name": "ATAK-CIV (TAK Product Center)",
+    "url": "https://github.com/TAK-Product-Center/atak-civ",
+    "summary": "Current public home of the ATAK-CIV source and plugin examples maintained by the TAK Product Center.",
+    "why_it_matters": "The place to start an ATAK plugin that visualizes PNT health, jamming reports or drone detections.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "atak",
+      "tak",
+      "plugin",
+      "android"
+    ],
+    "language": "Java",
+    "domains": [
+      "dismounted",
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Plugin builds need the matching SDK version; budget half a day for toolchain. Many teams instead feed CoT from Python and just use stock ATAK/iTAK.",
+    "related": [
+      {
+        "id": "repo:deptofdefense/androidtacticalassaultkit-civ",
+        "rel": "fork_of"
+      },
+      {
+        "id": "repo:brian7704/opentakserver",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:freetakteam/freetakserver",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:freetakteam/freetakserver",
+    "kind": "repo",
+    "name": "FreeTAKServer",
+    "url": "https://github.com/FreeTAKTeam/FreeTakServer",
+    "summary": "Open-source Python server that relays Cursor-on-Target traffic between TAK clients, with REST API and data packages.",
+    "why_it_matters": "Lets a team stand up a shared situational-awareness network without access to the official TAK Server.",
+    "concepts": [
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "tak",
+      "cot",
+      "server",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "pip install or the ZeroTouch installer; activity slowed since 2024, so check OpenTAKServer as a more active option.",
+    "related": [
+      {
+        "id": "repo:brian7704/opentakserver",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:snstac/pytak",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:brian7704/opentakserver",
+    "kind": "repo",
+    "name": "OpenTAKServer",
+    "url": "https://github.com/brian7704/OpenTAKServer",
+    "summary": "Actively maintained open TAK server for ATAK, iTAK and WinTAK with web UI, video streaming and Meshtastic integration.",
+    "why_it_matters": "Quick, modern backend for a common operating picture demo linking several sensors and phones.",
+    "concepts": [
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "tak",
+      "cot",
+      "server",
+      "meshtastic"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Installer scripts for Linux/RPi; get clients connected in an hour, then focus on your sensor feed.",
+    "related": [
+      {
+        "id": "repo:freetakteam/freetakserver",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:snstac/pytak",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:snstac/pytak",
+    "kind": "repo",
+    "name": "PyTAK",
+    "url": "https://github.com/snstac/pytak",
+    "summary": "Python asyncio library for producing and consuming Cursor-on-Target messages and talking to TAK servers over TCP, UDP or TLS.",
+    "why_it_matters": "The glue that turns any sensor script (GNSS monitor, Remote ID sniffer, DF array) into a TAK layer in a few lines.",
+    "concepts": [
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "tak",
+      "cot",
+      "python",
+      "asyncio"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install pytak; write a CoT generator for your detections. Lowest-friction way into the TAK ecosystem.",
+    "related": [
+      {
+        "id": "repo:snstac/adsbcot",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:brian7704/opentakserver",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:snstac/adsbcot",
+    "kind": "repo",
+    "name": "ADSBCOT",
+    "url": "https://github.com/snstac/adsbcot",
+    "summary": "Gateway that converts ADS-B traffic from dump1090/readsb or aggregator APIs into Cursor-on-Target so aircraft show in TAK.",
+    "why_it_matters": "ADS-B also carries NIC/NACp integrity fields - the same signal GPSJam uses - so this is a ready bridge for a live GNSS-interference overlay.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "ads-b",
+      "tak",
+      "cot",
+      "sdr"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Run alongside readsb on an RTL-SDR; add a filter that flags low NIC aircraft as an interference indicator.",
+    "related": [
+      {
+        "id": "repo:snstac/pytak",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:wiedehopf/readsb",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:flightaware/dump1090",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:wiedehopf/readsb",
+    "kind": "repo",
+    "name": "readsb",
+    "url": "https://github.com/wiedehopf/readsb",
+    "summary": "High-performance ADS-B/Mode S decoder for RTL-SDR and other receivers, used by most community feeder networks.",
+    "why_it_matters": "Gives a team its own receiver for aircraft positions and navigation-integrity reports, the raw material for crowd-sourced jamming maps.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "ads-b",
+      "mode-s",
+      "rtl-sdr",
+      "decoder"
+    ],
+    "language": "C",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Install on a Pi with a cheap RTL-SDR and 1090 MHz antenna; JSON output is easy to parse for NIC/NACp statistics.",
+    "related": [
+      {
+        "id": "repo:flightaware/dump1090",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:wiedehopf/tar1090",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:wiedehopf/tar1090",
+    "kind": "repo",
+    "name": "tar1090",
+    "url": "https://github.com/wiedehopf/tar1090",
+    "summary": "Web map interface for readsb/dump1090 with history, trails and per-aircraft details.",
+    "why_it_matters": "Ready-made visualization layer for an ADS-B based interference or airspace-awareness demo.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "ads-b",
+      "web-map",
+      "javascript"
+    ],
+    "language": "JavaScript",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "One-line install on top of readsb. Fork the JS to color aircraft by NIC to show degraded GNSS.",
+    "related": [
+      {
+        "id": "repo:wiedehopf/readsb",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:flightaware/dump1090",
+    "kind": "repo",
+    "name": "dump1090-fa",
+    "url": "https://github.com/flightaware/dump1090",
+    "summary": "FlightAware's maintained Mode S/ADS-B decoder for RTL-SDR dongles.",
+    "why_it_matters": "Widely packaged alternative to readsb for the same ADS-B situational-awareness use.",
+    "concepts": [
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "ads-b",
+      "rtl-sdr"
+    ],
+    "language": "C",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "apt-installable on Raspberry Pi OS; pick either this or readsb, not both.",
+    "related": [
+      {
+        "id": "repo:wiedehopf/readsb",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:jketterl/openwebrx",
+    "kind": "repo",
+    "name": "OpenWebRX",
+    "url": "https://github.com/jketterl/openwebrx",
+    "summary": "Multi-user web SDR receiver with waterfall display and many built-in digital decoders.",
+    "why_it_matters": "Shared, browser-based spectrum view is a simple way to demonstrate RF situational awareness, e.g. watching the GNSS L1 band for interference with a suitable front end.",
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:situational-awareness",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "sdr",
+      "waterfall",
+      "web",
+      "spectrum-monitoring"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Docker image available. Upstream activity slowed after 2024; the luarvique fork is more active.",
+    "related": [
+      {
+        "id": "repo:luarvique/openwebrx",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:gqrx-sdr/gqrx",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:luarvique/openwebrx",
+    "kind": "repo",
+    "name": "OpenWebRX+",
+    "url": "https://github.com/luarvique/openwebrx",
+    "summary": "Actively developed fork of OpenWebRX adding decoders, bookmarks and packaging improvements.",
+    "why_it_matters": "Same browser spectrum-monitoring capability with current maintenance.",
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "sdr",
+      "spectrum-monitoring",
+      "web"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Use the provided packages/Docker; works with RTL-SDR, Airspy, SDRplay, HackRF.",
+    "related": [
+      {
+        "id": "repo:jketterl/openwebrx",
+        "rel": "fork_of"
+      }
+    ]
+  },
+  {
+    "id": "repo:gqrx-sdr/gqrx",
+    "kind": "repo",
+    "name": "Gqrx",
+    "url": "https://github.com/gqrx-sdr/gqrx",
+    "summary": "Desktop SDR receiver built on GNU Radio and Qt with FFT/waterfall and demodulators.",
+    "why_it_matters": "Quick local spectrum inspection when characterizing a jammer test signal in a shielded lab or checking band occupancy.",
+    "concepts": [
+      "concept:situational-awareness",
+      "concept:gnss-interference"
+    ],
+    "tags": [
+      "sdr",
+      "gnu-radio",
+      "qt",
+      "waterfall"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Available via brew/apt. Only transmit-free monitoring; never radiate in GNSS bands outside licensed test ranges.",
+    "related": [
+      {
+        "id": "repo:jketterl/openwebrx",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:krakenrf/krakensdr_doa",
+    "kind": "repo",
+    "name": "KrakenSDR DoA DSP",
+    "url": "https://github.com/krakenrf/krakensdr_doa",
+    "summary": "Direction-of-arrival processing and web UI for the five-channel coherent KrakenSDR, producing bearings to RF emitters.",
+    "why_it_matters": "Passive DF of interference sources (or drone control links) is a core defensive-EW capability and maps well to a hackathon demo.",
+    "concepts": [
+      "concept:rf-localization",
+      "concept:gnss-interference",
+      "concept:counter-uas",
+      "concept:ew-resilience"
+    ],
+    "tags": [
+      "direction-finding",
+      "doa",
+      "music",
+      "sdr",
+      "krakensdr"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground",
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Needs KrakenSDR hardware (or recorded IQ). Prebuilt Raspberry Pi images exist (check the KrakenRF docs). Multiple stations plus Stone Soup gives triangulated emitter tracks.",
+    "related": [
+      {
+        "id": "repo:krakenrf/heimdall_daq_fw",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:dstl/stone-soup",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:krakenrf/heimdall_daq_fw",
+    "kind": "repo",
+    "name": "Heimdall DAQ firmware",
+    "url": "https://github.com/krakenrf/heimdall_daq_fw",
+    "summary": "Coherent multichannel SDR acquisition chain (sync, calibration, decimation) underneath KrakenSDR DoA and passive radar apps.",
+    "why_it_matters": "Useful if you need raw coherent IQ for your own DF or interference-localization algorithm.",
+    "concepts": [
+      "concept:rf-localization",
+      "concept:calibration"
+    ],
+    "tags": [
+      "sdr",
+      "coherent",
+      "daq"
+    ],
+    "language": "C",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Installed as part of the KrakenSDR image; modify only if building custom DSP.",
+    "related": [
+      {
+        "id": "repo:krakenrf/krakensdr_doa",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:rub-syssec/dronesecurity",
+    "kind": "repo",
+    "name": "DroneSecurity (DJI DroneID receiver)",
+    "url": "https://github.com/RUB-SysSec/DroneSecurity",
+    "summary": "Code from the NDSS 2023 study that reverse-engineered DJI's proprietary DroneID broadcast and decodes it with an SDR.",
+    "why_it_matters": "Shows how passive decoding of drone telemetry supports detection and localization of DJI aircraft, a common C-UAS need.",
+    "concepts": [
+      "concept:counter-uas",
+      "concept:situational-awareness",
+      "concept:rf-localization"
+    ],
+    "tags": [
+      "dji",
+      "droneid",
+      "sdr",
+      "ndss"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Requires a wideband SDR (e.g. USRP/BladeRF) and recorded or live captures; sample captures ease offline work.",
+    "related": [
+      {
+        "id": "res:ndss-2023-dji-droneid",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:alphafox02/dragonsync",
+    "kind": "repo",
+    "name": "DragonSync",
+    "url": "https://github.com/alphafox02/DragonSync",
+    "summary": "Gateway that takes drone Remote ID / DroneID detections from WarDragon-style sensors and publishes them as CoT to TAK and other outputs.",
+    "why_it_matters": "Working example of a passive drone-detection to common-operating-picture pipeline.",
+    "concepts": [
+      "concept:counter-uas",
+      "concept:situational-awareness"
+    ],
+    "tags": [
+      "remote-id",
+      "tak",
+      "cot",
+      "sensor-gateway"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Read it as a reference architecture even without the WarDragon kit; reuse its CoT mapping for your own detector.",
+    "related": [
+      {
+        "id": "repo:opendroneid/opendroneid-core-c",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:snstac/pytak",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:colonelpanichacks/drone-mesh-mapper",
+    "kind": "repo",
+    "name": "drone-mesh-mapper",
+    "url": "https://github.com/colonelpanichacks/drone-mesh-mapper",
+    "summary": "ESP32 firmware and tools that sniff Wi-Fi Remote ID and relay detections over Meshtastic LoRa mesh to a mapping host.",
+    "why_it_matters": "Cheap, distributed, off-grid drone-awareness network - very hackathon friendly hardware.",
+    "concepts": [
+      "concept:counter-uas",
+      "concept:situational-awareness",
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "remote-id",
+      "esp32",
+      "meshtastic",
+      "lora"
+    ],
+    "language": "Python",
+    "domains": [
+      "air",
+      "dismounted"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "ESP32 boards plus Meshtastic nodes cost little; flash and map in an afternoon.",
+    "related": [
+      {
+        "id": "repo:opendroneid/opendroneid-core-c",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:brian7704/opentakserver",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:mit-ai-accelerator/magnav.jl",
+    "kind": "repo",
+    "name": "MagNav.jl",
+    "url": "https://github.com/MIT-AI-Accelerator/MagNav.jl",
+    "summary": "Julia package from the MIT/USAF AI Accelerator for airborne magnetic anomaly navigation: Tolles-Lawson and neural-net aircraft compensation, map handling and EKF/MPF navigation, with the challenge flight data.",
+    "why_it_matters": "Official code behind the AFRL/MIT MagNav challenge; magnetic navigation is a leading GNSS-independent, unjammable PNT approach in DIU and AFRL programs.",
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:assured-pnt",
+      "concept:sensor-fusion",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "afrl",
+      "mit",
+      "magnav",
+      "julia",
+      "tolles-lawson"
+    ],
+    "language": "Julia",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Julia install plus large data download; first run compiles slowly. Start from the example notebooks and the provided flight lines.",
+    "related": [
+      {
+        "id": "repo:lw-kong/magnav",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:naatyu/magnav",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:manasp21/magnav.py",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "res:afrl-mit-magnav-challenge-paper",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:lw-kong/magnav",
+    "kind": "repo",
+    "name": "MagNav challenge submission (lw-kong)",
+    "url": "https://github.com/lw-kong/MagNav",
+    "summary": "A public submission repository for the JuliaCon 2020 MagNav signal-enhancement challenge, implementing a learned aircraft-field compensation.",
+    "why_it_matters": "One of the few open challenge entries - shows what a competing compensation pipeline looks like end to end.",
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "magnav-challenge",
+      "julia",
+      "machine-learning"
+    ],
+    "language": "Julia",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Inactive since 2022; useful as a template for a challenge-style submission on the MagNav data.",
+    "related": [
+      {
+        "id": "repo:mit-ai-accelerator/magnav.jl",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:naatyu/magnav",
+    "kind": "repo",
+    "name": "MagNav deep-learning compensation (naatyu)",
+    "url": "https://github.com/naatyu/MagNav",
+    "summary": "Notebooks applying deep learning to aircraft magnetic disturbance compensation on the MagNav challenge data.",
+    "why_it_matters": "Python-first alternative for teams that do not want Julia.",
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:calibration"
+    ],
+    "tags": [
+      "magnav",
+      "pytorch",
+      "notebooks"
+    ],
+    "language": "Jupyter Notebook",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Unmaintained since 2023; dependencies may need pinning.",
+    "related": [
+      {
+        "id": "repo:mit-ai-accelerator/magnav.jl",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:manasp21/magnav.py",
+    "kind": "repo",
+    "name": "MagNavPy",
+    "url": "https://github.com/manasp21/magnav.py",
+    "summary": "Python port of MagNav.jl for magnetic navigation research.",
+    "why_it_matters": "Lowers the language barrier to the MagNav data and algorithms for Python-heavy teams.",
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "magnav",
+      "python",
+      "port"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Young community port; verify results against MagNav.jl outputs before trusting.",
+    "related": [
+      {
+        "id": "repo:mit-ai-accelerator/magnav.jl",
+        "rel": "fork_of"
+      }
+    ]
+  },
+  {
+    "id": "repo:osrf/subt",
+    "kind": "repo",
+    "name": "DARPA SubT Virtual Challenge",
+    "url": "https://github.com/osrf/subt",
+    "summary": "Gazebo worlds, robot models, ROS interfaces and scoring tools from the virtual track of the DARPA Subterranean Challenge.",
+    "why_it_matters": "Ready GNSS-denied underground environments with official scoring - a credible simulation testbed straight out of a DARPA challenge.",
+    "concepts": [
+      "concept:simulation",
+      "concept:lidar-slam",
+      "concept:multi-agent",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "darpa-subt",
+      "gazebo",
+      "ros",
+      "underground"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground",
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Dockerized, ROS1-era; heavy GPU/CPU needs. Use the hello-world repo as a starting point.",
+    "related": [
+      {
+        "id": "repo:ntnu-arl/gbplanner_ros",
+        "rel": "evaluated_on"
+      },
+      {
+        "id": "repo:caochao39/tare_planner",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:ntnu-arl/gbplanner_ros",
+    "kind": "repo",
+    "name": "GBPlanner (CERBERUS)",
+    "url": "https://github.com/ntnu-arl/gbplanner_ros",
+    "summary": "Graph-based exploration planner for subterranean environments, the planning core of Team CERBERUS, winner of the DARPA SubT final.",
+    "why_it_matters": "Winning-team open code for autonomous exploration of GNSS-denied spaces with legged and aerial robots.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:mission-planning",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "darpa-subt",
+      "cerberus",
+      "exploration",
+      "ros"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground",
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS1 catkin build with simulation demos; budget hours for dependencies. Pair with any lidar odometry.",
+    "related": [
+      {
+        "id": "repo:ntnu-arl/mbplanner_ros",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:osrf/subt",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:ntnu-arl/mbplanner_ros",
+    "kind": "repo",
+    "name": "MBPlanner",
+    "url": "https://github.com/ntnu-arl/mbplanner_ros",
+    "summary": "Motion-primitive based exploration planner for fast aerial robots in confined spaces, used in CERBERUS flying platforms.",
+    "why_it_matters": "Aerial complement to GBPlanner for drone exploration without GNSS.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "darpa-subt",
+      "cerberus",
+      "uav",
+      "exploration"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "ROS1, not updated since 2023.",
+    "related": [
+      {
+        "id": "repo:ntnu-arl/gbplanner_ros",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:nebula-autonomy/lamp",
+    "kind": "repo",
+    "name": "LAMP (NeBula multi-robot SLAM)",
+    "url": "https://github.com/NeBula-Autonomy/LAMP",
+    "summary": "Team CoSTAR's large-scale multi-robot lidar SLAM back end with robust loop closure, from the NASA JPL-led SubT entry.",
+    "why_it_matters": "Open component of the NeBula stack that won the SubT Urban circuit; shows multi-robot GNSS-denied mapping done at challenge scale.",
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:multi-agent",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "darpa-subt",
+      "costar",
+      "nebula",
+      "pose-graph"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "ROS1 and dormant since 2023; run on the NeBula multi-robot dataset rather than live hardware.",
+    "related": [
+      {
+        "id": "repo:nebula-autonomy/nebula-multirobot-dataset",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:nebula-autonomy/nebula-multirobot-dataset",
+    "kind": "repo",
+    "name": "NeBula multi-robot dataset",
+    "url": "https://github.com/NeBula-Autonomy/nebula-multirobot-dataset",
+    "summary": "Index for CoSTAR's multi-robot lidar/IMU/odometry datasets recorded in tunnels, mines and urban underground sites.",
+    "why_it_matters": "Real GNSS-denied field data from SubT for testing SLAM or loop closure without building robots.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "darpa-subt",
+      "dataset",
+      "multi-robot"
+    ],
+    "language": "",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Bags are large; pick one sequence.",
+    "related": [
+      {
+        "id": "repo:nebula-autonomy/lamp",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:caochao39/tare_planner",
+    "kind": "repo",
+    "name": "TARE Planner (CMU Explorer)",
+    "url": "https://github.com/caochao39/tare_planner",
+    "summary": "Hierarchical exploration planner from CMU's Team Explorer, which earned the most-sectors-explored award at the SubT final.",
+    "why_it_matters": "Well-documented, high-performing exploration planner that runs on top of a ready simulation stack.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:mission-planning"
+    ],
+    "tags": [
+      "darpa-subt",
+      "explorer",
+      "cmu",
+      "exploration",
+      "ros"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Install the companion development environment first; ROS1 and ROS2 branches exist. Runs in sim on a laptop.",
+    "related": [
+      {
+        "id": "repo:hongbiaoz/autonomous_exploration_development_environment",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:michaelfyang/far_planner",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:ntnu-arl/gbplanner_ros",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:hongbiaoz/autonomous_exploration_development_environment",
+    "kind": "repo",
+    "name": "CMU Autonomous Exploration Development Environment",
+    "url": "https://github.com/HongbiaoZ/autonomous_exploration_development_environment",
+    "summary": "Simulation worlds, local planner, terrain analysis and visualization used by CMU Explorer to develop ground-robot exploration.",
+    "why_it_matters": "Fastest route to a GNSS-free autonomy demo: drop-in base for planners like TARE and FAR.",
+    "concepts": [
+      "concept:simulation",
+      "concept:ground-vehicle-nav",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "cmu",
+      "explorer",
+      "ros",
+      "simulation"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Works in ROS1 Noetic/ROS2 Humble; follow the website setup, environments download separately.",
+    "related": [
+      {
+        "id": "repo:caochao39/tare_planner",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:michaelfyang/far_planner",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:michaelfyang/far_planner",
+    "kind": "repo",
+    "name": "FAR Planner",
+    "url": "https://github.com/MichaelFYang/far_planner",
+    "summary": "Visibility-graph route planner for known and unknown environments from the CMU SubT team.",
+    "why_it_matters": "Long-range routing companion to exploration planners in GNSS-denied environments.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "cmu",
+      "route-planning",
+      "ros"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Runs in the same CMU development environment.",
+    "related": [
+      {
+        "id": "repo:hongbiaoz/autonomous_exploration_development_environment",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:uzh-rpg/rpg_time_optimal",
+    "kind": "repo",
+    "name": "Time-optimal quadrotor planning",
+    "url": "https://github.com/uzh-rpg/rpg_time_optimal",
+    "summary": "Code for computing time-optimal quadrotor trajectories through waypoints, from the UZH group that placed second in AlphaPilot and built Swift.",
+    "why_it_matters": "Insight into how top drone-racing teams plan; transferable to fast inspection or reconnaissance flight planning.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "drone-racing",
+      "alphapilot",
+      "optimal-control",
+      "casadi"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Python/CasADi, offline only. Inactive since 2021.",
+    "related": [
+      {
+        "id": "repo:uzh-rpg/flightmare",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:uzh-rpg/flightmare",
+    "kind": "repo",
+    "name": "Flightmare",
+    "url": "https://github.com/uzh-rpg/flightmare",
+    "summary": "Quadrotor simulator combining Unity rendering with a fast physics engine for RL and vision-based flight research.",
+    "why_it_matters": "Simulation lineage behind UZH's drone-racing work; useful for training vision-based navigation without hardware.",
+    "concepts": [
+      "concept:simulation",
+      "concept:vio"
+    ],
+    "tags": [
+      "uzh",
+      "quadrotor",
+      "unity",
+      "reinforcement-learning"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Not updated since 2024; Unity build download required. Consider newer simulators if setup stalls.",
+    "related": [
+      {
+        "id": "repo:uzh-rpg/rpg_time_optimal",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:tpark94/speedplusbaseline",
+    "kind": "repo",
+    "name": "SPEED+ baseline",
+    "url": "https://github.com/tpark94/speedplusbaseline",
+    "summary": "PyTorch baselines and domain-bridging methods for spacecraft pose estimation on the SPEED+ dataset used in ESA Kelvins SPEC2021.",
+    "why_it_matters": "Open code tied to an ESA competition on vision-based relative navigation and sim-to-real gap.",
+    "concepts": [
+      "concept:space-nav",
+      "concept:datasets-benchmarks",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "esa-kelvins",
+      "spec2021",
+      "pose-estimation",
+      "pytorch"
+    ],
+    "language": "Python",
+    "domains": [
+      "space"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Dataset download is large; start with a subset. Inactive since 2023.",
+    "related": [
+      {
+        "id": "res:kelvins-pose-estimation-2021",
+        "rel": "evaluated_on"
+      }
+    ]
+  }
+]

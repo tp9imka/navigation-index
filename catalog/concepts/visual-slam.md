@@ -1,0 +1,80 @@
+# Visual SLAM
+
+`concept:visual-slam`
+
+Mapping and localization with loop closure from cameras.
+
+**Parent:** [Visual(-inertial) odometry](../concepts/vio.md)
+
+## Repositories (35)
+
+- [PythonRobotics](../repos/atsushisakai__pythonrobotics.md) - fit: high - Large collection of readable Python implementations of robotics algorithms: localization (EKF, particle filter), SLAM, path planning (A*, RRT*, D*, state lattice), path tracking and more, with animations.
+- [ORB-SLAM3](../repos/uz-slamlab__orb_slam3.md) - fit: high - Visual, visual-inertial and multi-map SLAM supporting monocular, stereo and RGB-D cameras with pinhole and fisheye models, using a map atlas to survive tracking loss.
+- [evo](../repos/michaelgrupp__evo.md) - fit: high - Python package and CLI for evaluating odometry and SLAM trajectories (ATE/RPE, alignment, plotting) in TUM, KITTI, EuRoC and ROS bag formats.
+- [hloc](../repos/cvg__hierarchical-localization.md) - fit: high - Toolbox for hierarchical visual localization: global retrieval (NetVLAD etc.) to find candidate images, then local feature matching (SuperPoint, LightGlue...) and PnP against an SfM model.
+- [RTAB-Map](../repos/introlab__rtabmap.md) - fit: high - Graph-based SLAM library and app supporting RGB-D, stereo and LiDAR, with memory management for large-scale loop closure and map reuse.
+- [GTSAM](../repos/borglab__gtsam.md) - fit: high - Georgia Tech factor-graph library for smoothing and mapping, with incremental solvers (iSAM2) and a full IMU preintegration factor set.
+- [rtabmap_ros](../repos/introlab__rtabmap_ros.md) - fit: high - ROS and ROS 2 integration for RTAB-Map, exposing SLAM, localization and odometry nodes.
+- [ORB_SLAM3_ROS2](../repos/zang09__orb_slam3_ros2.md) - fit: high - ROS 2 wrapper package that exposes ORB-SLAM3 as nodes for monocular, stereo and RGB-D input.
+- [tartanairpy](../repos/castacks__tartanairpy.md) - fit: high - Python package for downloading, customizing and iterating the TartanAir-V2 synthetic dataset.
+- [VGGT](../repos/facebookresearch__vggt.md) - fit: medium - Visual Geometry Grounded Transformer: a feed-forward network predicting camera poses, depth and point maps from one or many images (CVPR 2025 best paper).
+- [ORB-SLAM2](../repos/raulmur__orb_slam2.md) - fit: medium - Feature-based SLAM for monocular, stereo and RGB-D cameras using ORB features, with loop closing and relocalization against a reusable map.
+- [VINS-Mono](../repos/hkust-aerial-robotics__vins-mono.md) - fit: medium - Optimization-based monocular visual-inertial estimator with sliding-window bundle adjustment, online initialization, loop closure and pose-graph reuse.
+- [g2o](../repos/rainerkuemmerle__g2o.md) - fit: medium - General framework for graph optimization, widely used for pose-graph SLAM back ends.
+- [MASt3R-SLAM](../repos/rmurai0610__mast3r-slam.md) - fit: medium - Real-time dense monocular SLAM built on the MASt3R two-view 3D reconstruction prior, needing no fixed camera model (CVPR 2025).
+- [MASt3R](../repos/naver__mast3r.md) - fit: medium - Matching grounded in 3D: predicts dense correspondences and 3D pointmaps from image pairs, building on DUSt3R.
+- [DROID-SLAM](../repos/princeton-vl__droid-slam.md) - fit: medium - Deep visual SLAM that iterates dense bundle adjustment through a recurrent update operator, for monocular, stereo and RGB-D input.
+- [Sophus](../repos/strasdat__sophus.md) - fit: medium - C++ Lie group library (SO2, SE2, SO3, SE3, Sim3) built on Eigen, used in many SLAM and VIO systems.
+- [14 Lectures on Visual SLAM (English)](../repos/gaoxiang12__slambook-en.md) - fit: medium - English edition of Gao Xiang's open textbook on visual SLAM, from geometry and Lie groups to back-end optimization.
+- [Kimera-VIO](../repos/mit-spark__kimera-vio.md) - fit: medium - Stereo visual-inertial odometry with a factor-graph backend, robust loop closure and real-time 3D mesh generation; the odometry core of the Kimera stack.
+- [SVO Pro](../repos/uzh-rpg__rpg_svo_pro_open.md) - fit: medium - Open release of SVO Pro: semi-direct visual(-inertial) odometry with fisheye/omni camera support, optional global map and loop closure.
+- [AirSLAM](../repos/sair-lab__airslam.md) - fit: medium - Point-and-line visual(-inertial) SLAM using learned features, designed for illumination-robust operation, with TensorRT acceleration; successor to AirVO.
+- [DPVO / DPV-SLAM](../repos/princeton-vl__dpvo.md) - fit: medium - Deep Patch Visual Odometry: learned sparse patch tracking for VO, plus DPV-SLAM with loop closure.
+- [Swarm-SLAM](../repos/mistlab__swarm-slam.md) - fit: medium - Sparse, decentralized collaborative SLAM for multi-robot systems on ROS 2, supporting lidar, stereo and RGB-D with inter-robot loop closures under limited communication.
+- [Kimera-RPGO](../repos/mit-spark__kimera-rpgo.md) - fit: medium - Robust pose-graph optimization that rejects bad loop closures via pairwise consistency maximization on top of GTSAM.
+- [OKVIS2](../repos/ethz-mrl__okvis2.md) - fit: medium - Keyframe-based visual-inertial SLAM with loop closure and a realtime scalable factor-graph design; second generation of OKVIS.
+- [Hilti SLAM Challenge 2022](../repos/hilti-research__hilti-slam-challenge-2022.md) - fit: medium - Repository for the 2022 Hilti SLAM Challenge with dataset info and evaluation tooling.
+- [Swarm-SLAM](../repos/lajoiepy__cslam.md) - fit: medium - ROS 2 decentralized collaborative SLAM supporting LiDAR, stereo and RGB-D, with sparse inter-robot communication.
+- [maplab](../repos/ethz-asl__maplab.md) - fit: low - Modular multi-session, multi-modal mapping framework with map merging, optimization and localization against saved maps.
+- [DSO (Direct Sparse Odometry)](../repos/jakobengel__dso.md) - fit: low - Direct monocular visual odometry that optimizes photometric error over a sparse set of pixels with joint photometric calibration.
+- [SplaTAM](../repos/spla-tam__splatam.md) - fit: low - Dense RGB-D SLAM that tracks and maps using 3D Gaussians and differentiable rendering (CVPR 2024).
+- [MonoGS (Gaussian Splatting SLAM)](../repos/muskie82__monogs.md) - fit: low - Gaussian-splatting SLAM for monocular, stereo and RGB-D cameras that tracks and maps directly against a 3D Gaussian representation.
+- [Photo-SLAM](../repos/huajianup__photo-slam.md) - fit: low - Couples ORB-SLAM3-style geometric tracking with a photorealistic Gaussian map for monocular, stereo and RGB-D cameras (CVPR 2024).
+- [ESVO](../repos/hkust-aerial-robotics__esvo.md) - fit: low - Event-based stereo visual odometry using spatio-temporal consistency of two event cameras for mapping and tracking.
+- [D2SLAM](../repos/hkust-aerial-robotics__d2slam.md) - fit: low - Decentralized and distributed collaborative visual-inertial SLAM for aerial swarms from HKUST.
+- [Kimera-Multi](../repos/mit-spark__kimera-multi.md) - fit: low - Index repo for Kimera-Multi, a distributed multi-robot metric-semantic SLAM system with robust distributed pose-graph optimization.
+
+## Documents, talks, courses, datasets (31)
+
+- [14 Lectures on Visual SLAM: From Theory to Practice](../resources/gaoxiang-14-lectures-visual-slam.md) - book - English translation of the popular Chinese visual SLAM textbook, from rigid-body motion and Lie algebra through camera models, nonlinear optimization, feature/direct VO, backend optimization, loop closure and dense mappi
+- [Artificial Intelligence for Robotics (Udacity CS373)](../resources/udacity-ai-for-robotics-cs373.md) - course - Free classic course by Sebastian Thrun programming robot localization (histogram filter, Kalman filter, particle filter), search/planning, PID control and GraphSLAM in Python.
+- [Cyrill Stachniss YouTube channel (incl. '5 Minutes with Cyrill')](../resources/stachniss-youtube-channel.md) - video - Channel hosting Stachniss's full lecture courses plus the '5 Minutes with Cyrill' series of short explainers on single concepts (Kalman filter, factor graphs, ICP, RANSAC, SIFT, occupancy grids).
+- [DROID-SLAM: Deep Visual SLAM for Monocular, Stereo, and RGB-D Cameras](../resources/droid-slam-teed-2021.md) - paper - Learned SLAM that iteratively refines poses and depth through a differentiable dense bundle adjustment layer.
+- [Event-based Vision: A Survey](../resources/gallego-event-vision-survey-2019.md) - paper - Comprehensive survey of event cameras: sensing principle, algorithms (feature tracking, optical flow, VO/SLAM) and applications.
+- [Factor Graphs for Robot Perception](../resources/dellaert-kaess-factor-graphs-robot-perception.md) - paper - Monograph (Foundations and Trends in Robotics) introducing factor graphs for SLAM and estimation, sparse linear algebra behind them, and incremental smoothing.
+- [Factor Graphs for Robot Perception](../resources/dellaert-kaess-factor-graphs.md) - book - Foundations and Trends monograph (free author PDF) explaining SLAM and sensor fusion as inference on factor graphs, with incremental smoothing (iSAM) and the reasoning behind the GTSAM library.
+- [From Sea to Space: Advancing Perception in Harsh Domains (ICRA 2026 workshop)](../resources/icra-2026-sea-to-space-perception-workshop.md) - talk - ICRA 2026 (Vienna) workshop on perception for underwater, space and terrestrial field robots, including localization and mapping in degraded sensing, GPS-denied global localization, novel sensors (sonar, radar, thermal, 
+- [Gaussian Splatting SLAM](../resources/gaussian-splatting-slam-matsuki-2023.md) - paper - Monocular and RGB-D SLAM that tracks and maps directly against 3D Gaussians using analytic Jacobians for camera pose optimization.
+- [GTSAM Tutorial: Factor Graphs and GTSAM](../resources/gtsam-tutorial-intro.md) - doc - Hands-on introduction to the GTSAM library: modelling robot odometry, landmark and pose-graph SLAM as factor graphs, solving with Levenberg-Marquardt or iSAM2, and reading marginal covariances, with C++ and Python snippe
+- [Hilti SLAM Challenge](../resources/hilti-slam-challenge-site.md) - competition - Recurring SLAM challenge on construction sites with handheld and robot-mounted sensor rigs and millimetre-level ground truth.
+- [How NeRFs and 3D Gaussian Splatting are Reshaping SLAM: a Survey](../resources/tosi-nerf-3dgs-slam-survey-2024.md) - paper - Survey of SLAM methods that use neural radiance fields or 3D Gaussian splatting as the map representation, organized by sensor and technique.
+- [Isaac ROS Visual SLAM documentation](../resources/isaac-ros-visual-slam-docs.md) - doc - Docs and quickstarts for NVIDIA's GPU-accelerated stereo visual-inertial odometry and SLAM package for ROS 2 on Jetson, including tutorials with Isaac Sim and RealSense cameras.
+- [Kimera-Multi: Robust, Distributed, Dense Metric-Semantic SLAM for Multi-Robot Systems](../resources/kimera-multi-tian-2021.md) - paper - Distributed multi-robot SLAM where robots exchange compact information peer to peer and jointly optimize with outlier-robust distributed pose-graph optimization.
+- [Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping](../resources/kimera-rosinol-2019.md) - paper - Describes the Kimera stack: VIO, robust pose-graph optimization, mesh reconstruction and semantic mapping in one open library.
+- [MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors](../resources/mast3r-slam-murai-2024.md) - paper - Builds a real-time dense monocular SLAM system on the MASt3R two-view reconstruction prior, without assuming a fixed parametric camera model.
+- [MIT 16.485 Visual Navigation for Autonomous Vehicles (VNAV)](../resources/mit-vnav-16485.md) - course - MIT graduate course on the math and software of visual navigation: 3D geometry, Lie groups, quadrotor modelling and control, trajectory optimization, feature tracking, two-view geometry, nonlinear optimization, VIO and S
+- [Online Training: Mobile Robotics (Basics + Robotics blocks)](../resources/stachniss-mobile-robotics-online-training.md) - lecture-series - A curated self-study path of short recorded lectures from Bonn's Photogrammetry & Robotics lab, going from linear algebra, rotations and least squares through Bayes filters, EKF localization, particle filters, ICP, RANSA
+- [ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM](../resources/orb-slam3-campos-2020.md) - paper - Describes ORB-SLAM3's tightly integrated visual-inertial SLAM, MAP-based IMU initialization and the multi-map Atlas that recovers from tracking loss.
+- [Past, Present, and Future of Simultaneous Localization And Mapping: Towards the Robust-Perception Age](../resources/cadena-slam-past-present-future-2016.md) - paper - Landmark survey that frames modern SLAM as factor-graph MAP estimation and discusses robustness, scalability, representations and open problems.
+- [Robot Mapping (SLAM course) WS 2013/14](../resources/stachniss-slam-course-2013.md) - lecture-series - Full semester recording of the Freiburg Robot Mapping course: EKF-SLAM, sparse extended information filters, FastSLAM, grid-based mapping, least-squares and graph-based SLAM, and front-end/back-end design.
+- [Robot Mapping - WS 2013/14 course page (slides, exercises)](../resources/freiburg-robot-mapping-course.md) - course - Course page that accompanies the Robot Mapping lecture videos, with lecture slides and programming exercises (EKF-SLAM, UKF, FastSLAM, least-squares calibration, graph-SLAM) in Octave/Matlab.
+- [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook.md) - book - Community-written handbook released in three parts during 2024-2025 and published by Cambridge University Press; the free PDF is mirrored on the editors' project page.
+- [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../resources/slam-handbook-carlone-2025.md) - book - Edited community handbook covering SLAM foundations (factor graphs, state representations), sensor-specific pipelines (visual, LiDAR, inertial, leg odometry) and spatial AI topics such as learned SLAM and NeRF/Gaussian-s
+- [SLAM toolbox for Matlab (EKF-SLAM teaching code)](../resources/sola-slamtb-ekf-slam-toolbox.md) - course - Solà's Matlab EKF-SLAM toolbox, used as teaching material for his SLAM courses: modular robots, sensors, landmark parameterizations (including inverse-depth points and lines) and graph-SLAM variants.
+- [State Estimation for Robotics (Second Edition)](../resources/barfoot-state-estimation-robotics-2e.md) - book - Textbook on probabilistic estimation for robotics, from linear-Gaussian filtering and batch estimation to matrix Lie groups for 3D pose; the second edition adds variational inference and inertial navigation material.
+- [Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems](../resources/swarm-slam-paper.md) - paper - Paper behind Swarm-SLAM, focusing on sparse inter-robot communication and decentralized loop closure selection.
+- [Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems](../resources/swarm-slam-lajoie-2023.md) - paper - Decentralized collaborative SLAM aimed at swarms, prioritizing which inter-robot loop closures to compute and share to limit communication.
+- [TartanAir: A Dataset to Push the Limits of Visual SLAM](../resources/cmu-tartanair-dataset.md) - dataset - Large synthetic dataset rendered in AirSim/Unreal environments with challenging lighting, weather and motion, with perfect ground truth for many modalities.
+- [TUM RGB-D SLAM Dataset and Benchmark](../resources/tum-rgbd-benchmark.md) - dataset - Kinect RGB-D sequences with motion-capture ground truth and evaluation tools; the trajectory format is used widely by other tools.
+- [Visual Navigation for Flying Robots (TUM, 2013)](../resources/tum-visual-navigation-flying-robots.md) - lecture-series - Award-winning TUM lecture on making quadrotors navigate with cameras: 3D geometry, sensors, state estimation, visual motion estimation, SLAM, dense reconstruction, planning and exploration.
+

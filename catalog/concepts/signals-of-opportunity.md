@@ -1,0 +1,47 @@
+# Signals of opportunity
+
+`concept:signals-of-opportunity`
+
+Positioning from LTE/5G, Wi-Fi, DVB, LEO satellites (Starlink, Iridium), eLoran, other non-navigation RF.
+
+**Parent:** [Assured / resilient PNT](../concepts/assured-pnt.md)
+
+## Repositories (8)
+
+- [Starlink LEO-PNT](../repos/przemyslawpiekarski__starlink-leo-pnt.md) - fit: high - Passive positioning using Starlink downlink signals as signals of opportunity: SDR capture, blind OFDM analysis, Doppler extraction, TDOA/FDOA solver and EKF with TLE-based orbits.
+- [A Tutorial on 5G Positioning (code)](../repos/ita97__a-tutorial-on-5g-positioning.md) - fit: medium - MATLAB simulation code accompanying an IEEE tutorial on 5G positioning (timing, angle and multi-cell methods).
+- [LEO-SPINE](../repos/xyangll__leospine.md) - fit: medium - Open toolkit for LEO/MEO/GEO constellation simulation and single/multi-satellite positioning.
+- [LEO SoOP positioning thesis (Voska)](../repos/voskavoj__dp.md) - fit: medium - Diploma thesis materials on signals-of-opportunity positioning from LEO satellites using Doppler shift and TLE-based orbits.
+- [UT Starlink signal simulator](../repos/gitlab.com__radionavlab__public__ut-starlink-signal-simulator.md) - fit: medium - MATLAB-style utility functions from UT Austin's Radionavigation Lab for simulating Starlink Ku-band downlink signals, with playground examples.
+- [KiwiSDR](../repos/jks-prv__kiwisdr.md) - fit: low - Web-accessible shortwave SDR receiver (10 kHz - 30 MHz) with built-in software GPS and a Loran-C/eLoran monitor extension.
+- [GraphGNSSLib LEO](../repos/gao-tech1__graphgnsslib_leo_v1.2.md) - fit: low - Factor-graph positioning combining GNSS and LEO satellite measurements, extending GraphGNSSLib.
+- [RINEX LEO extension proposal](../repos/rokubun__rinex_leo.md) - fit: low - Proposal for RINEX format modifications to carry LEO-PNT observables and ephemeris.
+
+## Documents, talks, courses, datasets (25)
+
+- [Ad Astra: Navigation with Megaconstellation LEO Satellites (GRASP on Robotics)](../resources/kassas-ad-astra-leo-grasp-2024.md) - talk - UPenn GRASP seminar by Zak Kassas on opportunistic PNT from Starlink, OneWeb and other LEO megaconstellations, addressing unknown signal structure, poor ephemerides and clock instability with his STAN (simultaneous track
+- [Adaptable Navigation Systems (ANS)](../resources/darpa-adaptable-navigation-systems.md) - doc - DARPA program page for ANS, which pursued GPS-quality PNT in denied environments through precision inertial sensors (PINS) and the All Source Positioning and Navigation (ASPN) sensor-fusion effort.
+- [Assessing Alternative Positioning, Navigation and Timing Technologies for Potential Deployment in the EU](../resources/jrc-assessing-apnt-2023.md) - report - JRC test campaign at Ispra of commercial alternative PNT systems (terrestrial beacons, LEO, eLoran-like, fibre timing and others) for DG DEFIS.
+- [Complementary PNT and GPS Backup Technologies Demonstration Report](../resources/dot-complementary-pnt-report-2021.md) - report - Field demonstration of 11 GPS-backup technologies (including eLoran, terrestrial beacons, LEO and fiber timing) against defined scenarios, delivered to Congress.
+- [DARPA PNT programs briefing to the National Space-Based PNT Advisory Board (2019)](../resources/darpa-aspn-briefing-2019.md) - talk - DARPA slide deck summarizing its PNT portfolio, including All Source Positioning and Navigation (ASPN), a plug-and-play architecture for fusing non-traditional sensors when GPS is denied.
+- [DOT Complementary PNT Action Plan](../resources/dot-complementary-pnt-action-plan-2023.md) - report - US DOT plan to drive adoption of complementary PNT for transportation and critical infrastructure via stakeholder engagement, specifications, field trials and test ranges.
+- [Enter LEO on the GNSS Stage: Navigation with Starlink Satellites](../resources/kassas-starlink-navigation.md) - paper - Opportunistic navigation using Starlink downlink signals without cooperation from the operator, describing two ways to extract navigation observables from unknown signals.
+- [Exploiting Starlink Signals for Navigation: First Results](../resources/kassas-starlink-first-results-2022.md) - paper - Early experimental demonstration of opportunistic positioning by tracking Doppler from Starlink satellites, without cooperation from the operator.
+- [GAO-21-320SP: Defense Navigation Capabilities - DOD Is Developing PNT Alternatives to GPS](../resources/gao-21-320sp-gps-alternatives.md) - report - Technology assessment of DoD's alternative PNT efforts (inertial, vision, celestial, magnetic, signals of opportunity, clocks), with maturity status and challenges.
+- [Implementation and Accuracy of Doppler Navigation with LEO Satellites](../resources/ion-webinar-baron.md) - talk - Implementation-focused talk on navigating with Doppler measurements from LEO satellites and the accuracy achieved in practice.
+- [Initialization-Free LEO Doppler Positioning via Semidefinite Relaxation: A Cold-Start Approach](../resources/leo-doppler-cold-start-2025.md) - paper - Formulates LEO Doppler positioning as an optimization solvable by semidefinite relaxation so it does not need a good initial position guess.
+- [ION Webinar Series (archive and YouTube recordings)](../resources/ion-webinar-series.md) - lecture-series - Running ION webinar programme with summary pages per talk and a YouTube playlist of past recordings (youtube.com/playlist?list=PLPiP0PPIY2x4k1OemLZH8_OJPyLjGLYFY).
+- [LTE Receiver Design and Multipath Analysis for Navigation in Urban Environments](../resources/ion-webinar-shamaei-kassas.md) - talk - Design of a software receiver that extracts navigation observables from cellular LTE signals and analysis of multipath effects in urban settings.
+- [NATO DIANA's breakthrough solutions for secure communication and navigation](../resources/nato-diana-secure-comms-navigation.md) - blog - DIANA feature on cohort companies working on resilient navigation and secure communications, illustrating which approaches made it through selection.
+- [Navigation using carrier Doppler shift from a LEO constellation: TRANSIT on steroids](../resources/psiaki-transit-on-steroids-2021.md) - paper - Analyzes positioning from carrier Doppler measurements of a large LEO constellation with a batch filter estimating position, velocity and clock terms, showing accuracy potentially comparable to pseudorange GNSS.
+- [Navigation using carrier Doppler shift from a LEO constellation: TRANSIT on steroids](../resources/ion-webinar-psiaki.md) - talk - Analysis of Doppler-only positioning from large LEO constellations, revisiting the TRANSIT concept with modern megaconstellations and quantifying achievable accuracy.
+- [Navigation with Multi-Constellation LEO Satellite Signals of Opportunity: Starlink, OneWeb, Orbcomm, and Iridium](../resources/kassas-multi-constellation-leo.md) - paper - Experimental multi-constellation LEO SoOP navigation combining four commercial constellations, using the simultaneous tracking and navigation (STAN) framework.
+- [Positioning with Starlink LEO Satellites: A Blind Doppler Spectral Approach](../resources/kassas-starlink-blind-doppler-2023.md) - paper - Estimates Doppler from Starlink downlinks blindly in the frequency domain without knowing the signal structure, and uses it for positioning from a poor initial estimate.
+- [Signal Structure of the Starlink Ku-Band Downlink](../resources/humphreys-2023-starlink-signal-structure.md) - paper - Reverse-engineers the Starlink Ku-band downlink as OFDM and identifies synchronization sequences usable for opportunistic ranging and positioning.
+- [Survey on positioning technology based on signal of opportunity from low earth orbit](../resources/leo-soop-positioning-survey-2025.md) - paper - Open-access survey of LEO signals-of-opportunity positioning: Doppler methods, error sources, and extracting observables from signals never designed for navigation (unknown codes, poor onboard clocks).
+- [The First Carrier Phase Tracking and Positioning Results With Starlink LEO Satellite Signals](../resources/kassas-2022-starlink-carrier-phase.md) - paper - IEEE TAES letter showing carrier-phase tracking of Starlink signals with unknown structure and positioning from several satellites.
+- [Unveiling Starlink for PNT](../resources/ion-webinar-kozhaya.md) - talk - Presents work on exploiting Starlink downlink signals for opportunistic positioning, including signal structure discovery and Doppler/pseudorange-based navigation results.
+- [UT Austin Radionavigation Laboratory (talks, papers, news)](../resources/ut-radionavigation-lab.md) - blog - Lab site of Todd Humphreys' group, indexing talks, briefings and papers on GNSS spoofing detection, LEO interference monitoring, Starlink-based PNT and precise automotive positioning.
+- [When GNSS fails, what will you do? MarRINav!](../resources/ion-webinar-marrinav.md) - talk - UK maritime resilient navigation study (MarRINav) on backups for GNSS at sea, including eLoran and R-Mode style terrestrial systems; co-sponsored by the RNT Foundation.
+- [Who cares about the Baltic Jammer? Terrestrial Navigation in the Baltic Sea Region (39C3)](../resources/39c3-baltic-jammer-r-mode.md) - talk - 39th Chaos Communication Congress talk from DLR researchers on R-Mode, a terrestrial maritime navigation backup built on existing radio beacons and coastal infrastructure, tested in the heavily jammed Baltic.
+
