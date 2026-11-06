@@ -38,7 +38,8 @@ TOOLS = [
         "description": "Ranked keyword search over repos, resources, concepts and samples of the "
                        "navigation/PNT hub. Returns ids, one-line summaries and URLs.",
         "inputSchema": {"type": "object", "required": ["query"], "properties": {
-            "query": {"type": "string", "description": "space-separated keywords"},
+            "query": {"type": "string", "description": "keywords, BM25F-ranked; gps/gnss and drone/uav "
+                                                       "are treated as synonyms"},
             "concept": {"type": "string", "description": "restrict to a concept id, e.g. concept:vio"},
             **FILTERS}},
     },
@@ -100,12 +101,8 @@ def brief(r, **extra):
 
 def tool_search(args):
     recs, _ = data()
-    terms = [t for t in str(args["query"]).lower().split() if t]
-    f = filters(args)
-    hits = [(query.score(r, terms), r) for r in recs.values() if query.matches_filters(r, f)]
-    hits = [h for h in hits if h[0] > 0]
-    hits.sort(key=lambda h: (-h[0], -((h[1].get("github") or {}).get("stargazers_count") or 0)))
-    return [brief(r, score=s) for s, r in hits[:limit_of(args)]]
+    hits = query.search(recs, str(args["query"]), filters(args))
+    return [brief(r, score=round(s, 3)) for s, r in hits[:limit_of(args)]]
 
 
 def tool_show(args):

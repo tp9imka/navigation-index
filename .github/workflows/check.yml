@@ -15,6 +15,11 @@ jobs:
           python3 tools/build.py | tee build.log
           grep -q "dangling: 0 bad concepts: 0" build.log
           git diff --stat --exit-code -- catalog INDEX.md graph/graph.json index llms.txt reports
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Search ranker parity (Python vs site JS)
+        run: python3 tools/search_eval.py --parity
       - name: Links resolve
         run: python3 tools/check_links.py
       - name: Stdlib sample tests

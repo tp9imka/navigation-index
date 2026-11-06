@@ -4,8 +4,6 @@ const DATA_URL = "data/index.json";
 const ROOT = "../"; // repo root relative to site/
 const PAGE_SIZE = 50;
 const FACET_COLLAPSED = 8;
-// Same field weights as tools/query.py; "b" is the plain-text body excerpt of a deep-dive doc.
-const WEIGHTS = [["n", 5], ["g", 3], ["s", 2], ["w", 1], ["h", 1], ["kt", 1], ["b", 1]];
 const FIT_RANK = { high: 0, medium: 1, low: 2 };
 const DOC_KINDS = { "integration-card": "integration card", "dataset-card": "dataset card", "paper-digest": "paper digest", "landscape": "landscape" };
 const STAR_BUCKETS = [["10k+", 10000, Infinity], ["1k-10k", 1000, 10000], ["100-1k", 100, 1000], ["10-100", 10, 100], ["<10", 0, 10]];
@@ -24,7 +22,7 @@ const FACETS = [
 
 const S = { q: "", f: {}, concept: "", view: "search", page: "", anchor: "", limit: PAGE_SIZE, sel: -1, expanded: new Set() };
 let E = [], byId = new Map(), byPage = new Map(), incoming = new Map(), children = new Map(), concepts = [];
-let shown = [];
+let shown = [], RK = null;
 const $ = s => document.querySelector(s);
 
 function esc(s) {
@@ -43,7 +41,6 @@ async function load() {
   E.forEach((e, i) => {
     e.x = i;
     e.isDoc = e.i.startsWith("doc:");
-    e.lc = WEIGHTS.map(([f, w]) => [Array.isArray(e[f]) ? e[f].join(" ").toLowerCase() : String(e[f] || "").toLowerCase(), w]);
     byId.set(e.i, e);
     byPage.set(e.p, e);
     if (e.sd) byPage.set(`samples/${e.sd}/README.md`, e);
@@ -59,6 +56,7 @@ async function load() {
     });
   });
   concepts = E.filter(e => e.k === "concept");
+  RK = buildRanker(E);
   concepts.forEach(c => {
     const p = c.pa || "";
     if (!children.has(p)) children.set(p, []);
@@ -73,20 +71,118 @@ async function load() {
 
 // ---------- search ----------
 
-function count(hay, needle) {
-  let c = 0, i = 0;
-  while ((i = hay.indexOf(needle, i)) !== -1) { c++; i += needle.length; }
-  return c;
+// ---- ranker begin
+// Port of the Ranker in tools/query.py (BM25F + concept boost + priors); keep constants and
+// arithmetic order identical. `python3 tools/search_eval.py --parity` runs this block under node.
+const FIELDS = ["name", "tags", "concepts", "summary", "why", "notes", "takeaways", "lang", "kind", "deep"];
+const FIELD_W = { name: 4.0, tags: 1.5, concepts: 1.5, summary: 1.5, why: 0.7, notes: 0.5, takeaways: 0.7, lang: 1.0, kind: 1.0, deep: 1.0 };
+const FIELD_B = { name: 0.3, tags: 0.3, concepts: 0.0, summary: 0.6, why: 0.6, notes: 0.6, takeaways: 0.6, lang: 0.0, kind: 0.0, deep: 0.75 };
+const K1 = 1.2, CONCEPT_MIN = 0.5, CONCEPT_W = 2.5;
+const PRIOR_FIT = { high: 0.4, medium: 0.15 }, PRIOR_RAN = 0.4;
+const DEEP_DOC_MAX_ABOUT = 4;
+const STOP = new Set("a an and are as at be by for from in into is it of on or the to with via using none".split(" "));
+const SYNONYM = { gps: "gnss", drone: "uav", uas: "uav", suas: "uav", quadcopter: "uav", quadrotor: "uav", multirotor: "uav", ladar: "lidar" };
+const NORMALIZE = [[/isation/g, "ization"], [/geo[\s_-]+locali[sz]ation/g, "geolocalization"], [/geo[\s_-]+locali[sz]e/g, "geolocalize"]];
+
+function stem(t) {
+  if (t.length > 4 && t.endsWith("ies")) t = t.slice(0, -3) + "y";
+  else if (t.length > 3 && t.endsWith("s") && !t.endsWith("ss") && !t.endsWith("us") && !t.endsWith("is")) t = t.slice(0, -1);
+  return Object.prototype.hasOwnProperty.call(SYNONYM, t) ? SYNONYM[t] : t;
 }
 
-function score(e, terms) {
-  let s = 0;
-  for (const [txt, w] of e.lc) {
-    if (!txt) continue;
-    for (const t of terms) s += w * count(txt, t);
-  }
-  return s;
+function tokens(text) {
+  text = String(text || "").toLowerCase();
+  for (const [rx, rep] of NORMALIZE) text = text.replace(rx, rep);
+  return text.split(/[^a-z0-9]+/).filter(t => t && !STOP.has(t)).map(stem);
 }
+
+function buildRanker(entries) {
+  const cname = new Map(entries.filter(e => e.k === "concept").map(e => [e.i, e.n || ""]));
+  const docBody = new Map(), users = new Map();
+  for (const e of entries) {
+    if (e.i.startsWith("doc:")) docBody.set(e.p, e.b || "");
+    else for (const d of e.dd || []) users.set(d, (users.get(d) || 0) + 1);
+  }
+  const join = v => Array.isArray(v) ? v.join(" ") : String(v || "");
+  const prep = e => {
+    const isDoc = e.i.startsWith("doc:");
+    const cs = (e.c || []).concat(e.k === "concept" ? [e.i] : []);
+    const fields = isDoc
+      ? { name: e.n, summary: e.s, deep: e.b, concepts: cs.map(c => cname.get(c) || "").join(" ") }
+      : {
+          name: e.n, tags: join(e.g), concepts: cs.map(c => cname.get(c) || "").join(" "), summary: join(e.s),
+          why: join(e.w), notes: join(e.h), takeaways: join(e.kt), lang: e.lg || "", kind: e.k,
+          deep: (e.dd || []).filter(d => docBody.has(d) && users.get(d) <= DEEP_DOC_MAX_ABOUT).map(d => docBody.get(d)).join(" "),
+        };
+    const f = {}, tf = {};
+    for (const k of FIELDS) {
+      f[k] = tokens(fields[k]);
+      tf[k] = new Map();
+      for (const t of f[k]) tf[k].set(t, (tf[k].get(t) || 0) + 1);
+    }
+    let prior = isDoc ? 0 : (PRIOR_FIT[e.f] || 0.0);
+    if (e.k === "sample" && e.vs === "ran") prior += PRIOR_RAN;
+    return { e, f, tf, cs, prior, id: e.i, stars: e.st || 0 };
+  };
+  const corpus = [], extra = [];
+  for (const e of entries) (e.i.startsWith("doc:") ? extra : corpus).push(prep(e));
+  const n = corpus.length, avg = {}, df = new Map();
+  for (const k of FIELDS) {
+    let sum = 0;
+    for (const x of corpus) sum += x.f[k].length;
+    avg[k] = (sum / n) || 1.0;
+  }
+  for (const x of corpus) {
+    const seen = new Set();
+    for (const k of FIELDS) for (const t of x.f[k]) seen.add(t);
+    for (const t of seen) df.set(t, (df.get(t) || 0) + 1);
+  }
+  const idfUnseen = Math.log(1 + (n + 0.5) / 0.5);
+  const idf = t => df.has(t) ? Math.log(1 + (n - df.get(t) + 0.5) / (df.get(t) + 0.5)) : idfUnseen;
+  const conceptTokens = [...cname].map(([cid, name]) => [cid, new Set(tokens(name + " " + cid.split(":").slice(1).join(":")))]);
+
+  function score(x, q, cboost) {
+    let base = 0.0;
+    for (const t of q) {
+      let tfw = 0.0;
+      for (const k of FIELDS) {
+        const c = x.tf[k].get(t);
+        if (c) {
+          const norm = 1 - FIELD_B[k] + FIELD_B[k] * x.f[k].length / avg[k];
+          tfw += FIELD_W[k] * c / norm;
+        }
+      }
+      if (tfw > 0) base += idf(t) * tfw / (K1 + tfw);
+    }
+    if (base <= 0) return 0.0;
+    let best = 0.0;
+    for (const c of x.cs) best = Math.max(best, cboost.get(c) || 0.0);
+    return base + CONCEPT_W * best + x.prior;
+  }
+
+  function rank(query) {
+    const q = [...new Set(tokens(query))];
+    if (!q.length) return [];
+    let total = 0;
+    for (const t of q) total += idf(t);
+    const cboost = new Map();
+    for (const [cid, toks] of conceptTokens) {
+      let m = 0;
+      for (const t of q) if (toks.has(t)) m += idf(t);
+      m = m / total;
+      if (m >= CONCEPT_MIN) cboost.set(cid, m);
+    }
+    const hits = [];
+    for (const x of corpus.concat(extra)) {
+      const s = score(x, q, cboost);
+      if (s > 0) hits.push([Math.floor(s * 1e6 + 0.5), x]);
+    }
+    hits.sort((a, b) => b[0] - a[0] || b[1].stars - a[1].stars || (a[1].id < b[1].id ? -1 : a[1].id > b[1].id ? 1 : 0));
+    return hits.map(([s, x]) => [s / 1e6, x.e]);
+  }
+  return { rank };
+}
+// ---- ranker end
 
 function conceptSet(id) {
   const out = new Set([id]);
@@ -107,17 +203,10 @@ function passes(e, skipKey, cset) {
 }
 
 function search() {
-  const terms = S.q.toLowerCase().split(/\s+/).filter(Boolean);
   const cset = S.concept ? conceptSet(S.concept) : null;
   let base;
-  if (terms.length) {
-    base = [];
-    for (const e of E) {
-      const sc = score(e, terms);
-      if (sc > 0) base.push([sc, e]);
-    }
-    base.sort((a, b) => b[0] - a[0] || (b[1].st || 0) - (a[1].st || 0));
-    base = base.map(x => x[1]);
+  if (S.q.trim()) {
+    base = RK.rank(S.q).map(x => x[1]);
   } else {
     base = E.slice().sort((a, b) =>
       (FIT_RANK[a.f] ?? 3) - (FIT_RANK[b.f] ?? 3) || (b.st || 0) - (a.st || 0) || a.n.localeCompare(b.n));
