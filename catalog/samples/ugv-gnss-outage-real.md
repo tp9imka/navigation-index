@@ -6,6 +6,16 @@ Stdlib-only ground-vehicle loop on a real NCLT Segway session (2013-01-10, 1022 
 
 **Verification:** Ran 2026-11-06 with /opt/homebrew/bin/python3 3.14.7, stdlib only (run with -I). fetch_nclt.py downloaded and sha256-verified groundtruth_2013-01-10.csv (20.7 MB) and 2013-01-10_sen.tar.gz (21.7 MB) from the NCLT S3 bucket in ~27 s; ugv_loop.py (all four reports, ~26 s) output saved in results/all-2013-01-10.txt and quoted in the README. Sensor conventions checked against truth (gyro z slope 0.994, KVH rate sign, wheel scale 1.07). 11 unittest tests pass with data, 7 pass + 4 skip without data; mutations (inert gate, zero drag) make the gate and drag tests fail. One session only; truth is NCLT SLAM which fuses the same wheel odometry; the drag is a position offset on recorded fixes, not an RF spoof. robot_localization, DRIFT and KF-GINS were not run.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| cpu | none | cache-required | unknown | 42.3383 MB | unknown | integrated |
+
+**Main limitation:** One low-speed NCLT session; reference SLAM shares wheel odometry, and injected drag is synthetic.
+
+**Readiness evidence:** [samples/ugv-gnss-outage-real/README.md](../../samples/ugv-gnss-outage-real/README.md), [samples/ugv-gnss-outage-real/sample.json](../../samples/ugv-gnss-outage-real/sample.json), [samples/ugv-gnss-outage-real/fetch_nclt.py](../../samples/ugv-gnss-outage-real/fetch_nclt.py)
+
 **Concepts:** [Ground vehicle autonomy](../../catalog/concepts/ground-vehicle-nav.md), [GNSS/INS integration](../../catalog/concepts/gnss-ins.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `ugv`, `wheel-odometry`, `dead-reckoning`, `fog`, `ekf`, `innovation-gate`, `chi-square`, `multipath`, `gnss-outage`, `spoofing`, `drag`, `real-data`, `nclt`, `stdlib`
@@ -21,6 +31,7 @@ Stdlib-only ground-vehicle loop on a real NCLT Segway session (2013-01-10, 1022 
 ## Referenced by
 
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): samples_

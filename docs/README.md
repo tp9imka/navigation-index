@@ -10,6 +10,11 @@ not a pasted problem statement: for a statement, read the
 
 ### Before the event (days to weeks)
 
+- [practical-readiness.md](practical-readiness.md) - select by actual compute, hardware,
+  platform, budget and offline evidence; generated shortlist and limitations.
+- [starter-bundles.md](starter-bundles.md) - prepare one small receiver, simulation or vision
+  bundle, then rehearse it on a second laptop offline.
+
 1. [primer/](primer/README.md) - nine chapters, one cluster of the hub each, with the EW
    failure modes. Learn the vocabulary here.
 2. [learning-paths.md](learning-paths.md) - three study tracks by available time, built from

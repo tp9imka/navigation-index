@@ -6,6 +6,14 @@ Runs the unmodified filters of swarm-coop-localization (dead reckoning, centrali
 
 **Verification:** Ran 2026-11-06 with /opt/homebrew/bin/python3 3.14.7, stdlib only. fetch_miluv.py fetched the CSVs of default_3_zigzag_0, default_3_random_0 and cirObstacles_3_random_0 by HTTP range (31.4 + 12.6 + 10.6 MB over the wire from 11.1 / 3.2 / 3.2 GB zips). run_real.py stats / nominal / fault / fault --kind peer outputs saved in out/ and quoted in the README (30 runs per table: 3 denied-drone choices x 10 odometry seeds). Truth re-derived from mocap matches the devkit gt_range within 1 cm on 99.91 % of rows. 15 unittest tests pass with data, 7 pass + 8 skip without data; a mutation zeroing the injected fault makes the SS detection test fail. Not verified: real odometry (it is synthetic from mocap), lever-arm or 3-D models, comms, UTIL TDoA data, the MILUV devkit itself (not installed or run).
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 **Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
 **Tags:** `cooperative-localization`, `uwb`, `two-way-ranging`, `nlos`, `real-data`, `miluv`, `multilateration`, `covariance-intersection`, `ekf`, `solution-separation`, `integrity`, `fault-injection`, `http-range`, `stdlib`

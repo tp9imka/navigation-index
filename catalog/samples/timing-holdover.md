@@ -6,6 +6,14 @@ A stdlib-only simulation of a GNSS-disciplined oscillator (type-2 PLL on a noisy
 
 **Verification:** ran with python3.14.7 stdlib on 2026-11-06 (default arguments, about 5 s); output pasted verbatim in README. 9 unittest tests pass, including an ADEV check of the noise model, a no-spoof negative control and a planted blind-detector control that proves the cross-source alarm can fail. Oscillator parameters are datasheet/table values; PPS noise, second-source noise/asymmetry, temperature fraction and detector thresholds are stated assumptions. No hardware or real GNSS data was used, and none of the related repos was run.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `gpsdo`, `holdover`, `allan-deviation`, `ocxo`, `rubidium`, `csac`, `tcxo`, `time-spoofing`, `pll`, `stdlib`

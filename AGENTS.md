@@ -27,6 +27,13 @@ interpreter. Deviations are listed in `samples/README.md`.
 
 ## Using the hub to answer a question
 
+For resource constraints, read `docs/practical-readiness.md`. Search, concept and neighbors
+accept `compute`, `hardware`, `offline`, `platform`, `validation`, `max_setup_minutes` and
+`max_download_mb` (CLI: hyphens). An empty search lists only matching candidates. Unknown
+values never satisfy a numeric budget or verified-offline filter. `readiness` is independent
+of `verified_status`; cite its evidence and limitation. See `docs/starter-bundles.md` for
+selective preparation and measured rehearsal receipts.
+
 1. Start at `llms.txt` (map) and `INDEX.md` (concept tree + high-fit repos).
 2. Pick a concept page in `catalog/concepts/` - it lists every repo, document, talk,
    dataset and sample tagged with that concept, high hackathon-fit first.

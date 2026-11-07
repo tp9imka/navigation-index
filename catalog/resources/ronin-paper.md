@@ -26,5 +26,6 @@ Introduces a large smartphone IMU dataset with ground truth and benchmarks neura
 ## Referenced by
 
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): ins-fusion_

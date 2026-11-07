@@ -6,6 +6,14 @@ A stdlib-only simulation of six vehicles with biased odometry where only two kee
 
 **Verification:** ran with python3.14.7 stdlib on 2026-11-06: nominal and spoof scenarios, each range-only and with bearings (seed 1), and 10-seed Monte Carlo for all four; outputs saved in out/ and pasted in README. 20 unittest tests pass; mutations (SS gate disabled, robust weighting disabled) make the detection and robust-ranging tests fail. Synthetic data only: NLOS, comms and odometry models are stated assumptions, no UWB dataset or hardware was used, and none of the related repos was run.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 **Concepts:** [Swarms and multi-agent navigation](../../catalog/concepts/multi-agent.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md)
 
 **Tags:** `cooperative-localization`, `uwb`, `two-way-ranging`, `nlos`, `huber`, `innovation-gate`, `covariance-intersection`, `decentralized-estimation`, `ekf`, `swarm`, `spoofing`, `solution-separation`, `integrity`, `communication-cost`, `stdlib`

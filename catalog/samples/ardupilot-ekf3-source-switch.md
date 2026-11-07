@@ -6,6 +6,14 @@ Flies ArduCopter SITL on GPS, switches EKF3 to an external-nav source set (SITL 
 
 **Verification:** Ran on 2026-11-06 against ArduCopter Copter-4.6.3 SITL in Docker (samples/sitl-docker, linux/arm64) with pymavlink 2.4.50 on python3.12: source switch accepted, EKF kept POS_HORIZ_ABS with GPS fix_type 1 for 30 s and flew the 15 m leg; --no-switch lost position after ~6 s and triggered 'EKF Failsafe: changed to LAND Mode'. Output in README. ekf_flags.py tests (6) pass on python3.14.7. --switch-via rc not run.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 **Concepts:** [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md)
 
 **Tags:** `ardupilot`, `ekf3`, `source-sets`, `sitl`, `pymavlink`, `gps-denied`, `external-nav`, `vicon`

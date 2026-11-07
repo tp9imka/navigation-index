@@ -59,8 +59,15 @@ kbd { border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4p
 }
 .side-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
 .facet { border-top: 1px solid var(--line); padding: 8px 0; }
-.facet h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 0 0 4px; }
+.facet h3, .facet .facet-title { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 0 0 4px; font-weight: 700; }
 .facet label { display: flex; align-items: center; gap: 6px; padding: 1px 0; cursor: pointer; font-size: 13px; }
+.facet select, .budgets input { width: 100%; min-width: 0; padding: 5px 7px; border: 1px solid var(--line); border-radius: 5px; color: var(--fg); background: var(--bg); font: inherit; font-size: 13px; }
+.budgets label { margin-top: 7px; flex-wrap: wrap; }
+.budgets label span { margin-left: auto; }
+.budgets p { font-size: 12px; margin: 6px 0 0; }
+.budget-error { color: var(--bad); }
+.budget-error:empty { display: none; }
+.budgets input[aria-invalid="true"] { border-color: var(--bad); }
 .facet label .n { margin-left: auto; color: var(--muted); font-size: 12px; }
 .facet label.zero { opacity: .45; }
 .facet .more { font-size: 12px; }
@@ -99,6 +106,17 @@ main { padding: 12px 20px 60px; min-width: 0; }
 .fit-high { color: var(--ok); font-weight: 600; }
 .fit-low { color: var(--bad); }
 .sum { margin: 4px 0; }
+.readiness { margin: 7px 0; padding: 6px 0; border-top: 1px solid var(--line); font-size: 12px; }
+.readiness dl { display: flex; flex-wrap: wrap; gap: 3px 14px; margin: 0; }
+.readiness dl > div { display: flex; flex-wrap: wrap; gap: 4px; }
+.readiness dt { color: var(--muted); }
+.readiness dt::after { content: ":"; }
+.readiness dd { margin: 0; overflow-wrap: anywhere; }
+.readiness .limitation { margin: 5px 0 0; }
+.readiness-evidence { color: var(--muted); margin-top: 4px; overflow-wrap: anywhere; }
+.readiness-evidence summary { cursor: pointer; width: fit-content; }
+.readiness-evidence ul { margin: 3px 0; padding-left: 18px; }
+.readiness-unknown { font-size: 12px; margin: 6px 0; }
 .chips { display: flex; flex-wrap: wrap; gap: 4px; margin: 4px 0; }
 .chip { font-size: 11.5px; padding: 0 7px; border-radius: 999px; border: 1px solid var(--line); color: var(--fg); background: none; cursor: pointer; }
 .chip:hover { border-color: var(--accent); }

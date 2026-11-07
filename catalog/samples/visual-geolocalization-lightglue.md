@@ -6,6 +6,14 @@ Matches a nadir drone frame against a georeferenced satellite or orthophoto tile
 
 **Verification:** geo_math.py and 12 unit tests ran with python3.14.7 stdlib on 2026-11-06. geolocalize.py ran on 2026-11-06 with torch 2.15.0 (CPU), LightGlue git 5a650c4, opencv-python 5.0.0.93, rasterio 1.5.2 on Python 3.12.14 against synthetic pairs cut from one public OpenAerialMap orthophoto (Tbilisi, CC-BY 4.0): 0.04-0.21 m error for yaw 0/60/135 deg, tilt and 60-150 m priors; 30.7 m error with 162 inliers when 40% of the frame was nodata at the ortho edge; a frame from a different city gave no fix (5 inliers). Frame and map come from the same survey, so this is a pipeline/geometry check, not a cross-season or real-UAV result; UAV-VisLoc/VPAIR/University-1652 were not run.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 ## Deep dives
 
 - [openaerialmap](../../docs/dataset-cards/openaerialmap.md) (dataset-cards)

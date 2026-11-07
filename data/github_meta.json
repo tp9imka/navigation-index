@@ -3670,6 +3670,29 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:foxglove/mcap": {
+  "archived": false,
+  "description": "MCAP is a modular, performant, and serialization-agnostic container file format, useful for pub/sub and robotics applications.",
+  "forks_count": 249,
+  "full_name": "foxglove/mcap",
+  "html_url": "https://github.com/foxglove/mcap",
+  "language": "Rust",
+  "license": "MIT",
+  "pushed_at": "2026-11-03T14:28:45Z",
+  "stargazers_count": 1136,
+  "topics": [
+   "cpp",
+   "data",
+   "deserialization",
+   "golang",
+   "python",
+   "robotics",
+   "serialization",
+   "swift",
+   "typescript"
+  ],
+  "fetched": "2026-11-07"
+ },
  "repo:freetakteam/freetakserver": {
   "archived": false,
   "description": "Situational Awareness Server compatible with TAK clients",
@@ -9795,6 +9818,27 @@
   ],
   "fetched": "2026-11-06"
  },
+ "repo:rerun-io/rerun": {
+  "archived": false,
+  "description": "Visualize, query, and stream to train on multimodal robotics data.",
+  "forks_count": 890,
+  "full_name": "rerun-io/rerun",
+  "html_url": "https://github.com/rerun-io/rerun",
+  "language": "Rust",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-11-06T18:10:48Z",
+  "stargazers_count": 11716,
+  "topics": [
+   "computer-vision",
+   "cpp",
+   "multimodal",
+   "python",
+   "robotics",
+   "rust",
+   "visualization"
+  ],
+  "fetched": "2026-11-07"
+ },
  "repo:reza-zhu/acmmm23-solution-mbeg": {
   "archived": false,
   "description": "Workshop on UAVs in Multimedia: Capturing the World from a New Perspective. Reza Zhu's Solution: MBEG",
@@ -11510,6 +11554,34 @@
    "uavs"
   ],
   "fetched": "2026-11-06"
+ },
+ "repo:ternaris/rosbags": {
+  "archived": false,
+  "description": "Rosbags - Official Source Code Mirror",
+  "forks_count": 2,
+  "full_name": "ternaris/rosbags",
+  "html_url": "https://github.com/ternaris/rosbags",
+  "language": "Python",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-10-20T08:14:24Z",
+  "stargazers_count": 12,
+  "topics": [
+   "cdr",
+   "conversion",
+   "deserialization",
+   "idl",
+   "mcap",
+   "message",
+   "msg",
+   "reader",
+   "ros",
+   "ros2",
+   "rosbag",
+   "rosbag2",
+   "serialization",
+   "writer"
+  ],
+  "fetched": "2026-11-07"
  },
  "repo:tesorrells/rf-drone-detection": {
   "archived": false,

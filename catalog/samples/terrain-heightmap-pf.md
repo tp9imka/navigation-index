@@ -6,6 +6,14 @@ Re-implementation of the CTU SPRIN-D winner's localization (arXiv 2510.01348): l
 
 **Verification:** ran 2026-11-06 with CPython 3.13.15 + numpy 2.5.4 / scipy 1.18.1 / rasterio 1.5.2 / matplotlib 3.11.2 on an Apple M2 Max: fetch_dem.py downloaded the three GLO-30 windows over public HTTPS, run_eval.py produced every number and plot in README (results deterministic across two full runs, timings vary with machine load), test_core.py 14 passed and fails when the correlation flip or similarity-map origin is mutated. The flights, odometry and heightmap sensor are simulated; no real UAV, LiDAR or SfM data was used. The paper's own numbers are quoted from the paper, not reproduced. v2 (same date and machine): test_v2.py 8 passed (22 total with test_core.py); run_eval_v2.py re-ran v1 pf_grad and matched out/results.json exactly in all four regions, then produced every v2 table and plot in README; fetch_lidar.py downloaded 32 Geobasis NRW 1 m tiles over public HTTPS; run_lidar.py produced the 1 m vs 30 m table and gave identical error numbers on two runs. v2 gate thresholds were tuned on seeds 100-111 of the same regions. The LiDAR test simulates the onboard map from the same NRW DSM plus noise.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 ## Deep dives
 
 - [copernicus-glo30](../../docs/dataset-cards/copernicus-glo30.md) (dataset-cards)

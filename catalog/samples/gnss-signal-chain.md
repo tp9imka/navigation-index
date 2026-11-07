@@ -6,6 +6,14 @@ A Docker (arm64/amd64) testbed that never transmits: gps-sdr-sim synthesizes GPS
 
 **Verification:** Ran end to end twice on 2026-11-06 with Docker arm64 on Apple Silicon (second run: image rebuilt, ./run.sh 319 s): gps-sdr-sim commit 28ca29a, GNSS-SDR 0.0.19 (Ubuntu 24.04 package), RTKLIB demo5 v2.5.1 rnx2rtkp. Real outputs of the second run are in out/ and quoted in the README. Clean: median horizontal error 2.9 m, 0 alarm epochs in both reference modes. Drag-off: PVT captured to 977.8 m off truth; the old scorer alerted at t=138 (run 1: t=67 with a 43 s silent stretch), the new scorer at t=89 (constant-velocity prior) / t=86 (static reference), 9 / 6 s after the drag began, with no silent epoch after the first alert. Unaligned overpower and jam-then-spoof caused a GNSS-SDR PVT outage, not a capture; the old scorer gave 1 and 0 alert epochs, the new one latched a lost-fix alarm at t=81 and t=76 and held it to the end. GNSS-SDR runs are not bit-identical. Not validated against a hardware receiver; the AGC input is a file-power proxy; the static velocity reference is ideal.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 **Concepts:** [Software-defined GNSS receivers](../../catalog/concepts/gnss-sdr.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [GNSS positioning](../../catalog/concepts/gnss.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `gps-sdr-sim`, `gnss-sdr`, `iq-file`, `spoofing`, `drag-off`, `jamming`, `cn0`, `rinex`, `rnx2rtkp`, `docker`, `arm64`, `file-based`, `cusum`, `lost-fix`, `time-to-detect`

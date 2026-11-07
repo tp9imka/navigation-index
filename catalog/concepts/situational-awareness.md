@@ -23,12 +23,13 @@ TAK/CoT, MIL-STD-2525/APP-6 symbology, blue force tracking, common operating pic
 - [Export control and ethics](../../docs/export-control-and-ethics.md) - Not legal advice.
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) - Opinionated picks for a 24-48h build.
 
-## Repositories (54)
+## Repositories (55)
 
 - [Leaflet](../../catalog/repos/leaflet__leaflet.md) - fit: high - Small, simple JavaScript library for interactive raster/vector maps with a huge plugin ecosystem.
 - [CesiumJS](../../catalog/repos/cesiumgs__cesium.md) - fit: high - WebGL 3D globe and map library with terrain, 3D Tiles, time-dynamic data (CZML) and accurate WGS84 rendering.
 - [deck.gl](../../catalog/repos/visgl__deck.gl.md) - fit: high - GPU-powered large-scale data visualization framework with layers for points, paths, trips, hexbins and 3D tiles, usable over MapLibre or standalone.
 - [MapLibre GL JS](../../catalog/repos/maplibre__maplibre-gl-js.md) - fit: high - Open-source WebGL vector tile map renderer (fork of Mapbox GL JS v1) with styles, 3D terrain and globe view.
+- [Rerun](../../catalog/repos/rerun-io__rerun.md) - fit: high - SDKs and viewer for recording and inspecting multimodal robotics data on synchronized timelines, including images, point clouds, transforms, trajectories and scalar signals; supports MCAP ingestion.
 - [QGroundControl](../../catalog/repos/mavlink__qgroundcontrol.md) - fit: high - Qt/QML cross-platform GCS (desktop, Android, iOS) for PX4 and ArduPilot: setup, mission planning, video and telemetry.
 - [Martin](../../catalog/repos/maplibre__martin.md) - fit: high - Fast Rust tile server for PostGIS, MBTiles and PMTiles sources, with tile generation and mbtiles tooling.
 - [OpenCPN](../../catalog/repos/opencpn__opencpn.md) - fit: high - Cross-platform open-source chartplotter and navigation application that displays raster and S-57 vector charts, ingests GPS and AIS feeds, and runs waypoint routes.

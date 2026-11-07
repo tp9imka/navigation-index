@@ -29,6 +29,10 @@ jobs:
         run: python3 tools/decode_eval.py
       - name: Sample test list is complete
         run: python3 tools/check_sample_tests.py
+      - name: Readiness schema and filter contracts
+        run: python3 tools/test_readiness.py
+      - name: Browser readiness filters and share links
+        run: node --test site/test_constraints.js
       - name: Stdlib sample and template tests
         run: |
           python3 tools/test_mcp_server.py
@@ -46,7 +50,7 @@ jobs:
         run: |
           git config user.name "navigation-index-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add catalog INDEX.md graph/graph.json index llms.txt reports site/data samples/README.md templates/offline-kit/manifest.json docs/integration-cards/README.md
+          git add catalog INDEX.md graph/graph.json index llms.txt reports site/data samples/README.md templates/offline-kit/manifest.json docs/integration-cards/README.md docs/practical-readiness.md
           if ! git diff --cached --quiet; then
             git commit -m "chore: regenerate catalog [skip ci]"
             git push

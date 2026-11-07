@@ -32,24 +32,37 @@ Pages yet.
   fit, domain, maturity, has (sample / integration card / any deep dive), GitHub stars range,
   language, license. OR within a facet, AND across facets. Docs inherit the concepts of the nodes
   they are about, so the concept filter finds them too.
+- **Practical constraints**: single-choice compute, hardware, offline use, validation and tested
+  platform filters, plus maximum setup minutes and dataset download MB. Platform labels match
+  exactly (for example `macos-arm64`). A ceiling excludes unknown measurements, including when
+  the ceiling is zero. Dataset download size excludes software and model weights; check the
+  documented limitations before choosing a stack. Invalid ceilings show no results and must be
+  corrected before copying a query.
 - **Concept tree** in the sidebar; picking a concept includes its sub-concepts.
 - **Result cards**: summary, stars / language / license / last push / maturity / fit, concept
   chips, links to the catalog page, source, sample README and deep dives, a **Related** panel from
   the graph edges (outgoing, incoming "(from)", deep dives that describe the node).
+  Readiness shows compute, hardware, offline use, setup and dataset download measurements,
+  validation, tested platforms, limits and source links. Missing evidence remains unknown.
 - **Page view**: catalog pages, deep-dive docs and sample READMEs rendered in-app with marked
   12.0.2 + DOMPurify 3.1.6 (cdnjs, pinned with SRI). Relative `.md` links stay in-app, directory
   links open their `README.md`, other files open raw. If the CDN is unreachable the markdown is
   shown as plain text. The right column shows the node's metadata and related panel.
-- **Starter kits** (`#view=kits`): the samples with a verification badge and the full `verified`
-  text from each `sample.json`. The badge is a keyword heuristic (`ran`, `sketch / not run`,
-  `placeholder`) in `site_verify_status`; the text is the source of truth.
+- **Starter kits** (`#view=kits`): all samples with a reported verification badge, the full
+  `verified` text from each `sample.json`, readiness and limitations. Read the text for what ran,
+  which inputs were used, and whether the entire workflow or individual components were tested.
+  Readiness applies to the documented demo path.
 - **Copy MCP query** copies the current search as a `tools/mcp_server.py` call, e.g.
   `{"tool":"search","arguments":{"query":"visual geolocalization satellite","kind":"repo","fit":"high"}}`.
-  Only single-valued kind / fit / domain and the concept map onto MCP arguments; a toast says
-  which facets were dropped. **Copy CLI** gives the matching `tools/query.py` command. Per card,
+  Single-valued kind / fit / domain, the concept and all practical constraints map onto MCP
+  arguments; a toast says which other facets were dropped. **Copy CLI** gives the matching
+  `tools/query.py` command, with query text quoted for a shell. Constraints can be copied without
+  a text query. Per card,
   "Copy MCP" copies `{"tool":"show","arguments":{"id":...}}`.
 - State lives in the URL hash (`#q=...&kind=repo&fit=high&concept=concept:vio`,
   `#page=<path>`, `#view=kits`), so links are shareable and back / forward work.
+  For example, `#kind=sample&compute=cpu&offline=verified&max_download_mb=0` finds CPU
+  samples with verified offline use and a measured zero dataset download.
 - Dark / light theme (follows the OS until toggled; the choice is kept in localStorage).
 - Phone width: filters move into a drawer, the page view stacks.
 - [Graph viewer](../graph/index.html) is linked from the header.
@@ -76,10 +89,18 @@ cards need: short keys (`i` id, `k` kind, `n` name, `s` summary, `w`/`h`/`kt` te
 tags, `c` concepts, `d` domains, `f` fit, `m` maturity, `l` license, `lg` language, `st` stars,
 `pu` last push, `u` url, `p` page path, `dd` deep dives, `r` outgoing edges as
 `[node index, rel]`, `hs`/`hi` has-sample / has-integration-card, `v`/`vs`/`sd` sample
-verification and dir; docs add `b` body excerpt and `ab` about-node indexes). Generated; do not
+  verification and dir; `rd` readiness uses the shared contract in [SCHEMA](../docs/SCHEMA.md);
+  docs add `b` body excerpt and `ab` about-node indexes). Generated; do not
 edit by hand.
 
 ## Verification
+
+Constraint checks (2026-11-07): `node --test site/test_constraints.js` runs the actual browser
+filtering, hash parsing and copy functions against replay, cached visual-localization and
+unknown-readiness fixtures. It covers exact platform labels, zero and inclusive ceilings,
+unknown/malformed measurements, combined filters, saved-link round trips, matching CLI/MCP
+arguments, shell-sensitive query text and readiness/limits on results and starter kits.
+`python3 tools/search_eval.py --parity` checks that browser and Python search ranking agree.
 
 Done 2026-11-06 on macOS, Chrome headless (`--headless=new`) driven over the DevTools protocol
 from Node 24, page served with `python3 -m http.server` from the repo root:

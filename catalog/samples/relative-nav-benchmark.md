@@ -6,6 +6,14 @@ One command per part. KISS-ICP (pip) on KITTI odometry 04 from the raw drive, sc
 
 **Verification:** Ran on 2026-11-06, Apple M2 Max, python3.12 venv (kiss-icp 1.3.0, evo 1.38.1, opencv 5.0.0.93, rosbags 0.11.9) and OpenVINS v2.7 built from source in a ros:noetic-perception arm64 image under colima (4 vCPU). KITTI 04: KISS-ICP ATE 0.23 m, KITTI t_rel 0.41 %, final drift 0.12 % of 394 m. UZH-FPV indoor_forward_3 (49.5 s GT window, 278 m): OpenVINS ATE 0.36 m, final drift 0.26 %; mono VO with a GT scale oracle ATE 0.80 m. VPAIR (199 frames, 8.98 km): image-only nadir VO 15.5 % final drift, attitude-aided 0.65 %, 3.2 % with a 2 deg yaw bias. altpnt-integrity rerun with each fitted error model. 5 unit tests pass. EuRoC, ORB-SLAM3, cuVSLAM and KITTI 07 were not run (see README).
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 ## Deep dives
 
 - [kitti](../../docs/dataset-cards/kitti.md) (dataset-cards)
@@ -35,6 +43,7 @@ One command per part. KISS-ICP (pip) on KITTI odometry 04 from the raw drive, sc
 - [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Three selective offline starter bundles](../../docs/starter-bundles.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [Integrity monitoring for alt-PNT: solution-separation FDE, protection levels and a Stanford diagram](../../catalog/samples/altpnt-integrity.md) (uses)
 - [End-to-end GNSS-denied visual navigation on one real flight: nadir VO + DINOv2 retrieval + LightGlue fixes + multi-frame voting + altpnt integrity (VPAIR)](../../catalog/samples/e2e-visual-nav-vpair.md) (uses)

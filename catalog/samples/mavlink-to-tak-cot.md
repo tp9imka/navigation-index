@@ -6,6 +6,14 @@ Bridges autopilot GLOBAL_POSITION_INT messages into Cursor-on-Target events so a
 
 **Verification:** cot.py and 4 unit tests ran with python3.14.7 stdlib on 2026-11-06. bridge.py ran end to end on 2026-11-06 with pymavlink 2.4.50 and pytak 7.6.1 (Python 3.12.14): fake_autopilot.py (pymavlink, UDP) => bridge.py => cot_sink.py received well-formed a-f-A-M-F-Q CoT at ~1 Hz over both tcp:// and udp+wo:// (unicast to localhost). Not verified: a real autopilot or SITL, multicast 239.2.3.1, TLS, a real TAK server or ATAK/WinTAK rendering.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 **Concepts:** [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `cot`, `tak`, `atak`, `mavlink`, `pytak`, `uav`, `blue-force-tracking`

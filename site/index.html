@@ -6,7 +6,7 @@
 <title>Navigation Index</title>
 <meta name="description" content="Search and browse the navigation / PNT / GNSS-denied autonomy hub: repos, documents, datasets, samples and deep-dive cards.">
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20261107-readiness">
 <script>
   try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
@@ -14,7 +14,7 @@
   integrity="sha384-/TQbtLCAerC3jgaim+N78RZSDYV7ryeoBCVqTuzRrFec2akfBkHS7ACQ3PQhvMVi" crossorigin="anonymous"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"
   integrity="sha384-+VfUPEb0PdtChMwmBcBmykRMDd+v6D/oFmB3rZM/puCMDYcIvF968OimRh4KQY9a" crossorigin="anonymous"></script>
-<script defer src="app.js"></script>
+<script defer src="app.js?v=2e99da161238"></script>
 </head>
 <body>
 <header class="top">
@@ -36,6 +36,15 @@
       <strong>Filters</strong>
       <button id="clearBtn" class="link-btn">Clear all</button>
     </div>
+    <section class="facet budgets" aria-labelledby="budgetTitle">
+      <h3 id="budgetTitle">Time and download budget</h3>
+      <label for="max_setup_minutes">Maximum setup time <span class="muted">minutes</span></label>
+      <input id="max_setup_minutes" data-budget="max_setup_minutes" type="number" min="0" step="any" inputmode="decimal" placeholder="Any" aria-describedby="budgetNote budgetError">
+      <label for="max_download_mb">Maximum dataset download <span class="muted">MB</span></label>
+      <input id="max_download_mb" data-budget="max_download_mb" type="number" min="0" step="any" inputmode="decimal" placeholder="Any" aria-describedby="budgetNote budgetError">
+      <p id="budgetNote" class="muted">Ceilings exclude unknown measurements. Dataset size excludes model weights and software; check each item's limits.</p>
+      <p id="budgetError" class="budget-error" role="status" aria-live="polite"></p>
+    </section>
     <div id="facets"></div>
     <section class="facet">
       <h3>Concepts</h3>

@@ -1,0 +1,36 @@
+[
+  {
+    "id": "repo:foxglove/mcap", "kind": "repo", "name": "MCAP",
+    "url": "https://github.com/foxglove/mcap",
+    "summary": "Open container format and libraries for timestamped, heterogeneous robotics logs, with embedded schemas and indexed access. Message serialization remains an explicit choice separate from the container.",
+    "why_it_matters": "Give camera, IMU, pose and navigation-health adapters one portable recording to replay and inspect offline.",
+    "concepts": ["concept:datasets-benchmarks", "concept:sensor-fusion"],
+    "tags": ["logging", "recording", "replay", "mcap", "schemas", "ros", "python"],
+    "language": "C++/Python/Rust/Go/TypeScript", "domains": ["multi"],
+    "maturity": "production", "hackathon_fit": "high",
+    "hackathon_notes": "Start with samples/recording-replay: stdlib JSONL main path and a verified mcap 1.3.1 container round trip. The format preserves timestamps but does not fix clock offsets, frames or false ground truth. Code license MIT, read upstream LICENSE. Avoid installing a full robotics framework just to replay this example.",
+    "related": [{"id": "repo:ternaris/rosbags", "rel": "integrates_with"}, {"id": "repo:rerun-io/rerun", "rel": "integrates_with"}]
+  },
+  {
+    "id": "repo:ternaris/rosbags", "kind": "repo", "name": "Rosbags",
+    "url": "https://github.com/ternaris/rosbags",
+    "summary": "Pure Python ROS 1 and ROS 2 bag readers, writers, converters and type system. The official source is on GitLab; this GitHub repository is its official mirror. It can operate without a ROS installation.",
+    "why_it_matters": "Extract organiser-provided IMU and pose recordings into a small evaluation pipeline without first setting up ROS.",
+    "concepts": ["concept:datasets-benchmarks", "concept:sensor-fusion"],
+    "tags": ["rosbag", "rosbags", "ros1", "ros2", "conversion", "recording", "replay"],
+    "language": "Python", "domains": ["multi"], "maturity": "production", "hackathon_fit": "high",
+    "hackathon_notes": "Use AnyReader to deserialize known pose/IMU topics, retaining message time, log time and frame ids. Missing custom message definitions need the right typestore; a bag conversion does not transform coordinate frames. Docs and Apache-2.0 LICENSE.txt checked 2026-11-07; not run in this hub. GitHub's NOASSERTION metadata is not a substitute for reading the license.",
+    "related": [{"id": "repo:foxglove/mcap", "rel": "integrates_with"}, {"id": "repo:michaelgrupp/evo", "rel": "integrates_with"}]
+  },
+  {
+    "id": "repo:rerun-io/rerun", "kind": "repo", "name": "Rerun",
+    "url": "https://github.com/rerun-io/rerun",
+    "summary": "SDKs and viewer for recording and inspecting multimodal robotics data on synchronized timelines, including images, point clouds, transforms, trajectories and scalar signals; supports MCAP ingestion.",
+    "why_it_matters": "Inspect the estimator trajectory beside sensor frames and navigation-health signals when a map alone cannot explain a failure.",
+    "concepts": ["concept:datasets-benchmarks", "concept:geodesy", "concept:situational-awareness"],
+    "tags": ["visualization", "debugging", "timeline", "recording", "mcap", "python", "3d"],
+    "language": "Rust/Python/C++", "domains": ["multi"], "maturity": "production", "hackathon_fit": "high",
+    "hackathon_notes": "Prototype with the Python SDK and local viewer. Define coordinate frames and clock domains before comparing tracks. Cache the viewer/package and test the actual target laptop offline. README and MIT/Apache license files checked 2026-11-07; viewer not run in this hub. Keep hosted-service terms separate from the open-source SDK licenses.",
+    "related": [{"id": "repo:foxglove/mcap", "rel": "integrates_with"}, {"id": "repo:michaelgrupp/evo", "rel": "integrates_with"}]
+  }
+]

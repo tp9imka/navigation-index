@@ -1,0 +1,100 @@
+[
+  {
+    "id": "res:mcap-guides",
+    "kind": "doc",
+    "title": "MCAP guides and format introduction",
+    "url": "https://mcap.dev/guides",
+    "authors": [
+      "Foxglove"
+    ],
+    "summary": "Primary guide to the MCAP container, including timestamped heterogeneous messages, embedded schemas, efficient seeking and language SDKs. Use it to separate the storage container from the payload encoding.",
+    "key_takeaways": [
+      "Record explicit message schemas and timestamps",
+      "A container does not establish sensor clock synchronization or coordinate transforms"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "recording",
+      "replay",
+      "mcap",
+      "schemas"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:foxglove/mcap",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:rosbags-documentation",
+    "kind": "doc",
+    "title": "Rosbags documentation: read and convert ROS bags without ROS",
+    "url": "https://ternaris.gitlab.io/rosbags/index.html",
+    "authors": [
+      "Ternaris"
+    ],
+    "summary": "Official Python documentation with AnyReader examples for ROS 1 and ROS 2 recordings, conversion commands and message-type registration. The library has no dependency on a ROS installation.",
+    "key_takeaways": [
+      "Filter connections before deserializing the needed topics",
+      "Use the matching type store when message definitions are not embedded"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "rosbags",
+      "rosbag",
+      "recording",
+      "replay",
+      "python"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ternaris/rosbags",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:rerun-overview",
+    "kind": "doc",
+    "title": "Rerun overview and multimodal robotics data guide",
+    "url": "https://rerun.io/docs/overview/what-is-rerun",
+    "authors": [
+      "Rerun"
+    ],
+    "summary": "Official introduction to SDK logging, synchronized spatial and time-series views, coordinate transforms, timelines and MCAP ingestion for robotics recordings.",
+    "key_takeaways": [
+      "Inspect estimated trajectories alongside sensor streams and scalar health signals",
+      "Declare coordinate frames and timeline origins explicitly"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:geodesy"
+    ],
+    "tags": [
+      "rerun",
+      "visualization",
+      "debugging",
+      "timeline",
+      "recording"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:rerun-io/rerun",
+        "rel": "explains"
+      }
+    ]
+  }
+]

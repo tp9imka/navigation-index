@@ -6,6 +6,16 @@ A stdlib-only error-state EKF (position, velocity, attitude, accel and gyro bias
 
 **Verification:** Ran 2026-11-06 with python3.14.7 stdlib on all 36 real pyshoe hallway trials (downloaded from the UTIAS FTP): default 15-state filter 2.35 m mean ARMSE / 1.30 % final error of the 214.6 m route / 3.63 m mean max error vs pyshoe's own INS 2.51 m / 1.49 % / 3.92 m on the same trials (pyshoe 6bbc4df run in a Python 3.11 venv with numpy 1.23.5, scipy 1.10.1; LSTM/SVM detectors stubbed). Stdlib SHOE labels match pyshoe on 100 % of samples and the 9-state mode reproduces pyshoe to 2.7 mm at every marker. Corridor heading + floor + simulated UWB (inflated covariance + NIS gate) gives 1.07 m / 0.83 % / 2.80 m on held-out markers; magnetometer heading from the real raw logs is off by a median 14-40 deg and makes all 6 tested trials 2-9x worse. UWB ranges, anchors and NLOS are simulated, only at marker epochs; CoT/navdash export generated and parsed but not rendered in a browser or sent to a live TAK server. 18 unit tests pass; 4 planted mutations each fail at least one.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| cpu | none | cache-required | unknown | unknown | unknown | integrated |
+
+**Main limitation:** Nominal 95 percent radius covered truth at only 31 percent of markers; UWB aiding is simulated.
+
+**Readiness evidence:** [samples/dismounted-foot-ins/README.md](../../samples/dismounted-foot-ins/README.md), [samples/dismounted-foot-ins/sample.json](../../samples/dismounted-foot-ins/sample.json)
+
 ## Deep dives
 
 - [pyshoe](../../docs/dataset-cards/pyshoe.md) (dataset-cards)
@@ -27,6 +37,7 @@ A stdlib-only error-state EKF (position, velocity, attitude, accel and gyro bias
 
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)

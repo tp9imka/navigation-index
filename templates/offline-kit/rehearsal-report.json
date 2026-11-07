@@ -1,0 +1,209 @@
+{
+  "at_utc": "2026-11-06T23:30:18.707895+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "python": "3.14.7",
+  "network_disabled": false,
+  "offline_ready": false,
+  "all_passed": true,
+  "cache_reused": true,
+  "note": "Initial online download plus replay passed; this final run reused those cached bytes. External networking was available. Vehicle SITL, vision, network-disconnected run, and second laptop not rehearsed. No raw receiver recordings redistributed.",
+  "commands": [
+    {
+      "argv": [
+        "{python}",
+        "{repo}/templates/offline-kit/bundle.py",
+        "prepare",
+        "receiver-log",
+        "--cache",
+        "{cache}",
+        "--fixture"
+      ],
+      "returncode": 0,
+      "wall_s": 0.366,
+      "result": {
+        "success": true,
+        "offline_ready": false,
+        "receipt": "/private{cache}/bundles/receiver-log-fixture/prepare.json",
+        "errors": []
+      },
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "{python}",
+        "{repo}/templates/offline-kit/bundle.py",
+        "verify",
+        "receiver-log",
+        "--cache",
+        "{cache}",
+        "--fixture"
+      ],
+      "returncode": 0,
+      "wall_s": 0.14,
+      "result": {
+        "success": true,
+        "offline_ready": false,
+        "receipt": "/private{cache}/bundles/receiver-log-fixture/verify.json",
+        "errors": []
+      },
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "{python}",
+        "{repo}/templates/offline-kit/bundle.py",
+        "rehearse",
+        "receiver-log",
+        "--cache",
+        "{cache}",
+        "--fixture"
+      ],
+      "returncode": 0,
+      "wall_s": 0.258,
+      "result": {
+        "success": true,
+        "offline_ready": false,
+        "receipt": "/private{cache}/bundles/receiver-log-fixture/rehearse.json",
+        "errors": []
+      },
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "{python}",
+        "{repo}/templates/offline-kit/bundle.py",
+        "prepare",
+        "receiver-log",
+        "--cache",
+        "{cache}"
+      ],
+      "returncode": 0,
+      "wall_s": 3.763,
+      "result": {
+        "success": true,
+        "offline_ready": false,
+        "receipt": "/private{cache}/bundles/receiver-log/prepare.json",
+        "errors": []
+      },
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "{python}",
+        "{repo}/templates/offline-kit/bundle.py",
+        "verify",
+        "receiver-log",
+        "--cache",
+        "{cache}"
+      ],
+      "returncode": 0,
+      "wall_s": 0.331,
+      "result": {
+        "success": true,
+        "offline_ready": false,
+        "receipt": "/private{cache}/bundles/receiver-log/verify.json",
+        "errors": []
+      },
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "{python}",
+        "{repo}/templates/offline-kit/bundle.py",
+        "rehearse",
+        "receiver-log",
+        "--cache",
+        "{cache}"
+      ],
+      "returncode": 0,
+      "wall_s": 14.456,
+      "result": {
+        "success": true,
+        "offline_ready": false,
+        "receipt": "/private{cache}/bundles/receiver-log/rehearse.json",
+        "errors": []
+      },
+      "stderr": ""
+    }
+  ],
+  "prep_verify": {
+    "returncode": 0,
+    "stdout": "verify: 0 problem(s)\n"
+  },
+  "replay_outputs": {
+    "receiver-log-fixture": {
+      "files": 1,
+      "epochs": 750,
+      "elapsed_s": 0.1258,
+      "output_sha256": "404ee41ab559531ac2c67406620a3dd4f026662eae8969964a6f56fba3c4a1d4",
+      "input_sha256": {
+        "repo/samples/real-attack-replay/make_fixture.py": "bf8e4825ece802d0a68568382c80cffc656343b8a47400e0a929d3ea27260a4f",
+        "repo/samples/real-attack-replay/replay.py": "600623ab2409a43dd2c2c79ab9b8b5a798eb5803bb18112b2023cf08dc139363",
+        "repo/samples/real-attack-replay/spp_eval.py": "308f92ca7a992960c6b72140ef594b5c1c4ef0829aac7806881bf9667889ec5c",
+        "repo/samples/real-attack-replay/summary_table.py": "d2cb15a78dd97940d7fc7fb3416d3e98ede17792830c33765fdd96d53abaae43",
+        "repo/samples/real-attack-replay/test_real_attack_replay.py": "5812258d76ef0353a61f9fe248ee40a316a6b609872e8134f960e631c60b4570",
+        "repo/samples/real-attack-replay/ubx_nmea_epochs.py": "69116ffc8021436571742561da5ed0ee324b2f99bf864c5fc6fa86ee430fa935",
+        "repo/samples/real-attack-replay/labels.json": "eb6220af1f6b89907a8d1c5e5a9518f0bef6923310660327b4aff419887bbfc2",
+        "repo/samples/gnss-interference-monitor/adsb_area_map.py": "539c9809187218a2e51e83701f5ae1ea1fb029222dff650b1143526cf434d154",
+        "repo/samples/gnss-interference-monitor/ephemeris_check.py": "b8e72743981f5829d106aa9fbdb80c17a5a4e47b791dbc6510b2984f2e2a57cf",
+        "repo/samples/gnss-interference-monitor/eval_real.py": "1b4cc3d80d8223eb8435ad5ea402fdaf9f5810b8c9829bd93f9f44dc60243515",
+        "repo/samples/gnss-interference-monitor/gen_synthetic_ubx.py": "a277b3959e310ecbe388f133dc8fb1aab3d26c31cdc0446091ff6a28edc6a7e5",
+        "repo/samples/gnss-interference-monitor/scorer.py": "0c46399d9a91b0a9389409066ac3302eb0994caaad022b872ecacdd267686707",
+        "repo/samples/gnss-interference-monitor/test_adsb_area_map.py": "d988a72894eb4cda8135caf34d7d3584408847dcec8eb4d7744b7c063d3fd7f4",
+        "repo/samples/gnss-interference-monitor/test_ephemeris_check.py": "03f5f29de5788fafff6d77baa9d4a4298dc8a612e6fce3800a8d451efea0f8a6",
+        "repo/samples/gnss-interference-monitor/test_real_data_defects.py": "a5de9a371dfb4bea1bf01deaf626b9bf1459ef5d0f23a6efc9a55ef98ae0d905",
+        "repo/samples/gnss-interference-monitor/test_scorer.py": "332b045262b7b8d05b82ac7fd2722cb81ab217bc7a9dea48aeeff5b371d973f6",
+        "repo/samples/gnss-interference-monitor/test_ubx_replay.py": "06f52108725f313f35f8952c9be6339eb94f9f6bef5ff5a87dab6948d293ce4a",
+        "repo/samples/gnss-interference-monitor/ubx_monitor.py": "cf636bd5590d2ea8c144fa8c34d07f89849bd9cc5c79f2e31c45f79e2867a903",
+        "repo/samples/real-attack-replay/fixtures/labels_fixture.json": "616116b3ab4ada31e5ee727e660e7d86b9e6fa88a7b1cb9579811f3131294bf0",
+        "cache/fixtures/vaara_shaped.ubx": "7c40fdbf90c0c9dc61be572845b00fafdc08e8a789fa0a3f1238730fad8f01b9"
+      },
+      "fingerprint": "fd8185dcc74d4791eeee176c935fa292b1277537c75d689bb050b9ec2f823173",
+      "offline_ready": false
+    },
+    "receiver-log": {
+      "files": 7,
+      "epochs": 47450,
+      "elapsed_s": 14.1393,
+      "output_sha256": "140ecdee543fcb05f58258340f8b54f1444a2f93c334fe096df553b38c5f75bc",
+      "input_sha256": {
+        "repo/samples/real-attack-replay/make_fixture.py": "bf8e4825ece802d0a68568382c80cffc656343b8a47400e0a929d3ea27260a4f",
+        "repo/samples/real-attack-replay/replay.py": "600623ab2409a43dd2c2c79ab9b8b5a798eb5803bb18112b2023cf08dc139363",
+        "repo/samples/real-attack-replay/spp_eval.py": "308f92ca7a992960c6b72140ef594b5c1c4ef0829aac7806881bf9667889ec5c",
+        "repo/samples/real-attack-replay/summary_table.py": "d2cb15a78dd97940d7fc7fb3416d3e98ede17792830c33765fdd96d53abaae43",
+        "repo/samples/real-attack-replay/test_real_attack_replay.py": "5812258d76ef0353a61f9fe248ee40a316a6b609872e8134f960e631c60b4570",
+        "repo/samples/real-attack-replay/ubx_nmea_epochs.py": "69116ffc8021436571742561da5ed0ee324b2f99bf864c5fc6fa86ee430fa935",
+        "repo/samples/real-attack-replay/labels.json": "eb6220af1f6b89907a8d1c5e5a9518f0bef6923310660327b4aff419887bbfc2",
+        "repo/samples/gnss-interference-monitor/adsb_area_map.py": "539c9809187218a2e51e83701f5ae1ea1fb029222dff650b1143526cf434d154",
+        "repo/samples/gnss-interference-monitor/ephemeris_check.py": "b8e72743981f5829d106aa9fbdb80c17a5a4e47b791dbc6510b2984f2e2a57cf",
+        "repo/samples/gnss-interference-monitor/eval_real.py": "1b4cc3d80d8223eb8435ad5ea402fdaf9f5810b8c9829bd93f9f44dc60243515",
+        "repo/samples/gnss-interference-monitor/gen_synthetic_ubx.py": "a277b3959e310ecbe388f133dc8fb1aab3d26c31cdc0446091ff6a28edc6a7e5",
+        "repo/samples/gnss-interference-monitor/scorer.py": "0c46399d9a91b0a9389409066ac3302eb0994caaad022b872ecacdd267686707",
+        "repo/samples/gnss-interference-monitor/test_adsb_area_map.py": "d988a72894eb4cda8135caf34d7d3584408847dcec8eb4d7744b7c063d3fd7f4",
+        "repo/samples/gnss-interference-monitor/test_ephemeris_check.py": "03f5f29de5788fafff6d77baa9d4a4298dc8a612e6fce3800a8d451efea0f8a6",
+        "repo/samples/gnss-interference-monitor/test_real_data_defects.py": "a5de9a371dfb4bea1bf01deaf626b9bf1459ef5d0f23a6efc9a55ef98ae0d905",
+        "repo/samples/gnss-interference-monitor/test_scorer.py": "332b045262b7b8d05b82ac7fd2722cb81ab217bc7a9dea48aeeff5b371d973f6",
+        "repo/samples/gnss-interference-monitor/test_ubx_replay.py": "06f52108725f313f35f8952c9be6339eb94f9f6bef5ff5a87dab6948d293ce4a",
+        "repo/samples/gnss-interference-monitor/ubx_monitor.py": "cf636bd5590d2ea8c144fa8c34d07f89849bd9cc5c79f2e31c45f79e2867a903",
+        "cache/datasets/vaara-replay/2024-09-10/Test_1/ublox_2024-09-10T073207Z0000.ubx": "c90c98699182ea4e9423db32ae1e2a7874f4e827da10d670e4f0a379a8d0ee8c",
+        "cache/datasets/vaara-replay/2024-09-10/Test_2/ublox_2024-09-10T115512Z0000.ubx": "91ac0dca2fde0d874a608cedd915bc60784fdba4301be11d32c65b0d7510715e",
+        "cache/datasets/vaara-replay/2024-09-11/Morning_Motorcade/Test_1/ublox_2024-09-11T075704.ubx": "b7ef7deb6e5cd60a318c5ef4adb95c7ad2f8898f6c1976c8026fbe4e506cc059",
+        "cache/datasets/vaara-replay/2024-09-11/Afternoon/Test_1/ublox_2024-09-11T122113.ubx": "dbb7fc05ca37edd55105a6bd9379340ce4d3c6146d323a3f2831c74edb24f5ca",
+        "cache/datasets/vaara-replay/2024-09-11/Afternoon/Test_2/ublox_2024-09-11T143312.ubx": "436315a7a3bbba9c417b67f1a6a2e711d11029cbdd2cfd37a2f5c603bfc45bf4",
+        "cache/datasets/vaara-replay/2024-09-12/Test_1/ublox_2024-09-12T071744.ubx": "97723c1466dfd446d72cca97ace2aec8d869a65bc3adf4923621723136040749",
+        "cache/datasets/vaara-replay/2024-09-12/Test_2/ublox_2024-09-12T085023.ubx": "72a2a6c482e332a8244124584d95f07e0fca923fdb6e6793606d54c464d1847d",
+        "cache/datasets/vaara-replay/2024-09-10/Test_1/ublox_2024-09-10T073207Z0000.ubx.xz": "f7ab840e405d8014e7ebd40851f64fdcb466d89db11d7757c160c599b8ea8cc0",
+        "cache/datasets/vaara-replay/2024-09-10/Test_2/ublox_2024-09-10T115512Z0000.ubx.xz": "4cc1f69b9bfe0558b6b57322bc17f1ad0847607fca8e9fe248041ac9eed9552d",
+        "cache/datasets/vaara-replay/2024-09-11/Morning_Motorcade/Test_1/ublox_2024-09-11T075704.ubx.xz": "fd411641dc8465e79230f01557dbf5e8d45f42e74cfa7f2a95e21077270113cd",
+        "cache/datasets/vaara-replay/2024-09-11/Afternoon/Test_1/ublox_2024-09-11T122113.ubx.xz": "5087366868c009fccc66ef72156b554207cb13bb040fa868348330babd44ad6c",
+        "cache/datasets/vaara-replay/2024-09-11/Afternoon/Test_2/ublox_2024-09-11T143312.ubx.xz": "352722cb87e66b12be0bbafee7e12d0091f074c66404e5e85787cafafdbce623",
+        "cache/datasets/vaara-replay/2024-09-12/Test_1/ublox_2024-09-12T071744.ubx.xz": "f998647063c04e1f02a3bb7f67802e1e5b91e7c7450d2dfb97a745c1072416a5",
+        "cache/datasets/vaara-replay/2024-09-12/Test_2/ublox_2024-09-12T085023.ubx.xz": "e2d77bd62e1b60623268308aaf4dce080225775019ed44ee190b6095cce882fc"
+      },
+      "fingerprint": "a4a5e46fc25900949ba012d44ab0c9e47a1e285b37867c732fffef85267ea12c",
+      "offline_ready": false
+    }
+  },
+  "compressed_bytes": 63992012,
+  "unpacked_bytes": 272332251
+}

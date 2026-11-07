@@ -6,6 +6,16 @@ Drone frame => NAIP orthophoto => lat/lon using only permissively licensed parts
 
 **Verification:** Ran 2026-11-06 on Apple M2 Max CPU (torch 2.15.0, Python 3.12.14): download_data.py fetched NAIP 2023/2019 windows from Planetary Computer and 5 CC0 eBee frames; run_eval.py on 20 synthetic frames per case: same-map median error 0.10-0.11 m for ALIKED/DISK/SIFT+LightGlue (0.28-2.8 s/frame), cross-season 1.9-4.8 m with 13-20/20 fixes; real eBee frames vs NAIP: 1 fix out of 5 (ALIKED, 2019 map, tight prior, 11.0 m error), 0/5 in all other configs. Numbers and logs in README.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| cpu | none | cache-required | unknown | unknown | macos-arm64 | integrated |
+
+**Main limitation:** Only 1 of 5 real eBee frames fixed; synthetic same-map precision does not describe flight performance.
+
+**Readiness evidence:** [samples/geoloc-license-clean/README.md](../../samples/geoloc-license-clean/README.md), [samples/geoloc-license-clean/sample.json](../../samples/geoloc-license-clean/sample.json)
+
 ## Deep dives
 
 - [naip-planetary-computer](../../docs/dataset-cards/naip-planetary-computer.md) (dataset-cards)
@@ -30,6 +40,7 @@ Drone frame => NAIP orthophoto => lat/lon using only permissively licensed parts
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
+- [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [NAIP aerial imagery on Microsoft Planetary Computer](../../catalog/resources/naip-planetary-computer.md) (dataset_for)

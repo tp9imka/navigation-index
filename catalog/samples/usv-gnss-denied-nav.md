@@ -6,6 +6,14 @@ A simulated USV runs a 19.6 km transit over real geography (Lillgrund => Drogden
 
 **Verification:** Ran 2026-11-06 on macOS with python 3.14.7 stdlib: 15 unit tests pass and three negative controls (detection off, degeneracy check off, isolation rule off) each make the targeted test fail; run.py for 5 scenarios x 4 configurations x 5 seeds, numbers in the README come from example_output/summary_5seeds.*; plot.py with matplotlib 3.11.2 (python 3.13.15); example_output/spoof-coastal loaded in templates/demo-dashboard in headless Chrome (metrics panel read). Fixtures built from Overpass (OSM) and a locally downloaded DMA AIS file for 2026-10-20. Not done: real radar data, S-57 ENC input, CoT in a TAK client, running any of the linked maritime stacks. Sensors, radar and attacks are simulated; the simulated world equals the OSM chart apart from buoy offsets, so radar fix errors are optimistic.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 ## Deep dives
 
 - [dma-ais](../../docs/dataset-cards/dma-ais.md) (dataset-cards)

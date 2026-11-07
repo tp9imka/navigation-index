@@ -6,6 +6,14 @@ A stdlib heuristic scorer turns per-epoch receiver telemetry (C/N0 across SVs, A
 
 **Verification:** Ran 2026-11-06. Tests: 53 (30 scorer, 12 real-data defect regressions, 6 ephemeris, 6 area map, 1 UBX replay) OK on /opt/homebrew/bin/python3 3.14.7 without packages (1 skipped: pyubx2) and OK with pyubx2 1.4.1 on Python 3.13.15. The defect regressions fail on the previous scorer (git dae8229) for driving, position pull, velocity jump, step drop after recovery, C/N0 and AGC staircase and spoofed ephemeris. Mutation check: 10 of 12 single mutations of the new logic fail 1-3 tests; references frozen by any alarm and the power term of the clear rule are not covered. Real data: eval_real.py on the 7 VAARA u-blox logs (13 h, 20 attack slots + 1 quiet), 4 parameters chosen on 3 tuning logs, reported on all 7 with a 4-log holdout: the quiet slot went from 98 % alerting (constant-velocity pos_drift) to 0 %, pos_drift false-alert epochs 10220 => 275, driving alarm time 86 % => 28 %, and every attack slot is detected by a C/N0 detector (before, without the latched pos_drift, 4 slots incl. the 2.4.3 staircase were missed). The ephemeris check, against IGS BRDC from the BKG mirror, decoded 267 GPS sets with 0 parity failures and flagged spoofer ephemerides (276 km to 53 000 km off) in 7 of the 8 spoofing slots, never on the jamming-only days. Synthetic: 20 h soak per reference mode 0 / 0 / 17 alert epochs (cv-prior / doppler / external static); a drag that moves position and Doppler together is not detected without an external reference (by design, drag table in README). gnss-signal-chain GNSS-SDR epochs rescored: clean 0 alerts, overpower/jam-then-spoof alert at attack onset (power CUSUM), drag-off alerts at +6 s on its power step but pos_drift only with --ref-vel 0,0. Not verified: live u-blox receiver, AGC/MON-RF on real data (VAARA has none), Galileo/GLONASS/BeiDou ephemeris checking, real readsb feed, any OSNMA processing.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 **Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [GNSS positioning](../../catalog/concepts/gnss.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `jamming`, `spoofing`, `u-blox`, `ubx`, `mon-rf`, `agc`, `cn0`, `spoofdetstate`, `sec-sig`, `ads-b`, `nacp`, `gpsjam`, `readsb`, `stdlib`, `cusum`, `drag-off`, `lost-fix`, `clock-drift`, `latched-alarm`, `osnma`, `ephemeris`, `sfrbx`, `lnav`, `brdc`, `jammertest`, `real-data`, `holdout`, `staircase`, `doppler-consistency`

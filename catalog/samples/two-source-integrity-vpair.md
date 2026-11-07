@@ -6,6 +6,14 @@ Adds terrain-relative navigation as a second absolute source to the real VPAIR f
 
 **Verification:** Ran 2026-11-06 on Apple M2 Max, CPython 3.12.14, numpy 2.5.4, scipy 1.18.1, rasterio 1.5.2: fetch_terrain.py (46 NRW DOM1 tiles, GLO-30 window, 125 s), run_two_source.py with 10 TRN seeds (107 s), screenshot.sh at frames 130 and 198. Map stride 8 (360 m tiles), heading +2 deg, 188 frames after GNSS loss: VO + visual fixes alone 9.7 m RMS but solution-separation PL median 1.2 km (1.6 % available at AL 50); + LiDAR-heightmap TRN 2.6 m RMS, PL median 30.5 m, available 14.4 / 84.4 / 100 % at AL 25 / 50 / 100 m; GLO-30-map TRN 55.6 % at AL 100 only; radar-altimeter TERCOM 10.9 % at AL 100 with 6 false detections. 0 HMI in every fault-free run. Faults: misregistration and TRN ambiguity detected 10/10 with the LiDAR TRN, no HMI, but two-source attribution of the misregistration follows the monitor's source order (control: swapped order flips it), and the three-source variant mis-excludes and gives 19 HMI epochs at AL 50 under TRN ambiguity. Tests: venv 14 pass; plain python3 7 pass, 7 skip. Altimeter and heightmap are simulated from real terrain at real poses, not recorded; LiDAR map and sensor share one DSM.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 **Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md)
 
 **Tags:** `vpair`, `integrity`, `protection-level`, `solution-separation`, `fde`, `chi-square-gate`, `trn`, `tercom`, `radar-altimeter`, `lidar`, `heightmap`, `particle-filter`, `geobasis-nrw`, `glo-30`, `fault-injection`, `map-misregistration`, `navdash`

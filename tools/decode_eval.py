@@ -18,9 +18,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import query  # noqa: E402
 
 EVAL = Path(__file__).resolve().parent / "decode_eval.json"
-# Set slightly under the numbers achieved when the set was written (2026-11-06); raise them when decode improves.
-MIN_HIT1 = 0.90
-MIN_HIT3 = 0.90
+# Preserve the original 29/29 baseline and require the new independently written breadth cases too.
+MIN_HIT1 = 1.0
+MIN_HIT3 = 1.0
 MIN_NONSENSE = 1.0
 SWEEP_FLOORS = (2.0, 3.0, 4.0, 4.5, 5.0, 5.5, 6.0, 7.0, 8.0, 9.0)
 
@@ -40,7 +40,13 @@ def run(spec, text):
     for s in spec["statements"]:
         got = query.decode(s["text"], query.DECODE_MAX_ROWS, text)
         out.append({**s, "got": [r["row"] for r in got], "low": bool(got and got[0].get("low_confidence")),
-                    "scores": [r["score"] for r in got]})
+                    "scores": [r["score"] for r in got],
+                    "contract_failures": (
+                        ["returned a row with incompatible platform or sensor placement"]
+                        if set(s.get("excluded_rows", [])) & {r["row"] for r in got} else []) + (
+                        ["missing honest disclosure of no runnable starter"]
+                        if s.get("no_runnable_starter") and (not got or got[0]["start_from"] or
+                            "no runnable" not in got[0]["start_from_text"].lower()) else [])})
     return out
 
 
@@ -89,12 +95,13 @@ def main():
             ok = (not r["got"]) if not r["rows"] else bool(r["got"][:1] and r["got"][0] in r["rows"])
             print(f"{'ok ' if ok else 'MISS'} {r['split'][:5]:5s} want {r['rows']!s:9s} got {r['got']!s:13s} "
                   f"{'low ' if r['low'] else '    '}{r['scores']!s:24s} {r['text'][:70]}")
-    for split in ("train", "holdout"):
+    for split in dict.fromkeys(r["split"] for r in res):
         print(fmt(split, metrics([r for r in res if r["split"] == split])))
     m = metrics(res)
     print(fmt("all", m))
     fails = [f"{k} {m[k]:.2f} < {lim}" for k, lim in (("hit1", MIN_HIT1), ("hit3", MIN_HIT3),
                                                        ("nonsense", MIN_NONSENSE)) if m[k] < lim]
+    fails += [f"{r['text'][:65]}: {problem}" for r in res for problem in r["contract_failures"]]
     if fails:
         print("FAIL: " + "; ".join(fails))
         return 1

@@ -6,6 +6,14 @@ Two defensive drone-detection baselines on openly licensed recordings. Per-track
 
 **Verification:** Ran on 2026-11-06 with Python 3.12.14, scikit-learn 1.9.1 on an Apple M2 Max. Radar: 510 labelled tracks (379 BIRD, 131 UAV, 42 sessions); 5-fold GroupKFold by session HistGB balanced accuracy 0.928, AUC 0.964, UAV P/R 0.913/0.885; train Alma 2019 => test Laval 2020-21 balanced accuracy 0.90-0.92 on 89 tracks. DroneRF low-band subset (73 segments, 4 classes): detection balanced accuracy 0.977-0.994 on a temporal holdout, 4-class identification 0.94 GroupKFold / 0.85 temporal holdout. cuas_cot.py produced a-u-A-M-H-Q / how m-a CoT for one Laval session (31 of 110 tracks reported: 9 labelled UAV, 1 HUMAN, 21 unlabelled). 11 unit tests on synthetic fixtures pass; mutations of the vertical axis and the R1/R2 session merge fail 4. Not verified: DroneRF sample rate, radar site geometry (CoT positions are placeholders), the H band and other flight modes, ATAK rendering. Each DroneRF class in the subset is one recording session, so identification numbers include session effects.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 ## Deep dives
 
 - [drone-rf-datasets](../../docs/dataset-cards/drone-rf-datasets.md) (dataset-cards)

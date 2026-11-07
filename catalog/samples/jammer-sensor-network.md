@@ -6,6 +6,14 @@ End-to-end stdlib pipeline for the 'cheap receivers detect and localize a GNSS j
 
 **Verification:** Ran 2026-11-06 on Python 3.14.7, stdlib only: 16 unittest cases OK (physics inversions and SV-independence, shadow field statistics, building clip, protocol validation incl. 8 malformed cases and topic mismatch, censored measurement kinds, noiseless LS / grid / centroid, k=2 selected only when two sources exist, no estimate without a jammer, motion diffusion, HTTP round trip with a bad line returning 207, CoT and zones from the server, ellipse ring geometry); 6 hand mutations (censor sign, Q in the inversion, BIC always/never k=2, lower censor off, LS ignoring censoring) each fail 1-5 tests. demo.py ran all three scenarios plus a buildings variant; HTTP path gives identical results to in-process; stdin path ran on 2548 dumped messages. evaluate.py ran 40 trials per configuration (~2 min). All data synthetic: no real receiver, no real jammer, no MQTT broker, no TAK client rendering of the ellipse. Model constants (noise figure, tracking threshold, AGC counts per dB, path-loss exponent) are assumptions stated in jsn_model.py.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 ## Deep dives
 
 - [jammertest-data](../../docs/dataset-cards/jammertest-data.md) (dataset-cards)

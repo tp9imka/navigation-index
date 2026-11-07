@@ -1,5 +1,11 @@
 # Evidence matrix
 
+Recording/replay plumbing: [recording-replay](../samples/recording-replay/README.md) ran on
+2026-11-07 with 101 synthetic poses over 10 s. JSONL and MCAP preserved values; RMSE was the
+deliberately planted 0.5 m offset, with no alignment. Three tests passed with mcap 1.3.1.
+The replay passed under macOS network denial on one host. This is a format/evaluation check,
+not a navigation accuracy or second-laptop result.
+
 Every measured number in the hub's samples, by capability, with the kind of input it was
 measured on. This is the page to cite from in a pitch. Numbers are copied from each sample's
 README (snapshot 2026-11-06, refreshed after review round 2); the link in the first column

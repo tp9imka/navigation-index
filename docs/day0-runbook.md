@@ -69,6 +69,11 @@ ground vehicles on recorded data, underwater and LEO have no runnable sample.
 
 ## 2. Pick the idea: scoring rubric
 
+Use [practical readiness](practical-readiness.md) to filter candidates by the laptop,
+hardware and download budget available. Unknown setup/download values do not satisfy a
+budget. Prefer a [starter bundle](starter-bundles.md) your teammate already rehearsed offline;
+a `ran` sample by itself does not prove this machine has its data, weights and dependencies.
+
 Hard gates first. Drop a candidate if any is true:
 
 - It needs RF transmission, a GNSS signal over the air, or flying a real drone the rules do not allow.

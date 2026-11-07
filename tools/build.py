@@ -18,6 +18,7 @@ import subprocess
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
+import readiness
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -222,6 +223,17 @@ def render_sample(n, nodes, back, meta):
         f"**Verification:** {n.get('verified', 'unverified sketch')}",
         "",
     ]
+    rd = n.get('readiness')
+    if rd:
+        budget = lambda key, unit: f"{rd[key]:g} {unit}" if rd.get(key) is not None else 'unknown'
+        lines += ['## Practical readiness', '',
+                  '| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |',
+                  '|---|---|---|---|---|---|---|',
+                  f"| {rd['compute']} | {rd['hardware']} | {rd['offline']} | {budget('setup_minutes', 'min')} | "
+                  f"{budget('download_mb', 'MB')} | {', '.join(rd['platforms']) or 'unknown'} | {rd['validation']} |", '',
+                  '**Main limitation:** ' + (rd['limitation'] or 'Read the sample verification; readiness has not been curated.'), '']
+        if rd['evidence']:
+            lines += ['**Readiness evidence:** ' + ', '.join(f'[{p}](../../{p})' for p in rd['evidence']), '']
     lines += common_tail(n, nodes, back)
     return "\n".join(lines) + "\n"
 
@@ -409,6 +421,9 @@ def main():
     nodes.update(samples)
     guides = load_guides(nodes)
     nodes.update(guides)
+    readiness_path = DATA / 'readiness.json'
+    readiness.apply(nodes, json.loads(readiness_path.read_text()) if readiness_path.exists() else {}, ROOT)
+    write_readiness_guide(nodes)
 
     edges, back, members = [], defaultdict(list), defaultdict(list)
     dangling, bad_concepts = defaultdict(list), defaultdict(list)
@@ -570,6 +585,26 @@ def write_samples_readme(nodes):
     head, rest = text.split(SAMPLES_BEGIN, 1)
     tail = rest.split(SAMPLES_END, 1)[1]
     path.write_text(head + "\n".join(out) + tail)
+
+
+def write_readiness_guide(nodes):
+    path = ROOT / 'docs/practical-readiness.md'
+    begin, end = '<!-- BEGIN GENERATED readiness -->', '<!-- END GENERATED readiness -->'
+    if not path.exists() or begin not in path.read_text():
+        return
+    text = path.read_text()
+    lines = [begin, '', '| Sample | Compute | Offline | Dataset MB | Integration | Main limitation |',
+             '|---|---|---|---|---|---|']
+    for n in sorted(nodes.values(), key=lambda x: x['id']):
+        rd = n.get('readiness')
+        if not rd or not rd['evidence']:
+            continue
+        download = f"{rd['download_mb']:g}" if rd['download_mb'] is not None else 'unknown'
+        lines.append('| ' + ' | '.join([f"[{label(n)}](../{page_path(n)})", rd['compute'], rd['offline'], download,
+                                      rd['validation'], cell(rd['limitation'])]) + ' |')
+    lines += ['', end]
+    head, rest = text.split(begin, 1)
+    path.write_text(head + '\n'.join(lines) + rest.split(end, 1)[1])
 
 
 def write_graph(nodes, edges, meta):
@@ -754,6 +789,7 @@ def write_site(nodes, edges, meta):
             "pa": n.get("parent"), "r": related.get(nid),
             "hs": 1 if nid in sample_linked or n["kind"] == "sample" else None,
             "hi": 1 if any(d.startswith("docs/integration-cards/") for d in dd) else None,
+            "rd": n.get('readiness'),
         }
         if n["kind"] == "sample":
             rec.update({"v": n.get("verified", ""), "vs": sample_status(n), "sd": n.get("_dir")})

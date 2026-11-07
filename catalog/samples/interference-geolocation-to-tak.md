@@ -6,6 +6,14 @@ Locates a GNSS interference source from KrakenSDR-style direction-of-arrival bea
 
 **Verification:** Ran 2026-11-06: 11 unittest cases OK with python3.14.7 stdlib (geo, Kraken JSON/CSV parsing incl. HTTP poll against a local server, triangulation, ellipse, CoT build, UDP send to localhost); locate.py --method all ran with Python 3.12.14 + stonesoup 1.9.1 on synthetic data, outputs in README. Not run: a live KrakenSDR, the websocket listener (needs websockets), and rendering of the CoT ellipse on an ATAK/WinTAK client (ellipse angle convention unverified).
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 **Concepts:** [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [RF localization and direction finding](../../catalog/concepts/rf-localization.md), [Tracking and data association](../../catalog/concepts/target-tracking.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Electronic warfare resilience](../../catalog/concepts/ew-resilience.md)
 
 **Tags:** `jammer`, `direction-finding`, `doa`, `krakensdr`, `triangulation`, `bearing-only`, `stone-soup`, `particle-filter`, `ukf`, `cot`, `tak`, `error-ellipse`

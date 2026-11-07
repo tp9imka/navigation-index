@@ -4,7 +4,7 @@
 
 Public datasets, evaluation tools, leaderboards for navigation and localization.
 
-## Samples (8)
+## Samples (9)
 
 - [C-UAS classifiers on public data: radar tracks (UAV vs bird) and DroneRF spectra](../../catalog/samples/cuas-classifiers.md) - Two defensive drone-detection baselines on openly licensed recordings.
 - [Cooperative localization on real UWB: MILUV drones through the swarm-coop filters](../../catalog/samples/swarm-coop-real-uwb.md) - Runs the unmodified filters of swarm-coop-localization (dead reckoning, centralized EKF, naive decentralized, covariance intersection; plain vs robust ranging; gate / vote / solution-separation integrity) on real two-way
@@ -13,22 +13,27 @@ Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [Public CORS RINEX to SPP vs RTK with RTKLIB demo5 and gnss_lib_py](../../catalog/samples/gnss-rinex-processing.md) - Downloads one day of public NOAA NGS CORS RINEX for a rover/base pair 30 km apart, runs RTKLIB demo5 rnx2rtkp in single-point and kinematic RTK modes with exact CLI flags, and scores both against the stations' published 
 - [Real attack replay: Jammertest 2024 u-blox logs through the GNSS interference monitor, with RTKLIB SPP](../../catalog/samples/real-attack-replay.md) - Replays 7 public u-blox logs from Jammertest 2024 (University of Vaasa VAARA dataset, about 13 h, 21 labelled test slots: drive-by and convoy jamming, motorcade spoofing, time-offset and pseudorange-ramp spoofing at Blei
 - [Relative navigation benchmark on real data: KISS-ICP lidar odometry, OpenVINS VIO, mono and nadir VO, scored with evo](../../catalog/samples/relative-nav-benchmark.md) - One command per part.
+- [Shared pose recording and replay: JSONL plus optional MCAP](../../catalog/samples/recording-replay.md) - A deterministic synthetic local-ENU pose stream replayed through JSONL and optional MCAP with an embedded schema.
 - [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) - Stdlib-only ground-vehicle loop on a real NCLT Segway session (2013-01-10, 1022 s, 1139 m, 42 MB download): consumer GPS at 1 Hz fused with MEMS strapdown INS (the 8-state EKF of gnss-ins-ekf-outage, imported), wheel spe
 
-## Guides (7)
+## Guides (9)
 
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) - After this chapter you can explain the five main ways to get an absolute position without GNSS - image-to-map matching, terrain matching, magnetic anomaly matching, celestial fixes and signals of opportunity - pick the o
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) - After this chapter you can pick a dataset or simulator that matches your scenario, compute the trajectory metrics judges and reviewers expect, and design a GNSS-outage or interference test that shows what your system doe
+- [Choose a stack you can run](../../docs/practical-readiness.md) - Start with the problem decoder, then narrow the candidates by the resources in the room.
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) - What a 4-5 person team does from the moment the problem statement drops until H+3, when a walking skeleton should run end to end.
 - [Docs map](../../docs/README.md) - What each page under docs/ is for and the order to read them in.
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) - For a team going into a navigation-themed hackathon that may have a military or defense track.
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) - Plausible problem statements for a navigation / PNT / GNSS-denied hackathon, each mapped to a recommended approach, a stack (integration cards first, catalog pages otherwise), datasets, a sample or template to start from
+- [Three selective offline starter bundles](../../docs/starter-bundles.md) - Pick a bundle before downloading the broad offline kit.
 - [Upstream findings](../../docs/upstream-findings.md) - Defects and gaps that the hub's samples found in other people's code and data, with what a maintainer needs to act on them.
 
-## Repositories (85)
+## Repositories (88)
 
+- [Rerun](../../catalog/repos/rerun-io__rerun.md) - fit: high - SDKs and viewer for recording and inspecting multimodal robotics data on synchronized timelines, including images, point clouds, transforms, trajectories and scalar signals; supports MCAP ingestion.
 - [evo](../../catalog/repos/michaelgrupp__evo.md) - fit: high - Python package and CLI for evaluating odometry and SLAM trajectories (ATE/RPE, alignment, plotting) in TUM, KITTI, EuRoC and ROS bag formats.
 - [pykitti](../../catalog/repos/utiasstars__pykitti.md) - fit: high - Python loaders for the KITTI raw and odometry datasets.
+- [MCAP](../../catalog/repos/foxglove__mcap.md) - fit: high - Open container format and libraries for timestamped, heterogeneous robotics logs, with embedded schemas and indexed access.
 - [Anti-UAV](../../catalog/repos/zhaoj9014__anti-uav.md) - fit: high - Official repository of the Anti-UAV challenge and benchmark for detecting and tracking UAVs in RGB and thermal infrared video, with dataset links (Anti-UAV300/410/600) and baselines.
 - [GPS Measurement Tools (incl. GnssLogger)](../../catalog/repos/google__gps-measurement-tools.md) - fit: high - Google's Android raw GNSS measurement tooling: the GnssLogger app source, MATLAB analysis tools for pseudorange processing (including a RINEX nav reader), and NMEA utilities.
 - [UrbanNav](../../catalog/repos/ipnl-polyu__urbannavdataset.md) - fit: high - Open multisensor urban positioning dataset from PolyU IPNL with GNSS, IMU, lidar and camera in deep urban canyons.
@@ -45,6 +50,7 @@ Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [UTIL UWB TDoA dataset tools](../../catalog/repos/williamwenda__uwb_tdoa_dataset.md) - fit: high - Dataset and scripts for UWB time-difference-of-arrival measurements from Bitcraze's Loco Positioning System, collected by University of Toronto.
 - [Noisy Drone RF Signal Classification](../../catalog/repos/sgluege__noisy-drone-rf-signal-classification.md) - fit: high - Loader and inspection scripts for a Kaggle drone RF benchmark: 16,384-sample IQ vectors and spectrograms from 6 drone remote-control transmitters plus a noise class, at SNR -20 to 30 dB in 2 dB steps.
 - [Batear datasets](../../catalog/repos/batear-io__batear-datasets.md) - fit: high - Small Git LFS collection of drone and background audio for ESP32-S3 acoustic detection: about 89 WAV clips of DJI Mavic Pro, Mini 4 Pro and 5-inch FPV flights, ambient (urban, rural, fireworks, bat sites) and synthetic s
+- [Rosbags](../../catalog/repos/ternaris__rosbags.md) - fit: high - Pure Python ROS 1 and ROS 2 bag readers, writers, converters and type system.
 - [Fraunhofer IIS Jammertest 2025 dataset](../../catalog/repos/felixott94__fraunhoferiis_jammertest2025.md) - fit: high - Real-world GNSS interference recordings from Jammertest 2025 at Andoya, Norway, covering jamming, spoofing, meaconing and multi-emitter scenarios, with metadata for classification, characterization and direction finding.
 - [Multi-frequency GNSS spoofing raw dataset](../../catalog/repos/s7am1na__gnss-spoofing-dataset.md) - fit: high - Raw GNSS measurement logs from Android phones and smartwatches recorded under spoofing scenarios on L1, L5 and dual-band.
 - [AFIT MagNav example data](../../catalog/repos/afit-eeng-magnav__example-data.md) - fit: high - Sample data for MagNav work: MIT-AIA anomaly maps, a challenge flight, North American magnetic anomaly grids and geoid files.
@@ -113,7 +119,7 @@ Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [PVI polarization navigation dataset](../../catalog/repos/ts-fupeng__pvi-dataset.md) - fit: low - Dataset combining stereo camera, IMU, polarization camera and high-precision GPS for polarization-aided navigation research.
 - [MIT VNAV lab data](../../catalog/repos/mit-spark__vnav-lab-data.md) - fit: low - Pointer repo for the ROS bag files used in MIT's Visual Navigation for Autonomous Vehicles course exercises.
 
-## Documents, talks, courses, datasets (112)
+## Documents, talks, courses, datasets (115)
 
 - [Clock Synchronization Accuracy over Mobile Networks](../../catalog/resources/edi-ptp-mobile-network-dataset.md) - dataset - fit: high - PTPv2 (PTPd) time synchronization between two hosts across mobile networks including a private 5G SA network, with the slave's PTPd 'offset from master' log values and an independent PPS-vs-PPS offset measured with an An
 - [Data for "PTP over wide area networks with offset measurement outlier filtering"](../../catalog/resources/uniri-wan-ptp-outlier-filtering-dataset.md) - dataset - fit: high - University of Granada measurements of ptp4l and chrony time transfer over about 200 km of research network between ROA (Spanish UTC lab) and Granada, plus Calnex Paragon-X network emulation runs and free-running NIC stab
@@ -176,6 +182,7 @@ Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [MagNav Challenge Problem (DAF-MIT AI Accelerator)](../../catalog/resources/magnav-challenge-site.md) - competition - Challenge site for airborne magnetic anomaly navigation: compensate the aircraft's own magnetic field out of magnetometer data so the remaining crustal anomaly can be map-matched for GPS-free navigation.
 - [MARS-LVIG Dataset: A multi-sensor aerial robots SLAM dataset for LiDAR-visual-inertial-GNSS fusion](../../catalog/resources/hku-mars-lvig-dataset.md) - dataset - Aerial robot SLAM dataset for lidar-visual-inertial-GNSS fusion, including sequences with raw GNSS measurements under different lighting.
 - [MassMIND: Massachusetts Maritime INfrared Dataset](../../catalog/resources/massmind-paper-2022.md) - paper - Paper describing a labelled LWIR maritime dataset of 2,916 images from in and around Boston Harbor, segmented into seven classes, with UNet, PSPNet and DeepLabv3 baselines.
+- [MCAP guides and format introduction](../../catalog/resources/mcap-guides.md) - doc - Primary guide to the MCAP container, including timestamped heterogeneous messages, embedded schemas, efficient seeking and language SDKs.
 - [MCD: Diverse Large-Scale Multi-Campus Dataset for Robot Perception](../../catalog/resources/mcd-multi-campus-dataset.md) - dataset - Multi-campus sequences in Asia and Europe across seasons with two lidar types, stereo, IMUs, UWB and survey-grade prior maps.
 - [Mid-Air Dataset](../../catalog/resources/midair-synthetic-drone-dataset.md) - dataset - Synthetic low-altitude quadcopter flights with RGB, depth, normals, semantics and stereo plus navigation sensors, each trajectory recorded under several weather and season conditions.
 - [MILUV: A Multi-UAV Indoor Localization dataset with UWB and Vision](../../catalog/resources/miluv-dataset-2025.md) - dataset - Multi-UAV indoor dataset (three quadcopters, 36 experiments) with UWB ranging including raw timestamps, channel impulse response and inter-robot ranges, stereo and downward cameras, IMU, laser height, magnetometer and mo
@@ -198,8 +205,10 @@ Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [Raw IQ dataset for GNSS GPS jamming signal classification](../../catalog/resources/gnss-raw-iq-jamming-classification-zenodo.md) - dataset - Raw IQ dataset of GNSS jamming signal types (DME, narrowband, single AM, single chirp, single FM, no jamming) with 1000 training and 250 test samples, generated with a MATLAB script built on the Morales Ferre et al.
 - [Real-World Spoofing Detection and Characterization Using Low-Cost Receivers](../../catalog/resources/kreizis-ion-itm-2025-spoofing.md) - paper - Analyses a real spoofing event in the Mediterranean recorded on low-cost u-blox F9P receivers and evaluates detection approaches on that live data rather than a simulator.
 - [RELLIS-3D Dataset: Data, Benchmarks and Analysis](../../catalog/resources/rellis3d-paper.md) - paper - Paper introducing the RELLIS-3D multimodal off-road dataset with annotated lidar and images and baseline results.
+- [Rerun overview and multimodal robotics data guide](../../catalog/resources/rerun-overview.md) - doc - Official introduction to SDK logging, synchronized spatial and time-series views, coordinate transforms, timelines and MCAP ingestion for robotics recordings.
 - [Rethinking Visual Geo-localization for Large-Scale Applications](../../catalog/resources/cosplace-sf-xl-2022.md) - paper - CVPR 2022 paper introducing San Francisco eXtra Large (SF-XL), a city-wide geo-localization dataset, and CosPlace, which casts VPR training as classification to avoid expensive negative mining.
 - [RoNIN: Robust Neural Inertial Navigation in the Wild: Benchmark, Evaluations, and New Methods](../../catalog/resources/ronin-paper.md) - paper - Introduces a large smartphone IMU dataset with ground truth and benchmarks neural architectures for pedestrian velocity regression.
+- [Rosbags documentation: read and convert ROS bags without ROS](../../catalog/resources/rosbags-documentation.md) - doc - Official Python documentation with AnyReader examples for ROS 1 and ROS 2 recordings, conversion commands and message-type registration.
 - [Satellite Pose Estimation Challenge: Dataset, Competition Design and Results](../../catalog/resources/kelvins-spec2019-paper.md) - paper - ESA Kelvins / Stanford competition on monocular spacecraft pose estimation, analyzing 48 entries.
 - [Sentinel-1 Level-1 GRD on Microsoft Planetary Computer](../../catalog/resources/sentinel-1-grd-planetary-computer.md) - dataset - Copernicus Sentinel-1 C-band SAR Ground Range Detected scenes mirrored as Cloud-Optimized GeoTIFFs (VV, VH) together with the SAFE XML annotations, which include ESA's per-swath RF interference report.
 - [Signal Enhancement for Magnetic Navigation Challenge Problem](../../catalog/resources/afrl-magnav-challenge-2020.md) - paper - Defines the AFRL/MIT MagNav challenge: remove the aircraft's own magnetic field from airborne magnetometer data so the Earth's anomaly field can be used for navigation, with released flight data and a scientific-ML basel

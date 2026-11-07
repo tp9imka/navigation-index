@@ -1,0 +1,144 @@
+{
+  "sample:ugv-gnss-outage-real": {
+    "compute": "cpu",
+    "hardware": "none",
+    "offline": "cache-required",
+    "setup_minutes": null,
+    "download_mb": 42.338323,
+    "platforms": [],
+    "validation": "integrated",
+    "limitation": "One low-speed NCLT session; reference SLAM shares wheel odometry, and injected drag is synthetic.",
+    "evidence": [
+      "samples/ugv-gnss-outage-real/README.md",
+      "samples/ugv-gnss-outage-real/sample.json",
+      "samples/ugv-gnss-outage-real/fetch_nclt.py"
+    ]
+  },
+  "sample:real-attack-replay": {
+    "compute": "cpu",
+    "hardware": "none",
+    "offline": "cache-required",
+    "setup_minutes": null,
+    "download_mb": 63.992012,
+    "platforms": [
+      "macos-arm64"
+    ],
+    "validation": "integrated",
+    "limitation": "One receiver and weak quiet-time labels; dataset redistribution permission is not stated.",
+    "evidence": [
+      "samples/real-attack-replay/README.md",
+      "samples/real-attack-replay/sample.json",
+      "templates/offline-kit/rehearsal-report.json"
+    ]
+  },
+  "sample:golden-demo": {
+    "compute": "cpu",
+    "hardware": "none",
+    "offline": "cache-required",
+    "setup_minutes": null,
+    "download_mb": null,
+    "platforms": [
+      "linux-arm64"
+    ],
+    "validation": "integrated",
+    "limitation": "Autopilot simulation with recorded/modelled aiding; not field or hardware validation.",
+    "evidence": [
+      "samples/golden-demo/README.md",
+      "samples/golden-demo/sample.json"
+    ]
+  },
+  "sample:e2e-visual-nav-vpair": {
+    "compute": "optional-gpu",
+    "hardware": "none",
+    "offline": "cache-required",
+    "setup_minutes": null,
+    "download_mb": 861.249439,
+    "platforms": [
+      "macos-arm64"
+    ],
+    "validation": "integrated",
+    "limitation": "One flight; map renders share the GNSS/INS reference and the VO error model was fitted on this flight.",
+    "evidence": [
+      "samples/e2e-visual-nav-vpair/README.md",
+      "samples/e2e-visual-nav-vpair/sample.json",
+      "docs/dataset-cards/vpair.md"
+    ]
+  },
+  "sample:vpr-large-area": {
+    "compute": "optional-gpu",
+    "hardware": "none",
+    "offline": "cache-required",
+    "setup_minutes": null,
+    "download_mb": null,
+    "platforms": [
+      "macos-arm64"
+    ],
+    "validation": "integrated",
+    "limitation": "Retrieval is not a position fix: the fine stage fixed only 1 of 23 real eBee frames.",
+    "evidence": [
+      "samples/vpr-large-area/README.md",
+      "samples/vpr-large-area/sample.json"
+    ]
+  },
+  "sample:geoloc-license-clean": {
+    "compute": "cpu",
+    "hardware": "none",
+    "offline": "cache-required",
+    "setup_minutes": null,
+    "download_mb": null,
+    "platforms": [
+      "macos-arm64"
+    ],
+    "validation": "integrated",
+    "limitation": "Only 1 of 5 real eBee frames fixed; synthetic same-map precision does not describe flight performance.",
+    "evidence": [
+      "samples/geoloc-license-clean/README.md",
+      "samples/geoloc-license-clean/sample.json"
+    ]
+  },
+  "sample:gnss-ins-ekf-outage": {
+    "compute": "cpu",
+    "hardware": "none",
+    "offline": "unknown",
+    "setup_minutes": null,
+    "download_mb": 0,
+    "platforms": [],
+    "validation": "integrated",
+    "limitation": "Fully synthetic two-dimensional sensors; the innovation gate misses slow drags up to 0.5 m/s.",
+    "evidence": [
+      "samples/gnss-ins-ekf-outage/README.md",
+      "samples/gnss-ins-ekf-outage/sample.json"
+    ]
+  },
+  "sample:dismounted-foot-ins": {
+    "compute": "cpu",
+    "hardware": "none",
+    "offline": "cache-required",
+    "setup_minutes": null,
+    "download_mb": null,
+    "platforms": [],
+    "validation": "integrated",
+    "limitation": "Nominal 95 percent radius covered truth at only 31 percent of markers; UWB aiding is simulated.",
+    "evidence": [
+      "samples/dismounted-foot-ins/README.md",
+      "samples/dismounted-foot-ins/sample.json"
+    ]
+  },
+  "sample:recording-replay": {
+    "compute": "cpu",
+    "hardware": "none",
+    "offline": "verified",
+    "setup_minutes": null,
+    "download_mb": 0,
+    "platforms": [
+      "macos-arm64"
+    ],
+    "validation": "integrated",
+    "limitation": "One macOS laptop, synthetic poses, network-denied replay; cold install and a second laptop were not tested.",
+    "evidence": [
+      "samples/recording-replay/README.md",
+      "samples/recording-replay/sample.json",
+      "samples/recording-replay/results/verification.json"
+    ]
+  }
+}

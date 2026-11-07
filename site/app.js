@@ -8,10 +8,27 @@ const FIT_RANK = { high: 0, medium: 1, low: 2 };
 const DOC_KINDS = { "integration-card": "integration card", "dataset-card": "dataset card", "paper-digest": "paper digest", "guide": "guide" };
 const STAR_BUCKETS = [["10k+", 10000, Infinity], ["1k-10k", 1000, 10000], ["100-1k", 100, 1000], ["10-100", 10, 100], ["<10", 0, 10]];
 const VERIFY_LABEL = { ran: "ran", partial: "partly ran", sketch: "sketch / not run", pending: "pending", placeholder: "placeholder" };
+const READINESS_LABELS = {
+  compute: { cpu: "CPU", gpu: "GPU required", "optional-gpu": "GPU optional", unknown: "Unknown" },
+  hardware: { none: "No extra hardware", optional: "Hardware optional", required: "Hardware required", unknown: "Unknown" },
+  offline: { verified: "Verified offline", "cache-required": "Cache required", unknown: "Unknown" },
+  validation: { integrated: "Integrated run", components: "Components tested", unverified: "Unverified" },
+};
+const COPY_FACETS = ["kind", "fit", "domain", "compute", "hardware", "offline", "platform", "validation"];
+const BUDGETS = [
+  { key: "max_setup_minutes", field: "setup_minutes", title: "Maximum setup time", unit: "minutes" },
+  { key: "max_download_mb", field: "download_mb", title: "Maximum dataset download", unit: "MB" },
+];
 
 const FACETS = [
   { key: "kind", title: "Kind", vals: e => [e.k] },
   { key: "fit", title: "Hackathon fit", vals: e => e.f ? [e.f] : [], order: ["high", "medium", "low"] },
+  ...["compute", "hardware", "offline", "validation"].map(key => ({
+    key, title: { compute: "Compute", hardware: "Hardware", offline: "Offline use", validation: "Validation" }[key],
+    single: true, order: Object.keys(READINESS_LABELS[key]),
+    vals: e => [(e.rd || {})[key] || (key === "validation" ? "unverified" : "unknown")],
+  })),
+  { key: "platform", title: "Tested platform", single: true, vals: e => (e.rd || {}).platforms || [] },
   { key: "domain", title: "Domain", vals: e => e.d || [] },
   { key: "maturity", title: "Maturity", vals: e => e.m ? [e.m] : [] },
   { key: "has", title: "Has", vals: e => [e.hs && "sample", e.hi && "integration card", e.dd && e.dd.length && "any deep dive"].filter(Boolean) },
@@ -20,7 +37,7 @@ const FACETS = [
   { key: "license", title: "License", vals: e => e.l ? [e.l] : [] },
 ];
 
-const S = { q: "", f: {}, concept: "", view: "search", page: "", anchor: "", limit: PAGE_SIZE, sel: -1, expanded: new Set() };
+const S = { q: "", f: {}, b: {}, concept: "", view: "search", page: "", anchor: "", limit: PAGE_SIZE, sel: -1, expanded: new Set() };
 let E = [], byId = new Map(), byPage = new Map(), incoming = new Map(), children = new Map(), concepts = [];
 let shown = [], RK = null;
 const $ = s => document.querySelector(s);
@@ -227,7 +244,24 @@ function passes(e, skipKey, cset) {
     if (!sel || !sel.size) continue;
     if (!fd.vals(e).some(v => sel.has(v))) return false;
   }
+  for (const bd of BUDGETS) {
+    if (S.b[bd.key] === undefined) continue;
+    const ceiling = budgetNumber(S.b[bd.key]), value = (e.rd || {})[bd.field];
+    if (ceiling === null || typeof value !== "number" || !Number.isFinite(value) || value < 0 || value > ceiling) return false;
+  }
   return true;
+}
+
+function budgetNumber(raw) {
+  const text = String(raw).trim();
+  if (!/^[+]?(?:\d+(?:\.\d*)?|\.\d+)(?:e[+-]?\d+)?$/i.test(text)) return null;
+  const n = Number(text);
+  return Number.isFinite(n) && n >= 0 ? n : null;
+}
+
+function budgetError() {
+  const bad = BUDGETS.find(bd => S.b[bd.key] !== undefined && budgetNumber(S.b[bd.key]) === null);
+  return bad ? `${bad.title} must be a nonnegative number. Clear it or enter a valid ceiling.` : "";
 }
 
 function search() {
@@ -254,8 +288,10 @@ function readHash() {
   S.f = {};
   for (const fd of FACETS) {
     const v = h.get(fd.key);
-    if (v) S.f[fd.key] = new Set(v.split(","));
+    if (v) S.f[fd.key] = new Set(fd.single ? [v] : v.split(","));
   }
+  S.b = {};
+  for (const bd of BUDGETS) if (h.get(bd.key)) S.b[bd.key] = h.get(bd.key);
   $("#q").value = S.q;
 }
 
@@ -264,6 +300,7 @@ function searchHash() {
   if (S.q) h.set("q", S.q);
   if (S.concept) h.set("concept", S.concept);
   for (const fd of FACETS) if (S.f[fd.key] && S.f[fd.key].size) h.set(fd.key, [...S.f[fd.key]].join(","));
+  for (const bd of BUDGETS) if (S.b[bd.key] !== undefined) h.set(bd.key, S.b[bd.key]);
   return h.toString();
 }
 
@@ -289,6 +326,7 @@ function render() {
   $("#page").hidden = S.view !== "page";
   $("#kits").hidden = S.view !== "kits";
   const r = search();
+  renderBudgets();
   renderFacets(r);
   renderTree(r);
   if (S.view === "search") renderResults(r);
@@ -309,18 +347,38 @@ function renderFacets(r) {
     let vals = [...counts.keys()];
     if (fd.order) vals.sort((a, b) => fd.order.indexOf(a) - fd.order.indexOf(b));
     else vals.sort((a, b) => counts.get(b) - counts.get(a) || a.localeCompare(b));
-    if (!vals.length) continue;
+    if (!vals.length && !fd.single) continue;
+    if (fd.single) {
+      html.push(`<section class="facet"><label class="facet-title" for="facet-${fd.key}">${fd.title}</label>
+        <select id="facet-${fd.key}" data-facet="${fd.key}" aria-label="${fd.title}"><option value="">Any</option>`);
+      for (const v of vals) html.push(`<option value="${esc(v)}" ${sel.has(v) ? "selected" : ""}>${esc(facetLabel(fd, v))} (${counts.get(v)})</option>`);
+      html.push("</select></section>");
+      continue;
+    }
     const open = S.expanded.has(fd.key);
     const visible = open ? vals : vals.slice(0, FACET_COLLAPSED).concat(vals.slice(FACET_COLLAPSED).filter(v => sel.has(v)));
     html.push(`<section class="facet"><h3>${fd.title}</h3>`);
     for (const v of visible) {
-      const label = DOC_KINDS[v] || v;
+      const label = facetLabel(fd, v);
       html.push(`<label class="${counts.get(v) ? "" : "zero"}"><input type="checkbox" data-facet="${fd.key}" value="${esc(v)}" ${sel.has(v) ? "checked" : ""}> ${esc(label)}<span class="n">${counts.get(v)}</span></label>`);
     }
     if (vals.length > FACET_COLLAPSED) html.push(`<button class="link-btn more" data-expand="${fd.key}">${open ? "fewer" : `all ${vals.length}`}</button>`);
     html.push("</section>");
   }
   $("#facets").innerHTML = html.join("");
+}
+
+function facetLabel(fd, value) {
+  return (READINESS_LABELS[fd.key] || {})[value] || DOC_KINDS[value] || value;
+}
+
+function renderBudgets() {
+  for (const bd of BUDGETS) {
+    const input = $("#" + bd.key);
+    input.value = S.b[bd.key] === undefined ? "" : S.b[bd.key];
+    input.setAttribute("aria-invalid", String(S.b[bd.key] !== undefined && budgetNumber(S.b[bd.key]) === null));
+  }
+  $("#budgetError").textContent = budgetError();
 }
 
 function renderTree(r) {
@@ -370,6 +428,23 @@ function trim(s, n) {
   return s.length > n ? s.slice(0, n).replace(/\s+\S*$/, "") + "..." : s;
 }
 
+function readinessHtml(e) {
+  const rd = e.rd;
+  if (!rd) return `<p class="readiness-unknown muted">Readiness unknown: setup, download and tested platforms are not recorded.</p>`;
+  const label = key => esc((READINESS_LABELS[key] || {})[rd[key]] || "Unknown");
+  const measurement = (key, unit) => typeof rd[key] === "number" && Number.isFinite(rd[key]) && rd[key] >= 0 ? `${rd[key]} ${unit}` : "unknown";
+  const platforms = (rd.platforms || []).length ? rd.platforms.map(esc).join(", ") : "No tested platform recorded";
+  const sources = (rd.evidence || []).map(p => `<li><a href="${pageHref(p)}">${esc(p)}</a></li>`).join("");
+  return `<div class="readiness" aria-label="Readiness">
+    <dl><div><dt>Compute</dt><dd>${label("compute")}</dd></div><div><dt>Hardware</dt><dd>${label("hardware")}</dd></div>
+    <div><dt>Offline</dt><dd>${label("offline")}</dd></div><div><dt>Setup</dt><dd>${measurement("setup_minutes", "min")}</dd></div>
+    <div><dt>Dataset download</dt><dd>${measurement("download_mb", "MB")}</dd></div><div><dt>Validation</dt><dd>${label("validation")}</dd></div>
+    <div><dt>Tested on</dt><dd>${platforms}</dd></div></dl>
+    <p class="limitation"><strong>Limit:</strong> ${esc(rd.limitation || "Limitations have not been documented.")}</p>
+    ${sources ? `<details class="readiness-evidence"><summary>Readiness sources</summary><ul>${sources}</ul></details>` : ""}
+  </div>`;
+}
+
 function card(e, i) {
   const chips = (e.c || []).map(c => byId.get(c)).filter(Boolean)
     .map(c => `<button class="chip" data-concept="${esc(c.i)}">${esc(c.n)}</button>`).join("");
@@ -384,6 +459,7 @@ function card(e, i) {
     <div class="card-head">${kindBadge(e)}<a class="title" href="${pageHref(e.p)}">${esc(e.n)}</a><span class="id">${esc(e.i)}</span></div>
     ${metaLine(e)}
     <p class="sum">${esc(trim(e.s, 320))}</p>
+    ${readinessHtml(e)}
     ${chips ? `<div class="chips">${chips}</div>` : ""}
     <div class="actions">${links.join("")}</div>
     <div class="related" hidden></div>
@@ -400,10 +476,11 @@ function renderResults(r) {
   $("#count").textContent = `${r.hits.length} result${r.hits.length === 1 ? "" : "s"}` + (S.q ? ` for "${S.q}"` : "");
   const pills = [];
   if (S.concept && byId.get(S.concept)) pills.push(`<button class="pill" data-clear-concept>${esc(byId.get(S.concept).n)} &times;</button>`);
-  for (const fd of FACETS) (S.f[fd.key] || []).forEach(v => pills.push(`<button class="pill" data-unfacet="${fd.key}" data-v="${esc(v)}">${esc(DOC_KINDS[v] || v)} &times;</button>`));
+  for (const fd of FACETS) (S.f[fd.key] || []).forEach(v => pills.push(`<button class="pill" data-unfacet="${fd.key}" data-v="${esc(v)}">${esc(fd.title)}: ${esc(facetLabel(fd, v))} &times;</button>`));
+  for (const bd of BUDGETS) if (S.b[bd.key] !== undefined) pills.push(`<button class="pill" data-unbudget="${bd.key}">${esc(bd.title)}: ${esc(S.b[bd.key])} ${bd.unit} &times;</button>`);
   $("#active").innerHTML = pills.join("");
   if (!r.hits.length) {
-    $("#results").innerHTML = `<div class="empty">No matches. Remove a filter or try fewer words.</div>`;
+    $("#results").innerHTML = `<div class="empty">${esc(budgetError() || "No matches. Remove a filter or try fewer words. Budget ceilings exclude items with unknown measurements.")}</div>`;
     return;
   }
   const page = r.hits.slice(0, S.limit);
@@ -470,7 +547,7 @@ function pageSide(e) {
   if (!e.isDoc && e.p !== S.page) links.push(`<a href="${pageHref(e.p)}">${e.k === "guide" ? "Read guide" : "Catalog page"}</a>`);
   links.push(`<button class="link-btn" data-copy-show="${esc(e.i)}">Copy MCP</button>`);
   return `<div class="box"><div class="card-head">${kindBadge(e)}<strong>${esc(e.n)}</strong></div>
-    <div class="id muted">${esc(e.i)}</div>${metaLine(e)}<div class="actions">${links.join("")}</div></div>
+    <div class="id muted">${esc(e.i)}</div>${metaLine(e)}${readinessHtml(e)}<div class="actions">${links.join("")}</div></div>
     <div class="box related"><h3>Related</h3>${relatedHtml(e)}</div>`;
 }
 
@@ -517,8 +594,8 @@ function renderKits() {
     Object.keys(VERIFY_LABEL).indexOf(a.vs) - Object.keys(VERIFY_LABEL).indexOf(b.vs) || a.n.localeCompare(b.n));
   const tally = kits.reduce((m, k) => (m[k.vs] = (m[k.vs] || 0) + 1, m), {});
   $("#kits").innerHTML = `<div class="kits-head"><h2>Starter kits</h2>
-    <p class="muted">The ${kits.length} samples under <code>samples/</code>. The badge is derived from the <code>verified</code> text in each
-    <code>sample.json</code> (${Object.entries(tally).map(([k, v]) => `${v} ${VERIFY_LABEL[k]}`).join(", ")}); read the full text, it says what was run, on what, and what was not.</p></div>
+    <p class="muted">The ${kits.length} samples under <code>samples/</code>. Reported verification status:
+    ${Object.entries(tally).map(([k, v]) => `${v} ${VERIFY_LABEL[k]}`).join(", ")}. Read the full verification and limits below for what ran and on which data. Unknown setup or download values have not been measured. Readiness applies only to the documented demo path.</p></div>
     <div class="results">` + kits.map(k => {
       const rel = (k.r || []).map(([t, rel]) => E[t]).filter(x => x.k === "repo").slice(0, 8)
         .map(x => `<a href="${pageHref(x.p)}">${esc(x.n)}</a>`).join(", ");
@@ -526,6 +603,7 @@ function renderKits() {
         <div class="card-head"><span class="badge ${k.vs}">${VERIFY_LABEL[k.vs]}</span><a class="title" href="${pageHref(`samples/${k.sd}/README.md`)}">${esc(k.n)}</a><span class="id">${esc(k.i)}</span></div>
         <p class="sum">${esc(trim(k.s, 360))}</p>
         <div class="verify"><strong>Verification:</strong> ${esc(k.v)}</div>
+        ${readinessHtml(k)}
         ${rel ? `<div class="meta">Uses / explains: ${rel}</div>` : ""}
         <div class="actions"><a href="${pageHref(`samples/${k.sd}/README.md`)}">README</a><a href="${pageHref(k.p)}">Catalog page</a><a href="${ROOT}samples/${esc(k.sd)}/" target="_blank" rel="noopener">Files</a></div>
       </article>`;
@@ -540,19 +618,25 @@ function single(key, mcpKey) {
 }
 
 function mcpSearch() {
-  if (!S.q && !S.concept) return null;
-  const args = { ...single("kind", "kind"), ...single("fit", "fit"), ...single("domain", "domain") };
-  if (!S.q) return { tool: "concept", arguments: { id: S.concept, ...args } };
+  if (budgetError()) return null;
+  const args = Object.assign({}, ...COPY_FACETS.map(key => single(key, key)));
+  for (const bd of BUDGETS) if (S.b[bd.key] !== undefined) args[bd.key] = budgetNumber(S.b[bd.key]);
+  if (!S.q && S.concept) return { tool: "concept", arguments: { id: S.concept, ...args } };
   return { tool: "search", arguments: { query: S.q, ...(S.concept ? { concept: S.concept } : {}), ...args } };
+}
+
+function shellQuote(value) {
+  return "'" + String(value).replace(/'/g, "'\"'\"'") + "'";
 }
 
 function cliSearch() {
   const m = mcpSearch();
   if (!m) return null;
   const a = m.arguments;
-  const flags = ["kind", "fit", "domain"].filter(k => a[k]).map(k => ` --${k} ${a[k]}`).join("");
-  if (m.tool === "concept") return `python3 tools/query.py concept ${a.id}${flags}`;
-  return `python3 tools/query.py search ${JSON.stringify(a.query)}${a.concept ? ` --concept ${a.concept}` : ""}${flags}`;
+  const flags = COPY_FACETS.concat(BUDGETS.map(bd => bd.key)).filter(k => a[k] !== undefined)
+    .map(k => ` --${k.replace(/_/g, "-")} ${/^[a-z0-9_.:-]+$/i.test(String(a[k])) ? a[k] : shellQuote(a[k])}`).join("");
+  if (m.tool === "concept") return `python3 tools/query.py concept ${shellQuote(a.id)}${flags}`;
+  return `python3 tools/query.py search ${shellQuote(a.query)}${a.concept ? ` --concept ${shellQuote(a.concept)}` : ""}${flags}`;
 }
 
 async function copy(text) {
@@ -582,7 +666,7 @@ function copyShow(id) {
 }
 
 function dropped() {
-  const multi = FACETS.filter(fd => S.f[fd.key] && (S.f[fd.key].size > 1 || !["kind", "fit", "domain"].includes(fd.key)));
+  const multi = FACETS.filter(fd => S.f[fd.key] && S.f[fd.key].size && (S.f[fd.key].size > 1 || !COPY_FACETS.includes(fd.key)));
   return multi.length ? ` (not expressible there: ${multi.map(fd => fd.title).join(", ")})` : "";
 }
 
@@ -642,9 +726,24 @@ $("#q").addEventListener("keydown", ev => {
   }
 });
 
+function updateBudget(t) {
+  if (!t.dataset.budget) return false;
+  const value = t.value === "" ? undefined : t.value;
+  if (S.b[t.dataset.budget] === value) return true;
+  if (value === undefined) delete S.b[t.dataset.budget]; else S.b[t.dataset.budget] = value;
+  commitSearch(true);
+  return true;
+}
+
+document.addEventListener("input", ev => { updateBudget(ev.target); });
 document.addEventListener("change", ev => {
   const t = ev.target;
+  if (updateBudget(t)) return;
   if (!t.dataset.facet) return;
+  if (FACETS.find(fd => fd.key === t.dataset.facet).single) {
+    S.f[t.dataset.facet] = new Set(t.value ? [t.value] : []);
+    return commitSearch(true);
+  }
   const set = S.f[t.dataset.facet] || (S.f[t.dataset.facet] = new Set());
   if (t.checked) set.add(t.value); else set.delete(t.value);
   commitSearch(true);
@@ -659,6 +758,7 @@ document.addEventListener("click", ev => {
     return render();
   }
   if (t.dataset.unfacet) { S.f[t.dataset.unfacet].delete(t.dataset.v); return commitSearch(true); }
+  if (t.dataset.unbudget) { delete S.b[t.dataset.unbudget]; return commitSearch(true); }
   if (t.hasAttribute("data-clear-concept")) { S.concept = ""; return commitSearch(true); }
   if (t.dataset.copyShow) return copyShow(t.dataset.copyShow);
   if (t.dataset.act) {
@@ -671,7 +771,7 @@ document.addEventListener("click", ev => {
   if (t.id === "moreBtn") { S.limit += PAGE_SIZE; return renderResults(search()); }
 });
 
-$("#clearBtn").onclick = () => { S.f = {}; S.concept = ""; S.q = ""; $("#q").value = ""; commitSearch(true); };
+$("#clearBtn").onclick = () => { S.f = {}; S.b = {}; S.concept = ""; S.q = ""; $("#q").value = ""; commitSearch(true); };
 $("#themeBtn").onclick = setTheme;
 $("#helpBtn").onclick = () => { $("#help").hidden = false; };
 $("#helpClose").onclick = () => { $("#help").hidden = true; };
@@ -682,15 +782,17 @@ $("#filtersBtn").onclick = () => {
 };
 $("#copyMcp").onclick = () => {
   const m = mcpSearch();
-  if (!m) return toast("Type a query or pick a concept first");
+  if (!m) return toast(budgetError());
   copy(JSON.stringify(m));
   const d = dropped();
   if (d) setTimeout(() => toast("Copied MCP call" + d), 1900);
 };
 $("#copyCli").onclick = () => {
   const c = cliSearch();
-  if (!c) return toast("Type a query or pick a concept first");
+  if (!c) return toast(budgetError());
   copy(c);
+  const d = dropped();
+  if (d) setTimeout(() => toast("Copied CLI command" + d), 1900);
 };
 
 window.addEventListener("hashchange", () => {

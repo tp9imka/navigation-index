@@ -6,6 +6,14 @@ ArduPlane Plane-4.6.3 SITL in Docker (new image built on the sitl-docker copter 
 
 **Verification:** Ran 2026-11-06 on Apple Silicon (linux/arm64 Docker, plane-sitl-ardupilot:4.6.3 built from Dockerfile.plane in 40 s on top of nav-sitl-ardupilot:copter-4.6.3, pymavlink 2.4.50, Python 3.12, speedup 5, 4-8 SITLs in parallel, ~290 s wall per batch). 16 coherent-spoof flights (seed 7 + seeds 1-3 x baseline/day/night/dr), 4 no-spoof flights, 1 dr flight with VO detection; all completed the route and end loiter, no failsafe, no GPS-unhealthy message, every source-set command ACKed. Seed 7: first alarm 5.4 s (day, velocity test), 27.4 s (night, SS), 228.4 s (dr, SS); max true cross-track after onset 34.7 m day (3.3 m on straights; corners overshoot 30-32 m with no spoof), 37.9 m night, 696.7 m dr, 749.7 m without monitor; end-loiter centre 14.8 / 20.6 / 806.7 / 873.2 m from the commanded point (no-spoof 15.0 m). Seeds 1-3: day alarm 7.4-9.4 s, max 28-31 m; night 19.4-31.4 s, 33-50 m; dr 232-337 s, 687-745 m; baseline 749-751 m. EKF3 GPS_GLITCHING 0 reports in all 16. Dead reckoning: after a 4.4 s detection EKF3 source set 3 ended 844 m off route after 20.8 km (frozen wind about 1.1 m/s off); the dr monitor false-alarmed in its no-spoof flight at 358 s. Found and fixed: ExternalNav NED must use ArduPilot's spherical LATLON_TO_M, a WGS84 local ENU put the EKF 34-37 m off at 11 km. Tests: venv 14 pass; plain python3 12 pass, 2 skip (pymavlink; git-ignored thermal JSONL). Not tested: real VO/compass/camera, other drag rates or wind, AHRS_OPTIONS=0, amd64, Plane 4.7+.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 **Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
 **Tags:** `airspeed`, `ardupilot`, `arduplane`, `coherent-spoof`, `dashboard`, `dead-reckoning`, `demo`, `docker`, `ekf3`, `externalnav`, `fixed-wing`, `gps-drag`, `gps-input`, `integrity`, `long-range`, `navdash`, `night`, `pymavlink`, `sitl`, `solution-separation`, `source-switch`, `spoofing`, `thermal`, `wind`

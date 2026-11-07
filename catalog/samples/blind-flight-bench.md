@@ -6,6 +6,14 @@ Benchmark harness that reproduces the 2026 'Polyot vslepuyu' (Blind flight) hack
 
 **Verification:** ran 2026-11-06 with CPython 3.13.15 + numpy 2.5.4 / scipy 1.18.1 / rasterio 1.5.2 on an Apple M2 Max: regions.py fetched the four GLO-30 windows over public HTTPS through terrain-heightmap-pf/fetch_dem.py; run_bench.py produced out/results.json and the leaderboard (80 flights x 10 navigators, 349 s wall) and --ablation produced out/ablation.md (144 flights x 6 navigators); two full runs gave identical error numbers for unchanged navigators. unittest: 10 passed in the venv; with plain python3 and no third-party packages 3 metric tests pass and 7 skip. Mutating error_at_distances (bisect_left => bisect_right) or the sign of the TERCOM correction makes a test fail. Flights, altimeter, baro error, map error and canopy are simulated with assumed parameters; the GORIZONT and Gagarin navigators are our re-implementations from their README text, not their code, and no team code was run.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 ## Deep dives
 
 - [copernicus-glo30](../../docs/dataset-cards/copernicus-glo30.md) (dataset-cards)

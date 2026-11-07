@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-07",
+  "platform": "macos-arm64",
+  "python_stdlib": "3.14.7",
+  "python_mcap": "3.12.14",
+  "packages": {
+    "mcap": "1.3.1",
+    "lz4": "4.4.5",
+    "zstandard": "0.25.0"
+  },
+  "network_policy": "macOS sandbox-exec (deny network*)",
+  "scope": "one-host replay, not a cold offline install or second-laptop rehearsal",
+  "tests_with_mcap": {
+    "passed": 3,
+    "skipped": 0
+  },
+  "tests_stdlib": {
+    "passed": 2,
+    "skipped": 1
+  },
+  "result": {
+    "epochs": 101,
+    "duration_s": 10.0,
+    "frame": "local_enu",
+    "position_rmse_m": 0.5,
+    "input": "synthetic",
+    "alignment": "none",
+    "mcap_round_trip": "passed"
+  }
+}

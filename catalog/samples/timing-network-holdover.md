@@ -6,6 +6,14 @@ A stdlib-only simulation of six GNSS-disciplined sites (TCXO, OCXO, CSAC, Rb osc
 
 **Verification:** Synthetic: ran with python3.14.7 stdlib on 2026-11-06, default arguments, 51 s; output pasted verbatim in README (plus a --temp-fraction 0 run of scenario c). Real-data mode: fetch_data.py downloaded the Zenodo 14230741 zip (MD5 945aefa3013bc926d748f7e820275069 matched the record) and real_link.py ran on it in 19 s, output pasted verbatim. 21 unittest tests pass under plain /opt/homebrew/bin/python3 (3.14.7) in about 4 s with the data, 18 pass and 3 skip without it; they include parser tests on inline fixtures (PPS, PTPd with glued rows, a hand-built pcapng), a same-seed check that an added 2 us asymmetry moves time by exactly 1 us, a check that a replayed constant 2 us link error becomes 2 us of relay time error, a no-spoof control and a planted blind-detector control. Oscillator parameters are the parent's datasheet/table values; synthetic network delays, asymmetries, PPS noise, temperature fraction, site layout and thresholds are stated assumptions. Real data: PPS truth and PTPd logs come from different runs and PTP software (Timebeat vs PTPd), each record is 15 min and is looped for the replay. None of the related repos was run.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 **Concepts:** [Timing and time transfer](../../catalog/concepts/timing.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `ptp`, `two-way-time-transfer`, `path-asymmetry`, `holdover`, `clock-ensemble`, `allan-deviation`, `time-spoofing`, `consistency-check`, `bmca`, `packet-delay-variation`, `stdlib`, `5g`, `ptpd`, `real-data`

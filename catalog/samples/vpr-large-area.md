@@ -6,6 +6,16 @@ The coarse first stage that geoloc-license-clean lacks: no position prior, unkno
 
 **Verification:** Ran 2026-11-06 on Apple M2 Max (DINOv2 ViT-S/14 on MPS, LightGlue on CPU, torch 2.15.0, Python 3.12.14): download_data.py fetched 49 km2 of NAIP 2015/2017/2019/2021/2023 from Planetary Computer, 23 CC0 eBee frames and 3DEP heights; run_vpr.py built 250 m and 100 m tile DBs (18.5k / 19.3k tiles x 8 rotations, ~9 min each) and scored 150 synthetic queries per source year: same imagery R@1 within 50 m 0.77 and R@10 within 100 m 0.98 (gem/invariant8, 250 m tiles), 2-8 year vintage gap 0.18-0.29 / 0.48-0.73; rotation-averaged GeM matched or beat an 8x rotation-augmented DB at 1/8 the index size; classic ring histogram R@10 within 250 m <= 0.13. Real eBee frames vs 2023 DB: cls/invariant8 R@1 within 50 m 0.70-0.74 (23 frames in one park). run_chain.py (VPR top-5 => ALIKED+LightGlue, 25-inlier gate): synthetic 20/20 fixes (same imagery, 0.22 m median), 8/20 and 3/20 at 6 and 4 year gaps vs 20/20 and 12/20 with a known prior; real eBee 0/23 with 100 m windows, 1/23 (20 m) with 50 m windows; no wrong fix accepted. Tests: 23 unittest cases pass in the venv; with plain python3 12 pass and 11 skip (numpy/OpenCV/torch absent).
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| optional-gpu | none | cache-required | unknown | unknown | macos-arm64 | integrated |
+
+**Main limitation:** Retrieval is not a position fix: the fine stage fixed only 1 of 23 real eBee frames.
+
+**Readiness evidence:** [samples/vpr-large-area/README.md](../../samples/vpr-large-area/README.md), [samples/vpr-large-area/sample.json](../../samples/vpr-large-area/sample.json)
+
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Place recognition and loop closure](../../catalog/concepts/place-recognition.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
 **Tags:** `dinov2`, `gem`, `vlad`, `anyloc`, `faiss`, `vpr`, `naip`, `planetary-computer`, `kidnapped-robot`, `lightglue`, `aliked`, `gnss-denied`, `uav`, `license`
@@ -28,6 +38,7 @@ The coarse first stage that geoloc-license-clean lacks: no position prior, unkno
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [NAIP aerial imagery on Microsoft Planetary Computer](../../catalog/resources/naip-planetary-computer.md) (dataset_for)

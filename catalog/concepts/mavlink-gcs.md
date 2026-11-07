@@ -22,7 +22,7 @@ MAVLink protocol, SDKs, ground control stations, telemetry radios.
 ## Guides (2)
 
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) - After this chapter you can run PX4 or ArduPilot in simulation, inject your own position source over MAVLink, configure the estimator to switch away from GNSS, and push your vehicle's position and detections onto a TAK co
-- [Evidence matrix](../../docs/evidence-matrix.md) - Every measured number in the hub's samples, by capability, with the kind of input it was measured on.
+- [Evidence matrix](../../docs/evidence-matrix.md) - Recording/replay plumbing: recording-replay ran on 2026-11-07 with 101 synthetic poses over 10 s.
 
 ## Repositories (35)
 

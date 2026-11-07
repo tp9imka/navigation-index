@@ -20,6 +20,7 @@ import math
 import re
 from collections import defaultdict, deque
 from pathlib import Path
+import readiness
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -244,6 +245,8 @@ def ranker(recs):
 
 def search(recs, query, filters=None):
     """[(score, record)] best first, filtered after ranking so corpus stats do not depend on filters."""
+    if not query.strip():
+        return [(0.0, r) for r in recs.values() if filters is None or matches_filters(r, filters)]
     return [(s, e["ref"]) for s, e in ranker(recs).rank(query)
             if filters is None or matches_filters(e["ref"], filters)]
 
@@ -257,6 +260,16 @@ DECODE_PHRASE_W = 1.0    # extra share per additional word of a multi-word trigg
 # idf of statement tokens found in each row column; the problem statement is the row's own wording
 DECODE_FIELD_W = {"name": 1.5, "approach": 0.3, "pitch": 0.3, "risk": 0.15, "datasets": 0.15}
 DECODE_KEEP = 0.35       # rows after the first are kept when they score at least this share of the best
+DECODE_PLATFORM_CONFLICT = 0.2  # a named platform outweighs generic GNSS / distance cues for another platform
+# Without a matching wording trigger, require overlap with a meaningful share of the brief.
+# This rejects incidental phone/map words without a closed list of permitted navigation verbs.
+DECODE_MIN_COVERAGE = 0.4
+# Platforms (from the doc), sensors and environments support ranking, but do not by
+# themselves establish a task in fallback matches. Other shared task wording stays open.
+DECODE_CONTEXT = frozenset(stem(w) for w in (
+    "camera imu inertial sensor visual lidar radar gnss stereo monocular depth "
+    "indoor outdoor building floor corridor street urban forest warehouse tunnel underground "
+    "night thermal smoke weather map offline").split())
 # Calibrated on tools/decode_eval.json (python3 tools/decode_eval.py --sweep): a best row under DECODE_FLOOR
 # is returned flagged low_confidence; a statement that shares fewer than DECODE_MIN_EVIDENCE distinct words
 # with all rows together (a single generic word such as "team" or "hours") gets no row at all.
@@ -393,7 +406,15 @@ def decoder_rows(text=None):
     rows, triggers = [], []
     for header, body in md_tables(text):
         wi, ri = column(header, "words"), column(header, "rows")
-        if wi is not None and ri is not None:
+        pi, ei = column(header, "platform"), column(header, "explicit wording")
+        if pi is not None and ei is not None and ri is not None:
+            for cells in body:
+                if len(cells) <= max(pi, ei, ri):
+                    continue
+                triggers.append({"platform": plain(cells[pi]), "words": cells[ei],
+                                 "rows": [int(x) for x in re.findall(r"\d+", cells[ri])],
+                                 "sides": trigger_groups(cells[ei])})
+        elif wi is not None and ri is not None:
             for cells in body:
                 if len(cells) <= max(wi, ri):
                     continue
@@ -414,6 +435,9 @@ def decoder_rows(text=None):
                              "start_from": links(get("start"), "sample"), "start_from_text": plain(get("start")),
                              "cards": links(get("stack"), "card"), "datasets": plain(get("datasets")),
                              "risk": plain(get("risk")), "pitch": plain(get("pitch"))})
+    for row in rows:
+        row["platforms"] = [tr["platform"] for tr in triggers
+                            if tr.get("platform") and row["row"] in tr["rows"]]
     return rows, triggers
 
 
@@ -432,6 +456,10 @@ def decode(statement, limit=DECODE_MAX_ROWS, text=None):
     if not rows:
         return []
     seq = trigger_tokens(statement)
+    context = DECODE_CONTEXT | {t for tr in triggers if tr.get("platform")
+                                for side in tr["sides"] for g in side for p in g["patterns"] for t in p}
+    platforms = {tr["platform"] for tr in triggers if tr.get("platform") and tr["sides"] and
+                 all(any(has_seq(seq, p) for g in side for p in g["patterns"]) for side in tr["sides"])}
     toks = {stem(t) for t in words(statement) if t not in DECODE_STOP}
     fields = {r["row"]: {f: {stem(t) for t in words(r.get(f, "")) if t not in DECODE_STOP} for f in DECODE_FIELD_W}
               for r in rows}
@@ -443,7 +471,10 @@ def decode(statement, limit=DECODE_MAX_ROWS, text=None):
     score = {r["row"]: 0.0 for r in rows}
     why = {r["row"]: [] for r in rows}
     evidence = {r["row"]: set() for r in rows}
+    task_evidence = {r["row"]: set() for r in rows}
     for tr in triggers:
+        if tr.get("platform"):
+            continue
         hit, used = [], set()
         for side in tr["sides"]:
             got = [g for g in side if any(has_seq(seq, p) for p in g["patterns"])]
@@ -469,8 +500,17 @@ def decode(statement, limit=DECODE_MAX_ROWS, text=None):
             hit = {t for t in cols[f] - seen if any(tok_match(t, s, False) for s in toks)}
             score[n] += w * sum(idf(t) for t in hit)
             seen |= cols[f]
-            evidence[n] |= {s for s in toks for t in hit if tok_match(t, s, False)}
-    ranked = sorted((r for r in rows if score[r["row"]] > 0), key=lambda r: (-score[r["row"]], r["row"]))
+            shared = {s for s in toks for t in hit if tok_match(t, s, False)}
+            evidence[n] |= shared
+            if f in ("name", "approach", "pitch"):
+                task_evidence[n] |= shared - context
+    for row in rows:
+        if platforms and row["platforms"] and not platforms.intersection(row["platforms"]):
+            score[row["row"]] *= DECODE_PLATFORM_CONFLICT
+    ranked = sorted((r for r in rows if score[r["row"]] > 0 and
+                     (why[r["row"]] or (task_evidence[r["row"]] and
+                      len(evidence[r["row"]] & toks) / max(1, len(toks)) >= DECODE_MIN_COVERAGE))),
+                    key=lambda r: (-score[r["row"]], r["row"]))
     if not ranked or len(set().union(*(evidence[r["row"]] for r in ranked))) < DECODE_MIN_EVIDENCE:
         return []
     best = score[ranked[0]["row"]]
@@ -518,7 +558,7 @@ def matches_filters(r, a):
         return False
     if a.concept and a.concept not in r.get("concepts", []):
         return False
-    return True
+    return readiness.matches(r, a)
 
 
 def brief(r):
@@ -530,8 +570,13 @@ def brief(r):
         bits.append(f"fit:{r['hackathon_fit']}")
     if r.get("status"):
         bits.append(f"status:{r['status']}" + (f", {r['deps']}" if r.get("deps") else ""))
+    if r.get('readiness'):
+        rd = r['readiness']
+        bits.append(f"compute:{rd['compute']}, offline:{rd['offline']}, validation:{rd['validation']}")
     where = r.get("url") or r.get("readme") or r.get("page", "")
-    return " | ".join(str(b) for b in bits) + "\n    " + (r.get("summary", "")[:200]) + f"\n    {where}"
+    limitation = (r.get('readiness') or {}).get('limitation')
+    return (" | ".join(str(b) for b in bits) + "\n    " + (r.get("summary", "")[:200]) + f"\n    {where}"
+            + (f"\n    Limitation: {limitation}" if limitation else ''))
 
 
 def main():
@@ -542,10 +587,19 @@ def main():
     p.add_argument("--fit", choices=["high", "medium", "low"])
     p.add_argument("--domain")
     p.add_argument("--concept")
+    for key, choices in readiness.ENUMS.items():
+        p.add_argument('--' + key, choices=choices)
+    p.add_argument('--platform', help='tested OS/architecture label, e.g. macos-arm64')
+    for key in readiness.BUDGETS:
+        p.add_argument('--' + key.replace('_', '-'), type=float)
     p.add_argument("--limit", type=int, default=20)
     p.add_argument("--depth", type=int, default=1)
     p.add_argument("--json", action="store_true")
     a = p.parse_args()
+    try:
+        readiness.filter_options(vars(a))
+    except ValueError as exc:
+        p.error(str(exc))
     if a.cmd == "decode":
         rows = decode(a.arg or "", min(a.limit, DECODE_MAX_ROWS))
         print(json.dumps(rows, indent=1, ensure_ascii=False) if a.json else format_decoded(rows))

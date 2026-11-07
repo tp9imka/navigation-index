@@ -6,6 +6,14 @@ Two no-login OSINT layers for the same area and morning (2026-10-01, SE Baltic a
 
 **Verification:** ran on 2026-11-06 with Python 3.13.15 (macOS arm64) against live public data, no credentials: adsb_hexmap.py pulled 121 ADS-B Exchange snapshots (2026-10-01 03:51-05:51 UTC, 60 s step) => 110 of 129 classified aircraft NACp<8, 64 red hexes, 0 green; control run over NL/DE (13 snapshots, 600 s step) => 19 of 879 bad, 108 green hexes. s1_rfi.py processed 18 S1C/S1D GRD scenes of relative orbit 51 (2026-07-15..2026-10-31, VH at 1/8 resolution, Copernicus DEM slope mask): target scene 2026-10-01 04:51 UTC had 0.128% of pixels at z>3 and 0 candidate hexes; ESA rfiDetected on 9 of 18 dates, one IW3 strip NW of the Sambia peninsula on 6 dates. make_map.py wrote zones.geojson + map.png; the dashboard loaded the manifest in headless Chrome (screenshot out/dashboard.png). 8 offline unit tests pass. Not verified: any link between the C-band RFI and GNSS jammers, land/sea separation, other regions or dates beyond 2026-08-14 (rerun: 38 candidate hexes, 25 of them centred over water per Natural Earth 50m, incl. 8 of the 10 strongest).
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 ## Deep dives
 
 - [adsbexchange-samples](../../docs/dataset-cards/adsbexchange-samples.md) (dataset-cards)

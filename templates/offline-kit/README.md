@@ -18,6 +18,27 @@ cache directory (a USB disk is fine) with everything a team may need, before the
 Files: `prep.py` (fetcher, stdlib only), `build_manifest.py` (regenerates `manifest.json` from the
 repo), `manifest.json`, `test_manifest.py`.
 
+For a smaller, rehearsable selection, use [the three starter bundles](../../docs/starter-bundles.md):
+`receiver-log` (real-attack-replay), `vehicle-sim` (golden-demo v2 SITL), and `vision`
+(e2e-visual-nav-vpair). `bundle.py` selects existing prep items plus a few explicit additions from
+`bundles.json`; it reuses this cache, `.prep-state.json`, `SHA256SUMS` and the existing fetchers.
+It adds per-bundle input hashes, runtime versions, command logs and measured receipts under
+`bundles/`. A successful download or cache verification alone never marks a bundle offline-ready.
+
+```bash
+python3 bundle.py list
+python3 bundle.py plan receiver-log
+python3 bundle.py prepare receiver-log --cache /Volumes/USB/navkit
+python3 bundle.py verify receiver-log --cache /Volumes/USB/navkit
+python3 bundle.py rehearse receiver-log --cache /Volumes/USB/navkit
+# After actually disabling external networking, repeat with --network-disabled.
+```
+
+The runner and its tests use only stdlib; the selected samples can require a venv or Docker.
+Heavy bundles require `--python /absolute/path/to/sample-venv/bin/python`. `prepare --cached-only`
+installs from an already sealed cache on another laptop, without running network fetchers or
+model warm-up. Read the second-laptop checklist before relying on it.
+
 ## Profiles
 
 | Profile | Contents | Size |
@@ -64,6 +85,9 @@ python3 prep.py --out /Volumes/USB/navkit --profile standard --bbox <minlon,minl
 - Model weights are not in the manifest. LightGlue / SuperPoint and the other matchers download weights
   on first use into `~/.cache/torch/hub/checkpoints/`; run each sample once online and copy that folder
   into the cache by hand. See [model-weights-licenses](../../docs/model-weights-licenses.md).
+  The selective **vision bundle** automates its own DINOv2, ALIKED and LightGlue warm-up using
+  `TORCH_HOME=<cache>/torch`, requires their named checkpoints and cached DINOv2 source, and hashes
+  them. Other model combinations still need their own preparation and offline rehearsal.
 
 Selective runs: `--types dataset,pip`, `--items 'dataset:nclt*' --items 'git:cvg/*'`,
 `--pip-platforms linux-amd64`, `--docker-platforms linux/amd64`, `--python-version 3.11`.
@@ -117,6 +141,8 @@ navkit/
   git/bundles/<owner>__<repo>.bundle  (git/mirrors/ with --keep-mirrors)
   js/   tools/pmtiles/<os-arch>/pmtiles   tiles/basemap.pmtiles (+ .source.txt: build URL and bbox)
   SHA256SUMS  LICENSES.txt  .prep-state.json
+  torch/hub/              # vision bundle source and checkpoints, when explicitly prepared
+  bundles/<bundle>/       # latest prepare/verify/rehearse receipts and immutable run folders
 ```
 
 ## Regenerating the manifest
@@ -124,6 +150,7 @@ navkit/
 ```bash
 python3 build_manifest.py          # after adding a sample, card or Dockerfile
 python3 -m unittest test_manifest  # checks every dataset URL / id appears in its card, manifest is current
+python3 -m unittest test_bundles   # selective prep, corrupt/missing assets, real exit/output checks
 ```
 
 Dataset subsets are chosen in `build_manifest.py` (`DATASETS`); each entry carries `evidence`

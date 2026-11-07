@@ -1,0 +1,514 @@
+{
+  "version": 1,
+  "bundles": [
+    {
+      "id": "receiver-log",
+      "sample": "real-attack-replay",
+      "prep_items": [
+        "dataset:vaara-replay"
+      ],
+      "extra_items": [
+        {
+          "id": "dataset:vaara-replay",
+          "type": "dataset",
+          "tier": "minimal",
+          "license": "No license stated by VAARA; fetch directly, do not redistribute raw recordings",
+          "source": "samples/real-attack-replay/fetch_data.sh",
+          "source_revision": "51b5f9cca4af6894d264803cf0a070f6107272f8",
+          "files": [
+            {
+              "method": "http",
+              "dest": "2024-09-10/Test_1/ublox_2024-09-10T073207Z0000.ubx.xz",
+              "url": "https://raw.githubusercontent.com/UniVaasaDigiEco/VAARA/51b5f9cca4af6894d264803cf0a070f6107272f8/2024-09-10/Test_1/ublox_2024-09-10T073207Z0000.ubx.xz",
+              "size": null
+            },
+            {
+              "method": "http",
+              "dest": "2024-09-10/Test_2/ublox_2024-09-10T115512Z0000.ubx.xz",
+              "url": "https://raw.githubusercontent.com/UniVaasaDigiEco/VAARA/51b5f9cca4af6894d264803cf0a070f6107272f8/2024-09-10/Test_2/ublox_2024-09-10T115512Z0000.ubx.xz",
+              "size": null
+            },
+            {
+              "method": "http",
+              "dest": "2024-09-11/Morning_Motorcade/Test_1/ublox_2024-09-11T075704.ubx.xz",
+              "url": "https://raw.githubusercontent.com/UniVaasaDigiEco/VAARA/51b5f9cca4af6894d264803cf0a070f6107272f8/2024-09-11/Morning_Motorcade/Test_1/ublox_2024-09-11T075704.ubx.xz",
+              "size": null
+            },
+            {
+              "method": "http",
+              "dest": "2024-09-11/Afternoon/Test_1/ublox_2024-09-11T122113.ubx.xz",
+              "url": "https://raw.githubusercontent.com/UniVaasaDigiEco/VAARA/51b5f9cca4af6894d264803cf0a070f6107272f8/2024-09-11/Afternoon/Test_1/ublox_2024-09-11T122113.ubx.xz",
+              "size": null
+            },
+            {
+              "method": "http",
+              "dest": "2024-09-11/Afternoon/Test_2/ublox_2024-09-11T143312.ubx.xz",
+              "url": "https://raw.githubusercontent.com/UniVaasaDigiEco/VAARA/51b5f9cca4af6894d264803cf0a070f6107272f8/2024-09-11/Afternoon/Test_2/ublox_2024-09-11T143312.ubx.xz",
+              "size": null
+            },
+            {
+              "method": "http",
+              "dest": "2024-09-12/Test_1/ublox_2024-09-12T071744.ubx.xz",
+              "url": "https://raw.githubusercontent.com/UniVaasaDigiEco/VAARA/51b5f9cca4af6894d264803cf0a070f6107272f8/2024-09-12/Test_1/ublox_2024-09-12T071744.ubx.xz",
+              "size": null
+            },
+            {
+              "method": "http",
+              "dest": "2024-09-12/Test_2/ublox_2024-09-12T085023.ubx.xz",
+              "url": "https://raw.githubusercontent.com/UniVaasaDigiEco/VAARA/51b5f9cca4af6894d264803cf0a070f6107272f8/2024-09-12/Test_2/ublox_2024-09-12T085023.ubx.xz",
+              "size": null
+            }
+          ],
+          "size": null,
+          "size_complete": false
+        }
+      ],
+      "repo_inputs": [
+        "samples/real-attack-replay/*.py",
+        "samples/real-attack-replay/labels.json",
+        "samples/gnss-interference-monitor/*.py"
+      ],
+      "cache_inputs": [
+        "datasets/vaara-replay/2024-09-10/Test_1/ublox_2024-09-10T073207Z0000.ubx",
+        "datasets/vaara-replay/2024-09-10/Test_2/ublox_2024-09-10T115512Z0000.ubx",
+        "datasets/vaara-replay/2024-09-11/Morning_Motorcade/Test_1/ublox_2024-09-11T075704.ubx",
+        "datasets/vaara-replay/2024-09-11/Afternoon/Test_1/ublox_2024-09-11T122113.ubx",
+        "datasets/vaara-replay/2024-09-11/Afternoon/Test_2/ublox_2024-09-11T143312.ubx",
+        "datasets/vaara-replay/2024-09-12/Test_1/ublox_2024-09-12T071744.ubx",
+        "datasets/vaara-replay/2024-09-12/Test_2/ublox_2024-09-12T085023.ubx"
+      ],
+      "unpack": [
+        {
+          "source": "datasets/vaara-replay/2024-09-10/Test_1/ublox_2024-09-10T073207Z0000.ubx.xz",
+          "target": "datasets/vaara-replay/2024-09-10/Test_1/ublox_2024-09-10T073207Z0000.ubx"
+        },
+        {
+          "source": "datasets/vaara-replay/2024-09-10/Test_2/ublox_2024-09-10T115512Z0000.ubx.xz",
+          "target": "datasets/vaara-replay/2024-09-10/Test_2/ublox_2024-09-10T115512Z0000.ubx"
+        },
+        {
+          "source": "datasets/vaara-replay/2024-09-11/Morning_Motorcade/Test_1/ublox_2024-09-11T075704.ubx.xz",
+          "target": "datasets/vaara-replay/2024-09-11/Morning_Motorcade/Test_1/ublox_2024-09-11T075704.ubx"
+        },
+        {
+          "source": "datasets/vaara-replay/2024-09-11/Afternoon/Test_1/ublox_2024-09-11T122113.ubx.xz",
+          "target": "datasets/vaara-replay/2024-09-11/Afternoon/Test_1/ublox_2024-09-11T122113.ubx"
+        },
+        {
+          "source": "datasets/vaara-replay/2024-09-11/Afternoon/Test_2/ublox_2024-09-11T143312.ubx.xz",
+          "target": "datasets/vaara-replay/2024-09-11/Afternoon/Test_2/ublox_2024-09-11T143312.ubx"
+        },
+        {
+          "source": "datasets/vaara-replay/2024-09-12/Test_1/ublox_2024-09-12T071744.ubx.xz",
+          "target": "datasets/vaara-replay/2024-09-12/Test_1/ublox_2024-09-12T071744.ubx"
+        },
+        {
+          "source": "datasets/vaara-replay/2024-09-12/Test_2/ublox_2024-09-12T085023.ubx.xz",
+          "target": "datasets/vaara-replay/2024-09-12/Test_2/ublox_2024-09-12T085023.ubx"
+        }
+      ],
+      "packages": [],
+      "requires_venv": false,
+      "weights": "None: stdlib receiver-log replay, no RTKLIB/SPP or pyubx2 path.",
+      "prepare_commands": [],
+      "rehearse_commands": [
+        {
+          "argv": [
+            "{python}",
+            "{repo}/samples/real-attack-replay/replay.py",
+            "--data",
+            "{cache}/datasets/vaara-replay",
+            "--no-pos-drift",
+            "--baseline-max-score",
+            "0.3",
+            "--out",
+            "{run}/replay.json",
+            "--epochs-csv",
+            "{run}/epochs"
+          ],
+          "cwd": "{repo}/samples/real-attack-replay"
+        }
+      ],
+      "expected_outputs": [
+        {
+          "path": "{run}/replay.json",
+          "kind": "replay",
+          "expected_files": [
+            "2024-09-10/Test_1/ublox_2024-09-10T073207Z0000.ubx",
+            "2024-09-10/Test_2/ublox_2024-09-10T115512Z0000.ubx",
+            "2024-09-11/Morning_Motorcade/Test_1/ublox_2024-09-11T075704.ubx",
+            "2024-09-11/Afternoon/Test_1/ublox_2024-09-11T122113.ubx",
+            "2024-09-11/Afternoon/Test_2/ublox_2024-09-11T143312.ubx",
+            "2024-09-12/Test_1/ublox_2024-09-12T071744.ubx",
+            "2024-09-12/Test_2/ublox_2024-09-12T085023.ubx"
+          ]
+        }
+      ],
+      "fixture": {
+        "prep_items": [],
+        "unpack": [],
+        "cache_inputs": [
+          "fixtures/vaara_shaped.ubx"
+        ],
+        "repo_inputs": [
+          "samples/real-attack-replay/*.py",
+          "samples/real-attack-replay/labels.json",
+          "samples/gnss-interference-monitor/*.py",
+          "samples/real-attack-replay/fixtures/labels_fixture.json"
+        ],
+        "prepare_commands": [
+          {
+            "argv": [
+              "{python}",
+              "{repo}/samples/real-attack-replay/make_fixture.py",
+              "{cache}/fixtures/vaara_shaped.ubx"
+            ],
+            "cwd": "{repo}"
+          }
+        ],
+        "rehearse_commands": [
+          {
+            "argv": [
+              "{python}",
+              "{repo}/samples/real-attack-replay/replay.py",
+              "--data",
+              "{cache}/fixtures",
+              "--labels",
+              "{repo}/samples/real-attack-replay/fixtures/labels_fixture.json",
+              "--no-pos-drift",
+              "--out",
+              "{run}/replay.json",
+              "--epochs-csv",
+              "{run}/epochs"
+            ],
+            "cwd": "{repo}"
+          }
+        ],
+        "expected_outputs": [
+          {
+            "path": "{run}/replay.json",
+            "kind": "replay",
+            "expected_files": [
+              "vaara_shaped.ubx"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "vehicle-sim",
+      "sample": "golden-demo",
+      "prep_items": [
+        "docker-build:nav-sitl-ardupilot:copter-4.6.3",
+        "pip:golden-demo"
+      ],
+      "extra_items": [
+        {
+          "id": "pip:golden-demo",
+          "type": "pip",
+          "tier": "minimal",
+          "license": "per package",
+          "source": "samples/golden-demo/README.md",
+          "requirements": [
+            "pymavlink==2.4.50"
+          ],
+          "vcs": [],
+          "size": null,
+          "size_complete": false
+        }
+      ],
+      "repo_inputs": [
+        "samples/golden-demo/*.py",
+        "samples/golden-demo/*.sh",
+        "samples/golden-demo/*.parm",
+        "samples/golden-demo/data/vgeo_table.json",
+        "samples/altpnt-integrity/*.py",
+        "samples/geoloc-license-clean/*.py",
+        "templates/project-repo/src/navapp/*.py",
+        "samples/sitl-docker/Dockerfile.ardupilot",
+        "samples/sitl-docker/ardupilot-entrypoint.sh"
+      ],
+      "cache_inputs": [
+        "docker/nav-sitl-ardupilot_copter-4.6.3__*.tar",
+        "pip/{pip_platform}/*.whl"
+      ],
+      "packages": [
+        "pymavlink"
+      ],
+      "requires_venv": true,
+      "weights": "None for the chosen v2 replay mode: committed vgeo_table.json replays real matches on synthetic frames. --live needs additional NAIP data and ALIKED/LightGlue weights and is outside this bundle.",
+      "prepare_commands": [
+        {
+          "argv": [
+            "docker",
+            "version"
+          ],
+          "cwd": "{repo}"
+        },
+        {
+          "argv": [
+            "docker",
+            "load",
+            "-i",
+            "{image_archive}"
+          ],
+          "cwd": "{repo}"
+        }
+      ],
+      "rehearse_commands": [
+        {
+          "argv": [
+            "docker",
+            "image",
+            "inspect",
+            "nav-sitl-ardupilot:copter-4.6.3"
+          ],
+          "cwd": "{repo}"
+        },
+        {
+          "argv": [
+            "sh",
+            "{repo}/samples/golden-demo/run.sh",
+            "--v2"
+          ],
+          "cwd": "{repo}/samples/golden-demo"
+        },
+        {
+          "argv": [
+            "{python}",
+            "-c",
+            "import shutil,sys; shutil.copytree(sys.argv[1],sys.argv[2])",
+            "{repo}/samples/golden-demo/runs/navdash-v2",
+            "{run}/navdash"
+          ],
+          "cwd": "{repo}"
+        }
+      ],
+      "expected_outputs": [
+        {
+          "path": "{run}/navdash/summary.json",
+          "kind": "json"
+        },
+        {
+          "path": "{run}/navdash/manifest.json",
+          "kind": "json"
+        },
+        {
+          "path": "{run}/navdash/ss-monitor.jsonl",
+          "kind": "nonempty"
+        }
+      ],
+      "runtime_tools": {
+        "docker_server": [
+          "docker",
+          "version",
+          "--format",
+          "{{.Server.Version}}"
+        ],
+        "sitl_image": [
+          "docker",
+          "image",
+          "inspect",
+          "--format",
+          "{{.Id}}",
+          "nav-sitl-ardupilot:copter-4.6.3"
+        ]
+      }
+    },
+    {
+      "id": "vision",
+      "sample": "e2e-visual-nav-vpair",
+      "prep_items": [
+        "dataset:vpair-sample",
+        "pip:vision-build-tools",
+        "pip:e2e-visual-nav-vpair"
+      ],
+      "extra_items": [
+        {
+          "id": "pip:vision-build-tools",
+          "type": "pip",
+          "tier": "minimal",
+          "license": "per package",
+          "source": "templates/offline-kit/bundles.json",
+          "requirements": [
+            "setuptools==80.9.0",
+            "wheel==0.45.1"
+          ],
+          "vcs": [],
+          "size": null,
+          "size_complete": false
+        },
+        {
+          "id": "pip:e2e-visual-nav-vpair",
+          "type": "pip",
+          "tier": "standard",
+          "license": "per package (see PyPI metadata)",
+          "source": "samples/e2e-visual-nav-vpair/requirements.txt",
+          "requirements": [
+            "torch==2.15.0",
+            "torchvision==0.29.2",
+            "kornia==0.9.0",
+            "opencv-python==5.0.0.93",
+            "numpy==2.5.4",
+            "rasterio==1.5.2",
+            "affine==3.0.1",
+            "pillow==13.0.0",
+            "matplotlib==3.11.2"
+          ],
+          "vcs": [
+            "lightglue @ git+https://github.com/cvg/LightGlue.git@5a650c444718caffc2669dc0094cde908f42dd73"
+          ],
+          "size": null,
+          "size_complete": false,
+          "note": "Vision-bundle override: normal OpenCV and matplotlib satisfy pinned LightGlue package metadata; use a fresh venv without opencv-python-headless."
+        }
+      ],
+      "repo_inputs": [
+        "samples/e2e-visual-nav-vpair/*.py",
+        "samples/relative-nav-benchmark/*.py",
+        "samples/relative-nav-benchmark/aerial/*.py",
+        "samples/vpr-large-area/*.py",
+        "samples/geoloc-license-clean/*.py",
+        "samples/altpnt-integrity/*.py",
+        "samples/altpnt-integrity/calibration.json"
+      ],
+      "cache_inputs": [
+        "datasets/vpair-sample/vpair_sample/poses_query.txt",
+        "datasets/vpair-sample/vpair_sample/poses_reference_view.txt",
+        "datasets/vpair-sample/vpair_sample/queries/*.png",
+        "datasets/vpair-sample/vpair_sample/reference_views/*.png",
+        "datasets/vpair-sample/vpair_sample/reference_views/depth_*.npy",
+        "datasets/vpair-sample/vpair_sample/distractors/*.png",
+        "pip/{pip_platform}/*.whl",
+        "torch/hub/checkpoints/dinov2_vits14_pretrain.pth",
+        "torch/hub/checkpoints/aliked-n16.pth",
+        "torch/hub/checkpoints/aliked_lightglue_v0-1_arxiv.pth",
+        "torch/hub/facebookresearch_dinov2_7764ea0f912e53c92e82eb78a2a1631e92725fc8/hubconf.py",
+        "torch/hub/facebookresearch_dinov2_7764ea0f912e53c92e82eb78a2a1631e92725fc8/**/*.py",
+        "pip/sdist/lightglue-*"
+      ],
+      "unpack": [
+        {
+          "source": "datasets/vpair-sample/vpair_sample.zip",
+          "target": "datasets/vpair-sample"
+        }
+      ],
+      "packages": [
+        "torch",
+        "torchvision",
+        "kornia",
+        "opencv-python",
+        "numpy",
+        "rasterio",
+        "affine",
+        "pillow",
+        "lightglue",
+        "setuptools",
+        "wheel",
+        "matplotlib"
+      ],
+      "requires_venv": true,
+      "weights": "Required, not included by pip: DINOv2 ViT-S/14 pretrained backbone plus pinned torch.hub source, ALIKED aliked-n16, and ALIKED LightGlue matcher. prepare instantiates all three with TORCH_HOME=<cache>/torch and fails unless named files exist; verify hashes every cached source and checkpoint.",
+      "prepare_commands": [
+        {
+          "argv": [
+            "{python}",
+            "{kit}/warm_models.py",
+            "--repo",
+            "{repo}"
+          ],
+          "cwd": "{repo}",
+          "online_only": true
+        }
+      ],
+      "rehearse_commands": [
+        {
+          "argv": [
+            "{python}",
+            "{repo}/samples/e2e-visual-nav-vpair/frontend.py",
+            "--data",
+            "{cache}/datasets/vpair-sample",
+            "--strides",
+            "1",
+            "4",
+            "8",
+            "--out",
+            "{run}/frontend.json"
+          ],
+          "cwd": "{repo}/samples/e2e-visual-nav-vpair"
+        },
+        {
+          "argv": [
+            "{python}",
+            "{repo}/samples/e2e-visual-nav-vpair/frontend.py",
+            "--data",
+            "{cache}/datasets/vpair-sample",
+            "--strides",
+            "1",
+            "4",
+            "8",
+            "--yaw-bias-deg",
+            "2",
+            "--out",
+            "{run}/frontend_yaw2.json"
+          ],
+          "cwd": "{repo}/samples/e2e-visual-nav-vpair"
+        },
+        {
+          "argv": [
+            "{python}",
+            "{repo}/samples/e2e-visual-nav-vpair/run_fusion.py",
+            "--data",
+            "{cache}/datasets/vpair-sample",
+            "--frontend",
+            "{run}/frontend.json",
+            "--frontend-biased",
+            "{run}/frontend_yaw2.json",
+            "--out",
+            "{run}/fusion"
+          ],
+          "cwd": "{repo}/samples/e2e-visual-nav-vpair"
+        }
+      ],
+      "expected_outputs": [
+        {
+          "path": "{run}/frontend.json",
+          "kind": "json"
+        },
+        {
+          "path": "{run}/frontend_yaw2.json",
+          "kind": "json"
+        },
+        {
+          "path": "{run}/fusion/e2e_result.json",
+          "kind": "json"
+        },
+        {
+          "path": "{run}/fusion/error_vs_distance.csv",
+          "kind": "nonempty"
+        },
+        {
+          "path": "{run}/fusion/navdash/manifest.json",
+          "kind": "json"
+        }
+      ],
+      "weight_sources": [
+        {
+          "model": "dinov2_vits14",
+          "url": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vits14/dinov2_vits14_pretrain.pth",
+          "license": "Apache-2.0"
+        },
+        {
+          "model": "aliked-n16",
+          "url": "https://github.com/Shiaoming/ALIKED/raw/main/models/aliked-n16.pth",
+          "license": "BSD-3-Clause; mutable upstream URL, prepared bytes are hashed"
+        },
+        {
+          "model": "aliked_lightglue",
+          "url": "https://github.com/cvg/LightGlue/releases/download/v0.1_arxiv/aliked_lightglue.pth",
+          "license": "Apache-2.0"
+        }
+      ]
+    }
+  ]
+}

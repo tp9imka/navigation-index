@@ -6,6 +6,14 @@ Simulates two small UAVs observed by a noisy bearing/range radar with clutter an
 
 **Verification:** ran radar_jpda_ospa.py with stonesoup 1.9.1, numpy 2.5.4, scipy 1.18.1 on Python 3.12.14 on 2026-11-06: 2 tracks held on 2 truths, OSPA mean 17.0 m / max 53.0 m (c=100 m), identical over 3 runs after fixing set-ordering nondeterminism; output in README. Single seed and scenario, no Monte Carlo; initiators/deleters and live radar input not exercised.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 **Concepts:** [Tracking and data association](../../catalog/concepts/target-tracking.md), [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md)
 
 **Tags:** `stone-soup`, `jpda`, `ekf`, `ospa`, `radar`, `c-uas`, `airspace-awareness`

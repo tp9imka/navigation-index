@@ -14,6 +14,10 @@ it lists.
 
 ## Got a problem statement? Four hops
 
+Before choosing: [filter by the resources you have](docs/practical-readiness.md) (CPU/GPU,
+hardware, download/setup budget, tested platform and offline evidence), then prepare one of
+the [three starter bundles](docs/starter-bundles.md). Each has a rehearsal path and a fallback.
+
 1. **Decode it.** [docs/problem-statement-decoder.md](docs/problem-statement-decoder.md):
    wording table => 1-3 of the decoder rows, each with approach, stack, data, starting
    sample, risk, pitch. Then [docs/day0-runbook.md](docs/day0-runbook.md) for the first three hours.
@@ -41,6 +45,7 @@ it lists.
 | Model weights vs code licenses (SuperPoint, MASt3R...) | [docs/model-weights-licenses.md](docs/model-weights-licenses.md) |
 | Team repo skeleton, judge dashboard, offline cache | [templates/](templates/README.md): [project-repo](templates/project-repo/), [demo-dashboard](templates/demo-dashboard/README.md), [offline-kit](templates/offline-kit/README.md) |
 | Learn navigation fast | [docs/primer/](docs/primer/README.md), [docs/learning-paths.md](docs/learning-paths.md) |
+| Record, replay and inspect sensor logs | [recording-replay](samples/recording-replay/README.md), [MCAP](docs/integration-cards/foxglove__mcap.md), [Rosbags](docs/integration-cards/ternaris__rosbags.md), [Rerun](docs/integration-cards/rerun-io__rerun.md) |
 | Browse by topic | [INDEX.md](INDEX.md) => `catalog/concepts/` |
 | Search UI and graph in a browser | `python3 -m http.server 8000` from the repo root, then open `/site/` ([site/README.md](site/README.md)) or `/graph/` |
 | Use it from an LLM agent | [AGENTS.md](AGENTS.md), [llms.txt](llms.txt), MCP server `tools/mcp_server.py` ([samples/llm-agent-usage](samples/llm-agent-usage/README.md)) |

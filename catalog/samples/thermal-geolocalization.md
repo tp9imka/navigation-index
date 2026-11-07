@@ -6,6 +6,14 @@ Real nadir DJI M4T thermal frames (Thermal-UAV / SCC-Loc, Apache-2.0 card) match
 
 **Verification:** Ran 2026-11-06 on Apple M2 Max (torch 2.15.0, LightGlue git 5a650c4, OpenCV 5.0.0, Python 3.12.14): fetch_data.py pulled 180 Thermal-UAV frames (9 flights) and cropped the 0.3 m ref.tif (~2.8 GB transfer); run_eval.py on MPS, 120 frames from 6 flights (111 on the map), revised gate: ALIKED/grad 18/111 fixes (median 2.6 m), ALIKED/raw 16/111 (3.3 m), DISK/grad 15/111, SIFT 1/111; village-night best with ALIKED/grad 9/20, village-night-fog 0/14 for every method; 0 false fixes in 1080 attempts (84 accepted), and 0 in 540 attempts (37 accepted) on 3 held-out validation-split flights. The revised gate was chosen after the first run (a-priori gate: 32 accepted, 0 false). SGM retrieval (research-only weights): top-1 within 20 m on 26-29/111, 182 of 238 ungated fixes false. Median s/frame CPU vs MPS: ALIKED 1.26 / 0.18, DISK 2.42 / 0.29, SIFT 0.21 / 0.30. Tests: 11 pass in the venv; plain python3 9 pass, 2 skip. Boson-nighttime (gated, NC, 74 GB), STHN/UASTHN fine stages, MINIMA and RoMa were not run.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 **Concepts:** [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md), [Onboard / edge AI perception](../../catalog/concepts/edge-ai.md), [Feature detection and matching](../../catalog/concepts/feature-matching.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `thermal`, `night`, `infrared`, `lightglue`, `aliked`, `disk`, `sift`, `clahe`, `cross-modal`, `integrity`, `false-fix`, `geotiff`, `mps`, `gnss-denied`, `uav`

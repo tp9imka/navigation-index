@@ -45,6 +45,10 @@ STATEMENT_RULE = ("For a problem statement, call decode with the statement text 
 MAX_STATEMENT_CHARS = 4000
 
 FILTERS = {
+    **{key: {'type': 'string', 'enum': list(choices)} for key, choices in query.readiness.ENUMS.items()},
+    'platform': {'type': 'string', 'description': 'tested OS/architecture label, e.g. macos-arm64'},
+    'max_setup_minutes': {'type': 'number', 'minimum': 0, 'description': 'measured setup ceiling; unknown is excluded'},
+    'max_download_mb': {'type': 'number', 'minimum': 0, 'description': 'dataset MB ceiling; dependencies excluded, unknown is excluded'},
     "kind": {"type": "string", "description": "repo, sample, guide, concept, paper, doc, dataset, standard, "
                                                "talk, ... (unknown kinds return an error listing the valid ones)"},
     "fit": {"type": "string", "enum": ["high", "medium", "low"], "description": "hackathon fit"},
@@ -131,6 +135,10 @@ def data():
 
 
 def filters(args, concept=None):
+    try:
+        practical = query.readiness.filter_options(args)
+    except ValueError as exc:
+        raise ToolError(str(exc)) from exc
     kind = args.get("kind")
     if kind:
         recs, _ = data()
@@ -138,7 +146,7 @@ def filters(args, concept=None):
         if kind not in kinds:
             raise ToolError(f"unknown kind: {kind}; valid kinds: {', '.join(kinds)}")
     return SimpleNamespace(kind=args.get("kind"), fit=args.get("fit"),
-                           domain=args.get("domain"), concept=concept or args.get("concept"))
+                           domain=args.get("domain"), concept=concept or args.get("concept"), **practical)
 
 
 def int_arg(args, key, default, lo, hi):
@@ -157,7 +165,7 @@ def limit_of(args):
 def brief(r, **extra):
     out = {"id": r["id"], "kind": r["kind"], "name": r.get("name") or r.get("title"),
            "summary": (r.get("summary") or "")[:SUMMARY_CHARS]}
-    for key in ("url", "hackathon_fit", "page", "readme", "status", "deps"):
+    for key in ("url", "hackathon_fit", "page", "readme", "status", "deps", "readiness"):
         if r.get(key):
             out[key] = r[key]
     stars = (r.get("github") or {}).get("stargazers_count")

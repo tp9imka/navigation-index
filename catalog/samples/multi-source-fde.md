@@ -6,6 +6,14 @@ Extends two-source-integrity-vpair from detection to exclusion. One altpnt v2 EK
 
 **Verification:** Ran 2026-11-06 on Apple M2 Max, CPython 3.12.14 venv (numpy 2.5.4, scipy 1.18.1, rasterio 1.5.2): run_fde.py on the local VPAIR sample and two-source's NRW DSM / GLO-30 data, 10 seeds x 7 scenarios x 11 configurations, 164 s. Reproduces two-source's GNSS-denied three-source numbers with the reused max-separation monitor (84.7 % available at AL 50 nominal, 19 HMI at AL 50 under TRN ambiguity). Subset FDE: 0 HMI and 0 MI in every run at AL 25/50/100. GNSS 2 m/s drag-off: detected in 5-8 s, GNSS excluded 10/10, availability at AL 50 after onset 18.8 % detection-only => 83.8 %, error max 279 m => 21 m. Wrong exclusions: single-fault FDE 1 of 60 (a double fault, stayed unavailable, no HMI), dual-fault FDE 0 of 60, GNSS denied 0 of 30 with 7 runs unavailable instead; max-separation 27 of 60 and 25 of 30. Dual-fault monitoring drops GNSS-denied nominal availability at AL 50 from 84.7 % to 5.0 %. Tests: venv 17 pass; plain /opt/homebrew/bin/python3 3.14.7 14 pass, 3 skip. GNSS and TRN sensors simulated, faults injected, visual fixes and VO real.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 **Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `integrity`, `fde`, `araim`, `solution-separation`, `fault-exclusion`, `protection-level`, `spoofing`, `gnss-spoofing`, `trn`, `visual-geolocalization`, `vpair`, `wrong-exclusion`, `availability`, `fault-injection`

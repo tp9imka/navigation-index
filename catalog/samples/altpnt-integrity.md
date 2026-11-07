@@ -6,6 +6,14 @@ A stdlib-only simulated UAV flight with INS, VIO-like velocity, intermittent vis
 
 **Verification:** ran with python3.14.7 stdlib on 2026-11-06: default run, --magnav, --no-gnss, --al-sweep, 20-seed Monte Carlo for 8 configurations, CSV and SVG writers (SVG rendered with macOS qlmanage and inspected); 15 unit tests pass (python3 -m unittest), and the detection tests were confirmed to fail with detection disabled. Synthetic data only; no real flight log or indexed repo was run. v2: ran with python3.14.7 and 3.12.14 stdlib on 2026-11-06: calibration.py --check reproduces calibration.json from the committed sibling results; 20-seed Monte Carlo over 29 world/filter rows (182 s), v1 rows identical to the v1 table; 10 v2 unit tests pass. Error models are measured on short real runs (27-197 s) and replayed over a synthetic 600 s flight; correlation times and fault-rate priors for GNSS are assumptions.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 ## Deep dives
 
 - [uzh-fpv](../../docs/dataset-cards/uzh-fpv.md) (dataset-cards)

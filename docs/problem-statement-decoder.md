@@ -20,12 +20,20 @@ Legend: "card" = [integration card](integration-cards/) (install, gotchas, licen
 "Start from" lists samples best match first. Status, deps, first command and the key measured
 number of each are in [samples/README.md](../samples/README.md); the numbers with their input
 type (real / SITL / synthetic) are in [evidence-matrix.md](evidence-matrix.md). The "Start
-from" column was refreshed on 2026-11-06 after review round 2 against every sample with a
-`sample.json`.
+from" column was refreshed on 2026-11-07 against the evidence matrix. A relevant card is
+not a runnable starter: rows 28-30 explicitly identify where a matching sample is missing.
 
 Search tip: do not paste the statement into `tools/query.py search` or the MCP `search` tool.
 Match it here first, then search with the row's keywords (repo names, method names, "jammer
 localization sensor network TAK").
+
+The hub also covers pedestrian wayfinding, offline road routing and robot motion planning.
+Read the platform and task first: "without GPS" alone does not imply an aircraft, and a
+road-routing engine does not estimate position or avoid nearby moving obstacles.
+
+For recording and evaluation plumbing, [recording-replay](../samples/recording-replay/README.md)
+provides verified synthetic JSONL and MCAP round trips with explicit timestamps, frames and
+separate truth. It checks preservation and evaluation; it is not a navigation solution.
 
 ## Decode the wording first
 
@@ -42,7 +50,10 @@ localization sensor network TAK").
 | "real data", "recorded attack", "validate", "evidence" | Replay public recordings with labelled attacks | 3, 4, 6 |
 | "ship", "USV", "port", "AIS", "maritime", "vessel / patrol vessel", "coast" | Maritime integrity or AIS plausibility | 7, 8 |
 | "underwater", "AUV", "UUV" | No GNSS at all: DVL + acoustic | 17 |
-| "soldier", "dismounted", "indoors", "infantry", "squad", "on foot", "first responder", "inside a building / multi-storey", "basement", "stairwell" | Pedestrian INS + ranging + map | 9 |
+| "soldier", "dismounted", "infantry", "squad", "foot-mounted", "basement", "stairwell" | Foot-mounted pedestrian INS + ranging + map; handheld phones use row 28 | 9 |
+| "phone / smartphone / handheld", "pedestrian", "person", "indoor", "walking" + "wayfinding", "navigation", "walking route", "inertial", "IMU" | Pedestrian or handheld visual-inertial localization + floor-plan routing | 28 |
+| "road routing", "driving route", "road closures", "blocked roads", "closed streets", "impassable roads", "ambulance route", "car route" | Road-graph routing with explicit closures and local map data | 29 |
+| "obstacle", "replan / replanning", "costmap", "collision avoidance", "blocked aisle", "path" + "rover", "robot", "wheeled" | Ground-robot local planning and safe stopping; localization is an input | 30, 14 |
 | "tunnel", "underground" | No GNSS for the whole segment: on foot => pedestrian INS; on wheels or rails => odometry + IMU | 9, 14 |
 | "swarm", "team", "cooperative", "relative" | Inter-agent ranging, shared estimate | 10, 11 |
 | "C2", "common operating picture", "operator", "TAK" | Picture with nav-health and uncertainty | 12, 22 |
@@ -53,6 +64,24 @@ localization sensor network TAK").
 | "AI", "LLM", "agent", "assistant" | Deterministic tools + LLM narration + human approval | 21, 22 |
 | "night", "thermal", "smoke", "weather" | Sources that do not need daylight: stars (clear night), terrain, magnetic; thermal geolocalization or radar | 25, 15, 18, 16, 14 |
 | "how long", "endurance", "holdover", "budget" | Holdover calculator with IMU grades | 26 |
+
+## Explicit platform evidence
+
+The decoder uses these cues to downweight rows for a conflicting named platform. Rows not
+listed here remain available as general methods. A phone can be in a car, and a pedestrian
+can be beside a rover: multiple named platforms remain candidates, with task wording deciding
+the order. Matching uses the documented wording and shared content, without a required list
+of navigation verbs. Without a wording trigger, incidental overlap with a small part of a
+brief is insufficient. With no clear evidence, read the low-confidence warning and check
+the rows manually.
+
+| Platform | Explicit wording | Rows |
+|---|---|---|
+| pedestrian | "pedestrian", "person", "people", "phone", "smartphone", "handheld", "soldier", "infantry", "dismounted", "on foot", "foot-mounted" | 9, 28 |
+| ground | "UGV", "ground robot", "rover", "wheeled", "car", "vehicle", "truck", "ambulance", "road", "railway", "train", "metro", "warehouse robot" | 14, 23, 29, 30 |
+| aerial | "drone", "UAV", "quadcopter", "fixed-wing", "aircraft", "ArduPilot", "PX4", "autopilot" | 1, 2, 10, 11, 13, 15, 20, 27 |
+| maritime | "maritime", "vessel", "ship", "USV", "AIS", "coast", "port" | 7, 8 |
+| underwater | "underwater", "AUV", "UUV", "subsea", "under ice" | 17 |
 
 ## The table
 
@@ -85,10 +114,13 @@ localization sensor network TAK").
 | 25 | Heading and position backup at sea or on long flights | Star-tracker attitude and heading with a level and clock => coarse fix; cross-check GNSS heading. Idea 15. | [cedar-solve card](integration-cards/smroid__cedar-solve.md) (git tag v0.6.0, `--no-deps`, runs on NumPy 2), [tetra3 card](integration-cards/esa__tetra3.md), [Skyfield card](integration-cards/skyfielders__python-skyfield.md) | cedar-solve test frames + SkyView cutouts (fetched by the sample) + own night-sky shots | [celestial-star-tracker](../samples/celestial-star-tracker/) (real plate solves, position error budget) | Clouds at the venue. The vertical is the whole position budget: 1 arcmin of level = 1.85 km, 1 mg accel bias = 6.4 km, so from a moving platform heading is the realistic win | "No RF at all: the sky checks the GNSS." |
 | 26 | How long can we operate after GNSS loss? | Holdover calculator: IMU grade + aiding rate => time until error exceeds the alert limit; validate one curve on real data. Idea 5. | [gnss-ins-sim card](integration-cards/aceinna__gnss-ins-sim.md), [KF-GINS card](integration-cards/i2nav-whu__kf-gins.md), [FilterPy card](integration-cards/rlabbe__filterpy.md) | [KITTI](dataset-cards/kitti.md) 1.2 GB, [NCLT](dataset-cards/nclt.md) 0.24 GB, [TUM-VI](dataset-cards/tum-vi.md) 1.71 GB | [gnss-ins-ekf-outage](../samples/gnss-ins-ekf-outage/), [timing-holdover](../samples/timing-holdover/) (clock holdover), [relative-nav-benchmark](../samples/relative-nav-benchmark/) (fitted drift models), [project-repo](../templates/project-repo/) (`time_to_exceed_al_s`) | Presenting simulated numbers as measured | "Planners get an honest number: minutes until we are lost, per IMU, per aid." |
 | 27 | Fixed-wing long-range flight (20-30 km) through GNSS spoofing or jamming | Companion monitor (velocity test vs VO or airspeed, solution separation over absolute fixes) => EKF3 source switch to ExternalNav fed by a GNSS-free reference; absolute fixes carry the route (visual by day; thermal, terrain or magnetic at night); dead reckoning alone is the baseline, not the answer. Ideas 9, 11, 18. | [ArduPilot card](integration-cards/ardupilot__ardupilot.md) (EKF3 source sets, ExternalNav), [pymavlink card](integration-cards/ardupilot__pymavlink.md), [LightGlue card](integration-cards/cvg__lightglue.md) (ALIKED), [Rasterio card](integration-cards/rasterio__rasterio.md), guide: [autopilot-gnss-fault-handling](autopilot-gnss-fault-handling.md) | [VPAIR](dataset-cards/vpair.md) sample 0.86 GB, [Thermal sets](dataset-cards/thermal-datasets.md), [Geobasis NRW LiDAR](dataset-cards/geobasis-nrw-lidar.md), [Copernicus GLO-30](dataset-cards/copernicus-glo30.md) | [golden-demo-fixedwing](../samples/golden-demo-fixedwing/) (ArduPlane 4.6.3 SITL, 27.6 km, day / night / dead-reckoning responses), [two-source-integrity-vpair](../samples/two-source-integrity-vpair/) (second absolute source and PL on a real flight), [autopilot-spoof-response](../samples/autopilot-spoof-response/) (stock EKF behaviour under spoofing), [terrain-heightmap-pf](../samples/terrain-heightmap-pf/), [e2e-visual-nav-vpair](../samples/e2e-visual-nav-vpair/), [thermal-geolocalization](../samples/thermal-geolocalization/) | Airspeed + compass dead reckoning drifted ~800 m over 20 km in SITL; fixed-wing AUTO keeps flying on whatever it believes (Plane's EKF failsafe acts only in VTOL modes); EKF3 never flagged a 1 m/s coherent drag; ExternalNav NE must use ArduPilot's spherical `LATLON_TO_M` (34 m off at 11 km otherwise); set `AHRS_OPTIONS` bit 0 or DCM falls back to the spoofed GPS | "The aircraft flies the route it was given, not the one the spoofer draws - and we show how far dead reckoning alone gets." |
+| 28 | Pedestrian phone indoor wayfinding without GPS | Camera + IMU visual-inertial odometry in a building frame; anchor or relocalize to a floor plan before giving walking directions, carry uncertainty and floor transitions. Use phone IMU baselines for comparison; foot-mounted ZUPT assumes a different sensor placement. | [OpenVINS card](integration-cards/rpng__open_vins.md), [RoNIN](../catalog/repos/sachini__ronin.md), [MapLibre card](integration-cards/maplibre__maplibre-gl-js.md) | [TUM-VI](dataset-cards/tum-vi.md) (camera + IMU benchmark; not a phone wayfinding run), [RoNIN](dataset-cards/ronin.md) (phone IMU) | No runnable phone-wayfinding starter in the hub; use the cards to assemble and validate one on the intended handset | Camera/IMU calibration, time alignment, phone pose and lighting change drift; a floor plan needs a known origin and floor. OpenVINS was not integrated on a phone here; RoNIN data and weights have research-use limits | "Walking directions show both the next turn and how certain the phone is about your location." |
+| 29 | Offline road routing around blocked roads for rescue vehicles | Cache a regional OSM road graph before disconnecting; compute driving routes locally, encode verified closures as graph exclusions or request-time avoids, and compare a baseline route with the detour. Keep closure provenance and map age visible. | [OSRM card](integration-cards/project-osrm__osrm-backend.md), [Valhalla card](integration-cards/valhalla__valhalla.md), [MapLibre card](integration-cards/maplibre__maplibre-gl-js.md), [PMTiles card](integration-cards/protomaps__pmtiles.md) | Local OSM regional extract plus a separately curated closure list; no disaster-road ground truth is included | No runnable offline road-routing starter in the hub; build the regional graph and verify closure handling with the routing cards before the event | Offline maps do not reveal newly impassable roads. OSRM preprocessing and Valhalla avoid options differ; test the exact backend and profile. A planned rescue route requires current human verification | "Rescue teams can calculate a detour locally and see which closures and map version it uses." |
+| 30 | Ground rover obstacle replanning and collision avoidance | Feed a localized ground robot pose and lidar/depth observations into a local costmap; Nav2 plans and controls around obstacles, replans when an aisle is blocked, and stops when no valid path exists. Test in simulation before hardware. | [Nav2 card](integration-cards/ros-navigation__navigation2.md), [robot_localization card](integration-cards/cra-ros-pkg__robot_localization.md), [Gazebo card](integration-cards/gazebosim__gz-sim.md) | Simulated occupancy map and obstacle scenarios; real sensor replay is a separate validation step | No runnable rover obstacle-replanning starter in the hub; begin with the Nav2 card's upstream simulation and verify the ROS 2 distro and TF tree | Nav2 was read, not run here; a localization replay does not validate costmaps, collision avoidance or stopping distance. Sensor coverage, footprint and controller tuning must be checked on the intended rover | "The rover finds another path when the corridor closes and stops when a safe route is unavailable." |
 
 ## Gaps this table exposed
 
-Updated 2026-11-06 after review round 3.
+Updated 2026-11-07 against [evidence-matrix.md](evidence-matrix.md).
 
 - Timing (row 6): [timing-resilience.md](timing-resilience.md),
   [timing-holdover](../samples/timing-holdover/) (simulated oscillators) and cards for linuxptp
@@ -96,8 +128,12 @@ Updated 2026-11-06 after review round 3.
   [real-attack-replay](../samples/real-attack-replay/) (receiver UTC +900 s, caught by
   `clock_jump`). [timing-network-holdover](../samples/timing-network-holdover/) covers the
   multi-node case (six simulated sites over PTP-like links, cross-node check for a time push,
-  ADEV-weighted ensemble), but its delays and asymmetries are stated assumptions, not PTP logs.
-  Still missing: a recorded NAV-CLOCK / PPS log and any real PTP / chrony piece in code.
+  ADEV-weighted ensemble). Its separate real-data mode replays public PTP-over-5G/4G
+  records (Zenodo 14230741): four PPS-vs-PPS truth records, eight PTPd logs and a capture.
+  These cellular paths show millisecond offsets, not the synthetic network's sub-microsecond
+  result. PPS truth and PTPd logs are from different runs, and short records are looped.
+  Still missing: a recorded receiver NAV-CLOCK/PPS attack log, chrony integration and a
+  verified hardware-timestamped dedicated PTP network; do not infer those from cellular replay.
 - Direction finding (row 5): no open DF recording with ground truth. Both localization samples
   ([interference-geolocation-to-tak](../samples/interference-geolocation-to-tak/),
   [jammer-sensor-network](../samples/jammer-sensor-network/)) run on synthetic data only.
@@ -126,11 +162,13 @@ Updated 2026-11-06 after review round 3.
   [relative-nav-benchmark](../samples/relative-nav-benchmark/) (KISS-ICP on KITTI 04: venv with
   Python 3.12 pins, 1.13 GB download) measures odometry drift only, with no GNSS in the loop;
   [gnss-ins-ekf-outage](../samples/gnss-ins-ekf-outage/) is stdlib but fully simulated (2D
-  weaving vehicle, GNSS/INS EKF, chi-square gate). Nothing in the hub runs wheel odometry + IMU +
-  a GNSS gate as one loop on recorded data.
+  weaving vehicle, GNSS/INS EKF, chi-square gate). The NCLT sample does run wheel speed +
+  MEMS or fibre-optic gyro with GNSS fusion and an innovation gate in one recorded-data loop;
+  outages and coherent drag are injected, while the sensors and multipath are real.
   Cards exist ([robot_localization](integration-cards/cra-ros-pkg__robot_localization.md),
   [DRIFT](integration-cards/umich-curly__drift.md), [Nav2](integration-cards/ros-navigation__navigation2.md)),
-  none was run.
+  none was integrated or run by that sample. It measures localization and integrity, not
+  obstacle avoidance or path replanning (row 30).
 - Underwater (row 17): no underwater sample. The start is
   [gnss-ins-ekf-outage](../samples/gnss-ins-ekf-outage/), a simulated ground-vehicle GNSS/INS
   run that shares only the hold-and-correct pattern; no recorded DVL, USBL or depth data is used anywhere in the hub. One
@@ -138,3 +176,9 @@ Updated 2026-11-06 after review round 3.
 - LEO signals of opportunity (row 24): no sample and no LEO-specific card; the
   [Skyfield card](integration-cards/skyfielders__python-skyfield.md) covers TLE / SGP4 satellite
   positions for a Doppler prototype.
+
+- Broader navigation (rows 28-30): phone wayfinding, offline road-closure routing and rover
+  obstacle replanning have indexed stacks but no runnable matching starter in this hub.
+  [dismounted-foot-ins](../samples/dismounted-foot-ins/) uses a foot-mounted sensor,
+  [ugv-gnss-outage-real](../samples/ugv-gnss-outage-real/) estimates pose, and aerial demos
+  solve another platform: none verifies these three complete workflows.

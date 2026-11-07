@@ -74,7 +74,31 @@ GitHub repo by id even if another lane indexes it. The builder reports dangling 
 
 Resource `rel` values: `has_code, uses, evaluates, cites, explains, dataset_for, part_of, same_author`.
 
-## Rules for contributors (human or agent)
+## Practical readiness
+
+`data/readiness.json` maps existing record IDs to curated `readiness` objects. Inline
+`readiness` on a record overrides individual curated fields. The builder validates values,
+record IDs and local evidence paths, fills explicit unknown defaults for samples, and
+propagates the object to records, sample catalog pages and browser nodes (`rd`).
+
+| Field | Values / meaning |
+|---|---|
+| `compute` | `cpu`, `gpu`, `optional-gpu`, `unknown` |
+| `hardware` | `none`, `optional`, `required`, `unknown`; for the documented first command |
+| `offline` | `verified`, `cache-required`, `unknown`; verified requires evidence and a limitation |
+| `setup_minutes` | finite nonnegative measured number, or null; unknown is not zero |
+| `download_mb` | finite nonnegative dataset download MB, or null; excludes dependencies/weights/images |
+| `platforms` | tested OS/architecture labels such as `macos-arm64` or `linux-arm64` |
+| `validation` | `integrated`, `components`, `unverified`; separate from `verified_status` |
+| `limitation` | strongest practical limitation as one plain sentence |
+| `evidence` | repository-relative existing source or result paths |
+
+CLI/MCP/browser constraints share these enums plus `platform`, `max_setup_minutes`, and
+`max_download_mb`. Numeric ceilings exclude null/missing values. Do not infer field validation
+from real-input labels, or offline readiness from cache presence. See
+[practical-readiness.md](practical-readiness.md) for examples and the generated shortlist.
+
+## Contributor rules
 
 - Only include items you have verified exist (URL resolves / `gh api repos/<o>/<n>` succeeds).
 - Summaries in your own words. No copied README text beyond a short phrase.

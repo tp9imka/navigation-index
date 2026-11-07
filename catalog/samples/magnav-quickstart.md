@@ -6,6 +6,14 @@ A Julia walkthrough with MagNav.jl that downloads the public SGL 2020 challenge 
 
 **Verification:** Ran on 2026-11-06 in the julia:1.11 Docker image (Julia 1.11.9, linux/arm64) with MagNav.jl v1.3.5, CSV v1.3.0, DataFrames v1.8.2 and FFTA pinned to 0.2.1 (FFTA 0.3.2 breaks precompilation of GlobalSensitivity): EKF DRMS 31.2 m vs INS-only final error 218.8 m on line 1006.08 with map Eastern_395. Output in README. Artifacts downloaded: sgl_2020_train ~563 MB and ottawa_area_maps ~1.2 GB on disk, plus EMAG2 ~0.5 GB pulled during precompile.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 ## Deep dives
 
 - [magnav-challenge-data](../../docs/dataset-cards/magnav-challenge-data.md) (dataset-cards)

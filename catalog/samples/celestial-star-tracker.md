@@ -6,6 +6,14 @@ Runs cedar-solve (tetra3 API, v0.6.0 on NumPy 2) lost-in-space on 40 real SkyVie
 
 **Verification:** ran on 2026-11-06 with Python 3.12.14 (numpy 2.5.4, cedar-solve git tag v0.6.0 installed --no-deps, skyfield 1.55, astropy 8.0.2) on an Apple M2 Max: plate_solve_eval.py with and without --fov-hint, esa_mount_fix.py, position_fix_sim.py --runs 200; outputs in results/ and quoted in the README. Plate solving uses real images (SkyView Mellinger mosaic cutouts, reference = requested WCS; cedar-solve test frames, no reference). The position-fix budget is simulation with Skyfield truth; centroid noise, vibration and bias levels are stated assumptions. The ESA-frame position has no ground truth (capture site undocumented). 11 unittest tests pass in the venv; with plain Homebrew python3 10 pass and the Skyfield test skips. A planted Jacobian sign flip fails 4 tests. No real IMU, moving camera, lens distortion, ESA tetra3, Cedar-Detect or database generation was run.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 **Concepts:** [Celestial and star-tracker navigation](../../catalog/concepts/celestial-nav.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
 **Tags:** `star-tracker`, `plate-solving`, `tetra3`, `cedar-solve`, `skyfield`, `sight-reduction`, `level-error`, `stdlib`

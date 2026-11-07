@@ -27,6 +27,10 @@ Code for RIDI, which regresses velocity from smartphone IMU data with learned mo
 - alternative_to: [RoNIN](../../catalog/repos/sachini__ronin.md)
 - alternative_to: [TLIO](../../catalog/repos/cathias__tlio.md)
 
+## Referenced by
+
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+
 _Indexed by lane(s): gap-fill_
 
 _GitHub metadata fetched 2026-11-06._

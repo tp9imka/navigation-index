@@ -6,6 +6,14 @@ Passive airspace awareness from broadcast Remote ID (ASTM F3411 / ASD-STAN EN 47
 
 **Verification:** Ran on 2026-11-06 (macOS arm64, Python 3.14.7 and 3.12.14, Apple clang 21). odid.py matched opendroneid-core-c master 849c03a field-for-field (exact float32/double values, raw string bytes) on 500 core-c-encoded messages/packs, 500 random raw messages, 81 unique payloads from the three public opendroneid/wireshark-dissector captures, plus a live 600-vector batch; 5 planted decoder mutations each failed the suite. capture.py decoded 42 NAN+beacon packs, 21 beacon packs with positions and 244 CRC-OK BT5 long-range packs from those captures. rid_to_cot.py sent 256 CoT events through PyTAK 7.6.1 to a local TCP sink (synthetic scenario) and 10 to a UDP sink (real beacon capture). Not verified: any live radio reception, a real TAK server or ATAK rendering, the core-c cmake build or its own odidtest (cmake absent; library compiled directly with cc), Auth message semantics beyond decoding, anomaly thresholds against real spoofing.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 **Concepts:** [Counter-UAS and drone detection](../../catalog/concepts/counter-uas.md), [Situational awareness and C2 interop](../../catalog/concepts/situational-awareness.md), [Standards and interface specs](../../catalog/concepts/standards.md)
 
 **Tags:** `remote-id`, `astm-f3411`, `opendroneid`, `cot`, `tak`, `pytak`, `spoofing-detection`, `ble`, `wifi-nan`

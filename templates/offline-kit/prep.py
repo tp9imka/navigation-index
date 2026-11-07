@@ -22,6 +22,7 @@ import json
 import os
 import platform
 import re
+import shlex
 import shutil
 import socketserver
 import subprocess
@@ -536,7 +537,9 @@ def save_state(out, state):
 def write_reports(out, manifest, state):
     sums = []
     for root, dirs, names in os.walk(out):
-        dirs[:] = [d for d in dirs if d != "mirrors"]
+        # Bundle receipts and rehearsal logs change after this cache report is written.
+        # bundle.py hashes its selected inputs/outputs separately in measured receipts.
+        dirs[:] = [d for d in dirs if d != "mirrors" and not (root == out and d == "bundles")]
         for n in sorted(names):
             p = os.path.join(root, n)
             rel = os.path.relpath(p, out)
@@ -708,7 +711,7 @@ def main(argv=None):
     ctx = Ctx()
     ctx.manifest, ctx.out, ctx.repo, ctx.probe = manifest, out, os.path.abspath(a.repo), a.probe
     ctx.keep_mirrors = a.keep_mirrors
-    ctx.pip = a.pip.split() if a.pip else [sys.executable, "-m", "pip"]
+    ctx.pip = shlex.split(a.pip) if a.pip else [sys.executable, "-m", "pip"]
     ctx.pip_platforms = a.pip_platforms.split(",") if a.pip_platforms else None
     ctx.python_version = a.python_version or manifest["python_version"]
     ctx.docker_platforms = a.docker_platforms.split(",") if a.docker_platforms else None

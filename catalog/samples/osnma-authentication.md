@@ -6,6 +6,14 @@ Runs unmodified OSNMAlib on the real Galileo I/NAV recording bundled with it (Se
 
 **Verification:** Ran 2026-11-06. OSNMAlib (commit 25aa61de, Python 3.12.14) on its bundled real SBF recording: full 76 min clean = 56 KROOT, 962 TESLA keys, 4711 tags authenticated, 0 failures; 11 scenarios on 20 min: replay with no independent clock and 3 s meaconing authenticate normally; 60 s replay leaves only ADKD12; 1 h replay authenticates nothing without any failure; forged OMEGA_0 bit = 277 tag failures; random keys/tags = 97 key-chain failures; stripping = silent loss; 120 s GST shift = 590 rejected pages + 73 key failures; Merkle-only cold start never authenticates (no DSM-PKR in 76 min); a same-IOD forgery after authentication stayed 'authenticated' for 10 min (OSNMAlib freezes the authenticated stream). 15 tests pass with OSNMAlib, 14 + 1 skipped stdlib-only on Python 3.14.7; mutating each OSNMA detector or the weak-signal guard fails 1-2 tests. GNSS-SDR 0.0.20 (Debian trixie) in Docker on OSNMA-SDR-SIM E1 files (600 s, 6.2 GB): fixes computed, strict mode rejects the replayed file on time; with cross_auth_mode=1 KROOT signature and 6 TESLA keys verified but no tag or nav data authenticated (cause not found); fix lands ~3000 km from the configured sim location (not investigated). Not verified: GNSS-SDR tag/data authentication, re-tagging with disclosed keys, live receivers (u-blox/Septentrio support is from vendor and third-party pages), hot-start TTFAF.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 ## Deep dives
 
 - [osnmalib-recording](../../docs/dataset-cards/osnmalib-recording.md) (dataset-cards)

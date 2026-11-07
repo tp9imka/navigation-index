@@ -35,6 +35,7 @@ Current-generation Gazebo robotics simulator with pluggable physics, rendering a
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [ardupilot_gazebo](../../catalog/repos/ardupilot__ardupilot_gazebo.md) (integrates_with)
 - [Webots](../../catalog/repos/cyberbotics__webots.md) (alternative_to)

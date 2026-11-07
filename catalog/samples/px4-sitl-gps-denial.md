@@ -6,6 +6,14 @@ Flies a square mission in PX4 SITL (SIH quadrotor, headless; Gazebo also works p
 
 **Verification:** Ran on 2026-11-06 against PX4 v1.17.0 SIH (sihsim_quadx) in Docker from samples/sitl-docker (linux/arm64) with mavsdk-grpc 4.0.5 (its bundled mavsdk_server runs on linux aarch64; the macOS arm64 wheel binary starts but was not flown). Two flights of the same 15 s GPS denial (fresh containers each): run A 8.37 m max horizontal error and 12.7 s to 5 m, run B 17.71 m and 8.5 s (drift.py on the MAVSDK logs, output in README). ulog_drift.py (pyulog 1.3.0) ran on the run B .ulg: 18.30 m max during denial, 7.8 s to 5 m, agreeing with the MAVSDK log at ~125 Hz. MAV_CMD_INJECT_FAILURE for GPS timed out (no ACK) on this target. drift.py tests (4) pass. Not run: gz_x500 (Gazebo).
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 **Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Inertial navigation (INS/IMU)](../../catalog/concepts/ins.md)
 
 **Tags:** `px4`, `ekf2`, `sitl`, `gazebo`, `mavsdk`, `failure-injection`, `gps-denied`, `drift`, `ulog`

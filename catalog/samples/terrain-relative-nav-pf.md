@@ -6,6 +6,14 @@ A stdlib-only simulation of TERCOM/TRN: an aircraft with a biased INS and a rada
 
 **Verification:** terrain.py and trn_pf.py ran with python3.14.7 stdlib on 2026-11-06, output shown in README; dem_rasterio.py is an unverified sketch: syntax-checked only, requires rasterio (the GLO-30 tile URL returned HTTP 200 on 2026-11-06).
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 ## Deep dives
 
 - [copernicus-glo30](../../docs/dataset-cards/copernicus-glo30.md) (dataset-cards)

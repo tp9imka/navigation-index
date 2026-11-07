@@ -6,17 +6,19 @@ Datums, projections, ECEF/ENU/NED, MGRS, geoid models.
 
 **Parent:** [GIS, maps and geospatial data](../../catalog/concepts/gis-mapping.md)
 
-## Samples (2)
+## Samples (3)
 
 - [Drone frame to orthophoto geolocalization with LightGlue](../../catalog/samples/visual-geolocalization-lightglue.md) - Matches a nadir drone frame against a georeferenced satellite or orthophoto tile with SuperPoint + LightGlue, fits a MAGSAC homography with OpenCV, and maps the frame centre through the GeoTIFF geotransform to lat/lon.
 - [Public CORS RINEX to SPP vs RTK with RTKLIB demo5 and gnss_lib_py](../../catalog/samples/gnss-rinex-processing.md) - Downloads one day of public NOAA NGS CORS RINEX for a rover/base pair 30 km apart, runs RTKLIB demo5 rnx2rtkp in single-point and kinematic RTK modes with exact CLI flags, and scores both against the stations' published 
+- [Shared pose recording and replay: JSONL plus optional MCAP](../../catalog/samples/recording-replay.md) - A deterministic synthetic local-ENU pose stream replayed through JSONL and optional MCAP with an embedded schema.
 
 ## Guides (1)
 
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) - After this chapter you can convert between the coordinate systems your tools disagree on, fetch free imagery and elevation data for a region, display it, and plan a path or a multi-vehicle mission over it.
 
-## Repositories (15)
+## Repositories (16)
 
+- [Rerun](../../catalog/repos/rerun-io__rerun.md) - fit: high - SDKs and viewer for recording and inspecting multimodal robotics data on synchronized timelines, including images, point clouds, transforms, trajectories and scalar signals; supports MCAP ingestion.
 - [GDAL](../../catalog/repos/osgeo__gdal.md) - fit: high - Translator library and CLI tools for raster and vector geospatial formats (GeoTIFF, COG, GeoPackage, Shapefile, KML and hundreds more) with reprojection, warping and DEM utilities.
 - [PROJ](../../catalog/repos/osgeo__proj.md) - fit: high - Cartographic projection and coordinate transformation library with datum grids, time-dependent transformations and a pipeline syntax.
 - [Skyfield](../../catalog/repos/skyfielders__python-skyfield.md) - fit: high - Python library for high-accuracy positions of stars, planets and Earth satellites, with proper time scales and reference frames.
@@ -33,7 +35,7 @@ Datums, projections, ECEF/ENU/NED, MGRS, geoid models.
 - [gnssanalysis](../../catalog/repos/geoscienceaustralia__gnssanalysis.md) - fit: low - Geoscience Australia Python module of utilities for reading and comparing GNSS products (SP3, CLK, SINEX, Ginan outputs) and computing differences/statistics.
 - [glnephexercise - GLONASS satellite position exercise](../../catalog/repos/korogodin__glnephexercise.md) - fit: low - MPEI student project template for computing GLONASS satellite positions from broadcast ephemerides.
 
-## Documents, talks, courses, datasets (6)
+## Documents, talks, courses, datasets (7)
 
 - [GeographicLib documentation](../../catalog/resources/geographiclib-docs.md) - doc - Documentation and background on geodesics, map projections, geoid and gravity models implemented in GeographicLib, plus online calculators.
 - [GNSS Data Processing, Vol. I: Fundamentals and Algorithms (ESA TM-23)](../../catalog/resources/esa-gnss-data-processing-vol1.md) - book - Free ESA textbook covering GNSS measurement modelling, SPP, differential positioning and PPP algorithms with full equations.
@@ -41,4 +43,5 @@ Datums, projections, ECEF/ENU/NED, MGRS, geoid models.
 - [Navipedia - ESA GNSS encyclopedia](../../catalog/resources/navipedia.md) - doc - ESA's free wiki covering GNSS fundamentals, systems, signals, receivers, augmentation and applications.
 - [NOAA NGS CORS network RINEX data archive](../../catalog/resources/noaa-ngs-cors-rinex.md) - dataset - Public archive of RINEX observation and navigation files from the US Continuously Operating Reference Station network, organised by year and day of year.
 - [Photogrammetry I & II](../../catalog/resources/stachniss-photogrammetry-i-ii.md) - lecture-series - Recorded two-semester photogrammetry course (2015/16 playlist): camera models, direct linear transform, projective geometry, epipolar geometry, bundle adjustment, and image-based 3D reconstruction.
+- [Rerun overview and multimodal robotics data guide](../../catalog/resources/rerun-overview.md) - doc - Official introduction to SDK logging, synchronized spatial and time-series views, coordinate transforms, timelines and MCAP ingestion for robotics recordings.
 

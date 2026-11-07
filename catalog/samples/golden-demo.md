@@ -6,6 +6,16 @@ One command flies ArduCopter 4.6.3 SITL in Docker on a survey and drags its GPS 
 
 **Verification:** Ran 2026-11-06 on Apple Silicon (linux/arm64 Docker, Copter-4.6.3 SITL image from samples/sitl-docker, pymavlink 2.4.50, Python 3.12). v1 (one run per mode, seed 7): chi-square alarm 9.4 s after onset, max cross-track deviation 7.6 m with the monitor vs 75.0 m without. v2 reference (coherent 1 m/s, replayed real geoloc): velocity-test alarm 3.0 s after onset, 6.8 m vs 75.0 m, EKF GPS_GLITCHING never set. v2 Monte Carlo, 52 flights in 1201 s wall (3 parallel SITLs, speedup 3): ss+vel detected 24/24 monitor flights with 0 pre-onset false alarms and 0/4 false alarms without spoof; median TTD 45/22.5/6.2 s (position 0.3/1/3 m/s) and 37.4/2.8/1 s (coherent); v1 chi-square false-alarmed in 4/4 no-spoof flights with real geoloc. Real geoloc table: 246/425 frames fixed, median 3.3 m. One live-matching flight completed (68% fixes after AUTO, ~3.5 s per match). Lane-switch experiment: 4-6 switches with SITL GPS, 0 with injected GPS (2 seeds each); mechanism not found. 17 unit tests pass. VIO is truth plus noise; frames are rendered nadir from a real orthophoto; amd64 and ArduPilot 4.7+ not tested.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| cpu | none | cache-required | unknown | unknown | linux-arm64 | integrated |
+
+**Main limitation:** Autopilot simulation with recorded/modelled aiding; not field or hardware validation.
+
+**Readiness evidence:** [samples/golden-demo/README.md](../../samples/golden-demo/README.md), [samples/golden-demo/sample.json](../../samples/golden-demo/sample.json)
+
 ## Deep dives
 
 - [naip-planetary-computer](../../docs/dataset-cards/naip-planetary-computer.md) (dataset-cards)
@@ -28,8 +38,10 @@ One command flies ArduCopter 4.6.3 SITL in Docker on a survey and drags its GPS 
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
+- [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Three selective offline starter bundles](../../docs/starter-bundles.md) (mentions)
 - [NAIP aerial imagery on Microsoft Planetary Computer](../../catalog/resources/naip-planetary-computer.md) (dataset_for)
 - [Integrity monitoring for alt-PNT: solution-separation FDE, protection levels and a Stanford diagram](../../catalog/samples/altpnt-integrity.md) (uses)
 - [Fixed-wing golden demo: ArduPlane 4.6.3 SITL on a 27.6 km route, coherent GPS drag, golden-demo monitor, EKF3 switch to ExternalNav fed by measured day (VPAIR) and night (thermal) geoloc fix models vs airspeed dead reckoning only](../../catalog/samples/golden-demo-fixedwing.md) (uses)

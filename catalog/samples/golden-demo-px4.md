@@ -6,6 +6,14 @@ The samples/golden-demo v2 scenario on PX4 v1.17.0 SIH in Docker. A pymavlink co
 
 **Verification:** Ran 2026-11-06 on Apple Silicon (linux/arm64 Docker 29.5.2, nav-sitl-px4:v1.17.0 built from samples/sitl-docker, companion in nav-sitl-client:latest with Python 3.12 + pymavlink 2.4.50). Reference pair (coherent 1 m/s, seed 7): velocity-test alarm 3.0 s after onset, EKF2_GPS_CTRL=0 + EKF2_EV_CTRL=5 echoed within 0.03 s, max cross-track deviation 7.8 m with the monitor vs 75.0 m without, EKF2 error 8.2 m vs 105.7 m, EKF2 GPS_GLITCH never set and eph 0.22 m while 106 m off; ArduPilot reference 3.0 s, 6.8 m vs 75.0 m. 20-flight sweep (2 seeds x position/coherent x 1/3 m/s + no-spoof, monitor and shadow, 2012 s wall in 3 lanes): all completed; monitor deviation 7-9 m except position 1 m/s (22 m); without monitor 75 m at 1 m/s and 108-152 m at 3 m/s even though EKF2 flagged GPS_GLITCH; 1 SS false alarm in 2 no-spoof monitor flights. 6 unit tests pass in the venv; 3 pass and 3 skip under plain python3. Not tested: speedup, amd64, PX4 main, aux global position over DDS, host-side MAVLink (did not get replies through a published UDP port).
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 **Concepts:** [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md), [Jamming and spoofing](../../catalog/concepts/gnss-interference.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Visual geo-localization (image-to-map)](../../catalog/concepts/visual-geolocalization.md)
 
 **Tags:** `coherent-spoof`, `dashboard`, `demo`, `docker`, `ekf2`, `external-vision`, `gps-drag`, `hil-gps`, `integrity`, `odometry`, `protection-level`, `px4`, `pymavlink`, `sih`, `sitl`, `solution-separation`, `spoofing`

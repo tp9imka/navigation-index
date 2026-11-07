@@ -38,3 +38,4 @@ gnss-ins-ekf-outage
 terrain-relative-nav-pf
 relative-nav-benchmark
 ugv-gnss-outage-real
+recording-replay

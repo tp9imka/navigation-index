@@ -1,0 +1,21 @@
+{
+  "id": "sample:recording-replay",
+  "title": "Shared pose recording and replay: JSONL plus optional MCAP",
+  "summary": "A deterministic synthetic local-ENU pose stream replayed through JSONL and optional MCAP with an embedded schema. Checks timestamps, coordinate frame, finite metre values and exact round-trip preservation; reports a known 0.5 m offset as an evaluation plumbing check.",
+  "concepts": ["concept:datasets-benchmarks", "concept:geodesy", "concept:sensor-fusion"],
+  "tags": ["recording", "replay", "mcap", "jsonl", "timestamps", "enu", "logging", "stdlib"],
+  "related": [
+    {"id": "repo:foxglove/mcap", "rel": "uses"},
+    {"id": "repo:ternaris/rosbags", "rel": "explains"},
+    {"id": "repo:rerun-io/rerun", "rel": "explains"}
+  ],
+  "verified": "Ran 2026-11-07 on macOS arm64: Python 3.14.7 stdlib JSONL and Python 3.12.14 with mcap 1.3.1. Both replayed 101 synthetic epochs over 10 seconds with 0.5 m RMSE and no alignment. MCAP round trip preserved all values exactly, including nanosecond timestamps. Three tests pass with mcap, two pass and one skips with stdlib. MCAP replay also passed under sandbox-exec deny network. Rosbags and Rerun integrations were not executed; no real sensors or independent field truth.",
+  "verified_status": "ran",
+  "deps": "stdlib",
+  "first_command": "python3 recording.py",
+  "group": "Recording, replay and evaluation plumbing",
+  "shows": "One explicit pose/time/frame contract replayed from JSONL and optional schema-bearing MCAP",
+  "input": "synthetic",
+  "runtime": "under 1 s after optional dependencies are installed",
+  "key_result": "[Round trip](README.md#verification): 101 epochs, 10 s, 0.5 m known-offset RMSE; JSONL and MCAP preserve values; one macOS host tested with network denied"
+}

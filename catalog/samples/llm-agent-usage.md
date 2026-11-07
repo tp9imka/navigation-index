@@ -6,6 +6,14 @@ A stdlib-only MCP stdio server (tools/mcp_server.py) exposes search, show, conce
 
 **Verification:** tools/mcp_server.py ran with python3.14.7 stdlib on 2026-11-06 by piping demo_requests.jsonl into it (initialize, tools/list, tools/call for search/concept/neighbors/show, error paths); transcript shown in README. Client registration (Claude Code, Cursor, others) was not exercised.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 **Concepts:** [LLM agents for robotics and navigation](../../catalog/concepts/llm-agents-robotics.md)
 
 **Tags:** `mcp`, `json-rpc`, `claude-code`, `cursor`, `agents`, `stdlib`

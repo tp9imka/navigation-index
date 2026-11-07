@@ -6,6 +6,14 @@ Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EK
 
 **Verification:** Ran on 2026-11-06: frames.py tests (8 OK) and --dry-run on python3.14.7; the pymavlink ODOMETRY path ran against ArduCopter 4.6.3 SITL (EKF3 'is using external nav data', flags 0x033f) and PX4 v1.17.0 SIH (estimator_status_flags cs_ev_pos/cs_ev_hgt/cs_ev_yaw/cs_ev_vel True), both in Docker from samples/sitl-docker with pymavlink 2.4.50. Only a stationary pose was streamed; no flight on vision was tested. --msg vpe not run.
 
+## Practical readiness
+
+| Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
+|---|---|---|---|---|---|---|
+| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+
+**Main limitation:** Read the sample verification; readiness has not been curated.
+
 **Concepts:** [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [MAVLink, ground control and C2 links](../../catalog/concepts/mavlink-gcs.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md), [Assured / resilient PNT](../../catalog/concepts/assured-pnt.md)
 
 **Tags:** `mavlink`, `pymavlink`, `external-vision`, `odometry`, `frames`, `enu-ned`, `ekf2`, `ekf3`, `gps-denied`
