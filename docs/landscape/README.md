@@ -2,15 +2,22 @@
 
 <!-- about: res:auterion-skynode-visual-navigation, res:theseus-visual-navigation-system, res:twist-robotics-oscar, res:qctrl-ironstone-opal, res:sandboxaq-aqnav, res:xona-pulsar-leo-pnt, res:iridium-pnt-stl-asic, res:honeywell-vision-aided-navigation, res:inertial-labs-vins, res:infinidome-gpsdome, res:uk-dasa-emp-pnt-problem-statement-2024, res:eudis-defence-hackathon-2026, res:brave-nato-unite-2026, res:diu-tqs-program -->
 
+Use this when you must check whether an idea is already sold or funded, or how a past
+navigation hackathon brief was solved. It covers long-range GNSS-denied navigation. For the
+close-area A to B task (likely on Day 1), how events phrase and score it is in
+[06-task-phrasing-survey](../research/close-area-nav/06-task-phrasing-survey.md) and the prior
+art is in [close-area-nav](../research/close-area-nav/README.md).
+
 Commercial products, funded programmes and 2025-2026 trends in GNSS-denied navigation, so a
 hackathon team can place its idea against what is already sold or funded.
 
-| File | Contents |
-|---|---|
-| [gnss-denied-nav-products.md](gnss-denied-nav-products.md) | ~30 vendors by category: visual, magnetic/quantum, LEO PNT, inertial, anti-jam, simulators. Vendor claims labelled, open alternatives from this index |
-| [programs-and-challenges.md](programs-and-challenges.md) | DARPA, DIU, AFRL/MIT, NATO DIANA, EDF, ESA NAVISP, UK DASA, Brave1, EUDIS and other hackathons, with their problem statements |
-| [trends-2025-2026.md](trends-2025-2026.md) | Fiber-optic drones, commodity visual nav, LEO PNT launches, quantum flight tests, OSNMA service, national backups |
-| ua-ru-sources-overview.md | Ukrainian and Russian-language sources (separate owner) |
+| Page | Use it when | You get |
+|---|---|---|
+| [gnss-denied-nav-products.md](gnss-denied-nav-products.md) | a judge may say "a vendor already sells this" | ~30 vendors by category: visual, magnetic/quantum, LEO PNT, inertial, anti-jam, simulators. Vendor claims labelled, open alternatives from this index |
+| [programs-and-challenges.md](programs-and-challenges.md) | you want the problem statements funders and other hackathons publish | DARPA, DIU, AFRL/MIT, NATO DIANA, EDF, ESA NAVISP, UK DASA, Brave1, EUDIS and other hackathons, with their problem statements |
+| [trends-2025-2026.md](trends-2025-2026.md) | you need the current context for a pitch | Fiber-optic drones, commodity visual nav, LEO PNT launches, quantum flight tests, OSNMA service, national backups |
+| [blind-flight-teardown.md](blind-flight-teardown.md) | the brief is long-range flight without GNSS and you want a real precedent | The 2026 "Blind flight" 48-hour case (radar altimeter + DEM, no GNSS, no IMU): reconstructed statement, seven public team solutions compared, lessons. Team numbers are claims; "bench" numbers come from [samples/blind-flight-bench](../../samples/blind-flight-bench/README.md) |
+| [ua-ru-sources-overview.md](ua-ru-sources-overview.md) | you want what Ukrainian and Russian-language sources add (EW layering, beacons, hackathons) | Lane `ua-ru-sources`: 38 resources and 12 repos, plus a round 2 section. Nothing installed or run (separate owner) |
 
 Index records: `data/resources/landscape.json` (kinds `product`, `company`, `program`, tag `landscape`).
 Query: `python3 tools/query.py search "landscape magnetic"`.

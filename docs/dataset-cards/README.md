@@ -2,6 +2,15 @@
 
 <!-- about: concept:datasets-benchmarks -->
 
+Use this when you need recorded data to test a navigation method: which dataset fits, its checked size and license, the download command, and what to fetch before venue Wi-Fi fails.
+
+| Page | Use it when | You get |
+|---|---|---|
+| [Comparison](#comparison) | you pick a dataset by platform, sensors or ground truth | One row per card in six families: sensors, GT, checked size, license, best use |
+| [Pre-download](#pre-download-before-the-hackathon) | you build the offline kit before the event | Core shortlist of 33 subsets (about 59 GB) plus an optional list |
+| [Do not plan on these](#do-not-plan-on-these-without-a-fallback) | a host is slow, gated, withdrawn or down | The failing hosts and what to use instead |
+| [EuRoC](euroc-mav.md), [UZH-FPV](uzh-fpv.md), [UTIL UWB TDoA](util-uwb-tdoa.md) | the task is close-area A=>B with an indoor drone and you need real flight data for VIO or a localization fallback | EuRoC: indoor multirotor stereo + IMU with Vicon GT. UZH-FPV: the 1.61 GB indoor bag OpenVINS ran on. UTIL: Crazyflie UWB, flow and ToF, 1.86 GB, no sample yet. The close-area arena itself is synthetic ([close-area-arena](../../samples/close-area-arena/README.md)) |
+
 There are 59 cards, one per dataset or per small family of datasets, all written or refreshed 2026-11-06. Each card gives sensors and rates, ground-truth source and stated accuracy, a verified size, the license, exact download commands, loaders from the index, the [playbook](../hackathon-playbook.md) ideas it suits, and pitfalls.
 
 **How sizes were checked.** Each card names its method: HEAD `Content-Length`, the Zenodo / Hugging Face / S3 / DSpace APIs, or the figure stated on the download page. Data behind Google Drive, OneDrive, Baidu, Kaggle or a request form is marked "not verified". Nothing was downloaded in full by the card authors, and no loader was run unless a card says so. Cards whose data a sample in [samples/](../../samples/) actually pulled have a **Used in this repo** section with what that run measured: download method, bytes, wall time, gotchas. Cells below marked "stated" are the authors' numbers; "ran" marks a subset a sample downloaded and processed.
