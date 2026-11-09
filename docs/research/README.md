@@ -15,6 +15,7 @@ loss.
 |---|---|---|
 | [close-area-nav/](close-area-nav/README.md) (round 2, 2026-11-09, follow-up docs 05-09 the same day) | The brief says A to B, obstacles, indoor, arena, close area, or a marker / pad at B. This is the likely Day-1 task. | Baseline planner, sims, local localization, Crazyflie sensing limits, how events phrase the task, the old headline (integrity-aware safety filter) with its kill test and FAIL verdict, and the new one (relocalization after VIO loss) |
 | [innovation-prior-art/](innovation-prior-art/README.md) (round 1, 2026-11-09) | The brief is long range: km-scale legs, GNSS jammed or spoofed, fixed-wing, terrain or visual fixes | Prior art, strongest baseline and a falsifier for three long-range ideas, plus a ten-direction scan |
+| [hypotheses/](../hypotheses/README.md) + [innovation lab](../../samples/navigation-innovation-lab/README.md) (2026-11-09, Codex lane) | You want the long-range ideas H1-H3 tested, not just searched | Hypothesis cards and a stdlib falsification lab: H1 active disambiguation fell to the info-gain baseline, H2 predictive fix scheduling showed no general win, H3 selective calibration helped only after observable model changes (synthetic, negatives kept) |
 
 Round 2 replaced round 1 as the default after the news that the task is likely "move a drone from
 A to B in a close area" ([close-area-nav README](close-area-nav/README.md), first paragraph). For
@@ -60,3 +61,19 @@ What this means for the headline: a range-only filter already covers what the se
 a hand-tuned fixed margin covered what it cannot see as well as the protection-level margin did.
 So the safety filter is a supporting piece, and the innovation claim moves to recovering the
 pose after VIO loss.
+
+## Decision 2026-11-09 evening: what the close-area innovation claim is
+
+Both candidate headlines were tested to failure, and that is the main result of the day:
+
+- **Integrity-aware safety filter:** FAIL on held-out seeds; a hand-tuned fixed bound (MR-CBF 0.2 m)
+  matches its safety ([close-area-safety-filter Part e](../../samples/close-area-safety-filter/README.md)).
+- **Relocalization after VIO loss:** holds only with a dense range sensor, an exact map and open
+  layouts (100 %, 0 wrong commits on random and u_trap, seeds 0-4). Weaker in office, maze, narrow
+  gap and glass office (83-97 %); 33 wrong commits in warehouses; 48-64 % on a 4-beam Crazyflie-like
+  sensor; 7 % collisions with unmapped obstacles; the mechanism exists (Jensfelt 2001, AF-MCL 2026,
+  [doc 10](close-area-nav/10-relocalization-prior-art.md)). All synthetic.
+- **What to pitch on Day 1:** the measured toolkit (14 planners x 8 arenas x 2 sensors, browser
+  playground, honest kill tests) plus whichever narrow claim fits the real brief: the hover-on-tie
+  relocalization wrapper for an open arena with a dense sensor, or "range safety filter under any
+  planner" when people move (14-36 % => 0 % collisions). Do not claim novelty for either.

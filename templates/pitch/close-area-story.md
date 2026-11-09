@@ -20,6 +20,8 @@ The kill test ran parts a, b and d on seed 0
 result: ours (F5) has 0 % collisions in all six fault cases, but **FAILS the reach bar**: 61-89 %
 of PX4-CBF's reach, against the 90 % the gate asks for
 ([part d verdict](../../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic)).
+**Update, evening: H1 is narrowed too.** Relocalization holds on open layouts with a dense range sensor and an exact map, but not on 4 beams (48-64 %), in warehouses (33 wrong commits) or with unmapped obstacles, and the mechanism is published (Jensfelt 2001, AF-MCL 2026). Read the decision at the end of [docs/research/README.md](../../docs/research/README.md) before pitching any novelty.
+
 **Decision (held-out rerun, Part e): the safety-filter headline FAILS.** A hand-tuned fixed bound
 (MR-CBF 0.2 m) stays at <= 1 % collisions on seeds 0-2; ours collides in 2.5 % [1.1, 5.7] of
 held-out jump runs and reaches B less often. Pitch H1, the relocalization story in section 3. The relocalization pivot (section 3, H1) is filled with measured

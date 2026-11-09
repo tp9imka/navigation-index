@@ -17,6 +17,25 @@ it lists.
 [docs/research/close-area-nav/](docs/research/close-area-nav/README.md), then the runnable
 [samples/close-area-arena](samples/close-area-arena/README.md).
 
+**Try it in the browser** (GitHub Pages, synthetic simulation):
+- [Showcase](https://tp9imka.github.io/navigation-index/site/showcase.html) - replays of 14
+  planners on 8 arenas, side-by-side compare, the results grid.
+- [Playground](https://tp9imka.github.io/navigation-index/site/playground/) - draw an arena, pick
+  a planner, sensor, VIO fault and safety filter, run the hub's real Python in the browser; the
+  Advisor shows each planner's measured success rate on the selected arena.
+- [Search UI](https://tp9imka.github.io/navigation-index/site/) - every record, doc and sample.
+
+**Close-area material at a glance:**
+
+| Need | Open |
+|---|---|
+| First 20 minutes of the day | [docs/day1-close-area-intake.md](docs/day1-close-area-intake.md), measured end to end in [docs/day1-dry-run.md](docs/day1-dry-run.md) |
+| Which planner for which arena and sensor | [samples/close-area-benchmark](samples/close-area-benchmark/README.md) (14 planners x 8 arenas x 2 sensors) |
+| Starter code for the team repo | [templates/flight-repo](templates/flight-repo/README.md) (`make first-flight`), [templates/drone-adapter](templates/drone-adapter/README.md) (PX4, ArduPilot, Crazyflie, Tello) |
+| What we tested as innovation, and what failed | [docs/research/README.md](docs/research/README.md) (decision at the end) |
+| Pitch, demo, judge questions | [templates/pitch/close-area-story.md](templates/pitch/close-area-story.md), [templates/demo-script-close-area.md](templates/demo-script-close-area.md), [templates/pitch/judge-drill-close-area.md](templates/pitch/judge-drill-close-area.md) |
+| How this hub was built (agent loop) | [loop/DRIVER.md](loop/DRIVER.md), [loop/JOURNAL.md](loop/JOURNAL.md) |
+
 ## Got a problem statement? Four hops
 
 Before choosing: [filter by the resources you have](docs/practical-readiness.md) (CPU/GPU,
