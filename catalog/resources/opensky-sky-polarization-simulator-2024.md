@@ -22,6 +22,7 @@ Open simulator of what a polarimetric camera sees of the sky (intensity, angle a
 
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
+- [Navigation by Skylight Polarization via Rayleigh Model Optimization on a Road Vehicle](../../catalog/resources/potter-2026-skylight-polarization-rayleigh-road.md) (cites)
 - [Celestial fix: cedar-solve plate solving on real star images, then position from star elevations above an IMU vertical](../../catalog/samples/celestial-star-tracker.md) (explains)
 
 _Indexed by lane(s): alt-nav_

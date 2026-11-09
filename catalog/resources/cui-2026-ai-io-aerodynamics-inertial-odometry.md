@@ -25,5 +25,6 @@ ICRA 2026 paper (arXiv Feb 2026). Argues rotor speed is the missing physical inp
 ## Referenced by
 
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
+- [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](../../docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md) (mentions)
 
 _Indexed by lane(s): nav-differentiators_

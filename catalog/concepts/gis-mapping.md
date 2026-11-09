@@ -15,13 +15,15 @@ Map engines, tiles, DEMs, orthophotos, coordinate systems, geodesy.
 - [OSINT interference map from free data: ADS-B NACp hexes and Sentinel-1 C-band RFI over Kaliningrad / the SE Baltic](../../catalog/samples/osint-jamming-map.md) - Two no-login OSINT layers for the same area and morning (2026-10-01, SE Baltic around Kaliningrad).
 - [Terrain-relative navigation with a particle filter](../../catalog/samples/terrain-relative-nav-pf.md) - A stdlib-only simulation of TERCOM/TRN: an aircraft with a biased INS and a radar altimeter matches its measured terrain profile against a seeded synthetic DEM with a particle filter that also estimates the INS velocity 
 
-## Guides (3)
+## Guides (5)
 
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](../../docs/landscape/blind-flight-teardown.md) - The closest real precedent we have for a navigation hackathon brief: a 48-hour case (26-28 June 2026, Krasnodar, track "Robotics and sensing") where teams had to find position, ground speed and heading of an aircraft fro
+- [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) - After this chapter you can convert between the coordinate systems your tools disagree on, fetch free imagery and elevation data for a region, display it, and plan a path or a multi-vehicle mission over it.
 - [Docs map](../../docs/README.md) - What each page under docs/ is for and the order to read them in.
+- [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) - Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (full brief 2026-11-18).
 
-## Repositories (44)
+## Repositories (45)
 
 - [Leaflet](../../catalog/repos/leaflet__leaflet.md) - fit: high - Small, simple JavaScript library for interactive raster/vector maps with a huge plugin ecosystem.
 - [CesiumJS](../../catalog/repos/cesiumgs__cesium.md) - fit: high - WebGL 3D globe and map library with terrain, 3D Tiles, time-dynamic data (CZML) and accurate WGS84 rendering.
@@ -67,17 +69,21 @@ Map engines, tiles, DEMs, orthophotos, coordinate systems, geodesy.
 - [terrain-navigation2](../../catalog/repos/ethz-asl__terrain-navigation2.md) - fit: medium - ROS 2 port of ETH's safe low-altitude fixed-wing planner for steep terrain: RRT* in Dubins-airplane space over a DEM, with terrain-clearance and circle-of-safety constraints.
 - [MAMMAL](../../catalog/repos/powerbroker2__mammal.md) - fit: medium - Python package (Magnetic Anomaly Map Matching Airborne and Land) for simulating and processing aeromagnetic survey data and building anomaly maps for MagNav.
 - [terrain-nav-preprocessing](../../catalog/repos/hstm__terrain-nav-preprocessing.md) - fit: medium - Preprocessing tools for terrain-referenced navigation, generating DEM tiles with controlled noise for training and evaluation.
+- [ImplicitTerrainV2](../../catalog/repos/fengyee__implicitterrainv2.md) - fit: medium - Code for wavelet-guided adaptive neural terrain fields with derivative-aware training and quantization.
 
-## Documents, talks, courses, datasets (14)
+## Documents, talks, courses, datasets (17)
 
 - [CityNav: A Large-Scale Dataset for Real-World Aerial Navigation](../../catalog/resources/citynav-2024.md) - paper - Introduces a language-goal aerial navigation dataset built on real-city 3D data with geographic metadata, and baselines using map-based grounding.
 - [Copernicus DEM on AWS Open Data](../../catalog/resources/copernicus-dem-aws.md) - dataset - Registry entry for the Copernicus global DEM (GLO-30/GLO-90) hosted as cloud-optimized GeoTIFFs on AWS, freely accessible without an account.
 - [Geobasis NRW DOM1 / DGM1 1 m airborne LiDAR surface and terrain models](../../catalog/resources/geobasis-nrw-dom1-dgm1.md) - dataset - North Rhine-Westphalia's open-data 1 m digital surface model (DOM1, buildings and vegetation included) and 1 m bare-earth terrain model (DGM1) for the whole state, delivered as 1 x 1 km GeoTIFF tiles in ETRS89 / UTM 32N 
+- [ImplicitTerrain: a Continuous Surface Model for Terrain Data Analysis](../../catalog/resources/feng-2024-implicitterrain.md) - paper - Preprint.
+- [ImplicitTerrainV2: Wavelet-Guided Spatially Adaptive Neural Terrain Representation](../../catalog/resources/feng-2026-implicitterrainv2.md) - paper - Preprint.
 - [NAIP aerial imagery on Microsoft Planetary Computer](../../catalog/resources/naip-planetary-computer.md) - dataset - USDA National Agriculture Imagery Program leaf-on orthophotos (RGB + NIR) of the contiguous US, re-flown per state every few years, served as Cloud-Optimized GeoTIFFs behind a STAC API.
 - [NATO Joint Military Symbology (APP-6) - overview](../../catalog/resources/app-6-joint-military-symbology.md) - doc - Overview of APP-6, the NATO standard for map symbols of units, equipment and tactical graphics, now at edition E and aligned with the US MIL-STD-2525 family.
 - [Natural Earth vector data](../../catalog/resources/natural-earth-vectors.md) - dataset - Public-domain world vector layers (land, coastline, countries) at 1:10m, 1:50m and 1:110m scales.
 - [OpenAerialMap](../../catalog/resources/openaerialmap.md) - dataset - An open catalogue of user-contributed aerial and drone orthomosaics, each stored as a Cloud-Optimized GeoTIFF on a public S3 bucket under CC BY 4.0.
 - [OpenStreetMap data via the Overpass API](../../catalog/resources/openstreetmap-overpass-api.md) - dataset - A read-only query API over the OpenStreetMap database that returns features (coastlines, bridges, wind turbines, buoys) inside a bounding box.
+- [SASGeo: Stability-Aware Semantic Map Localization for GNSS-Denied UAVs -- A Framework and Synthetic Proof of Concept](../../catalog/resources/trukhina-2026-sasgeo-semantic-map-localization.md) - paper - Preprint.
 - [SpatioTemporal Asset Catalog (STAC) specification](../../catalog/resources/stac-spec.md) - standard - Specification and ecosystem site for STAC, the common way to describe and search geospatial imagery and DEM assets.
 - [USGS 3DEP seamless DEMs on Microsoft Planetary Computer](../../catalog/resources/usgs-3dep-planetary-computer.md) - dataset - The USGS 3D Elevation Program seamless bare-earth DEMs for the US, served as Cloud-Optimized GeoTIFFs through Planetary Computer's STAC API with the same SAS signing as NAIP.
 - [«Ми почали будувати захищену екосистему для всіх військових застосунків». Архітектор DELTA - про розвиток системи](../../catalog/resources/dou-delta-architecture-interview-2024.md) - blog - English: 'We started building a secure ecosystem for all military applications.

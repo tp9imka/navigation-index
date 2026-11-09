@@ -20,4 +20,8 @@ Adds perception objectives (keep a point of interest visible, low image-plane ve
 
 - has_code: [rpg_mpc (PAMPC)](../../catalog/repos/uzh-rpg__rpg_mpc.md)
 
+## Referenced by
+
+- [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) (mentions)
+
 _Indexed by lane(s): guidance-planning_

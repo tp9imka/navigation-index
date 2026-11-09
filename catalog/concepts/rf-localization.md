@@ -41,9 +41,10 @@ UWB, TDOA/AOA, direction finding, emitter geolocation, beacons.
 - [GEARdrones](../../catalog/repos/excitablecell__geardrones.md) - fit: low - Lightweight STM32 drone control and multi-agent localization system combining a flight controller, UWB relative localization and a monitor tool.
 - [CoLRIO](../../catalog/repos/pengyu-team__co-lrio.md) - fit: low - Placeholder repo: it only holds a README pointing to zhongshp/Co-LRIO, where the code lives.
 
-## Documents, talks, courses, datasets (25)
+## Documents, talks, courses, datasets (26)
 
 - [Addressing Relative Pose Impact on UWB Localization: Dataset Introduction and Analysis](../../catalog/resources/rcv-uwb-relative-pose-dataset-2024.md) - dataset - Short paper introducing a drone UWB dataset that isolates how the relative pose between UWB devices affects ranging: six flight sequences with two-way ranging to four anchors, a stereo VIO setup, and motion-capture groun
+- [An Adaptive Sliding Window Estimator for Positioning of Unmanned Aerial Vehicle Using a Single Anchor](../../catalog/resources/xiong-2024-single-anchor-uwb-flow-drag.md) - paper - Preprint.
 - [Cardinal RF (CardRF): An Outdoor UAV/UAS/Drone RF Signals with Bluetooth and WiFi Signals Dataset](../../catalog/resources/cardrf-drone-rf-dataset.md) - dataset - Outdoor RF dataset of drone controller and telemetry signals plus Bluetooth and Wi-Fi, stored as .mat files, covering line-of-sight and beyond-line-of-sight conditions.
 - [Cooperative Localization for GNSS-Denied Subterranean Navigation: A UAV-UGV Team Approach](../../catalog/resources/ion-webinar-gross.md) - talk - West Virginia University work on UAV and UGV teams sharing ranging and odometry to localize jointly in GNSS-denied underground environments.
 - [Cooperative Localization in Wireless Networks](../../catalog/resources/wymeersch-2009-cooperative-localization-wireless.md) - paper - Proceedings of the IEEE 97(2) tutorial on cooperative localization in wireless networks, applied to ultra-wideband ranging.

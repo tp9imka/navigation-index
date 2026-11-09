@@ -38,5 +38,6 @@ AQNav is SandboxAQ's magnetic anomaly navigation system: magnetometers plus lear
 - [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
 - [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
 - [Docs map](../../docs/README.md) (mentions)
+- [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) (mentions)
 
 _Indexed by lane(s): landscape_

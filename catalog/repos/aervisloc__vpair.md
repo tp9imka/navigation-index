@@ -31,6 +31,7 @@ Repo for VPAIR, an aerial visual place recognition dataset matching low-altitude
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) (mentions)
 - [Three selective offline starter bundles](../../docs/starter-bundles.md) (mentions)
 - [aero-vloc](../../catalog/repos/prime-slam__aero-vloc.md) (evaluated_on)
 - [VPAIR - Aerial Visual Place Recognition and Localization in Large-scale Outdoor Environments](../../catalog/resources/vpair-dataset-2022.md) (has_code)

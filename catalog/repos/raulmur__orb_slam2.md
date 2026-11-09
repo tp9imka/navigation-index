@@ -24,6 +24,7 @@ Feature-based SLAM for monocular, stereo and RGB-D cameras using ORB features, w
 
 ## Referenced by
 
+- [gf_orb_slam2 (Good Feature / Good Graph)](../../catalog/repos/ivalab__gf_orb_slam2.md) (fork_of)
 - [ORB-SLAM3](../../catalog/repos/uz-slamlab__orb_slam3.md) (extends)
 
 _Indexed by lane(s): slam_

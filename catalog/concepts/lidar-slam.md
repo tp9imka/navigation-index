@@ -71,7 +71,7 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [CELL](../../catalog/repos/panagiotisq__cell.md) - fit: low - Event camera localization in prior lidar maps with confidence weighting.
 - [CoLRIO](../../catalog/repos/pengyu-team__co-lrio.md) - fit: low - Placeholder repo: it only holds a README pointing to zhongshp/Co-LRIO, where the code lives.
 
-## Documents, talks, courses, datasets (38)
+## Documents, talks, courses, datasets (39)
 
 - [Autoware documentation](../../catalog/resources/autoware-docs.md) - doc - Official Autoware documentation with architecture, installation, tutorials and design notes for localization, perception and planning components.
 - [CERBERUS: Autonomous Legged and Aerial Robotic Exploration in the Tunnel and Urban Circuits of the DARPA Subterranean Challenge](../../catalog/resources/cerberus-tunnel-urban-paper.md) - paper - Field Robotics paper covering CERBERUS' systems and results in the earlier SubT circuits, including perception, planning and artifact reporting.
@@ -96,6 +96,7 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [Nav2 ROSCon Talks index](../../catalog/resources/nav2-roscon-talks-index.md) - video - Index of ROSCon talks by Nav2 developers and the community (Vimeo links), including SLAM Toolbox and large-scale indoor mapping talks.
 - [NeBula: Quest for Robotic Autonomy in Challenging Environments; TEAM CoSTAR at the DARPA Subterranean Challenge](../../catalog/resources/nebula-costar-subt-paper.md) - paper - Describes the NeBula belief-space autonomy stack: multi-modal positioning, mapping, traversability, risk-aware mission planning and multi-robot reasoning; CoSTAR won the Urban circuit.
 - [Newer College Dataset](../../catalog/resources/ori-newer-college-dataset.md) - dataset - Handheld lidar plus stereo and multi-camera sequences around New College, Oxford, with precise ground truth from a survey-grade prior map.
+- [On Degeneracy of Optimization-based State Estimation Problems](../../catalog/resources/zhang-kaess-singh-2016-degeneracy-state-estimation.md) - paper - ICRA 2016 (abstract read).
 - [Online Training: Mobile Robotics (Basics + Robotics blocks)](../../catalog/resources/stachniss-mobile-robotics-online-training.md) - lecture-series - A curated self-study path of short recorded lectures from Bonn's Photogrammetry & Robotics lab, going from linear algebra, rotations and least squares through Bayes filters, EKF localization, particle filters, ICP, RANSA
 - [Past, Present, and Future of Simultaneous Localization And Mapping: Towards the Robust-Perception Age](../../catalog/resources/cadena-slam-past-present-future-2016.md) - paper - Landmark survey that frames modern SLAM as factor-graph MAP estimation and discusses robustness, scalability, representations and open problems.
 - [Robot Mapping - WS 2013/14 course page (slides, exercises)](../../catalog/resources/freiburg-robot-mapping-course.md) - course - Course page that accompanies the Robot Mapping lecture videos, with lecture slides and programming exercises (EKF-SLAM, UKF, FastSLAM, least-squares calibration, graph-SLAM) in Octave/Matlab.

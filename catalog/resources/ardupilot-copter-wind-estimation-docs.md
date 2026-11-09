@@ -24,5 +24,7 @@ How to make EKF3 estimate wind on a multicopter without an airspeed sensor by se
 ## Referenced by
 
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
+- [Dead Reckoning Failsafe (ArduCopter)](../../catalog/resources/ardupilot-copter-dead-reckoning-failsafe-docs.md) (cites)
+- [ArduPilot EKF3 drag fusion and wind-state gating (source, Copter-4.6.3)](../../catalog/resources/ardupilot-ekf3-drag-wind-source-copter-4-6-3.md) (explains)
 
 _Indexed by lane(s): nav-differentiators_

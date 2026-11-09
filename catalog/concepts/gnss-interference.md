@@ -30,8 +30,9 @@ GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-
 - [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) - Stdlib-only ground-vehicle loop on a real NCLT Segway session (2013-01-10, 1022 s, 1139 m, 42 MB download): consumer GPS at 1 Hz fused with MEMS strapdown INS (the 8-state EKF of gnss-ins-ekf-outage, imported), wheel spe
 - [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) - A simulated USV runs a 19.6 km transit over real geography (Lillgrund => Drogden channel => Copenhagen approach) built from OpenStreetMap coastline, Oresund bridge, wind turbines and seamarks, with 75 min of real Danish 
 
-## Guides (20)
+## Guides (22)
 
+- [02. Deadline-aware scheduling of expensive absolute fixes](../../docs/research/innovation-prior-art/02-deadline-aware-fix-scheduling.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
 - [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) - After this chapter you can describe any navigation system as "a state, an uncertainty, a set of measurements and a way to check they agree", and you will know the vocabulary judges use when they ask whether your solution
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) - After this chapter you can explain how a receiver turns satellite signals into a position, read raw receiver output, pick between SPP, RTK and PPP, and build a jamming or spoofing detector that runs on recorded data.
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) - After this chapter you can pick a dataset or simulator that matches your scenario, compute the trajectory metrics judges and reviewers expect, and design a GNSS-outage or interference test that shows what your system doe
@@ -52,6 +53,7 @@ GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) - After this page you can explain why a GNSS-denied system loses time before it loses position, estimate how long a given oscillator holds time from its datasheet, name the attacks on GNSS and network time, and pick a 24-4
 - [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) - Lane ua-ru-sources: 38 resources and 12 repos, all tagged lang:uk or lang:ru.
 - [Upstream findings](../../docs/upstream-findings.md) - Defects and gaps that the hub's samples found in other people's code and data, with what a maintainer needs to act on them.
+- [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) - Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (full brief 2026-11-18).
 
 ## Repositories (32)
 
@@ -88,7 +90,7 @@ GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-
 - [Stanford GNSS spoof detection](../../catalog/repos/fabianr-su__stanford-gnss-spoof-detection.md) - fit: low - A single MATLAB script (DoAsimulationStudy.m) simulating direction-of-arrival spoof detection, supporting Rothmaier et al.
 - [Приемники ГНСС - GNSS receiver design handbook (MPEI)](../../catalog/repos/korogodin__gnssrec.md) - fit: low - Source of a Russian-language textbook for the MPEI course on satellite navigation user equipment by I.
 
-## Documents, talks, courses, datasets (113)
+## Documents, talks, courses, datasets (115)
 
 - [IEC61850 SV and PTP traffic under GNSS jamming](../../catalog/resources/kit-iec61850-ptp-gnss-jamming-dataset.md) - dataset - fit: medium - Jamming half of the KIT KASTEL captures: IEC 61850 Sampled Values and PTP traffic while the substation time server's GNSS is jammed, about 594 GB pcap tar on KIT RADAR, CC BY-NC 4.0, identifiers pseudonymised.
 - [IEC61850 SV and PTP traffic under GNSS time synchronization attacks](../../catalog/resources/kit-iec61850-ptp-gnss-spoofing-dataset.md) - dataset - fit: medium - Pseudonymised pcap captures of IEC 61850 Sampled Values and IEEE 1588 PTP traffic from the KIT KASTEL energy security lab while the substation's GNSS-fed time server is spoofed.
@@ -97,6 +99,7 @@ GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-
 - [Above Us Only Stars: Exposing GPS Spoofing in Russia and Syria](../../catalog/resources/c4ads-above-us-only-stars.md) - report - Open-source investigation using AIS ship tracks, public records and ISS-based measurements to map thousands of GNSS spoofing events around Russia, Crimea and Syria, many linked to protection of VIPs and bases.
 - [ADS-B Data Analysis for GNSS Interference Mapping](../../catalog/resources/insidegnss-adsb-interference-mapping.md) - blog - Trade-press article on using ADS-B integrity data to detect and map GNSS interference regions.
 - [ADS-B Exchange free monthly sample data (readsb-hist)](../../catalog/resources/adsbexchange-monthly-samples.md) - dataset - ADS-B Exchange publishes its complete global feed for the 1st day of each month free of charge, as gzipped readsb aircraft.json snapshots every 5 s.
+- [An Innovation-Based Approach to Detect Stealthy Disturbance Attacks in Maritime Monitoring](../../catalog/resources/oliva-2026-innovation-stealthy-attack-maritime.md) - paper - Preprint.
 - [Analyzing and Characterizing Multi-Source Interference Effects at Jammertest Norway 2025](../../catalog/resources/jammertest-2025-multi-source-interference.md) - paper - Fraunhofer IIS dataset from Jammertest 2025 (Andøya) with a single-antenna E1/E5 receiver and a 2x2 CRPA array, benchmarking 17 ML models for interference type, bandwidth and power, plus YOLOv8s / RF-DETR detection of mu
 - [Assessing the Spoofing Threat: Development of a Portable GPS Civilian Spoofer](../../catalog/resources/humphreys-2008-assessing-spoofing-threat.md) - paper - Landmark ION GNSS 2008 paper that built a receiver-based civil GPS spoofer and analysed how hard it is to detect, kicking off modern civil spoofing defense research.
 - [Bellingcat OSINT Toolkit - GPSJam](../../catalog/resources/bellingcat-toolkit-gpsjam.md) - doc - Bellingcat's toolkit entry on using GPSJam for open-source investigations, with notes on limitations and interpretation.
@@ -156,6 +159,7 @@ GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-
 - [Quantum-Classical Hybrid Framework for Zero-Day Time-Push GNSS Spoofing Detection](../../catalog/resources/enan-2025-time-push-spoofing-hqc-ae.md) - paper - Preprint on detecting time-push spoofing against static GNSS receivers with an autoencoder (hybrid quantum-classical) trained only on authentic tracking-stage features, so it can flag unseen attack types.
 - [Raw GNSS Measurements](../../catalog/resources/android-raw-gnss-developer-guide.md) - doc - Android documentation on the GnssMeasurement API: which phones expose pseudorange, carrier phase and AGC, and how to log them.
 - [Raw IQ dataset for GNSS GPS jamming signal classification](../../catalog/resources/gnss-raw-iq-jamming-classification-zenodo.md) - dataset - Raw IQ dataset of GNSS jamming signal types (DME, narrowband, single AM, single chirp, single FM, no jamming) with 1000 training and 250 test samples, generated with a MATLAB script built on the Morales Ferre et al.
+- [Real-Time Bayesian Detection of Drift-Evasive GNSS Spoofing in Reinforcement Learning Based UAV Deconfliction](../../catalog/resources/panda-guo-2025-drift-evasive-spoofing-bayesian.md) - paper - Preprint.
 - [Real-World Spoofing Detection and Characterization Using Low-Cost Receivers](../../catalog/resources/kreizis-ion-itm-2025-spoofing.md) - paper - Analyses a real spoofing event in the Mediterranean recorded on low-cost u-blox F9P receivers and evaluates detection approaches on that live data rather than a simulator.
 - [Recent Advances on Jamming and Spoofing Detection in GNSS](../../catalog/resources/rados-2024-jamming-spoofing-detection-review.md) - paper - Open-access Sensors review of GNSS jamming and spoofing detection methods, finding machine learning is now the dominant approach, and covering combined jamming-plus-spoofing scenarios.
 - [Researchers home in on origins of Russia's Baltic GPS jamming](../../catalog/resources/defensenews-baltic-jamming-origins-2025.md) - blog - Reporting on Gdynia Maritime University research tracing Baltic jamming to Russian sites such as Baltiysk in Kaliningrad, DLR comment on how cheap and mobile jammers are, and an analyst's heatmap of likely jammer locatio

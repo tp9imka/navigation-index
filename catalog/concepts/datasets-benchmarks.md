@@ -16,7 +16,7 @@ Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [Shared pose recording and replay: JSONL plus optional MCAP](../../catalog/samples/recording-replay.md) - A deterministic synthetic local-ENU pose stream replayed through JSONL and optional MCAP with an embedded schema.
 - [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) - Stdlib-only ground-vehicle loop on a real NCLT Segway session (2013-01-10, 1022 s, 1139 m, 42 MB download): consumer GPS at 1 Hz fused with MEMS strapdown INS (the 8-state EKF of gnss-ins-ekf-outage, imported), wheel spe
 
-## Guides (10)
+## Guides (11)
 
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) - After this chapter you can explain the five main ways to get an absolute position without GNSS - image-to-map matching, terrain matching, magnetic anomaly matching, celestial fixes and signals of opportunity - pick the o
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) - After this chapter you can pick a dataset or simulator that matches your scenario, compute the trajectory metrics judges and reviewers expect, and design a GNSS-outage or interference test that shows what your system doe
@@ -28,8 +28,9 @@ Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) - Plausible problem statements for a navigation / PNT / GNSS-denied hackathon, each mapped to a recommended approach, a stack (integration cards first, catalog pages otherwise), datasets, a sample or template to start from
 - [Three selective offline starter bundles](../../docs/starter-bundles.md) - Pick a bundle before downloading the broad offline kit.
 - [Upstream findings](../../docs/upstream-findings.md) - Defects and gaps that the hub's samples found in other people's code and data, with what a maintainer needs to act on them.
+- [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) - Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (full brief 2026-11-18).
 
-## Repositories (96)
+## Repositories (97)
 
 - [Rerun](../../catalog/repos/rerun-io__rerun.md) - fit: high - SDKs and viewer for recording and inspecting multimodal robotics data on synchronized timelines, including images, point clouds, transforms, trajectories and scalar signals; supports MCAP ingestion.
 - [evo](../../catalog/repos/michaelgrupp__evo.md) - fit: high - Python package and CLI for evaluating odometry and SLAM trajectories (ATE/RPE, alignment, plotting) in TUM, KITTI, EuRoC and ROS bag formats.
@@ -91,6 +92,7 @@ Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [CART - Caltech Aerial RGB-Thermal](../../catalog/repos/aerorobotics__caltech-aerial-rgbt-dataset.md) - fit: medium - Aerial RGB plus thermal dataset from natural terrain (rivers, coasts, deserts, forests) with GPS and inertial data, plus benchmarks for segmentation, RGB-to-thermal translation and VIO.
 - [AerialVL](../../catalog/repos/hmf21__aerialvl.md) - fit: medium - Visual geo-localization dataset and code designed for aerial vehicles.
 - [Hilti SLAM Challenge 2023](../../catalog/repos/hilti-research__hilti-slam-challenge-2023.md) - fit: medium - Repository for the 2023 Hilti SLAM Challenge, including multi-session sequences.
+- [OrthoLoC](../../catalog/repos/deepscenario__ortholoc.md) - fit: medium - Dataset tools and code for UAV 6-DoF localization and calibration against orthophotos and surface models (NeurIPS 2025 D&B).
 - [MassMIND](../../catalog/repos/uml-marine-robotics__massmind.md) - fit: medium - Long-wave infrared image dataset of a harbour environment with semantic and instance segmentation masks for maritime scene understanding.
 - [SubPipe](../../catalog/repos/remaro-network__subpipe-dataset.md) - fit: medium - Underwater dataset recorded by a lightweight AUV inspecting a submarine pipeline: two cameras, side-scan sonar (10,030 images, COCO/YOLO labels), segmentation masks and navigation data, for segmentation, detection and vi
 - [Hilti SLAM Challenge 2022](../../catalog/repos/hilti-research__hilti-slam-challenge-2022.md) - fit: medium - Repository for the 2022 Hilti SLAM Challenge with dataset info and evaluation tooling.
@@ -128,7 +130,7 @@ Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [PVI polarization navigation dataset](../../catalog/repos/ts-fupeng__pvi-dataset.md) - fit: low - Dataset combining stereo camera, IMU, polarization camera and high-precision GPS for polarization-aided navigation research.
 - [MIT VNAV lab data](../../catalog/repos/mit-spark__vnav-lab-data.md) - fit: low - Pointer repo for the ROS bag files used in MIT's Visual Navigation for Autonomous Vehicles course exercises.
 
-## Documents, talks, courses, datasets (121)
+## Documents, talks, courses, datasets (123)
 
 - [Clock Synchronization Accuracy over Mobile Networks](../../catalog/resources/edi-ptp-mobile-network-dataset.md) - dataset - fit: high - PTPv2 (PTPd) time synchronization between two hosts across mobile networks including a private 5G SA network, with the slave's PTPd 'offset from master' log values and an independent PPS-vs-PPS offset measured with an An
 - [Data for "PTP over wide area networks with offset measurement outlier filtering"](../../catalog/resources/uniri-wan-ptp-outlier-filtering-dataset.md) - dataset - fit: high - University of Granada measurements of ptp4l and chrony time transfer over about 200 km of research network between ROA (Spanish UTC lab) and Granada, plus Calnex Paragon-X network emulation runs and free-running NIC stab
@@ -138,6 +140,7 @@ Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [BIPM Circular T](../../catalog/resources/bipm-circular-t.md) - dataset - fit: low - Monthly BIPM publication of UTC - UTC(k) for the national timing labs contributing to UTC, with uncertainties, plus related TAI data on the BIPM FTP server.
 - [2025 Abu Dhabi Autonomous Racing League](../../catalog/resources/a2rl-2025-season.md) - doc - Summary of the A2RL x DCL autonomous drone championship, won by TU Delft MAVLab ahead of TII Racing and KAIST, including races against human pilots.
 - [4D Millimeter-Wave Radar in Autonomous Driving: A Survey](../../catalog/resources/han-4d-mmwave-radar-survey-2023.md) - paper - Survey of 4D imaging radar: signal processing, datasets, calibration, perception and SLAM/odometry uses.
+- [A Benchmark Comparison of Visual Place Recognition Techniques for Resource-Constrained Embedded Platforms](../../catalog/resources/power-2021-vpr-embedded-benchmark.md) - paper - arXiv 2109.11002 preprint.
 - [A Review on Deep Learning for UAV Absolute Visual Localization](../../catalog/resources/couturier-review-dl-uav-avl-2024.md) - paper - Survey of deep-learning approaches to UAV absolute visual localization against reference maps since 2019, in the journal Drones.
 - [ACM MM 2023 Multimedia Drone Satellite Matching Challenge (UAVM 2023)](../../catalog/resources/uavm-2023-codalab.md) - competition - Codalab leaderboard for drone-to-satellite matching on the University-160k extension.
 - [ACM MM 2024 Multi-weather Drone Satellite Matching Challenge (UAVM 2024)](../../catalog/resources/uavm-2024-codalab.md) - competition - Codalab leaderboard for weather-robust drone-satellite matching.
@@ -209,6 +212,7 @@ Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [OpenDroneMap Aukerman Park eBee image set](../../catalog/resources/odm-aukerman-ebee-dataset.md) - dataset - A CC0 set of nadir photos from a senseFly eBee survey of Aukerman Park, Ohio, distributed by OpenDroneMap as a photogrammetry test dataset, with EXIF GPS in each frame.
 - [OpenFly: A Comprehensive Platform for Aerial Vision-Language Navigation](../../catalog/resources/openfly-aerial-vln-2025.md) - paper - Presents a multi-engine aerial VLN platform with automated data generation, a large outdoor benchmark and a keyframe-aware VLN model.
 - [OpenStreetMap data via the Overpass API](../../catalog/resources/openstreetmap-overpass-api.md) - dataset - A read-only query API over the OpenStreetMap database that returns features (coastlines, bridges, wind turbines, buoys) inside a bounding box.
+- [OrthoLoC: UAV 6-DoF Localization and Calibration Using Orthographic Geodata](../../catalog/resources/dhaouadi-2025-ortholoc.md) - paper - NeurIPS 2025 Datasets and Benchmarks.
 - [OSNMAlib bundled Galileo I/NAV recording (custom_run)](../../catalog/resources/osnmalib-galileo-inav-recording.md) - dataset - A real 76-minute Septentrio SBF GALRawINAV recording of live Galileo E1 I/NAV pages with OSNMA, shipped in the OSNMAlib repository alongside the matching GSC public key and Merkle tree, plus an older recording from the p
 - [Oxford Radar RobotCar Dataset](../../catalog/resources/oxford-radar-robotcar-dataset.md) - dataset - RobotCar route re-driven with a scanning FMCW radar plus lidars and cameras, for radar odometry and localization.
 - [Oxford RobotCar Dataset](../../catalog/resources/oxford-robotcar-dataset.md) - dataset - Repeated drives of the same Oxford route over a year in all weather, with cameras, lidar and GPS/INS.

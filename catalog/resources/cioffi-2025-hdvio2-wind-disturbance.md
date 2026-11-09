@@ -24,5 +24,7 @@ IEEE T-RO 2025. Extends hybrid-dynamics VIO with rotational dynamics: two TCNs p
 ## Referenced by
 
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
+- [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](../../docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md) (mentions)
+- [HDVIO: Improving Localization and Disturbance Estimation with Hybrid Dynamics VIO](../../catalog/resources/cioffi-2023-hdvio-hybrid-dynamics-vio.md) (same_author)
 
 _Indexed by lane(s): nav-differentiators_

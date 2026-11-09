@@ -18,6 +18,10 @@ Real-time visual localization framework for planetary UAVs that jointly uses rel
 
 **Domains:** air, space
 
+## Referenced by
+
+- [JointLoc: A Real-time Visual Localization Framework for Planetary UAVs Based on Joint Relative and Absolute Pose Estimation](../../catalog/resources/luo-2024-jointloc-planetary-uav.md) (has_code)
+
 _Indexed by lane(s): alt-nav_
 
 _GitHub metadata fetched 2026-11-09._

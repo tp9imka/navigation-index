@@ -23,5 +23,7 @@ IEEE Control Systems Magazine 34(1), 2014. Explains why a multirotor acceleromet
 ## Referenced by
 
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
+- [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](../../docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md) (mentions)
+- [IMU-Based Inertia Estimation for a Quadrotor Using Newton-Euler Dynamics](../../catalog/resources/svacha-2020-imu-inertia-estimation-quadrotor.md) (cites)
 
 _Indexed by lane(s): nav-differentiators_

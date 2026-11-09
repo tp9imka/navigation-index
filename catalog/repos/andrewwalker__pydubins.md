@@ -26,6 +26,7 @@ Python wrapper around the C Dubins-Curves library: shortest paths for a vehicle 
 ## Referenced by
 
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
+- [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) (mentions)
 - [mavsim_public (Small Unmanned Aircraft)](../../catalog/repos/byu-magicc__mavsim_public.md) (alternative_to)
 - [EDuPlane (Extended Dubins Airplane)](../../catalog/repos/dlr-ft__eduplane.md) (extends)
 

@@ -29,12 +29,13 @@ Star trackers, sun/sky polarization, celestial fixes.
 - [PVI polarization navigation dataset](../../catalog/repos/ts-fupeng__pvi-dataset.md) - fit: low - Dataset combining stereo camera, IMU, polarization camera and high-precision GPS for polarization-aided navigation research.
 - [GNSS-AK_model - GNSS + astro-corrector model](../../catalog/repos/ledesha__gnss-ak_model.md) - fit: low - Diploma C++ code modelling a moving user, GNSS operation and an astro-corrector (star-tracker style celestial correction), with integrator and linear-algebra helpers.
 
-## Documents, talks, courses, datasets (7)
+## Documents, talks, courses, datasets (8)
 
 - [GAO-21-320SP: Defense Navigation Capabilities - DOD Is Developing Positioning, Navigation, and Timing Technologies to Complement GPS](../../catalog/resources/gao-21-320sp-gps-alternatives.md) - report - Technology assessment of DoD's alternative PNT efforts (inertial, vision, celestial, magnetic, signals of opportunity, clocks), with maturity status and challenges.
 - [Honeywell Vision Aided Navigation (Alternative Navigation Suite)](../../catalog/resources/honeywell-vision-aided-navigation.md) - product - Honeywell's VAN correlates live visible or IR imagery against onboard reference maps for an absolute fix, paired with its inertial units.
 - [JPL DE421 planetary ephemeris (NAIF SPK kernel)](../../catalog/resources/jpl-de421-ephemeris.md) - dataset - The DE421 planetary and lunar ephemeris as a NAIF SPK binary kernel (de421.bsp, about 16 MB), an older but compact JPL Development Ephemeris commonly loaded with Skyfield.
 - [NASA SkyView virtual observatory](../../catalog/resources/nasa-skyview-virtual-observatory.md) - dataset - A NASA service that cuts FITS images with a reference WCS from many all-sky surveys at any position, scale and projection.
+- [Navigation by Skylight Polarization via Rayleigh Model Optimization on a Road Vehicle](../../catalog/resources/potter-2026-skylight-polarization-rayleigh-road.md) - paper - Preprint.
 - [OpenSky: A Modular and Open-Source Simulator of Sky Polarization Measurements](../../catalog/resources/opensky-sky-polarization-simulator-2024.md) - paper - Open simulator of what a polarimetric camera sees of the sky (intensity, angle and degree of polarization), validated against real captures, for developing polarization compasses.
 - [tetra3 documentation](../../catalog/resources/tetra3-docs.md) - doc - Usage and API documentation for the tetra3 lost-in-space star plate solver, including database generation and solving images.
 - [Навигация без GPS, которая уже работает](../../catalog/resources/habr-nav-without-gps-overview-2025.md) - blog - English: 'Navigation without GPS that already works'.

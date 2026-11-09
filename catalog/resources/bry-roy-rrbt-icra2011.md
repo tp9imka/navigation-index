@@ -20,4 +20,9 @@ Belief-space planning: grows a tree over state and estimator covariance, propaga
 
 - explains: [edpl-ompl](../../catalog/repos/sauravag__edpl-ompl.md)
 
+## Referenced by
+
+- [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) (mentions)
+- [Non-Gaussian Belief Space Planning: Correctness and Complexity](../../catalog/resources/platt-2012-non-gaussian-belief-space-planning.md) (cites)
+
 _Indexed by lane(s): guidance-planning_

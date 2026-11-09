@@ -23,6 +23,7 @@ Foundational paper showing that for group-affine systems the invariant EKF has e
 ## Referenced by
 
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
+- [Equivariant Symmetries for Inertial Navigation Systems](../../catalog/resources/fornasier-2023-equivariant-symmetries-ins.md) (cites)
 - [Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation](../../catalog/resources/hartley-contact-aided-inekf.md) (cites)
 
 _Indexed by lane(s): ins-fusion_

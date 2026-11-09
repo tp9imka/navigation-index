@@ -31,5 +31,7 @@ PX4 guide to its EKF2 estimator: which sensors it fuses (IMU, GNSS, baro, mag, o
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [PX4 EKF2 delayed fusion horizon: estimator_interface.cpp, TimestampedRingBuffer and EKF2_DELAY_MAX](../../catalog/resources/px4-ekf2-delayed-horizon-source.md) (cites)
+- [PX4 EKF2 drag fusion, wind process noise and IMU bias inhibit (source, v1.16.0)](../../catalog/resources/px4-ekf2-drag-wind-source-v1-16.md) (explains)
 
 _Indexed by lane(s): autopilots, learning_

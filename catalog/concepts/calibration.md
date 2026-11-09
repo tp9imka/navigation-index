@@ -10,8 +10,9 @@ Camera-IMU, LiDAR-IMU extrinsics, intrinsics, time offset, Allan variance.
 
 - [MagNav.jl quickstart: Tolles-Lawson and EKF on the SGL 2020 flight](../../catalog/samples/magnav-quickstart.md) - A Julia walkthrough with MagNav.jl that downloads the public SGL 2020 challenge flight and Ottawa anomaly maps, compensates the scalar magnetometer with Tolles-Lawson on a calibration box, and runs the MagNav EKF against
 
-## Guides (2)
+## Guides (3)
 
+- [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](../../docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md) - Research date 2026-11-09.
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) - After this chapter you can explain why an IMU drifts, write the predict/update loop of a Kalman filter, choose between a filter and a factor graph, and configure an off-the-shelf estimator to survive a GNSS outage.
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) - After this page you can explain why a GNSS-denied system loses time before it loses position, estimate how long a given oscillator holds time from its datasheet, name the attacks on GNSS and network time, and pick a 24-4
 
@@ -45,18 +46,32 @@ Camera-IMU, LiDAR-IMU extrinsics, intrinsics, time offset, Allan variance.
 - [ROAMFREE](../../catalog/repos/airlab-polimi__roamfree.md) - fit: low - Pose-graph sensor fusion and self-calibration library on g2o with a catalogue of generic sensor models, used in UAV photogrammetry with raw inertial observations (Cucci, Skaloud).
 - [White Rabbit calibration](../../catalog/repos/gitlab.com__ohwr__project__wr-calibration.md) - fit: low - Procedures and notes for calibrating White Rabbit equipment: fixed hardware delays and fibre asymmetry that must be measured for absolute time accuracy.
 
-## Documents, talks, courses, datasets (12)
+## Documents, talks, courses, datasets (26)
 
+- [A Nonlinear Model-Based Wind Velocity Observer for Unmanned Aerial Vehicles](../../catalog/resources/borup-fossen-johansen-2016-wind-velocity-observer.md) - paper - NOLCOS 2016 (author PDF read).
+- [A Singular Value Maximizing Data Recording Algorithm for Concurrent Learning](../../catalog/resources/chowdhary-johnson-2011-concurrent-learning-data-recording.md) - paper - ACC 2011 (abstract read from proceedings PDF).
 - [Advanced Aeromagnetic Compensation Models for Airborne Magnetic Anomaly Navigation](../../catalog/resources/gnadt-2022-mit-phd-aeromagnetic-compensation.md) - report - MIT AeroAstro PhD thesis (advisor Alan Edelman) on removing the aircraft's own magnetic field so magnetic anomaly maps can be used for navigation.
 - [Airborne Magnetic Anomaly Navigation with Neural-Network-Augmented Online Calibration](../../catalog/resources/hager-2026-magnav-nn-online-calibration.md) - paper - Published in the Journal of Guidance, Control, and Dynamics (2026).
+- [Airspeed estimation for UAVs using only propeller feedback](../../catalog/resources/ntouros-2025-airspeed-propeller-feedback.md) - paper - arXiv preprint, later in Aerospace Science and Technology per TU Delft listing (abstract read).
+- [Degenerate Motion Analysis for Aided INS with Online Spatial and Temporal Sensor Calibration](../../catalog/resources/yang-2019-degenerate-motion-aided-ins-calibration.md) - paper - IEEE RA-L 2019; the linked file is the RPNG tech report (RPNG-2018-CALIB).
 - [Derivation and Extensions of the Tolles-Lawson Model for Aeromagnetic Compensation](../../catalog/resources/gnadt-2022-tolles-lawson-derivation.md) - paper - Short open reference note that re-derives the Tolles-Lawson aircraft magnetic field model (permanent, induced and eddy-current terms), states where the assumptions enter, describes the calibration procedure, and adds a s
 - [Handbook of Frequency Stability Analysis (NIST SP 1065)](../../catalog/resources/nist-sp1065-frequency-stability-handbook.md) - book - NIST tutorial and reference on characterizing clocks and oscillators: Allan, modified Allan, Hadamard and time deviation, power-law noise types, drift removal and confidence intervals.
+- [Identifying Aerodynamics of Small Fixed-Wing Drones Using Inertial Measurements for Model-Based Navigation](../../catalog/resources/sharma-laupre-skaloud-2023-identifying-aerodynamics-fixed-wing.md) - paper - NAVIGATION 70(4), open access.
+- [IMU-Based Inertia Estimation for a Quadrotor Using Newton-Euler Dynamics](../../catalog/resources/svacha-2020-imu-inertia-estimation-quadrotor.md) - paper - IEEE RA-L 5(3).
 - [Kalibr wiki: camera-IMU calibration tutorials](../../catalog/resources/kalibr-wiki.md) - doc - Wiki for Kalibr covering multi-camera, camera-IMU and rolling-shutter calibration, target generation and data collection practice.
 - [Kalibr wiki: IMU Noise Model](../../catalog/resources/kalibr-imu-noise-model-wiki.md) - doc - Practical explanation of white noise and random-walk bias parameters for IMUs, how to convert datasheet values to continuous/discrete form and how to inflate them for real use.
 - [LeapSecond.com (Tom Van Baak time and frequency pages)](../../catalog/resources/leapsecond-tvb.md) - doc - Long-running personal site with measurements of oscillators, GPSDOs and atomic clocks, Allan deviation tutorials and experiments.
 - [Magnetic Navigation on an F-16 Aircraft Using Online Calibration](../../catalog/resources/canciani-2022-f16-magnav-online-calibration.md) - paper - IEEE TAES 58(1) paper on magnetic anomaly navigation flown on an F-16, where the platform's magnetic interference is far larger than on survey aircraft and drifts.
+- [Moving Horizon Estimation of Air Data Parameters for UAVs](../../catalog/resources/wenz-johansen-2019-mhe-air-data.md) - paper - IEEE Transactions on Aerospace and Electronic Systems (NTNU Open record; abstract-level read).
+- [Observability-aware Self-Calibration of Visual and Inertial Sensors for Ego-Motion Estimation](../../catalog/resources/schneider-2019-observability-aware-vi-self-calibration.md) - paper - IEEE Sensors Journal (arXiv preprint read).
+- [Observability-Aware Trajectory Optimization for Self-Calibration with Application to UAVs](../../catalog/resources/hausman-2016-observability-aware-trajectory-optimization.md) - paper - arXiv preprint.
 - [OpenVINS documentation](../../catalog/resources/openvins-docs.md) - doc - Documentation for the OpenVINS MSCKF-based visual-inertial estimator, including derivations of the propagation and update steps, calibration, evaluation tooling and ROS usage.
 - [Photogrammetry I & II](../../catalog/resources/stachniss-photogrammetry-i-ii.md) - lecture-series - Recorded two-semester photogrammetry course (2015/16 playlist): camera models, direct linear transform, projective geometry, epipolar geometry, bundle adjustment, and image-based 3D reconstruction.
+- [PX4 EKF2 drag fusion, wind process noise and IMU bias inhibit (source, v1.16.0)](../../catalog/resources/px4-ekf2-drag-wind-source-v1-16.md) - doc - Source read at v1.16.0 (drag_fusion.cpp differs at v1.17.0 only in parameter names).
+- [Reliable strategies for implementing model-based navigation on fixed-wing drones](../../catalog/resources/laupre-pirlet-skaloud-2023-reliable-vdm-navigation.md) - paper - The Journal of Navigation, open access (CC BY).
+- [Revisiting multi-GNSS Navigation for UAVs -- An Equivariant Filtering Approach](../../catalog/resources/scheiber-2023-multi-gnss-eqf-uav.md) - paper - Preprint.
+- [Sampling-based Motion Planning for Active Multirotor System Identification](../../catalog/resources/bahnemann-2017-active-multirotor-system-identification.md) - paper - ICRA 2017 (arXiv preprint read at abstract level).
+- [Trajectory Optimization for Self-Calibration and Navigation](../../catalog/resources/preiss-2017-trajectory-optimization-self-calibration.md) - paper - RSS 2017.
 - [Vision Algorithms for Mobile Robotics (UZH/ETH)](../../catalog/resources/scaramuzza-vision-algorithms-mobile-robotics.md) - course - Graduate course building a monocular visual odometry pipeline step by step: image formation, calibration, feature detection, two-view geometry, P3P+RANSAC, bundle adjustment, KLT tracking, place recognition, visual-inert
 - [Навигация по Optical Flow · Clover](../../catalog/resources/coex-clover-docs-optical-flow-ru.md) - doc - English: 'Optical Flow navigation - Clover docs'.
 

@@ -23,5 +23,6 @@ Computes protection levels for localization that matches camera images to a LiDA
 ## Referenced by
 
 - [Integrity monitoring of Graph-SLAM using GPS and fish-eye camera](../../catalog/resources/bhamidipati-gao-2020-graph-slam-integrity.md) (same_author)
+- [Reliable urban vehicle localization under faulty satellite navigation signals](../../catalog/resources/gupta-gao-2024-reliable-urban-localization-faulty-gnss.md) (same_author)
 
 _Indexed by lane(s): backlog_

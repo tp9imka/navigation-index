@@ -20,4 +20,8 @@ Precomputes a voxel map of visual-localisation information so a planner can scor
 
 - has_code: [Fisher Information Field (rpg_information_field)](../../catalog/repos/uzh-rpg__rpg_information_field.md)
 
+## Referenced by
+
+- [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) (mentions)
+
 _Indexed by lane(s): guidance-planning_

@@ -37,6 +37,7 @@ Universal visual place recognition using foundation-model (DINOv2) features with
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [MegaLoc](../../catalog/repos/gmberton__megaloc.md) (alternative_to)
 - [VPR methods evaluation](../../catalog/repos/gmberton__vpr-methods-evaluation.md) (integrates_with)
 - [UAVLocalization (map retrieval + alignment)](../../catalog/repos/hmf21__uavlocalization.md) (alternative_to)
 - [SALAD](../../catalog/repos/serizba__salad.md) (alternative_to)

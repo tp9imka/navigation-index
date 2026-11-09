@@ -35,6 +35,7 @@ EU-funded 48-hour hackathon held 15-17 October 2026 at eight sites under the the
 - [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Docs map](../../docs/README.md) (mentions)
+- [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) (mentions)
 - [EUDIS Defence Hackathon Klagenfurt winners (Oct 2026)](../../catalog/resources/eudis-2026-klagenfurt-winners.md) (part_of)
 
 _Indexed by lane(s): landscape_

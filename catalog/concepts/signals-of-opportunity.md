@@ -28,7 +28,7 @@ Positioning from LTE/5G, Wi-Fi, DVB, LEO satellites (Starlink, Iridium), eLoran,
 - [LoranC receiver](../../catalog/repos/romavis__loranc.md) - fit: low - Hobby project to build a DSP-based Loran-C receiver that can also lock onto the Russian Chayka chain.
 - [Loran-C reference signal generator](../../catalog/repos/cheolj__loran-c-reference-code.md) - fit: low - NumPy API that generates Loran-C master and secondary station pulse groups with phase codes for simulation (Korean docs).
 
-## Documents, talks, courses, datasets (50)
+## Documents, talks, courses, datasets (51)
 
 - [Chronos Technology Tests eLoran Timing Provision in the UK](../../catalog/resources/insidegnss-chronos-eloran-utd-2025.md) - blog - fit: low - Report on the ESA-funded UTC Time Distribution (UTD) project led by Chronos Technology: caesium clocks replaced at the Anthorn eLoran transmitter, and prototype receivers producing UTC-aligned 1PPS from eLoran alone in t
 - [Enhanced Loran (eLoran) Definition Document](../../catalog/resources/ila-eloran-definition-document-2007.md) - doc - fit: low - High-level definition of eLoran for policy makers, service providers and users: what distinguishes it from Loran-C (UTC-synchronised transmitters, a data channel, differential corrections) and the positioning and timing 
@@ -72,6 +72,7 @@ Positioning from LTE/5G, Wi-Fi, DVB, LEO satellites (Starlink, Iridium), eLoran,
 - [The Global Loran / eLoran Infrastructure Evolution: A Robust and Resilient PNT Backup for GNSS](../../catalog/resources/faa-eloran-iat-2014.md) - talk - Briefing by the FAA's chief navigation systems engineer to the US Space-Based PNT Advisory Board (3 June 2014) on the history of Loran/eLoran and the findings of the 2006-2008 Independent Assessment Team, which judged eL
 - [Timing Properties of the Starlink Ku-Band Downlink](../../catalog/resources/qin-2025-starlink-timing-properties.md) - paper - IEEE TAES 62 (2026) paper characterizing Starlink frame timing for pseudorange-based opportunistic PNT.
 - [TrustPoint - C-band LEO PNT](../../catalog/resources/trustpoint-leo-pnt.md) - company - TrustPoint is developing a commercial C-band LEO navigation constellation.
+- [UAV Waypoint Opportunistic Navigation in GNSS-Denied Environments](../../catalog/resources/yang-kassas-2022-uav-waypoint-opportunistic-navigation.md) - paper - IEEE TAES 58(1):663-678.
 - [Unveiling Starlink for PNT](../../catalog/resources/kozhaya-saroufim-kassas-2025-unveiling-starlink-pnt.md) - paper - Open-access NAVIGATION 72(1) paper describing the full Starlink OFDM beacon via blind beacon estimation, the processing gain this gives over previously published sequences, achievable C/N0 for different reception setups,
 - [Unveiling Starlink for PNT](../../catalog/resources/ion-webinar-kozhaya.md) - talk - Presents work on exploiting Starlink downlink signals for opportunistic positioning, including signal structure discovery and Doppler/pseudorange-based navigation results.
 - [Unveiling Starlink LEO Satellite OFDM-Like Signal Structure Enabling Precise Positioning](../../catalog/resources/neinavaie-kassas-2024-starlink-ofdm-structure.md) - paper - IEEE TAES 60(2) letter that estimates the structure of Starlink's OFDM-like reference signals and frame length, and proposes a blind receiver that acquires multiple satellites, estimates their reference signals and Doppl

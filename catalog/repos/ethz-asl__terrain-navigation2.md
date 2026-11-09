@@ -28,6 +28,7 @@ ROS 2 port of ETH's safe low-altitude fixed-wing planner for steep terrain: RRT*
 ## Referenced by
 
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
+- [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) (mentions)
 - [EDuPlane (Extended Dubins Airplane)](../../catalog/repos/dlr-ft__eduplane.md) (alternative_to)
 - [terrain-navigation (ROS 1)](../../catalog/repos/ethz-asl__terrain-navigation.md) (alternative_to)
 - [Time-optimal Paths for a Dubins airplane](../../catalog/resources/chitsaz-lavalle-dubins-airplane-2007.md) (has_code)

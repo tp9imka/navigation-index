@@ -19,6 +19,7 @@ IEEE Robotics and Automation Magazine 20(4), 2013. An EKF that uses the blade-fl
 ## Referenced by
 
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
+- [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](../../docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md) (mentions)
 - [Quadrotors and Accelerometers: State Estimation with an Improved Dynamic Model](../../catalog/resources/leishman-2014-quadrotors-accelerometers.md) (cites)
 
 _Indexed by lane(s): nav-differentiators_

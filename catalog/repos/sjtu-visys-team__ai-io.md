@@ -27,6 +27,7 @@ Learned inertial odometry for quadrotors that feeds rotor speeds alongside IMU d
 ## Referenced by
 
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
+- [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](../../docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md) (mentions)
 - [DIDO](../../catalog/repos/zhangkunyi__dido.md) (integrates_with)
 - [AI-IO: An Aerodynamics-Inspired Real-Time Inertial Odometry for Quadrotors](../../catalog/resources/cui-2026-ai-io-aerodynamics-inertial-odometry.md) (has_code)
 

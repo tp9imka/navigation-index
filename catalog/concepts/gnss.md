@@ -100,7 +100,7 @@ GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 - [glnephexercise - GLONASS satellite position exercise](../../catalog/repos/korogodin__glnephexercise.md) - fit: low - MPEI student project template for computing GLONASS satellite positions from broadcast ephemerides.
 - [GNSS-AK_model - GNSS + astro-corrector model](../../catalog/repos/ledesha__gnss-ak_model.md) - fit: low - Diploma C++ code modelling a moving user, GNSS operation and an astro-corrector (star-tracker style celestial correction), with integrator and linear-algebra helpers.
 
-## Documents, talks, courses, datasets (62)
+## Documents, talks, courses, datasets (63)
 
 - [2025 PNT Symposium - Day 2 Invited Speaker Presentation Videos](../../catalog/resources/stanford-pnt-symposium-2025-invited-videos.md) - video - Video album of invited speaker talks from the 2025 Stanford PNT Symposium, featuring speakers such as Brad Parkinson and Jade Morton.
 - [A Baseline GPS RAIM Scheme and a Note on the Equivalence of Three RAIM Methods](../../catalog/resources/brown-1992-baseline-raim.md) - paper - NAVIGATION 39(3) paper written as the RTCA GPS MOPS were released.
@@ -151,6 +151,7 @@ GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 - [Principles of GNSS, Inertial, and Multisensor Integrated Navigation Systems, Second Edition](../../catalog/resources/groves-pnt-book-2e.md) - book - Standard reference on satellite, inertial and terrestrial radio navigation and their integration, including INS/GNSS integration architectures, dead reckoning, feature matching and integrity monitoring.
 - [QZSS Performance Standards and Interface Specifications (IS-QZSS)](../../catalog/resources/qzss-is-qzss.md) - standard - Japan's QZSS interface specifications covering GPS-compatible signals, the L6 CLAS centimetre-level augmentation and MADOCA PPP services.
 - [Raw GNSS Measurements](../../catalog/resources/android-raw-gnss-developer-guide.md) - doc - Android documentation on the GnssMeasurement API: which phones expose pseudorange, carrier phase and AGC, and how to log them.
+- [Reliable urban vehicle localization under faulty satellite navigation signals](../../catalog/resources/gupta-gao-2024-reliable-urban-localization-faulty-gnss.md) - paper - EURASIP J.
 - [rtklibexplorer blog](../../catalog/resources/rtklibexplorer-blog.md) - blog - Long-running practitioner blog on getting centimetre-level RTK/PPK from low-cost u-blox receivers with the demo5 RTKLIB fork, with configuration walk-throughs and data analysis.
 - [Safran Skydel simulation engine / GSG-8 GNSS simulator (ex-Orolia)](../../catalog/resources/safran-skydel-gsg8.md) - product - Skydel is the SDR/GPU-based simulation engine behind Safran's GSG-8 simulators, with built-in jamming and spoofing scenarios, CRPA wavefront variants and LEO PNT signal options; Safran offers it to universities through a
 - [SCPNT Photo and Video Gallery (PNT Symposium recordings archive)](../../catalog/resources/stanford-scpnt-video-gallery.md) - video - Archive index of Stanford PNT Symposium recordings going back to 2007, organised by year into student and invited-speaker albums.

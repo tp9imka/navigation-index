@@ -20,4 +20,8 @@ Localisation-aware planner that reasons about which features the camera will see
 
 - has_code: [LA-Planner](../../catalog/repos/robotics-star-lab__la-planner.md)
 
+## Referenced by
+
+- [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) (mentions)
+
 _Indexed by lane(s): guidance-planning_

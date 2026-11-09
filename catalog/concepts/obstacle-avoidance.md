@@ -43,7 +43,7 @@ Reactive avoidance, sense-and-avoid, DAA.
 - [Aeolus Ocean](../../catalog/repos/aavek__aeolus-ocean.md) - fit: low - Collision avoidance simulator for COLREG-compliant autonomous ship navigation intended for use as a digital twin under varied weather and day/night conditions.
 - [TPU_2 (CopterHack 2023) - flight through forest](../../catalog/repos/shamoleg__clover.md) - fit: low - Fork of Clover with Tomsk Polytechnic team TPU_2's CopterHack 2023 entry (docs/ru/tpu_2.md on branch tpu_2): an algorithm for autonomous flight through dense forest using empirical search plus classic planners such as Di
 
-## Documents, talks, courses, datasets (9)
+## Documents, talks, courses, datasets (10)
 
 - [COLREGs - Convention on the International Regulations for Preventing Collisions at Sea, 1972](../../catalog/resources/imo-colregs.md) - standard - IMO page for the collision regulations that define give-way and stand-on duties, lights and signals; the rule set autonomous surface vessels must encode.
 - [EGO-Planner: An ESDF-free Gradient-based Local Planner for Quadrotors](../../catalog/resources/zhou-ego-planner-paper.md) - paper - Introduces a local planner that avoids building a full Euclidean signed distance field, computing collision penalties only from obstacles the trajectory intersects, cutting onboard compute.
@@ -51,6 +51,7 @@ Reactive avoidance, sense-and-avoid, DAA.
 - [LaRS: A Diverse Panoptic Maritime Obstacle Detection Dataset and Benchmark](../../catalog/resources/lars-maritime-obstacle-dataset-2023.md) - dataset - ICCV 2023 panoptic obstacle detection benchmark from lakes, rivers and seas: over 4,000 per-pixel labelled key frames, each with nine preceding frames (40k+ frames), 11 classes and an online evaluation server.
 - [MIT 2.680 Unmanned Marine Vehicle Autonomy, Sensing and Communications](../../catalog/resources/mit-2680-marine-autonomy.md) - course - MIT course site with lectures and hands-on labs built on MOOS-IvP, covering behaviour-based autonomy, multi-vehicle coordination, collision avoidance and marine sensing.
 - [NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration](../../catalog/resources/nomad-diffusion-nav-2023.md) - paper - Single diffusion policy that handles both goal-directed navigation and undirected exploration by masking the goal.
+- [On the Necessity of Real-Time Principles in GPU-Driven Autonomous Robots](../../catalog/resources/ali-2025-real-time-principles-gpu-robots.md) - paper - ICRA 2025 (doi 10.1109/ICRA55743.2025.11128627).
 - [Robust and Efficient Quadrotor Trajectory Generation for Fast Autonomous Flight](../../catalog/resources/zhou-fast-planner-paper.md) - paper - Fast-Planner paper: kinodynamic path search front-end plus B-spline optimization and time adjustment for fast quadrotor flight in unknown environments.
 - [ViNT: A Foundation Model for Visual Navigation](../../catalog/resources/vint-foundation-model-2023.md) - paper - Trains a transformer navigation policy across many robot datasets and shows it adapts to new robots and tasks with little data.
 - [Навигация квадрокоптера с использованием монокулярного зрения](../../catalog/resources/habr-monocular-quad-nav-2016.md) - blog - English: 'Quadcopter navigation using monocular vision'.

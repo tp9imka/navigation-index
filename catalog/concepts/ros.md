@@ -112,7 +112,7 @@ ROS ecosystem packages for navigation and localization.
 - [LCAS ROS 2 MCP](../../catalog/repos/lcas__ros2_mcp.md) - fit: low - ROS 2 MCP server from the Lincoln Centre for Autonomous Systems: tools to list and echo topics, inspect message/service/action interfaces, fetch camera images for VLM analysis and send simple drive commands, plus canned 
 - [SOTER on ROS](../../catalog/repos/drona-org__soteronros.md) - fit: low - Research framework that builds distributed mobile-robot software on ROS as runtime-assurance modules: an advanced controller, a safe controller and a decision module that switches between them.
 
-## Documents, talks, courses, datasets (27)
+## Documents, talks, courses, datasets (28)
 
 - [Aerostack2: A Software Framework for Developing Multi-robot Aerial Systems](../../catalog/resources/aerostack2-paper.md) - paper - Describes the Aerostack2 ROS 2 architecture for aerial robotics: platform abstraction, behaviors, mission specification and multi-robot support.
 - [Autoware documentation](../../catalog/resources/autoware-docs.md) - doc - Official Autoware documentation with architecture, installation, tutorials and design notes for localization, perception and planning components.
@@ -140,5 +140,6 @@ ROS ecosystem packages for navigation and localization.
 - [Smoothing Odometry using Robot Localization (Nav2 first-time robot setup guide)](../../catalog/resources/nav2-robot-localization-setup-guide.md) - doc - Setup guide for fusing wheel odometry and IMU with robot_localization's EKF to produce the odom frame Nav2 expects.
 - [The Marathon 2: A Navigation System](../../catalog/resources/macenski-marathon2-nav2.md) - paper - Paper introducing Nav2: behavior-tree based navigation architecture for ROS 2, its design choices and a long-duration campus deployment test.
 - [Using Vision or Motion Capture Systems for Position Estimation](../../catalog/resources/px4-external-position-estimation.md) - doc - How to feed external vision or mocap poses into PX4 EKF2 via MAVLink or ROS, including frame conventions and EKF2_EV_* parameters.
+- [Work-in-Progress: Multi-Deadline DAG Scheduling Model for Autonomous Driving Systems](../../catalog/resources/yano-azumi-2025-multi-deadline-dag-autoware.md) - paper - arXiv 2505.06780 preprint (related DOI 10.1109/RTSS62706.2024.00049).
 - [Дроны: Автономные беспилотные воздушные системы](../../catalog/resources/lektorium-geoscan-autonomous-drones-course.md) - course - English: 'Drones: autonomous unmanned aerial systems'.
 

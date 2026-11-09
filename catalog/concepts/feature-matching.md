@@ -19,7 +19,7 @@ Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 - [Choose a stack you can run](../../docs/practical-readiness.md) - Start with the problem decoder, then narrow the candidates by the resources in the room.
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) - Learned models in navigation pipelines carry three separate sets of terms:
 
-## Repositories (35)
+## Repositories (36)
 
 - [LightGlue](../../catalog/repos/cvg__lightglue.md) - fit: high - Fast learned local feature matcher (ICCV 2023) that adapts its depth to pair difficulty; works with SuperPoint, DISK, ALIKED and SIFT features.
 - [hloc](../../catalog/repos/cvg__hierarchical-localization.md) - fit: high - Toolbox for hierarchical visual localization: global retrieval (NetVLAD etc.) to find candidate images, then local feature matching (SuperPoint, LightGlue...) and PnP against an SfM model.
@@ -55,9 +55,10 @@ Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 - [Quatro](../../catalog/repos/url-kaist__quatro.md) - fit: low - Fast, robust global registration for terrestrial robots that assumes near-planar motion to cut degrees of freedom.
 - [EKLT](../../catalog/repos/uzh-rpg__rpg_eklt.md) - fit: low - Asynchronous photometric feature tracking that combines events and frames (IJCV 2019).
 - [Event feature tracking (EM-ICP)](../../catalog/repos/daniilidis-group__event_feature_tracking.md) - fit: low - MATLAB implementations of event-based feature tracking methods from the Penn GRASP lab.
+- [ConformalKeypoint](../../catalog/repos/nvlabs__conformalkeypoint.md) - fit: low - Reference code for conformal keypoint prediction sets and pose uncertainty sets (CVPR 2023).
 - [bsu-science - BSU diploma on camera-based UAV navigation](../../catalog/repos/drapegnik__bsu-science.md) - fit: low - LaTeX sources of science reports from BSU (Belarus, FAMCS), including a diploma 'Разработка алгоритмов навигации БПЛА' that compares SIFT/SURF/ORB, surveys SLAM and SfM 3D mapping, and demonstrates SLAM + ROS + webcam + 
 
-## Documents, talks, courses, datasets (24)
+## Documents, talks, courses, datasets (25)
 
 - [14 Lectures on Visual SLAM: From Theory to Practice](../../catalog/resources/gaoxiang-14-lectures-visual-slam.md) - book - English translation of the popular Chinese visual SLAM textbook, from rigid-body motion and Lie algebra through camera models, nonlinear optimization, feature/direct VO, backend optimization, loop closure and dense mappi
 - [Cyrill Stachniss YouTube channel (incl. '5 Minutes with Cyrill')](../../catalog/resources/stachniss-youtube-channel.md) - video - Channel hosting Stachniss's full lecture courses plus the '5 Minutes with Cyrill' series of short explainers on single concepts (Kalman filter, factor graphs, ICP, RANSAC, SIFT, occupancy grids).
@@ -67,6 +68,7 @@ Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 - [Image Matching: Local Features & Beyond (CVPR workshop)](../../catalog/resources/cvpr-image-matching-workshop.md) - talk - Recurring CVPR workshop and Kaggle challenge on feature matching and structure-from-motion, with invited talks and recordings, covering the matchers used in visual geolocalization and VIO.
 - [LightGlue: Local Feature Matching at Light Speed](../../catalog/resources/lightglue-2023.md) - paper - Redesigns SuperGlue-style attention matching to be faster and adaptive, stopping early on easy pairs.
 - [MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors](../../catalog/resources/mast3r-slam-murai-2024.md) - paper - Builds a real-time dense monocular SLAM system on the MASt3R two-view reconstruction prior, without assuming a fixed parametric camera model.
+- [Object Pose Estimation with Statistical Guarantees: Conformal Keypoint Detection and Geometric Uncertainty Propagation](../../catalog/resources/yang-pavone-2023-conformal-keypoint-pose.md) - paper - CVPR 2023.
 - [Photogrammetry I & II](../../catalog/resources/stachniss-photogrammetry-i-ii.md) - lecture-series - Recorded two-semester photogrammetry course (2015/16 playlist): camera models, direct linear transform, projective geometry, epipolar geometry, bundle adjustment, and image-based 3D reconstruction.
 - [Qualcomm AI Hub: SuperPoint on-device performance](../../catalog/resources/qualcomm-ai-hub-superpoint.md) - report - Qualcomm's measured latency for SuperPoint (the MIT-licensed rpautrat implementation, 640x480 input) per device, runtime and precision.
 - [RoMa: Robust Dense Feature Matching](../../catalog/resources/roma-dense-matching-2023.md) - paper - Dense matcher combining foundation-model coarse features with fine refinement, robust to large appearance change.

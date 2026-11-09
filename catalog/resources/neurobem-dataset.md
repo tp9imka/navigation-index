@@ -23,6 +23,7 @@ About 1 h 15 min of agile quadrotor flights in a Vicon hangar at 400 Hz: filtere
 ## Referenced by
 
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
+- [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](../../docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md) (mentions)
 - [NeuroBEM: Hybrid Aerodynamic Quadrotor Model](../../catalog/resources/bauersfeld-2021-neurobem.md) (uses)
 
 _Indexed by lane(s): nav-differentiators_

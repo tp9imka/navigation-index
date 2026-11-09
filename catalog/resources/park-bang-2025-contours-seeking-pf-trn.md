@@ -11,9 +11,11 @@ Author's accepted version of an IEEE TAES 61(6) (Dec 2025) paper. Proposes a par
 - Addresses PF degeneracy, the classic TRN failure mode
 - Robust to unknown INS bias and multimodal noise
 - Simulation study
+- Abstract read only
+- Robustness of the PF, not integrity bounds
 
-**Concepts:** [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md)
+**Concepts:** [Terrain-relative navigation](../../catalog/concepts/terrain-nav.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md)
 
-**Tags:** `terrain-referenced-navigation`, `particle-filter`, `resilience`
+**Tags:** `terrain-referenced-navigation`, `particle-filter`, `resilience`, `trn`, `multimodal`, `innovation-scan`
 
-_Indexed by lane(s): backlog_
+_Indexed by lane(s): backlog, innovation-pa-wider_

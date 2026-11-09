@@ -22,6 +22,8 @@ RSS 2021. Combines blade-element-momentum theory with a learned residual to mode
 
 ## Referenced by
 
+- [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](../../docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md) (mentions)
+- [HDVIO: Improving Localization and Disturbance Estimation with Hybrid Dynamics VIO](../../catalog/resources/cioffi-2023-hdvio-hybrid-dynamics-vio.md) (uses)
 - [HDVIO2.0: Wind and Disturbance Estimation with Hybrid Dynamics VIO](../../catalog/resources/cioffi-2025-hdvio2-wind-disturbance.md) (uses)
 - [NeuroBEM quadrotor flight dataset](../../catalog/resources/neurobem-dataset.md) (part_of)
 
