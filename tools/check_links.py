@@ -4,12 +4,18 @@ import os
 import re
 import sys
 import urllib.parse
+from functools import lru_cache
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 LINK = re.compile(r"\]\(([^)\s]+)\)")
 EXTERNAL = re.compile(r"^(https?:|mailto:|#)")
 SKIP_PARTS = {".git", "node_modules", ".venv", "venv"}
+
+
+@lru_cache(maxsize=None)
+def _names(d):
+    return frozenset(os.listdir(d))
 
 
 def exists_exact_case(path):
@@ -22,7 +28,7 @@ def exists_exact_case(path):
         return True
     cur = ROOT
     for part in rel.parts:
-        if part not in os.listdir(cur):
+        if part not in _names(cur):
             return False
         cur = cur / part
     return True
