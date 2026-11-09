@@ -1026,7 +1026,21 @@
    "source": "samples/close-area-arena/requirements.txt",
    "requirements": [
     "numpy>=2.0",
-    "scipy>=1.13"
+    "scipy>=1.13",
+    "matplotlib>=3.8"
+   ],
+   "vcs": [],
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "pip:close-area-planner-reactive",
+   "type": "pip",
+   "tier": "standard",
+   "license": "per package (see PyPI metadata)",
+   "source": "samples/close-area-planner-reactive/requirements.txt",
+   "requirements": [
+    "-r ../close-area-arena/requirements.txt"
    ],
    "vcs": [],
    "size": null,

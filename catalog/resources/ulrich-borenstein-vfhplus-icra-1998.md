@@ -23,5 +23,6 @@ Peer-reviewed (ICRA 1998). Builds a polar histogram of obstacle density around t
 ## Referenced by
 
 - [Potential field methods and their inherent limitations for mobile robot navigation](../../catalog/resources/koren-borenstein-apf-limits-icra-1991.md) (same_author)
+- [Close-area reactive planners: APF with wall-follow escape and VFH+, range sensor only, 72-beam vs Crazyflie-like 4-beam fan](../../catalog/samples/close-area-planner-reactive.md) (explains)
 
 _Indexed by lane(s): close-area-planning_
