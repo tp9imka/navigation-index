@@ -6,8 +6,11 @@ through obstacles, with a VIO fault injected. It fits the 3-minute skeleton in
 narrator. The driver never types free text on stage: every step is a command in shell history
 or a key press.
 
-State on 2026-11-09: the arena and kill test part a ran (synthetic,
-[close-area-safety-filter](../samples/close-area-safety-filter/README.md)); the "ours" arm has not.
+State on 2026-11-09: the arena and kill test parts a, b and d ran (synthetic, seed 0,
+[close-area-safety-filter](../samples/close-area-safety-filter/README.md)). Ours (F5) had 0 %
+collisions but failed the reach bar (61-89 % of PX4-CBF's reach, bar 90 %); a held-out rerun was
+still running. If the kill test FAILs, the story pivots to relocalization (H1) and this script
+uses the [H1 variant](#h1-relocalization-the-pivot), which has a real seed and command.
 A replay of arena runs is in `site/showcase.html`. Commands in `<angle brackets>` are the team's
 own; write them on Day 1.
 
@@ -71,9 +74,45 @@ Replace the 1:00-2:00 rows only.
 
 | Hook | 1:00 | 1:20 | 1:40 |
 |---|---|---|---|
-| H1 relocalization | Drone flying on VIO, health ok | Tracking lost: strip "lost", drone hovers, hypothesis count shown | One hypothesis wins after `<NUMBER from runs/results.md>` s; drone continues to B |
+| H1 relocalization | Seed 1, jump fault, layout 97, three panes: commit-at-once, hover until one wins, ours. Drones flying on VIO, health ok | Sim t 13.0 s: the scan stops fitting the map at the estimate (estimate 0.21 m off). After the 0.2 s settle wait, commit-at-once snaps to a pose 0.63 m wrong. Ours shows 2 live hypotheses and flies one 1 m move | Sim t 14.7 s: ours accepts 1.7 s after the trigger, 0.07 m from truth, and reaches B at 20.3 s. Hover-until-one-wins stays ambiguous and ends stuck. Commit-at-once is corrected at 17.2 s and reaches B at 21.8 s. Full rows and command [below](#h1-relocalization-the-pivot) |
 | H2 fiducial goal | Drone flying on VIO towards B | Tag at B detected: goal snaps from estimate to tag pose, offset shown in m | Lands at B; final error `<NUMBER from runs/results.md>` m vs `<NUMBER from runs/results.md>` m without the tag |
 | H3 robust baseline | Random layout seed shown | Obstacle moved by the driver (`<key>`), replan visible | Reaches B; completion counter `<NUMBER from runs/results.md>` of `<NUMBER from runs/results.md>` layouts |
+
+### H1 relocalization (the pivot)
+
+The run is a hub run, `[synthetic]` (simulated layout, vehicle, VIO-like estimator and range fan),
+held-out seed 1, from [close-area-relocalize](../samples/close-area-relocalize/README.md#held-out-check-seed-1-run-by-the-loop-driver).
+Arms: (b) commit-at-once + innovation test, (c) hover until one wins, (f) ours: hover + the
+info-gain disambiguating move. Reproduce it (about 65 s wall on 8 workers, Apple M3 Max; writes
+into the gitignored `.venv`, so `results/` is untouched):
+
+```sh
+cd samples/close-area-relocalize
+uv venv .venv && uv pip install --python .venv -r requirements.txt
+.venv/bin/python run_disambiguate.py --layouts 100 --seed 1 --arms single,multi,multi_ig --out .venv/demo-out
+.venv/bin/python -c "import json; R=json.load(open('.venv/demo-out/disamb_random_1.json'))['results']['jump']; [print(a, R[a]['runs'][97]['outcome'], [(e['t_trigger'], e['recover_s'], e['result'], e['err_m']) for e in R[a]['runs'][97]['events']]) for a in ('single','multi','multi_ig')]"
+```
+
+Expected last command output (checked 2026-11-09): `single reached`, with a 0.6281 m commit at
+13.0 s; `multi stuck`, event at 13.0 s still `open`; `multi_ig reached`, event at 13.0 s accepted
+after 1.7 s at 0.0748 m. The same table as
+[disamb_random_1.md](../samples/close-area-relocalize/results/disamb_random_1.md) prints first.
+
+Replace the 1:00-2:20 rows with these. Sim times are from the run's JSON (`events`, `moves`).
+
+| Time | On screen | Driver does | Narrator says |
+|---|---|---|---|
+| 1:00 | Three panes, seed 1, layout 97, jump fault. Status strip: nav health, hypothesis count, verdict (none / ambiguous / pending / accept) | Start the replay of the three arms (`<replay command>`; the sample has no viewer, see Not verified) | "Same room, same fault, three ways to recover. Left: snap to the best match. Middle: hover until one hypothesis wins. Right: ours." |
+| 1:10 | Sim t 2.7 s: 0.5 m VIO jump, `reset_counter` changes. All three recover in 0.2-0.4 s | nothing | "VIO jumped half a metre. The reset is reported, so all three re-match at once. That is the easy case." |
+| 1:25 | Sim t 13.0 s: innovation test fires, estimate 0.21 m off. Left snaps to a pose 0.63 m from truth. Middle and right: strip "ambiguous", 2 live hypotheses | point at the left pane | "Now nothing is reported. The scan just stops fitting the map. Left guessed, and guessed 0.63 m wrong. Middle and right cannot tell two places apart, so they hover." |
+| 1:40 | Sim t 14.0 s: right drone flies a 1 m move along +y; t 14.7 s: verdict "accept", error 0.07 m. Middle still hovering | point at the right pane | "Ours makes one short move that tells the two places apart. 1.7 s after the trigger it knows where it is, within 7 cm." |
+| 1:55 | Right drone at B (sim t 20.3 s). Middle scored stuck. Left corrected at 17.2 s, at B at 21.8 s | nothing | "Left got there too, because a later match fixed it. In a corridor, that guess was wrong in 8 of 20 runs. Ours: 0 wrong commits." |
+| 2:20 | Results table | scroll | "Over 100 random layouts per fault: estimator only 64 % / 36 % reached; ours 99-100 %, 0 collisions, 0 wrong commits, on a held-out seed too. Corridor: 80 %. All `[synthetic]`. Not measured: SITL, flight, map errors." Numbers from [close-area-story.md H1](pitch/close-area-story.md#h1-relocalization-after-vio-loss-the-pivot-if-the-kill-test-fails) |
+
+Failure case for 2:00 (10 s): the symmetric corridor. `.venv/bin/python run_disambiguate.py --corridor --runs 20 --arms single,multi,multi_ig --out .venv/demo-out`
+(22 s wall for all five arms in the README). Ours reached 80 % there, with recoveries of about 11 s after a move
+([disamb_corridor.md](../samples/close-area-relocalize/results/disamb_corridor.md), `[synthetic]`).
+Not rerun for this page; pick the run index from the JSON before H+30.
 
 ## Numbers on screen and where they come from
 
@@ -88,6 +127,8 @@ Show only these. Each one is in `runs/results.md` with layouts, seeds and the co
 | SITL repeat, if done | 2:20 | `<NUMBER from runs/results.md>` | `[SITL]` |
 | Loop time p99 on the board | 0:40 or 2:40 | `<NUMBER from runs/results.md>` | measured on `<board>` |
 | One hub context number | 0:20 | [close-area-story.md section 6](pitch/close-area-story.md#6-numbers-to-fill-and-where-they-come-from) C1-C3 | as listed there |
+| H1: trigger, accept time, error of the demo run (13.0 s, 1.7 s, 0.07 m) | 1:25-1:40 | Seed 1, jump, layout 97, `disamb_random_1.json` | `[synthetic]` |
+| H1: reached % and wrong commits per arm | 2:20 | [close-area-story.md section 6](pitch/close-area-story.md#6-numbers-to-fill-and-where-they-come-from) rows R-H1a to R-H1c | `[synthetic]` |
 
 Rules: a live run is one run, an example, not a statistic. Say "this run" on screen and "over N
 layouts" on the table. Never put a hub number in the results table.
@@ -120,3 +161,8 @@ H+30 to H+36.
 - No row was rehearsed or timed. Times assume the 3-minute skeleton.
 - The sim view, status strip and key bindings do not exist yet; they are the team's to build.
 - Whether the chosen seed reproduces the same outcome on the demo laptop: check at T-30 min.
+- H1: the seed-1 command above was run once on the authoring laptop and gave the stated layout-97
+  events. The relocalize sample has no viewer or replay export, so the three panes and the status
+  strip are the team's to build (for example from the run's `events` and `moves`). The "estimate
+  0.21 m off" is the logged `pre_err_m`, not something the drone knows. The corridor command was
+  not rerun here.

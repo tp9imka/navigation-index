@@ -13,31 +13,55 @@ B in 100 % with a known map and with an unknown map
 `freest_beam` planner fell from 86 % reach on truth to 42 % with a VIO jump and 40 % with bias,
 with 0 % collisions in every case, because the arena's ranges come from the true pose
 ([results](../../samples/close-area-arena/results/faults_freest_beam_summary_0.md)). These are
-hub context numbers, not your team's result. Kill test part a ran
-([close-area-safety-filter](../../samples/close-area-safety-filter/README.md), synthetic): with
-every obstacle visible, range-only filters (PX4 CP-stop, PX4-CBF) already reach 0 % collisions
-under VIO faults; with map-only obstacles PX4-CBF still collides in 3-11 % of runs, all on
-obstacles the sensor cannot see. The "ours" arm has not run yet. Every `<NUMBER from ...>` below
-stays a placeholder until a run writes it. A slot you cannot fill is said aloud as "not measured".
+hub context numbers, not your team's result.
 
-Contents: [Story](#1-the-story) - [Kill test gate](#2-kill-test-gate-decide-the-story-at-h24) -
-[Alternative hooks](#3-alternative-hooks-if-the-kill-test-fails) -
+The kill test ran parts a, b and d on seed 0
+([close-area-safety-filter](../../samples/close-area-safety-filter/README.md), synthetic). Part d
+result: ours (F5) has 0 % collisions in all six fault cases, but **FAILS the reach bar**: 61-89 %
+of PX4-CBF's reach, against the 90 % the gate asks for
+([part d verdict](../../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic)).
+**Decision (held-out rerun, Part e): the safety-filter headline FAILS.** A hand-tuned fixed bound
+(MR-CBF 0.2 m) stays at <= 1 % collisions on seeds 0-2; ours collides in 2.5 % [1.1, 5.7] of
+held-out jump runs and reaches B less often. Pitch H1, the relocalization story in section 3. The relocalization pivot (section 3, H1) is filled with measured
+numbers and ready to use. Placeholders `<NUMBER from ...>` that remain are the team's own Day-1/2
+runs. A slot you cannot fill is said aloud as "not measured".
+
+Contents: [Facts that hold either way](#0-facts-that-hold-either-way) - [Story](#1-the-story) -
+[Kill test gate](#2-kill-test-gate-decide-the-story-at-h24) -
+[Alternative hooks](#3-alternative-hooks-if-the-kill-test-fails) (H1 is the pivot) -
 [3-minute skeleton](#4-3-minute-skeleton) - [Judge questions](#5-judge-questions) -
 [Numbers to fill](#6-numbers-to-fill-and-where-they-come-from) - [Not verified](#7-not-verified)
 
 ## Fill order on Day 2
 
 1. **H+24.** Read the kill-test result (section 2). Keep the main story or pick one alternative
-   hook (section 3). Cross out the other three.
+   hook (section 3). Cross out the others. If the held-out rerun confirms the reach FAIL, the
+   default pick is H1.
 2. **H+26.** Write the five beats for the chosen story on the wall, one line each.
-3. **H+30.** Fill the 3-minute skeleton (section 4) with what actually runs. Record the backup
-   video ([demo-script-close-area.md](../demo-script-close-area.md#recording-the-backup)).
+3. **H+30.** Fill the 3-minute skeleton (section 4, or H1's own skeleton) with what actually runs.
+   Record the backup video ([demo-script-close-area.md](../demo-script-close-area.md#recording-the-backup)).
 4. **H+36.** Rehearse the 10 judge questions (section 5): one person asks, the answerer has 20 s.
    Any answer that still says "pending" is either filled or reworded to "not measured".
 5. **H+40.** Score with [judging-self-assessment.md](../judging-self-assessment.md) and copy every
    number into the [one-pager](one-pager-template.md) and `runs/results.md`.
 
+## 0. Facts that hold either way
+
+These are measured, hub-run, and true whatever the kill-test verdict. All `[synthetic]`: simulated
+layouts, vehicle and sensors, no SITL, no flight. Use them in beat 2 ("why it matters") of any
+story, or as answers to judge questions. They are hub numbers, not your team's result.
+
+| Fact | Number | Input | Source |
+|---|---|---|---|
+| A range filter stops walking people that A* replanning alone hits | A* replan at 2.5 Hz collides in 14 % (people at 0.5 m/s) and 36 % (1.0 m/s); A* + PX4-CBF-style filter (F2): 0 % at both speeds, at the cost of 16 % stuck. 50 layouts, truth pose. Only A* was run under the filter | `[synthetic]` | [moving-obstacles results](../../samples/close-area-moving-obstacles/README.md#results-ran-2026-11-09-apple-m3-max-cpython-31210-numpy-254-scipy-1181), [moving_0.md](../../samples/close-area-moving-obstacles/results/moving_0.md) |
+| Against what the ranger sees, a range-only filter is enough | With every obstacle visible, F1 (CP-stop) and F2 (PX4-CBF) have 0 % collisions in every case, VIO jump, bias and dropout included (500 runs per arm); bare A*: 7 / 4 / 1 % (jump / bias / dropout) | `[synthetic]` | [safety-filter part a](../../samples/close-area-safety-filter/README.md#reading), [kill_a_unsensed_off_0.md](../../samples/close-area-safety-filter/results/kill_a_unsensed_off_0.md) |
+| Against what it cannot see, it is not | With 2 sensor-invisible obstacles per layout, F2 collides in 3-11 %, every hit on an invisible obstacle | `[synthetic]` | [kill_a_unsensed_on_0.md](../../samples/close-area-safety-filter/results/kill_a_unsensed_on_0.md) |
+| 4-beam rangers miss glass | Crazyflie 4 x 27 deg preset on the glass family: collisions 90 % (freest_beam) and 100 % (A* unknown map); bright-light preset 96 % and 100 %. The ideal 72-beam fan: 4 % and 10 %. 50 layouts; glass sits on the A-B line by design | `[synthetic]` | [arena sensor realism](../../samples/close-area-arena/README.md#sensor-realism-crazyflie-presets-and-glass-ran-2026-11-09-synthetic) |
+| Relocalization against the map turns VIO loss into a recoverable event | Estimator only: 64 % / 36 % reached (dropout / jump), 1 % / 9 % collisions. Hover + match + disambiguating move: 99-100 % reached, 0 % collisions, 0 wrong commits, held-out seed 1 included. Known map only | `[synthetic]` | H1 below, [close-area-relocalize](../../samples/close-area-relocalize/README.md#disambiguating-moves-after-a-hover-timeout-loop-22b) |
+
 ## 1. The story
+
+Use it only if the kill test passes (section 2). Part d on seed 0 did not pass the reach bar.
 
 **One line:** "Any planner gets the drone from A to B; our filter keeps it safe when the drone
 is wrong about where it is."
@@ -47,13 +71,14 @@ is wrong about where it is."
 | 1. Problem | "In a close area the gap is about a metre. The drone does not crash because the planner is bad. It crashes because it is wrong about where it is." | Gap size is an estimate in [doc 03 section 1](../../docs/research/close-area-nav/03-close-area-localization.md#1-bottom-line) (doorway ~0.8 m), analysis, not a measurement |
 | 2. Why it matters | "Past drone competitions broke on state estimation, not on planning. And the filters that report the uncertainty are overconfident." | [doc 02 section 3.1](../../docs/research/close-area-nav/02-sims-platforms-competitions.md#31-what-this-tells-us-a-judge-scores) item 5; [doc 03 section 4](../../docs/research/close-area-nav/03-close-area-localization.md#is-the-reported-covariance-realistic-evidence) |
 | 3. What we built | "A filter between any planner and the autopilot. It never hits what the range sensor sees. For what it cannot see, the margin comes from a fault-detecting nav monitor, not the filter's own covariance. When nav health drops it slows down and holds a hover." | [doc 04 section 3.2](../../docs/research/close-area-nav/04-innovation-prior-art.md#32-what-may-remain-narrow) |
-| 4. Honest numbers | "Over `<NUMBER from samples/close-area-safety-filter/README.md>` layouts with injected VIO jumps and bias, breaches `<NUMBER from samples/close-area-safety-filter/README.md>` vs `<NUMBER from samples/close-area-safety-filter/README.md>` for a covariance margin, `[synthetic]`. Not measured: real flight." | pending: samples/close-area-safety-filter (kill test, doc 04 section 3.4) |
+| 4. Honest numbers | Seed 0 version: "Over 100 layouts, each with 2 obstacles the range sensor cannot see, under injected VIO jumps and bias: collisions 0 % for ours vs 9 % (jump) and 3 % (bias) for a covariance margin, `[synthetic]`. The price: ours reached B in 20 % of jump runs against 33 % for PX4-CBF, because it hovers when the monitor cannot tell which source is lying. A fixed 0.2 m margin tuned on the same seed matched our safety. Not measured: real flight." Replace with the held-out numbers if they pass | [part d](../../samples/close-area-safety-filter/README.md#part-d-ours-f5-against-the-baselines-ran-2026-11-09-synthetic-seed-0-only), [kill_d_summary_0.md](../../samples/close-area-safety-filter/results/kill_d_summary_0.md) |
 | 5. What's next | "Same filter on PX4 Offboard in SITL, then on the organisers' drone. It ships as a runtime-assurance monitor next to the stock autopilot." | [path-to-product.md section 4](../../docs/path-to-product.md#4-runtime-assurance-ship-the-new-algorithm-next-to-a-trusted-baseline) |
 
 **The narrow claim (say it exactly, do not widen it):** for obstacles the range sensor cannot
 see (out of field of view, thin, glass, geofence) and under VIO jumps or bias, a fault-aware
 margin beats a covariance margin. Source:
-[close-area README](../../docs/research/close-area-nav/README.md#recommended-direction).
+[close-area README](../../docs/research/close-area-nav/README.md#recommended-direction). On seed 0
+it beat the covariance margin (F3) on collisions, but not a fixed 0.2 m bound (F4), and it lost reach.
 
 **What is not ours, say it first:** range-only filtering inside PX4 is PX4-CBF
 ([catalog](../../catalog/repos/ntnu-arl__px4-cbf.md), ICUAS 2025, preprint abstract only + code,
@@ -65,14 +90,29 @@ joining them with the hub's integrity monitor
 ## 2. Kill test gate (decide the story at H+24)
 
 From [doc 04 section 3.4](../../docs/research/close-area-nav/04-innovation-prior-art.md#34-falsification-experiment)
-(thresholds are the research lane's proposal, not measured).
+(thresholds are the research lane's proposal).
 
-| Result | Story |
+**Part d result, seed 0** ([verdict](../../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic),
+`[synthetic]`, 100 layouts per case, 2 unsensed obstacles per layout):
+
+| Criterion | Ours (F5) | Verdict |
+|---|---|---|
+| Collisions 1 % or less | 0 % in none, jump, bias, dropout, UWB NLOS and VIO+UWB (600 runs) | met |
+| At least 3x lower than Belief-CBF (F3) on jump and bias | 0 vs 9 % (jump), 0 vs 3 % (bias); bias rests on 3 collisions | met, weak on bias |
+| Goal reach at least 90 % of PX4-CBF (F2) | 89 % (none), 61 % (jump, 20 vs 33 % reached), 85 % (bias), 86 % (dropout) | **FAIL** |
+| Better than MR-CBF with a fixed 0.2 m bound (F4) | Same safety (F4: 0 / 0 / 0 / 1 %); F4 reaches more on jump (29 vs 20 %) | not better on seed 0 |
+
+The jump loss is the hover rule: 33 of the 80 stuck jump runs ended while hovering on an
+ambiguous monitor. The in-loop protection level breached its 1e-3 risk in the VIO+UWB case
+(1.84e-3 of epochs), with no collision following.
+
+| Held-out rerun says | Story |
 |---|---|
-| Breach rate of ours 1 % or less, at least 3x lower than the Belief-CBF arm on jump and bias faults, goal reach at least 90 % of the PX4-CBF arm | Keep section 1 |
-| Belief-CBF arm within 1 percentage point of ours on jump and bias | Drop the headline. Pick hook H1, H2 or H3 below |
-| Range-only arm (PX4-CBF style) already at 1 % or less everywhere | Drop the headline. Honest pitch: "we integrated PX4-CBF and measured it". Use hook H3 |
-| Kill test not run by H+24 | Do not pitch section 1 as a result. Use H3 and mention the filter as "next" |
+| All three criteria met | Keep section 1. Still say a fixed 0.2 m bound matched safety on seed 0 |
+| Reach still under 90 % of F2 (as on seed 0) | **Kill test FAIL. Pivot to H1 (relocalization).** Use [facts that hold either way](#0-facts-that-hold-either-way) for beat 2; mention the filter as "measured, safe, too cautious" in one sentence |
+| Belief-CBF arm within 1 percentage point of ours on jump and bias | Drop the headline. Pick H1, H2 or H3 below |
+| Range-only arm (PX4-CBF style) already at 1 % or less everywhere | Drop the headline. Honest pitch: "we integrated PX4-CBF and measured it". Use H3 |
+| Rerun not finished by H+24 | Decide on seed 0: that is a FAIL. Pivot to H1 |
 
 Write the result in `runs/results.md` with arms, layouts, fault cases and seeds before choosing.
 
@@ -80,20 +120,94 @@ Write the result in `runs/results.md` with arms, layouts, fault cases and seeds 
 
 Each hook keeps the five-beat shape. Swap beats 1, 3 and 4 of section 1; beats 2 and 5 mostly stay.
 
-### H1. Relocalization after VIO loss
+### H1. Relocalization after VIO loss (the pivot if the kill test FAILs)
 
-- **Hook:** "Indoors, VIO will lose track. Our drone does not guess. It holds a hover, keeps two to
-  five pose hypotheses and only flies on when one wins."
-- **Pick it when:** a prior map or a first pass of the room exists (the hypotheses need something
-  to match against), and Day 1 logs show tracking loss.
-- **Measure:** time from track loss to a confirmed pose `<NUMBER from runs/results.md>`; wrong
-  relocalizations `<NUMBER from runs/results.md>` out of `<NUMBER from runs/results.md>` losses;
-  label each `[synthetic]` / `[SITL]` / `[real]`.
-- **Hub ground:** ranked first of the wider scan, 23/30, scores are the lane's judgement from
-  abstracts and READMEs ([doc 04 section 4](../../docs/research/close-area-nav/04-innovation-prior-art.md#4-wider-scan-ranked)).
-  Health signals to trigger it: ODOMETRY `quality`, `reset_counter`, `vo_state`
-  ([doc 03 section 4](../../docs/research/close-area-nav/03-close-area-localization.md#4-estimator-health-signals-a-planner-can-consume)).
-- **Say also:** in a never-seen room there is nothing to relocalize against. Say so before a judge does.
+**Headline:** "The drone recovers from VIO loss without guessing."
+
+**Pick it when:** a prior map or a first pass of the room exists (the hypotheses need something to
+match against), and Day 1 logs show tracking loss. In a never-seen room there is nothing to
+relocalize against. Say so before a judge does.
+
+**What it does** ([close-area-relocalize](../../samples/close-area-relocalize/README.md)): on a VIO
+reset, a quality drop to 0, or a scan that no longer fits the map at the estimate (innovation
+test), the drone hovers. It matches the range scan against the known map and keeps up to 5 pose
+hypotheses. It accepts one only when it is at least 1.02x better than the second for 3 scans in a
+row. If none wins within 1 s, it flies one short collision-checked move (1 or 2 m) chosen to
+separate the hypotheses, then checks again. On a tie it keeps hovering. It never commits.
+
+**The numbers** (all `[synthetic]`: simulated layouts, vehicle, VIO-like estimator and 72-beam
+range fan, A* known-map planner; 100 random layouts per fault; no SITL, no flight):
+
+| Arm | Dropout reached % (collision %) | Jump reached % (collision %) | Wrong commits (> 0.5 m) | Source |
+|---|---|---|---|---|
+| Estimator only, no relocalization | 64 (1) | 36 (9) | - | [reloc_random_0.md](../../samples/close-area-relocalize/results/reloc_random_0.md), seed 0 |
+| Hover while lost, no matching | 59 (4) | 38 (6) | - | same |
+| Commit to the best match at once + innovation test | 100 (0) | 100 (0) | 2 / 4 | same |
+| Hover until one hypothesis wins (no move) | 80 (0) | 93 (0) | 0 / 0 | same |
+| **Hover + disambiguating move, seed 0** | 99 (0) | 99 (0) | 0 / 0 | [disamb_random_0.md](../../samples/close-area-relocalize/results/disamb_random_0.md), info-gain move |
+| **Hover + disambiguating move, held-out seed 1** | 100 (0) | 100 (0) | 0 / 0 | [disamb_random_1.md](../../samples/close-area-relocalize/results/disamb_random_1.md), nothing tuned on seed 1 |
+
+- **Recovery time:** median 0.4 s from trigger to accepted pose; when a move was needed, median
+  2.4 / 1.95 s (seed 0, dropout / jump) and 2.9 / 2.55 s (seed 1)
+  ([disambiguating moves](../../samples/close-area-relocalize/README.md#disambiguating-moves-after-a-hover-timeout-loop-22b),
+  [held-out check](../../samples/close-area-relocalize/README.md#held-out-check-seed-1-run-by-the-loop-driver)).
+- **Why "without guessing" matters, the corridor:** in a symmetric 2 m x 14.8 m corridor, the
+  commit-at-once arm reached 100 % of 20 runs but committed to a pose 0.59-1.43 m wrong in 8 of 20,
+  and flew on it for 7.3-9.4 s before the innovation test caught it. The move arm made 0 wrong
+  commits and reached 80 %; hover until one wins, without a move, reached 0 %
+  ([corridor](../../samples/close-area-relocalize/README.md#symmetric-case-a-2-m-x-148-m-corridor),
+  [disamb_corridor.md](../../samples/close-area-relocalize/results/disamb_corridor.md)).
+- **Cost:** scan matching median 1.7-1.9 ms per scan, max 2.8 ms, on an Apple M3 Max laptop,
+  not on a flight computer
+  ([results](../../samples/close-area-relocalize/README.md#results-ran-2026-11-09-apple-m3-max-cpython-31210-numpy-254-scipy-1181)).
+
+**Five beats:**
+
+| Beat | Line to say | Filled from |
+|---|---|---|
+| 1. Problem | "Indoors, VIO will lose track: a dark corner, a blank wall, a fast turn. With the estimator alone our drone reached B in 36 % of runs after a VIO jump and hit something in 9 %." | Estimator-only row above, `[synthetic]` |
+| 2. Why it matters | "Past drone competitions broke on state estimation, not planning. And the obvious fix, snap to the best map match, guesses: in a corridor it picked the wrong spot in 8 of 20 runs." | [doc 02 section 3.1](../../docs/research/close-area-nav/02-sims-platforms-competitions.md#31-what-this-tells-us-a-judge-scores) item 5; corridor bullet above |
+| 3. What we built | "When tracking drops, the drone hovers and keeps up to five pose hypotheses from the map. It flies on only when one wins clearly. If none wins, it makes one short move that tells them apart. It never commits on a tie." | [relocalize README](../../samples/close-area-relocalize/README.md#what-is-in-it) |
+| 4. Honest numbers | "Over 100 random layouts per fault: 99-100 % reached, 0 collisions, 0 wrong commits, on a held-out seed too, `[synthetic]`. Median 0.4 s to a confirmed pose, about 2-3 s when a move is needed. In a symmetric corridor: 80 %, still 0 wrong commits. Not measured: SITL, real flight, a map with errors." | Table above |
+| 5. What's next | "Same matcher on the drone's lidar or depth scan, map from a first pass of the room, triggers from the autopilot's ODOMETRY quality and reset counter. Then SITL, then the organisers' drone." | Triggers: [doc 03 section 4](../../docs/research/close-area-nav/03-close-area-localization.md#4-estimator-health-signals-a-planner-can-consume) |
+
+**What is not ours, say it first:** choosing a move to separate pose hypotheses is active Markov
+localization (Fox, Burgard, Thrun 1998, via
+[innovation-prior-art 01](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md)).
+Our own separation score did not beat that Fox-style information-gain move (corridor 70 % vs 80 %).
+The arm in the numbers is the Fox-style one. Our part is the composition: loss triggers + innovation
+test + ratio-persistence acceptance + the move + "hover, never commit on a tie". Engineering, not theory.
+
+**3-minute skeleton for H1** (the demo rows are in
+[demo-script-close-area.md](../demo-script-close-area.md#variant-rows-for-the-alternative-hooks)):
+
+| Time | Beat | Say | Show |
+|---|---|---|---|
+| 0:00-0:20 | Problem | Beat 1. The platform and sensors the organisers gave us | Title slide: top-down room, A and B, a dark zone marked |
+| 0:20-0:40 | Why it matters | Beat 2. One number with its label: the 8 of 20 wrong commits in the corridor | One slide, one number, `[synthetic]` in the corner |
+| 0:40-1:00 | What we built | VIO + EKF => loss trigger => hover => scan matcher (5 hypotheses) => accept or move => re-anchor => planner. Say which boxes are real and which are stubs | Architecture slide |
+| 1:00-2:00 | Live demo | Seed 1, jump fault, layout 97: commit-at-once grabs a pose 0.63 m wrong; hover until one wins stalls; ours makes one 1 m move and accepts 0.07 m from truth 1.7 s after the trigger, then reaches B | Demo script H1 rows |
+| 2:00-2:35 | Honest numbers | The six-row table above, reduced to: estimator only 64 / 36 %, commit-at-once 100 % with 2-4 wrong commits, ours 99-100 % with 0, corridor 80 %. Say "not measured: SITL, flight, map errors" | Results table |
+| 2:35-3:00 | What's next | Beat 5, and the scope line ("the vehicle's own navigation only") | Path-to-product slide |
+
+**Judge questions specific to H1** (20 s each):
+
+- *"Commit-at-once also reached 100 %. Why not use it?"* "Here the innovation test rescued it
+  later. In the corridor it flew 7.3-9.4 s on a pose up to 1.43 m wrong. Without that test the same
+  kind of wrong commit gave 40 % collisions at the corridor exit. Ours reached less there, 80 %, but
+  never flew on a wrong pose." Source: [corridor](../../samples/close-area-relocalize/README.md#symmetric-case-a-2-m-x-148-m-corridor).
+- *"What if the room was never mapped?"* "Then there is nothing to match. We need a first pass or
+  a floor plan." Without one, the hub has no measured fallback; say "hover, then land" only as a plan.
+- *"What if the truth is in none of the hypotheses?"* "After 10 scans with no good match the
+  search window doubles to +-4 m. If still nothing, it keeps hovering. The move's collision check
+  trusts the hypotheses, so this case is a known weak spot." Source:
+  [relocalize limits](../../samples/close-area-relocalize/README.md#limits).
+
+**Limits to say if asked** ([relocalize limits](../../samples/close-area-relocalize/README.md#limits)):
+2D xy search with yaw from the estimator (truth yaw in the sim); the map is the exact prior grid
+(no map error, no people); the sim hover is perfect; the innovation test fires often (227-331
+triggers per 100 runs), so part of the gain is continuous map-based correction, not only loss
+recovery. Only one corridor geometry and one jump size (0.5 m).
 
 ### H2. Fiducial goal
 
@@ -115,19 +229,22 @@ Each hook keeps the five-beat shape. Swap beats 1, 3 and 4 of section 1; beats 2
 
 - **Hook:** "Slow, sure, and it tells you when it is not sure. Our drone finished `<NUMBER from runs/results.md>`
   of `<NUMBER from runs/results.md>` random layouts without a touch on the sticks."
-- **Pick it when:** the kill test failed or was not run, and the baseline planner flies reliably.
+- **Pick it when:** the kill test failed or was not run, H1 has no map to match against, and the
+  baseline planner flies reliably.
 - **Measure:** completion rate, collisions, stuck count, time to goal over random layouts; any
   intervention by a person. Report "stuck" apart from "reached" and "crashed"
   ([doc 04 section 1.5](../../docs/research/close-area-nav/04-innovation-prior-art.md#15-failure-modes)).
 - **Hub ground:** judges score completion before speed, onboard autonomy as a multiplier and
   replanning on moved obstacles ([doc 02 section 3.1](../../docs/research/close-area-nav/02-sims-platforms-competitions.md#31-what-this-tells-us-a-judge-scores)).
   Baseline recipe: [doc 01 section 5](../../docs/research/close-area-nav/01-planning-and-mapping.md#5-fastest-credible-baseline).
+  The moving-people fact in [section 0](#0-facts-that-hold-either-way) is the reason to keep a range filter in it.
 - **Say also:** "no new algorithm; the contribution is a measured, honest baseline and the health
   log". If PX4-CBF is inside, name it.
 
 ## 4. 3-minute skeleton
 
-Same beats as [pitch-structure.md](pitch-structure.md#3-minute-skeleton). Screen content per
+For the section 1 story. H1 has its own skeleton in section 3. Same beats as
+[pitch-structure.md](pitch-structure.md#3-minute-skeleton). Screen content per
 20 s is in [demo-script-close-area.md](../demo-script-close-area.md#script).
 
 | Time | Beat | Say | Show |
@@ -136,7 +253,7 @@ Same beats as [pitch-structure.md](pitch-structure.md#3-minute-skeleton). Screen
 | 0:20-0:40 | Why it matters | "Estimation broke past competitions, and reported covariance is overconfident." One hub number with its label (section 6, rows C1-C2) | One slide, one number, label in the corner |
 | 0:40-1:00 | What we built | planner => safety filter => autopilot; nav monitor => margin and speed cap. Say which boxes are real and which are stubs. Say where each box runs | Architecture slide |
 | 1:00-2:00 | Live demo | Same seed, two arms side by side; VIO fault injected; covariance-margin arm breaches the unseen obstacle, ours widens, slows, holds, reaches B; then our failure case | Sim view full screen |
-| 2:00-2:35 | Honest numbers | Ours vs PX4-CBF-style vs Belief-CBF-style, layouts x fault cases, `[synthetic]` or `[SITL]`, stuck rate, one "not measured" | Results table |
+| 2:00-2:35 | Honest numbers | Ours vs PX4-CBF-style vs Belief-CBF-style, layouts x fault cases, `[synthetic]` or `[SITL]`, stuck rate, one "not measured". On seed 0: collisions 0 % vs 11 % (F2) and 9 % (F3) on jumps; reach 20 % vs 33 % (F2) | Results table |
 | 2:35-3:00 | What's next | Runtime-assurance path, next three steps, scope line ("the vehicle's own navigation only") | Path-to-product slide ([path-to-product.md section 6](../../docs/path-to-product.md#6-the-path-to-product-slide)) |
 
 Cut order if over time: "What we built" shrinks to one sentence first. "Honest numbers" never
@@ -146,7 +263,8 @@ goes below "ours vs baseline, N layouts, label".
 
 Rehearse with a timer: 20 s per answer. "Where the answer lives" is the file to open if a judge
 asks for evidence. "pending: X" means the hub has no answer yet; fill X on Day 1-2 or say
-"not measured".
+"not measured". Seed-0 kill-test numbers below are from
+[kill_d_summary_0.md](../../samples/close-area-safety-filter/results/kill_d_summary_0.md), `[synthetic]`.
 
 ### 1. "Why not just use the lidar / rangefinder?"
 
@@ -154,8 +272,9 @@ asks for evidence. "pending: X" means the hub has no answer yet; fill X on Day 1
   only matters for what it cannot see: outside the field of view, thin poles, glass, the geofence,
   and when the sensor itself degrades. Here is the run where the range-only arm hits one of those."
 - **Where the answer lives:** [doc 04 section 0](../../docs/research/close-area-nav/04-innovation-prior-art.md#0-one-finding-that-shapes-all-three-ideas);
-  range-only arm result: `<NUMBER from samples/close-area-safety-filter/README.md>` (pending:
-  samples/close-area-safety-filter).
+  range-only arm result: PX4-CBF (F2) collides in 3-11 % with 2 unsensed obstacles per layout,
+  every hit on an unsensed one; 0 % when every obstacle is visible; a 4-beam Crazyflie preset hits
+  glass in 90-100 % (section 0, `[synthetic]`).
 
 ### 2. "What is new vs PX4 Collision Prevention?"
 
@@ -172,23 +291,27 @@ asks for evidence. "pending: X" means the hub has no answer yet; fill X on Day 1
 ### 3. "Why not just inflate by the covariance, like Belief-CBF?"
 
 - **Answer pattern:** "Because the covariance does not see a VIO jump or a slow bias. On those
-  faults the covariance arm breached `<NUMBER from samples/close-area-safety-filter/README.md>`,
-  ours `<NUMBER from samples/close-area-safety-filter/README.md>`, `[synthetic]`." If the kill test
-  failed, say that and switch to the hook you picked.
+  faults the covariance arm collided in 9 % (jump) and 3 % (bias), ours 0 % and 0 %, `[synthetic]`,
+  seed 0." Then say the other half: "A fixed 0.2 m bound did as well as ours on safety, and ours
+  lost reach." If the kill test failed, say that and switch to the hook you picked.
 - **Where the answer lives:** kill test in [doc 04 section 3.4](../../docs/research/close-area-nav/04-innovation-prior-art.md#34-falsification-experiment);
+  [part d verdict](../../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic);
   overconfidence evidence in [doc 03 section 4](../../docs/research/close-area-nav/03-close-area-localization.md#is-the-reported-covariance-realistic-evidence).
-  Result pending: samples/close-area-safety-filter.
 
 ### 4. "What if VIO is lost?"
 
 - **Answer pattern:** name the trigger (ODOMETRY `quality`, `reset_counter`, tracking state,
   innovation rejects), the action (speed cap => hover, flow + rangefinder keep the hover), and how
-  long the hover holds before land. Then show the run.
-- **Where the answer lives:** [doc 03 section 4](../../docs/research/close-area-nav/03-close-area-localization.md#4-estimator-health-signals-a-planner-can-consume)
+  long the hover holds before land. With a map: "we relocalize. Hover + scan match + one
+  disambiguating move reached 99-100 % with 0 wrong commits, against 36-64 % with the estimator
+  alone, `[synthetic]`." Then show the run.
+- **Where the answer lives:** H1 in section 3;
+  [close-area-relocalize](../../samples/close-area-relocalize/README.md#disambiguating-moves-after-a-hover-timeout-loop-22b);
+  [doc 03 section 4](../../docs/research/close-area-nav/03-close-area-localization.md#4-estimator-health-signals-a-planner-can-consume)
   and [section 5a](../../docs/research/close-area-nav/03-close-area-localization.md#a-indoor-no-gnss);
   VIO-to-autopilot plumbing in [vio-to-mavlink-bridge](../../samples/vio-to-mavlink-bridge/README.md)
-  (EKF fusion checked in SITL with a constant pose, not in flight). Hover drift after loss:
-  pending: `<NUMBER from runs/results.md>`.
+  (EKF fusion checked in SITL with a constant pose, not in flight). Hover drift after loss on a
+  real drone: pending: `<NUMBER from runs/results.md>` (the sim hover is perfect).
 
 ### 5. "Where does the planner run?"
 
@@ -211,21 +334,24 @@ asks for evidence. "pending: X" means the hub has no answer yet; fill X on Day 1
 
 ### 7. "Does the filter just freeze the drone?"
 
-- **Answer pattern:** give goal reach and stuck count next to the breach rate. "Goal reach
-  `<NUMBER from samples/close-area-safety-filter/README.md>` of the range-only arm's; stuck in
-  `<NUMBER from samples/close-area-safety-filter/README.md>` layouts; the filter changed the command
-  on `<NUMBER from samples/close-area-safety-filter/README.md>` of steps."
+- **Answer pattern:** give goal reach and stuck count next to the breach rate. On seed 0: "Goal
+  reach 61-89 % of the range-only arm's, below our own 90 % bar. Stuck in 36 / 80 / 72 / 49 of 100
+  layouts (none / jump / bias / dropout); 33 of the 80 jump runs ended hovering on an ambiguous
+  monitor. The filter changed the command on 36-49 % of steps, against 23-24 % for PX4-CBF. So yes,
+  it is too cautious, `[synthetic]`."
 - **Where the answer lives:** pass rule (goal reach at least 90 % of PX4-CBF arm) and the
-  freezing-robot failure mode in [doc 04 sections 1.5 and 3.4](../../docs/research/close-area-nav/04-innovation-prior-art.md#34-falsification-experiment).
-  Result pending: samples/close-area-safety-filter.
+  freezing-robot failure mode in [doc 04 sections 1.5 and 3.4](../../docs/research/close-area-nav/04-innovation-prior-art.md#34-falsification-experiment);
+  [kill_d_summary_0.md](../../samples/close-area-safety-filter/results/kill_d_summary_0.md).
 
 ### 8. "What if we move an obstacle? Is the path hard-coded?"
 
 - **Answer pattern:** "Random layouts in every test, replanning at `<NUMBER from runs/results.md>` Hz.
-  Move one now." Offer it at the judging table.
+  Move one now." Offer it at the judging table. For people walking through: A* replanning alone hit
+  them in 14-36 % of runs; with a range filter on top, 0 %, `[synthetic]` (section 0).
 - **Where the answer lives:** [doc 02 section 3.1](../../docs/research/close-area-nav/02-sims-platforms-competitions.md#31-what-this-tells-us-a-judge-scores)
   item 3 (LSY and IMAV randomize layouts); replan design in
-  [doc 01 section 1](../../docs/research/close-area-nav/01-planning-and-mapping.md#1-recommendation-in-one-paragraph).
+  [doc 01 section 1](../../docs/research/close-area-nav/01-planning-and-mapping.md#1-recommendation-in-one-paragraph);
+  [close-area-moving-obstacles](../../samples/close-area-moving-obstacles/README.md#results-ran-2026-11-09-apple-m3-max-cpython-31210-numpy-254-scipy-1181).
 
 ### 9. "How is this certified? What is the path to product?"
 
@@ -241,27 +367,33 @@ asks for evidence. "pending: X" means the hub has no answer yet; fill X on Day 1
 
 - **Answer pattern:** name the failure case you ran on purpose and show it. Then the ones you did
   not run: an obstacle that is neither sensed nor mapped, a "second source" that shares VIO's error,
-  range delay, wind.
+  range delay, wind. For H1: a symmetric corridor (80 %, median recovery about 11 s after a move) and a
+  room with no map.
 - **Where the answer lives:** [doc 04 section 3.5](../../docs/research/close-area-nav/04-innovation-prior-art.md#35-failure-modes);
   [doc 03 section 6](../../docs/research/close-area-nav/03-close-area-localization.md#6-failure-modes-to-rehearse-on-day-1).
   Our failure run: pending: `<run id from runs/results.md>`.
 
 ## 6. Numbers to fill and where they come from
 
-Context numbers (C) are the hub's, never "ours". Result numbers (R) are ours; all pending on
-2026-11-09.
+Context numbers (C) are the hub's, never "ours". Result numbers (R) for the kill test are the
+hub's seed-0 runs until your team reruns them; R-H1 rows are the hub's relocalization runs. Say
+"hub run" if you present them without rerunning.
 
 | # | Number | Where it comes from | Label | Status |
 |---|---|---|---|---|
 | C1 | OpenVINS stereo VIO, ATE 0.36 m, max 1.57 m over 278.3 m | [relative-nav-benchmark](../../samples/relative-nav-benchmark/README.md#results), [evidence matrix section 5](../../docs/evidence-matrix.md#5-relative-navigation-and-drift-without-gnss) | `[real]` UZH-FPV, 2 runs | Hub-measured |
 | C2 | OpenVINS-fitted drift model with the default filter tuning: 358 of 600 epochs misleading | [relative-nav-benchmark](../../samples/relative-nav-benchmark/README.md#altpnt-integrity-with-a-measured-relative-source), matrix section 3 | `[synthetic]`, error models fitted on real data, long-range scenario | Hub-measured; say "long-range scenario, same lesson" |
 | C3 | FAST-LIO2 NEES about 21x too tight per axis | `smfeval` README via [doc 03 section 4](../../docs/research/close-area-nav/03-close-area-localization.md#is-the-reported-covariance-realistic-evidence) | code README, not re-run by the hub | Quote only as "reported by the smfeval authors" |
-| R1 | Breach rate per arm (F0-F4), jump and bias faults | `<NUMBER from samples/close-area-safety-filter/README.md>` | `[synthetic]` | pending |
-| R2 | Goal reach and stuck count per arm | `<NUMBER from samples/close-area-safety-filter/README.md>` | `[synthetic]` | pending |
-| R3 | Filter intervention rate | `<NUMBER from samples/close-area-safety-filter/README.md>` | `[synthetic]` | pending |
+| R1 | Collision % per arm, none / jump / bias / dropout: F2 3 / 11 / 7 / 4, F3 0 / 9 / 3 / 1, F4 0.2 m 0 / 0 / 0 / 1, F5 ours 0 / 0 / 0 / 0 | [kill_d_summary_0.md](../../samples/close-area-safety-filter/results/kill_d_summary_0.md) | `[synthetic]`, seed 0, 100 layouts | Hub-measured; held-out pending (item 37) |
+| R2 | Reached % per arm, same order: F2 72 / 33 / 33 / 59, F5 64 / 20 / 28 / 51 (61-89 % of F2, bar 90 %: FAIL); F5 stuck 36 / 80 / 72 / 49 | same | `[synthetic]`, seed 0 | Hub-measured; held-out pending |
+| R3 | Filter intervention fraction: F2 0.23-0.24, F5 0.36-0.49 (VIO cases) | same | `[synthetic]`, seed 0 | Hub-measured |
 | R4 | Same comparison in PX4 SITL, fewer layouts | `<NUMBER from runs/results.md>` | `[SITL]` | pending |
 | R5 | Loop time p99 on the target board | `<NUMBER from runs/results.md>` | measured on `<board>` | pending |
 | R6 | Real-flight completions, if a drone is given | `<NUMBER from runs/results.md>` | `[real]` | pending |
+| R-H1a | Reached % (dropout / jump): estimator only 64 / 36; hover + match + move 99 / 99 (seed 0), 100 / 100 (seed 1); 0 wrong commits | [reloc_random_0.md](../../samples/close-area-relocalize/results/reloc_random_0.md), [disamb_random_0.md](../../samples/close-area-relocalize/results/disamb_random_0.md), [disamb_random_1.md](../../samples/close-area-relocalize/results/disamb_random_1.md) | `[synthetic]`, 100 layouts per fault | Hub-measured, held-out seed included |
+| R-H1b | Corridor: commit-at-once 8 of 20 wrong commits; ours 80 % reached, 0 wrong | [disamb_corridor.md](../../samples/close-area-relocalize/results/disamb_corridor.md) | `[synthetic]`, 20 runs, one geometry | Hub-measured |
+| R-H1c | Time to confirmed pose: median 0.4 s; after a move 1.95-2.9 s median | [relocalize README](../../samples/close-area-relocalize/README.md#disambiguating-moves-after-a-hover-timeout-loop-22b) | `[synthetic]` | Hub-measured |
+| R-H1d | Same on the organisers' map or drone | `<NUMBER from runs/results.md>` | `[SITL]` / `[real]` | pending |
 
 Every R number also goes into `runs/results.md` with layouts, seeds and the command that made it.
 
@@ -272,3 +404,9 @@ Every R number also goes into `runs/results.md` with layouts, seeds and the comm
   docs, which read most papers as abstracts only and the IMAV rulebook with a crude parser.
 - PX4-CBF and Belief-CBF descriptions come from abstracts and READMEs (doc 04); their code was not run.
 - The ~0.8 m doorway width is the research lane's estimate, not a measurement.
+- R1-R3 are seed 0. The held-out rerun (Part e of the safety-filter README) gave the FAIL verdict
+  above; quote it, not the seed-0 rows, if a judge asks about the safety filter.
+- Every hub number on this page is `[synthetic]` except C1. None is SITL or flight.
+- The relocalization seed-1 run was reproduced for this page (same table, wall 64.8 s, Apple
+  laptop, 3 arms); the seed-0 and corridor runs were not rerun, their numbers are copied from the
+  sample's result files.
