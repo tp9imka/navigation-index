@@ -6,6 +6,7 @@
   query.py concept concept:magnetic-nav                 everything about a concept
   query.py search "usv spoofing harbor"               guides (kind guide), samples and repos rank together
   query.py decode "Navigate a quadcopter 10 km without GPS"  top 1-3 decoder rows for a pasted statement
+  query.py decode "How do I score a run"                no or low-confidence row: also prints up to 3 guide hits
 For a problem statement, run decode (or read docs/problem-statement-decoder.md) first and search with each
 matching row's keywords. Pasting the whole statement works less well: long queries up-weight platform words
 (DOMAIN_WORDS) but generic GNSS terms still pull in broad records.
@@ -319,7 +320,9 @@ def column(header, *keys):
 
 
 def plain(cell):
-    return re.sub(r"\s+", " ", re.sub(r"[`*]", "", LINK.sub(r"\1", cell))).strip()
+    # "A*" / "D*" (planner names) keep their star; other * and ` are markdown emphasis
+    text = re.sub(r"\b([A-Z])\*(?!\*)", "\\1\x00", LINK.sub(r"\1", cell))
+    return re.sub(r"\s+", " ", re.sub(r"[`*]", "", text)).strip().replace("\x00", "*")
 
 
 def trigger_tokens(text):
@@ -443,7 +446,10 @@ def decoder_rows(text=None):
 
 def row_keywords(row):
     """Search keywords for a row: its statement's content words plus its first stack names."""
-    kw = list(dict.fromkeys(w for w in re.findall(r"[A-Za-z0-9][\w-]*", row["name"]) if w.lower() not in STOP))
+    # "A=>B" reads "A to B": single letters and "to" are stopwords, so keep the pair as one keyword
+    name = re.sub(r"\b([A-Z])\s*=>\s*([A-Z])\b", r"\1 to \2", row["name"])
+    kw = list(dict.fromkeys(w for w in re.findall(r"\b[A-Z] to [A-Z]\b|[A-Za-z0-9][\w-]*\*?", name)
+                            if w.lower() not in STOP))
     for c in row["cards"][:DECODE_KEYWORD_CARDS]:
         kw.append(re.sub(r"\s*\(.*?\)|\s+card$", "", c["name"]).strip())
     return " ".join(k for k in kw if k)
@@ -520,7 +526,31 @@ def decode(statement, limit=DECODE_MAX_ROWS, text=None):
              "keywords": row_keywords(r)} for r in keep]
 
 
-def format_decoded(rows):
+DECODE_GUIDE_HITS = 3  # how-to fallback: guides searched with the question when no row or a low-confidence row
+
+
+def decode_guides(statement, recs=None, limit=DECODE_GUIDE_HITS):
+    """Top guide hits for a question the decoder does not route ("how do I score a run"). [] without an index."""
+    if recs is None:
+        try:
+            recs, _ = load()
+        except (OSError, ValueError):
+            return []
+    hits = [(s, r) for s, r in search(recs, statement) if r["kind"] == "guide"]
+    return [{"id": r["id"], "name": r.get("name"), "path": r.get("path"), "score": round(s, 3)}
+            for s, r in hits[:limit]]
+
+
+def format_guides(guides):
+    if not guides:
+        return []
+    out = ["", "guides that may answer a how-to question (search on the question, kind guide):"]
+    out += [f"  {g['path']}  ({g['name']})" for g in guides]
+    return out
+
+
+def format_decoded(rows, guides=None):
+    tail = format_guides(guides)
     out = [DECODE_LOW_NOTE, ""] if rows and rows[0]["low_confidence"] else []
     for r in rows:
         out.append(f"row {r['row']}: {r['name']}  (score {r['score']})")
@@ -532,8 +562,10 @@ def format_decoded(rows):
         out.append("  cards:      " + ", ".join(c["name"] for c in r["cards"]))
         out.append("  risk:       " + r["risk"])
         out.append(f'  search:     python3 tools/query.py search "{r["keywords"]}"')
-    return "\n".join(out) if out else ("no decoder row matched (the statement may be outside the hub's scope); "
-                                       "read docs/problem-statement-decoder.md by hand or run search with your own nouns")
+    if not out:
+        out = ["no decoder row matched (the statement may be outside the hub's scope); "
+               "read docs/problem-statement-decoder.md by hand or run search with your own nouns"]
+    return "\n".join(out + tail)
 
 
 def load():
@@ -579,22 +611,38 @@ def brief(r):
             + (f"\n    Limitation: {limitation}" if limitation else ''))
 
 
+COMMANDS = {
+    "search": 'ranked keyword search over repos, docs, samples and guides: search "crazyflie setpoint"',
+    "decode": 'problem statement => 1-3 decoder rows (approach, start from, keywords); '
+              'low or no match also lists guides: decode "fly A to B past obstacles"',
+    "concept": "everything tagged with one concept, high fit first: concept concept:vio",
+    "show": "full JSON record for one id: show sample:close-area-arena",
+    "neighbors": "graph walk from an id: neighbors repo:px4/px4-autopilot --depth 2",
+    "concepts": "list all concept ids with record counts",
+}
+
+
 def main():
-    p = argparse.ArgumentParser()
-    p.add_argument("cmd", choices=["search", "decode", "concept", "show", "neighbors", "concepts"])
-    p.add_argument("arg", nargs="?")
-    p.add_argument("--kind")
-    p.add_argument("--fit", choices=["high", "medium", "low"])
-    p.add_argument("--domain")
-    p.add_argument("--concept")
+    p = argparse.ArgumentParser(
+        description="Query the navigation index (stdlib only). For a problem statement run decode first, "
+                    "then search with each row's keywords.",
+        epilog="commands:\n" + "\n".join(f"  {k:<10} {v}" for k, v in COMMANDS.items()),
+        formatter_class=argparse.RawDescriptionHelpFormatter)
+    p.add_argument("cmd", choices=list(COMMANDS), metavar="command", help="one of: " + ", ".join(COMMANDS)
+                   + " (see below)")
+    p.add_argument("arg", nargs="?", help="query text, statement or id, depending on the command")
+    p.add_argument("--kind", help="repo, sample, guide, concept, paper, doc, dataset, ...")
+    p.add_argument("--fit", choices=["high", "medium", "low"], help="hackathon fit")
+    p.add_argument("--domain", help="air, ground, maritime, underwater, space, dismounted, multi")
+    p.add_argument("--concept", help="restrict search to a concept id, e.g. concept:vio")
     for key, choices in readiness.ENUMS.items():
         p.add_argument('--' + key, choices=choices)
     p.add_argument('--platform', help='tested OS/architecture label, e.g. macos-arm64')
     for key in readiness.BUDGETS:
         p.add_argument('--' + key.replace('_', '-'), type=float)
-    p.add_argument("--limit", type=int, default=20)
-    p.add_argument("--depth", type=int, default=1)
-    p.add_argument("--json", action="store_true")
+    p.add_argument("--limit", type=int, default=20, help="max results (decode: max rows, at most 3)")
+    p.add_argument("--depth", type=int, default=1, help="neighbors: graph hops")
+    p.add_argument("--json", action="store_true", help="machine-readable output")
     a = p.parse_args()
     try:
         readiness.filter_options(vars(a))
@@ -602,7 +650,11 @@ def main():
         p.error(str(exc))
     if a.cmd == "decode":
         rows = decode(a.arg or "", min(a.limit, DECODE_MAX_ROWS))
-        print(json.dumps(rows, indent=1, ensure_ascii=False) if a.json else format_decoded(rows))
+        if a.json:  # shape kept (a list of rows); the MCP decode tool carries the guide fallback as "guides"
+            print(json.dumps(rows, indent=1, ensure_ascii=False))
+            return
+        weak = not rows or rows[0]["low_confidence"]
+        print(format_decoded(rows, decode_guides(a.arg or "") if weak and (a.arg or "").strip() else None))
         return
     recs, adj = load()
 

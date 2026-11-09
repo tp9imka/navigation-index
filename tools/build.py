@@ -313,7 +313,12 @@ def first_sentence(s):
     return (m.group(1) if m else s)[:220]
 
 # Top-level guides become graph nodes of kind "guide" so search finds the decoder, playbook and runbook.
-GUIDE_GLOBS = ("docs/*.md", "docs/primer/*.md", "docs/landscape/*.md", "docs/research/*/*.md")
+GUIDE_GLOBS = ("docs/*.md", "docs/primer/*.md", "docs/landscape/*.md", "docs/research/*/*.md",
+               "templates/*.md", "templates/*/*.md", "templates/*/*/*.md")
+# Templates are hub guides too (drone-adapter drivers and frames, close-area demo and pitch), except the
+# copy-me skeleton repo (TODO placeholders) and agent instruction files written for a team repo.
+GUIDE_SKIP_DIRS = ("templates/project-repo/",)
+GUIDE_SKIP_NAMES = frozenset(("AGENTS.md", "CLAUDE.md"))
 GUIDE_SUMMARY_CHARS = 600
 GUIDE_BODY_CHARS = 6000  # plain text indexed per guide; query.GUIDE_BODY_CHARS must match
 GUIDE_MAX_CONCEPTS = 6
@@ -326,7 +331,10 @@ def guide_id(path):
 
 
 def guide_files():
-    files = sorted({f for g in GUIDE_GLOBS for f in ROOT.glob(g)})
+    files = sorted({f for g in GUIDE_GLOBS for f in ROOT.glob(g)
+                    if f.name not in GUIDE_SKIP_NAMES
+                    and not f.relative_to(ROOT).as_posix().startswith(GUIDE_SKIP_DIRS)
+                    and not any(p.startswith(".") for p in f.relative_to(ROOT).parts)})
     return tracked_files(files)
 
 
@@ -659,7 +667,8 @@ def write_llms(nodes, concepts, members):
         "`python3 tools/query.py decode \"<statement>\"` (MCP tool `decode`) or read "
         "docs/problem-statement-decoder.md to pick its rows, then search with each row's keywords: "
         "`python3 tools/query.py search \"<keywords>\"` or the MCP server tools/mcp_server.py "
-        "(its `read` tool returns any guide or sample README). Guides (kind `guide`) are searchable like any other node.",
+        "(its `read` tool returns any guide, template or sample doc). Guides (kind `guide`, including templates/) "
+        "are searchable like any other node.",
         "",
         "## Entry points",
         "",
@@ -667,6 +676,12 @@ def write_llms(nodes, concepts, members):
         "Challenge 2 (autonomous flight navigation): read first, it narrows the hub to what fits",
         "- [docs/problem-statement-decoder.md](docs/problem-statement-decoder.md): got a problem statement? start here "
         "(statement => approach, stack, data, starting sample, risk, pitch)",
+        "- [docs/research/close-area-nav/README.md](docs/research/close-area-nav/README.md): close-area A to B "
+        "with obstacles (likely Day-1 task): synthesis of planning, sims, localization and the recommended direction",
+        "- [samples/close-area-arena/README.md](samples/close-area-arena/README.md): close-area A to B starter "
+        "that ran: seeded synthetic arena, drone interface, truth scorer, estimator faults",
+        "- [templates/drone-adapter/drivers/README.md](templates/drone-adapter/drivers/README.md): how to send "
+        "setpoints on PX4, ArduPilot, Crazyflie or Tello behind one pose()/send_setpoint() seam (drivers unrun)",
         "- [docs/day0-runbook.md](docs/day0-runbook.md): the first three hours after the statement drops",
         "- [samples/README.md](samples/README.md): every sample with status, deps, first command, key result",
         "- [docs/README.md](docs/README.md): map of docs/ and read order",

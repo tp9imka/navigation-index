@@ -82,6 +82,10 @@ class RpcRobustness(unittest.TestCase):
         self.assertIn(b'"id": 99', p.stdout)
 
 
+def query_guides_max():
+    return mcp_server.query.DECODE_GUIDE_HITS
+
+
 def read(**args):
     r = call("read", **args)["result"]
     text = r["content"][0]["text"]
@@ -106,6 +110,38 @@ class ReadTool(unittest.TestCase):
         for bad in ({}, {"path": 1}, {"id": ["x"]}, {"id": "a", "path": "b"}):
             r = call("read", **bad)["result"]
             self.assertTrue(r["isError"], bad)
+
+    def test_templates_and_sample_side_docs_are_readable(self):
+        for p in ("templates/README.md", "templates/drone-adapter/README.md",
+                  "templates/drone-adapter/drivers/README.md", "samples/close-area-arena/CONTRACT.md",
+                  "samples/close-area-arena/INTEGRATION.md"):
+            self.assertTrue(mcp_server.readable(p), p)
+            if (HERE.parent / p).is_file():
+                out, err = read(path=p)
+                self.assertEqual(out["path"], p, err)
+        for p in ("templates/../tools/query.py", "templates/flight-repo/main.py", "templates/x/.venv/lib/a.md",
+                  "samples/close-area-arena/run.py", "samples/close-area-arena/results/x.md",
+                  "samples/x/.venv/README.md", "templates/x/node_modules/y/README.md", "docs/.hidden/a.md",
+                  "templates", "samples/x.md"):
+            out, err = read(path=p)
+            self.assertIsNone(out, p)
+
+    def test_templates_symlink_escape_is_refused(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td) / "repo"
+            (root / "templates").mkdir(parents=True)
+            (root / "samples" / "s").mkdir(parents=True)
+            secret = Path(td) / "secret.md"
+            secret.write_text("TOP SECRET")
+            os.symlink(secret, root / "templates" / "evil.md")
+            os.symlink(secret, root / "samples" / "s" / "CONTRACT.md")
+            (root / "samples" / "s" / "INTEGRATION.md").write_text("# ok")
+            with mock.patch.object(mcp_server.query, "ROOT", root):
+                for p in ("templates/evil.md", "samples/s/CONTRACT.md"):
+                    out, err = read(path=p)
+                    self.assertIsNone(out, p)
+                    self.assertNotIn("TOP SECRET", err)
+                self.assertEqual(read(path="samples/s/INTEGRATION.md")[0]["content"], "# ok")
 
     def test_symlink_escape_is_refused(self):
         with tempfile.TemporaryDirectory() as td:
@@ -293,6 +329,14 @@ class Decode(unittest.TestCase):
         self.assertEqual(out["rows"], [])
         self.assertEqual(out["confidence"], "none")
         self.assertIn("by hand", out["next"])
+        # how-to question: no row, but up to 3 guides to read
+        out = json.loads(call("decode", statement="How do I score a run")["result"]["content"][0]["text"])
+        self.assertEqual(out["confidence"], "none")
+        self.assertTrue(1 <= len(out["guides"]) <= query_guides_max())
+        self.assertTrue(all(g["id"].startswith("guide:") and g["path"] for g in out["guides"]))
+        self.assertIn("guides", out["next"])
+        out = json.loads(call("decode", statement=STATEMENTS[0][0])["result"]["content"][0]["text"])
+        self.assertNotIn("guides", out)
         for bad in ({"statement": 5}, {}, {"statement": "x", "limit": "2"}):
             self.assertTrue(call("decode", **bad)["result"]["isError"], bad)
 
@@ -304,6 +348,20 @@ class Decode(unittest.TestCase):
         out = subprocess.run([sys.executable, str(HERE / "query.py"), "decode", STATEMENTS[0][0]],
                              check=True, capture_output=True, text=True).stdout
         self.assertIn('search:     python3 tools/query.py search "', out)
+        out = subprocess.run([sys.executable, str(HERE / "query.py"), "decode", "What licences block commercial use"],
+                             check=True, capture_output=True, text=True).stdout
+        self.assertIn("guides that may answer", out)
+        out = subprocess.run([sys.executable, str(HERE / "query.py"), "-h"],
+                             check=True, capture_output=True, text=True).stdout
+        for cmd in mcp_server.query.COMMANDS:
+            self.assertIn(f"  {cmd} ", out)
+
+    def test_row_keywords_keep_a_to_b_and_a_star(self):
+        q = mcp_server.query
+        kw = q.row_keywords({"name": "Drone A=>B through obstacles", "cards": []})
+        self.assertTrue(kw.startswith("Drone A to B through"), kw)
+        self.assertEqual(q.plain("scipy ESDF => A* with **clearance** cost, `D*` Lite"),
+                         "scipy ESDF => A* with clearance cost, D* Lite")
 
 
 class Stemmer(unittest.TestCase):

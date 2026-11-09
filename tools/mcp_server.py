@@ -75,7 +75,8 @@ TOOLS = [
                        "no LLM. Each row: name, approach, start_from samples, cards, risk, the wording that "
                        "matched and keywords to pass to search. confidence \"low\" means no row clearly fits: "
                        "read the decoder by hand and search with your own nouns; no rows means the statement "
-                       "shares almost nothing with the decoder. Use read on the decoder for stack, datasets "
+                       "shares almost nothing with the decoder. With low or no rows, guides lists up to 3 hub "
+                       "guides that match a how-to question (read them by id). Use read on the decoder for stack, datasets "
                        "and pitch. " + READ_NOTE,
         "inputSchema": {"type": "object", "required": ["statement"], "properties": {
             "statement": {"type": "string", "description": "the problem statement as given, any length up to "
@@ -111,8 +112,9 @@ TOOLS = [
         "description": "Full markdown of one hub page: a guide (guide:problem-statement-decoder, "
                        "guide:day0-runbook, ...), a sample README (sample:x), or the integration card, "
                        "dataset card or paper digest of a record (repo:x, res:x; else its catalog page). "
-                       "Pass id or a repo-relative path (docs/**/*.md, samples/<name>/README.md, "
-                       "catalog/**/*.md, README.md, AGENTS.md, INDEX.md, llms.txt). "
+                       "Pass id or a repo-relative path (docs/**/*.md, templates/**/*.md such as "
+                       "templates/drone-adapter/drivers/README.md, samples/<name>/*.md such as "
+                       "samples/close-area-arena/CONTRACT.md, catalog/**/*.md, README.md, AGENTS.md, INDEX.md, llms.txt). "
                        f"Returns at most {READ_MAX_CHARS} characters; page with offset, or pass section "
                        "(heading text) for one section. " + READ_NOTE,
         "inputSchema": {"type": "object", "properties": {
@@ -191,14 +193,23 @@ def tool_decode(args):
     keep = ("row", "name", "approach", "start_from", "cards", "risk", "matched_wording", "keywords", "score",
             "low_confidence")
     low = bool(rows) and rows[0]["low_confidence"]
+    guides = []
+    if (not rows or low) and statement.strip():
+        recs, _ = data()
+        guides = query.decode_guides(statement[:MAX_STATEMENT_CHARS], recs)
+    hint = ("; a how-to question is often answered by one of guides (read it by id)" if guides else "")
     if not rows:
-        nxt = "no row matched; read guide:problem-statement-decoder and match the wording by hand"
+        nxt = "no row matched; read guide:problem-statement-decoder and match the wording by hand" + hint
     elif low:
-        nxt = query.DECODE_LOW_NOTE.replace("docs/problem-statement-decoder.md", "guide:problem-statement-decoder")
+        nxt = query.DECODE_LOW_NOTE.replace("docs/problem-statement-decoder.md",
+                                            "guide:problem-statement-decoder") + hint
     else:
         nxt = "search with each row's keywords; read guide:problem-statement-decoder for stack, datasets and pitch"
-    return {"rows": [{k: r[k] for k in keep} for r in rows], "confidence": "none" if not rows else
-            "low" if low else "ok", "untrusted": READ_NOTE, "next": nxt}
+    out = {"rows": [{k: r[k] for k in keep} for r in rows], "confidence": "none" if not rows else
+           "low" if low else "ok", "untrusted": READ_NOTE, "next": nxt}
+    if guides:
+        out["guides"] = guides
+    return out
 
 
 def tool_show(args):
@@ -249,13 +260,20 @@ def tool_neighbors(args):
     return res[:limit_of(args)]
 
 
+READ_ALLOWED = ("docs/**/*.md, templates/**/*.md, samples/<name>/*.md (README, CONTRACT, INTEGRATION, ...), "
+                "catalog/**/*.md")
+READ_SKIP_PARTS = frozenset(("node_modules", "site-packages", "results", "out"))
+
+
 def readable(rel):
     parts = rel.split("/")
     if rel in READ_ROOT_FILES:
         return True
-    if parts[0] in ("docs", "catalog") and len(parts) > 1 and rel.endswith(".md"):
+    if not rel.endswith(".md") or any(p.startswith(".") or p in READ_SKIP_PARTS for p in parts):
+        return False   # no hidden dirs (.venv, .git), vendored or generated trees
+    if parts[0] in ("docs", "catalog", "templates") and len(parts) > 1:
         return True
-    return rel == "samples/README.md" or (len(parts) == 3 and parts[0] == "samples" and parts[2] == "README.md")
+    return rel == "samples/README.md" or (len(parts) == 3 and parts[0] == "samples")
 
 
 def resolve_doc(path):
@@ -268,8 +286,7 @@ def resolve_doc(path):
         raise ToolError("path must be repo-relative without '..'")
     rel = posixpath.normpath(path)
     if not readable(rel):
-        raise ToolError(f"not readable: {rel}; allowed: docs/**/*.md, samples/<name>/README.md, "
-                        f"catalog/**/*.md, {', '.join(sorted(READ_ROOT_FILES))}")
+        raise ToolError(f"not readable: {rel}; allowed: {READ_ALLOWED}, {', '.join(sorted(READ_ROOT_FILES))}")
     root = query.ROOT.resolve()
     full = (root / rel).resolve()
     try:
