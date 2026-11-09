@@ -90,3 +90,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - landed: 42 => a9e253f (judge drill, 15 Q with numbers; Q6 found a real gap: relocalizer needs >= 10 returns, a 4-beam deck gives 4 => new item 54). Playground live on Pages.
 - landed: 46c/53 => 66ad30e (14 planners x 8 families x 2 presets; D* Lite unknown map 85-100 % on ideal; dwa_mem cuts crazyflie collisions sharply; 112 replays 112/112 match; old rows byte-identical)
 - landed: 45a => ae0065e (window_bar family; 2.5D at 1 m 14 % = exactly the 7 layouts with a 2D path; 3D A* 100 %, 0 collisions; driver pasted README section)
+- landed: 47 => e844e9f (showcase v2: 8 arena tiles + v1 fault replays, 14 planner chips from replays_v2 index, overlay/side-by-side compare, matrix grid read from matrix_0.md, URL state, ?run= fixed; driver rendered warehouse D* Lite vs DWA+memory)
