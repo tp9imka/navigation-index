@@ -6,10 +6,11 @@ Global/local planners, sampling and search based planning, trajectory optimizati
 
 **Sub-concepts:** [Mission planning and routing](../../catalog/concepts/mission-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
-## Samples (5)
+## Samples (6)
 
 - [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md) - Small deterministic simulator that every close-area A=>B approach in the hub is compared in.
 - [Close-area corridor MPC: linear MPC with OSQP in an ESDF half-plane corridor on the arena A*, vs the carrot follower](../../catalog/samples/close-area-planner-mpc.md) - Replaces the close-area-arena A* carrot follower with a linear MPC path follower and measures the difference.
+- [Close-area moving obstacles: walking people in the arena, A* replan vs A* + PX4-CBF range filter vs APF](../../catalog/samples/close-area-moving-obstacles.md) - Moving-obstacle family for the shared close-area-arena.
 - [Close-area reactive planners: APF with wall-follow escape and VFH+, range sensor only, 72-beam vs Crazyflie-like 4-beam fan](../../catalog/samples/close-area-planner-reactive.md) - Map-free fallback planners for close-area A=>B, written as close-area-arena Planners that read only the pose and the range scan.
 - [Close-area safety-filter kill test A: no filter, PX4 Collision Prevention style and PX4-CBF as shipped on A* under VIO faults, with map-only obstacles the range fan cannot see](../../catalog/samples/close-area-safety-filter.md) - Harness that puts a safety filter between a planner and the vehicle in the shared close-area-arena, for the kill test of the hub's integrity-aware safety-filter headline.
 - [Close-area sampling planners: RRT* and Informed RRT* against A* on narrow gaps 0.4-1.2 m, in the close-area arena](../../catalog/samples/close-area-planner-sampling.md) - Own numpy RRT* (rewiring with subtree cost update, goal bias 5 %, step 1.0 m, rewire radius from the RRT* bound capped at 2.0 m) with an Informed RRT* mode (ellipse sampling after the first solution), planning on the are

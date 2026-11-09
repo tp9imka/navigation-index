@@ -4,7 +4,7 @@
 
 Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simulators.
 
-## Samples (23)
+## Samples (24)
 
 - [Anti-spoof autopilot configurations tested in SITL: 13 PX4 EKF2 / ArduPilot EKF3 configs (EV velocity + EKF2_GPS_MODE 1, aux global position, EK3 source sets, fuse-all-velocities, EK3_GLITCH_RAD 0, dual GPS affinity / blending, a Lua GPS-vs-ExternalNav source-switch applet, companion monitor) x coherent drag 0.3/1/3 m/s + clean, 3 seeds, 156 flights, ranked recipe table](../../catalog/samples/autopilot-resilient-configs.md) - Builds on samples/autopilot-spoof-response (both EKFs believe a coherent GNSS drag) and looks for configurations that keep each autopilot flying.
 - [AprilTag goal B: detection envelope vs range and view angle, and a tag-relative final approach](../../catalog/samples/fiducial-goal-apriltag.md) - Renders a tag36h11 AprilTag (0.16 m, also 0.40 m) onto a textured wall with a 640 x 480 pinhole camera (fx = fy = 500 px, no distortion) at known poses, with Gaussian blur and noise, detects it with pupil-apriltags, and 
@@ -13,6 +13,7 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [Celestial fix: cedar-solve plate solving on real star images, then position from star elevations above an IMU vertical](../../catalog/samples/celestial-star-tracker.md) - Runs cedar-solve (tetra3 API, v0.6.0 on NumPy 2) lost-in-space on 40 real SkyView Mellinger cutouts with a known WCS (12 and 20 deg FOV, random pointing and roll) and on the 20 real camera frames shipped with cedar-solve
 - [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md) - Small deterministic simulator that every close-area A=>B approach in the hub is compared in.
 - [Close-area corridor MPC: linear MPC with OSQP in an ESDF half-plane corridor on the arena A*, vs the carrot follower](../../catalog/samples/close-area-planner-mpc.md) - Replaces the close-area-arena A* carrot follower with a linear MPC path follower and measures the difference.
+- [Close-area moving obstacles: walking people in the arena, A* replan vs A* + PX4-CBF range filter vs APF](../../catalog/samples/close-area-moving-obstacles.md) - Moving-obstacle family for the shared close-area-arena.
 - [Close-area reactive planners: APF with wall-follow escape and VFH+, range sensor only, 72-beam vs Crazyflie-like 4-beam fan](../../catalog/samples/close-area-planner-reactive.md) - Map-free fallback planners for close-area A=>B, written as close-area-arena Planners that read only the pose and the range scan.
 - [Close-area relocalization after VIO loss: scan-to-map pose hypotheses, ratio + persistence acceptance, hover until one wins](../../catalog/samples/close-area-relocalize.md) - Relocalizer for the close-area arena.
 - [Close-area safety-filter kill test A: no filter, PX4 Collision Prevention style and PX4-CBF as shipped on A* under VIO faults, with map-only obstacles the range fan cannot see](../../catalog/samples/close-area-safety-filter.md) - Harness that puts a safety filter between a planner and the vehicle in the shared close-area-arena, for the kill test of the hub's integrity-aware safety-filter headline.
