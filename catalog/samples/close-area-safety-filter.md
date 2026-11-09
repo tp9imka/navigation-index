@@ -24,6 +24,7 @@ Harness that puts a safety filter between a planner and the vehicle in the share
 
 ## Referenced by
 
+- [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) (mentions)
 - [Demo script: close-area A to B](../../templates/demo-script-close-area.md) (mentions)
 - [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) (mentions)
 

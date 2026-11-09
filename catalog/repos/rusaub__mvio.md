@@ -29,6 +29,7 @@ C++ monocular VIO: ORB features tracked with Lucas-Kanade flow, parallax-based k
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
 - [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Visual-Odometry-VIO- (VO + IMU EKF)](../../catalog/repos/daudalbogachiev925__visual-odometry-vio-.md) (alternative_to)

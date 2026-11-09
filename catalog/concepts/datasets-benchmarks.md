@@ -19,14 +19,15 @@ Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [Shared pose recording and replay: JSONL plus optional MCAP](../../catalog/samples/recording-replay.md) - A deterministic synthetic local-ENU pose stream replayed through JSONL and optional MCAP with an embedded schema.
 - [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) - Stdlib-only ground-vehicle loop on a real NCLT Segway session (2013-01-10, 1022 s, 1139 m, 42 MB download): consumer GPS at 1 Hz fused with MEMS strapdown INS (the 8-state EKF of gnss-ins-ekf-outage, imported), wheel spe
 
-## Guides (21)
+## Guides (23)
 
 - [08. Crazyflie sensing limits: what the planner and safety filter can rely on](../../docs/research/close-area-nav/08-crazyflie-sensing-limits.md) - Research note, 2026-11-09 (loop-23).
 - [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) - Loop-24, 2026-11-09.
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) - After this chapter you can explain the five main ways to get an absolute position without GNSS - image-to-map matching, terrain matching, magnetic anomaly matching, celestial fixes and signals of opportunity - pick the o
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) - After this chapter you can pick a dataset or simulator that matches your scenario, compute the trajectory metrics judges and reviewers expect, and design a GNSS-outage or interference test that shows what your system doe
+- [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) - Start here when the task is the EDGE Group internal hackathon, Challenge 2.
 - [Choose a stack you can run](../../docs/practical-readiness.md) - Start with the problem decoder, then narrow the candidates by the resources in the room.
-- [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) - Research round for EDGE hackathon Challenge 2, 2026-11-09, after new information that the task is likely "move a drone from A to B in a close area, potentially with obstacles".
+- [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) - Use this when the brief says A to B, obstacles, indoor, arena, close area, or a marker / pad at B, and you need the baseline, the localization stack or the headline idea.
 - [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) - Fill this on Day 2 when the task is "fly a drone from A to B in a close area, with obstacles".
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) - What a 4-5 person team does from the moment the problem statement drops until H+3, when a walking skeleton should run end to end.
 - [Demo dashboard](../../templates/demo-dashboard/README.md) - Use this when a GNSS / PNT run with lat / lon tracks needs a judge-facing map replay.
@@ -37,6 +38,7 @@ Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [flight-repo: close-area A=>B flight loop starter](../../templates/flight-repo/README.md) - Use this when the task is "fly from A to B in a close area, maybe with obstacles": clone it at H+0 as the team repo.
 - [Hackathon kit templates](../../templates/README.md) - Use this when you need a file to copy for the hackathon itself: a repo skeleton, a platform driver, a demo script, a pitch, a plan or a checklist.
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) - For a team going into a navigation-themed hackathon that may have a military or defense track.
+- [Navigation primer](../../docs/primer/README.md) - Use this when a navigation term, sensor or failure mode is new to you and you need the plain explanation plus the repos to build with.
 - [Offline kit](../../templates/offline-kit/README.md) - Use this when you prepare laptops in the week or night before the event, or share a cache with teammates at the venue.
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) - Plausible problem statements for a navigation / PNT / GNSS-denied hackathon, each mapped to a recommended approach, a stack (integration cards first, catalog pages otherwise), datasets, a sample or template to start from
 - [Three selective offline starter bundles](../../docs/starter-bundles.md) - Pick a bundle before downloading the broad offline kit.

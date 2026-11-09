@@ -27,6 +27,7 @@ English: 'EW/ELINT solutions against enemy drones wanted: Jammer Hackathon detai
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
 - [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Завершився Jammer Hackathon, де шукали РЕБ/РЕР рішення для фронту. Які проєкти перемогли](../../catalog/resources/dou-jammer-hackathon-winners-2024.md) (part_of)

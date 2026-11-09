@@ -58,7 +58,7 @@ Architectures that keep position, navigation and timing trustworthy under denial
 - [Autopilot GNSS fault handling: PX4 EKF2 and ArduPilot EKF3 under spoofing](../../docs/autopilot-gnss-fault-handling.md) - What each autopilot's EKF does when GNSS goes wrong, read from the source at pinned tags and checked in SITL by samples/autopilot-spoof-response (45 flights, 2026-11-06).
 - [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) - Start here when the task is the EDGE Group internal hackathon, Challenge 2.
 - [Choose a stack you can run](../../docs/practical-readiness.md) - Start with the problem decoder, then narrow the candidates by the resources in the room.
-- [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) - Research round for EDGE hackathon Challenge 2, 2026-11-09, after new information that the task is likely "move a drone from A to B in a close area, potentially with obstacles".
+- [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) - Use this when the brief says A to B, obstacles, indoor, arena, close area, or a marker / pad at B, and you need the baseline, the localization stack or the headline idea.
 - [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) - Fill this on Day 2 when the task is "fly a drone from A to B in a close area, with obstacles".
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) - What a 4-5 person team does from the moment the problem statement drops until H+3, when a walking skeleton should run end to end.
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) - Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (details drop 2026-11-18).
@@ -69,7 +69,7 @@ Architectures that keep position, navigation and timing trustworthy under denial
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) - Written 2026-11-09 for Challenge 2 "Autonomous Frontiers" (entry point).
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) - For a team going into a navigation-themed hackathon that may have a military or defense track.
 - [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) - After this page you can explain what a protection level is and why it is different from an accuracy number, run a solution-separation monitor over several alt-PNT sources, and show judges a Stanford diagram that proves y
-- [Landscape: what judges already know](../../docs/landscape/README.md) - Commercial products, funded programmes and 2025-2026 trends in GNSS-denied navigation, so a hackathon team can place its idea against what is already sold or funded.
+- [Landscape: what judges already know](../../docs/landscape/README.md) - Use this when you must check whether an idea is already sold or funded, or how a past navigation hackathon brief was solved.
 - [Learning paths](../../docs/learning-paths.md) - Three study tracks built from the courses, talks, books and docs in this index.
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) - Learned models in navigation pipelines carry three separate sets of terms:
 - [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) - Each item: what changed, the source, and what it means for a navigation hackathon project.

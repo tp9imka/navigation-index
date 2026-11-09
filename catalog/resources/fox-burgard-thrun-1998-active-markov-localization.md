@@ -17,4 +17,8 @@ Grid Markov localization that chooses where to move and where to point sensors b
 
 **Tags:** `active-localization`, `markov-localization`, `entropy`, `multimodal`, `kidnapped-robot`, `robotics-and-autonomous-systems`
 
+## Referenced by
+
+- [Close-area relocalization after VIO loss: scan-to-map pose hypotheses, ratio + persistence acceptance, hover until one wins](../../catalog/samples/close-area-relocalize.md) (explains)
+
 _Indexed by lane(s): innovation-pa-maneuvers_

@@ -27,6 +27,7 @@ Russian-language page of COEX's international open-source flying-robotics contes
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
 - [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [CopterHack 2022](../../catalog/resources/copterhack-2022.md) (same_author)

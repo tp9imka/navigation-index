@@ -25,6 +25,7 @@ MIPT (FAKT) 2026 diploma: local navigation for a UAV under GNSS suppression, cor
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
 - [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Vyriy створила маякову навігацію для дронів, яка працює без GPS і зв’язку](../../catalog/resources/devua-vyriy-beacon-navigation-2026.md) (explains)

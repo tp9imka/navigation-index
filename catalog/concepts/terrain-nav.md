@@ -14,13 +14,14 @@ TERCOM/TRN/DSMAC-style matching of altimetry or imagery against DEM/terrain data
 - [Terrain-relative navigation with a particle filter](../../catalog/samples/terrain-relative-nav-pf.md) - A stdlib-only simulation of TERCOM/TRN: an aircraft with a biased INS and a radar altimeter matches its measured terrain profile against a seeded synthetic DEM with a particle filter that also estimates the INS velocity 
 - [Two independent absolute sources on one real flight: visual fixes + terrain-relative navigation with solution-separation integrity (VPAIR over NRW 1 m LiDAR)](../../catalog/samples/two-source-integrity-vpair.md) - Adds terrain-relative navigation as a second absolute source to the real VPAIR flight (8.53 km after GNSS loss, Rhine valley between Bad Honnef and Koenigswinter, east of Bonn).
 
-## Guides (5)
+## Guides (6)
 
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](../../docs/landscape/blind-flight-teardown.md) - The closest real precedent we have for a navigation hackathon brief: a 48-hour case (26-28 June 2026, Krasnodar, track "Robotics and sensing") where teams had to find position, ground speed and heading of an aircraft fro
 - [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
 - [07. Kill test for idea C: does a PL-margin safety filter already exist?](../../docs/research/close-area-nav/07-pl-margin-prior-art.md) - Prior-art scan, 2026-11-09 (loop-13).
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) - What a 4-5 person team does from the moment the problem statement drops until H+3, when a walking skeleton should run end to end.
 - [Docs map](../../docs/README.md) - Use this page when you need to know which page under docs/ answers your question, or the order to read them in.
+- [Landscape: what judges already know](../../docs/landscape/README.md) - Use this when you must check whether an idea is already sold or funded, or how a past navigation hackathon brief was solved.
 
 ## Repositories (33)
 

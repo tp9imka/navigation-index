@@ -20,7 +20,7 @@ Operating comms and navigation under EW: spectrum monitoring, LPI/LPD links, fal
 
 - [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) - After this chapter you can describe any navigation system as "a state, an uncertainty, a set of measurements and a way to check they agree", and you will know the vocabulary judges use when they ask whether your solution
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) - After this chapter you can explain how a receiver turns satellite signals into a position, read raw receiver output, pick between SPP, RTK and PPP, and build a jamming or spoofing detector that runs on recorded data.
-- [Landscape: what judges already know](../../docs/landscape/README.md) - Commercial products, funded programmes and 2025-2026 trends in GNSS-denied navigation, so a hackathon team can place its idea against what is already sold or funded.
+- [Landscape: what judges already know](../../docs/landscape/README.md) - Use this when you must check whether an idea is already sold or funded, or how a past navigation hackathon brief was solved.
 - [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) - Each item: what changed, the source, and what it means for a navigation hackathon project.
 - [Pitch deck outline](../../templates/pitch-deck-outline.md) - 9 slides, 3 minutes plus Q&A.
 - [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) - What funders publish as navigation problem statements.

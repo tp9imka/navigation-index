@@ -30,6 +30,7 @@ Relocalization in a prebuilt map using FAST-LIO odometry plus global scan-to-map
 ## Referenced by
 
 - [FAST-LIO / FAST-LIO2](../../catalog/repos/hku-mars__fast_lio.md) (extends)
+- [Close-area relocalization after VIO loss: scan-to-map pose hypotheses, ratio + persistence acceptance, hover until one wins](../../catalog/samples/close-area-relocalize.md) (explains)
 
 _Indexed by lane(s): slam_
 

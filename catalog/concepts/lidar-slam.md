@@ -4,8 +4,9 @@
 
 LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 
-## Samples (1)
+## Samples (2)
 
+- [Close-area relocalization after VIO loss: scan-to-map pose hypotheses, ratio + persistence acceptance, hover until one wins](../../catalog/samples/close-area-relocalize.md) - Relocalizer for the close-area arena.
 - [Relative navigation benchmark on real data: KISS-ICP lidar odometry, OpenVINS VIO, mono and nadir VO, scored with evo](../../catalog/samples/relative-nav-benchmark.md) - One command per part.
 
 ## Guides (3)

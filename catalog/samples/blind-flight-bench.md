@@ -38,6 +38,7 @@ Benchmark harness that reproduces the 2026 'Polyot vslepuyu' (Blind flight) hack
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](../../docs/landscape/blind-flight-teardown.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) (mentions)

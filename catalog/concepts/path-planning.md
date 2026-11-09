@@ -14,13 +14,13 @@ Global/local planners, sampling and search based planning, trajectory optimizati
 - [Close-area safety-filter kill test A: no filter, PX4 Collision Prevention style and PX4-CBF as shipped on A* under VIO faults, with map-only obstacles the range fan cannot see](../../catalog/samples/close-area-safety-filter.md) - Harness that puts a safety filter between a planner and the vehicle in the shared close-area-arena, for the kill test of the hub's integrity-aware safety-filter headline.
 - [Close-area sampling planners: RRT* and Informed RRT* against A* on narrow gaps 0.4-1.2 m, in the close-area arena](../../catalog/samples/close-area-planner-sampling.md) - Own numpy RRT* (rewiring with subtree cost update, goal bias 5 %, step 1.0 m, rewire radius from the RRT* bound capped at 2.0 m) with an Informed RRT* mode (ellipse sampling after the first solution), planning on the are
 
-## Guides (12)
+## Guides (13)
 
 - [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
 - [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2.
 - [08. Crazyflie sensing limits: what the planner and safety filter can rely on](../../docs/research/close-area-nav/08-crazyflie-sensing-limits.md) - Research note, 2026-11-09 (loop-23).
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) - After this chapter you can convert between the coordinate systems your tools disagree on, fetch free imagery and elevation data for a region, display it, and plan a path or a multi-vehicle mission over it.
-- [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) - Research round for EDGE hackathon Challenge 2, 2026-11-09, after new information that the task is likely "move a drone from A to B in a close area, potentially with obstacles".
+- [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) - Use this when the brief says A to B, obstacles, indoor, arena, close area, or a marker / pad at B, and you need the baseline, the localization stack or the headline idea.
 - [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) - Written 2026-11-09 for Challenge 2 (entry point).
 - [Demo dashboard](../../templates/demo-dashboard/README.md) - Use this when a GNSS / PNT run with lat / lon tracks needs a judge-facing map replay.
 - [Demo script: close-area A to B](../../templates/demo-script-close-area.md) - Live-demo variant of demo-script.md for the close-area task: fly from A to B through obstacles, with a VIO fault injected.
@@ -28,6 +28,7 @@ Global/local planners, sampling and search based planning, trajectory optimizati
 - [flight-repo: close-area A=>B flight loop starter](../../templates/flight-repo/README.md) - Use this when the task is "fly from A to B in a close area, maybe with obstacles": clone it at H+0 as the team repo.
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) - Written 2026-11-09 for Challenge 2 "Autonomous Frontiers" (entry point).
 - [Hackathon kit templates](../../templates/README.md) - Use this when you need a file to copy for the hackathon itself: a repo skeleton, a platform driver, a demo script, a pitch, a plan or a checklist.
+- [Navigation primer](../../docs/primer/README.md) - Use this when a navigation term, sensor or failure mode is new to you and you need the plain explanation plus the repos to build with.
 
 ## Repositories (83)
 

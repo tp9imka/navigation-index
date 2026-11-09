@@ -30,7 +30,7 @@ Matching UAV/ground imagery to satellite orthophotos or maps for absolute positi
 - [GNSS-denied navigation: products and companies](../../docs/landscape/gnss-denied-nav-products.md) - What judges from industry already know.
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) - For a team going into a navigation-themed hackathon that may have a military or defense track.
 - [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) - After this page you can explain what a protection level is and why it is different from an accuracy number, run a solution-separation monitor over several alt-PNT sources, and show judges a Stanford diagram that proves y
-- [Landscape: what judges already know](../../docs/landscape/README.md) - Commercial products, funded programmes and 2025-2026 trends in GNSS-denied navigation, so a hackathon team can place its idea against what is already sold or funded.
+- [Landscape: what judges already know](../../docs/landscape/README.md) - Use this when you must check whether an idea is already sold or funded, or how a past navigation hackathon brief was solved.
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) - Learned models in navigation pipelines carry three separate sets of terms:
 - [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) - Each item: what changed, the source, and what it means for a navigation hackathon project.
 - [Pitch structure](../../templates/pitch/pitch-structure.md) - Two skeletons (3 and 5 minutes) for a PNT-resilience pitch, the funder vocabulary to use and not to stretch, and 15 hard judge questions with answer patterns.

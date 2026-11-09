@@ -6,15 +6,16 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 
 **Sub-concepts:** [Visual SLAM](../../catalog/concepts/visual-slam.md)
 
-## Samples (5)
+## Samples (6)
 
+- [Close-area relocalization after VIO loss: scan-to-map pose hypotheses, ratio + persistence acceptance, hover until one wins](../../catalog/samples/close-area-relocalize.md) - Relocalizer for the close-area arena.
 - [End-to-end GNSS-denied visual navigation on one real flight: nadir VO + DINOv2 retrieval + LightGlue fixes + multi-frame voting + altpnt integrity (VPAIR)](../../catalog/samples/e2e-visual-nav-vpair.md) - Chains four sibling samples by import on the real VPAIR light-aircraft flight (199 nadir frames, 8.98 km, ~320 m AGL): attitude-aided nadir VO (with and without a 2 deg heading error), every frame DINOv2 GeM top-5 retrie
 - [Integrity monitoring for alt-PNT: solution-separation FDE, protection levels and a Stanford diagram](../../catalog/samples/altpnt-integrity.md) - A stdlib-only simulated UAV flight with INS, VIO-like velocity, intermittent visual-geolocalization fixes (repetitive-texture outliers, map-misregistration bias, dropouts over water), optional coarse MagNav-like fixes an
 - [Relative navigation benchmark on real data: KISS-ICP lidar odometry, OpenVINS VIO, mono and nadir VO, scored with evo](../../catalog/samples/relative-nav-benchmark.md) - One command per part.
 - [Two independent absolute sources on one real flight: visual fixes + terrain-relative navigation with solution-separation integrity (VPAIR over NRW 1 m LiDAR)](../../catalog/samples/two-source-integrity-vpair.md) - Adds terrain-relative navigation as a second absolute source to the real VPAIR flight (8.53 km after GNSS loss, Rhine valley between Bad Honnef and Koenigswinter, east of Bonn).
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../../catalog/samples/vio-to-mavlink-bridge.md) - Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold.
 
-## Guides (12)
+## Guides (13)
 
 - [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
 - [02. Deadline-aware scheduling of expensive absolute fixes](../../docs/research/innovation-prior-art/02-deadline-aware-fix-scheduling.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
@@ -24,6 +25,7 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) - Next action on Day 1: ask questions 1-3 of section 1, then open section 2 for the stack.
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) - For a team going into a navigation-themed hackathon that may have a military or defense track.
 - [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) - After this page you can explain what a protection level is and why it is different from an accuracy number, run a solution-separation monitor over several alt-PNT sources, and show judges a Stanford diagram that proves y
+- [Landscape: what judges already know](../../docs/landscape/README.md) - Use this when you must check whether an idea is already sold or funded, or how a past navigation hackathon brief was solved.
 - [Learning paths](../../docs/learning-paths.md) - Three study tracks built from the courses, talks, books and docs in this index.
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) - Challenge 2 says the winning team "may take it towards real-world implementation".
 - [Three selective offline starter bundles](../../docs/starter-bundles.md) - Pick a bundle before downloading the broad offline kit.

@@ -25,6 +25,7 @@ Meta-repository from Russian vendor Geoscan for the Pioneer Max educational quad
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
 - [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Дроны: Автономные беспилотные воздушные системы](../../catalog/resources/lektorium-geoscan-autonomous-drones-course.md) (uses)
