@@ -1,0 +1,45 @@
+| dwa | default | random | 50 | 86.0 | 0.0 | 8.0 | 6.0 | 34.86 | 0.28 | 0.98 | wall 26.3 s {'runs_with_no_admissible': 12}
+| dwa | default | u_trap | 50 | 0.0 | 0.0 | 100.0 | 0.0 | - | 0.292 | - | wall 27.7 s {'runs_with_no_admissible': 7}
+| dwa | default | narrow_gap | 50 | 12.0 | 0.0 | 48.0 | 40.0 | 51.19 | 0.272 | 0.96 | wall 38.5 s {'runs_with_no_admissible': 19}
+| dwa | cf4 | random | 50 | 30.0 | 52.0 | 18.0 | 0.0 | 26.16 | 0.15 | 0.98 | wall 7.6 s {'runs_with_no_admissible': 34}
+| dwa | cf4 | u_trap | 50 | 0.0 | 10.0 | 90.0 | 0.0 | - | 0.196 | - | wall 8.2 s {'runs_with_no_admissible': 50}
+| dwa | cf4 | narrow_gap | 50 | 0.0 | 58.0 | 22.0 | 20.0 | - | 0.15 | - | wall 9.9 s {'runs_with_no_admissible': 47}
+| bug2 | default | random | 50 | 92.0 | 0.0 | 0.0 | 8.0 | 30.16 | 0.498 | 1.02 | wall 5.7 s {'runs_with_fail_exit': 0}
+| bug2 | default | u_trap | 50 | 94.0 | 0.0 | 2.0 | 4.0 | 44.44 | 0.476 | 1.29 | wall 6.6 s {'runs_with_fail_exit': 1}
+| bug2 | default | narrow_gap | 50 | 0.0 | 0.0 | 0.0 | 100.0 | - | 0.483 | - | wall 7.9 s {'runs_with_fail_exit': 0}
+| bug2 | cf4 | random | 50 | 74.0 | 20.0 | 4.0 | 2.0 | 28.62 | 0.297 | 1.0 | wall 4.0 s {'runs_with_fail_exit': 0}
+| bug2 | cf4 | u_trap | 50 | 0.0 | 74.0 | 0.0 | 26.0 | - | 0.147 | - | wall 4.1 s {'runs_with_fail_exit': 0}
+| bug2 | cf4 | narrow_gap | 50 | 0.0 | 8.0 | 2.0 | 90.0 | - | 0.275 | - | wall 5.9 s {'runs_with_fail_exit': 0}
+| tangent_bug | default | random | 50 | 92.0 | 0.0 | 8.0 | 0.0 | 24.66 | 0.418 | 0.97 | wall 4.5 s 
+| tangent_bug | default | u_trap | 50 | 86.0 | 0.0 | 14.0 | 0.0 | 31.06 | 0.422 | 1.04 | wall 5.3 s 
+| tangent_bug | default | narrow_gap | 50 | 58.0 | 0.0 | 32.0 | 10.0 | 28.0 | 0.318 | 0.95 | wall 5.1 s 
+| tangent_bug | cf4 | random | 50 | 38.0 | 62.0 | 0.0 | 0.0 | 24.42 | 0.149 | 0.98 | wall 3.3 s 
+| tangent_bug | cf4 | u_trap | 50 | 30.0 | 46.0 | 0.0 | 24.0 | 31.66 | 0.182 | 1.06 | wall 4.2 s 
+| tangent_bug | cf4 | narrow_gap | 50 | 4.0 | 96.0 | 0.0 | 0.0 | 26.61 | 0.149 | 0.97 | wall 2.8 s 
+
+`python bench.py --layouts 50 --seed 0 --only dwa,bug2,tangent_bug --no-write` (synthetic arena, seed 0, 50 layouts per cell), wall 180.5 s
+
+Fans: default = {'n_beams': 72, 'fov': 6.283185307179586, 'max_range': 6.0, 'noise_std': 0.02, 'dropout': 0.02}; cf4 = {'n_beams': 4, 'fov': 6.283185307179586, 'max_range': 4.0, 'noise_std': 0.02, 'dropout': 0.02} (angles in rad).
+dwa_mem keeps 3.0 s of returns. apf and vfh_plus are imported unchanged from samples/close-area-planner-reactive.
+
+| planner | fan | family | layouts | reached % | collision % | stuck % | timeout % | median time to goal s | median min clearance m | median path / A* known |
+|---|---|---|---|---|---|---|---|---|---|---|
+| dwa | default | random | 50 | 86.0 | 0.0 | 8.0 | 6.0 | 34.86 | 0.28 | 0.98 |
+| dwa | default | u_trap | 50 | 0.0 | 0.0 | 100.0 | 0.0 | - | 0.292 | - |
+| dwa | default | narrow_gap | 50 | 12.0 | 0.0 | 48.0 | 40.0 | 51.19 | 0.272 | 0.96 |
+| dwa | cf4 | random | 50 | 30.0 | 52.0 | 18.0 | 0.0 | 26.16 | 0.15 | 0.98 |
+| dwa | cf4 | u_trap | 50 | 0.0 | 10.0 | 90.0 | 0.0 | - | 0.196 | - |
+| dwa | cf4 | narrow_gap | 50 | 0.0 | 58.0 | 22.0 | 20.0 | - | 0.15 | - |
+| bug2 | default | random | 50 | 92.0 | 0.0 | 0.0 | 8.0 | 30.16 | 0.498 | 1.02 |
+| bug2 | default | u_trap | 50 | 94.0 | 0.0 | 2.0 | 4.0 | 44.44 | 0.476 | 1.29 |
+| bug2 | default | narrow_gap | 50 | 0.0 | 0.0 | 0.0 | 100.0 | - | 0.483 | - |
+| bug2 | cf4 | random | 50 | 74.0 | 20.0 | 4.0 | 2.0 | 28.62 | 0.297 | 1.0 |
+| bug2 | cf4 | u_trap | 50 | 0.0 | 74.0 | 0.0 | 26.0 | - | 0.147 | - |
+| bug2 | cf4 | narrow_gap | 50 | 0.0 | 8.0 | 2.0 | 90.0 | - | 0.275 | - |
+| tangent_bug | default | random | 50 | 92.0 | 0.0 | 8.0 | 0.0 | 24.66 | 0.418 | 0.97 |
+| tangent_bug | default | u_trap | 50 | 86.0 | 0.0 | 14.0 | 0.0 | 31.06 | 0.422 | 1.04 |
+| tangent_bug | default | narrow_gap | 50 | 58.0 | 0.0 | 32.0 | 10.0 | 28.0 | 0.318 | 0.95 |
+| tangent_bug | cf4 | random | 50 | 38.0 | 62.0 | 0.0 | 0.0 | 24.42 | 0.149 | 0.98 |
+| tangent_bug | cf4 | u_trap | 50 | 30.0 | 46.0 | 0.0 | 24.0 | 31.66 | 0.182 | 1.06 |
+| tangent_bug | cf4 | narrow_gap | 50 | 4.0 | 96.0 | 0.0 | 0.0 | 26.61 | 0.149 | 0.97 |
+
