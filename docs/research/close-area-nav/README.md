@@ -14,6 +14,7 @@ only; each lane doc labels its sources and has a "not verified" section.
 | [02](02-sims-platforms-competitions.md) | Sims, platforms, competitions | Light sim: gym-pybullet-drones (fallback RotorPy). Product sim: PX4 SITL + gz Harmonic native on Apple Silicon (`x500_depth`, `walls`, `forest`). Judges reward completion, onboard autonomy, no manual help |
 | [03](03-close-area-localization.md) | Localization | Indoor: stereo VIO into EKF2 / EKF3 as ODOMETRY, AprilTags at A and B, flow + rangefinder as backup. Outdoor: GNSS (RTK if offered) with VIO as fallback, marker for the last metres |
 | [04](04-innovation-prior-art.md) | Innovation prior art | Headline: integrity-aware safety filter. Support: uncertainty-aware replan trigger. Perception-aware planning parked |
+| [07](07-pl-margin-prior-art.md) | Kill search for the headline | **The idea as first worded exists.** Tan et al. IROS 2025 (Caltech + TII, PX4 X500 with a geofence) and Zhang, Li, Clark TAC 2025 (fault-excluded EKF bank feeding a CBF) already set safety margins from fault-excluded estimates. What survives is a composition, see below |
 
 ## Findings that change the plan
 
@@ -48,8 +49,12 @@ wrong about where it is.**
    level above half the corridor width => replan on an inflated grid with a stopping-distance
    speed cap.
 
-The narrow claim is: for obstacles the range sensor cannot see (out of field of view, thin,
-glass, geofence) and under VIO jumps or bias, a fault-aware margin beats a covariance margin.
+**Narrowed after [07](07-pl-margin-prior-art.md) (2026-11-09):** fault-aware safety margins are
+prior art (Tan et al. 2025, Zhang/Li/Clark 2025). The claim left is the composition: range
+barriers for what the drone sees, a protection level for what it cannot, and when the monitor
+cannot tell which source is lying, the filter holds a hover instead of dropping the
+largest-residual source (FT-CBF) or guessing. The kill test needs two more arms: FT-CBF residual
+dropping and Tan's union of plausible states.
 
 **Kill test before building more** (doc 04 section 3.4): 200 random layouts, injected VIO jump and
 bias faults. Pass: breaches 1 % or less, at least 3x lower than Belief-CBF on fault cases, goal

@@ -1,0 +1,141 @@
+[
+  {
+    "id": "res:zhang-li-clark-2025-ft-cbf",
+    "kind": "paper",
+    "title": "Safe Control for Nonlinear Systems Under Faults and Attacks Via Control Barrier Functions",
+    "url": "https://arxiv.org/abs/2207.05146",
+    "authors": ["Hongchao Zhang", "Zhouchi Li", "Andrew Clark"],
+    "year": 2025,
+    "summary": "Peer-reviewed (IEEE Transactions on Automatic Control 2025, doi 10.1109/TAC.2025.3571338). Fault-tolerant CBFs: one EKF per sensor fault pattern, each omitting that pattern's sensors, and a CBF constraint for every estimate with its own error bound. When the constraints conflict, estimates are dropped by a solution-separation-style test against pair-excluded filters, then by largest residual. Wheeled-robot sensor-attack and Boeing 747 actuator-failure case studies in simulation.",
+    "key_takeaways": [
+      "Safety filter margin from a bank of fault-excluded estimators, not one covariance: the mechanism of loop-13 claim C",
+      "Exclusion uses separation thresholds and pair-excluded filters, close to ARAIM-style subset exclusion",
+      "When no consistent set is found it drops the largest-residual estimates instead of declaring unavailable",
+      "Simulation only, ground robot and aircraft lateral dynamics; no multirotor, no range-sensor barrier"
+    ],
+    "concepts": ["concept:obstacle-avoidance", "concept:sensor-fusion", "concept:assured-pnt"],
+    "tags": ["control-barrier-function", "fault-tolerant", "safety-filter", "integrity", "peer-reviewed", "loop-13"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "res:clark-li-zhang-2020-ft-cbf-cdc", "rel": "cites"}
+    ]
+  },
+  {
+    "id": "res:clark-li-zhang-2020-ft-cbf-cdc",
+    "kind": "paper",
+    "title": "Control Barrier Functions for Safe CPS Under Sensor Faults and Attacks",
+    "url": "https://par.nsf.gov/servlets/purl/10310663",
+    "authors": ["Andrew Clark", "Zhouchi Li", "Hongchao Zhang"],
+    "year": 2020,
+    "summary": "Peer-reviewed (59th IEEE CDC 2020, pp. 796-803). Conference version of fault-tolerant CBFs: keep several state estimators, each ignoring the sensors of one fault pattern, and impose a CBF constraint per estimator so the stochastic system stays safe under any single fault pattern. Earliest found statement of the fault-hypothesis-bank safety filter.",
+    "key_takeaways": [
+      "Priority date for the idea of a CBF safety filter driven by fault-excluded estimator subsets is 2020",
+      "A judge can name it as prior art for any PL-margin safety filter"
+    ],
+    "concepts": ["concept:obstacle-avoidance", "concept:sensor-fusion"],
+    "tags": ["control-barrier-function", "fault-tolerant", "safety-filter", "peer-reviewed", "loop-13"],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:zhang-cheng-niu-clark-2022-lidar-barrier-faults",
+    "kind": "paper",
+    "title": "Barrier Certificate based Safe Control for LiDAR-based Systems under Sensor Faults and Attacks",
+    "url": "https://arxiv.org/abs/2208.05944",
+    "authors": ["Hongchao Zhang", "Shiyu Cheng", "Luyao Niu", "Andrew Clark"],
+    "year": 2022,
+    "summary": "Preprint (arXiv, no venue confirmed). GPS plus LiDAR system: fault-tolerant estimation rebuilds the LiDAR scan from each state estimate, excludes estimates that disagree with the scan, and removes possibly compromised scan sectors; control barrier certificates then keep the vehicle safe using the remaining estimates. Simulated UAV delivery in an urban environment.",
+    "key_takeaways": [
+      "Same fault-bank-to-barrier idea applied to a UAV with a LiDAR in the loop",
+      "Uses LiDAR consistency to exclude faulty position estimates, not a protection level",
+      "Simulation only"
+    ],
+    "concepts": ["concept:obstacle-avoidance", "concept:sensor-fusion", "concept:lidar-slam"],
+    "tags": ["control-barrier-function", "fault-tolerant", "uav", "preprint", "loop-13"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "res:zhang-li-clark-2025-ft-cbf", "rel": "same_author"}
+    ]
+  },
+  {
+    "id": "res:tan-2025-secure-safety-filter",
+    "kind": "paper",
+    "title": "Secure Safety Filter: Towards Safe Flight Control under Sensor Attacks",
+    "url": "https://arxiv.org/abs/2505.06845",
+    "authors": ["Xiao Tan", "Junior Sundar", "Renzo Bruzzone", "Pio Ong", "Willian T. Lunardi", "Martin Andreoni", "Paulo Tabuada", "Aaron D. Ames"],
+    "year": 2025,
+    "summary": "Peer-reviewed (IEEE/RSJ IROS 2025, doi 10.1109/IROS60139.2025.11247729). Caltech with TII Abu Dhabi. A secure state reconstructor enumerates sensor subsets over a sliding window, keeps every state consistent with at least p-s sensors under bounded noise, and inflates these plausible states into boxes; a robust CBF filter on velocity setpoints keeps all of them inside the safe set. PX4 SITL (X500, Gazebo) and Holybro X500 hardware with two flight controllers, safe set a square keep-in geofence, attacks injected on one EKF output copy. Code at github.com/tiiuae/px4-secure-state-reconstruction (no license file, checked with gh api 2026-11-09).",
+    "key_takeaways": [
+      "Closest prior art to loop-13 claim C: multirotor, PX4, geofence margin from a fault-tolerant subset-consistency bound",
+      "Deterministic worst case over bounded noise, no probabilistic protection level or integrity risk budget",
+      "Hardware test duplicated one EKF, so sensor independence was not exercised",
+      "No range-sensor barrier, no VIO; TII is a UAE lab that local judges may know"
+    ],
+    "concepts": ["concept:obstacle-avoidance", "concept:autopilot", "concept:assured-pnt", "concept:gnss-interference"],
+    "tags": ["control-barrier-function", "safety-filter", "px4", "geofence", "sensor-attack", "peer-reviewed", "loop-13"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "res:misyats-px4-cbf-icuas2025", "rel": "cites"}
+    ]
+  },
+  {
+    "id": "res:sun-2020-gnss-ins-integrity-no-fly-zone",
+    "kind": "paper",
+    "title": "GNSS/INS Integration with Integrity Monitoring for UAV No-fly Zone Management",
+    "url": "https://www.mdpi.com/2072-4292/12/3/524",
+    "authors": ["Rui Sun", "Wenyu Zhang", "J. Zheng", "Washington Yotto Ochieng"],
+    "year": 2020,
+    "summary": "Peer-reviewed (Remote Sensing 12(3):524, open access). GNSS/INS integration with an integrity layer for fault detection and exclusion and real-time horizontal protection level, aimed at keeping UAVs out of no-fly zones. Read as abstract only; whether the protection level is used as an enforcement margin in control was not confirmed.",
+    "key_takeaways": [
+      "Protection level as the quantity that decides no-fly-zone compliance for a UAV",
+      "Monitoring, not a safety filter: no control law found in the abstract"
+    ],
+    "concepts": ["concept:gnss-ins", "concept:assured-pnt", "concept:mission-planning"],
+    "tags": ["integrity", "protection-level", "geofence", "uav", "peer-reviewed", "loop-13"],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:haro-2023-rnp-drone-operations",
+    "kind": "paper",
+    "title": "Required Navigation Performances for Drone Flight Operations",
+    "url": "https://www.mdpi.com/2673-4591/54/1/51",
+    "authors": ["Pablo Haro", "C. Aguilera", "G. Lucchi"],
+    "year": 2023,
+    "summary": "Conference paper (Engineering Proceedings 54(1):51, 2023). Proposes RNP specifications for drones from the error sources that make up total system error: path definition, flyability, autopilot envelope, positioning error and environment. Read as abstract only.",
+    "key_takeaways": [
+      "Aviation already sizes containment from TSE = path definition + flight technical + navigation system error",
+      "Containment is a planning and approval margin, not a live safety filter"
+    ],
+    "concepts": ["concept:standards", "concept:mission-planning", "concept:assured-pnt"],
+    "tags": ["rnp", "tse", "containment", "u-space", "loop-13"],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:shield-ai-2025-resilient-shield-mm-rta",
+    "kind": "blog",
+    "title": "Resilient Shield: Strengthening Hivemind for Safe, Real-World Flight",
+    "url": "https://shield.ai/resilient-shield-strengthening-hivemind-for-safe-real-world-flight/",
+    "authors": ["Willy Logan", "Shield AI"],
+    "year": 2025,
+    "summary": "Company blog (news). Shield AI and Level 5 Autonomy Labs build an ASTM F3269-21 multi-monitor runtime assurance layer between Hivemind autonomy and flight control, with ground collision avoidance and well-clear monitors flight tested in 2025. The post does not say how navigation error or integrity enters the terrain or traffic margins.",
+    "key_takeaways": [
+      "Commercial RTA between autonomy and autopilot exists and is being productised",
+      "No public statement that its margins come from a navigation protection level"
+    ],
+    "concepts": ["concept:autopilot", "concept:standards", "concept:obstacle-avoidance"],
+    "tags": ["runtime-assurance", "astm-f3269", "gcas", "vendor", "loop-13"],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {"id": "res:astm-f3269-21-rta", "rel": "uses"}
+    ]
+  }
+]
