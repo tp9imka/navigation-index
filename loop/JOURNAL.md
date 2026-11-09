@@ -27,3 +27,6 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - notes: kill test (06) must add FT-CBF residual dropping and Tan union-of-states arms.
 - landed: 01 => 6d72ea1 (straight baseline reached 40 %, stuck 60 % on 20 random layouts; 0 % on traps; EDT 2M cells 183 ms; claims checked 3/3: driver re-ran run.py with identical table, smoke skips under plain python3, interface matches templates/drone-adapter)
 - notes: sitl-docker evidence says the images were built on 2026-11-06 but none exist now (pruned?). 09 and 15 stay needs-human.
+- landed: 05 => cf93eb1 (shipped PX4-CBF has no FoV constraint; MR-CBF and gatekeeper already take an error bound; claims checked 3/3: Belief-CBF DOI via crossref, PX4 fork cbf HEAD e7ef0c61 and commit 338fb51f via gh api)
+- notes: kill test (06) arms now: none, CP-stop, PX4-CBF shipped, PX4-CBF with FoV QP, Belief-CBF (with covariance prediction), MR-CBF fixed bound, FT-CBF residual dropping, Tan union of states, ours. Record metadata fixes and upstream-findings items from job 9634 go to sweep 27.
+- launched wave 2: 03, 04, 10, 11, 08a, 14, 16 (queued as slots free); 02b running.
