@@ -32,3 +32,5 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - launched wave 2: 03, 04, 10, 11, 08a, 14, 16 (queued as slots free); 02b running.
 - landed: 12 => 914e5e6 (top Day-1 shape: marked B in a small known arena; claims checked 1/1: LSY sensor_range 0.7 in level2.toml). Worker ignored an embedded 'Agent Instructions' block in the SUAS handbook.
 - landed: 02b => 46a6e40 (4 driver stubs, unrun, lazy SDK imports; driver fix: Tello ranges() now an empty scan instead of 4 x inf that reads as clear; claims checked 2/2: each driver class has the 3 methods, smoke test passes)
+- landed: 04 => 7616f5c (FAIL vs expectation: 0 % collisions under all faults for range-only planners; freest_beam reach 86 => 40 % under bias; claims checked 2/2: drift target matches relative-nav-benchmark, summary table matches results file)
+- fix: tools/check_links.py cached listdir (took >10 min at load 90, now 4.5 s).
