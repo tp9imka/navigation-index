@@ -25,6 +25,7 @@ Python library of runtime-assurance safety filters from the AFRL ACT3 team: gene
 ## Referenced by
 
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
+- [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) (mentions)
 - [SOTER on ROS](../../catalog/repos/drona-org__soteronros.md) (alternative_to)
 - [ASTM F3269-21: Standard Practice for Methods to Safely Bound Behavior of Aircraft Systems Containing Complex Functions Using Run-Time Assurance](../../catalog/resources/astm-f3269-21-rta.md) (has_code)
 

@@ -27,7 +27,9 @@ Codebase of the 'Swarm of micro flying robots in the wild' work: MINCO-based loc
 ## Referenced by
 
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
+- [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) (mentions)
 - [Geometrically Constrained Trajectory Optimization for Multicopters](../../catalog/resources/wang-minco-gcopter-2021.md) (uses)
+- [Swarm of micro flying robots in the wild](../../catalog/resources/zhou-swarm-wild-scirobotics-2022.md) (has_code)
 
 _Indexed by lane(s): guidance-planning_
 

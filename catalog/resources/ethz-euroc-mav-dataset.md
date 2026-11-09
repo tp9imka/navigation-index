@@ -30,5 +30,6 @@ Stereo camera and IMU sequences from a micro aerial vehicle in an industrial hal
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
+- [A Benchmark Comparison of Monocular Visual-Inertial Odometry Algorithms for Flying Robots](../../catalog/resources/delmerico-scaramuzza-2018-vio-benchmark-flying-robots.md) (uses)
 
 _Indexed by lane(s): sim-data_

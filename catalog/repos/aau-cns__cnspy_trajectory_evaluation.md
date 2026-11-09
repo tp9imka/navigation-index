@@ -26,6 +26,7 @@ Python package that aligns an estimated trajectory with ground truth from CSV fi
 ## Referenced by
 
 - [MaRS (Modular and Robust Sensor-Fusion)](../../catalog/repos/aau-cns__mars_lib.md) (same_org)
+- [smfeval](../../catalog/repos/svendbot__smfeval.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_
 

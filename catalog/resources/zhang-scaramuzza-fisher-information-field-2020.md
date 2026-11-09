@@ -22,6 +22,7 @@ Precomputes a voxel map of visual-localisation information so a planner can scor
 
 ## Referenced by
 
+- [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) (mentions)
 - [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) (mentions)
 
 _Indexed by lane(s): guidance-planning_

@@ -22,5 +22,6 @@ Introduces a local planner that avoids building a full Euclidean signed distance
 ## Referenced by
 
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [Swarm of micro flying robots in the wild](../../catalog/resources/zhou-swarm-wild-scirobotics-2022.md) (same_author)
 
 _Indexed by lane(s): planning-gis-c2_

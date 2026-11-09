@@ -4,13 +4,14 @@
 
 ROS ecosystem packages for navigation and localization.
 
-## Guides (3)
+## Guides (4)
 
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) - After this chapter you know how navigation changes off the drone: what ships broadcast and how spoofing shows up in it, how vehicles navigate underwater where no radio reaches, how ground robots and pedestrians dead-reck
+- [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) - Written 2026-11-09 for Challenge 2 (entry point).
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) - Written 2026-11-09 for Challenge 2 "Autonomous Frontiers" (entry point).
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) - Challenge 2 says the winning team "may take it towards real-world implementation".
 
-## Repositories (99)
+## Repositories (116)
 
 - [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md) - fit: high - The standard ROS 2 navigation stack: behavior-tree driven navigator, global planners (NavFn, Smac hybrid-A*/lattice, Theta*), local controllers (DWB, MPPI, Regulated Pure Pursuit), costmaps, recovery behaviors and waypoi
 - [BehaviorTree.CPP](../../catalog/repos/behaviortree__behaviortree.cpp.md) - fit: high - C++ behavior tree library with XML trees, async actions, logging and the Groot editor; the execution engine inside Nav2 and many mission frameworks.
@@ -46,6 +47,9 @@ ROS ecosystem packages for navigation and localization.
 - [ROSCon UK 2025 State Estimation workshop](../../catalog/repos/locusrobotics__roscon-uk-2025-se-workshop.md) - fit: high - Materials for an eight-task ROS 2 state estimation workshop at ROSCon UK 2025, with a Docker image, recorded bags and step-by-step exercises using robot_localization and fuse.
 - [ardupilot_ros](../../catalog/repos/ardupilot__ardupilot_ros.md) - fit: high - ROS 2 integration examples for ArduPilot, including Cartographer-based non-GPS navigation and Nav2 setups.
 - [grid_map](../../catalog/repos/leggedrobotics__grid_map.md) - fit: high - Universal multi-layer 2.5D grid map library for mobile robots with ROS/ROS 2 integration, filters, iterators and conversion to images, point clouds and costmaps.
+- [apriltag_ros (ROS 2)](../../catalog/repos/christianrauch__apriltag_ros.md) - fit: high - ROS 2 node that wraps the AprilTag library, subscribes to a rectified image and camera info, and publishes tag detections and TF transforms.
+- [OctoMap](../../catalog/repos/octomap__octomap.md) - fit: high - Probabilistic 3D occupancy mapping on an octree, with explicit free, occupied and unknown cells and log-odds updates from ray casting.
+- [realsense-ros](../../catalog/repos/realsenseai__realsense-ros.md) - fit: high - ROS 2 wrapper for RealSense depth cameras (D400 series), publishing stereo IR, depth, colour and IMU topics.
 - [Autoware](../../catalog/repos/autowarefoundation__autoware.md) - fit: medium - Meta-repository for Autoware, the open-source ROS 2 autonomous driving stack covering localization (NDT, EKF), perception, planning and control.
 - [Kalibr](../../catalog/repos/ethz-asl__kalibr.md) - fit: medium - ETH ASL calibration toolbox for multi-camera and camera-IMU systems (extrinsics and time offset), plus IMU intrinsics and rolling-shutter calibration.
 - [Webots](../../catalog/repos/cyberbotics__webots.md) - fit: medium - General-purpose open-source robot simulator with many robot models and sensors including GPS, compass, IMU, lidar and radar.
@@ -93,8 +97,13 @@ ROS ecosystem packages for navigation and localization.
 - [Isaac ROS Benchmark](../../catalog/repos/nvidia-isaac-ros__isaac_ros_benchmark.md) - fit: medium - ros2_benchmark-based scripts NVIDIA uses to produce the Isaac ROS performance tables (throughput and latency per node or graph per Jetson / dGPU platform).
 - [Open-RMF rmf_task](../../catalog/repos/open-rmf__rmf_task.md) - fit: medium - Task allocation library from Open-RMF that assigns tasks to fleets of robots, accounting for battery, travel time and task constraints.
 - [ROS MCP Server demos](../../catalog/repos/robotmcp__demos-ros-mcp-server.md) - fit: medium - Standalone demos for driving robots with natural language through the ROS MCP server: a Tugbot in a Gazebo warehouse, a Unitree Go2 with the CHAMP controller, a PX4 drone via MAVROS (Gazebo and real hardware) and TurtleB
+- [composite_cbf](../../catalog/repos/ntnu-arl__composite_cbf.md) - fit: medium - ROS implementation of the composite CBF safety filter that combines many range points into one barrier.
 - [drone_navigation - ROS 2 + PX4 + RTAB-Map diploma](../../catalog/repos/bolotnaya-glesenb__drone_navigation.md) - fit: medium - Diploma project: autonomous quadcopter navigation in PX4 SITL + Gazebo with ROS 2, RTAB-Map visual SLAM for mapping and localisation, A* global planning, VFH plus a custom 3D manoeuvre for obstacle avoidance, and YOLO pe
 - [ORB_SLAM3_system_local](../../catalog/repos/sasha-lobov__orb_slam3_system_local.md) - fit: medium - Pet project for local UAV navigation without GNSS: AirSim video streamed over ZeroMQ into monocular ORB-SLAM3, a ROS node converts NED/ENU frames, IMU data corrects monocular scale, and a PID controller tracks a trajecto
+- [UFOMap](../../catalog/repos/unknownfreeoccupied__ufomap.md) - fit: medium - Octree occupancy mapping that represents unknown space explicitly and indexes free, occupied and unknown nodes so queries such as 'is this box all known free' are cheap.
+- [voxblox](../../catalog/repos/ethz-asl__voxblox.md) - fit: medium - CPU voxel mapping library that fuses depth into a truncated signed distance field (TSDF) and grows a Euclidean signed distance field (ESDF) from it incrementally.
+- [vrpn_mocap](../../catalog/repos/alvinsunyixiao__vrpn_mocap.md) - fit: medium - ROS 2 VRPN client that turns motion-capture rigid bodies (VICON, OptiTrack and other VRPN devices) into pose topics.
+- [wavemap](../../catalog/repos/ethz-asl__wavemap.md) - fit: medium - Multi-resolution occupancy mapping that stores the map as wavelet-compressed octree coefficients.
 - [MoveIt 2](../../catalog/repos/moveit__moveit2.md) - fit: low - Motion planning framework for ROS 2 manipulators: kinematics, collision checking, planners (OMPL, Pilz, STOMP) and real-time servoing.
 - [ROS-LLM](../../catalog/repos/auromix__ros-llm.md) - fit: low - Framework for natural-language interaction with ROS robots, letting an LLM call robot functions and chain behaviors.
 - [PX4 Avoidance](../../catalog/repos/px4__px4-avoidance.md) - fit: low - Archived ROS nodes for local planning, global planning and safe landing using depth sensors with PX4.
@@ -111,6 +120,15 @@ ROS ecosystem packages for navigation and localization.
 - [Geoscan Pioneer Max](../../catalog/repos/geoscan__geoscan_pioneer_max.md) - fit: low - Meta-repository from Russian vendor Geoscan for the Pioneer Max educational quadcopter: system images, ROS workspace, web control apps and guides, documented in Russian.
 - [LCAS ROS 2 MCP](../../catalog/repos/lcas__ros2_mcp.md) - fit: low - ROS 2 MCP server from the Lincoln Centre for Autonomous Systems: tools to list and echo topics, inspect message/service/action interfaces, fetch camera images for VLM analysis and send simple drive commands, plus canned 
 - [SOTER on ROS](../../catalog/repos/drona-org__soteronros.md) - fit: low - Research framework that builds distributed mobile-robot software on ROS as runtime-assurance modules: an advanced controller, a safe controller and a decision module that switches between them.
+- [aerial-autonomy-stack](../../catalog/repos/jacopopan__aerial-autonomy-stack.md) - fit: low - Dockerized harness to simulate and deploy PX4, ArduPilot and Betaflight drones with ROS 2, YOLO and lidar odometry (KISS-ICP), with a steppable gymnasium interface and Jetson deployment images.
+- [DecompROS](../../catalog/repos/sikang__decompros.md) - fit: low - ROS wrapper and visualisation for the DecompUtil convex decomposition.
+- [FASTER](../../catalog/repos/mit-acl__faster.md) - fit: low - Receding-horizon multirotor planner for unknown environments that optimises a fast trajectory through known-free and unknown space while always keeping a safe backup trajectory inside known-free space.
+- [IPC (Integrated Planning and Control)](../../catalog/repos/hku-mars__ipc.md) - fit: low - Quadrotor navigation that merges planning and control: a light A*-style front end builds a safe flight corridor and a 100 Hz linear MPC tracks toward the goal with the corridor as hard constraints, outputting body rates 
+- [mpl_ros (motion primitive library)](../../catalog/repos/sikang__mpl_ros.md) - fit: low - ROS wrapper and examples for search-based kinodynamic planning: graph search over short constant-jerk or constant-acceleration motion primitives with a minimum-time-plus-effort cost.
+- [NanoMap](../../catalog/repos/peteflorence__nanomap_ros.md) - fit: low - C++/ROS library that answers obstacle proximity queries from a history of depth frames and noisy relative poses, without building a fused map.
+- [rhem_planner](../../catalog/repos/ntnu-arl__rhem_planner.md) - fit: low - Uncertainty-aware receding-horizon exploration planner that picks paths minimising expected visual-inertial localization uncertainty.
+- [ROG-Map](../../catalog/repos/hku-mars__rog-map.md) - fit: low - Robocentric occupancy grid that slides with the vehicle and keeps an inflated map and frontier information, designed for LiDAR-based high-speed planning.
+- [SUPER](../../catalog/repos/hku-mars__super.md) - fit: low - LiDAR-based high-speed MAV planner that plans directly on point clouds.
 
 ## Documents, talks, courses, datasets (28)
 

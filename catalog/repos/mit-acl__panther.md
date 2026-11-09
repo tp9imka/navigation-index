@@ -26,6 +26,7 @@ Perception-aware trajectory planner for multirotors in dynamic environments: joi
 ## Referenced by
 
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
+- [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) (mentions)
 - [LA-Planner](../../catalog/repos/robotics-star-lab__la-planner.md) (alternative_to)
 
 _Indexed by lane(s): guidance-planning_

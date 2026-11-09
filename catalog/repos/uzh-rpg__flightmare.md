@@ -27,6 +27,7 @@ Quadrotor simulator from UZH RPG with a decoupled Unity renderer and fast dynami
 ## Referenced by
 
 - [FlightGoggles](../../catalog/repos/mit-aera__flightgoggles.md) (alternative_to)
+- [agile_autonomy](../../catalog/repos/uzh-rpg__agile_autonomy.md) (depends_on)
 - [Agilicious](../../catalog/repos/uzh-rpg__agilicious.md) (integrates_with)
 - [Time-optimal quadrotor planning](../../catalog/repos/uzh-rpg__rpg_time_optimal.md) (same_org)
 - [Champion-level drone racing using deep reinforcement learning](../../catalog/resources/swift-champion-drone-racing-nature.md) (uses)

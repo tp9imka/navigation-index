@@ -9,9 +9,10 @@ Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 - [Cooperative localization for a GNSS-denied team: UWB ranging, centralized EKF vs covariance intersection, and a spoofed anchor](../../catalog/samples/swarm-coop-localization.md) - A stdlib-only simulation of six vehicles with biased odometry where only two keep GNSS.
 - [Cooperative localization on real UWB: MILUV drones through the swarm-coop filters](../../catalog/samples/swarm-coop-real-uwb.md) - Runs the unmodified filters of swarm-coop-localization (dead reckoning, centralized EKF, naive decentralized, covariance intersection; plain vs robust ranging; gate / vote / solution-separation integrity) on real two-way
 
-## Guides (1)
+## Guides (2)
 
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) - After this chapter you can convert between the coordinate systems your tools disagree on, fetch free imagery and elevation data for a region, display it, and plan a path or a multi-vehicle mission over it.
+- [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) - Written 2026-11-09 for Challenge 2 (entry point).
 
 ## Repositories (45)
 
@@ -61,7 +62,7 @@ Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 - [Kimera-Distributed](../../catalog/repos/mit-spark__kimera-distributed.md) - fit: low - Distributed front end of Kimera-Multi: handles the inter-robot communication protocol and pose-graph coarsening; the robust distributed optimization back end is DPGO.
 - [CoLRIO](../../catalog/repos/pengyu-team__co-lrio.md) - fit: low - Placeholder repo: it only holds a README pointing to zhongshp/Co-LRIO, where the code lives.
 
-## Documents, talks, courses, datasets (38)
+## Documents, talks, courses, datasets (39)
 
 - [12 переможців і призовий фонд у 120 000 доларів: результати Хакатону «Наступ машин»](../../catalog/resources/mod-nastup-mashyn-hackathon-2024.md) - competition - English: '12 winners and a $120,000 prize pool: results of the Onslaught of Machines hackathon'.
 - [A Multi-Robot Platform for Robotic Triage Combining Onboard Sensing and Foundation Models](../../catalog/resources/arxiv-multi-robot-triage-platform.md) - paper - Technical report from a DARPA Triage Challenge team describing a multi-robot system and fine-tuned open vision-language models for injury identification.
@@ -95,6 +96,7 @@ Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 - [Recursive decentralized localization for multi-robot systems with asynchronous pairwise communication](../../catalog/resources/luft-2018-recursive-decentralized-localization.md) - paper - IJRR 37(10) paper describing a fully decentralized EKF for collaborative localization that approximates inter-robot cross-correlations.
 - [Resilient and consistent multirobot cooperative localization with covariance intersection](../../catalog/resources/chang-2021-resilient-ci-cooperative-localization.md) - paper - IEEE T-RO 38(1) paper that uses covariance intersection to separate an explicit communication update from the observation update in multirobot cooperative localization, keeping estimates consistent.
 - [Shield AI Hivemind autonomy stack](../../catalog/resources/shield-ai-hivemind.md) - product - Hivemind is Shield AI's onboard autonomy software, flown on its V-BAT and on partner aircraft.
+- [Swarm of micro flying robots in the wild](../../catalog/resources/zhou-swarm-wild-scirobotics-2022.md) - paper - Peer-reviewed (Science Robotics).
 - [Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems](../../catalog/resources/swarm-slam-paper.md) - paper - Decentralized collaborative SLAM aimed at swarms, prioritizing which inter-robot loop closures to compute and share to limit communication.
 - [Team CERBERUS Wins the DARPA Subterranean Challenge: Technical Overview and Lessons Learned](../../catalog/resources/cerberus-subt-final-paper.md) - paper - Winning team's description of its legged-plus-aerial system: multi-modal perception, robust localization and mapping, exploration planning and artifact detection, with lessons from the final.
 - [Weighted Covariance Intersection for Range-based Distributed Cooperative Localization of Multi-Vehicle Systems](../../catalog/resources/tu-2025-weighted-ci-range-cooperative-localization.md) - paper - Published in IEEE Transactions on Vehicular Technology (2026).

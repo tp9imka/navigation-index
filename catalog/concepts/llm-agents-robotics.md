@@ -9,6 +9,10 @@ Language models driving robots, mission planning, MCP servers for drones/ROS/GIS
 - [LLM mission agent: a safety-gated MAVLink MCP server flying ArduPilot SITL](../../catalog/samples/llm-mission-agent.md) - A small MCP server (stdio JSON-RPC 2.0, pymavlink) that lets Claude Code or any MCP client read and fly an ArduCopter: get_state, get_nav_health (EKF flags, variances, GNSS fix/sats/HDOP => nominal/degraded/lost), arm_ta
 - [Querying the hub from LLM agents via MCP](../../catalog/samples/llm-agent-usage.md) - A stdlib-only MCP stdio server (tools/mcp_server.py) exposes search, show, concept and neighbors over the hub's index and graph so Claude Code, Cursor and other MCP clients can query it as tools.
 
+## Guides (1)
+
+- [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2.
+
 ## Repositories (30)
 
 - [jetson-containers](../../catalog/repos/dusty-nv__jetson-containers.md) - fit: high - Build system and prebuilt containers for ML on Jetson (PyTorch, ROS, LLMs, VLMs) matched to JetPack versions.

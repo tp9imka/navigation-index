@@ -26,5 +26,6 @@ Introduces direct registration of raw LiDAR points in an iterated Kalman filter 
 ## Referenced by
 
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
+- [Flight-Ready LiDAR-Inertial Odometry for Embedded Drone Platforms](../../catalog/resources/gaona-2026-flight-ready-lio.md) (cites)
 
 _Indexed by lane(s): slam_

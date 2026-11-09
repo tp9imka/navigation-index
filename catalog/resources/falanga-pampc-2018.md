@@ -22,6 +22,7 @@ Adds perception objectives (keep a point of interest visible, low image-plane ve
 
 ## Referenced by
 
+- [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) (mentions)
 - [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) (mentions)
 
 _Indexed by lane(s): guidance-planning_

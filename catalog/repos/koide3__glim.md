@@ -25,6 +25,7 @@ Versatile point-cloud localization and mapping framework with GPU-accelerated fa
 
 ## Referenced by
 
+- [livox-mid360-slam-evaluation](../../catalog/repos/harshareddy1611__livox-mid360-slam-evaluation.md) (evaluated_on)
 - [hdl_graph_slam](../../catalog/repos/koide3__hdl_graph_slam.md) (alternative_to)
 
 _Indexed by lane(s): slam_

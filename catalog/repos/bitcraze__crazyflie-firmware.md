@@ -39,17 +39,22 @@ Firmware for the Crazyflie nano quad, Bolt and the Roadrunner positioning tag, w
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Aerostack2](../../catalog/repos/aerostack2__aerostack2.md) (integrates_with)
+- [AI-deck GAP8 examples](../../catalog/repos/bitcraze__aideck-gap8-examples.md) (integrates_with)
 - [cflib (Crazyflie Python library)](../../catalog/repos/bitcraze__crazyflie-lib-python.md) (integrates_with)
 - [Crazyflie simulation](../../catalog/repos/bitcraze__crazyflie-simulation.md) (same_org)
 - [Loco Positioning node firmware](../../catalog/repos/bitcraze__lps-node-firmware.md) (integrates_with)
+- [Bitcraze positioning_dataset](../../catalog/repos/bitcraze__positioning_dataset.md) (evaluated_on)
 - [ESP-Drone](../../catalog/repos/espressif__esp-drone.md) (fork_of)
 - [Swarm relative localization (ETH PBL)](../../catalog/repos/eth-pbl__swarm-relative-localization.md) (extends)
 - [Crazyswarm2](../../catalog/repos/imrclab__crazyswarm2.md) (depends_on)
 - [Crazyswarm2](../../catalog/repos/imrclab__crazyswarm2.md) (integrates_with)
 - [dRehmFlight VTOL](../../catalog/repos/nickrehm__drehmflight.md) (alternative_to)
 - [TinyMPC](../../catalog/repos/tinympc__tinympc.md) (evaluated_on)
+- [Flow deck v2](../../catalog/resources/bitcraze-flow-deck-v2.md) (uses)
 - [Loco Positioning System documentation](../../catalog/resources/bitcraze-loco-positioning.md) (explains)
+- [Multi-ranger deck](../../catalog/resources/bitcraze-multi-ranger-deck.md) (uses)
 - [Onboard Ranging-based Relative Localization and Stability for Lightweight Aerial Swarms](../../catalog/resources/li-onboard-relative-localization-swarms.md) (uses)
+- [Lighthouse Positioning System: Dataset, Accuracy, and Precision for UAV Research](../../catalog/resources/taffanel-2021-lighthouse-positioning-accuracy.md) (evaluates)
 
 _Indexed by lane(s): autopilots, domains-swarm_
 

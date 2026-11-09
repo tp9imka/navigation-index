@@ -37,6 +37,7 @@ Minimal LiDAR odometry based on point-to-point ICP with adaptive thresholding, w
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [livox-mid360-slam-evaluation](../../catalog/repos/harshareddy1611__livox-mid360-slam-evaluation.md) (evaluated_on)
 - [KISS-SLAM](../../catalog/repos/prbonn__kiss-slam.md) (extends)
 - [MapClosures](../../catalog/repos/prbonn__mapclosures.md) (integrates_with)
 - [RKO-LIO](../../catalog/repos/prbonn__rko_lio.md) (alternative_to)

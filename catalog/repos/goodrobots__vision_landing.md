@@ -22,6 +22,11 @@ Precision landing using visual fiducial targets, sending LANDING_TARGET messages
 
 - integrates_with: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
 
+## Referenced by
+
+- [AprilTag 3](../../catalog/repos/aprilrobotics__apriltag.md) (alternative_to)
+- [Precision Landing](../../catalog/resources/px4-precision-landing-docs.md) (uses)
+
 _Indexed by lane(s): autopilots_
 
 _GitHub metadata fetched 2026-11-09._

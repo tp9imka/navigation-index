@@ -35,6 +35,7 @@ ROS-based software stack and Raspberry Pi image for the Clover educational quadc
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [AprilTag 3](../../catalog/repos/aprilrobotics__apriltag.md) (alternative_to)
 - [Clover Rescue Project](../../catalog/repos/devmbs__crtclient.md) (depends_on)
 - [CRTClover - Clover Rescue Team backend](../../catalog/repos/devmbs__crtclover.md) (integrates_with)
 - [Swarm in Blocks](../../catalog/repos/grupo-semear-usp__swarm_in_blocks.md) (depends_on)

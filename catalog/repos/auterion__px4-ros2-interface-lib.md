@@ -35,6 +35,7 @@ C++ library for writing PX4 flight modes and navigation-data sources in ROS 2 on
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [aerial-autonomy-stack](../../catalog/repos/jacopopan__aerial-autonomy-stack.md) (integrates_with)
 - [mavros_controllers](../../catalog/repos/jaeyoung-lim__mavros_controllers.md) (alternative_to)
 - [px4_ros_com](../../catalog/repos/px4__px4_ros_com.md) (alternative_to)
 - [PX4 ROS 2 Control Interface](../../catalog/resources/px4-ros2-control-interface-docs.md) (has_code)

@@ -33,7 +33,9 @@ ROS 2 framework for flying many Crazyflie nano-quadrotors with motion capture or
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Aerostack2](../../catalog/repos/aerostack2__aerostack2.md) (alternative_to)
 - [Aerostack2](../../catalog/repos/aerostack2__aerostack2.md) (integrates_with)
+- [vrpn_mocap](../../catalog/repos/alvinsunyixiao__vrpn_mocap.md) (alternative_to)
 - [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md) (integrates_with)
+- [Bitcraze positioning_dataset](../../catalog/repos/bitcraze__positioning_dataset.md) (same_org)
 - [Crazyswarm2 documentation](../../catalog/resources/crazyswarm2-docs.md) (explains)
 
 _Indexed by lane(s): autopilots, domains-swarm_

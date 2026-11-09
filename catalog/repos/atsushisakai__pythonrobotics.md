@@ -27,7 +27,10 @@ Large collection of readable Python implementations of robotics algorithms: loca
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) (mentions)
+- [python_motion_planning](../../catalog/repos/ai-winter__python_motion_planning.md) (alternative_to)
 - [OMPL - Open Motion Planning Library](../../catalog/repos/ompl__ompl.md) (alternative_to)
+- [PathPlanning (zhm-real)](../../catalog/repos/zhm-real__pathplanning.md) (alternative_to)
 
 _Indexed by lane(s): planning-gis-c2_
 

@@ -27,6 +27,7 @@ Python API to connect, log, set parameters and send setpoints/high-level command
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md) (integrates_with)
 - [Crazyswarm2](../../catalog/repos/imrclab__crazyswarm2.md) (depends_on)
+- [LSY Autonomous Drone Racing](../../catalog/repos/learnsyslab__lsy_drone_racing.md) (integrates_with)
 
 _Indexed by lane(s): autopilots, domains-swarm_
 

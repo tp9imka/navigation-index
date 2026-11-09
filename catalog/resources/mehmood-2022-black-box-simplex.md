@@ -23,6 +23,7 @@ Extends Simplex so that neither the advanced nor the backup controller needs sta
 ## Referenced by
 
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
+- [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) (mentions)
 - [Using Simplicity to Control Complexity](../../catalog/resources/sha-2001-simplex.md) (cites)
 
 _Indexed by lane(s): flight-embedded_

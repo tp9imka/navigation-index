@@ -14,7 +14,7 @@ Detection, segmentation, depth on embedded hardware supporting navigation.
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) - Learned models in navigation pipelines carry three separate sets of terms:
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) - Challenge 2 says the winning team "may take it towards real-world implementation".
 
-## Repositories (76)
+## Repositories (78)
 
 - [Ultralytics YOLO](../../catalog/repos/ultralytics__ultralytics.md) - fit: high - Widely used Python package for YOLO-family detection, segmentation and tracking with training, export to edge runtimes and built-in trackers.
 - [TensorRT (open-source components)](../../catalog/repos/nvidia__tensorrt.md) - fit: high - Open parts of NVIDIA's inference SDK: parsers, plugins, samples and the trtexec / Polygraphy tools for building and profiling engines from ONNX.
@@ -91,10 +91,13 @@ Detection, segmentation, depth on embedded hardware supporting navigation.
 - [EqNIO](../../catalog/repos/royinajayanth__eqnio.md) - fit: low - Subequivariant neural inertial odometry (ICLR 2025) that canonicalises IMU data so networks generalise across orientations; applied on top of TLIO and RoNIN.
 - [Deep learning celestial navigation](../../catalog/repos/gregtozzi__deep_learning_celnav.md) - fit: low - Exploratory project on automating celestial navigation with deep learning and edge inference on synthetic sky images.
 - [ViNet_AirSim_drone - learned VIO in AirSim](../../catalog/repos/sasha-lobov__vinet_airsim_drone.md) - fit: low - PyTorch CNN+RNN network that predicts relative pose between frames from a monocular camera and 6-axis IMU, trained on data collected in Microsoft AirSim with ground-truth poses and a composite loss to limit drift.
+- [aerial-autonomy-stack](../../catalog/repos/jacopopan__aerial-autonomy-stack.md) - fit: low - Dockerized harness to simulate and deploy PX4, ArduPilot and Betaflight drones with ROS 2, YOLO and lidar odometry (KISS-ICP), with a steppable gymnasium interface and Jetson deployment images.
+- [AI-deck GAP8 examples](../../catalog/repos/bitcraze__aideck-gap8-examples.md) - fit: low - Bitcraze examples for the Crazyflie AI-deck GAP8 processor: camera streaming over WiFi and small onboard CNN inference.
 - [Flight Speed Estimation Airflow](../../catalog/repos/syroco-isir__flight-speed-estimation-airflow.md) - fit: low - GRU network that estimates multirotor flight speed from thermal anemometer readings, linked from the 2025 airflow-inertial odometry preprint.
 
-## Documents, talks, courses, datasets (50)
+## Documents, talks, courses, datasets (54)
 
+- [A Benchmark Comparison of Monocular Visual-Inertial Odometry Algorithms for Flying Robots](../../catalog/resources/delmerico-scaramuzza-2018-vio-benchmark-flying-robots.md) - paper - ICRA 2018.
 - [A Benchmark Comparison of Visual Place Recognition Techniques for Resource-Constrained Embedded Platforms](../../catalog/resources/power-2021-vpr-embedded-benchmark.md) - paper - arXiv 2109.11002 preprint.
 - [A Multi-Robot Platform for Robotic Triage Combining Onboard Sensing and Foundation Models](../../catalog/resources/arxiv-multi-robot-triage-platform.md) - paper - Technical report from a DARPA Triage Challenge team describing a multi-robot system and fine-tuned open vision-language models for injury identification.
 - [acados: a modular open-source framework for fast embedded optimal control](../../catalog/resources/verschueren-acados-2019.md) - paper - Describes acados' structure-exploiting QP and SQP solvers, integrators and code generation for embedded NMPC and MHE.
@@ -123,6 +126,7 @@ Detection, segmentation, depth on embedded hardware supporting navigation.
 - [Neural Aided Adaptive Innovation-Based Invariant Kalman Filter](../../catalog/resources/diker-klein-2026-neural-adaptive-inekf.md) - paper - Preprint.
 - [Neural-Fly enables rapid learning for agile flight in strong winds](../../catalog/resources/oconnell-2022-neural-fly.md) - paper - Science Robotics 7 (2022).
 - [NeuroBEM: Hybrid Aerodynamic Quadrotor Model](../../catalog/resources/bauersfeld-2021-neurobem.md) - paper - RSS 2021.
+- [nvblox: GPU-Accelerated Incremental Signed Distance Field Mapping](../../catalog/resources/millane-nvblox-2023.md) - paper - Preprint on arXiv.
 - [NVIDIA Jetson AI Lab](../../catalog/resources/nvidia-jetson-ai-lab.md) - doc - Tutorial hub for running generative AI, VLMs and robotics models on Jetson devices, built around jetson-containers.
 - [NVIDIA Jetson Orin Nano Developer Kit Gets a Super Boost](../../catalog/resources/nvidia-orin-nano-super-blog.md) - blog - Announcement of the 'Super' power mode for the Orin Nano developer kit via JetPack update, with before/after compute and memory figures.
 - [Object Pose Estimation with Statistical Guarantees: Conformal Keypoint Detection and Geometric Uncertainty Propagation](../../catalog/resources/yang-pavone-2023-conformal-keypoint-pose.md) - paper - CVPR 2023.
@@ -139,6 +143,8 @@ Detection, segmentation, depth on embedded hardware supporting navigation.
 - [Terrain-Aided Navigation Without Raycasting: A Sliding Grid Approach for Point Cloud Processing](../../catalog/resources/sanlan-2025-sliding-grid-tan-point-cloud.md) - paper - Compares two DEM-based measurement models for point-cloud (lidar-style) terrain-aided INS: classic ray casting versus a 'sliding grid' that needs no ray casting.
 - [TinyMPC: Model-Predictive Control on Resource-Constrained Microcontrollers](../../catalog/resources/alavilli-tinympc-2023.md) - paper - ADMM-based MPC solver that caches the Riccati structure so each iteration is cheap enough for a microcontroller; demonstrated on a small quadrotor.
 - [TLIO: Tight Learned Inertial Odometry](../../catalog/resources/tlio-paper.md) - paper - Combines a network that predicts displacement and uncertainty from IMU data with an EKF, for pedestrian inertial odometry.
+- [VOXL OpenVINS server](../../catalog/resources/modalai-voxl-open-vins-server-docs.md) - doc - ModalAI docs for the OpenVINS-based VIO service on VOXL 2.
+- [VOXL Vision Obstacle Avoidance (VOA)](../../catalog/resources/modalai-voxl-voa-docs.md) - doc - How voxl-vision-hub turns stereo depth into OBSTACLE_DISTANCE messages for PX4 or ArduPilot collision prevention on VOXL boards.
 - [Wild Visual Navigation: Fast Traversability Learning via Pre-Trained Models and Online Self-Supervision](../../catalog/resources/wild-visual-navigation-paper.md) - paper - Describes learning visual traversability online from pre-trained features and robot experience, adapting within minutes in forests and grassland.
 - [Work-in-Progress: Multi-Deadline DAG Scheduling Model for Autonomous Driving Systems](../../catalog/resources/yano-azumi-2025-multi-deadline-dag-autoware.md) - paper - arXiv 2505.06780 preprint (related DOI 10.1109/RTSS62706.2024.00049).
 - [XFeat: Accelerated Features for Lightweight Image Matching](../../catalog/resources/xfeat-2024.md) - paper - Lightweight feature extraction and matching architecture aimed at real-time use on constrained hardware.

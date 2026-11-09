@@ -34,6 +34,7 @@ ROS 2 package wrapping NVIDIA's GPU-accelerated cuVSLAM for stereo visual(-inert
 - [Isaac ROS Benchmark](../../catalog/repos/nvidia-isaac-ros__isaac_ros_benchmark.md) (evaluated_on)
 - [Isaac ROS nvblox](../../catalog/repos/nvidia-isaac-ros__isaac_ros_nvblox.md) (integrates_with)
 - [cuVSLAM](../../catalog/repos/nvidia-isaac__cuvslam.md) (integrates_with)
+- [realsense-ros](../../catalog/repos/realsenseai__realsense-ros.md) (integrates_with)
 - [cuVSLAM: CUDA accelerated visual odometry and mapping](../../catalog/resources/cuvslam-2025.md) (has_code)
 - [Isaac ROS Visual SLAM documentation](../../catalog/resources/isaac-ros-visual-slam-docs.md) (has_code)
 

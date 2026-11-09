@@ -30,6 +30,7 @@ Unreal Engine based simulator for drones and cars with camera, depth, lidar, IMU
 - [Colosseum (AirSim fork)](../../catalog/repos/codexlabsllc__colosseum.md) (fork_of)
 - [GRID playground (AirGen)](../../catalog/repos/genrobo__grid-playground.md) (extends)
 - [Project AirSim](../../catalog/repos/iamaisim__projectairsim.md) (extends)
+- [AirSim Drone Racing Lab](../../catalog/repos/microsoft__airsim-drone-racing-lab.md) (depends_on)
 - [PromptCraft-Robotics](../../catalog/repos/microsoft__promptcraft-robotics.md) (depends_on)
 - [ORB_SLAM3_system_local](../../catalog/repos/sasha-lobov__orb_slam3_system_local.md) (depends_on)
 - [AirSim Documentation](../../catalog/resources/microsoft-airsim-docs.md) (explains)

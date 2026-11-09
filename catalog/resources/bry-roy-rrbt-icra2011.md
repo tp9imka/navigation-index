@@ -22,7 +22,9 @@ Belief-space planning: grows a tree over state and estimator covariance, propaga
 
 ## Referenced by
 
+- [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) (mentions)
 - [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) (mentions)
 - [Non-Gaussian Belief Space Planning: Correctness and Complexity](../../catalog/resources/platt-2012-non-gaussian-belief-space-planning.md) (cites)
+- [The Belief Roadmap: Efficient Planning in Belief Space by Factoring the Covariance](../../catalog/resources/prentice-roy-belief-roadmap-2009.md) (same_author)
 
 _Indexed by lane(s): guidance-planning_

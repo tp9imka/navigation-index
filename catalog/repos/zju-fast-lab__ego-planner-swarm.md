@@ -32,6 +32,7 @@ Decentralized multi-quadrotor extension of EGO-Planner with inter-agent collisio
 
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) (mentions)
 - [MADER](../../catalog/repos/mit-acl__mader.md) (alternative_to)
 - [EGO-Planner](../../catalog/repos/zju-fast-lab__ego-planner.md) (extends)
 - [EGO-Planner-v2 (Swarm Playground)](../../catalog/repos/zju-fast-lab__ego-planner-v2.md) (extends)

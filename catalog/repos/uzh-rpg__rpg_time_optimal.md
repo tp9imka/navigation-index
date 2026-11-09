@@ -24,6 +24,7 @@ Code for computing time-optimal quadrotor trajectories through waypoints, from t
 
 ## Referenced by
 
+- [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) (mentions)
 - [Flightmare](../../catalog/repos/uzh-rpg__flightmare.md) (same_org)
 - [AlphaPilot: Autonomous Drone Racing](../../catalog/resources/alphapilot-uzh-paper.md) (has_code)
 

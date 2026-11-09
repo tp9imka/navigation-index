@@ -25,5 +25,7 @@ Bitcraze documentation for its UWB positioning system covering anchor placement,
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Loco Positioning System precision investigation](../../catalog/resources/bitcraze-lps-precision-wiki.md) (part_of)
+- [Positioning Systems Overview](../../catalog/resources/bitcraze-positioning-systems-overview.md) (part_of)
 
 _Indexed by lane(s): domains-swarm_

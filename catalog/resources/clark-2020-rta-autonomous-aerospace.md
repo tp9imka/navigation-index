@@ -19,4 +19,8 @@ Journal of Guidance, Control, and Dynamics paper presenting an RTA framework for
 
 - cites: [ASTM F3269-21: Standard Practice for Methods to Safely Bound Behavior of Aircraft Systems Containing Complex Functions Using Run-Time Assurance](../../catalog/resources/astm-f3269-21-rta.md)
 
+## Referenced by
+
+- [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) (mentions)
+
 _Indexed by lane(s): flight-embedded_

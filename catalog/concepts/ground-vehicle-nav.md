@@ -57,7 +57,7 @@ UGV/off-road autonomy stacks, localization and navigation for ground robots.
 - [WayFAST](../../catalog/repos/matval__wayfast.md) - fit: low - Self-supervised traversability prediction for wheeled field robots that learns from RGB-D, with labels from kinodynamic traction estimates.
 - [elevation_mapping](../../catalog/repos/leggedrobotics__elevation_mapping.md) - fit: low - Robot-centric elevation mapping for rough terrain navigation, started at ETH Zurich and now maintained by ANYbotics, that fuses range data into a probabilistic 2.5D map.
 
-## Documents, talks, courses, datasets (23)
+## Documents, talks, courses, datasets (24)
 
 - [Advanced Navigation Boreas FOG INS with LVS laser velocity sensor](../../catalog/resources/advanced-navigation-boreas.md) - product - Advanced Navigation's Boreas fibre-optic-gyro INS line, fused with its LVS laser velocity sensor or wheel odometry, is marketed for long GNSS-denied ground and maritime runs; reported trials include a US Army testbed and
 - [AI-IMU Dead-Reckoning](../../catalog/resources/brossard-ai-imu-dr.md) - paper - Car localisation from IMU alone by combining an invariant EKF with a neural network that adapts measurement noise covariances (pseudo-measurements), evaluated on KITTI.
@@ -72,6 +72,7 @@ UGV/off-road autonomy stacks, localization and navigation for ground robots.
 - [Nav2 Documentation](../../catalog/resources/nav2-docs.md) - doc - Official Nav2 documentation: concepts, configuration guides for every planner/controller/costmap plugin, tuning guide and tutorials including GPS-based navigation.
 - [Navigating Using GPS Localization (Nav2 tutorial)](../../catalog/resources/nav2-gps-navigation-tutorial.md) - doc - Nav2 tutorial on outdoor navigation with GPS: fusing GNSS, IMU and odometry with robot_localization's navsat_transform, configuring Nav2 for GPS waypoints, and demonstrating it in Gazebo.
 - [Oxford RobotCar Dataset](../../catalog/resources/oxford-robotcar-dataset.md) - dataset - Repeated drives of the same Oxford route over a year in all weather, with cameras, lidar and GPS/INS.
+- [Path Planning for Autonomous Vehicles in Unknown Semi-structured Environments](../../catalog/resources/dolgov-hybrid-astar-ijrr-2010.md) - paper - Peer-reviewed (IJRR).
 - [RELLIS-3D Dataset: Data, Benchmarks and Analysis](../../catalog/resources/rellis3d-paper.md) - paper - Paper introducing the RELLIS-3D multimodal off-road dataset with annotated lidar and images and baseline results.
 - [Self-Driving Cars Specialization (University of Toronto)](../../catalog/resources/coursera-self-driving-cars-specialization.md) - course - Four-course specialization covering vehicle dynamics and control, state estimation and localization, visual perception, and motion planning, using the CARLA simulator for assignments.
 - [Sensor Fusion and Non-linear Filtering for Automotive Systems (edX)](../../catalog/resources/chalmers-sensor-fusion-nonlinear-filtering.md) - course - Self-paced edX course on Bayesian filtering: state-space and motion/measurement models, Kalman filter, EKF/UKF/CKF, and particle filters, with Matlab assignments building a personal filtering toolbox.

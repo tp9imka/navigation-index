@@ -31,6 +31,7 @@ Code and checkpoints for general visual navigation foundation models (GNM, ViNT,
 
 ## Referenced by
 
+- [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) (mentions)
 - [LM-Nav](../../catalog/repos/blazejosinski__lm_nav.md) (integrates_with)
 - [NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration](../../catalog/resources/nomad-diffusion-nav-2023.md) (has_code)
 - [ViNT: A Foundation Model for Visual Navigation](../../catalog/resources/vint-foundation-model-2023.md) (has_code)

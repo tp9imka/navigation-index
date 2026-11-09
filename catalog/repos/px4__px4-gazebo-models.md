@@ -26,6 +26,7 @@ Model and world repository for the new Gazebo, used by PX4 SITL targets such as 
 ## Referenced by
 
 - [Gazebo Sim (gz-sim)](../../catalog/repos/gazebosim__gz-sim.md) (integrates_with)
+- [Gazebo Worlds (PX4 Guide)](../../catalog/resources/px4-gz-worlds-docs.md) (explains)
 
 _Indexed by lane(s): sim-data_
 

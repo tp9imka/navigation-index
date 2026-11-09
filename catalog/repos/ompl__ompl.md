@@ -33,10 +33,14 @@ Library of sampling-based motion planners (RRT, RRT*, PRM, BIT*, informed varian
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) (mentions)
 - [PythonRobotics](../../catalog/repos/atsushisakai__pythonrobotics.md) (alternative_to)
 - [terrain-navigation2](../../catalog/repos/ethz-asl__terrain-navigation2.md) (depends_on)
 - [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md) (alternative_to)
 - [edpl-ompl](../../catalog/repos/sauravag__edpl-ompl.md) (depends_on)
+- [PathPlanning (zhm-real)](../../catalog/repos/zhm-real__pathplanning.md) (alternative_to)
+- [Sampling-based Algorithms for Optimal Motion Planning](../../catalog/resources/karaman-frazzoli-rrtstar-ijrr-2011.md) (has_code)
+- [Probabilistic roadmaps for path planning in high-dimensional configuration spaces](../../catalog/resources/kavraki-prm-1996.md) (has_code)
 - [The Open Motion Planning Library (OMPL) website](../../catalog/resources/ompl-site.md) (explains)
 
 _Indexed by lane(s): planning-gis-c2_

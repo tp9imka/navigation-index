@@ -31,9 +31,10 @@ PDR, foot-mounted INS, dismounted soldier navigation, indoor positioning.
 - [EqNIO](../../catalog/repos/royinajayanth__eqnio.md) - fit: low - Subequivariant neural inertial odometry (ICLR 2025) that canonicalises IMU data so networks generalise across orientations; applied on top of TLIO and RoNIN.
 - [Audio localization dataset (Crazyflie)](../../catalog/repos/lcav__audio-localization-dataset.md) - fit: low - Datasets for acoustic echolocation and sound-source localization recorded on a Crazyflie drone and an e-puck robot.
 
-## Documents, talks, courses, datasets (6)
+## Documents, talks, courses, datasets (7)
 
 - [OpenShoe: open source embedded foot-mounted INS](../../catalog/resources/openshoe-foot-mounted-ins-2012.md) - doc - Project site (offline since 2026; archived copy) for OpenShoe, an open hardware and software ZUPT-aided foot-mounted INS module, described in the PLANS 2012 paper 'Foot-mounted INS for Everybody' and follow-up IPIN 2014 
+- [Positioning Systems Overview](../../catalog/resources/bitcraze-positioning-systems-overview.md) - doc - Bitcraze comparison of Crazyflie positioning options: Lighthouse (listed 'mm', 8x8x3 m, up to 4 base stations), Loco UWB (listed 'dm', at least 4 anchors, 8 preferred, 50x50 m untested), motion capture (mm, external came
 - [RoNIN: Robust Neural Inertial Navigation in the Wild: Benchmark, Evaluations, and New Methods](../../catalog/resources/ronin-paper.md) - paper - Introduces a large smartphone IMU dataset with ground truth and benchmarks neural architectures for pedestrian velocity regression.
 - [TLIO: Tight Learned Inertial Odometry](../../catalog/resources/tlio-paper.md) - paper - Combines a network that predicts displacement and uncertainty from IMU data with an EKF, for pedestrian inertial odometry.
 - [University of Toronto Foot-Mounted Inertial Navigation Dataset](../../catalog/resources/uoft-foot-mounted-ins-dataset.md) - dataset - Foot-mounted IMU recordings from five subjects over more than 7.6 km with ground-truth positioning, built to evaluate zero-velocity-aided pedestrian INS.

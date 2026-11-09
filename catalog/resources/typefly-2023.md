@@ -21,6 +21,7 @@ Proposes a compact drone programming language for LLM output, cutting token coun
 
 ## Referenced by
 
+- [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) (mentions)
 - [TypeFly](../../catalog/repos/typefly__typefly.md) (integrates_with)
 
 _Indexed by lane(s): gap-fill_

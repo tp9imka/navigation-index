@@ -25,7 +25,10 @@ General-purpose multicopter trajectory optimizer (MINCO) handling safe-corridor 
 ## Referenced by
 
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
+- [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) (mentions)
+- [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) (mentions)
 - [mav_trajectory_generation](../../catalog/repos/ethz-asl__mav_trajectory_generation.md) (alternative_to)
+- [DecompUtil](../../catalog/repos/sikang__decomputil.md) (alternative_to)
 - [AM-Traj](../../catalog/repos/zju-fast-lab__am_traj.md) (alternative_to)
 - [EGO-Planner](../../catalog/repos/zju-fast-lab__ego-planner.md) (same_org)
 - [EGO-Planner-v2 (Swarm Playground)](../../catalog/repos/zju-fast-lab__ego-planner-v2.md) (same_org)

@@ -20,4 +20,8 @@ Setup guide for using a visual-inertial tracking camera via a companion computer
 - explains: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
 - has_code: [vision_to_mavros](../../catalog/repos/thien94__vision_to_mavros.md)
 
+## Referenced by
+
+- [End-of-Life (EOL) Announcement for some Intel RealSense products](../../catalog/resources/intel-realsense-tracking-eol.md) (cites)
+
 _Indexed by lane(s): autopilots_

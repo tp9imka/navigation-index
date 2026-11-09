@@ -21,6 +21,7 @@ Single diffusion policy that handles both goal-directed navigation and undirecte
 
 ## Referenced by
 
+- [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) (mentions)
 - [GNM / ViNT / NoMaD](../../catalog/repos/robodhruv__visualnav-transformer.md) (integrates_with)
 
 _Indexed by lane(s): gap-fill_

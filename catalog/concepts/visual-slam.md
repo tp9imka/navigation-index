@@ -12,7 +12,7 @@ Mapping and localization with loop closure from cameras.
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) - After this chapter you can explain how a camera, LiDAR or radar measures motion, what SLAM adds on top of odometry, and which open stack to run on which sensor.
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) - Learned models in navigation pipelines carry three separate sets of terms:
 
-## Repositories (53)
+## Repositories (54)
 
 - [PythonRobotics](../../catalog/repos/atsushisakai__pythonrobotics.md) - fit: high - Large collection of readable Python implementations of robotics algorithms: localization (EKF, particle filter), SLAM, path planning (A*, RRT*, D*, state lattice), path tracking and more, with animations.
 - [ORB-SLAM3](../../catalog/repos/uz-slamlab__orb_slam3.md) - fit: high - Visual, visual-inertial and multi-map SLAM supporting monocular, stereo and RGB-D cameras with pinhole and fisheye models, using a map atlas to survive tracking loss.
@@ -25,6 +25,7 @@ Mapping and localization with loop closure from cameras.
 - [Isaac ROS Visual SLAM](../../catalog/repos/nvidia-isaac-ros__isaac_ros_visual_slam.md) - fit: high - ROS 2 package wrapping NVIDIA's GPU-accelerated cuVSLAM for stereo visual(-inertial) odometry and SLAM on Jetson and x86 GPUs.
 - [ORB_SLAM3_ROS2](../../catalog/repos/zang09__orb_slam3_ros2.md) - fit: high - ROS 2 wrapper package that exposes ORB-SLAM3 as nodes for monocular, stereo and RGB-D input.
 - [tartanairpy](../../catalog/repos/castacks__tartanairpy.md) - fit: high - Python package for downloading, customizing and iterating the TartanAir-V2 synthetic dataset.
+- [AprilTag 3](../../catalog/repos/aprilrobotics__apriltag.md) - fit: high - C library for detecting AprilTag fiducial markers and estimating the 6-DoF pose of each tag relative to a calibrated camera.
 - [ORB-SLAM2](../../catalog/repos/raulmur__orb_slam2.md) - fit: medium - Feature-based SLAM for monocular, stereo and RGB-D cameras using ORB features, with loop closing and relocalization against a reusable map.
 - [14 Lectures on Visual SLAM (2nd ed.) code](../../catalog/repos/gaoxiang12__slambook2.md) - fit: medium - Companion code for the second edition of Gao Xiang's visual SLAM textbook: Lie groups, nonlinear optimization, feature VO, direct methods, back-end and loop closure examples in C++.
 - [VINS-Mono](../../catalog/repos/hkust-aerial-robotics__vins-mono.md) - fit: medium - Optimization-based monocular visual-inertial estimator with sliding-window bundle adjustment, online initialization, loop closure and pose-graph reuse.
@@ -68,12 +69,13 @@ Mapping and localization with loop closure from cameras.
 - [bsu-science - BSU diploma on camera-based UAV navigation](../../catalog/repos/drapegnik__bsu-science.md) - fit: low - LaTeX sources of science reports from BSU (Belarus, FAMCS), including a diploma 'Разработка алгоритмов навигации БПЛА' that compares SIFT/SURF/ORB, surveys SLAM and SfM 3D mapping, and demonstrates SLAM + ROS + webcam + 
 - [V-NAV (CopterHack 2022) - visual navigation for Clover](../../catalog/repos/v-nav__clover.md) - fit: low - Archived fork of the Clover framework holding team V-NAV's CopterHack 2022 entry (article in docs/ru/v-nav.md on branch v-nav_article): a multi-camera plus IMU optical navigation module using graph-based SLAM with CNN-ex
 
-## Documents, talks, courses, datasets (44)
+## Documents, talks, courses, datasets (45)
 
 - [14 Lectures on Visual SLAM: From Theory to Practice](../../catalog/resources/gaoxiang-14-lectures-visual-slam.md) - book - English translation of the popular Chinese visual SLAM textbook, from rigid-body motion and Lie algebra through camera models, nonlinear optimization, feature/direct VO, backend optimization, loop closure and dense mappi
 - [A Survey on Active Simultaneous Localization and Mapping: State of the Art and New Frontiers](../../catalog/resources/placed-2023-active-slam-survey.md) - paper - IEEE T-RO 39(3):1686-1705.
 - [An Efficient Schmidt-EKF for 3D Visual-Inertial SLAM](../../catalog/resources/geneva-2019-schmidt-ekf-vi-slam.md) - paper - CVPR 2019.
 - [Artificial Intelligence for Robotics (Udacity CS373)](../../catalog/resources/udacity-ai-for-robotics-cs373.md) - course - Free classic course by Sebastian Thrun programming robot localization (histogram filter, Kalman filter, particle filter), search/planning, PID control and GraphSLAM in Python.
+- [Challenges and implemented technologies used in autonomous drone racing](../../catalog/resources/moon-2019-adr-iros-challenges.md) - paper - Organisers and teams review the IROS 2016 and 2017 autonomous drone races: the indoor gate format and the localisation, gate detection and control methods teams used.
 - [cuVSLAM: CUDA accelerated visual odometry and mapping](../../catalog/resources/cuvslam-2025.md) - paper - Describes NVIDIA's GPU-accelerated VO/SLAM supporting from one to many cameras with optional IMU, designed for real-time edge deployment.
 - [Cyrill Stachniss YouTube channel (incl. '5 Minutes with Cyrill')](../../catalog/resources/stachniss-youtube-channel.md) - video - Channel hosting Stachniss's full lecture courses plus the '5 Minutes with Cyrill' series of short explainers on single concepts (Kalman filter, factor graphs, ICP, RANSAC, SIFT, occupancy grids).
 - [DROID-SLAM: Deep Visual SLAM for Monocular, Stereo, and RGB-D Cameras](../../catalog/resources/droid-slam-teed-2021.md) - paper - Learned SLAM that iteratively refines poses and depth through a differentiable dense bundle adjustment layer.

@@ -46,6 +46,7 @@ Current-generation Gazebo robotics simulator with pluggable physics, rendering a
 - [PX4 Gazebo models](../../catalog/repos/px4__px4-gazebo-models.md) (integrates_with)
 - [PX4 SITL Gazebo Classic](../../catalog/repos/px4__px4-sitl_gazebo-classic.md) (alternative_to)
 - [Gazebo documentation and tutorials](../../catalog/resources/gazebo-docs-tutorials.md) (has_code)
+- [Gazebo Worlds (PX4 Guide)](../../catalog/resources/px4-gz-worlds-docs.md) (uses)
 - [PX4 Simulation (Gazebo, SITL) documentation](../../catalog/resources/px4-simulation-docs.md) (explains)
 - [PX4 Simulation (Gazebo, SITL) documentation](../../catalog/resources/px4-simulation-docs.md) (uses)
 - [PX4 SITL GPS denial: inject, measure drift, recover](../../catalog/samples/px4-sitl-gps-denial.md) (uses)

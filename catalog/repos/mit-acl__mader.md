@@ -24,6 +24,8 @@ MIT ACL decentralized and asynchronous trajectory planner for multiple UAVs in d
 
 ## Referenced by
 
+- [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) (mentions)
+- [FASTER](../../catalog/repos/mit-acl__faster.md) (same_org)
 - [PANTHER](../../catalog/repos/mit-acl__panther.md) (same_org)
 
 _Indexed by lane(s): planning-gis-c2_

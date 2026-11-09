@@ -22,6 +22,10 @@ Lightweight LiDAR-inertial odometry with coarse-to-fine continuous-time motion c
 
 - alternative_to: [FAST-LIO / FAST-LIO2](../../catalog/repos/hku-mars__fast_lio.md)
 
+## Referenced by
+
+- [livox-mid360-slam-evaluation](../../catalog/repos/harshareddy1611__livox-mid360-slam-evaluation.md) (evaluated_on)
+
 _Indexed by lane(s): slam_
 
 _GitHub metadata fetched 2026-11-09._

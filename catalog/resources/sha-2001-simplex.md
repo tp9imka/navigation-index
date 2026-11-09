@@ -23,6 +23,7 @@ The IEEE Software article that introduced the Simplex architecture: run a high-p
 ## Referenced by
 
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
+- [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) (mentions)
 - [The Black-Box Simplex Architecture for Runtime Assurance of Autonomous CPS](../../catalog/resources/mehmood-2022-black-box-simplex.md) (cites)
 
 _Indexed by lane(s): flight-embedded_

@@ -19,7 +19,7 @@ Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 - [Choose a stack you can run](../../docs/practical-readiness.md) - Start with the problem decoder, then narrow the candidates by the resources in the room.
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) - Learned models in navigation pipelines carry three separate sets of terms:
 
-## Repositories (36)
+## Repositories (38)
 
 - [LightGlue](../../catalog/repos/cvg__lightglue.md) - fit: high - Fast learned local feature matcher (ICCV 2023) that adapts its depth to pair difficulty; works with SuperPoint, DISK, ALIKED and SIFT features.
 - [hloc](../../catalog/repos/cvg__hierarchical-localization.md) - fit: high - Toolbox for hierarchical visual localization: global retrieval (NetVLAD etc.) to find candidate images, then local feature matching (SuperPoint, LightGlue...) and PnP against an SfM model.
@@ -33,6 +33,8 @@ Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 - [visual_localization (GNSS-free UAV)](../../catalog/repos/terbouchehacene__visual_localization.md) - fit: high - A cleaner reimplementation of the WildNav idea: match UAV images to satellite tiles with SuperPoint/SuperGlue-style matchers and estimate geographic position.
 - [UAVLocalization (map retrieval + alignment)](../../catalog/repos/hmf21__uavlocalization.md) - fit: high - Geo-localization system for aerial platforms that first retrieves the right satellite map region with a deep descriptor and then aligns the drone orthophoto to it to extract coordinates; evaluated on reorganized public A
 - [aerial-nav - GPS-denied navigation via Siamese network](../../catalog/repos/sviridov-aleksandr__aerial-nav.md) - fit: high - Matches onboard camera frames to a pre-built satellite map of the route: a ResNet-18 Siamese network with SAFA spatial aggregation ranks map tiles indexed at 13 altitude levels (0-1200 m), then SuperPoint/LightGlue with 
+- [AprilTag 3](../../catalog/repos/aprilrobotics__apriltag.md) - fit: high - C library for detecting AprilTag fiducial markers and estimating the 6-DoF pose of each tag relative to a calibrated camera.
+- [apriltag_ros (ROS 2)](../../catalog/repos/christianrauch__apriltag_ros.md) - fit: high - ROS 2 node that wraps the AprilTag library, subscribes to a rectified image and camera info, and publishes tag detections and TF transforms.
 - [14 Lectures on Visual SLAM (2nd ed.) code](../../catalog/repos/gaoxiang12__slambook2.md) - fit: medium - Companion code for the second edition of Gao Xiang's visual SLAM textbook: Lie groups, nonlinear optimization, feature VO, direct methods, back-end and loop closure examples in C++.
 - [SuperGlue (pretrained)](../../catalog/repos/magicleap__supergluepretrainednetwork.md) - fit: medium - Pretrained SuperGlue graph-neural-network matcher with SuperPoint features (CVPR 2020).
 - [MASt3R-SLAM](../../catalog/repos/rmurai0610__mast3r-slam.md) - fit: medium - Real-time dense monocular SLAM built on the MASt3R two-view 3D reconstruction prior, needing no fixed camera model (CVPR 2025).
@@ -58,9 +60,10 @@ Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 - [ConformalKeypoint](../../catalog/repos/nvlabs__conformalkeypoint.md) - fit: low - Reference code for conformal keypoint prediction sets and pose uncertainty sets (CVPR 2023).
 - [bsu-science - BSU diploma on camera-based UAV navigation](../../catalog/repos/drapegnik__bsu-science.md) - fit: low - LaTeX sources of science reports from BSU (Belarus, FAMCS), including a diploma 'Разработка алгоритмов навигации БПЛА' that compares SIFT/SURF/ORB, surveys SLAM and SfM 3D mapping, and demonstrates SLAM + ROS + webcam + 
 
-## Documents, talks, courses, datasets (25)
+## Documents, talks, courses, datasets (26)
 
 - [14 Lectures on Visual SLAM: From Theory to Practice](../../catalog/resources/gaoxiang-14-lectures-visual-slam.md) - book - English translation of the popular Chinese visual SLAM textbook, from rigid-body motion and Lie algebra through camera models, nonlinear optimization, feature/direct VO, backend optimization, loop closure and dense mappi
+- [AprilTag 2: Efficient and robust fiducial detection](../../catalog/resources/wang-olson-2016-apriltag2.md) - paper - IROS 2016.
 - [Cyrill Stachniss YouTube channel (incl. '5 Minutes with Cyrill')](../../catalog/resources/stachniss-youtube-channel.md) - video - Channel hosting Stachniss's full lecture courses plus the '5 Minutes with Cyrill' series of short explainers on single concepts (Kalman filter, factor graphs, ICP, RANSAC, SIFT, occupancy grids).
 - [Exploring the best way for UAV visual localization under Low-altitude Multi-view Observation Condition: a Benchmark](../../catalog/resources/anyvisloc-uav-localization-benchmark-2025.md) - paper - Builds a benchmark for low-altitude, oblique-view UAV absolute visual localization and systematically compares retrieval, matching and refinement choices.
 - [From Coarse to Fine: Robust Hierarchical Localization at Large Scale](../../catalog/resources/hloc-coarse-to-fine-2018.md) - paper - The HF-Net paper and foundation of hloc: global retrieval to find candidate places, then local matching for precise pose.

@@ -25,8 +25,12 @@ GPU-accelerated 3D reconstruction (TSDF/ESDF) that provides Nav2 local costmaps 
 
 ## Referenced by
 
+- [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) (mentions)
+- [voxblox](../../catalog/repos/ethz-asl__voxblox.md) (alternative_to)
 - [Isaac ROS DNN Inference](../../catalog/repos/nvidia-isaac-ros__isaac_ros_dnn_inference.md) (same_org)
 - [Isaac ROS Visual SLAM](../../catalog/repos/nvidia-isaac-ros__isaac_ros_visual_slam.md) (integrates_with)
+- [OctoMap](../../catalog/repos/octomap__octomap.md) (alternative_to)
+- [nvblox: GPU-Accelerated Incremental Signed Distance Field Mapping](../../catalog/resources/millane-nvblox-2023.md) (has_code)
 
 _Indexed by lane(s): gap-fill_
 

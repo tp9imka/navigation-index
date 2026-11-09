@@ -25,6 +25,7 @@ High-bandwidth LiDAR-inertial odometry that updates the state point by point, to
 ## Referenced by
 
 - [FAST-LIO / FAST-LIO2](../../catalog/repos/hku-mars__fast_lio.md) (alternative_to)
+- [smfeval](../../catalog/repos/svendbot__smfeval.md) (evaluated_on)
 
 _Indexed by lane(s): slam_
 

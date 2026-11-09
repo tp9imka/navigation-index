@@ -34,5 +34,7 @@ Extends two-source-integrity-vpair from detection to exclusion. One altpnt v2 EK
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) (mentions)
+- [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) (mentions)
 
 _Indexed by lane(s): samples_

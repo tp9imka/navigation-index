@@ -33,7 +33,7 @@ Radar odometry, radar SLAM, radar altimeters, Doppler velocity.
 - [Gaussian-RIO](../../catalog/repos/robotics-upo__gaussian-rio.md) - fit: low - 4D radar-inertial odometry using Gaussian modeling of radar points and multi-hypothesis scan matching.
 - [Open-RadVLAD](../../catalog/repos/mttgdd__open-radvlad.md) - fit: low - Fast radar place recognition using VLAD-style aggregation over radar polar scans.
 
-## Documents, talks, courses, datasets (11)
+## Documents, talks, courses, datasets (12)
 
 - [4D Millimeter-Wave Radar in Autonomous Driving: A Survey](../../catalog/resources/han-4d-mmwave-radar-survey-2023.md) - paper - Survey of 4D imaging radar: signal processing, datasets, calibration, perception and SLAM/odometry uses.
 - [Accurate Measurement Calculation Method for Interferometric Radar Altimeter-Based Terrain Referenced Navigation](../../catalog/resources/oh-2019-interferometric-radar-altimeter-trn.md) - paper - Open-access Sensors paper on TRN with an interferometric radar altimeter, which outputs slant range and cross-track look angle to the closest terrain point.
@@ -46,4 +46,5 @@ Radar odometry, radar SLAM, radar altimeters, Doppler velocity.
 - [Oxford Radar RobotCar Dataset](../../catalog/resources/oxford-radar-robotcar-dataset.md) - dataset - RobotCar route re-driven with a scanning FMCW radar plus lidars and cameras, for radar odometry and localization.
 - [Pohang Canal Dataset: A Multimodal Maritime Dataset for Autonomous Navigation in Restricted Waters](../../catalog/resources/pohang-canal-dataset-2023.md) - dataset - Multimodal maritime dataset from a 7.5 km route through a narrow canal, port areas and near-coast waters, with LiDARs, marine radar, stereo, infrared and omnidirectional cameras, AHRS and RTK GPS.
 - [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../../catalog/resources/slam-handbook.md) - book - Community-written handbook released in three parts (Part 1 November 2024, Part 2 March 2025, Part 3 May 2025), to be published by Cambridge University Press; the free PDF (main.pdf) and LaTeX sources are in the GitHub re
+- [When Your State Estimator Has Lost The Plot: Detecting Estimator Failures Via Spectral Analysis](../../catalog/resources/lanegger-2026-estimator-failure-spectral.md) - paper - Preprint (Aug 2026).
 

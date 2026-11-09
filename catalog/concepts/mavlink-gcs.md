@@ -63,7 +63,7 @@ MAVLink protocol, SDKs, ground control stations, telemetry radios.
 - [SiK radio firmware](../../catalog/repos/ardupilot__sik.md) - fit: low - Firmware and tools for Si1000-based telemetry radios (3DR/RFD900 class) carrying MAVLink.
 - [ArduPilot Copter - українською](../../catalog/repos/c-o-s-t-y-a__ardupilot_ua.md) - fit: low - Unofficial Ukrainian translation of key sections of the ArduPilot Copter documentation, with a translation-status file and a built site.
 
-## Documents, talks, courses, datasets (10)
+## Documents, talks, courses, datasets (11)
 
 - [MAVLink 2 and Message Signing](../../catalog/resources/mavlink-2-signing.md) - doc - Describes MAVLink 2 packet signing: a shared-secret SHA-256 based signature and timestamp appended to frames to authenticate the link and resist replay.
 - [MAVLink Common Message Set (common.xml)](../../catalog/resources/mavlink-common-messages.md) - doc - Reference of all messages and commands in the common dialect, including GPS_RAW_INT, GPS_INPUT for injecting external position, ODOMETRY and VISION_POSITION_ESTIMATE for non-GNSS navigation sources.
@@ -71,6 +71,7 @@ MAVLink protocol, SDKs, ground control stations, telemetry radios.
 - [MAVLink Mission Protocol](../../catalog/resources/mavlink-mission-protocol.md) - doc - The microservice used to upload, download and clear waypoint missions, geofences and rally points between a GCS and an autopilot, with its handshake and retry rules.
 - [Non-GPS Position Estimation](../../catalog/resources/ardupilot-dev-mavlink-nongps-position.md) - doc - Developer page listing the MAVLink messages ArduPilot accepts for external position/velocity estimates and their expected frames.
 - [Open Drone ID](../../catalog/resources/mavlink-opendroneid-microservice.md) - doc - Defines the MAVLink messages and flow for Remote ID between flight controller, GCS and transponder.
+- [Precision Landing](../../catalog/resources/px4-precision-landing-docs.md) - doc - PX4 guide to landing on a marked target from IR-LOCK or a companion computer sending MAVLink LANDING_TARGET (local NED).
 - [PX4 Simulation (Gazebo, SITL) documentation](../../catalog/resources/px4-simulation-docs.md) - doc - How to run PX4 software-in-the-loop with Gazebo and other simulators, including multi-vehicle setups and connecting ROS 2 and ground stations.
 - [ROS and VIO tracking camera for non-GPS Navigation](../../catalog/resources/ardupilot-ros-vio-tracking-camera.md) - doc - Developer tutorial wiring a VIO camera through ROS and MAVROS into ArduPilot for indoor flight.
 - [STANAG 4586 - Standard Interfaces of UAV Control System (UCS) for NATO UAV Interoperability](../../catalog/resources/stanag-4586-overview.md) - doc - Public overview of NATO's UAS interoperability standard, which defines a core UCS, a vehicle-specific module and five levels of interoperability from receiving payload data up to full flight control including launch and 

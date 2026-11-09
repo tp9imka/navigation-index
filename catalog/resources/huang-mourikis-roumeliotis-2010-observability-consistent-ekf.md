@@ -15,4 +15,8 @@ IJRR 29(5) (abstract read). Proves that linearising at the latest estimates give
 
 **Tags:** `fej`, `ekf-consistency`, `observability`
 
+## Referenced by
+
+- [Consistency Analysis and Improvement of Vision-aided Inertial Navigation](../../catalog/resources/hesch-2014-oc-vins-consistency.md) (same_author)
+
 _Indexed by lane(s): innovation-pa-aero-adaptation_

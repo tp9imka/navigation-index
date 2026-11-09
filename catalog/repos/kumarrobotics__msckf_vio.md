@@ -25,6 +25,7 @@ Stereo multi-state constraint Kalman filter VIO designed for fast autonomous fli
 ## Referenced by
 
 - [OpenVINS](../../catalog/repos/rpng__open_vins.md) (alternative_to)
+- [A Benchmark Comparison of Monocular Visual-Inertial Odometry Algorithms for Flying Robots](../../catalog/resources/delmerico-scaramuzza-2018-vio-benchmark-flying-robots.md) (evaluates)
 
 _Indexed by lane(s): slam_
 

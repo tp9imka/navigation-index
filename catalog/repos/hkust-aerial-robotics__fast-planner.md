@@ -25,10 +25,14 @@ HKUST quadrotor planning framework: kinodynamic A* front-end plus B-spline optim
 
 ## Referenced by
 
+- [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) (mentions)
+- [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) (mentions)
 - [FUEL - Fast UAV Exploration](../../catalog/repos/hkust-aerial-robotics__fuel.md) (extends)
 - [KR Autonomous Flight](../../catalog/repos/kumarrobotics__kr_autonomous_flight.md) (alternative_to)
+- [mpl_ros (motion primitive library)](../../catalog/repos/sikang__mpl_ros.md) (alternative_to)
 - [EGO-Planner](../../catalog/repos/zju-fast-lab__ego-planner.md) (extends)
 - [Robust and Efficient Quadrotor Trajectory Generation for Fast Autonomous Flight](../../catalog/resources/zhou-fast-planner-paper.md) (has_code)
+- [RAPTOR: Robust and Perception-aware Trajectory Replanning for Quadrotor Fast Flight](../../catalog/resources/zhou-raptor-tro2021.md) (has_code)
 
 _Indexed by lane(s): planning-gis-c2_
 

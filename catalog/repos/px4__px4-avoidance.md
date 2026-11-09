@@ -22,6 +22,11 @@ Archived ROS nodes for local planning, global planning and safe landing using de
 
 - integrates_with: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
 
+## Referenced by
+
+- [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) (mentions)
+- [Path Planning Interface (PX4 User Guide, marked removed)](../../catalog/resources/px4-path-planning-interface-removed.md) (explains)
+
 _Indexed by lane(s): autopilots_
 
 _GitHub metadata fetched 2026-11-09._

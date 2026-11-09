@@ -22,6 +22,10 @@ Minimal simulation models and tooling for Crazyflie in Webots and Gazebo; the RE
 
 - same_org: [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md)
 
+## Referenced by
+
+- [crazyflie-simulation documentation](../../catalog/resources/bitcraze-crazyflie-simulation-docs.md) (explains)
+
 _Indexed by lane(s): domains-swarm_
 
 _GitHub metadata fetched 2026-11-09._
