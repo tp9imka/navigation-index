@@ -31,6 +31,7 @@ ESP32-based Remote ID transmitter firmware implementing ASTM F3411 broadcast (Bl
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md) (integrates_with)

@@ -24,6 +24,7 @@ Dense matcher combining foundation-model coarse features with fine refinement, r
 
 ## Referenced by
 
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 

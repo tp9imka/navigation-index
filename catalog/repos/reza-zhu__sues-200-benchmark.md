@@ -28,6 +28,7 @@ Multi-height, multi-scene drone-satellite cross-view dataset and evaluation code
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [University-1652 baseline](../../catalog/repos/layumi__university1652-baseline.md) (alternative_to)
 - [SUES-200: A Multi-height Multi-scene Cross-view Image Benchmark Across Drone and Satellite](../../catalog/resources/sues-200-benchmark-2022.md) (has_code)

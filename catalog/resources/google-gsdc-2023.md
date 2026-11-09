@@ -31,6 +31,7 @@ Kaggle competition with raw GNSS and IMU logs from Android phones in cars, score
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)

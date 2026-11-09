@@ -30,6 +30,7 @@ ESP32 firmware and a Python/Flask mapper that capture Remote ID broadcasts over 
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Open Drone ID Core C](../../catalog/repos/opendroneid__opendroneid-core-c.md) (alternative_to)
 - [Drone Remote ID decoder, track table and TAK output](../../catalog/samples/remote-id-to-tak.md) (integrates_with)
 

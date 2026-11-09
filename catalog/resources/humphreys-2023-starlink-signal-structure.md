@@ -25,6 +25,7 @@ Reverse-engineers the Starlink Ku-band downlink as OFDM and identifies synchroni
 
 ## Referenced by
 
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 - [Starlink Based LEO PNT (Munich Satellite Navigation Summit 2025)](../../catalog/resources/humphreys-munich-summit-2025-starlink-pnt.md) (same_author)
 - [The First Carrier Phase Tracking and Positioning Results With Starlink LEO Satellite Signals](../../catalog/resources/kassas-2022-starlink-carrier-phase.md) (cites)

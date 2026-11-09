@@ -29,6 +29,7 @@ ROS and ROS 2 integration for RTAB-Map, exposing SLAM, localization and odometry
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 - [RTAB-Map](../../catalog/repos/introlab__rtabmap.md) (integrates_with)
 

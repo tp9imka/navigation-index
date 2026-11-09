@@ -30,6 +30,7 @@ Learning-based inertial odometry for UAVs that improves feature observability by
 ## Referenced by
 
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [AirIMU](../../catalog/repos/haleqiu__airimu.md) (same_org)
 - [PyPose](../../catalog/repos/pypose__pypose.md) (integrates_with)
 - [AI-IO](../../catalog/repos/sjtu-visys-team__ai-io.md) (alternative_to)

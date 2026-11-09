@@ -28,6 +28,7 @@ Security analysis of DJI drones that reverse-engineers the DroneID broadcast and
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)

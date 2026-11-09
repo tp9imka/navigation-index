@@ -29,6 +29,7 @@ C++ library for accurate geodesic problems, UTM/UPS/MGRS conversions, geoid heig
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [mgrs (Python)](../../catalog/repos/hobuinc__mgrs.md) (alternative_to)

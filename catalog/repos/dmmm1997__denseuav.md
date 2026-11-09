@@ -28,6 +28,7 @@ Dataset and baseline (TIP 2023) for UAV self-positioning in low-altitude urban e
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) (mentions)
 - [University-1652 baseline](../../catalog/repos/layumi__university1652-baseline.md) (alternative_to)

@@ -29,6 +29,7 @@ ROS driver for u-blox receivers that publishes fixes, raw measurements and recei
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [ROS NTRIP client](../../catalog/repos/lord-microstrain__ntrip_client.md) (integrates_with)
 
 _Indexed by lane(s): gnss_

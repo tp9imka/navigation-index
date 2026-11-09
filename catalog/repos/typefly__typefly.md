@@ -30,6 +30,7 @@ LLM-based robot control framework: an OpenAI model turns a natural-language requ
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [DJITelloPy](../../catalog/repos/damiafuentes__djitellopy.md) (integrates_with)
 - [TypeFly: Flying Drones with Large Language Model](../../catalog/resources/typefly-2023.md) (has_code)
 

@@ -30,6 +30,7 @@ ESP32 Remote ID receiver built on opendroneid-core-c and a fork of sxjack's elec
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Drone Remote ID decoder, track table and TAK output](../../catalog/samples/remote-id-to-tak.md) (integrates_with)
 
 _Indexed by lane(s): domains-swarm_

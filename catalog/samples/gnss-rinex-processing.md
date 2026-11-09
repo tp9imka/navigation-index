@@ -27,6 +27,7 @@ Downloads one day of public NOAA NGS CORS RINEX for a rover/base pair 30 km apar
 
 ## Referenced by
 
+- [Cheat sheets: pick one in 30 seconds](../../docs/cheatsheets/README.md) (mentions)
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)

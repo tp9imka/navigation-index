@@ -29,6 +29,7 @@ ROS/ROS 2 node that connects to an NTRIP caster and publishes RTCM corrections, 
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [ublox ROS driver](../../catalog/repos/kumarrobotics__ublox.md) (integrates_with)
 
 _Indexed by lane(s): gnss_

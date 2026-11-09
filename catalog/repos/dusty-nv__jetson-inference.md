@@ -31,6 +31,7 @@ NVIDIA's guide and library for deploying detection, segmentation and depth netwo
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [jetson-containers](../../catalog/repos/dusty-nv__jetson-containers.md) (same_org)
 - [ros_deep_learning](../../catalog/repos/dusty-nv__ros_deep_learning.md) (depends_on)

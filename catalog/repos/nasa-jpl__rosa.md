@@ -31,6 +31,7 @@ NASA JPL's LangChain-based AI agent that lets operators query and command ROS 1 
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [ROS-LLM](../../catalog/repos/auromix__ros-llm.md) (alternative_to)

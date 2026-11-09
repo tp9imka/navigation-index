@@ -31,7 +31,9 @@ Benchmark and code for UAV absolute visual localization under low-altitude, mult
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 - [U2S-CVGL (scale-aware UAV-to-satellite)](../../catalog/repos/uav-avl__u2s-cvgl.md) (same_org)
 - [Exploring the best way for UAV visual localization under Low-altitude Multi-view Observation Condition: a Benchmark](../../catalog/resources/anyvisloc-uav-localization-benchmark-2025.md) (has_code)

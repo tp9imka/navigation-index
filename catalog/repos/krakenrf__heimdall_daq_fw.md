@@ -29,6 +29,7 @@ Coherent multichannel SDR acquisition chain (sync, calibration, decimation) unde
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)

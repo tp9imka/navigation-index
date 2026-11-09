@@ -28,6 +28,7 @@ Dataset with synchronized visual, inertial and raw GNSS measurements released wi
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [GVINS](../../catalog/repos/hkust-aerial-robotics__gvins.md) (evaluated_on)
 

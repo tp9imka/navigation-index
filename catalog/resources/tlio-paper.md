@@ -24,6 +24,7 @@ Combines a network that predicts displacement and uncertainty from IMU data with
 
 ## Referenced by
 
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 
 _Indexed by lane(s): ins-fusion_

@@ -26,4 +26,8 @@ An open catalogue of user-contributed aerial and drone orthomosaics, each stored
 - dataset_for: [Drone frame to orthophoto geolocalization with LightGlue](../../catalog/samples/visual-geolocalization-lightglue.md)
 - uses: [LightGlue](../../catalog/repos/cvg__lightglue.md)
 
+## Referenced by
+
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
+
 _Indexed by lane(s): datasets-used_

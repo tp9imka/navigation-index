@@ -28,6 +28,7 @@ Site repo for MCD, a multi-campus dataset across Asia and Europe with spinning a
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [NTU VIRAL dataset](../../catalog/repos/ntu-aris__ntu_viral_dataset.md) (same_org)
 - [MCD: Diverse Large-Scale Multi-Campus Dataset for Robot Perception](../../catalog/resources/mcd-multi-campus-dataset.md) (has_code)

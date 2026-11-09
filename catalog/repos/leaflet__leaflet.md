@@ -30,6 +30,7 @@ Small, simple JavaScript library for interactive raster/vector maps with a huge 
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [OpenLayers](../../catalog/repos/openlayers__openlayers.md) (alternative_to)

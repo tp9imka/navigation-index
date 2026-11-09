@@ -31,6 +31,8 @@ Car dead reckoning from IMU only, using an invariant EKF whose noise covariances
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 - [Denoise IMU Gyro](../../catalog/repos/mbrossar__denoise-imu-gyro.md) (same_org)
 - [AI-IMU Dead-Reckoning](../../catalog/resources/brossard-ai-imu-dr.md) (has_code)

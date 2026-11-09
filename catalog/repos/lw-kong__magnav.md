@@ -29,8 +29,10 @@ A public submission repository for the JuliaCon 2020 MagNav signal-enhancement c
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md) (extends)
 - [Signal Enhancement for Magnetic Navigation Challenge Problem](../../catalog/resources/afrl-magnav-challenge-2020.md) (has_code)

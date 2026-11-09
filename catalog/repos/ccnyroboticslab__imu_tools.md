@@ -29,6 +29,7 @@ ROS tools for IMUs: Madgwick and complementary orientation filters and an RViz I
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [robot_localization](../../catalog/repos/cra-ros-pkg__robot_localization.md) (integrates_with)
 
 _Indexed by lane(s): ins-fusion_

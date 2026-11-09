@@ -28,6 +28,7 @@ Tools and utilities for the TartanDrive off-road driving dataset from CMU's AirL
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [RELLIS-3D](../../catalog/repos/unmannedlab__rellis-3d.md) (alternative_to)
 
 _Indexed by lane(s): domains-swarm_

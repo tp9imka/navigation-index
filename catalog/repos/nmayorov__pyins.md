@@ -31,6 +31,7 @@ Python package for modelling and analysing inertial navigation systems: strapdow
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [gnss-ins-sim](../../catalog/repos/aceinna__gnss-ins-sim.md) (alternative_to)

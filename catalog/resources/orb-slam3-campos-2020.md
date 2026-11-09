@@ -25,6 +25,7 @@ Describes ORB-SLAM3's tightly integrated visual-inertial SLAM, MAP-based IMU ini
 
 ## Referenced by
 
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 
 _Indexed by lane(s): slam_

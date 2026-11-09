@@ -25,6 +25,7 @@ Learning-free spinning-radar odometry that keeps the strongest returns per azimu
 
 ## Referenced by
 
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 
 _Indexed by lane(s): slam_

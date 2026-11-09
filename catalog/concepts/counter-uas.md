@@ -10,9 +10,10 @@ Detecting, tracking and identifying drones (Remote ID, RF, radar, vision) - defe
 - [Drone Remote ID decoder, track table and TAK output](../../catalog/samples/remote-id-to-tak.md) - Passive airspace awareness from broadcast Remote ID (ASTM F3411 / ASD-STAN EN 4709-002).
 - [Stone Soup radar tracking of two UAVs with JPDA and OSPA](../../catalog/samples/stone-soup-tracking.md) - Simulates two small UAVs observed by a noisy bearing/range radar with clutter and tracks them with Stone Soup's Extended Kalman filter and JPDA data association.
 
-## Guides (3)
+## Guides (4)
 
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) - After this chapter you can run PX4 or ArduPilot in simulation, inject your own position source over MAVLink, configure the estimator to switch away from GNSS, and push your vehicle's position and detections onto a TAK co
+- [Dataset cards](../../docs/dataset-cards/README.md) - Use this when you need recorded data to test a navigation method: which dataset fits, its checked size and license, the download command, and what to fetch before venue Wi-Fi fails.
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) - What a 4-5 person team does from the moment the problem statement drops until H+3, when a walking skeleton should run end to end.
 - [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) - What funders publish as navigation problem statements.
 

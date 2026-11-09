@@ -31,6 +31,7 @@ Fast Rust tile server for PostGIS, MBTiles and PMTiles sources, with tile genera
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [MapLibre GL JS](../../catalog/repos/maplibre__maplibre-gl-js.md) (integrates_with)
 - [TileServer GL](../../catalog/repos/maptiler__tileserver-gl.md) (alternative_to)

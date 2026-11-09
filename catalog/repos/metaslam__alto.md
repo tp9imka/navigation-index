@@ -24,6 +24,7 @@ Placeholder repo for ALTO, an aerial-view, large-scale, terrain-oriented dataset
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [aero-vloc](../../catalog/repos/prime-slam__aero-vloc.md) (evaluated_on)
 - [ALTO: A Large-Scale Dataset for UAV Visual Place Recognition and Localization](../../catalog/resources/alto-dataset-2022.md) (has_code)

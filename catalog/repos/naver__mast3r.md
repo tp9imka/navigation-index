@@ -25,6 +25,7 @@ Matching grounded in 3D: predicts dense correspondences and 3D pointmaps from im
 ## Referenced by
 
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [vismatch (image-matching-models)](../../catalog/repos/gmberton__vismatch.md) (integrates_with)
 - [Grounding Image Matching in 3D with MASt3R](../../catalog/resources/mast3r-2024.md) (has_code)
 

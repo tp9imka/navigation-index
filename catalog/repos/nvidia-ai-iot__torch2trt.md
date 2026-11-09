@@ -29,6 +29,7 @@ Converts PyTorch models to TensorRT engines with a single call, aimed at Jetson 
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [TensorRT (open-source components)](../../catalog/repos/nvidia__tensorrt.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_

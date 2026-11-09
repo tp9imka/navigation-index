@@ -25,6 +25,7 @@ German innovation agency challenge for long-range autonomous flight without GNSS
 
 ## Referenced by
 
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [Kilometer-Scale GNSS-Denied UAV Navigation via Heightmap Gradients: A Winning System from the SPRIN-D Challenge](../../catalog/resources/sprind-heightmap-gradients-2025.md) (part_of)
 
 _Indexed by lane(s): round3-expansion_

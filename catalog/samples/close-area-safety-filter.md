@@ -27,8 +27,10 @@ Harness that puts a safety filter between a planner and the vehicle in the share
 ## Referenced by
 
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) (mentions)
+- [Research rounds: which one applies, and the innovation story per brief](../../docs/research/README.md) (mentions)
 - [Demo script: close-area A to B](../../templates/demo-script-close-area.md) (mentions)
 - [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) (mentions)
 

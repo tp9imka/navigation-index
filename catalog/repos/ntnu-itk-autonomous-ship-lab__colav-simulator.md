@@ -31,6 +31,7 @@ Python framework from the NTNU Autoship centre for simulating and evaluating aut
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Aeolus Ocean](../../catalog/repos/aavek__aeolus-ocean.md) (alternative_to)

@@ -33,6 +33,7 @@ Gateway that takes drone Remote ID / DroneID detections from WarDragon-style sen
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [WarDragon docs](../../catalog/repos/alphafox02__wardragon.md) (same_org)
 - [FreeTAKServer](../../catalog/repos/freetakteam__freetakserver.md) (integrates_with)

@@ -30,6 +30,7 @@ x-io Technologies' C AHRS library (revised Madgwick-style algorithm) with gyro o
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [MadgwickAHRS (Arduino)](../../catalog/repos/arduino-libraries__madgwickahrs.md) (alternative_to)

@@ -29,6 +29,7 @@ Code for RIDI, which regresses velocity from smartphone IMU data with learned mo
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): gap-fill_

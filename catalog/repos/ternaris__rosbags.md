@@ -29,6 +29,7 @@ Pure Python ROS 1 and ROS 2 bag readers, writers, converters and type system. Th
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [MCAP](../../catalog/repos/foxglove__mcap.md) (integrates_with)
 - [Rosbags documentation: read and convert ROS bags without ROS](../../catalog/resources/rosbags-documentation.md) (explains)
 - [Shared pose recording and replay: JSONL plus optional MCAP](../../catalog/samples/recording-replay.md) (explains)

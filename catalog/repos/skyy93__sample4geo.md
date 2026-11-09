@@ -29,6 +29,8 @@ Cross-view geo-localization training with hard negative sampling, reporting stro
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [University-1652 baseline](../../catalog/repos/layumi__university1652-baseline.md) (evaluated_on)
 - [Game4Loc / GTA-UAV](../../catalog/repos/yux1angji__gta-uav.md) (alternative_to)
 - [Sample4Geo: Hard Negative Sampling For Cross-View Geo-Localisation](../../catalog/resources/sample4geo-2023.md) (has_code)

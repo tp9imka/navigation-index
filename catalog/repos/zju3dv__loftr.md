@@ -29,6 +29,7 @@ Detector-free transformer matcher producing dense-ish correspondences, good on l
 ## Referenced by
 
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [RoMa](../../catalog/repos/parskatt__roma.md) (alternative_to)
 
 _Indexed by lane(s): alt-nav_

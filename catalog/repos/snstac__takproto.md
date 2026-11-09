@@ -29,6 +29,7 @@ Encode and decode TAK protobuf (TAK Protocol v1) packets, including mesh and str
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [PyTAK](../../catalog/repos/snstac__pytak.md) (integrates_with)

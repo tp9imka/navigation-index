@@ -30,6 +30,7 @@ MCP server plus QGIS plugin that lets an LLM create projects, load layers, run p
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [GIS MCP Server](../../catalog/repos/mahdin75__gis-mcp.md) (alternative_to)
 - [qgis-mcp (nkarasiak)](../../catalog/repos/nkarasiak__qgis-mcp.md) (alternative_to)
 - [Model Context Protocol specification](../../catalog/resources/mcp-specification.md) (explains)

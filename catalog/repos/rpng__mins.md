@@ -31,6 +31,8 @@ Multi-sensor aided inertial navigation that fuses IMU with camera, LiDAR, GNSS a
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [OpenVINS](../../catalog/repos/rpng__open_vins.md) (extends)

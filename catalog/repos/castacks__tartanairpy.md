@@ -24,6 +24,7 @@ Python package for downloading, customizing and iterating the TartanAir-V2 synth
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 - [TartanAir: A Dataset to Push the Limits of Visual SLAM](../../catalog/resources/cmu-tartanair-dataset.md) (has_code)

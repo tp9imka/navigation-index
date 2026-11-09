@@ -30,6 +30,7 @@ Landing repository for Luxonis OAK cameras, which run neural networks and stereo
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [DepthAI Core](../../catalog/repos/luxonis__depthai-core.md) (same_org)
 - [DepthAI ROS](../../catalog/repos/luxonis__depthai-ros.md) (depends_on)

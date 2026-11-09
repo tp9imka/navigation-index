@@ -31,6 +31,7 @@ Place recognition descriptor using optimal-transport aggregation of DINOv2 featu
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [AnyLoc](../../catalog/repos/anyloc__anyloc.md) (alternative_to)
 - [VPR methods evaluation](../../catalog/repos/gmberton__vpr-methods-evaluation.md) (integrates_with)

@@ -30,6 +30,7 @@ Python CLI and library utilities for reading, parsing and broadcasting GNSS stre
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [PyGPSClient](../../catalog/repos/semuconsulting__pygpsclient.md) (depends_on)

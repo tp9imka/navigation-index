@@ -22,6 +22,7 @@ Handheld lidar plus stereo and multi-camera sequences around New College, Oxford
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 
 _Indexed by lane(s): sim-data_

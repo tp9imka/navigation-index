@@ -32,6 +32,7 @@ Long tutorial report covering quaternion conventions, rotation perturbations and
 ## Referenced by
 
 - [Learning paths](../../docs/learning-paths.md) (mentions)
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 - [A micro Lie theory for state estimation in robotics](../../catalog/resources/sola-micro-lie-theory.md) (same_author)
 

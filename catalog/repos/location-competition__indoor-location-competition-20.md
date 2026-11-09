@@ -24,6 +24,7 @@ Data and baseline code from Microsoft Research's Indoor Location Competition 2.0
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): gap-fill_

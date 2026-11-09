@@ -26,6 +26,7 @@ Landmark ION GNSS 2008 paper that built a receiver-based civil GPS spoofer and a
 
 ## Referenced by
 
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 - [GNSS Spoofing and Detection](../../catalog/resources/psiaki-humphreys-2016-gnss-spoofing-detection.md) (same_author)

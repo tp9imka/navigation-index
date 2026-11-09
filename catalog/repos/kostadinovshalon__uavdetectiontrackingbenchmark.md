@@ -28,6 +28,7 @@ Code and configs for benchmarking drone detection and tracking across Anti-UAV, 
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Anti-UAV](../../catalog/repos/zhaoj9014__anti-uav.md) (evaluated_on)

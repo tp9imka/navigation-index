@@ -29,6 +29,7 @@ Foundations and Trends monograph (free author PDF) explaining SLAM and sensor fu
 ## Referenced by
 
 - [Learning paths](../../docs/learning-paths.md) (mentions)
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 - [Factor Graphs and GTSAM: A Hands-on Introduction](../../catalog/resources/gtsam-intro-tutorial.md) (same_author)
 - [iSAM2: Incremental Smoothing and Mapping Using the Bayes Tree](../../catalog/resources/kaess-isam2.md) (same_author)

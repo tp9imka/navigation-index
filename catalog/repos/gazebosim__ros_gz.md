@@ -30,6 +30,7 @@ Bridge packages that relay topics, services and clock between Gazebo Sim transpo
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Gazebo Sim (gz-sim)](../../catalog/repos/gazebosim__gz-sim.md) (integrates_with)
 
 _Indexed by lane(s): sim-data_

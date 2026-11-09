@@ -31,6 +31,7 @@ Message definitions (XML dialects) and the pymavlink-based generator for the MAV
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [node-mavlink](../../catalog/repos/ardupilot__node-mavlink.md) (depends_on)
 - [pymavlink](../../catalog/repos/ardupilot__pymavlink.md) (depends_on)

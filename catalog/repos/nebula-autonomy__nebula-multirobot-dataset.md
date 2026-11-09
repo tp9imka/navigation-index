@@ -28,6 +28,7 @@ Index for CoSTAR's multi-robot SubT lidar datasets (Tunnel, Urban, Finals Prelim
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [LAMP (NeBula multi-robot SLAM)](../../catalog/repos/nebula-autonomy__lamp.md) (evaluated_on)
 
 _Indexed by lane(s): defense-context_

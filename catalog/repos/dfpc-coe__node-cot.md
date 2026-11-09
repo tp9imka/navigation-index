@@ -30,6 +30,7 @@ JavaScript/TypeScript library for parsing, building and converting Cursor-on-Tar
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [CloudTAK](../../catalog/repos/dfpc-coe__cloudtak.md) (depends_on)
 - [cotlib (Go)](../../catalog/repos/nervsystems__cotlib.md) (alternative_to)

@@ -28,6 +28,7 @@ Documentation repository for HoloOcean, BYU's Unreal-based underwater simulator 
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Stonefish](../../catalog/repos/patrykcieslak__stonefish.md) (alternative_to)

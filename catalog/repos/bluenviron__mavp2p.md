@@ -30,6 +30,7 @@ Single-binary Go MAVLink router/proxy supporting serial, UDP and TCP with dedupl
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [gomavlib](../../catalog/repos/bluenviron__gomavlib.md) (same_org)
 - [mavlink-router](../../catalog/repos/mavlink-router__mavlink-router.md) (alternative_to)

@@ -25,5 +25,6 @@ Formulates LEO Doppler positioning as an optimization solvable by semidefinite r
 ## Referenced by
 
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 
 _Indexed by lane(s): alt-nav_

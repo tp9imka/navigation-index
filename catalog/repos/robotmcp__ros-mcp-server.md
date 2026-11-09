@@ -32,6 +32,7 @@ Model Context Protocol server that exposes ROS topics, services and parameters (
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [ROSA (ROS Agent)](../../catalog/repos/nasa-jpl__rosa.md) (alternative_to)

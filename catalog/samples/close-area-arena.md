@@ -29,6 +29,8 @@ Small deterministic simulator that every close-area A=>B approach in the hub is 
 ## Referenced by
 
 - [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) (mentions)
+- [Cheat sheets: pick one in 30 seconds](../../docs/cheatsheets/README.md) (mentions)
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
 - [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
@@ -38,6 +40,7 @@ Small deterministic simulator that every close-area A=>B approach in the hub is 
 - [Docs map](../../docs/README.md) (mentions)
 - [08. Crazyflie sensing limits: what the planner and safety filter can rely on](../../docs/research/close-area-nav/08-crazyflie-sensing-limits.md) (mentions)
 - [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) (mentions)
+- [Research rounds: which one applies, and the innovation story per brief](../../docs/research/README.md) (mentions)
 - [Demo dashboard](../../templates/demo-dashboard/README.md) (mentions)
 - [drivers: Adapter implementations for real platforms](../../templates/drone-adapter/drivers/README.md) (mentions)
 - [flight-repo: close-area A=>B flight loop starter](../../templates/flight-repo/README.md) (mentions)

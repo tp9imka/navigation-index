@@ -31,6 +31,7 @@ Python library for time and frequency stability statistics: Allan, modified Alla
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 - [gr-allan](../../catalog/repos/jmfriedt__gr-allan.md) (depends_on)
 - [TAPR TICC](../../catalog/repos/tapr__ticc.md) (integrates_with)

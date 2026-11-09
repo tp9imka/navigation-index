@@ -29,6 +29,7 @@ ROS 2 wrapper package that exposes ORB-SLAM3 as nodes for monocular, stereo and 
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 - [ORB-SLAM3](../../catalog/repos/uz-slamlab__orb_slam3.md) (integrates_with)
 

@@ -27,6 +27,7 @@ Derives IMU preintegration on the SO(3) manifold with bias-correction Jacobians,
 ## Referenced by
 
 - [Learning paths](../../docs/learning-paths.md) (mentions)
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 
 _Indexed by lane(s): ins-fusion_

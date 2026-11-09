@@ -30,6 +30,7 @@ LiDAR SLAM that adds loop closure and pose-graph optimization on top of KISS-ICP
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [KISS-ICP](../../catalog/repos/prbonn__kiss-icp.md) (extends)

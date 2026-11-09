@@ -31,6 +31,7 @@ Cross-platform Python GUI GNSS client that displays and configures receivers ove
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [pyubx2](../../catalog/repos/semuconsulting__pyubx2.md) (integrates_with)

@@ -27,4 +27,8 @@ ADS-B Exchange publishes its complete global feed for the 1st day of each month 
 - has_code: [readsb](../../catalog/repos/wiedehopf__readsb.md)
 - has_code: [ADSBCOT](../../catalog/repos/snstac__adsbcot.md)
 
+## Referenced by
+
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
+
 _Indexed by lane(s): datasets-used_

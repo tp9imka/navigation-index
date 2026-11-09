@@ -30,6 +30,7 @@ Python and Java bindings for the OpenSky Network REST API for live and recent ai
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [traffic](../../catalog/repos/xoolive__traffic.md) (integrates_with)
 

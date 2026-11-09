@@ -28,4 +28,8 @@ Daily zip files, one CSV per UTC day, holding every AIS report received by the D
 - has_code: [pyais](../../catalog/repos/m0r13n__pyais.md)
 - uses: [ITU-R M.1371-6 - Technical characteristics for VHF automatic identification system using time division multiple access in the maritime mobile service](../../catalog/resources/itu-r-m1371-ais.md)
 
+## Referenced by
+
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
+
 _Indexed by lane(s): datasets-used_

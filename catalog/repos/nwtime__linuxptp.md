@@ -34,6 +34,7 @@ The standard Linux implementation of IEEE 1588 PTP: ptp4l (boundary/ordinary/tra
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 - [flexPTP](../../catalog/repos/epagris__flexptp.md) (integrates_with)

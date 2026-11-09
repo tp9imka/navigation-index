@@ -30,6 +30,7 @@ Download, model and analyze street networks and other OSM features as NetworkX g
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [OpenStreetMap data via the Overpass API](../../catalog/resources/openstreetmap-overpass-api.md) (has_code)

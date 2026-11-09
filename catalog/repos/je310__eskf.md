@@ -28,6 +28,7 @@ Error-state Kalman filter implementation following Sola's quaternion ESKF formul
 
 ## Referenced by
 
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [ESKF ROS (EliaTarasov)](../../catalog/repos/eliatarasov__eskf.md) (alternative_to)
 - [Quaternion kinematics for the error-state Kalman filter](../../catalog/resources/sola-quaternion-kinematics-eskf.md) (has_code)
 

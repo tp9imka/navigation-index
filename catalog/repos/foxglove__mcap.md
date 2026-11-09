@@ -29,6 +29,7 @@ Open container format and libraries for timestamped, heterogeneous robotics logs
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Rerun](../../catalog/repos/rerun-io__rerun.md) (integrates_with)
 - [Rosbags](../../catalog/repos/ternaris__rosbags.md) (integrates_with)
 - [MCAP guides and format introduction](../../catalog/resources/mcap-guides.md) (explains)

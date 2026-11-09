@@ -29,6 +29,7 @@ Replaces the close-area-arena A* carrot follower with a linear MPC path follower
 
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
+- [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): samples_

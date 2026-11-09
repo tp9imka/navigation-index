@@ -21,6 +21,7 @@ Analyzes positioning from carrier Doppler measurements of a large LEO constellat
 
 ## Referenced by
 
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 - [Initialization-Free LEO Doppler Positioning via Semidefinite Relaxation: A Cold-Start Approach](../../catalog/resources/leo-doppler-cold-start-2025.md) (cites)
 - [Pilots and Other Predictable Elements of the Starlink Ku-Band Downlink](../../catalog/resources/qin-psiaki-2026-starlink-pilots.md) (same_author)

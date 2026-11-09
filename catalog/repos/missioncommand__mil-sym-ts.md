@@ -29,6 +29,7 @@ TypeScript/JavaScript renderer for MIL-STD-2525 (D and later) military symbology
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [NATO Joint Military Symbology (APP-6) - overview](../../catalog/resources/app-6-joint-military-symbology.md) (has_code)
 - [MIL-STD-2525 Joint Military Symbology - overview](../../catalog/resources/mil-std-2525-overview.md) (has_code)
 

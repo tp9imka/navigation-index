@@ -22,6 +22,10 @@ Multi-modal, multi-scenario ground robot dataset from SJTU with cameras, lidar, 
 
 **Domains:** ground
 
+## Referenced by
+
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
+
 _Indexed by lane(s): sim-data_
 
 _GitHub metadata fetched 2026-11-09._

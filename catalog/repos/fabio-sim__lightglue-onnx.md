@@ -30,6 +30,7 @@ ONNX export and inference of LightGlue matching with SuperPoint, DISK and ALIKED
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [TensorRT (open-source components)](../../catalog/repos/nvidia__tensorrt.md) (integrates_with)

@@ -30,7 +30,9 @@ Landing page for CFEAR, learning-free spinning-radar odometry that filters retur
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [TBV Radar SLAM](../../catalog/repos/dan11003__tbv_slam_public.md) (extends)

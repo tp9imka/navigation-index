@@ -22,6 +22,7 @@ Survey of deep-learning approaches to UAV absolute visual localization against r
 ## Referenced by
 
 - [Learning paths](../../docs/learning-paths.md) (mentions)
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 
 _Indexed by lane(s): alt-nav_

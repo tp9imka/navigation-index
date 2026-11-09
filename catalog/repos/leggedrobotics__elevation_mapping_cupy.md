@@ -31,6 +31,7 @@ GPU-accelerated elevation and traversability mapping from ETH Zurich, supporting
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 - [grid_map](../../catalog/repos/anybotics__grid_map.md) (integrates_with)
 - [elevation_mapping](../../catalog/repos/leggedrobotics__elevation_mapping.md) (alternative_to)

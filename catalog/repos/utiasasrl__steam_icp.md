@@ -29,6 +29,7 @@ Continuous-time lidar, radar, lidar-inertial and radar-inertial odometry built o
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Yeti radar odometry](../../catalog/repos/keenan-burnett__yeti_radar_odometry.md) (alternative_to)

@@ -25,6 +25,7 @@ SDK for the Oxford RobotCar dataset with loaders and projection tools.
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Yeti radar odometry](../../catalog/repos/keenan-burnett__yeti_radar_odometry.md) (evaluated_on)
 - [Oxford RobotCar Dataset](../../catalog/resources/oxford-robotcar-dataset.md) (has_code)

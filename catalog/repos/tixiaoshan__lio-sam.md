@@ -32,6 +32,7 @@ Tightly coupled LiDAR-inertial odometry via factor-graph smoothing, with optiona
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [GTSAM](../../catalog/repos/borglab__gtsam.md) (depends_on)

@@ -28,6 +28,7 @@ Describes the winning SPRIN-D Fully Autonomous Flight system: LiDAR local height
 
 ## Referenced by
 
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [SPRIND Fully Autonomous Flight challenge](../../catalog/resources/sprind-fully-autonomous-flight.md) (explains)
 - [Heightmap-gradient particle filter on real DEM and 1 m LiDAR (SPRIN-D CTU method) vs TERCOM](../../catalog/samples/terrain-heightmap-pf.md) (explains)
 

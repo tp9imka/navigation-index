@@ -25,6 +25,7 @@ Opportunistic navigation using Starlink downlink signals without cooperation fro
 
 ## Referenced by
 
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [Xona Space Systems Pulsar LEO PNT constellation](../../catalog/resources/xona-pulsar-leo-pnt.md) (cites)
 - [UAV Waypoint Opportunistic Navigation in GNSS-Denied Environments](../../catalog/resources/yang-kassas-2022-uav-waypoint-opportunistic-navigation.md) (same_author)
 

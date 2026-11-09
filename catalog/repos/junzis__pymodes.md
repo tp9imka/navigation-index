@@ -31,6 +31,7 @@ Python decoder for Mode S and ADS-B messages including Comm-B / EHS fields, with
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [traffic](../../catalog/repos/xoolive__traffic.md) (depends_on)
 - [The 1090 Megahertz Riddle: A Guide to Decoding Mode S and ADS-B Signals](../../catalog/resources/junzis-1090mhz-riddle.md) (has_code)

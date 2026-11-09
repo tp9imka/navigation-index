@@ -28,6 +28,7 @@ MIT dataset of aggressive indoor quadrotor flights with real IMU and motor data 
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [FlightGoggles](../../catalog/repos/mit-aera__flightgoggles.md) (integrates_with)

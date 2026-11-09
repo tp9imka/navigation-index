@@ -34,6 +34,7 @@ NTP client and server that also disciplines the system clock from reference cloc
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 - [Time Pi](../../catalog/repos/geerlingguy__time-pi.md) (depends_on)

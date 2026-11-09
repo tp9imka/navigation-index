@@ -29,6 +29,7 @@ Raw GNSS measurement logs from Android phones and smartwatches recorded under sp
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Export control and ethics](../../docs/export-control-and-ethics.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)

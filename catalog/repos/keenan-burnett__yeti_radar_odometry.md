@@ -27,6 +27,10 @@ Radar odometry for Navtech spinning radar that compensates motion distortion and
 - evaluated_on: [Oxford RobotCar SDK](../../catalog/repos/ori-mrg__robotcar-dataset-sdk.md)
 - alternative_to: [STEAM-ICP](../../catalog/repos/utiasasrl__steam_icp.md)
 
+## Referenced by
+
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
+
 _Indexed by lane(s): gap-fill_
 
 _GitHub metadata fetched 2026-11-09._

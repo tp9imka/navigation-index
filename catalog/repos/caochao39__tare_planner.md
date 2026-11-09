@@ -31,6 +31,7 @@ Hierarchical exploration planner from CMU's Team Explorer, which earned the most
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [CMU Autonomous Exploration Development Environment](../../catalog/repos/hongbiaoz__autonomous_exploration_development_environment.md) (integrates_with)
 - [DARPA SubT Virtual Challenge](../../catalog/repos/osrf__subt.md) (alternative_to)
 

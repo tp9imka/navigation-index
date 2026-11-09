@@ -30,6 +30,7 @@ Tight Learned Inertial Odometry: a network regresses displacement and uncertaint
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [RIDI](../../catalog/repos/higerra__ridi_imu.md) (alternative_to)

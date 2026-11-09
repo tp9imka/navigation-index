@@ -28,4 +28,8 @@ Copernicus Sentinel-1 C-band SAR Ground Range Detected scenes mirrored as Cloud-
 - has_code: [pystac-client](../../catalog/repos/stac-utils__pystac-client.md)
 - same_author: [Copernicus DEM on AWS Open Data](../../catalog/resources/copernicus-dem-aws.md)
 
+## Referenced by
+
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
+
 _Indexed by lane(s): datasets-used_

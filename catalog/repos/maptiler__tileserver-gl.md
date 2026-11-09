@@ -31,6 +31,7 @@ Vector and raster tile server that serves MBTiles/PMTiles with GL styles and ren
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [MapLibre GL JS](../../catalog/repos/maplibre__maplibre-gl-js.md) (integrates_with)
 - [Martin](../../catalog/repos/maplibre__martin.md) (alternative_to)
 - [Planetiler](../../catalog/repos/onthegomap__planetiler.md) (integrates_with)

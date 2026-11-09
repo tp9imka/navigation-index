@@ -28,6 +28,7 @@ Python library for event-based datasets and transforms, in the style of torchvis
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [OpenEB](../../catalog/repos/prophesee-ai__openeb.md) (integrates_with)
 
 _Indexed by lane(s): gap-fill_

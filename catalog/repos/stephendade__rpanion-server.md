@@ -31,6 +31,7 @@ Web-based companion-computer manager for MAVLink vehicles: telemetry routing, vi
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [BlueOS](../../catalog/repos/bluerobotics__blueos.md) (alternative_to)
 
 _Indexed by lane(s): autopilots_

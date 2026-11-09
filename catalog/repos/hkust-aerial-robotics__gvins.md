@@ -30,6 +30,7 @@ Tightly coupled GNSS-visual-inertial estimator that fuses raw GNSS pseudorange a
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [gnss_comm](../../catalog/repos/hkust-aerial-robotics__gnss_comm.md) (same_org)
 - [GVINS dataset](../../catalog/repos/hkust-aerial-robotics__gvins-dataset.md) (evaluated_on)

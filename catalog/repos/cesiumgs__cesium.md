@@ -31,6 +31,7 @@ WebGL 3D globe and map library with terrain, 3D Tiles, time-dynamic data (CZML) 
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Cesium Terrain Builder](../../catalog/repos/geo-data__cesium-terrain-builder.md) (integrates_with)

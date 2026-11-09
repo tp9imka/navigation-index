@@ -28,6 +28,7 @@ Optimization-based monocular visual-inertial estimator with sliding-window bundl
 
 ## Referenced by
 
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [VINS-Fusion](../../catalog/repos/hkust-aerial-robotics__vins-fusion.md) (extends)
 - [MVIO - monocular visual-inertial odometry in C++](../../catalog/repos/rusaub__mvio.md) (alternative_to)
 - [VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator](../../catalog/resources/vins-mono-qin-2017.md) (has_code)

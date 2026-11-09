@@ -30,6 +30,7 @@ Build system and prebuilt containers for ML on Jetson (PyTorch, ROS, LLMs, VLMs)
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Hello AI World (jetson-inference)](../../catalog/repos/dusty-nv__jetson-inference.md) (same_org)
 - [NVIDIA Jetson AI Lab](../../catalog/resources/nvidia-jetson-ai-lab.md) (has_code)
 

@@ -27,6 +27,10 @@ C++ core library and Python bindings for Luxonis OAK cameras: on-device stereo d
 
 - same_org: [DepthAI](../../catalog/repos/luxonis__depthai.md)
 
+## Referenced by
+
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
+
 _Indexed by lane(s): coordinator_
 
 _GitHub metadata fetched 2026-11-09._

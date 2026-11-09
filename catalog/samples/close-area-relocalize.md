@@ -29,6 +29,7 @@ Relocalizer for the close-area arena. After a detected VIO loss (reset_counter c
 ## Referenced by
 
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): samples_

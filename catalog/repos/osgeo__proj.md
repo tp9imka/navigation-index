@@ -30,6 +30,7 @@ Cartographic projection and coordinate transformation library with datum grids, 
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [GDAL](../../catalog/repos/osgeo__gdal.md) (depends_on)
 - [pyproj](../../catalog/repos/pyproj4__pyproj.md) (depends_on)

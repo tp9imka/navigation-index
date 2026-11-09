@@ -28,6 +28,7 @@ Site repo for NTU VIRAL, an aerial dataset with lidars, cameras, IMU and UWB ran
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [MCD: Multi-Campus Dataset](../../catalog/repos/mcdviral__mcdviral.github.io.md) (same_org)

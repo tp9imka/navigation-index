@@ -25,6 +25,7 @@ AFIT dissertation establishing airborne magnetic anomaly navigation methods and 
 
 ## Referenced by
 
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 - [Absolute Positioning Using the Earth's Magnetic Anomaly Field](../../catalog/resources/canciani-raquet-2016-absolute-positioning-magnetic-anomaly.md) (same_author)
 - [Magnetic Sensors in Flight Tests as Alternative PNT to GNSS](../../catalog/resources/insidegnss-magnav-flight-tests-2020.md) (cites)

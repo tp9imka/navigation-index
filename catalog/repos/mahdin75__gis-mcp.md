@@ -29,6 +29,7 @@ MCP server giving LLMs geospatial operations through Shapely, PyProj, GeoPandas 
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [LLM-Geo (Autonomous GIS)](../../catalog/repos/gladcolor__llm-geo.md) (alternative_to)
 - [QGIS MCP](../../catalog/repos/jjsantos01__qgis_mcp.md) (alternative_to)
 

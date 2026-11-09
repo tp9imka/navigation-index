@@ -27,6 +27,7 @@ Introduces the Bayes tree and the iSAM2 algorithm for incremental nonlinear smoo
 ## Referenced by
 
 - [Learning paths](../../docs/learning-paths.md) (mentions)
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 
 _Indexed by lane(s): ins-fusion_

@@ -29,6 +29,7 @@ Python parser for RTCM 3 messages (MSM observations, station info, ephemerides, 
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [pygnssutils](../../catalog/repos/semuconsulting__pygnssutils.md) (depends_on)

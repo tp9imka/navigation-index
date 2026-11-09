@@ -26,6 +26,10 @@ Outlier-robust radar odometry using graduated non-convexity-style estimation on 
 
 - alternative_to: [CFEAR Radarodometry](../../catalog/repos/dan11003__cfear_radarodometry.md)
 
+## Referenced by
+
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
+
 _Indexed by lane(s): gap-fill_
 
 _GitHub metadata fetched 2026-11-09._

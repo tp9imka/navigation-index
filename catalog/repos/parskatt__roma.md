@@ -32,7 +32,9 @@ Robust dense feature matcher (CVPR 2024) estimating pixel-dense warps with certa
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) (mentions)
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [vismatch (image-matching-models)](../../catalog/repos/gmberton__vismatch.md) (integrates_with)
 - [AnyVisLoc benchmark](../../catalog/repos/uav-avl__benchmark.md) (evaluated_on)

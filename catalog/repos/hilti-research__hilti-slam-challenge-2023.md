@@ -28,6 +28,7 @@ Repository for the 2023 Hilti SLAM Challenge, including multi-session sequences.
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Hilti SLAM Challenge 2022](../../catalog/repos/hilti-research__hilti-slam-challenge-2022.md) (same_org)

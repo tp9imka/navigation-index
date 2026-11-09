@@ -31,6 +31,7 @@ Python library for parsing and generating NMEA 0183 GNSS sentences, including pr
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [pynmea2](../../catalog/repos/knio__pynmea2.md) (alternative_to)
 - [NMEA Revealed (gpsd project)](../../catalog/resources/gpsd-nmea-revealed.md) (has_code)

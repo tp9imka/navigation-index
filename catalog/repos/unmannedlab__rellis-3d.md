@@ -28,6 +28,7 @@ Multi-modal off-road dataset from Texas A&M with lidar, camera, IMU and GNSS plu
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [TartanDrive](../../catalog/repos/castacks__tartan_drive.md) (alternative_to)
 - [RELLIS-3D Dataset: Data, Benchmarks and Analysis](../../catalog/resources/rellis3d-paper.md) (has_code)
 

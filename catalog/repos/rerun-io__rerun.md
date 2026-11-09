@@ -29,6 +29,7 @@ SDKs and viewer for recording and inspecting multimodal robotics data on synchro
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [MCAP](../../catalog/repos/foxglove__mcap.md) (integrates_with)
 - [Rerun overview and multimodal robotics data guide](../../catalog/resources/rerun-overview.md) (explains)
 - [Shared pose recording and replay: JSONL plus optional MCAP](../../catalog/samples/recording-replay.md) (explains)

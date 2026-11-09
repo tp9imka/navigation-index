@@ -29,6 +29,7 @@ Relocalization in a prebuilt map using FAST-LIO odometry plus global scan-to-map
 
 ## Referenced by
 
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [FAST-LIO / FAST-LIO2](../../catalog/repos/hku-mars__fast_lio.md) (extends)
 - [Close-area relocalization after VIO loss: scan-to-map pose hypotheses, ratio + persistence acceptance, hover until one wins](../../catalog/samples/close-area-relocalize.md) (explains)
 

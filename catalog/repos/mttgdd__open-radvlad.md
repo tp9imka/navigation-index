@@ -29,6 +29,7 @@ Fast radar place recognition using VLAD-style aggregation over radar polar scans
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [ReFeree](../../catalog/repos/sparolab__referee.md) (alternative_to)
 
 _Indexed by lane(s): gap-fill_

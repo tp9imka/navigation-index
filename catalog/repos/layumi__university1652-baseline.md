@@ -32,6 +32,8 @@ Dataset and baseline code for drone-based geo-localization across drone, satelli
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
+- [Paper digests](../../docs/paper-digests/README.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 - [DenseUAV](../../catalog/repos/dmmm1997__denseuav.md) (alternative_to)
 - [FSRA](../../catalog/repos/dmmm1997__fsra.md) (evaluated_on)

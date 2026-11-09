@@ -22,6 +22,7 @@ Same routes captured with Ouster, Aeva, Livox and Velodyne lidars to test place 
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 
 _Indexed by lane(s): sim-data_

@@ -27,4 +27,8 @@ A real 76-minute Septentrio SBF GALRawINAV recording of live Galileo E1 I/NAV pa
 - dataset_for: [Galileo OSNMA authentication as a spoofing defence: real recording, file-level attacks, scorer adapter](../../catalog/samples/osnma-authentication.md)
 - uses: [Galileo Open Service Navigation Message Authentication (OSNMA) - service page](../../catalog/resources/galileo-osnma-service-page.md)
 
+## Referenced by
+
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
+
 _Indexed by lane(s): datasets-used_

@@ -24,6 +24,7 @@ Community-curated list of event-camera papers, datasets, drivers, simulators and
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Ultimate SLAM](../../catalog/repos/uzh-rpg__rpg_ultimate_slam_open.md) (same_org)
 - [Event-based Vision: A Survey](../../catalog/resources/gallego-event-vision-survey-2019.md) (part_of)
 

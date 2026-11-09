@@ -28,6 +28,7 @@ PyTorch implementation of a cross-view geo-localization method that pools featur
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [University-1652 baseline](../../catalog/repos/layumi__university1652-baseline.md) (evaluated_on)
 
 _Indexed by lane(s): alt-nav_

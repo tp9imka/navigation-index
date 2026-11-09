@@ -31,6 +31,7 @@ USDA National Agriculture Imagery Program leaf-on orthophotos (RGB + NIR) of the
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [OpenDroneMap Aukerman Park eBee image set](../../catalog/resources/odm-aukerman-ebee-dataset.md) (uses)
 - [USGS 3DEP seamless DEMs on Microsoft Planetary Computer](../../catalog/resources/usgs-3dep-planetary-computer.md) (same_author)
 

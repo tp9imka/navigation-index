@@ -31,7 +31,9 @@ Official repository of the Anti-UAV challenge and benchmark for detecting and tr
 
 ## Referenced by
 
+- [Dataset cards](../../docs/dataset-cards/README.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Integration cards](../../docs/integration-cards/README.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [UAV Detection and Tracking Benchmark](../../catalog/repos/kostadinovshalon__uavdetectiontrackingbenchmark.md) (evaluated_on)
 - [Ultralytics YOLO](../../catalog/repos/ultralytics__ultralytics.md) (evaluated_on)
