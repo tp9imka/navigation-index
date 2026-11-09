@@ -1034,6 +1034,20 @@
    "size_complete": false
   },
   {
+   "id": "pip:close-area-benchmark",
+   "type": "pip",
+   "tier": "standard",
+   "license": "per package (see PyPI metadata)",
+   "source": "samples/close-area-benchmark/requirements.txt",
+   "requirements": [
+    "-r ../close-area-arena/requirements.txt",
+    "osqp>=1.0"
+   ],
+   "vcs": [],
+   "size": null,
+   "size_complete": false
+  },
+  {
    "id": "pip:close-area-moving-obstacles",
    "type": "pip",
    "tier": "standard",

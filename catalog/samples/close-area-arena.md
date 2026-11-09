@@ -46,6 +46,7 @@ Small deterministic simulator that every close-area A=>B approach in the hub is 
 - [flight-repo: close-area A=>B flight loop starter](../../templates/flight-repo/README.md) (mentions)
 - [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) (mentions)
 - [Hackathon kit templates](../../templates/README.md) (mentions)
+- [Close-area benchmark matrix: 9 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md) (explains)
 - [Close-area moving obstacles: walking people in the arena, A* replan vs A* + PX4-CBF range filter vs APF](../../catalog/samples/close-area-moving-obstacles.md) (explains)
 - [Close-area corridor MPC: linear MPC with OSQP in an ESDF half-plane corridor on the arena A*, vs the carrot follower](../../catalog/samples/close-area-planner-mpc.md) (explains)
 - [Close-area reactive planners: APF with wall-follow escape and VFH+, range sensor only, 72-beam vs Crazyflie-like 4-beam fan](../../catalog/samples/close-area-planner-reactive.md) (explains)

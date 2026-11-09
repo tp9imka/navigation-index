@@ -38,6 +38,7 @@ Map-free fallback planners for close-area A=>B, written as close-area-arena Plan
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) (mentions)
 - [Research rounds: which one applies, and the innovation story per brief](../../docs/research/README.md) (mentions)
+- [Close-area benchmark matrix: 9 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md) (explains)
 - [Close-area moving obstacles: walking people in the arena, A* replan vs A* + PX4-CBF range filter vs APF](../../catalog/samples/close-area-moving-obstacles.md) (explains)
 
 _Indexed by lane(s): samples_
