@@ -1,7 +1,11 @@
 # flight-repo: close-area A=>B flight loop starter
 
-Clone at H+0 for a "fly from A to B in a close area, maybe with obstacles" task. It is the
-loop skeleton, runnable today on a mock with no dependencies:
+Use this when the task is "fly from A to B in a close area, maybe with obstacles": clone it at
+H+0 as the team repo. Platform drivers: [../drone-adapter/drivers/](../drone-adapter/drivers/README.md).
+Planners and measured baselines (synthetic): [close-area-arena](../../samples/close-area-arena/README.md).
+For a GNSS / PNT-integrity brief use [../project-repo/](../project-repo/README.md) instead.
+
+It is the loop skeleton, runnable today on a mock with no dependencies:
 
 ```
 Adapter.pose() + ranges() => NavHealth => Planner.step() => SafetyFilter.filter() => Adapter.send_setpoint()   at 20 Hz

@@ -5,10 +5,20 @@ It replaces the PNT story families in [story-bank.md](story-bank.md) for that ta
 research behind it is [docs/research/close-area-nav/README.md](../../docs/research/close-area-nav/README.md).
 The live-demo script for it is [demo-script-close-area.md](../demo-script-close-area.md).
 
-State on 2026-11-09: nothing in the close-area lane has been run. The safety filter sample
-`samples/close-area-safety-filter/` does not exist in the hub yet. Every `<NUMBER from ...>`
-below stays a placeholder until a run writes it. A slot you cannot fill is said aloud as
-"not measured".
+State on 2026-11-09: the close-area baselines ran in
+[close-area-arena](../../samples/close-area-arena/README.md), all `[synthetic]` (simulated
+layouts, vehicle and sensor; no SITL, no flight). Over 50 seed-0 random layouts, A* + ESDF reached
+B in 100 % with a known map and with an unknown map
+([results](../../samples/close-area-arena/results/astar_esdf_random_0.md)). The range-only
+`freest_beam` planner fell from 86 % reach on truth to 42 % with a VIO jump and 40 % with bias,
+with 0 % collisions in every case, because the arena's ranges come from the true pose
+([results](../../samples/close-area-arena/results/faults_freest_beam_summary_0.md)). These are
+hub context numbers, not your team's result. Kill test part a ran
+([close-area-safety-filter](../../samples/close-area-safety-filter/README.md), synthetic): with
+every obstacle visible, range-only filters (PX4 CP-stop, PX4-CBF) already reach 0 % collisions
+under VIO faults; with map-only obstacles PX4-CBF still collides in 3-11 % of runs, all on
+obstacles the sensor cannot see. The "ours" arm has not run yet. Every `<NUMBER from ...>` below
+stays a placeholder until a run writes it. A slot you cannot fill is said aloud as "not measured".
 
 Contents: [Story](#1-the-story) - [Kill test gate](#2-kill-test-gate-decide-the-story-at-h24) -
 [Alternative hooks](#3-alternative-hooks-if-the-kill-test-fails) -

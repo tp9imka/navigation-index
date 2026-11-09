@@ -1,6 +1,11 @@
 <!-- about: repo:maplibre/maplibre-gl-js, repo:spatialillusions/milsymbol, repo:protomaps/pmtiles -->
 # Demo dashboard
 
+Use this when a GNSS / PNT run with lat / lon tracks needs a judge-facing map replay. It does
+not fit a close-area A=>B flight in a local metric frame: for that, plot with the arena's
+`run.py --plot` or `score_log.py --plot` in
+[close-area-arena](../../samples/close-area-arena/README.md#scoring-a-flight-log-sim-or-real).
+
 Judge-facing replay of a navigation run: truth, INS-only, fused, GNSS fixes and alt-PNT fixes on
 a dark map, with the error circle, protection level vs alert limit, alarms, interference zones
 and a clickable event timeline. Static files, no build step. Companion to

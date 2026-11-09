@@ -1,5 +1,12 @@
 # drivers: Adapter implementations for real platforms
 
+Use this when you need to send velocity setpoints to PX4 (MAVSDK Offboard), ArduPilot (GUIDED,
+pymavlink), a Crazyflie (cflib) or a Tello (djitellopy), or read pose and ranges from them,
+behind the `pose()` / `ranges()` / `send_setpoint()` seam of [../README.md](../README.md).
+Frame and sign conventions: [../frames.md](../frames.md). Loop that calls these drivers:
+[flight-repo](../../flight-repo/README.md). Planners to fly with them:
+[close-area-arena](../../../samples/close-area-arena/README.md).
+
 Status of every driver: **unrun, written from docs.** No SDK was installed and no vehicle, SITL
 or radio was touched. What did run is the smoke test below, on fake connection objects.
 Each driver file starts with a docstring: the doc links used and the 3 things to check on the

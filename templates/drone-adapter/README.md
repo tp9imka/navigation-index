@@ -1,5 +1,10 @@
 # drone-adapter: one seam between the planner and any drone
 
+Use this when planner code must not depend on which drone you get. To send setpoints to a
+specific platform (PX4, ArduPilot, Crazyflie, Tello), go straight to
+[drivers/](drivers/README.md). For the full 20 Hz flight loop with nav health and a safety
+filter around this seam, use [../flight-repo/](../flight-repo/README.md).
+
 Planner code calls three things: `pose()`, `ranges()`, `send_setpoint()`. Today they run on
 `MockAdapter` (no simulator). On Day 1 a platform driver implements the same three calls for
 Crazyflie, Tello, PX4 or ArduPilot, and the planner does not change.
@@ -8,14 +13,15 @@ Stdlib Python only (3.12 and 3.14 tested). Nothing here touches a real vehicle o
 
 ## Files
 
-| File | What it is |
-|---|---|
-| `adapter.py` | `Pose`, `RangeScan`, `Setpoint` dataclasses, `Adapter` Protocol, frame helpers (`enu_to_ned`, `ned_to_enu`, `flu_to_frd`, `frd_to_flu`, yaw and yaw-rate versions, `world_to_body`, `body_to_world`) |
-| `mock.py` | `MockAdapter`: kinematic point mass, 20 Hz lockstep, one wall segment, 8-beam horizontal range scan, collision flag |
-| `example_loop.py` | `fly_to()`: go-to-goal with stop-if-close at 20 Hz, written only against `Adapter` |
-| `test_adapter.py` | Frame round-trips, mock satisfies `Adapter`, loop reaches the goal, loop stops before the wall |
-| `frames.md` | Frame and unit conventions for PX4, ArduPilot, Crazyflie, Tello, with sources and what is not confirmed |
-| `results/` | Raw output of the runs quoted below |
+| Page | Use it when | You get |
+|---|---|---|
+| [drivers/](drivers/README.md) | The platform is known and you need to fly it | One `Adapter` per platform (`px4_mavsdk.py`, `ardupilot_pymavlink.py`, `crazyflie_cflib.py`, `tello_djitellopy.py`), platform table, bench checks. Unrun, written from docs |
+| [frames.md](frames.md) | A command goes the wrong way, or before the first bench test | Frame and unit conventions for PX4, ArduPilot, Crazyflie, Tello, with sources and what is not confirmed |
+| `adapter.py` | Writing a planner or a driver | `Pose`, `RangeScan`, `Setpoint` dataclasses, `Adapter` Protocol, frame helpers (`enu_to_ned`, `ned_to_enu`, `flu_to_frd`, `frd_to_flu`, yaw and yaw-rate versions, `world_to_body`, `body_to_world`) |
+| `mock.py` | Testing a planner with no drone and no simulator | `MockAdapter`: kinematic point mass, 20 Hz lockstep, one wall segment, 8-beam horizontal range scan, collision flag |
+| `example_loop.py` | You want the smallest loop that uses the seam | `fly_to()`: go-to-goal with stop-if-close at 20 Hz, written only against `Adapter` |
+| `test_adapter.py` | After changing `adapter.py` or `mock.py` | Frame round-trips, mock satisfies `Adapter`, loop reaches the goal, loop stops before the wall |
+| [results/](results/2026-11-09-mock-run.txt) | Checking a number quoted below | Raw output of the runs quoted below |
 
 Conventions: world is local ENU (x east, y north, z up, metres, origin at point A); body is FLU
 (x forward, y left, z up); yaw rad CCW from +x. Field names are shared with

@@ -2,6 +2,10 @@
 
 <!-- about: concept:datasets-benchmarks, repo:protomaps/pmtiles -->
 
+Use this when you prepare laptops in the week or night before the event, or share a cache with
+teammates at the venue. For a small rehearsed selection, start at
+[starter-bundles.md](../../docs/starter-bundles.md).
+
 Venue Wi-Fi will not carry datasets, Docker images or a `pip install torch`. This kit fills one
 cache directory (a USB disk is fine) with everything a team may need, before the event:
 

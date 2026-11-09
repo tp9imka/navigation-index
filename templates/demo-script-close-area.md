@@ -6,8 +6,10 @@ through obstacles, with a VIO fault injected. It fits the 3-minute skeleton in
 narrator. The driver never types free text on stage: every step is a command in shell history
 or a key press.
 
-State on 2026-11-09: nothing here has been run. `samples/close-area-safety-filter/` does not exist
-in the hub yet. Commands in `<angle brackets>` are the team's own; write them on Day 1.
+State on 2026-11-09: the arena and kill test part a ran (synthetic,
+[close-area-safety-filter](../samples/close-area-safety-filter/README.md)); the "ours" arm has not.
+A replay of arena runs is in `site/showcase.html`. Commands in `<angle brackets>` are the team's
+own; write them on Day 1.
 
 ## What the demo shows
 

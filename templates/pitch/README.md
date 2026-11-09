@@ -1,18 +1,22 @@
 # Pitch kit
 
-Everything you say, show or hand to judges at the end of a PNT-resilience hackathon. Companion
-to [pitch-deck-outline.md](../pitch-deck-outline.md) (the 9-slide version mapped to judging
-criteria) and [demo-script.md](../demo-script.md) (minute-by-minute live demo). This kit adds
-the spoken structure, ready hooks tied to measured numbers, a short deck, judge-question prep
-and a one-pager.
+Use this when you write what you say, show or hand to judges at the end. Close-area A=>B task
+(fly from A to B through obstacles): start at [close-area-story.md](close-area-story.md). PNT /
+GNSS-resilience brief: start at [story-bank.md](story-bank.md).
 
-| File | What it is for | When |
+Companion to [pitch-deck-outline.md](../pitch-deck-outline.md) (the 9-slide version mapped to
+judging criteria), [demo-script.md](../demo-script.md) and
+[demo-script-close-area.md](../demo-script-close-area.md) (minute-by-minute live demos). This kit
+adds the spoken structure, ready hooks tied to measured numbers, a short deck, judge-question
+prep and a one-pager.
+
+| Page | Use it when | You get |
 |---|---|---|
-| [pitch-structure.md](pitch-structure.md) | 3-minute and 5-minute skeletons (problem => why it matters operationally => live demo => honest numbers => what's next), funder vocabulary, 15 hard judge questions with answer patterns | Draft H+22, final H+36, rehearse x3 |
-| [story-bank.md](story-bank.md) | 10 opening hooks per brief family (6 families), each tied to a measured result in the hub, with its input label and the caveat to say aloud | H+0 to H+2 (pick a family), H+30 (pick 1-2 hooks) |
-| [slides-outline.md](slides-outline.md) | 6-8 slide deck, one message per slide, which existing figure or screenshot to use, plus the "demo failed live" fallback | H+30 to H+40 |
-| [one-pager-template.md](one-pager-template.md) | Fill-in technical one-pager for judges (results table with input labels) | H+40, print 5 copies if the venue allows |
-| [close-area-story.md](close-area-story.md) | Close-area A=>B story: one-line pitch, kill-test gate at H+24 choosing the story, 3 backup hooks, 3-minute skeleton, 10 judge questions with where the answer lives | H+0 (pick), H+24 (gate), H+36 (rehearse) |
+| [close-area-story.md](close-area-story.md) | Close-area A=>B task. H+0 (pick), H+24 (kill-test gate), H+36 (rehearse) | One-line story, kill-test gate choosing the story, 3 backup hooks, 3-minute skeleton, 10 judge questions with where the answer lives |
+| [story-bank.md](story-bank.md) | PNT brief. H+0 to H+2 (pick a family), H+30 (pick 1-2 hooks) | 10 opening hooks per brief family (6 families), each tied to a measured result in the hub, with its input label and the caveat to say aloud |
+| [pitch-structure.md](pitch-structure.md) | Any brief. Draft H+22, final H+36, rehearse x3 | 3-minute and 5-minute skeletons (problem => why it matters operationally => live demo => honest numbers => what's next), funder vocabulary, 15 hard judge questions with answer patterns |
+| [slides-outline.md](slides-outline.md) | H+30 to H+40 | 6-8 slide deck, one message per slide, which existing figure or screenshot to use, plus the "demo failed live" fallback |
+| [one-pager-template.md](one-pager-template.md) | H+40, print 5 copies if the venue allows | Fill-in technical one-pager for judges (results table with input labels) |
 
 ## On the day
 

@@ -1,5 +1,9 @@
 # TODO: project name
 
+> Hub template note, delete after copying. Use this when the brief is GNSS / PNT integrity
+> (jamming, spoofing, alt-PNT, integrity monitoring). For a close-area A=>B flight task, copy
+> [../flight-repo/](../flight-repo/README.md) instead.
+
 > One line: what it does, for which platform, under which threat.
 > Example: "Detects GNSS spoofing on a small UAS within 10 s and keeps navigating on dead reckoning, shown live in TAK."
 
