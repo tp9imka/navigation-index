@@ -34,7 +34,11 @@ GitHub issues; **[paper]** papers, with venue status.
   3.0 m in hover mode [docs]. No published drift-per-metre number was found.
 - **Consequence for the hub headline** ([README](README.md)): on a Crazyflie, "what the drone
   cannot see" is most bearings plus every glass surface. The map and protection-level half of
-  the filter does most of the work, and the range half needs a short memory.
+  the filter does most of the work, and the range half needs a short memory. **Since measured
+  (synthetic):** the protection-level margin did not beat a fixed 0.2 m bound
+  ([safety-filter Part e](../../../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic));
+  a 3 s scan memory cut DWA collisions on a 4-ray fan from 52 % to 18 % (random) and 58 % to 20 %
+  (narrow_gap) ([dwa-bug](../../../samples/close-area-planner-dwa-bug/README.md#results-ran-2026-11-09-apple-m3-max-macos-2662-cpython-31210-numpy-254-scipy-1181)).
 
 ## 2. Multi-ranger deck
 
@@ -218,7 +222,9 @@ What this does to the planner and safety filter:
   beam axes over yawing.
 - Glass, low bars and thin poles can only be handled by the map half of the filter (known
   obstacles from the organisers, or a map built under better sensing). That is the protection
-  level half of the hub headline.
+  level half of the hub headline. Since measured (synthetic): for map-only obstacles a fixed
+  0.2 m bound did as well as the protection level, and the headline failed
+  ([research decision](../README.md#decision-2026-11-09-evening-what-the-close-area-innovation-claim-is)).
 - Speed cap from range and rate, using the arena vehicle (a <= 3 m/s^2, radius 0.15 m) and one
   100 ms sensor period as latency: v^2 / (2 a) + 0.1 v <= R - 0.15. With R = 0.73 m that gives
   1.59 m/s; with R = 3.0 m the arena's own 2 m/s cap binds. Derived, synthetic vehicle model.
@@ -230,6 +236,11 @@ What this does to the planner and safety filter:
 `n_beams = 4` its spacing gives beams at -180, -90, 0 and 90 deg, which matches the Multi-ranger
 horizontal layout. Each beam is one ideal ray; there is no per-beam cone or material model yet
 (see Driver edits). Current default for comparison: 72 beams, 360 deg, 6 m, 0.02 m, 2 %.
+**Built since:** the arena's `presets.py` and `sensors_cone.py` now consume the rows marked "not
+supported yet" below (27 deg cone, 0.04 m minimum range, glass and mirror invisible, dark-surface
+range). Glass-family collisions with the crazyflie preset were 90 % (freest_beam) and 100 % (A*
+unknown map), synthetic
+([sensor realism](../../../samples/close-area-arena/README.md#sensor-realism-crazyflie-presets-and-glass-ran-2026-11-09-synthetic)).
 
 | Field | crazyflie (nominal indoor) | crazyflie_bright | crazyflie_ideal | Basis |
 |---|---|---|---|---|
@@ -270,13 +281,20 @@ Other arena settings that follow from the platform, all proposals:
 
 ## 7. Not verified
 
+Reconciled 2026-11-09 (loop-28): every bullet below is still open. The arena now simulates the
+section 6 preset, which tests the planners against this doc's model, not the model against a
+real deck.
+
 - The ST VL53L1X datasheet table itself (read through espboards and Pololu); the grey-target
   rows; the Multi-ranger timing budget under the `LOWPOWER_AUTONOMOUS` preset.
 - The PMW3901 datasheet (figures via CubePilot's page for the same chip).
 - Any Flow deck drift number; BatDeck Table III values.
 - Minimum detectable pole diameter and real dropout rates for the Multi-ranger.
 - Whether fine-mesh nets are seen by the VL53L1x.
-- Section 5 and 6 geometry and speed caps are derived, not flown.
+- Section 5 and 6 geometry and speed caps are derived, not flown. Simulated since with these
+  values: on 4 beams, unknown-map A* reached 35 % in office (25 % collisions) and 0 % in
+  warehouse (50 % collisions), 20 layouts per cell, synthetic
+  ([benchmark crazyflie preset](../../../samples/close-area-benchmark/README.md#preset-crazyflie)).
 
 ## Ask on Day 1
 

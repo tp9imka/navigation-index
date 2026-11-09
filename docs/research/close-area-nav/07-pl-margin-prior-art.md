@@ -62,6 +62,14 @@ The surviving claim is testable as a delta over these two: same sim, same faults
 residual drop" and "Tan union-of-plausible-states" against "PL + ambiguity => hover". If our arm
 does not cut wrong-exclusion breaches or the freezing rate, there is nothing left.
 
+**Refuted since (synthetic), before the FT-CBF and Tan arms ran:** "PL + ambiguity => hover" (F5)
+failed the doc 04 kill test against a simpler arm. On held-out seeds it collided in 2.5 % [1.1,
+5.7] of jump runs; MR-CBF with a hand-tuned fixed 0.2 m bound stayed at 1.0 % [0.3, 2.9] or less
+in every case on seeds 0-2. 4 of F5's 7 jump collisions ended in hover, because the hover rule
+drops the map rows. The in-loop PL also breached its 1e-3 risk in the VIO + UWB case. The FT-CBF
+and Tan arms were dropped after this verdict
+([safety-filter Part e](../../../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic)).
+
 ## 3. Hits
 
 Closeness: **same** = the claim's mechanism; **partial** = most of it, one key piece missing;
@@ -142,6 +150,9 @@ USPTO full-text, ION GNSS+ 2024-2026 proceedings beyond search summaries, defenc
 
 ## 5. Not verified
 
+Reconciled 2026-11-09 (loop-28) against
+[close-area-safety-filter](../../../samples/close-area-safety-filter/README.md). Still open:
+
 - Tan 2025 IROS venue comes from a Nature Index listing; the arXiv page says "Submitted to
   IROS 2025". Their safety-region sizes and setup are from the arXiv HTML; I did not run their code.
 - FT-CBF CDC 2020 page numbers come from the TAC paper's reference list; the CDC paper itself
@@ -154,6 +165,15 @@ USPTO full-text, ION GNSS+ 2024-2026 proceedings beyond search summaries, defenc
 - Skydio "Variable Margins": search snippet of a release note only.
 - Vendor silence (Exyn, Auterion) means nothing public was found, not that nothing exists.
 - The 25-of-30 wrong-exclusion figure is the hub's multi-source-fde result for the max-separation
-  rule, used here as an analogy for FT-CBF step 3. Nobody has run FT-CBF step 3 on those inputs.
+  rule, used here as an analogy for FT-CBF step 3. Nobody has run FT-CBF step 3 on those inputs,
+  and the FT-CBF and Tan arms were dropped from the kill test. The nearest close-area number is
+  the safety-filter monitor's max-separation variant, open loop: wrong source in 9 runs (UWB NLOS)
+  and 19 runs (VIO + UWB), 100 layouts per case, synthetic
+  ([integrity monitor](../../../samples/close-area-safety-filter/README.md#integrity-monitor-ran-2026-11-09-synthetic)).
+
+### Refuted since
+
+- Section 2, "the sentence a judge would accept": the composition it describes (F5) did not beat
+  a fixed 0.2 m bound; see the note at the end of section 2.
 
 Records added: `data/resources/loop-13.json` (7 resources).

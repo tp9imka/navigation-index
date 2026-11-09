@@ -162,11 +162,16 @@ quality / features / `reset_counter` / innovation rejects, not on the covariance
 
 ## 7. Not verified
 
+Reconciled 2026-11-09 (loop-28) against the samples and docs written after this page. Still open:
+
 - No accuracy number for optical flow drift was verified. Vendor pages give height accuracy
   only.
 - AprilTag pose-accuracy papers (Kallwies and Forkel, ICRA 2020; an MDPI Sensors 2019 study)
   were located but not read (PDF / 403). AprilTag 2 (Wang and Olson, IROS 2016) is recorded as
-  metadata only.
+  metadata only. A hub stand-in on rendered images exists since (synthetic, no lens distortion,
+  so it does not verify those papers): a 0.16 m tag36h11 tag detected in >= 90 % of frames to 5 m
+  frontal, position error p95 <= 0.091 m where detection holds, heading flips from 3 m
+  ([fiducial-goal-apriltag](../../../samples/fiducial-goal-apriltag/README.md#results-ran-2026-11-09-synthetic)).
 - Delmerico and Scaramuzza 2018 was read via author slides and a search summary only; the
   PDF did not parse.
 - The FAST-LIO "<0.3 % on 32 m" figure comes from a search summary of the FAST-LIO paper, not
@@ -177,10 +182,20 @@ quality / features / `reset_counter` / innovation rejects, not on the covariance
   handheld / ground dataset, not VIO on a drone.
 - Lanegger 2026: only the abstract was read; the claim seen in a search summary that RoVIO
   3-sigma bounds miss the error was not checked.
-- Whether PX4 EKF2 acts on ODOMETRY `reset_counter` internally was not checked in code; only
-  the MAVLink definition was read.
+- Whether EKF2 / EKF3 `reset_counter` handling behaves as read in code (see Verified since) was
+  not tested in SITL or flight.
 - PX4 precision landing "needs a valid global position" is quoted from the docs; whether a
   vision-only local position satisfies it was not tested.
 - RTK and standalone GNSS accuracy figures are general knowledge, not re-verified here.
 - No sensor or stack in this document was flown or run for this lane, except the hub-measured
-  OpenVINS numbers from `samples/relative-nav-benchmark`.
+  OpenVINS numbers from `samples/relative-nav-benchmark`. The arena's VIO-like estimator runs
+  since are synthetic and do not change this.
+
+### Verified since
+
+- PX4 EKF2 does act on ODOMETRY `reset_counter` (code read at tag v1.17.0, not run): a changed
+  counter sets `ev_reset` (`ev_control.cpp:52`), and with quality passing and no GNSS fused EKF2
+  snaps its horizontal position to the new pose (`ev_pos_control.cpp:246`). ArduPilot EKF3 does
+  the same through `posReset` at Copter-4.7.2. So the companion must hold `quality` low while it
+  is lost and increment the counter only at a confirmed pose
+  ([10 section 4](10-relocalization-prior-art.md#4-what-the-autopilots-do-with-reset_counter)).

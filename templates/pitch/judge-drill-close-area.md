@@ -27,21 +27,21 @@ off-board compute is priced (IMAV 0.7 vs 1.0 onboard, rulebook). So lead every a
 
 | # | Question | Number to say | Input |
 |---|---|---|---|
-| 1 | Is this only simulation? | 99-100 % reached, 0 collisions, all in simulation; drift calibrated to real OpenVINS RPE 1.5 % / 10 m | synthetic; real (UZH-FPV) |
-| 2 | Why 2.5D? | 3D ESDF rebuild 183 ms median vs 1.5 ms in 2D | synthetic (laptop timing) |
-| 3 | Only seed 0? | Held-out seed 1: 100 / 100 % reached, 0 wrong commits | synthetic |
+| 1 | Is this only simulation? | 100 % reached, 0 wrong commits on open layouts only; 83-97 % in office, maze, warehouse, narrow gap, glass office; drift calibrated to real OpenVINS RPE 1.5 % / 10 m | synthetic; real (UZH-FPV) |
+| 2 | Why 2.5D? | 3D ESDF rebuild 183 ms median vs 1.5 ms in 2D; yaw search: 5 deg error 38 % => 100 % reached | synthetic (laptop timing) |
+| 3 | Only seed 0? | Held-out seeds 2-4 x 7 families: PASS on random and u_trap only (100 %, 0 wrong) | synthetic |
 | 4 | New vs Tan 2025 / existing relocalization? | Our separation score 70 % vs Fox-style 80 % in the corridor | synthetic |
 | 5 | Why not just add more sensors? | 72 beams: 4-10 % collisions on glass; 4 beams: 90-100 % | synthetic |
-| 6 | Crazyflie with 4 beams? | Matcher needs 10 returns per scan; 4 beams give at most 4. Not measured | no number for relocalization |
+| 6 | Crazyflie with 4 beams? | Spin + move: 48 / 64 % reached vs 98 / 100 % on 72 beams, 0 wrong commits | synthetic |
 | 7 | People walking? | A* replan 14 / 36 % collisions; with range filter 0 %, 16 % stuck | synthetic |
-| 8 | VIO lost next to glass? | Not measured for relocalization; 4-beam glass collisions 90-100 % | no number for relocalization |
+| 8 | VIO lost next to glass? | glass_office (fan sees glass): 83.3 % reached, 16-18 % collisions; unmapped obstacles: 7 % collisions | synthetic |
 | 9 | PX4 / ArduPilot? | EKF fused the bridge's pose on both SITLs; constant pose only | SITL |
 | 10 | Your safety filter idea? | Fixed 0.2 m bound worst 1.0 %; ours 2.5 % on held-out jumps | synthetic |
 | 11 | Path to product and certification? | No number | - |
 | 12 | Commit-at-once also reached 100 %. Why not? | 8 of 20 wrong commits in the corridor, 7.3-9.4 s flown on them | synthetic |
 | 13 | Is it really the innovation test doing the work? | 227-331 triggers per 100 runs; without it 80 / 71 % | synthetic |
-| 14 | What if the room was never mapped? | No number | - |
-| 15 | How fast, and does it run onboard? | 0.4 s median recovery; 1.7-1.9 ms per scan on a laptop | synthetic |
+| 14 | What if the room was never mapped? | Map from an outbound flight: 93.9 / 92.9 % reached, 2 % collisions | synthetic |
+| 15 | How fast, and does it run onboard? | 0.4 s median recovery; 1.7-1.9 ms per scan (20-23 ms with yaw search) on a laptop | synthetic |
 
 ## Questions and answers
 
@@ -50,10 +50,13 @@ off-board compute is priced (IMAV 0.7 vs 1.0 onboard, rulebook). So lead every a
 "Yes, the relocalization results are simulation only. Over 100 random layouts per fault, hover +
 match + one disambiguating move reached B in 99-100 % with 0 collisions and 0 wrong commits,
 against 36-64 % with the estimator alone. The sim's VIO drift is calibrated against a real number,
-OpenVINS at 1.5 % RPE over 10 m on the UZH-FPV dataset (ATE 0.36 m over 278.3 m). Not measured: SITL with the relocalizer, real flight, a map with errors."
+OpenVINS at 1.5 % RPE over 10 m on the UZH-FPV dataset (ATE 0.36 m over 278.3 m). On held-out
+seeds that holds only in open rooms; in offices, mazes and warehouses it reached 83-97 %, with
+up to 33 wrong commits in warehouses. Not measured: SITL with the relocalizer, real flight."
 
-- **Number:** 99-100 % reached vs 36-64 % `[synthetic]`; RPE 1.5 % over 10 m, ATE 0.36 m `[real]`, 2 runs, a long FPV flight, not our course.
+- **Number:** 99-100 % reached vs 36-64 % on random layouts; held-out seeds 2-4: 100 % on random and u_trap, 83.3-97.2 % in five other families `[synthetic]`; RPE 1.5 % over 10 m, ATE 0.36 m `[real]`, 2 runs, a long FPV flight, not our course.
 - **Source:** [relocalize disambiguating moves](../../samples/close-area-relocalize/README.md#disambiguating-moves-after-a-hover-timeout-loop-22b),
+  [held-out matrix](../../samples/close-area-relocalize/README.md#held-out-matrix-seeds-2-4-7-families-harder-faults-loop-56),
   [arena drift calibration](../../samples/close-area-arena/README.md#estimator-and-faults-ran-2026-11-09-synthetic),
   [relative-nav-benchmark](../../samples/relative-nav-benchmark/README.md#results).
 
@@ -61,12 +64,14 @@ OpenVINS at 1.5 % RPE over 10 m on the UZH-FPV dataset (ATE 0.36 m over 278.3 m)
 
 "Because the question is the estimator, not the altitude, and we needed thousands of exact, seeded
 runs on a laptop. A full 3D ESDF rebuild of a 20 x 20 x 5 m room took 183 ms median against
-1.5 ms in 2D, and pybullet has no macOS arm64 wheel. The price: no overhangs, no altitude
-changes, and the scan matcher searches x and y only, with yaw from the estimator."
+1.5 ms in 2D, and pybullet has no macOS arm64 wheel. The price: no overhangs and no altitude
+changes. The matcher searches yaw within +-15 deg: a 5 deg heading error alone dropped reach to
+38 % without that search and 100 % with it; a 180 deg flip in a symmetric corridor still fails."
 
-- **Number:** 182.95 ms (3D) vs 1.48 ms (2D) median EDT, Apple M3 Max `[synthetic]` timing.
+- **Number:** 182.95 ms (3D) vs 1.48 ms (2D) median EDT, Apple M3 Max `[synthetic]` timing; yaw search 38 % => 100 % reached at +-5 deg, 100 random layouts, seed 2 `[synthetic]`.
 - **Source:** [arena results (EDT timing)](../../samples/close-area-arena/README.md#results-ran-2026-11-09-apple-m3-max-cpython-31210-numpy-254-scipy-1181),
   [arena limits](../../samples/close-area-arena/README.md#limits),
+  [yaw search](../../samples/close-area-relocalize/README.md#yaw-search-3-dof-relocalization-loop-60),
   [relocalize limits](../../samples/close-area-relocalize/README.md#limits).
 
 ### 3. "Only seed 0?"
@@ -74,10 +79,13 @@ changes, and the scan matcher searches x and y only, with yaw from the estimator
 "No. The move design was chosen on seed 0, then flown once on seed 1 with nothing changed: the
 Fox-style move arm reached 100 % under both dropout and jump, 0 collisions, 0 wrong commits. Be
 honest about one thing: the matcher thresholds were calibrated on seed-1 static poses, so seed 1
-is held out for the flights and the move, not for the thresholds."
+is held out for the flights and the move, not for the thresholds. Seeds 2-4 across 7 room types
+then passed only in open rooms: 100 % with 0 wrong commits on random and u_trap, and a FAIL in
+the other five."
 
-- **Number:** seed 1, 100 layouts per fault: 100 / 100 % reached, 0 wrong commits `[synthetic]`.
+- **Number:** seed 1, 100 layouts per fault: 100 / 100 % reached, 0 wrong commits; seeds 2-4, 180 runs per family: random and u_trap 100.0 % [97.9, 100.0], office 94.4 %, glass_office 83.3 %, warehouse 97.2 % with 33 wrong commits `[synthetic]`.
 - **Source:** [held-out check, seed 1](../../samples/close-area-relocalize/README.md#held-out-check-seed-1-run-by-the-loop-driver),
+  [held-out matrix](../../samples/close-area-relocalize/README.md#held-out-matrix-seeds-2-4-7-families-harder-faults-loop-56),
   [disamb_random_1.md](../../samples/close-area-relocalize/results/disamb_random_1.md),
   [thresholds](../../samples/close-area-relocalize/README.md#what-is-in-it).
 
@@ -107,13 +115,15 @@ has for avoidance."
 
 ### 6. "What happens on a Crazyflie with 4 beams?"
 
-"Our relocalization was not run with 4 beams. As written, the acceptance rule needs at least 10
-returns per scan, and a Multi-ranger gives at most 4, so it would keep hovering and never accept.
-On a Crazyflie we would need scan accumulation over a short yaw sweep, or a different map cue.
-For context, without a map 4 beams drop the unknown-map A* from 95 to 35 % reached in office layouts."
+"It does not work well, and we measured it in simulation. The matcher needs 10 returns per scan,
+so on 4 beams it accepted nothing until we added a yaw spin that stacks a quarter turn. With the
+spin and the move it reached B in 48 % (dropout) and 64 % (jump) of runs, against 98-100 % on 72
+beams, still with 0 wrong commits, after a median 9-12 s of spinning. Under dropout that is worse
+than not relocalizing at all (64 %)."
 
-- **Number:** no number for relocalization on 4 beams. Context: office 95 => 35 % reached, 20 layouts `[synthetic]`.
-- **Source:** [acceptance rule](../../samples/close-area-relocalize/README.md#what-is-in-it),
+- **Number:** 48 / 64 % reached, 3 / 7 % collisions, 0 wrong commits, 100 random layouts, seed 0, yaw is truth in the sim `[synthetic]`. Context: without a map 4 beams drop the unknown-map A* from 95 to 35 % reached in office layouts.
+- **Source:** [4-beam spin](../../samples/close-area-relocalize/README.md#relocalization-with-a-4-beam-sensor-hover-and-yaw-spin-loop-54),
+  [acceptance rule](../../samples/close-area-relocalize/README.md#what-is-in-it),
   [benchmark crazyflie preset](../../samples/close-area-benchmark/README.md#preset-crazyflie),
   [benchmark reading](../../samples/close-area-benchmark/README.md#reading).
 
@@ -130,15 +140,16 @@ the range filter stays in our stack under the relocalizer."
 
 ### 8. "What if VIO is lost next to glass?"
 
-"Not measured. The relocalization runs had no glass, and the ideal fan in them would see it
-anyway. A ranger that misses glass returns a scan that disagrees with a map that has the glass
-in it, so the match score drops and the rule keeps hovering rather than guessing. The real risk is
-the move after the hover: its collision check uses the map, so mapped glass is avoided, unmapped
-glass is not."
+"Glass offices are one of our failing cases. With a sensor that does see the glass, relocalization
+reached B in 83 % of runs and collided in 16-18 %, with no wrong commit; small pose errors are
+enough to clip a doorway. A ranger that misses glass was not run with the relocalizer. The known
+risk is the move after the hover: with obstacles missing from the map it collided in 7 % of runs,
+and every hit on a missing obstacle came after a move, because the move check trusts the map."
 
-- **Number:** no number for relocalization near glass. Context: 4-beam glass collisions 90-100 % `[synthetic]`.
-- **Source:** [arena sensor realism](../../samples/close-area-arena/README.md#sensor-realism-crazyflie-presets-and-glass-ran-2026-11-09-synthetic),
-  [relocalize limits](../../samples/close-area-relocalize/README.md#limits).
+- **Number:** glass_office, held-out seeds 2-4, 72-beam fan that sees glass: 83.3 % reached, 16-18 % collisions; unmapped added obstacles: 7 % collisions, 12 of 14 into the unmapped obstacles, all after a move, seed 2 `[synthetic]`. Relocalization with a glass-blind ranger: no number.
+- **Source:** [held-out matrix](../../samples/close-area-relocalize/README.md#held-out-matrix-seeds-2-4-7-families-harder-faults-loop-56),
+  [stale map](../../samples/close-area-relocalize/README.md#imperfect-prior-map-loop-55),
+  [arena sensor realism](../../samples/close-area-arena/README.md#sensor-realism-crazyflie-presets-and-glass-ran-2026-11-09-synthetic).
 
 ### 9. "How does this get onto PX4 / ArduPilot?"
 
@@ -197,29 +208,53 @@ commit-at-once drops to 80 / 71 % reached and hypothesis tracking to 67 / 76 %."
 
 ### 14. "What if the room was never mapped?"
 
-"Then there is nothing to match against, and this method does not apply. We need a floor plan or a
-first pass of the room. Without one, our plan is hover, then land, and that fallback is not measured."
+"Then we map it on the way out. In simulation the drone built its map flying A to B, lost VIO on
+the way back, and relocalized against that self-built map: 93.9 % (dropout) and 92.9 % (jump)
+reached, 2 % collisions, but 13 and 14 wrong commits. With no first pass at all there is
+nothing to match; then the plan is hover, then land, and that fallback is not measured."
 
-- **Number:** no number.
-- **Source:** [relocalize limits](../../samples/close-area-relocalize/README.md#limits),
+- **Number:** self-built map: 93.9 / 92.9 % reached, 2 % collisions, 13 / 14 wrong commits (map frame), 100 layouts, one seed (2) `[synthetic]`. No first pass: no number.
+- **Source:** [stale map, e_selfmap rung](../../samples/close-area-relocalize/README.md#imperfect-prior-map-loop-55),
+  [relocalize limits](../../samples/close-area-relocalize/README.md#limits),
   [H1 judge questions](close-area-story.md#h1-relocalization-after-vio-loss-the-pivot-if-the-kill-test-fails).
 
 ### 15. "How fast is it, and does it run onboard?"
 
 "Median 0.4 s from loss to a confirmed pose; when a move was needed, about 2-3 s. The corridor is
 the slow case: about 11 s and several moves. Scan matching costs 1.7-1.9 ms per scan median on an Apple
-laptop; it was not timed on a flight computer, and the hover in the sim is perfect."
+laptop, about 20-23 ms with the yaw search; on 4 beams the spin alone takes a median 9-12 s. It
+was not timed on a flight computer, and the hover in the sim is perfect."
 
-- **Number:** 0.4 s median; 1.95-2.9 s after a move; corridor 11.0 s; 1.7-1.9 ms per scan (max 2.8 ms) `[synthetic]`, laptop timing.
+- **Number:** 0.4 s median; 1.95-2.9 s after a move; corridor 11.0 s; 1.7-1.9 ms per scan (max 2.8 ms), 20-23 ms with yaw search (12-worker load); 4-beam spin 9-12 s median per loss event `[synthetic]`, laptop timing.
 - **Source:** [disambiguating moves](../../samples/close-area-relocalize/README.md#disambiguating-moves-after-a-hover-timeout-loop-22b),
+  [yaw search](../../samples/close-area-relocalize/README.md#yaw-search-3-dof-relocalization-loop-60),
+  [4-beam spin](../../samples/close-area-relocalize/README.md#relocalization-with-a-4-beam-sensor-hover-and-yaw-spin-loop-54),
   [held-out check](../../samples/close-area-relocalize/README.md#held-out-check-seed-1-run-by-the-loop-driver),
   [relocalize results](../../samples/close-area-relocalize/README.md#results-ran-2026-11-09-apple-m3-max-cpython-31210-numpy-254-scipy-1181).
 
 ## Not verified
 
 - No answer on this page was rehearsed or timed. The 20 s fit is a word-count estimate (about 50-70 words).
+  Answers 1, 2, 3, 6, 8, 14 and 15 grew in loop-28 and may now run past 20 s.
 - Numbers were copied from the sample READMEs and result files listed; no sample was rerun for this page.
-- Question 6 (4 beams never reach the 10-return rule) and question 8 (glass lowers the match score)
-  are read from the code description in the relocalize README, not from a run.
+- Question 8: relocalization with a ranger that misses glass was not run; the glass_office rows
+  use the 72-beam fan, which sees glass.
+- Questions 4, 7 and 9 were not re-checked against the later runs: 7 still says "exactly mapped
+  rooms" and 9 still calls the reset_counter step "not tested", while doc 10 section 4 has since
+  read the autopilot code (not run).
 - Tan 2025 and Zhang/Li/Clark come from the hub's doc 07, which read them on arXiv; their code was not run.
 - The IMAV 0.7 off-board factor comes from doc 06, which parsed the rulebook PDF with a crude parser.
+
+### Verified since (loop-28, all synthetic)
+
+- Question 6, "4 beams never reach the 10-return rule": measured. Without a yaw spin the matcher
+  accepted 0 poses on the crazyflie preset
+  ([4-beam](../../samples/close-area-relocalize/README.md#relocalization-with-a-4-beam-sensor-hover-and-yaw-spin-loop-54)).
+
+### Refuted since (loop-28, all synthetic)
+
+- The old answer 1 and 3 line "99-100 %, 0 wrong commits" as a general result: on held-out seeds
+  2-4 it holds on random and u_trap only
+  ([held-out matrix](../../samples/close-area-relocalize/README.md#held-out-matrix-seeds-2-4-7-families-harder-faults-loop-56)).
+- The old answer 14 "no number": a self-built map gave 93.9 / 92.9 % reached
+  ([stale map](../../samples/close-area-relocalize/README.md#imperfect-prior-map-loop-55)).

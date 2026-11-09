@@ -118,6 +118,11 @@ one day. Not verified against any EDGE information.
 
 All four shapes share one need: B must be a runtime input, and the drone must stop safely when
 its estimate is bad. That supports the lane 04 safety-filter headline under every shape.
+**Refuted since for the headline (synthetic):** the lane 04 filter failed its kill test on
+held-out seeds (2.5 % [1.1, 5.7] jump collisions vs <= 1.0 % for a fixed 0.2 m bound,
+[safety-filter Part e](../../../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic));
+the "stop safely" need stands, the pitch choice is in the
+[research decision](../README.md#decision-2026-11-09-evening-what-the-close-area-innovation-claim-is).
 
 ## 4. Questions for the organisers (revised)
 
@@ -157,6 +162,9 @@ above made explicit. Ask in this order; the first group decides the stack.
 14. Do you want logs, a map, or a reported position of B as a deliverable?
 
 ## 5. Not verified
+
+Reconciled 2026-11-09 (loop-28): no sample measures event rules, so every bullet below is still
+open. The one body claim a sample contradicted is marked in section 3.
 
 - IMAV 2026 weight-factor formula and the exact total-score formulas (garbled in extraction;
   component values match across the four mission tables).

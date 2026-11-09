@@ -27,7 +27,10 @@ source. Pseudo-code is ours, written from the equations and code; it is not test
    protection level (PL) into either is a parameter choice inside published theory. Our claim
    narrows to: an integrity monitor produces a bound that stays valid under faults, online.
    The papers took the bound as given (Cosner 2021: a constant 0.4 m measured against motion
-   capture).
+   capture). Measured since (synthetic): the monitor's in-loop PL did not stay valid in the
+   VIO + UWB two-fault case (breach fraction 1.6e-3 to 8.3e-3 against a 1e-3 risk,
+   [what the collisions are](../../../samples/close-area-safety-filter/README.md#what-the-collisions-are)), and a fixed
+   0.2 m bound matched its safety ([section 5](#5-baseline--minimal-faithful-implementation-for-the-kill-test)).
 4. **Belief-CBF brakes before the margin grows.** The barrier includes the covariance
    prediction `Sigma_dot = A Sigma + Sigma A^T + Q` and a margin `gamma` for the jump at the
    next measurement update. A filter that only inflates clearance by `k * sqrt(lambda_max(P))`
@@ -511,6 +514,13 @@ Suggested extra arm for the kill test: MR-CBF with a fixed worst-case `epsilon`.
 does not beat it on time to goal at equal breach rate, the PL adds nothing over a calibrated
 constant bound.
 
+**Measured since (synthetic):** the faithful constant worst case froze the vehicle. With epsilon =
+0.99 m (worst per-run error on seed 1) MR-CBF reached B in 0 % of runs, with 13-18 % collisions
+from QP slack. A swept 0.2 m bound held collisions at 1.0 % [0.3, 2.9] or less in every case on
+seeds 0-2 and matched the PL arm's safety, which ended the headline
+([safety-filter Part b](../../../samples/close-area-safety-filter/README.md#part-b-estimation-aware-baselines-ran-2026-11-09-synthetic),
+[Part e](../../../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic)).
+
 ## 6. Three places a naive implementation would be unfair to the baseline
 
 1. **PX4-CBF without its FoV constraint, or with the wrong obstacle feed.** With a 90 deg fan,
@@ -548,11 +558,39 @@ constant bound.
 
 ## 8. Not verified
 
-- No code was built or run; no pseudo-code was executed. The BCBF derivative terms, the
-  MR-CBF Lipschitz shortcut and the use of `Lam` at the current covariance are ours.
-- PX4 behaviour (100 Hz loop, timeouts) is from code and the paper, not from SITL.
+Reconciled 2026-11-09 (loop-28) against
+[close-area-safety-filter](../../../samples/close-area-safety-filter/README.md). Still open:
+
+- The BCBF derivative terms, the MR-CBF Lipschitz shortcut and the use of `Lam` at the current
+  covariance are ours. They now run in `filters.py`, but were not checked against the authors'
+  code or results.
+- Not built: the PX4-CBF FoV QP (eq. 17) and gatekeeper. The arena fan is 360 deg, so the FoV
+  constraint would not bind there; a narrow-fan run was not done.
+- PX4 behaviour (100 Hz loop, timeouts) is from code and the paper, not from SITL. The Python
+  F2 arm runs at 50 Hz, not 100 Hz.
 - Harms 2025 (ICRA) and Han 2025 (CDC) were read as abstracts only. The gatekeeper notebook,
   the BCBF follow-up code and cyberpod_sim_ros were not opened beyond README.
 - Dean and Cosner appendices (proofs, SOCP standard form) were not read.
 - Table II tau ambiguity and the meaning of the PX4 LP gains in seconds were not resolved.
 - Records added for new sources: `data/resources/loop-05.json`, `data/repos/loop-05.json`.
+
+### Verified since
+
+All synthetic (2.5D point-mass arena, VIO-like EKF with injected faults), not SITL or flight.
+
+- "No code was built or run" no longer holds for three arms. Section 1.7 (PX4-CBF as shipped,
+  Table II gains), section 2.4 (Belief-CBF with covariance prediction and the Theorem 3 margin)
+  and section 4.4 (MR-CBF with a fixed bound) run as F2, F3 and F4 in `filters.py`.
+- Finding 2, jump half (a position jump does not touch PX4-CBF): with every obstacle visible, F2
+  had 0 % collisions under jump, bias and dropout, 100 layouts per case
+  ([part a](../../../samples/close-area-safety-filter/README.md#reading)). The velocity-bias half
+  was not isolated: the arena's bias case (0.05 m/s for 10 s) also gave 0 %.
+- Finding 4 (Belief-CBF is the strong covariance baseline): F3 removed most fault collisions but
+  not jumps, 9 % on seed 0 and 8.0 % [5.0, 12.6] on held-out seeds; a jump is not in the
+  covariance ([Part b](../../../samples/close-area-safety-filter/README.md#part-b-estimation-aware-baselines-ran-2026-11-09-synthetic),
+  [Part e](../../../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic)).
+
+### Refuted since
+
+- Section 5's faithful MR-CBF form (constant worst-case epsilon) as a usable arm: at 0.99 m it
+  froze, 0 % reached (see the note under section 5).

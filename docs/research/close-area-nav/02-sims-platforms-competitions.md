@@ -170,6 +170,12 @@ driver once the platform is known.
 
 ## 4. Not verified
 
+Reconciled 2026-11-09 (loop-28): no sample installed or ran any simulator or platform SDK named
+here. The hub compares planners in its own numpy arena instead
+([close-area-arena](../../../samples/close-area-arena/README.md), synthetic), and the drone-adapter
+drivers are unrun stubs ([drivers](../../../templates/drone-adapter/drivers/README.md)). Every
+bullet below is still open.
+
 - Install sizes and real first-flight times for every sim; none were installed.
 - Whether `pybullet` compiles cleanly on the team Mac's macOS and Python 3.12.
 - RotorPy obstacle collision behaviour (contact vs kinematic check).

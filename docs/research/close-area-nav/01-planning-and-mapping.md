@@ -14,7 +14,9 @@ New records: [data/repos/close-area-planning.json](../../../data/repos/close-are
 How facts were checked: licenses, languages and last-push dates come from `gh api` on 2026-11-09,
 or from the LICENSE file when GitHub reports none or NOASSERTION. ROS versions come from README
 text and branch lists. PyPI wheel availability comes from the PyPI JSON API. **Nothing on this page
-was built or run.** Setup times are estimates from README build steps, not measurements.
+was built or run when it was written.** Recipe 5a has since been built and run on synthetic inputs
+(section 5, [close-area-arena](../../../samples/close-area-arena/README.md)); the setup times for
+the external stacks below are still estimates from README build steps, not measurements.
 
 Source labels: **[peer]** peer-reviewed, **[preprint]** arXiv only, **[code]** repository,
 **[docs]** official documentation.
@@ -113,7 +115,10 @@ Dijkstra's; [code] repos linked above.
 Laptop sizing (arithmetic, not measured): a 20 m x 20 m x 5 m volume at 0.1 m is 200 x 200 x 50
 = 2 million cells. As uint8 that is 2 MB; a float32 ESDF is 8 MB. A full scipy EDT on that size
 is a sub-second operation on a laptop CPU in typical use, which is fast enough to recompute at a
-few Hz. Verify on Day 1 before relying on it.
+few Hz. Measured since: 182.95 ms median over 7 calls on 200 x 200 x 50 cells, 5 % random
+occupancy, Apple M3 Max (synthetic grid, laptop timing;
+[arena results](../../../samples/close-area-arena/README.md#results-ran-2026-11-09-apple-m3-max-cpython-31210-numpy-254-scipy-1181)).
+Re-time it on the Day-1 machine.
 
 GPU summary: only nvblox needs CUDA. Everything else on this table runs on an Apple Silicon CPU,
 either natively (numpy/scipy, octomap-python) or inside a Linux Docker image (voxblox, UFOMap,
@@ -194,15 +199,19 @@ license is fine for the demo; say so in the pitch.
 | Narrow gaps not found | Inflation closes the gap on the grid; RRT samples miss it; APF repulsion from both walls cancels the goal pull | Grid resolution at most half the gap clearance; inflate by radius + measured margin, not a guess; show the minimum passable gap in the results | [peer] Koren and Borenstein 1991; [peer] Karaman and Frazzoli 2011 |
 | Dead ends / local minima | Reactive methods (APF, VFH+, BendyRuler, gradient-only local optimisers) only see locally | Always keep a global search (A*) in the loop; local optimiser starts from the global path, not from the straight line | [peer] Koren and Borenstein 1991; [docs] ArduPilot BendyRuler |
 | Unknown space treated as free | Map initialised as free, or collision checks only test "occupied" | Three-state map; commit only to segments with a stop inside known free space; cost penalty on unknown in the global search | [peer] Tordesillas et al. 2022; [peer] Ren et al. 2025; [peer] Duberg and Jensfelt 2020 |
-| Dynamic obstacles | Static maps keep stale occupied cells or miss movers between scans | For 48h: replan fast, decay occupancy (log-odds clamping or expiry, like ArduPilot `OA_DB_EXPIRE`); full dynamic planning (MADER/PANTHER) is out of reach | [peer] Hornung et al. 2013; [peer] Liu, Ren, Zhang 2024; [docs] ArduPilot BendyRuler |
+| Dynamic obstacles | Static maps keep stale occupied cells or miss movers between scans | For 48h: replan fast, decay occupancy (log-odds clamping or expiry, like ArduPilot `OA_DB_EXPIRE`); full dynamic planning (MADER/PANTHER) is out of reach. **Refuted since for "replan fast" (synthetic):** A* replanning at 5 Hz hit walking people in 12 / 36 % of runs (0.5 / 1.0 m/s) vs 14 / 36 % at 2.5 Hz; a PX4-CBF-style range filter under A* gave 0 %, at 16 % stuck ([close-area-moving-obstacles](../../../samples/close-area-moving-obstacles/README.md#results-ran-2026-11-09-apple-m3-max-cpython-31210-numpy-254-scipy-1181)) | [peer] Hornung et al. 2013; [peer] Liu, Ren, Zhang 2024; [docs] ArduPilot BendyRuler |
 | Tracking error larger than planned margin | Plan is feasible on paper, controller lags or overshoots in turns, wind or ground effect | Measure max cross-track error in sim on the actual trajectory profile; set inflation = radius + that error + sensor noise; cap speed and jerk near obstacles | [peer] Liu, Ren, Zhang 2024 (motivation for integrated MPC) |
 | PX4 Collision Prevention freezing the vehicle | No sensor data in a direction => motion blocked; data gap => Hold | Do not combine it with an Offboard planner unless sensor coverage is full | [docs] PX4 Collision Prevention |
 | Corner cutting by smoothing | Min-snap through waypoints bulges outside the safe path | Check trajectory samples against the ESDF; insert waypoints or use corridor constraints | [peer] Liu et al. RA-L 2017 |
 
 ## 7. Not verified
 
-- Nothing in this page was built or run. All setup times are estimates from README steps.
-- Sub-second scipy EDT on 2 million cells is an expectation, not a measurement on this machine.
+Reconciled 2026-11-09 (loop-28) against the samples that ran after this page was written. Still open:
+
+- The external stacks in sections 2-4 (EGO-Planner, FASTER, OctoMap, voxblox and the rest) were
+  not built or run. Their setup times are estimates from README steps.
+- Min-snap smoothing (5a step 6) and RotorPy / gym-pybullet-drones (5a step 8) were not used:
+  the arena flies a carrot follower or a corridor MPC on a point mass (section 5).
 - Bubble Planner: no official code found. The third-party Robot-Nav/Bubble-Planner repo was
   seen in search but not inspected. The IROS 2022 venue is from the authors, not checked.
 - IPC and SUPER have no LICENSE file per `gh api`. Code there is all rights reserved by default.
@@ -215,6 +224,19 @@ license is fine for the demo; say so in the pitch.
   v1.17.0 source was not checked.
 - FASTER's need for Gurobi is from its README. Whether an open solver fork exists was not checked.
 - python_motion_planning 3D support was not checked.
+
+### Verified since
+
+All synthetic (2.5D or 3D point-mass arena), not SITL or flight.
+
+- Recipe 5a (grid, ESDF, A* with clearance cost, shortcut, 2-5 Hz replan) was built and run: A*
+  with a known map reached 100 % on random, u_trap and narrow_gap (50 layouts each, seed 0)
+  ([arena A* + ESDF](../../../samples/close-area-arena/README.md#a--esdf-grid-planner-ran-2026-11-09-synthetic)).
+  Arena venv setup took 16.5 s wall
+  ([readiness](../../../samples/close-area-arena/README.md#readiness-measured-2026-11-09-apple-m3-max-macos-2662-arm64)).
+- Sub-second scipy EDT on 2 million cells: 182.95 ms median (min 178.42, max 188.0 ms, 7 calls),
+  Apple M3 Max, synthetic 5 % occupancy grid, laptop timing
+  ([arena results](../../../samples/close-area-arena/README.md#results-ran-2026-11-09-apple-m3-max-cpython-31210-numpy-254-scipy-1181)).
 
 ## 8. Sources
 

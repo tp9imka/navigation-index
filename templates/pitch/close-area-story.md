@@ -59,7 +59,7 @@ story, or as answers to judge questions. They are hub numbers, not your team's r
 | Against what the ranger sees, a range-only filter is enough | With every obstacle visible, F1 (CP-stop) and F2 (PX4-CBF) have 0 % collisions in every case, VIO jump, bias and dropout included (500 runs per arm); bare A*: 7 / 4 / 1 % (jump / bias / dropout) | `[synthetic]` | [safety-filter part a](../../samples/close-area-safety-filter/README.md#reading), [kill_a_unsensed_off_0.md](../../samples/close-area-safety-filter/results/kill_a_unsensed_off_0.md) |
 | Against what it cannot see, it is not | With 2 sensor-invisible obstacles per layout, F2 collides in 3-11 %, every hit on an invisible obstacle | `[synthetic]` | [kill_a_unsensed_on_0.md](../../samples/close-area-safety-filter/results/kill_a_unsensed_on_0.md) |
 | 4-beam rangers miss glass | Crazyflie 4 x 27 deg preset on the glass family: collisions 90 % (freest_beam) and 100 % (A* unknown map); bright-light preset 96 % and 100 %. The ideal 72-beam fan: 4 % and 10 %. 50 layouts; glass sits on the A-B line by design | `[synthetic]` | [arena sensor realism](../../samples/close-area-arena/README.md#sensor-realism-crazyflie-presets-and-glass-ran-2026-11-09-synthetic) |
-| Relocalization against the map turns VIO loss into a recoverable event | Estimator only: 64 % / 36 % reached (dropout / jump), 1 % / 9 % collisions. Hover + match + disambiguating move: 99-100 % reached, 0 % collisions, 0 wrong commits, held-out seed 1 included. Known map only | `[synthetic]` | H1 below, [close-area-relocalize](../../samples/close-area-relocalize/README.md#disambiguating-moves-after-a-hover-timeout-loop-22b) |
+| Relocalization against the map turns VIO loss into a recoverable event | Estimator only: 64 % / 36 % reached (dropout / jump), 1 % / 9 % collisions. Hover + match + disambiguating move: 99-100 % reached, 0 % collisions, 0 wrong commits, held-out seed 1 included. Known map only Scope: open layouts, 72-beam sensor, exact map; held-out seeds 2-4 give 83-97 % in rooms, 48-64 % on 4 beams (see Narrowed since). | `[synthetic]` | H1 below, [close-area-relocalize](../../samples/close-area-relocalize/README.md#disambiguating-moves-after-a-hover-timeout-loop-22b) |
 
 ## 1. The story
 
@@ -170,7 +170,7 @@ range fan, A* known-map planner; 100 random layouts per fault; no SITL, no fligh
 | 1. Problem | "Indoors, VIO will lose track: a dark corner, a blank wall, a fast turn. With the estimator alone our drone reached B in 36 % of runs after a VIO jump and hit something in 9 %." | Estimator-only row above, `[synthetic]` |
 | 2. Why it matters | "Past drone competitions broke on state estimation, not planning. And the obvious fix, snap to the best map match, guesses: in a corridor it picked the wrong spot in 8 of 20 runs." | [doc 02 section 3.1](../../docs/research/close-area-nav/02-sims-platforms-competitions.md#31-what-this-tells-us-a-judge-scores) item 5; corridor bullet above |
 | 3. What we built | "When tracking drops, the drone hovers and keeps up to five pose hypotheses from the map. It flies on only when one wins clearly. If none wins, it makes one short move that tells them apart. It never commits on a tie." | [relocalize README](../../samples/close-area-relocalize/README.md#what-is-in-it) |
-| 4. Honest numbers | "Over 100 random layouts per fault: 99-100 % reached, 0 collisions, 0 wrong commits, on a held-out seed too, `[synthetic]`. Median 0.4 s to a confirmed pose, about 2-3 s when a move is needed. In a symmetric corridor: 80 %, still 0 wrong commits. Not measured: SITL, real flight, a map with errors." | Table above |
+| 4. Honest numbers | "Over 100 random layouts per fault: 99-100 % reached, 0 collisions, 0 wrong commits, on a held-out seed too, `[synthetic]`. Median 0.4 s to a confirmed pose, about 2-3 s when a move is needed. In a symmetric corridor: 80 %, still 0 wrong commits. Not measured: SITL, real flight, a map with errors." Scope: open layouts, 72-beam sensor, exact map; held-out seeds 2-4 give 83-97 % in rooms, 48-64 % on 4 beams (see Narrowed since). | Table above |
 | 5. What's next | "Same matcher on the drone's lidar or depth scan, map from a first pass of the room, triggers from the autopilot's ODOMETRY quality and reset counter. Then SITL, then the organisers' drone." | Triggers: [doc 03 section 4](../../docs/research/close-area-nav/03-close-area-localization.md#4-estimator-health-signals-a-planner-can-consume) |
 
 **What is not ours, say it first:** choosing a move to separate pose hypotheses is active Markov
@@ -404,7 +404,9 @@ Every R number also goes into `runs/results.md` with layouts, seeds and the comm
 - No row of this scaffold was rehearsed or timed.
 - Kill-test thresholds, IMAV factors and PX4 parameter defaults come from the close-area research
   docs, which read most papers as abstracts only and the IMAV rulebook with a crude parser.
-- PX4-CBF and Belief-CBF descriptions come from abstracts and READMEs (doc 04); their code was not run.
+- The authors' PX4-CBF and Belief-CBF code was not run. Since this page was first written, doc 05
+  read both papers in full and the safety-filter sample re-implemented them in Python as F2 and
+  F3 (synthetic), so section 1's "abstract only" labels are stale.
 - The ~0.8 m doorway width is the research lane's estimate, not a measurement.
 - R1-R3 are seed 0. The held-out rerun (Part e of the safety-filter README) gave the FAIL verdict
   above; quote it, not the seed-0 rows, if a judge asks about the safety filter.
@@ -412,3 +414,35 @@ Every R number also goes into `runs/results.md` with layouts, seeds and the comm
 - The relocalization seed-1 run was reproduced for this page (same table, wall 64.8 s, Apple
   laptop, 3 arms); the seed-0 and corridor runs were not rerun, their numbers are copied from the
   sample's result files.
+
+### Narrowed since (reconciled 2026-11-09, loop-28)
+
+Later runs in the same samples narrow the H1 numbers in section 0 (last row) and section 3. Say
+these with the H1 numbers. All `[synthetic]`; the relocalization arm is (f), the info-gain move.
+
+- **Held-out matrix, seeds 2-4 x 7 families, 72 beams:** "99-100 %, 0 wrong commits" holds only
+  on random and u_trap (100.0 % [97.9, 100.0], 0 wrong). FAIL on office 94.4 %, glass_office
+  83.3 %, narrow_gap 85.6 % (4 wrong), warehouse 97.2 % (33 wrong) and maze 97.2 % (6 wrong).
+  (f) collided in 4-7 % (office), 16-18 % (glass_office) and 10-12 % (narrow_gap) of runs
+  ([held-out matrix](../../samples/close-area-relocalize/README.md#held-out-matrix-seeds-2-4-7-families-harder-faults-loop-56)).
+  Jumps of 1 m and 2 m and a 5 s dropout on random seed 2: 100 %, 0 wrong commits, so "one jump
+  size" in the H1 limits is answered for random layouts.
+- **4-beam Crazyflie-like sensor:** without a yaw spin the matcher accepted 0 poses; spin + move
+  reached 48 % / 64 % (dropout / jump) vs 98 % / 100 % on 72 beams, 0 wrong commits, 3 % / 7 %
+  collisions, median 9-12 s spinning per loss event. Under dropout that is worse than no
+  relocalization (64 %)
+  ([4-beam](../../samples/close-area-relocalize/README.md#relocalization-with-a-4-beam-sensor-hover-and-yaw-spin-loop-54)).
+- **Map with errors (H1 said "not measured"):** FAIL on unmapped added obstacles, 89 / 88 %
+  reached, 7 % collisions, 16 / 21 wrong commits; a self-built map from an outbound flight gave
+  93.9 / 92.9 % with 2 % collisions. One seed (2)
+  ([stale map](../../samples/close-area-relocalize/README.md#imperfect-prior-map-loop-55)).
+- **Yaw (H1 limits said "yaw from the estimator"):** a +-15 deg yaw search exists now. Without
+  it, a 5 deg heading error took (f) to 38 % reached; with it, 100 %, 0 wrong commits, at 20-23 ms
+  instead of 1.8 ms per matched scan. A 180 deg flip in the symmetric corridor fails in every arm
+  ([yaw search](../../samples/close-area-relocalize/README.md#yaw-search-3-dof-relocalization-loop-60)).
+- **Prior art:** the mechanism exists (Jensfelt 2001, AF-MCL 2026,
+  [doc 10](../../docs/research/close-area-nav/10-relocalization-prior-art.md)). An AF-MCL-style arm
+  was added later (loop-67, seed 2 held out, synthetic: on the 72-beam sensor the hub's arm reached B as often or more than an AF-MCL-style filter in all 4 cells, 0 wrong commits vs 0-32; on 4 beams every arm fails; [relocalize README](../../samples/close-area-relocalize/README.md#af-mcl-baseline-particle-filter-with-random-particle-injection-loop-67)).
+- **Safety filter:** the Part e verdict above is unchanged, FAIL. Do not quote the seed-0 "F5 0 %
+  collisions" row of section 2; held out it is 2.5 % [1.1, 5.7] on jump runs
+  ([Part e](../../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic)).

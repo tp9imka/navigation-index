@@ -371,29 +371,32 @@ Murali-style "yaw toward features" as the filter's recovery action only if time 
 
 ## 6. Not verified
 
+Reconciled 2026-11-09 (loop-28) against the samples and docs written after this page. Still open:
+
+- The idea A falsifier (1.4) and the idea B falsifier (2.4) were not run. Of the section 3.4
+  kill test, P1, P3, F2 with the FoV QP, F3f, F3t, gatekeeper and 200 layouts per seed were not
+  run ([safety-filter limits](../../../samples/close-area-safety-filter/README.md#limits)).
 - No full text was read for this doc, except what [05](05-cbf-baselines-faithful.md) later read
   in full for the four baselines (PX4-CBF, Belief-CBF, gatekeeper, MR-CBF Dean 2020 and Cosner
   2021). Every other claim comes from abstracts, catalog records and search summaries. Numbers quoted (70% RMSE, 9.8 m/s, 55% => 100%, 3-10x, 3.5 ms, 7.8 m/s,
   > 100 km/h) are the authors' claims as summarised, not checked.
 - Costante 2016 venue: the authors' group lists it as TRO16; not confirmed against IEEE.
-- Gatekeeper venue: confirmed in 05 through Crossref (IEEE T-RO 40:4358-4375, 2024, plus IROS
-  2023); the repo README (last push 2023-10-20) still says "under review at T-RO".
 - Chen et al. backup CBF and Singletary 2022: arXiv only checked, venue not confirmed.
-- Vahs 2023 BCBF: no venue on the arXiv page, but 05 confirmed IEEE RA-L 8(12):8565-8572, 2023
-  through Crossref (doi 10.1109/LRA.2023.3330662).
 - Chen and Shen (IEEE Access 2022), EVA-Planner, Lin et al. ICRA 2020, the 2026 conformal
   CBVF preprint (arXiv 2608.13819), the UWB covariance-margin preprint (arXiv 2512.17249) and
   SUPER (arXiv 2512.14189; v1 summary reported 89.1% recall for degradation prediction, the v2
   abstract reports no general accuracy gain): search snippets only, not added as records.
 - PX4-CBF README notes the qpOASES FoV-constrained variant crashes on PixRacer Pro firmware;
-  the unconstrained analytic case is what to trust. Not built here.
+  the unconstrained analytic case is what to trust. The FoV variant was not built; the analytic
+  case was re-implemented in Python (see Verified since), the PX4 code itself was not run.
 - `ntnu-arl/rhem_planner` has no license field; `shaoanlu/CBF_QP_safety_filter` has no license;
   `peteflorence/nanomap_ros` shows NOASSERTION. Read-only for a product.
 - Faessler et al. ICRA 2015: title from search, PDF resolved but title page not extracted;
   author first names (Matthias Faessler, Flavio Fontana, Christian Forster) are from memory.
 - Okamoto first name (Kazuhide) and Florence middle initial are from memory, not a fetched page.
 - The ArduPilot and PX4 behaviour is from documentation summaries, not SITL runs.
-- Wider-scan scores are judgement, not measurement.
+- Wider-scan scores are judgement, not measurement. The top row (relocalization) was measured
+  later; its result is under Refuted since, the score was not revised.
 - Queries run (WebSearch, 2026-11-09): uncertainty-aware quadrotor planning with obstacle
   inflation and chance constraints; Blackmore Ono Williams; Prentice Roy BRM; Okamoto Tsiotras
   covariance steering; Zhu Alonso-Mora CC-NMPC; NanoMap; Papachristos rhem; quadrotor speed
@@ -406,3 +409,33 @@ Murali-style "yaw toward features" as the filter's recovery action only if time 
   `gh search repos` for "gatekeeper quadrotor", "control barrier function quadrotor". Not
   searched: IEEE Xplore directly, patents, defence or vendor documentation (Skydio, Exyn,
   Shield AI) whose autonomy stacks likely contain similar runtime-assurance layers.
+
+### Verified since
+
+- Gatekeeper venue: confirmed in [05](05-cbf-baselines-faithful.md) through Crossref (IEEE T-RO
+  40:4358-4375, 2024, plus IROS 2023); the repo README (last push 2023-10-20) still says "under
+  review at T-RO".
+- Vahs 2023 BCBF venue: no venue on the arXiv page, but 05 confirmed IEEE RA-L 8(12):8565-8572,
+  2023 through Crossref (doi 10.1109/LRA.2023.3330662).
+- Section 0 (a range-only filter covers what the sensor sees): with every obstacle visible to a
+  72-beam fan, F1 (CP-stop) and F2 (PX4-CBF analytic, re-implemented in Python) had 0 %
+  collisions in every VIO fault case, 500 runs per arm, synthetic
+  ([safety-filter part a](../../../samples/close-area-safety-filter/README.md#reading)).
+
+### Refuted since
+
+- Section 5 headline (idea C, the integrity-aware safety filter): FAIL on held-out seeds,
+  synthetic. Ours (F5) collided in 2.5 % [1.1, 5.7] of held-out jump runs and reached B 0.55 as
+  often as F2 on jumps; MR-CBF with a hand-tuned fixed 0.2 m bound stayed at 1.0 % [0.3, 2.9] or
+  less in every case on seeds 0-2
+  ([Part e](../../../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic)).
+- Section 4 top row, as worded for the hub's pitch ("relocalization after VIO loss" as a general
+  headline): narrowed, synthetic. The info-gain move arm passed (>= 95 % reached, 0 wrong
+  commits) only on random and u_trap (100 % on held-out seeds 2-4); office 94.4 %, glass_office
+  83.3 %, narrow_gap 85.6 %, warehouse 97.2 % with 33 wrong commits, maze 97.2 % with 6
+  ([held-out matrix](../../../samples/close-area-relocalize/README.md#held-out-matrix-seeds-2-4-7-families-harder-faults-loop-56));
+  48 / 64 % reached on a 4-beam sensor (dropout / jump)
+  ([4-beam](../../../samples/close-area-relocalize/README.md#relocalization-with-a-4-beam-sensor-hover-and-yaw-spin-loop-54));
+  7 % collisions with unmapped added obstacles
+  ([stale map](../../../samples/close-area-relocalize/README.md#imperfect-prior-map-loop-55)).
+  The mechanism is prior art ([10](10-relocalization-prior-art.md)).

@@ -268,6 +268,10 @@ stereo on UZH-FPV, EuRoC Vicon rooms or TUM-VI room. The UZH-FPV run in section 
 
 ## 7. Not verified
 
+Reconciled 2026-11-09 (loop-28): the plan was not run since (it needs the Docker build), so every
+bullet below is still open. The arena's "overconfident" fault case is a synthetic stand-in
+(reported sigma x0.25), not a VIO NEES measurement.
+
 - No OpenVINS covariance was produced or scored. Every NEES figure here is cited or derived from
   a citation.
 - Docker build time on this host (`docker-desktop`, 16 vCPU) and the `ros:noetic-perception` pull
