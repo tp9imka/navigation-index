@@ -80,3 +80,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - landed: 46a => 64bddae (5 complex families, world JSON close-area-world/1 with 27/27 round trips; A* known map 100 % on all; straight 0-15 %; preview PNG checked by driver)
 - landed: 48a => f40bc12 (Pyodide 314.0.7 verified on jsdelivr; cold load 4.9 s / 22 MB, warm 2.6 s; A* known-map 30 s run ~1 s; scores match native; verdict go, use a Web Worker)
 - landed: 51 => 2544945 (jump run ends unconfirmed 0.64 m from B instead of false arrival; first-flight still reaches; driver fixed 4 stale README lines)
+- landed: 37 => 51ce9d6. HEADLINE VERDICT: FAIL on held-out seeds 1-2. F4 MR-CBF 0.2 m <= 1 % everywhere (worst jump 1.0 % [0.3, 2.9] pooled); F5 jump 2.5 % [1.1, 5.7] held out, reach 0.56 of F2; F5 collisions all jump runs, 4/7 ended in hover (hover drops map rows => leak). Pivot: relocalization headline (39 in flight). Dropped 40, parked 41.
