@@ -73,7 +73,7 @@ Initial backlog: fable brainstorm, 2026-11-09, base dbafbff.
 | 41 | parked (re-open only if the safety filter comes back as a supporting demo) | Crazyflie-preset kill-test rerun via --sensor (ideal / crazyflie / crazyflie_bright), wedge hits counted | P | S | 32 B, 34 B | samples/close-area-safety-filter run_kill.py --sensor, results/kill_f_* | Crazyflie likeliest; 360 deg fan flatters range filters | F0/F2/F4 x presets table |
 | 42 | done a9e253f | Judge drill: 15 questions with numbers, input types, anchors | T | S | 34 soft | templates/pitch/judge-drill-close-area.md, templates/pitch/README.md row | H+36 rehearsal sheet | every answer has a number or 'no number' |
 | 43 | done 33f19e2 | Moving obstacles family: person-sized cylinders 0.5/1.0 m/s; A* replan vs A* + F2 vs APF | P | S | - | samples/close-area-moving-obstacles/ | Intake asks static or moving | 50 layouts x 2 speeds x 3 arms table |
-| 44 | folded into 47 (picker, compare, playground link); status card left out | Showcase 2: Challenge 2 preset link, headline status card, kill-test F0 vs F2 replay with unsensed pole, relocalize hypotheses replay | T | S | 34 soft | site/index.html, site/showcase.*, site/data/showcase/, two export_replay.py | Judges see the kill test as a picture | both replays render in headless Chrome; site tests pass |
+| 44 | dropped (superseded by 64) | Showcase 2: Challenge 2 preset link, headline status card, kill-test F0 vs F2 replay with unsensed pole, relocalize hypotheses replay | T | S | 34 soft | site/index.html, site/showcase.*, site/data/showcase/, two export_replay.py | Judges see the kill test as a picture | both replays render in headless Chrome; site tests pass |
 | 45 | done ae0065e | Altitude: window-and-bar family, 3D A* picks altitude, vs 2.5D planner | P | M | - | samples/close-area-arena world_z.py, planners/astar_esdf_3d.py, vehicle_z.py | IMAV elements are over/under/through | 2.5D vs 3D reach, plan ms, side-view PNG |
 
 | 46 | done 64bddae, 47400b5 | Complex arenas: office, warehouse, forest, maze, glass_office + world JSON format (a); benchmark matrix of every algorithm x every arena with replay export (b) | P | M | 01 B | samples/close-area-arena worlds_complex.py, world_json.py (a); samples/close-area-benchmark/ (b) | Ivan asked for 3-4+ harder arenas | 5 families, preview PNG, sanity table; matrix table |
@@ -89,6 +89,17 @@ Initial backlog: fable brainstorm, 2026-11-09, base dbafbff.
 | 53 | done 66ad30e | 46c: DWA, Bug2/TangentBug, D* Lite added to the benchmark matrix and replays | P | S | 46b, 49, 50 B | samples/close-area-benchmark, site/data/showcase/replays_v2 | Every algorithm on every arena | new matrix rows + replays |
 
 | 54 | in-flight | Relocalization on a 4-beam Crazyflie-like sensor: the matcher needs >= 10 returns per scan, a Multi-ranger gives 4; accumulate scans during a slow yaw spin (or a short motion) and match the stacked returns; measure recovery on crazyflie preset | P | S | 22, 32 B | samples/close-area-relocalize new files + README section | The headline must work on the likeliest hardware (judge drill Q6 found the gap) | reached / wrong commits on crazyflie preset vs ideal |
+
+| 55 | in-flight | Relocalization vs an imperfect map (removed / added / shifted obstacles, self-built map) | P | S | 33 B | samples/close-area-relocalize map_perturb.py, run_stalemap.py | Intake default = moved obstacles | table per rung, FAIL accepted |
+| 56 | in-flight | Relocalization held-out matrix: seeds 2-4 x 7 families x 2 faults + severity rungs, Wilson intervals | P | S | 33, 46a B | samples/close-area-relocalize run_matrix.py | Drill Q3 rests on one held-out seed | 42 cells with intervals |
+| 57 | in-flight | Relocalization prior-art kill search + EKF2/EKF3 reset_counter in code | R | S | - | docs/research/close-area-nav/10-relocalization-prior-art.md | The second headline never had its search | verdict + code file/line |
+| 58 | in-flight | Day-1 dry run, agent only, fresh clone, timed | A | S | - | docs/day1-dry-run.md | H+0..H+2 never run end to end | measured runbook + blockers |
+| 59 | ready | flight-repo --reloc pose source + reset_counter through the bridge (dry run) | T | S | 33, 51 B | templates/flight-repo reloc_shim.py etc. | Product shape; closes first-flight-jump unconfirmed | jump run reaches B or hovers |
+| 60 | in-flight | Yaw search in the relocalizer (+-15 deg lattice), yaw bias 5/10 deg, 180 deg case | P | S | 33 B | samples/close-area-relocalize relocalize_yaw.py, run_yaw.py | 'yaw is truth' is the first judge question | table + ms per scan |
+| 61 | ready | Sweep 4 (45a, 46b/c, 47, 49, 50, 54 + 55-57 when landed) | S | S | 53 B; 54-57 soft | shared files | decode warehouse 4 beams => benchmark | gate green, no stale pending |
+| 62 | in-flight | Playground: 6 more planners + shareable #w= links | T | S | 48b B | site/playground | 6 of 14 planners; no sharing | parity on 6 new; link restores world |
+| 63 | ready | Playground relocalization with hypothesis ghosts | T | M | 62, 33 B | site/playground (after 62) | Headline invisible in playground | browser = native on 3 cases |
+| 64 | ready | Showcase story page: headline status, kill-test replay, relocalization replay | T | M | 47 B | samples/*/export_replay.py, site/showcase.* | Judges see the pivot as pictures | both replays render |
 
 ## Planned waves
 
