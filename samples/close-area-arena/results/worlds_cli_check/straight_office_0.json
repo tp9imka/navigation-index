@@ -1,0 +1,88 @@
+{
+ "planner": "straight",
+ "family": "office",
+ "seed": 0,
+ "layouts": 2,
+ "input": "synthetic",
+ "command": "python run.py --planner straight --layouts 2 --family office --out results/worlds_cli_check",
+ "config": {
+  "max_time_s": 60.0,
+  "plan_hz": 10,
+  "z0": 1.0,
+  "vehicle": {
+   "tau": 0.15,
+   "a_max": 3.0,
+   "v_max": 2.0,
+   "radius": 0.15
+  },
+  "sensor": {
+   "n_beams": 72,
+   "fov": 6.283185307179586,
+   "max_range": 6.0,
+   "noise_std": 0.02,
+   "dropout": 0.02
+  }
+ },
+ "summary": {
+  "n": 2,
+  "reached_pct": 0.0,
+  "collision_pct": 0.0,
+  "stuck_pct": 100.0,
+  "timeout_pct": 0.0,
+  "median_time_to_goal_s": null,
+  "median_min_clearance_m": 0.325,
+  "median_path_length_m": 1.89
+ },
+ "wall_s": 0.17,
+ "env": {
+  "python": "3.11.15",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "machine": "arm64",
+  "system": "Darwin"
+ },
+ "runs": [
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3729,
+   "path_length_m": 0.856,
+   "duration_s": 12.16,
+   "index": 0,
+   "layout_attempts": 1,
+   "n_obstacles": 28,
+   "goal": [
+    -6.748,
+    -7.386
+   ],
+   "max_pose_error_m": 0.0,
+   "planner_ms_mean": 0.0059,
+   "planner_ms_max": 0.0172
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.2777,
+   "path_length_m": 2.929,
+   "duration_s": 15.36,
+   "index": 1,
+   "layout_attempts": 1,
+   "n_obstacles": 18,
+   "goal": [
+    4.133,
+    -6.852
+   ],
+   "max_pose_error_m": 0.0,
+   "planner_ms_mean": 0.0056,
+   "planner_ms_max": 0.0082
+  }
+ ]
+}

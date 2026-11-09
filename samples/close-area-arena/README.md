@@ -214,6 +214,72 @@ Source: [straight](results/faults_straight_summary_0.md), [freest_beam](results/
 - Not calibrated: dark-zone numbers, IMU noise and bias. Yaw is truth, no VIO latency, no
   innovation gate.
 
+## Complex arenas (ran 2026-11-09, synthetic)
+
+[worlds_complex.py](worlds_complex.py) adds five layout families on the same 20 x 20 m world
+model. Use them with `run.py --family <name>` or `run.evaluate(..., family="<name>")`.
+`world.py` only registers them. Every layout is seeded by `[seed, index, 20-24]` and is
+redrawn until a 4-connected path A => B exists on the grid inflated by the 0.15 m radius. A
+and B must also have more than 0.25 m exact clearance. Sizes are arena choices, not
+measurements of real buildings.
+
+| family | layout |
+|---|---|
+| `office` | 1.6-2.0 m corridor, 3-6 rooms of 3.6-4.4 m square off it, one 0.8-1.0 m doorway each, 1-2 desks per room. A and B in different rooms |
+| `warehouse` | shelf rows 0.8-1.0 m deep, 1.2-1.6 m aisles, a left main aisle, 1-2 cross aisles, 2-6 pallets against shelf faces. A bottom aisle, B top aisle |
+| `forest` | 40-90 poles 0.1-0.35 m wide, 1.3 m minimum centre spacing (dart throwing), plus 3-6 tight spots with 0.3-0.6 m gaps |
+| `maze` | 10 x 10 cells of 2 m, DFS spanning tree, 8-15 % of the interior walls removed for loops |
+| `glass_office` | office plus 1-3 glass panels (material `glass`) across 45-65 % of the corridor width, between the doorways of A's and B's rooms |
+
+Layout 0 of each family: [results/worlds_preview.png](results/worlds_preview.png).
+
+### World JSON
+
+[world_json.py](world_json.py) defines `close-area-world/1`: `bounds`, `a`, `b`, and
+`obstacles` as `box`, `cylinder` or axis-aligned `wall` segments, each with a `material` and an
+optional `tag`. The full schema is in the module docstring. `to_json(world)` writes it and
+`from_json(dict)` validates it and builds a `World`. A browser playground and the replay viewer
+are meant to read this one format. Neither reads it yet (see the limits below). One example per
+family: [results/worlds_examples/](results/worlds_examples/office_0.json) (2.2-7.0 kB).
+
+`.venv/bin/python world_json.py --check` runs a round trip (to_json => JSON text => from_json
+=> to_json) on layouts 0-2 of all nine families. Result: 27 of 27 identical documents, max
+signed-distance error 0.000116 m from the 0.1 mm rounding, and the free path still present.
+At most 1 grid cell in 40 000 differs, on 2 forest layouts
+([results/worlds_roundtrip.json](results/worlds_roundtrip.json)).
+
+### Sanity table
+
+`.venv/bin/python worlds_complex.py --sanity --layouts 20 --seed 0` took 117 s on an Apple M3
+Max (CPython 3.11.15, numpy 2.4.6, scipy 1.17.1). It runs `straight` and `astar_esdf` with the
+known map, ideal sensor and true pose:
+
+| family | planner | reached % | collision % | stuck % | median time to goal s | median obstacles |
+|---|---|---|---|---|---|---|
+| office | straight | 0 | 0 | 100 | - | 26.5 |
+| office | astar_esdf known | 100 | 0 | 0 | 21.01 | 26.5 |
+| warehouse | straight | 0 | 0 | 100 | - | 22 |
+| warehouse | astar_esdf known | 100 | 0 | 0 | 43.74 | 22 |
+| forest | straight | 15 | 0 | 85 | 26.02 | 59 |
+| forest | astar_esdf known | 100 | 0 | 0 | 22.72 | 59 |
+| maze | straight | 0 | 5 | 95 | - | 43 |
+| maze | astar_esdf known | 100 | 0 | 0 | 41.03 | 43 |
+| glass_office | straight | 0 | 0 | 100 | - | 29.5 |
+| glass_office | astar_esdf known | 100 | 0 | 0 | 25.12 | 29.5 |
+
+No run timed out. Source: [results/worlds_sanity_0.md](results/worlds_sanity_0.md) and its
+JSON with per-run rows.
+
+- Every layout passed its free-path check on the first draw, so resampling never ran in
+  these 100 layouts.
+- The maze and warehouse medians (41 s and 44 s) are close to the 60 s limit. A slower
+  planner will time out there for its speed, not because it fails to find the path.
+- `glass_office` is the same as `office` here: the ideal fan sees glass. Only
+  `sensors_cone.ConeRangeFan` ignores it. Use `worlds_complex.make_any_world` to keep the
+  materials. `world_glass.make_any_world` resets every family it does not own to matte.
+- Not run: unknown-map A*, reactive planners, the Crazyflie presets, estimator faults, or
+  any seed other than 0.
+
 ## Limits
 
 - 2.5D only: no altitude changes, no overhangs, z is held. Obstacles are axis-aligned boxes

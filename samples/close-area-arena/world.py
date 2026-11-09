@@ -284,6 +284,8 @@ def _layout(family: str, rng) -> tuple[tuple, tuple, list, list]:
 def make_world(family: str = "random", seed: int = 0, index: int = 0,
                radius: float = RADIUS, res: float = RES, max_attempts: int = 200) -> World:
     """Deterministic layout for (family, seed, index). Resamples until BFS finds a free path."""
+    if family in _complex.FAMILIES:                      # office, warehouse, ... (worlds_complex.py)
+        return _complex.make_world(family, seed, index, radius=radius, res=res, max_attempts=max_attempts)
     rng = np.random.default_rng([seed, index, _FAMILY_CODE[family]])
     for attempt in range(1, max_attempts + 1):
         a, b, boxes, cyls = _layout(family, rng)
@@ -299,3 +301,12 @@ def make_world(family: str = "random", seed: int = 0, index: int = 0,
         if bfs_free_path(blocked, w.grid.to_index(0.0, 0.0), w.grid.to_index(*w.goal)) is not None:
             return w
     raise RuntimeError(f"no free layout for {family} seed {seed} index {index} in {max_attempts} tries")
+
+
+
+# ---- complex families registered from worlds_complex.py (it defines FAMILIES before importing us) ----
+try:
+    from . import worlds_complex as _complex
+except ImportError:
+    import worlds_complex as _complex
+FAMILIES = FAMILIES + tuple(_complex.FAMILIES)
