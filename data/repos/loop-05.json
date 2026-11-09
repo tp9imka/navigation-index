@@ -1,0 +1,72 @@
+[
+  {
+    "id": "repo:ntnu-arl/px4-autopilot",
+    "kind": "repo",
+    "name": "PX4-Autopilot (NTNU fork, cbf branch)",
+    "url": "https://github.com/ntnu-arl/PX4-Autopilot",
+    "summary": "NTNU fork of PX4 whose cbf branch holds the actual PX4-CBF code: CBFSafetyFilter in mc_pos_control, a tof_obstacles_chunk uORB message and CBF_* parameters. Branch HEAD has only the analytic single-constraint filter; the FoV-constrained qpOASES QP is in the earlier commit 338fb51f.",
+    "why_it_matters": "This is the code the PX4-CBF baseline must be copied from; its defaults and failure behaviour differ from the paper's flight values.",
+    "concepts": ["concept:obstacle-avoidance", "concept:autopilot"],
+    "tags": ["control-barrier-function", "px4", "safety-filter", "fork", "bsd-3"],
+    "language": "C++",
+    "domains": ["air"],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Fork (gh api fork=true), license BSD-3-Clause per gh api, last push 2025-05-06. Read src/modules/mc_pos_control/PositionControl/CBFSafetyFilter.cpp and multicopter_safety_filter_params.c. CBF_ENABLED defaults to 0. Parameter defaults (eps 0.5, kappa 10, alpha 1, p0 -2, LP gains 0.01) are not the paper's flight values. See docs/research/close-area-nav/05-cbf-baselines-faithful.md.",
+    "related": [
+      {"id": "repo:px4/px4-autopilot", "rel": "fork_of"},
+      {"id": "repo:ntnu-arl/px4-cbf", "rel": "same_org"},
+      {"id": "repo:ntnu-arl/composite_cbf", "rel": "same_org"}
+    ]
+  },
+  {
+    "id": "repo:ntnu-arl/cbf_pc_selector",
+    "kind": "repo",
+    "name": "cbf_pc_selector",
+    "url": "https://github.com/ntnu-arl/cbf_pc_selector",
+    "summary": "ROS 2 node that turns depth images, range images or point clouds from one or more sensors into a small set of obstacle points for the composite CBF, by angular binning with a per-bin percentile filter.",
+    "why_it_matters": "Defines the obstacle input the NTNU filter was tuned on; a faithful sim baseline should bin its range fan the same way.",
+    "concepts": ["concept:obstacle-avoidance", "concept:ros"],
+    "tags": ["point-cloud", "downsampling", "control-barrier-function", "ros2", "bsd-3"],
+    "language": "C++",
+    "domains": ["air"],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "License BSD-3-Clause per gh api, last push 2026-04-24. README read only. For a Python sim, copy the idea (bins_w x bins_h bins, percentile per bin, min/max range) rather than the node.",
+    "related": [
+      {"id": "repo:ntnu-arl/composite_cbf", "rel": "integrates_with"}
+    ]
+  },
+  {
+    "id": "repo:kth-rpl-planiacs/sample_based_bcbf",
+    "kind": "repo",
+    "name": "sample_based_bcbf",
+    "url": "https://github.com/KTH-RPL-Planiacs/sample_based_bcbf",
+    "summary": "Python code for the CDC 2025 sample-based belief CBF paper: simulation environments for tracking and collision avoidance and the belief-CBF policies.",
+    "why_it_matters": "The only belief-CBF code found from the Vahs group; useful to check a re-implementation of the 2023 Gaussian BCBF baseline.",
+    "concepts": ["concept:obstacle-avoidance", "concept:sensor-fusion"],
+    "tags": ["control-barrier-function", "belief", "python", "mit"],
+    "language": "Python",
+    "domains": ["underwater"],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "License MIT per gh api, last push 2025-07-21. README says to use a mamba environment from environment.yml; on the day use a sample-local venv instead. Not run. Implements the sample-based variant, not the 2023 EKF version.",
+    "related": []
+  },
+  {
+    "id": "repo:rkcosner/cyberpod_sim_ros",
+    "kind": "repo",
+    "name": "cyberpod_sim_ros",
+    "url": "https://github.com/rkcosner/cyberpod_sim_ros",
+    "summary": "ROS Melodic Segway simulation used for the CoRL 2020 measurement-robust CBF results, with a virtual camera stream and the ECOS SOCP solver.",
+    "why_it_matters": "Reference code for the MR-CBF baseline: shows how the authors set up the SOCP filter and the learned estimator.",
+    "concepts": ["concept:obstacle-avoidance", "concept:ros"],
+    "tags": ["measurement-robust-cbf", "segway", "socp", "ros1", "no-license"],
+    "language": "Jupyter Notebook",
+    "domains": ["ground"],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "No license field per gh api, so read-only. Last push 2020-12-31, default branch perception. ROS Melodic on Ubuntu 18.04; do not try to run it on the day, read it.",
+    "related": []
+  }
+]

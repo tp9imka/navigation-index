@@ -1,0 +1,65 @@
+[
+  {
+    "id": "res:harms-composite-cbf-icra2025",
+    "kind": "paper",
+    "title": "Safe Quadrotor Navigation using Composite Control Barrier Functions",
+    "url": "https://arxiv.org/abs/2502.04101",
+    "authors": ["Marvin Harms", "Martin Jacquet", "Kostas Alexis"],
+    "year": 2025,
+    "summary": "Origin of the NTNU composite CBF: one soft-min barrier built from all position constraints, here on a third-order model of the multirotor, with an analysis showing the infeasible set is negligible. Lidar quadrotor flights indoors and outdoors against naive and adversarial commands. ICRA 2025 per the arXiv comment. Abstract read only.",
+    "key_takeaways": [
+      "The composite barrier scales to thousands of range points in one constraint",
+      "The PX4-CBF ICUAS 2025 paper adapts it to acceleration-level control inside PX4",
+      "Read as abstract only"
+    ],
+    "concepts": ["concept:obstacle-avoidance"],
+    "tags": ["control-barrier-function", "composite-cbf", "quadrotor", "lidar", "safety-filter"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "res:misyats-px4-cbf-icuas2025", "rel": "same_author"},
+      {"id": "repo:ntnu-arl/composite_cbf", "rel": "has_code"}
+    ]
+  },
+  {
+    "id": "res:han-vahs-sample-based-bcbf-cdc2025",
+    "kind": "paper",
+    "title": "Risk-Aware Robot Control in Dynamic Environments Using Belief Control Barrier Functions",
+    "url": "https://arxiv.org/abs/2504.04097",
+    "authors": ["Shaohang Han", "Matti Vahs", "Jana Tumova"],
+    "year": 2025,
+    "summary": "Extends belief CBFs from Gaussian EKF beliefs to sample-based beliefs, using concentration bounds on tail risk so multimodal or skewed beliefs are handled, with robustness to a bounded distribution shift. Simulated underwater tracking and collision avoidance at about 1 kHz per the abstract. CDC 2025 (Crossref doi 10.1109/CDC57313.2025.11312006). Abstract read only.",
+    "key_takeaways": [
+      "Follow-up to Vahs 2023 BCBF that drops the Gaussian assumption",
+      "Python code exists (MIT), unlike the 2023 paper",
+      "Read as abstract only"
+    ],
+    "concepts": ["concept:obstacle-avoidance", "concept:sensor-fusion"],
+    "tags": ["control-barrier-function", "belief", "risk-aware", "particle-belief"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "res:vahs-belief-cbf-2023", "rel": "same_author"},
+      {"id": "repo:kth-rpl-planiacs/sample_based_bcbf", "rel": "has_code"}
+    ]
+  },
+  {
+    "id": "res:molnar-ames-composing-cbf-lcss2023",
+    "kind": "paper",
+    "title": "Composing Control Barrier Functions for Complex Safety Specifications",
+    "url": "https://doi.org/10.1109/LCSYS.2023.3339719",
+    "authors": ["Tamas G. Molnar", "Aaron D. Ames"],
+    "year": 2023,
+    "summary": "Peer-reviewed (IEEE Control Systems Letters 7:3615-3620, per Crossref). Combines many barrier functions into one with a smooth soft-min, the construction PX4-CBF uses with a tanh saturation and a sharpness parameter kappa. Not read: cited here because PX4-CBF builds on it.",
+    "key_takeaways": [
+      "Soft-min composition under-approximates the minimum of the individual barriers",
+      "Larger kappa is less conservative",
+      "Not read; metadata from Crossref and the PX4-CBF paper"
+    ],
+    "concepts": ["concept:obstacle-avoidance"],
+    "tags": ["control-barrier-function", "composite-cbf", "theory", "peer-reviewed"],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": []
+  }
+]
