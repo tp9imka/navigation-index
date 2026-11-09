@@ -46,3 +46,4 @@ close-area-safety-filter
 close-area-planner-sampling
 close-area-planner-mpc
 close-area-relocalize
+close-area-moving-obstacles

@@ -1,0 +1,1 @@
+single-process rerun of every 23rd run in results/moving_0.json (27 runs): fields outcome, min_clearance_m, path_length_m, t_collision_s, warning_s; mismatches: 0 []
