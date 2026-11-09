@@ -8,10 +8,11 @@
   "machine": "arm64",
   "system": "Darwin",
   "imports_ms": {
-   "scipy_ndimage": 685.3,
-   "arena": 214.9,
-   "reactive": 34.3,
-   "safety_filter": 5198.0
+   "scipy_ndimage": 20251.8,
+   "arena": 190.9,
+   "reactive": 39.2,
+   "sample_planners": 90.4,
+   "safety_filter": 16872.6
   },
   "planners": [
    "straight",
@@ -19,7 +20,13 @@
    "astar_known",
    "astar_unknown",
    "apf",
-   "vfh_plus"
+   "vfh_plus",
+   "dwa",
+   "dwa_mem",
+   "bug2",
+   "tangent_bug",
+   "dstar_lite",
+   "informed_rrt_star"
   ],
   "presets": [
    "ideal",
@@ -63,7 +70,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 20.32,
-   "native_wall_s": 0.091,
+   "native_wall_s": 0.093,
    "frames": 204
   },
   {
@@ -82,7 +89,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 26.08,
-   "native_wall_s": 0.098,
+   "native_wall_s": 0.116,
    "frames": 261
   },
   {
@@ -101,7 +108,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 19.38,
-   "native_wall_s": 0.386,
+   "native_wall_s": 0.375,
    "frames": 194
   },
   {
@@ -120,7 +127,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 18.68,
-   "native_wall_s": 1.589,
+   "native_wall_s": 1.713,
    "frames": 187
   },
   {
@@ -139,7 +146,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 28.88,
-   "native_wall_s": 0.103,
+   "native_wall_s": 0.118,
    "frames": 289
   },
   {
@@ -158,7 +165,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 26.12,
-   "native_wall_s": 0.114,
+   "native_wall_s": 0.152,
    "frames": 262
   },
   {
@@ -177,7 +184,7 @@
    "max_pose_error_m": 0.4906,
    "free_path": true,
    "sim_s": 14.2,
-   "native_wall_s": 0.406,
+   "native_wall_s": 0.415,
    "frames": 142
   },
   {
@@ -196,7 +203,7 @@
    "max_pose_error_m": 0.5185,
    "free_path": true,
    "sim_s": 32.9,
-   "native_wall_s": 0.866,
+   "native_wall_s": 0.791,
    "frames": 329
   },
   {
@@ -215,7 +222,7 @@
    "max_pose_error_m": 0.7143,
    "free_path": true,
    "sim_s": 25.84,
-   "native_wall_s": 0.163,
+   "native_wall_s": 0.157,
    "frames": 259
   },
   {
@@ -234,7 +241,7 @@
    "max_pose_error_m": 0.3331,
    "free_path": true,
    "sim_s": 20.6,
-   "native_wall_s": 0.593,
+   "native_wall_s": 0.533,
    "frames": 206
   },
   {
@@ -253,7 +260,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 22.74,
-   "native_wall_s": 0.484,
+   "native_wall_s": 0.452,
    "frames": 228
   },
   {
@@ -272,7 +279,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 13.06,
-   "native_wall_s": 0.075,
+   "native_wall_s": 0.084,
    "frames": 131
   },
   {
@@ -291,7 +298,7 @@
    "max_pose_error_m": 0.2255,
    "free_path": true,
    "sim_s": 13.12,
-   "native_wall_s": 0.094,
+   "native_wall_s": 0.099,
    "frames": 132
   },
   {
@@ -310,7 +317,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 10.0,
-   "native_wall_s": 0.433,
+   "native_wall_s": 0.404,
    "frames": 100
   },
   {
@@ -329,8 +336,122 @@
    "max_pose_error_m": 0.9488,
    "free_path": true,
    "sim_s": 29.42,
-   "native_wall_s": 0.517,
+   "native_wall_s": 0.482,
    "frames": 295
+  },
+  {
+   "world": "random_0",
+   "planner": "dwa",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 43.68,
+    "duration_s": 43.68,
+    "min_clearance_m": 0.2682,
+    "path_length_m": 24.261
+   },
+   "max_pose_error_m": 0.0,
+   "free_path": true,
+   "sim_s": 43.68,
+   "native_wall_s": 0.601,
+   "frames": 437
+  },
+  {
+   "world": "u_trap_0",
+   "planner": "dwa_mem",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 28.94,
+    "min_clearance_m": 0.2757,
+    "path_length_m": 12.447
+   },
+   "max_pose_error_m": 0.0,
+   "free_path": true,
+   "sim_s": 28.96,
+   "native_wall_s": 1.5,
+   "frames": 290
+  },
+  {
+   "world": "office_0",
+   "planner": "bug2",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 28.94,
+    "min_clearance_m": 0.4578,
+    "path_length_m": 11.281
+   },
+   "max_pose_error_m": 0.0,
+   "free_path": true,
+   "sim_s": 28.96,
+   "native_wall_s": 0.109,
+   "frames": 290
+  },
+  {
+   "world": "forest_0",
+   "planner": "tangent_bug",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 25.68,
+    "duration_s": 25.68,
+    "min_clearance_m": 0.3731,
+    "path_length_m": 24.519
+   },
+   "max_pose_error_m": 0.0,
+   "free_path": true,
+   "sim_s": 25.68,
+   "native_wall_s": 0.133,
+   "frames": 257
+  },
+  {
+   "world": "narrow_gap_0",
+   "planner": "dstar_lite",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 24.52,
+    "duration_s": 24.52,
+    "min_clearance_m": 0.3288,
+    "path_length_m": 25.187
+   },
+   "max_pose_error_m": 0.0,
+   "free_path": true,
+   "sim_s": 24.52,
+   "native_wall_s": 0.824,
+   "frames": 246
+  },
+  {
+   "world": "office_0",
+   "planner": "informed_rrt_star",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 25.88,
+    "duration_s": 25.88,
+    "min_clearance_m": 0.2762,
+    "path_length_m": 13.578
+   },
+   "max_pose_error_m": 0.0,
+   "free_path": true,
+   "sim_s": 25.88,
+   "native_wall_s": 0.434,
+   "frames": 259
   }
  ],
  "checks": [
@@ -785,6 +906,156 @@
    }
   },
   {
+   "check": "E run.run_one + bench.py planner factory, same JSON world",
+   "case": [
+    "random_0",
+    "dwa",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 43.68,
+    "duration_s": 43.68,
+    "min_clearance_m": 0.2682,
+    "path_length_m": 24.261
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 43.68,
+    "duration_s": 43.68,
+    "min_clearance_m": 0.2682,
+    "path_length_m": 24.261
+   }
+  },
+  {
+   "check": "E run.run_one + bench.py planner factory, same JSON world",
+   "case": [
+    "u_trap_0",
+    "dwa_mem",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 28.94,
+    "min_clearance_m": 0.2757,
+    "path_length_m": 12.447
+   },
+   "reference": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 28.94,
+    "min_clearance_m": 0.2757,
+    "path_length_m": 12.447
+   }
+  },
+  {
+   "check": "E run.run_one + bench.py planner factory, same JSON world",
+   "case": [
+    "office_0",
+    "bug2",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 28.94,
+    "min_clearance_m": 0.4578,
+    "path_length_m": 11.281
+   },
+   "reference": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 28.94,
+    "min_clearance_m": 0.4578,
+    "path_length_m": 11.281
+   }
+  },
+  {
+   "check": "E run.run_one + bench.py planner factory, same JSON world",
+   "case": [
+    "forest_0",
+    "tangent_bug",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 25.68,
+    "duration_s": 25.68,
+    "min_clearance_m": 0.3731,
+    "path_length_m": 24.519
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 25.68,
+    "duration_s": 25.68,
+    "min_clearance_m": 0.3731,
+    "path_length_m": 24.519
+   }
+  },
+  {
+   "check": "E run.run_one + bench.py planner factory, same JSON world",
+   "case": [
+    "narrow_gap_0",
+    "dstar_lite",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 24.52,
+    "duration_s": 24.52,
+    "min_clearance_m": 0.3288,
+    "path_length_m": 25.187
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 24.52,
+    "duration_s": 24.52,
+    "min_clearance_m": 0.3288,
+    "path_length_m": 25.187
+   }
+  },
+  {
+   "check": "E run.run_one + bench.py planner factory, same JSON world",
+   "case": [
+    "office_0",
+    "informed_rrt_star",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 25.88,
+    "duration_s": 25.88,
+    "min_clearance_m": 0.2762,
+    "path_length_m": 13.578
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 25.88,
+    "duration_s": 25.88,
+    "min_clearance_m": 0.2762,
+    "path_length_m": 13.578
+   }
+  },
+  {
    "check": "D run_kill.run_one F2, unsensed off",
    "case": [
     "random_0",
@@ -835,11 +1106,164 @@
    }
   }
  ],
+ "matrix_rows": [
+  {
+   "case": [
+    "random_0",
+    "dwa",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "matrix": {
+    "outcome": "reached",
+    "time_to_goal_s": 43.68,
+    "duration_s": 43.68,
+    "min_clearance_m": 0.2682,
+    "path_length_m": 24.261
+   },
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 43.68,
+    "duration_s": 43.68,
+    "min_clearance_m": 0.2682,
+    "path_length_m": 24.261
+   },
+   "same": true,
+   "same_outcome": true
+  },
+  {
+   "case": [
+    "u_trap_0",
+    "dwa_mem",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "matrix": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 28.94,
+    "min_clearance_m": 0.2757,
+    "path_length_m": 12.447
+   },
+   "driver": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 28.94,
+    "min_clearance_m": 0.2757,
+    "path_length_m": 12.447
+   },
+   "same": true,
+   "same_outcome": true
+  },
+  {
+   "case": [
+    "office_0",
+    "bug2",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "matrix": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 28.94,
+    "min_clearance_m": 0.4578,
+    "path_length_m": 11.281
+   },
+   "driver": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 28.94,
+    "min_clearance_m": 0.4578,
+    "path_length_m": 11.281
+   },
+   "same": true,
+   "same_outcome": true
+  },
+  {
+   "case": [
+    "forest_0",
+    "tangent_bug",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "matrix": {
+    "outcome": "reached",
+    "time_to_goal_s": 25.68,
+    "duration_s": 25.68,
+    "min_clearance_m": 0.3731,
+    "path_length_m": 24.519
+   },
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 25.68,
+    "duration_s": 25.68,
+    "min_clearance_m": 0.3731,
+    "path_length_m": 24.519
+   },
+   "same": true,
+   "same_outcome": true
+  },
+  {
+   "case": [
+    "narrow_gap_0",
+    "dstar_lite",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "matrix": {
+    "outcome": "reached",
+    "time_to_goal_s": 24.52,
+    "duration_s": 24.52,
+    "min_clearance_m": 0.3288,
+    "path_length_m": 25.187
+   },
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 24.52,
+    "duration_s": 24.52,
+    "min_clearance_m": 0.3288,
+    "path_length_m": 25.187
+   },
+   "same": true,
+   "same_outcome": true
+  },
+  {
+   "case": [
+    "office_0",
+    "informed_rrt_star",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "matrix": {
+    "outcome": "reached",
+    "time_to_goal_s": 25.88,
+    "duration_s": 25.88,
+    "min_clearance_m": 0.2761,
+    "path_length_m": 13.578
+   },
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 25.88,
+    "duration_s": 25.88,
+    "min_clearance_m": 0.2762,
+    "path_length_m": 13.578
+   },
+   "same": false,
+   "same_outcome": true
+  }
+ ],
  "native_env": {
   "python": "3.12.10",
   "numpy": "2.5.4",
   "scipy": "1.18.1",
   "machine": "arm64"
  },
- "summary": "15/20 checks identical"
+ "summary": "21/26 checks identical",
+ "matrix_summary": "5/6 identical to matrix_0.json, 6/6 same outcome (generated vs JSON world)"
 }

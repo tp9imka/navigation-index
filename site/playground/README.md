@@ -3,10 +3,14 @@
 Open [index.html](index.html) (served from the repo root: `python3 -m http.server 8000`, then
 `http://localhost:8000/site/playground/`). Draw or load an arena, drag A and B, pick a planner,
 sensor preset, VIO fault and safety filter, press Run, and watch the replay with a score panel.
+Press **Copy link** to share the world and config: opening the link restores both and runs.
 
 The page runs the hub's real Python code with Pyodide in a Web Worker: the arena
 ([samples/close-area-arena](../../samples/close-area-arena/README.md)), APF and VFH+
-([close-area-planner-reactive](../../samples/close-area-planner-reactive/README.md)) and the F2 filter
+([close-area-planner-reactive](../../samples/close-area-planner-reactive/README.md)), DWA, Bug2 and
+TangentBug ([close-area-planner-dwa-bug](../../samples/close-area-planner-dwa-bug/README.md)), D* Lite
+([close-area-planner-dstar](../../samples/close-area-planner-dstar/README.md)), Informed RRT*
+([close-area-planner-sampling](../../samples/close-area-planner-sampling/README.md)) and the F2 filter
 ([close-area-safety-filter](../../samples/close-area-safety-filter/README.md)). Nothing is re-implemented
 in JS. Everything is **synthetic**: a simulated 2.5D point-mass vehicle, simulated range sensors and
 a simulated VIO. No number here is a flight result.
@@ -18,30 +22,61 @@ Source: [results/playground_check.md](results/playground_check.md), written by
 [results/native_parity.json](results/native_parity.json) from `results/native_parity.py` (CPython 3.12.10).
 Input type: synthetic.
 
-- **Browser = native on 15/15 preset cases** (outcome, time to goal, duration, min clearance, path
+- **12 planners in the browser: 12 of the 14 benchmarked rows** of
+  [close-area-benchmark](../../samples/close-area-benchmark/README.md). Added in loop-62: DWA, DWA + 3 s
+  memory, Bug2, TangentBug, D* Lite (unknown map) and Informed RRT* (known map). The 2 rows left out:
+  `astar_mpc` needs osqp, and the Pyodide 314.0.7 `pyodide-lock.json` lists 357 packages but no osqp
+  (only clarabel and cvxpy-base, checked 2026-11-09); `astar_unknown_f2` is not a separate planner
+  here. A* unknown map + filter F2 is close to it, but differs: the benchmark's A* unknown map is
+  geofenced, the playground's keeps the shipped map corner (see "What a run does").
+- **Browser = native on 21/21 preset cases** (outcome, time to goal, duration, min clearance, path
   length; seed 0). Example: random_0, A* known map => reached in 19.38 s, min clearance 0.5647 m,
-  path 23.838 m in both. freest_beam => reached in 26.08 s, 0.4702 m, 24.504 m in both. The cases
-  cover all 6 planners, all 3 sensor presets, faults none / jump / bias / dropout and F2.
+  path 23.838 m in both. The cases cover all 12 planners, all 3 sensor presets, faults none / jump /
+  bias / dropout and F2. The 6 new planners, one preset each:
+
+  | world | planner | outcome / time to goal s / min clearance m / path m (browser = native) | browser Python s | native Python s |
+  |---|---|---|---|---|
+  | random_0 | dwa | reached / 43.68 / 0.2682 / 24.261 | 1.018 | 0.601 |
+  | u_trap_0 | dwa_mem | stuck (28.94 s) / - / 0.2757 / 12.447 | 2.383 | 1.5 |
+  | office_0 | bug2 | stuck (28.94 s) / - / 0.4578 / 11.281 | 0.196 | 0.109 |
+  | forest_0 | tangent_bug | reached / 25.68 / 0.3731 / 24.519 | 0.235 | 0.133 |
+  | narrow_gap_0 | dstar_lite | reached / 24.52 / 0.3288 / 25.187 | 1.28 | 0.824 |
+  | office_0 | informed_rrt_star | reached / 25.88 / 0.2762 / 13.578 | 0.82 | 0.434 |
+
+- **Shareable link works in a fresh profile.** A hand-drawn world with compare mode (TangentBug vs
+  D* Lite + F2, Crazyflie sensor, VIO on, seed 7) gave a 461-character link. A second headless Chrome
+  with a new profile and cold cache opened it, restored the identical world and config, ran by
+  itself, and got both scores identical to the source tab (A collision at 8.5 s, B reached in 28.4 s).
+  The `w=` value is 426-1610 characters for the 8 presets (forest_0 is the longest, 6966 characters
+  of JSON). The Copy link button put the link in the clipboard and the address bar. A broken `w=`
+  shows a message and loads random_0.
 - A box drawn with real pointer events on an empty world: A* known map and freest_beam give the same
   score in the browser and in native CPython on the saved [custom_world.json](results/custom_world.json).
-- The page stays responsive: during a 3.0 s A* unknown-map run in the worker, the longest gap
-  between animation frames was 9 ms.
-- Cold load in a fresh profile: Python ready 5.4 s after the page script starts, 22.2 MB
+- The page stays responsive: during a 2.9 s A* unknown-map run in the worker, the longest gap
+  between animation frames was 10 ms.
+- Cold load in a fresh profile: Python ready 5.7 s after the page script starts, 22.2 MB
   downloaded from cdn.jsdelivr.net. The load starts when the page opens, so it overlaps with drawing.
 - 390 px wide phone viewport: no horizontal scroll, runs work.
 - Screenshots (viewport only): [loading](results/pg_loading.png),
   [compare A* vs freest_beam](results/pg_compare_random0.png),
-  [hand-drawn box](results/pg_custom_drawn.png), [VIO jump, no filter vs F2, dark theme](results/pg_jump_f2_dark.png),
+  [hand-drawn box](results/pg_custom_drawn.png), [shared link in a fresh profile](results/pg_shared_link.png), [VIO jump, no filter vs F2, dark theme](results/pg_jump_f2_dark.png),
   [phone 390 px](results/pg_phone_390.png).
 
-The driver loop matches the arena's own loops, checked natively in `native_parity.py`:
+The driver loop matches the arena's own loops, checked natively in `native_parity.py`
+([native_parity.json](results/native_parity.json), 21/26 checks identical):
 
 | check | identical |
 |---|---|
-| A: driver == `run.run_one` on the same JSON world (truth pose, ideal sensor), 7 planner cases | 7/7 |
+| A: driver == `run.run_one` on the same JSON world (truth pose, ideal sensor), 8 cases of the first 6 planners | 8/8 |
+| E: driver == `run.run_one` with the planner built by `close-area-benchmark/bench.py` `PLANNERS[name][0]` called with the world, same JSON world, 6 new planners | 6/6 |
 | C: driver == `run.run_one` + `estimator.make_pose_source_factory(fault)` (the `run.evaluate` path) | 2/2 |
 | D: driver with F2 == `close-area-safety-filter/run_kill.run_one("F2", case, unsensed off)` | 2/2 |
-| B: driver on the preset JSON == `run.run_one` on `world.make_world` (no JSON) | 2/7 |
+| B: driver on the preset JSON == `run.run_one` on `world.make_world` (no JSON) | 3/8 |
+
+Information only: the 6 new cases against the benchmark's own rows in
+`samples/close-area-benchmark/results/matrix_0.json` (generated worlds, preset ideal, layout 0):
+5/6 identical, 6/6 same outcome. Informed RRT* on office_0 differs in min clearance only (0.2762 m
+here, 0.2761 m in the matrix), the same 4-decimal JSON rounding as check B.
 
 Check B is a real difference, not a bug in the playground: `world_json` rounds every number to 4
 decimals (0.1 mm), and that is enough to move some runs a little. Example: straight on random_0
@@ -51,16 +86,21 @@ equals the native score **on the same JSON world**, and can differ slightly from
 
 ## What a run does
 
-`worker.js` holds `DRIVER_PY`, about 190 lines of Python glue. It calls `world_json.from_json`,
+`worker.js` holds `DRIVER_PY`, about 260 lines of Python glue. It calls `world_json.from_json`,
 `worlds_complex.has_free_path`, `presets.make_sensor`, `estimator.make_pose_source_factory`,
-the planner `make()` functions, `filters.make("F2")` and `scorer.score`. The loop is `run.run_one`
+the planner `make()` functions, `filters.make("F2")` and `scorer.score`. Each planner is built the
+way `close-area-benchmark/bench.py` builds it: the DWA / Bug, D* Lite and RRT* samples each import
+their own `arena.py`, so they load with bench.py's recipe (folder on `sys.path` only while importing).
+D* Lite gets the benchmark's geofence (log-odds map corner = area corner - 2 m). A* unknown map keeps
+the shipped fixed map corner at (-2.5, -2.5), as before, so on a user-drawn world with B at negative
+x or y it is clamped to the map edge and D* Lite is not. The loop is `run.run_one`
 when the filter is off (pose at the 10 Hz planner rate), and `run_kill.run_one` when F2 is on (pose
 and filter every 50 Hz step, a second sensor copy for the filter at 16.7 Hz, rng `[seed, index, 8]`).
 The only additions are a sensor-preset argument and trace recording.
 
 | Control | Options | Source |
 |---|---|---|
-| Planner | straight, freest_beam, A* + ESDF known map, A* + ESDF unknown map, APF, VFH+ | `planners/`, `run_faults.FreestBeam`, `close-area-planner-reactive` |
+| Planner | straight, freest_beam, A* + ESDF known map, A* + ESDF unknown map, APF, VFH+, DWA, DWA + 3 s scan memory, Bug2, TangentBug, D* Lite unknown map, Informed RRT* 5000 known map | `planners/`, `run_faults.FreestBeam`, `close-area-planner-reactive`, `close-area-planner-dwa-bug`, `close-area-planner-dstar`, `close-area-planner-sampling` |
 | Sensor | ideal (72 rays, 6 m), crazyflie (4 cone beams, 3 m), crazyflie_bright (0.73 m) | `presets.py` |
 | VIO fault | off (planner sees truth), VIO no fault, jump, bias, dropout | `estimator.py`, `faults.py`; the VIO options add 2 seeded dark zones |
 | Filter | none, F2 (PX4-CBF as shipped, on ranges) | `close-area-safety-filter/filters.py` |
@@ -68,7 +108,8 @@ The only additions are a sensor-preset argument and trace recording.
 
 Each run returns the 10 Hz trace (truth, estimate, sigma, quality, yaw, range scan), the planned
 path snapshots, truth clearance, dark zones, the fault log and the scorer row. The replay draws
-truth and estimate paths, the range beams, the A* path and the vehicle at its true 0.15 m size.
+truth and estimate paths, the range beams, the planned path (A*, D* Lite, RRT*) and the vehicle at
+its true 0.15 m size.
 Compare mode runs config B on the same world and overlays it, with both columns in the score table.
 
 ## Editor
@@ -82,15 +123,28 @@ Download / open `close-area-world/1` JSON, or keep one world in localStorage. An
 replay, because the trace no longer matches the world. The area bounds of a preset cannot be
 resized in the editor; "New empty" gives a 20 x 20 m area.
 
+## Shareable link
+
+**Copy link** builds `index.html?CONFIG#w=WORLD`, copies it and puts it in the address bar.
+
+- `w=`: the `close-area-world/1` JSON, compressed with `CompressionStream("deflate")` (zlib) and
+  base64url coded without padding.
+- Query params: `planner`, `preset`, `fault`, `filter` for config A; the same with `_b` for config B
+  and `compare=1` when compare is on; `seed`; `src=<preset>` when the world is an unedited preset
+  (used only to show the native parity note, after checking the decoded world equals the preset file).
+- Opening the link restores world and config and runs once Python is ready. Unknown param values
+  are ignored with a message. Editing the world or loading another one removes the link from the
+  address bar, so a reload does not bring back an old world.
+
 ## Files
 
 | File | What |
 |---|---|
 | [index.html](index.html), [playground.css](playground.css), [playground.js](playground.js) | The page. Uses `../showcase.css` for the palette and light / dark theme. `window.PG` is a small API for scripted checks |
-| [worker.js](worker.js) | ES module worker: loads Pyodide 314.0.7 (`pyodide.mjs`), numpy, scipy and the 23 files in the manifest once, then serves `run` messages |
+| [worker.js](worker.js) | ES module worker: loads Pyodide 314.0.7 (`pyodide.mjs`), numpy, scipy and the 30 files in the manifest once, then serves `run` messages |
 | [manifest.json](manifest.json) | Pyodide pin, packages, files (shared with the spike) |
 | [presets/](presets/index.json) | Preset world JSON |
-| `results/export_presets.py`, `native_parity.py`, `measure_playground.mjs` | Export presets; native reference + loop parity; headless Chrome check and screenshots |
+| `results/export_presets.py`, `native_parity.py`, `measure_playground.mjs` | Export presets; native reference + loop parity; headless Chrome check, link check in a second fresh profile, and screenshots ([pg_shared_link.png](results/pg_shared_link.png)) |
 
 Re-run (needs the arena venv, Chrome at the macOS default path, network for the CDN):
 
@@ -98,8 +152,8 @@ Re-run (needs the arena venv, Chrome at the macOS default path, network for the 
 uv venv --python 3.12 samples/close-area-arena/.venv
 uv pip install --python samples/close-area-arena/.venv -r samples/close-area-arena/requirements.txt
 samples/close-area-arena/.venv/bin/python site/playground/results/export_presets.py
-samples/close-area-arena/.venv/bin/python site/playground/results/native_parity.py   # about 40 s
-node site/playground/results/measure_playground.mjs                                  # about 2 minutes
+samples/close-area-arena/.venv/bin/python site/playground/results/native_parity.py   # about 1 minute
+node site/playground/results/measure_playground.mjs                                  # about 3 minutes
 ```
 
 Finding: `importScripts` of the CDN `pyodide.js` failed in a classic worker in Chrome 140
@@ -111,9 +165,15 @@ workers. The worker is therefore started with `{type: "module"}` and uses `impor
 - GitHub Pages hosting. Only `python3 -m http.server` locally.
 - Firefox and Safari, real phones and touch input. Only headless Chrome 140 with mouse events and
   a 390 x 844 emulated viewport.
+- The shareable link was checked in Chrome only: `CompressionStream` needs Chrome 80+, Firefox 113+,
+  Safari 16.4+ (not tried). Very long links (over about 8000 characters, for example a world with
+  hundreds of obstacles) were not tried; some chat tools and servers cut long URLs.
+- The 6 new planners have a native reference on one preset each, with the ideal sensor and truth
+  pose. Other sensors, faults and F2 run through the same driver code but are not compared with
+  native for them; the link check (TangentBug, D* Lite + F2) is browser vs browser only.
 - Pointer drawing was checked for the Box tool only. Wall, Cylinder, Glass, Move, Undo, Delete,
   material change and file open / save / localStorage were not exercised by the scripted check.
-- `spike.html` with the extended manifest (it now also writes the 12 extra files) was not re-run.
+- `spike.html` with the extended manifest (it now also writes the 19 extra files) was not re-run.
 - Worlds much larger than 20 x 20 m, and runs near the 60 s limit with A* unknown map. Estimate,
   not measured: browser Python ran about 2x slower than native in the check, so such a run would
   take about 10 s.

@@ -1,5 +1,5 @@
 {
- "date": "2026-11-09T10:59:32.392Z",
+ "date": "2026-11-09T12:11:35.550Z",
  "input": "synthetic",
  "page": "http://127.0.0.1:8766/site/playground/index.html",
  "steps": [],
@@ -10,13 +10,13 @@
   "height": 900
  },
  "load": {
-  "ready_ms": 5390,
+  "ready_ms": 5705,
   "mb": 22.2,
   "worker": {
-   "pyodide_ms": 2301,
-   "packages_ms": 1624,
-   "import_ms": 1452,
-   "ready_ms": 5377
+   "pyodide_ms": 2823,
+   "packages_ms": 1379,
+   "import_ms": 1408,
+   "ready_ms": 5611
   },
   "env": {
    "python": "3.14.2",
@@ -25,10 +25,11 @@
    "machine": "wasm32",
    "system": "Emscripten",
    "imports_ms": {
-    "scipy_ndimage": 692.1,
-    "arena": 36.4,
-    "reactive": 3.2,
-    "safety_filter": 451.7
+    "scipy_ndimage": 659.7,
+    "arena": 34.5,
+    "reactive": 3,
+    "sample_planners": 11.6,
+    "safety_filter": 439.9
    },
    "planners": [
     "straight",
@@ -36,7 +37,13 @@
     "astar_known",
     "astar_unknown",
     "apf",
-    "vfh_plus"
+    "vfh_plus",
+    "dwa",
+    "dwa_mem",
+    "bug2",
+    "tangent_bug",
+    "dstar_lite",
+    "informed_rrt_star"
    ],
    "presets": [
     "ideal",
@@ -56,9 +63,9 @@
    ],
    "load_errors": {},
    "pyodide": "314.0.7",
-   "arena_files": 23
+   "arena_files": 30
   },
-  "wall_since_navigate_s": 5.583
+  "wall_since_navigate_s": 5.88
  },
  "parity": [
   {
@@ -70,7 +77,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 20.32,
-   "native_wall_s": 0.091,
+   "native_wall_s": 0.093,
    "frames": 204,
    "browser": {
     "outcome": "stuck",
@@ -98,7 +105,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 26.08,
-   "native_wall_s": 0.098,
+   "native_wall_s": 0.116,
    "frames": 261,
    "browser": {
     "outcome": "reached",
@@ -115,7 +122,7 @@
     "path_length_m": 24.504
    },
    "same": true,
-   "browser_wall_s": 0.192
+   "browser_wall_s": 0.186
   },
   {
    "world": "random_0",
@@ -126,7 +133,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 19.38,
-   "native_wall_s": 0.386,
+   "native_wall_s": 0.375,
    "frames": 194,
    "browser": {
     "outcome": "reached",
@@ -143,7 +150,7 @@
     "path_length_m": 23.838
    },
    "same": true,
-   "browser_wall_s": 0.765
+   "browser_wall_s": 0.737
   },
   {
    "world": "random_0",
@@ -154,7 +161,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 18.68,
-   "native_wall_s": 1.589,
+   "native_wall_s": 1.713,
    "frames": 187,
    "browser": {
     "outcome": "reached",
@@ -171,7 +178,7 @@
     "path_length_m": 23.947
    },
    "same": true,
-   "browser_wall_s": 3.039
+   "browser_wall_s": 2.927
   },
   {
    "world": "random_0",
@@ -182,7 +189,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 28.88,
-   "native_wall_s": 0.103,
+   "native_wall_s": 0.118,
    "frames": 289,
    "browser": {
     "outcome": "reached",
@@ -199,7 +206,7 @@
     "path_length_m": 24.9
    },
    "same": true,
-   "browser_wall_s": 0.197
+   "browser_wall_s": 0.192
   },
   {
    "world": "random_0",
@@ -210,7 +217,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 26.12,
-   "native_wall_s": 0.114,
+   "native_wall_s": 0.152,
    "frames": 262,
    "browser": {
     "outcome": "reached",
@@ -227,7 +234,7 @@
     "path_length_m": 24.478
    },
    "same": true,
-   "browser_wall_s": 0.212
+   "browser_wall_s": 0.204
   },
   {
    "world": "random_0",
@@ -238,7 +245,7 @@
    "max_pose_error_m": 0.4906,
    "free_path": true,
    "sim_s": 14.2,
-   "native_wall_s": 0.406,
+   "native_wall_s": 0.415,
    "frames": 142,
    "browser": {
     "outcome": "collision",
@@ -255,7 +262,7 @@
     "path_length_m": 15.888
    },
    "same": true,
-   "browser_wall_s": 0.805
+   "browser_wall_s": 0.781
   },
   {
    "world": "random_0",
@@ -266,7 +273,7 @@
    "max_pose_error_m": 0.5185,
    "free_path": true,
    "sim_s": 32.9,
-   "native_wall_s": 0.866,
+   "native_wall_s": 0.791,
    "frames": 329,
    "browser": {
     "outcome": "stuck",
@@ -283,7 +290,7 @@
     "path_length_m": 25.344
    },
    "same": true,
-   "browser_wall_s": 1.38
+   "browser_wall_s": 1.307
   },
   {
    "world": "random_0",
@@ -294,7 +301,7 @@
    "max_pose_error_m": 0.7143,
    "free_path": true,
    "sim_s": 25.84,
-   "native_wall_s": 0.163,
+   "native_wall_s": 0.157,
    "frames": 259,
    "browser": {
     "outcome": "reached",
@@ -311,7 +318,7 @@
     "path_length_m": 24.569
    },
    "same": true,
-   "browser_wall_s": 0.28
+   "browser_wall_s": 0.274
   },
   {
    "world": "random_0",
@@ -322,7 +329,7 @@
    "max_pose_error_m": 0.3331,
    "free_path": true,
    "sim_s": 20.6,
-   "native_wall_s": 0.593,
+   "native_wall_s": 0.533,
    "frames": 206,
    "browser": {
     "outcome": "reached",
@@ -339,7 +346,7 @@
     "path_length_m": 24.334
    },
    "same": true,
-   "browser_wall_s": 1.034
+   "browser_wall_s": 0.977
   },
   {
    "world": "office_0",
@@ -350,7 +357,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 22.74,
-   "native_wall_s": 0.484,
+   "native_wall_s": 0.452,
    "frames": 228,
    "browser": {
     "outcome": "reached",
@@ -367,7 +374,7 @@
     "path_length_m": 13.765
    },
    "same": true,
-   "browser_wall_s": 0.905
+   "browser_wall_s": 0.873
   },
   {
    "world": "office_0",
@@ -378,7 +385,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 13.06,
-   "native_wall_s": 0.075,
+   "native_wall_s": 0.084,
    "frames": 131,
    "browser": {
     "outcome": "stuck",
@@ -395,7 +402,7 @@
     "path_length_m": 7.115
    },
    "same": true,
-   "browser_wall_s": 0.136
+   "browser_wall_s": 0.131
   },
   {
    "world": "office_0",
@@ -406,7 +413,7 @@
    "max_pose_error_m": 0.2255,
    "free_path": true,
    "sim_s": 13.12,
-   "native_wall_s": 0.094,
+   "native_wall_s": 0.099,
    "frames": 132,
    "browser": {
     "outcome": "stuck",
@@ -423,7 +430,7 @@
     "path_length_m": 6.86
    },
    "same": true,
-   "browser_wall_s": 0.177
+   "browser_wall_s": 0.168
   },
   {
    "world": "glass_office_0",
@@ -434,7 +441,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 10,
-   "native_wall_s": 0.433,
+   "native_wall_s": 0.404,
    "frames": 100,
    "browser": {
     "outcome": "stuck",
@@ -451,7 +458,7 @@
     "path_length_m": 0
    },
    "same": true,
-   "browser_wall_s": 0.677
+   "browser_wall_s": 0.623
   },
   {
    "world": "u_trap_0",
@@ -462,7 +469,7 @@
    "max_pose_error_m": 0.9488,
    "free_path": true,
    "sim_s": 29.42,
-   "native_wall_s": 0.517,
+   "native_wall_s": 0.482,
    "frames": 295,
    "browser": {
     "outcome": "stuck",
@@ -479,7 +486,175 @@
     "path_length_m": 25.73
    },
    "same": true,
-   "browser_wall_s": 0.926
+   "browser_wall_s": 0.88
+  },
+  {
+   "world": "random_0",
+   "planner": "dwa",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 43.68,
+   "native_wall_s": 0.601,
+   "frames": 437,
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 43.68,
+    "duration_s": 43.68,
+    "min_clearance_m": 0.2682,
+    "path_length_m": 24.261
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 43.68,
+    "duration_s": 43.68,
+    "min_clearance_m": 0.2682,
+    "path_length_m": 24.261
+   },
+   "same": true,
+   "browser_wall_s": 1.018
+  },
+  {
+   "world": "u_trap_0",
+   "planner": "dwa_mem",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 28.96,
+   "native_wall_s": 1.5,
+   "frames": 290,
+   "browser": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 28.94,
+    "min_clearance_m": 0.2757,
+    "path_length_m": 12.447
+   },
+   "native": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 28.94,
+    "min_clearance_m": 0.2757,
+    "path_length_m": 12.447
+   },
+   "same": true,
+   "browser_wall_s": 2.383
+  },
+  {
+   "world": "office_0",
+   "planner": "bug2",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 28.96,
+   "native_wall_s": 0.109,
+   "frames": 290,
+   "browser": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 28.94,
+    "min_clearance_m": 0.4578,
+    "path_length_m": 11.281
+   },
+   "native": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 28.94,
+    "min_clearance_m": 0.4578,
+    "path_length_m": 11.281
+   },
+   "same": true,
+   "browser_wall_s": 0.196
+  },
+  {
+   "world": "forest_0",
+   "planner": "tangent_bug",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 25.68,
+   "native_wall_s": 0.133,
+   "frames": 257,
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 25.68,
+    "duration_s": 25.68,
+    "min_clearance_m": 0.3731,
+    "path_length_m": 24.519
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 25.68,
+    "duration_s": 25.68,
+    "min_clearance_m": 0.3731,
+    "path_length_m": 24.519
+   },
+   "same": true,
+   "browser_wall_s": 0.235
+  },
+  {
+   "world": "narrow_gap_0",
+   "planner": "dstar_lite",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 24.52,
+   "native_wall_s": 0.824,
+   "frames": 246,
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 24.52,
+    "duration_s": 24.52,
+    "min_clearance_m": 0.3288,
+    "path_length_m": 25.187
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 24.52,
+    "duration_s": 24.52,
+    "min_clearance_m": 0.3288,
+    "path_length_m": 25.187
+   },
+   "same": true,
+   "browser_wall_s": 1.28
+  },
+  {
+   "world": "office_0",
+   "planner": "informed_rrt_star",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 25.88,
+   "native_wall_s": 0.434,
+   "frames": 259,
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 25.88,
+    "duration_s": 25.88,
+    "min_clearance_m": 0.2762,
+    "path_length_m": 13.578
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 25.88,
+    "duration_s": 25.88,
+    "min_clearance_m": 0.2762,
+    "path_length_m": 13.578
+   },
+   "same": true,
+   "browser_wall_s": 0.82
   }
  ],
  "compare": {
@@ -558,9 +733,9 @@
  },
  "responsive": {
   "run": "astar_unknown on random_0",
-  "python_wall_s": 3.021,
-  "frames": 361,
-  "max_ms": 9,
+  "python_wall_s": 2.931,
+  "frames": 350,
+  "max_ms": 10,
   "median_ms": 8
  },
  "fault_filter": {
@@ -594,6 +769,134 @@
    "height": 900
   }
  },
+ "link": {
+  "url": "http://127.0.0.1:8766/site/playground/index.html?planner=tangent_bug&preset=crazyflie&fault=none&filter=none&compare=1&planner_b=dstar_lite&preset_b=crazyflie&fault_b=none&filter_b=F2&seed=7#w=eJwtjjFrwzAUhP-KuPnFtRIM6ds6ZO3WKXh4ltRYIFlFkqmdkP9eFAo33Ad3xz1QzOyigGFCKu4g2cnhN-Vg3zQI31miAyMkI0FdPr9UJJWyv_lFSVUfLSLRh70NrKWmCEJxzoJ7gl-s215uSutiC_jaU0_HppEg4KvuBtLdMBKmRueG5xffwZqQxfq1gPtOD4Q0lSomuLb0QN1_2rcpbSCYDax7gtnB791AmDfwiTDv4GPjKNVlLwHcbHUgVLn995_j8w_Ch04O",
+  "button_msg": "Link copied (461 characters). Opening it restores this world and config and runs it.",
+  "share_url": "http://127.0.0.1:8766/site/playground/index.html?planner=tangent_bug&preset=crazyflie&fault=none&filter=none&compare=1&planner_b=dstar_lite&preset_b=crazyflie&fault_b=none&filter_b=F2&seed=7#w=eJwtjjFrwzAUhP-KuPnFtRIM6ds6ZO3WKXh4ltRYIFlFkqmdkP9eFAo33Ad3xz1QzOyigGFCKu4g2cnhN-Vg3zQI31miAyMkI0FdPr9UJJWyv_lFSVUfLSLRh70NrKWmCEJxzoJ7gl-s215uSutiC_jaU0_HppEg4KvuBtLdMBKmRueG5xffwZqQxfq1gPtOD4Q0lSomuLb0QN1_2rcpbSCYDax7gtnB791AmDfwiTDv4GPjKNVlLwHcbHUgVLn995_j8w_Ch04O",
+  "config_src": {
+   "a": {
+    "planner": "tangent_bug",
+    "preset": "crazyflie",
+    "fault": "none",
+    "filter": "none",
+    "seed": 7
+   },
+   "b": {
+    "planner": "dstar_lite",
+    "preset": "crazyflie",
+    "fault": "none",
+    "filter": "F2",
+    "seed": 7
+   },
+   "compare": true
+  },
+  "clipboard": "http://127.0.0.1:8766/site/playground/index.html?planner=tangent_bug&preset=crazyflie&fault=none&filter=none&compare=1&planner_b=dstar_lite&preset_b=crazyflie&fault_b=none&filter_b=F2&seed=7#w=eJwtjjFrwzAUhP-KuPnFtRIM6ds6ZO3WKXh4ltRYIFlFkqmdkP9eFAo33Ad3xz1QzOyigGFCKu4g2cnhN-Vg3zQI31miAyMkI0FdPr9UJJWyv_lFSVUfLSLRh70NrKWmCEJxzoJ7gl-s215uSutiC_jaU0_HppEg4KvuBtLdMBKmRueG5xffwZqQxfq1gPtOD4Q0lSomuLb0QN1_2rcpbSCYDax7gtnB791AmDfwiTDv4GPjKNVlLwHcbHUgVLn995_j8w_Ch04O",
+  "address_bar_is_link": true,
+  "clipboard_is_link": true,
+  "url_chars": 461,
+  "world_json_chars": 267,
+  "preset_lengths": {
+   "office_0": {
+    "json_chars": 3330,
+    "w_chars": 863
+   },
+   "warehouse_0": {
+    "json_chars": 2829,
+    "w_chars": 606
+   },
+   "forest_0": {
+    "json_chars": 6966,
+    "w_chars": 1610
+   },
+   "maze_0": {
+    "json_chars": 4346,
+    "w_chars": 691
+   },
+   "glass_office_0": {
+    "json_chars": 2213,
+    "w_chars": 723
+   },
+   "random_0": {
+    "json_chars": 906,
+    "w_chars": 506
+   },
+   "u_trap_0": {
+    "json_chars": 764,
+    "w_chars": 463
+   },
+   "narrow_gap_0": {
+    "json_chars": 609,
+    "w_chars": 426
+   }
+  },
+  "fresh": {
+   "profile": "new --user-data-dir, cold cache",
+   "world_same": true,
+   "config": {
+    "a": {
+     "planner": "tangent_bug",
+     "preset": "crazyflie",
+     "fault": "none",
+     "filter": "none",
+     "seed": 7
+    },
+    "b": {
+     "planner": "dstar_lite",
+     "preset": "crazyflie",
+     "fault": "none",
+     "filter": "F2",
+     "seed": 7
+    },
+    "compare": true
+   },
+   "auto_run": true,
+   "scores": [
+    {
+     "outcome": "collision",
+     "time_to_goal_s": null,
+     "duration_s": 8.5,
+     "min_clearance_m": 0.1499,
+     "path_length_m": 7.643
+    },
+    {
+     "outcome": "reached",
+     "time_to_goal_s": 28.4,
+     "duration_s": 28.4,
+     "min_clearance_m": 0.5954,
+     "path_length_m": 27.397
+    }
+   ],
+   "world_msg": "World and config restored from the link (1 obstacles).",
+   "config_same": true,
+   "scores_same": true,
+   "shot": {
+    "file": "pg_shared_link.png",
+    "width": 1280,
+    "height": 900
+   },
+   "console": []
+  },
+  "broken": {
+   "msg": "This link does not hold a readable world (w= is not deflate + base64url data). Loaded the default preset random_0.",
+   "world_family": "random"
+  },
+  "source_scores": [
+   {
+    "outcome": "collision",
+    "time_to_goal_s": null,
+    "duration_s": 8.5,
+    "min_clearance_m": 0.1499,
+    "path_length_m": 7.643
+   },
+   {
+    "outcome": "reached",
+    "time_to_goal_s": 28.4,
+    "duration_s": 28.4,
+    "min_clearance_m": 0.5954,
+    "path_length_m": 27.397
+   }
+  ]
+ },
  "phone": {
   "viewport": "390 x 844 @2x",
   "scroll_width": 390,
@@ -616,8 +919,8 @@
   "showcase.html": {
    "scroll_width": 390,
    "link_visible": true,
-   "link_right_px": 333,
-   "topnav_right_px": 435
+   "link_right_px": 277,
+   "topnav_right_px": 378
   },
   "index.html": {
    "scroll_width": 390,

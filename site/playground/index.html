@@ -11,7 +11,7 @@
 <script>
   try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
-<script defer src="playground.js?v=20261109b"></script>
+<script defer src="playground.js?v=20261109c"></script>
 </head>
 <body>
 <header class="top">
@@ -29,6 +29,9 @@
   <p class="muted">Draw or load an arena, drag A and B, pick a planner, sensor, VIO fault and safety filter, then run.
     Your browser runs the hub's real Python code (<a href="../../samples/close-area-arena/README.md">close-area-arena</a>,
     <a href="../../samples/close-area-planner-reactive/README.md">reactive planners</a>,
+    <a href="../../samples/close-area-planner-dwa-bug/README.md">DWA and Bug</a>,
+    <a href="../../samples/close-area-planner-dstar/README.md">D* Lite</a>,
+    <a href="../../samples/close-area-planner-sampling/README.md">Informed RRT*</a>,
     <a href="../../samples/close-area-safety-filter/README.md">F2 safety filter</a>) with Pyodide in a Web Worker. No JS re-implementation.</p>
   <p class="honest"><span class="badge synthetic">synthetic simulation, 2.5D point mass</span>
     <span class="muted small">Simulated layout, vehicle, range sensor and VIO. Scored on truth. Not a flight result.</span></p>
@@ -73,6 +76,7 @@
       <label class="btn sm file-btn">Open JSON<input type="file" id="fileIn" accept=".json,application/json" hidden></label>
       <button class="btn sm" id="storeBtn" title="Keep this world in this browser (localStorage)">Save in browser</button>
       <button class="btn sm" id="restoreBtn" title="Load the world saved in this browser">Load from browser</button>
+      <button class="btn sm" id="linkBtn" title="Copy a link that holds this world and the run config; opening it restores both and runs">Copy link</button>
     </div>
     <p class="small" id="worldMsg" aria-live="polite"></p>
   </section>
@@ -103,7 +107,7 @@
     <ul class="legend">
       <li><span class="sw"></span> truth path (A); <span class="sw b"></span> truth path (B)</li>
       <li><span class="sw est"></span> estimate the planner flew on</li>
-      <li><span class="sw plan"></span> A* planned path; thin rays: range beams now</li>
+      <li><span class="sw plan"></span> planned path (A*, D* Lite, RRT*); thin rays: range beams now</li>
       <li><span class="sw dark"></span> VIO dark zone (drift grows); <span class="sw glass"></span> glass</li>
     </ul>
     <p class="muted small" id="envMsg"></p>

@@ -15,7 +15,9 @@ const r4 = v => Math.round(v * 1e4) / 1e4;
 
 const LABELS = {
   planner: { straight: "straight line to B", freest_beam: "freest beam (reactive)", astar_known: "A* + ESDF, known map",
-    astar_unknown: "A* + ESDF, unknown map", apf: "APF + wall follow", vfh_plus: "VFH+" },
+    astar_unknown: "A* + ESDF, unknown map", apf: "APF + wall follow", vfh_plus: "VFH+",
+    dwa: "DWA (dynamic window)", dwa_mem: "DWA + 3 s scan memory", bug2: "Bug2", tangent_bug: "TangentBug",
+    dstar_lite: "D* Lite, unknown map (geofenced)", informed_rrt_star: "Informed RRT* 5000, known map" },
   preset: { ideal: "ideal: 72 rays, 360 deg, 6 m", crazyflie: "Crazyflie: 4 cone beams, 3 m", crazyflie_bright: "Crazyflie, bright light: 0.73 m" },
   fault: { truth: "off: planner sees truth", none: "VIO EKF, no fault", jump: "VIO jump 0.5 m", bias: "VIO bias 0.05 m/s, 10 s", dropout: "VIO dropout 2 s" },
   filter: { none: "none", F2: "F2: PX4-CBF on ranges" },
@@ -77,7 +79,12 @@ function checkDoc(d) {          // light check; Python's world_json.from_json is
 
 function worldMsg(text, cls) { const el = $("#worldMsg"); el.textContent = text || ""; el.className = "small " + (cls || ""); }
 
-function setDoc(d, presetName) {
+function dropLink() {           // the world no longer matches a link in the address bar: remove it, so reload does not bring it back
+  if (/[#&]w=/.test(location.hash) || location.search) history.replaceState(null, "", location.pathname);
+}
+
+function setDoc(d, presetName, keepLink) {
+  if (!keepLink) dropLink();
   S.doc = checkDoc(JSON.parse(JSON.stringify(d)));
   S.presetName = presetName || null;
   S.pristine = !!presetName;
@@ -94,6 +101,7 @@ function pushUndo() {
 
 function changed() {           // the world was edited: earlier runs no longer match it
   S.pristine = false;
+  dropLink();
   clearRuns();
   syncButtons();
   draw();
@@ -503,8 +511,97 @@ function applyEnv(env) {        // disable options the worker could not load
     `${env.arena_files} hub .py files loaded.` + (errs ? " Not loaded: " + errs : "");
 }
 
+// ---------------------------------------------------------------- shareable link
+// URL = page ? config query params # w=<world JSON, deflate (zlib, CompressionStream), base64url>.
+// Params: planner, preset, fault, filter (config A), the same with _b (config B), compare=1, seed,
+// src=<preset name> when the world is an unedited preset (only used to show the native parity note).
+const CFG_KEYS = ["planner", "preset", "fault", "filter"];
+
+function b64url(bytes) {
+  let bin = "";
+  for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+  return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+function unb64url(text) {
+  const t = text.replace(/-/g, "+").replace(/_/g, "/"), bin = atob(t + "===".slice((t.length + 3) % 4));
+  const out = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+  return out;
+}
+async function pipeBytes(bytes, stream) {
+  const buf = await new Response(new Blob([bytes]).stream().pipeThrough(stream)).arrayBuffer();
+  return new Uint8Array(buf);
+}
+async function encodeWorld(doc) {
+  return b64url(await pipeBytes(new TextEncoder().encode(JSON.stringify(doc)), new CompressionStream("deflate")));
+}
+async function decodeWorld(text) {
+  let bytes;
+  try { bytes = await pipeBytes(unb64url(text), new DecompressionStream("deflate")); }
+  catch (err) { throw new Error("w= is not deflate + base64url data"); }
+  return JSON.parse(new TextDecoder().decode(bytes));
+}
+
+async function shareUrl() {
+  const q = new URLSearchParams(), cmp = $("#compare").checked, a = readCfg(0);
+  for (const k of CFG_KEYS) q.set(k, a[k]);
+  if (cmp) { const b = readCfg(1); q.set("compare", "1"); for (const k of CFG_KEYS) q.set(k + "_b", b[k]); }
+  q.set("seed", String(a.seed));
+  if (S.pristine && S.presetName) q.set("src", S.presetName);
+  return location.origin + location.pathname + "?" + q.toString() + "#w=" + await encodeWorld(S.doc);
+}
+
+function cfgFromQuery(q, suffix) {     // unknown values are dropped, the panel keeps its default
+  const c = {}, bad = [];
+  for (const k of CFG_KEYS) {
+    const v = q.get(k + suffix);
+    if (v == null) continue;
+    if (Object.prototype.hasOwnProperty.call(LABELS[k], v)) c[k] = v; else bad.push(`${k}${suffix}=${v}`);
+  }
+  return [c, bad];
+}
+
+// Restore world + config from the current URL. Returns true when the link held a world.
+async function restoreFromUrl() {
+  const h = new URLSearchParams(location.hash.replace(/^#/, ""));
+  const w = h.get("w");
+  if (!w) return false;
+  const doc = await decodeWorld(w);
+  const q = new URLSearchParams(location.search);
+  setDoc(doc, null, true);
+  $("#presetSel").value = "";
+  const src = q.get("src");
+  if (src && /^[a-z0-9_]+$/.test(src)) {         // same world as the preset file? then the parity note applies
+    try {
+      const r = await fetch(`presets/${encodeURIComponent(src)}.json`);
+      if (r.ok && JSON.stringify(await r.json()) === JSON.stringify(S.doc)) { S.presetName = src; S.pristine = true; $("#presetSel").value = src; }
+    } catch (err) { /* parity note only */ }
+  }
+  const [ca, badA] = cfgFromQuery(q, ""), [cb, badB] = cfgFromQuery(q, "_b");
+  const seed = parseInt(q.get("seed"), 10);
+  if (Number.isFinite(seed)) ca.seed = Math.max(0, Math.min(9999, seed));
+  setCfg(0, ca); setCfg(1, cb);
+  $("#compare").checked = q.get("compare") === "1"; $("#compare").onchange();
+  const bad = badA.concat(badB);
+  worldMsg(`World and config restored from the link (${doc.obstacles.length} obstacles).` + (bad.length ? " Ignored: " + bad.join(", ") : ""), bad.length ? "bad" : "ok");
+  S.fromLink = true;
+  return true;
+}
+
+$("#linkBtn").onclick = async () => {
+  try {
+    const url = await shareUrl();
+    S.lastLink = url;
+    history.replaceState(null, "", url);
+    let copied = false;
+    try { await navigator.clipboard.writeText(url); copied = true; } catch (err) { /* blocked: the address bar has it */ }
+    worldMsg((copied ? "Link copied" : "Clipboard blocked; the link is in the address bar") +
+      ` (${url.length} characters). Opening it restores this world and config and runs it.`, "ok");
+  } catch (err) { worldMsg("Could not build a link: " + err.message, "bad"); }
+};
+
 // ---------------------------------------------------------------- worker
-const worker = new Worker("worker.js?v=20261109b", { type: "module" });
+const worker = new Worker("worker.js?v=20261109c", { type: "module" });
 let readyResolve, readyReject;
 const readyP = new Promise((ok, fail) => { readyResolve = ok; readyReject = fail; });
 const T_LOAD0 = performance.now();
@@ -706,12 +803,28 @@ $("#themeBtn").onclick = () => {
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => draw());
 if (window.ResizeObserver) new ResizeObserver(() => draw()).observe(cv); else window.addEventListener("resize", draw);
 
-setDoc(blankDoc(), null);
-loadPresets().then(() => loadPreset("random_0")).catch(err => worldMsg("Could not load presets: " + err.message + ". Serve the repo root with python3 -m http.server.", "bad"));
+setDoc(blankDoc(), null, true);
+async function startFromUrl() {          // a shared link: restore it and run once Python is ready
+  let ok = false;
+  try { ok = await restoreFromUrl(); }
+  catch (err) { S.linkError = "This link does not hold a readable world (" + err.message + "). Loaded the default preset random_0."; }
+  if (ok) { S.linkRun = readyP.then(() => runNow()); return true; }
+  return false;
+}
+const started = loadPresets().catch(err => { worldMsg("Could not load presets: " + err.message + ". Serve the repo root with python3 -m http.server.", "bad"); })
+  .then(startFromUrl)
+  .then(fromLink => {
+    if (!fromLink) return loadPreset("random_0").then(() => { if (S.linkError) worldMsg(S.linkError, "bad"); }).catch(err => worldMsg(err.message, "bad"));
+  });
+window.addEventListener("hashchange", () => { if (/[#&]w=/.test(location.hash)) startFromUrl(); });
 
 // Scripted API (headless checks, console use)
 window.PG = {
   ready: readyP,
+  started,
+  shareUrl, encodeWorld, decodeWorld,
+  linkRun: () => S.linkRun || Promise.resolve(null),
+  config: () => ({ a: readCfg(0), b: $("#compare").checked ? readCfg(1) : null, compare: $("#compare").checked }),
   loadPreset,
   setWorld: d => setDoc(d, null),
   world: () => JSON.parse(JSON.stringify(S.doc)),

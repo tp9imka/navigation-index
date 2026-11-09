@@ -15,7 +15,7 @@ import { fileURLToPath } from "node:url";
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, "../../..");
 const CHROME = process.env.CHROME || "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
-const PORT = 8766, DBG = 9334, DESK = { width: 1280, height: 900 };
+const PORT = 8766, DBG = 9334, DBG2 = 9335, DESK = { width: 1280, height: 900 };
 const sleep = t => new Promise(r => setTimeout(r, t));
 const write = (name, data) => fs.writeFileSync(path.join(HERE, name), typeof data === "string" ? data : JSON.stringify(data, null, 1) + "\n");
 const NATIVE = JSON.parse(fs.readFileSync(path.join(HERE, "native_parity.json"), "utf8"));
@@ -63,24 +63,32 @@ async function shot(cdp, name) {
 const pick = s => Object.fromEntries(KEYS.map(k => [k, s[k]]));
 const same = (a, b) => KEYS.every(k => a[k] === b[k]);
 
-async function main() {
-  const profile = fs.mkdtempSync(path.join(os.tmpdir(), "pg-chrome-"));
-  const server = spawn("python3", ["-m", "http.server", String(PORT), "--bind", "127.0.0.1"], { cwd: ROOT, stdio: "ignore" });
-  const chrome = spawn(CHROME, ["--headless=new", `--remote-debugging-port=${DBG}`, `--user-data-dir=${profile}`,
+async function launch(port, profile) {     // headless Chrome with its own profile; returns {chrome, cdp, version}
+  const chrome = spawn(CHROME, ["--headless=new", `--remote-debugging-port=${port}`, `--user-data-dir=${profile}`,
     "--no-first-run", "--no-default-browser-check", "--disable-background-timer-throttling",
     "--disable-renderer-backgrounding", `--window-size=${DESK.width},${DESK.height}`, "--hide-scrollbars", "about:blank"],
   { stdio: ["ignore", "ignore", "pipe"] });
+  let version = null;
+  for (let i = 0; i < 240 && !version; i++) { await sleep(250); version = await fetch(`http://127.0.0.1:${port}/json/version`).then(r => r.json()).catch(() => null); }
+  const page = (await (await fetch(`http://127.0.0.1:${port}/json/list`)).json()).find(t => t.type === "page");
+  const cdp = new CDP(page.webSocketDebuggerUrl);
+  await cdp.open();
+  await cdp.send("Runtime.enable"); await cdp.send("Page.enable");
+  await cdp.send("Emulation.setDeviceMetricsOverride", { ...DESK, deviceScaleFactor: 1, mobile: false });
+  await cdp.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-color-scheme", value: "light" }] });
+  return { chrome, cdp, version };
+}
+
+async function main() {
+  const profile = fs.mkdtempSync(path.join(os.tmpdir(), "pg-chrome-"));
+  const server = spawn("python3", ["-m", "http.server", String(PORT), "--bind", "127.0.0.1"], { cwd: ROOT, stdio: "ignore" });
+  let chrome = null;
   const out = { date: new Date().toISOString(), input: "synthetic", page: `http://127.0.0.1:${PORT}/site/playground/index.html`, steps: [] };
   try {
-    let version = null;
-    for (let i = 0; i < 240 && !version; i++) { await sleep(250); version = await fetch(`http://127.0.0.1:${DBG}/json/version`).then(r => r.json()).catch(() => null); }
-    out.chrome = version.Browser;
-    const page = (await (await fetch(`http://127.0.0.1:${DBG}/json/list`)).json()).find(t => t.type === "page");
-    const cdp = new CDP(page.webSocketDebuggerUrl);
-    await cdp.open();
-    await cdp.send("Runtime.enable"); await cdp.send("Page.enable");
-    await cdp.send("Emulation.setDeviceMetricsOverride", { ...DESK, deviceScaleFactor: 1, mobile: false });
-    await cdp.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-color-scheme", value: "light" }] });
+    const c1 = await launch(DBG, profile);
+    chrome = c1.chrome;
+    const cdp = c1.cdp;
+    out.chrome = c1.version.Browser;
 
     // 1. cold load (fresh profile)
     const tNav = Date.now();
@@ -88,6 +96,7 @@ async function main() {
     await sleep(800);
     out.loading_shot = await shot(cdp, "pg_loading.png");
     await cdp.eval("PG.ready.then(() => true)");
+    await cdp.eval("PG.started.then(() => true)");
     out.load = await cdp.eval("({ready_ms: PG_STATE.readyMs, mb: PG_STATE.loadMb, worker: PG_STATE.loadTimings, env: PG_STATE.env})");
     out.load.wall_since_navigate_s = (Date.now() - tNav) / 1e3;
     console.log("ready", out.load.ready_ms, "ms", out.load.mb, "MB");
@@ -155,6 +164,60 @@ async function main() {
     out.fault_filter.shot = await shot(cdp, "pg_jump_f2_dark.png");
     await cdp.send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-color-scheme", value: "light" }] });
 
+    // 5b. shareable link: hand-drawn world + compare config, opened in a second Chrome with a fresh profile
+    await cdp.eval(`PG.setWorld(${JSON.stringify(drawn)})`);
+    const shareCfg = [{ planner: "tangent_bug", preset: "crazyflie", fault: "none", filter: "none", seed: 7 },
+                      { planner: "dstar_lite", preset: "crazyflie", fault: "none", filter: "F2", seed: 7 }];
+    const src = await cdp.eval(`PG.run(${JSON.stringify(shareCfg)}).then(x => x.map(y => y.score))`);
+    try { await cdp.send("Browser.grantPermissions", { permissions: ["clipboardReadWrite", "clipboardSanitizedWrite"], origin: `http://127.0.0.1:${PORT}` }); } catch (err) { /* older Chrome */ }
+    await cdp.eval("document.querySelector('#linkBtn').click(); true");
+    await sleep(500);
+    const link = { url: await cdp.eval("location.href"), button_msg: await cdp.eval("document.querySelector('#worldMsg').textContent"),
+      share_url: await cdp.eval("PG.shareUrl()"), config_src: await cdp.eval("PG.config()") };
+    link.clipboard = await cdp.eval("navigator.clipboard.readText().catch(e => 'clipboard read failed: ' + e.message)");
+    link.address_bar_is_link = link.url === link.share_url;
+    link.clipboard_is_link = link.clipboard === link.share_url;
+    link.url_chars = link.share_url.length;
+    link.world_json_chars = JSON.stringify(drawn).length;
+    // URL length per preset world (world part only)
+    link.preset_lengths = {};
+    for (const nm of ["office_0", "warehouse_0", "forest_0", "maze_0", "glass_office_0", "random_0", "u_trap_0", "narrow_gap_0"]) {
+      await cdp.eval(`PG.loadPreset(${JSON.stringify(nm)})`);
+      link.preset_lengths[nm] = await cdp.eval("PG.encodeWorld(PG.world()).then(e => ({json_chars: JSON.stringify(PG.world()).length, w_chars: e.length}))");
+    }
+    const profile2 = fs.mkdtempSync(path.join(os.tmpdir(), "pg-chrome-link-"));
+    const c2 = await launch(DBG2, profile2);
+    try {
+      await c2.cdp.send("Page.navigate", { url: link.share_url });
+      await sleep(800);
+      await c2.cdp.eval("PG.started.then(() => true)");
+      const runs = await c2.cdp.eval("PG.linkRun().then(x => x && x.map(y => y.score))");
+      const w2 = await c2.cdp.eval("PG.world()");
+      link.fresh = { profile: "new --user-data-dir, cold cache", world_same: JSON.stringify(w2) === JSON.stringify(drawn),
+        config: await c2.cdp.eval("PG.config()"), auto_run: !!runs,
+        scores: runs ? runs.map(pick) : null, world_msg: await c2.cdp.eval("document.querySelector('#worldMsg').textContent") };
+      link.fresh.config_same = JSON.stringify(link.fresh.config) === JSON.stringify(link.config_src);
+      link.fresh.scores_same = !!runs && runs.length === 2 && same(runs[0], src[0]) && same(runs[1], src[1]);
+      await c2.cdp.eval("PG.seek(PG.duration())");
+      await sleep(300);
+      link.fresh.shot = await shot(c2.cdp, "pg_shared_link.png");
+      link.fresh.console = c2.cdp.log.splice(0);
+      // a broken link falls back to the default preset with a message
+      await c2.cdp.send("Page.navigate", { url: `http://127.0.0.1:${PORT}/site/playground/index.html?planner=dwa#w=notdeflate` });
+      await sleep(800);
+      await c2.cdp.eval("PG.started.then(() => true)");
+      link.broken = { msg: await c2.cdp.eval("document.querySelector('#worldMsg').textContent"),
+        world_family: await c2.cdp.eval("PG.world().family") };
+      c2.cdp.ws.close();
+    } finally {
+      c2.chrome.kill();
+      await sleep(1000);
+      try { fs.rmSync(profile2, { recursive: true, force: true, maxRetries: 5, retryDelay: 500 }); } catch (err) { /* temp dir */ }
+    }
+    link.source_scores = src.map(pick);
+    out.link = link;
+    console.log("link", link.url_chars, "chars; fresh world same", link.fresh.world_same, "config same", link.fresh.config_same, "scores same", link.fresh.scores_same);
+
     // 6. phone width: no horizontal scroll, run still works
     await cdp.send("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 2, mobile: true });
     await cdp.send("Page.reload", {});
@@ -182,7 +245,8 @@ async function main() {
     out.console = cdp.log.splice(0);
     cdp.ws.close();
   } finally {
-    chrome.kill(); server.kill();
+    if (chrome) chrome.kill();
+    server.kill();
     await sleep(1500);
     try { fs.rmSync(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 500 }); } catch (err) { /* temp dir */ }
   }
@@ -221,7 +285,7 @@ function report(o) {
   L.push("## Load (fresh Chrome profile, cold HTTP cache)", "");
   L.push(`- Python ready ${o.load.ready_ms} ms after the page script started; ${o.load.mb} MB downloaded (Resource Timing in the worker).`);
   L.push(`- Worker steps: Pyodide runtime ${o.load.worker.pyodide_ms} ms, numpy + scipy + ${o.load.env.arena_files} hub files ${o.load.worker.packages_ms} ms, imports ${o.load.worker.import_ms} ms ` +
-    `(scipy.ndimage ${o.load.env.imports_ms.scipy_ndimage}, arena ${o.load.env.imports_ms.arena}, reactive ${o.load.env.imports_ms.reactive}, safety filter ${o.load.env.imports_ms.safety_filter} ms).`);
+    `(scipy.ndimage ${o.load.env.imports_ms.scipy_ndimage}, arena ${o.load.env.imports_ms.arena}, reactive ${o.load.env.imports_ms.reactive}, DWA / Bug / D* Lite / RRT* ${o.load.env.imports_ms.sample_planners}, safety filter ${o.load.env.imports_ms.safety_filter} ms).`);
   L.push(`- Planners loaded: ${o.load.env.planners.join(", ")}. Filters: ${o.load.env.filters.join(", ")}. Load errors: ${JSON.stringify(o.load.env.load_errors)}.`, "");
   L.push(`## Browser score = native score on the preset worlds: ${nSame}/${o.parity.length}`, "");
   L.push(`Fields: ${KEYS.join(", ")}. Seed 0.`, "");
@@ -235,6 +299,20 @@ function report(o) {
   L.push("", "## Page stays responsive while Python runs", "");
   L.push(`During ${o.responsive.run} (${o.responsive.python_wall_s} s of Python in the worker) the page drew ${o.responsive.frames} animation frames; ` +
     `longest gap between frames ${o.responsive.max_ms} ms, median ${o.responsive.median_ms} ms.`, "");
+  const k = o.link, fr = k.fresh;
+  L.push("## Shareable link", "");
+  L.push(`World: the hand-drawn box world above. Config A ${JSON.stringify(k.config_src.a)}, B ${JSON.stringify(k.config_src.b)}. ` +
+    `Link length ${k.url_chars} characters (world JSON ${k.world_json_chars} characters). Copy link button: address bar holds the link: ${k.address_bar_is_link ? "yes" : "NO"}; ` +
+    `clipboard holds the link: ${k.clipboard_is_link ? "yes" : "no (" + String(k.clipboard).slice(0, 80) + ")"}. Button message: "${k.button_msg}"`, "");
+  L.push(`Opened in a second headless Chrome with a fresh profile (${fr.profile}): world identical ${fr.world_same ? "yes" : "NO"}, ` +
+    `config identical ${fr.config_same ? "yes" : "NO"}, ran automatically ${fr.auto_run ? "yes" : "NO"}, both scores identical to the source tab ${fr.scores_same ? "yes" : "NO"}. ` +
+    `Page message: "${fr.world_msg}". Screenshot: [pg_shared_link.png](pg_shared_link.png).`, "");
+  L.push(`| run | source tab: ${KEYS.join(" / ")} | fresh profile: same? |`, "|---|---|---|");
+  k.source_scores.forEach((sc, i) => L.push(`| ${i ? "B" : "A"} | ${f(sc)} | ${fr.scores && same(fr.scores[i], sc) ? "yes" : "NO"} |`));
+  L.push("", `Broken link (\`#w=notdeflate\`): "${k.broken.msg}" World family after fallback: ${k.broken.world_family}.`, "");
+  L.push("Link length per preset world (characters of the `w=` value vs the world JSON):", "", "| preset | world JSON chars | w= chars |", "|---|---|---|");
+  for (const [nm, v] of Object.entries(k.preset_lengths)) L.push(`| ${nm} | ${v.json_chars} | ${v.w_chars} |`);
+  L.push("", `Console errors / warnings / exceptions in the fresh profile: ${fr.console.length}${fr.console.length ? ": " + fr.console.join(" | ") : ""}.`, "");
   L.push("## Other runs shown in the screenshots", "");
   L.push(`- Compare, random_0: A astar_known ${f(o.compare.a)}; B freest_beam ${f(o.compare.b)}. Page note: "${o.compare.parity_text}"`);
   L.push(`- VIO jump on random_0, astar_known: no filter ${f(o.fault_filter.a)} (jump fired at ${o.fault_filter.a.fault_log && o.fault_filter.a.fault_log.fired_t} s); ` +
@@ -242,7 +320,7 @@ function report(o) {
   L.push(`- Phone ${o.phone.viewport}: office_0 astar_known ${f(o.phone.score)}; document scroll width ${o.phone.scroll_width} px, body ${o.phone.body_scroll_width} px => ` +
     `${o.phone.no_horizontal_scroll ? "no horizontal scroll" : "HORIZONTAL SCROLL"}.`, "");
   L.push("- Nav link at 390 px: " + Object.entries(o.nav_390).map(([p, v]) => `site/${p} scroll width ${v.scroll_width} px, Playground link ${v.link_visible ? "visible" : "NOT fully visible"} (right edge ${v.link_right_px} px)`).join("; ") + ".", "");
-  const shots = [o.loading_shot, o.compare.shot, o.custom.shot, o.fault_filter.shot, o.phone.shot];
+  const shots = [o.loading_shot, o.compare.shot, o.custom.shot, o.fault_filter.shot, o.link.fresh.shot, o.phone.shot];
   L.push("Viewport screenshots (checked with `sips -g pixelHeight`): " + shots.map(s => `[${s.file}](${s.file}) ${s.width} x ${s.height}`).join(", ") + ".", "");
   L.push(`Console errors / warnings / exceptions: ${o.console.length}${o.console.length ? ": " + o.console.join(" | ") : ""}.`, "");
   return L.join("\n");

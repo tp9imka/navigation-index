@@ -50,6 +50,75 @@ except Exception as e:                       # noqa: BLE001 - report, do not cra
     LOAD_ERRORS["reactive"] = repr(e)
 _t3 = time.perf_counter()
 
+
+def _load_sample(folder, names):
+    """Import modules of a sample that does "import arena" (each sample has its own arena.py).
+    Same recipe as samples/close-area-benchmark/bench.py _load_sample: the folder goes on sys.path
+    only while importing, and the short names leave sys.modules afterwards (the objects stay alive).
+    The reactive sample's "arena" module is put back, so APF and VFH+ are untouched."""
+    short = ["arena"] + list(names)
+    saved = {n: sys.modules.pop(n) for n in short if n in sys.modules}
+    sys.path.insert(0, folder)
+    try:
+        return {n: importlib.import_module(n) for n in names}
+    finally:
+        sys.path.remove(folder)
+        for n in short:
+            sys.modules.pop(n, None)
+        sys.modules.update(saved)
+
+
+DWA_MEM_S = 3.0                # s of remembered returns, as close-area-benchmark/bench.py
+RRT_ITERS = 5000               # Informed RRT* budget, as close-area-benchmark/bench.py
+
+
+def _bounds(w):
+    return (w.xmin, w.ymin, w.xmax, w.ymax)
+
+
+def _geofenced_dstar(bounds, margin=2.0):
+    """bench.py geofenced_dstar: GridReplanner(backend="dstar") with its log-odds map corner on the
+    area bounds minus 2 m (same 24 m size), instead of the shipped fixed corner at (-2.5, -2.5)."""
+    base_cls = _dsl.GridReplanner
+
+    class GeofencedDStar(base_cls):
+        def reset(self):
+            super().reset()
+            if self.map is not None:
+                self.map.x0 = bounds[0] - margin
+                self.map.y0 = bounds[1] - margin
+
+    return GeofencedDStar(backend="dstar")
+
+
+# Planners that need the world (geofence) take it as an argument; the rest ignore it.
+WORLD_PLANNERS = set()
+# DWA, DWA + 3 s memory, Bug2, TangentBug (samples/close-area-planner-dwa-bug)
+try:
+    _m = _load_sample(DWABUG_DIR, ["dwa", "bug"])
+    _dwa, _bug = _m["dwa"], _m["bug"]
+    PLANNERS["dwa"] = lambda: _dwa.make()
+    PLANNERS["dwa_mem"] = lambda: _dwa.make(memory_s=DWA_MEM_S)
+    PLANNERS["bug2"] = lambda: _bug.make("bug2")
+    PLANNERS["tangent_bug"] = lambda: _bug.make("tangent_bug")
+except Exception as e:                       # noqa: BLE001
+    LOAD_ERRORS["dwa_bug"] = repr(e)
+# D* Lite, unknown map, geofenced as in the benchmark (samples/close-area-planner-dstar)
+try:
+    _dsl = _load_sample(DSTAR_DIR, ["dstar_lite"])["dstar_lite"]
+    PLANNERS["dstar_lite"] = lambda w: _geofenced_dstar(_bounds(w))
+    WORLD_PLANNERS.add("dstar_lite")
+except Exception as e:                       # noqa: BLE001
+    LOAD_ERRORS["dstar"] = repr(e)
+# Informed RRT*, 5000 samples, known map (samples/close-area-planner-sampling)
+try:
+    _rrt = _load_sample(SAMPLING_DIR, ["rrt_star"])["rrt_star"]
+    PLANNERS["informed_rrt_star"] = lambda: _rrt.make(iters=RRT_ITERS, informed=True, seed=0)
+except Exception as e:                       # noqa: BLE001
+    LOAD_ERRORS["sampling"] = repr(e)
+# A* + MPC (close-area-planner-mpc) is not offered: it imports osqp, and Pyodide 314.0.7 ships no osqp wheel.
+_t3b = time.perf_counter()
+
 # F2 safety filter (samples/close-area-safety-filter/filters.py, imports scipy.optimize)
 filters = None
 try:
@@ -61,7 +130,8 @@ except Exception as e:                       # noqa: BLE001
 _t4 = time.perf_counter()
 
 IMPORT_MS = {"scipy_ndimage": round((_t1 - _t0) * 1e3, 1), "arena": round((_t2 - _t1) * 1e3, 1),
-             "reactive": round((_t3 - _t2) * 1e3, 1), "safety_filter": round((_t4 - _t3) * 1e3, 1)}
+             "reactive": round((_t3 - _t2) * 1e3, 1),
+             "sample_planners": round((_t3b - _t3) * 1e3, 1), "safety_filter": round((_t4 - _t3b) * 1e3, 1)}
 FILTER_SCAN_EVERY = 3        # physics steps, as close-area-safety-filter/run_kill.py (16.7 Hz filter scan)
 
 
@@ -98,7 +168,7 @@ def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="no
     if fault != "truth":
         est = estimator.make_pose_source_factory(fault, dark=True)(w, seed, index)
     ad = adapter_mod.SimAdapter(w, veh, sensor, pose_source=est)
-    pl = PLANNERS[planner]()
+    pl = PLANNERS[planner](w) if planner in WORLD_PLANNERS else PLANNERS[planner]()
     pl.reset()
     f = None
     if filt == "F2":
@@ -245,7 +315,8 @@ async function init() {
   progress("importing the arena, planners and safety filter", 3, STEPS, { mb_expected: exp });
   const b = performance.now();
   py.runPython(`import sys\nif "${HOME}" not in sys.path: sys.path.insert(0, "${HOME}")\n` +
-    `REACTIVE_DIR = "${HOME}reactive"\nFILTER_DIR = "${HOME}safety_filter"`);
+    `REACTIVE_DIR = "${HOME}reactive"\nFILTER_DIR = "${HOME}safety_filter"\n` +
+    `DWABUG_DIR = "${HOME}dwa_bug"\nDSTAR_DIR = "${HOME}dstar"\nSAMPLING_DIR = "${HOME}sampling"`);
   py.runPython(DRIVER_PY);
   t.import_ms = ms(b);
   t.ready_ms = ms(T0);

@@ -1,5 +1,5 @@
 {
-  "comment": "Files spike.js and worker.js copy into the Pyodide filesystem. src is relative to this manifest (../../ is the repo root); dst is relative to /home/pyodide, which is on sys.path. group arena = samples/close-area-arena as package close_area_arena; reactive = APF and VFH+ from samples/close-area-planner-reactive (their arena.py finds close_area_arena already imported); safety_filter = filters.py (F2) from samples/close-area-safety-filter. No sample file is changed.",
+  "comment": "Files spike.js and worker.js copy into the Pyodide filesystem. src is relative to this manifest (../../ is the repo root); dst is relative to /home/pyodide, which is on sys.path. group arena = samples/close-area-arena as package close_area_arena; reactive = APF and VFH+ from samples/close-area-planner-reactive (their arena.py finds close_area_arena already imported); safety_filter = filters.py (F2) from samples/close-area-safety-filter; dwa_bug = DWA and Bug2 / TangentBug from samples/close-area-planner-dwa-bug; dstar = D* Lite from samples/close-area-planner-dstar; sampling = Informed RRT* from samples/close-area-planner-sampling (each group keeps its own arena.py, which finds close_area_arena already imported). No osqp wheel in Pyodide 314.0.7, so close-area-planner-mpc is not loaded. No sample file is changed.",
   "pyodide": "314.0.7",
   "pyodide_base": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/",
   "packages": ["numpy", "scipy"],
@@ -28,6 +28,13 @@
     {"group": "reactive", "src": "../../samples/close-area-planner-reactive/arena.py", "dst": "reactive/arena.py"},
     {"group": "reactive", "src": "../../samples/close-area-planner-reactive/apf.py", "dst": "reactive/apf.py"},
     {"group": "reactive", "src": "../../samples/close-area-planner-reactive/vfh_plus.py", "dst": "reactive/vfh_plus.py"},
-    {"group": "safety_filter", "src": "../../samples/close-area-safety-filter/filters.py", "dst": "safety_filter/filters.py"}
+    {"group": "safety_filter", "src": "../../samples/close-area-safety-filter/filters.py", "dst": "safety_filter/filters.py"},
+    {"group": "dwa_bug", "src": "../../samples/close-area-planner-dwa-bug/arena.py", "dst": "dwa_bug/arena.py"},
+    {"group": "dwa_bug", "src": "../../samples/close-area-planner-dwa-bug/dwa.py", "dst": "dwa_bug/dwa.py"},
+    {"group": "dwa_bug", "src": "../../samples/close-area-planner-dwa-bug/bug.py", "dst": "dwa_bug/bug.py"},
+    {"group": "dstar", "src": "../../samples/close-area-planner-dstar/arena.py", "dst": "dstar/arena.py"},
+    {"group": "dstar", "src": "../../samples/close-area-planner-dstar/dstar_lite.py", "dst": "dstar/dstar_lite.py"},
+    {"group": "sampling", "src": "../../samples/close-area-planner-sampling/arena.py", "dst": "sampling/arena.py"},
+    {"group": "sampling", "src": "../../samples/close-area-planner-sampling/rrt_star.py", "dst": "sampling/rrt_star.py"}
   ]
 }
