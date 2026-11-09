@@ -96,7 +96,7 @@ Rebuild ground truth from tools, not memory:
    python3 tools/test_readiness.py && python3 tools/test_mcp_server.py
    (cd samples/<new-sample> && python3 -m unittest discover -q)   # plain python3, must pass or skip
    ```
-   Then drop generated output: `git checkout -- INDEX.md catalog graph index reports site llms.txt`
+   Then drop generated output: `git checkout -- INDEX.md catalog graph index reports site/data llms.txt samples/README.md templates/offline-kit/manifest.json docs/practical-readiness.md`
    and `git clean -fdq catalog graph index reports site` (CI regenerates on main).
 7. **Commit** the item's paths by name. Conventional Commits (`feat(samples): ...`,
    `docs(research): ...`). No AI attribution trailers of any kind (house rule; overrides any
