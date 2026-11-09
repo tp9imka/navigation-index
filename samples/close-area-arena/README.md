@@ -114,7 +114,8 @@ straight 0 %, known 100 %, unknown 100 %.
   displacement rule calls that stuck.
 - For gaps under about 0.6 m the planner retries with radius-only inflation (272 known, 128
   unknown replans on narrow_gap).
-- Not run yet: A* under the estimator faults (`run_faults.py --planner astar_esdf`).
+- A* under the estimator faults, with and without safety filters: see
+  [close-area-safety-filter](../close-area-safety-filter/README.md).
 
 ## Scoring a flight log (sim or real)
 
