@@ -43,9 +43,10 @@ Surface vessel navigation, AIS, ECDIS/charts, USVs.
 - [OpenCPN celestial navigation plugin](../../catalog/repos/seandepagnier__celestial_navigation_pi.md) - fit: low - OpenCPN plugin for entering sextant sights and plotting lines of position and fixes on the chart.
 - [navalm](../../catalog/repos/kq6up__navalm.md) - fit: low - Nautical almanac and celestial sight reduction for Unix/Linux with CLI, ncurses and web interfaces.
 
-## Documents, talks, courses, datasets (20)
+## Documents, talks, courses, datasets (21)
 
 - [2025 Was a Stress Test & Maritime AI™ Is the Only Way to Pass](../../catalog/resources/windward-2025-maritime-stress-test.md) - blog - Windward's quarter-by-quarter review of 2025 maritime risk: sanctions, dark fleet growth, flag-registry fraud and GNSS interference.
+- [A Search Strategy and Vessel Detection in Maritime Environment Using Fixed-Wing UAVs](../../catalog/resources/peti-2023-mbzirc-uav-search-preprint.md) - paper - Preprint by the UNIZG-FER MBZIRC 2023 team.
 - [Above Us Only Stars: Exposing GPS Spoofing in Russia and Syria](../../catalog/resources/c4ads-above-us-only-stars.md) - report - Open-source investigation using AIS ship tracks, public records and ISS-based measurements to map thousands of GNSS spoofing events around Russia, Crimea and Syria, many linked to protection of VIPs and bases.
 - [COLREGs - Convention on the International Regulations for Preventing Collisions at Sea, 1972](../../catalog/resources/imo-colregs.md) - standard - IMO page for the collision regulations that define give-way and stand-on duties, lights and signals; the rule set autonomous surface vessels must encode.
 - [Danish Maritime Authority historical AIS data](../../catalog/resources/dma-historical-ais.md) - dataset - Daily zip files, one CSV per UTC day, holding every AIS report received by the Danish shore network across Danish waters and approaches (Skagerrak, Kattegat, the belts, western Baltic).

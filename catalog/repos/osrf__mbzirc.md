@@ -22,6 +22,10 @@ Simulator (Ignition Fortress + ROS 2) for the MBZIRC Maritime Grand Challenge wh
 
 - alternative_to: [Virtual RobotX (VRX)](../../catalog/repos/osrf__vrx.md)
 
+## Referenced by
+
+- [A Search Strategy and Vessel Detection in Maritime Environment Using Fixed-Wing UAVs](../../catalog/resources/peti-2023-mbzirc-uav-search-preprint.md) (uses)
+
 _Indexed by lane(s): round3-expansion_
 
 _GitHub metadata fetched 2026-11-09._

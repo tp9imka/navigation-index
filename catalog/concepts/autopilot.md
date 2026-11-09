@@ -98,7 +98,7 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 - [Olympe](../../catalog/repos/parrot-developers__olympe.md) - fit: low - Parrot's Python controller library for ANAFI drones and the Sphinx simulator, using the Arsdk messages (moveBy, moveTo, piloting, camera).
 - [V-NAV (CopterHack 2022) - visual navigation for Clover](../../catalog/repos/v-nav__clover.md) - fit: low - Archived fork of the Clover framework holding team V-NAV's CopterHack 2022 entry (article in docs/ru/v-nav.md on branch v-nav_article): a multi-camera plus IMU optical navigation module using graph-based SLAM with CNN-ex
 
-## Documents, talks, courses, datasets (79)
+## Documents, talks, courses, datasets (81)
 
 - [2025 Abu Dhabi Autonomous Racing League](../../catalog/resources/a2rl-2025-season.md) - doc - Summary of the A2RL x DCL autonomous drone championship, won by TU Delft MAVLab ahead of TII Racing and KAIST, including races against human pilots.
 - [A Singular Value Maximizing Data Recording Algorithm for Concurrent Learning](../../catalog/resources/chowdhary-johnson-2011-concurrent-learning-data-recording.md) - paper - ACC 2011 (abstract read from proceedings PDF).
@@ -166,6 +166,8 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 - [SITL Simulator (Software in the Loop)](../../catalog/resources/ardupilot-sitl-docs.md) - doc - Developer docs for running ArduPilot vehicles in SITL, connecting GCS and external simulators.
 - [Small Unmanned Aircraft: Theory and Practice](../../catalog/resources/beard-mclain-small-unmanned-aircraft.md) - book - Textbook covering fixed-wing dynamics, autopilot design, state estimation, straight-line and orbit path following, Dubins path management and path planning.
 - [STANAG 4586 - Standard Interfaces of UAV Control System (UCS) for NATO UAV Interoperability](../../catalog/resources/stanag-4586-overview.md) - doc - Public overview of NATO's UAS interoperability standard, which defines a core UCS, a vehicle-specific module and five levels of interoperability from receiving payload data up to full flight control including launch and 
+- [SUAS 2026 Team Handbook](../../catalog/resources/suas-2026-team-handbook.md) - competition - Rules for the 2026 Student Unmanned Aerial Systems competition: GPS waypoint laps handed out at check-in, a GPS flight boundary with an altitude band, risk mapping, and search-detect-deliver of two objects to a mannequin
+- [TEKNOFEST 2026 UAV Competitions Specification (EN)](../../catalog/resources/teknofest-2026-uav-competitions-spec.md) - competition - Specification for the International and High School UAV competitions.
 - [Tello SDK 2.0 User Guide](../../catalog/resources/tello-sdk-2-user-guide.md) - doc - The UDP text command set for Tello EDU: control, set and read commands, mission pad commands and state stream format.
 - [The Black-Box Simplex Architecture for Runtime Assurance of Autonomous CPS](../../catalog/resources/mehmood-2022-black-box-simplex.md) - paper - Extends Simplex so that neither the advanced nor the backup controller needs static verification: runtime checks over a short horizon decide whether the backup can still recover.
 - [TinyMPC: Model-Predictive Control on Resource-Constrained Microcontrollers](../../catalog/resources/alavilli-tinympc-2023.md) - paper - ADMM-based MPC solver that caches the Riccati structure so each iteration is cheap enough for a microcontroller; demonstrated on a small quadrotor.

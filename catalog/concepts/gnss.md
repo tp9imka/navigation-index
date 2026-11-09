@@ -100,7 +100,7 @@ GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 - [glnephexercise - GLONASS satellite position exercise](../../catalog/repos/korogodin__glnephexercise.md) - fit: low - MPEI student project template for computing GLONASS satellite positions from broadcast ephemerides.
 - [GNSS-AK_model - GNSS + astro-corrector model](../../catalog/repos/ledesha__gnss-ak_model.md) - fit: low - Diploma C++ code modelling a moving user, GNSS operation and an astro-corrector (star-tracker style celestial correction), with integrator and linear-algebra helpers.
 
-## Documents, talks, courses, datasets (63)
+## Documents, talks, courses, datasets (64)
 
 - [2025 PNT Symposium - Day 2 Invited Speaker Presentation Videos](../../catalog/resources/stanford-pnt-symposium-2025-invited-videos.md) - video - Video album of invited speaker talks from the 2025 Stanford PNT Symposium, featuring speakers such as Brad Parkinson and Jade Morton.
 - [A Baseline GPS RAIM Scheme and a Note on the Equivalence of Three RAIM Methods](../../catalog/resources/brown-1992-baseline-raim.md) - paper - NAVIGATION 39(3) paper written as the RTCA GPS MOPS were released.
@@ -164,5 +164,6 @@ GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 - [Stanford PNT Symposium 2024 (18th annual)](../../catalog/resources/stanford-pnt-symposium-2024.md) - talk - Page for the 28-29 October 2024 symposium with agenda, student and invited-speaker video albums, and slides; topics span GNSS, inertial sensing, timing and alternative navigation.
 - [Stanford PNT Symposium 2025 (19th annual)](../../catalog/resources/stanford-pnt-symposium-2025.md) - talk - Annual Stanford SCPNT symposium page (8-9 October 2025) with the agenda and links to recorded student talks (Day 1) and invited speaker talks (Day 2), plus downloadable slides for many presentations.
 - [Stanford WAAS Laboratory - system metrics (the integrity/availability histogram behind the 'Stanford plot')](../../catalog/resources/stanford-waas-integrity-metrics-histogram.md) - doc - Stanford GPS Lab page that explains the 2D histogram of true position error against protection level from its real-time WAAS implementation on the National Satellite Test Bed.
+- [SUAS 2026 Team Handbook](../../catalog/resources/suas-2026-team-handbook.md) - competition - Rules for the 2026 Student Unmanned Aerial Systems competition: GPS waypoint laps handed out at check-in, a GPS flight boundary with an altitude band, risk mapping, and search-detect-deliver of two objects to a mannequin
 - [The Stanford - ESA Integrity Diagram: Focusing on SBAS Integrity](../../catalog/resources/tossaint-2006-stanford-esa-integrity-diagram.md) - paper - ION GNSS 2006 paper (UPC UPCommons repository record, behind a bot check) that modifies the classical Stanford plot to focus strictly on integrity, since the classical plot is not always conservative for that purpose.
 

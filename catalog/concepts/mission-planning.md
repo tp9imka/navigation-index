@@ -44,8 +44,10 @@ Route networks, waypoint missions, coverage, terrain-aware and threat-aware rout
 - [mav_active_3d_planning](../../catalog/repos/ethz-asl__mav_active_3d_planning.md) - fit: low - Modular framework for online informative path planning on MAVs: pluggable trajectory generators, evaluators (information gain), and back-ends, built on Voxblox maps.
 - [Clover Rescue Project](../../catalog/repos/devmbs__crtclient.md) - fit: low - Main web server and client (Node.js, Socket.IO) of the Clover Rescue Team's CopterHack 2022 project, 3rd place; the drone-side server is DevMBS/CRTClover.
 
-## Documents, talks, courses, datasets (11)
+## Documents, talks, courses, datasets (16)
 
+- [A Search Strategy and Vessel Detection in Maritime Environment Using Fixed-Wing UAVs](../../catalog/resources/peti-2023-mbzirc-uav-search-preprint.md) - paper - Preprint by the UNIZG-FER MBZIRC 2023 team.
+- [Aerial Drone Competition 2026 Autonomous Flight Mission Quick Guide](../../catalog/resources/recf-adc-2026-autonomous-flight-guide.md) - competition - One-page guide to the school-level autonomous flight match: a 3-minute scripted run through fixed field elements (arches, keyholes, tunnel, colour mats, panel) ending on one of three landing targets, with per-task points
 - [Aerostack2: A Software Framework for Developing Multi-robot Aerial Systems](../../catalog/resources/aerostack2-paper.md) - paper - Describes the Aerostack2 ROS 2 architecture for aerial robotics: platform abstraction, behaviors, mission specification and multi-robot support.
 - [Energy Minimization for Wireless Communication with Rotary-Wing UAV](../../catalog/resources/zeng-rotary-wing-energy-model-2018.md) - paper - Derives a closed-form propulsion power model for rotary-wing UAVs as a function of forward speed (blade profile, induced and parasite terms), then uses it to optimise trajectories.
 - [Extensions to the Dubins Airplane Method - Flight Performance Constraints in Uniform Wind](../../catalog/resources/schopferer-eduplane-2026.md) - paper - Derives closed-form links between flight-performance limits and kinematic constraints, then builds iterative algorithms for 3D fixed-wing trajectories of trochoidal or circular turns and straight segments in uniform wind
@@ -56,5 +58,8 @@ Route networks, waypoint missions, coverage, terrain-aware and threat-aware rout
 - [NeBula: Quest for Robotic Autonomy in Challenging Environments; TEAM CoSTAR at the DARPA Subterranean Challenge](../../catalog/resources/nebula-costar-subt-paper.md) - paper - Describes the NeBula belief-space autonomy stack: multi-modal positioning, mapping, traversability, risk-aware mission planning and multi-robot reasoning; CoSTAR won the Urban circuit.
 - [PlanSys2: A Planning System Framework for ROS2](../../catalog/resources/plansys2-paper.md) - paper - Presents PlanSys2, a PDDL planning and execution framework for ROS 2 that compiles plans into behavior trees and supports multi-robot execution.
 - [Required Navigation Performances for Drone Flight Operations](../../catalog/resources/haro-2023-rnp-drone-operations.md) - paper - Conference paper (Engineering Proceedings 54(1):51, 2023).
+- [Rules for a Remote Student Robotics Competition (IEEE Region 5, 2021)](../../catalog/resources/ieee-r5-2021-tello-drone-rules.md) - competition - Student contest rules (V4, Nov 2020) for an autonomous DJI Tello on a 3 x 3 m grid.
+- [SUAS 2026 Team Handbook](../../catalog/resources/suas-2026-team-handbook.md) - competition - Rules for the 2026 Student Unmanned Aerial Systems competition: GPS waypoint laps handed out at check-in, a GPS flight boundary with an altitude band, risk mapping, and search-detect-deliver of two objects to a mannequin
+- [TEKNOFEST 2026 UAV Competitions Specification (EN)](../../catalog/resources/teknofest-2026-uav-competitions-spec.md) - competition - Specification for the International and High School UAV competitions.
 - [TypeFly: Flying Drones with Large Language Model](../../catalog/resources/typefly-2023.md) - paper - Proposes a compact drone programming language for LLM output, cutting token count and latency while keeping plans checkable.
 

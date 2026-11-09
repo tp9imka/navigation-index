@@ -75,7 +75,7 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [ROG-Map](../../catalog/repos/hku-mars__rog-map.md) - fit: low - Robocentric occupancy grid that slides with the vehicle and keeps an inflated map and frontier information, designed for LiDAR-based high-speed planning.
 - [SUPER](../../catalog/repos/hku-mars__super.md) - fit: low - LiDAR-based high-speed MAV planner that plans directly on point clouds.
 
-## Documents, talks, courses, datasets (45)
+## Documents, talks, courses, datasets (46)
 
 - [Autoware documentation](../../catalog/resources/autoware-docs.md) - doc - Official Autoware documentation with architecture, installation, tutorials and design notes for localization, perception and planning components.
 - [Barrier Certificate based Safe Control for LiDAR-based Systems under Sensor Faults and Attacks](../../catalog/resources/zhang-cheng-niu-clark-2022-lidar-barrier-faults.md) - paper - Preprint (arXiv, no venue confirmed).
@@ -84,6 +84,7 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [DARPA SubT Reference Datasets](../../catalog/resources/darpa-subt-reference-datasets.md) - dataset - Reference sensor datasets and artifact data released for the DARPA Subterranean Challenge, hosted on Bitbucket.
 - [DARPA Subterranean (SubT) Challenge](../../catalog/resources/darpa-subt-challenge.md) - competition - DARPA's 2018-2021 challenge for autonomous robot teams mapping and searching tunnels, urban underground and caves with no GNSS and degraded comms; systems and virtual tracks.
 - [DCL-SLAM: A Distributed Collaborative LiDAR SLAM Framework for a Robotic Swarm](../../catalog/resources/dcl-slam-paper.md) - paper - Describes a fully distributed lidar C-SLAM using compact descriptors for inter-robot place recognition.
+- [EnRicH 2025 - The European Robotics Hackathon](../../catalog/resources/enrich-2025-robotics-hackathon.md) - competition - Event page for a UAV and UGV trial inside the never-operated Zwentendorf nuclear plant: radiation mapping, 3D mapping, search and rescue and valve manipulation in dark, cluttered, comms-hostile interiors.
 - [ERF26 workshop: Innovation and developments in robotic GNSS-denied localisation for inspection & maintenance](../../catalog/resources/erf26-sintef-gnss-denied-localisation-workshop.md) - talk - European Robotics Forum 2026 workshop (Stavanger) organised by SINTEF on GNSS-denied robot localisation in indoor, offshore, underground and urban-canyon settings, bringing together researchers, vendors and end users.
 - [ERF26 workshop: Innovation and developments in robotic GNSS-denied localisation for inspection and maintenance](../../catalog/resources/sintef-erf26-gnss-denied-workshop.md) - talk - European Robotics Forum 2026 workshop on GNSS-denied localization for inspection robots.
 - [FAST-LIO2: Fast Direct LiDAR-inertial Odometry](../../catalog/resources/fast-lio2-xu-2021.md) - paper - Introduces direct registration of raw LiDAR points in an iterated Kalman filter with an incremental k-d tree map, avoiding hand-crafted feature extraction.

@@ -142,7 +142,7 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [Olympe](../../catalog/repos/parrot-developers__olympe.md) - fit: low - Parrot's Python controller library for ANAFI drones and the Sphinx simulator, using the Arsdk messages (moveBy, moveTo, piloting, camera).
 - [Radio Altimeter A-053 simulator (MCU part)](../../catalog/repos/mikhraly__radioaltimeter_mcu.md) - fit: low - C firmware for a microcontroller-based simulator of the A-053 aircraft radio altimeter; part 1 of 2, with PC software as the second part.
 
-## Documents, talks, courses, datasets (27)
+## Documents, talks, courses, datasets (28)
 
 - [Aerodynamic modeling of the Skywalker X8 Fixed-Wing Unmanned Aerial Vehicle](../../catalog/resources/gryte-2018-skywalker-x8-aerodynamic-model.md) - paper - ICUAS 2018.
 - [AirSim Documentation](../../catalog/resources/microsoft-airsim-docs.md) - doc - Docs for AirSim covering setup, APIs, sensor configuration and PX4/ArduPilot integration.
@@ -154,6 +154,7 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [Gazebo Worlds (PX4 Guide)](../../catalog/resources/px4-gz-worlds-docs.md) - doc - Lists the gz worlds PX4 ships for SITL and how to select one, alongside the vehicle models such as x500_depth and x500_lidar_2d.
 - [HACKtheMACHINE Unmanned (ONR / NavalX)](../../catalog/resources/onr-hackthemachine-unmanned-2021.md) - competition - US Navy prize challenge on unmanned and autonomous systems with tracks on securing a simulated autopilot, separating benign from malicious data, and model-based mission requirements.
 - [HoloOcean Documentation](../../catalog/resources/byu-holoocean-docs.md) - doc - Install guide, sensor reference (sonar, DVL, IMU, depth) and examples for the HoloOcean underwater simulator.
+- [ICUAS '26 UAV Competition Rulebook](../../catalog/resources/icuas26-uav-competition-rulebook.md) - competition - Rulebook v1.0 (October 2025) for the ICUAS 2026 multi-UAV competition: Crazyflies in CrazySim (Gazebo, ROS 2 Humble) find ArUco-marked threats in a known urban world, keep a line-of-sight relay to a ground vehicle and ma
 - [Learning High-Speed Flight in the Wild](../../catalog/resources/loquercio-2021-high-speed-flight-wild.md) - paper - A network trained only in simulation by imitating a privileged planner maps onboard depth and state to collision-free trajectories, flown fast in forests and ruins (Science Robotics 2021).
 - [LSY Autonomous Drone Racing documentation](../../catalog/resources/lsy-drone-racing-docs.md) - doc - Course docs for the Crazyflie gates-and-obstacles racing challenge: setup, difficulty levels, sim and real deployment.
 - [macOS Development Environment (PX4 Guide)](../../catalog/resources/px4-macos-dev-env-docs.md) - doc - Native macOS setup for PX4 SITL with Gazebo Harmonic via Tools/setup/macos.sh --sim-tools, which pulls gz from a locked conda-forge env through pixi.

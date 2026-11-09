@@ -95,7 +95,7 @@ Detection, segmentation, depth on embedded hardware supporting navigation.
 - [AI-deck GAP8 examples](../../catalog/repos/bitcraze__aideck-gap8-examples.md) - fit: low - Bitcraze examples for the Crazyflie AI-deck GAP8 processor: camera streaming over WiFi and small onboard CNN inference.
 - [Flight Speed Estimation Airflow](../../catalog/repos/syroco-isir__flight-speed-estimation-airflow.md) - fit: low - GRU network that estimates multirotor flight speed from thermal anemometer readings, linked from the 2025 airflow-inertial odometry preprint.
 
-## Documents, talks, courses, datasets (54)
+## Documents, talks, courses, datasets (55)
 
 - [A Benchmark Comparison of Monocular Visual-Inertial Odometry Algorithms for Flying Robots](../../catalog/resources/delmerico-scaramuzza-2018-vio-benchmark-flying-robots.md) - paper - ICRA 2018.
 - [A Benchmark Comparison of Visual Place Recognition Techniques for Resource-Constrained Embedded Platforms](../../catalog/resources/power-2021-vpr-embedded-benchmark.md) - paper - arXiv 2109.11002 preprint.
@@ -107,6 +107,7 @@ Detection, segmentation, depth on embedded hardware supporting navigation.
 - [AirIO: Learning Inertial Odometry with Enhanced IMU Feature Observability](../../catalog/resources/airio-paper.md) - paper - UAV-focused learned inertial odometry that changes how IMU data are represented to the network to make motion features more observable.
 - [Are State-of-the-art Visual Place Recognition Techniques any Good for Aerial Robotics?](../../catalog/resources/zaffar-2019-vpr-aerial-robotics.md) - paper - Early benchmark of eight ground-robot VPR techniques on two aerial place-recognition datasets, comparing matching performance, processing power and memory, and laying out why aerial VPR differs (viewpoint change, payload
 - [Attention and Anticipation in Fast Visual-Inertial Navigation](../../catalog/resources/carlone-karaman-attention-anticipation-vin.md) - paper - ICRA 2017 and IEEE Transactions on Robotics 2019 (doi 10.1109/TRO.2018.2872402), per Crossref; arXiv 1610.03344 abstract read.
+- [Beauty and the Beast: Optimal Methods Meet Learning for Drone Racing](../../catalog/resources/kaufmann-2018-beauty-beast-iros-adr.md) - paper - Preprint (later ICRA 2019) of the IROS 2018 Autonomous Drone Race winner: a CNN predicts the next gate pose with uncertainty, an EKF fuses it with coarse gate positions from one demonstration flight, and MPC flies the tr
 - [Champion-level drone racing using deep reinforcement learning](../../catalog/resources/swift-champion-drone-racing-nature.md) - paper - Swift, a quadrotor using only onboard camera and IMU with an RL-trained policy, beat human world-champion pilots in head-to-head races.
 - [cuVSLAM: CUDA accelerated visual odometry and mapping](../../catalog/resources/cuvslam-2025.md) - paper - Describes NVIDIA's GPU-accelerated VO/SLAM supporting from one to many cameras with optional IMU, designed for real-time edge deployment.
 - [DARPA Triage Challenge](../../catalog/resources/darpa-triage-challenge.md) - competition - DARPA challenge for autonomous systems that find and assess casualties in mass-casualty scenes, combining drones and ground robots navigating degraded, GNSS-unreliable environments.

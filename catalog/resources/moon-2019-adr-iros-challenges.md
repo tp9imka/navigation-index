@@ -16,4 +16,9 @@ Organisers and teams review the IROS 2016 and 2017 autonomous drone races: the i
 
 **Tags:** `iros`, `adr`, `drone-racing`, `competition`
 
+## Referenced by
+
+- [Beauty and the Beast: Optimal Methods Meet Learning for Drone Racing](../../catalog/resources/kaufmann-2018-beauty-beast-iros-adr.md) (cites)
+- [Student autonomous drone racing team takes 2nd place at IROS](../../catalog/resources/umd-iros-2019-adr-news.md) (part_of)
+
 _Indexed by lane(s): close-area-sims_

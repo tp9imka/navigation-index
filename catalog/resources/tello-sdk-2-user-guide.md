@@ -20,4 +20,8 @@ The UDP text command set for Tello EDU: control, set and read commands, mission 
 
 - explains: [DJITelloPy](../../catalog/repos/damiafuentes__djitellopy.md)
 
+## Referenced by
+
+- [Rules for a Remote Student Robotics Competition (IEEE Region 5, 2021)](../../catalog/resources/ieee-r5-2021-tello-drone-rules.md) (uses)
+
 _Indexed by lane(s): close-area-sims_
