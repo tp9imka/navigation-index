@@ -1,0 +1,316 @@
+{
+ "chrome": {
+  "Browser": "Chrome/140.0.7339.208",
+  "Protocol-Version": "1.3",
+  "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36",
+  "V8-Version": "14.0.365.10",
+  "WebKit-Version": "537.36 (@c759967f1b8ca5857065acaa4f7b5cdb3a12df7b)",
+  "webSocketDebuggerUrl": "ws://127.0.0.1:9333/devtools/browser/8b8d51be-0591-4385-beae-16983a4e9379"
+ },
+ "page": "http://127.0.0.1:8765/site/playground/spike.html",
+ "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36",
+ "started": "2026-11-09T10:20:47.104Z",
+ "bench": false,
+ "reps": 1,
+ "t": {
+  "pyodide_script_ms": 6.9,
+  "pyodide_init_ms": 847.6,
+  "arena_fetch_ms": 9.9,
+  "packages_ms": 742.1,
+  "load_total_ms": 1598,
+  "import_ms": 885.8,
+  "ready_ms": 2606
+ },
+ "imports": null,
+ "env": {
+  "python": "3.14.2",
+  "numpy": "2.4.6",
+  "scipy": "1.18.0",
+  "machine": "wasm32",
+  "system": "Emscripten",
+  "imports": {
+   "numpy_scipy_import_ms": 864.1,
+   "arena_import_ms": 18.9
+  }
+ },
+ "cases": [
+  {
+   "planner": "straight",
+   "family": "random",
+   "seed": 0,
+   "index": 0,
+   "world_ms": 78,
+   "run_s": 0.079,
+   "sim_s": 20.4,
+   "wall_per_sim_s": 0.0038,
+   "steps_50hz": 1020,
+   "streamed": 204,
+   "replans": 0,
+   "replan_ms_median": null,
+   "row": {
+    "outcome": "stuck",
+    "reached": false,
+    "collision": false,
+    "stuck": true,
+    "timeout": false,
+    "time_to_goal_s": null,
+    "min_clearance_m": 0.3666,
+    "path_length_m": 13.285,
+    "duration_s": 20.38,
+    "index": 0,
+    "layout_attempts": 1,
+    "n_obstacles": 9,
+    "goal": [
+     16.404,
+     16.747
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 0.0191,
+    "planner_ms_max": 0.1
+   },
+   "rep": 1,
+   "stream_on": true,
+   "stream_n": 204
+  },
+  {
+   "planner": "astar_esdf_known",
+   "family": "random",
+   "seed": 0,
+   "index": 0,
+   "world_ms": 76.6,
+   "run_s": 0.646,
+   "sim_s": 19.38,
+   "wall_per_sim_s": 0.0333,
+   "steps_50hz": 969,
+   "streamed": 194,
+   "replans": 49,
+   "replan_ms_median": 6.5,
+   "row": {
+    "outcome": "reached",
+    "reached": true,
+    "collision": false,
+    "stuck": false,
+    "timeout": false,
+    "time_to_goal_s": 19.38,
+    "min_clearance_m": 0.5647,
+    "path_length_m": 23.838,
+    "duration_s": 19.38,
+    "index": 0,
+    "layout_attempts": 1,
+    "n_obstacles": 9,
+    "goal": [
+     16.404,
+     16.747
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 2.9655,
+    "planner_ms_max": 35
+   },
+   "rep": 1,
+   "stream_on": true,
+   "stream_n": 194
+  }
+ ],
+ "memory": [
+  {
+   "label": "after loadPyodide",
+   "wasm_heap_mb": 30,
+   "js_heap_used_mb": 224
+  },
+  {
+   "label": "after numpy + scipy",
+   "wasm_heap_mb": 62,
+   "js_heap_used_mb": 362
+  },
+  {
+   "label": "after arena import",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 357
+  },
+  {
+   "label": "after straight random/0 run 1",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 353
+  },
+  {
+   "label": "after astar_esdf_known random/0 run 1",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 353
+  }
+ ],
+ "resources": [
+  {
+   "name": "/pyodide/v314.0.7/full/pyodide.js",
+   "host": "cdn.jsdelivr.net",
+   "transfer_kb": 0,
+   "encoded_kb": 7,
+   "decoded_kb": 18,
+   "ms": 6
+  },
+  {
+   "name": "/pyodide/v314.0.7/full/pyodide-lock.json",
+   "host": "cdn.jsdelivr.net",
+   "transfer_kb": 0,
+   "encoded_kb": 24,
+   "decoded_kb": 116,
+   "ms": 11
+  },
+  {
+   "name": "/pyodide/v314.0.7/full/python_stdlib.zip",
+   "host": "cdn.jsdelivr.net",
+   "transfer_kb": 0,
+   "encoded_kb": 2447,
+   "decoded_kb": 2486,
+   "ms": 21
+  },
+  {
+   "name": "/pyodide/v314.0.7/full/pyodide.asm.mjs",
+   "host": "cdn.jsdelivr.net",
+   "transfer_kb": 0,
+   "encoded_kb": 256,
+   "decoded_kb": 1221,
+   "ms": 18
+  },
+  {
+   "name": "/pyodide/v314.0.7/full/pyodide.asm.wasm",
+   "host": "cdn.jsdelivr.net",
+   "transfer_kb": 0,
+   "encoded_kb": 3358,
+   "decoded_kb": 9373,
+   "ms": 54
+  },
+  {
+   "name": "/samples/close-area-arena/__init__.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 0,
+   "encoded_kb": 0,
+   "decoded_kb": 0,
+   "ms": 8
+  },
+  {
+   "name": "/samples/close-area-arena/adapter.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 0,
+   "encoded_kb": 3,
+   "decoded_kb": 3,
+   "ms": 8
+  },
+  {
+   "name": "/samples/close-area-arena/sensors.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 0,
+   "encoded_kb": 2,
+   "decoded_kb": 2,
+   "ms": 8
+  },
+  {
+   "name": "/samples/close-area-arena/world.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 0,
+   "encoded_kb": 13,
+   "decoded_kb": 13,
+   "ms": 8
+  },
+  {
+   "name": "/samples/close-area-arena/vehicle.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 0,
+   "encoded_kb": 2,
+   "decoded_kb": 2,
+   "ms": 8
+  },
+  {
+   "name": "/samples/close-area-arena/scorer.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 0,
+   "encoded_kb": 4,
+   "decoded_kb": 4,
+   "ms": 8
+  },
+  {
+   "name": "/samples/close-area-arena/planners/astar_esdf.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 0,
+   "encoded_kb": 22,
+   "decoded_kb": 22,
+   "ms": 8
+  },
+  {
+   "name": "/samples/close-area-arena/planners/straight.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 0,
+   "encoded_kb": 2,
+   "decoded_kb": 2,
+   "ms": 8
+  },
+  {
+   "name": "/samples/close-area-arena/planners/base.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 0,
+   "encoded_kb": 1,
+   "decoded_kb": 1,
+   "ms": 9
+  },
+  {
+   "name": "/samples/close-area-arena/run.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 0,
+   "encoded_kb": 9,
+   "decoded_kb": 9,
+   "ms": 9
+  },
+  {
+   "name": "/samples/close-area-arena/planners/__init__.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 0,
+   "encoded_kb": 0,
+   "decoded_kb": 0,
+   "ms": 9
+  },
+  {
+   "name": "/pyodide/v314.0.7/full/numpy-2.4.6-cp314-cp314-pyemscripten_2026_0_wasm32.whl",
+   "host": "cdn.jsdelivr.net",
+   "transfer_kb": 0,
+   "encoded_kb": 2861,
+   "decoded_kb": 2891,
+   "ms": 14
+  },
+  {
+   "name": "/pyodide/v314.0.7/full/scipy-1.18.0-cp314-cp314-pyemscripten_2026_0_wasm32.whl",
+   "host": "cdn.jsdelivr.net",
+   "transfer_kb": 0,
+   "encoded_kb": 13546,
+   "decoded_kb": 13701,
+   "ms": 122
+  }
+ ],
+ "errors": [],
+ "pyodide_version": "314.0.7",
+ "arena_files": 11,
+ "arena_bytes": 59753,
+ "summary": [
+  {
+   "case": "straight random/0",
+   "sim_s": 20.4,
+   "first_run_s": 0.079,
+   "median_run_s": 0.079,
+   "median_wall_per_sim_s": 0.0038,
+   "no_stream_run_s": null,
+   "projected_30s_run_wall_s": 0.11,
+   "verdict": "PASS"
+  },
+  {
+   "case": "astar_esdf_known random/0",
+   "sim_s": 19.38,
+   "first_run_s": 0.646,
+   "median_run_s": 0.646,
+   "median_wall_per_sim_s": 0.0333,
+   "no_stream_run_s": null,
+   "projected_30s_run_wall_s": 1,
+   "verdict": "PASS"
+  }
+ ],
+ "finished": "2026-11-09T10:20:50.513Z",
+ "driver_wait_s": 3.475,
+ "console": []
+}

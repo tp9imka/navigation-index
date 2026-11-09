@@ -1,0 +1,1302 @@
+{
+ "chrome": {
+  "Browser": "Chrome/140.0.7339.208",
+  "Protocol-Version": "1.3",
+  "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36",
+  "V8-Version": "14.0.365.10",
+  "WebKit-Version": "537.36 (@c759967f1b8ca5857065acaa4f7b5cdb3a12df7b)",
+  "webSocketDebuggerUrl": "ws://127.0.0.1:9333/devtools/browser/8b8d51be-0591-4385-beae-16983a4e9379"
+ },
+ "page": "http://127.0.0.1:8765/site/playground/spike.html?bench=1",
+ "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36",
+ "started": "2026-11-09T10:20:05.390Z",
+ "bench": true,
+ "reps": 3,
+ "t": {
+  "pyodide_script_ms": 609.9,
+  "pyodide_init_ms": 1963.7,
+  "arena_fetch_ms": 23.6,
+  "packages_ms": 1276.2,
+  "load_total_ms": 3851.2,
+  "import_ms": 938.2,
+  "ready_ms": 4915
+ },
+ "imports": null,
+ "env": {
+  "python": "3.14.2",
+  "numpy": "2.4.6",
+  "scipy": "1.18.0",
+  "machine": "wasm32",
+  "system": "Emscripten",
+  "imports": {
+   "numpy_scipy_import_ms": 915.4,
+   "arena_import_ms": 19.1
+  }
+ },
+ "cases": [
+  {
+   "planner": "straight",
+   "family": "random",
+   "seed": 0,
+   "index": 0,
+   "world_ms": 89,
+   "run_s": 0.092,
+   "sim_s": 20.4,
+   "wall_per_sim_s": 0.0045,
+   "steps_50hz": 1020,
+   "streamed": 204,
+   "replans": 0,
+   "replan_ms_median": null,
+   "row": {
+    "outcome": "stuck",
+    "reached": false,
+    "collision": false,
+    "stuck": true,
+    "timeout": false,
+    "time_to_goal_s": null,
+    "min_clearance_m": 0.3666,
+    "path_length_m": 13.285,
+    "duration_s": 20.38,
+    "index": 0,
+    "layout_attempts": 1,
+    "n_obstacles": 9,
+    "goal": [
+     16.404,
+     16.747
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 0.0206,
+    "planner_ms_max": 0.2
+   },
+   "rep": 1,
+   "stream_on": true,
+   "stream_n": 204
+  },
+  {
+   "planner": "straight",
+   "family": "random",
+   "seed": 0,
+   "index": 0,
+   "world_ms": 78.2,
+   "run_s": 0.079,
+   "sim_s": 20.4,
+   "wall_per_sim_s": 0.0039,
+   "steps_50hz": 1020,
+   "streamed": 204,
+   "replans": 0,
+   "replan_ms_median": null,
+   "row": {
+    "outcome": "stuck",
+    "reached": false,
+    "collision": false,
+    "stuck": true,
+    "timeout": false,
+    "time_to_goal_s": null,
+    "min_clearance_m": 0.3666,
+    "path_length_m": 13.285,
+    "duration_s": 20.38,
+    "index": 0,
+    "layout_attempts": 1,
+    "n_obstacles": 9,
+    "goal": [
+     16.404,
+     16.747
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 0.0162,
+    "planner_ms_max": 0.1
+   },
+   "rep": 2,
+   "stream_on": true,
+   "stream_n": 204
+  },
+  {
+   "planner": "straight",
+   "family": "random",
+   "seed": 0,
+   "index": 0,
+   "world_ms": 77,
+   "run_s": 0.076,
+   "sim_s": 20.4,
+   "wall_per_sim_s": 0.0037,
+   "steps_50hz": 1020,
+   "streamed": 204,
+   "replans": 0,
+   "replan_ms_median": null,
+   "row": {
+    "outcome": "stuck",
+    "reached": false,
+    "collision": false,
+    "stuck": true,
+    "timeout": false,
+    "time_to_goal_s": null,
+    "min_clearance_m": 0.3666,
+    "path_length_m": 13.285,
+    "duration_s": 20.38,
+    "index": 0,
+    "layout_attempts": 1,
+    "n_obstacles": 9,
+    "goal": [
+     16.404,
+     16.747
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 0.0176,
+    "planner_ms_max": 0.2
+   },
+   "rep": 3,
+   "stream_on": true,
+   "stream_n": 204
+  },
+  {
+   "planner": "straight",
+   "family": "random",
+   "seed": 0,
+   "index": 0,
+   "world_ms": 77.6,
+   "run_s": 0.075,
+   "sim_s": 20.4,
+   "wall_per_sim_s": 0.0037,
+   "steps_50hz": 1020,
+   "streamed": 0,
+   "replans": 0,
+   "replan_ms_median": null,
+   "row": {
+    "outcome": "stuck",
+    "reached": false,
+    "collision": false,
+    "stuck": true,
+    "timeout": false,
+    "time_to_goal_s": null,
+    "min_clearance_m": 0.3666,
+    "path_length_m": 13.285,
+    "duration_s": 20.38,
+    "index": 0,
+    "layout_attempts": 1,
+    "n_obstacles": 9,
+    "goal": [
+     16.404,
+     16.747
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 0.0181,
+    "planner_ms_max": 0.2
+   },
+   "rep": 4,
+   "stream_on": false,
+   "stream_n": 0
+  },
+  {
+   "planner": "astar_esdf_known",
+   "family": "random",
+   "seed": 0,
+   "index": 0,
+   "world_ms": 77.2,
+   "run_s": 0.653,
+   "sim_s": 19.38,
+   "wall_per_sim_s": 0.0337,
+   "steps_50hz": 969,
+   "streamed": 194,
+   "replans": 49,
+   "replan_ms_median": 6.7,
+   "row": {
+    "outcome": "reached",
+    "reached": true,
+    "collision": false,
+    "stuck": false,
+    "timeout": false,
+    "time_to_goal_s": 19.38,
+    "min_clearance_m": 0.5647,
+    "path_length_m": 23.838,
+    "duration_s": 19.38,
+    "index": 0,
+    "layout_attempts": 1,
+    "n_obstacles": 9,
+    "goal": [
+     16.404,
+     16.747
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 2.9861,
+    "planner_ms_max": 36.8
+   },
+   "rep": 1,
+   "stream_on": true,
+   "stream_n": 194
+  },
+  {
+   "planner": "astar_esdf_known",
+   "family": "random",
+   "seed": 0,
+   "index": 0,
+   "world_ms": 76.5,
+   "run_s": 0.652,
+   "sim_s": 19.38,
+   "wall_per_sim_s": 0.0337,
+   "steps_50hz": 969,
+   "streamed": 194,
+   "replans": 49,
+   "replan_ms_median": 6.6,
+   "row": {
+    "outcome": "reached",
+    "reached": true,
+    "collision": false,
+    "stuck": false,
+    "timeout": false,
+    "time_to_goal_s": 19.38,
+    "min_clearance_m": 0.5647,
+    "path_length_m": 23.838,
+    "duration_s": 19.38,
+    "index": 0,
+    "layout_attempts": 1,
+    "n_obstacles": 9,
+    "goal": [
+     16.404,
+     16.747
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 2.9856,
+    "planner_ms_max": 35
+   },
+   "rep": 2,
+   "stream_on": true,
+   "stream_n": 194
+  },
+  {
+   "planner": "astar_esdf_known",
+   "family": "random",
+   "seed": 0,
+   "index": 0,
+   "world_ms": 76.6,
+   "run_s": 0.648,
+   "sim_s": 19.38,
+   "wall_per_sim_s": 0.0335,
+   "steps_50hz": 969,
+   "streamed": 194,
+   "replans": 49,
+   "replan_ms_median": 6.6,
+   "row": {
+    "outcome": "reached",
+    "reached": true,
+    "collision": false,
+    "stuck": false,
+    "timeout": false,
+    "time_to_goal_s": 19.38,
+    "min_clearance_m": 0.5647,
+    "path_length_m": 23.838,
+    "duration_s": 19.38,
+    "index": 0,
+    "layout_attempts": 1,
+    "n_obstacles": 9,
+    "goal": [
+     16.404,
+     16.747
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 2.968,
+    "planner_ms_max": 35.2
+   },
+   "rep": 3,
+   "stream_on": true,
+   "stream_n": 194
+  },
+  {
+   "planner": "astar_esdf_known",
+   "family": "random",
+   "seed": 0,
+   "index": 0,
+   "world_ms": 76.8,
+   "run_s": 0.651,
+   "sim_s": 19.38,
+   "wall_per_sim_s": 0.0336,
+   "steps_50hz": 969,
+   "streamed": 0,
+   "replans": 49,
+   "replan_ms_median": 6.6,
+   "row": {
+    "outcome": "reached",
+    "reached": true,
+    "collision": false,
+    "stuck": false,
+    "timeout": false,
+    "time_to_goal_s": 19.38,
+    "min_clearance_m": 0.5647,
+    "path_length_m": 23.838,
+    "duration_s": 19.38,
+    "index": 0,
+    "layout_attempts": 1,
+    "n_obstacles": 9,
+    "goal": [
+     16.404,
+     16.747
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 2.9778,
+    "planner_ms_max": 35.4
+   },
+   "rep": 4,
+   "stream_on": false,
+   "stream_n": 0
+  },
+  {
+   "planner": "astar_esdf_unknown",
+   "family": "random",
+   "seed": 0,
+   "index": 0,
+   "world_ms": 77.4,
+   "run_s": 2.869,
+   "sim_s": 18.68,
+   "wall_per_sim_s": 0.1536,
+   "steps_50hz": 934,
+   "streamed": 187,
+   "replans": 48,
+   "replan_ms_median": 53.4,
+   "row": {
+    "outcome": "reached",
+    "reached": true,
+    "collision": false,
+    "stuck": false,
+    "timeout": false,
+    "time_to_goal_s": 18.68,
+    "min_clearance_m": 0.6432,
+    "path_length_m": 23.947,
+    "duration_s": 18.68,
+    "index": 0,
+    "layout_attempts": 1,
+    "n_obstacles": 9,
+    "goal": [
+     16.404,
+     16.747
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 14.954,
+    "planner_ms_max": 124.6
+   },
+   "rep": 1,
+   "stream_on": true,
+   "stream_n": 187
+  },
+  {
+   "planner": "astar_esdf_unknown",
+   "family": "random",
+   "seed": 0,
+   "index": 0,
+   "world_ms": 77.8,
+   "run_s": 2.875,
+   "sim_s": 18.68,
+   "wall_per_sim_s": 0.1539,
+   "steps_50hz": 934,
+   "streamed": 187,
+   "replans": 48,
+   "replan_ms_median": 53.8,
+   "row": {
+    "outcome": "reached",
+    "reached": true,
+    "collision": false,
+    "stuck": false,
+    "timeout": false,
+    "time_to_goal_s": 18.68,
+    "min_clearance_m": 0.6432,
+    "path_length_m": 23.947,
+    "duration_s": 18.68,
+    "index": 0,
+    "layout_attempts": 1,
+    "n_obstacles": 9,
+    "goal": [
+     16.404,
+     16.747
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 14.985,
+    "planner_ms_max": 123.3
+   },
+   "rep": 2,
+   "stream_on": true,
+   "stream_n": 187
+  },
+  {
+   "planner": "astar_esdf_unknown",
+   "family": "random",
+   "seed": 0,
+   "index": 0,
+   "world_ms": 77.9,
+   "run_s": 2.877,
+   "sim_s": 18.68,
+   "wall_per_sim_s": 0.154,
+   "steps_50hz": 934,
+   "streamed": 187,
+   "replans": 48,
+   "replan_ms_median": 53.9,
+   "row": {
+    "outcome": "reached",
+    "reached": true,
+    "collision": false,
+    "stuck": false,
+    "timeout": false,
+    "time_to_goal_s": 18.68,
+    "min_clearance_m": 0.6432,
+    "path_length_m": 23.947,
+    "duration_s": 18.68,
+    "index": 0,
+    "layout_attempts": 1,
+    "n_obstacles": 9,
+    "goal": [
+     16.404,
+     16.747
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 14.9872,
+    "planner_ms_max": 122.4
+   },
+   "rep": 3,
+   "stream_on": true,
+   "stream_n": 187
+  },
+  {
+   "planner": "astar_esdf_unknown",
+   "family": "random",
+   "seed": 0,
+   "index": 0,
+   "world_ms": 78,
+   "run_s": 2.871,
+   "sim_s": 18.68,
+   "wall_per_sim_s": 0.1537,
+   "steps_50hz": 934,
+   "streamed": 0,
+   "replans": 48,
+   "replan_ms_median": 53.85,
+   "row": {
+    "outcome": "reached",
+    "reached": true,
+    "collision": false,
+    "stuck": false,
+    "timeout": false,
+    "time_to_goal_s": 18.68,
+    "min_clearance_m": 0.6432,
+    "path_length_m": 23.947,
+    "duration_s": 18.68,
+    "index": 0,
+    "layout_attempts": 1,
+    "n_obstacles": 9,
+    "goal": [
+     16.404,
+     16.747
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 14.9652,
+    "planner_ms_max": 125.4
+   },
+   "rep": 4,
+   "stream_on": false,
+   "stream_n": 0
+  },
+  {
+   "planner": "straight",
+   "family": "u_trap",
+   "seed": 0,
+   "index": 1,
+   "world_ms": 76.8,
+   "run_s": 0.074,
+   "sim_s": 20.48,
+   "wall_per_sim_s": 0.0036,
+   "steps_50hz": 1024,
+   "streamed": 205,
+   "replans": 0,
+   "replan_ms_median": null,
+   "row": {
+    "outcome": "stuck",
+    "reached": false,
+    "collision": false,
+    "stuck": true,
+    "timeout": false,
+    "time_to_goal_s": null,
+    "min_clearance_m": 0.3754,
+    "path_length_m": 12.701,
+    "duration_s": 20.46,
+    "index": 1,
+    "layout_attempts": 1,
+    "n_obstacles": 8,
+    "goal": [
+     16.379,
+     17.671
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 0.0146,
+    "planner_ms_max": 0.1
+   },
+   "rep": 1,
+   "stream_on": true,
+   "stream_n": 205
+  },
+  {
+   "planner": "straight",
+   "family": "u_trap",
+   "seed": 0,
+   "index": 1,
+   "world_ms": 77.6,
+   "run_s": 0.074,
+   "sim_s": 20.48,
+   "wall_per_sim_s": 0.0036,
+   "steps_50hz": 1024,
+   "streamed": 205,
+   "replans": 0,
+   "replan_ms_median": null,
+   "row": {
+    "outcome": "stuck",
+    "reached": false,
+    "collision": false,
+    "stuck": true,
+    "timeout": false,
+    "time_to_goal_s": null,
+    "min_clearance_m": 0.3754,
+    "path_length_m": 12.701,
+    "duration_s": 20.46,
+    "index": 1,
+    "layout_attempts": 1,
+    "n_obstacles": 8,
+    "goal": [
+     16.379,
+     17.671
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 0.0161,
+    "planner_ms_max": 0.1
+   },
+   "rep": 2,
+   "stream_on": true,
+   "stream_n": 205
+  },
+  {
+   "planner": "straight",
+   "family": "u_trap",
+   "seed": 0,
+   "index": 1,
+   "world_ms": 77.6,
+   "run_s": 0.073,
+   "sim_s": 20.48,
+   "wall_per_sim_s": 0.0036,
+   "steps_50hz": 1024,
+   "streamed": 205,
+   "replans": 0,
+   "replan_ms_median": null,
+   "row": {
+    "outcome": "stuck",
+    "reached": false,
+    "collision": false,
+    "stuck": true,
+    "timeout": false,
+    "time_to_goal_s": null,
+    "min_clearance_m": 0.3754,
+    "path_length_m": 12.701,
+    "duration_s": 20.46,
+    "index": 1,
+    "layout_attempts": 1,
+    "n_obstacles": 8,
+    "goal": [
+     16.379,
+     17.671
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 0.019,
+    "planner_ms_max": 0.2
+   },
+   "rep": 3,
+   "stream_on": true,
+   "stream_n": 205
+  },
+  {
+   "planner": "straight",
+   "family": "u_trap",
+   "seed": 0,
+   "index": 1,
+   "world_ms": 78.1,
+   "run_s": 0.073,
+   "sim_s": 20.48,
+   "wall_per_sim_s": 0.0036,
+   "steps_50hz": 1024,
+   "streamed": 0,
+   "replans": 0,
+   "replan_ms_median": null,
+   "row": {
+    "outcome": "stuck",
+    "reached": false,
+    "collision": false,
+    "stuck": true,
+    "timeout": false,
+    "time_to_goal_s": null,
+    "min_clearance_m": 0.3754,
+    "path_length_m": 12.701,
+    "duration_s": 20.46,
+    "index": 1,
+    "layout_attempts": 1,
+    "n_obstacles": 8,
+    "goal": [
+     16.379,
+     17.671
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 0.0151,
+    "planner_ms_max": 0.1
+   },
+   "rep": 4,
+   "stream_on": false,
+   "stream_n": 0
+  },
+  {
+   "planner": "astar_esdf_known",
+   "family": "u_trap",
+   "seed": 0,
+   "index": 1,
+   "world_ms": 77.9,
+   "run_s": 0.596,
+   "sim_s": 20.06,
+   "wall_per_sim_s": 0.0297,
+   "steps_50hz": 1003,
+   "streamed": 201,
+   "replans": 51,
+   "replan_ms_median": 3.3,
+   "row": {
+    "outcome": "reached",
+    "reached": true,
+    "collision": false,
+    "stuck": false,
+    "timeout": false,
+    "time_to_goal_s": 20.06,
+    "min_clearance_m": 0.6399,
+    "path_length_m": 25.228,
+    "duration_s": 20.06,
+    "index": 1,
+    "layout_attempts": 1,
+    "n_obstacles": 8,
+    "goal": [
+     16.379,
+     17.671
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 2.5995,
+    "planner_ms_max": 41.9
+   },
+   "rep": 1,
+   "stream_on": true,
+   "stream_n": 201
+  },
+  {
+   "planner": "astar_esdf_known",
+   "family": "u_trap",
+   "seed": 0,
+   "index": 1,
+   "world_ms": 78.1,
+   "run_s": 0.598,
+   "sim_s": 20.06,
+   "wall_per_sim_s": 0.0298,
+   "steps_50hz": 1003,
+   "streamed": 201,
+   "replans": 51,
+   "replan_ms_median": 3.3,
+   "row": {
+    "outcome": "reached",
+    "reached": true,
+    "collision": false,
+    "stuck": false,
+    "timeout": false,
+    "time_to_goal_s": 20.06,
+    "min_clearance_m": 0.6399,
+    "path_length_m": 25.228,
+    "duration_s": 20.06,
+    "index": 1,
+    "layout_attempts": 1,
+    "n_obstacles": 8,
+    "goal": [
+     16.379,
+     17.671
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 2.6104,
+    "planner_ms_max": 41.9
+   },
+   "rep": 2,
+   "stream_on": true,
+   "stream_n": 201
+  },
+  {
+   "planner": "astar_esdf_known",
+   "family": "u_trap",
+   "seed": 0,
+   "index": 1,
+   "world_ms": 78.6,
+   "run_s": 0.594,
+   "sim_s": 20.06,
+   "wall_per_sim_s": 0.0296,
+   "steps_50hz": 1003,
+   "streamed": 201,
+   "replans": 51,
+   "replan_ms_median": 3.3,
+   "row": {
+    "outcome": "reached",
+    "reached": true,
+    "collision": false,
+    "stuck": false,
+    "timeout": false,
+    "time_to_goal_s": 20.06,
+    "min_clearance_m": 0.6399,
+    "path_length_m": 25.228,
+    "duration_s": 20.06,
+    "index": 1,
+    "layout_attempts": 1,
+    "n_obstacles": 8,
+    "goal": [
+     16.379,
+     17.671
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 2.5935,
+    "planner_ms_max": 41.8
+   },
+   "rep": 3,
+   "stream_on": true,
+   "stream_n": 201
+  },
+  {
+   "planner": "astar_esdf_known",
+   "family": "u_trap",
+   "seed": 0,
+   "index": 1,
+   "world_ms": 77.5,
+   "run_s": 0.593,
+   "sim_s": 20.06,
+   "wall_per_sim_s": 0.0295,
+   "steps_50hz": 1003,
+   "streamed": 0,
+   "replans": 51,
+   "replan_ms_median": 3.2,
+   "row": {
+    "outcome": "reached",
+    "reached": true,
+    "collision": false,
+    "stuck": false,
+    "timeout": false,
+    "time_to_goal_s": 20.06,
+    "min_clearance_m": 0.6399,
+    "path_length_m": 25.228,
+    "duration_s": 20.06,
+    "index": 1,
+    "layout_attempts": 1,
+    "n_obstacles": 8,
+    "goal": [
+     16.379,
+     17.671
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 2.5891,
+    "planner_ms_max": 41.4
+   },
+   "rep": 4,
+   "stream_on": false,
+   "stream_n": 0
+  },
+  {
+   "planner": "astar_esdf_unknown",
+   "family": "u_trap",
+   "seed": 0,
+   "index": 1,
+   "world_ms": 77.6,
+   "run_s": 4.384,
+   "sim_s": 22.16,
+   "wall_per_sim_s": 0.1979,
+   "steps_50hz": 1108,
+   "streamed": 222,
+   "replans": 57,
+   "replan_ms_median": 79.4,
+   "row": {
+    "outcome": "reached",
+    "reached": true,
+    "collision": false,
+    "stuck": false,
+    "timeout": false,
+    "time_to_goal_s": 22.16,
+    "min_clearance_m": 0.6093,
+    "path_length_m": 27.358,
+    "duration_s": 22.16,
+    "index": 1,
+    "layout_attempts": 1,
+    "n_obstacles": 8,
+    "goal": [
+     16.379,
+     17.671
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 19.3649,
+    "planner_ms_max": 145.1
+   },
+   "rep": 1,
+   "stream_on": true,
+   "stream_n": 222
+  },
+  {
+   "planner": "astar_esdf_unknown",
+   "family": "u_trap",
+   "seed": 0,
+   "index": 1,
+   "world_ms": 78.4,
+   "run_s": 4.38,
+   "sim_s": 22.16,
+   "wall_per_sim_s": 0.1976,
+   "steps_50hz": 1108,
+   "streamed": 222,
+   "replans": 57,
+   "replan_ms_median": 78.3,
+   "row": {
+    "outcome": "reached",
+    "reached": true,
+    "collision": false,
+    "stuck": false,
+    "timeout": false,
+    "time_to_goal_s": 22.16,
+    "min_clearance_m": 0.6093,
+    "path_length_m": 27.358,
+    "duration_s": 22.16,
+    "index": 1,
+    "layout_attempts": 1,
+    "n_obstacles": 8,
+    "goal": [
+     16.379,
+     17.671
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 19.3405,
+    "planner_ms_max": 144.1
+   },
+   "rep": 2,
+   "stream_on": true,
+   "stream_n": 222
+  },
+  {
+   "planner": "astar_esdf_unknown",
+   "family": "u_trap",
+   "seed": 0,
+   "index": 1,
+   "world_ms": 78.1,
+   "run_s": 4.377,
+   "sim_s": 22.16,
+   "wall_per_sim_s": 0.1975,
+   "steps_50hz": 1108,
+   "streamed": 222,
+   "replans": 57,
+   "replan_ms_median": 80.3,
+   "row": {
+    "outcome": "reached",
+    "reached": true,
+    "collision": false,
+    "stuck": false,
+    "timeout": false,
+    "time_to_goal_s": 22.16,
+    "min_clearance_m": 0.6093,
+    "path_length_m": 27.358,
+    "duration_s": 22.16,
+    "index": 1,
+    "layout_attempts": 1,
+    "n_obstacles": 8,
+    "goal": [
+     16.379,
+     17.671
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 19.3189,
+    "planner_ms_max": 144.9
+   },
+   "rep": 3,
+   "stream_on": true,
+   "stream_n": 222
+  },
+  {
+   "planner": "astar_esdf_unknown",
+   "family": "u_trap",
+   "seed": 0,
+   "index": 1,
+   "world_ms": 76.9,
+   "run_s": 4.367,
+   "sim_s": 22.16,
+   "wall_per_sim_s": 0.1971,
+   "steps_50hz": 1108,
+   "streamed": 0,
+   "replans": 57,
+   "replan_ms_median": 79.5,
+   "row": {
+    "outcome": "reached",
+    "reached": true,
+    "collision": false,
+    "stuck": false,
+    "timeout": false,
+    "time_to_goal_s": 22.16,
+    "min_clearance_m": 0.6093,
+    "path_length_m": 27.358,
+    "duration_s": 22.16,
+    "index": 1,
+    "layout_attempts": 1,
+    "n_obstacles": 8,
+    "goal": [
+     16.379,
+     17.671
+    ],
+    "max_pose_error_m": 0,
+    "planner_ms_mean": 19.2928,
+    "planner_ms_max": 145.6
+   },
+   "rep": 4,
+   "stream_on": false,
+   "stream_n": 0
+  }
+ ],
+ "memory": [
+  {
+   "label": "after loadPyodide",
+   "wasm_heap_mb": 30,
+   "js_heap_used_mb": 45
+  },
+  {
+   "label": "after numpy + scipy",
+   "wasm_heap_mb": 62,
+   "js_heap_used_mb": 189
+  },
+  {
+   "label": "after arena import",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 179
+  },
+  {
+   "label": "after straight random/0 run 1",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 180
+  },
+  {
+   "label": "after straight random/0 run 2",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 180
+  },
+  {
+   "label": "after straight random/0 run 3",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 180
+  },
+  {
+   "label": "after straight random/0 run 4",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 180
+  },
+  {
+   "label": "after astar_esdf_known random/0 run 1",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 180
+  },
+  {
+   "label": "after astar_esdf_known random/0 run 2",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 180
+  },
+  {
+   "label": "after astar_esdf_known random/0 run 3",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 181
+  },
+  {
+   "label": "after astar_esdf_known random/0 run 4",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 181
+  },
+  {
+   "label": "after astar_esdf_unknown random/0 run 1",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 181
+  },
+  {
+   "label": "after astar_esdf_unknown random/0 run 2",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 181
+  },
+  {
+   "label": "after astar_esdf_unknown random/0 run 3",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 181
+  },
+  {
+   "label": "after astar_esdf_unknown random/0 run 4",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 181
+  },
+  {
+   "label": "after straight u_trap/1 run 1",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 181
+  },
+  {
+   "label": "after straight u_trap/1 run 2",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 181
+  },
+  {
+   "label": "after straight u_trap/1 run 3",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 181
+  },
+  {
+   "label": "after straight u_trap/1 run 4",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 181
+  },
+  {
+   "label": "after astar_esdf_known u_trap/1 run 1",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 182
+  },
+  {
+   "label": "after astar_esdf_known u_trap/1 run 2",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 182
+  },
+  {
+   "label": "after astar_esdf_known u_trap/1 run 3",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 182
+  },
+  {
+   "label": "after astar_esdf_known u_trap/1 run 4",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 182
+  },
+  {
+   "label": "after astar_esdf_unknown u_trap/1 run 1",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 182
+  },
+  {
+   "label": "after astar_esdf_unknown u_trap/1 run 2",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 182
+  },
+  {
+   "label": "after astar_esdf_unknown u_trap/1 run 3",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 182
+  },
+  {
+   "label": "after astar_esdf_unknown u_trap/1 run 4",
+   "wasm_heap_mb": 90,
+   "js_heap_used_mb": 179
+  }
+ ],
+ "resources": [
+  {
+   "name": "/pyodide/v314.0.7/full/pyodide.js",
+   "host": "cdn.jsdelivr.net",
+   "transfer_kb": 8,
+   "encoded_kb": 7,
+   "decoded_kb": 18,
+   "ms": 609
+  },
+  {
+   "name": "/pyodide/v314.0.7/full/pyodide-lock.json",
+   "host": "cdn.jsdelivr.net",
+   "transfer_kb": 24,
+   "encoded_kb": 24,
+   "decoded_kb": 116,
+   "ms": 347
+  },
+  {
+   "name": "/pyodide/v314.0.7/full/python_stdlib.zip",
+   "host": "cdn.jsdelivr.net",
+   "transfer_kb": 2447,
+   "encoded_kb": 2447,
+   "decoded_kb": 2486,
+   "ms": 1091
+  },
+  {
+   "name": "/pyodide/v314.0.7/full/pyodide.asm.wasm",
+   "host": "cdn.jsdelivr.net",
+   "transfer_kb": 3358,
+   "encoded_kb": 3358,
+   "decoded_kb": 9373,
+   "ms": 1072
+  },
+  {
+   "name": "/pyodide/v314.0.7/full/pyodide.asm.mjs",
+   "host": "cdn.jsdelivr.net",
+   "transfer_kb": 256,
+   "encoded_kb": 256,
+   "decoded_kb": 1221,
+   "ms": 693
+  },
+  {
+   "name": "/samples/close-area-arena/__init__.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 0,
+   "encoded_kb": 0,
+   "decoded_kb": 0,
+   "ms": 18
+  },
+  {
+   "name": "/samples/close-area-arena/adapter.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 4,
+   "encoded_kb": 3,
+   "decoded_kb": 3,
+   "ms": 18
+  },
+  {
+   "name": "/samples/close-area-arena/world.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 14,
+   "encoded_kb": 13,
+   "decoded_kb": 13,
+   "ms": 18
+  },
+  {
+   "name": "/samples/close-area-arena/sensors.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 2,
+   "encoded_kb": 2,
+   "decoded_kb": 2,
+   "ms": 18
+  },
+  {
+   "name": "/samples/close-area-arena/vehicle.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 2,
+   "encoded_kb": 2,
+   "decoded_kb": 2,
+   "ms": 18
+  },
+  {
+   "name": "/samples/close-area-arena/scorer.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 4,
+   "encoded_kb": 4,
+   "decoded_kb": 4,
+   "ms": 18
+  },
+  {
+   "name": "/samples/close-area-arena/run.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 10,
+   "encoded_kb": 9,
+   "decoded_kb": 9,
+   "ms": 22
+  },
+  {
+   "name": "/samples/close-area-arena/planners/__init__.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 0,
+   "encoded_kb": 0,
+   "decoded_kb": 0,
+   "ms": 23
+  },
+  {
+   "name": "/samples/close-area-arena/planners/base.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 1,
+   "encoded_kb": 1,
+   "decoded_kb": 1,
+   "ms": 23
+  },
+  {
+   "name": "/samples/close-area-arena/planners/astar_esdf.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 22,
+   "encoded_kb": 22,
+   "decoded_kb": 22,
+   "ms": 23
+  },
+  {
+   "name": "/samples/close-area-arena/planners/straight.py",
+   "host": "127.0.0.1:8765",
+   "transfer_kb": 2,
+   "encoded_kb": 2,
+   "decoded_kb": 2,
+   "ms": 23
+  },
+  {
+   "name": "/pyodide/v314.0.7/full/numpy-2.4.6-cp314-cp314-pyemscripten_2026_0_wasm32.whl",
+   "host": "cdn.jsdelivr.net",
+   "transfer_kb": 2862,
+   "encoded_kb": 2861,
+   "decoded_kb": 2891,
+   "ms": 252
+  },
+  {
+   "name": "/pyodide/v314.0.7/full/scipy-1.18.0-cp314-cp314-pyemscripten_2026_0_wasm32.whl",
+   "host": "cdn.jsdelivr.net",
+   "transfer_kb": 13546,
+   "encoded_kb": 13546,
+   "decoded_kb": 13701,
+   "ms": 638
+  }
+ ],
+ "errors": [],
+ "pyodide_version": "314.0.7",
+ "arena_files": 11,
+ "arena_bytes": 59753,
+ "summary": [
+  {
+   "case": "straight random/0",
+   "sim_s": 20.4,
+   "first_run_s": 0.092,
+   "median_run_s": 0.079,
+   "median_wall_per_sim_s": 0.0039,
+   "no_stream_run_s": 0.075,
+   "projected_30s_run_wall_s": 0.12,
+   "verdict": "PASS"
+  },
+  {
+   "case": "astar_esdf_known random/0",
+   "sim_s": 19.38,
+   "first_run_s": 0.653,
+   "median_run_s": 0.652,
+   "median_wall_per_sim_s": 0.0337,
+   "no_stream_run_s": 0.651,
+   "projected_30s_run_wall_s": 1.01,
+   "verdict": "PASS"
+  },
+  {
+   "case": "astar_esdf_unknown random/0",
+   "sim_s": 18.68,
+   "first_run_s": 2.869,
+   "median_run_s": 2.875,
+   "median_wall_per_sim_s": 0.1539,
+   "no_stream_run_s": 2.871,
+   "projected_30s_run_wall_s": 4.62,
+   "verdict": "PASS"
+  },
+  {
+   "case": "straight u_trap/1",
+   "sim_s": 20.48,
+   "first_run_s": 0.074,
+   "median_run_s": 0.074,
+   "median_wall_per_sim_s": 0.0036,
+   "no_stream_run_s": 0.073,
+   "projected_30s_run_wall_s": 0.11,
+   "verdict": "PASS"
+  },
+  {
+   "case": "astar_esdf_known u_trap/1",
+   "sim_s": 20.06,
+   "first_run_s": 0.596,
+   "median_run_s": 0.596,
+   "median_wall_per_sim_s": 0.0297,
+   "no_stream_run_s": 0.593,
+   "projected_30s_run_wall_s": 0.89,
+   "verdict": "PASS"
+  },
+  {
+   "case": "astar_esdf_unknown u_trap/1",
+   "sim_s": 22.16,
+   "first_run_s": 4.384,
+   "median_run_s": 4.38,
+   "median_wall_per_sim_s": 0.1976,
+   "no_stream_run_s": 4.367,
+   "projected_30s_run_wall_s": 5.93,
+   "verdict": "PASS"
+  }
+ ],
+ "finished": "2026-11-09T10:20:46.720Z",
+ "driver_wait_s": 41.359,
+ "console": []
+}

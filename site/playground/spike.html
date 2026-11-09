@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navigation Index - playground spike (Pyodide)</title>
+<link rel="icon" href="data:,">
+<script>
+  try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<style>
+  :root {
+    --bg: #f6f6f3; --panel: #ffffff; --fg: #1c1c1a; --muted: #67675f; --line: #deded8;
+    --accent: #1f5fbf; --ok: #1d7a3a; --bad: #a12a2a; --obst: #3c3c38; --est: #d9730d; --code: #f0f0ec;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141413; --panel: #1d1d1b; --fg: #ebebe6; --muted: #9b9b93; --line: #34342f;
+      --accent: #7fb0ff; --ok: #79d18f; --bad: #f08a8a; --obst: #8d8d85; --est: #ffa94d; --code: #262624;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141413; --panel: #1d1d1b; --fg: #ebebe6; --muted: #9b9b93; --line: #34342f;
+    --accent: #7fb0ff; --ok: #79d18f; --bad: #f08a8a; --obst: #8d8d85; --est: #ffa94d; --code: #262624;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 16px 20px; background: var(--bg); color: var(--fg);
+         font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  h1 { font-size: 18px; margin: 0 0 4px; }
+  a { color: var(--accent); }
+  code { background: var(--code); padding: 0 4px; border-radius: 4px; }
+  .muted { color: var(--muted); }
+  #status { font-weight: 600; }
+  #verdict { margin: 6px 0 10px; }
+  #cards { display: flex; flex-wrap: wrap; gap: 12px; }
+  .card { margin: 0; width: 340px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px; }
+  .card canvas { width: 320px; height: 320px; display: block; }
+  .card figcaption { font-size: 12px; margin-top: 6px; }
+  table { border-collapse: collapse; margin-top: 12px; font-size: 12px; background: var(--panel); }
+  th, td { border: 1px solid var(--line); padding: 2px 6px; text-align: right; }
+  th:first-child, td:first-child, td:nth-child(2) { text-align: left; }
+</style>
+<script defer src="spike.js?v=20261109"></script>
+</head>
+<body>
+<h1>Playground spike: the close-area arena in Python, in the browser</h1>
+<p class="muted">Pyodide <span id="ver">-</span> from cdn.jsdelivr.net runs the arena files listed in
+  <a href="manifest.json">manifest.json</a> unchanged (synthetic layouts, vehicle and sensor). Blue = positions
+  streamed from Python at 10 Hz, green dashed = last A* path, green / red dot = A / B.
+  Add <code>?bench=1</code> for the full timing matrix. Notes: <a href="README.md">README.md</a>.</p>
+<p>Status: <span id="status">starting</span></p>
+<p id="verdict" class="muted"></p>
+<div id="cards"></div>
+<table>
+  <thead><tr><th>planner</th><th>layout</th><th>run</th><th>stream</th><th>outcome</th><th>sim s</th>
+    <th>wall s</th><th>wall per sim s</th><th>30 s run => wall s</th><th>layout build ms</th></tr></thead>
+  <tbody id="rows"></tbody>
+</table>
+</body>
+</html>

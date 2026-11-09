@@ -1,0 +1,20 @@
+{
+  "comment": "Files spike.js copies into the Pyodide filesystem. src is relative to this manifest (../../ is the repo root); dst is relative to /home/pyodide, which is on sys.path. Only the modules run.run_one needs with planners straight and astar_esdf.",
+  "pyodide": "314.0.7",
+  "pyodide_base": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/",
+  "packages": ["numpy", "scipy"],
+  "package": "close_area_arena",
+  "files": [
+    {"src": "../../samples/close-area-arena/__init__.py", "dst": "close_area_arena/__init__.py"},
+    {"src": "../../samples/close-area-arena/adapter.py", "dst": "close_area_arena/adapter.py"},
+    {"src": "../../samples/close-area-arena/world.py", "dst": "close_area_arena/world.py"},
+    {"src": "../../samples/close-area-arena/sensors.py", "dst": "close_area_arena/sensors.py"},
+    {"src": "../../samples/close-area-arena/vehicle.py", "dst": "close_area_arena/vehicle.py"},
+    {"src": "../../samples/close-area-arena/scorer.py", "dst": "close_area_arena/scorer.py"},
+    {"src": "../../samples/close-area-arena/run.py", "dst": "close_area_arena/run.py"},
+    {"src": "../../samples/close-area-arena/planners/__init__.py", "dst": "close_area_arena/planners/__init__.py"},
+    {"src": "../../samples/close-area-arena/planners/base.py", "dst": "close_area_arena/planners/base.py"},
+    {"src": "../../samples/close-area-arena/planners/straight.py", "dst": "close_area_arena/planners/straight.py"},
+    {"src": "../../samples/close-area-arena/planners/astar_esdf.py", "dst": "close_area_arena/planners/astar_esdf.py"}
+  ]
+}
