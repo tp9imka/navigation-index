@@ -34,6 +34,7 @@ Three stdlib synthetic POCs with conventional baselines, ablations, held-out see
 - [Navigation invention hypothesis cards](../../docs/hypotheses/README.md) (mentions)
 - [Research handoff: challenge the innovation claims](../../docs/hypotheses/research-agent-prompt.md) (mentions)
 - [Innovation experiments: hypotheses before claims](../../docs/innovation-experiments.md) (mentions)
+- [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Research rounds: which one applies, and the innovation story per brief](../../docs/research/README.md) (mentions)
 - [Motion Planning for Global Localization in Non-Gaussian Belief Spaces](../../catalog/resources/agarwal-2015-nongaussian-global-localization.md) (explains)
