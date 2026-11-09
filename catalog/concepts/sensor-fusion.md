@@ -58,7 +58,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) - Lane ua-ru-sources: 38 resources and 12 repos, all tagged lang:uk or lang:ru.
 - [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) - Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (full brief 2026-11-18).
 
-## Repositories (129)
+## Repositories (130)
 
 - [PythonRobotics](../../catalog/repos/atsushisakai__pythonrobotics.md) - fit: high - Large collection of readable Python implementations of robotics algorithms: localization (EKF, particle filter), SLAM, path planning (A*, RRT*, D*, state lattice), path tracking and more, with animations.
 - [Kalman and Bayesian Filters in Python (book)](../../catalog/repos/rlabbe__kalman-and-bayesian-filters-in-python.md) - fit: high - Free interactive book of Jupyter notebooks teaching Kalman, EKF, UKF and particle filters with an intuition-first approach.
@@ -153,6 +153,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [Matlab-LagrangianPMF](../../catalog/repos/pesslovany__matlab-lagrangianpmf.md) - fit: medium - MATLAB implementation of Lagrangian grid-based (point-mass) filters for terrain-aided navigation, compared against other filters on real-world-based TAN models, with code for several related papers including the tensor-d
 - [note-outdoor - knowledge base on GNSS-free autonomous navigation](../../catalog/repos/weae-g__note-outdoor.md) - fit: medium - Russian-language markdown knowledge base on navigation, data fusion, data links, hardware and system designs for platforms operating without GNSS, internet or cellular coverage and under possible EW, with worked selectio
 - [safe-route (KosmoHackathon 2026)](../../catalog/repos/kurligin__safe-route.md) - fit: medium - Controller for an autonomous ground cargo platform in the amr-sim simulator plus an operator workstation, built for the 'Безопасный маршрут' case of KosmoHackathon 2026 (2nd place in the final).
+- [sample_based_bcbf](../../catalog/repos/kth-rpl-planiacs__sample_based_bcbf.md) - fit: medium - Python code for the CDC 2025 sample-based belief CBF paper: simulation environments for tracking and collision avoidance and the belief-CBF policies.
 - [smfeval](../../catalog/repos/svendbot__smfeval.md) - fit: medium - Python tool that scores an odometry estimate together with its reported covariance (NEES, scale gap, coverage, proper scoring rules), plus a pairwise test that flags overconfidence between two filters without ground trut
 - [TERCOM via particle filter](../../catalog/repos/sotostrk__tercom-via-particle-filter-uav-state-estimation-mae6760-project-.md) - fit: medium - MATLAB SIR particle filter estimating UAV position from terrain contour matching in GPS-denied flight.
 - [vrpn_mocap](../../catalog/repos/alvinsunyixiao__vrpn_mocap.md) - fit: medium - ROS 2 VRPN client that turns motion-capture rigid bodies (VICON, OptiTrack and other VRPN devices) into pose topics.
@@ -190,7 +191,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [CoLRIO](../../catalog/repos/pengyu-team__co-lrio.md) - fit: low - Placeholder repo: it only holds a README pointing to zhongshp/Co-LRIO, where the code lives.
 - [Visual-Odometry-VIO- (VO + IMU EKF)](../../catalog/repos/daudalbogachiev925__visual-odometry-vio-.md) - fit: low - Minimal Python project: essential-matrix visual odometry fused with IMU in an EKF to estimate position without GPS.
 
-## Documents, talks, courses, datasets (165)
+## Documents, talks, courses, datasets (166)
 
 - [A micro Lie theory for state estimation in robotics](../../catalog/resources/sola-micro-lie-theory.md) - paper - Tutorial paper giving just enough Lie theory (groups, exponential map, adjoint, Jacobians, uncertainty on manifolds) to write correct estimators for 3D pose; it is the basis of Solà's 'Lie theory for the roboticist' cour
 - [A non-divergent estimation algorithm in the presence of unknown correlations](../../catalog/resources/julier-uhlmann-1997-covariance-intersection.md) - paper - The original covariance intersection (CI) paper (American Control Conference 1997).
@@ -316,6 +317,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [Resilient and consistent multirobot cooperative localization with covariance intersection](../../catalog/resources/chang-2021-resilient-ci-cooperative-localization.md) - paper - IEEE T-RO 38(1) paper that uses covariance intersection to separate an explicit communication update from the observation update in multirobot cooperative localization, keeping estimates consistent.
 - [Resilient PNT Reference Architecture](../../catalog/resources/dhs-resilient-pnt-reference-architecture.md) - standard - Companion to the conformance framework describing architectural patterns (source diversity, integrity checking, holdover) that map to its resilience levels.
 - [Revisiting multi-GNSS Navigation for UAVs -- An Equivariant Filtering Approach](../../catalog/resources/scheiber-2023-multi-gnss-eqf-uav.md) - paper - Preprint.
+- [Risk-Aware Robot Control in Dynamic Environments Using Belief Control Barrier Functions](../../catalog/resources/han-vahs-sample-based-bcbf-cdc2025.md) - paper - Extends belief CBFs from Gaussian EKF beliefs to sample-based beliefs, using concentration bounds on tail risk so multimodal or skewed beliefs are handled, with robustness to a bounded distribution shift.
 - [robot_localization package documentation](../../catalog/resources/robot-localization-docs.md) - doc - Documentation for the widely used ROS EKF/UKF state estimation package, including state-estimation node configuration, sensor integration, and navsat_transform for GPS.
 - [Rosbags documentation: read and convert ROS bags without ROS](../../catalog/resources/rosbags-documentation.md) - doc - Official Python documentation with AnyReader examples for ROS 1 and ROS 2 recordings, conversion commands and message-type registration.
 - [ROSCon 2024 (Odense) programme and recordings](../../catalog/resources/roscon-2024.md) - talk - ROSCon 2024 site with the programme and links to recorded talks, including localization talks such as Ekumen's Beluga particle-filter localization library.

@@ -23,6 +23,7 @@ Composite control barrier function built only from onboard range measurements, i
 
 ## Referenced by
 
+- [Safe Quadrotor Navigation using Composite Control Barrier Functions](../../catalog/resources/harms-composite-cbf-icra2025.md) (same_author)
 - [Secure Safety Filter: Towards Safe Flight Control under Sensor Attacks](../../catalog/resources/tan-2025-secure-safety-filter.md) (cites)
 
 _Indexed by lane(s): close-area-innovation_

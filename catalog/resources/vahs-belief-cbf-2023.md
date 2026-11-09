@@ -15,4 +15,8 @@ Defines control barrier functions on the EKF belief (mean and covariance) so a c
 
 **Tags:** `control-barrier-function`, `belief`, `ekf`, `quadrotor`
 
+## Referenced by
+
+- [Risk-Aware Robot Control in Dynamic Environments Using Belief Control Barrier Functions](../../catalog/resources/han-vahs-sample-based-bcbf-cdc2025.md) (same_author)
+
 _Indexed by lane(s): close-area-innovation_

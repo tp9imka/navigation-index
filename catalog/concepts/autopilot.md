@@ -27,7 +27,7 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) - Written 2026-11-09 for Challenge 2 "Autonomous Frontiers" (entry point).
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) - Challenge 2 says the winning team "may take it towards real-world implementation".
 
-## Repositories (67)
+## Repositories (68)
 
 - [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md) - fit: high - GPL autopilot covering Copter, Plane (incl.
 - [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md) - fit: high - Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, built on NuttX with a uORB pub/sub middleware.
@@ -73,6 +73,7 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 - [ALFA dataset](../../catalog/repos/castacks__alfa-dataset.md) - fit: medium - Landing page for the AIR Lab Failure and Anomaly dataset: 47 processed autonomous fixed-wing flight sequences (ArduPilot on Pixhawk) with engine and control-surface faults, plus raw bags, telemetry and Dataflash logs.
 - [DroneMagNav](../../catalog/repos/ajisrawi__dronemagnav.md) - fit: medium - Hardware + firmware design for a drone magnetic-anomaly navigation board (ESP32-S3, magnetometer, IMU, baro) running particle-filter matching against a global anomaly map and feeding position to a flight controller over 
 - [run-time-assurance (AFRL ACT3)](../../catalog/repos/act3-ace__run-time-assurance.md) - fit: medium - Python library of runtime-assurance safety filters from the AFRL ACT3 team: generic explicit and implicit Simplex plus explicit and implicit ASIF (active set invariance filter), with a zoo of worked examples.
+- [PX4-Autopilot (NTNU fork, cbf branch)](../../catalog/repos/ntnu-arl__px4-autopilot.md) - fit: medium - NTNU fork of PX4 whose cbf branch holds the actual PX4-CBF code: CBFSafetyFilter in mc_pos_control, a tof_obstacles_chunk uORB message and CBF_* parameters.
 - [F Prime (F')](../../catalog/repos/nasa__fprime.md) - fit: low - JPL's component-based flight software framework: typed ports, a modelling language (FPP) and generated C++ glue, flown on the Mars Helicopter.
 - [Betaflight](../../catalog/repos/betaflight__betaflight.md) - fit: low - Racing/freestyle-oriented flight controller firmware focused on attitude control and low-latency filtering.
 - [DroneKit-Python](../../catalog/repos/dronekit__dronekit-python.md) - fit: low - Older high-level Python API for MAVLink vehicles, built on pymavlink; maintenance has slowed (last push 2024).

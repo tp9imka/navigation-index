@@ -11,7 +11,7 @@ ROS ecosystem packages for navigation and localization.
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) - Written 2026-11-09 for Challenge 2 "Autonomous Frontiers" (entry point).
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) - Challenge 2 says the winning team "may take it towards real-world implementation".
 
-## Repositories (116)
+## Repositories (118)
 
 - [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md) - fit: high - The standard ROS 2 navigation stack: behavior-tree driven navigator, global planners (NavFn, Smac hybrid-A*/lattice, Theta*), local controllers (DWB, MPPI, Regulated Pure Pursuit), costmaps, recovery behaviors and waypoi
 - [BehaviorTree.CPP](../../catalog/repos/behaviortree__behaviortree.cpp.md) - fit: high - C++ behavior tree library with XML trees, async actions, logging and the Groot editor; the execution engine inside Nav2 and many mission frameworks.
@@ -121,6 +121,8 @@ ROS ecosystem packages for navigation and localization.
 - [LCAS ROS 2 MCP](../../catalog/repos/lcas__ros2_mcp.md) - fit: low - ROS 2 MCP server from the Lincoln Centre for Autonomous Systems: tools to list and echo topics, inspect message/service/action interfaces, fetch camera images for VLM analysis and send simple drive commands, plus canned 
 - [SOTER on ROS](../../catalog/repos/drona-org__soteronros.md) - fit: low - Research framework that builds distributed mobile-robot software on ROS as runtime-assurance modules: an advanced controller, a safe controller and a decision module that switches between them.
 - [aerial-autonomy-stack](../../catalog/repos/jacopopan__aerial-autonomy-stack.md) - fit: low - Dockerized harness to simulate and deploy PX4, ArduPilot and Betaflight drones with ROS 2, YOLO and lidar odometry (KISS-ICP), with a steppable gymnasium interface and Jetson deployment images.
+- [cbf_pc_selector](../../catalog/repos/ntnu-arl__cbf_pc_selector.md) - fit: low - ROS 2 node that turns depth images, range images or point clouds from one or more sensors into a small set of obstacle points for the composite CBF, by angular binning with a per-bin percentile filter.
+- [cyberpod_sim_ros](../../catalog/repos/rkcosner__cyberpod_sim_ros.md) - fit: low - ROS Melodic Segway simulation used for the CoRL 2020 measurement-robust CBF results, with a virtual camera stream and the ECOS SOCP solver.
 - [DecompROS](../../catalog/repos/sikang__decompros.md) - fit: low - ROS wrapper and visualisation for the DecompUtil convex decomposition.
 - [FASTER](../../catalog/repos/mit-acl__faster.md) - fit: low - Receding-horizon multirotor planner for unknown environments that optimises a fast trajectory through known-free and unknown space while always keeping a safe backup trajectory inside known-free space.
 - [IPC (Integrated Planning and Control)](../../catalog/repos/hku-mars__ipc.md) - fit: low - Quadrotor navigation that merges planning and control: a light A*-style front end builds a safe flight corridor and a 100 Hz linear MPC tracks toward the goal with the corridor as hard constraints, outputting body rates 

@@ -59,6 +59,7 @@ Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, buil
 - [MAVSDK](../../catalog/repos/mavlink__mavsdk.md) (integrates_with)
 - [QGroundControl](../../catalog/repos/mavlink__qgroundcontrol.md) (integrates_with)
 - [AirSim](../../catalog/repos/microsoft__airsim.md) (integrates_with)
+- [PX4-Autopilot (NTNU fork, cbf branch)](../../catalog/repos/ntnu-arl__px4-autopilot.md) (fork_of)
 - [PX4-CBF](../../catalog/repos/ntnu-arl__px4-cbf.md) (extends)
 - [Paparazzi UAV](../../catalog/repos/paparazzi__paparazzi.md) (alternative_to)
 - [Pegasus Simulator](../../catalog/repos/pegasussimulator__pegasussimulator.md) (integrates_with)
