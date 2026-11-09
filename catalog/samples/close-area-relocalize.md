@@ -31,5 +31,7 @@ Relocalizer for the close-area arena. After a detected VIO loss (reset_counter c
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Demo script: close-area A to B](../../templates/demo-script-close-area.md) (mentions)
+- [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) (mentions)
 
 _Indexed by lane(s): samples_

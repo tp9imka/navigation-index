@@ -12,7 +12,7 @@ Browse by concept below, open [the graph](graph/index.html), or grep `index/reco
   - [RTK / PPP precise positioning](catalog/concepts/gnss-rtk-ppp.md) - 21 repos, 18 docs/samples
   - [Software-defined GNSS receivers](catalog/concepts/gnss-sdr.md) - 20 repos, 16 docs/samples
   - [Jamming and spoofing](catalog/concepts/gnss-interference.md) - 32 repos, 166 docs/samples
-- [Assured / resilient PNT](catalog/concepts/assured-pnt.md) - 34 repos, 275 docs/samples
+- [Assured / resilient PNT](catalog/concepts/assured-pnt.md) - 34 repos, 274 docs/samples
   - [Timing and time transfer](catalog/concepts/timing.md) - 64 repos, 86 docs/samples
   - [Terrain-relative navigation](catalog/concepts/terrain-nav.md) - 33 repos, 42 docs/samples
   - [Magnetic anomaly navigation](catalog/concepts/magnetic-nav.md) - 10 repos, 37 docs/samples
@@ -20,12 +20,12 @@ Browse by concept below, open [the graph](graph/index.html), or grep `index/reco
   - [Signals of opportunity](catalog/concepts/signals-of-opportunity.md) - 14 repos, 53 docs/samples
   - [Electronic warfare resilience](catalog/concepts/ew-resilience.md) - 18 repos, 78 docs/samples
 - [Inertial navigation (INS/IMU)](catalog/concepts/ins.md) - 81 repos, 97 docs/samples
-- [Sensor fusion and state estimation](catalog/concepts/sensor-fusion.md) - 130 repos, 221 docs/samples
+- [Sensor fusion and state estimation](catalog/concepts/sensor-fusion.md) - 130 repos, 222 docs/samples
   - [GNSS/INS integration](catalog/concepts/gnss-ins.md) - 39 repos, 56 docs/samples
   - [Sensor calibration](catalog/concepts/calibration.md) - 29 repos, 31 docs/samples
-- [Visual(-inertial) odometry](catalog/concepts/vio.md) - 82 repos, 121 docs/samples
+- [Visual(-inertial) odometry](catalog/concepts/vio.md) - 82 repos, 122 docs/samples
   - [Visual SLAM](catalog/concepts/visual-slam.md) - 54 repos, 48 docs/samples
-- [LiDAR odometry and SLAM](catalog/concepts/lidar-slam.md) - 59 repos, 52 docs/samples
+- [LiDAR odometry and SLAM](catalog/concepts/lidar-slam.md) - 59 repos, 53 docs/samples
 - [Radar navigation and odometry](catalog/concepts/radar-nav.md) - 22 repos, 13 docs/samples
 - [Place recognition and loop closure](catalog/concepts/place-recognition.md) - 46 repos, 42 docs/samples
 - [Feature detection and matching](catalog/concepts/feature-matching.md) - 38 repos, 40 docs/samples
@@ -34,7 +34,7 @@ Browse by concept below, open [the graph](graph/index.html), or grep `index/reco
 - [Indoor and pedestrian navigation](catalog/concepts/indoor-pedestrian.md) - 16 repos, 9 docs/samples
 - [Autopilots and flight control](catalog/concepts/autopilot.md) - 68 repos, 100 docs/samples
   - [MAVLink, ground control and C2 links](catalog/concepts/mavlink-gcs.md) - 36 repos, 23 docs/samples
-- [Path and motion planning](catalog/concepts/path-planning.md) - 83 repos, 109 docs/samples
+- [Path and motion planning](catalog/concepts/path-planning.md) - 83 repos, 110 docs/samples
   - [Mission planning and routing](catalog/concepts/mission-planning.md) - 27 repos, 18 docs/samples
   - [Obstacle avoidance and collision avoidance](catalog/concepts/obstacle-avoidance.md) - 58 repos, 84 docs/samples
 - [Swarms and multi-agent navigation](catalog/concepts/multi-agent.md) - 45 repos, 46 docs/samples
@@ -45,8 +45,8 @@ Browse by concept below, open [the graph](graph/index.html), or grep `index/reco
 - [Underwater navigation](catalog/concepts/underwater-nav.md) - 21 repos, 7 docs/samples
 - [Ground vehicle autonomy](catalog/concepts/ground-vehicle-nav.md) - 41 repos, 27 docs/samples
 - [Space and orbital navigation](catalog/concepts/space-nav.md) - 11 repos, 28 docs/samples
-- [Simulation and HIL/SITL](catalog/concepts/simulation.md) - 99 repos, 79 docs/samples
-- [Datasets and benchmarks](catalog/concepts/datasets-benchmarks.md) - 102 repos, 170 docs/samples
+- [Simulation and HIL/SITL](catalog/concepts/simulation.md) - 99 repos, 80 docs/samples
+- [Datasets and benchmarks](catalog/concepts/datasets-benchmarks.md) - 102 repos, 169 docs/samples
 - [ROS / ROS 2 robotics middleware](catalog/concepts/ros.md) - 118 repos, 34 docs/samples
 - [Onboard / edge AI perception](catalog/concepts/edge-ai.md) - 78 repos, 60 docs/samples
 - [Tracking and data association](catalog/concepts/target-tracking.md) - 17 repos, 15 docs/samples
