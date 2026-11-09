@@ -89,3 +89,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - landed: 52 => 5887392 (verdict + new results in evidence matrix, decoder 31/33, cheat sheet, intake, Challenge 2, research docs; decode_eval 64/64; driver fixed 7 stale lines in safety-filter and arena READMEs, AGENTS.md and the pitch)
 - landed: 42 => a9e253f (judge drill, 15 Q with numbers; Q6 found a real gap: relocalizer needs >= 10 returns, a 4-beam deck gives 4 => new item 54). Playground live on Pages.
 - landed: 46c/53 => 66ad30e (14 planners x 8 families x 2 presets; D* Lite unknown map 85-100 % on ideal; dwa_mem cuts crazyflie collisions sharply; 112 replays 112/112 match; old rows byte-identical)
+- landed: 45a => ae0065e (window_bar family; 2.5D at 1 m 14 % = exactly the 7 layouts with a 2D path; 3D A* 100 %, 0 collisions; driver pasted README section)
