@@ -314,7 +314,12 @@ def first_sentence(s):
 
 # Top-level guides become graph nodes of kind "guide" so search finds the decoder, playbook and runbook.
 GUIDE_GLOBS = ("docs/*.md", "docs/primer/*.md", "docs/landscape/*.md", "docs/research/*/*.md",
-               "templates/*.md", "templates/*/*.md", "templates/*/*/*.md")
+               "templates/*.md", "templates/*/*.md", "templates/*/*/*.md",
+               # Folder indexes whose lead is a "Use this when" trigger: an agent asking "which dataset /
+               # paper / card / research round" lands on the index, not on one card. Their cards stay
+               # deep-dive docs (DOC_KIND); docs/reports/README.md stays out (internal review history).
+               "docs/paper-digests/README.md", "docs/dataset-cards/README.md",
+               "docs/integration-cards/README.md", "docs/research/README.md", "docs/cheatsheets/README.md")
 # Templates are hub guides too (drone-adapter drivers and frames, close-area demo and pitch), except the
 # copy-me skeleton repo (TODO placeholders) and agent instruction files written for a team repo.
 GUIDE_SKIP_DIRS = ("templates/project-repo/",)
@@ -747,11 +752,19 @@ SITE_DOC_SUMMARY = 400  # chars of a deep-dive doc's lead paragraph shown on its
 SITE_DOC_BODY = 1500  # chars of plain text per deep-dive doc kept for search
 
 
+MD_EMPHASIS = re.compile(r"(?<![\w*])(\*{1,3})(?=[^\s*])(.+?)(?<=[^\s*])\1(?![\w*])")
+
+
 def md_plain(text):
+    """Markdown => one line of plain text. Strips markup only: "A=>B" and "A*" / "RRT*" survive.
+    query.md_plain must stay identical (the web UI indexes this text, query.py re-derives it)."""
     text = re.sub(r"<!--.*?-->", " ", text, flags=re.S)
     text = re.sub(r"```.*?```", " ", text, flags=re.S)
     text = re.sub(r"!?\[([^\]]*)\]\([^)]*\)", r"\1", text)
-    return re.sub(r"[#*`|>]+|\s+", " ", text).strip()
+    text = re.sub(r"^[ \t]*>[> \t]*", " ", text, flags=re.M)  # blockquote markers, not "=>"
+    text = re.sub(r"^[ \t]*\*[ \t]+", " ", text, flags=re.M)  # "* item" bullets
+    text = MD_EMPHASIS.sub(r"\2", text)  # *em*, **bold**; a "*" glued to a word ("A*") is kept
+    return re.sub(r"\*{2,}|[#`|]+|\s+", " ", text).strip()
 
 
 def site_doc(path):
@@ -760,9 +773,14 @@ def site_doc(path):
     lead = ""
     for block in re.split(r"\n\s*\n", re.sub(r"<!--.*?-->", "", text, flags=re.S)):
         b = block.strip()
+        if lead:  # the lead ended with ":", so it introduces this block (a list): keep both
+            if b and not b.startswith(("#", "|", "```", "<")):
+                lead += " " + md_plain(b)
+            break
         if b and not b.startswith(("#", "|", "```", "<")):
             lead = md_plain(b)
-            break
+            if not lead.endswith(":"):
+                break
     about = [norm_id(x.strip()) for m in ATTACH_RE.finditer(text) for x in m.group(1).split(",")]
     return title, lead, about, md_plain(text)
 
@@ -814,9 +832,12 @@ def write_site(nodes, edges, meta):
             rec["b"] = site_doc(n["path"])[3][:GUIDE_BODY_CHARS]
         out_nodes.append({k: v for k, v in rec.items() if v not in (None, "", [], False)})
     out_docs = []
+    guide_paths = {n["path"] for n in nodes.values() if n["kind"] == "guide"}
     for d, kind in DOC_KIND.items():
         for f in sorted((ROOT / d).glob("*.md")):
             path = f.relative_to(ROOT).as_posix()
+            if path in guide_paths:  # a folder index indexed as a guide: one result, not two
+                continue
             title, lead, about, body = site_doc(path)
             about_ix = [pos[a] for a in dict.fromkeys(about) if a in pos]
             concepts = list(dict.fromkeys(

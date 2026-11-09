@@ -127,7 +127,7 @@ def main():
     print(f"{'ranker':8} {'split':8} {'n':>3} {'MRR':>6} {'nDCG@10':>8} {'R@10':>6}")
     for label, fn in (("legacy", legacy_rank), ("bm25f", current_rank)):
         res = evaluate(recs, queries, fn, a.verbose, label)
-        for split in ("train", "holdout", "all", "problem-statement"):
+        for split in ("train", "holdout", "all", "problem-statement", "how-to"):
             if split not in res:
                 continue
             m = res[split]

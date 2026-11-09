@@ -101,7 +101,7 @@ const DEEP_DOC_CHARS = 1500, GUIDE_BODY_CHARS = 6000;
 const STOP = new Set(("a an and are as at be by for from in into is it of on or the to with via using none " +
   "all any but can do does have has how if its not our should so than that their them then there they this we what when where which who will you your").split(" "));
 const SYNONYM = { gps: "gnss", drone: "uav", uas: "uav", suas: "uav", quadcopter: "uav", quadrotor: "uav", multirotor: "uav", ladar: "lidar", harbour: "harbor", defence: "defense", ship: "vessel", boat: "vessel" };
-const NORMALIZE = [[/isation/g, "ization"], [/fixed[\s_-]+wing/g, "fixedwing"], [/geo[\s_-]+locali[sz]ation/g, "geolocalization"], [/geo[\s_-]+locali[sz]e/g, "geolocalize"], [/night[\s_-]*time/g, "night"]];
+const NORMALIZE = [[/isation/g, "ization"], [/fixed[\s_-]+wing/g, "fixedwing"], [/geo[\s_-]+locali[sz]ation/g, "geolocalization"], [/geo[\s_-]+locali[sz]e/g, "geolocalize"], [/night[\s_-]*time/g, "night"], [/licenc/g, "licens"]];
 
 const STEM_EXCEPT = { cots: "cots", cors: "cors", take: "take", takes: "take", taking: "take",
   same: "same", stated: "stated", plane: "plane", planes: "plane", denial: "deny" };

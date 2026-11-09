@@ -50,7 +50,8 @@ NORMALIZE = ((re.compile(r"isation"), "ization"),
              (re.compile(r"fixed[\s_-]+wing"), "fixedwing"),
              (re.compile(r"geo[\s_-]+locali[sz]ation"), "geolocalization"),
              (re.compile(r"geo[\s_-]+locali[sz]e"), "geolocalize"),
-             (re.compile(r"night[\s_-]*time"), "night"))
+             (re.compile(r"night[\s_-]*time"), "night"),
+             (re.compile(r"licenc"), "licens"))  # British "licence(s)" meets "license(s)", like -isation
 # Platform, environment and timing words decide which samples apply to a statement; in a long query
 # they are drowned by generic GNSS / spoofing terms that every record shares.
 DOMAIN_WORDS = ("uav fixedwing usv ugv uuv auv vessel maritime harbor underwater subsea indoor underground "
@@ -108,11 +109,17 @@ def query_terms(query):
     return [(t, DOMAIN_W if long and t in DOMAIN_TERMS else 1.0) for t in q]
 
 
-def md_plain(text):  # same as build.md_plain
+MD_EMPHASIS = re.compile(r"(?<![\w*])(\*{1,3})(?=[^\s*])(.+?)(?<=[^\s*])\1(?![\w*])")
+
+
+def md_plain(text):  # same as build.md_plain: strips markup, keeps "A=>B" and "A*"
     text = re.sub(r"<!--.*?-->", " ", text, flags=re.S)
     text = re.sub(r"```.*?```", " ", text, flags=re.S)
     text = re.sub(r"!?\[([^\]]*)\]\([^)]*\)", r"\1", text)
-    return re.sub(r"[#*`|>]+|\s+", " ", text).strip()
+    text = re.sub(r"^[ \t]*>[> \t]*", " ", text, flags=re.M)
+    text = re.sub(r"^[ \t]*\*[ \t]+", " ", text, flags=re.M)
+    text = MD_EMPHASIS.sub(r"\2", text)
+    return re.sub(r"\*{2,}|[#`|]+|\s+", " ", text).strip()
 
 
 def text_of(r, field):
