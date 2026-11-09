@@ -836,3 +836,12 @@ window.PG = {
   play() { if (!S.playing) togglePlay(); },
   duration,
 };
+
+// Advisor panel (advisor.js, loop-65): benchmark success rates per planner for the loaded preset family.
+if (window.Advisor) window.PG_ADVISOR = Advisor.mount($("#advisorBox"), {
+  getFamily: () => (S.pristine && S.presetName && S.doc.family !== "custom") ? S.doc.family
+    : { custom: true, from: S.doc && S.doc.family !== "custom" ? S.doc.family : null },
+  getPreset: () => $("#A_preset").value,
+  getAvailable: () => Array.from($("#A_planner").options).filter(o => !o.disabled).map(o => o.value),
+  onPick: (planner, cfg) => { setCfg(0, { planner, filter: cfg.filter }); $("#cfgA").scrollIntoView({ block: "nearest" }); },
+});

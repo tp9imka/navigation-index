@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navigation Index - Advisor demo</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../showcase.css?v=20261109">
+<link rel="stylesheet" href="advisor.css?v=20261109">
+<script>
+  try { var q = new URLSearchParams(location.search).get("theme"), t = q || localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<script defer src="advisor.js?v=20261109"></script>
+<style>
+  .demo-pick { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin: 12px 0 0; font-size: 13.5px; }
+  .demo-pick select { max-width: 100%; }
+  #pickLog { min-height: 1.2em; }
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="../index.html" title="Search">Navigation Index</a>
+  <nav class="topnav" aria-label="Sections">
+    <a href="index.html">Playground</a>
+    <button id="themeBtn" class="icon-btn" title="Toggle dark / light theme" aria-label="Toggle theme">&#9680;</button>
+  </nav>
+</header>
+<main>
+  <h1>Advisor demo</h1>
+  <p class="muted small">Standalone test page for <a href="ADVISOR.md">the playground Advisor</a>. Pick a world and a sensor; the panel reads data/advisor.json.</p>
+  <div class="demo-pick">
+    <label>World <select id="fam">
+      <option value="random">Random boxes + cylinders</option><option value="u_trap">U trap</option><option value="narrow_gap">Narrow gap</option>
+      <option value="office">Office</option><option value="warehouse">Warehouse</option><option value="forest">Forest</option>
+      <option value="maze" selected>Maze</option><option value="glass_office">Glass office</option>
+      <option value="custom:maze">custom, edited from maze</option><option value="custom:">custom, drawn from empty</option>
+    </select></label>
+    <label>Sensor <select id="preset"><option value="ideal">ideal</option><option value="crazyflie" selected>crazyflie</option><option value="crazyflie_bright">crazyflie_bright</option></select></label>
+    <label>Playground planner <select id="planner">
+      <option value="straight">straight</option><option value="freest_beam">freest_beam</option><option value="astar_known">astar_known</option>
+      <option value="astar_unknown">astar_unknown</option><option value="apf">apf</option><option value="vfh_plus">vfh_plus</option>
+    </select></label>
+    <label>Filter <select id="filter"><option value="none">none</option><option value="F2">F2</option></select></label>
+  </div>
+  <p class="small" id="pickLog" aria-live="polite"></p>
+  <div id="advisor"></div>
+</main>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const $ = s => document.querySelector(s);
+  const params = new URLSearchParams(location.search);
+  if (params.get("family")) $("#fam").value = params.get("family");
+  if (params.get("preset")) $("#preset").value = params.get("preset");
+  window.ADV = Advisor.mount($("#advisor"), {
+    getFamily: () => { const v = $("#fam").value; return v.startsWith("custom:") ? { custom: true, from: v.slice(7) || null } : v; },
+    getPreset: () => $("#preset").value,
+    getAvailable: () => Array.from($("#planner").options).map(o => o.value),
+    onPick: (planner, cfg) => {
+      $("#planner").value = planner; $("#filter").value = cfg.filter;
+      $("#pickLog").textContent = `onPick(${planner}, filter ${cfg.filter}, benchmark row ${cfg.bench})`;
+    },
+  });
+  $("#themeBtn").onclick = () => {
+    const cur = document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.dataset.theme = cur === "dark" ? "light" : "dark";
+  };
+});
+</script>
+</body>
+</html>
