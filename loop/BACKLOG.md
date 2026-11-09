@@ -86,9 +86,9 @@ Initial backlog: fable brainstorm, 2026-11-09, base dbafbff.
 
 | 52 | done 5887392 | Sweep 3: verdict + new results into evidence matrix, decoder, cheat sheet, intake, Challenge 2, research docs, sample.json | S | S | 37 B | shared docs (see brief) | Agents must see the final verdict, not seed-0 claims | gate green; no stale 'running/pending' lines |
 
-| 53 | in-flight | 46c: DWA, Bug2/TangentBug, D* Lite added to the benchmark matrix and replays | P | S | 46b, 49, 50 B | samples/close-area-benchmark, site/data/showcase/replays_v2 | Every algorithm on every arena | new matrix rows + replays |
+| 53 | done 66ad30e | 46c: DWA, Bug2/TangentBug, D* Lite added to the benchmark matrix and replays | P | S | 46b, 49, 50 B | samples/close-area-benchmark, site/data/showcase/replays_v2 | Every algorithm on every arena | new matrix rows + replays |
 
-| 54 | ready | Relocalization on a 4-beam Crazyflie-like sensor: the matcher needs >= 10 returns per scan, a Multi-ranger gives 4; accumulate scans during a slow yaw spin (or a short motion) and match the stacked returns; measure recovery on crazyflie preset | P | S | 22, 32 B | samples/close-area-relocalize new files + README section | The headline must work on the likeliest hardware (judge drill Q6 found the gap) | reached / wrong commits on crazyflie preset vs ideal |
+| 54 | in-flight | Relocalization on a 4-beam Crazyflie-like sensor: the matcher needs >= 10 returns per scan, a Multi-ranger gives 4; accumulate scans during a slow yaw spin (or a short motion) and match the stacked returns; measure recovery on crazyflie preset | P | S | 22, 32 B | samples/close-area-relocalize new files + README section | The headline must work on the likeliest hardware (judge drill Q6 found the gap) | reached / wrong commits on crazyflie preset vs ideal |
 
 ## Planned waves
 
