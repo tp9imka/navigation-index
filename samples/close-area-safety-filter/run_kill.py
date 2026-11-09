@@ -3,6 +3,7 @@
 python run_kill.py --layouts 100 --seed 0 [--arms F0,F1,F2] [--cases truth,none,jump,bias,dropout]
                    [--unsensed on,off] [--workers 8] [--tag kill_a]
 python run_kill.py --calibrate --layouts 100 --seed 1      # F4's fixed bound => kill_b_eps_calib_1.*
+python run_kill.py --layouts 50 --seed 1 --family u_trap --tag kill_e_u_trap ...   # arena family (default random)
 
 python run_kill.py --layouts 100 --seed 0 --workers 14 --tag kill_d --arms F2,F3,F4@eps_m=0.2,F5,F5s2 \
                    --cases none,jump,bias,dropout --unsensed on          # part d => results/kill_d_*
@@ -68,10 +69,11 @@ def parse_arm(spec: str):
     return name, kw
 
 
-def run_one(arm: str, case: str, uns_on: bool, index: int, seed: int, cfg=None, arm_kw=None) -> dict:
+def run_one(arm: str, case: str, uns_on: bool, index: int, seed: int, cfg=None, arm_kw=None,
+            family: str = FAMILY) -> dict:
     run, scorer, Vehicle = arena.run, arena.scorer, arena.vehicle.Vehicle
     cfg = cfg or run.DEFAULTS
-    w0 = arena.world.make_world(FAMILY, seed, index, radius=cfg["vehicle"]["radius"])
+    w0 = arena.world.make_world(family, seed, index, radius=cfg["vehicle"]["radius"])
     w, placed = unsensed.add_unsensed(w0, seed, index) if uns_on else (w0, [])
     goal = (w.goal[0], w.goal[1], cfg["z0"])
     veh = Vehicle(0.0, 0.0, cfg["z0"], yaw=math.atan2(goal[1], goal[0]), **cfg["vehicle"])
@@ -318,6 +320,8 @@ def main(argv=None) -> int:
     ap.add_argument("--calibrate", action="store_true",
                     help="measure F4's fixed error bound instead (use --seed 1, not the test seed)")
     ap.add_argument("--layouts", type=int, default=100)
+    ap.add_argument("--family", default=FAMILY, choices=arena.world.FAMILIES,
+                    help="arena layout family (default random, as parts a-d)")
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--arms", default="F0,F1,F2")
     ap.add_argument("--cases", default=",".join(CASES))
@@ -337,7 +341,7 @@ def main(argv=None) -> int:
     ucases = [x for x in a.uwb_cases.split(",") if x]
     arm_cases = {arm: cases + (ucases if getattr(filters.REGISTRY[parse_arm(arm)[0]], "NEEDS_UWB", False) else [])
                  for arm in arms}
-    tasks = [(arm, c, u, i, a.seed) for u in uns for arm in arms for c in arm_cases[arm] for i in range(a.layouts)]
+    tasks = [(arm, c, u, i, a.seed, None, None, a.family) for u in uns for arm in arms for c in arm_cases[arm] for i in range(a.layouts)]
     t0 = time.perf_counter()
     if a.workers > 1:
         with ProcessPoolExecutor(max_workers=a.workers) as ex:
@@ -373,7 +377,7 @@ def main(argv=None) -> int:
         stem = os.path.join(a.out, f"{a.tag}_unsensed_{tag}_{a.seed}")
         params = {arm: filters.make(parse_arm(arm)[0], **parse_arm(arm)[1]).p for arm in arms}
         with open(stem + ".json", "w") as fh:
-            json.dump({"command": cmd, "input": "synthetic", "family": FAMILY, "seed": a.seed,
+            json.dump({"command": cmd, "input": "synthetic", "family": a.family, "seed": a.seed,
                        "layouts": a.layouts, "unsensed": u, "planner": "astar_esdf known_map=True",
                        "filter_scan_every_steps": FILTER_SCAN_EVERY, "arena_config": arena.run.DEFAULTS,
                        "unsensed_config": {"n": unsensed.N_PER_LAYOUT, "path_frac": unsensed.PATH_FRAC,

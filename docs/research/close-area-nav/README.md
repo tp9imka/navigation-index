@@ -17,7 +17,7 @@ images), not SITL or flight:
 [close-area-planner-reactive](../../../samples/close-area-planner-reactive/README.md) and
 [fiducial-goal-apriltag](../../../samples/fiducial-goal-apriltag/README.md). Numbers:
 [evidence matrix section 14](../../evidence-matrix.md#14-close-area-ab). The headline's kill test
-has started: Part a ran ([close-area-safety-filter](../../../samples/close-area-safety-filter/README.md), synthetic): with every obstacle visible, PX4 CP-stop and PX4-CBF already reach 0 % collisions under VIO faults (fail condition holds there); with map-only obstacles PX4-CBF collides in 3-11 %, all on unsensed obstacles. Belief-CBF, MR-CBF and ours are running. Docs 01-04 read most
+has started: **Verdict after held-out seeds (Part e, synthetic):** FAIL. A hand-tuned fixed bound (MR-CBF 0.2 m) stays at <= 1 % collisions in every case on seeds 0-2; ours (F5, PL margin + hover on ambiguity) collides in 2.5 % [1.1, 5.7] of held-out jump runs and reaches B less often. Headline moves to relocalization after VIO loss; the range filter under any planner and the integrity monitor remain supporting results ([close-area-safety-filter](../../../samples/close-area-safety-filter/README.md)). Docs 01-04 read most
 papers as abstracts only; 05 read its four baselines in full. Each doc labels its sources
 and has a "not verified" section.
 
@@ -86,7 +86,7 @@ this needs: FT-CBF residual dropping (F3f) and Tan's union of plausible states (
 arms read faithfully in [05](05-cbf-baselines-faithful.md)): 200 random layouts, injected VIO
 jump and bias faults. Pass: breaches 1 % or less, at least 3x lower than Belief-CBF on fault
 cases, goal reach at least 90 % of PX4-CBF. Fail and drop the headline if Belief-CBF comes
-within 1 pp or PX4-CBF alone is already at 1 % or less. Status: Part a ran ([close-area-safety-filter](../../../samples/close-area-safety-filter/README.md), synthetic): with every obstacle visible, PX4 CP-stop and PX4-CBF already reach 0 % collisions under VIO faults (fail condition holds there); with map-only obstacles PX4-CBF collides in 3-11 %, all on unsensed obstacles. Belief-CBF, MR-CBF and ours are running.
+within 1 pp or PX4-CBF alone is already at 1 % or less. Status: **Verdict after held-out seeds (Part e, synthetic):** FAIL. A hand-tuned fixed bound (MR-CBF 0.2 m) stays at <= 1 % collisions in every case on seeds 0-2; ours (F5, PL margin + hover on ambiguity) collides in 2.5 % [1.1, 5.7] of held-out jump runs and reaches B less often. Headline moves to relocalization after VIO loss; the range filter under any planner and the integrity monitor remain supporting results ([close-area-safety-filter](../../../samples/close-area-safety-filter/README.md)).
 
 **Early signal (synthetic, not the kill test):** in the
 [arena fault run](../../../samples/close-area-arena/README.md#estimator-and-faults-ran-2026-11-09-synthetic)

@@ -214,7 +214,7 @@ Full tables and barrier diagnostics: [kill_b_summary_0.md](results/kill_b_summar
 - F4 with the calibrated worst-case bound (0.99 m) freezes: 0 % reach, 82-85 % stuck; its
   collisions are QP-infeasible slack, not unsensed hits.
 - F3 Belief-CBF removes most fault collisions except jumps (9 %): a jump is not in the covariance.
-- The 0.2 m value was swept on seed 0 itself, so it is tuned on the test seed. Item 37 reruns on
+- The 0.2 m value was swept on seed 0 itself, so it is tuned on the test seed. Part e reruns on
   held-out seeds. The job hit its time limit before writing this section; the loop driver wrote it
   from the result files.
 
@@ -296,7 +296,7 @@ uwb_nlos. In `both`: 47 breaches, a fraction of 1.84e-3 of available epochs, **a
 integrity risk the PL is computed at**, and 66 wrong-exclusion epochs in 5 runs; no collision
 followed. Hover was entered in 54 of 100 jump runs (16 % of steps).
 
-### Verdict against doc 04 section 3.4 (seed 0 only, held-out rerun pending (item 37))
+### Verdict against doc 04 section 3.4 (seed 0 only, held-out rerun: see Part e)
 
 - **Collisions <= 1 %:** met. F5 has 0 % in all six cases (600 runs).
 - **At least 3x lower than F3 on jump and bias:** met on this seed, 0 vs 9 % (jump) and 0 vs 3 %
@@ -313,6 +313,120 @@ followed. Hover was entered in 54 of 100 jump runs (16 % of steps).
   cases F4 was not run on because it has no second source.
 - So the headline does not win on this seed. The parts that would have to change are the hover
   rule (hover ends the run as stuck) and the in-loop PL in `both` (breach rate above its IR).
+
+## Part e: held-out seeds and families (ran 2026-11-09, synthetic)
+
+Loop item 37. Part d was seed 0 only, and F4's 0.2 m bound was swept on seed 0. This part reruns
+the same four arms with **no parameter changed** on seeds 1 and 2 (random family, 100 layouts) and
+on the u_trap and narrow_gap families (seed 1, 50 layouts). All inputs are **synthetic**; nothing
+here is a flight or SITL result. The only code change is a `--family` flag in `run_kill.py`
+(default `random`; two part-d runs, F4 jump layout 3 and F5 both layout 5, reproduce outcome and
+min clearance).
+
+```sh
+.venv/bin/python run_kill.py --layouts 100 --seed 1 --workers 14 --tag kill_e --arms F2,F3,F4@eps_m=0.2,F5 --cases none,jump,bias,dropout --unsensed on
+.venv/bin/python run_kill.py --layouts 100 --seed 2 ...same...
+.venv/bin/python run_kill.py --layouts 50 --seed 1 --family u_trap --tag kill_e_u_trap ...same arms and cases...
+.venv/bin/python run_kill.py --layouts 50 --seed 1 --family narrow_gap --tag kill_e_narrow_gap ...
+python3 results/kill_e_tables.py      # Wilson intervals, seeds combined => results/kill_e_tables.md
+```
+
+Wall 137.8 s, 157.7 s, 81.0 s and 168.0 s on 14 workers (Apple M3 Max, CPython 3.11.15, numpy
+2.4.6, scipy 1.17.1). F5 also ran `uwb_nlos` and `both`. Files:
+[kill_e_tables.md](results/kill_e_tables.md) (all tables below, per seed and per family, and every
+F4/F5 collision), [kill_e_summary_1.md](results/kill_e_summary_1.md),
+[kill_e_summary_2.md](results/kill_e_summary_2.md),
+[kill_e_u_trap_summary_1.md](results/kill_e_u_trap_summary_1.md),
+[kill_e_narrow_gap_summary_1.md](results/kill_e_narrow_gap_summary_1.md), per-run rows in the
+matching `kill_e_*unsensed_on_*.json`.
+
+### Random family, held-out seeds 1 and 2 (200 runs per cell)
+
+Collisions/runs = collision % [95 % Wilson interval] / reached %:
+
+| arm | none | jump | bias | dropout | uwb_nlos | both |
+|---|---|---|---|---|---|---|
+| F2 | 2/200 = 1.0 [0.3, 3.6] / 64 | 26/200 = 13.0 [9.0, 18.4] / 38 | 8/200 = 4.0 [2.0, 7.7] / 32 | 2/200 = 1.0 [0.3, 3.6] / 61 | - | - |
+| F3 | 0/200 = 0.0 [0.0, 1.9] / 63 | 16/200 = 8.0 [5.0, 12.6] / 37 | 2/200 = 1.0 [0.3, 3.6] / 32 | 2/200 = 1.0 [0.3, 3.6] / 61 | - | - |
+| F4 eps 0.2 m | 0/200 = 0.0 [0.0, 1.9] / 58 | 3/200 = 1.5 [0.5, 4.3] / 38 | 0/200 = 0.0 [0.0, 1.9] / 32 | 0/200 = 0.0 [0.0, 1.9] / 58 | - | - |
+| F5 | 0/200 = 0.0 [0.0, 1.9] / 65 | 5/200 = 2.5 [1.1, 5.7] / 20 | 0/200 = 0.0 [0.0, 1.9] / 32 | 0/200 = 0.0 [0.0, 1.9] / 62 | 0/200 = 0.0 [0.0, 1.9] / 54 | 0/200 = 0.0 [0.0, 1.9] / 28 |
+
+Per seed: F4's 3 jump collisions are all on seed 1 (3 %); seed 2 has 0 in every case. F5 has 3 jump
+collisions on seed 1 and 2 on seed 2.
+
+### Random family, seeds 0-2 combined (300 runs per cell)
+
+| arm | none | jump | bias | dropout | uwb_nlos | both |
+|---|---|---|---|---|---|---|
+| F2 | 5/300 = 1.7 [0.7, 3.8] / 66 | 37/300 = 12.3 [9.1, 16.5] / 36 | 15/300 = 5.0 [3.1, 8.1] / 33 | 6/300 = 2.0 [0.9, 4.3] / 60 | - | - |
+| F3 | 0/300 = 0.0 [0.0, 1.3] / 63 | 25/300 = 8.3 [5.7, 12.0] / 35 | 5/300 = 1.7 [0.7, 3.8] / 32 | 3/300 = 1.0 [0.3, 2.9] / 59 | - | - |
+| F4 eps 0.2 m | 0/300 = 0.0 [0.0, 1.3] / 59 | 3/300 = 1.0 [0.3, 2.9] / 35 | 0/300 = 0.0 [0.0, 1.3] / 31 | 1/300 = 0.3 [0.1, 1.9] / 56 | - | - |
+| F5 | 0/300 = 0.0 [0.0, 1.3] / 65 | 5/300 = 1.7 [0.7, 3.8] / 20 | 0/300 = 0.0 [0.0, 1.3] / 31 | 0/300 = 0.0 [0.0, 1.3] / 58 | 0/300 = 0.0 [0.0, 1.3] / 56 | 0/300 = 0.0 [0.0, 1.3] / 27 |
+
+Reach ratio vs F2, same case (none / jump / bias / dropout): F3 0.94 / 0.97 / 0.97 / 0.98,
+F4 0.89 / 0.96 / 0.95 / 0.93, **F5 0.97 / 0.56 / 0.95 / 0.96**. All cases pooled: F4 4/1200 =
+0.33 % [0.13, 0.85], F5 5/1800 = 0.28 % [0.12, 0.65], F3 2.75 % [1.96, 3.84], F2 5.25 %
+[4.12, 6.66].
+
+### Other families, seed 1, 50 layouts (held out)
+
+- **u_trap:** F4 0 of 200 runs, F5 0 of 300 (interval up to 1.9 and 1.3 %); F2 4 %, F3 3 %
+  pooled. F5 jump reach is 10 % against F2 34 % (ratio 0.29); F4 jump reach 40 %.
+- **narrow_gap:** F4 1 of 200 (jump 1/50 = 2 % [0.4, 10.5]), F5 2 of 300 (jump 2/50 = 4 %
+  [1.1, 13.5]); F2 7 %, F3 5 % pooled. **Every arm reached 0 %** in every case. That is F2's
+  range barrier, which all four arms share: on layouts 0-9 with truth pose, F0 (no filter) reaches
+  10 of 10 and F2 reaches 0 of 10 ([kill_e_narrow_gap_reach_check.md](results/kill_e_narrow_gap_reach_check.md)).
+  The arena gap is 0.5-0.9 m, below the about 1.4 m F2's eps = 0.7 m leaves open. Reach on this
+  family says nothing about the map margins.
+
+### What the collisions are
+
+All 7 collisions of F5 (5 random, 2 narrow_gap) and all 4 held-out collisions of F4 are jump
+runs that hit an **unsensed** obstacle (list in [kill_e_tables.md](results/kill_e_tables.md)).
+Every F4 collision had used QP slack (2-56 steps), so its map row was infeasible before contact.
+In 4 of F5's 7 jump collisions the run ended while hovering: the hover rule drops the map rows
+and keeps only the range row, which cannot see the unsensed obstacle. That points at the hover
+rule as the leak; it is read from the `ended_in_hover` flag, not traced step by step.
+
+The in-loop PL in `both` breached again on every held-out set: breach fraction 3.7e-3 (seed 1),
+1.6e-3 (seed 2), 4.9e-3 (u_trap), 8.3e-3 (narrow_gap), all above the 1e-3 per-epoch integrity
+risk, with wrong exclusions in 5-10 runs per set. No collision followed in `both`.
+
+### Answers
+
+- **Does F4 with the fixed 0.2 m bound hold on new layouts?** Mostly. On held-out seeds it is 0 %
+  in none, bias and dropout, and 1.5 % [0.5, 4.3] on jump (3 % on seed 1, 0 % on seed 2). Seeds
+  0-2 combined, its worst cell is jump at 1.0 % [0.3, 2.9]. It was 0 of 200 on u_trap and 1 of
+  200 on narrow_gap. The value chosen on seed 0 did not break on new layouts.
+- **Does F5 keep 0 % collisions?** **No.** Jump is 2.5 % [1.1, 5.7] on held-out seeds and 1.7 %
+  [0.7, 3.8] on seeds 0-2; narrow_gap jump 4 %. It stays at 0 % in the other five cases (0 of
+  300 each on seeds 0-2, upper bound 1.3 %), including uwb_nlos and both.
+- **F4 against F5:** the same safety within noise (pooled 0.33 % vs 0.28 %, overlapping
+  intervals; jump 3/300 vs 5/300). F4 reaches more on jump (35 % vs 20 % on seeds 0-2; 40 % vs
+  10 % on u_trap). F5 reaches a little more on none (65 % vs 59 %).
+- **Reach vs F2:** F5 is at 0.95-0.97 of F2 except jump (0.56 on seeds 0-2, 0.55 held out,
+  0.29 on u_trap).
+
+### Verdict against doc 04 section 3.4 (random family, seeds 0-2, 300 runs per cell, synthetic)
+
+| criterion | F5 (ours) | result |
+|---|---|---|
+| collisions <= 1 % in every fault case | jump 1.7 % [0.7, 3.8]; others 0 % [0.0, 1.3] | **FAIL** (jump) |
+| >= 3x lower than F3 on jump and bias | jump 1.7 vs 8.3 % (5x); bias 0 vs 1.7 % | met; bias rests on 5 F3 collisions, intervals overlap |
+| reach >= 90 % of F2 | 0.97 / **0.56** / 0.95 / 0.96 | **FAIL** (jump) |
+| fail if F3 within 1 pp of F5 on jump and bias | 6.6 pp and 1.7 pp | not triggered |
+| fail if F2 alone <= 1 % in all cases | F2 jump 12.3 % | not triggered |
+
+The headline fails on this harness: one planner (A* known map), unsensed obstacles on, synthetic
+inputs. Against the stronger baseline the outcome is plainer: **F4 with the hand-tuned fixed
+0.2 m bound meets the 1 % line in every case on seeds 0-2 (worst 1.0 %), and F5 does not. The
+headline's safety claim is matched by a hand-tuned fixed bound, and the remaining argument for
+F5 is only "no tuning needed"** (plus its 0 % under UWB NLOS and VIO+UWB faults, cases F4 cannot
+run because it has no second source). The fixed bound was not hard to choose: one sweep on one
+seed carried over to two new seeds and two new families. To win, F5 needs a hover rule that keeps
+a map margin (4 of 7 jump collisions ended in hover) and does not end jump runs stuck.
+
+Not done: 200 layouts per seed, planners P1 and P3, unsensed off, and F4 on the UWB cases.
 
 ## Add an arm
 
