@@ -23,12 +23,47 @@ Pages yet.
 ## Showcase page
 
 `showcase.html` (+ `showcase.js`, `showcase.css`) is a one-page tour for people, not agents:
-live counts from `data/index.json`, a canvas replay of four synthetic close-area-arena runs
-(`data/showcase/replays/`, written by `samples/close-area-arena/export_replay.py`), cards for
-every sample with a key result (status and input type from its `sample.json`), and an SVG of the
-brief => decode => row => sample => repo flow. `?run=<k>` picks the first replay.
-Regenerate the replays with `.venv/bin/python export_replay.py` inside the arena folder.
-Screenshots: [desktop](screenshots/showcase-desktop.png), [phone](screenshots/showcase-phone.png).
+live counts from `data/index.json`, the arena replay, cards for every sample with a key result
+(status and input type from its `sample.json`), and an SVG of the brief => decode => row =>
+sample => repo flow.
+
+Arena replay (all runs **synthetic**):
+
+- **Arena picker**: 8 families from `data/showcase/replays_v2/index.json`
+  (`close-area-replay-index/2`, written by `samples/close-area-benchmark/export_replays.py`),
+  each tile a thumbnail drawn from the world JSON embedded in the replay (`close-area-world/1`).
+  A ninth tile, "Pose faults (v1)", keeps the four older runs in `data/showcase/replays/`
+  (`samples/close-area-arena/export_replay.py`), because v2 flies every run on the true pose and
+  only v1 has the drifting EKF and 0.5 m jump.
+- **Algorithm picker**: every planner on that arena (9 in v2), outcome dot and time to goal.
+  The canvas draws boxes, walls and cylinders, glass in its own colour, the truth path, and for v1
+  the estimated path and dark zones. Play / pause / speed / scrub, clearance sparkline, outcome badge.
+- **Compare**: "Compare with" a second planner on the same layout; overlay on one canvas or side
+  by side (two columns on desktop, stacked under 640 px). Both badges, both clearance lines and a
+  two-column stats table.
+- **Results grid**: planner x family, reached % / collision %, parsed at load time from
+  `samples/close-area-benchmark/results/matrix_0.md` (20 layouts, seed 0), tabs for the `ideal`
+  and `crazyflie` presets. A cell click replays layout 0 of that family and planner.
+- **Try it yourself** links to `playground/index.html`.
+
+URL state (read on load, rewritten with `history.replaceState` on every pick):
+
+- `?family=office&planner=astar_known&vs=vfh_plus&view=side` preselects arena, planner, the
+  compared planner and the side-by-side view. Unknown values fall back to `office` /
+  `astar_known` with a note under the arena picker.
+- `?run=` accepts a v1 name (`random_freest_jump`), a v1 index (`?run=2`), a file name with or
+  without `.json`, or `<family>__<planner>` for v2. Before this change `?run=<name>` always opened
+  run 0 (it was read with `parseInt`), and auto-advance moved on after 2.5 s. Any URL selection now
+  stops the auto-advance.
+
+Regenerate the v2 replays with `.venv/bin/python export_replays.py` in
+`samples/close-area-benchmark`. Screenshots (headless Chrome 140, 2026-11-09):
+[desktop overlay](screenshots/showcase-v2-desktop.png),
+[desktop side by side](screenshots/showcase-v2-desktop-side.png),
+[desktop results](screenshots/showcase-v2-desktop-results.png),
+[phone 390 px](screenshots/showcase-v2-phone.png),
+[phone results](screenshots/showcase-v2-phone-results.png). Older v1 shots:
+[desktop](screenshots/showcase-desktop.png), [phone](screenshots/showcase-phone.png).
 
 ## What it does
 

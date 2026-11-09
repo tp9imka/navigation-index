@@ -6,11 +6,11 @@
 <title>Navigation Index - Showcase</title>
 <meta name="description" content="What the navigation hub contains, in 30 seconds: live counts, a replay of the close-area arena, the runnable samples with honest status, and how coding agents use it.">
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="showcase.css?v=20261109">
+<link rel="stylesheet" href="showcase.css?v=20261109v2b">
 <script>
   try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
-<script defer src="showcase.js?v=20261109"></script>
+<script defer src="showcase.js?v=20261109v2b"></script>
 </head>
 <body>
 <header class="top">
@@ -45,11 +45,28 @@
 
 <section id="arena" class="section">
   <h2>Arena replay</h2>
-  <p class="muted">The shared close-area simulator (<a href="index.html#page=samples%2Fclose-area-arena%2FREADME.md">close-area-arena</a>): walled 20 x 20 m, seeded obstacles, 0.15 m vehicle, scored on truth. Every run below is <strong>synthetic</strong>: simulated layout, vehicle and sensor.</p>
-  <div class="runs" id="runPicker" role="tablist" aria-label="Runs"></div>
+  <p class="muted">The shared close-area simulator (<a href="index.html#page=samples%2Fclose-area-arena%2FREADME.md">close-area-arena</a>) on 8 arena families, every planner in the <a href="index.html#page=samples%2Fclose-area-benchmark%2FREADME.md">close-area-benchmark</a>. Layout 0, seed 0, true pose, 0.15 m vehicle, scored on truth. Every run below is <strong>synthetic</strong>: simulated layout, vehicle and sensor.</p>
+  <h3 class="pick-h">1. Arena</h3>
+  <div class="arenas" id="arenaPicker" role="tablist" aria-label="Arena family"><p class="muted">Loading arenas...</p></div>
+  <p class="muted small" id="familyNote"></p>
+  <h3 class="pick-h">2. Algorithm</h3>
+  <div class="runs" id="runPicker" role="tablist" aria-label="Algorithm"></div>
+  <div class="compare-row">
+    <label class="speed">Compare with
+      <select id="vsSel" aria-label="Second algorithm"><option value="">none</option></select>
+    </label>
+    <div class="seg" id="viewSeg" role="group" aria-label="Compare view" hidden>
+      <button class="seg-btn" data-v="overlay" aria-pressed="true">Overlay</button>
+      <button class="seg-btn" data-v="side" aria-pressed="false">Side by side</button>
+    </div>
+    <a class="btn try" href="playground/index.html" title="Draw or load an arena and run the planners in your browser">Try it yourself =&gt;</a>
+  </div>
   <div class="arena-grid">
     <div class="stage">
-      <canvas id="arenaCanvas" width="640" height="640" aria-label="Top-down replay of the selected run"></canvas>
+      <div class="canvases" id="canvases">
+        <figure class="cv-wrap"><figcaption class="cv-cap" id="capA" hidden></figcaption><canvas id="arenaCanvas" width="640" height="640" aria-label="Top-down replay of the selected run"></canvas></figure>
+        <figure class="cv-wrap" id="wrapB" hidden><figcaption class="cv-cap" id="capB"></figcaption><canvas id="arenaCanvasB" width="640" height="640" aria-label="Top-down replay of the second run"></canvas></figure>
+      </div>
       <div class="controls">
         <button id="playBtn" class="btn primary" aria-label="Play or pause">Pause</button>
         <label class="speed">Speed
@@ -66,22 +83,32 @@
     </div>
     <aside class="run-side">
       <div class="run-head"><span id="badge" class="badge">-</span> <strong id="runTitle"></strong></div>
+      <div class="run-head" id="headB" hidden><span id="badgeB" class="badge">-</span> <strong id="runTitleB" class="vs-title"></strong></div>
       <p id="runNote" class="muted"></p>
-      <dl class="stats" id="stats"></dl>
+      <div class="stats-wrap"><table class="stats" id="stats"></table></div>
       <div class="spark-wrap">
         <div class="spark-lbl"><span>Clearance to nearest surface (truth)</span><span id="clearNow" class="mono"></span></div>
         <canvas id="spark" width="360" height="90" aria-label="Clearance over time"></canvas>
         <div class="muted small">Red line: 0.15 m vehicle radius, below it is a collision.</div>
       </div>
       <ul class="legend">
-        <li><i class="sw truth"></i>Truth path</li>
-        <li><i class="sw est"></i>Estimated path the planner saw</li>
-        <li><i class="sw dark"></i>Dark zone (VIO drift x4)</li>
+        <li><i class="sw truth"></i>Truth path<span id="legendB" hidden>, <i class="sw vs"></i>second run</span></li>
+        <li><i class="sw obst"></i>Wall, shelf, desk, pole <i class="sw glass"></i>Glass</li>
+        <li id="legendEst" hidden><i class="sw est"></i>Estimated path the planner saw</li>
+        <li id="legendDark" hidden><i class="sw dark"></i>Dark zone (VIO drift x4)</li>
         <li><i class="sw ab"></i>A start, B goal (0.3 m tolerance)</li>
       </ul>
       <p class="muted small" id="replaySrc"></p>
     </aside>
   </div>
+
+  <h3 class="pick-h" id="results">Results over 20 layouts</h3>
+  <p class="muted small"><span class="badge synthetic">synthetic</span> Cell = reached % / collision %, 20 layouts per cell, seed 0, true pose. A replay above is layout 0 of one cell. Tap a cell to replay it. Source: <a href="../samples/close-area-benchmark/results/matrix_0.md">matrix_0.md</a> (<span id="matrixCmd">close-area-benchmark</span>).</p>
+  <div class="seg" id="presetSeg" role="tablist" aria-label="Sensor preset">
+    <button class="seg-btn" data-p="ideal" role="tab" aria-pressed="true">ideal: 72 rays, 6 m, sees glass</button>
+    <button class="seg-btn" data-p="crazyflie" role="tab" aria-pressed="false">crazyflie: 4 beams, 3 m, glass invisible</button>
+  </div>
+  <div class="grid-wrap" id="matrixWrap"><p class="muted">Loading results...</p></div>
 </section>
 
 <section id="samples" class="section">
@@ -147,7 +174,7 @@
 </main>
 
 <footer class="foot muted small">
-  Static page, no build step. Data: <code>site/data/index.json</code>, <code>samples/*/sample.json</code>, replays from <code>samples/close-area-arena/export_replay.py</code>.
+  Static page, no build step. Data: <code>site/data/index.json</code>, <code>samples/*/sample.json</code>, replays from <code>samples/close-area-benchmark/export_replays.py</code> (v2) and <code>samples/close-area-arena/export_replay.py</code> (pose faults), results from <code>samples/close-area-benchmark/results/matrix_0.md</code>.
   <a href="index.html">Search</a> - <a href="index.html#view=kits">Starter kits</a> - <a href="../graph/index.html">Graph</a>
 </footer>
 </body>
