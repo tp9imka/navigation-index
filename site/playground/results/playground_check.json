@@ -1,7 +1,7 @@
 {
- "date": "2026-11-09T12:11:35.550Z",
+ "date": "2026-11-09T13:37:01.325Z",
  "input": "synthetic",
- "page": "http://127.0.0.1:8766/site/playground/index.html",
+ "page": "http://127.0.0.1:8766/site/playground/index.html?pyodide=cdn",
  "steps": [],
  "chrome": "Chrome/140.0.7339.208",
  "loading_shot": {
@@ -10,13 +10,13 @@
   "height": 900
  },
  "load": {
-  "ready_ms": 5705,
-  "mb": 22.2,
+  "ready_ms": 5574,
+  "mb": 22.3,
   "worker": {
-   "pyodide_ms": 2823,
-   "packages_ms": 1379,
-   "import_ms": 1408,
-   "ready_ms": 5611
+   "pyodide_ms": 2621,
+   "packages_ms": 1395,
+   "import_ms": 1551,
+   "ready_ms": 5567
   },
   "env": {
    "python": "3.14.2",
@@ -25,11 +25,11 @@
    "machine": "wasm32",
    "system": "Emscripten",
    "imports_ms": {
-    "scipy_ndimage": 659.7,
-    "arena": 34.5,
-    "reactive": 3,
-    "sample_planners": 11.6,
-    "safety_filter": 439.9
+    "scipy_ndimage": 732.6,
+    "arena": 34.7,
+    "reactive": 3.1,
+    "sample_planners": 70,
+    "safety_filter": 439.6
    },
    "planners": [
     "straight",
@@ -61,11 +61,45 @@
     "none",
     "F2"
    ],
+   "recovery": [
+    "none",
+    "single",
+    "multi",
+    "multi_ig"
+   ],
    "load_errors": {},
    "pyodide": "314.0.7",
-   "arena_files": 30
+   "pyodide_source": "cdn",
+   "pyodide_base": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/",
+   "arena_files": 36,
+   "load_attempts": [
+    {
+     "step": "manifest.json",
+     "attempt": 1,
+     "ok": true,
+     "ms": 5
+    },
+    {
+     "step": "Pyodide runtime",
+     "attempt": 1,
+     "ok": true,
+     "ms": 2616
+    },
+    {
+     "step": "hub .py files",
+     "attempt": 1,
+     "ok": true,
+     "ms": 78
+    },
+    {
+     "step": "numpy + scipy wheels",
+     "attempt": 1,
+     "ok": true,
+     "ms": 1313
+    }
+   ]
   },
-  "wall_since_navigate_s": 5.88
+  "wall_since_navigate_s": 5.653
  },
  "parity": [
   {
@@ -77,7 +111,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 20.32,
-   "native_wall_s": 0.093,
+   "native_wall_s": 0.083,
    "frames": 204,
    "browser": {
     "outcome": "stuck",
@@ -94,7 +128,7 @@
     "path_length_m": 13.266
    },
    "same": true,
-   "browser_wall_s": 0.187
+   "browser_wall_s": 0.191
   },
   {
    "world": "random_0",
@@ -105,7 +139,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 26.08,
-   "native_wall_s": 0.116,
+   "native_wall_s": 0.092,
    "frames": 261,
    "browser": {
     "outcome": "reached",
@@ -122,7 +156,7 @@
     "path_length_m": 24.504
    },
    "same": true,
-   "browser_wall_s": 0.186
+   "browser_wall_s": 0.196
   },
   {
    "world": "random_0",
@@ -133,7 +167,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 19.38,
-   "native_wall_s": 0.375,
+   "native_wall_s": 0.343,
    "frames": 194,
    "browser": {
     "outcome": "reached",
@@ -150,7 +184,7 @@
     "path_length_m": 23.838
    },
    "same": true,
-   "browser_wall_s": 0.737
+   "browser_wall_s": 0.752
   },
   {
    "world": "random_0",
@@ -161,7 +195,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 18.68,
-   "native_wall_s": 1.713,
+   "native_wall_s": 1.445,
    "frames": 187,
    "browser": {
     "outcome": "reached",
@@ -178,7 +212,7 @@
     "path_length_m": 23.947
    },
    "same": true,
-   "browser_wall_s": 2.927
+   "browser_wall_s": 3.049
   },
   {
    "world": "random_0",
@@ -189,7 +223,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 28.88,
-   "native_wall_s": 0.118,
+   "native_wall_s": 0.099,
    "frames": 289,
    "browser": {
     "outcome": "reached",
@@ -206,7 +240,7 @@
     "path_length_m": 24.9
    },
    "same": true,
-   "browser_wall_s": 0.192
+   "browser_wall_s": 0.194
   },
   {
    "world": "random_0",
@@ -217,7 +251,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 26.12,
-   "native_wall_s": 0.152,
+   "native_wall_s": 0.105,
    "frames": 262,
    "browser": {
     "outcome": "reached",
@@ -234,7 +268,7 @@
     "path_length_m": 24.478
    },
    "same": true,
-   "browser_wall_s": 0.204
+   "browser_wall_s": 0.216
   },
   {
    "world": "random_0",
@@ -245,7 +279,7 @@
    "max_pose_error_m": 0.4906,
    "free_path": true,
    "sim_s": 14.2,
-   "native_wall_s": 0.415,
+   "native_wall_s": 0.381,
    "frames": 142,
    "browser": {
     "outcome": "collision",
@@ -262,7 +296,7 @@
     "path_length_m": 15.888
    },
    "same": true,
-   "browser_wall_s": 0.781
+   "browser_wall_s": 0.805
   },
   {
    "world": "random_0",
@@ -273,7 +307,7 @@
    "max_pose_error_m": 0.5185,
    "free_path": true,
    "sim_s": 32.9,
-   "native_wall_s": 0.791,
+   "native_wall_s": 0.703,
    "frames": 329,
    "browser": {
     "outcome": "stuck",
@@ -290,7 +324,7 @@
     "path_length_m": 25.344
    },
    "same": true,
-   "browser_wall_s": 1.307
+   "browser_wall_s": 1.396
   },
   {
    "world": "random_0",
@@ -301,7 +335,7 @@
    "max_pose_error_m": 0.7143,
    "free_path": true,
    "sim_s": 25.84,
-   "native_wall_s": 0.157,
+   "native_wall_s": 0.153,
    "frames": 259,
    "browser": {
     "outcome": "reached",
@@ -318,7 +352,7 @@
     "path_length_m": 24.569
    },
    "same": true,
-   "browser_wall_s": 0.274
+   "browser_wall_s": 0.277
   },
   {
    "world": "random_0",
@@ -329,7 +363,7 @@
    "max_pose_error_m": 0.3331,
    "free_path": true,
    "sim_s": 20.6,
-   "native_wall_s": 0.533,
+   "native_wall_s": 0.514,
    "frames": 206,
    "browser": {
     "outcome": "reached",
@@ -346,7 +380,7 @@
     "path_length_m": 24.334
    },
    "same": true,
-   "browser_wall_s": 0.977
+   "browser_wall_s": 1.017
   },
   {
    "world": "office_0",
@@ -357,7 +391,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 22.74,
-   "native_wall_s": 0.452,
+   "native_wall_s": 0.44,
    "frames": 228,
    "browser": {
     "outcome": "reached",
@@ -374,7 +408,7 @@
     "path_length_m": 13.765
    },
    "same": true,
-   "browser_wall_s": 0.873
+   "browser_wall_s": 0.905
   },
   {
    "world": "office_0",
@@ -385,7 +419,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 13.06,
-   "native_wall_s": 0.084,
+   "native_wall_s": 0.072,
    "frames": 131,
    "browser": {
     "outcome": "stuck",
@@ -402,7 +436,7 @@
     "path_length_m": 7.115
    },
    "same": true,
-   "browser_wall_s": 0.131
+   "browser_wall_s": 0.139
   },
   {
    "world": "office_0",
@@ -413,7 +447,7 @@
    "max_pose_error_m": 0.2255,
    "free_path": true,
    "sim_s": 13.12,
-   "native_wall_s": 0.099,
+   "native_wall_s": 0.101,
    "frames": 132,
    "browser": {
     "outcome": "stuck",
@@ -430,7 +464,7 @@
     "path_length_m": 6.86
    },
    "same": true,
-   "browser_wall_s": 0.168
+   "browser_wall_s": 0.176
   },
   {
    "world": "glass_office_0",
@@ -441,7 +475,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 10,
-   "native_wall_s": 0.404,
+   "native_wall_s": 0.43,
    "frames": 100,
    "browser": {
     "outcome": "stuck",
@@ -458,7 +492,7 @@
     "path_length_m": 0
    },
    "same": true,
-   "browser_wall_s": 0.623
+   "browser_wall_s": 0.656
   },
   {
    "world": "u_trap_0",
@@ -469,7 +503,7 @@
    "max_pose_error_m": 0.9488,
    "free_path": true,
    "sim_s": 29.42,
-   "native_wall_s": 0.482,
+   "native_wall_s": 0.526,
    "frames": 295,
    "browser": {
     "outcome": "stuck",
@@ -486,7 +520,7 @@
     "path_length_m": 25.73
    },
    "same": true,
-   "browser_wall_s": 0.88
+   "browser_wall_s": 0.903
   },
   {
    "world": "random_0",
@@ -497,7 +531,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 43.68,
-   "native_wall_s": 0.601,
+   "native_wall_s": 0.704,
    "frames": 437,
    "browser": {
     "outcome": "reached",
@@ -514,7 +548,7 @@
     "path_length_m": 24.261
    },
    "same": true,
-   "browser_wall_s": 1.018
+   "browser_wall_s": 1.112
   },
   {
    "world": "u_trap_0",
@@ -525,7 +559,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 28.96,
-   "native_wall_s": 1.5,
+   "native_wall_s": 1.702,
    "frames": 290,
    "browser": {
     "outcome": "stuck",
@@ -542,7 +576,7 @@
     "path_length_m": 12.447
    },
    "same": true,
-   "browser_wall_s": 2.383
+   "browser_wall_s": 2.55
   },
   {
    "world": "office_0",
@@ -553,7 +587,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 28.96,
-   "native_wall_s": 0.109,
+   "native_wall_s": 0.143,
    "frames": 290,
    "browser": {
     "outcome": "stuck",
@@ -570,7 +604,7 @@
     "path_length_m": 11.281
    },
    "same": true,
-   "browser_wall_s": 0.196
+   "browser_wall_s": 0.213
   },
   {
    "world": "forest_0",
@@ -581,7 +615,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 25.68,
-   "native_wall_s": 0.133,
+   "native_wall_s": 0.14,
    "frames": 257,
    "browser": {
     "outcome": "reached",
@@ -598,7 +632,7 @@
     "path_length_m": 24.519
    },
    "same": true,
-   "browser_wall_s": 0.235
+   "browser_wall_s": 0.265
   },
   {
    "world": "narrow_gap_0",
@@ -609,7 +643,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 24.52,
-   "native_wall_s": 0.824,
+   "native_wall_s": 1.036,
    "frames": 246,
    "browser": {
     "outcome": "reached",
@@ -626,7 +660,7 @@
     "path_length_m": 25.187
    },
    "same": true,
-   "browser_wall_s": 1.28
+   "browser_wall_s": 1.409
   },
   {
    "world": "office_0",
@@ -637,7 +671,7 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 25.88,
-   "native_wall_s": 0.434,
+   "native_wall_s": 0.651,
    "frames": 259,
    "browser": {
     "outcome": "reached",
@@ -654,9 +688,509 @@
     "path_length_m": 13.578
    },
    "same": true,
-   "browser_wall_s": 0.82
+   "browser_wall_s": 0.918
   }
  ],
+ "reloc": [
+  {
+   "world": "reloc_demo_random_1_97",
+   "fault": "jump",
+   "seed": 1,
+   "recovery": "single",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.78,
+    "duration_s": 21.78,
+    "min_clearance_m": 0.5182,
+    "path_length_m": 24.151
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.78,
+    "duration_s": 21.78,
+    "min_clearance_m": 0.5182,
+    "path_length_m": 24.151
+   },
+   "browser_events": [
+    [
+     2.7,
+     "reset_counter",
+     "accepted",
+     0.2,
+     0.0292,
+     0
+    ],
+    [
+     3.2,
+     "innovation",
+     "accepted",
+     0.2,
+     0.0164,
+     0
+    ],
+    [
+     13,
+     "innovation",
+     "accepted",
+     0.2,
+     0.6281,
+     0
+    ],
+    [
+     17.2,
+     "innovation",
+     "accepted",
+     0.2,
+     0.0343,
+     0
+    ],
+    [
+     20,
+     "innovation",
+     "accepted",
+     0.2,
+     0.031,
+     0
+    ],
+    [
+     21,
+     "innovation",
+     "accepted",
+     0.2,
+     0.0218,
+     0
+    ]
+   ],
+   "native_events": [
+    [
+     2.7,
+     "reset_counter",
+     "accepted",
+     0.2,
+     0.0292,
+     0
+    ],
+    [
+     3.2,
+     "innovation",
+     "accepted",
+     0.2,
+     0.0164,
+     0
+    ],
+    [
+     13,
+     "innovation",
+     "accepted",
+     0.2,
+     0.6281,
+     0
+    ],
+    [
+     17.2,
+     "innovation",
+     "accepted",
+     0.2,
+     0.0343,
+     0
+    ],
+    [
+     20,
+     "innovation",
+     "accepted",
+     0.2,
+     0.031,
+     0
+    ],
+    [
+     21,
+     "innovation",
+     "accepted",
+     0.2,
+     0.0218,
+     0
+    ]
+   ],
+   "summary": {
+    "events": 6,
+    "accepted": 6,
+    "wrong_commits": 1,
+    "open_at_end": 0,
+    "moves": 0,
+    "hover_s": 1.2,
+    "move_s": null,
+    "first_recover_s": 0.2
+   },
+   "same": true,
+   "browser_wall_s": 0.988,
+   "native_wall_s": 0.643
+  },
+  {
+   "world": "reloc_demo_random_1_97",
+   "fault": "jump",
+   "seed": 1,
+   "recovery": "multi",
+   "browser": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 22.88,
+    "min_clearance_m": 0.853,
+    "path_length_m": 17.66
+   },
+   "native": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 22.88,
+    "min_clearance_m": 0.853,
+    "path_length_m": 17.66
+   },
+   "browser_events": [
+    [
+     2.7,
+     "reset_counter",
+     "accepted",
+     0.4,
+     0.0064,
+     0
+    ],
+    [
+     13,
+     "innovation",
+     "open",
+     null,
+     null,
+     0
+    ]
+   ],
+   "native_events": [
+    [
+     2.7,
+     "reset_counter",
+     "accepted",
+     0.4,
+     0.0064,
+     0
+    ],
+    [
+     13,
+     "innovation",
+     "open",
+     null,
+     null,
+     0
+    ]
+   ],
+   "summary": {
+    "events": 2,
+    "accepted": 1,
+    "wrong_commits": 0,
+    "open_at_end": 1,
+    "moves": 0,
+    "hover_s": 10.3,
+    "move_s": null,
+    "first_recover_s": 0.4
+   },
+   "same": true,
+   "browser_wall_s": 1.246,
+   "native_wall_s": 0.909
+  },
+  {
+   "world": "reloc_demo_random_1_97",
+   "fault": "jump",
+   "seed": 1,
+   "recovery": "multi_ig",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.34,
+    "duration_s": 20.34,
+    "min_clearance_m": 0.6982,
+    "path_length_m": 24.35
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.34,
+    "duration_s": 20.34,
+    "min_clearance_m": 0.6982,
+    "path_length_m": 24.35
+   },
+   "browser_events": [
+    [
+     2.7,
+     "reset_counter",
+     "accepted",
+     0.4,
+     0.0064,
+     0
+    ],
+    [
+     13,
+     "innovation",
+     "accepted",
+     1.7,
+     0.0748,
+     1
+    ]
+   ],
+   "native_events": [
+    [
+     2.7,
+     "reset_counter",
+     "accepted",
+     0.4,
+     0.0064,
+     0
+    ],
+    [
+     13,
+     "innovation",
+     "accepted",
+     1.7,
+     0.0748,
+     1
+    ]
+   ],
+   "summary": {
+    "events": 2,
+    "accepted": 2,
+    "wrong_commits": 0,
+    "open_at_end": 0,
+    "moves": 1,
+    "hover_s": 2.1,
+    "move_s": 0.7,
+    "first_recover_s": 0.4
+   },
+   "same": true,
+   "browser_wall_s": 1.018,
+   "native_wall_s": 0.61
+  },
+  {
+   "world": "u_trap_0",
+   "fault": "dropout",
+   "seed": 0,
+   "recovery": "multi_ig",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.76,
+    "duration_s": 21.76,
+    "min_clearance_m": 0.6216,
+    "path_length_m": 24.609
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.76,
+    "duration_s": 21.76,
+    "min_clearance_m": 0.6216,
+    "path_length_m": 24.609
+   },
+   "browser_events": [
+    [
+     2.1,
+     "innovation",
+     "accepted",
+     0.4,
+     0.0305,
+     0
+    ],
+    [
+     7.5,
+     "quality_0",
+     "accepted",
+     0.4,
+     0.0978,
+     0
+    ],
+    [
+     9.3,
+     "reset_counter",
+     "accepted",
+     0.4,
+     0.0537,
+     0
+    ],
+    [
+     15.2,
+     "innovation",
+     "accepted",
+     2.2,
+     0.0379,
+     1
+    ],
+    [
+     18.1,
+     "innovation",
+     "accepted",
+     0.4,
+     0.0265,
+     0
+    ],
+    [
+     19.2,
+     "innovation",
+     "accepted",
+     0.4,
+     0.0222,
+     0
+    ]
+   ],
+   "native_events": [
+    [
+     2.1,
+     "innovation",
+     "accepted",
+     0.4,
+     0.0305,
+     0
+    ],
+    [
+     7.5,
+     "quality_0",
+     "accepted",
+     0.4,
+     0.0978,
+     0
+    ],
+    [
+     9.3,
+     "reset_counter",
+     "accepted",
+     0.4,
+     0.0537,
+     0
+    ],
+    [
+     15.2,
+     "innovation",
+     "accepted",
+     2.2,
+     0.0379,
+     1
+    ],
+    [
+     18.1,
+     "innovation",
+     "accepted",
+     0.4,
+     0.0265,
+     0
+    ],
+    [
+     19.2,
+     "innovation",
+     "accepted",
+     0.4,
+     0.0222,
+     0
+    ]
+   ],
+   "summary": {
+    "events": 6,
+    "accepted": 6,
+    "wrong_commits": 0,
+    "open_at_end": 0,
+    "moves": 1,
+    "hover_s": 4.2,
+    "move_s": 1.2,
+    "first_recover_s": 0.4
+   },
+   "same": true,
+   "browser_wall_s": 0.817,
+   "native_wall_s": 0.61
+  }
+ ],
+ "arms": {
+  "world": "reloc_demo_random_1_97",
+  "seed": 1,
+  "fault": "jump",
+  "at_s": 13.6,
+  "runs": [
+   {
+    "arm": "none",
+    "outcome": "reached",
+    "time_to_goal_s": 18.7,
+    "duration_s": 18.7,
+    "min_clearance_m": 0.8153,
+    "path_length_m": 24.381,
+    "events": 0,
+    "accepted": 0,
+    "wrong_commits": 0,
+    "open_at_end": 0,
+    "moves": 0,
+    "hover_s": null
+   },
+   {
+    "arm": "single",
+    "outcome": "reached",
+    "time_to_goal_s": 21.78,
+    "duration_s": 21.78,
+    "min_clearance_m": 0.5182,
+    "path_length_m": 24.151,
+    "events": 6,
+    "accepted": 6,
+    "wrong_commits": 1,
+    "open_at_end": 0,
+    "moves": 0,
+    "hover_s": 1.2,
+    "move_s": null,
+    "first_recover_s": 0.2
+   },
+   {
+    "arm": "multi",
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 22.88,
+    "min_clearance_m": 0.853,
+    "path_length_m": 17.66,
+    "events": 2,
+    "accepted": 1,
+    "wrong_commits": 0,
+    "open_at_end": 1,
+    "moves": 0,
+    "hover_s": 10.3,
+    "move_s": null,
+    "first_recover_s": 0.4
+   },
+   {
+    "arm": "multi_ig",
+    "outcome": "reached",
+    "time_to_goal_s": 20.34,
+    "duration_s": 20.34,
+    "min_clearance_m": 0.6982,
+    "path_length_m": 24.35,
+    "events": 2,
+    "accepted": 2,
+    "wrong_commits": 0,
+    "open_at_end": 0,
+    "moves": 1,
+    "hover_s": 2.1,
+    "move_s": 0.7,
+    "first_recover_s": 0.4
+   }
+  ],
+  "status_at": [
+   {
+    "run": "none",
+    "status": "nominal"
+   },
+   {
+    "run": "single",
+    "status": "wrong"
+   },
+   {
+    "run": "multi",
+    "status": "hovering"
+   },
+   {
+    "run": "multi+IG",
+    "status": "hovering"
+   }
+  ],
+  "parity_text": "single: same score and loss events as native CPython 3.12.10; multi: same score and loss events as native CPython 3.12.10; multi+IG: same score and loss events as native CPython 3.12.10 on this world (native_parity.json).",
+  "shot": {
+   "file": "pg_reloc_arms.png",
+   "width": 1280,
+   "height": 900
+  }
+ },
  "compare": {
   "world": "random_0",
   "a": {
@@ -673,7 +1207,7 @@
    "min_clearance_m": 0.4702,
    "path_length_m": 24.504
   },
-  "parity_text": "A: same score as native CPython 3.12.10; B: same score as native CPython 3.12.10 on this preset (native_parity.json).",
+  "parity_text": "A: same score as native CPython 3.12.10; B: same score as native CPython 3.12.10 on this world (native_parity.json).",
   "shot": {
    "file": "pg_compare_random0.png",
    "width": 1280,
@@ -733,8 +1267,8 @@
  },
  "responsive": {
   "run": "astar_unknown on random_0",
-  "python_wall_s": 2.931,
-  "frames": 350,
+  "python_wall_s": 3.192,
+  "frames": 382,
   "max_ms": 10,
   "median_ms": 8
  },
@@ -770,15 +1304,16 @@
   }
  },
  "link": {
-  "url": "http://127.0.0.1:8766/site/playground/index.html?planner=tangent_bug&preset=crazyflie&fault=none&filter=none&compare=1&planner_b=dstar_lite&preset_b=crazyflie&fault_b=none&filter_b=F2&seed=7#w=eJwtjjFrwzAUhP-KuPnFtRIM6ds6ZO3WKXh4ltRYIFlFkqmdkP9eFAo33Ad3xz1QzOyigGFCKu4g2cnhN-Vg3zQI31miAyMkI0FdPr9UJJWyv_lFSVUfLSLRh70NrKWmCEJxzoJ7gl-s215uSutiC_jaU0_HppEg4KvuBtLdMBKmRueG5xffwZqQxfq1gPtOD4Q0lSomuLb0QN1_2rcpbSCYDax7gtnB791AmDfwiTDv4GPjKNVlLwHcbHUgVLn995_j8w_Ch04O",
-  "button_msg": "Link copied (461 characters). Opening it restores this world and config and runs it.",
-  "share_url": "http://127.0.0.1:8766/site/playground/index.html?planner=tangent_bug&preset=crazyflie&fault=none&filter=none&compare=1&planner_b=dstar_lite&preset_b=crazyflie&fault_b=none&filter_b=F2&seed=7#w=eJwtjjFrwzAUhP-KuPnFtRIM6ds6ZO3WKXh4ltRYIFlFkqmdkP9eFAo33Ad3xz1QzOyigGFCKu4g2cnhN-Vg3zQI31miAyMkI0FdPr9UJJWyv_lFSVUfLSLRh70NrKWmCEJxzoJ7gl-s215uSutiC_jaU0_HppEg4KvuBtLdMBKmRueG5xffwZqQxfq1gPtOD4Q0lSomuLb0QN1_2rcpbSCYDax7gtnB791AmDfwiTDv4GPjKNVlLwHcbHUgVLn995_j8w_Ch04O",
+  "url": "http://127.0.0.1:8766/site/playground/index.html?planner=tangent_bug&preset=crazyflie&fault=none&filter=none&recovery=none&compare=1&planner_b=dstar_lite&preset_b=crazyflie&fault_b=none&filter_b=F2&recovery_b=none&seed=7#w=eJwtjjFrwzAUhP-KuPnFtRIM6ds6ZO3WKXh4ltRYIFlFkqmdkP9eFAo33Ad3xz1QzOyigGFCKu4g2cnhN-Vg3zQI31miAyMkI0FdPr9UJJWyv_lFSVUfLSLRh70NrKWmCEJxzoJ7gl-s215uSutiC_jaU0_HppEg4KvuBtLdMBKmRueG5xffwZqQxfq1gPtOD4Q0lSomuLb0QN1_2rcpbSCYDax7gtnB791AmDfwiTDv4GPjKNVlLwHcbHUgVLn995_j8w_Ch04O",
+  "button_msg": "Link copied (491 characters). Opening it restores this world and config and runs it.",
+  "share_url": "http://127.0.0.1:8766/site/playground/index.html?planner=tangent_bug&preset=crazyflie&fault=none&filter=none&recovery=none&compare=1&planner_b=dstar_lite&preset_b=crazyflie&fault_b=none&filter_b=F2&recovery_b=none&seed=7#w=eJwtjjFrwzAUhP-KuPnFtRIM6ds6ZO3WKXh4ltRYIFlFkqmdkP9eFAo33Ad3xz1QzOyigGFCKu4g2cnhN-Vg3zQI31miAyMkI0FdPr9UJJWyv_lFSVUfLSLRh70NrKWmCEJxzoJ7gl-s215uSutiC_jaU0_HppEg4KvuBtLdMBKmRueG5xffwZqQxfq1gPtOD4Q0lSomuLb0QN1_2rcpbSCYDax7gtnB791AmDfwiTDv4GPjKNVlLwHcbHUgVLn995_j8w_Ch04O",
   "config_src": {
    "a": {
     "planner": "tangent_bug",
     "preset": "crazyflie",
     "fault": "none",
     "filter": "none",
+    "recovery": "none",
     "seed": 7
    },
    "b": {
@@ -786,14 +1321,16 @@
     "preset": "crazyflie",
     "fault": "none",
     "filter": "F2",
+    "recovery": "none",
     "seed": 7
    },
-   "compare": true
+   "compare": true,
+   "arms": false
   },
-  "clipboard": "http://127.0.0.1:8766/site/playground/index.html?planner=tangent_bug&preset=crazyflie&fault=none&filter=none&compare=1&planner_b=dstar_lite&preset_b=crazyflie&fault_b=none&filter_b=F2&seed=7#w=eJwtjjFrwzAUhP-KuPnFtRIM6ds6ZO3WKXh4ltRYIFlFkqmdkP9eFAo33Ad3xz1QzOyigGFCKu4g2cnhN-Vg3zQI31miAyMkI0FdPr9UJJWyv_lFSVUfLSLRh70NrKWmCEJxzoJ7gl-s215uSutiC_jaU0_HppEg4KvuBtLdMBKmRueG5xffwZqQxfq1gPtOD4Q0lSomuLb0QN1_2rcpbSCYDax7gtnB791AmDfwiTDv4GPjKNVlLwHcbHUgVLn995_j8w_Ch04O",
+  "clipboard": "http://127.0.0.1:8766/site/playground/index.html?planner=tangent_bug&preset=crazyflie&fault=none&filter=none&recovery=none&compare=1&planner_b=dstar_lite&preset_b=crazyflie&fault_b=none&filter_b=F2&recovery_b=none&seed=7#w=eJwtjjFrwzAUhP-KuPnFtRIM6ds6ZO3WKXh4ltRYIFlFkqmdkP9eFAo33Ad3xz1QzOyigGFCKu4g2cnhN-Vg3zQI31miAyMkI0FdPr9UJJWyv_lFSVUfLSLRh70NrKWmCEJxzoJ7gl-s215uSutiC_jaU0_HppEg4KvuBtLdMBKmRueG5xffwZqQxfq1gPtOD4Q0lSomuLb0QN1_2rcpbSCYDax7gtnB791AmDfwiTDv4GPjKNVlLwHcbHUgVLn995_j8w_Ch04O",
   "address_bar_is_link": true,
   "clipboard_is_link": true,
-  "url_chars": 461,
+  "url_chars": 491,
   "world_json_chars": 267,
   "preset_lengths": {
    "office_0": {
@@ -838,6 +1375,7 @@
      "preset": "crazyflie",
      "fault": "none",
      "filter": "none",
+     "recovery": "none",
      "seed": 7
     },
     "b": {
@@ -845,9 +1383,11 @@
      "preset": "crazyflie",
      "fault": "none",
      "filter": "F2",
+     "recovery": "none",
      "seed": 7
     },
-    "compare": true
+    "compare": true,
+    "arms": false
    },
    "auto_run": true,
    "scores": [
@@ -896,6 +1436,68 @@
     "path_length_m": 27.397
    }
   ]
+ },
+ "blocked": {
+  "cdn": {
+   "wall_s": 8.865,
+   "failed": true,
+   "retry_visible": true,
+   "text": "load failed: Pyodide runtime: 3 of 3 attempts failed, last error: Failed to fetch dynamically imported module: https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.mjs?attempt=3. Needs cdn.jsdelivr.net, or a local Pyodide folder (README: Offline / blocked CDN).",
+   "attempts": [
+    {
+     "step": "manifest.json",
+     "attempt": 1,
+     "ok": true,
+     "ms": 8
+    },
+    {
+     "step": "Pyodide runtime",
+     "attempt": 1,
+     "ok": false,
+     "ms": 1,
+     "error": "Failed to fetch dynamically imported module: https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.mjs"
+    },
+    {
+     "step": "Pyodide runtime",
+     "attempt": 2,
+     "ok": false,
+     "ms": 1,
+     "error": "Failed to fetch dynamically imported module: https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.mjs?attempt=2"
+    },
+    {
+     "step": "Pyodide runtime",
+     "attempt": 3,
+     "ok": false,
+     "ms": 1,
+     "error": "Failed to fetch dynamically imported module: https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.mjs?attempt=3"
+    }
+   ],
+   "shot": {
+    "file": "pg_blocked_retry.png",
+    "width": 1280,
+    "height": 900
+   }
+  },
+  "after_retry_press": {
+   "attempt": 2,
+   "failed": false,
+   "text": "Pyodide runtime: attempt 2 of 3 failed (Failed to fetch dynamically imported module: https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.mjs?attempt=2). Trying again in 6 s...",
+   "s_after_press": 3.002
+  },
+  "local_folder": true,
+  "local": {
+   "ready_s": 3.662,
+   "source": "local",
+   "jsdelivr_requests_ok": 0,
+   "case": [
+    "reloc_demo_random_1_97",
+    "jump",
+    1,
+    "single"
+   ],
+   "same_as_native": true
+  },
+  "console": []
  },
  "phone": {
   "viewport": "390 x 844 @2x",

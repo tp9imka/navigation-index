@@ -8,11 +8,11 @@
   "machine": "arm64",
   "system": "Darwin",
   "imports_ms": {
-   "scipy_ndimage": 20251.8,
-   "arena": 190.9,
-   "reactive": 39.2,
-   "sample_planners": 90.4,
-   "safety_filter": 16872.6
+   "scipy_ndimage": 7175.9,
+   "arena": 400.9,
+   "reactive": 104.5,
+   "sample_planners": 431.3,
+   "safety_filter": 3776.2
   },
   "planners": [
    "straight",
@@ -44,6 +44,12 @@
    "none",
    "F2"
   ],
+  "recovery": [
+   "none",
+   "single",
+   "multi",
+   "multi_ig"
+  ],
   "load_errors": {}
  },
  "keys": [
@@ -70,7 +76,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 20.32,
-   "native_wall_s": 0.093,
+   "native_wall_s": 0.083,
    "frames": 204
   },
   {
@@ -89,7 +95,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 26.08,
-   "native_wall_s": 0.116,
+   "native_wall_s": 0.092,
    "frames": 261
   },
   {
@@ -108,7 +114,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 19.38,
-   "native_wall_s": 0.375,
+   "native_wall_s": 0.343,
    "frames": 194
   },
   {
@@ -127,7 +133,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 18.68,
-   "native_wall_s": 1.713,
+   "native_wall_s": 1.445,
    "frames": 187
   },
   {
@@ -146,7 +152,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 28.88,
-   "native_wall_s": 0.118,
+   "native_wall_s": 0.099,
    "frames": 289
   },
   {
@@ -165,7 +171,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 26.12,
-   "native_wall_s": 0.152,
+   "native_wall_s": 0.105,
    "frames": 262
   },
   {
@@ -184,7 +190,7 @@
    "max_pose_error_m": 0.4906,
    "free_path": true,
    "sim_s": 14.2,
-   "native_wall_s": 0.415,
+   "native_wall_s": 0.381,
    "frames": 142
   },
   {
@@ -203,7 +209,7 @@
    "max_pose_error_m": 0.5185,
    "free_path": true,
    "sim_s": 32.9,
-   "native_wall_s": 0.791,
+   "native_wall_s": 0.703,
    "frames": 329
   },
   {
@@ -222,7 +228,7 @@
    "max_pose_error_m": 0.7143,
    "free_path": true,
    "sim_s": 25.84,
-   "native_wall_s": 0.157,
+   "native_wall_s": 0.153,
    "frames": 259
   },
   {
@@ -241,7 +247,7 @@
    "max_pose_error_m": 0.3331,
    "free_path": true,
    "sim_s": 20.6,
-   "native_wall_s": 0.533,
+   "native_wall_s": 0.514,
    "frames": 206
   },
   {
@@ -260,7 +266,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 22.74,
-   "native_wall_s": 0.452,
+   "native_wall_s": 0.44,
    "frames": 228
   },
   {
@@ -279,7 +285,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 13.06,
-   "native_wall_s": 0.084,
+   "native_wall_s": 0.072,
    "frames": 131
   },
   {
@@ -298,7 +304,7 @@
    "max_pose_error_m": 0.2255,
    "free_path": true,
    "sim_s": 13.12,
-   "native_wall_s": 0.099,
+   "native_wall_s": 0.101,
    "frames": 132
   },
   {
@@ -317,7 +323,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 10.0,
-   "native_wall_s": 0.404,
+   "native_wall_s": 0.43,
    "frames": 100
   },
   {
@@ -336,7 +342,7 @@
    "max_pose_error_m": 0.9488,
    "free_path": true,
    "sim_s": 29.42,
-   "native_wall_s": 0.482,
+   "native_wall_s": 0.526,
    "frames": 295
   },
   {
@@ -355,7 +361,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 43.68,
-   "native_wall_s": 0.601,
+   "native_wall_s": 0.704,
    "frames": 437
   },
   {
@@ -374,7 +380,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 28.96,
-   "native_wall_s": 1.5,
+   "native_wall_s": 1.702,
    "frames": 290
   },
   {
@@ -393,7 +399,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 28.96,
-   "native_wall_s": 0.109,
+   "native_wall_s": 0.143,
    "frames": 290
   },
   {
@@ -412,7 +418,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 25.68,
-   "native_wall_s": 0.133,
+   "native_wall_s": 0.14,
    "frames": 257
   },
   {
@@ -431,7 +437,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 24.52,
-   "native_wall_s": 0.824,
+   "native_wall_s": 1.036,
    "frames": 246
   },
   {
@@ -450,7 +456,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 25.88,
-   "native_wall_s": 0.434,
+   "native_wall_s": 0.651,
    "frames": 259
   }
  ],
@@ -1106,6 +1112,799 @@
    }
   }
  ],
+ "reloc_cases": [
+  {
+   "world": "reloc_demo_random_1_97",
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "jump",
+   "filter": "none",
+   "seed": 1,
+   "recovery": "single",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.78,
+    "duration_s": 21.78,
+    "min_clearance_m": 0.5182,
+    "path_length_m": 24.151
+   },
+   "max_pose_error_m": 0.6281,
+   "summary": {
+    "events": 6,
+    "accepted": 6,
+    "wrong_commits": 1,
+    "open_at_end": 0,
+    "moves": 0,
+    "hover_s": 1.2,
+    "move_s": null,
+    "first_recover_s": 0.2
+   },
+   "events": [
+    [
+     2.7,
+     "reset_counter",
+     "accepted",
+     0.2,
+     0.0292,
+     0
+    ],
+    [
+     3.2,
+     "innovation",
+     "accepted",
+     0.2,
+     0.0164,
+     0
+    ],
+    [
+     13.0,
+     "innovation",
+     "accepted",
+     0.2,
+     0.6281,
+     0
+    ],
+    [
+     17.2,
+     "innovation",
+     "accepted",
+     0.2,
+     0.0343,
+     0
+    ],
+    [
+     20.0,
+     "innovation",
+     "accepted",
+     0.2,
+     0.031,
+     0
+    ],
+    [
+     21.0,
+     "innovation",
+     "accepted",
+     0.2,
+     0.0218,
+     0
+    ]
+   ],
+   "fired_t": 2.7,
+   "hyp_frames": 6,
+   "sim_s": 21.78,
+   "native_wall_s": 0.643
+  },
+  {
+   "world": "reloc_demo_random_1_97",
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "jump",
+   "filter": "none",
+   "seed": 1,
+   "recovery": "multi",
+   "score": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 22.88,
+    "min_clearance_m": 0.853,
+    "path_length_m": 17.66
+   },
+   "max_pose_error_m": 0.5162,
+   "summary": {
+    "events": 2,
+    "accepted": 1,
+    "wrong_commits": 0,
+    "open_at_end": 1,
+    "moves": 0,
+    "hover_s": 10.3,
+    "move_s": null,
+    "first_recover_s": 0.4
+   },
+   "events": [
+    [
+     2.7,
+     "reset_counter",
+     "accepted",
+     0.4,
+     0.0064,
+     0
+    ],
+    [
+     13.0,
+     "innovation",
+     "open",
+     null,
+     null,
+     0
+    ]
+   ],
+   "fired_t": 2.7,
+   "hyp_frames": 100,
+   "sim_s": 22.9,
+   "native_wall_s": 0.909
+  },
+  {
+   "world": "reloc_demo_random_1_97",
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "jump",
+   "filter": "none",
+   "seed": 1,
+   "recovery": "multi_ig",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.34,
+    "duration_s": 20.34,
+    "min_clearance_m": 0.6982,
+    "path_length_m": 24.35
+   },
+   "max_pose_error_m": 0.5162,
+   "summary": {
+    "events": 2,
+    "accepted": 2,
+    "wrong_commits": 0,
+    "open_at_end": 0,
+    "moves": 1,
+    "hover_s": 2.1,
+    "move_s": 0.7,
+    "first_recover_s": 0.4
+   },
+   "events": [
+    [
+     2.7,
+     "reset_counter",
+     "accepted",
+     0.4,
+     0.0064,
+     0
+    ],
+    [
+     13.0,
+     "innovation",
+     "accepted",
+     1.7,
+     0.0748,
+     1
+    ]
+   ],
+   "fired_t": 2.7,
+   "hyp_frames": 19,
+   "sim_s": 20.34,
+   "native_wall_s": 0.61
+  },
+  {
+   "world": "u_trap_0",
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "dropout",
+   "filter": "none",
+   "seed": 0,
+   "recovery": "multi_ig",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.76,
+    "duration_s": 21.76,
+    "min_clearance_m": 0.6216,
+    "path_length_m": 24.609
+   },
+   "max_pose_error_m": 0.3368,
+   "summary": {
+    "events": 6,
+    "accepted": 6,
+    "wrong_commits": 0,
+    "open_at_end": 0,
+    "moves": 1,
+    "hover_s": 4.2,
+    "move_s": 1.2,
+    "first_recover_s": 0.4
+   },
+   "events": [
+    [
+     2.1,
+     "innovation",
+     "accepted",
+     0.4,
+     0.0305,
+     0
+    ],
+    [
+     7.5,
+     "quality_0",
+     "accepted",
+     0.4,
+     0.0978,
+     0
+    ],
+    [
+     9.3,
+     "reset_counter",
+     "accepted",
+     0.4,
+     0.0537,
+     0
+    ],
+    [
+     15.2,
+     "innovation",
+     "accepted",
+     2.2,
+     0.0379,
+     1
+    ],
+    [
+     18.1,
+     "innovation",
+     "accepted",
+     0.4,
+     0.0265,
+     0
+    ],
+    [
+     19.2,
+     "innovation",
+     "accepted",
+     0.4,
+     0.0222,
+     0
+    ]
+   ],
+   "fired_t": 7.267,
+   "hyp_frames": 36,
+   "sim_s": 21.76,
+   "native_wall_s": 0.61
+  }
+ ],
+ "reloc_checks": [
+  {
+   "check": "G run.run_one + run_disambiguate.build, same JSON world",
+   "case": [
+    "reloc_demo_random_1_97",
+    "jump",
+    1,
+    "single"
+   ],
+   "same": true,
+   "driver": {
+    "score": {
+     "outcome": "reached",
+     "time_to_goal_s": 21.78,
+     "duration_s": 21.78,
+     "min_clearance_m": 0.5182,
+     "path_length_m": 24.151
+    },
+    "events": [
+     [
+      2.7,
+      "reset_counter",
+      "accepted",
+      0.2,
+      0.0292,
+      0
+     ],
+     [
+      3.2,
+      "innovation",
+      "accepted",
+      0.2,
+      0.0164,
+      0
+     ],
+     [
+      13.0,
+      "innovation",
+      "accepted",
+      0.2,
+      0.6281,
+      0
+     ],
+     [
+      17.2,
+      "innovation",
+      "accepted",
+      0.2,
+      0.0343,
+      0
+     ],
+     [
+      20.0,
+      "innovation",
+      "accepted",
+      0.2,
+      0.031,
+      0
+     ],
+     [
+      21.0,
+      "innovation",
+      "accepted",
+      0.2,
+      0.0218,
+      0
+     ]
+    ]
+   },
+   "reference": {
+    "score": {
+     "outcome": "reached",
+     "time_to_goal_s": 21.78,
+     "duration_s": 21.78,
+     "min_clearance_m": 0.5182,
+     "path_length_m": 24.151
+    },
+    "events": [
+     [
+      2.7,
+      "reset_counter",
+      "accepted",
+      0.2,
+      0.0292,
+      0
+     ],
+     [
+      3.2,
+      "innovation",
+      "accepted",
+      0.2,
+      0.0164,
+      0
+     ],
+     [
+      13.0,
+      "innovation",
+      "accepted",
+      0.2,
+      0.6281,
+      0
+     ],
+     [
+      17.2,
+      "innovation",
+      "accepted",
+      0.2,
+      0.0343,
+      0
+     ],
+     [
+      20.0,
+      "innovation",
+      "accepted",
+      0.2,
+      0.031,
+      0
+     ],
+     [
+      21.0,
+      "innovation",
+      "accepted",
+      0.2,
+      0.0218,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "check": "G run.run_one + run_disambiguate.build, same JSON world",
+   "case": [
+    "reloc_demo_random_1_97",
+    "jump",
+    1,
+    "multi"
+   ],
+   "same": true,
+   "driver": {
+    "score": {
+     "outcome": "stuck",
+     "time_to_goal_s": null,
+     "duration_s": 22.88,
+     "min_clearance_m": 0.853,
+     "path_length_m": 17.66
+    },
+    "events": [
+     [
+      2.7,
+      "reset_counter",
+      "accepted",
+      0.4,
+      0.0064,
+      0
+     ],
+     [
+      13.0,
+      "innovation",
+      "open",
+      null,
+      null,
+      0
+     ]
+    ]
+   },
+   "reference": {
+    "score": {
+     "outcome": "stuck",
+     "time_to_goal_s": null,
+     "duration_s": 22.88,
+     "min_clearance_m": 0.853,
+     "path_length_m": 17.66
+    },
+    "events": [
+     [
+      2.7,
+      "reset_counter",
+      "accepted",
+      0.4,
+      0.0064,
+      0
+     ],
+     [
+      13.0,
+      "innovation",
+      "open",
+      null,
+      null,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "check": "G run.run_one + run_disambiguate.build, same JSON world",
+   "case": [
+    "reloc_demo_random_1_97",
+    "jump",
+    1,
+    "multi_ig"
+   ],
+   "same": true,
+   "driver": {
+    "score": {
+     "outcome": "reached",
+     "time_to_goal_s": 20.34,
+     "duration_s": 20.34,
+     "min_clearance_m": 0.6982,
+     "path_length_m": 24.35
+    },
+    "events": [
+     [
+      2.7,
+      "reset_counter",
+      "accepted",
+      0.4,
+      0.0064,
+      0
+     ],
+     [
+      13.0,
+      "innovation",
+      "accepted",
+      1.7,
+      0.0748,
+      1
+     ]
+    ]
+   },
+   "reference": {
+    "score": {
+     "outcome": "reached",
+     "time_to_goal_s": 20.34,
+     "duration_s": 20.34,
+     "min_clearance_m": 0.6982,
+     "path_length_m": 24.35
+    },
+    "events": [
+     [
+      2.7,
+      "reset_counter",
+      "accepted",
+      0.4,
+      0.0064,
+      0
+     ],
+     [
+      13.0,
+      "innovation",
+      "accepted",
+      1.7,
+      0.0748,
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "check": "G run.run_one + run_disambiguate.build, same JSON world",
+   "case": [
+    "u_trap_0",
+    "dropout",
+    0,
+    "multi_ig"
+   ],
+   "same": true,
+   "driver": {
+    "score": {
+     "outcome": "reached",
+     "time_to_goal_s": 21.76,
+     "duration_s": 21.76,
+     "min_clearance_m": 0.6216,
+     "path_length_m": 24.609
+    },
+    "events": [
+     [
+      2.1,
+      "innovation",
+      "accepted",
+      0.4,
+      0.0305,
+      0
+     ],
+     [
+      7.5,
+      "quality_0",
+      "accepted",
+      0.4,
+      0.0978,
+      0
+     ],
+     [
+      9.3,
+      "reset_counter",
+      "accepted",
+      0.4,
+      0.0537,
+      0
+     ],
+     [
+      15.2,
+      "innovation",
+      "accepted",
+      2.2,
+      0.0379,
+      1
+     ],
+     [
+      18.1,
+      "innovation",
+      "accepted",
+      0.4,
+      0.0265,
+      0
+     ],
+     [
+      19.2,
+      "innovation",
+      "accepted",
+      0.4,
+      0.0222,
+      0
+     ]
+    ]
+   },
+   "reference": {
+    "score": {
+     "outcome": "reached",
+     "time_to_goal_s": 21.76,
+     "duration_s": 21.76,
+     "min_clearance_m": 0.6216,
+     "path_length_m": 24.609
+    },
+    "events": [
+     [
+      2.1,
+      "innovation",
+      "accepted",
+      0.4,
+      0.0305,
+      0
+     ],
+     [
+      7.5,
+      "quality_0",
+      "accepted",
+      0.4,
+      0.0978,
+      0
+     ],
+     [
+      9.3,
+      "reset_counter",
+      "accepted",
+      0.4,
+      0.0537,
+      0
+     ],
+     [
+      15.2,
+      "innovation",
+      "accepted",
+      2.2,
+      0.0379,
+      1
+     ],
+     [
+      18.1,
+      "innovation",
+      "accepted",
+      0.4,
+      0.0265,
+      0
+     ],
+     [
+      19.2,
+      "innovation",
+      "accepted",
+      0.4,
+      0.0222,
+      0
+     ]
+    ]
+   }
+  }
+ ],
+ "reloc_published": [
+  {
+   "case": [
+    "reloc_demo_random_1_97",
+    "jump",
+    1,
+    "single"
+   ],
+   "same": false,
+   "published": {
+    "score": {
+     "outcome": "reached",
+     "time_to_goal_s": 21.78,
+     "duration_s": 21.78,
+     "min_clearance_m": 0.5183,
+     "path_length_m": 24.151
+    },
+    "events": [
+     [
+      2.7,
+      "reset_counter",
+      "accepted",
+      0.2,
+      0.0292,
+      0
+     ],
+     [
+      3.2,
+      "innovation",
+      "accepted",
+      0.2,
+      0.0164,
+      0
+     ],
+     [
+      13.0,
+      "innovation",
+      "accepted",
+      0.2,
+      0.6281,
+      0
+     ],
+     [
+      17.2,
+      "innovation",
+      "accepted",
+      0.2,
+      0.0343,
+      0
+     ],
+     [
+      20.0,
+      "innovation",
+      "accepted",
+      0.2,
+      0.031,
+      0
+     ],
+     [
+      21.0,
+      "innovation",
+      "accepted",
+      0.2,
+      0.0218,
+      0
+     ]
+    ]
+   },
+   "source": "samples/close-area-relocalize/results/disamb_random_1.json runs[97]"
+  },
+  {
+   "case": [
+    "reloc_demo_random_1_97",
+    "jump",
+    1,
+    "multi"
+   ],
+   "same": true,
+   "published": {
+    "score": {
+     "outcome": "stuck",
+     "time_to_goal_s": null,
+     "duration_s": 22.88,
+     "min_clearance_m": 0.853,
+     "path_length_m": 17.66
+    },
+    "events": [
+     [
+      2.7,
+      "reset_counter",
+      "accepted",
+      0.4,
+      0.0064,
+      0
+     ],
+     [
+      13.0,
+      "innovation",
+      "open",
+      null,
+      null,
+      0
+     ]
+    ]
+   },
+   "source": "samples/close-area-relocalize/results/disamb_random_1.json runs[97]"
+  },
+  {
+   "case": [
+    "reloc_demo_random_1_97",
+    "jump",
+    1,
+    "multi_ig"
+   ],
+   "same": true,
+   "published": {
+    "score": {
+     "outcome": "reached",
+     "time_to_goal_s": 20.34,
+     "duration_s": 20.34,
+     "min_clearance_m": 0.6982,
+     "path_length_m": 24.35
+    },
+    "events": [
+     [
+      2.7,
+      "reset_counter",
+      "accepted",
+      0.4,
+      0.0064,
+      0
+     ],
+     [
+      13.0,
+      "innovation",
+      "accepted",
+      1.7,
+      0.0748,
+      1
+     ]
+    ]
+   },
+   "source": "samples/close-area-relocalize/results/disamb_random_1.json runs[97]"
+  }
+ ],
  "matrix_rows": [
   {
    "case": [
@@ -1265,5 +2064,6 @@
   "machine": "arm64"
  },
  "summary": "21/26 checks identical",
+ "reloc_summary": "4/4 relocalization checks (G) identical",
  "matrix_summary": "5/6 identical to matrix_0.json, 6/6 same outcome (generated vs JSON world)"
 }

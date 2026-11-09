@@ -14,6 +14,9 @@ Checks (fields: outcome, time_to_goal_s, duration_s, min_clearance_m, path_lengt
      layout 0, generated world, not JSON, so the 4-decimal rounding of check B applies)
   D  driver with F2              ==  close-area-safety-filter/run_kill.run_one("F2", case, unsensed off)  (random family only;
                                     run_kill builds its world with world.make_world, not from JSON)
+  G  driver with recovery=<arm>  ==  run.run_one on the same JSON world with the pose source and planner from
+                                    samples/close-area-relocalize/run_disambiguate.build(arm, ...) (its run_cell recipe);
+                                    score fields + per loss event (trigger t, reason, result, recover s, err m, moves)
 Writes native_parity.json (cases + native scores) for measure_playground.mjs to compare the browser against.
 Input type: synthetic (seeded generated layouts, simulated vehicle and sensors).
 """
@@ -35,6 +38,7 @@ SAFETY = os.path.join(ROOT, "samples", "close-area-safety-filter")
 DWABUG = os.path.join(ROOT, "samples", "close-area-planner-dwa-bug")
 DSTAR = os.path.join(ROOT, "samples", "close-area-planner-dstar")
 SAMPLING = os.path.join(ROOT, "samples", "close-area-planner-sampling")
+RELOC = os.path.join(ROOT, "samples", "close-area-relocalize")
 BENCH = os.path.join(ROOT, "samples", "close-area-benchmark", "bench.py")
 KEYS = ("outcome", "time_to_goal_s", "duration_s", "min_clearance_m", "path_length_m")
 
@@ -64,6 +68,15 @@ CASES = [
     ("office_0", "informed_rrt_star", "ideal", "truth", "none"),
 ]
 NEW = ("dwa", "dwa_mem", "bug2", "tangent_bug", "dstar_lite", "informed_rrt_star")
+# loop-63: VIO loss recovery arms (world, planner, preset, fault, filter, seed, recovery). The demo world is
+# world.make_world("random", 1, 97) through world_json (templates/demo-script-close-area.md H1), saved by this script.
+DEMO = "reloc_demo_random_1_97"
+RELOC_CASES = [
+    (DEMO, "astar_known", "ideal", "jump", "none", 1, "single"),
+    (DEMO, "astar_known", "ideal", "jump", "none", 1, "multi"),
+    (DEMO, "astar_known", "ideal", "jump", "none", 1, "multi_ig"),
+    ("u_trap_0", "astar_known", "ideal", "dropout", "none", 0, "multi_ig"),
+]
 MATRIX = os.path.join(ROOT, "samples", "close-area-benchmark", "results", "matrix_0.json")
 
 
@@ -78,8 +91,10 @@ def load_arena():
 def driver_ns():
     js = open(os.path.join(PG, "worker.js")).read()
     src = re.search(r"const DRIVER_PY = String\.raw`([\s\S]*?)`;", js).group(1)
+    if PG not in sys.path:                 # pg_reloc.py, as /home/pyodide in the browser
+        sys.path.insert(0, PG)
     ns = {"REACTIVE_DIR": REACTIVE, "FILTER_DIR": SAFETY, "DWABUG_DIR": DWABUG, "DSTAR_DIR": DSTAR,
-          "SAMPLING_DIR": SAMPLING, "__name__": "playground_driver"}
+          "SAMPLING_DIR": SAMPLING, "RELOC_DIR": RELOC, "__name__": "playground_driver"}
     exec(compile(src, "worker.js:DRIVER_PY", "exec"), ns)
     return ns
 
@@ -110,6 +125,52 @@ def main():
                              "free_path": r["free_path"], "sim_s": r["sim_s"], "native_wall_s": round(wall, 3),
                              "frames": len(r["frames"])})
         print(wname, planner, preset, fault, filt, pick(r["score"]), f"{wall:.2f}s", flush=True)
+
+    # VIO loss recovery cases: same score fields plus the relocalization events
+    pg_reloc = sys.modules["pg_reloc"]
+    demo = WJ.to_json(WM.make_world("random", 1, 97))
+    demo["index"] = 97                     # make_world sets no .index; the driver seeds dark zones and the fault with it
+    with open(os.path.join(HERE, DEMO + ".json"), "w") as fh:
+        json.dump(demo, fh, indent=1)
+        fh.write("\n")
+    docs[DEMO] = json.load(open(os.path.join(HERE, DEMO + ".json")))
+    out["reloc_cases"], out["reloc_checks"] = [], []
+    for wname, planner, preset, fault, filt, seed, arm in RELOC_CASES:
+        if wname not in docs:
+            docs[wname] = json.load(open(os.path.join(PG, "presets", wname + ".json")))
+        doc = docs[wname]
+        t0 = time.perf_counter()
+        r = ns["simulate"](doc, planner, preset, fault, filt, seed, recovery=arm)
+        wall = time.perf_counter() - t0
+        ev = r["reloc"]["events"]
+        out["reloc_cases"].append({"world": wname, "planner": planner, "preset": preset, "fault": fault, "filter": filt,
+                                   "seed": seed, "recovery": arm, "score": pick(r["score"]),
+                                   "max_pose_error_m": r["score"]["max_pose_error_m"], "summary": r["reloc"]["summary"],
+                                   "events": pg_reloc.event_key(ev), "fired_t": (r["fault_log"] or {}).get("fired_t"),
+                                   "hyp_frames": len(r["reloc"]["hyps"]), "sim_s": r["sim_s"], "native_wall_s": round(wall, 3)})
+        print("RELOC", wname, fault, seed, arm, pick(r["score"]), r["reloc"]["summary"], f"{wall:.2f}s", flush=True)
+        # G: the same arm through run.run_one with run_disambiguate.build (run_disambiguate.py run_cell recipe)
+        wj = WJ.from_json(doc)
+        est = est_mod.make_pose_source_factory(fault, dark=True, sink=[])(wj, seed, doc.get("index", 0))
+        src, planner_obj = pg_reloc.M["run_disambiguate"].build(arm, wj, est, seed, doc.get("index", 0))
+        row, _, _ = run.run_one(planner_obj, wj, seed, doc.get("index", 0), run.DEFAULTS, src)
+        row.update(pg_reloc.M["run_disambiguate"].extra(row, est, src, est.fault))
+        ref = {"score": pick(row), "events": pg_reloc.event_key(row["events"])}
+        mine = {"score": pick(r["score"]), "events": pg_reloc.event_key(ev)}
+        ok = ref == mine
+        out["reloc_checks"].append({"check": "G run.run_one + run_disambiguate.build, same JSON world",
+                                    "case": [wname, fault, seed, arm], "same": ok, "driver": mine, "reference": ref})
+        print("CHECK G", wname, fault, seed, arm, "same" if ok else f"DIFF {mine} vs {ref}")
+    # H (information): demo cases vs the sample's own published run (generated world, not JSON)
+    pub = json.load(open(os.path.join(RELOC, "results", "disamb_random_1.json")))["results"]
+    out["reloc_published"] = []
+    for c in [c for c in out["reloc_cases"] if c["world"] == DEMO]:
+        row = pub[c["fault"]][c["recovery"]]["runs"][97]
+        ref = {"score": pick(row), "events": pg_reloc.event_key(row["events"])}
+        same_ = ref == {"score": c["score"], "events": c["events"]}
+        out["reloc_published"].append({"case": [c["world"], c["fault"], c["seed"], c["recovery"]], "same": same_,
+                                       "published": ref, "source": "samples/close-area-relocalize/results/disamb_random_1.json runs[97]"})
+        print("PUBLISHED", c["recovery"], "same" if same_ else f"differs: {ref}")
 
     def check(name, case, ref):
         mine = next(c for c in out["cases"] if (c["world"], c["planner"], c["preset"], c["fault"], c["filter"]) == case)
@@ -178,6 +239,9 @@ def main():
                          "machine": platform.machine()}
     n_ok = sum(c["same"] for c in out["checks"])
     out["summary"] = f"{n_ok}/{len(out['checks'])} checks identical"
+    g = out["reloc_checks"]
+    out["reloc_summary"] = f"{sum(c['same'] for c in g)}/{len(g)} relocalization checks (G) identical"
+    print(out["reloc_summary"])
     nm = out["matrix_rows"]
     out["matrix_summary"] = (f"{sum(r['same'] for r in nm)}/{len(nm)} identical to matrix_0.json, "
                              f"{sum(r['same_outcome'] for r in nm)}/{len(nm)} same outcome (generated vs JSON world)")

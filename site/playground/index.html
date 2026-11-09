@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Navigation Index - Arena playground</title>
-<meta name="description" content="Draw or load a close-area arena, place A and B, pick a planner, sensor, VIO fault and safety filter, and run the hub's real Python arena code in your browser (Pyodide).">
+<meta name="description" content="Draw or load a close-area arena, place A and B, pick a planner, sensor, VIO fault, VIO loss recovery and safety filter, and run the hub's real Python arena code in your browser (Pyodide).">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="../showcase.css?v=20261109">
-<link rel="stylesheet" href="playground.css?v=20261109b">
+<link rel="stylesheet" href="playground.css?v=20261109c">
 <link rel="stylesheet" href="advisor.css?v=20261109">
 <script>
   try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
 <script defer src="advisor.js?v=20261109"></script>
-<script defer src="playground.js?v=20261109d"></script>
+<script defer src="playground.js?v=20261109e"></script>
 </head>
 <body>
 <header class="top">
@@ -28,18 +28,20 @@
 <main>
 <section class="pg-head">
   <h1>Arena playground</h1>
-  <p class="muted">Draw or load an arena, drag A and B, pick a planner, sensor, VIO fault and safety filter, then run.
+  <p class="muted">Draw or load an arena, drag A and B, pick a planner, sensor, VIO fault, VIO loss recovery and safety filter, then run.
     Your browser runs the hub's real Python code (<a href="../../samples/close-area-arena/README.md">close-area-arena</a>,
     <a href="../../samples/close-area-planner-reactive/README.md">reactive planners</a>,
     <a href="../../samples/close-area-planner-dwa-bug/README.md">DWA and Bug</a>,
     <a href="../../samples/close-area-planner-dstar/README.md">D* Lite</a>,
     <a href="../../samples/close-area-planner-sampling/README.md">Informed RRT*</a>,
-    <a href="../../samples/close-area-safety-filter/README.md">F2 safety filter</a>) with Pyodide in a Web Worker. No JS re-implementation.</p>
+    <a href="../../samples/close-area-safety-filter/README.md">F2 safety filter</a>,
+    <a href="../../samples/close-area-relocalize/README.md">relocalization after VIO loss</a>) with Pyodide in a Web Worker. No JS re-implementation.</p>
   <p class="honest"><span class="badge synthetic">synthetic simulation, 2.5D point mass</span>
     <span class="muted small">Simulated layout, vehicle, range sensor and VIO. Scored on truth. Not a flight result.</span></p>
   <div id="load" class="load" aria-live="polite">
     <progress id="loadBar" max="100" value="0"></progress>
     <span id="loadText" class="small">Loading Python (about 22 MB on first visit, cached after)...</span>
+    <button class="btn sm" id="retryBtn" hidden title="Start the load again in a fresh worker">Retry</button>
   </div>
 </section>
 
@@ -90,6 +92,7 @@
       <fieldset class="cfg" id="cfgB" hidden><legend><span class="sw-b"></span> Config B</legend></fieldset>
     </div>
     <label class="small"><input type="checkbox" id="compare"> Compare two configs on the same world (overlaid)</label>
+    <label class="small arms" title="Needs VIO fault jump or dropout in config A"><input type="checkbox" id="armsCmp" disabled> Compare all VIO loss recovery arms on config A (none, single, multi, multi + info-gain)</label>
     <label class="small seed">Seed <input type="number" id="seed" min="0" max="9999" value="0"> <span class="muted">(sensor noise, dark zones, fault timing)</span></label>
     <div class="run-row">
       <button class="btn primary" id="runBtn" disabled>Run</button>
@@ -98,6 +101,15 @@
 
     <div id="resultBox" hidden>
       <div class="run-head" id="badges"></div>
+      <div class="spark-wrap" id="stripWrap" hidden>
+        <div class="spark-lbl"><span>VIO loss recovery verdict over time</span><span id="stripNow" class="small"></span></div>
+        <canvas id="stripC" aria-label="Relocalization verdict over time, one row per run"></canvas>
+        <ul class="strip-key small muted">
+          <li><span class="st lost"></span> lost</li><li><span class="st hovering"></span> hovering</li>
+          <li><span class="st moving"></span> info-gain move</li><li><span class="st accepted"></span> accepted</li>
+          <li><span class="st wrong"></span> wrong commit (&gt; 0.5 m from truth)</li><li><span class="st"></span> VIO nominal</li>
+        </ul>
+      </div>
       <table class="score" id="score"></table>
       <div class="spark-wrap">
         <div class="spark-lbl"><span>Truth clearance to the nearest surface, m</span><span id="sparkNow"></span></div>
@@ -111,6 +123,7 @@
       <li><span class="sw est"></span> estimate the planner flew on</li>
       <li><span class="sw plan"></span> planned path (A*, D* Lite, RRT*); thin rays: range beams now</li>
       <li><span class="sw dark"></span> VIO dark zone (drift grows); <span class="sw glass"></span> glass</li>
+      <li>VIO loss recovery: rings = pose hypotheses of the last 2 s (fainter = older or lower score), blue arrow = info-gain move, green ring = accepted pose, dark ring with cross = wrong commit</li>
     </ul>
     <p class="muted small" id="envMsg"></p>
   </aside>

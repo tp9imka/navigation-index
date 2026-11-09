@@ -2,18 +2,122 @@
 
 Open [index.html](index.html) (served from the repo root: `python3 -m http.server 8000`, then
 `http://localhost:8000/site/playground/`). Draw or load an arena, drag A and B, pick a planner,
-sensor preset, VIO fault and safety filter, press Run, and watch the replay with a score panel.
-Press **Copy link** to share the world and config: opening the link restores both and runs.
+sensor preset, VIO fault, VIO loss recovery and safety filter, press Run, and watch the replay with a
+score panel. Press **Copy link** to share the world and config: opening the link restores both and runs.
+If the first load fails (no network, blocked or slow cdn.jsdelivr.net), press **Retry**, or see
+[Offline / blocked CDN](#offline--blocked-cdn).
 
 The page runs the hub's real Python code with Pyodide in a Web Worker: the arena
 ([samples/close-area-arena](../../samples/close-area-arena/README.md)), APF and VFH+
 ([close-area-planner-reactive](../../samples/close-area-planner-reactive/README.md)), DWA, Bug2 and
 TangentBug ([close-area-planner-dwa-bug](../../samples/close-area-planner-dwa-bug/README.md)), D* Lite
 ([close-area-planner-dstar](../../samples/close-area-planner-dstar/README.md)), Informed RRT*
-([close-area-planner-sampling](../../samples/close-area-planner-sampling/README.md)) and the F2 filter
-([close-area-safety-filter](../../samples/close-area-safety-filter/README.md)). Nothing is re-implemented
+([close-area-planner-sampling](../../samples/close-area-planner-sampling/README.md)), the F2 filter
+([close-area-safety-filter](../../samples/close-area-safety-filter/README.md)) and relocalization after
+VIO loss ([close-area-relocalize](../../samples/close-area-relocalize/README.md)). Nothing is re-implemented
 in JS. Everything is **synthetic**: a simulated 2.5D point-mass vehicle, simulated range sensors and
 a simulated VIO. No number here is a flight result.
+
+## VIO loss recovery (loop-63)
+
+The **VIO loss recovery** select (per config) is active when the VIO fault is jump or dropout:
+
+| Option | Arm in samples/close-area-relocalize | What it does |
+|---|---|---|
+| none | `experiment.py` arm `estimator` | VIO EKF only, no relocalizer |
+| single | (b) `single` | match the scan against the known map, commit to the best match at once |
+| multi | (c) `multi` | keep up to 5 hypotheses, `RatioPersistence`, hover until one wins |
+| multi + info-gain move | (f) `multi_ig` | (c) plus, after 1 s without an accept, a 1 or 2 m move chosen by expected entropy reduction (up to 4 per event) |
+
+[pg_reloc.py](pg_reloc.py) builds each arm with `run_disambiguate.build(arm, world, estimator, seed, index)`,
+the call `run_disambiguate.py` makes, so the pose source and planner (A* + ESDF known map behind the
+hover gate) are the sample's own. With an arm selected the planner is fixed to A* known map and the
+filter to none (the sample has no F2 arm). The relocalizer reads its own 72-ray, 6 m scan (the
+sample's model, rng `[seed, index, 4301]`), whatever the sensor preset. pg_reloc.py only records:
+the hypotheses each scan produced, a status per 10 Hz frame, and `run_disambiguate.extra()`.
+
+- **Ghost markers**: rings at each hypothesis from the last 2 s, fainter when older or lower in score;
+  the current set has dots and scores. Blue arrow = an info-gain move. Green ring = accepted pose,
+  dark ring with a cross = wrong commit.
+- **Verdict strip**: one row per run, coloured per frame: lost (red: settling or no hypothesis
+  explains the scan), hovering (ambiguous or pending), info-gain move, accepted (re-anchored),
+  wrong commit (accepted more than 0.5 m from truth, the sample's own scoring), VIO nominal (grey).
+  For arm none it shows lost only while the estimator reports quality 0.
+- **Compare all recovery arms**: runs config A with none, single, multi and multi + info-gain on one
+  world and overlays the four runs (range beams of the first run only).
+- The preset menu adds **VIO-loss demo: random seed 1, layout 97 (jump)**: `world.make_world("random", 1, 97)`
+  through `world_json` ([results/reloc_demo_random_1_97.json](results/reloc_demo_random_1_97.json),
+  written by `native_parity.py`), the H1 case of
+  [demo-script-close-area.md](../../templates/demo-script-close-area.md). Loading it sets seed 1, jump
+  and compare all arms.
+
+Result on the demo world (synthetic, [results/playground_check.md](results/playground_check.md)):
+single commits 0.6281 m wrong after the 13.0 s trigger and reaches B in 21.78 s; multi stays
+ambiguous and ends stuck at 22.88 s; multi + info-gain flies 1 move, accepts 1.7 s after the trigger
+0.0748 m from truth, and reaches B in 20.34 s. none reaches B in 18.7 s with a 0.6562 m max pose
+error. **Browser = native on 4/4 relocalization cases** (3 arms on the demo world, multi + info-gain
+on u_trap_0 with dropout): score fields and every loss event (trigger time, reason, result, recover
+s, error, moves). Natively the driver also equals `run.run_one` + `run_disambiguate.build` on the
+same JSON world in 4/4 (check G in [native_parity.json](results/native_parity.json)). Against the
+sample's published `disamb_random_1.json` run 97 (generated world, not JSON): multi and
+multi + info-gain identical, single differs in min clearance only (0.5182 m here, 0.5183 m there),
+the 4-decimal JSON rounding of check B below. Screenshot: [pg_reloc_arms.png](results/pg_reloc_arms.png).
+
+## Loading: retries and the Retry button (loop-63)
+
+Dry-run blocker 7 ([docs/day1-dry-run.md](../../docs/day1-dry-run.md)): a cold load stalled 122.5 s and
+failed with "Failed to fetch"; there was no retry. Now `worker.js` runs each load step as a named
+step with 3 attempts and waits of 2 s and 6 s between them: `manifest.json`, `Pyodide runtime`
+(`pyodide.mjs` + `loadPyodide`; a retry imports `pyodide.mjs?attempt=N`, because a failed module import
+stays cached under its URL), `hub .py files` (refetches only the missing ones) and
+`numpy + scipy wheels` (checks `loadedPackages`; after a timed-out attempt it starts a fresh runtime,
+since the hung call may hold Pyodide's package lock). Timeouts: 20 s, 120 s, 30 s and 180 s. The
+load line shows each failed attempt and the wait. When all attempts fail, or the load runs over 45 s,
+a **Retry** button appears; it terminates the worker (and any fetch that still hangs) and starts a
+new one.
+
+Measured (headless Chrome 140, cdn.jsdelivr.net mapped to 127.0.0.1, so every CDN request is refused,
+[playground_check.md](results/playground_check.md)): 3 attempts of `Pyodide runtime` failed, the page
+showed the error and the Retry button 8.9 s after navigation
+([pg_blocked_retry.png](results/pg_blocked_retry.png)); pressing Retry started a new worker that
+retried again. The 122 s stall itself (a fetch that hangs, then fails) was not reproduced.
+
+## Offline / blocked CDN
+
+The playground needs Pyodide 314.0.7, numpy and scipy. By default it loads them from
+cdn.jsdelivr.net. To run without the CDN (venue Wi-Fi that blocks it, or no network), vendor them
+into `site/playground/pyodide-local/` once, while you still have network (about 30 MB on disk,
+7 files):
+
+```sh
+mkdir -p site/playground/pyodide-local && cd site/playground/pyodide-local
+B=https://cdn.jsdelivr.net/pyodide/v314.0.7/full/
+for f in pyodide.mjs pyodide.asm.mjs pyodide.asm.wasm python_stdlib.zip pyodide-lock.json; do curl -fsSLO "$B$f"; done
+python3 -c "import json; P = json.load(open('pyodide-lock.json'))['packages']; print(P['numpy']['file_name']); print(P['scipy']['file_name'])" \
+  | while read w; do curl -fsSLO "$B$w"; done
+cd ../../..
+python3 -m http.server 8000     # then http://localhost:8000/site/playground/
+```
+
+Do not commit the folder (the wheels are 17 MB). Pyodide checks each wheel against the sha256 in
+`pyodide-lock.json` when it loads it. Note: Pyodide 314 has `pyodide.asm.mjs`, not `pyodide.asm.js`
+(the `.js` name gives 404).
+
+Manifest options ([manifest.json](manifest.json)):
+
+| Key | Value | Meaning |
+|---|---|---|
+| `pyodide_base` | `https://cdn.jsdelivr.net/pyodide/v314.0.7/full/` | the CDN folder |
+| `pyodide_local` | `pyodide-local/` | the vendored folder, relative to manifest.json |
+| `pyodide_source` | `auto` (default), `cdn` or `local` | `auto`: the local folder when `<pyodide_local>pyodide.mjs` answers a HEAD request, else the CDN. `local`: fail with a message if the folder is missing |
+
+The page URL overrides `pyodide_source`: `index.html?pyodide=cdn`, `?pyodide=local` or `?pyodide=auto`.
+The status line under the page says which source loaded.
+
+Measured with the folder filled by the commands above and the CDN blocked as in the previous section:
+`?pyodide=auto` loaded from the local folder, ready 3.7 s after navigation, 0 successful jsdelivr
+requests, and the demo `single` case gave the same score and events as native. The folder was
+deleted after the check.
 
 ## Result
 
@@ -44,7 +148,7 @@ Input type: synthetic.
   | office_0 | informed_rrt_star | reached / 25.88 / 0.2762 / 13.578 | 0.82 | 0.434 |
 
 - **Shareable link works in a fresh profile.** A hand-drawn world with compare mode (TangentBug vs
-  D* Lite + F2, Crazyflie sensor, VIO on, seed 7) gave a 461-character link. A second headless Chrome
+  D* Lite + F2, Crazyflie sensor, VIO on, seed 7) gave a 491-character link (461 before loop-63 added the recovery param). A second headless Chrome
   with a new profile and cold cache opened it, restored the identical world and config, ran by
   itself, and got both scores identical to the source tab (A collision at 8.5 s, B reached in 28.4 s).
   The `w=` value is 426-1610 characters for the 8 presets (forest_0 is the longest, 6966 characters
@@ -52,9 +156,9 @@ Input type: synthetic.
   shows a message and loads random_0.
 - A box drawn with real pointer events on an empty world: A* known map and freest_beam give the same
   score in the browser and in native CPython on the saved [custom_world.json](results/custom_world.json).
-- The page stays responsive: during a 2.9 s A* unknown-map run in the worker, the longest gap
+- The page stays responsive: during a 3.2 s A* unknown-map run in the worker, the longest gap
   between animation frames was 10 ms.
-- Cold load in a fresh profile: Python ready 5.7 s after the page script starts, 22.2 MB
+- Cold load in a fresh profile: Python ready 5.6 s after the page script starts, 22.3 MB
   downloaded from cdn.jsdelivr.net. The load starts when the page opens, so it overlaps with drawing.
 - 390 px wide phone viewport: no horizontal scroll, runs work.
 - Screenshots (viewport only): [loading](results/pg_loading.png),
@@ -72,6 +176,7 @@ The driver loop matches the arena's own loops, checked natively in `native_parit
 | C: driver == `run.run_one` + `estimator.make_pose_source_factory(fault)` (the `run.evaluate` path) | 2/2 |
 | D: driver with F2 == `close-area-safety-filter/run_kill.run_one("F2", case, unsensed off)` | 2/2 |
 | B: driver on the preset JSON == `run.run_one` on `world.make_world` (no JSON) | 3/8 |
+| G (loop-63, separate count `reloc_summary`): driver with recovery == `run.run_one` + `run_disambiguate.build`, same JSON world, score + loss events | 4/4 |
 
 Information only: the 6 new cases against the benchmark's own rows in
 `samples/close-area-benchmark/results/matrix_0.json` (generated worlds, preset ideal, layout 0):
@@ -103,6 +208,7 @@ The only additions are a sensor-preset argument and trace recording.
 | Planner | straight, freest_beam, A* + ESDF known map, A* + ESDF unknown map, APF, VFH+, DWA, DWA + 3 s scan memory, Bug2, TangentBug, D* Lite unknown map, Informed RRT* 5000 known map | `planners/`, `run_faults.FreestBeam`, `close-area-planner-reactive`, `close-area-planner-dwa-bug`, `close-area-planner-dstar`, `close-area-planner-sampling` |
 | Sensor | ideal (72 rays, 6 m), crazyflie (4 cone beams, 3 m), crazyflie_bright (0.73 m) | `presets.py` |
 | VIO fault | off (planner sees truth), VIO no fault, jump, bias, dropout | `estimator.py`, `faults.py`; the VIO options add 2 seeded dark zones |
+| VIO loss recovery | none, single, multi, multi + info-gain move (with VIO jump or dropout; fixes planner A* known map and filter none) | `close-area-relocalize` via [pg_reloc.py](pg_reloc.py) and `run_disambiguate.build` |
 | Filter | none, F2 (PX4-CBF as shipped, on ranges) | `close-area-safety-filter/filters.py` |
 | Seed | 0-9999 | sensor noise, dark zones, fault timing |
 
@@ -141,10 +247,12 @@ resized in the editor; "New empty" gives a 20 x 20 m area.
 | File | What |
 |---|---|
 | [index.html](index.html), [playground.css](playground.css), [playground.js](playground.js) | The page. Uses `../showcase.css` for the palette and light / dark theme. `window.PG` is a small API for scripted checks |
-| [worker.js](worker.js) | ES module worker: loads Pyodide 314.0.7 (`pyodide.mjs`), numpy, scipy and the 30 files in the manifest once, then serves `run` messages |
-| [manifest.json](manifest.json) | Pyodide pin, packages, files (shared with the spike) |
+| [worker.js](worker.js) | ES module worker: loads Pyodide 314.0.7 (`pyodide.mjs`, CDN or local folder), numpy, scipy and the 36 files in the manifest once, with named retries, then serves `run` messages |
+| [pg_reloc.py](pg_reloc.py) | VIO loss recovery glue: builds the arms with `run_disambiguate.build`, records hypotheses, verdict status per frame and loss events |
+| [manifest.json](manifest.json) | Pyodide pin, CDN and local source, packages, files (shared with the spike) |
+| [results/reloc_demo_random_1_97.json](results/reloc_demo_random_1_97.json) | The VIO-loss demo world (written by `native_parity.py`) |
 | [presets/](presets/index.json) | Preset world JSON |
-| `results/export_presets.py`, `native_parity.py`, `measure_playground.mjs` | Export presets; native reference + loop parity; headless Chrome check, link check in a second fresh profile, and screenshots ([pg_shared_link.png](results/pg_shared_link.png)) |
+| `results/export_presets.py`, `native_parity.py`, `measure_playground.mjs` | Export presets; native reference + loop parity (incl. the relocalization cases); headless Chrome check, link check in a second fresh profile, blocked-CDN check in a third, and screenshots ([pg_shared_link.png](results/pg_shared_link.png)) |
 
 Re-run (needs the arena venv, Chrome at the macOS default path, network for the CDN):
 
@@ -153,7 +261,8 @@ uv venv --python 3.12 samples/close-area-arena/.venv
 uv pip install --python samples/close-area-arena/.venv -r samples/close-area-arena/requirements.txt
 samples/close-area-arena/.venv/bin/python site/playground/results/export_presets.py
 samples/close-area-arena/.venv/bin/python site/playground/results/native_parity.py   # about 1 minute
-node site/playground/results/measure_playground.mjs                                  # about 3 minutes
+node site/playground/results/measure_playground.mjs                                  # about 2 minutes
+# optional: fill site/playground/pyodide-local/ first (Offline / blocked CDN) to also measure the local load
 ```
 
 Finding: `importScripts` of the CDN `pyodide.js` failed in a classic worker in Chrome 140
@@ -178,6 +287,20 @@ workers. The worker is therefore started with `{type: "module"}` and uses `impor
   not measured: browser Python ran about 2x slower than native in the check, so such a run would
   take about 10 s.
 - Real or SITL flight: everything is the synthetic arena.
+- Retries (loop-63): only a refused connection was tested (CDN mapped to 127.0.0.1). A fetch that
+  hangs and then fails, as in blocker 7, the 120 s / 180 s step timeouts, the 45 s "still loading"
+  Retry, and the fresh-runtime path after a timed-out `loadPackage` were not exercised. Venue Wi-Fi
+  not tried.
+- Offline folder: measured once on localhost with the folder present; a machine with no network at
+  all was not tried (the CDN was blocked by host mapping, the local server still ran).
+- VIO loss recovery: 4 cases compared with native, all with the ideal sensor preset. Other presets
+  run (the relocalizer keeps its own 72-ray scan), but were not compared. The symmetric corridor case
+  of the sample (`CorridorJump`) is not in the playground. Ghost markers, strip and arrows were checked
+  by eye on one screenshot. The info-gain move arrow is drawn from the estimate when the move started,
+  in the map frame; the move is flown in the raw VIO frame, so after a jump the arrow can be offset
+  from the flown path.
+- `spike.html` with the extended manifest: not re-run. Its file loop makes a stray directory for
+  `pg_reloc.py` (no folder in its `dst`); harmless, not tested.
 
 # Spike (loop-48a): can the arena run in the browser?
 

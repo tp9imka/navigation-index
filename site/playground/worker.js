@@ -3,6 +3,7 @@
 // Protocol (postMessage):
 //   page => worker  {type: "run", id, world: <close-area-world/1 dict>, cfg: {planner, preset, fault, filter, seed}}
 //   worker => page  {type: "progress", stage, step, steps, mb, mb_expected}
+//                   {type: "retry", step, attempt, attempts, wait_s, error}   (a load step failed, retrying)
 //                   {type: "ready", env, planners, timings}
 //                   {type: "result", id, result}  |  {type: "error", id, message}
 // Pyodide version, package list and the Python files come from manifest.json (same pin as the spike).
@@ -117,6 +118,14 @@ try:
 except Exception as e:                       # noqa: BLE001
     LOAD_ERRORS["sampling"] = repr(e)
 # A* + MPC (close-area-planner-mpc) is not offered: it imports osqp, and Pyodide 314.0.7 ships no osqp wheel.
+# VIO loss recovery arms (samples/close-area-relocalize, built by pg_reloc.py the run_disambiguate.py way)
+pg_reloc = None
+try:
+    pg_reloc = importlib.import_module("pg_reloc")
+    pg_reloc.load(RELOC_DIR, _load_sample)
+except Exception as e:                       # noqa: BLE001
+    pg_reloc = None
+    LOAD_ERRORS["relocalize"] = repr(e)
 _t3b = time.perf_counter()
 
 # F2 safety filter (samples/close-area-safety-filter/filters.py, imports scipy.optimize)
@@ -142,6 +151,7 @@ def env_json():
                        "planners": list(PLANNERS), "presets": [k for k in ("ideal", "crazyflie", "crazyflie_bright")],
                        "faults": ["truth", "none", "jump", "bias", "dropout"],
                        "filters": ["none"] + (["F2"] if filters is not None else []),
+                       "recovery": list(pg_reloc.ARMS) if pg_reloc is not None else ["none"],
                        "load_errors": LOAD_ERRORS})
 
 
@@ -149,12 +159,23 @@ def _r(v, n=3):
     return None if v is None or not math.isfinite(v) else round(float(v), n)
 
 
-def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="none", seed=0, cfg=None):
+def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="none", seed=0, cfg=None,
+             recovery="none"):
     """Fly one world. Same loop as run.run_one (filter off) or run_kill.run_one (F2 on), with the
     sensor preset and pose source as arguments. Scored by scorer.score on truth.
     fault: "truth" = no estimator (planner sees truth); else estimator.py VIO EKF with dark zones and
-    faults.py case fault ("none" = no fault)."""
+    faults.py case fault ("none" = no fault).
+    recovery (pg_reloc.ARMS): with fault jump or dropout, wrap the estimator in a relocalization arm
+    of samples/close-area-relocalize; the arm brings its own planner (A* known map behind the hover
+    gate), so planner must be astar_known and the filter none."""
     cfg = cfg or run_mod.DEFAULTS
+    if recovery != "none":
+        if pg_reloc is None:
+            raise RuntimeError("relocalization did not load: " + LOAD_ERRORS.get("relocalize", "?"))
+        if fault not in pg_reloc.FAULTS:
+            raise ValueError("VIO loss recovery needs the jump or dropout fault")
+        if planner != "astar_known" or filt != "none":
+            raise ValueError("VIO loss recovery flies A* known map without a filter (as run_disambiguate.py)")
     t_start = time.perf_counter()
     w = WJ.from_json(doc)
     idx = doc.get("index")
@@ -167,8 +188,15 @@ def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="no
     est = None
     if fault != "truth":
         est = estimator.make_pose_source_factory(fault, dark=True)(w, seed, index)
-    ad = adapter_mod.SimAdapter(w, veh, sensor, pose_source=est)
-    pl = PLANNERS[planner](w) if planner in WORLD_PLANNERS else PLANNERS[planner]()
+    src, trace = est, None
+    if recovery != "none":
+        src, pl = pg_reloc.build(recovery, w, est, seed, index)
+        trace = pg_reloc.Trace(recovery, src)
+    else:
+        pl = PLANNERS[planner](w) if planner in WORLD_PLANNERS else PLANNERS[planner]()
+        if pg_reloc is not None and fault in pg_reloc.FAULTS and filt == "none":
+            trace = pg_reloc.Trace("none", est)      # verdict strip only: lost while quality is 0
+    ad = adapter_mod.SimAdapter(w, veh, sensor, pose_source=src)
     pl.reset()
     f = None
     if filt == "F2":
@@ -202,6 +230,8 @@ def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="no
                 pose = ad.pose()
                 tr = ad.truth()
                 max_err = max(max_err, math.hypot(pose.x - tr.x, pose.y - tr.y))
+                if trace is not None:
+                    trace.frame(pose, tr.t)
             scan = ad.ranges()
             sp_nom = pl.step(pose, scan, goal, grid, pdt)
             if f is None:
@@ -248,7 +278,9 @@ def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="no
     xy_a = np.asarray(xy)
     clr = w.sdf(xy_a[::ratio])                 # truth clearance at planner rate, for the sparkline
     return {
-        "config": {"planner": planner, "preset": preset, "fault": fault, "filter": filt, "seed": seed, "index": index},
+        "config": {"planner": planner, "preset": preset, "fault": fault, "filter": filt, "seed": seed, "index": index,
+                   "recovery": recovery},
+        "reloc": trace.result(res, est) if trace is not None else None,
         "score": res, "free_path": free,
         "wall_s": round(time.perf_counter() - t_start, 3), "sim_s": round(float(ts[-1]), 2),
         "hz": cfg["plan_hz"], "radius": radius, "goal_tol_m": scorer.GOAL_TOL,
@@ -267,7 +299,8 @@ def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="no
 def play(doc_json, cfg_json):
     c = json.loads(cfg_json)
     out = simulate(json.loads(doc_json), c.get("planner", "astar_known"), c.get("preset", "ideal"),
-                   c.get("fault", "truth"), c.get("filter", "none"), int(c.get("seed", 0)))
+                   c.get("fault", "truth"), c.get("filter", "none"), int(c.get("seed", 0)),
+                   recovery=c.get("recovery", "none"))
     return json.dumps(out, allow_nan=False)
 `;
 
@@ -286,45 +319,123 @@ function watchDownloads(expected) {
   } catch (err) { /* no PerformanceObserver in this worker: stage progress only */ }
 }
 
+// Load retries (loop-63, dry-run blocker 7: one cold load stalled 122 s, then "Failed to fetch").
+// Every load step is named and gets ATTEMPTS tries, with BACKOFF_S waits between them. A step that
+// does not finish within TIMEOUT_S counts as a failed attempt. After the last attempt the page shows
+// a Retry button, which starts a new worker (that also drops any fetch that still hangs).
+const ATTEMPTS = 3, BACKOFF_S = [2, 6];
+const TIMEOUT_S = { manifest: 20, source: 10, runtime: 120, files: 30, packages: 180 };
+const attemptsLog = [];
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const errText = err => String(err && err.message || err);
+
+function withTimeout(p, s, name) {
+  let timer;
+  return Promise.race([p, new Promise((_, fail) => { timer = setTimeout(() => fail(new Error(`${name} timed out after ${s} s`)), s * 1000); })])
+    .finally(() => clearTimeout(timer));
+}
+
+async function step(name, key, fn) {
+  for (let i = 1; ; i++) {
+    const t0 = performance.now();
+    try {
+      const out = await withTimeout(fn(i), TIMEOUT_S[key], name);
+      attemptsLog.push({ step: name, attempt: i, ok: true, ms: Math.round(performance.now() - t0) });
+      return out;
+    } catch (err) {
+      const msg = errText(err);
+      attemptsLog.push({ step: name, attempt: i, ok: false, ms: Math.round(performance.now() - t0), error: msg });
+      if (i >= ATTEMPTS) throw new Error(`${name}: ${i} of ${ATTEMPTS} attempts failed, last error: ${msg}`);
+      const wait = BACKOFF_S[i - 1];
+      postMessage({ type: "retry", step: name, attempt: i, attempts: ATTEMPTS, wait_s: wait, error: msg });
+      await sleep(wait * 1000);
+    }
+  }
+}
+
+async function fetchT(url, s, opts) {         // fetch with a real abort after s seconds
+  const ac = new AbortController(), timer = setTimeout(() => ac.abort(new Error(`timed out after ${s} s`)), s * 1000);
+  try {
+    const r = await fetch(url, { cache: "no-cache", ...opts, signal: ac.signal });
+    if (!r.ok) throw new Error(`HTTP ${r.status} ${url}`);
+    return r;
+  } finally { clearTimeout(timer); }
+}
+
+// Where Pyodide comes from. manifest.json "pyodide_source": "cdn" (pyodide_base), "local" (pyodide_local,
+// relative to the manifest) or "auto" (local when <pyodide_local>pyodide.mjs answers, else cdn).
+// The page URL can override it: ?pyodide=cdn|local|auto (playground.js passes it to the worker).
+async function pickSource(m, mUrl) {
+  const want = new URL(self.location.href).searchParams.get("pyodide") || m.pyodide_source || "cdn";
+  const local = m.pyodide_local ? new URL(m.pyodide_local, mUrl).href : null;
+  if (want === "local" || want === "auto") {
+    let found = false;
+    if (local) {
+      try { await fetchT(local + "pyodide.mjs", TIMEOUT_S.source, { method: "HEAD" }); found = true; } catch (err) { /* not vendored */ }
+    }
+    if (found) return { source: "local", base: local };
+    if (want === "local") throw new Error(`pyodide_source is local, but ${local}pyodide.mjs is missing (README: Offline / blocked CDN)`);
+  }
+  return { source: "cdn", base: m.pyodide_base };
+}
+
 async function init() {
   const t = {}, T0 = performance.now(), ms = a => Math.round(performance.now() - a);
   const mUrl = new URL("manifest.json", self.location.href);
+  const STEPS = 4;
   // revalidate: a cached manifest or .py from an older deploy breaks imports silently
-  const m = await (await fetch(mUrl, { cache: "no-cache" })).json();
+  const m = await step("manifest.json", "manifest", async () => (await fetchT(mUrl, TIMEOUT_S.manifest)).json());
   const exp = m.expected_download_mb;
   watchDownloads(exp);
-  const STEPS = 4;
-  progress(`Pyodide ${m.pyodide} runtime (wasm + Python stdlib, about 6 MB)`, 1, STEPS, { mb_expected: exp });
+  const src = await pickSource(m, mUrl);
+  const where = src.source === "local" ? "local folder " + m.pyodide_local : "cdn.jsdelivr.net";
+  progress(`Pyodide ${m.pyodide} runtime (wasm + Python stdlib, about 6 MB) from ${where}`, 1, STEPS, { mb_expected: exp });
   // Module worker: importScripts of the CDN pyodide.js failed in Chrome 140 (NetworkError), and
   // pyodide.mjs refuses classic workers, so worker.js is started with {type: "module"}.
-  const { loadPyodide } = await import(m.pyodide_base + "pyodide.mjs");
-  py = await loadPyodide({ indexURL: m.pyodide_base });
+  // A retry imports pyodide.mjs with ?attempt=N: a failed module import can stay cached under its URL.
+  const runtime = async i => {
+    const { loadPyodide } = await import(src.base + "pyodide.mjs" + (i > 1 ? `?attempt=${i}` : ""));
+    return loadPyodide({ indexURL: src.base });
+  };
+  py = await step("Pyodide runtime", "runtime", runtime);
   t.pyodide_ms = ms(T0);
-  progress("numpy + scipy wheels (about 16 MB) and the arena .py files", 2, STEPS, { mb_expected: exp });
+  progress(`numpy + scipy wheels (about 16 MB) from ${where}, and the hub .py files`, 2, STEPS, { mb_expected: exp });
   const a = performance.now();
-  const files = Promise.all(m.files.map(async f => {
-    const r = await fetch(new URL(f.src, mUrl), { cache: "no-cache" });
-    if (!r.ok) throw new Error(`${r.status} ${f.src}`);
-    return [f.dst, await r.text()];
-  }));
-  const [, texts] = await Promise.all([py.loadPackage(m.packages, { messageCallback: () => {} }), files]);
-  for (const [dst, text] of texts) {
-    py.FS.mkdirTree(HOME + dst.slice(0, dst.lastIndexOf("/")));
-    py.FS.writeFile(HOME + dst, text);
+  const texts = new Map();
+  await step("hub .py files", "files", () => Promise.all(m.files.filter(f => !texts.has(f.dst)).map(async f => {
+    texts.set(f.dst, await (await fetchT(new URL(f.src, mUrl), TIMEOUT_S.files)).text());
+  })));
+  let timedOut = false;
+  await step("numpy + scipy wheels", "packages", async i => {
+    // a timed-out loadPackage may still hold Pyodide's package lock: start a fresh runtime first
+    if (i > 1 && timedOut) py = await runtime(i);
+    timedOut = true;
+    const errs = [];
+    await py.loadPackage(m.packages, { messageCallback: () => {}, errorCallback: e => errs.push(String(e)) });
+    timedOut = false;
+    const missing = m.packages.filter(p => !(p in py.loadedPackages));
+    if (missing.length) throw new Error(`not loaded: ${missing.join(", ")}${errs.length ? " (" + errs.slice(-2).join("; ") + ")" : ""}`);
+  });
+  for (const f of m.files) {
+    py.FS.mkdirTree(HOME + f.dst.slice(0, f.dst.lastIndexOf("/") + 1));
+    py.FS.writeFile(HOME + f.dst, texts.get(f.dst));
   }
   t.packages_ms = ms(a);
-  progress("importing the arena, planners and safety filter", 3, STEPS, { mb_expected: exp });
+  progress("importing the arena, planners, safety filter and relocalizer", 3, STEPS, { mb_expected: exp });
   const b = performance.now();
   py.runPython(`import sys\nif "${HOME}" not in sys.path: sys.path.insert(0, "${HOME}")\n` +
     `REACTIVE_DIR = "${HOME}reactive"\nFILTER_DIR = "${HOME}safety_filter"\n` +
-    `DWABUG_DIR = "${HOME}dwa_bug"\nDSTAR_DIR = "${HOME}dstar"\nSAMPLING_DIR = "${HOME}sampling"`);
+    `DWABUG_DIR = "${HOME}dwa_bug"\nDSTAR_DIR = "${HOME}dstar"\nSAMPLING_DIR = "${HOME}sampling"\nRELOC_DIR = "${HOME}reloc"`);
   py.runPython(DRIVER_PY);
   t.import_ms = ms(b);
   t.ready_ms = ms(T0);
   play = py.globals.get("play");
   const env = JSON.parse(py.globals.get("env_json")());
   env.pyodide = m.pyodide;
-  env.arena_files = texts.length;
+  env.pyodide_source = src.source;
+  env.pyodide_base = src.base;
+  env.arena_files = m.files.length;
+  env.load_attempts = attemptsLog;
   progress("ready", STEPS, STEPS, { mb_expected: exp });
   postMessage({ type: "ready", env, timings: t, mb: Math.round(mbDone * 10) / 10 });
 }
@@ -342,7 +453,7 @@ function runOne(msg) {
 }
 
 ready = init().catch(err => {
-  postMessage({ type: "error", id: null, fatal: true, message: "load failed: " + String(err && err.message || err) });
+  postMessage({ type: "error", id: null, fatal: true, message: "load failed: " + errText(err), attempts: attemptsLog });
   throw err;
 });
 

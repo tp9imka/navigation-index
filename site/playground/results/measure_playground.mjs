@@ -4,6 +4,10 @@
 //   node site/playground/results/measure_playground.mjs
 // Needs Google Chrome at the macOS default path (or CHROME=...), network access to cdn.jsdelivr.net,
 // and the arena venv (for the native run of the hand-drawn world).
+// loop-63: also the VIO loss recovery cases (native_parity.json reloc_cases), the arms compare view, and a
+// third Chrome with cdn.jsdelivr.net mapped to 127.0.0.1 (blocked): automatic retries, then the Retry button;
+// when site/playground/pyodide-local/ exists (README: Offline / blocked CDN) it also loads from there.
+// The main page is opened with ?pyodide=cdn so a vendored folder does not change the CDN measurement.
 // Writes into site/playground/results/: playground_check.json, playground_check.md, custom_world.json and
 // viewport screenshots pg_*.png (1280 x 900 desktop, 390 x 844 phone at 2x).
 import { spawn, spawnSync } from "node:child_process";
@@ -15,7 +19,7 @@ import { fileURLToPath } from "node:url";
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, "../../..");
 const CHROME = process.env.CHROME || "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
-const PORT = 8766, DBG = 9334, DBG2 = 9335, DESK = { width: 1280, height: 900 };
+const PORT = 8766, DBG = 9334, DBG2 = 9335, DBG3 = 9336, DESK = { width: 1280, height: 900 };
 const sleep = t => new Promise(r => setTimeout(r, t));
 const write = (name, data) => fs.writeFileSync(path.join(HERE, name), typeof data === "string" ? data : JSON.stringify(data, null, 1) + "\n");
 const NATIVE = JSON.parse(fs.readFileSync(path.join(HERE, "native_parity.json"), "utf8"));
@@ -63,10 +67,10 @@ async function shot(cdp, name) {
 const pick = s => Object.fromEntries(KEYS.map(k => [k, s[k]]));
 const same = (a, b) => KEYS.every(k => a[k] === b[k]);
 
-async function launch(port, profile) {     // headless Chrome with its own profile; returns {chrome, cdp, version}
+async function launch(port, profile, extra = []) {     // headless Chrome with its own profile; returns {chrome, cdp, version}
   const chrome = spawn(CHROME, ["--headless=new", `--remote-debugging-port=${port}`, `--user-data-dir=${profile}`,
     "--no-first-run", "--no-default-browser-check", "--disable-background-timer-throttling",
-    "--disable-renderer-backgrounding", `--window-size=${DESK.width},${DESK.height}`, "--hide-scrollbars", "about:blank"],
+    "--disable-renderer-backgrounding", `--window-size=${DESK.width},${DESK.height}`, "--hide-scrollbars", ...extra, "about:blank"],
   { stdio: ["ignore", "ignore", "pipe"] });
   let version = null;
   for (let i = 0; i < 240 && !version; i++) { await sleep(250); version = await fetch(`http://127.0.0.1:${port}/json/version`).then(r => r.json()).catch(() => null); }
@@ -83,7 +87,7 @@ async function main() {
   const profile = fs.mkdtempSync(path.join(os.tmpdir(), "pg-chrome-"));
   const server = spawn("python3", ["-m", "http.server", String(PORT), "--bind", "127.0.0.1"], { cwd: ROOT, stdio: "ignore" });
   let chrome = null;
-  const out = { date: new Date().toISOString(), input: "synthetic", page: `http://127.0.0.1:${PORT}/site/playground/index.html`, steps: [] };
+  const out = { date: new Date().toISOString(), input: "synthetic", page: `http://127.0.0.1:${PORT}/site/playground/index.html?pyodide=cdn`, steps: [] };
   try {
     const c1 = await launch(DBG, profile);
     chrome = c1.chrome;
@@ -114,6 +118,33 @@ async function main() {
       out.parity.push(row);
       console.log(c.world, c.planner, c.preset, c.fault, c.filter, row.same ? "same" : "DIFF", b.wall_s, "s");
     }
+
+    // 2b. VIO loss recovery cases: score fields and the loss events (pg_reloc.event_key), browser vs native
+    out.reloc = [];
+    const evKey = evs => evs.map(e => [e.t_trigger, e.reason, e.result, e.recover_s, e.err_m, (e.moves || []).filter(m => m.move != null).length]);
+    for (const c of NATIVE.reloc_cases || []) {
+      await cdp.eval(`PG.loadPreset(${JSON.stringify(c.world)})`);
+      const cfg = { planner: c.planner, preset: c.preset, fault: c.fault, filter: c.filter, seed: c.seed, recovery: c.recovery };
+      const r = await cdp.eval(`PG.run([${JSON.stringify(cfg)}]).then(x => x && x.map(y => ({score: y.score, wall_s: y.wall_s, reloc: y.reloc})))`);
+      if (!r) throw new Error("run failed for " + JSON.stringify(c));
+      const b = r[0], ev = evKey(b.reloc.events);
+      const row = { world: c.world, fault: c.fault, seed: c.seed, recovery: c.recovery, browser: pick(b.score), native: c.score,
+        browser_events: ev, native_events: c.events, summary: b.reloc.summary,
+        same: same(b.score, c.score) && JSON.stringify(ev) === JSON.stringify(c.events), browser_wall_s: b.wall_s, native_wall_s: c.native_wall_s };
+      out.reloc.push(row);
+      console.log("reloc", c.world, c.fault, c.recovery, row.same ? "same" : "DIFF", b.wall_s, "s");
+    }
+    // 2c. compare all recovery arms on the demo world, mid-event (t 13.6 s: jump at 2.7 s, innovation trigger at 13.0 s)
+    await cdp.eval("PG.loadPreset('reloc_demo_random_1_97')");
+    const arms = await cdp.eval(`PG.runArms({planner:'astar_known',preset:'ideal',fault:'jump',filter:'none',seed:1}).then(x => x.map(y => ({arm: y.config.recovery, score: y.score, s: y.reloc.summary})))`);
+    await cdp.eval("PG.seek(13.6)");
+    await sleep(300);
+    out.arms = { world: "reloc_demo_random_1_97", seed: 1, fault: "jump", at_s: 13.6, runs: arms.map(a => ({ arm: a.arm, ...pick(a.score), ...a.s })),
+      status_at: await cdp.eval("PG.status()"), parity_text: await cdp.eval("document.querySelector('#parityMsg').textContent") };
+    await cdp.eval("window.scrollTo(0, 340); true");
+    await sleep(300);
+    out.arms.shot = await shot(cdp, "pg_reloc_arms.png");
+    await cdp.eval("window.scrollTo(0, 0); true");
 
     // 3. compare mode on a preset: A* known map vs freest_beam, end of replay
     await cdp.eval("PG.loadPreset('random_0')");
@@ -216,6 +247,49 @@ async function main() {
     }
     link.source_scores = src.map(pick);
     out.link = link;
+
+    // 5c. blocked CDN (cdn.jsdelivr.net => 127.0.0.1): automatic retries, then the Retry button; then the local folder
+    const profile3 = fs.mkdtempSync(path.join(os.tmpdir(), "pg-chrome-blocked-"));
+    const c3 = await launch(DBG3, profile3, ["--host-resolver-rules=MAP cdn.jsdelivr.net 127.0.0.1"]);
+    try {
+      const blocked = {};
+      const t0 = Date.now();
+      await c3.cdp.send("Page.navigate", { url: `http://127.0.0.1:${PORT}/site/playground/index.html?pyodide=cdn` });
+      await sleep(800);
+      let st = null;
+      for (let i = 0; i < 300 && !(st && (st.failed || st.ready)); i++) { await sleep(1000); st = await c3.cdp.eval("PG.loadState()"); }
+      blocked.cdn = { wall_s: (Date.now() - t0) / 1e3, failed: st.failed, retry_visible: st.retry_visible, text: st.text,
+        attempts: (st.attempts || []).map(a => ({ step: a.step, attempt: a.attempt, ok: a.ok, ms: a.ms, error: a.error })) };
+      blocked.cdn.shot = await shot(c3.cdp, "pg_blocked_retry.png");
+      const t1 = Date.now();
+      await c3.cdp.eval("document.querySelector('#retryBtn').click(); true");
+      await sleep(3000);
+      st = await c3.cdp.eval("PG.loadState()");
+      blocked.after_retry_press = { attempt: st.attempt, failed: st.failed, text: st.text, s_after_press: (Date.now() - t1) / 1e3 };
+      const local = path.join(HERE, "..", "pyodide-local", "pyodide.mjs");
+      blocked.local_folder = fs.existsSync(local);
+      if (blocked.local_folder) {
+        await c3.cdp.send("Page.navigate", { url: `http://127.0.0.1:${PORT}/site/playground/index.html?pyodide=auto` });
+        await sleep(800);
+        const t2 = Date.now();
+        await c3.cdp.eval("PG.ready.then(() => true)");
+        await c3.cdp.eval("PG.started.then(() => true)");
+        const c = (NATIVE.reloc_cases || [])[0];
+        await c3.cdp.eval(`PG.loadPreset(${JSON.stringify(c.world)})`);
+        const r = await c3.cdp.eval(`PG.run([${JSON.stringify({ planner: c.planner, preset: c.preset, fault: c.fault, filter: c.filter, seed: c.seed, recovery: c.recovery })}]).then(x => x[0])`);
+        blocked.local = { ready_s: (Date.now() - t2) / 1e3, source: await c3.cdp.eval("PG_STATE.env.pyodide_source"),
+          jsdelivr_requests_ok: await c3.cdp.eval("performance.getEntriesByType('resource').filter(e => e.name.includes('jsdelivr') && e.responseStatus === 200).length"),
+          case: [c.world, c.fault, c.seed, c.recovery], same_as_native: same(r.score, c.score) && JSON.stringify(evKey(r.reloc.events)) === JSON.stringify(c.events) };
+      }
+      blocked.console = c3.cdp.log.splice(0);
+      out.blocked = blocked;
+      console.log("blocked", JSON.stringify({ cdn_failed: blocked.cdn.failed, wall_s: blocked.cdn.wall_s, local: blocked.local || null }));
+      c3.cdp.ws.close();
+    } finally {
+      c3.chrome.kill();
+      await sleep(1000);
+      try { fs.rmSync(profile3, { recursive: true, force: true, maxRetries: 5, retryDelay: 500 }); } catch (err) { /* temp dir */ }
+    }
     console.log("link", link.url_chars, "chars; fresh world same", link.fresh.world_same, "config same", link.fresh.config_same, "scores same", link.fresh.scores_same);
 
     // 6. phone width: no horizontal scroll, run still works
@@ -291,7 +365,30 @@ function report(o) {
   L.push(`Fields: ${KEYS.join(", ")}. Seed 0.`, "");
   L.push(`| world | planner | sensor | VIO fault | filter | browser: ${KEYS.join(" / ")} | same as native | browser Python s | native Python s |`, "|---|---|---|---|---|---|---|---|---|");
   for (const r of o.parity) L.push(`| ${r.world} | ${r.planner} | ${r.preset} | ${r.fault} | ${r.filter} | ${f(r.browser)} | ${r.same ? "yes" : "NO: native " + f(r.native)} | ${r.browser_wall_s} | ${r.native_wall_s} |`);
-  L.push("", "## Hand-drawn world (box drawn with pointer events)", "");
+  const nR = o.reloc.filter(r => r.same).length;
+  L.push("", `## VIO loss recovery: browser = native on ${nR}/${o.reloc.length} cases`, "");
+  L.push("Arms built by `pg_reloc.py` with `samples/close-area-relocalize/run_disambiguate.build`; A* known map behind the hover gate, ideal sensor. " +
+    "Compared: the score fields above plus, per loss event, trigger time, reason, result, recover s, error of the accepted pose to truth, moves flown.", "");
+  L.push(`| world | fault | seed | recovery | browser: ${KEYS.join(" / ")} | events / accepted / wrong / open at end / moves | same as native | browser Python s | native Python s |`, "|---|---|---|---|---|---|---|---|---|");
+  for (const r of o.reloc) {
+    const s = r.summary;
+    L.push(`| ${r.world} | ${r.fault} | ${r.seed} | ${r.recovery} | ${f(r.browser)} | ${s.events} / ${s.accepted} / ${s.wrong_commits} / ${s.open_at_end} / ${s.moves} | ${r.same ? "yes" : "NO: native " + f(r.native) + " " + JSON.stringify(r.native_events)} | ${r.browser_wall_s} | ${r.native_wall_s} |`);
+  }
+  const A = o.arms;
+  L.push("", `Compare all arms, ${A.world}, seed ${A.seed}, ${A.fault} ([pg_reloc_arms.png](pg_reloc_arms.png), t ${A.at_s} s):`, "",
+    "| arm | outcome | time to B s | events | accepted | wrong commits | open at end | moves | first recover s |", "|---|---|---|---|---|---|---|---|---|");
+  for (const r of A.runs) L.push(`| ${r.arm} | ${r.outcome} | ${r.time_to_goal_s == null ? "-" : r.time_to_goal_s} | ${r.events} | ${r.accepted} | ${r.wrong_commits} | ${r.open_at_end} | ${r.moves} | ${r.first_recover_s == null ? "-" : r.first_recover_s} |`);
+  L.push("", `Verdict strip at ${A.at_s} s: ${A.status_at.map(x => `${x.run} ${x.status}`).join(", ")}. Page note: "${A.parity_text}"`, "");
+  const B = o.blocked;
+  L.push("## Blocked CDN (cdn.jsdelivr.net mapped to 127.0.0.1, fresh profile)", "");
+  L.push(`- \`?pyodide=cdn\`: load failed after ${B.cdn.wall_s} s, Retry button visible: ${B.cdn.retry_visible ? "yes" : "NO"}. Attempts: ` +
+    B.cdn.attempts.map(a => `${a.step} #${a.attempt} ${a.ok ? "ok" : "failed"} (${a.ms} ms)`).join(", ") + `. Message: "${B.cdn.text}" ([pg_blocked_retry.png](pg_blocked_retry.png)).`);
+  L.push(`- Retry pressed: new worker, attempt ${B.after_retry_press.attempt}; ${B.after_retry_press.s_after_press} s later: "${B.after_retry_press.text}"`);
+  L.push(B.local_folder ? `- \`?pyodide=auto\` with site/playground/pyodide-local/ filled (README: Offline / blocked CDN): source ${B.local.source}, ready ${B.local.ready_s} s after navigation, ` +
+    `${B.local.jsdelivr_requests_ok} successful jsdelivr requests, ${B.local.case.join(" ")} same as native: ${B.local.same_as_native ? "yes" : "NO"}.`
+    : "- site/playground/pyodide-local/ not present: local load not measured in this run.");
+  L.push(`- Console errors / warnings / exceptions in this profile: ${B.console.length}${B.console.length ? ": " + B.console.join(" | ").slice(0, 600) : ""}.`, "");
+  L.push("## Hand-drawn world (box drawn with pointer events)", "");
   L.push(`One box from (7, 7) to (13, 12) on an empty 20 x 20 m area, A (1.5, 1.5), B (18.5, 18.5): ${JSON.stringify(o.drawn.obstacles[0])}. BFS free path: ${o.custom.free_path ? "yes" : "no"}. Saved as [custom_world.json](custom_world.json).`, "");
   L.push(`| planner | browser: ${KEYS.join(" / ")} | native: same? |`, "|---|---|---|");
   L.push(`| astar_known | ${f(o.custom.a)} | ${o.custom.same_a ? "yes" : "NO: " + f(o.custom.native_a)} |`);
@@ -320,7 +417,7 @@ function report(o) {
   L.push(`- Phone ${o.phone.viewport}: office_0 astar_known ${f(o.phone.score)}; document scroll width ${o.phone.scroll_width} px, body ${o.phone.body_scroll_width} px => ` +
     `${o.phone.no_horizontal_scroll ? "no horizontal scroll" : "HORIZONTAL SCROLL"}.`, "");
   L.push("- Nav link at 390 px: " + Object.entries(o.nav_390).map(([p, v]) => `site/${p} scroll width ${v.scroll_width} px, Playground link ${v.link_visible ? "visible" : "NOT fully visible"} (right edge ${v.link_right_px} px)`).join("; ") + ".", "");
-  const shots = [o.loading_shot, o.compare.shot, o.custom.shot, o.fault_filter.shot, o.link.fresh.shot, o.phone.shot];
+  const shots = [o.loading_shot, o.compare.shot, o.custom.shot, o.fault_filter.shot, o.link.fresh.shot, o.phone.shot, o.arms.shot, o.blocked.cdn.shot];
   L.push("Viewport screenshots (checked with `sips -g pixelHeight`): " + shots.map(s => `[${s.file}](${s.file}) ${s.width} x ${s.height}`).join(", ") + ".", "");
   L.push(`Console errors / warnings / exceptions: ${o.console.length}${o.console.length ? ": " + o.console.join(" | ") : ""}.`, "");
   return L.join("\n");

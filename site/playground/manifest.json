@@ -1,7 +1,9 @@
 {
-  "comment": "Files spike.js and worker.js copy into the Pyodide filesystem. src is relative to this manifest (../../ is the repo root); dst is relative to /home/pyodide, which is on sys.path. group arena = samples/close-area-arena as package close_area_arena; reactive = APF and VFH+ from samples/close-area-planner-reactive (their arena.py finds close_area_arena already imported); safety_filter = filters.py (F2) from samples/close-area-safety-filter; dwa_bug = DWA and Bug2 / TangentBug from samples/close-area-planner-dwa-bug; dstar = D* Lite from samples/close-area-planner-dstar; sampling = Informed RRT* from samples/close-area-planner-sampling (each group keeps its own arena.py, which finds close_area_arena already imported). No osqp wheel in Pyodide 314.0.7, so close-area-planner-mpc is not loaded. No sample file is changed.",
+  "comment": "Files spike.js and worker.js copy into the Pyodide filesystem. src is relative to this manifest (../../ is the repo root); dst is relative to /home/pyodide, which is on sys.path. group arena = samples/close-area-arena as package close_area_arena; reactive = APF and VFH+ from samples/close-area-planner-reactive (their arena.py finds close_area_arena already imported); safety_filter = filters.py (F2) from samples/close-area-safety-filter; dwa_bug = DWA and Bug2 / TangentBug from samples/close-area-planner-dwa-bug; dstar = D* Lite from samples/close-area-planner-dstar; sampling = Informed RRT* from samples/close-area-planner-sampling (each group keeps its own arena.py, which finds close_area_arena already imported). No osqp wheel in Pyodide 314.0.7, so close-area-planner-mpc is not loaded. No sample file is changed. relocalize = relocalize.py, disambiguate.py, experiment.py, run_disambiguate.py and arena.py from samples/close-area-relocalize, plus pg_reloc.py (playground glue, this folder), for the VIO loss recovery control. pyodide_source: cdn (pyodide_base), local (pyodide_local, relative to this manifest; README 'Offline / blocked CDN' says how to fill it) or auto (local when <pyodide_local>pyodide.mjs exists, else cdn). The page URL can override it with ?pyodide=cdn|local|auto.",
   "pyodide": "314.0.7",
   "pyodide_base": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/",
+  "pyodide_source": "auto",
+  "pyodide_local": "pyodide-local/",
   "packages": ["numpy", "scipy"],
   "package": "close_area_arena",
   "expected_download_mb": 22.0,
@@ -35,6 +37,12 @@
     {"group": "dstar", "src": "../../samples/close-area-planner-dstar/arena.py", "dst": "dstar/arena.py"},
     {"group": "dstar", "src": "../../samples/close-area-planner-dstar/dstar_lite.py", "dst": "dstar/dstar_lite.py"},
     {"group": "sampling", "src": "../../samples/close-area-planner-sampling/arena.py", "dst": "sampling/arena.py"},
-    {"group": "sampling", "src": "../../samples/close-area-planner-sampling/rrt_star.py", "dst": "sampling/rrt_star.py"}
+    {"group": "sampling", "src": "../../samples/close-area-planner-sampling/rrt_star.py", "dst": "sampling/rrt_star.py"},
+    {"group": "relocalize", "src": "../../samples/close-area-relocalize/arena.py", "dst": "reloc/arena.py"},
+    {"group": "relocalize", "src": "../../samples/close-area-relocalize/relocalize.py", "dst": "reloc/relocalize.py"},
+    {"group": "relocalize", "src": "../../samples/close-area-relocalize/disambiguate.py", "dst": "reloc/disambiguate.py"},
+    {"group": "relocalize", "src": "../../samples/close-area-relocalize/experiment.py", "dst": "reloc/experiment.py"},
+    {"group": "relocalize", "src": "../../samples/close-area-relocalize/run_disambiguate.py", "dst": "reloc/run_disambiguate.py"},
+    {"group": "relocalize", "src": "pg_reloc.py", "dst": "pg_reloc.py"}
   ]
 }

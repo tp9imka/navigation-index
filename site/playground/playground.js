@@ -21,11 +21,25 @@ const LABELS = {
   preset: { ideal: "ideal: 72 rays, 360 deg, 6 m", crazyflie: "Crazyflie: 4 cone beams, 3 m", crazyflie_bright: "Crazyflie, bright light: 0.73 m" },
   fault: { truth: "off: planner sees truth", none: "VIO EKF, no fault", jump: "VIO jump 0.5 m", bias: "VIO bias 0.05 m/s, 10 s", dropout: "VIO dropout 2 s" },
   filter: { none: "none", F2: "F2: PX4-CBF on ranges" },
+  recovery: { none: "none: VIO EKF only", single: "single: commit to the best match", multi: "multi: hover until one wins",
+    multi_ig: "multi + info-gain move" },
 };
 const DEFAULT_CFG = [
-  { planner: "astar_known", preset: "ideal", fault: "truth", filter: "none" },
-  { planner: "freest_beam", preset: "ideal", fault: "truth", filter: "none" },
+  { planner: "astar_known", preset: "ideal", fault: "truth", filter: "none", recovery: "none" },
+  { planner: "freest_beam", preset: "ideal", fault: "truth", filter: "none", recovery: "none" },
 ];
+// VIO loss recovery (pg_reloc.py): active with these faults; the arm flies A* known map, no filter.
+const RELOC_FAULTS = ["jump", "dropout"];
+const ARMS = ["none", "single", "multi", "multi_ig"];
+const ARM_SHORT = { none: "none", single: "single", multi: "multi", multi_ig: "multi+IG" };
+// status codes per frame, same order as pg_reloc.STATUS
+const STATUS = ["nominal", "lost", "hovering", "moving", "accepted", "wrong"];
+const STATUS_LABEL = { nominal: "VIO nominal", lost: "lost (no hypothesis wins)", hovering: "hovering (ambiguous / pending)",
+  moving: "info-gain move", accepted: "accepted (re-anchored)", wrong: "wrong commit (> 0.5 m)" };
+// worlds outside presets/ that the preset menu also offers (written by results/native_parity.py)
+const EXTRA_WORLDS = { reloc_demo_random_1_97: { file: "results/reloc_demo_random_1_97.json",
+  label: "VIO-loss demo: random seed 1, layout 97 (jump)", cfg: { fault: "jump", recovery: "multi_ig", seed: 1 } } };
+const worldUrl = name => (EXTRA_WORLDS[name] ? EXTRA_WORLDS[name].file : `presets/${encodeURIComponent(name)}.json`);
 
 const S = {
   doc: null, presetName: null, pristine: false, sel: null, tool: "select", undo: [], drag: null,
@@ -80,7 +94,10 @@ function checkDoc(d) {          // light check; Python's world_json.from_json is
 function worldMsg(text, cls) { const el = $("#worldMsg"); el.textContent = text || ""; el.className = "small " + (cls || ""); }
 
 function dropLink() {           // the world no longer matches a link in the address bar: remove it, so reload does not bring it back
-  if (/[#&]w=/.test(location.hash) || location.search) history.replaceState(null, "", location.pathname);
+  const keep = new URLSearchParams(location.search).get("pyodide");      // the Pyodide source choice survives
+  const want = location.pathname + (keep ? "?pyodide=" + encodeURIComponent(keep) : "");
+  if ((/[#&]w=/.test(location.hash) || location.search) && location.pathname + location.search !== want) history.replaceState(null, "", want);
+  else if (/[#&]w=/.test(location.hash)) history.replaceState(null, "", want);
 }
 
 function setDoc(d, presetName, keepLink) {
@@ -145,7 +162,12 @@ const snap = v => (snapOn() ? Math.round(v * 10) / 10 : r4(v));
 function colors() {
   return { bg: css("--panel"), fg: css("--fg"), muted: css("--muted"), line: css("--line"), accent: css("--accent"),
     obst: css("--obst"), est: css("--est"), ok: css("--ok"), bad: css("--bad"), warn: css("--warn"), dark: css("--dark-zone"),
-    b: css("--b"), plan: css("--plan"), glass: css("--glass") };
+    b: css("--b"), plan: css("--plan"), glass: css("--glass"), c3: css("--c3"), c4: css("--c4") };
+}
+const runColor = (C, k) => [C.accent, C.b, C.c3, C.c4][k % 4];
+const runLabel = k => (S.runLabels && S.runLabels[k]) || (k ? "B" : "A");
+function statusColor(C, name) {
+  return { nominal: null, lost: C.bad, hovering: C.warn, moving: C.accent, accepted: C.ok, wrong: C.fg }[name];
 }
 
 function drawObstacle(o, C, selected) {
@@ -238,7 +260,7 @@ function drawRun(run, col, C, primary, slot) {
   }
   // range beams at this frame
   const scanD = f[9], ang = run.scan_angles, [tx, ty] = Q(f[1], f[2]);
-  if (scanD && ang.length) {
+  if (scanD && ang.length && (primary || S.runs.length <= 2)) {      // 3+ runs: beams of the first run only
     ctx.lineWidth = 1 * dpr;
     for (let k = 0; k < ang.length; k++) {
       const d = scanD[k], hitp = d != null, L = hitp ? d : run.max_range, a = f[3] + ang[k];
@@ -272,8 +294,9 @@ function drawRun(run, col, C, primary, slot) {
     const k = frameAt(run, fl.fired_t), [fx, fy] = Q(F[k][1], F[k][2]);
     ctx.strokeStyle = C.bad; ctx.lineWidth = 2 * dpr; ctx.beginPath(); ctx.arc(fx, fy, (9 + 4 * slot) * dpr, 0, 2 * Math.PI); ctx.stroke();
     ctx.fillStyle = C.bad; ctx.font = `700 ${12 * dpr}px system-ui, sans-serif`;
-    ctx.fillText(`${S.runs.length > 1 ? (slot ? "B " : "A ") : ""}${fl.fault} ${fl.fired_t} s`, fx + 14 * dpr, fy - 10 * dpr + slot * 16 * dpr);
+    ctx.fillText(`${S.runs.length > 1 ? runLabel(slot) + " " : ""}${fl.fault} ${fl.fired_t} s`, fx + 14 * dpr, fy - 10 * dpr + slot * 16 * dpr);
   }
+  drawReloc(run, col, C, Q, T, i);
   // vehicle: true size disc + heading
   const [a, b] = Q(vx, vy), rr = Math.max(run.radius * s, 4 * dpr);
   ctx.fillStyle = col; ctx.beginPath(); ctx.arc(a, b, rr, 0, 2 * Math.PI); ctx.fill();
@@ -282,6 +305,62 @@ function drawRun(run, col, C, primary, slot) {
   if (done && run.score.outcome !== "reached") {
     ctx.strokeStyle = run.score.outcome === "collision" ? C.bad : C.warn; ctx.lineWidth = 3 * dpr;
     const q = 8 * dpr; ctx.beginPath(); ctx.moveTo(a - q, b - q); ctx.lineTo(a + q, b + q); ctx.moveTo(a + q, b - q); ctx.lineTo(a - q, b + q); ctx.stroke();
+  }
+}
+
+// Relocalization overlay: hypotheses as ghost markers (the last GHOST_S seconds, older = fainter,
+// alpha also scaled by score / best), accepted poses (ring; dark cross = wrong commit) and info-gain moves (blue arrow).
+const GHOST_S = 2.0;
+function drawReloc(run, col, C, Q, T, i) {
+  const R = run.reloc;
+  if (!R || R.arm === "none") return;
+  const dpr = V.dpr, s = V.s, F = run.frames, sep = (R.params && R.params.SEP_M) || 0.5;
+  const few = S.runs.length <= 2;
+  let cur = null;
+  for (const rec of R.hyps) {
+    const [t, hs] = rec;
+    if (t > T) break;
+    if (T - t > GHOST_S) continue;
+    cur = rec;
+    const age = (T - t) / GHOST_S, best = hs[0][2] || 1;
+    hs.forEach(([x, y, sc]) => {
+      const [a, b] = Q(x, y);
+      ctx.globalAlpha = Math.max(0.05, 0.55 * (1 - age) * Math.max(0, sc / best));
+      ctx.strokeStyle = col; ctx.lineWidth = 1.5 * dpr;
+      ctx.beginPath(); ctx.arc(a, b, Math.max(sep / 2 * s, 5 * dpr), 0, 2 * Math.PI); ctx.stroke();
+    });
+  }
+  if (cur && T - cur[0] < 0.15) {            // the set from the scan at this frame
+    const best = cur[1][0][2] || 1;
+    cur[1].forEach(([x, y, sc], k) => {
+      const [a, b] = Q(x, y);
+      ctx.globalAlpha = Math.max(0.25, sc / best);
+      ctx.fillStyle = col; ctx.beginPath(); ctx.arc(a, b, 3.5 * dpr, 0, 2 * Math.PI); ctx.fill();
+      ctx.strokeStyle = col; ctx.lineWidth = (k ? 1.5 : 2.5) * dpr; ctx.setLineDash(k ? [3 * dpr, 3 * dpr] : []);
+      ctx.beginPath(); ctx.arc(a, b, Math.max(sep / 2 * s, 5 * dpr), 0, 2 * Math.PI); ctx.stroke(); ctx.setLineDash([]);
+      if (few) { ctx.globalAlpha = 1; ctx.fillStyle = C.fg; ctx.font = `${10 * dpr}px system-ui, sans-serif`; ctx.fillText(sc.toFixed(2), a + 6 * dpr, b - 8 * dpr); }
+    });
+  }
+  ctx.globalAlpha = 1;
+  for (const ev of R.events) {
+    for (const mv of ev.moves || []) {     // info-gain move: arrow from the estimate when it started
+      if (!mv.move || mv.t > T) continue;
+      const k = frameAt(run, mv.t), [a, b] = Q(F[k][4], F[k][5]), [c, d] = Q(F[k][4] + mv.move[0], F[k][5] + mv.move[1]);
+      ctx.strokeStyle = C.accent; ctx.lineWidth = 2.5 * dpr; ctx.beginPath(); ctx.moveTo(a, b); ctx.lineTo(c, d); ctx.stroke();
+      const ang = Math.atan2(d - b, c - a), h = 8 * dpr;
+      ctx.beginPath(); ctx.moveTo(c, d); ctx.lineTo(c - h * Math.cos(ang - 0.45), d - h * Math.sin(ang - 0.45));
+      ctx.lineTo(c - h * Math.cos(ang + 0.45), d - h * Math.sin(ang + 0.45)); ctx.closePath(); ctx.fillStyle = C.accent; ctx.fill();
+    }
+    if (ev.result !== "accepted" || ev.t_end == null || ev.t_end > T || !ev.accepted_xy) continue;
+    const [a, b] = Q(ev.accepted_xy[0], ev.accepted_xy[1]), wrong = ev.err_m > ((R.params && R.params.WRONG_M) || 0.5);
+    const fresh = T - ev.t_end < 3, r = (fresh ? 9 : 5) * dpr;
+    ctx.strokeStyle = wrong ? C.fg : C.ok; ctx.lineWidth = (fresh ? 2.5 : 1.5) * dpr;
+    ctx.beginPath(); ctx.arc(a, b, r, 0, 2 * Math.PI); ctx.stroke();
+    if (wrong) { ctx.beginPath(); ctx.moveTo(a - r, b - r); ctx.lineTo(a + r, b + r); ctx.moveTo(a + r, b - r); ctx.lineTo(a - r, b + r); ctx.stroke(); }
+    if (fresh && few) {
+      ctx.fillStyle = wrong ? C.fg : C.ok; ctx.font = `700 ${11 * dpr}px system-ui, sans-serif`;
+      ctx.fillText(`${wrong ? "wrong commit" : "accepted"} ${ev.err_m.toFixed(2)} m`, a + r + 4 * dpr, b + 12 * dpr);
+    }
   }
 }
 
@@ -295,7 +374,7 @@ function draw() {
   { const [a, b] = P(x0, y1); ctx.strokeStyle = C.obst; ctx.lineWidth = 4 * dpr; ctx.strokeRect(a, b, (x1 - x0) * V.s, (y1 - y0) * V.s); }
   let reached = false;
   if (S.mode === "replay" && S.runs) {
-    S.runs.forEach((r, k) => drawRun(r, k ? C.b : C.accent, C, k === 0, k));
+    S.runs.forEach((r, k) => drawRun(r, runColor(C, k), C, k === 0, k));
     reached = S.runs.some(r => r.score.outcome === "reached" && S.t >= r.end[0] - 1e-6);
   }
   drawAB(C, reached);
@@ -427,16 +506,24 @@ async function loadPresets() {
   if (!r.ok) throw new Error(r.status + " presets/index.json");
   const idx = await r.json();
   $("#presetSel").innerHTML = '<option value="">choose...</option>' + idx.presets.map(p =>
-    `<option value="${esc(p.file.replace(/\.json$/, ""))}">${esc(p.label)} (seed ${p.seed}, layout ${p.index})</option>`).join("");
+    `<option value="${esc(p.file.replace(/\.json$/, ""))}">${esc(p.label)} (seed ${p.seed}, layout ${p.index})</option>`).join("") +
+    Object.entries(EXTRA_WORLDS).map(([k, w]) => `<option value="${esc(k)}">${esc(w.label)}</option>`).join("");
   return idx;
 }
 
 async function loadPreset(name) {
-  const r = await fetch(`presets/${encodeURIComponent(name)}.json`);
+  const r = await fetch(worldUrl(name));
   if (!r.ok) throw new Error(r.status + " preset " + name);
   setDoc(await r.json(), name);
   $("#presetSel").value = name;
-  worldMsg(`Preset ${name}: exported with world_json.to_json from the seeded generator (synthetic).`, "");
+  const x = EXTRA_WORLDS[name];
+  if (x) {                       // the demo world comes with its config: seed 1, jump, all arms
+    setCfg(0, x.cfg);
+    if ($("#compare").checked) { $("#compare").checked = false; $("#compare").onchange(); }
+    $("#armsCmp").checked = !$("#armsCmp").disabled;
+    worldMsg(`${x.label}: world.make_world("random", 1, 97) through world_json (synthetic), the demo-script H1 case. ` +
+      "Set: seed 1, VIO jump, compare all recovery arms. Press Run.", "");
+  } else worldMsg(`Preset ${name}: exported with world_json.to_json from the seeded generator (synthetic).`, "");
 }
 $("#presetSel").onchange = () => { const v = $("#presetSel").value; if (v) loadPreset(v).catch(err => worldMsg(err.message, "bad")); };
 $("#newBtn").onclick = () => { setDoc(blankDoc(), null); $("#presetSel").value = ""; worldMsg("Empty 20 x 20 m walled area. Draw obstacles, drag A and B.", ""); };
@@ -477,45 +564,81 @@ $("#restoreBtn").onclick = () => {
 // ---------------------------------------------------------------- config panel
 function buildCfg(which, cfg) {
   const fs = $(which === 0 ? "#cfgA" : "#cfgB"), id = which === 0 ? "A" : "B";
-  const rows = [["planner", "Planner"], ["preset", "Sensor"], ["fault", "VIO fault"], ["filter", "Filter"]];
+  const rows = [["planner", "Planner"], ["preset", "Sensor"], ["fault", "VIO fault"], ["recovery", "VIO loss recovery"], ["filter", "Filter"]];
   fs.insertAdjacentHTML("beforeend", rows.map(([k, lbl]) =>
     `<label>${lbl}<select id="${id}_${k}" aria-label="${lbl} ${id}">` +
     Object.entries(LABELS[k]).map(([v, t]) => `<option value="${v}"${cfg[k] === v ? " selected" : ""}>${esc(t)}</option>`).join("") +
     `</select></label>`).join(""));
+  for (const k of ["fault", "recovery"]) $(`#${id}_${k}`).addEventListener("change", () => lockCfg(id));
 }
 buildCfg(0, DEFAULT_CFG[0]);
 buildCfg(1, DEFAULT_CFG[1]);
 
+// Recovery is offered with the jump or dropout fault only. An arm brings its own planner (A* + ESDF
+// known map behind the hover gate, as run_disambiguate.py) and runs without the F2 filter.
+function lockCfg(id) {
+  const rec = $(`#${id}_recovery`), fault = $(`#${id}_fault`).value;
+  const can = RELOC_FAULTS.includes(fault) && !(S.env && S.env.recovery && S.env.recovery.length < 2);
+  if (!can) rec.value = "none";
+  rec.disabled = !can;
+  const on = rec.value !== "none";
+  if (on) { $(`#${id}_planner`).value = "astar_known"; $(`#${id}_filter`).value = "none"; }
+  $(`#${id}_planner`).disabled = on; $(`#${id}_filter`).disabled = on;
+  if (id === "A") syncArms();
+}
+
 function readCfg(which) {
   const id = which === 0 ? "A" : "B", o = {};
-  for (const k of ["planner", "preset", "fault", "filter"]) o[k] = $(`#${id}_${k}`).value;
+  for (const k of CFG_KEYS) o[k] = $(`#${id}_${k}`).value;
   o.seed = Math.max(0, Math.min(9999, parseInt($("#seed").value, 10) || 0));
   return o;
 }
 function setCfg(which, cfg) {
   const id = which === 0 ? "A" : "B";
-  for (const [k, v] of Object.entries(cfg)) { if (k === "seed") $("#seed").value = v; else if ($(`#${id}_${k}`)) $(`#${id}_${k}`).value = v; }
+  // fault first, so the recovery select is enabled before its value is set
+  const keys = Object.keys(cfg).sort((a, b) => (b === "fault") - (a === "fault"));
+  for (const k of keys) {
+    const v = cfg[k];
+    if (k === "seed") $("#seed").value = v;
+    else if ($(`#${id}_${k}`)) { $(`#${id}_${k}`).value = v; if (k === "fault") lockCfg(id); }
+  }
+  lockCfg(id);
 }
 $("#compare").onchange = () => {
+  if ($("#compare").checked) $("#armsCmp").checked = false;
   $("#cfgB").hidden = !$("#compare").checked;
   $(".cfgs").classList.toggle("two", $("#compare").checked);
 };
+// Compare all recovery arms: config A with each of none / single / multi / multi + IG on one world.
+function syncArms() {
+  const ok = RELOC_FAULTS.includes($("#A_fault").value) && !$("#A_recovery").disabled;
+  $("#armsCmp").disabled = !ok;
+  if (!ok) $("#armsCmp").checked = false;
+}
+$("#armsCmp").onchange = () => {
+  if ($("#armsCmp").checked && $("#compare").checked) { $("#compare").checked = false; $("#compare").onchange(); }
+};
+lockCfg("A"); lockCfg("B");
+const armsCfgs = a => ARMS.map(arm => ({ ...a, recovery: arm, ...(arm !== "none" ? { planner: "astar_known", filter: "none" } : {}) }));
 
 function applyEnv(env) {        // disable options the worker could not load
   for (const id of ["A", "B"]) {
     for (const o of $(`#${id}_planner`).options) o.disabled = !env.planners.includes(o.value);
     for (const o of $(`#${id}_filter`).options) o.disabled = !env.filters.includes(o.value);
+    for (const o of $(`#${id}_recovery`).options) o.disabled = !(env.recovery || ["none"]).includes(o.value);
+    lockCfg(id);
   }
   const errs = Object.entries(env.load_errors || {}).map(([k, v]) => `${k}: ${v}`).join("; ");
-  $("#envMsg").textContent = `Pyodide ${env.pyodide}, Python ${env.python}, numpy ${env.numpy}, scipy ${env.scipy}; ` +
-    `${env.arena_files} hub .py files loaded.` + (errs ? " Not loaded: " + errs : "");
+  $("#envMsg").textContent = `Pyodide ${env.pyodide} from ${env.pyodide_source === "local" ? "the local folder " + env.pyodide_base : "cdn.jsdelivr.net"}, ` +
+    `Python ${env.python}, numpy ${env.numpy}, scipy ${env.scipy}; ${env.arena_files} hub .py files loaded.` + (errs ? " Not loaded: " + errs : "");
 }
 
 // ---------------------------------------------------------------- shareable link
 // URL = page ? config query params # w=<world JSON, deflate (zlib, CompressionStream), base64url>.
-// Params: planner, preset, fault, filter (config A), the same with _b (config B), compare=1, seed,
+// Params: planner, preset, fault, filter, recovery (config A), the same with _b (config B), compare=1,
+// arms=1 (compare all recovery arms on config A), seed,
 // src=<preset name> when the world is an unedited preset (only used to show the native parity note).
-const CFG_KEYS = ["planner", "preset", "fault", "filter"];
+const CFG_KEYS = ["planner", "preset", "fault", "filter", "recovery"];
 
 function b64url(bytes) {
   let bin = "";
@@ -546,6 +669,7 @@ async function shareUrl() {
   const q = new URLSearchParams(), cmp = $("#compare").checked, a = readCfg(0);
   for (const k of CFG_KEYS) q.set(k, a[k]);
   if (cmp) { const b = readCfg(1); q.set("compare", "1"); for (const k of CFG_KEYS) q.set(k + "_b", b[k]); }
+  if ($("#armsCmp").checked) q.set("arms", "1");
   q.set("seed", String(a.seed));
   if (S.pristine && S.presetName) q.set("src", S.presetName);
   return location.origin + location.pathname + "?" + q.toString() + "#w=" + await encodeWorld(S.doc);
@@ -573,7 +697,7 @@ async function restoreFromUrl() {
   const src = q.get("src");
   if (src && /^[a-z0-9_]+$/.test(src)) {         // same world as the preset file? then the parity note applies
     try {
-      const r = await fetch(`presets/${encodeURIComponent(src)}.json`);
+      const r = await fetch(worldUrl(src));
       if (r.ok && JSON.stringify(await r.json()) === JSON.stringify(S.doc)) { S.presetName = src; S.pristine = true; $("#presetSel").value = src; }
     } catch (err) { /* parity note only */ }
   }
@@ -582,6 +706,7 @@ async function restoreFromUrl() {
   if (Number.isFinite(seed)) ca.seed = Math.max(0, Math.min(9999, seed));
   setCfg(0, ca); setCfg(1, cb);
   $("#compare").checked = q.get("compare") === "1"; $("#compare").onchange();
+  $("#armsCmp").checked = q.get("arms") === "1" && !$("#armsCmp").disabled; $("#armsCmp").onchange();
   const bad = badA.concat(badB);
   worldMsg(`World and config restored from the link (${doc.obstacles.length} obstacles).` + (bad.length ? " Ignored: " + bad.join(", ") : ""), bad.length ? "bad" : "ok");
   S.fromLink = true;
@@ -601,64 +726,123 @@ $("#linkBtn").onclick = async () => {
 };
 
 // ---------------------------------------------------------------- worker
-const worker = new Worker("worker.js?v=20261109d", { type: "module" });
-let readyResolve, readyReject;
-const readyP = new Promise((ok, fail) => { readyResolve = ok; readyReject = fail; });
+// The worker retries each load step itself (worker.js step()). When it gives up, or the load runs
+// longer than SLOW_S, the Retry button starts a fresh worker. readyP resolves on the first ready.
+// ?pyodide=cdn|local|auto in the page URL is passed on to the worker (manifest.json pyodide_source).
+const WORKER_URL = "worker.js?v=20261109e";
+const SLOW_S = 45;
+const PYODIDE_Q = (q => (/^(cdn|local|auto)$/.test(q || "") ? q : null))(new URLSearchParams(location.search).get("pyodide"));
+let worker = null, readyResolve;
+const readyP = new Promise(ok => { readyResolve = ok; });
 const T_LOAD0 = performance.now();
+S.load = { attempt: 0, failed: false, retries: [], message: "" };
 
-worker.onmessage = ev => {
-  const m = ev.data;
+function loadText(text, bad) {
+  $("#loadText").textContent = text;
+  $("#load").classList.toggle("err", !!bad);
+}
+function showRetry(on, why) {
+  $("#retryBtn").hidden = !on;
+  if (on && why) $("#retryBtn").title = why;
+}
+
+function startWorker() {
+  if (worker) worker.terminate();
+  for (const p of S.pending.values()) p.fail(new Error("Python restarted"));
+  S.pending.clear();
+  S.load.attempt += 1; S.load.failed = false; S.load.t0 = performance.now(); S.loadStage = "";
+  const url = WORKER_URL + (PYODIDE_Q ? "&pyodide=" + PYODIDE_Q : "");
+  const w = new Worker(url, { type: "module" });
+  worker = w;
+  showRetry(false);
+  $("#load").classList.remove("done", "err");
+  $("#loadBar").value = 0;
+  loadText(S.load.attempt > 1 ? `Retry ${S.load.attempt - 1}: loading Python again...` : "Loading Python (about 22 MB on first visit, cached after)...");
+  clearTimeout(S.load.slowTimer);
+  S.load.slowTimer = setTimeout(() => {
+    if (!S.ready && worker === w) {
+      showRetry(true, "Start the load again in a fresh worker");
+      $("#loadText").textContent += ` Still loading after ${SLOW_S} s: press Retry to start again.`;
+    }
+  }, SLOW_S * 1000);
+  w.onmessage = ev => { if (worker === w) onWorkerMsg(ev.data); };
+  w.onerror = ev => {
+    if (worker !== w) return;
+    S.load.failed = true; S.load.message = "Worker failed: " + (ev.message || "unknown error");
+    loadText(S.load.message, true); showRetry(true);
+  };
+}
+
+function onWorkerMsg(m) {
   if (m.type === "progress") {
     const exp = m.mb_expected || 22;
     const pct = m.stage === "ready" ? 100 : Math.min(97, Math.round(100 * (m.mb || 0) / exp));
     $("#loadBar").value = pct;
     if (m.stage) S.loadStage = `step ${m.step} of ${m.steps}: ${m.stage}`;
-    $("#loadText").textContent = `Loading Python: ${S.loadStage || ""} (${(m.mb || 0).toFixed(1)} of about ${exp} MB downloaded)`;
+    loadText(`Loading Python: ${S.loadStage || ""} (${(m.mb || 0).toFixed(1)} of about ${exp} MB downloaded)`);
+  } else if (m.type === "retry") {
+    S.load.retries.push(m);
+    loadText(`${m.step}: attempt ${m.attempt} of ${m.attempts} failed (${m.error}). Trying again in ${m.wait_s} s...`, true);
+    showRetry(true, "Start the load again now in a fresh worker");
   } else if (m.type === "ready") {
     S.ready = true; S.env = m.env; S.loadTimings = m.timings; S.loadMb = m.mb;
     S.readyMs = Math.round(performance.now() - T_LOAD0);
+    clearTimeout(S.load.slowTimer); showRetry(false);
     $("#load").classList.add("done");
-    $("#loadText").textContent = `Python ready in ${(S.readyMs / 1000).toFixed(1)} s (${m.mb} MB downloaded this visit; cached after).`;
+    const tries = (m.env.load_attempts || []).filter(a => !a.ok).length;
+    loadText(`Python ready in ${(S.readyMs / 1000).toFixed(1)} s (${m.mb} MB downloaded this visit; cached after)` +
+      (S.load.attempt > 1 || tries ? `; Retry pressed ${S.load.attempt - 1} time(s), ${tries} automatic retries in this worker.` : "."));
     $("#runMsg").textContent = "Ready.";
     applyEnv(m.env); syncButtons(); readyResolve(m.env);
   } else if (m.type === "result" || m.type === "error") {
     if (m.fatal) {
-      $("#load").classList.add("err"); $("#loadText").textContent = m.message + " (needs network access to cdn.jsdelivr.net)";
-      readyReject(new Error(m.message)); return;
+      S.load.failed = true; S.load.message = m.message; S.load.attempts = m.attempts;
+      clearTimeout(S.load.slowTimer);
+      loadText(m.message + ". Needs cdn.jsdelivr.net, or a local Pyodide folder (README: Offline / blocked CDN).", true);
+      showRetry(true, "Start the load again in a fresh worker");
+      return;
     }
     const p = S.pending.get(m.id); if (!p) return;
     S.pending.delete(m.id);
     m.type === "result" ? p.ok(m.result) : p.fail(new Error(m.message));
   }
-};
-worker.onerror = ev => { $("#load").classList.add("err"); $("#loadText").textContent = "Worker failed: " + (ev.message || "unknown error"); };
+}
+function retryLoad() { if (!S.ready) startWorker(); }
+$("#retryBtn").onclick = retryLoad;
+startWorker();
 
 function runInWorker(world, cfg) {
   const id = S.nextId++;
   return new Promise((ok, fail) => { S.pending.set(id, { ok, fail }); worker.postMessage({ type: "run", id, world, cfg }); });
 }
 
-async function runNow(cfgs) {
+// cfgs: scripted run (1 or 2 configs, shown in the panel). opts.arms: compare all recovery arms on config A.
+async function runNow(cfgs, opts) {
   if (S.busy) return null;
   try { checkDoc(S.doc); } catch (err) { runMsg(err.message, true); return null; }
   if (cfgs) {                    // scripted run: show the configs it uses in the panel
-    cfgs.forEach((c, k) => setCfg(k, c));
-    $("#compare").checked = cfgs.length > 1; $("#compare").onchange();
+    cfgs.slice(0, 2).forEach((c, k) => setCfg(k, { recovery: "none", ...c }));
+    $("#compare").checked = cfgs.length > 1 && !(opts && opts.arms); $("#compare").onchange();
+    $("#armsCmp").checked = !!(opts && opts.arms) && !$("#armsCmp").disabled;
   }
-  cfgs = cfgs || [readCfg(0)].concat($("#compare").checked ? [readCfg(1)] : []);
+  const arms = $("#armsCmp").checked && !$("#armsCmp").disabled;
+  let labels = null;
+  if (arms) { cfgs = armsCfgs(readCfg(0)); labels = cfgs.map(c => ARM_SHORT[c.recovery]); }
+  else cfgs = cfgs ? cfgs.slice(0, 2) : [readCfg(0)].concat($("#compare").checked ? [readCfg(1)] : []);
+  labels = labels || cfgs.map((c, k) => (k ? "B" : "A"));
   S.busy = true; syncButtons();
   const world = JSON.parse(JSON.stringify(S.doc)), t0 = performance.now();
-  let label = "A";
+  let label = labels[0];
   const tick = setInterval(() => runMsg(`Python is computing run ${label}: ${((performance.now() - t0) / 1000).toFixed(1)} s. The page stays responsive.`), 100);
   try {
     if (!S.ready) runMsg("Waiting for Python to finish loading...");
     await readyP;
     const out = [];
-    for (let k = 0; k < cfgs.length; k++) { label = k ? "B" : "A"; out.push(await runInWorker(world, cfgs[k])); }
+    for (let k = 0; k < cfgs.length; k++) { label = labels[k]; out.push(await runInWorker(world, cfgs[k])); }
     S.lastRunMs = Math.round(performance.now() - t0);
     if (JSON.stringify(world) !== JSON.stringify(S.doc)) { runMsg("The world changed while computing; run again.", true); return null; }
-    S.runs = out;
-    runMsg(`Done in ${(S.lastRunMs / 1000).toFixed(2)} s: ` + out.map((r, k) => `${k ? "B" : "A"} ${r.sim_s} s simulated in ${r.wall_s} s of Python`).join(", ") + ".");
+    S.runs = out; S.runLabels = labels;
+    runMsg(`Done in ${(S.lastRunMs / 1000).toFixed(2)} s: ` + out.map((r, k) => `${labels[k]} ${r.sim_s} s simulated in ${r.wall_s} s of Python`).join(", ") + ".");
     S.t = 0; S.playing = !REDUCED;
     if (REDUCED) S.t = duration();
     setMode("replay"); showScore();
@@ -676,7 +860,7 @@ $("#runBtn").onclick = () => runNow();
 // ---------------------------------------------------------------- replay + score
 function clearRuns() {
   if (!S.runs && S.mode === "edit") return;
-  S.runs = null; S.playing = false;
+  S.runs = null; S.runLabels = null; S.playing = false;
   setMode("edit");
   $("#resultBox").hidden = true;
 }
@@ -728,7 +912,7 @@ function drawSpark(C) {
   sctx.strokeStyle = C.bad; sctx.setLineDash([4 * dpr, 4 * dpr]); sctx.lineWidth = 1 * dpr;
   sctx.beginPath(); sctx.moveTo(X(0), Y(0.15)); sctx.lineTo(X(D), Y(0.15)); sctx.stroke(); sctx.setLineDash([]);
   S.runs.forEach((r, k) => {
-    sctx.strokeStyle = k ? C.b : C.accent; sctx.lineWidth = 2 * dpr; sctx.beginPath();
+    sctx.strokeStyle = runColor(C, k); sctx.lineWidth = 2 * dpr; sctx.beginPath();
     r.clearance.forEach((v, i) => { const t = Math.min(i / r.hz, r.end[0]); i ? sctx.lineTo(X(t), Y(v)) : sctx.moveTo(X(t), Y(v)); });
     sctx.stroke();
   });
@@ -736,8 +920,9 @@ function drawSpark(C) {
   sctx.beginPath(); sctx.moveTo(X(S.t), 0); sctx.lineTo(X(S.t), H); sctx.stroke();
   sctx.fillStyle = C.muted; sctx.font = `${11 * dpr}px system-ui, sans-serif`; sctx.textBaseline = "top";
   sctx.fillText(`${ymax.toFixed(1)} m`, 6 * dpr, 4 * dpr);
-  const now = S.runs.map((r, k) => { const i = Math.min(r.clearance.length - 1, Math.floor(S.t * r.hz)); return `${k ? "B" : "A"} ${r.clearance[i].toFixed(2)} m`; });
+  const now = S.runs.map((r, k) => { const i = Math.min(r.clearance.length - 1, Math.floor(S.t * r.hz)); return `${runLabel(k)} ${r.clearance[i].toFixed(2)} m`; });
   $("#sparkNow").textContent = now.join("  ");
+  drawStrip(C);
 }
 
 const OUT_LABEL = { reached: "reached B", stuck: "stuck", collision: "collision", timeout: "timeout" };
@@ -746,13 +931,14 @@ const fmt = (v, n) => (v == null ? "-" : typeof v === "number" ? (n == null ? St
 function showScore() {
   const R = S.runs; if (!R) return;
   $("#resultBox").hidden = false;
-  $("#badges").innerHTML = R.map((r, k) => `<span class="who">${k ? "B" : "A"}</span><span class="badge ${esc(r.score.outcome)}">${esc(OUT_LABEL[r.score.outcome] || r.score.outcome)}</span>`).join(" ") +
+  $("#badges").innerHTML = R.map((r, k) => `<span class="who">${esc(runLabel(k))}</span><span class="badge ${esc(r.score.outcome)}">${esc(OUT_LABEL[r.score.outcome] || r.score.outcome)}</span>`).join(" ") +
     ' <span class="badge synthetic">synthetic</span>';
   const rows = [
     ["Planner", r => esc(LABELS.planner[r.config.planner])],
     ["Sensor", r => esc(r.config.preset)],
     ["VIO fault", r => esc(LABELS.fault[r.config.fault])],
     ["Safety filter", r => esc(r.config.filter)],
+    ["VIO loss recovery", r => esc(LABELS.recovery[r.config.recovery || "none"])],
     ["Outcome", r => esc(r.score.outcome)],
     ["Time to B, s", r => fmt(r.score.time_to_goal_s)],
     ["Duration, s", r => fmt(r.score.duration_s)],
@@ -762,16 +948,63 @@ function showScore() {
     ["Median pose error, m", r => fmt(r.score.est_err_median_m)],
     ["F2 intervened, % of steps", r => (r.score.intervention_frac == null ? "-" : (100 * r.score.intervention_frac).toFixed(1))],
     ["Fault fired at, s", r => (r.fault_log ? fmt(r.fault_log.fired_t) : "-")],
+    ...(R.some(r => r.reloc && r.reloc.arm !== "none") ? [
+      ["Loss events (triggers)", r => relocF(r, s => s.events)],
+      ["Relocs accepted / wrong (> 0.5 m)", r => relocF(r, s => `${s.accepted} / ${s.wrong_commits}`)],
+      ["Still hovering at end", r => relocF(r, s => s.open_at_end)],
+      ["First recovery, s", r => relocF(r, s => fmt(s.first_recover_s))],
+      ["Hovering while lost, s", r => relocF(r, s => fmt(s.hover_s))],
+      ["Info-gain moves flown", r => relocF(r, s => s.moves)],
+    ] : []),
     ["Free path for 0.15 m (BFS)", r => (r.free_path ? "yes" : "no")],
     ["Python wall time, s", r => fmt(r.wall_s)],
   ];
-  const head = `<thead><tr><th></th>${R.map((r, k) => `<th><span class="sw-${k ? "b" : "a"}"></span> ${k ? "B" : "A"}</th>`).join("")}</tr></thead>`;
+  const head = `<thead><tr><th></th>${R.map((r, k) => `<th><span class="sw-${"abcd"[k % 4]}"></span> ${esc(runLabel(k))}</th>`).join("")}</tr></thead>`;
   $("#score").innerHTML = head + "<tbody>" + rows.map(([n, f]) => {
-    const vals = R.map(f), diff = R.length > 1 && vals[0] !== vals[1];
+    const vals = R.map(f), diff = R.length > 1 && vals.some(v => v !== vals[0]);
     return `<tr><th>${n}</th>${vals.map(v => `<td${diff ? ' class="diff"' : ""}>${v}</td>`).join("")}</tr>`;
   }).join("") + "</tbody>";
   parityNote();
   syncReplay(); draw();
+}
+
+// pg_reloc.event_key: the per-event fields compared with native
+const eventKey = evs => (evs || []).map(e => [e.t_trigger, e.reason, e.result, e.recover_s, e.err_m,
+  (e.moves || []).filter(m => m.move != null).length]);
+function relocF(r, f) { return r.reloc && r.reloc.arm !== "none" ? f(r.reloc.summary) : "-"; }
+
+// Verdict strip: one row per run with a relocalization trace, coloured by the status at each 10 Hz frame.
+const st = $("#stripC"), stx = st.getContext("2d");
+function drawStrip(C) {
+  const rows = S.runs.map((r, k) => [r, k]).filter(([r]) => r.reloc);
+  $("#stripWrap").hidden = !rows.length;
+  if (!rows.length) return;
+  const rowH = 16, gap = 4, lab = 64;
+  st.style.height = `${rows.length * (rowH + gap) + 2}px`;
+  const dpr = fitCanvas(st), W = st.width, D = duration() || 1;
+  const X = t => (lab + 4) * dpr + (W - (lab + 8) * dpr) * t / D;
+  stx.setTransform(1, 0, 0, 1, 0, 0);
+  stx.fillStyle = C.bg; stx.fillRect(0, 0, W, st.height);
+  stx.font = `${11 * dpr}px system-ui, sans-serif`; stx.textBaseline = "middle";
+  rows.forEach(([r, k], j) => {
+    const y = (1 + j * (rowH + gap)) * dpr, h = rowH * dpr, names = r.reloc.status_names || STATUS, F = r.frames;
+    stx.fillStyle = runColor(C, k); stx.fillRect(0, y + h / 2 - 4 * dpr, 8 * dpr, 8 * dpr);
+    stx.fillStyle = C.fg; stx.fillText(runLabel(k), 12 * dpr, y + h / 2);
+    stx.fillStyle = C.line; stx.fillRect(X(0), y, X(r.end[0]) - X(0), h);
+    r.reloc.status.forEach((code, i) => {
+      const col = statusColor(C, names[code]);
+      if (!col) return;
+      const t0 = F[i][0], t1 = i + 1 < F.length ? F[i + 1][0] : r.end[0];
+      stx.fillStyle = col; stx.fillRect(X(t0), y, Math.max(1, X(t1) - X(t0) + 0.5), h);
+    });
+  });
+  stx.strokeStyle = C.muted; stx.lineWidth = 1 * dpr;
+  stx.beginPath(); stx.moveTo(X(S.t), 0); stx.lineTo(X(S.t), st.height); stx.stroke();
+  const now = rows.map(([r, k]) => {
+    const i = frameAt(r, S.t), names = r.reloc.status_names || STATUS;
+    return `${runLabel(k)}: ${i < 0 ? "-" : names[r.reloc.status[i]]}`;
+  });
+  $("#stripNow").textContent = now.join("; ");
 }
 
 async function parityNote() {
@@ -782,13 +1015,16 @@ async function parityNote() {
   } catch (err) { return; }
   const keys = S.parity.keys, msgs = [];
   S.runs.forEach((r, k) => {
-    const c = r.config;
-    const ref = c.seed === 0 && S.parity.cases.find(x => x.world === S.presetName && x.planner === c.planner && x.preset === c.preset && x.fault === c.fault && x.filter === c.filter);
+    const c = r.config, rec = c.recovery || "none";
+    const match = x => x.world === S.presetName && x.planner === c.planner && x.preset === c.preset && x.fault === c.fault && x.filter === c.filter;
+    const ref = rec === "none" ? c.seed === 0 && S.parity.cases.find(match)
+      : (S.parity.reloc_cases || []).find(x => match(x) && x.seed === c.seed && x.recovery === rec);
     if (!ref) return;
-    const same = keys.every(key => ref.score[key] === r.score[key]);
-    msgs.push(`${k ? "B" : "A"}: ${same ? "same score as" : "differs from"} native CPython ${S.parity.native_env.python}`);
+    let same = keys.every(key => ref.score[key] === r.score[key]);
+    if (ref.events) same = same && JSON.stringify(ref.events) === JSON.stringify(eventKey(r.reloc.events));
+    msgs.push(`${runLabel(k)}: ${same ? "same score" + (ref.events ? " and loss events" : "") + " as" : "differs from"} native CPython ${S.parity.native_env.python}`);
   });
-  el.innerHTML = msgs.length ? esc(msgs.join("; ")) + ' on this preset (<a href="results/native_parity.json">native_parity.json</a>).'
+  el.innerHTML = msgs.length ? esc(msgs.join("; ")) + ' on this world (<a href="results/native_parity.json">native_parity.json</a>).'
     : "No stored native reference for this preset and config.";
 }
 
@@ -824,7 +1060,7 @@ window.PG = {
   started,
   shareUrl, encodeWorld, decodeWorld,
   linkRun: () => S.linkRun || Promise.resolve(null),
-  config: () => ({ a: readCfg(0), b: $("#compare").checked ? readCfg(1) : null, compare: $("#compare").checked }),
+  config: () => ({ a: readCfg(0), b: $("#compare").checked ? readCfg(1) : null, compare: $("#compare").checked, arms: $("#armsCmp").checked }),
   loadPreset,
   setWorld: d => setDoc(d, null),
   world: () => JSON.parse(JSON.stringify(S.doc)),
@@ -832,6 +1068,11 @@ window.PG = {
   setTool, undo, setCfg,
   setCompare(on) { $("#compare").checked = !!on; $("#compare").onchange(); },
   run: cfgs => runNow(cfgs),
+  runArms: cfg => runNow([cfg], { arms: true }),     // config A with every recovery arm, overlaid
+  loadState: () => ({ ready: S.ready, failed: S.load.failed, attempt: S.load.attempt, retries: S.load.retries, message: S.load.message,
+    retry_visible: !$("#retryBtn").hidden, text: $("#loadText").textContent, attempts: S.load.attempts || (S.env && S.env.load_attempts) || null }),
+  retryLoad,
+  status: () => (S.runs || []).map((r, k) => { const i = r.reloc ? frameAt(r, S.t) : -1; return { run: runLabel(k), status: i < 0 ? null : r.reloc.status_names[r.reloc.status[i]] }; }),
   seek(t) { S.t = Math.max(0, Math.min(duration(), t)); S.playing = false; syncReplay(); draw(); },
   play() { if (!S.playing) togglePlay(); },
   duration,

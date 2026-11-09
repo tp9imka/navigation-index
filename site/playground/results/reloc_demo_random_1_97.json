@@ -1,0 +1,101 @@
+{
+ "schema": "close-area-world/1",
+ "frame": "local ENU m, origin at A",
+ "family": "random",
+ "seed": 1,
+ "index": 97,
+ "bounds": [
+  -1.4353,
+  -1.8168,
+  18.5647,
+  18.1832
+ ],
+ "a": [
+  0.0,
+  0.0
+ ],
+ "b": [
+  16.9051,
+  16.5581
+ ],
+ "z": 1.0,
+ "radius": 0.15,
+ "obstacles": [
+  {
+   "type": "box",
+   "cx": 1.5111,
+   "cy": 16.768,
+   "hx": 0.6701,
+   "hy": 0.9272,
+   "material": "matte"
+  },
+  {
+   "type": "box",
+   "cx": 17.4667,
+   "cy": 9.6181,
+   "hx": 0.3334,
+   "hy": 1.0953,
+   "material": "matte"
+  },
+  {
+   "type": "box",
+   "cx": 14.8853,
+   "cy": 8.9042,
+   "hx": 1.4079,
+   "hy": 0.4756,
+   "material": "matte"
+  },
+  {
+   "type": "box",
+   "cx": 13.3421,
+   "cy": -0.6215,
+   "hx": 1.1364,
+   "hy": 1.0255,
+   "material": "matte"
+  },
+  {
+   "type": "box",
+   "cx": 11.9106,
+   "cy": 13.0676,
+   "hx": 0.4008,
+   "hy": 0.9755,
+   "material": "matte"
+  },
+  {
+   "type": "box",
+   "cx": 12.2162,
+   "cy": 11.61,
+   "hx": 1.0617,
+   "hy": 0.976,
+   "material": "matte"
+  },
+  {
+   "type": "cylinder",
+   "cx": 6.4753,
+   "cy": 3.5099,
+   "r": 0.3845,
+   "material": "matte"
+  },
+  {
+   "type": "cylinder",
+   "cx": 1.4105,
+   "cy": 12.2699,
+   "r": 0.2679,
+   "material": "matte"
+  },
+  {
+   "type": "cylinder",
+   "cx": 2.6796,
+   "cy": -0.2827,
+   "r": 0.4462,
+   "material": "matte"
+  },
+  {
+   "type": "cylinder",
+   "cx": 3.0206,
+   "cy": 1.5828,
+   "r": 0.5103,
+   "material": "matte"
+  }
+ ]
+}
