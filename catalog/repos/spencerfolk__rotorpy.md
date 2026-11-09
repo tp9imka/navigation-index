@@ -37,6 +37,7 @@ Python multirotor simulator with aerodynamic effects (drag, wind) for education 
 - [cbf_quadrotor](../../catalog/repos/hocherie__cbf_quadrotor.md) (alternative_to)
 - [Crazyflow](../../catalog/repos/learnsyslab__crazyflow.md) (alternative_to)
 - [gym-pybullet-drones](../../catalog/repos/learnsyslab__gym-pybullet-drones.md) (alternative_to)
+- [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md) (explains)
 
 _Indexed by lane(s): sim-data_
 

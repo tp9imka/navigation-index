@@ -6,6 +6,10 @@ Reactive avoidance, sense-and-avoid, DAA.
 
 **Parent:** [Path and motion planning](../../catalog/concepts/path-planning.md)
 
+## Samples (1)
+
+- [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md) - Small deterministic simulator that every close-area A=>B approach in the hub is compared in.
+
 ## Guides (3)
 
 - [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2.

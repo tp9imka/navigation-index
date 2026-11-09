@@ -24,5 +24,6 @@ Peer-reviewed (ICRA 1991). Lists the structural failures of potential fields: tr
 ## Referenced by
 
 - [Real-Time Obstacle Avoidance for Manipulators and Mobile Robots](../../catalog/resources/khatib-potential-fields-ijrr-1986.md) (explains)
+- [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md) (explains)
 
 _Indexed by lane(s): close-area-planning_

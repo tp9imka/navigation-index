@@ -42,6 +42,7 @@ Gymnasium environments on PyBullet for single and multi-agent quadcopter control
 - [Aerial Gym Simulator](../../catalog/repos/ntnu-arl__aerial_gym_simulator.md) (alternative_to)
 - [RotorPy](../../catalog/repos/spencerfolk__rotorpy.md) (alternative_to)
 - [Flightmare](../../catalog/repos/uzh-rpg__flightmare.md) (alternative_to)
+- [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md) (explains)
 
 _Indexed by lane(s): sim-data_
 
