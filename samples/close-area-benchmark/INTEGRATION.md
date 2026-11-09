@@ -35,7 +35,7 @@ Add one line:
 
 ## Showcase (site/)
 
-`site/data/showcase/replays_v2/index.json` lists 72 replays grouped by family
+`site/data/showcase/replays_v2/index.json` lists 112 replays grouped by family
 (`schema close-area-replay-index/2`). Each replay has `world` in `close-area-world/1`, so the
 playground loader can open it directly. The showcase page still reads `replays/` (old format);
 pointing it at `replays_v2/` is a driver edit.

@@ -1,0 +1,74 @@
+100/2240 runs, 45 s
+200/2240 runs, 90 s
+300/2240 runs, 101 s
+400/2240 runs, 102 s
+500/2240 runs, 104 s
+600/2240 runs, 110 s
+700/2240 runs, 123 s
+800/2240 runs, 132 s
+900/2240 runs, 163 s
+1000/2240 runs, 180 s
+1100/2240 runs, 186 s
+1200/2240 runs, 195 s
+1300/2240 runs, 201 s
+1400/2240 runs, 205 s
+1500/2240 runs, 209 s
+1600/2240 runs, 210 s
+1700/2240 runs, 211 s
+1800/2240 runs, 212 s
+1900/2240 runs, 213 s
+2000/2240 runs, 214 s
+2100/2240 runs, 215 s
+2200/2240 runs, 216 s
+recheck vs matrix_0 {'vfh_plus': '320/320', 'astar_unknown': '320/320'} 0 differences
+### Preset `ideal`
+
+Cell = reached % / collision % (20 layouts unless stated).
+
+| planner | random | u_trap | narrow_gap | office | warehouse | forest | maze | glass_office |
+|---|---|---|---|---|---|---|---|---|
+| straight | 40 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 15 / 0 | 0 / 5 | 0 / 0 |
+| freest_beam | 80 / 0 | 0 / 0 | 0 / 0 | 15 / 5 | 15 / 0 | 100 / 0 | 0 / 0 | 10 / 5 |
+| apf_escape | 100 / 0 | 90 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 100 / 0 | 10 / 0 | 0 / 0 |
+| vfh_plus | 100 / 0 | 0 / 0 | 50 / 0 | 40 / 0 | 20 / 0 | 100 / 0 | 10 / 0 | 50 / 0 |
+| astar_known | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
+| astar_unknown | 100 / 0 | 100 / 0 | 90 / 0 | 95 / 0 | 55 / 0 | 100 / 0 | 95 / 0 | 95 / 0 |
+| informed_rrt_star | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
+| astar_mpc | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
+| astar_unknown_f2 | 75 / 0 | 100 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 65 / 0 | 0 / 0 | 0 / 0 |
+| dwa | 80 / 0 | 0 / 0 | 10 / 0 | 5 / 0 | 10 / 0 | 90 / 0 | 0 / 0 | 5 / 0 |
+| dwa_mem | 75 / 0 | 0 / 0 | 10 / 0 | 5 / 0 | 10 / 0 | 75 / 0 | 0 / 0 | 5 / 0 |
+| bug2 | 90 / 0 | 90 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 100 / 0 | 20 / 0 | 0 / 0 |
+| tangent_bug | 95 / 0 | 90 / 0 | 45 / 0 | 25 / 0 | 20 / 0 | 100 / 0 | 15 / 0 | 25 / 0 |
+| dstar_lite | 100 / 0 | 100 / 0 | 85 / 0 | 90 / 0 | 55 / 0 | 100 / 0 | 90 / 0 | 95 / 0 |
+
+Best planner per family (reached / collision %): random => apf_escape/vfh_plus/astar_known/astar_unknown/informed_rrt_star/astar_mpc/dstar_lite (100 / 0); u_trap => astar_known/astar_unknown/informed_rrt_star/astar_mpc/astar_unknown_f2/dstar_lite (100 / 0); narrow_gap => astar_known/informed_rrt_star/astar_mpc (100 / 0); office => astar_known/informed_rrt_star/astar_mpc (100 / 0); warehouse => astar_known/informed_rrt_star/astar_mpc (100 / 0); forest => freest_beam/apf_escape/vfh_plus/astar_known/astar_unknown/informed_rrt_star/astar_mpc/bug2/tangent_bug/dstar_lite (100 / 0); maze => astar_known/informed_rrt_star/astar_mpc (100 / 0); glass_office => astar_known/informed_rrt_star/astar_mpc (100 / 0)
+
+Best without a prior map (astar_known, informed_rrt_star, astar_mpc excluded): random => apf_escape/vfh_plus/astar_unknown/dstar_lite (100 / 0); u_trap => astar_unknown/astar_unknown_f2/dstar_lite (100 / 0); narrow_gap => astar_unknown (90 / 0); office => astar_unknown (95 / 0); warehouse => astar_unknown/dstar_lite (55 / 0); forest => freest_beam/apf_escape/vfh_plus/astar_unknown/bug2/tangent_bug/dstar_lite (100 / 0); maze => astar_unknown (95 / 0); glass_office => astar_unknown/dstar_lite (95 / 0)
+
+### Preset `crazyflie`
+
+Cell = reached % / collision % (20 layouts unless stated).
+
+| planner | random | u_trap | narrow_gap | office | warehouse | forest | maze | glass_office |
+|---|---|---|---|---|---|---|---|---|
+| straight | 40 / 40 | 0 / 65 | 0 / 70 | 0 / 65 | 0 / 65 | 15 / 60 | 0 / 80 | 5 / 70 |
+| freest_beam | 50 / 5 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 35 / 15 | 0 / 10 | 5 / 5 |
+| apf_escape | 85 / 0 | 35 / 20 | 0 / 5 | 0 / 10 | 0 / 0 | 60 / 25 | 0 / 15 | 5 / 20 |
+| vfh_plus | 45 / 55 | 0 / 100 | 5 / 95 | 5 / 90 | 0 / 95 | 35 / 65 | 0 / 100 | 0 / 90 |
+| astar_known | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
+| astar_unknown | 100 / 0 | 95 / 5 | 25 / 5 | 35 / 25 | 0 / 50 | 95 / 5 | 35 / 15 | 5 / 65 |
+| informed_rrt_star | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
+| astar_mpc | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 | 100 / 0 |
+| astar_unknown_f2 | 100 / 0 | 100 / 0 | 15 / 5 | 50 / 5 | 0 / 0 | 95 / 5 | 55 / 0 | 5 / 45 |
+| dwa | 40 / 35 | 0 / 15 | 0 / 40 | 0 / 55 | 0 / 50 | 10 / 90 | 0 / 65 | 5 / 60 |
+| dwa_mem | 55 / 5 | 0 / 0 | 5 / 0 | 5 / 0 | 0 / 20 | 45 / 15 | 0 / 15 | 5 / 5 |
+| bug2 | 90 / 10 | 20 / 30 | 0 / 0 | 0 / 35 | 15 / 20 | 50 / 40 | 0 / 20 | 5 / 40 |
+| tangent_bug | 55 / 45 | 35 / 15 | 5 / 10 | 10 / 45 | 0 / 35 | 25 / 75 | 0 / 50 | 5 / 50 |
+| dstar_lite | 100 / 0 | 100 / 0 | 15 / 10 | 20 / 40 | 5 / 45 | 100 / 0 | 40 / 25 | 10 / 65 |
+
+Best planner per family (reached / collision %): random => astar_known/astar_unknown/informed_rrt_star/astar_mpc/astar_unknown_f2/dstar_lite (100 / 0); u_trap => astar_known/informed_rrt_star/astar_mpc/astar_unknown_f2/dstar_lite (100 / 0); narrow_gap => astar_known/informed_rrt_star/astar_mpc (100 / 0); office => astar_known/informed_rrt_star/astar_mpc (100 / 0); warehouse => astar_known/informed_rrt_star/astar_mpc (100 / 0); forest => astar_known/informed_rrt_star/astar_mpc/dstar_lite (100 / 0); maze => astar_known/informed_rrt_star/astar_mpc (100 / 0); glass_office => astar_known/informed_rrt_star/astar_mpc (100 / 0)
+
+Best without a prior map (astar_known, informed_rrt_star, astar_mpc excluded): random => astar_unknown/astar_unknown_f2/dstar_lite (100 / 0); u_trap => astar_unknown_f2/dstar_lite (100 / 0); narrow_gap => astar_unknown (25 / 5); office => astar_unknown_f2 (50 / 5); warehouse => bug2 (15 / 20); forest => dstar_lite (100 / 0); maze => astar_unknown_f2 (55 / 0); glass_office => dstar_lite (10 / 65)
+
+wall 216.2 s for 2240 runs; merged 1600 rows into results/matrix_0.json, .md

@@ -1,6 +1,8 @@
 """Export one replay per arena family x planner for the showcase and the playground.
 
 .venv/bin/python export_replays.py [--out ../../site/data/showcase/replays_v2]
+.venv/bin/python export_replays.py --merge --planners dwa,dwa_mem,bug2,tangent_bug,dstar_lite
+    (export only these planners; index.json keeps every other planner's entry and file as it was)
 
 For every family in bench.FAMILIES, layout 0, seed 0, every planner in bench.DEFAULT_PLANNERS is
 flown again through bench.run_one with its trace kept. Preset: crazyflie for glass_office (so
@@ -102,8 +104,18 @@ def main(argv=None) -> int:
     ap.add_argument("--out", default=DEFAULT_OUT)
     ap.add_argument("--families", default=",".join(bench.FAMILIES))
     ap.add_argument("--planners", default=",".join(bench.DEFAULT_PLANNERS))
+    ap.add_argument("--merge", action="store_true",
+                    help="keep the entries of index.json for planners not exported this time (their files are "
+                         "not rewritten); new entries are inserted in bench.DEFAULT_PLANNERS order")
     a = ap.parse_args(argv)
     os.makedirs(a.out, exist_ok=True)
+    kept = {}                                   # family => existing index entries kept by --merge
+    idx_path = os.path.join(a.out, "index.json")
+    if a.merge and os.path.exists(idx_path):
+        redo = set(a.planners.split(","))
+        for g in json.load(open(idx_path))["families"]:
+            kept[g["family"]] = [r for r in g["runs"] if r["planner"] not in redo
+                                 and os.path.exists(os.path.join(a.out, r["file"]))]
     matrix_rows = {}
     if os.path.exists(MATRIX):
         for r in json.load(open(MATRIX))["runs"]:
@@ -112,6 +124,9 @@ def main(argv=None) -> int:
     groups = []
     for fam in a.families.split(","):
         runs = [export_one(p, fam, a.out, matrix_rows) for p in a.planners.split(",") if bench.available(p)]
+        if kept.get(fam):
+            order = {p: k for k, p in enumerate(bench.DEFAULT_PLANNERS)}
+            runs = sorted(kept[fam] + runs, key=lambda r: order.get(r["planner"], len(order)))
         groups.append({"family": fam, "preset": preset_for(fam), "seed": 0, "index": 0, "runs": runs})
     allr = [r for g in groups for r in g["runs"]]
     idx = {"schema": "close-area-replay-index/2", "generated_by": "samples/close-area-benchmark/export_replays.py",
@@ -122,7 +137,10 @@ def main(argv=None) -> int:
            "matches_matrix": sum(bool(r["matches_matrix"]) for r in allr), "families": groups}
     with open(os.path.join(a.out, "index.json"), "w") as fh:
         json.dump(idx, fh, indent=1)
-    print(f"wrote {len(allr)} replays + index.json to {os.path.relpath(a.out, HERE)}; {idx['matches_matrix']}/{len(allr)} match "
+    n_kept = sum(len(v) for v in kept.values())
+    if n_kept:
+        print(f"--merge: kept {n_kept} existing index entries (files not rewritten, match flags as stored)")
+    print(f"wrote {len(allr) - n_kept} replays, index.json lists {len(allr)} to {os.path.relpath(a.out, HERE)}; {idx['matches_matrix']}/{len(allr)} match "
           f"results/matrix_0.json; world JSON round trip ok {sum(r['world_roundtrip'] for r in allr)}/{len(allr)}; max {max(r['bytes'] for r in allr)} bytes; wall {time.perf_counter() - t0:.1f} s")
     return 0 if idx["matches_matrix"] == len(allr) else 1
 

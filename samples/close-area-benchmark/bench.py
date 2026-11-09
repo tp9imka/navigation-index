@@ -13,7 +13,17 @@ Planners (imported by path from their samples, nothing edited there):
   astar_mpc           close-area-planner-mpc mpc.AStarMPC(known_map=True), corridor MPC follower
   astar_unknown_f2    astar_unknown with the F2 (PX4-CBF as shipped) filter from close-area-safety-filter
                       on every 50 Hz physics step, fed by its own scan every 3 steps (as run_kill.py)
+  dwa                 close-area-planner-dwa-bug dwa.make()
+  dwa_mem             dwa.make(memory_s=3.0), 3 s of remembered returns (as that sample's bench.py)
+  bug2, tangent_bug   close-area-planner-dwa-bug bug.make("bug2") / bug.make("tangent_bug")
+  dstar_lite          close-area-planner-dstar GridReplanner(backend="dstar"), unknown map, same geofence
+                      as astar_unknown (subclass built here, sample not edited)
 Diagnostic only (--planners astar_unknown_prior): astar_esdf known_map=False exactly as shipped.
+
+Adding rows to an existing matrix without re-running the old ones (loop-46c):
+  .venv/bin/python bench.py --add-to matrix_0 --planners dwa,dwa_mem,bug2,tangent_bug,dstar_lite \
+      --recheck vfh_plus,astar_unknown --workers 14     # merge + run-by-run check of 2 old rows
+  .venv/bin/python bench.py --cross-check matrix_0      # DWA/Bug rows vs the dwa-bug sample's own run
 
 Geofence: the shipped unknown-map A* keeps a fixed 24 m log-odds map from (-2.5, -2.5) in the A
 frame, so a B that lies at negative x or y (office rooms, glass_office) is clamped to the map
@@ -95,6 +105,9 @@ _reactive = _load_sample("close-area-planner-reactive", ["apf", "vfh_plus"])
 _sampling = _load_sample("close-area-planner-sampling", ["rrt_star"])
 _mpc = _load_sample("close-area-planner-mpc", ["mpc"])
 _filters = _load_sample("close-area-safety-filter", ["filters"])
+_dwabug = _load_sample("close-area-planner-dwa-bug", ["dwa", "bug"])
+_dstar = _load_sample("close-area-planner-dstar", ["dstar_lite"])
+DWA_MEM_S = 3.0                # s of remembered returns, as close-area-planner-dwa-bug/bench.py
 
 
 class GeofencedAStar(astar_esdf.AStarESDF):
@@ -115,6 +128,22 @@ def _bounds(w):
     return (w.xmin, w.ymin, w.xmax, w.ymax)
 
 
+def geofenced_dstar(bounds, margin: float = 2.0):
+    """close-area-planner-dstar GridReplanner(backend="dstar") with the same geofence as
+    GeofencedAStar. GridReplanner subclasses AStarESDF(known_map=False), so it has the same fixed
+    map corner at (-2.5, -2.5) as shipped; the subclass is built here so the sample is not edited."""
+    base_cls = _dstar["dstar_lite"].GridReplanner
+
+    class GeofencedDStar(base_cls):
+        def reset(self) -> None:
+            super().reset()
+            if self.map is not None:
+                self.map.x0 = bounds[0] - margin
+                self.map.y0 = bounds[1] - margin
+
+    return GeofencedDStar(backend="dstar")
+
+
 # name => (factory(world) -> Planner, filter name or None, label, source sample)
 PLANNERS = {
     "straight": (lambda w: straight.make(), None, "straight line (floor)", "close-area-arena"),
@@ -132,18 +161,29 @@ PLANNERS = {
                          "close-area-safety-filter"),
     "astar_unknown_prior": (lambda w: astar_esdf.make(known_map=False), None,
                             "A* unknown map, shipped map prior (diagnostic)", "close-area-arena"),
+    "dwa": (lambda w: _dwabug["dwa"].make(), None, "DWA", "close-area-planner-dwa-bug"),
+    "dwa_mem": (lambda w: _dwabug["dwa"].make(memory_s=DWA_MEM_S), None, "DWA + 3 s scan memory",
+                "close-area-planner-dwa-bug"),
+    "bug2": (lambda w: _dwabug["bug"].make("bug2"), None, "Bug2", "close-area-planner-dwa-bug"),
+    "tangent_bug": (lambda w: _dwabug["bug"].make("tangent_bug"), None, "TangentBug",
+                    "close-area-planner-dwa-bug"),
+    "dstar_lite": (lambda w: geofenced_dstar(_bounds(w)), None, "D* Lite unknown map",
+                   "close-area-planner-dstar"),
 }
 DEFAULT_PLANNERS = ("straight", "freest_beam", "apf_escape", "vfh_plus", "astar_known", "astar_unknown",
-                    "informed_rrt_star", "astar_mpc", "astar_unknown_f2")
+                    "informed_rrt_star", "astar_mpc", "astar_unknown_f2",
+                    "dwa", "dwa_mem", "bug2", "tangent_bug", "dstar_lite")
+NEW_PLANNERS = ("dwa", "dwa_mem", "bug2", "tangent_bug", "dstar_lite")   # added by --add-to (loop-46c)
 NEEDS = {"apf_escape": (_reactive, "apf"), "vfh_plus": (_reactive, "vfh_plus"),
          "informed_rrt_star": (_sampling, "rrt_star"), "astar_mpc": (_mpc, "mpc"),
-         "astar_unknown_f2": (_filters, "filters")}
+         "astar_unknown_f2": (_filters, "filters"), "dwa": (_dwabug, "dwa"), "dwa_mem": (_dwabug, "dwa"),
+         "bug2": (_dwabug, "bug"), "tangent_bug": (_dwabug, "bug"), "dstar_lite": (_dstar, "dstar_lite")}
 FAMILIES = ("random", "u_trap", "narrow_gap", "office", "warehouse", "forest", "maze", "glass_office")
 PRESETS = ("ideal", "crazyflie")
 LONG_FAMILIES = {"maze": 120.0, "warehouse": 120.0}
 FILTER_SCAN_EVERY = 3          # physics steps, as close-area-safety-filter/run_kill.py
 # Planners that were asked for but have no sample in this checkout yet.
-TO_ADD = ("close-area-planner-dwa-bug (DWA, Bug2)", "close-area-planner-dstar (D* Lite)")
+TO_ADD = ()
 
 
 def available(name: str) -> bool:
@@ -221,6 +261,15 @@ def run_one(planner: str, family: str, preset: str, index: int, seed: int = 0, k
         "planner_ms_mean": round(float(np.mean(plan_ms)), 3),
         "wall_s": round(time.perf_counter() - t_wall, 2),
     })
+    # Planner-side counters, only for the planners that keep them (new rows; old rows unchanged).
+    if hasattr(pl, "no_admissible_steps"):                      # DWA: steps with no admissible sample
+        res["no_admissible_steps"] = pl.no_admissible_steps
+    if planner in ("bug2", "tangent_bug"):
+        res["mode_changes"] = len(pl.log)
+        res["bug2_fail_exit"] = any(m == "fail" for _, m in pl.log)
+    if planner == "dstar_lite":
+        res["no_path_replans"] = pl.no_path
+        res["search_ms_median"] = round(float(np.median(pl.search_ms)), 3) if pl.search_ms else None
     res["hit_material"] = None
     if res["collision"]:
         for (x, y) in xy:
@@ -332,7 +381,17 @@ def main(argv=None) -> int:
     ap.add_argument("--parity", action="store_true", help="check this loop against run.evaluate first")
     ap.add_argument("--stem", default=None, help="output stem in results/ (default matrix_<seed>)")
     ap.add_argument("--render", default=None, metavar="STEM", help="only rebuild results/STEM.md from its .json")
+    ap.add_argument("--add-to", default=None, metavar="STEM",
+                    help="run --planners and merge their rows into results/STEM.json; rows of other planners "
+                         "stay as they are. Layouts, seed, families and presets are taken from STEM.json")
+    ap.add_argument("--recheck", default="", metavar="P1,P2",
+                    help="with --add-to: re-run these existing rows too and compare them run by run with "
+                         "STEM.json (written to results/STEM_recheck.*; STEM.json keeps the old rows)")
+    ap.add_argument("--cross-check", default=None, metavar="STEM",
+                    help="compare the DWA / Bug rows of results/STEM.json with close-area-planner-dwa-bug's own run")
     a = ap.parse_args(argv)
+    if a.cross_check:
+        return cross_check(a.cross_check)
     if a.render:
         render(os.path.join(RESULTS, a.render))
         print(f"wrote results/{a.render}.md")
@@ -345,28 +404,10 @@ def main(argv=None) -> int:
     par = parity(min(a.layouts, 10), a.seed) if a.parity else None
     if par:
         print("parity vs run.evaluate:", par, flush=True)
-    slow = {"astar_unknown": 0, "astar_unknown_f2": 0, "astar_unknown_prior": 0, "informed_rrt_star": 1,
-            "astar_mpc": 2}
-    tasks = [(p, f, pr, i, a.seed) for p in planners for f in families for pr in presets_
-             for i in range(a.layouts)]
-    tasks.sort(key=lambda t: (t[1] not in LONG_FAMILIES, slow.get(t[0], 9)))   # long jobs first
-    t_all = time.perf_counter()
-    rows = []
-    with ProcessPoolExecutor(max_workers=a.workers) as ex:
-        for k, r in enumerate(ex.map(_task, tasks, chunksize=1)):
-            rows.append(r)
-            if (k + 1) % 100 == 0:
-                print(f"{k + 1}/{len(tasks)} runs, {time.perf_counter() - t_all:.0f} s", flush=True)
-    wall = round(time.perf_counter() - t_all, 1)
-    rows.sort(key=lambda r: (presets_.index(r["preset"]), planners.index(r["planner"]),
-                             families.index(r["family"]), r["index"]))
-    summ: dict = {}
-    for pr in presets_:
-        for p in planners:
-            for f in families:
-                sel = [r for r in rows if r["preset"] == pr and r["planner"] == p and r["family"] == f]
-                if sel:
-                    summ.setdefault(pr, {}).setdefault(p, {})[f] = summarize(sel)
+    if a.add_to:
+        return add_to(a, cmd, planners, skipped)
+    rows, wall = run_tasks(planners, families, presets_, a.layouts, a.seed, a.workers)
+    summ = summarize_all(rows, planners, families, presets_)
     stem = os.path.join(RESULTS, a.stem or f"matrix_{a.seed}")
     os.makedirs(RESULTS, exist_ok=True)
     meta = {"command": cmd, "input": "synthetic", "seed": a.seed, "layouts": a.layouts, "workers": a.workers,
@@ -384,6 +425,159 @@ def main(argv=None) -> int:
     return 0
 
 
+SLOW = {"astar_unknown": 0, "astar_unknown_f2": 0, "astar_unknown_prior": 0, "dwa_mem": 0, "informed_rrt_star": 1,
+        "dstar_lite": 1, "astar_mpc": 2, "dwa": 2}
+
+
+def run_tasks(planners, families, presets_, layouts, seed, workers):
+    tasks = [(p, f, pr, i, seed) for p in planners for f in families for pr in presets_
+             for i in range(layouts)]
+    tasks.sort(key=lambda t: (t[1] not in LONG_FAMILIES, SLOW.get(t[0], 9)))   # long jobs first
+    t_all = time.perf_counter()
+    rows = []
+    with ProcessPoolExecutor(max_workers=workers) as ex:
+        for k, r in enumerate(ex.map(_task, tasks, chunksize=1)):
+            rows.append(r)
+            if (k + 1) % 100 == 0:
+                print(f"{k + 1}/{len(tasks)} runs, {time.perf_counter() - t_all:.0f} s", flush=True)
+    wall = round(time.perf_counter() - t_all, 1)
+    rows.sort(key=lambda r: (presets_.index(r["preset"]), planners.index(r["planner"]),
+                             families.index(r["family"]), r["index"]))
+    return rows, wall
+
+
+def summarize_all(rows, planners, families, presets_) -> dict:
+    summ: dict = {}
+    for pr in presets_:
+        for p in planners:
+            for f in families:
+                sel = [r for r in rows if r["preset"] == pr and r["planner"] == p and r["family"] == f]
+                if sel:
+                    summ.setdefault(pr, {}).setdefault(p, {})[f] = summarize(sel)
+    return summ
+
+
+RECHECK_KEYS = ("outcome", "min_clearance_m", "path_length_m", "time_to_goal_s")
+
+
+def add_to(a, cmd, planners, skipped) -> int:
+    """Run new planners (and re-run --recheck rows) on the layouts of an existing matrix and merge."""
+    stem = os.path.join(RESULTS, a.add_to)
+    d = json.load(open(stem + ".json"))
+    families, presets_, layouts, seed = d["families"], list(d["presets"]), d["layouts"], d["seed"]
+    recheck = [p for p in a.recheck.split(",") if p]
+    missing = [p for p in recheck if p not in d["planners"]]
+    if missing:
+        raise SystemExit(f"--recheck {missing}: not rows of {a.add_to}.json")
+    allp = planners + [p for p in recheck if p not in planners]
+    rows, wall = run_tasks(allp, families, presets_, layouts, seed, a.workers)
+    new_rows = [r for r in rows if r["planner"] in planners]
+    # --- recheck: re-run rows vs the stored ones, run by run ---
+    rc = None
+    if recheck:
+        old = {(r["planner"], r["family"], r["preset"], r["index"]): r for r in d["runs"]}
+        per, diffs = {}, []
+        for r in rows:
+            if r["planner"] not in recheck:
+                continue
+            o = old.get((r["planner"], r["family"], r["preset"], r["index"]))
+            same = o is not None and all(o.get(k) == r.get(k) for k in RECHECK_KEYS)
+            c = per.setdefault(r["planner"], [0, 0])
+            c[0] += int(same)
+            c[1] += 1
+            if not same:
+                diffs.append({"planner": r["planner"], "family": r["family"], "preset": r["preset"],
+                              "index": r["index"], "old": {k: (o or {}).get(k) for k in RECHECK_KEYS},
+                              "new": {k: r.get(k) for k in RECHECK_KEYS}})
+        rc = {"command": cmd, "against": f"results/{a.add_to}.json", "keys": list(RECHECK_KEYS),
+              "identical": {p: f"{c[0]}/{c[1]}" for p, c in per.items()}, "differences": diffs, "env": env()}
+        with open(stem + "_recheck.json", "w") as fh:
+            json.dump(rc, fh, indent=1)
+        md = [f"`{cmd}` from samples/close-area-benchmark. Input: synthetic. Existing rows re-run on the same "
+              f"{layouts} layouts x {len(families)} families x {len(presets_)} presets, seed {seed}, and compared "
+              f"run by run with results/{a.add_to}.json on {', '.join(RECHECK_KEYS)}.", "",
+              "| planner | runs identical |", "|---|---|"]
+        md += [f"| {p} | {v} |" for p, v in rc["identical"].items()]
+        md += ["", f"Differences: {len(diffs)}", ""]
+        md += [f"- {x['planner']} {x['preset']} {x['family']} #{x['index']}: old {x['old']} new {x['new']}"
+               for x in diffs]
+        with open(stem + "_recheck.md", "w") as fh:
+            fh.write("\n".join(md) + "\n")
+        print("recheck vs", a.add_to, rc["identical"], f"{len(diffs)} differences", flush=True)
+    # --- merge the new planners' rows; every other row of d stays as it was ---
+    d["runs"] = [r for r in d["runs"] if r["planner"] not in planners] + new_rows
+    summ = summarize_all(new_rows, planners, families, presets_)
+    for pr in presets_:
+        for p in planners:
+            d["summary"].setdefault(pr, {})[p] = summ.get(pr, {}).get(p, {})
+        d["summary"][pr] = {p: d["summary"][pr][p] for p in list(d["planners"]) + planners
+                            if p in d["summary"][pr]}
+    for p in planners:
+        d["planners"][p] = {"label": PLANNERS[p][2], "sample": PLANNERS[p][3], "filter": PLANNERS[p][1]}
+    d["to_add"] = list(TO_ADD)
+    d["skipped_missing_module"] = sorted(set(d.get("skipped_missing_module", [])) | set(skipped))
+    d.setdefault("additions", [])
+    d["additions"] = [x for x in d["additions"] if not set(x["planners"]) & set(planners)]
+    d["additions"].append({"command": cmd, "planners": planners, "recheck": rc["identical"] if rc else None,
+                           "workers": a.workers, "wall_s": wall, "n_runs": len(rows), "env": env(),
+                           "date": time.strftime("%Y-%m-%d")})
+    with open(stem + ".json", "w") as fh:
+        json.dump(d, fh, indent=1, default=list)
+    render(stem)
+    print(tables(d["summary"], list(d["planners"]), families, presets_))
+    print(f"wall {wall} s for {len(rows)} runs; merged {len(new_rows)} rows into {os.path.relpath(stem, HERE)}.json, .md")
+    return 0 if not rc or not rc["differences"] else 1
+
+
+def cross_check(stem: str) -> int:
+    """Compare the dwa/dwa_mem/bug2/tangent_bug rows of results/STEM.json (preset ideal) with
+    close-area-planner-dwa-bug/results/dwa_bug_0.json (fan "default" = the same 72-ray arena fan,
+    run through run.evaluate) on random, u_trap and narrow_gap, layouts 0..layouts-1 of the matrix.
+    Writes results/STEM_cross_checks.md."""
+    n = json.load(open(os.path.join(RESULTS, stem + ".json")))
+    src = os.path.join(SAMPLES, "close-area-planner-dwa-bug", "results", "dwa_bug_0.json")
+    d = json.load(open(src))
+    on = {(r["planner"], r["family"], r["preset"], r["index"]): r for r in n["runs"]}
+    per, diffs = {}, []
+    for cell in d["cells"]:
+        if cell["fan"] != "default" or cell["planner"] not in ("dwa", "dwa_mem", "bug2", "tangent_bug"):
+            continue
+        for r in cell["runs"]:
+            m = on.get((cell["planner"], cell["family"], "ideal", r["index"]))
+            if m is None:
+                continue
+            same = m["outcome"] == r["outcome"] and m["min_clearance_m"] == r["min_clearance_m"]
+            c = per.setdefault(cell["planner"], [0, 0])
+            c[0] += int(same)
+            c[1] += 1
+            if not same:
+                diffs.append(f"{cell['planner']} {cell['family']} #{r['index']}")
+    md = [f"`python bench.py --cross-check {stem}`. Input: synthetic. Rows of results/{stem}.json (preset ideal) "
+          "vs close-area-planner-dwa-bug/results/dwa_bug_0.json (fan default, run.evaluate, seed 0) on random, "
+          "u_trap and narrow_gap, same layout indices. Same = identical outcome and min clearance.", "",
+          "| planner | runs same |", "|---|---|"] + [f"| {p} | {c[0]}/{c[1]} |" for p, c in per.items()]
+    md += ["", f"Differences: {len(diffs)}" + (" (" + ", ".join(diffs) + ")" if diffs else ""), ""]
+    # D* Lite is astar_esdf's unknown-map planner with an incremental search: same outcome as astar_unknown?
+    key = lambda r: (r["family"], r["preset"], r["index"])          # noqa: E731
+    au = {key(r): r for r in n["runs"] if r["planner"] == "astar_unknown"}
+    ds = {key(r): r for r in n["runs"] if r["planner"] == "dstar_lite"}
+    if au and ds:
+        md += ["dstar_lite vs astar_unknown (same geofence, same map and cost model, incremental search), runs "
+               "with the same outcome, and mean planner step time over all runs of the preset (ms; 14 processes "
+               "in parallel, not a clean timing):", "",
+               "| preset | same outcome | astar_unknown mean step ms | dstar_lite mean step ms |", "|---|---|---|---|"]
+        for pr in n["presets"]:
+            ks = [k for k in au if k[1] == pr and k in ds]
+            ms = lambda m: round(float(np.mean([m[k]["planner_ms_mean"] for k in ks])), 2)   # noqa: E731
+            md.append(f"| {pr} | {sum(au[k]['outcome'] == ds[k]['outcome'] for k in ks)}/{len(ks)} | {ms(au)} "
+                      f"| {ms(ds)} |")
+        md.append("")
+    with open(os.path.join(RESULTS, stem + "_cross_checks.md"), "w") as fh:
+        fh.write("\n".join(md))
+    print("\n".join(md))
+    return 0 if not diffs else 1
+
+
 def render(stem: str) -> None:
     """Write <stem>.md from <stem>.json (python bench.py --render matrix_0 rebuilds it)."""
     d = json.load(open(stem + ".json"))
@@ -398,8 +592,16 @@ def render(stem: str) -> None:
                + ", ".join(f"{k} {v}" for k, v in d["parity_vs_run_evaluate"].items()), ""]
     if d.get("skipped_missing_module"):
         md += ["Skipped (module failed to import): " + ", ".join(d["skipped_missing_module"]), ""]
-    md += ["Not in this checkout, to add: " + "; ".join(d["to_add"]), "",
-           tables(summ, planners, families, presets_), "### All fields", "",
+    for x in d.get("additions", []):
+        md += [f"Rows {', '.join(x['planners'])} added later by `{x['command']}` ({x['date']}, same layouts and "
+               f"limits, {x['workers']} worker processes, wall {x['wall_s']} s for {x['n_runs']} runs, Python "
+               f"{x['env']['python']}, numpy {x['env']['numpy']}). All other rows are kept from the first run."
+               + (" Existing rows re-run as a check, runs identical in outcome, min clearance, path length and "
+                  "time to goal: " + ", ".join(f"{k} {v}" for k, v in x["recheck"].items()) + "."
+                  if x.get("recheck") else ""), ""]
+    if d.get("to_add"):
+        md += ["Not in this checkout, to add: " + "; ".join(d["to_add"]), ""]
+    md += [tables(summ, planners, families, presets_), "### All fields", "",
            detail_table(summ, planners, families, presets_), ""]
     with open(stem + ".md", "w") as fh:
         fh.write("\n".join(md))
