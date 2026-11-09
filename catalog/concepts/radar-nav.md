@@ -6,7 +6,7 @@ Radar odometry, radar SLAM, radar altimeters, Doppler velocity.
 
 ## Samples (1)
 
-- [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) - A simulated USV runs a 19.6 km transit over real geography (Lillgrund => Drogden channel => Copenhagen approach) built from OpenStreetMap coastline, Oresund bridge, wind turbines and seamarks, with 75 min of real Danish 
+- [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) - A simulated USV runs a 19.6 km transit over real geography (Lillgrund => Drogden channel => Copenhagen approach) built from OpenStreetMap coastline, Oresund bridge, wind turbines and seamarks, with 75 min of real Danish
 
 ## Repositories (22)
 
@@ -40,7 +40,7 @@ Radar odometry, radar SLAM, radar altimeters, Doppler velocity.
 - [Ant-Mutated Immune Particle Filter Design for Terrain Referenced Navigation with Interferometric Radar Altimeter](../../catalog/resources/kang-yu-2021-ira-trn-particle-filter.md) - paper - Open-access Remote Sensing paper proposing a particle filter variant (ant-colony mutation inside an immune auxiliary particle filter) to cope with low-grade interferometric radar altimeter errors in TRN.
 - [CFEAR Radarodometry - Conservative Filtering for Efficient and Accurate Radar Odometry](../../catalog/resources/cfear-radarodometry-adolfsson-2021.md) - paper - Learning-free spinning-radar odometry that keeps the strongest returns per azimuth, builds oriented surface points and registers against a keyframe history (IROS 2021).
 - [DIAT-uSAT: micro-Doppler Signature Dataset of Small Unmanned Aerial Vehicle (SUAV)](../../catalog/resources/diat-musat-micro-doppler-dataset.md) - dataset - 4,849 micro-Doppler signature images from an X-band (10 GHz) continuous-wave radar of small UAV-like targets: RC plane, two rotor types, quadcopter, bionic bird and mini-helicopter plus bionic bird.
-- [From Sea to Space: Advancing Perception in Harsh Domains (ICRA 2026 workshop)](../../catalog/resources/icra-2026-sea-to-space-perception-workshop.md) - talk - ICRA 2026 (Vienna) workshop on perception for underwater, space and terrestrial field robots, including localization and mapping in degraded sensing, GPS-denied global localization, novel sensors (sonar, radar, thermal, 
+- [From Sea to Space: Advancing Perception in Harsh Domains (ICRA 2026 workshop)](../../catalog/resources/icra-2026-sea-to-space-perception-workshop.md) - talk - ICRA 2026 (Vienna) workshop on perception for underwater, space and terrestrial field robots, including localization and mapping in degraded sensing, GPS-denied global localization, novel sensors (sonar, radar, thermal,
 - [Honeywell HGuide o480 single-card INS and HGuide i700 IMU](../../catalog/resources/honeywell-hguide-o480.md) - product - HGuide o480 (May 2025) is a single-card INS for small UAVs and ground robots that accepts velocity aiding (e.g.
 - [MulRan: Multimodal Range Dataset for Urban Place Recognition](../../catalog/resources/snu-mulran-dataset.md) - dataset - Urban sequences with radar and lidar for range-sensor place recognition and odometry.
 - [Oxford Radar RobotCar Dataset](../../catalog/resources/oxford-radar-robotcar-dataset.md) - dataset - RobotCar route re-driven with a scanning FMCW radar plus lidars and cameras, for radar odometry and localization.

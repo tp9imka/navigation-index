@@ -10,9 +10,10 @@ Global descriptors, image retrieval, LiDAR place recognition.
 - [End-to-end GNSS-denied visual navigation on one real flight: nadir VO + DINOv2 retrieval + LightGlue fixes + multi-frame voting + altpnt integrity (VPAIR)](../../catalog/samples/e2e-visual-nav-vpair.md) - Chains four sibling samples by import on the real VPAIR light-aircraft flight (199 nadir frames, 8.98 km, ~320 m AGL): attitude-aided nadir VO (with and without a 2 deg heading error), every frame DINOv2 GeM top-5 retrie
 - [Large-area visual place recognition for lost-GNSS recovery (DINOv2 GeM / VLAD over a 49 km2 NAIP tile DB, chained to LightGlue fine matching)](../../catalog/samples/vpr-large-area.md) - The coarse first stage that geoloc-license-clean lacks: no position prior, unknown heading.
 
-## Guides (3)
+## Guides (4)
 
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) - After this chapter you can explain how a camera, LiDAR or radar measures motion, what SLAM adds on top of odometry, and which open stack to run on which sensor.
+- [H2: request a localization fix before its navigation deadline](../../docs/hypotheses/h2-localization-scheduling.md) - Status: synthetic predictive trigger is competitive, but advantage over a strong opportunity heuristic is not established.
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) - Learned models in navigation pipelines carry three separate sets of terms:
 - [Three selective offline starter bundles](../../docs/starter-bundles.md) - Pick a bundle before downloading the broad offline kit.
 
@@ -29,7 +30,7 @@ Global descriptors, image retrieval, LiDAR place recognition.
 - [VPR methods evaluation](../../catalog/repos/gmberton__vpr-methods-evaluation.md) - fit: high - Wrapper exposing many state-of-the-art place recognition models behind one interface so you can switch models with one parameter.
 - [UAVLocalization (map retrieval + alignment)](../../catalog/repos/hmf21__uavlocalization.md) - fit: high - Geo-localization system for aerial platforms that first retrieves the right satellite map region with a deep descriptor and then aligns the drone orthophoto to it to extract coordinates; evaluated on reorganized public A
 - [aero-vloc](../../catalog/repos/prime-slam__aero-vloc.md) - fit: high - Benchmark tool accompanying the aerial VPR survey by Moskalenko et al.: downloads satellite map tiles, localizes UAV imagery against them with AnyLoc, CosPlace, EigenPlaces, MixVPR, NetVLAD, SALAD or SelaVPR, and optiona
-- [aerial-nav - GPS-denied navigation via Siamese network](../../catalog/repos/sviridov-aleksandr__aerial-nav.md) - fit: high - Matches onboard camera frames to a pre-built satellite map of the route: a ResNet-18 Siamese network with SAFA spatial aggregation ranks map tiles indexed at 13 altitude levels (0-1200 m), then SuperPoint/LightGlue with 
+- [aerial-nav - GPS-denied navigation via Siamese network](../../catalog/repos/sviridov-aleksandr__aerial-nav.md) - fit: high - Matches onboard camera frames to a pre-built satellite map of the route: a ResNet-18 Siamese network with SAFA spatial aggregation ranks map tiles indexed at 13 altitude levels (0-1200 m), then SuperPoint/LightGlue with
 - [ORB-SLAM2](../../catalog/repos/raulmur__orb_slam2.md) - fit: medium - Feature-based SLAM for monocular, stereo and RGB-D cameras using ORB features, with loop closing and relocalization against a reusable map.
 - [SC-LIO-SAM](../../catalog/repos/gisbi-kim__sc-lio-sam.md) - fit: medium - LIO-SAM combined with Scan Context loop closure for more reliable large-scale LiDAR-inertial SLAM.
 - [STD](../../catalog/repos/hku-mars__std.md) - fit: medium - Stable Triangle Descriptor for 3D point-cloud place recognition and loop closure.
@@ -47,7 +48,7 @@ Global descriptors, image retrieval, LiDAR place recognition.
 - [Sample4Geo](../../catalog/repos/skyy93__sample4geo.md) - fit: medium - Cross-view geo-localization training with hard negative sampling, reporting strong results on drone-satellite and street-satellite benchmarks with a simple contrastive setup.
 - [EigenPlaces](../../catalog/repos/gmberton__eigenplaces.md) - fit: medium - ICCV 2023 visual place recognition training method for viewpoint-robust descriptors.
 - [VPR-Bench](../../catalog/repos/mubarizzaffar__vpr-bench.md) - fit: medium - Open-source visual place recognition evaluation framework from the IJCV paper, with many datasets and techniques integrated.
-- [GSV-Cities](../../catalog/repos/amaralibey__gsv-cities.md) - fit: medium - Official training and evaluation code for the GSV-Cities visual place recognition dataset (about 530k street-level images of 62k+ places across many cities), including the Conv-AP aggregator and evaluation notebooks for 
+- [GSV-Cities](../../catalog/repos/amaralibey__gsv-cities.md) - fit: medium - Official training and evaluation code for the GSV-Cities visual place recognition dataset (about 530k street-level images of 62k+ places across many cities), including the Conv-AP aggregator and evaluation notebooks for
 - [Mapillary SLS](../../catalog/repos/mapillary__mapillary_sls.md) - fit: medium - Tools for the Mapillary Street-level Sequences dataset for lifelong visual place recognition.
 - [Scan Context](../../catalog/repos/gisbi-kim__scancontext.md) - fit: medium - LiDAR global place descriptor for loop detection and relocalization (backup of the original IRAP KAIST repo).
 - [TBV Radar SLAM](../../catalog/repos/dan11003__tbv_slam_public.md) - fit: medium - Radar SLAM with verified loop closures built on CFEAR radar odometry.

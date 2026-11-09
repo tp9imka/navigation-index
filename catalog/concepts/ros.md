@@ -109,7 +109,7 @@ ROS ecosystem packages for navigation and localization.
 - [LA-Planner](../../catalog/repos/robotics-star-lab__la-planner.md) - fit: low - Localisation-aware quadrotor planner for unknown, feature-poor environments (IROS 2025): it allocates camera attention between exploration and feature-rich regions so VIO keeps tracking during navigation.
 - [Water Linked DVL A50 ROS driver](../../catalog/repos/waterlinked__dvl-a50-ros-driver.md) - fit: low - ROS 1 driver publishing Water Linked DVL A50 velocity and beam data as ROS messages; now archived.
 - [Geoscan Pioneer Max](../../catalog/repos/geoscan__geoscan_pioneer_max.md) - fit: low - Meta-repository from Russian vendor Geoscan for the Pioneer Max educational quadcopter: system images, ROS workspace, web control apps and guides, documented in Russian.
-- [LCAS ROS 2 MCP](../../catalog/repos/lcas__ros2_mcp.md) - fit: low - ROS 2 MCP server from the Lincoln Centre for Autonomous Systems: tools to list and echo topics, inspect message/service/action interfaces, fetch camera images for VLM analysis and send simple drive commands, plus canned 
+- [LCAS ROS 2 MCP](../../catalog/repos/lcas__ros2_mcp.md) - fit: low - ROS 2 MCP server from the Lincoln Centre for Autonomous Systems: tools to list and echo topics, inspect message/service/action interfaces, fetch camera images for VLM analysis and send simple drive commands, plus canned
 - [SOTER on ROS](../../catalog/repos/drona-org__soteronros.md) - fit: low - Research framework that builds distributed mobile-robot software on ROS as runtime-assurance modules: an advanced controller, a safe controller and a decision module that switches between them.
 
 ## Documents, talks, courses, datasets (27)

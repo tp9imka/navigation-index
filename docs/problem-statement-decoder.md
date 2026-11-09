@@ -35,6 +35,10 @@ For recording and evaluation plumbing, [recording-replay](../samples/recording-r
 provides verified synthetic JSONL and MCAP round trips with explicit timestamps, frames and
 separate truth. It checks preservation and evaluation; it is not a navigation solution.
 
+## Innovation experiments before choosing an algorithm
+
+For active location disambiguation, delayed localization scheduling or selective model adaptation, **Start from** [navigation-innovation-lab](../samples/navigation-innovation-lab/README.md) and its [hypothesis cards](hypotheses/README.md). These are synthetic mechanism POCs, not new official challenge requirements or a validated aircraft stack. Search keywords: `innovation hypothesis active-localization sensor-scheduling observability calibration`.
+
 ## Decode the wording first
 
 | Words in the statement | Read as | Rows |

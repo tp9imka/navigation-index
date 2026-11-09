@@ -8,9 +8,10 @@ Detection, segmentation, depth on embedded hardware supporting navigation.
 
 - [Night / thermal UAV frame to RGB satellite geolocalization with a no-false-fix gate (ALIKED / DISK / SIFT + LightGlue, SGM baseline, Thermal-UAV)](../../catalog/samples/thermal-geolocalization.md) - Real nadir DJI M4T thermal frames (Thermal-UAV / SCC-Loc, Apache-2.0 card) matched against the dataset's 0.3 m RGB satellite GeoTIFF, by condition: city and village, day and night, day and night fog.
 
-## Guides (3)
+## Guides (4)
 
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) - Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (details drop 2026-11-18).
+- [H3: adapt a navigation model only when the data identify it](../../docs/hypotheses/h3-selective-adaptation.md) - Status: conditional synthetic benefit after observable model change.
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) - Learned models in navigation pipelines carry three separate sets of terms:
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) - Challenge 2 says the winning team "may take it towards real-world implementation".
 
@@ -38,7 +39,7 @@ Detection, segmentation, depth on embedded hardware supporting navigation.
 - [AI-IO](../../catalog/repos/sjtu-visys-team__ai-io.md) - fit: high - Learned inertial odometry for quadrotors that feeds rotor speeds alongside IMU data into a transformer velocity regressor, then fuses the predicted velocity in an uncertainty-aware EKF.
 - [GNSS jamming/spoofing classification notebooks](../../catalog/repos/alicmu2024__gnss-jamming-detection-and-classification-using-machine-learning-deep-learning-and-computer-vision.md) - fit: high - Colab notebooks for GNSS jamming-type classification (ML, DL and CV on spectrogram images) from a public raw-IQ jamming set, plus one GPS spoofing ML notebook; companion to arXiv 2501.02352.
 - [Batear datasets](../../catalog/repos/batear-io__batear-datasets.md) - fit: high - Small Git LFS collection of drone and background audio for ESP32-S3 acoustic detection: about 89 WAV clips of DJI Mavic Pro, Mini 4 Pro and 5-inch FPV flights, ambient (urban, rural, fireworks, bat sites) and synthetic s
-- [aerial-nav - GPS-denied navigation via Siamese network](../../catalog/repos/sviridov-aleksandr__aerial-nav.md) - fit: high - Matches onboard camera frames to a pre-built satellite map of the route: a ResNet-18 Siamese network with SAFA spatial aggregation ranks map tiles indexed at 13 altitude levels (0-1200 m), then SuperPoint/LightGlue with 
+- [aerial-nav - GPS-denied navigation via Siamese network](../../catalog/repos/sviridov-aleksandr__aerial-nav.md) - fit: high - Matches onboard camera frames to a pre-built satellite map of the route: a ResNet-18 Siamese network with SAFA spatial aggregation ranks map tiles indexed at 13 altitude levels (0-1200 m), then SuperPoint/LightGlue with
 - [Gagarin - TERCOM for UAVs without GNSS](../../catalog/repos/danilka88__gag27062026.md) - fit: high - Python TERCOM pipeline from the June 2026 'Полёт вслепую' hackathon, continued into July: correlates radar-altimeter profiles with a DEM using a coarse-to-fine 360-degree search, a hybrid MAD+NCC metric, minima-ratio dis
 - [RFClassification](../../catalog/repos/codymq__rfclassification.md) - fit: high - Notebooks that classify drone presence and type from RF using DroneRF and DroneDetect data (PSD+SVM and CNN approaches), aiming at real-time use with GamutRF hardware.
 - [ncnn](../../catalog/repos/tencent__ncnn.md) - fit: medium - Dependency-free C++ inference engine tuned for ARM CPUs (NEON) with optional Vulkan GPU.

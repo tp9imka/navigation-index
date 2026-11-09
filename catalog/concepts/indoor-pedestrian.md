@@ -6,7 +6,7 @@ PDR, foot-mounted INS, dismounted soldier navigation, indoor positioning.
 
 ## Samples (1)
 
-- [Dismounted foot-mounted INS: stdlib 15-state ZUPT EKF on the real pyshoe hallway data, cross-checked against pyshoe, with corridor heading, UWB and TAK output](../../catalog/samples/dismounted-foot-ins.md) - A stdlib-only error-state EKF (position, velocity, attitude, accel and gyro bias) with SHOE, ARED, AMVD and MBGTD stance detectors, run on all 36 real foot-mounted IMU trials of the UTIAS pyshoe hallway dataset (214.6 m 
+- [Dismounted foot-mounted INS: stdlib 15-state ZUPT EKF on the real pyshoe hallway data, cross-checked against pyshoe, with corridor heading, UWB and TAK output](../../catalog/samples/dismounted-foot-ins.md) - A stdlib-only error-state EKF (position, velocity, attitude, accel and gyro bias) with SHOE, ARED, AMVD and MBGTD stance detectors, run on all 36 real foot-mounted IMU trials of the UTIAS pyshoe hallway dataset (214.6 m
 
 ## Guides (1)
 
@@ -33,7 +33,7 @@ PDR, foot-mounted INS, dismounted soldier navigation, indoor positioning.
 
 ## Documents, talks, courses, datasets (6)
 
-- [OpenShoe: open source embedded foot-mounted INS](../../catalog/resources/openshoe-foot-mounted-ins-2012.md) - doc - Project site (offline since 2026; archived copy) for OpenShoe, an open hardware and software ZUPT-aided foot-mounted INS module, described in the PLANS 2012 paper 'Foot-mounted INS for Everybody' and follow-up IPIN 2014 
+- [OpenShoe: open source embedded foot-mounted INS](../../catalog/resources/openshoe-foot-mounted-ins-2012.md) - doc - Project site (offline since 2026; archived copy) for OpenShoe, an open hardware and software ZUPT-aided foot-mounted INS module, described in the PLANS 2012 paper 'Foot-mounted INS for Everybody' and follow-up IPIN 2014
 - [RoNIN: Robust Neural Inertial Navigation in the Wild: Benchmark, Evaluations, and New Methods](../../catalog/resources/ronin-paper.md) - paper - Introduces a large smartphone IMU dataset with ground truth and benchmarks neural architectures for pedestrian velocity regression.
 - [TLIO: Tight Learned Inertial Odometry](../../catalog/resources/tlio-paper.md) - paper - Combines a network that predicts displacement and uncertainty from IMU data with an EKF, for pedestrian inertial odometry.
 - [University of Toronto Foot-Mounted Inertial Navigation Dataset](../../catalog/resources/uoft-foot-mounted-ins-dataset.md) - dataset - Foot-mounted IMU recordings from five subjects over more than 7.6 km with ground-truth positioning, built to evaluate zero-velocity-aided pedestrian INS.

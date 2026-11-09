@@ -8,7 +8,7 @@ Carrier-phase differential and precise point positioning, corrections (RTCM, SSR
 
 ## Samples (1)
 
-- [Public CORS RINEX to SPP vs RTK with RTKLIB demo5 and gnss_lib_py](../../catalog/samples/gnss-rinex-processing.md) - Downloads one day of public NOAA NGS CORS RINEX for a rover/base pair 30 km apart, runs RTKLIB demo5 rnx2rtkp in single-point and kinematic RTK modes with exact CLI flags, and scores both against the stations' published 
+- [Public CORS RINEX to SPP vs RTK with RTKLIB demo5 and gnss_lib_py](../../catalog/samples/gnss-rinex-processing.md) - Downloads one day of public NOAA NGS CORS RINEX for a rover/base pair 30 km apart, runs RTKLIB demo5 rnx2rtkp in single-point and kinematic RTK modes with exact CLI flags, and scores both against the stations' published
 
 ## Guides (1)
 

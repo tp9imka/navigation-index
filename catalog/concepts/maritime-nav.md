@@ -7,7 +7,7 @@ Surface vessel navigation, AIS, ECDIS/charts, USVs.
 ## Samples (2)
 
 - [GNSS spoofing signatures in real AIS tracks: detectors, injected ground truth, GeoJSON and CoT](../../catalog/samples/maritime-ais-spoofing.md) - Shore-side detection of GNSS spoofing from the AIS picture, on real Danish Maritime Authority AIS (partial HTTP-range download of a daily file, ~4.4 h, 1.7 M fixes, 2.5-3 k vessels).
-- [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) - A simulated USV runs a 19.6 km transit over real geography (Lillgrund => Drogden channel => Copenhagen approach) built from OpenStreetMap coastline, Oresund bridge, wind turbines and seamarks, with 75 min of real Danish 
+- [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) - A simulated USV runs a 19.6 km transit over real geography (Lillgrund => Drogden channel => Copenhagen approach) built from OpenStreetMap coastline, Oresund bridge, wind turbines and seamarks, with 75 min of real Danish
 
 ## Guides (1)
 

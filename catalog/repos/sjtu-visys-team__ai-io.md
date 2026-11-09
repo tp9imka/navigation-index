@@ -27,8 +27,10 @@ Learned inertial odometry for quadrotors that feeds rotor speeds alongside IMU d
 ## Referenced by
 
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
+- [H3: adapt a navigation model only when the data identify it](../../docs/hypotheses/h3-selective-adaptation.md) (mentions)
 - [DIDO](../../catalog/repos/zhangkunyi__dido.md) (integrates_with)
 - [AI-IO: An Aerodynamics-Inspired Real-Time Inertial Odometry for Quadrotors](../../catalog/resources/cui-2026-ai-io-aerodynamics-inertial-odometry.md) (has_code)
+- [Navigation innovation laboratory: active localization, asynchronous fix scheduling and selective model adaptation](../../catalog/samples/navigation-innovation-lab.md) (explains)
 
 _Indexed by lane(s): nav-differentiators_
 

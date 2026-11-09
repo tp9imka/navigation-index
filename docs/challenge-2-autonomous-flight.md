@@ -89,8 +89,8 @@ Three lanes added on 2026-11-09, each with its own records and a guide. Read the
   virtual velocity sensor** (score 22/25). ArduPilot EKF3 already fuses body-frame drag
   (`EK3_DRAG_*`) and ArduCopter 4.6.3 SITL models it, so the demo is "GNSS off, keep flying on
   the airframe's physics", measured as time from GNSS loss to 50 m error. Runner-up: learned
-  inertial odometry with rotor speed (AI-IO, MIT), cross-checked against the physics model so
-  it cannot fail silently. Both answer the brief's "propulsion / applied physics" wording.
+  inertial odometry with rotor speed (AI-IO, MIT), cross-checked against the physics model for some detectable disagreements. Both share
+  sensor inputs, so agreement does not rule out common failures. Both answer the brief's "propulsion / applied physics" wording.
   Hour-1 go/no-go, not yet checked: does ArduCopter accept a drag-only EKF in Loiter / Auto.
 - **[guidance-planning.md](guidance-planning.md)** - the G in GNC: trajectory generation, MPC,
   fixed-wing guidance, energy and wind. Five 48h ideas (G1-G5) tied to existing samples, and
@@ -109,6 +109,10 @@ Three lanes added on 2026-11-09, each with its own records and a guide. Read the
 Suggested shape of an entry if the full brief allows it: differentiator 2.1 as the headline,
 the runtime-assurance monitor from path-to-product as the safety story, and G2 (integrity drives
 guidance) as the stretch.
+
+## 5a. Tested innovation hypotheses
+
+[Innovation experiments](innovation-experiments.md) adds three [hypothesis cards](hypotheses/README.md) and a [runnable laboratory](../samples/navigation-innovation-lab/README.md). First results narrow the earlier recommendations: active disambiguation did not improve on standard information gain and failed under map mismatch; predictive scheduling was competitive with a simpler opportunity rule; selective calibration helped after observable model changes but did not beat initial calibration everywhere. Use the measured evidence before choosing a headline. None establishes novelty or field readiness.
 
 ## 6. Product constraints for the entry
 

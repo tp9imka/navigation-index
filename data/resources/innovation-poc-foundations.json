@@ -1,0 +1,273 @@
+[
+  {
+    "id": "res:agarwal-2015-nongaussian-global-localization",
+    "kind": "paper",
+    "title": "Motion Planning for Global Localization in Non-Gaussian Belief Spaces",
+    "url": "https://arxiv.org/abs/1511.04634",
+    "year": 2015,
+    "authors": [
+      "Saurav Agarwal",
+      "Amirhossein Tamjidi",
+      "Suman Chakravorty"
+    ],
+    "summary": "Plans actions to disambiguate multimodal location beliefs. Physical ground-robot experiments establish close prior art for active location disambiguation; not a UAV implementation.",
+    "key_takeaways": [
+      "Use the hypothesis cards to distinguish established methods from the proposed contribution.",
+      "No experiment in the innovation lab reproduces the source paper."
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "innovation",
+      "prior-art",
+      "hypothesis",
+      "autonomous-flight"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "sample:navigation-innovation-lab",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:deng-sentis-2026-kidnapped-uav",
+    "kind": "paper",
+    "title": "The Kidnapped UAV Problem: Self-Supervised Detection and Recovery of Localization Failures for GNSS-Denied Navigation",
+    "url": "https://www.ion.org/publications/abstract.cfm?articleID=20744",
+    "year": 2026,
+    "authors": [
+      "Zhiyun Deng",
+      "Luis Sentis"
+    ],
+    "summary": "ION GNSS+ paper describing cross-domain visual likelihoods, multi-hypothesis filtering and recovery. Public abstract and author project page read; full paid paper not read. Reported flight results were not reproduced.",
+    "key_takeaways": [
+      "Use the hypothesis cards to distinguish established methods from the proposed contribution.",
+      "No experiment in the innovation lab reproduces the source paper."
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "innovation",
+      "prior-art",
+      "hypothesis",
+      "autonomous-flight"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "sample:navigation-innovation-lab",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:wakulicz-2026-reduced-belief-seminar",
+    "kind": "talk",
+    "title": "Reduced latent belief spaces for active perception in robotics",
+    "url": "https://robotics.sydney.edu.au/acfr-seminar-reduced-latent-belief-spaces-for-active-perception-in-robotics/",
+    "year": 2026,
+    "authors": [
+      "Jennifer Wakulicz"
+    ],
+    "summary": "University of Sydney seminar abstract on simplifying belief spaces using latent variables. Inspiration for tractable active perception; abstract read, talk not watched.",
+    "key_takeaways": [
+      "Use the hypothesis cards to distinguish established methods from the proposed contribution.",
+      "No experiment in the innovation lab reproduces the source paper."
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "innovation",
+      "prior-art",
+      "hypothesis",
+      "autonomous-flight"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "sample:navigation-innovation-lab",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:catan-2022-robot-scheduling",
+    "kind": "paper",
+    "title": "On-Device CPU Scheduling for Robot Systems",
+    "url": "https://experts.illinois.edu/en/publications/on-device-cpu-scheduling-for-robot-systems/",
+    "year": 2022,
+    "authors": [],
+    "summary": "Catan dynamically schedules computation for robot applications, including navigation. Prior art for resource-aware autonomy; it is not reproduced by the synthetic localization-deadline POC.",
+    "key_takeaways": [
+      "Use the hypothesis cards to distinguish established methods from the proposed contribution.",
+      "No experiment in the innovation lab reproduces the source paper."
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "innovation",
+      "prior-art",
+      "hypothesis",
+      "autonomous-flight"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "sample:navigation-innovation-lab",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:scaramuzza-kaufmann-2023-agile-notes",
+    "kind": "report",
+    "title": "Learning Agile, Vision-based Drone Flight: from Simulation to Reality",
+    "url": "https://arxiv.org/abs/2304.04128",
+    "year": 2023,
+    "authors": [
+      "Davide Scaramuzza",
+      "Elia Kaufmann"
+    ],
+    "summary": "Research overview discussing learned sensorimotor flight, modular-pipeline latency and open challenges. Written material read, demonstrations not reproduced.",
+    "key_takeaways": [
+      "Use the hypothesis cards to distinguish established methods from the proposed contribution.",
+      "No experiment in the innovation lab reproduces the source paper."
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "innovation",
+      "prior-art",
+      "hypothesis",
+      "autonomous-flight"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "sample:navigation-innovation-lab",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:hattenberger-2022-estimating-wind",
+    "kind": "paper",
+    "title": "Estimating wind using a quadrotor",
+    "url": "https://journals.sagepub.com/doi/10.1177/17568293211070824",
+    "year": 2022,
+    "authors": [
+      "Gautier Hattenberger",
+      "Murat Bronz",
+      "Jean-Philippe Condomines"
+    ],
+    "summary": "Wind estimation using attitude and ground speed with experimental calibration. The conclusion identifies online drag estimation and observability conditions as further work; not evidence that wind is observable without a ground reference.",
+    "key_takeaways": [
+      "Use the hypothesis cards to distinguish established methods from the proposed contribution.",
+      "No experiment in the innovation lab reproduces the source paper."
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "innovation",
+      "prior-art",
+      "hypothesis",
+      "autonomous-flight"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "sample:navigation-innovation-lab",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:ni-2026-active-model-discrimination",
+    "kind": "paper",
+    "title": "Safe, Real-Time Active Model Discrimination and Fault Diagnosis for Nonlinear Systems via Differentiable Reachability",
+    "url": "https://arxiv.org/abs/2606.19590",
+    "year": 2026,
+    "authors": [
+      "Xinpei Ni",
+      "Melkior Ornik",
+      "Glen Chou",
+      "Samuel Coogan"
+    ],
+    "summary": "Preprint on choosing constrained inputs to distinguish finite candidate dynamical models using reachable output sets. Close prior art for active diagnosis; abstract read and reported performance not reproduced.",
+    "key_takeaways": [
+      "Use the hypothesis cards to distinguish established methods from the proposed contribution.",
+      "No experiment in the innovation lab reproduces the source paper."
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "innovation",
+      "prior-art",
+      "hypothesis",
+      "autonomous-flight"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "sample:navigation-innovation-lab",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:rss-2026-imperfect-perception-workshop",
+    "kind": "talk",
+    "title": "Planning and Control with Imperfect Sensors and Perception",
+    "url": "https://ariasystems.group/workshops/planning-perception.html",
+    "year": 2026,
+    "authors": [
+      "RSS workshop organizers"
+    ],
+    "summary": "Workshop discussion questions and talk abstracts on uncertain perception, action versus information gathering, and reliability. Written program read; recordings not watched.",
+    "key_takeaways": [
+      "Use the hypothesis cards to distinguish established methods from the proposed contribution.",
+      "No experiment in the innovation lab reproduces the source paper."
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "innovation",
+      "prior-art",
+      "hypothesis",
+      "autonomous-flight"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "sample:navigation-innovation-lab",
+        "rel": "explains"
+      }
+    ]
+  }
+]

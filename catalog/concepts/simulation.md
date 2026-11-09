@@ -4,7 +4,7 @@
 
 Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simulators.
 
-## Samples (16)
+## Samples (17)
 
 - [Anti-spoof autopilot configurations tested in SITL: 13 PX4 EKF2 / ArduPilot EKF3 configs (EV velocity + EKF2_GPS_MODE 1, aux global position, EK3 source sets, fuse-all-velocities, EK3_GLITCH_RAD 0, dual GPS affinity / blending, a Lua GPS-vs-ExternalNav source-switch applet, companion monitor) x coherent drag 0.3/1/3 m/s + clean, 3 seeds, 156 flights, ranked recipe table](../../catalog/samples/autopilot-resilient-configs.md) - Builds on samples/autopilot-spoof-response (both EKFs believe a coherent GNSS drag) and looks for configurations that keep each autopilot flying.
 - [ArduPilot EKF3 source-set switch under GPS denial](../../catalog/samples/ardupilot-ekf3-source-switch.md) - Flies ArduCopter SITL on GPS, switches EKF3 to an external-nav source set (SITL vicon) with MAV_CMD_SET_EKF_SOURCE_SET, cuts simulated GPS, flies a 15 m leg, then restores it.
@@ -17,13 +17,14 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [Golden demo on PX4 v1.17 SIH: coherent GPS drag via HIL_GPS, integrity monitor (SS + PL, GNSS-vs-VIO velocity), EKF2 switch from GNSS to external vision, comparison with ArduPilot, dashboard replay](../../catalog/samples/golden-demo-px4.md) - The samples/golden-demo v2 scenario on PX4 v1.17.0 SIH in Docker.
 - [Golden demo: GPS drag (position-only or coherent) on an ArduCopter SITL AUTO mission, integrity monitoring with solution separation + protection level, real visual geolocalization, EKF3 switch to ExternalNav, Monte Carlo, dashboard replay](../../catalog/samples/golden-demo.md) - One command flies ArduCopter 4.6.3 SITL in Docker on a survey and drags its GPS east.
 - [Headless SITL in Docker: ArduCopter and PX4 SIH with one compose file](../../catalog/samples/sitl-docker.md) - Dockerfiles and a compose file that run ArduCopter 4.6.3 SITL (with a simulated vicon for ExternalNav) and PX4 v1.17.0 SIH quadrotor without Gazebo or a GUI, plus a Python client image with pymavlink and mavsdk-grpc that
-- [Heightmap-gradient particle filter on real DEM and 1 m LiDAR (SPRIN-D CTU method) vs TERCOM](../../catalog/samples/terrain-heightmap-pf.md) - Re-implementation of the CTU SPRIN-D winner's localization (arXiv 2510.01348): local heightmap gradients matched to a prior DEM with the unnormalized correlation coefficient, Gaussian-blurred similarity maps weighting a 
+- [Heightmap-gradient particle filter on real DEM and 1 m LiDAR (SPRIN-D CTU method) vs TERCOM](../../catalog/samples/terrain-heightmap-pf.md) - Re-implementation of the CTU SPRIN-D winner's localization (arXiv 2510.01348): local heightmap gradients matched to a prior DEM with the unnormalized correlation coefficient, Gaussian-blurred similarity maps weighting a
 - [How PX4 EKF2 and ArduPilot EKF3 handle a spoofed GNSS: source walk-through plus a 45-flight SITL sweep (drag rate 0.1-5 m/s, step offsets, default vs tightened gates, PX4 EKF2_GPS_MODE)](../../catalog/samples/autopilot-spoof-response.md) - Explains from source (PX4 v1.17.0, ArduPilot Copter-4.6.3) why both EKFs end up on a spoofed position even after flagging a GNSS glitch: innovation gates reject the GNSS, then a fixed timeout (EKF2 reset_timeout_max 7 s,
 - [LLM mission agent: a safety-gated MAVLink MCP server flying ArduPilot SITL](../../catalog/samples/llm-mission-agent.md) - A small MCP server (stdio JSON-RPC 2.0, pymavlink) that lets Claude Code or any MCP client read and fly an ArduCopter: get_state, get_nav_health (EKF flags, variances, GNSS fix/sats/HDOP => nominal/degraded/lost), arm_ta
-- [Network of GNSS-disciplined clocks: holdover from peers, spoof isolation by cross-node consistency, ADEV-weighted ensemble](../../catalog/samples/timing-network-holdover.md) - A stdlib-only simulation of six GNSS-disciplined sites (TCXO, OCXO, CSAC, Rb oscillators imported from timing-holdover) linked by PTP-like two-way time transfer with static path asymmetry, exponential queueing delay and 
+- [Navigation innovation laboratory: active localization, asynchronous fix scheduling and selective model adaptation](../../catalog/samples/navigation-innovation-lab.md) - Three stdlib synthetic POCs with conventional baselines, ablations, held-out seeds, stress cases and paired intervals.
+- [Network of GNSS-disciplined clocks: holdover from peers, spoof isolation by cross-node consistency, ADEV-weighted ensemble](../../catalog/samples/timing-network-holdover.md) - A stdlib-only simulation of six GNSS-disciplined sites (TCXO, OCXO, CSAC, Rb oscillators imported from timing-holdover) linked by PTP-like two-way time transfer with static path asymmetry, exponential queueing delay and
 - [PX4 SITL GPS denial: inject, measure drift, recover](../../catalog/samples/px4-sitl-gps-denial.md) - Flies a square mission in PX4 SITL (SIH quadrotor, headless; Gazebo also works per PX4 docs), denies GPS mid-mission, logs EKF2 health and estimated vs ground-truth position, then restores GPS and returns home.
 
-## Guides (11)
+## Guides (14)
 
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](../../docs/landscape/blind-flight-teardown.md) - The closest real precedent we have for a navigation hackathon brief: a 48-hour case (26-28 June 2026, Krasnodar, track "Robotics and sensing") where teams had to find position, ground speed and heading of an aircraft fro
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) - After this chapter you know how navigation changes off the drone: what ships broadcast and how spoofing shows up in it, how vehicles navigate underwater where no radio reaches, how ground robots and pedestrians dead-reck
@@ -31,10 +32,13 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [Autopilot GNSS fault handling: PX4 EKF2 and ArduPilot EKF3 under spoofing](../../docs/autopilot-gnss-fault-handling.md) - What each autopilot's EKF does when GNSS goes wrong, read from the source at pinned tags and checked in SITL by samples/autopilot-spoof-response (45 flights, 2026-11-06).
 - [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) - Start here when the task is the EDGE Group internal hackathon, Challenge 2.
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) - Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (details drop 2026-11-18).
-- [Evidence matrix](../../docs/evidence-matrix.md) - Recording/replay plumbing: recording-replay ran on 2026-11-07 with 101 synthetic poses over 10 s.
+- [Evidence matrix](../../docs/evidence-matrix.md) - Innovation experiments (2026-11-09): three POCs ran 8,000 synthetic episodes over 100 held-out seeds per scenario.
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) - Written 2026-11-09 for Challenge 2 "Autonomous Frontiers" (entry point).
+- [Innovation experiments: hypotheses before claims](../../docs/innovation-experiments.md) - For Challenge 2, start from an existing estimator and flight stack, then identify a specific algorithmic contribution with a strong baseline and a falsification test.
+- [Navigation invention hypothesis cards](../../docs/hypotheses/README.md) - Status: first POCs executed on 2026-11-09.
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) - Plausible problem statements for a navigation / PNT / GNSS-denied hackathon, each mapped to a recommended approach, a stack (integration cards first, catalog pages otherwise), datasets, a sample or template to start from
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) - Opinionated picks for a 24-48h build.
+- [Research handoff: challenge the innovation claims](../../docs/hypotheses/research-agent-prompt.md) - Work in this repository.
 - [Upstream findings](../../docs/upstream-findings.md) - Defects and gaps that the hub's samples found in other people's code and data, with what a maintainer needs to act on them.
 
 ## Repositories (87)

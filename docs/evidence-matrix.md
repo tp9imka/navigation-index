@@ -1,5 +1,9 @@
 # Evidence matrix
 
+Innovation experiments (2026-11-09): [three POCs](../samples/navigation-innovation-lab/README.md) ran 8,000 **synthetic** episodes over 100 held-out seeds per scenario. H1 equals its information-gain baseline (3.11 versus 13.11 nominal mean distance for passive, but 72% false acceptance under map shift). H2 predictive fixed speed achieved 64% nominal tolerance-respecting completion versus 54% covariance triggering, but did not establish a win over opportunity timing. H3 parameter-change velocity RMSE was 0.2465 m/s versus 2.2660 initial calibration; initial calibration was better nominally (0.3433 versus 0.3579). [All results and paired intervals](../samples/navigation-innovation-lab/results/report.md). These are descriptor/scalar models, not field or flight-control evidence.
+
+VPAIR scheduling follow-up (2026-11-09): [48 cached-observation replay cases](../samples/navigation-innovation-lab/replay-results/report.md), real-flight-derived inputs plus artificial frame delay/covariance, not new flight evidence. Dense map/Q=16/delay=2: threshold 61.86 m, periodic 73.14 m, predictive 108.02 m RMSE; VO-only 155.82 m. One previously studied flight, simplified filter, shared reference/map calibration and no physical timestamps. No consistent predictive advantage.
+
 Recording/replay plumbing: [recording-replay](../samples/recording-replay/README.md) ran on
 2026-11-07 with 101 synthetic poses over 10 s. JSONL and MCAP preserved values; RMSE was the
 deliberately planted 0.5 m offset, with no alignment. Three tests passed with mcap 1.3.1.

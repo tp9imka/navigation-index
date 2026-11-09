@@ -19,10 +19,9 @@ MAVLink protocol, SDKs, ground control stations, telemetry radios.
 - [MAVLink telemetry to TAK Cursor-on-Target](../../catalog/samples/mavlink-to-tak-cot.md) - Bridges autopilot GLOBAL_POSITION_INT messages into Cursor-on-Target events so a UAV shows up as a friendly track on ATAK, WinTAK or iTAK.
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../../catalog/samples/vio-to-mavlink-bridge.md) - Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold.
 
-## Guides (2)
+## Guides (1)
 
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) - After this chapter you can run PX4 or ArduPilot in simulation, inject your own position source over MAVLink, configure the estimator to switch away from GNSS, and push your vehicle's position and detections onto a TAK co
-- [Evidence matrix](../../docs/evidence-matrix.md) - Recording/replay plumbing: recording-replay ran on 2026-11-07 with 101 synthetic poses over 10 s.
 
 ## Repositories (36)
 
@@ -54,7 +53,7 @@ MAVLink protocol, SDKs, ground control stations, telemetry radios.
 - [MAVLink Developer Guide](../../catalog/repos/mavlink__mavlink-devguide.md) - fit: medium - Source of the mavlink.io documentation: protocol, microservices (mission, parameters, camera, Open Drone ID) and message reference.
 - [jMAVSim](../../catalog/repos/px4__jmavsim.md) - fit: medium - Lightweight Java multirotor simulator that speaks MAVLink to PX4, without a 3D-world physics engine.
 - [node-mavlink](../../catalog/repos/ardupilot__node-mavlink.md) - fit: medium - TypeScript/Node.js MAVLink bindings and tools.
-- [DroneMagNav](../../catalog/repos/ajisrawi__dronemagnav.md) - fit: medium - Hardware + firmware design for a drone magnetic-anomaly navigation board (ESP32-S3, magnetometer, IMU, baro) running particle-filter matching against a global anomaly map and feeding position to a flight controller over 
+- [DroneMagNav](../../catalog/repos/ajisrawi__dronemagnav.md) - fit: medium - Hardware + firmware design for a drone magnetic-anomaly navigation board (ESP32-S3, magnetometer, IMU, baro) running particle-filter matching against a global anomaly map and feeding position to a flight controller over
 - [mavlink-mcp (ArduPilot)](../../catalog/repos/deepakpopli__mavlink-mcp.md) - fit: medium - MCP server for flying ArduPilot vehicles from AI agents over MAVLink, covering missions, camera vision and SITL workflows.
 - [ardupilot-mcp (safety-gated)](../../catalog/repos/rmeadomavic__ardupilot-mcp.md) - fit: medium - SITL-first MCP server for talking to ArduPilot vehicles over MAVLink, with explicit safety gating of commands.
 - [Полёт вслепую - GCS with terrain-referenced navigation](../../catalog/repos/drones-voronka__drones-backend.md) - fit: medium - Another team's take on the 2026 'Полёт вслепую' case, built as a ground control station for a UAV swarm: a Go telemetry ingestion gateway feeds RabbitMQ, a Python worker runs a particle-filter terrain-referenced navigati
@@ -73,6 +72,6 @@ MAVLink protocol, SDKs, ground control stations, telemetry radios.
 - [Open Drone ID](../../catalog/resources/mavlink-opendroneid-microservice.md) - doc - Defines the MAVLink messages and flow for Remote ID between flight controller, GCS and transponder.
 - [PX4 Simulation (Gazebo, SITL) documentation](../../catalog/resources/px4-simulation-docs.md) - doc - How to run PX4 software-in-the-loop with Gazebo and other simulators, including multi-vehicle setups and connecting ROS 2 and ground stations.
 - [ROS and VIO tracking camera for non-GPS Navigation](../../catalog/resources/ardupilot-ros-vio-tracking-camera.md) - doc - Developer tutorial wiring a VIO camera through ROS and MAVROS into ArduPilot for indoor flight.
-- [STANAG 4586 - Standard Interfaces of UAV Control System (UCS) for NATO UAV Interoperability](../../catalog/resources/stanag-4586-overview.md) - doc - Public overview of NATO's UAS interoperability standard, which defines a core UCS, a vehicle-specific module and five levels of interoperability from receiving payload data up to full flight control including launch and 
+- [STANAG 4586 - Standard Interfaces of UAV Control System (UCS) for NATO UAV Interoperability](../../catalog/resources/stanag-4586-overview.md) - doc - Public overview of NATO's UAS interoperability standard, which defines a core UCS, a vehicle-specific module and five levels of interoperability from receiving payload data up to full flight control including launch and
 - [Навигация по карте маркеров · Clover](../../catalog/resources/coex-clover-docs-aruco-map-ru.md) - doc - English: 'Navigation by marker map - Clover docs'.
 

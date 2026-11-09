@@ -39,6 +39,7 @@ The coarse first stage that geoloc-license-clean lacks: no position prior, unkno
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [H1: move to distinguish competing location hypotheses](../../docs/hypotheses/h1-active-disambiguation.md) (mentions)
 - [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

@@ -310,10 +310,10 @@ def sort_key(x):
 
 def first_sentence(s):
     m = re.match(r"(.+?[.!?])(\s|$)", s)
-    return (m.group(1) if m else s)[:220]
+    return (m.group(1) if m else s)[:220].rstrip()
 
 # Top-level guides become graph nodes of kind "guide" so search finds the decoder, playbook and runbook.
-GUIDE_GLOBS = ("docs/*.md", "docs/primer/*.md", "docs/landscape/*.md")
+GUIDE_GLOBS = ("docs/*.md", "docs/primer/*.md", "docs/landscape/*.md", "docs/hypotheses/*.md")
 GUIDE_SUMMARY_CHARS = 600
 GUIDE_BODY_CHARS = 6000  # plain text indexed per guide; query.GUIDE_BODY_CHARS must match
 GUIDE_MAX_CONCEPTS = 6
