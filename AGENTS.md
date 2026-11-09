@@ -5,9 +5,32 @@ Guide for LLM coding agents (Claude Code, Cursor, Codex, Copilot...) using or ex
 ## Given a problem statement
 
 For the EDGE internal hackathon, Challenge 2 "Autonomous Frontiers", read
-`docs/challenge-2-autonomous-flight.md` first (MCP: `read` with `guide:challenge-2-autonomous-flight`).
-It narrows the hub to the rows, samples and guides that fit an autonomous flight product and
-lists the rows to skip.
+[docs/challenge-2-autonomous-flight.md](docs/challenge-2-autonomous-flight.md) first (MCP: `read`
+with `guide:challenge-2-autonomous-flight`). It narrows the hub to the rows, samples and guides
+that fit an autonomous flight product and lists the rows to skip.
+
+### Close-area A=>B (likely Day-1 task)
+
+Use this block when the brief is "fly a drone from A to B in a close area, maybe with obstacles".
+
+1. First 20 minutes: [docs/day1-close-area-intake.md](docs/day1-close-area-intake.md) - organiser
+   questions in order, each answer => driver, sim, sample. Research behind it:
+   [docs/research/close-area-nav/README.md](docs/research/close-area-nav/README.md).
+2. Runnable baseline: [samples/close-area-arena](samples/close-area-arena/README.md) (status `ran`,
+   synthetic inputs only). Starter loop for the team repo:
+   [templates/flight-repo](templates/flight-repo/README.md) (mock only).
+3. Send setpoints to a real platform: [templates/drone-adapter](templates/drone-adapter/README.md)
+   and its [drivers table](templates/drone-adapter/drivers/README.md) (PX4, ArduPilot, Crazyflie,
+   Tello; unrun, written from SDK docs).
+4. Decoder rows 31 (obstacles), 32 (visual goal B) and 33 (indoor VIO loss) in
+   [docs/problem-statement-decoder.md](docs/problem-statement-decoder.md); `decode` prints
+   their runnable starters.
+5. One-page summary: [docs/cheatsheets/](docs/cheatsheets/README.md) (close-area sheet). Demo and
+   pitch: [templates/demo-script-close-area.md](templates/demo-script-close-area.md),
+   [templates/pitch/close-area-story.md](templates/pitch/close-area-story.md).
+
+MCP-only clients: `read` serves `docs/**/*.md` and `samples/<name>/README.md`. It may refuse
+`templates/` files and `samples/close-area-arena/CONTRACT.md`; open those with file access.
 
 Free-text search ranks a pasted problem statement poorly. Do this instead:
 
