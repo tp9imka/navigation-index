@@ -1,0 +1,12 @@
+input            synthetic (positions from truth)
+outcome          reached
+reached          True
+time to goal     17.76 s   (run ends at 17.76 s, 0.298 m from B)
+min clearance    0.3792 m   at [4.321, 4.129, 5.2] (x, y, t)
+path length      23.936 m   (straight A=>B 24.234 m)
+interventions    2   fraction 0.1732 of logged steps
+manual modes     0 entries
+steps            179 scored of 179, median rate 10.0 Hz
+max pose error   0.0 m (logged pose vs truth)
+wrote results/log_arena_random_0_2_score.json
+wrote results/log_arena_random_0_2.png

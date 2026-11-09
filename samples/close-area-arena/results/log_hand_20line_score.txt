@@ -1,0 +1,11 @@
+input            synthetic (positions from pose (onboard estimate))
+outcome          reached
+reached          True
+time to goal     8.5 s   (run ends at 8.5 s, 0.209 m from B)
+min clearance    0.2779 m   at [3.56, -0.524, 6.214] (x, y, t)
+path length      5.022 m   (straight A=>B 5.0 m)
+interventions    2   fraction 0.1667 of logged steps
+manual modes     0 entries
+steps            18 scored of 19, median rate 2.0 Hz
+wrote results/log_hand_20line_score.json
+wrote results/log_hand_20line.png

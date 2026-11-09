@@ -1,0 +1,24 @@
+{
+ "log_input": "synthetic",
+ "positions_from": "pose (onboard estimate)",
+ "outcome": "reached",
+ "reached": true,
+ "time_to_goal_s": 8.5,
+ "duration_s": 8.5,
+ "final_dist_to_B_m": 0.209,
+ "min_clearance_m": 0.2779,
+ "closest_approach_xyt": [
+  3.56,
+  -0.524,
+  6.214
+ ],
+ "path_length_m": 5.022,
+ "straight_line_m": 5.0,
+ "interventions": 2,
+ "intervention_fraction": 0.1667,
+ "manual_mode_entries": 0,
+ "steps_scored": 18,
+ "steps_in_log": 19,
+ "log_rate_hz_median": 2.0,
+ "log": "results/log_hand_20line.jsonl"
+}

@@ -1,0 +1,2 @@
+wrote results/log_arena_random_0_2.jsonl
+arena scorer.py on the 50 Hz truth trace: {"outcome": "reached", "reached": true, "collision": false, "stuck": false, "timeout": false, "time_to_goal_s": 17.76, "min_clearance_m": 0.3789, "path_length_m": 23.936, "duration_s": 17.76}

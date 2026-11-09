@@ -116,6 +116,16 @@ straight 0 %, known 100 %, unknown 100 %.
   unknown replans on narrow_gap).
 - Not run yet: A* under the estimator faults (`run_faults.py --planner astar_esdf`).
 
+## Scoring a flight log (sim or real)
+
+`score_log.py` scores any JSONL flight log in the [log_format.md](log_format.md) format (numpy +
+matplotlib only, no arena import), so the same numbers come out of a sim run and a real flight:
+`.venv/bin/python score_log.py results/log_hand_20line.jsonl --plot out.png`. On an arena run it
+matches the arena scorer (17.76 s, 0.3792 m vs 0.3789 m at 10 Hz). Synthetic logs only so far.
+
+Reactive planners (APF, VFH+, also with a 4-beam Crazyflie-like fan) are in
+[close-area-planner-reactive](../close-area-planner-reactive/README.md).
+
 ## Estimator and faults (ran 2026-11-09, synthetic)
 
 `estimator.py` is a position/velocity EKF fed by a 30 Hz VIO-like source and a 50 Hz IMU-like
