@@ -189,5 +189,113 @@
   "shows": "Headless ArduCopter 4.6.3 SITL and PX4 v1.17.0 SIH images, compose file, client image",
   "runtime": "builds ~8.5 min / ~26 min",
   "key_result": "[Images](README.md#what-was-verified-2026-11-06-docker-2952-apple-silicon-linuxarm64): ArduPilot 1.85 GB, PX4 214 MB, client 558 MB; both stacks flew the other samples"
+ },
+ "close-area-planner-mpc": {
+  "readiness": {
+   "compute": "cpu",
+   "hardware": "none",
+   "offline": "unknown",
+   "download_mb": 0,
+   "platforms": [
+    "macos-arm64"
+   ],
+   "validation": "integrated",
+   "limitation": "Synthetic 2.5D point-mass arena, known map, truth pose; QP timing is a laptop in Python, not a flight computer. Setup needs network for PyPI wheels (uv venv + uv pip install); cold setup time not measured; no network-denied run, so offline is unknown. README names an Apple M3 Max host (macOS 26.6.2); Linux not tested.",
+   "evidence": [
+    "samples/close-area-planner-mpc/README.md",
+    "samples/close-area-planner-mpc/sample.json",
+    "samples/close-area-planner-mpc/results/mpc_compare_0.json"
+   ]
+  }
+ },
+ "close-area-planner-sampling": {
+  "readiness": {
+   "compute": "cpu",
+   "hardware": "none",
+   "offline": "unknown",
+   "download_mb": 0,
+   "platforms": [
+    "macos-arm64"
+   ],
+   "validation": "integrated",
+   "limitation": "Synthetic 2.5D arena, known static map; RRT* not tuned; sweep timings under 14-process load. Setup needs network for PyPI wheels (uv venv + uv pip install); cold setup time not measured; no network-denied run, so offline is unknown. README names an Apple M3 Max host; macOS assumed from the M3 Max host, Linux not tested.",
+   "evidence": [
+    "samples/close-area-planner-sampling/README.md",
+    "samples/close-area-planner-sampling/sample.json",
+    "samples/close-area-planner-sampling/results/sweep_0.json"
+   ]
+  }
+ },
+ "close-area-relocalize": {
+  "readiness": {
+   "compute": "cpu",
+   "hardware": "none",
+   "offline": "unknown",
+   "download_mb": 0,
+   "platforms": [
+    "macos-arm64"
+   ],
+   "validation": "integrated",
+   "limitation": "Synthetic 2.5D arena, yaw is truth, exact prior map, perfect hover. Setup needs network for PyPI wheels (uv venv + uv pip install); cold setup time not measured; no network-denied run, so offline is unknown. README names an Apple M3 Max host; macOS assumed from the M3 Max host, Linux not tested.",
+   "evidence": [
+    "samples/close-area-relocalize/README.md",
+    "samples/close-area-relocalize/sample.json",
+    "samples/close-area-relocalize/results/reloc_random_0.json"
+   ]
+  }
+ },
+ "close-area-safety-filter": {
+  "readiness": {
+   "compute": "cpu",
+   "hardware": "none",
+   "offline": "unknown",
+   "download_mb": 0,
+   "platforms": [
+    "macos-arm64"
+   ],
+   "validation": "integrated",
+   "limitation": "Synthetic 2.5D arena, one planner and one seed; no PX4 code run (F1 from docs, F2 from doc 05 pseudo-code). Setup needs network for PyPI wheels (uv venv + uv pip install); cold setup time not measured; no network-denied run, so offline is unknown. README names an Apple M3 Max host; macOS assumed from the M3 Max host, Linux not tested.",
+   "evidence": [
+    "samples/close-area-safety-filter/README.md",
+    "samples/close-area-safety-filter/sample.json",
+    "samples/close-area-safety-filter/results/kill_a_summary_0.md"
+   ]
+  }
+ },
+ "close-area-planner-reactive": {
+  "readiness": {
+   "compute": "cpu",
+   "hardware": "none",
+   "offline": "unknown",
+   "download_mb": 0,
+   "platforms": [
+    "macos-arm64"
+   ],
+   "validation": "integrated",
+   "limitation": "Synthetic 2.5D arena; 4-beam fan is ideal rays with no beam cone; no Crazyflie or SITL. Setup needs network for PyPI wheels (uv venv + uv pip install); cold setup time not measured; no network-denied run, so offline is unknown. README names an Apple M3 Max host; macOS assumed from the M3 Max host, Linux not tested.",
+   "evidence": [
+    "samples/close-area-planner-reactive/README.md",
+    "samples/close-area-planner-reactive/sample.json",
+    "samples/close-area-planner-reactive/results/reactive_0.json"
+   ]
+  }
+ },
+ "fiducial-goal-apriltag": {
+  "readiness": {
+   "compute": "cpu",
+   "hardware": "none",
+   "offline": "unknown",
+   "download_mb": 0,
+   "platforms": [
+    "macos-arm64"
+   ],
+   "validation": "integrated",
+   "limitation": "Rendered images and a kinematic point mass; no lens distortion, real camera or SITL. Setup needs network for PyPI wheels (uv venv + uv pip install); cold setup time not measured; no network-denied run, so offline is unknown. README names an Apple M3 Max host; macOS assumed from the M3 Max host, Linux not tested.",
+   "evidence": [
+    "samples/fiducial-goal-apriltag/README.md",
+    "samples/fiducial-goal-apriltag/sample.json",
+    "samples/fiducial-goal-apriltag/results/final_approach.json"
+   ]
+  }
  }
 }

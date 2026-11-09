@@ -152,6 +152,11 @@ tracking weights scaled by the EKF covariance from
 after a fix. Port to [acados](../catalog/repos/acados__acados.md) only if time remains. Lower
 priority than G1-G3: harder to demo and judges see MPC often.
 
+Measured MPC number for close-area A=>B: [close-area-planner-mpc](../samples/close-area-planner-mpc/README.md)
+(synthetic arena, known map, M3 Max laptop in Python): same outcomes as the A* carrot follower
+(both 100 % reached, 0 % collision, 50 layouts per family), QP 0.22 ms median / 0.46 ms p95 with
+warm start. Not a flight-computer timing.
+
 ## 4. Proposed decoder rows (proposed, not yet merged)
 
 Same columns as [problem-statement-decoder.md](problem-statement-decoder.md). Numbered G1-G5
