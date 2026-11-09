@@ -18,7 +18,7 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 - [PX4 SITL GPS denial: inject, measure drift, recover](../../catalog/samples/px4-sitl-gps-denial.md) - Flies a square mission in PX4 SITL (SIH quadrotor, headless; Gazebo also works per PX4 docs), denies GPS mid-mission, logs EKF2 health and estimated vs ground-truth position, then restores GPS and returns home.
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../../catalog/samples/vio-to-mavlink-bridge.md) - Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold.
 
-## Guides (7)
+## Guides (8)
 
 - [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](../../docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md) - Research date 2026-11-09.
 - [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2.
@@ -27,6 +27,7 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 - [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) - Next action on Day 1: ask questions 1-3 of section 1, then open section 2 for the stack.
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) - Written 2026-11-09 for Challenge 2 "Autonomous Frontiers" (entry point).
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) - Challenge 2 says the winning team "may take it towards real-world implementation".
+- [Upstream findings](../../docs/upstream-findings.md) - Defects and gaps that the hub's samples found in other people's code and data, with what a maintainer needs to act on them.
 
 ## Repositories (68)
 
@@ -52,7 +53,7 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 - [px4_msgs](../../catalog/repos/px4__px4_msgs.md) - fit: high - ROS 2 message definitions mirroring PX4 uORB topics, used with the uXRCE-DDS bridge.
 - [ardupilot_ros](../../catalog/repos/ardupilot__ardupilot_ros.md) - fit: high - ROS 2 integration examples for ArduPilot, including Cartographer-based non-GPS navigation and Nav2 setups.
 - [DJITelloPy](../../catalog/repos/damiafuentes__djitellopy.md) - fit: high - Python wrapper around the official Tello UDP text SDK: takeoff, relative moves, rc sticks, state telemetry and the video stream.
-- [PX4-CBF](../../catalog/repos/ntnu-arl__px4-cbf.md) - fit: high - Documentation and setup for a CBF safety filter inside the PX4 velocity loop that minimally changes the acceleration setpoint using onboard range data; the code lives in an NTNU PX4 fork.
+- [PX4-CBF](../../catalog/repos/ntnu-arl__px4-cbf.md) - fit: high - Documentation and setup for a CBF safety filter inside the PX4 position controller that minimally changes the acceleration setpoint using onboard range data.
 - [INAV](../../catalog/repos/inavflight__inav.md) - fit: medium - Navigation-focused fork of the Cleanflight/Betaflight lineage for small multirotors, fixed-wing and rovers, adding GPS position hold, return-to-home and waypoint missions on cheap F4/F7/H7 boards.
 - [ESP-Drone](../../catalog/repos/espressif__esp-drone.md) - fit: medium - Espressif's mini quadcopter firmware for ESP32/ESP32-S2/S3, derived from Crazyflie code, controlled over Wi-Fi.
 - [dRehmFlight VTOL](../../catalog/repos/nickrehm__drehmflight.md) - fit: medium - Single-file Arduino/Teensy flight controller for small VTOL and multirotor craft, written to be read and modified by students.

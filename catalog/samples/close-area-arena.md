@@ -28,7 +28,9 @@ Small deterministic simulator that every close-area A=>B approach in the hub is 
 
 - [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [08. Crazyflie sensing limits: what the planner and safety filter can rely on](../../docs/research/close-area-nav/08-crazyflie-sensing-limits.md) (mentions)
+- [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) (mentions)
 - [Close-area reactive planners: APF with wall-follow escape and VFH+, range sensor only, 72-beam vs Crazyflie-like 4-beam fan](../../catalog/samples/close-area-planner-reactive.md) (explains)
 
 _Indexed by lane(s): samples_

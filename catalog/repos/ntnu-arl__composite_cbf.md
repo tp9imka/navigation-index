@@ -24,6 +24,7 @@ ROS implementation of the composite CBF safety filter that combines many range p
 
 ## Referenced by
 
+- [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [cbf_pc_selector](../../catalog/repos/ntnu-arl__cbf_pc_selector.md) (integrates_with)
 - [PX4-Autopilot (NTNU fork, cbf branch)](../../catalog/repos/ntnu-arl__px4-autopilot.md) (same_org)
 - [PX4-CBF](../../catalog/repos/ntnu-arl__px4-cbf.md) (same_org)

@@ -44,7 +44,6 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [Autopilot GNSS fault handling: PX4 EKF2 and ArduPilot EKF3 under spoofing](../../docs/autopilot-gnss-fault-handling.md) - What each autopilot's EKF does when GNSS goes wrong, read from the source at pinned tags and checked in SITL by samples/autopilot-spoof-response (45 flights, 2026-11-06).
 - [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) - Start here when the task is the EDGE Group internal hackathon, Challenge 2.
 - [Choose a stack you can run](../../docs/practical-readiness.md) - Start with the problem decoder, then narrow the candidates by the resources in the room.
-- [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) - Research round for EDGE hackathon Challenge 2, 2026-11-09, after new information that the task is likely "move a drone from A to B in a close area, potentially with obstacles".
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) - What a 4-5 person team does from the moment the problem statement drops until H+3, when a walking skeleton should run end to end.
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) - Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (details drop 2026-11-18).
 - [Docs map](../../docs/README.md) - What each page under docs/ is for and the order to read them in.
@@ -57,6 +56,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) - Plausible problem statements for a navigation / PNT / GNSS-denied hackathon, each mapped to a recommended approach, a stack (integration cards first, catalog pages otherwise), datasets, a sample or template to start from
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) - Opinionated picks for a 24-48h build.
 - [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) - Lane ua-ru-sources: 38 resources and 12 repos, all tagged lang:uk or lang:ru.
+- [Upstream findings](../../docs/upstream-findings.md) - Defects and gaps that the hub's samples found in other people's code and data, with what a maintainer needs to act on them.
 - [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) - Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (full brief 2026-11-18).
 
 ## Repositories (130)
@@ -219,7 +219,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [Autonomous Navigation of Small UAVs Based on Vehicle Dynamic Model](../../catalog/resources/khaghani-skaloud-2016-vdm-navigation-small-uavs-eurocow.md) - paper - ISPRS Archives XL-3/W4 (EuroCOW 2016), open access; journal version in NAVIGATION 63(3), 2016.
 - [Barrier Certificate based Safe Control for LiDAR-based Systems under Sensor Faults and Attacks](../../catalog/resources/zhang-cheng-niu-clark-2022-lidar-barrier-faults.md) - paper - Preprint (arXiv, no venue confirmed).
 - [BatDeck - Ultra Low-power Ultrasonic Ego-velocity Estimation and Obstacle Avoidance on Nano-drones](../../catalog/resources/muller-batdeck-ultrasonic-nano-drone-2024.md) - paper - Preprint on arXiv (ETH Zurich and University of Bologna).
-- [Belief Control Barrier Functions for Risk-aware Control](../../catalog/resources/vahs-belief-cbf-2023.md) - paper - Defines control barrier functions on the EKF belief (mean and covariance) so a controller keeps the robot in a safe set with a chosen confidence.
+- [Belief Control Barrier Functions for Risk-aware Control](../../catalog/resources/vahs-belief-cbf-2023.md) - paper - Peer-reviewed (IEEE RA-L 8(12):8565-8572, 2023, doi 10.1109/LRA.2023.3330662, confirmed via Crossref in docs/research/close-area-nav/05-cbf-baselines-faithful.md).
 - [Conformalized Kalman Filters for State Estimation with Trustworthy Confidence Regions](../../catalog/resources/weisman-2026-conformalized-kalman-filters.md) - paper - Preprint.
 - [Consistency Analysis and Improvement of Vision-aided Inertial Navigation](../../catalog/resources/hesch-2014-oc-vins-consistency.md) - paper - IEEE T-RO 30(1):158-176.
 - [Consistent Distributed Cooperative Localization for Ultra Large-Scale Multi-agent Systems](../../catalog/resources/pedroso-2026-ulss-cooperative-localization.md) - paper - Preprint on cooperative localization for very large networks (the paper's example is satellite mega-constellations) where per-agent resources must not grow with network size.

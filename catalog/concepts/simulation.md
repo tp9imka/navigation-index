@@ -35,6 +35,7 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) - After this chapter you can pick a dataset or simulator that matches your scenario, compute the trajectory metrics judges and reviewers expect, and design a GNSS-outage or interference test that shows what your system doe
 - [Autopilot GNSS fault handling: PX4 EKF2 and ArduPilot EKF3 under spoofing](../../docs/autopilot-gnss-fault-handling.md) - What each autopilot's EKF does when GNSS goes wrong, read from the source at pinned tags and checked in SITL by samples/autopilot-spoof-response (45 flights, 2026-11-06).
 - [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) - Start here when the task is the EDGE Group internal hackathon, Challenge 2.
+- [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) - Research round for EDGE hackathon Challenge 2, 2026-11-09, after new information that the task is likely "move a drone from A to B in a close area, potentially with obstacles".
 - [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) - Written 2026-11-09 for Challenge 2 (entry point).
 - [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) - Next action on Day 1: ask questions 1-3 of section 1, then open section 2 for the stack.
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) - Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (details drop 2026-11-18).
@@ -42,7 +43,6 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) - Written 2026-11-09 for Challenge 2 "Autonomous Frontiers" (entry point).
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) - Plausible problem statements for a navigation / PNT / GNSS-denied hackathon, each mapped to a recommended approach, a stack (integration cards first, catalog pages otherwise), datasets, a sample or template to start from
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) - Opinionated picks for a 24-48h build.
-- [Upstream findings](../../docs/upstream-findings.md) - Defects and gaps that the hub's samples found in other people's code and data, with what a maintainer needs to act on them.
 
 ## Repositories (99)
 

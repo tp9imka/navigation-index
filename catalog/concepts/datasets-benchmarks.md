@@ -18,13 +18,14 @@ Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [Shared pose recording and replay: JSONL plus optional MCAP](../../catalog/samples/recording-replay.md) - A deterministic synthetic local-ENU pose stream replayed through JSONL and optional MCAP with an embedded schema.
 - [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) - Stdlib-only ground-vehicle loop on a real NCLT Segway session (2013-01-10, 1022 s, 1139 m, 42 MB download): consumer GPS at 1 Hz fused with MEMS strapdown INS (the 8-state EKF of gnss-ins-ekf-outage, imported), wheel spe
 
-## Guides (14)
+## Guides (15)
 
 - [08. Crazyflie sensing limits: what the planner and safety filter can rely on](../../docs/research/close-area-nav/08-crazyflie-sensing-limits.md) - Research note, 2026-11-09 (loop-23).
 - [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) - Loop-24, 2026-11-09.
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) - After this chapter you can explain the five main ways to get an absolute position without GNSS - image-to-map matching, terrain matching, magnetic anomaly matching, celestial fixes and signals of opportunity - pick the o
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) - After this chapter you can pick a dataset or simulator that matches your scenario, compute the trajectory metrics judges and reviewers expect, and design a GNSS-outage or interference test that shows what your system doe
 - [Choose a stack you can run](../../docs/practical-readiness.md) - Start with the problem decoder, then narrow the candidates by the resources in the room.
+- [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) - Research round for EDGE hackathon Challenge 2, 2026-11-09, after new information that the task is likely "move a drone from A to B in a close area, potentially with obstacles".
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) - What a 4-5 person team does from the moment the problem statement drops until H+3, when a walking skeleton should run end to end.
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) - Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (details drop 2026-11-18).
 - [Docs map](../../docs/README.md) - What each page under docs/ is for and the order to read them in.

@@ -25,4 +25,11 @@ Renders a tag36h11 AprilTag (0.16 m, also 0.40 m) onto a textured wall with a 64
 - explains: [Precision Landing](../../catalog/resources/px4-precision-landing-docs.md)
 - explains: [apriltag_ros (ROS 2)](../../catalog/repos/christianrauch__apriltag_ros.md)
 
+## Referenced by
+
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+- [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) (mentions)
+
 _Indexed by lane(s): samples_

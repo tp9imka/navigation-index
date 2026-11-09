@@ -11,12 +11,13 @@ Global/local planners, sampling and search based planning, trajectory optimizati
 - [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md) - Small deterministic simulator that every close-area A=>B approach in the hub is compared in.
 - [Close-area reactive planners: APF with wall-follow escape and VFH+, range sensor only, 72-beam vs Crazyflie-like 4-beam fan](../../catalog/samples/close-area-planner-reactive.md) - Map-free fallback planners for close-area A=>B, written as close-area-arena Planners that read only the pose and the range scan.
 
-## Guides (6)
+## Guides (7)
 
 - [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
 - [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2.
 - [08. Crazyflie sensing limits: what the planner and safety filter can rely on](../../docs/research/close-area-nav/08-crazyflie-sensing-limits.md) - Research note, 2026-11-09 (loop-23).
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) - After this chapter you can convert between the coordinate systems your tools disagree on, fetch free imagery and elevation data for a region, display it, and plan a path or a multi-vehicle mission over it.
+- [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) - Research round for EDGE hackathon Challenge 2, 2026-11-09, after new information that the task is likely "move a drone from A to B in a close area, potentially with obstacles".
 - [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) - Written 2026-11-09 for Challenge 2 (entry point).
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) - Written 2026-11-09 for Challenge 2 "Autonomous Frontiers" (entry point).
 

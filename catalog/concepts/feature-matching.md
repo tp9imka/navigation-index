@@ -13,11 +13,12 @@ Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 - [License-clean drone frame to orthophoto geolocalization (ALIKED / DISK / SIFT + LightGlue)](../../catalog/samples/geoloc-license-clean.md) - Drone frame => NAIP orthophoto => lat/lon using only permissively licensed parts: ALIKED (BSD-3), DISK and LightGlue weights (Apache-2.0), OpenCV SIFT and MAGSAC (Apache-2.0), rasterio, public-domain NAIP from Microsoft 
 - [Night / thermal UAV frame to RGB satellite geolocalization with a no-false-fix gate (ALIKED / DISK / SIFT + LightGlue, SGM baseline, Thermal-UAV)](../../catalog/samples/thermal-geolocalization.md) - Real nadir DJI M4T thermal frames (Thermal-UAV / SCC-Loc, Apache-2.0 card) matched against the dataset's 0.3 m RGB satellite GeoTIFF, by condition: city and village, day and night, day and night fog.
 
-## Guides (4)
+## Guides (5)
 
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) - After this chapter you can explain how a camera, LiDAR or radar measures motion, what SLAM adds on top of odometry, and which open stack to run on which sensor.
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) - After this chapter you can explain the five main ways to get an absolute position without GNSS - image-to-map matching, terrain matching, magnetic anomaly matching, celestial fixes and signals of opportunity - pick the o
 - [Choose a stack you can run](../../docs/practical-readiness.md) - Start with the problem decoder, then narrow the candidates by the resources in the room.
+- [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) - Research round for EDGE hackathon Challenge 2, 2026-11-09, after new information that the task is likely "move a drone from A to B in a close area, potentially with obstacles".
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) - Learned models in navigation pipelines carry three separate sets of terms:
 
 ## Repositories (38)

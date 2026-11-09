@@ -6,11 +6,11 @@
 |---|---|---|---|---|---|---|
 | ? |  | ? | ? | ? | active-research | high |
 
-Documentation and setup for a CBF safety filter inside the PX4 velocity loop that minimally changes the acceleration setpoint using onboard range data; the code lives in an NTNU PX4 fork.
+Documentation and setup for a CBF safety filter inside the PX4 position controller that minimally changes the acceleration setpoint using onboard range data. The code lives on the ntnu-arl/PX4-Autopilot fork, branch cbf.
 
 **Why it matters:** The product-shaped close-area safety filter: already in PX4, range-only, tested on VOXL2 Mini.
 
-**Hackathon notes:** License BSD-3-Clause (gh api), last push 2025-10-16. Needs NTNU's PX4, mavlink and mavros forks. README says the FoV-constrained qpOASES variant crashes on PixRacer Pro; the analytic unconstrained case is the safe one. For 48h, re-implement the composite CBF in Python and cite this as the deploy path.
+**Hackathon notes:** License BSD-3-Clause (gh api), last push 2025-10-16. Needs NTNU's PX4, mavlink and mavros forks. Fork branch cbf (HEAD e7ef0c61, 2025-02-12) ships only the closed-form single-constraint filter, with no FoV constraint; the paper's FoV-constrained qpOASES QP is in the earlier commit 338fb51f. README says the FoV variant crashes on PixRacer Pro. PX4 parameter defaults (CBF_EPSILON 0.5, CBF_KAPPA 10, CBF_ALPHA 1, CBF_POLE0 -2, CBF_ENABLED 0) differ from the paper's flight values (Table II: eps 0.7, kappa 70, alpha 2, p0 -2.5); use Table II, which matches composite_cbf. For 48h, re-implement in Python and run both arms (shipped closed form and FoV QP); see docs/research/close-area-nav/05-cbf-baselines-faithful.md.
 
 **Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Autopilots and flight control](../../catalog/concepts/autopilot.md)
 
@@ -27,6 +27,7 @@ Documentation and setup for a CBF safety filter inside the PX4 velocity loop tha
 
 - [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [composite_cbf](../../catalog/repos/ntnu-arl__composite_cbf.md) (same_org)
 - [PX4-Autopilot (NTNU fork, cbf branch)](../../catalog/repos/ntnu-arl__px4-autopilot.md) (same_org)
 - [Embedded Safe Reactive Navigation for Multirotors Systems using Control Barrier Functions](../../catalog/resources/misyats-px4-cbf-icuas2025.md) (has_code)

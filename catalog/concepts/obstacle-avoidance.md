@@ -11,11 +11,12 @@ Reactive avoidance, sense-and-avoid, DAA.
 - [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md) - Small deterministic simulator that every close-area A=>B approach in the hub is compared in.
 - [Close-area reactive planners: APF with wall-follow escape and VFH+, range sensor only, 72-beam vs Crazyflie-like 4-beam fan](../../catalog/samples/close-area-planner-reactive.md) - Map-free fallback planners for close-area A=>B, written as close-area-arena Planners that read only the pose and the range scan.
 
-## Guides (5)
+## Guides (6)
 
 - [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2.
 - [08. Crazyflie sensing limits: what the planner and safety filter can rely on](../../docs/research/close-area-nav/08-crazyflie-sensing-limits.md) - Research note, 2026-11-09 (loop-23).
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) - After this chapter you can convert between the coordinate systems your tools disagree on, fetch free imagery and elevation data for a region, display it, and plan a path or a multi-vehicle mission over it.
+- [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) - Research round for EDGE hackathon Challenge 2, 2026-11-09, after new information that the task is likely "move a drone from A to B in a close area, potentially with obstacles".
 - [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) - Written 2026-11-09 for Challenge 2 (entry point).
 - [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) - Next action on Day 1: ask questions 1-3 of section 1, then open section 2 for the stack.
 
@@ -34,7 +35,7 @@ Reactive avoidance, sense-and-avoid, DAA.
 - [LSY Autonomous Drone Racing](../../catalog/repos/learnsyslab__lsy_drone_racing.md) - fit: high - TUM LSY course project for autonomous Crazyflie racing through gates and around pole obstacles, in simulation (crazyflow) and on real hardware with Vicon.
 - [OctoMap](../../catalog/repos/octomap__octomap.md) - fit: high - Probabilistic 3D occupancy mapping on an octree, with explicit free, occupied and unknown cells and log-odds updates from ray casting.
 - [octomap-python](../../catalog/repos/wkentaro__octomap-python.md) - fit: high - Cython bindings for OctoMap, published on PyPI as octomap-python.
-- [PX4-CBF](../../catalog/repos/ntnu-arl__px4-cbf.md) - fit: high - Documentation and setup for a CBF safety filter inside the PX4 velocity loop that minimally changes the acceleration setpoint using onboard range data; the code lives in an NTNU PX4 fork.
+- [PX4-CBF](../../catalog/repos/ntnu-arl__px4-cbf.md) - fit: high - Documentation and setup for a CBF safety filter inside the PX4 position controller that minimally changes the acceleration setpoint using onboard range data.
 - [Fast-Planner](../../catalog/repos/hkust-aerial-robotics__fast-planner.md) - fit: medium - HKUST quadrotor planning framework: kinodynamic A* front-end plus B-spline optimization, with a topological-path variant for fast flight in unknown environments.
 - [EGO-Planner](../../catalog/repos/zju-fast-lab__ego-planner.md) - fit: medium - ESDF-free gradient-based local planner for quadrotors from ZJU FAST Lab: optimizes B-spline trajectories using collision terms computed only where the trajectory hits obstacles.
 - [FUEL - Fast UAV Exploration](../../catalog/repos/hkust-aerial-robotics__fuel.md) - fit: medium - Frontier-information-structure based autonomous exploration for quadrotors, combining global tour planning over frontiers with local viewpoint refinement.
@@ -86,7 +87,7 @@ Reactive avoidance, sense-and-avoid, DAA.
 - [Backup Control Barrier Functions: Formulation and Comparative Study](../../catalog/resources/chen-backup-cbf-2021.md) - paper - General backup-CBF formulation: a fixed backup controller grows a small, easy control-invariant set into a larger one, and the filter keeps the system able to fall back to it.
 - [Barrier Certificate based Safe Control for LiDAR-based Systems under Sensor Faults and Attacks](../../catalog/resources/zhang-cheng-niu-clark-2022-lidar-barrier-faults.md) - paper - Preprint (arXiv, no venue confirmed).
 - [BatDeck - Ultra Low-power Ultrasonic Ego-velocity Estimation and Obstacle Avoidance on Nano-drones](../../catalog/resources/muller-batdeck-ultrasonic-nano-drone-2024.md) - paper - Preprint on arXiv (ETH Zurich and University of Bologna).
-- [Belief Control Barrier Functions for Risk-aware Control](../../catalog/resources/vahs-belief-cbf-2023.md) - paper - Defines control barrier functions on the EKF belief (mean and covariance) so a controller keeps the robot in a safe set with a chosen confidence.
+- [Belief Control Barrier Functions for Risk-aware Control](../../catalog/resources/vahs-belief-cbf-2023.md) - paper - Peer-reviewed (IEEE RA-L 8(12):8565-8572, 2023, doi 10.1109/LRA.2023.3330662, confirmed via Crossref in docs/research/close-area-nav/05-cbf-baselines-faithful.md).
 - [Bubble Planner: Planning High-speed Smooth Quadrotor Trajectories using Receding Corridors](../../catalog/resources/ren-bubble-planner-2022.md) - paper - Preprint on arXiv (authors list it as IROS 2022, not checked here).
 - [Challenges and implemented technologies used in autonomous drone racing](../../catalog/resources/moon-2019-adr-iros-challenges.md) - paper - Organisers and teams review the IROS 2016 and 2017 autonomous drone races: the indoor gate format and the localisation, gate detection and control methods teams used.
 - [Chance-Constrained Collision Avoidance for MAVs in Dynamic Environments](../../catalog/resources/zhu-alonso-mora-ccnmpc-mav-2019.md) - paper - Chance-constrained nonlinear MPC for quadrotors that keeps collision probability with each obstacle under a threshold, with a tight bound that makes it real-time.

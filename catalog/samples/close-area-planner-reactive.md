@@ -26,4 +26,11 @@ Map-free fallback planners for close-area A=>B, written as close-area-arena Plan
 - explains: [VFH+: reliable obstacle avoidance for fast mobile robots](../../catalog/resources/ulrich-borenstein-vfhplus-icra-1998.md)
 - explains: [Multi-ranger deck](../../catalog/resources/bitcraze-multi-ranger-deck.md)
 
+## Referenced by
+
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+- [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) (mentions)
+
 _Indexed by lane(s): samples_

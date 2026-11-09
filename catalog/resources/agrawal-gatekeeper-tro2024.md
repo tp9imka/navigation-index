@@ -4,7 +4,7 @@
 
 **By:** Devansh R. Agrawal, Ruichang Chen, Dimitra Panagou - **Year:** 2024 - **Level:** advanced - **Access:** open
 
-Lightweight check between a planner and a controller: simulate the nominal trajectory to a switch time, then a backup controller such as hover, and commit the safe candidate with the latest switch time. Quadrotor hardware with an online map; 3-10x faster than MPC in simulation per the authors. Venue T-RO 2024 per a search summary.
+Lightweight check between a planner and a controller: simulate the nominal trajectory to a switch time, then a backup controller such as hover, and commit the safe candidate with the latest switch time. Quadrotor hardware with an online map; 3-10x faster than MPC in simulation per the authors. Peer-reviewed: IEEE T-RO 40:4358-4375, 2024, doi 10.1109/TRO.2024.3454415, plus IROS 2023 pp. 259-266 (Crossref, per docs/research/close-area-nav/05-cbf-baselines-faithful.md).
 
 ## Key takeaways
 
@@ -13,7 +13,7 @@ Lightweight check between a planner and a controller: simulate the nominal traje
 
 **Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Path and motion planning](../../catalog/concepts/path-planning.md)
 
-**Tags:** `backup-controller`, `safety-verification`, `quadrotor`
+**Tags:** `backup-controller`, `safety-verification`, `quadrotor`, `peer-reviewed`
 
 ## Related
 

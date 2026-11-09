@@ -15,7 +15,7 @@ Strapdown mechanization, IMU error models, calibration, dead reckoning.
 - [Terrain-relative navigation with a particle filter](../../catalog/samples/terrain-relative-nav-pf.md) - A stdlib-only simulation of TERCOM/TRN: an aircraft with a biased INS and a radar altimeter matches its measured terrain profile against a seeded synthetic DEM with a particle filter that also estimates the INS velocity 
 - [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) - Stdlib-only ground-vehicle loop on a real NCLT Segway session (2013-01-10, 1022 s, 1139 m, 42 MB download): consumer GPS at 1 Hz fused with MEMS strapdown INS (the 8-state EKF of gnss-ins-ekf-outage, imported), wheel spe
 
-## Guides (16)
+## Guides (15)
 
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](../../docs/landscape/blind-flight-teardown.md) - The closest real precedent we have for a navigation hackathon brief: a 48-hour case (26-28 June 2026, Krasnodar, track "Robotics and sensing") where teams had to find position, ground speed and heading of an aircraft fro
 - [02. Deadline-aware scheduling of expensive absolute fixes](../../docs/research/innovation-prior-art/02-deadline-aware-fix-scheduling.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
@@ -32,7 +32,6 @@ Strapdown mechanization, IMU error models, calibration, dead reckoning.
 - [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) - Each item: what changed, the source, and what it means for a navigation hackathon project.
 - [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) - What funders publish as navigation problem statements.
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) - Opinionated picks for a 24-48h build.
-- [Upstream findings](../../docs/upstream-findings.md) - Defects and gaps that the hub's samples found in other people's code and data, with what a maintainer needs to act on them.
 
 ## Repositories (81)
 
