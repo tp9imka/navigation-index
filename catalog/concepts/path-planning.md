@@ -6,11 +6,12 @@ Global/local planners, sampling and search based planning, trajectory optimizati
 
 **Sub-concepts:** [Mission planning and routing](../../catalog/concepts/mission-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
-## Samples (7)
+## Samples (8)
 
 - [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md) - Small deterministic simulator that every close-area A=>B approach in the hub is compared in.
 - [Close-area benchmark matrix: 9 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md) - Runs every close-area planner in the hub through the shared close-area-arena on the same seeded layouts and scores them on truth: straight, freest_beam, APF with wall-follow escape, VFH+, A* + ESDF on the known map, A* +
 - [Close-area corridor MPC: linear MPC with OSQP in an ESDF half-plane corridor on the arena A*, vs the carrot follower](../../catalog/samples/close-area-planner-mpc.md) - Replaces the close-area-arena A* carrot follower with a linear MPC path follower and measures the difference.
+- [Close-area local planners: DWA (Nav2-style dynamic window) and Bug2 / TangentBug, range sensor only, next to APF and VFH+ on 72-beam and Crazyflie-like 4-beam fans](../../catalog/samples/close-area-planner-dwa-bug.md) - Two more classic map-free local planners for close-area A=>B, written as close-area-arena Planners that read only the pose and the range scan, and measured on the same arena families and fans as the reactive sample.
 - [Close-area moving obstacles: walking people in the arena, A* replan vs A* + PX4-CBF range filter vs APF](../../catalog/samples/close-area-moving-obstacles.md) - Moving-obstacle family for the shared close-area-arena.
 - [Close-area reactive planners: APF with wall-follow escape and VFH+, range sensor only, 72-beam vs Crazyflie-like 4-beam fan](../../catalog/samples/close-area-planner-reactive.md) - Map-free fallback planners for close-area A=>B, written as close-area-arena Planners that read only the pose and the range scan.
 - [Close-area safety-filter kill test A: no filter, PX4 Collision Prevention style and PX4-CBF as shipped on A* under VIO faults, with map-only obstacles the range fan cannot see](../../catalog/samples/close-area-safety-filter.md) - Harness that puts a safety filter between a planner and the vehicle in the shared close-area-arena, for the kill test of the hub's integrity-aware safety-filter headline.

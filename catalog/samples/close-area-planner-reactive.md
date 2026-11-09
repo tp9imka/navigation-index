@@ -40,5 +40,6 @@ Map-free fallback planners for close-area A=>B, written as close-area-arena Plan
 - [Research rounds: which one applies, and the innovation story per brief](../../docs/research/README.md) (mentions)
 - [Close-area benchmark matrix: 9 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md) (explains)
 - [Close-area moving obstacles: walking people in the arena, A* replan vs A* + PX4-CBF range filter vs APF](../../catalog/samples/close-area-moving-obstacles.md) (explains)
+- [Close-area local planners: DWA (Nav2-style dynamic window) and Bug2 / TangentBug, range sensor only, next to APF and VFH+ on 72-beam and Crazyflie-like 4-beam fans](../../catalog/samples/close-area-planner-dwa-bug.md) (explains)
 
 _Indexed by lane(s): samples_

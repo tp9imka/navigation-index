@@ -25,6 +25,7 @@ Peer-reviewed (ICRA 1991). Lists the structural failures of potential fields: tr
 
 - [Real-Time Obstacle Avoidance for Manipulators and Mobile Robots](../../catalog/resources/khatib-potential-fields-ijrr-1986.md) (explains)
 - [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md) (explains)
+- [Close-area local planners: DWA (Nav2-style dynamic window) and Bug2 / TangentBug, range sensor only, next to APF and VFH+ on 72-beam and Crazyflie-like 4-beam fans](../../catalog/samples/close-area-planner-dwa-bug.md) (explains)
 - [Close-area reactive planners: APF with wall-follow escape and VFH+, range sensor only, 72-beam vs Crazyflie-like 4-beam fan](../../catalog/samples/close-area-planner-reactive.md) (explains)
 
 _Indexed by lane(s): close-area-planning_

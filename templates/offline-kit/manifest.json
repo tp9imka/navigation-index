@@ -1062,6 +1062,19 @@
    "size_complete": false
   },
   {
+   "id": "pip:close-area-planner-dwa-bug",
+   "type": "pip",
+   "tier": "standard",
+   "license": "per package (see PyPI metadata)",
+   "source": "samples/close-area-planner-dwa-bug/requirements.txt",
+   "requirements": [
+    "-r ../close-area-arena/requirements.txt"
+   ],
+   "vcs": [],
+   "size": null,
+   "size_complete": false
+  },
+  {
    "id": "pip:close-area-planner-mpc",
    "type": "pip",
    "tier": "standard",
