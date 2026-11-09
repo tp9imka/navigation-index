@@ -30,13 +30,14 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) - A simulated USV runs a 19.6 km transit over real geography (Lillgrund => Drogden channel => Copenhagen approach) built from OpenStreetMap coastline, Oresund bridge, wind turbines and seamarks, with 75 min of real Danish 
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../../catalog/samples/vio-to-mavlink-bridge.md) - Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold.
 
-## Guides (25)
+## Guides (26)
 
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](../../docs/landscape/blind-flight-teardown.md) - The closest real precedent we have for a navigation hackathon brief: a 48-hour case (26-28 June 2026, Krasnodar, track "Robotics and sensing") where teams had to find position, ground speed and heading of an aircraft fro
 - [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
 - [02. Deadline-aware scheduling of expensive absolute fixes](../../docs/research/innovation-prior-art/02-deadline-aware-fix-scheduling.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
 - [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](../../docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md) - Research date 2026-11-09.
 - [07. Kill test for idea C: does a PL-margin safety filter already exist?](../../docs/research/close-area-nav/07-pl-margin-prior-art.md) - Prior-art scan, 2026-11-09 (loop-13).
+- [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) - Loop-24, 2026-11-09.
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) - After this chapter you can explain why an IMU drifts, write the predict/update loop of a Kalman filter, choose between a filter and a factor graph, and configure an off-the-shelf estimator to survive a GNSS outage.
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) - After this chapter you can explain how a camera, LiDAR or radar measures motion, what SLAM adds on top of odometry, and which open stack to run on which sensor.
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) - After this chapter you can run PX4 or ArduPilot in simulation, inject your own position source over MAVLink, configure the estimator to switch away from GNSS, and push your vehicle's position and detections onto a TAK co

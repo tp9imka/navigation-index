@@ -25,6 +25,7 @@ Python package that aligns an estimated trajectory with ground truth from CSV fi
 
 ## Referenced by
 
+- [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) (mentions)
 - [MaRS (Modular and Robust Sensor-Fusion)](../../catalog/repos/aau-cns__mars_lib.md) (same_org)
 - [smfeval](../../catalog/repos/svendbot__smfeval.md) (alternative_to)
 

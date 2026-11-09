@@ -27,6 +27,7 @@ Python tool that scores an odometry estimate together with its reported covarian
 
 ## Referenced by
 
+- [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) (mentions)
 - [You Should Be Properly Scoring Your Odometry](../../catalog/resources/ronning-2026-properly-scoring-odometry.md) (has_code)
 
 _Indexed by lane(s): close-area-localization_

@@ -21,6 +21,7 @@ ICRA 2021. Observes that EKF means are accurate while covariances are not, and t
 
 ## Referenced by
 
+- [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) (mentions)
 - [Quantifying VIO Uncertainty](../../catalog/resources/tsuei-soatto-2023-quantifying-vio-uncertainty.md) (same_author)
 
 _Indexed by lane(s): close-area-localization_

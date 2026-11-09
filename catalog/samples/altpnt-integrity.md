@@ -43,6 +43,7 @@ A stdlib-only simulated UAV flight with INS, VIO-like velocity, intermittent vis
 - [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) (mentions)
 - [02. Deadline-aware scheduling of expensive absolute fixes](../../docs/research/innovation-prior-art/02-deadline-aware-fix-scheduling.md) (mentions)
 - [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) (mentions)
 - [End-to-end GNSS-denied visual navigation on one real flight: nadir VO + DINOv2 retrieval + LightGlue fixes + multi-frame voting + altpnt integrity (VPAIR)](../../catalog/samples/e2e-visual-nav-vpair.md) (uses)

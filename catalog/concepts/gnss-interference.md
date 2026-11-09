@@ -30,10 +30,11 @@ GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-
 - [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) - Stdlib-only ground-vehicle loop on a real NCLT Segway session (2013-01-10, 1022 s, 1139 m, 42 MB download): consumer GPS at 1 Hz fused with MEMS strapdown INS (the 8-state EKF of gnss-ins-ekf-outage, imported), wheel spe
 - [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) - A simulated USV runs a 19.6 km transit over real geography (Lillgrund => Drogden channel => Copenhagen approach) built from OpenStreetMap coastline, Oresund bridge, wind turbines and seamarks, with 75 min of real Danish 
 
-## Guides (24)
+## Guides (25)
 
 - [02. Deadline-aware scheduling of expensive absolute fixes](../../docs/research/innovation-prior-art/02-deadline-aware-fix-scheduling.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
 - [07. Kill test for idea C: does a PL-margin safety filter already exist?](../../docs/research/close-area-nav/07-pl-margin-prior-art.md) - Prior-art scan, 2026-11-09 (loop-13).
+- [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) - Loop-24, 2026-11-09.
 - [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) - After this chapter you can describe any navigation system as "a state, an uncertainty, a set of measurements and a way to check they agree", and you will know the vocabulary judges use when they ask whether your solution
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) - After this chapter you can explain how a receiver turns satellite signals into a position, read raw receiver output, pick between SPP, RTK and PPP, and build a jamming or spoofing detector that runs on recorded data.
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) - After this chapter you can pick a dataset or simulator that matches your scenario, compute the trajectory metrics judges and reviewers expect, and design a GNSS-outage or interference test that shows what your system doe

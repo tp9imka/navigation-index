@@ -43,12 +43,13 @@ Architectures that keep position, navigation and timing trustworthy under denial
 - [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) - A simulated USV runs a 19.6 km transit over real geography (Lillgrund => Drogden channel => Copenhagen approach) built from OpenStreetMap coastline, Oresund bridge, wind turbines and seamarks, with 75 min of real Danish 
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../../catalog/samples/vio-to-mavlink-bridge.md) - Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold.
 
-## Guides (34)
+## Guides (35)
 
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](../../docs/landscape/blind-flight-teardown.md) - The closest real precedent we have for a navigation hackathon brief: a 48-hour case (26-28 June 2026, Krasnodar, track "Robotics and sensing") where teams had to find position, ground speed and heading of an aircraft fro
 - [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
 - [02. Deadline-aware scheduling of expensive absolute fixes](../../docs/research/innovation-prior-art/02-deadline-aware-fix-scheduling.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
 - [07. Kill test for idea C: does a PL-margin safety filter already exist?](../../docs/research/close-area-nav/07-pl-margin-prior-art.md) - Prior-art scan, 2026-11-09 (loop-13).
+- [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) - Loop-24, 2026-11-09.
 - [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) - After this chapter you can describe any navigation system as "a state, an uncertainty, a set of measurements and a way to check they agree", and you will know the vocabulary judges use when they ask whether your solution
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) - After this chapter you can explain how a receiver turns satellite signals into a position, read raw receiver output, pick between SPP, RTK and PPP, and build a jamming or spoofing detector that runs on recorded data.
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) - After this chapter you can explain why an IMU drifts, write the predict/update loop of a Kalman filter, choose between a filter and a factor graph, and configure an off-the-shelf estimator to survive a GNSS outage.

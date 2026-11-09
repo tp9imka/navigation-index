@@ -14,11 +14,12 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [Two independent absolute sources on one real flight: visual fixes + terrain-relative navigation with solution-separation integrity (VPAIR over NRW 1 m LiDAR)](../../catalog/samples/two-source-integrity-vpair.md) - Adds terrain-relative navigation as a second absolute source to the real VPAIR flight (8.53 km after GNSS loss, Rhine valley between Bad Honnef and Koenigswinter, east of Bonn).
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../../catalog/samples/vio-to-mavlink-bridge.md) - Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold.
 
-## Guides (11)
+## Guides (12)
 
 - [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
 - [02. Deadline-aware scheduling of expensive absolute fixes](../../docs/research/innovation-prior-art/02-deadline-aware-fix-scheduling.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
 - [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2.
+- [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) - Loop-24, 2026-11-09.
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) - After this chapter you can explain how a camera, LiDAR or radar measures motion, what SLAM adds on top of odometry, and which open stack to run on which sensor.
 - [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) - Next action on Day 1: ask questions 1-3 of section 1, then open section 2 for the stack.
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) - For a team going into a navigation-themed hackathon that may have a military or defense track.

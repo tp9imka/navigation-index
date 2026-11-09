@@ -8,8 +8,9 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 
 - [Relative navigation benchmark on real data: KISS-ICP lidar odometry, OpenVINS VIO, mono and nadir VO, scored with evo](../../catalog/samples/relative-nav-benchmark.md) - One command per part.
 
-## Guides (2)
+## Guides (3)
 
+- [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) - Loop-24, 2026-11-09.
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) - After this chapter you can explain how a camera, LiDAR or radar measures motion, what SLAM adds on top of odometry, and which open stack to run on which sensor.
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) - After this chapter you can pick a dataset or simulator that matches your scenario, compute the trajectory metrics judges and reviewers expect, and design a GNSS-outage or interference test that shows what your system doe
 
