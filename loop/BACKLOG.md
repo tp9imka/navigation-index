@@ -90,18 +90,18 @@ Initial backlog: fable brainstorm, 2026-11-09, base dbafbff.
 
 | 54 | done 5a9e222 (FAIL on 4 beams) | Relocalization on a 4-beam Crazyflie-like sensor: the matcher needs >= 10 returns per scan, a Multi-ranger gives 4; accumulate scans during a slow yaw spin (or a short motion) and match the stacked returns; measure recovery on crazyflie preset | P | S | 22, 32 B | samples/close-area-relocalize new files + README section | The headline must work on the likeliest hardware (judge drill Q6 found the gap) | reached / wrong commits on crazyflie preset vs ideal |
 
-| 55 | in-flight | Relocalization vs an imperfect map (removed / added / shifted obstacles, self-built map) | P | S | 33 B | samples/close-area-relocalize map_perturb.py, run_stalemap.py | Intake default = moved obstacles | table per rung, FAIL accepted |
+| 55 | done (FAIL: 7 % collisions with unmapped obstacles) | Relocalization vs an imperfect map (removed / added / shifted obstacles, self-built map) | P | S | 33 B | samples/close-area-relocalize map_perturb.py, run_stalemap.py | Intake default = moved obstacles | table per rung, FAIL accepted |
 | 56 | done 878c841 (holds on random/u_trap only) | Relocalization held-out matrix: seeds 2-4 x 7 families x 2 faults + severity rungs, Wilson intervals | P | S | 33, 46a B | samples/close-area-relocalize run_matrix.py | Drill Q3 rests on one held-out seed | 42 cells with intervals |
-| 57 | in-flight | Relocalization prior-art kill search + EKF2/EKF3 reset_counter in code | R | S | - | docs/research/close-area-nav/10-relocalization-prior-art.md | The second headline never had its search | verdict + code file/line |
-| 58 | in-flight | Day-1 dry run, agent only, fresh clone, timed | A | S | - | docs/day1-dry-run.md | H+0..H+2 never run end to end | measured runbook + blockers |
+| 57 | done (mechanism exists: Jensfelt 2001, AF-MCL 2026) | Relocalization prior-art kill search + EKF2/EKF3 reset_counter in code | R | S | - | docs/research/close-area-nav/10-relocalization-prior-art.md | The second headline never had its search | verdict + code file/line |
+| 58 | done (36 min fresh-clone run, 8 blockers listed) | Day-1 dry run, agent only, fresh clone, timed | A | S | - | docs/day1-dry-run.md | H+0..H+2 never run end to end | measured runbook + blockers |
 | 59 | ready | flight-repo --reloc pose source + reset_counter through the bridge (dry run) | T | S | 33, 51 B | templates/flight-repo reloc_shim.py etc. | Product shape; closes first-flight-jump unconfirmed | jump run reaches B or hovers |
-| 60 | in-flight | Yaw search in the relocalizer (+-15 deg lattice), yaw bias 5/10 deg, 180 deg case | P | S | 33 B | samples/close-area-relocalize relocalize_yaw.py, run_yaw.py | 'yaw is truth' is the first judge question | table + ms per scan |
+| 60 | done (yaw search 100 % at 10 deg bias; 180 deg case fails) | Yaw search in the relocalizer (+-15 deg lattice), yaw bias 5/10 deg, 180 deg case | P | S | 33 B | samples/close-area-relocalize relocalize_yaw.py, run_yaw.py | 'yaw is truth' is the first judge question | table + ms per scan |
 | 61 | ready | Sweep 4 (45a, 46b/c, 47, 49, 50, 54 + 55-57 when landed) | S | S | 53 B; 54-57 soft | shared files | decode warehouse 4 beams => benchmark | gate green, no stale pending |
 | 62 | done 7d0fbc0 | Playground: 6 more planners + shareable #w= links | T | S | 48b B | site/playground | 6 of 14 planners; no sharing | parity on 6 new; link restores world |
 | 63 | ready | Playground relocalization with hypothesis ghosts | T | M | 62, 33 B | site/playground (after 62) | Headline invisible in playground | browser = native on 3 cases |
 | 64 | ready | Showcase story page: headline status, kill-test replay, relocalization replay | T | M | 47 B | samples/*/export_replay.py, site/showcase.* | Judges see the pivot as pictures | both replays render |
 
-| 65 | in-flight | Playground advisor: per-map success/collision stats for every planner, ranked recommendation, plain-language docs for every option (Ivan request) | T | S | 46c B; 62 soft (driver wires in after 62 lands) | site/playground advisor.* data/ ADVISOR.md advisor-demo.html | Ivan: most planners fail in maze/office; a non-expert cannot choose | demo page renders; wired into the playground |
+| 65 | done (wired into the playground) | Playground advisor: per-map success/collision stats for every planner, ranked recommendation, plain-language docs for every option (Ivan request) | T | S | 46c B; 62 soft (driver wires in after 62 lands) | site/playground advisor.* data/ ADVISOR.md advisor-demo.html | Ivan: most planners fail in maze/office; a non-expert cannot choose | demo page renders; wired into the playground |
 
 ## Planned waves
 

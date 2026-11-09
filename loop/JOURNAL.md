@@ -99,3 +99,9 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - landed: 62 => 7d0fbc0 (12 planners in the playground; MPC not possible: no osqp wheel in Pyodide 314.0.7; A* unknown + F2 = filter select; browser = native 21/21; #w= links restore in a fresh profile)
 - landed: 54 => 5a9e222 (merged by hand: README conflict with 56). 4-beam crazyflie + spin + info-gain: 48 / 64 % reached vs 98 / 100 % on 72 beams; under dropout worse than no relocalization (64 %); spins 9-12 s median. Headline holds only with a dense range sensor.
 - slip: zsh parsed $BASE:s as a modifier while merging, doubled the README locally; caught before commit, use ${BASE}.
+
+## 2026-11-09 wrap-up (Ivan: wrap up for now)
+- landed: 54 (4-beam reloc FAIL), 55 (stale map FAIL), 56 (held-out matrix: open layouts only), 57 (prior art: mechanism exists), 58 (dry run 36 min, 8 blockers), 60 (yaw search), 62 (12 planners + share links), 65 (advisor), 1d271e3 (playground cache fix).
+- merged from feat/innovation-pocs-final: authored files of f730922 only (H1-H3 cards, innovation lab); generated files and the duplicate research lanes left out.
+- decision: both close-area headlines narrowed by their own kill tests; pitch the measured toolkit plus the narrow claim that fits the real brief (docs/research/README.md, end).
+- STOPPED: user asked to wrap up. Open next: 59 flight-repo --reloc, 61 sweep 4, 63 playground relocalization, 64 showcase story page, 28 not-verified reconciliation, the 8 dry-run blockers (docs/day1-dry-run.md), an MCL (AF-MCL-style) arm as the relocalization baseline; needs-human: 09/15/25 (Docker builds).
