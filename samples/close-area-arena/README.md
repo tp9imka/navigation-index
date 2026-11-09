@@ -113,7 +113,10 @@ straight 0 %, known 100 %, unknown 100 %.
   wall, sees more wall and turns back (2.6-11.7 m flown in the last 10 s). The scorer's 10 s
   displacement rule calls that stuck.
 - For gaps under about 0.6 m the planner retries with radius-only inflation (272 known, 128
-  unknown replans on narrow_gap).
+  unknown replans on narrow_gap). Paths planned at that 0.15 m fallback can pass closer than
+  the vehicle radius on the exact geometry because of the 0.1 m grid (17 of 60 A* fallback plans,
+  min 0.119 m; no flight collided):
+  [sampling sweep clearance check](../close-area-planner-sampling/results/sweep_0_clearance.md).
 - A* under the estimator faults, with and without safety filters: see
   [close-area-safety-filter](../close-area-safety-filter/README.md).
 

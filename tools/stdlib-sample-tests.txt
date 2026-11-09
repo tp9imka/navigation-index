@@ -43,3 +43,4 @@ close-area-arena
 close-area-planner-reactive
 fiducial-goal-apriltag
 close-area-safety-filter
+close-area-planner-sampling

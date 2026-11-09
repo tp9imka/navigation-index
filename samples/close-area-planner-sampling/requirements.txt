@@ -1,0 +1,1 @@
+-r ../close-area-arena/requirements.txt

@@ -1,0 +1,40 @@
+{
+  "id": "sample:close-area-planner-sampling",
+  "title": "Close-area sampling planners: RRT* and Informed RRT* against A* on narrow gaps 0.4-1.2 m, in the close-area arena",
+  "summary": "Own numpy RRT* (rewiring with subtree cost update, goal bias 5 %, step 1.0 m, rewire radius from the RRT* bound capped at 2.0 m) with an Informed RRT* mode (ellipse sampling after the first solution), planning on the arena's known inflated 0.1 m grid with the same two-level inflation (0.25 m, then 0.15 m) and the same clearance-keeping shortcut as the A* + ESDF baseline, and flying with that baseline's carrot follower (subclass of planners/astar_esdf). arena.py builds narrow_gap layouts with a fixed gap width from the arena's own random stream. sweep.py: planning-only success, path length (mean, within-layout std over 10 RNG seeds, ratio to A*), planning time median / p95 and exact path clearance at 7 gap widths, A* vs RRT* and Informed RRT* at 1000 and 5000 samples, 30 layouts per width. bench.py: 50-layout arena flights on random and narrow_gap for Informed RRT* 5000 and A*. Shows why A* stays the default in a small 2.5D arena. Synthetic arena only.",
+  "concepts": [
+    "concept:path-planning",
+    "concept:simulation",
+    "concept:datasets-benchmarks"
+  ],
+  "tags": [
+    "close-area",
+    "a-to-b",
+    "rrt-star",
+    "informed-rrt-star",
+    "sampling-based-planning",
+    "a-star",
+    "narrow-gap",
+    "narrow-passage",
+    "occupancy-grid",
+    "esdf",
+    "benchmark",
+    "python",
+    "numpy"
+  ],
+  "related": [
+    {"id": "sample:close-area-arena", "rel": "explains"},
+    {"id": "res:karaman-frazzoli-rrtstar-ijrr-2011", "rel": "explains"},
+    {"id": "repo:zhm-real/pathplanning", "rel": "explains"},
+    {"id": "repo:ompl/ompl", "rel": "explains"}
+  ],
+  "verified": "ran 2026-11-09 with CPython 3.12.10 + numpy 2.5.4 / scipy 1.18.1 on an Apple M3 Max, in the sample venv (requirements.txt reuses the arena's): sweep.py --layouts 30 --seeds 10 (8610 plans, wall 173.7 s on 14 processes) wrote results/sweep_0.*; a single-process timing rerun on 5 layouts x 3 seeds wrote results/timing_jobs1/; clearance.py wrote results/sweep_0_clearance.md; bench.py --layouts 50 --seed 0 --iters 5000 --informed 1 ran twice with identical outcomes, path lengths and clearances in all 4 cells (planner timings excluded), and its A* summaries equal the arena's astar_esdf results. gap_world(None) was checked equal to the arena narrow_gap layouts 0-49. Every number in README is from results/. test_smoke.py: 1 passed in the venv, 1 skipped under plain python3 3.14 without numpy. No arena file was edited. Layouts, vehicle and sensor are simulated; known static map only; no SITL, no flight.",
+  "verified_status": "ran",
+  "deps": "venv",
+  "first_command": ".venv/bin/python bench.py --layouts 50 --seed 0",
+  "group": "Close-area A=>B: planning and safety",
+  "shows": "RRT* and Informed RRT* vs A* on the same inflated grid: success vs gap width 0.4-1.2 m at two sample budgets, path length spread, planning time, exact clearance, and 50-layout arena flights",
+  "input": "synthetic",
+  "runtime": "sweep ~3.5 min on 14 processes; arena bench ~1 min 50 s",
+  "key_result": "[30 layouts x 10 seeds per width, seed 0](README.md#results-ran-2026-11-09-apple-m3-max-cpython-31210-numpy-254-scipy-1181): A* 100 % at every gap 0.4-1.2 m, 30-76 ms median; RRT* 1000 samples 28.3 % at 0.4 m and 60.3 % at 0.5 m, 5000 samples 85.7 % and 99.3 % at 8x the A* time; arena flights both 100 % reached, Informed RRT* slower to goal (23.58 s vs 18.81 s random) with less clearance (0.269 m vs 0.635 m)"
+}
