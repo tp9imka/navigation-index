@@ -23,5 +23,8 @@ Crazyflie deck combining a PMW3901 optical flow sensor and a VL53L1x height sens
 ## Referenced by
 
 - [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+- [Go with the Flow: Relative Positioning with the Flow deck](../../catalog/resources/bitcraze-flow-deck-limitations-blog-2023.md) (explains)
+- [BatDeck - Ultra Low-power Ultrasonic Ego-velocity Estimation and Obstacle Avoidance on Nano-drones](../../catalog/resources/muller-batdeck-ultrasonic-nano-drone-2024.md) (evaluates)
+- [VL53L1X datasheet: long distance ranging Time-of-Flight sensor (STMicroelectronics)](../../catalog/resources/st-vl53l1x-datasheet.md) (explains)
 
 _Indexed by lane(s): close-area-sims_

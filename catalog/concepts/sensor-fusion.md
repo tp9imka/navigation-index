@@ -192,7 +192,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [CoLRIO](../../catalog/repos/pengyu-team__co-lrio.md) - fit: low - Placeholder repo: it only holds a README pointing to zhongshp/Co-LRIO, where the code lives.
 - [Visual-Odometry-VIO- (VO + IMU EKF)](../../catalog/repos/daudalbogachiev925__visual-odometry-vio-.md) - fit: low - Minimal Python project: essential-matrix visual odometry fused with IMU in an EKF to estimate position without GPS.
 
-## Documents, talks, courses, datasets (166)
+## Documents, talks, courses, datasets (168)
 
 - [A micro Lie theory for state estimation in robotics](../../catalog/resources/sola-micro-lie-theory.md) - paper - Tutorial paper giving just enough Lie theory (groups, exponential map, adjoint, Jacobians, uncertainty on manifolds) to write correct estimators for 3D pose; it is the basis of Solà's 'Lie theory for the roboticist' cour
 - [A non-divergent estimation algorithm in the presence of unknown correlations](../../catalog/resources/julier-uhlmann-1997-covariance-intersection.md) - paper - The original covariance intersection (CI) paper (American Control Conference 1997).
@@ -218,6 +218,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [Autonomous Navigation for Flying Robots (TUM edX, AUTONAVx)](../../catalog/resources/tum-autonavx.md) - course - MOOC version of the TUM flying-robots lecture with lecture videos and browser-based Python exercises on quadrotor state estimation, Kalman filtering, control and visual navigation.
 - [Autonomous Navigation of Small UAVs Based on Vehicle Dynamic Model](../../catalog/resources/khaghani-skaloud-2016-vdm-navigation-small-uavs-eurocow.md) - paper - ISPRS Archives XL-3/W4 (EuroCOW 2016), open access; journal version in NAVIGATION 63(3), 2016.
 - [Barrier Certificate based Safe Control for LiDAR-based Systems under Sensor Faults and Attacks](../../catalog/resources/zhang-cheng-niu-clark-2022-lidar-barrier-faults.md) - paper - Preprint (arXiv, no venue confirmed).
+- [BatDeck - Ultra Low-power Ultrasonic Ego-velocity Estimation and Obstacle Avoidance on Nano-drones](../../catalog/resources/muller-batdeck-ultrasonic-nano-drone-2024.md) - paper - Preprint on arXiv (ETH Zurich and University of Bologna).
 - [Belief Control Barrier Functions for Risk-aware Control](../../catalog/resources/vahs-belief-cbf-2023.md) - paper - Defines control barrier functions on the EKF belief (mean and covariance) so a controller keeps the robot in a safe set with a chosen confidence.
 - [Conformalized Kalman Filters for State Estimation with Trustworthy Confidence Regions](../../catalog/resources/weisman-2026-conformalized-kalman-filters.md) - paper - Preprint.
 - [Consistency Analysis and Improvement of Vision-aided Inertial Navigation](../../catalog/resources/hesch-2014-oc-vins-consistency.md) - paper - IEEE T-RO 30(1):158-176.
@@ -251,6 +252,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [Flow deck v2](../../catalog/resources/bitcraze-flow-deck-v2.md) - doc - Crazyflie deck combining a PMW3901 optical flow sensor and a VL53L1x height sensor, fused in the onboard EKF for indoor position hold without external infrastructure.
 - [From the Desks of ROS Maintainers: A Survey of Modern & Capable Mobile Robotics Algorithms in the Robot Operating System 2](../../catalog/resources/macenski-ros2-algorithms-survey.md) - paper - Survey by ROS maintainers of the mobile robotics algorithms available in ROS 2: localization, SLAM, planning, control and perception packages, with their maturity and use.
 - [Galilean State Estimation for Inertial Navigation Systems with Unknown Time Delay](../../catalog/resources/delama-2026-galilean-ins-unknown-time-delay.md) - paper - RSS XXII 2026.
+- [Go with the Flow: Relative Positioning with the Flow deck](../../catalog/resources/bitcraze-flow-deck-limitations-blog-2023.md) - blog - Bitcraze blog post on how the Flow deck v2 estimates position by dead reckoning in the onboard EKF and where it fails.
 - [GPS / Non-GPS Transitions](../../catalog/resources/ardupilot-gps-non-gps-transitions.md) - doc - Explains configuring EKF3 with two source sets (e.g.
 - [Graduated Non-Convexity for Robust Spatial Perception: From Non-Minimal Solvers to Global Outlier Rejection](../../catalog/resources/yang-2020-graduated-non-convexity.md) - paper - IEEE RA-L 5(2), 2020.
 - [Guaranteeing Safety of Learned Perception Modules via Measurement-Robust Control Barrier Functions](../../catalog/resources/dean-measurement-robust-cbf-corl2020.md) - paper - Measurement-robust CBFs choose safe inputs when the state comes from an uncertain, possibly learned, measurement model, and give a way to estimate how much perception error the controller tolerates.

@@ -114,7 +114,7 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [rhem_planner](../../catalog/repos/ntnu-arl__rhem_planner.md) - fit: low - Uncertainty-aware receding-horizon exploration planner that picks paths minimising expected visual-inertial localization uncertainty.
 - [Visual-Odometry-VIO- (VO + IMU EKF)](../../catalog/repos/daudalbogachiev925__visual-odometry-vio-.md) - fit: low - Minimal Python project: essential-matrix visual odometry fused with IMU in an EKF to estimate position without GPS.
 
-## Documents, talks, courses, datasets (101)
+## Documents, talks, courses, datasets (102)
 
 - [14 Lectures on Visual SLAM: From Theory to Practice](../../catalog/resources/gaoxiang-14-lectures-visual-slam.md) - book - English translation of the popular Chinese visual SLAM textbook, from rigid-body motion and Lie algebra through camera models, nonlinear optimization, feature/direct VO, backend optimization, loop closure and dense mappi
 - [2025 Abu Dhabi Autonomous Racing League](../../catalog/resources/a2rl-2025-season.md) - doc - Summary of the A2RL x DCL autonomous drone championship, won by TU Delft MAVLab ahead of TII Racing and KAIST, including races against human pilots.
@@ -147,6 +147,7 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry](../../catalog/resources/fast-livo2-zheng-2024.md) - paper - Presents an error-state iterated Kalman filter that sequentially fuses LiDAR and image measurements against a shared voxel map, with exposure and plane-prior handling.
 - [Fisher Information Field: an Efficient and Differentiable Map for Perception-aware Planning](../../catalog/resources/zhang-scaramuzza-fisher-information-field-2020.md) - paper - Precomputes a voxel map of visual-localisation information so a planner can score any pose quickly and differentiably, instead of reprojecting all landmarks.
 - [Flow deck v2](../../catalog/resources/bitcraze-flow-deck-v2.md) - doc - Crazyflie deck combining a PMW3901 optical flow sensor and a VL53L1x height sensor, fused in the onboard EKF for indoor position hold without external infrastructure.
+- [Go with the Flow: Relative Positioning with the Flow deck](../../catalog/resources/bitcraze-flow-deck-limitations-blog-2023.md) - blog - Bitcraze blog post on how the Flow deck v2 estimates position by dead reckoning in the onboard EKF and where it fails.
 - [HDVIO2.0: Wind and Disturbance Estimation with Hybrid Dynamics VIO](../../catalog/resources/cioffi-2025-hdvio2-wind-disturbance.md) - paper - IEEE T-RO 2025.
 - [HDVIO: Improving Localization and Disturbance Estimation with Hybrid Dynamics VIO](../../catalog/resources/cioffi-2023-hdvio-hybrid-dynamics-vio.md) - paper - RSS 2023 (arXiv read in part).
 - [Hilti x Trimble SLAM Challenge 2026](../../catalog/resources/hilti-slam-challenge.md) - competition - Yearly SLAM benchmark challenge with datasets and leaderboards from 2021 to 2026.

@@ -1971,24 +1971,24 @@
    "size_complete": false
   },
   {
-   "id": "git:tomojitakasu/rtklib",
-   "type": "git",
-   "tier": "minimal",
-   "url": "https://github.com/tomojitakasu/RTKLIB",
-   "rank": 9,
-   "license": "not stated",
-   "source": "docs/integration-cards/tomojitakasu__rtklib.md",
-   "size": null,
-   "size_complete": false
-  },
-  {
    "id": "git:bitcraze/crazyflie-firmware",
    "type": "git",
    "tier": "minimal",
    "url": "https://github.com/bitcraze/crazyflie-firmware",
-   "rank": 10,
+   "rank": 9,
    "license": "GPL-3.0",
    "source": "docs/integration-cards/bitcraze__crazyflie-firmware.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:tomojitakasu/rtklib",
+   "type": "git",
+   "tier": "minimal",
+   "url": "https://github.com/tomojitakasu/RTKLIB",
+   "rank": 10,
+   "license": "not stated",
+   "source": "docs/integration-cards/tomojitakasu__rtklib.md",
    "size": null,
    "size_complete": false
   },

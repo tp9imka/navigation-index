@@ -51,6 +51,7 @@ Firmware for the Crazyflie nano quad, Bolt and the Roadrunner positioning tag, w
 - [Crazyswarm2](../../catalog/repos/imrclab__crazyswarm2.md) (integrates_with)
 - [dRehmFlight VTOL](../../catalog/repos/nickrehm__drehmflight.md) (alternative_to)
 - [TinyMPC](../../catalog/repos/tinympc__tinympc.md) (evaluated_on)
+- [Go with the Flow: Relative Positioning with the Flow deck](../../catalog/resources/bitcraze-flow-deck-limitations-blog-2023.md) (explains)
 - [Flow deck v2](../../catalog/resources/bitcraze-flow-deck-v2.md) (uses)
 - [Loco Positioning System documentation](../../catalog/resources/bitcraze-loco-positioning.md) (explains)
 - [Multi-ranger deck](../../catalog/resources/bitcraze-multi-ranger-deck.md) (uses)

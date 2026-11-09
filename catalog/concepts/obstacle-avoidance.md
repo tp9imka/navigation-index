@@ -11,9 +11,10 @@ Reactive avoidance, sense-and-avoid, DAA.
 - [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md) - Small deterministic simulator that every close-area A=>B approach in the hub is compared in.
 - [Close-area reactive planners: APF with wall-follow escape and VFH+, range sensor only, 72-beam vs Crazyflie-like 4-beam fan](../../catalog/samples/close-area-planner-reactive.md) - Map-free fallback planners for close-area A=>B, written as close-area-arena Planners that read only the pose and the range scan.
 
-## Guides (4)
+## Guides (5)
 
 - [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2.
+- [08. Crazyflie sensing limits: what the planner and safety filter can rely on](../../docs/research/close-area-nav/08-crazyflie-sensing-limits.md) - Research note, 2026-11-09 (loop-23).
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) - After this chapter you can convert between the coordinate systems your tools disagree on, fetch free imagery and elevation data for a region, display it, and plan a path or a multi-vehicle mission over it.
 - [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) - Written 2026-11-09 for Challenge 2 (entry point).
 - [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) - Next action on Day 1: ask questions 1-3 of section 1, then open section 2 for the stack.
@@ -79,11 +80,12 @@ Reactive avoidance, sense-and-avoid, DAA.
 - [SUPER](../../catalog/repos/hku-mars__super.md) - fit: low - LiDAR-based high-speed MAV planner that plans directly on point clouds.
 - [TPU_2 (CopterHack 2023) - flight through forest](../../catalog/repos/shamoleg__clover.md) - fit: low - Fork of Clover with Tomsk Polytechnic team TPU_2's CopterHack 2023 entry (docs/ru/tpu_2.md on branch tpu_2): an algorithm for autonomous flight through dense forest using empirical search plus classic planners such as Di
 
-## Documents, talks, courses, datasets (62)
+## Documents, talks, courses, datasets (64)
 
 - [A predictive safety filter for learning-based control of constrained nonlinear dynamical systems](../../catalog/resources/wabersich-zeilinger-predictive-safety-filter-2021.md) - paper - MPC-style filter that receives any proposed input, for example from an RL policy, and changes it only when needed to keep a safe backup plan feasible.
 - [Backup Control Barrier Functions: Formulation and Comparative Study](../../catalog/resources/chen-backup-cbf-2021.md) - paper - General backup-CBF formulation: a fixed backup controller grows a small, easy control-invariant set into a larger one, and the filter keeps the system able to fall back to it.
 - [Barrier Certificate based Safe Control for LiDAR-based Systems under Sensor Faults and Attacks](../../catalog/resources/zhang-cheng-niu-clark-2022-lidar-barrier-faults.md) - paper - Preprint (arXiv, no venue confirmed).
+- [BatDeck - Ultra Low-power Ultrasonic Ego-velocity Estimation and Obstacle Avoidance on Nano-drones](../../catalog/resources/muller-batdeck-ultrasonic-nano-drone-2024.md) - paper - Preprint on arXiv (ETH Zurich and University of Bologna).
 - [Belief Control Barrier Functions for Risk-aware Control](../../catalog/resources/vahs-belief-cbf-2023.md) - paper - Defines control barrier functions on the EKF belief (mean and covariance) so a controller keeps the robot in a safe set with a chosen confidence.
 - [Bubble Planner: Planning High-speed Smooth Quadrotor Trajectories using Receding Corridors](../../catalog/resources/ren-bubble-planner-2022.md) - paper - Preprint on arXiv (authors list it as IROS 2022, not checked here).
 - [Challenges and implemented technologies used in autonomous drone racing](../../catalog/resources/moon-2019-adr-iros-challenges.md) - paper - Organisers and teams review the IROS 2016 and 2017 autonomous drone races: the indoor gate format and the localisation, gate detection and control methods teams used.
@@ -140,6 +142,7 @@ Reactive avoidance, sense-and-avoid, DAA.
 - [UFOMap: An Efficient Probabilistic 3D Mapping Framework That Embraces the Unknown](../../catalog/resources/duberg-ufomap-ral-2020.md) - paper - Peer-reviewed (IEEE RA-L 2020, doi 10.1109/LRA.2020.3013861); arXiv copy linked.
 - [VFH+: reliable obstacle avoidance for fast mobile robots](../../catalog/resources/ulrich-borenstein-vfhplus-icra-1998.md) - paper - Peer-reviewed (ICRA 1998).
 - [ViNT: A Foundation Model for Visual Navigation](../../catalog/resources/vint-foundation-model-2023.md) - paper - Trains a transformer navigation policy across many robot datasets and shows it adapts to new robots and tasks with little data.
+- [VL53L1X datasheet: long distance ranging Time-of-Flight sensor (STMicroelectronics)](../../catalog/resources/st-vl53l1x-datasheet.md) - doc - Datasheet for the 940 nm laser ToF chip used five times on the Crazyflie Multi-ranger deck and once on the Flow deck v2.
 - [Voxblox: Incremental 3D Euclidean Signed Distance Fields for On-Board MAV Planning](../../catalog/resources/oleynikova-voxblox-iros-2017.md) - paper - Preprint on arXiv; published at IROS 2017.
 - [VOXL Vision Obstacle Avoidance (VOA)](../../catalog/resources/modalai-voxl-voa-docs.md) - doc - How voxl-vision-hub turns stereo depth into OBSTACLE_DISTANCE messages for PX4 or ArduPilot collision prevention on VOXL boards.
 - [Навигация квадрокоптера с использованием монокулярного зрения](../../catalog/resources/habr-monocular-quad-nav-2016.md) - blog - English: 'Quadcopter navigation using monocular vision'.
