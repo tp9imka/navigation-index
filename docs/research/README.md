@@ -72,7 +72,9 @@ Both candidate headlines were tested to failure, and that is the main result of 
   layouts (100 %, 0 wrong commits on random and u_trap, seeds 0-4). Weaker in office, maze, narrow
   gap and glass office (83-97 %); 33 wrong commits in warehouses; 48-64 % on a 4-beam Crazyflie-like
   sensor; 7 % collisions with unmapped obstacles; the mechanism exists (Jensfelt 2001, AF-MCL 2026,
-  [doc 10](close-area-nav/10-relocalization-prior-art.md)). All synthetic.
+  [doc 10](close-area-nav/10-relocalization-prior-art.md)). Against an AF-MCL-style particle filter
+  run with the paper's parameters, the hub's arm reached B as often or more in every ideal-sensor
+  cell with 0 wrong commits against 0-32 (seed 2, held out); on 4 beams every arm fails. All synthetic.
 - **What to pitch on Day 1:** the measured toolkit (14 planners x 8 arenas x 2 sensors, browser
   playground, honest kill tests) plus whichever narrow claim fits the real brief: the hover-on-tie
   relocalization wrapper for an open arena with a dense sensor, or "range safety filter under any

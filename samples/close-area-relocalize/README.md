@@ -625,3 +625,100 @@ Limits: one bias per run, applied once at the jump. No slow yaw drift, and no ya
 a reset_counter trigger. The move chooser predicts all hypotheses at one common yaw. The
 setpoint-rotation vehicle model is an assumption. One corridor geometry, seed 2 only for
 random layouts. The flight rows of a second run were identical; the timings differ by load.
+
+## AF-MCL baseline: particle filter with random-particle injection (loop-67)
+
+Doc 10's kill test: does a published-style particle filter (no hover gate, output = particle mean) do as well as the hub's (f)? The reference is AF-MCL, [arXiv 2610.32645](https://arxiv.org/abs/2610.32645) (full HTML read 2026-11-09). It runs on a Crazyflie with 4 single-point ranges plus heading. It uses an EDT likelihood field, rejects beams at the previous estimate, and injects random particles when the short-term likelihood falls below the long-term one. All inputs here are **synthetic**.
+
+```sh
+.venv/bin/python run_mcl.py                                          # 95.0 s wall, 14 workers, 2400 runs
+.venv/bin/python run_mcl.py --arms mcl,mcl_gate --hardened --stem seed2_hardened   # 87.4 s
+.venv/bin/python run_mcl.py --arms spin_ig --presets crazyflie --stem seed2_spin_ig  # 36.6 s
+```
+
+Ran 2026-11-09 on Apple arm64, CPython 3.11.15, numpy 2.4.6, scipy 1.17.1 (sample venv). A second run of the main command gave the same outcome, time to goal and errors in all 2400 runs.
+
+[mcl.py](mcl.py) follows the paper's Algorithm 1 and uses its Table I parameters unchanged:
+- Likelihood: sigma_obs 0.15 m, geometric mean over the kept beams, on the `ScanMatcher` EDT.
+- Beam filter: mixture 0.7 / 0.1 / 0.1 / 0.1, lambda_short 4, threshold 0.4, ray cast from the previous estimate.
+- Injection: alpha_slow 0.001, alpha_fast 0.9, cap 0.3, drawn uniformly over unoccupied cells.
+- Resampling: when ESS < 0.5 N; motion noise 0.03 m/sqrt(s).
+- Output: the mean of the final particle set, injected particles included, as in the paper.
+
+Two changes for the arena:
+- 400 particles instead of 100. The arena is 20 x 20 m; 400 keeps the paper's 10 x 10 m density.
+- The motion input is the raw estimator delta, the same VIO / IMU deltas the other arms use. A VIO jump therefore moves every particle.
+
+Arms (A* known map, scored on truth, seed 2, 100 layouts per cell, held out):
+- (f) `multi_ig`, unchanged.
+- (m) `mcl`, the planner always flies on the mean.
+- (m+g) `mcl_gate`, the same filter. It hovers while the particle spread is above 0.25 m and resumes after 3 scans at or below it.
+
+Definitions:
+- **Wrong commit:** the pose is more than 0.5 m off when navigation resumes. For (f) that is the accept; for the MCL arms, the spread back at or below 0.25 m for 3 scans.
+- **Flown wrong:** a navigating step (quality > 0) with the pose more than 0.5 m off.
+- **Truth recover:** AF-MCL's own definition. After the fault fires, the error goes above 0.2 m (the loss must start within 3 s after the fault ends). Recovery is the first time after that when the error stays at or below 0.2 m for 1 s, timed from the fault onset.
+
+Main run ([results/mcl_seed2.md](results/mcl_seed2.md); all columns, per-run events and filter counters are in the `.json`):
+
+| family | sensor | fault | arm | reached % (95 % CI) | collision % | wrong commits | runs flown on a > 0.5 m pose | truth recover s median (not recovered of loss runs) |
+|---|---|---|---|---|---|---|---|---|
+| random | ideal | dropout | (f) | 100.0 (96.3-100.0) | 0.0 | 0 | 12 | 2.43 (0 of 51) |
+| random | ideal | dropout | (m) | 99.0 (94.6-99.8) | 1.0 | 5 | 46 | 3.78 (1 of 53) |
+| random | ideal | dropout | (m+g) | 90.0 (82.6-94.5) | 0.0 | 6 | 8 | 3.63 (6 of 53) |
+| random | ideal | jump | (f) | 100.0 (96.3-100.0) | 0.0 | 0 | 12 | 0.4 (0 of 86) |
+| random | ideal | jump | (m) | 89.0 (81.4-93.7) | 10.0 | 32 | 87 | 4.8 (16 of 87) |
+| random | ideal | jump | (m+g) | 68.0 (58.3-76.3) | 0.0 | 21 | 37 | 5.4 (29 of 85) |
+| office | ideal | dropout | (f) | 93.0 (86.3-96.6) | 7.0 | 0 | 2 | 2.4 (0 of 31) |
+| office | ideal | dropout | (m) | 86.0 (77.9-91.5) | 13.0 | 0 | 60 | 3.24 (5 of 43) |
+| office | ideal | dropout | (m+g) | 92.0 (85.0-95.9) | 4.0 | 2 | 1 | 3.13 (1 of 45) |
+| office | ideal | jump | (f) | 87.0 (79.0-92.2) | 13.0 | 0 | 2 | 0.4 (0 of 100) |
+| office | ideal | jump | (m) | 55.0 (45.2-64.4) | 45.0 | 15 | 99 | 3.6 (39 of 98) |
+| office | ideal | jump | (m+g) | 52.0 (42.3-61.5) | 5.0 | 18 | 14 | 3.7 (41 of 100) |
+| random | crazyflie | dropout | (f) | 3.0 (1.0-8.5) | 3.0 | 0 | 7 | 3.77 (47 of 71) |
+| random | crazyflie | dropout | (m) | 14.0 (8.5-22.1) | 81.0 | 6 | 100 | 6.21 (74 of 90) |
+| random | crazyflie | dropout | (m+g) | 1.0 (0.2-5.4) | 1.0 | 1 | 15 | 1.78 (91 of 95) |
+| random | crazyflie | jump | (f) | 16.0 (10.1-24.4) | 14.0 | 0 | 12 | 0.7 (82 of 85) |
+| random | crazyflie | jump | (m) | 15.0 (9.3-23.3) | 77.0 | 14 | 100 | 1.55 (84 of 88) |
+| random | crazyflie | jump | (m+g) | 0.0 (0.0-3.7) | 1.0 | 1 | 24 | 1.2 (25 of 28) |
+| office | crazyflie | dropout | (f) | 9.0 (4.8-16.2) | 18.0 | 0 | 2 | 5.53 (39 of 54) |
+| office | crazyflie | dropout | (m) | 1.0 (0.2-5.4) | 97.0 | 6 | 100 | 2.83 (50 of 63) |
+| office | crazyflie | dropout | (m+g) | 0.0 (0.0-3.7) | 0.0 | 1 | 1 | 1.39 (80 of 84) |
+| office | crazyflie | jump | (f) | 2.0 (0.6-7.0) | 50.0 | 0 | 1 | 10.95 (95 of 97) |
+| office | crazyflie | jump | (m) | 0.0 (0.0-3.7) | 94.0 | 21 | 100 | 14.45 (79 of 81) |
+| office | crazyflie | jump | (m+g) | 0.0 (0.0-3.7) | 1.0 | 7 | 8 | 1.4 (74 of 75) |
+
+The (f) "flown on a > 0.5 m pose" count includes dark-zone drift before the fault: 5 and 7 of the 12 random-ideal runs were already more than 0.5 m off before it fired. The "runs > 0.5 m off before the fault" column in the `.md` shows this. Per scan, MCL took 0.4-0.75 ms and (f) 1.6-3.15 ms on the ideal sensor (medians of per-run medians, 14 parallel workers, so load-dependent).
+
+**Verdict: yes, the hub's arm beats the published-style MCL baseline. The win is on the dense sensor and on the jump fault.**
+
+- **Ideal sensor, jump:** (f) reached 100 % / 87 % (random / office) against (m) 89 % / 55 %. It made 0 wrong commits against 32 / 15, and its truth recover median was 0.4 s against 4.8 / 3.6 s. (m)'s 10 % and 45 % collisions were all flown on a pose more than 0.5 m off.
+- **Ideal sensor, dropout:** the gap is small. Random 100 % vs 99 % is inside the CI; office is 93 % vs 86 %.
+- **Hover gate on MCL:** it removes most collisions (random jump 10 % => 0 %, office 45 % => 5 %) but does not raise reach. Random jump drops 89 % => 68 %: the drone hovers until it is scored stuck while injection keeps the spread above 0.25 m. A gate on the filter's spread is not the hub's acceptance rule.
+- **Why MCL misses jumps:** in 15 of the 16 random-ideal jump runs that never recovered, the beam filter rejected every beam on some updates. With no kept beam there is no divergence signal and no injection. The paper names this limitation in its "Empty beam set" paragraph.
+- **Crazyflie (4 cones, 3 m range): FAIL in every arm.** MCL lost track before the fault in 62-85 of 100 runs and flew on a pose more than 0.5 m off in 100 of 100 runs in every cell, with 77-97 % collisions. The likely cause is that in a 20 x 20 m area most beams see nothing: the median run had 139-143 updates with every beam rejected in random layouts. (f) reached 2-16 %, because it needs 10 returns per scan. The hub's 4-beam arm (i) `spin_ig` reached 36 % / 53 % (random dropout / jump) and 52 % / 52 % (office), with 0 wrong commits and 3-35 % collisions ([results/mcl_seed2_spin_ig.md](results/mcl_seed2_spin_ig.md)). It beats MCL but is still far from usable.
+- **The paper's 2.9 s kidnap recovery** (Webots, its own two-room map) is not comparable with these numbers: different sim, map size, sensor model and fault.
+
+**Extra: hardened MCL** ([results/mcl_seed2_hardened.md](results/mcl_seed2_hardened.md)). Two changes, chosen after a 14-layout probe on seed 2, so this run is not held out:
+- Report the weighted mean before injection.
+- After 5 updates in a row with every beam rejected, use all in-range beams. This is the extension the paper itself suggests.
+
+Ideal sensor, reached % / wrong commits:
+- (m) random: 100 / 4 dropout, 94 / 30 jump.
+- (m) office: 90 / 0 dropout, 71 / 25 jump.
+- (m+g) random: 100 / 3 dropout, 93 / 23 jump.
+- (m+g) office: 93 / 0 dropout, 75 / 28 jump.
+
+This closes most of the reach gap in random layouts, but (f) still makes 0 wrong commits against 23-30. On Crazyflie the hardened (m) reached 1-24 % with 75-81 % collisions.
+
+Limits:
+- Seed 2 only; corridor, u_trap and the other families were not run.
+- The 0.25 m gate threshold is a proposal and was not tuned.
+- The motion input is the estimator's position delta, not Flow-deck velocities.
+- Yaw is truth for every arm.
+- The arena's cone sensor is not the paper's single-point ray model.
+- Table I was tuned by the authors for 6-10 m Webots maps, not for this arena.
+
+---
+
+Next action: paste the section above into `samples/close-area-relocalize/README.md`. `python3 tools/check_links.py` reported broken: 0.
