@@ -97,7 +97,7 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 - [Olympe](../../catalog/repos/parrot-developers__olympe.md) - fit: low - Parrot's Python controller library for ANAFI drones and the Sphinx simulator, using the Arsdk messages (moveBy, moveTo, piloting, camera).
 - [V-NAV (CopterHack 2022) - visual navigation for Clover](../../catalog/repos/v-nav__clover.md) - fit: low - Archived fork of the Clover framework holding team V-NAV's CopterHack 2022 entry (article in docs/ru/v-nav.md on branch v-nav_article): a multi-camera plus IMU optical navigation module using graph-based SLAM with CNN-ex
 
-## Documents, talks, courses, datasets (77)
+## Documents, talks, courses, datasets (79)
 
 - [2025 Abu Dhabi Autonomous Racing League](../../catalog/resources/a2rl-2025-season.md) - doc - Summary of the A2RL x DCL autonomous drone championship, won by TU Delft MAVLab ahead of TII Racing and KAIST, including races against human pilots.
 - [A Singular Value Maximizing Data Recording Algorithm for Concurrent Learning](../../catalog/resources/chowdhary-johnson-2011-concurrent-learning-data-recording.md) - paper - ACC 2011 (abstract read from proceedings PDF).
@@ -159,7 +159,9 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 - [PX4 uORB message: AuxGlobalPosition](../../catalog/resources/px4-aux-global-position-msg.md) - doc - uORB message for an external global position (lat, lon, alt, eph, epv) tagged with a source type: vision, terrain, magnetic, pseudolites, LEO and others.
 - [PX4 uXRCE-DDS (PX4-ROS 2/DDS Bridge)](../../catalog/resources/px4-uxrce-dds-docs.md) - doc - How PX4 exposes uORB topics to ROS 2: a client in firmware, the Micro XRCE-DDS Agent on the companion, a dds_topics.yaml allow-list, serial or UDP transport, and built-in timestamp synchronisation.
 - [Relative navigation of fixed-wing aircraft in GPS-denied environments](../../catalog/resources/ion-webinar-brink.md) - talk - AFRL perspective on relative navigation for fixed-wing aircraft without GPS, keeping estimation consistent by working in a relative frame with periodic global updates.
+- [Resilient Shield: Strengthening Hivemind for Safe, Real-World Flight](../../catalog/resources/shield-ai-2025-resilient-shield-mm-rta.md) - blog - Company blog (news).
 - [Runtime Assurance for Autonomous Aerospace Systems](../../catalog/resources/clark-2020-rta-autonomous-aerospace.md) - paper - Journal of Guidance, Control, and Dynamics paper presenting an RTA framework for an unmanned aerospace application, from the AFRL / Barron Associates line of RTA research that fed F3269.
+- [Secure Safety Filter: Towards Safe Flight Control under Sensor Attacks](../../catalog/resources/tan-2025-secure-safety-filter.md) - paper - Peer-reviewed (IEEE/RSJ IROS 2025, doi 10.1109/IROS60139.2025.11247729).
 - [SITL Simulator (Software in the Loop)](../../catalog/resources/ardupilot-sitl-docs.md) - doc - Developer docs for running ArduPilot vehicles in SITL, connecting GCS and external simulators.
 - [Small Unmanned Aircraft: Theory and Practice](../../catalog/resources/beard-mclain-small-unmanned-aircraft.md) - book - Textbook covering fixed-wing dynamics, autopilot design, state estimation, straight-line and orbit path following, Dubins path management and path planning.
 - [STANAG 4586 - Standard Interfaces of UAV Control System (UCS) for NATO UAV Interoperability](../../catalog/resources/stanag-4586-overview.md) - doc - Public overview of NATO's UAS interoperability standard, which defines a core UCS, a vehicle-specific module and five levels of interoperability from receiving payload data up to full flight control including launch and 

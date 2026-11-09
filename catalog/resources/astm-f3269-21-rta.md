@@ -29,5 +29,6 @@ Industry standard practice for run-time assurance: let a complex function (adapt
 - [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) (mentions)
 - [Runtime Assurance for Autonomous Aerospace Systems](../../catalog/resources/clark-2020-rta-autonomous-aerospace.md) (cites)
 - [ASTM F3269 - An Industry Standard on Run Time Assurance for Aircraft Systems](../../catalog/resources/nagarajan-2021-astm-f3269-scitech.md) (explains)
+- [Resilient Shield: Strengthening Hivemind for Safe, Real-World Flight](../../catalog/resources/shield-ai-2025-resilient-shield-mm-rta.md) (uses)
 
 _Indexed by lane(s): flight-embedded_

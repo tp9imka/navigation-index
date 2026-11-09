@@ -30,9 +30,10 @@ GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-
 - [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) - Stdlib-only ground-vehicle loop on a real NCLT Segway session (2013-01-10, 1022 s, 1139 m, 42 MB download): consumer GPS at 1 Hz fused with MEMS strapdown INS (the 8-state EKF of gnss-ins-ekf-outage, imported), wheel spe
 - [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) - A simulated USV runs a 19.6 km transit over real geography (Lillgrund => Drogden channel => Copenhagen approach) built from OpenStreetMap coastline, Oresund bridge, wind turbines and seamarks, with 75 min of real Danish 
 
-## Guides (23)
+## Guides (24)
 
 - [02. Deadline-aware scheduling of expensive absolute fixes](../../docs/research/innovation-prior-art/02-deadline-aware-fix-scheduling.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
+- [07. Kill test for idea C: does a PL-margin safety filter already exist?](../../docs/research/close-area-nav/07-pl-margin-prior-art.md) - Prior-art scan, 2026-11-09 (loop-13).
 - [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) - After this chapter you can describe any navigation system as "a state, an uncertainty, a set of measurements and a way to check they agree", and you will know the vocabulary judges use when they ask whether your solution
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) - After this chapter you can explain how a receiver turns satellite signals into a position, read raw receiver output, pick between SPP, RTK and PPP, and build a jamming or spoofing detector that runs on recorded data.
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) - After this chapter you can pick a dataset or simulator that matches your scenario, compute the trajectory metrics judges and reviewers expect, and design a GNSS-outage or interference test that shows what your system doe
@@ -91,7 +92,7 @@ GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-
 - [Stanford GNSS spoof detection](../../catalog/repos/fabianr-su__stanford-gnss-spoof-detection.md) - fit: low - A single MATLAB script (DoAsimulationStudy.m) simulating direction-of-arrival spoof detection, supporting Rothmaier et al.
 - [Приемники ГНСС - GNSS receiver design handbook (MPEI)](../../catalog/repos/korogodin__gnssrec.md) - fit: low - Source of a Russian-language textbook for the MPEI course on satellite navigation user equipment by I.
 
-## Documents, talks, courses, datasets (115)
+## Documents, talks, courses, datasets (116)
 
 - [IEC61850 SV and PTP traffic under GNSS jamming](../../catalog/resources/kit-iec61850-ptp-gnss-jamming-dataset.md) - dataset - fit: medium - Jamming half of the KIT KASTEL captures: IEC 61850 Sampled Values and PTP traffic while the substation time server's GNSS is jammed, about 594 GB pcap tar on KIT RADAR, CC BY-NC 4.0, identifiers pseudonymised.
 - [IEC61850 SV and PTP traffic under GNSS time synchronization attacks](../../catalog/resources/kit-iec61850-ptp-gnss-spoofing-dataset.md) - dataset - fit: medium - Pseudonymised pcap captures of IEC 61850 Sampled Values and IEEE 1588 PTP traffic from the KIT KASTEL energy security lab while the substation's GNSS-fed time server is spoofed.
@@ -171,6 +172,7 @@ GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-
 - [Safran Skydel simulation engine / GSG-8 GNSS simulator (ex-Orolia)](../../catalog/resources/safran-skydel-gsg8.md) - product - Skydel is the SDR/GPU-based simulation engine behind Safran's GSG-8 simulators, with built-in jamming and spoofing scenarios, CRPA wavefront variants and LEO PNT signal options; Safran offers it to universities through a
 - [Safran VersaPNT and Geonyx resilient PNT units](../../catalog/resources/safran-versapnt.md) - product - Safran's defense PNT range includes VersaPNT (GNSS receiver + IMU + disciplined oscillator with jamming/spoofing detection and NTP/PTP time serving) and the Geonyx HRG-based INS; GPS World reports a NAVKITE kit combining
 - [SBG Systems Ellipse INS - 2025 GNSS-denied firmware](../../catalog/resources/sbg-new-ellipse-firmware.md) - product - A March 2025 free firmware update for SBG's Ellipse (v3 hardware) adds jamming/spoofing detection flags and lets users reject or re-enable GNSS and other aiding sensors without resetting the filter.
+- [Secure Safety Filter: Towards Safe Flight Control under Sensor Attacks](../../catalog/resources/tan-2025-secure-safety-filter.md) - paper - Peer-reviewed (IEEE/RSJ IROS 2025, doi 10.1109/IROS60139.2025.11247729).
 - [Sentinel-1 Level-1 GRD on Microsoft Planetary Computer](../../catalog/resources/sentinel-1-grd-planetary-computer.md) - dataset - Copernicus Sentinel-1 C-band SAR Ground Range Detected scenes mirrored as Cloud-Optimized GeoTIFFs (VV, VH) together with the SAFE XML annotations, which include ESA's per-swath RF interference report.
 - [Septentrio AIM+ GNSS jamming and spoofing protection](../../catalog/resources/septentrio-aim-plus.md) - doc - Vendor explanation of AIM+ interference monitoring and mitigation: narrowband and wideband (chirp) jamming suppression in the receiver's signal processing plus layered spoofing detection including Galileo OSNMA.
 - [SKYbrary - GNSS Jamming and Spoofing](../../catalog/resources/skybrary-gnss-jamming-spoofing.md) - doc - Aviation safety wiki article explaining jamming vs spoofing, their effects on aircraft systems and the regulatory material around them, with links to bulletins and incident reports.

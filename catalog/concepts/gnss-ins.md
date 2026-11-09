@@ -60,7 +60,7 @@ Loosely, tightly and deeply coupled GNSS/INS.
 - [ML GNSS/IMU integration (GSDC 2022)](../../catalog/repos/akpozi__machine_learning_gnss_imu_integration.md) - fit: low - GSDC 2022 pipeline: an ML classifier picks the drive environment (highway, tree-lined, downtown) to set rtklib-py PPK options, then a loosely coupled GNSS/IMU Kalman filter refines the result.
 - [graduate_work (UAV INS module thesis)](../../catalog/repos/danamarkova__graduate_work.md) - fit: low - Russian graduate thesis code: 'Development of a UAV inertial navigation module using auxiliary navigation data'.
 
-## Documents, talks, courses, datasets (49)
+## Documents, talks, courses, datasets (50)
 
 - [A Nonlinear Model-Based Wind Velocity Observer for Unmanned Aerial Vehicles](../../catalog/resources/borup-fossen-johansen-2016-wind-velocity-observer.md) - paper - NOLCOS 2016 (author PDF read).
 - [A Novel Adaptive Kalman Filter With Inaccurate Process and Measurement Noise Covariance Matrices](../../catalog/resources/huang-2018-adaptive-kf-inaccurate-q-r.md) - paper - IEEE Transactions on Automatic Control 2018.
@@ -79,6 +79,7 @@ Loosely, tightly and deeply coupled GNSS/INS.
 - [Factor Graphs for Robot Perception](../../catalog/resources/dellaert-kaess-factor-graphs-robot-perception.md) - paper - Foundations and Trends monograph (free author PDF) explaining SLAM and sensor fusion as inference on factor graphs, with incremental smoothing (iSAM) and the reasoning behind the GTSAM library.
 - [Fixed-Wing Micro UAV Open Data With Digicam And Raw INS/GNSS - IGN Flight 8](../../catalog/resources/skaloud-2021-ign-flight8-fixed-wing-data.md) - dataset - Zenodo record from EPFL TOPO: one fixed-wing micro UAV flight with raw IMU, GNSS and camera data.
 - [Galilean State Estimation for Inertial Navigation Systems with Unknown Time Delay](../../catalog/resources/delama-2026-galilean-ins-unknown-time-delay.md) - paper - RSS XXII 2026.
+- [GNSS/INS Integration with Integrity Monitoring for UAV No-fly Zone Management](../../catalog/resources/sun-2020-gnss-ins-integrity-no-fly-zone.md) - paper - Peer-reviewed (Remote Sensing 12(3):524, open access).
 - [GPS / Non-GPS Transitions](../../catalog/resources/ardupilot-gps-non-gps-transitions.md) - doc - Explains configuring EKF3 with two source sets (e.g.
 - [Honeywell HGuide o480 single-card INS and HGuide i700 IMU](../../catalog/resources/honeywell-hguide-o480.md) - product - HGuide o480 (May 2025) is a single-card INS for small UAVs and ground robots that accepts velocity aiding (e.g.
 - [Identifying Aerodynamics of Small Fixed-Wing Drones Using Inertial Measurements for Model-Based Navigation](../../catalog/resources/sharma-laupre-skaloud-2023-identifying-aerodynamics-fixed-wing.md) - paper - NAVIGATION 70(4), open access.

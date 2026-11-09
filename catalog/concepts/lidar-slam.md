@@ -75,9 +75,10 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [ROG-Map](../../catalog/repos/hku-mars__rog-map.md) - fit: low - Robocentric occupancy grid that slides with the vehicle and keeps an inflated map and frontier information, designed for LiDAR-based high-speed planning.
 - [SUPER](../../catalog/repos/hku-mars__super.md) - fit: low - LiDAR-based high-speed MAV planner that plans directly on point clouds.
 
-## Documents, talks, courses, datasets (44)
+## Documents, talks, courses, datasets (45)
 
 - [Autoware documentation](../../catalog/resources/autoware-docs.md) - doc - Official Autoware documentation with architecture, installation, tutorials and design notes for localization, perception and planning components.
+- [Barrier Certificate based Safe Control for LiDAR-based Systems under Sensor Faults and Attacks](../../catalog/resources/zhang-cheng-niu-clark-2022-lidar-barrier-faults.md) - paper - Preprint (arXiv, no venue confirmed).
 - [CERBERUS: Autonomous Legged and Aerial Robotic Exploration in the Tunnel and Urban Circuits of the DARPA Subterranean Challenge](../../catalog/resources/cerberus-tunnel-urban-paper.md) - paper - Field Robotics paper covering CERBERUS' systems and results in the earlier SubT circuits, including perception, planning and artifact reporting.
 - [Cyrill Stachniss YouTube channel (incl. '5 Minutes with Cyrill')](../../catalog/resources/stachniss-youtube-channel.md) - video - Channel hosting Stachniss's full lecture courses plus the '5 Minutes with Cyrill' series of short explainers on single concepts (Kalman filter, factor graphs, ICP, RANSAC, SIFT, occupancy grids).
 - [DARPA SubT Reference Datasets](../../catalog/resources/darpa-subt-reference-datasets.md) - dataset - Reference sensor datasets and artifact data released for the DARPA Subterranean Challenge, hosted on Bitbucket.

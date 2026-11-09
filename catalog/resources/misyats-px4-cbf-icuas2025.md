@@ -21,4 +21,8 @@ Composite control barrier function built only from onboard range measurements, i
 - has_code: [PX4-CBF](../../catalog/repos/ntnu-arl__px4-cbf.md)
 - has_code: [composite_cbf](../../catalog/repos/ntnu-arl__composite_cbf.md)
 
+## Referenced by
+
+- [Secure Safety Filter: Towards Safe Flight Control under Sensor Attacks](../../catalog/resources/tan-2025-secure-safety-filter.md) (cites)
+
 _Indexed by lane(s): close-area-innovation_
