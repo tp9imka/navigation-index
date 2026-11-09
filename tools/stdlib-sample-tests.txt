@@ -39,3 +39,4 @@ terrain-relative-nav-pf
 relative-nav-benchmark
 ugv-gnss-outage-real
 recording-replay
+close-area-arena

@@ -227,3 +227,11 @@ Spoofed-anchor detection: section 1.
 | [llm-mission-agent](../samples/llm-mission-agent/README.md#what-was-verified-2026-11-06) | MCP tools flew takeoff, survey, GPS loss => degraded health => ExternalNav => RTL; fence and altitude rejections | SITL, scripted client (no LLM run) |
 | [llm-agent-usage](../samples/llm-agent-usage/README.md) | MCP server answered 7 JSON-RPC requests | the hub's own index |
 | [sitl-docker](../samples/sitl-docker/README.md#what-was-verified-2026-11-06-docker-2952-apple-silicon-linuxarm64) | Both SITL images built (ArduPilot ~8.5 min, PX4 ~26 min) and flew the other samples | - |
+
+## 14. Close-area A=>B
+
+One seeded 2.5D arena scores every close-area approach on truth. Synthetic inputs only.
+
+| Sample | Method | Measured | Input | Runs | Caveat |
+|---|---|---|---|---|---|
+| [close-area-arena](../samples/close-area-arena/README.md#results-ran-2026-11-09-apple-m3-max-cpython-31210-numpy-254-scipy-1181) | Straight-line baseline that slows to a stop for returns ahead, 72-beam 6 m range fan | Reached 40 %, collision 0 %, stuck 60 % on random layouts, median time to goal 16.94 s; reached 0 % on u_trap and narrow_gap (100 % stuck); scipy EDT on 200 x 200 x 50 median 183 ms (M3 Max) | synthetic (2.5D point-mass arena) | 20 layouts per family, seed 0; EDT 7 calls | Baseline only; the arena is 2.5D with a point-mass vehicle and ideal ray casts |

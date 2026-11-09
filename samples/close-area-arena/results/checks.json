@@ -1,0 +1,52 @@
+{
+ "input": "synthetic",
+ "bfs_gap_probe": {
+  "note": "gap width m => free path found (vehicle radius 0.15 m, grid 0.1 m)",
+  "result": {
+   "0.00": false,
+   "0.30": false,
+   "0.35": false,
+   "0.40": true,
+   "0.50": true,
+   "0.60": true
+  }
+ },
+ "straight_no_slowdown_random_seed0": {
+  "params": {
+   "stop_dist": -10.0,
+   "slow_dist": -9.0
+  },
+  "summary": {
+   "n": 20,
+   "reached_pct": 40.0,
+   "collision_pct": 60.0,
+   "stuck_pct": 0.0,
+   "timeout_pct": 0.0,
+   "median_time_to_goal_s": 16.67,
+   "median_min_clearance_m": 0.147,
+   "median_path_length_m": 14.54
+  },
+  "outcomes": [
+   "collision",
+   "reached",
+   "reached",
+   "collision",
+   "collision",
+   "collision",
+   "collision",
+   "collision",
+   "collision",
+   "reached",
+   "reached",
+   "collision",
+   "collision",
+   "collision",
+   "reached",
+   "reached",
+   "collision",
+   "reached",
+   "reached",
+   "collision"
+  ]
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "input": "synthetic (uniform random occupancy, seed 0)",
+ "call": "scipy.ndimage.distance_transform_edt(free_mask, sampling=0.1), one warm-up then timed repeats",
+ "grid_3d": {
+  "shape": [
+   200,
+   200,
+   50
+  ],
+  "cells": 2000000,
+  "occupied_fraction": 0.05,
+  "repeats": 7,
+  "ms_min": 178.42,
+  "ms_median": 182.95,
+  "ms_max": 188.0
+ },
+ "grid_2d": {
+  "shape": [
+   200,
+   200
+  ],
+  "cells": 40000,
+  "occupied_fraction": 0.05,
+  "repeats": 7,
+  "ms_min": 1.32,
+  "ms_median": 1.48,
+  "ms_max": 2.57
+ },
+ "env": {
+  "python": "3.12.10",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "machine": "arm64",
+  "system": "Darwin",
+  "processor": "arm"
+ }
+}
