@@ -45,3 +45,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - landed: 24 => 4c0dca7 (plan: OpenVINS stereo NEES on UZH-FPV in ~25 min, needs Docker; claims checked 2/2: Lisus arXiv title, no cached ov_state_std.txt on this machine). 25 => needs-human.
 - failed: 30 showcase attempt 1 (Kiro opened a >8000 px full-page screenshot, API 400); relaunched as 'showcase retry2' with a viewport-only rule.
 - landed: 23 => 04e147c (4 x 27 deg beams cover 30 % of the circle; glass invisible; claims checked 1/1: BatDeck arXiv title). New item 32: arena sensor realism. Doc 08 README row => WP E.
+- landed: 27 => 42e9fe1 (decoder rows 31-33 start-from now links real samples; evidence-matrix rows; kill-test arms list in doc 04; record and upstream-findings fixes; driver re-ran full gate: all green, no unlinked-sample warnings)
