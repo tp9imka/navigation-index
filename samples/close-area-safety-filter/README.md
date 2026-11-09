@@ -226,7 +226,8 @@ a detection flag and an "ambiguous" state. `python run_monitor.py --layouts 100 
 Table: [integrity/results/monitor_0.md](integrity/results/monitor_0.md).
 
 - **The PL held in every case:** breach fraction (true error above PL) 0 to 1.3e-4 for the
-  solution-separation variants, under VIO jump, bias, dropout, UWB NLOS and both at once.
+  solution-separation variants (ss1, ss2), under VIO jump, bias, dropout, UWB NLOS and both at
+  once. The max-separation variant breaches 1.16e-3 in `both`, above the 1e-3 risk.
 - **Median PL 0.41-0.59 m** (single-exclusion variant), at or below 1.0 m in 82-100 % of epochs.
   That is the number a margin can use; the tuned fixed bound in part b was 0.2 m.
 - **Max-separation exclusion picks the wrong source** (9 runs NLOS, 19 runs both faults), as the
@@ -438,8 +439,8 @@ Not done: 200 layouts per seed, planners P1 and P3, unsensed off, and F4 on the 
 
 Map-based arms read `map_obstacles` (the arena World: boxes, cylinders, grid, `sdf()`) at the
 estimated position only, and `health` (`quality`, `reset_counter`, `sigma_xy`) from the
-estimator. Planned next arms: F3 Belief-CBF, F4 MR-CBF with a fixed bound, F5 FT-CBF residual
-dropping, F6 Tan union of plausible states, then ours. Belief-CBF needs the EKF covariance,
+estimator. Arms added later: F3 Belief-CBF and F4 MR-CBF (Part b), F5 ours (Part d); FT-CBF and
+Tan arms were dropped after the held-out verdict (Part e). Belief-CBF needs the EKF covariance,
 which the arena estimator does not expose through `Pose` (only `sigma_xy`); see "Driver edits"
 in INTEGRATION.md.
 
@@ -452,7 +453,8 @@ in INTEGRATION.md.
   constraint the paper adds for a 90 deg fan would not bind here; a narrow-fan run is not done.
 - F1 is written from the PX4 docs, not from `CollisionPrevention.cpp`; CP_DIST = 0.5 m is our
   choice. `max_speed_from_distance` uses the PX4 TrajMath closed form from memory, not re-read.
-- One planner (A* known map), one family (random), one seed, 100 layouts; doc 04 asks for 200
+- Part a: one planner (A* known map), one family (random), one seed, 100 layouts (Part e adds
+  seeds 1-2 and two more families); doc 04 asks for 200
   layouts and three planners (straight, A*, noisy learned). Unsensed obstacles are 2 per layout,
   always on the reference path, so their collision rate is set by that placement.
 - Yaw is truth in the arena estimator, so body-frame points are never rotated wrongly.

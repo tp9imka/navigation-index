@@ -240,7 +240,8 @@
    "evidence": [
     "samples/close-area-relocalize/README.md",
     "samples/close-area-relocalize/sample.json",
-    "samples/close-area-relocalize/results/reloc_random_0.json"
+    "samples/close-area-relocalize/results/reloc_random_0.json",
+    "samples/close-area-relocalize/results/disamb_random_1.md"
    ]
   }
  },
@@ -254,11 +255,12 @@
     "macos-arm64"
    ],
    "validation": "integrated",
-   "limitation": "Synthetic 2.5D arena, one planner and one seed; no PX4 code run (F1 from docs, F2 from doc 05 pseudo-code). Setup needs network for PyPI wheels (uv venv + uv pip install); cold setup time not measured; no network-denied run, so offline is unknown. README names an Apple M3 Max host; macOS assumed from the M3 Max host, Linux not tested.",
+   "limitation": "Synthetic 2.5D arena, one planner (A* known map); random seeds 0-2 plus u_trap and narrow_gap on seed 1; no PX4 code run (F1 from docs, F2 from doc 05 pseudo-code). Setup needs network for PyPI wheels (uv venv + uv pip install); cold setup time not measured; no network-denied run, so offline is unknown. README names an Apple M3 Max host; macOS assumed from the M3 Max host, Linux not tested.",
    "evidence": [
     "samples/close-area-safety-filter/README.md",
     "samples/close-area-safety-filter/sample.json",
-    "samples/close-area-safety-filter/results/kill_a_summary_0.md"
+    "samples/close-area-safety-filter/results/kill_a_summary_0.md",
+    "samples/close-area-safety-filter/results/kill_e_tables.md"
    ]
   }
  },

@@ -74,11 +74,24 @@ planner first and the traps: [close-area-a-to-b cheat sheet](cheatsheets/close-a
 Organiser questions and the stack per answer: [Day-1 intake](day1-close-area-intake.md).
 Research and the headline idea: [close-area-nav synthesis](research/close-area-nav/README.md#recommended-direction).
 
+Headline after the kill test (2026-11-09, synthetic): **relocalization after VIO loss**
+([close-area-relocalize](../samples/close-area-relocalize/README.md)): hover, scan-to-map
+matching with up to 5 hypotheses and a short move when they tie reached 99-100 % with 0 wrong
+commits on seed 0 and held-out seed 1, against 36-64 % with the estimator alone. The
+integrity-aware safety filter failed on held-out seeds: 2.5 % [1.1, 5.7] collisions under a VIO
+jump, while a hand-tuned fixed 0.2 m bound stayed at 1.0 % or less
+([Part e](../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic)).
+A PX4-CBF style range filter under the planner remains a supporting result (0 % collisions with
+sensed obstacles and with walking people). Numbers: [evidence matrix section 14](evidence-matrix.md#14-close-area-ab).
+
 | Need | Sample or template | Input |
 |---|---|---|
 | Arena, truth scorer, A* + ESDF planner, estimator faults, log scorer | [close-area-arena](../samples/close-area-arena/README.md) | synthetic |
 | Same planner interface on a real drone (PX4, ArduPilot, Crazyflie, Tello) | [drone-adapter](../templates/drone-adapter/README.md) + [drivers](../templates/drone-adapter/drivers/README.md) | unrun stubs, mock smoke test |
-| 20 Hz flight loop with nav health, keep-alive and safety filter slot | [flight-repo](../templates/flight-repo/README.md) | mock |
+| 20 Hz flight loop with nav health, keep-alive and safety filter slot; `make first-flight` flies arena A* + PX4-CBF and scores the log | [flight-repo](../templates/flight-repo/README.md) | mock; arena (synthetic) |
+| Relocalization after VIO loss (the headline) | [close-area-relocalize](../samples/close-area-relocalize/README.md) | synthetic |
+| Safety filter under the planner, and the kill test that failed the integrity-aware filter | [close-area-safety-filter](../samples/close-area-safety-filter/README.md) | synthetic |
+| People walking through the arena | [close-area-moving-obstacles](../samples/close-area-moving-obstacles/README.md) | synthetic |
 | No map, sparse ranges (APF, VFH+, 4-beam fan) | [close-area-planner-reactive](../samples/close-area-planner-reactive/README.md) | synthetic |
 | Goal B is a tag or pad | [fiducial-goal-apriltag](../samples/fiducial-goal-apriltag/README.md) | synthetic (rendered images) |
 | Indoor VIO drift reference (OpenVINS on UZH-FPV indoor) | [relative-nav-benchmark](../samples/relative-nav-benchmark/) | real dataset |

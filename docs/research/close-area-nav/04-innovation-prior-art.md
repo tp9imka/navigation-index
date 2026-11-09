@@ -20,8 +20,14 @@ Source labels used below:
 - **doc** - official product documentation, read through a search summary.
 - **code** - repository checked with `gh api`, README read, code not run.
 
-No paper below was read in full text. No experiment in this doc has been run. Every threshold
-is our proposal. "Not found in this search" means the listed queries returned nothing; it is
+When this doc was written, no paper below was read in full text. The follow-up
+[05](05-cbf-baselines-faithful.md) then read the four kill-test baselines in full: PX4-CBF
+(ICUAS 2025), Belief-CBF (IEEE RA-L 2023), gatekeeper (IEEE T-RO 2024) and MR-CBF (Dean et al.
+CoRL 2020, Cosner et al. IROS 2021), and confirmed their venues through Crossref. Their labels
+below say so; every other source is as labelled. No experiment in this doc has been run; the
+kill test of section 3.4 ran later in
+[close-area-safety-filter](../../../samples/close-area-safety-filter/README.md) (synthetic,
+verdict FAIL, see section 3.4). Every threshold is our proposal. "Not found in this search" means the listed queries returned nothing; it is
 not a novelty claim.
 
 ## 0. One finding that shapes all three ideas
@@ -51,7 +57,7 @@ degrades.
 | 5 | Zhu, Alonso-Mora, "Chance-Constrained Collision Avoidance for MAVs in Dynamic Environments", IEEE RA-L 4(2):776-783, 2019, doi 10.1109/LRA.2019.2893494 ([TU Delft](https://repository.tudelft.nl/record/uuid:4c2e8664-4eb7-45ff-9e7e-a57ae643a371)); code [tud-amr/mrca-mav](https://github.com/tud-amr/mrca-mav) | paper (abstract only) + code | Chance-constrained NMPC; tight bound on collision probability; real quadrotors with humans. Lin, Zhu, Alonso-Mora ICRA 2020 extends it to stereo-vision obstacle sensing with state-estimation uncertainty. | **High.** This is the live, onboard version of idea A for quadrotors. GPL-3.0, MATLAB. |
 | 6 | Florence, Carter, Ware, Tedrake, "NanoMap", ICRA 2018, [arXiv 1802.09076](https://arxiv.org/abs/1802.09076); code [peteflorence/nanomap_ros](https://github.com/peteflorence/nanomap_ros) | paper (abstract only) + code | Keeps depth frames with noisy relative poses instead of a fused map; proximity queries return the most certain view, so the planner sees pose uncertainty. 10 m/s quadrotor. | Medium-high. Uncertainty-aware obstacle queries in the body-frame spirit of section 0. |
 | 7 | Papachristos, Khattak, Alexis, "Uncertainty-aware receding horizon exploration and mapping", ICRA 2017, doi 10.1109/ICRA.2017.7989531; code [ntnu-arl/rhem_planner](https://github.com/ntnu-arl/rhem_planner) | paper (abstract only) + code | Picks the exploration branch that minimises expected localization uncertainty of a stereo VIO. | Medium. Uncertainty drives route choice; exploration, not A-to-B. |
-| 8 | Vahs, Pek, Tumova, "Belief Control Barrier Functions for Risk-aware Control", [arXiv 2309.06499](https://arxiv.org/abs/2309.06499), 2023 | preprint (abstract only) | CBF on the EKF belief (mean and covariance) so the vehicle stays safe with a chosen confidence. Quadrotor, up to 1 kHz. | **High.** "Clearance inflated by live covariance" as a filter. Strongest prior art for A and C together. |
+| 8 | Vahs, Pek, Tumova, "Belief Control Barrier Functions for Risk-aware Control", IEEE RA-L 8(12):8565-8572, 2023, [arXiv 2309.06499](https://arxiv.org/abs/2309.06499) | paper (full text read in [05](05-cbf-baselines-faithful.md#2-belief-cbf-vahs-pek-tumova-ieee-ra-l-2023)) | CBF on the EKF belief (mean and covariance) so the vehicle stays safe with a chosen confidence. Quadrotor, up to 1 kHz. | **High.** "Clearance inflated by live covariance" as a filter. Strongest prior art for A and C together. |
 | 9 | Lee, Seo, Kassas, "Integrity-Based Path Planning Strategy for Urban Autonomous Vehicular Navigation Using GPS and Cellular Signals", ION GNSS+ 2020, doi 10.33012/2020.17589 ([arXiv 2010.03761](https://arxiv.org/abs/2010.03761)) | paper (abstract only) | Path cost includes the predicted GNSS/LTE horizontal protection level; constraint HPL < HAL. Ray-traced, offline. | Medium. Uses a protection level, not a covariance, as the planning margin. Ground, offline. |
 | 10 | Liu et al., safe flight corridors, ICRA 2017; code [sikang/DecompUtil](https://github.com/sikang/DecompUtil), [sikang/DecompROS](https://github.com/sikang/DecompROS) | paper (abstract only) + code | Ellipsoid-based convex corridors around a path in a point cloud, then a QP inside the corridors. | Low on uncertainty. The corridor is where an inflation term would plug in. BSD-3. |
 
@@ -198,7 +204,7 @@ LLM) and the autopilot.
 | 6 | Agrawal, Chen, Panagou, "gatekeeper", IEEE T-RO 2024, [arXiv 2211.14361](https://arxiv.org/abs/2211.14361); code [dev10110/gatekeeper](https://github.com/dev10110/gatekeeper) | paper (IEEE T-RO 2024; full text read in [05](05-cbf-baselines-faithful.md#3-gatekeeper-agrawal-chen-panagou-ieee-t-ro-2024)) + code | Checks each candidate trajectory forward with a backup controller (e.g. hover); commits the longest safe prefix. Quadrotor hardware; 3-10x faster than MPC in sim. | High. Planner-agnostic, simple to explain. Needs a backup set. |
 | 7 | Chen et al., "Backup Control Barrier Functions: Formulation and Comparative Study", [arXiv 2104.11332](https://arxiv.org/abs/2104.11332); Singletary, Swann, Chen, Ames, "Onboard Safety Guarantees for Racing Drones: High-speed Geofencing with CBFs", [arXiv 2201.04331](https://arxiv.org/abs/2201.04331) | preprint (abstract only) | Backup CBFs grow a small invariant set via a backup controller; geofencing a 7-inch racing drone above 100 km/h on a 10 g microcontroller. | High for geofence. |
 | 8 | Wabersich, Zeilinger, "A predictive safety filter for learning-based control of constrained nonlinear dynamical systems", Automatica 129, 2021, doi 10.1016/j.automatica.2021.109597, [arXiv 1812.05506](https://arxiv.org/abs/1812.05506) | paper (abstract only) | MPC-based filter that changes a learned input only when needed. | Medium-high. Theory for "any planner + filter". |
-| 9 | Dean, Taylor, Cosner, Recht, Ames, "Guaranteeing Safety of Learned Perception Modules via Measurement-Robust CBFs", CoRL 2020, PMLR 155 ([page](https://proceedings.mlr.press/v155/dean21a.html)); Cosner et al., "Measurement-Robust CBFs: Certainty in Safety with Uncertainty in State", IROS 2021, [arXiv 2104.14030](https://arxiv.org/abs/2104.14030) | paper (abstract only) | CBF condition robust to bounded measurement error; Segway with stereo state estimation. | **High in mechanism** for "filter that knows the estimate is wrong". Not quadrotor. |
+| 9 | Dean, Taylor, Cosner, Recht, Ames, "Guaranteeing Safety of Learned Perception Modules via Measurement-Robust CBFs", CoRL 2020, PMLR 155 ([page](https://proceedings.mlr.press/v155/dean21a.html)); Cosner et al., "Measurement-Robust CBFs: Certainty in Safety with Uncertainty in State", IROS 2021, [arXiv 2104.14030](https://arxiv.org/abs/2104.14030) | paper (both full texts read in [05](05-cbf-baselines-faithful.md#4-measurement-robust-cbf-dean-taylor-cosner-recht-ames-corl-2020), appendices not read) | CBF condition robust to bounded measurement error; Segway with stereo state estimation. | **High in mechanism** for "filter that knows the estimate is wrong". Not quadrotor. |
 | 10 | Agrawal, Panagou, "Safe and Robust Observer-Controller Synthesis using CBFs", IEEE L-CSS 7:127-132, 2022, [arXiv 2211.14364](https://arxiv.org/abs/2211.14364) | paper (abstract only) | CBFs built from bounded observer error; separately designed observer and controller can be unsafe; quadrotor experiments. | High. |
 | 11 | Vahs et al. BCBF (section 1, #8) | paper (IEEE RA-L 2023; full text read in [05](05-cbf-baselines-faithful.md#2-belief-cbf-vahs-pek-tumova-ieee-ra-l-2023)) | EKF-belief CBF on a quadrotor. | High. |
 | 12 | Sinha, Schmerling, Pavone, "Closing the Loop on Runtime Monitors with Fallback-Safe MPC", CDC 2023, [arXiv 2309.08603](https://arxiv.org/abs/2309.08603) | paper (abstract only) | Conformal-calibrated runtime monitor for perception; robust MPC keeps a perception-free fallback; simulated quadrotor slows and descends when perception degrades. | **High** for "monitor => slow down". Simulated perception errors. |
@@ -252,6 +258,15 @@ Inputs each arm needs from the sim and three ways a naive copy would be unfair a
 [05 sections 5-6](05-cbf-baselines-faithful.md#5-baseline--minimal-faithful-implementation-for-the-kill-test).
 
 ### 3.4 Falsification experiment
+
+Status (2026-11-09, synthetic): ran in
+[close-area-safety-filter](../../../samples/close-area-safety-filter/README.md) parts a-e with
+one planner (P2, A* known map) and 100 layouts per seed. **FAIL** on held-out seeds 1-2: ours
+collided in 2.5 % [1.1, 5.7] of jump runs and reached 0.55 of F2's jump reach; MR-CBF with a fixed
+0.2 m bound stayed at 1.0 % [0.3, 2.9] or less in every case on seeds 0-2
+([Part e verdict](../../../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic)).
+The arm names there differ from this section (there F3 = Belief-CBF, F4 = MR-CBF fixed bound,
+F5 = ours). P1, P3, F3f, F3t and 200 layouts were not run.
 
 **Sim.** Same as 1.4. Nominal planners: (P1) straight line to goal (adversarial), (P2) A* +
 min-jerk on the estimate, (P3) noisy "learned" planner = P2 plus heading noise and 5% random
@@ -324,6 +339,11 @@ Notes:
 
 ## 5. Synthesis: what to build
 
+Status (2026-11-09): the idea C kill test failed on held-out seeds (section 3.4), and the
+headline moved to multi-hypothesis relocalization after VIO loss from section 4, which ran in
+[close-area-relocalize](../../../samples/close-area-relocalize/README.md) (synthetic). The text
+below is the original recommendation.
+
 **Headline: idea C, the integrity-aware safety filter.** One sentence: "Any planner, even a
 learned or LLM one, flies through our filter; it never hits what the range sensor sees, and when
 navigation integrity drops it widens margins, slows down and holds a safe hover."
@@ -351,14 +371,16 @@ Murali-style "yaw toward features" as the filter's recovery action only if time 
 
 ## 6. Not verified
 
-- No full text was read for any paper in this doc. Claims come from abstracts, catalog records
-  and search summaries. Numbers quoted (70% RMSE, 9.8 m/s, 55% => 100%, 3-10x, 3.5 ms, 7.8 m/s,
+- No full text was read for this doc, except what [05](05-cbf-baselines-faithful.md) later read
+  in full for the four baselines (PX4-CBF, Belief-CBF, gatekeeper, MR-CBF Dean 2020 and Cosner
+  2021). Every other claim comes from abstracts, catalog records and search summaries. Numbers quoted (70% RMSE, 9.8 m/s, 55% => 100%, 3-10x, 3.5 ms, 7.8 m/s,
   > 100 km/h) are the authors' claims as summarised, not checked.
 - Costante 2016 venue: the authors' group lists it as TRO16; not confirmed against IEEE.
-- Gatekeeper venue (T-RO 2024) comes from a search summary; the repo README (last push
-  2023-10-20) still says "under review at T-RO".
+- Gatekeeper venue: confirmed in 05 through Crossref (IEEE T-RO 40:4358-4375, 2024, plus IROS
+  2023); the repo README (last push 2023-10-20) still says "under review at T-RO".
 - Chen et al. backup CBF and Singletary 2022: arXiv only checked, venue not confirmed.
-- Vahs 2023 BCBF: no peer-reviewed venue on the arXiv page.
+- Vahs 2023 BCBF: no venue on the arXiv page, but 05 confirmed IEEE RA-L 8(12):8565-8572, 2023
+  through Crossref (doi 10.1109/LRA.2023.3330662).
 - Chen and Shen (IEEE Access 2022), EVA-Planner, Lin et al. ICRA 2020, the 2026 conformal
   CBVF preprint (arXiv 2608.13819), the UWB covariance-margin preprint (arXiv 2512.17249) and
   SUPER (arXiv 2512.14189; v1 summary reported 89.1% recall for degradation prediction, the v2

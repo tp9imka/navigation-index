@@ -52,6 +52,8 @@ real loop with [flight-repo](../../templates/flight-repo/README.md) (`make sim`,
 | Map given, or dense ranges / depth to build one | `planners/astar_esdf.py` | Known map reached 100 % on all three families; it is the planner the safety filter sits on |
 | No map yet, testing estimator faults | `freest_beam` (inside `run_faults.py`) | Range-only, so faults cut reach, not safety; A* under faults is in [close-area-safety-filter](../../samples/close-area-safety-filter/README.md) |
 | No map, sparse ranges (Crazyflie Multi-ranger) | APF with escape ([close-area-planner-reactive](../../samples/close-area-planner-reactive/README.md)) | Escape gets out of the U trap; VFH+ collides more on 4 beams. Add scan memory or slow down |
+| Moving obstacles (people walking through) | A* replan + F2 range filter ([close-area-moving-obstacles](../../samples/close-area-moving-obstacles/README.md)) | A* alone collided in 14-36 % of runs; with F2 0 %, 16 % stuck; APF 0-2 % (synthetic) |
+| Complex rooms (office, warehouse, forest, maze) | `planners/astar_esdf.py` with `--family office` etc. ([complex arenas](../../samples/close-area-arena/README.md#complex-arenas-ran-2026-11-09-synthetic)) | Known-map A* 100 % reached on all five families, straight 0-15 % (20 layouts each, synthetic) |
 | Goal B is a tag or pad | Any of the above to bring the tag into view, then [fiducial-goal-apriltag](../../samples/fiducial-goal-apriltag/README.md) `final_approach.py` | Tag-relative servo for the last metres |
 
 Do not start from `straight`: it never steers, so it is only the floor.
@@ -79,9 +81,13 @@ identical results.
   0.031 m. Final approach re-run, 39 s on 8 processes
   ([fiducial-goal-apriltag](../../samples/fiducial-goal-apriltag/README.md)).
 - Safety filter, kill test A, 100 layouts: with every obstacle visible to the 360 deg fan, PX4-CBF and CP-stop have 0 % collisions in every VIO fault case (bare A* 7 % under a 0.5 m jump); with 2 map-only obstacles per layout PX4-CBF collides in 3-11 %, all with those obstacles. Not re-run ([close-area-safety-filter](../../samples/close-area-safety-filter/README.md)).
+- Integrity-aware filter (the old headline), held-out seeds: **FAIL**. Ours collides in 2.5 % [1.1, 5.7] of held-out jump runs and reaches B in 0.55 as many jump runs as PX4-CBF; MR-CBF with a hand-tuned fixed 0.2 m bound stays at 1.0 % [0.3, 2.9] or less in every case on seeds 0-2 (95 % Wilson intervals). Not re-run ([Part e](../../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic)).
+- Walking people, 50 layouts: A* replanning alone collides in 14 % (0.5 m/s) and 36 % (1.0 m/s) of runs; A* + PX4-CBF 0 % at 16 % stuck; APF 0 % / 2 %. Not re-run ([close-area-moving-obstacles](../../samples/close-area-moving-obstacles/README.md)).
+- Crazyflie 4-beam preset on the glass family, 50 layouts: collisions 90 % (freest_beam) and 100 % (A* unknown map); the ideal 72-beam fan 4 % and 10 %. Not re-run ([sensor realism](../../samples/close-area-arena/README.md#sensor-realism-crazyflie-presets-and-glass-ran-2026-11-09-synthetic)).
+- First flight: `make first-flight` in [flight-repo](../../templates/flight-repo/README.md#brief-to-first-flight) flies arena A* + PX4-CBF through the 20 Hz loop: reached in 19.76 s, min clearance 0.83 m; with the VIO jump fault it ends `unconfirmed` 0.64 m from B instead of claiming arrival. One layout. Not re-run.
 - Corridor MPC (OSQP) vs the A* carrot follower, 50 layouts per family: both 100 % reached, 0 % collision; MPC 21.97 vs 24.23 s to goal through narrow gaps; QP 0.22 ms median on an M3 Max laptop. Not re-run ([close-area-planner-mpc](../../samples/close-area-planner-mpc/README.md)).
 - RRT* vs A* on the same grid: A* plans a 0.4 m gap in 100 % of layouts, RRT* with 1000 samples in 28.3 % (5000: 85.7 %); keep A* as the default. Not re-run ([close-area-planner-sampling](../../samples/close-area-planner-sampling/README.md)).
-- VIO lost, 100 layouts: no relocalization reached 64 % (dropout) / 36 % (jump); committing to the best scan-to-map match and re-checking it reached 100 % / 100 %, 0 % collisions; a hover-until-unique rule deadlocks in a corridor (20 of 20). Not re-run ([close-area-relocalize](../../samples/close-area-relocalize/README.md)).
+- VIO lost, 100 layouts: no relocalization reached 64 % (dropout) / 36 % (jump); committing to the best scan-to-map match and re-checking it reached 100 % / 100 %, 0 % collisions, but with 2-4 wrong commits; a hover-until-unique rule deadlocks in a corridor (20 of 20). Hover plus a short info-gain move after 1 s: 99-100 % reached, 0 wrong commits, held-out seed 1 included; corridor 80 %. Not re-run ([close-area-relocalize](../../samples/close-area-relocalize/README.md#disambiguating-moves-after-a-hover-timeout-loop-22b)).
 - Replan cost: a full 200 x 200 x 50 scipy EDT took 183 ms median on an M3 Max (synthetic grid),
   so a 20 x 20 x 5 m ESDF at 0.1 m fits a 2-5 Hz replan. Not re-run.
 - **Real dataset** reference for VIO drift: OpenVINS ATE 0.36 m over 278 m on UZH-FPV
@@ -125,24 +131,30 @@ before any planner flight. Rules per platform: [frames.md](../../templates/drone
    [09 VIO NEES](../research/close-area-nav/09-vio-nees-feasibility.md)). Gate on ODOMETRY
    `quality`, `reset_counter` and rejected fusions
    ([03 localization](../research/close-area-nav/03-close-area-localization.md)). In the arena,
-   an overconfident estimator changes nothing because no planner reads `sigma_xy` yet.
-4. **Arena limits.** 2.5D point mass, ideal ray casts, axis-aligned boxes and cylinders, no
-   glass, no dynamic obstacles. A* under VIO faults collides in 1-7 % of runs without a filter
+   an overconfident estimator changes nothing for the planners, which do not read `sigma_xy`.
+4. **Arena limits.** 2.5D point mass, ideal ray casts by default, axis-aligned boxes and
+   cylinders. Glass only with the cone sensor presets (`run_sensors.py`); dynamic obstacles only
+   as constant-speed people in close-area-moving-obstacles (no prediction, random family only). A* under VIO faults collides in 1-7 % of runs without a filter
    ([close-area-safety-filter](../../samples/close-area-safety-filter/README.md), synthetic).
 5. **Frames and keep-alive.** ENU vs NED, absolute heading vs yaw rate, stick values vs m/s.
    Command +x on the bench and watch which way it moves before the first planner flight.
 
 ## 7. Stretch goal
 
-The headline from the synthesis: an **integrity-aware safety filter** around any planner. Range
-barriers for what the drone sees, a protection-level margin for what it cannot, and a hover when
-the monitor cannot tell which source is lying. Kill test first: 200 layouts with injected VIO
-jump and bias faults ([synthesis](../research/close-area-nav/README.md#recommended-direction);
-kill test A ran on 100 layouts in [close-area-safety-filter](../../samples/close-area-safety-filter/README.md): a
-range-only filter already stops collisions with sensed obstacles, so the margin only pays for
-map-only obstacles). Pitch:
-[close-area story](../../templates/pitch/close-area-story.md); demo:
-[demo-script-close-area](../../templates/demo-script-close-area.md).
+The headline after the kill test: **relocalization after VIO loss.** On a VIO reset, a quality
+drop or a scan that no longer fits the map, hover, match the range scan against the map with up
+to 5 hypotheses, and fly one short collision-checked move when they tie. It never commits on a
+tie. Synthetic arena, known map only: 99-100 % reached with 0 wrong commits against 36-64 %
+with the estimator alone ([close-area-relocalize](../../samples/close-area-relocalize/README.md)).
+Pick it when a prior map or a first pass of the room exists.
+
+The old headline, the **integrity-aware safety filter**, failed its held-out kill test: a
+hand-tuned fixed 0.2 m bound matched its safety and reached more
+([Part e](../../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic)).
+Keep the range filter (PX4-CBF style) under the planner as a supporting piece: 0 % collisions
+with sensed obstacles under VIO faults and with walking people. Pitch:
+[close-area story](../../templates/pitch/close-area-story.md) (H1 is the relocalization story);
+demo: [demo-script-close-area](../../templates/demo-script-close-area.md).
 
 ## 8. Links
 
@@ -157,6 +169,7 @@ map-only obstacles). Pitch:
   [close-area-planner-sampling](../../samples/close-area-planner-sampling/README.md),
   [close-area-relocalize](../../samples/close-area-relocalize/README.md),
   [close-area-safety-filter](../../samples/close-area-safety-filter/README.md),
+  [close-area-moving-obstacles](../../samples/close-area-moving-obstacles/README.md),
   [vio-to-mavlink-bridge](../../samples/vio-to-mavlink-bridge/), [sitl-docker](../../samples/sitl-docker/).
 - Templates: [drone-adapter](../../templates/drone-adapter/README.md) +
   [drivers](../../templates/drone-adapter/drivers/README.md),

@@ -283,18 +283,20 @@ JSON with per-run rows.
 ## Limits
 
 - 2.5D only: no altitude changes, no overhangs, z is held. Obstacles are axis-aligned boxes
-  and vertical cylinders; no thin or transparent obstacles, no dynamic obstacles.
+  and vertical cylinders. Glass and thin poles: Sensor realism section; moving people:
+  [close-area-moving-obstacles](../close-area-moving-obstacles/README.md).
 - Point-mass vehicle with a velocity lag, not rigid-body dynamics: no attitude, wind,
   ground effect, motor saturation or contact physics. A collision ends the run.
 - The range sensor is an ideal ray cast plus Gaussian noise and random dropout; no beam
-  width, no multipath, no glass or dark-surface returns.
+  width, no multipath (cone beams, glass and dark surfaces: `sensors_cone.py`, Sensor realism).
 - `stuck` is a displacement rule (0.2 m in 10 s). A planner that oscillates with more than
   0.2 m amplitude is never stuck; it times out at 60 s instead.
 - The setpoint timeout (0.5 s => zero velocity) is our choice, modelled on PX4 leaving Offboard
   when the stream stops; the exact PX4 value was not checked in this job.
 - Timing numbers (EDT, planner ms) depend on the machine and its load.
 - Planners here: `straight`, `freest_beam` (in run_faults.py) and `astar_esdf`. APF and VFH+
-  are in close-area-planner-reactive. Safety filters come in later samples.
+  are in close-area-planner-reactive; safety filters in close-area-safety-filter; every planner
+  on every arena in [close-area-benchmark](../close-area-benchmark/README.md).
 
 ## Sources
 
