@@ -125,3 +125,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - 68 attempt 1 failed: Kiro 'connection was interrupted' (network), no files written; retried once.
 - 68 attempt 2 failed: kiro logged out. STOPPED: kiro-auth. Needs 'kiro-cli login', then relaunch 68 from scratchpad brief loop-68.md.
 - 68 attempt 3 failed after ~3 min: Kiro 'connection was interrupted' again, no files written. Network unstable; not retrying further until it is. STOPPED: network.
+- landed: 68 => aa1beb0 on attempt 4 (3 lost to network/auth). Specified submap arm 0-30 %; submap_fwd_ig 71/89/66/71 % with 0-6 wrong commits on crazyflie seed 2 - best 4-beam result, still FAIL vs 90 %/0. Seed 2 partly seen (6-layout probe) - noted in README.

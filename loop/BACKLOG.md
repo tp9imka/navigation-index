@@ -105,7 +105,7 @@ Initial backlog: fable brainstorm, 2026-11-09, base dbafbff.
 
 | 67 | done 1ab503b | AF-MCL-style particle filter arm vs the hub's relocalizer (ideal and 4-beam) | P | S | 57 B | samples/close-area-relocalize mcl.py, run_mcl.py | Published baseline the headline never faced | table + verdict |
 
-| 68 | retry (3 attempts lost to network: connection interrupted mid-run) | Relocalization on 4 beams via a rolling submap built while moving (vs spin and MCL) | P | S | 54, 67 B | samples/close-area-relocalize submap.py, run_submap.py | The headline must survive the likeliest drone | >= 90 % and 0 wrong commits on crazyflie, or FAIL |
+| 68 | done aa1beb0 (FAIL; best 4-beam arm 66-89 %) | Relocalization on 4 beams via a rolling submap built while moving (vs spin and MCL) | P | S | 54, 67 B | samples/close-area-relocalize submap.py, run_submap.py | The headline must survive the likeliest drone | >= 90 % and 0 wrong commits on crazyflie, or FAIL |
 
 ## Planned waves
 
