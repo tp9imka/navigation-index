@@ -31,6 +31,8 @@ uv venv .venv && uv pip install --python .venv -r requirements.txt
 
 ### Which planner to start from
 
+For every planner on every arena and sensor see [close-area-benchmark](../close-area-benchmark/README.md); the table below is the arena's own first pick.
+
 Do not start from `straight`. It is the floor. All numbers below are synthetic, seed 0, 50 layouts.
 
 | Planner | Where | Use it when | Reached on random (truth pose) |

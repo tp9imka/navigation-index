@@ -1,7 +1,7 @@
 {
   "id": "sample:close-area-relocalize",
   "title": "Close-area relocalization after VIO loss: scan-to-map pose hypotheses, ratio + persistence acceptance, hover until one wins",
-  "summary": "Relocalizer for the close-area arena. After a detected VIO loss (reset_counter change, quality 0, or a scan-to-map innovation test) a pose source that wraps the arena's VIO-like estimator reports quality 0 (a planner gate hovers), matches the 72-beam range scan against the known 0.1 m occupancy grid by correlative grid search on a likelihood field (EDT distance, sigma 0.10 m, +-2 m window), keeps up to 5 hypotheses 0.5 m apart, and accepts one with a named rule: best score >= 0.6, best >= 1.02 x second, and the same winner for 3 scans; 'none of them' keeps hovering and widens the window to +-4 m. On accept it re-anchors the estimate. experiment.py flies the arena's A* known-map planner on 100 random layouts under the dropout and jump faults and compares no relocalization, hover only, single-hypothesis commit at once, and the multi-hypothesis rule, with ablations without the innovation test, plus a symmetric 2 m x 14.8 m corridor where shifted poses look the same. Thresholds set on seed-1 static poses (tune.py). Synthetic arena only.",
+  "summary": "Relocalizer for the close-area arena. After a detected VIO loss (reset_counter change, quality 0, or a scan-to-map innovation test) a pose source that wraps the arena's VIO-like estimator reports quality 0 (a planner gate hovers), matches the 72-beam range scan against the known 0.1 m occupancy grid by correlative grid search on a likelihood field (EDT distance, sigma 0.10 m, +-2 m window), keeps up to 5 hypotheses 0.5 m apart, and accepts one with a named rule: best score >= 0.6, best >= 1.02 x second, and the same winner for 3 scans; 'none of them' keeps hovering and widens the window to +-4 m. On accept it re-anchors the estimate. experiment.py flies the arena's A* known-map planner on 100 random layouts under the dropout and jump faults and compares no relocalization, hover only, single-hypothesis commit at once, and the multi-hypothesis rule, with ablations without the innovation test, plus a symmetric 2 m x 14.8 m corridor where shifted poses look the same. Thresholds set on seed-1 static poses (tune.py). Synthetic arena only. Later sections add disambiguating moves after a hover timeout (run_disambiguate.py), a held-out matrix over seeds 2-4 and 7 families (run_matrix.py), a 4-beam Crazyflie-like yaw-spin stack (run_sparse.py), an imperfect prior map ladder (run_stalemap.py) and a +-15 deg yaw search (run_yaw.py).",
   "concepts": [
     "concept:lidar-slam",
     "concept:sensor-fusion",
@@ -28,17 +28,26 @@
     "scipy"
   ],
   "related": [
-    {"id": "sample:close-area-arena", "rel": "explains"},
-    {"id": "res:fox-burgard-thrun-1998-active-markov-localization", "rel": "explains"},
-    {"id": "repo:hviktortsoi/fast_lio_localization", "rel": "explains"}
+    {
+      "id": "sample:close-area-arena",
+      "rel": "explains"
+    },
+    {
+      "id": "res:fox-burgard-thrun-1998-active-markov-localization",
+      "rel": "explains"
+    },
+    {
+      "id": "repo:hviktortsoi/fast_lio_localization",
+      "rel": "explains"
+    }
   ],
-  "verified": "ran 2026-11-09 with CPython 3.12.10 + numpy 2.5.4 / scipy 1.18.1 on an Apple M3 Max, in the sample venv: experiment.py --layouts 100 --seed 0 ran twice with identical tables (wall 70.7 s on 8 workers for the kept run); experiment.py --corridor --runs 20 ran once (21.3 s); tune.py on seed 1 wrote results/tune_seed1.json. Every number in README is from results/. test_smoke.py: 1 passed in the venv, 1 skipped under plain python3 without numpy. No arena file was edited. Layouts, vehicle, estimator and range sensor are simulated; yaw is truth; the map is the exact prior grid; no SITL, no real drone or lidar. Later: run_disambiguate.py --corridor --runs 20 (22 s) and --layouts 100 --seed 0 (75 s) in the sample venv (CPython 3.11.15, numpy 2.4.6, scipy 1.17.1); the loop driver ran --layouts 100 --seed 1 as a held-out check (76.5 s, results/disamb_random_1.md). Acceptance thresholds came from seed-1 static poses (tune.py); no flight parameter was tuned on seed 1.",
+  "verified": "ran 2026-11-09 with CPython 3.12.10 + numpy 2.5.4 / scipy 1.18.1 on an Apple M3 Max, in the sample venv: experiment.py --layouts 100 --seed 0 ran twice with identical tables (wall 70.7 s on 8 workers for the kept run); experiment.py --corridor --runs 20 ran once (21.3 s); tune.py on seed 1 wrote results/tune_seed1.json. Every number in README is from results/. test_smoke.py: 1 passed in the venv, 1 skipped under plain python3 without numpy. No arena file was edited. Layouts, vehicle, estimator and range sensor are simulated; yaw is truth; the map is the exact prior grid; no SITL, no real drone or lidar. Later: run_disambiguate.py --corridor --runs 20 (22 s) and --layouts 100 --seed 0 (75 s) in the sample venv (CPython 3.11.15, numpy 2.4.6, scipy 1.17.1); the loop driver ran --layouts 100 --seed 1 as a held-out check (76.5 s, results/disamb_random_1.md). Acceptance thresholds came from seed-1 static poses (tune.py); no flight parameter was tuned on seed 1. Loop-56: run_matrix.py parity 180/180 against disamb_random_1.json, matrix 3780 runs on held-out seeds 2-4 (385 s on 14 workers). Loop-54: run_sparse.py --layouts 100 --seed 0 (245 s, CPython 3.11.15); seed 0 not fully held out (a v1 run was read before two fixes). Loop-55: run_stalemap.py --layouts 100 --seed 2 (303 s). Loop-60: run_yaw.py --layouts 100 --seed 2 (124 s) and --corridor --runs 20 (203 s); flight rows of a second run identical. Day-1 dry run (loop-58) re-ran the demo command (seed 1, --out .venv/demo-out): all six table rows identical to results/disamb_random_1.md.",
   "verified_status": "ran",
   "deps": "venv",
-  "first_command": ".venv/bin/python experiment.py --layouts 100 --seed 0",
+  "first_command": ".venv/bin/python run_disambiguate.py --layouts 100 --seed 1 --arms single,multi,multi_ig --out .venv/demo-out",
   "group": "Close-area A=>B: planning and safety",
   "shows": "What the drone does when VIO is lost indoors: scan-to-map relocalization with up to 5 hypotheses and a ratio + persistence rule vs commit-at-once vs no relocalization, under dropout and jump faults, plus a symmetric corridor",
   "input": "synthetic",
-  "runtime": "~71 s for 100 layouts x 2 faults x 7 arms on 8 workers; corridor ~21 s; disambiguating moves ~75 s per seed, corridor ~22 s",
-  "key_result": "[Disambiguating moves](README.md#disambiguating-moves-after-a-hover-timeout-loop-22b), 100 random layouts, A* known map: hover + scan-to-map hypotheses + one info-gain move after 1 s reached 99 % / 99 % (dropout / jump) on seed 0 and 100 % / 100 % on held-out seed 1, 0 wrong commits, 0 % collisions, against 64 % / 36 % with the estimator alone (1 % / 9 % collisions); commit-at-once reaches 100 % but makes 2-4 wrong commits per 100; symmetric corridor: info-gain move 80 %, hover-only rule 0 %. Synthetic, yaw is truth, exact prior map"
+  "runtime": "demo ~55 s (seed 1, 3 arms); experiment ~71 s on 8 workers; held-out matrix ~385 s on 14 workers; 4-beam ~245 s; stale map ~303 s; yaw ~124 s",
+  "key_result": "[Held-out matrix](README.md#held-out-matrix-seeds-2-4-7-families-harder-faults-loop-56), seeds 2-4, A* known map, 72-beam fan: hover + scan-to-map hypotheses + info-gain move reached 100 % with 0 wrong commits on random and u_trap (PASS) but FAILED on narrow_gap 85.6 %, office 94.4 %, warehouse 97.2 % (33 wrong commits), maze 97.2 % (6 wrong) and glass_office 83.3 %; estimator alone 36-64 % on random (seed 0). 4-beam Crazyflie-like sensor with a yaw-spin: 48 % / 64 % (dropout / jump), FAIL. Unmapped added obstacles: 7 % collisions, FAIL. Yaw search restores 100 % under a 10 deg heading error; 180 deg in a symmetric corridor fails. Synthetic"
 }

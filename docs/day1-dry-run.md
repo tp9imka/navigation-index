@@ -249,6 +249,9 @@ node $T/shoot.mjs                                 # own CDP script, headless Chr
 
 ## Blockers
 
+Status 2026-11-09: blockers 1, 3, 4, 5 and 8 fixed by loop-61; 6 fixed in the wrap-up; 2 and 7 are in loop-59 and loop-63.
+
+
 | # | Step | File | What broke | Suggested fix |
 |---|---|---|---|---|
 | 1 | Clone | (agent shell, not the hub) | `git clone` of the local checkout hung past 120 s in the agent's shell; with `< /dev/null` it finished in 54.85 s wall, 0.26 s CPU | Harness issue more than a hub issue. AGENTS.md could say: run long commands with stdin closed or in the background |

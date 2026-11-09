@@ -180,6 +180,8 @@
    "text": "Add a safety filter so the quadcopter does not hit obstacles when its position estimate is wrong"},
   {"src": "loop-52 close-area moving obstacles 2026-11-09", "split": "close-area", "rows": [31],
    "text": "People walking through the arena"},
+  {"src": "loop-61 close-area benchmark 2026-11-09 (row 31 start-from must list close-area-benchmark first; checked by hand, decode_eval.py checks the row only)", "split": "close-area", "rows": [31],
+   "text": "Warehouse with 4 range beams, which planner"},
   {"src": "loop-07 close-area negative 2026-11-09", "split": "close-area", "rows": [30], "no_runnable_starter": true, "excluded_rows": [31, 32, 33],
    "text": "A ground rover must drive from point A to point B and replan around obstacles using a local costmap"},
   {"src": "loop-07 close-area negative 2026-11-09", "split": "close-area", "rows": [27], "excluded_rows": [31, 32, 33],

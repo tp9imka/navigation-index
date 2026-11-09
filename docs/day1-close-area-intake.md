@@ -14,7 +14,10 @@ for this page. Numbers are quoted from the hub files they link to, with the inpu
 "Estimate" means a setup time read from READMEs, not timed. "gap:" marks what the hub does not
 have yet. Gap notes refreshed 2026-11-09 (loop-52) after the safety-filter kill test (held-out verdict
 FAIL), relocalization, moving obstacles, sensor presets, complex arenas and the flight-repo first
-flight landed.
+flight landed; refreshed again (loop-61) after the planner benchmark, the 3D window_bar family, the
+relocalization held-out runs and the Day-1 dry run ([day1-dry-run](day1-dry-run.md#blockers)).
+The Q5 and Q7 defaults were changed in loop-61 so that together they lead to a stack the hub has
+measured (see [why these defaults](#why-these-defaults)).
 
 ## 0. The 20-minute clock
 
@@ -36,25 +39,47 @@ Q1-Q3 decide most of the stack. Q4 decides what to optimise. Ask them first even
 | Q2 | Is the judged run in sim, on a real drone, or both? If real: how many flight slots, when, with a net or a safety pilot? If sim: do you provide the sim and world? | Sim-only lets us skip hardware work; real flight makes estimation and safety the main risk | Both: sim first, real port in the last 24 h |
 | Q3 | How is B given: offset from A, coordinates in a venue frame (mocap / UWB), a GPS point, or a marker / pad / object we must find? What tolerance counts as "at B"? | Picks the goal pipeline and the localization source | Offset from A in metres, tolerance unknown => assume 0.3 m, as the [arena](../samples/close-area-arena/README.md) scorer does |
 | Q4 | How is it scored: completion, time, collisions, manual interventions, off-board compute, precision at B, number of attempts? | Decides speed vs safety, see [section 4](#4-scoring-rule-implications) | IMAV-like: completion first, interventions and off-board compute multiply the score down |
-| Q5 | Which sensors does the airframe carry: stereo / depth camera, 2D or 3D lidar, ToF rangers, optical flow, downward rangefinder, GNSS, RTK? | Decides obstacle sensing and the backup velocity source | Downward flow + rangefinder, no obstacle sensor |
+| Q5 | Which sensors does the airframe carry: stereo / depth camera, 2D or 3D lidar, ToF rangers, optical flow, downward rangefinder, GNSS, RTK? | Decides obstacle sensing and the backup velocity source | 4-beam ToF range fan (Crazyflie Multi-ranger class) + downward flow + rangefinder |
 | Q6 | Indoor or outdoor? Does the venue have mocap, Lighthouse or UWB anchors we may use? | Mocap ends the localization problem; outdoor brings GNSS | Indoor, no venue positioning |
-| Q7 | Are obstacles known in advance (map or layout file), unknown, or moved between runs? Any thin poles, nets or glass? | Known map => plan once; unknown => sensed map and replanning | Unknown and moved between runs |
+| Q7 | Are obstacles known in advance (map or layout file), unknown, or moved between runs? Any thin poles, nets or glass? | Known map => plan once; unknown => sensed map and replanning | Unknown and moved between runs, no floor plan given (ask for one: see [why](#why-these-defaults)) |
 | Q8 | Where may our code run: an onboard companion (which board), a ground laptop over a link, or a provided Linux / GPU box? | Picks VIO and mapping options; off-board may cost score | Ground laptop only |
 | Q9 | May we add things: AprilTags at A and B, extra sensors, firmware or parameter changes? | A tag at A fixes the frame; a tag at B is a precise goal | Tags allowed, firmware locked |
 | Q10 | What is handed in and judged: live runs, video, code, a slide deck? How many runs count? | Sets how much goes into reliability vs demo polish | Live run plus deck, best of 2 runs |
 
+### Why these defaults
+
+The old pair (Q5 "no obstacle sensor" + Q7 "unknown and moved") was the hard gate in
+[3.4](#34-q5-and-q6-sensors-and-venue-localization): no planner can avoid obstacles it cannot
+sense or look up, and no benchmark row covers it ([day1-dry-run blocker 5](day1-dry-run.md#blockers)).
+The new Q5 default is the cheapest obstacle sensor a small indoor drone usually carries, and the
+arena's `crazyflie` preset models it, so every number below has a measured row. With it, the
+defaults lead to a working stack: **`astar_unknown` + F2 range filter** from
+[close-area-benchmark](../samples/close-area-benchmark/README.md#results-ran-2026-11-09-synthetic)
+(4-beam preset, 20 layouts, seed 0, true pose, synthetic): random 100 / 0, u_trap 100 / 0,
+office 50 / 5, maze 55 / 0 reached / collision %. It does not work in warehouses (0 %) or glass
+rooms (5 % reached, 45 % collision), so ask for a floor plan as part of Q7: with a prior map,
+`astar_known` reached 100 % with 0 % collisions in every family on both sensors. If Q5 turns out
+to be "no obstacle sensor" after all, the gate in 3.4 still applies.
+
 ## 2. If we only get 3 answers
 
-Run these two smoke tests while the Lead asks (synthetic input; about 2 s each on the laptop
-that produced the quoted results):
+Run these two smoke tests while the Lead asks (synthetic input; about 2 s each once warm on the
+laptop that produced the quoted results). The first run on a fresh venv can take minutes of
+waiting: 75.69 s wall for 1.78 s CPU in the [dry run](day1-dry-run.md#4-smoke-tests-and-sample-venv-0-extra-hops-commands-are-in-intake-section-2),
+205.89 s for a cold `make first-flight`
+([flight-repo](../templates/flight-repo/README.md#brief-to-first-flight)). Run long commands with
+stdin closed (`< /dev/null`) or in the background so an agent shell does not hang:
 
 ```sh
 (cd templates/drone-adapter && python3 -m unittest -v && python3 example_loop.py)
 # expect: 10 tests OK (5 adapter + 5 driver smoke); goal=(5.0, 3.0, 1.0) final_distance_m=0.096 collided=False
 (cd samples/close-area-arena && uv venv .venv && uv pip install --python .venv -r requirements.txt \
-  && .venv/bin/python run.py --planner straight --layouts 20 --seed 0)
+  && .venv/bin/python run.py --planner straight --layouts 20 --seed 0 --out /tmp/arena < /dev/null)
 # expect: straight baseline reached 40 %, collision 0 %, stuck 60 %
 ```
+
+Keep `--out /tmp/arena`: without it the run overwrites the sample's committed
+`results/straight_random_0.*`.
 
 Both numbers are synthetic, from [drone-adapter results](../templates/drone-adapter/results/2026-11-09-mock-run.txt),
 [driver smoke run](../templates/drone-adapter/drivers/results/2026-11-09-smoke-run.txt)
@@ -83,12 +108,16 @@ Then pick one cell per row. Everything not asked takes the default in [section 1
 | GPS point | GNSS to get close, marker for the last metres ([03 section 5b](research/close-area-nav/03-close-area-localization.md#b-outdoor-gnss-available)) | 31, 32 |
 | Marker / pad / object | Bring it into view, then fiducial or detector as the goal | 32 |
 
-Fast-path stack in one line: **planner against `pose()` / `ranges()` / `send_setpoint()`, developed
-in close-area-arena, ported through the Q1 driver, with the Q3 goal pipeline, a PX4-CBF style
-range filter under the planner, and relocalization after VIO loss as the headline**
-([close-area-relocalize](../samples/close-area-relocalize/README.md); the integrity-aware
-safety filter failed its held-out kill test,
-[Part e](../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic)).
+Fast-path stack in one line: **planner against `pose()` / `ranges()` / `send_setpoint()`, picked
+from the [close-area-benchmark](../samples/close-area-benchmark/README.md) row for the room and
+sensor (`astar_known` with a map; `astar_unknown`, plus F2 on a 4-beam fan, without), developed in
+close-area-arena, ported through the Q1 driver, with the Q3 goal pipeline.** For the innovation
+story, pitch the measured toolkit plus the narrow claim that fits the brief
+([decision](research/README.md#decision-2026-11-09-evening-what-the-close-area-innovation-claim-is)):
+relocalization after VIO loss in an open room with a dense sensor
+([close-area-relocalize](../samples/close-area-relocalize/README.md)), or the range filter when
+people move. The integrity-aware safety filter failed its held-out kill test
+([Part e](../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic)).
 
 ## 3. Decision tree
 
@@ -180,6 +209,11 @@ Each leaf names the hub paths to open. Status words come from
     use F2 (PX4-CBF) under the planner. Complex rooms: `--family office / warehouse / forest /
     maze / glass_office` (known-map A* 100 % on all five, 20 layouts,
     [complex arenas](../samples/close-area-arena/README.md#complex-arenas-ran-2026-11-09-synthetic)).
+    Which planner per room and sensor: [close-area-benchmark](../samples/close-area-benchmark/README.md)
+    (14 planners incl. D* Lite, DWA, Bug2, TangentBug; table in the
+    [cheat sheet](cheatsheets/close-area-a-to-b.md#3-which-planner-first)). Windows and bars:
+    `run_z.py` and `planners/astar_esdf_3d.py` (3D A* 100 % vs 2.5D 14 %,
+    [window_bar](../samples/close-area-arena/README.md#altitude-windows-and-bars-ran-2026-11-09-synthetic)).
   - Loop to fly them: [flight-repo](../templates/flight-repo/README.md) (`make sim` on the mock,
     `--planner arena:<name>` loads an arena planner unchanged; `make first-flight` flies arena A* +
     F2 and scores the log: reached in 19.76 s, synthetic,
@@ -242,6 +276,12 @@ Localization source, first match wins:
   - On VIO loss with a map or a first pass of the room => hover, scan-to-map relocalization and
     a short disambiguating move ([close-area-relocalize](../samples/close-area-relocalize/README.md#disambiguating-moves-after-a-hover-timeout-loop-22b):
     99-100 % reached, 0 wrong commits, against 36-64 % with the estimator alone; synthetic, known map).
+    Limits from the held-out runs: it holds on random and u_trap layouts only; office 94.4 %,
+    glass_office 83.3 %, narrow_gap 85.6 %, warehouse 33 wrong commits per 180 runs; 48-64 % on a
+    4-beam fan even with a yaw-spin; 7 % collisions with unmapped added obstacles
+    ([held-out matrix](../samples/close-area-relocalize/README.md#held-out-matrix-seeds-2-4-7-families-harder-faults-loop-56),
+    [4-beam](../samples/close-area-relocalize/README.md#relocalization-with-a-4-beam-sensor-hover-and-yaw-spin-loop-54),
+    [stale map](../samples/close-area-relocalize/README.md#imperfect-prior-map-loop-55)).
 - **Optical flow + downward rangefinder only** => position is integrated velocity and drifts;
   fine for short offsets from A, weak for venue coordinates. Needs textured floors.
 - **Outdoor with GNSS** => [03 section 5b](research/close-area-nav/03-close-area-localization.md#b-outdoor-gnss-available); VIO as fallback.
@@ -259,6 +299,10 @@ Obstacle sensing:
   memory or a map, or slow down hard. The arena's `crazyflie` preset (4 x 27 deg cones, 3.0 m)
   hits glass in 90-100 % of glass-family runs
   ([sensor realism](../samples/close-area-arena/README.md#sensor-realism-crazyflie-presets-and-glass-ran-2026-11-09-synthetic)).
+  This is the Q5 default. Without a map the benchmark's best 4-beam stack is `astar_unknown` + F2:
+  office 50 % reached / 5 % collision, maze 55 / 0, warehouse 0 / 0
+  ([close-area-benchmark](../samples/close-area-benchmark/README.md#preset-crazyflie)); with a map
+  `astar_known` 100 / 0.
 - **None** => known-map planning only. Unknown obstacles + no sensor is a hard gate: ask the
   organisers again before committing (day-0 [hard gates](day0-runbook.md#2-pick-the-idea-scoring-rubric)).
 
@@ -266,8 +310,9 @@ Obstacle sensing:
 
 - **Known in advance, static** => plan once on the given map (A* or PRM, [OMPL card](integration-cards/ompl__ompl.md));
   ArduPilot: enter them as stay-out polygons for Dijkstra's as a fallback layer.
-- **Unknown** => three-state map (unknown / free / occupied), unknown at a cost penalty, replan at
-  2-5 Hz, keep a brake-to-hover trajectory ([01 section 5a](research/close-area-nav/01-planning-and-mapping.md#5a-pure-python-sim-target-flying-ab-through-obstacles-by-hour-4-6)).
+- **Unknown** (the default) => three-state map (unknown / free / occupied), unknown at a cost penalty, replan at
+  2-5 Hz, keep a brake-to-hover trajectory; `astar_unknown` in the benchmark, + F2 on a 4-beam fan
+  ([cheat sheet table](cheatsheets/close-area-a-to-b.md#3-which-planner-first)) ([01 section 5a](research/close-area-nav/01-planning-and-mapping.md#5a-pure-python-sim-target-flying-ab-through-obstacles-by-hour-4-6)).
   Replan cost: a 200 x 200 x 50 scipy EDT took 183 ms median on an M3 Max (synthetic grid,
   [edt_timing.json](../samples/close-area-arena/results/edt_timing.json)).
 - **Moved between runs** => never hard-code a path; show a replan on a moved obstacle
@@ -354,7 +399,9 @@ The pitch switches to H1, relocalization after VIO loss
   [fiducial-goal-apriltag](../samples/fiducial-goal-apriltag/) is synthetic only.
 - gap: no close-area starter bundle in [starter-bundles.md](starter-bundles.md) or the offline kit.
 - gap: no Tello sim, no DJI MSDK or Olympe path on the Mac, no driver for an organiser-provided sim.
-- gap: no 3D arena (altitude changes, overhangs) and no recorded close-area obstacle flight.
+- Filled 2026-11-09 (loop-61 refresh): planner benchmark (14 planners x 8 families x 2 sensors), 3D
+  `window_bar` family with a 3D A* on a prior map, D* Lite, DWA and Bug planners, browser playground. All synthetic.
+- gap: no 3D unknown-map planner, no up / down sensing in the arena, and no recorded close-area obstacle flight.
 - gap: the question order above was written before
   [06-task-phrasing-survey.md](research/close-area-nav/06-task-phrasing-survey.md) landed and is not
   yet checked against its revised question list (section 4).

@@ -57,6 +57,7 @@ Free-text search ranks a pasted problem statement poorly. Do this instead:
 Install convention for samples: `python3 -m venv .venv && .venv/bin/pip install -r requirements.txt`
 inside the sample folder, or the sample's Docker command. Never install into the global
 interpreter. Deviations are listed in `samples/README.md`.
+Run long commands (clone, venv install, first sample run) with stdin closed (`< /dev/null`) or in the background: in the Day-1 dry run a plain `git clone` hung past 120 s in an agent shell.
 
 ## Using the hub to answer a question
 

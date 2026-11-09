@@ -236,12 +236,13 @@
     "macos-arm64"
    ],
    "validation": "integrated",
-   "limitation": "Synthetic 2.5D arena, yaw is truth, exact prior map, perfect hover. Setup needs network for PyPI wheels (uv venv + uv pip install); cold setup time not measured; no network-denied run, so offline is unknown. README names an Apple M3 Max host; macOS assumed from the M3 Max host, Linux not tested.",
+   "limitation": "Synthetic 2.5D arena, exact prior map unless the stale-map ladder is run, perfect hover; yaw is truth except in the yaw-search runs. The headline holds on open layouts only (held-out matrix FAIL on office, warehouse, maze, narrow_gap, glass_office; 4-beam and added-obstacle runs FAIL). Setup needs network for PyPI wheels (uv venv + uv pip install); cold setup time not measured; no network-denied run, so offline is unknown. README names an Apple M3 Max host; macOS assumed from the M3 Max host, Linux not tested.",
    "evidence": [
     "samples/close-area-relocalize/README.md",
     "samples/close-area-relocalize/sample.json",
     "samples/close-area-relocalize/results/reloc_random_0.json",
-    "samples/close-area-relocalize/results/disamb_random_1.md"
+    "samples/close-area-relocalize/results/disamb_random_1.md",
+    "samples/close-area-relocalize/results/reloc_matrix_matrix.md"
    ]
   }
  },
@@ -297,6 +298,24 @@
     "samples/fiducial-goal-apriltag/README.md",
     "samples/fiducial-goal-apriltag/sample.json",
     "samples/fiducial-goal-apriltag/results/final_approach.json"
+   ]
+  }
+ },
+ "close-area-benchmark": {
+  "readiness": {
+   "compute": "cpu",
+   "hardware": "none",
+   "offline": "unknown",
+   "download_mb": 0,
+   "platforms": [
+    "macos-arm64"
+   ],
+   "validation": "integrated",
+   "limitation": "Synthetic 2.5D arena, true pose, exact prior map for the prior-map rows; 20 layouts per cell, seed 0 only. The full matrix wants many cores (timed with 14 worker processes). Setup needs network for PyPI wheels (uv venv + uv pip install, osqp included); cold setup time not measured; no network-denied run, so offline is unknown. README names an Apple M3 Max host (macOS arm64); Linux not tested.",
+   "evidence": [
+    "samples/close-area-benchmark/README.md",
+    "samples/close-area-benchmark/sample.json",
+    "samples/close-area-benchmark/results/matrix_0.json"
    ]
   }
  }

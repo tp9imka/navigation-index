@@ -19,8 +19,16 @@ images), not SITL or flight:
 kill test, relocalization, moving obstacles, sensor presets and complex arenas (all synthetic).
 Numbers: [evidence matrix section 14](../../evidence-matrix.md#14-close-area-ab). The headline's
 kill test ran to a verdict. **Verdict after held-out seeds (Part e, synthetic):** FAIL. A hand-tuned fixed bound (MR-CBF 0.2 m) stays at <= 1 % collisions in every case on seeds 0-2; ours (F5, PL margin + hover on ambiguity) collides in 2.5 % [1.1, 5.7] of held-out jump runs and reaches B less often. Headline moves to relocalization after VIO loss; the range filter under any planner and the integrity monitor remain supporting results ([close-area-safety-filter](../../../samples/close-area-safety-filter/README.md)).
-The recommended headline is now relocalization after VIO loss
-([close-area-relocalize](../../../samples/close-area-relocalize/README.md)). Docs 01-04 read most
+**Status after loop-61 (2026-11-09):** the planner question is answered by measurement, not by
+the lane docs: [close-area-benchmark](../../../samples/close-area-benchmark/README.md) flies 14
+planners x 8 room families x 2 range sensors (20 layouts per cell, synthetic). With a prior map A*
+reached 100 % with 0 % collisions everywhere; without one, 4 beams break offices, warehouses and
+glass rooms. Picks per family and sensor: [cheat sheet section 3](../../cheatsheets/close-area-a-to-b.md#3-which-planner-first).
+The relocalization headline was narrowed by its own held-out runs (open layouts and a dense sensor
+only), and its mechanism exists ([10](10-relocalization-prior-art.md)). Decision: pitch the
+measured toolkit plus the narrow claim that fits the real brief
+([research README, decision](../README.md#decision-2026-11-09-evening-what-the-close-area-innovation-claim-is)).
+Docs 01-04 read most
 papers as abstracts only; 05 read its four baselines in full. Each doc labels its sources
 and has a "not verified" section.
 
@@ -35,6 +43,7 @@ and has a "not verified" section.
 | [07](07-pl-margin-prior-art.md) kill search for the headline | You pitch the headline and must say what is new | **The idea as first worded exists.** Tan et al. IROS 2025 (Caltech + TII, PX4 X500 with a geofence) and Zhang, Li, Clark TAC 2025 (fault-excluded EKF bank feeding a CBF) already set safety margins from fault-excluded estimates. What survives is a composition, see below |
 | [08](08-crazyflie-sensing-limits.md) Crazyflie sensing limits | The platform is a Crazyflie with Multi-ranger and Flow decks, or you set arena sensor realism | Four 27 deg beams see 30 % of the horizontal circle; obstacles passed close drop out of view; glass is invisible (BatDeck preprint: one forward ranger crashed in 10 of 10 real flights, mostly at glass doors); range falls from about 3.6 m in the dark to about 0.73 m in strong light; 10 Hz. Derived geometry, not measured. Its "crazyflie" preset is now in the arena: glass-family collisions 90-100 % ([sensor realism](../../../samples/close-area-arena/README.md#sensor-realism-crazyflie-presets-and-glass-ran-2026-11-09-synthetic), synthetic) |
 | [09](09-vio-nees-feasibility.md) VIO NEES feasibility | You want one measured number for VIO overconfidence | Plan, not run: yes, with OpenVINS on the UZH-FPV bag relative-nav-benchmark already uses (~21-29 min, needs a Docker build). Only OpenVINS writes a covariance; VINS-Fusion and ORB-SLAM3 do not. Published NEES: 131-363 vs 3 expected for a sliding-window VI filter on EuRoC (Lisus et al. RA-L 2023) |
+| [10](10-relocalization-prior-art.md) relocalization prior art | You pitch relocalization after VIO loss and must say what is new | Kill search for the second headline: the mechanism exists (Jensfelt and Kristensen 2001; AF-MCL on a small indoor drone), so claim no novelty |
 
 ## Findings that change the plan
 
@@ -55,12 +64,14 @@ and has a "not verified" section.
 
 ## Recommended direction
 
-Status after the kill test (2026-11-09, synthetic): the story below was the plan. Its headline
-(step 2) **failed on held-out seeds**, so the recommended headline is now **relocalization after
-VIO loss** ([close-area-relocalize](../../../samples/close-area-relocalize/README.md)): hover,
-scan-to-map matching with up to 5 hypotheses and a short info-gain move when they tie reached
-99-100 % with 0 wrong commits on seed 0 and held-out seed 1, against 36-64 % with the estimator
-alone; known map only. Pitch: [close-area story H1](../../../templates/pitch/close-area-story.md#3-alternative-hooks-if-the-kill-test-fails).
+Status after the kill tests (2026-11-09, synthetic): the story below was the plan. Its headline
+(step 2) **failed on held-out seeds**. The backup, **relocalization after VIO loss**
+([close-area-relocalize](../../../samples/close-area-relocalize/README.md)), reached 100 % with 0
+wrong commits on random and u_trap layouts (held-out seeds 2-4), against 36-64 % with the
+estimator alone, but failed in office, warehouse, maze, narrow_gap and glass_office, on a 4-beam
+sensor (48-64 %) and with unmapped added obstacles (7 % collisions); known map only. Final
+decision: [research README](../README.md#decision-2026-11-09-evening-what-the-close-area-innovation-claim-is).
+For the step-1 planner pick use [close-area-benchmark](../../../samples/close-area-benchmark/README.md). Pitch: [close-area story H1](../../../templates/pitch/close-area-story.md#3-alternative-hooks-if-the-kill-test-fails).
 Steps 1 and 3 and the range filter of step 2 still stand.
 
 The original story: **any planner gets the drone from A to B; our filter keeps it safe when the

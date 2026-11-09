@@ -12,9 +12,23 @@ SITL, no flight.
 
 ## Run
 
+Demo command first (the headline arm, held-out seed 1, from
+[demo-script-close-area](../../templates/demo-script-close-area.md)). `--out .venv/demo-out`
+keeps the committed `results/` untouched:
+
 ```sh
 cd samples/close-area-relocalize
 uv venv .venv && uv pip install --python .venv -r requirements.txt
+.venv/bin/python run_disambiguate.py --layouts 100 --seed 1 --arms single,multi,multi_ig --out .venv/demo-out < /dev/null
+.venv/bin/python -c "import json; R=json.load(open('.venv/demo-out/disamb_random_1.json'))['results']['jump']; [print(a, R[a]['runs'][97]['outcome'], [(e['t_trigger'], e['recover_s'], e['result'], e['err_m']) for e in R[a]['runs'][97]['events']]) for a in ('single','multi','multi_ig')]"
+# expect: the table rows of results/disamb_random_1.md, then: single reached (0.6281 m commit at 13.0 s),
+# multi stuck (event at 13.0 s still open), multi_ig reached (accepted after 1.7 s at 0.0748 m)
+```
+
+The demo took 55.31 s wall in the [Day-1 dry run](../../docs/day1-dry-run.md#blockers) on a loaded
+machine; the first run on a fresh venv can wait longer. Full experiments:
+
+```sh
 .venv/bin/python experiment.py --layouts 100 --seed 0     # 71 s wall on 8 workers
 .venv/bin/python experiment.py --corridor --runs 20       # 21 s, symmetric corridor case
 .venv/bin/python tune.py                                  # 18 s, seed-1 threshold calibration
@@ -349,9 +363,7 @@ Limits:
 - Collision locations and materials were not logged.
 - Wrong commits are counted at the accepted scan, as above.
 
----end section---
 
-Next action: paste the section above into `samples/close-area-relocalize/README.md` and add the evidence-matrix rows.
 
 ## Relocalization with a 4-beam sensor: hover and yaw-spin (loop-54)
 

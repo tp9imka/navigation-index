@@ -47,18 +47,52 @@ real loop with [flight-repo](../../templates/flight-repo/README.md) (`make sim`,
 
 ## 3. Which planner first
 
+Read the [close-area-benchmark](../../samples/close-area-benchmark/README.md#results-ran-2026-11-09-synthetic)
+matrix before writing a planner: 14 planners x 8 room families x 2 range sensors, 20 layouts per
+cell, seed 0, true pose, synthetic. Cell = reached % / collision %. "Ideal" = 72 rays, 6 m, sees
+glass. "4 beams" = the Crazyflie-like preset (4 x 27 deg cones, 3 m, glass invisible). Try the
+picks in the browser: [playground](../../site/playground/index.html) (its advisor panel shows the
+same table; it stops runs at 60 s, the benchmark allowed 120 s on maze and warehouse).
+
+| Family | With a map (both sensors) | Without a map, ideal | Without a map, 4 beams |
+|---|---|---|---|
+| random clutter | `astar_known` 100 / 0 | `astar_unknown` 100 / 0 | `astar_unknown`, `astar_unknown_f2` or `dstar_lite` 100 / 0 |
+| u_trap | `astar_known` 100 / 0 | `astar_unknown` 100 / 0 | `astar_unknown_f2` or `dstar_lite` 100 / 0 |
+| narrow_gap (0.5-0.9 m) | `astar_known` 100 / 0 | `astar_unknown` 90 / 0 | `astar_unknown` 25 / 5 (weak) |
+| office | `astar_known` 100 / 0 | `astar_unknown` 95 / 0 | `astar_unknown_f2` 50 / 5 |
+| warehouse | `astar_known` 100 / 0 | `astar_unknown` 55 / 0 | none works: `bug2` 15 / 20 reaches most, `astar_unknown_f2` 0 / 0 is safest |
+| forest (open poles) | `astar_known` 100 / 0 | `astar_unknown` 100 / 0 (reactive planners tie) | `dstar_lite` 100 / 0 |
+| maze | `astar_known` 100 / 0 | `astar_unknown` 95 / 0 | `astar_unknown_f2` 55 / 0 |
+| glass_office | `astar_known` 100 / 0 | `astar_unknown` 95 / 0 | none works: `dstar_lite` 10 / 65; `freest_beam` or `dwa_mem` 5 / 5 are safest |
+
+How to read it:
+
+- **Get a map if you can.** A floor plan, a layout file or one slow first pass of the room. All
+  three prior-map planners (`astar_known`, `informed_rrt_star`, `astar_mpc`) score 100 / 0 in all
+  16 cells; start from `astar_known` (`planners/astar_esdf.py`). Informed RRT* needed more than
+  60 s in 30 of its 40 maze + warehouse successes. The map is exact and the pose true here, so
+  100 % is an upper bound.
+- **No map, dense sensor:** `astar_unknown` (`astar_esdf` with `known_map=False`). `dstar_lite`
+  ends the same way in 153 of 160 runs and searches a few times faster; it matters only on maps
+  beyond about 40 x 40 m ([close-area-planner-dstar](../../samples/close-area-planner-dstar/README.md)).
+- **No map, 4 beams:** `astar_unknown` + F2 range filter. It is the only map-free row at 50 % or
+  more in office and maze. Warehouse and glass rooms have no working map-free planner: ask for the
+  map. On 72 beams do not put F2 under it by default: it freezes in doors and aisles (0 % reached
+  in office, warehouse, maze, narrow_gap and glass_office).
+- **Reactive planners** (APF, VFH+, DWA, Bug2, TangentBug) only fit open clutter: 0-40 % in
+  office, warehouse and maze on ideal. On 4 beams, 3 s of scan memory cuts DWA collisions sharply
+  (office 55 => 0 %), at the cost of runs ending stuck.
+
+Situations the matrix does not cover:
+
 | Situation | Start with | Why |
 |---|---|---|
-| Map given, or dense ranges / depth to build one | `planners/astar_esdf.py` | Known map reached 100 % on all three families; it is the planner the safety filter sits on |
-| No map yet, testing estimator faults | `freest_beam` (inside `run_faults.py`) | Range-only, so faults cut reach, not safety; A* under faults is in [close-area-safety-filter](../../samples/close-area-safety-filter/README.md) |
-| No map, sparse ranges (Crazyflie Multi-ranger) | APF with escape ([close-area-planner-reactive](../../samples/close-area-planner-reactive/README.md)) | Escape gets out of the U trap; VFH+ collides more on 4 beams. Add scan memory or slow down |
-| Moving obstacles (people walking through) | A* replan + F2 range filter ([close-area-moving-obstacles](../../samples/close-area-moving-obstacles/README.md)) | A* alone collided in 14-36 % of runs; with F2 0 %, 16 % stuck; APF 0-2 % (synthetic) |
-| Complex rooms (office, warehouse, forest, maze) | `planners/astar_esdf.py` with `--family office` etc. ([complex arenas](../../samples/close-area-arena/README.md#complex-arenas-ran-2026-11-09-synthetic)) | Known-map A* 100 % reached on all five families, straight 0-15 % (20 layouts each, synthetic) |
+| Moving obstacles (people walking through) | A* replan + F2 range filter ([close-area-moving-obstacles](../../samples/close-area-moving-obstacles/README.md)) | A* alone collided in 14-36 % of runs; with F2 0 %, 16 % stuck; APF 0-2 % |
+| Windows, bars, B at another height | `planners/astar_esdf_3d.py` on a prior 3D map ([window_bar](../../samples/close-area-arena/README.md#altitude-windows-and-bars-ran-2026-11-09-synthetic)) | 2.5D at 1 m reached 14 %, 3D 100 %, 0 % collisions (50 layouts) |
+| Estimator faults, no map | `freest_beam` (inside `run_faults.py`) | Range-only, so faults cut reach, not safety; A* under faults is in [close-area-safety-filter](../../samples/close-area-safety-filter/README.md) |
 | Goal B is a tag or pad | Any of the above to bring the tag into view, then [fiducial-goal-apriltag](../../samples/fiducial-goal-apriltag/README.md) `final_approach.py` | Tag-relative servo for the last metres |
 
 Do not start from `straight`: it never steers, so it is only the floor.
-`freest_beam` is a 15-line example from [CONTRACT.md](../../samples/close-area-arena/CONTRACT.md),
-not a tuned planner: it does not get out of the U trap or find the narrow gap.
 
 ## 4. Numbers you can cite
 
@@ -87,7 +121,8 @@ identical results.
 - First flight: `make first-flight` in [flight-repo](../../templates/flight-repo/README.md#brief-to-first-flight) flies arena A* + PX4-CBF through the 20 Hz loop: reached in 19.76 s, min clearance 0.83 m; with the VIO jump fault it ends `unconfirmed` 0.64 m from B instead of claiming arrival. One layout. Not re-run.
 - Corridor MPC (OSQP) vs the A* carrot follower, 50 layouts per family: both 100 % reached, 0 % collision; MPC 21.97 vs 24.23 s to goal through narrow gaps; QP 0.22 ms median on an M3 Max laptop. Not re-run ([close-area-planner-mpc](../../samples/close-area-planner-mpc/README.md)).
 - RRT* vs A* on the same grid: A* plans a 0.4 m gap in 100 % of layouts, RRT* with 1000 samples in 28.3 % (5000: 85.7 %); keep A* as the default. Not re-run ([close-area-planner-sampling](../../samples/close-area-planner-sampling/README.md)).
-- VIO lost, 100 layouts: no relocalization reached 64 % (dropout) / 36 % (jump); committing to the best scan-to-map match and re-checking it reached 100 % / 100 %, 0 % collisions, but with 2-4 wrong commits; a hover-until-unique rule deadlocks in a corridor (20 of 20). Hover plus a short info-gain move after 1 s: 99-100 % reached, 0 wrong commits, held-out seed 1 included; corridor 80 %. Not re-run ([close-area-relocalize](../../samples/close-area-relocalize/README.md#disambiguating-moves-after-a-hover-timeout-loop-22b)).
+- Benchmark, 20 layouts per cell: without a map on 4 beams, `astar_unknown` reaches office 35 % (25 % collision), warehouse 0 % (50 %), glass_office 5 % (65 %); with a map every prior-map planner 100 / 0. Not re-run ([close-area-benchmark](../../samples/close-area-benchmark/README.md)).
+- VIO lost, 100 layouts: no relocalization reached 64 % (dropout) / 36 % (jump); committing to the best scan-to-map match and re-checking it reached 100 % / 100 %, 0 % collisions, but with 2-4 wrong commits; a hover-until-unique rule deadlocks in a corridor (20 of 20). Hover plus a short info-gain move after 1 s: 99-100 % reached, 0 wrong commits, held-out seed 1 included; corridor 80 %. Not re-run ([close-area-relocalize](../../samples/close-area-relocalize/README.md#disambiguating-moves-after-a-hover-timeout-loop-22b)). Held-out seeds 2-4 narrowed it: 100 %, 0 wrong commits on random and u_trap only; office 94.4 %, glass_office 83.3 %, narrow_gap 85.6 %, warehouse 97.2 % with 33 wrong commits; 48-64 % on 4 beams with a yaw-spin; 7 % collisions with unmapped added obstacles ([held-out matrix](../../samples/close-area-relocalize/README.md#held-out-matrix-seeds-2-4-7-families-harder-faults-loop-56)).
 - Replan cost: a full 200 x 200 x 50 scipy EDT took 183 ms median on an M3 Max (synthetic grid),
   so a 20 x 20 x 5 m ESDF at 0.1 m fits a 2-5 Hz replan. Not re-run.
 - **Real dataset** reference for VIO drift: OpenVINS ATE 0.36 m over 278 m on UZH-FPV
@@ -141,20 +176,25 @@ before any planner flight. Rules per platform: [frames.md](../../templates/drone
 
 ## 7. Stretch goal
 
-The headline after the kill test: **relocalization after VIO loss.** On a VIO reset, a quality
-drop or a scan that no longer fits the map, hover, match the range scan against the map with up
-to 5 hypotheses, and fly one short collision-checked move when they tie. It never commits on a
-tie. Synthetic arena, known map only: 99-100 % reached with 0 wrong commits against 36-64 %
-with the estimator alone ([close-area-relocalize](../../samples/close-area-relocalize/README.md)).
-Pick it when a prior map or a first pass of the room exists.
+Both close-area headlines were narrowed by their own kill tests
+([decision](../research/README.md#decision-2026-11-09-evening-what-the-close-area-innovation-claim-is)).
+Pitch the measured toolkit (14 planners x 8 rooms x 2 sensors, the browser playground, the kill
+tests) plus the narrow claim that fits the real brief:
 
-The old headline, the **integrity-aware safety filter**, failed its held-out kill test: a
-hand-tuned fixed 0.2 m bound matched its safety and reached more
+- **Open room, dense range sensor, map given:** relocalization after VIO loss. Hover, match the
+  scan against the map with up to 5 hypotheses, fly one short collision-checked move when they
+  tie, never commit on a tie. 100 % reached with 0 wrong commits on random and u_trap, held-out
+  seeds 2-4 included; not in offices, warehouses, mazes or on 4 beams (section 4). Demo command:
+  first block of the [close-area-relocalize Run section](../../samples/close-area-relocalize/README.md#run).
+- **People walking through:** a range safety filter (PX4-CBF style) under any planner: 14-36 % =>
+  0 % collisions ([close-area-moving-obstacles](../../samples/close-area-moving-obstacles/README.md)).
+
+Claim novelty for neither: the relocalization mechanism exists (Jensfelt 2001, AF-MCL 2026,
+[doc 10](../research/close-area-nav/10-relocalization-prior-art.md)), and the integrity-aware
+safety filter failed: a hand-tuned fixed 0.2 m bound matched its safety
 ([Part e](../../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic)).
-Keep the range filter (PX4-CBF style) under the planner as a supporting piece: 0 % collisions
-with sensed obstacles under VIO faults and with walking people. Pitch:
-[close-area story](../../templates/pitch/close-area-story.md) (H1 is the relocalization story);
-demo: [demo-script-close-area](../../templates/demo-script-close-area.md).
+Pitch: [close-area story](../../templates/pitch/close-area-story.md); demo:
+[demo-script-close-area](../../templates/demo-script-close-area.md).
 
 ## 8. Links
 
@@ -167,6 +207,9 @@ demo: [demo-script-close-area](../../templates/demo-script-close-area.md).
   [fiducial-goal-apriltag](../../samples/fiducial-goal-apriltag/README.md),
   [close-area-planner-mpc](../../samples/close-area-planner-mpc/README.md),
   [close-area-planner-sampling](../../samples/close-area-planner-sampling/README.md),
+  [close-area-benchmark](../../samples/close-area-benchmark/README.md),
+  [close-area-planner-dstar](../../samples/close-area-planner-dstar/README.md),
+  [close-area-planner-dwa-bug](../../samples/close-area-planner-dwa-bug/README.md),
   [close-area-relocalize](../../samples/close-area-relocalize/README.md),
   [close-area-safety-filter](../../samples/close-area-safety-filter/README.md),
   [close-area-moving-obstacles](../../samples/close-area-moving-obstacles/README.md),

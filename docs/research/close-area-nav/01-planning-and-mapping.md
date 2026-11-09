@@ -126,6 +126,20 @@ Sources: [peer] Hornung et al. 2013 (OctoMap); [preprint, published IROS 2017] O
 
 ## 5. Fastest credible baseline
 
+**Built and measured since this was written (2026-11-09, synthetic only).** Recipe 5a exists as
+[close-area-arena](../../../samples/close-area-arena/README.md) (2.5D, plus a 3D `window_bar`
+family). Its baseline comparison (step 9) grew into
+[close-area-benchmark](../../../samples/close-area-benchmark/README.md): 14 planners x 8 room
+families x 2 range sensors, 20 layouts per cell. With a prior map, A* reached 100 % with 0 %
+collisions in every family on both sensors. Without a map, A* on a grid built from range returns
+(step 5) reached 55-100 % with 72 beams, but only 0-35 % in office, warehouse and glass_office
+with 4 Crazyflie-like beams. APF and the other reactive planners reached 0-40 % in office,
+warehouse and maze with 72 beams. Pick from the benchmark first
+([cheat sheet section 3](../../cheatsheets/close-area-a-to-b.md#3-which-planner-first)); the
+innovation decision is in the [research README](../README.md#decision-2026-11-09-evening-what-the-close-area-innovation-claim-is).
+Min-snap (step 6) and RotorPy or gym-pybullet-drones (step 8) were not used: the arena flies a
+carrot follower (or the corridor MPC) on a point mass.
+
 ### 5a. Pure-Python sim (target: flying A=>B through obstacles by hour 4-6)
 
 1. World: boxes and cylinders in a config file. Rasterise into a 3D occupancy grid at 0.1-0.2 m.
