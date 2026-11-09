@@ -35,11 +35,14 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [Network of GNSS-disciplined clocks: holdover from peers, spoof isolation by cross-node consistency, ADEV-weighted ensemble](../../catalog/samples/timing-network-holdover.md) - A stdlib-only simulation of six GNSS-disciplined sites (TCXO, OCXO, CSAC, Rb oscillators imported from timing-holdover) linked by PTP-like two-way time transfer with static path asymmetry, exponential queueing delay and 
 - [PX4 SITL GPS denial: inject, measure drift, recover](../../catalog/samples/px4-sitl-gps-denial.md) - Flies a square mission in PX4 SITL (SIH quadrotor, headless; Gazebo also works per PX4 docs), denies GPS mid-mission, logs EKF2 health and estimated vs ground-truth position, then restores GPS and returns home.
 
-## Guides (35)
+## Guides (40)
 
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](../../docs/landscape/blind-flight-teardown.md) - The closest real precedent we have for a navigation hackathon brief: a 48-hour case (26-28 June 2026, Krasnodar, track "Robotics and sensing") where teams had to find position, ground speed and heading of an aircraft fro
 - [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](../../docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md) - Research date 2026-11-09.
+- [03. Localization and state estimation for short-range A => B in a cluttered close area](../../docs/research/close-area-nav/03-close-area-localization.md) - Research lane, 2026-11-09, for EDGE hackathon Challenge 2.
 - [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2.
+- [05. CBF baselines for the idea C kill test, read faithfully](../../docs/research/close-area-nav/05-cbf-baselines-faithful.md) - Loop-05, 2026-11-09.
+- [07. Kill test for idea C: does a PL-margin safety filter already exist?](../../docs/research/close-area-nav/07-pl-margin-prior-art.md) - Prior-art scan, 2026-11-09 (loop-13).
 - [08. Crazyflie sensing limits: what the planner and safety filter can rely on](../../docs/research/close-area-nav/08-crazyflie-sensing-limits.md) - Research note, 2026-11-09 (loop-23).
 - [10. Kill test for the new headline: does relocalization after VIO loss already exist?](../../docs/research/close-area-nav/10-relocalization-prior-art.md) - Prior-art scan, 2026-11-09 (loop-57), copying the method of 07.
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) - After this chapter you know how navigation changes off the drone: what ships broadcast and how spoofing shows up in it, how vehicles navigate underwater where no radio reaches, how ground robots and pedestrians dead-reck
@@ -49,7 +52,9 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [Cheat sheets: pick one in 30 seconds](../../docs/cheatsheets/README.md) - One page per likely brief family, readable in 3 minutes on the day.
 - [Choose a stack you can run](../../docs/practical-readiness.md) - Start with the problem decoder, then narrow the candidates by the resources in the room.
 - [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) - Use this when the brief says A to B, obstacles, indoor, arena, close area, or a marker / pad at B, and you need the baseline, the localization stack or the headline idea.
+- [Close-area A=>B: how real events specify the task](../../docs/research/close-area-nav/06-task-phrasing-survey.md) - Lane 6 of the close-area research pass (loop-12, 2026-11-09).
 - [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) - Written 2026-11-09 for Challenge 2 (entry point).
+- [Close-area A=>B: simulators, platforms, competition formats](../../docs/research/close-area-nav/02-sims-platforms-competitions.md) - Lane 2 of the close-area research pass (2026-11-09).
 - [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) - Fill this on Day 2 when the task is "fly a drone from A to B in a close area, with obstacles".
 - [Day-1 dry run: close-area A=>B, one agent, no team (loop-58)](../../docs/day1-dry-run.md) - Next action if you are on Day 1: read the blockers table first, then follow the runbook.
 - [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) - Next action on Day 1: ask questions 1-3 of section 1, then open section 2 for the stack.

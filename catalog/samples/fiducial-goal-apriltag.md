@@ -35,6 +35,7 @@ Renders a tag36h11 AprilTag (0.16 m, also 0.40 m) onto a textured wall with a 64
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [03. Localization and state estimation for short-range A => B in a cluttered close area](../../docs/research/close-area-nav/03-close-area-localization.md) (mentions)
 - [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) (mentions)
 - [Research rounds: which one applies, and the innovation story per brief](../../docs/research/README.md) (mentions)
 

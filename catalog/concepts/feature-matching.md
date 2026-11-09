@@ -13,8 +13,9 @@ Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 - [License-clean drone frame to orthophoto geolocalization (ALIKED / DISK / SIFT + LightGlue)](../../catalog/samples/geoloc-license-clean.md) - Drone frame => NAIP orthophoto => lat/lon using only permissively licensed parts: ALIKED (BSD-3), DISK and LightGlue weights (Apache-2.0), OpenCV SIFT and MAGSAC (Apache-2.0), rasterio, public-domain NAIP from Microsoft 
 - [Night / thermal UAV frame to RGB satellite geolocalization with a no-false-fix gate (ALIKED / DISK / SIFT + LightGlue, SGM baseline, Thermal-UAV)](../../catalog/samples/thermal-geolocalization.md) - Real nadir DJI M4T thermal frames (Thermal-UAV / SCC-Loc, Apache-2.0 card) matched against the dataset's 0.3 m RGB satellite GeoTIFF, by condition: city and village, day and night, day and night fog.
 
-## Guides (7)
+## Guides (8)
 
+- [03. Localization and state estimation for short-range A => B in a cluttered close area](../../docs/research/close-area-nav/03-close-area-localization.md) - Research lane, 2026-11-09, for EDGE hackathon Challenge 2.
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) - After this chapter you can explain how a camera, LiDAR or radar measures motion, what SLAM adds on top of odometry, and which open stack to run on which sensor.
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) - After this chapter you can explain the five main ways to get an absolute position without GNSS - image-to-map matching, terrain matching, magnetic anomaly matching, celestial fixes and signals of opportunity - pick the o
 - [Cheat sheets: pick one in 30 seconds](../../docs/cheatsheets/README.md) - One page per likely brief family, readable in 3 minutes on the day.

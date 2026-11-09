@@ -21,8 +21,9 @@ Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [Shared pose recording and replay: JSONL plus optional MCAP](../../catalog/samples/recording-replay.md) - A deterministic synthetic local-ENU pose stream replayed through JSONL and optional MCAP with an embedded schema.
 - [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) - Stdlib-only ground-vehicle loop on a real NCLT Segway session (2013-01-10, 1022 s, 1139 m, 42 MB download): consumer GPS at 1 Hz fused with MEMS strapdown INS (the 8-state EKF of gnss-ins-ekf-outage, imported), wheel spe
 
-## Guides (35)
+## Guides (37)
 
+- [03. Localization and state estimation for short-range A => B in a cluttered close area](../../docs/research/close-area-nav/03-close-area-localization.md) - Research lane, 2026-11-09, for EDGE hackathon Challenge 2.
 - [08. Crazyflie sensing limits: what the planner and safety filter can rely on](../../docs/research/close-area-nav/08-crazyflie-sensing-limits.md) - Research note, 2026-11-09 (loop-23).
 - [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) - Loop-24, 2026-11-09.
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) - After this chapter you can explain the five main ways to get an absolute position without GNSS - image-to-map matching, terrain matching, magnetic anomaly matching, celestial fixes and signals of opportunity - pick the o
@@ -32,6 +33,7 @@ Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [Choose a stack you can run](../../docs/practical-readiness.md) - Start with the problem decoder, then narrow the candidates by the resources in the room.
 - [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) - Use this when the brief says A to B, obstacles, indoor, arena, close area, or a marker / pad at B, and you need the baseline, the localization stack or the headline idea.
 - [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) - Written 2026-11-09 for Challenge 2 (entry point).
+- [Close-area A=>B: simulators, platforms, competition formats](../../docs/research/close-area-nav/02-sims-platforms-competitions.md) - Lane 2 of the close-area research pass (2026-11-09).
 - [Dataset cards](../../docs/dataset-cards/README.md) - Use this when you need recorded data to test a navigation method: which dataset fits, its checked size and license, the download command, and what to fetch before venue Wi-Fi fails.
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) - What a 4-5 person team does from the moment the problem statement drops until H+3, when a walking skeleton should run end to end.
 - [Day-1 dry run: close-area A=>B, one agent, no team (loop-58)](../../docs/day1-dry-run.md) - Next action if you are on Day 1: read the blockers table first, then follow the runbook.
