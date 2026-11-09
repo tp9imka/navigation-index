@@ -58,3 +58,8 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - landed: 31I => 3b25e5c (5 index READMEs get trigger lines and the standard table; SPRIN-D digest indexed; close-area-nav 1 hop from landscape/primer/paper-digests). Follow-ups for a tooling job: md_plain mangles 'A=>B'; GUIDE_GLOBS skip paper-digests and dataset-cards READMEs; card_index.py trigger line.
 - landed: 31E => e7f45ae (docs/research/README.md index; driver replaced stale 'kill test not in checkout' status with part a results; linked from docs/README). Doc 04 still has abstract-only labels outside 3.1 => follow-up.
 - landed: 31D => d705042 (close-area-a-to-b cheat sheet; Challenge 2 section 4.1 close-area working set; Day-0 runbook close-area branch; worker re-ran 4 first commands, identical numbers). AGENTS.md now links the sheet directly.
+
+## 2026-11-09 re-plan 1 (fable, base a766e5e)
+- added 34-45; dropped 17; parked 26; 06 part c folded into 37; 28 amended (tuned/held-out column) to run last.
+- risk noted: do not write PASS for the headline before 37 (held-out seeds).
+- launched wave 4: 35, 36, 38, 43.
