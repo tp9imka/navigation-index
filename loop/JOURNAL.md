@@ -68,3 +68,7 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - landed: 06b => fe3bb5f (job timed out after results; driver applied the patch and wrote README Part b from result files). KEY: MR-CBF fixed eps 0.2 m => 0-1 % collisions in all fault cases with unsensed obstacles at F2-level reach. Ours must beat that. Belief-CBF misses jumps (9 %). Claims checked 2/2: summary table matches json-derived md; smoke passes in venv.
 - landed: 06c => 559d7d8 (timed out, applied by driver; PL breaches <= 1.3e-4 in all faults; median PL 0.41-0.59 m; maxsep wrong exclusions 9-19 runs). Item 34 unblocked.
 - landed: 22b/33 => 5683770 (random layouts: info-gain move 99-100 % reached, 0 wrong commits vs single 100 % with 2-4; corridor 70-80 % vs single 100 % with 8 wrong commits; driver ran held-out seed 1: same picture). Item 39 (pivot kit) unblocked.
+
+## 2026-11-09 wave 5 (Ivan: more arenas, more algorithms, a playground)
+- added 46-50; recommendation: playground runs the real Python arena via Pyodide (one implementation), gated on the 48a timing spike.
+- launched 46a, 48a, 49, 50.

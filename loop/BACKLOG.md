@@ -76,6 +76,12 @@ Initial backlog: fable brainstorm, 2026-11-09, base dbafbff.
 | 44 | ready | Showcase 2: Challenge 2 preset link, headline status card, kill-test F0 vs F2 replay with unsensed pole, relocalize hypotheses replay | T | S | 34 soft | site/index.html, site/showcase.*, site/data/showcase/, two export_replay.py | Judges see the kill test as a picture | both replays render in headless Chrome; site tests pass |
 | 45 | ready | Altitude: window-and-bar family, 3D A* picks altitude, vs 2.5D planner | P | M | - | samples/close-area-arena world_z.py, planners/astar_esdf_3d.py, vehicle_z.py | IMAV elements are over/under/through | 2.5D vs 3D reach, plan ms, side-view PNG |
 
+| 46 | in-flight 46a | Complex arenas: office, warehouse, forest, maze, glass_office + world JSON format (a); benchmark matrix of every algorithm x every arena with replay export (b) | P | M | 01 B | samples/close-area-arena worlds_complex.py, world_json.py (a); samples/close-area-benchmark/ (b) | Ivan asked for 3-4+ harder arenas | 5 families, preview PNG, sanity table; matrix table |
+| 47 | ready | Showcase v2: replay picker grouped by arena and algorithm, side-by-side compare | T | S | 46b B | site/showcase.*, site/data/showcase/ | Ivan liked the replay; more arenas and algorithms | renders in headless Chrome; site tests pass |
+| 48 | in-flight 48a | Playground: Pyodide runs the real arena code in the browser; editor (draw obstacles, A/B, presets), pick planner / sensor / fault / filter, run + replay + score; compare mode | T | M (a spike, b editor+run, c compare) | 46a soft | site/playground/ | Ivan asked for a playground | 48a timing verdict; 48b working page on Pages |
+| 49 | in-flight | DWA and Bug2/TangentBug local planners vs APF/VFH+ (72 and 4 beams) | P | S | - | samples/close-area-planner-dwa-bug/ | Nav2 default local planner and classic complete planners | table on 3 families x 2 fans |
+| 50 | in-flight | D* Lite incremental replanning vs A* from scratch on unknown maps | P | S | - | samples/close-area-planner-dstar/ | Does incremental search matter here | table + plan-time comparison |
+
 ## Planned waves
 
 - Wave 1: 01, 02a, 05, 07, 09, 12, 13. Then 27.
