@@ -108,3 +108,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 
 ## 2026-11-09 wave 7 (Ivan: proceed with another round)
 - launched 59 (+ dry-run blocker 2), 61 (sweep 4 + blockers 1, 3, 4, 5, 8), 63 (+ blocker 7), 64, 67. Blocker 6 already fixed in the wrap-up.
+- landed: 61 => 2a3df1d (sweep 4; decode 'warehouse 4 beams which planner' => row 31 with the benchmark first; intake defaults rebuilt; blockers 1,3,4,5,8 fixed; driver applied 5 follow-up edits)
