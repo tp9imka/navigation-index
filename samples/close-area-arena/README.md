@@ -152,6 +152,25 @@ Followers: a linear corridor MPC (OSQP, 0.22 ms median solve) matches the carrot
 ([close-area-planner-mpc](../close-area-planner-mpc/README.md)); sampling planners vs A*:
 [close-area-planner-sampling](../close-area-planner-sampling/README.md).
 
+## Sensor realism: Crazyflie presets and glass (ran 2026-11-09, synthetic)
+
+`presets.py` (ideal, crazyflie 4 x 27 deg cones at 3.0 m, crazyflie_bright 0.73 m, values from
+[doc 08](../../docs/research/close-area-nav/08-crazyflie-sensing-limits.md)), `sensors_cone.py`
+(cone beams, materials: glass returns nothing) and `world_glass.py` (glass panels and 0.02-0.05 m
+poles near the A-B line). `.venv/bin/python run_sensors.py --layouts 50 --seed 0` (about 11 min):
+
+| planner | family | ideal reached / collision % | crazyflie | crazyflie_bright |
+|---|---|---|---|---|
+| freest_beam | random | 86 / 0 | 54 / 2 | 58 / 0 |
+| freest_beam | glass | 82 / 4 | 0 / 90 | 0 / 96 |
+| astar_esdf unknown map | random | 100 / 0 | 98 / 2 | 62 / 38 |
+| astar_esdf unknown map | glass | 90 / 10 | 0 / 100 | 0 / 100 |
+
+A drone that only trusts its rangers hits glass almost every time, and bright light breaks a
+4-beam map-building planner even in plain rooms. Glass is placed on the A-B line by design, so
+this measures the cost of the unsensed class, not a typical room. Details:
+[results/sensors_notes.md](results/sensors_notes.md).
+
 ## Scoring a flight log (sim or real)
 
 `score_log.py` scores any JSONL flight log in the [log_format.md](log_format.md) format (numpy +
