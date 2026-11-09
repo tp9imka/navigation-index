@@ -1,0 +1,285 @@
+{
+ "input": "synthetic",
+ "seed": 1,
+ "layouts": 20,
+ "poses_per_layout": 15,
+ "spin": {
+  "scans": 17,
+  "step_rad": 0.1
+ },
+ "command": "python run_sparse.py --tune",
+ "window": "centred 0.5 m off truth, +-2 m",
+ "variants": {
+  "cone_raw": {
+   "poses": 300,
+   "median_returns": 24.0,
+   "too_few_returns": 69,
+   "score_at_truth_p5_p50": [
+    0.264,
+    0.382
+   ],
+   "matched": 231,
+   "best_wrong": 128,
+   "rule_grid": {
+    "ratio 1.02 s_min 0.6": {
+     "pass": 64,
+     "pass_wrong": 29
+    },
+    "ratio 1.02 s_min 0.7": {
+     "pass": 42,
+     "pass_wrong": 19
+    },
+    "ratio 1.05 s_min 0.6": {
+     "pass": 42,
+     "pass_wrong": 18
+    },
+    "ratio 1.05 s_min 0.7": {
+     "pass": 29,
+     "pass_wrong": 13
+    },
+    "ratio 1.1 s_min 0.6": {
+     "pass": 24,
+     "pass_wrong": 6
+    },
+    "ratio 1.1 s_min 0.7": {
+     "pass": 16,
+     "pass_wrong": 5
+    },
+    "ratio 1.15 s_min 0.6": {
+     "pass": 14,
+     "pass_wrong": 3
+    },
+    "ratio 1.15 s_min 0.7": {
+     "pass": 10,
+     "pass_wrong": 2
+    }
+   }
+  },
+  "cone_open_drop0": {
+   "poses": 300,
+   "median_returns": 24.0,
+   "too_few_returns": 69,
+   "score_at_truth_p5_p50": [
+    0.556,
+    0.702
+   ],
+   "matched": 231,
+   "best_wrong": 102,
+   "rule_grid": {
+    "ratio 1.02 s_min 0.6": {
+     "pass": 137,
+     "pass_wrong": 39
+    },
+    "ratio 1.02 s_min 0.7": {
+     "pass": 100,
+     "pass_wrong": 34
+    },
+    "ratio 1.05 s_min 0.6": {
+     "pass": 103,
+     "pass_wrong": 27
+    },
+    "ratio 1.05 s_min 0.7": {
+     "pass": 75,
+     "pass_wrong": 24
+    },
+    "ratio 1.1 s_min 0.6": {
+     "pass": 59,
+     "pass_wrong": 5
+    },
+    "ratio 1.1 s_min 0.7": {
+     "pass": 40,
+     "pass_wrong": 5
+    },
+    "ratio 1.15 s_min 0.6": {
+     "pass": 39,
+     "pass_wrong": 0
+    },
+    "ratio 1.15 s_min 0.7": {
+     "pass": 24,
+     "pass_wrong": 0
+    }
+   }
+  },
+  "cone_open_drop1": {
+   "poses": 300,
+   "median_returns": 13.0,
+   "too_few_returns": 109,
+   "score_at_truth_p5_p50": [
+    0.742,
+    0.859
+   ],
+   "matched": 191,
+   "best_wrong": 84,
+   "rule_grid": {
+    "ratio 1.02 s_min 0.6": {
+     "pass": 85,
+     "pass_wrong": 8
+    },
+    "ratio 1.02 s_min 0.7": {
+     "pass": 85,
+     "pass_wrong": 8
+    },
+    "ratio 1.05 s_min 0.6": {
+     "pass": 66,
+     "pass_wrong": 3
+    },
+    "ratio 1.05 s_min 0.7": {
+     "pass": 66,
+     "pass_wrong": 3
+    },
+    "ratio 1.1 s_min 0.6": {
+     "pass": 47,
+     "pass_wrong": 2
+    },
+    "ratio 1.1 s_min 0.7": {
+     "pass": 47,
+     "pass_wrong": 2
+    },
+    "ratio 1.15 s_min 0.6": {
+     "pass": 39,
+     "pass_wrong": 1
+    },
+    "ratio 1.15 s_min 0.7": {
+     "pass": 39,
+     "pass_wrong": 1
+    }
+   }
+  },
+  "cone_open_drop2": {
+   "poses": 300,
+   "median_returns": 19.0,
+   "too_few_returns": 80,
+   "score_at_truth_p5_p50": [
+    0.687,
+    0.789
+   ],
+   "matched": 220,
+   "best_wrong": 78,
+   "rule_grid": {
+    "ratio 1.02 s_min 0.6": {
+     "pass": 126,
+     "pass_wrong": 23
+    },
+    "ratio 1.02 s_min 0.7": {
+     "pass": 120,
+     "pass_wrong": 23
+    },
+    "ratio 1.05 s_min 0.6": {
+     "pass": 95,
+     "pass_wrong": 8
+    },
+    "ratio 1.05 s_min 0.7": {
+     "pass": 89,
+     "pass_wrong": 8
+    },
+    "ratio 1.1 s_min 0.6": {
+     "pass": 67,
+     "pass_wrong": 0
+    },
+    "ratio 1.1 s_min 0.7": {
+     "pass": 63,
+     "pass_wrong": 0
+    },
+    "ratio 1.15 s_min 0.6": {
+     "pass": 51,
+     "pass_wrong": 0
+    },
+    "ratio 1.15 s_min 0.7": {
+     "pass": 47,
+     "pass_wrong": 0
+    }
+   }
+  },
+  "cone_open_drop3": {
+   "poses": 300,
+   "median_returns": 23.0,
+   "too_few_returns": 72,
+   "score_at_truth_p5_p50": [
+    0.562,
+    0.712
+   ],
+   "matched": 228,
+   "best_wrong": 99,
+   "rule_grid": {
+    "ratio 1.02 s_min 0.6": {
+     "pass": 137,
+     "pass_wrong": 36
+    },
+    "ratio 1.02 s_min 0.7": {
+     "pass": 105,
+     "pass_wrong": 33
+    },
+    "ratio 1.05 s_min 0.6": {
+     "pass": 107,
+     "pass_wrong": 25
+    },
+    "ratio 1.05 s_min 0.7": {
+     "pass": 80,
+     "pass_wrong": 23
+    },
+    "ratio 1.1 s_min 0.6": {
+     "pass": 61,
+     "pass_wrong": 5
+    },
+    "ratio 1.1 s_min 0.7": {
+     "pass": 40,
+     "pass_wrong": 5
+    },
+    "ratio 1.15 s_min 0.6": {
+     "pass": 43,
+     "pass_wrong": 1
+    },
+    "ratio 1.15 s_min 0.7": {
+     "pass": 26,
+     "pass_wrong": 1
+    }
+   }
+  },
+  "ray_no_cone": {
+   "poses": 300,
+   "median_returns": 17.0,
+   "too_few_returns": 91,
+   "score_at_truth_p5_p50": [
+    0.786,
+    0.834
+   ],
+   "matched": 209,
+   "best_wrong": 81,
+   "rule_grid": {
+    "ratio 1.02 s_min 0.6": {
+     "pass": 100,
+     "pass_wrong": 0
+    },
+    "ratio 1.02 s_min 0.7": {
+     "pass": 100,
+     "pass_wrong": 0
+    },
+    "ratio 1.05 s_min 0.6": {
+     "pass": 76,
+     "pass_wrong": 0
+    },
+    "ratio 1.05 s_min 0.7": {
+     "pass": 76,
+     "pass_wrong": 0
+    },
+    "ratio 1.1 s_min 0.6": {
+     "pass": 58,
+     "pass_wrong": 0
+    },
+    "ratio 1.1 s_min 0.7": {
+     "pass": 58,
+     "pass_wrong": 0
+    },
+    "ratio 1.15 s_min 0.6": {
+     "pass": 47,
+     "pass_wrong": 0
+    },
+    "ratio 1.15 s_min 0.7": {
+     "pass": 47,
+     "pass_wrong": 0
+    }
+   }
+  }
+ },
+ "wall_s": 5.2
+}

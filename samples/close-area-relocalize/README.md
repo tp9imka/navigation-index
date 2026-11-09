@@ -352,3 +352,131 @@ Limits:
 ---end section---
 
 Next action: paste the section above into `samples/close-area-relocalize/README.md` and add the evidence-matrix rows.
+
+## Relocalization with a 4-beam sensor: hover and yaw-spin (loop-54)
+
+The headline above uses the arena's ideal 72-beam, 6 m fan. `ScanMatcher` needs at least 10
+finite returns per scan. The arena's `crazyflie` preset (Multi-ranger: 4 cones of 27 deg, front,
+left, back, right, 3 m, 5 % dropout, [presets.py](../close-area-arena/presets.py),
+[doc 08](../../docs/research/close-area-nav/08-crazyflie-sensing-limits.md)) gives at most 4. On
+that sensor the existing arms never get a hypothesis. This section adds a spin-stack variant and
+measures it. All inputs are **synthetic**.
+
+```sh
+.venv/bin/python run_sparse.py --layouts 100 --seed 0    # 245 s wall, 8 workers, 2 presets x 2 faults x 6 arms
+.venv/bin/python run_sparse.py --tune                    # 5 s, static seed-1 sweep behind the two new constants
+```
+
+Ran 2026-11-09 on an Apple M3 Max, CPython 3.11.15, numpy 2.4.6, scipy 1.17.1 (sample venv).
+
+[sparse.py](sparse.py), on top of `relocalize.py` and `disambiguate.py` (neither edited):
+
+- When VIO is lost (same triggers), hover. Once the raw estimate reads below 0.1 m/s (or 1 s after
+  the trigger), yaw-spin at `SPIN_RATE_RAD_S` = 1.0 rad/s (57 deg/s) while lost.
+- Each 10 Hz scan is stored with the raw estimator position and yaw. The stack is turned into one
+  pseudo-scan in the body frame of the current pose (the hover point). Matching starts after a
+  quarter turn: with 4 beams 90 deg apart, every bearing has then been seen once. After that, a
+  sliding window over the last quarter turn (17 scans) is matched on every scan.
+- Yaw comes from the IMU / gyro and is assumed good over a few seconds of spin. In the arena it is
+  truth (the estimator passes yaw through). Gyro bias and scale error are not modelled.
+- Cone correction (`cone_opening`). The arena cone reads the closest return in its 27 deg cone.
+  Along the centre ray that puts walls short of the map. Over a spin, the true range at a bearing
+  is at least every reading whose cone covers it, so the maximum of those readings recovers a flat
+  wall. A reading covered by 2 or more no-return readings is dropped (wall edge with open space
+  behind it).
+- Acceptance: the same `RatioPersistence`, with ratio 1.10 instead of 1.02 (`SPARSE_RATIO`).
+  S_MIN 0.6 and 3 scans in a row are unchanged. Arms (g) and (i) use it. Arm (h) commits to the best match at once.
+- (i) adds the info-gain move from `disambiguate.py`, 1 s after the stack is complete. The stack
+  is cleared while a move flies, and a new quarter turn is stacked at its end.
+
+Why the two constants ([results/sparse_tune_seed1.json](results/sparse_tune_seed1.json), 300
+static poses on seed 1, perfect hover, quarter-turn spin, window centred 0.5 m off truth,
+synthetic). Without the cone correction, the score at the true pose had median 0.38 (p5 0.26),
+below S_MIN 0.6. With the correction it was 0.79 (p5 0.69); with ideal 4-ray beams it was 0.83.
+At ratio 1.02, 23 of 126 passing matches were more than 0.5 m wrong. At 1.10, 0 of 67 were.
+
+**Results**, 100 random layouts, seed 0, A* known map, scored on truth
+([results/sparse_random_0.md](results/sparse_random_0.md), all columns and per-run events in the
+`.json`). The preset changes only the relocalizer's sensor; the planner does not read the scan.
+"Spin s" is time spent yawing per loss event (trigger to accept, or to the end of the run). "Recover s"
+is trigger to accept, over accepted events.
+
+| preset | fault | arm | reached % | collision % | relocs accepted | wrong commits (> 0.5 m) | median / p95 recover s | median spin s per event |
+|---|---|---|---|---|---|---|---|---|
+| crazyflie | dropout | (b) single | 64.0 | 1.0 | 0 | 0 | - | - |
+| crazyflie | dropout | (f) multi_ig | 2.0 | 7.0 | 0 | 0 | - | - |
+| crazyflie | dropout | (g) spin | 25.0 | 1.0 | 39 | 2 | 2.8 / 7.36 | 10.05 |
+| crazyflie | dropout | (h) spin_single | 49.0 | 5.0 | 57 | 9 | 2.2 / 2.6 | 2.3 |
+| crazyflie | dropout | (i) spin_ig | 48.0 | 3.0 | 76 | 0 | 8.8 / 27.48 | 12.2 |
+| crazyflie | jump | (b) single | 38.0 | 6.0 | 0 | 0 | - | - |
+| crazyflie | jump | (f) multi_ig | 12.0 | 23.0 | 0 | 0 | - | - |
+| crazyflie | jump | (g) spin | 36.0 | 2.0 | 46 | 1 | 2.8 / 5.1 | 6.4 |
+| crazyflie | jump | (h) spin_single | 50.0 | 8.0 | 80 | 16 | 2.6 / 2.6 | 2.6 |
+| crazyflie | jump | (i) spin_ig | 64.0 | 7.0 | 76 | 0 | 7.3 / 24.6 | 9.1 |
+| ideal | dropout | (f) multi_ig | 99.0 | 0.0 | 439 | 0 | 0.4 / 1.3 | - |
+| ideal | dropout | (i) spin_ig | 98.0 | 0.0 | 356 | 0 | 2.4 / 8.6 | 2.4 |
+| ideal | jump | (f) multi_ig | 99.0 | 0.0 | 359 | 0 | 0.4 / 0.4 | - |
+| ideal | jump | (i) spin_ig | 100.0 | 0.0 | 322 | 0 | 2.4 / 9.0 | 2.4 |
+
+- The ideal rows for (b), (e) and (f) in the `.md` match the published tables above exactly (same
+  sensor noise stream), which checks the harness. (e) is within 1 run of (f) on both presets.
+- On crazyflie, (b) closed 202 / 93 events at once with "no returns" and kept the raw estimate. It
+  reached 64 % / 38 %, close to the estimator alone ([reloc_random_0.md](results/reloc_random_0.md):
+  64 % / 36 %, 1 % / 9 % collisions). (e) and (f) hovered on `none`, fewer than 10 returns, in 100 / 90
+  events and flew moves that could not help.
+- Spin rate ([rate 0.5](results/sparse_random_0_rate0p5.md), [rate 2.0](results/sparse_random_0_rate2.md),
+  arm (i), crazyflie). At 0.5 rad/s: 48 % / 67 % reached, 3 % / 1 % collisions, 1 / 0 wrong
+  commits, median spin 15.5 / 12.3 s per event. At 2.0 rad/s: 34 % / 48 %, 6 % / 16 % collisions,
+  5 / 2 wrong commits. A faster spin puts fewer scans in a quarter turn (median first-stack
+  returns 7.5 / 11 at 2 rad/s, 12 / 16 at 1 rad/s).
+
+**Verdict: the spin makes the matcher work on 4 beams. It does not make relocalization work for
+the mission. FAIL against the 99-100 % headline.**
+
+- The matcher works. Without the spin, 0 poses were accepted on crazyflie. With spin + move (i),
+  76 of 101 (dropout) and 76 of 91 (jump) loss events were accepted, with 0 wrong commits.
+- The mission does not work. (i) reached 48 % / 64 %, against 98 % / 100 % for the same arm on the
+  72-beam sensor. Under dropout that is worse than not relocalizing (64 %). Under jump it is
+  better (64 % vs 36-38 %), with 7 % collisions (estimator alone 9 %, (b) 6 %).
+- Time cost: median 9-12 s of spinning per loss event, p95 33-35 s (`p95_spin_s_per_event` in the
+  JSON). On the ideal sensor the same arm needs 2.4 s, and (f), without a spin, a median 0.4 s to recover.
+- Committing at once on the stack (h) is faster (2.2-2.6 s) but made 9 / 16 wrong commits.
+
+Why it falls short (per-run `events` in [sparse_random_0.json](results/sparse_random_0.json), arm (i)):
+
+- Still lost when the run ended: 25 / 15 events. 15 / 11 of them had fewer than 10 returns after
+  the stack (open space in a 3 m range), 10 / 4 were ambiguous. Hovering more than 10 s trips the
+  scorer's stuck rule.
+- Accepted, but B not reached: 27 / 19 runs. Accepted poses were 0.09 / 0.10 m off truth at the
+  median and 0.31 / 0.22 m at p90 (`err_m`). The goal tolerance is 0.3 m. With 4 beams the
+  innovation test never runs (it needs 10 returns per scan), so nothing corrects the pose after
+  the accept. On the ideal sensor, dropping that test cut (b) from 100 % to 80 % / 71 % (`_noinnov` rows above).
+- Collisions: 8 of the 10 (i) collisions happened while still lost, after 1-3 moves. The move
+  clearance check trusts the hypotheses; with verdict `none` it only has the estimate. This limit
+  is already stated in the disambiguating-move section.
+
+Changes made while running, all kept in results/:
+
+- [sparse_random_0_v1.md](results/sparse_random_0_v1.md), the first seed-0 run: no stop before
+  stacking, and moves did not clear the stack. I read its accepted errors, then added both.
+  Seed 0 is therefore not fully held out.
+- Seed-1 dev flights, crazyflie only: [quarter turn](results/sparse_dev_seed1_arc90.md) (the final
+  code), [half turn](results/sparse_dev_seed1_arc180.md) (not better, dropped), and a
+  [degeneracy-aware accept](results/sparse_dev_seed1_degen.md) (correct only well-constrained
+  directions; no gain, dropped).
+- The sparse ratio 1.10 also hurts the dense stack. (g) on the ideal sensor reached 72 % / 73 %,
+  ending ambiguous in 27 / 27 events. (i) recovers those runs with moves.
+
+Limits of this addition:
+
+- Yaw is truth. A real gyro's bias and scale error over a 10 s spin were not modelled. Doc 08
+  section 3 says yawing makes the Flow deck drift (yaw flow is not separated from translation).
+  The arena estimator does not model that either, so a real spin would be worse.
+- The cone correction inverts the arena's own cone model (2nd-closest of 11 sub-rays). A real
+  VL53L1x was not tested. Readings are instantaneous in the sim. At 1 rad/s a 100 ms reading
+  spans 5.7 deg of yaw (derived), which is not modelled.
+- One seed, one layout family, 3 m range only. `crazyflie_bright` (0.73 m) was not run; with
+  less range it would see less.
+- What might close the gap (not tried): a flying stack that feeds the innovation test (it needs a
+  cone correction that works without a spin), a verification spin at B before landing, or a
+  longer-range sensor.
