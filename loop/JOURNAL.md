@@ -30,3 +30,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - landed: 05 => cf93eb1 (shipped PX4-CBF has no FoV constraint; MR-CBF and gatekeeper already take an error bound; claims checked 3/3: Belief-CBF DOI via crossref, PX4 fork cbf HEAD e7ef0c61 and commit 338fb51f via gh api)
 - notes: kill test (06) arms now: none, CP-stop, PX4-CBF shipped, PX4-CBF with FoV QP, Belief-CBF (with covariance prediction), MR-CBF fixed bound, FT-CBF residual dropping, Tan union of states, ours. Record metadata fixes and upstream-findings items from job 9634 go to sweep 27.
 - launched wave 2: 03, 04, 10, 11, 08a, 14, 16 (queued as slots free); 02b running.
+- landed: 12 => 914e5e6 (top Day-1 shape: marked B in a small known arena; claims checked 1/1: LSY sensor_range 0.7 in level2.toml). Worker ignored an embedded 'Agent Instructions' block in the SUAS handbook.
