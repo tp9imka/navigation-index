@@ -1,0 +1,31 @@
+# 2026-11-09, Python 3.14.6, macOS arm64. Input: synthetic (MockAdapter, perfect pose, no noise).
+$ make test
+python3 -m unittest -v test_flightloop
+test_degraded_caps_speed_and_lost_hovers (test_flightloop.FlightLoop.test_degraded_caps_speed_and_lost_hovers) ... ok
+test_health_reset_jumps (test_flightloop.FlightLoop.test_health_reset_jumps) ... ok
+test_keepalive_when_planner_overruns (test_flightloop.FlightLoop.test_keepalive_when_planner_overruns) ... ok
+test_open_reaches_and_logs_every_tick (test_flightloop.FlightLoop.test_open_reaches_and_logs_every_tick) ... ok
+test_protocols (test_flightloop.FlightLoop.test_protocols) ... ok
+test_safety_filter_catches_blind_planner (test_flightloop.FlightLoop.test_safety_filter_catches_blind_planner) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.661s
+
+OK
+$ make sim
+python3 main.py --mock --scenario open --log runs/open.jsonl
+score scenario=open planner=go_to_goal safety=range_stop reached=True final_dist_m=0.194 t_s=7.00 collided=False min_wall_dist_m=1.20 ticks=141 intervened=0 keepalive=0 overruns=0 modes=arrived:1,nominal:140 log=runs/open.jsonl
+python3 main.py --mock --scenario blocked --timeout 10 --log runs/blocked.jsonl
+score scenario=blocked planner=go_to_goal safety=range_stop reached=False final_dist_m=2.450 t_s=10.00 collided=False min_wall_dist_m=0.45 ticks=201 intervened=0 keepalive=0 overruns=0 modes=nominal:200,timeout:1 log=runs/blocked.jsonl
+python3 main.py --mock --scenario blocked --timeout 10 --planner blind --log runs/blocked-blind.jsonl
+score scenario=blocked planner=blind safety=range_stop reached=False final_dist_m=2.450 t_s=10.00 collided=False min_wall_dist_m=0.45 ticks=201 intervened=129 keepalive=0 overruns=0 modes=nominal:200,timeout:1 log=runs/blocked-blind.jsonl
+python3 main.py --mock --scenario blocked --timeout 10 --planner blind --safety pass_through --log runs/blocked-blind-nofilter.jsonl
+score scenario=blocked planner=blind safety=pass_through reached=False final_dist_m=2.143 t_s=10.00 collided=True min_wall_dist_m=0.14 ticks=201 intervened=0 keepalive=0 overruns=0 modes=nominal:200,timeout:1 log=runs/blocked-blind-nofilter.jsonl
+$ make arena
+python3 main.py --mock --scenario open --planner arena:straight --arena ../../samples/close-area-arena --log runs/open-arena-straight.jsonl
+score scenario=open planner=arena:straight safety=range_stop reached=True final_dist_m=0.192 t_s=5.10 collided=False min_wall_dist_m=1.20 ticks=103 intervened=0 keepalive=0 overruns=0 modes=arrived:1,nominal:102 log=runs/open-arena-straight.jsonl
+$ python3 main.py --mock --realtime --log runs/open-realtime.jsonl  (wall time via /usr/bin/time -p)
+score scenario=open planner=go_to_goal safety=range_stop reached=True final_dist_m=0.194 t_s=7.00 collided=False min_wall_dist_m=1.20 ticks=141 intervened=0 keepalive=0 overruns=0 modes=arrived:1,nominal:140 log=runs/open-realtime.jsonl
+real 7.40
+user 0.07
+sys 0.02
