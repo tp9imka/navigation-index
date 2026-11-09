@@ -112,3 +112,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - landed: 59 => b2c4127 (copied-out make stops cleanly or runs with HUB=; first-flight-reloc arrives 0.12 m from B with 4 re-anchors, reset_counter 0 => 4; MAP_SIGMA_M 0.10 m labelled assumed by driver; blocker 2 fixed)
 - landed: 64 => d45f67c (story cards: F5 FAIL, relocalization PASS in 2 of 7 families; replays match published rows 6/6; driver viewed the cards screenshot)
 - landed: 67 => 1ab503b (ideal sensor seed 2: (f) >= MCL in all 4 cells, 0 wrong commits vs 0-32; random jump 100 vs 89 %, office 87 vs 55 %; 4 beams: every arm fails). Decision paragraph updated.
+- landed: 63 => 67faf17 (recovery select + compare all arms + verdict strip; browser = native 4/4 recovery cases; retries + Retry button with CDN blocked in 8.9 s; offline local Pyodide path documented, pyodide-local/ gitignored; blocker 7 fixed)
