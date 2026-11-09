@@ -720,3 +720,75 @@ Limits:
 - Table I was tuned by the authors for 6-10 m Webots maps, not for this arena.
 
 ---
+
+## Rolling submap: collect returns while flying (loop-68)
+
+The 4-beam arms above collect returns only after the loss. They spin (sparse.py) or rely on a particle filter (mcl.py). This arm keeps a rolling local submap of range returns while flying. On loss, it matches the whole submap against the map. All inputs are **synthetic**.
+
+```sh
+.venv/bin/python run_submap.py --tune                       # 18 s, seed-1 static sweep
+.venv/bin/python run_submap.py                              # 209 s wall, 14 workers, 2400 runs
+.venv/bin/python run_submap.py --presets crazyflie --arms submap_arc_ig,submap_fwd,submap_fwd_ig,submap_arc_ig_notrack,submap_bridge --stem seed2_extras   # 709 s
+```
+
+These ran on 2026-11-09, Apple arm64, CPython 3.11.15, numpy 2.4.6, scipy 1.17.1 (sample venv).
+
+### How it works
+
+[submap.py](submap.py) builds on `relocalize.py`, `sparse.py` and `disambiguate.py` without editing them.
+
+- **Submap.** It keeps the last `WINDOW_S` = 6 s of nominal flight in the raw estimator frame, with at most `MAX_POINTS` = 300 finite returns. A scan is added only after 0.05 m or 0.05 rad of motion, so hovering does not fill the window. While lost, the time window is frozen.
+- **Drift budget.** The arena VIO drifts 0.047 m per sqrt(m), so 6 m of flight in the window gives 0.12 m (1 sigma). Inside a dark zone it is 4x that, which is over budget.
+- **Inertial bridge.** A VIO jump moves the raw frame by about 0.5 m over roughly 0.5 s. The bridge dead-reckons from the EKF velocity at the trigger call, with a simulated accelerometer (bias 0.03 m/s², white noise 0.05 m/s²). Once the raw frame agrees with the bridge for 3 scans, the submap is shifted into the new frame. Settling took a median 0.4-0.8 s.
+- **Match.** It uses the ScanMatcher and the `RatioPersistence` rule with ratio 1.10 and S_MIN 0.6. Verdicts are none / ambiguous / pending / accept.
+- **Innovation test.** The innovation test (score of the submap at the estimate) now runs in nominal flight. A single 4-beam scan could not run it.
+- **Info-gain move.** The (s+ig) arm adds the info-gain move from disambiguate.py. It predicts the 4 beams at 5 points along the move.
+- **Tracking.** Every 2 scans, a +-0.3 m local search re-anchors the estimate halfway to a better match. I added this after seed-1 dev flights collided on 0.2-0.9 m of dark-zone drift, long after a correct accept.
+
+### Why the specified cone correction fails
+
+From the seed-1 sweep (6 s window, raw positions, score at the true pose):
+
+- **Raw cone readings:** median score 0.37 (random layouts).
+- **With the moving-submap version of `cone_opening`:** median 0.51 (random) and 0.66 (office), with p5 0.13 and 0.33.
+- **Ideal rays from the same flights:** median 0.83-0.89.
+- **Cause:** when flying straight there is no bearing diversity, so the opening has nothing to take a maximum over. Oblique walls then read about 17 % short at 45 deg incidence.
+
+Two extra scorings followed from this, both chosen on seed 1:
+
+- **`arc`:** each reading scores the best point on its 27 deg cone arc. Median score at truth was 0.89-0.93, and 0 of 158 / 265 passing matches were wrong at ratio 1.10.
+- **`arc_fwd`:** the arc hypotheses are re-scored with a forward cone model. It ray-casts 11 sub-rays and takes the 2nd closest, as the arena sensor does. It also uses no-return readings.
+
+### Results
+
+Seed 2, 100 layouts per cell, A* known map, scored on truth ([submap_seed2.md](results/submap_seed2.md), [submap_seed2_extras.md](results/submap_seed2_extras.md)). Each cell shows reached % / collision % / wrong commits.
+
+| family / fault | (i) spin_ig | (m) mcl | (s) submap | (s+ig) | (a+ig) arc | (v+ig) arc_fwd | (x) bridge only |
+|---|---|---|---|---|---|---|---|
+| random / dropout | 36 / 3 / 0 | 14 / 81 / 6 | 0 / 1 / 5 | 26 / 5 / 21 | 65 / 1 / 5 | 71 / 1 / 4 | 58 / 4 / 23 |
+| random / jump | 53 / 3 / 0 | 15 / 77 / 14 | 1 / 0 / 4 | 30 / 4 / 19 | 87 / 1 / 2 | 89 / 0 / 2 | 54 / 5 / 10 |
+| office / dropout | 52 / 35 / 0 | 1 / 97 / 6 | 15 / 12 / 16 | 22 / 23 / 23 | 54 / 20 / 2 | 66 / 19 / 6 | 40 / 46 / 19 |
+| office / jump | 52 / 26 / 0 | 0 / 94 / 21 | 26 / 13 / 15 | 28 / 18 / 21 | 74 / 20 / 1 | 71 / 26 / 0 | 45 / 46 / 1 |
+
+- **Harness parity:** the (i) and (m) rows match [mcl_seed2_spin_ig.md](results/mcl_seed2_spin_ig.md) and [mcl_seed2.md](results/mcl_seed2.md) exactly.
+- **Ideal-sensor sanity row (random):** (s+ig) reached 99 % / 100 % with 1 / 2 wrong commits. (s) alone reached 81 % / 82 %.
+- **Tracking ablation:** without tracking, (a+ig) drops to 58 / 75 / 32 / 59 %.
+
+**Verdict: FAIL in every cell for every submap arm.**
+
+- **(s) and (s+ig):**
+  - The low scores trip the innovation test 120-184 times per 100 random runs.
+  - Events then end `none` (score below 0.6) or `ambiguous`.
+  - 15-20 of the 19-21 random-layout wrong commits came from innovation-triggered matches.
+- **Extras:** collecting returns in flight plus a cone-aware score roughly doubles spin_ig in random layouts (89 % vs 53 % under jump), but it still makes 0-6 wrong commits per cell.
+  - In random layouts, the remaining failures are mostly `ambiguous` after 4 moves: the second peak sits 0.4-0.6 m away along a wall.
+  - In office, 16-26 % of runs collide. Those collisions happen in nominal flight with 0.1-0.7 m of error at 0.8-1.0 m doorways. For comparison, the 72-beam arm (f) collided in 7-13 %.
+- **Bridge only (x):** the bridge without a map match is not enough. It reached 40-58 %, with up to 23 wrong commits.
+
+### Limits
+
+- Seed 2 was partly seen during development (a 6-layout probe). The scorings, tracking and move settings were tuned on seed 1.
+- The bridge's accelerometer is simulated, because the arena estimator does not expose its IMU.
+- Yaw is truth.
+- The forward model and the arc model assume the arena's cone model, not a measured VL53L1x.
+- 6 s window and 3 m range only. Only random and office layouts.
