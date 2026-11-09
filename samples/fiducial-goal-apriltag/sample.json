@@ -1,0 +1,42 @@
+{
+  "id": "sample:fiducial-goal-apriltag",
+  "title": "AprilTag goal B: detection envelope vs range and view angle, and a tag-relative final approach",
+  "summary": "Renders a tag36h11 AprilTag (0.16 m, also 0.40 m) onto a textured wall with a 640 x 480 pinhole camera (fx = fy = 500 px, no distortion) at known poses, with Gaussian blur and noise, detects it with pupil-apriltags, and reports detection rate, position error and tag-relative heading error (median, p95) per cell over 0.5-8 m and 0-70 deg view angle, with a heatmap PNG and the range where detection fails at each angle. final_approach.py closes the loop: a kinematic camera-equipped point mass starts 3 m off the tag axis at about 5 m, creeps until it sees the tag, then servos on the detected pose to a goal 1 m in front of the tag, rendering and detecting every 10 Hz frame with one frame of latency and velocity disturbance; final true error over 50 seeds. Pose-ambiguity heading flips are counted, not mitigated. All inputs synthetic; rolling shutter, exposure, lens distortion and motion-coupled blur are not modelled. numpy + opencv-python-headless + pupil-apriltags (MIT, with the AprilTag BSD-2-Clause notice).",
+  "concepts": [
+    "concept:feature-matching",
+    "concept:simulation",
+    "concept:datasets-benchmarks"
+  ],
+  "tags": [
+    "close-area",
+    "a-to-b",
+    "apriltag",
+    "fiducial",
+    "marker",
+    "landing-pad",
+    "precision-landing",
+    "relative-goal",
+    "visual-servoing",
+    "pose-ambiguity",
+    "pinhole-camera",
+    "synthetic-images",
+    "python",
+    "numpy",
+    "opencv"
+  ],
+  "related": [
+    {"id": "repo:aprilrobotics/apriltag", "rel": "explains"},
+    {"id": "res:wang-olson-2016-apriltag2", "rel": "explains"},
+    {"id": "res:px4-precision-landing-docs", "rel": "explains"},
+    {"id": "repo:christianrauch/apriltag_ros", "rel": "explains"}
+  ],
+  "verified": "ran 2026-11-09 with CPython 3.12.10 + numpy 2.5.4 / opencv-python-headless 5.0.0.93 / pupil-apriltags 1.0.4.post11 on an Apple M3 Max: sweep.py ran with defaults (twice, identical detection-band summary), with --blur 1.5 --noise 6 and with --tag-size 0.40, each 1600 rendered frames; final_approach.py ran 50 seeds with default and with harsh image noise. Every number in README is from results/. test_smoke.py: 1 passed in the venv (render => detect => pose within 0.02 m / 2 deg at 2 m 40 deg, nothing detected at 8 m, one approach seed within 0.1 m), 1 skipped under plain python3 without numpy. All images and the vehicle are synthetic; no real camera, no real tag print, no SITL, no lens distortion or rolling shutter.",
+  "verified_status": "ran",
+  "deps": "venv",
+  "first_command": ".venv/bin/python sweep.py",
+  "group": "Close-area A=>B: goal and localization",
+  "shows": "Where a 0.16 m tag36h11 goal is detected and how accurate its pose is per range and view angle, and a tag-relative servo from 3 m off-axis to 1 m in front of the tag",
+  "input": "synthetic",
+  "runtime": "~50 s per sweep (1600 frames), ~40 s for 50 approach seeds on 8 processes",
+  "key_result": "[0.16 m tag, blur 0.8 px, noise 3 DN](README.md#results-ran-2026-11-09-synthetic): detection >= 90 % to 5 m frontal, 4 m at 20-50 deg, 2 m at 70 deg; fails at 6 m frontal and 3 m at 70 deg; final approach 50/50 seeds within 0.1 m (median 0.0145 m, max 0.0307 m)"
+}

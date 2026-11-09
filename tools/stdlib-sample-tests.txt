@@ -41,3 +41,4 @@ ugv-gnss-outage-real
 recording-replay
 close-area-arena
 close-area-planner-reactive
+fiducial-goal-apriltag
