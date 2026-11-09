@@ -15,6 +15,7 @@ only; each lane doc labels its sources and has a "not verified" section.
 | [03](03-close-area-localization.md) | Localization | Indoor: stereo VIO into EKF2 / EKF3 as ODOMETRY, AprilTags at A and B, flow + rangefinder as backup. Outdoor: GNSS (RTK if offered) with VIO as fallback, marker for the last metres |
 | [04](04-innovation-prior-art.md) | Innovation prior art | Headline: integrity-aware safety filter. Support: uncertainty-aware replan trigger. Perception-aware planning parked |
 | [05](05-cbf-baselines-faithful.md) | Safety-filter baselines read in full | Shipped PX4-CBF (NTNU fork, branch `cbf`) has no FoV constraint; the paper's FoV QP is in an older commit. MR-CBF and gatekeeper already take an error bound, so the claim is producing a bound that stays valid under faults. Belief-CBF also predicts covariance growth; a plain sqrt(lambda_max) inflation is weaker than the paper |
+| [06](06-task-phrasing-survey.md) | How close-area events specify the task | 10 events. B is usually a marker or pad, late-issued coordinates, or a nominal pose revealed up close (LSY within 0.7 m). Off-board help is penalised, not banned (IMAV 1.0 / 0.7 / 0.4). Most likely Day-1 shape: a marked B in a small known arena with a few static obstacles |
 | [07](07-pl-margin-prior-art.md) | Kill search for the headline | **The idea as first worded exists.** Tan et al. IROS 2025 (Caltech + TII, PX4 X500 with a geofence) and Zhang, Li, Clark TAC 2025 (fault-excluded EKF bank feeding a CBF) already set safety margins from fault-excluded estimates. What survives is a composition, see below |
 
 ## Findings that change the plan
@@ -66,6 +67,8 @@ Backups from the wider scan: multi-hypothesis relocalization after VIO loss (23/
 specification (20/30), NoMaD/ViNT as the planner under the filter (19/30).
 
 ## Ask the organisers on Day 1
+
+Full ranked list with reasons: [06 section 4](06-task-phrasing-survey.md). Short form:
 
 Which drone and SDK; real flight, sim or both; sensors (depth, lidar, flow, GNSS, mocap); how B
 is given (coordinates, marker, GPS point); known or unknown obstacles; scoring (time,

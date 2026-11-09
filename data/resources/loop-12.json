@@ -1,0 +1,197 @@
+[
+  {
+    "id": "res:icuas26-uav-competition-rulebook",
+    "kind": "competition",
+    "title": "ICUAS '26 UAV Competition Rulebook",
+    "url": "https://github.com/larics/icuas26_competition/tree/main/rulebook",
+    "authors": ["LARICS, University of Zagreb"],
+    "year": 2025,
+    "summary": "Rulebook v1.0 (October 2025) for the ICUAS 2026 multi-UAV competition: Crazyflies in CrazySim (Gazebo, ROS 2 Humble) find ArUco-marked threats in a known urban world, keep a line-of-sight relay to a ground vehicle and manage battery with ArUco landing spots. Solutions are ROS 2 nodes in Docker, run by the organisers.",
+    "key_takeaways": [
+      "Run void on crash, battery below 20 %, out of bounds or landing off a spot",
+      "Only the provided camera, pose and octomap may be used (organiser answer)",
+      "Detection points full within about 15 cm, none beyond about 1 m (organiser answer)"
+    ],
+    "concepts": ["concept:multi-agent", "concept:simulation", "concept:obstacle-avoidance"],
+    "tags": ["icuas", "competition", "crazyflie", "aruco", "rules"],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:teknofest-2026-uav-competitions-spec",
+    "kind": "competition",
+    "title": "TEKNOFEST 2026 UAV Competitions Specification (EN)",
+    "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0HA_Yar%C4%B1%C5%9Fmalar%C4%B1_%C5%9Eartnamesi_EN_VBU_Ee7DO.pdf",
+    "authors": ["TEKNOFEST", "TUBITAK"],
+    "year": 2026,
+    "summary": "Specification for the International and High School UAV competitions. Rotary-wing teams fly an autonomous figure-eight around two poles, then find two targets at unknown positions by image processing and drop payloads on them. An autonomy coefficient scales the score.",
+    "key_takeaways": [
+      "Coefficient c: 1.0 autonomous take-off, flight and landing; 0.7 with manual take-off or landing",
+      "Single camera on the auxiliary computer; image processing may run in the air or on the ground",
+      "Drop distance measured from target centre up to 10 m"
+    ],
+    "concepts": ["concept:mission-planning", "concept:autopilot"],
+    "tags": ["teknofest", "competition", "rotary-wing", "rules"],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:ieee-r5-2021-tello-drone-rules",
+    "kind": "competition",
+    "title": "Rules for a Remote Student Robotics Competition (IEEE Region 5, 2021)",
+    "url": "https://dfc3f084-31d4-418a-8426-e5b4a3d7ef9b.filesusr.com/ugd/2898c3_d846e340f0784f3a91d22469bc16a43c.pdf",
+    "authors": ["IEEE Region 5"],
+    "year": 2020,
+    "summary": "Student contest rules (V4, Nov 2020) for an autonomous DJI Tello on a 3 x 3 m grid. Judges reveal the grid cells and order of four coloured balloons at run start; the drone must reach them in order within 3 minutes. Two divisions separate onboard-only from a standalone off-board computer.",
+    "key_takeaways": [
+      "Goal positions given as grid cells only at run start",
+      "Mission Pads banned inside the grid",
+      "Division A no comms, Division B one standalone off-board computer"
+    ],
+    "concepts": ["concept:mission-planning", "concept:obstacle-avoidance"],
+    "tags": ["tello", "student", "competition", "indoor", "rules"],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {"id": "res:tello-sdk-2-user-guide", "rel": "uses"}
+    ]
+  },
+  {
+    "id": "res:a2rl-drone-championship-site",
+    "kind": "competition",
+    "title": "A2RL Autonomous Drone Championship (official pages)",
+    "url": "https://a2rl.io/autonomous-drone-race",
+    "authors": ["ASPIRE / A2RL"],
+    "year": 2026,
+    "summary": "Official event page and season blogs. Season 1 (April 2025): single front-facing camera, IMU and onboard Jetson Orin NX, no GPS or remote control, 22 gates over 170 m. Season 2 (January 2026, UMEX): 14-gate track with ladder and split-S obstacles.",
+    "key_takeaways": [
+      "Camera plus IMU only, onboard compute",
+      "Race time is the score; no public rulebook found"
+    ],
+    "concepts": ["concept:vio", "concept:path-planning"],
+    "tags": ["a2rl", "drone-racing", "competition", "abu-dhabi"],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {"id": "res:a2rl-2025-season", "rel": "part_of"}
+    ]
+  },
+  {
+    "id": "res:suas-2026-team-handbook",
+    "kind": "competition",
+    "title": "SUAS 2026 Team Handbook",
+    "url": "https://robonation.gitbook.io/suas-resources/2026-team-handbook",
+    "authors": ["RoboNation"],
+    "year": 2026,
+    "summary": "Rules for the 2026 Student Unmanned Aerial Systems competition: GPS waypoint laps handed out at check-in, a GPS flight boundary with an altitude band, risk mapping, and search-detect-deliver of two objects to a mannequin and a tent. Mission demonstration is worth 1000 points with published formulas.",
+    "key_takeaways": [
+      "Waypoints within 100 ft, up to 15 per lap of about 2 miles",
+      "Endurance 20 + 30 + 200 x (laps/10)^2; operators 200 x min(1, (4 - O)/2)",
+      "Each delivery 20 survive + 50 within 50 ft + 30 correct target"
+    ],
+    "concepts": ["concept:mission-planning", "concept:autopilot", "concept:gnss"],
+    "tags": ["suas", "auvsi", "competition", "rules", "waypoints"],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:peti-2023-mbzirc-uav-search-preprint",
+    "kind": "paper",
+    "title": "A Search Strategy and Vessel Detection in Maritime Environment Using Fixed-Wing UAVs",
+    "url": "https://arxiv.org/abs/2306.12767",
+    "authors": ["Marijana Peti", "Ana Milas", "Natko Krasevac", "Marko Krizmancic", "Ivan Loncar", "Nikola Miskovic", "Stjepan Bogdan"],
+    "year": 2023,
+    "summary": "Preprint by the UNIZG-FER MBZIRC 2023 team. States the challenge frame: find one target vessel among seven types in a 4 km2 sea area within 60 minutes, without GNSS and with short-range comms, then compares coverage patterns and a radar-informed search in the official simulator.",
+    "key_takeaways": [
+      "B is unknown: the task is search, then approach",
+      "GNSS banned for positioning; limits on UAV and sensor counts",
+      "Synthetic data from a second simulator trained the detector"
+    ],
+    "concepts": ["concept:maritime-nav", "concept:multi-agent", "concept:mission-planning"],
+    "tags": ["mbzirc", "gnss-denied", "search", "preprint"],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {"id": "repo:osrf/mbzirc", "rel": "uses"}
+    ]
+  },
+  {
+    "id": "res:enrich-2025-robotics-hackathon",
+    "kind": "competition",
+    "title": "EnRicH 2025 - The European Robotics Hackathon",
+    "url": "https://enrich.european-robotics.eu/enrich-2025/",
+    "authors": ["European Robotics", "Fraunhofer FKIE"],
+    "year": 2025,
+    "summary": "Event page for a UAV and UGV trial inside the never-operated Zwentendorf nuclear plant: radiation mapping, 3D mapping, search and rescue and valve manipulation in dark, cluttered, comms-hostile interiors. Runs last about 30 minutes; there is no point formula.",
+    "key_takeaways": [
+      "UAV and UGV start from the same point in an unknown interior",
+      "Radiation sensor mandatory; maps handed over as point clouds and ROS bags",
+      "Judges' awards instead of a published score"
+    ],
+    "concepts": ["concept:lidar-slam", "concept:multi-agent", "concept:datasets-benchmarks"],
+    "tags": ["enrich", "hackathon", "indoor", "inspection", "competition"],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:kaufmann-2018-beauty-beast-iros-adr",
+    "kind": "paper",
+    "title": "Beauty and the Beast: Optimal Methods Meet Learning for Drone Racing",
+    "url": "https://arxiv.org/abs/1810.06224",
+    "authors": ["Elia Kaufmann", "Mathias Gehrig", "Philipp Foehn", "Rene Ranftl", "Alexey Dosovitskiy", "Vladlen Koltun", "Davide Scaramuzza"],
+    "year": 2018,
+    "summary": "Preprint (later ICRA 2019) of the IROS 2018 Autonomous Drone Race winner: a CNN predicts the next gate pose with uncertainty, an EKF fuses it with coarse gate positions from one demonstration flight, and MPC flies the track onboard. Reports the 2018 race result over 8 gates.",
+    "key_takeaways": [
+      "IROS 2018: 31.8 s vs 61 s and 90.1 s for second and third",
+      "Coarse map plus local gate detection handled gates moved by up to 2 m in sim"
+    ],
+    "concepts": ["concept:vio", "concept:path-planning", "concept:edge-ai"],
+    "tags": ["iros", "adr", "drone-racing", "preprint"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "res:moon-2019-adr-iros-challenges", "rel": "cites"}
+    ]
+  },
+  {
+    "id": "res:recf-adc-2026-autonomous-flight-guide",
+    "kind": "competition",
+    "title": "Aerial Drone Competition 2026 Autonomous Flight Mission Quick Guide",
+    "url": "https://recf.org/documents/2025/09/autonomous-flight-mission-2026-aerial-drone-competition.pdf/",
+    "authors": ["REC Foundation"],
+    "year": 2025,
+    "summary": "One-page guide to the school-level autonomous flight match: a 3-minute scripted run through fixed field elements (arches, keyholes, tunnel, colour mats, panel) ending on one of three landing targets, with per-task points and resets allowed while the timer runs.",
+    "key_takeaways": [
+      "3 minute match, timer does not stop for resets",
+      "No interaction with drone or computer after start except resets or e-stop"
+    ],
+    "concepts": ["concept:mission-planning"],
+    "tags": ["recf", "student", "competition", "indoor"],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:umd-iros-2019-adr-news",
+    "kind": "blog",
+    "title": "Student autonomous drone racing team takes 2nd place at IROS",
+    "url": "https://isr.umd.edu/news/story/student-autonomous-drone-racing-team-takes-2nd-place-at-iros",
+    "authors": ["University of Maryland ISR"],
+    "year": 2019,
+    "summary": "University news on the IROS 2019 Autonomous Drone Race in Macau: six teams flew as many autonomous runs through a gate set as possible in five minutes; the winner made 15 runs in 4:47.",
+    "key_takeaways": [
+      "2019 format: count of runs in 5 minutes, not single-lap time"
+    ],
+    "concepts": ["concept:path-planning"],
+    "tags": ["iros", "adr", "drone-racing", "news"],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {"id": "res:moon-2019-adr-iros-challenges", "rel": "part_of"}
+    ]
+  }
+]
