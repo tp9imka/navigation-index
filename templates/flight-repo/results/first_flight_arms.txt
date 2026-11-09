@@ -1,0 +1,36 @@
+$ ../../samples/close-area-arena/.venv/bin/python main.py --adapter arena:random:0 --planner arena:astar_esdf --safety arm:F0  --log runs/arms_F0_truth.jsonl
+score input=synthetic adapter=arena:random:0 fault=truth planner=arena:astar_esdf safety=arm:F0 reached=True final_dist_m=0.183 t_s=19.80 collided=False min_clearance_m=0.564 max_pose_error_m=0.000 ticks=397 intervened=0 keepalive=0 planner_errors=0 modes=arrived:1,nominal:396 health=ok:397 log=runs/arms_F0_truth.jsonl
+outcome          reached
+reached          True
+time to goal     19.46 s   (run ends at 19.46 s, 0.294 m from B)
+min clearance    0.5643 m   at [5.443, 5.877, 6.6] (x, y, t)
+path length      23.84 m   (straight A=>B 23.442 m)
+interventions    0   fraction 0.0 of logged steps
+
+$ ../../samples/close-area-arena/.venv/bin/python main.py --adapter arena:random:0 --planner arena:astar_esdf --safety arm:F2  --log runs/arms_F2_truth.jsonl
+score input=synthetic adapter=arena:random:0 fault=truth planner=arena:astar_esdf safety=arm:F2 reached=True final_dist_m=0.185 t_s=20.10 collided=False min_clearance_m=0.827 max_pose_error_m=0.000 ticks=403 intervened=136 keepalive=0 planner_errors=0 modes=arrived:1,nominal:402 health=ok:403 log=runs/arms_F2_truth.jsonl
+outcome          reached
+reached          True
+time to goal     19.76 s   (run ends at 19.76 s, 0.299 m from B)
+min clearance    0.8268 m   at [9.055, 12.959, 13.66] (x, y, t)
+path length      24.068 m   (straight A=>B 23.442 m)
+interventions    2   fraction 0.3434 of logged steps
+
+$ ../../samples/close-area-arena/.venv/bin/python main.py --adapter arena:random:0 --planner arena:astar_esdf --safety arm:F0 --fault jump --log runs/arms_F0_jump.jsonl
+score input=synthetic adapter=arena:random:0 fault=jump planner=arena:astar_esdf safety=arm:F0 reached=False final_dist_m=0.553 t_s=32.70 collided=False min_clearance_m=0.184 max_pose_error_m=0.664 ticks=655 intervened=0 keepalive=0 planner_errors=0 modes=arrived:1,capped:358,nominal:296 health=degraded:359,ok:296 log=runs/arms_F0_jump.jsonl
+outcome          log_ended
+reached          False
+time to goal     -   (run ends at 32.7 s, 0.55 m from B)
+min clearance    0.1848 m   at [9.486, 12.453, 14.3] (x, y, t)
+path length      24.181 m   (straight A=>B 23.442 m)
+interventions    0   fraction 0.0 of logged steps
+
+$ ../../samples/close-area-arena/.venv/bin/python main.py --adapter arena:random:0 --planner arena:astar_esdf --safety arm:F2 --fault jump --log runs/arms_F2_jump.jsonl
+score input=synthetic adapter=arena:random:0 fault=jump planner=arena:astar_esdf safety=arm:F2 reached=False final_dist_m=0.634 t_s=34.60 collided=False min_clearance_m=0.401 max_pose_error_m=0.722 ticks=693 intervened=172 keepalive=0 planner_errors=0 modes=arrived:1,capped:345,nominal:347 health=degraded:346,ok:347 log=runs/arms_F2_jump.jsonl
+outcome          log_ended
+reached          False
+time to goal     -   (run ends at 34.6 s, 0.63 m from B)
+min clearance    0.402 m   at [4.912, 5.771, 6.74] (x, y, t)
+path length      25.182 m   (straight A=>B 23.442 m)
+interventions    4   fraction 0.2482 of logged steps
+

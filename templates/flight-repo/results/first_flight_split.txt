@@ -1,0 +1,13 @@
+# cold run 3, per-step split: empty uv cache, fresh venv
+2026-11-09T09:50:03Z
+$ time (UV_CACHE_DIR=runs/uvcache-cold make venv)
+Resolved 12 packages in 2.04s
+Prepared 12 packages in 11.63s
+Installed 12 packages in 423ms
+real 14.68
+$ time make first-flight   # first flight + score on the fresh venv
+score input=synthetic adapter=arena:random:0 fault=truth planner=arena:astar_esdf safety=arm:F2 reached=True final_dist_m=0.185 t_s=20.10 collided=False min_clearance_m=0.827 max_pose_error_m=0.000 ticks=403 intervened=136 keepalive=0 planner_errors=0 modes=arrived:1,nominal:402 health=ok:403 log=results/first_flight.jsonl
+outcome          reached
+real 20.89
+$ time make first-flight   # again, warm
+real 2.48

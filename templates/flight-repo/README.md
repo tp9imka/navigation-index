@@ -17,11 +17,102 @@ Status: hackathon starter, not flight-tested, not for operational use.
 ## Run it
 
 ```sh
-make test    # 6 unit tests on the mock
+make test    # 6 unit tests on the mock, stdlib import check, 3 s arena smoke flight (skips without the arena venv)
 make sim     # 4 mock flights, one score line each, JSONL logs in runs/
 make arena   # the hub's arena "straight" planner flown through this loop (needs the hub checkout)
 python3 main.py --mock          # A=(0,0,1) => B=(5,3,1), one-line score
+make first-flight   # arena world + A* planner + F2 safety arm, scored => results/first_flight.png
 ```
+
+## Brief to first flight
+
+Hour 0-1 on the day: clone, plug in a planner, fly, score. This chain runs as one command, in
+the hub's shared [close-area-arena](../../samples/close-area-arena/README.md) world. All
+numbers below are **synthetic** (simulated layout, vehicle, range sensor and estimator).
+
+```sh
+cd templates/flight-repo
+make first-flight        # builds the arena venv with uv on first use, flies, scores
+make first-flight-jump   # same flight on the arena estimator with its "jump" fault
+```
+
+`make first-flight` runs these, in order:
+
+```sh
+uv venv ../../samples/close-area-arena/.venv && uv pip install --python ../../samples/close-area-arena/.venv -r ../../samples/close-area-arena/requirements.txt   # only if missing
+../../samples/close-area-arena/.venv/bin/python main.py --adapter arena:random:0 --planner arena:astar_esdf --safety arm:F2 --arena ../../samples/close-area-arena --safety-dir ../../samples/close-area-safety-filter --log results/first_flight.jsonl
+../../samples/close-area-arena/.venv/bin/python ../../samples/close-area-arena/score_log.py results/first_flight.jsonl --plot results/first_flight.png --json results/first_flight_score.json
+```
+
+What each piece is:
+
+| Flag | Code | What it does |
+|---|---|---|
+| `--adapter arena:<family>:<seed>[:<index>]` | `flightloop/arena_adapter.py: ArenaAdapter` | Arena `SimAdapter` on layout (family, seed, index), same world, sensor seed and start yaw as the arena's `run.run_one`. Lockstep: each `send_setpoint()` runs the 50 Hz physics to the next 20 Hz tick (2 or 3 steps, so `pose.t` steps 0.04 / 0.06 s). Truth clearance under 0.15 m freezes the vehicle |
+| `--fault none\|jump\|bias\|dropout\|overconfident` | same | Pose from the arena `estimator.make_pose_source_factory(fault, dark=True)`. Omit => truth pose |
+| `--planner arena:astar_esdf` | `main.load_arena_planner` | Arena A* + ESDF, known prior map (`uses_grid = True`, gets the layout grid) |
+| `--safety arm:F0\|F1\|F2` | `flightloop/safety_shim.py: ArmShim` | Kill-test arm from [close-area-safety-filter](../../samples/close-area-safety-filter/README.md) `filters.py`, called with the arena World, a health dict and dt 0.05 s |
+| `--log` | `arena_adapter.CloseAreaLog` | Turns each loop line into [close-area-log/1](../../samples/close-area-arena/log_format.md), adding `truth` (sim truth at the same `pose()` call) and `planned` (A* `path_xy`, when it changes). Loop fields kept as extras: `loop_mode`, `health`, `source`, `reasons`, `plan_ms` |
+
+### Result (2026-11-09, synthetic, macOS arm64, uv picked CPython 3.11.15, numpy 2.4.6)
+
+Score line from `main.py` (truth, 50 Hz physics) and `score_log.py` (truth from the 20 Hz log),
+from [results/first_flight.txt](results/first_flight.txt):
+
+```
+score input=synthetic adapter=arena:random:0 fault=truth planner=arena:astar_esdf safety=arm:F2 reached=True final_dist_m=0.185 t_s=20.10 collided=False min_clearance_m=0.827 max_pose_error_m=0.000 ticks=403 intervened=136 keepalive=0 planner_errors=0 modes=arrived:1,nominal:402 health=ok:403 log=results/first_flight.jsonl
+input            synthetic (positions from truth)
+outcome          reached
+time to goal     19.76 s   (run ends at 19.76 s, 0.299 m from B)
+min clearance    0.8268 m   at [9.055, 12.959, 13.66] (x, y, t)
+path length      24.068 m   (straight A=>B 23.442 m)
+interventions    2   fraction 0.3434 of logged steps
+```
+
+![planned vs flown, arena random seed 0 index 0, astar_esdf + F2](results/first_flight.png)
+
+Log [results/first_flight.jsonl](results/first_flight.jsonl), metrics
+[results/first_flight_score.json](results/first_flight_score.json).
+
+Wall time, `make first-flight` from cold (no arena venv, empty uv cache, so all 12 wheels
+download):
+
+| Run | Wall s | Source |
+|---|---|---|
+| Cold, whole target | 205.89 (user CPU 2.77) | [results/first_flight.txt](results/first_flight.txt) |
+| Cold, split: `make venv` + first `make first-flight` | 14.68 + 20.89 | [results/first_flight_split.txt](results/first_flight_split.txt) |
+| Warm (venv built) | 4.94, 2.48 | [first_flight_warm.txt](results/first_flight_warm.txt), [first_flight_split.txt](results/first_flight_split.txt) |
+
+The flight itself is a few seconds; the first Python start on a fresh venv took 20.89 s and
+the 205.89 s run spent almost all its time waiting, not computing (2.77 s CPU). Cause not
+found: network or first-launch file checks are guesses. Budget 4 minutes for the cold step.
+
+Cross-check, same layout, from [results/first_flight_arms.txt](results/first_flight_arms.txt):
+with `--safety arm:F0` (no filter) this loop gives reached, 19.46 s, min clearance 0.5643 m,
+path 23.84 m. The arena's own 10 Hz harness gives reached, 19.38 s, 0.5647 m, 23.838 m for
+`astar_esdf known_map` run 0 ([astar_esdf_random_0.json](../../samples/close-area-arena/results/astar_esdf_random_0.json)).
+So the 20 Hz loop reproduces the arena within 0.08 s and 0.0004 m. F2 adds 0.26 m of clearance
+(0.8268 m) and 0.30 s.
+
+### With the estimator jump fault: FAIL (not reached)
+
+`make first-flight-jump` ([score JSON](results/first_flight_jump_score.json), [plot](results/first_flight_jump.png),
+lines in [first_flight_warm.txt](results/first_flight_warm.txt)):
+
+```
+score input=synthetic adapter=arena:random:0 fault=jump planner=arena:astar_esdf safety=arm:F2 reached=False final_dist_m=0.634 t_s=34.60 collided=False min_clearance_m=0.401 max_pose_error_m=0.722 ticks=693 intervened=172 keepalive=0 planner_errors=0 modes=arrived:1,capped:345,nominal:347 health=degraded:346,ok:347 log=results/first_flight_jump.jsonl
+outcome          log_ended
+```
+
+- The loop stopped at `mode=arrived`: the **estimate** was within `GOAL_TOL_M` (0.2 m) of B, the
+  truth was 0.634 m away, outside the 0.3 m goal disc. The loop's arrival check uses the
+  estimate; nothing on board can tell. A real flight would land in the wrong place.
+- Health was `degraded` on 346 of 693 ticks, so speed was capped at 0.3 m/s for half the flight
+  (34.60 s against 20.10 s).
+- Without a filter (`arm:F0`, same fault) min clearance was 0.1848 m against the 0.15 m radius;
+  with F2 0.402 m ([first_flight_arms.txt](results/first_flight_arms.txt)). One layout, one seed:
+  this is a first flight, not a rate. Rates are in the kill test
+  ([close-area-safety-filter](../../samples/close-area-safety-filter/README.md)).
 
 ## Files
 
@@ -33,9 +124,12 @@ python3 main.py --mock          # A=(0,0,1) => B=(5,3,1), one-line score
 | `flightloop/planner.py` | `Planner` Protocol (`step(pose, scan, goal, grid, dt) -> Setpoint`, same as the arena) and `GoToGoal` (stops if a return ahead is closer than `STOP_DIST_M` = 0.6 m) |
 | `flightloop/safety.py` | `SafetyFilter` Protocol (`filter(setpoint, pose, scan, health) -> (setpoint, intervened)`), `PassThrough`, `RangeStop` |
 | `flightloop/loop.py` | `run()`: 20 Hz loop, planner in a worker thread with a 30 ms budget, keep-alive, degraded => 0.3 m/s cap, lost => hover, one JSONL line per tick |
-| `main.py` | CLI: `--mock`, `--scenario open|blocked`, `--planner go_to_goal|blind|arena:<module>`, `--safety range_stop|pass_through`, `--realtime` |
+| `flightloop/arena_adapter.py` | `ArenaAdapter` (arena world as a loop adapter, optional estimator fault), `CloseAreaLog` (loop log => close-area-log/1). Stdlib at import; numpy when built |
+| `flightloop/safety_shim.py` | `ArmShim`: a close-area-safety-filter arm (F0, F1, F2) as this loop's `SafetyFilter`. Stdlib at import |
+| `main.py` | CLI: `--mock` or `--adapter arena:<family>:<seed>[:<index>]`, `--fault`, `--scenario open|blocked`, `--planner go_to_goal|blind|arena:<module>`, `--safety range_stop|pass_through|arm:F0|F1|F2`, `--realtime` |
 | `test_flightloop.py` | Protocols, reach, filter vs blind planner, keep-alive, degraded cap, lost hover, reset counting |
 | `results/2026-11-09-mock-run.txt` | Raw output quoted below |
+| `results/first_flight*` | Arena first flight: raw output, log, score JSON, PNG (section "Brief to first flight") |
 
 ## Loop rules (flightloop/loop.py)
 
@@ -143,5 +237,9 @@ python3 main.py --mock --planner arena:straight --arena /path/to/navigation-inde
   not fitted to any estimator. The stale-pose check only runs with `realtime=True`.
 - The planner thread cannot be killed: a planner that hangs forever keeps the keep-alive going
   (correct) but also keeps the process alive on exit.
+- Arena first flight: one layout (random, seed 0, index 0), lockstep. In lockstep the planner
+  still gets a 30 ms wall-clock budget, so a slow machine shows keep-alive ticks a fast one
+  does not (0 here). The F2 arm runs at 20 Hz on a fresh scan; the kill test runs it at 50 Hz
+  on a 16.7 Hz scan. The arm gets no NavHealth report, only the pose fields.
 - Links to `../drone-adapter/` and `../../samples/` work inside the hub only. After copying the
   folder into a project repo, use the hub paths in `AGENTS.md`.

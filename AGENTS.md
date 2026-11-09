@@ -18,7 +18,8 @@ Use this block when the brief is "fly a drone from A to B in a close area, maybe
    [docs/research/close-area-nav/README.md](docs/research/close-area-nav/README.md).
 2. Runnable baseline: [samples/close-area-arena](samples/close-area-arena/README.md) (status `ran`,
    synthetic inputs only). Starter loop for the team repo:
-   [templates/flight-repo](templates/flight-repo/README.md) (mock only).
+   [templates/flight-repo](templates/flight-repo/README.md): `make first-flight` flies it in the arena
+   (planner + safety filter + estimator faults) and scores the log.
 3. Send setpoints to a real platform: [templates/drone-adapter](templates/drone-adapter/README.md)
    and its [drivers table](templates/drone-adapter/drivers/README.md) (PX4, ArduPilot, Crazyflie,
    Tello; unrun, written from SDK docs).

@@ -1,0 +1,39 @@
+$ make first-flight   # warm: arena venv already built
+../../samples/close-area-arena/.venv/bin/python main.py --adapter arena:random:0 --planner arena:astar_esdf --safety arm:F2  --arena ../../samples/close-area-arena --safety-dir ../../samples/close-area-safety-filter --log results/first_flight.jsonl
+score input=synthetic adapter=arena:random:0 fault=truth planner=arena:astar_esdf safety=arm:F2 reached=True final_dist_m=0.185 t_s=20.10 collided=False min_clearance_m=0.827 max_pose_error_m=0.000 ticks=403 intervened=136 keepalive=0 planner_errors=0 modes=arrived:1,nominal:402 health=ok:403 log=results/first_flight.jsonl
+../../samples/close-area-arena/.venv/bin/python ../../samples/close-area-arena/score_log.py results/first_flight.jsonl --plot results/first_flight.png --json results/first_flight_score.json
+input            synthetic (positions from truth)
+outcome          reached
+reached          True
+time to goal     19.76 s   (run ends at 19.76 s, 0.299 m from B)
+min clearance    0.8268 m   at [9.055, 12.959, 13.66] (x, y, t)
+path length      24.068 m   (straight A=>B 23.442 m)
+interventions    2   fraction 0.3434 of logged steps
+manual modes     0 entries
+steps            396 scored of 403, median rate 20.0 Hz
+max pose error   0.0 m (logged pose vs truth)
+wrote results/first_flight_score.json
+wrote results/first_flight.png
+real 4.94
+user 1.02
+sys 0.20
+
+$ make first-flight-jump
+../../samples/close-area-arena/.venv/bin/python main.py --adapter arena:random:0 --planner arena:astar_esdf --safety arm:F2 --fault jump --arena ../../samples/close-area-arena --safety-dir ../../samples/close-area-safety-filter --log results/first_flight_jump.jsonl
+score input=synthetic adapter=arena:random:0 fault=jump planner=arena:astar_esdf safety=arm:F2 reached=False final_dist_m=0.634 t_s=34.60 collided=False min_clearance_m=0.401 max_pose_error_m=0.722 ticks=693 intervened=172 keepalive=0 planner_errors=0 modes=arrived:1,capped:345,nominal:347 health=degraded:346,ok:347 log=results/first_flight_jump.jsonl
+../../samples/close-area-arena/.venv/bin/python ../../samples/close-area-arena/score_log.py results/first_flight_jump.jsonl --plot results/first_flight_jump.png --json results/first_flight_jump_score.json
+input            synthetic (positions from truth)
+outcome          log_ended
+reached          False
+time to goal     -   (run ends at 34.6 s, 0.63 m from B)
+min clearance    0.402 m   at [4.912, 5.771, 6.74] (x, y, t)
+path length      25.182 m   (straight A=>B 23.442 m)
+interventions    4   fraction 0.2482 of logged steps
+manual modes     0 entries
+steps            693 scored of 693, median rate 20.0 Hz
+max pose error   0.7224 m (logged pose vs truth)
+wrote results/first_flight_jump_score.json
+wrote results/first_flight_jump.png
+real 2.38
+user 1.40
+sys 0.22

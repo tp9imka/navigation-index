@@ -1,0 +1,51 @@
+$ rm -rf ../../samples/close-area-arena/.venv runs; UV_CACHE_DIR=runs/uvcache-cold make first-flight   # empty uv cache => all wheels downloaded
+2026-11-09T09:45:49Z
+Darwin arm64
+uv venv ../../samples/close-area-arena/.venv && uv pip install --python ../../samples/close-area-arena/.venv -r ../../samples/close-area-arena/requirements.txt
+Using CPython 3.11.15
+Creating virtual environment at: ../../samples/close-area-arena/.venv
+Activate with: source ../../samples/close-area-arena/.venv/bin/activate
+Using Python 3.11.15 environment at: /Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261109-133245-kiro-8370/samples/close-area-arena/.venv
+Resolved 12 packages in 1.30s
+Downloading numpy (5.2MiB)
+Downloading scipy (19.4MiB)
+Downloading fonttools (3.0MiB)
+Downloading pillow (4.6MiB)
+Downloading matplotlib (8.9MiB)
+ Downloaded pillow
+ Downloaded fonttools
+ Downloaded matplotlib
+ Downloaded numpy
+ Downloaded scipy
+Prepared 12 packages in 8.18s
+Installed 12 packages in 330ms
+ + contourpy==1.3.3
+ + cycler==0.12.1
+ + fonttools==4.68.0
+ + kiwisolver==1.5.1
+ + matplotlib==3.11.2
+ + numpy==2.4.6
+ + packaging==26.3
+ + pillow==13.0.0
+ + pyparsing==3.3.3
+ + python-dateutil==4.0.0
+ + scipy==1.17.1
+ + tzdata==2026.6
+../../samples/close-area-arena/.venv/bin/python main.py --adapter arena:random:0 --planner arena:astar_esdf --safety arm:F2  --arena ../../samples/close-area-arena --safety-dir ../../samples/close-area-safety-filter --log results/first_flight.jsonl
+score input=synthetic adapter=arena:random:0 fault=truth planner=arena:astar_esdf safety=arm:F2 reached=True final_dist_m=0.185 t_s=20.10 collided=False min_clearance_m=0.827 max_pose_error_m=0.000 ticks=403 intervened=136 keepalive=0 planner_errors=0 modes=arrived:1,nominal:402 health=ok:403 log=results/first_flight.jsonl
+../../samples/close-area-arena/.venv/bin/python ../../samples/close-area-arena/score_log.py results/first_flight.jsonl --plot results/first_flight.png --json results/first_flight_score.json
+input            synthetic (positions from truth)
+outcome          reached
+reached          True
+time to goal     19.76 s   (run ends at 19.76 s, 0.299 m from B)
+min clearance    0.8268 m   at [9.055, 12.959, 13.66] (x, y, t)
+path length      24.068 m   (straight A=>B 23.442 m)
+interventions    2   fraction 0.3434 of logged steps
+manual modes     0 entries
+steps            396 scored of 403, median rate 20.0 Hz
+max pose error   0.0 m (logged pose vs truth)
+wrote results/first_flight_score.json
+wrote results/first_flight.png
+real 205.89
+user 2.77
+sys 1.59
