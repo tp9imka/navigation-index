@@ -601,7 +601,7 @@ $("#linkBtn").onclick = async () => {
 };
 
 // ---------------------------------------------------------------- worker
-const worker = new Worker("worker.js?v=20261109c", { type: "module" });
+const worker = new Worker("worker.js?v=20261109d", { type: "module" });
 let readyResolve, readyReject;
 const readyP = new Promise((ok, fail) => { readyResolve = ok; readyReject = fail; });
 const T_LOAD0 = performance.now();

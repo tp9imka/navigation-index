@@ -289,7 +289,8 @@ function watchDownloads(expected) {
 async function init() {
   const t = {}, T0 = performance.now(), ms = a => Math.round(performance.now() - a);
   const mUrl = new URL("manifest.json", self.location.href);
-  const m = await (await fetch(mUrl)).json();
+  // revalidate: a cached manifest or .py from an older deploy breaks imports silently
+  const m = await (await fetch(mUrl, { cache: "no-cache" })).json();
   const exp = m.expected_download_mb;
   watchDownloads(exp);
   const STEPS = 4;
@@ -302,7 +303,7 @@ async function init() {
   progress("numpy + scipy wheels (about 16 MB) and the arena .py files", 2, STEPS, { mb_expected: exp });
   const a = performance.now();
   const files = Promise.all(m.files.map(async f => {
-    const r = await fetch(new URL(f.src, mUrl));
+    const r = await fetch(new URL(f.src, mUrl), { cache: "no-cache" });
     if (!r.ok) throw new Error(`${r.status} ${f.src}`);
     return [f.dst, await r.text()];
   }));
