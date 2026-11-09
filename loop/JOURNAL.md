@@ -124,3 +124,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - launched 68 (submap relocalization on 4 beams).
 - 68 attempt 1 failed: Kiro 'connection was interrupted' (network), no files written; retried once.
 - 68 attempt 2 failed: kiro logged out. STOPPED: kiro-auth. Needs 'kiro-cli login', then relaunch 68 from scratchpad brief loop-68.md.
+- 68 attempt 3 failed after ~3 min: Kiro 'connection was interrupted' again, no files written. Network unstable; not retrying further until it is. STOPPED: network.
