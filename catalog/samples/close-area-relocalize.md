@@ -39,5 +39,6 @@ Relocalizer for the close-area arena. After a detected VIO loss (reset_counter c
 - [Research rounds: which one applies, and the innovation story per brief](../../docs/research/README.md) (mentions)
 - [Demo script: close-area A to B](../../templates/demo-script-close-area.md) (mentions)
 - [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) (mentions)
+- [Judge drill: close-area A=>B, relocalization pitch (H1)](../../templates/pitch/judge-drill-close-area.md) (mentions)
 
 _Indexed by lane(s): samples_
