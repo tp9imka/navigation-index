@@ -61,6 +61,8 @@ Initial backlog: fable brainstorm, 2026-11-09, base dbafbff.
 
 | 32 | in-flight | Arena sensor realism from doc 08: 27 deg cone beams (sub-rays, min), 0.04 m min range, range-dependent noise, glass panels and thin poles family, SENSOR_PRESETS + --sensor flag (crazyflie, crazyflie_bright, ideal) | P | S | 23 B | new files in samples/close-area-arena only (sensors_cone.py, world_glass.py, presets.py) plus one --sensor hook proposed in Driver edits | The safety-filter claim is about what sensors miss; the arena must miss the same things | A* + freest_beam on glass family with crazyflie preset: collision table |
 
+| 33 | in-flight | Relocalization 22b: hover timeout + disambiguating move (expected scan disagreement) vs random move vs hover; symmetric corridor + random layouts | P | S | 22 B | samples/close-area-relocalize new files + README section | Backup headline: recover without wrong commits and without hovering forever | Table: (e) chosen move vs (d) random vs (c) hover vs (b) single |
+
 ## Planned waves
 
 - Wave 1: 01, 02a, 05, 07, 09, 12, 13. Then 27.
