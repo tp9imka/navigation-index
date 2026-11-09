@@ -26,6 +26,7 @@ Visual-thermal-inertial odometry extending ROVIO to fuse asynchronous thermal an
 
 ## Referenced by
 
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
 - [RRxIO](../../catalog/repos/christopherdoer__rrxio.md) (alternative_to)
 - [ROVIO](../../catalog/repos/ethz-asl__rovio.md) (extends)
 - [ETIO](../../catalog/repos/hitsz-nrsl__etio.md) (alternative_to)

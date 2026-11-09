@@ -26,5 +26,6 @@ UAV-focused learned inertial odometry that changes how IMU data are represented 
 ## Referenced by
 
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
+- [AI-IO: An Aerodynamics-Inspired Real-Time Inertial Odometry for Quadrotors](../../catalog/resources/cui-2026-ai-io-aerodynamics-inertial-odometry.md) (cites)
 
 _Indexed by lane(s): ins-fusion_

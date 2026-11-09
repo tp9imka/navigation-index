@@ -663,6 +663,8 @@ def write_llms(nodes, concepts, members):
         "",
         "## Entry points",
         "",
+        "- [docs/challenge-2-autonomous-flight.md](docs/challenge-2-autonomous-flight.md): EDGE hackathon "
+        "Challenge 2 (autonomous flight navigation): read first, it narrows the hub to what fits",
         "- [docs/problem-statement-decoder.md](docs/problem-statement-decoder.md): got a problem statement? start here "
         "(statement => approach, stack, data, starting sample, risk, pitch)",
         "- [docs/day0-runbook.md](docs/day0-runbook.md): the first three hours after the statement drops",

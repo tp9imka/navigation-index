@@ -32,5 +32,6 @@ Foundations and Trends monograph (free author PDF) explaining SLAM and sensor fu
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 - [Factor Graphs and GTSAM: A Hands-on Introduction](../../catalog/resources/gtsam-intro-tutorial.md) (same_author)
 - [iSAM2: Incremental Smoothing and Mapping Using the Bayes Tree](../../catalog/resources/kaess-isam2.md) (same_author)
+- [Factor Graphs for Navigation Applications: A Tutorial](../../catalog/resources/taylor-gross-2024-factor-graphs-navigation-tutorial.md) (cites)
 
 _Indexed by lane(s): ins-fusion, learning_

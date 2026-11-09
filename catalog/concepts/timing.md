@@ -19,10 +19,11 @@ Clocks, holdover, PTP/NTP, GNSS-disciplined oscillators, chip-scale atomic clock
 - [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) - What funders publish as navigation problem statements.
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) - After this page you can explain why a GNSS-denied system loses time before it loses position, estimate how long a given oscillator holds time from its datasheet, name the attacks on GNSS and network time, and pick a 24-4
 
-## Repositories (60)
+## Repositories (64)
 
 - [Time Pi](../../catalog/repos/geerlingguy__time-pi.md) - fit: high - Configuration for a Raspberry Pi stratum-1 PTP and NTP time server built from a GNSS module with PPS.
 - [allantools](../../catalog/repos/aewallin__allantools.md) - fit: high - Python library for time and frequency stability statistics: Allan, modified Allan, overlapping, Hadamard and time deviation, plus confidence intervals and power-law noise generators.
+- [ros2_tracing](../../catalog/repos/ros2__ros2_tracing.md) - fit: high - LTTng-based instrumentation for ROS 2: tracepoints in rclcpp/rcl/rmw plus tools to record and analyse callback durations and message flow end to end.
 - [chrony_exporter](../../catalog/repos/superq__chrony_exporter.md) - fit: high - Prometheus exporter for chrony tracking, sources and server statistics.
 - [TDOA evaluation with RTL-SDRs](../../catalog/repos/dc9st__tdoa-evaluation-rtlsdr.md) - fit: high - MATLAB scripts that localize a transmitter by TDOA from three RTL-SDR receivers, synchronizing them on a known reference transmitter instead of GNSS time.
 - [SatPulse](../../catalog/repos/jclark__satpulse.md) - fit: high - Software for using a GNSS receiver on a computer for precise time: stratum-1 NTP with chrony, ntpd-rs or NTPsec, a PTP grandmaster on Raspberry Pi CM4/CM5 or Intel NICs via linuxptp, RTK base/rover, and a web GUI to conf
@@ -41,6 +42,7 @@ Clocks, holdover, PTP/NTP, GNSS-disciplined oscillators, chip-scale atomic clock
 - [STM32 GPSDO](../../catalog/repos/andrewbcn__stm32-gpsdo.md) - fit: medium - Experimental GPS-disciplined oscillator: STM32 Black Pill, u-blox NEO-M8, a DAC and a used 10 MHz OCXO, with Arduino-framework firmware counting the OCXO against the 1PPS.
 - [kiwiclient](../../catalog/repos/jks-prv__kiwiclient.md) - fit: medium - Python clients for KiwiSDR receivers, including recorders that save IQ with GNSS timestamps from the receiver.
 - [cuckoo_time_translator](../../catalog/repos/ethz-asl__cuckoo_time_translator.md) - fit: medium - ROS algorithms that translate a sensor's own hardware timestamps into host system time from one-way timing, estimating skew and offset.
+- [ROS 2 real-time examples](../../catalog/repos/ros-realtime__ros2-realtime-examples.md) - fit: medium - Minimal recipes for real-time ROS 2: memory locking, thread priorities, CPU pinning and callback-group separation.
 - [flexPTP](../../catalog/repos/epagris__flexptp.md) - fit: medium - PTP (IEEE 1588, also 802.1AS) for Cortex-M4/M7 microcontrollers: master and slave ordinary clock, E2E and P2P, L2 and L4 transports, one- and two-step.
 - [pps-tools](../../catalog/repos/redlab-i__pps-tools.md) - fit: medium - User-space tools and headers for the Linux PPS API (ppstest, ppsctl, ppswatch).
 - [TAPR TICC](../../catalog/repos/tapr__ticc.md) - fit: medium - Firmware and design files for TAPR's Arduino-based sub-nanosecond time interval counter, used to compare 1PPS outputs.
@@ -58,9 +60,11 @@ Clocks, holdover, PTP/NTP, GNSS-disciplined oscillators, chip-scale atomic clock
 - [NTPsec](../../catalog/repos/gitlab.com__ntpsec__ntpsec.md) - fit: medium - A security-focused refactor of the reference NTP implementation with much of the legacy code removed, NTS support and the classic refclock drivers.
 - [OCP Time Card](../../catalog/repos/time-appliances-project__time-card.md) - fit: low - Open Compute Project Time Appliance Project hardware: a PCIe card with a GNSS receiver and an atomic or OCXO holdover oscillator that turns a server into a PTP grandmaster, plus specs and drivers.
 - [PTPd](../../catalog/repos/ptpd__ptpd.md) - fit: low - Older open-source PTPv2 daemon; the repository has been inactive since 2022.
+- [VersaVIS](../../catalog/repos/ethz-asl__versavis.md) - fit: low - Open hardware and firmware board that hardware-triggers multiple cameras and an IMU and timestamps them on one clock, with ROS drivers.
 - [NTP reference implementation (ntpd)](../../catalog/repos/ntp-project__ntp.md) - fit: low - The Network Time Foundation's reference implementation of NTPv4 (ntpd, ntpq, ntpdate and refclock drivers).
 - [GNSSTk](../../catalog/repos/sgl-ut__gnsstk.md) - fit: low - C++ library (successor to GPSTk) from UT Austin ARL for GNSS data formats, time systems, ephemeris handling and positioning algorithms, with Python bindings.
 - [cfnts](../../catalog/repos/cloudflare__cfnts.md) - fit: low - Cloudflare's Rust implementation of Network Time Security (NTS) key exchange and NTP server/client.
+- [ROS 2 reference-system](../../catalog/repos/ros-realtime__reference-system.md) - fit: low - ROS 2 Real-Time Working Group benchmark that simulates an autonomous-driving node graph to compare executors, middleware and OS settings on latency and dropped messages.
 - [KiwiSDR](../../catalog/repos/jks-prv__kiwisdr.md) - fit: low - Web-accessible shortwave SDR receiver (10 kHz - 30 MHz) with built-in software GPS and a Loran-C/eLoran monitor extension.
 - [ntpperf](../../catalog/repos/mlichvar__ntpperf.md) - fit: low - Load generator for NTP servers and PTP masters by chrony's author: simulates many clients with raw Ethernet frames via libpcap and reports responses, losses and, with a known direct link, how transmit timestamp accuracy 
 - [Wi-PTP](../../catalog/repos/zlab-pub__wifi-ptp.md) - fit: low - PTP over Wi-Fi: a patched ath9k driver (Linux 4.19) that timestamps in the Wi-Fi hardware path plus an adjusted linuxptp.
@@ -82,7 +86,7 @@ Clocks, holdover, PTP/NTP, GNSS-disciplined oscillators, chip-scale atomic clock
 - [White Rabbit PTP Core software (wrpc-sw)](../../catalog/repos/gitlab.com__ohwr__project__wrpc-sw.md) - fit: low - Software for the White Rabbit PTP Core (WRPC): a bare-metal PTP daemon (PPSi) and drivers for the WRPC HDL that runs on a soft CPU inside the FPGA, giving a node sub-ns sync over fibre.
 - [White Rabbit switch software](../../catalog/repos/gitlab.com__ohwr__project__wr-switch-sw.md) - fit: low - Embedded Linux software for the White Rabbit switch, including the PTP daemon integration and management.
 
-## Documents, talks, courses, datasets (77)
+## Documents, talks, courses, datasets (78)
 
 - [Clock Synchronization Accuracy over Mobile Networks](../../catalog/resources/edi-ptp-mobile-network-dataset.md) - dataset - fit: high - PTPv2 (PTPd) time synchronization between two hosts across mobile networks including a private 5G SA network, with the slave's PTPd 'offset from master' log values and an independent PPS-vs-PPS offset measured with an An
 - [Data for "PTP over wide area networks with offset measurement outlier filtering"](../../catalog/resources/uniri-wan-ptp-outlier-filtering-dataset.md) - dataset - fit: high - University of Granada measurements of ptp4l and chrony time transfer over about 200 km of research network between ROA (Spanish UTC lab) and Granada, plus Calnex Paragon-X network emulation runs and free-running NIC stab
@@ -138,6 +142,7 @@ Clocks, holdover, PTP/NTP, GNSS-disciplined oscillators, chip-scale atomic clock
 - [Open-sourcing a more precise time appliance](../../catalog/resources/meta-time-appliance-2021.md) - blog - Introduces the Time Card (GNSS receiver, miniature atomic clock, FPGA time engine on PCIe) and the OCP Time Appliance Project.
 - [Preventing (Network) Time Travel with Chronos](../../catalog/resources/deutsch-2018-chronos-ndss.md) - paper - NDSS 2018 paper proposing Chronos, an NTP client that queries many servers and discards outliers to bound time-shifting by a man in the middle; basis of the later Khronos RFC.
 - [PTB: DCF77](../../catalog/resources/ptb-dcf77.md) - doc - PTB's page on the DCF77 77.5 kHz longwave time signal: transmitter, time code and how legal time is disseminated in Germany.
+- [PX4 uXRCE-DDS (PX4-ROS 2/DDS Bridge)](../../catalog/resources/px4-uxrce-dds-docs.md) - doc - How PX4 exposes uORB topics to ROS 2: a client in firmware, the Micro XRCE-DDS Agent on the companion, a dds_topics.yaml allow-list, serial or UDP transport, and built-in timestamp synchronisation.
 - [Quantum Sensors for Navigation - From Physics to Field Deployment](../../catalog/resources/ion-webinar-kealy.md) - talk - Overview of quantum sensing for navigation (atom interferometers, quantum magnetometers, clocks) and what it takes to move them from lab to field.
 - [Quantum-Classical Hybrid Framework for Zero-Day Time-Push GNSS Spoofing Detection](../../catalog/resources/enan-2025-time-push-spoofing-hqc-ae.md) - paper - Preprint on detecting time-push spoofing against static GNSS receivers with an autoencoder (hybrid quantum-classical) trained only on authentic tracking-stage features, so it can flag unseen attack types.
 - [Resilient PNT Conformance Framework](../../catalog/resources/dhs-resilient-pnt-conformance-framework.md) - standard - Defines four cumulative resilience levels for PNT user equipment based on prevent, respond and recover behaviours, so buyers and vendors can describe how a receiver behaves under jamming or spoofing.

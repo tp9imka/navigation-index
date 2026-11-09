@@ -17,7 +17,7 @@ Loosely, tightly and deeply coupled GNSS/INS.
 - [Autopilot GNSS fault handling: PX4 EKF2 and ArduPilot EKF3 under spoofing](../../docs/autopilot-gnss-fault-handling.md) - What each autopilot's EKF does when GNSS goes wrong, read from the source at pinned tags and checked in SITL by samples/autopilot-spoof-response (45 flights, 2026-11-06).
 - [GNSS-denied navigation: products and companies](../../docs/landscape/gnss-denied-nav-products.md) - What judges from industry already know.
 
-## Repositories (36)
+## Repositories (37)
 
 - [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md) - fit: high - GPL autopilot covering Copter, Plane (incl.
 - [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md) - fit: high - Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, built on NuttX with a uORB pub/sub middleware.
@@ -50,14 +50,16 @@ Loosely, tightly and deeply coupled GNSS/INS.
 - [Baidu Apollo](../../catalog/repos/apolloauto__apollo.md) - fit: low - Baidu's open autonomous driving platform, including the multi-sensor fusion localization module combining GNSS RTK, IMU and lidar map matching.
 - [PX4 ECL (Estimation & Control Library)](../../catalog/repos/px4__px4-ecl.md) - fit: low - Former home of PX4's estimation and control library including the EKF2 navigation filter; archived after the code moved into PX4-Autopilot.
 - [GLIO](../../catalog/repos/xikunliu-huskit__glio.md) - fit: low - Tightly coupled GNSS/LiDAR/IMU integration (PolyU) for continuous, drift-free state estimation in urban canyons.
+- [gnssFGO](../../catalog/repos/rwth-irt__gnssfgo.md) - fit: low - Online, time-centric factor graph optimization for GNSS and multi-sensor vehicle localization in ROS 2, with a Docker image and launch files for its Aachen data.
 - [gnss_comm](../../catalog/repos/hkust-aerial-robotics__gnss_comm.md) - fit: low - C++/ROS definitions and utilities for raw GNSS measurement processing (ephemeris, satellite positions, pseudorange models) used by GVINS.
 - [gps_imu_fusion](../../catalog/repos/shelfcol__gps_imu_fusion.md) - fit: low - GPS/IMU fusion examples derived from zm0612/eskf-gps-imu-fusion, implementing an EKF, the original ESKF and a Sola-style quaternion ESKF, plus an observability analysis; UKF is only listed as TODO.
 - [GSDC 10th place solution](../../catalog/repos/fkaneko__kaggle_google_smartphone_decimeter_challenge.md) - fit: low - 10th-place solution for the Kaggle Google Smartphone Decimeter Challenge.
 - [ML GNSS/IMU integration (GSDC 2022)](../../catalog/repos/akpozi__machine_learning_gnss_imu_integration.md) - fit: low - GSDC 2022 pipeline: an ML classifier picks the drive environment (highway, tree-lined, downtown) to set rtklib-py PPK options, then a loosely coupled GNSS/IMU Kalman filter refines the result.
 - [graduate_work (UAV INS module thesis)](../../catalog/repos/danamarkova__graduate_work.md) - fit: low - Russian graduate thesis code: 'Development of a UAV inertial navigation module using auxiliary navigation data'.
 
-## Documents, talks, courses, datasets (30)
+## Documents, talks, courses, datasets (33)
 
+- [Assessment of VDM-based autonomous navigation of a UAV under operational conditions](../../catalog/resources/khaghani-skaloud-2018-vdm-navigation.md) - paper - Robotics and Autonomous Systems 106 (2018).
 - [Complex Urban Dataset](../../catalog/resources/kaist-complex-urban-dataset.md) - dataset - Urban driving in dense city areas with lidar, stereo and navigation sensors where GNSS is degraded.
 - [Data-Driven Analysis of PNT Resilience: Insights and Lessons from Jammertest 2024 Vehicular Data](../../catalog/resources/jammertest-2024-vehicular-pnt-resilience.md) - paper - Analyses vehicle-mounted GNSS, phone, IMU and camera data collected at Jammertest 2024.
 - [EKF Source Selection and Switching](../../catalog/resources/ardupilot-ekf3-sources.md) - doc - Reference for EKF3 source parameters (position, velocity, yaw per axis) and how fusion of multiple velocity sources works.
@@ -65,6 +67,7 @@ Loosely, tightly and deeply coupled GNSS/INS.
 - [FAA SAFO 24002: Recognizing and Mitigating GPS/GNSS Disruptions](../../catalog/resources/faa-safo-24002-gnss-disruptions.md) - doc - FAA Safety Alert for Operators describing jamming vs spoofing effects on aircraft systems, typical locations near conflict and counter-UAS areas, and recommended crew and operator actions.
 - [Factor Graphs and GTSAM: A Hands-on Introduction](../../catalog/resources/gtsam-intro-tutorial.md) - doc - Hands-on introduction to the GTSAM library: modelling robot odometry, landmark and pose-graph SLAM as factor graphs, solving with Levenberg-Marquardt or iSAM2, and reading marginal covariances, with C++ and MATLAB snippe
 - [Factor Graphs for Robot Perception](../../catalog/resources/dellaert-kaess-factor-graphs-robot-perception.md) - paper - Foundations and Trends monograph (free author PDF) explaining SLAM and sensor fusion as inference on factor graphs, with incremental smoothing (iSAM) and the reasoning behind the GTSAM library.
+- [Fixed-Wing Micro UAV Open Data With Digicam And Raw INS/GNSS - IGN Flight 8](../../catalog/resources/skaloud-2021-ign-flight8-fixed-wing-data.md) - dataset - Zenodo record from EPFL TOPO: one fixed-wing micro UAV flight with raw IMU, GNSS and camera data.
 - [GPS / Non-GPS Transitions](../../catalog/resources/ardupilot-gps-non-gps-transitions.md) - doc - Explains configuring EKF3 with two source sets (e.g.
 - [Honeywell HGuide o480 single-card INS and HGuide i700 IMU](../../catalog/resources/honeywell-hguide-o480.md) - product - HGuide o480 (May 2025) is a single-card INS for small UAVs and ground robots that accepts velocity aiding (e.g.
 - [Inertial Labs VINS visual-aided INS (with Maxar Raptor)](../../catalog/resources/inertial-labs-vins.md) - product - Launched June 2025, VINS combines an Inertial Labs INS with Maxar Raptor software that matches camera frames to Maxar Precision3D satellite-derived 3D maps for absolute position on long-range UAV flights.
@@ -80,6 +83,7 @@ Loosely, tightly and deeply coupled GNSS/INS.
 - [robot_localization package documentation](../../catalog/resources/robot-localization-docs.md) - doc - Documentation for the widely used ROS EKF/UKF state estimation package, including state-estimation node configuration, sensor integration, and navsat_transform for GPS.
 - [ROSCon UK 2025 - State Estimation for Mobile Robotics Workshop](../../catalog/resources/nav2-roscon-uk-2025-state-estimation-workshop.md) - masterclass - Hands-on workshop material comparing two ROS 2 state-estimation approaches: Kalman filtering with robot_localization (EKF/UKF, covariance tuning, frames, rate handling) and factor-graph fixed-lag smoothing with fuse.
 - [SBG Systems Ellipse INS - 2025 GNSS-denied firmware](../../catalog/resources/sbg-new-ellipse-firmware.md) - product - A March 2025 free firmware update for SBG's Ellipse (v3 hardware) adds jamming/spoofing detection flags and lets users reject or re-enable GNSS and other aiding sensors without resetting the filter.
+- [Semi-Aerodynamic Model Aided Invariant Kalman Filtering for UAV Full-State Estimation](../../catalog/resources/ye-2023-semi-aerodynamic-model-aided-iekf.md) - paper - arXiv preprint.
 - [State Estimation and Localization for Self-Driving Cars (Coursera)](../../catalog/resources/coursera-state-estimation-localization-sdc.md) - course - Course 2 of the UofT Self-Driving Cars specialization: least squares, KF/EKF/ES-EKF/UKF, IMU and GNSS sensor models, LiDAR scan matching with ICP, culminating in an error-state EKF that fuses IMU, GNSS and LiDAR on CARLA
 - [Understanding Sensor Fusion and Tracking (MATLAB Tech Talks)](../../catalog/resources/mathworks-understanding-sensor-fusion-tracking.md) - video - Short video series on sensor fusion for autonomous systems: what sensor fusion is, IMU/magnetometer orientation estimation, fusing GPS and IMU for pose with an asynchronous EKF, single- and multi-object tracking, and tra
 - [UrbanLoco: A Full Sensor Suite Dataset for Mapping and Localization in Urban Scenes](../../catalog/resources/polyu-urbanloco-dataset.md) - dataset - Driving data from Hong Kong and California urban canyons with a full sensor suite, targeted at GNSS outliers and degraded localization.

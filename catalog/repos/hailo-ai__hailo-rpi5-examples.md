@@ -18,6 +18,11 @@ Examples for Hailo-8/8L accelerators on Raspberry Pi 5 (AI Kit/HAT): detection, 
 
 **Domains:** multi
 
+## Referenced by
+
+- [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
+- [ncnn](../../catalog/repos/tencent__ncnn.md) (alternative_to)
+
 _Indexed by lane(s): gap-fill_
 
 _GitHub metadata fetched 2026-11-06._

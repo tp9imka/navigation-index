@@ -35,6 +35,7 @@ Tight Learned Inertial Odometry: a network regresses displacement and uncertaint
 - [RIDI](../../catalog/repos/higerra__ridi_imu.md) (alternative_to)
 - [EqNIO](../../catalog/repos/royinajayanth__eqnio.md) (extends)
 - [RoNIN](../../catalog/repos/sachini__ronin.md) (alternative_to)
+- [TartanIMU](../../catalog/repos/superxslam__tartanimu.md) (alternative_to)
 - [TLIO: Tight Learned Inertial Odometry](../../catalog/resources/tlio-paper.md) (has_code)
 
 _Indexed by lane(s): ins-fusion_

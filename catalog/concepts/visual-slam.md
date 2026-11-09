@@ -12,7 +12,7 @@ Mapping and localization with loop closure from cameras.
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) - After this chapter you can explain how a camera, LiDAR or radar measures motion, what SLAM adds on top of odometry, and which open stack to run on which sensor.
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) - Learned models in navigation pipelines carry three separate sets of terms:
 
-## Repositories (51)
+## Repositories (52)
 
 - [PythonRobotics](../../catalog/repos/atsushisakai__pythonrobotics.md) - fit: high - Large collection of readable Python implementations of robotics algorithms: localization (EKF, particle filter), SLAM, path planning (A*, RRT*, D*, state lattice), path tracking and more, with animations.
 - [ORB-SLAM3](../../catalog/repos/uz-slamlab__orb_slam3.md) - fit: high - Visual, visual-inertial and multi-map SLAM supporting monocular, stereo and RGB-D cameras with pinhole and fisheye models, using a map atlas to survive tracking loss.
@@ -45,6 +45,7 @@ Mapping and localization with loop closure from cameras.
 - [Kimera-RPGO](../../catalog/repos/mit-spark__kimera-rpgo.md) - fit: medium - Robust pose-graph optimization that rejects bad loop closures via pairwise consistency maximization on top of GTSAM.
 - [GTSfM](../../catalog/repos/borglab__gtsfm.md) - fit: medium - End-to-end structure-from-motion pipeline built on GTSAM, with pluggable front-ends (classical and learned matchers) and distributed execution via Dask.
 - [OKVIS2](../../catalog/repos/ethz-mrl__okvis2.md) - fit: medium - Keyframe-based visual-inertial SLAM with loop closure and a realtime scalable factor-graph design; second generation of OKVIS.
+- [Fisher Information Field (rpg_information_field)](../../catalog/repos/uzh-rpg__rpg_information_field.md) - fit: medium - Implements the Fisher Information Field, a voxel map that stores how well a camera can localise at a given 6-DoF pose against known 3D landmarks.
 - [MIT VNAV labs](../../catalog/repos/mit-spark__vnav-labs.md) - fit: medium - Lab assignments for MIT 16.485 Visual Navigation for Autonomous Vehicles: ROS, 3D geometry, trajectory optimization, feature tracking, two-view geometry, VIO and place recognition.
 - [PiLoT](../../catalog/repos/nudt-sawlab__pilot.md) - fit: medium - Neural pixel-to-3D registration for UAV ego-localization and target geo-localization against a geo-referenced 3D map; release uses 3D Gaussian Splatting map backends (CVPR 2026).
 - [DEVO](../../catalog/repos/tum-vision__devo.md) - fit: medium - Deep Event Visual Odometry: learned monocular event-only VO trained on simulated events, generalizing to real benchmarks (3DV 2024).
@@ -66,7 +67,7 @@ Mapping and localization with loop closure from cameras.
 - [bsu-science - BSU diploma on camera-based UAV navigation](../../catalog/repos/drapegnik__bsu-science.md) - fit: low - LaTeX sources of science reports from BSU (Belarus, FAMCS), including a diploma 'Разработка алгоритмов навигации БПЛА' that compares SIFT/SURF/ORB, surveys SLAM and SfM 3D mapping, and demonstrates SLAM + ROS + webcam + 
 - [V-NAV (CopterHack 2022) - visual navigation for Clover](../../catalog/repos/v-nav__clover.md) - fit: low - Archived fork of the Clover framework holding team V-NAV's CopterHack 2022 entry (article in docs/ru/v-nav.md on branch v-nav_article): a multi-camera plus IMU optical navigation module using graph-based SLAM with CNN-ex
 
-## Documents, talks, courses, datasets (37)
+## Documents, talks, courses, datasets (38)
 
 - [14 Lectures on Visual SLAM: From Theory to Practice](../../catalog/resources/gaoxiang-14-lectures-visual-slam.md) - book - English translation of the popular Chinese visual SLAM textbook, from rigid-body motion and Lie algebra through camera models, nonlinear optimization, feature/direct VO, backend optimization, loop closure and dense mappi
 - [Artificial Intelligence for Robotics (Udacity CS373)](../../catalog/resources/udacity-ai-for-robotics-cs373.md) - course - Free classic course by Sebastian Thrun programming robot localization (histogram filter, Kalman filter, particle filter), search/planning, PID control and GraphSLAM in Python.
@@ -76,6 +77,7 @@ Mapping and localization with loop closure from cameras.
 - [Event-based Vision: A Survey](../../catalog/resources/gallego-event-vision-survey-2019.md) - paper - Comprehensive survey of event cameras: sensing principle, algorithms (feature tracking, optical flow, VO/SLAM) and applications.
 - [Factor Graphs and GTSAM: A Hands-on Introduction](../../catalog/resources/gtsam-intro-tutorial.md) - doc - Hands-on introduction to the GTSAM library: modelling robot odometry, landmark and pose-graph SLAM as factor graphs, solving with Levenberg-Marquardt or iSAM2, and reading marginal covariances, with C++ and MATLAB snippe
 - [Factor Graphs for Robot Perception](../../catalog/resources/dellaert-kaess-factor-graphs-robot-perception.md) - paper - Foundations and Trends monograph (free author PDF) explaining SLAM and sensor fusion as inference on factor graphs, with incremental smoothing (iSAM) and the reasoning behind the GTSAM library.
+- [Fisher Information Field: an Efficient and Differentiable Map for Perception-aware Planning](../../catalog/resources/zhang-scaramuzza-fisher-information-field-2020.md) - paper - Precomputes a voxel map of visual-localisation information so a planner can score any pose quickly and differentiably, instead of reprojecting all landmarks.
 - [From Sea to Space: Advancing Perception in Harsh Domains (ICRA 2026 workshop)](../../catalog/resources/icra-2026-sea-to-space-perception-workshop.md) - talk - ICRA 2026 (Vienna) workshop on perception for underwater, space and terrestrial field robots, including localization and mapping in degraded sensing, GPS-denied global localization, novel sensors (sonar, radar, thermal, 
 - [Gaussian Splatting SLAM](../../catalog/resources/gaussian-splatting-slam-matsuki-2023.md) - paper - Monocular and RGB-D SLAM that tracks and maps directly against 3D Gaussians using analytic Jacobians for camera pose optimization.
 - [Hilti x Trimble SLAM Challenge 2026](../../catalog/resources/hilti-slam-challenge.md) - competition - Yearly SLAM benchmark challenge with datasets and leaderboards from 2021 to 2026.

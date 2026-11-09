@@ -27,6 +27,7 @@ Introduces a dataset of real UAV flight images paired with satellite maps over v
 ## Referenced by
 
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)

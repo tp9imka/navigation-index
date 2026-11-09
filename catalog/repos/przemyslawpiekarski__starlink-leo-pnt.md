@@ -26,11 +26,13 @@ Passive positioning using Starlink downlink signals as signals of opportunity: S
 
 ## Referenced by
 
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [UT Starlink signal simulator](../../catalog/repos/gitlab.com__radionavlab__public__ut-starlink-signal-simulator.md) (alternative_to)
+- [gr-iridium](../../catalog/repos/muccc__gr-iridium.md) (alternative_to)
 - [LEO SoOP positioning thesis (Voska)](../../catalog/repos/voskavoj__dp.md) (alternative_to)
 - [Iridium PNT (Satellite Time and Location) and Iridium PNT ASIC](../../catalog/resources/iridium-pnt-stl-asic.md) (alternative_to)
 - [Exploiting Starlink Signals for Navigation: First Results](../../catalog/resources/kassas-starlink-first-results-2022.md) (uses)

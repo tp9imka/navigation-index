@@ -22,5 +22,6 @@ Tutorial hub for running generative AI, VLMs and robotics models on Jetson devic
 ## Referenced by
 
 - [jetson-containers](../../catalog/repos/dusty-nv__jetson-containers.md) (integrates_with)
+- [NVIDIA Jetson Orin Nano Developer Kit Gets a Super Boost](../../catalog/resources/nvidia-orin-nano-super-blog.md) (cites)
 
 _Indexed by lane(s): gap-fill_

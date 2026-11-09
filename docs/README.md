@@ -29,6 +29,8 @@ not a pasted problem statement: for a statement, read the
 
 ### H+0: the problem statement drops
 
+0. [challenge-2-autonomous-flight.md](challenge-2-autonomous-flight.md) - EDGE hackathon
+   Challenge 2 only: routes the full brief to the rows, samples and guides that fit.
 1. [problem-statement-decoder.md](problem-statement-decoder.md) - wording table => 1-3 of
    the decoder rows, each with approach, stack, data, starting sample, risk and pitch.
 2. [day0-runbook.md](day0-runbook.md) - the first three hours, until a walking skeleton runs.

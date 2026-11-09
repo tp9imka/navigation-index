@@ -15,7 +15,7 @@ Acquisition, tracking, navigation-message decoding in software on SDR front-ends
 
 - [2. GNSS and its threats](../../docs/primer/02-gnss-and-threats.md) - After this chapter you can explain how a receiver turns satellite signals into a position, read raw receiver output, pick between SPP, RTK and PPP, and build a jamming or spoofing detector that runs on recorded data.
 
-## Repositories (19)
+## Repositories (20)
 
 - [GNSS-SDR](../../catalog/repos/gnss-sdr__gnss-sdr.md) - fit: high - Full software-defined GNSS receiver built on GNU Radio: acquisition, tracking, navigation message decoding and PVT for GPS, Galileo, GLONASS and BeiDou signals from SDR front-ends or IQ files, including Galileo OSNMA sup
 - [AIS-catcher](../../catalog/repos/jvde-github__ais-catcher.md) - fit: high - AIS receiver and decoder for cheap SDRs (RTL-SDR, Airspy, HackRF, SDRplay, SoapySDR) with a built-in web map, JSON/NMEA output and feed sharing.
@@ -29,6 +29,7 @@ Acquisition, tracking, navigation-message decoding in software on SDR front-ends
 - [CU Boulder GNSS SDR Collection](../../catalog/repos/gnsscusdr__cu-sdr-collection.md) - fit: medium - University of Colorado Boulder collection of MATLAB software-defined GNSS receiver code-bases, organized per constellation (GPS, Galileo, GLONASS, BeiDou), with linked sample data sets.
 - [SoftGNSS-python](../../catalog/repos/perrysou__softgnss-python.md) - fit: medium - Python port of the SoftGNSS software-defined GPS receiver toolkit.
 - [GNSS-SDRLIB](../../catalog/repos/taroz__gnss-sdrlib.md) - fit: low - Older open-source GNSS software receiver library in C with a GUI, supporting several front-ends and real-time RTKLIB output.
+- [gr-iridium](../../catalog/repos/muccc__gr-iridium.md) - fit: low - GNU Radio blocks and apps that detect and demodulate Iridium bursts from SDR recordings.
 - [GNSS-matlab](../../catalog/repos/danipascual__gnss-matlab.md) - fit: low - MATLAB code to generate GNSS PRN and secondary codes, dataless signals and spectra, with real captures.
 - [GPS L1 Direct Position Estimation module](../../catalog/repos/sergio-vicenzo__gpsl1-dpemodule.md) - fit: low - Plug-in module adding Direct Position Estimation (positioning directly in the correlation domain) to MATLAB two-step software receivers such as SoftGNSS.
 - [pylgrim](../../catalog/repos/kirienko__pylgrim.md) - fit: low - Playground GNSS positioning code in Python/numpy that computes a static GPS position (50-100 m accuracy per the README) from RINEX 2.11 observations, with parsers for RINEX nav/obs, SP3 and IONEX plus Klobuchar, IONEX an

@@ -27,6 +27,7 @@ Web app for uploading and plotting PX4 ULog flight logs, including estimator inn
 
 - [UAV Log Viewer](../../catalog/repos/ardupilot__uavlogviewer.md) (alternative_to)
 - [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md) (integrates_with)
+- [pyulog](../../catalog/repos/px4__pyulog.md) (same_org)
 - [Using PX4's Navigation Filter (EKF2)](../../catalog/resources/px4-ekf2-tuning-guide.md) (uses)
 - [PX4 SITL GPS denial: inject, measure drift, recover](../../catalog/samples/px4-sitl-gps-denial.md) (explains)
 

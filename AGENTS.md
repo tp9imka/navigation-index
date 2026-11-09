@@ -4,6 +4,11 @@ Guide for LLM coding agents (Claude Code, Cursor, Codex, Copilot...) using or ex
 
 ## Given a problem statement
 
+For the EDGE internal hackathon, Challenge 2 "Autonomous Frontiers", read
+`docs/challenge-2-autonomous-flight.md` first (MCP: `read` with `guide:challenge-2-autonomous-flight`).
+It narrows the hub to the rows, samples and guides that fit an autonomous flight product and
+lists the rows to skip.
+
 Free-text search ranks a pasted problem statement poorly. Do this instead:
 
 1. Run `python3 tools/query.py decode "<statement>"` (MCP: `decode`). It matches the statement

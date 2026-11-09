@@ -24,6 +24,8 @@ Event-based stereo visual odometry using spatio-temporal consistency of two even
 
 ## Referenced by
 
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
+- [DEIO](../../catalog/repos/arclab-hku__deio.md) (alternative_to)
 - [ESVIO](../../catalog/repos/arclab-hku__esvio.md) (alternative_to)
 - [HKU Event-based VO/VIO/SLAM](../../catalog/repos/arclab-hku__event_based_vo-vio-slam.md) (evaluated_on)
 

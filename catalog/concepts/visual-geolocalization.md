@@ -18,9 +18,10 @@ Matching UAV/ground imagery to satellite orthophotos or maps for absolute positi
 - [Night / thermal UAV frame to RGB satellite geolocalization with a no-false-fix gate (ALIKED / DISK / SIFT + LightGlue, SGM baseline, Thermal-UAV)](../../catalog/samples/thermal-geolocalization.md) - Real nadir DJI M4T thermal frames (Thermal-UAV / SCC-Loc, Apache-2.0 card) matched against the dataset's 0.3 m RGB satellite GeoTIFF, by condition: city and village, day and night, day and night fog.
 - [Two independent absolute sources on one real flight: visual fixes + terrain-relative navigation with solution-separation integrity (VPAIR over NRW 1 m LiDAR)](../../catalog/samples/two-source-integrity-vpair.md) - Adds terrain-relative navigation as a second absolute source to the real VPAIR flight (8.53 km after GNSS loss, Rhine valley between Bad Honnef and Koenigswinter, east of Bonn).
 
-## Guides (13)
+## Guides (14)
 
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) - After this chapter you can explain the five main ways to get an absolute position without GNSS - image-to-map matching, terrain matching, magnetic anomaly matching, celestial fixes and signals of opportunity - pick the o
+- [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) - Start here when the task is the EDGE Group internal hackathon, Challenge 2.
 - [Choose a stack you can run](../../docs/practical-readiness.md) - Start with the problem decoder, then narrow the candidates by the resources in the room.
 - [Docs map](../../docs/README.md) - What each page under docs/ is for and the order to read them in.
 - [Evidence matrix](../../docs/evidence-matrix.md) - Recording/replay plumbing: recording-replay ran on 2026-11-07 with 101 synthetic poses over 10 s.
@@ -89,7 +90,7 @@ Matching UAV/ground imagery to satellite orthophotos or maps for absolute positi
 - [DPN (UAVM 2023 entry)](../../catalog/repos/huhu246__dpn.md) - fit: low - Submission for the ACM MM 2023 drone-satellite matching challenge.
 - [CELL](../../catalog/repos/panagiotisq__cell.md) - fit: low - Event camera localization in prior lidar maps with confidence weighting.
 
-## Documents, talks, courses, datasets (68)
+## Documents, talks, courses, datasets (69)
 
 - [A Review on Deep Learning for UAV Absolute Visual Localization](../../catalog/resources/couturier-review-dl-uav-avl-2024.md) - paper - Survey of deep-learning approaches to UAV absolute visual localization against reference maps since 2019, in the journal Drones.
 - [A Robust Approach to Vision-Based Terrain-Aided Localization](../../catalog/resources/ion-webinar-navon.md) - talk - Vision-based terrain-aided localization for aircraft, matching onboard imagery against terrain/map references as a GNSS-independent position source.
@@ -124,6 +125,7 @@ Matching UAV/ground imagery to satellite orthophotos or maps for absolute positi
 - [OpenDroneMap Aukerman Park eBee image set](../../catalog/resources/odm-aukerman-ebee-dataset.md) - dataset - A CC0 set of nadir photos from a senseFly eBee survey of Aukerman Park, Ohio, distributed by OpenDroneMap as a photogrammetry test dataset, with EXIF GPS in each frame.
 - [Photogrammetry I & II](../../catalog/resources/stachniss-photogrammetry-i-ii.md) - lecture-series - Recorded two-semester photogrammetry course (2015/16 playlist): camera models, direct linear transform, projective geometry, epipolar geometry, bundle adjustment, and image-based 3D reconstruction.
 - [PiLoT: Neural Pixel-to-3D Registration for UAV-based Ego and Target Geo-localization](../../catalog/resources/pilot-pixel-to-3d-2026.md) - paper - Registers live UAV frames against geo-referenced 3D maps to recover 6-DoF ego pose and geo-locate observed points.
+- [PX4 uORB message: AuxGlobalPosition](../../catalog/resources/px4-aux-global-position-msg.md) - doc - uORB message for an external global position (lat, lon, alt, eph, epv) tagged with a source type: vision, terrain, magnetic, pseudolites, LEO and others.
 - [Rethinking Visual Geo-localization for Large-Scale Applications](../../catalog/resources/cosplace-sf-xl-2022.md) - paper - CVPR 2022 paper introducing San Francisco eXtra Large (SF-XL), a city-wide geo-localization dataset, and CosPlace, which casts VPR training as classification to avoid expensive negative mining.
 - [Sample4Geo: Hard Negative Sampling For Cross-View Geo-Localisation](../../catalog/resources/sample4geo-2023.md) - paper - Shows that a simple contrastive setup with careful hard-negative sampling performs strongly on cross-view geo-localization benchmarks.
 - [SoftServe engineers win TIDE NATO Hackathon 2023 challenge](../../catalog/resources/nato-tide-hackathon-2023-suav-visual-nav.md) - blog - Coverage of the TIDE NATO Hackathon 2023 in Poland, whose three challenges included Small UAV Visual Navigation Concepts; SoftServe won the Analytics Dashboard for Interoperability challenge.

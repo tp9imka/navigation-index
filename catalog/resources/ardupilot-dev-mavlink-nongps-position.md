@@ -23,6 +23,7 @@ Developer page listing the MAVLink messages ArduPilot accepts for external posit
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 
 _Indexed by lane(s): autopilots_

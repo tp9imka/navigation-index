@@ -47,6 +47,7 @@ Firmware for the Crazyflie nano quad, Bolt and the Roadrunner positioning tag, w
 - [Crazyswarm2](../../catalog/repos/imrclab__crazyswarm2.md) (depends_on)
 - [Crazyswarm2](../../catalog/repos/imrclab__crazyswarm2.md) (integrates_with)
 - [dRehmFlight VTOL](../../catalog/repos/nickrehm__drehmflight.md) (alternative_to)
+- [TinyMPC](../../catalog/repos/tinympc__tinympc.md) (evaluated_on)
 - [Loco Positioning System documentation](../../catalog/resources/bitcraze-loco-positioning.md) (explains)
 - [Onboard Ranging-based Relative Localization and Stability for Lightweight Aerial Swarms](../../catalog/resources/li-onboard-relative-localization-swarms.md) (uses)
 

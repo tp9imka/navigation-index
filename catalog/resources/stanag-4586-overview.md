@@ -19,5 +19,6 @@ Public overview of NATO's UAS interoperability standard, which defines a core UC
 ## Referenced by
 
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [STANAG 4703 / AEP-83: Light Unmanned Aircraft Systems Airworthiness Requirements](../../catalog/resources/nato-stanag-4703-aep-83.md) (cites)
 
 _Indexed by lane(s): docs-standards_

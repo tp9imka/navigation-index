@@ -1,0 +1,545 @@
+[
+  {
+    "id": "repo:ethz-asl/mav_trajectory_generation",
+    "kind": "repo",
+    "name": "mav_trajectory_generation",
+    "url": "https://github.com/ethz-asl/mav_trajectory_generation",
+    "summary": "C++ library for polynomial (minimum-snap style) trajectory generation for multirotors, with linear and nonlinear optimisation of segment times and derivative constraints. Ships ROS 1 wrappers, examples and a MATLAB folder.",
+    "why_it_matters": "The reference open implementation of the Richter / Bry / Roy polynomial method. Turns a waypoint list from a route planner into a smooth, dynamically feasible reference an MPC or autopilot can track.",
+    "concepts": ["concept:path-planning", "concept:autopilot", "concept:ros"],
+    "tags": ["minimum-snap", "polynomial", "trajectory-generation", "multirotor", "c++", "apache-2.0"],
+    "language": "C++",
+    "domains": ["air"],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "License Apache-2.0 (gh api), commercial-friendly. Last push 2023-05-20, effectively unmaintained. Build is catkin / ROS 1 (Noetic-era), so budget a Docker image. For a pure-Python 48h build, RotorPy's MinSnap class gives the same idea with less setup; use this one when you want the C++ core for the product story.",
+    "related": [
+      {"id": "repo:spencerfolk/rotorpy", "rel": "alternative_to"},
+      {"id": "repo:zju-fast-lab/gcopter", "rel": "alternative_to"},
+      {"id": "repo:ethz-asl/mav_control_rw", "rel": "integrates_with"},
+      {"id": "repo:ethz-asl/rotors_simulator", "rel": "integrates_with"}
+    ]
+  },
+  {
+    "id": "repo:zju-fast-lab/am_traj",
+    "kind": "repo",
+    "name": "AM-Traj",
+    "url": "https://github.com/ZJU-FAST-Lab/am_traj",
+    "summary": "Alternating-minimisation trajectory generator for aggressive quadrotor flight: jointly optimises polynomial coefficients and segment durations, with a fast feasibility check on velocity and acceleration.",
+    "why_it_matters": "A compact, fast time-allocation solver for waypoint-to-trajectory conversion, a step most teams hand-tune.",
+    "concepts": ["concept:path-planning"],
+    "tags": ["time-allocation", "polynomial", "multirotor", "c++", "gpl-3.0"],
+    "language": "C++",
+    "domains": ["air"],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "License GPL-3.0 (gh api), copyleft: fine for a demo, a problem if EDGE wants to ship closed. Last push 2021-06-10. ROS 1 build. Read it for the algorithm; GCOPTER (MINCO) from the same lab is the newer successor.",
+    "related": [
+      {"id": "repo:zju-fast-lab/gcopter", "rel": "alternative_to"},
+      {"id": "repo:ethz-asl/mav_trajectory_generation", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:zju-fast-lab/ego-planner-v2",
+    "kind": "repo",
+    "name": "EGO-Planner-v2 (Swarm Playground)",
+    "url": "https://github.com/ZJU-FAST-Lab/EGO-Planner-v2",
+    "summary": "Codebase of the 'Swarm of micro flying robots in the wild' work: MINCO-based local trajectory optimisation with obstacle, dynamic-feasibility and inter-agent constraints, plus a lightweight simulator.",
+    "why_it_matters": "The current state of the ZJU B-spline / MINCO planner family that EGO-Planner and Fast-Planner started; shows how a full onboard planner is wired for real flights in clutter.",
+    "concepts": ["concept:path-planning", "concept:obstacle-avoidance", "concept:multi-agent", "concept:ros"],
+    "tags": ["minco", "local-planner", "swarm", "multirotor", "c++", "gpl-3.0"],
+    "language": "C++",
+    "domains": ["air"],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "License GPL-3.0 (gh api). Last push 2023-10-16. ROS 1 Noetic. Its bundled simulator runs without Gazebo, which makes a clutter-avoidance demo feasible in a day if the team already knows ROS. Needs a good pose: pair with the hub's VIO samples, and say so if the demo uses ground-truth odometry.",
+    "related": [
+      {"id": "repo:zju-fast-lab/ego-planner", "rel": "extends"},
+      {"id": "repo:zju-fast-lab/ego-planner-swarm", "rel": "extends"},
+      {"id": "repo:zju-fast-lab/gcopter", "rel": "same_org"}
+    ]
+  },
+  {
+    "id": "repo:acados/acados",
+    "kind": "repo",
+    "name": "acados",
+    "url": "https://github.com/acados/acados",
+    "summary": "Fast embedded solvers for nonlinear optimal control and nonlinear MPC. Models are written in CasADi from Python or MATLAB, and acados generates C code with real-time iteration SQP and HPIPM QP solvers.",
+    "why_it_matters": "The de-facto open NMPC engine behind most quadrotor and fixed-wing MPC research code; the generated C code is a credible path from a laptop demo to a flight computer.",
+    "concepts": ["concept:autopilot", "concept:path-planning", "concept:edge-ai"],
+    "tags": ["nmpc", "optimal-control", "code-generation", "embedded", "casadi", "bsd-2-clause"],
+    "language": "C",
+    "domains": ["air", "ground", "multi"],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "License BSD-2-Clause (LICENSE file read; GitHub shows NOASSERTION). Last push 2026-10-29, active. Python interface needs acados built from source plus the tera_renderer binary; plan 30-60 min the first time. Start from the bundled Python examples (pendulum, then a quadrotor model) before writing your own dynamics.",
+    "related": [
+      {"id": "repo:casadi/casadi", "rel": "depends_on"},
+      {"id": "repo:do-mpc/do-mpc", "rel": "alternative_to"},
+      {"id": "repo:tinympc/tinympc", "rel": "alternative_to"},
+      {"id": "repo:tum-aas/ml-casadi", "rel": "integrates_with"}
+    ]
+  },
+  {
+    "id": "repo:casadi/casadi",
+    "kind": "repo",
+    "name": "CasADi",
+    "url": "https://github.com/casadi/casadi",
+    "summary": "Symbolic framework for numerical optimisation with automatic differentiation, interfaces to IPOPT and other solvers, and C code generation. Used from Python, C++, MATLAB and Julia.",
+    "why_it_matters": "The modelling layer for nearly every open trajectory-optimisation and MPC prototype; pip-installable, so a team can write an optimal-control problem in an hour.",
+    "concepts": ["concept:path-planning", "concept:autopilot"],
+    "tags": ["optimisation", "automatic-differentiation", "ipopt", "python", "lgpl-3.0"],
+    "language": "C++",
+    "domains": ["multi"],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "License LGPL-3.0 (gh api): usable in a commercial product if linked dynamically and modifications to CasADi itself are shared; check with legal before static linking. Last push 2026-11-07. Python wheels exist, so offline-capable once cached. Good for an offline trajectory optimiser (min-time or min-energy route over a DEM) where solve time is not critical.",
+    "related": [
+      {"id": "repo:acados/acados", "rel": "integrates_with"},
+      {"id": "repo:do-mpc/do-mpc", "rel": "integrates_with"},
+      {"id": "repo:peterdsharpe/aerosandbox", "rel": "integrates_with"}
+    ]
+  },
+  {
+    "id": "repo:do-mpc/do-mpc",
+    "kind": "repo",
+    "name": "do-mpc",
+    "url": "https://github.com/do-mpc/do-mpc",
+    "summary": "Python toolbox for model predictive control and moving horizon estimation on top of CasADi, with templates for model, controller, estimator and simulator.",
+    "why_it_matters": "The fastest route from 'we have dynamics equations' to a working MPC loop in pure Python, which suits a 48h build better than a compiled stack.",
+    "concepts": ["concept:autopilot", "concept:sensor-fusion"],
+    "tags": ["mpc", "mhe", "python", "casadi", "lgpl-3.0"],
+    "language": "Python",
+    "domains": ["multi"],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "License LGPL-3.0 (gh api). Last push 2026-09-22. pip install; examples run on CPU in seconds. Not real-time on a flight computer as-is: present it as the design and evaluation tool, and acados or TinyMPC as the onboard path. The MHE half is a natural tie-in to the hub's estimation samples.",
+    "related": [
+      {"id": "repo:casadi/casadi", "rel": "depends_on"},
+      {"id": "repo:acados/acados", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:tinympc/tinympc",
+    "kind": "repo",
+    "name": "TinyMPC",
+    "url": "https://github.com/TinyMPC/TinyMPC",
+    "summary": "ADMM-based convex MPC solver small enough for microcontrollers, with Python bindings and code generation; demonstrated on a Crazyflie.",
+    "why_it_matters": "Shows MPC running on autopilot-class hardware rather than a companion computer, which answers the 'how does this run on the aircraft' question.",
+    "concepts": ["concept:autopilot", "concept:edge-ai"],
+    "tags": ["mpc", "admm", "microcontroller", "embedded", "mit"],
+    "language": "C++",
+    "domains": ["air"],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "License MIT (gh api). Last push 2026-09-02. Linear (linearised) MPC only, so it suits hover / tracking around a trim, not large manoeuvres. A separate TinyMPC/tinympc-px4 repo exists (3 stars, MIT, not reviewed here).",
+    "related": [
+      {"id": "repo:acados/acados", "rel": "alternative_to"},
+      {"id": "repo:bitcraze/crazyflie-firmware", "rel": "evaluated_on"}
+    ]
+  },
+  {
+    "id": "repo:osqp/osqp",
+    "kind": "repo",
+    "name": "OSQP",
+    "url": "https://github.com/osqp/osqp",
+    "summary": "Operator-splitting solver for convex quadratic programs, with embedded C code generation and Python bindings.",
+    "why_it_matters": "Minimum-snap with fixed segment times and linear MPC are both QPs; OSQP solves them with no license friction.",
+    "concepts": ["concept:path-planning", "concept:autopilot"],
+    "tags": ["qp", "solver", "embedded", "python", "apache-2.0"],
+    "language": "C",
+    "domains": ["multi"],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "License Apache-2.0 (gh api). Last push 2026-01-12. pip install osqp. Write the min-snap QP yourself in ~100 lines of numpy + OSQP when a team wants code it fully owns.",
+    "related": [
+      {"id": "repo:ethz-asl/mav_trajectory_generation", "rel": "alternative_to"},
+      {"id": "repo:tinympc/tinympc", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:uzh-rpg/rpg_mpc",
+    "kind": "repo",
+    "name": "rpg_mpc (PAMPC)",
+    "url": "https://github.com/uzh-rpg/rpg_mpc",
+    "summary": "Quadrotor MPC built on ACADO code generation, including the Perception-Aware MPC (PAMPC) variant that adds a cost to keep a point of interest visible in the camera while tracking a trajectory.",
+    "why_it_matters": "The canonical example of putting a perception term into the controller cost, which is what keeps a visual-nav vehicle localisable when GNSS is gone.",
+    "concepts": ["concept:autopilot", "concept:path-planning", "concept:vio", "concept:ros"],
+    "tags": ["mpc", "perception-aware", "acado", "multirotor", "gpl-3.0"],
+    "language": "C",
+    "domains": ["air"],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "License GPL-3.0 (gh api). Last push 2022-04-04. ROS 1 and ACADO (not acados). Re-implement the PAMPC cost term in acados or do-mpc rather than reviving this build; cite the paper for the method.",
+    "related": [
+      {"id": "repo:uzh-rpg/rpg_quadrotor_control", "rel": "integrates_with"},
+      {"id": "repo:acados/acados", "rel": "alternative_to"},
+      {"id": "repo:uzh-rpg/rpg_information_field", "rel": "same_org"}
+    ]
+  },
+  {
+    "id": "repo:uzh-rpg/data_driven_mpc",
+    "kind": "repo",
+    "name": "Data-Driven MPC for Quadrotors",
+    "url": "https://github.com/uzh-rpg/data_driven_mpc",
+    "summary": "Python code for the Data-Driven MPC paper: a nominal quadrotor model in acados corrected by Gaussian-process regression of the residual dynamics (drag, unmodelled effects), with Gazebo and simplified-sim pipelines.",
+    "why_it_matters": "A template for 'physics model + learned correction' in the loop, which is the propulsion / applied-physics angle the brief's expertise list hints at.",
+    "concepts": ["concept:autopilot", "concept:edge-ai", "concept:simulation"],
+    "tags": ["mpc", "gaussian-process", "acados", "aerodynamics", "python", "gpl-3.0"],
+    "language": "Python",
+    "domains": ["air"],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "License GPL-3.0, README says a commercial license is available from the lab (gh api + README). Last push 2021-04-20. Tested on Ubuntu 18.04 / Python 3.6 / ROS Melodic, with a python3.8 branch for Noetic. Expect dependency pain; lift the GP-residual idea, not the code.",
+    "related": [
+      {"id": "repo:acados/acados", "rel": "depends_on"},
+      {"id": "repo:tum-aas/ml-casadi", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:tum-aas/ml-casadi",
+    "kind": "repo",
+    "name": "ML-CasADi",
+    "url": "https://github.com/TUM-AAS/ml-casadi",
+    "summary": "Bridges PyTorch models into CasADi and acados so a neural network can be part of the MPC prediction model, using local approximations for real-time use.",
+    "why_it_matters": "Lets a team plug a learned aerodynamics or propulsion residual into an MPC without rewriting the network in CasADi.",
+    "concepts": ["concept:autopilot", "concept:edge-ai"],
+    "tags": ["neural-mpc", "pytorch", "casadi", "acados", "python", "mit"],
+    "language": "Python",
+    "domains": ["air", "multi"],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "License MIT (gh api). Last push 2023-11-01. pip-installable per its README (not run here). Only worth it if the team has a residual model to learn from logs; otherwise a physics model is the honest baseline.",
+    "related": [
+      {"id": "repo:acados/acados", "rel": "integrates_with"},
+      {"id": "repo:casadi/casadi", "rel": "depends_on"},
+      {"id": "repo:uzh-rpg/data_driven_mpc", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:uzh-rpg/rpg_quadrotor_control",
+    "kind": "repo",
+    "name": "rpg_quadrotor_control",
+    "url": "https://github.com/uzh-rpg/rpg_quadrotor_control",
+    "summary": "UZH RPG quadrotor control framework: position and attitude controllers, a trajectory generation library, an autopilot state machine and a simulator interface, all as ROS 1 packages.",
+    "why_it_matters": "A complete, readable reference for how trajectory generation, tracking control and a mission state machine fit together on a multirotor.",
+    "concepts": ["concept:autopilot", "concept:path-planning", "concept:ros"],
+    "tags": ["quadrotor", "control", "state-machine", "ros1", "mit"],
+    "language": "C++",
+    "domains": ["air"],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "License MIT (LICENSE file read; GitHub shows NOASSERTION). Last push 2021-09-20. ROS 1 only. Read for architecture; for a live demo PX4 offboard or ArduPilot guided mode is less work.",
+    "related": [
+      {"id": "repo:uzh-rpg/rpg_mpc", "rel": "integrates_with"},
+      {"id": "repo:uzh-rpg/agilicious", "rel": "same_org"}
+    ]
+  },
+  {
+    "id": "repo:uzh-rpg/agilicious",
+    "kind": "repo",
+    "name": "Agilicious",
+    "url": "https://github.com/uzh-rpg/agilicious",
+    "summary": "Public front page of the UZH Agilicious quadrotor hardware and software stack for agile vision-based flight (MPC, planning, estimation). The repository holds documentation; source access is by request.",
+    "why_it_matters": "A reference for a modern agile-flight software architecture, but not usable code for a hackathon.",
+    "concepts": ["concept:autopilot", "concept:path-planning"],
+    "tags": ["agile-flight", "mpc", "quadrotor", "academic-license"],
+    "language": "TeX",
+    "domains": ["air"],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "No license file on GitHub. README points to an academic-use-only license agreement and an access request form, so it is not usable for a product and code cannot be fetched on the day. Last push 2023-03-07. Listed so nobody wastes time on it.",
+    "related": [
+      {"id": "repo:uzh-rpg/rpg_quadrotor_control", "rel": "same_org"},
+      {"id": "repo:uzh-rpg/flightmare", "rel": "integrates_with"}
+    ]
+  },
+  {
+    "id": "repo:ethz-asl/mav_control_rw",
+    "kind": "repo",
+    "name": "mav_control_rw",
+    "url": "https://github.com/ethz-asl/mav_control_rw",
+    "summary": "Linear and nonlinear MPC position controllers for rotary-wing MAVs with disturbance observers, packaged for ROS 1 and RotorS.",
+    "why_it_matters": "Shows an MPC with an explicit disturbance (wind) estimate in the loop, a simple robustness story judges understand.",
+    "concepts": ["concept:autopilot", "concept:ros"],
+    "tags": ["mpc", "disturbance-observer", "multirotor", "ros1", "apache-2.0"],
+    "language": "C",
+    "domains": ["air"],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "License Apache-2.0 (gh api). Last push 2019-09-05, ROS Kinetic/Melodic era. Use as a design reference only.",
+    "related": [
+      {"id": "repo:ethz-asl/rotors_simulator", "rel": "integrates_with"},
+      {"id": "repo:ethz-asl/mav_trajectory_generation", "rel": "integrates_with"}
+    ]
+  },
+  {
+    "id": "repo:jaeyoung-lim/mavros_controllers",
+    "kind": "repo",
+    "name": "mavros_controllers",
+    "url": "https://github.com/Jaeyoung-Lim/mavros_controllers",
+    "summary": "Geometric trajectory-tracking controllers for PX4 multirotors over MAVROS, sending body-rate and thrust setpoints in offboard mode, with trajectory publisher nodes.",
+    "why_it_matters": "A worked example of closing your own tracking loop around PX4 from a companion computer, the integration path most guidance demos need.",
+    "concepts": ["concept:autopilot", "concept:mavlink-gcs", "concept:ros"],
+    "tags": ["px4", "offboard", "geometric-control", "mavros", "bsd-3-clause"],
+    "language": "C++",
+    "domains": ["air"],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "License BSD-3-Clause (gh api). Last push 2022-09-03. ROS 1 + MAVROS. For a ROS 2 build use px4-ros2-interface-lib or the PX4 ROS 2 offboard example; copy this repo's control law rather than its plumbing.",
+    "related": [
+      {"id": "repo:mavlink/mavros", "rel": "depends_on"},
+      {"id": "repo:px4/px4-autopilot", "rel": "integrates_with"},
+      {"id": "repo:auterion/px4-ros2-interface-lib", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:uzh-rpg/rpg_information_field",
+    "kind": "repo",
+    "name": "Fisher Information Field (rpg_information_field)",
+    "url": "https://github.com/uzh-rpg/rpg_information_field",
+    "summary": "Implements the Fisher Information Field, a voxel map that stores how well a camera can localise at a given 6-DoF pose against known 3D landmarks. The field is differentiable and fast to query, with RRT* and trajectory-optimisation examples.",
+    "why_it_matters": "The clearest open code for a 'localisability map': plan paths that stay where vision-based localisation works, the core idea behind perception-aware planning in GNSS-denied flight.",
+    "concepts": ["concept:path-planning", "concept:vio", "concept:visual-slam", "concept:ros"],
+    "tags": ["perception-aware", "localisability", "fisher-information", "voxblox", "mit"],
+    "language": "C++",
+    "domains": ["air"],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "License MIT (gh api), with Voxblox-derived code under its own license in third_party. Last push 2020-10-13. ROS 1 build with Unreal-based examples: too heavy for 48h. Re-implement the idea in 2D for aerial nav: a grid where each cell scores expected match quality (texture, terrain roughness) and feed it into the planner cost.",
+    "related": [
+      {"id": "repo:uzh-rpg/rpg_mpc", "rel": "same_org"},
+      {"id": "repo:robotics-star-lab/la-planner", "rel": "alternative_to"},
+      {"id": "repo:ethz-asl/mav_active_3d_planning", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:robotics-star-lab/la-planner",
+    "kind": "repo",
+    "name": "LA-Planner",
+    "url": "https://github.com/Robotics-STAR-Lab/LA-Planner",
+    "summary": "Localisation-aware quadrotor planner for unknown, feature-poor environments (IROS 2025): it allocates camera attention between exploration and feature-rich regions so VIO keeps tracking during navigation.",
+    "why_it_matters": "Recent, maintained example of planning that explicitly protects the estimator, which is the bridge between this hub's estimation focus and guidance.",
+    "concepts": ["concept:path-planning", "concept:vio", "concept:obstacle-avoidance", "concept:ros"],
+    "tags": ["perception-aware", "localization-aware", "feature-limited", "quadrotor", "gpl-3.0"],
+    "language": "C++",
+    "domains": ["air"],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "License GPL-3.0 (gh api). Last push 2025-07-21. Ubuntu 20.04 + ROS Noetic + nlopt 2.7.1 from source. Too much setup for 48h; useful as the citation for 'localisation-aware planning is current research'.",
+    "related": [
+      {"id": "repo:uzh-rpg/rpg_information_field", "rel": "alternative_to"},
+      {"id": "repo:mit-acl/panther", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:mit-acl/panther",
+    "kind": "repo",
+    "name": "PANTHER",
+    "url": "https://github.com/mit-acl/panther",
+    "summary": "Perception-aware trajectory planner for multirotors in dynamic environments: jointly optimises translation and yaw so the camera keeps moving obstacles in view while avoiding them.",
+    "why_it_matters": "Example of coupling yaw (sensor pointing) with the trajectory; the same trick applies to keeping a downward or forward camera on matchable terrain.",
+    "concepts": ["concept:path-planning", "concept:obstacle-avoidance", "concept:ros"],
+    "tags": ["perception-aware", "yaw-planning", "dynamic-obstacles", "casadi", "bsd-3-clause"],
+    "language": "C++",
+    "domains": ["air"],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "License BSD-3-Clause (gh api). Last push 2022-11-01. ROS Noetic, CGAL, CasADi from source and an HSL linear solver behind a registration form. Not a 48h install; read for the formulation.",
+    "related": [
+      {"id": "repo:mit-acl/mader", "rel": "same_org"},
+      {"id": "repo:casadi/casadi", "rel": "depends_on"}
+    ]
+  },
+  {
+    "id": "repo:ethz-asl/mav_active_3d_planning",
+    "kind": "repo",
+    "name": "mav_active_3d_planning",
+    "url": "https://github.com/ethz-asl/mav_active_3d_planning",
+    "summary": "Modular framework for online informative path planning on MAVs: pluggable trajectory generators, evaluators (information gain), and back-ends, built on Voxblox maps.",
+    "why_it_matters": "The evaluator abstraction is exactly where a 'localisability' or 'TRN information' gain would plug in, instead of the usual exploration gain.",
+    "concepts": ["concept:path-planning", "concept:mission-planning", "concept:ros"],
+    "tags": ["informative-path-planning", "active-perception", "voxblox", "bsd-3-clause"],
+    "language": "C++",
+    "domains": ["air"],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "License BSD-3-Clause (gh api). Last push 2025-08-14. ROS 1 catkin stack. Borrow the planner / evaluator split as architecture; do not attempt to build it on day 1.",
+    "related": [
+      {"id": "repo:ethz-asl/rotors_simulator", "rel": "integrates_with"},
+      {"id": "repo:uzh-rpg/rpg_information_field", "rel": "alternative_to"},
+      {"id": "repo:hkust-aerial-robotics/fuel", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:sauravag/edpl-ompl",
+    "kind": "repo",
+    "name": "edpl-ompl",
+    "url": "https://github.com/sauravag/edpl-ompl",
+    "summary": "C++ belief-space motion planning on top of OMPL (FIRM-style roadmaps with feedback controllers and Kalman-filter belief propagation).",
+    "why_it_matters": "One of the few open belief-space planners: it plans over the estimator's covariance, not just position.",
+    "concepts": ["concept:path-planning", "concept:sensor-fusion"],
+    "tags": ["belief-space", "firm", "ompl", "uncertainty"],
+    "language": "C++",
+    "domains": ["ground", "air"],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "No license file (gh api returns none), so all rights reserved: read-only reference, not usable in a product. Last push 2019-09-18. For a hackathon, implement the core idea directly: propagate EKF covariance along candidate routes and pick the route that keeps it under the alert limit.",
+    "related": [
+      {"id": "repo:ompl/ompl", "rel": "depends_on"}
+    ]
+  },
+  {
+    "id": "repo:ethz-asl/terrain-navigation2",
+    "kind": "repo",
+    "name": "terrain-navigation2",
+    "url": "https://github.com/ethz-asl/terrain-navigation2",
+    "summary": "ROS 2 port of ETH's safe low-altitude fixed-wing planner for steep terrain: RRT* in Dubins-airplane space over a DEM, with terrain-clearance and circle-of-safety constraints.",
+    "why_it_matters": "The closest open match to fixed-wing terrain-following route planning, and it already consumes a DEM, the same input the hub's TRN samples use.",
+    "concepts": ["concept:path-planning", "concept:terrain-nav", "concept:gis-mapping", "concept:ros"],
+    "tags": ["fixed-wing", "dubins-airplane", "rrt-star", "terrain", "ros2", "bsd-3-clause"],
+    "language": "C++",
+    "domains": ["air"],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "License BSD-3-Clause (gh api), commercial-friendly. Last push 2026-10-02. Build and run not attempted here; expect a ROS 2 + grid_map + OMPL workspace. The planner core is the asset: swap its cost for TRN information to get a localisability-aware route.",
+    "related": [
+      {"id": "repo:ethz-asl/terrain-navigation", "rel": "fork_of"},
+      {"id": "repo:ompl/ompl", "rel": "depends_on"},
+      {"id": "repo:anybotics/grid_map", "rel": "depends_on"},
+      {"id": "repo:px4/px4-autopilot", "rel": "integrates_with"}
+    ]
+  },
+  {
+    "id": "repo:ethz-asl/terrain-navigation",
+    "kind": "repo",
+    "name": "terrain-navigation (ROS 1)",
+    "url": "https://github.com/ethz-asl/terrain-navigation",
+    "summary": "Original ROS 1 implementation of 'Safe Low-Altitude Navigation in Steep Terrain with Fixed-Wing Aerial Vehicles' (RA-L 2024), with a Docker build for Noetic.",
+    "why_it_matters": "Same planner as terrain-navigation2 with a ready Dockerfile, which may be the faster way to see it run.",
+    "concepts": ["concept:path-planning", "concept:terrain-nav", "concept:ros"],
+    "tags": ["fixed-wing", "dubins-airplane", "rrt-star", "terrain", "ros1", "docker", "bsd-3-clause"],
+    "language": "C++",
+    "domains": ["air"],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "License BSD-3-Clause (gh api). Last push 2025-07-01. README provides docker build for ROS Noetic; image size quoted there is 774 MB (not rebuilt here). Use it to get pictures of terrain-aware routes on day 1, then port the cost.",
+    "related": [
+      {"id": "repo:ethz-asl/terrain-navigation2", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:byu-magicc/mavsim_public",
+    "kind": "repo",
+    "name": "mavsim_public (Small Unmanned Aircraft)",
+    "url": "https://github.com/byu-magicc/mavsim_public",
+    "summary": "Project files for Beard and McLain's 'Small Unmanned Aircraft: Theory and Practice': a Python fixed-wing simulator built chapter by chapter, with autopilot (PID, LQR, TECS), straight-line and orbit path following, Dubins path manager and RRT planners.",
+    "why_it_matters": "The most direct pure-Python fixed-wing GNC chain available: estimation, guidance and path planning in one readable codebase, with wind.",
+    "concepts": ["concept:path-planning", "concept:autopilot", "concept:simulation", "concept:sensor-fusion"],
+    "tags": ["fixed-wing", "path-following", "dubins", "tecs", "rrt", "python", "textbook", "gpl-3.0"],
+    "language": "Python",
+    "domains": ["air"],
+    "maturity": "educational",
+    "hackathon_fit": "high",
+    "hackathon_notes": "License GPL-3.0 (gh api): fine for a demo, rewrite before productising. Last push 2026-06-13, maintained. Folders confirmed: mavsim_python/planners (dubins_parameters, path_follower, path_manager, rrt_dubins, rrt_straight_line) and controllers (autopilot_tecs, autopilot_lqr). Some files are student templates with blanks to fill; check each module before relying on it. No ROS, no SITL needed.",
+    "related": [
+      {"id": "repo:andrewwalker/pydubins", "rel": "alternative_to"},
+      {"id": "repo:jsbsim-team/jsbsim", "rel": "alternative_to"},
+      {"id": "repo:ardupilot/ardupilot", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:andrewwalker/pydubins",
+    "kind": "repo",
+    "name": "pydubins",
+    "url": "https://github.com/AndrewWalker/pydubins",
+    "summary": "Python wrapper around the C Dubins-Curves library: shortest paths for a vehicle with a minimum turn radius, plus sampling along the path.",
+    "why_it_matters": "Minimum-radius 2D paths are the building block of fixed-wing route planning and loiter / re-fix manoeuvres.",
+    "concepts": ["concept:path-planning"],
+    "tags": ["dubins", "fixed-wing", "python", "mit"],
+    "language": "C",
+    "domains": ["air", "maritime"],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "License MIT (gh api). Last push 2025-08-17. Builds a C extension on install; if no compiler, the closed-form Dubins words are short enough to write in numpy. 2D only and no wind: use EDuPlane when wind or climb limits matter.",
+    "related": [
+      {"id": "repo:dlr-ft/eduplane", "rel": "alternative_to"},
+      {"id": "repo:byu-magicc/mavsim_public", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:dlr-ft/eduplane",
+    "kind": "repo",
+    "name": "EDuPlane (Extended Dubins Airplane)",
+    "url": "https://github.com/DLR-FT/eduplane",
+    "summary": "DLR Python package extending the Dubins airplane method: 3D fixed-wing trajectories built from trochoidal or circular turns and straight segments that respect flight-performance limits in uniform wind.",
+    "why_it_matters": "Wind-correct fixed-wing paths in Python from an aerospace research establishment, released days before this hackathon.",
+    "concepts": ["concept:path-planning", "concept:mission-planning"],
+    "tags": ["fixed-wing", "dubins-airplane", "trochoid", "wind", "python", "apache-2.0"],
+    "language": "Python",
+    "domains": ["air"],
+    "maturity": "research-prototype",
+    "hackathon_fit": "high",
+    "hackathon_notes": "License Apache-2.0 via REUSE LICENSES/Apache-2.0.txt and SPDX headers (GitHub API shows no license because there is no top-level LICENSE file). Last push 2026-11-06, 3 stars: brand new and unproven. pip install . from source; entry notebook notebooks/2026-TAES_ExtDubinsAirplane.ipynb. Not run here.",
+    "related": [
+      {"id": "repo:andrewwalker/pydubins", "rel": "extends"},
+      {"id": "repo:ethz-asl/terrain-navigation2", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:peterdsharpe/aerosandbox",
+    "kind": "repo",
+    "name": "AeroSandbox",
+    "url": "https://github.com/peterdsharpe/AeroSandbox",
+    "summary": "Python aircraft design and trajectory optimisation toolkit on CasADi: aerodynamics, propeller and electric propulsion models, power sources, wind models, and an optimisation front-end.",
+    "why_it_matters": "Gives a team physically grounded drag, propeller and battery-power numbers to put an energy cost into a route planner, without writing aerodynamics from scratch.",
+    "concepts": ["concept:path-planning", "concept:simulation"],
+    "tags": ["aircraft-design", "propulsion", "energy", "trajectory-optimisation", "casadi", "python", "mit"],
+    "language": "Python",
+    "domains": ["air"],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "License MIT (gh api). Last push 2026-10-30. pip install aerosandbox. Library folder confirmed to include propulsion_electric, propulsion_propeller and winds modules. Use it offline to build an energy-per-metre table vs airspeed and wind, then use the table in the planner cost; do not put the full optimiser in the flight loop.",
+    "related": [
+      {"id": "repo:casadi/casadi", "rel": "depends_on"},
+      {"id": "repo:byuflowlab/ccblade.jl", "rel": "alternative_to"},
+      {"id": "repo:pybamm-team/pybamm", "rel": "integrates_with"}
+    ]
+  },
+  {
+    "id": "repo:byuflowlab/ccblade.jl",
+    "kind": "repo",
+    "name": "CCBlade.jl",
+    "url": "https://github.com/byuflowlab/CCBlade.jl",
+    "summary": "Julia blade element momentum (BEM) solver for propellers and turbines, returning thrust, torque and efficiency from blade geometry and airfoil data.",
+    "why_it_matters": "A propeller model you can trust when the brief stresses propulsion; it can generate thrust / power maps for an energy-aware planner.",
+    "concepts": ["concept:simulation"],
+    "tags": ["bem", "propeller", "propulsion", "julia", "mit"],
+    "language": "Julia",
+    "domains": ["air"],
+    "maturity": "active-research",
+    "hackathon_fit": "low",
+    "hackathon_notes": "License MIT Expat (LICENSE.md read; GitHub shows NOASSERTION). Last push 2026-09-24. Julia toolchain is extra setup; for a Python team, AeroSandbox's propeller module or the UIUC propeller data is quicker.",
+    "related": [
+      {"id": "repo:peterdsharpe/aerosandbox", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:pybamm-team/pybamm",
+    "kind": "repo",
+    "name": "PyBaMM",
+    "url": "https://github.com/pybamm-team/PyBaMM",
+    "summary": "Python battery modelling library: equivalent-circuit to electrochemical (SPM, DFN) lithium-ion models with parameter sets and fast solvers.",
+    "why_it_matters": "Lets an energy-aware planner use a battery model with voltage sag and capacity effects instead of a fixed watt-hour budget.",
+    "concepts": ["concept:simulation"],
+    "tags": ["battery", "energy", "li-ion", "python", "bsd-3-clause"],
+    "language": "Python",
+    "domains": ["multi"],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "License BSD-3-Clause (gh api). Last push 2026-11-06. pip install pybamm. Electrochemical models are overkill for routing; an equivalent-circuit model fitted to a pack datasheet is enough. Use it offline to make a remaining-range lookup.",
+    "related": [
+      {"id": "repo:peterdsharpe/aerosandbox", "rel": "integrates_with"}
+    ]
+  }
+]

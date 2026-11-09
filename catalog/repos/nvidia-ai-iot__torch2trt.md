@@ -27,6 +27,10 @@ Converts PyTorch models to TensorRT engines with a single call, aimed at Jetson 
 
 - alternative_to: [Hello AI World (jetson-inference)](../../catalog/repos/dusty-nv__jetson-inference.md)
 
+## Referenced by
+
+- [TensorRT (open-source components)](../../catalog/repos/nvidia__tensorrt.md) (alternative_to)
+
 _Indexed by lane(s): gap-fill_
 
 _GitHub metadata fetched 2026-11-06._

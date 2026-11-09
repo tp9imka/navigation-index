@@ -29,6 +29,8 @@ Google's nonlinear least-squares and general optimization library with automatic
 - [GTSAM](../../catalog/repos/borglab__gtsam.md) (alternative_to)
 - [OB_GINS](../../catalog/repos/i2nav-whu__ob_gins.md) (depends_on)
 - [g2o](../../catalog/repos/rainerkuemmerle__g2o.md) (alternative_to)
+- [SymForce](../../catalog/repos/symforce-org__symforce.md) (alternative_to)
+- [libRSF](../../catalog/repos/tuc-proaut__librsf.md) (depends_on)
 
 _Indexed by lane(s): ins-fusion_
 

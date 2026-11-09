@@ -24,7 +24,7 @@ MAVLink protocol, SDKs, ground control stations, telemetry radios.
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) - After this chapter you can run PX4 or ArduPilot in simulation, inject your own position source over MAVLink, configure the estimator to switch away from GNSS, and push your vehicle's position and detections onto a TAK co
 - [Evidence matrix](../../docs/evidence-matrix.md) - Recording/replay plumbing: recording-replay ran on 2026-11-07 with 101 synthetic poses over 10 s.
 
-## Repositories (35)
+## Repositories (36)
 
 - [QGroundControl](../../catalog/repos/mavlink__qgroundcontrol.md) - fit: high - Qt/QML cross-platform GCS (desktop, Android, iOS) for PX4 and ArduPilot: setup, mission planning, video and telemetry.
 - [MAVLink](../../catalog/repos/mavlink__mavlink.md) - fit: high - Message definitions (XML dialects) and the pymavlink-based generator for the MAVLink micro air vehicle protocol, used by PX4, ArduPilot and most GCS tools.
@@ -45,6 +45,7 @@ MAVLink protocol, SDKs, ground control stations, telemetry radios.
 - [Mission Planner](../../catalog/repos/ardupilot__missionplanner.md) - fit: medium - Windows-centric C#/.NET GCS for ArduPilot with deep parameter, log-analysis and mission tooling.
 - [WFB-ng](../../catalog/repos/svpcom__wfb-ng.md) - fit: medium - Long-range packet radio link over raw Wi-Fi injection with FEC, carrying video, MAVLink and IP tunnels.
 - [mLRS](../../catalog/repos/olliw42__mlrs.md) - fit: medium - LoRa-based bidirectional link carrying RC and full MAVLink serial data on 2.4 GHz, 868/915 MHz and 433 MHz.
+- [mavros_controllers](../../catalog/repos/jaeyoung-lim__mavros_controllers.md) - fit: medium - Geometric trajectory-tracking controllers for PX4 multirotors over MAVROS, sending body-rate and thrust setpoints in offboard mode, with trajectory publisher nodes.
 - [rust-mavlink](../../catalog/repos/mavlink__rust-mavlink.md) - fit: medium - Rust implementation of MAVLink with generated dialects and serial/UDP/TCP connections.
 - [PX4 Flight Review](../../catalog/repos/px4__flight_review.md) - fit: medium - Web app for uploading and plotting PX4 ULog flight logs, including estimator innovations and test ratios.
 - [UAV Log Viewer](../../catalog/repos/ardupilot__uavlogviewer.md) - fit: medium - Browser-based viewer for ArduPilot DataFlash (.bin) and MAVLink telemetry (.tlog) logs, also DJI .txt logs, with 3D replay and plotting.

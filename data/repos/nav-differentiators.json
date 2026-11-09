@@ -1,0 +1,802 @@
+[
+  {
+    "id": "repo:sjtu-visys-team/ai-io",
+    "kind": "repo",
+    "name": "AI-IO",
+    "url": "https://github.com/SJTU-ViSYS-team/AI-IO",
+    "summary": "Learned inertial odometry for quadrotors that feeds rotor speeds alongside IMU data into a transformer velocity regressor, then fuses the predicted velocity in an uncertainty-aware EKF. Ships its own real flight dataset with IMU, rotor speed and ground truth, and also reads the DIDO dataset.",
+    "why_it_matters": "The most recent open code that treats the propulsion system as a sensor: the paper (ICRA 2026) reports rotor speed improves velocity prediction accuracy by 36.9%. MIT license makes it usable for a product prototype.",
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion",
+      "concept:edge-ai",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "learned-inertial-odometry",
+      "rotor-speed",
+      "quadrotor",
+      "transformer",
+      "ekf",
+      "pytorch"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "Dataset is a 363 MB GitHub release asset (AI-IO_dataset.tar.gz) plus a 0.9 MB checkpoint, so it downloads in minutes. Train/eval scripts are single commands; training time and GPU need not measured here. Use its velocity output as a pseudo-measurement in an existing EKF; an IMU-only ablation gives the rotor-speed delta.",
+    "related": [
+      {
+        "id": "repo:zhangkunyi/dido",
+        "rel": "evaluated_on"
+      },
+      {
+        "id": "repo:air-io/air-io",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:uzh-rpg/learned_inertial_model_odometry",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:zhangkunyi/dido",
+    "kind": "repo",
+    "name": "DIDO",
+    "url": "https://github.com/zhangkunyi/DIDO",
+    "summary": "Code and data for Deep Inertial Quadrotor Dynamical Odometry: networks de-bias the accelerometer and gyro, learn a dynamics residual and regress velocity/position, and two EKF stages (rotation, translation) fuse them. Dataset folders hold per-sequence HDF5 files with IMU and mocap ground truth for circle and figure-eight flights.",
+    "why_it_matters": "Early open example of mixing quadrotor dynamics with learned inertial estimates in a filter; its data is also the second benchmark used by AI-IO.",
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "learned-inertial-odometry",
+      "quadrotor-dynamics",
+      "ekf",
+      "hdf5"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "No LICENSE file in the repo, so reuse rights are unclear: use the data for evaluation only and ask the authors before shipping anything derived. Indoor mocap flights only.",
+    "related": [
+      {
+        "id": "repo:sjtu-visys-team/ai-io",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:zju-fast-lab/vid-fusion",
+    "kind": "repo",
+    "name": "VID-Fusion",
+    "url": "https://github.com/ZJU-FAST-Lab/VID-Fusion",
+    "summary": "Visual-inertial-dynamics odometry: adds a thrust-model (from measured rotor speed) factor to a VINS-style sliding-window optimizer and estimates the external force on the multirotor together with its pose.",
+    "why_it_matters": "Shows how a propulsion model enters a VIO back-end as one more factor, and gives an external-force estimate that doubles as a wind or payload signal.",
+    "concepts": [
+      "concept:vio",
+      "concept:sensor-fusion",
+      "concept:calibration"
+    ],
+    "tags": [
+      "visual-inertial-dynamics",
+      "thrust-model",
+      "external-force",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "GPL-3.0, ROS1 build. Needs hover data to identify the thrust coefficient. Useful as a reference design, not a 48h base.",
+    "related": [
+      {
+        "id": "repo:zju-fast-lab/vid-dataset",
+        "rel": "evaluated_on"
+      },
+      {
+        "id": "repo:hkust-aerial-robotics/vins-fusion",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:zju-fast-lab/vid-dataset",
+    "kind": "repo",
+    "name": "VID-Dataset",
+    "url": "https://github.com/ZJU-FAST-Lab/VID-Dataset",
+    "summary": "Visual-inertial-dynamical multirotor dataset: stereo/depth camera, hardware-timestamped IMU, commanded and measured rotor speed and motor current for all four motors, flight-controller GPS, RTK and mocap ground truth, recorded as ROS bags with a time-sync tool.",
+    "why_it_matters": "One of very few open datasets with measured motor speed and current next to IMU and truth, which is exactly what a propulsion-aided estimator needs.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:vio",
+      "concept:ins"
+    ],
+    "tags": [
+      "dataset",
+      "rotor-speed",
+      "motor-current",
+      "rtk",
+      "mocap",
+      "rosbag"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "AGPL-3.0 on the repo. Bags are behind a NAS share link with a password listed in the README; total size not verified. Convert bags to CSV once and cache.",
+    "related": [
+      {
+        "id": "repo:zju-fast-lab/vid-fusion",
+        "rel": "integrates_with"
+      }
+    ]
+  },
+  {
+    "id": "repo:uzh-rpg/hdvio2.0",
+    "kind": "repo",
+    "name": "HDVIO2.0",
+    "url": "https://github.com/uzh-rpg/hdvio2.0",
+    "summary": "Sliding-window VIO that adds a hybrid quadrotor dynamics model (point-mass model plus learned thrust and torque residual networks fed by commands and gyro history) and estimates wind and external disturbances. Built on SVO Pro; a sample rosbag and ONNX weights are linked.",
+    "why_it_matters": "State of the art (T-RO 2025) for using the vehicle's own dynamics to estimate wind while flying, which is the error term that dominates model-aided dead reckoning.",
+    "concepts": [
+      "concept:vio",
+      "concept:sensor-fusion",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "hybrid-dynamics",
+      "wind-estimation",
+      "svo",
+      "tcn",
+      "ros1"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Ubuntu 20.04 + ROS Noetic + catkin. GitHub reports AGPL-3.0 while the README says GPLv3 with commercial use by contacting the authors; treat as copyleft, reference only.",
+    "related": [
+      {
+        "id": "repo:uzh-rpg/rpg_svo_pro_open",
+        "rel": "extends"
+      },
+      {
+        "id": "repo:uzh-rpg/learned_inertial_model_odometry",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:aerorobotics/neural-fly",
+    "kind": "repo",
+    "name": "Neural-Fly",
+    "url": "https://github.com/aerorobotics/neural-fly",
+    "summary": "Training notebook and flight data for Neural-Fly, which learns a wind-invariant representation of quadrotor aerodynamic residual force and adapts it online. Data includes position, velocity, attitude, thrust setpoint, PWM and the computed residual force at several fan-array wind speeds.",
+    "why_it_matters": "Real flight logs at labelled wind speeds with motor commands, useful to test how a drag/propulsion model degrades as wind rises.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "wind",
+      "aerodynamic-residual",
+      "meta-learning",
+      "px4"
+    ],
+    "language": "Jupyter Notebook",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "No license file; README states personal and educational use only, written permission needed for further use. Fine for an offline wind-sensitivity plot, not for anything shipped.",
+    "related": [
+      {
+        "id": "repo:zju-fast-lab/vid-dataset",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:syroco-isir/flight-speed-estimation-airflow",
+    "kind": "repo",
+    "name": "Flight Speed Estimation Airflow",
+    "url": "https://github.com/SyRoCo-ISIR/Flight-Speed-Estimation-Airflow",
+    "summary": "GRU network that estimates multirotor flight speed from thermal anemometer readings, linked from the 2025 airflow-inertial odometry preprint.",
+    "why_it_matters": "A cheap airflow sensor as a velocity source for multirotors is a rare angle; the preprint reports 5.7 m drift over a 203 s indoor flight.",
+    "concepts": [
+      "concept:ins",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "anemometer",
+      "airflow",
+      "gru",
+      "multirotor"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "MIT license but last push 2022, zero stars, needs custom hardware. Reference only.",
+    "related": []
+  },
+  {
+    "id": "repo:superxslam/tartanimu",
+    "kind": "repo",
+    "name": "TartanIMU",
+    "url": "https://github.com/superxslam/TartanIMU",
+    "summary": "ResNet-LSTM inertial model pretrained on more than 100 hours of car, quadruped, drone and human data that predicts body-frame velocity from 6-axis IMU, with LoRA adaptation heads, pretrained weights on Hugging Face and an IROS 2026 challenge starter kit.",
+    "why_it_matters": "The first public IMU foundation model (CVPR 2025): a team can fine-tune on its own airframe instead of training from scratch.",
+    "concepts": [
+      "concept:ins",
+      "concept:edge-ai",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "imu-foundation-model",
+      "learned-inertial-odometry",
+      "lora",
+      "pytorch"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Apache-2.0 code; weights license on Hugging Face not checked. The README says the public release has the LSTM model only (the Transformer core is not included). pip install -e . then run inference on a CSV of IMU samples.",
+    "related": [
+      {
+        "id": "repo:air-io/air-io",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:cathias/tlio",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:zju3dv/rnin-vio",
+    "kind": "repo",
+    "name": "RNIN-VIO",
+    "url": "https://github.com/zju3dv/rnin-vio",
+    "summary": "Inertial network from RNIN-VIO (ISMAR 2021) that regresses displacement and uncertainty from IMU windows, meant to keep a VIO alive when vision fails.",
+    "why_it_matters": "Shows the learned-inertial-plus-VIO coupling pattern a team would copy when the camera drops out at night or over water.",
+    "concepts": [
+      "concept:ins",
+      "concept:vio",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "learned-inertial-odometry",
+      "vio",
+      "pytorch"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Apache-2.0, last push 2022, pedestrian/handheld oriented. Use as a design reference.",
+    "related": [
+      {
+        "id": "repo:sachini/ronin",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:px4/pyulog",
+    "kind": "repo",
+    "name": "pyulog",
+    "url": "https://github.com/PX4/pyulog",
+    "summary": "Python parser and command-line tools for PX4 ULog flight logs (to CSV, info, params, messages).",
+    "why_it_matters": "The extractor for every PX4 log: ESC RPM, airspeed, wind estimate, actuator outputs and EKF innovations come out as tables for model-aided estimation experiments.",
+    "concepts": [
+      "concept:autopilot",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "ulog",
+      "px4",
+      "log-parsing",
+      "esc-telemetry"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "pip install pyulog; ulog2csv flight.ulg. Pairs with public logs on PX4 Flight Review. Check each log for esc_status and airspeed topics before relying on them.",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "same_org"
+      },
+      {
+        "id": "repo:px4/flight_review",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:castacks/alfa-dataset",
+    "kind": "repo",
+    "name": "ALFA dataset",
+    "url": "https://github.com/castacks/alfa-dataset",
+    "summary": "Landing page for the AIR Lab Failure and Anomaly dataset: 47 processed autonomous fixed-wing flight sequences (ArduPilot on Pixhawk) with engine and control-surface faults, plus raw bags, telemetry and Dataflash logs.",
+    "why_it_matters": "Real small fixed-wing flights with full ArduPilot logs, usable to test airspeed/propulsion-aided dead reckoning against GPS truth on a real airframe, and engine-out segments test a propulsion model's failure case.",
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "fixed-wing",
+      "ardupilot",
+      "dataflash",
+      "fault",
+      "dataset"
+    ],
+    "language": "",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "KiltHub DOI 10.1184/R1/12707963: processed.zip 272 MB, dataflash.zip 541 MB. Repository metadata says CC BY 4.0 while the bundled README says CC0, both permissive. Sequences are short (most 1-4 min). Airspeed channel presence not checked.",
+    "related": [
+      {
+        "id": "repo:castacks/alfa-dataset-tools",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:castacks/alfa-dataset-tools",
+    "kind": "repo",
+    "name": "ALFA dataset tools",
+    "url": "https://github.com/castacks/alfa-dataset-tools",
+    "summary": "C++, Python and MATLAB readers and evaluation helpers for the ALFA fixed-wing fault dataset, plus ROS message definitions for its bags.",
+    "why_it_matters": "Saves the parsing step when using ALFA for fixed-wing navigation experiments.",
+    "concepts": [
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "fixed-wing",
+      "dataset-tools",
+      "python"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "No LICENSE file in the repo (the ALFA paper page calls it BSD; not confirmed in the repo). Dataflash logs can also be read with pymavlink directly.",
+    "related": [
+      {
+        "id": "repo:castacks/alfa-dataset",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:ardupilot/pymavlink",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:krisgry/x8",
+    "kind": "repo",
+    "name": "Skywalker X8 simulator",
+    "url": "https://github.com/krisgry/x8",
+    "summary": "MATLAB simulator showcasing the Skywalker X8 flying-wing aerodynamic model from Gryte et al. (ICUAS 2018), with a basic autopilot and the coefficients in a .mat file.",
+    "why_it_matters": "A published, real-airframe aerodynamic coefficient set: the process model a fixed-wing vehicle-dynamic-model navigator needs.",
+    "concepts": [
+      "concept:simulation",
+      "concept:ins"
+    ],
+    "tags": [
+      "fixed-wing",
+      "aerodynamic-model",
+      "skywalker-x8",
+      "matlab"
+    ],
+    "language": "Matlab",
+    "domains": [
+      "air"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "No license file; cite the paper. Thrust model is borrowed from the Aerosonde model per the README, so propulsion is not identified. Port the coefficients to Python rather than run MATLAB.",
+    "related": [
+      {
+        "id": "repo:jsbsim-team/jsbsim",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:symforce-org/symforce",
+    "kind": "repo",
+    "name": "SymForce",
+    "url": "https://github.com/symforce-org/symforce",
+    "summary": "Symbolic computation and code generation library with a fast sparse nonlinear least-squares optimizer, from Skydio, which says it uses it in production for SLAM, calibration and MPC.",
+    "why_it_matters": "Lets a team write a custom measurement model (drag force, rotor thrust, learned velocity) once symbolically and get optimized C++/Python residuals and Jacobians, avoiding hand-derived Jacobian bugs under time pressure.",
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:calibration"
+    ],
+    "tags": [
+      "factor-graph",
+      "codegen",
+      "symbolic",
+      "optimization"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Apache-2.0, pip install symforce. Learning curve is real; worth it only if the team writes new factors.",
+    "related": [
+      {
+        "id": "repo:borglab/gtsam",
+        "rel": "alternative_to"
+      },
+      {
+        "id": "repo:ceres-solver/ceres-solver",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:tuc-proaut/librsf",
+    "kind": "repo",
+    "name": "libRSF",
+    "url": "https://github.com/TUC-ProAut/libRSF",
+    "summary": "Ceres-based robust sensor fusion library: factor graph formulation, sliding-window filter with marginalization, and robust error models including self-tuning Gaussian mixtures for non-Gaussian, outlier-heavy measurements.",
+    "why_it_matters": "The open reference for robust error models in navigation factor graphs; its GNSS datasets are reused by later integrity work (ION ITM 2026).",
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:gnss",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "factor-graph",
+      "robust-estimation",
+      "gaussian-mixture",
+      "ceres"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground",
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "GPL-3.0; Ubuntu 22.04/24.04 install script. Use its datasets and ideas; for a product prototype prefer GTSAM robust kernels.",
+    "related": [
+      {
+        "id": "repo:ceres-solver/ceres-solver",
+        "rel": "depends_on"
+      },
+      {
+        "id": "repo:borglab/gtsam",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:rwth-irt/gnssfgo",
+    "kind": "repo",
+    "name": "gnssFGO",
+    "url": "https://github.com/rwth-irt/gnssFGO",
+    "summary": "Online, time-centric factor graph optimization for GNSS and multi-sensor vehicle localization in ROS 2, with a Docker image and launch files for its Aachen data.",
+    "why_it_matters": "A working ROS 2 example of an asynchronous multi-sensor factor graph where sensors arrive at different rates, the architecture behind plug-and-play fusion.",
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:gnss-ins",
+      "concept:ros"
+    ],
+    "tags": [
+      "factor-graph",
+      "gtsam",
+      "ros2",
+      "online"
+    ],
+    "language": "C++",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "BSD-3-Clause. Archived since 2024; README says maintenance moved to the fork hz658832/gnssFGO. Docker pull is the fastest way to see it run.",
+    "related": [
+      {
+        "id": "repo:borglab/gtsam",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:airlab-polimi/roamfree",
+    "kind": "repo",
+    "name": "ROAMFREE",
+    "url": "https://github.com/AIRLab-POLIMI/ROAMFREE",
+    "summary": "Pose-graph sensor fusion and self-calibration library on g2o with a catalogue of generic sensor models, used in UAV photogrammetry with raw inertial observations (Cucci, Skaloud).",
+    "why_it_matters": "A long-lived example of a sensor-agnostic fusion library where new sensors are declared, not coded, which is the plug-and-play idea.",
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:calibration"
+    ],
+    "tags": [
+      "pose-graph",
+      "g2o",
+      "self-calibration",
+      "uav"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "low",
+    "hackathon_notes": "LGPL-3.0 per README (no SPDX on GitHub). ROS1 wrapper. Reference design.",
+    "related": [
+      {
+        "id": "repo:rainerkuemmerle/g2o",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:open-pnt/aspn-icd",
+    "kind": "repo",
+    "name": "ASPN-ICD",
+    "url": "https://github.com/Open-PNT/ASPN-ICD",
+    "summary": "Public interface control document for ASPN 2023, the All-Source Positioning and Navigation measurement message standard that grew out of the DARPA ASPN programme.",
+    "why_it_matters": "Using ASPN message types for sensor inputs is a cheap way to make a hackathon fusion engine speak the plug-and-play vocabulary defence PNT programmes use.",
+    "concepts": [
+      "concept:standards",
+      "concept:sensor-fusion",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "aspn",
+      "icd",
+      "plug-and-play",
+      "standard"
+    ],
+    "language": "",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "CC-BY-4.0. Read the measurement types you need (IMU, position, velocity, altitude) and mirror them as dataclasses; no code to build.",
+    "related": [
+      {
+        "id": "repo:open-pnt/pntos-c",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:open-pnt/pntos-c",
+    "kind": "repo",
+    "name": "pntOS-C",
+    "url": "https://github.com/Open-PNT/pntOS-C",
+    "summary": "C API specification of pntOS, the modular plug-in architecture for navigation systems that consumes ASPN-formatted data.",
+    "why_it_matters": "Shows what a plug-in fusion API looks like in the defence PNT community; the full pntOS distribution is access-controlled, this API is public.",
+    "concepts": [
+      "concept:standards",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "pntos",
+      "aspn",
+      "plug-in",
+      "api"
+    ],
+    "language": "C",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Apache-2.0, meson build. Headers only, no estimator inside.",
+    "related": [
+      {
+        "id": "repo:open-pnt/aspn-icd",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:cntaylor/factorgraph2dsatelliteexample",
+    "kind": "repo",
+    "name": "factorGraph2DsatelliteExample",
+    "url": "https://github.com/cntaylor/factorGraph2DsatelliteExample",
+    "summary": "Companion code to the NAVIGATION 2024 factor-graph tutorial: a simple orbit simulation and side-by-side EKF, batch factor graph and sliding-window estimators in Python.",
+    "why_it_matters": "The shortest path from an EKF mindset to a factor graph, with the same problem solved both ways.",
+    "concepts": [
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "factor-graph",
+      "tutorial",
+      "ekf-comparison",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "space"
+    ],
+    "maturity": "educational",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "No license file. Read and port the pattern; do not ship it.",
+    "related": [
+      {
+        "id": "repo:cntaylor/fgo_gnss_integrity",
+        "rel": "same_org"
+      }
+    ]
+  },
+  {
+    "id": "repo:cntaylor/fgo_gnss_integrity",
+    "kind": "repo",
+    "name": "FGO_gnss_integrity",
+    "url": "https://github.com/cntaylor/FGO_gnss_integrity",
+    "summary": "Code behind an ION ITM 2026 paper comparing a robust factor-graph approach with solution-separation ARAIM on real GNSS epochs (from libRSF datasets) plus Monte Carlo outliers.",
+    "why_it_matters": "Recent bridge between robust factor graphs and classic integrity monitoring, the comparison judges ask about when a team says 'robust kernel'.",
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:assured-pnt",
+      "concept:gnss"
+    ],
+    "tags": [
+      "integrity",
+      "araim",
+      "factor-graph",
+      "robust"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "No license file. Data DB stored via git LFS. Reference for evaluation design.",
+    "related": [
+      {
+        "id": "repo:tuc-proaut/librsf",
+        "rel": "evaluated_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:arclab-hku/deio",
+    "kind": "repo",
+    "name": "DEIO",
+    "url": "https://github.com/arclab-hku/DEIO",
+    "summary": "Learning-based event-inertial odometry: a learned event-patch front-end coupled with IMU pre-integration in a factor graph, evaluated on ten public event benchmarks.",
+    "why_it_matters": "Recent open event+IMU odometry with a permissive license, the candidate if the challenge stresses high-dynamic-range or night flight.",
+    "concepts": [
+      "concept:vio",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "event-camera",
+      "event-inertial",
+      "deep-learning",
+      "factor-graph"
+    ],
+    "language": "Jupyter Notebook",
+    "domains": [
+      "air",
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "low",
+    "hackathon_notes": "MIT. Code uploaded 2025-07. Needs a GPU and event data (VECtor, etc.); no event camera on most hackathon rigs.",
+    "related": [
+      {
+        "id": "repo:hkust-aerial-robotics/esvo",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:muccc/gr-iridium",
+    "kind": "repo",
+    "name": "gr-iridium",
+    "url": "https://github.com/muccc/gr-iridium",
+    "summary": "GNU Radio blocks and apps that detect and demodulate Iridium bursts from SDR recordings.",
+    "why_it_matters": "The receive front-end for Iridium signals-of-opportunity experiments; burst timing and Doppler are the observables a LEO Doppler positioner needs.",
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:gnss-sdr"
+    ],
+    "tags": [
+      "iridium",
+      "leo",
+      "gnuradio",
+      "sdr"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "production",
+    "hackathon_fit": "low",
+    "hackathon_notes": "No LICENSE file at the root; source headers carry GPL-3.0-or-later. Needs an SDR and L-band antenna or recorded IQ. Positioning itself is not included.",
+    "related": [
+      {
+        "id": "repo:przemyslawpiekarski/starlink-leo-pnt",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:pypose/pypose",
+    "kind": "repo",
+    "name": "PyPose",
+    "url": "https://github.com/pypose/pypose",
+    "summary": "PyTorch library for differentiable robotics on Lie groups: IMU pre-integration, EKF/UKF modules and second-order optimizers that can sit inside a training loop.",
+    "why_it_matters": "The base AirIO and AirIMU are built on; lets a team train a learned inertial or dynamics model end to end through the filter.",
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "lie-group",
+      "imu-preintegration",
+      "pytorch",
+      "differentiable"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Apache-2.0, pip install pypose. Use pp.module.IMUPreintegrator to propagate and plug a learned velocity in as an EKF update.",
+    "related": [
+      {
+        "id": "repo:air-io/air-io",
+        "rel": "integrates_with"
+      },
+      {
+        "id": "repo:haleqiu/airimu",
+        "rel": "integrates_with"
+      }
+    ]
+  }
+]

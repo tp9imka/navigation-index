@@ -23,7 +23,7 @@ GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) - Opinionated picks for a 24-48h build.
 - [Upstream findings](../../docs/upstream-findings.md) - Defects and gaps that the hub's samples found in other people's code and data, with what a maintainer needs to act on them.
 
-## Repositories (72)
+## Repositories (74)
 
 - [GPS-SDR-SIM](../../catalog/repos/osqzss__gps-sdr-sim.md) - fit: high - Generates GPS L1 C/A baseband IQ sample files for a user-defined static or moving trajectory from a broadcast ephemeris file, for playback through an SDR.
 - [RTKLIB](../../catalog/repos/tomojitakasu__rtklib.md) - fit: high - The original open-source GNSS positioning package by T.
@@ -51,6 +51,7 @@ GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 - [pynmea2](../../catalog/repos/knio__pynmea2.md) - fit: medium - Lightweight Python library for parsing NMEA 0183 sentences.
 - [PocketSDR](../../catalog/repos/tomojitakasu__pocketsdr.md) - fit: medium - Open hardware GNSS front-end plus a software receiver (Python and C) by the RTKLIB author, supporting a wide range of GNSS signals across L1/L2/L5/L6 bands.
 - [PRIDE PPP-AR](../../catalog/repos/pridelab__pride-pppar.md) - fit: medium - Wuhan University's open-source multi-GNSS precise point positioning package with ambiguity resolution, aimed at geodetic-grade post-processing.
+- [libRSF](../../catalog/repos/tuc-proaut__librsf.md) - fit: medium - Ceres-based robust sensor fusion library: factor graph formulation, sliding-window filter with marginalization, and robust error models including self-tuning Gaussian mixtures for non-Gaussian, outlier-heavy measurements
 - [multi-sdr-gps-sim](../../catalog/repos/mictronics__multi-sdr-gps-sim.md) - fit: medium - Maintained derivative of GPS-SDR-SIM that streams GPS L1 baseband on the fly to HackRF or ADALM-Pluto, or to a binary IQ file, with a curses text UI.
 - [rtklib-py](../../catalog/repos/rtklibexplorer__rtklib-py.md) - fit: medium - Python port of the demo5 RTKLIB positioning core, currently focused on post-processed kinematic (PPK) solutions.
 - [GNSSTimeServer](../../catalog/repos/montecri__gnsstimeserver.md) - fit: medium - ESP8266/ESP32 stratum-1 time server fed by a GNSS module and a TCXO-backed RTC, serving NTP and RDATE over WiFi or W5500 Ethernet, with a PTPv2 master edition, web dashboard and battery backup.
@@ -88,6 +89,7 @@ GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 - [GraphGNSSLib LEO](../../catalog/repos/gao-tech1__graphgnsslib_leo_v1.2.md) - fit: low - Factor-graph positioning combining real GNSS pseudorange/Doppler with simulated LEO satellite measurements, extending GraphGNSSLib.
 - [FGI-OSNMA](../../catalog/repos/nlsfi__fgi-osnma.md) - fit: low - Python OSNMA implementation from the Finnish Geospatial Research Institute designed for flexibility and integration with receivers.
 - [time-transfer-tools](../../catalog/repos/groundstate__time-transfer-tools.md) - fit: low - MATLAB classes to read CGGTTS (V1, V2E) and RINEX 2/3 observation files, match observations between two stations and compute averaged differences - the GNSS common-view time transfer workflow.
+- [FGO_gnss_integrity](../../catalog/repos/cntaylor__fgo_gnss_integrity.md) - fit: low - Code behind an ION ITM 2026 paper comparing a robust factor-graph approach with solution-separation ARAIM on real GNSS epochs (from libRSF datasets) plus Monte Carlo outliers.
 - [Smartphone Decimeter Challenge MATLAB package](../../catalog/repos/arnauochoa__smartphone-decimeter-challenge.md) - fit: low - MATLAB package from an ION GNSS+ 2021 decimeter challenge entry.
 - [MAAST for ARAIM](../../catalog/repos/stanford-gps-lab__maast_for_araim_2.md) - fit: low - Stanford GPS Lab MATLAB toolset that evaluates Advanced RAIM availability and protection levels over service areas.
 - [OSNMA_ublox](../../catalog/repos/axelbjork__osnma_ublox.md) - fit: low - Jupyter-based real-time OSNMA authentication of u-blox receiver data in Python.

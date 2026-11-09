@@ -25,6 +25,7 @@ Certifiable, outlier-robust point-cloud registration library with C++, Python an
 ## Referenced by
 
 - [Quatro](../../catalog/repos/url-kaist__quatro.md) (alternative_to)
+- [Graduated Non-Convexity for Robust Spatial Perception: From Non-Minimal Solvers to Global Outlier Rejection](../../catalog/resources/yang-2020-graduated-non-convexity.md) (same_author)
 
 _Indexed by lane(s): slam_
 

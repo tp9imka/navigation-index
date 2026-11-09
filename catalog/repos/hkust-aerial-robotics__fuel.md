@@ -25,6 +25,7 @@ Frontier-information-structure based autonomous exploration for quadrotors, comb
 
 ## Referenced by
 
+- [mav_active_3d_planning](../../catalog/repos/ethz-asl__mav_active_3d_planning.md) (alternative_to)
 - [Fast-Planner](../../catalog/repos/hkust-aerial-robotics__fast-planner.md) (extends)
 - [GBPlanner (CERBERUS)](../../catalog/repos/ntnu-arl__gbplanner_ros.md) (alternative_to)
 - [RACER - multi-UAV exploration](../../catalog/repos/robotics-star-lab__racer.md) (extends)

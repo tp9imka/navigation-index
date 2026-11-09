@@ -29,8 +29,11 @@ A stdlib-only 2D loosely-coupled GNSS/INS EKF (8 states, hand-written matrix hel
 
 ## Referenced by
 
+- [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) (mentions)
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)

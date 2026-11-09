@@ -34,7 +34,9 @@ Real nadir DJI M4T thermal frames (Thermal-UAV / SCC-Loc, Apache-2.0 card) match
 
 ## Referenced by
 
+- [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) (mentions)
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)

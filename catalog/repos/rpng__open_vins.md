@@ -47,6 +47,7 @@ MSCKF-based visual-inertial navigation platform with online calibration, a simul
 - [Basalt](../../catalog/repos/vladyslavusenko__basalt.md) (alternative_to)
 - [Visual-Inertial Navigation: A Concise Review](../../catalog/resources/huang-vins-concise-review-2019.md) (explains)
 - [OpenVINS documentation](../../catalog/resources/openvins-docs.md) (has_code)
+- [PX4 docs: ModalAI VOXL 2](../../catalog/resources/px4-modalai-voxl-2-docs.md) (uses)
 - [Shield AI Hivemind autonomy stack](../../catalog/resources/shield-ai-hivemind.md) (alternative_to)
 - [Spleenlab VISIONAIRY perception and GNSS-free navigation software](../../catalog/resources/spleenlab-visionairy.md) (alternative_to)
 - [Distributed Visual-Inertial Cooperative Localization](../../catalog/resources/zhu-2021-distributed-vi-cooperative-localization.md) (uses)

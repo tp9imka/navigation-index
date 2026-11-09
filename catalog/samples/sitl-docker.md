@@ -27,8 +27,11 @@ Dockerfiles and a compose file that run ArduCopter 4.6.3 SITL (with a simulated 
 
 ## Referenced by
 
+- [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) (mentions)
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)

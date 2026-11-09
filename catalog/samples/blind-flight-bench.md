@@ -33,7 +33,9 @@ Benchmark harness that reproduces the 2026 'Polyot vslepuyu' (Blind flight) hack
 ## Referenced by
 
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](../../docs/landscape/blind-flight-teardown.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)

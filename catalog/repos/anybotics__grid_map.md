@@ -31,6 +31,7 @@ C++ library and ROS integration for multi-layer 2.5D grid maps, widely used for 
 ## Referenced by
 
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
+- [terrain-navigation2](../../catalog/repos/ethz-asl__terrain-navigation2.md) (depends_on)
 - [elevation_mapping](../../catalog/repos/leggedrobotics__elevation_mapping.md) (depends_on)
 - [elevation_mapping_cupy](../../catalog/repos/leggedrobotics__elevation_mapping_cupy.md) (depends_on)
 - [traversability_estimation](../../catalog/repos/leggedrobotics__traversability_estimation.md) (depends_on)

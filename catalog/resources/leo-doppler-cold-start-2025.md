@@ -22,4 +22,8 @@ Formulates LEO Doppler positioning as an optimization solvable by semidefinite r
 
 - cites: [Navigation using carrier Doppler shift from a LEO constellation: TRANSIT on steroids](../../catalog/resources/psiaki-transit-on-steroids-2021.md)
 
+## Referenced by
+
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
+
 _Indexed by lane(s): alt-nav_

@@ -13,7 +13,7 @@ Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) - After this chapter you can convert between the coordinate systems your tools disagree on, fetch free imagery and elevation data for a region, display it, and plan a path or a multi-vehicle mission over it.
 
-## Repositories (44)
+## Repositories (45)
 
 - [EGO-Swarm](../../catalog/repos/zju-fast-lab__ego-planner-swarm.md) - fit: high - Decentralized multi-quadrotor extension of EGO-Planner with inter-agent collision avoidance and trajectory sharing over a network.
 - [gym-pybullet-drones](../../catalog/repos/learnsyslab__gym-pybullet-drones.md) - fit: high - Gymnasium environments on PyBullet for single and multi-agent quadcopter control and RL (formerly under utiasDSL).
@@ -23,6 +23,7 @@ Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 - [MOOS-IvP](../../catalog/repos/moos-ivp__moos-ivp.md) - fit: high - Long-running autonomy middleware (MOOS) plus the IvP Helm behaviour-based multi-objective decision engine, used widely for autonomous marine vehicles, including COLREGs-aware collision avoidance behaviours.
 - [CBBA (Python)](../../catalog/repos/inmo-jang__consensus-based-bundle-algorithm.md) - fit: high - Python implementation of the Consensus-Based Bundle Algorithm for decentralized multi-agent task allocation with plotting examples.
 - [RACER - multi-UAV exploration](../../catalog/repos/robotics-star-lab__racer.md) - fit: medium - Rapid collaborative exploration with multiple UAVs: decomposes unknown space and allocates exploration regions between drones with pairwise communication.
+- [EGO-Planner-v2 (Swarm Playground)](../../catalog/repos/zju-fast-lab__ego-planner-v2.md) - fit: medium - Codebase of the 'Swarm of micro flying robots in the wild' work: MINCO-based local trajectory optimisation with obstacle, dynamic-feasibility and inter-agent constraints, plus a lightweight simulator.
 - [Swarm-SLAM](../../catalog/repos/mistlab__swarm-slam.md) - fit: medium - Sparse, decentralized collaborative SLAM for multi-robot systems on ROS 2, supporting lidar, stereo and RGB-D with inter-robot loop closures under limited communication.
 - [MRS UAV System](../../catalog/repos/ctu-mrs__mrs_uav_system.md) - fit: medium - Czech Technical University's multi-robot UAV platform with control, estimation (including GNSS-denied modes), planning and simulation, field-tested in outdoor swarm deployments.
 - [Kimera-RPGO](../../catalog/repos/mit-spark__kimera-rpgo.md) - fit: medium - Robust pose-graph optimization that rejects bad loop closures via pairwise consistency maximization on top of GTSAM.

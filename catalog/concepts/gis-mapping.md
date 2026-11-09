@@ -21,7 +21,7 @@ Map engines, tiles, DEMs, orthophotos, coordinate systems, geodesy.
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) - After this chapter you can convert between the coordinate systems your tools disagree on, fetch free imagery and elevation data for a region, display it, and plan a path or a multi-vehicle mission over it.
 - [Docs map](../../docs/README.md) - What each page under docs/ is for and the order to read them in.
 
-## Repositories (43)
+## Repositories (44)
 
 - [Leaflet](../../catalog/repos/leaflet__leaflet.md) - fit: high - Small, simple JavaScript library for interactive raster/vector maps with a huge plugin ecosystem.
 - [CesiumJS](../../catalog/repos/cesiumgs__cesium.md) - fit: high - WebGL 3D globe and map library with terrain, 3D Tiles, time-dynamic data (CZML) and accurate WGS84 rendering.
@@ -64,6 +64,7 @@ Map engines, tiles, DEMs, orthophotos, coordinate systems, geodesy.
 - [ATAK-CIV (TAK Product Center)](../../catalog/repos/tak-product-center__atak-civ.md) - fit: medium - Source of the civilian Android Team Awareness Kit maintained by the TAK Product Center: map client, plugin SDK and CoT handling.
 - [odc-stac](../../catalog/repos/opendatacube__odc-stac.md) - fit: medium - Loads STAC items into xarray datasets with reprojection, resampling and mosaicking.
 - [CityNav](../../catalog/repos/water-cookie__citynav.md) - fit: medium - Language-goal aerial navigation dataset over real-city 3D point clouds with geographic information, plus baselines that use map-based landmark grounding.
+- [terrain-navigation2](../../catalog/repos/ethz-asl__terrain-navigation2.md) - fit: medium - ROS 2 port of ETH's safe low-altitude fixed-wing planner for steep terrain: RRT* in Dubins-airplane space over a DEM, with terrain-clearance and circle-of-safety constraints.
 - [MAMMAL](../../catalog/repos/powerbroker2__mammal.md) - fit: medium - Python package (Magnetic Anomaly Map Matching Airborne and Land) for simulating and processing aeromagnetic survey data and building anomaly maps for MagNav.
 - [terrain-nav-preprocessing](../../catalog/repos/hstm__terrain-nav-preprocessing.md) - fit: medium - Preprocessing tools for terrain-referenced navigation, generating DEM tiles with controlled noise for training and evaluation.
 

@@ -20,7 +20,7 @@ TERCOM/TRN/DSMAC-style matching of altimetry or imagery against DEM/terrain data
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) - What a 4-5 person team does from the moment the problem statement drops until H+3, when a walking skeleton should run end to end.
 - [Docs map](../../docs/README.md) - What each page under docs/ is for and the order to read them in.
 
-## Repositories (30)
+## Repositories (32)
 
 - [OpenDroneMap (ODM)](../../catalog/repos/opendronemap__odm.md) - fit: high - Photogrammetry toolkit that turns aerial images into orthophotos, point clouds, 3D models and DEMs.
 - [Rasterio](../../catalog/repos/rasterio__rasterio.md) - fit: high - Pythonic raster I/O on top of GDAL: read/write GeoTIFF and COG, windowed reads, masks and affine georeferencing.
@@ -35,6 +35,8 @@ TERCOM/TRN/DSMAC-style matching of altimetry or imagery against DEM/terrain data
 - [Terrain-Relative Navigation (particle filter on DEM)](../../catalog/repos/radagastttt__terrain-relative-navigation.md) - fit: high - Personal Python prototype of terrain-relative navigation: matches a height profile along the route against a DEM and estimates position with a particle filter from an imprecise start.
 - [Cesium Terrain Builder](../../catalog/repos/geo-data__cesium-terrain-builder.md) - fit: medium - Command-line tools to convert GDAL-readable DEMs into Cesium heightmap terrain tiles; quantized-mesh output needs the ahuarte47 fork, which the tum-gis Docker image packages.
 - [Wild Visual Navigation](../../catalog/repos/leggedrobotics__wild_visual_navigation.md) - fit: medium - System that learns visual traversability online from pre-trained vision features and robot self-supervision, deployed on legged robots in forests.
+- [terrain-navigation (ROS 1)](../../catalog/repos/ethz-asl__terrain-navigation.md) - fit: medium - Original ROS 1 implementation of 'Safe Low-Altitude Navigation in Steep Terrain with Fixed-Wing Aerial Vehicles' (RA-L 2024), with a Docker build for Noetic.
+- [terrain-navigation2](../../catalog/repos/ethz-asl__terrain-navigation2.md) - fit: medium - ROS 2 port of ETH's safe low-altitude fixed-wing planner for steep terrain: RRT* in Dubins-airplane space over a DEM, with terrain-clearance and circle-of-safety constraints.
 - [TRN particle filter examples](../../catalog/repos/rhymesg__particle_filter.md) - fit: medium - MATLAB particle filtering examples for terrain-referenced navigation, comparing standard, auxiliary, mixture and out-of-sequence measurement particle filters (accompanies an IEEE TAES 2018 paper).
 - [TERCOM-python (DSMAC-style scene matching)](../../catalog/repos/ayushmankumar7__tercom-python.md) - fit: medium - A single short OpenCV script that locates a Google Maps crop inside a larger map image with SIFT matching and a RANSAC homography, framed as DSMAC-style scene matching.
 - [terrain-nav-preprocessing](../../catalog/repos/hstm__terrain-nav-preprocessing.md) - fit: medium - Preprocessing tools for terrain-referenced navigation, generating DEM tiles with controlled noise for training and evaluation.
@@ -53,7 +55,7 @@ TERCOM/TRN/DSMAC-style matching of altimetry or imagery against DEM/terrain data
 - [efficient-PMF](../../catalog/repos/idm-uwb__efficient-pmf.md) - fit: low - MATLAB code for the efficient point-mass filter (FUSION 2023) for systems with linear state dynamics, illustrated on terrain-aided navigation.
 - [Radio Altimeter A-053 simulator (MCU part)](../../catalog/repos/mikhraly__radioaltimeter_mcu.md) - fit: low - C firmware for a microcontroller-based simulator of the A-053 aircraft radio altimeter; part 1 of 2, with PC software as the second part.
 
-## Documents, talks, courses, datasets (23)
+## Documents, talks, courses, datasets (24)
 
 - [A Robust Approach to Vision-Based Terrain-Aided Localization](../../catalog/resources/ion-webinar-navon.md) - talk - Vision-based terrain-aided localization for aircraft, matching onboard imagery against terrain/map references as a GNSS-independent position source.
 - [Accurate Measurement Calculation Method for Interferometric Radar Altimeter-Based Terrain Referenced Navigation](../../catalog/resources/oh-2019-interferometric-radar-altimeter-trn.md) - paper - Open-access Sensors paper on TRN with an interferometric radar altimeter, which outputs slant range and cross-track look angle to the closest terrain point.
@@ -68,6 +70,7 @@ TERCOM/TRN/DSMAC-style matching of altimetry or imagery against DEM/terrain data
 - [Marginalized Particle Filter for Accurate and Reliable Terrain-Aided Navigation](../../catalog/resources/nordlund-gustafsson-2009-mpf-terrain-aided-navigation.md) - paper - IEEE TAES 45(4) paper integrating INS and terrain-aided positioning in one marginalized (Rao-Blackwellized) particle filter: particles for the nonlinear part, Kalman filters for the conditionally linear part, plus a join
 - [Nonlinear Kalman filtering techniques for terrain-aided navigation](../../catalog/resources/hostetler-andreas-1983-sitan.md) - paper - IEEE TAC 28(3) paper from Sandia (the SITAN line of work) on updating an INS with radar terrain-clearance measurements.
 - [Recursive Bayesian Estimation: Navigation and Tracking Applications](../../catalog/resources/bergman-1999-recursive-bayesian-estimation-thesis.md) - report - Linkoping University PhD thesis (Dissertation No.
+- [Safe Low-Altitude Navigation in Steep Terrain With Fixed-Wing Aerial Vehicles](../../catalog/resources/lim-terrain-navigation-fixed-wing-2024.md) - paper - RRT* over Dubins-airplane segments on a DEM with terrain-clearance constraints and guaranteed safe circular loiters, flight-tested on a fixed-wing in the Alps (RA-L vol.
 - [SPRIND Fully Autonomous Flight challenge](../../catalog/resources/sprind-fully-autonomous-flight.md) - competition - German innovation agency challenge for long-range autonomous flight without GNSS; Fly4Future (CTU spin-off) won, with Beyond Vision and KopterKraft on the podium; a 2.0 edition followed.
 - [Tensor Decompositions for Online Grid-Based Terrain-Aided Navigation](../../catalog/resources/matousek-2026-tensor-decomposition-tan.md) - paper - Preprint (in review for FUSION 2026) that scales grid-based filters to higher state dimensions with a Lagrangian time update and low-rank tensor decompositions, exploiting block-diagonal dynamics and sparsely coupled mea
 - [Terrain Contour Matching (TERCOM): A Cruise Missile Guidance Aid](../../catalog/resources/golden-1980-tercom.md) - paper - Proc.

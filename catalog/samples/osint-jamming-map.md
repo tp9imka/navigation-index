@@ -37,6 +37,7 @@ Two no-login OSINT layers for the same area and morning (2026-10-01, SE Baltic a
 ## Referenced by
 
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [ADS-B Exchange free monthly sample data (readsb-hist)](../../catalog/resources/adsbexchange-monthly-samples.md) (dataset_for)

@@ -36,6 +36,7 @@ Robust Neural Inertial Navigation: smartphone IMU dataset and baseline networks 
 - [TLIO](../../catalog/repos/cathias__tlio.md) (alternative_to)
 - [RIDI](../../catalog/repos/higerra__ridi_imu.md) (alternative_to)
 - [EqNIO](../../catalog/repos/royinajayanth__eqnio.md) (evaluated_on)
+- [RNIN-VIO](../../catalog/repos/zju3dv__rnin-vio.md) (extends)
 - [RoNIN: Robust Neural Inertial Navigation in the Wild: Benchmark, Evaluations, and New Methods](../../catalog/resources/ronin-paper.md) (has_code)
 
 _Indexed by lane(s): ins-fusion_

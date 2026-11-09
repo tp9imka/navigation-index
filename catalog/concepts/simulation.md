@@ -23,18 +23,21 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [Network of GNSS-disciplined clocks: holdover from peers, spoof isolation by cross-node consistency, ADEV-weighted ensemble](../../catalog/samples/timing-network-holdover.md) - A stdlib-only simulation of six GNSS-disciplined sites (TCXO, OCXO, CSAC, Rb oscillators imported from timing-holdover) linked by PTP-like two-way time transfer with static path asymmetry, exponential queueing delay and 
 - [PX4 SITL GPS denial: inject, measure drift, recover](../../catalog/samples/px4-sitl-gps-denial.md) - Flies a square mission in PX4 SITL (SIH quadrotor, headless; Gazebo also works per PX4 docs), denies GPS mid-mission, logs EKF2 health and estimated vs ground-truth position, then restores GPS and returns home.
 
-## Guides (8)
+## Guides (11)
 
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](../../docs/landscape/blind-flight-teardown.md) - The closest real precedent we have for a navigation hackathon brief: a 48-hour case (26-28 June 2026, Krasnodar, track "Robotics and sensing") where teams had to find position, ground speed and heading of an aircraft fro
 - [8. Maritime, underwater, ground and dismounted](../../docs/primer/08-maritime-underwater-ground.md) - After this chapter you know how navigation changes off the drone: what ships broadcast and how spoofing shows up in it, how vehicles navigate underwater where no radio reaches, how ground robots and pedestrians dead-reck
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) - After this chapter you can pick a dataset or simulator that matches your scenario, compute the trajectory metrics judges and reviewers expect, and design a GNSS-outage or interference test that shows what your system doe
 - [Autopilot GNSS fault handling: PX4 EKF2 and ArduPilot EKF3 under spoofing](../../docs/autopilot-gnss-fault-handling.md) - What each autopilot's EKF does when GNSS goes wrong, read from the source at pinned tags and checked in SITL by samples/autopilot-spoof-response (45 flights, 2026-11-06).
+- [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) - Start here when the task is the EDGE Group internal hackathon, Challenge 2.
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) - Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (details drop 2026-11-18).
 - [Evidence matrix](../../docs/evidence-matrix.md) - Recording/replay plumbing: recording-replay ran on 2026-11-07 with 101 synthetic poses over 10 s.
+- [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) - Written 2026-11-09 for Challenge 2 "Autonomous Frontiers" (entry point).
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) - Plausible problem statements for a navigation / PNT / GNSS-denied hackathon, each mapped to a recommended approach, a stack (integration cards first, catalog pages otherwise), datasets, a sample or template to start from
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) - Opinionated picks for a 24-48h build.
 - [Upstream findings](../../docs/upstream-findings.md) - Defects and gaps that the hub's samples found in other people's code and data, with what a maintainer needs to act on them.
 
-## Repositories (81)
+## Repositories (87)
 
 - [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md) - fit: high - GPL autopilot covering Copter, Plane (incl.
 - [CARLA](../../catalog/repos/carla-simulator__carla.md) - fit: high - Open-source autonomous-driving simulator on Unreal with camera, lidar, radar, GNSS and IMU sensors, traffic and weather control.
@@ -44,6 +47,8 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [gym-pybullet-drones](../../catalog/repos/learnsyslab__gym-pybullet-drones.md) - fit: high - Gymnasium environments on PyBullet for single and multi-agent quadcopter control and RL (formerly under utiasDSL).
 - [Gazebo Sim (gz-sim)](../../catalog/repos/gazebosim__gz-sim.md) - fit: high - Current-generation Gazebo robotics simulator with pluggable physics, rendering and a large sensor library (IMU, GPS/NavSat, lidar, cameras, magnetometer, altimeter).
 - [gnss-ins-sim](../../catalog/repos/aceinna__gnss-ins-sim.md) - fit: high - Python GNSS/INS simulator that generates trajectories, IMU/GNSS/magnetometer measurements with configurable error models, and runs navigation algorithms on them.
+- [AeroSandbox](../../catalog/repos/peterdsharpe__aerosandbox.md) - fit: high - Python aircraft design and trajectory optimisation toolkit on CasADi: aerodynamics, propeller and electric propulsion models, power sources, wind models, and an optimisation front-end.
+- [mavsim_public (Small Unmanned Aircraft)](../../catalog/repos/byu-magicc__mavsim_public.md) - fit: high - Project files for Beard and McLain's 'Small Unmanned Aircraft: Theory and Practice': a Python fixed-wing simulator built chapter by chapter, with autopilot (PID, LQR, TECS), straight-line and orbit path following, Dubins
 - [CMU Autonomous Exploration Development Environment](../../catalog/repos/hongbiaoz__autonomous_exploration_development_environment.md) - fit: high - CMU ground-robot development environment with simulated worlds, terrain analysis, local planner and waypoint tools used for exploration research (TARE, FAR planner).
 - [Virtual RobotX (VRX)](../../catalog/repos/osrf__vrx.md) - fit: high - Gazebo-based simulation environment for the RobotX maritime autonomy competition, with a WAM-V USV model, waves, wind, sensors and scored tasks such as station keeping, wayfinding and perception.
 - [COEX Clover](../../catalog/repos/copterexpress__clover.md) - fit: high - ROS-based software stack and Raspberry Pi image for the Clover educational quadcopter (PX4 underneath).
@@ -63,6 +68,7 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [NVIDIA Isaac Sim](../../catalog/repos/isaac-sim__isaacsim.md) - fit: medium - NVIDIA's Omniverse-based robot simulator, now open source, with RTX sensor simulation (cameras, lidar, IMU) and ROS 2 bridges.
 - [JSBSim](../../catalog/repos/jsbsim-team__jsbsim.md) - fit: medium - Open-source flight dynamics model library for fixed-wing and other aircraft, used by FlightGear and as an ArduPilot SITL backend.
 - [PromptCraft-Robotics](../../catalog/repos/microsoft__promptcraft-robotics.md) - fit: medium - Microsoft's collection of prompts and an AirSim-based ChatGPT drone simulator accompanying the 'ChatGPT for Robotics' work.
+- [PyBaMM](../../catalog/repos/pybamm-team__pybamm.md) - fit: medium - Python battery modelling library: equivalent-circuit to electrochemical (SPM, DFN) lithium-ion models with parameter sets and fast solvers.
 - [InternNav](../../catalog/repos/internrobotics__internnav.md) - fit: medium - PyTorch toolbox for embodied navigation on Habitat and Isaac Sim, covering vision-language navigation (VLN-CE and continuous-trajectory VLN) and point, image or trajectory goal navigation, with 10+ baselines, 6 benchmark
 - [Project AirSim](../../catalog/repos/iamaisim__projectairsim.md) - fit: medium - Open-source release of Project AirSim, the rewrite and successor of AirSim, for building and testing autonomous aerial systems in high-fidelity Unreal environments.
 - [Pegasus Simulator](../../catalog/repos/pegasussimulator__pegasussimulator.md) - fit: medium - Framework on top of NVIDIA Isaac Sim for simulating multirotors with PX4 in the loop and Python-defined vehicles and sensors.
@@ -74,6 +80,7 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [AerialVLN](../../catalog/repos/airvln__airvln.md) - fit: medium - Benchmark and simulator (AirSim/UE-based) for vision-and-language navigation by UAVs in city-scale environments, with baseline agents.
 - [OpenFly](../../catalog/repos/shailab-ipec__openfly-platform.md) - fit: medium - Platform for outdoor aerial vision-language navigation: multi-engine simulators (UE, GTA V, Google Earth, 3DGS), automated data collection toolchain, a large benchmark and a keyframe-aware VLN model.
 - [DARPA SubT Virtual Challenge](../../catalog/repos/osrf__subt.md) - fit: medium - Gazebo worlds, robot models, ROS interfaces and scoring tools from the virtual track of the DARPA Subterranean Challenge.
+- [Data-Driven MPC for Quadrotors](../../catalog/repos/uzh-rpg__data_driven_mpc.md) - fit: medium - Python code for the Data-Driven MPC paper: a nominal quadrotor model in acados corrected by Gaussian-process regression of the residual dynamics (drag, unmodelled effects), with Gazebo and simplified-sim pipelines.
 - [GRID playground (AirGen)](../../catalog/repos/genrobo__grid-playground.md) - fit: medium - Notes and examples for the GRID platform from General Robotics (formerly Scaled Foundations), which pairs the AirSim-derived AirGen simulator with foundation-model perception and LLM-driven robot control.
 - [Project DAVE](../../catalog/repos/field-robotics-lab__dave.md) - fit: medium - Gazebo-based underwater simulation environment from the Naval Postgraduate School and partners, extending UUV Simulator with DVL, sonar, bathymetry and manipulation models.
 - [multi-sdr-gps-sim](../../catalog/repos/mictronics__multi-sdr-gps-sim.md) - fit: medium - Maintained derivative of GPS-SDR-SIM that streams GPS L1 baseband on the fly to HackRF or ADALM-Pluto, or to a binary IQ file, with a curses text UI.
@@ -108,9 +115,11 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [bladeGPS](../../catalog/repos/osqzss__bladegps.md) - fit: low - Real-time GPS L1 signal simulator variant of GPS-SDR-SIM for bladeRF hardware.
 - [LimeGPS](../../catalog/repos/osqzss__limegps.md) - fit: low - Real-time GPS L1 signal simulator variant for LimeSDR.
 - [CrossLoc](../../catalog/repos/topo-epfl__crossloc.md) - fit: low - CVPR 2022 cross-modal visual representation learning for absolute camera localization of aerial imagery, trained largely on synthetic data rendered from geodata.
+- [CCBlade.jl](../../catalog/repos/byuflowlab__ccblade.jl.md) - fit: low - Julia blade element momentum (BEM) solver for propellers and turbines, returning thrust, torque and efficiency from blade geometry and airfoil data.
 - [Aeolus Ocean](../../catalog/repos/aavek__aeolus-ocean.md) - fit: low - Collision avoidance simulator for COLREG-compliant autonomous ship navigation intended for use as a digital twin under varied weather and day/night conditions.
 - [NPS underwater multibeam sonar plugin](../../catalog/repos/field-robotics-lab__nps_uw_multibeam_sonar.md) - fit: low - GPU (CUDA) multibeam sonar simulation plugin for Gazebo producing physically motivated sonar imagery.
 - [LibPTP](../../catalog/repos/ptp-sim__libptp.md) - fit: low - OMNeT++/INET library for simulating IEEE 1588-2008 networks: ordinary, boundary and transparent clocks, E2E and P2P delay, a PI servo with pluggable servos and filters, and power-law clock noise via LibPLN.
+- [Skywalker X8 simulator](../../catalog/repos/krisgry__x8.md) - fit: low - MATLAB simulator showcasing the Skywalker X8 flying-wing aerodynamic model from Gryte et al.
 - [Loran-C reference signal generator](../../catalog/repos/cheolj__loran-c-reference-code.md) - fit: low - NumPy API that generates Loran-C master and secondary station pulse groups with phase codes for simulation (Korean docs).
 - [Beidou-SDR-SIM](../../catalog/repos/haiyang-wong__beidou-sdr-sim.md) - fit: low - Open-source generator for BeiDou B1C baseband signals for SDR playback or file output.
 - [ViNet_AirSim_drone - learned VIO in AirSim](../../catalog/repos/sasha-lobov__vinet_airsim_drone.md) - fit: low - PyTorch CNN+RNN network that predicts relative pose between frames from a monocular camera and 6-axis IMU, trained on data collected in Microsoft AirSim with ground-truth poses and a composite loss to limit drift.
@@ -118,8 +127,9 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [graduate_work (UAV INS module thesis)](../../catalog/repos/danamarkova__graduate_work.md) - fit: low - Russian graduate thesis code: 'Development of a UAV inertial navigation module using auxiliary navigation data'.
 - [Radio Altimeter A-053 simulator (MCU part)](../../catalog/repos/mikhraly__radioaltimeter_mcu.md) - fit: low - C firmware for a microcontroller-based simulator of the A-053 aircraft radio altimeter; part 1 of 2, with PC software as the second part.
 
-## Documents, talks, courses, datasets (16)
+## Documents, talks, courses, datasets (20)
 
+- [Aerodynamic modeling of the Skywalker X8 Fixed-Wing Unmanned Aerial Vehicle](../../catalog/resources/gryte-2018-skywalker-x8-aerodynamic-model.md) - paper - ICUAS 2018.
 - [AirSim Documentation](../../catalog/resources/microsoft-airsim-docs.md) - doc - Docs for AirSim covering setup, APIs, sensor configuration and PX4/ArduPilot integration.
 - [Champion-level drone racing using deep reinforcement learning](../../catalog/resources/swift-champion-drone-racing-nature.md) - paper - Swift, a quadrotor using only onboard camera and IMU with an RL-trained policy, beat human world-champion pilots in head-to-head races.
 - [Game4Loc: A UAV Geo-Localization Benchmark from Game Data](../../catalog/resources/game4loc-2024.md) - paper - Builds a large synthetic drone-satellite dataset from a video game with partial-match pairs and trains weighted contrastive geo-localization.
@@ -127,6 +137,8 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [HACKtheMACHINE Unmanned (ONR / NavalX)](../../catalog/resources/onr-hackthemachine-unmanned-2021.md) - competition - US Navy prize challenge on unmanned and autonomous systems with tracks on securing a simulated autopilot, separating benign from malicious data, and model-based mission requirements.
 - [HoloOcean Documentation](../../catalog/resources/byu-holoocean-docs.md) - doc - Install guide, sensor reference (sonar, DVL, IMU, depth) and examples for the HoloOcean underwater simulator.
 - [Mid-Air Dataset](../../catalog/resources/midair-synthetic-drone-dataset.md) - dataset - Synthetic low-altitude quadcopter flights with RGB, depth, normals, semantics and stereo plus navigation sensors, each trajectory recorded under several weather and season conditions.
+- [Neural-Fly enables rapid learning for agile flight in strong winds](../../catalog/resources/oconnell-2022-neural-fly.md) - paper - Science Robotics 7 (2022).
+- [NeuroBEM: Hybrid Aerodynamic Quadrotor Model](../../catalog/resources/bauersfeld-2021-neurobem.md) - paper - RSS 2021.
 - [OpenFly: A Comprehensive Platform for Aerial Vision-Language Navigation](../../catalog/resources/openfly-aerial-vln-2025.md) - paper - Presents a multi-engine aerial VLN platform with automated data generation, a large outdoor benchmark and a keyframe-aware VLN model.
 - [OpenSky: A Modular and Open-Source Simulator of Sky Polarization Measurements](../../catalog/resources/opensky-sky-polarization-simulator-2024.md) - paper - Open simulator of what a polarimetric camera sees of the sky (intensity, angle and degree of polarization), validated against real captures, for developing polarization compasses.
 - [PX4 Simulation (Gazebo, SITL) documentation](../../catalog/resources/px4-simulation-docs.md) - doc - How to run PX4 software-in-the-loop with Gazebo and other simulators, including multi-vehicle setups and connecting ROS 2 and ground stations.
@@ -135,5 +147,6 @@ Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simula
 - [SITL Simulator (Software in the Loop)](../../catalog/resources/ardupilot-sitl-docs.md) - doc - Developer docs for running ArduPilot vehicles in SITL, connecting GCS and external simulators.
 - [Spirent GSS7000 and PNT X GNSS/PNT simulators](../../catalog/resources/spirent-gss7000-pntx.md) - product - Spirent's lab simulators generate multi-GNSS RF with controllable interference and spoofing (meaconing, trajectory spoofing, nav data spoofing) for hardware-in-the-loop receiver testing; PNT X extends this to combined PN
 - [TartanAir: A Dataset to Push the Limits of Visual SLAM](../../catalog/resources/cmu-tartanair-dataset.md) - dataset - Large synthetic dataset rendered in AirSim/Unreal environments with challenging lighting, weather and motion, with perfect ground truth for many modalities.
+- [UIUC Propeller Data Site](../../catalog/resources/uiuc-propeller-database.md) - dataset - Wind-tunnel measurements of thrust and power coefficients vs advance ratio for many small UAV propellers, plus geometry.
 - [Разработка метода навигации беспилотных летательных аппаратов по изображению подстилающей поверхности в условиях отсутствия сигналов внешних навигационных систем](../../catalog/resources/itmo-litvinenko-underlying-surface-nav-2025.md) - paper - English: 'A method for UAV navigation by images of the underlying surface without external navigation signals'.
 

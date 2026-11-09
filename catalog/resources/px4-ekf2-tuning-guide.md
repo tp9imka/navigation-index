@@ -26,6 +26,7 @@ PX4 guide to its EKF2 estimator: which sensors it fuses (IMU, GNSS, baro, mag, o
 
 ## Referenced by
 
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Learning paths](../../docs/learning-paths.md) (mentions)
 - [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)

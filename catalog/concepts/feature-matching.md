@@ -19,7 +19,7 @@ Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 - [Choose a stack you can run](../../docs/practical-readiness.md) - Start with the problem decoder, then narrow the candidates by the resources in the room.
 - [Model weights licenses: code vs weights vs training data](../../docs/model-weights-licenses.md) - Learned models in navigation pipelines carry three separate sets of terms:
 
-## Repositories (34)
+## Repositories (35)
 
 - [LightGlue](../../catalog/repos/cvg__lightglue.md) - fit: high - Fast learned local feature matcher (ICCV 2023) that adapts its depth to pair difficulty; works with SuperPoint, DISK, ALIKED and SIFT features.
 - [hloc](../../catalog/repos/cvg__hierarchical-localization.md) - fit: high - Toolbox for hierarchical visual localization: global retrieval (NetVLAD etc.) to find candidate images, then local feature matching (SuperPoint, LightGlue...) and PnP against an SfM model.
@@ -41,6 +41,7 @@ Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 - [TEASER++](../../catalog/repos/mit-spark__teaser-plusplus.md) - fit: medium - Certifiable, outlier-robust point-cloud registration library with C++, Python and MATLAB bindings.
 - [SuperPoint (pretrained)](../../catalog/repos/magicleap__superpointpretrainednetwork.md) - fit: medium - Pretrained SuperPoint keypoint detector and descriptor.
 - [fast_gicp](../../catalog/repos/koide3__fast_gicp.md) - fit: medium - Collection of fast GICP and VGICP point-cloud registration implementations, multithreaded and CUDA.
+- [Qualcomm AI Hub Models](../../catalog/repos/qualcomm__ai-hub-models.md) - fit: medium - Collection of models exported for Qualcomm devices, each with a perf.yaml of measured on-device latency and memory per runtime (TFLite, QNN, ONNX) and precision.
 - [AirSLAM](../../catalog/repos/sair-lab__airslam.md) - fit: medium - Point-and-line visual(-inertial) SLAM using learned features, designed for illumination-robust operation, with TensorRT acceleration; successor to AirVO.
 - [GTSfM](../../catalog/repos/borglab__gtsfm.md) - fit: medium - End-to-end structure-from-motion pipeline built on GTSAM, with pluggable front-ends (classical and learned matchers) and distributed execution via Dask.
 - [vision_landing](../../catalog/repos/goodrobots__vision_landing.md) - fit: medium - Precision landing using visual fiducial targets, sending LANDING_TARGET messages to ArduPilot.
@@ -56,7 +57,7 @@ Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 - [Event feature tracking (EM-ICP)](../../catalog/repos/daniilidis-group__event_feature_tracking.md) - fit: low - MATLAB implementations of event-based feature tracking methods from the Penn GRASP lab.
 - [bsu-science - BSU diploma on camera-based UAV navigation](../../catalog/repos/drapegnik__bsu-science.md) - fit: low - LaTeX sources of science reports from BSU (Belarus, FAMCS), including a diploma 'Разработка алгоритмов навигации БПЛА' that compares SIFT/SURF/ORB, surveys SLAM and SfM 3D mapping, and demonstrates SLAM + ROS + webcam + 
 
-## Documents, talks, courses, datasets (23)
+## Documents, talks, courses, datasets (24)
 
 - [14 Lectures on Visual SLAM: From Theory to Practice](../../catalog/resources/gaoxiang-14-lectures-visual-slam.md) - book - English translation of the popular Chinese visual SLAM textbook, from rigid-body motion and Lie algebra through camera models, nonlinear optimization, feature/direct VO, backend optimization, loop closure and dense mappi
 - [Cyrill Stachniss YouTube channel (incl. '5 Minutes with Cyrill')](../../catalog/resources/stachniss-youtube-channel.md) - video - Channel hosting Stachniss's full lecture courses plus the '5 Minutes with Cyrill' series of short explainers on single concepts (Kalman filter, factor graphs, ICP, RANSAC, SIFT, occupancy grids).
@@ -67,6 +68,7 @@ Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 - [LightGlue: Local Feature Matching at Light Speed](../../catalog/resources/lightglue-2023.md) - paper - Redesigns SuperGlue-style attention matching to be faster and adaptive, stopping early on easy pairs.
 - [MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors](../../catalog/resources/mast3r-slam-murai-2024.md) - paper - Builds a real-time dense monocular SLAM system on the MASt3R two-view reconstruction prior, without assuming a fixed parametric camera model.
 - [Photogrammetry I & II](../../catalog/resources/stachniss-photogrammetry-i-ii.md) - lecture-series - Recorded two-semester photogrammetry course (2015/16 playlist): camera models, direct linear transform, projective geometry, epipolar geometry, bundle adjustment, and image-based 3D reconstruction.
+- [Qualcomm AI Hub: SuperPoint on-device performance](../../catalog/resources/qualcomm-ai-hub-superpoint.md) - report - Qualcomm's measured latency for SuperPoint (the MIT-licensed rpautrat implementation, 640x480 input) per device, runtime and precision.
 - [RoMa: Robust Dense Feature Matching](../../catalog/resources/roma-dense-matching-2023.md) - paper - Dense matcher combining foundation-model coarse features with fine refinement, robust to large appearance change.
 - [Satellite Pose Estimation Challenge: Dataset, Competition Design and Results](../../catalog/resources/kelvins-spec2019-paper.md) - paper - ESA Kelvins / Stanford competition on monocular spacecraft pose estimation, analyzing 48 entries.
 - [STHN: Deep Homography Estimation for UAV Thermal Geo-localization with Satellite Imagery](../../catalog/resources/sthn-thermal-homography-2024.md) - paper - Refines thermal-to-satellite localization with learned homography estimation for precise alignment.

@@ -21,6 +21,7 @@ Analysis of Ukraine's defence-tech ecosystem at the end of 2025, noting that GNS
 
 ## Referenced by
 
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
 - [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
 - [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
 
