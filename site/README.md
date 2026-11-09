@@ -20,6 +20,16 @@ GitHub Pages: publish from the repo root and add an empty `.nojekyll` at the roo
 Jekyll turns the `.md` files into HTML and the in-app page view cannot fetch them. Not tried on
 Pages yet.
 
+## Showcase page
+
+`showcase.html` (+ `showcase.js`, `showcase.css`) is a one-page tour for people, not agents:
+live counts from `data/index.json`, a canvas replay of four synthetic close-area-arena runs
+(`data/showcase/replays/`, written by `samples/close-area-arena/export_replay.py`), cards for
+every sample with a key result (status and input type from its `sample.json`), and an SVG of the
+brief => decode => row => sample => repo flow. `?run=<k>` picks the first replay.
+Regenerate the replays with `.venv/bin/python export_replay.py` inside the arena folder.
+Screenshots: [desktop](screenshots/showcase-desktop.png), [phone](screenshots/showcase-phone.png).
+
 ## What it does
 
 - **Search** over every node (repos, resources, concepts, samples) and every deep-dive doc

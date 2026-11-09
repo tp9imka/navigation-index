@@ -1,0 +1,35 @@
+{
+ "generated_by": "samples/close-area-arena/export_replay.py",
+ "input": "synthetic",
+ "generated": "2026-11-09",
+ "runs": [
+  {
+   "file": "u_trap_straight.json",
+   "name": "u_trap_straight",
+   "title": "U trap: straight line",
+   "outcome": "stuck",
+   "bytes": 5821
+  },
+  {
+   "file": "u_trap_astar.json",
+   "name": "u_trap_astar",
+   "title": "U trap: A* + ESDF, unknown map",
+   "outcome": "reached",
+   "bytes": 5998
+  },
+  {
+   "file": "random_freest_beam.json",
+   "name": "random_freest_beam",
+   "title": "Clutter: freest beam, true pose",
+   "outcome": "reached",
+   "bytes": 7573
+  },
+  {
+   "file": "random_freest_jump.json",
+   "name": "random_freest_jump",
+   "title": "Clutter: freest beam, drifting EKF + 0.5 m jump",
+   "outcome": "stuck",
+   "bytes": 21319
+  }
+ ]
+}
