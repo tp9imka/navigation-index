@@ -143,7 +143,117 @@ No dark zones. Point A varies by +-0.3 m per run.
 - So "hover until one wins" alone is a deadlock in a corridor. Hypothesis tracking only pays off
   with a move that separates the hypotheses (Fox 1998, Platt 2012 in
   [innovation-prior-art 01](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md)),
-  or a bounded hover with a fallback. Neither is built or measured here.
+  or a bounded hover with a fallback. Both are measured in the section on disambiguating moves below.
+
+## Disambiguating moves after a hover timeout (loop-22b)
+
+Adds the missing piece named above: when (c) has not accepted 1 s after a trigger, fly one short
+move chosen to separate the hypotheses, then let the same `RatioPersistence` rule decide. Up to
+4 moves per loss event, 1 s wait after each; then hover (never commit on a tie). Synthetic
+inputs only, as above.
+
+```sh
+.venv/bin/python run_disambiguate.py --corridor --runs 20       # 22 s wall
+.venv/bin/python run_disambiguate.py --layouts 100 --seed 0     # 75 s wall, 8 workers
+```
+
+[disambiguate.py](disambiguate.py) (map and hypotheses only, truth never used):
+
+- Library: 8 directions x 1 m / 2 m, flown at up to 0.6 m/s in the raw estimator frame (VIO deltas
+  are fine after a jump, only the anchor is wrong).
+- Collision check against every live hypothesis and the estimate: the straight segment keeps
+  ESDF >= 0.35 m (radius 0.15 + 0.20), or never gets closer than it starts if a start is already
+  inside 0.35 m. Live = score >= best / 1.02^2.
+- (e) `separation`, proposed: predict the scan at each hypothesis + move by ray cast on the map,
+  score it with the matcher's own likelihood field at every other hypothesis + move, take the
+  relative gap to the closest competitor, average over hypotheses. A beam that only one hypothesis
+  sees counts only as far as the matcher can use it.
+- (f) `infogain`, Fox 1998 style baseline: expected entropy reduction with a beam model
+  (sigma 0.10 m, outlier floor 0.05, every 3rd beam).
+- (d) `random`: uniform over collision-free moves.
+- Verdict `none` (too few returns or no good match): (e) and (f) pick the move with the most
+  predicted returns; (d) stays random.
+- Near-ties (within 10 % of the best utility) go to the move ending closest to B, then the longer one.
+
+Arms: (b) `single` and (c) `multi` are the experiment.py arms, rerun unchanged; their rows match
+the tables above exactly. Ran 2026-11-09 on Apple arm64, CPython 3.11.15, numpy 2.4.6, scipy
+1.17.1 (sample venv).
+
+**Symmetric corridor**, 20 runs ([results/disamb_corridor.md](results/disamb_corridor.md), synthetic):
+
+| arm | reached % | collision % | stuck % | wrong commits | still hovering at end | median / p95 / max recover s | moves flown | events with a move => accepted / wrong / open |
+|---|---|---|---|---|---|---|---|---|
+| (b) single | 100.0 | 0.0 | 0.0 | 8 | 0 | 0.2 / 0.2 / 0.2 | - | - |
+| (c) multi | 0.0 | 0.0 | 100.0 | 0 | 20 | 0.4 / 0.4 / 0.4 | - | - |
+| (d) multi_random | 15.0 | 0.0 | 85.0 | 0 | 17 | 0.4 / 10.98 / 11.9 | 62 | 20 => 3 / 0 / 17 |
+| (e) multi_sep | 70.0 | 0.0 | 30.0 | 0 | 7 | 0.4 / 11.1 / 11.3 | 54 | 20 => 15 / 0 / 5 |
+| (f) multi_ig | 80.0 | 0.0 | 20.0 | 0 | 6 | 0.4 / 11.12 / 11.3 | 55 | 20 => 16 / 0 / 4 |
+
+**Random layouts**, 100, seed 0 ([results/disamb_random_0.md](results/disamb_random_0.md), synthetic):
+
+| fault | arm | reached % | collision % | stuck % | wrong commits | still hovering at end | median / p95 / max recover s | moves flown | events with a move => accepted / wrong / open |
+|---|---|---|---|---|---|---|---|---|---|
+| dropout | (b) single | 100.0 | 0.0 | 0.0 | 2 | 1 | 0.2 / 0.2 / 0.2 | - | - |
+| dropout | (c) multi | 80.0 | 0.0 | 20.0 | 0 | 20 | 0.4 / 0.4 / 3.3 | - | - |
+| dropout | (d) multi_random | 97.0 | 0.0 | 3.0 | 0 | 4 | 0.4 / 0.6 / 13.2 | 40 | 22 => 19 / 0 / 3 |
+| dropout | (e) multi_sep | 99.0 | 0.0 | 1.0 | 0 | 1 | 0.4 / 1.3 / 4.7 | 28 | 25 => 24 / 0 / 1 |
+| dropout | (f) multi_ig | 99.0 | 0.0 | 1.0 | 0 | 2 | 0.4 / 1.3 / 4.7 | 26 | 25 => 24 / 0 / 1 |
+| jump | (b) single | 100.0 | 0.0 | 0.0 | 4 | 0 | 0.2 / 0.2 / 0.2 | - | - |
+| jump | (c) multi | 93.0 | 0.0 | 7.0 | 0 | 10 | 0.4 / 0.4 / 2.6 | - | - |
+| jump | (d) multi_random | 98.0 | 0.0 | 2.0 | 0 | 5 | 0.4 / 0.4 / 11.8 | 20 | 9 => 7 / 0 / 2 |
+| jump | (e) multi_sep | 100.0 | 0.0 | 0.0 | 0 | 3 | 0.4 / 0.4 / 5.7 | 9 | 9 => 9 / 0 / 0 |
+| jump | (f) multi_ig | 99.0 | 0.0 | 1.0 | 0 | 4 | 0.4 / 0.4 / 3.9 | 12 | 9 => 8 / 0 / 1 |
+
+"Recover s" is trigger to accept over all closed events, so the median stays at the 0.4 s of
+events that never needed a move. Median recover after a move, from the `.md` files: corridor 11.0 s
+(d), 11.0 s (e), 11.05 s (f); random dropout 2.6 / 2.2 / 2.4 s, jump 4.1 / 2.2 / 1.95 s for
+(d) / (e) / (f). Moves happened in 22 (dropout) and 8 (jump) of 100 random runs.
+
+**Verdict.**
+
+- Random layouts: (e) nearly closes the gap to (b) and makes none of (b)'s wrong commits. 99 % /
+  100 % reached against (b)'s 100 % / 100 % and (c)'s 80 % / 93 %. 0 wrong commits against
+  (b)'s 2 / 4. 0 collisions in every arm.
+- Corridor: (e) does not close the gap. 70 % reached against (b)'s 100 %, up from 0 % for (c),
+  still 0 wrong commits against (b)'s 8.
+- (e) beats (d) clearly in the corridor (70 % vs 15 %). In random layouts the gap is 2 runs per
+  fault (99 vs 97, 100 vs 98), too few runs to call.
+- (e) does not beat the Fox-style baseline (f). Corridor 70 % vs 80 %; random 99 / 100 % vs
+  99 / 99 %. The separation score adds nothing measurable over expected entropy here.
+
+Why the corridor runs fail (per-run `events[].moves` in the JSON):
+
+- Greedy one-step choice. The first move had utility 0 to 0.014 for (e): from the corridor
+  middle, no 2 m move brings a corridor end into the 6 m range. Recovery took 3 moves in 14 of
+  15 accepted (e) events, about 11 s. This is the failure Fox 1998 notes for greedy entropy when
+  the disambiguating place is far away.
+- Direction. Every (e) run whose first move went -x (back toward A) failed: 6 of 6. Every +x run
+  reached. In 5 of the 6, the event was still open and the last move still flying when the run
+  ended; run 13 had accepted 2.4 s before.
+- Scorer artifact. All failures are scored "stuck": the scorer's rule
+  (`|p(t) - p(t - 10 s)| < 0.2 m`) fires when a backward move returns the drone to where it was
+  10 s earlier, while it is still flying. The drone did not stop, but it had not localized by
+  then either (5 of 6), so the score is not wrong about the outcome.
+
+Design changes made while running, all kept in results/:
+
+- [disamb_corridor_v1.md](results/disamb_corridor_v1.md) broke exact ties by candidate order,
+  which silently preferred +x. The corridor's B is at +x. Replaced by the "closest to B"
+  tie-break. (e) did not change (70 %); (f) went from 75 % to 80 %
+  ([v2](results/disamb_corridor_v2.md)).
+- [disamb_random_0_v2.md](results/disamb_random_0_v2.md) required 0.35 m clearance at every
+  hypothesis start. One hypothesis next to a wall then blocked every move: all 5 (e) failures in
+  that run logged "no feasible move". The relaxed check moved (e) from 97 % / 98 % to
+  99 % / 100 %, with no collisions.
+- Both fixes were chosen after seeing these runs, on the same layouts. No held-out seed was run.
+
+Limits of this addition: no held-out seed (seed 1 was not flown with moves). Only one corridor
+geometry and one jump size. The move library is axis-free but short (2 m), so long symmetric
+corridors need several moves. Moves are flown in the raw estimator frame and stop within 0.08 m of the
+raw-frame target; under dropout that frame drifts on IMU, and the truth-frame error of a move
+was not logged. The clearance check trusts the
+hypotheses. If truth is in none of them, the move can be unsafe; the `none` verdict and window
+widening are the only guards.
 
 ## Limits
 
@@ -179,3 +289,13 @@ No dark zones. Point A varies by +-0.3 m per run.
   any detail of them.
 - Arena: [CONTRACT.md](../close-area-arena/CONTRACT.md), `estimator.py`, `faults.py`,
   `planners/astar_esdf.py`, used as checked out.
+
+### Held-out check (seed 1, run by the loop driver)
+
+`.venv/bin/python run_disambiguate.py --layouts 100 --seed 1` (76.5 s,
+[results/disamb_random_1.md](results/disamb_random_1.md); nothing was tuned on seed 1). Reached %
+(wrong commits): dropout (b) 100 (2), (c) 84 (0), (d) 93 (0), (e) 99 (0), (f) 100 (0); jump
+(b) 100 (3), (c) 95 (0), (d) 100 (0), (e) 99 (0), (f) 100 (0). The seed-0 picture holds: a move
+after a hover timeout recovers almost every run without wrong commits, and the info-gain move (f)
+is as good as or better than the proposed separation score (e). Earlier-iteration JSON files
+(v1, v2) were dropped to keep the repo small; their .md tables stay.
