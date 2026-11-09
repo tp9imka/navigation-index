@@ -1,0 +1,2569 @@
+{
+ "planner": "straight",
+ "family": "random",
+ "seed": 0,
+ "layouts": 50,
+ "case": "bias",
+ "input": "synthetic",
+ "command": "python run_faults.py --planner straight --layouts 50 --seed 0",
+ "config": {
+  "max_time_s": 60.0,
+  "plan_hz": 10,
+  "z0": 1.0,
+  "vehicle": {
+   "tau": 0.15,
+   "a_max": 3.0,
+   "v_max": 2.0,
+   "radius": 0.15
+  },
+  "sensor": {
+   "n_beams": 72,
+   "fov": 6.283185307179586,
+   "max_range": 6.0,
+   "noise_std": 0.02,
+   "dropout": 0.02
+  }
+ },
+ "estimator": {
+  "vio_hz": 30,
+  "imu_hz": 50,
+  "drift_c": 0.04743416490252569,
+  "vio_white": 0.005,
+  "acc_noise": 0.05,
+  "acc_bias": 0.03,
+  "q_acc": 0.1,
+  "dark": {
+   "drift_mult": 4.0,
+   "time_walk": 0.03,
+   "white_mult": 5.0,
+   "drop_p": 0.3,
+   "quality": 25
+  }
+ },
+ "summary": {
+  "n": 50,
+  "reached_pct": 16.0,
+  "collision_pct": 0.0,
+  "stuck_pct": 84.0,
+  "timeout_pct": 0.0,
+  "median_time_to_goal_s": 16.44,
+  "median_min_clearance_m": 0.379,
+  "median_path_length_m": 12.89,
+  "est_err_median_m": 0.271,
+  "est_err_max_m": 1.3576,
+  "est_err_run_max_median_m": 0.5326,
+  "frac_err_gt_2sigma": 0.2298,
+  "fault_fired_runs": 50,
+  "wall_s": 5.3,
+  "collisions": 0
+ },
+ "env": {
+  "python": "3.11.15",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "machine": "arm64",
+  "system": "Darwin"
+ },
+ "runs": [
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3754,
+   "path_length_m": 13.316,
+   "duration_s": 20.48,
+   "index": 0,
+   "layout_attempts": 1,
+   "n_obstacles": 9,
+   "goal": [
+    16.404,
+    16.747
+   ],
+   "max_pose_error_m": 0.5344,
+   "planner_ms_mean": 0.007,
+   "planner_ms_max": 0.0102,
+   "est_err_median_m": 0.2068,
+   "est_err_max_m": 0.5344,
+   "est_err_final_m": 0.5291,
+   "frac_err_gt_2sigma": 0.3415,
+   "frac_quality_lt_50": 0.0,
+   "dark_step_frac": 0.0,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 7.101,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -2.6323,
+    "fired_t": 7.133
+   },
+   "dark_zones": [
+    [
+     9.812,
+     7.774,
+     12.691,
+     11.639
+    ],
+    [
+     12.176,
+     12.516,
+     14.839,
+     16.304
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.4399,
+   "path_length_m": 24.146,
+   "duration_s": 29.26,
+   "index": 1,
+   "layout_attempts": 1,
+   "n_obstacles": 15,
+   "goal": [
+    16.911,
+    17.399
+   ],
+   "max_pose_error_m": 1.3576,
+   "planner_ms_mean": 0.007,
+   "planner_ms_max": 0.0116,
+   "est_err_median_m": 1.2732,
+   "est_err_max_m": 1.3576,
+   "est_err_final_m": 1.2915,
+   "frac_err_gt_2sigma": 0.7645,
+   "frac_quality_lt_50": 0.0887,
+   "dark_step_frac": 0.0887,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 4.182,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 2.8378,
+    "fired_t": 4.2
+   },
+   "dark_zones": [
+    [
+     10.894,
+     9.565,
+     13.82,
+     13.495
+    ],
+    [
+     -0.345,
+     10.516,
+     3.281,
+     13.77
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3569,
+   "path_length_m": 24.555,
+   "duration_s": 29.76,
+   "index": 2,
+   "layout_attempts": 1,
+   "n_obstacles": 11,
+   "goal": [
+    17.52,
+    16.743
+   ],
+   "max_pose_error_m": 1.2537,
+   "planner_ms_mean": 0.0071,
+   "planner_ms_max": 0.0169,
+   "est_err_median_m": 1.2033,
+   "est_err_max_m": 1.2537,
+   "est_err_final_m": 1.2297,
+   "frac_err_gt_2sigma": 0.6443,
+   "frac_quality_lt_50": 0.1242,
+   "dark_step_frac": 0.1309,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 1.363,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -0.9938,
+    "fired_t": 1.367
+   },
+   "dark_zones": [
+    [
+     11.481,
+     11.127,
+     14.088,
+     13.298
+    ],
+    [
+     6.954,
+     6.527,
+     9.155,
+     9.954
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3629,
+   "path_length_m": 7.012,
+   "duration_s": 16.54,
+   "index": 3,
+   "layout_attempts": 1,
+   "n_obstacles": 15,
+   "goal": [
+    16.426,
+    16.456
+   ],
+   "max_pose_error_m": 0.5197,
+   "planner_ms_mean": 0.007,
+   "planner_ms_max": 0.0161,
+   "est_err_median_m": 0.1825,
+   "est_err_max_m": 0.5197,
+   "est_err_final_m": 0.511,
+   "frac_err_gt_2sigma": 0.4036,
+   "frac_quality_lt_50": 0.0,
+   "dark_step_frac": 0.0,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 5.048,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 1.3382,
+    "fired_t": 5.067
+   },
+   "dark_zones": [
+    [
+     10.555,
+     9.95,
+     14.121,
+     13.768
+    ],
+    [
+     1.778,
+     12.435,
+     5.044,
+     15.247
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3635,
+   "path_length_m": 15.221,
+   "duration_s": 22.08,
+   "index": 4,
+   "layout_attempts": 1,
+   "n_obstacles": 8,
+   "goal": [
+    16.528,
+    17.218
+   ],
+   "max_pose_error_m": 0.5006,
+   "planner_ms_mean": 0.007,
+   "planner_ms_max": 0.0091,
+   "est_err_median_m": 0.357,
+   "est_err_max_m": 0.5006,
+   "est_err_final_m": 0.4891,
+   "frac_err_gt_2sigma": 0.4932,
+   "frac_quality_lt_50": 0.0,
+   "dark_step_frac": 0.0,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 3.076,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -0.023,
+    "fired_t": 3.1
+   },
+   "dark_zones": [
+    [
+     9.202,
+     11.2,
+     12.419,
+     14.313
+    ],
+    [
+     10.79,
+     14.737,
+     13.394,
+     18.426
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3841,
+   "path_length_m": 8.79,
+   "duration_s": 17.22,
+   "index": 5,
+   "layout_attempts": 1,
+   "n_obstacles": 11,
+   "goal": [
+    17.029,
+    16.821
+   ],
+   "max_pose_error_m": 0.5913,
+   "planner_ms_mean": 0.0072,
+   "planner_ms_max": 0.0139,
+   "est_err_median_m": 0.2923,
+   "est_err_max_m": 0.5913,
+   "est_err_final_m": 0.5824,
+   "frac_err_gt_2sigma": 0.0289,
+   "frac_quality_lt_50": 0.2139,
+   "dark_step_frac": 0.2139,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 5.163,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -2.9496,
+    "fired_t": 5.167
+   },
+   "dark_zones": [
+    [
+     2.724,
+     4.458,
+     6.162,
+     7.346
+    ],
+    [
+     8.636,
+     4.862,
+     10.768,
+     7.158
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.381,
+   "path_length_m": 12.064,
+   "duration_s": 19.84,
+   "index": 6,
+   "layout_attempts": 1,
+   "n_obstacles": 12,
+   "goal": [
+    17.317,
+    17.333
+   ],
+   "max_pose_error_m": 0.4645,
+   "planner_ms_mean": 0.0072,
+   "planner_ms_max": 0.0179,
+   "est_err_median_m": 0.1027,
+   "est_err_max_m": 0.4645,
+   "est_err_final_m": 0.4572,
+   "frac_err_gt_2sigma": 0.2111,
+   "frac_quality_lt_50": 0.0,
+   "dark_step_frac": 0.0,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 8.277,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -2.6853,
+    "fired_t": 8.3
+   },
+   "dark_zones": [
+    [
+     10.118,
+     11.196,
+     12.532,
+     13.654
+    ],
+    [
+     11.925,
+     10.624,
+     15.298,
+     14.507
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3705,
+   "path_length_m": 18.238,
+   "duration_s": 23.86,
+   "index": 7,
+   "layout_attempts": 1,
+   "n_obstacles": 15,
+   "goal": [
+    17.76,
+    16.699
+   ],
+   "max_pose_error_m": 0.5925,
+   "planner_ms_mean": 0.0071,
+   "planner_ms_max": 0.0295,
+   "est_err_median_m": 0.2613,
+   "est_err_max_m": 0.5925,
+   "est_err_final_m": 0.5632,
+   "frac_err_gt_2sigma": 0.0,
+   "frac_quality_lt_50": 0.5397,
+   "dark_step_frac": 0.5439,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 8.794,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 0.4022,
+    "fired_t": 8.8
+   },
+   "dark_zones": [
+    [
+     10.973,
+     10.929,
+     14.451,
+     13.212
+    ],
+    [
+     2.044,
+     13.219,
+     5.978,
+     16.682
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3794,
+   "path_length_m": 2.32,
+   "duration_s": 12.58,
+   "index": 8,
+   "layout_attempts": 1,
+   "n_obstacles": 8,
+   "goal": [
+    16.391,
+    16.302
+   ],
+   "max_pose_error_m": 0.2075,
+   "planner_ms_mean": 0.0069,
+   "planner_ms_max": 0.0092,
+   "est_err_median_m": 0.036,
+   "est_err_max_m": 0.2075,
+   "est_err_final_m": 0.2075,
+   "frac_err_gt_2sigma": 0.1032,
+   "frac_quality_lt_50": 0.0,
+   "dark_step_frac": 0.0,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 7.983,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 2.7932,
+    "fired_t": 8.0
+   },
+   "dark_zones": [
+    [
+     11.423,
+     10.16,
+     13.638,
+     13.319
+    ],
+    [
+     5.305,
+     1.16,
+     8.815,
+     3.6
+    ]
+   ]
+  },
+  {
+   "outcome": "reached",
+   "reached": true,
+   "collision": false,
+   "stuck": false,
+   "timeout": false,
+   "time_to_goal_s": 15.92,
+   "min_clearance_m": 0.8265,
+   "path_length_m": 23.335,
+   "duration_s": 15.92,
+   "index": 9,
+   "layout_attempts": 1,
+   "n_obstacles": 13,
+   "goal": [
+    16.668,
+    16.684
+   ],
+   "max_pose_error_m": 0.6699,
+   "planner_ms_mean": 0.007,
+   "planner_ms_max": 0.0152,
+   "est_err_median_m": 0.3453,
+   "est_err_max_m": 0.6699,
+   "est_err_final_m": 0.6384,
+   "frac_err_gt_2sigma": 0.0437,
+   "frac_quality_lt_50": 0.075,
+   "dark_step_frac": 0.075,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 6.94,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -2.7057,
+    "fired_t": 6.967
+   },
+   "dark_zones": [
+    [
+     3.0,
+     4.442,
+     5.746,
+     8.232
+    ],
+    [
+     12.929,
+     6.257,
+     15.928,
+     9.95
+    ]
+   ]
+  },
+  {
+   "outcome": "reached",
+   "reached": true,
+   "collision": false,
+   "stuck": false,
+   "timeout": false,
+   "time_to_goal_s": 16.24,
+   "min_clearance_m": 0.9292,
+   "path_length_m": 23.932,
+   "duration_s": 16.24,
+   "index": 10,
+   "layout_attempts": 1,
+   "n_obstacles": 8,
+   "goal": [
+    17.119,
+    17.117
+   ],
+   "max_pose_error_m": 0.9136,
+   "planner_ms_mean": 0.007,
+   "planner_ms_max": 0.0158,
+   "est_err_median_m": 0.5254,
+   "est_err_max_m": 0.9136,
+   "est_err_final_m": 0.8444,
+   "frac_err_gt_2sigma": 0.1227,
+   "frac_quality_lt_50": 0.1595,
+   "dark_step_frac": 0.1656,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 3.929,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -2.1955,
+    "fired_t": 3.933
+   },
+   "dark_zones": [
+    [
+     3.713,
+     3.393,
+     6.555,
+     7.04
+    ],
+    [
+     0.271,
+     13.727,
+     3.335,
+     17.171
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3749,
+   "path_length_m": 4.829,
+   "duration_s": 14.9,
+   "index": 11,
+   "layout_attempts": 1,
+   "n_obstacles": 13,
+   "goal": [
+    16.853,
+    16.962
+   ],
+   "max_pose_error_m": 0.3473,
+   "planner_ms_mean": 0.007,
+   "planner_ms_max": 0.0115,
+   "est_err_median_m": 0.0943,
+   "est_err_max_m": 0.3473,
+   "est_err_final_m": 0.3473,
+   "frac_err_gt_2sigma": 0.1933,
+   "frac_quality_lt_50": 0.0,
+   "dark_step_frac": 0.0,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 9.234,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 3.0945,
+    "fired_t": 9.267
+   },
+   "dark_zones": [
+    [
+     9.114,
+     6.787,
+     12.168,
+     9.216
+    ],
+    [
+     13.903,
+     9.608,
+     16.097,
+     12.952
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.4062,
+   "path_length_m": 1.57,
+   "duration_s": 12.16,
+   "index": 12,
+   "layout_attempts": 1,
+   "n_obstacles": 8,
+   "goal": [
+    16.866,
+    16.58
+   ],
+   "max_pose_error_m": 0.186,
+   "planner_ms_mean": 0.0068,
+   "planner_ms_max": 0.0087,
+   "est_err_median_m": 0.0415,
+   "est_err_max_m": 0.186,
+   "est_err_final_m": 0.186,
+   "frac_err_gt_2sigma": 0.1148,
+   "frac_quality_lt_50": 0.0,
+   "dark_step_frac": 0.0,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 9.194,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 2.6975,
+    "fired_t": 9.2
+   },
+   "dark_zones": [
+    [
+     5.896,
+     3.495,
+     8.022,
+     6.823
+    ],
+    [
+     3.398,
+     -0.291,
+     7.292,
+     3.45
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.1887,
+   "path_length_m": 12.52,
+   "duration_s": 23.08,
+   "index": 13,
+   "layout_attempts": 1,
+   "n_obstacles": 14,
+   "goal": [
+    16.848,
+    17.288
+   ],
+   "max_pose_error_m": 0.5803,
+   "planner_ms_mean": 0.0071,
+   "planner_ms_max": 0.012,
+   "est_err_median_m": 0.3807,
+   "est_err_max_m": 0.5803,
+   "est_err_final_m": 0.566,
+   "frac_err_gt_2sigma": 0.4329,
+   "frac_quality_lt_50": 0.0173,
+   "dark_step_frac": 0.0173,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 5.766,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -0.653,
+    "fired_t": 5.767
+   },
+   "dark_zones": [
+    [
+     10.57,
+     11.732,
+     12.986,
+     14.024
+    ],
+    [
+     -0.649,
+     2.337,
+     2.679,
+     6.048
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 1.1604,
+   "path_length_m": 24.005,
+   "duration_s": 26.82,
+   "index": 14,
+   "layout_attempts": 1,
+   "n_obstacles": 8,
+   "goal": [
+    17.293,
+    17.146
+   ],
+   "max_pose_error_m": 0.3896,
+   "planner_ms_mean": 0.0071,
+   "planner_ms_max": 0.0163,
+   "est_err_median_m": 0.2626,
+   "est_err_max_m": 0.3896,
+   "est_err_final_m": 0.3765,
+   "frac_err_gt_2sigma": 0.0,
+   "frac_quality_lt_50": 0.0669,
+   "dark_step_frac": 0.0669,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 7.813,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 1.8792,
+    "fired_t": 7.833
+   },
+   "dark_zones": [
+    [
+     4.911,
+     5.418,
+     7.277,
+     7.768
+    ],
+    [
+     -0.56,
+     4.053,
+     2.955,
+     7.625
+    ]
+   ]
+  },
+  {
+   "outcome": "reached",
+   "reached": true,
+   "collision": false,
+   "stuck": false,
+   "timeout": false,
+   "time_to_goal_s": 16.74,
+   "min_clearance_m": 0.479,
+   "path_length_m": 23.788,
+   "duration_s": 16.74,
+   "index": 15,
+   "layout_attempts": 1,
+   "n_obstacles": 15,
+   "goal": [
+    17.154,
+    16.894
+   ],
+   "max_pose_error_m": 0.3014,
+   "planner_ms_mean": 0.0068,
+   "planner_ms_max": 0.0089,
+   "est_err_median_m": 0.1006,
+   "est_err_max_m": 0.3014,
+   "est_err_final_m": 0.3013,
+   "frac_err_gt_2sigma": 0.0,
+   "frac_quality_lt_50": 0.1012,
+   "dark_step_frac": 0.1012,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 7.25,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -2.0022,
+    "fired_t": 7.267
+   },
+   "dark_zones": [
+    [
+     10.122,
+     9.323,
+     13.51,
+     11.484
+    ],
+    [
+     2.593,
+     12.185,
+     5.849,
+     15.815
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3666,
+   "path_length_m": 3.243,
+   "duration_s": 14.06,
+   "index": 16,
+   "layout_attempts": 1,
+   "n_obstacles": 14,
+   "goal": [
+    16.941,
+    17.36
+   ],
+   "max_pose_error_m": 0.5282,
+   "planner_ms_mean": 0.0068,
+   "planner_ms_max": 0.01,
+   "est_err_median_m": 0.2021,
+   "est_err_max_m": 0.5282,
+   "est_err_final_m": 0.5282,
+   "frac_err_gt_2sigma": 0.5603,
+   "frac_quality_lt_50": 0.0,
+   "dark_step_frac": 0.0,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 3.6,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 0.509,
+    "fired_t": 3.6
+   },
+   "dark_zones": [
+    [
+     7.925,
+     6.434,
+     9.991,
+     9.21
+    ],
+    [
+     3.736,
+     7.245,
+     6.364,
+     11.06
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.7301,
+   "path_length_m": 24.362,
+   "duration_s": 27.76,
+   "index": 17,
+   "layout_attempts": 1,
+   "n_obstacles": 10,
+   "goal": [
+    17.446,
+    16.288
+   ],
+   "max_pose_error_m": 0.7105,
+   "planner_ms_mean": 0.007,
+   "planner_ms_max": 0.0125,
+   "est_err_median_m": 0.6483,
+   "est_err_max_m": 0.7105,
+   "est_err_final_m": 0.6798,
+   "frac_err_gt_2sigma": 0.0612,
+   "frac_quality_lt_50": 0.0432,
+   "dark_step_frac": 0.0432,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 3.58,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -1.5614,
+    "fired_t": 3.6
+   },
+   "dark_zones": [
+    [
+     5.207,
+     3.932,
+     8.382,
+     6.178
+    ],
+    [
+     13.066,
+     -0.581,
+     15.96,
+     2.807
+    ]
+   ]
+  },
+  {
+   "outcome": "reached",
+   "reached": true,
+   "collision": false,
+   "stuck": false,
+   "timeout": false,
+   "time_to_goal_s": 16.2,
+   "min_clearance_m": 1.1991,
+   "path_length_m": 23.484,
+   "duration_s": 16.2,
+   "index": 18,
+   "layout_attempts": 1,
+   "n_obstacles": 8,
+   "goal": [
+    16.543,
+    17.077
+   ],
+   "max_pose_error_m": 0.2902,
+   "planner_ms_mean": 0.0072,
+   "planner_ms_max": 0.0378,
+   "est_err_median_m": 0.1845,
+   "est_err_max_m": 0.2902,
+   "est_err_final_m": 0.1904,
+   "frac_err_gt_2sigma": 0.0,
+   "frac_quality_lt_50": 0.179,
+   "dark_step_frac": 0.179,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 1.749,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -2.7663,
+    "fired_t": 1.767
+   },
+   "dark_zones": [
+    [
+     3.432,
+     2.759,
+     6.42,
+     4.977
+    ],
+    [
+     11.012,
+     11.109,
+     14.782,
+     13.229
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.4052,
+   "path_length_m": 12.208,
+   "duration_s": 19.16,
+   "index": 19,
+   "layout_attempts": 1,
+   "n_obstacles": 15,
+   "goal": [
+    17.034,
+    16.695
+   ],
+   "max_pose_error_m": 0.7127,
+   "planner_ms_mean": 0.0071,
+   "planner_ms_max": 0.0136,
+   "est_err_median_m": 0.4588,
+   "est_err_max_m": 0.7127,
+   "est_err_final_m": 0.7127,
+   "frac_err_gt_2sigma": 0.0,
+   "frac_quality_lt_50": 0.1198,
+   "dark_step_frac": 0.125,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 9.151,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -2.6402,
+    "fired_t": 9.167
+   },
+   "dark_zones": [
+    [
+     5.611,
+     4.928,
+     8.107,
+     8.02
+    ],
+    [
+     9.643,
+     3.817,
+     13.021,
+     7.119
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3754,
+   "path_length_m": 6.251,
+   "duration_s": 16.3,
+   "index": 20,
+   "layout_attempts": 1,
+   "n_obstacles": 13,
+   "goal": [
+    16.367,
+    17.501
+   ],
+   "max_pose_error_m": 0.3588,
+   "planner_ms_mean": 0.0071,
+   "planner_ms_max": 0.0288,
+   "est_err_median_m": 0.1113,
+   "est_err_max_m": 0.3588,
+   "est_err_final_m": 0.2331,
+   "frac_err_gt_2sigma": 0.0,
+   "frac_quality_lt_50": 0.0854,
+   "dark_step_frac": 0.0854,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 5.028,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 1.0445,
+    "fired_t": 5.033
+   },
+   "dark_zones": [
+    [
+     6.031,
+     6.375,
+     8.854,
+     9.819
+    ],
+    [
+     -0.507,
+     2.148,
+     3.104,
+     4.827
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3837,
+   "path_length_m": 20.373,
+   "duration_s": 25.38,
+   "index": 21,
+   "layout_attempts": 1,
+   "n_obstacles": 8,
+   "goal": [
+    16.733,
+    16.701
+   ],
+   "max_pose_error_m": 0.4253,
+   "planner_ms_mean": 0.0068,
+   "planner_ms_max": 0.0094,
+   "est_err_median_m": 0.2611,
+   "est_err_max_m": 0.4253,
+   "est_err_final_m": 0.4214,
+   "frac_err_gt_2sigma": 0.0,
+   "frac_quality_lt_50": 0.063,
+   "dark_step_frac": 0.063,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 8.314,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -1.3435,
+    "fired_t": 8.333
+   },
+   "dark_zones": [
+    [
+     8.613,
+     9.456,
+     11.239,
+     13.215
+    ],
+    [
+     6.754,
+     12.769,
+     9.763,
+     15.112
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3783,
+   "path_length_m": 14.322,
+   "duration_s": 21.42,
+   "index": 22,
+   "layout_attempts": 1,
+   "n_obstacles": 14,
+   "goal": [
+    16.908,
+    17.443
+   ],
+   "max_pose_error_m": 0.6166,
+   "planner_ms_mean": 0.0071,
+   "planner_ms_max": 0.0183,
+   "est_err_median_m": 0.1822,
+   "est_err_max_m": 0.6166,
+   "est_err_final_m": 0.6082,
+   "frac_err_gt_2sigma": 0.1302,
+   "frac_quality_lt_50": 0.0465,
+   "dark_step_frac": 0.0465,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 9.671,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 1.1224,
+    "fired_t": 9.7
+   },
+   "dark_zones": [
+    [
+     7.56,
+     5.504,
+     11.483,
+     8.771
+    ],
+    [
+     6.295,
+     0.35,
+     9.958,
+     2.733
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.2742,
+   "path_length_m": 13.267,
+   "duration_s": 21.4,
+   "index": 23,
+   "layout_attempts": 1,
+   "n_obstacles": 10,
+   "goal": [
+    16.552,
+    17.336
+   ],
+   "max_pose_error_m": 0.3086,
+   "planner_ms_mean": 0.007,
+   "planner_ms_max": 0.0097,
+   "est_err_median_m": 0.109,
+   "est_err_max_m": 0.3086,
+   "est_err_final_m": 0.2994,
+   "frac_err_gt_2sigma": 0.0,
+   "frac_quality_lt_50": 0.1116,
+   "dark_step_frac": 0.1116,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 5.032,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -2.3656,
+    "fired_t": 5.033
+   },
+   "dark_zones": [
+    [
+     3.053,
+     5.855,
+     6.945,
+     9.036
+    ],
+    [
+     6.531,
+     13.584,
+     9.817,
+     17.419
+    ]
+   ]
+  },
+  {
+   "outcome": "reached",
+   "reached": true,
+   "collision": false,
+   "stuck": false,
+   "timeout": false,
+   "time_to_goal_s": 16.1,
+   "min_clearance_m": 1.1526,
+   "path_length_m": 23.755,
+   "duration_s": 16.1,
+   "index": 24,
+   "layout_attempts": 1,
+   "n_obstacles": 9,
+   "goal": [
+    16.998,
+    16.972
+   ],
+   "max_pose_error_m": 0.9746,
+   "planner_ms_mean": 0.0071,
+   "planner_ms_max": 0.0111,
+   "est_err_median_m": 0.3593,
+   "est_err_max_m": 0.9746,
+   "est_err_final_m": 0.9746,
+   "frac_err_gt_2sigma": 0.3602,
+   "frac_quality_lt_50": 0.0994,
+   "dark_step_frac": 0.0994,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 6.367,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -2.2472,
+    "fired_t": 6.4
+   },
+   "dark_zones": [
+    [
+     6.892,
+     6.294,
+     9.171,
+     8.548
+    ],
+    [
+     9.861,
+     2.422,
+     13.4,
+     6.217
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.4052,
+   "path_length_m": 21.798,
+   "duration_s": 25.66,
+   "index": 25,
+   "layout_attempts": 1,
+   "n_obstacles": 13,
+   "goal": [
+    17.55,
+    16.663
+   ],
+   "max_pose_error_m": 0.7944,
+   "planner_ms_mean": 0.0069,
+   "planner_ms_max": 0.0104,
+   "est_err_median_m": 0.7162,
+   "est_err_max_m": 0.7944,
+   "est_err_final_m": 0.7739,
+   "frac_err_gt_2sigma": 0.0156,
+   "frac_quality_lt_50": 0.1089,
+   "dark_step_frac": 0.1089,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 2.806,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -1.572,
+    "fired_t": 2.833
+   },
+   "dark_zones": [
+    [
+     4.325,
+     3.274,
+     7.386,
+     7.094
+    ],
+    [
+     11.532,
+     13.711,
+     13.865,
+     16.158
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3821,
+   "path_length_m": 4.376,
+   "duration_s": 14.1,
+   "index": 26,
+   "layout_attempts": 1,
+   "n_obstacles": 13,
+   "goal": [
+    16.785,
+    16.657
+   ],
+   "max_pose_error_m": 0.2936,
+   "planner_ms_mean": 0.0072,
+   "planner_ms_max": 0.017,
+   "est_err_median_m": 0.1845,
+   "est_err_max_m": 0.2936,
+   "est_err_final_m": 0.2936,
+   "frac_err_gt_2sigma": 0.0,
+   "frac_quality_lt_50": 0.8592,
+   "dark_step_frac": 0.8592,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 6.472,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 1.0048,
+    "fired_t": 6.5
+   },
+   "dark_zones": [
+    [
+     6.334,
+     3.261,
+     8.799,
+     5.962
+    ],
+    [
+     1.086,
+     1.774,
+     4.414,
+     4.258
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.4013,
+   "path_length_m": 13.494,
+   "duration_s": 20.08,
+   "index": 27,
+   "layout_attempts": 1,
+   "n_obstacles": 11,
+   "goal": [
+    16.429,
+    17.372
+   ],
+   "max_pose_error_m": 0.7147,
+   "planner_ms_mean": 0.0071,
+   "planner_ms_max": 0.0211,
+   "est_err_median_m": 0.5838,
+   "est_err_max_m": 0.7147,
+   "est_err_final_m": 0.6084,
+   "frac_err_gt_2sigma": 0.0149,
+   "frac_quality_lt_50": 0.0995,
+   "dark_step_frac": 0.0995,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 6.39,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -1.5238,
+    "fired_t": 6.4
+   },
+   "dark_zones": [
+    [
+     4.733,
+     4.588,
+     6.795,
+     7.18
+    ],
+    [
+     8.825,
+     0.133,
+     11.551,
+     3.105
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3777,
+   "path_length_m": 8.784,
+   "duration_s": 17.78,
+   "index": 28,
+   "layout_attempts": 1,
+   "n_obstacles": 13,
+   "goal": [
+    16.161,
+    16.748
+   ],
+   "max_pose_error_m": 0.4549,
+   "planner_ms_mean": 0.0071,
+   "planner_ms_max": 0.0128,
+   "est_err_median_m": 0.2692,
+   "est_err_max_m": 0.4549,
+   "est_err_final_m": 0.4461,
+   "frac_err_gt_2sigma": 0.4719,
+   "frac_quality_lt_50": 0.0,
+   "dark_step_frac": 0.0,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 2.895,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 2.4359,
+    "fired_t": 2.9
+   },
+   "dark_zones": [
+    [
+     8.482,
+     11.81,
+     11.322,
+     15.47
+    ],
+    [
+     0.051,
+     13.724,
+     2.155,
+     16.706
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.8385,
+   "path_length_m": 24.779,
+   "duration_s": 27.78,
+   "index": 29,
+   "layout_attempts": 1,
+   "n_obstacles": 8,
+   "goal": [
+    17.177,
+    17.297
+   ],
+   "max_pose_error_m": 0.6626,
+   "planner_ms_mean": 0.007,
+   "planner_ms_max": 0.014,
+   "est_err_median_m": 0.5424,
+   "est_err_max_m": 0.6626,
+   "est_err_final_m": 0.5699,
+   "frac_err_gt_2sigma": 0.2338,
+   "frac_quality_lt_50": 0.054,
+   "dark_step_frac": 0.054,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 2.955,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 2.6646,
+    "fired_t": 2.967
+   },
+   "dark_zones": [
+    [
+     7.575,
+     4.208,
+     11.345,
+     6.338
+    ],
+    [
+     13.389,
+     11.584,
+     15.762,
+     14.7
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.362,
+   "path_length_m": 8.829,
+   "duration_s": 17.66,
+   "index": 30,
+   "layout_attempts": 1,
+   "n_obstacles": 9,
+   "goal": [
+    17.213,
+    16.938
+   ],
+   "max_pose_error_m": 0.6571,
+   "planner_ms_mean": 0.007,
+   "planner_ms_max": 0.0332,
+   "est_err_median_m": 0.4545,
+   "est_err_max_m": 0.6571,
+   "est_err_final_m": 0.6571,
+   "frac_err_gt_2sigma": 0.4915,
+   "frac_quality_lt_50": 0.0339,
+   "dark_step_frac": 0.0339,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 2.665,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -2.4436,
+    "fired_t": 2.667
+   },
+   "dark_zones": [
+    [
+     4.542,
+     1.838,
+     7.923,
+     5.166
+    ],
+    [
+     11.918,
+     3.428,
+     13.923,
+     5.469
+    ]
+   ]
+  },
+  {
+   "outcome": "reached",
+   "reached": true,
+   "collision": false,
+   "stuck": false,
+   "timeout": false,
+   "time_to_goal_s": 17.6,
+   "min_clearance_m": 0.6502,
+   "path_length_m": 24.036,
+   "duration_s": 17.6,
+   "index": 31,
+   "layout_attempts": 1,
+   "n_obstacles": 10,
+   "goal": [
+    17.541,
+    16.838
+   ],
+   "max_pose_error_m": 0.5603,
+   "planner_ms_mean": 0.007,
+   "planner_ms_max": 0.0101,
+   "est_err_median_m": 0.1703,
+   "est_err_max_m": 0.5603,
+   "est_err_final_m": 0.1706,
+   "frac_err_gt_2sigma": 0.0,
+   "frac_quality_lt_50": 0.3693,
+   "dark_step_frac": 0.3693,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 6.842,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 1.9004,
+    "fired_t": 6.867
+   },
+   "dark_zones": [
+    [
+     8.563,
+     8.15,
+     11.784,
+     12.058
+    ],
+    [
+     1.178,
+     1.099,
+     5.146,
+     4.95
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.328,
+   "path_length_m": 11.929,
+   "duration_s": 20.16,
+   "index": 32,
+   "layout_attempts": 1,
+   "n_obstacles": 12,
+   "goal": [
+    17.837,
+    17.006
+   ],
+   "max_pose_error_m": 0.3975,
+   "planner_ms_mean": 0.0071,
+   "planner_ms_max": 0.0142,
+   "est_err_median_m": 0.2856,
+   "est_err_max_m": 0.3975,
+   "est_err_final_m": 0.381,
+   "frac_err_gt_2sigma": 0.0347,
+   "frac_quality_lt_50": 0.2129,
+   "dark_step_frac": 0.2129,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 1.938,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -1.9646,
+    "fired_t": 1.967
+   },
+   "dark_zones": [
+    [
+     5.614,
+     4.884,
+     8.75,
+     8.05
+    ],
+    [
+     2.331,
+     6.928,
+     5.224,
+     9.82
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.363,
+   "path_length_m": 9.336,
+   "duration_s": 18.08,
+   "index": 33,
+   "layout_attempts": 1,
+   "n_obstacles": 8,
+   "goal": [
+    17.07,
+    17.005
+   ],
+   "max_pose_error_m": 0.5044,
+   "planner_ms_mean": 0.0071,
+   "planner_ms_max": 0.0163,
+   "est_err_median_m": 0.2414,
+   "est_err_max_m": 0.5044,
+   "est_err_final_m": 0.4952,
+   "frac_err_gt_2sigma": 0.4475,
+   "frac_quality_lt_50": 0.0,
+   "dark_step_frac": 0.0,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 4.339,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 2.3491,
+    "fired_t": 4.367
+   },
+   "dark_zones": [
+    [
+     5.247,
+     7.681,
+     9.208,
+     10.126
+    ],
+    [
+     6.418,
+     1.513,
+     9.138,
+     5.141
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3814,
+   "path_length_m": 11.945,
+   "duration_s": 19.7,
+   "index": 34,
+   "layout_attempts": 1,
+   "n_obstacles": 11,
+   "goal": [
+    16.671,
+    16.683
+   ],
+   "max_pose_error_m": 0.73,
+   "planner_ms_mean": 0.0071,
+   "planner_ms_max": 0.0129,
+   "est_err_median_m": 0.5087,
+   "est_err_max_m": 0.73,
+   "est_err_final_m": 0.7272,
+   "frac_err_gt_2sigma": 0.5404,
+   "frac_quality_lt_50": 0.6212,
+   "dark_step_frac": 0.6212,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 2.303,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -1.9093,
+    "fired_t": 2.333
+   },
+   "dark_zones": [
+    [
+     7.53,
+     7.598,
+     11.114,
+     11.016
+    ],
+    [
+     14.963,
+     7.022,
+     17.284,
+     9.638
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3788,
+   "path_length_m": 2.763,
+   "duration_s": 13.6,
+   "index": 35,
+   "layout_attempts": 1,
+   "n_obstacles": 10,
+   "goal": [
+    17.483,
+    16.614
+   ],
+   "max_pose_error_m": 0.4178,
+   "planner_ms_mean": 0.0068,
+   "planner_ms_max": 0.0095,
+   "est_err_median_m": 0.0768,
+   "est_err_max_m": 0.4178,
+   "est_err_final_m": 0.4178,
+   "frac_err_gt_2sigma": 0.3942,
+   "frac_quality_lt_50": 0.0,
+   "dark_step_frac": 0.0,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 4.356,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 0.3352,
+    "fired_t": 4.367
+   },
+   "dark_zones": [
+    [
+     9.015,
+     11.185,
+     11.612,
+     13.8
+    ],
+    [
+     7.198,
+     14.121,
+     10.836,
+     17.742
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3718,
+   "path_length_m": 3.688,
+   "duration_s": 14.26,
+   "index": 36,
+   "layout_attempts": 1,
+   "n_obstacles": 15,
+   "goal": [
+    16.432,
+    17.338
+   ],
+   "max_pose_error_m": 0.3347,
+   "planner_ms_mean": 0.0074,
+   "planner_ms_max": 0.0476,
+   "est_err_median_m": 0.0368,
+   "est_err_max_m": 0.3347,
+   "est_err_final_m": 0.3347,
+   "frac_err_gt_2sigma": 0.2098,
+   "frac_quality_lt_50": 0.0,
+   "dark_step_frac": 0.0,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 7.609,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 3.1289,
+    "fired_t": 7.633
+   },
+   "dark_zones": [
+    [
+     6.436,
+     4.167,
+     8.547,
+     7.032
+    ],
+    [
+     7.656,
+     9.149,
+     9.883,
+     11.482
+    ]
+   ]
+  },
+  {
+   "outcome": "reached",
+   "reached": true,
+   "collision": false,
+   "stuck": false,
+   "timeout": false,
+   "time_to_goal_s": 16.64,
+   "min_clearance_m": 0.5146,
+   "path_length_m": 24.097,
+   "duration_s": 16.64,
+   "index": 37,
+   "layout_attempts": 1,
+   "n_obstacles": 13,
+   "goal": [
+    16.987,
+    17.197
+   ],
+   "max_pose_error_m": 1.3488,
+   "planner_ms_mean": 0.007,
+   "planner_ms_max": 0.0127,
+   "est_err_median_m": 0.9876,
+   "est_err_max_m": 1.3488,
+   "est_err_final_m": 1.2573,
+   "frac_err_gt_2sigma": 0.8024,
+   "frac_quality_lt_50": 0.1916,
+   "dark_step_frac": 0.1916,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 1.372,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -2.7345,
+    "fired_t": 1.4
+   },
+   "dark_zones": [
+    [
+     6.592,
+     6.813,
+     10.195,
+     10.698
+    ],
+    [
+     7.448,
+     2.352,
+     10.136,
+     4.615
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.359,
+   "path_length_m": 16.796,
+   "duration_s": 23.2,
+   "index": 38,
+   "layout_attempts": 1,
+   "n_obstacles": 9,
+   "goal": [
+    17.513,
+    17.709
+   ],
+   "max_pose_error_m": 0.6949,
+   "planner_ms_mean": 0.0068,
+   "planner_ms_max": 0.0103,
+   "est_err_median_m": 0.3356,
+   "est_err_max_m": 0.6949,
+   "est_err_final_m": 0.6009,
+   "frac_err_gt_2sigma": 0.0043,
+   "frac_quality_lt_50": 0.5665,
+   "dark_step_frac": 0.5665,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 9.588,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -1.0073,
+    "fired_t": 9.6
+   },
+   "dark_zones": [
+    [
+     9.965,
+     10.398,
+     13.478,
+     14.011
+    ],
+    [
+     5.424,
+     9.238,
+     8.258,
+     13.209
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.2174,
+   "path_length_m": 15.906,
+   "duration_s": 27.88,
+   "index": 39,
+   "layout_attempts": 1,
+   "n_obstacles": 11,
+   "goal": [
+    16.912,
+    17.391
+   ],
+   "max_pose_error_m": 0.5309,
+   "planner_ms_mean": 0.007,
+   "planner_ms_max": 0.011,
+   "est_err_median_m": 0.3198,
+   "est_err_max_m": 0.5309,
+   "est_err_final_m": 0.451,
+   "frac_err_gt_2sigma": 0.0502,
+   "frac_quality_lt_50": 0.4373,
+   "dark_step_frac": 0.4373,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 4.818,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -1.4118,
+    "fired_t": 4.833
+   },
+   "dark_zones": [
+    [
+     10.267,
+     9.167,
+     12.702,
+     12.929
+    ],
+    [
+     2.026,
+     14.253,
+     4.279,
+     17.793
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3736,
+   "path_length_m": 10.881,
+   "duration_s": 19.18,
+   "index": 40,
+   "layout_attempts": 1,
+   "n_obstacles": 15,
+   "goal": [
+    16.412,
+    16.756
+   ],
+   "max_pose_error_m": 0.3838,
+   "planner_ms_mean": 0.007,
+   "planner_ms_max": 0.0102,
+   "est_err_median_m": 0.3118,
+   "est_err_max_m": 0.3838,
+   "est_err_final_m": 0.3689,
+   "frac_err_gt_2sigma": 0.0,
+   "frac_quality_lt_50": 0.6615,
+   "dark_step_frac": 0.6615,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 2.767,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 2.2194,
+    "fired_t": 2.8
+   },
+   "dark_zones": [
+    [
+     6.468,
+     6.236,
+     9.009,
+     9.613
+    ],
+    [
+     4.277,
+     14.312,
+     7.67,
+     17.306
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.383,
+   "path_length_m": 8.898,
+   "duration_s": 17.72,
+   "index": 41,
+   "layout_attempts": 1,
+   "n_obstacles": 12,
+   "goal": [
+    17.431,
+    16.319
+   ],
+   "max_pose_error_m": 0.6459,
+   "planner_ms_mean": 0.0069,
+   "planner_ms_max": 0.0121,
+   "est_err_median_m": 0.5121,
+   "est_err_max_m": 0.6459,
+   "est_err_final_m": 0.6408,
+   "frac_err_gt_2sigma": 0.7247,
+   "frac_quality_lt_50": 0.4831,
+   "dark_step_frac": 0.4831,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 1.943,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -2.9446,
+    "fired_t": 1.967
+   },
+   "dark_zones": [
+    [
+     6.453,
+     4.827,
+     8.738,
+     8.032
+    ],
+    [
+     8.526,
+     2.259,
+     10.926,
+     4.73
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3676,
+   "path_length_m": 18.293,
+   "duration_s": 24.2,
+   "index": 42,
+   "layout_attempts": 1,
+   "n_obstacles": 9,
+   "goal": [
+    16.951,
+    17.863
+   ],
+   "max_pose_error_m": 0.3627,
+   "planner_ms_mean": 0.0074,
+   "planner_ms_max": 0.0122,
+   "est_err_median_m": 0.2977,
+   "est_err_max_m": 0.3627,
+   "est_err_final_m": 0.3008,
+   "frac_err_gt_2sigma": 0.0,
+   "frac_quality_lt_50": 0.0494,
+   "dark_step_frac": 0.0494,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 1.005,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 1.3707,
+    "fired_t": 1.033
+   },
+   "dark_zones": [
+    [
+     6.165,
+     4.726,
+     8.994,
+     6.838
+    ],
+    [
+     6.373,
+     5.159,
+     8.528,
+     7.804
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.4041,
+   "path_length_m": 4.998,
+   "duration_s": 14.42,
+   "index": 43,
+   "layout_attempts": 1,
+   "n_obstacles": 13,
+   "goal": [
+    16.884,
+    16.922
+   ],
+   "max_pose_error_m": 0.5635,
+   "planner_ms_mean": 0.0073,
+   "planner_ms_max": 0.0171,
+   "est_err_median_m": 0.2039,
+   "est_err_max_m": 0.5635,
+   "est_err_final_m": 0.5635,
+   "frac_err_gt_2sigma": 0.4897,
+   "frac_quality_lt_50": 0.0,
+   "dark_step_frac": 0.0,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 4.964,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -1.8139,
+    "fired_t": 4.967
+   },
+   "dark_zones": [
+    [
+     12.126,
+     9.628,
+     15.208,
+     12.9
+    ],
+    [
+     12.147,
+     13.47,
+     15.027,
+     16.593
+    ]
+   ]
+  },
+  {
+   "outcome": "reached",
+   "reached": true,
+   "collision": false,
+   "stuck": false,
+   "timeout": false,
+   "time_to_goal_s": 16.88,
+   "min_clearance_m": 0.4548,
+   "path_length_m": 23.347,
+   "duration_s": 16.88,
+   "index": 44,
+   "layout_attempts": 1,
+   "n_obstacles": 10,
+   "goal": [
+    16.654,
+    16.758
+   ],
+   "max_pose_error_m": 0.5273,
+   "planner_ms_mean": 0.0069,
+   "planner_ms_max": 0.0116,
+   "est_err_median_m": 0.2893,
+   "est_err_max_m": 0.5273,
+   "est_err_final_m": 0.4691,
+   "frac_err_gt_2sigma": 0.0118,
+   "frac_quality_lt_50": 0.1598,
+   "dark_step_frac": 0.1598,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 1.47,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 3.1091,
+    "fired_t": 1.5
+   },
+   "dark_zones": [
+    [
+     6.398,
+     7.818,
+     10.208,
+     11.221
+    ],
+    [
+     5.568,
+     1.929,
+     8.771,
+     4.116
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.379,
+   "path_length_m": 8.819,
+   "duration_s": 17.72,
+   "index": 45,
+   "layout_attempts": 1,
+   "n_obstacles": 11,
+   "goal": [
+    16.78,
+    17.339
+   ],
+   "max_pose_error_m": 0.5895,
+   "planner_ms_mean": 0.0069,
+   "planner_ms_max": 0.0114,
+   "est_err_median_m": 0.3346,
+   "est_err_max_m": 0.5895,
+   "est_err_final_m": 0.5853,
+   "frac_err_gt_2sigma": 0.5618,
+   "frac_quality_lt_50": 0.0,
+   "dark_step_frac": 0.0,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 3.656,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -2.0785,
+    "fired_t": 3.667
+   },
+   "dark_zones": [
+    [
+     6.897,
+     7.953,
+     9.507,
+     10.663
+    ],
+    [
+     5.018,
+     11.514,
+     7.891,
+     14.01
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.372,
+   "path_length_m": 2.015,
+   "duration_s": 12.86,
+   "index": 46,
+   "layout_attempts": 1,
+   "n_obstacles": 11,
+   "goal": [
+    16.783,
+    16.741
+   ],
+   "max_pose_error_m": 0.5094,
+   "planner_ms_mean": 0.0071,
+   "planner_ms_max": 0.0097,
+   "est_err_median_m": 0.4108,
+   "est_err_max_m": 0.5094,
+   "est_err_final_m": 0.5094,
+   "frac_err_gt_2sigma": 0.093,
+   "frac_quality_lt_50": 0.938,
+   "dark_step_frac": 0.938,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 9.574,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 0.8832,
+    "fired_t": 9.6
+   },
+   "dark_zones": [
+    [
+     7.246,
+     7.303,
+     10.726,
+     10.522
+    ],
+    [
+     0.486,
+     -0.458,
+     3.078,
+     2.101
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3634,
+   "path_length_m": 17.111,
+   "duration_s": 23.7,
+   "index": 47,
+   "layout_attempts": 1,
+   "n_obstacles": 14,
+   "goal": [
+    17.39,
+    16.841
+   ],
+   "max_pose_error_m": 0.7822,
+   "planner_ms_mean": 0.0069,
+   "planner_ms_max": 0.0096,
+   "est_err_median_m": 0.6101,
+   "est_err_max_m": 0.7822,
+   "est_err_final_m": 0.7804,
+   "frac_err_gt_2sigma": 0.4496,
+   "frac_quality_lt_50": 0.0882,
+   "dark_step_frac": 0.0882,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 4.62,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": -0.4065,
+    "fired_t": 4.633
+   },
+   "dark_zones": [
+    [
+     9.359,
+     7.299,
+     11.571,
+     10.501
+    ],
+    [
+     6.391,
+     8.772,
+     9.947,
+     11.607
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3669,
+   "path_length_m": 10.328,
+   "duration_s": 18.84,
+   "index": 48,
+   "layout_attempts": 1,
+   "n_obstacles": 12,
+   "goal": [
+    16.241,
+    16.571
+   ],
+   "max_pose_error_m": 0.5367,
+   "planner_ms_mean": 0.0072,
+   "planner_ms_max": 0.011,
+   "est_err_median_m": 0.1583,
+   "est_err_max_m": 0.5367,
+   "est_err_final_m": 0.5235,
+   "frac_err_gt_2sigma": 0.3439,
+   "frac_quality_lt_50": 0.0,
+   "dark_step_frac": 0.0,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 6.91,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 2.3823,
+    "fired_t": 6.933
+   },
+   "dark_zones": [
+    [
+     11.281,
+     10.447,
+     13.627,
+     12.478
+    ],
+    [
+     1.621,
+     11.02,
+     4.459,
+     14.509
+    ]
+   ]
+  },
+  {
+   "outcome": "stuck",
+   "reached": false,
+   "collision": false,
+   "stuck": true,
+   "timeout": false,
+   "time_to_goal_s": null,
+   "min_clearance_m": 0.3793,
+   "path_length_m": 5.121,
+   "duration_s": 15.14,
+   "index": 49,
+   "layout_attempts": 1,
+   "n_obstacles": 10,
+   "goal": [
+    17.456,
+    16.752
+   ],
+   "max_pose_error_m": 0.2348,
+   "planner_ms_mean": 0.0067,
+   "planner_ms_max": 0.0092,
+   "est_err_median_m": 0.1072,
+   "est_err_max_m": 0.2348,
+   "est_err_final_m": 0.2348,
+   "frac_err_gt_2sigma": 0.0263,
+   "frac_quality_lt_50": 0.0,
+   "dark_step_frac": 0.0,
+   "reset_counter_final": 0,
+   "fault_log": {
+    "fault": "bias",
+    "start_t": 9.811,
+    "dur_s": 10.0,
+    "bias_mps": 0.05,
+    "dir_rad": 1.6423,
+    "fired_t": 9.833
+   },
+   "dark_zones": [
+    [
+     8.291,
+     6.493,
+     10.965,
+     8.738
+    ],
+    [
+     -0.333,
+     13.928,
+     2.427,
+     17.585
+    ]
+   ]
+  }
+ ]
+}

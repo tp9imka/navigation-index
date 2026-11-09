@@ -89,6 +89,39 @@ So a full 3D ESDF rebuild of a 20 x 20 x 5 m volume at 0.1 m fits a 2-5 Hz repla
 this machine; the 2D arena grid costs about 1.5 ms. An earlier run of the same script gave a 187 ms
 median for 3D (overwritten; timings move a few percent with load).
 
+## Estimator and faults (ran 2026-11-09, synthetic)
+
+`estimator.py` is a position/velocity EKF fed by a 30 Hz VIO-like source and a 50 Hz IMU-like
+accel, with 2 seeded dark zones per layout (drift x4, frame loss). It reports `quality`,
+`reset_counter` and `sigma_xy`. `faults.py` adds five seeded cases: none, jump (0.5 m step near
+an obstacle), bias (0.05 m/s for 10 s), dropout (2 s IMU only), overconfident (sigma_xy x0.25).
+Planners see the estimate; ranges and scoring use truth.
+
+`.venv/bin/python run_faults.py --planner freest_beam --layouts 50 --seed 0` (about 50 s):
+
+| case | straight reached % | freest_beam reached % | collision % (both) | freest_beam est err median / max m |
+|---|---|---|---|---|
+| truth | 26 | 86 | 0 | - |
+| none (dark zones on) | 16 | 58 | 0 | 0.165 / 1.09 |
+| jump | 14 | 42 | 0 | 0.388 / 1.16 |
+| bias | 16 | 40 | 0 | 0.406 / 1.28 |
+| dropout | 16 | 46 | 0 | 0.291 / 1.22 |
+| overconfident | 16 | 58 | 0 | 0.165 / 1.09 |
+
+Source: [straight](results/faults_straight_summary_0.md), [freest_beam](results/faults_freest_beam_summary_0.md).
+
+- **Faults cut reach, not safety, for range-only planners.** Ranges come from the true pose, so
+  pose error only moves where the drone thinks B is. Runs end "stuck" at the estimated goal more
+  than 0.3 m from the real one. A map-based planner (A*) is expected to turn the same error into
+  collisions; not run yet.
+- **Overconfident** changes nothing here because no planner reads `sigma_xy`; the error exceeds
+  2 sigma at 99.6 % of steps (4.0 % for none).
+- **Drift calibration:** random walk in distance fitted to C = 0.044 m/sqrt(m), about 0.14 m at
+  10 m, against the hub's real OpenVINS number (RPE 1.5 % over 10 m,
+  [relative-nav-benchmark](../relative-nav-benchmark/README.md)).
+- Not calibrated: dark-zone numbers, IMU noise and bias. Yaw is truth, no VIO latency, no
+  innovation gate.
+
 ## Limits
 
 - 2.5D only: no altitude changes, no overhangs, z is held. Obstacles are axis-aligned boxes
