@@ -10,9 +10,11 @@ Renders a tag36h11 AprilTag (0.16 m, also 0.40 m) onto a textured wall with a 64
 
 | Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
 |---|---|---|---|---|---|---|
-| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+| cpu | none | unknown | unknown | 0 MB | macos-arm64 | integrated |
 
-**Main limitation:** Read the sample verification; readiness has not been curated.
+**Main limitation:** Rendered images and a kinematic point mass; no lens distortion, real camera or SITL. Setup needs network for PyPI wheels (uv venv + uv pip install); cold setup time not measured; no network-denied run, so offline is unknown. README names an Apple M3 Max host; macOS assumed from the M3 Max host, Linux not tested.
+
+**Readiness evidence:** [samples/fiducial-goal-apriltag/README.md](../../samples/fiducial-goal-apriltag/README.md), [samples/fiducial-goal-apriltag/sample.json](../../samples/fiducial-goal-apriltag/sample.json), [samples/fiducial-goal-apriltag/results/final_approach.json](../../samples/fiducial-goal-apriltag/results/final_approach.json)
 
 **Concepts:** [Feature detection and matching](../../catalog/concepts/feature-matching.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 

@@ -10,9 +10,11 @@ Map-free fallback planners for close-area A=>B, written as close-area-arena Plan
 
 | Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
 |---|---|---|---|---|---|---|
-| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+| cpu | none | unknown | unknown | 0 MB | macos-arm64 | integrated |
 
-**Main limitation:** Read the sample verification; readiness has not been curated.
+**Main limitation:** Synthetic 2.5D arena; 4-beam fan is ideal rays with no beam cone; no Crazyflie or SITL. Setup needs network for PyPI wheels (uv venv + uv pip install); cold setup time not measured; no network-denied run, so offline is unknown. README names an Apple M3 Max host; macOS assumed from the M3 Max host, Linux not tested.
+
+**Readiness evidence:** [samples/close-area-planner-reactive/README.md](../../samples/close-area-planner-reactive/README.md), [samples/close-area-planner-reactive/sample.json](../../samples/close-area-planner-reactive/sample.json), [samples/close-area-planner-reactive/results/reactive_0.json](../../samples/close-area-planner-reactive/results/reactive_0.json)
 
 **Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Path and motion planning](../../catalog/concepts/path-planning.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 

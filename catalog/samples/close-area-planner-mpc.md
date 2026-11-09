@@ -10,9 +10,11 @@ Replaces the close-area-arena A* carrot follower with a linear MPC path follower
 
 | Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
 |---|---|---|---|---|---|---|
-| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+| cpu | none | unknown | unknown | 0 MB | macos-arm64 | integrated |
 
-**Main limitation:** Read the sample verification; readiness has not been curated.
+**Main limitation:** Synthetic 2.5D point-mass arena, known map, truth pose; QP timing is a laptop in Python, not a flight computer. Setup needs network for PyPI wheels (uv venv + uv pip install); cold setup time not measured; no network-denied run, so offline is unknown. README names an Apple M3 Max host (macOS 26.6.2); Linux not tested.
+
+**Readiness evidence:** [samples/close-area-planner-mpc/README.md](../../samples/close-area-planner-mpc/README.md), [samples/close-area-planner-mpc/sample.json](../../samples/close-area-planner-mpc/sample.json), [samples/close-area-planner-mpc/results/mpc_compare_0.json](../../samples/close-area-planner-mpc/results/mpc_compare_0.json)
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
@@ -22,5 +24,11 @@ Replaces the close-area-arena A* carrot follower with a linear MPC path follower
 
 - explains: [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md)
 - explains: [OSQP](../../catalog/repos/osqp__osqp.md)
+
+## Referenced by
+
+- [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): samples_

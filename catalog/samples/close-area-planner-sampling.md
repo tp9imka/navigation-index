@@ -10,9 +10,11 @@ Own numpy RRT* (rewiring with subtree cost update, goal bias 5 %, step 1.0 m, re
 
 | Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
 |---|---|---|---|---|---|---|
-| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+| cpu | none | unknown | unknown | 0 MB | macos-arm64 | integrated |
 
-**Main limitation:** Read the sample verification; readiness has not been curated.
+**Main limitation:** Synthetic 2.5D arena, known static map; RRT* not tuned; sweep timings under 14-process load. Setup needs network for PyPI wheels (uv venv + uv pip install); cold setup time not measured; no network-denied run, so offline is unknown. README names an Apple M3 Max host; macOS assumed from the M3 Max host, Linux not tested.
+
+**Readiness evidence:** [samples/close-area-planner-sampling/README.md](../../samples/close-area-planner-sampling/README.md), [samples/close-area-planner-sampling/sample.json](../../samples/close-area-planner-sampling/sample.json), [samples/close-area-planner-sampling/results/sweep_0.json](../../samples/close-area-planner-sampling/results/sweep_0.json)
 
 **Concepts:** [Path and motion planning](../../catalog/concepts/path-planning.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Datasets and benchmarks](../../catalog/concepts/datasets-benchmarks.md)
 
@@ -24,5 +26,10 @@ Own numpy RRT* (rewiring with subtree cost update, goal bias 5 %, step 1.0 m, re
 - explains: [Sampling-based Algorithms for Optimal Motion Planning](../../catalog/resources/karaman-frazzoli-rrtstar-ijrr-2011.md)
 - explains: [PathPlanning (zhm-real)](../../catalog/repos/zhm-real__pathplanning.md)
 - explains: [OMPL - Open Motion Planning Library](../../catalog/repos/ompl__ompl.md)
+
+## Referenced by
+
+- [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): samples_

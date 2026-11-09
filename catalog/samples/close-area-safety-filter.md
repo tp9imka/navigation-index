@@ -10,9 +10,11 @@ Harness that puts a safety filter between a planner and the vehicle in the share
 
 | Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
 |---|---|---|---|---|---|---|
-| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+| cpu | none | unknown | unknown | 0 MB | macos-arm64 | integrated |
 
-**Main limitation:** Read the sample verification; readiness has not been curated.
+**Main limitation:** Synthetic 2.5D arena, one planner and one seed; no PX4 code run (F1 from docs, F2 from doc 05 pseudo-code). Setup needs network for PyPI wheels (uv venv + uv pip install); cold setup time not measured; no network-denied run, so offline is unknown. README names an Apple M3 Max host; macOS assumed from the M3 Max host, Linux not tested.
+
+**Readiness evidence:** [samples/close-area-safety-filter/README.md](../../samples/close-area-safety-filter/README.md), [samples/close-area-safety-filter/sample.json](../../samples/close-area-safety-filter/sample.json), [samples/close-area-safety-filter/results/kill_a_summary_0.md](../../samples/close-area-safety-filter/results/kill_a_summary_0.md)
 
 **Concepts:** [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md), [Path and motion planning](../../catalog/concepts/path-planning.md)
 
@@ -24,6 +26,8 @@ Harness that puts a safety filter between a planner and the vehicle in the share
 
 ## Referenced by
 
+- [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) (mentions)
 - [Demo script: close-area A to B](../../templates/demo-script-close-area.md) (mentions)
 - [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) (mentions)

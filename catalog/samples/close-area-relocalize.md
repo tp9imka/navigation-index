@@ -10,9 +10,11 @@ Relocalizer for the close-area arena. After a detected VIO loss (reset_counter c
 
 | Compute | Hardware | Offline | Setup | Dataset download | Tested platforms | Validation |
 |---|---|---|---|---|---|---|
-| unknown | unknown | unknown | unknown | unknown | unknown | unverified |
+| cpu | none | unknown | unknown | 0 MB | macos-arm64 | integrated |
 
-**Main limitation:** Read the sample verification; readiness has not been curated.
+**Main limitation:** Synthetic 2.5D arena, yaw is truth, exact prior map, perfect hover. Setup needs network for PyPI wheels (uv venv + uv pip install); cold setup time not measured; no network-denied run, so offline is unknown. README names an Apple M3 Max host; macOS assumed from the M3 Max host, Linux not tested.
+
+**Readiness evidence:** [samples/close-area-relocalize/README.md](../../samples/close-area-relocalize/README.md), [samples/close-area-relocalize/sample.json](../../samples/close-area-relocalize/sample.json), [samples/close-area-relocalize/results/reloc_random_0.json](../../samples/close-area-relocalize/results/reloc_random_0.json)
 
 **Concepts:** [LiDAR odometry and SLAM](../../catalog/concepts/lidar-slam.md), [Sensor fusion and state estimation](../../catalog/concepts/sensor-fusion.md), [Visual(-inertial) odometry](../../catalog/concepts/vio.md), [Simulation and HIL/SITL](../../catalog/concepts/simulation.md)
 
@@ -23,5 +25,10 @@ Relocalizer for the close-area arena. After a detected VIO loss (reset_counter c
 - explains: [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md)
 - explains: [Active Markov Localization for Mobile Robots](../../catalog/resources/fox-burgard-thrun-1998-active-markov-localization.md)
 - explains: [FAST_LIO_LOCALIZATION](../../catalog/repos/hviktortsoi__fast_lio_localization.md)
+
+## Referenced by
+
+- [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): samples_
