@@ -1,0 +1,76 @@
+# loop-59 copied-out dry run, 2026-11-09 17:14, synthetic. Template copied to $T/team (T = a fresh temp dir), HUB = this checkout
+$ ls $T  # before
+team
+$ make first-flight
+error: ../../samples/close-area-arena/requirements.txt not found.
+This target needs the navigation-index hub samples. Set the paths, e.g.:
+  make first-flight ARENA=/path/to/hub/samples/close-area-arena SAFETY=/path/to/hub/samples/close-area-safety-filter RELOC=/path/to/hub/samples/close-area-relocalize
+(or HUB=/path/to/hub for all three)
+make: *** [.venv/bin/python] Error 2
+real 0.02
+user 0.00
+sys 0.00
+rc=2
+$ make first-flight-reloc
+error: ../../samples/close-area-arena/requirements.txt not found.
+This target needs the navigation-index hub samples. Set the paths, e.g.:
+  make first-flight-reloc ARENA=/path/to/hub/samples/close-area-arena SAFETY=/path/to/hub/samples/close-area-safety-filter RELOC=/path/to/hub/samples/close-area-relocalize
+(or HUB=/path/to/hub for all three)
+make: *** [.venv/bin/python] Error 2
+rc=2
+$ ls $T  # after the failed targets: no stray samples/ dir
+team
+$ ls -a $T/team | grep -c venv
+0
+$ make first-flight ARENA=$HUB/samples/close-area-arena SAFETY=$HUB/samples/close-area-safety-filter
+uv venv .venv && uv pip install --python .venv -r $HUB/samples/close-area-arena/requirements.txt
+.venv/bin/python main.py --adapter arena:random:0 --planner arena:astar_esdf --safety arm:F2  --arena $HUB/samples/close-area-arena --safety-dir $HUB/samples/close-area-safety-filter --log results/first_flight.jsonl
+score input=synthetic adapter=arena:random:0 fault=truth planner=arena:astar_esdf safety=arm:F2 reached=True final_dist_m=0.165 t_s=21.10 collided=False min_clearance_m=0.827 max_pose_error_m=0.000 ticks=423 intervened=136 keepalive=0 planner_errors=0 outcome=arrived modes=arrive_dwell:20,arrived:1,nominal:402 health=ok:423 log=results/first_flight.jsonl
+.venv/bin/python $HUB/samples/close-area-arena/score_log.py results/first_flight.jsonl --plot results/first_flight.png --json results/first_flight_score.json
+input            synthetic (positions from truth)
+outcome          reached
+reached          True
+time to goal     19.76 s   (run ends at 19.76 s, 0.299 m from B)
+min clearance    0.8268 m   at [9.055, 12.959, 13.66] (x, y, t)
+path length      24.068 m   (straight A=>B 23.442 m)
+interventions    2   fraction 0.3434 of logged steps
+manual modes     0 entries
+steps            396 scored of 423, median rate 20.0 Hz
+max pose error   0.0 m (logged pose vs truth)
+wrote results/first_flight_score.json
+wrote results/first_flight.png
+real 99.74
+user 2.19
+sys 0.68
+rc=0
+$ ls $T; ls -a $T/team | grep venv
+team
+.venv
+$ make first-flight-reloc HUB=$HUB
+.venv/bin/python main.py --adapter arena:random:0 --planner arena:astar_esdf --safety arm:F2 --fault jump --reloc --reloc-dir $HUB/samples/close-area-relocalize --arena $HUB/samples/close-area-arena --safety-dir $HUB/samples/close-area-safety-filter --log results/first_flight_reloc.jsonl --odom results/first_flight_reloc_odometry.jsonl
+score input=synthetic adapter=arena:random:0 fault=jump planner=arena:astar_esdf safety=arm:F2 reached=True final_dist_m=0.120 t_s=31.06 collided=False min_clearance_m=0.477 max_pose_error_m=0.488 ticks=622 intervened=154 keepalive=0 planner_errors=0 outcome=arrived modes=arrive_dwell:20,arrived:1,capped:207,nominal:362,reloc_hover:32 health=degraded:207,lost:32,ok:383 log=results/first_flight_reloc.jsonl
+reloc arm=multi_ig events=4 reanchors=4 wrong_commits=0 open_at_end=0 moves=0 reasons=innovation,reset_counter,innovation,innovation odometry_reset_counter=4 increments_t=[2.1, 6.3, 22.2, 25.8] odometry_lines=622 odom=results/first_flight_reloc_odometry.jsonl
+.venv/bin/python $HUB/samples/close-area-arena/score_log.py results/first_flight_reloc.jsonl --plot results/first_flight_reloc.png --json results/first_flight_reloc_score.json
+input            synthetic (positions from truth)
+outcome          reached
+reached          True
+time to goal     29.6 s   (run ends at 29.6 s, 0.293 m from B)
+min clearance    0.4769 m   at [4.824, 5.696, 7.2] (x, y, t)
+path length      24.844 m   (straight A=>B 23.442 m)
+interventions    3   fraction 0.2597 of logged steps
+manual modes     0 entries
+steps            593 scored of 622, median rate 16.67 Hz
+max pose error   0.4882 m (logged pose vs truth)
+wrote results/first_flight_reloc_score.json
+wrote results/first_flight_reloc.png
+real 59.78
+user 1.54
+sys 0.27
+rc=0
+$ make test HUB=$HUB
+OK
+python3 -c "import flightloop.arena_adapter, flightloop.safety_shim, flightloop.reloc_shim; print('arena_adapter, safety_shim, reloc_shim import without numpy: ok')"
+arena_adapter, safety_shim, reloc_shim import without numpy: ok
+score input=synthetic adapter=arena:random:0 fault=truth planner=arena:astar_esdf safety=arm:F2 reached=False final_dist_m=19.317 t_s=3.00 collided=False min_clearance_m=1.271 max_pose_error_m=0.000 ticks=61 intervened=0 keepalive=0 planner_errors=0 outcome=timeout modes=nominal:60,timeout:1 health=ok:61 log=runs/smoke_arena.jsonl
+arena smoke (3 s flight, scored): ok
+rc=0

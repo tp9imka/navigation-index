@@ -249,7 +249,7 @@ node $T/shoot.mjs                                 # own CDP script, headless Chr
 
 ## Blockers
 
-Status 2026-11-09: blockers 1, 3, 4, 5 and 8 fixed by loop-61; 6 fixed in the wrap-up; 2 and 7 are in loop-59 and loop-63.
+Status 2026-11-09: blockers 1, 3, 4, 5 and 8 fixed by loop-61; 6 fixed in the wrap-up; 2 fixed by loop-59 (templates/flight-repo/results/copied_out_dry_run.txt); 7 is in loop-63.
 
 
 | # | Step | File | What broke | Suggested fix |

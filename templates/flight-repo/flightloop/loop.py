@@ -10,6 +10,11 @@
   ARRIVE_DWELL_S in a row while still within GOAL_TOL_M => "arrived". Health not ok near the
   goal => keep hovering ("arrive_wait"); ARRIVE_WAIT_S after first entering GOAL_TOL_M without
   a confirmation => stop with "unconfirmed" (the estimate says B, the estimator cannot vouch).
+- Relocalization (optional `reloc=` object with `relocalizing` and `cmd`, e.g.
+  flightloop/reloc_shim.py): while `reloc.relocalizing`, the planner is not called and the goal
+  is not checked. The loop hovers (`mode=reloc_hover`) or flies `reloc.cmd` = (vx, vy), a
+  disambiguating move (`mode=reloc_move`), both through the safety filter. On resume the planner
+  replans at once (`last_plan_t` = -inf when it has one).
 - One JSONL line per tick: t, pose, setpoint, intervened, health, mode (+ source, reasons, plan_ms).
 
 realtime=False runs lockstep, as fast as Python allows: right for MockAdapter, whose
@@ -91,7 +96,7 @@ def _log_line(pose: Pose, sp: Setpoint, intervened: bool, hr: HealthReport, mode
 def run(adapter: Adapter, planner, safety, goal: tuple[float, float, float], *,
         grid=None, health: NavHealth | None = None, log: IO[str] | None = None,
         timeout_s: float = TIMEOUT_S, budget_s: float = PLAN_BUDGET_S,
-        realtime: bool = False, clock=time.monotonic, sleep=time.sleep) -> FlightResult:
+        realtime: bool = False, clock=time.monotonic, sleep=time.sleep, reloc=None) -> FlightResult:
     health = health or NavHealth()
     health.reset()
     planner.reset()
@@ -103,6 +108,7 @@ def run(adapter: Adapter, planner, safety, goal: tuple[float, float, float], *,
     t0: float | None = None
     near_since: float | None = None   # pose.t of first entry into GOAL_TOL_M
     ok_since: float | None = None     # start of the current ok-and-within-tolerance streak
+    was_reloc = False
     pool = ThreadPoolExecutor(max_workers=1, thread_name_prefix="planner")
     next_tick = clock()
     try:
@@ -113,8 +119,16 @@ def run(adapter: Adapter, planner, safety, goal: tuple[float, float, float], *,
             dist = math.dist((pose.x, pose.y, pose.z), goal)
             res.final_dist_m, res.t_s = dist, pose.t - t0
             plan_ms = None
-            near = dist < GOAL_TOL_M
-            if near:
+            in_reloc = reloc is not None and bool(reloc.relocalizing)
+            if was_reloc and not in_reloc:              # re-anchored: replan from the new pose
+                last_plan = HOVER
+                if pending is None and hasattr(planner, "last_plan_t"):
+                    planner.last_plan_t = -math.inf
+            was_reloc = in_reloc
+            near = dist < GOAL_TOL_M and not in_reloc   # the estimate is not trusted while relocalizing
+            if in_reloc:
+                near_since = ok_since = None
+            elif near:
                 near_since = pose.t if near_since is None else near_since
                 ok_since = (pose.t if ok_since is None else ok_since) if hr.state == OK else None
             else:
@@ -125,6 +139,12 @@ def run(adapter: Adapter, planner, safety, goal: tuple[float, float, float], *,
                 mode, source, target = "unconfirmed", "none", HOVER
             elif pose.t - t0 >= timeout_s:
                 mode, source, target = "timeout", "none", HOVER
+            elif in_reloc:
+                cmd = getattr(reloc, "cmd", None)
+                if cmd is None:
+                    mode, source, target = "reloc_hover", "reloc", HOVER
+                else:
+                    mode, source, target = "reloc_move", "reloc", Setpoint(float(cmd[0]), float(cmd[1]), 0.0, 0.0)
             elif near:
                 mode = "arrive_dwell" if ok_since is not None else "arrive_wait"
                 source, target = "none", HOVER

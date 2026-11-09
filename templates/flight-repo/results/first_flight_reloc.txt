@@ -1,0 +1,59 @@
+# loop-59 hub-layout runs, 2026-11-09 17:13, synthetic (close-area-arena), arm64, CPython 3.11.15 numpy 2.4.6 scipy 1.17.1
+$ make first-flight
+.venv/bin/python main.py --adapter arena:random:0 --planner arena:astar_esdf --safety arm:F2  --arena ../../samples/close-area-arena --safety-dir ../../samples/close-area-safety-filter --log results/first_flight.jsonl
+score input=synthetic adapter=arena:random:0 fault=truth planner=arena:astar_esdf safety=arm:F2 reached=True final_dist_m=0.165 t_s=21.10 collided=False min_clearance_m=0.827 max_pose_error_m=0.000 ticks=423 intervened=136 keepalive=0 planner_errors=0 outcome=arrived modes=arrive_dwell:20,arrived:1,nominal:402 health=ok:423 log=results/first_flight.jsonl
+.venv/bin/python ../../samples/close-area-arena/score_log.py results/first_flight.jsonl --plot results/first_flight.png --json results/first_flight_score.json
+input            synthetic (positions from truth)
+outcome          reached
+reached          True
+time to goal     19.76 s   (run ends at 19.76 s, 0.299 m from B)
+min clearance    0.8268 m   at [9.055, 12.959, 13.66] (x, y, t)
+path length      24.068 m   (straight A=>B 23.442 m)
+interventions    2   fraction 0.3434 of logged steps
+manual modes     0 entries
+steps            396 scored of 423, median rate 20.0 Hz
+max pose error   0.0 m (logged pose vs truth)
+wrote results/first_flight_score.json
+wrote results/first_flight.png
+real 10.99
+user 1.57
+sys 0.30
+$ make first-flight-jump
+.venv/bin/python main.py --adapter arena:random:0 --planner arena:astar_esdf --safety arm:F2 --fault jump --arena ../../samples/close-area-arena --safety-dir ../../samples/close-area-safety-filter --log results/first_flight_jump.jsonl
+score input=synthetic adapter=arena:random:0 fault=jump planner=arena:astar_esdf safety=arm:F2 reached=False final_dist_m=0.640 t_s=44.60 collided=False min_clearance_m=0.401 max_pose_error_m=0.741 ticks=893 intervened=172 keepalive=0 planner_errors=0 outcome=unconfirmed modes=arrive_wait:200,capped:345,nominal:347,unconfirmed:1 health=degraded:546,ok:347 log=results/first_flight_jump.jsonl
+.venv/bin/python ../../samples/close-area-arena/score_log.py results/first_flight_jump.jsonl --plot results/first_flight_jump.png --json results/first_flight_jump_score.json
+input            synthetic (positions from truth)
+outcome          stuck
+reached          False
+time to goal     -   (run ends at 44.0 s, 0.64 m from B)
+min clearance    0.402 m   at [4.912, 5.771, 6.74] (x, y, t)
+path length      25.212 m   (straight A=>B 23.442 m)
+interventions    4   fraction 0.1952 of logged steps
+manual modes     0 entries
+steps            881 scored of 893, median rate 20.0 Hz
+max pose error   0.741 m (logged pose vs truth)
+wrote results/first_flight_jump_score.json
+wrote results/first_flight_jump.png
+real 4.27
+user 1.57
+sys 0.23
+$ make first-flight-reloc
+.venv/bin/python main.py --adapter arena:random:0 --planner arena:astar_esdf --safety arm:F2 --fault jump --reloc --reloc-dir ../../samples/close-area-relocalize --arena ../../samples/close-area-arena --safety-dir ../../samples/close-area-safety-filter --log results/first_flight_reloc.jsonl --odom results/first_flight_reloc_odometry.jsonl
+score input=synthetic adapter=arena:random:0 fault=jump planner=arena:astar_esdf safety=arm:F2 reached=True final_dist_m=0.120 t_s=31.06 collided=False min_clearance_m=0.477 max_pose_error_m=0.488 ticks=622 intervened=154 keepalive=0 planner_errors=0 outcome=arrived modes=arrive_dwell:20,arrived:1,capped:207,nominal:362,reloc_hover:32 health=degraded:207,lost:32,ok:383 log=results/first_flight_reloc.jsonl
+reloc arm=multi_ig events=4 reanchors=4 wrong_commits=0 open_at_end=0 moves=0 reasons=innovation,reset_counter,innovation,innovation odometry_reset_counter=4 increments_t=[2.1, 6.3, 22.2, 25.8] odometry_lines=622 odom=results/first_flight_reloc_odometry.jsonl
+.venv/bin/python ../../samples/close-area-arena/score_log.py results/first_flight_reloc.jsonl --plot results/first_flight_reloc.png --json results/first_flight_reloc_score.json
+input            synthetic (positions from truth)
+outcome          reached
+reached          True
+time to goal     29.6 s   (run ends at 29.6 s, 0.293 m from B)
+min clearance    0.4769 m   at [4.824, 5.696, 7.2] (x, y, t)
+path length      24.844 m   (straight A=>B 23.442 m)
+interventions    3   fraction 0.2597 of logged steps
+manual modes     0 entries
+steps            593 scored of 622, median rate 16.67 Hz
+max pose error   0.4882 m (logged pose vs truth)
+wrote results/first_flight_reloc_score.json
+wrote results/first_flight_reloc.png
+real 3.21
+user 1.48
+sys 0.22

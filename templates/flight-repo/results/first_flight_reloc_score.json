@@ -1,0 +1,25 @@
+{
+ "log_input": "synthetic",
+ "positions_from": "truth",
+ "outcome": "reached",
+ "reached": true,
+ "time_to_goal_s": 29.6,
+ "duration_s": 29.6,
+ "final_dist_to_B_m": 0.293,
+ "min_clearance_m": 0.4769,
+ "closest_approach_xyt": [
+  4.824,
+  5.696,
+  7.2
+ ],
+ "path_length_m": 24.844,
+ "straight_line_m": 23.442,
+ "interventions": 3,
+ "intervention_fraction": 0.2597,
+ "manual_mode_entries": 0,
+ "steps_scored": 593,
+ "steps_in_log": 622,
+ "log_rate_hz_median": 16.67,
+ "max_pose_error_m": 0.4882,
+ "log": "results/first_flight_reloc.jsonl"
+}

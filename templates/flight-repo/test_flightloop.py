@@ -135,6 +135,46 @@ class FlightLoop(unittest.TestCase):
             shim.filter(Setpoint(0.1, 0.0, 0.0, 0.0), p, None, rep)
         self.assertIs(Aware.got, rep)
 
+    def test_reloc_mode_hovers_moves_and_resumes(self):
+        class FakeReloc:      # relocalizing for t in [1, 2), move cmd in [1.5, 2)
+            def __init__(self, ad, until=2.0):
+                self.ad, self.until = ad, until
+
+            @property
+            def relocalizing(self):
+                return 1.0 <= self.ad.t < self.until
+
+            @property
+            def cmd(self):
+                return (0.2, 0.0) if 1.5 <= self.ad.t < self.until else None
+
+        for until, outcome in ((2.0, "arrived"), (math.inf, "timeout")):
+            ad = MockAdapter(start=OPEN[0])
+            log = io.StringIO()
+            r = run(ad, GoToGoal(), PassThrough(), OPEN[1], log=log, timeout_s=15.0,
+                    reloc=FakeReloc(ad, until))
+            lines = [json.loads(x) for x in log.getvalue().splitlines()]
+            self.assertEqual(r.outcome, outcome)
+            hov = [ln for ln in lines if ln["mode"] == "reloc_hover"]
+            mov = [ln for ln in lines if ln["mode"] == "reloc_move"]
+            self.assertGreaterEqual(len(hov), 9)
+            self.assertGreaterEqual(len(mov), 9)
+            self.assertTrue(all(ln["setpoint"]["vx"] == 0.0 == ln["setpoint"]["vy"] for ln in hov))
+            self.assertTrue(all(ln["setpoint"]["vx"] == 0.2 and ln["setpoint"]["vy"] == 0.0 for ln in mov))
+            if until == math.inf:   # never trusts the estimate while relocalizing: no arrival
+                self.assertFalse({"arrive_dwell", "arrive_wait", "arrived"} & set(r.modes))
+
+    def test_odometry_counter_increments_once_per_reanchor(self):
+        from flightloop.reloc_shim import OdometryStream
+        p = replace(MockAdapter().pose(), x=1.0, y=2.0, z=1.0, quality=80, sigma_xy=0.1)
+        st = OdometryStream()
+        seq = [(False, 0), (True, 0), (True, 0), (False, 1), (False, 1), (True, 1), (False, 2)]
+        msgs = [st.emit(replace(p, t=0.1 * i), rel, n) for i, (rel, n) in enumerate(seq)]
+        self.assertEqual([m["reset_counter"] for m in msgs], [0, 0, 0, 1, 1, 1, 2])
+        self.assertEqual([m["quality"] for m in msgs], [80, 0, 0, 80, 80, 0, 80])
+        self.assertEqual(st.increments, [0.3, 0.6])
+        self.assertEqual((msgs[0]["x"], msgs[0]["y"], msgs[0]["z"]), (2.0, 1.0, -1.0))   # ENU => NED
+
 
 if __name__ == "__main__":
     unittest.main()

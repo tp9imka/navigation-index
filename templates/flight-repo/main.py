@@ -10,6 +10,8 @@ Arena world (needs the arena venv: make venv, then .venv python of the arena):
     --adapter arena:<family>:<seed>[:<index>]   layout from samples/close-area-arena/world.py
     --fault none|jump|bias|dropout|overconfident  arena estimator.py with dark zones; omit => truth pose
     --safety arm:F0|F1|F2                        kill-test arm from samples/close-area-safety-filter
+    --reloc [--odom PATH]                        relocalize after VIO loss (close-area-relocalize arm
+                                                 multi_ig), ODOMETRY-like dry-run JSONL with reset_counter
 The arena log is close-area-log/1 (log_format.md); score it with the arena's score_log.py.
 
 The score line is on truth: the mock's own state, or the arena's sim truth.
@@ -28,6 +30,7 @@ from flightloop.arena_adapter import load_arena
 HERE = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_ARENA = os.environ.get("ARENA_DIR", os.path.join(HERE, "..", "..", "samples", "close-area-arena"))
 DEFAULT_SAFETY_DIR = os.environ.get("SAFETY_DIR", os.path.join(HERE, "..", "..", "samples", "close-area-safety-filter"))
+DEFAULT_RELOC_DIR = os.environ.get("RELOC_DIR", os.path.join(HERE, "..", "..", "samples", "close-area-relocalize"))
 TIMEOUT_MOCK_S = 30.0
 TIMEOUT_ARENA_S = 60.0              # arena run.DEFAULTS["max_time_s"]
 FAULTS = ("none", "jump", "bias", "dropout", "overconfident")   # arena faults.CASES
@@ -78,17 +81,30 @@ def fly_arena(a, safety_name: str) -> int:
                if a.planner.startswith("arena:") else PLANNERS[a.planner]())
     safety = make_safety(safety_name, a.safety_dir, world=ad.world)
     getattr(safety, "reset", lambda: None)()
-    stem = a.adapter.replace(":", "_") + ("" if a.fault is None else f"_{a.fault}")
+    stem = a.adapter.replace(":", "_") + ("" if a.fault is None else f"_{a.fault}") + ("_reloc" if a.reloc else "")
     log_path = a.log or os.path.join("runs", f"{stem}.jsonl")
     os.makedirs(os.path.dirname(log_path) or ".", exist_ok=True)
+    shim, odom_fh = None, None
+    if a.reloc:
+        from flightloop.reloc_shim import RelocShim
+        odom_path = a.odom or os.path.splitext(log_path)[0] + "_odometry.jsonl"
+        os.makedirs(os.path.dirname(odom_path) or ".", exist_ok=True)
+        odom_fh = open(odom_path, "w", buffering=1)
+        try:
+            shim = RelocShim(ad, a.reloc_dir, odom=odom_fh)
+        except (FileNotFoundError, ValueError) as e:
+            sys.exit(str(e))
     source = (f"flight-repo loop, close-area-arena {ad.family} seed {ad.seed} index {ad.index}, "
-              f"planner {a.planner}, safety {safety.name}, pose {'truth' if a.fault is None else 'estimator fault ' + a.fault}")
+              f"planner {a.planner}, safety {safety.name}, pose {'truth' if a.fault is None else 'estimator fault ' + a.fault}"
+              f"{', relocalization close-area-relocalize multi_ig' if shim else ''}")
     timeout = TIMEOUT_ARENA_S if a.timeout is None else a.timeout
     with open(log_path, "w", buffering=1) as fh:
         log = CloseAreaLog(fh, ad, planner, source=source,
                            notes="filter_intervened = safety arm changed the setpoint; loop_mode = flight-loop mode")
         r = run(ad, planner, safety, ad.goal, grid=ad.grid, log=log, timeout_s=timeout,
-                realtime=a.realtime)
+                realtime=a.realtime, reloc=shim)
+    if odom_fh is not None:
+        odom_fh.close()
     tr = ad.sim.truth()
     d_goal = math.hypot(tr.x - ad.goal[0], tr.y - ad.goal[1])
     modes = ",".join(f"{k}:{v}" for k, v in sorted(r.modes.items()))
@@ -97,7 +113,13 @@ def fly_arena(a, safety_name: str) -> int:
           f"safety={safety.name} reached={d_goal < REACHED_M and not ad.collided} final_dist_m={d_goal:.3f} "
           f"t_s={r.t_s:.2f} collided={ad.collided} min_clearance_m={ad.min_clearance:.3f} "
           f"max_pose_error_m={ad.max_pose_error:.3f} ticks={r.ticks} intervened={r.intervened_ticks} "
-          f"keepalive={r.keepalive_ticks} planner_errors={r.planner_errors} modes={modes} health={health} log={log_path}")
+          f"keepalive={r.keepalive_ticks} planner_errors={r.planner_errors} outcome={r.outcome} modes={modes} health={health} log={log_path}")
+    if shim is not None:
+        s = shim.summary()
+        print(f"reloc arm=multi_ig events={s['events']} reanchors={s['reanchors']} wrong_commits={s['wrong_commits']} "
+              f"open_at_end={s['open_at_end']} moves={s['moves']} reasons={','.join(s['reasons']) or '-'} "
+              f"odometry_reset_counter={s['reset_counter_out']} increments_t={s['increments_t']} "
+              f"odometry_lines={shim.odom.lines} odom={odom_fh.name}")
     return 0
 
 
@@ -116,15 +138,21 @@ def main(argv: list[str] | None = None) -> int:
                     help=f"flight time limit, s (default {TIMEOUT_MOCK_S:g} mock, {TIMEOUT_ARENA_S:g} arena)")
     ap.add_argument("--log", default=None, help="JSONL path (default runs/<scenario>.jsonl)")
     ap.add_argument("--realtime", action="store_true", help="pace at 20 Hz wall time")
+    ap.add_argument("--reloc", action="store_true",
+                    help="arena + --fault only: relocalize after VIO loss (close-area-relocalize multi_ig)")
+    ap.add_argument("--reloc-dir", default=DEFAULT_RELOC_DIR, help="path to samples/close-area-relocalize")
+    ap.add_argument("--odom", default=None, help="ODOMETRY-like JSONL (default <log>_odometry.jsonl)")
     a = ap.parse_args(argv)
     if a.planner not in PLANNERS and not a.planner.startswith("arena:"):
         ap.error(f"--planner must be one of {sorted(PLANNERS)} or arena:<module>")
     if a.safety not in ("range_stop", "pass_through") and a.safety not in (f"arm:{x}" for x in ARMS):
         ap.error(f"--safety must be range_stop, pass_through or arm:<{'|'.join(ARMS)}>")
+    if a.reloc and a.fault is None:
+        ap.error("--reloc needs --fault (a pose estimator to relocalize)")
     if a.adapter and a.adapter.startswith("arena:"):
         return fly_arena(a, a.safety)
-    if a.fault is not None:
-        ap.error("--fault needs --adapter arena:...")
+    if a.fault is not None or a.reloc:
+        ap.error("--fault and --reloc need --adapter arena:...")
     if not (a.mock or a.adapter == "mock"):
         sys.exit("no real driver yet: write drivers/<platform>.py (see README) and wire it here")
 

@@ -17,12 +17,25 @@ Status: hackathon starter, not flight-tested, not for operational use.
 ## Run it
 
 ```sh
-make test    # 8 unit tests on the mock, stdlib import check, 3 s arena smoke flight (skips without the arena venv)
+make test    # 10 unit tests on the mock, stdlib import check, 3 s arena smoke flight (skips without .venv or the hub)
 make sim     # 4 mock flights, one score line each, JSONL logs in runs/
 make arena   # the hub's arena "straight" planner flown through this loop (needs the hub checkout)
 python3 main.py --mock          # A=(0,0,1) => B=(5,3,1), one-line score
 make first-flight   # arena world + A* planner + F2 safety arm, scored => results/first_flight.png
+make first-flight-reloc   # jump fault + relocalization, scored, plus an ODOMETRY dry-run JSONL
 ```
+
+Copied out of the hub (the H+0 case), every target that needs the hub takes its path:
+
+```sh
+make first-flight HUB=/path/to/navigation-index        # sets ARENA, SAFETY and RELOC below it
+make first-flight ARENA=/path/to/hub/samples/close-area-arena SAFETY=/path/to/hub/samples/close-area-safety-filter
+```
+
+Without them, `make first-flight` stops before creating anything and prints the line above
+(rc 2, 0.02 s). The venv is always `./.venv` in this folder (`VENV=` to change it), never in the hub.
+Both forms were run on a copy in a temp dir: [results/copied_out_dry_run.txt](results/copied_out_dry_run.txt)
+(script [copied_out_dry_run.sh](results/copied_out_dry_run.sh)).
 
 ## Brief to first flight
 
@@ -31,17 +44,18 @@ the hub's shared [close-area-arena](../../samples/close-area-arena/README.md) wo
 numbers below are **synthetic** (simulated layout, vehicle, range sensor and estimator).
 
 ```sh
-cd templates/flight-repo
-make first-flight        # builds the arena venv with uv on first use, flies, scores
+cd templates/flight-repo     # or your copy, adding HUB=/path/to/navigation-index to each make call
+make first-flight        # builds ./.venv with uv on first use, flies, scores
 make first-flight-jump   # same flight on the arena estimator with its "jump" fault
+make first-flight-reloc  # jump fault + relocalization after VIO loss
 ```
 
 `make first-flight` runs these, in order:
 
 ```sh
-uv venv ../../samples/close-area-arena/.venv && uv pip install --python ../../samples/close-area-arena/.venv -r ../../samples/close-area-arena/requirements.txt   # only if missing
-../../samples/close-area-arena/.venv/bin/python main.py --adapter arena:random:0 --planner arena:astar_esdf --safety arm:F2 --arena ../../samples/close-area-arena --safety-dir ../../samples/close-area-safety-filter --log results/first_flight.jsonl
-../../samples/close-area-arena/.venv/bin/python ../../samples/close-area-arena/score_log.py results/first_flight.jsonl --plot results/first_flight.png --json results/first_flight_score.json
+uv venv .venv && uv pip install --python .venv -r ../../samples/close-area-arena/requirements.txt   # only if missing
+.venv/bin/python main.py --adapter arena:random:0 --planner arena:astar_esdf --safety arm:F2 --arena ../../samples/close-area-arena --safety-dir ../../samples/close-area-safety-filter --log results/first_flight.jsonl
+.venv/bin/python ../../samples/close-area-arena/score_log.py results/first_flight.jsonl --plot results/first_flight.png --json results/first_flight_score.json
 ```
 
 What each piece is:
@@ -92,7 +106,7 @@ Log [results/first_flight.jsonl](results/first_flight.jsonl), metrics
 [results/first_flight_score.json](results/first_flight_score.json).
 
 Wall time, `make first-flight` from cold (no arena venv, empty uv cache, so all 12 wheels
-download):
+download; measured when the venv lived in the arena folder, before loop-59 moved it to `./.venv`):
 
 | Run | Wall s | Source |
 |---|---|---|
@@ -103,6 +117,8 @@ download):
 The flight itself is a few seconds; the first Python start on a fresh venv took 20.89 s and
 the 205.89 s run spent almost all its time waiting, not computing (2.77 s CPU). Cause not
 found: network or first-launch file checks are guesses. Budget 4 minutes for the cold step.
+In the copied-out dry run (fresh `./.venv`, uv cache warm) `make first-flight` took 99.74 s wall,
+2.19 s user CPU ([copied_out_dry_run.txt](results/copied_out_dry_run.txt)): the same waiting.
 
 Cross-check, same layout, from [results/first_flight_arms.txt](results/first_flight_arms.txt):
 with `--safety arm:F0` (no filter) this loop gives reached, 19.46 s, min clearance 0.5643 m,
@@ -135,8 +151,76 @@ outcome          stuck
   with F2 0.402 m ([first_flight_arms.txt](results/first_flight_arms.txt)). One layout, one seed:
   this is a first flight, not a rate. Rates are in the kill test
   ([close-area-safety-filter](../../samples/close-area-safety-filter/README.md)).
-- Next fix is a position re-anchor near B (a visual marker or a range fix), so health can
-  return to `ok`. Not done here.
+- The fix is a map-based re-anchor: next section.
+
+### With relocalization: `make first-flight-reloc` reaches B, `arrived`
+
+Same layout, planner, F2 arm and jump fault, plus `--reloc`: when VIO is lost the loop hovers,
+the hub's relocalizer matches the range scan against the prior map and re-anchors the estimate.
+Raw output: [results/first_flight_reloc.txt](results/first_flight_reloc.txt) (all three
+first-flight targets, 2026-11-09, uv CPython 3.11.15, numpy 2.4.6, scipy 1.17.1, synthetic).
+
+```
+score input=synthetic adapter=arena:random:0 fault=jump planner=arena:astar_esdf safety=arm:F2 reached=True final_dist_m=0.120 t_s=31.06 collided=False min_clearance_m=0.477 max_pose_error_m=0.488 ticks=622 intervened=154 keepalive=0 planner_errors=0 outcome=arrived modes=arrive_dwell:20,arrived:1,capped:207,nominal:362,reloc_hover:32 health=degraded:207,lost:32,ok:383 log=results/first_flight_reloc.jsonl
+reloc arm=multi_ig events=4 reanchors=4 wrong_commits=0 open_at_end=0 moves=0 reasons=innovation,reset_counter,innovation,innovation odometry_reset_counter=4 increments_t=[2.1, 6.3, 22.2, 25.8] odometry_lines=622 odom=results/first_flight_reloc_odometry.jsonl
+outcome          reached
+time to goal     29.6 s   (run ends at 29.6 s, 0.293 m from B)
+```
+
+| | jump, no reloc | jump + reloc |
+|---|---|---|
+| Loop outcome | `unconfirmed` | `arrived` |
+| Truth distance to B at the end | 0.640 m | 0.120 m |
+| Scorer outcome, time to goal | stuck, - | reached, 29.6 s |
+| Max pose error (estimate vs truth) | 0.741 m | 0.488 m |
+| Min clearance | 0.401 m | 0.477 m |
+| Hover while relocalizing | - | 32 ticks (1.6 s) over 4 events |
+
+- 4 loss events: the jump fault's `reset_counter` change (t 5.9 s) and 3 innovation-test triggers
+  (scan no longer fits the map at the estimate). All 4 accepted after 0.4 s, 0 wrong commits
+  (> 0.5 m from truth at accept), 0 disambiguating moves needed on this open layout.
+- The ODOMETRY stream ([results/first_flight_reloc_odometry.jsonl](results/first_flight_reloc_odometry.jsonl),
+  one line per tick) follows the contract in hub doc 10 section 4: quality 0 while relocalizing,
+  then one `reset_counter` increment sent with quality back up. Transitions from that file:
+
+| time_usec | reset_counter | quality |
+|---|---|---|
+| 1700000 | 0 | 90 => 0 |
+| 2100000 | 0 => 1 | 0 => 90 |
+| 5900000 | 1 | 90 => 0 |
+| 6300000 | 1 => 2 | 0 => 90 |
+| 21800000 | 2 | 25 => 0 |
+| 22200000 | 2 => 3 | 0 => 25 |
+| 25400000 | 3 | 25 => 0 |
+| 25800000 | 3 => 4 | 0 => 25 |
+
+  PX4 EKF2 at v1.17.0 treats a changed counter as a reset (`ev_control.cpp:52`) and snaps the
+  horizontal position to the new pose (`ev_pos_control.cpp:246`), per
+  [doc 10 section 4](../../docs/research/close-area-nav/10-relocalization-prior-art.md#4-what-the-autopilots-do-with-reset_counter).
+  Not sent to PX4 here. Quality 25 after the last two events is the estimator's dark-zone
+  quality; PX4 fuses it only if `EKF2_EV_QMIN` is 25 or lower (not checked).
+
+How it is wired:
+
+- `flightloop/reloc_shim.py: RelocShim` builds `DisambPoseSource(kind="infogain")`, the arm
+  (f) `multi_ig` of [close-area-relocalize](../../samples/close-area-relocalize/README.md), loaded by
+  path from `RELOC` (`--reloc-dir`), and installs it as the arena SimAdapter's pose source. It
+  runs at 10 Hz (`RELOC_HZ`, the rate it was measured at); 20 Hz ticks in between get raw + anchor.
+- `loop.run(..., reloc=shim)`: while `shim.relocalizing`, `mode=reloc_hover` (zero velocity) or
+  `mode=reloc_move` (the info-gain move `shim.cmd`), always through the safety filter. The goal
+  check is off while relocalizing; on resume the planner replans at once.
+- The loop's NavHealth sees the estimator's own `reset_counter`; the re-anchor count goes only to
+  the ODOMETRY stream.
+- Map-consistency rule, this file's own (not in the sample's measurements): when the 10 Hz scan
+  scores >= 0.5 at the reported pose, `sigma_xy` is reported as at most `MAP_SIGMA_M` = 0.10 m
+  (the matcher's likelihood width, assumed, not fitted). Without it the dark-zone sigma
+  (0.40 m at B) would keep health `degraded` and the arrival rule would never confirm.
+
+Limits of this result: one layout, one seed, one fault, synthetic. The relocalizer's rates come
+from the sample's held-out matrix: arm (f) passed (>= 95 % reached, 0 wrong commits) only on the
+open layouts, random and u_trap (100 % each, 180 runs); it failed on narrow_gap, office,
+warehouse, maze and glass_office ([sample README](../../samples/close-area-relocalize/README.md#held-out-matrix-seeds-2-4-7-families-harder-faults-loop-56)).
+It needs a prior map and a dense range fan (72 beams, 6 m); yaw is truth in the sim.
 
 ## Files
 
@@ -150,10 +234,12 @@ outcome          stuck
 | `flightloop/loop.py` | `run()`: 20 Hz loop, planner in a worker thread with a 30 ms budget, keep-alive, degraded => 0.3 m/s cap, lost => hover, one JSONL line per tick |
 | `flightloop/arena_adapter.py` | `ArenaAdapter` (arena world as a loop adapter, optional estimator fault), `CloseAreaLog` (loop log => close-area-log/1). Stdlib at import; numpy when built |
 | `flightloop/safety_shim.py` | `ArmShim`: a close-area-safety-filter arm (F0, F1, F2) as this loop's `SafetyFilter`. Stdlib at import |
-| `main.py` | CLI: `--mock` or `--adapter arena:<family>:<seed>[:<index>]`, `--fault`, `--scenario open|blocked`, `--planner go_to_goal|blind|arena:<module>`, `--safety range_stop|pass_through|arm:F0|F1|F2`, `--realtime` |
-| `test_flightloop.py` | Protocols, reach, filter vs blind planner, keep-alive, degraded cap, lost hover, reset counting |
+| `flightloop/reloc_shim.py` | `RelocShim`: close-area-relocalize arm (f) `multi_ig` as the arena pose source, plus `relocalizing` / `cmd` for the loop; `OdometryStream`: ODOMETRY-like dry-run JSONL. Stdlib at import |
+| `main.py` | CLI: `--mock` or `--adapter arena:<family>:<seed>[:<index>]`, `--fault`, `--reloc`, `--reloc-dir`, `--odom`, `--scenario open|blocked`, `--planner go_to_goal|blind|arena:<module>`, `--safety range_stop|pass_through|arm:F0|F1|F2`, `--realtime` |
+| `test_flightloop.py` | Protocols, reach, filter vs blind planner, keep-alive, degraded cap, lost hover, reset counting, arrival gate, shim, reloc hover / move / resume, ODOMETRY counter |
 | `results/2026-11-09-mock-run.txt` | Raw output quoted below |
-| `results/first_flight*` | Arena first flight: raw output, log, score JSON, PNG (section "Brief to first flight") |
+| `results/first_flight*` | Arena first flight: raw output, log, score JSON, PNG (section "Brief to first flight"); `first_flight_reloc*` adds the ODOMETRY JSONL |
+| `results/copied_out_dry_run.*` | Template copied to a temp dir, `make` without and with the hub paths |
 
 ## Loop rules (flightloop/loop.py)
 
@@ -163,6 +249,7 @@ outcome          stuck
 | Planner still running at the budget | Last planner setpoint again, re-filtered on the fresh scan. `source=keepalive`. The overrunning result is used on the tick it arrives (`source=late`) |
 | Health `degraded` | Planner setpoint capped to `DEGRADED_SPEED_CAP_MS` (0.3 m/s horizontal). `mode=capped`. `RangeStop` adds 0.2 m margin |
 | Health `lost` | Zero velocity (hover), planner not called. `mode=hover` |
+| `reloc=` given and relocalizing | Planner not called, goal not checked. Zero velocity (`mode=reloc_hover`) or the relocalizer's move (`mode=reloc_move`), through the safety filter. Replan on resume |
 | Planner raised | Hover for that tick, `mode=planner_error`, next tick tries again |
 | Estimate within `GOAL_TOL_M` (0.2 m) with health ok for `ARRIVE_DWELL_S`, or `timeout_s` | One hover setpoint, then `run()` returns. `mode=arrived` / `timeout`; degraded near B => hover, then `unconfirmed` after `ARRIVE_WAIT_S` (see the arrival rule above) |
 
@@ -265,5 +352,9 @@ python3 main.py --mock --planner arena:straight --arena /path/to/navigation-inde
   still gets a 30 ms wall-clock budget, so a slow machine shows keep-alive ticks a fast one
   does not (0 here). The F2 arm runs at 20 Hz on a fresh scan; the kill test runs it at 50 Hz
   on a 16.7 Hz scan. Health-aware arms get `nav_health` through the shim; F0-F2 ignore it.
-- Links to `../drone-adapter/` and `../../samples/` work inside the hub only. After copying the
-  folder into a project repo, use the hub paths in `AGENTS.md`.
+- Links to `../drone-adapter/`, `../../samples/` and `../../docs/` work inside the hub only. After
+  copying the folder into a project repo, use the hub paths in `AGENTS.md`, and pass `HUB=` (or
+  `ARENA=`, `SAFETY=`, `RELOC=`) to `make`.
+- Relocalization: one synthetic layout here; held-out pass only on open layouts (section above).
+  The ODOMETRY stream is a file, not a MAVLink link; frame ids (LOCAL_NED 1, BODY_FRD 12) and
+  estimator type (VIO 3) are written from memory of MAVLink common.xml, not checked.
