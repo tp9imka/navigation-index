@@ -34,3 +34,5 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - landed: 02b => 46a6e40 (4 driver stubs, unrun, lazy SDK imports; driver fix: Tello ranges() now an empty scan instead of 4 x inf that reads as clear; claims checked 2/2: each driver class has the 3 methods, smoke test passes)
 - landed: 04 => 7616f5c (FAIL vs expectation: 0 % collisions under all faults for range-only planners; freest_beam reach 86 => 40 % under bias; claims checked 2/2: drift target matches relative-nav-benchmark, summary table matches results file)
 - fix: tools/check_links.py cached listdir (took >10 min at load 90, now 4.5 s).
+- landed: 03 => 7a55438 (known map 100 % all families; unknown map 80 % narrow_gap, loops not stops; claims checked 2/2: results table matches file, held-out seed 3 u_trap 10/10)
+- landed: 11 => 881d7e1 (log scorer matches arena scorer; claims checked 1/1 re-run on hand log); 10 => bcd1b17 (APF+escape 92 % u_trap with 72 beams; 4-beam fan: VFH+ collides 72-98 %, APF 8-54 %; claims checked 2/2: table row matches results, smoke skips)
