@@ -113,3 +113,8 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - landed: 64 => d45f67c (story cards: F5 FAIL, relocalization PASS in 2 of 7 families; replays match published rows 6/6; driver viewed the cards screenshot)
 - landed: 67 => 1ab503b (ideal sensor seed 2: (f) >= MCL in all 4 cells, 0 wrong commits vs 0-32; random jump 100 vs 89 %, office 87 vs 55 %; 4 beams: every arm fails). Decision paragraph updated.
 - landed: 63 => 67faf17 (recovery select + compare all arms + verdict strip; browser = native 4/4 recovery cases; retries + Retry button with CDN blocked in 8.9 s; offline local Pyodide path documented, pyodide-local/ gitignored; blocker 7 fixed)
+- landed: 28 => 4d82ae0 (12 docs reconciled: verified-since / refuted-since lists; stale headline claims refuted; driver added the MCL result the job's snapshot lacked and scoped the pitch's 99-100 % lines)
+
+## 2026-11-09 wave 7 closed
+- landed: 59, 61, 63, 64, 67, 28. All 8 dry-run blockers fixed.
+- Open next: SITL/Docker items 09/15/25 (needs-human); real-hardware checks of the drivers; Safari/Firefox; a relocalization arm that survives 4 beams (scan memory over motion, not only a spin).
