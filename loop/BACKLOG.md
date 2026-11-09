@@ -71,7 +71,7 @@ Initial backlog: fable brainstorm, 2026-11-09, base dbafbff.
 | 39 | done 0f3d466 | Pivot kit: relocalization as headline if 34 fails, filled with 22/33 numbers | T | S | 33 B; 34 soft | templates/pitch/close-area-story.md section 3, templates/demo-script-close-area.md variant rows | Decide-by-H+24 needs the pivot on the shelf | both files carry an 'if kill test FAIL' branch with numbers and anchors |
 | 40 | dropped (headline failed on held-out seeds; FT-CBF/Tan comparison no longer decides anything) | F3f FT-CBF residual dropping and F3t Tan union of states vs F4 | P | S | 34 B | samples/close-area-safety-filter (Part g) | 'What is new vs Tan 2025' needs a number | table with wrong-exclusion and freeze columns |
 | 41 | parked (re-open only if the safety filter comes back as a supporting demo) | Crazyflie-preset kill-test rerun via --sensor (ideal / crazyflie / crazyflie_bright), wedge hits counted | P | S | 32 B, 34 B | samples/close-area-safety-filter run_kill.py --sensor, results/kill_f_* | Crazyflie likeliest; 360 deg fan flatters range filters | F0/F2/F4 x presets table |
-| 42 | in-flight | Judge drill: 15 questions with numbers, input types, anchors | T | S | 34 soft | templates/pitch/judge-drill-close-area.md, templates/pitch/README.md row | H+36 rehearsal sheet | every answer has a number or 'no number' |
+| 42 | done a9e253f | Judge drill: 15 questions with numbers, input types, anchors | T | S | 34 soft | templates/pitch/judge-drill-close-area.md, templates/pitch/README.md row | H+36 rehearsal sheet | every answer has a number or 'no number' |
 | 43 | done 33f19e2 | Moving obstacles family: person-sized cylinders 0.5/1.0 m/s; A* replan vs A* + F2 vs APF | P | S | - | samples/close-area-moving-obstacles/ | Intake asks static or moving | 50 layouts x 2 speeds x 3 arms table |
 | 44 | ready | Showcase 2: Challenge 2 preset link, headline status card, kill-test F0 vs F2 replay with unsensed pole, relocalize hypotheses replay | T | S | 34 soft | site/index.html, site/showcase.*, site/data/showcase/, two export_replay.py | Judges see the kill test as a picture | both replays render in headless Chrome; site tests pass |
 | 45 | 45a in-flight | Altitude: window-and-bar family, 3D A* picks altitude, vs 2.5D planner | P | M | - | samples/close-area-arena world_z.py, planners/astar_esdf_3d.py, vehicle_z.py | IMAV elements are over/under/through | 2.5D vs 3D reach, plan ms, side-view PNG |
@@ -87,6 +87,8 @@ Initial backlog: fable brainstorm, 2026-11-09, base dbafbff.
 | 52 | done 5887392 | Sweep 3: verdict + new results into evidence matrix, decoder, cheat sheet, intake, Challenge 2, research docs, sample.json | S | S | 37 B | shared docs (see brief) | Agents must see the final verdict, not seed-0 claims | gate green; no stale 'running/pending' lines |
 
 | 53 | in-flight | 46c: DWA, Bug2/TangentBug, D* Lite added to the benchmark matrix and replays | P | S | 46b, 49, 50 B | samples/close-area-benchmark, site/data/showcase/replays_v2 | Every algorithm on every arena | new matrix rows + replays |
+
+| 54 | ready | Relocalization on a 4-beam Crazyflie-like sensor: the matcher needs >= 10 returns per scan, a Multi-ranger gives 4; accumulate scans during a slow yaw spin (or a short motion) and match the stacked returns; measure recovery on crazyflie preset | P | S | 22, 32 B | samples/close-area-relocalize new files + README section | The headline must work on the likeliest hardware (judge drill Q6 found the gap) | reached / wrong commits on crazyflie preset vs ideal |
 
 ## Planned waves
 

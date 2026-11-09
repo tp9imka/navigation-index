@@ -87,3 +87,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - landed: 50 => 8bcecad (job timed out; driver copied the finished folder and wrote README + sample.json from results: 10,017 frozen-map checks identical, 4-7x faster search, 8x8 tiles 5.8 s A* vs 7 ms D*)
 - landed: 48b => 8d9011d (playground: editor, 8 presets, 6 planners, 3 sensor presets, VIO faults, F2, compare overlay; browser = native on 15/15 cases; ES module worker; driver rendered the page)
 - landed: 52 => 5887392 (verdict + new results in evidence matrix, decoder 31/33, cheat sheet, intake, Challenge 2, research docs; decode_eval 64/64; driver fixed 7 stale lines in safety-filter and arena READMEs, AGENTS.md and the pitch)
+- landed: 42 => a9e253f (judge drill, 15 Q with numbers; Q6 found a real gap: relocalizer needs >= 10 returns, a 4-beam deck gives 4 => new item 54). Playground live on Pages.
