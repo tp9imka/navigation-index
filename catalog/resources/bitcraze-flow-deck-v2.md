@@ -20,4 +20,8 @@ Crazyflie deck combining a PMW3901 optical flow sensor and a VL53L1x height sens
 
 - uses: [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md)
 
+## Referenced by
+
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+
 _Indexed by lane(s): close-area-sims_

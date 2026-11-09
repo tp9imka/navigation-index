@@ -20,4 +20,8 @@ Hardware and OS requirements for Parrot's Sphinx drone simulator.
 
 - part_of: [Olympe](../../catalog/repos/parrot-developers__olympe.md)
 
+## Referenced by
+
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+
 _Indexed by lane(s): close-area-sims_

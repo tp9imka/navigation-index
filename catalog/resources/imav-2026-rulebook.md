@@ -17,4 +17,8 @@ Rulebook for the International Micro Air Vehicle competition 2026: indoor net ar
 
 **Tags:** `imav`, `indoor`, `competition`, `scoring`, `aruco`
 
+## Referenced by
+
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+
 _Indexed by lane(s): close-area-sims_

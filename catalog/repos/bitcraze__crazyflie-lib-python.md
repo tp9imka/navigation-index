@@ -24,6 +24,7 @@ Python API to connect, log, set parameters and send setpoints/high-level command
 
 ## Referenced by
 
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md) (integrates_with)
 - [Crazyswarm2](../../catalog/repos/imrclab__crazyswarm2.md) (depends_on)

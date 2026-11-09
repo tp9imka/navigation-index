@@ -21,4 +21,8 @@ How voxl-vision-hub turns stereo depth into OBSTACLE_DISTANCE messages for PX4 o
 - uses: [Collision Prevention (PX4 User Guide)](../../catalog/resources/px4-collision-prevention-docs.md)
 - part_of: [PX4 docs: ModalAI VOXL 2](../../catalog/resources/px4-modalai-voxl-2-docs.md)
 
+## Referenced by
+
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+
 _Indexed by lane(s): close-area-sims_

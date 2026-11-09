@@ -23,6 +23,7 @@ VOXL 2 combines a Qualcomm QRB5165 companion computer and PX4 on the DSP in one 
 
 ## Referenced by
 
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
 - [VOXL OpenVINS server](../../catalog/resources/modalai-voxl-open-vins-server-docs.md) (part_of)
 - [VOXL Vision Obstacle Avoidance (VOA)](../../catalog/resources/modalai-voxl-voa-docs.md) (part_of)

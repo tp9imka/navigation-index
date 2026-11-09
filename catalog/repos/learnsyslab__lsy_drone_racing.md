@@ -26,6 +26,7 @@ TUM LSY course project for autonomous Crazyflie racing through gates and around 
 
 ## Referenced by
 
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
 - [LSY Autonomous Drone Racing documentation](../../catalog/resources/lsy-drone-racing-docs.md) (explains)
 
 _Indexed by lane(s): close-area-sims_

@@ -19,4 +19,8 @@ IROS 2016. Second-generation AprilTag detector. Listed on the APRIL lab software
 
 - has_code: [AprilTag 3](../../catalog/repos/aprilrobotics__apriltag.md)
 
+## Referenced by
+
+- [AprilTag goal B: detection envelope vs range and view angle, and a tag-relative final approach](../../catalog/samples/fiducial-goal-apriltag.md) (explains)
+
 _Indexed by lane(s): close-area-localization_

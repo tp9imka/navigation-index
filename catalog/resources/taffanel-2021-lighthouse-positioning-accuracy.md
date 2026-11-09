@@ -23,6 +23,7 @@ Workshop paper (ICRA 2021 Robot Swarms in the Real World). Measures the Crazyfli
 
 ## Referenced by
 
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
 - [Positioning Systems Overview](../../catalog/resources/bitcraze-positioning-systems-overview.md) (cites)
 
 _Indexed by lane(s): close-area-localization_

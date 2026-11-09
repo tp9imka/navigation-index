@@ -25,6 +25,7 @@ JAX-based batched, differentiable quadrotor simulator from TUM LSY with first-pr
 
 ## Referenced by
 
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
 - [MuJoCo Menagerie](../../catalog/repos/google-deepmind__mujoco_menagerie.md) (integrates_with)
 - [LSY Autonomous Drone Racing](../../catalog/repos/learnsyslab__lsy_drone_racing.md) (depends_on)
 

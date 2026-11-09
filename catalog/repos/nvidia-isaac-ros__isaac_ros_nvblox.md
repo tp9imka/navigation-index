@@ -25,6 +25,7 @@ GPU-accelerated 3D reconstruction (TSDF/ESDF) that provides Nav2 local costmaps 
 
 ## Referenced by
 
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
 - [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) (mentions)
 - [voxblox](../../catalog/repos/ethz-asl__voxblox.md) (alternative_to)
 - [Isaac ROS DNN Inference](../../catalog/repos/nvidia-isaac-ros__isaac_ros_dnn_inference.md) (same_org)

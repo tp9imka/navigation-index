@@ -25,6 +25,7 @@ ROS 2 VRPN client that turns motion-capture rigid bodies (VICON, OptiTrack and o
 
 ## Referenced by
 
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): close-area-localization_

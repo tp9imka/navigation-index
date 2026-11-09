@@ -31,6 +31,7 @@ ROS 2 package wrapping NVIDIA's GPU-accelerated cuVSLAM for stereo visual(-inert
 
 ## Referenced by
 
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Isaac ROS Benchmark](../../catalog/repos/nvidia-isaac-ros__isaac_ros_benchmark.md) (evaluated_on)
 - [Isaac ROS nvblox](../../catalog/repos/nvidia-isaac-ros__isaac_ros_nvblox.md) (integrates_with)

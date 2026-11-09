@@ -25,7 +25,9 @@ ROS 2 node that wraps the AprilTag library, subscribes to a rectified image and 
 
 ## Referenced by
 
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [AprilTag 3](../../catalog/repos/aprilrobotics__apriltag.md) (integrates_with)
+- [AprilTag goal B: detection envelope vs range and view angle, and a tag-relative final approach](../../catalog/samples/fiducial-goal-apriltag.md) (explains)
 
 _Indexed by lane(s): close-area-localization_

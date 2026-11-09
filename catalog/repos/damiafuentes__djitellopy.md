@@ -24,6 +24,7 @@ Python wrapper around the official Tello UDP text SDK: takeoff, relative moves, 
 
 ## Referenced by
 
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
 - [Tello SDK 2.0 User Guide](../../catalog/resources/tello-sdk-2-user-guide.md) (explains)
 
 _Indexed by lane(s): close-area-sims_

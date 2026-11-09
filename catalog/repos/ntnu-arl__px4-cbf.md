@@ -25,6 +25,7 @@ Documentation and setup for a CBF safety filter inside the PX4 velocity loop tha
 
 ## Referenced by
 
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [composite_cbf](../../catalog/repos/ntnu-arl__composite_cbf.md) (same_org)
 - [PX4-Autopilot (NTNU fork, cbf branch)](../../catalog/repos/ntnu-arl__px4-autopilot.md) (same_org)

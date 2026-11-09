@@ -21,4 +21,9 @@ PX4 guide to landing on a marked target from IR-LOCK or a companion computer sen
 - explains: [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md)
 - uses: [vision_landing](../../catalog/repos/goodrobots__vision_landing.md)
 
+## Referenced by
+
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+- [AprilTag goal B: detection envelope vs range and view angle, and a tag-relative final approach](../../catalog/samples/fiducial-goal-apriltag.md) (explains)
+
 _Indexed by lane(s): close-area-localization_

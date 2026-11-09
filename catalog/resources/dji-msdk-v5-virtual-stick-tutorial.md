@@ -19,4 +19,8 @@ DJI tutorial for driving an aircraft from an Android app with virtual stick and 
 
 - explains: [DJI Mobile SDK V5 (Android) sample](../../catalog/repos/dji-sdk__mobile-sdk-android-v5.md)
 
+## Referenced by
+
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+
 _Indexed by lane(s): close-area-sims_

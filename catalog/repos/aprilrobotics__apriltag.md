@@ -26,8 +26,10 @@ C library for detecting AprilTag fiducial markers and estimating the 6-DoF pose 
 
 ## Referenced by
 
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [apriltag_ros (ROS 2)](../../catalog/repos/christianrauch__apriltag_ros.md) (depends_on)
 - [AprilTag 2: Efficient and robust fiducial detection](../../catalog/resources/wang-olson-2016-apriltag2.md) (has_code)
+- [AprilTag goal B: detection envelope vs range and view angle, and a tag-relative final approach](../../catalog/samples/fiducial-goal-apriltag.md) (explains)
 
 _Indexed by lane(s): close-area-localization_

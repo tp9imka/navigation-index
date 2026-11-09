@@ -24,6 +24,7 @@ Minimal simulation models and tooling for Crazyflie in Webots and Gazebo; the RE
 
 ## Referenced by
 
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
 - [crazyflie-simulation documentation](../../catalog/resources/bitcraze-crazyflie-simulation-docs.md) (explains)
 
 _Indexed by lane(s): domains-swarm_

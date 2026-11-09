@@ -21,4 +21,8 @@ ModalAI docs for the OpenVINS-based VIO service on VOXL 2. Publishes full state 
 - uses: [OpenVINS](../../catalog/repos/rpng__open_vins.md)
 - part_of: [PX4 docs: ModalAI VOXL 2](../../catalog/resources/px4-modalai-voxl-2-docs.md)
 
+## Referenced by
+
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+
 _Indexed by lane(s): close-area-localization_

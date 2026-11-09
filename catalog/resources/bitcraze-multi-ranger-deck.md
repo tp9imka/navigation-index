@@ -21,6 +21,7 @@ Crazyflie expansion deck with five VL53L1x ToF sensors (front, back, left, right
 
 ## Referenced by
 
+- [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
 - [Close-area reactive planners: APF with wall-follow escape and VFH+, range sensor only, 72-beam vs Crazyflie-like 4-beam fan](../../catalog/samples/close-area-planner-reactive.md) (explains)
 
 _Indexed by lane(s): close-area-sims_
