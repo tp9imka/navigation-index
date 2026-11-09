@@ -25,3 +25,5 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - landed: 02a => af25b73 (mock loop reaches goal at 0.096 m; claims checked 2/2: interface matches the published one field for field, test and example re-run by driver)
 - landed: 13 => d4180ee (headline as worded exists: Tan et al. IROS 2025, Zhang/Li/Clark TAC 2025; claim narrowed to the hover-on-ambiguity composition; claims checked 3/3: both arXiv titles and authors, tiiuae repo has no license)
 - notes: kill test (06) must add FT-CBF residual dropping and Tan union-of-states arms.
+- landed: 01 => 6d72ea1 (straight baseline reached 40 %, stuck 60 % on 20 random layouts; 0 % on traps; EDT 2M cells 183 ms; claims checked 3/3: driver re-ran run.py with identical table, smoke skips under plain python3, interface matches templates/drone-adapter)
+- notes: sitl-docker evidence says the images were built on 2026-11-06 but none exist now (pruned?). 09 and 15 stay needs-human.

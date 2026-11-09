@@ -26,7 +26,7 @@ Initial backlog: fable brainstorm, 2026-11-09, base dbafbff.
 ## Items
 
 | # | Status | Title | T | Sz | Deps | Path | Why on Day 1 | Done when |
-| 01 | in-flight 114530-kiro-ff32 | Arena S1: world gen, range fan, vehicle, SimAdapter, scorer, straight-line planner, CLI | P | S | - | `samples/close-area-arena/` | Everything else runs here | `run.py --planner straight --layouts 20` prints collision/reached/stuck/time/min-clearance; scipy EDT on 200x200x50 timed; stdlib test on scorer |
+| 01 | done 6d72ea1 | Arena S1: world gen, range fan, vehicle, SimAdapter, scorer, straight-line planner, CLI | P | S | - | `samples/close-area-arena/` | Everything else runs here | `run.py --planner straight --layouts 20` prints collision/reached/stuck/time/min-clearance; scipy EDT on 200x200x50 timed; stdlib test on scorer |
 | 02 | 02a done af25b73; 02b (driver stubs) ready | Adapter template: Protocol, Pose (quality, reset_counter), RangeScan, Setpoint, frames.md, MockAdapter; driver stubs for cflib, djitellopy, MAVSDK, pymavlink | T | M (2: protocol+mock+tests; stubs) | - | `templates/drone-adapter/` | Hour-0 planner code ports to any drone | stdlib tests incl. ENU/NED, FLU/FRD; stubs import lazily, labelled unrun |
 | 03 | ready | Arena S2: A* on inflated grid, ESDF clearance cost, shortcut, 2-5 Hz replan, unknown penalty | P | S | 01 B | `close-area-arena/planners/astar_esdf.py` | The baseline under the filter | 50 layouts: A* reach >= 90 %, table vs straight line |
 | 04 | ready | Arena S3: EKF pos/vel, VIO-like updates, good/dark zones, faults (0.5 m jump, 0.05 m/s bias, dropout), 2 UWB anchors for a PL | P | S | 01 B | `close-area-arena/estimator.py`, `faults.py` | Plan on the estimate, not truth | A* on estimate vs truth: collision rate per fault case |
