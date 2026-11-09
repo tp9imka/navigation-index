@@ -65,12 +65,15 @@ Write the planner against `Adapter` only. Never import a platform SDK in planner
 
 ## Where the drivers go
 
-`drivers/` (not written yet; a follow-up job adds stubs): one file per platform, e.g.
-`drivers/px4_mavsdk.py`, `drivers/ardupilot_pymavlink.py`, `drivers/crazyflie_cflib.py`,
-`drivers/tello_djitellopy.py`. Each class implements `pose()`, `ranges()`, `send_setpoint()`
-and does every frame and unit conversion inside itself, following [frames.md](frames.md). Each one
-also owns the keep-alive stream (PX4 Offboard, ArduPilot GUIDED and Tello all stop or land without
-fresh commands), arming and mode changes, and storing the pose at A to make it the origin.
+[drivers/](drivers/README.md) has one stub per platform: `px4_mavsdk.py` (MAVSDK Offboard),
+`ardupilot_pymavlink.py` (GUIDED), `crazyflie_cflib.py` (cflib), `tello_djitellopy.py` (rc sticks).
+Status of all four: unrun, written from docs. Each class implements `pose()`, `ranges()`,
+`send_setpoint()` and does every frame and unit conversion inside itself, following
+[frames.md](frames.md). Each one also owns the keep-alive stream (PX4 Offboard, ArduPilot GUIDED,
+Crazyflie and Tello all stop or land without fresh commands), arming and mode changes, and storing
+the pose at A to make it the origin. `import drivers` needs no SDK: each driver imports its SDK in
+`connect()`. On Day 1, open the driver for your platform and do the 3 bench checks in its
+docstring first. The Tello driver refuses to fly until its stick scale constants are set.
 
 ## Limits
 

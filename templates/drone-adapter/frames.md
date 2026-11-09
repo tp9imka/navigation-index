@@ -101,7 +101,7 @@ read from the sources listed at the bottom. "Not confirmed" means check it on th
   but djitellopy does not document the velocity units or frame (code, read the getters).
   Position must come from mission pads (EDU / TT), an external system, or dead reckoning; set
   `quality` low and `sigma_xy=None` unless you measure it.
-- **Ranges.** No obstacle sensor on Tello; `ranges()` returns all `math.inf`. RoboMaster TT forward
+- **Ranges.** No obstacle sensor on Tello; `ranges()` returns an empty scan (no beams). RoboMaster TT forward
   ToF: not verified (lane 02 doc).
 - **Keep-alive.** The Tello auto-lands after 15 s without a command (Tello SDK, via lane 02 doc).
 

@@ -1,0 +1,56 @@
+# drivers smoke run 2026-11-09T08:08Z. Synthetic input: fakes, no SDK, no vehicle, no SITL.
+## Python 3.12.10: SDKs importable? (expected: all missing)
+mavsdk missing
+pymavlink missing
+cflib missing
+djitellopy missing
+## Python 3.14.6: SDKs importable? (expected: all missing)
+mavsdk missing
+pymavlink missing
+cflib missing
+djitellopy missing
+## brief check: ast.parse every drivers/*.py; each *Adapter class has pose, ranges, send_setpoint
+templates/drone-adapter/drivers/ardupilot_pymavlink.py ArduPilotPymavlinkAdapter OK
+templates/drone-adapter/drivers/crazyflie_cflib.py CrazyflieCflibAdapter OK
+templates/drone-adapter/drivers/px4_mavsdk.py Px4MavsdkAdapter OK
+templates/drone-adapter/drivers/tello_djitellopy.py TelloDjitellopyAdapter OK
+ast.parse ok for 7 files
+## Python 3.12.10: python -m unittest -v (flat folder, run inside templates/drone-adapter)
+test_all_are_adapters_without_sdk (drivers.test_drivers_smoke.Drivers.test_all_are_adapters_without_sdk) ... ok
+test_ardupilot_pose_send_ranges (drivers.test_drivers_smoke.Drivers.test_ardupilot_pose_send_ranges) ... ok
+test_crazyflie_world_setpoint_and_ranges (drivers.test_drivers_smoke.Drivers.test_crazyflie_world_setpoint_and_ranges) ... ok
+test_px4_heading_and_ned (drivers.test_drivers_smoke.Drivers.test_px4_heading_and_ned) ... ok
+test_tello_refuses_uncalibrated_and_maps_sticks (drivers.test_drivers_smoke.Drivers.test_tello_refuses_uncalibrated_and_maps_sticks) ... ok
+test_known_values (test_adapter.Frames.test_known_values) ... ok
+test_round_trips (test_adapter.Frames.test_round_trips) ... ok
+test_mock_is_adapter (test_adapter.Loop.test_mock_is_adapter) ... ok
+test_reaches_goal (test_adapter.Loop.test_reaches_goal) ... ok
+test_stops_before_wall (test_adapter.Loop.test_stops_before_wall) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.004s
+
+OK
+## Python 3.14.6: python -m unittest -v (flat folder, run inside templates/drone-adapter)
+test_all_are_adapters_without_sdk (drivers.test_drivers_smoke.Drivers.test_all_are_adapters_without_sdk) ... ok
+test_ardupilot_pose_send_ranges (drivers.test_drivers_smoke.Drivers.test_ardupilot_pose_send_ranges) ... ok
+test_crazyflie_world_setpoint_and_ranges (drivers.test_drivers_smoke.Drivers.test_crazyflie_world_setpoint_and_ranges) ... ok
+test_px4_heading_and_ned (drivers.test_drivers_smoke.Drivers.test_px4_heading_and_ned) ... ok
+test_tello_refuses_uncalibrated_and_maps_sticks (drivers.test_drivers_smoke.Drivers.test_tello_refuses_uncalibrated_and_maps_sticks) ... ok
+test_known_values (test_adapter.Frames.test_known_values) ... ok
+test_round_trips (test_adapter.Frames.test_round_trips) ... ok
+test_mock_is_adapter (test_adapter.Loop.test_mock_is_adapter) ... ok
+test_reaches_goal (test_adapter.Loop.test_reaches_goal) ... ok
+test_stops_before_wall (test_adapter.Loop.test_stops_before_wall) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.005s
+
+OK
+## package mode: folder copied to a temp dir as drone_adapter/
+package import ok; all isinstance Adapter: True
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK
