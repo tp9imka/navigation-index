@@ -208,3 +208,7 @@ Updated 2026-11-07 against [evidence-matrix.md](evidence-matrix.md).
   with obstacles, and a VIO-loss recovery run on recorded data. `samples/sitl-docker` has no
   obstacle world, and `samples/relative-nav-benchmark` measures VIO drift on a recorded
   flight, not loss and recovery in a loop.
+
+## Innovation experiments before choosing an algorithm
+
+For active location disambiguation, delayed localization scheduling or selective model adaptation, **Start from** [navigation-innovation-lab](../samples/navigation-innovation-lab/README.md) and its [hypothesis cards](hypotheses/README.md). These are synthetic mechanism POCs, not new official challenge requirements or a validated aircraft stack. Search keywords: `innovation hypothesis active-localization sensor-scheduling observability calibration`.

@@ -313,7 +313,7 @@ def first_sentence(s):
     return (m.group(1) if m else s)[:220]
 
 # Top-level guides become graph nodes of kind "guide" so search finds the decoder, playbook and runbook.
-GUIDE_GLOBS = ("docs/*.md", "docs/primer/*.md", "docs/landscape/*.md", "docs/research/*/*.md",
+GUIDE_GLOBS = ("docs/*.md", "docs/primer/*.md", "docs/landscape/*.md", "docs/research/*/*.md", "docs/hypotheses/*.md",
                "templates/*.md", "templates/*/*.md", "templates/*/*/*.md",
                # Folder indexes whose lead is a "Use this when" trigger: an agent asking "which dataset /
                # paper / card / research round" lands on the index, not on one card. Their cards stay

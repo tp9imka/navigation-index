@@ -1,0 +1,23 @@
+{
+  "python_versions": [
+    "3.9.6",
+    "3.12.10"
+  ],
+  "synthetic_evaluation_rows": 8000,
+  "replay_cases": 48,
+  "synthetic_maximum_cross_version_delta": 6.707523425575346e-12,
+  "replay_maximum_cross_version_delta": 9.379164112033322e-13,
+  "comparison_tolerance": 1e-10,
+  "selected_settings_identical": true,
+  "focused_unit_tests_passed": 19,
+  "isolation": {
+    "branch": "feat/innovation-pocs-final",
+    "base": "746bc05",
+    "ongoing_loop_branch": "loop/enhance",
+    "integration": "No merge into main while the loop is running. Regenerate derived indexes after source integration."
+  },
+  "limitations": [
+    "Cross-version agreement is numerical reproducibility, not independent scientific validation.",
+    "No browser was available for visual dashboard inspection."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "sample:navigation-innovation-lab",
+  "title": "Navigation innovation laboratory: active localization, asynchronous fix scheduling and selective model adaptation",
+  "summary": "Three stdlib synthetic POCs with conventional baselines, ablations, held-out seeds, stress cases and paired intervals. Tests possible contributions rather than claiming novelty; exposes map-shift failures, harmful slowdown and limits of model adaptation. A separate causal replay evaluates cached VPAIR observations under artificial frame delays and an uncalibrated covariance proxy; no consistent scheduling advantage.",
+  "concepts": [
+    "concept:path-planning",
+    "concept:sensor-fusion",
+    "concept:assured-pnt",
+    "concept:simulation",
+    "concept:datasets-benchmarks"
+  ],
+  "tags": [
+    "innovation",
+    "hypothesis",
+    "active-localization",
+    "sensor-scheduling",
+    "observability",
+    "calibration",
+    "benchmark",
+    "stdlib"
+  ],
+  "related": [
+    {
+      "id": "sample:e2e-visual-nav-vpair",
+      "rel": "extends"
+    },
+    {
+      "id": "repo:sjtu-visys-team/ai-io",
+      "rel": "explains"
+    }
+  ],
+  "verified": "Ran 2026-11-09 on Python 3.9.6/macOS arm64: 8000 synthetic evaluation episodes, 100 seeds per scenario, disjoint from 16 tuning seeds; 19 stdlib unit tests. Source hashes, tuning grids and all per-seed metrics committed. No images, aircraft dynamics, SITL, hardware or field validation; offline network-denial test not performed. Also ran 48 cached VPAIR replay cases, with hashes of three sibling input files; real-flight-derived inputs but artificial timing and a simplified filter.",
+  "verified_status": "ran",
+  "deps": "stdlib",
+  "first_command": "python3 benchmark.py",
+  "group": "Innovation hypotheses and falsification",
+  "shows": "Compare three proposed mechanisms with stronger conventional baselines and retain negative findings",
+  "input": "synthetic; optional recorded-flight-derived replay with artificial timing",
+  "runtime": "about 11 seconds on the recorded host",
+  "key_result": "[Evidence](README.md#what-survived-the-first-experiment): H1 equals information gain; H2 opportunity baseline competitive; H3 helps after observable changes but loses to initial calibration nominally",
+  "readiness": {
+    "compute": "cpu",
+    "hardware": "none",
+    "offline": "unknown",
+    "setup_minutes": null,
+    "download_mb": 0,
+    "platforms": [
+      "macos-arm64"
+    ],
+    "validation": "integrated",
+    "limitation": "Primary benchmark uses synthetic descriptor/scalar models; optional replay is one previously studied flight with artificial frame delays, not field validation.",
+    "evidence": [
+      "samples/navigation-innovation-lab/results/results.json"
+    ]
+  }
+}
