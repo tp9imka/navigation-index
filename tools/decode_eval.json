@@ -1,5 +1,5 @@
 {
- "about": "Hand-judged statements for tools/decode_eval.py. rows = decoder rows a team should land on (any of them counts as a hit); [] = nonsense control that must return no row. row_names pins each referenced row number to the start of its problem-statement cell, so a renumbering fails loudly while appended rows change nothing. split: train statements were used to calibrate DECODE_FLOOR and the matching; holdout statements were written at the same time and not looked at during tuning. The breadth-regression split was written before the 2026-11-07 decoder changes; it is reported separately from the original, unchanged train/holdout cases. no_runnable_starter requires the best row to disclose the absence of a runnable matching sample.",
+ "about": "Hand-judged statements for tools/decode_eval.py. rows = decoder rows a team should land on (any of them counts as a hit); [] = nonsense control that must return no row. row_names pins each referenced row number to the start of its problem-statement cell, so a renumbering fails loudly while appended rows change nothing. split: train statements were used to calibrate DECODE_FLOOR and the matching; holdout statements were written at the same time and not looked at during tuning. The breadth-regression split was written before the 2026-11-07 decoder changes; it is reported separately from the original, unchanged train/holdout cases. The close-area split was written on 2026-11-09 together with rows 31-33 and is not a holdout. no_runnable_starter requires the best row to disclose the absence of a runnable matching sample.",
  "row_names": {
   "1": "Navigate a small drone",
   "2": "Bring the drone home",
@@ -30,7 +30,10 @@
   "27": "Fixed-wing long-range flight",
   "28": "Pedestrian phone indoor wayfinding",
   "29": "Offline road routing",
-  "30": "Ground rover obstacle replanning"
+  "30": "Ground rover obstacle replanning",
+  "31": "Drone A=>B through obstacles",
+  "32": "Drone flight to a visual goal B",
+  "33": "Indoor drone flight through VIO loss"
  },
  "statements": [
   {"src": "review-round3 #1", "split": "train", "rows": [14],
@@ -154,6 +157,22 @@
   {"src": "review fallback relevance 2026-11-07", "split": "short-brief-regression", "rows": [],
    "text": "Build a phone camera app for indoor portraits"},
   {"src": "review fallback relevance 2026-11-07", "split": "short-brief-regression", "rows": [],
-   "text": "Indoor portrait photography with a handheld camera"}
+   "text": "Indoor portrait photography with a handheld camera"},
+  {"src": "loop-07 close-area 2026-11-09", "split": "close-area", "rows": [31], "no_runnable_starter": true,
+   "text": "Fly a drone autonomously from point A to point B in a close area, potentially with obstacles"},
+  {"src": "loop-07 close-area 2026-11-09", "split": "close-area", "rows": [31], "no_runnable_starter": true,
+   "text": "Teams must navigate a quadcopter through an indoor arena full of obstacles from the start point to the goal without collisions"},
+  {"src": "loop-07 close-area 2026-11-09", "split": "close-area", "rows": [32], "no_runnable_starter": true,
+   "text": "The drone takes off at A, flies autonomously to B and lands on a landing pad marked with a visual marker"},
+  {"src": "loop-07 close-area 2026-11-09", "split": "close-area", "rows": [32], "no_runnable_starter": true,
+   "text": "Fly to the AprilTag at point B and perform a precision landing"},
+  {"src": "loop-07 close-area 2026-11-09", "split": "close-area", "rows": [33], "no_runnable_starter": true,
+   "text": "Indoor drone flight with no GPS: the drone must keep flying when visual-inertial odometry loses tracking and recover its position"},
+  {"src": "loop-07 close-area 2026-11-09", "split": "close-area", "rows": [33], "no_runnable_starter": true,
+   "text": "An indoor UAV loses its VIO in a dark corridor and must hold position and relocalize"},
+  {"src": "loop-07 close-area negative 2026-11-09", "split": "close-area", "rows": [30], "no_runnable_starter": true, "excluded_rows": [31, 32, 33],
+   "text": "A ground rover must drive from point A to point B and replan around obstacles using a local costmap"},
+  {"src": "loop-07 close-area negative 2026-11-09", "split": "close-area", "rows": [27], "excluded_rows": [31, 32, 33],
+   "text": "Fly a fixed-wing UAV 40 km beyond line of sight through GNSS jamming and spoofing to a distant airfield"}
  ]
 }

@@ -46,7 +46,7 @@ product line the brief names is close to them. See
 
 | Words in the full brief | Decoder rows | Open first |
 |---|---|---|
-| "point A to B", "obstacles", "indoor", "arena", "close area", "avoid" | none yet | [close-area-nav synthesis](research/close-area-nav/README.md), [planning and mapping](research/close-area-nav/01-planning-and-mapping.md), [sims and platforms](research/close-area-nav/02-sims-platforms-competitions.md), [localization](research/close-area-nav/03-close-area-localization.md) |
+| "point A to B", "obstacles", "indoor", "arena", "close area", "avoid" | 31, 32 (goal is a marker / landing pad / tag), 33 (indoor, VIO loss) | [close-area-nav synthesis](research/close-area-nav/README.md), [planning and mapping](research/close-area-nav/01-planning-and-mapping.md), [sims and platforms](research/close-area-nav/02-sims-platforms-competitions.md), [localization](research/close-area-nav/03-close-area-localization.md) |
 | "without GPS / GNSS-denied", a distance or route, multirotor | 1, 2 | [gnss-denied-drone-nav cheat sheet](cheatsheets/gnss-denied-drone-nav.md), [e2e-visual-nav-vpair](../samples/e2e-visual-nav-vpair/), [golden-demo](../samples/golden-demo/) |
 | "fixed-wing", "long range", "20-30 km", "endurance" | 27, 15, 25 | [golden-demo-fixedwing](../samples/golden-demo-fixedwing/), [terrain-heightmap-pf](../samples/terrain-heightmap-pf/), [terrain-night-celestial cheat sheet](cheatsheets/terrain-night-celestial.md) |
 | "spoofing", "integrity", "trust", "assured" | 4, 20 | [spoofing-keep-flying cheat sheet](cheatsheets/spoofing-keep-flying.md), [multi-source-fde](../samples/multi-source-fde/), [autopilot-gnss-fault-handling](autopilot-gnss-fault-handling.md) |
