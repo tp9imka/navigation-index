@@ -28,6 +28,7 @@ Runs every close-area planner in the hub through the shared close-area-arena on 
 
 ## Referenced by
 
+- [Day-1 dry run: close-area A=>B, one agent, no team (loop-58)](../../docs/day1-dry-run.md) (mentions)
 - [Judge drill: close-area A=>B, relocalization pitch (H1)](../../templates/pitch/judge-drill-close-area.md) (mentions)
 
 _Indexed by lane(s): samples_

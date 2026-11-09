@@ -65,13 +65,14 @@ Global descriptors, image retrieval, LiDAR place recognition.
 - [ALTO](../../catalog/repos/metaslam__alto.md) - fit: low - Placeholder repo for ALTO, an aerial-view, large-scale, terrain-oriented dataset for UAV place recognition and localization.
 - [Open-RadVLAD](../../catalog/repos/mttgdd__open-radvlad.md) - fit: low - Fast radar place recognition using VLAD-style aggregation over radar polar scans.
 
-## Documents, talks, courses, datasets (36)
+## Documents, talks, courses, datasets (37)
 
 - [A Benchmark Comparison of Visual Place Recognition Techniques for Resource-Constrained Embedded Platforms](../../catalog/resources/power-2021-vpr-embedded-benchmark.md) - paper - arXiv 2109.11002 preprint.
 - [Active Neural Localization](../../catalog/resources/chaplot-2018-active-neural-localization.md) - paper - ICLR 2018.
 - [ALTO: A Large-Scale Dataset for UAV Visual Place Recognition and Localization](../../catalog/resources/alto-dataset-2022.md) - dataset - Helicopter-flown aerial dataset over Ohio and Pennsylvania (two long trajectories) with GPS-INS ground truth, accelerometer, laser altimeter and downward RGB imagery, plus reference imagery for VPR benchmarking.
 - [AnyLoc: Towards Universal Visual Place Recognition](../../catalog/resources/anyloc-universal-vpr-2023.md) - paper - Shows that unsupervised aggregation of foundation-model (DINOv2) features gives place recognition that generalizes across domains including aerial imagery, without VPR-specific training.
 - [Are State-of-the-art Visual Place Recognition Techniques any Good for Aerial Robotics?](../../catalog/resources/zaffar-2019-vpr-aerial-robotics.md) - paper - Early benchmark of eight ground-robot VPR techniques on two aerial place-recognition datasets, comparing matching performance, processing power and memory, and laying out why aerial VPR differs (viewpoint change, payload
+- [Conditional Variational Autoencoders for Probabilistic Pose Regression](../../catalog/resources/zangeneh-2024-cvae-probabilistic-pose-regression.md) - paper - IROS 2024 (per arXiv comment); abstract read.
 - [DCL-SLAM: A Distributed Collaborative LiDAR SLAM Framework for a Robotic Swarm](../../catalog/resources/dcl-slam-paper.md) - paper - Describes a fully distributed lidar C-SLAM using compact descriptors for inter-robot place recognition.
 - [Deep Visual Geo-localization Benchmark](../../catalog/resources/deep-visual-geolocalization-benchmark-2022.md) - paper - CVPR 2022 oral presenting an open framework to build, train and test visual geo-localization pipelines with swappable backbones, aggregation and negative mining, plus a large experimental study of how each choice affects
 - [Dynamically Modulating Visual Place Recognition Sequence Length For Minimum Acceptable Performance Scenarios](../../catalog/resources/malone-2024-dynamic-vpr-sequence-length.md) - paper - IROS 2024 (doi 10.1109/IROS58592.2024.10802570, per Crossref); arXiv 2407.00863 abstract read.

@@ -96,7 +96,7 @@ Detection, segmentation, depth on embedded hardware supporting navigation.
 - [AI-deck GAP8 examples](../../catalog/repos/bitcraze__aideck-gap8-examples.md) - fit: low - Bitcraze examples for the Crazyflie AI-deck GAP8 processor: camera streaming over WiFi and small onboard CNN inference.
 - [Flight Speed Estimation Airflow](../../catalog/repos/syroco-isir__flight-speed-estimation-airflow.md) - fit: low - GRU network that estimates multirotor flight speed from thermal anemometer readings, linked from the 2025 airflow-inertial odometry preprint.
 
-## Documents, talks, courses, datasets (55)
+## Documents, talks, courses, datasets (57)
 
 - [A Benchmark Comparison of Monocular Visual-Inertial Odometry Algorithms for Flying Robots](../../catalog/resources/delmerico-scaramuzza-2018-vio-benchmark-flying-robots.md) - paper - ICRA 2018.
 - [A Benchmark Comparison of Visual Place Recognition Techniques for Resource-Constrained Embedded Platforms](../../catalog/resources/power-2021-vpr-embedded-benchmark.md) - paper - arXiv 2109.11002 preprint.
@@ -120,11 +120,13 @@ Detection, segmentation, depth on embedded hardware supporting navigation.
 - [ESA Kelvins Satellite Pose Estimation Competition 2021 (SPEED+)](../../catalog/resources/kelvins-pose-estimation-2021.md) - competition - Follow-up Kelvins challenge focused on bridging the domain gap: train on synthetic images, test on hardware-in-the-loop lightbox and sunlamp images.
 - [EUROCAE WG-114 / SAE G-34: ED-324 / ARP6983 (process standard for ML in aeronautical products)](../../catalog/resources/eurocae-wg-114-ed-324-arp6983.md) - doc - Working-group page for the joint EUROCAE/SAE standard on developing and certifying aeronautical products that implement machine learning.
 - [Formal Verification and Control with Conformal Prediction](../../catalog/resources/lindemann-2024-conformal-verification-control-survey.md) - paper - Preprint survey of conformal prediction for learning-enabled autonomous systems: verification of learned components, safe control, offline and online monitoring.
+- [Fully On-board Low-Power Localization with Multizone Time-of-Flight Sensors on Nano-UAVs](../../catalog/resources/muller-2023-nano-uav-mcl-multizone-tof.md) - paper - DATE 2023 (venue from the AF-MCL reference list); arXiv full text read.
 - [Good Graph to Optimize: Cost-Effective, Budget-Aware Bundle Adjustment in Visual SLAM](../../catalog/resources/zhao-2020-good-graph-budget-ba.md) - paper - arXiv 2008.10123 preprint.
 - [HDVIO: Improving Localization and Disturbance Estimation with Hybrid Dynamics VIO](../../catalog/resources/cioffi-2023-hdvio-hybrid-dynamics-vio.md) - paper - RSS 2023 (arXiv read in part).
 - [Isaac ROS Performance Summary](../../catalog/resources/isaac-ros-performance-summary.md) - report - NVIDIA's table of throughput and latency for Isaac ROS nodes and graphs per platform, including Jetson Orin Nano Super 8GB and AGX Orin, with latency measured at a 30 Hz input.
 - [Isaac ROS Visual SLAM documentation](../../catalog/resources/isaac-ros-visual-slam-docs.md) - doc - Docs and quickstarts for NVIDIA's GPU-accelerated stereo visual-inertial odometry and SLAM package for ROS 2 on Jetson, including tutorials with Isaac Sim and RealSense cameras.
 - [Learned Inertial Odometry for Autonomous Drone Racing](../../catalog/resources/cioffi-2023-imo-learned-inertial-odometry-racing.md) - paper - RA-L 2023.
+- [NanoSLAM: Enabling Fully Onboard SLAM for Tiny Robots](../../catalog/resources/niculescu-2023-nanoslam.md) - paper - IEEE Internet of Things Journal (doi 10.1109/JIOT.2023.3339254, per arXiv); abstract read.
 - [Neural Aided Adaptive Innovation-Based Invariant Kalman Filter](../../catalog/resources/diker-klein-2026-neural-adaptive-inekf.md) - paper - Preprint.
 - [Neural-Fly enables rapid learning for agile flight in strong winds](../../catalog/resources/oconnell-2022-neural-fly.md) - paper - Science Robotics 7 (2022).
 - [NeuroBEM: Hybrid Aerodynamic Quadrotor Model](../../catalog/resources/bauersfeld-2021-neurobem.md) - paper - RSS 2021.

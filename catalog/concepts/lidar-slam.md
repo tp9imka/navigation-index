@@ -9,12 +9,14 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [Close-area relocalization after VIO loss: scan-to-map pose hypotheses, ratio + persistence acceptance, hover until one wins](../../catalog/samples/close-area-relocalize.md) - Relocalizer for the close-area arena.
 - [Relative navigation benchmark on real data: KISS-ICP lidar odometry, OpenVINS VIO, mono and nadir VO, scored with evo](../../catalog/samples/relative-nav-benchmark.md) - One command per part.
 
-## Guides (7)
+## Guides (9)
 
 - [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) - Loop-24, 2026-11-09.
+- [10. Kill test for the new headline: does relocalization after VIO loss already exist?](../../docs/research/close-area-nav/10-relocalization-prior-art.md) - Prior-art scan, 2026-11-09 (loop-57), copying the method of 07.
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) - After this chapter you can explain how a camera, LiDAR or radar measures motion, what SLAM adds on top of odometry, and which open stack to run on which sensor.
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) - After this chapter you can pick a dataset or simulator that matches your scenario, compute the trajectory metrics judges and reviewers expect, and design a GNSS-outage or interference test that shows what your system doe
 - [Dataset cards](../../docs/dataset-cards/README.md) - Use this when you need recorded data to test a navigation method: which dataset fits, its checked size and license, the download command, and what to fetch before venue Wi-Fi fails.
+- [Day-1 dry run: close-area A=>B, one agent, no team (loop-58)](../../docs/day1-dry-run.md) - Next action if you are on Day 1: read the blockers table first, then follow the runbook.
 - [Demo script: close-area A to B](../../templates/demo-script-close-area.md) - Live-demo variant of demo-script.md for the close-area task: fly from A to B through obstacles, with a VIO fault injected.
 - [Judge drill: close-area A=>B, relocalization pitch (H1)](../../templates/pitch/judge-drill-close-area.md) - Use this at H+36 to rehearse the hard questions for the close-area pitch.
 - [Research rounds: which one applies, and the innovation story per brief](../../docs/research/README.md) - Use this when you need the innovation story, want to know which research round fits the brief, or need the kill test and status for a headline idea.
@@ -81,7 +83,7 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [ROG-Map](../../catalog/repos/hku-mars__rog-map.md) - fit: low - Robocentric occupancy grid that slides with the vehicle and keeps an inflated map and frontier information, designed for LiDAR-based high-speed planning.
 - [SUPER](../../catalog/repos/hku-mars__super.md) - fit: low - LiDAR-based high-speed MAV planner that plans directly on point clouds.
 
-## Documents, talks, courses, datasets (46)
+## Documents, talks, courses, datasets (48)
 
 - [Autoware documentation](../../catalog/resources/autoware-docs.md) - doc - Official Autoware documentation with architecture, installation, tutorials and design notes for localization, perception and planning components.
 - [Barrier Certificate based Safe Control for LiDAR-based Systems under Sensor Faults and Attacks](../../catalog/resources/zhang-cheng-niu-clark-2022-lidar-barrier-faults.md) - paper - Preprint (arXiv, no venue confirmed).
@@ -106,6 +108,7 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping](../../catalog/resources/lio-sam-shan-2020.md) - paper - Formulates LiDAR-inertial odometry as factor-graph smoothing with IMU preintegration, LiDAR odometry, GPS and loop-closure factors.
 - [MARS-LVIG Dataset: A multi-sensor aerial robots SLAM dataset for LiDAR-visual-inertial-GNSS fusion](../../catalog/resources/hku-mars-lvig-dataset.md) - dataset - Aerial robot SLAM dataset for lidar-visual-inertial-GNSS fusion, including sequences with raw GNSS measurements under different lighting.
 - [MCD: Diverse Large-Scale Multi-Campus Dataset for Robot Perception](../../catalog/resources/mcd-multi-campus-dataset.md) - dataset - Multi-campus sequences in Asia and Europe across seasons with two lidar types, stereo, IMUs, UWB and survey-grade prior maps.
+- [NanoSLAM: Enabling Fully Onboard SLAM for Tiny Robots](../../catalog/resources/niculescu-2023-nanoslam.md) - paper - IEEE Internet of Things Journal (doi 10.1109/JIOT.2023.3339254, per arXiv); abstract read.
 - [Nav2 ROSCon Talks index](../../catalog/resources/nav2-roscon-talks-index.md) - video - Index of ROSCon talks by Nav2 developers and the community (Vimeo links), including SLAM Toolbox and large-scale indoor mapping talks.
 - [NeBula: Quest for Robotic Autonomy in Challenging Environments; TEAM CoSTAR at the DARPA Subterranean Challenge](../../catalog/resources/nebula-costar-subt-paper.md) - paper - Describes the NeBula belief-space autonomy stack: multi-modal positioning, mapping, traversability, risk-aware mission planning and multi-robot reasoning; CoSTAR won the Urban circuit.
 - [Newer College Dataset](../../catalog/resources/ori-newer-college-dataset.md) - dataset - Handheld lidar plus stereo and multi-camera sequences around New College, Oxford, with precise ground truth from a survey-grade prior map.
@@ -121,6 +124,7 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [State Estimation and Localization for Self-Driving Cars (Coursera)](../../catalog/resources/coursera-state-estimation-localization-sdc.md) - course - Course 2 of the UofT Self-Driving Cars specialization: least squares, KF/EKF/ES-EKF/UKF, IMU and GNSS sensor models, LiDAR scan matching with ICP, culminating in an error-state EKF that fuses IMU, GNSS and LiDAR on CARLA
 - [SubT-MRS Dataset](../../catalog/resources/cmu-subt-mrs-dataset.md) - dataset - Multi-robot, multi-modal SLAM data in degraded environments - caves, tunnels, urban and off-road - with RGB, lidar, thermal and inertial sensing; used in ICCV SLAM challenges.
 - [Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems](../../catalog/resources/swarm-slam-paper.md) - paper - Decentralized collaborative SLAM aimed at swarms, prioritizing which inter-robot loop closures to compute and share to limit communication.
+- [Tackling the Kidnapped Robot Problem via Sparse Feasible Hypothesis Sampling and Reliable Batched Multi-Stage Inference](../../catalog/resources/zhang-2026-kidnapped-robot-sparse-hypotheses.md) - paper - IEEE Transactions on Instrumentation and Measurement 2026 (doi 10.1109/TIM.2026.3694741, per arXiv); abstract read.
 - [Team CERBERUS Wins the DARPA Subterranean Challenge: Technical Overview and Lessons Learned](../../catalog/resources/cerberus-subt-final-paper.md) - paper - Winning team's description of its legged-plus-aerial system: multi-modal perception, robust localization and mapping, exploration planning and artifact detection, with lessons from the final.
 - [The University of Michigan North Campus Long-Term Vision and LIDAR Dataset](../../catalog/resources/umich-nclt-dataset.md) - dataset - Segway robot sessions over many months on one campus with lidar, omnidirectional camera, GPS, IMU and odometry.
 - [When Your State Estimator Has Lost The Plot: Detecting Estimator Failures Via Spectral Analysis](../../catalog/resources/lanegger-2026-estimator-failure-spectral.md) - paper - Preprint (Aug 2026).

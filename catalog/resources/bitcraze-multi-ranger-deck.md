@@ -22,6 +22,7 @@ Crazyflie expansion deck with five VL53L1x ToF sensors (front, back, left, right
 ## Referenced by
 
 - [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+- [Monte Carlo-Based Indoor UAV Localization in Dynamic Environments Using Only Four Onboard Range Sensors](../../catalog/resources/af-mcl-four-range-uav-2026.md) (uses)
 - [BatDeck - Ultra Low-power Ultrasonic Ego-velocity Estimation and Obstacle Avoidance on Nano-drones](../../catalog/resources/muller-batdeck-ultrasonic-nano-drone-2024.md) (evaluates)
 - [VL53L1X datasheet: long distance ranging Time-of-Flight sensor (STMicroelectronics)](../../catalog/resources/st-vl53l1x-datasheet.md) (explains)
 - [Close-area local planners: DWA (Nav2-style dynamic window) and Bug2 / TangentBug, range sensor only, next to APF and VFH+ on 72-beam and Crazyflie-like 4-beam fans](../../catalog/samples/close-area-planner-dwa-bug.md) (explains)

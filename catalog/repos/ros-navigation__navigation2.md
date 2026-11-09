@@ -48,6 +48,7 @@ The standard ROS 2 navigation stack: behavior-tree driven navigator, global plan
 - [Spatio-Temporal Voxel Layer](../../catalog/repos/stevemacenski__spatio_temporal_voxel_layer.md) (integrates_with)
 - [The Marathon 2: A Navigation System](../../catalog/resources/macenski-marathon2-nav2.md) (has_code)
 - [From the Desks of ROS Maintainers: A Survey of Modern & Capable Mobile Robotics Algorithms in the Robot Operating System 2](../../catalog/resources/macenski-ros2-algorithms-survey.md) (explains)
+- [Nav2 AMCL configuration guide](../../catalog/resources/nav2-amcl-configuration-docs.md) (part_of)
 - [Nav2 Documentation](../../catalog/resources/nav2-docs.md) (explains)
 - [Navigating Using GPS Localization (Nav2 tutorial)](../../catalog/resources/nav2-gps-navigation-tutorial.md) (has_code)
 - [Nav2 ROSCon Talks (index)](../../catalog/resources/nav2-roscon-talks.md) (explains)

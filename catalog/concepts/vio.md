@@ -15,12 +15,13 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [Two independent absolute sources on one real flight: visual fixes + terrain-relative navigation with solution-separation integrity (VPAIR over NRW 1 m LiDAR)](../../catalog/samples/two-source-integrity-vpair.md) - Adds terrain-relative navigation as a second absolute source to the real VPAIR flight (8.53 km after GNSS loss, Rhine valley between Bad Honnef and Koenigswinter, east of Bonn).
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../../catalog/samples/vio-to-mavlink-bridge.md) - Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold.
 
-## Guides (15)
+## Guides (16)
 
 - [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
 - [02. Deadline-aware scheduling of expensive absolute fixes](../../docs/research/innovation-prior-art/02-deadline-aware-fix-scheduling.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
 - [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2.
 - [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) - Loop-24, 2026-11-09.
+- [10. Kill test for the new headline: does relocalization after VIO loss already exist?](../../docs/research/close-area-nav/10-relocalization-prior-art.md) - Prior-art scan, 2026-11-09 (loop-57), copying the method of 07.
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) - After this chapter you can explain how a camera, LiDAR or radar measures motion, what SLAM adds on top of odometry, and which open stack to run on which sensor.
 - [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) - Next action on Day 1: ask questions 1-3 of section 1, then open section 2 for the stack.
 - [Demo script: close-area A to B](../../templates/demo-script-close-area.md) - Live-demo variant of demo-script.md for the close-area task: fly from A to B through obstacles, with a VIO fault injected.
@@ -118,7 +119,7 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [rhem_planner](../../catalog/repos/ntnu-arl__rhem_planner.md) - fit: low - Uncertainty-aware receding-horizon exploration planner that picks paths minimising expected visual-inertial localization uncertainty.
 - [Visual-Odometry-VIO- (VO + IMU EKF)](../../catalog/repos/daudalbogachiev925__visual-odometry-vio-.md) - fit: low - Minimal Python project: essential-matrix visual odometry fused with IMU in an EKF to estimate position without GPS.
 
-## Documents, talks, courses, datasets (102)
+## Documents, talks, courses, datasets (103)
 
 - [14 Lectures on Visual SLAM: From Theory to Practice](../../catalog/resources/gaoxiang-14-lectures-visual-slam.md) - book - English translation of the popular Chinese visual SLAM textbook, from rigid-body motion and Lie algebra through camera models, nonlinear optimization, feature/direct VO, backend optimization, loop closure and dense mappi
 - [2025 Abu Dhabi Autonomous Racing League](../../catalog/resources/a2rl-2025-season.md) - doc - Summary of the A2RL x DCL autonomous drone championship, won by TU Delft MAVLab ahead of TII Racing and KAIST, including races against human pilots.
@@ -207,6 +208,7 @@ VO/VIO from monocular, stereo, event cameras with IMU.
 - [Visual Odometry: Part I - The First 30 Years and Fundamentals / Part II - Matching, Robustness, Optimization, and Applications](../../catalog/resources/scaramuzza-vo-tutorial.md) - paper - Two-part IEEE Robotics & Automation Magazine tutorial (Part II at rpg.ifi.uzh.ch/docs/VO_Part_II_Scaramuzza.pdf).
 - [Visual-Inertial Navigation: A Concise Review](../../catalog/resources/huang-vins-concise-review-2019.md) - paper - Compact review of visual-inertial navigation: filtering vs optimization, observability, calibration and representative systems.
 - [VOXL OpenVINS server](../../catalog/resources/modalai-voxl-open-vins-server-docs.md) - doc - ModalAI docs for the OpenVINS-based VIO service on VOXL 2.
+- [VOXL OpenVINS server: Initialization and Resets](../../catalog/resources/modalai-voxl-open-vins-init-resets.md) - doc - ModalAI docs page (read 2026-11-09).
 - [When Your State Estimator Has Lost The Plot: Detecting Estimator Failures Via Spectral Analysis](../../catalog/resources/lanegger-2026-estimator-failure-spectral.md) - paper - Preprint (Aug 2026).
 - [«Очікую прориву в українській ракетній програмі». Прогнози українського deftech на 2026](../../catalog/resources/dou-deftech-forecasts-2026.md) - blog - English: 'Ukrainian deftech forecasts for 2026'.
 - [Автономний БпЛА без GPS та GNSS з візуальною навігаційною системою](../../catalog/resources/mintsyfra-ai4uav-video-2024.md) - video - English: 'Autonomous UAV without GPS and GNSS with a visual navigation system'.

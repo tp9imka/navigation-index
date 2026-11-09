@@ -102,7 +102,7 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 - [Olympe](../../catalog/repos/parrot-developers__olympe.md) - fit: low - Parrot's Python controller library for ANAFI drones and the Sphinx simulator, using the Arsdk messages (moveBy, moveTo, piloting, camera).
 - [V-NAV (CopterHack 2022) - visual navigation for Clover](../../catalog/repos/v-nav__clover.md) - fit: low - Archived fork of the Clover framework holding team V-NAV's CopterHack 2022 entry (article in docs/ru/v-nav.md on branch v-nav_article): a multi-camera plus IMU optical navigation module using graph-based SLAM with CNN-ex
 
-## Documents, talks, courses, datasets (81)
+## Documents, talks, courses, datasets (82)
 
 - [2025 Abu Dhabi Autonomous Racing League](../../catalog/resources/a2rl-2025-season.md) - doc - Summary of the A2RL x DCL autonomous drone championship, won by TU Delft MAVLab ahead of TII Racing and KAIST, including races against human pilots.
 - [A Singular Value Maximizing Data Recording Algorithm for Concurrent Learning](../../catalog/resources/chowdhary-johnson-2011-concurrent-learning-data-recording.md) - paper - ACC 2011 (abstract read from proceedings PDF).
@@ -178,6 +178,7 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 - [Using PX4's Navigation Filter (EKF2)](../../catalog/resources/px4-ekf2-tuning-guide.md) - doc - PX4 guide to its EKF2 estimator: which sensors it fuses (IMU, GNSS, baro, mag, optical flow, external vision, range), how to configure and tune them, and how to read innovation logs.
 - [Virtual Stick Sample (DJI MSDK V5)](../../catalog/resources/dji-msdk-v5-virtual-stick-tutorial.md) - doc - DJI tutorial for driving an aircraft from an Android app with virtual stick and advanced virtual stick parameters.
 - [Visual Navigation for Flying Robots (TUM, 2013)](../../catalog/resources/tum-visual-navigation-flying-robots.md) - lecture-series - Award-winning TUM lecture on making quadrotors navigate with cameras: 3D geometry, sensors, state estimation, visual motion estimation, SLAM, dense reconstruction, planning and exploration.
+- [VOXL OpenVINS server: Initialization and Resets](../../catalog/resources/modalai-voxl-open-vins-init-resets.md) - doc - ModalAI docs page (read 2026-11-09).
 - [VOXL Vision Obstacle Avoidance (VOA)](../../catalog/resources/modalai-voxl-voa-docs.md) - doc - How voxl-vision-hub turns stereo depth into OBSTACLE_DISTANCE messages for PX4 or ArduPilot collision prevention on VOXL boards.
 - [Windspeed Estimation and Baro Compensation (ArduCopter)](../../catalog/resources/ardupilot-copter-wind-estimation-docs.md) - doc - How to make EKF3 estimate wind on a multicopter without an airspeed sensor by setting ballistic coefficients (EK3_DRAG_BCOEF_X/Y = mass / frontal or side area) and a momentum drag coefficient (EK3_DRAG_MCOEF) from a flig
 - [В поисках автономного полета](../../catalog/resources/vcru-zimkov-autonomous-flight-2025.md) - blog - English: 'In search of autonomous flight' (15 Dec 2025).

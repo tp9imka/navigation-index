@@ -53,11 +53,13 @@ Firmware for the Crazyflie nano quad, Bolt and the Roadrunner positioning tag, w
 - [Crazyswarm2](../../catalog/repos/imrclab__crazyswarm2.md) (integrates_with)
 - [dRehmFlight VTOL](../../catalog/repos/nickrehm__drehmflight.md) (alternative_to)
 - [TinyMPC](../../catalog/repos/tinympc__tinympc.md) (evaluated_on)
+- [Monte Carlo-Based Indoor UAV Localization in Dynamic Environments Using Only Four Onboard Range Sensors](../../catalog/resources/af-mcl-four-range-uav-2026.md) (uses)
 - [Go with the Flow: Relative Positioning with the Flow deck](../../catalog/resources/bitcraze-flow-deck-limitations-blog-2023.md) (explains)
 - [Flow deck v2](../../catalog/resources/bitcraze-flow-deck-v2.md) (uses)
 - [Loco Positioning System documentation](../../catalog/resources/bitcraze-loco-positioning.md) (explains)
 - [Multi-ranger deck](../../catalog/resources/bitcraze-multi-ranger-deck.md) (uses)
 - [Onboard Ranging-based Relative Localization and Stability for Lightweight Aerial Swarms](../../catalog/resources/li-onboard-relative-localization-swarms.md) (uses)
+- [Fully On-board Low-Power Localization with Multizone Time-of-Flight Sensors on Nano-UAVs](../../catalog/resources/muller-2023-nano-uav-mcl-multizone-tof.md) (uses)
 - [Lighthouse Positioning System: Dataset, Accuracy, and Precision for UAV Research](../../catalog/resources/taffanel-2021-lighthouse-positioning-accuracy.md) (evaluates)
 
 _Indexed by lane(s): autopilots, domains-swarm_

@@ -17,7 +17,7 @@ Reactive avoidance, sense-and-avoid, DAA.
 - [Close-area safety-filter kill test A: no filter, PX4 Collision Prevention style and PX4-CBF as shipped on A* under VIO faults, with map-only obstacles the range fan cannot see](../../catalog/samples/close-area-safety-filter.md) - Harness that puts a safety filter between a planner and the vehicle in the shared close-area-arena, for the kill test of the hub's integrity-aware safety-filter headline.
 - [D* Lite vs A* from scratch for unknown-map replanning in the close-area arena](../../catalog/samples/close-area-planner-dstar.md) - D* Lite on the same inflated grid and cost model as astar_esdf's unknown-map mode, compared with A* replanning from scratch on 50 seed-0 layouts per family.
 
-## Guides (16)
+## Guides (17)
 
 - [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2.
 - [08. Crazyflie sensing limits: what the planner and safety filter can rely on](../../docs/research/close-area-nav/08-crazyflie-sensing-limits.md) - Research note, 2026-11-09 (loop-23).
@@ -26,6 +26,7 @@ Reactive avoidance, sense-and-avoid, DAA.
 - [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) - Use this when the brief says A to B, obstacles, indoor, arena, close area, or a marker / pad at B, and you need the baseline, the localization stack or the headline idea.
 - [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) - Written 2026-11-09 for Challenge 2 (entry point).
 - [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) - Fill this on Day 2 when the task is "fly a drone from A to B in a close area, with obstacles".
+- [Day-1 dry run: close-area A=>B, one agent, no team (loop-58)](../../docs/day1-dry-run.md) - Next action if you are on Day 1: read the blockers table first, then follow the runbook.
 - [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) - Next action on Day 1: ask questions 1-3 of section 1, then open section 2 for the stack.
 - [Demo dashboard](../../templates/demo-dashboard/README.md) - Use this when a GNSS / PNT run with lat / lon tracks needs a judge-facing map replay.
 - [Demo script: close-area A to B](../../templates/demo-script-close-area.md) - Live-demo variant of demo-script.md for the close-area task: fly from A to B through obstacles, with a VIO fault injected.
@@ -97,7 +98,7 @@ Reactive avoidance, sense-and-avoid, DAA.
 - [SUPER](../../catalog/repos/hku-mars__super.md) - fit: low - LiDAR-based high-speed MAV planner that plans directly on point clouds.
 - [TPU_2 (CopterHack 2023) - flight through forest](../../catalog/repos/shamoleg__clover.md) - fit: low - Fork of Clover with Tomsk Polytechnic team TPU_2's CopterHack 2023 entry (docs/ru/tpu_2.md on branch tpu_2): an algorithm for autonomous flight through dense forest using empirical search plus classic planners such as Di
 
-## Documents, talks, courses, datasets (64)
+## Documents, talks, courses, datasets (65)
 
 - [A predictive safety filter for learning-based control of constrained nonlinear dynamical systems](../../catalog/resources/wabersich-zeilinger-predictive-safety-filter-2021.md) - paper - MPC-style filter that receives any proposed input, for example from an RL policy, and changes it only when needed to keep a safe backup plan feasible.
 - [Backup Control Barrier Functions: Formulation and Comparative Study](../../catalog/resources/chen-backup-cbf-2021.md) - paper - General backup-CBF formulation: a fixed backup controller grows a small, easy control-invariant set into a larger one, and the filter keeps the system able to fall back to it.
@@ -130,6 +131,7 @@ Reactive avoidance, sense-and-avoid, DAA.
 - [LSY Autonomous Drone Racing documentation](../../catalog/resources/lsy-drone-racing-docs.md) - doc - Course docs for the Crazyflie gates-and-obstacles racing challenge: setup, difficulty levels, sim and real deployment.
 - [Measurement-Robust Control Barrier Functions: Certainty in Safety with Uncertainty in State](../../catalog/resources/cosner-measurement-robust-cbf-iros2021.md) - paper - Combines measurement-robust CBFs with the backup-set method to keep safety under imperfect state estimates.
 - [MIT 2.680 Unmanned Marine Vehicle Autonomy, Sensing and Communications](../../catalog/resources/mit-2680-marine-autonomy.md) - course - MIT course site with lectures and hands-on labs built on MOOS-IvP, covering behaviour-based autonomy, multi-vehicle coordination, collision avoidance and marine sensing.
+- [Monte Carlo-Based Indoor UAV Localization in Dynamic Environments Using Only Four Onboard Range Sensors](../../catalog/resources/af-mcl-four-range-uav-2026.md) - paper - Preprint (arXiv, Oct 2026), full text read.
 - [Multi-ranger deck](../../catalog/resources/bitcraze-multi-ranger-deck.md) - doc - Crazyflie expansion deck with five VL53L1x ToF sensors (front, back, left, right, up) measuring up to about 4 m.
 - [NanoMap: Fast, Uncertainty-Aware Proximity Queries with Lazy Search over Local 3D Data](../../catalog/resources/florence-nanomap-2018.md) - paper - Skips global map fusion: keeps recent depth frames with noisy relative poses and answers proximity queries from the most certain view.
 - [NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration](../../catalog/resources/nomad-diffusion-nav-2023.md) - paper - Single diffusion policy that handles both goal-directed navigation and undirected exploration by masking the goal.

@@ -69,13 +69,14 @@ Mapping and localization with loop closure from cameras.
 - [bsu-science - BSU diploma on camera-based UAV navigation](../../catalog/repos/drapegnik__bsu-science.md) - fit: low - LaTeX sources of science reports from BSU (Belarus, FAMCS), including a diploma 'Разработка алгоритмов навигации БПЛА' that compares SIFT/SURF/ORB, surveys SLAM and SfM 3D mapping, and demonstrates SLAM + ROS + webcam + 
 - [V-NAV (CopterHack 2022) - visual navigation for Clover](../../catalog/repos/v-nav__clover.md) - fit: low - Archived fork of the Clover framework holding team V-NAV's CopterHack 2022 entry (article in docs/ru/v-nav.md on branch v-nav_article): a multi-camera plus IMU optical navigation module using graph-based SLAM with CNN-ex
 
-## Documents, talks, courses, datasets (45)
+## Documents, talks, courses, datasets (46)
 
 - [14 Lectures on Visual SLAM: From Theory to Practice](../../catalog/resources/gaoxiang-14-lectures-visual-slam.md) - book - English translation of the popular Chinese visual SLAM textbook, from rigid-body motion and Lie algebra through camera models, nonlinear optimization, feature/direct VO, backend optimization, loop closure and dense mappi
 - [A Survey on Active Simultaneous Localization and Mapping: State of the Art and New Frontiers](../../catalog/resources/placed-2023-active-slam-survey.md) - paper - IEEE T-RO 39(3):1686-1705.
 - [An Efficient Schmidt-EKF for 3D Visual-Inertial SLAM](../../catalog/resources/geneva-2019-schmidt-ekf-vi-slam.md) - paper - CVPR 2019.
 - [Artificial Intelligence for Robotics (Udacity CS373)](../../catalog/resources/udacity-ai-for-robotics-cs373.md) - course - Free classic course by Sebastian Thrun programming robot localization (histogram filter, Kalman filter, particle filter), search/planning, PID control and GraphSLAM in Python.
 - [Challenges and implemented technologies used in autonomous drone racing](../../catalog/resources/moon-2019-adr-iros-challenges.md) - paper - Organisers and teams review the IROS 2016 and 2017 autonomous drone races: the indoor gate format and the localisation, gate detection and control methods teams used.
+- [Conditional Variational Autoencoders for Probabilistic Pose Regression](../../catalog/resources/zangeneh-2024-cvae-probabilistic-pose-regression.md) - paper - IROS 2024 (per arXiv comment); abstract read.
 - [cuVSLAM: CUDA accelerated visual odometry and mapping](../../catalog/resources/cuvslam-2025.md) - paper - Describes NVIDIA's GPU-accelerated VO/SLAM supporting from one to many cameras with optional IMU, designed for real-time edge deployment.
 - [Cyrill Stachniss YouTube channel (incl. '5 Minutes with Cyrill')](../../catalog/resources/stachniss-youtube-channel.md) - video - Channel hosting Stachniss's full lecture courses plus the '5 Minutes with Cyrill' series of short explainers on single concepts (Kalman filter, factor graphs, ICP, RANSAC, SIFT, occupancy grids).
 - [DROID-SLAM: Deep Visual SLAM for Monocular, Stereo, and RGB-D Cameras](../../catalog/resources/droid-slam-teed-2021.md) - paper - Learned SLAM that iteratively refines poses and depth through a differentiable dense bundle adjustment layer.

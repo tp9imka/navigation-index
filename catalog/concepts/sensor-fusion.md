@@ -31,7 +31,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) - A simulated USV runs a 19.6 km transit over real geography (Lillgrund => Drogden channel => Copenhagen approach) built from OpenStreetMap coastline, Oresund bridge, wind turbines and seamarks, with 75 min of real Danish 
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../../catalog/samples/vio-to-mavlink-bridge.md) - Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold.
 
-## Guides (34)
+## Guides (36)
 
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](../../docs/landscape/blind-flight-teardown.md) - The closest real precedent we have for a navigation hackathon brief: a 48-hour case (26-28 June 2026, Krasnodar, track "Robotics and sensing") where teams had to find position, ground speed and heading of an aircraft fro
 - [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
@@ -39,6 +39,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](../../docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md) - Research date 2026-11-09.
 - [07. Kill test for idea C: does a PL-margin safety filter already exist?](../../docs/research/close-area-nav/07-pl-margin-prior-art.md) - Prior-art scan, 2026-11-09 (loop-13).
 - [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) - Loop-24, 2026-11-09.
+- [10. Kill test for the new headline: does relocalization after VIO loss already exist?](../../docs/research/close-area-nav/10-relocalization-prior-art.md) - Prior-art scan, 2026-11-09 (loop-57), copying the method of 07.
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) - After this chapter you can explain why an IMU drifts, write the predict/update loop of a Kalman filter, choose between a filter and a factor graph, and configure an off-the-shelf estimator to survive a GNSS outage.
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) - After this chapter you can explain how a camera, LiDAR or radar measures motion, what SLAM adds on top of odometry, and which open stack to run on which sensor.
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) - After this chapter you can run PX4 or ArduPilot in simulation, inject your own position source over MAVLink, configure the estimator to switch away from GNSS, and push your vehicle's position and detections onto a TAK co
@@ -48,6 +49,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) - Use this when the brief says A to B, obstacles, indoor, arena, close area, or a marker / pad at B, and you need the baseline, the localization stack or the headline idea.
 - [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) - Fill this on Day 2 when the task is "fly a drone from A to B in a close area, with obstacles".
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) - What a 4-5 person team does from the moment the problem statement drops until H+3, when a walking skeleton should run end to end.
+- [Day-1 dry run: close-area A=>B, one agent, no team (loop-58)](../../docs/day1-dry-run.md) - Next action if you are on Day 1: read the blockers table first, then follow the runbook.
 - [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) - Next action on Day 1: ask questions 1-3 of section 1, then open section 2 for the stack.
 - [Demo script: close-area A to B](../../templates/demo-script-close-area.md) - Live-demo variant of demo-script.md for the close-area task: fly from A to B through obstacles, with a VIO fault injected.
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) - Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (details drop 2026-11-18).
@@ -201,7 +203,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [CoLRIO](../../catalog/repos/pengyu-team__co-lrio.md) - fit: low - Placeholder repo: it only holds a README pointing to zhongshp/Co-LRIO, where the code lives.
 - [Visual-Odometry-VIO- (VO + IMU EKF)](../../catalog/repos/daudalbogachiev925__visual-odometry-vio-.md) - fit: low - Minimal Python project: essential-matrix visual odometry fused with IMU in an EKF to estimate position without GPS.
 
-## Documents, talks, courses, datasets (168)
+## Documents, talks, courses, datasets (170)
 
 - [A micro Lie theory for state estimation in robotics](../../catalog/resources/sola-micro-lie-theory.md) - paper - Tutorial paper giving just enough Lie theory (groups, exponential map, adjoint, Jacobians, uncertainty on manifolds) to write correct estimators for 3D pose; it is the basis of Solà's 'Lie theory for the roboticist' cour
 - [A non-divergent estimation algorithm in the presence of unknown correlations](../../catalog/resources/julier-uhlmann-1997-covariance-intersection.md) - paper - The original covariance intersection (CI) paper (American Control Conference 1997).
@@ -260,6 +262,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry](../../catalog/resources/fast-livo2-zheng-2024.md) - paper - Presents an error-state iterated Kalman filter that sequentially fuses LiDAR and image measurements against a shared voxel map, with exposure and plane-prior handling.
 - [Flow deck v2](../../catalog/resources/bitcraze-flow-deck-v2.md) - doc - Crazyflie deck combining a PMW3901 optical flow sensor and a VL53L1x height sensor, fused in the onboard EKF for indoor position hold without external infrastructure.
 - [From the Desks of ROS Maintainers: A Survey of Modern & Capable Mobile Robotics Algorithms in the Robot Operating System 2](../../catalog/resources/macenski-ros2-algorithms-survey.md) - paper - Survey by ROS maintainers of the mobile robotics algorithms available in ROS 2: localization, SLAM, planning, control and perception packages, with their maturity and use.
+- [Fully On-board Low-Power Localization with Multizone Time-of-Flight Sensors on Nano-UAVs](../../catalog/resources/muller-2023-nano-uav-mcl-multizone-tof.md) - paper - DATE 2023 (venue from the AF-MCL reference list); arXiv full text read.
 - [Galilean State Estimation for Inertial Navigation Systems with Unknown Time Delay](../../catalog/resources/delama-2026-galilean-ins-unknown-time-delay.md) - paper - RSS XXII 2026.
 - [Go with the Flow: Relative Positioning with the Flow deck](../../catalog/resources/bitcraze-flow-deck-limitations-blog-2023.md) - blog - Bitcraze blog post on how the Flow deck v2 estimates position by dead reckoning in the onboard EKF and where it fails.
 - [GPS / Non-GPS Transitions](../../catalog/resources/ardupilot-gps-non-gps-transitions.md) - doc - Explains configuring EKF3 with two source sets (e.g.
@@ -286,6 +289,7 @@ Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integ
 - [MCAP guides and format introduction](../../catalog/resources/mcap-guides.md) - doc - Primary guide to the MCAP container, including timestamped heterogeneous messages, embedded schemas, efficient seeking and language SDKs.
 - [Measurement-Robust Control Barrier Functions: Certainty in Safety with Uncertainty in State](../../catalog/resources/cosner-measurement-robust-cbf-iros2021.md) - paper - Combines measurement-robust CBFs with the backup-set method to keep safety under imperfect state estimates.
 - [Mitigating Overconfidence in Nonlinear Kalman Filters via Covariance Recalibration](../../catalog/resources/jiang-shi-moura-2024-covariance-recalibration-kf.md) - paper - Proposes a covariance recalibration step that counters overconfidence in nonlinear Kalman filters.
+- [Monte Carlo-Based Indoor UAV Localization in Dynamic Environments Using Only Four Onboard Range Sensors](../../catalog/resources/af-mcl-four-range-uav-2026.md) - paper - Preprint (arXiv, Oct 2026), full text read.
 - [Moving Horizon Estimation of Air Data Parameters for UAVs](../../catalog/resources/wenz-johansen-2019-mhe-air-data.md) - paper - IEEE Transactions on Aerospace and Electronic Systems (NTNU Open record; abstract-level read).
 - [MSCEqF: A Multi State Constraint Equivariant Filter for Vision-aided Inertial Navigation](../../catalog/resources/fornasier-2023-msceqf-vision-aided-ins.md) - paper - RA-L 2023 (per arXiv comment).
 - [Navigation with Multi-Constellation LEO Satellite Signals of Opportunity: Starlink, OneWeb, Orbcomm, and Iridium](../../catalog/resources/kassas-multi-constellation-leo.md) - paper - Experimental multi-constellation LEO SoOP navigation combining four commercial constellations, using the simultaneous tracking and navigation (STAN) framework.

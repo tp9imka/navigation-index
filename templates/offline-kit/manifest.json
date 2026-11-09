@@ -2047,11 +2047,22 @@
    "size_complete": false
   },
   {
+   "id": "git:bitcraze/crazyflie-firmware",
+   "type": "git",
+   "tier": "minimal",
+   "url": "https://github.com/bitcraze/crazyflie-firmware",
+   "rank": 6,
+   "license": "GPL-3.0",
+   "source": "docs/integration-cards/bitcraze__crazyflie-firmware.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
    "id": "git:mit-ai-accelerator/magnav.jl",
    "type": "git",
    "tier": "minimal",
    "url": "https://github.com/MIT-AI-Accelerator/MagNav.jl",
-   "rank": 6,
+   "rank": 7,
    "license": "NOASSERTION",
    "source": "docs/integration-cards/mit-ai-accelerator__magnav.jl.md",
    "size": null,
@@ -2062,7 +2073,7 @@
    "type": "git",
    "tier": "minimal",
    "url": "https://github.com/rpng/open_vins",
-   "rank": 7,
+   "rank": 8,
    "license": "GPL-3.0",
    "source": "docs/integration-cards/rpng__open_vins.md",
    "size": null,
@@ -2073,20 +2084,9 @@
    "type": "git",
    "tier": "minimal",
    "url": "https://github.com/hku-mars/FAST_LIO",
-   "rank": 8,
+   "rank": 9,
    "license": "GPL-2.0",
    "source": "docs/integration-cards/hku-mars__fast_lio.md",
-   "size": null,
-   "size_complete": false
-  },
-  {
-   "id": "git:bitcraze/crazyflie-firmware",
-   "type": "git",
-   "tier": "minimal",
-   "url": "https://github.com/bitcraze/crazyflie-firmware",
-   "rank": 9,
-   "license": "GPL-3.0",
-   "source": "docs/integration-cards/bitcraze__crazyflie-firmware.md",
    "size": null,
    "size_complete": false
   },
@@ -2168,24 +2168,24 @@
    "size_complete": false
   },
   {
-   "id": "git:rasterio/rasterio",
-   "type": "git",
-   "tier": "standard",
-   "url": "https://github.com/rasterio/rasterio",
-   "rank": 17,
-   "license": "NOASSERTION",
-   "source": "docs/integration-cards/rasterio__rasterio.md",
-   "size": null,
-   "size_complete": false
-  },
-  {
    "id": "git:ros-navigation/navigation2",
    "type": "git",
    "tier": "standard",
    "url": "https://github.com/ros-navigation/navigation2",
-   "rank": 18,
+   "rank": 17,
    "license": "NOASSERTION",
    "source": "docs/integration-cards/ros-navigation__navigation2.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "git:rasterio/rasterio",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/rasterio/rasterio",
+   "rank": 18,
+   "license": "NOASSERTION",
+   "source": "docs/integration-cards/rasterio__rasterio.md",
    "size": null,
    "size_complete": false
   },

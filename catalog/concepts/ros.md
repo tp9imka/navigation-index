@@ -133,7 +133,7 @@ ROS ecosystem packages for navigation and localization.
 - [ROG-Map](../../catalog/repos/hku-mars__rog-map.md) - fit: low - Robocentric occupancy grid that slides with the vehicle and keeps an inflated map and frontier information, designed for LiDAR-based high-speed planning.
 - [SUPER](../../catalog/repos/hku-mars__super.md) - fit: low - LiDAR-based high-speed MAV planner that plans directly on point clouds.
 
-## Documents, talks, courses, datasets (28)
+## Documents, talks, courses, datasets (29)
 
 - [Aerostack2: A Software Framework for Developing Multi-robot Aerial Systems](../../catalog/resources/aerostack2-paper.md) - paper - Describes the Aerostack2 ROS 2 architecture for aerial robotics: platform abstraction, behaviors, mission specification and multi-robot support.
 - [Autoware documentation](../../catalog/resources/autoware-docs.md) - doc - Official Autoware documentation with architecture, installation, tutorials and design notes for localization, perception and planning components.
@@ -145,6 +145,7 @@ ROS ecosystem packages for navigation and localization.
 - [Isaac ROS Performance Summary](../../catalog/resources/isaac-ros-performance-summary.md) - report - NVIDIA's table of throughput and latency for Isaac ROS nodes and graphs per platform, including Jetson Orin Nano Super 8GB and AGX Orin, with latency measured at a 30 Hz input.
 - [Isaac ROS Visual SLAM documentation](../../catalog/resources/isaac-ros-visual-slam-docs.md) - doc - Docs and quickstarts for NVIDIA's GPU-accelerated stereo visual-inertial odometry and SLAM package for ROS 2 on Jetson, including tutorials with Isaac Sim and RealSense cameras.
 - [MIT 16.485 Visual Navigation for Autonomous Vehicles (VNAV)](../../catalog/resources/mit-vnav-16485.md) - course - MIT graduate course on the math and software of visual navigation: 3D geometry, Lie groups, quadrotor modelling and control, trajectory optimization, feature tracking, two-view geometry, nonlinear optimization, VIO and S
+- [Nav2 AMCL configuration guide](../../catalog/resources/nav2-amcl-configuration-docs.md) - doc - Parameter reference for the ROS 2 AMCL node (Jazzy docs, read).
 - [Nav2 Documentation](../../catalog/resources/nav2-docs.md) - doc - Official Nav2 documentation: concepts, configuration guides for every planner/controller/costmap plugin, tuning guide and tutorials including GPS-based navigation.
 - [Nav2 ROSCon Talks (index)](../../catalog/resources/nav2-roscon-talks.md) - talk - Curated index of ROSCon talks by the Nav2 team and community from 2018 onward, covering features such as Smac planners and the MPPI controller plus tuning and deployment advice.
 - [Nav2 ROSCon Talks index](../../catalog/resources/nav2-roscon-talks-index.md) - video - Index of ROSCon talks by Nav2 developers and the community (Vimeo links), including SLAM Toolbox and large-scale indoor mapping talks.
