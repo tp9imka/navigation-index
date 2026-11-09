@@ -105,3 +105,6 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - merged from feat/innovation-pocs-final: authored files of f730922 only (H1-H3 cards, innovation lab); generated files and the duplicate research lanes left out.
 - decision: both close-area headlines narrowed by their own kill tests; pitch the measured toolkit plus the narrow claim that fits the real brief (docs/research/README.md, end).
 - STOPPED: user asked to wrap up. Open next: 59 flight-repo --reloc, 61 sweep 4, 63 playground relocalization, 64 showcase story page, 28 not-verified reconciliation, the 8 dry-run blockers (docs/day1-dry-run.md), an MCL (AF-MCL-style) arm as the relocalization baseline; needs-human: 09/15/25 (Docker builds).
+
+## 2026-11-09 wave 7 (Ivan: proceed with another round)
+- launched 59 (+ dry-run blocker 2), 61 (sweep 4 + blockers 1, 3, 4, 5, 8), 63 (+ blocker 7), 64, 67. Blocker 6 already fixed in the wrap-up.
