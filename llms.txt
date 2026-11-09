@@ -189,15 +189,15 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [Assured / resilient PNT](catalog/concepts/assured-pnt.md): 316 items - Architectures that keep position, navigation and timing trustworthy under denial and deception.
 - [Timing and time transfer](catalog/concepts/timing.md): 150 items - Clocks, holdover, PTP/NTP, GNSS-disciplined oscillators, chip-scale atomic clocks.
 - [Inertial navigation (INS/IMU)](catalog/concepts/ins.md): 178 items - Strapdown mechanization, IMU error models, calibration, dead reckoning.
-- [Sensor fusion and state estimation](catalog/concepts/sensor-fusion.md): 374 items - Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integration.
+- [Sensor fusion and state estimation](catalog/concepts/sensor-fusion.md): 375 items - Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integration.
 - [GNSS/INS integration](catalog/concepts/gnss-ins.md): 95 items - Loosely, tightly and deeply coupled GNSS/INS.
 - [Sensor calibration](catalog/concepts/calibration.md): 60 items - Camera-IMU, LiDAR-IMU extrinsics, intrinsics, time offset, Allan variance.
 - [Visual(-inertial) odometry](catalog/concepts/vio.md): 207 items - VO/VIO from monocular, stereo, event cameras with IMU.
 - [Visual SLAM](catalog/concepts/visual-slam.md): 103 items - Mapping and localization with loop closure from cameras.
-- [LiDAR odometry and SLAM](catalog/concepts/lidar-slam.md): 117 items - LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
+- [LiDAR odometry and SLAM](catalog/concepts/lidar-slam.md): 118 items - LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [Radar navigation and odometry](catalog/concepts/radar-nav.md): 35 items - Radar odometry, radar SLAM, radar altimeters, Doppler velocity.
 - [Place recognition and loop closure](catalog/concepts/place-recognition.md): 90 items - Global descriptors, image retrieval, LiDAR place recognition.
-- [Feature detection and matching](catalog/concepts/feature-matching.md): 78 items - Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
+- [Feature detection and matching](catalog/concepts/feature-matching.md): 77 items - Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
 - [Visual geo-localization (image-to-map)](catalog/concepts/visual-geolocalization.md): 172 items - Matching UAV/ground imagery to satellite orthophotos or maps for absolute position without GNSS.
 - [Terrain-relative navigation](catalog/concepts/terrain-nav.md): 75 items - TERCOM/TRN/DSMAC-style matching of altimetry or imagery against DEM/terrain databases.
 - [Magnetic anomaly navigation](catalog/concepts/magnetic-nav.md): 47 items - MagNav: matching magnetometer readings to crustal anomaly maps; aircraft compensation.
@@ -209,7 +209,7 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [MAVLink, ground control and C2 links](catalog/concepts/mavlink-gcs.md): 59 items - MAVLink protocol, SDKs, ground control stations, telemetry radios.
 - [Path and motion planning](catalog/concepts/path-planning.md): 213 items - Global/local planners, sampling and search based planning, trajectory optimization.
 - [Mission planning and routing](catalog/concepts/mission-planning.md): 45 items - Route networks, waypoint missions, coverage, terrain-aware and threat-aware routing.
-- [Obstacle avoidance and collision avoidance](catalog/concepts/obstacle-avoidance.md): 148 items - Reactive avoidance, sense-and-avoid, DAA.
+- [Obstacle avoidance and collision avoidance](catalog/concepts/obstacle-avoidance.md): 149 items - Reactive avoidance, sense-and-avoid, DAA.
 - [Swarms and multi-agent navigation](catalog/concepts/multi-agent.md): 91 items - Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 - [GIS, maps and geospatial data](catalog/concepts/gis-mapping.md): 77 items - Map engines, tiles, DEMs, orthophotos, coordinate systems, geodesy.
 - [Geodesy and coordinate frames](catalog/concepts/geodesy.md): 28 items - Datums, projections, ECEF/ENU/NED, MGRS, geoid models.
