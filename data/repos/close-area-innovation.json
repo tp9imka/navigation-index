@@ -1,0 +1,296 @@
+[
+ {
+  "id": "repo:tud-amr/mrca-mav",
+  "kind": "repo",
+  "name": "mrca-mav",
+  "url": "https://github.com/tud-amr/mrca-mav",
+  "summary": "MATLAB code for chance-constrained NMPC collision avoidance of MAVs among moving obstacles and other robots.",
+  "why_it_matters": "Reference implementation of an uncertainty-aware quadrotor MPC, the strongest baseline for clearance inflated by uncertainty.",
+  "concepts": [
+   "concept:path-planning",
+   "concept:obstacle-avoidance"
+  ],
+  "tags": [
+   "chance-constraints",
+   "nmpc",
+   "matlab",
+   "gpl-3.0"
+  ],
+  "language": "MATLAB",
+  "domains": [
+   "air"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "License GPL-3.0 (gh api), last push 2020-06-30. MATLAB, so read for the formulation and re-implement the collision-probability bound in Python.",
+  "related": [
+   {
+    "id": "repo:acados/acados",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:peteflorence/nanomap_ros",
+  "kind": "repo",
+  "name": "NanoMap",
+  "url": "https://github.com/peteflorence/nanomap_ros",
+  "summary": "C++/ROS library that answers obstacle proximity queries from a history of depth frames and noisy relative poses, without building a fused map.",
+  "why_it_matters": "Shows how to make obstacle distance itself uncertainty-aware in the body frame.",
+  "concepts": [
+   "concept:obstacle-avoidance",
+   "concept:ros"
+  ],
+  "tags": [
+   "depth",
+   "pose-uncertainty",
+   "c++",
+   "ros1"
+  ],
+  "language": "C++",
+  "domains": [
+   "air"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "gh api shows license NOASSERTION, last push 2018-06-18. ROS 1. Treat as read-only for a product; borrow the idea, not the code.",
+  "related": []
+ },
+ {
+  "id": "repo:ntnu-arl/rhem_planner",
+  "kind": "repo",
+  "name": "rhem_planner",
+  "url": "https://github.com/ntnu-arl/rhem_planner",
+  "summary": "Uncertainty-aware receding-horizon exploration planner that picks paths minimising expected visual-inertial localization uncertainty.",
+  "why_it_matters": "Example of VIO uncertainty driving route choice on a real aerial robot.",
+  "concepts": [
+   "concept:path-planning",
+   "concept:vio",
+   "concept:ros"
+  ],
+  "tags": [
+   "exploration",
+   "belief",
+   "c++",
+   "ros1"
+  ],
+  "language": "C++",
+  "domains": [
+   "air"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "No license field (gh api), last push 2018-05-30, ROS 1. Read-only. URL redirects from unr-arl/rhem_planner.",
+  "related": []
+ },
+ {
+  "id": "repo:sikang/decompros",
+  "kind": "repo",
+  "name": "DecompROS",
+  "url": "https://github.com/sikang/DecompROS",
+  "summary": "ROS wrapper and visualisation for the DecompUtil convex decomposition.",
+  "why_it_matters": "Quick way to see safe flight corridors in RViz.",
+  "concepts": [
+   "concept:path-planning",
+   "concept:ros"
+  ],
+  "tags": [
+   "safe-flight-corridor",
+   "ros1",
+   "bsd-3"
+  ],
+  "language": "C++",
+  "domains": [
+   "air"
+  ],
+  "maturity": "archived",
+  "hackathon_fit": "low",
+  "hackathon_notes": "License BSD-3-Clause (gh api), last push 2018-09-10, ROS 1. Only needed for visualisation.",
+  "related": [
+   {
+    "id": "repo:sikang/decomputil",
+    "rel": "depends_on"
+   }
+  ]
+ },
+ {
+  "id": "repo:ntnu-arl/px4-cbf",
+  "kind": "repo",
+  "name": "PX4-CBF",
+  "url": "https://github.com/ntnu-arl/PX4-CBF",
+  "summary": "Documentation and setup for a CBF safety filter inside the PX4 velocity loop that minimally changes the acceleration setpoint using onboard range data; the code lives in an NTNU PX4 fork.",
+  "why_it_matters": "The product-shaped close-area safety filter: already in PX4, range-only, tested on VOXL2 Mini.",
+  "concepts": [
+   "concept:obstacle-avoidance",
+   "concept:autopilot"
+  ],
+  "tags": [
+   "control-barrier-function",
+   "px4",
+   "safety-filter",
+   "bsd-3"
+  ],
+  "language": "",
+  "domains": [
+   "air"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "high",
+  "hackathon_notes": "License BSD-3-Clause (gh api), last push 2025-10-16. Needs NTNU's PX4, mavlink and mavros forks. README says the FoV-constrained qpOASES variant crashes on PixRacer Pro; the analytic unconstrained case is the safe one. For 48h, re-implement the composite CBF in Python and cite this as the deploy path.",
+  "related": [
+   {
+    "id": "repo:px4/px4-autopilot",
+    "rel": "extends"
+   },
+   {
+    "id": "repo:ntnu-arl/composite_cbf",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:ntnu-arl/composite_cbf",
+  "kind": "repo",
+  "name": "composite_cbf",
+  "url": "https://github.com/ntnu-arl/composite_cbf",
+  "summary": "ROS implementation of the composite CBF safety filter that combines many range points into one barrier.",
+  "why_it_matters": "Companion-computer version of PX4-CBF; easier to run next to a planner over MAVROS.",
+  "concepts": [
+   "concept:obstacle-avoidance",
+   "concept:ros"
+  ],
+  "tags": [
+   "control-barrier-function",
+   "ros",
+   "safety-filter",
+   "bsd-3"
+  ],
+  "language": "C++",
+  "domains": [
+   "air"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "License BSD-3-Clause (gh api), last push 2026-05-26. ROS-based; read the barrier construction and port the math to Python for the sim.",
+  "related": [
+   {
+    "id": "repo:ntnu-arl/px4-cbf",
+    "rel": "same_org"
+   }
+  ]
+ },
+ {
+  "id": "repo:hocherie/cbf_quadrotor",
+  "kind": "repo",
+  "name": "cbf_quadrotor",
+  "url": "https://github.com/hocherie/cbf_quadrotor",
+  "summary": "Python exponential CBF for a simple 3D quadrotor model with cascaded PID, single-obstacle and two-robot examples; lecture slides from the AirLab 2020 summer school.",
+  "why_it_matters": "Smallest working Python CBF-on-quadrotor to start a 48h safety-filter build.",
+  "concepts": [
+   "concept:obstacle-avoidance",
+   "concept:simulation"
+  ],
+  "tags": [
+   "control-barrier-function",
+   "python",
+   "quadrotor",
+   "mit"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "educational",
+  "hackathon_fit": "high",
+  "hackathon_notes": "License MIT (gh api), last push 2022-12-24. README pins Python 3.7.2 via pyenv; expect to update dependencies. Use for the barrier math; swap in RotorPy or a double integrator for dynamics.",
+  "related": [
+   {
+    "id": "repo:spencerfolk/rotorpy",
+    "rel": "alternative_to"
+   }
+  ]
+ },
+ {
+  "id": "repo:shaoanlu/cbf_qp_safety_filter",
+  "kind": "repo",
+  "name": "CBF_QP_safety_filter",
+  "url": "https://github.com/shaoanlu/CBF_QP_safety_filter",
+  "summary": "Python 2D playground for a CBF-QP safety filter that minimally modifies a user command, with a disturbance-observer variant.",
+  "why_it_matters": "Clear minimal example of the filter pattern, including handling of an unknown disturbance.",
+  "concepts": [
+   "concept:obstacle-avoidance"
+  ],
+  "tags": [
+   "control-barrier-function",
+   "qp",
+   "python",
+   "disturbance-observer"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "educational",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "No license field (gh api), so read-only. Last push 2026-01-09. Good to read in 30 minutes before writing your own.",
+  "related": []
+ },
+ {
+  "id": "repo:dev10110/gatekeeper",
+  "kind": "repo",
+  "name": "gatekeeper",
+  "url": "https://github.com/dev10110/gatekeeper",
+  "summary": "Supplementary materials for the gatekeeper paper: PDF with appendix, videos and notebook code for backup-trajectory safety verification.",
+  "why_it_matters": "Planner-agnostic safety layer with a hover backup; a simple story for judges.",
+  "concepts": [
+   "concept:obstacle-avoidance",
+   "concept:path-planning"
+  ],
+  "tags": [
+   "backup-controller",
+   "safety-verification",
+   "jupyter",
+   "mit"
+  ],
+  "language": "Jupyter Notebook",
+  "domains": [
+   "air"
+  ],
+  "maturity": "research-prototype",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "License MIT (gh api), last push 2023-10-20. Notebooks, not a library; re-implement the commit-longest-safe-prefix loop in the sim.",
+  "related": []
+ },
+ {
+  "id": "repo:learnsyslab/safe-control-gym",
+  "kind": "repo",
+  "name": "safe-control-gym",
+  "url": "https://github.com/learnsyslab/safe-control-gym",
+  "summary": "PyBullet cart-pole and quadrotor environments with CasADi symbolic dynamics and constraint handling, for benchmarking learning-based and safe control.",
+  "why_it_matters": "Python quadrotor environments with constraints built in, a ready test bed for comparing safety filters.",
+  "concepts": [
+   "concept:simulation",
+   "concept:obstacle-avoidance"
+  ],
+  "tags": [
+   "pybullet",
+   "casadi",
+   "safe-control",
+   "python",
+   "mit"
+  ],
+  "language": "Python",
+  "domains": [
+   "air"
+  ],
+  "maturity": "active-research",
+  "hackathon_fit": "medium",
+  "hackathon_notes": "License MIT (gh api), last push 2026-04-29. Includes safety-filter baselines per its description; check Python version pins before day 0. Formerly utiasDSL/safe-control-gym.",
+  "related": [
+   {
+    "id": "repo:learnsyslab/gym-pybullet-drones",
+    "rel": "same_org"
+   }
+  ]
+ }
+]

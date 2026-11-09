@@ -7,6 +7,12 @@ the rows, samples and guides listed here over the rest of the hub.
 
 Snapshot 2026-11-09. The full brief drops on Day 1 (18 Nov 2026); re-route with section 3 then.
 
+**Update 2026-11-09: likely task.** Additional information says the task is probably "move a
+drone from A to B in a close area, potentially with obstacles". Start from
+[research/close-area-nav](research/close-area-nav/README.md): baseline planner, sims, local
+localization, and the proposed headline (an integrity-aware safety filter). The long-range
+GNSS-denied material below stays as the fallback if the full brief says otherwise.
+
 ## 1. The brief as published before Day 1
 
 > Develop an innovative navigation algorithm for an autonomous flight and navigation product.
@@ -40,6 +46,7 @@ product line the brief names is close to them. See
 
 | Words in the full brief | Decoder rows | Open first |
 |---|---|---|
+| "point A to B", "obstacles", "indoor", "arena", "close area", "avoid" | none yet | [close-area-nav synthesis](research/close-area-nav/README.md), [planning and mapping](research/close-area-nav/01-planning-and-mapping.md), [sims and platforms](research/close-area-nav/02-sims-platforms-competitions.md), [localization](research/close-area-nav/03-close-area-localization.md) |
 | "without GPS / GNSS-denied", a distance or route, multirotor | 1, 2 | [gnss-denied-drone-nav cheat sheet](cheatsheets/gnss-denied-drone-nav.md), [e2e-visual-nav-vpair](../samples/e2e-visual-nav-vpair/), [golden-demo](../samples/golden-demo/) |
 | "fixed-wing", "long range", "20-30 km", "endurance" | 27, 15, 25 | [golden-demo-fixedwing](../samples/golden-demo-fixedwing/), [terrain-heightmap-pf](../samples/terrain-heightmap-pf/), [terrain-night-celestial cheat sheet](cheatsheets/terrain-night-celestial.md) |
 | "spoofing", "integrity", "trust", "assured" | 4, 20 | [spoofing-keep-flying cheat sheet](cheatsheets/spoofing-keep-flying.md), [multi-source-fde](../samples/multi-source-fde/), [autopilot-gnss-fault-handling](autopilot-gnss-fault-handling.md) |
@@ -110,7 +117,9 @@ Deeper prior-art round (2026-11-09): [research/innovation-prior-art/](research/i
 checks what already exists for each candidate, the strongest baseline and a falsifier, and
 recommends the POC set.
 
-Suggested shape of an entry if the full brief allows it: differentiator 2.1 as the headline,
+For the close-area A=>B task, use the shape in
+[research/close-area-nav](research/close-area-nav/README.md#recommended-direction) instead.
+For a long-range GNSS-denied brief, the suggested shape is: differentiator 2.1 as the headline,
 the runtime-assurance monitor from path-to-product as the safety story, and G2 (integrity drives
 guidance) as the stretch.
 

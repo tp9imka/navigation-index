@@ -1,0 +1,878 @@
+[
+  {
+    "id": "res:hornung-octomap-auro-2013",
+    "kind": "paper",
+    "title": "OctoMap: an efficient probabilistic 3D mapping framework based on octrees",
+    "url": "https://doi.org/10.1007/s10514-012-9321-0",
+    "authors": [
+      "Armin Hornung",
+      "Kai M. Wurm",
+      "Maren Bennewitz",
+      "Cyrill Stachniss",
+      "Wolfram Burgard"
+    ],
+    "year": 2013,
+    "summary": "Peer-reviewed (Autonomous Robots). Describes the octree occupancy map with log-odds updates, clamping for fast change, and explicit separation of free, occupied and unknown cells. Evaluates memory and update cost on large indoor and outdoor scans.",
+    "key_takeaways": [
+      "Unknown is a separate state, not free",
+      "Clamping log-odds keeps the map responsive to change",
+      "Per-ray insertion cost grows with resolution and range"
+    ],
+    "concepts": [
+      "concept:obstacle-avoidance",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "occupancy-map",
+      "octree",
+      "peer-reviewed"
+    ],
+    "level": "intermediate",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "repo:octomap/octomap",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:oleynikova-voxblox-iros-2017",
+    "kind": "paper",
+    "title": "Voxblox: Incremental 3D Euclidean Signed Distance Fields for On-Board MAV Planning",
+    "url": "https://arxiv.org/abs/1611.03631",
+    "authors": [
+      "Helen Oleynikova",
+      "Zachary Taylor",
+      "Marius Fehr",
+      "Juan Nieto",
+      "Roland Siegwart"
+    ],
+    "year": 2017,
+    "summary": "Preprint on arXiv; published at IROS 2017. Builds an ESDF incrementally from a TSDF so a CPU-only MAV can keep distance and gradient to obstacles up to date for trajectory optimisation.",
+    "key_takeaways": [
+      "ESDF from TSDF is cheaper than from raw occupancy",
+      "Gradient-based planners need distance plus gradient, not just occupied or free",
+      "Runs on CPU at MAV scale"
+    ],
+    "concepts": [
+      "concept:obstacle-avoidance",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "esdf",
+      "tsdf",
+      "mav",
+      "preprint"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ethz-asl/voxblox",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:duberg-ufomap-ral-2020",
+    "kind": "paper",
+    "title": "UFOMap: An Efficient Probabilistic 3D Mapping Framework That Embraces the Unknown",
+    "url": "https://arxiv.org/abs/2003.04749",
+    "authors": [
+      "Daniel Duberg",
+      "Patric Jensfelt"
+    ],
+    "year": 2020,
+    "summary": "Peer-reviewed (IEEE RA-L 2020, doi 10.1109/LRA.2020.3013861); arXiv copy linked. Extends octree mapping with an explicit unknown state and indicators per node so planners can ask whether a region is entirely known-free in one query.",
+    "key_takeaways": [
+      "Explicit unknown enables safe 'known-free only' collision checks",
+      "Faster than OctoMap in the reported benchmarks",
+      "Built for planning and exploration queries"
+    ],
+    "concepts": [
+      "concept:obstacle-avoidance",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "occupancy-map",
+      "unknown-space",
+      "peer-reviewed"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:unknownfreeoccupied/ufomap",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:reijgwart-wavemap-rss-2023",
+    "kind": "paper",
+    "title": "Efficient volumetric mapping of multi-scale environments using wavelet-based compression",
+    "url": "https://www.roboticsproceedings.org/rss19/p065.pdf",
+    "authors": [
+      "Victor Reijgwart",
+      "Cesar Cadena",
+      "Roland Siegwart",
+      "Lionel Ott"
+    ],
+    "year": 2023,
+    "summary": "Peer-reviewed (RSS 2023). Stores occupancy as Haar wavelet coefficients in an octree, giving multi-resolution queries and good handling of thin structures at long range with low memory.",
+    "key_takeaways": [
+      "Multi-resolution map without separate pyramids",
+      "Designed and tested for CPU-only systems",
+      "Thin obstacles survive better than in coarse fixed grids"
+    ],
+    "concepts": [
+      "concept:obstacle-avoidance",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "occupancy-map",
+      "wavelet",
+      "peer-reviewed"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ethz-asl/wavemap",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:millane-nvblox-2023",
+    "kind": "paper",
+    "title": "nvblox: GPU-Accelerated Incremental Signed Distance Field Mapping",
+    "url": "https://arxiv.org/abs/2311.00626",
+    "authors": [
+      "Alexander Millane",
+      "Helen Oleynikova",
+      "Emilie Wirbel",
+      "Remo Steiner",
+      "Vikram Ramasamy",
+      "David Tingdahl",
+      "Roland Siegwart"
+    ],
+    "year": 2023,
+    "summary": "Preprint on arXiv. Moves TSDF and ESDF integration onto the GPU and reports large speedups over CPU voxblox, targeting Jetson-class robots with RGB-D cameras.",
+    "key_takeaways": [
+      "Same TSDF to ESDF pipeline as voxblox, on CUDA",
+      "Needs an NVIDIA GPU: no Apple Silicon path",
+      "Fits a Jetson companion with a depth camera"
+    ],
+    "concepts": [
+      "concept:obstacle-avoidance",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "esdf",
+      "tsdf",
+      "gpu",
+      "cuda",
+      "preprint"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:nvidia-isaac-ros/isaac_ros_nvblox",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:oleynikova-voxblox-iros-2017",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:tordesillas-faster-tro-2022",
+    "kind": "paper",
+    "title": "FASTER: Fast and Safe Trajectory Planner for Navigation in Unknown Environments",
+    "url": "https://arxiv.org/abs/2001.04420",
+    "authors": [
+      "Jesus Tordesillas",
+      "Brett T. Lopez",
+      "Michael Everett",
+      "Jonathan P. How"
+    ],
+    "year": 2022,
+    "summary": "Peer-reviewed (IEEE T-RO, doi 10.1109/TRO.2021.3100142); arXiv copy linked. Plans two trajectories each cycle: a fast one through known and unknown space, and a safe backup that stops inside known free space. Only the prefix up to the backup branch point is committed.",
+    "key_takeaways": [
+      "Safety = always holding a stop trajectory in known free space",
+      "Optimism about unknown space is fine if it is never committed",
+      "Corridors from JPS + convex decomposition keep the problem an MIQP"
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "unknown-space",
+      "backup-trajectory",
+      "peer-reviewed"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mit-acl/faster",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:ren-bubble-planner-2022",
+    "kind": "paper",
+    "title": "Bubble Planner: Planning High-speed Smooth Quadrotor Trajectories using Receding Corridors",
+    "url": "https://arxiv.org/abs/2202.12177",
+    "authors": [
+      "Yunfan Ren",
+      "Fangcheng Zhu",
+      "Wenyi Liu",
+      "Zhepei Wang",
+      "Yi Lin",
+      "Fei Gao",
+      "Fu Zhang"
+    ],
+    "year": 2022,
+    "summary": "Preprint on arXiv (authors list it as IROS 2022, not checked here). Builds a corridor of free-space spheres directly from a point cloud using a KD-tree, then optimises a smooth trajectory through it with a receding horizon. No official code release was found; third-party reproductions exist.",
+    "key_takeaways": [
+      "Sphere corridors skip building a voxel map",
+      "Receding corridor gives high speed with modest compute",
+      "Only third-party code exists, so treat any repo as unvalidated"
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "safe-flight-corridor",
+      "point-cloud",
+      "preprint"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:liu-ipc-ral-2024",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:liu-ipc-ral-2024",
+    "kind": "paper",
+    "title": "Integrated Planning and Control for Quadrotor Navigation in Presence of Suddenly Appearing Objects and Disturbances",
+    "url": "https://doi.org/10.1109/LRA.2023.3311358",
+    "authors": [
+      "Wenyi Liu",
+      "Yunfan Ren",
+      "Fu Zhang"
+    ],
+    "year": 2024,
+    "summary": "Peer-reviewed (IEEE RA-L). A light front end builds a safe flight corridor and a 100 Hz linear MPC on jerk with corridor constraints drives the vehicle, converting the output to body rates and thrust through differential flatness.",
+    "key_takeaways": [
+      "Folding planning into a fast MPC loop reacts to sudden obstacles",
+      "Corridor half-planes become linear MPC constraints",
+      "Also rejects disturbances that break plan-then-track pipelines"
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "mpc",
+      "safe-flight-corridor",
+      "peer-reviewed"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "repo:hku-mars/ipc",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:ren-super-scirobotics-2025",
+    "kind": "paper",
+    "title": "Safety-assured high-speed navigation for MAVs",
+    "url": "https://doi.org/10.1126/scirobotics.ado6187",
+    "authors": [
+      "Yunfan Ren",
+      "Fangcheng Zhu",
+      "Guozheng Lu",
+      "Yixi Cai",
+      "Longji Yin",
+      "Fanze Kong",
+      "Jiarong Lin",
+      "Nan Chen",
+      "Fu Zhang"
+    ],
+    "year": 2025,
+    "summary": "Peer-reviewed (Science Robotics). LiDAR MAV planner that plans on point clouds and keeps an exploratory trajectory plus a backup trajectory in known free space each cycle. Reports far fewer failures than baselines and real flights above 20 m/s through clutter.",
+    "key_takeaways": [
+      "Backup trajectory in known free space is the core safety mechanism",
+      "Planning directly on point clouds avoids map latency",
+      "Hardware: 3D LiDAR, high thrust-to-weight airframe"
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:obstacle-avoidance",
+      "concept:lidar-slam"
+    ],
+    "tags": [
+      "lidar",
+      "high-speed",
+      "unknown-space",
+      "peer-reviewed"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "repo:hku-mars/super",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:tordesillas-faster-tro-2022",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:zhou-swarm-wild-scirobotics-2022",
+    "kind": "paper",
+    "title": "Swarm of micro flying robots in the wild",
+    "url": "https://doi.org/10.1126/scirobotics.abm5954",
+    "authors": [
+      "Xin Zhou",
+      "Xiangyong Wen",
+      "Zhepei Wang",
+      "Yuman Gao",
+      "Haojia Li",
+      "Qianhao Wang",
+      "Tiankai Yang",
+      "Haojian Lu",
+      "Yanjun Cao",
+      "Chao Xu",
+      "Fei Gao"
+    ],
+    "year": 2022,
+    "summary": "Peer-reviewed (Science Robotics). The EGO-Planner-v2 paper: palm-sized drones fly through forest with onboard depth, a gradient-based local planner on a MINCO trajectory representation, and swarm coordination.",
+    "key_takeaways": [
+      "ESDF-free gradient planning works on tiny compute",
+      "Depth camera + VIO is enough for forest-scale clutter",
+      "Same planner scales from one drone to a swarm"
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:obstacle-avoidance",
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "ego-planner-v2",
+      "minco",
+      "swarm",
+      "peer-reviewed"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "repo:zju-fast-lab/ego-planner-v2",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:zhou-ego-planner-paper",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:liu-sfc-quadrotor-ral-2017",
+    "kind": "paper",
+    "title": "Planning Dynamically Feasible Trajectories for Quadrotors Using Safe Flight Corridors in 3-D Complex Environments",
+    "url": "https://doi.org/10.1109/LRA.2017.2663526",
+    "authors": [
+      "Sikang Liu",
+      "Michael Watterson",
+      "Kartik Mohta",
+      "Ke Sun",
+      "Subhrajit Bhattacharya",
+      "Camillo J. Taylor",
+      "Vijay Kumar"
+    ],
+    "year": 2017,
+    "summary": "Peer-reviewed (IEEE RA-L). Defines the safe flight corridor pipeline: 3D JPS path, convex polytopes grown around it, then a QP for a polynomial trajectory constrained to stay in the polytopes.",
+    "key_takeaways": [
+      "Grid search => convex corridor => QP is a solid, explainable pipeline",
+      "Corridors make collision constraints linear",
+      "3D JPS keeps the front end fast"
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "safe-flight-corridor",
+      "jps",
+      "qp",
+      "peer-reviewed"
+    ],
+    "level": "intermediate",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "repo:kumarrobotics/jps3d",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:sikang/decomputil",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:harabor-grastien-jps-aaai-2011",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:liu-mpl-lqmt-iros-2017",
+    "kind": "paper",
+    "title": "Search-based motion planning for quadrotors using linear quadratic minimum time control",
+    "url": "https://doi.org/10.1109/IROS.2017.8206119",
+    "authors": [
+      "Sikang Liu",
+      "Nikolay Atanasov",
+      "Kartik Mohta",
+      "Vijay Kumar"
+    ],
+    "year": 2017,
+    "summary": "Peer-reviewed (IROS 2017). Kinodynamic graph search over short motion primitives with a cost that trades time against control effort, producing dynamically feasible trajectories directly.",
+    "key_takeaways": [
+      "Search over primitives instead of grid cells gives feasible output",
+      "Cost to go is a minimum-time plus effort heuristic",
+      "Slower than geometric search in high dimensions"
+    ],
+    "concepts": [
+      "concept:path-planning"
+    ],
+    "tags": [
+      "kinodynamic",
+      "motion-primitives",
+      "peer-reviewed"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "repo:sikang/mpl_ros",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:harabor-grastien-jps-aaai-2011",
+    "kind": "paper",
+    "title": "Online Graph Pruning for Pathfinding On Grid Maps",
+    "url": "https://doi.org/10.1609/aaai.v25i1.7994",
+    "authors": [
+      "Daniel Harabor",
+      "Alban Grastien"
+    ],
+    "year": 2011,
+    "summary": "Peer-reviewed (AAAI 2011). Introduces Jump Point Search: on uniform-cost grids, symmetric paths are pruned so A* expands only jump points, keeping optimality with far fewer expansions.",
+    "key_takeaways": [
+      "Same optimal path as A* on uniform grids",
+      "Large speedups on open maps, smaller in cluttered ones",
+      "Needs uniform cost; clearance-weighted grids break the assumption"
+    ],
+    "concepts": [
+      "concept:path-planning"
+    ],
+    "tags": [
+      "jps",
+      "a-star",
+      "grid-search",
+      "peer-reviewed"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:kumarrobotics/jps3d",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:karaman-frazzoli-rrtstar-ijrr-2011",
+    "kind": "paper",
+    "title": "Sampling-based Algorithms for Optimal Motion Planning",
+    "url": "https://arxiv.org/abs/1105.1186",
+    "authors": [
+      "Sertac Karaman",
+      "Emilio Frazzoli"
+    ],
+    "year": 2011,
+    "summary": "Peer-reviewed (IJRR 2011); arXiv copy linked. Introduces RRT* and PRM*, proving asymptotic optimality and showing that plain RRT converges to a suboptimal path.",
+    "key_takeaways": [
+      "RRT* rewires to converge toward the optimal path",
+      "Plain RRT paths are feasible but jagged and long",
+      "Narrow passages remain hard for any uniform sampler"
+    ],
+    "concepts": [
+      "concept:path-planning"
+    ],
+    "tags": [
+      "rrt-star",
+      "prm-star",
+      "sampling-based",
+      "peer-reviewed"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ompl/ompl",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:kavraki-prm-1996",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:kavraki-prm-1996",
+    "kind": "paper",
+    "title": "Probabilistic roadmaps for path planning in high-dimensional configuration spaces",
+    "url": "https://doi.org/10.1109/70.508439",
+    "authors": [
+      "Lydia E. Kavraki",
+      "Petr Svestka",
+      "Jean-Claude Latombe",
+      "Mark H. Overmars"
+    ],
+    "year": 1996,
+    "summary": "Peer-reviewed (IEEE Transactions on Robotics and Automation). Defines the probabilistic roadmap: sample free configurations, connect neighbours with a local planner, then answer queries with graph search.",
+    "key_takeaways": [
+      "Build once, query many times: suits a static known close area",
+      "Coverage of narrow passages depends on sampling density",
+      "Local planner choice decides roadmap quality"
+    ],
+    "concepts": [
+      "concept:path-planning"
+    ],
+    "tags": [
+      "prm",
+      "sampling-based",
+      "peer-reviewed"
+    ],
+    "level": "intro",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "repo:ompl/ompl",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:dolgov-hybrid-astar-ijrr-2010",
+    "kind": "paper",
+    "title": "Path Planning for Autonomous Vehicles in Unknown Semi-structured Environments",
+    "url": "https://doi.org/10.1177/0278364909359210",
+    "authors": [
+      "Dmitri Dolgov",
+      "Sebastian Thrun",
+      "Michael Montemerlo",
+      "James Diebel"
+    ],
+    "year": 2010,
+    "summary": "Peer-reviewed (IJRR). The Hybrid A* paper from the DARPA Urban Challenge: A* over a discretised grid where each node keeps a continuous state reached by kinematically feasible motions, followed by numerical smoothing.",
+    "key_takeaways": [
+      "Grid for pruning, continuous state for feasibility",
+      "Built for curvature-limited ground vehicles",
+      "For multirotors, kinodynamic search with motion primitives is the analogue"
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "hybrid-a-star",
+      "kinodynamic",
+      "peer-reviewed"
+    ],
+    "level": "intermediate",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "res:liu-mpl-lqmt-iros-2017",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:khatib-potential-fields-ijrr-1986",
+    "kind": "paper",
+    "title": "Real-Time Obstacle Avoidance for Manipulators and Mobile Robots",
+    "url": "https://doi.org/10.1177/027836498600500106",
+    "authors": [
+      "Oussama Khatib"
+    ],
+    "year": 1986,
+    "summary": "Peer-reviewed (IJRR). The artificial potential field method: an attractive field toward the goal and repulsive fields around obstacles, with the robot following the negative gradient.",
+    "key_takeaways": [
+      "Cheap, reactive, a few lines of code",
+      "Local minima and oscillation in narrow gaps are built in",
+      "Good as a baseline or a last-resort safety layer, not a planner"
+    ],
+    "concepts": [
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "apf",
+      "reactive",
+      "baseline",
+      "peer-reviewed"
+    ],
+    "level": "intro",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "res:koren-borenstein-apf-limits-icra-1991",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:koren-borenstein-apf-limits-icra-1991",
+    "kind": "paper",
+    "title": "Potential field methods and their inherent limitations for mobile robot navigation",
+    "url": "https://doi.org/10.1109/ROBOT.1991.131810",
+    "authors": [
+      "Yoram Koren",
+      "Johann Borenstein"
+    ],
+    "year": 1991,
+    "summary": "Peer-reviewed (ICRA 1991). Lists the structural failures of potential fields: trap situations from local minima, no passage between closely spaced obstacles, oscillation near obstacles and in narrow passages.",
+    "key_takeaways": [
+      "Local minima traps are inherent, not a tuning problem",
+      "Closely spaced obstacles can block a gap the robot fits through",
+      "Useful citation for why a global planner is needed"
+    ],
+    "concepts": [
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "apf",
+      "local-minima",
+      "failure-modes",
+      "peer-reviewed"
+    ],
+    "level": "intro",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "res:khatib-potential-fields-ijrr-1986",
+        "rel": "evaluates"
+      },
+      {
+        "id": "res:ulrich-borenstein-vfhplus-icra-1998",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:ulrich-borenstein-vfhplus-icra-1998",
+    "kind": "paper",
+    "title": "VFH+: reliable obstacle avoidance for fast mobile robots",
+    "url": "https://doi.org/10.1109/ROBOT.1998.677362",
+    "authors": [
+      "Iwan Ulrich",
+      "Johann Borenstein"
+    ],
+    "year": 1998,
+    "summary": "Peer-reviewed (ICRA 1998). Builds a polar histogram of obstacle density around the robot, enlarges obstacles by the robot radius and picks a free direction close to the goal heading, with hysteresis to stop flicker.",
+    "key_takeaways": [
+      "Sector histogram from range data, no map needed",
+      "Robot-size enlargement and hysteresis fix the original VFH",
+      "Still a local method: dead ends need a global planner"
+    ],
+    "concepts": [
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "vfh",
+      "reactive",
+      "baseline",
+      "peer-reviewed"
+    ],
+    "level": "intro",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "res:px4-collision-prevention-docs",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:px4-collision-prevention-docs",
+    "kind": "doc",
+    "title": "Collision Prevention (PX4 User Guide)",
+    "url": "https://docs.px4.io/main/en/computer_vision/collision_prevention.html",
+    "authors": [
+      "PX4 / Dronecode"
+    ],
+    "year": 2026,
+    "summary": "Docs. PX4's built-in collision prevention for multicopters in acceleration-based Position mode. It limits velocity toward obstacles seen by range sensors or OBSTACLE_DISTANCE MAVLink messages and can bend the commanded direction by up to CP_GUIDE_ANG. It does not plan a route.",
+    "key_takeaways": [
+      "Position mode only, not Mission or Offboard",
+      "Directions without sensor data are blocked by default (CP_GO_NO_DATA = 0)",
+      "Missing range data for 0.5 s zeroes xy motion, 5 s triggers Hold"
+    ],
+    "concepts": [
+      "concept:obstacle-avoidance",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "px4",
+      "collision-prevention",
+      "obstacle-distance",
+      "docs"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:px4-path-planning-interface-removed",
+    "kind": "doc",
+    "title": "Path Planning Interface (PX4 User Guide, marked removed)",
+    "url": "https://docs.px4.io/main/en/computer_vision/path_planning_interface",
+    "authors": [
+      "PX4 / Dronecode"
+    ],
+    "year": 2026,
+    "summary": "Docs. The page for the old companion-computer obstacle avoidance interface (PX4-Avoidance, COM_OBS_AVOID). The main branch marks it removed; the v1.16 page says it is unsupported and should not be used in any version.",
+    "key_takeaways": [
+      "PX4 no longer ships an onboard path-planning hook for avoidance",
+      "Companion planners now drive PX4 through Offboard or ROS 2 external modes",
+      "PX4-Avoidance repo is archived"
+    ],
+    "concepts": [
+      "concept:obstacle-avoidance",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "px4",
+      "obstacle-avoidance",
+      "deprecated",
+      "docs"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-avoidance",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:ardupilot-oa-bendyruler-docs",
+    "kind": "doc",
+    "title": "Object Avoidance with BendyRuler (ArduPilot Copter docs)",
+    "url": "https://ardupilot.org/copter/docs/common-oa-bendyruler.html",
+    "authors": [
+      "ArduPilot Dev Team"
+    ],
+    "year": 2026,
+    "summary": "Docs. ArduPilot's onboard local avoidance for Copter and Rover in Auto, Guided and RTL. It probes candidate bearings up to OA_BR_LOOKAHEAD ahead against an object database fed by proximity sensors and fences, keeping OA_MARGIN_MAX clearance. Type 1 is horizontal only, type 2 also searches up and down.",
+    "key_takeaways": [
+      "Works in Guided, so a companion can send goals and let BendyRuler dodge",
+      "Object database ages out obstacles after OA_DB_EXPIRE",
+      "Local method: no guarantee in dead ends"
+    ],
+    "concepts": [
+      "concept:obstacle-avoidance",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "ardupilot",
+      "bendyruler",
+      "proximity",
+      "docs"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "explains"
+      },
+      {
+        "id": "res:ardupilot-oa-dijkstras-docs",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:ardupilot-oa-dijkstras-docs",
+    "kind": "doc",
+    "title": "Object Avoidance with Dijkstra's (ArduPilot Copter docs)",
+    "url": "https://ardupilot.org/copter/docs/common-oa-dijkstras.html",
+    "authors": [
+      "ArduPilot Dev Team"
+    ],
+    "year": 2026,
+    "summary": "Docs. Onboard global path planning around polygon fences and stay-out zones in Auto, Guided (with GUID_OPTIONS bit 6) and RTL. It does not use proximity-sensor obstacles; a separate mode combines it with BendyRuler for that.",
+    "key_takeaways": [
+      "Known static obstacles can be entered as stay-out polygons and avoided with zero companion code",
+      "No sensed-obstacle avoidance on its own",
+      "Spline waypoints are not supported"
+    ],
+    "concepts": [
+      "concept:obstacle-avoidance",
+      "concept:path-planning",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "ardupilot",
+      "dijkstra",
+      "fence",
+      "docs"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "explains"
+      },
+      {
+        "id": "res:ardupilot-oa-bendyruler-docs",
+        "rel": "part_of"
+      }
+    ]
+  }
+]

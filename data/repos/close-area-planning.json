@@ -1,0 +1,294 @@
+[
+  {
+    "id": "repo:octomap/octomap",
+    "kind": "repo",
+    "name": "OctoMap",
+    "url": "https://github.com/OctoMap/octomap",
+    "summary": "Probabilistic 3D occupancy mapping on an octree, with explicit free, occupied and unknown cells and log-odds updates from ray casting. The repo also ships the octovis viewer and dynamicEDT3D, an incremental Euclidean distance map built on top of an octree.",
+    "why_it_matters": "The default occupancy map in drone planning papers and the format most planners can ingest. Plain CMake C++ with no ROS dependency, and Python wheels exist for Apple Silicon, so it runs on a laptop CPU.",
+    "concepts": ["concept:obstacle-avoidance", "concept:path-planning", "concept:ros"],
+    "tags": ["occupancy-map", "octree", "mapping", "esdf", "c++", "bsd-3-clause"],
+    "language": "C++",
+    "domains": ["air", "ground"],
+    "maturity": "production",
+    "hackathon_fit": "high",
+    "hackathon_notes": "License: the octomap library is New BSD (octomap/LICENSE.txt); octovis and dynamicEDT3D have their own license files, not checked here. Last push 2026-09-26 (gh api). ROS 2 server lives in OctoMap/octomap_mapping (ros2 branch). For a pure-Python build use the octomap-python wheel (macOS arm64 wheels on PyPI). Octree ray insertion is slow per point at fine resolution; for a small close area a dense numpy grid is simpler and faster.",
+    "related": [
+      {"id": "repo:wkentaro/octomap-python", "rel": "integrates_with"},
+      {"id": "repo:unknownfreeoccupied/ufomap", "rel": "alternative_to"},
+      {"id": "repo:ethz-asl/voxblox", "rel": "alternative_to"},
+      {"id": "repo:nvidia-isaac-ros/isaac_ros_nvblox", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:wkentaro/octomap-python",
+    "kind": "repo",
+    "name": "octomap-python",
+    "url": "https://github.com/wkentaro/octomap-python",
+    "summary": "Cython bindings for OctoMap, published on PyPI as octomap-python. Lets Python code insert point clouds, query occupancy and cast rays against an octree.",
+    "why_it_matters": "The shortest path from a Python sim to a real occupancy octree without ROS or a C++ build. Prebuilt wheels cover macOS arm64.",
+    "concepts": ["concept:obstacle-avoidance", "concept:simulation"],
+    "tags": ["occupancy-map", "octree", "python-bindings", "pip", "bsd-3-clause"],
+    "language": "Python",
+    "domains": ["air", "ground"],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "License BSD-3-Clause, last push 2026-10-31 (gh api). PyPI 1.10.0.0 lists cp310 and cp311 macosx_11_0_arm64 wheels (checked on PyPI JSON, not installed). Use it when the team wants unknown-space semantics in a Python prototype; otherwise a numpy grid plus scipy distance transform is fewer moving parts.",
+    "related": [
+      {"id": "repo:octomap/octomap", "rel": "depends_on"}
+    ]
+  },
+  {
+    "id": "repo:ethz-asl/voxblox",
+    "kind": "repo",
+    "name": "voxblox",
+    "url": "https://github.com/ethz-asl/voxblox",
+    "summary": "CPU voxel mapping library that fuses depth into a truncated signed distance field (TSDF) and grows a Euclidean signed distance field (ESDF) from it incrementally. Ships ROS 1 nodes, meshing and planning-oriented queries.",
+    "why_it_matters": "The CPU reference for ESDF maps used by gradient-based drone planners. The ESDF gives distance and gradient to the nearest obstacle at any point, which is what clearance costs need.",
+    "concepts": ["concept:obstacle-avoidance", "concept:path-planning", "concept:ros"],
+    "tags": ["tsdf", "esdf", "mapping", "ros1", "c++", "bsd-3-clause"],
+    "language": "C++",
+    "domains": ["air"],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "License BSD-3-Clause, last push 2024-07-01 (gh api), no ROS 2 branch on the main repo. catkin build in a Noetic Docker image is the realistic route; do not try a native macOS build in 48h. CPU only, no CUDA. Use it only if the platform already runs ROS 1; nvblox replaces it on a Jetson.",
+    "related": [
+      {"id": "repo:nvidia-isaac-ros/isaac_ros_nvblox", "rel": "alternative_to"},
+      {"id": "repo:ethz-asl/wavemap", "rel": "alternative_to"},
+      {"id": "repo:octomap/octomap", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:unknownfreeoccupied/ufomap",
+    "kind": "repo",
+    "name": "UFOMap",
+    "url": "https://github.com/UnknownFreeOccupied/ufomap",
+    "summary": "Octree occupancy mapping that represents unknown space explicitly and indexes free, occupied and unknown nodes so queries such as 'is this box all known free' are cheap. Has ROS 1 wrappers and a newer v2 branch.",
+    "why_it_matters": "The 'unknown is not free' failure mode is the main safety bug in close-area planners. UFOMap makes the unknown check a first-class query instead of an afterthought.",
+    "concepts": ["concept:obstacle-avoidance", "concept:path-planning", "concept:ros"],
+    "tags": ["occupancy-map", "octree", "unknown-space", "c++", "bsd-2-clause"],
+    "language": "C++",
+    "domains": ["air", "ground"],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "License BSD-2-Clause, last push 2025-06-27 (gh api). Several devel branches (devel, v2, dufomap); pick master for stability. C++17 library, ROS 1 wrapper in a separate repo per the wiki. For 48h, copy the idea (three-state grid, collision checks reject unknown) into a numpy grid rather than integrating the library.",
+    "related": [
+      {"id": "repo:octomap/octomap", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:ethz-asl/wavemap",
+    "kind": "repo",
+    "name": "wavemap",
+    "url": "https://github.com/ethz-asl/wavemap",
+    "summary": "Multi-resolution occupancy mapping that stores the map as wavelet-compressed octree coefficients. Offers C++ and Python APIs plus a ROS 1 interface and is tested on Intel, AMD and ARM CPUs.",
+    "why_it_matters": "A CPU-only map with a Python API and an ARM-tested build, which suits a companion computer without a GPU. Handles thin obstacles and large ranges better than a fixed-resolution grid per its RSS 2023 paper.",
+    "concepts": ["concept:obstacle-avoidance", "concept:path-planning", "concept:ros"],
+    "tags": ["occupancy-map", "multi-resolution", "wavelet", "python-api", "c++", "bsd-3-clause"],
+    "language": "C++",
+    "domains": ["air", "ground"],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "License BSD-3-Clause, last push 2024-12-30 (gh api). ROS 2 work sits on an unmerged feature/ros2 branch. The Python package builds from source (no pywavemap on PyPI as of 2026-11-09). Docker files are provided. Not built here.",
+    "related": [
+      {"id": "repo:octomap/octomap", "rel": "alternative_to"},
+      {"id": "repo:ethz-asl/voxblox", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:facontidavide/bonxai",
+    "kind": "repo",
+    "name": "Bonxai",
+    "url": "https://github.com/facontidavide/Bonxai",
+    "summary": "Header-only C++ sparse hierarchical voxel grid inspired by OpenVDB, with an occupancy-map layer. Aimed at fast insertion and lookup with a small memory footprint.",
+    "why_it_matters": "A maintained, dependency-light alternative to OctoMap for a C++ companion process. Useful when the team wants an occupancy grid in a product-style C++ node without ROS 1.",
+    "concepts": ["concept:obstacle-avoidance", "concept:path-planning"],
+    "tags": ["voxel-grid", "occupancy-map", "header-only", "c++", "mpl-2.0"],
+    "language": "C++",
+    "domains": ["air", "ground"],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "License MPL-2.0 (file-level copyleft: modified Bonxai files must stay open, linking code does not). Last push 2026-09-29 (gh api). PyPI has bonxai 0.1.1 but no macOS arm64 wheel listed. Pick it only if the build is C++ from the start.",
+    "related": [
+      {"id": "repo:octomap/octomap", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:hku-mars/rog-map",
+    "kind": "repo",
+    "name": "ROG-Map",
+    "url": "https://github.com/hku-mars/ROG-Map",
+    "summary": "Robocentric occupancy grid that slides with the vehicle and keeps an inflated map and frontier information, designed for LiDAR-based high-speed planning. It is the map module inside the SUPER planner.",
+    "why_it_matters": "Shows the map design that LiDAR drone planners use in practice: a bounded local window, incremental inflation and explicit unknown handling, instead of a global octree.",
+    "concepts": ["concept:obstacle-avoidance", "concept:path-planning", "concept:ros", "concept:lidar-slam"],
+    "tags": ["occupancy-grid", "robocentric", "lidar", "ros1", "c++", "gpl-3.0"],
+    "language": "C++",
+    "domains": ["air"],
+    "maturity": "active-research",
+    "hackathon_fit": "low",
+    "hackathon_notes": "License GPL-3.0, last push 2025-03-13 (gh api). ROS 1 only on main. Paper is an arXiv preprint (2302.14819). Read for the sliding-window idea; a 48h team can reproduce it as a numpy ring buffer.",
+    "related": [
+      {"id": "repo:hku-mars/super", "rel": "integrates_with"},
+      {"id": "repo:hku-mars/fast_lio", "rel": "integrates_with"}
+    ]
+  },
+  {
+    "id": "repo:mit-acl/faster",
+    "kind": "repo",
+    "name": "FASTER",
+    "url": "https://github.com/mit-acl/faster",
+    "summary": "Receding-horizon multirotor planner for unknown environments that optimises a fast trajectory through known-free and unknown space while always keeping a safe backup trajectory inside known-free space. Corridors come from JPS plus convex decomposition; the optimisation is a mixed-integer QP.",
+    "why_it_matters": "The clearest published answer to 'unknown space treated as free': plan fast through unknown space but commit only to a prefix that has a safe stop in known free space.",
+    "concepts": ["concept:path-planning", "concept:obstacle-avoidance", "concept:ros"],
+    "tags": ["receding-horizon", "safe-corridor", "miqp", "gurobi", "ros1", "c++", "bsd-3-clause"],
+    "language": "C++",
+    "domains": ["air", "ground"],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "License BSD-3-Clause, last push 2025-03-10 (gh api). Tested on ROS Kinetic and Melodic only. Needs Gurobi (commercial solver, academic license), which is a hard blocker for a 48h team without one. Borrow the 'safe backup trajectory' rule, not the code.",
+    "related": [
+      {"id": "repo:kumarrobotics/jps3d", "rel": "depends_on"},
+      {"id": "repo:sikang/decomputil", "rel": "depends_on"},
+      {"id": "repo:mit-acl/mader", "rel": "same_org"},
+      {"id": "repo:hku-mars/super", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:kumarrobotics/jps3d",
+    "kind": "repo",
+    "name": "jps3d (MRSL Jump Point Search)",
+    "url": "https://github.com/KumarRobotics/jps3d",
+    "summary": "C++ Jump Point Search on 2D and 3D occupancy grids, plus a distance-map planner that adds a potential-field style clearance cost around obstacles. Builds with plain CMake or catkin.",
+    "why_it_matters": "JPS returns the same optimal grid path as A* on uniform grids while expanding far fewer nodes, which matters in 3D. The front end of several corridor-based drone planners (FASTER, Liu et al. RA-L 2017).",
+    "concepts": ["concept:path-planning"],
+    "tags": ["jps", "a-star", "grid-search", "3d", "c++", "bsd-3-clause"],
+    "language": "C++",
+    "domains": ["air", "ground"],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "License BSD-3-Clause, last push 2021-02-18 (gh api): unmaintained but small. Needs Eigen, yaml-cpp, Boost; ROS not required. In a Python build write A* with an octile heuristic instead; JPS is worth it only on large 3D grids.",
+    "related": [
+      {"id": "repo:sikang/decomputil", "rel": "integrates_with"},
+      {"id": "repo:sikang/mpl_ros", "rel": "same_org"}
+    ]
+  },
+  {
+    "id": "repo:sikang/decomputil",
+    "kind": "repo",
+    "name": "DecompUtil",
+    "url": "https://github.com/sikang/DecompUtil",
+    "summary": "Header-only C++ library that grows convex polytopes (safe flight corridors) around a piecewise-linear path using ellipsoid inflation against a point cloud.",
+    "why_it_matters": "The standard way to turn a grid path into convex free-space constraints that a QP or MPC can use. Corridors make the collision constraint linear, so the optimiser stays a QP.",
+    "concepts": ["concept:path-planning", "concept:obstacle-avoidance"],
+    "tags": ["safe-flight-corridor", "convex-decomposition", "header-only", "c++", "bsd-3-clause"],
+    "language": "C++",
+    "domains": ["air", "ground"],
+    "maturity": "archived",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "License BSD-3-Clause, last push 2018-09-10 (gh api). Header-only with Eigen, so it builds anywhere. A Python team can get a usable corridor faster with axis-aligned box inflation along the A* path.",
+    "related": [
+      {"id": "repo:kumarrobotics/jps3d", "rel": "integrates_with"},
+      {"id": "repo:mit-acl/faster", "rel": "integrates_with"},
+      {"id": "repo:zju-fast-lab/gcopter", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:sikang/mpl_ros",
+    "kind": "repo",
+    "name": "mpl_ros (motion primitive library)",
+    "url": "https://github.com/sikang/mpl_ros",
+    "summary": "ROS wrapper and examples for search-based kinodynamic planning: graph search over short constant-jerk or constant-acceleration motion primitives with a minimum-time-plus-effort cost.",
+    "why_it_matters": "Reference implementation of kinodynamic search for quadrotors, the same idea as Fast-Planner's front end. The output is already dynamically feasible, so no separate smoothing pass is needed.",
+    "concepts": ["concept:path-planning", "concept:ros"],
+    "tags": ["kinodynamic", "motion-primitives", "lqmt", "ros1", "c++", "apache-2.0"],
+    "language": "C++",
+    "domains": ["air"],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "License Apache-2.0, last push 2025-04-17 (gh api). ROS 1 catkin build. Kinodynamic search in Python is slow in 3D; prefer geometric A* + min-snap unless the team needs aggressive flight.",
+    "related": [
+      {"id": "repo:kumarrobotics/jps3d", "rel": "same_org"},
+      {"id": "repo:hkust-aerial-robotics/fast-planner", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:hku-mars/ipc",
+    "kind": "repo",
+    "name": "IPC (Integrated Planning and Control)",
+    "url": "https://github.com/hku-mars/IPC",
+    "summary": "Quadrotor navigation that merges planning and control: a light A*-style front end builds a safe flight corridor and a 100 Hz linear MPC tracks toward the goal with the corridor as hard constraints, outputting body rates and thrust. Ships a simulator.",
+    "why_it_matters": "The working example of 'MPC with obstacle constraints' for multirotors. Reacting inside the controller loop handles suddenly appearing obstacles and disturbances better than replanning at a few Hz.",
+    "concepts": ["concept:path-planning", "concept:obstacle-avoidance", "concept:ros"],
+    "tags": ["mpc", "safe-flight-corridor", "lidar", "ros1", "c++", "no-license"],
+    "language": "C++",
+    "domains": ["air"],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "No license file in the repo (gh api shows none): treat as read-only. Last push 2024-07-19. Ubuntu 18.04-20.04 with ROS 1. Re-implement the idea (corridor half-planes as linear MPC constraints) in OSQP or acados if the team wants an MPC story.",
+    "related": [
+      {"id": "repo:hku-mars/super", "rel": "same_org"},
+      {"id": "repo:sikang/decomputil", "rel": "alternative_to"},
+      {"id": "repo:acados/acados", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:hku-mars/super",
+    "kind": "repo",
+    "name": "SUPER",
+    "url": "https://github.com/hku-mars/SUPER",
+    "summary": "LiDAR-based high-speed MAV planner that plans directly on point clouds. Each cycle produces an exploratory trajectory through known and unknown space plus a backup trajectory confined to known free space, so the vehicle always has a safe fallback. Includes ROG-Map and a simulator.",
+    "why_it_matters": "The 2025 state of the art for safe flight through clutter with explicit handling of unknown space (Science Robotics). Good to cite as the target architecture.",
+    "concepts": ["concept:path-planning", "concept:obstacle-avoidance", "concept:ros", "concept:lidar-slam"],
+    "tags": ["lidar", "backup-trajectory", "unknown-space", "ros1", "ros2-preview", "c++", "no-license"],
+    "language": "C++",
+    "domains": ["air"],
+    "maturity": "active-research",
+    "hackathon_fit": "low",
+    "hackathon_notes": "No license file in the repo (gh api shows none): read-only. Last push 2025-06-04. ROS 1 Noetic is tier 1; ROS 2 Foxy preview is flagged unstable in the README. Needs a 3D LiDAR + LIO for real flight. Cite it; do not build it in 48h.",
+    "related": [
+      {"id": "repo:hku-mars/rog-map", "rel": "depends_on"},
+      {"id": "repo:hku-mars/fast_lio", "rel": "integrates_with"},
+      {"id": "repo:mit-acl/faster", "rel": "alternative_to"},
+      {"id": "repo:hku-mars/ipc", "rel": "same_org"}
+    ]
+  },
+  {
+    "id": "repo:ai-winter/python_motion_planning",
+    "kind": "repo",
+    "name": "python_motion_planning",
+    "url": "https://github.com/ai-winter/python_motion_planning",
+    "summary": "Python package of planning and tracking algorithms for mobile robots: Dijkstra, A*, JPS, D* Lite, Theta*, RRT family, Voronoi, plus local planners and trackers such as DWA, APF, LQR and MPC. Published on PyPI.",
+    "why_it_matters": "Gives readable reference versions of most global and local baselines in one place, useful for a side-by-side baseline table in the pitch.",
+    "concepts": ["concept:path-planning", "concept:obstacle-avoidance", "concept:simulation"],
+    "tags": ["a-star", "jps", "rrt-star", "dwa", "apf", "python", "gpl-3.0"],
+    "language": "Python",
+    "domains": ["ground", "air"],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "License GPL-3.0 (copyleft: fine for a demo, not for EDGE product code). Last push 2026-09-15 (gh api); PyPI version 2.1. Mostly 2D AGV examples; 3D support not checked. Read and re-implement rather than import into product code.",
+    "related": [
+      {"id": "repo:zhm-real/pathplanning", "rel": "alternative_to"},
+      {"id": "repo:atsushisakai/pythonrobotics", "rel": "alternative_to"}
+    ]
+  },
+  {
+    "id": "repo:zhm-real/pathplanning",
+    "kind": "repo",
+    "name": "PathPlanning (zhm-real)",
+    "url": "https://github.com/zhm-real/PathPlanning",
+    "summary": "Collection of search-based (A*, LPA*, D* Lite, ARA* and others) and sampling-based (RRT, RRT*, Informed RRT*, BIT*, FMT*) planners in Python with animations, in both 2D and 3D folders.",
+    "why_it_matters": "MIT-licensed Python with 3D search and 3D RRT folders, so code can be lifted into a hackathon build without a license problem.",
+    "concepts": ["concept:path-planning"],
+    "tags": ["a-star", "rrt-star", "informed-rrt", "3d", "python", "mit"],
+    "language": "Python",
+    "domains": ["ground", "air"],
+    "maturity": "educational",
+    "hackathon_fit": "high",
+    "hackathon_notes": "License MIT, last push 2023-02-06 (gh api): static but stable. Search_3D and rrt_3D folders exist; not run here. Educational code, not optimised: fine for a 50x50x10 grid, slow for large 3D maps.",
+    "related": [
+      {"id": "repo:ai-winter/python_motion_planning", "rel": "alternative_to"},
+      {"id": "repo:atsushisakai/pythonrobotics", "rel": "alternative_to"},
+      {"id": "repo:ompl/ompl", "rel": "alternative_to"}
+    ]
+  }
+]

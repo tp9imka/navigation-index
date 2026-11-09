@@ -1,0 +1,472 @@
+[
+  {
+    "id": "res:px4-gz-worlds-docs",
+    "kind": "doc",
+    "title": "Gazebo Worlds (PX4 Guide)",
+    "url": "https://docs.px4.io/main/en/sim_gazebo_gz/worlds.html",
+    "authors": [
+      "PX4 Dev Team"
+    ],
+    "year": 2026,
+    "summary": "Lists the gz worlds PX4 ships for SITL and how to select one, alongside the vehicle models such as x500_depth and x500_lidar_2d.",
+    "key_takeaways": [
+      "Obstacle-type worlds exist (walls, forest)",
+      "World and model are picked at launch time"
+    ],
+    "concepts": [
+      "concept:simulation"
+    ],
+    "tags": [
+      "px4",
+      "gazebo",
+      "gz-harmonic",
+      "worlds"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-gazebo-models",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:gazebosim/gz-sim",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:px4-macos-dev-env-docs",
+    "kind": "doc",
+    "title": "macOS Development Environment (PX4 Guide)",
+    "url": "https://docs.px4.io/main/en/dev_setup/dev_env_mac.html",
+    "authors": [
+      "PX4 Dev Team"
+    ],
+    "year": 2026,
+    "summary": "Native macOS setup for PX4 SITL with Gazebo Harmonic via Tools/setup/macos.sh --sim-tools, which pulls gz from a locked conda-forge env through pixi.",
+    "key_takeaways": [
+      "Works on Apple Silicon; CI runs on Apple Silicon only",
+      "Raise ulimit to 2048 or the link step fails",
+      "Installs XQuartz and trusts third-party Homebrew taps"
+    ],
+    "concepts": [
+      "concept:simulation",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "px4",
+      "macos",
+      "apple-silicon",
+      "sitl"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:modalai-voxl-voa-docs",
+    "kind": "doc",
+    "title": "VOXL Vision Obstacle Avoidance (VOA)",
+    "url": "https://docs.modalai.com/voa/",
+    "authors": [
+      "ModalAI"
+    ],
+    "year": 2026,
+    "summary": "How voxl-vision-hub turns stereo depth into OBSTACLE_DISTANCE messages for PX4 or ArduPilot collision prevention on VOXL boards.",
+    "key_takeaways": [
+      "Disabled by default; enable en_voa and the DFS server",
+      "Stereo is the documented input; ToF is community-only",
+      "Still needs PX4 Collision Prevention params"
+    ],
+    "concepts": [
+      "concept:obstacle-avoidance",
+      "concept:autopilot",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "voxl",
+      "modalai",
+      "stereo",
+      "px4"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:px4-collision-prevention-docs",
+        "rel": "uses"
+      },
+      {
+        "id": "res:px4-modalai-voxl-2-docs",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:parrot-sphinx-system-requirements",
+    "kind": "doc",
+    "title": "Sphinx system requirements",
+    "url": "https://developer.parrot.com/docs/sphinx/system_requirements.html",
+    "authors": [
+      "Parrot"
+    ],
+    "year": 2026,
+    "summary": "Hardware and OS requirements for Parrot's Sphinx drone simulator.",
+    "key_takeaways": [
+      "Ubuntu 20.04/22.04/24.04 64-bit only",
+      "NVIDIA GPU required (2 GB min, RTX 2070 recommended)",
+      "Not usable on an Apple Silicon Mac"
+    ],
+    "concepts": [
+      "concept:simulation"
+    ],
+    "tags": [
+      "parrot",
+      "sphinx",
+      "anafi"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:parrot-developers/olympe",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:lsy-drone-racing-docs",
+    "kind": "doc",
+    "title": "LSY Autonomous Drone Racing documentation",
+    "url": "https://learnsyslab.github.io/lsy_drone_racing/",
+    "authors": [
+      "Learning Systems and Robotics Lab, TUM"
+    ],
+    "year": 2026,
+    "summary": "Course docs for the Crazyflie gates-and-obstacles racing challenge: setup, difficulty levels, sim and real deployment.",
+    "key_takeaways": [
+      "Competition runs at level 2: randomized inertia and obstacle/gate positions",
+      "Same controller interface in sim and on hardware"
+    ],
+    "concepts": [
+      "concept:simulation",
+      "concept:path-planning",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "crazyflie",
+      "drone-racing",
+      "course"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:learnsyslab/lsy_drone_racing",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:bitcraze-multi-ranger-deck",
+    "kind": "doc",
+    "title": "Multi-ranger deck",
+    "url": "https://www.bitcraze.io/products/multi-ranger-deck/",
+    "authors": [
+      "Bitcraze"
+    ],
+    "year": 2026,
+    "summary": "Crazyflie expansion deck with five VL53L1x ToF sensors (front, back, left, right, up) measuring up to about 4 m.",
+    "key_takeaways": [
+      "Five-direction range scan, no forward camera needed",
+      "Pair with the Flow deck for position hold"
+    ],
+    "concepts": [
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "crazyflie",
+      "tof",
+      "vl53l1x"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:bitcraze/crazyflie-firmware",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:bitcraze-flow-deck-v2",
+    "kind": "doc",
+    "title": "Flow deck v2",
+    "url": "https://www.bitcraze.io/products/flow-deck-v2/",
+    "authors": [
+      "Bitcraze"
+    ],
+    "year": 2026,
+    "summary": "Crazyflie deck combining a PMW3901 optical flow sensor and a VL53L1x height sensor, fused in the onboard EKF for indoor position hold without external infrastructure.",
+    "key_takeaways": [
+      "Height up to about 4 m",
+      "Works best on matte, textured floors",
+      "Drift grows with distance flown"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:vio"
+    ],
+    "tags": [
+      "crazyflie",
+      "optical-flow",
+      "indoor"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:bitcraze/crazyflie-firmware",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:dji-msdk-v5-virtual-stick-tutorial",
+    "kind": "doc",
+    "title": "Virtual Stick Sample (DJI MSDK V5)",
+    "url": "https://developer.dji.com/doc/mobile-sdk-tutorial/en/tutorials/virtual-stick.html",
+    "authors": [
+      "DJI"
+    ],
+    "year": 2026,
+    "summary": "DJI tutorial for driving an aircraft from an Android app with virtual stick and advanced virtual stick parameters.",
+    "key_takeaways": [
+      "Enable advanced mode before sendVirtualStickAdvancedParam",
+      "Not available during waypoint missions or RTH"
+    ],
+    "concepts": [
+      "concept:autopilot"
+    ],
+    "tags": [
+      "dji",
+      "msdk",
+      "virtual-stick"
+    ],
+    "level": "intermediate",
+    "access": "free-registration",
+    "related": [
+      {
+        "id": "repo:dji-sdk/mobile-sdk-android-v5",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:tello-sdk-2-user-guide",
+    "kind": "doc",
+    "title": "Tello SDK 2.0 User Guide",
+    "url": "https://dl-cdn.ryzerobotics.com/downloads/Tello/Tello%20SDK%202.0%20User%20Guide.pdf",
+    "authors": [
+      "Ryze Robotics / DJI"
+    ],
+    "year": 2018,
+    "summary": "The UDP text command set for Tello EDU: control, set and read commands, mission pad commands and state stream format.",
+    "key_takeaways": [
+      "go x y z speed in cm, +-500, 10-100 cm/s",
+      "rc a b c d gives stick-level control without ack",
+      "Auto-land after 15 s without a command"
+    ],
+    "concepts": [
+      "concept:autopilot"
+    ],
+    "tags": [
+      "tello",
+      "udp",
+      "sdk"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:damiafuentes/djitellopy",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:moon-2019-adr-iros-challenges",
+    "kind": "paper",
+    "title": "Challenges and implemented technologies used in autonomous drone racing",
+    "url": "https://doi.org/10.1007/s11370-018-00271-6",
+    "authors": [
+      "Hyungpil Moon",
+      "Jose Martinez-Carranza",
+      "et al."
+    ],
+    "year": 2019,
+    "summary": "Organisers and teams review the IROS 2016 and 2017 autonomous drone races: the indoor gate format and the localisation, gate detection and control methods teams used.",
+    "key_takeaways": [
+      "Indoor gate course with onboard sensing",
+      "Teams used modified ORB-SLAM, sensor fusion, CNN and stereo gate detection",
+      "Localisation was the hard part"
+    ],
+    "concepts": [
+      "concept:obstacle-avoidance",
+      "concept:visual-slam",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "iros",
+      "adr",
+      "drone-racing",
+      "competition"
+    ],
+    "level": "intermediate",
+    "access": "paywalled",
+    "related": []
+  },
+  {
+    "id": "res:madaan-2020-airsim-drone-racing-lab",
+    "kind": "paper",
+    "title": "AirSim Drone Racing Lab",
+    "url": "https://arxiv.org/abs/2003.05654",
+    "authors": [
+      "Ratnesh Madaan",
+      "et al."
+    ],
+    "year": 2020,
+    "summary": "Describes the AirSim-based framework and the NeurIPS 2019 Game of Drones simulation competition with perception, planning/control and head-to-head tiers.",
+    "key_takeaways": [
+      "Tiered tasks separate perception from planning and control",
+      "117 teams registered, 16 unique entries reached submission"
+    ],
+    "concepts": [
+      "concept:simulation",
+      "concept:datasets-benchmarks",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "neurips-2019",
+      "game-of-drones",
+      "airsim",
+      "competition"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:microsoft/airsim-drone-racing-lab",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:imav-2026-rulebook",
+    "kind": "competition",
+    "title": "IMAV 2026 Competition Rules for Indoor and Outdoor Competitions",
+    "url": "https://2026.imavs.org/wp-content/uploads/2026/07/Rulebook_IMAV2026_V3.pdf",
+    "authors": [
+      "Renaud Kiefer",
+      "Thomas Pavot"
+    ],
+    "year": 2026,
+    "summary": "Rulebook for the International Micro Air Vehicle competition 2026: indoor net arena with an obstacle course, dark-room inspection, payload drop, turbine inspection and precision landing, with detailed scoring.",
+    "key_takeaways": [
+      "Autonomy factor: 1.0 onboard, 0.7 off-board compute or beacons, 0.4 manual intervention",
+      "Mass factor 1.13 (3 kg) to 2.0 (0.1 kg)",
+      "Risk-graded points: smaller window and harder bar score more",
+      "Landing bonus on a static or moving ArUco platform"
+    ],
+    "concepts": [
+      "concept:obstacle-avoidance",
+      "concept:path-planning",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "imav",
+      "indoor",
+      "competition",
+      "scoring",
+      "aruco"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:loquercio-2021-high-speed-flight-wild",
+    "kind": "paper",
+    "title": "Learning High-Speed Flight in the Wild",
+    "url": "https://arxiv.org/abs/2110.05113",
+    "authors": [
+      "Antonio Loquercio",
+      "Elia Kaufmann",
+      "Rene Ranftl",
+      "Matthias Muller",
+      "Vladlen Koltun",
+      "Davide Scaramuzza"
+    ],
+    "year": 2021,
+    "summary": "A network trained only in simulation by imitating a privileged planner maps onboard depth and state to collision-free trajectories, flown fast in forests and ruins (Science Robotics 2021).",
+    "key_takeaways": [
+      "Privileged-expert imitation transfers sim to real",
+      "Depth plus state is enough for fast obstacle flight"
+    ],
+    "concepts": [
+      "concept:obstacle-avoidance",
+      "concept:path-planning",
+      "concept:simulation"
+    ],
+    "tags": [
+      "learning",
+      "depth",
+      "science-robotics"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:uzh-rpg/agile_autonomy",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:bitcraze-crazyflie-simulation-docs",
+    "kind": "doc",
+    "title": "crazyflie-simulation documentation",
+    "url": "https://www.bitcraze.io/documentation/repository/crazyflie-simulation/main/",
+    "authors": [
+      "Bitcraze"
+    ],
+    "year": 2026,
+    "summary": "Docs for Bitcraze's Crazyflie simulation options in Webots and Gazebo, with install guides and a Webots wall-following demo.",
+    "key_takeaways": [
+      "Two backends: Webots and Gazebo",
+      "Wall-following demo uses simulated range sensing"
+    ],
+    "concepts": [
+      "concept:simulation"
+    ],
+    "tags": [
+      "crazyflie",
+      "webots",
+      "gazebo"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:bitcraze/crazyflie-simulation",
+        "rel": "explains"
+      }
+    ]
+  }
+]

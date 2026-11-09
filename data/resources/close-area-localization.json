@@ -1,0 +1,572 @@
+[
+  {
+    "id": "res:hesch-2014-oc-vins-consistency",
+    "kind": "paper",
+    "title": "Consistency Analysis and Improvement of Vision-aided Inertial Navigation",
+    "url": "https://www-users.cse.umn.edu/~stergios/papers/TRO_2014_OC_VINS_Joel_Dimitris_Sean.pdf",
+    "authors": [
+      "Joel A. Hesch",
+      "Dimitrios G. Kottas",
+      "Sean L. Bowman",
+      "Stergios I. Roumeliotis"
+    ],
+    "year": 2014,
+    "summary": "IEEE T-RO 30(1):158-176. Shows that standard EKF-based VINS gains spurious information along unobservable directions (global yaw and position), so its covariance shrinks too fast and the filter becomes overconfident. Proposes observability-constrained VINS (OC-VINS) for both SLAM and MSCKF, tested in simulation and on real data.",
+    "key_takeaways": [
+      "A plain EKF VIO is overconfident by construction, not just by tuning",
+      "Yaw about gravity is unobservable; a covariance that says otherwise is wrong",
+      "OC / FEJ style fixes are what OpenVINS and similar stacks ship"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "consistency",
+      "nees",
+      "observability",
+      "msckf",
+      "oc-vins"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:huang-mourikis-roumeliotis-2010-observability-consistent-ekf",
+        "rel": "same_author"
+      },
+      {
+        "id": "repo:rpng/open_vins",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:ronning-2026-properly-scoring-odometry",
+    "kind": "paper",
+    "title": "You Should Be Properly Scoring Your Odometry",
+    "url": "https://arxiv.org/abs/2609.25900",
+    "authors": [
+      "Ola Ronning",
+      "Usama Saqib",
+      "Andrzej Wasowski"
+    ],
+    "year": 2026,
+    "summary": "Preprint (Sep 2026). Argues odometry should be scored with strictly proper scoring rules over the mean and the reported covariance, not RMSE alone, and adds a pairwise test that detects overconfidence without ground truth. Case study on ground-based LiDAR-inertial odometry finds all four tested filters overconfident, traced to over-crediting LiDAR measurements.",
+    "key_takeaways": [
+      "RMSE ignores the covariance a planner would consume",
+      "Four LIO filters were overconfident; worst case 'centimeter certainty with kilometer error'",
+      "Code: smfeval (README example: FAST-LIO2 90% ellipsoid coverage 0.000)"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:lidar-slam",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "nees",
+      "covariance",
+      "proper-scoring",
+      "lio",
+      "preprint"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:svendbot/smfeval",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:hku-mars/fast_lio",
+        "rel": "evaluates"
+      }
+    ]
+  },
+  {
+    "id": "res:tsuei-2021-learned-uncertainty-calibration-vi",
+    "kind": "paper",
+    "title": "Learned Uncertainty Calibration for Visual Inertial Localization",
+    "url": "https://arxiv.org/abs/2110.02136",
+    "authors": [
+      "Stephanie Tsuei",
+      "Stefano Soatto",
+      "Paulo Tabuada",
+      "Mark B. Milam"
+    ],
+    "year": 2021,
+    "summary": "ICRA 2021. Observes that EKF means are accurate while covariances are not, and that the covariance error in visual-inertial localization is systematic. Learns a nonlinear map from the reported covariance to an empirically calibrated one, tested in simulation and on a real-world VIO system.",
+    "key_takeaways": [
+      "VIO covariance error is systematic, so it can be calibrated from logged flights",
+      "Implies a cheap fix: fit an inflation from Day 1 recordings against a reference"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "covariance-calibration",
+      "uncertainty",
+      "ekf",
+      "xivo"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:tsuei-soatto-2023-quantifying-vio-uncertainty",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:tsuei-soatto-2023-quantifying-vio-uncertainty",
+    "kind": "paper",
+    "title": "Quantifying VIO Uncertainty",
+    "url": "https://arxiv.org/abs/2303.16386",
+    "authors": [
+      "Stephanie Tsuei",
+      "Stefano Soatto"
+    ],
+    "year": 2023,
+    "summary": "Preprint. Monte Carlo study of the XIVO monocular EKF VIO under feature-track noise, drift and attribution (association) errors and IMU noise and drift. Attribution errors hurt most, and even small noise gives a more than 1 in 100 chance of a run that looks like the high-noise case.",
+    "key_takeaways": [
+      "Wrong feature associations are the dominant VIO error source",
+      "Constant-velocity flight is not exciting enough for good observability",
+      "Single benchmark runs understate tail risk"
+    ],
+    "concepts": [
+      "concept:vio"
+    ],
+    "tags": [
+      "monte-carlo",
+      "uncertainty",
+      "xivo",
+      "preprint"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:tsuei-2021-learned-uncertainty-calibration-vi",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:lanegger-2026-estimator-failure-spectral",
+    "kind": "paper",
+    "title": "When Your State Estimator Has Lost The Plot: Detecting Estimator Failures Via Spectral Analysis",
+    "url": "https://arxiv.org/abs/2608.10623",
+    "authors": [
+      "Christian Lanegger",
+      "Helen Oleynikova",
+      "Roland Siegwart",
+      "Michael Pantic"
+    ],
+    "year": 2026,
+    "summary": "Preprint (Aug 2026). Sensor-agnostic failure detector that looks at the frequency-domain power of recent velocity estimates (signal power, spectral bandwidth, entropy). Tested on visual-, LiDAR- and radar-inertial odometry from real outdoor flights with labelled failures; detects 51-58% of failures at 60-84% precision.",
+    "key_takeaways": [
+      "An estimator-agnostic health flag a planner can read without trusting the covariance",
+      "Recall around half: use as one vote, not the only gate",
+      "Real flight data, not simulation"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:lidar-slam",
+      "concept:radar-nav",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "integrity",
+      "failure-detection",
+      "introspection",
+      "preprint"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:taffanel-2021-lighthouse-positioning-accuracy",
+    "kind": "paper",
+    "title": "Lighthouse Positioning System: Dataset, Accuracy, and Precision for UAV Research",
+    "url": "https://arxiv.org/abs/2104.11523",
+    "authors": [
+      "Arnaud Taffanel",
+      "Barbara Rousselot",
+      "Jonas Danielsson",
+      "Kimberly McGuire",
+      "Kristoffer Richardsson",
+      "Marcus Eliasson",
+      "Tobias Antonsson",
+      "Wolfgang Honig"
+    ],
+    "year": 2021,
+    "summary": "Workshop paper (ICRA 2021 Robot Swarms in the Real World). Measures the Crazyflie Lighthouse system against Qualisys mocap. Mean and median error about 2-4 cm, flight outliers about 5 cm, stationary jitter 0.3-3.9 mm depending on base-station version and method. Crossing-beam needs two base stations in view; the EKF works with one.",
+    "key_takeaways": [
+      "Real accuracy is cm-level, the docs say 'mm'",
+      "Needs line of sight; glass and mirrors break it",
+      "About an order of magnitude cheaper than mocap"
+    ],
+    "concepts": [
+      "concept:rf-localization",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "lighthouse",
+      "crazyflie",
+      "indoor",
+      "accuracy",
+      "workshop"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:bitcraze/positioning_dataset",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:bitcraze/crazyflie-firmware",
+        "rel": "evaluates"
+      }
+    ]
+  },
+  {
+    "id": "res:bitcraze-positioning-systems-overview",
+    "kind": "doc",
+    "title": "Positioning Systems Overview",
+    "url": "https://www.bitcraze.io/documentation/system/positioning/",
+    "authors": [
+      "Bitcraze"
+    ],
+    "year": 2024,
+    "summary": "Bitcraze comparison of Crazyflie positioning options: Lighthouse (listed 'mm', 8x8x3 m, up to 4 base stations), Loco UWB (listed 'dm', at least 4 anchors, 8 preferred, 50x50 m untested), motion capture (mm, external cameras) and relative options such as the Flow deck.",
+    "key_takeaways": [
+      "Vendor table: read the paper for measured numbers",
+      "Lighthouse and mocap need line of sight; UWB tolerates some occlusion at dm accuracy"
+    ],
+    "concepts": [
+      "concept:rf-localization",
+      "concept:indoor-pedestrian"
+    ],
+    "tags": [
+      "crazyflie",
+      "lighthouse",
+      "uwb",
+      "loco",
+      "mocap",
+      "vendor-doc"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:taffanel-2021-lighthouse-positioning-accuracy",
+        "rel": "cites"
+      },
+      {
+        "id": "res:bitcraze-loco-positioning",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:bitcraze-lps-precision-wiki",
+    "kind": "doc",
+    "title": "Loco Positioning System precision investigation",
+    "url": "https://wiki.bitcraze.io/misc:investigations:lps-precision",
+    "authors": [
+      "Bitcraze"
+    ],
+    "year": 2017,
+    "summary": "Archived Bitcraze wiki page with static TWR measurements of the UWB Loco system using six anchors: per-axis jitter about 0.5-2 cm, one 3D point with about 0.24 m average error, raw ranges biased short by 0.2-0.4 m (antenna delay). The author says the numbers are not a specification.",
+    "key_takeaways": [
+      "UWB jitter is cm, bias is dm: calibrate antenna delay and anchor positions",
+      "Z is the weakest axis with anchors near one height"
+    ],
+    "concepts": [
+      "concept:rf-localization"
+    ],
+    "tags": [
+      "uwb",
+      "loco",
+      "twr",
+      "crazyflie",
+      "archived"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:bitcraze-loco-positioning",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:px4-precision-landing-docs",
+    "kind": "doc",
+    "title": "Precision Landing",
+    "url": "https://docs.px4.io/main/en/advanced_features/precland.html",
+    "authors": [
+      "PX4 Dev Team"
+    ],
+    "year": 2026,
+    "summary": "PX4 guide to landing on a marked target from IR-LOCK or a companion computer sending MAVLink LANDING_TARGET (local NED). Covers the landing_target_estimator, opportunistic vs required modes, and parameters such as PLD_HACC_RAD (default 0.2 m) and PLD_BTOUT (default 5 s).",
+    "key_takeaways": [
+      "A ready path for 'B is a marker': companion detects the tag, PX4 does the terminal approach",
+      "Required mode searches and retries if the target is not seen",
+      "The page says a valid global position is needed: check before relying on it indoors"
+    ],
+    "concepts": [
+      "concept:autopilot",
+      "concept:mavlink-gcs"
+    ],
+    "tags": [
+      "precision-landing",
+      "landing-target",
+      "fiducial",
+      "px4"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:goodrobots/vision_landing",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:modalai-voxl-open-vins-server-docs",
+    "kind": "doc",
+    "title": "VOXL OpenVINS server",
+    "url": "https://docs.modalai.com/voxl-open-vins-server/",
+    "authors": [
+      "ModalAI"
+    ],
+    "year": 2026,
+    "summary": "ModalAI docs for the OpenVINS-based VIO service on VOXL 2. Publishes full state with covariances, feature counts, a quality score with INITIAL / GOOD / BAD hysteresis, error codes and status, and forwards odometry to the autopilot. Auto-resets on excessive velocity, low feature count for a timeout, or spinning in place. Only one VIO source (qVIO or OpenVINS) may run at a time.",
+    "key_takeaways": [
+      "A shipping example of the health signals a planner can consume: features, quality, resets",
+      "Reset triggers document the real failure modes",
+      "The old docs path voxl-qvio-server now redirects here"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "voxl",
+      "modalai",
+      "openvins",
+      "quality",
+      "reset",
+      "vendor-doc"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:rpng/open_vins",
+        "rel": "uses"
+      },
+      {
+        "id": "res:px4-modalai-voxl-2-docs",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:delmerico-scaramuzza-2018-vio-benchmark-flying-robots",
+    "kind": "paper",
+    "title": "A Benchmark Comparison of Monocular Visual-Inertial Odometry Algorithms for Flying Robots",
+    "url": "https://rpg.ifi.uzh.ch/docs/ICRA18_Delmerico.pdf",
+    "authors": [
+      "Jeffrey Delmerico",
+      "Davide Scaramuzza"
+    ],
+    "year": 2018,
+    "summary": "ICRA 2018. Runs MSCKF, OKVIS, ROVIO, VINS-Mono, SVO+MSF and SVO+GTSAM on EuRoC across a laptop, an Intel NUC, an UP Board and an ODROID, comparing accuracy, CPU and memory. Only the author slides were read here: SVO+MSF fastest but least accurate, OKVIS consistent across platforms, ROVIO could not run on the UP Board.",
+    "key_takeaways": [
+      "Accuracy rankings change with the onboard computer",
+      "Pick the VIO for the compute you will actually fly"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:datasets-benchmarks",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "vio-benchmark",
+      "euroc",
+      "embedded",
+      "icra"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ethz-euroc-mav-dataset",
+        "rel": "uses"
+      },
+      {
+        "id": "repo:ethz-asl/rovio",
+        "rel": "evaluates"
+      },
+      {
+        "id": "repo:kumarrobotics/msckf_vio",
+        "rel": "evaluates"
+      }
+    ]
+  },
+  {
+    "id": "res:wang-olson-2016-apriltag2",
+    "kind": "paper",
+    "title": "AprilTag 2: Efficient and robust fiducial detection",
+    "url": "https://april.eecs.umich.edu/pdfs/wang2016iros.pdf",
+    "authors": [
+      "John Wang",
+      "Edwin Olson"
+    ],
+    "year": 2016,
+    "summary": "IROS 2016. Second-generation AprilTag detector. Listed on the APRIL lab software page as the reference for the current detector, which the lab describes as robust to lighting and view angle. Metadata only here: the PDF text was not read.",
+    "key_takeaways": [
+      "Cite this for the detector behind AprilTag 3",
+      "Read the paper before quoting any accuracy number"
+    ],
+    "concepts": [
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "apriltag",
+      "fiducial",
+      "iros"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:aprilrobotics/apriltag",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:gaona-2026-flight-ready-lio",
+    "kind": "paper",
+    "title": "Flight-Ready LiDAR-Inertial Odometry for Embedded Drone Platforms",
+    "url": "https://arxiv.org/abs/2607.22145",
+    "authors": [
+      "Alvaro J. Gaona",
+      "David Perez-Saura",
+      "Francisco J. Anguita",
+      "Pascual Campoy"
+    ],
+    "year": 2026,
+    "summary": "Preprint (Jul 2026). Keeps the FAST-LIO2-style IESKF but fixes five integration problems for flight: output tied to the 10 Hz LiDAR rate, no velocity output, IMU blocking, mutex contention and sync races. Result is 200 Hz IMU-rate odometry with body velocity, kept alive through short LiDAR dropouts, on a Mid-360 + Pixhawk 4 Mini drone with mocap ground truth.",
+    "key_takeaways": [
+      "Stock LIO packages are not flight-ready out of the box: rate and velocity matter for the autopilot",
+      "IMU-rate propagation bridges LiDAR gaps"
+    ],
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "fast-lio2",
+      "livox-mid360",
+      "px4",
+      "integration",
+      "preprint"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:hku-mars/fast_lio",
+        "rel": "extends"
+      },
+      {
+        "id": "res:fast-lio2-xu-2021",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:intel-realsense-tracking-eol",
+    "kind": "doc",
+    "title": "End-of-Life (EOL) Announcement for some Intel RealSense products",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000087450/emerging-technologies/intel-realsense-technology.html",
+    "authors": [
+      "Intel"
+    ],
+    "year": 2022,
+    "summary": "Intel support notice listing the Tracking Camera T265 and T261 among discontinued RealSense products; stereo D400 cameras stay available. Sales of T265 stopped in 2022 and newer SDKs dropped some EOL support code.",
+    "key_takeaways": [
+      "Do not plan a new build around T265",
+      "Replacement path: D435i / D455 plus third-party VIO"
+    ],
+    "concepts": [
+      "concept:vio"
+    ],
+    "tags": [
+      "realsense",
+      "t265",
+      "eol",
+      "vendor-doc"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:ardupilot-vio-tracking-camera",
+        "rel": "cites"
+      },
+      {
+        "id": "repo:realsenseai/realsense-ros",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:harsha-2026-mid360-slam-benchmark-post",
+    "kind": "blog",
+    "title": "SLAM benchmark on Livox Mid-360: public dataset + our own UAV flight data (KISS-ICP, DLIO, FAST-LIO2, GLIM)",
+    "url": "https://discourse.openrobotics.org/t/slam-benchmark-on-livox-mid-360-public-dataset-our-own-uav-flight-data-kiss-icp-dlio-fast-lio2-glim/57912",
+    "authors": [
+      "Harsha Reddy"
+    ],
+    "year": 2026,
+    "summary": "Open Robotics Discourse post (Sep 2026) with seven VICON-arena UAV flights on Jetson Orin NX + Mid-360 + Pixhawk. Average APE RMSE: GLIM (GPU) 0.040 m, DLIO 0.096 m, FAST-LIO2 0.112 m, KISS-ICP 0.123 m. Notes that GLIM's edge likely comes from loop closure in a small revisited arena.",
+    "key_takeaways": [
+      "In a small arena, LIO lands around 0.1 m APE",
+      "Loop closure helps most where the drone revisits the same space",
+      "Community result, not peer reviewed"
+    ],
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "livox-mid360",
+      "uav",
+      "benchmark",
+      "community"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:harshareddy1611/livox-mid360-slam-evaluation",
+        "rel": "has_code"
+      }
+    ]
+  }
+]
