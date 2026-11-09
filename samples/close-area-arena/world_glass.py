@@ -102,7 +102,8 @@ def make_any_world(family: str, seed: int = 0, index: int = 0, radius: float = W
     if family == "glass":
         return make_glass_world(seed, index, radius)
     w = W.make_world(family, seed, index, radius=radius)
-    w.materials = {"boxes": ["matte"] * len(w.boxes), "cylinders": ["matte"] * len(w.cylinders)}
+    if not getattr(w, "materials", None):   # complex families (glass_office) already carry theirs
+        w.materials = {"boxes": ["matte"] * len(w.boxes), "cylinders": ["matte"] * len(w.cylinders)}
     return w
 
 
