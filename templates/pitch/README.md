@@ -12,6 +12,7 @@ and a one-pager.
 | [story-bank.md](story-bank.md) | 10 opening hooks per brief family (6 families), each tied to a measured result in the hub, with its input label and the caveat to say aloud | H+0 to H+2 (pick a family), H+30 (pick 1-2 hooks) |
 | [slides-outline.md](slides-outline.md) | 6-8 slide deck, one message per slide, which existing figure or screenshot to use, plus the "demo failed live" fallback | H+30 to H+40 |
 | [one-pager-template.md](one-pager-template.md) | Fill-in technical one-pager for judges (results table with input labels) | H+40, print 5 copies if the venue allows |
+| [close-area-story.md](close-area-story.md) | Close-area A=>B story: one-line pitch, kill-test gate at H+24 choosing the story, 3 backup hooks, 3-minute skeleton, 10 judge questions with where the answer lives | H+0 (pick), H+24 (gate), H+36 (rehearse) |
 
 ## On the day
 
