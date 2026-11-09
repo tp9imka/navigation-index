@@ -1,0 +1,45 @@
+{
+  "id": "sample:close-area-planner-reactive",
+  "title": "Close-area reactive planners: APF with wall-follow escape and VFH+, range sensor only, 72-beam vs Crazyflie-like 4-beam fan",
+  "summary": "Map-free fallback planners for close-area A=>B, written as close-area-arena Planners that read only the pose and the range scan. apf.py: velocity-form artificial potential field on raw returns (attractive goal, repulsive returns weighted by each beam's share of the circle), a range-only brake, and a named escape rule, wall-follow after 3 s of no progress with a Bug-style leave rule; escape=False gives plain APF. vfh_plus.py: VFH+ with a 72-sector polar histogram, enlargement by radius plus safety distance, binary histogram with hysteresis, valley selection with the goal / heading / previous-direction cost, speed from obstacle density, no escape rule. bench.py runs both on the arena's random, u_trap and narrow_gap families with the default 72-beam 6 m fan and a 4-beam 4 m Multi-ranger-like fan, scores on truth, and classifies where failed runs ended (inside the U cup, before the gap wall, at the gap). tune.py holds the dev-seed sweep that set the defaults. Synthetic arena only.",
+  "concepts": [
+    "concept:obstacle-avoidance",
+    "concept:path-planning",
+    "concept:simulation"
+  ],
+  "tags": [
+    "close-area",
+    "a-to-b",
+    "potential-field",
+    "apf",
+    "vfh-plus",
+    "vector-field-histogram",
+    "local-minimum",
+    "u-trap",
+    "narrow-gap",
+    "wall-following",
+    "bug-algorithm",
+    "range-sensor",
+    "crazyflie",
+    "multi-ranger",
+    "map-free",
+    "python",
+    "numpy"
+  ],
+  "related": [
+    {"id": "sample:close-area-arena", "rel": "explains"},
+    {"id": "res:khatib-potential-fields-ijrr-1986", "rel": "explains"},
+    {"id": "res:koren-borenstein-apf-limits-icra-1991", "rel": "explains"},
+    {"id": "res:ulrich-borenstein-vfhplus-icra-1998", "rel": "explains"},
+    {"id": "res:bitcraze-multi-ranger-deck", "rel": "explains"}
+  ],
+  "verified": "ran 2026-11-09 with CPython 3.11.15 + numpy 2.4.6 / scipy 1.17.1 on an Apple M3 Max, in the sample venv (requirements.txt reuses the arena's): bench.py --layouts 50 --seed 0 ran twice with identical per-run scores in all 18 cells (planner timings excluded), wall 75.8 s for the kept run; tune.py on seed 1 wrote results/dev_seed1_tuning.md. Every number in README is from results/. test_smoke.py: 1 passed in the venv, 1 skipped under plain python3 3.14 without numpy. No arena file was edited. Layouts, vehicle and sensor are simulated; the 4-beam fan is a geometry model of the Multi-ranger (no beam cone, arena noise and dropout); no SITL, no Crazyflie.",
+  "verified_status": "ran",
+  "deps": "venv",
+  "first_command": ".venv/bin/python bench.py --layouts 50 --seed 0",
+  "group": "Close-area A=>B: planning and safety",
+  "shows": "APF (wall-follow escape) and VFH+ from range returns only, on random, U-trap and narrow-gap layouts, with a 72-beam fan and a Crazyflie-like 4-beam fan; where each gets stuck or collides",
+  "input": "synthetic",
+  "runtime": "~76 s for 50 layouts x 3 families x 2 fans x 3 planner variants",
+  "key_result": "[50 layouts per cell, seed 0](README.md#results-ran-2026-11-09-apple-m3-max-cpython-31115-numpy-246-scipy-1171): 72 beams: APF with wall-follow escape reached 92 % on u_trap (2 % without escape, VFH+ 0 %), but 0 % on narrow_gap where VFH+ reached 62 %; 4 beams: collisions 8-54 % for APF and 72-98 % for VFH+"
+}
