@@ -720,5 +720,3 @@ Limits:
 - Table I was tuned by the authors for 6-10 m Webots maps, not for this arena.
 
 ---
-
-Next action: paste the section above into `samples/close-area-relocalize/README.md`. `python3 tools/check_links.py` reported broken: 0.
