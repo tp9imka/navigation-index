@@ -1,5 +1,11 @@
 # Innovation prior art: synthesis
 
+Use this when the brief is long range (km-scale legs, GNSS jammed or spoofed, fixed-wing,
+terrain or visual fixes) and you need the prior art, strongest baseline or falsifier for a
+long-range idea. For a close-area A=>B brief, the default, go to
+[close-area-nav](../close-area-nav/README.md); both rounds are compared in
+[research/README.md](../README.md).
+
 Deeper research round for EDGE hackathon Challenge 2, 2026-11-09. Four lanes checked what
 already exists before we build POCs. Each lane doc gives: prior art with a source-type label
 (peer-reviewed / preprint / abstract only / slides viewed / recording not viewed / code), the
@@ -10,12 +16,12 @@ map mismatch, delayed measurements, wind/velocity ambiguity).
 "Not found in this search" in these docs means the listed queries returned nothing. It is not
 a novelty claim. No experiment in these docs has been run; every threshold is a proposal.
 
-| Doc | Idea | What exists | What may remain | Verdict |
-|---|---|---|---|---|
-| [01](01-disambiguating-maneuvers.md) | Flyable maneuvers that separate competing visual / terrain position hypotheses | Fox, Burgard, Thrun 1998 (expected entropy over a multimodal belief); Platt et al. 2012 (actions under dynamics that separate hypotheses); Bar-Gill 1994 TAN route planning | Short-horizon maneuver choice, triggered only on a multimodal posterior, over fixed-wing-flyable primitives, with an explicit "truth not in set" hypothesis. Engineering, not theory | Narrow. Falsifier on real GLO-30 terrain via blind-flight-bench |
-| [02](02-deadline-aware-fix-scheduling.md) | Schedule expensive fixes by deadline, success probability and delay | Covariance-triggered updates reduce to a fixed schedule (Trimpe, Campi 2015); compute-budgeted VIO; per-frame VPR success prediction; delayed fusion; aviation "limit time" | One scheduler combining all three, with a success model that captures failure clustering and the filter's delay horizon | Narrow, and at risk: the cheap pre-match signal has AUC 0.68 on VPAIR; pays only when compute is shared |
-| [03](03-identifiability-gated-aero-adaptation.md) | Adapt aero parameters only when identifiable | Sharma, Laupre, Skaloud 2023 (Gramian-gated updates + consider states, offline); Laupre et al. 2023 (consider mode during outages) | Online per-direction gate inside the filter, applied to the multirotor drag model | Weak as a headline. Keep as a robustness layer under the drag filter |
-| [04](04-wider-innovation-scan.md) | Ten other directions, ranked | See its table | Top 3: calibrated trust for visual fixes (25/30), particle-filter integrity with a missing-hypothesis test for TRN (25/30), delay-aware invariant filter (23/30) | Two strong, one risky |
+| Page | Use it when | You get |
+|---|---|---|
+| [01](01-disambiguating-maneuvers.md) flyable maneuvers that separate competing visual / terrain position hypotheses | A terrain or visual filter holds several position hypotheses and you want a maneuver to tell them apart | **Verdict:** Narrow. Falsifier on real GLO-30 terrain via blind-flight-bench. Exists: Fox, Burgard, Thrun 1998 (expected entropy over a multimodal belief); Platt et al. 2012 (actions under dynamics that separate hypotheses); Bar-Gill 1994 TAN route planning. May remain: short-horizon maneuver choice, triggered only on a multimodal posterior, over fixed-wing-flyable primitives, with an explicit "truth not in set" hypothesis. Engineering, not theory |
+| [02](02-deadline-aware-fix-scheduling.md) schedule expensive fixes by deadline, success probability and delay | Expensive absolute fixes (visual match, TRN) compete for compute or arrive late | **Verdict:** Narrow, and at risk: the cheap pre-match signal has AUC 0.68 on VPAIR; pays only when compute is shared. Exists: covariance-triggered updates reduce to a fixed schedule (Trimpe, Campi 2015); compute-budgeted VIO; per-frame VPR success prediction; delayed fusion; aviation "limit time". May remain: one scheduler combining all three, with a success model that captures failure clustering and the filter's delay horizon |
+| [03](03-identifiability-gated-aero-adaptation.md) adapt aero parameters only when identifiable | You build the drag-aided velocity filter and need to know when to adapt its parameters | **Verdict:** Weak as a headline. Keep as a robustness layer under the drag filter. Exists: Sharma, Laupre, Skaloud 2023 (Gramian-gated updates + consider states, offline); Laupre et al. 2023 (consider mode during outages). May remain: online per-direction gate inside the filter, applied to the multirotor drag model |
+| [04](04-wider-innovation-scan.md) ten other directions, ranked | You want a long-range idea beyond 01-03 | **Verdict:** Two strong, one risky. Exists: see its table. May remain, top 3: calibrated trust for visual fixes (25/30), particle-filter integrity with a missing-hypothesis test for TRN (25/30), delay-aware invariant filter (23/30) |
 
 ## Findings that change earlier docs
 
@@ -32,7 +38,7 @@ a novelty claim. No experiment in these docs has been run; every threshold is a 
 ## Relation to the innovation lab
 
 Ideas 01-03 are the hypotheses H1-H3 that `samples/navigation-innovation-lab` (branch
-`feat/innovation-pocs`) tests with synthetic mechanism models. Its first results agree with
+`feat/innovation-pocs`, not in this checkout) tests with synthetic mechanism models. Its first results agree with
 this prior art: H1 collapsed to the information-gain baseline, H2 showed no general win, H3
 helped only after an observable change. These docs supply the real-data falsifiers and the
 strongest baselines for the next round of that lab.

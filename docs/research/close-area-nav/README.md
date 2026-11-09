@@ -1,23 +1,37 @@
 # Close-area A=>B navigation: synthesis
 
+Use this when the brief says A to B, obstacles, indoor, arena, close area, or a marker / pad at
+B, and you need the baseline, the localization stack or the headline idea. For a long-range brief
+go to [innovation-prior-art](../innovation-prior-art/README.md); both rounds are compared in
+[research/README.md](../README.md).
+
 Research round for EDGE hackathon Challenge 2, 2026-11-09, after new information that the task
 is likely "move a drone from A to B in a close area, potentially with obstacles". This replaces
 the long-range GNSS-denied frame of [innovation-prior-art](../innovation-prior-art/README.md) as
 the default. Platform, sensors, indoor or outdoor, and sim vs real are still unknown until Day 1.
 
-Nothing in these docs has been run. Thresholds are proposals. Most papers were read as abstracts
-only; each lane doc labels its sources and has a "not verified" section.
+The lane docs below are research: nothing in them was run, and thresholds are proposals. The
+baseline they recommend has since run on synthetic inputs (2.5D point-mass arena, rendered tag
+images), not SITL or flight:
+[close-area-arena](../../../samples/close-area-arena/README.md),
+[close-area-planner-reactive](../../../samples/close-area-planner-reactive/README.md) and
+[fiducial-goal-apriltag](../../../samples/fiducial-goal-apriltag/README.md). Numbers:
+[evidence matrix section 14](../../evidence-matrix.md#14-close-area-ab). The headline's kill test
+has started: Part a ran ([close-area-safety-filter](../../../samples/close-area-safety-filter/README.md), synthetic): with every obstacle visible, PX4 CP-stop and PX4-CBF already reach 0 % collisions under VIO faults (fail condition holds there); with map-only obstacles PX4-CBF collides in 3-11 %, all on unsensed obstacles. Belief-CBF, MR-CBF and ours are running. Docs 01-04 read most
+papers as abstracts only; 05 read its four baselines in full. Each doc labels its sources
+and has a "not verified" section.
 
-| Doc | Lane | Bottom line |
+| Page | Use it when | You get |
 |---|---|---|
-| [01](01-planning-and-mapping.md) | Planning and mapping | Python baseline: 3D numpy grid + ESDF (scipy) => A* with clearance cost => shortcut => RotorPy MinSnap, replan 2-5 Hz. Same planner drives SITL over MAVSDK Offboard (PX4) or GUIDED (ArduPilot) |
-| [02](02-sims-platforms-competitions.md) | Sims, platforms, competitions | Light sim: gym-pybullet-drones (fallback RotorPy). Product sim: PX4 SITL + gz Harmonic native on Apple Silicon (`x500_depth`, `walls`, `forest`). Judges reward completion, onboard autonomy, no manual help |
-| [03](03-close-area-localization.md) | Localization | Indoor: stereo VIO into EKF2 / EKF3 as ODOMETRY, AprilTags at A and B, flow + rangefinder as backup. Outdoor: GNSS (RTK if offered) with VIO as fallback, marker for the last metres |
-| [04](04-innovation-prior-art.md) | Innovation prior art | Headline: integrity-aware safety filter. Support: uncertainty-aware replan trigger. Perception-aware planning parked |
-| [05](05-cbf-baselines-faithful.md) | Safety-filter baselines read in full | Shipped PX4-CBF (NTNU fork, branch `cbf`) has no FoV constraint; the paper's FoV QP is in an older commit. MR-CBF and gatekeeper already take an error bound, so the claim is producing a bound that stays valid under faults. Belief-CBF also predicts covariance growth; a plain sqrt(lambda_max) inflation is weaker than the paper |
-| [06](06-task-phrasing-survey.md) | How close-area events specify the task | 10 events. B is usually a marker or pad, late-issued coordinates, or a nominal pose revealed up close (LSY within 0.7 m). Off-board help is penalised, not banned (IMAV 1.0 / 0.7 / 0.4). Most likely Day-1 shape: a marked B in a small known arena with a few static obstacles |
-| [09](09-vio-nees-feasibility.md) | Can we measure VIO overconfidence in 30 min? | Yes, with OpenVINS on the UZH-FPV bag relative-nav-benchmark already uses (~21-29 min, needs a Docker build). Only OpenVINS writes a covariance; VINS-Fusion and ORB-SLAM3 do not. Published NEES: 131-363 vs 3 expected for a sliding-window VI filter on EuRoC (Lisus et al. RA-L 2023) |
-| [07](07-pl-margin-prior-art.md) | Kill search for the headline | **The idea as first worded exists.** Tan et al. IROS 2025 (Caltech + TII, PX4 X500 with a geofence) and Zhang, Li, Clark TAC 2025 (fault-excluded EKF bank feeding a CBF) already set safety margins from fault-excluded estimates. What survives is a composition, see below |
+| [01](01-planning-and-mapping.md) planning and mapping | You pick the planner and map | Python baseline: 3D numpy grid + ESDF (scipy) => A* with clearance cost => shortcut => RotorPy MinSnap, replan 2-5 Hz. Same planner drives SITL over MAVSDK Offboard (PX4) or GUIDED (ArduPilot) |
+| [02](02-sims-platforms-competitions.md) sims, platforms, competitions | You pick a simulator or need to know what judges score | Light sim: gym-pybullet-drones (fallback RotorPy). Product sim: PX4 SITL + gz Harmonic native on Apple Silicon (`x500_depth`, `walls`, `forest`). Judges reward completion, onboard autonomy, no manual help |
+| [03](03-close-area-localization.md) localization | You pick the estimator, or VIO is lost indoors, or B is a marker | Indoor: stereo VIO into EKF2 / EKF3 as ODOMETRY, AprilTags at A and B, flow + rangefinder as backup. Outdoor: GNSS (RTK if offered) with VIO as fallback, marker for the last metres |
+| [04](04-innovation-prior-art.md) innovation prior art | You need the headline idea, its prior art and the kill test (section 3.4) | Headline: integrity-aware safety filter. Support: uncertainty-aware replan trigger. Perception-aware planning parked |
+| [05](05-cbf-baselines-faithful.md) safety-filter baselines read in full | You implement a kill-test arm (PX4-CBF, Belief-CBF, gatekeeper, MR-CBF) | Shipped PX4-CBF (NTNU fork, branch `cbf`) has no FoV constraint; the paper's FoV QP is in an older commit. MR-CBF and gatekeeper already take an error bound, so the claim is producing a bound that stays valid under faults. Belief-CBF also predicts covariance growth; a plain sqrt(lambda_max) inflation is weaker than the paper |
+| [06](06-task-phrasing-survey.md) task phrasing survey | You guess the Day-1 task shape, scoring, or questions for the organisers | 10 events. B is usually a marker or pad, late-issued coordinates, or a nominal pose revealed up close (LSY within 0.7 m). Off-board help is penalised, not banned (IMAV 1.0 / 0.7 / 0.4). Most likely Day-1 shape: a marked B in a small known arena with a few static obstacles |
+| [07](07-pl-margin-prior-art.md) kill search for the headline | You pitch the headline and must say what is new | **The idea as first worded exists.** Tan et al. IROS 2025 (Caltech + TII, PX4 X500 with a geofence) and Zhang, Li, Clark TAC 2025 (fault-excluded EKF bank feeding a CBF) already set safety margins from fault-excluded estimates. What survives is a composition, see below |
+| [08](08-crazyflie-sensing-limits.md) Crazyflie sensing limits | The platform is a Crazyflie with Multi-ranger and Flow decks, or you set arena sensor realism | Four 27 deg beams see 30 % of the horizontal circle; obstacles passed close drop out of view; glass is invisible (BatDeck preprint: one forward ranger crashed in 10 of 10 real flights, mostly at glass doors); range falls from about 3.6 m in the dark to about 0.73 m in strong light; 10 Hz. Derived geometry, not measured. Proposes a "crazyflie" arena sensor preset |
+| [09](09-vio-nees-feasibility.md) VIO NEES feasibility | You want one measured number for VIO overconfidence | Plan, not run: yes, with OpenVINS on the UZH-FPV bag relative-nav-benchmark already uses (~21-29 min, needs a Docker build). Only OpenVINS writes a covariance; VINS-Fusion and ORB-SLAM3 do not. Published NEES: 131-363 vs 3 expected for a sliding-window VI filter on EuRoC (Lisus et al. RA-L 2023) |
 
 ## Findings that change the plan
 
@@ -65,13 +79,22 @@ wrong about where it is.**
 prior art (Tan et al. 2025, Zhang/Li/Clark 2025). The claim left is the composition: range
 barriers for what the drone sees, a protection level for what it cannot, and when the monitor
 cannot tell which source is lying, the filter holds a hover instead of dropping the
-largest-residual source (FT-CBF) or guessing. The kill test needs two more arms: FT-CBF residual
-dropping and Tan's union of plausible states.
+largest-residual source (FT-CBF) or guessing. Doc 04 section 3.4 now carries the two extra arms
+this needs: FT-CBF residual dropping (F3f) and Tan's union of plausible states (F3t).
 
-**Kill test before building more** (doc 04 section 3.4, arms read faithfully in
-[05](05-cbf-baselines-faithful.md)): 200 random layouts, injected VIO jump and bias faults. Pass: breaches 1 % or less, at least 3x lower than Belief-CBF on fault cases, goal
-reach at least 90 % of PX4-CBF. Fail and drop the headline if Belief-CBF comes within 1 pp or
-PX4-CBF alone is already at 1 % or less.
+**Kill test before building more** ([doc 04 section 3.4](04-innovation-prior-art.md#34-falsification-experiment),
+arms read faithfully in [05](05-cbf-baselines-faithful.md)): 200 random layouts, injected VIO
+jump and bias faults. Pass: breaches 1 % or less, at least 3x lower than Belief-CBF on fault
+cases, goal reach at least 90 % of PX4-CBF. Fail and drop the headline if Belief-CBF comes
+within 1 pp or PX4-CBF alone is already at 1 % or less. Status: Part a ran ([close-area-safety-filter](../../../samples/close-area-safety-filter/README.md), synthetic): with every obstacle visible, PX4 CP-stop and PX4-CBF already reach 0 % collisions under VIO faults (fail condition holds there); with map-only obstacles PX4-CBF collides in 3-11 %, all on unsensed obstacles. Belief-CBF, MR-CBF and ours are running.
+
+**Early signal (synthetic, not the kill test):** in the
+[arena fault run](../../../samples/close-area-arena/README.md#estimator-and-faults-ran-2026-11-09-synthetic)
+(50 layouts per case, 72-beam fan, every obstacle visible to the ranger), range-only planners had
+0 % collisions under jump, bias, dropout and overconfidence, and lost reach instead. So the
+headline can only win on obstacles the ranger cannot see. Section 3.4 already includes map-only
+poles and a geofence box; on a Crazyflie the blind wedges add more ([08](08-crazyflie-sensing-limits.md)).
+If those cases are dropped, the "PX4-CBF alone <= 1 %" fail branch is likely.
 
 Backups from the wider scan: multi-hypothesis relocalization after VIO loss (23/30), VLM goal
 specification (20/30), NoMaD/ViNT as the planner under the filter (19/30).
