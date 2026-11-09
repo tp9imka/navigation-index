@@ -9,13 +9,14 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [Close-area relocalization after VIO loss: scan-to-map pose hypotheses, ratio + persistence acceptance, hover until one wins](../../catalog/samples/close-area-relocalize.md) - Relocalizer for the close-area arena.
 - [Relative navigation benchmark on real data: KISS-ICP lidar odometry, OpenVINS VIO, mono and nadir VO, scored with evo](../../catalog/samples/relative-nav-benchmark.md) - One command per part.
 
-## Guides (5)
+## Guides (6)
 
 - [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) - Loop-24, 2026-11-09.
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) - After this chapter you can explain how a camera, LiDAR or radar measures motion, what SLAM adds on top of odometry, and which open stack to run on which sensor.
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) - After this chapter you can pick a dataset or simulator that matches your scenario, compute the trajectory metrics judges and reviewers expect, and design a GNSS-outage or interference test that shows what your system doe
 - [Dataset cards](../../docs/dataset-cards/README.md) - Use this when you need recorded data to test a navigation method: which dataset fits, its checked size and license, the download command, and what to fetch before venue Wi-Fi fails.
 - [Demo script: close-area A to B](../../templates/demo-script-close-area.md) - Live-demo variant of demo-script.md for the close-area task: fly from A to B through obstacles, with a VIO fault injected.
+- [Research rounds: which one applies, and the innovation story per brief](../../docs/research/README.md) - Use this when you need the innovation story, want to know which research round fits the brief, or need the kill test and status for a headline idea.
 
 ## Repositories (59)
 

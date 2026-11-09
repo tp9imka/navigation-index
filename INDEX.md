@@ -20,15 +20,15 @@ Browse by concept below, open [the graph](graph/index.html), or grep `index/reco
   - [Signals of opportunity](catalog/concepts/signals-of-opportunity.md) - 14 repos, 53 docs/samples
   - [Electronic warfare resilience](catalog/concepts/ew-resilience.md) - 18 repos, 78 docs/samples
 - [Inertial navigation (INS/IMU)](catalog/concepts/ins.md) - 81 repos, 97 docs/samples
-- [Sensor fusion and state estimation](catalog/concepts/sensor-fusion.md) - 130 repos, 222 docs/samples
+- [Sensor fusion and state estimation](catalog/concepts/sensor-fusion.md) - 130 repos, 224 docs/samples
   - [GNSS/INS integration](catalog/concepts/gnss-ins.md) - 39 repos, 56 docs/samples
   - [Sensor calibration](catalog/concepts/calibration.md) - 29 repos, 31 docs/samples
 - [Visual(-inertial) odometry](catalog/concepts/vio.md) - 82 repos, 122 docs/samples
   - [Visual SLAM](catalog/concepts/visual-slam.md) - 54 repos, 48 docs/samples
-- [LiDAR odometry and SLAM](catalog/concepts/lidar-slam.md) - 59 repos, 53 docs/samples
+- [LiDAR odometry and SLAM](catalog/concepts/lidar-slam.md) - 59 repos, 54 docs/samples
 - [Radar navigation and odometry](catalog/concepts/radar-nav.md) - 22 repos, 13 docs/samples
 - [Place recognition and loop closure](catalog/concepts/place-recognition.md) - 46 repos, 42 docs/samples
-- [Feature detection and matching](catalog/concepts/feature-matching.md) - 38 repos, 40 docs/samples
+- [Feature detection and matching](catalog/concepts/feature-matching.md) - 38 repos, 39 docs/samples
 - [Visual geo-localization (image-to-map)](catalog/concepts/visual-geolocalization.md) - 57 repos, 115 docs/samples
 - [RF localization and direction finding](catalog/concepts/rf-localization.md) - 27 repos, 34 docs/samples
 - [Indoor and pedestrian navigation](catalog/concepts/indoor-pedestrian.md) - 16 repos, 9 docs/samples
@@ -45,15 +45,15 @@ Browse by concept below, open [the graph](graph/index.html), or grep `index/reco
 - [Underwater navigation](catalog/concepts/underwater-nav.md) - 21 repos, 7 docs/samples
 - [Ground vehicle autonomy](catalog/concepts/ground-vehicle-nav.md) - 41 repos, 27 docs/samples
 - [Space and orbital navigation](catalog/concepts/space-nav.md) - 11 repos, 28 docs/samples
-- [Simulation and HIL/SITL](catalog/concepts/simulation.md) - 99 repos, 83 docs/samples
+- [Simulation and HIL/SITL](catalog/concepts/simulation.md) - 99 repos, 84 docs/samples
 - [Datasets and benchmarks](catalog/concepts/datasets-benchmarks.md) - 102 repos, 170 docs/samples
-- [ROS / ROS 2 robotics middleware](catalog/concepts/ros.md) - 118 repos, 34 docs/samples
+- [ROS / ROS 2 robotics middleware](catalog/concepts/ros.md) - 118 repos, 33 docs/samples
 - [Onboard / edge AI perception](catalog/concepts/edge-ai.md) - 78 repos, 60 docs/samples
 - [Tracking and data association](catalog/concepts/target-tracking.md) - 17 repos, 15 docs/samples
 - [Counter-UAS and drone detection](catalog/concepts/counter-uas.md) - 39 repos, 40 docs/samples
 - [Standards and interface specs](catalog/concepts/standards.md) - 46 repos, 97 docs/samples
 - [Policy, export control and ethics](catalog/concepts/policy-ethics.md) - 0 repos, 46 docs/samples
-- [LLM agents for robotics and navigation](catalog/concepts/llm-agents-robotics.md) - 30 repos, 18 docs/samples
+- [LLM agents for robotics and navigation](catalog/concepts/llm-agents-robotics.md) - 30 repos, 17 docs/samples
 
 ## High hackathon-fit repositories
 
