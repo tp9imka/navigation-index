@@ -74,3 +74,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - launched 46a, 48a, 49, 50.
 - landed: 35 => 2e3f270 (decode_eval 63/63; evidence rows for 4 samples; readiness overrides for 6; gate OK)
 - landed: 38 => e7898d3 (R@10 0.666 => 0.689, MRR 0.776 => 0.797 on 45 queries; licences query rank 49 => 1; parity 45/45 on fresh build; claims checked 2/2 by driver: parity and licences query re-run)
+- landed: 36 => 10ce290 (make first-flight: arena + astar_esdf + F2 => reached 19.76 s, 0.83 m clearance; F0 matches arena harness; jump fault => false arrival 0.63 m from B => item 51). AGENTS.md updated.
