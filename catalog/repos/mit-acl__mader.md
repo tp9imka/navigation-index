@@ -22,6 +22,10 @@ MIT ACL decentralized and asynchronous trajectory planner for multiple UAVs in d
 
 - alternative_to: [EGO-Swarm](../../catalog/repos/zju-fast-lab__ego-planner-swarm.md)
 
+## Referenced by
+
+- [PANTHER](../../catalog/repos/mit-acl__panther.md) (same_org)
+
 _Indexed by lane(s): planning-gis-c2_
 
 _GitHub metadata fetched 2026-11-09._

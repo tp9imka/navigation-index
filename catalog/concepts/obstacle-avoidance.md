@@ -10,7 +10,7 @@ Reactive avoidance, sense-and-avoid, DAA.
 
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) - After this chapter you can convert between the coordinate systems your tools disagree on, fetch free imagery and elevation data for a region, display it, and plan a path or a multi-vehicle mission over it.
 
-## Repositories (27)
+## Repositories (30)
 
 - [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md) - fit: high - The standard ROS 2 navigation stack: behavior-tree driven navigator, global planners (NavFn, Smac hybrid-A*/lattice, Theta*), local controllers (DWB, MPPI, Regulated Pure Pursuit), costmaps, recovery behaviors and waypoi
 - [EGO-Swarm](../../catalog/repos/zju-fast-lab__ego-planner-swarm.md) - fit: high - Decentralized multi-quadrotor extension of EGO-Planner with inter-agent collision avoidance and trajectory sharing over a network.
@@ -27,6 +27,7 @@ Reactive avoidance, sense-and-avoid, DAA.
 - [Spatio-Temporal Voxel Layer](../../catalog/repos/stevemacenski__spatio_temporal_voxel_layer.md) - fit: medium - Nav2 costmap layer using OpenVDB voxel grids with time decay to represent 3D obstacles from depth and LiDAR sensors.
 - [KR Autonomous Flight](../../catalog/repos/kumarrobotics__kr_autonomous_flight.md) - fit: medium - UPenn Kumar Robotics end-to-end autonomy stack for GPS-denied quadrotors: state estimation, mapping, planning and control in one system.
 - [Aerial Gym Simulator](../../catalog/repos/ntnu-arl__aerial_gym_simulator.md) - fit: medium - GPU-parallel aerial-robot simulator from NTNU ARL built on NVIDIA Isaac Gym, with depth/range sensors and RL navigation examples.
+- [EGO-Planner-v2 (Swarm Playground)](../../catalog/repos/zju-fast-lab__ego-planner-v2.md) - fit: medium - Codebase of the 'Swarm of micro flying robots in the wild' work: MINCO-based local trajectory optimisation with obstacle, dynamic-feasibility and inter-agent constraints, plus a lightweight simulator.
 - [Ping Python](../../catalog/repos/bluerobotics__ping-python.md) - fit: medium - Python library and examples for Blue Robotics Ping echosounder and Ping360 scanning sonar using the Ping protocol.
 - [ping360_sonar ROS package](../../catalog/repos/centralenantesrobotics__ping360_sonar.md) - fit: medium - ROS package that drives the Ping360 scanning sonar and publishes scans as images and laser-scan style messages.
 - [LaRS evaluator](../../catalog/repos/lojzezust__lars_evaluator.md) - fit: medium - Evaluation scripts for LaRS, a panoptic maritime obstacle detection benchmark spanning lakes, rivers and seas.
@@ -37,13 +38,16 @@ Reactive avoidance, sense-and-avoid, DAA.
 - [PX4 Avoidance](../../catalog/repos/px4__px4-avoidance.md) - fit: low - Archived ROS nodes for local planning, global planning and safe landing using depth sensors with PX4.
 - [MADER](../../catalog/repos/mit-acl__mader.md) - fit: low - MIT ACL decentralized and asynchronous trajectory planner for multiple UAVs in dynamic environments with obstacle and agent avoidance.
 - [MBPlanner](../../catalog/repos/ntnu-arl__mbplanner_ros.md) - fit: low - Motion-primitive based exploration planner for fast aerial robots in confined spaces, used in CERBERUS flying platforms.
+- [PANTHER](../../catalog/repos/mit-acl__panther.md) - fit: low - Perception-aware trajectory planner for multirotors in dynamic environments: jointly optimises translation and yaw so the camera keeps moving obstacles in view while avoiding them.
+- [LA-Planner](../../catalog/repos/robotics-star-lab__la-planner.md) - fit: low - Localisation-aware quadrotor planner for unknown, feature-poor environments (IROS 2025): it allocates camera attention between exploration and feature-rich regions so VIO keeps tracking during navigation.
 - [Aeolus Ocean](../../catalog/repos/aavek__aeolus-ocean.md) - fit: low - Collision avoidance simulator for COLREG-compliant autonomous ship navigation intended for use as a digital twin under varied weather and day/night conditions.
 - [TPU_2 (CopterHack 2023) - flight through forest](../../catalog/repos/shamoleg__clover.md) - fit: low - Fork of Clover with Tomsk Polytechnic team TPU_2's CopterHack 2023 entry (docs/ru/tpu_2.md on branch tpu_2): an algorithm for autonomous flight through dense forest using empirical search plus classic planners such as Di
 
-## Documents, talks, courses, datasets (8)
+## Documents, talks, courses, datasets (9)
 
 - [COLREGs - Convention on the International Regulations for Preventing Collisions at Sea, 1972](../../catalog/resources/imo-colregs.md) - standard - IMO page for the collision regulations that define give-way and stand-on duties, lights and signals; the rule set autonomous surface vessels must encode.
 - [EGO-Planner: An ESDF-free Gradient-based Local Planner for Quadrotors](../../catalog/resources/zhou-ego-planner-paper.md) - paper - Introduces a local planner that avoids building a full Euclidean signed distance field, computing collision penalties only from obstacles the trajectory intersects, cutting onboard compute.
+- [Geometrically Constrained Trajectory Optimization for Multicopters](../../catalog/resources/wang-minco-gcopter-2021.md) - paper - Introduces MINCO, a minimum-control trajectory class with linear-complexity parameterisation, and GCOPTER, which optimises trajectories inside safe-corridor polytopes with spatial and temporal deformation.
 - [LaRS: A Diverse Panoptic Maritime Obstacle Detection Dataset and Benchmark](../../catalog/resources/lars-maritime-obstacle-dataset-2023.md) - dataset - ICCV 2023 panoptic obstacle detection benchmark from lakes, rivers and seas: over 4,000 per-pixel labelled key frames, each with nine preceding frames (40k+ frames), 11 classes and an online evaluation server.
 - [MIT 2.680 Unmanned Marine Vehicle Autonomy, Sensing and Communications](../../catalog/resources/mit-2680-marine-autonomy.md) - course - MIT course site with lectures and hands-on labs built on MOOS-IvP, covering behaviour-based autonomy, multi-vehicle coordination, collision avoidance and marine sensing.
 - [NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration](../../catalog/resources/nomad-diffusion-nav-2023.md) - paper - Single diffusion policy that handles both goal-directed navigation and undirected exploration by masking the goal.

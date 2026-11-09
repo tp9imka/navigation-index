@@ -34,6 +34,7 @@ Decentralized multi-quadrotor extension of EGO-Planner with inter-agent collisio
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [MADER](../../catalog/repos/mit-acl__mader.md) (alternative_to)
 - [EGO-Planner](../../catalog/repos/zju-fast-lab__ego-planner.md) (extends)
+- [EGO-Planner-v2 (Swarm Playground)](../../catalog/repos/zju-fast-lab__ego-planner-v2.md) (extends)
 
 _Indexed by lane(s): domains-swarm, planning-gis-c2_
 

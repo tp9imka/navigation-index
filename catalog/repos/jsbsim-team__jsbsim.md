@@ -22,6 +22,12 @@ Open-source flight dynamics model library for fixed-wing and other aircraft, use
 
 - integrates_with: [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md)
 
+## Referenced by
+
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
+- [mavsim_public (Small Unmanned Aircraft)](../../catalog/repos/byu-magicc__mavsim_public.md) (alternative_to)
+- [Skywalker X8 simulator](../../catalog/repos/krisgry__x8.md) (alternative_to)
+
 _Indexed by lane(s): sim-data_
 
 _GitHub metadata fetched 2026-11-09._

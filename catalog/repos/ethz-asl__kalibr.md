@@ -30,6 +30,7 @@ ETH ASL calibration toolbox for multi-camera and camera-IMU systems (extrinsics 
 - [4. Vision, LiDAR and radar odometry](../../docs/primer/04-vision-lidar-radar-odometry.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [cuckoo_time_translator](../../catalog/repos/ethz-asl__cuckoo_time_translator.md) (same_org)
+- [VersaVIS](../../catalog/repos/ethz-asl__versavis.md) (integrates_with)
 - [imu_tk](../../catalog/repos/kyle-ak__imu_tk.md) (alternative_to)
 - [allan_variance_ros](../../catalog/repos/ori-drs__allan_variance_ros.md) (integrates_with)
 - [iKalibr](../../catalog/repos/unsigned-long__ikalibr.md) (alternative_to)

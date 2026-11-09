@@ -79,6 +79,38 @@
   ],
   "fetched": "2026-11-09"
  },
+ "repo:acados/acados": {
+  "archived": false,
+  "description": "Fast and embedded solvers for nonlinear optimal control and nonlinear model predictive control",
+  "forks_count": 368,
+  "full_name": "acados/acados",
+  "html_url": "https://github.com/acados/acados",
+  "language": "C",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-10-29T15:33:53Z",
+  "stargazers_count": 1519,
+  "topics": [
+   "control",
+   "differentiable-model-predictive-control",
+   "differentiable-optimization",
+   "differentiable-programming",
+   "differential-dynamic-programming",
+   "embedded",
+   "high-performance",
+   "model-predictive-control",
+   "moving-horizon-estimation",
+   "nonlinear",
+   "nonlinear-control",
+   "optimal",
+   "optimal-control",
+   "optimization",
+   "real-time",
+   "simulation",
+   "simulink",
+   "solver"
+  ],
+  "fetched": "2026-11-09"
+ },
  "repo:aceinna/gnss-ins-sim": {
   "archived": false,
   "description": "Open-source GNSS + inertial navigation, sensor fusion simulator.  Motion trajectory generator, sensor models, and navigation ",
@@ -98,6 +130,19 @@
   ],
   "fetched": "2026-11-09"
  },
+ "repo:act3-ace/run-time-assurance": {
+  "archived": false,
+  "description": null,
+  "forks_count": 1,
+  "full_name": "act3-ace/run-time-assurance",
+  "html_url": "https://github.com/act3-ace/run-time-assurance",
+  "language": "Jupyter Notebook",
+  "license": "NOASSERTION",
+  "pushed_at": "2025-09-12T17:11:18Z",
+  "stargazers_count": 11,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
  "repo:aerorobotics/caltech-aerial-rgbt-dataset": {
   "archived": false,
   "description": null,
@@ -108,6 +153,19 @@
   "license": "NOASSERTION",
   "pushed_at": "2025-01-10T02:46:47Z",
   "stargazers_count": 94,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:aerorobotics/neural-fly": {
+  "archived": false,
+  "description": "Training scripts, training data, and experimental data for Neural Fly",
+  "forks_count": 54,
+  "full_name": "aerorobotics/neural-fly",
+  "html_url": "https://github.com/aerorobotics/neural-fly",
+  "language": "Jupyter Notebook",
+  "license": null,
+  "pushed_at": "2022-05-21T17:09:18Z",
+  "stargazers_count": 226,
   "topics": [],
   "fetched": "2026-11-09"
  },
@@ -210,6 +268,19 @@
    "learning",
    "uncertainty"
   ],
+  "fetched": "2026-11-09"
+ },
+ "repo:airlab-polimi/roamfree": {
+  "archived": false,
+  "description": "The ROAMFREE sensor fusion library",
+  "forks_count": 11,
+  "full_name": "AIRLab-POLIMI/ROAMFREE",
+  "html_url": "https://github.com/AIRLab-POLIMI/ROAMFREE",
+  "language": "C++",
+  "license": null,
+  "pushed_at": "2026-06-03T10:15:29Z",
+  "stargazers_count": 32,
+  "topics": [],
   "fetched": "2026-11-09"
  },
  "repo:airockchip/rknn_model_zoo": {
@@ -565,6 +636,19 @@
   ],
   "fetched": "2026-11-09"
  },
+ "repo:andrewwalker/pydubins": {
+  "archived": false,
+  "description": "Python wrapper of the C version of the Dubins-Curves library",
+  "forks_count": 54,
+  "full_name": "AndrewWalker/pydubins",
+  "html_url": "https://github.com/AndrewWalker/pydubins",
+  "language": "C",
+  "license": "MIT",
+  "pushed_at": "2025-08-17T10:21:56Z",
+  "stargazers_count": 79,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
  "repo:anybotics/grid_map": {
   "archived": false,
   "description": "Universal grid map library for mobile robotic mapping",
@@ -658,6 +742,23 @@
   "pushed_at": "2025-07-29T15:53:18Z",
   "stargazers_count": 10,
   "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:arclab-hku/deio": {
+  "archived": false,
+  "description": "(ICCV2025) Learning-based Event-Inertial Odometry",
+  "forks_count": 14,
+  "full_name": "arclab-hku/DEIO",
+  "html_url": "https://github.com/arclab-hku/DEIO",
+  "language": "Jupyter Notebook",
+  "license": "MIT",
+  "pushed_at": "2026-07-07T16:39:59Z",
+  "stargazers_count": 121,
+  "topics": [
+   "deep-learning",
+   "event-cameras",
+   "slam"
+  ],
   "fetched": "2026-11-09"
  },
  "repo:arclab-hku/esvio": {
@@ -1650,6 +1751,41 @@
   "topics": [],
   "fetched": "2026-11-09"
  },
+ "repo:byu-magicc/mavsim_public": {
+  "archived": false,
+  "description": "Repository for the textbook:  Small Unmanned Aircraft: Theory and Practice, by Randy Beard and Tim McLain",
+  "forks_count": 272,
+  "full_name": "byu-magicc/mavsim_public",
+  "html_url": "https://github.com/byu-magicc/mavsim_public",
+  "language": "Python",
+  "license": "GPL-3.0",
+  "pushed_at": "2026-06-13T02:52:31Z",
+  "stargazers_count": 1045,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:byuflowlab/ccblade.jl": {
+  "archived": false,
+  "description": "Blade Element Momentum Method for Propellers and Turbines",
+  "forks_count": 37,
+  "full_name": "byuflowlab/CCBlade.jl",
+  "html_url": "https://github.com/byuflowlab/CCBlade.jl",
+  "language": "Julia",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-09-24T16:22:31Z",
+  "stargazers_count": 91,
+  "topics": [
+   "aerodynamics",
+   "aircraft",
+   "bem",
+   "bemt",
+   "propeller",
+   "rotor",
+   "rotorcraft",
+   "wind-turbine"
+  ],
+  "fetched": "2026-11-09"
+ },
  "repo:c-o-s-t-y-a/ardupilot_ua": {
   "archived": false,
   "description": "переклад офіційної документації ardupilot українською ",
@@ -1745,6 +1881,66 @@
    "self-driving",
    "slam"
   ],
+  "fetched": "2026-11-09"
+ },
+ "repo:casadi/casadi": {
+  "archived": false,
+  "description": "CasADi is a symbolic framework for numeric optimization implementing automatic differentiation in forward and reverse modes on sparse matrix-valued computational graphs. It supports self-contained C-code generation and interfaces state-of-the-art codes such as SUNDIALS, IPOPT etc. It can be used from C++, Python, Matlab/Octave, Julia or Javascript",
+  "forks_count": 469,
+  "full_name": "casadi/casadi",
+  "html_url": "https://github.com/casadi/casadi",
+  "language": "C++",
+  "license": "LGPL-3.0",
+  "pushed_at": "2026-11-07T22:01:44Z",
+  "stargazers_count": 2332,
+  "topics": [
+   "academic-project",
+   "algorithmic-differentation",
+   "c-plus-plus",
+   "code-generation",
+   "derivatives",
+   "javascript",
+   "julia-package",
+   "library",
+   "mathematics",
+   "matlab",
+   "nonlinear",
+   "nonlinear-programming",
+   "numerical-calculations",
+   "octave",
+   "optimal-control",
+   "optimization",
+   "parameter-estimation",
+   "python",
+   "scientific-computing",
+   "symbolic-manipulation"
+  ],
+  "fetched": "2026-11-09"
+ },
+ "repo:castacks/alfa-dataset": {
+  "archived": false,
+  "description": null,
+  "forks_count": 4,
+  "full_name": "castacks/alfa-dataset",
+  "html_url": "https://github.com/castacks/alfa-dataset",
+  "language": null,
+  "license": null,
+  "pushed_at": "2020-07-23T06:05:29Z",
+  "stargazers_count": 20,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:castacks/alfa-dataset-tools": {
+  "archived": false,
+  "description": "Tools for working with ALFA datset",
+  "forks_count": 13,
+  "full_name": "castacks/alfa-dataset-tools",
+  "html_url": "https://github.com/castacks/alfa-dataset-tools",
+  "language": "C++",
+  "license": null,
+  "pushed_at": "2024-04-12T13:13:52Z",
+  "stargazers_count": 43,
+  "topics": [],
   "fetched": "2026-11-09"
  },
  "repo:castacks/tartan_drive": {
@@ -2037,6 +2233,32 @@
   ],
   "fetched": "2026-11-09"
  },
+ "repo:cntaylor/factorgraph2dsatelliteexample": {
+  "archived": false,
+  "description": "An example comparing EKF, factor graphs, and sliding window factors.  Used for a paper in the Navigation journal.",
+  "forks_count": 14,
+  "full_name": "cntaylor/factorGraph2DsatelliteExample",
+  "html_url": "https://github.com/cntaylor/factorGraph2DsatelliteExample",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-01-15T13:11:15Z",
+  "stargazers_count": 59,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:cntaylor/fgo_gnss_integrity": {
+  "archived": false,
+  "description": null,
+  "forks_count": 3,
+  "full_name": "cntaylor/FGO_gnss_integrity",
+  "html_url": "https://github.com/cntaylor/FGO_gnss_integrity",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-03-24T20:45:12Z",
+  "stargazers_count": 9,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
  "repo:codexlabsllc/colosseum": {
   "archived": true,
   "description": "Open source simulator for autonomous robotics built on Unreal Engine with support for Unity",
@@ -2163,6 +2385,32 @@
   "pushed_at": "2024-01-23T01:34:46Z",
   "stargazers_count": 72,
   "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:copilot-language/copilot": {
+  "archived": false,
+  "description": "A stream-based runtime-verification framework for generating hard real-time C code.",
+  "forks_count": 82,
+  "full_name": "Copilot-Language/copilot",
+  "html_url": "https://github.com/Copilot-Language/copilot",
+  "language": "Haskell",
+  "license": null,
+  "pushed_at": "2026-11-08T02:59:00Z",
+  "stargazers_count": 840,
+  "topics": [
+   "c",
+   "copilot",
+   "embedded-systems",
+   "haskell",
+   "requirements",
+   "requirements-engineering",
+   "runtime-assurance",
+   "runtime-monitoring",
+   "runtime-monitoring-system",
+   "runtime-verification",
+   "rv",
+   "stream"
+  ],
   "fetched": "2026-11-09"
  },
  "repo:copterexpress/clover": {
@@ -2764,6 +3012,19 @@
   ],
   "fetched": "2026-11-09"
  },
+ "repo:dlr-ft/eduplane": {
+  "archived": false,
+  "description": "Extensions to the Dubins airplane method - trajectory generation for fixed-wings under consideration of flight performance constraints and uniform wind",
+  "forks_count": 0,
+  "full_name": "DLR-FT/eduplane",
+  "html_url": "https://github.com/DLR-FT/eduplane",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2026-11-06T14:37:29Z",
+  "stargazers_count": 3,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
  "repo:dmmm1997/denseuav": {
   "archived": false,
   "description": "「TIP2023」Vision-Based UAV Self-Positioning in Low-Altitude Urban Environments",
@@ -2790,6 +3051,21 @@
   "topics": [],
   "fetched": "2026-11-09"
  },
+ "repo:do-mpc/do-mpc": {
+  "archived": false,
+  "description": "Model predictive control python toolbox",
+  "forks_count": 232,
+  "full_name": "do-mpc/do-mpc",
+  "html_url": "https://github.com/do-mpc/do-mpc",
+  "language": "Python",
+  "license": "LGPL-3.0",
+  "pushed_at": "2026-09-22T12:07:27Z",
+  "stargazers_count": 1481,
+  "topics": [
+   "mhe-es"
+  ],
+  "fetched": "2026-11-09"
+ },
  "repo:drapegnik/bsu-science": {
   "archived": false,
   "description": "🎓 My science works reports on FAMCS, BSU",
@@ -2811,6 +3087,19 @@
    "report",
    "tex"
   ],
+  "fetched": "2026-11-09"
+ },
+ "repo:drona-org/soteronros": {
+  "archived": false,
+  "description": "SOTER on ROS is a run-time assurance framework for building safe distributed mobile robotic (DMR) systems on top of the Robot Operating System (ROS). ",
+  "forks_count": 1,
+  "full_name": "Drona-Org/SOTERonROS",
+  "html_url": "https://github.com/Drona-Org/SOTERonROS",
+  "language": "C#",
+  "license": null,
+  "pushed_at": "2020-06-23T22:41:30Z",
+  "stargazers_count": 1,
+  "topics": [],
   "fetched": "2026-11-09"
  },
  "repo:dronecan/libcanard": {
@@ -3265,6 +3554,57 @@
   ],
   "fetched": "2026-11-09"
  },
+ "repo:ethz-asl/mav_active_3d_planning": {
+  "archived": false,
+  "description": "Modular framework for online informative path planning.",
+  "forks_count": 115,
+  "full_name": "ethz-asl/mav_active_3d_planning",
+  "html_url": "https://github.com/ethz-asl/mav_active_3d_planning",
+  "language": "C++",
+  "license": "BSD-3-Clause",
+  "pushed_at": "2025-08-14T10:33:39Z",
+  "stargazers_count": 714,
+  "topics": [
+   "drone",
+   "ipp",
+   "mav",
+   "path",
+   "path-planning",
+   "planning"
+  ],
+  "fetched": "2026-11-09"
+ },
+ "repo:ethz-asl/mav_control_rw": {
+  "archived": false,
+  "description": "Control strategies for rotary wing Micro Aerial Vehicles using ROS",
+  "forks_count": 166,
+  "full_name": "ethz-asl/mav_control_rw",
+  "html_url": "https://github.com/ethz-asl/mav_control_rw",
+  "language": "C",
+  "license": "Apache-2.0",
+  "pushed_at": "2019-09-05T12:04:40Z",
+  "stargazers_count": 458,
+  "topics": [
+   "control",
+   "ros",
+   "trajectory-tracking",
+   "uav"
+  ],
+  "fetched": "2026-11-09"
+ },
+ "repo:ethz-asl/mav_trajectory_generation": {
+  "archived": false,
+  "description": "Polynomial trajectory generation and optimization, especially for rotary-wing MAVs.",
+  "forks_count": 238,
+  "full_name": "ethz-asl/mav_trajectory_generation",
+  "html_url": "https://github.com/ethz-asl/mav_trajectory_generation",
+  "language": "C++",
+  "license": "Apache-2.0",
+  "pushed_at": "2023-05-20T10:49:20Z",
+  "stargazers_count": 674,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
  "repo:ethz-asl/polygon_coverage_planning": {
   "archived": false,
   "description": "Coverage planning in general polygons with holes.",
@@ -3338,6 +3678,55 @@
   "license": "NOASSERTION",
   "pushed_at": "2026-09-03T10:41:50Z",
   "stargazers_count": 1272,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:ethz-asl/terrain-navigation": {
+  "archived": false,
+  "description": "Implementation for safe low altitude navigation in steep terrain for fixed-wing Aerial Vehicles",
+  "forks_count": 24,
+  "full_name": "ethz-asl/terrain-navigation",
+  "html_url": "https://github.com/ethz-asl/terrain-navigation",
+  "language": "C++",
+  "license": "BSD-3-Clause",
+  "pushed_at": "2025-07-01T10:45:40Z",
+  "stargazers_count": 187,
+  "topics": [
+   "drones",
+   "fixedwing",
+   "planning",
+   "robotics"
+  ],
+  "fetched": "2026-11-09"
+ },
+ "repo:ethz-asl/terrain-navigation2": {
+  "archived": false,
+  "description": "Implementation for safe low altitude navigation in steep terrain for fixed-wing Aerial Vehicles",
+  "forks_count": 13,
+  "full_name": "ethz-asl/terrain-navigation2",
+  "html_url": "https://github.com/ethz-asl/terrain-navigation2",
+  "language": "C++",
+  "license": "BSD-3-Clause",
+  "pushed_at": "2026-10-02T13:04:06Z",
+  "stargazers_count": 59,
+  "topics": [
+   "drones",
+   "fixed-wing",
+   "planning",
+   "robotics"
+  ],
+  "fetched": "2026-11-09"
+ },
+ "repo:ethz-asl/versavis": {
+  "archived": false,
+  "description": "An Open Versatile Multi-Camera Visual-Inertial Sensor Suite",
+  "forks_count": 63,
+  "full_name": "ethz-asl/versavis",
+  "html_url": "https://github.com/ethz-asl/versavis",
+  "language": "C++",
+  "license": "NOASSERTION",
+  "pushed_at": "2021-09-28T10:57:09Z",
+  "stargazers_count": 291,
   "topics": [],
   "fetched": "2026-11-09"
  },
@@ -5398,6 +5787,28 @@
   "topics": [],
   "fetched": "2026-11-09"
  },
+ "repo:jaeyoung-lim/mavros_controllers": {
+  "archived": false,
+  "description": "Aggressive trajectory tracking using mavros for PX4 enabled vehicles",
+  "forks_count": 183,
+  "full_name": "Jaeyoung-Lim/mavros_controllers",
+  "html_url": "https://github.com/Jaeyoung-Lim/mavros_controllers",
+  "language": "C++",
+  "license": "BSD-3-Clause",
+  "pushed_at": "2022-09-03T11:46:41Z",
+  "stargazers_count": 509,
+  "topics": [
+   "drone",
+   "gazebo",
+   "mavros",
+   "px4",
+   "quadrotor",
+   "robotics",
+   "ros",
+   "trajectory"
+  ],
+  "fetched": "2026-11-09"
+ },
  "repo:jaffarrell/av-matlab-sw": {
   "archived": false,
   "description": "Matlab software to implement various Allan variance calculations related to the article \"IMU Error Modeling for State Estimation and Sensor Calibration: A Tutorial\" by J. A. Farrell, F. O. Silva, F. Rahman, and J. Wendel",
@@ -6068,6 +6479,19 @@
   "license": "GPL-3.0",
   "pushed_at": "2025-12-13T03:37:45Z",
   "stargazers_count": 323,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:krisgry/x8": {
+  "archived": false,
+  "description": null,
+  "forks_count": 8,
+  "full_name": "krisgry/x8",
+  "html_url": "https://github.com/krisgry/x8",
+  "language": "Matlab",
+  "license": null,
+  "pushed_at": "2018-06-14T06:42:21Z",
+  "stargazers_count": 27,
   "topics": [],
   "fetched": "2026-11-09"
  },
@@ -7535,6 +7959,30 @@
   ],
   "fetched": "2026-11-09"
  },
+ "repo:mit-acl/panther": {
+  "archived": false,
+  "description": "Perception-Aware Trajectory Planner in Dynamic Environments",
+  "forks_count": 36,
+  "full_name": "mit-acl/panther",
+  "html_url": "https://github.com/mit-acl/panther",
+  "language": "C++",
+  "license": "BSD-3-Clause",
+  "pushed_at": "2022-11-01T16:13:15Z",
+  "stargazers_count": 243,
+  "topics": [
+   "dynamic-obstacles",
+   "obstacle-avoidance",
+   "obstacle-avoidance-algorithm",
+   "optimization",
+   "path",
+   "perception",
+   "perception-aware",
+   "planning",
+   "trajectory",
+   "uav"
+  ],
+  "fetched": "2026-11-09"
+ },
  "repo:mit-aera/blackbird-dataset": {
   "archived": false,
   "description": null,
@@ -7862,6 +8310,24 @@
   "topics": [],
   "fetched": "2026-11-09"
  },
+ "repo:muccc/gr-iridium": {
+  "archived": false,
+  "description": "Iridium burst detector and demodulator.",
+  "forks_count": 100,
+  "full_name": "muccc/gr-iridium",
+  "html_url": "https://github.com/muccc/gr-iridium",
+  "language": "C++",
+  "license": null,
+  "pushed_at": "2026-07-02T09:26:47Z",
+  "stargazers_count": 494,
+  "topics": [
+   "gnuradio",
+   "gr-iridium",
+   "iridium-satellites",
+   "sdr"
+  ],
+  "fetched": "2026-11-09"
+ },
  "repo:muskie82/monogs": {
   "archived": false,
   "description": "[CVPR'24 Highlight & Best Demo Award] Gaussian Splatting SLAM",
@@ -7934,6 +8400,43 @@
   ],
   "fetched": "2026-11-09"
  },
+ "repo:nasa-sw-vnv/fret": {
+  "archived": false,
+  "description": "A framework for the elicitation, specification, formalization and analysis of requirements.",
+  "forks_count": 75,
+  "full_name": "NASA-SW-VnV/fret",
+  "html_url": "https://github.com/NASA-SW-VnV/fret",
+  "language": "JavaScript",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-04-14T21:34:09Z",
+  "stargazers_count": 504,
+  "topics": [
+   "aerospace",
+   "autonomy",
+   "consistency-checking",
+   "early-verification-validation",
+   "formal-verification",
+   "probabilistic-requirements",
+   "requirements",
+   "robotic-systems",
+   "safety-critical-systems",
+   "test-case-generation"
+  ],
+  "fetched": "2026-11-09"
+ },
+ "repo:nasa/cfs": {
+  "archived": false,
+  "description": "The Core Flight System (cFS)",
+  "forks_count": 417,
+  "full_name": "nasa/cFS",
+  "html_url": "https://github.com/nasa/cFS",
+  "language": "C",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-11-08T07:23:27Z",
+  "stargazers_count": 1566,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
  "repo:nasa/cots-star-tracker": {
   "archived": false,
   "description": null,
@@ -7945,6 +8448,63 @@
   "pushed_at": "2025-08-14T21:01:16Z",
   "stargazers_count": 125,
   "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:nasa/fprime": {
+  "archived": false,
+  "description": "F´ - A flight software and embedded systems framework",
+  "forks_count": 1797,
+  "full_name": "nasa/fprime",
+  "html_url": "https://github.com/nasa/fprime",
+  "language": "C++",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-11-08T21:18:02Z",
+  "stargazers_count": 11858,
+  "topics": [
+   "components",
+   "cpp",
+   "embedded",
+   "embedded-systems",
+   "flight",
+   "flight-software",
+   "fprime",
+   "framework",
+   "nasa",
+   "object-oriented-programming",
+   "raspberry-pi",
+   "real-time",
+   "spaceflight"
+  ],
+  "fetched": "2026-11-09"
+ },
+ "repo:nasa/ogma": {
+  "archived": false,
+  "description": "Generator of runtime monitors for flight and robotics applications.",
+  "forks_count": 61,
+  "full_name": "nasa/ogma",
+  "html_url": "https://github.com/nasa/ogma",
+  "language": "Haskell",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-11-08T16:02:15Z",
+  "stargazers_count": 588,
+  "topics": [
+   "assurance",
+   "autonomy",
+   "cfs",
+   "embedded-systems",
+   "flight-software",
+   "fprime",
+   "robot-operating-system",
+   "robotics",
+   "ros",
+   "ros2",
+   "runtime-monitoring",
+   "runtime-monitoring-system",
+   "runtime-verification",
+   "rv",
+   "space-ros",
+   "spacecraft"
+  ],
   "fetched": "2026-11-09"
  },
  "repo:naver/mast3r": {
@@ -8348,6 +8908,24 @@
   "topics": [],
   "fetched": "2026-11-09"
  },
+ "repo:nvidia-ai-iot/jetson_benchmarks": {
+  "archived": false,
+  "description": "Jetson Benchmark",
+  "forks_count": 80,
+  "full_name": "NVIDIA-AI-IOT/jetson_benchmarks",
+  "html_url": "https://github.com/NVIDIA-AI-IOT/jetson_benchmarks",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2024-06-20T03:47:48Z",
+  "stargazers_count": 401,
+  "topics": [
+   "benchmark",
+   "jetson",
+   "jetson-nano",
+   "xavier-nx"
+  ],
+  "fetched": "2026-11-09"
+ },
  "repo:nvidia-ai-iot/torch2trt": {
   "archived": false,
   "description": "An easy to use PyTorch to TensorRT converter",
@@ -8366,6 +8944,28 @@
    "jetson-xavier",
    "pytorch",
    "tensorrt"
+  ],
+  "fetched": "2026-11-09"
+ },
+ "repo:nvidia-isaac-ros/isaac_ros_benchmark": {
+  "archived": false,
+  "description": "Performance benchmarking for NVIDIA-accelerated Isaac ROS packages",
+  "forks_count": 6,
+  "full_name": "NVIDIA-ISAAC-ROS/isaac_ros_benchmark",
+  "html_url": "https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_benchmark",
+  "language": "Python",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-09-22T03:29:30Z",
+  "stargazers_count": 38,
+  "topics": [
+   "benchmarking",
+   "gpu",
+   "jetson",
+   "nvidia",
+   "performance",
+   "performance-testing",
+   "ros2",
+   "ros2-humble"
   ],
   "fetched": "2026-11-09"
  },
@@ -8456,6 +9056,25 @@
   "topics": [],
   "fetched": "2026-11-09"
  },
+ "repo:nvidia/tensorrt": {
+  "archived": false,
+  "description": "NVIDIA® TensorRT™ is an SDK for high-performance deep learning inference on NVIDIA GPUs. This repository contains the open source components of TensorRT.",
+  "forks_count": 2421,
+  "full_name": "NVIDIA/TensorRT",
+  "html_url": "https://github.com/NVIDIA/TensorRT",
+  "language": "C++",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-11-05T18:43:29Z",
+  "stargazers_count": 13438,
+  "topics": [
+   "deep-learning",
+   "gpu-acceleration",
+   "inference",
+   "nvidia",
+   "tensorrt"
+  ],
+  "fetched": "2026-11-09"
+ },
  "repo:nwtime/linuxptp": {
   "archived": false,
   "description": "Linux PTP Project",
@@ -8527,6 +9146,32 @@
   "license": "Apache-2.0",
   "pushed_at": "2026-11-06T17:52:43Z",
   "stargazers_count": 320,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:open-pnt/aspn-icd": {
+  "archived": false,
+  "description": "The ICD specification for ASPN",
+  "forks_count": 2,
+  "full_name": "Open-PNT/ASPN-ICD",
+  "html_url": "https://github.com/Open-PNT/ASPN-ICD",
+  "language": "Python",
+  "license": "CC-BY-4.0",
+  "pushed_at": "2026-09-24T17:25:49Z",
+  "stargazers_count": 10,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:open-pnt/pntos-c": {
+  "archived": false,
+  "description": "The C API specification for pntOS",
+  "forks_count": 4,
+  "full_name": "Open-PNT/pntOS-C",
+  "html_url": "https://github.com/Open-PNT/pntOS-C",
+  "language": "C",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-08-30T14:14:41Z",
+  "stargazers_count": 5,
   "topics": [],
   "fetched": "2026-11-09"
  },
@@ -8842,6 +9487,31 @@
   "topics": [],
   "fetched": "2026-11-09"
  },
+ "repo:osqp/osqp": {
+  "archived": false,
+  "description": "The Operator Splitting QP Solver",
+  "forks_count": 422,
+  "full_name": "osqp/osqp",
+  "html_url": "https://github.com/osqp/osqp",
+  "language": "C",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-01-12T12:56:23Z",
+  "stargazers_count": 2223,
+  "topics": [
+   "control",
+   "convex-optimization",
+   "lasso",
+   "machine-learning",
+   "model-predictive-control",
+   "numerical-optimization",
+   "optimization",
+   "portfolio-optimization",
+   "quadratic-programming",
+   "solver",
+   "svm"
+  ],
+  "fetched": "2026-11-09"
+ },
  "repo:osqzss/bladegps": {
   "archived": true,
   "description": "Real-time GPS signal simulator for bladeRF",
@@ -9137,6 +9807,38 @@
   "pushed_at": "2026-10-30T14:29:40Z",
   "stargazers_count": 3,
   "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:peterdsharpe/aerosandbox": {
+  "archived": false,
+  "description": "Aircraft design optimization made fast through computational graph transformations (e.g., automatic differentiation). Composable analysis tools for aerodynamics, propulsion, structures, trajectory design, and much more.",
+  "forks_count": 213,
+  "full_name": "peterdsharpe/AeroSandbox",
+  "html_url": "https://github.com/peterdsharpe/AeroSandbox",
+  "language": "Jupyter Notebook",
+  "license": "MIT",
+  "pushed_at": "2026-10-30T20:20:43Z",
+  "stargazers_count": 1388,
+  "topics": [
+   "3d-panel",
+   "aerodynamic-analysis",
+   "aerodynamics",
+   "aerospace",
+   "aerospace-engineering",
+   "aircraft",
+   "aircraft-design",
+   "airplane",
+   "analysis",
+   "automatic-differentiation",
+   "cfd",
+   "mdao",
+   "mdo",
+   "optimization",
+   "python",
+   "simulation",
+   "vlm",
+   "xfoil"
+  ],
   "fetched": "2026-11-09"
  },
  "repo:peterjburke/rid": {
@@ -9673,6 +10375,71 @@
   "topics": [],
   "fetched": "2026-11-09"
  },
+ "repo:px4/pyulog": {
+  "archived": false,
+  "description": "Python module & scripts for ULog files",
+  "forks_count": 162,
+  "full_name": "PX4/pyulog",
+  "html_url": "https://github.com/PX4/pyulog",
+  "language": "Python",
+  "license": "BSD-3-Clause",
+  "pushed_at": "2026-10-27T06:55:05Z",
+  "stargazers_count": 173,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:pybamm-team/pybamm": {
+  "archived": false,
+  "description": "Fast and flexible physics-based battery models in Python",
+  "forks_count": 835,
+  "full_name": "pybamm-team/PyBaMM",
+  "html_url": "https://github.com/pybamm-team/PyBaMM",
+  "language": "Python",
+  "license": "BSD-3-Clause",
+  "pushed_at": "2026-11-06T20:16:30Z",
+  "stargazers_count": 1727,
+  "topics": [
+   "batteries",
+   "battery-models",
+   "hacktoberfest",
+   "pybamm",
+   "python",
+   "simulation",
+   "solvers"
+  ],
+  "fetched": "2026-11-09"
+ },
+ "repo:pypose/pypose": {
+  "archived": false,
+  "description": "A library for differentiable robotics on manifolds.",
+  "forks_count": 139,
+  "full_name": "pypose/pypose",
+  "html_url": "https://github.com/pypose/pypose",
+  "language": "Python",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-11-06T04:16:42Z",
+  "stargazers_count": 1621,
+  "topics": [
+   "autonomous-robots",
+   "computer-graphics",
+   "control",
+   "deep-learning",
+   "geometric-deep-learning",
+   "kalman-filter",
+   "learning",
+   "lie-group",
+   "optimization",
+   "physics",
+   "planning",
+   "pose-estimation",
+   "pose-graph-optimization",
+   "python",
+   "pytorch",
+   "robotics",
+   "slam"
+  ],
+  "fetched": "2026-11-09"
+ },
  "repo:pyproj4/pyproj": {
   "archived": false,
   "description": "Python interface to PROJ (cartographic projections and coordinate transformations library)",
@@ -9704,6 +10471,69 @@
   "license": "GPL-2.0",
   "pushed_at": "2026-11-09T00:32:59Z",
   "stargazers_count": 14798,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:qualcomm/ai-hub-models": {
+  "archived": false,
+  "description": "Qualcomm® AI Hub Models is our collection of state-of-the-art machine learning models optimized for performance (latency, memory etc.) and ready to deploy on Qualcomm® devices.",
+  "forks_count": 218,
+  "full_name": "qualcomm/ai-hub-models",
+  "html_url": "https://github.com/qualcomm/ai-hub-models",
+  "language": "Python",
+  "license": "BSD-3-Clause",
+  "pushed_at": "2026-11-07T00:33:45Z",
+  "stargazers_count": 1258,
+  "topics": [
+   "deeplearning",
+   "demos",
+   "inference",
+   "inference-api",
+   "inference-engine",
+   "machine-learning",
+   "machinelearning",
+   "onnx",
+   "pytorch",
+   "qnn",
+   "tensorflow-lite"
+  ],
+  "fetched": "2026-11-09"
+ },
+ "repo:qualcomm/aimet": {
+  "archived": false,
+  "description": "AIMET is a library that provides advanced quantization and compression techniques for trained neural network models.",
+  "forks_count": 477,
+  "full_name": "qualcomm/aimet",
+  "html_url": "https://github.com/qualcomm/aimet",
+  "language": "Python",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-11-08T01:05:14Z",
+  "stargazers_count": 2743,
+  "topics": [
+   "auto-ml",
+   "compression",
+   "deep-learning",
+   "deep-neural-networks",
+   "machine-learning",
+   "network-compression",
+   "network-quantization",
+   "open-source",
+   "opensource",
+   "pruning",
+   "quantization"
+  ],
+  "fetched": "2026-11-09"
+ },
+ "repo:r2u2/r2u2": {
+  "archived": false,
+  "description": "The Realizable Responsive Unobtrusive Unit is an online runtime monitor framework.",
+  "forks_count": 3,
+  "full_name": "R2U2/r2u2",
+  "html_url": "https://github.com/R2U2/r2u2",
+  "language": "Python",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-10-07T20:18:31Z",
+  "stargazers_count": 15,
   "topics": [],
   "fetched": "2026-11-09"
  },
@@ -9771,6 +10601,38 @@
   "pushed_at": "2024-05-15T07:48:28Z",
   "stargazers_count": 10271,
   "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:rbonghi/jetson_stats": {
+  "archived": false,
+  "description": "📊 Simple package for monitoring and control your NVIDIA Jetson [Orin, Xavier, Nano, TX] series",
+  "forks_count": 332,
+  "full_name": "rbonghi/jetson_stats",
+  "html_url": "https://github.com/rbonghi/jetson_stats",
+  "language": "Python",
+  "license": "AGPL-3.0",
+  "pushed_at": "2026-10-26T17:03:17Z",
+  "stargazers_count": 2634,
+  "topics": [
+   "cpu-monitoring",
+   "gpu",
+   "gpu-monitoring",
+   "jetson",
+   "jetson-config",
+   "jetson-nano",
+   "jetson-orin",
+   "jetson-stats",
+   "jetson-xavier",
+   "jetson-xavier-nx",
+   "jtop",
+   "memory-monitoring",
+   "nvidia",
+   "nvidia-jetson",
+   "pypi",
+   "python",
+   "tegra",
+   "tegrastats"
+  ],
   "fetched": "2026-11-09"
  },
  "repo:redlab-i/pps-tools": {
@@ -9985,6 +10847,19 @@
   "topics": [],
   "fetched": "2026-11-09"
  },
+ "repo:robotics-star-lab/la-planner": {
+  "archived": false,
+  "description": "[IROS 2025] Perception-aware Planning for Quadrotor Flight in Unknown and Feature-limited Environments",
+  "forks_count": 4,
+  "full_name": "Robotics-STAR-Lab/LA-Planner",
+  "html_url": "https://github.com/Robotics-STAR-Lab/LA-Planner",
+  "language": "C++",
+  "license": "GPL-3.0",
+  "pushed_at": "2025-07-21T13:41:35Z",
+  "stargazers_count": 68,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
  "repo:robotics-star-lab/racer": {
   "archived": false,
   "description": "Rapid Exploration with Multiple Unmanned Aerial Vehicles (UAV)",
@@ -10181,6 +11056,64 @@
    "robotics",
    "ros2",
    "tutorials"
+  ],
+  "fetched": "2026-11-09"
+ },
+ "repo:ros-realtime/reference-system": {
+  "archived": false,
+  "description": "A reference system that simulates real-world systems in order to more fairly compare various configurations of executors and other settings",
+  "forks_count": 34,
+  "full_name": "ros-realtime/reference-system",
+  "html_url": "https://github.com/ros-realtime/reference-system",
+  "language": "C++",
+  "license": "Apache-2.0",
+  "pushed_at": "2023-09-17T15:47:53Z",
+  "stargazers_count": 102,
+  "topics": [
+   "cpp",
+   "middleware",
+   "ros2"
+  ],
+  "fetched": "2026-11-09"
+ },
+ "repo:ros-realtime/ros2-realtime-examples": {
+  "archived": false,
+  "description": "Minimal ROS 2 real-time cookbook recipes ",
+  "forks_count": 9,
+  "full_name": "ros-realtime/ros2-realtime-examples",
+  "html_url": "https://github.com/ros-realtime/ros2-realtime-examples",
+  "language": "C++",
+  "license": "Apache-2.0",
+  "pushed_at": "2024-01-29T09:52:40Z",
+  "stargazers_count": 87,
+  "topics": [
+   "cpp",
+   "rclcpp",
+   "real-time",
+   "realtime",
+   "ros",
+   "ros2"
+  ],
+  "fetched": "2026-11-09"
+ },
+ "repo:ros2/ros2_tracing": {
+  "archived": false,
+  "description": "Tracing tools for ROS 2.",
+  "forks_count": 74,
+  "full_name": "ros2/ros2_tracing",
+  "html_url": "https://github.com/ros2/ros2_tracing",
+  "language": "Python",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-11-03T12:15:22Z",
+  "stargazers_count": 273,
+  "topics": [
+   "instrumentation",
+   "performance-analysis",
+   "ros",
+   "ros2",
+   "ros2-tracing",
+   "tools",
+   "tracing"
   ],
   "fetched": "2026-11-09"
  },
@@ -10427,6 +11360,19 @@
   ],
   "fetched": "2026-11-09"
  },
+ "repo:rwth-irt/gnssfgo": {
+  "archived": true,
+  "description": "This is the official repo of the project gnssFGO.",
+  "forks_count": 39,
+  "full_name": "rwth-irt/gnssFGO",
+  "html_url": "https://github.com/rwth-irt/gnssFGO",
+  "language": "C++",
+  "license": "BSD-3-Clause",
+  "pushed_at": "2024-08-25T19:47:14Z",
+  "stargazers_count": 171,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
  "repo:s7am1na/gnss-spoofing-dataset": {
   "archived": false,
   "description": "Raw GNSS measurements under spoofing attacks (L1/L5/L15) collected from consumer-grade devices.",
@@ -10527,6 +11473,19 @@
   "license": null,
   "pushed_at": "2026-04-08T12:19:00Z",
   "stargazers_count": 1,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:sauravag/edpl-ompl": {
+  "archived": false,
+  "description": "C++ Belief Space Motion Planning using OMPL as backend",
+  "forks_count": 15,
+  "full_name": "sauravag/edpl-ompl",
+  "html_url": "https://github.com/sauravag/edpl-ompl",
+  "language": "HTML",
+  "license": null,
+  "pushed_at": "2019-09-18T22:26:53Z",
+  "stargazers_count": 22,
   "topics": [],
   "fetched": "2026-11-09"
  },
@@ -10911,6 +11870,19 @@
   "license": null,
   "pushed_at": "2022-10-19T17:43:22Z",
   "stargazers_count": 6,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:sjtu-visys-team/ai-io": {
+  "archived": false,
+  "description": "AI-IO: An Aerodynamics-Inspired Real-Time Inertial Odometry for Quadrotors (ICRA 2026)",
+  "forks_count": 6,
+  "full_name": "SJTU-ViSYS-team/AI-IO",
+  "html_url": "https://github.com/SJTU-ViSYS-team/AI-IO",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-07-27T07:03:28Z",
+  "stargazers_count": 87,
   "topics": [],
   "fetched": "2026-11-09"
  },
@@ -11318,6 +12290,19 @@
   "topics": [],
   "fetched": "2026-11-09"
  },
+ "repo:superxslam/tartanimu": {
+  "archived": false,
+  "description": "First Attempt on IMU \"Foundation Model\"",
+  "forks_count": 21,
+  "full_name": "superxslam/TartanIMU",
+  "html_url": "https://github.com/superxslam/TartanIMU",
+  "language": "Python",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-09-12T07:05:29Z",
+  "stargazers_count": 158,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
  "repo:sviridov-aleksandr/aerial-nav": {
   "archived": false,
   "description": "GPS-denied навигация БПЛА по визуальным реперам через сиамскую нейронную сеть",
@@ -11389,6 +12374,44 @@
    "en-4709-002",
    "rid"
   ],
+  "fetched": "2026-11-09"
+ },
+ "repo:symforce-org/symforce": {
+  "archived": false,
+  "description": "Fast symbolic computation, code generation, and nonlinear optimization for robotics",
+  "forks_count": 184,
+  "full_name": "symforce-org/symforce",
+  "html_url": "https://github.com/symforce-org/symforce",
+  "language": "C++",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-10-30T05:21:45Z",
+  "stargazers_count": 1656,
+  "topics": [
+   "autonomous-vehicles",
+   "code-generation",
+   "computer-vision",
+   "cpp",
+   "motion-planning",
+   "optimization",
+   "python",
+   "robotics",
+   "slam",
+   "structure-from-motion",
+   "symbolic-computation"
+  ],
+  "fetched": "2026-11-09"
+ },
+ "repo:syroco-isir/flight-speed-estimation-airflow": {
+  "archived": false,
+  "description": "GRU-based Flight Speed Estimation using Thermal Anemometer",
+  "forks_count": 0,
+  "full_name": "SyRoCo-ISIR/Flight-Speed-Estimation-Airflow",
+  "html_url": "https://github.com/SyRoCo-ISIR/Flight-Speed-Estimation-Airflow",
+  "language": null,
+  "license": "MIT",
+  "pushed_at": "2022-05-13T16:21:52Z",
+  "stargazers_count": 0,
+  "topics": [],
   "fetched": "2026-11-09"
  },
  "repo:t1gr20an06-k/hackathon-blind-flight": {
@@ -11531,6 +12554,40 @@
   "topics": [
    "gnss",
    "gps"
+  ],
+  "fetched": "2026-11-09"
+ },
+ "repo:tencent/ncnn": {
+  "archived": false,
+  "description": "ncnn is a high-performance neural network inference framework optimized for the mobile platform",
+  "forks_count": 4542,
+  "full_name": "Tencent/ncnn",
+  "html_url": "https://github.com/Tencent/ncnn",
+  "language": "C++",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-11-09T02:24:51Z",
+  "stargazers_count": 24030,
+  "topics": [
+   "android",
+   "arm-neon",
+   "artificial-intelligence",
+   "caffe",
+   "darknet",
+   "deep-learning",
+   "high-preformance",
+   "inference",
+   "ios",
+   "keras",
+   "mlir",
+   "mxnet",
+   "ncnn",
+   "neural-network",
+   "onnx",
+   "pytorch",
+   "riscv",
+   "simd",
+   "tensorflow",
+   "vulkan"
   ],
   "fetched": "2026-11-09"
  },
@@ -11711,6 +12768,25 @@
   ],
   "fetched": "2026-11-09"
  },
+ "repo:tinympc/tinympc": {
+  "archived": false,
+  "description": "Model-predictive control for microcontrollers, ICRA 2024 Best Paper Award",
+  "forks_count": 135,
+  "full_name": "TinyMPC/TinyMPC",
+  "html_url": "https://github.com/TinyMPC/TinyMPC",
+  "language": "C++",
+  "license": "MIT",
+  "pushed_at": "2026-09-02T17:59:57Z",
+  "stargazers_count": 1120,
+  "topics": [
+   "admm-algorithm",
+   "embedded",
+   "microcontroller",
+   "model-predictive-control",
+   "solver"
+  ],
+  "fetched": "2026-11-09"
+ },
  "repo:tixiaoshan/lio-sam": {
   "archived": false,
   "description": "LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping",
@@ -11822,6 +12898,39 @@
   "license": null,
   "pushed_at": "2025-05-09T13:38:11Z",
   "stargazers_count": 1,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:tuc-proaut/librsf": {
+  "archived": false,
+  "description": "A robust sensor fusion library for online localization.",
+  "forks_count": 74,
+  "full_name": "TUC-ProAut/libRSF",
+  "html_url": "https://github.com/TUC-ProAut/libRSF",
+  "language": "C++",
+  "license": "GPL-3.0",
+  "pushed_at": "2026-04-06T21:06:26Z",
+  "stargazers_count": 340,
+  "topics": [
+   "estimation-algorithm",
+   "gnss",
+   "localization",
+   "ranging",
+   "robotics",
+   "sensorfusion"
+  ],
+  "fetched": "2026-11-09"
+ },
+ "repo:tum-aas/ml-casadi": {
+  "archived": false,
+  "description": "Use PyTorch Models with CasADi and Acados",
+  "forks_count": 33,
+  "full_name": "TUM-AAS/ml-casadi",
+  "html_url": "https://github.com/TUM-AAS/ml-casadi",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2023-11-01T19:53:21Z",
+  "stargazers_count": 254,
   "topics": [],
   "fetched": "2026-11-09"
  },
@@ -12257,6 +13366,37 @@
   ],
   "fetched": "2026-11-09"
  },
+ "repo:uzh-rpg/agilicious": {
+  "archived": false,
+  "description": "Agile flight done right! ",
+  "forks_count": 71,
+  "full_name": "uzh-rpg/agilicious",
+  "html_url": "https://github.com/uzh-rpg/agilicious",
+  "language": "TeX",
+  "license": null,
+  "pushed_at": "2023-03-07T18:30:25Z",
+  "stargazers_count": 660,
+  "topics": [
+   "agile",
+   "autonomous",
+   "flight",
+   "quadrotor"
+  ],
+  "fetched": "2026-11-09"
+ },
+ "repo:uzh-rpg/data_driven_mpc": {
+  "archived": false,
+  "description": null,
+  "forks_count": 57,
+  "full_name": "uzh-rpg/data_driven_mpc",
+  "html_url": "https://github.com/uzh-rpg/data_driven_mpc",
+  "language": "Python",
+  "license": "GPL-3.0",
+  "pushed_at": "2021-04-20T13:32:31Z",
+  "stargazers_count": 365,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
  "repo:uzh-rpg/event-based_vision_resources": {
   "archived": false,
   "description": "Event-based Vision Resources. Community effort to collect knowledge on event-based vision technology (papers, workshops, datasets, code, videos, etc)",
@@ -12280,6 +13420,19 @@
   "license": "NOASSERTION",
   "pushed_at": "2024-06-14T15:36:57Z",
   "stargazers_count": 1446,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:uzh-rpg/hdvio2.0": {
+  "archived": false,
+  "description": null,
+  "forks_count": 11,
+  "full_name": "uzh-rpg/hdvio2.0",
+  "html_url": "https://github.com/uzh-rpg/hdvio2.0",
+  "language": "C++",
+  "license": "AGPL-3.0",
+  "pushed_at": "2026-02-03T21:13:53Z",
+  "stargazers_count": 90,
   "topics": [],
   "fetched": "2026-11-09"
  },
@@ -12359,6 +13512,49 @@
   "pushed_at": "2023-12-25T19:52:46Z",
   "stargazers_count": 743,
   "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:uzh-rpg/rpg_information_field": {
+  "archived": false,
+  "description": "Information Field for Perception-aware Planning",
+  "forks_count": 37,
+  "full_name": "uzh-rpg/rpg_information_field",
+  "html_url": "https://github.com/uzh-rpg/rpg_information_field",
+  "language": "C++",
+  "license": "MIT",
+  "pushed_at": "2020-10-13T16:27:47Z",
+  "stargazers_count": 211,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:uzh-rpg/rpg_mpc": {
+  "archived": false,
+  "description": "Model Predictive Control for Quadrotors with extension to Perception-Aware MPC",
+  "forks_count": 94,
+  "full_name": "uzh-rpg/rpg_mpc",
+  "html_url": "https://github.com/uzh-rpg/rpg_mpc",
+  "language": "C",
+  "license": "GPL-3.0",
+  "pushed_at": "2022-04-04T13:21:48Z",
+  "stargazers_count": 525,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:uzh-rpg/rpg_quadrotor_control": {
+  "archived": false,
+  "description": "Quadrotor control framework developed by the Robotics and Perception Group",
+  "forks_count": 206,
+  "full_name": "uzh-rpg/rpg_quadrotor_control",
+  "html_url": "https://github.com/uzh-rpg/rpg_quadrotor_control",
+  "language": "C++",
+  "license": "NOASSERTION",
+  "pushed_at": "2021-09-20T15:15:49Z",
+  "stargazers_count": 731,
+  "topics": [
+   "control",
+   "quadrotor",
+   "sbus"
+  ],
   "fetched": "2026-11-09"
  },
  "repo:uzh-rpg/rpg_svo_pro_open": {
@@ -12499,6 +13695,27 @@
    "robotics",
    "ros",
    "slam"
+  ],
+  "fetched": "2026-11-09"
+ },
+ "repo:verified-intelligence/alpha-beta-crown": {
+  "archived": false,
+  "description": "alpha-beta-CROWN: An Efficient, Scalable and GPU Accelerated Neural Network Verifier (winner of VNN-COMP 2021, 2022, 2023, 2024, 2025)",
+  "forks_count": 101,
+  "full_name": "Verified-Intelligence/alpha-beta-CROWN",
+  "html_url": "https://github.com/Verified-Intelligence/alpha-beta-CROWN",
+  "language": "Python",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-10-10T05:26:13Z",
+  "stargazers_count": 410,
+  "topics": [
+   "adversarial-examples",
+   "adversarial-robustness",
+   "formal-verification",
+   "neural-network-verification",
+   "neural-networks",
+   "robustness",
+   "robustness-verification"
   ],
   "fetched": "2026-11-09"
  },
@@ -13134,6 +14351,19 @@
   "topics": [],
   "fetched": "2026-11-09"
  },
+ "repo:zhangkunyi/dido": {
+  "archived": false,
+  "description": "Project page of 《DIDO:Deep Inertial Quadrotor Dynamical Odometry》",
+  "forks_count": 7,
+  "full_name": "zhangkunyi/DIDO",
+  "html_url": "https://github.com/zhangkunyi/DIDO",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2022-10-08T15:49:49Z",
+  "stargazers_count": 64,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
  "repo:zhaoj9014/anti-uav": {
   "archived": false,
   "description": "🔥🔥Official Repository for Anti-UAV🔥🔥",
@@ -13177,6 +14407,24 @@
   "topics": [],
   "fetched": "2026-11-09"
  },
+ "repo:zju-fast-lab/am_traj": {
+  "archived": false,
+  "description": "Alternating Minimization Based Trajectory Generation for Quadrotor Aggressive Flight",
+  "forks_count": 46,
+  "full_name": "ZJU-FAST-Lab/am_traj",
+  "html_url": "https://github.com/ZJU-FAST-Lab/am_traj",
+  "language": "C++",
+  "license": "GPL-3.0",
+  "pushed_at": "2021-06-10T18:08:30Z",
+  "stargazers_count": 195,
+  "topics": [
+   "motion-planning",
+   "quadrotor",
+   "robotics",
+   "trajectory-optimization"
+  ],
+  "fetched": "2026-11-09"
+ },
  "repo:zju-fast-lab/ego-planner": {
   "archived": false,
   "description": null,
@@ -13203,6 +14451,19 @@
   "topics": [],
   "fetched": "2026-11-09"
  },
+ "repo:zju-fast-lab/ego-planner-v2": {
+  "archived": false,
+  "description": "Swarm Playground, the codebase of the paper \"Swarm of micro flying robots in the wild\"",
+  "forks_count": 122,
+  "full_name": "ZJU-FAST-Lab/EGO-Planner-v2",
+  "html_url": "https://github.com/ZJU-FAST-Lab/EGO-Planner-v2",
+  "language": "C++",
+  "license": "GPL-3.0",
+  "pushed_at": "2023-10-16T03:08:09Z",
+  "stargazers_count": 749,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
  "repo:zju-fast-lab/gcopter": {
   "archived": false,
   "description": "A General-Purpose Trajectory Optimizer for Multicopters",
@@ -13226,6 +14487,32 @@
   ],
   "fetched": "2026-11-09"
  },
+ "repo:zju-fast-lab/vid-dataset": {
+  "archived": false,
+  "description": null,
+  "forks_count": 13,
+  "full_name": "ZJU-FAST-Lab/VID-Dataset",
+  "html_url": "https://github.com/ZJU-FAST-Lab/VID-Dataset",
+  "language": "C++",
+  "license": "AGPL-3.0",
+  "pushed_at": "2026-04-29T11:25:44Z",
+  "stargazers_count": 66,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:zju-fast-lab/vid-fusion": {
+  "archived": false,
+  "description": "VID-Fusion: Robust Visual-Inertial-Dynamics Odometry for Accurate External Force Estimation",
+  "forks_count": 26,
+  "full_name": "ZJU-FAST-Lab/VID-Fusion",
+  "html_url": "https://github.com/ZJU-FAST-Lab/VID-Fusion",
+  "language": "C++",
+  "license": "GPL-3.0",
+  "pushed_at": "2026-03-15T07:59:05Z",
+  "stargazers_count": 154,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
  "repo:zju3dv/loftr": {
   "archived": false,
   "description": "Code for \"LoFTR: Detector-Free Local Feature Matching with Transformers\", CVPR 2021, T-PAMI 2022",
@@ -13241,6 +14528,19 @@
    "feature-matching",
    "pose-estimation"
   ],
+  "fetched": "2026-11-09"
+ },
+ "repo:zju3dv/rnin-vio": {
+  "archived": false,
+  "description": null,
+  "forks_count": 25,
+  "full_name": "zju3dv/rnin-vio",
+  "html_url": "https://github.com/zju3dv/rnin-vio",
+  "language": "Python",
+  "license": "Apache-2.0",
+  "pushed_at": "2022-04-06T13:50:38Z",
+  "stargazers_count": 160,
+  "topics": [],
   "fetched": "2026-11-09"
  },
  "repo:zlab-pub/wifi-ptp": {

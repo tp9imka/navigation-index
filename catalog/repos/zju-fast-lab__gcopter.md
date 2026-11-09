@@ -24,7 +24,12 @@ General-purpose multicopter trajectory optimizer (MINCO) handling safe-corridor 
 
 ## Referenced by
 
+- [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
+- [mav_trajectory_generation](../../catalog/repos/ethz-asl__mav_trajectory_generation.md) (alternative_to)
+- [AM-Traj](../../catalog/repos/zju-fast-lab__am_traj.md) (alternative_to)
 - [EGO-Planner](../../catalog/repos/zju-fast-lab__ego-planner.md) (same_org)
+- [EGO-Planner-v2 (Swarm Playground)](../../catalog/repos/zju-fast-lab__ego-planner-v2.md) (same_org)
+- [Geometrically Constrained Trajectory Optimization for Multicopters](../../catalog/resources/wang-minco-gcopter-2021.md) (has_code)
 
 _Indexed by lane(s): planning-gis-c2_
 

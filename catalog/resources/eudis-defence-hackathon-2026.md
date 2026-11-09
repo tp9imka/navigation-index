@@ -28,6 +28,7 @@ EU-funded 48-hour hackathon held 15-17 October 2026 at eight sites under the the
 ## Referenced by
 
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) (mentions)
 - [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)

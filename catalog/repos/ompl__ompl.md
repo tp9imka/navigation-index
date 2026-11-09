@@ -34,7 +34,9 @@ Library of sampling-based motion planners (RRT, RRT*, PRM, BIT*, informed varian
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [PythonRobotics](../../catalog/repos/atsushisakai__pythonrobotics.md) (alternative_to)
+- [terrain-navigation2](../../catalog/repos/ethz-asl__terrain-navigation2.md) (depends_on)
 - [Nav2 (ROS 2 Navigation)](../../catalog/repos/ros-navigation__navigation2.md) (alternative_to)
+- [edpl-ompl](../../catalog/repos/sauravag__edpl-ompl.md) (depends_on)
 - [The Open Motion Planning Library (OMPL) website](../../catalog/resources/ompl-site.md) (explains)
 
 _Indexed by lane(s): planning-gis-c2_

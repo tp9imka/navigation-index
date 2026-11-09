@@ -7,6 +7,9 @@ condense the [decoder](../problem-statement-decoder.md), [samples/README.md](../
 and the [evidence matrix](../evidence-matrix.md); when a sheet and those disagree, those win.
 Snapshot 2026-11-06.
 
+EDGE hackathon Challenge 2 (autonomous flight navigation): start at
+[challenge-2-autonomous-flight](../challenge-2-autonomous-flight.md), which picks among these.
+
 | The brief says... | Sheet | Decoder rows |
 |---|---|---|
 | "without GPS / GNSS-denied", a distance or route, "bring it home", "drop-in for COTS autopilot", "how long after GNSS loss" | [gnss-denied-drone-nav](gnss-denied-drone-nav.md) | 1, 2, 20, 26 |

@@ -31,9 +31,11 @@ Agent that bridges DDS-XRCE clients on microcontrollers into a full DDS / ROS 2 
 
 ## Referenced by
 
+- [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
 - [ardupilot_ros](../../catalog/repos/ardupilot__ardupilot_ros.md) (depends_on)
 - [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md) (integrates_with)
 - [px4_msgs](../../catalog/repos/px4__px4_msgs.md) (integrates_with)
+- [PX4 uXRCE-DDS (PX4-ROS 2/DDS Bridge)](../../catalog/resources/px4-uxrce-dds-docs.md) (uses)
 
 _Indexed by lane(s): autopilots_
 

@@ -30,10 +30,15 @@ C++ library for writing PX4 flight modes and navigation-data sources in ROS 2 on
 
 ## Referenced by
 
+- [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [mavros_controllers](../../catalog/repos/jaeyoung-lim__mavros_controllers.md) (alternative_to)
 - [px4_ros_com](../../catalog/repos/px4__px4_ros_com.md) (alternative_to)
+- [PX4 ROS 2 Control Interface](../../catalog/resources/px4-ros2-control-interface-docs.md) (has_code)
+- [PX4 ROS 2 Offboard Control Example](../../catalog/resources/px4-ros2-offboard-control.md) (uses)
 
 _Indexed by lane(s): autopilots_
 

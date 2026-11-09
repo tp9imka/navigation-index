@@ -1,0 +1,803 @@
+[
+  {
+    "id": "res:cui-2026-ai-io-aerodynamics-inertial-odometry",
+    "kind": "paper",
+    "title": "AI-IO: An Aerodynamics-Inspired Real-Time Inertial Odometry for Quadrotors",
+    "url": "https://arxiv.org/abs/2603.00597",
+    "authors": [
+      "Jiahao Cui",
+      "Feng Yu",
+      "Linzuo Zhang",
+      "Yu Hu",
+      "Danping Zou"
+    ],
+    "year": 2026,
+    "summary": "ICRA 2026 paper (arXiv Feb 2026). Argues rotor speed is the missing physical input in learned inertial odometry because rotor drag ties body velocity to measurable quantities, feeds IMU plus rotor speed to a transformer velocity estimator, and fuses its output in an uncertainty-aware EKF. Releases a real quadrotor dataset with IMU, rotor speed and ground truth.",
+    "key_takeaways": [
+      "Abstract: adding rotor speed improves velocity prediction accuracy by 36.9%",
+      "Abstract: the transformer adds a further 22.4% over previous results",
+      "Code and data MIT-licensed on GitHub"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "learned-inertial-odometry",
+      "rotor-speed",
+      "rotor-drag",
+      "icra-2026"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:sjtu-visys-team/ai-io",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:zhang-2022-dido-quadrotor-dynamical-odometry",
+        "rel": "cites"
+      },
+      {
+        "id": "res:airio-paper",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:zhang-2022-dido-quadrotor-dynamical-odometry",
+    "kind": "paper",
+    "title": "DIDO: Deep Inertial Quadrotor Dynamical Odometry",
+    "url": "https://arxiv.org/abs/2203.03149",
+    "authors": [
+      "Kunyi Zhang",
+      "Chenxing Jiang",
+      "Jinghang Li",
+      "Sheng Yang",
+      "Teng Ma",
+      "Chao Xu",
+      "Fei Gao"
+    ],
+    "year": 2022,
+    "summary": "RA-L with IROS 2022 presentation. Uses only onboard inertial and dynamics signals: networks learn IMU bias, a quadrotor dynamics residual and motion state with uncertainty, and a two-stage EKF fuses them.",
+    "key_takeaways": [
+      "Physics-plus-learning pattern: model what you can, learn the residual",
+      "Abstract gives no headline number; claims advantage over conventional and learned baselines",
+      "Dataset released in the repo, no license file"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "quadrotor-dynamics",
+      "learned-inertial-odometry",
+      "ekf"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:zhangkunyi/dido",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:cioffi-2023-imo-learned-inertial-odometry-racing",
+    "kind": "paper",
+    "title": "Learned Inertial Odometry for Autonomous Drone Racing",
+    "url": "https://arxiv.org/abs/2210.15287",
+    "authors": [
+      "Giovanni Cioffi",
+      "Leonard Bauersfeld",
+      "Elia Kaufmann",
+      "Davide Scaramuzza"
+    ],
+    "year": 2023,
+    "summary": "RA-L 2023. IMU-Model Odometry (IMO): an EKF driven by IMU is updated with relative displacements predicted by a temporal convolutional network that also sees thrust (collective rotor) inputs.",
+    "key_takeaways": [
+      "Thrust input is what separates it from pedestrian-style learned IO",
+      "Claims better pose than filter- and optimization-based VIO on a racing drone (no number checked here)",
+      "Code is GPL-3.0"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "learned-inertial-odometry",
+      "thrust",
+      "drone-racing",
+      "tcn"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:uzh-rpg/learned_inertial_model_odometry",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:cioffi-2025-hdvio2-wind-disturbance",
+    "kind": "paper",
+    "title": "HDVIO2.0: Wind and Disturbance Estimation with Hybrid Dynamics VIO",
+    "url": "https://arxiv.org/abs/2504.00969",
+    "authors": [
+      "Giovanni Cioffi",
+      "Leonard Bauersfeld",
+      "Davide Scaramuzza"
+    ],
+    "year": 2025,
+    "summary": "IEEE T-RO 2025. Extends hybrid-dynamics VIO with rotational dynamics: two TCNs predict residual thrust and torque from commands and gyro history, and the optimizer estimates wind and external disturbances with the full state.",
+    "key_takeaways": [
+      "Abstract reports real flights in winds up to 25 km/h; no accuracy figure in the abstract",
+      "Wind is the state that limits model-aided dead reckoning; this estimates it onboard",
+      "Code GPL/AGPL, ROS Noetic"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "hybrid-dynamics",
+      "wind-estimation",
+      "t-ro"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:uzh-rpg/hdvio2.0",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:bauersfeld-2021-neurobem",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:zhang-2021-vid-dataset-paper",
+    "kind": "paper",
+    "title": "The Visual-Inertial-Dynamical Multirotor Dataset",
+    "url": "https://arxiv.org/abs/2103.11152",
+    "authors": [
+      "Kunyi Zhang",
+      "Tiankai Yang",
+      "Ziming Ding",
+      "Sheng Yang",
+      "Teng Ma",
+      "Mingyang Li",
+      "Chao Xu",
+      "Fei Gao"
+    ],
+    "year": 2021,
+    "summary": "Describes a multirotor dataset with camera, IMU, commanded and measured rotor speeds, motor currents, GPS/RTK and mocap ground truth, recorded on a custom platform with hardware time sync. arXiv lists no venue.",
+    "key_takeaways": [
+      "Measured per-motor speed and current, not just commands",
+      "Hardware time sync across IMU, camera and motors",
+      "Venue not listed on arXiv"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:vio"
+    ],
+    "tags": [
+      "dataset",
+      "rotor-speed",
+      "motor-current"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:zju-fast-lab/vid-dataset",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:zju-fast-lab/vid-fusion",
+        "rel": "dataset_for"
+      }
+    ]
+  },
+  {
+    "id": "res:wang-2025-airflow-inertial-odometry-anemometers",
+    "kind": "paper",
+    "title": "Learning-based Airflow Inertial Odometry for MAVs using Thermal Anemometers in a GPS and vision denied environment",
+    "url": "https://arxiv.org/abs/2505.15044",
+    "authors": [
+      "Ze Wang",
+      "Jingang Qu",
+      "Zhenyu Gao",
+      "Pascal Morin"
+    ],
+    "year": 2025,
+    "summary": "arXiv preprint (May 2025, no venue listed). Fuses thermal anemometer, IMU, ESC and barometer data with a learned speed estimator for multirotor dead reckoning without GPS or vision.",
+    "key_takeaways": [
+      "Abstract: 5.7 m position drift over a 203 s manual flight, indoors and wind-free",
+      "ESC data used as an input, i.e. propulsion as a sensor",
+      "Wind-free test, so real-world wind sensitivity is open"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "airflow",
+      "anemometer",
+      "esc",
+      "dead-reckoning"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:syroco-isir/flight-speed-estimation-airflow",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:zhao-2025-tartan-imu-foundation-model",
+    "kind": "paper",
+    "title": "Tartan IMU: A Light Foundation Model for Inertial Positioning in Robotics",
+    "url": "https://openaccess.thecvf.com/content/CVPR2025/html/Zhao_Tartan_IMU_A_Light_Foundation_Model_for_Inertial_Positioning_in_CVPR_2025_paper.html",
+    "authors": [
+      "Shibo Zhao",
+      "Sifan Zhou",
+      "Raphael Blanchard",
+      "Yuheng Qiu",
+      "Wenshan Wang",
+      "Sebastian Scherer"
+    ],
+    "year": 2025,
+    "summary": "CVPR 2025. Pretrains one inertial model on more than 100 hours of data from four platform types, then adapts per platform with LoRA (1.1 M trainable parameters) and online test-time adaptation.",
+    "key_takeaways": [
+      "Reported 36% ATE improvement over specialized models",
+      "Online adaptation reported at 200 FPS",
+      "Public release is the LSTM model; the Transformer core is not included per the README"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "imu-foundation-model",
+      "lora",
+      "cvpr-2025"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:superxslam/tartanimu",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:ye-2023-semi-aerodynamic-model-aided-iekf",
+    "kind": "paper",
+    "title": "Semi-Aerodynamic Model Aided Invariant Kalman Filtering for UAV Full-State Estimation",
+    "url": "https://arxiv.org/abs/2310.01844",
+    "authors": [
+      "Xiaoyu Ye",
+      "Fujun Song",
+      "Zongyu Zhang",
+      "Rui Zhang",
+      "Qinghua Zeng"
+    ],
+    "year": 2023,
+    "summary": "arXiv preprint. Fixed-wing full-state estimation in a right-invariant error-state EKF fusing IMU, GNSS, magnetometer, barometer, airspeed and control-surface data; an LSTM predicts angle of attack and sideslip from control deflections so only ground-measurable aero parameters are needed. Estimates wind too.",
+    "key_takeaways": [
+      "Abstract: maximum position error stays within 30 m over a 130 s GNSS denial",
+      "Code promised (MATLAB/Simulink) but no repository link found",
+      "Closest recent fixed-wing aerodynamic-model-aided INS"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:gnss-ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "fixed-wing",
+      "aerodynamic-model",
+      "invariant-ekf",
+      "wind"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:khaghani-skaloud-2018-vdm-navigation",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:khaghani-skaloud-2018-vdm-navigation",
+    "kind": "paper",
+    "title": "Assessment of VDM-based autonomous navigation of a UAV under operational conditions",
+    "url": "https://infoscience.epfl.ch/record/255356",
+    "authors": [
+      "Mehran Khaghani",
+      "Jan Skaloud"
+    ],
+    "year": 2018,
+    "summary": "Robotics and Autonomous Systems 106 (2018). Replaces the INS process model with a fixed-wing vehicle dynamic model (VDM) and treats IMU, barometer and GNSS as observations, tested on a real small fixed-wing flight and in Monte Carlo simulation.",
+    "key_takeaways": [
+      "Abstract: roughly one to two orders of magnitude better accuracy over 3-minute GNSS outages vs INS-based integration",
+      "No extra hardware needed: the model is the added sensor",
+      "No public code or flight data found"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:gnss-ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "vehicle-dynamic-model",
+      "fixed-wing",
+      "gnss-outage",
+      "epfl"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:skaloud-2021-ign-flight8-fixed-wing-data",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:leishman-2014-quadrotors-accelerometers",
+    "kind": "paper",
+    "title": "Quadrotors and Accelerometers: State Estimation with an Improved Dynamic Model",
+    "url": "https://scholarsarchive.byu.edu/facpub/1419",
+    "authors": [
+      "Robert C. Leishman",
+      "John Macdonald",
+      "Randal W. Beard",
+      "Timothy W. McLain"
+    ],
+    "year": 2014,
+    "summary": "IEEE Control Systems Magazine 34(1), 2014. Explains why a multirotor accelerometer measures rotor drag rather than gravity tilt in steady flight, and uses a drag-augmented dynamic model to estimate attitude and velocity from the IMU alone.",
+    "key_takeaways": [
+      "The physics argument behind EKF3/EKF2 drag fusion",
+      "Hardware results show better attitude, velocity and position estimates (numbers not checked here)",
+      "Open copy on BYU ScholarsArchive"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "rotor-drag",
+      "accelerometer",
+      "multirotor",
+      "tutorial"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:abeywardena-2013-drift-free-velocity-estimator",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:abeywardena-2013-drift-free-velocity-estimator",
+    "kind": "paper",
+    "title": "Improved State Estimation in Quadrotor MAVs: A Novel Drift-Free Velocity Estimator",
+    "url": "https://arxiv.org/abs/1509.03388",
+    "authors": [
+      "Dinuka Abeywardena",
+      "Sarath Kodagoda",
+      "Gamini Dissanayake",
+      "Rohan Munasinghe"
+    ],
+    "year": 2013,
+    "summary": "IEEE Robotics and Automation Magazine 20(4), 2013. An EKF that uses the blade-flapping drag relation between body-frame acceleration and body-frame velocity to estimate lateral and longitudinal velocity without drift, validated on a commercial quadrotor against Vicon.",
+    "key_takeaways": [
+      "Body-frame velocity becomes observable from the accelerometer alone",
+      "Position still drifts with wind and integration",
+      "Short, readable derivation to copy into a filter"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "rotor-drag",
+      "blade-flapping",
+      "velocity-estimation"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:bauersfeld-2021-neurobem",
+    "kind": "paper",
+    "title": "NeuroBEM: Hybrid Aerodynamic Quadrotor Model",
+    "url": "https://rpg.ifi.uzh.ch/NeuroBEM.html",
+    "authors": [
+      "Leonard Bauersfeld",
+      "Elia Kaufmann",
+      "Philipp Foehn",
+      "Sihao Sun",
+      "Davide Scaramuzza"
+    ],
+    "year": 2021,
+    "summary": "RSS 2021. Combines blade-element-momentum theory with a learned residual to model quadrotor forces and torques at speeds up to 65 km/h, and releases the mocap flight data used to fit it.",
+    "key_takeaways": [
+      "First-principles rotor model plus a small learned residual",
+      "Data includes per-motor speed at 400 Hz",
+      "Basis for the dynamics model in HDVIO"
+    ],
+    "concepts": [
+      "concept:simulation",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "blade-element-momentum",
+      "aerodynamics",
+      "quadrotor",
+      "rss-2021"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:neurobem-dataset",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:neurobem-dataset",
+    "kind": "dataset",
+    "title": "NeuroBEM quadrotor flight dataset",
+    "url": "https://download.ifi.uzh.ch/rpg/NeuroBEM/",
+    "authors": [
+      "UZH Robotics and Perception Group"
+    ],
+    "year": 2021,
+    "summary": "About 1 h 15 min of agile quadrotor flights in a Vicon hangar at 400 Hz: filtered linear and angular accelerations, body rates, per-motor speeds and their derivatives, battery voltage, and model-predicted forces. processed_data.zip is 657 MB, raw_data.zip 455 MB (HTTP Content-Length, 2026-11-09).",
+    "key_takeaways": [
+      "Real motor speeds and mocap truth, the input set a drag/thrust virtual sensor needs",
+      "Processed accelerations are fused with Vicon, so use raw_data for an honest IMU-only test",
+      "No license stated on the page or Readme; ask before commercial reuse"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "dataset",
+      "rotor-speed",
+      "mocap",
+      "aerodynamics"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:bauersfeld-2021-neurobem",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:oconnell-2022-neural-fly",
+    "kind": "paper",
+    "title": "Neural-Fly enables rapid learning for agile flight in strong winds",
+    "url": "https://www.science.org/doi/abs/10.1126/scirobotics.abm6597",
+    "authors": [
+      "Michael O'Connell",
+      "Guanya Shi",
+      "Xichen Shi",
+      "Kamyar Azizzadenesheli",
+      "Anima Anandkumar",
+      "Yisong Yue",
+      "Soon-Jo Chung"
+    ],
+    "year": 2022,
+    "summary": "Science Robotics 7 (2022). Learns a wind-invariant basis for the quadrotor aerodynamic residual offline, then adapts a small linear layer online; released flight data covers fan-array winds up to several m/s.",
+    "key_takeaways": [
+      "Aerodynamic residual is learnable and adaptable in flight",
+      "Released data has PWM and thrust setpoints at labelled wind speeds",
+      "Data and code are personal/educational use only"
+    ],
+    "concepts": [
+      "concept:edge-ai",
+      "concept:simulation"
+    ],
+    "tags": [
+      "wind",
+      "meta-learning",
+      "aerodynamics"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "repo:aerorobotics/neural-fly",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:keipour-2021-alfa-dataset",
+    "kind": "paper",
+    "title": "ALFA: A dataset for UAV fault and anomaly detection",
+    "url": "https://arxiv.org/abs/1907.06268",
+    "authors": [
+      "Azarakhsh Keipour",
+      "Mohammadreza Mousaei",
+      "Sebastian Scherer"
+    ],
+    "year": 2021,
+    "summary": "International Journal of Robotics Research 40(2-3), 2021. Describes 47 autonomous fixed-wing flights with eight fault types (engine and control surfaces), fault-time ground truth, and evaluation metrics. Data on KiltHub (DOI 10.1184/R1/12707963).",
+    "key_takeaways": [
+      "Real ArduPilot fixed-wing logs with GPS truth",
+      "Engine-out segments test a propulsion model's failure mode",
+      "KiltHub metadata says CC BY 4.0; bundled README says CC0"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "fixed-wing",
+      "fault",
+      "dataset",
+      "ardupilot"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:castacks/alfa-dataset",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:castacks/alfa-dataset-tools",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:skaloud-2021-ign-flight8-fixed-wing-data",
+    "kind": "dataset",
+    "title": "Fixed-Wing Micro UAV Open Data With Digicam And Raw INS/GNSS - IGN Flight 8",
+    "url": "https://zenodo.org/record/4476489",
+    "authors": [
+      "Jan Skaloud",
+      "Davide Antonio Cucci",
+      "Kenneth Joseph Paul"
+    ],
+    "year": 2021,
+    "summary": "Zenodo record from EPFL TOPO: one fixed-wing micro UAV flight with raw IMU, GNSS and camera data. Single 5.9 GB zip, CC BY 4.0.",
+    "key_takeaways": [
+      "Raw INS/GNSS from a real small fixed-wing, permissive license",
+      "Motor and airspeed logging not stated on the record",
+      "Same group as the VDM navigation work"
+    ],
+    "concepts": [
+      "concept:datasets-benchmarks",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "fixed-wing",
+      "raw-imu",
+      "gnss",
+      "camera"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:khaghani-skaloud-2018-vdm-navigation",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:gryte-2018-skywalker-x8-aerodynamic-model",
+    "kind": "paper",
+    "title": "Aerodynamic modeling of the Skywalker X8 Fixed-Wing Unmanned Aerial Vehicle",
+    "url": "https://folk.ntnu.no/torarnj/icuasX8.pdf",
+    "authors": [
+      "Kristoffer Gryte",
+      "Richard Hann",
+      "Mushfiqul Alam",
+      "Jan Rohac",
+      "Tor Arne Johansen",
+      "Thor I. Fossen"
+    ],
+    "year": 2018,
+    "summary": "ICUAS 2018. Identifies a full aerodynamic coefficient set for the Skywalker X8 flying wing from CFD, wind tunnel and flight data; the model is published in a companion MATLAB repo.",
+    "key_takeaways": [
+      "Ready-made aero coefficients for a common small fixed-wing",
+      "Thrust model in the repo is borrowed, not identified",
+      "Enough to build a VDM process model in hours"
+    ],
+    "concepts": [
+      "concept:simulation",
+      "concept:ins"
+    ],
+    "tags": [
+      "fixed-wing",
+      "aerodynamic-model",
+      "skywalker-x8"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:krisgry/x8",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:ardupilot-copter-wind-estimation-docs",
+    "kind": "doc",
+    "title": "Windspeed Estimation and Baro Compensation (ArduCopter)",
+    "url": "https://ardupilot.org/copter/docs/airspeed-estimation.html",
+    "authors": [
+      "ArduPilot Dev Team"
+    ],
+    "year": 2024,
+    "summary": "How to make EKF3 estimate wind on a multicopter without an airspeed sensor by setting ballistic coefficients (EK3_DRAG_BCOEF_X/Y = mass / frontal or side area) and a momentum drag coefficient (EK3_DRAG_MCOEF) from a flight test. Year is approximate; the page carries no date.",
+    "key_takeaways": [
+      "EK3_DRAG_MCOEF is normally 0.1-1.0 per the page",
+      "In the EKF3 source (Copter-4.6.3) drag fusion counts as velocity aiding and enables a wind-relative dead-reckoning mode",
+      "SITL multicopter frame model in 4.6.3 includes momentum and bluff-body drag"
+    ],
+    "concepts": [
+      "concept:autopilot",
+      "concept:ins"
+    ],
+    "tags": [
+      "ardupilot",
+      "ekf3",
+      "drag-fusion",
+      "wind"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "explains"
+      },
+      {
+        "id": "res:ardupilot-ekf-overview",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:taylor-gross-2024-factor-graphs-navigation-tutorial",
+    "kind": "paper",
+    "title": "Factor Graphs for Navigation Applications: A Tutorial",
+    "url": "https://navi.ion.org/content/71/3/navi.653",
+    "authors": [
+      "Clark Taylor",
+      "Jason Gross"
+    ],
+    "year": 2024,
+    "summary": "NAVIGATION (ION journal) 71(3), 2024, open access. Introduces factor graphs as a generalisation of the Kalman filter for navigation engineers, compares EKF, batch and sliding-window estimators on the same problem, and surveys navigation uses.",
+    "key_takeaways": [
+      "Written for people who think in EKFs",
+      "Companion Python code compares all three estimators",
+      "Good slide source for 'why a factor graph for plug-and-play'"
+    ],
+    "concepts": [
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "factor-graph",
+      "tutorial",
+      "ion"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:cntaylor/factorgraph2dsatelliteexample",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:dellaert-kaess-factor-graphs-robot-perception",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:yang-2020-graduated-non-convexity",
+    "kind": "paper",
+    "title": "Graduated Non-Convexity for Robust Spatial Perception: From Non-Minimal Solvers to Global Outlier Rejection",
+    "url": "https://arxiv.org/abs/1909.08605",
+    "authors": [
+      "Heng Yang",
+      "Pasquale Antonante",
+      "Vasileios Tzoumas",
+      "Luca Carlone"
+    ],
+    "year": 2020,
+    "summary": "IEEE RA-L 5(2), 2020. Graduated non-convexity wraps a non-minimal solver to reject outliers without an initial guess; implemented in GTSAM as GncOptimizer.",
+    "key_takeaways": [
+      "Abstract: robust to 70-80% outliers in the tested problems",
+      "No global optimality guarantee, but strong empirical robustness",
+      "Available off the shelf in GTSAM"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "robust-estimation",
+      "gnc",
+      "outlier-rejection",
+      "gtsam"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:borglab/gtsam",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:mit-spark/teaser-plusplus",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:guan-2025-deio-event-inertial-odometry",
+    "kind": "paper",
+    "title": "DEIO: Deep Event Inertial Odometry",
+    "url": "https://arxiv.org/abs/2411.03928",
+    "authors": [
+      "Weipeng Guan",
+      "Fuling Lin",
+      "Peiyu Chen",
+      "Peng Lu"
+    ],
+    "year": 2025,
+    "summary": "Learning-based event-inertial odometry evaluated on 10 public benchmarks against more than 20 methods. The authors' repo labels it ICCV 2025; arXiv lists no venue.",
+    "key_takeaways": [
+      "Learned event front-end plus IMU in a factor graph",
+      "MIT-licensed code",
+      "Needs event-camera data; no aerial night-flight number checked here"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "event-camera",
+      "event-inertial",
+      "night"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:arclab-hku/deio",
+        "rel": "has_code"
+      }
+    ]
+  }
+]

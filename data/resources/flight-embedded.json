@@ -1,0 +1,902 @@
+[
+  {
+    "id": "res:faa-ac-20-115d-do-178c",
+    "kind": "standard",
+    "title": "FAA AC 20-115D: Airborne Software Development Assurance Using EUROCAE ED-12( ) and RTCA DO-178( )",
+    "url": "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_20-115D.pdf",
+    "authors": [
+      "FAA"
+    ],
+    "year": 2017,
+    "summary": "The FAA advisory circular that recognises RTCA DO-178C / EUROCAE ED-12C as an acceptable means to show airborne software meets airworthiness rules. EASA's AMC 20-115D is the technically equivalent European text. DO-178C itself is paywalled; this AC is the free entry point.",
+    "key_takeaways": [
+      "DO-178C assigns a software level (A-E) from the failure condition the software can cause",
+      "Level drives the number of objectives and independence, not the coding language",
+      "Advisory, not mandatory, but the default path regulators expect",
+      "AMC 20-115D (EASA) and AC 20-115D (FAA) are technically identical"
+    ],
+    "concepts": [
+      "concept:standards"
+    ],
+    "tags": [
+      "do-178c",
+      "ed-12c",
+      "software-assurance",
+      "certification",
+      "faa",
+      "easa"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:faa-ac-20-152a-do-254",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:faa-ac-20-152a-do-254",
+    "kind": "standard",
+    "title": "FAA AC 20-152A: Development Assurance for Airborne Electronic Hardware",
+    "url": "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_20-152A.pdf",
+    "authors": [
+      "FAA"
+    ],
+    "year": 2022,
+    "summary": "Recognises RTCA DO-254 / EUROCAE ED-80 (both 2000) for airborne electronic hardware and adds objectives on top of DO-254. Relevant when a nav function moves into an FPGA or a custom board, and when a complex COTS device such as a GPU SoC sits in the path.",
+    "key_takeaways": [
+      "Issued 2022-10-07, cancels AC 20-152 (2005)",
+      "Covers FPGAs, ASICs and circuit board assemblies contributing to DAL A-C functions",
+      "Complex COTS devices (multicore SoCs, GPUs) need extra evidence; see FAA Order 8110.105B",
+      "Our reading: a Jetson-class SoC in a DAL A/B path is a hard sell today"
+    ],
+    "concepts": [
+      "concept:standards"
+    ],
+    "tags": [
+      "do-254",
+      "ed-80",
+      "hardware-assurance",
+      "fpga",
+      "cots",
+      "faa"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:faa-ac-20-115d-do-178c",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:rtca-do-160g",
+    "kind": "standard",
+    "title": "RTCA DO-160G: Environmental Conditions and Test Procedures for Airborne Equipment",
+    "url": "https://www.rtca.org/?p=6411",
+    "authors": [
+      "RTCA SC-135"
+    ],
+    "year": 2010,
+    "summary": "The environmental qualification test standard for airborne equipment: temperature, altitude, vibration, power input, RF susceptibility and emissions, lightning, ESD and more. The RTCA page also sells DO-357 (user guide) and notes a planned DO-160H revision.",
+    "key_takeaways": [
+      "Qualifies the box, not the algorithm, but a companion computer in the nav path needs it",
+      "RF emissions and susceptibility sections matter for any GNSS-adjacent hardware",
+      "Paywalled; RTCA page lists Accuris as reseller",
+      "DO-160H was planned for March 2026 per the RTCA page; publication not verified here"
+    ],
+    "concepts": [
+      "concept:standards"
+    ],
+    "tags": [
+      "do-160",
+      "environmental",
+      "emi",
+      "qualification",
+      "rtca"
+    ],
+    "level": "intro",
+    "access": "paywalled",
+    "related": []
+  },
+  {
+    "id": "res:rtca-do-334-ahrs-mops",
+    "kind": "standard",
+    "title": "RTCA DO-334: Minimum Operational Performance Standards (MOPS) for Strapdown Attitude and Heading Reference Systems (AHRS)",
+    "url": "https://standards.globalspec.com/std/1538865/rtca-do-334",
+    "authors": [
+      "RTCA"
+    ],
+    "year": 2012,
+    "summary": "Performance standard for strapdown AHRS equipment that outputs attitude and heading. Catalogue listings date it 2012-03-21; DO-384 builds on it. Closest RTCA MOPS to an inertial-only nav fallback on a small aircraft. Only the catalogue summary was read, not the standard.",
+    "key_takeaways": [
+      "Specifies equipment characteristics, not output data formats",
+      "Sets the performance baseline an IMU-based fallback would be compared against",
+      "DO-229 (SBAS) and DO-316 (GPS/ABAS) are the GNSS-side MOPS; this is the inertial-side one"
+    ],
+    "concepts": [
+      "concept:standards",
+      "concept:ins"
+    ],
+    "tags": [
+      "do-334",
+      "ahrs",
+      "mops",
+      "inertial",
+      "rtca"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": []
+  },
+  {
+    "id": "res:astm-f3269-21-rta",
+    "kind": "standard",
+    "title": "ASTM F3269-21: Standard Practice for Methods to Safely Bound Behavior of Aircraft Systems Containing Complex Functions Using Run-Time Assurance",
+    "url": "https://store.astm.org/f3269-21.html",
+    "authors": [
+      "ASTM F38 Committee"
+    ],
+    "year": 2021,
+    "summary": "Industry standard practice for run-time assurance: let a complex function (adaptive, ML, COTS) operate, monitor it against a safe boundary, and switch to a simpler assured recovery function when it would cross that boundary. Written for UAS and scalable to other aircraft.",
+    "key_takeaways": [
+      "Named parts: input manager, safety monitor, recovery control function, RTA switch",
+      "The complex function can stay at a lower assurance level if the monitor and switch are assured",
+      "Not a one-size-fits-all strategy; HW/SW integration is out of scope",
+      "Safety assessment still runs through ARP4754A / ARP4761 / ASTM F3178"
+    ],
+    "concepts": [
+      "concept:standards",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "runtime-assurance",
+      "rta",
+      "simplex",
+      "astm",
+      "uas",
+      "certification"
+    ],
+    "level": "intermediate",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "res:nagarajan-2021-astm-f3269-scitech",
+        "rel": "explains"
+      },
+      {
+        "id": "repo:act3-ace/run-time-assurance",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:nasa/ogma",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:nagarajan-2021-astm-f3269-scitech",
+    "kind": "paper",
+    "title": "ASTM F3269 - An Industry Standard on Run Time Assurance for Aircraft Systems",
+    "url": "https://elib.dlr.de/144352/",
+    "authors": [
+      "Pranav Nagarajan",
+      "Suresh K. Kannan",
+      "Christoph Torens",
+      "Mike E. Vukas",
+      "George F. Wilber"
+    ],
+    "year": 2021,
+    "summary": "AIAA SciTech 2021 paper by members of the F3269 working group explaining the RTA architecture in the standard, the reasoning behind its revision, and recommended design practices. The open DLR copy is the free way to learn what F3269 says.",
+    "key_takeaways": [
+      "Free, author-side explanation of the paywalled standard",
+      "Points at certifying AI/ML and adaptive controllers as a target use",
+      "DOI 10.2514/6.2021-0525"
+    ],
+    "concepts": [
+      "concept:standards"
+    ],
+    "tags": [
+      "runtime-assurance",
+      "astm-f3269",
+      "aiaa",
+      "dlr"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:astm-f3269-21-rta",
+        "rel": "explains"
+      }
+    ]
+  },
+  {
+    "id": "res:clark-2020-rta-autonomous-aerospace",
+    "kind": "paper",
+    "title": "Runtime Assurance for Autonomous Aerospace Systems",
+    "url": "https://doi.org/10.2514/1.G004862",
+    "authors": [
+      "Matthew Clark",
+      "Nathan D. Richards",
+      "Michael DeVore",
+      "John D. Schierman"
+    ],
+    "year": 2020,
+    "summary": "Journal of Guidance, Control, and Dynamics paper presenting an RTA framework for an unmanned aerospace application, from the AFRL / Barron Associates line of RTA research that fed F3269.",
+    "key_takeaways": [
+      "RTA framing from the US Air Force research community",
+      "Volume and pages (43:2205-2217) taken from a library catalogue, not checked on the journal site"
+    ],
+    "concepts": [
+      "concept:standards",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "runtime-assurance",
+      "afrl",
+      "jgcd",
+      "uas"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "res:astm-f3269-21-rta",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:sha-2001-simplex",
+    "kind": "paper",
+    "title": "Using Simplicity to Control Complexity",
+    "url": "https://doi.org/10.1109/MS.2001.936213",
+    "authors": [
+      "Lui Sha"
+    ],
+    "year": 2001,
+    "summary": "The IEEE Software article that introduced the Simplex architecture: run a high-performance but unverified controller alongside a simple, verified high-assurance controller, and switch when a monitored safety envelope is about to be left.",
+    "key_takeaways": [
+      "Reliability comes from a simple trusted core, not from diversity alone",
+      "Origin of the 'simplex' term used in F3269 and RTA literature",
+      "IEEE Software 18(4):20-28"
+    ],
+    "concepts": [
+      "concept:standards"
+    ],
+    "tags": [
+      "simplex",
+      "runtime-assurance",
+      "architecture",
+      "classic"
+    ],
+    "level": "intro",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "res:mehmood-2022-black-box-simplex",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:mehmood-2022-black-box-simplex",
+    "kind": "paper",
+    "title": "The Black-Box Simplex Architecture for Runtime Assurance of Autonomous CPS",
+    "url": "https://arxiv.org/abs/2102.12981",
+    "authors": [
+      "Usama Mehmood",
+      "Sanaz Sheikhi",
+      "Stanley Bak",
+      "Scott A. Smolka",
+      "Scott D. Stoller"
+    ],
+    "year": 2022,
+    "summary": "Extends Simplex so that neither the advanced nor the backup controller needs static verification: runtime checks over a short horizon decide whether the backup can still recover. Case studies include neural-network collision avoidance for F-16 groups. Published at NASA Formal Methods 2022.",
+    "key_takeaways": [
+      "Removes the need to verify the backup controller offline",
+      "Fits learned or MPC-style controllers that are hard to verify",
+      "Earlier arXiv title: 'Safe CPS from Unsafe Controllers'"
+    ],
+    "concepts": [
+      "concept:standards",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "simplex",
+      "runtime-assurance",
+      "neural-network",
+      "nfm"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:sha-2001-simplex",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:easa-ai-concept-paper-issue-2",
+    "kind": "doc",
+    "title": "EASA Artificial Intelligence Concept Paper Issue 2: Guidance for Level 1 & 2 machine learning applications",
+    "url": "https://www.easa.europa.eu/en/document-library/general-publications/easa-artificial-intelligence-concept-paper-issue-2",
+    "authors": [
+      "EASA"
+    ],
+    "year": 2024,
+    "summary": "EASA's guidance for ML in aviation: classification of AI levels (assistance, human-AI teaming, autonomy), learning assurance objectives, explainability and safety-risk mitigation. About 240 pages. RMT.0742 is meant to turn it into rules and AMC.",
+    "key_takeaways": [
+      "Learning assurance is the ML counterpart of DO-178C development assurance",
+      "Guidance, not rules; expect it to evolve"
+    ],
+    "concepts": [
+      "concept:standards",
+      "concept:edge-ai",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "easa",
+      "ml-assurance",
+      "learning-assurance",
+      "ai",
+      "certification"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:eurocae-wg-114-ed-324-arp6983",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:eurocae-wg-114-ed-324-arp6983",
+    "kind": "doc",
+    "title": "EUROCAE WG-114 / SAE G-34: ED-324 / ARP6983 (process standard for ML in aeronautical products)",
+    "url": "https://www.eurocae.net/working-group/wg-114",
+    "authors": [
+      "EUROCAE WG-114",
+      "SAE G-34"
+    ],
+    "year": 2026,
+    "summary": "Working-group page for the joint EUROCAE/SAE standard on developing and certifying aeronautical products that implement machine learning. As of 2026-11-09 it is a draft, with a target publication date of 31 Dec 2026 on the WG page.",
+    "key_takeaways": [
+      "Not published yet; drafts circulated to regulators (Draft 7 cited at an FAA exchange in Aug 2025)",
+      "Initial scope: offline supervised learning",
+      "Expected to be the ML analogue of DO-178C once released"
+    ],
+    "concepts": [
+      "concept:standards",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "ed-324",
+      "arp6983",
+      "eurocae",
+      "sae",
+      "ml-assurance",
+      "draft"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:easa-ai-concept-paper-issue-2",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:easa-ed-decision-2025-018-r-sora-2-5",
+    "kind": "standard",
+    "title": "EASA ED Decision 2025/018/R: SORA 2.5 in the AMC and GM to Regulation (EU) 2019/947",
+    "url": "https://www.easa.europa.eu/en/document-library/agency-decisions/ed-decision-2025018r",
+    "authors": [
+      "EASA"
+    ],
+    "year": 2025,
+    "summary": "Adopts the European version of JARUS SORA 2.5 as AMC1 to Article 11 of the EU drone regulation, the risk-assessment method for operations in the 'specific' category. This is how a civil UAS operation with a new nav function gets authorised in Europe without full type certification.",
+    "key_takeaways": [
+      "SORA assigns ground and air risk classes, then a SAIL level that sets robustness of mitigations",
+      "Containment requirements scale with the risk of the adjacent area (SORA method; this decision text not re-read here)",
+      "Exact entry-into-force date not checked here"
+    ],
+    "concepts": [
+      "concept:standards",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "sora",
+      "easa",
+      "specific-category",
+      "uas",
+      "risk-assessment",
+      "jarus"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:nato-stanag-4703-aep-83",
+    "kind": "standard",
+    "title": "STANAG 4703 / AEP-83: Light Unmanned Aircraft Systems Airworthiness Requirements",
+    "url": "https://assets.publishing.service.gov.uk/media/5a7ec5c940f0b62305b83155/20140916-STANAG-4703_AEP-83_A__1_.pdf",
+    "authors": [
+      "NATO"
+    ],
+    "year": 2014,
+    "summary": "NATO airworthiness code for fixed-wing light UAS with MTOW up to 150 kg and impact energy above 66 J (public UK copy of the 2014 edition). STANAG 4671 / AEP-4671 covers 150-20,000 kg fixed-wing and derives from CS-23. A military customer will map a nav product against one of these.",
+    "key_takeaways": [
+      "150 kg is the dividing line between 4703 and 4671",
+      "Current edition per retailer listings is STANAG 4703 Ed 3 (2023); this link is the 2014 text"
+    ],
+    "concepts": [
+      "concept:standards"
+    ],
+    "tags": [
+      "stanag-4703",
+      "stanag-4671",
+      "nato",
+      "airworthiness",
+      "military-uas"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:stanag-4586-overview",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:jeon-2021-vio-jetson-benchmark",
+    "kind": "paper",
+    "title": "Run Your Visual-Inertial Odometry on NVIDIA Jetson: Benchmark Tests on a Micro Aerial Vehicle",
+    "url": "https://arxiv.org/abs/2103.01655",
+    "authors": [
+      "Jinwoo Jeon",
+      "Sungwook Jung",
+      "Eungchang Lee",
+      "Duckyu Choi",
+      "Hyun Myung"
+    ],
+    "year": 2021,
+    "summary": "Runs seven VO/VIO systems (VINS-Mono, VINS-Fusion, Kimera, ALVIO, Stereo-MSCKF, ORB-SLAM2 stereo, ROVIO) on Jetson TX2, Xavier NX and AGX Xavier with a D435i at 30 Hz and a Pixhawk 4 mini IMU at 100 Hz, and reports accuracy, CPU and memory. Releases the KAIST VIO dataset.",
+    "key_takeaways": [
+      "ROVIO had the lowest CPU use on every Jetson; all others used more than one core",
+      "Kimera had markedly higher memory use, most visible on TX2",
+      "VINS-Fusion CPU build did not run on TX2; the GPU variant was used",
+      "CPU/memory values are only in a figure, not in tables; read them from Fig. 3"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:edge-ai",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "jetson",
+      "vio",
+      "benchmark",
+      "uav",
+      "kaist"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ethz-asl/rovio",
+        "rel": "evaluates"
+      },
+      {
+        "id": "repo:mit-spark/kimera-vio",
+        "rel": "evaluates"
+      }
+    ]
+  },
+  {
+    "id": "res:isaac-ros-performance-summary",
+    "kind": "report",
+    "title": "Isaac ROS Performance Summary",
+    "url": "https://nvidia-isaac-ros.github.io/performance/index.html",
+    "authors": [
+      "NVIDIA"
+    ],
+    "year": 2026,
+    "summary": "NVIDIA's table of throughput and latency for Isaac ROS nodes and graphs per platform, including Jetson Orin Nano Super 8GB and AGX Orin, with latency measured at a 30 Hz input. Vendor numbers.",
+    "key_takeaways": [
+      "Orin Nano Super 8GB: stereo disparity graph 1080p 61.5 fps, 19 ms at 30 Hz (vendor)",
+      "Orin Nano Super 8GB: ESS DNN stereo 576p 34.8 fps, 30 ms at 30 Hz (vendor)",
+      "AGX Orin: stereo disparity graph 1080p 117 fps, 9.3 ms (vendor)",
+      "No cuVSLAM row on this page as of 2026-11-09"
+    ],
+    "concepts": [
+      "concept:edge-ai",
+      "concept:ros"
+    ],
+    "tags": [
+      "jetson",
+      "benchmark",
+      "latency",
+      "vendor-claim",
+      "isaac-ros"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:nvidia-isaac-ros/isaac_ros_benchmark",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:qualcomm-ai-hub-superpoint",
+    "kind": "report",
+    "title": "Qualcomm AI Hub: SuperPoint on-device performance",
+    "url": "https://aihub.qualcomm.com/models/superpoint",
+    "authors": [
+      "Qualcomm"
+    ],
+    "year": 2026,
+    "summary": "Qualcomm's measured latency for SuperPoint (the MIT-licensed rpautrat implementation, 640x480 input) per device, runtime and precision. Same data as perf.yaml in the ai-hub-models repo. Vendor numbers.",
+    "key_takeaways": [
+      "QCS8550 (proxy), float, QNN: 16.13 ms; W8A8 TFLite: 20.207 ms (vendor)",
+      "RB3 Gen 2 Vision Kit, W8A8 TFLite: 580.219 ms with 40 of 156 layers on CPU (vendor)",
+      "No QRB5165 (RB5 / VOXL 2) entry",
+      "Uses the license-clean SuperPoint, not the Magic Leap weights"
+    ],
+    "concepts": [
+      "concept:edge-ai",
+      "concept:feature-matching"
+    ],
+    "tags": [
+      "qualcomm",
+      "npu",
+      "superpoint",
+      "benchmark",
+      "vendor-claim"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:qualcomm/ai-hub-models",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:px4-uxrce-dds-docs",
+    "kind": "doc",
+    "title": "PX4 uXRCE-DDS (PX4-ROS 2/DDS Bridge)",
+    "url": "https://docs.px4.io/main/en/middleware/uxrce_dds.html",
+    "authors": [
+      "PX4 / Dronecode"
+    ],
+    "year": 2026,
+    "summary": "How PX4 exposes uORB topics to ROS 2: a client in firmware, the Micro XRCE-DDS Agent on the companion, a dds_topics.yaml allow-list, serial or UDP transport, and built-in timestamp synchronisation.",
+    "key_takeaways": [
+      "Only topics in dds_topics.yaml cross the bridge; default rate cap 100 Hz",
+      "UXRCE_DDS_SYNCT keeps PX4 and ROS 2 timestamps aligned (on by default)",
+      "DDS is unauthenticated: keep the link isolated",
+      "px4_msgs must match the firmware's message definitions"
+    ],
+    "concepts": [
+      "concept:autopilot",
+      "concept:ros",
+      "concept:timing"
+    ],
+    "tags": [
+      "px4",
+      "ros2",
+      "uxrce-dds",
+      "uorb",
+      "time-sync"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:eprosima/micro-xrce-dds-agent",
+        "rel": "uses"
+      },
+      {
+        "id": "repo:px4/px4_msgs",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:px4-ros2-control-interface-docs",
+    "kind": "doc",
+    "title": "PX4 ROS 2 Control Interface",
+    "url": "https://docs.px4.io/main/en/ros2/px4_ros2_control_interface.html",
+    "authors": [
+      "PX4 / Dronecode"
+    ],
+    "year": 2026,
+    "summary": "Library that lets a ROS 2 process register its own flight modes and mode executors with PX4. PX4 presents them like built-in modes and keeps them inside its failsafe state machine and arming checks.",
+    "key_takeaways": [
+      "A ROS 2 mode can replace a built-in PX4 mode, with the original as fallback",
+      "Modes are integrated with PX4 failsafes and arming checks",
+      "Parts are experimental; only some setpoint types are settled"
+    ],
+    "concepts": [
+      "concept:autopilot",
+      "concept:ros"
+    ],
+    "tags": [
+      "px4",
+      "ros2",
+      "flight-modes",
+      "failsafe"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:auterion/px4-ros2-interface-lib",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:px4-aux-global-position-msg",
+    "kind": "doc",
+    "title": "PX4 uORB message: AuxGlobalPosition",
+    "url": "https://docs.px4.io/main/en/msg_docs/AuxGlobalPosition.html",
+    "authors": [
+      "PX4 / Dronecode"
+    ],
+    "year": 2026,
+    "summary": "uORB message for an external global position (lat, lon, alt, eph, epv) tagged with a source type: vision, terrain, magnetic, pseudolites, LEO and others. EKF2 fuses up to 4 instances (EKF2_AGP*_ params) and the DDS bridge accepts it on /fmu/in/aux_global_position.",
+    "key_takeaways": [
+      "The cleanest PX4 entry point for a visual-geolocalisation or terrain-matching fix",
+      "Dedicated message with a source enum is on PX4 main; v1.16 and v1.17 bridge the same topic as VehicleGlobalPosition",
+      "Only horizontal position is fused; vertical bit is reserved (params file on main)"
+    ],
+    "concepts": [
+      "concept:autopilot",
+      "concept:sensor-fusion",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "px4",
+      "ekf2",
+      "aux-global-position",
+      "uorb",
+      "alt-pnt"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:ardupilot-lua-scripting-docs",
+    "kind": "doc",
+    "title": "ArduPilot Lua Scripts",
+    "url": "https://ardupilot.org/dev/docs/common-lua-scripts.html",
+    "authors": [
+      "ArduPilot"
+    ],
+    "year": 2026,
+    "summary": "How to run Lua scripts on the ArduPilot flight controller: board requirements, heap sizing, script sandboxing and time slicing, and checksum gating for arming. Used for on-FC monitors such as automatic EKF source switching.",
+    "key_takeaways": [
+      "Needs at least 2 MB flash and 80 kB memory; not available on F4 boards",
+      "Scripts are not guaranteed to run on a reliable schedule",
+      "SCR_LD_CHECKSUM / SCR_RUN_CHECKSUM can block arming if scripts differ from expected",
+      "ahrs-source.lua in the repo switches GPS / ExtNav / optical flow by innovation votes"
+    ],
+    "concepts": [
+      "concept:autopilot"
+    ],
+    "tags": [
+      "ardupilot",
+      "lua",
+      "scripting",
+      "ekf-source",
+      "monitor"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ardupilot/ardupilot",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:ardupilot-ekf3-sources",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:ardupilot-gplv3-license-page",
+    "kind": "doc",
+    "title": "ArduPilot License (GPLv3)",
+    "url": "https://ardupilot.org/dev/docs/license-gplv3.html",
+    "authors": [
+      "ArduPilot"
+    ],
+    "year": 2026,
+    "summary": "ArduPilot's own reading of its GPLv3 obligations for products: tell customers it is open source, provide source or a link, keep credits, and respect upgrade rights on user products. States that closed-source code can run on a companion computer.",
+    "key_takeaways": [
+      "Shipping modified ArduPilot firmware means shipping its source",
+      "A closed nav algorithm belongs on the companion, talking MAVLink",
+      "Does not itself address where MAVLink communication sits legally; see the GPL FAQ"
+    ],
+    "concepts": [
+      "concept:autopilot",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "ardupilot",
+      "gpl-3.0",
+      "license",
+      "productisation"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:mavlink-license",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:mavlink-license",
+    "kind": "doc",
+    "title": "MAVLink Developer Guide: License",
+    "url": "https://mavlink.io/en/#license",
+    "authors": [
+      "Dronecode / MAVLink"
+    ],
+    "year": 2026,
+    "summary": "MAVLink's license statement: XML message definitions and the generated C library are MIT and may be used in closed-source applications; the generator toolchain is LGPLv3.",
+    "key_takeaways": [
+      "Generated C headers are MIT: safe to link into a closed companion app",
+      "Other language bindings are 'typically MIT'; check each",
+      "The generator (pymavlink tools) is LGPLv3, which does not reach generated output per this page"
+    ],
+    "concepts": [
+      "concept:mavlink-gcs",
+      "concept:policy-ethics"
+    ],
+    "tags": [
+      "mavlink",
+      "mit",
+      "lgpl",
+      "license"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mavlink/mavlink",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:nvidia-orin-nano-super-blog",
+    "kind": "blog",
+    "title": "NVIDIA Jetson Orin Nano Developer Kit Gets a Super Boost",
+    "url": "https://developer.nvidia.com/blog/nvidia-jetson-orin-nano-developer-kit-gets-a-super-boost/",
+    "authors": [
+      "NVIDIA"
+    ],
+    "year": 2024,
+    "summary": "Announcement of the 'Super' power mode for the Orin Nano developer kit via JetPack update, with before/after compute and memory figures. Vendor claims.",
+    "key_takeaways": [
+      "INT8 sparse 40 => 67 TOPS; dense 20 => 33 TOPS (vendor)",
+      "Memory bandwidth 68 => 102 GB/s; power modes 7 / 15 / 25 W (vendor)",
+      "Same hardware, new MAXN power mode; Orin NX modules also get a boost"
+    ],
+    "concepts": [
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "jetson",
+      "orin-nano",
+      "vendor-claim",
+      "power"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:nvidia-jetson-ai-lab",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:px4-pixhawk-6x-docs",
+    "kind": "doc",
+    "title": "PX4 docs: Holybro Pixhawk 6X (FMUv6X)",
+    "url": "https://docs.px4.io/main/en/flight_controller/pixhawk6x.html",
+    "authors": [
+      "PX4 / Dronecode"
+    ],
+    "year": 2026,
+    "summary": "Reference page for the Pixhawk 6X: STM32H753 Cortex-M7 at 480 MHz with 2 MB flash and 1 MB RAM, an STM32F100 IO processor, triple IMU (ICM-45686 on rev 8), built to the Pixhawk FMUv6X open standard (DS-012).",
+    "key_takeaways": [
+      "The class of MCU that runs EKF2 at its default 100 Hz prediction rate",
+      "No room for image processing: vision runs on a companion",
+      "Open hardware standard means multiple vendors build compatible FMUs"
+    ],
+    "concepts": [
+      "concept:autopilot",
+      "concept:ins"
+    ],
+    "tags": [
+      "pixhawk",
+      "fmu-v6x",
+      "stm32h7",
+      "flight-controller"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:px4-modalai-voxl-2-docs",
+    "kind": "doc",
+    "title": "PX4 docs: ModalAI VOXL 2",
+    "url": "https://docs.px4.io/main/en/flight_controller/modalai_voxl_2.html",
+    "authors": [
+      "PX4 / Dronecode",
+      "ModalAI"
+    ],
+    "year": 2026,
+    "summary": "VOXL 2 combines a Qualcomm QRB5165 companion computer and PX4 on the DSP in one 16 g, 70 x 36 mm board, with a 15 TOPS NPU claim and six camera ports. ModalAI ships VIO (QVIO, OpenVINS server) as part of its SDK.",
+    "key_takeaways": [
+      "Flight controller and companion on one SoC: shortest camera-to-EKF path",
+      "15 TOPS NPU, 8 cores up to 3.091 GHz, 8 GB LPDDR5 (vendor)",
+      "No public third-party VIO latency numbers found for it"
+    ],
+    "concepts": [
+      "concept:autopilot",
+      "concept:edge-ai",
+      "concept:vio"
+    ],
+    "tags": [
+      "voxl2",
+      "modalai",
+      "qrb5165",
+      "companion",
+      "vendor-claim"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "uses"
+      },
+      {
+        "id": "repo:rpng/open_vins",
+        "rel": "uses"
+      }
+    ]
+  }
+]

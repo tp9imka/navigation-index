@@ -31,12 +31,14 @@ Python MAVLink implementation plus tools for connections, log parsing (DataFlash
 
 ## Referenced by
 
+- [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md) (integrates_with)
 - [MAVProxy](../../catalog/repos/ardupilot__mavproxy.md) (depends_on)
+- [ALFA dataset tools](../../catalog/repos/castacks__alfa-dataset-tools.md) (alternative_to)
 - [mavlink-mcp (ArduPilot)](../../catalog/repos/deepakpopli__mavlink-mcp.md) (depends_on)
 - [DroneKit-Python](../../catalog/repos/dronekit__dronekit-python.md) (depends_on)
 - [MAVLink](../../catalog/repos/mavlink__mavlink.md) (depends_on)

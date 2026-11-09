@@ -11,7 +11,7 @@ Positioning from LTE/5G, Wi-Fi, DVB, LEO satellites (Starlink, Iridium), eLoran,
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) - After this chapter you can explain the five main ways to get an absolute position without GNSS - image-to-map matching, terrain matching, magnetic anomaly matching, celestial fixes and signals of opportunity - pick the o
 - [GNSS-denied navigation: products and companies](../../docs/landscape/gnss-denied-nav-products.md) - What judges from industry already know.
 
-## Repositories (13)
+## Repositories (14)
 
 - [Starlink LEO-PNT](../../catalog/repos/przemyslawpiekarski__starlink-leo-pnt.md) - fit: high - Passive positioning using Starlink downlink signals as signals of opportunity: SDR capture, blind OFDM analysis, Doppler extraction, TDOA/FDOA solver and EKF with TLE-based orbits.
 - [SDRangel](../../catalog/repos/f4exb__sdrangel.md) - fit: medium - General SDR receive/transmit application with many demodulator plugins; its Radio Clock plugin decodes LF time broadcasts including MSF, DCF77, TDF, WWVB, JJY and RBU.
@@ -20,6 +20,7 @@ Positioning from LTE/5G, Wi-Fi, DVB, LEO satellites (Starlink, Iridium), eLoran,
 - [LEO-SPINE](../../catalog/repos/xyangll__leospine.md) - fit: medium - Open toolkit for LEO/MEO/GEO constellation simulation and single/multi-satellite positioning.
 - [LEO SoOP positioning thesis (Voska)](../../catalog/repos/voskavoj__dp.md) - fit: medium - Diploma thesis materials on signals-of-opportunity positioning from LEO satellites using Doppler shift and TLE-based orbits.
 - [UT Starlink signal simulator](../../catalog/repos/gitlab.com__radionavlab__public__ut-starlink-signal-simulator.md) - fit: medium - MATLAB utility functions from UT Austin's Radionavigation Lab for simulating Starlink Ku-band downlink signals (OFDM frames, PSS/SSS, Doppler and path-loss histories), with MATLAB live-script playground examples.
+- [gr-iridium](../../catalog/repos/muccc__gr-iridium.md) - fit: low - GNU Radio blocks and apps that detect and demodulate Iridium bursts from SDR recordings.
 - [KiwiSDR](../../catalog/repos/jks-prv__kiwisdr.md) - fit: low - Web-accessible shortwave SDR receiver (10 kHz - 30 MHz) with built-in software GPS and a Loran-C/eLoran monitor extension.
 - [GraphGNSSLib LEO](../../catalog/repos/gao-tech1__graphgnsslib_leo_v1.2.md) - fit: low - Factor-graph positioning combining real GNSS pseudorange/Doppler with simulated LEO satellite measurements, extending GraphGNSSLib.
 - [DCF77Decode](../../catalog/repos/1ux__dcf77decode.md) - fit: low - C library that decodes the DCF77 time code bitstream (from a cheap AM receiver module) covering most of the public standard.

@@ -1,0 +1,430 @@
+[
+  {
+    "id": "res:richter-bry-roy-polynomial-trajectories-isrr2013",
+    "kind": "paper",
+    "title": "Polynomial Trajectory Planning for Aggressive Quadrotor Flight in Dense Indoor Environments",
+    "url": "https://groups.csail.mit.edu/rrg/papers/Richter_ISRR13.pdf",
+    "authors": ["Charles Richter", "Adam Bry", "Nicholas Roy"],
+    "year": 2013,
+    "summary": "Plans a geometric path first (RRT*), then fits jointly optimised polynomial segments through it as an unconstrained, numerically stable QP. Removes the need to model the full dynamics in the sampling planner.",
+    "key_takeaways": [
+      "Split planning: kinematic path search => polynomial smoothing",
+      "Unconstrained QP formulation stays stable for high polynomial orders",
+      "Segment time allocation is the knob that decides feasibility"
+    ],
+    "concepts": ["concept:path-planning"],
+    "tags": ["minimum-snap", "polynomial", "quadrotor", "rrt-star"],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {"id": "repo:ethz-asl/mav_trajectory_generation", "rel": "has_code"}
+    ]
+  },
+  {
+    "id": "res:wang-minco-gcopter-2021",
+    "kind": "paper",
+    "title": "Geometrically Constrained Trajectory Optimization for Multicopters",
+    "url": "https://arxiv.org/abs/2103.00190",
+    "authors": ["Zhepei Wang", "Xin Zhou", "Chao Xu", "Fei Gao"],
+    "year": 2021,
+    "summary": "Introduces MINCO, a minimum-control trajectory class with linear-complexity parameterisation, and GCOPTER, which optimises trajectories inside safe-corridor polytopes with spatial and temporal deformation. Basis of the later ZJU planners.",
+    "key_takeaways": [
+      "MINCO parameterises trajectories by waypoints and durations with linear-time gradients",
+      "Constraints become penalties, so a generic unconstrained solver (L-BFGS) works",
+      "Year is the arXiv date; journal version not checked here"
+    ],
+    "concepts": ["concept:path-planning", "concept:obstacle-avoidance"],
+    "tags": ["minco", "trajectory-optimisation", "safe-corridor", "multicopter"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "repo:zju-fast-lab/gcopter", "rel": "has_code"},
+      {"id": "repo:zju-fast-lab/ego-planner-v2", "rel": "uses"}
+    ]
+  },
+  {
+    "id": "res:falanga-pampc-2018",
+    "kind": "paper",
+    "title": "PAMPC: Perception-Aware Model Predictive Control for Quadrotors",
+    "url": "https://arxiv.org/abs/1804.04811",
+    "authors": ["Davide Falanga", "Philipp Foehn", "Peng Lu", "Davide Scaramuzza"],
+    "year": 2018,
+    "summary": "Adds perception objectives (keep a point of interest visible, low image-plane velocity) to a quadrotor NMPC cost, so the controller trades tracking accuracy against what the camera sees.",
+    "key_takeaways": [
+      "Perception terms live in the MPC cost, not in a separate planner",
+      "Under-actuation means attitude, and so camera pointing, is coupled to translation",
+      "Pattern transfers to keeping a nadir camera on matchable terrain"
+    ],
+    "concepts": ["concept:autopilot", "concept:path-planning", "concept:vio"],
+    "tags": ["perception-aware", "nmpc", "quadrotor"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "repo:uzh-rpg/rpg_mpc", "rel": "has_code"}
+    ]
+  },
+  {
+    "id": "res:zhang-scaramuzza-fisher-information-field-2020",
+    "kind": "paper",
+    "title": "Fisher Information Field: an Efficient and Differentiable Map for Perception-aware Planning",
+    "url": "https://arxiv.org/abs/2008.03324",
+    "authors": ["Zichao Zhang", "Davide Scaramuzza"],
+    "year": 2020,
+    "summary": "Precomputes a voxel map of visual-localisation information so a planner can score any pose quickly and differentiably, instead of reprojecting all landmarks. Shown with RRT* and trajectory optimisation.",
+    "key_takeaways": [
+      "A localisability map turns 'stay localisable' into an ordinary planning cost",
+      "Precomputation moves the expensive part out of the planning loop",
+      "Same idea works on a 2D grid of terrain or texture informativeness"
+    ],
+    "concepts": ["concept:path-planning", "concept:vio", "concept:visual-slam"],
+    "tags": ["perception-aware", "localisability", "fisher-information"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "repo:uzh-rpg/rpg_information_field", "rel": "has_code"}
+    ]
+  },
+  {
+    "id": "res:bry-roy-rrbt-icra2011",
+    "kind": "paper",
+    "title": "Rapidly-exploring Random Belief Trees for Motion Planning Under Uncertainty",
+    "url": "https://groups.csail.mit.edu/rrg/papers/abry_icra11.pdf",
+    "authors": ["Adam Bry", "Nicholas Roy"],
+    "year": 2011,
+    "summary": "Belief-space planning: grows a tree over state and estimator covariance, propagating a Kalman filter along each edge, so the chosen path respects chance constraints given spatially varying sensing.",
+    "key_takeaways": [
+      "Plan over covariance, not only position",
+      "Spatially varying measurement quality is the motivating case, as with TRN or visual fixes",
+      "Covariance propagation along candidate edges is cheap enough to do in Python for a 2D demo"
+    ],
+    "concepts": ["concept:path-planning", "concept:sensor-fusion"],
+    "tags": ["belief-space", "rrt", "uncertainty", "kalman-filter"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "repo:sauravag/edpl-ompl", "rel": "explains"}
+    ]
+  },
+  {
+    "id": "res:yu-la-planner-perception-aware-2025",
+    "kind": "paper",
+    "title": "Perception-aware Planning for Quadrotor Flight in Unknown and Feature-limited Environments",
+    "url": "https://arxiv.org/abs/2503.15273",
+    "authors": ["Chenxin Yu", "Zihong Lu", "Jie Mei", "Boyu Zhou"],
+    "year": 2025,
+    "summary": "Localisation-aware planner that reasons about which features the camera will see along candidate trajectories and steers yaw and path to keep VIO healthy in sparse-feature scenes (IROS 2025).",
+    "key_takeaways": [
+      "Recent evidence that localisation-aware planning is active research",
+      "Couples yaw planning with feature visibility",
+      "Code is public under GPL-3.0"
+    ],
+    "concepts": ["concept:path-planning", "concept:vio"],
+    "tags": ["perception-aware", "localization-aware", "quadrotor"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "repo:robotics-star-lab/la-planner", "rel": "has_code"}
+    ]
+  },
+  {
+    "id": "res:verschueren-acados-2019",
+    "kind": "paper",
+    "title": "acados: a modular open-source framework for fast embedded optimal control",
+    "url": "https://arxiv.org/abs/1910.13753",
+    "authors": ["Robin Verschueren", "Gianluca Frison", "Dimitris Kouzoupis", "Jonathan Frey", "Niels van Duijkeren", "Andrea Zanelli", "Branimir Novoselnik", "Thivaharan Albin", "Rien Quirynen", "Moritz Diehl"],
+    "year": 2019,
+    "summary": "Describes acados' structure-exploiting QP and SQP solvers, integrators and code generation for embedded NMPC and MHE.",
+    "key_takeaways": [
+      "Real-time iteration SQP is the default NMPC scheme",
+      "Models come from CasADi; C code is generated for the target",
+      "Year is the arXiv date"
+    ],
+    "concepts": ["concept:autopilot", "concept:edge-ai"],
+    "tags": ["nmpc", "mhe", "embedded", "optimal-control"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "repo:acados/acados", "rel": "has_code"}
+    ]
+  },
+  {
+    "id": "res:alavilli-tinympc-2023",
+    "kind": "paper",
+    "title": "TinyMPC: Model-Predictive Control on Resource-Constrained Microcontrollers",
+    "url": "https://arxiv.org/abs/2310.16985",
+    "authors": ["Anoushka Alavilli", "Khai Nguyen", "Sam Schoedel", "Brian Plancher", "Zachary Manchester"],
+    "year": 2023,
+    "summary": "ADMM-based MPC solver that caches the Riccati structure so each iteration is cheap enough for a microcontroller; demonstrated on a small quadrotor.",
+    "key_takeaways": [
+      "Convex (linearised) MPC can run on autopilot-class MCUs",
+      "Useful 'runs on the aircraft' argument for a product pitch",
+      "Repo README cites an ICRA 2024 Best Paper award"
+    ],
+    "concepts": ["concept:autopilot", "concept:edge-ai"],
+    "tags": ["mpc", "admm", "microcontroller"],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {"id": "repo:tinympc/tinympc", "rel": "has_code"}
+    ]
+  },
+  {
+    "id": "res:torrente-data-driven-mpc-2021",
+    "kind": "paper",
+    "title": "Data-Driven MPC for Quadrotors",
+    "url": "https://arxiv.org/abs/2102.05773",
+    "authors": ["Guillem Torrente", "Elia Kaufmann", "Philipp Foehn", "Davide Scaramuzza"],
+    "year": 2021,
+    "summary": "Learns the residual between a nominal quadrotor model and real dynamics with Gaussian processes and uses the corrected model inside acados NMPC, improving tracking at high speed (RA-L 2021).",
+    "key_takeaways": [
+      "Physics model + learned residual beats either alone",
+      "Residual mostly captures aerodynamic drag",
+      "Template for a propulsion / aero-aware controller"
+    ],
+    "concepts": ["concept:autopilot", "concept:edge-ai"],
+    "tags": ["mpc", "gaussian-process", "aerodynamics", "quadrotor"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "repo:uzh-rpg/data_driven_mpc", "rel": "has_code"},
+      {"id": "res:verschueren-acados-2019", "rel": "uses"}
+    ]
+  },
+  {
+    "id": "res:zeng-rotary-wing-energy-model-2018",
+    "kind": "paper",
+    "title": "Energy Minimization for Wireless Communication with Rotary-Wing UAV",
+    "url": "https://arxiv.org/abs/1804.02238",
+    "authors": ["Yong Zeng", "Jie Xu", "Rui Zhang"],
+    "year": 2018,
+    "summary": "Derives a closed-form propulsion power model for rotary-wing UAVs as a function of forward speed (blade profile, induced and parasite terms), then uses it to optimise trajectories. The power model is widely reused outside the comms context.",
+    "key_takeaways": [
+      "Power vs speed is U-shaped: hover is not the cheapest state per second, and there is a max-range speed",
+      "Closed form, so it drops straight into a route cost",
+      "Parameters need a real airframe; defaults in the paper are illustrative"
+    ],
+    "concepts": ["concept:path-planning", "concept:mission-planning"],
+    "tags": ["energy-model", "rotary-wing", "propulsion-power"],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {"id": "repo:peterdsharpe/aerosandbox", "rel": "uses"}
+    ]
+  },
+  {
+    "id": "res:stastny-siegwart-flying-backwards-2019",
+    "kind": "paper",
+    "title": "On Flying Backwards: Preventing Run-away of Small, Low-speed, Fixed-wing UAVs in Strong Winds",
+    "url": "https://arxiv.org/abs/1908.01381",
+    "authors": ["Thomas Stastny", "Roland Siegwart"],
+    "year": 2019,
+    "summary": "Nonlinear lateral path-following guidance for fixed-wing UAVs that uses online wind estimates and adjusts the airspeed reference when wind approaches or exceeds airspeed. Flight-tested in strong mountain winds. This line of work underlies PX4's NPFG.",
+    "key_takeaways": [
+      "Path following must handle wind faster than airspeed explicitly",
+      "Wind estimate is a guidance input, so estimator quality matters to guidance",
+      "Link between this paper and PX4 NPFG is from the author overlap and PX4 docs naming, not checked line by line"
+    ],
+    "concepts": ["concept:autopilot", "concept:path-planning"],
+    "tags": ["fixed-wing", "path-following", "wind", "npfg"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "repo:px4/px4-autopilot", "rel": "has_code"}
+    ]
+  },
+  {
+    "id": "res:chitsaz-lavalle-dubins-airplane-2007",
+    "kind": "paper",
+    "title": "Time-optimal Paths for a Dubins airplane",
+    "url": "https://lavalle.pl/papers/ChiLav07b.pdf",
+    "authors": ["Hamidreza Chitsaz", "Steven M. LaValle"],
+    "year": 2007,
+    "summary": "Extends the Dubins car with altitude and bounded climb rate and characterises time-optimal paths with the Pontryagin maximum principle. The base model for most fixed-wing geometric planners.",
+    "key_takeaways": [
+      "Dubins car + altitude = Dubins airplane",
+      "Low, medium and high altitude-change cases need different path shapes",
+      "No wind in the base model; see EDuPlane for wind"
+    ],
+    "concepts": ["concept:path-planning"],
+    "tags": ["dubins-airplane", "fixed-wing", "optimal-control"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "repo:ethz-asl/terrain-navigation2", "rel": "has_code"},
+      {"id": "res:schopferer-eduplane-2026", "rel": "cites"}
+    ]
+  },
+  {
+    "id": "res:schopferer-eduplane-2026",
+    "kind": "paper",
+    "title": "Extensions to the Dubins Airplane Method - Flight Performance Constraints in Uniform Wind",
+    "url": "https://arxiv.org/abs/2611.08004",
+    "authors": ["Simon Schopferer"],
+    "year": 2026,
+    "summary": "Derives closed-form links between flight-performance limits and kinematic constraints, then builds iterative algorithms for 3D fixed-wing trajectories of trochoidal or circular turns and straight segments in uniform wind. Accepted to IEEE TAES per the repo README.",
+    "key_takeaways": [
+      "Trochoids are the wind-correct analogue of Dubins arcs",
+      "Climb at constant vertical speed or constant thrust are both handled",
+      "Reference code is EDuPlane (Apache-2.0)"
+    ],
+    "concepts": ["concept:path-planning", "concept:mission-planning"],
+    "tags": ["dubins-airplane", "wind", "fixed-wing", "trochoid"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "repo:dlr-ft/eduplane", "rel": "has_code"},
+      {"id": "res:chitsaz-lavalle-dubins-airplane-2007", "rel": "cites"}
+    ]
+  },
+  {
+    "id": "res:lim-terrain-navigation-fixed-wing-2024",
+    "kind": "paper",
+    "title": "Safe Low-Altitude Navigation in Steep Terrain With Fixed-Wing Aerial Vehicles",
+    "url": "https://doi.org/10.1109/LRA.2024.3368800",
+    "authors": ["Jaeyoung Lim", "Florian Achermann", "Rik Girod", "Nicholas Lawrance", "Roland Siegwart"],
+    "year": 2024,
+    "summary": "RRT* over Dubins-airplane segments on a DEM with terrain-clearance constraints and guaranteed safe circular loiters, flight-tested on a fixed-wing in the Alps (RA-L vol. 9, no. 5).",
+    "key_takeaways": [
+      "Every planned state keeps a reachable safe loiter circle",
+      "DEM in, feasible fixed-wing route out",
+      "Open-access status not checked; IEEE DOI may be paywalled"
+    ],
+    "concepts": ["concept:path-planning", "concept:terrain-nav"],
+    "tags": ["fixed-wing", "terrain", "rrt-star", "dubins-airplane"],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": [
+      {"id": "repo:ethz-asl/terrain-navigation2", "rel": "has_code"},
+      {"id": "repo:ethz-asl/terrain-navigation", "rel": "has_code"}
+    ]
+  },
+  {
+    "id": "res:px4-fw-position-tuning-npfg-tecs",
+    "kind": "doc",
+    "title": "PX4 Fixed-wing Altitude/Position Controller Tuning Guide",
+    "url": "https://docs.px4.io/main/en/config_fw/position_tuning_guide_fixedwing.html",
+    "authors": ["PX4 / Dronecode"],
+    "year": 2026,
+    "summary": "Official tuning guide for PX4 fixed-wing outer loops: TECS for altitude and airspeed (FW_T_* parameters) and NPFG lateral path following (NPFG_PERIOD and related parameters).",
+    "key_takeaways": [
+      "Tune TECS before NPFG; the guide gives the order",
+      "NPFG period and damping set how hard the aircraft converges to the path",
+      "Year is the page as fetched, not a release date"
+    ],
+    "concepts": ["concept:autopilot"],
+    "tags": ["px4", "fixed-wing", "tecs", "npfg", "tuning"],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {"id": "repo:px4/px4-autopilot", "rel": "explains"}
+    ]
+  },
+  {
+    "id": "res:ardupilot-plane-l1-navigation-tuning",
+    "kind": "doc",
+    "title": "ArduPlane Navigation Tuning (L1 controller)",
+    "url": "https://ardupilot.org/plane/docs/navigation-tuning.html",
+    "authors": ["ArduPilot Dev Team"],
+    "year": 2026,
+    "summary": "How ArduPlane's L1 lateral navigation controller works and how to tune NAVL1_PERIOD and NAVL1_DAMPING for waypoint tracking.",
+    "key_takeaways": [
+      "One period parameter sets aggressiveness of path convergence",
+      "Tune roll and pitch loops first",
+      "Year is the page as fetched"
+    ],
+    "concepts": ["concept:autopilot"],
+    "tags": ["ardupilot", "fixed-wing", "l1", "path-following", "tuning"],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {"id": "repo:ardupilot/ardupilot", "rel": "explains"},
+      {"id": "res:ardupilot-plane-tecs-tuning", "rel": "part_of"}
+    ]
+  },
+  {
+    "id": "res:ardupilot-plane-tecs-tuning",
+    "kind": "doc",
+    "title": "ArduPlane TECS (Total Energy Control System) for Speed and Height Tuning Guide",
+    "url": "https://ardupilot.org/plane/docs/tecs-total-energy-control-system-for-speed-height-tuning-guide.html",
+    "authors": ["ArduPilot Dev Team"],
+    "year": 2026,
+    "summary": "Explains ArduPlane's TECS: throttle controls total energy, pitch distributes it between height and speed, and how to tune its limits and time constants.",
+    "key_takeaways": [
+      "TECS is energy-based by design, so it is the natural hook for energy-aware guidance",
+      "Climb and sink limits must match the real airframe",
+      "Year is the page as fetched"
+    ],
+    "concepts": ["concept:autopilot"],
+    "tags": ["ardupilot", "fixed-wing", "tecs", "energy", "tuning"],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {"id": "repo:ardupilot/ardupilot", "rel": "explains"}
+    ]
+  },
+  {
+    "id": "res:px4-ros2-offboard-control",
+    "kind": "doc",
+    "title": "PX4 ROS 2 Offboard Control Example",
+    "url": "https://docs.px4.io/main/en/ros2/offboard_control.html",
+    "authors": ["PX4 / Dronecode"],
+    "year": 2026,
+    "summary": "Walkthrough of driving PX4 from a ROS 2 node in offboard mode: OffboardControlMode heartbeat, TrajectorySetpoint messages, arming and mode switching via px4_ros_com.",
+    "key_takeaways": [
+      "Offboard needs a continuous OffboardControlMode stream or PX4 falls back",
+      "Choose the setpoint level (position, velocity, rates) to match your guidance layer",
+      "This is the integration point for a custom MPC or trajectory tracker"
+    ],
+    "concepts": ["concept:autopilot", "concept:ros"],
+    "tags": ["px4", "offboard", "ros2", "setpoints"],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {"id": "repo:px4/px4_ros_com", "rel": "explains"},
+      {"id": "repo:auterion/px4-ros2-interface-lib", "rel": "uses"}
+    ]
+  },
+  {
+    "id": "res:uiuc-propeller-database",
+    "kind": "dataset",
+    "title": "UIUC Propeller Data Site",
+    "url": "https://m-selig.ae.illinois.edu/props/propDB.html",
+    "authors": ["Michael Selig and UIUC Applied Aerodynamics Group"],
+    "year": 2026,
+    "summary": "Wind-tunnel measurements of thrust and power coefficients vs advance ratio for many small UAV propellers, plus geometry.",
+    "key_takeaways": [
+      "Real propeller curves instead of guessed efficiency",
+      "Enough to build a thrust / power map for an energy-aware planner",
+      "Check the site's terms before redistributing data in a product"
+    ],
+    "concepts": ["concept:simulation", "concept:datasets-benchmarks"],
+    "tags": ["propeller", "propulsion", "wind-tunnel"],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {"id": "repo:byuflowlab/ccblade.jl", "rel": "dataset_for"},
+      {"id": "repo:peterdsharpe/aerosandbox", "rel": "dataset_for"}
+    ]
+  },
+  {
+    "id": "res:beard-mclain-small-unmanned-aircraft",
+    "kind": "book",
+    "title": "Small Unmanned Aircraft: Theory and Practice",
+    "url": "https://github.com/byu-magicc/mavsim_public",
+    "authors": ["Randal W. Beard", "Timothy W. McLain"],
+    "year": 2012,
+    "summary": "Textbook covering fixed-wing dynamics, autopilot design, state estimation, straight-line and orbit path following, Dubins path management and path planning. The repo README links a draft second edition PDF and chapter slides.",
+    "key_takeaways": [
+      "Chapters 10-12 are the guidance and planning core",
+      "Draft second edition is free via the repo README; the 2012 print edition is Princeton University Press",
+      "Pairs with runnable Python project files in the same repo"
+    ],
+    "concepts": ["concept:autopilot", "concept:path-planning", "concept:sensor-fusion"],
+    "tags": ["fixed-wing", "textbook", "gnc", "dubins", "path-following"],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {"id": "repo:byu-magicc/mavsim_public", "rel": "has_code"}
+    ]
+  }
+]

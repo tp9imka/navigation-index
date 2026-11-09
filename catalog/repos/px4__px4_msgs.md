@@ -26,6 +26,7 @@ ROS 2 message definitions mirroring PX4 uORB topics, used with the uXRCE-DDS bri
 
 ## Referenced by
 
+- [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [ROS2 PX4 Offboard Example](../../catalog/repos/ark-electronics__ros2_px4_offboard_example.md) (depends_on)
@@ -33,6 +34,7 @@ ROS 2 message definitions mirroring PX4 uORB topics, used with the uXRCE-DDS bri
 - [Micro XRCE-DDS Agent](../../catalog/repos/eprosima__micro-xrce-dds-agent.md) (integrates_with)
 - [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md) (integrates_with)
 - [px4_ros_com](../../catalog/repos/px4__px4_ros_com.md) (depends_on)
+- [PX4 uXRCE-DDS (PX4-ROS 2/DDS Bridge)](../../catalog/resources/px4-uxrce-dds-docs.md) (uses)
 
 _Indexed by lane(s): autopilots_
 

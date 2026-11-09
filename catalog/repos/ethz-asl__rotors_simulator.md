@@ -22,6 +22,12 @@ Gazebo Classic MAV simulator from ETH ASL with multirotor models, IMU and odomet
 
 - alternative_to: [Gazebo Sim (gz-sim)](../../catalog/repos/gazebosim__gz-sim.md)
 
+## Referenced by
+
+- [mav_active_3d_planning](../../catalog/repos/ethz-asl__mav_active_3d_planning.md) (integrates_with)
+- [mav_control_rw](../../catalog/repos/ethz-asl__mav_control_rw.md) (integrates_with)
+- [mav_trajectory_generation](../../catalog/repos/ethz-asl__mav_trajectory_generation.md) (integrates_with)
+
 _Indexed by lane(s): sim-data_
 
 _GitHub metadata fetched 2026-11-09._

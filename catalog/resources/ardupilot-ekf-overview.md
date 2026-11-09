@@ -24,5 +24,6 @@ Overview of ArduPilot's EKF2/EKF3 estimators: states, sensor inputs, innovation 
 - [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 - [6. Autopilots and C2](../../docs/primer/06-autopilots-and-c2.md) (mentions)
+- [Windspeed Estimation and Baro Compensation (ArduCopter)](../../catalog/resources/ardupilot-copter-wind-estimation-docs.md) (part_of)
 
 _Indexed by lane(s): autopilots_

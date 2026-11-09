@@ -22,6 +22,7 @@ November 2025 UK announcement of about GBP 155M for a national timing centre, a 
 ## Referenced by
 
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) (mentions)
 - [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)

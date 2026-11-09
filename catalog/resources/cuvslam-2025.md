@@ -26,6 +26,7 @@ Describes NVIDIA's GPU-accelerated VO/SLAM supporting from one to many cameras w
 
 ## Referenced by
 
+- [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
 - [cuVSLAM](../../catalog/repos/nvidia-isaac__cuvslam.md) (integrates_with)
 
 _Indexed by lane(s): gap-fill_

@@ -15,7 +15,7 @@ Camera-IMU, LiDAR-IMU extrinsics, intrinsics, time offset, Allan variance.
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) - After this chapter you can explain why an IMU drifts, write the predict/update loop of a Kalman filter, choose between a filter and a factor graph, and configure an off-the-shelf estimator to survive a GNSS outage.
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) - After this page you can explain why a GNSS-denied system loses time before it loses position, estimate how long a given oscillator holds time from its datasheet, name the attacks on GNSS and network time, and pick a 24-4
 
-## Repositories (23)
+## Repositories (27)
 
 - [OpenVINS](../../catalog/repos/rpng__open_vins.md) - fit: high - MSCKF-based visual-inertial navigation platform with online calibration, a simulator, and extensive documentation for research use.
 - [MINS](../../catalog/repos/rpng__mins.md) - fit: high - Multi-sensor aided inertial navigation that fuses IMU with camera, LiDAR, GNSS and wheel odometry, including online spatial/temporal calibration and a multi-sensor simulator.
@@ -24,6 +24,7 @@ Camera-IMU, LiDAR-IMU extrinsics, intrinsics, time offset, Allan variance.
 - [allan-variance (Python)](../../catalog/repos/nmayorov__allan-variance.md) - fit: high - Small Python package computing Allan variance and fitting standard noise parameters.
 - [Kalibr](../../catalog/repos/ethz-asl__kalibr.md) - fit: medium - ETH ASL calibration toolbox for multi-camera and camera-IMU systems (extrinsics and time offset), plus IMU intrinsics and rolling-shutter calibration.
 - [imu_utils](../../catalog/repos/gaowenliang__imu_utils.md) - fit: medium - ROS package for analysing IMU performance with Allan variance to estimate noise and bias instability.
+- [SymForce](../../catalog/repos/symforce-org__symforce.md) - fit: medium - Symbolic computation and code generation library with a fast sparse nonlinear least-squares optimizer, from Skydio, which says it uses it in production for SLAM, calibration and MPC.
 - [LiDAR_IMU_Init](../../catalog/repos/hku-mars__lidar_imu_init.md) - fit: medium - Real-time LiDAR-inertial initialization estimating extrinsics, time offset, gravity and IMU bias online (IROS 2022).
 - [Basalt](../../catalog/repos/vladyslavusenko__basalt.md) - fit: medium - GitHub mirror of Basalt, a visual-inertial odometry and mapping system built around non-linear factor recovery, with calibration tools; primary development is on GitLab.
 - [iKalibr](../../catalog/repos/unsigned-long__ikalibr.md) - fit: medium - Continuous-time, targetless multi-sensor calibration framework (IMU, cameras, LiDAR, radar, RGB-D, event cameras) estimating extrinsics and time offsets (IEEE T-RO 2025).
@@ -38,7 +39,10 @@ Camera-IMU, LiDAR-IMU extrinsics, intrinsics, time offset, Allan variance.
 - [LI-Calib](../../catalog/repos/april-zju__lidar_imu_calib.md) - fit: low - Targetless LiDAR-IMU calibration based on continuous-time batch estimation (IROS 2020).
 - [kalibr_allan (archived)](../../catalog/repos/rpng__kalibr_allan.md) - fit: low - MATLAB scripts producing IMU Allan standard deviation charts and Kalibr-ready noise values.
 - [lidar_imu_calib](../../catalog/repos/chennuo0125-hit__lidar_imu_calib.md) - fit: low - Automatic calibration of the extrinsic rotation between a 3D LiDAR and an IMU.
+- [VersaVIS](../../catalog/repos/ethz-asl__versavis.md) - fit: low - Open hardware and firmware board that hardware-triggers multiple cameras and an IMU and timestamps them on one clock, with ROS drivers.
+- [VID-Fusion](../../catalog/repos/zju-fast-lab__vid-fusion.md) - fit: low - Visual-inertial-dynamics odometry: adds a thrust-model (from measured rotor speed) factor to a VINS-style sliding-window optimizer and estimates the external force on the multirotor together with its pose.
 - [AV-Matlab-SW](../../catalog/repos/jaffarrell__av-matlab-sw.md) - fit: low - MATLAB scripts (plus a Python port, AV_Python) for Allan variance analysis and Gauss-Markov IMU error modelling, accompanying Farrell et al., 'Inertial measurement unit error modeling tutorial', IEEE Control Systems Maga
+- [ROAMFREE](../../catalog/repos/airlab-polimi__roamfree.md) - fit: low - Pose-graph sensor fusion and self-calibration library on g2o with a catalogue of generic sensor models, used in UAV photogrammetry with raw inertial observations (Cucci, Skaloud).
 - [White Rabbit calibration](../../catalog/repos/gitlab.com__ohwr__project__wr-calibration.md) - fit: low - Procedures and notes for calibrating White Rabbit equipment: fixed hardware delays and fibre asymmetry that must be measured for absolute time accuracy.
 
 ## Documents, talks, courses, datasets (12)

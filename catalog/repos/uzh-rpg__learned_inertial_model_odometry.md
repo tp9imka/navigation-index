@@ -25,6 +25,9 @@ UZH RPG code fusing a learned inertial displacement model with an EKF for drone 
 ## Referenced by
 
 - [AirIO](../../catalog/repos/air-io__air-io.md) (alternative_to)
+- [AI-IO](../../catalog/repos/sjtu-visys-team__ai-io.md) (alternative_to)
+- [HDVIO2.0](../../catalog/repos/uzh-rpg__hdvio2.0.md) (same_org)
+- [Learned Inertial Odometry for Autonomous Drone Racing](../../catalog/resources/cioffi-2023-imo-learned-inertial-odometry-racing.md) (has_code)
 
 _Indexed by lane(s): ins-fusion_
 

@@ -43,7 +43,7 @@ Architectures that keep position, navigation and timing trustworthy under denial
 - [USV own-ship navigation under GNSS spoofing: radar-to-chart fixes and an integrity monitor in the Oresund](../../catalog/samples/usv-gnss-denied-nav.md) - A simulated USV runs a 19.6 km transit over real geography (Lillgrund => Drogden channel => Copenhagen approach) built from OpenStreetMap coastline, Oresund bridge, wind turbines and seamarks, with 75 min of real Danish 
 - [VIO to MAVLink bridge with ENU/FLU to NED/FRD conversion](../../catalog/samples/vio-to-mavlink-bridge.md) - Sends an external pose source (VIO topic or CSV log) to PX4 EKF2 or ArduPilot EKF3 as VISION_POSITION_ESTIMATE or ODOMETRY for GPS-denied position hold.
 
-## Guides (26)
+## Guides (29)
 
 - ["Polyot vslepuyu" (Blind flight) 2026: problem teardown and seven public solutions](../../docs/landscape/blind-flight-teardown.md) - The closest real precedent we have for a navigation hackathon brief: a 48-hour case (26-28 June 2026, Krasnodar, track "Robotics and sensing") where teams had to find position, ground speed and heading of an aircraft fro
 - [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) - After this chapter you can describe any navigation system as "a state, an uncertainty, a set of measurements and a way to check they agree", and you will know the vocabulary judges use when they ask whether your solution
@@ -52,12 +52,15 @@ Architectures that keep position, navigation and timing trustworthy under denial
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) - After this chapter you can explain the five main ways to get an absolute position without GNSS - image-to-map matching, terrain matching, magnetic anomaly matching, celestial fixes and signals of opportunity - pick the o
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) - After this chapter you can pick a dataset or simulator that matches your scenario, compute the trajectory metrics judges and reviewers expect, and design a GNSS-outage or interference test that shows what your system doe
 - [Autopilot GNSS fault handling: PX4 EKF2 and ArduPilot EKF3 under spoofing](../../docs/autopilot-gnss-fault-handling.md) - What each autopilot's EKF does when GNSS goes wrong, read from the source at pinned tags and checked in SITL by samples/autopilot-spoof-response (45 flights, 2026-11-06).
+- [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) - Start here when the task is the EDGE Group internal hackathon, Challenge 2.
 - [Choose a stack you can run](../../docs/practical-readiness.md) - Start with the problem decoder, then narrow the candidates by the resources in the room.
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) - What a 4-5 person team does from the moment the problem statement drops until H+3, when a walking skeleton should run end to end.
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) - Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (details drop 2026-11-18).
 - [Docs map](../../docs/README.md) - What each page under docs/ is for and the order to read them in.
 - [Evidence matrix](../../docs/evidence-matrix.md) - Recording/replay plumbing: recording-replay ran on 2026-11-07 with 101 synthetic poses over 10 s.
 - [Export control and ethics](../../docs/export-control-and-ethics.md) - Not legal advice.
 - [GNSS-denied navigation: products and companies](../../docs/landscape/gnss-denied-nav-products.md) - What judges from industry already know.
+- [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) - Written 2026-11-09 for Challenge 2 "Autonomous Frontiers" (entry point).
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) - For a team going into a navigation-themed hackathon that may have a military or defense track.
 - [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) - After this page you can explain what a protection level is and why it is different from an accuracy number, run a solution-separation monitor over several alt-PNT sources, and show judges a Stanford diagram that proves y
 - [Landscape: what judges already know](../../docs/landscape/README.md) - Commercial products, funded programmes and 2025-2026 trends in GNSS-denied navigation, so a hackathon team can place its idea against what is already sold or funded.
@@ -72,7 +75,7 @@ Architectures that keep position, navigation and timing trustworthy under denial
 - [Ukrainian- and Russian-language sources: what they add](../../docs/landscape/ua-ru-sources-overview.md) - Lane ua-ru-sources: 38 resources and 12 repos, all tagged lang:uk or lang:ru.
 - [Upstream findings](../../docs/upstream-findings.md) - Defects and gaps that the hub's samples found in other people's code and data, with what a maintainer needs to act on them.
 
-## Repositories (29)
+## Repositories (32)
 
 - [WildNav](../../catalog/repos/tiers__wildnav.md) - fit: high - Python pipeline that localizes a drone by matching its downward camera frames against georeferenced satellite map tiles with SuperGlue, then converts the best match into GPS coordinates.
 - [MagNav.jl](../../catalog/repos/mit-ai-accelerator__magnav.jl.md) - fit: high - Julia package from the DAF-MIT AI Accelerator for airborne magnetic anomaly navigation: flight/INS data import or simulation, anomaly maps, aircraft magnetic compensation (Tolles-Lawson and neural models) and navigation 
@@ -87,6 +90,7 @@ Architectures that keep position, navigation and timing trustworthy under denial
 - [Diploma: LoRa local navigation system (MIPT 2026)](../../catalog/repos/roosmax__diploma.md) - fit: high - MIPT (FAKT) 2026 diploma: local navigation for a UAV under GNSS suppression, correcting a strapdown INS with LoRa two-way-ranging (TWR) distances to ground beacons.
 - [ntpd-rs](../../catalog/repos/pendulum-project__ntpd-rs.md) - fit: medium - A memory-safe NTP client and server in Rust with NTS support, from the Pendulum project (Trifecta Tech Foundation).
 - [MaRS (Modular and Robust Sensor-Fusion)](../../catalog/repos/aau-cns__mars_lib.md) - fit: medium - Modular IMU-driven sensor-fusion framework from University of Klagenfurt designed so sensors can be added, removed or fail at runtime without reworking the core filter.
+- [libRSF](../../catalog/repos/tuc-proaut__librsf.md) - fit: medium - Ceres-based robust sensor fusion library: factor graph formulation, sliding-window filter with marginalization, and robust error models including self-tuning Gaussian mixtures for non-Gaussian, outlier-heavy measurements
 - [galmon](../../catalog/repos/berthubert__galmon.md) - fit: medium - Open-source GNSS monitoring network and software that collects navigation data from volunteer receivers worldwide and publishes live health, ephemeris and timing statistics for Galileo, GPS, BeiDou and GLONASS.
 - [Roughtime (Cloudflare)](../../catalog/repos/cloudflare__roughtime.md) - fit: medium - Go implementation of Roughtime, a protocol that returns signed coarse timestamps so a client can prove a server lied and can combine several servers.
 - [Roughenough](../../catalog/repos/int08h__roughenough.md) - fit: medium - Rust Roughtime (RFC 10049) server and client with a batching UDP server, optional malfeasance reporting and several key-protection backends (KMS, PKCS#11, SSH agent).
@@ -94,17 +98,19 @@ Architectures that keep position, navigation and timing trustworthy under denial
 - [galileo-osnma (Rust)](../../catalog/repos/daniestevez__galileo-osnma.md) - fit: medium - Rust implementation of Galileo OSNMA that can run on embedded no_std targets, with examples for live receivers.
 - [RAIM (MATLAB)](../../catalog/repos/michaelbeechan__raim.md) - fit: medium - MATLAB implementation of classic receiver autonomous integrity monitoring (fault detection and exclusion) for GNSS positioning.
 - [pyroughtime](../../catalog/repos/dansarie__pyroughtime.md) - fit: medium - Python Roughtime library and CLI implementing RFC 10049; validates signatures against server long-term keys, queries several servers to catch a misbehaving one, and includes a small test server.
+- [ASPN-ICD](../../catalog/repos/open-pnt__aspn-icd.md) - fit: medium - Public interface control document for ASPN 2023, the All-Source Positioning and Navigation measurement message standard that grew out of the DARPA ASPN programme.
 - [fit-gps-spoof-fix](../../catalog/repos/msemitkin__fit-gps-spoof-fix.md) - fit: medium - Scripts (packaged as an agent skill) that repair Garmin/Strava .fit activities corrupted by GNSS spoofing or jamming: tracks that teleport to a fixed far-away location, impossible speed spikes, phantom distance.
 - [PTPsec](../../catalog/repos/tum-esi__ptpsec.md) - fit: medium - Research implementation, based on linuxptp 3.1.1, that detects and mitigates PTP time-delay attacks by checking path asymmetry around cyclic redundant paths; includes a DPDK man-in-the-middle delay attacker for testing.
 - [note-outdoor - knowledge base on GNSS-free autonomous navigation](../../catalog/repos/weae-g__note-outdoor.md) - fit: medium - Russian-language markdown knowledge base on navigation, data fusion, data links, hardware and system designs for platforms operating without GNSS, internet or cellular coverage and under possible EW, with worked selectio
 - [Stone Nav - car navigation without GPS (iOS)](../../catalog/repos/foxfollow__stone-navigation-emulation.md) - fit: medium - Ukrainian iPhone (Swift) car navigator that keeps guiding along a stored route when GPS disappears or is spoofed: it advances the position along the route by itself, and the driver corrects it by changing speed, pausing,
 - [OCP Time Card](../../catalog/repos/time-appliances-project__time-card.md) - fit: low - Open Compute Project Time Appliance Project hardware: a PCIe card with a GNSS receiver and an atomic or OCXO holdover oscillator that turns a server into a PTP grandmaster, plus specs and drivers.
 - [FGI-OSNMA](../../catalog/repos/nlsfi__fgi-osnma.md) - fit: low - Python OSNMA implementation from the Finnish Geospatial Research Institute designed for flexibility and integration with receivers.
+- [FGO_gnss_integrity](../../catalog/repos/cntaylor__fgo_gnss_integrity.md) - fit: low - Code behind an ION ITM 2026 paper comparing a robust factor-graph approach with solution-separation ARAIM on real GNSS epochs (from libRSF datasets) plus Monte Carlo outliers.
 - [LoranC receiver](../../catalog/repos/romavis__loranc.md) - fit: low - Hobby project to build a DSP-based Loran-C receiver that can also lock onto the Russian Chayka chain.
 - [MAAST for ARAIM](../../catalog/repos/stanford-gps-lab__maast_for_araim_2.md) - fit: low - Stanford GPS Lab MATLAB toolset that evaluates Advanced RAIM availability and protection levels over service areas.
 - [OSNMA_ublox](../../catalog/repos/axelbjork__osnma_ublox.md) - fit: low - Jupyter-based real-time OSNMA authentication of u-blox receiver data in Python.
 
-## Documents, talks, courses, datasets (177)
+## Documents, talks, courses, datasets (178)
 
 - [3GPP TS 38.133 (ETSI TS 138 133): NR; Requirements for support of radio resource management - clause 7.4 Cell phase synchronization accuracy](../../catalog/resources/3gpp-ts-38-133-cell-phase-sync.md) - standard - fit: medium - Clause 7.4 defines cell phase synchronization accuracy for TDD as the maximum absolute deviation in frame start timing between any pair of same-frequency cells with overlapping coverage, and requires it to be better than
 - [ITU-T G.8275.2: Precision time protocol telecom profile for phase/time synchronization with partial timing support from the network](../../catalog/resources/itu-t-g8275-2-ptp-partial-support.md) - standard - fit: medium - Telecom PTP profile for networks where some nodes do not support PTP (partial timing support), carried over IPv4/IPv6 unicast.
@@ -175,6 +181,7 @@ Architectures that keep position, navigation and timing trustworthy under denial
 - [GPS Spoofing in the Civil Aviation Sector (RIN 2024)](../../catalog/resources/rin-gps-spoofing-civil-aviation-2024.md) - talk - Royal Institute of Navigation event microsite gathering expert talks on spoofing affecting airlines and possible mitigations.
 - [GPS Spoofing WorkGroup 2024 - Final Report](../../catalog/resources/opsgroup-gps-spoofing-final-report-2024.md) - report - Crowd-sourced industry report from a six-week OPSGROUP workgroup of pilots, controllers, regulators and manufacturers on GPS spoofing hitting civil flights, mainly near Middle East and Black Sea / Baltic conflict areas.
 - [GPS Standard Positioning Service (SPS) Performance Standard, 5th Edition](../../catalog/resources/gps-sps-performance-standard-2020.md) - standard - The formal commitment the US government makes about civil GPS signal-in-space accuracy, availability, continuity and integrity.
+- [Graduated Non-Convexity for Robust Spatial Perception: From Non-Minimal Solvers to Global Outlier Rejection](../../catalog/resources/yang-2020-graduated-non-convexity.md) - paper - IEEE RA-L 5(2), 2020.
 - [Helsing HX-2 - map/landmark-based GNSS-denied navigation (navigation aspect only)](../../catalog/resources/helsing-hx2-navigation.md) - product - Helsing's HX-2 is a loitering UAS supplied to Ukraine.
 - [Honeywell HGuide o480 single-card INS and HGuide i700 IMU](../../catalog/resources/honeywell-hguide-o480.md) - product - HGuide o480 (May 2025) is a single-card INS for small UAVs and ground robots that accepts velocity aiding (e.g.
 - [Honeywell Vision Aided Navigation (Alternative Navigation Suite)](../../catalog/resources/honeywell-vision-aided-navigation.md) - product - Honeywell's VAN correlates live visible or IR imagery against onboard reference maps for an absolute fix, paired with its inertial units.

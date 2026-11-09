@@ -26,8 +26,10 @@ ESDF-free gradient-based local planner for quadrotors from ZJU FAST Lab: optimiz
 
 ## Referenced by
 
+- [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
 - [Fast-Planner](../../catalog/repos/hkust-aerial-robotics__fast-planner.md) (alternative_to)
 - [EGO-Swarm](../../catalog/repos/zju-fast-lab__ego-planner-swarm.md) (extends)
+- [EGO-Planner-v2 (Swarm Playground)](../../catalog/repos/zju-fast-lab__ego-planner-v2.md) (extends)
 - [GCOPTER](../../catalog/repos/zju-fast-lab__gcopter.md) (same_org)
 - [EGO-Planner: An ESDF-free Gradient-based Local Planner for Quadrotors](../../catalog/resources/zhou-ego-planner-paper.md) (has_code)
 

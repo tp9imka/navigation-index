@@ -25,6 +25,7 @@ Open release of SVO Pro: semi-direct visual(-inertial) odometry with fisheye/omn
 ## Referenced by
 
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [HDVIO2.0](../../catalog/repos/uzh-rpg__hdvio2.0.md) (extends)
 - [Vision Algorithms for Mobile Robotics (UZH/ETH)](../../catalog/resources/scaramuzza-vision-algorithms-mobile-robotics.md) (uses)
 
 _Indexed by lane(s): slam_

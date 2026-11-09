@@ -36,6 +36,7 @@ Example ROS 2 nodes and helpers (frame transforms) for interfacing with PX4 over
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [MAVROS](../../catalog/repos/mavlink__mavros.md) (alternative_to)
 - [px4_msgs](../../catalog/repos/px4__px4_msgs.md) (integrates_with)
+- [PX4 ROS 2 Offboard Control Example](../../catalog/resources/px4-ros2-offboard-control.md) (explains)
 
 _Indexed by lane(s): autopilots_
 

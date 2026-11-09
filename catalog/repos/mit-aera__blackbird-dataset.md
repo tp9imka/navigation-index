@@ -28,6 +28,7 @@ MIT dataset of aggressive indoor quadrotor flights with real IMU and motor data 
 
 ## Referenced by
 
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
 - [FlightGoggles](../../catalog/repos/mit-aera__flightgoggles.md) (integrates_with)
 
 _Indexed by lane(s): sim-data_

@@ -31,6 +31,7 @@ C++ SDK exposing high-level MAVLink plugins (action, mission, offboard, telemetr
 
 ## Referenced by
 
+- [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
 - [MAVSDK-Python](../../catalog/repos/mavlink__mavsdk-python.md) (depends_on)
 - [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md) (integrates_with)
 - [MAVLink 2 and Message Signing](../../catalog/resources/mavlink-2-signing.md) (has_code)

@@ -36,6 +36,7 @@ Georgia Tech factor-graph library for smoothing and mapping, with incremental so
 ## Referenced by
 
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Integrity monitoring for navigation and alt-PNT](../../docs/integrity-monitoring.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
@@ -47,8 +48,11 @@ Georgia Tech factor-graph library for smoothing and mapping, with incremental so
 - [Kimera-RPGO](../../catalog/repos/mit-spark__kimera-rpgo.md) (depends_on)
 - [Kimera-VIO](../../catalog/repos/mit-spark__kimera-vio.md) (depends_on)
 - [g2o](../../catalog/repos/rainerkuemmerle__g2o.md) (alternative_to)
+- [gnssFGO](../../catalog/repos/rwth-irt__gnssfgo.md) (depends_on)
+- [SymForce](../../catalog/repos/symforce-org__symforce.md) (alternative_to)
 - [gtsam_gnss](../../catalog/repos/taroz__gtsam_gnss.md) (depends_on)
 - [LIO-SAM](../../catalog/repos/tixiaoshan__lio-sam.md) (depends_on)
+- [libRSF](../../catalog/repos/tuc-proaut__librsf.md) (alternative_to)
 - [Factor Graphs for Robot Perception](../../catalog/resources/dellaert-kaess-factor-graphs-robot-perception.md) (has_code)
 - [On-Manifold Preintegration for Real-Time Visual-Inertial Odometry](../../catalog/resources/forster-imu-preintegration.md) (has_code)
 - [Factor Graphs and GTSAM: A Hands-on Introduction](../../catalog/resources/gtsam-intro-tutorial.md) (explains)
@@ -57,6 +61,7 @@ Georgia Tech factor-graph library for smoothing and mapping, with incremental so
 - [Shield AI Hivemind autonomy stack](../../catalog/resources/shield-ai-hivemind.md) (alternative_to)
 - [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../../catalog/resources/slam-handbook.md) (explains)
 - [SLAM Handbook: From Localization and Mapping to Spatial Intelligence](../../catalog/resources/slam-handbook.md) (uses)
+- [Graduated Non-Convexity for Robust Spatial Perception: From Non-Minimal Solvers to Global Outlier Rejection](../../catalog/resources/yang-2020-graduated-non-convexity.md) (has_code)
 - [Integrity monitoring for alt-PNT: solution-separation FDE, protection levels and a Stanford diagram](../../catalog/samples/altpnt-integrity.md) (explains)
 - [GNSS/INS EKF through a GNSS outage and a spoofing walk-off](../../catalog/samples/gnss-ins-ekf-outage.md) (explains)
 

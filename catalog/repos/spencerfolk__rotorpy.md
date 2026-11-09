@@ -29,6 +29,8 @@ Python multirotor simulator with aerodynamic effects (drag, wind) for education 
 
 ## Referenced by
 
+- [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
+- [mav_trajectory_generation](../../catalog/repos/ethz-asl__mav_trajectory_generation.md) (alternative_to)
 - [gym-pybullet-drones](../../catalog/repos/learnsyslab__gym-pybullet-drones.md) (alternative_to)
 
 _Indexed by lane(s): sim-data_

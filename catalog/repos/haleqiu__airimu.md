@@ -27,6 +27,7 @@ Learns IMU error correction and uncertainty with a network, combined with differ
 
 - [AirIO](../../catalog/repos/air-io__air-io.md) (same_org)
 - [Denoise IMU Gyro](../../catalog/repos/mbrossar__denoise-imu-gyro.md) (alternative_to)
+- [PyPose](../../catalog/repos/pypose__pypose.md) (integrates_with)
 
 _Indexed by lane(s): ins-fusion_
 

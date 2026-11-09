@@ -23,6 +23,7 @@ Open-access NAVIGATION 72(1) paper describing the full Starlink OFDM beacon via 
 
 ## Referenced by
 
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
 - [Unveiling Starlink LEO Satellite OFDM-Like Signal Structure Enabling Precise Positioning](../../catalog/resources/neinavaie-kassas-2024-starlink-ofdm-structure.md) (same_author)
 
 _Indexed by lane(s): backlog_

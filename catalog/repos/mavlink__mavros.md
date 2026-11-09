@@ -34,9 +34,11 @@ ROS/ROS 2 node bridging MAVLink to ROS topics and services, with GCS proxy; wide
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
 - [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md) (integrates_with)
 - [COEX Clover](../../catalog/repos/copterexpress__clover.md) (depends_on)
+- [mavros_controllers](../../catalog/repos/jaeyoung-lim__mavros_controllers.md) (depends_on)
 - [MAVSDK](../../catalog/repos/mavlink__mavsdk.md) (alternative_to)
 - [px4_ros_com](../../catalog/repos/px4__px4_ros_com.md) (alternative_to)
 - [vision_to_mavros](../../catalog/repos/thien94__vision_to_mavros.md) (depends_on)

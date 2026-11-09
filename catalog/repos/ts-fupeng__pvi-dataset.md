@@ -20,6 +20,7 @@ Dataset combining stereo camera, IMU, polarization camera and high-precision GPS
 
 ## Referenced by
 
+- [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) (mentions)
 - [Celestial fix: cedar-solve plate solving on real star images, then position from star elevations above an IMU vertical](../../catalog/samples/celestial-star-tracker.md) (explains)
 
 _Indexed by lane(s): gap-fill_

@@ -27,6 +27,7 @@ Robust visual-inertial odometry using an iterated EKF directly on image-patch ph
 - [ethzasl_msf (Multi Sensor Fusion)](../../catalog/repos/ethz-asl__ethzasl_msf.md) (same_org)
 - [ROVTIO](../../catalog/repos/ntnu-arl__rovtio.md) (extends)
 - [SVO Pro](../../catalog/repos/uzh-rpg__rpg_svo_pro_open.md) (alternative_to)
+- [Run Your Visual-Inertial Odometry on NVIDIA Jetson: Benchmark Tests on a Micro Aerial Vehicle](../../catalog/resources/jeon-2021-vio-jetson-benchmark.md) (evaluates)
 
 _Indexed by lane(s): slam_
 

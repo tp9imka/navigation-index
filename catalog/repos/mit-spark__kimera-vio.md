@@ -28,6 +28,7 @@ Stereo visual-inertial odometry with a factor-graph backend, robust loop closure
 
 - [Kimera-Multi](../../catalog/repos/mit-spark__kimera-multi.md) (depends_on)
 - [MIT VNAV labs](../../catalog/repos/mit-spark__vnav-labs.md) (same_org)
+- [Run Your Visual-Inertial Odometry on NVIDIA Jetson: Benchmark Tests on a Micro Aerial Vehicle](../../catalog/resources/jeon-2021-vio-jetson-benchmark.md) (evaluates)
 - [Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping](../../catalog/resources/kimera-rosinol-2019.md) (has_code)
 - [MIT 16.485 Visual Navigation for Autonomous Vehicles (VNAV)](../../catalog/resources/mit-vnav-16485.md) (uses)
 

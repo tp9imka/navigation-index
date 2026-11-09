@@ -25,6 +25,7 @@ General framework for graph optimization, widely used for pose-graph SLAM back e
 
 ## Referenced by
 
+- [ROAMFREE](../../catalog/repos/airlab-polimi__roamfree.md) (depends_on)
 - [GTSAM](../../catalog/repos/borglab__gtsam.md) (alternative_to)
 
 _Indexed by lane(s): ins-fusion_

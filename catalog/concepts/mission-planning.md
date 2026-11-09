@@ -14,7 +14,7 @@ Route networks, waypoint missions, coverage, terrain-aware and threat-aware rout
 
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) - After this chapter you can convert between the coordinate systems your tools disagree on, fetch free imagery and elevation data for a region, display it, and plan a path or a multi-vehicle mission over it.
 
-## Repositories (25)
+## Repositories (27)
 
 - [QGIS](../../catalog/repos/qgis__qgis.md) - fit: high - Desktop open-source GIS for viewing, editing, analyzing and printing geospatial data, extensible via Python plugins.
 - [QGroundControl](../../catalog/repos/mavlink__qgroundcontrol.md) - fit: high - Qt/QML cross-platform GCS (desktop, Android, iOS) for PX4 and ArduPilot: setup, mission planning, video and telemetry.
@@ -24,6 +24,7 @@ Route networks, waypoint missions, coverage, terrain-aware and threat-aware rout
 - [MAVProxy](../../catalog/repos/ardupilot__mavproxy.md) - fit: high - Command-line, module-based ground station and MAVLink proxy with map, console and many plugins.
 - [TypeFly](../../catalog/repos/typefly__typefly.md) - fit: high - LLM-based robot control framework: an OpenAI model turns a natural-language request plus a YOLO scene description into a short Python plan built from the robot's registered skills, which is then executed.
 - [MAVLinkMCP](../../catalog/repos/ion-g-ion__mavlinkmcp.md) - fit: high - MCP server bridging an LLM to a drone over MAVLink, exposing arming, takeoff, waypoint and telemetry tools via MAVSDK.
+- [EDuPlane (Extended Dubins Airplane)](../../catalog/repos/dlr-ft__eduplane.md) - fit: high - DLR Python package extending the Dubins airplane method: 3D fixed-wing trajectories built from trochoidal or circular turns and straight segments that respect flight-performance limits in uniform wind.
 - [CBBA (Python)](../../catalog/repos/inmo-jang__consensus-based-bundle-algorithm.md) - fit: high - Python implementation of the Consensus-Based Bundle Algorithm for decentralized multi-agent task allocation with plotting examples.
 - [Gagarin - TERCOM for UAVs without GNSS](../../catalog/repos/danilka88__gag27062026.md) - fit: high - Python TERCOM pipeline from the June 2026 'Полёт вслепую' hackathon, continued into July: correlates radar-altimeter profiles with a DEM using a coarse-to-fine 360-degree search, a hybrid MAD+NCC metric, minima-ratio dis
 - [INAV](../../catalog/repos/inavflight__inav.md) - fit: medium - Navigation-focused fork of the Cleanflight/Betaflight lineage for small multirotors, fixed-wing and rovers, adding GPS position hold, return-to-home and waypoint missions on cheap F4/F7/H7 boards.
@@ -40,11 +41,14 @@ Route networks, waypoint missions, coverage, terrain-aware and threat-aware rout
 - [Swarm in Blocks](../../catalog/repos/grupo-semear-usp__swarm_in_blocks.md) - fit: medium - Block-programming and web control platform for drone swarms on COEX Clover (ROS, Gazebo); CopterHack 2022 winner by team Atena.
 - [mavlink-mcp (ArduPilot)](../../catalog/repos/deepakpopli__mavlink-mcp.md) - fit: medium - MCP server for flying ArduPilot vehicles from AI agents over MAVLink, covering missions, camera vision and SITL workflows.
 - [Paparazzi UAV](../../catalog/repos/paparazzi__paparazzi.md) - fit: low - Long-running academic autopilot (ENAC, TU Delft and others) for fixed-wing, rotorcraft and hybrids, with its own ground segment, flight-plan language and INS modules.
+- [mav_active_3d_planning](../../catalog/repos/ethz-asl__mav_active_3d_planning.md) - fit: low - Modular framework for online informative path planning on MAVs: pluggable trajectory generators, evaluators (information gain), and back-ends, built on Voxblox maps.
 - [Clover Rescue Project](../../catalog/repos/devmbs__crtclient.md) - fit: low - Main web server and client (Node.js, Socket.IO) of the Clover Rescue Team's CopterHack 2022 project, 3rd place; the drone-side server is DevMBS/CRTClover.
 
-## Documents, talks, courses, datasets (7)
+## Documents, talks, courses, datasets (9)
 
 - [Aerostack2: A Software Framework for Developing Multi-robot Aerial Systems](../../catalog/resources/aerostack2-paper.md) - paper - Describes the Aerostack2 ROS 2 architecture for aerial robotics: platform abstraction, behaviors, mission specification and multi-robot support.
+- [Energy Minimization for Wireless Communication with Rotary-Wing UAV](../../catalog/resources/zeng-rotary-wing-energy-model-2018.md) - paper - Derives a closed-form propulsion power model for rotary-wing UAVs as a function of forward speed (blade profile, induced and parasite terms), then uses it to optimise trajectories.
+- [Extensions to the Dubins Airplane Method - Flight Performance Constraints in Uniform Wind](../../catalog/resources/schopferer-eduplane-2026.md) - paper - Derives closed-form links between flight-performance limits and kinematic constraints, then builds iterative algorithms for 3D fixed-wing trajectories of trochoidal or circular turns and straight segments in uniform wind
 - [Fields2Cover: An open-source coverage path planning library for unmanned agricultural vehicles](../../catalog/resources/fields2cover-paper.md) - paper - Paper behind the Fields2Cover library: modular coverage pipeline (headlands, swaths, route ordering, path smoothing) and benchmark of its components.
 - [MAVLink Mission Protocol](../../catalog/resources/mavlink-mission-protocol.md) - doc - The microservice used to upload, download and clear waypoint missions, geofences and rally points between a GCS and an autopilot, with its handshake and retry rules.
 - [Navigating Using GPS Localization (Nav2 tutorial)](../../catalog/resources/nav2-gps-navigation-tutorial.md) - doc - Nav2 tutorial on outdoor navigation with GPS: fusing GNSS, IMU and odometry with robot_localization's navsat_transform, configuring Nav2 for GPS waypoints, and demonstrating it in Gazebo.
