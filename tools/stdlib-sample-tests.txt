@@ -49,3 +49,4 @@ close-area-relocalize
 close-area-moving-obstacles
 close-area-benchmark
 close-area-planner-dwa-bug
+close-area-planner-dstar

@@ -1,0 +1,40 @@
+{
+  "id": "sample:close-area-planner-dstar",
+  "title": "D* Lite vs A* from scratch for unknown-map replanning in the close-area arena",
+  "summary": "D* Lite on the same inflated grid and cost model as astar_esdf's unknown-map mode, compared with A* replanning from scratch on 50 seed-0 layouts per family. Same outcomes (random, u_trap), identical path costs at all 10,017 frozen-map checks, 4-7x less search time per replan; on tiled maps A* search grows to 5.8 s (8x8 tiles) while D* Lite stays at 2.5-7 ms. Synthetic.",
+  "concepts": [
+    "concept:obstacle-avoidance",
+    "concept:path-planning",
+    "concept:simulation"
+  ],
+  "tags": [
+    "close-area",
+    "a-to-b",
+    "moving-obstacles",
+    "dynamic-obstacles",
+    "pedestrians",
+    "replanning",
+    "a-star",
+    "esdf",
+    "safety-filter",
+    "px4-cbf",
+    "control-barrier-function",
+    "apf",
+    "potential-field",
+    "benchmark",
+    "python",
+    "numpy",
+    "scipy",
+    "cpu-only"
+  ],
+  "verified": "2026-11-09: compare run/verify/scale/fuzz ran on Apple M3 Max, CPython 3.12.10 (results/ files); README written by the loop driver from those files after the job timed out.",
+  "verified_status": "ran",
+  "deps": "venv",
+  "first_command": ".venv/bin/python compare.py run --layouts 50 --seed 0",
+  "group": "Close-area A=>B: planning and safety",
+  "shows": "Incremental replanning (D* Lite) vs A* from scratch: same paths, 4-7x faster here, 800x faster on an 8x8 tiled map",
+  "input": "synthetic",
+  "runtime": "~21 s for 600 runs on 14 workers",
+  "key_result": "[compare_0](README.md#results-seed-0-50-layouts-per-family): random reached 100 % both; search median 20.6 ms A* vs 3.2 ms D* Lite; 8x8 tiled map 5.8 s vs 7 ms",
+  "related": []
+}

@@ -1,0 +1,56 @@
+{
+ "input": "synthetic",
+ "key_eps": 1e-09,
+ "env": {
+  "python": "3.12.10",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "machine": "arm64",
+  "system": "Darwin",
+  "processor": "arm"
+ },
+ "cases": [
+  {
+   "move": 0,
+   "block_changes": 0,
+   "cost_changes": 1,
+   "trials": 300,
+   "failing": []
+  },
+  {
+   "move": 0,
+   "block_changes": 1,
+   "cost_changes": 0,
+   "trials": 300,
+   "failing": []
+  },
+  {
+   "move": 0,
+   "block_changes": 1,
+   "cost_changes": 1,
+   "trials": 300,
+   "failing": []
+  },
+  {
+   "move": 1,
+   "block_changes": 0,
+   "cost_changes": 1,
+   "trials": 300,
+   "failing": []
+  },
+  {
+   "move": 1,
+   "block_changes": 1,
+   "cost_changes": 0,
+   "trials": 300,
+   "failing": []
+  },
+  {
+   "move": 1,
+   "block_changes": 1,
+   "cost_changes": 1,
+   "trials": 300,
+   "failing": []
+  }
+ ]
+}
