@@ -43,6 +43,15 @@ wrong about where it is.**
 
 1. **Baseline (hour 0-6).** The lane 01 Python planner in a light sim, written against three
    calls (`pose()`, `ranges()`, `send_setpoint()`) so it ports to Crazyflie, Tello or PX4.
+   Now runnable (synthetic only, 2026-11-09):
+   [close-area-arena](../../../samples/close-area-arena/README.md) (seeded 2.5D arena, truth
+   scorer, `planners/astar_esdf.py`, `estimator.py` + `run_faults.py`, `score_log.py`),
+   [close-area-planner-reactive](../../../samples/close-area-planner-reactive/README.md) (APF,
+   VFH+, 4-beam fan), [fiducial-goal-apriltag](../../../samples/fiducial-goal-apriltag/README.md)
+   (marker goal at B), the [flight-repo](../../../templates/flight-repo/README.md) loop and the
+   [drone-adapter drivers](../../../templates/drone-adapter/drivers/README.md) (unrun stubs).
+   Day-1 routing: [day1-close-area-intake](../../day1-close-area-intake.md). Measured numbers:
+   [evidence matrix section 14](../../evidence-matrix.md#14-close-area-ab).
 2. **Headline: integrity-aware safety filter** (doc 04 idea C). Two barrier sets: obstacles the
    range sensor sees, in the body frame (no position needed, as PX4-CBF); map and geofence
    obstacles, with the margin set by a protection level from a fault-detecting monitor (the
@@ -59,8 +68,8 @@ cannot tell which source is lying, the filter holds a hover instead of dropping 
 largest-residual source (FT-CBF) or guessing. The kill test needs two more arms: FT-CBF residual
 dropping and Tan's union of plausible states.
 
-**Kill test before building more** (doc 04 section 3.4): 200 random layouts, injected VIO jump and
-bias faults. Pass: breaches 1 % or less, at least 3x lower than Belief-CBF on fault cases, goal
+**Kill test before building more** (doc 04 section 3.4, arms read faithfully in
+[05](05-cbf-baselines-faithful.md)): 200 random layouts, injected VIO jump and bias faults. Pass: breaches 1 % or less, at least 3x lower than Belief-CBF on fault cases, goal
 reach at least 90 % of PX4-CBF. Fail and drop the headline if Belief-CBF comes within 1 pp or
 PX4-CBF alone is already at 1 % or less.
 

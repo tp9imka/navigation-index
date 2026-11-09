@@ -1,6 +1,6 @@
 # Upstream findings
 
-<!-- about: repo:algafix/osnma, repo:opendroneid/opendroneid-core-c, repo:stanford-navlab/gnss_lib_py, repo:px4/px4-autopilot, repo:gnss-sdr/gnss-sdr, repo:haiyang-wong/osnma-sdr-sim, repo:utiasstars/pyshoe, repo:ion-g-ion/mavlinkmcp, repo:semuconsulting/pyubx2, repo:smroid/cedar-solve, repo:univaasadigieco/vaara, repo:rtklibexplorer/rtklib, repo:tomojitakasu/rtklib, repo:krakenrf/heimdall_daq_fw, repo:dstl/stone-soup, repo:michaelgrupp/evo -->
+<!-- about: repo:algafix/osnma, repo:opendroneid/opendroneid-core-c, repo:stanford-navlab/gnss_lib_py, repo:px4/px4-autopilot, repo:gnss-sdr/gnss-sdr, repo:haiyang-wong/osnma-sdr-sim, repo:utiasstars/pyshoe, repo:ion-g-ion/mavlinkmcp, repo:semuconsulting/pyubx2, repo:smroid/cedar-solve, repo:univaasadigieco/vaara, repo:rtklibexplorer/rtklib, repo:tomojitakasu/rtklib, repo:krakenrf/heimdall_daq_fw, repo:dstl/stone-soup, repo:michaelgrupp/evo, repo:ntnu-arl/px4-cbf, repo:ntnu-arl/composite_cbf, res:misyats-px4-cbf-icuas2025, res:vahs-belief-cbf-2023 -->
 
 Defects and gaps that the hub's samples found in other people's code and data, with what a
 maintainer needs to act on them. Nothing here has been reported. Every entry waits for the hub
@@ -47,6 +47,10 @@ Rules for this page:
 | 15 | MAVLinkMCP | `pyproject.toml` depends on unpinned `mavsdk`; `pip install -e .` can pull 4.x, a different API (inferred, not tested) | packaging | public issue | not filed - awaiting owner decision |
 | 16 | VAARA (Univ. Vaasa) | No licence stated for the Jammertest 2024 recordings | licence request | public issue | not filed - awaiting owner decision |
 | 17 | RTKLIB demo5 | Upstream RTKLIB has open memory-safety reports (#799 RTCM 1033, #803 NTRIP); demo5's `decode_type1033` clamps lengths, the rest is unchecked | security, check first | private via PVR (enabled on rtklibexplorer/RTKLIB) if affected | not filed - awaiting owner decision (needs a check first) |
+| 18 | ntnu-arl/PX4-Autopilot (PX4-CBF fork) | Branch `cbf`: `updateObstacles()` trim loop starts one past the last element and never ends when `num_points_total == 0`; FoV QP at `338fb51f` drops the `e_j . a_sp` term and reads an uninitialised slack array on QP failure (code reading, not run) | bug | public issue on the fork, after re-reading the current branch | not filed - awaiting owner decision |
+| 19 | composite_cbf | Node declares `clamp_z` but reads `max_acc_z`, so the YAML value is never loaded (nil effect today: default equals YAML) | bug (minor) | public issue | not filed - awaiting owner decision |
+| 20 | PX4-CBF paper (arXiv 2504.15850) | Table II gives tau = 0.5, Table I gives the range [0.01, 0.1] | docs (paper) | email to the authors | not filed - awaiting owner decision |
+| 21 | Belief-CBF paper (arXiv 2309.06499) | Eq. 6 gives the probability of the opposite event; the 1D example's `+ erfinv` sign disagrees with eq. 12 | docs (paper) | email to the authors | not filed - awaiting owner decision |
 
 Already known upstream, nothing to file: Heimdall DAQ synthetic mode (closed #16), FFTA.jl 0.3.2
 ambiguity that broke MagNav.jl precompilation (closed #146, fix #147), RTKLIB upstream #799 / #803
@@ -350,6 +354,65 @@ themselves. Not upstream defects: Stone Soup set-order nondeterminism, evo on a 
 - **Channel:** private via GitHub PVR (enabled on rtklibexplorer/RTKLIB) if affected; the
   1033 offset issue alone is a public issue.
 - **Status:** not filed - awaiting owner decision (needs a check first).
+
+## 18. PX4-CBF fork: obstacle trim loop and FoV QP
+
+- **Repo / version:** [ntnu-arl/PX4-Autopilot](https://github.com/ntnu-arl/PX4-Autopilot/tree/cbf)
+  branch `cbf`, HEAD `e7ef0c61` (2025-02-12), `CBFSafetyFilter.cpp`; FoV QP read at commit
+  `338fb51f`. Docs repo: [ntnu-arl/PX4-CBF](https://github.com/ntnu-arl/PX4-CBF).
+- **Evidence** ([05 section 7](research/close-area-nav/05-cbf-baselines-faithful.md#7-upstream-findings-for-docsupstream-findingsmd-not-filed),
+  code reading, not run):
+  (a) `CBFSafetyFilter::updateObstacles()` trims with
+  `for (size_t i = _obstacles.size(); i >= num_points_total; i--) _obstacles.remove(i);`. The
+  first index is one past the last element, and with `num_points_total == 0` the `size_t`
+  condition is always true.
+  (b) At `338fb51f` the FoV constraints are written on the correction only, without the
+  `e_j . a_sp` term that the paper's eq. 17c implies. On QP failure the slack debug fields read
+  an uninitialised array.
+- **Before filing:** re-read the current `cbf` branch; (b) is in an older commit and may be
+  moot if the FoV QP is not coming back.
+- **Suggested report text:** "(a) In `updateObstacles()` the trim loop starts at
+  `_obstacles.size()`, one past the last element, and `i >= num_points_total` never fails for
+  `num_points_total == 0` because `i` is `size_t`. Iterating down from `size() - 1` with a
+  signed or `i > num_points_total` bound fixes both. (b) In the FoV QP (commit `338fb51f`) the
+  FoV rows constrain the correction only; eq. 17c constrains the total acceleration, so the
+  `e_j . a_sp` term seems to be missing from the bound."
+- **Channel:** public issue on the fork.
+- **Status:** not filed - awaiting owner decision.
+
+## 19. composite_cbf: `clamp_z` declared, `max_acc_z` read
+
+- **Repo:** [ntnu-arl/composite_cbf](https://github.com/ntnu-arl/composite_cbf), `CompositeCbfNode.cpp`
+  and `config/sim.yaml` (code reading, [05 section 7](research/close-area-nav/05-cbf-baselines-faithful.md#7-upstream-findings-for-docsupstream-findingsmd-not-filed)).
+- **Evidence:** the node declares the parameter `clamp_z` but reads `max_acc_z`, so the YAML
+  value is never loaded. The default (3.0) equals the YAML value, so nothing changes today.
+- **Suggested report text:** "`CompositeCbfNode` declares `clamp_z` but reads `max_acc_z`, so a
+  value set in the YAML is ignored. Harmless with the shipped values (both 3.0)."
+- **Channel:** public issue.
+- **Status:** not filed - awaiting owner decision.
+
+## 20. PX4-CBF paper: tau in Table II vs Table I
+
+- **Source:** Misyats et al., ICUAS 2025, [arXiv 2504.15850](https://arxiv.org/abs/2504.15850)
+  ([05 section 1.4](research/close-area-nav/05-cbf-baselines-faithful.md#14-parameters-and-defaults)).
+- **Evidence:** Table II (flight) gives tau = 0.5; Table I gives the range [0.01, 0.1]. Not
+  resolved from the code: the PX4 fork and composite_cbf use per-step low-pass gains, not tau.
+- **Suggested report text:** "Table II lists tau = 0.5 for the flights, outside the [0.01, 0.1]
+  range in Table I. Which value was flown?"
+- **Channel:** email to the corresponding author.
+- **Status:** not filed - awaiting owner decision.
+
+## 21. Belief-CBF paper: sign of eq. 6 and the 1D example
+
+- **Source:** Vahs, Pek, Tumova, IEEE RA-L 8(12):8565-8572, 2023, doi 10.1109/LRA.2023.3330662,
+  [arXiv 2309.06499](https://arxiv.org/abs/2309.06499) ([05 section 2.2](research/close-area-nav/05-cbf-baselines-faithful.md#22-barrier-and-constraint-as-written)).
+- **Evidence:** eq. 6 gives `Pr[alpha^T x >= beta] = 1/2 (1 - erf(...))`, the probability of the
+  opposite event. The 1D example writes `+ erfinv(...)` where eq. 12 has `-`. Eq. 12 is the
+  consistent form; the hub's pseudo-code uses the standard Gaussian quantile.
+- **Suggested report text:** "Eq. 6 appears to give the probability of `alpha^T x < beta`; with
+  eq. 12 as written, the 1D example's sign of the erfinv term looks flipped."
+- **Channel:** email to the corresponding author (RA-L errata go through the authors).
+- **Status:** not filed - awaiting owner decision.
 
 ## Checked and not filed
 

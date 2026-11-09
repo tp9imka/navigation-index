@@ -12,7 +12,8 @@ to an adapter driver, a sim, samples and docs. It does not repeat the research; 
 Status, 2026-11-09: this page is a routing table, not a measured result. Nothing on it was run
 for this page. Numbers are quoted from the hub files they link to, with the input type of each.
 "Estimate" means a setup time read from READMEs, not timed. "gap:" marks what the hub does not
-have yet.
+have yet. Gap notes refreshed 2026-11-09 (loop-27) after the drivers, A*, reactive planners,
+AprilTag sample and flight-repo template landed.
 
 ## 0. The 20-minute clock
 
@@ -48,23 +49,24 @@ that produced the quoted results):
 
 ```sh
 (cd templates/drone-adapter && python3 -m unittest -v && python3 example_loop.py)
-# expect: 5 tests OK; goal=(5.0, 3.0, 1.0) final_distance_m=0.096 collided=False
+# expect: 10 tests OK (5 adapter + 5 driver smoke); goal=(5.0, 3.0, 1.0) final_distance_m=0.096 collided=False
 (cd samples/close-area-arena && uv venv .venv && uv pip install --python .venv -r requirements.txt \
   && .venv/bin/python run.py --planner straight --layouts 20 --seed 0)
 # expect: straight baseline reached 40 %, collision 0 %, stuck 60 %
 ```
 
-Both numbers are synthetic, from [drone-adapter results](../templates/drone-adapter/results/2026-11-09-mock-run.txt)
+Both numbers are synthetic, from [drone-adapter results](../templates/drone-adapter/results/2026-11-09-mock-run.txt),
+[driver smoke run](../templates/drone-adapter/drivers/results/2026-11-09-smoke-run.txt)
 and [straight_random_0.md](../samples/close-area-arena/results/straight_random_0.md).
 
 Then pick one cell per row. Everything not asked takes the default in [section 1](#1-questions-in-the-order-to-ask).
 
 | Q1 drone + SDK | Driver to write | Light sim (planner work) | Product sim (credibility) |
 |---|---|---|---|
-| PX4 quad (X500, VOXL 2, other PX4) | `drivers/px4_mavsdk.py` (gap: not written), rules in [frames.md PX4](../templates/drone-adapter/frames.md#px4) | [close-area-arena](../samples/close-area-arena/) | [sitl-docker](../samples/sitl-docker/) PX4 SIH (ran, headless, no obstacles); PX4 SITL + gz `walls` world (not run) |
-| ArduPilot copter | `drivers/ardupilot_pymavlink.py` (gap), [frames.md ArduPilot](../templates/drone-adapter/frames.md#ardupilot) | close-area-arena | [sitl-docker](../samples/sitl-docker/) ArduCopter 4.6.3 (ran, headless) |
-| Crazyflie | `drivers/crazyflie_cflib.py` (gap), [frames.md Crazyflie](../templates/drone-adapter/frames.md#crazyflie) | close-area-arena | [crazyflie-simulation](../catalog/repos/bitcraze__crazyflie-simulation.md) or [gym-pybullet-drones](integration-cards/learnsyslab__gym-pybullet-drones.md) (both not run) |
-| Tello / RoboMaster TT | `drivers/tello_djitellopy.py` (gap), [frames.md Tello](../templates/drone-adapter/frames.md#tello) | close-area-arena | gap: no Tello sim exists; `MockAdapter` in [drone-adapter](../templates/drone-adapter/) stands in |
+| PX4 quad (X500, VOXL 2, other PX4) | [`drivers/px4_mavsdk.py`](../templates/drone-adapter/drivers/README.md) (stub, unrun), rules in [frames.md PX4](../templates/drone-adapter/frames.md#px4) | [close-area-arena](../samples/close-area-arena/) | [sitl-docker](../samples/sitl-docker/) PX4 SIH (ran, headless, no obstacles); PX4 SITL + gz `walls` world (not run) |
+| ArduPilot copter | [`drivers/ardupilot_pymavlink.py`](../templates/drone-adapter/drivers/README.md) (stub, unrun), [frames.md ArduPilot](../templates/drone-adapter/frames.md#ardupilot) | close-area-arena | [sitl-docker](../samples/sitl-docker/) ArduCopter 4.6.3 (ran, headless) |
+| Crazyflie | [`drivers/crazyflie_cflib.py`](../templates/drone-adapter/drivers/README.md) (stub, unrun), [frames.md Crazyflie](../templates/drone-adapter/frames.md#crazyflie) | close-area-arena | [crazyflie-simulation](../catalog/repos/bitcraze__crazyflie-simulation.md) or [gym-pybullet-drones](integration-cards/learnsyslab__gym-pybullet-drones.md) (both not run) |
+| Tello / RoboMaster TT | [`drivers/tello_djitellopy.py`](../templates/drone-adapter/drivers/README.md) (stub, unrun), [frames.md Tello](../templates/drone-adapter/frames.md#tello) | close-area-arena | gap: no Tello sim exists; `MockAdapter` in [drone-adapter](../templates/drone-adapter/) stands in |
 | Anything else | gap: no driver; see [3.1](#31-q1-drone-and-sdk) | close-area-arena | ask for the vendor sim |
 
 | Q2 sim or real | Do |
@@ -92,8 +94,8 @@ Each leaf names the hub paths to open. Status words come from
 ### 3.1 Q1: drone and SDK
 
 - **PX4 quad** (Holybro X500 class, ModalAI VOXL 2, any PX4 airframe)
-  - Driver: `drivers/px4_mavsdk.py` (gap: the `drivers/` folder in
-    [drone-adapter](../templates/drone-adapter/README.md#where-the-drivers-go) is not written).
+  - Driver: `drivers/px4_mavsdk.py` (`Px4MavsdkAdapter`, unrun stub written from docs; see
+    [drivers README](../templates/drone-adapter/drivers/README.md) for the 3 bench checks before any planner flight).
     Convert ENU => NED with `adapter.enu_to_ned`; `VelocityNedYaw` takes an absolute heading in
     degrees, not a yaw rate ([frames.md PX4](../templates/drone-adapter/frames.md#px4)).
   - Keep-alive: at least 2 Hz setpoints before and during Offboard ([frames.md](../templates/drone-adapter/frames.md#px4), docs).
@@ -115,7 +117,7 @@ Each leaf names the hub paths to open. Status words come from
   - VOXL 2: VIO and depth avoidance on board ([VOXL 2 docs](../catalog/resources/px4-modalai-voxl-2-docs.md),
     [VOA docs](../catalog/resources/modalai-voxl-voa-docs.md), [OpenVINS server](../catalog/resources/modalai-voxl-open-vins-server-docs.md)).
 - **ArduPilot copter**
-  - Driver: `drivers/ardupilot_pymavlink.py` (gap). GUIDED, `SET_POSITION_TARGET_LOCAL_NED`,
+  - Driver: `drivers/ardupilot_pymavlink.py` (`ArduPilotPymavlinkAdapter`, unrun stub). GUIDED, `SET_POSITION_TARGET_LOCAL_NED`,
     velocity mask 3527, yaw rate in rad/s CW ([frames.md ArduPilot](../templates/drone-adapter/frames.md#ardupilot)).
   - Keep-alive: re-send at least every second; the vehicle stops after 3 s without a command (same file, docs).
   - Zero-code fallback: BendyRuler (sensed obstacles) and Dijkstra's (fences, stay-out zones) in
@@ -127,7 +129,7 @@ Each leaf names the hub paths to open. Status words come from
     source sets), [vio-to-mavlink-bridge](../samples/vio-to-mavlink-bridge/) (ExternalNav).
   - License: firmware is GPL-3.0; companion code over MAVLink is separate ([path-to-product section 5](path-to-product.md#5-license-traps-for-a-shipped-product)).
 - **Crazyflie 2.1** (likely with Flow deck v2 and Multi-ranger)
-  - Driver: `drivers/crazyflie_cflib.py` (gap). `send_velocity_world_setpoint`, yaw rate in deg/s,
+  - Driver: `drivers/crazyflie_cflib.py` (`CrazyflieCflibAdapter`, unrun stub). `send_velocity_world_setpoint`, yaw rate in deg/s,
     sign on current firmware not confirmed; check +x on the bench ([frames.md Crazyflie](../templates/drone-adapter/frames.md#crazyflie)).
   - Ranges: Multi-ranger, 5 ToF beams (front, back, left, right, up), up to 4 m
     ([Multi-ranger](../catalog/resources/bitcraze-multi-ranger-deck.md), docs). Thin obstacles between beams are invisible.
@@ -140,10 +142,10 @@ Each leaf names the hub paths to open. Status words come from
   - Cards: [Crazyflie firmware](integration-cards/bitcraze__crazyflie-firmware.md), [cflib](../catalog/repos/bitcraze__crazyflie-lib-python.md).
   - Compute: planning usually runs on the laptop over Crazyradio, see [3.6](#36-q8-compute).
 - **DJI Tello / RoboMaster TT**
-  - Driver: `drivers/tello_djitellopy.py` (gap). `send_rc_control` values are stick deflection
+  - Driver: `drivers/tello_djitellopy.py` (`TelloDjitellopyAdapter`, unrun stub; refuses to fly until the stick scales are set). `send_rc_control` values are stick deflection
     -100..100, not cm/s; calibrate a per-axis scale on the bench ([frames.md Tello](../templates/drone-adapter/frames.md#tello)).
   - Keep-alive: auto-lands after 15 s without a command ([Tello SDK 2.0](../catalog/resources/tello-sdk-2-user-guide.md), via doc 02).
-  - No obstacle sensor on Tello: `ranges()` returns all `inf`. Only a known map works; see [3.5](#35-q7-obstacles).
+  - No obstacle sensor on Tello: the driver's `ranges()` returns an empty scan (no beams), never "clear". Only a known map works; see [3.5](#35-q7-obstacles).
   - No position: mission pads (EDU / TT), an external system, or dead reckoning.
   - Sim: gap: no Tello sim. Use `MockAdapter` from [drone-adapter](../templates/drone-adapter/) and the arena.
   - Code: [djitellopy](../catalog/repos/damiafuentes__djitellopy.md). Compute is off-board only.
@@ -165,9 +167,14 @@ Each leaf names the hub paths to open. Status words come from
   - Planner and filter work: [close-area-arena](../samples/close-area-arena/) (`ran`, synthetic,
     2.5D point mass). Faults go in through the `pose_source` hook ([CONTRACT.md](../samples/close-area-arena/CONTRACT.md)).
   - Credibility repeat: the Q1 SITL from [3.1](#31-q1-drone-and-sdk).
-  - gap: the arena has only the straight baseline (0 % reached on `u_trap` and `narrow_gap`,
-    synthetic, [README](../samples/close-area-arena/README.md#results-ran-2026-11-09-apple-m3-max-cpython-31210-numpy-254-scipy-1181)).
-    The A* planner and safety filter are ours to write ([01 section 5a](research/close-area-nav/01-planning-and-mapping.md#5a-pure-python-sim-target-flying-ab-through-obstacles-by-hour-4-6)).
+  - Planners that exist (synthetic): straight baseline (0 % reached on `u_trap` and `narrow_gap`),
+    `planners/astar_esdf.py` (known map 100 % on all three families, unknown map 80 % on
+    `narrow_gap`, [README](../samples/close-area-arena/README.md#a--esdf-grid-planner-ran-2026-11-09-synthetic)),
+    APF and VFH+ in [close-area-planner-reactive](../samples/close-area-planner-reactive/).
+    Estimator faults: `run_faults.py`. gap: the safety filter is ours to write
+    ([04 section 3.4](research/close-area-nav/04-innovation-prior-art.md#34-falsification-experiment)).
+  - Loop to fly them: [flight-repo](../templates/flight-repo/README.md) (`make sim` on the mock,
+    `--planner arena:<name>` loads an arena planner unchanged).
 - **Sim only, organisers provide the sim and world**
   - gz / Gazebo => [Gazebo card](integration-cards/gazebosim__gz-sim.md), PX4 or ArduPilot driver from 3.1.
   - AirSim / Colosseum, Isaac Sim, Flightmare => not practical on the Mac
@@ -176,7 +183,9 @@ Each leaf names the hub paths to open. Status words come from
 - **Real only**
   - Driver plus a bench session before any flight: check every "not confirmed" item in
     [frames.md](../templates/drone-adapter/frames.md) (command +x, watch which way it moves).
-  - Log every run: [recording-replay](../samples/recording-replay/) (`ran`, stdlib) writes JSONL / MCAP.
+  - Log every run: [recording-replay](../samples/recording-replay/) (`ran`, stdlib) writes JSONL / MCAP;
+    flight-repo writes one JSONL line per tick. Score real and sim logs the same way with the arena's
+    `score_log.py` ([log_format.md](../samples/close-area-arena/log_format.md); synthetic logs only so far).
   - Safety: [demo-script-close-area](../templates/demo-script-close-area.md) setup list (safety pilot, net, geofence).
 - **Both**
   - Order: arena => SITL => real. One planner, three `Adapter` backends. Real flight never
@@ -197,8 +206,11 @@ Marker branch details:
 - Fiducials allowed (Q9 yes) => AprilTag next to the official marker. PX4 precision landing via
   LANDING_TARGET, `PLD_HACC_RAD` default 0.2 m (docs, not run); the docs say it needs a valid
   global position, untested indoors ([03 section 3](research/close-area-nav/03-close-area-localization.md#3-how-b-is-specified-and-what-it-implies)).
+- Tag size and hand-over range: [fiducial-goal-apriltag](../samples/fiducial-goal-apriltag/README.md)
+  (synthetic: 0.16 m tag36h11 detected at >= 90 % to 5 m frontal, 2 m at 70 deg; tag-relative
+  final approach within 0.1 m in 50/50 seeds; a 0.40 m pad tag fails at 0.5 m, so nest a small tag).
 - Fiducials forbidden => learned detector trained on Day 1 frames of the real marker.
-  gap: no marker-approach dataset or marker-goal sample in the hub.
+  gap: no marker-approach dataset and no learned-detector sample in the hub.
 
 ### 3.4 Q5 and Q6: sensors and venue localization
 
@@ -229,7 +241,10 @@ Obstacle sensing:
   ([01 section 1](research/close-area-nav/01-planning-and-mapping.md#1-recommendation-in-one-paragraph)). Jetson + depth => [nvblox](../catalog/repos/nvidia-isaac-ros__isaac_ros_nvblox.md) is the map.
 - **2D or 3D lidar** => same grid; FAST-LIO2 only if a 3D lidar is on board ([03 section 5a](research/close-area-nav/03-close-area-localization.md#a-indoor-no-gnss)).
 - **ToF rangers (Multi-ranger)** => sparse range fan; the arena's `RangeFan` can be set to 4-5
-  beams to match ([sensors.py](../samples/close-area-arena/sensors.py)).
+  beams to match ([sensors.py](../samples/close-area-arena/sensors.py)). On a 4-beam fan the
+  memoryless reactive planners collide often (VFH+ 72-98 %, APF 8-54 %, synthetic,
+  [close-area-planner-reactive](../samples/close-area-planner-reactive/README.md)): keep a scan
+  memory or a map, or slow down hard.
 - **None** => known-map planning only. Unknown obstacles + no sensor is a hard gate: ask the
   organisers again before committing (day-0 [hard gates](day0-runbook.md#2-pick-the-idea-scoring-rubric)).
 
@@ -300,16 +315,21 @@ switches to an alternative hook ([close-area-story section 3](../templates/pitch
 
 ## 5. Gaps this tree exposed
 
-- gap: `templates/drone-adapter/drivers/` (PX4 MAVSDK, ArduPilot pymavlink, cflib, djitellopy) is
-  not written. Every Q1 branch starts by writing one.
-- gap: close-area-arena has only the straight baseline; no A*, APF or safety-filter planner.
-- gap: `samples/close-area-safety-filter/` (named in the demo script) does not exist.
-- gap: no marker-goal sample and no marker-approach dataset (row 32).
+- gap: the [drivers](../templates/drone-adapter/drivers/README.md) (PX4 MAVSDK, ArduPilot pymavlink, cflib, djitellopy) exist as unrun
+  stubs: no SDK was installed and no SITL or vehicle touched. Every Q1 branch starts with their
+  bench checks.
+- Filled 2026-11-09: A* + ESDF, APF and VFH+ planners and estimator faults in the arena (synthetic),
+  and the [flight-repo](../templates/flight-repo/README.md) loop template (mock only).
+- gap: `samples/close-area-safety-filter/` (named in the demo script) does not exist; no
+  safety-filter arm of the kill test has run.
+- gap: no marker-approach dataset (row 32); the marker-goal sample
+  [fiducial-goal-apriltag](../samples/fiducial-goal-apriltag/) is synthetic only.
 - gap: no close-area starter bundle in [starter-bundles.md](starter-bundles.md) or the offline kit.
 - gap: no Tello sim, no DJI MSDK or Olympe path on the Mac, no driver for an organiser-provided sim.
 - gap: no 3D arena (altitude changes, overhangs) and no recorded close-area obstacle flight.
-- gap: `research/close-area-nav/06-task-phrasing-survey.md` is not in this checkout, so the
-  question order above is not checked against how past events worded the task.
+- gap: the question order above was written before
+  [06-task-phrasing-survey.md](research/close-area-nav/06-task-phrasing-survey.md) landed and is not
+  yet checked against its revised question list (section 4).
 
 ## 6. Intake card
 
@@ -330,7 +350,7 @@ Copy into the team repo's `docs/` and fill during 0:00-0:10.
 
 ## 7. Not verified
 
-- No branch was walked end to end. Every driver named above is unwritten; every sim except
+- No branch was walked end to end. Every driver named above is an unrun stub; every sim except
   close-area-arena and sitl-docker was not run in the hub.
 - Setup times are README-based estimates from [doc 02](research/close-area-nav/02-sims-platforms-competitions.md), not timings.
 - IMAV 2026 factors come from doc 02's PDF extraction of the rulebook; the EDGE scoring is unknown until Day 1.

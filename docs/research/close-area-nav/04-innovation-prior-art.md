@@ -226,10 +226,30 @@ filter also knows when the navigation is lying." Engineering, not theory.
 ### 3.3 Strongest baseline
 
 1. **PX4-CBF (composite range CBF)**, re-implemented in Python on the same sim. Strongest and
-   already productised.
-2. **BCBF / MR-CBF** margin from covariance or bounded error.
-3. **PX4 Collision Prevention**: stop at `CP_DIST` along velocity.
-4. **No filter** (planner alone).
+   already productised. Two arms, per [05 section 1](05-cbf-baselines-faithful.md#1-px4-cbf-misyats-harms-nissov-jacquet-alexis-icuas-2025):
+   **as shipped** (fork branch `cbf` HEAD `e7ef0c61`: closed-form single constraint, linear
+   alpha, no FoV constraint) and **with the FoV QP** (paper eq. 17, the qpOASES variant at commit
+   `338fb51f`). The FoV variant is the faithful baseline for a fan under 180 deg. Use the paper's
+   Table II gains, not the PX4 parameter defaults.
+2. **Belief-CBF** with covariance prediction every control step and the Theorem 3 update-jump
+   margin ([05 section 2](05-cbf-baselines-faithful.md#2-belief-cbf-vahs-pek-tumova-ieee-ra-l-2023)).
+   A plain `k * sqrt(lambda_max(P))` inflation is a weaker copy.
+3. **MR-CBF with a fixed worst-case bound** `epsilon` measured offline against truth (Cosner
+   2021 practice, [05 section 4](05-cbf-baselines-faithful.md#4-measurement-robust-cbf-dean-taylor-cosner-recht-ames-corl-2020)).
+   If a PL margin does not beat it on time to goal at equal breach rate, the PL adds nothing over
+   a calibrated constant.
+4. **FT-CBF residual dropping** (Zhang, Li, Clark, [07](07-pl-margin-prior-art.md#1-verdict)):
+   drop the largest-residual estimates until the QP is feasible.
+5. **Tan union of states** (Tan et al. IROS 2025, [07](07-pl-margin-prior-art.md#1-verdict)):
+   margin = the union of states consistent with every sensor subset that excludes up to s
+   attacked sensors, inflated by a noise bound.
+6. **gatekeeper** backup filter ([05 section 3](05-cbf-baselines-faithful.md#3-gatekeeper-agrawal-chen-panagou-ieee-t-ro-2024)):
+   keeps the last committed trajectory when none validates; count "stuck" separately.
+7. **PX4 Collision Prevention**: stop at `CP_DIST` along velocity.
+8. **No filter** (planner alone).
+
+Inputs each arm needs from the sim and three ways a naive copy would be unfair are in
+[05 sections 5-6](05-cbf-baselines-faithful.md#5-baseline--minimal-faithful-implementation-for-the-kill-test).
 
 ### 3.4 Falsification experiment
 
@@ -238,8 +258,13 @@ min-jerk on the estimate, (P3) noisy "learned" planner = P2 plus heading noise a
 bad commands. Obstacles: sensed (in range FoV) and unsensed (outside FoV, plus a geofence box
 and two map-only thin poles the range sensor misses at > 3 m). Estimator fault cases as in 1.4.
 
-**Arms.** (F0) no filter; (F1) CP-style stop; (F2) range-only composite CBF; (F3) F2 + BCBF
-margin on map obstacles; (F4) ours: F2 + PL margin + health speed cap + hover fallback.
+**Arms.** (F0) no filter; (F1) CP-style stop; (F2a) PX4-CBF as shipped (closed form, no FoV);
+(F2) PX4-CBF with the FoV QP; (F3) F2 + Belief-CBF margin on map obstacles, with covariance
+prediction and the update-jump margin; (F3m) F2 + MR-CBF with a fixed worst-case bound; (F3f)
+F2 + FT-CBF residual dropping; (F3t) F2 + Tan union of plausible states; (F4) ours: F2 + PL
+margin + health speed cap + hover when the monitor cannot tell which source is lying. Faithful
+forms, parameters and sim inputs per arm: [05](05-cbf-baselines-faithful.md). Each fault case
+states whether it hits position (PX4-CBF does not use it) or velocity (PX4-CBF does).
 
 **Metric.** True collision or geofence breach rate; goal reached; time to goal; filter
 intervention rate (fraction of steps where the command was changed).
@@ -248,7 +273,10 @@ intervention rate (fraction of steps where the command was changed).
 3x lower than F3 on jump and bias cases, and goal-reach rate >= 90% of F2's (not frozen).
 **Fail** if F3 is within 1 percentage point of F4 on jump and bias (then the PL adds nothing
 over BCBF), or if F2 alone is already <= 1% on all cases (then map-based margins are not
-needed and the honest pitch is "we integrated PX4-CBF").
+needed and the honest pitch is "we integrated PX4-CBF"). Also fail the narrowed claim
+([07 section 2](07-pl-margin-prior-art.md#2-what-survives-narrow-engineering-only)) if F4 does
+not cut wrong-exclusion breaches or the freezing rate against F3f and F3t, or does not beat F3m
+on time to goal at equal breach rate.
 
 ### 3.5 Failure modes
 

@@ -205,9 +205,10 @@
    "Jana Tumova"
   ],
   "year": 2023,
-  "summary": "Defines control barrier functions on the EKF belief (mean and covariance) so a controller keeps the robot in a safe set with a chosen confidence. Quadrotor tests under disturbances and varying sensing; control rates up to 1 kHz. arXiv preprint, no venue on the page.",
+  "summary": "Peer-reviewed (IEEE RA-L 8(12):8565-8572, 2023, doi 10.1109/LRA.2023.3330662, confirmed via Crossref in docs/research/close-area-nav/05-cbf-baselines-faithful.md). Defines control barrier functions on the EKF belief (mean and covariance) so a controller keeps the robot in a safe set with a chosen confidence. The barrier uses the predicted covariance growth between updates and a margin for the jump at the next measurement update. Crazyflie hardware tests under varying sensing; control rates up to 1 kHz.",
   "key_takeaways": [
    "Strongest prior art for clearance inflated by live covariance",
+   "Brakes before the margin grows: covariance prediction plus an update-jump margin (Theorem 3); a plain sqrt(lambda_max) inflation is a weaker copy",
    "Gaussian belief only, faults not modelled"
   ],
   "concepts": [
@@ -218,7 +219,8 @@
    "control-barrier-function",
    "belief",
    "ekf",
-   "quadrotor"
+   "quadrotor",
+   "peer-reviewed"
   ],
   "level": "advanced",
   "access": "open",
@@ -495,7 +497,7 @@
    "Dimitra Panagou"
   ],
   "year": 2024,
-  "summary": "Lightweight check between a planner and a controller: simulate the nominal trajectory to a switch time, then a backup controller such as hover, and commit the safe candidate with the latest switch time. Quadrotor hardware with an online map; 3-10x faster than MPC in simulation per the authors. Venue T-RO 2024 per a search summary.",
+  "summary": "Lightweight check between a planner and a controller: simulate the nominal trajectory to a switch time, then a backup controller such as hover, and commit the safe candidate with the latest switch time. Quadrotor hardware with an online map; 3-10x faster than MPC in simulation per the authors. Peer-reviewed: IEEE T-RO 40:4358-4375, 2024, doi 10.1109/TRO.2024.3454415, plus IROS 2023 pp. 259-266 (Crossref, per docs/research/close-area-nav/05-cbf-baselines-faithful.md).",
   "key_takeaways": [
    "Planner-agnostic, easy to explain to judges",
    "Needs a backup controller and backup set"
@@ -507,7 +509,8 @@
   "tags": [
    "backup-controller",
    "safety-verification",
-   "quadrotor"
+   "quadrotor",
+   "peer-reviewed"
   ],
   "level": "advanced",
   "access": "open",

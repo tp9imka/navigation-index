@@ -22,6 +22,8 @@ EDGE hackathon Challenge 2 (autonomous flight navigation): start at
 | "drone detection", "counter-UAS", "airspace awareness", "Remote ID", "FOB", "TAK" | [counter-uas-remote-id](counter-uas-remote-id.md) | 12, 13 |
 | "terrain", "TERCOM", "blind flight", "night", "thermal", "smoke", "stars", "magnetic", "no RF" | [terrain-night-celestial](terrain-night-celestial.md) | 15, 16, 18, 25, 27 |
 | "AI", "LLM", "agent", "assistant", "incident analysis" | [llm-agent-ops](llm-agent-ops.md) | 21, 22 |
+| "point A to B", "obstacles", "close area", "arena", "indoor", "avoid" | none yet: start at [day1-close-area-intake](../day1-close-area-intake.md), [close-area-arena](../../samples/close-area-arena/) (A* + ESDF, estimator faults, log scorer), [flight-repo](../../templates/flight-repo/) and the [close-area-nav synthesis](../research/close-area-nav/README.md). "no map", "Crazyflie", "Multi-ranger", "reactive", "potential field": [close-area-planner-reactive](../../samples/close-area-planner-reactive/) (APF + escape beats VFH+ in a U trap, VFH+ beats APF through a narrow gap, both collide often on 4 beams) | 31, 33 |
+| "marker", "land on the pad", "landing pad / helipad", "fly to the tag", "precision landing", "AprilTag / ArUco" | none yet: start at [fiducial-goal-apriltag](../../samples/fiducial-goal-apriltag/) for tag size vs detection range, then [close-area-arena](../../samples/close-area-arena/) for the path that brings the tag into view | 32, 31 |
 
 No sheet (thin coverage, go straight to the [decoder](../problem-statement-decoder.md#the-table)
 and its [gaps](../problem-statement-decoder.md#gaps-this-table-exposed)): UGV / rover / rail
