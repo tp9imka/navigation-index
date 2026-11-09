@@ -73,3 +73,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - added 46-50; recommendation: playground runs the real Python arena via Pyodide (one implementation), gated on the 48a timing spike.
 - launched 46a, 48a, 49, 50.
 - landed: 35 => 2e3f270 (decode_eval 63/63; evidence rows for 4 samples; readiness overrides for 6; gate OK)
+- landed: 38 => e7898d3 (R@10 0.666 => 0.689, MRR 0.776 => 0.797 on 45 queries; licences query rank 49 => 1; parity 45/45 on fresh build; claims checked 2/2 by driver: parity and licences query re-run)
