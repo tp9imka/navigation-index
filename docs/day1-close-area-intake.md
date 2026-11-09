@@ -1,0 +1,350 @@
+# Day-1 intake: close-area A=>B, organiser answers => stack
+
+**Next action on Day 1:** ask questions 1-3 of [section 1](#1-questions-in-the-order-to-ask), then
+open [section 2](#2-if-we-only-get-3-answers) for the stack. The rest of the page refines it.
+
+Use this page in the first 20 minutes after the brief drops, when the task is "fly a drone from
+A to B in a close area, potentially with obstacles" (decoder rows 31, 32, 33 in
+[problem-statement-decoder.md](problem-statement-decoder.md)). It routes each organiser answer
+to an adapter driver, a sim, samples and docs. It does not repeat the research; it points into
+[research/close-area-nav](research/close-area-nav/README.md).
+
+Status, 2026-11-09: this page is a routing table, not a measured result. Nothing on it was run
+for this page. Numbers are quoted from the hub files they link to, with the input type of each.
+"Estimate" means a setup time read from READMEs, not timed. "gap:" marks what the hub does not
+have yet.
+
+## 0. The 20-minute clock
+
+| Clock | Who | Do | Output |
+|---|---|---|---|
+| 0:00-0:05 | Lead | Ask Q1-Q3. Write the answers in the [intake card](#6-intake-card). | 3 answers |
+| 0:05-0:10 | Lead | Ask Q4-Q10. "Don't know yet" is an answer: take the default in the card. | 10 answers or defaults |
+| 0:05-0:10 | Platform | Run the two smoke tests in [section 2](#2-if-we-only-get-3-answers) on the team laptop. | Both green or a named failure |
+| 0:10-0:15 | Lead + Nav | Walk [section 3](#3-decision-tree) branch by branch. Circle one path per question. | Stack, driver, sim, first sample |
+| 0:15-0:20 | Lead | Read [section 4](#4-scoring-rule-implications) for the stated scoring. Write ADR-001 ([adr](../templates/adr.md)). Hand over to the [day-0 runbook](day0-runbook.md) at its 0:25 row. | ADR-001 |
+
+## 1. Questions, in the order to ask
+
+Q1-Q3 decide most of the stack. Q4 decides what to optimise. Ask them first even if time runs out.
+
+| # | Ask the organisers | Why it is this early | Default if no answer |
+|---|---|---|---|
+| Q1 | Which drone, and which autopilot or SDK do we command it through (PX4, ArduPilot, Crazyflie cflib, Tello SDK, DJI MSDK, other)? | Picks the adapter driver, the sim and the keep-alive rules | PX4-class quad over MAVSDK; write against the [adapter](../templates/drone-adapter/README.md) so it ports |
+| Q2 | Is the judged run in sim, on a real drone, or both? If real: how many flight slots, when, with a net or a safety pilot? If sim: do you provide the sim and world? | Sim-only lets us skip hardware work; real flight makes estimation and safety the main risk | Both: sim first, real port in the last 24 h |
+| Q3 | How is B given: offset from A, coordinates in a venue frame (mocap / UWB), a GPS point, or a marker / pad / object we must find? What tolerance counts as "at B"? | Picks the goal pipeline and the localization source | Offset from A in metres, tolerance unknown => assume 0.3 m, as the [arena](../samples/close-area-arena/README.md) scorer does |
+| Q4 | How is it scored: completion, time, collisions, manual interventions, off-board compute, precision at B, number of attempts? | Decides speed vs safety, see [section 4](#4-scoring-rule-implications) | IMAV-like: completion first, interventions and off-board compute multiply the score down |
+| Q5 | Which sensors does the airframe carry: stereo / depth camera, 2D or 3D lidar, ToF rangers, optical flow, downward rangefinder, GNSS, RTK? | Decides obstacle sensing and the backup velocity source | Downward flow + rangefinder, no obstacle sensor |
+| Q6 | Indoor or outdoor? Does the venue have mocap, Lighthouse or UWB anchors we may use? | Mocap ends the localization problem; outdoor brings GNSS | Indoor, no venue positioning |
+| Q7 | Are obstacles known in advance (map or layout file), unknown, or moved between runs? Any thin poles, nets or glass? | Known map => plan once; unknown => sensed map and replanning | Unknown and moved between runs |
+| Q8 | Where may our code run: an onboard companion (which board), a ground laptop over a link, or a provided Linux / GPU box? | Picks VIO and mapping options; off-board may cost score | Ground laptop only |
+| Q9 | May we add things: AprilTags at A and B, extra sensors, firmware or parameter changes? | A tag at A fixes the frame; a tag at B is a precise goal | Tags allowed, firmware locked |
+| Q10 | What is handed in and judged: live runs, video, code, a slide deck? How many runs count? | Sets how much goes into reliability vs demo polish | Live run plus deck, best of 2 runs |
+
+## 2. If we only get 3 answers
+
+Run these two smoke tests while the Lead asks (synthetic input; about 2 s each on the laptop
+that produced the quoted results):
+
+```sh
+(cd templates/drone-adapter && python3 -m unittest -v && python3 example_loop.py)
+# expect: 5 tests OK; goal=(5.0, 3.0, 1.0) final_distance_m=0.096 collided=False
+(cd samples/close-area-arena && uv venv .venv && uv pip install --python .venv -r requirements.txt \
+  && .venv/bin/python run.py --planner straight --layouts 20 --seed 0)
+# expect: straight baseline reached 40 %, collision 0 %, stuck 60 %
+```
+
+Both numbers are synthetic, from [drone-adapter results](../templates/drone-adapter/results/2026-11-09-mock-run.txt)
+and [straight_random_0.md](../samples/close-area-arena/results/straight_random_0.md).
+
+Then pick one cell per row. Everything not asked takes the default in [section 1](#1-questions-in-the-order-to-ask).
+
+| Q1 drone + SDK | Driver to write | Light sim (planner work) | Product sim (credibility) |
+|---|---|---|---|
+| PX4 quad (X500, VOXL 2, other PX4) | `drivers/px4_mavsdk.py` (gap: not written), rules in [frames.md PX4](../templates/drone-adapter/frames.md#px4) | [close-area-arena](../samples/close-area-arena/) | [sitl-docker](../samples/sitl-docker/) PX4 SIH (ran, headless, no obstacles); PX4 SITL + gz `walls` world (not run) |
+| ArduPilot copter | `drivers/ardupilot_pymavlink.py` (gap), [frames.md ArduPilot](../templates/drone-adapter/frames.md#ardupilot) | close-area-arena | [sitl-docker](../samples/sitl-docker/) ArduCopter 4.6.3 (ran, headless) |
+| Crazyflie | `drivers/crazyflie_cflib.py` (gap), [frames.md Crazyflie](../templates/drone-adapter/frames.md#crazyflie) | close-area-arena | [crazyflie-simulation](../catalog/repos/bitcraze__crazyflie-simulation.md) or [gym-pybullet-drones](integration-cards/learnsyslab__gym-pybullet-drones.md) (both not run) |
+| Tello / RoboMaster TT | `drivers/tello_djitellopy.py` (gap), [frames.md Tello](../templates/drone-adapter/frames.md#tello) | close-area-arena | gap: no Tello sim exists; `MockAdapter` in [drone-adapter](../templates/drone-adapter/) stands in |
+| Anything else | gap: no driver; see [3.1](#31-q1-drone-and-sdk) | close-area-arena | ask for the vendor sim |
+
+| Q2 sim or real | Do |
+|---|---|
+| Sim only | Planner + safety filter in close-area-arena, repeat the best arm in SITL. Real-flight items in [frames.md](../templates/drone-adapter/frames.md) marked "not confirmed" do not matter |
+| Real only | Driver first, bench-test the "not confirmed" sign and unit items in frames.md before the first flight. Planner still developed in the arena |
+| Both | Arena by H+6, SITL by H+12 (targets from [01 section 5](research/close-area-nav/01-planning-and-mapping.md#5-fastest-credible-baseline)), real port after that |
+
+| Q3 how B is given | Goal pipeline | Decoder row |
+|---|---|---|
+| Offset from A | Odometry started at A; origin = pose at A (driver stores it) | 31 |
+| Venue-frame coordinates | Use the venue system ([vrpn_mocap](../catalog/repos/alvinsunyixiao__vrpn_mocap.md)) or an AprilTag at A to align | 31, 33 |
+| GPS point | GNSS to get close, marker for the last metres ([03 section 5b](research/close-area-nav/03-close-area-localization.md#b-outdoor-gnss-available)) | 31, 32 |
+| Marker / pad / object | Bring it into view, then fiducial or detector as the goal | 32 |
+
+Fast-path stack in one line: **planner against `pose()` / `ranges()` / `send_setpoint()`, developed
+in close-area-arena, ported through the Q1 driver, with the Q3 goal pipeline, and the
+integrity-aware safety filter as the headline** ([synthesis](research/close-area-nav/README.md#recommended-direction)).
+
+## 3. Decision tree
+
+Each leaf names the hub paths to open. Status words come from
+[samples/README.md](../samples/README.md): `ran`, `partial`, `sketch`.
+
+### 3.1 Q1: drone and SDK
+
+- **PX4 quad** (Holybro X500 class, ModalAI VOXL 2, any PX4 airframe)
+  - Driver: `drivers/px4_mavsdk.py` (gap: the `drivers/` folder in
+    [drone-adapter](../templates/drone-adapter/README.md#where-the-drivers-go) is not written).
+    Convert ENU => NED with `adapter.enu_to_ned`; `VelocityNedYaw` takes an absolute heading in
+    degrees, not a yaw rate ([frames.md PX4](../templates/drone-adapter/frames.md#px4)).
+  - Keep-alive: at least 2 Hz setpoints before and during Offboard ([frames.md](../templates/drone-adapter/frames.md#px4), docs).
+  - Avoidance: PX4 does not plan around obstacles any more. Collision Prevention only stops, only
+    in Position mode, zeroes xy motion after 0.5 s without range data and goes to Hold after 5 s
+    ([01 section 3](research/close-area-nav/01-planning-and-mapping.md#3-local-replanners-and-autopilot-native-avoidance), docs).
+    Do not combine it with an Offboard planner.
+  - Sims: [sitl-docker](../samples/sitl-docker/) PX4 v1.17.0 SIH (`ran`, headless, about 10 min if
+    images are built, estimate from doc 02). PX4 SITL + gz Harmonic `x500_depth` in `walls`
+    (not run; first build 1-2 h estimate; the setup script installs Homebrew taps and XQuartz, so
+    get approval first; [02 section 1.3 B](research/close-area-nav/02-sims-platforms-competitions.md#13-first-hour-recipes-not-run)).
+  - Cards: [PX4](integration-cards/px4__px4-autopilot.md), [MAVSDK-Python](integration-cards/mavlink__mavsdk-python.md),
+    [px4_ros_com](integration-cards/px4__px4_ros_com.md) if ROS 2. Safety-filter baseline:
+    [PX4-CBF](../catalog/repos/ntnu-arl__px4-cbf.md).
+  - Samples: [vio-to-mavlink-bridge](../samples/vio-to-mavlink-bridge/) (`partial`, pose into EKF2),
+    [px4-sitl-gps-denial](../samples/px4-sitl-gps-denial/) (`ran`, MAVSDK flight on SIH),
+    [llm-mission-agent](../samples/llm-mission-agent/) `mav_mcp_server.py` (`partial`, geofenced
+    vehicle tools, SITL only).
+  - VOXL 2: VIO and depth avoidance on board ([VOXL 2 docs](../catalog/resources/px4-modalai-voxl-2-docs.md),
+    [VOA docs](../catalog/resources/modalai-voxl-voa-docs.md), [OpenVINS server](../catalog/resources/modalai-voxl-open-vins-server-docs.md)).
+- **ArduPilot copter**
+  - Driver: `drivers/ardupilot_pymavlink.py` (gap). GUIDED, `SET_POSITION_TARGET_LOCAL_NED`,
+    velocity mask 3527, yaw rate in rad/s CW ([frames.md ArduPilot](../templates/drone-adapter/frames.md#ardupilot)).
+  - Keep-alive: re-send at least every second; the vehicle stops after 3 s without a command (same file, docs).
+  - Zero-code fallback: BendyRuler (sensed obstacles) and Dijkstra's (fences, stay-out zones) in
+    GUIDED ([01 section 3](research/close-area-nav/01-planning-and-mapping.md#3-local-replanners-and-autopilot-native-avoidance); not tested in the hub).
+  - Sims: [sitl-docker](../samples/sitl-docker/) ArduCopter 4.6.3 (`ran`, headless). gz plugin on macOS: not verified.
+  - Cards: [ArduPilot](integration-cards/ardupilot__ardupilot.md), [pymavlink](integration-cards/ardupilot__pymavlink.md),
+    [MAVROS](integration-cards/mavlink__mavros.md) if ROS.
+  - Samples: [ardupilot-ekf3-source-switch](../samples/ardupilot-ekf3-source-switch/) (`ran`, EKF3
+    source sets), [vio-to-mavlink-bridge](../samples/vio-to-mavlink-bridge/) (ExternalNav).
+  - License: firmware is GPL-3.0; companion code over MAVLink is separate ([path-to-product section 5](path-to-product.md#5-license-traps-for-a-shipped-product)).
+- **Crazyflie 2.1** (likely with Flow deck v2 and Multi-ranger)
+  - Driver: `drivers/crazyflie_cflib.py` (gap). `send_velocity_world_setpoint`, yaw rate in deg/s,
+    sign on current firmware not confirmed; check +x on the bench ([frames.md Crazyflie](../templates/drone-adapter/frames.md#crazyflie)).
+  - Ranges: Multi-ranger, 5 ToF beams (front, back, left, right, up), up to 4 m
+    ([Multi-ranger](../catalog/resources/bitcraze-multi-ranger-deck.md), docs). Thin obstacles between beams are invisible.
+  - Pose: Flow deck dead reckoning ([Flow deck v2](../catalog/resources/bitcraze-flow-deck-v2.md)), or
+    Lighthouse / Loco if the venue has it ([3.4](#34-q5-and-q6-sensors-and-venue-localization)).
+  - Sims: [crazyflie-simulation](../catalog/repos/bitcraze__crazyflie-simulation.md) (Webots, 30-60 min
+    estimate), [crazyflow](../catalog/repos/learnsyslab__crazyflow.md) + [lsy_drone_racing](../catalog/repos/learnsyslab__lsy_drone_racing.md)
+    if the task looks like gates (15-30 min estimate), [gym-pybullet-drones](integration-cards/learnsyslab__gym-pybullet-drones.md)
+    (pybullet compiles from source on Apple Silicon). All not run.
+  - Cards: [Crazyflie firmware](integration-cards/bitcraze__crazyflie-firmware.md), [cflib](../catalog/repos/bitcraze__crazyflie-lib-python.md).
+  - Compute: planning usually runs on the laptop over Crazyradio, see [3.6](#36-q8-compute).
+- **DJI Tello / RoboMaster TT**
+  - Driver: `drivers/tello_djitellopy.py` (gap). `send_rc_control` values are stick deflection
+    -100..100, not cm/s; calibrate a per-axis scale on the bench ([frames.md Tello](../templates/drone-adapter/frames.md#tello)).
+  - Keep-alive: auto-lands after 15 s without a command ([Tello SDK 2.0](../catalog/resources/tello-sdk-2-user-guide.md), via doc 02).
+  - No obstacle sensor on Tello: `ranges()` returns all `inf`. Only a known map works; see [3.5](#35-q7-obstacles).
+  - No position: mission pads (EDU / TT), an external system, or dead reckoning.
+  - Sim: gap: no Tello sim. Use `MockAdapter` from [drone-adapter](../templates/drone-adapter/) and the arena.
+  - Code: [djitellopy](../catalog/repos/damiafuentes__djitellopy.md). Compute is off-board only.
+- **DJI consumer (MSDK v5)**
+  - Android app + virtual stick at 5-25 Hz ([MSDK virtual stick](../catalog/resources/dji-msdk-v5-virtual-stick-tutorial.md), via doc 02).
+    The Android build path costs hours (doc 02 estimate).
+  - gap: no hub driver, sample or sim. Ask for a different airframe or a laptop bridge before committing.
+- **Parrot ANAFI (Olympe)**
+  - Olympe ships Linux x86-64 wheels only; Sphinx needs Ubuntu + NVIDIA
+    ([Sphinx requirements](../catalog/resources/parrot-sphinx-system-requirements.md)).
+  - gap: no hub driver; not runnable on the Mac. Needs an x86 Linux box from the organisers.
+- **Custom or unknown airframe**
+  - Speaks MAVLink => treat as PX4 or ArduPilot above, after reading its heartbeat autopilot type.
+  - Anything else => gap: no driver. Keep the planner on `MockAdapter` and ask for SDK docs today.
+
+### 3.2 Q2: sim, real or both
+
+- **Sim only, our choice of sim**
+  - Planner and filter work: [close-area-arena](../samples/close-area-arena/) (`ran`, synthetic,
+    2.5D point mass). Faults go in through the `pose_source` hook ([CONTRACT.md](../samples/close-area-arena/CONTRACT.md)).
+  - Credibility repeat: the Q1 SITL from [3.1](#31-q1-drone-and-sdk).
+  - gap: the arena has only the straight baseline (0 % reached on `u_trap` and `narrow_gap`,
+    synthetic, [README](../samples/close-area-arena/README.md#results-ran-2026-11-09-apple-m3-max-cpython-31210-numpy-254-scipy-1181)).
+    The A* planner and safety filter are ours to write ([01 section 5a](research/close-area-nav/01-planning-and-mapping.md#5a-pure-python-sim-target-flying-ab-through-obstacles-by-hour-4-6)).
+- **Sim only, organisers provide the sim and world**
+  - gz / Gazebo => [Gazebo card](integration-cards/gazebosim__gz-sim.md), PX4 or ArduPilot driver from 3.1.
+  - AirSim / Colosseum, Isaac Sim, Flightmare => not practical on the Mac
+    ([02 section 1.1](research/close-area-nav/02-sims-platforms-competitions.md#11-comparison-table)); ask for their Linux box.
+  - gap: no driver for an organiser sim. Write one more `Adapter` class against their API.
+- **Real only**
+  - Driver plus a bench session before any flight: check every "not confirmed" item in
+    [frames.md](../templates/drone-adapter/frames.md) (command +x, watch which way it moves).
+  - Log every run: [recording-replay](../samples/recording-replay/) (`ran`, stdlib) writes JSONL / MCAP.
+  - Safety: [demo-script-close-area](../templates/demo-script-close-area.md) setup list (safety pilot, net, geofence).
+- **Both**
+  - Order: arena => SITL => real. One planner, three `Adapter` backends. Real flight never
+    debugs planner logic.
+
+### 3.3 Q3: how B is given
+
+| B given as | Localization needed | Open | Decoder row |
+|---|---|---|---|
+| Offset from A ("5 m forward, 3 m left") | Any local odometry started at A; drift small vs the tolerance | [03 section 3](research/close-area-nav/03-close-area-localization.md#3-how-b-is-specified-and-what-it-implies), [drone-adapter](../templates/drone-adapter/README.md) origin rule | 31 |
+| Venue-frame coordinates (mocap, UWB, Lighthouse frame) | The venue system, or one known pose (AprilTag at A) to align VIO | [vrpn_mocap](../catalog/repos/alvinsunyixiao__vrpn_mocap.md), [Loco](../catalog/resources/bitcraze-loco-positioning.md) | 31, 33 |
+| GPS point | GNSS (RTK if offered) to get close, a relative cue for the last metres | [03 section 5b](research/close-area-nav/03-close-area-localization.md#b-outdoor-gnss-available) | 31, 32 |
+| Marker, pad, tag or object | Odometry only has to bring it into view; fiducial or detector gives the goal | [AprilTag](../catalog/repos/aprilrobotics__apriltag.md), [apriltag_ros](../catalog/repos/christianrauch__apriltag_ros.md), [PX4 precision landing](../catalog/resources/px4-precision-landing-docs.md), [Clover card](integration-cards/copterexpress__clover.md) | 32 |
+| "Somewhere behind the obstacles" (search) | Exploration + detection | [01 planning](research/close-area-nav/01-planning-and-mapping.md); gap: no exploration sample | 31 |
+
+Marker branch details:
+
+- Fiducials allowed (Q9 yes) => AprilTag next to the official marker. PX4 precision landing via
+  LANDING_TARGET, `PLD_HACC_RAD` default 0.2 m (docs, not run); the docs say it needs a valid
+  global position, untested indoors ([03 section 3](research/close-area-nav/03-close-area-localization.md#3-how-b-is-specified-and-what-it-implies)).
+- Fiducials forbidden => learned detector trained on Day 1 frames of the real marker.
+  gap: no marker-approach dataset or marker-goal sample in the hub.
+
+### 3.4 Q5 and Q6: sensors and venue localization
+
+Localization source, first match wins:
+
+- **Venue mocap** => it is the pose. [vrpn_mocap](../catalog/repos/alvinsunyixiao__vrpn_mocap.md) =>
+  MAVROS `vision_pose` => EKF2 / EKF3 ([03 section 2](research/close-area-nav/03-close-area-localization.md#2-sensor-options)).
+  Score note: IMAV counts beacons as off-board help (0.7x, [section 4](#4-scoring-rule-implications)).
+- **Lighthouse** (Crazyflie) => native in the firmware; 2-4 cm mean / median vs mocap
+  (Taffanel 2021, preprint, [record](../catalog/resources/taffanel-2021-lighthouse-positioning-accuracy.md)).
+- **UWB anchors** => Loco on Crazyflie, ArduPilot Beacon source; dm-class per vendor
+  ([Loco](../catalog/resources/bitcraze-loco-positioning.md), [LPS precision wiki](../catalog/resources/bitcraze-lps-precision-wiki.md)).
+- **Stereo / depth camera + IMU, no venue system** => VIO into EKF2 / EKF3 as ODOMETRY; decoder row 33.
+  - CPU companion => [OpenVINS](integration-cards/rpng__open_vins.md). Reference: ATE 0.36 m over
+    278 m on UZH-FPV indoor_forward_3 (real dataset, [relative-nav-benchmark](../samples/relative-nav-benchmark/)).
+  - Jetson => [Isaac ROS Visual SLAM](integration-cards/nvidia-isaac-ros__isaac_ros_visual_slam.md).
+  - Bridge: [vio-to-mavlink-bridge](../samples/vio-to-mavlink-bridge/) or [vision_to_mavros](integration-cards/thien94__vision_to_mavros.md).
+  - Gate on ODOMETRY `quality`, `reset_counter` and EV innovation rejects, not on covariance
+    ([03 section 4](research/close-area-nav/03-close-area-localization.md#4-estimator-health-signals-a-planner-can-consume)).
+- **Optical flow + downward rangefinder only** => position is integrated velocity and drifts;
+  fine for short offsets from A, weak for venue coordinates. Needs textured floors.
+- **Outdoor with GNSS** => [03 section 5b](research/close-area-nav/03-close-area-localization.md#b-outdoor-gnss-available); VIO as fallback.
+- **Nothing (Tello without pads)** => dead reckoning only; set `quality` low and keep the route short.
+
+Obstacle sensing:
+
+- **Depth / stereo camera** => raycast into the 3D occupancy grid, ESDF with scipy, A* + replan
+  ([01 section 1](research/close-area-nav/01-planning-and-mapping.md#1-recommendation-in-one-paragraph)). Jetson + depth => [nvblox](../catalog/repos/nvidia-isaac-ros__isaac_ros_nvblox.md) is the map.
+- **2D or 3D lidar** => same grid; FAST-LIO2 only if a 3D lidar is on board ([03 section 5a](research/close-area-nav/03-close-area-localization.md#a-indoor-no-gnss)).
+- **ToF rangers (Multi-ranger)** => sparse range fan; the arena's `RangeFan` can be set to 4-5
+  beams to match ([sensors.py](../samples/close-area-arena/sensors.py)).
+- **None** => known-map planning only. Unknown obstacles + no sensor is a hard gate: ask the
+  organisers again before committing (day-0 [hard gates](day0-runbook.md#2-pick-the-idea-scoring-rubric)).
+
+### 3.5 Q7: obstacles
+
+- **Known in advance, static** => plan once on the given map (A* or PRM, [OMPL card](integration-cards/ompl__ompl.md));
+  ArduPilot: enter them as stay-out polygons for Dijkstra's as a fallback layer.
+- **Unknown** => three-state map (unknown / free / occupied), unknown at a cost penalty, replan at
+  2-5 Hz, keep a brake-to-hover trajectory ([01 section 5a](research/close-area-nav/01-planning-and-mapping.md#5a-pure-python-sim-target-flying-ab-through-obstacles-by-hour-4-6)).
+  Replan cost: a 200 x 200 x 50 scipy EDT took 183 ms median on an M3 Max (synthetic grid,
+  [edt_timing.json](../samples/close-area-arena/results/edt_timing.json)).
+- **Moved between runs** => never hard-code a path; show a replan on a moved obstacle
+  ([02 section 3.1](research/close-area-nav/02-sims-platforms-competitions.md#31-what-this-tells-us-a-judge-scores)).
+- **Narrow gaps or doorways** => grid resolution at most half the gap clearance; inflate by radius +
+  measured tracking error ([01 section 6](research/close-area-nav/01-planning-and-mapping.md#6-failure-modes-and-what-to-do-about-each)).
+  Arena family `narrow_gap` exercises it.
+- **Thin poles, nets, glass** => range sensors miss them; put them in the map as map-only
+  obstacles. That is exactly the case the headline filter's protection-level margin covers
+  ([04 section 3.2](research/close-area-nav/04-innovation-prior-art.md#32-what-may-remain-narrow)).
+- **Dynamic (people, other drones)** => out of reach in 48 h beyond fast replanning and occupancy
+  decay ([01 section 6](research/close-area-nav/01-planning-and-mapping.md#6-failure-modes-and-what-to-do-about-each)).
+
+### 3.6 Q8: compute
+
+- **Onboard Jetson** => Isaac ROS Visual SLAM + nvblox; the numpy planner still runs on its CPU.
+  Budget and latency table: [path-to-product section 1](path-to-product.md#1-onboard-compute-what-fits-where).
+- **Onboard CPU companion (Pi, NUC, VOXL 2)** => numpy / scipy planner, OpenVINS on 1-2 cores
+  ([03 section 2](research/close-area-nav/03-close-area-localization.md#2-sensor-options)). Measure loop time p99 on the board.
+- **Ground laptop only** (Crazyflie, Tello, DJI) => fine technically; if scored like IMAV it costs
+  0.7x. Keep the setpoint keep-alive inside the driver so a laptop stall does not land the drone.
+- **Provided Linux GPU box** => Isaac Sim / Pegasus or aerial-autonomy-stack become possible
+  ([02 section 1.1](research/close-area-nav/02-sims-platforms-competitions.md#11-comparison-table)); do not move the planner there unless asked.
+
+### 3.7 Q9 and Q10: additions and deliverable
+
+- **Tags allowed** => AprilTag at A (frame) and B (goal), 2-3 on walls for drift resets (decoder rows 32, 33).
+- **Firmware locked** => everything stays in the companion; PX4-CBF-style in-firmware filtering is off the table, so the filter runs on setpoints.
+- **Few counted runs** => reliability over peak speed; rehearse the [fallback plan](../templates/demo-script-close-area.md#fallback-plan).
+- **Video or deck judged** => [close-area pitch](../templates/pitch/close-area-story.md) and its [kill test gate](../templates/pitch/close-area-story.md#2-kill-test-gate-decide-the-story-at-h24).
+
+## 4. Scoring-rule implications
+
+The closest public rules are IMAV 2026 indoor ([rulebook record](../catalog/resources/imav-2026-rulebook.md),
+summarised in [02 section 3](research/close-area-nav/02-sims-platforms-competitions.md#3-competition-formats-and-lessons)):
+completion up to 7 of 20 points per mission, times an autonomy factor of 1.0 onboard, 0.7 with
+off-board compute or beacons, 0.4 with any manual intervention; ArUco landing +1 static, +2 moving.
+These are another event's rules; replace them with Q4's answer.
+
+| If the scoring says... | Then this matters more | And this matters less | Open |
+|---|---|---|---|
+| Manual intervention multiplies the score down (IMAV: 0.4x) | Safety filter, hover fallback on nav-health loss, driver keep-alive, geofence. One safety-pilot touch costs more than any time saving | Top speed | [synthesis](research/close-area-nav/README.md#recommended-direction), [04 section 3](research/close-area-nav/04-innovation-prior-art.md#3-idea-c-safety-filter-around-any-planner) |
+| Off-board compute or beacons are discounted (IMAV: 0.7x) | Planner and VIO onboard; mocap only as ground truth, not as the pose | Ground-laptop convenience | [path-to-product section 1](path-to-product.md#1-onboard-compute-what-fits-where), row 33 |
+| Completion first, time second | A slow, sure A=>B; speed cap by stopping distance | Trajectory optimisation | [02 section 3.1](research/close-area-nav/02-sims-platforms-competitions.md#31-what-this-tells-us-a-judge-scores) |
+| Time only, crashes allowed | Min-snap smoothing, higher speed cap, fewer replans; tune only after the arena shows 100 % reached | Margins beyond radius + tracking error | [01 section 5a](research/close-area-nav/01-planning-and-mapping.md#5a-pure-python-sim-target-flying-ab-through-obstacles-by-hour-4-6) |
+| A collision ends the run or zeroes it | Inflation = radius + measured tracking error + sensor noise; treat unknown space as unsafe | Shortest path | [01 section 6](research/close-area-nav/01-planning-and-mapping.md#6-failure-modes-and-what-to-do-about-each) |
+| Precision at B or a landing bonus | AprilTag at B, precision landing, final-error metric | Mid-route accuracy | row 32, [3.3](#33-q3-how-b-is-given) |
+| Randomized or moved layouts | Replanning shown live; no hard-coded path | Pre-computed optimal routes | arena families `random`, `u_trap`, `narrow_gap` |
+| Mass factor (IMAV: 1.13x at 3 kg to 2.0x at 0.1 kg) | If we may choose: the lightest airframe (Crazyflie class) | Payload | [02 section 2](research/close-area-nav/02-sims-platforms-competitions.md#2-platform-cheat-table) |
+| Innovation or "real-world implementation" judged | Headline filter with its kill test; runtime-assurance product story | Polish on the baseline planner | [07 kill test](research/close-area-nav/07-pl-margin-prior-art.md), [path-to-product section 4](path-to-product.md#4-runtime-assurance-ship-the-new-algorithm-next-to-a-trusted-baseline) |
+| Best of N attempts | Peak performance on one good run is fine; still record the backup | Variance | [demo-script-close-area](../templates/demo-script-close-area.md#recording-the-backup) |
+| All N attempts averaged | Reliability; run the arena on 200 layouts, not 20 | Peak speed | [arena](../samples/close-area-arena/README.md#run) |
+
+Headline kill test, whatever the scoring: 200 layouts with injected VIO jump and bias faults; pass
+at breaches 1 % or less, at least 3x lower than Belief-CBF on fault cases, goal reach at least
+90 % of PX4-CBF ([synthesis](research/close-area-nav/README.md#recommended-direction)). These are
+proposed thresholds; nothing has been run against them. A FAIL is a usable result: the pitch
+switches to an alternative hook ([close-area-story section 3](../templates/pitch/close-area-story.md#3-alternative-hooks-if-the-kill-test-fails)).
+
+## 5. Gaps this tree exposed
+
+- gap: `templates/drone-adapter/drivers/` (PX4 MAVSDK, ArduPilot pymavlink, cflib, djitellopy) is
+  not written. Every Q1 branch starts by writing one.
+- gap: close-area-arena has only the straight baseline; no A*, APF or safety-filter planner.
+- gap: `samples/close-area-safety-filter/` (named in the demo script) does not exist.
+- gap: no marker-goal sample and no marker-approach dataset (row 32).
+- gap: no close-area starter bundle in [starter-bundles.md](starter-bundles.md) or the offline kit.
+- gap: no Tello sim, no DJI MSDK or Olympe path on the Mac, no driver for an organiser-provided sim.
+- gap: no 3D arena (altitude changes, overhangs) and no recorded close-area obstacle flight.
+- gap: `research/close-area-nav/06-task-phrasing-survey.md` is not in this checkout, so the
+  question order above is not checked against how past events worded the task.
+
+## 6. Intake card
+
+Copy into the team repo's `docs/` and fill during 0:00-0:10.
+
+| # | Answer | Branch taken | Hub path opened |
+|---|---|---|---|
+| Q1 drone + SDK | | | |
+| Q2 sim / real | | | |
+| Q3 how B is given, tolerance | | | |
+| Q4 scoring | | | |
+| Q5 sensors | | | |
+| Q6 indoor / outdoor, venue positioning | | | |
+| Q7 obstacles | | | |
+| Q8 compute | | | |
+| Q9 additions allowed | | | |
+| Q10 deliverable, counted runs | | | |
+
+## 7. Not verified
+
+- No branch was walked end to end. Every driver named above is unwritten; every sim except
+  close-area-arena and sitl-docker was not run in the hub.
+- Setup times are README-based estimates from [doc 02](research/close-area-nav/02-sims-platforms-competitions.md), not timings.
+- IMAV 2026 factors come from doc 02's PDF extraction of the rulebook; the EDGE scoring is unknown until Day 1.
+- The defaults in section 1 are guesses about a likely venue, not information from the organisers.
+- Platform frame and unit items marked "not confirmed" in [frames.md](../templates/drone-adapter/frames.md)
+  still need a bench test.
+
+## Sources
+
+Hub files only, read on 2026-11-09:
+[close-area-nav README](research/close-area-nav/README.md), [01](research/close-area-nav/01-planning-and-mapping.md),
+[02](research/close-area-nav/02-sims-platforms-competitions.md), [03](research/close-area-nav/03-close-area-localization.md),
+[04](research/close-area-nav/04-innovation-prior-art.md), [07](research/close-area-nav/07-pl-margin-prior-art.md),
+[drone-adapter README](../templates/drone-adapter/README.md), [frames.md](../templates/drone-adapter/frames.md),
+[close-area-arena README](../samples/close-area-arena/README.md), [day-0 runbook](day0-runbook.md),
+[decoder rows 31-33](problem-statement-decoder.md), [challenge-2 entry point](challenge-2-autonomous-flight.md).
+External facts (PX4, ArduPilot, Bitcraze, Tello, DJI, IMAV) are as cited in those files.
