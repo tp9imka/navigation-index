@@ -29,8 +29,8 @@ Use this block when the brief is "fly a drone from A to B in a close area, maybe
    pitch: [templates/demo-script-close-area.md](templates/demo-script-close-area.md),
    [templates/pitch/close-area-story.md](templates/pitch/close-area-story.md).
 
-MCP-only clients: `read` serves `docs/**/*.md` and `samples/<name>/README.md`. It may refuse
-`templates/` files and `samples/close-area-arena/CONTRACT.md`; open those with file access.
+MCP-only clients: `read` serves `docs/**/*.md`, `templates/**/*.md` and `samples/<name>/*.md`
+(README, CONTRACT, INTEGRATION), so every page above is reachable without file access.
 
 Free-text search ranks a pasted problem statement poorly. Do this instead:
 
