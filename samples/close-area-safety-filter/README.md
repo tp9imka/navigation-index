@@ -218,6 +218,22 @@ Full tables and barrier diagnostics: [kill_b_summary_0.md](results/kill_b_summar
   held-out seeds. The job hit its time limit before writing this section; the loop driver wrote it
   from the result files.
 
+## Integrity monitor (ran 2026-11-09, synthetic)
+
+[integrity/](integrity/) adds a second position source (UWB anchors, NLOS bias fault) and a
+solution-separation monitor that outputs a protection level (PL, integrity risk 1e-3 per epoch),
+a detection flag and an "ambiguous" state. `python run_monitor.py --layouts 100 --seed 0` (55 s).
+Table: [integrity/results/monitor_0.md](integrity/results/monitor_0.md).
+
+- **The PL held in every case:** breach fraction (true error above PL) 0 to 1.3e-4 for the
+  solution-separation variants, under VIO jump, bias, dropout, UWB NLOS and both at once.
+- **Median PL 0.41-0.59 m** (single-exclusion variant), at or below 1.0 m in 82-100 % of epochs.
+  That is the number a margin can use; the tuned fixed bound in part b was 0.2 m.
+- **Max-separation exclusion picks the wrong source** (9 runs NLOS, 19 runs both faults), as the
+  hub's multi-source-fde saw. The headline's "hover when ambiguous" rule exists for this case.
+- The job hit its time limit before writing a README; the loop driver wrote this from the result
+  files. Not yet used by any filter arm: that is item 34.
+
 ## Add an arm
 
 1. In `filters.py`, subclass `SafetyFilter` with `NAME` (for example `"F3"`) and `DEFAULTS`
