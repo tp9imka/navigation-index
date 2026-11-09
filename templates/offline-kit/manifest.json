@@ -1047,6 +1047,20 @@
    "size_complete": false
   },
   {
+   "id": "pip:close-area-safety-filter",
+   "type": "pip",
+   "tier": "standard",
+   "license": "per package (see PyPI metadata)",
+   "source": "samples/close-area-safety-filter/requirements.txt",
+   "requirements": [
+    "numpy>=2.0",
+    "scipy>=1.13"
+   ],
+   "vcs": [],
+   "size": null,
+   "size_complete": false
+  },
+  {
    "id": "pip:cuas-classifiers",
    "type": "pip",
    "tier": "standard",

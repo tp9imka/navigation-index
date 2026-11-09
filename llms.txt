@@ -1,6 +1,6 @@
 # navigation-index
 
-> Knowledge hub for navigation / PNT / GNSS-denied autonomy with a defense lens: 923 open-source repos, 960 documents, talks, courses and datasets, 50 usage samples and 52 guides, linked in one graph over 46 concepts.
+> Knowledge hub for navigation / PNT / GNSS-denied autonomy with a defense lens: 923 open-source repos, 960 documents, talks, courses and datasets, 51 usage samples and 52 guides, linked in one graph over 46 concepts.
 
 Read AGENTS.md for how to query and extend. For a problem statement, run `python3 tools/query.py decode "<statement>"` (MCP tool `decode`) or read docs/problem-statement-decoder.md to pick its rows, then search with each row's keywords: `python3 tools/query.py search "<keywords>"` or the MCP server tools/mcp_server.py (its `read` tool returns any guide or sample README). Guides (kind `guide`) are searchable like any other node.
 
@@ -88,6 +88,7 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [celestial-star-tracker](samples/celestial-star-tracker/README.md) (ran, venv): cedar-solve lost-in-space on real star images vs a known WCS, then lat/lon from star elevations above an IMU vertical; error budget for level, vibration, accel bias, clock, refraction
 - [close-area-arena](samples/close-area-arena/README.md) (ran, venv): Seeded 2.5D A=>B arena (random, U-trap, narrow-gap layouts) behind the published pose/ranges/send_setpoint interface, truth scorer, straight baseline, EDT timing
 - [close-area-planner-reactive](samples/close-area-planner-reactive/README.md) (ran, venv): APF (wall-follow escape) and VFH+ from range returns only, on random, U-trap and narrow-gap layouts, with a 72-beam fan and a Crazyflie-like 4-beam fan; where each gets stuck or collides
+- [close-area-safety-filter](samples/close-area-safety-filter/README.md) (ran, venv): Whether a range-only safety filter (PX4 Collision Prevention style, PX4-CBF) already prevents A* collisions under VIO jump, bias and dropout faults, with and without map-only obstacles the range fan cannot see
 - [cuas-classifiers](samples/cuas-classifiers/README.md) (ran, venv): UAV vs bird from real radar tracks (NRC Echodyne) and DroneRF detection / identification
 - [dismounted-foot-ins](samples/dismounted-foot-ins/README.md) (ran, stdlib): Stdlib 15-state ZUPT EKF on 36 real pyshoe trials, cross-checked with pyshoe; corridor heading, floor, simulated UWB; CoT/navdash
 - [e2e-visual-nav-vpair](samples/e2e-visual-nav-vpair/README.md) (ran, venv): Full chain on one real flight: nadir VO => DINOv2 top-5 => LightGlue fixes => voting => altpnt v2 EKF + gate / solution separation, scored per km
@@ -158,9 +159,9 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [Indoor and pedestrian navigation](catalog/concepts/indoor-pedestrian.md): 25 items - PDR, foot-mounted INS, dismounted soldier navigation, indoor positioning.
 - [Autopilots and flight control](catalog/concepts/autopilot.md): 166 items - Flight stacks, control loops, estimation inside autopilots, firmware.
 - [MAVLink, ground control and C2 links](catalog/concepts/mavlink-gcs.md): 59 items - MAVLink protocol, SDKs, ground control stations, telemetry radios.
-- [Path and motion planning](catalog/concepts/path-planning.md): 179 items - Global/local planners, sampling and search based planning, trajectory optimization.
+- [Path and motion planning](catalog/concepts/path-planning.md): 180 items - Global/local planners, sampling and search based planning, trajectory optimization.
 - [Mission planning and routing](catalog/concepts/mission-planning.md): 45 items - Route networks, waypoint missions, coverage, terrain-aware and threat-aware routing.
-- [Obstacle avoidance and collision avoidance](catalog/concepts/obstacle-avoidance.md): 130 items - Reactive avoidance, sense-and-avoid, DAA.
+- [Obstacle avoidance and collision avoidance](catalog/concepts/obstacle-avoidance.md): 131 items - Reactive avoidance, sense-and-avoid, DAA.
 - [Swarms and multi-agent navigation](catalog/concepts/multi-agent.md): 91 items - Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 - [GIS, maps and geospatial data](catalog/concepts/gis-mapping.md): 73 items - Map engines, tiles, DEMs, orthophotos, coordinate systems, geodesy.
 - [Geodesy and coordinate frames](catalog/concepts/geodesy.md): 27 items - Datums, projections, ECEF/ENU/NED, MGRS, geoid models.
@@ -169,7 +170,7 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [Underwater navigation](catalog/concepts/underwater-nav.md): 28 items - DVL, USBL/LBL acoustics, AUV navigation, underwater SLAM.
 - [Ground vehicle autonomy](catalog/concepts/ground-vehicle-nav.md): 68 items - UGV/off-road autonomy stacks, localization and navigation for ground robots.
 - [Space and orbital navigation](catalog/concepts/space-nav.md): 39 items - Orbit determination, LEO-PNT, spacecraft navigation.
-- [Simulation and HIL/SITL](catalog/concepts/simulation.md): 161 items - Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simulators.
+- [Simulation and HIL/SITL](catalog/concepts/simulation.md): 162 items - Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simulators.
 - [Datasets and benchmarks](catalog/concepts/datasets-benchmarks.md): 259 items - Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [ROS / ROS 2 robotics middleware](catalog/concepts/ros.md): 151 items - ROS ecosystem packages for navigation and localization.
 - [Onboard / edge AI perception](catalog/concepts/edge-ai.md): 137 items - Detection, segmentation, depth on embedded hardware supporting navigation.

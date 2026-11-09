@@ -6,10 +6,11 @@ Global/local planners, sampling and search based planning, trajectory optimizati
 
 **Sub-concepts:** [Mission planning and routing](../../catalog/concepts/mission-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
-## Samples (2)
+## Samples (3)
 
 - [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md) - Small deterministic simulator that every close-area A=>B approach in the hub is compared in.
 - [Close-area reactive planners: APF with wall-follow escape and VFH+, range sensor only, 72-beam vs Crazyflie-like 4-beam fan](../../catalog/samples/close-area-planner-reactive.md) - Map-free fallback planners for close-area A=>B, written as close-area-arena Planners that read only the pose and the range scan.
+- [Close-area safety-filter kill test A: no filter, PX4 Collision Prevention style and PX4-CBF as shipped on A* under VIO faults, with map-only obstacles the range fan cannot see](../../catalog/samples/close-area-safety-filter.md) - Harness that puts a safety filter between a planner and the vehicle in the shared close-area-arena, for the kill test of the hub's integrity-aware safety-filter headline.
 
 ## Guides (7)
 
