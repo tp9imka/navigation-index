@@ -89,6 +89,33 @@ So a full 3D ESDF rebuild of a 20 x 20 x 5 m volume at 0.1 m fits a 2-5 Hz repla
 this machine; the 2D arena grid costs about 1.5 ms. An earlier run of the same script gave a 187 ms
 median for 3D (overwritten; timings move a few percent with load).
 
+## A* + ESDF grid planner (ran 2026-11-09, synthetic)
+
+`planners/astar_esdf.py`: A* on a grid inflated by radius + 0.10 m margin, ESDF clearance cost,
+shortcutting, carrot following with clearance-scaled speed, replan at 2-5 Hz. `known_map` plans
+on the true grid; `unknown_map` builds the grid from range returns only and treats unknown cells
+as passable with a penalty. This is the planner the safety filters sit on.
+
+`.venv/bin/python -m planners.astar_esdf --layouts 50 --seed 0` (about 7 min):
+
+| family | straight reached | known map reached | unknown map reached | unknown failures | plan ms median / p95 (known; unknown) |
+|---|---|---|---|---|---|
+| random | 26 % | 100 % | 100 % | none | 1.22 / 10.62; 21.01 / 57.53 |
+| u_trap | 0 % | 100 % | 100 % | none | 1.47 / 15.08; 32.94 / 60.2 |
+| narrow_gap | 0 % | 100 % | 80 % | 14 % stuck, 6 % timeout, 0 % collision | 3.85 / 39.08; 37.18 / 64.54 |
+
+Source: [random](results/astar_esdf_random_0.md), [u_trap](results/astar_esdf_u_trap_0.md),
+[narrow_gap](results/astar_esdf_narrow_gap_0.md). Tuned on seed-0 layouts 0-9, so seed 0 is not
+held out. A held-out spot check by the loop driver (seed 3, 10 u_trap layouts) gave the same:
+straight 0 %, known 100 %, unknown 100 %.
+
+- Unknown-map "stuck" runs on narrow_gap are loops, not stops: the planner follows an unseen
+  wall, sees more wall and turns back (2.6-11.7 m flown in the last 10 s). The scorer's 10 s
+  displacement rule calls that stuck.
+- For gaps under about 0.6 m the planner retries with radius-only inflation (272 known, 128
+  unknown replans on narrow_gap).
+- Not run yet: A* under the estimator faults (`run_faults.py --planner astar_esdf`).
+
 ## Estimator and faults (ran 2026-11-09, synthetic)
 
 `estimator.py` is a position/velocity EKF fed by a 30 Hz VIO-like source and a 50 Hz IMU-like
