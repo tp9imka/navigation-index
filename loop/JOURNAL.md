@@ -36,3 +36,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - fix: tools/check_links.py cached listdir (took >10 min at load 90, now 4.5 s).
 - landed: 03 => 7a55438 (known map 100 % all families; unknown map 80 % narrow_gap, loops not stops; claims checked 2/2: results table matches file, held-out seed 3 u_trap 10/10)
 - landed: 11 => 881d7e1 (log scorer matches arena scorer; claims checked 1/1 re-run on hand log); 10 => bcd1b17 (APF+escape 92 % u_trap with 72 beams; 4-beam fan: VFH+ collides 72-98 %, APF 8-54 %; claims checked 2/2: table row matches results, smoke skips)
+- landed: 08a => 226dd1f (make test 6/6, mock A=>B 0.194 m; driver re-ran both); 16 => 6e12000 (0.16 m tag >=90 % detection to 5 m frontal, approach 50/50 within 0.1 m; smoke re-run); 14 => 9501e7c (intake tree; stale gap notes: drivers and A* now exist - sweep fixes)
