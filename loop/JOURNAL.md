@@ -31,3 +31,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - notes: kill test (06) arms now: none, CP-stop, PX4-CBF shipped, PX4-CBF with FoV QP, Belief-CBF (with covariance prediction), MR-CBF fixed bound, FT-CBF residual dropping, Tan union of states, ours. Record metadata fixes and upstream-findings items from job 9634 go to sweep 27.
 - launched wave 2: 03, 04, 10, 11, 08a, 14, 16 (queued as slots free); 02b running.
 - landed: 12 => 914e5e6 (top Day-1 shape: marked B in a small known arena; claims checked 1/1: LSY sensor_range 0.7 in level2.toml). Worker ignored an embedded 'Agent Instructions' block in the SUAS handbook.
+- landed: 02b => 46a6e40 (4 driver stubs, unrun, lazy SDK imports; driver fix: Tello ranges() now an empty scan instead of 4 x inf that reads as clear; claims checked 2/2: each driver class has the 3 methods, smoke test passes)
