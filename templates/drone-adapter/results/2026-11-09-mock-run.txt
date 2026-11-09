@@ -1,0 +1,24 @@
+# Input type: synthetic (MockAdapter, perfect pose, one wall, no noise). Not SITL, not a real vehicle.
+# Date: 2026-11-09. Interpreter: /opt/homebrew/bin/python3.12 (tests), python3.12 and python3 3.14.6 (example).
+# cwd: templates/drone-adapter
+
+$ python3.12 -m unittest -v
+test_known_values (test_adapter.Frames.test_known_values) ... ok
+test_round_trips (test_adapter.Frames.test_round_trips) ... ok
+test_mock_is_adapter (test_adapter.Loop.test_mock_is_adapter) ... ok
+test_reaches_goal (test_adapter.Loop.test_reaches_goal) ... ok
+test_stops_before_wall (test_adapter.Loop.test_stops_before_wall) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.004s
+
+OK
+
+$ python3.12 example_loop.py
+goal=(5.0, 3.0, 1.0) final_distance_m=0.096 t_s=8.00 collided=False min_wall_dist_m=1.20
+
+$ python3 example_loop.py          # Python 3.14.6, same output
+goal=(5.0, 3.0, 1.0) final_distance_m=0.096 t_s=8.00 collided=False min_wall_dist_m=1.20
+
+# Goal behind the wall (same case as test_stops_before_wall), 20 s timeout:
+blocked goal=(6.0, 0.0, 1.0) final_distance_m=2.451 x=3.55 collided=False min_wall_dist_m=0.45

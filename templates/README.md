@@ -9,6 +9,7 @@ Start: `cp -r templates/project-repo ~/our-project && cd ~/our-project && make t
 | Template | What it is for | When in the 48h |
 |---|---|---|
 | [project-repo/](project-repo/) | Skeleton repo: README with honest results table, AGENTS.md/CLAUDE.md wired to this hub, Makefile (`setup test sim demo eval`), docker-compose skeleton, typed interfaces (PoseSource, NavFilter, IntegrityMonitor, Publisher) with a working stdlib pipeline, metrics script | Before the event: fork and run once. H+0: rename, delete what you will not use |
+| [drone-adapter/](drone-adapter/) | Drone-agnostic seam: `pose()/ranges()/send_setpoint()` dataclasses and Protocol, ENU/NED and FLU/FRD helpers, a stdlib mock vehicle, a 20 Hz example loop, and per-platform frame notes (PX4, ArduPilot, Crazyflie, Tello) | H+0: copy into the project repo; write the planner against it before the drone is known |
 | [team-roles-and-48h-plan.md](team-roles-and-48h-plan.md) | Who owns what, time boxes, exit criteria, sleep shifts | Before the event; pinned on the wall at H+0 |
 | [threat-model.md](threat-model.md) | Threats, assumptions, what you mitigate and what you do not | H+0 to H+2; frozen by H+14; source of the "limits" slide |
 | [adr.md](adr.md) | One architecture decision per file | Any time a choice costs more than an hour to undo |
