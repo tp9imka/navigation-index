@@ -82,7 +82,7 @@ Initial backlog: fable brainstorm, 2026-11-09, base dbafbff.
 | 49 | in-flight | DWA and Bug2/TangentBug local planners vs APF/VFH+ (72 and 4 beams) | P | S | - | samples/close-area-planner-dwa-bug/ | Nav2 default local planner and classic complete planners | table on 3 families x 2 fans |
 | 50 | in-flight | D* Lite incremental replanning vs A* from scratch on unknown maps | P | S | - | samples/close-area-planner-dstar/ | Does incremental search matter here | table + plan-time comparison |
 
-| 51 | in-flight | flight-repo arrival gating: 'arrived' only with healthy nav (or adapter-confirmed), pass NavHealth to the safety arm; rerun first-flight-jump | T | S | 36 B | templates/flight-repo/flightloop/loop.py, safety_shim.py, results/ | Under a VIO jump the loop declares arrival 0.63 m from B | first-flight-jump reaches B or hovers, never false-arrives |
+| 51 | done 2544945 | flight-repo arrival gating: 'arrived' only with healthy nav (or adapter-confirmed), pass NavHealth to the safety arm; rerun first-flight-jump | T | S | 36 B | templates/flight-repo/flightloop/loop.py, safety_shim.py, results/ | Under a VIO jump the loop declares arrival 0.63 m from B | first-flight-jump reaches B or hovers, never false-arrives |
 
 ## Planned waves
 

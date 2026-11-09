@@ -79,3 +79,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - landed: 34 => 5f5e16c. VERDICT seed 0: F5 0 % collisions in all 6 cases (incl. UWB faults), >= 3x below F3 on jump/bias, but reach 61-89 % of F2 => FAIL reach bar; ties F4 fixed 0.2 m (tuned on seed 0) on safety, loses on jump reach. Monitor PL over budget in 'both' (1.84e-3). Held-out 37 decides; pivot kit 39 launched in parallel.
 - landed: 46a => 64bddae (5 complex families, world JSON close-area-world/1 with 27/27 round trips; A* known map 100 % on all; straight 0-15 %; preview PNG checked by driver)
 - landed: 48a => f40bc12 (Pyodide 314.0.7 verified on jsdelivr; cold load 4.9 s / 22 MB, warm 2.6 s; A* known-map 30 s run ~1 s; scores match native; verdict go, use a Web Worker)
+- landed: 51 => 2544945 (jump run ends unconfirmed 0.64 m from B instead of false arrival; first-flight still reaches; driver fixed 4 stale README lines)
