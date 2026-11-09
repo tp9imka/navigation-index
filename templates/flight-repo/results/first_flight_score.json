@@ -18,7 +18,7 @@
  "intervention_fraction": 0.3434,
  "manual_mode_entries": 0,
  "steps_scored": 396,
- "steps_in_log": 403,
+ "steps_in_log": 423,
  "log_rate_hz_median": 20.0,
  "max_pose_error_m": 0.0,
  "log": "results/first_flight.jsonl"

@@ -10,7 +10,8 @@ from dataclasses import replace
 
 from flightloop import (DEGRADED, LOST, OK, GoToGoal, MockAdapter, NavHealth, PassThrough, Planner,
                         RangeStop, SafetyFilter, Setpoint, run)
-from flightloop.loop import DEGRADED_SPEED_CAP_MS, DT_S
+from flightloop.loop import ARRIVE_DWELL_S, ARRIVE_WAIT_S, DEGRADED_SPEED_CAP_MS, DT_S
+from flightloop.safety_shim import ArmShim, accepts_nav_health
 
 OPEN = ((0.0, 0.0, 1.0), (5.0, 3.0, 1.0))
 BLOCKED = ((0.0, 0.0, 1.0), (6.0, 0.0, 1.0))
@@ -97,6 +98,42 @@ class FlightLoop(unittest.TestCase):
         self.assertEqual(states, [DEGRADED, DEGRADED, LOST, LOST])
         self.assertEqual(h.update(replace(p, t=30.0, reset_counter=4)).state, OK)
         self.assertEqual(h.update(replace(p, t=31.0, reset_counter=4, sigma_xy=2.0)).state, LOST)
+
+    def test_arrival_gated_on_health(self):
+        # degraded the whole flight: reaches B on the estimate, hovers, must not say "arrived"
+        _, r, lines = fly(OPEN, wrap=lambda ad: FaultyPose(ad, 0.0, quality=40))
+        self.assertFalse(r.arrived)
+        self.assertEqual(r.outcome, "unconfirmed")
+        self.assertEqual(lines[-1]["mode"], "unconfirmed")
+        wait = [ln for ln in lines if ln["mode"] == "arrive_wait"]
+        self.assertGreaterEqual(len(wait) * DT_S, ARRIVE_WAIT_S - 2 * DT_S)
+        self.assertTrue(all(ln["setpoint"]["vx"] == 0.0 == ln["setpoint"]["vy"] for ln in wait))
+        # healthy: arrived only after ARRIVE_DWELL_S of ok inside the tolerance
+        _, r, lines = fly(OPEN)
+        self.assertEqual(r.outcome, "arrived")
+        dwell = [ln for ln in lines if ln["mode"] == "arrive_dwell"]
+        self.assertGreaterEqual(len(dwell) * DT_S, ARRIVE_DWELL_S - DT_S)
+
+    def test_shim_passes_nav_health_only_to_aware_arms(self):
+        class Plain:      # F0-F2 signature
+            def filter(self, setpoint, pose, scan, map_obstacles, health, dt):
+                return setpoint, False
+
+        class Aware:
+            got = None
+
+            def filter(self, setpoint, pose, scan, map_obstacles, health, dt, nav_health=None):
+                Aware.got = nav_health
+                return setpoint, False
+
+        p, rep = MockAdapter().pose(), NavHealth().update(MockAdapter().pose())
+        for arm, aware in ((Plain(), False), (Aware(), True)):
+            shim = ArmShim.__new__(ArmShim)   # skip loading filters.py (numpy)
+            shim.arm, shim.world, shim.dt = arm, None, DT_S
+            shim.health_aware = accepts_nav_health(arm)
+            self.assertEqual(shim.health_aware, aware)
+            shim.filter(Setpoint(0.1, 0.0, 0.0, 0.0), p, None, rep)
+        self.assertIs(Aware.got, rep)
 
 
 if __name__ == "__main__":

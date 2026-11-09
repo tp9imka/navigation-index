@@ -6,6 +6,10 @@
   or fail safe without a steady setpoint stream, so a slow planner must never stall the stream.
 - Health degraded => horizontal speed capped at DEGRADED_SPEED_CAP_MS.
 - Health lost => hover (zero velocity), planner not called.
+- Arrival is gated on nav health. Estimate within GOAL_TOL_M => hover. Health ok for
+  ARRIVE_DWELL_S in a row while still within GOAL_TOL_M => "arrived". Health not ok near the
+  goal => keep hovering ("arrive_wait"); ARRIVE_WAIT_S after first entering GOAL_TOL_M without
+  a confirmation => stop with "unconfirmed" (the estimate says B, the estimator cannot vouch).
 - One JSONL line per tick: t, pose, setpoint, intervened, health, mode (+ source, reasons, plan_ms).
 
 realtime=False runs lockstep, as fast as Python allows: right for MockAdapter, whose
@@ -22,16 +26,18 @@ from typing import IO
 
 try:
     from .adapter import Adapter, Pose, Setpoint
-    from .health import DEGRADED, LOST, HealthReport, NavHealth
+    from .health import DEGRADED, LOST, OK, HealthReport, NavHealth
 except ImportError:
     from adapter import Adapter, Pose, Setpoint
-    from health import DEGRADED, LOST, HealthReport, NavHealth
+    from health import DEGRADED, LOST, OK, HealthReport, NavHealth
 
 RATE_HZ = 20.0
 DT_S = 1.0 / RATE_HZ
 PLAN_BUDGET_S = 0.030        # wall time the loop waits for the planner each tick
 DEGRADED_SPEED_CAP_MS = 0.3  # horizontal speed cap while health is degraded
 GOAL_TOL_M = 0.20            # estimated 3D distance to goal that counts as arrived
+ARRIVE_DWELL_S = 1.0         # health ok this long, in a row, within GOAL_TOL_M => arrived
+ARRIVE_WAIT_S = 10.0         # after first entering GOAL_TOL_M, give up confirming => unconfirmed
 TIMEOUT_S = 60.0             # flight time limit (pose.t)
 
 HOVER = Setpoint(0.0, 0.0, 0.0, 0.0)
@@ -39,7 +45,7 @@ HOVER = Setpoint(0.0, 0.0, 0.0, 0.0)
 
 @dataclass
 class FlightResult:
-    arrived: bool
+    arrived: bool            # True only for a health-confirmed arrival
     ticks: int
     t_s: float
     final_dist_m: float      # from the estimate, not truth
@@ -49,6 +55,7 @@ class FlightResult:
     overrun_ticks: int = 0   # realtime only: tick took longer than DT_S
     modes: dict[str, int] = field(default_factory=dict)
     health: dict[str, int] = field(default_factory=dict)
+    outcome: str = ""        # arrived | unconfirmed | timeout
 
 
 def _sp(sp) -> Setpoint:
@@ -94,6 +101,8 @@ def run(adapter: Adapter, planner, safety, goal: tuple[float, float, float], *,
     pending: Future | None = None
     submitted_at = 0.0
     t0: float | None = None
+    near_since: float | None = None   # pose.t of first entry into GOAL_TOL_M
+    ok_since: float | None = None     # start of the current ok-and-within-tolerance streak
     pool = ThreadPoolExecutor(max_workers=1, thread_name_prefix="planner")
     next_tick = clock()
     try:
@@ -104,10 +113,21 @@ def run(adapter: Adapter, planner, safety, goal: tuple[float, float, float], *,
             dist = math.dist((pose.x, pose.y, pose.z), goal)
             res.final_dist_m, res.t_s = dist, pose.t - t0
             plan_ms = None
-            if dist < GOAL_TOL_M:
+            near = dist < GOAL_TOL_M
+            if near:
+                near_since = pose.t if near_since is None else near_since
+                ok_since = (pose.t if ok_since is None else ok_since) if hr.state == OK else None
+            else:
+                ok_since = None
+            if near and ok_since is not None and pose.t - ok_since >= ARRIVE_DWELL_S:
                 mode, source, target = "arrived", "none", HOVER
+            elif near and pose.t - near_since >= ARRIVE_WAIT_S:
+                mode, source, target = "unconfirmed", "none", HOVER
             elif pose.t - t0 >= timeout_s:
                 mode, source, target = "timeout", "none", HOVER
+            elif near:
+                mode = "arrive_dwell" if ok_since is not None else "arrive_wait"
+                source, target = "none", HOVER
             elif hr.state == LOST:
                 mode, source, target = "hover", "none", HOVER
             else:
@@ -139,8 +159,8 @@ def run(adapter: Adapter, planner, safety, goal: tuple[float, float, float], *,
             res.health[hr.state] = res.health.get(hr.state, 0) + 1
             if log is not None:
                 log.write(_log_line(pose, sp, intervened, hr, mode, source, plan_ms) + "\n")
-            if mode in ("arrived", "timeout"):
-                res.arrived = mode == "arrived"
+            if mode in ("arrived", "unconfirmed", "timeout"):
+                res.arrived, res.outcome = mode == "arrived", mode
                 return res
             if realtime:
                 next_tick += DT_S

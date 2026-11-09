@@ -17,7 +17,7 @@ Status: hackathon starter, not flight-tested, not for operational use.
 ## Run it
 
 ```sh
-make test    # 6 unit tests on the mock, stdlib import check, 3 s arena smoke flight (skips without the arena venv)
+make test    # 8 unit tests on the mock, stdlib import check, 3 s arena smoke flight (skips without the arena venv)
 make sim     # 4 mock flights, one score line each, JSONL logs in runs/
 make arena   # the hub's arena "straight" planner flown through this loop (needs the hub checkout)
 python3 main.py --mock          # A=(0,0,1) => B=(5,3,1), one-line score
@@ -54,13 +54,26 @@ What each piece is:
 | `--safety arm:F0\|F1\|F2` | `flightloop/safety_shim.py: ArmShim` | Kill-test arm from [close-area-safety-filter](../../samples/close-area-safety-filter/README.md) `filters.py`, called with the arena World, a health dict and dt 0.05 s |
 | `--log` | `arena_adapter.CloseAreaLog` | Turns each loop line into [close-area-log/1](../../samples/close-area-arena/log_format.md), adding `truth` (sim truth at the same `pose()` call) and `planned` (A* `path_xy`, when it changes). Loop fields kept as extras: `loop_mode`, `health`, `source`, `reasons`, `plan_ms` |
 
+### Arrival rule (flightloop/loop.py)
+
+The loop declares `arrived` only on a confirmed estimate:
+
+| Situation, estimate within `GOAL_TOL_M` (0.2 m) of B | What happens |
+|---|---|
+| Health `ok` for `ARRIVE_DWELL_S` (1.0 s) in a row | Hover meanwhile (`mode=arrive_dwell`), then `mode=arrived`, `run()` returns `outcome=arrived` |
+| Health `degraded` or `lost` | Hover and wait (`mode=arrive_wait`) |
+| `ARRIVE_WAIT_S` (10.0 s) after first entering the tolerance, still not confirmed | `mode=unconfirmed`, `run()` returns `arrived=False`, `outcome=unconfirmed` |
+
+`ArmShim` passes the loop's `HealthReport` to arms whose `filter()` has a `nav_health`
+parameter. F0-F2 have none and get the unchanged kill-test call.
+
 ### Result (2026-11-09, synthetic, macOS arm64, uv picked CPython 3.11.15, numpy 2.4.6)
 
 Score line from `main.py` (truth, 50 Hz physics) and `score_log.py` (truth from the 20 Hz log),
-from [results/first_flight.txt](results/first_flight.txt):
+with the arrival rule, from [results/first_flight_health_gate.txt](results/first_flight_health_gate.txt):
 
 ```
-score input=synthetic adapter=arena:random:0 fault=truth planner=arena:astar_esdf safety=arm:F2 reached=True final_dist_m=0.185 t_s=20.10 collided=False min_clearance_m=0.827 max_pose_error_m=0.000 ticks=403 intervened=136 keepalive=0 planner_errors=0 modes=arrived:1,nominal:402 health=ok:403 log=results/first_flight.jsonl
+score input=synthetic adapter=arena:random:0 fault=truth planner=arena:astar_esdf safety=arm:F2 reached=True final_dist_m=0.165 t_s=21.10 collided=False min_clearance_m=0.827 max_pose_error_m=0.000 ticks=423 intervened=136 keepalive=0 planner_errors=0 modes=arrive_dwell:20,arrived:1,nominal:402 health=ok:423 log=results/first_flight.jsonl
 input            synthetic (positions from truth)
 outcome          reached
 time to goal     19.76 s   (run ends at 19.76 s, 0.299 m from B)
@@ -68,6 +81,10 @@ min clearance    0.8268 m   at [9.055, 12.959, 13.66] (x, y, t)
 path length      24.068 m   (straight A=>B 23.442 m)
 interventions    2   fraction 0.3434 of logged steps
 ```
+
+The 1.0 s dwell adds 20 ticks and moves the run end from 20.10 s to 21.10 s. Before the
+rule: `reached=True final_dist_m=0.185 t_s=20.10 ticks=403`
+([results/first_flight.txt](results/first_flight.txt)).
 
 ![planned vs flown, arena random seed 0 index 0, astar_esdf + F2](results/first_flight.png)
 
@@ -94,25 +111,32 @@ path 23.84 m. The arena's own 10 Hz harness gives reached, 19.38 s, 0.5647 m, 23
 So the 20 Hz loop reproduces the arena within 0.08 s and 0.0004 m. F2 adds 0.26 m of clearance
 (0.8268 m) and 0.30 s.
 
-### With the estimator jump fault: FAIL (not reached)
+### With the estimator jump fault: not reached, loop says `unconfirmed`
 
 `make first-flight-jump` ([score JSON](results/first_flight_jump_score.json), [plot](results/first_flight_jump.png),
-lines in [first_flight_warm.txt](results/first_flight_warm.txt)):
+lines in [results/first_flight_health_gate.txt](results/first_flight_health_gate.txt)):
 
 ```
-score input=synthetic adapter=arena:random:0 fault=jump planner=arena:astar_esdf safety=arm:F2 reached=False final_dist_m=0.634 t_s=34.60 collided=False min_clearance_m=0.401 max_pose_error_m=0.722 ticks=693 intervened=172 keepalive=0 planner_errors=0 modes=arrived:1,capped:345,nominal:347 health=degraded:346,ok:347 log=results/first_flight_jump.jsonl
-outcome          log_ended
+score input=synthetic adapter=arena:random:0 fault=jump planner=arena:astar_esdf safety=arm:F2 reached=False final_dist_m=0.640 t_s=44.60 collided=False min_clearance_m=0.401 max_pose_error_m=0.741 ticks=893 intervened=172 keepalive=0 planner_errors=0 modes=arrive_wait:200,capped:345,nominal:347,unconfirmed:1 health=degraded:546,ok:347 log=results/first_flight_jump.jsonl
+outcome          stuck
 ```
 
-- The loop stopped at `mode=arrived`: the **estimate** was within `GOAL_TOL_M` (0.2 m) of B, the
-  truth was 0.634 m away, outside the 0.3 m goal disc. The loop's arrival check uses the
-  estimate; nothing on board can tell. A real flight would land in the wrong place.
-- Health was `degraded` on 346 of 693 ticks, so speed was capped at 0.3 m/s for half the flight
-  (34.60 s against 20.10 s).
+- The truth still ends 0.640 m from B, outside the 0.3 m goal disc: the gate does not fix the
+  estimate, it stops the loop from lying about it. The loop now ends `mode=unconfirmed`, not
+  `arrived`.
+- The estimate entered `GOAL_TOL_M` at t=34.6 s with health `degraded` (`sigma_xy=0.40`, above
+  `SIGMA_DEGRADED_M` 0.30). The vehicle hovered 200 ticks (10 s, `ARRIVE_WAIT_S`); sigma never
+  dropped, so no confirmation. The scorer calls the hover-to-end `stuck`.
+- Before the rule the same flight ended `modes=arrived:1`, `final_dist_m=0.634`, `t_s=34.60`
+  ([results/first_flight_warm.txt](results/first_flight_warm.txt)).
+- Health was `degraded` on 346 of 693 flying ticks before the wait (speed capped at 0.3 m/s);
+  the 200 wait ticks are degraded too (546 total).
 - Without a filter (`arm:F0`, same fault) min clearance was 0.1848 m against the 0.15 m radius;
   with F2 0.402 m ([first_flight_arms.txt](results/first_flight_arms.txt)). One layout, one seed:
   this is a first flight, not a rate. Rates are in the kill test
   ([close-area-safety-filter](../../samples/close-area-safety-filter/README.md)).
+- Next fix is a position re-anchor near B (a visual marker or a range fix), so health can
+  return to `ok`. Not done here.
 
 ## Files
 
@@ -140,7 +164,7 @@ outcome          log_ended
 | Health `degraded` | Planner setpoint capped to `DEGRADED_SPEED_CAP_MS` (0.3 m/s horizontal). `mode=capped`. `RangeStop` adds 0.2 m margin |
 | Health `lost` | Zero velocity (hover), planner not called. `mode=hover` |
 | Planner raised | Hover for that tick, `mode=planner_error`, next tick tries again |
-| Estimated distance to B under `GOAL_TOL_M` (0.2 m), or `timeout_s` | One hover setpoint, then `run()` returns. `mode=arrived` / `timeout` |
+| Estimate within `GOAL_TOL_M` (0.2 m) with health ok for `ARRIVE_DWELL_S`, or `timeout_s` | One hover setpoint, then `run()` returns. `mode=arrived` / `timeout`; degraded near B => hover, then `unconfirmed` after `ARRIVE_WAIT_S` (see the arrival rule above) |
 
 Each JSONL line has `t`, `pose`, `setpoint` (the one actually sent), `intervened`, `health`,
 `mode`, plus `source`, `reasons` (why health is not ok) and `plan_ms`.
@@ -165,7 +189,7 @@ Ran 6 tests in 1.661s
 OK
 $ make sim
 python3 main.py --mock --scenario open --log runs/open.jsonl
-score scenario=open planner=go_to_goal safety=range_stop reached=True final_dist_m=0.194 t_s=7.00 collided=False min_wall_dist_m=1.20 ticks=141 intervened=0 keepalive=0 overruns=0 modes=arrived:1,nominal:140 log=runs/open.jsonl
+score scenario=open planner=go_to_goal safety=range_stop reached=True final_dist_m=0.194 t_s=8.05 collided=False min_wall_dist_m=1.20 ticks=162 intervened=0 keepalive=0 overruns=0 modes=arrive_dwell:21,arrived:1,nominal:140 (rerun after the arrival rule; was t_s=7.00, 141 ticks)
 python3 main.py --mock --scenario blocked --timeout 10 --log runs/blocked.jsonl
 score scenario=blocked planner=go_to_goal safety=range_stop reached=False final_dist_m=2.450 t_s=10.00 collided=False min_wall_dist_m=0.45 ticks=201 intervened=0 keepalive=0 overruns=0 modes=nominal:200,timeout:1 log=runs/blocked.jsonl
 python3 main.py --mock --scenario blocked --timeout 10 --planner blind --log runs/blocked-blind.jsonl
@@ -240,6 +264,6 @@ python3 main.py --mock --planner arena:straight --arena /path/to/navigation-inde
 - Arena first flight: one layout (random, seed 0, index 0), lockstep. In lockstep the planner
   still gets a 30 ms wall-clock budget, so a slow machine shows keep-alive ticks a fast one
   does not (0 here). The F2 arm runs at 20 Hz on a fresh scan; the kill test runs it at 50 Hz
-  on a 16.7 Hz scan. The arm gets no NavHealth report, only the pose fields.
+  on a 16.7 Hz scan. Health-aware arms get `nav_health` through the shim; F0-F2 ignore it.
 - Links to `../drone-adapter/` and `../../samples/` work inside the hub only. After copying the
   folder into a project repo, use the hub paths in `AGENTS.md`.

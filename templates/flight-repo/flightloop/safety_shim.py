@@ -8,8 +8,10 @@ and this loop's SafetyFilter has
     filter(setpoint, pose, scan, health_report) -> (setpoint, intervened).
 ArmShim converts: map_obstacles = the arena World (F0-F2 ignore it), health = the dict the kill
 test builds from the pose (t, quality, reset_counter, sigma_xy), dt = the loop period 0.05 s.
-The loop's NavHealth report is not passed to the arm; the loop still applies its own degraded
-cap and lost => hover before the filter.
+The loop's NavHealth report (HealthReport: state ok / degraded / lost, reasons) goes to arms
+whose filter() has a `nav_health` parameter, as filter(..., dt, nav_health=report). F0-F2 do
+not have it and get the exact kill-test call. The loop still applies its own degraded cap and
+lost => hover before the filter either way.
 
 Differences from the kill-test harness (run_kill.py), which runs the arm at 50 Hz on a 16.7 Hz
 scan: here the arm runs at 20 Hz on a fresh 20 Hz scan. F2's output low-pass gain is defined per
@@ -20,6 +22,7 @@ Stdlib at import time. filters.py (numpy) loads when the shim is built.
 from __future__ import annotations
 
 import importlib.util
+import inspect
 import os
 import sys
 
@@ -46,6 +49,14 @@ def load_filters(filter_dir: str):
     return mod
 
 
+def accepts_nav_health(arm) -> bool:
+    """True if arm.filter() takes a `nav_health` argument (the loop's HealthReport)."""
+    try:
+        return "nav_health" in inspect.signature(arm.filter).parameters
+    except (TypeError, ValueError):
+        return False
+
+
 class ArmShim:
     """flightloop SafetyFilter around one kill-test arm (F0, F1, F2)."""
 
@@ -54,6 +65,7 @@ class ArmShim:
         self.arm = self.filters.make(arm, **overrides)
         self.name = f"arm:{arm}"
         self.world, self.dt = world, dt
+        self.health_aware = accepts_nav_health(self.arm)
 
     def reset(self) -> None:
         self.arm.reset()
@@ -61,5 +73,6 @@ class ArmShim:
     def filter(self, setpoint, pose, scan, health):
         h = {"t": pose.t, "quality": pose.quality, "reset_counter": pose.reset_counter,
              "sigma_xy": pose.sigma_xy}
-        sp, intervened = self.arm.filter(setpoint, pose, scan, self.world, h, self.dt)
+        kw = {"nav_health": health} if self.health_aware else {}
+        sp, intervened = self.arm.filter(setpoint, pose, scan, self.world, h, self.dt, **kw)
         return Setpoint(float(sp.vx), float(sp.vy), float(sp.vz), float(sp.yaw_rate)), bool(intervened)
