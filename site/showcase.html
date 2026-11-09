@@ -6,16 +6,17 @@
 <title>Navigation Index - Showcase</title>
 <meta name="description" content="What the navigation hub contains, in 30 seconds: live counts, a replay of the close-area arena, the runnable samples with honest status, and how coding agents use it.">
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="showcase.css?v=20261109v2b">
+<link rel="stylesheet" href="showcase.css?v=20261109s1">
 <script>
   try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
-<script defer src="showcase.js?v=20261109v2b"></script>
+<script defer src="showcase.js?v=20261109s1"></script>
 </head>
 <body>
 <header class="top">
   <a class="brand" href="index.html" title="Search">Navigation Index</a>
   <nav class="topnav" aria-label="Sections">
+    <a href="#tested">Tested</a>
     <a href="#arena">Replay</a>
     <a href="#samples">Samples</a>
     <a href="#agents">Agents</a>
@@ -39,7 +40,71 @@
   <p class="muted small" id="counterNote">Counted live from <code>site/data/index.json</code>.</p>
   <div class="cta">
     <a class="btn primary" href="#arena">Watch a replay</a>
+    <a class="btn" href="#tested">What we tested</a>
     <a class="btn" href="index.html">Search the hub</a>
+  </div>
+</section>
+
+<section id="tested" class="section">
+  <h2>What we tested</h2>
+  <p class="muted">Two innovation ideas for the close-area task, each run against its own kill test on held-out seeds. Both were narrowed by their own tests. Every number here is <strong>synthetic</strong>: simulated layouts, vehicle, range fan and VIO-like estimator, scored on truth. None is SITL or flight.</p>
+  <div class="story-cards" id="storyCards">
+    <article class="card scard" id="cardKill"><h3>Integrity-aware safety filter (F5)</h3><p class="muted small">Loading kill_test.json...</p></article>
+    <article class="card scard" id="cardReloc"><h3>Relocalization after VIO loss (f)</h3><p class="muted small">Loading relocalize.json...</p></article>
+  </div>
+
+  <h3 class="pick-h">Kill test replay: one layout, VIO jump, two obstacles the range fan cannot see</h3>
+  <p class="muted small" id="killNote"></p>
+  <div class="story-grid">
+    <div class="stage">
+      <div class="runs story-arms" id="killArms" role="group" aria-label="Arms to show"></div>
+      <canvas id="killCanvas" class="story-cv" width="640" height="640" aria-label="Top-down kill test replay"></canvas>
+      <div class="controls">
+        <button id="killPlay" class="btn primary" aria-label="Play or pause the kill test replay">Play</button>
+        <label class="speed">Speed <select id="killSpeed"><option value="1">1x</option><option value="2" selected>2x</option><option value="4">4x</option></select></label>
+        <input id="killScrub" class="story-scrub" type="range" min="0" max="1000" value="0" aria-label="Kill test replay position">
+        <span id="killClock" class="mono story-clock">0.0 s</span>
+      </div>
+      <p class="mono small story-now" id="killNow"></p>
+    </div>
+    <aside class="run-side">
+      <div class="stats-wrap"><table class="stats" id="killStats"></table></div>
+      <ul class="legend">
+        <li><i class="sw truth"></i>True path, <i class="sw est"></i>estimate the planner saw (dashed, same colour)</li>
+        <li><i class="sw uns"></i>Unsensed pole or glass panel: in the map, invisible to the range fan</li>
+        <li><i class="sw obst"></i>Obstacle the fan sees <i class="sw ab"></i>A start, B goal</li>
+        <li><i class="sw hit"></i>Contact (collision) <i class="sw jump"></i>0.5 m VIO jump</li>
+      </ul>
+      <p class="muted small" id="killSrc"></p>
+    </aside>
+  </div>
+
+  <h3 class="pick-h">Relocalization replay: one layout, VIO jump, hypotheses as ghosts</h3>
+  <p class="muted small" id="relocNote"></p>
+  <div class="story-grid">
+    <div class="stage">
+      <div class="runs story-arms" id="relocArms" role="group" aria-label="Arms to show"></div>
+      <canvas id="relocCanvas" class="story-cv" width="640" height="640" aria-label="Top-down relocalization replay"></canvas>
+      <div class="controls">
+        <button id="relocPlay" class="btn primary" aria-label="Play or pause the relocalization replay">Play</button>
+        <label class="speed">Speed <select id="relocSpeed"><option value="1">1x</option><option value="2" selected>2x</option><option value="4">4x</option></select></label>
+        <input id="relocScrub" class="story-scrub" type="range" min="0" max="1000" value="0" aria-label="Relocalization replay position">
+        <span id="relocClock" class="mono story-clock">0.0 s</span>
+      </div>
+      <p class="mono small story-now" id="relocNow"></p>
+    </div>
+    <aside class="run-side">
+      <div class="stats-wrap"><table class="stats" id="relocStats"></table></div>
+      <p class="small story-evh"><strong>Loss events</strong> <span class="muted">(tap to jump there)</span></p>
+      <ul class="story-events" id="relocEvents"></ul>
+      <ul class="legend">
+        <li><i class="sw truth"></i>True path, <i class="sw est"></i>pose the planner saw (dashed)</li>
+        <li><i class="sw ghost"></i>Hypotheses of the current scan, darker = higher score</li>
+        <li><i class="sw okm"></i>Accepted pose <i class="sw hit"></i>wrong commit (&gt; 0.5 m from truth)</li>
+        <li><i class="sw dark"></i>Dark zone (VIO drift x4) <i class="sw jump"></i>0.5 m VIO jump</li>
+      </ul>
+      <p class="muted small" id="relocSrc"></p>
+    </aside>
   </div>
 </section>
 
@@ -174,7 +239,7 @@
 </main>
 
 <footer class="foot muted small">
-  Static page, no build step. Data: <code>site/data/index.json</code>, <code>samples/*/sample.json</code>, replays from <code>samples/close-area-benchmark/export_replays.py</code> (v2) and <code>samples/close-area-arena/export_replay.py</code> (pose faults), results from <code>samples/close-area-benchmark/results/matrix_0.md</code>.
+  Static page, no build step. Data: <code>site/data/index.json</code>, <code>samples/*/sample.json</code>, story replays from <code>samples/close-area-safety-filter/export_replay.py</code> and <code>samples/close-area-relocalize/export_replay.py</code>, replays from <code>samples/close-area-benchmark/export_replays.py</code> (v2) and <code>samples/close-area-arena/export_replay.py</code> (pose faults), results from <code>samples/close-area-benchmark/results/matrix_0.md</code>.
   <a href="index.html">Search</a> - <a href="index.html#view=kits">Starter kits</a> - <a href="../graph/index.html">Graph</a>
 </footer>
 </body>

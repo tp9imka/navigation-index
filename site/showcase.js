@@ -558,3 +558,293 @@ async function loadGallery(index) {
 
 loadReplays();
 loadIndex().then(loadGallery);
+
+
+// ---------- story: what we tested ----------
+// Two replays from data/showcase/story/ (schema close-area-story-replay/1), written by
+// samples/close-area-safety-filter/export_replay.py (kill_test.json) and
+// samples/close-area-relocalize/export_replay.py (relocalize.json). Each file carries its own
+// headline numbers, recomputed from the samples' result JSONs; the cards below only format them.
+const STORY_DIR = "data/showcase/story/";
+const SAFETY = "samples/close-area-safety-filter/", RELOC = "samples/close-area-relocalize/";
+const readme = dir => `index.html#page=${encodeURIComponent(dir + "README.md")}`;
+const pct = v => `${(+v).toFixed(1)} %`;
+const ci = c => `[${c[0].toFixed(1)}, ${c[1].toFixed(1)}]`;
+const ARM_COL = { F0: "--warn", F2: "--vs", F5: "--accent", estimator: "--warn", single: "--vs", multi_ig: "--accent" };
+
+function killCard(h) {
+  const H = h.F5_jump_heldout, J = h.F5_jump_seeds012, F4 = h.F4_jump_seeds012, F2 = h.F2_jump_seeds012;
+  const others = Object.values(h.F5_other_cases_seeds012), oc = others.reduce((a, c) => a + c.collisions, 0);
+  return `<div class="row"><span class="badge collision">${esc(h.verdict)}</span><span class="badge synthetic">${esc(h.input)}</span></div>
+    <h3>Integrity-aware safety filter (F5)</h3>
+    <p class="shows">Margin = live protection level from a VIO + UWB integrity monitor, hover when the monitor is ambiguous. Bar (doc 04 section 3.4): collisions &lt;= 1 % in every fault case, reach &gt;= 90 % of PX4-CBF.</p>
+    <ul class="snum">
+      <li><b>${pct(H.collision_pct)}</b> ${ci(H.ci95)} collisions under the VIO jump on held-out seeds 1-2 (${H.collisions} of ${H.runs} runs). Bar: 1 %.</li>
+      <li><b>${h.F5_jump_reach_ratio_vs_F2.toFixed(2)}</b> of PX4-CBF's reach under the jump (${J.reached} vs ${F2.reached} of ${J.runs} runs, seeds 0-2). Bar: 0.90.</li>
+      <li>A hand-tuned fixed 0.2 m bound (MR-CBF, no monitor): <b>${pct(F4.collision_pct)}</b> ${ci(F4.ci95)} under the jump, seeds 0-2. Same safety within noise.</li>
+      <li>The other ${others.length} fault cases: ${oc} collisions in ${others.reduce((a, c) => a + c.runs, 0)} runs (upper bound ${others[0].ci95[1].toFixed(1)} % per case).</li>
+    </ul>
+    <p class="kr"><strong>Still holds:</strong> a range-only filter (PX4-CBF) under the A* planner had 0 collisions with obstacles the fan sees, in every fault case (500 runs, part a). Ours adds nothing there.</p>
+    <p class="small"><a href="../${SAFETY}results/kill_e_tables.md">kill_e_tables.md</a> - <a href="${readme(SAFETY)}">sample README, part e</a></p>`;
+}
+function relocCard(h) {
+  const F = h.families, cf = h.crazyflie_4beam_spin_ig_seed0, ca = h.unmapped_obstacles_c_added_seed2;
+  const cr = f => { const v = F[f].collision_pct_dropout_jump.map(Math.round); return `${Math.min(...v)}-${Math.max(...v)} %`; };
+  return `<div class="row"><span class="badge stuck">${esc(h.verdict)}</span><span class="badge synthetic">${esc(h.input)}</span></div>
+    <h3>Relocalization after VIO loss (f)</h3>
+    <p class="shows">After a VIO loss: hover, keep up to 5 scan-match hypotheses, fly one info-gain move on a tie, accept after 3 consistent scans. Bar per family: reached &gt;= 95 % and 0 wrong commits, held-out seeds ${h.matrix_seeds[0]}-${h.matrix_seeds[h.matrix_seeds.length - 1]}, both faults pooled.</p>
+    <ul class="snum">
+      <li>Random and U trap: <b>${pct(F.random.reached_pct)}</b> ${ci(F.random.ci95)} reached, ${F.random.wrong_commits + F.u_trap.wrong_commits} wrong commits (${F.random.runs} runs each). PASS.</li>
+      <li>Narrow gap <b>${pct(F.narrow_gap.reached_pct)}</b> ${ci(F.narrow_gap.ci95)}, glass office <b>${pct(F.glass_office.reached_pct)}</b> ${ci(F.glass_office.ci95)}: collisions ${cr("narrow_gap")} and ${cr("glass_office")}.</li>
+      <li>Warehouse ${pct(F.warehouse.reached_pct)} ${ci(F.warehouse.ci95)} reached, but <b>${F.warehouse.wrong_commits} wrong commits</b>: repeated aisles look alike.</li>
+      <li>4-beam Crazyflie-like sensor with a yaw spin: <b>${pct(cf.dropout.reached_pct)}</b> ${ci(cf.dropout.ci95)} / <b>${pct(cf.jump.reached_pct)}</b> ${ci(cf.jump.ci95)} reached (dropout / jump, seed 0).</li>
+      <li>Unmapped obstacles in the prior map: <b>${pct(ca.jump.collision_pct)}</b> ${ci(ca.jump.ci95)} collisions per fault (seed 2).</li>
+    </ul>
+    <p class="kr"><strong>Still holds:</strong> with a dense 360 deg range fan, an exact map and open layouts, (f) reached B in every run with 0 wrong commits; the estimator alone reached 36 % under the jump (seed 0).</p>
+    <p class="small"><a href="../${RELOC}results/reloc_matrix_matrix.md">reloc_matrix_matrix.md</a> - <a href="${readme(RELOC)}">sample README</a>. 95 % Wilson intervals; the 4-beam and unmapped ones computed by export_replay.py from the counts.</p>`;
+}
+
+// One player per replay: arm toggles (overlay compare), play / pause, speed, scrub.
+function makePlayer(key, data, paint, hud) {
+  const P = { key, data, paint, hud, t: 0, playing: false, speed: 2, last: 0, sel: new Set(data.arms.map(a => a.arm)),
+    cv: $(`#${key}Canvas`) };
+  P.end = () => Math.max(...data.arms.filter(a => P.sel.has(a.arm)).map(a => a.T[a.T.length - 1]), 0.1);
+  P.draw = () => {
+    paint(P); hud(P);
+    $(`#${key}Clock`).textContent = P.t.toFixed(1) + " s";
+    $(`#${key}Scrub`).value = Math.round((P.t / P.end()) * 1000);
+    $(`#${key}Play`).textContent = P.playing ? "Pause" : P.t >= P.end() - 1e-6 ? "Replay" : "Play";
+  };
+  const arms = $(`#${key}Arms`);
+  const renderArms = () => {
+    arms.innerHTML = data.arms.map(a => `<button class="run-btn sarm" data-a="${esc(a.arm)}" aria-pressed="${P.sel.has(a.arm)}" style="--c: var(${ARM_COL[a.arm]})"><span class="dot ${esc(a.score.outcome)}"></span>${esc(a.label)}</button>`).join("");
+  };
+  renderArms();
+  arms.onclick = e => {
+    const b = e.target.closest(".sarm"); if (!b) return;
+    const k = b.dataset.a;
+    if (P.sel.has(k) && P.sel.size > 1) P.sel.delete(k); else P.sel.add(k);
+    renderArms(); P.t = Math.min(P.t, P.end()); P.draw();
+  };
+  $(`#${key}Play`).onclick = () => { if (!P.playing && P.t >= P.end() - 1e-6) P.t = 0; P.playing = !P.playing; P.draw(); };
+  $(`#${key}Speed`).onchange = e => { P.speed = +e.target.value; };
+  $(`#${key}Scrub`).oninput = e => { P.playing = false; P.t = (+e.target.value / 1000) * P.end(); P.draw(); };
+  P.seek = t => { P.started = true; P.playing = false; P.t = Math.max(0, Math.min(t, P.end())); P.draw(); };
+  return P;
+}
+
+function storyPath(g, F, pts, upto, color, w, dash) {
+  const { P, dpr } = F; if (upto < 0) return;
+  g.strokeStyle = color; g.lineWidth = w * dpr; g.lineJoin = "round"; g.setLineDash(dash ? [6 * dpr, 5 * dpr] : []);
+  g.beginPath();
+  for (let k = 0; k <= upto; k++) { const [x, y] = P(pts[k][0], pts[k][1]); k ? g.lineTo(x, y) : g.moveTo(x, y); }
+  g.stroke(); g.setLineDash([]);
+}
+function storyMark(g, F, xy, color, label, kind, below) {
+  const { P, dpr } = F, [x, y] = P(xy[0], xy[1]);
+  g.strokeStyle = color; g.fillStyle = color; g.lineWidth = 2.5 * dpr;
+  if (kind === "x") { const r = 7 * dpr; g.beginPath(); g.moveTo(x - r, y - r); g.lineTo(x + r, y + r); g.moveTo(x + r, y - r); g.lineTo(x - r, y + r); g.stroke(); }
+  else if (kind === "ok") { g.beginPath(); g.arc(x, y, 5 * dpr, 0, 2 * Math.PI); g.fill(); }
+  else { g.beginPath(); g.arc(x, y, 9 * dpr, 0, 2 * Math.PI); g.stroke(); }
+  if (label) {
+    g.font = `700 ${11.5 * dpr}px system-ui, sans-serif`; g.textBaseline = "middle";
+    const w = g.measureText(label).width, right = x + 12 * dpr + w < F.W;
+    g.fillText(label, right ? x + 12 * dpr : x - 12 * dpr - w, y + (below ? 20 : -11) * dpr);
+  }
+}
+function storyBase(P, extra) {
+  const d = P.data, F = frame(P.cv, d.world, 0.5); if (!F) return null;
+  const g = P.cv.getContext("2d"), C = palette();
+  const done = d.arms.filter(a => P.sel.has(a.arm)).some(a => P.t >= a.T[a.T.length - 1] - 1e-6 && a.score.outcome === "reached");
+  drawWorld(g, F, d.world, C, Object.assign({ grid: true, labels: true, bFilled: done, wall: 4, tol: d.goal_tol_m || 0.3 }, extra));
+  return { F, g, C };
+}
+function vehicle(g, F, xy, color, C, r) {
+  const [x, y] = F.P(xy[0], xy[1]);
+  g.fillStyle = color; g.strokeStyle = C.bg; g.lineWidth = 2 * F.dpr;
+  g.beginPath(); g.arc(x, y, Math.max(r * F.s, 5 * F.dpr), 0, 2 * Math.PI); g.fill(); g.stroke();
+}
+function jumpMark(g, F, a, i, C) {
+  const ft = a.fault && a.fault.fired_t;
+  if (ft == null || a.T[i] < ft) return;
+  const k = idxAt(a.T, ft);
+  storyMark(g, F, a.TR[k], C.bad, `${a.fault.step_m} m jump`, "ring");
+}
+
+// ----- kill test -----
+function paintKill(P) {
+  const b = storyBase(P, {}); if (!b) return;
+  const { F, g, C } = b, d = P.data, { P: Pt, s, dpr } = F;
+  const uc = css("--uns");
+  for (const u of d.unsensed) { // in the map and in truth, never in a scan
+    const [x, y] = Pt(u.cx, u.cy);
+    g.fillStyle = uc; g.strokeStyle = uc; g.lineWidth = 2 * dpr; g.setLineDash([3 * dpr, 3 * dpr]);
+    if (u.kind === "pole") {
+      g.beginPath(); g.arc(x, y, Math.max(u.r * s, 2.5 * dpr), 0, 2 * Math.PI); g.fill();
+      g.beginPath(); g.arc(x, y, Math.max(0.4 * s, 11 * dpr), 0, 2 * Math.PI); g.stroke();
+    } else {
+      const [a0, b0] = Pt(u.cx - u.hx, u.cy + u.hy), [a1, b1] = Pt(u.cx + u.hx, u.cy - u.hy);
+      g.fillRect(a0 - dpr, b0 - dpr, Math.max(a1 - a0, 3 * dpr), Math.max(b1 - b0, 3 * dpr));
+      g.strokeRect(a0 - 6 * dpr, b0 - 6 * dpr, a1 - a0 + 12 * dpr, b1 - b0 + 12 * dpr);
+    }
+    g.setLineDash([]);
+    g.font = `700 ${11.5 * dpr}px system-ui, sans-serif`; g.textBaseline = "middle";
+    const lbl = `unsensed ${u.kind === "pole" ? "pole" : "glass"}`, w = g.measureText(lbl).width;
+    g.fillText(lbl, x + 16 * dpr + w < F.W ? x + 16 * dpr : x - 16 * dpr - w, y - 18 * dpr);
+  }
+  const arms = d.arms.filter(a => P.sel.has(a.arm));
+  let jumped = false;
+  for (const a of arms) {
+    const col = css(ARM_COL[a.arm]), i = idxAt(a.T, Math.min(P.t, a.T[a.T.length - 1]));
+    g.globalAlpha = 0.8; storyPath(g, F, a.est, i, col, 1.8, true); g.globalAlpha = 1;
+    storyPath(g, F, a.TR, i, col, 3, false);
+    if (!jumped) { jumpMark(g, F, a, i, C); jumped = a.fault && a.fault.fired_t != null && a.T[i] >= a.fault.fired_t; }
+    vehicle(g, F, a.TR[i], col, C, d.world.radius);
+    if (a.hover && a.hover[i]) { const [x, y] = Pt(a.TR[i][0], a.TR[i][1]); g.strokeStyle = col; g.lineWidth = 2 * dpr; g.setLineDash([2 * dpr, 3 * dpr]); g.beginPath(); g.arc(x, y, 14 * dpr, 0, 2 * Math.PI); g.stroke(); g.setLineDash([]); }
+    if (a.hit && P.t >= a.hit.t - 1e-6) storyMark(g, F, a.hit.xy, C.bad, `${a.arm} hit ${a.hit.unsensed ? "unsensed " : ""}${a.hit.what}`, "x", true);
+  }
+}
+function hudKill(P) {
+  const parts = P.data.arms.filter(a => P.sel.has(a.arm)).map(a => {
+    const end = a.T[a.T.length - 1], i = idxAt(a.T, Math.min(P.t, end));
+    const st = P.t >= end - 1e-6 ? (a.score.outcome === "collision" ? `hit the ${a.hit.what}` : a.score.outcome + (a.score.ended_in_hover ? " (hovering)" : ""))
+      : a.hover && a.hover[i] ? "hovering" : a.intervened[i] ? "filter acting" : "flying";
+    const e = Math.hypot(a.TR[i][0] - a.est[i][0], a.TR[i][1] - a.est[i][1]);
+    return `${a.arm}: ${st}, pose error ${e.toFixed(2)} m`;
+  });
+  $("#killNow").textContent = parts.join(" | ");
+}
+
+// ----- relocalization -----
+function paintReloc(P) {
+  const d = P.data, b = storyBase(P, { dark: d.dark_zones }); if (!b) return;
+  const { F, g, C } = b, { P: Pt, s, dpr } = F;
+  const arms = d.arms.filter(a => P.sel.has(a.arm));
+  let jumped = false;
+  for (const a of arms) {
+    const col = css(ARM_COL[a.arm]), end = a.T[a.T.length - 1], i = idxAt(a.T, Math.min(P.t, end));
+    // ghosts: hypotheses of the latest matched scan, shown for 0.6 s
+    let h = i; while (h >= 0 && !a.H[h]) h--;
+    if (h >= 0 && a.T[i] - a.T[h] <= 0.6 + 1e-6) {
+      const hy = a.H[h], best = hy[0][2] || 1;
+      hy.forEach((q, k) => {
+        const [x, y] = Pt(q[0], q[1]);
+        g.globalAlpha = 0.15 + 0.6 * Math.max(0, Math.min(1, (q[2] / best - 0.8) / 0.2));
+        g.fillStyle = col; g.beginPath(); g.arc(x, y, Math.max(0.15 * s, 5 * dpr), 0, 2 * Math.PI); g.fill();
+        g.globalAlpha = 1; g.strokeStyle = col; g.lineWidth = (k ? 1 : 2) * dpr;
+        g.beginPath(); g.arc(x, y, Math.max(0.15 * s, 5 * dpr), 0, 2 * Math.PI); g.stroke();
+      });
+    }
+    g.globalAlpha = 0.8; storyPath(g, F, a.SEEN, i, col, 1.8, true); g.globalAlpha = 1;
+    storyPath(g, F, a.TR, i, col, 3, false);
+    if (!jumped) { jumpMark(g, F, a, i, C); jumped = a.fault && a.fault.fired_t != null && a.T[i] >= a.fault.fired_t; }
+    for (const e of a.events) if (e.accepted_xy && e.t_end != null && P.t >= e.t_end - 1e-6 && P.t <= e.t_end + 2.5)
+      storyMark(g, F, e.accepted_xy, e.wrong ? C.bad : C.ok, e.wrong ? `wrong commit ${e.err_m.toFixed(2)} m` : "", e.wrong ? "x" : "ok");
+    vehicle(g, F, a.TR[i], col, C, d.world.radius);
+    if (a.L[i]) { const [x, y] = Pt(a.TR[i][0], a.TR[i][1]); g.strokeStyle = col; g.lineWidth = 2 * dpr; g.setLineDash([2 * dpr, 3 * dpr]); g.beginPath(); g.arc(x, y, 14 * dpr, 0, 2 * Math.PI); g.stroke(); g.setLineDash([]); }
+  }
+}
+function hudReloc(P) {
+  const parts = P.data.arms.filter(a => P.sel.has(a.arm)).map(a => {
+    const end = a.T[a.T.length - 1], i = idxAt(a.T, Math.min(P.t, end));
+    let h = i; while (h >= 0 && !a.H[h]) h--;
+    const nh = h >= 0 && a.T[i] - a.T[h] <= 0.6 + 1e-6 ? a.H[h].length : 0;
+    const st = P.t >= end - 1e-6 ? a.score.outcome : a.L[i] ? `lost, ${a.M[i] ? "flying a move" : "hovering"}${nh ? `, ${nh} hypotheses` : ""}` : "flying";
+    const e = Math.hypot(a.TR[i][0] - a.SEEN[i][0], a.TR[i][1] - a.SEEN[i][1]);
+    return `${a.label.split(" ")[0]}: ${st}, pose error ${e.toFixed(2)} m`;
+  });
+  $("#relocNow").textContent = parts.join(" | ");
+}
+
+const OUTCOME = { reached: "reached B", stuck: "stuck", collision: "collision", timeout: "timeout" };
+function storyStats(d, rows) {
+  const head = `<thead><tr><th></th>${d.arms.map(a => `<th style="color: var(${ARM_COL[a.arm]})">${esc(a.label.split(":")[0])}</th>`).join("")}</tr></thead>`;
+  return head + "<tbody>" + rows.map(([lbl, fn]) => `<tr><th scope="row">${esc(lbl)}</th>${d.arms.map(a => `<td>${esc(fn(a))}</td>`).join("")}</tr>`).join("") + "</tbody>";
+}
+function prepKill(d) {
+  for (const a of d.arms) { a.T = a.t; a.TR = a.truth; }
+  const fired = d.arms[0].fault.fired_t;
+  $("#killNote").innerHTML = `<span class="badge synthetic">synthetic</span> Random layout ${d.index}, seed ${d.seed}, A* on a known map that includes both unsensed obstacles; the 0.5 m VIO jump fires near ${fired.toFixed(1)} s. ${esc(d.selection[0].toUpperCase() + d.selection.slice(1))}. Rates over all runs are in the card above.`;
+  $("#killStats").innerHTML = storyStats(d, [
+    ["Outcome", a => OUTCOME[a.score.outcome] + (a.hit ? ` (${a.hit.unsensed ? "unsensed " : ""}${a.hit.what}, ${a.hit.t} s)` : "")],
+    ["Min clearance", a => `${a.score.min_clearance_m} m`],
+    ["Max pose error", a => `${a.score.max_pose_error_m} m`],
+    ["Filter acting", a => `${Math.round(100 * a.score.intervention_frac)} % of steps`],
+    ["Ended hovering", a => (a.score.ended_in_hover == null ? "-" : a.score.ended_in_hover ? "yes" : "no")],
+    ["Matches published row", a => (a.check.match ? "yes" : "NO")],
+  ]);
+  $("#killSrc").innerHTML = `Data: <a href="${STORY_DIR}kill_test.json">kill_test.json</a>, ${d.hz} Hz, from <code>close-area-safety-filter/export_replay.py</code>. Outcome, min clearance, path length and unsensed hit match <a href="../${SAFETY}results/kill_a_unsensed_on_0.json">kill_a</a> (F0) and <a href="../${SAFETY}results/kill_d_unsensed_on_0.json">kill_d</a> (F2, F5).`;
+}
+function prepReloc(d) {
+  for (const a of d.arms) {
+    a.T = a.rows.map(r => r[0]); a.TR = a.rows.map(r => [r[1], r[2]]); a.SEEN = a.rows.map(r => [r[3], r[4]]);
+    a.L = a.rows.map(r => r[5]); a.M = a.rows.map(r => r[6]); a.H = a.rows.map(r => r[7]);
+  }
+  $("#relocNote").innerHTML = `<span class="badge synthetic">synthetic</span> Random layout ${d.index}, seed ${d.seed}, A* on the exact map, 72-beam 6 m fan; the 0.5 m VIO jump fires at ${d.arms[0].fault.fired_t.toFixed(1)} s. ${esc(d.selection[0].toUpperCase() + d.selection.slice(1))}. In 100 seed-0 jump runs, (b) made 4 wrong commits and still reached B every time.`;
+  $("#relocStats").innerHTML = storyStats(d, [
+    ["Outcome", a => OUTCOME[a.score.outcome] + (a.score.time_to_goal_s ? `, ${a.score.time_to_goal_s} s` : "")],
+    ["Max pose error", a => `${a.score.max_pose_error_m} m`],
+    ["Loss events", a => (a.arm === "estimator" ? "-" : `${a.events.length}`)],
+    ["Wrong commits", a => (a.score.wrong_commits == null ? "-" : `${a.score.wrong_commits}`)],
+    ["Lost (hover or move)", a => (a.score.hover_s == null ? "-" : `${a.score.hover_s} s`)],
+    ["Matches published row", a => (a.check.match ? "yes" : "NO")],
+  ]);
+  $("#relocSrc").innerHTML = `Data: <a href="${STORY_DIR}relocalize.json">relocalize.json</a>, ${d.hz} Hz, from <code>close-area-relocalize/export_replay.py</code>. Outcome, min clearance, path length and wrong commits match <a href="../${RELOC}results/reloc_random_0.json">reloc_random_0</a> (a) and <a href="../${RELOC}results/disamb_random_0.json">disamb_random_0</a> (b, f).`;
+}
+function relocEvents(P) {
+  const items = [];
+  for (const a of P.data.arms) for (const e of a.events) {
+    const mv = e.moves.length ? `, flew ${e.moves.length} move${e.moves.length > 1 ? "s" : ""} (${e.moves.map(m => Math.hypot(m[0], m[1]).toFixed(1) + " m").join(", ")})` : "";
+    const res = e.result === "accepted" ? `accepted after ${e.recover_s} s, ${e.err_m.toFixed(2)} m from truth` : e.result;
+    items.push({ t: e.t_trigger, a, html: `<b style="color: var(${ARM_COL[a.arm]})">${esc(a.label.split(" ")[0])}</b> ${e.t_trigger.toFixed(1)} s, ${esc(e.reason.replace("_", " "))}${esc(mv)}: ${esc(res)}${e.wrong ? ' <span class="badge collision">wrong commit</span>' : ""}` });
+  }
+  items.sort((x, y) => x.t - y.t || x.a.arm.localeCompare(y.a.arm));
+  const ul = $("#relocEvents");
+  ul.innerHTML = items.map(it => `<li><button class="ev-btn" data-t="${it.t}" data-a="${esc(it.a.arm)}">${it.html}</button></li>`).join("");
+  ul.onclick = e => {
+    const b = e.target.closest(".ev-btn"); if (!b) return;
+    P.sel.add(b.dataset.a); $(`#relocArms .sarm[data-a="${b.dataset.a}"]`).setAttribute("aria-pressed", "true");
+    P.seek(+b.dataset.t - 0.3); P.playing = true;
+  };
+}
+
+const STORY = [];
+function storyTick(now) {
+  for (const P of STORY) {
+    if (P.playing) {
+      const dt = Math.min(0.1, (now - (P.last || now)) / 1000), end = P.end();
+      P.t = Math.min(end, P.t + dt * P.speed);
+      if (P.t >= end) P.playing = false;
+      P.draw();
+    }
+    P.last = now;
+  }
+  requestAnimationFrame(storyTick);
+}
+async function loadStory() {
+  const [k, r] = await Promise.allSettled([getJSON(STORY_DIR + "kill_test.json"), getJSON(STORY_DIR + "relocalize.json")]);
+  if (k.status === "fulfilled") {
+    $("#cardKill").innerHTML = killCard(k.value.headline);
+    prepKill(k.value);
+    STORY.push(makePlayer("kill", k.value, paintKill, hudKill));
+  } else $("#cardKill").innerHTML = `<p class="muted">Could not load kill_test.json (${esc(k.reason.message)}). Run <code>.venv/bin/python export_replay.py</code> in samples/close-area-safety-filter.</p>`;
+  if (r.status === "fulfilled") {
+    $("#cardReloc").innerHTML = relocCard(r.value.headline);
+    prepReloc(r.value);
+    const P = makePlayer("reloc", r.value, paintReloc, hudReloc);
+    relocEvents(P);
+    STORY.push(P);
+  } else $("#cardReloc").innerHTML = `<p class="muted">Could not load relocalize.json (${esc(r.reason.message)}). Run <code>.venv/bin/python export_replay.py</code> in samples/close-area-relocalize.</p>`;
+  for (const P of STORY) { P.t = REDUCED ? P.end() : 0; P.draw(); }
+  if (!REDUCED && "IntersectionObserver" in window) { // play each replay once when it scrolls into view
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      const P = STORY.find(p => p.cv === e.target);
+      if (P && e.isIntersecting && !P.started) { P.started = true; P.playing = true; }
+    }), { threshold: 0.5 });
+    for (const P of STORY) io.observe(P.cv);
+  }
+  requestAnimationFrame(storyTick);
+}
+window.addEventListener("resize", () => STORY.forEach(P => P.draw()));
+$("#themeBtn").addEventListener("click", () => STORY.forEach(P => P.draw()));
+loadStory();
