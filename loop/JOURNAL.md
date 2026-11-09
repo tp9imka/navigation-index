@@ -122,3 +122,5 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 ## 2026-11-09 resume after network disruption
 - step 0: git in sync (behind 1 CI regen commit, rebased); no loop jobs lost or running; Pages deploy for 9ac5ee8 had timed out (syncing_files) => re-run requested.
 - launched 68 (submap relocalization on 4 beams).
+- 68 attempt 1 failed: Kiro 'connection was interrupted' (network), no files written; retried once.
+- 68 attempt 2 failed: kiro logged out. STOPPED: kiro-auth. Needs 'kiro-cli login', then relaunch 68 from scratchpad brief loop-68.md.
