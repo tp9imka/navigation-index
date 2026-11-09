@@ -22,3 +22,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - notes: 09 swapped out of wave 1 for 18. Arena and adapter briefs carry the same published Pose/RangeScan/Setpoint interface.
 - landed: 18 => d0dc4d8 (pitch story + demo script; claims checked 1/1: OpenVINS ATE 0.36 m matches relative-nav-benchmark)
 - landed: 07 => 530ea69 (rows 31-33, decode_eval close-area n=8 hit@1 1.00; claims checked 2/2: decode_eval and decode top row re-run by driver)
+- landed: 02a => af25b73 (mock loop reaches goal at 0.096 m; claims checked 2/2: interface matches the published one field for field, test and example re-run by driver)
