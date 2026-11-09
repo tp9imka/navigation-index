@@ -299,3 +299,56 @@ widening are the only guards.
 after a hover timeout recovers almost every run without wrong commits, and the info-gain move (f)
 is as good as or better than the proposed separation score (e). Earlier-iteration JSON files
 (v1, v2) were dropped to keep the repo small; their .md tables stay.
+
+### Held-out matrix: seeds 2-4, 7 families, harder faults (loop-56)
+
+```sh
+.venv/bin/python run_matrix.py --part parity   # 9 s: seed 1 random, 30 layouts, 180/180 runs match disamb_random_1.json
+.venv/bin/python run_matrix.py --part matrix   # 385 s on 14 workers, 3780 runs
+.venv/bin/python run_matrix.py --part rungs    # 12 s
+.venv/bin/python run_matrix.py --part refs     # 167 s: truth and (a) estimator only, same layouts
+```
+
+All inputs are synthetic. The setup:
+- Seeds 2-4, 30 layouts per seed per cell, nothing tuned on these seeds.
+- Families: random, u_trap, narrow_gap, office, warehouse, maze, glass_office, with the default 72-ray 6 m fan, which sees glass.
+- Faults: the arena's dropout (2 s) and jump (0.5 m).
+- Arms: (b) single, (c) multi, (f) multi_ig, unchanged code.
+- Time limit 60 s, 120 s for maze and warehouse (as in close-area-benchmark).
+- Intervals are 95 % Wilson. Truth pose reached 100 % in every family ([results/reloc_matrix_refs.md](results/reloc_matrix_refs.md)).
+
+Per-family verdict for (f), both faults pooled, 180 runs per family ([results/reloc_matrix_matrix.md](results/reloc_matrix_matrix.md)):
+
+| family | (f) reached % (95 % CI) | (f) wrong commits | verdict: >= 95 % and 0 wrong | (b) reached % / wrong | (c) reached % / wrong |
+|---|---|---|---|---|---|
+| random | 100.0 (97.9-100.0) | 0 | PASS | 100.0 / 11 | 87.2 / 0 |
+| u_trap | 100.0 (97.9-100.0) | 0 | PASS | 100.0 / 13 | 81.1 / 0 |
+| narrow_gap | 85.6 (79.7-89.9) | 4 | FAIL | 78.3 / 67 | 57.8 / 1 |
+| office | 94.4 (90.1-97.0) | 0 | FAIL | 92.8 / 0 | 94.4 / 0 |
+| warehouse | 97.2 (93.7-98.8) | 33 | FAIL | 86.1 / 69 | 66.1 / 15 |
+| maze | 97.2 (93.7-98.8) | 6 | FAIL | 99.4 / 5 | 92.8 / 3 |
+| glass_office | 83.3 (77.2-88.1) | 0 | FAIL | 82.8 / 1 | 82.8 / 0 |
+
+- **Random and u_trap reproduce the seed 0/1 picture.** (f) reached 100 %, (b) reached 100 % but made 11 and 13 wrong commits, and (c) reached 81-87 % by hovering.
+- **Warehouse and maze fail on wrong commits, not on reach.** The wrong commits had a median error of 2.2 m in warehouse and 2.8 m in maze. That is about one aisle pitch or one 2 m maze cell: repeated geometry gives a look-alike place inside the 4 m widened window. In warehouse, 14 of (f)'s 33 wrong commits came after a disambiguating move. (b) is worse in warehouse: 69 wrong commits, and 17 of its 180 runs ended in a collision.
+- **Office, glass_office and narrow_gap fail on collisions.** (f) collided in 4-7 % (office), 16-18 % (glass_office) and 10-12 % (narrow_gap) of runs. Office and glass_office had no wrong commit in those runs: errors under 0.5 m are enough to clip a 0.8-1.0 m doorway or a gap. Estimator-only (a) collided in 43-86 % of runs in these families. Relocalization cuts collisions but does not remove them. Why glass_office does worse than office is not logged.
+- **The "none" deadlock (still hovering, fewer than 10 returns) appears only in (c).** It ended 10 random dropout runs, 1 random jump run and 1 u_trap dropout run. It never appeared in (b) or (f), and never in the complex families: walls are always in range there. Where (c) hovers to the end in those families, the last verdict is `ambiguous`: 23 to 37 events per cell in u_trap, narrow_gap and warehouse.
+
+**Severity rungs**, random seed 2, 30 runs each ([results/reloc_matrix_rungs.md](results/reloc_matrix_rungs.md)):
+
+| fault | (f) reached % (95 % CI) | (f) wrong commits | (b) reached % / wrong | (c) reached % / wrong |
+|---|---|---|---|---|
+| jump 1.0 m | 100.0 (88.6-100.0) | 0 | 100.0 / 2 | 83.3 / 0 |
+| jump 2.0 m | 100.0 (88.6-100.0) | 0 | 100.0 / 2 | 86.7 / 0 |
+| dropout 5 s | 100.0 (88.6-100.0) | 0 | 100.0 / 2 | 76.7 / 0 |
+
+Rungs reuse the base fault's seeded start time and direction. In (c), the "none" deadlock appears under dropout 5 s (4 events open at the end).
+
+Limits:
+- 30 layouts per seed per cell, so the 95 % lower bound for a perfect cell is 95.9 % at 90 runs and 88.6 % at 30 runs.
+- Collision locations and materials were not logged.
+- Wrong commits are counted at the accepted scan, as above.
+
+---end section---
+
+Next action: paste the section above into `samples/close-area-relocalize/README.md` and add the evidence-matrix rows.
