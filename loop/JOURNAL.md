@@ -23,3 +23,5 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - landed: 18 => d0dc4d8 (pitch story + demo script; claims checked 1/1: OpenVINS ATE 0.36 m matches relative-nav-benchmark)
 - landed: 07 => 530ea69 (rows 31-33, decode_eval close-area n=8 hit@1 1.00; claims checked 2/2: decode_eval and decode top row re-run by driver)
 - landed: 02a => af25b73 (mock loop reaches goal at 0.096 m; claims checked 2/2: interface matches the published one field for field, test and example re-run by driver)
+- landed: 13 => d4180ee (headline as worded exists: Tan et al. IROS 2025, Zhang/Li/Clark TAC 2025; claim narrowed to the hover-on-ambiguity composition; claims checked 3/3: both arXiv titles and authors, tiiuae repo has no license)
+- notes: kill test (06) must add FT-CBF residual dropping and Tan union-of-states arms.
