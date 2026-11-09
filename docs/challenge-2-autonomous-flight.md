@@ -8,10 +8,11 @@ the rows, samples and guides listed here over the rest of the hub.
 Snapshot 2026-11-09. The full brief drops on Day 1 (18 Nov 2026); re-route with section 3 then.
 
 **Update 2026-11-09: likely task.** Additional information says the task is probably "move a
-drone from A to B in a close area, potentially with obstacles". Start from
-[research/close-area-nav](research/close-area-nav/README.md): baseline planner, sims, local
-localization, and the proposed headline (an integrity-aware safety filter). The long-range
-GNSS-denied material below stays as the fallback if the full brief says otherwise.
+drone from A to B in a close area, potentially with obstacles". Start from the
+[close-area working set in section 4](#41-close-area-ab-the-likely-task) and the
+[close-area-a-to-b cheat sheet](cheatsheets/close-area-a-to-b.md). The research behind it is in
+[research/close-area-nav](research/close-area-nav/README.md). The long-range GNSS-denied
+material below stays as the fallback if the full brief says otherwise.
 
 ## 1. The brief as published before Day 1
 
@@ -46,7 +47,7 @@ product line the brief names is close to them. See
 
 | Words in the full brief | Decoder rows | Open first |
 |---|---|---|
-| "point A to B", "obstacles", "indoor", "arena", "close area", "avoid" | 31, 32 (goal is a marker / landing pad / tag), 33 (indoor, VIO loss) | [close-area-nav synthesis](research/close-area-nav/README.md), [planning and mapping](research/close-area-nav/01-planning-and-mapping.md), [sims and platforms](research/close-area-nav/02-sims-platforms-competitions.md), [localization](research/close-area-nav/03-close-area-localization.md), [Day-1 intake tree](day1-close-area-intake.md) |
+| "point A to B", "obstacles", "indoor", "arena", "close area", "avoid" | 31, 32 (goal is a marker / landing pad / tag), 33 (indoor, VIO loss) | [close-area-arena](../samples/close-area-arena/README.md) (runnable, synthetic), [drone-adapter](../templates/drone-adapter/README.md) + [drivers](../templates/drone-adapter/drivers/README.md) (unrun stubs), [close-area-a-to-b cheat sheet](cheatsheets/close-area-a-to-b.md), [Day-1 intake tree](day1-close-area-intake.md); then the [close-area-nav synthesis](research/close-area-nav/README.md), [planning and mapping](research/close-area-nav/01-planning-and-mapping.md), [sims and platforms](research/close-area-nav/02-sims-platforms-competitions.md), [localization](research/close-area-nav/03-close-area-localization.md) |
 | "without GPS / GNSS-denied", a distance or route, multirotor | 1, 2 | [gnss-denied-drone-nav cheat sheet](cheatsheets/gnss-denied-drone-nav.md), [e2e-visual-nav-vpair](../samples/e2e-visual-nav-vpair/), [golden-demo](../samples/golden-demo/) |
 | "fixed-wing", "long range", "20-30 km", "endurance" | 27, 15, 25 | [golden-demo-fixedwing](../samples/golden-demo-fixedwing/), [terrain-heightmap-pf](../samples/terrain-heightmap-pf/), [terrain-night-celestial cheat sheet](cheatsheets/terrain-night-celestial.md) |
 | "spoofing", "integrity", "trust", "assured" | 4, 20 | [spoofing-keep-flying cheat sheet](cheatsheets/spoofing-keep-flying.md), [multi-source-fde](../samples/multi-source-fde/), [autopilot-gnss-fault-handling](autopilot-gnss-fault-handling.md) |
@@ -66,6 +67,26 @@ These samples fit an autonomous flight entry. Status, first command and the key 
 result are in [samples/README.md](../samples/README.md); quote numbers only from the
 [evidence matrix](evidence-matrix.md), which marks real vs SITL vs synthetic input.
 
+### 4.1 Close-area A=>B (the likely task)
+
+Start here for "fly from A to B in a close area, maybe with obstacles". First commands, which
+planner first and the traps: [close-area-a-to-b cheat sheet](cheatsheets/close-area-a-to-b.md).
+Organiser questions and the stack per answer: [Day-1 intake](day1-close-area-intake.md).
+Research and the headline idea: [close-area-nav synthesis](research/close-area-nav/README.md#recommended-direction).
+
+| Need | Sample or template | Input |
+|---|---|---|
+| Arena, truth scorer, A* + ESDF planner, estimator faults, log scorer | [close-area-arena](../samples/close-area-arena/README.md) | synthetic |
+| Same planner interface on a real drone (PX4, ArduPilot, Crazyflie, Tello) | [drone-adapter](../templates/drone-adapter/README.md) + [drivers](../templates/drone-adapter/drivers/README.md) | unrun stubs, mock smoke test |
+| 20 Hz flight loop with nav health, keep-alive and safety filter slot | [flight-repo](../templates/flight-repo/README.md) | mock |
+| No map, sparse ranges (APF, VFH+, 4-beam fan) | [close-area-planner-reactive](../samples/close-area-planner-reactive/README.md) | synthetic |
+| Goal B is a tag or pad | [fiducial-goal-apriltag](../samples/fiducial-goal-apriltag/README.md) | synthetic (rendered images) |
+| Indoor VIO drift reference (OpenVINS on UZH-FPV indoor) | [relative-nav-benchmark](../samples/relative-nav-benchmark/) | real dataset |
+| VIO pose into PX4 / ArduPilot | [vio-to-mavlink-bridge](../samples/vio-to-mavlink-bridge/) | stationary SITL check |
+| SITL images (PX4 SIH, ArduCopter, no obstacles) | [sitl-docker](../samples/sitl-docker/) | - |
+
+### 4.2 Long-range GNSS-denied (fallback)
+
 | Need | Sample | Input |
 |---|---|---|
 | Full visual nav chain on one real flight | [e2e-visual-nav-vpair](../samples/e2e-visual-nav-vpair/) | real flight |
@@ -83,8 +104,9 @@ result are in [samples/README.md](../samples/README.md); quote numbers only from
 | SITL images | [sitl-docker](../samples/sitl-docker/) | - |
 
 Not for this challenge unless the full brief asks: timing, maritime / AIS, counter-UAS and
-Remote ID, jammer maps, TAK-only pictures, dismounted and indoor navigation. The decoder will
-route to them on keyword overlap; skip those rows.
+Remote ID, jammer maps, TAK-only pictures, dismounted (on foot) navigation. The decoder will
+route to them on keyword overlap; skip those rows. An indoor drone is close-area (4.1, rows
+31-33), not dismounted.
 
 ## 5. What the pre-Day-1 research added
 

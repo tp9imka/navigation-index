@@ -15,6 +15,11 @@ first command per sample), [evidence-matrix.md](evidence-matrix.md) (numbers you
 
 Brief family known? Read its [cheat sheet](cheatsheets/README.md) first (3 minutes each).
 
+**Close-area A=>B brief** ("fly from A to B", "obstacles", "arena", "indoor drone", "marker";
+decoder rows 31-33, the likely EDGE Challenge 2 task): take the
+[close-area branch](#close-area-branch-rows-31-33) below. It replaces the 0:10-1:45 rows of the
+timeline; the rubric and the H+3 checkpoint still apply.
+
 Times are a plan, not a measurement. If a block overruns by more than 10 minutes, the Lead
 cuts scope, not the next block.
 
@@ -39,6 +44,24 @@ cuts scope, not the next block.
 | 1:45-2:30 | Pitch | Write the evaluation plan: baseline vs ours, which ground truth, which alert limit. Check dataset and model licenses ([reference-stacks](reference-stacks.md#license-traps-from-the-cards)). | `docs/eval-plan.md` |
 | 2:30-2:50 | All | Fix whatever blocks the end-to-end run. No new features. | `make demo` on real input |
 | 2:50-3:00 | Lead | H+3 checkpoint ([section 7](#7-h3-checkpoint)). | Go, or switch to the fallback now |
+
+### Close-area branch (rows 31-33)
+
+Same clock, different inputs. Sheet: [close-area-a-to-b](cheatsheets/close-area-a-to-b.md).
+
+| Clock | Who | Do | Output |
+|---|---|---|---|
+| 0:10-0:20 | Lead | Ask Q1-Q10 of the [Day-1 intake](day1-close-area-intake.md#1-questions-in-the-order-to-ask) (drone + SDK, sim or real, how B is given, scoring) | Intake card |
+| 0:10-0:20 | Platform | Run the two smoke tests in [intake section 2](day1-close-area-intake.md#2-if-we-only-get-3-answers) (drone-adapter mock, arena straight baseline) | Both green or a named failure |
+| 0:20-0:25 | Lead + Nav | Pick the sim and the driver from the intake tables: arena for planner work, [sitl-docker](../samples/sitl-docker/) or the organisers' sim for credibility, one [drone-adapter driver](../templates/drone-adapter/drivers/README.md) (unrun stubs) | Sim + driver in ADR-001 |
+| 0:25-0:50 | All | Rubric ([section 2](#2-pick-the-idea-scoring-rubric)): candidates are rows 31, 32, 33 and the headline from the [synthesis](research/close-area-nav/README.md#recommended-direction). A `ran` arena counts as "half of it" for the skeleton criterion | ADR-001, demo script from [demo-script-close-area](../templates/demo-script-close-area.md) |
+| 1:00-1:15 | Platform | Repo from [flight-repo](../templates/flight-repo/README.md) instead of project-repo; `make test sim` | Team repo green |
+| 1:15-1:45 | Nav | Planner in the arena: `astar_esdf` with a map, APF with escape on sparse ranges ([which planner first](cheatsheets/close-area-a-to-b.md#3-which-planner-first)) | Arena reached % on 20 layouts |
+| 1:15-1:45 | Platform | Driver bench checks from the drivers README, or SITL up | Setpoint moves the vehicle the right way |
+| 1:45-2:50 | Nav + Platform | Same planner through flight-repo on the mock, then on the chosen driver or SITL. Arena kill-test harness: chosen planner plus one fault case with `run_faults.py` | Kill-test command runs end to end, even if the numbers are bad |
+
+The full kill test (200 layouts, VIO jump and bias faults) runs after H+3; thresholds are in the
+synthesis and are proposals.
 
 ## 1. Decode the statement
 
@@ -73,6 +96,10 @@ Use [practical readiness](practical-readiness.md) to filter candidates by the la
 hardware and download budget available. Unknown setup/download values do not satisfy a
 budget. Prefer a [starter bundle](starter-bundles.md) your teammate already rehearsed offline;
 a `ran` sample by itself does not prove this machine has its data, weights and dependencies.
+
+Close-area rows 31-33 are scored the same way. For them, "a sample marked `ran`" means
+[close-area-arena](../samples/close-area-arena/README.md) (synthetic), and "measurable with
+ground truth" means the arena's truth scorer or `score_log.py` on flight logs.
 
 Hard gates first. Drop a candidate if any is true:
 
@@ -208,6 +235,7 @@ The [sitl-docker](../samples/sitl-docker/) compose file pins ArduCopter 4.6.3 an
 | MagNav | [MagNav challenge data](dataset-cards/magnav-challenge-data.md) (1.87 GB) | [magnav-quickstart](../samples/magnav-quickstart/) (ran in the `julia:1.11` Docker image) | ~10 min install + precompile, 5.8 GB Julia depot; pin FFTA 0.2; AFRL data agreement |
 | Timing | Nothing to download for the sim; VAARA logs (above) for a real +900 s time push | [timing-holdover](../samples/timing-holdover/) `python3 timing_holdover.py` (stdlib, ~5 s); [timing-network-holdover](../samples/timing-network-holdover/) `python3 timing_network.py` (stdlib, ~50 s; several sites over PTP-like links, cross-node check for a time push); [real-attack-replay](../samples/real-attack-replay/) for 2.4.2; guide [timing-resilience](timing-resilience.md) | Oscillator models are datasheet parameters, not a unit; receiver time only shows jumps > 5 s |
 | Dismounted / indoor | pyshoe hallway set via [dismounted-foot-ins](../samples/dismounted-foot-ins/) `sh fetch_data.sh` (~120 MB, about 15 min over FTP) | `python3 run_hallway.py data/hallway --tables filter --jobs 8` (stdlib, ~3 min) | pyshoe's own code needs Python 3.11 + numpy < 1.24; the filter's 95 % radius covers the truth at 31 % of markers |
+| Close-area A=>B drone (rows 31-33) | Nothing to download for the arena; SITL images from sitl-docker for credibility | [close-area-arena](../samples/close-area-arena/) `.venv/bin/python run.py --planner straight --layouts 20 --seed 0` (~2 s after install); first commands in the [close-area sheet](cheatsheets/close-area-a-to-b.md#2-first-3-commands) | Arena is 2.5D synthetic; drivers are unrun stubs; PX4 no longer plans around obstacles (Collision Prevention only stops) |
 | Celestial | cedar-solve test frames, SkyView cutouts, DE421 via [celestial-star-tracker](../samples/celestial-star-tracker/) `python3 fetch_data.py` (~190 MB, ~5 min) | `.venv/bin/python plate_solve_eval.py` (~10 s) | cedar-solve from git tag v0.6.0 with `--no-deps` (PyPI 0.5.1 predates its NumPy 2 fix); SkyView sometimes answers "Too Many Processes" |
 
 If the organisers provide data, start there instead and keep one shortlisted set as a
@@ -218,7 +246,8 @@ cross-check.
 Go if all of these are true; otherwise switch to the fallback now, while it is cheap.
 
 - [ ] Real input (SITL telemetry, recorded data or provided data) reaches the map through the
-      template pipeline.
+      template pipeline. Close-area: the chosen planner flies A=>B through flight-repo on the
+      mock or SITL, and the arena kill-test command runs end to end.
 - [ ] The one metric is named in ADR-001 and `eval/` can compute it, even if the number is bad.
 - [ ] Ground truth for that metric exists on disk.
 - [ ] No unresolved hard-gate question from the organisers.

@@ -25,7 +25,7 @@ Use this block when the brief is "fly a drone from A to B in a close area, maybe
 4. Decoder rows 31 (obstacles), 32 (visual goal B) and 33 (indoor VIO loss) in
    [docs/problem-statement-decoder.md](docs/problem-statement-decoder.md); `decode` prints
    their runnable starters.
-5. One-page summary: [docs/cheatsheets/](docs/cheatsheets/README.md) (close-area sheet). Demo and
+5. One-page summary: [docs/cheatsheets/close-area-a-to-b.md](docs/cheatsheets/close-area-a-to-b.md). Demo and
    pitch: [templates/demo-script-close-area.md](templates/demo-script-close-area.md),
    [templates/pitch/close-area-story.md](templates/pitch/close-area-story.md).
 

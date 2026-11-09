@@ -22,7 +22,7 @@ Companion docs:
 
 - [reference-stacks.md](reference-stacks.md) - "if you only have X, use Y", with a license column.
 - [day0-runbook.md](day0-runbook.md) - the first 3 hours after the problem statement drops.
-- [problem-statement-decoder.md](problem-statement-decoder.md) - likely statements by type => approach, stack, data, sample, risk, pitch. Start here when the statement drops.
+- [problem-statement-decoder.md](problem-statement-decoder.md) - likely statements by type => approach, stack, data, sample, risk, pitch. Start here when the statement drops, except for EDGE Challenge 2: start at [challenge-2-autonomous-flight.md](challenge-2-autonomous-flight.md), which picks the decoder rows for you.
 - [samples/README.md](../samples/README.md) - every sample by problem: status, deps, first command, key result.
 - [evidence-matrix.md](evidence-matrix.md) - every measured number across samples, real vs simulated input.
 - [landscape/](landscape/README.md) - what vendors already sell and what funders ask for.
