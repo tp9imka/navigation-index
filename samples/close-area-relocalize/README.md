@@ -480,3 +480,46 @@ Limits of this addition:
 - What might close the gap (not tried): a flying stack that feeds the innovation test (it needs a
   cone correction that works without a spin), a verification spin at B before landing, or a
   longer-range sensor.
+
+## Imperfect prior map (loop-55)
+
+The headline above matches against the exact layout grid. The Day-1 intake default for Q7 is
+"unknown and moved between runs" ([intake](../../docs/day1-close-area-intake.md)). This run
+measures the same arms on a ladder of map errors. Synthetic inputs only.
+
+```sh
+.venv/bin/python run_stalemap.py --layouts 100 --seed 2 --workers 14   # 303 s wall
+```
+
+[map_perturb.py](map_perturb.py) builds the real world (what the range fan sees and the scorer
+scores) and the map (what the planner, the matcher and the move check get) separately:
+
+- a_exact: map = real.
+- b_removed: 1-2 mapped obstacles within 3 m of the flown path are gone in reality (145 removed over 100 layouts).
+- c_added: 1-2 unmapped boxes or cylinders, surface 0.45-1.5 m from the truth-arm flight path, >= 1 m from A and B (152 added). Placed off that path on purpose: the known-map planner ignores scans, so an obstacle on the path is hit by every arm.
+- d_shift01 / d_shift02: every obstacle (not the walls) moved 0.1 / 0.2 m, each in its own random direction.
+- e_selfmap: the unknown-map A* flies A => B on the estimator (no fault, dark zones). Its log-odds grid becomes the map, and the fault hits on the return leg B => A. Matcher: occupied cells only. Planner: occupied or unknown. The return estimate starts with the outbound end error, so it is in the map's frame. 99 of 100 outbound legs ended within 1 m of B (59 reached, 40 stuck close). Median outbound end error was 0.339 m. A median 0.142 of mapped cells lie more than 0.2 m from a real surface.
+
+Cells are dropout / jump: reached % / collision % (of which during a move into an unmapped obstacle) / wrong commits (> 0.5 m) / p95 recover s
+([results/stalemap_random_2.md](results/stalemap_random_2.md)). The truth-pose reference reached 100 % on a-d. On e it reached 92.9 % with 6.1 % collisions: the truth pose disagrees with the drifted map.
+
+| rung | (b) single | (c) multi | (f) multi_ig |
+|---|---|---|---|
+| a_exact | 100 / 0 (0) / 8 / 0.2 ; 100 / 0 (0) / 7 / 0.2 | 84 / 0 (0) / 0 / 0.4 ; 94 / 0 (0) / 0 / 0.4 | 100 / 0 (0) / 0 / 0.82 ; 100 / 0 (0) / 0 / 0.4 |
+| b_removed | 100 / 0 (0) / 8 / 0.2 ; 100 / 0 (0) / 6 / 0.2 | 71 / 0 (0) / 1 / 0.5 ; 85 / 0 (0) / 0 / 0.4 | 99 / 0 (0) / 0 / 2.29 ; 99 / 0 (0) / 0 / 1.22 |
+| c_added | 98 / 2 (0) / 57 / 0.2 ; 99 / 1 (0) / 62 / 0.2 | 65 / 0 (0) / 4 / 0.4 ; 73 / 0 (0) / 7 / 0.6 | 89 / 7 (2) / 16 / 3.5 ; 88 / 7 (2) / 21 / 3.12 |
+| d_shift01 | 100 / 0 (0) / 4 / 0.2 ; 100 / 0 (0) / 6 / 0.2 | 80 / 0 (0) / 0 / 0.4 ; 97 / 0 (0) / 3 / 0.4 | 100 / 0 (0) / 0 / 0.71 ; 100 / 0 (0) / 2 / 0.4 |
+| d_shift02 | 100 / 0 (0) / 16 / 0.2 ; 100 / 0 (0) / 17 / 0.2 | 65 / 0 (0) / 9 / 0.6 ; 82 / 0 (0) / 7 / 0.5 | 97 / 0 (0) / 10 / 2.28 ; 97 / 0 (0) / 6 / 1.56 |
+| e_selfmap | 98 / 0 (0) / 71 / 0.2 ; 97 / 0 (0) / 166 / 0.2 | 71.7 / 1 (0) / 10 / 0.4 ; 81.8 / 0 (0) / 11 / 0.4 | 93.9 / 2 (0) / 13 / 2.67 ; 92.9 / 2 (0) / 14 / 1.69 |
+
+Median recover stays 0.2 s for (b) and 0.4 s for (c) and (f) on every rung. Wrong commits on e_selfmap are counted in the map frame: truth plus the outbound estimator error at the nearest outbound sample. In the truth frame they are higher (118 / 202 for (b)).
+
+**Verdict.**
+
+- The exact-map claim "(f) recovers almost every run with 0 wrong commits and 0 collisions" holds only for b_removed and d_shift01. **FAIL** on c_added: 7 % collisions per fault.
+- (f)'s wrong commits are 6-21 per 100 runs once obstacles move 0.2 m, are added, or the map is self-built.
+- All 12 (f) collisions into an unmapped obstacle came after a disambiguating move: 2 per fault during the move, 8 within 0.6-5.0 s after it ([results/stalemap_random_2_collisions.md](results/stalemap_random_2_collisions.md)). The move check trusts the map, and the known-map planner then flies on from where the move left it.
+- (b) single + innovation test reaches the most (97-100 % on every rung) with 0-2 % collisions. Its wrong commits grow 7-8x on c_added and are corrected by later matches.
+- (c) hover-only still ends runs hovering (65-97 %).
+
+Limits: one seed (2), no held-out check. Added obstacles are off the truth path by construction. The 0.2 m shift is per obstacle, not a rigid map offset. The e_selfmap truth arm is not an upper bound. The arena's 2 s dropout and 0.5 m jump only. The move check still ignores the live scan; checking moves against scan endpoints is the obvious next fix and was not run.

@@ -1,0 +1,245 @@
+[
+  {
+    "id": "res:af-mcl-four-range-uav-2026",
+    "kind": "paper",
+    "title": "Monte Carlo-Based Indoor UAV Localization in Dynamic Environments Using Only Four Onboard Range Sensors",
+    "url": "https://arxiv.org/abs/2610.32645",
+    "authors": [
+      "Mohammad Reza Ranjbar Divkoti",
+      "A. Pedro Aguiar"
+    ],
+    "year": 2026,
+    "summary": "Preprint (arXiv, Oct 2026), full text read. AF-MCL: 2D Monte Carlo localization in a known occupancy map from four single-point ranges plus measured yaw on a Crazyflie 2.1 with Flow and Multi-ranger decks. Likelihood field from the map EDT, beams inconsistent with the static map rejected at the previous estimate, and augmented-MCL particle injection (slow/fast likelihood averages) for kidnapping. Webots kidnapping test: recovery 2.9 s vs 16.9 s for plain MCL (simulation). Real flights in a 2.10 x 1.63 m arena: 6.4-7.7 cm mean error, filter run on a host PC, not onboard. Author list taken from the arXiv submitter and the HTML byline; not fully confirmed.",
+    "key_takeaways": [
+      "Scan-to-map relocalization after kidnapping already runs on a Crazyflie with four ToF beams and a known map",
+      "Same EDT likelihood field as the hub's close-area-relocalize matcher; recovery is passive (particle injection), no hover gate and no disambiguating move",
+      "Kidnap recovery 2.9 s vs 16.9 s for plain MCL is a Webots number, not a flight number"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "monte-carlo-localization",
+      "kidnapped-robot",
+      "crazyflie",
+      "relocalization",
+      "preprint"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:bitcraze-multi-ranger-deck",
+        "rel": "uses"
+      },
+      {
+        "id": "repo:bitcraze/crazyflie-firmware",
+        "rel": "uses"
+      },
+      {
+        "id": "res:muller-2023-nano-uav-mcl-multizone-tof",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:muller-2023-nano-uav-mcl-multizone-tof",
+    "kind": "paper",
+    "title": "Fully On-board Low-Power Localization with Multizone Time-of-Flight Sensors on Nano-UAVs",
+    "url": "https://arxiv.org/abs/2212.00710",
+    "authors": [
+      "Hanna Muller",
+      "Nicky Zimmerman",
+      "Tommaso Polonelli",
+      "Michele Magno",
+      "Jens Behley",
+      "Cyrill Stachniss",
+      "Luca Benini"
+    ],
+    "year": 2023,
+    "summary": "DATE 2023 (venue from the AF-MCL reference list); arXiv full text read. Global Monte Carlo localization on a Crazyflie 2.1 with two 8x8-zone VL53L5CX ToF sensors and a GAP9 RISC-V processor, beam end-point (EDT) model on a 0.05 m grid. On recorded real sequences replayed with six seeds in a 31.2 m2 map: 0.15 m accuracy and above 95 % success with enough particles; the initial estimate can start in the wrong maze and converge as the drone moves. Onboard latency 0.2-30 ms depending on particle count.",
+    "key_takeaways": [
+      "Map-based global localization from sparse ToF on a nano drone is published and onboard-capable",
+      "Disambiguation is passive: hypotheses resolve as the drone flies its path, not by a chosen move",
+      "Success numbers come from replayed real flight logs, not closed-loop recovery flights"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "monte-carlo-localization",
+      "nano-uav",
+      "tof",
+      "global-localization",
+      "peer-reviewed"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:bitcraze/crazyflie-firmware",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:zhang-2026-kidnapped-robot-sparse-hypotheses",
+    "kind": "paper",
+    "title": "Tackling the Kidnapped Robot Problem via Sparse Feasible Hypothesis Sampling and Reliable Batched Multi-Stage Inference",
+    "url": "https://arxiv.org/abs/2511.01219",
+    "authors": [
+      "Muhua Zhang",
+      "Lei Ma",
+      "Ying Wu",
+      "Kai Shen",
+      "Deqing Huang",
+      "Henry Leung"
+    ],
+    "year": 2026,
+    "summary": "IEEE Transactions on Instrumentation and Measurement 2026 (doi 10.1109/TIM.2026.3694741, per arXiv); abstract read. Passive 2D global relocalization from one LiDAR scan against an occupancy grid while the robot stays still: RRT-sampled feasible position hypotheses, coarse ranking and early termination, and a translation-tolerant scan-to-map metric for the final pick. Ground robot with a non-panoramic LiDAR.",
+    "key_takeaways": [
+      "Multi-hypothesis scan-to-map relocalization while stationary is current ground-robot practice",
+      "Picks the best hypothesis from one scan; no stated refusal to commit on near-ties"
+    ],
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "kidnapped-robot",
+      "global-localization",
+      "scan-matching",
+      "peer-reviewed"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:nav2-amcl-configuration-docs",
+    "kind": "doc",
+    "title": "Nav2 AMCL configuration guide",
+    "url": "https://docs.nav2.org/jazzy/configuration_and_development/configuration_guide/others/configuring_amcl/",
+    "authors": [
+      "Nav2 contributors"
+    ],
+    "year": 2024,
+    "summary": "Parameter reference for the ROS 2 AMCL node (Jazzy docs, read). Likelihood-field laser model by default. Augmented-MCL random-pose injection is controlled by recovery_alpha_slow and recovery_alpha_fast, both default 0.0 (off); the docs suggest 0.001 and 0.1. Nav2 also has a ReinitializeGlobalLocalization behaviour-tree node that spreads particles over the map for a kidnapped robot.",
+    "key_takeaways": [
+      "The standard ground-robot relocalizer ships with kidnap recovery switched off",
+      "Global re-initialization is a behaviour-tree action the integrator must wire in",
+      "The obvious passive baseline for any scan-to-map relocalizer on a drone"
+    ],
+    "concepts": [
+      "concept:ros",
+      "concept:ground-vehicle-nav"
+    ],
+    "tags": [
+      "amcl",
+      "nav2",
+      "monte-carlo-localization",
+      "kidnapped-robot",
+      "docs"
+    ],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ros-navigation/navigation2",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:modalai-voxl-open-vins-init-resets",
+    "kind": "doc",
+    "title": "VOXL OpenVINS server: Initialization and Resets",
+    "url": "https://docs.modalai.com/voxl-open-vins-init/",
+    "authors": [
+      "ModalAI"
+    ],
+    "year": 2026,
+    "summary": "ModalAI docs page (read 2026-11-09). VIO starts from a static or a dynamic (about 2 s structure-from-motion) initialization. Two reset tiers: a soft reset rebuilds the filter state while keeping feature tracks; a hard reset destroys and recreates the estimator. A 30 Hz health monitor issues hard resets on estimator-health codes (bad covariance, sustained low quality, feature starvation, velocity-uncertainty breaches), never on transport warnings. The docs warn that dynamic init and soft reset can cause a jump discontinuity.",
+    "key_takeaways": [
+      "Vendor VIO recovery restarts the estimator in a new frame; it does not relocalize against a prior map",
+      "Reset jumps are expected downstream, so the autopilot side must handle reset_counter"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:autopilot"
+    ],
+    "tags": [
+      "modalai",
+      "voxl",
+      "openvins",
+      "vio-reset",
+      "docs"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:modalai-voxl-open-vins-server-docs",
+        "rel": "part_of"
+      }
+    ]
+  },
+  {
+    "id": "res:zangeneh-2024-cvae-probabilistic-pose-regression",
+    "kind": "paper",
+    "title": "Conditional Variational Autoencoders for Probabilistic Pose Regression",
+    "url": "https://arxiv.org/abs/2410.04989",
+    "authors": [
+      "Fereidoon Zangeneh"
+    ],
+    "year": 2024,
+    "summary": "IROS 2024 (per arXiv comment); abstract read. Visual relocalization after tracking loss in scenes with repeated structure: a generative model draws camera-pose samples from the posterior given one image, so several pose hypotheses survive ambiguity. Only the submitter's name was confirmed.",
+    "key_takeaways": [
+      "Multi-hypothesis relocalization under repetitive structure is an active camera-side topic",
+      "Produces hypotheses; does not choose a move to separate them"
+    ],
+    "concepts": [
+      "concept:place-recognition",
+      "concept:visual-slam"
+    ],
+    "tags": [
+      "relocalization",
+      "multi-hypothesis",
+      "pose-regression",
+      "peer-reviewed"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:niculescu-2023-nanoslam",
+    "kind": "paper",
+    "title": "NanoSLAM: Enabling Fully Onboard SLAM for Tiny Robots",
+    "url": "https://arxiv.org/abs/2309.12008",
+    "authors": [
+      "Vlad Niculescu"
+    ],
+    "year": 2023,
+    "summary": "IEEE Internet of Things Journal (doi 10.1109/JIOT.2023.3339254, per arXiv); abstract read. Lightweight end-to-end SLAM on a 44 g nano drone with a GAP9 RISC-V processor at 87.9 mW; mapping accuracy 4.5 cm and under 250 ms end-to-end, per the authors. Mapping and loop closure, not relocalization after loss. Only the submitter's name was confirmed. Code: github.com/ETH-PBL/NanoSLAM (GPL-3.0, checked with gh api).",
+    "key_takeaways": [
+      "Onboard SLAM on a Crazyflie-class drone exists; it builds the map a relocalizer would need in an unknown room",
+      "Says nothing about recovery from tracking loss"
+    ],
+    "concepts": [
+      "concept:lidar-slam",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "nano-uav",
+      "slam",
+      "tof",
+      "peer-reviewed"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  }
+]
