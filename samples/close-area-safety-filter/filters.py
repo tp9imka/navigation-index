@@ -30,6 +30,10 @@ Arms here:
                     Needs health["belief"] = estimator.VioEstimator.belief(). F3p: P alone.
   F4  MRCBF         F2 + MR-CBF (Dean 2020, Cosner 2021) rows on map obstacles with a fixed
                     worst-case error bound eps measured offline (doc 05 4.2-4.4).
+  F5  PLCBF         ours: F2 + map barrier with margin = the integrity monitor's live protection
+                    level (integrity/monitor.py, VIO + UWB), speed cap from nav health, HOVER
+                    when the monitor flags a fault it cannot attribute. Needs health["uwb"].
+                    F5s2: the same on the two-fault monitor variant.
 
 Add an arm: subclass SafetyFilter, give it NAME and DEFAULTS (every parameter named, with its
 source in a comment), implement reset() and filter(), and add it to REGISTRY. run_kill.py takes
@@ -638,8 +642,167 @@ class MRCBF(_MapCBF):
         return a, float(s), act_map
 
 
+# ---------------------------------------------------------------- F5 (ours)
+
+class PLCBF(_MapCBF):
+    """Ours: F2's range barrier + a map barrier whose margin is the live protection level (PL)
+    of the integrity monitor (integrity/monitor.py), a speed cap from nav health, and HOVER when
+    the monitor cannot attribute a fault (doc 04 3.4 arm "ours", doc 07 section 2).
+
+    Monitor: every new UWB epoch (health["uwb"] = {t, ranges, anchors, z}, 10 Hz, built by
+    run_kill.py) the monitor gets the VIO-EKF position and its sigma_xy (the pose the planner
+    flies on) plus 4 UWB ranges and returns x_mon, PL, status. PL bounds |x_mon - truth| at
+    integrity risk monitor.IR = 1e-3 per epoch (Gaussian overbound, assumed priors; see
+    monitor.py). Between epochs x_mon is carried forward with the estimated velocity.
+    Map barrier (one row per map obstacle within QUERY_M of x_mon, unsensed ones included),
+    second-order ECBF as in F3, linearised at x_mon:
+        h = d(x_mon) - r_safe - PL,   h' = n . v,   row: n . a >= -z1 h' - z0 h
+    So the margin is the PL, not the EKF covariance (F3) and not a fixed bound (F4).
+    Hover rule: status "ambiguous" (detected, no unique consistent exclusion) or PL not finite
+    (budget infeasible, or no UWB) => the planner command is replaced by zero velocity, map rows
+    are dropped (no trustworthy position), F2's range barrier still filters the braking command.
+    Held for hover_hold_s after the last such epoch. A unique consistent exclusion is accepted
+    (the monitor's subset rule), never "drop the largest residual" (FT-CBF / maxsep).
+    Speed cap: |v_sp| <= v_cap * s, s = 1 for PL <= pl_full_m, falling linearly to s_min at
+    pl_slow_m and above; s <= s_degraded while the VIO quality is below quality_ok or the monitor
+    excluded a source this epoch.
+    """
+    NAME = "F5"
+    NEEDS_UWB = True
+    DEFAULTS = dict(PX4CBF.DEFAULTS, **{
+        "monitor_variant": "ss1",   # monitor.VARIANTS key: single-fault solution separation, subset
+                                    # exclusion, ambiguous state (integrity/results/monitor_0.md: median
+                                    # PL 0.41-0.59 m, breach <= 1.3e-4). "ss2" = F5s2 (ours)
+        "ecbf_pole": 2.5,           # 1/s, z0 = pole^2, z1 = 2 pole, same as F3 (ours, = |p0| of Table II)
+        "r_safe": 0.15,             # m, vehicle radius (arena), as F3/F4
+        "query_m": 3.0,             # m, as F3/F4 (ours, compute bound)
+        "slack_rho": 1e4,           # shared slack penalty on map rows, as F3 (ours)
+        "hover_hold_s": 0.5,        # s, hover kept after the last ambiguous epoch, against flicker (ours)
+        "v_cap": 2.0,               # m/s, arena vehicle v_max (run.DEFAULTS)
+        "pl_full_m": 0.5,           # m, full speed at or below this PL (ours; ~ median ss1 PL, monitor_0.md)
+        "pl_slow_m": 1.5,           # m, s_min at or above this PL (ours; ~ p95 ss1 PL under NLOS)
+        "s_min": 0.3,               # speed fraction at large PL (ours)
+        "s_degraded": 0.5,          # speed fraction cap while VIO quality is low or a source is excluded (ours)
+        "quality_ok": 50.0,         # VIO quality below this (25 dark zone, 0 no VIO) => degraded (estimator.py)
+    })
+
+    def reset(self):
+        super().reset()
+        self.mon = None
+        self.mon_t = None
+        self.mon_out = None
+        self.last_epoch = None          # (t, x, y, pl, status, excluded) of the latest epoch, read by run_kill
+        self.hover_until = -math.inf
+        self.hover_now = False
+        self.stats.update({"epochs": 0, "pl_unavailable_epochs": 0, "ambiguous_epochs": 0,
+                           "excluded_epochs": 0, "excluded_vio_epochs": 0, "hover_steps": 0,
+                           "hover_episodes": 0, "cap_steps": 0, "pl_sum_m": 0.0, "pl_n": 0,
+                           "pl_max_m": 0.0, "margin_max_m": 0.0, "margin_sum_m": 0.0, "margin_n": 0,
+                           "gamma_max_m": 0.0, "hover_at_end": False})
+
+    def _monitor_step(self, pose, health):
+        u = (health or {}).get("uwb")
+        st = self.stats
+        if u is None:
+            if self.mon_out is None:               # no second source => no PL => hover
+                self.mon_out = {"status": "unavailable", "pl": math.inf, "x": None, "excluded": ()}
+            return
+        if self.mon_t is not None and u["t"] <= self.mon_t:
+            return
+        if self.mon is None:
+            from integrity import monitor as monitor_mod
+            self.mon = monitor_mod.Monitor(u["anchors"], self.p["monitor_variant"])
+        try:
+            out = self.mon.step((pose.x, pose.y), pose.sigma_xy, u["ranges"], u["z"])
+        except (RuntimeError, np.linalg.LinAlgError):
+            out = {"status": "unavailable", "pl": math.inf, "x": None, "excluded": ()}
+        self.mon_t, self.mon_out = u["t"], out
+        st["epochs"] += 1
+        pl = out["pl"]
+        if out["status"] == "ambiguous":
+            st["ambiguous_epochs"] += 1
+        elif not math.isfinite(pl):
+            st["pl_unavailable_epochs"] += 1
+        if out["status"] == "excluded":
+            st["excluded_epochs"] += 1
+            st["excluded_vio_epochs"] += int("vio" in out["excluded"])
+        if math.isfinite(pl):
+            st["pl_sum_m"] += pl
+            st["pl_n"] += 1
+            st["pl_max_m"] = max(st["pl_max_m"], round(pl, 4))
+        if out["status"] == "ambiguous" or not math.isfinite(pl):
+            self.hover_until = u["t"] + self.p["hover_hold_s"]
+        x = out["x"]
+        self.last_epoch = (u["t"], None if x is None else float(x[0]), None if x is None else float(x[1]),
+                           pl, out["status"], tuple(out["excluded"]))
+
+    def _speed_frac(self, pose):
+        p, out = self.p, self.mon_out
+        pl = out["pl"]
+        s = 1.0 - (pl - p["pl_full_m"]) / (p["pl_slow_m"] - p["pl_full_m"])
+        s = min(1.0, max(p["s_min"], s))
+        if pose.quality < p["quality_ok"] or out["status"] == "excluded":
+            s = min(s, p["s_degraded"])
+        return s
+
+    def _map_terms(self, pose, world, health):
+        out = self.mon_out
+        if self.hover_now or out is None or out["x"] is None or not math.isfinite(out["pl"]):
+            return []
+        p = self.p
+        v = np.array([pose.vx, pose.vy], float)
+        x = np.asarray(out["x"], float) + v * max(0.0, pose.t - self.mon_t)
+        d, n = map_features(world, x, p["query_m"])
+        if not len(d):
+            return []
+        z0, z1 = p["ecbf_pole"] ** 2, 2.0 * p["ecbf_pole"]
+        pl = float(out["pl"])
+        rows = []
+        for di, ni in zip(d, n):
+            h = di - p["r_safe"] - pl
+            rows.append((ni, -z1 * float(ni @ v) - z0 * h))
+        st = self.stats
+        st["margin_max_m"] = max(st["margin_max_m"], round(pl, 4))
+        st["margin_sum_m"] += pl
+        st["margin_n"] += 1
+        return rows
+
+    _solve = BeliefCBF._solve
+
+    def filter(self, setpoint, pose, scan, map_obstacles, health, dt):
+        self._monitor_step(pose, health)
+        st = self.stats
+        was = self.hover_now
+        self.hover_now = bool(pose.t < self.hover_until - 1e-9)
+        st["hover_at_end"] = self.hover_now
+        changed = False
+        if self.hover_now:
+            st["hover_steps"] += 1
+            st["hover_episodes"] += int(not was)
+            sp = replace(setpoint, vx=0.0, vy=0.0)
+            changed = True
+        else:
+            sp = setpoint
+            vmax = self.p["v_cap"] * self._speed_frac(pose)
+            sn = math.hypot(setpoint.vx, setpoint.vy)
+            if sn > vmax + 1e-9:
+                k = vmax / sn
+                sp = replace(setpoint, vx=setpoint.vx * k, vy=setpoint.vy * k)
+                st["cap_steps"] += 1
+                changed = True
+        out, active = super().filter(sp, pose, scan, map_obstacles, health, dt)
+        return out, bool(active or changed)
+
+
+class PLCBFss2(PLCBF):
+    """F5 on the two-fault monitor variant ss2 (larger PL, charges unmonitored priors)."""
+    NAME = "F5s2"
+    DEFAULTS = dict(PLCBF.DEFAULTS, monitor_variant="ss2")
+
+
 # F2 is kept last: test_smoke.py compares the last arm it iterates over with the saved F2 jump row.
-REGISTRY = {cls.NAME: cls for cls in (PassThrough, CPStop, BeliefCBF, BeliefCBFPOnly, MRCBF, PX4CBF)}
+REGISTRY = {cls.NAME: cls for cls in (PassThrough, CPStop, BeliefCBF, BeliefCBFPOnly, MRCBF, PLCBF, PLCBFss2,
+                                      PX4CBF)}
 LABELS = {
     "F0": "no filter",
     "F1": "CP-stop (PX4 Collision Prevention style)",
@@ -647,6 +810,8 @@ LABELS = {
     "F3": "F2 + Belief-CBF on map obstacles (EKF covariance + VIO drift, prediction, Theorem 3 jump margin)",
     "F3p": "F3 on the EKF covariance P alone (no VIO drift variance)",
     "F4": "F2 + MR-CBF on map obstacles, fixed worst-case bound eps",
+    "F5": "ours: F2 + map barrier with the monitor's live PL as margin + health speed cap + hover when ambiguous",
+    "F5s2": "F5 on the two-fault monitor variant ss2",
 }
 
 

@@ -4,8 +4,16 @@ python run_kill.py --layouts 100 --seed 0 [--arms F0,F1,F2] [--cases truth,none,
                    [--unsensed on,off] [--workers 8] [--tag kill_a]
 python run_kill.py --calibrate --layouts 100 --seed 1      # F4's fixed bound => kill_b_eps_calib_1.*
 
+python run_kill.py --layouts 100 --seed 0 --workers 14 --tag kill_d --arms F2,F3,F4@eps_m=0.2,F5,F5s2 \
+                   --cases none,jump,bias,dropout --unsensed on          # part d => results/kill_d_*
+
 An arm may carry a labelled parameter variant: --arms F2,F4,"F4@eps_m=0.4". The filter gets
-health["belief"] = the estimator's belief() (EKF mean, covariance, noise settings), None for truth.
+health["belief"] = the estimator's belief() (EKF mean, covariance, noise settings), None for truth,
+and health["uwb"] = the latest 10 Hz UWB epoch {t, ranges, anchors, z} (integrity/uwb.py, seeds as
+integrity/run_monitor.py). Only arms with NEEDS_UWB (F5) read it; for them the --uwb-cases
+(uwb_nlos = VIO none + one NLOS anchor; both = VIO bias + NLOS from the same start) are added.
+For F5 every monitor epoch is scored on truth (PL breach, wrong exclusion) and the run records
+whether it ended while hovering.
 
 Per run (one layout, one arm, one fault case, unsensed on or off):
   planner   arena planners/astar_esdf.py, make(known_map=True), 10 Hz, prior grid of the layout
@@ -39,12 +47,15 @@ import scipy
 import arena
 import filters
 import unsensed
+from integrity import uwb
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RESULTS = os.path.join(HERE, "results")
 FAMILY = "random"
 FILTER_SCAN_EVERY = 3          # physics steps (50 Hz / 3 = 16.7 Hz, doc 05 1.5: 15 Hz in flight)
 CASES = ("truth", "none", "jump", "bias", "dropout")
+UWB_CASES = ("uwb_nlos", "both")   # run only for arms with NEEDS_UWB (F5): the others ignore UWB
+VIO_FAULT = {"uwb_nlos": "none", "both": "bias"}   # VIO case under each UWB case (as integrity/run_monitor.py)
 
 
 def parse_arm(spec: str):
@@ -68,7 +79,14 @@ def run_one(arm: str, case: str, uns_on: bool, index: int, seed: int, cfg=None, 
     fsensor = unsensed.VisibleOnlyFan(w0, rng=np.random.default_rng([seed, index, 8]), **cfg["sensor"])
     est = None
     if case != "truth":
-        est = arena.estimator.make_pose_source_factory(case, dark=True)(w, seed, index)
+        est = arena.estimator.make_pose_source_factory(VIO_FAULT.get(case, case), dark=True)(w, seed, index)
+    nlos = None                                     # UWB (integrity/uwb.py), same seeds as run_monitor.py
+    if case == "uwb_nlos":
+        nlos = uwb.make_nlos(w, seed, index)
+    elif case == "both":
+        nlos = uwb.make_nlos(w, seed, index, t0=est.fault.t0)
+    ranger = uwb.UwbRanger(w, np.random.default_rng([seed, index, 4400]), nlos=nlos)
+    uwb_meas = None
     ad = arena.adapter.SimAdapter(w, veh, sensor, pose_source=est)
     planner = arena.astar_esdf.make(known_map=True)
     planner.reset()
@@ -83,6 +101,8 @@ def run_one(arm: str, case: str, uns_on: bool, index: int, seed: int, cfg=None, 
     sp_nom, fscan = None, None
     n_int = n_f = 0
     max_err = max_serr = 0.0
+    mon = {"epochs": 0, "avail": 0, "breach": 0, "err_over_pl_max": 0.0, "wrong_excl": 0, "correct_excl": 0}
+    last_ep = None
     t0 = time.perf_counter()
     for k in range(n_steps):
         pose = ad.pose()
@@ -92,11 +112,32 @@ def run_one(arm: str, case: str, uns_on: bool, index: int, seed: int, cfg=None, 
                                            + (pose.vx - tr.vx) ** 2 + (pose.vy - tr.vy) ** 2))
         if k % ratio == 0:
             sp_nom = planner.step(pose, ad.ranges(), goal, w.grid, pdt)
+            uwb_meas = {"t": tr.t, "ranges": ranger.measure(tr.t, tr.x, tr.y, tr.z), "anchors": ranger.anchors,
+                        "z": tr.z}                  # 10 Hz from truth; height known (as run_monitor.py)
         if k % FILTER_SCAN_EVERY == 0:
             fscan = fsensor.scan(w, veh.p[0], veh.p[1], veh.yaw, veh.t)
         health = {"t": pose.t, "quality": pose.quality, "reset_counter": pose.reset_counter,
-                  "sigma_xy": pose.sigma_xy, "belief": est.belief() if est is not None else None}
+                  "sigma_xy": pose.sigma_xy, "belief": est.belief() if est is not None else None,
+                  "uwb": uwb_meas}
         sp, intervened = filt.filter(sp_nom, pose, fscan, w, health, DT)
+        ep = getattr(filt, "last_epoch", None)
+        if ep is not None and ep is not last_ep:    # score the monitor epoch against truth (F5)
+            last_ep = ep
+            et, ex, ey, epl, est_status, excl = ep
+            mon["epochs"] += 1
+            if ex is not None and math.isfinite(epl):
+                err = math.hypot(ex - tr.x, ey - tr.y)
+                mon["avail"] += 1
+                mon["breach"] += int(err > epl)
+                mon["err_over_pl_max"] = max(mon["err_over_pl_max"], round(err / epl, 4))
+            if est_status == "excluded":
+                bad = set()
+                fired = est.fault.log.get("fired_t") if est is not None and est.fault is not None else None
+                if fired is not None and et >= fired - 1e-9:
+                    bad.add("vio")
+                if nlos is not None and nlos.active(et):
+                    bad.add(f"a{nlos.anchor}")
+                mon["wrong_excl" if set(excl) - bad else "correct_excl"] += 1
         n_f += 1
         n_int += int(intervened)
         ad.send_setpoint(sp)
@@ -125,6 +166,9 @@ def run_one(arm: str, case: str, uns_on: bool, index: int, seed: int, cfg=None, 
         "filter_stats": ({k: (round(v, 4) if isinstance(v, float) else v) for k, v in filt.stats.items()}
                          if hasattr(filt, "stats") else None),
         "fault_log": est.fault.log if est is not None and est.fault is not None else None,
+        "nlos": None if nlos is None else nlos.log,
+        "monitor": mon if mon["epochs"] else None,
+        "ended_in_hover": bool(filt.stats["hover_at_end"]) if "hover_at_end" in getattr(filt, "stats", {}) else None,
         "wall_s": round(time.perf_counter() - t0, 3),
     })
     return res
@@ -147,8 +191,46 @@ def summarize(rows):
         "median_time_to_goal_s": (round(float(np.median([r["time_to_goal_s"] for r in rows if r["reached"]])), 2)
                                   if any(r["reached"] for r in rows) else None),
         "median_max_pose_error_m": round(float(np.median([r["max_pose_error_m"] for r in rows])), 3),
+        "stuck_in_hover": (sum(1 for r in rows if r["stuck"] and r.get("ended_in_hover"))
+                           if any(r.get("ended_in_hover") is not None for r in rows) else None),
         **_diag(rows),
+        **_mon(rows),
     }
+
+
+def _mon(rows):
+    """F5 monitor and hover diagnostics; empty for arms without a monitor."""
+    ms = [r["monitor"] for r in rows if r.get("monitor")]
+    st = [r["filter_stats"] for r in rows if r.get("filter_stats") and "hover_steps" in r["filter_stats"]]
+    if not ms or not st:
+        return {}
+    tot = {k: sum(m[k] for m in ms) for k in ("epochs", "avail", "breach", "wrong_excl", "correct_excl")}
+    steps = sum(s["steps"] for s in st)
+    return {"mon_epochs": tot["epochs"], "mon_avail_frac": round(tot["avail"] / max(tot["epochs"], 1), 4),
+            "pl_breaches": tot["breach"], "pl_breach_frac": round(tot["breach"] / max(tot["avail"], 1), 6),
+            "err_over_pl_max": round(max(m["err_over_pl_max"] for m in ms), 4),
+            "wrong_excl_epochs": tot["wrong_excl"], "wrong_excl_runs": sum(1 for m in ms if m["wrong_excl"]),
+            "correct_excl_epochs": tot["correct_excl"],
+            "ambiguous_epoch_frac": round(sum(s["ambiguous_epochs"] for s in st) / max(tot["epochs"], 1), 4),
+            "hover_step_frac": round(sum(s["hover_steps"] for s in st) / max(steps, 1), 4),
+            "runs_with_hover": sum(1 for s in st if s["hover_steps"] > 0),
+            "cap_step_frac": round(sum(s["cap_steps"] for s in st) / max(steps, 1), 4),
+            "mean_pl_m": round(sum(s["pl_sum_m"] for s in st) / max(sum(s["pl_n"] for s in st), 1), 4),
+            "max_pl_m": round(max(s["pl_max_m"] for s in st), 4)}
+
+
+MON_HEAD = ("| arm | case | monitor epochs | PL available % | PL breaches (true err > PL) | max err / PL "
+            "| wrong-exclusion epochs (runs) | ambiguous epochs % | hover steps % | runs with hover "
+            "| speed-cap steps % | mean PL m | max PL m |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|")
+
+
+def mon_line(arm, case, s):
+    if "mon_epochs" not in s:
+        return None
+    return (f"| {arm} | {case} | {s['mon_epochs']} | {round(100 * s['mon_avail_frac'], 2)} | {s['pl_breaches']} "
+            f"| {s['err_over_pl_max']} | {s['wrong_excl_epochs']} ({s['wrong_excl_runs']}) "
+            f"| {round(100 * s['ambiguous_epoch_frac'], 2)} | {round(100 * s['hover_step_frac'], 2)} "
+            f"| {s['runs_with_hover']} | {round(100 * s['cap_step_frac'], 2)} | {s['mean_pl_m']} | {s['max_pl_m']} |")
 
 
 def _diag(rows):
@@ -180,15 +262,16 @@ def diag_line(arm, case, s):
             f"| {f('mean_margin_nearest_m')} | {f('max_margin_m')} | {f('max_gamma_m')} |")
 
 
-HEAD = ("| arm | case | layouts | collision % | of which unsensed | reached % | stuck % | timeout % "
-        "| intervention fraction | median min clearance m | median time to goal s | median max pose err m |\n"
-        "|---|---|---|---|---|---|---|---|---|---|---|---|")
+HEAD = ("| arm | case | layouts | collision % | of which unsensed | reached % | stuck % | of which in hover "
+        "| timeout % | intervention fraction | median min clearance m | median time to goal s | median max pose err m |\n"
+        "|---|---|---|---|---|---|---|---|---|---|---|---|---|")
 
 
 def line(arm, case, s):
     f = lambda v: "-" if v is None else f"{v}"
     return (f"| {arm} | {case} | {s['n']} | {s['collision_pct']} | {s['collisions_unsensed']} of {s['collisions']} "
-            f"| {s['reached_pct']} | {s['stuck_pct']} | {s['timeout_pct']} | {s['intervention_frac_mean']} "
+            f"| {s['reached_pct']} | {s['stuck_pct']} | {f(s.get('stuck_in_hover'))} | {s['timeout_pct']} "
+            f"| {s['intervention_frac_mean']} "
             f"| {s['median_min_clearance_m']} | {f(s['median_time_to_goal_s'])} | {s['median_max_pose_error_m']} |")
 
 
@@ -238,6 +321,8 @@ def main(argv=None) -> int:
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--arms", default="F0,F1,F2")
     ap.add_argument("--cases", default=",".join(CASES))
+    ap.add_argument("--uwb-cases", default=",".join(UWB_CASES),
+                    help="extra cases run only for arms that read UWB (F5); empty to skip")
     ap.add_argument("--unsensed", default="on,off")
     ap.add_argument("--workers", type=int, default=max(1, (os.cpu_count() or 2) - 2))
     ap.add_argument("--out", default=RESULTS)
@@ -249,7 +334,10 @@ def main(argv=None) -> int:
     cmd = "python run_kill.py " + " ".join(argv if argv is not None else sys.argv[1:])
     if a.calibrate:
         return calibrate(a.layouts, a.seed, a.workers, a.out, cmd)
-    tasks = [(arm, c, u, i, a.seed) for u in uns for arm in arms for c in cases for i in range(a.layouts)]
+    ucases = [x for x in a.uwb_cases.split(",") if x]
+    arm_cases = {arm: cases + (ucases if getattr(filters.REGISTRY[parse_arm(arm)[0]], "NEEDS_UWB", False) else [])
+                 for arm in arms}
+    tasks = [(arm, c, u, i, a.seed) for u in uns for arm in arms for c in arm_cases[arm] for i in range(a.layouts)]
     t0 = time.perf_counter()
     if a.workers > 1:
         with ProcessPoolExecutor(max_workers=a.workers) as ex:
@@ -264,9 +352,9 @@ def main(argv=None) -> int:
     for u in uns:
         tag = "on" if u else "off"
         sub = [r for r in rows if r["unsensed"] == u]
-        table, summ, dtab = [HEAD], {}, [DIAG_HEAD]
+        table, summ, dtab, mtab = [HEAD], {}, [DIAG_HEAD], [MON_HEAD]
         for arm in arms:
-            for c in cases:
+            for c in arm_cases[arm]:
                 rr = [r for r in sub if r["arm"] == arm and r["case"] == c]
                 s = summarize(rr)
                 summ[f"{arm}/{c}"] = s
@@ -274,8 +362,14 @@ def main(argv=None) -> int:
                 dl = diag_line(arm, c, s)
                 if dl:
                     dtab.append(dl)
+                ml = mon_line(arm, c, s)
+                if ml:
+                    mtab.append(ml)
         if len(dtab) > 1:
-            table += ["", "Map-barrier diagnostics (F3, F4):", "", *dtab]
+            table += ["", "Map-barrier diagnostics (F3, F4, F5; for F5 the margin column is the PL):", "", *dtab]
+        if len(mtab) > 1:
+            table += ["", "Integrity monitor and hover diagnostics (F5), scored on truth at every monitor epoch:",
+                      "", *mtab]
         stem = os.path.join(a.out, f"{a.tag}_unsensed_{tag}_{a.seed}")
         params = {arm: filters.make(parse_arm(arm)[0], **parse_arm(arm)[1]).p for arm in arms}
         with open(stem + ".json", "w") as fh:
@@ -287,7 +381,7 @@ def main(argv=None) -> int:
                                            "glass_len": unsensed.GLASS_LEN, "p_glass": unsensed.P_GLASS},
                        "filter_params": params, "summary": summ, "wall_s": round(wall, 1), "env": env,
                        "runs": sub}, fh, indent=1)
-        n_placed = [r["n_unsensed"] for r in sub if r["arm"] == arms[0] and r["case"] == cases[0]]
+        n_placed = [r["n_unsensed"] for r in sub if r["arm"] == arms[0] and r["case"] == arm_cases[arms[0]][0]]
         note = (f"Unsensed obstacles placed: {sum(n_placed)} in {len(n_placed)} layouts "
                 f"(per layout min {min(n_placed)}, max {max(n_placed)}).\n" if u else "")
         md = f"`{cmd}` (synthetic), unsensed {tag}, wall {wall:.1f} s for the whole command\n\n{note}\n" + "\n".join(table) + "\n"

@@ -232,7 +232,87 @@ Table: [integrity/results/monitor_0.md](integrity/results/monitor_0.md).
 - **Max-separation exclusion picks the wrong source** (9 runs NLOS, 19 runs both faults), as the
   hub's multi-source-fde saw. The headline's "hover when ambiguous" rule exists for this case.
 - The job hit its time limit before writing a README; the loop driver wrote this from the result
-  files. Not yet used by any filter arm: that is item 34.
+  files. Used by the F5 arm in Part d.
+
+## Part d: ours (F5) against the baselines (ran 2026-11-09, synthetic, seed 0 only)
+
+Loop item 34. All inputs are **synthetic** (simulated layouts, vehicle, range fan, VIO-like
+estimator, UWB ranges, injected faults). Nothing here is a flight or SITL result.
+
+### F5 (filters.py `PLCBF`)
+
+- **Range barrier:** F2 unchanged, on what the fan sees (body-frame points, no position).
+- **Map barrier:** one second-order ECBF row per map obstacle within 3 m (walls, boxes,
+  cylinders, unsensed ones included), `h = d(x_mon) - r_safe - PL`, `n . a >= -z1 n.v - z0 h`,
+  solved in one QP with the range row (F3's solver). `x_mon` and `PL` are the output of
+  [integrity/monitor.py](integrity/monitor.py), stepped at every 10 Hz UWB epoch on the VIO-EKF
+  position, its own `sigma_xy` and 4 UWB ranges; `x_mon` is carried forward with the estimated
+  velocity between epochs. The margin is the live PL, not the EKF covariance (F3), not a fixed
+  bound (F4).
+- **PL integrity risk:** `monitor.IR = 1e-3` per epoch, `P_FA = 1e-3`, fault priors 1e-2 per
+  epoch for VIO and per anchor (all assumed in monitor.py, not derived from data). Default
+  variant `ss1` (one fault at a time, subset exclusion, does not charge the two-fault prior);
+  `F5s2` runs the two-fault variant `ss2`.
+- **Hover rule:** when the monitor reports `ambiguous` (detected, no unique consistent
+  exclusion) or a non-finite PL, the planner command is replaced by zero velocity, map rows are
+  dropped, and F2's range row still filters the braking command. Held 0.5 s after the last such
+  epoch. A unique consistent exclusion is used as the monitor gives it; the filter never drops the
+  largest-residual source.
+- **Speed cap from nav health:** `|v| <= 2.0 m/s * s`, s = 1 at PL <= 0.5 m, linear down to 0.3
+  at PL >= 1.5 m; s <= 0.5 while VIO quality < 50 or a source is excluded.
+
+| Parameter | Value | Source |
+|---|---|---|
+| monitor_variant | ss1 (F5s2: ss2) | integrity/monitor.py; ss1 had the smallest PL in [monitor_0.md](integrity/results/monitor_0.md) |
+| ecbf_pole, r_safe, query_m, slack_rho | 2.5 1/s, 0.15 m, 3 m, 1e4 | same as F3 (ours) |
+| hover_hold_s | 0.5 s | ours, against flicker |
+| v_cap, pl_full_m, pl_slow_m, s_min | 2.0 m/s, 0.5 m, 1.5 m, 0.3 | v_cap = arena v_max; the rest ours (about the ss1 median and NLOS p95 PL) |
+| s_degraded, quality_ok | 0.5, 50 | ours; quality 25 = dark zone, 0 = no VIO (arena estimator.py) |
+
+### Run
+
+`python run_kill.py --layouts 100 --seed 0 --workers 14 --tag kill_d --arms F2,F3,F4@eps_m=0.2,F5,F5s2 --cases none,jump,bias,dropout --unsensed on`,
+2800 runs, wall 194.5 s on 14 workers (Apple M3 Max, CPython 3.11.15, numpy 2.4.6, scipy 1.17.1).
+Unsensed obstacles on (200 placed in 100 layouts). F5 and F5s2 also run `uwb_nlos` (VIO none +
+one NLOS anchor) and `both` (VIO bias + NLOS from the same start). The baselines fly on the same
+UWB-free VIO-EKF estimate as in parts a and b; their rows reproduce `kill_a` (F2) and `kill_b`
+(F3, F4@0.2) exactly. Files: [kill_d_unsensed_on_0.md](results/kill_d_unsensed_on_0.md),
+[kill_d_summary_0.md](results/kill_d_summary_0.md), per-run rows in
+[kill_d_unsensed_on_0.json](results/kill_d_unsensed_on_0.json).
+
+Collision % / reached % / stuck % (of which stuck while hovering) / median time to goal s:
+
+| arm | none | jump | bias | dropout | uwb_nlos | both |
+|---|---|---|---|---|---|---|
+| F2 PX4-CBF | 3 / 72 / 25 / 20.97 | 11 / 33 / 56 / 21.4 | 7 / 33 / 60 / 20.26 | 4 / 59 / 37 / 21.12 | - | - |
+| F3 Belief-CBF | 0 / 62 / 38 / 20.89 | 9 / 31 / 60 / 21.22 | 3 / 31 / 66 / 20.06 | 1 / 56 / 43 / 21.04 | - | - |
+| F4 MR-CBF eps 0.2 m | 0 / 60 / 40 / 21.06 | 0 / 29 / 71 / 21.06 | 0 / 29 / 71 / 20.68 | 1 / 53 / 46 / 21.16 | - | - |
+| **F5 ours (ss1)** | 0 / 64 / 36 (0) / 21.24 | 0 / 20 / 80 (33) / 22.21 | 0 / 28 / 72 (13) / 20.33 | 0 / 51 / 49 (5) / 21.78 | 0 / 59 / 41 (11) / 24.76 | 0 / 25 / 75 (23) / 23.42 |
+| F5s2 (ss2) | 0 / 38 / 62 (0) / 21.97 | 0 / 14 / 86 (25) / 24.51 | 0 / 19 / 81 (10) / 23.1 | 0 / 36 / 64 (5) / 22.52 | 0 / 41 / 58 (9) / 24.92 | 0 / 17 / 83 (22) / 27.22 |
+
+Monitor inside the loop (F5, scored on truth at every epoch, same file): PL available in
+87.2-100 % of epochs, mean PL 0.44-0.57 m. 0 PL breaches in none, jump, bias, dropout and
+uwb_nlos. In `both`: 47 breaches, a fraction of 1.84e-3 of available epochs, **above the 1e-3
+integrity risk the PL is computed at**, and 66 wrong-exclusion epochs in 5 runs; no collision
+followed. Hover was entered in 54 of 100 jump runs (16 % of steps).
+
+### Verdict against doc 04 section 3.4 (seed 0 only, held-out rerun pending (item 37))
+
+- **Collisions <= 1 %:** met. F5 has 0 % in all six cases (600 runs).
+- **At least 3x lower than F3 on jump and bias:** met on this seed, 0 vs 9 % (jump) and 0 vs 3 %
+  (bias). The bias case rests on 3 collisions in 100 runs, so the 3x is weak evidence.
+- **Reach >= 90 % of F2:** **FAIL.** F5 reaches 89 % of F2 (none), 61 % (jump, 20 vs 33),
+  85 % (bias) and 86 % (dropout). The jump loss is the hover rule: 33 of the 80 stuck jump runs
+  ended while hovering on an ambiguous monitor. F5s2 (larger PL) is worse: 42-61 % of F2.
+- **Against F4 with the fixed 0.2 m bound:** equal safety (0 % for F5; F4 0, 0, 0, 1 %), but not
+  better reach: F5 64 / 20 / 28 / 51 % against F4 60 / 29 / 29 / 53 % (none / jump / bias /
+  dropout), and F5 is slower on jump and dropout (22.21 and 21.78 s against 21.06 and 21.16 s).
+  **A fixed bound tuned on the test seed matches F5 on safety and beats it on jump reach.** F4 also
+  misses the reach bar (83-90 % of F2). What F5 has that F4 lacks on this seed: its margin is
+  chosen without the test seed, and it stays at 0 % collisions under UWB NLOS and VIO+UWB faults,
+  cases F4 was not run on because it has no second source.
+- So the headline does not win on this seed. The parts that would have to change are the hover
+  rule (hover ends the run as stuck) and the in-loop PL in `both` (breach rate above its IR).
 
 ## Add an arm
 
