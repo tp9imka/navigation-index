@@ -120,6 +120,10 @@ straight 0 %, known 100 %, unknown 100 %.
 - A* under the estimator faults, with and without safety filters: see
   [close-area-safety-filter](../close-area-safety-filter/README.md).
 
+Followers: a linear corridor MPC (OSQP, 0.22 ms median solve) matches the carrot follower here
+([close-area-planner-mpc](../close-area-planner-mpc/README.md)); sampling planners vs A*:
+[close-area-planner-sampling](../close-area-planner-sampling/README.md).
+
 ## Scoring a flight log (sim or real)
 
 `score_log.py` scores any JSONL flight log in the [log_format.md](log_format.md) format (numpy +

@@ -1,0 +1,2 @@
+-r ../close-area-arena/requirements.txt
+osqp>=1.0

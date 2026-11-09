@@ -1,0 +1,13 @@
+random astar_carrot: reached 100.0 coll 0.0 clr 0.635 te {'median': 0.018, 'p95': 0.053} qp None wall 12.5
+random astar_mpc: reached 100.0 coll 0.0 clr 0.637 te {'median': 0.017, 'p95': 0.054} qp {'median': 0.213, 'p95': 0.448, 'max': 7.981} wall 19.7
+random astar_mpc_cold: reached 100.0 coll 0.0 clr 0.637 te {'median': 0.017, 'p95': 0.055} qp {'median': 0.717, 'p95': 0.865, 'max': 5.453} wall 23.9
+random astar_mpc_nocorridor: reached 100.0 coll 0.0 clr 0.637 te {'median': 0.017, 'p95': 0.054} qp {'median': 0.22, 'p95': 0.456, 'max': 8.445} wall 20.2
+random astar_mpc_fast: reached 100.0 coll 0.0 clr 0.63 te {'median': 0.02, 'p95': 0.053} qp {'median': 0.222, 'p95': 0.464, 'max': 4.28} wall 20.1
+random astar_mpc_fast_nocorridor: reached 100.0 coll 0.0 clr 0.63 te {'median': 0.02, 'p95': 0.053} qp {'median': 0.223, 'p95': 0.463, 'max': 4.273} wall 20.2
+narrow_gap astar_carrot: reached 100.0 coll 0.0 clr 0.276 te {'median': 0.021, 'p95': 0.053} qp None wall 37.8
+narrow_gap astar_mpc: reached 100.0 coll 0.0 clr 0.304 te {'median': 0.019, 'p95': 0.053} qp {'median': 0.222, 'p95': 0.464, 'max': 9.311} wall 46.3
+narrow_gap astar_mpc_cold: reached 100.0 coll 0.0 clr 0.303 te {'median': 0.019, 'p95': 0.053} qp {'median': 0.733, 'p95': 1.036, 'max': 29.237} wall 52.6
+narrow_gap astar_mpc_nocorridor: reached 100.0 coll 0.0 clr 0.304 te {'median': 0.019, 'p95': 0.053} qp {'median': 0.224, 'p95': 0.473, 'max': 13.877} wall 46.8
+narrow_gap astar_mpc_fast: reached 100.0 coll 0.0 clr 0.284 te {'median': 0.021, 'p95': 0.055} qp {'median': 0.22, 'p95': 0.482, 'max': 10.007} wall 40.6
+narrow_gap astar_mpc_fast_nocorridor: reached 98.0 coll 2.0 clr 0.284 te {'median': 0.021, 'p95': 0.054} qp {'median': 0.22, 'p95': 0.477, 'max': 5.75} wall 40.5
+wrote /Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261109-123944-kiro-d5ea/samples/close-area-planner-mpc/results/mpc_compare_0.json, /Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261109-123944-kiro-d5ea/samples/close-area-planner-mpc/results/mpc_compare_0.md, /Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261109-123944-kiro-d5ea/samples/close-area-planner-mpc/results/mpc_narrow_gap_0_run32.png
