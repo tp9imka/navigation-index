@@ -523,3 +523,93 @@ Median recover stays 0.2 s for (b) and 0.4 s for (c) and (f) on every rung. Wron
 - (c) hover-only still ends runs hovering (65-97 %).
 
 Limits: one seed (2), no held-out check. Added obstacles are off the truth path by construction. The 0.2 m shift is per obstacle, not a rigid map offset. The e_selfmap truth arm is not an upper bound. The arena's 2 s dropout and 0.5 m jump only. The move check still ignores the live scan; checking moves against scan endpoints is the obvious next fix and was not run.
+
+## Yaw search: 3-DoF relocalization (loop-60)
+
+The matcher above takes yaw from the estimator. [relocalize_yaw.py](relocalize_yaw.py) adds a
+yaw search to arm (f) without editing it. `YawScanMatcher` scores the same 0.1 m xy lattice at
+13 yaw offsets (+-15 deg in 2.5 deg steps) around the estimator yaw. It keeps the best yaw per
+xy cell, runs the same 0.5 m peak suppression (up to 5 hypotheses), then refines each peak at
+0.025 m x 0.25 deg. On accept, the xy offset is re-anchored as before and the yaw correction
+rotates all later estimator deltas. Truth is never used in a decision. Synthetic inputs only.
+
+    .venv/bin/python run_yaw.py --layouts 100 --seed 2      # 124 s wall, 12 workers
+    .venv/bin/python run_yaw.py --corridor --runs 20        # 203 s wall
+
+Fault: from the step where the arena jump fault fires (0.5 m step, reset_counter + 1), the
+estimate is rotated by the bias (5 or 10 deg, sign seeded per run; or 180 deg). Later position
+and velocity deltas are rotated, and the reported yaw is truth + bias. Vehicle model, both arms:
+the setpoint is flown rotated by (true yaw - reported yaw), so a heading error bends the flight
+as well as the estimate. Arms: (f) `multi_ig` unchanged; (f) + yaw search; (f) + yaw search +
+heading first. The last arm was added after the first corridor run; see below.
+
+**Random layouts**, 100, seed 2 ([results/yaw_random_2.md](results/yaw_random_2.md), synthetic).
+The jump fault fired in 86 runs and opened a new loss event in 82; in the other 4 an event was
+already open.
+
+| bias | arm | reached % | collision % | wrong commits | jump event => accepted / wrong / open | jump recover s median / p95 | ms per matched scan, median |
+|---|---|---|---|---|---|---|---|
+| 0 | (f) no yaw search | 100 | 0 | 0 | 82 => 82 / 0 / 0 | 0.4 / 1.69 | 1.8 |
+| 0 | (f) + yaw search | 100 | 0 | 0 | 82 => 82 / 0 / 0 | 0.4 / 2.88 | 20.1 |
+| +-5 | (f) no yaw search | 38 | 0 | 7 | 82 => 68 / 1 / 14 | 0.4 / 6.13 | 7.0 |
+| +-5 | (f) + yaw search | 100 | 0 | 0 | 82 => 82 / 0 / 0 | 0.4 / 2.6 | 23.5 |
+| +-10 | (f) no yaw search | 18 | 7 | 52 | 82 => 52 / 16 / 30 | 0.4 / 6.05 | 7.1 |
+| +-10 | (f) + yaw search | 100 | 0 | 0 | 82 => 82 / 0 / 0 | 0.4 / 2.78 | 23.4 |
+
+- A 5 deg heading error alone takes (f) from 100 % to 38 %; 10 deg takes it to 18 % with 7 %
+  collisions. The xy-only matcher scores a rotated scan, so verdicts go `none`. The window
+  widened to +-4 m in 109 and 113 events, against 2-3 with yaw search; that widening is why the
+  no-yaw arm costs 7 ms per scan.
+- With yaw search, every jump event was accepted with no wrong commit, and the heading at run
+  end was off by a median 0.25 deg (max 1.0 deg) under every bias.
+- Cost: about 20-23 ms per matched scan against 1.8 ms. Medians come from 12 parallel workers
+  on Apple arm64 (CPython 3.11.15, numpy 2.4.6, scipy 1.17.1), so these are load-dependent.
+- The heading-first arm gave the same outcome rows here (100 / 100 / 100 %, 0 wrong commits).
+
+**Corridor** (the 2 m x 14.8 m corridor above, corridor_jump fault, 20 runs,
+[results/yaw_corridor.md](results/yaw_corridor.md), synthetic):
+
+| bias | arm | reached % | collision % | stuck % | jump event => accepted / wrong / open | median run max err m |
+|---|---|---|---|---|---|---|
+| +-10 | (f) no yaw search | 0 | 50 | 45 | 20 => 17 / 13 / 3 | 2.24 |
+| +-10 | (f) + yaw search | 45 | 25 | 15 | 20 => 15 / 0 / 5 | 0.99 |
+| +-10 | (f) + yaw search + heading first | 70 | 0 | 30 | 20 => 16 / 0 / 4 | 0.60 |
+| 180 | (f) no yaw search | 0 | 0 | 95 | 20 => 15 / 15 / 5 | 9.60 |
+| 180 | (f) + yaw search | 0 | 0 | 100 | 20 => 16 / 16 / 4 | 9.64 |
+| 180 | (f) + yaw search + heading first | 0 | 0 | 100 | 20 => 16 / 16 / 4 | 9.64 |
+
+For reference, (f) in this corridor without a yaw bias reached 80 %
+([results/disamb_corridor.md](results/disamb_corridor.md)).
+
+- At 10 deg, yaw search alone collided in 5 of 20 runs. In all 5 the jump event was still open:
+  the drone was flying disambiguating moves with the uncorrected heading in a 2 m corridor.
+  Heading first fixes that case. When every live hypothesis agrees on the yaw correction within
+  1 deg for 3 scans (best score >= 0.6, correction >= 1 deg), it applies the heading before the
+  xy verdict. Result: 70 % reached, 0 collisions, 0 wrong commits. This rule was chosen after
+  seeing the corridor run, on the same runs. No held-out seed was flown with it.
+
+**Verdict on the 180 deg case: FAIL in every arm, and no scan-only fix exists in this corridor.**
+The corridor is point-symmetric about its centre, so a pose and its twin (mirrored, yaw + 180)
+see the same scan.
+
+- Flights: a 180 deg heading error ended scored stuck in 19-20 of 20 runs. 15-16 of 20 jump
+  events committed to the wrong pose (median run max error 9.6 m). The drone flies the mirror
+  path back toward A while it believes it is heading to B.
+- Static check, 20 poses near the middle: the +-15 deg search given a 180-off heading finds the
+  twin with best score median 0.972 (min 0.963). That is far above the 0.6 floor, so nothing
+  flags it.
+- The true-heading best over the flipped-heading best has ratio median 1.0042 (range 1.0 to
+  1.0098), below the 1.02 rule. So even a full-circle search could at best report "ambiguous".
+- A full-circle search (144 yaws, median 250 ms per scan) filled all 5 hypothesis slots with
+  flipped-heading copies along the corridor axis in 20 of 20 poses. The true heading was not
+  in the set.
+- The flipped copies score slightly higher because of a one-cell rasterization asymmetry. In
+  corridor run 0 the lower wall's face cell is free and the upper wall's is occupied.
+- Practical answer: keep the +-15 deg window and bound heading error from another source, such
+  as VIO yaw (which drifts slowly and does not flip), a magnetometer outdoors, or an asymmetric
+  landmark. A yaw prior is an assumption to state, not something this matcher checks.
+
+Limits: one bias per run, applied once at the jump. No slow yaw drift, and no yaw error without
+a reset_counter trigger. The move chooser predicts all hypotheses at one common yaw. The
+setpoint-rotation vehicle model is an assumption. One corridor geometry, seed 2 only for
+random layouts. The flight rows of a second run were identical; the timings differ by load.
