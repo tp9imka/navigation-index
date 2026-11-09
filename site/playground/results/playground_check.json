@@ -1,0 +1,630 @@
+{
+ "date": "2026-11-09T10:59:32.392Z",
+ "input": "synthetic",
+ "page": "http://127.0.0.1:8766/site/playground/index.html",
+ "steps": [],
+ "chrome": "Chrome/140.0.7339.208",
+ "loading_shot": {
+  "file": "pg_loading.png",
+  "width": 1280,
+  "height": 900
+ },
+ "load": {
+  "ready_ms": 5390,
+  "mb": 22.2,
+  "worker": {
+   "pyodide_ms": 2301,
+   "packages_ms": 1624,
+   "import_ms": 1452,
+   "ready_ms": 5377
+  },
+  "env": {
+   "python": "3.14.2",
+   "numpy": "2.4.6",
+   "scipy": "1.18.0",
+   "machine": "wasm32",
+   "system": "Emscripten",
+   "imports_ms": {
+    "scipy_ndimage": 692.1,
+    "arena": 36.4,
+    "reactive": 3.2,
+    "safety_filter": 451.7
+   },
+   "planners": [
+    "straight",
+    "freest_beam",
+    "astar_known",
+    "astar_unknown",
+    "apf",
+    "vfh_plus"
+   ],
+   "presets": [
+    "ideal",
+    "crazyflie",
+    "crazyflie_bright"
+   ],
+   "faults": [
+    "truth",
+    "none",
+    "jump",
+    "bias",
+    "dropout"
+   ],
+   "filters": [
+    "none",
+    "F2"
+   ],
+   "load_errors": {},
+   "pyodide": "314.0.7",
+   "arena_files": 23
+  },
+  "wall_since_navigate_s": 5.583
+ },
+ "parity": [
+  {
+   "world": "random_0",
+   "planner": "straight",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 20.32,
+   "native_wall_s": 0.091,
+   "frames": 204,
+   "browser": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 20.3,
+    "min_clearance_m": 0.3797,
+    "path_length_m": 13.266
+   },
+   "native": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 20.3,
+    "min_clearance_m": 0.3797,
+    "path_length_m": 13.266
+   },
+   "same": true,
+   "browser_wall_s": 0.187
+  },
+  {
+   "world": "random_0",
+   "planner": "freest_beam",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 26.08,
+   "native_wall_s": 0.098,
+   "frames": 261,
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 26.08,
+    "duration_s": 26.08,
+    "min_clearance_m": 0.4702,
+    "path_length_m": 24.504
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 26.08,
+    "duration_s": 26.08,
+    "min_clearance_m": 0.4702,
+    "path_length_m": 24.504
+   },
+   "same": true,
+   "browser_wall_s": 0.192
+  },
+  {
+   "world": "random_0",
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 19.38,
+   "native_wall_s": 0.386,
+   "frames": 194,
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 19.38,
+    "duration_s": 19.38,
+    "min_clearance_m": 0.5647,
+    "path_length_m": 23.838
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 19.38,
+    "duration_s": 19.38,
+    "min_clearance_m": 0.5647,
+    "path_length_m": 23.838
+   },
+   "same": true,
+   "browser_wall_s": 0.765
+  },
+  {
+   "world": "random_0",
+   "planner": "astar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 18.68,
+   "native_wall_s": 1.589,
+   "frames": 187,
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.68,
+    "duration_s": 18.68,
+    "min_clearance_m": 0.6432,
+    "path_length_m": 23.947
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.68,
+    "duration_s": 18.68,
+    "min_clearance_m": 0.6432,
+    "path_length_m": 23.947
+   },
+   "same": true,
+   "browser_wall_s": 3.039
+  },
+  {
+   "world": "random_0",
+   "planner": "apf",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 28.88,
+   "native_wall_s": 0.103,
+   "frames": 289,
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 28.88,
+    "duration_s": 28.88,
+    "min_clearance_m": 0.6356,
+    "path_length_m": 24.9
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 28.88,
+    "duration_s": 28.88,
+    "min_clearance_m": 0.6356,
+    "path_length_m": 24.9
+   },
+   "same": true,
+   "browser_wall_s": 0.197
+  },
+  {
+   "world": "random_0",
+   "planner": "vfh_plus",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 26.12,
+   "native_wall_s": 0.114,
+   "frames": 262,
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 26.12,
+    "duration_s": 26.12,
+    "min_clearance_m": 0.2332,
+    "path_length_m": 24.478
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 26.12,
+    "duration_s": 26.12,
+    "min_clearance_m": 0.2332,
+    "path_length_m": 24.478
+   },
+   "same": true,
+   "browser_wall_s": 0.212
+  },
+  {
+   "world": "random_0",
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "jump",
+   "filter": "none",
+   "max_pose_error_m": 0.4906,
+   "free_path": true,
+   "sim_s": 14.2,
+   "native_wall_s": 0.406,
+   "frames": 142,
+   "browser": {
+    "outcome": "collision",
+    "time_to_goal_s": null,
+    "duration_s": 14.2,
+    "min_clearance_m": 0.1497,
+    "path_length_m": 15.888
+   },
+   "native": {
+    "outcome": "collision",
+    "time_to_goal_s": null,
+    "duration_s": 14.2,
+    "min_clearance_m": 0.1497,
+    "path_length_m": 15.888
+   },
+   "same": true,
+   "browser_wall_s": 0.805
+  },
+  {
+   "world": "random_0",
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "jump",
+   "filter": "F2",
+   "max_pose_error_m": 0.5185,
+   "free_path": true,
+   "sim_s": 32.9,
+   "native_wall_s": 0.866,
+   "frames": 329,
+   "browser": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 32.88,
+    "min_clearance_m": 0.3383,
+    "path_length_m": 25.344
+   },
+   "native": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 32.88,
+    "min_clearance_m": 0.3383,
+    "path_length_m": 25.344
+   },
+   "same": true,
+   "browser_wall_s": 1.38
+  },
+  {
+   "world": "random_0",
+   "planner": "freest_beam",
+   "preset": "ideal",
+   "fault": "bias",
+   "filter": "none",
+   "max_pose_error_m": 0.7143,
+   "free_path": true,
+   "sim_s": 25.84,
+   "native_wall_s": 0.163,
+   "frames": 259,
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 25.84,
+    "duration_s": 25.84,
+    "min_clearance_m": 0.4728,
+    "path_length_m": 24.569
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 25.84,
+    "duration_s": 25.84,
+    "min_clearance_m": 0.4728,
+    "path_length_m": 24.569
+   },
+   "same": true,
+   "browser_wall_s": 0.28
+  },
+  {
+   "world": "random_0",
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "dropout",
+   "filter": "F2",
+   "max_pose_error_m": 0.3331,
+   "free_path": true,
+   "sim_s": 20.6,
+   "native_wall_s": 0.593,
+   "frames": 206,
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.6,
+    "duration_s": 20.6,
+    "min_clearance_m": 0.8379,
+    "path_length_m": 24.334
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.6,
+    "duration_s": 20.6,
+    "min_clearance_m": 0.8379,
+    "path_length_m": 24.334
+   },
+   "same": true,
+   "browser_wall_s": 1.034
+  },
+  {
+   "world": "office_0",
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 22.74,
+   "native_wall_s": 0.484,
+   "frames": 228,
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.74,
+    "duration_s": 22.74,
+    "min_clearance_m": 0.2997,
+    "path_length_m": 13.765
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.74,
+    "duration_s": 22.74,
+    "min_clearance_m": 0.2997,
+    "path_length_m": 13.765
+   },
+   "same": true,
+   "browser_wall_s": 0.905
+  },
+  {
+   "world": "office_0",
+   "planner": "freest_beam",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 13.06,
+   "native_wall_s": 0.075,
+   "frames": 131,
+   "browser": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 13.04,
+    "min_clearance_m": 0.434,
+    "path_length_m": 7.115
+   },
+   "native": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 13.04,
+    "min_clearance_m": 0.434,
+    "path_length_m": 7.115
+   },
+   "same": true,
+   "browser_wall_s": 0.136
+  },
+  {
+   "world": "office_0",
+   "planner": "freest_beam",
+   "preset": "crazyflie",
+   "fault": "none",
+   "filter": "none",
+   "max_pose_error_m": 0.2255,
+   "free_path": true,
+   "sim_s": 13.12,
+   "native_wall_s": 0.094,
+   "frames": 132,
+   "browser": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 13.1,
+    "min_clearance_m": 0.4871,
+    "path_length_m": 6.86
+   },
+   "native": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 13.1,
+    "min_clearance_m": 0.4871,
+    "path_length_m": 6.86
+   },
+   "same": true,
+   "browser_wall_s": 0.177
+  },
+  {
+   "world": "glass_office_0",
+   "planner": "astar_unknown",
+   "preset": "crazyflie",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 10,
+   "native_wall_s": 0.433,
+   "frames": 100,
+   "browser": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 10,
+    "min_clearance_m": 0.8616,
+    "path_length_m": 0
+   },
+   "native": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 10,
+    "min_clearance_m": 0.8616,
+    "path_length_m": 0
+   },
+   "same": true,
+   "browser_wall_s": 0.677
+  },
+  {
+   "world": "u_trap_0",
+   "planner": "astar_known",
+   "preset": "crazyflie_bright",
+   "fault": "bias",
+   "filter": "F2",
+   "max_pose_error_m": 0.9488,
+   "free_path": true,
+   "sim_s": 29.42,
+   "native_wall_s": 0.517,
+   "frames": 295,
+   "browser": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 29.4,
+    "min_clearance_m": 0.6862,
+    "path_length_m": 25.73
+   },
+   "native": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 29.4,
+    "min_clearance_m": 0.6862,
+    "path_length_m": 25.73
+   },
+   "same": true,
+   "browser_wall_s": 0.926
+  }
+ ],
+ "compare": {
+  "world": "random_0",
+  "a": {
+   "outcome": "reached",
+   "time_to_goal_s": 19.38,
+   "duration_s": 19.38,
+   "min_clearance_m": 0.5647,
+   "path_length_m": 23.838
+  },
+  "b": {
+   "outcome": "reached",
+   "time_to_goal_s": 26.08,
+   "duration_s": 26.08,
+   "min_clearance_m": 0.4702,
+   "path_length_m": 24.504
+  },
+  "parity_text": "A: same score as native CPython 3.12.10; B: same score as native CPython 3.12.10 on this preset (native_parity.json).",
+  "shot": {
+   "file": "pg_compare_random0.png",
+   "width": 1280,
+   "height": 900
+  }
+ },
+ "drawn": {
+  "obstacles": [
+   {
+    "type": "box",
+    "cx": 10,
+    "cy": 9.5,
+    "hx": 3,
+    "hy": 2.5,
+    "material": "matte",
+    "tag": "box"
+   }
+  ]
+ },
+ "custom": {
+  "a": {
+   "outcome": "reached",
+   "time_to_goal_s": 19.06,
+   "duration_s": 19.06,
+   "min_clearance_m": 0.6116,
+   "path_length_m": 25.172
+  },
+  "b": {
+   "outcome": "reached",
+   "time_to_goal_s": 29.96,
+   "duration_s": 29.96,
+   "min_clearance_m": 0.3199,
+   "path_length_m": 26.733
+  },
+  "free_path": true,
+  "shot": {
+   "file": "pg_custom_drawn.png",
+   "width": 1280,
+   "height": 900
+  },
+  "native_a": {
+   "outcome": "reached",
+   "time_to_goal_s": 19.06,
+   "duration_s": 19.06,
+   "min_clearance_m": 0.6116,
+   "path_length_m": 25.172
+  },
+  "native_b": {
+   "outcome": "reached",
+   "time_to_goal_s": 29.96,
+   "duration_s": 29.96,
+   "min_clearance_m": 0.3199,
+   "path_length_m": 26.733
+  },
+  "same_a": true,
+  "same_b": true
+ },
+ "responsive": {
+  "run": "astar_unknown on random_0",
+  "python_wall_s": 3.021,
+  "frames": 361,
+  "max_ms": 9,
+  "median_ms": 8
+ },
+ "fault_filter": {
+  "a": {
+   "outcome": "collision",
+   "time_to_goal_s": null,
+   "duration_s": 14.2,
+   "min_clearance_m": 0.1497,
+   "path_length_m": 15.888,
+   "fault_log": {
+    "fault": "jump",
+    "armed_t": 4.986,
+    "step_m": 0.5,
+    "near_m": 1,
+    "dir_rad": 2.2621,
+    "fired_t": 5.1,
+    "clearance_at_fire_m": 0.9821
+   }
+  },
+  "b": {
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "duration_s": 32.88,
+   "min_clearance_m": 0.3383,
+   "path_length_m": 25.344,
+   "intervention_frac": 0.2681
+  },
+  "shot": {
+   "file": "pg_jump_f2_dark.png",
+   "width": 1280,
+   "height": 900
+  }
+ },
+ "phone": {
+  "viewport": "390 x 844 @2x",
+  "scroll_width": 390,
+  "body_scroll_width": 390,
+  "score": {
+   "outcome": "reached",
+   "time_to_goal_s": 22.74,
+   "duration_s": 22.74,
+   "min_clearance_m": 0.2997,
+   "path_length_m": 13.765
+  },
+  "no_horizontal_scroll": true,
+  "shot": {
+   "file": "pg_phone_390.png",
+   "width": 780,
+   "height": 1688
+  }
+ },
+ "nav_390": {
+  "showcase.html": {
+   "scroll_width": 390,
+   "link_visible": true,
+   "link_right_px": 333,
+   "topnav_right_px": 435
+  },
+  "index.html": {
+   "scroll_width": 390,
+   "link_visible": true,
+   "link_right_px": 295,
+   "topnav_right_px": 374
+  }
+ },
+ "console": []
+}

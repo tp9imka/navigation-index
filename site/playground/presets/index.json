@@ -1,0 +1,71 @@
+{
+ "schema": "close-area-world/1",
+ "input": "synthetic",
+ "command": "samples/close-area-arena/.venv/bin/python site/playground/results/export_presets.py",
+ "presets": [
+  {
+   "file": "office_0.json",
+   "family": "office",
+   "seed": 0,
+   "index": 0,
+   "label": "Office (rooms + corridor)",
+   "obstacles": 28
+  },
+  {
+   "file": "warehouse_0.json",
+   "family": "warehouse",
+   "seed": 0,
+   "index": 0,
+   "label": "Warehouse (shelf aisles)",
+   "obstacles": 27
+  },
+  {
+   "file": "forest_0.json",
+   "family": "forest",
+   "seed": 0,
+   "index": 0,
+   "label": "Forest (40-90 poles)",
+   "obstacles": 77
+  },
+  {
+   "file": "maze_0.json",
+   "family": "maze",
+   "seed": 0,
+   "index": 0,
+   "label": "Maze (10 x 10 cells)",
+   "obstacles": 37
+  },
+  {
+   "file": "glass_office_0.json",
+   "family": "glass_office",
+   "seed": 0,
+   "index": 0,
+   "label": "Glass office (glass panels)",
+   "obstacles": 18
+  },
+  {
+   "file": "random_0.json",
+   "family": "random",
+   "seed": 0,
+   "index": 0,
+   "label": "Random boxes + cylinders",
+   "obstacles": 9
+  },
+  {
+   "file": "u_trap_0.json",
+   "family": "u_trap",
+   "seed": 0,
+   "index": 0,
+   "label": "U trap",
+   "obstacles": 7
+  },
+  {
+   "file": "narrow_gap_0.json",
+   "family": "narrow_gap",
+   "seed": 0,
+   "index": 0,
+   "label": "Narrow gap",
+   "obstacles": 5
+  }
+ ]
+}

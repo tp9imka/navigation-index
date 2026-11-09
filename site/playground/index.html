@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navigation Index - Arena playground</title>
+<meta name="description" content="Draw or load a close-area arena, place A and B, pick a planner, sensor, VIO fault and safety filter, and run the hub's real Python arena code in your browser (Pyodide).">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../showcase.css?v=20261109">
+<link rel="stylesheet" href="playground.css?v=20261109b">
+<script>
+  try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<script defer src="playground.js?v=20261109b"></script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="../index.html" title="Search">Navigation Index</a>
+  <nav class="topnav" aria-label="Sections">
+    <a href="../showcase.html">Showcase</a>
+    <a href="../index.html" class="strong">Search</a>
+    <button id="themeBtn" class="icon-btn" title="Toggle dark / light theme" aria-label="Toggle theme">&#9680;</button>
+  </nav>
+</header>
+
+<main>
+<section class="pg-head">
+  <h1>Arena playground</h1>
+  <p class="muted">Draw or load an arena, drag A and B, pick a planner, sensor, VIO fault and safety filter, then run.
+    Your browser runs the hub's real Python code (<a href="../../samples/close-area-arena/README.md">close-area-arena</a>,
+    <a href="../../samples/close-area-planner-reactive/README.md">reactive planners</a>,
+    <a href="../../samples/close-area-safety-filter/README.md">F2 safety filter</a>) with Pyodide in a Web Worker. No JS re-implementation.</p>
+  <p class="honest"><span class="badge synthetic">synthetic simulation, 2.5D point mass</span>
+    <span class="muted small">Simulated layout, vehicle, range sensor and VIO. Scored on truth. Not a flight result.</span></p>
+  <div id="load" class="load" aria-live="polite">
+    <progress id="loadBar" max="100" value="0"></progress>
+    <span id="loadText" class="small">Loading Python (about 22 MB on first visit, cached after)...</span>
+  </div>
+</section>
+
+<div class="pg-grid">
+  <section class="stage pg-stage" aria-label="Arena">
+    <div class="toolbar" role="toolbar" aria-label="Editor tools">
+      <div class="tools" id="tools">
+        <button class="tool" data-tool="select" aria-pressed="true" title="Select, move; drag A or B (V)">Move</button>
+        <button class="tool" data-tool="box" title="Drag to draw a box (B)">Box</button>
+        <button class="tool" data-tool="wall" title="Drag to draw an axis-aligned wall, 0.1 m thick (W)">Wall</button>
+        <button class="tool" data-tool="cylinder" title="Drag from the centre to set the radius (C)">Cylinder</button>
+        <button class="tool" data-tool="glass" title="Glass panel: 0.04 m wall, invisible to cone sensors (G)">Glass</button>
+      </div>
+      <div class="tools">
+        <button class="btn sm" id="delBtn" title="Delete the selected obstacle (Del)" disabled>Delete</button>
+        <button class="btn sm" id="undoBtn" title="Undo (Ctrl+Z)" disabled>Undo</button>
+        <label class="small snap"><input type="checkbox" id="snap" checked> snap 0.1 m</label>
+        <select id="matSel" title="Material of the selected obstacle" aria-label="Material" disabled>
+          <option value="matte">matte</option><option value="dark">dark</option><option value="glass">glass</option><option value="mirror">mirror</option><option value="pole">pole</option>
+        </select>
+      </div>
+    </div>
+    <canvas id="arena" width="720" height="720" aria-label="Arena editor and replay, top-down view"></canvas>
+    <div class="controls" id="replayCtl" hidden>
+      <button class="btn" id="playBtn">Pause</button>
+      <label class="speed">speed <select id="speed"><option>0.5</option><option>1</option><option>2</option><option selected>4</option><option>8</option></select>x</label>
+      <input type="range" id="scrub" min="0" max="1000" value="0" aria-label="Replay time">
+      <span id="clock" class="mono small">0.0 s</span>
+      <button class="btn sm" id="editBtn" title="Hide the replay and edit the arena">Edit arena</button>
+    </div>
+    <p class="muted small" id="hint">Move: drag obstacles, A or B. Draw tools: drag on the canvas. Del deletes, Ctrl+Z undoes.</p>
+    <div class="files">
+      <label class="small">Preset <select id="presetSel" aria-label="Preset world"><option value="">loading...</option></select></label>
+      <button class="btn sm" id="newBtn" title="Empty 20 x 20 m area">New empty</button>
+      <button class="btn sm" id="saveBtn" title="Download the world as close-area-world/1 JSON">Download JSON</button>
+      <label class="btn sm file-btn">Open JSON<input type="file" id="fileIn" accept=".json,application/json" hidden></label>
+      <button class="btn sm" id="storeBtn" title="Keep this world in this browser (localStorage)">Save in browser</button>
+      <button class="btn sm" id="restoreBtn" title="Load the world saved in this browser">Load from browser</button>
+    </div>
+    <p class="small" id="worldMsg" aria-live="polite"></p>
+  </section>
+
+  <aside class="run-side pg-side" aria-label="Run">
+    <h2>Run</h2>
+    <div class="cfgs">
+      <fieldset class="cfg" id="cfgA"><legend><span class="sw-a"></span> Config A</legend></fieldset>
+      <fieldset class="cfg" id="cfgB" hidden><legend><span class="sw-b"></span> Config B</legend></fieldset>
+    </div>
+    <label class="small"><input type="checkbox" id="compare"> Compare two configs on the same world (overlaid)</label>
+    <label class="small seed">Seed <input type="number" id="seed" min="0" max="9999" value="0"> <span class="muted">(sensor noise, dark zones, fault timing)</span></label>
+    <div class="run-row">
+      <button class="btn primary" id="runBtn" disabled>Run</button>
+      <span id="runMsg" class="small muted" aria-live="polite">Waiting for Python to load.</span>
+    </div>
+
+    <div id="resultBox" hidden>
+      <div class="run-head" id="badges"></div>
+      <table class="score" id="score"></table>
+      <div class="spark-wrap">
+        <div class="spark-lbl"><span>Truth clearance to the nearest surface, m</span><span id="sparkNow"></span></div>
+        <canvas id="sparkC" height="90" aria-label="Clearance over time"></canvas>
+        <div class="spark-lbl small"><span>dashed line: vehicle radius 0.15 m (below = collision)</span></div>
+      </div>
+      <p class="small muted" id="parityMsg"></p>
+    </div>
+    <ul class="legend">
+      <li><span class="sw"></span> truth path (A); <span class="sw b"></span> truth path (B)</li>
+      <li><span class="sw est"></span> estimate the planner flew on</li>
+      <li><span class="sw plan"></span> A* planned path; thin rays: range beams now</li>
+      <li><span class="sw dark"></span> VIO dark zone (drift grows); <span class="sw glass"></span> glass</li>
+    </ul>
+    <p class="muted small" id="envMsg"></p>
+  </aside>
+</div>
+</main>
+
+<footer class="foot muted small">
+  Playground source: <a href="README.md">site/playground/README.md</a>. Arena contract: <a href="../../samples/close-area-arena/CONTRACT.md">CONTRACT.md</a>.
+  All runs are synthetic. Feasibility spike: <a href="spike.html">spike.html</a>.
+</footer>
+</body>
+</html>

@@ -1,0 +1,845 @@
+{
+ "input": "synthetic",
+ "command": "samples/close-area-arena/.venv/bin/python site/playground/results/native_parity.py",
+ "env": {
+  "python": "3.12.10",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "machine": "arm64",
+  "system": "Darwin",
+  "imports_ms": {
+   "scipy_ndimage": 685.3,
+   "arena": 214.9,
+   "reactive": 34.3,
+   "safety_filter": 5198.0
+  },
+  "planners": [
+   "straight",
+   "freest_beam",
+   "astar_known",
+   "astar_unknown",
+   "apf",
+   "vfh_plus"
+  ],
+  "presets": [
+   "ideal",
+   "crazyflie",
+   "crazyflie_bright"
+  ],
+  "faults": [
+   "truth",
+   "none",
+   "jump",
+   "bias",
+   "dropout"
+  ],
+  "filters": [
+   "none",
+   "F2"
+  ],
+  "load_errors": {}
+ },
+ "keys": [
+  "outcome",
+  "time_to_goal_s",
+  "duration_s",
+  "min_clearance_m",
+  "path_length_m"
+ ],
+ "cases": [
+  {
+   "world": "random_0",
+   "planner": "straight",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 20.3,
+    "min_clearance_m": 0.3797,
+    "path_length_m": 13.266
+   },
+   "max_pose_error_m": 0.0,
+   "free_path": true,
+   "sim_s": 20.32,
+   "native_wall_s": 0.091,
+   "frames": 204
+  },
+  {
+   "world": "random_0",
+   "planner": "freest_beam",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 26.08,
+    "duration_s": 26.08,
+    "min_clearance_m": 0.4702,
+    "path_length_m": 24.504
+   },
+   "max_pose_error_m": 0.0,
+   "free_path": true,
+   "sim_s": 26.08,
+   "native_wall_s": 0.098,
+   "frames": 261
+  },
+  {
+   "world": "random_0",
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 19.38,
+    "duration_s": 19.38,
+    "min_clearance_m": 0.5647,
+    "path_length_m": 23.838
+   },
+   "max_pose_error_m": 0.0,
+   "free_path": true,
+   "sim_s": 19.38,
+   "native_wall_s": 0.386,
+   "frames": 194
+  },
+  {
+   "world": "random_0",
+   "planner": "astar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.68,
+    "duration_s": 18.68,
+    "min_clearance_m": 0.6432,
+    "path_length_m": 23.947
+   },
+   "max_pose_error_m": 0.0,
+   "free_path": true,
+   "sim_s": 18.68,
+   "native_wall_s": 1.589,
+   "frames": 187
+  },
+  {
+   "world": "random_0",
+   "planner": "apf",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 28.88,
+    "duration_s": 28.88,
+    "min_clearance_m": 0.6356,
+    "path_length_m": 24.9
+   },
+   "max_pose_error_m": 0.0,
+   "free_path": true,
+   "sim_s": 28.88,
+   "native_wall_s": 0.103,
+   "frames": 289
+  },
+  {
+   "world": "random_0",
+   "planner": "vfh_plus",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 26.12,
+    "duration_s": 26.12,
+    "min_clearance_m": 0.2332,
+    "path_length_m": 24.478
+   },
+   "max_pose_error_m": 0.0,
+   "free_path": true,
+   "sim_s": 26.12,
+   "native_wall_s": 0.114,
+   "frames": 262
+  },
+  {
+   "world": "random_0",
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "jump",
+   "filter": "none",
+   "score": {
+    "outcome": "collision",
+    "time_to_goal_s": null,
+    "duration_s": 14.2,
+    "min_clearance_m": 0.1497,
+    "path_length_m": 15.888
+   },
+   "max_pose_error_m": 0.4906,
+   "free_path": true,
+   "sim_s": 14.2,
+   "native_wall_s": 0.406,
+   "frames": 142
+  },
+  {
+   "world": "random_0",
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "jump",
+   "filter": "F2",
+   "score": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 32.88,
+    "min_clearance_m": 0.3383,
+    "path_length_m": 25.344
+   },
+   "max_pose_error_m": 0.5185,
+   "free_path": true,
+   "sim_s": 32.9,
+   "native_wall_s": 0.866,
+   "frames": 329
+  },
+  {
+   "world": "random_0",
+   "planner": "freest_beam",
+   "preset": "ideal",
+   "fault": "bias",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 25.84,
+    "duration_s": 25.84,
+    "min_clearance_m": 0.4728,
+    "path_length_m": 24.569
+   },
+   "max_pose_error_m": 0.7143,
+   "free_path": true,
+   "sim_s": 25.84,
+   "native_wall_s": 0.163,
+   "frames": 259
+  },
+  {
+   "world": "random_0",
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "dropout",
+   "filter": "F2",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.6,
+    "duration_s": 20.6,
+    "min_clearance_m": 0.8379,
+    "path_length_m": 24.334
+   },
+   "max_pose_error_m": 0.3331,
+   "free_path": true,
+   "sim_s": 20.6,
+   "native_wall_s": 0.593,
+   "frames": 206
+  },
+  {
+   "world": "office_0",
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.74,
+    "duration_s": 22.74,
+    "min_clearance_m": 0.2997,
+    "path_length_m": 13.765
+   },
+   "max_pose_error_m": 0.0,
+   "free_path": true,
+   "sim_s": 22.74,
+   "native_wall_s": 0.484,
+   "frames": 228
+  },
+  {
+   "world": "office_0",
+   "planner": "freest_beam",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 13.04,
+    "min_clearance_m": 0.434,
+    "path_length_m": 7.115
+   },
+   "max_pose_error_m": 0.0,
+   "free_path": true,
+   "sim_s": 13.06,
+   "native_wall_s": 0.075,
+   "frames": 131
+  },
+  {
+   "world": "office_0",
+   "planner": "freest_beam",
+   "preset": "crazyflie",
+   "fault": "none",
+   "filter": "none",
+   "score": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 13.1,
+    "min_clearance_m": 0.4871,
+    "path_length_m": 6.86
+   },
+   "max_pose_error_m": 0.2255,
+   "free_path": true,
+   "sim_s": 13.12,
+   "native_wall_s": 0.094,
+   "frames": 132
+  },
+  {
+   "world": "glass_office_0",
+   "planner": "astar_unknown",
+   "preset": "crazyflie",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 10.0,
+    "min_clearance_m": 0.8616,
+    "path_length_m": 0.0
+   },
+   "max_pose_error_m": 0.0,
+   "free_path": true,
+   "sim_s": 10.0,
+   "native_wall_s": 0.433,
+   "frames": 100
+  },
+  {
+   "world": "u_trap_0",
+   "planner": "astar_known",
+   "preset": "crazyflie_bright",
+   "fault": "bias",
+   "filter": "F2",
+   "score": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 29.4,
+    "min_clearance_m": 0.6862,
+    "path_length_m": 25.73
+   },
+   "max_pose_error_m": 0.9488,
+   "free_path": true,
+   "sim_s": 29.42,
+   "native_wall_s": 0.517,
+   "frames": 295
+  }
+ ],
+ "checks": [
+  {
+   "check": "A run.run_one on the same JSON world",
+   "case": [
+    "random_0",
+    "straight",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 20.3,
+    "min_clearance_m": 0.3797,
+    "path_length_m": 13.266
+   },
+   "reference": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 20.3,
+    "min_clearance_m": 0.3797,
+    "path_length_m": 13.266
+   }
+  },
+  {
+   "check": "B run.run_one on world.make_world (no JSON)",
+   "case": [
+    "random_0",
+    "straight",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": false,
+   "driver": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 20.3,
+    "min_clearance_m": 0.3797,
+    "path_length_m": 13.266
+   },
+   "reference": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 20.38,
+    "min_clearance_m": 0.3666,
+    "path_length_m": 13.285
+   }
+  },
+  {
+   "check": "A run.run_one on the same JSON world",
+   "case": [
+    "random_0",
+    "freest_beam",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 26.08,
+    "duration_s": 26.08,
+    "min_clearance_m": 0.4702,
+    "path_length_m": 24.504
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 26.08,
+    "duration_s": 26.08,
+    "min_clearance_m": 0.4702,
+    "path_length_m": 24.504
+   }
+  },
+  {
+   "check": "B run.run_one on world.make_world (no JSON)",
+   "case": [
+    "random_0",
+    "freest_beam",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 26.08,
+    "duration_s": 26.08,
+    "min_clearance_m": 0.4702,
+    "path_length_m": 24.504
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 26.08,
+    "duration_s": 26.08,
+    "min_clearance_m": 0.4702,
+    "path_length_m": 24.504
+   }
+  },
+  {
+   "check": "A run.run_one on the same JSON world",
+   "case": [
+    "random_0",
+    "astar_known",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 19.38,
+    "duration_s": 19.38,
+    "min_clearance_m": 0.5647,
+    "path_length_m": 23.838
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 19.38,
+    "duration_s": 19.38,
+    "min_clearance_m": 0.5647,
+    "path_length_m": 23.838
+   }
+  },
+  {
+   "check": "B run.run_one on world.make_world (no JSON)",
+   "case": [
+    "random_0",
+    "astar_known",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 19.38,
+    "duration_s": 19.38,
+    "min_clearance_m": 0.5647,
+    "path_length_m": 23.838
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 19.38,
+    "duration_s": 19.38,
+    "min_clearance_m": 0.5647,
+    "path_length_m": 23.838
+   }
+  },
+  {
+   "check": "A run.run_one on the same JSON world",
+   "case": [
+    "random_0",
+    "astar_unknown",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.68,
+    "duration_s": 18.68,
+    "min_clearance_m": 0.6432,
+    "path_length_m": 23.947
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.68,
+    "duration_s": 18.68,
+    "min_clearance_m": 0.6432,
+    "path_length_m": 23.947
+   }
+  },
+  {
+   "check": "B run.run_one on world.make_world (no JSON)",
+   "case": [
+    "random_0",
+    "astar_unknown",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.68,
+    "duration_s": 18.68,
+    "min_clearance_m": 0.6432,
+    "path_length_m": 23.947
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.68,
+    "duration_s": 18.68,
+    "min_clearance_m": 0.6432,
+    "path_length_m": 23.947
+   }
+  },
+  {
+   "check": "A run.run_one on the same JSON world",
+   "case": [
+    "random_0",
+    "apf",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 28.88,
+    "duration_s": 28.88,
+    "min_clearance_m": 0.6356,
+    "path_length_m": 24.9
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 28.88,
+    "duration_s": 28.88,
+    "min_clearance_m": 0.6356,
+    "path_length_m": 24.9
+   }
+  },
+  {
+   "check": "B run.run_one on world.make_world (no JSON)",
+   "case": [
+    "random_0",
+    "apf",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": false,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 28.88,
+    "duration_s": 28.88,
+    "min_clearance_m": 0.6356,
+    "path_length_m": 24.9
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 28.88,
+    "duration_s": 28.88,
+    "min_clearance_m": 0.6356,
+    "path_length_m": 24.901
+   }
+  },
+  {
+   "check": "A run.run_one on the same JSON world",
+   "case": [
+    "random_0",
+    "vfh_plus",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 26.12,
+    "duration_s": 26.12,
+    "min_clearance_m": 0.2332,
+    "path_length_m": 24.478
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 26.12,
+    "duration_s": 26.12,
+    "min_clearance_m": 0.2332,
+    "path_length_m": 24.478
+   }
+  },
+  {
+   "check": "B run.run_one on world.make_world (no JSON)",
+   "case": [
+    "random_0",
+    "vfh_plus",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": false,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 26.12,
+    "duration_s": 26.12,
+    "min_clearance_m": 0.2332,
+    "path_length_m": 24.478
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 26.12,
+    "duration_s": 26.12,
+    "min_clearance_m": 0.2331,
+    "path_length_m": 24.478
+   }
+  },
+  {
+   "check": "A run.run_one on the same JSON world",
+   "case": [
+    "office_0",
+    "astar_known",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.74,
+    "duration_s": 22.74,
+    "min_clearance_m": 0.2997,
+    "path_length_m": 13.765
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.74,
+    "duration_s": 22.74,
+    "min_clearance_m": 0.2997,
+    "path_length_m": 13.765
+   }
+  },
+  {
+   "check": "B run.run_one on world.make_world (no JSON)",
+   "case": [
+    "office_0",
+    "astar_known",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": false,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.74,
+    "duration_s": 22.74,
+    "min_clearance_m": 0.2997,
+    "path_length_m": 13.765
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.74,
+    "duration_s": 22.74,
+    "min_clearance_m": 0.2996,
+    "path_length_m": 13.765
+   }
+  },
+  {
+   "check": "A run.run_one on the same JSON world",
+   "case": [
+    "office_0",
+    "freest_beam",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 13.04,
+    "min_clearance_m": 0.434,
+    "path_length_m": 7.115
+   },
+   "reference": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 13.04,
+    "min_clearance_m": 0.434,
+    "path_length_m": 7.115
+   }
+  },
+  {
+   "check": "B run.run_one on world.make_world (no JSON)",
+   "case": [
+    "office_0",
+    "freest_beam",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": false,
+   "driver": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 13.04,
+    "min_clearance_m": 0.434,
+    "path_length_m": 7.115
+   },
+   "reference": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 13.18,
+    "min_clearance_m": 0.434,
+    "path_length_m": 7.055
+   }
+  },
+  {
+   "check": "C run.run_one + estimator fault (run.evaluate path)",
+   "case": [
+    "random_0",
+    "astar_known",
+    "ideal",
+    "jump",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "collision",
+    "time_to_goal_s": null,
+    "duration_s": 14.2,
+    "min_clearance_m": 0.1497,
+    "path_length_m": 15.888
+   },
+   "reference": {
+    "outcome": "collision",
+    "time_to_goal_s": null,
+    "duration_s": 14.2,
+    "min_clearance_m": 0.1497,
+    "path_length_m": 15.888
+   }
+  },
+  {
+   "check": "C run.run_one + estimator fault (run.evaluate path)",
+   "case": [
+    "random_0",
+    "freest_beam",
+    "ideal",
+    "bias",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 25.84,
+    "duration_s": 25.84,
+    "min_clearance_m": 0.4728,
+    "path_length_m": 24.569
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 25.84,
+    "duration_s": 25.84,
+    "min_clearance_m": 0.4728,
+    "path_length_m": 24.569
+   }
+  },
+  {
+   "check": "D run_kill.run_one F2, unsensed off",
+   "case": [
+    "random_0",
+    "astar_known",
+    "ideal",
+    "jump",
+    "F2"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 32.88,
+    "min_clearance_m": 0.3383,
+    "path_length_m": 25.344
+   },
+   "reference": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 32.88,
+    "min_clearance_m": 0.3383,
+    "path_length_m": 25.344
+   }
+  },
+  {
+   "check": "D run_kill.run_one F2, unsensed off",
+   "case": [
+    "random_0",
+    "astar_known",
+    "ideal",
+    "dropout",
+    "F2"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.6,
+    "duration_s": 20.6,
+    "min_clearance_m": 0.8379,
+    "path_length_m": 24.334
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.6,
+    "duration_s": 20.6,
+    "min_clearance_m": 0.8379,
+    "path_length_m": 24.334
+   }
+  }
+ ],
+ "native_env": {
+  "python": "3.12.10",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "machine": "arm64"
+ },
+ "summary": "15/20 checks identical"
+}
