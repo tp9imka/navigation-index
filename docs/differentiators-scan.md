@@ -70,18 +70,29 @@ The 4.6.3 SITL multicopter frame (`libraries/SITL/SIM_Frame.cpp`) models momentu
 bluff-body drag and prints "Suggested EK3_DRAG_BCOEF_* ... EK3_DRAG_MCOEF" at start-up. PX4
 has the equivalent (`EKF2_DRAG_CTRL`, `EKF2_BCOEF_X/Y`, `EKF2_MCOEF`, tuning script
 `mc_wind_estimator_tuning.py`) per the [EKF2 guide](../catalog/resources/px4-ekf2-tuning-guide.md).
-Not checked: whether ArduCopter's flight-mode checks accept a drag-only dead-reckoning EKF for
-Loiter/Auto, and whether PX4 SIH models drag. That is the hour-1 go/no-go.
+**Correction 2026-11-09 (source read at `Copter-4.6.3`).** EKF3 drag fusion is a wind estimator,
+not velocity aiding: `FuseDragForces` sets Kalman gains only for the two wind states
+(`Kfusion[22]`, `Kfusion[23]`, comment "Don't allow modification of any states other than wind
+velocity"). With wind frozen at GNSS loss, drag fusion cannot bound velocity or position in
+EKF3, so "configure `EK3_DRAG_*` and cut GNSS" will most likely show no holdover gain. PX4 EKF2
+`Ekf::fuseDrag` (v1.16.0, `aid_sources/drag/drag_fusion.cpp`) applies the full gain
+`K = P * H / S`, so drag does correct velocity there, but only while `!fake_pos`; whether EKF2
+keeps fusing drag after GNSS loss with no other aiding is not checked. Consequence: the
+contribution is **our own drag-aided filter** (step 3 below), with SITL used only to produce
+logs. Details: [research/innovation-prior-art/03](research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md).
+Still not checked: whether PX4 SIH models drag.
 
 **48h build plan.**
 
-1. Hours 0-3, go/no-go in SITL. Use [sitl-docker](../samples/sitl-docker/) ArduCopter 4.6.3
-   and the [golden-demo](../samples/golden-demo/) flight script. Copy the SITL-suggested drag
-   values into a `drag.parm`, cut GNSS, fly a 1-2 km survey leg with SITL wind on (0, 3, 6 m/s).
-   If the start-up line does not print, the frame has no drag model and SITL numbers are
-   meaningless: go straight to step 3.
-2. Hours 3-10, SITL measurement. Three arms on the same seeds: GNSS-off with no aiding,
-   GNSS-off with drag fusion, GNSS-off with drag fusion plus wind re-learned from one sparse
+1. Hours 0-3, SITL logs. Use [sitl-docker](../samples/sitl-docker/) ArduCopter 4.6.3
+   and the [golden-demo](../samples/golden-demo/) flight script. Fly 1-2 km survey legs with
+   SITL wind on (0, 3, 6 m/s) and log IMU, truth and (if available) motor outputs at full rate.
+   If the "Suggested EK3_DRAG" start-up line does not print, the frame has no drag model and
+   SITL numbers are meaningless: go straight to step 3. Do not expect EKF3's own drag fusion to
+   help (see the correction above); it is a baseline arm only.
+2. Hours 3-10, SITL measurement, our filter replayed offline on the logs. Three arms on the
+   same seeds: GNSS-off with no aiding, GNSS-off with our drag velocity update, the same plus
+   wind re-learned from one sparse
    absolute fix per N km (reuse the fix models in [golden-demo-fixedwing](../samples/golden-demo-fixedwing/)
    and the TRN fixes in [blind-flight-bench](../samples/blind-flight-bench/)). Score with the
    [px4-sitl-gps-denial](../samples/px4-sitl-gps-denial/) `drift.py` analyzer (time from GNSS

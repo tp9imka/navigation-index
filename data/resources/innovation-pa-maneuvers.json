@@ -1,0 +1,572 @@
+[
+  {
+    "id": "res:fox-burgard-thrun-1998-active-markov-localization",
+    "kind": "paper",
+    "title": "Active Markov Localization for Mobile Robots",
+    "url": "https://publications.ri.cmu.edu/storage/publications/pub_files/pub1/fox_dieter_1998_1/fox_dieter_1998_1.pdf",
+    "authors": [
+      "Dieter Fox",
+      "Wolfram Burgard",
+      "Sebastian Thrun"
+    ],
+    "year": 1998,
+    "summary": "Grid Markov localization that chooses where to move and where to point sensors by expected entropy reduction minus expected path cost. Actions are target points relative to the robot. Shown in a symmetric office corridor where only some rooms disambiguate the pose. Full text read.",
+    "key_takeaways": [
+      "Utility = expected entropy reduction after the action, traded against path cost",
+      "Random wandering failed in all 10 extra runs in the symmetric corridor; the active method localized in 20+ runs",
+      "Notes that greedy one-step entropy minimisation fails when the disambiguating place is far away",
+      "Starts with random motion until the belief has a few modes, then plans: a practical trigger"
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "active-localization",
+      "markov-localization",
+      "entropy",
+      "multimodal",
+      "kidnapped-robot",
+      "robotics-and-autonomous-systems"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:platt-2012-non-gaussian-belief-space-planning",
+    "kind": "paper",
+    "title": "Non-Gaussian Belief Space Planning: Correctness and Complexity",
+    "url": "https://people.csail.mit.edu/tlp/pdf/2012/ICRA12_1775_FI.pdf",
+    "authors": [
+      "Robert Platt",
+      "Leslie Kaelbling",
+      "Tomas Lozano-Perez",
+      "Russ Tedrake"
+    ],
+    "year": 2012,
+    "summary": "ICRA 2012. Plans actions under the system dynamics so the predicted observations of the most likely state differ as much as possible from those of a few other belief samples, then re-plans as the belief changes. Proves eventual localization under stated conditions with as few as two samples. Demo is a planar arm with one range laser. Full text read.",
+    "key_takeaways": [
+      "Cost = sum over samples of exp(-squared distance between predicted observation sequences)",
+      "Dynamics enter as hard constraints x_{t+1} = f(x_t, u_t): the template for flyable maneuvers",
+      "Guarantee needs an exact Bayes filter and a planner that finds low-cost plans",
+      "Closest mechanism to 'pick the maneuver that separates hypotheses'"
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "belief-space-planning",
+      "hypothesis-separation",
+      "non-gaussian",
+      "receding-horizon",
+      "icra"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:bry-roy-rrbt-icra2011",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:dudek-romanik-whitesides-1998-localizing-minimum-travel",
+    "kind": "paper",
+    "title": "Localizing a Robot with Minimum Travel",
+    "url": "https://cim.mcgill.ca/~mrl/pubs/dudek/siamj_abs.html",
+    "authors": [
+      "Gregory Dudek",
+      "Kathleen Romanik",
+      "Sue Whitesides"
+    ],
+    "year": 1998,
+    "summary": "SIAM Journal on Computing 27(2). A robot in a known polygon whose start matches several look-alike candidate positions must travel to tell them apart. Minimum-travel localization is shown NP-hard and an approximation strategy with a bounded travel ratio is given. Abstract only read.",
+    "key_takeaways": [
+      "Optimal hypothesis elimination by travel is NP-hard: use heuristics and say so",
+      "Frames localization as a verification tour over candidate positions"
+    ],
+    "concepts": [
+      "concept:path-planning"
+    ],
+    "tags": [
+      "active-localization",
+      "hypothesis-elimination",
+      "complexity",
+      "computational-geometry"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": []
+  },
+  {
+    "id": "res:jensfelt-kristensen-2001-active-global-localization-mht",
+    "kind": "paper",
+    "title": "Active Global Localization for a Mobile Robot Using Multiple Hypothesis Tracking",
+    "url": "https://www.csc.kth.se/~patric/publications/berlinMHT.html",
+    "authors": [
+      "Patric Jensfelt",
+      "Steen Kristensen"
+    ],
+    "year": 2001,
+    "summary": "IEEE Transactions on Robotics and Automation 17(5). Tracks several Gaussian pose hypotheses with Kalman filters, scores the probability that each is correct, and issues motion commands that gather information. Tested in an office and a hospital building. Abstract only read.",
+    "key_takeaways": [
+      "Multi-hypothesis tracking is a cheaper alternative to a grid or particle belief",
+      "Motion is chosen to help hypothesis scoring, not only to reach a goal"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "active-localization",
+      "multi-hypothesis",
+      "kalman",
+      "global-localization"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:bar-gill-1994-tan-trajectory-optimization",
+    "kind": "paper",
+    "title": "Improvement of terrain-aided navigation via trajectory optimization",
+    "url": "https://doi.org/10.1109/87.338654",
+    "authors": [
+      "A. Bar-Gill",
+      "P. Ben-Ezra",
+      "I. Y. Bar-Itzhack"
+    ],
+    "year": 1994,
+    "summary": "IEEE Transactions on Control Systems Technology 2(4):336-342 (conference version at CDC 1993). Maps terrain information with an entropy/FFT analysis, runs A* for minimum terrain-aided-navigation error trajectories, then superimposes airframe maneuver limits afterwards for a flyable but suboptimal route. Abstract only read.",
+    "key_takeaways": [
+      "Earliest aircraft source found that plans the route for TAN accuracy",
+      "Airframe limits are applied a posteriori, not inside the search",
+      "Unimodal error measure: no competing position hypotheses"
+    ],
+    "concepts": [
+      "concept:terrain-nav",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "terrain-aided-navigation",
+      "trajectory-optimization",
+      "entropy",
+      "a-star",
+      "aircraft"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": []
+  },
+  {
+    "id": "res:kang-2026-optimal-trajectory-magnetic-navigation",
+    "kind": "paper",
+    "title": "Optimal Trajectory Generation for Improved Magnetic Navigation",
+    "url": "https://arxiv.org/abs/2609.27553",
+    "authors": [
+      "Justin Kang",
+      "Teddy Herrera",
+      "Liraz Mudrik",
+      "Sean Kragelund",
+      "Alfonso Sciacchitano",
+      "Isaac Kaminer"
+    ],
+    "year": 2026,
+    "summary": "arXiv preprint. Formulates magnetic-anomaly navigation trajectory design as an optimal control problem that minimises the posterior Cramer-Rao bound on position error with a path-length penalty; optimized paths beat straight lines in simulation. Abstract only read; vehicle constraints and code not stated there.",
+    "key_takeaways": [
+      "Map-referenced trajectory design by an information bound, very recent",
+      "A CRB is local: it does not address several separated hypotheses"
+    ],
+    "concepts": [
+      "concept:magnetic-nav",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "magnav",
+      "pcrb",
+      "trajectory-optimization",
+      "optimal-control",
+      "preprint"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:carroll-canciani-2021-steerable-laser-trn",
+    "kind": "paper",
+    "title": "Terrain-referenced navigation using a steerable-laser measurement sensor",
+    "url": "https://navi.ion.org/content/68/1/115",
+    "authors": [
+      "Jason D. Carroll",
+      "Aaron J. Canciani"
+    ],
+    "year": 2021,
+    "summary": "NAVIGATION 68(1):115-134. Steers a gimballed laser rangefinder to the terrain points that maximise the trace of the position Fisher information block, chosen by particle swarm optimisation over pitch and yaw. Reports large CRLB gains over nadir sensing and about half the error in a mountainous simulation; the aircraft path is unchanged. Read via the journal HTML.",
+    "key_takeaways": [
+      "'Where to look' half of active TRN, with a Fisher (local) criterion",
+      "Objective is multimodal in the pointing angles, hence PSO",
+      "Gimbal dynamics ignored; steering uses the estimated, not true, position"
+    ],
+    "concepts": [
+      "concept:terrain-nav",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "trn",
+      "fisher-information",
+      "crlb",
+      "lidar",
+      "sensor-steering",
+      "afit"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:yang-kassas-2022-uav-waypoint-opportunistic-navigation",
+    "kind": "paper",
+    "title": "UAV Waypoint Opportunistic Navigation in GNSS-Denied Environments",
+    "url": "https://ece.osu.edu/sites/default/files/2022-09/UAV_waypoint_opportunistic_navigation_in_GNSS_denied_environments.pdf",
+    "authors": [
+      "Yanhao Yang",
+      "Joe Khalife",
+      "Joshua Morales",
+      "Zaher M. Kassas"
+    ],
+    "year": 2022,
+    "summary": "IEEE TAES 58(1):663-678. A greedy one-step multi-objective motion planner chooses UAV acceleration and heading within speed and acceleration limits, trading progress to a waypoint against position uncertainty estimated from signals of opportunity. Reports 95% success vs 36% for flying straight, plus a real cellular-SOP flight. Accepted preprint read (abstract and method).",
+    "key_takeaways": [
+      "Clear evidence that 'fly straight and wait' can lose to information-aware maneuvering",
+      "Greedy one-step, Gaussian EKF, RF pseudoranges: not multimodal map matching"
+    ],
+    "concepts": [
+      "concept:signals-of-opportunity",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "opportunistic-navigation",
+      "motion-planning",
+      "gnss-denied",
+      "uav",
+      "taes"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:kassas-starlink-navigation",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:bryson-sukkarieh-2008-airborne-slam-active-control",
+    "kind": "paper",
+    "title": "Observability Analysis and Active Control for Airborne SLAM",
+    "url": "http://www-personal.acfr.usyd.edu.au/m.bryson/publications/Bryson2008_TAES.pdf",
+    "authors": [
+      "Mitch Bryson",
+      "Salah Sukkarieh"
+    ],
+    "year": 2008,
+    "summary": "IEEE TAES 44(1):261-280. Inertial SLAM on a UAV with entropy as the planning utility over finite-horizon trajectories, plus an observability analysis that lists which aircraft maneuvers excite otherwise unobservable modes such as heading. The 6-page author PDF was read.",
+    "key_takeaways": [
+      "Aircraft maneuvers chosen for estimability, with a maneuver-to-observable-mode table",
+      "Gaussian SLAM, no prior map, no competing position hypotheses"
+    ],
+    "concepts": [
+      "concept:visual-slam",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "airborne-slam",
+      "observability",
+      "entropy",
+      "active-control",
+      "uav"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:naghshvar-javidi-2013-active-sequential-hypothesis-testing",
+    "kind": "paper",
+    "title": "Active Sequential Hypothesis Testing",
+    "url": "https://arxiv.org/abs/1203.4626",
+    "authors": [
+      "Mohammad Naghshvar",
+      "Tara Javidi"
+    ],
+    "year": 2013,
+    "summary": "Annals of Statistics 41(6):2703-2738. Theory for choosing sensing actions one at a time to decide between hypotheses quickly at a bounded error cost: dynamic-programming lower bounds and two heuristic policies, one asymptotically optimal. Abstract only read.",
+    "key_takeaways": [
+      "Gives the stopping-rule and 'declare vs keep sensing' framing for hypothesis disambiguation",
+      "Greedy information policies are not always rate-optimal"
+    ],
+    "concepts": [
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "hypothesis-testing",
+      "active-sensing",
+      "information-theory",
+      "theory"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:placed-2023-active-slam-survey",
+    "kind": "paper",
+    "title": "A Survey on Active Simultaneous Localization and Mapping: State of the Art and New Frontiers",
+    "url": "https://arxiv.org/abs/2207.00254",
+    "authors": [
+      "Julio A. Placed",
+      "Jared Strader",
+      "Henry Carrillo",
+      "Nikolay Atanasov",
+      "Vadim Indelman",
+      "Luca Carlone",
+      "Jose A. Castellanos"
+    ],
+    "year": 2023,
+    "summary": "IEEE T-RO 39(3):1686-1705. Survey of active SLAM with a unified formulation, the modular scheme, belief-space planning, deep RL and multi-robot work. Abstract only read.",
+    "key_takeaways": [
+      "Entry point to loop-closure seeking and belief-space planning literature"
+    ],
+    "concepts": [
+      "concept:visual-slam",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "active-slam",
+      "survey",
+      "belief-space-planning"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:chaplot-2018-active-neural-localization",
+    "kind": "paper",
+    "title": "Active Neural Localization",
+    "url": "https://arxiv.org/abs/1801.08214",
+    "authors": [
+      "Devendra Singh Chaplot",
+      "Emilio Parisotto",
+      "Ruslan Salakhutdinov"
+    ],
+    "year": 2018,
+    "summary": "ICLR 2018. A differentiable structured belief over pose combined with a reinforcement-learned policy that moves to localize in few steps; tested in 2D mazes, Doom and an Unreal office. Abstract only read.",
+    "key_takeaways": [
+      "Learned counterpart of active Markov localization",
+      "Discrete actions, ground agent"
+    ],
+    "concepts": [
+      "concept:place-recognition",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "active-localization",
+      "reinforcement-learning",
+      "differentiable-filter",
+      "iclr"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:devendrachaplot/neural-localization",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:gottipati-2019-deep-active-localization",
+    "kind": "paper",
+    "title": "Deep Active Localization",
+    "url": "https://arxiv.org/abs/1903.01669",
+    "authors": [
+      "Sai Krishna Gottipati",
+      "Keehong Seo",
+      "Dhaivat Bhatt",
+      "Vincent Mai",
+      "Krishna Murthy",
+      "Liam Paull"
+    ],
+    "year": 2019,
+    "summary": "IEEE RA-L 4(4) (venue from the repository README). Learned CNN perception plus a deep-RL planner for active localization in a known map, trained in Gym/Gazebo with domain randomization; abstract claims transfer to a real robot. Abstract only read.",
+    "key_takeaways": [
+      "Learned perception + learned action selection beat either alone (abstract claim)"
+    ],
+    "concepts": [
+      "concept:path-planning"
+    ],
+    "tags": [
+      "active-localization",
+      "reinforcement-learning",
+      "ral"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:montrealrobotics/dal",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:honerkamp-2022-active-particle-filter-networks",
+    "kind": "paper",
+    "title": "Active Particle Filter Networks: Efficient Active Localization in Continuous Action Spaces and Large Maps",
+    "url": "https://arxiv.org/abs/2209.09646",
+    "authors": [
+      "Daniel Honerkamp",
+      "Suresh Guttikonda",
+      "Abhinav Valada"
+    ],
+    "year": 2022,
+    "summary": "arXiv preprint. Couples a differentiable particle filter with an RL agent acting in continuous action spaces, using only local map information so cost does not grow with the global map. Indoor 3D-scanned apartments. Abstract only read.",
+    "key_takeaways": [
+      "Particle belief + continuous actions + large maps",
+      "Indoor ground robot, no aircraft limits"
+    ],
+    "concepts": [
+      "concept:path-planning",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "active-localization",
+      "particle-filter",
+      "reinforcement-learning",
+      "preprint"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:robot-learning-freiburg/active-particle-filter-networks",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:di-giammarino-2024-learning-where-to-look",
+    "kind": "paper",
+    "title": "Learning Where to Look: Self-supervised Viewpoint Selection for Active Localization using Geometrical Information",
+    "url": "https://arxiv.org/abs/2407.15593",
+    "authors": [
+      "Luca Di Giammarino",
+      "Boyang Sun",
+      "Giorgio Grisetti",
+      "Marc Pollefeys",
+      "Hermann Blum",
+      "Daniel Barath"
+    ],
+    "year": 2024,
+    "summary": "ECCV 2024 (per the repository README). Learns from a Structure-from-Motion model which camera orientation gives the best visual localization at a location, and uses it inside a planner. Abstract and README read.",
+    "key_takeaways": [
+      "Look-direction choice for accuracy of one estimate, not hypothesis separation"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "active-localization",
+      "viewpoint-selection",
+      "sfm",
+      "eccv"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:rvp-group/learning-where-to-look",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:li-2025-actloc-active-viewpoint-selection",
+    "kind": "paper",
+    "title": "ActLoc: Learning to Localize on the Move via Active Viewpoint Selection",
+    "url": "https://arxiv.org/abs/2508.20981",
+    "authors": [
+      "Jiajie Li",
+      "Boyang Sun",
+      "Luca Di Giammarino",
+      "Hermann Blum",
+      "Marc Pollefeys"
+    ],
+    "year": 2025,
+    "summary": "arXiv preprint. An attention model predicts localization accuracy over yaw and pitch at 3D waypoints; a planner picks camera orientations under task and motion constraints. No code link on the arXiv page. Abstract only read.",
+    "key_takeaways": [
+      "Camera look-direction planning for visual localization",
+      "Does not address competing hypotheses"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "active-localization",
+      "viewpoint-selection",
+      "preprint"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:di-giammarino-2024-learning-where-to-look",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:yuan-2025-swa-pf-uav-satellite-particle-filter",
+    "kind": "paper",
+    "title": "SWA-PF: Semantic-Weighted Adaptive Particle Filter for Memory-Efficient 4-DoF UAV Localization in GNSS-Denied Environments",
+    "url": "https://arxiv.org/abs/2509.13795",
+    "authors": [
+      "Jiayu Yuan",
+      "Ming Dai",
+      "Enhui Zheng",
+      "Chao Su",
+      "Nanxing Chen",
+      "Qiming Hu",
+      "Shibo Zhu",
+      "Yibin Cao"
+    ],
+    "year": 2025,
+    "summary": "arXiv preprint. Particle filter over a 4-DoF UAV pose that weights particles by semantic agreement between the UAV image and a low-resolution satellite map; announces a multi-altitude dataset (MAFS) as 'will be available'. Abstract only read; multimodal posteriors are not discussed there.",
+    "key_takeaways": [
+      "Passive estimator side: a possible hypothesis generator for active disambiguation",
+      "Dataset release not confirmed"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "particle-filter",
+      "satellite-imagery",
+      "uav",
+      "semantic-segmentation",
+      "preprint"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  }
+]

@@ -25,6 +25,32 @@
   "topics": [],
   "fetched": "2026-11-09"
  },
+ "repo:aau-cns/equivaraint-symmetries-for-inertial-navigation-systems": {
+  "archived": false,
+  "description": "Code associated to Automatica submission: \"Equivariant Symmetries for Inertial Navigation Systems\" by Alessandro Fornasier, Yixiao Ge, Pieter van Goor, Robert Mahony, and Stephan Weiss",
+  "forks_count": 2,
+  "full_name": "aau-cns/equivaraint-symmetries-for-inertial-navigation-systems",
+  "html_url": "https://github.com/aau-cns/equivaraint-symmetries-for-inertial-navigation-systems",
+  "language": "MATLAB",
+  "license": null,
+  "pushed_at": "2025-02-12T13:46:12Z",
+  "stargazers_count": 16,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:aau-cns/lie-plusplus": {
+  "archived": false,
+  "description": "A C++ header-only Eigen-based Library for Lie group operations",
+  "forks_count": 18,
+  "full_name": "aau-cns/Lie-plusplus",
+  "html_url": "https://github.com/aau-cns/Lie-plusplus",
+  "language": "C++",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-07-03T09:51:17Z",
+  "stargazers_count": 304,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
  "repo:aau-cns/mars_lib": {
   "archived": false,
   "description": "MaRS: A Modular and Robust Sensor-Fusion Framework",
@@ -44,6 +70,19 @@
    "state-estimation-filters",
    "uav"
   ],
+  "fetched": "2026-11-09"
+ },
+ "repo:aau-cns/msceqf": {
+  "archived": false,
+  "description": "A Multi State Constraint Equivariant Filter for Vision-aided Inertial Navigation",
+  "forks_count": 18,
+  "full_name": "aau-cns/MSCEqF",
+  "html_url": "https://github.com/aau-cns/MSCEqF",
+  "language": "C++",
+  "license": "Apache-2.0",
+  "pushed_at": "2026-07-03T10:45:31Z",
+  "stargazers_count": 145,
+  "topics": [],
   "fetched": "2026-11-09"
  },
  "repo:aavek/aeolus-ocean": {
@@ -2095,6 +2134,24 @@
   "topics": [],
   "fetched": "2026-11-09"
  },
+ "repo:changwuliu/ingvio": {
+  "archived": false,
+  "description": "An invariant filter to fuse monocular/stereo visual-inertial-raw GNSS.",
+  "forks_count": 50,
+  "full_name": "ChangwuLiu/InGVIO",
+  "html_url": "https://github.com/ChangwuLiu/InGVIO",
+  "language": "C++",
+  "license": null,
+  "pushed_at": "2026-01-07T06:21:27Z",
+  "stargazers_count": 199,
+  "topics": [
+   "invariant-ekf",
+   "raw-gnss",
+   "slam",
+   "visual-inertial"
+  ],
+  "fetched": "2026-11-09"
+ },
  "repo:chennuo0125-hit/lidar_imu_calib": {
   "archived": false,
   "description": "automatic calibration of 3D lidar and IMU extrinsics",
@@ -2906,6 +2963,19 @@
   ],
   "fetched": "2026-11-09"
  },
+ "repo:deepscenario/ortholoc": {
+  "archived": false,
+  "description": "[NeurIPS 2026 - Oral] Official implementation of 'OrthoLoC: UAV 6-DoF Localization and Calibration Using Orthographic Geodata‘.",
+  "forks_count": 5,
+  "full_name": "deepscenario/OrthoLoC",
+  "html_url": "https://github.com/deepscenario/OrthoLoC",
+  "language": "Python",
+  "license": "NOASSERTION",
+  "pushed_at": "2026-03-10T22:23:19Z",
+  "stargazers_count": 79,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
  "repo:deptofdefense/androidtacticalassaultkit-civ": {
   "archived": true,
   "description": null,
@@ -2917,6 +2987,25 @@
   "pushed_at": "2024-10-18T15:00:36Z",
   "stargazers_count": 498,
   "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:devendrachaplot/neural-localization": {
+  "archived": false,
+  "description": "Train an RL agent to localize actively (PyTorch)",
+  "forks_count": 39,
+  "full_name": "devendrachaplot/Neural-Localization",
+  "html_url": "https://github.com/devendrachaplot/Neural-Localization",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2018-04-09T04:33:08Z",
+  "stargazers_count": 211,
+  "topics": [
+   "localization",
+   "neural-networks",
+   "pytorch",
+   "pytorch-rl",
+   "reinforcement-learning"
+  ],
   "fetched": "2026-11-09"
  },
  "repo:devmbs/crtclient": {
@@ -3916,6 +4005,26 @@
   "topics": [],
   "fetched": "2026-11-09"
  },
+ "repo:fengyee/implicitterrainv2": {
+  "archived": false,
+  "description": "Project page and code for \"ImplicitTerrainV2: Wavelet-Guided Spatially Adaptive Neural Terrain Representation\" (ACM SIGSPATIAL 2026).",
+  "forks_count": 0,
+  "full_name": "Fengyee/implicitterrainv2",
+  "html_url": "https://github.com/Fengyee/implicitterrainv2",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-09-12T18:58:37Z",
+  "stargazers_count": 0,
+  "topics": [
+   "geospatial",
+   "implicit-neural-representation",
+   "neural-compression",
+   "sigspatial",
+   "siren",
+   "terrain"
+  ],
+  "fetched": "2026-11-09"
+ },
  "repo:field-robotics-lab/dave": {
   "archived": false,
   "description": "Project DAVE",
@@ -4572,6 +4681,27 @@
   "pushed_at": "2026-03-15T09:50:48Z",
   "stargazers_count": 163,
   "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:gmberton/megaloc": {
+  "archived": false,
+  "description": "An image retrieval model for any localization task",
+  "forks_count": 11,
+  "full_name": "gmberton/MegaLoc",
+  "html_url": "https://github.com/gmberton/MegaLoc",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-08-06T10:27:58Z",
+  "stargazers_count": 321,
+  "topics": [
+   "geolocalization",
+   "image-retrieval",
+   "localization",
+   "place-recognition",
+   "visual-geolocalization",
+   "visual-localization",
+   "visual-place-recognition"
+  ],
   "fetched": "2026-11-09"
  },
  "repo:gmberton/vismatch": {
@@ -5784,6 +5914,19 @@
   "license": null,
   "pushed_at": "2026-02-10T09:37:03Z",
   "stargazers_count": 15,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:ivalab/gf_orb_slam2": {
+  "archived": false,
+  "description": "Real-Time SLAM for Monocular, Stereo and RGB-D Cameras, with Loop Detection and Relocalization Capabilities",
+  "forks_count": 49,
+  "full_name": "ivalab/gf_orb_slam2",
+  "html_url": "https://github.com/ivalab/gf_orb_slam2",
+  "language": "C++",
+  "license": "NOASSERTION",
+  "pushed_at": "2025-05-09T04:36:54Z",
+  "stargazers_count": 261,
   "topics": [],
   "fetched": "2026-11-09"
  },
@@ -8086,6 +8229,19 @@
   ],
   "fetched": "2026-11-09"
  },
+ "repo:mit-spark/loc-nerf": {
+  "archived": false,
+  "description": "Monte Carlo Localization using Neural Radiance Fields",
+  "forks_count": 24,
+  "full_name": "MIT-SPARK/Loc-NeRF",
+  "html_url": "https://github.com/MIT-SPARK/Loc-NeRF",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2022-10-28T17:04:10Z",
+  "stargazers_count": 281,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
  "repo:mit-spark/teaser-plusplus": {
   "archived": false,
   "description": "A fast and robust point cloud registration library",
@@ -8185,6 +8341,19 @@
    "w5500",
    "wifi"
   ],
+  "fetched": "2026-11-09"
+ },
+ "repo:montrealrobotics/dal": {
+  "archived": false,
+  "description": "Repository for Deep Active Localization research and benchmarks",
+  "forks_count": 3,
+  "full_name": "montrealrobotics/dal",
+  "html_url": "https://github.com/montrealrobotics/dal",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2020-05-12T05:07:47Z",
+  "stargazers_count": 36,
+  "topics": [],
   "fetched": "2026-11-09"
  },
  "repo:moos-ivp/moos-ivp": {
@@ -9073,6 +9242,19 @@
    "nvidia",
    "tensorrt"
   ],
+  "fetched": "2026-11-09"
+ },
+ "repo:nvlabs/conformalkeypoint": {
+  "archived": false,
+  "description": null,
+  "forks_count": 4,
+  "full_name": "NVlabs/ConformalKeypoint",
+  "html_url": "https://github.com/NVlabs/ConformalKeypoint",
+  "language": "Jupyter Notebook",
+  "license": null,
+  "pushed_at": "2023-06-26T22:09:30Z",
+  "stargazers_count": 42,
+  "topics": [],
   "fetched": "2026-11-09"
  },
  "repo:nwtime/linuxptp": {
@@ -10524,6 +10706,19 @@
   ],
   "fetched": "2026-11-09"
  },
+ "repo:qvpr/predict2improve": {
+  "archived": false,
+  "description": null,
+  "forks_count": 0,
+  "full_name": "QVPR/predict2improve",
+  "html_url": "https://github.com/QVPR/predict2improve",
+  "language": "Jupyter Notebook",
+  "license": "MIT",
+  "pushed_at": "2022-10-26T22:28:40Z",
+  "stargazers_count": 2,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
  "repo:r2u2/r2u2": {
   "archived": false,
   "description": "The Realizable Responsive Unobtrusive Unit is an online runtime monitor framework.",
@@ -10844,6 +11039,19 @@
   "license": "MIT",
   "pushed_at": "2024-09-15T06:36:11Z",
   "stargazers_count": 1342,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:robot-learning-freiburg/active-particle-filter-networks": {
+  "archived": false,
+  "description": "Official repository for Active Particle Filter Networks: Efficient Active Localization in Continuous Action Spaces and Large Maps",
+  "forks_count": 2,
+  "full_name": "robot-learning-freiburg/Active-Particle-Filter-Networks",
+  "html_url": "https://github.com/robot-learning-freiburg/Active-Particle-Filter-Networks",
+  "language": "Python",
+  "license": "GPL-3.0",
+  "pushed_at": "2022-09-21T08:07:01Z",
+  "stargazers_count": 13,
   "topics": [],
   "fetched": "2026-11-09"
  },
@@ -11358,6 +11566,19 @@
    "opencv",
    "vio"
   ],
+  "fetched": "2026-11-09"
+ },
+ "repo:rvp-group/learning-where-to-look": {
+  "archived": false,
+  "description": "Learning Where to Look: Self-supervised Viewpoint Selection for Active Localization using Geometrical Information",
+  "forks_count": 0,
+  "full_name": "rvp-group/learning-where-to-look",
+  "html_url": "https://github.com/rvp-group/learning-where-to-look",
+  "language": "Python",
+  "license": "BSD-3-Clause",
+  "pushed_at": "2025-02-20T17:31:56Z",
+  "stargazers_count": 53,
+  "topics": [],
   "fetched": "2026-11-09"
  },
  "repo:rwth-irt/gnssfgo": {
@@ -12663,6 +12884,19 @@
   "license": "GPL-3.0",
   "pushed_at": "2022-10-28T02:52:37Z",
   "stargazers_count": 295,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:tiers/safevpr": {
+  "archived": false,
+  "description": "Patch-Based Conformal Verification for Safe Cross-Condition Sequence Visual Place Recognition",
+  "forks_count": 0,
+  "full_name": "TIERS/SafeVPR",
+  "html_url": "https://github.com/TIERS/SafeVPR",
+  "language": "Python",
+  "license": "MIT",
+  "pushed_at": "2026-11-05T03:50:13Z",
+  "stargazers_count": 5,
   "topics": [],
   "fetched": "2026-11-09"
  },
@@ -14261,6 +14495,19 @@
   "license": null,
   "pushed_at": "2024-11-28T14:45:07Z",
   "stargazers_count": 86,
+  "topics": [],
+  "fetched": "2026-11-09"
+ },
+ "repo:yuanjiayuuu/swa-pf": {
+  "archived": false,
+  "description": null,
+  "forks_count": 3,
+  "full_name": "YuanJiayuuu/SWA-PF",
+  "html_url": "https://github.com/YuanJiayuuu/SWA-PF",
+  "language": "Python",
+  "license": null,
+  "pushed_at": "2025-09-22T10:00:07Z",
+  "stargazers_count": 32,
   "topics": [],
   "fetched": "2026-11-09"
  },

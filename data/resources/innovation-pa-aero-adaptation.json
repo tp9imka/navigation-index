@@ -1,0 +1,522 @@
+[
+  {
+    "id": "res:sharma-laupre-skaloud-2023-identifying-aerodynamics-fixed-wing",
+    "kind": "paper",
+    "title": "Identifying Aerodynamics of Small Fixed-Wing Drones Using Inertial Measurements for Model-Based Navigation",
+    "url": "https://navi.ion.org/content/70/4/navi.611",
+    "authors": ["Aman Sharma", "Gabriel Francois Laupre", "Jan Skaloud"],
+    "year": 2023,
+    "summary": "NAVIGATION 70(4), open access. Calibrates the aerodynamic coefficients of a vehicle-dynamic-model (VDM) navigation filter from flight data with three decoupled estimators (wind, then moment, then force coefficients). Wind is estimated with a partial-update Schmidt-Kalman filter; a recursively built observability Gramian is tracked in its eigenbasis and only directions whose information increment exceeds a threshold are updated, the rest are kept as considered states. The calibration runs offline on smoothed PPK data; the identified parameters are then used in a VDM-EKF during simulated 2-min GNSS outages on two fixed-wing drones (21 and 44 parameters).",
+    "key_takeaways": [
+      "Closest prior art for identifiability-gated parameter updates: observability-Gramian increment test plus Schmidt consider states",
+      "Offline only: the paper states the algorithm in its current form cannot calibrate in real time",
+      "Random initial parameters made the VDM filter diverge, so a calibration step before navigation is required",
+      "No improvement over INS/GNSS with the high-grade STIM318 IMU over the tested outage lengths"
+    ],
+    "concepts": ["concept:ins", "concept:calibration", "concept:sensor-fusion", "concept:gnss-ins"],
+    "tags": ["vdm", "fixed-wing", "schmidt-kalman", "observability-gramian", "partial-update", "aerodynamic-identification", "wind"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "res:khaghani-skaloud-2018-vdm-navigation", "rel": "cites"},
+      {"id": "res:laupre-pirlet-skaloud-2023-reliable-vdm-navigation", "rel": "same_author"}
+    ]
+  },
+  {
+    "id": "res:laupre-pirlet-skaloud-2023-reliable-vdm-navigation",
+    "kind": "paper",
+    "title": "Reliable strategies for implementing model-based navigation on fixed-wing drones",
+    "url": "https://doi.org/10.1017/S0373463323000267",
+    "authors": ["Gabriel Laupre", "Lucas Pirlet", "Jan Skaloud"],
+    "year": 2023,
+    "summary": "The Journal of Navigation, open access (CC BY). Makes a roughly 50-state VDM navigation filter numerically stable on real fixed-wing flights with UD factorisation plus partial Schmidt-Kalman updates. During initialisation, model-parameter states move gradually from considered to full states over a ramp; during a GNSS outage, all VDM parameter error states and position are placed in considered mode by a fixed rule. Validated on four real flights of one small fixed-wing drone.",
+    "key_takeaways": [
+      "Phase-based freezing (consider all model parameters during GNSS outage) already exists and is tested on real flights",
+      "With partial updates, horizontal errors were lower than with full updates in all compared 2-min outages but one (heading error case)",
+      "Twelve 2-min outages: VDM max horizontal error more than 10x lower than inertial coasting in 3 cases, more than 5x in 3, 1.5-2.5x in 6",
+      "6-min outage: about 250 m max horizontal error for VDM vs about 4.5 km for inertial coasting",
+      "Authors note that straight constant-velocity missions may not give enough observability to refine aerodynamic coefficients"
+    ],
+    "concepts": ["concept:ins", "concept:calibration", "concept:sensor-fusion", "concept:gnss-ins"],
+    "tags": ["vdm", "fixed-wing", "schmidt-kalman", "consider-states", "gnss-outage", "real-flight"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "res:sharma-laupre-skaloud-2023-identifying-aerodynamics-fixed-wing", "rel": "same_author"},
+      {"id": "res:khaghani-skaloud-2018-vdm-navigation", "rel": "cites"},
+      {"id": "res:ramos-brink-2022-factorized-partial-update-skf", "rel": "cites"}
+    ]
+  },
+  {
+    "id": "res:khaghani-skaloud-2016-vdm-navigation-small-uavs-eurocow",
+    "kind": "paper",
+    "title": "Autonomous Navigation of Small UAVs Based on Vehicle Dynamic Model",
+    "url": "https://isprs-archives.copernicus.org/articles/XL-3-W4/117/2016/",
+    "authors": ["Mehran Khaghani", "Jan Skaloud"],
+    "year": 2016,
+    "summary": "ISPRS Archives XL-3/W4 (EuroCOW 2016), open access; journal version in NAVIGATION 63(3), 2016. Uses the vehicle dynamic model as the main process model with autopilot control inputs, corrected by IMU and GNSS, and estimates wind and model parameters inside the filter. Monte Carlo simulations report orders-of-magnitude improvement over inertial coasting for outages of a few minutes. Only the abstract was read here.",
+    "key_takeaways": [
+      "Wind and VDM parameters are filter states (adapted online), the origin of the EPFL VDM line",
+      "Abstract only read; observability discussion in the journal version not checked"
+    ],
+    "concepts": ["concept:ins", "concept:sensor-fusion", "concept:gnss-ins"],
+    "tags": ["vdm", "fixed-wing", "wind", "simulation"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "res:khaghani-skaloud-2018-vdm-navigation", "rel": "same_author"}
+    ]
+  },
+  {
+    "id": "res:mwenegoha-2021-vdm-error-characteristics-fixed-wing",
+    "kind": "paper",
+    "title": "Error characteristics of a model-based integration approach for fixed-wing unmanned aerial vehicles",
+    "url": "https://doi.org/10.1017/S0373463321000424",
+    "authors": ["Hery A. Mwenegoha", "Terry Moore", "James Pinchin", "Mark Jabbal"],
+    "year": 2021,
+    "summary": "The Journal of Navigation 74(6). An EKF with the VDM as process model, driven by autopilot control inputs and fed with GNSS and IMU; the state vector holds navigation, IMU error, wind error and VDM parameter states. Monte Carlo simulation over a trajectory with high- and low-dynamics segments and a variable wind profile, with GNSS outages of 10 to 90 s followed by re-acquisition.",
+    "key_takeaways": [
+      "Wind error states and VDM parameter states are estimated jointly with navigation states",
+      "Simulation only; the trajectory deliberately mixes high- and low-dynamics segments"
+    ],
+    "concepts": ["concept:ins", "concept:sensor-fusion", "concept:gnss-ins"],
+    "tags": ["vdm", "fixed-wing", "wind", "simulation", "monte-carlo"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "res:khaghani-skaloud-2018-vdm-navigation", "rel": "cites"}
+    ]
+  },
+  {
+    "id": "res:svacha-2020-imu-inertia-estimation-quadrotor",
+    "kind": "paper",
+    "title": "IMU-Based Inertia Estimation for a Quadrotor Using Newton-Euler Dynamics",
+    "url": "https://doi.org/10.1109/LRA.2020.2976308",
+    "authors": ["James Svacha", "James Paulos", "Giuseppe Loianno", "Vijay Kumar"],
+    "year": 2020,
+    "summary": "IEEE RA-L 5(3). A 32-state UKF, 14 of them constant parameters, estimates tilt, angular and linear velocity and inertial parameters from an IMU and motor-speed feedback, with an analytical observability result; a blade-flapping moment term is reported as necessary for a sensible inertia estimate. Only the abstract was read here.",
+    "key_takeaways": [
+      "Online parameter estimation from IMU plus motor speed is shown observable analytically (abstract claim)",
+      "Paywalled; full text and observability conditions not checked"
+    ],
+    "concepts": ["concept:ins", "concept:calibration", "concept:sensor-fusion"],
+    "tags": ["quadrotor", "rotor-speed", "ukf", "inertia", "observability"],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": [
+      {"id": "res:leishman-2014-quadrotors-accelerometers", "rel": "cites"}
+    ]
+  },
+  {
+    "id": "res:hausman-2016-observability-aware-trajectory-optimization",
+    "kind": "paper",
+    "title": "Observability-Aware Trajectory Optimization for Self-Calibration with Application to UAVs",
+    "url": "https://arxiv.org/abs/1604.07905",
+    "authors": ["Karol Hausman", "James Preiss", "Gaurav S. Sukhatme", "Stephan Weiss"],
+    "year": 2016,
+    "summary": "arXiv preprint. Plans quadrotor trajectories that maximise an observability measure of chosen calibration states, using the empirical local observability Gramian (finite-difference perturbations of the simulated sensor model) and Krener-Ide style measures based on its condition number or smallest singular value. Simulated GPS-IMU quadrotor only.",
+    "key_takeaways": [
+      "Empirical local observability Gramian is cheap to compute numerically for nonlinear models",
+      "Reported about 2x lower position RMSE and 4x lower GPS-IMU transform error than a minimum-energy planner (simulation)",
+      "Plans excitation; does not gate a running filter's updates"
+    ],
+    "concepts": ["concept:calibration", "concept:path-planning", "concept:sensor-fusion"],
+    "tags": ["observability-gramian", "active-calibration", "trajectory-optimization", "quadrotor"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "res:preiss-2017-trajectory-optimization-self-calibration", "rel": "same_author"}
+    ]
+  },
+  {
+    "id": "res:preiss-2017-trajectory-optimization-self-calibration",
+    "kind": "paper",
+    "title": "Trajectory Optimization for Self-Calibration and Navigation",
+    "url": "https://roboticsproceedings.org/rss13/p54.html",
+    "authors": ["James Preiss", "Karol Hausman", "Gaurav S. Sukhatme", "Stephan Weiss"],
+    "year": 2017,
+    "summary": "RSS 2017. Adds a state-observability cost to trajectory optimisation, with a statistical procedure to combine states of different units, so a robot calibrates while flying its mission. Only the abstract was read here.",
+    "key_takeaways": [
+      "Observability cost inside mission planning removes a separate calibration flight (abstract claim)",
+      "Relevant to the excitation-request part of the idea, not to update gating"
+    ],
+    "concepts": ["concept:calibration", "concept:path-planning"],
+    "tags": ["observability", "active-calibration", "trajectory-optimization"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "res:hausman-2016-observability-aware-trajectory-optimization", "rel": "same_author"}
+    ]
+  },
+  {
+    "id": "res:bahnemann-2017-active-multirotor-system-identification",
+    "kind": "paper",
+    "title": "Sampling-based Motion Planning for Active Multirotor System Identification",
+    "url": "https://arxiv.org/abs/1612.05143",
+    "authors": ["Rik Bahnemann", "Michael Burri", "Enric Galceran", "Roland Siegwart", "Juan Nieto"],
+    "year": 2017,
+    "summary": "ICRA 2017 (arXiv preprint read at abstract level). Plans maximally informative multirotor trajectories for identifying inertia and aerodynamic coefficients, approximating belief dynamics with an EKF inside a sampling-based (RRBT) planner. Reports about 4x faster parameter convergence and lower uncertainty in simulation and on a real vehicle.",
+    "key_takeaways": [
+      "Some multirotor parameters only become observable under specific motions",
+      "Active excitation for aero identification exists; it is planned offline, not triggered by a navigation filter"
+    ],
+    "concepts": ["concept:calibration", "concept:path-planning"],
+    "tags": ["active-identification", "multirotor", "aerodynamic-coefficients", "rrbt"],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:yang-2019-degenerate-motion-aided-ins-calibration",
+    "kind": "paper",
+    "title": "Degenerate Motion Analysis for Aided INS with Online Spatial and Temporal Sensor Calibration",
+    "url": "https://udel.edu/~pgeneva/downloads/papers/r05.pdf",
+    "authors": ["Yulin Yang", "Patrick Geneva", "Kevin Eckenhoff", "Guoquan Huang"],
+    "year": 2019,
+    "summary": "IEEE RA-L 2019; the linked file is the RPNG tech report (RPNG-2018-CALIB). Shows spatial and temporal calibration of any-source-aided INS is observable under general motion and identifies four degenerate motion primitives (pure translation, one-axis rotation, constant local angular and linear velocity, constant local angular velocity with constant global acceleration) that make calibration partially fail, even with global pose measurements.",
+    "key_takeaways": [
+      "Named degenerate motions are the analogue of steady flight for aero parameters",
+      "Recommends avoiding degenerate motions; does not gate the online calibration update"
+    ],
+    "concepts": ["concept:ins", "concept:calibration", "concept:vio"],
+    "tags": ["degenerate-motion", "observability", "online-calibration", "msckf"],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:schneider-2019-observability-aware-vi-self-calibration",
+    "kind": "paper",
+    "title": "Observability-aware Self-Calibration of Visual and Inertial Sensors for Ego-Motion Estimation",
+    "url": "https://arxiv.org/abs/1901.07242",
+    "authors": ["Thomas Schneider", "Mingyang Li", "Cesar Cadena", "Juan Nieto", "Roland Siegwart"],
+    "year": 2019,
+    "summary": "IEEE Sensors Journal (arXiv preprint read). A background process scores trajectory segments with information-theoretic metrics, keeps the most informative ones in a database across sessions, and updates calibration only from those segments. Compared against an EKF that jointly estimates motion and calibration.",
+    "key_takeaways": [
+      "Information-gated calibration updates exist for visual-inertial extrinsics and intrinsics",
+      "Segment selection runs beside the estimator, not inside a navigation filter during sensor loss",
+      "Cites Bahnemann et al. for active multirotor model identification"
+    ],
+    "concepts": ["concept:calibration", "concept:vio", "concept:sensor-fusion"],
+    "tags": ["information-gating", "self-calibration", "informative-segments"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "res:bahnemann-2017-active-multirotor-system-identification", "rel": "cites"}
+    ]
+  },
+  {
+    "id": "res:borup-fossen-johansen-2016-wind-velocity-observer",
+    "kind": "paper",
+    "title": "A Nonlinear Model-Based Wind Velocity Observer for Unmanned Aerial Vehicles",
+    "url": "https://torarnj.folk.ntnu.no/NOLCOS16_final_submission.pdf",
+    "authors": ["Kasper T. Borup", "Thor I. Fossen", "Tor A. Johansen"],
+    "year": 2016,
+    "summary": "NOLCOS 2016 (author PDF read). An exponentially stable nonlinear wind observer for fixed-wing UAVs combining an aircraft model with a GNSS-aided INS; also estimates the pitot scale factor. The model-free predecessor needs persistently exciting yaw and pitch motion; this observer removes the PE requirement by relying on an aerodynamic model.",
+    "key_takeaways": [
+      "States the trade explicitly: model-free wind and pitot-scale estimation needs persistent excitation, model-based does not",
+      "Requires GNSS-aided INS; not a GNSS-denied method"
+    ],
+    "concepts": ["concept:gnss-ins", "concept:sensor-fusion", "concept:calibration"],
+    "tags": ["wind-estimation", "airspeed-scale", "persistent-excitation", "fixed-wing", "nonlinear-observer"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "res:wenz-johansen-2019-mhe-air-data", "rel": "same_author"}
+    ]
+  },
+  {
+    "id": "res:wenz-johansen-2019-mhe-air-data",
+    "kind": "paper",
+    "title": "Moving Horizon Estimation of Air Data Parameters for UAVs",
+    "url": "https://hdl.handle.net/11250/2630200",
+    "authors": ["Andreas Wenz", "Tor Arne Johansen"],
+    "year": 2019,
+    "summary": "IEEE Transactions on Aerospace and Electronic Systems (NTNU Open record; abstract-level read). Estimates wind, angle of attack and lift coefficients from IMU, GNSS and pitot data with a moving horizon estimator instead of an EKF, validated on two UAVs. The group's related ICUAS papers state that attitude changes are needed for persistence of excitation at initialisation and from time to time in flight.",
+    "key_takeaways": [
+      "Excitation requirement for wind and lift-coefficient estimation is stated, not gated automatically (abstract level)",
+      "Full text not read"
+    ],
+    "concepts": ["concept:gnss-ins", "concept:calibration", "concept:sensor-fusion"],
+    "tags": ["moving-horizon-estimation", "air-data", "wind-estimation", "persistent-excitation"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "res:borup-fossen-johansen-2016-wind-velocity-observer", "rel": "same_author"}
+    ]
+  },
+  {
+    "id": "res:zhang-kaess-singh-2016-degeneracy-state-estimation",
+    "kind": "paper",
+    "title": "On Degeneracy of Optimization-based State Estimation Problems",
+    "url": "https://frc.ri.cmu.edu/~kaess/pub/Zhang16icra.html",
+    "authors": ["Ji Zhang", "Michael Kaess", "Sanjiv Singh"],
+    "year": 2016,
+    "summary": "ICRA 2016 (abstract read). Detects degenerate directions of the state space online from the constraint geometry and solves the problem only in the well-conditioned directions, tested on camera and lidar ego-motion.",
+    "key_takeaways": [
+      "Direction-wise partial update in the well-conditioned subspace is an established pattern in lidar/visual odometry",
+      "Same mechanism as an eigen-direction gate on aero parameters, different domain"
+    ],
+    "concepts": ["concept:lidar-slam", "concept:sensor-fusion"],
+    "tags": ["degeneracy", "partial-update", "eigen-analysis"],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:huang-mourikis-roumeliotis-2010-observability-consistent-ekf",
+    "kind": "paper",
+    "title": "Observability-based Rules for Designing Consistent EKF SLAM Estimators",
+    "url": "https://experts.umn.edu/en/publications/observability-based-rules-for-designing-consistent-ekf-slam-estim/",
+    "authors": ["Guoquan Huang", "Anastasios I. Mourikis", "Stergios I. Roumeliotis"],
+    "year": 2010,
+    "summary": "IJRR 29(5) (abstract read). Proves that linearising at the latest estimates gives the EKF a larger observable subspace than the true nonlinear system, so covariance shrinks in directions without information. Proposes OC-EKF and first-estimates-Jacobian (FEJ) EKF.",
+    "key_takeaways": [
+      "Spurious information from relinearisation is a known source of overconfidence; an information gate built on the filter's own Jacobians inherits it",
+      "Use FEJ-style or fixed linearisation points when computing the gate's information increment"
+    ],
+    "concepts": ["concept:sensor-fusion", "concept:visual-slam"],
+    "tags": ["fej", "ekf-consistency", "observability"],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": []
+  },
+  {
+    "id": "res:ramos-brink-2022-factorized-partial-update-skf",
+    "kind": "paper",
+    "title": "Factorized Partial-Update Schmidt-Kalman Filter",
+    "url": "https://doi.org/10.2514/1.G006449",
+    "authors": ["J. Humberto Ramos", "Kevin M. Brink", "Prashant Ganesh", "John E. Hurtado"],
+    "year": 2022,
+    "summary": "Journal of Guidance, Control, and Dynamics 45(9) (abstract-level read via indexers). Applies the partial-update Schmidt-Kalman filter of Brink (2017) to UD covariance factors for numerical stability, in sequential and batch forms plus a multiplicative EKF variant. A FUSION 2023 follow-up adapts the update percentages from nonlinearity metrics.",
+    "key_takeaways": [
+      "Partial-update percentages between 0 (consider) and 1 (full) are the standard knob a gate would drive",
+      "The FUSION 2023 follow-up adapts them from nonlinearity, not from identifiability (abstract level)"
+    ],
+    "concepts": ["concept:sensor-fusion", "concept:ins"],
+    "tags": ["schmidt-kalman", "partial-update", "ud-factorization", "consider-states"],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": []
+  },
+  {
+    "id": "res:chowdhary-johnson-2011-concurrent-learning-data-recording",
+    "kind": "paper",
+    "title": "A Singular Value Maximizing Data Recording Algorithm for Concurrent Learning",
+    "url": "https://skoge.folk.ntnu.no/prost/proceedings/acc11/data/papers/1207.pdf",
+    "authors": ["Girish Chowdhary", "Eric Johnson"],
+    "year": 2011,
+    "summary": "ACC 2011 (abstract read from proceedings PDF). Concurrent-learning adaptive controllers reuse recorded data alongside current data; the paper picks which data to record by maximising the minimum singular value of the stored regressor history, which gives exponential parameter convergence without persistent excitation when the recorded data are rich enough.",
+    "key_takeaways": [
+      "Excitation is measured as the minimum singular value of a recorded regressor stack, a verifiable online test",
+      "Flight-control adaptation, not navigation; the transferable idea is a stored informative-data buffer"
+    ],
+    "concepts": ["concept:autopilot", "concept:calibration"],
+    "tags": ["concurrent-learning", "persistent-excitation", "adaptive-control", "singular-value"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "res:chowdhary-johnson-2010-concurrent-learning", "rel": "same_author"}
+    ]
+  },
+  {
+    "id": "res:chowdhary-johnson-2010-concurrent-learning",
+    "kind": "paper",
+    "title": "Concurrent learning for convergence in adaptive control without persistency of excitation",
+    "url": "https://repository.gatech.edu/entities/publication/9827172d-a512-436d-9ff2-369a36d79b99",
+    "authors": ["Girish Chowdhary", "Eric Johnson"],
+    "year": 2010,
+    "summary": "IEEE CDC 2010 (repository record, abstract level). Introduces concurrent learning: adaptation on current plus recorded data, with a verifiable linear-independence condition on the recorded data replacing the persistent-excitation requirement for parameter convergence.",
+    "key_takeaways": [
+      "Replaces persistent excitation with a checkable rank condition on stored data",
+      "Full text not read"
+    ],
+    "concepts": ["concept:autopilot"],
+    "tags": ["concurrent-learning", "persistent-excitation", "adaptive-control"],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:ntouros-2025-airspeed-propeller-feedback",
+    "kind": "paper",
+    "title": "Airspeed estimation for UAVs using only propeller feedback",
+    "url": "https://arxiv.org/abs/2507.03456",
+    "authors": ["Evangelos Ntouros", "Pavel Kelley", "Ewoud Smeur"],
+    "year": 2025,
+    "summary": "arXiv preprint, later in Aerospace Science and Technology per TU Delft listing (abstract read). Estimates fixed-wing airspeed from ESC-reported propeller power and rotational speed with a regularised analytical model; parameters are identified offline from logs with airspeed, or in flight from GPS velocity alone. Reports 5% normalised RMSE on unseen flight data.",
+    "key_takeaways": [
+      "Propulsion telemetry as an airspeed sensor, the fixed-wing twin of rotor-drag velocity sensing",
+      "In-flight identification from GPS velocity alone meets the same wind-vs-scale confounding this idea targets (not discussed in the abstract)"
+    ],
+    "concepts": ["concept:sensor-fusion", "concept:calibration"],
+    "tags": ["airspeed", "propeller", "esc-telemetry", "fixed-wing"],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:udagedara-bisheban-2026-realtime-wind-quadrotor",
+    "kind": "paper",
+    "title": "Realtime Wind Estimation using Low Cost Quadrotor Uncrewed Aerial Vehicles",
+    "url": "https://arxiv.org/abs/2606.30581",
+    "authors": ["Hiranya Udagedara", "Mahdis Bisheban"],
+    "year": 2026,
+    "summary": "arXiv preprint, ACC 2026 per the listing (abstract read). A UKF on an SE(3) quadrotor model estimates wind while the vehicle follows its trajectory, compared with an EKF in numerical simulation; motivated by prior work that needed hover or near-linear trajectories.",
+    "key_takeaways": [
+      "Simulation only; no drag-coefficient adaptation or observability gate in the abstract",
+      "Shows wind estimation during non-trivial trajectories is still active research in 2026"
+    ],
+    "concepts": ["concept:sensor-fusion"],
+    "tags": ["wind-estimation", "quadrotor", "ukf", "simulation"],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:cioffi-2023-hdvio-hybrid-dynamics-vio",
+    "kind": "paper",
+    "title": "HDVIO: Improving Localization and Disturbance Estimation with Hybrid Dynamics VIO",
+    "url": "https://arxiv.org/abs/2306.11429",
+    "authors": ["Giovanni Cioffi", "Leonard Bauersfeld", "Davide Scaramuzza"],
+    "year": 2023,
+    "summary": "RSS 2023 (arXiv read in part). Adds a hybrid point-mass plus learned aerodynamic model, driven by thrust and IMU history, as preintegrated dynamics residuals in an optimisation-based VIO; the gap between predicted and actual motion becomes an external-force estimate. Evaluated on Blackbird, VID and NeuroBEM and in a known wind field.",
+    "key_takeaways": [
+      "Reports up to 33% better motion and 40% better external-force estimates than the compared methods",
+      "Requires vision; disturbance is a residual force, not an identified drag coefficient"
+    ],
+    "concepts": ["concept:vio", "concept:sensor-fusion", "concept:edge-ai"],
+    "tags": ["hybrid-dynamics", "external-force", "rotor-thrust", "wind"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "res:cioffi-2025-hdvio2-wind-disturbance", "rel": "same_author"},
+      {"id": "res:bauersfeld-2021-neurobem", "rel": "uses"}
+    ]
+  },
+  {
+    "id": "res:ardupilot-ekf3-drag-wind-source-copter-4-6-3",
+    "kind": "doc",
+    "title": "ArduPilot EKF3 drag fusion and wind-state gating (source, Copter-4.6.3)",
+    "url": "https://github.com/ArduPilot/ardupilot/blob/Copter-4.6.3/libraries/AP_NavEKF3/AP_NavEKF3_AirDataFusion.cpp",
+    "authors": ["ArduPilot Dev Team"],
+    "year": 2025,
+    "summary": "Source read at tag Copter-4.6.3. FuseDragForces fuses body-frame drag with fixed coefficients (EK3_DRAG_BCOEF_X/Y, EK3_DRAG_MCOEF) and computes Kalman gains only for the two wind states. setAidingMode sets windStateIsObservable from source types (GPS position or velocity, flow, beacons, body odometry); CovariancePrediction treats wind as truth (zero variance, no process noise) during drag dead reckoning or when wind is not observable. A source-type freeze rule, not a measured-identifiability test.",
+    "key_takeaways": [
+      "Drag coefficients are never adapted online",
+      "Drag fusion corrects wind only; velocity and position are not corrected by drag in this code",
+      "Wind freezes on a source-type rule at GNSS loss"
+    ],
+    "concepts": ["concept:autopilot", "concept:gnss-ins", "concept:sensor-fusion"],
+    "tags": ["ekf3", "drag-fusion", "wind", "source-code", "dead-reckoning"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "repo:ardupilot/ardupilot", "rel": "part_of"},
+      {"id": "res:ardupilot-copter-wind-estimation-docs", "rel": "explains"}
+    ]
+  },
+  {
+    "id": "res:ardupilot-pr-33326-wind-truth-cross-covariance",
+    "kind": "doc",
+    "title": "ArduPilot PR 33326: zero wind cross-covariances when treating wind as truth",
+    "url": "https://github.com/ArduPilot/ardupilot/pull/33326",
+    "authors": ["Peter Barker"],
+    "year": 2026,
+    "summary": "Merged to master 2026-06-09. When EKF3 treats wind as truth it zeroed wind variances but left wind-velocity cross-covariances, making the covariance non-positive-definite and occasionally tripping bad_airspeed during no-airspeed dead reckoning (a years-long flaky autotest). The fix zeroes variances and cross-covariances together; reported 200/200 passing samples after the change.",
+    "key_takeaways": [
+      "Freezing a state by zeroing only its variance is a real defect pattern; consider-state handling must zero the cross terms too",
+      "Not in Copter-4.6.3 (checked in source)"
+    ],
+    "concepts": ["concept:autopilot", "concept:sensor-fusion"],
+    "tags": ["ekf3", "wind", "covariance", "dead-reckoning", "pull-request"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "repo:ardupilot/ardupilot", "rel": "part_of"},
+      {"id": "res:ardupilot-ekf3-drag-wind-source-copter-4-6-3", "rel": "explains"}
+    ]
+  },
+  {
+    "id": "res:px4-ekf2-drag-wind-source-v1-16",
+    "kind": "doc",
+    "title": "PX4 EKF2 drag fusion, wind process noise and IMU bias inhibit (source, v1.16.0)",
+    "url": "https://github.com/PX4/PX4-Autopilot/blob/v1.16.0/src/modules/ekf2/EKF/aid_sources/drag/drag_fusion.cpp",
+    "authors": ["PX4 Dev Team"],
+    "year": 2025,
+    "summary": "Source read at v1.16.0 (drag_fusion.cpp differs at v1.17.0 only in parameter names). Ekf::fuseDrag applies the full gain K = P H / S to all states behind a 5-sigma innovation gate, with fixed EKF2_BCOEF_X/Y and EKF2_MCOEF. Wind gains are zeroed only when the wind flag is off; predictCovariance keeps adding wind process noise up to the initial-uncertainty cap. updateIMUBiasInhibit inhibits accel-bias learning on heuristics (high manoeuvre level, clipping, fake position axis alignment) and leaves gyro conditions as a TODO. The offline mc_wind_estimator_tuning.py fits the coefficients and its readme says it assumes no wind.",
+    "key_takeaways": [
+      "No measured-identifiability gate on wind or drag coefficients; coefficients fixed, wind keeps random-walking during drag-only flight",
+      "Heuristic excitation gating exists for accel bias only",
+      "Offline coefficient fit assumes still air"
+    ],
+    "concepts": ["concept:autopilot", "concept:gnss-ins", "concept:sensor-fusion", "concept:calibration"],
+    "tags": ["ekf2", "drag-fusion", "wind", "bias-inhibit", "source-code"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "repo:px4/px4-autopilot", "rel": "part_of"},
+      {"id": "res:px4-ekf2-tuning-guide", "rel": "explains"}
+    ]
+  },
+  {
+    "id": "res:px4-pr-27884-mc-airspeed-wind-fusion",
+    "kind": "doc",
+    "title": "PX4 draft PR 27884: airspeed fusion for wind estimation in rotary-wing flight",
+    "url": "https://github.com/PX4/PX4-Autopilot/pull/27884",
+    "authors": ["Jonas Perolini"],
+    "year": 2026,
+    "summary": "Open draft. For VTOLs in multicopter mode, fuses airspeed into wind states only, gated by lateral specific force as a proxy for being aligned with the wind; the author reports the drag-based wind estimator was not precise enough on their VTOL and asks how to know the vehicle is aligned with the wind.",
+    "key_takeaways": [
+      "Practitioner evidence that drag-based wind estimation can be too imprecise on real airframes",
+      "Another heuristic gate on when a measurement is informative about wind"
+    ],
+    "concepts": ["concept:autopilot", "concept:sensor-fusion"],
+    "tags": ["ekf2", "wind", "airspeed", "vtol", "pull-request"],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {"id": "repo:px4/px4-autopilot", "rel": "part_of"}
+    ]
+  },
+  {
+    "id": "res:ardupilot-discuss-ekf3-wind-reset-gps-denied",
+    "kind": "blog",
+    "title": "Custom EKF3 Position/Wind Reset for GPS-Denied Flight (ArduPlane 4.4.3)",
+    "url": "https://discuss.ardupilot.org/t/custom-ekf3-position-wind-reset-for-gps-denied-flight-arduplane-4-4-3/143360",
+    "authors": ["ArduPilot Discourse thread"],
+    "year": 2026,
+    "summary": "Forum discussion, April 2026. A user adds a command to seed EKF3 wind and position without GPS; reports that with GPS absent and wind set, EKF3 keeps wind fixed (frozen) and uses it for airspeed and sideslip fusion, and resumes learning when GPS returns. Contributors suggest reusing MAV_CMD_EXTERNAL_POSITION_ESTIMATE and MAV_CMD_EXTERNAL_WIND_ESTIMATE.",
+    "key_takeaways": [
+      "Practitioners already treat wind as frozen during GPS-denied fixed-wing flight and inject it externally",
+      "No discussion of identifiability theory"
+    ],
+    "concepts": ["concept:autopilot", "concept:gnss-ins"],
+    "tags": ["forum", "ekf3", "wind", "gps-denied", "arduplane"],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {"id": "repo:ardupilot/ardupilot", "rel": "part_of"}
+    ]
+  },
+  {
+    "id": "res:ardupilot-copter-dead-reckoning-failsafe-docs",
+    "kind": "doc",
+    "title": "Dead Reckoning Failsafe (ArduCopter)",
+    "url": "https://ardupilot.org/copter/docs/deadreckoning-failsafe.html",
+    "authors": ["ArduPilot Dev Team"],
+    "year": 2025,
+    "summary": "Copter documentation. After GPS loss the vehicle flies normally for about 7-10 s, then starts dead reckoning and switches to RTL, and lands when FS_DR_TIMEOUT (typically 10-30 s) expires. Asks the user to set up wind estimation with EK3_DRAG_BCOEF_X/Y and EK3_DRAG_MCOEF first, but does not explain how they enter dead reckoning.",
+    "key_takeaways": [
+      "Stock Copter dead reckoning is scoped to seconds to tens of seconds",
+      "Drag coefficients are hand-set before flight"
+    ],
+    "concepts": ["concept:autopilot", "concept:assured-pnt"],
+    "tags": ["arducopter", "dead-reckoning", "failsafe", "drag"],
+    "level": "intro",
+    "access": "open",
+    "related": [
+      {"id": "res:ardupilot-copter-wind-estimation-docs", "rel": "cites"}
+    ]
+  }
+]

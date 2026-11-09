@@ -1,0 +1,1215 @@
+[
+  {
+    "id": "res:yang-pavone-2023-conformal-keypoint-pose",
+    "kind": "paper",
+    "title": "Object Pose Estimation with Statistical Guarantees: Conformal Keypoint Detection and Geometric Uncertainty Propagation",
+    "url": "https://arxiv.org/abs/2303.12246",
+    "authors": [
+      "Heng Yang",
+      "Marco Pavone"
+    ],
+    "year": 2023,
+    "summary": "CVPR 2023. Uses inductive conformal prediction to turn learned keypoint heatmaps into prediction sets with a chosen coverage, then propagates those sets into a pose uncertainty set. The template for giving a learned geometric measurement a coverage-calibrated error region before it reaches a filter.",
+    "key_takeaways": [
+      "Peer-reviewed (CVPR 2023); abstract read, full text not read",
+      "Calibration set of a few hundred labelled images is enough per the precursor paper's abstract",
+      "Code repo has no license file: read only"
+    ],
+    "concepts": [
+      "concept:feature-matching",
+      "concept:sensor-fusion",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "conformal-prediction",
+      "uncertainty",
+      "pose-estimation",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:nvlabs/conformalkeypoint",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:sier-2026-safevpr-empirical-fdr-vpr",
+    "kind": "paper",
+    "title": "SAFEVPR: Patch-Based Verification with Empirical FDR Control for Cross-Condition Sequence Visual Place Recognition",
+    "url": "https://arxiv.org/abs/2605.28048",
+    "authors": [
+      "Ha Sier",
+      "Jiaqiang Zhang",
+      "Zhuo Zou",
+      "Xianjia Yu",
+      "Tomi Westerlund"
+    ],
+    "year": 2026,
+    "summary": "Training-free accept/abstain decision for place-recognition matches: a frozen DINOv2 patch-agreement score with Mondrian (score-binned) Learn-Then-Test calibration of accept thresholds. Targets a false-discovery rate on conditions not seen in calibration. Ground-vehicle datasets only.",
+    "key_takeaways": [
+      "README claim: target FDR held on 23/23 held-out cross-condition setups at alpha 0.10",
+      "README claim: 29.6x fewer wrong loop closures, median trajectory error 95.5 m => 9.7 m",
+      "README says the control is empirical, not a formal guarantee under arbitrary shift",
+      "arXiv comment: accepted to RA-L; MIT code with a no-GPU demo"
+    ],
+    "concepts": [
+      "concept:place-recognition",
+      "concept:assured-pnt",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "conformal-prediction",
+      "vpr",
+      "false-discovery-rate",
+      "dinov2",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:tiers/safevpr",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:weisman-2026-conformalized-kalman-filters",
+    "kind": "paper",
+    "title": "Conformalized Kalman Filters for State Estimation with Trustworthy Confidence Regions",
+    "url": "https://arxiv.org/abs/2609.27506",
+    "authors": [
+      "Olga Weisman",
+      "Nir Shlezinger",
+      "Bracha Laufer-Goldshtein"
+    ],
+    "year": 2026,
+    "summary": "Preprint. Conformal calibration of Kalman-type filter confidence regions built from the filter's own first and second moments, including a quantile-regression variant and a Gaussian-mixture variant for multimodal regions. Gives sample-wise and trajectory-wise coverage statements.",
+    "key_takeaways": [
+      "Abstract read; no code link on the abstract page",
+      "Trajectory-wise coverage matters when consecutive fixes share bias",
+      "Gaussian-mixture variant connects to multimodal TRN posteriors"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "conformal-prediction",
+      "kalman-filter",
+      "integrity",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:kulkarni-2026-set-coverage-learned-dynamics-filter",
+    "kind": "paper",
+    "title": "Proprioceptive-only State Estimation for Legged Robots with Set-Coverage Measurements of Learned Dynamics",
+    "url": "https://arxiv.org/abs/2603.18308",
+    "authors": [
+      "Abhijeet M. Kulkarni",
+      "Ioannis Poulakakis",
+      "Guoquan Huang"
+    ],
+    "year": 2026,
+    "summary": "Preprint. Replaces the Gaussian noise assumption on learned measurement models with distribution-free set-coverage statements and shows how to use them inside a Gaussian filter. Legged robots, but the mechanism transfers to any learned measurement fed to an EKF.",
+    "key_takeaways": [
+      "Abstract: stays consistent where Gaussian baselines drift on real quadruped data",
+      "Abstract read only"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "conformal-prediction",
+      "learned-measurement",
+      "consistency",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:miller-2025-vpr-uncertainty-training-free",
+    "kind": "paper",
+    "title": "Through the Lens of Doubt: Robust and Efficient Uncertainty Estimation for Visual Place Recognition",
+    "url": "https://arxiv.org/abs/2510.13464",
+    "authors": [
+      "Emily Miller",
+      "Michael Milford",
+      "Muhammad Burhan Hafez",
+      "SD Ramchurn",
+      "Shoaib Ehsan"
+    ],
+    "year": 2025,
+    "summary": "Preprint. Three training-free confidence scores for any VPR method computed from the similarity-score distribution (separation, ratio spread, and a combination). Cheap inputs for a calibrated accept/abstain gate.",
+    "key_takeaways": [
+      "No training, no geometric verification needed",
+      "Abstract read only"
+    ],
+    "concepts": [
+      "concept:place-recognition",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "vpr",
+      "uncertainty",
+      "innovation-scan"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:lindemann-2024-conformal-verification-control-survey",
+    "kind": "paper",
+    "title": "Formal Verification and Control with Conformal Prediction",
+    "url": "https://arxiv.org/abs/2409.00536",
+    "authors": [
+      "Lars Lindemann",
+      "Yiqi Zhao",
+      "Xinyi Yu",
+      "George J. Pappas",
+      "Jyotirmoy V. Deshmukh"
+    ],
+    "year": 2024,
+    "summary": "Preprint survey of conformal prediction for learning-enabled autonomous systems: verification of learned components, safe control, offline and online monitoring. Accessible entry point for a team new to conformal methods.",
+    "key_takeaways": [
+      "Survey, aimed at non-experts",
+      "Useful vocabulary for a certification-minded pitch"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "conformal-prediction",
+      "verification",
+      "survey",
+      "innovation-scan"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:jiang-shi-moura-2024-covariance-recalibration-kf",
+    "kind": "paper",
+    "title": "Mitigating Overconfidence in Nonlinear Kalman Filters via Covariance Recalibration",
+    "url": "https://arxiv.org/abs/2407.05717",
+    "authors": [
+      "Shida Jiang",
+      "Junzhe Shi",
+      "Scott Moura"
+    ],
+    "year": 2024,
+    "summary": "Proposes a covariance recalibration step that counters overconfidence in nonlinear Kalman filters. A non-conformal baseline for making filter covariance honest. arXiv journal reference: Automatica 194 (2026) 113295.",
+    "key_takeaways": [
+      "Peer-reviewed per arXiv journal-ref; abstract only",
+      "Baseline to compare against conformal recalibration"
+    ],
+    "concepts": [
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "consistency",
+      "covariance",
+      "kalman-filter",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:delama-2026-galilean-ins-unknown-time-delay",
+    "kind": "paper",
+    "title": "Galilean State Estimation for Inertial Navigation Systems with Unknown Time Delay",
+    "url": "https://roboticsproceedings.org/rss22/p130.html",
+    "authors": [
+      "Giulio Delama",
+      "Martin Scheiber",
+      "Yixiao Ge",
+      "Tarek Hamel",
+      "Stephan Weiss",
+      "Robert Mahony"
+    ],
+    "year": 2026,
+    "summary": "RSS XXII 2026. Equivariant filter using Galilean symmetry that estimates navigation states and an unknown GNSS measurement delay jointly. Validated on two fixed-wing UAVs and in simulation against an EKF with online delay estimation.",
+    "key_takeaways": [
+      "Abstract: commercial receivers add unknown delays of about 50-300 ms",
+      "Abstract: fixed-wing flights with 90 ms and 120 ms lags; simulations to 500 ms",
+      "Abstract: EqF stays consistent, EKF becomes inconsistent as delay grows",
+      "No code linked on the proceedings page"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:gnss-ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "equivariant-filter",
+      "time-delay",
+      "fixed-wing",
+      "consistency",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:fornasier-2023-equivariant-symmetries-ins",
+    "kind": "paper",
+    "title": "Equivariant Symmetries for Inertial Navigation Systems",
+    "url": "https://arxiv.org/abs/2309.03765",
+    "authors": [
+      "Alessandro Fornasier",
+      "Yixiao Ge",
+      "Pieter van Goor",
+      "Robert Mahony",
+      "Stephan Weiss"
+    ],
+    "year": 2023,
+    "summary": "Shows that the modern EKF variants for inertial navigation, including the invariant EKF, are equivariant filters with different symmetry groups, and derives GNSS-aided versions for each. The reference for choosing a symmetry for an INS filter.",
+    "key_takeaways": [
+      "Preprint; repo description calls it an Automatica submission",
+      "Compares IEKF, TG-EqF and other EqFs on error and consistency",
+      "MATLAB code exists but has no license file"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:gnss-ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "equivariant-filter",
+      "invariant-ekf",
+      "lie-groups",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:aau-cns/equivaraint-symmetries-for-inertial-navigation-systems",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:barrau-bonnabel-invariant-ekf",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:scheiber-2023-multi-gnss-eqf-uav",
+    "kind": "paper",
+    "title": "Revisiting multi-GNSS Navigation for UAVs -- An Equivariant Filtering Approach",
+    "url": "https://arxiv.org/abs/2310.10597",
+    "authors": [
+      "Martin Scheiber",
+      "Alessandro Fornasier",
+      "Christian Brommer",
+      "Stephan Weiss"
+    ],
+    "year": 2023,
+    "summary": "Preprint. Equivariant filter for a UAV with several GNSS antennas that also estimates each antenna's extrinsic calibration.",
+    "key_takeaways": [
+      "Abstract via search snippet; full text not read"
+    ],
+    "concepts": [
+      "concept:gnss-ins",
+      "concept:sensor-fusion",
+      "concept:calibration"
+    ],
+    "tags": [
+      "equivariant-filter",
+      "multi-gnss",
+      "uav",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:fornasier-2023-equivariant-symmetries-ins",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:fornasier-2023-msceqf-vision-aided-ins",
+    "kind": "paper",
+    "title": "MSCEqF: A Multi State Constraint Equivariant Filter for Vision-aided Inertial Navigation",
+    "url": "https://arxiv.org/abs/2311.11649",
+    "authors": [
+      "Alessandro Fornasier",
+      "Pieter van Goor",
+      "Eren Allak",
+      "Robert Mahony",
+      "Stephan Weiss"
+    ],
+    "year": 2023,
+    "summary": "RA-L 2023 (per arXiv comment). MSCKF-style visual-inertial navigation built as an equivariant filter. Its code and Lie group library are Apache-2.0, the permissive route into equivariant filtering.",
+    "key_takeaways": [
+      "Peer-reviewed per arXiv comment (RA-L)",
+      "Apache-2.0 C++ code and Lie group library"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "equivariant-filter",
+      "vio",
+      "msckf",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:aau-cns/msceqf",
+        "rel": "has_code"
+      },
+      {
+        "id": "repo:aau-cns/lie-plusplus",
+        "rel": "uses"
+      }
+    ]
+  },
+  {
+    "id": "res:liu-2022-ingvio-invariant-gnss-vio",
+    "kind": "paper",
+    "title": "InGVIO: A Consistent Invariant Filter for Fast and High-Accuracy GNSS-Visual-Inertial Odometry",
+    "url": "https://arxiv.org/abs/2210.15145",
+    "authors": [
+      "Changwu Liu",
+      "Chen Jiang",
+      "Haowen Wang"
+    ],
+    "year": 2022,
+    "summary": "Invariant filter that tightly fuses visual-inertial data with raw GNSS and degrades to VIO as satellites drop. Datasets include a fixed-wing aircraft with raw GNSS.",
+    "key_takeaways": [
+      "Search snippet says RA-L 2023; arXiv shows no journal reference",
+      "Code has no license file: read only"
+    ],
+    "concepts": [
+      "concept:gnss-ins",
+      "concept:vio",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "invariant-ekf",
+      "raw-gnss",
+      "fixed-wing",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:changwuliu/ingvio",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:diker-klein-2026-neural-adaptive-inekf",
+    "kind": "paper",
+    "title": "Neural Aided Adaptive Innovation-Based Invariant Kalman Filter",
+    "url": "https://arxiv.org/abs/2603.26709",
+    "authors": [
+      "Barak Diker",
+      "Itzik Klein"
+    ],
+    "year": 2026,
+    "summary": "Preprint. Combines invariant Kalman filtering with neural-aided adaptive noise estimation in the Lie-algebra tangent space, where adaptive methods had mostly been Euclidean.",
+    "key_takeaways": [
+      "Abstract read only",
+      "Relevant to both the invariant-filter and the adaptive-noise directions"
+    ],
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "invariant-ekf",
+      "adaptive-noise",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:gupta-gao-2024-reliable-urban-localization-faulty-gnss",
+    "kind": "paper",
+    "title": "Reliable urban vehicle localization under faulty satellite navigation signals",
+    "url": "https://doi.org/10.1186/s13634-024-01150-2",
+    "authors": [
+      "Shubh Gupta",
+      "Grace Gao"
+    ],
+    "year": 2024,
+    "summary": "EURASIP J. Adv. Signal Process. 2024; earlier preprint arXiv 2101.06380. Particle filter with a Gaussian-mixture measurement likelihood that is robust to several faulty GNSS measurements, plus a test statistic from the particle distribution for integrity monitoring.",
+    "key_takeaways": [
+      "Peer-reviewed; abstract only",
+      "Urban GNSS, not terrain: the TRN version is the open angle",
+      "Preprint reports fewer false alarms and lower integrity risk than an earlier PF integrity monitor"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:gnss",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "particle-filter",
+      "integrity",
+      "gaussian-mixture",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:gupta-gao-2021-data-driven-protection-levels",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:park-2022-ekf-trn-error-modelling-integrity",
+    "kind": "paper",
+    "title": "Error modelling method of extended Kalman filter-based terrain referenced navigation system for integrity assurance under nominal conditions",
+    "url": "https://doi.org/10.1049/rsn2.12277",
+    "authors": [
+      "Park",
+      "Lee",
+      "Lee"
+    ],
+    "year": 2022,
+    "summary": "IET Radar, Sonar & Navigation 16(9). Error model for EKF-based TRN integrity: radar altimeter, terrain database vertical error, lateral-offset error and interpolation error, the last two as functions of terrain roughness.",
+    "key_takeaways": [
+      "Peer-reviewed; abstract only (author first names not read)",
+      "Spatially correlated DEM error is the term a TRN integrity test must not ignore"
+    ],
+    "concepts": [
+      "concept:terrain-nav",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "trn",
+      "integrity",
+      "error-model",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": []
+  },
+  {
+    "id": "res:park-bang-2026-contours-seeking-pf-trn",
+    "kind": "paper",
+    "title": "Contours-Seeking Proposal Density Particle Filter and Resilient Terrain-Referenced Navigation",
+    "url": "https://arxiv.org/abs/2608.15489",
+    "authors": [
+      "Junwoo Park",
+      "Hyochoong Bang"
+    ],
+    "year": 2026,
+    "summary": "Preprint. Names multimodal likelihoods, nonlinear terrain and unknown prediction biases as the cause of particle filter degeneration in TRN, and adds Gaussian-mixture random forcing that nudges particles towards likely terrain contours.",
+    "key_takeaways": [
+      "Abstract read only",
+      "Robustness of the PF, not integrity bounds"
+    ],
+    "concepts": [
+      "concept:terrain-nav",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "trn",
+      "particle-filter",
+      "multimodal",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:feng-2024-implicitterrain",
+    "kind": "paper",
+    "title": "ImplicitTerrain: a Continuous Surface Model for Terrain Data Analysis",
+    "url": "https://arxiv.org/abs/2406.00227",
+    "authors": [
+      "Haoan Feng",
+      "Xin Xu",
+      "Leila De Floriani"
+    ],
+    "year": 2024,
+    "summary": "Preprint. SIREN-style implicit neural representation of terrain as a continuous, differentiable surface for terrain analysis.",
+    "key_takeaways": [
+      "Code repo has no license file",
+      "Baseline for neural DEM representations"
+    ],
+    "concepts": [
+      "concept:terrain-nav",
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "implicit-neural-representation",
+      "dem",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:feng-2026-implicitterrainv2",
+    "kind": "paper",
+    "title": "ImplicitTerrainV2: Wavelet-Guided Spatially Adaptive Neural Terrain Representation",
+    "url": "https://arxiv.org/abs/2605.22556",
+    "authors": [
+      "Haoan Feng",
+      "Xin Xu",
+      "Leila De Floriani"
+    ],
+    "year": 2026,
+    "summary": "Preprint. Adds wavelet-guided spatially adaptive frequency control, derivative-aware training and quantization plus entropy coding to neural terrain fields, aiming at a compact DEM format with good gradients.",
+    "key_takeaways": [
+      "Search-snippet numbers: 1.23 bits per pixel with a 0.28 dB PSNR drop on 50 Swiss tiles",
+      "MIT code",
+      "Derivative-aware training matters for gradient-based TRN"
+    ],
+    "concepts": [
+      "concept:terrain-nav",
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "implicit-neural-representation",
+      "dem-compression",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:fengyee/implicitterrainv2",
+        "rel": "has_code"
+      },
+      {
+        "id": "res:feng-2024-implicitterrain",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:michaelson-2023-trn-neurogrid-elevation-encoding",
+    "kind": "paper",
+    "title": "Terrain-Relative Navigation with Neuro-Inspired Elevation Encoding",
+    "url": "https://doi.org/10.1109/PLANS53410.2023.10139925",
+    "authors": [
+      "Kristen Michaelson",
+      "Felix W. Wang",
+      "Renato Zanetti"
+    ],
+    "year": 2023,
+    "summary": "IEEE/ION PLANS 2023. Generates position measurements from terrain elevation with NeuroGrid, a brain-inspired encoding, and fuses them with an INS using a measurement rejection rule and online covariance, motivated by the cost of storing and searching large elevation maps.",
+    "key_takeaways": [
+      "Peer-reviewed; abstract only",
+      "Sandia listing also shows a TAES-style DOI prefix: venue metadata inconsistent"
+    ],
+    "concepts": [
+      "concept:terrain-nav",
+      "concept:ins"
+    ],
+    "tags": [
+      "trn",
+      "neuromorphic",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": []
+  },
+  {
+    "id": "res:maggio-2022-loc-nerf",
+    "kind": "paper",
+    "title": "Loc-NeRF: Monte Carlo Localization using Neural Radiance Fields",
+    "url": "https://arxiv.org/abs/2209.09050",
+    "authors": [
+      "Dominic Maggio",
+      "Marcus Abate",
+      "Jingnan Shi",
+      "Courtney Mario"
+    ],
+    "year": 2022,
+    "summary": "Particle-filter localization of a camera against a NeRF map. The reference for using a neural field as the map inside a Monte Carlo localizer.",
+    "key_takeaways": [
+      "MIT code",
+      "Camera against a radiance field, not elevation against a DEM"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "nerf",
+      "particle-filter",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:mit-spark/loc-nerf",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:jia-li-how-2025-implicit-terrain-traversability",
+    "kind": "paper",
+    "title": "Off-Road Navigation via Implicit Neural Representation of Terrain Traversability",
+    "url": "https://arxiv.org/abs/2511.18183",
+    "authors": [
+      "Yixuan Jia",
+      "Qingyuan Li",
+      "Jonathan P. How"
+    ],
+    "year": 2025,
+    "summary": "Preprint. Implicit neural representation of terrain properties with spatial gradients used by a gradient-based trajectory optimizer for ground robots.",
+    "key_takeaways": [
+      "Ground robots and planning, not aircraft TRN",
+      "Shows neural terrain gradients used in an optimizer"
+    ],
+    "concepts": [
+      "concept:terrain-nav",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "implicit-neural-representation",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:trukhina-2026-sasgeo-semantic-map-localization",
+    "kind": "paper",
+    "title": "SASGeo: Stability-Aware Semantic Map Localization for GNSS-Denied UAVs -- A Framework and Synthetic Proof of Concept",
+    "url": "https://arxiv.org/abs/2607.07737",
+    "authors": [
+      "Natalia Trukhina",
+      "Vadim Vashkelis"
+    ],
+    "year": 2026,
+    "summary": "Preprint. Localizes against persistent semantic structures (roads, buildings, waterways, field boundaries) with explicit positive, contradictory and unknown evidence and integrity-aware rejection of ambiguous fixes, to resist season and map age.",
+    "key_takeaways": [
+      "Synthetic proof of concept only: 220 randomized trials",
+      "Abstract: global descriptor Recall@1 58.6 % vs 94.5-95.5 % for spatial semantic matching",
+      "No code link seen"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "map-age",
+      "semantic-localization",
+      "innovation-scan"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:deng-sentis-2026-aeromap3d",
+    "kind": "paper",
+    "title": "AeroMap3D: Anchoring Monocular UAV 6-DoF Localization to Visual-Geometric-Semantic Map Priors",
+    "url": "https://arxiv.org/abs/2607.14009",
+    "authors": [
+      "Zhiyun Deng",
+      "Luis Sentis"
+    ],
+    "year": 2026,
+    "summary": "Preprint. Monocular UAV 6-DoF localization against visual, geometric and semantic map priors; lists uncertainty-aware map updates and map-validity modelling as future work.",
+    "key_takeaways": [
+      "Map-validity modelling named as open work (search snippet)",
+      "Full text not read"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "map-age",
+      "uav",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:yuan-2025-swa-pf-semantic-particle-filter",
+    "kind": "paper",
+    "title": "SWA-PF: Semantic-Weighted Adaptive Particle Filter for Memory-Efficient 4-DoF UAV Localization in GNSS-Denied Environments",
+    "url": "https://arxiv.org/abs/2509.13795",
+    "authors": [
+      "Jiayu Yuan",
+      "Ming Dai",
+      "Enhui Zheng",
+      "Chao Su"
+    ],
+    "year": 2025,
+    "summary": "Preprint. Particle filter weighted by semantic features from UAV and satellite images, with a multi-altitude dataset (MAFS), aimed at robustness to temporally varying scenes and low-resolution maps.",
+    "key_takeaways": [
+      "Abstract: errors below 10 m and 10x efficiency over feature extraction methods",
+      "Code repo has no license file; MAFS terms not checked"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "particle-filter",
+      "semantic-localization",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:yuanjiayuuu/swa-pf",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:dhaouadi-2025-ortholoc",
+    "kind": "paper",
+    "title": "OrthoLoC: UAV 6-DoF Localization and Calibration Using Orthographic Geodata",
+    "url": "https://arxiv.org/abs/2509.18350",
+    "authors": [
+      "Oussema Dhaouadi",
+      "Riccardo Marin",
+      "Johannes Meier",
+      "Jacques Kaiser",
+      "Daniel Cremers"
+    ],
+    "year": 2025,
+    "summary": "NeurIPS 2025 Datasets and Benchmarks. UAV images paired with orthophotos and surface models so localization and calibration can be evaluated without the retrieval step; also proposes a matcher-agnostic refinement (AdHoP).",
+    "key_takeaways": [
+      "Abstract: 16,425 UAV images over 47 regions in Germany and the US",
+      "Repo LICENSE is CC BY-NC-SA 4.0: evaluation only, no commercial use",
+      "Project page states about 287 GB (not checked)"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "uav",
+      "orthophoto",
+      "dsm",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:deepscenario/ortholoc",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:berton-2025-megaloc",
+    "kind": "paper",
+    "title": "MegaLoc: One Retrieval to Place Them All",
+    "url": "https://arxiv.org/abs/2502.17237",
+    "authors": [
+      "Gabriele Berton",
+      "Carlo Masone"
+    ],
+    "year": 2025,
+    "summary": "Preprint. A single image-retrieval model trained across many localization datasets, meant as a general retrieval front end for VPR and visual localization.",
+    "key_takeaways": [
+      "MIT code; weight terms not checked separately",
+      "Candidate retrieval stage to compare with AnyLoc and DINOv2 GeM"
+    ],
+    "concepts": [
+      "concept:place-recognition",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "vpr",
+      "retrieval",
+      "foundation-model",
+      "innovation-scan"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:gmberton/megaloc",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:lu-2026-vfm-loc-training-free-cvgl",
+    "kind": "paper",
+    "title": "VFM-Loc: Training-Free Cross-View Geo-Localization via Aligning Discriminative Visual Hierarchies",
+    "url": "https://arxiv.org/abs/2603.13855",
+    "authors": [
+      "Jun Lu",
+      "Zehao Sang",
+      "Haoqi Wei",
+      "Xiangyun Liu",
+      "Kun Zhu",
+      "Haitao Guo"
+    ],
+    "year": 2026,
+    "summary": "Preprint. Training-free drone-to-satellite cross-view geo-localization with vision foundation model features, multi-scale pooling and a domain-wise PCA plus Procrustes alignment.",
+    "key_takeaways": [
+      "Abstract: over 20 % Recall@1 above supervised methods on the large-oblique LO-UCV set",
+      "No code link seen"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "cross-view",
+      "zero-shot",
+      "foundation-model",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:li-2026-mgs2-net-cross-view",
+    "kind": "paper",
+    "title": "(MGS)^2-Net: Unifying Micro-Geometric Scale and Macro-Geometric Structure for Cross-View Geo-Localization",
+    "url": "https://arxiv.org/abs/2602.10704",
+    "authors": [
+      "Minglei Li",
+      "Mengfan He",
+      "Chunyu Li",
+      "Chao Chen"
+    ],
+    "year": 2026,
+    "summary": "Preprint. Cross-view geo-localization that attributes RGB foundation-feature failures to oblique-to-orthographic misalignment such as building facades invisible in orthophotos.",
+    "key_takeaways": [
+      "Failure-mode argument from a search snippet; full text not read"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "cross-view",
+      "failure-modes",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:li-2024-cross-view-geoloc-without-ground-truth",
+    "kind": "paper",
+    "title": "Learning Cross-view Visual Geo-localization without Ground Truth",
+    "url": "https://arxiv.org/abs/2403.12702",
+    "authors": [
+      "Haoyuan Li",
+      "Chang Xu",
+      "Wen Yang",
+      "Huai Yu"
+    ],
+    "year": 2024,
+    "summary": "Preprint. Self-supervised adaptation of frozen foundation models for drone-to-satellite geo-localization; reports that frozen features work drone-to-drone but drop sharply drone-to-satellite.",
+    "key_takeaways": [
+      "Failure observation from a search snippet; full text not read"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "cross-view",
+      "foundation-model",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:li-2024-uav-geoloc-iterative-rendering",
+    "kind": "paper",
+    "title": "Unsupervised Multi-view UAV Image Geo-localization via Iterative Rendering",
+    "url": "https://arxiv.org/abs/2411.14816",
+    "authors": [
+      "Haoyuan Li",
+      "Chang Xu",
+      "Wen Yang",
+      "Li Mi",
+      "Huai Yu",
+      "Haijian Zhang"
+    ],
+    "year": 2024,
+    "summary": "Preprint. Builds a 3D Gaussian splatting model from oblique UAV views and iteratively renders a satellite-like view to align with the real satellite image.",
+    "key_takeaways": [
+      "Render-and-compare route to cross-view matching; GPU-heavy"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "gaussian-splatting",
+      "cross-view",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:li-2024-cross-view-geoloc-without-ground-truth",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:potter-2026-skylight-polarization-rayleigh-road",
+    "kind": "paper",
+    "title": "Navigation by Skylight Polarization via Rayleigh Model Optimization on a Road Vehicle",
+    "url": "https://arxiv.org/abs/2610.20797",
+    "authors": [
+      "Ben Potter",
+      "Eslam Mounier",
+      "Aboelmagd Noureldin",
+      "Yahia Antar"
+    ],
+    "year": 2026,
+    "summary": "Preprint. Skylight polarization navigation on a road vehicle using optimization against the Rayleigh sky model. Recent evidence that polarization heading is being tested outside the lab.",
+    "key_takeaways": [
+      "Title and metadata only; abstract not read",
+      "Ground vehicle, not aircraft"
+    ],
+    "concepts": [
+      "concept:celestial-nav",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "polarization",
+      "heading",
+      "innovation-scan"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:opensky-sky-polarization-simulator-2024",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:xiong-2024-single-anchor-uwb-flow-drag",
+    "kind": "paper",
+    "title": "An Adaptive Sliding Window Estimator for Positioning of Unmanned Aerial Vehicle Using a Single Anchor",
+    "url": "https://arxiv.org/abs/2409.06501",
+    "authors": [
+      "Kaiwen Xiong",
+      "Sijia Chen",
+      "Wei Dong"
+    ],
+    "year": 2024,
+    "summary": "Preprint. UAV positioning from a single UWB anchor, optical flow and IMU in a sliding-window estimator whose motion model includes aerodynamic drag with an adjusted drag matrix.",
+    "key_takeaways": [
+      "Abstract via search snippet: drag in the motion model is called crucial",
+      "Minimal-sensor example that already mixes flow and drag"
+    ],
+    "concepts": [
+      "concept:rf-localization",
+      "concept:sensor-fusion",
+      "concept:ins"
+    ],
+    "tags": [
+      "optical-flow",
+      "uwb",
+      "rotor-drag",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:oliva-2026-innovation-stealthy-attack-maritime",
+    "kind": "paper",
+    "title": "An Innovation-Based Approach to Detect Stealthy Disturbance Attacks in Maritime Monitoring",
+    "url": "https://arxiv.org/abs/2604.17572",
+    "authors": [
+      "Gabriele Oliva",
+      "Bianca Mazza",
+      "Roberto Setola"
+    ],
+    "year": 2026,
+    "summary": "Preprint. A statistical detection suite on Kalman filter innovations that tests whiteness and other properties, to catch stealthy disturbances that keep the normalized innovation squared in range.",
+    "key_takeaways": [
+      "Abstract read; maritime setting",
+      "Whiteness tests as a counter to attacks tuned against NIS-only gates and adaptive R"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:assured-pnt",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "spoofing",
+      "innovation-monitoring",
+      "innovation-scan"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:panda-guo-2025-drift-evasive-spoofing-bayesian",
+    "kind": "paper",
+    "title": "Real-Time Bayesian Detection of Drift-Evasive GNSS Spoofing in Reinforcement Learning Based UAV Deconfliction",
+    "url": "https://arxiv.org/abs/2507.11173",
+    "authors": [
+      "Deepak Kumar Panda",
+      "Weisi Guo"
+    ],
+    "year": 2025,
+    "summary": "Preprint. Detects slow drift-evasive GNSS spoofing with Bayesian change-point detection in a UAV deconfliction setting.",
+    "key_takeaways": [
+      "Title and search snippet only",
+      "Example of slow coherent spoofing as the hard case"
+    ],
+    "concepts": [
+      "concept:gnss-interference",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "spoofing",
+      "change-point",
+      "innovation-scan"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:sarkka-nummenmaa-2009-vb-adaptive-kalman",
+    "kind": "paper",
+    "title": "Recursive Noise Adaptive Kalman Filtering by Variational Bayesian Approximations",
+    "url": "https://doi.org/10.1109/TAC.2008.2008348",
+    "authors": [
+      "Simo Sarkka",
+      "Aapo Nummenmaa"
+    ],
+    "year": 2009,
+    "summary": "IEEE Transactions on Automatic Control 2009. The variational Bayes adaptive Kalman filter that estimates measurement noise variance jointly with the state. Baseline for any adaptive-noise direction.",
+    "key_takeaways": [
+      "Peer-reviewed; metadata checked via Crossref, paper not opened",
+      "Adapts R from innovations, which a coherent spoof can exploit"
+    ],
+    "concepts": [
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "adaptive-noise",
+      "variational-bayes",
+      "kalman-filter",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": []
+  },
+  {
+    "id": "res:huang-2018-adaptive-kf-inaccurate-q-r",
+    "kind": "paper",
+    "title": "A Novel Adaptive Kalman Filter With Inaccurate Process and Measurement Noise Covariance Matrices",
+    "url": "https://doi.org/10.1109/TAC.2017.2730480",
+    "authors": [
+      "Yulong Huang",
+      "Yonggang Zhang",
+      "Zhemin Wu",
+      "Ning Li"
+    ],
+    "year": 2018,
+    "summary": "IEEE Transactions on Automatic Control 2018. Variational Bayes adaptive Kalman filter that treats both the predicted covariance and the measurement noise covariance as uncertain (inverse-Wishart). Widely used base for GNSS/INS adaptive filters.",
+    "key_takeaways": [
+      "Peer-reviewed; metadata checked via Crossref (author surnames), paper not opened"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "adaptive-noise",
+      "variational-bayes",
+      "kalman-filter",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "res:sarkka-nummenmaa-2009-vb-adaptive-kalman",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:geneva-2019-schmidt-ekf-vi-slam",
+    "kind": "paper",
+    "title": "An Efficient Schmidt-EKF for 3D Visual-Inertial SLAM",
+    "url": "https://arxiv.org/abs/1903.08636",
+    "authors": [
+      "Patrick Geneva",
+      "James Maley",
+      "Guoquan Huang"
+    ],
+    "year": 2019,
+    "summary": "CVPR 2019. Treats prior-map features as Schmidt (consider) states: their covariance and cross-correlations enter the update without being estimated, keeping the filter consistent and cheap.",
+    "key_takeaways": [
+      "Peer-reviewed (CVPR 2019)",
+      "Pattern for correlated map georeferencing error without growing the state"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:visual-slam",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "schmidt-kalman",
+      "consider-states",
+      "consistency",
+      "innovation-scan"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  }
+]

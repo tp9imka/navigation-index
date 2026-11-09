@@ -1,0 +1,633 @@
+[
+  {
+    "id": "res:trimpe-campi-2015-choice-of-event-trigger",
+    "kind": "paper",
+    "title": "On the Choice of the Event Trigger in Event-based Estimation",
+    "url": "https://marco-campi.unibs.it/pdf-pszip/EBCCSP-2016.pdf",
+    "authors": [
+      "Sebastian Trimpe",
+      "Marco C. Campi"
+    ],
+    "year": 2015,
+    "summary": "EBCCSP 2015 paper (doi 10.1109/EBCCSP.2015.7300691). Compares send-on-delta, measurement-based, variance-based and relevant-sampling triggers for a scalar Kalman filter and derives two new ones. Shows that a trigger which does not need the measurement value (variance-based) can be precomputed offline as a time-based schedule. Full text read from extracted PDF text; conclusion section not located.",
+    "key_takeaways": [
+      "Variance-based triggering thresholds the prediction variance c^2 P(k|k-1) + r and ignores the measurement value",
+      "Optimal variance-based decisions can be precomputed offline from the model and run as a fixed schedule",
+      "So a covariance-threshold fix trigger with sure arrival is a fixed schedule in disguise; scheduling only gains from success probability or delay"
+    ],
+    "concepts": [
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "event-triggered-estimation",
+      "variance-based-triggering",
+      "kalman-filter",
+      "sensor-scheduling"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:trimpe-2016-predictive-self-triggering-estimation",
+    "kind": "paper",
+    "title": "Predictive and Self Triggering for Event-based State Estimation",
+    "url": "https://arxiv.org/abs/1609.07534",
+    "authors": [
+      "Sebastian Trimpe"
+    ],
+    "year": 2016,
+    "summary": "CDC 2016 paper (doi 10.1109/CDC.2016.7798733; arXiv 1609.07534). Self-triggers predict the next triggering instant at the current one; predictive triggers say whether a transmission will be needed within a horizon, so the shared resource can be re-allocated ahead of time. Both come from one Bayesian decision framework. Abstract only read.",
+    "key_takeaways": [
+      "Self-trigger = predict the next update time now, the 'deadline' idea for a network",
+      "Predictive trigger lets the resource be booked in advance",
+      "Assumes measurements always arrive; no compute latency"
+    ],
+    "concepts": [
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "event-triggered-estimation",
+      "self-triggering",
+      "resource-allocation"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:trimpe-campi-2015-choice-of-event-trigger",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:mourikis-roumeliotis-2006-optimal-sensor-scheduling",
+    "kind": "paper",
+    "title": "Optimal Sensor Scheduling for Resource-Constrained Localization of Mobile Robot Formations",
+    "url": "https://experts.umn.edu/en/publications/optimal-sensor-scheduling-for-resource-constrained-localization-o/",
+    "authors": [
+      "Anastasios I. Mourikis",
+      "Stergios I. Roumeliotis"
+    ],
+    "year": 2006,
+    "summary": "IEEE Transactions on Robotics 22(5):917-931 (doi 10.1109/TRO.2006.878947). Robots in a formation share limited processing and bandwidth; the paper picks the measurement frequency of each relative and absolute sensor to minimise the trace of the weighted steady-state covariance under a cap on total EKF updates, as a convex SDP. Abstract only read.",
+    "key_takeaways": [
+      "Closest robotics framing of compute-constrained localization: allocate update rates under a processing cap",
+      "Steady-state frequencies, not event decisions",
+      "Measurements assumed to always succeed; no processing delay"
+    ],
+    "concepts": [
+      "concept:sensor-fusion",
+      "concept:multi-agent"
+    ],
+    "tags": [
+      "sensor-scheduling",
+      "semidefinite-programming",
+      "resource-constrained",
+      "ekf"
+    ],
+    "level": "advanced",
+    "access": "paywalled",
+    "related": []
+  },
+  {
+    "id": "res:joshi-boyd-2009-sensor-selection-convex",
+    "kind": "paper",
+    "title": "Sensor Selection via Convex Optimization",
+    "url": "https://web.stanford.edu/~boyd/papers/sensor_selection.html",
+    "authors": [
+      "Siddharth Joshi",
+      "Stephen Boyd"
+    ],
+    "year": 2009,
+    "summary": "IEEE Transactions on Signal Processing 57(2):451-462. Convex relaxation for choosing k of m sensors to minimise estimation error; returns a subset and a bound on the best achievable k-subset. Abstract only read.",
+    "key_takeaways": [
+      "Static selection with a performance bound",
+      "Useful for the 'which fix method' part of a scheduler"
+    ],
+    "concepts": [
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "sensor-selection",
+      "convex-optimization"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:mo-sinopoli-2010-critical-value-intermittent-kalman",
+    "kind": "paper",
+    "title": "Towards Finding the Critical Value for Kalman Filtering with Intermittent Observations",
+    "url": "https://arxiv.org/abs/1005.2442",
+    "authors": [
+      "Yilin Mo",
+      "Bruno Sinopoli"
+    ],
+    "year": 2010,
+    "summary": "arXiv 1005.2442 preprint. The abstract restates the Sinopoli et al. 2004 result: with Bernoulli observation arrival there is a critical arrival probability below which the Kalman filter diverges, with only bounds for general systems, and works towards its exact value. Abstract only read.",
+    "key_takeaways": [
+      "Models fix success as random i.i.d. arrival",
+      "Gives the condition under which too-rare fixes make the filter diverge",
+      "Arrival is not chosen and not correlated in time"
+    ],
+    "concepts": [
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "intermittent-observations",
+      "kalman-filter",
+      "packet-loss"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:carlone-karaman-attention-anticipation-vin",
+    "kind": "paper",
+    "title": "Attention and Anticipation in Fast Visual-Inertial Navigation",
+    "url": "https://arxiv.org/abs/1610.03344",
+    "authors": [
+      "Luca Carlone",
+      "Sertac Karaman"
+    ],
+    "year": 2019,
+    "summary": "ICRA 2017 and IEEE Transactions on Robotics 2019 (doi 10.1109/TRO.2018.2872402), per Crossref; arXiv 1610.03344 abstract read. Selects which visual features a compute-limited drone processes by forward-simulating dynamics and predicting each feature's utility for VIN over a horizon; greedy selection with submodularity guarantees.",
+    "key_takeaways": [
+      "Anticipate future estimation value under a compute budget",
+      "Inside the VIO front end, not for absolute fixes",
+      "No deadline or processing delay model"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "feature-selection",
+      "anticipation",
+      "compute-budget",
+      "submodularity"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:mathur-2021-resource-aware-vin-adaptation",
+    "kind": "paper",
+    "title": "Resource-aware Online Parameter Adaptation for Computationally-constrained Visual-Inertial Navigation Systems",
+    "url": "https://arxiv.org/abs/2106.00289",
+    "authors": [
+      "Pranay Mathur",
+      "Nikhil Khedekar",
+      "Kostas Alexis"
+    ],
+    "year": 2021,
+    "summary": "arXiv 2106.00289 preprint. Profiles available compute online and adapts front-end and back-end parameters of S-MSCKF, VINS-Mono and OKVIS, also using motion dynamics; evaluated on EuRoC, reporting comparable performance at a fraction of the computational cost (no number in the abstract). Abstract only read.",
+    "key_takeaways": [
+      "Compute-aware VIO tuning at runtime",
+      "No absolute fixes, no deadline"
+    ],
+    "concepts": [
+      "concept:vio",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "resource-aware",
+      "compute-budget",
+      "vio"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:zhao-2020-good-graph-budget-ba",
+    "kind": "paper",
+    "title": "Good Graph to Optimize: Cost-Effective, Budget-Aware Bundle Adjustment in Visual SLAM",
+    "url": "https://arxiv.org/abs/2008.10123",
+    "authors": [
+      "Yipu Zhao",
+      "Justin S. Smith",
+      "Patricio A. Vela"
+    ],
+    "year": 2020,
+    "summary": "arXiv 2008.10123 preprint. Predicts upcoming estimation needs, sets a per-step size budget and picks the best-conditioned subgraph for local bundle adjustment; better accuracy under compute limits and better closed-loop tracking. Abstract only read.",
+    "key_takeaways": [
+      "Budget-aware SLAM back end with an explicit forecast of need",
+      "Code builds on ORB-SLAM2 and inherits GPL-3.0"
+    ],
+    "concepts": [
+      "concept:visual-slam",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "budget-aware",
+      "bundle-adjustment",
+      "orb-slam2"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:ivalab/gf_orb_slam2",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:hajebi-zhang-2013-stopping-rules-bow-localization",
+    "kind": "paper",
+    "title": "Stopping Rules for Bag-of-Words Image Search and Its Application in Appearance-Based Localization",
+    "url": "https://arxiv.org/abs/1312.7414",
+    "authors": [
+      "Kiana Hajebi",
+      "Hong Zhang"
+    ],
+    "year": 2013,
+    "summary": "arXiv 1312.7414 preprint. Stops bag-of-words image search early for queries judged easy, cutting computation with a small accuracy loss, and applies it to appearance-based localization. Abstract only read.",
+    "key_takeaways": [
+      "Per-query 'anytime' effort for retrieval",
+      "Decides how much to spend, not when to query"
+    ],
+    "concepts": [
+      "concept:place-recognition"
+    ],
+    "tags": [
+      "anytime",
+      "early-termination",
+      "bag-of-words"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:carson-2022-predicting-to-improve-vpr-integrity",
+    "kind": "paper",
+    "title": "Predicting to Improve: Integrity Measures for Assessing Visual Localization Performance",
+    "url": "https://eprints.qut.edu.au/234489/",
+    "authors": [
+      "Helen Carson",
+      "Jason J. Ford",
+      "Michael Milford"
+    ],
+    "year": 2022,
+    "summary": "IEEE Robotics and Automation Letters 7(4):9627-9634 (doi 10.1109/LRA.2022.3191205). Supervised, technique-agnostic per-frame predictor of whether a VPR estimate is correct, built from signals of the VPR technique itself; used to discard bad estimates. Reports 74 % average precision over 12 dataset/technique combinations. Abstract only read.",
+    "key_takeaways": [
+      "Predicts VPR success per frame after retrieval has run",
+      "Not used to decide whether to spend the expensive matching step",
+      "MIT code with a Nordland example"
+    ],
+    "concepts": [
+      "concept:place-recognition",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "vpr",
+      "integrity",
+      "failure-prediction",
+      "introspection"
+    ],
+    "level": "intermediate",
+    "access": "paywalled",
+    "related": [
+      {
+        "id": "repo:qvpr/predict2improve",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:carson-2023-unsupervised-quality-prediction-vpr",
+    "kind": "paper",
+    "title": "Unsupervised Quality Prediction for Improved Single-Frame and Weighted Sequential Visual Place Recognition",
+    "url": "https://arxiv.org/abs/2307.01464",
+    "authors": [
+      "Helen Carson",
+      "Jason J. Ford",
+      "Michael Milford"
+    ],
+    "year": 2023,
+    "summary": "ICRA 2023 (doi 10.1109/ICRA48891.2023.10160679, per Crossref); arXiv 2307.01464 abstract read. Training-free prediction of how likely a VPR estimate is correct, used to weight sequence matching; real-time and VPR-technique-agnostic, tested on four datasets and three techniques.",
+    "key_takeaways": [
+      "Training-free success prediction for VPR",
+      "Improves precision at the high-precision operating point"
+    ],
+    "concepts": [
+      "concept:place-recognition",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "vpr",
+      "quality-prediction",
+      "sequence-matching"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": [
+      {
+        "id": "res:carson-2022-predicting-to-improve-vpr-integrity",
+        "rel": "same_author"
+      }
+    ]
+  },
+  {
+    "id": "res:malone-2024-dynamic-vpr-sequence-length",
+    "kind": "paper",
+    "title": "Dynamically Modulating Visual Place Recognition Sequence Length For Minimum Acceptable Performance Scenarios",
+    "url": "https://arxiv.org/abs/2407.00863",
+    "authors": [
+      "Connor Malone",
+      "Ankit Vora",
+      "Thierry Peynot",
+      "Michael Milford"
+    ],
+    "year": 2024,
+    "summary": "IROS 2024 (doi 10.1109/IROS58592.2024.10802570, per Crossref); arXiv 2407.00863 abstract read. An MLP fitted on a calibration set predicts, per map section, the shortest VPR sequence length that meets a target localization performance, from appearance variation in the region under a coarse position prior.",
+    "key_takeaways": [
+      "Spends just enough compute where a place is hard, keyed on a position prior",
+      "Per-place effort, not driven by a navigation deadline or delay",
+      "Ground vehicle data"
+    ],
+    "concepts": [
+      "concept:place-recognition",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "vpr",
+      "adaptive-compute",
+      "sequence-matching",
+      "position-prior"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:luo-2024-jointloc-planetary-uav",
+    "kind": "paper",
+    "title": "JointLoc: A Real-time Visual Localization Framework for Planetary UAVs Based on Joint Relative and Absolute Pose Estimation",
+    "url": "https://arxiv.org/abs/2405.07429",
+    "authors": [
+      "Xubo Luo",
+      "Xue Wan",
+      "Yixing Gao",
+      "Yaolin Tian",
+      "Wei Zhang",
+      "Leizheng Shu"
+    ],
+    "year": 2024,
+    "summary": "IROS 2024 (per the repo README); arXiv 2405.07429 full text read through an HTML summary. Fuses satellite-map absolute 2-DoF pose with relative 6-DoF visual SLAM on Mars-like terrain. Notes that absolute localization on every frame costs too much compute, tests fixed intervals of 1, 10, 50 and 100 frames and picks 10; match confidence (SSIM x mean match degree) sets the next search radius. Desktop RTX 2080 Ti.",
+    "key_takeaways": [
+      "A UAV paper that meets the fix-rate vs compute trade-off and answers it with a hand-tuned fixed interval",
+      "Interval 50 gave too much error; 100 broke SLAM initialization",
+      "Area prediction cut absolute localization from about 793 ms to 82 ms on one terrain"
+    ],
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:visual-slam",
+      "concept:space-nav"
+    ],
+    "tags": [
+      "absolute-visual-localization",
+      "fix-rate",
+      "satellite-map",
+      "planetary-uav"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:luoxubo/jointloc",
+        "rel": "has_code"
+      }
+    ]
+  },
+  {
+    "id": "res:power-2021-vpr-embedded-benchmark",
+    "kind": "paper",
+    "title": "A Benchmark Comparison of Visual Place Recognition Techniques for Resource-Constrained Embedded Platforms",
+    "url": "https://arxiv.org/abs/2109.11002",
+    "authors": [
+      "Rose Power",
+      "Mubariz Zaffar",
+      "Bruno Ferrarini",
+      "Michael Milford",
+      "Klaus McDonald-Maier",
+      "Shoaib Ehsan"
+    ],
+    "year": 2021,
+    "summary": "arXiv 2109.11002 preprint. Benchmarks VPR techniques on ODroid, UP and Raspberry Pi 3 boards plus desktop and laptop references: accuracy, encoding time, matching time and memory. Abstract only read.",
+    "key_takeaways": [
+      "Cost tables for the processing-delay term of a scheduler",
+      "No Jetson in the board set"
+    ],
+    "concepts": [
+      "concept:place-recognition",
+      "concept:edge-ai",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "vpr",
+      "embedded",
+      "benchmark",
+      "latency"
+    ],
+    "level": "intermediate",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:larsen-1998-time-delayed-measurements-kf",
+    "kind": "paper",
+    "title": "Incorporation of Time Delayed Measurements in a Discrete-time Kalman Filter",
+    "url": "https://orbit.dtu.dk/en/publications/incorporation-of-time-delayed-measurements-in-a-discrete-time-kal/",
+    "authors": [
+      "Thomas Dall Larsen",
+      "Nils Axel Andersen",
+      "Ole Ravn",
+      "Niels Kjolstad Poulsen"
+    ],
+    "year": 1998,
+    "summary": "37th IEEE CDC, pp. 3972-3977. Reviews ways to fuse measurements that arrive late because of long processing (vision) and proposes extrapolating the delayed measurement to the present with past and present filter estimates, then using an optimal gain. Abstract only read.",
+    "key_takeaways": [
+      "Classic answer to 'the fix arrives late'",
+      "Trades optimality against computational burden"
+    ],
+    "concepts": [
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "delayed-measurement",
+      "kalman-filter",
+      "latency"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:px4-ekf2-delayed-horizon-source",
+    "kind": "doc",
+    "title": "PX4 EKF2 delayed fusion horizon: estimator_interface.cpp, TimestampedRingBuffer and EKF2_DELAY_MAX",
+    "url": "https://github.com/PX4/PX4-Autopilot/blob/cb61f8c4f1f57573746f8a75999e24225ee6c0fc/src/modules/ekf2/EKF/estimator_interface.cpp",
+    "authors": [
+      "PX4 Dev Team"
+    ],
+    "year": 2026,
+    "summary": "Source read at PX4-Autopilot main cb61f8c (2026-10-29). External-vision samples are stamped time_us - EKF2_EV_DELAY - dt/2 and buffered; a sample is popped only when the delayed-horizon time is within 100 ms after its stamp. EKF2_DELAY_MAX defaults to 200 ms with a maximum of 1000 ms, and the observation buffer is 1.5 x EKF2_DELAY_MAX.",
+    "key_takeaways": [
+      "A fix older than about 1 s cannot be fused at its capture time in PX4 EKF2",
+      "Pi-class VPR fixes sit near or past that limit; plan a companion-side delayed-state filter",
+      "Measured M2 top-5 match p95 0.82 s is already close"
+    ],
+    "concepts": [
+      "concept:autopilot",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "px4",
+      "ekf2",
+      "delayed-fusion",
+      "ev-delay",
+      "latency"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": [
+      {
+        "id": "repo:px4/px4-autopilot",
+        "rel": "part_of"
+      },
+      {
+        "id": "res:px4-ekf2-tuning-guide",
+        "rel": "cites"
+      }
+    ]
+  },
+  {
+    "id": "res:yano-azumi-2025-multi-deadline-dag-autoware",
+    "kind": "paper",
+    "title": "Work-in-Progress: Multi-Deadline DAG Scheduling Model for Autonomous Driving Systems",
+    "url": "https://arxiv.org/abs/2505.06780",
+    "authors": [
+      "Atsushi Yano",
+      "Takuya Azumi"
+    ],
+    "year": 2025,
+    "summary": "arXiv 2505.06780 preprint (related DOI 10.1109/RTSS62706.2024.00049). Splits Autoware's end-to-end timing constraint into local relative deadlines per sub-DAG and extends Global EDF to the model; evaluated on a synthetic Autoware-like workload. Abstract only read.",
+    "key_takeaways": [
+      "Real-time scheduling of a ROS 2 perception and localization graph",
+      "Deadlines are fixed timing budgets, not derived from navigation error"
+    ],
+    "concepts": [
+      "concept:ros",
+      "concept:edge-ai"
+    ],
+    "tags": [
+      "real-time-scheduling",
+      "dag",
+      "edf",
+      "autoware",
+      "ros2"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:ali-2025-real-time-principles-gpu-robots",
+    "kind": "paper",
+    "title": "On the Necessity of Real-Time Principles in GPU-Driven Autonomous Robots",
+    "url": "https://robotics.cs.unc.edu/publications/Ali2025_ICRA.pdf",
+    "authors": [
+      "Syed W. Ali",
+      "Angelos Angelopoulos",
+      "Denver Massey",
+      "Sarah Haddix",
+      "Alexander Georgiev",
+      "Joseph Goh",
+      "Rohan Wagle",
+      "Prakash Sarathy",
+      "James H. Anderson",
+      "Ron Alterovitz"
+    ],
+    "year": 2025,
+    "summary": "ICRA 2025 (doi 10.1109/ICRA55743.2025.11128627). Shows on a simulated high-speed forest drone that interference from non-flight-critical GPU work slows reaction time and causes crashes, and applies the TimeWall component-based real-time framework to isolate obstacle detection and control. Abstract and introduction read.",
+    "key_takeaways": [
+      "Evidence that the onboard GPU is a contended resource on a drone stack",
+      "That contention is the condition under which fix scheduling pays off"
+    ],
+    "concepts": [
+      "concept:edge-ai",
+      "concept:obstacle-avoidance"
+    ],
+    "tags": [
+      "gpu-scheduling",
+      "real-time",
+      "timewall",
+      "drone"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:thales-us9046894-limit-time-protection-radius",
+    "kind": "doc",
+    "title": "US 9,046,894 B2: Navigation aid method for determining the path of an aircraft",
+    "url": "https://patents.google.com/patent/US9046894B2/en",
+    "authors": [
+      "Thales SA"
+    ],
+    "year": 2015,
+    "summary": "Thales patent, priority FR 09 02066 (2009-04-28). Defines a 'limit time' at which the predicted protection radius reaches the alarm limit assuming satellite navigation is lost now, recomputed each epoch, and uses it to decide whether an approach can be completed and when to leave it. Read through a Google Patents page summary.",
+    "key_takeaways": [
+      "Aviation already computes time until PL reaches AL",
+      "Used for guidance decisions, not to schedule aiding fixes"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "protection-level",
+      "alert-limit",
+      "time-to-alert",
+      "patent"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  },
+  {
+    "id": "res:sagem-us8843243-protection-limit-extrapolation",
+    "kind": "doc",
+    "title": "US 8,843,243 B2: Method and system for determining protection limits with integrated extrapolation over a given time horizon",
+    "url": "https://patents.google.com/patent/US8843243B2/en",
+    "authors": [
+      "Sagem Defense Securite"
+    ],
+    "year": 2014,
+    "summary": "Sagem (now Safran) patent, priority FR0956070 (2009-09-07). Extrapolates the Kalman error model to a future moment with a constant transition matrix built from maximum or mission dynamics, then computes protection limits at that moment. No alert-limit crossing time and no aiding scheduling. Read through a Google Patents page summary.",
+    "key_takeaways": [
+      "Forward prediction of protection limits over a horizon",
+      "Independent of past carrier dynamics by construction"
+    ],
+    "concepts": [
+      "concept:assured-pnt",
+      "concept:gnss-ins"
+    ],
+    "tags": [
+      "protection-level",
+      "extrapolation",
+      "patent"
+    ],
+    "level": "advanced",
+    "access": "open",
+    "related": []
+  }
+]

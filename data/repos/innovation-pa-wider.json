@@ -1,0 +1,300 @@
+[
+  {
+    "id": "repo:nvlabs/conformalkeypoint",
+    "kind": "repo",
+    "name": "ConformalKeypoint",
+    "url": "https://github.com/NVlabs/ConformalKeypoint",
+    "summary": "Reference code for conformal keypoint prediction sets and pose uncertainty sets (CVPR 2023).",
+    "why_it_matters": "Shows the calibration loop for turning a learned geometric measurement into a coverage-calibrated region.",
+    "concepts": [
+      "concept:feature-matching",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "conformal-prediction",
+      "pose-estimation",
+      "python"
+    ],
+    "language": "Jupyter Notebook",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "No license file (gh api 2026-11-09): read the calibration scripts, re-implement. Last push 2023-06.",
+    "related": []
+  },
+  {
+    "id": "repo:tiers/safevpr",
+    "kind": "repo",
+    "name": "SafeVPR",
+    "url": "https://github.com/TIERS/SafeVPR",
+    "summary": "Accept/abstain verifier for place-recognition matches: DINOv2 patch-agreement score plus Mondrian conformal threshold calibration with an FDR target.",
+    "why_it_matters": "The closest open code to calibrated acceptance of visual fixes; MIT, so it can be adapted for aerial fixes.",
+    "concepts": [
+      "concept:place-recognition",
+      "concept:assured-pnt"
+    ],
+    "tags": [
+      "conformal-prediction",
+      "vpr",
+      "dinov2",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "high",
+    "hackathon_notes": "MIT. README: `pip install -e .` then `python demo.py` runs on bundled real scores without a GPU. Swap its score for our inliers + retrieval margin on cached VPAIR candidates. Ground datasets only in the paper.",
+    "related": []
+  },
+  {
+    "id": "repo:deepscenario/ortholoc",
+    "kind": "repo",
+    "name": "OrthoLoC",
+    "url": "https://github.com/deepscenario/OrthoLoC",
+    "summary": "Dataset tools and code for UAV 6-DoF localization and calibration against orthophotos and surface models (NeurIPS 2025 D&B).",
+    "why_it_matters": "Paired UAV images, orthophotos and DSMs let a team evaluate the matching stage without retrieval.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:datasets-benchmarks"
+    ],
+    "tags": [
+      "uav",
+      "orthophoto",
+      "dsm",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "LICENSE file is CC BY-NC-SA 4.0 (read via gh api): evaluation only, no commercial use. Data is large (about 287 GB per project page, not checked); use a subset.",
+    "related": []
+  },
+  {
+    "id": "repo:gmberton/megaloc",
+    "kind": "repo",
+    "name": "MegaLoc",
+    "url": "https://github.com/gmberton/MegaLoc",
+    "summary": "General image-retrieval model for localization tasks, trained across many VPR datasets.",
+    "why_it_matters": "A permissive retrieval front end to compare against AnyLoc and DINOv2 GeM for the coarse stage of aerial visual fixes.",
+    "concepts": [
+      "concept:place-recognition",
+      "concept:visual-geolocalization"
+    ],
+    "tags": [
+      "vpr",
+      "retrieval",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "MIT code; weight terms not checked separately. Drop-in for the retrieval stage of vpr-large-area.",
+    "related": [
+      {
+        "id": "repo:anyloc/anyloc",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:aau-cns/msceqf",
+    "kind": "repo",
+    "name": "MSCEqF",
+    "url": "https://github.com/aau-cns/MSCEqF",
+    "summary": "Multi-state-constraint equivariant filter for vision-aided inertial navigation (RA-L 2023).",
+    "why_it_matters": "Permissive (Apache-2.0) reference implementation of an equivariant INS filter.",
+    "concepts": [
+      "concept:vio",
+      "concept:ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "equivariant-filter",
+      "vio",
+      "c++",
+      "uav"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "Apache-2.0. Read for structure; for a 48h POC write the filter in Python and use this to check equations.",
+    "related": [
+      {
+        "id": "repo:aau-cns/lie-plusplus",
+        "rel": "depends_on"
+      }
+    ]
+  },
+  {
+    "id": "repo:aau-cns/lie-plusplus",
+    "kind": "repo",
+    "name": "Lie++",
+    "url": "https://github.com/aau-cns/Lie-plusplus",
+    "summary": "Header-only C++ / Eigen library for Lie group operations used by the AAU equivariant filters.",
+    "why_it_matters": "Apache-2.0 alternative to manif for onboard equivariant or invariant filters.",
+    "concepts": [
+      "concept:ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "lie-groups",
+      "c++",
+      "eigen"
+    ],
+    "language": "C++",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "active-research",
+    "hackathon_fit": "low",
+    "hackathon_notes": "Apache-2.0. Useful when porting a Python POC filter to C++ for the product story.",
+    "related": [
+      {
+        "id": "repo:artivis/manif",
+        "rel": "alternative_to"
+      }
+    ]
+  },
+  {
+    "id": "repo:aau-cns/equivaraint-symmetries-for-inertial-navigation-systems",
+    "kind": "repo",
+    "name": "Equivariant symmetries for INS (code)",
+    "url": "https://github.com/aau-cns/equivaraint-symmetries-for-inertial-navigation-systems",
+    "summary": "MATLAB code accompanying the paper comparing IEKF and equivariant filters for GNSS-aided inertial navigation.",
+    "why_it_matters": "Ready-made comparison of symmetry choices for an INS filter, the starting point for a consistency study.",
+    "concepts": [
+      "concept:ins",
+      "concept:gnss-ins",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "equivariant-filter",
+      "invariant-ekf",
+      "matlab"
+    ],
+    "language": "MATLAB",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "No license file (gh api 2026-11-09): read only, re-implement in Python. Repository name is spelled 'equivaraint' upstream.",
+    "related": []
+  },
+  {
+    "id": "repo:changwuliu/ingvio",
+    "kind": "repo",
+    "name": "InGVIO",
+    "url": "https://github.com/ChangwuLiu/InGVIO",
+    "summary": "Invariant filter fusing monocular or stereo visual-inertial data with raw GNSS.",
+    "why_it_matters": "Open invariant-filter GNSS-VIO with fixed-wing data; a consistency reference.",
+    "concepts": [
+      "concept:gnss-ins",
+      "concept:vio",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "invariant-ekf",
+      "raw-gnss",
+      "c++",
+      "aircraft"
+    ],
+    "language": "C++",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "No license file (gh api 2026-11-09): read only. ROS-based C++ build; too heavy for 48h beyond reading.",
+    "related": []
+  },
+  {
+    "id": "repo:mit-spark/loc-nerf",
+    "kind": "repo",
+    "name": "Loc-NeRF",
+    "url": "https://github.com/MIT-SPARK/Loc-NeRF",
+    "summary": "Monte Carlo localization of a camera against a neural radiance field map.",
+    "why_it_matters": "Reference for putting a neural field map inside a particle filter.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "nerf",
+      "particle-filter",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "MIT. Last push 2022-10. Read for the PF-against-neural-map loop; GPU and NeRF training needed to run.",
+    "related": []
+  },
+  {
+    "id": "repo:fengyee/implicitterrainv2",
+    "kind": "repo",
+    "name": "ImplicitTerrainV2",
+    "url": "https://github.com/Fengyee/implicitterrainv2",
+    "summary": "Code for wavelet-guided adaptive neural terrain fields with derivative-aware training and quantization.",
+    "why_it_matters": "MIT neural DEM representation with good gradients, the piece a compressed-map TRN POC needs.",
+    "concepts": [
+      "concept:terrain-nav",
+      "concept:gis-mapping"
+    ],
+    "tags": [
+      "implicit-neural-representation",
+      "dem",
+      "python"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "medium",
+    "hackathon_notes": "MIT. Fit fields per GLO-30 window and swap them into terrain-heightmap-pf. Training time on CPU/MPS not measured.",
+    "related": []
+  },
+  {
+    "id": "repo:yuanjiayuuu/swa-pf",
+    "kind": "repo",
+    "name": "SWA-PF",
+    "url": "https://github.com/YuanJiayuuu/SWA-PF",
+    "summary": "Semantic-weighted adaptive particle filter for 4-DoF UAV localization against satellite maps, with the MAFS dataset.",
+    "why_it_matters": "Semantic particle weighting is one route to robustness against map age.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "particle-filter",
+      "semantic-localization",
+      "python",
+      "uav"
+    ],
+    "language": "Python",
+    "domains": [
+      "air"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "No license file (gh api 2026-11-09): read only. MAFS dataset terms not checked.",
+    "related": []
+  }
+]

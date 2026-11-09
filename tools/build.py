@@ -313,7 +313,7 @@ def first_sentence(s):
     return (m.group(1) if m else s)[:220]
 
 # Top-level guides become graph nodes of kind "guide" so search finds the decoder, playbook and runbook.
-GUIDE_GLOBS = ("docs/*.md", "docs/primer/*.md", "docs/landscape/*.md")
+GUIDE_GLOBS = ("docs/*.md", "docs/primer/*.md", "docs/landscape/*.md", "docs/research/*/*.md")
 GUIDE_SUMMARY_CHARS = 600
 GUIDE_BODY_CHARS = 6000  # plain text indexed per guide; query.GUIDE_BODY_CHARS must match
 GUIDE_MAX_CONCEPTS = 6

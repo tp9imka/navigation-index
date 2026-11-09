@@ -86,12 +86,12 @@ Three lanes added on 2026-11-09, each with its own records and a guide. Read the
 
 - **[differentiators-scan.md](differentiators-scan.md)** - eight candidates ranked for novelty,
   48h buildability, open data and commercial license. Top pick: **propulsion and drag as a
-  virtual velocity sensor** (score 22/25). ArduPilot EKF3 already fuses body-frame drag
-  (`EK3_DRAG_*`) and ArduCopter 4.6.3 SITL models it, so the demo is "GNSS off, keep flying on
-  the airframe's physics", measured as time from GNSS loss to 50 m error. Runner-up: learned
+  virtual velocity sensor** (score 22/25). The demo is "GNSS off, keep flying on the
+  airframe's physics", measured as time from GNSS loss to 50 m error. It has to be our own
+  filter: ArduPilot EKF3's drag fusion only updates wind states, not velocity (correction in
+  the scan, section 2.1); ArduCopter 4.6.3 SITL still models drag, so it can generate logs. Runner-up: learned
   inertial odometry with rotor speed (AI-IO, MIT), cross-checked against the physics model so
   it cannot fail silently. Both answer the brief's "propulsion / applied physics" wording.
-  Hour-1 go/no-go, not yet checked: does ArduCopter accept a drag-only EKF in Loiter / Auto.
 - **[guidance-planning.md](guidance-planning.md)** - the G in GNC: trajectory generation, MPC,
   fixed-wing guidance, energy and wind. Five 48h ideas (G1-G5) tied to existing samples, and
   five decoder rows marked "proposed, not yet merged". Strongest: G1, routes chosen so terrain
@@ -105,6 +105,10 @@ Three lanes added on 2026-11-09, each with its own records and a guide. Read the
   ASTM F3269, EASA AI concept paper, SORA, STANAG 4703), the runtime-assurance pattern (ship
   the new algorithm next to a trusted baseline; ArduPilot's `ahrs-source.lua` is a working
   switch), license traps, and a 7-bullet "path to product" slide.
+
+Deeper prior-art round (2026-11-09): [research/innovation-prior-art/](research/innovation-prior-art/README.md)
+checks what already exists for each candidate, the strongest baseline and a falsifier, and
+recommends the POC set.
 
 Suggested shape of an entry if the full brief allows it: differentiator 2.1 as the headline,
 the runtime-assurance monitor from path-to-product as the safety story, and G2 (integrity drives
@@ -128,6 +132,7 @@ laptop that goes to the event, from a fresh shell, with timings written down.
 
 Recommended: **`vehicle-sim`** ([golden-demo](../samples/golden-demo/) v2 on ArduCopter 4.6.3
 SITL). It is the same stack the top differentiator builds on. After the bundle runs green, add
-one rehearsal step: the drag-only go/no-go from
-[differentiators-scan.md section 2.1](differentiators-scan.md#21-propulsion-and-drag-as-a-virtual-velocity-sensor)
-(set `EK3_DRAG_*`, cut GNSS, check the mode holds and log the error curve).
+one rehearsal step from
+[differentiators-scan.md section 2.1](differentiators-scan.md#21-propulsion-and-drag-as-a-virtual-velocity-sensor):
+check the SITL frame prints suggested drag values, then log one windy GNSS-off leg at full rate
+for the offline drag filter.

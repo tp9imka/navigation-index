@@ -1,0 +1,125 @@
+[
+  {
+    "id": "repo:montrealrobotics/dal",
+    "kind": "repo",
+    "name": "Deep Active Localization (DAL)",
+    "url": "https://github.com/montrealrobotics/dal",
+    "summary": "Research code for Deep Active Localization: learned perception plus an RL planner that picks actions to localize a robot in a known map, with Gym/Gazebo environments.",
+    "why_it_matters": "A ready reference for how learned active localization is set up and benchmarked; useful as a contrast to a model-based maneuver selector.",
+    "concepts": [
+      "concept:path-planning"
+    ],
+    "tags": [
+      "active-localization",
+      "reinforcement-learning",
+      "pytorch",
+      "mit"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "License MIT (gh api 2026-11-09). Last push 2020-05-12; PyTorch 1.0 era, expect dependency repair. Indoor ground robot; read for the benchmark design, do not build on it in 48h.",
+    "related": [
+      {
+        "id": "res:gottipati-2019-deep-active-localization",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:robot-learning-freiburg/active-particle-filter-networks",
+    "kind": "repo",
+    "name": "Active Particle Filter Networks",
+    "url": "https://github.com/robot-learning-freiburg/Active-Particle-Filter-Networks",
+    "summary": "Official code for Active Particle Filter Networks: a differentiable particle filter (TensorFlow, from PF-net) with an RL agent (stable-baselines3) acting in continuous action spaces in iGibson.",
+    "why_it_matters": "Closest open code that combines a particle belief with continuous-action active localization over large maps.",
+    "concepts": [
+      "concept:path-planning",
+      "concept:sensor-fusion"
+    ],
+    "tags": [
+      "active-localization",
+      "particle-filter",
+      "igibson",
+      "gpl-3.0"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "License GPL-3.0 (gh api 2026-11-09): reference only for a commercial product. Last push 2022-09-21. Needs a forked iGibson and conda; heavy setup. Read for ideas, not for reuse.",
+    "related": [
+      {
+        "id": "res:honerkamp-2022-active-particle-filter-networks",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:rvp-group/learning-where-to-look",
+    "kind": "repo",
+    "name": "Learning Where to Look",
+    "url": "https://github.com/rvp-group/learning-where-to-look",
+    "summary": "Code for self-supervised viewpoint selection for active visual localization against a Structure-from-Motion model, with an MLP that predicts the best viewing direction per location.",
+    "why_it_matters": "Permissive code for the 'look direction' part of active visual localization.",
+    "concepts": [
+      "concept:visual-geolocalization",
+      "concept:path-planning"
+    ],
+    "tags": [
+      "active-localization",
+      "viewpoint-selection",
+      "sfm",
+      "cuda",
+      "bsd-3-clause"
+    ],
+    "language": "Python",
+    "domains": [
+      "multi"
+    ],
+    "maturity": "research-prototype",
+    "hackathon_fit": "low",
+    "hackathon_notes": "License BSD-3-Clause (gh api 2026-11-09). Last push 2025-02-20. README requires CUDA (<12.1 known to work), so it will not run on a Mac laptop. Ground-level SfM scenes, not aerial nadir imagery.",
+    "related": [
+      {
+        "id": "res:di-giammarino-2024-learning-where-to-look",
+        "rel": "extends"
+      }
+    ]
+  },
+  {
+    "id": "repo:devendrachaplot/neural-localization",
+    "kind": "repo",
+    "name": "Neural-Localization (Active Neural Localization)",
+    "url": "https://github.com/devendrachaplot/Neural-Localization",
+    "summary": "PyTorch implementation of Active Neural Localization for the 2D maze environment with A3C training.",
+    "why_it_matters": "Minimal runnable example of a learned belief + policy for active localization; good for understanding, not for a product.",
+    "concepts": [
+      "concept:path-planning"
+    ],
+    "tags": [
+      "active-localization",
+      "reinforcement-learning",
+      "a3c",
+      "no-license"
+    ],
+    "language": "Python",
+    "domains": [
+      "ground"
+    ],
+    "maturity": "archived",
+    "hackathon_fit": "low",
+    "hackathon_notes": "No license file (gh api 2026-11-09 returns null): all rights reserved, read only. Last push 2018-04-09. 2D maze only per README.",
+    "related": [
+      {
+        "id": "res:chaplot-2018-active-neural-localization",
+        "rel": "extends"
+      }
+    ]
+  }
+]
