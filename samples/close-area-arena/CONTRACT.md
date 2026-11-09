@@ -43,6 +43,28 @@ run.evaluate(make_planner, family, layouts, seed, make_pose_source=lambda world,
 - The scorer never sees the output. `max_pose_error_m` in each run row is the largest
   horizontal |reported - truth| seen at planner steps.
 
+### Reference pose source (estimator.py)
+
+Use this before writing your own. `estimator.make_pose_source_factory(fault_name="none",
+dark=True, sink=None)` returns a `make_pose_source(world, seed, index)` for `run.evaluate`.
+Each call builds a `VioEstimator`: a position/velocity EKF fed by a 30 Hz VIO-like source and
+a 50 Hz IMU-like accel, with 2 seeded dark zones per layout when `dark=True`. It sets
+`quality`, `reset_counter` and `sigma_xy`.
+
+```python
+estimator = importlib.import_module("close_area_arena.estimator")   # see Import
+sink = []
+mps = estimator.make_pose_source_factory("bias", dark=True, sink=sink)
+rows, summary, _ = arena_run.evaluate(lambda: MyPlanner(), "random", 50, 0, make_pose_source=mps)
+# sink holds one VioEstimator per layout, for its logs after the run
+```
+
+- `fault_name` is one of `faults.CASES`: `none`, `jump`, `bias`, `dropout`, `overconfident`.
+- Seeds: dark zones `[seed, index, 4001]`, estimator noise `[seed, index, 4101]`. Use another
+  constant for your own source.
+- `run_faults.py --planner <name>` runs every case plus `truth` and `none_nodark` and writes
+  `results/faults_<planner>_*`. Results: README "Estimator and faults".
+
 ## Planner (planners/base.py)
 
 ```python
@@ -115,9 +137,38 @@ class FreestBeam(Planner):
 def make(**kw): return FreestBeam()
 ```
 
-This block was executed against `run.evaluate` on all three families (seed 0, 20 layouts). Its
-results were not saved to results/, so they are not quoted. It is a shape example, not a
-baseline: being reactive, it does not get out of the u_trap or find the narrow gap.
+This block was executed against `run.evaluate` on all three families (seed 0, 20 layouts).
+Those runs were not saved to results/, so they are not quoted. The same code now ships as
+`FreestBeam` in `run_faults.py`. There it reached 86 % on 50 random layouts with the truth pose
+([results/faults_freest_beam_summary_0.md](results/faults_freest_beam_summary_0.md), synthetic).
+Being reactive, it does not get out of the u_trap or find the narrow gap. Run it with
+`run_faults.py --planner freest_beam`. `run.py --planner` only loads `planners/<name>.py`.
+
+## Reference grid planner (planners/astar_esdf.py)
+
+`astar_esdf` is the map-based baseline that safety filters sit on. It runs A* on a grid
+inflated by radius + 0.10 m, with an ESDF clearance cost, shortcutting and a carrot follower,
+and replans at 2-5 Hz.
+
+| Call | Gives |
+|---|---|
+| `make(known_map=True)` | Plans on the prior 0.1 m `OccGrid` (`uses_grid = True`, name `astar_esdf_known`). Upper bound |
+| `make(known_map=False)` | Builds its own log-odds grid from `RangeScan` hits only. Unknown cells are passable at a cost (`uses_grid = False`, name `astar_esdf_unknown`) |
+| `run.py --planner astar_esdf` | Known-map variant, through the normal CLI |
+| `python -m planners.astar_esdf --layouts 50 --seed 0` | straight vs known vs unknown on all three families, writes `results/astar_esdf_<family>_<seed>.*` |
+
+To wrap it (for example a safety filter), call its `step()` and modify the returned
+`Setpoint`. The planner-level tuning constants are module globals at the top of the file.
+Results: README "A* + ESDF grid planner".
+
+## Flight log format (log_format.md)
+
+Every flight log, from the arena, SITL or a real drone, uses
+[log_format.md](log_format.md) (`close-area-log/1`, JSONL: one header line, then one line per
+`send_setpoint()` call, local ENU frame with origin at A). The header `input` field is `real`,
+`sitl` or `synthetic`, and every score prints it. Score any log with `score_log.py` (numpy +
+matplotlib, no arena import), so sim and real flights give the same fields. Do not invent a
+second log format. Add optional fields with defaults, as for the adapter.
 
 ## Import from a sibling sample
 

@@ -22,10 +22,38 @@ uv venv .venv && uv pip install --python .venv -r requirements.txt
 .venv/bin/python run.py --planner straight --layouts 20 --seed 0 --plot   # ~1.5 s
 .venv/bin/python run.py --planner straight --layouts 20 --seed 0 --family u_trap
 .venv/bin/python run.py --planner straight --layouts 20 --seed 0 --family narrow_gap
+.venv/bin/python -m planners.astar_esdf --layouts 50 --seed 0              # ~7 min, A* vs straight
+.venv/bin/python run_faults.py --planner freest_beam --layouts 50 --seed 0 # ~50 s, estimator faults
 .venv/bin/python bench_edt.py                                              # ~2 s
 .venv/bin/python checks.py                                                 # ~2 s
 .venv/bin/python -m unittest test_smoke -v                                 # skips without numpy
 ```
+
+### Which planner to start from
+
+Do not start from `straight`. It is the floor. All numbers below are synthetic, seed 0, 50 layouts.
+
+| Planner | Where | Use it when | Reached on random (truth pose) |
+|---|---|---|---|
+| `astar_esdf` | [planners/astar_esdf.py](planners/astar_esdf.py) | You have a map, or can build one from range returns (`known_map=False`). The safety filters sit on it | 100 % known map, 100 % unknown map ([results](results/astar_esdf_random_0.md)) |
+| `freest_beam` | `FreestBeam` in [run_faults.py](run_faults.py), same code as the [CONTRACT.md](CONTRACT.md#add-a-planner) example | Ranges only, no map, few lines to port (for example a Crazyflie multiranger) | 86 % ([results](results/faults_freest_beam_summary_0.md)) |
+| `straight` | [planners/straight.py](planners/straight.py) | Floor for comparisons only | 26 % ([results](results/astar_esdf_random_0.md)) |
+
+`freest_beam` is reactive: it was not scored on `u_trap` or `narrow_gap`. Use `astar_esdf` for
+those (100 % known map on both, 80 % unknown map on narrow_gap; table below). `freest_beam` runs
+only through `run_faults.py` (`--cases truth` for the truth-pose row). `run.py --planner` loads
+`planners/<name>.py`, so `run.py --planner freest_beam` does not work. Reactive APF and VFH+
+are in [close-area-planner-reactive](../close-area-planner-reactive/README.md).
+
+### Readiness (measured 2026-11-09, Apple M3 Max, macOS 26.6.2 arm64)
+
+CPU only, no GPU, no hardware, no dataset download. Cold setup with
+`uv venv --python 3.12 .venv && uv pip install --no-cache --python .venv -r requirements.txt`
+took 16.5 s wall. The wheels came from PyPI and CPython 3.12.10 was already installed. Then
+the first command ran with all network access denied (`sandbox-exec`, `deny network*`). Its
+per-run scores matched [results/straight_random_0.json](results/straight_random_0.json),
+timings excluded. Not tested: Linux, Windows, a second laptop, offline runs of the other
+commands.
 
 ## What is in it
 
@@ -180,8 +208,8 @@ Source: [straight](results/faults_straight_summary_0.md), [freest_beam](results/
 - The setpoint timeout (0.5 s => zero velocity) is our choice, modelled on PX4 leaving Offboard
   when the stream stops; the exact PX4 value was not checked in this job.
 - Timing numbers (EDT, planner ms) depend on the machine and its load.
-- The straight baseline is the only planner here; A*, APF and safety filters come in later
-  samples.
+- Planners here: `straight`, `freest_beam` (in run_faults.py) and `astar_esdf`. APF and VFH+
+  are in close-area-planner-reactive. Safety filters come in later samples.
 
 ## Sources
 
