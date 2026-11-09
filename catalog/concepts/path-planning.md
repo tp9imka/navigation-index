@@ -6,7 +6,7 @@ Global/local planners, sampling and search based planning, trajectory optimizati
 
 **Sub-concepts:** [Mission planning and routing](../../catalog/concepts/mission-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
-## Samples (8)
+## Samples (9)
 
 - [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md) - Small deterministic simulator that every close-area A=>B approach in the hub is compared in.
 - [Close-area benchmark matrix: 9 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md) - Runs every close-area planner in the hub through the shared close-area-arena on the same seeded layouts and scores them on truth: straight, freest_beam, APF with wall-follow escape, VFH+, A* + ESDF on the known map, A* +
@@ -16,6 +16,7 @@ Global/local planners, sampling and search based planning, trajectory optimizati
 - [Close-area reactive planners: APF with wall-follow escape and VFH+, range sensor only, 72-beam vs Crazyflie-like 4-beam fan](../../catalog/samples/close-area-planner-reactive.md) - Map-free fallback planners for close-area A=>B, written as close-area-arena Planners that read only the pose and the range scan.
 - [Close-area safety-filter kill test A: no filter, PX4 Collision Prevention style and PX4-CBF as shipped on A* under VIO faults, with map-only obstacles the range fan cannot see](../../catalog/samples/close-area-safety-filter.md) - Harness that puts a safety filter between a planner and the vehicle in the shared close-area-arena, for the kill test of the hub's integrity-aware safety-filter headline.
 - [Close-area sampling planners: RRT* and Informed RRT* against A* on narrow gaps 0.4-1.2 m, in the close-area arena](../../catalog/samples/close-area-planner-sampling.md) - Own numpy RRT* (rewiring with subtree cost update, goal bias 5 %, step 1.0 m, rewire radius from the RRT* bound capped at 2.0 m) with an Informed RRT* mode (ellipse sampling after the first solution), planning on the are
+- [D* Lite vs A* from scratch for unknown-map replanning in the close-area arena](../../catalog/samples/close-area-planner-dstar.md) - D* Lite on the same inflated grid and cost model as astar_esdf's unknown-map mode, compared with A* replanning from scratch on 50 seed-0 layouts per family.
 
 ## Guides (17)
 

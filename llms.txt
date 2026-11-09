@@ -1,6 +1,6 @@
 # navigation-index
 
-> Knowledge hub for navigation / PNT / GNSS-denied autonomy with a defense lens: 923 open-source repos, 960 documents, talks, courses and datasets, 57 usage samples and 80 guides, linked in one graph over 46 concepts.
+> Knowledge hub for navigation / PNT / GNSS-denied autonomy with a defense lens: 923 open-source repos, 960 documents, talks, courses and datasets, 58 usage samples and 80 guides, linked in one graph over 46 concepts.
 
 Read AGENTS.md for how to query and extend. For a problem statement, run `python3 tools/query.py decode "<statement>"` (MCP tool `decode`) or read docs/problem-statement-decoder.md to pick its rows, then search with each row's keywords: `python3 tools/query.py search "<keywords>"` or the MCP server tools/mcp_server.py (its `read` tool returns any guide, template or sample doc). Guides (kind `guide`, including templates/) are searchable like any other node.
 
@@ -120,6 +120,7 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [close-area-arena](samples/close-area-arena/README.md) (ran, venv): Seeded 2.5D A=>B arena (random, U-trap, narrow-gap layouts) behind the published pose/ranges/send_setpoint interface, truth scorer, straight baseline, EDT timing
 - [close-area-benchmark](samples/close-area-benchmark/README.md) (ran, venv): Which close-area planner reaches B in which room type (clutter, U trap, gap, office, warehouse, forest, maze, glass office) with a 72-ray sensor and with a 4-beam Crazyflie-like sensor, plus a replay per room type and planner
 - [close-area-moving-obstacles](samples/close-area-moving-obstacles/README.md) (ran, venv): What walking people (1-3 per layout, 0.5 and 1.0 m/s) do to A* replanning, A* + PX4-CBF range filter and APF in the arena: collisions, stuck, clearance, time and warning before contact
+- [close-area-planner-dstar](samples/close-area-planner-dstar/README.md) (ran, venv): Incremental replanning (D* Lite) vs A* from scratch: same paths, 4-7x faster here, 800x faster on an 8x8 tiled map
 - [close-area-planner-dwa-bug](samples/close-area-planner-dwa-bug/README.md) (ran, venv): DWA (with and without scan memory), Bug2 and TangentBug from range returns only, next to APF and VFH+, on random, U-trap and narrow-gap layouts with a 72-beam fan and a Crazyflie-like 4-beam fan; reached, collisions, path length vs ...
 - [close-area-planner-mpc](samples/close-area-planner-mpc/README.md) (ran, venv): Linear MPC (OSQP) tracking the A* path inside a soft half-plane corridor from the grid, vs the A* carrot follower: outcomes, clearance, tracking error, solve time with and without warm start
 - [close-area-planner-reactive](samples/close-area-planner-reactive/README.md) (ran, venv): APF (wall-follow escape) and VFH+ from range returns only, on random, U-trap and narrow-gap layouts, with a 72-beam fan and a Crazyflie-like 4-beam fan; where each gets stuck or collides
@@ -196,9 +197,9 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [Indoor and pedestrian navigation](catalog/concepts/indoor-pedestrian.md): 25 items - PDR, foot-mounted INS, dismounted soldier navigation, indoor positioning.
 - [Autopilots and flight control](catalog/concepts/autopilot.md): 168 items - Flight stacks, control loops, estimation inside autopilots, firmware.
 - [MAVLink, ground control and C2 links](catalog/concepts/mavlink-gcs.md): 59 items - MAVLink protocol, SDKs, ground control stations, telemetry radios.
-- [Path and motion planning](catalog/concepts/path-planning.md): 195 items - Global/local planners, sampling and search based planning, trajectory optimization.
+- [Path and motion planning](catalog/concepts/path-planning.md): 196 items - Global/local planners, sampling and search based planning, trajectory optimization.
 - [Mission planning and routing](catalog/concepts/mission-planning.md): 45 items - Route networks, waypoint missions, coverage, terrain-aware and threat-aware routing.
-- [Obstacle avoidance and collision avoidance](catalog/concepts/obstacle-avoidance.md): 144 items - Reactive avoidance, sense-and-avoid, DAA.
+- [Obstacle avoidance and collision avoidance](catalog/concepts/obstacle-avoidance.md): 145 items - Reactive avoidance, sense-and-avoid, DAA.
 - [Swarms and multi-agent navigation](catalog/concepts/multi-agent.md): 91 items - Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 - [GIS, maps and geospatial data](catalog/concepts/gis-mapping.md): 76 items - Map engines, tiles, DEMs, orthophotos, coordinate systems, geodesy.
 - [Geodesy and coordinate frames](catalog/concepts/geodesy.md): 28 items - Datums, projections, ECEF/ENU/NED, MGRS, geoid models.
@@ -207,7 +208,7 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [Underwater navigation](catalog/concepts/underwater-nav.md): 28 items - DVL, USBL/LBL acoustics, AUV navigation, underwater SLAM.
 - [Ground vehicle autonomy](catalog/concepts/ground-vehicle-nav.md): 68 items - UGV/off-road autonomy stacks, localization and navigation for ground robots.
 - [Space and orbital navigation](catalog/concepts/space-nav.md): 39 items - Orbit determination, LEO-PNT, spacecraft navigation.
-- [Simulation and HIL/SITL](catalog/concepts/simulation.md): 181 items - Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simulators.
+- [Simulation and HIL/SITL](catalog/concepts/simulation.md): 182 items - Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simulators.
 - [Datasets and benchmarks](catalog/concepts/datasets-benchmarks.md): 272 items - Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [ROS / ROS 2 robotics middleware](catalog/concepts/ros.md): 152 items - ROS ecosystem packages for navigation and localization.
 - [Onboard / edge AI perception](catalog/concepts/edge-ai.md): 138 items - Detection, segmentation, depth on embedded hardware supporting navigation.
