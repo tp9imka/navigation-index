@@ -75,3 +75,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - landed: 35 => 2e3f270 (decode_eval 63/63; evidence rows for 4 samples; readiness overrides for 6; gate OK)
 - landed: 38 => e7898d3 (R@10 0.666 => 0.689, MRR 0.776 => 0.797 on 45 queries; licences query rank 49 => 1; parity 45/45 on fresh build; claims checked 2/2 by driver: parity and licences query re-run)
 - landed: 36 => 10ce290 (make first-flight: arena + astar_esdf + F2 => reached 19.76 s, 0.83 m clearance; F0 matches arena harness; jump fault => false arrival 0.63 m from B => item 51). AGENTS.md updated.
+- landed: 43 => 33f19e2 (moving people: A* replan 14 / 36 % collisions at 0.5 / 1.0 m/s, 5 Hz no better; A* + F2 0 %; APF 0-2 %; fan saw people 2.7-8.7 s ahead => missing prediction, not detection). Integration text => sweep 3.

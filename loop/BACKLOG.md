@@ -72,7 +72,7 @@ Initial backlog: fable brainstorm, 2026-11-09, base dbafbff.
 | 40 | ready | F3f FT-CBF residual dropping and F3t Tan union of states vs F4 | P | S | 34 B | samples/close-area-safety-filter (Part g) | 'What is new vs Tan 2025' needs a number | table with wrong-exclusion and freeze columns |
 | 41 | ready | Crazyflie-preset kill-test rerun via --sensor (ideal / crazyflie / crazyflie_bright), wedge hits counted | P | S | 32 B, 34 B | samples/close-area-safety-filter run_kill.py --sensor, results/kill_f_* | Crazyflie likeliest; 360 deg fan flatters range filters | F0/F2/F4 x presets table |
 | 42 | ready | Judge drill: 15 questions with numbers, input types, anchors | T | S | 34 soft | templates/pitch/judge-drill-close-area.md, templates/pitch/README.md row | H+36 rehearsal sheet | every answer has a number or 'no number' |
-| 43 | in-flight | Moving obstacles family: person-sized cylinders 0.5/1.0 m/s; A* replan vs A* + F2 vs APF | P | S | - | samples/close-area-moving-obstacles/ | Intake asks static or moving | 50 layouts x 2 speeds x 3 arms table |
+| 43 | done 33f19e2 | Moving obstacles family: person-sized cylinders 0.5/1.0 m/s; A* replan vs A* + F2 vs APF | P | S | - | samples/close-area-moving-obstacles/ | Intake asks static or moving | 50 layouts x 2 speeds x 3 arms table |
 | 44 | ready | Showcase 2: Challenge 2 preset link, headline status card, kill-test F0 vs F2 replay with unsensed pole, relocalize hypotheses replay | T | S | 34 soft | site/index.html, site/showcase.*, site/data/showcase/, two export_replay.py | Judges see the kill test as a picture | both replays render in headless Chrome; site tests pass |
 | 45 | ready | Altitude: window-and-bar family, 3D A* picks altitude, vs 2.5D planner | P | M | - | samples/close-area-arena world_z.py, planners/astar_esdf_3d.py, vehicle_z.py | IMAV elements are over/under/through | 2.5D vs 3D reach, plan ms, side-view PNG |
 
@@ -82,7 +82,7 @@ Initial backlog: fable brainstorm, 2026-11-09, base dbafbff.
 | 49 | in-flight | DWA and Bug2/TangentBug local planners vs APF/VFH+ (72 and 4 beams) | P | S | - | samples/close-area-planner-dwa-bug/ | Nav2 default local planner and classic complete planners | table on 3 families x 2 fans |
 | 50 | in-flight | D* Lite incremental replanning vs A* from scratch on unknown maps | P | S | - | samples/close-area-planner-dstar/ | Does incremental search matter here | table + plan-time comparison |
 
-| 51 | ready | flight-repo arrival gating: 'arrived' only with healthy nav (or adapter-confirmed), pass NavHealth to the safety arm; rerun first-flight-jump | T | S | 36 B | templates/flight-repo/flightloop/loop.py, safety_shim.py, results/ | Under a VIO jump the loop declares arrival 0.63 m from B | first-flight-jump reaches B or hovers, never false-arrives |
+| 51 | in-flight | flight-repo arrival gating: 'arrived' only with healthy nav (or adapter-confirmed), pass NavHealth to the safety arm; rerun first-flight-jump | T | S | 36 B | templates/flight-repo/flightloop/loop.py, safety_shim.py, results/ | Under a VIO jump the loop declares arrival 0.63 m from B | first-flight-jump reaches B or hovers, never false-arrives |
 
 ## Planned waves
 
