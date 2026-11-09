@@ -118,3 +118,7 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 ## 2026-11-09 wave 7 closed
 - landed: 59, 61, 63, 64, 67, 28. All 8 dry-run blockers fixed.
 - Open next: SITL/Docker items 09/15/25 (needs-human); real-hardware checks of the drivers; Safari/Firefox; a relocalization arm that survives 4 beams (scan memory over motion, not only a spin).
+
+## 2026-11-09 resume after network disruption
+- step 0: git in sync (behind 1 CI regen commit, rebased); no loop jobs lost or running; Pages deploy for 9ac5ee8 had timed out (syncing_files) => re-run requested.
+- launched 68 (submap relocalization on 4 beams).
