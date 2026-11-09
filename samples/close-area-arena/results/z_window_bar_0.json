@@ -1,0 +1,3950 @@
+{
+ "family": "window_bar",
+ "seed": 0,
+ "layouts": 50,
+ "input": "synthetic",
+ "command": "python run_z.py --layouts 50 --seed 0",
+ "config": {
+  "max_time_s": 60.0,
+  "plan_hz": 10,
+  "z0": 1.0,
+  "vehicle": {
+   "tau": 0.15,
+   "a_max": 3.0,
+   "v_max": 2.0,
+   "vz_max": 1.0,
+   "radius": 0.15
+  },
+  "sensor": {
+   "n_beams": 72,
+   "fov": 6.283185307179586,
+   "max_range": 6.0,
+   "noise_std": 0.02,
+   "dropout": 0.02
+  },
+  "band_2d": [
+   0.85,
+   1.15
+  ]
+ },
+ "wall_s": 294.7,
+ "planner_constants": {
+  "astar_esdf_3d": {
+   "RADIUS": 0.15,
+   "TRACK_MARGIN": 0.05,
+   "CLEARANCE_WEIGHT": 4.0,
+   "CLEARANCE_SOFT_M": 0.8,
+   "HEURISTIC_WEIGHT": 2.0,
+   "SHORTCUT_CLEAR_M": 0.5,
+   "REPLAN_DEVIATION_M": 0.35,
+   "NO_PATH_RETRY_S": 1.0,
+   "LOOKAHEAD_M": 0.8,
+   "LOOKAHEAD_MIN_M": 0.2,
+   "LOOKAHEAD_STEP_M": 0.1,
+   "CARROT_CLEAR_M": 0.25,
+   "V_CRUISE": 1.5,
+   "V_CLEAR_STOP_M": 0.2,
+   "V_CLEAR_FULL_M": 0.8,
+   "V_MIN_FRAC": 0.2,
+   "VZ_CMD_MAX": 0.8,
+   "K_GOAL": 1.0,
+   "K_YAW": 1.5,
+   "COARSE_FACTOR": 2,
+   "S2": 1.4142135623730951,
+   "S3": 1.7320508075688772
+  }
+ },
+ "env": {
+  "python": "3.12.10",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "machine": "arm64",
+  "system": "Darwin"
+ },
+ "band_2d_passable_layouts": 7,
+ "layouts_detail": [
+  {
+   "index": 0,
+   "elements": [
+    {
+     "kind": "bars",
+     "x": 8.309,
+     "y": 4.68,
+     "opening_m": 1.725,
+     "bar_z": [
+      1.304
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 14.782,
+     "y": 11.143,
+     "z_centre": 2.007,
+     "z_range": [
+      1.707,
+      2.307
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 11
+  },
+  {
+   "index": 1,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 8.805,
+     "y": 5.938,
+     "z_centre": 1.937,
+     "z_range": [
+      1.637,
+      2.237
+     ]
+    },
+    {
+     "kind": "bars",
+     "x": 1.543,
+     "y": 12.429,
+     "opening_m": 1.844,
+     "bar_z": [
+      0.724,
+      2.391
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 14
+  },
+  {
+   "index": 2,
+   "elements": [
+    {
+     "kind": "bars",
+     "x": 7.2,
+     "y": 5.161,
+     "opening_m": 1.356,
+     "bar_z": [
+      0.633,
+      2.037
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 7.633,
+     "y": 11.395,
+     "z_centre": 1.796,
+     "z_range": [
+      1.496,
+      2.096
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 11
+  },
+  {
+   "index": 3,
+   "elements": [
+    {
+     "kind": "bars",
+     "x": 3.342,
+     "y": 6.174,
+     "opening_m": 1.658,
+     "bar_z": [
+      1.025,
+      1.882
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 2.809,
+     "y": 11.849,
+     "z_centre": 1.134,
+     "z_range": [
+      0.834,
+      1.434
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 12
+  },
+  {
+   "index": 4,
+   "elements": [
+    {
+     "kind": "bars",
+     "x": 0.903,
+     "y": 5.628,
+     "opening_m": 1.511,
+     "bar_z": [
+      2.218
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 14.332,
+     "y": 11.948,
+     "z_centre": 0.909,
+     "z_range": [
+      0.609,
+      1.209
+     ]
+    }
+   ],
+   "band_2d_passable": true,
+   "n_boxes": 12
+  },
+  {
+   "index": 5,
+   "elements": [
+    {
+     "kind": "bars",
+     "x": 9.046,
+     "y": 5.879,
+     "opening_m": 1.639,
+     "bar_z": [
+      0.519
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 11.169,
+     "y": 10.84,
+     "z_centre": 1.445,
+     "z_range": [
+      1.145,
+      1.745
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 11
+  },
+  {
+   "index": 6,
+   "elements": [
+    {
+     "kind": "bars",
+     "x": 3.298,
+     "y": 4.343,
+     "opening_m": 1.461,
+     "bar_z": [
+      0.949
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 2.237,
+     "y": 11.683,
+     "z_centre": 1.078,
+     "z_range": [
+      0.778,
+      1.378
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 10
+  },
+  {
+   "index": 7,
+   "elements": [
+    {
+     "kind": "bars",
+     "x": 5.74,
+     "y": 5.014,
+     "opening_m": 1.658,
+     "bar_z": [
+      0.82,
+      1.703
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 6.695,
+     "y": 11.485,
+     "z_centre": 1.395,
+     "z_range": [
+      1.095,
+      1.695
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 13
+  },
+  {
+   "index": 8,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 2.493,
+     "y": 4.06,
+     "z_centre": 0.605,
+     "z_range": [
+      0.305,
+      0.905
+     ]
+    },
+    {
+     "kind": "bars",
+     "x": 9.36,
+     "y": 11.788,
+     "opening_m": 1.493,
+     "bar_z": [
+      0.55,
+      2.268
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 16
+  },
+  {
+   "index": 9,
+   "elements": [
+    {
+     "kind": "bars",
+     "x": 5.066,
+     "y": 5.436,
+     "opening_m": 1.271,
+     "bar_z": [
+      0.825,
+      2.537
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 8.455,
+     "y": 10.858,
+     "z_centre": 0.605,
+     "z_range": [
+      0.305,
+      0.905
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 13
+  },
+  {
+   "index": 10,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 4.156,
+     "y": 5.143,
+     "z_centre": 0.501,
+     "z_range": [
+      0.201,
+      0.801
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 2.682,
+     "y": 11.472,
+     "z_centre": 0.646,
+     "z_range": [
+      0.346,
+      0.946
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 14
+  },
+  {
+   "index": 11,
+   "elements": [
+    {
+     "kind": "bars",
+     "x": 9.481,
+     "y": 4.79,
+     "opening_m": 1.55,
+     "bar_z": [
+      0.576,
+      1.945
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 14.899,
+     "y": 12.142,
+     "z_centre": 1.494,
+     "z_range": [
+      1.194,
+      1.794
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 13
+  },
+  {
+   "index": 12,
+   "elements": [
+    {
+     "kind": "bars",
+     "x": 12.696,
+     "y": 5.758,
+     "opening_m": 1.759,
+     "bar_z": [
+      1.024
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 16.443,
+     "y": 10.861,
+     "z_centre": 0.58,
+     "z_range": [
+      0.28,
+      0.88
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 11
+  },
+  {
+   "index": 13,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 11.318,
+     "y": 5.378,
+     "z_centre": 2.198,
+     "z_range": [
+      1.898,
+      2.498
+     ]
+    },
+    {
+     "kind": "bars",
+     "x": 11.294,
+     "y": 10.372,
+     "opening_m": 1.713,
+     "bar_z": [
+      2.157
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 12
+  },
+  {
+   "index": 14,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 1.127,
+     "y": 4.923,
+     "z_centre": 0.909,
+     "z_range": [
+      0.609,
+      1.209
+     ]
+    },
+    {
+     "kind": "bars",
+     "x": 11.774,
+     "y": 11.123,
+     "opening_m": 1.295,
+     "bar_z": [
+      0.707
+     ]
+    }
+   ],
+   "band_2d_passable": true,
+   "n_boxes": 11
+  },
+  {
+   "index": 15,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 3.558,
+     "y": 4.371,
+     "z_centre": 1.732,
+     "z_range": [
+      1.432,
+      2.032
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 4.342,
+     "y": 11.326,
+     "z_centre": 1.368,
+     "z_range": [
+      1.068,
+      1.668
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 13
+  },
+  {
+   "index": 16,
+   "elements": [
+    {
+     "kind": "bars",
+     "x": 7.146,
+     "y": 6.075,
+     "opening_m": 1.465,
+     "bar_z": [
+      1.119
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 3.786,
+     "y": 10.694,
+     "z_centre": 1.124,
+     "z_range": [
+      0.824,
+      1.424
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 13
+  },
+  {
+   "index": 17,
+   "elements": [
+    {
+     "kind": "bars",
+     "x": 7.04,
+     "y": 5.886,
+     "opening_m": 1.542,
+     "bar_z": [
+      0.767,
+      1.966
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 8.035,
+     "y": 12.587,
+     "z_centre": 1.798,
+     "z_range": [
+      1.498,
+      2.098
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 13
+  },
+  {
+   "index": 18,
+   "elements": [
+    {
+     "kind": "bars",
+     "x": 13.01,
+     "y": 6.118,
+     "opening_m": 1.593,
+     "bar_z": [
+      2.246
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 4.521,
+     "y": 10.801,
+     "z_centre": 1.102,
+     "z_range": [
+      0.802,
+      1.402
+     ]
+    }
+   ],
+   "band_2d_passable": true,
+   "n_boxes": 11
+  },
+  {
+   "index": 19,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 3.276,
+     "y": 5.544,
+     "z_centre": 2.144,
+     "z_range": [
+      1.844,
+      2.444
+     ]
+    },
+    {
+     "kind": "bars",
+     "x": 4.103,
+     "y": 10.626,
+     "opening_m": 1.407,
+     "bar_z": [
+      1.626
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 10
+  },
+  {
+   "index": 20,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 9.159,
+     "y": 4.155,
+     "z_centre": 2.227,
+     "z_range": [
+      1.927,
+      2.527
+     ]
+    },
+    {
+     "kind": "bars",
+     "x": 10.452,
+     "y": 11.841,
+     "opening_m": 1.286,
+     "bar_z": [
+      0.7,
+      1.574
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 12
+  },
+  {
+   "index": 21,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 8.61,
+     "y": 5.789,
+     "z_centre": 1.873,
+     "z_range": [
+      1.573,
+      2.173
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 12.62,
+     "y": 10.421,
+     "z_centre": 2.375,
+     "z_range": [
+      2.075,
+      2.675
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 15
+  },
+  {
+   "index": 22,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 11.013,
+     "y": 6.025,
+     "z_centre": 1.768,
+     "z_range": [
+      1.468,
+      2.068
+     ]
+    },
+    {
+     "kind": "bars",
+     "x": 6.625,
+     "y": 11.485,
+     "opening_m": 1.793,
+     "bar_z": [
+      0.905,
+      1.735
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 14
+  },
+  {
+   "index": 23,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 12.988,
+     "y": 5.19,
+     "z_centre": 1.957,
+     "z_range": [
+      1.657,
+      2.257
+     ]
+    },
+    {
+     "kind": "bars",
+     "x": 1.607,
+     "y": 12.753,
+     "opening_m": 1.218,
+     "bar_z": [
+      0.723,
+      1.894
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 13
+  },
+  {
+   "index": 24,
+   "elements": [
+    {
+     "kind": "bars",
+     "x": 10.577,
+     "y": 4.891,
+     "opening_m": 1.591,
+     "bar_z": [
+      1.072
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 2.402,
+     "y": 12.598,
+     "z_centre": 0.86,
+     "z_range": [
+      0.56,
+      1.16
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 10
+  },
+  {
+   "index": 25,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 14.993,
+     "y": 4.867,
+     "z_centre": 1.805,
+     "z_range": [
+      1.505,
+      2.105
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 2.868,
+     "y": 12.082,
+     "z_centre": 2.139,
+     "z_range": [
+      1.839,
+      2.439
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 11
+  },
+  {
+   "index": 26,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 16.23,
+     "y": 5.376,
+     "z_centre": 2.278,
+     "z_range": [
+      1.978,
+      2.578
+     ]
+    },
+    {
+     "kind": "bars",
+     "x": 2.911,
+     "y": 11.382,
+     "opening_m": 1.485,
+     "bar_z": [
+      0.567,
+      1.528
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 12
+  },
+  {
+   "index": 27,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 10.169,
+     "y": 5.883,
+     "z_centre": 2.33,
+     "z_range": [
+      2.03,
+      2.63
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 7.889,
+     "y": 10.923,
+     "z_centre": 1.35,
+     "z_range": [
+      1.05,
+      1.65
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 13
+  },
+  {
+   "index": 28,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 2.684,
+     "y": 4.84,
+     "z_centre": 1.603,
+     "z_range": [
+      1.303,
+      1.903
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 3.445,
+     "y": 12.314,
+     "z_centre": 2.379,
+     "z_range": [
+      2.079,
+      2.679
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 13
+  },
+  {
+   "index": 29,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 8.126,
+     "y": 5.142,
+     "z_centre": 2.466,
+     "z_range": [
+      2.166,
+      2.766
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 14.554,
+     "y": 11.461,
+     "z_centre": 1.845,
+     "z_range": [
+      1.545,
+      2.145
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 11
+  },
+  {
+   "index": 30,
+   "elements": [
+    {
+     "kind": "bars",
+     "x": 10.251,
+     "y": 4.601,
+     "opening_m": 1.384,
+     "bar_z": [
+      1.911
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 7.315,
+     "y": 11.105,
+     "z_centre": 1.227,
+     "z_range": [
+      0.927,
+      1.527
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 10
+  },
+  {
+   "index": 31,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 15.192,
+     "y": 5.718,
+     "z_centre": 0.507,
+     "z_range": [
+      0.207,
+      0.807
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 15.737,
+     "y": 10.862,
+     "z_centre": 0.588,
+     "z_range": [
+      0.288,
+      0.888
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 12
+  },
+  {
+   "index": 32,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 8.561,
+     "y": 6.565,
+     "z_centre": 2.091,
+     "z_range": [
+      1.791,
+      2.391
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 4.591,
+     "y": 12.286,
+     "z_centre": 0.715,
+     "z_range": [
+      0.415,
+      1.015
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 13
+  },
+  {
+   "index": 33,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 3.541,
+     "y": 5.522,
+     "z_centre": 1.818,
+     "z_range": [
+      1.518,
+      2.118
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 4.977,
+     "y": 10.924,
+     "z_centre": 1.704,
+     "z_range": [
+      1.404,
+      2.004
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 11
+  },
+  {
+   "index": 34,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 15.536,
+     "y": 5.103,
+     "z_centre": 2.033,
+     "z_range": [
+      1.733,
+      2.333
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 6.966,
+     "y": 12.338,
+     "z_centre": 2.156,
+     "z_range": [
+      1.856,
+      2.456
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 12
+  },
+  {
+   "index": 35,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 3.225,
+     "y": 5.394,
+     "z_centre": 1.458,
+     "z_range": [
+      1.158,
+      1.758
+     ]
+    },
+    {
+     "kind": "bars",
+     "x": 3.181,
+     "y": 11.34,
+     "opening_m": 1.414,
+     "bar_z": [
+      1.064
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 13
+  },
+  {
+   "index": 36,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 14.541,
+     "y": 5.043,
+     "z_centre": 1.495,
+     "z_range": [
+      1.195,
+      1.795
+     ]
+    },
+    {
+     "kind": "bars",
+     "x": 4.812,
+     "y": 12.677,
+     "opening_m": 1.59,
+     "bar_z": [
+      0.87
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 12
+  },
+  {
+   "index": 37,
+   "elements": [
+    {
+     "kind": "bars",
+     "x": 4.708,
+     "y": 5.712,
+     "opening_m": 1.68,
+     "bar_z": [
+      0.955
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 12.2,
+     "y": 12.096,
+     "z_centre": 2.273,
+     "z_range": [
+      1.973,
+      2.573
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 12
+  },
+  {
+   "index": 38,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 13.563,
+     "y": 4.211,
+     "z_centre": 2.441,
+     "z_range": [
+      2.141,
+      2.741
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 8.167,
+     "y": 11.08,
+     "z_centre": 0.959,
+     "z_range": [
+      0.659,
+      1.259
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 14
+  },
+  {
+   "index": 39,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 1.176,
+     "y": 5.764,
+     "z_centre": 1.158,
+     "z_range": [
+      0.858,
+      1.458
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 2.26,
+     "y": 12.024,
+     "z_centre": 0.965,
+     "z_range": [
+      0.665,
+      1.265
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 12
+  },
+  {
+   "index": 40,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 13.865,
+     "y": 5.112,
+     "z_centre": 2.189,
+     "z_range": [
+      1.889,
+      2.489
+     ]
+    },
+    {
+     "kind": "bars",
+     "x": 5.996,
+     "y": 12.045,
+     "opening_m": 1.41,
+     "bar_z": [
+      0.631,
+      1.891
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 13
+  },
+  {
+   "index": 41,
+   "elements": [
+    {
+     "kind": "bars",
+     "x": 8.21,
+     "y": 5.22,
+     "opening_m": 1.896,
+     "bar_z": [
+      0.516,
+      2.355
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 1.437,
+     "y": 10.996,
+     "z_centre": 1.214,
+     "z_range": [
+      0.914,
+      1.514
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 15
+  },
+  {
+   "index": 42,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 9.444,
+     "y": 5.756,
+     "z_centre": 1.987,
+     "z_range": [
+      1.687,
+      2.287
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 2.528,
+     "y": 11.396,
+     "z_centre": 2.039,
+     "z_range": [
+      1.739,
+      2.339
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 11
+  },
+  {
+   "index": 43,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 7.469,
+     "y": 5.246,
+     "z_centre": 0.888,
+     "z_range": [
+      0.588,
+      1.188
+     ]
+    },
+    {
+     "kind": "bars",
+     "x": 9.127,
+     "y": 12.087,
+     "opening_m": 1.246,
+     "bar_z": [
+      0.678,
+      1.787
+     ]
+    }
+   ],
+   "band_2d_passable": true,
+   "n_boxes": 11
+  },
+  {
+   "index": 44,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 6.368,
+     "y": 4.479,
+     "z_centre": 0.976,
+     "z_range": [
+      0.676,
+      1.276
+     ]
+    },
+    {
+     "kind": "bars",
+     "x": 6.928,
+     "y": 10.552,
+     "opening_m": 1.402,
+     "bar_z": [
+      1.527
+     ]
+    }
+   ],
+   "band_2d_passable": true,
+   "n_boxes": 14
+  },
+  {
+   "index": 45,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 14.302,
+     "y": 4.959,
+     "z_centre": 1.147,
+     "z_range": [
+      0.847,
+      1.447
+     ]
+    },
+    {
+     "kind": "bars",
+     "x": 9.75,
+     "y": 11.012,
+     "opening_m": 1.99,
+     "bar_z": [
+      0.783
+     ]
+    }
+   ],
+   "band_2d_passable": true,
+   "n_boxes": 14
+  },
+  {
+   "index": 46,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 14.492,
+     "y": 4.565,
+     "z_centre": 1.331,
+     "z_range": [
+      1.031,
+      1.631
+     ]
+    },
+    {
+     "kind": "bars",
+     "x": 10.079,
+     "y": 10.704,
+     "opening_m": 1.585,
+     "bar_z": [
+      1.157
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 11
+  },
+  {
+   "index": 47,
+   "elements": [
+    {
+     "kind": "bars",
+     "x": 11.76,
+     "y": 5.456,
+     "opening_m": 1.722,
+     "bar_z": [
+      2.134
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 11.528,
+     "y": 11.724,
+     "z_centre": 2.317,
+     "z_range": [
+      2.017,
+      2.617
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 14
+  },
+  {
+   "index": 48,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 15.468,
+     "y": 4.542,
+     "z_centre": 0.929,
+     "z_range": [
+      0.629,
+      1.229
+     ]
+    },
+    {
+     "kind": "bars",
+     "x": 13.79,
+     "y": 11.427,
+     "opening_m": 1.886,
+     "bar_z": [
+      0.483,
+      1.969
+     ]
+    }
+   ],
+   "band_2d_passable": true,
+   "n_boxes": 13
+  },
+  {
+   "index": 49,
+   "elements": [
+    {
+     "kind": "window",
+     "x": 9.643,
+     "y": 5.994,
+     "z_centre": 1.941,
+     "z_range": [
+      1.641,
+      2.241
+     ]
+    },
+    {
+     "kind": "window",
+     "x": 7.325,
+     "y": 10.843,
+     "z_centre": 1.178,
+     "z_range": [
+      0.878,
+      1.478
+     ]
+    }
+   ],
+   "band_2d_passable": false,
+   "n_boxes": 10
+  }
+ ],
+ "modes": {
+  "astar_esdf 2.5D": {
+   "summary": {
+    "n": 50,
+    "reached_pct": 14.0,
+    "collision_pct": 0.0,
+    "stuck_pct": 86.0,
+    "timeout_pct": 0.0,
+    "median_time_to_goal_s": 28.16,
+    "median_min_clearance_m": 1.0,
+    "median_path_length_m": 0.0,
+    "p95_time_to_goal_s": 36.42
+   },
+   "planning": {
+    "replans": 4818,
+    "median_ms": 44.79,
+    "p95_ms": 82.79,
+    "max_ms": 180.65,
+    "setup_median_ms": null,
+    "expansions_median": null,
+    "fallback_replans": 0,
+    "no_path_replans": 4300
+   },
+   "runs": [
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 0,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 78.535,
+     "step_ms_max": 88.519,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 1,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 42.836,
+     "step_ms_max": 44.921,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 2,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 80.711,
+     "step_ms_max": 92.144,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 3,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 47.086,
+     "step_ms_max": 53.359,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 26.74,
+     "min_clearance_m": 0.2089,
+     "path_length_m": 26.724,
+     "duration_s": 26.74,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 4,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 3.195,
+     "step_ms_max": 44.279,
+     "replans": 67,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": true
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 5,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 77.544,
+     "step_ms_max": 91.537,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 6,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 38.849,
+     "step_ms_max": 54.498,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 7,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 41.956,
+     "step_ms_max": 51.504,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 8,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 37.382,
+     "step_ms_max": 42.697,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 9,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 42.623,
+     "step_ms_max": 46.852,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 10,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 43.155,
+     "step_ms_max": 45.17,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 11,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 82.398,
+     "step_ms_max": 91.331,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 12,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 45.647,
+     "step_ms_max": 51.28,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 13,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 44.417,
+     "step_ms_max": 46.1,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 28.16,
+     "min_clearance_m": 0.2089,
+     "path_length_m": 24.995,
+     "duration_s": 28.16,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 14,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 3.572,
+     "step_ms_max": 40.823,
+     "replans": 71,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": true
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 15,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 37.702,
+     "step_ms_max": 41.68,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 16,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 47.657,
+     "step_ms_max": 50.947,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 17,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 83.859,
+     "step_ms_max": 107.383,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 38.78,
+     "min_clearance_m": 0.1983,
+     "path_length_m": 39.832,
+     "duration_s": 38.78,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 18,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 4.647,
+     "step_ms_max": 42.907,
+     "replans": 97,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": true
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 19,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 45.643,
+     "step_ms_max": 52.153,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 20,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 37.8,
+     "step_ms_max": 44.834,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 21,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 45.665,
+     "step_ms_max": 48.583,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 22,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 44.706,
+     "step_ms_max": 49.955,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 23,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 40.598,
+     "step_ms_max": 50.03,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 24,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 38.143,
+     "step_ms_max": 46.563,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 25,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 36.875,
+     "step_ms_max": 39.534,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 26,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 44.164,
+     "step_ms_max": 51.168,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 27,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 49.411,
+     "step_ms_max": 61.711,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 28,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 39.386,
+     "step_ms_max": 56.422,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 29,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 43.273,
+     "step_ms_max": 55.857,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 30,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 94.315,
+     "step_ms_max": 147.24,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 31,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 55.353,
+     "step_ms_max": 91.668,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 32,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 69.097,
+     "step_ms_max": 180.659,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 33,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 49.003,
+     "step_ms_max": 70.373,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 34,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 48.319,
+     "step_ms_max": 91.172,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 35,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 48.639,
+     "step_ms_max": 83.164,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 36,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 43.713,
+     "step_ms_max": 63.094,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 37,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 49.774,
+     "step_ms_max": 115.295,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 38,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 44.863,
+     "step_ms_max": 60.899,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 39,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 48.435,
+     "step_ms_max": 66.787,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 40,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 43.368,
+     "step_ms_max": 75.937,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 41,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 72.227,
+     "step_ms_max": 84.955,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 42,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 46.552,
+     "step_ms_max": 51.393,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 25.42,
+     "min_clearance_m": 0.1875,
+     "path_length_m": 25.47,
+     "duration_s": 25.42,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 43,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 3.795,
+     "step_ms_max": 36.794,
+     "replans": 64,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": true
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 26.92,
+     "min_clearance_m": 0.246,
+     "path_length_m": 26.143,
+     "duration_s": 26.92,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 44,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 3.504,
+     "step_ms_max": 36.306,
+     "replans": 68,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": true
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 30.9,
+     "min_clearance_m": 0.1528,
+     "path_length_m": 32.194,
+     "duration_s": 30.9,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 45,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 3.687,
+     "step_ms_max": 45.727,
+     "replans": 78,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": true
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 46,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 38.212,
+     "step_ms_max": 46.097,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 47,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 83.524,
+     "step_ms_max": 111.884,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 28.86,
+     "min_clearance_m": 0.2289,
+     "path_length_m": 29.85,
+     "duration_s": 28.86,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 48,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 2.975,
+     "step_ms_max": 29.242,
+     "replans": 73,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": true
+    },
+    {
+     "outcome": "stuck",
+     "reached": false,
+     "collision": false,
+     "stuck": true,
+     "timeout": false,
+     "time_to_goal_s": null,
+     "min_clearance_m": 1.0,
+     "path_length_m": 0.0,
+     "duration_s": 10.0,
+     "z_min_m": 1.0,
+     "z_max_m": 1.0,
+     "index": 49,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 47.899,
+     "step_ms_max": 56.049,
+     "replans": 100,
+     "fallback_replans": 0,
+     "no_path_replans": 100,
+     "band_2d_passable": false
+    }
+   ]
+  },
+  "astar_esdf_3d": {
+   "summary": {
+    "n": 50,
+    "reached_pct": 100.0,
+    "collision_pct": 0.0,
+    "stuck_pct": 0.0,
+    "timeout_pct": 0.0,
+    "median_time_to_goal_s": 28.89,
+    "median_min_clearance_m": 0.253,
+    "median_path_length_m": 27.76,
+    "p95_time_to_goal_s": 41.3
+   },
+   "planning": {
+    "replans": 1075,
+    "median_ms": 26.04,
+    "p95_ms": 162.61,
+    "max_ms": 298.83,
+    "setup_median_ms": 185.89,
+    "expansions_median": 6694.0,
+    "fallback_replans": 0,
+    "no_path_replans": 0
+   },
+   "runs": [
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 23.6,
+     "min_clearance_m": 0.2584,
+     "path_length_m": 24.868,
+     "duration_s": 23.6,
+     "z_min_m": 1.0,
+     "z_max_m": 2.048,
+     "index": 0,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 3.565,
+     "step_ms_max": 390.582,
+     "replans": 21,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 36.66,
+     "min_clearance_m": 0.2827,
+     "path_length_m": 36.901,
+     "duration_s": 36.66,
+     "z_min_m": 0.95,
+     "z_max_m": 1.947,
+     "index": 1,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 1.651,
+     "step_ms_max": 233.924,
+     "replans": 11,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 25.42,
+     "min_clearance_m": 0.2248,
+     "path_length_m": 25.673,
+     "duration_s": 25.42,
+     "z_min_m": 0.97,
+     "z_max_m": 1.733,
+     "index": 2,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 1.87,
+     "step_ms_max": 244.148,
+     "replans": 14,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 27.16,
+     "min_clearance_m": 0.2607,
+     "path_length_m": 28.373,
+     "duration_s": 27.16,
+     "z_min_m": 1.0,
+     "z_max_m": 1.433,
+     "index": 3,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 1.704,
+     "step_ms_max": 234.92,
+     "replans": 21,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 29.38,
+     "min_clearance_m": 0.2283,
+     "path_length_m": 27.252,
+     "duration_s": 29.38,
+     "z_min_m": 0.91,
+     "z_max_m": 1.0,
+     "index": 4,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 2.208,
+     "step_ms_max": 235.579,
+     "replans": 11,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": true
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 25.54,
+     "min_clearance_m": 0.2486,
+     "path_length_m": 24.84,
+     "duration_s": 25.54,
+     "z_min_m": 0.959,
+     "z_max_m": 1.434,
+     "index": 5,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 2.378,
+     "step_ms_max": 239.918,
+     "replans": 10,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 26.8,
+     "min_clearance_m": 0.2813,
+     "path_length_m": 28.149,
+     "duration_s": 26.8,
+     "z_min_m": 1.0,
+     "z_max_m": 1.527,
+     "index": 6,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 1.622,
+     "step_ms_max": 226.856,
+     "replans": 21,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 28.28,
+     "min_clearance_m": 0.2479,
+     "path_length_m": 25.396,
+     "duration_s": 28.28,
+     "z_min_m": 0.993,
+     "z_max_m": 1.346,
+     "index": 7,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 1.381,
+     "step_ms_max": 256.167,
+     "replans": 15,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 29.12,
+     "min_clearance_m": 0.2489,
+     "path_length_m": 24.046,
+     "duration_s": 29.12,
+     "z_min_m": 0.656,
+     "z_max_m": 1.35,
+     "index": 8,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 0.99,
+     "step_ms_max": 227.609,
+     "replans": 8,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 25.72,
+     "min_clearance_m": 0.2446,
+     "path_length_m": 24.878,
+     "duration_s": 25.72,
+     "z_min_m": 0.659,
+     "z_max_m": 1.503,
+     "index": 9,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 1.523,
+     "step_ms_max": 240.652,
+     "replans": 5,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 30.98,
+     "min_clearance_m": 0.2084,
+     "path_length_m": 28.032,
+     "duration_s": 30.98,
+     "z_min_m": 0.553,
+     "z_max_m": 1.0,
+     "index": 10,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 1.549,
+     "step_ms_max": 234.333,
+     "replans": 23,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 26.48,
+     "min_clearance_m": 0.2513,
+     "path_length_m": 24.929,
+     "duration_s": 26.48,
+     "z_min_m": 0.989,
+     "z_max_m": 1.447,
+     "index": 11,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 1.739,
+     "step_ms_max": 227.371,
+     "replans": 13,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 28.2,
+     "min_clearance_m": 0.2642,
+     "path_length_m": 27.442,
+     "duration_s": 28.2,
+     "z_min_m": 0.557,
+     "z_max_m": 1.539,
+     "index": 12,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 1.489,
+     "step_ms_max": 224.785,
+     "replans": 14,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 24.9,
+     "min_clearance_m": 0.2356,
+     "path_length_m": 26.322,
+     "duration_s": 24.9,
+     "z_min_m": 0.962,
+     "z_max_m": 2.148,
+     "index": 13,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 3.293,
+     "step_ms_max": 256.288,
+     "replans": 21,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 25.7,
+     "min_clearance_m": 0.2542,
+     "path_length_m": 25.024,
+     "duration_s": 25.7,
+     "z_min_m": 0.95,
+     "z_max_m": 1.32,
+     "index": 14,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 1.524,
+     "step_ms_max": 227.871,
+     "replans": 15,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": true
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 28.54,
+     "min_clearance_m": 0.2588,
+     "path_length_m": 25.951,
+     "duration_s": 28.54,
+     "z_min_m": 0.963,
+     "z_max_m": 1.742,
+     "index": 15,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 1.956,
+     "step_ms_max": 258.282,
+     "replans": 14,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 30.14,
+     "min_clearance_m": 0.2708,
+     "path_length_m": 29.327,
+     "duration_s": 30.14,
+     "z_min_m": 0.95,
+     "z_max_m": 1.676,
+     "index": 16,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 1.316,
+     "step_ms_max": 244.856,
+     "replans": 13,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 26.8,
+     "min_clearance_m": 0.2563,
+     "path_length_m": 26.197,
+     "duration_s": 26.8,
+     "z_min_m": 0.998,
+     "z_max_m": 1.881,
+     "index": 17,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 1.99,
+     "step_ms_max": 298.573,
+     "replans": 15,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 36.82,
+     "min_clearance_m": 0.2526,
+     "path_length_m": 39.457,
+     "duration_s": 36.82,
+     "z_min_m": 0.958,
+     "z_max_m": 1.149,
+     "index": 18,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 5.884,
+     "step_ms_max": 304.146,
+     "replans": 22,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": true
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 25.22,
+     "min_clearance_m": 0.2682,
+     "path_length_m": 25.949,
+     "duration_s": 25.22,
+     "z_min_m": 0.955,
+     "z_max_m": 2.135,
+     "index": 19,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 1.691,
+     "step_ms_max": 230.494,
+     "replans": 21,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 25.26,
+     "min_clearance_m": 0.2813,
+     "path_length_m": 25.836,
+     "duration_s": 25.26,
+     "z_min_m": 1.0,
+     "z_max_m": 2.25,
+     "index": 20,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 2.781,
+     "step_ms_max": 242.299,
+     "replans": 24,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 27.46,
+     "min_clearance_m": 0.2656,
+     "path_length_m": 24.36,
+     "duration_s": 27.46,
+     "z_min_m": 1.0,
+     "z_max_m": 2.348,
+     "index": 21,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 2.312,
+     "step_ms_max": 260.371,
+     "replans": 15,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 30.48,
+     "min_clearance_m": 0.2529,
+     "path_length_m": 30.323,
+     "duration_s": 30.48,
+     "z_min_m": 1.0,
+     "z_max_m": 2.327,
+     "index": 22,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 2.268,
+     "step_ms_max": 253.384,
+     "replans": 22,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 44.4,
+     "min_clearance_m": 0.2022,
+     "path_length_m": 44.809,
+     "duration_s": 44.4,
+     "z_min_m": 0.959,
+     "z_max_m": 1.95,
+     "index": 23,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 1.873,
+     "step_ms_max": 280.351,
+     "replans": 31,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 34.68,
+     "min_clearance_m": 0.2489,
+     "path_length_m": 38.407,
+     "duration_s": 34.68,
+     "z_min_m": 0.851,
+     "z_max_m": 1.81,
+     "index": 24,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 4.021,
+     "step_ms_max": 278.03,
+     "replans": 34,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 42.7,
+     "min_clearance_m": 0.2236,
+     "path_length_m": 45.847,
+     "duration_s": 42.7,
+     "z_min_m": 0.999,
+     "z_max_m": 2.147,
+     "index": 25,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 10.748,
+     "step_ms_max": 375.754,
+     "replans": 52,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 44.44,
+     "min_clearance_m": 0.2216,
+     "path_length_m": 47.325,
+     "duration_s": 44.44,
+     "z_min_m": 1.0,
+     "z_max_m": 2.249,
+     "index": 26,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 3.761,
+     "step_ms_max": 281.351,
+     "replans": 41,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 31.4,
+     "min_clearance_m": 0.2551,
+     "path_length_m": 28.801,
+     "duration_s": 31.4,
+     "z_min_m": 1.0,
+     "z_max_m": 2.329,
+     "index": 27,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 2.001,
+     "step_ms_max": 266.369,
+     "replans": 16,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 31.24,
+     "min_clearance_m": 0.2322,
+     "path_length_m": 28.538,
+     "duration_s": 31.24,
+     "z_min_m": 0.963,
+     "z_max_m": 2.325,
+     "index": 28,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 1.899,
+     "step_ms_max": 315.921,
+     "replans": 12,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 27.86,
+     "min_clearance_m": 0.2463,
+     "path_length_m": 24.901,
+     "duration_s": 27.86,
+     "z_min_m": 1.0,
+     "z_max_m": 2.444,
+     "index": 29,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 5.733,
+     "step_ms_max": 383.338,
+     "replans": 19,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 28.7,
+     "min_clearance_m": 0.2772,
+     "path_length_m": 29.345,
+     "duration_s": 28.7,
+     "z_min_m": 0.961,
+     "z_max_m": 1.466,
+     "index": 30,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 4.224,
+     "step_ms_max": 311.017,
+     "replans": 27,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 30.02,
+     "min_clearance_m": 0.2533,
+     "path_length_m": 27.35,
+     "duration_s": 30.02,
+     "z_min_m": 0.55,
+     "z_max_m": 1.0,
+     "index": 31,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 6.568,
+     "step_ms_max": 316.696,
+     "replans": 31,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 33.34,
+     "min_clearance_m": 0.225,
+     "path_length_m": 31.678,
+     "duration_s": 33.34,
+     "z_min_m": 0.758,
+     "z_max_m": 2.046,
+     "index": 32,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 2.457,
+     "step_ms_max": 322.196,
+     "replans": 21,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 27.64,
+     "min_clearance_m": 0.2484,
+     "path_length_m": 25.851,
+     "duration_s": 27.64,
+     "z_min_m": 1.0,
+     "z_max_m": 1.842,
+     "index": 33,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 2.599,
+     "step_ms_max": 308.799,
+     "replans": 24,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 37.24,
+     "min_clearance_m": 0.2664,
+     "path_length_m": 38.702,
+     "duration_s": 37.24,
+     "z_min_m": 1.0,
+     "z_max_m": 2.15,
+     "index": 34,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 11.35,
+     "step_ms_max": 417.587,
+     "replans": 37,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 26.86,
+     "min_clearance_m": 0.2874,
+     "path_length_m": 27.147,
+     "duration_s": 26.86,
+     "z_min_m": 1.0,
+     "z_max_m": 1.72,
+     "index": 35,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 2.015,
+     "step_ms_max": 287.691,
+     "replans": 23,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 39.58,
+     "min_clearance_m": 0.2267,
+     "path_length_m": 41.392,
+     "duration_s": 39.58,
+     "z_min_m": 0.965,
+     "z_max_m": 1.71,
+     "index": 36,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 9.512,
+     "step_ms_max": 440.091,
+     "replans": 36,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 23.4,
+     "min_clearance_m": 0.2379,
+     "path_length_m": 24.224,
+     "duration_s": 23.4,
+     "z_min_m": 1.0,
+     "z_max_m": 2.246,
+     "index": 37,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 5.6,
+     "step_ms_max": 432.465,
+     "replans": 12,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 35.52,
+     "min_clearance_m": 0.2565,
+     "path_length_m": 33.745,
+     "duration_s": 35.52,
+     "z_min_m": 0.95,
+     "z_max_m": 2.431,
+     "index": 38,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 4.786,
+     "step_ms_max": 319.898,
+     "replans": 27,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 29.48,
+     "min_clearance_m": 0.2378,
+     "path_length_m": 27.664,
+     "duration_s": 29.48,
+     "z_min_m": 0.95,
+     "z_max_m": 1.143,
+     "index": 39,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 2.416,
+     "step_ms_max": 245.549,
+     "replans": 22,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 36.94,
+     "min_clearance_m": 0.2559,
+     "path_length_m": 37.501,
+     "duration_s": 36.94,
+     "z_min_m": 0.929,
+     "z_max_m": 2.149,
+     "index": 40,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 5.617,
+     "step_ms_max": 314.232,
+     "replans": 32,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 32.32,
+     "min_clearance_m": 0.2652,
+     "path_length_m": 35.709,
+     "duration_s": 32.32,
+     "z_min_m": 0.954,
+     "z_max_m": 1.33,
+     "index": 41,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 2.865,
+     "step_ms_max": 298.815,
+     "replans": 25,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 35.36,
+     "min_clearance_m": 0.2432,
+     "path_length_m": 35.399,
+     "duration_s": 35.36,
+     "z_min_m": 1.0,
+     "z_max_m": 2.049,
+     "index": 42,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 4.889,
+     "step_ms_max": 368.409,
+     "replans": 32,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 24.22,
+     "min_clearance_m": 0.264,
+     "path_length_m": 25.325,
+     "duration_s": 24.22,
+     "z_min_m": 0.852,
+     "z_max_m": 1.232,
+     "index": 43,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 2.558,
+     "step_ms_max": 268.878,
+     "replans": 19,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": true
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 25.22,
+     "min_clearance_m": 0.2385,
+     "path_length_m": 25.973,
+     "duration_s": 25.22,
+     "z_min_m": 0.87,
+     "z_max_m": 1.0,
+     "index": 44,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 1.776,
+     "step_ms_max": 283.334,
+     "replans": 19,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": true
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 31.58,
+     "min_clearance_m": 0.2592,
+     "path_length_m": 31.942,
+     "duration_s": 31.58,
+     "z_min_m": 0.966,
+     "z_max_m": 1.518,
+     "index": 45,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 2.773,
+     "step_ms_max": 242.804,
+     "replans": 25,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": true
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 31.5,
+     "min_clearance_m": 0.2808,
+     "path_length_m": 32.004,
+     "duration_s": 31.5,
+     "z_min_m": 0.572,
+     "z_max_m": 1.35,
+     "index": 46,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 5.125,
+     "step_ms_max": 279.379,
+     "replans": 24,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 27.34,
+     "min_clearance_m": 0.2427,
+     "path_length_m": 26.386,
+     "duration_s": 27.34,
+     "z_min_m": 1.0,
+     "z_max_m": 2.332,
+     "index": 47,
+     "layout_attempts": 1,
+     "elements": [
+      "bars",
+      "window"
+     ],
+     "step_ms_mean": 2.69,
+     "step_ms_max": 247.803,
+     "replans": 20,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 27.58,
+     "min_clearance_m": 0.2765,
+     "path_length_m": 29.739,
+     "duration_s": 27.58,
+     "z_min_m": 0.95,
+     "z_max_m": 1.135,
+     "index": 48,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "bars"
+     ],
+     "step_ms_mean": 4.787,
+     "step_ms_max": 279.384,
+     "replans": 27,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": true
+    },
+    {
+     "outcome": "reached",
+     "reached": true,
+     "collision": false,
+     "stuck": false,
+     "timeout": false,
+     "time_to_goal_s": 29.08,
+     "min_clearance_m": 0.2237,
+     "path_length_m": 27.856,
+     "duration_s": 29.08,
+     "z_min_m": 1.0,
+     "z_max_m": 1.948,
+     "index": 49,
+     "layout_attempts": 1,
+     "elements": [
+      "window",
+      "window"
+     ],
+     "step_ms_mean": 3.717,
+     "step_ms_max": 308.616,
+     "replans": 18,
+     "fallback_replans": 0,
+     "no_path_replans": 0,
+     "band_2d_passable": false
+    }
+   ]
+  }
+ }
+}

@@ -280,6 +280,48 @@ JSON with per-run rows.
 - Not run: unknown-map A*, reactive planners, the Crazyflie presets, estimator faults, or
   any seed other than 0.
 
+## Altitude: windows and bars (ran 2026-11-09, synthetic)
+
+IMAV-style indoor courses put B behind windows and under or over bars. A 2.5D planner at a fixed
+1 m cannot pass them. `world_z.py` adds the `window_bar` family: a 20 x 20 x 3 m room with two
+full-width walls between A and B. Each wall has either a 0.6 x 0.6 m window (centre height
+0.5-2.5 m) or a 1.2-2.0 m opening crossed by 1-2 horizontal bars (0.4-2.6 m). At least one wall
+has a window. Pillars and crates (0.4-1.4 m tall) sit between the walls. A and B are at 1.0 m.
+Every obstacle has its own z range, and truth clearance (to boxes, walls, floor and ceiling) is
+exact in 3D.
+
+| planner | layouts | reached % | collision % | stuck % | median / p95 time to goal s | plan median / p95 ms | median min clearance m |
+|---|---|---|---|---|---|---|---|
+| `astar_esdf` 2.5D at z = 1.0 m | 50 | 14.0 | 0.0 | 86.0 | 28.16 / 36.42 | 44.79 / 82.79 | 1.0 (stuck at A) |
+| `astar_esdf_3d` | 50 | 100.0 | 0.0 | 0.0 | 28.89 / 41.3 | 26.04 / 162.61 | 0.253 |
+
+Seed 0, synthetic layouts, vehicle and sensor ([results](results/z_window_bar_0.md),
+[json](results/z_window_bar_0.json)). The 2D map at 1.0 +- 0.15 m has a path A => B on 7 of 50
+layouts. 2.5D reached exactly those 7. On the other 43 it found no path (4300 of its 4818
+replans) and was scored stuck at A. 3D reached all 50 and flew between 0.55 and 2.44 m. Its
+lowest clearance over all runs was 0.2022 m against the 0.15 m collision radius. Its first plan
+per run also builds the ESDF and heuristic, with a median of 185.89 ms. Side view of run 0:
+[results/z_window_bar_0_run0.png](results/z_window_bar_0_run0.png). Top panel: the true geometry
+under the 3D track. Bottom panel: top view. The 2.5D track is hidden under the A marker because
+it never left A.
+
+    .venv/bin/python run_z.py --layouts 50 --seed 0   # ~5 min (295 s on Apple M3 Max, CPython 3.12.10, numpy 2.5.4, scipy 1.18.1)
+
+- `planners/astar_esdf_3d.py` needs the prior 3D map: there is no unknown-map mode.
+- It is weighted A* (heuristic weight 2.0). Its heuristic is a geodesic distance computed on a
+  2x coarser grid with scipy csgraph. Plain A* (weight 1.0) was far slower.
+- The planning inflation is radius + 0.05 m (0.10 m leaves no free cell in a 0.6 m window).
+  The follower keeps 0.25 m of chord clearance, because the grid ESDF can read about 0.09 m
+  above the true clearance.
+- `vehicle_z.VehicleZ`: |vz| <= 1.0 m/s. The planner caps commanded vz at 0.8 m/s and scales the
+  whole velocity vector so its direction is kept.
+
+Limits: synthetic only, axis-aligned boxes, truth pose, no estimator faults. The range fan is
+horizontal at the vehicle's height and the planners do not use it. No downward or upward sensing.
+No rotor downwash near window frames. B is always at 1.0 m. One seed. The 2.5D map is the
+generous one (any box that overlaps the vehicle's height band). A thin 2D lidar slice was not
+scored; it would see through bars just outside 1 m and is likely to collide rather than stop.
+
 ## Limits
 
 - 2.5D only: no altitude changes, no overhangs, z is held. Obstacles are axis-aligned boxes
