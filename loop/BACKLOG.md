@@ -53,7 +53,7 @@ Initial backlog: fable brainstorm, 2026-11-09, base dbafbff.
 | 25 | needs-human: Docker build of the OpenVINS image (~20 min) + 1.61 GB UZH-FPV bag; plan in doc 09 section 5 | VIO NEES POC on that sequence; inflation factor for the kill test's R x 0.25 check | P | M (2) | 24 B; OpenVINS image | `samples/vio-nees-indoor/` | Measured factor replaces a guess | NEES table + fitted factor; input real |
 | 26 | parked (long-range only; reopen if the brief is long-range) | Conformal trust for visual fixes on cached VPAIR results (long-range fallback; only if `e2e-visual-nav-vpair/results/` exists) | P | S | cache | `samples/visual-fix-trust-conformal/` | Cheapest long-range item; the only one worth a slot | 90 % radius + acceptance set on 199 frames; held-out coverage |
 | 27 | sweep 1 done 42e9fe1; run again after each wave | Integration sweep per wave: evidence-matrix, decoder Start-from, challenge-2 §3/§4, docs/README, cheatsheets README, stdlib-sample-tests.txt; re-run each new first_command | S | S | wave | shared files only | Keeps the hub coherent | `build.py` dangling 0, `check_links`, `check_sample_tests`, `decode_eval` pass |
-| 28 | ready | Not-verified reconciliation: move research "Not verified" lines to verified with the measured number | S | S | end | `docs/research/close-area-nav/*` | Docs stop over-hedging once things ran | Each moved line cites a sample README anchor |
+| 28 | in-flight | Not-verified reconciliation: move research "Not verified" lines to verified with the measured number | S | S | end | `docs/research/close-area-nav/*` | Docs stop over-hedging once things ran | Each moved line cites a sample README anchor |
 
 | 29 | in-flight | Docs navigation audit (read-only): 12 cold-start agent walkthroughs, orphan docs, stale pointers, entry-point gaps, ranked fix list in disjoint work packages | R | S | - | report only (docs-audit.md via --out) | Agents on Day 1 find things in 1-2 hops | Report with hop counts per question and <= 25 ranked fixes |
 | 30 | done 1ea1d6c | Showcase page for humans: hero + live counters, arena replay animation, sample gallery with honest status, agent-flow diagram | T | S | 01,03,04 soft | `site/showcase.*`, `site/data/showcase/`, `samples/close-area-arena/export_replay.py`, one nav link | Show case for judges and managers | Desktop and phone screenshots, node site tests pass |
@@ -103,7 +103,7 @@ Initial backlog: fable brainstorm, 2026-11-09, base dbafbff.
 
 | 65 | done (wired into the playground) | Playground advisor: per-map success/collision stats for every planner, ranked recommendation, plain-language docs for every option (Ivan request) | T | S | 46c B; 62 soft (driver wires in after 62 lands) | site/playground advisor.* data/ ADVISOR.md advisor-demo.html | Ivan: most planners fail in maze/office; a non-expert cannot choose | demo page renders; wired into the playground |
 
-| 67 | in-flight | AF-MCL-style particle filter arm vs the hub's relocalizer (ideal and 4-beam) | P | S | 57 B | samples/close-area-relocalize mcl.py, run_mcl.py | Published baseline the headline never faced | table + verdict |
+| 67 | done 1ab503b | AF-MCL-style particle filter arm vs the hub's relocalizer (ideal and 4-beam) | P | S | 57 B | samples/close-area-relocalize mcl.py, run_mcl.py | Published baseline the headline never faced | table + verdict |
 
 ## Planned waves
 
