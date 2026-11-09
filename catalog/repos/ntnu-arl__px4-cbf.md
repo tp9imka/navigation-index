@@ -25,6 +25,7 @@ Documentation and setup for a CBF safety filter inside the PX4 velocity loop tha
 
 ## Referenced by
 
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [composite_cbf](../../catalog/repos/ntnu-arl__composite_cbf.md) (same_org)
 - [Embedded Safe Reactive Navigation for Multirotors Systems using Control Barrier Functions](../../catalog/resources/misyats-px4-cbf-icuas2025.md) (has_code)
 

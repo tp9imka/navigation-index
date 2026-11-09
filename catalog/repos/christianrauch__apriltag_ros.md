@@ -25,6 +25,7 @@ ROS 2 node that wraps the AprilTag library, subscribes to a rectified image and 
 
 ## Referenced by
 
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [AprilTag 3](../../catalog/repos/aprilrobotics__apriltag.md) (integrates_with)
 
 _Indexed by lane(s): close-area-localization_

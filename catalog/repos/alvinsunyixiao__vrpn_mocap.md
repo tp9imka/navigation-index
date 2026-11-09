@@ -23,4 +23,8 @@ ROS 2 VRPN client that turns motion-capture rigid bodies (VICON, OptiTrack and o
 - integrates_with: [MAVROS](../../catalog/repos/mavlink__mavros.md)
 - alternative_to: [Crazyswarm2](../../catalog/repos/imrclab__crazyswarm2.md)
 
+## Referenced by
+
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+
 _Indexed by lane(s): close-area-localization_

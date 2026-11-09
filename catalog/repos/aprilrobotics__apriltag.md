@@ -26,6 +26,7 @@ C library for detecting AprilTag fiducial markers and estimating the 6-DoF pose 
 
 ## Referenced by
 
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [apriltag_ros (ROS 2)](../../catalog/repos/christianrauch__apriltag_ros.md) (depends_on)
 - [AprilTag 2: Efficient and robust fiducial detection](../../catalog/resources/wang-olson-2016-apriltag2.md) (has_code)
 
