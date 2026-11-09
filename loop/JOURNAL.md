@@ -110,3 +110,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - launched 59 (+ dry-run blocker 2), 61 (sweep 4 + blockers 1, 3, 4, 5, 8), 63 (+ blocker 7), 64, 67. Blocker 6 already fixed in the wrap-up.
 - landed: 61 => 2a3df1d (sweep 4; decode 'warehouse 4 beams which planner' => row 31 with the benchmark first; intake defaults rebuilt; blockers 1,3,4,5,8 fixed; driver applied 5 follow-up edits)
 - landed: 59 => b2c4127 (copied-out make stops cleanly or runs with HUB=; first-flight-reloc arrives 0.12 m from B with 4 re-anchors, reset_counter 0 => 4; MAP_SIGMA_M 0.10 m labelled assumed by driver; blocker 2 fixed)
+- landed: 64 => d45f67c (story cards: F5 FAIL, relocalization PASS in 2 of 7 families; replays match published rows 6/6; driver viewed the cards screenshot)

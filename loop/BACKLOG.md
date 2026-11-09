@@ -99,7 +99,7 @@ Initial backlog: fable brainstorm, 2026-11-09, base dbafbff.
 | 61 | done 2a3df1d | Sweep 4 (45a, 46b/c, 47, 49, 50, 54 + 55-57 when landed) | S | S | 53 B; 54-57 soft | shared files | decode warehouse 4 beams => benchmark | gate green, no stale pending |
 | 62 | done 7d0fbc0 | Playground: 6 more planners + shareable #w= links | T | S | 48b B | site/playground | 6 of 14 planners; no sharing | parity on 6 new; link restores world |
 | 63 | in-flight | Playground relocalization with hypothesis ghosts | T | M | 62, 33 B | site/playground (after 62) | Headline invisible in playground | browser = native on 3 cases |
-| 64 | in-flight | Showcase story page: headline status, kill-test replay, relocalization replay | T | M | 47 B | samples/*/export_replay.py, site/showcase.* | Judges see the pivot as pictures | both replays render |
+| 64 | done d45f67c | Showcase story page: headline status, kill-test replay, relocalization replay | T | M | 47 B | samples/*/export_replay.py, site/showcase.* | Judges see the pivot as pictures | both replays render |
 
 | 65 | done (wired into the playground) | Playground advisor: per-map success/collision stats for every planner, ranked recommendation, plain-language docs for every option (Ivan request) | T | S | 46c B; 62 soft (driver wires in after 62 lands) | site/playground advisor.* data/ ADVISOR.md advisor-demo.html | Ivan: most planners fail in maze/office; a non-expert cannot choose | demo page renders; wired into the playground |
 
