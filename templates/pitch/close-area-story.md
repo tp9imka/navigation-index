@@ -40,7 +40,7 @@ Contents: [Facts that hold either way](#0-facts-that-hold-either-way) - [Story](
 2. **H+26.** Write the five beats for the chosen story on the wall, one line each.
 3. **H+30.** Fill the 3-minute skeleton (section 4, or H1's own skeleton) with what actually runs.
    Record the backup video ([demo-script-close-area.md](../demo-script-close-area.md#recording-the-backup)).
-4. **H+36.** Rehearse the 10 judge questions (section 5): one person asks, the answerer has 20 s.
+4. **H+36.** Rehearse with [judge-drill-close-area.md](judge-drill-close-area.md) (15 questions with numbers): one person asks, the answerer has 20 s.
    Any answer that still says "pending" is either filled or reworded to "not measured".
 5. **H+40.** Score with [judging-self-assessment.md](../judging-self-assessment.md) and copy every
    number into the [one-pager](one-pager-template.md) and `runs/results.md`.

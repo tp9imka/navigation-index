@@ -13,6 +13,7 @@ prep and a one-pager.
 | Page | Use it when | You get |
 |---|---|---|
 | [close-area-story.md](close-area-story.md) | Close-area A=>B task. H+0 (pick), H+24 (kill-test gate), H+36 (rehearse) | One-line story, kill-test gate choosing the story, 3 backup hooks, 3-minute skeleton, 10 judge questions with where the answer lives |
+| [judge-drill-close-area.md](judge-drill-close-area.md) | Close-area A=>B task, relocalization pitch (H1). H+36 (rehearse) | 15 hard judge questions with 20 s answers, each with a number and its input label (or "no number") and a link to the README section |
 | [story-bank.md](story-bank.md) | PNT brief. H+0 to H+2 (pick a family), H+30 (pick 1-2 hooks) | 10 opening hooks per brief family (6 families), each tied to a measured result in the hub, with its input label and the caveat to say aloud |
 | [pitch-structure.md](pitch-structure.md) | Any brief. Draft H+22, final H+36, rehearse x3 | 3-minute and 5-minute skeletons (problem => why it matters operationally => live demo => honest numbers => what's next), funder vocabulary, 15 hard judge questions with answer patterns |
 | [slides-outline.md](slides-outline.md) | H+30 to H+40 | 6-8 slide deck, one message per slide, which existing figure or screenshot to use, plus the "demo failed live" fallback |
