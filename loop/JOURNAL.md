@@ -37,3 +37,10 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - landed: 03 => 7a55438 (known map 100 % all families; unknown map 80 % narrow_gap, loops not stops; claims checked 2/2: results table matches file, held-out seed 3 u_trap 10/10)
 - landed: 11 => 881d7e1 (log scorer matches arena scorer; claims checked 1/1 re-run on hand log); 10 => bcd1b17 (APF+escape 92 % u_trap with 72 beams; 4-beam fan: VFH+ collides 72-98 %, APF 8-54 %; claims checked 2/2: table row matches results, smoke skips)
 - landed: 08a => 226dd1f (make test 6/6, mock A=>B 0.194 m; driver re-ran both); 16 => 6e12000 (0.16 m tag >=90 % detection to 5 m frontal, approach 50/50 within 0.1 m; smoke re-run); 14 => 9501e7c (intake tree; stale gap notes: drivers and A* now exist - sweep fixes)
+
+## 2026-11-09 wave 3
+- launched: 06a, 27 (sweep), 20, 21; docs track: 29 (audit, read job), 30 (showcase); research 23, 24.
+- Ivan asked for a docs/navigation update for agents plus a showcase UI => items 29-31.
+- gate slip: pushed fc04bfc..b3b8fe3 with 4 broken links in an INTEGRATION.md; fixed in 27a85cf. Briefs now require check_links broken 0.
+- landed: 24 => 4c0dca7 (plan: OpenVINS stereo NEES on UZH-FPV in ~25 min, needs Docker; claims checked 2/2: Lisus arXiv title, no cached ov_state_std.txt on this machine). 25 => needs-human.
+- failed: 30 showcase attempt 1 (Kiro opened a >8000 px full-page screenshot, API 400); relaunched as 'showcase retry2' with a viewport-only rule.
