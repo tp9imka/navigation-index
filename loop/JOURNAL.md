@@ -97,3 +97,5 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - launched 55, 56, 57, 58, 60, 62.
 - landed: 56 => 878c841. Seeds 2-4 x 7 families: (f) PASS only random and u_trap (100 %, 0 wrong); FAIL narrow_gap 85.6, office 94.4, warehouse 97.2 with 33 wrong commits, maze 97.2 (6 wrong), glass_office 83.3. Decision line waits for 55.
 - landed: 62 => 7d0fbc0 (12 planners in the playground; MPC not possible: no osqp wheel in Pyodide 314.0.7; A* unknown + F2 = filter select; browser = native 21/21; #w= links restore in a fresh profile)
+- landed: 54 => 5a9e222 (merged by hand: README conflict with 56). 4-beam crazyflie + spin + info-gain: 48 / 64 % reached vs 98 / 100 % on 72 beams; under dropout worse than no relocalization (64 %); spins 9-12 s median. Headline holds only with a dense range sensor.
+- slip: zsh parsed $BASE:s as a modifier while merging, doubled the README locally; caught before commit, use ${BASE}.
