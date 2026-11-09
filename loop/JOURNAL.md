@@ -95,3 +95,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 ## 2026-11-09 re-plan 2 (fable, base 276c70e)
 - added 55-64; dropped 44 (=> 64); no new P items after 16 Nov; rule: no 55/56 number in the pitch before both land, then a decision line like 37.
 - launched 55, 56, 57, 58, 60, 62.
+- landed: 56 => 878c841. Seeds 2-4 x 7 families: (f) PASS only random and u_trap (100 %, 0 wrong); FAIL narrow_gap 85.6, office 94.4, warehouse 97.2 with 33 wrong commits, maze 97.2 (6 wrong), glass_office 83.3. Decision line waits for 55.
