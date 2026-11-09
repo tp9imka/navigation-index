@@ -35,6 +35,7 @@ Pure JavaScript library generating MIL-STD-2525 (B/C/D/E) and APP-6 (B/D/E) mili
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Demo dashboard](../../templates/demo-dashboard/README.md) (mentions)
 - [Joint Military Symbology XML](../../catalog/repos/esri__joint-military-symbology-xml.md) (alternative_to)
 - [Leaflet](../../catalog/repos/leaflet__leaflet.md) (integrates_with)
 - [mil-sym-ts](../../catalog/repos/missioncommand__mil-sym-ts.md) (alternative_to)

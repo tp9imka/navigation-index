@@ -36,6 +36,7 @@ Open-source WebGL vector tile map renderer (fork of Mapbox GL JS v1) with styles
 - [7. Maps, geodesy and planning](../../docs/primer/07-maps-geodesy-planning.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Demo dashboard](../../templates/demo-dashboard/README.md) (mentions)
 - [CesiumJS](../../catalog/repos/cesiumgs__cesium.md) (alternative_to)
 - [TileServer GL](../../catalog/repos/maptiler__tileserver-gl.md) (integrates_with)
 - [OpenLayers](../../catalog/repos/openlayers__openlayers.md) (alternative_to)

@@ -43,6 +43,7 @@ Runs cedar-solve (tetra3 API, v0.6.0 on NumPy 2) lost-in-space on 40 real SkyVie
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [JPL DE421 planetary ephemeris (NAIF SPK kernel)](../../catalog/resources/jpl-de421-ephemeris.md) (dataset_for)
 - [NASA SkyView virtual observatory](../../catalog/resources/nasa-skyview-virtual-observatory.md) (dataset_for)

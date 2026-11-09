@@ -27,5 +27,6 @@ Collection of search-based (A*, LPA*, D* Lite, ARA* and others) and sampling-bas
 ## Referenced by
 
 - [python_motion_planning](../../catalog/repos/ai-winter__python_motion_planning.md) (alternative_to)
+- [Close-area sampling planners: RRT* and Informed RRT* against A* on narrow gaps 0.4-1.2 m, in the close-area arena](../../catalog/samples/close-area-planner-sampling.md) (explains)
 
 _Indexed by lane(s): close-area-planning_

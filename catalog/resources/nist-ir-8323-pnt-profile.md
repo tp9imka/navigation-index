@@ -18,6 +18,8 @@ Maps the NIST Cybersecurity Framework onto systems that consume PNT, giving iden
 ## Referenced by
 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
+- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
+- [Threat model: TODO project name](../../templates/threat-model.md) (mentions)
 - [Resilient PNT Conformance Framework](../../catalog/resources/dhs-resilient-pnt-conformance-framework.md) (cites)
 
 _Indexed by lane(s): defense-context_

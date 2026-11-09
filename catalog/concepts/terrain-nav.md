@@ -20,7 +20,7 @@ TERCOM/TRN/DSMAC-style matching of altimetry or imagery against DEM/terrain data
 - [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
 - [07. Kill test for idea C: does a PL-margin safety filter already exist?](../../docs/research/close-area-nav/07-pl-margin-prior-art.md) - Prior-art scan, 2026-11-09 (loop-13).
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) - What a 4-5 person team does from the moment the problem statement drops until H+3, when a walking skeleton should run end to end.
-- [Docs map](../../docs/README.md) - What each page under docs/ is for and the order to read them in.
+- [Docs map](../../docs/README.md) - Use this page when you need to know which page under docs/ answers your question, or the order to read them in.
 
 ## Repositories (33)
 

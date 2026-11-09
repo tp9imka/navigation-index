@@ -31,6 +31,7 @@ Program to field low-SWaP optical atomic clocks with timing holdover beyond GPS 
 - [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
 - [1. PNT fundamentals](../../docs/primer/01-pnt-fundamentals.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
 - [DARPA's ROCkN Program Targets GNSS-Free Precision Timing in Contested Environments](../../catalog/resources/darpa-rockn-insidegnss.md) (explains)
 
 _Indexed by lane(s): docs-standards_

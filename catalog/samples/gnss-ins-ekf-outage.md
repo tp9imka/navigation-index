@@ -43,6 +43,7 @@ A stdlib-only 2D loosely-coupled GNSS/INS EKF (8 states, hand-written matrix hel
 - [02. Deadline-aware scheduling of expensive absolute fixes](../../docs/research/innovation-prior-art/02-deadline-aware-fix-scheduling.md) (mentions)
 - [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](../../docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md) (mentions)
 - [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) (mentions)
+- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
 - [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) (uses)
 
 _Indexed by lane(s): samples_

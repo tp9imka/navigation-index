@@ -40,6 +40,7 @@ A stdlib-only error-state EKF (position, velocity, attitude, accel and gyro bias
 - [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Story bank](../../templates/pitch/story-bank.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [University of Toronto Foot-Mounted Inertial Navigation Dataset](../../catalog/resources/uoft-foot-mounted-ins-dataset.md) (dataset_for)
 

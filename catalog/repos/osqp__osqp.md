@@ -26,6 +26,7 @@ Operator-splitting solver for convex quadratic programs, with embedded C code ge
 ## Referenced by
 
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
+- [Close-area corridor MPC: linear MPC with OSQP in an ESDF half-plane corridor on the arena A*, vs the carrot follower](../../catalog/samples/close-area-planner-mpc.md) (explains)
 
 _Indexed by lane(s): guidance-planning_
 

@@ -18,6 +18,7 @@ Peer-reviewed (IEEE RA-L 8(12):8565-8572, 2023, doi 10.1109/LRA.2023.3330662, co
 
 ## Referenced by
 
+- [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 - [Risk-Aware Robot Control in Dynamic Environments Using Belief Control Barrier Functions](../../catalog/resources/han-vahs-sample-based-bcbf-cdc2025.md) (same_author)
 

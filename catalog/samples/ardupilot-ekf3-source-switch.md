@@ -33,5 +33,6 @@ Flies ArduCopter SITL on GPS, switches EKF3 to an external-nav source set (SITL 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
 
 _Indexed by lane(s): samples_

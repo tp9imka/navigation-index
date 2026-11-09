@@ -37,6 +37,9 @@ Adds terrain-relative navigation as a second absolute source to the real VPAIR f
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [02. Deadline-aware scheduling of expensive absolute fixes](../../docs/research/innovation-prior-art/02-deadline-aware-fix-scheduling.md) (mentions)
+- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
+- [Slides outline](../../templates/pitch/slides-outline.md) (mentions)
+- [Story bank](../../templates/pitch/story-bank.md) (mentions)
 - [Multi-source fault detection and exclusion on one real flight: ARAIM-style subset exclusion across GNSS, visual fixes and two TRNs (VPAIR)](../../catalog/samples/multi-source-fde.md) (uses)
 
 _Indexed by lane(s): samples_

@@ -47,6 +47,7 @@ including the evidence paths, rather than copying status claims into another han
 
 | Sample | Compute | Offline | Dataset MB | Integration | Main limitation |
 |---|---|---|---|---|---|
+| [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../catalog/samples/close-area-arena.md) | cpu | verified | 0 | integrated | Synthetic 2.5D point-mass arena on one M3 Max; setup needs network for PyPI wheels (16.5 s cold, interpreter already present); offline checked for the first command only; no SITL, no real drone, Linux not tested. |
 | [Dismounted foot-mounted INS: stdlib 15-state ZUPT EKF on the real pyshoe hallway data, cross-checked against pyshoe, with corridor heading, UWB and TAK output](../catalog/samples/dismounted-foot-ins.md) | cpu | cache-required | unknown | integrated | Nominal 95 percent radius covered truth at only 31 percent of markers; UWB aiding is simulated. |
 | [End-to-end GNSS-denied visual navigation on one real flight: nadir VO + DINOv2 retrieval + LightGlue fixes + multi-frame voting + altpnt integrity (VPAIR)](../catalog/samples/e2e-visual-nav-vpair.md) | optional-gpu | cache-required | 861.249 | integrated | One flight; map renders share the GNSS/INS reference and the VO error model was fitted on this flight. |
 | [License-clean drone frame to orthophoto geolocalization (ALIKED / DISK / SIFT + LightGlue)](../catalog/samples/geoloc-license-clean.md) | cpu | cache-required | unknown | integrated | Only 1 of 5 real eBee frames fixed; synthetic same-map precision does not describe flight performance. |

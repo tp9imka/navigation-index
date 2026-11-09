@@ -31,5 +31,7 @@ Builds on samples/autopilot-spoof-response (both EKFs believe a coherent GNSS dr
 - [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
+- [Story bank](../../templates/pitch/story-bank.md) (mentions)
 
 _Indexed by lane(s): samples_

@@ -44,6 +44,7 @@ Library of sampling-based motion planners (RRT, RRT*, PRM, BIT*, informed varian
 - [Sampling-based Algorithms for Optimal Motion Planning](../../catalog/resources/karaman-frazzoli-rrtstar-ijrr-2011.md) (has_code)
 - [Probabilistic roadmaps for path planning in high-dimensional configuration spaces](../../catalog/resources/kavraki-prm-1996.md) (has_code)
 - [The Open Motion Planning Library (OMPL) website](../../catalog/resources/ompl-site.md) (explains)
+- [Close-area sampling planners: RRT* and Informed RRT* against A* on narrow gaps 0.4-1.2 m, in the close-area arena](../../catalog/samples/close-area-planner-sampling.md) (explains)
 
 _Indexed by lane(s): planning-gis-c2_
 

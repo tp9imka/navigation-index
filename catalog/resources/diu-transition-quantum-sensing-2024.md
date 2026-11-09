@@ -32,6 +32,7 @@ Coverage of DIU's Transition of Quantum Sensing call seeking quantum inertial se
 - [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
 - [3. Inertial navigation and sensor fusion](../../docs/primer/03-inertial-and-fusion.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
 - [DIU Transition of Quantum Sensing (TQS)](../../catalog/resources/diu-tqs-program.md) (cites)
 
 _Indexed by lane(s): defense-context_

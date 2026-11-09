@@ -27,6 +27,7 @@ Report on DARPA's RoQS program to make quantum sensors robust to platform interf
 - [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
 - [5. Absolute alternative PNT](../../docs/primer/05-absolute-alt-pnt.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
 - [DARPA Robust Quantum Sensors (RoQS) - Phase 1](../../catalog/resources/darpa-roqs-program.md) (cites)
 
 _Indexed by lane(s): defense-context_

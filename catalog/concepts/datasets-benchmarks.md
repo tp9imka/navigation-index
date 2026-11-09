@@ -4,11 +4,12 @@
 
 Public datasets, evaluation tools, leaderboards for navigation and localization.
 
-## Samples (11)
+## Samples (12)
 
 - [AprilTag goal B: detection envelope vs range and view angle, and a tag-relative final approach](../../catalog/samples/fiducial-goal-apriltag.md) - Renders a tag36h11 AprilTag (0.16 m, also 0.40 m) onto a textured wall with a 640 x 480 pinhole camera (fx = fy = 500 px, no distortion) at known poses, with Gaussian blur and noise, detects it with pupil-apriltags, and 
 - [C-UAS classifiers on public data: radar tracks (UAV vs bird) and DroneRF spectra](../../catalog/samples/cuas-classifiers.md) - Two defensive drone-detection baselines on openly licensed recordings.
 - [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md) - Small deterministic simulator that every close-area A=>B approach in the hub is compared in.
+- [Close-area sampling planners: RRT* and Informed RRT* against A* on narrow gaps 0.4-1.2 m, in the close-area arena](../../catalog/samples/close-area-planner-sampling.md) - Own numpy RRT* (rewiring with subtree cost update, goal bias 5 %, step 1.0 m, rewire radius from the RRT* bound capped at 2.0 m) with an Informed RRT* mode (ellipse sampling after the first solution), planning on the are
 - [Cooperative localization on real UWB: MILUV drones through the swarm-coop filters](../../catalog/samples/swarm-coop-real-uwb.md) - Runs the unmodified filters of swarm-coop-localization (dead reckoning, centralized EKF, naive decentralized, covariance intersection; plain vs robust ranging; gate / vote / solution-separation integrity) on real two-way
 - [Dismounted foot-mounted INS: stdlib 15-state ZUPT EKF on the real pyshoe hallway data, cross-checked against pyshoe, with corridor heading, UWB and TAK output](../../catalog/samples/dismounted-foot-ins.md) - A stdlib-only error-state EKF (position, velocity, attitude, accel and gyro bias) with SHOE, ARED, AMVD and MBGTD stance detectors, run on all 36 real foot-mounted IMU trials of the UTIAS pyshoe hallway dataset (214.6 m 
 - [MagNav.jl quickstart: Tolles-Lawson and EKF on the SGL 2020 flight](../../catalog/samples/magnav-quickstart.md) - A Julia walkthrough with MagNav.jl that downloads the public SGL 2020 challenge flight and Ottawa anomaly maps, compensates the scalar magnetometer with Tolles-Lawson on a calibration box, and runs the MagNav EKF against
@@ -18,7 +19,7 @@ Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [Shared pose recording and replay: JSONL plus optional MCAP](../../catalog/samples/recording-replay.md) - A deterministic synthetic local-ENU pose stream replayed through JSONL and optional MCAP with an embedded schema.
 - [UGV GNSS outage on a real log: wheel odometry + IMU, innovation gate, drag detector](../../catalog/samples/ugv-gnss-outage-real.md) - Stdlib-only ground-vehicle loop on a real NCLT Segway session (2013-01-10, 1022 s, 1139 m, 42 MB download): consumer GPS at 1 Hz fused with MEMS strapdown INS (the 8-state EKF of gnss-ins-ekf-outage, imported), wheel spe
 
-## Guides (15)
+## Guides (21)
 
 - [08. Crazyflie sensing limits: what the planner and safety filter can rely on](../../docs/research/close-area-nav/08-crazyflie-sensing-limits.md) - Research note, 2026-11-09 (loop-23).
 - [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) - Loop-24, 2026-11-09.
@@ -26,11 +27,17 @@ Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) - After this chapter you can pick a dataset or simulator that matches your scenario, compute the trajectory metrics judges and reviewers expect, and design a GNSS-outage or interference test that shows what your system doe
 - [Choose a stack you can run](../../docs/practical-readiness.md) - Start with the problem decoder, then narrow the candidates by the resources in the room.
 - [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) - Research round for EDGE hackathon Challenge 2, 2026-11-09, after new information that the task is likely "move a drone from A to B in a close area, potentially with obstacles".
+- [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) - Fill this on Day 2 when the task is "fly a drone from A to B in a close area, with obstacles".
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) - What a 4-5 person team does from the moment the problem statement drops until H+3, when a walking skeleton should run end to end.
+- [Demo dashboard](../../templates/demo-dashboard/README.md) - Use this when a GNSS / PNT run with lat / lon tracks needs a judge-facing map replay.
 - [Differentiators scan: what to bring besides satellite matching](../../docs/differentiators-scan.md) - Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (details drop 2026-11-18).
-- [Docs map](../../docs/README.md) - What each page under docs/ is for and the order to read them in.
+- [Docs map](../../docs/README.md) - Use this page when you need to know which page under docs/ answers your question, or the order to read them in.
+- [drivers: Adapter implementations for real platforms](../../templates/drone-adapter/drivers/README.md) - Use this when you need to send velocity setpoints to PX4 (MAVSDK Offboard), ArduPilot (GUIDED, pymavlink), a Crazyflie (cflib) or a Tello (djitellopy), or read pose and ranges from them, behind the pose() / ranges() / se
 - [Evidence matrix](../../docs/evidence-matrix.md) - Recording/replay plumbing: recording-replay ran on 2026-11-07 with 101 synthetic poses over 10 s.
+- [flight-repo: close-area A=>B flight loop starter](../../templates/flight-repo/README.md) - Use this when the task is "fly from A to B in a close area, maybe with obstacles": clone it at H+0 as the team repo.
+- [Hackathon kit templates](../../templates/README.md) - Use this when you need a file to copy for the hackathon itself: a repo skeleton, a platform driver, a demo script, a pitch, a plan or a checklist.
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) - For a team going into a navigation-themed hackathon that may have a military or defense track.
+- [Offline kit](../../templates/offline-kit/README.md) - Use this when you prepare laptops in the week or night before the event, or share a cache with teammates at the venue.
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) - Plausible problem statements for a navigation / PNT / GNSS-denied hackathon, each mapped to a recommended approach, a stack (integration cards first, catalog pages otherwise), datasets, a sample or template to start from
 - [Three selective offline starter bundles](../../docs/starter-bundles.md) - Pick a bundle before downloading the broad offline kit.
 - [Upstream findings](../../docs/upstream-findings.md) - Defects and gaps that the hub's samples found in other people's code and data, with what a maintainer needs to act on them.

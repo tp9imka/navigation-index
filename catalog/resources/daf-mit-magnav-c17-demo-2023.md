@@ -31,5 +31,6 @@ In May 2023 the Air Force and MIT flew a real-time MagNav demo on a C-17A during
 - [Programs, challenges and hackathons (2023-2026)](../../docs/landscape/programs-and-challenges.md) (mentions)
 - [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
 
 _Indexed by lane(s): landscape_

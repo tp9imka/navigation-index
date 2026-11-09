@@ -33,6 +33,7 @@ A Docker (arm64/amd64) testbed that never transmits: gps-sdr-sim synthesizes GPS
 - [Day-0 runbook: the first 3 hours](../../docs/day0-runbook.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Story bank](../../templates/pitch/story-bank.md) (mentions)
 - [IGS daily merged broadcast navigation files (BKG mirror)](../../catalog/resources/igs-bkg-brdc-broadcast-ephemeris.md) (dataset_for)
 - [GNSS interference monitor from u-blox telemetry and ADS-B NACp](../../catalog/samples/gnss-interference-monitor.md) (explains)
 - [Galileo OSNMA authentication as a spoofing defence: real recording, file-level attacks, scorer adapter](../../catalog/samples/osnma-authentication.md) (explains)

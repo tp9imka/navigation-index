@@ -33,6 +33,8 @@ Single-file tile archive format and tooling, served by HTTP range requests from 
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Demo dashboard](../../templates/demo-dashboard/README.md) (mentions)
+- [Offline kit](../../templates/offline-kit/README.md) (mentions)
 - [MapLibre GL JS](../../catalog/repos/maplibre__maplibre-gl-js.md) (integrates_with)
 - [Martin](../../catalog/repos/maplibre__martin.md) (integrates_with)
 - [Planetiler](../../catalog/repos/onthegomap__planetiler.md) (integrates_with)

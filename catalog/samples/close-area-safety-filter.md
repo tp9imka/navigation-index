@@ -22,4 +22,9 @@ Harness that puts a safety filter between a planner and the vehicle in the share
 
 - explains: [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md)
 
+## Referenced by
+
+- [Demo script: close-area A to B](../../templates/demo-script-close-area.md) (mentions)
+- [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) (mentions)
+
 _Indexed by lane(s): samples_

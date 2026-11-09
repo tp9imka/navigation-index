@@ -19,5 +19,6 @@ Adopts the European version of JARUS SORA 2.5 as AMC1 to Article 11 of the EU dr
 ## Referenced by
 
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
+- [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) (mentions)
 
 _Indexed by lane(s): flight-embedded_

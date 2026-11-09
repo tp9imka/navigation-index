@@ -29,6 +29,7 @@ November 2025 UK announcement of about GBP 155M for a national timing centre, a 
 - [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) (mentions)
+- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
 - [Timing resilience: the T in PNT](../../docs/timing-resilience.md) (mentions)
 - [Enhanced Loran (eLoran) Definition Document](../../catalog/resources/ila-eloran-definition-document-2007.md) (explains)
 - [Chronos Technology Tests eLoran Timing Provision in the UK](../../catalog/resources/insidegnss-chronos-eloran-utd-2025.md) (explains)

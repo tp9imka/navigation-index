@@ -23,6 +23,7 @@ AIAA SciTech 2021 paper by members of the F3269 working group explaining the RTA
 ## Referenced by
 
 - [Path to product: from a nav algorithm to something that flies](../../docs/path-to-product.md) (mentions)
+- [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) (mentions)
 - [ASTM F3269-21: Standard Practice for Methods to Safely Bound Behavior of Aircraft Systems Containing Complex Functions Using Run-Time Assurance](../../catalog/resources/astm-f3269-21-rta.md) (explains)
 
 _Indexed by lane(s): flight-embedded_

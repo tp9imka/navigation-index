@@ -38,5 +38,7 @@ Auterion sells PX4-derived AuterionOS plus Skynode flight/mission computers. Sky
 - [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
 - [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
 - [Docs map](../../docs/README.md) (mentions)
+- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
+- [Story bank](../../templates/pitch/story-bank.md) (mentions)
 
 _Indexed by lane(s): landscape_

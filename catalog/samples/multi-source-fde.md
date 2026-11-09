@@ -37,5 +37,7 @@ Extends two-source-integrity-vpair from detection to exclusion. One altpnt v2 EK
 - [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) (mentions)
 - [07. Kill test for idea C: does a PL-margin safety filter already exist?](../../docs/research/close-area-nav/07-pl-margin-prior-art.md) (mentions)
 - [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) (mentions)
+- [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) (mentions)
+- [Story bank](../../templates/pitch/story-bank.md) (mentions)
 
 _Indexed by lane(s): samples_

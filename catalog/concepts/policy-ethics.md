@@ -4,9 +4,10 @@
 
 ITAR/EAR, dual-use rules, PNT policy, responsible military AI.
 
-## Guides (1)
+## Guides (2)
 
 - [Export control and ethics](../../docs/export-control-and-ethics.md) - Not legal advice.
+- [Threat model: TODO project name](../../templates/threat-model.md) - Fill at H+0 to H+2, freeze at H+14.
 
 ## Documents, talks, courses, datasets (44)
 

@@ -42,5 +42,7 @@ End-to-end stdlib pipeline for the 'cheap receivers detect and localize a GNSS j
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Reference stacks: if you only have X, use Y](../../docs/reference-stacks.md) (mentions)
+- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
+- [Story bank](../../templates/pitch/story-bank.md) (mentions)
 
 _Indexed by lane(s): samples_

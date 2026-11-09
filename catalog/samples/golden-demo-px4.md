@@ -33,6 +33,9 @@ The samples/golden-demo v2 scenario on PX4 v1.17.0 SIH in Docker. A pymavlink co
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) (mentions)
 - [Hackathon playbook: navigation and PNT under GNSS denial](../../docs/hackathon-playbook.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
+- [Slides outline](../../templates/pitch/slides-outline.md) (mentions)
+- [Story bank](../../templates/pitch/story-bank.md) (mentions)
 - [Upstream findings](../../docs/upstream-findings.md) (mentions)
 
 _Indexed by lane(s): samples_

@@ -34,5 +34,6 @@ HGuide o480 (May 2025) is a single-card INS for small UAVs and ground robots tha
 - [GNSS-denied navigation: products and companies](../../docs/landscape/gnss-denied-nav-products.md) (mentions)
 - [Landscape: what judges already know](../../docs/landscape/README.md) (mentions)
 - [Navigation trends 2025-2026](../../docs/landscape/trends-2025-2026.md) (mentions)
+- [Story bank](../../templates/pitch/story-bank.md) (mentions)
 
 _Indexed by lane(s): landscape_

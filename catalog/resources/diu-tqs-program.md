@@ -36,5 +36,6 @@ DIU programme fielding quantum sensors for PNT: lines of effort cover quantum in
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Docs map](../../docs/README.md) (mentions)
 - [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) (mentions)
+- [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
 
 _Indexed by lane(s): landscape_
