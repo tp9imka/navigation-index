@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 48 | HTML | ? | 2026-08-31 | False | active-research | medium |
+| 48 | HTML | ? | 2026-11-06 | False | active-research | medium |
 
 Documentation hub for WarDragon, an SDR-based RF sensing appliance for drone detection; open components are documented here, while commercial kits add closed features.
 
@@ -30,4 +30,4 @@ Documentation hub for WarDragon, an SDR-based RF sensing appliance for drone det
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

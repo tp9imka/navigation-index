@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 1,704 | C++ | BSD-3-Clause | 2025-04-24 | False | research-prototype | medium |
+| 1,705 | C++ | BSD-3-Clause | 2025-04-24 | False | research-prototype | medium |
 
 Collection of fast GICP and VGICP point-cloud registration implementations, multithreaded and CUDA.
 
@@ -30,4 +30,4 @@ Collection of fast GICP and VGICP point-cloud registration implementations, mult
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

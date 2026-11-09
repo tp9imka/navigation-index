@@ -29,4 +29,4 @@ Esri data encapsulation of MIL-STD-2525D and APP-6(D) symbology: symbol IDs, ent
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

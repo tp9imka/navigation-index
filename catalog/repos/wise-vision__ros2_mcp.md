@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 98 | Python | MPL-2.0 | 2026-10-21 | False | active-research | medium |
+| 99 | Python | MPL-2.0 | 2026-10-21 | False | active-research | medium |
 
 MCP server that lets AI agents discover and operate ROS 2 robots: topic echo/publish, services, actions and introspection, implemented natively in ROS 2 rather than through rosbridge.
 
@@ -30,4 +30,4 @@ MCP server that lets AI agents discover and operate ROS 2 robots: topic echo/pub
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -24,4 +24,4 @@ Event-based multi-view stereo: semi-dense 3D reconstruction from a moving event 
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

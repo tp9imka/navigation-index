@@ -29,4 +29,4 @@ ROS 1 driver publishing Water Linked DVL A50 velocity and beam data as ROS messa
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

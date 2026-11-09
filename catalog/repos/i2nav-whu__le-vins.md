@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 199 | C++ | GPL-3.0 | 2026-06-25 | False | active-research | low |
+| 200 | C++ | GPL-3.0 | 2026-06-25 | False | active-research | low |
 
 INS-centric visual-inertial navigation with LiDAR depth enhancement for visual features, from i2Nav.
 
@@ -28,4 +28,4 @@ INS-centric visual-inertial navigation with LiDAR depth enhancement for visual f
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

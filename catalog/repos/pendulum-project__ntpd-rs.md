@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 1,156 | Rust | NOASSERTION | 2026-11-05 | False | production | medium |
+| 1,157 | Rust | NOASSERTION | 2026-11-06 | False | production | medium |
 
 A memory-safe NTP client and server in Rust with NTS support, from the Pendulum project (Trifecta Tech Foundation).
 
@@ -36,4 +36,4 @@ A memory-safe NTP client and server in Rust with NTS support, from the Pendulum 
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

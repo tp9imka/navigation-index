@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 391 | Python | GPL-3.0 | 2026-11-05 | False | active-research | high |
+| 392 | Python | GPL-3.0 | 2026-11-07 | False | active-research | high |
 
 Actively developed open-source TAK server for ATAK, iTAK and WinTAK with web UI, video streaming integration, Meshtastic support and certificate enrollment.
 
@@ -48,4 +48,4 @@ Actively developed open-source TAK server for ATAK, iTAK and WinTAK with web UI,
 
 _Indexed by lane(s): defense-context, planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 98 | C++ | ? | 2026-10-28 | False | production | low |
+| 98 | C++ | ? | 2026-11-07 | False | production | low |
 
 Web-accessible shortwave SDR receiver (10 kHz - 30 MHz) with built-in software GPS and a Loran-C/eLoran monitor extension.
 
@@ -24,4 +24,4 @@ Web-accessible shortwave SDR receiver (10 kHz - 30 MHz) with built-in software G
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

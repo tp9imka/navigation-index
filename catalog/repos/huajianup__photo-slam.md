@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 781 | C++ | GPL-3.0 | 2024-06-12 | False | research-prototype | low |
+| 782 | C++ | GPL-3.0 | 2024-06-12 | False | research-prototype | low |
 
 Couples ORB-SLAM3-style geometric tracking with a photorealistic Gaussian map for monocular, stereo and RGB-D cameras (CVPR 2024).
 
@@ -29,4 +29,4 @@ Couples ORB-SLAM3-style geometric tracking with a photorealistic Gaussian map fo
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

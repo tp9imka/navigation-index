@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 454 | C++ | MIT | 2026-10-07 | False | active-research | medium |
+| 455 | C++ | MIT | 2026-10-07 | False | active-research | medium |
 
 Loop-closure detection using bird's-eye-view density images of local LiDAR maps.
 
@@ -29,4 +29,4 @@ Loop-closure detection using bird's-eye-view density images of local LiDAR maps.
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

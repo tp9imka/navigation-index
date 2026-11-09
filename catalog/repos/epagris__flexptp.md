@@ -24,4 +24,4 @@ PTP (IEEE 1588, also 802.1AS) for Cortex-M4/M7 microcontrollers: master and slav
 
 _Indexed by lane(s): timing-network_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

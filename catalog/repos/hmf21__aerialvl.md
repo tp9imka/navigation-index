@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 89 | Python | MIT | 2026-06-23 | False | active-research | medium |
+| 90 | Python | MIT | 2026-06-23 | False | active-research | medium |
 
 Visual geo-localization dataset and code designed for aerial vehicles.
 
@@ -29,4 +29,4 @@ Visual geo-localization dataset and code designed for aerial vehicles.
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

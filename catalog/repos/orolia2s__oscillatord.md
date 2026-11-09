@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 25 | C | GPL-2.0 | 2026-06-23 | False | production | low |
+| 26 | C | GPL-2.0 | 2026-06-23 | False | production | low |
 
 Daemon that disciplines the oscillator on the Orolia (Safran) Atomic Reference Time Card from a PPS reference and exposes monitoring.
 
@@ -31,4 +31,4 @@ Daemon that disciplines the oscillator on the Orolia (Safran) Atomic Reference T
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

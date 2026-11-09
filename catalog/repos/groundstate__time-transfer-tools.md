@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 10 | MATLAB | MIT | 2025-11-13 | False | research-prototype | low |
+| 11 | MATLAB | MIT | 2025-11-13 | False | research-prototype | low |
 
 MATLAB classes to read CGGTTS (V1, V2E) and RINEX 2/3 observation files, match observations between two stations and compute averaged differences - the GNSS common-view time transfer workflow.
 
@@ -24,4 +24,4 @@ MATLAB classes to read CGGTTS (V1, V2E) and RINEX 2/3 observation files, match o
 
 _Indexed by lane(s): timing-network_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

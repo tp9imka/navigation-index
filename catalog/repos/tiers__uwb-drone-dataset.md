@@ -30,4 +30,4 @@ Dataset, ROS nodes and DWM1001 firmware from the IROS 2020 paper on UWB localiza
 
 _Indexed by lane(s): backlog_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

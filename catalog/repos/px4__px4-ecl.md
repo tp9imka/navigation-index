@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 544 | C++ | BSD-3-Clause | 2024-05-01 | True | archived | low |
+| 545 | C++ | BSD-3-Clause | 2024-05-01 | True | archived | low |
 
 Former home of PX4's estimation and control library including the EKF2 navigation filter; archived after the code moved into PX4-Autopilot.
 
@@ -32,4 +32,4 @@ Former home of PX4's estimation and control library including the EKF2 navigatio
 
 _Indexed by lane(s): autopilots, ins-fusion_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

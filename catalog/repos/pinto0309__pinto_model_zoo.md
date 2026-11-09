@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 4,635 | Python | MIT | 2026-10-24 | False | production | medium |
+| 4,636 | Python | MIT | 2026-10-24 | False | production | medium |
 
 Large collection of models converted between TensorFlow, TFLite, ONNX, OpenVINO, TensorRT and others.
 
@@ -28,4 +28,4 @@ Large collection of models converted between TensorFlow, TFLite, ONNX, OpenVINO,
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 362 | C++ | MIT | 2026-11-04 | False | production | medium |
+| 364 | C++ | MIT | 2026-11-04 | False | production | medium |
 
 ROS 1/2 driver for Luxonis OAK cameras publishing depth, detections and IMU.
 
@@ -28,4 +28,4 @@ ROS 1/2 driver for Luxonis OAK cameras publishing depth, detections and IMU.
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

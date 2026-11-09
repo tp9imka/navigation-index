@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 326 | C++ | Apache-2.0 | 2025-03-27 | False | research-prototype | medium |
+| 327 | C++ | Apache-2.0 | 2025-03-27 | False | research-prototype | medium |
 
 Distributed collaborative lidar SLAM for robotic swarms with lightweight LiDAR-Iris descriptors for inter-robot place recognition and minimal data exchange.
 
@@ -31,4 +31,4 @@ Distributed collaborative lidar SLAM for robotic swarms with lightweight LiDAR-I
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

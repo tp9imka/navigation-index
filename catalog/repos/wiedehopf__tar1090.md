@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 1,955 | JavaScript | NOASSERTION | 2026-10-26 | False | production | medium |
+| 1,962 | JavaScript | NOASSERTION | 2026-10-26 | False | production | medium |
 
 Improved web interface for readsb/dump1090 with track history, filtering and overlays.
 
@@ -30,4 +30,4 @@ Improved web interface for readsb/dump1090 with track history, filtering and ove
 
 _Indexed by lane(s): defense-context, planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

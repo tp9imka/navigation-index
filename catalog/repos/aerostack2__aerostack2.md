@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 406 | C++ | BSD-3-Clause | 2026-11-05 | False | active-research | medium |
+| 407 | C++ | BSD-3-Clause | 2026-11-06 | False | active-research | medium |
 
 ROS 2 framework for autonomous single and multi-aerial-robot systems with behaviours, state estimation plugins and platform adapters (Gazebo and a multirotor simulator in this repo; PX4, Crazyflie and DJI adapters in separate as2_platform_* repos).
 
@@ -43,4 +43,4 @@ ROS 2 framework for autonomous single and multi-aerial-robot systems with behavi
 
 _Indexed by lane(s): autopilots, domains-swarm, planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -32,4 +32,4 @@ Maintained derivative of GPS-SDR-SIM that streams GPS L1 baseband on the fly to 
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

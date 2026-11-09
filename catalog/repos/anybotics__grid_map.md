@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 3,269 | C++ | BSD-3-Clause | 2026-01-13 | False | production | high |
+| 3,270 | C++ | BSD-3-Clause | 2026-01-13 | False | production | high |
 
 C++ library and ROS integration for multi-layer 2.5D grid maps, widely used for elevation and traversability mapping.
 
@@ -37,4 +37,4 @@ C++ library and ROS integration for multi-layer 2.5D grid maps, widely used for 
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

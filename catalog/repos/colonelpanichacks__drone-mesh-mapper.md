@@ -35,4 +35,4 @@ ESP32 firmware and a Python/Flask mapper that capture Remote ID broadcasts over 
 
 _Indexed by lane(s): defense-context_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

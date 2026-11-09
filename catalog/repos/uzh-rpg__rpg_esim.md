@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 740 | C | MIT | 2023-12-25 | False | research-prototype | low |
+| 743 | C | MIT | 2023-12-25 | False | research-prototype | low |
 
 Event camera simulator from UZH RPG that renders event streams from simulated scenes.
 
@@ -25,4 +25,4 @@ Event camera simulator from UZH RPG that renders event streams from simulated sc
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

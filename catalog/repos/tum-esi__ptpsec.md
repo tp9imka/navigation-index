@@ -33,4 +33,4 @@ Research implementation, based on linuxptp 3.1.1, that detects and mitigates PTP
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

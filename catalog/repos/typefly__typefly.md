@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 118 | Python | Apache-2.0 | 2026-07-08 | False | research-prototype | high |
+| 119 | Python | Apache-2.0 | 2026-07-08 | False | research-prototype | high |
 
 LLM-based robot control framework: an OpenAI model turns a natural-language request plus a YOLO scene description into a short Python plan built from the robot's registered skills, which is then executed. Ships wrappers for a virtual webcam robot, DJI Tello, Unitree Go2 and Petoi.
 
@@ -34,4 +34,4 @@ LLM-based robot control framework: an OpenAI model turns a natural-language requ
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

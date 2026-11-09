@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 1,807 | C++ | Apache-2.0 | 2026-11-06 | False | production | medium |
+| 1,811 | C++ | Apache-2.0 | 2026-11-09 | False | production | medium |
 
 The broad package collection of Autoware with experimental and production-candidate modules, including localization add-ons such as YabLoc, landmark-based localizers and the pose estimator arbiter.
 
@@ -28,4 +28,4 @@ The broad package collection of Autoware with experimental and production-candid
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 754 | C++ | BSD-3-Clause | 2024-04-10 | True | archived | low |
+| 753 | C++ | BSD-3-Clause | 2024-04-10 | True | archived | low |
 
 Archived ROS nodes for local planning, global planning and safe landing using depth sensors with PX4.
 
@@ -24,4 +24,4 @@ Archived ROS nodes for local planning, global planning and safe landing using de
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

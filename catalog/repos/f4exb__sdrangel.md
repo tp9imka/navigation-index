@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 4,155 | C++ | GPL-3.0 | 2026-11-05 | False | production | medium |
+| 4,158 | C++ | GPL-3.0 | 2026-11-08 | False | production | medium |
 
 General SDR receive/transmit application with many demodulator plugins; its Radio Clock plugin decodes LF time broadcasts including MSF, DCF77, TDF, WWVB, JJY and RBU.
 
@@ -30,4 +30,4 @@ General SDR receive/transmit application with many demodulator plugins; its Radi
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

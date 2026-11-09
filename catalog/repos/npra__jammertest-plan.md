@@ -42,4 +42,4 @@ Official test catalog and plan for Jammertest, Norway's annual live GNSS jamming
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

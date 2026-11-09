@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 6,071 | C++ | GPL-3.0 | 2024-08-14 | False | research-prototype | medium |
+| 6,070 | C++ | GPL-3.0 | 2024-08-14 | False | research-prototype | medium |
 
 Optimization-based monocular visual-inertial estimator with sliding-window bundle adjustment, online initialization, loop closure and pose-graph reuse.
 
@@ -34,4 +34,4 @@ Optimization-based monocular visual-inertial estimator with sliding-window bundl
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

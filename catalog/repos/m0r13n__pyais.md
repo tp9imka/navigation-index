@@ -44,4 +44,4 @@ Python library for decoding and encoding AIS NMEA sentences (AIVDM/AIVDO), inclu
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 45,861 | JavaScript | BSD-2-Clause | 2026-11-05 | False | production | high |
+| 45,893 | JavaScript | BSD-2-Clause | 2026-11-08 | False | production | high |
 
 Small, simple JavaScript library for interactive raster/vector maps with a huge plugin ecosystem.
 
@@ -37,4 +37,4 @@ Small, simple JavaScript library for interactive raster/vector maps with a huge 
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

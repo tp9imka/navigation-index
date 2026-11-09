@@ -32,4 +32,4 @@ PyTorch implementation of a cross-view geo-localization method that pools featur
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

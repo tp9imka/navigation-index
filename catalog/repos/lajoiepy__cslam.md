@@ -33,4 +33,4 @@ ROS 2 decentralized collaborative SLAM supporting LiDAR, stereo and RGB-D, with 
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 2,722 | Python | BSD-3-Clause | 2025-05-05 | False | research-prototype | medium |
+| 2,725 | Python | BSD-3-Clause | 2025-05-05 | False | research-prototype | medium |
 
 Deep visual SLAM that iterates dense bundle adjustment through a recurrent update operator, for monocular, stereo and RGB-D input.
 
@@ -32,4 +32,4 @@ Deep visual SLAM that iterates dense bundle adjustment through a recurrent updat
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

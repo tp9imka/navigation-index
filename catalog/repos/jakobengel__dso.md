@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 2,462 | C++ | GPL-3.0 | 2024-02-23 | False | research-prototype | low |
+| 2,461 | C++ | GPL-3.0 | 2024-02-23 | False | research-prototype | low |
 
 Direct monocular visual odometry that optimizes photometric error over a sparse set of pixels with joint photometric calibration.
 
@@ -28,4 +28,4 @@ Direct monocular visual odometry that optimizes photometric error over a sparse 
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

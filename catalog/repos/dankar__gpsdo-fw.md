@@ -29,4 +29,4 @@ Replacement firmware for a widely sold BH3SAP GPSDO module, with menus for PPB t
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

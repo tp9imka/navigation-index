@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 98 | Python | ? | 2026-08-03 | False | production | medium |
+| 99 | Python | ? | 2026-08-03 | False | production | medium |
 
 Python clients for KiwiSDR receivers, including recorders that save IQ with GNSS timestamps from the receiver.
 
@@ -28,4 +28,4 @@ Python clients for KiwiSDR receivers, including recorders that save IQ with GNSS
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

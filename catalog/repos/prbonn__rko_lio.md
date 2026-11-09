@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 687 | C++ | MIT | 2026-10-18 | False | active-research | high |
+| 688 | C++ | MIT | 2026-10-18 | False | active-research | high |
 
 LiDAR-inertial odometry aiming to work without sensor-specific modelling or heavy tuning.
 
@@ -30,4 +30,4 @@ LiDAR-inertial odometry aiming to work without sensor-specific modelling or heav
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

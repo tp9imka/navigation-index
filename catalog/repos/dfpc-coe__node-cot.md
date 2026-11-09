@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 40 | TypeScript | MIT | 2026-10-22 | False | production | high |
+| 40 | TypeScript | MIT | 2026-11-08 | False | production | high |
 
 JavaScript/TypeScript library for parsing, building and converting Cursor-on-Target messages, including GeoJSON conversion and TAK protobuf.
 
@@ -37,4 +37,4 @@ JavaScript/TypeScript library for parsing, building and converting Cursor-on-Tar
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

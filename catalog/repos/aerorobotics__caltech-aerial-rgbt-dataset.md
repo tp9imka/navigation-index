@@ -29,4 +29,4 @@ Aerial RGB plus thermal dataset from natural terrain (rivers, coasts, deserts, f
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -30,4 +30,4 @@ A cleaner reimplementation of the WildNav idea: match UAV images to satellite ti
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

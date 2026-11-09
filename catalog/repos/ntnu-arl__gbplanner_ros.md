@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 880 | C++ | BSD-3-Clause | 2026-10-13 | False | active-research | medium |
+| 881 | C++ | BSD-3-Clause | 2026-10-13 | False | active-research | medium |
 
 Graph-based exploration planner from NTNU ARL; the main branch is now OmniPlanner (GBPlanner 3.0) for aerial, ground and underwater robots, and GBPlanner 2.0, the planning core of Team CERBERUS, winner of the DARPA SubT final, is kept on the gbplanner2 branch.
 
@@ -35,4 +35,4 @@ Graph-based exploration planner from NTNU ARL; the main branch is now OmniPlanne
 
 _Indexed by lane(s): defense-context, planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

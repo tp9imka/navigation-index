@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 2,369 | C++ | MIT | 2026-06-09 | False | production | high |
+| 2,373 | C++ | MIT | 2026-06-09 | False | production | high |
 
 Minimal LiDAR odometry based on point-to-point ICP with adaptive thresholding, working across sensors with few parameters.
 
@@ -46,4 +46,4 @@ Minimal LiDAR odometry based on point-to-point ICP with adaptive thresholding, w
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

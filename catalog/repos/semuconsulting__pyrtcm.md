@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 116 | Python | BSD-3-Clause | 2026-10-19 | False | production | high |
+| 116 | Python | BSD-3-Clause | 2026-11-06 | False | production | high |
 
 Python parser for RTCM 3 messages (MSM observations, station info, ephemerides, SSR).
 
@@ -37,4 +37,4 @@ Python parser for RTCM 3 messages (MSM observations, station info, ephemerides, 
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

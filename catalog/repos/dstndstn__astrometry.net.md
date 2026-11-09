@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 876 | C | NOASSERTION | 2026-10-22 | False | production | medium |
+| 876 | C | NOASSERTION | 2026-11-07 | False | production | medium |
 
 Blind astrometric solver that identifies star fields in arbitrary images and returns the precise sky pointing, using geometric hash indexes of star catalogs.
 
@@ -28,4 +28,4 @@ Blind astrometric solver that identifies star fields in arbitrary images and ret
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

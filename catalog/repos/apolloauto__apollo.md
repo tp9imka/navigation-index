@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 26,893 | C++ | Apache-2.0 | 2026-04-16 | False | production | low |
+| 26,894 | C++ | Apache-2.0 | 2026-04-16 | False | production | low |
 
 Baidu's open autonomous driving platform, including the multi-sensor fusion localization module combining GNSS RTK, IMU and lidar map matching.
 
@@ -28,4 +28,4 @@ Baidu's open autonomous driving platform, including the multi-sensor fusion loca
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

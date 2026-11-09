@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 1,654 | C++ | GPL-2.0 | 2026-09-04 | False | research-prototype | medium |
+| 1,655 | C++ | GPL-2.0 | 2026-09-04 | False | research-prototype | medium |
 
 Lightweight tightly coupled LiDAR-inertial odometry using parallel sparse incremental voxels instead of a k-d tree.
 
@@ -28,4 +28,4 @@ Lightweight tightly coupled LiDAR-inertial odometry using parallel sparse increm
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

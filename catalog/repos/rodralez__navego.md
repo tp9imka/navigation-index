@@ -32,4 +32,4 @@ Open MATLAB/GNU Octave toolbox for simulating and processing integrated INS/GNSS
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

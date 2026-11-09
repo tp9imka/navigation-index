@@ -30,4 +30,4 @@ Python implementation of SO2, SE2, SO3 and SE3 matrix Lie groups with numpy and 
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

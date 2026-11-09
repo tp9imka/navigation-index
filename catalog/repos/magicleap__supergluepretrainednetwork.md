@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 4,104 | Python | NOASSERTION | 2024-08-30 | False | archived | medium |
+| 4,105 | Python | NOASSERTION | 2024-08-30 | False | archived | medium |
 
 Pretrained SuperGlue graph-neural-network matcher with SuperPoint features (CVPR 2020).
 
@@ -35,4 +35,4 @@ Pretrained SuperGlue graph-neural-network matcher with SuperPoint features (CVPR
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

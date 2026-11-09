@@ -34,4 +34,4 @@ Unofficial Ukrainian translation of key sections of the ArduPilot Copter documen
 
 _Indexed by lane(s): ua-ru-sources_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

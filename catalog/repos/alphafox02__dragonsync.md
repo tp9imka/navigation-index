@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 99 | Python | Apache-2.0 | 2026-10-28 | False | active-research | high |
+| 99 | Python | Apache-2.0 | 2026-11-06 | False | active-research | high |
 
 Gateway that takes drone Remote ID / DroneID detections from WarDragon-style sensors and publishes them as CoT to TAK and other outputs.
 
@@ -41,4 +41,4 @@ Gateway that takes drone Remote ID / DroneID detections from WarDragon-style sen
 
 _Indexed by lane(s): defense-context, domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

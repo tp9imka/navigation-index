@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 680 | Go | Apache-2.0 | 2026-11-02 | False | production | medium |
+| 685 | Go | Apache-2.0 | 2026-11-06 | False | production | medium |
 
 Meta's Go libraries and tools for NTP and PTP: protocol implementations, PTP hardware clock and timestamping helpers, a PTP server (ptp4u), the simple-PTP client sptp, ptpcheck/ntpcheck diagnostics, a Calnex API client, leap-second utilities and the oscillatord monitoring protocol. Formerly facebook/time.
 
@@ -34,4 +34,4 @@ Meta's Go libraries and tools for NTP and PTP: protocol implementations, PTP har
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

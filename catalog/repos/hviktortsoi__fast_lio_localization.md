@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 1,080 | C++ | GPL-2.0 | 2023-05-20 | False | research-prototype | high |
+| 1,079 | C++ | GPL-2.0 | 2023-05-20 | False | research-prototype | high |
 
 Relocalization in a prebuilt map using FAST-LIO odometry plus global scan-to-map registration.
 
@@ -33,4 +33,4 @@ Relocalization in a prebuilt map using FAST-LIO odometry plus global scan-to-map
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

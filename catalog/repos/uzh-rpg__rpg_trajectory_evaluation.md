@@ -32,4 +32,4 @@ Toolbox for quantitative trajectory evaluation of VO/VIO, implementing the align
 
 _Indexed by lane(s): sim-data, slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

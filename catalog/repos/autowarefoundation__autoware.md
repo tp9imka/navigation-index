@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 12,220 | Dockerfile | Apache-2.0 | 2026-11-04 | False | production | medium |
+| 12,228 | Dockerfile | Apache-2.0 | 2026-11-08 | False | production | medium |
 
 Meta-repository for Autoware, the open-source ROS 2 autonomous driving stack covering localization (NDT, EKF), perception, planning and control.
 
@@ -33,4 +33,4 @@ Meta-repository for Autoware, the open-source ROS 2 autonomous driving stack cov
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

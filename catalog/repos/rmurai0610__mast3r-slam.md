@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 3,236 | Python | NOASSERTION | 2025-11-09 | False | active-research | medium |
+| 3,242 | Python | NOASSERTION | 2025-11-09 | False | active-research | medium |
 
 Real-time dense monocular SLAM built on the MASt3R two-view 3D reconstruction prior, needing no fixed camera model (CVPR 2025).
 
@@ -32,4 +32,4 @@ Real-time dense monocular SLAM built on the MASt3R two-view 3D reconstruction pr
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

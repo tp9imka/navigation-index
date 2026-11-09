@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 275 | C | GPL-3.0 | 2023-02-03 | False | research-prototype | low |
+| 274 | C | GPL-3.0 | 2023-02-03 | False | research-prototype | low |
 
 Lightweight STM32 drone control and multi-agent localization system combining a flight controller, UWB relative localization and a monitor tool.
 
@@ -24,4 +24,4 @@ Lightweight STM32 drone control and multi-agent localization system combining a 
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

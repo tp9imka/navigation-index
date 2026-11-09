@@ -32,4 +32,4 @@ CVPR 2024 place recognition with a bag of learnable global queries over backbone
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

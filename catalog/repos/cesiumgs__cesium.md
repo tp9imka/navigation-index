@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 15,922 | JavaScript | Apache-2.0 | 2026-11-06 | False | production | high |
+| 15,930 | JavaScript | Apache-2.0 | 2026-11-09 | False | production | high |
 
 WebGL 3D globe and map library with terrain, 3D Tiles, time-dynamic data (CZML) and accurate WGS84 rendering.
 
@@ -37,4 +37,4 @@ WebGL 3D globe and map library with terrain, 3D Tiles, time-dynamic data (CZML) 
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 433 | C++ | NOASSERTION | 2026-03-17 | False | active-research | medium |
+| 436 | C++ | NOASSERTION | 2026-03-17 | False | active-research | medium |
 
 Extension of OKVIS2 that can additionally use dense depth or LiDAR and fuse GNSS.
 
@@ -28,4 +28,4 @@ Extension of OKVIS2 that can additionally use dense depth or LiDAR and fuse GNSS
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

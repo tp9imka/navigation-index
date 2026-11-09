@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 4,261 | Python | Apache-2.0 | 2025-12-10 | False | production | high |
+| 4,263 | Python | Apache-2.0 | 2025-12-10 | False | production | high |
 
 Toolbox for hierarchical visual localization: global retrieval (NetVLAD etc.) to find candidate images, then local feature matching (SuperPoint, LightGlue...) and PnP against an SfM model.
 
@@ -43,4 +43,4 @@ Toolbox for hierarchical visual localization: global retrieval (NetVLAD etc.) to
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

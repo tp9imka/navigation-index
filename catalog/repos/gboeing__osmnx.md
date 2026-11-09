@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 5,890 | Python | MIT | 2026-07-31 | False | production | high |
+| 5,893 | Python | MIT | 2026-11-07 | False | production | high |
 
 Download, model and analyze street networks and other OSM features as NetworkX graphs.
 
@@ -36,4 +36,4 @@ Download, model and analyze street networks and other OSM features as NetworkX g
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

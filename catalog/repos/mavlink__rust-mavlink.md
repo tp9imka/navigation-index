@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 297 | Rust | Apache-2.0 | 2026-11-02 | False | production | medium |
+| 297 | Rust | Apache-2.0 | 2026-11-06 | False | production | medium |
 
 Rust implementation of MAVLink with generated dialects and serial/UDP/TCP connections.
 
@@ -29,4 +29,4 @@ Rust implementation of MAVLink with generated dialects and serial/UDP/TCP connec
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -33,4 +33,4 @@ Python multirotor simulator with aerodynamic effects (drag, wind) for education 
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

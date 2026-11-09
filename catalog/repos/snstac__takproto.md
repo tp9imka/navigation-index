@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 32 | Python | MIT | 2026-11-02 | False | production | medium |
+| 31 | Python | MIT | 2026-11-02 | False | production | medium |
 
 Encode and decode TAK protobuf (TAK Protocol v1) packets, including mesh and stream formats. A GitHub fork of dB-SPL/takprotobuf, now maintained by Sensors & Signals and published on PyPI as takproto.
 
@@ -35,4 +35,4 @@ Encode and decode TAK protobuf (TAK Protocol v1) packets, including mesh and str
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

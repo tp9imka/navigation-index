@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 2,201 | Python | MIT | 2026-11-06 | False | active-research | high |
+| 2,204 | Python | MIT | 2026-11-06 | False | active-research | high |
 
 Gymnasium environments on PyBullet for single and multi-agent quadcopter control and RL (formerly under utiasDSL).
 
@@ -40,4 +40,4 @@ Gymnasium environments on PyBullet for single and multi-agent quadcopter control
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -28,4 +28,4 @@ ROS package that drives the Ping360 scanning sonar and publishes scans as images
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

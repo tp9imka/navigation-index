@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 184 | Julia | NOASSERTION | 2026-11-02 | False | active-research | high |
+| 185 | Julia | NOASSERTION | 2026-11-09 | False | active-research | high |
 
 Julia package from the DAF-MIT AI Accelerator for airborne magnetic anomaly navigation: flight/INS data import or simulation, anomaly maps, aircraft magnetic compensation (Tolles-Lawson and neural models) and navigation filters.
 
@@ -65,4 +65,4 @@ Julia package from the DAF-MIT AI Accelerator for airborne magnetic anomaly navi
 
 _Indexed by lane(s): alt-nav, defense-context, sim-data_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

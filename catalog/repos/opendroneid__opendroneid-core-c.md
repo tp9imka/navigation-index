@@ -55,4 +55,4 @@ Reference C library for encoding and decoding ASTM F3411 / ASD-STAN Remote ID me
 
 _Indexed by lane(s): autopilots, defense-context, domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -46,4 +46,4 @@ ROS/ROS 2 node bridging MAVLink to ROS topics and services, with GCS proxy; wide
 
 _Indexed by lane(s): autopilots, domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

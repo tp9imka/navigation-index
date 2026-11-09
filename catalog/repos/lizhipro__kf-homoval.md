@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 6 | Python | MIT | 2026-08-17 | False | research-prototype | medium |
+| 7 | Python | MIT | 2026-08-17 | False | research-prototype | medium |
 
 6-DoF absolute visual localization for UAVs built on deep homography estimation between the drone view and a reference map, smoothed with a Kalman filter.
 
@@ -24,4 +24,4 @@
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

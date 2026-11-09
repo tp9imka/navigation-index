@@ -28,4 +28,4 @@ Multi-robot exploration and object search where an LLM assigns frontier goals to
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

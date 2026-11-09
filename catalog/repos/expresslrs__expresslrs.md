@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 5,467 | C | GPL-3.0 | 2026-10-31 | False | production | medium |
+| 5,475 | C | GPL-3.0 | 2026-11-08 | False | production | medium |
 
 Open-source LoRa/FLRC radio control link (2.4 GHz and sub-GHz) with high packet rates, telemetry and MAVLink passthrough modes.
 
@@ -31,4 +31,4 @@ Open-source LoRa/FLRC radio control link (2.4 GHz and sub-GHz) with high packet 
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

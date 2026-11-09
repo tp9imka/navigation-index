@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 1,331 | Python | MIT | 2026-01-23 | False | active-research | high |
+| 1,333 | Python | MIT | 2026-01-23 | False | active-research | high |
 
 Robust dense feature matcher (CVPR 2024) estimating pixel-dense warps with certainties, strong under large appearance change.
 
@@ -41,4 +41,4 @@ Robust dense feature matcher (CVPR 2024) estimating pixel-dense warps with certa
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

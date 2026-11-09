@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 14,789 | C++ | GPL-2.0 | 2026-11-06 | False | production | high |
+| 14,798 | C++ | GPL-2.0 | 2026-11-09 | False | production | high |
 
 Desktop open-source GIS for viewing, editing, analyzing and printing geospatial data, extensible via Python plugins.
 
@@ -31,4 +31,4 @@ Desktop open-source GIS for viewing, editing, analyzing and printing geospatial 
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

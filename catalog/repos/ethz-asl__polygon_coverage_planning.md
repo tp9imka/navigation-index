@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 670 | C++ | GPL-3.0 | 2023-11-13 | False | research-prototype | medium |
+| 671 | C++ | GPL-3.0 | 2023-11-13 | False | research-prototype | medium |
 
 ETH ASL coverage planner for polygons with holes that treats boustrophedon sweep selection as a generalized TSP, aimed at UAV survey.
 
@@ -28,4 +28,4 @@ ETH ASL coverage planner for polygons with holes that treats boustrophedon sweep
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

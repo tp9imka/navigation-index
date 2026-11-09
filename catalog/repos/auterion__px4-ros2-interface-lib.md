@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 187 | C++ | BSD-3-Clause | 2026-11-04 | False | production | high |
+| 188 | C++ | BSD-3-Clause | 2026-11-04 | False | production | high |
 
 C++ library for writing PX4 flight modes and navigation-data sources in ROS 2 on a companion computer, registered with PX4 as first-class modes.
 
@@ -37,4 +37,4 @@ C++ library for writing PX4 flight modes and navigation-data sources in ROS 2 on
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

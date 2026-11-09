@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 137 | TypeScript | AGPL-3.0 | 2026-11-06 | False | production | medium |
+| 138 | TypeScript | AGPL-3.0 | 2026-11-08 | False | production | medium |
 
 Browser-based TAK-compatible common operating picture with ETL connectors that push external data feeds into TAK.
 
@@ -30,4 +30,4 @@ Browser-based TAK-compatible common operating picture with ETL connectors that p
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

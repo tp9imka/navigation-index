@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 534 | C | NOASSERTION | 2026-11-03 | False | active-research | medium |
+| 536 | C | NOASSERTION | 2026-11-03 | False | active-research | medium |
 
 Open hardware GNSS front-end plus a software receiver (Python and C) by the RTKLIB author, supporting a wide range of GNSS signals across L1/L2/L5/L6 bands.
 
@@ -29,4 +29,4 @@ Open hardware GNSS front-end plus a software receiver (Python and C) by the RTKL
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

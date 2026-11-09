@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 173 | Python | GPL-3.0 | 2026-11-06 | False | production | low |
+| 173 | Python | GPL-3.0 | 2026-11-09 | False | production | low |
 
 Guided step-by-step parameter configuration tool for ArduPilot vehicles; the sequence is complete for ArduCopter, while Plane, Heli and Rover guides are still incomplete.
 
@@ -24,4 +24,4 @@ Guided step-by-step parameter configuration tool for ArduPilot vehicles; the seq
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

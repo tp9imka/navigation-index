@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 539 | C | ? | 2015-08-26 | False | archived | low |
+| 540 | C | ? | 2015-08-26 | False | archived | low |
 
 Older open-source GNSS software receiver library in C with a GUI, supporting several front-ends and real-time RTKLIB output.
 
@@ -24,4 +24,4 @@ Older open-source GNSS software receiver library in C with a GUI, supporting sev
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

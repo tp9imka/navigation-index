@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 114 | C++ | ? | 2021-09-24 | False | research-prototype | medium |
+| 117 | C++ | ? | 2021-09-24 | False | research-prototype | medium |
 
 LiDAR global place descriptor for loop detection and relocalization (backup of the original IRAP KAIST repo).
 
@@ -29,4 +29,4 @@ LiDAR global place descriptor for loop detection and relocalization (backup of t
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

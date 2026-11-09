@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 257 | Python | Apache-2.0 | 2026-11-02 | False | production | high |
+| 256 | Python | Apache-2.0 | 2026-11-02 | False | production | high |
 
 Python asyncio package for TAK integration: CoT send/receive over TCP, UDP, TLS and multicast, with helpers for building events.
 
@@ -55,4 +55,4 @@ Python asyncio package for TAK integration: CoT send/receive over TCP, UDP, TLS 
 
 _Indexed by lane(s): defense-context, planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

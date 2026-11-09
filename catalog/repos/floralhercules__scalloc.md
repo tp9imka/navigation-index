@@ -29,4 +29,4 @@ Continuous geo-localization of oblique thermal UAV sequences against a 2D satell
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

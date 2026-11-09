@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 239 | C++ | LGPL-3.0 | 2026-10-29 | False | production | high |
+| 240 | C++ | LGPL-3.0 | 2026-10-29 | False | production | high |
 
 Gazebo Sim plugins that connect ArduPilot SITL to Gazebo physics, with example Iris copter and Zephyr plane models and worlds.
 
@@ -39,4 +39,4 @@ Gazebo Sim plugins that connect ArduPilot SITL to Gazebo physics, with example I
 
 _Indexed by lane(s): autopilots, domains-swarm, sim-data_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

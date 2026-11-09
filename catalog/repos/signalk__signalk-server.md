@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 448 | TypeScript | Apache-2.0 | 2026-11-05 | False | production | high |
+| 448 | TypeScript | Apache-2.0 | 2026-11-08 | False | production | high |
 
 Node.js server implementing the Signal K open marine data standard: it ingests NMEA 0183, NMEA 2000 and other boat buses and republishes everything as a JSON data model over REST and WebSocket, with a plugin ecosystem.
 
@@ -46,4 +46,4 @@ Node.js server implementing the Signal K open marine data standard: it ingests N
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

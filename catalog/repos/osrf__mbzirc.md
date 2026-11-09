@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 92 | C++ | Apache-2.0 | 2022-08-31 | False | archived | medium |
+| 94 | C++ | Apache-2.0 | 2022-08-31 | False | archived | medium |
 
 Simulator (Ignition Fortress + ROS 2) for the MBZIRC Maritime Grand Challenge where UAVs and USVs cooperate in a GNSS-denied environment.
 
@@ -24,4 +24,4 @@ Simulator (Ignition Fortress + ROS 2) for the MBZIRC Maritime Grand Challenge wh
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

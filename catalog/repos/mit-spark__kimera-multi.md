@@ -36,4 +36,4 @@ Index repo for Kimera-Multi, a distributed multi-robot metric-semantic SLAM syst
 
 _Indexed by lane(s): domains-swarm, slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

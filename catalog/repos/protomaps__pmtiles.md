@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 3,101 | TypeScript | NOASSERTION | 2026-09-16 | False | production | high |
+| 3,105 | TypeScript | NOASSERTION | 2026-09-16 | False | production | high |
 
 Single-file tile archive format and tooling, served by HTTP range requests from static storage, with JS/Go readers and extraction CLI.
 
@@ -39,4 +39,4 @@ Single-file tile archive format and tooling, served by HTTP range requests from 
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

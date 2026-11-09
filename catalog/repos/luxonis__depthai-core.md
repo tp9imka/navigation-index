@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 366 | C++ | MIT | 2026-11-06 | False | production | medium |
+| 365 | C++ | MIT | 2026-11-06 | False | production | medium |
 
 C++ core library and Python bindings for Luxonis OAK cameras: on-device stereo depth, neural inference and feature tracking pipelines.
 
@@ -29,4 +29,4 @@ C++ core library and Python bindings for Luxonis OAK cameras: on-device stereo d
 
 _Indexed by lane(s): coordinator_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

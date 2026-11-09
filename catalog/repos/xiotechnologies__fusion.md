@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 1,767 | C | MIT | 2026-09-18 | False | production | high |
+| 1,767 | C | MIT | 2026-11-07 | False | production | high |
 
 x-io Technologies' C AHRS library (revised Madgwick-style algorithm) with gyro offset correction, acceleration and magnetic disturbance rejection, and Python bindings.
 
@@ -38,4 +38,4 @@ x-io Technologies' C AHRS library (revised Madgwick-style algorithm) with gyro o
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

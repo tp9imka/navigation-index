@@ -47,4 +47,4 @@ Team 'Где мы, Бариста?' solution to the 2026 'Полёт вслеп�
 
 _Indexed by lane(s): ua-ru-round2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

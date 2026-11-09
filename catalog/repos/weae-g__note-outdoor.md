@@ -30,4 +30,4 @@ Russian-language markdown knowledge base on navigation, data fusion, data links,
 
 _Indexed by lane(s): ua-ru-round2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 2,243 | Java | Apache-2.0 | 2026-11-05 | False | production | medium |
+| 2,245 | Java | Apache-2.0 | 2026-11-07 | False | production | medium |
 
 Fast vector tile generator that builds OpenMapTiles-compatible tilesets from OSM extracts on a single machine.
 
@@ -29,4 +29,4 @@ Fast vector tile generator that builds OpenMapTiles-compatible tilesets from OSM
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

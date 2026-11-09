@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 4,360 | Python | GPL-3.0 | 2026-10-30 | False | production | high |
+| 4,361 | Python | GPL-3.0 | 2026-10-30 | False | production | high |
 
 Python package and CLI for evaluating odometry and SLAM trajectories (ATE/RPE, alignment, plotting) in TUM, KITTI, EuRoC and ROS bag formats.
 
@@ -49,4 +49,4 @@ Python package and CLI for evaluating odometry and SLAM trajectories (ATE/RPE, a
 
 _Indexed by lane(s): sim-data, slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

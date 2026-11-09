@@ -28,4 +28,4 @@ A single short OpenCV script that locates a Google Maps crop inside a larger map
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

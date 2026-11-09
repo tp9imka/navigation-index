@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 195 | JavaScript | GPL-3.0 | 2026-11-05 | False | production | high |
+| 196 | JavaScript | GPL-3.0 | 2026-11-05 | False | production | high |
 
 Web-based companion-computer manager for MAVLink vehicles: telemetry routing, video streaming, logging and network config on Raspberry Pi/Jetson.
 
@@ -35,4 +35,4 @@ Web-based companion-computer manager for MAVLink vehicles: telemetry routing, vi
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

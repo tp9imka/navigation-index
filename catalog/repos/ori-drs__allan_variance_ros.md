@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 695 | C++ | BSD-3-Clause | 2025-01-23 | False | production | high |
+| 697 | C++ | BSD-3-Clause | 2025-01-23 | False | production | high |
 
 ROS tool (Oxford DRS) that computes Allan deviation plots from an IMU bag and outputs noise parameters in a Kalibr-compatible format.
 
@@ -42,4 +42,4 @@ ROS tool (Oxford DRS) that computes Allan deviation plots from an IMU bag and ou
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

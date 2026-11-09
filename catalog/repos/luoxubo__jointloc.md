@@ -20,4 +20,4 @@ Real-time visual localization framework for planetary UAVs that jointly uses rel
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

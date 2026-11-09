@@ -39,4 +39,4 @@ Passive positioning using Starlink downlink signals as signals of opportunity: S
 
 _Indexed by lane(s): alt-nav, gnss_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 6,584 | Python | AGPL-3.0 | 2026-10-29 | False | production | high |
+| 6,591 | Python | AGPL-3.0 | 2026-10-29 | False | production | high |
 
 Photogrammetry toolkit that turns aerial images into orthophotos, point clouds, 3D models and DEMs.
 
@@ -32,4 +32,4 @@ Photogrammetry toolkit that turns aerial images into orthophotos, point clouds, 
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

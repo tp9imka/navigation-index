@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 263 | MATLAB | GPL-3.0 | 2023-02-06 | False | educational | low |
+| 263 | MATLAB | GPL-3.0 | 2026-11-07 | False | educational | low |
 
 Joan Sola's MATLAB SLAM toolbox with EKF-SLAM (`ekf` branch) and graph-SLAM (`graph` branch) variants, landmark parameterizations (points, lines, inverse depth) and simulated or real sensor support, written for teaching and prototyping.
 
@@ -25,4 +25,4 @@ Joan Sola's MATLAB SLAM toolbox with EKF-SLAM (`ekf` branch) and graph-SLAM (`gr
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 3,173 | C++ | GPL-3.0 | 2025-11-30 | False | active-research | high |
+| 3,174 | C++ | GPL-3.0 | 2025-11-30 | False | active-research | high |
 
 MSCKF-based visual-inertial navigation platform with online calibration, a simulator, and extensive documentation for research use.
 
@@ -55,4 +55,4 @@ MSCKF-based visual-inertial navigation platform with online calibration, a simul
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

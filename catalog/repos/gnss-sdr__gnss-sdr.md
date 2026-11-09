@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 2,324 | C++ | GPL-3.0 | 2026-11-05 | False | production | high |
+| 2,327 | C++ | GPL-3.0 | 2026-11-08 | False | production | high |
 
 Full software-defined GNSS receiver built on GNU Radio: acquisition, tracking, navigation message decoding and PVT for GPS, Galileo, GLONASS and BeiDou signals from SDR front-ends or IQ files, including Galileo OSNMA support.
 
@@ -64,4 +64,4 @@ Full software-defined GNSS receiver built on GNU Radio: acquisition, tracking, n
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

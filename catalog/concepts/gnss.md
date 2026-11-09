@@ -73,8 +73,8 @@ GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 - [openpilot](../../catalog/repos/commaai__openpilot.md) - fit: low - Open driver-assistance robotics stack.
 - [GraphGNSSLib](../../catalog/repos/weisongwen__graphgnsslib.md) - fit: low - Open-source GNSS positioning and RTK package using factor graph optimization, built on RTKLIB data handling and ROS.
 - [GNSS-SDRLIB](../../catalog/repos/taroz__gnss-sdrlib.md) - fit: low - Older open-source GNSS software receiver library in C with a GUI, supporting several front-ends and real-time RTKLIB output.
-- [ubxlib](../../catalog/repos/u-blox__ubxlib.md) - fit: low - u-blox's portable C libraries for building applications on their GNSS and cellular modules across MCU platforms.
 - [Ginan](../../catalog/repos/geoscienceaustralia__ginan.md) - fit: low - Geoscience Australia's GNSS analysis toolkit for precise orbit determination and real-time/post-processed PPP, producing and consuming correction products.
+- [ubxlib](../../catalog/repos/u-blox__ubxlib.md) - fit: low - u-blox's portable C libraries for building applications on their GNSS and cellular modules across MCU platforms.
 - [GNSS-matlab](../../catalog/repos/danipascual__gnss-matlab.md) - fit: low - MATLAB code to generate GNSS PRN and secondary codes, dataless signals and spectra, with real captures.
 - [GNSSTk](../../catalog/repos/sgl-ut__gnsstk.md) - fit: low - C++ library (successor to GPSTk) from UT Austin ARL for GNSS data formats, time systems, ephemeris handling and positioning algorithms, with Python bindings.
 - [gnss_comm](../../catalog/repos/hkust-aerial-robotics__gnss_comm.md) - fit: low - C++/ROS definitions and utilities for raw GNSS measurement processing (ephemeris, satellite positions, pseudorange models) used by GVINS.
@@ -86,8 +86,8 @@ GPS, Galileo, GLONASS, BeiDou, QZSS, NavIC: signals, receivers, positioning.
 - [GSDC 10th place solution](../../catalog/repos/fkaneko__kaggle_google_smartphone_decimeter_challenge.md) - fit: low - 10th-place solution for the Kaggle Google Smartphone Decimeter Challenge.
 - [pylgrim](../../catalog/repos/kirienko__pylgrim.md) - fit: low - Playground GNSS positioning code in Python/numpy that computes a static GPS position (50-100 m accuracy per the README) from RINEX 2.11 observations, with parsers for RINEX nav/obs, SP3 and IONEX plus Klobuchar, IONEX an
 - [GraphGNSSLib LEO](../../catalog/repos/gao-tech1__graphgnsslib_leo_v1.2.md) - fit: low - Factor-graph positioning combining real GNSS pseudorange/Doppler with simulated LEO satellite measurements, extending GraphGNSSLib.
-- [FGI-OSNMA](../../catalog/repos/nlsfi__fgi-osnma.md) - fit: low - Python OSNMA implementation from the Finnish Geospatial Research Institute designed for flexibility and integration with receivers.
 - [time-transfer-tools](../../catalog/repos/groundstate__time-transfer-tools.md) - fit: low - MATLAB classes to read CGGTTS (V1, V2E) and RINEX 2/3 observation files, match observations between two stations and compute averaged differences - the GNSS common-view time transfer workflow.
+- [FGI-OSNMA](../../catalog/repos/nlsfi__fgi-osnma.md) - fit: low - Python OSNMA implementation from the Finnish Geospatial Research Institute designed for flexibility and integration with receivers.
 - [Smartphone Decimeter Challenge MATLAB package](../../catalog/repos/arnauochoa__smartphone-decimeter-challenge.md) - fit: low - MATLAB package from an ION GNSS+ 2021 decimeter challenge entry.
 - [MAAST for ARAIM](../../catalog/repos/stanford-gps-lab__maast_for_araim_2.md) - fit: low - Stanford GPS Lab MATLAB toolset that evaluates Advanced RAIM availability and protection levels over service areas.
 - [OSNMA_ublox](../../catalog/repos/axelbjork__osnma_ublox.md) - fit: low - Jupyter-based real-time OSNMA authentication of u-blox receiver data in Python.

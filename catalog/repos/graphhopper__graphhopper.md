@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 6,755 | Java | Apache-2.0 | 2026-11-05 | False | production | medium |
+| 6,784 | Java | Apache-2.0 | 2026-11-08 | False | production | medium |
 
 Java OSM routing engine usable as library or server, with custom models for per-request costing and map matching.
 
@@ -29,4 +29,4 @@ Java OSM routing engine usable as library or server, with custom models for per-
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

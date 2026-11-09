@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 211 | C++ | Apache-2.0 | 2026-09-03 | False | production | medium |
+| 212 | C++ | Apache-2.0 | 2026-09-03 | False | production | medium |
 
 Agent that bridges DDS-XRCE clients on microcontrollers into a full DDS / ROS 2 graph; PX4 and ArduPilot use it for native ROS 2.
 
@@ -37,4 +37,4 @@ Agent that bridges DDS-XRCE clients on microcontrollers into a full DDS / ROS 2 
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

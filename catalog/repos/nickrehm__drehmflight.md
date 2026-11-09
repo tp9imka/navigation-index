@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 1,475 | C++ | GPL-3.0 | 2025-01-20 | False | educational | medium |
+| 1,476 | C++ | GPL-3.0 | 2025-01-20 | False | educational | medium |
 
 Single-file Arduino/Teensy flight controller for small VTOL and multirotor craft, written to be read and modified by students.
 
@@ -29,4 +29,4 @@ Single-file Arduino/Teensy flight controller for small VTOL and multirotor craft
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 594 | C++ | GPL-2.0 | 2025-10-25 | False | research-prototype | medium |
+| 595 | C++ | GPL-2.0 | 2025-10-25 | False | research-prototype | medium |
 
 Lightweight point-realistic lidar simulator for UAVs from HKU MaRS, supporting rotating and solid-state lidar patterns.
 
@@ -24,4 +24,4 @@ Lightweight point-realistic lidar simulator for UAVs from HKU MaRS, supporting r
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

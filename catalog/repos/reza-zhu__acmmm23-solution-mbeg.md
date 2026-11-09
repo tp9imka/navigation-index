@@ -28,4 +28,4 @@ Modern-backbone efficient geo-localization solution for UAVM 2023 including dist
 
 _Indexed by lane(s): round3-expansion_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

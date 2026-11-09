@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 6,133 | C++ | NOASSERTION | 2026-11-03 | False | production | high |
+| 6,139 | C++ | NOASSERTION | 2026-11-08 | False | production | high |
 
 Translator library and CLI tools for raster and vector geospatial formats (GeoTIFF, COG, GeoPackage, Shapefile, KML and hundreds more) with reprojection, warping and DEM utilities.
 
@@ -44,4 +44,4 @@ Translator library and CLI tools for raster and vector geospatial formats (GeoTI
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

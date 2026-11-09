@@ -24,4 +24,4 @@ Dataset combining stereo camera, IMU, polarization camera and high-precision GPS
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

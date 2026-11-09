@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 18,601 | C++ | NOASSERTION | 2026-09-15 | False | archived | medium |
+| 18,605 | C++ | NOASSERTION | 2026-09-15 | False | archived | medium |
 
 Unreal Engine based simulator for drones and cars with camera, depth, lidar, IMU, GPS, barometer and magnetometer models and a Python/C++ API. Microsoft wound down development and pointed users to Project AirSim.
 
@@ -37,4 +37,4 @@ Unreal Engine based simulator for drones and cars with camera, depth, lidar, IMU
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 156 | C++ | BSD-3-Clause | 2025-08-04 | False | research-prototype | medium |
+| 157 | C++ | BSD-3-Clause | 2025-08-04 | False | research-prototype | medium |
 
 Graph-based, sparse radar-inertial odometry estimation from ETH ASL, using GTSAM.
 
@@ -28,4 +28,4 @@ Graph-based, sparse radar-inertial odometry estimation from ETH ASL, using GTSAM
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

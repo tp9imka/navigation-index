@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 12,647 | JavaScript | BSD-2-Clause | 2026-11-02 | False | production | medium |
+| 12,647 | JavaScript | BSD-2-Clause | 2026-11-07 | False | production | medium |
 
 Feature-rich web mapping library supporting many projections, WMS/WMTS, vector tiles and editing.
 
@@ -30,4 +30,4 @@ Feature-rich web mapping library supporting many projections, WMS/WMTS, vector t
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -36,4 +36,4 @@ Lua Wireshark dissector that decodes Remote ID broadcast frames over Wi-Fi and B
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

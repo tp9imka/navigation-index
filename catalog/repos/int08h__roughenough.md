@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 149 | Rust | Apache-2.0 | 2026-11-02 | False | active-research | medium |
+| 149 | Rust | Apache-2.0 | 2026-11-09 | False | active-research | medium |
 
 Rust Roughtime (RFC 10049) server and client with a batching UDP server, optional malfeasance reporting and several key-protection backends (KMS, PKCS#11, SSH agent).
 
@@ -30,4 +30,4 @@ Rust Roughtime (RFC 10049) server and client with a batching UDP server, optiona
 
 _Indexed by lane(s): timing-network_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

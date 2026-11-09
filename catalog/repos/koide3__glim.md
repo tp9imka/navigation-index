@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 1,913 | C++ | MIT | 2026-10-08 | False | active-research | medium |
+| 1,922 | C++ | MIT | 2026-10-08 | False | active-research | medium |
 
 Versatile point-cloud localization and mapping framework with GPU-accelerated factor graphs, supporting many range sensors and optional IMU.
 
@@ -29,4 +29,4 @@ Versatile point-cloud localization and mapping framework with GPU-accelerated fa
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

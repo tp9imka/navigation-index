@@ -42,4 +42,4 @@ Direction-of-arrival processing and web UI for the five-channel coherent KrakenS
 
 _Indexed by lane(s): defense-context_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

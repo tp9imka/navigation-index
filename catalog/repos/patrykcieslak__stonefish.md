@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 332 | C++ | GPL-3.0 | 2026-11-05 | False | production | high |
+| 333 | C++ | GPL-3.0 | 2026-11-05 | False | production | high |
 
 C++ simulation library for marine robotics with hydrodynamics, underwater rendering and sensors including DVL, USBL, multibeam and forward-looking sonar; has a ROS wrapper.
 
@@ -44,4 +44,4 @@ C++ simulation library for marine robotics with hydrodynamics, underwater render
 
 _Indexed by lane(s): domains-swarm, sim-data_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -24,4 +24,4 @@ Open book on PTP (IEEE 1588 / gPTP) in Chinese with an English translation: BMCA
 
 _Indexed by lane(s): timing-network_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -28,4 +28,4 @@ BlueROV underwater SLAM and exploration code from Stevens Institute, combining s
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

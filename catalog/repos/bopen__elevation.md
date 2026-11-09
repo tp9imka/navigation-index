@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 356 | Python | Apache-2.0 | 2026-10-29 | False | production | high |
+| 356 | Python | Apache-2.0 | 2026-11-09 | False | production | high |
 
 CLI/Python tool to download, cache and clip global DEMs (SRTM, Copernicus DEM and others) for a bounding box.
 
@@ -40,4 +40,4 @@ CLI/Python tool to download, cache and clip global DEMs (SRTM, Copernicus DEM an
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

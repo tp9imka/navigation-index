@@ -31,4 +31,4 @@ MIPT (FAKT) 2026 diploma: local navigation for a UAV under GNSS suppression, cor
 
 _Indexed by lane(s): ua-ru-sources_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

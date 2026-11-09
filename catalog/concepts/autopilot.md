@@ -27,8 +27,8 @@ Flight stacks, control loops, estimation inside autopilots, firmware.
 
 - [ArduPilot](../../catalog/repos/ardupilot__ardupilot.md) - fit: high - GPL autopilot covering Copter, Plane (incl.
 - [PX4 Autopilot](../../catalog/repos/px4__px4-autopilot.md) - fit: high - Dronecode flight stack for multirotors, fixed-wing, VTOL, rovers and boats, built on NuttX with a uORB pub/sub middleware.
-- [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md) - fit: high - Firmware for the Crazyflie nano quad, Bolt and the Roadrunner positioning tag, with EKF and complementary estimators supporting UWB Loco positioning, Lighthouse, Flow deck and mocap.
 - [Gazebo Sim (gz-sim)](../../catalog/repos/gazebosim__gz-sim.md) - fit: high - Current-generation Gazebo robotics simulator with pluggable physics, rendering and a large sensor library (IMU, GPS/NavSat, lidar, cameras, magnetometer, altimeter).
+- [Crazyflie firmware](../../catalog/repos/bitcraze__crazyflie-firmware.md) - fit: high - Firmware for the Crazyflie nano quad, Bolt and the Roadrunner positioning tag, with EKF and complementary estimators supporting UWB Loco positioning, Lighthouse, Flow deck and mocap.
 - [MAVSDK](../../catalog/repos/mavlink__mavsdk.md) - fit: high - C++ SDK exposing high-level MAVLink plugins (action, mission, offboard, telemetry, camera) with a gRPC server for other languages.
 - [COEX Clover](../../catalog/repos/copterexpress__clover.md) - fit: high - ROS-based software stack and Raspberry Pi image for the Clover educational quadcopter (PX4 underneath).
 - [BlueOS](../../catalog/repos/bluerobotics__blueos.md) - fit: high - Blue Robotics' onboard software platform for ROVs and USVs: web UI, ArduPilot management, MAVLink routing and a Docker extension system on a Raspberry Pi companion computer.

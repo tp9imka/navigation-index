@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 1,800 | Python | MIT | 2026-09-29 | False | production | high |
+| 1,801 | Python | MIT | 2026-09-29 | False | production | high |
 
 Python library for high-accuracy positions of stars, planets and Earth satellites, with proper time scales and reference frames.
 
@@ -37,4 +37,4 @@ Python library for high-accuracy positions of stars, planets and Earth satellite
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

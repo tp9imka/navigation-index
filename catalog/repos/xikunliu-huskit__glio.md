@@ -29,4 +29,4 @@ Tightly coupled GNSS/LiDAR/IMU integration (PolyU) for continuous, drift-free st
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 1,217 | C++ | GPL-3.0 | 2025-11-19 | False | active-research | medium |
+| 1,218 | C++ | GPL-3.0 | 2025-11-19 | False | active-research | medium |
 
 Point-and-line visual(-inertial) SLAM using learned features, designed for illumination-robust operation, with TensorRT acceleration; successor to AirVO.
 
@@ -24,4 +24,4 @@ Point-and-line visual(-inertial) SLAM using learned features, designed for illum
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -41,4 +41,4 @@ Header-only C++11 library for Lie theory (SO2, SE2, SO3, SE3, SE_2(3) and more) 
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

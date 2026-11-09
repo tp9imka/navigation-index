@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 256 | Python | BSD-3-Clause | 2026-10-29 | False | production | high |
+| 256 | Python | BSD-3-Clause | 2026-11-06 | False | production | high |
 
 Python library for parsing and generating u-blox UBX protocol messages, including configuration (CFG-VALSET) and raw measurement (RXM-RAWX) messages.
 
@@ -44,4 +44,4 @@ Python library for parsing and generating u-blox UBX protocol messages, includin
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

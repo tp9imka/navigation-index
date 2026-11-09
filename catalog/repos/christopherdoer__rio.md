@@ -34,4 +34,4 @@ EKF-based radar-inertial odometry using 4D mmWave radar ego-velocity measurement
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 1,498 | Python | MIT | 2024-11-27 | False | research-prototype | high |
+| 1,499 | Python | MIT | 2024-11-27 | False | research-prototype | high |
 
 Python GNSS/INS simulator that generates trajectories, IMU/GNSS/magnetometer measurements with configurable error models, and runs navigation algorithms on them.
 
@@ -45,4 +45,4 @@ Python GNSS/INS simulator that generates trajectories, IMU/GNSS/magnetometer mea
 
 _Indexed by lane(s): ins-fusion, sim-data_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

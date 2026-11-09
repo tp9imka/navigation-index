@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 1,546 | C++ | BSD-3-Clause | 2026-11-04 | False | production | high |
+| 1,550 | C++ | BSD-3-Clause | 2026-11-04 | False | production | high |
 
 ROS and ROS 2 integration for RTAB-Map, exposing SLAM, localization and odometry nodes.
 
@@ -34,4 +34,4 @@ ROS and ROS 2 integration for RTAB-Map, exposing SLAM, localization and odometry
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

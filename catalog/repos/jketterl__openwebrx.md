@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 1,338 | Python | AGPL-3.0 | 2024-12-11 | False | active-research | medium |
+| 1,341 | Python | AGPL-3.0 | 2024-12-11 | False | active-research | medium |
 
 Multi-user web SDR receiver with waterfall display and many built-in digital decoders.
 
@@ -30,4 +30,4 @@ Multi-user web SDR receiver with waterfall display and many built-in digital dec
 
 _Indexed by lane(s): defense-context_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

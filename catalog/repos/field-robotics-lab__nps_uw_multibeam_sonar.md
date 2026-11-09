@@ -28,4 +28,4 @@ GPU (CUDA) multibeam sonar simulation plugin for Gazebo producing physically mot
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

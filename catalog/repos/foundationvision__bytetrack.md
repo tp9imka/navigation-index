@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 6,797 | Python | MIT | 2024-06-19 | False | production | medium |
+| 6,801 | Python | MIT | 2024-06-19 | False | production | medium |
 
 ECCV 2022 multi-object tracker that associates both high- and low-confidence detections, improving tracking through occlusion.
 
@@ -28,4 +28,4 @@ ECCV 2022 multi-object tracker that associates both high- and low-confidence det
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 100 | MATLAB | MIT | 2025-03-08 | False | active-research | medium |
+| 101 | MATLAB | MIT | 2025-03-08 | False | active-research | medium |
 
 MATLAB wrapper exposing RTKLIB functions and data structures (observations, navigation data, solutions) as MATLAB objects.
 
@@ -25,4 +25,4 @@ MATLAB wrapper exposing RTKLIB functions and data structures (observations, navi
 
 _Indexed by lane(s): gnss_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 3,718 | C++ | GPL-3.0 | 2026-10-27 | False | production | medium |
+| 3,720 | C++ | GPL-3.0 | 2026-10-27 | False | production | medium |
 
 Desktop SDR receiver built on GNU Radio and Qt with FFT/waterfall and demodulators.
 
@@ -29,4 +29,4 @@ Desktop SDR receiver built on GNU Radio and Qt with FFT/waterfall and demodulato
 
 _Indexed by lane(s): defense-context_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

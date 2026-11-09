@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 3,478 | C++ | ? | 2026-11-02 | False | production | medium |
+| 3,478 | C++ | ? | 2026-11-08 | False | production | medium |
 
 General framework for graph optimization, widely used for pose-graph SLAM back ends.
 
@@ -29,4 +29,4 @@ General framework for graph optimization, widely used for pose-graph SLAM back e
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -29,4 +29,4 @@ MOOS-IvP applications from a 2025 master's project at Universidade de Sao Paulo 
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

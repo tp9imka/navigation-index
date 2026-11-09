@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 462 | Python | Apache-2.0 | 2026-10-28 | False | active-research | medium |
+| 463 | Python | Apache-2.0 | 2026-10-28 | False | active-research | medium |
 
 Code for the RFUAV benchmark dataset for UAV detection and identification from RF signals, using a two-stage STFT spectrogram detection and classification model.
 
@@ -36,4 +36,4 @@ Code for the RFUAV benchmark dataset for UAV detection and identification from R
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

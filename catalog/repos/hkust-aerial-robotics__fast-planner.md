@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 3,443 | C++ | GPL-3.0 | 2024-10-24 | False | research-prototype | medium |
+| 3,444 | C++ | GPL-3.0 | 2024-10-24 | False | research-prototype | medium |
 
 HKUST quadrotor planning framework: kinodynamic A* front-end plus B-spline optimization, with a topological-path variant for fast flight in unknown environments. The perception-aware (RAPTOR) planner is listed as 'to appear' and is not in the repo.
 
@@ -32,4 +32,4 @@ HKUST quadrotor planning framework: kinodynamic A* front-end plus B-spline optim
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

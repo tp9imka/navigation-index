@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 16,324 | C++ | GPL-3.0 | 2026-11-06 | False | production | high |
+| 16,331 | C++ | GPL-3.0 | 2026-11-09 | False | production | high |
 
 GPL autopilot covering Copter, Plane (incl. QuadPlane VTOL), Rover, boats and ArduSub, plus AP_Periph CAN peripherals. EKF3 supports switchable source sets, so GNSS, optical flow, beacons, wheel odometry and external vision can be swapped in flight.
 
@@ -103,4 +103,4 @@ GPL autopilot covering Copter, Plane (incl. QuadPlane VTOL), Rover, boats and Ar
 
 _Indexed by lane(s): autopilots, domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

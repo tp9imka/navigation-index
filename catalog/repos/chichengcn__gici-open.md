@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 679 | C++ | GPL-3.0 | 2025-01-27 | False | active-research | medium |
+| 680 | C++ | GPL-3.0 | 2025-01-27 | False | active-research | medium |
 
 GNSS/INS/Camera integrated navigation library supporting a range of GNSS modes (SPP, RTK, PPP and variants) tightly fused with inertial and visual data via factor graph optimization.
 
@@ -30,4 +30,4 @@ GNSS/INS/Camera integrated navigation library supporting a range of GNSS modes (
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

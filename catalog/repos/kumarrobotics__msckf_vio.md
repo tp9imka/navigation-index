@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 1,986 | C++ | NOASSERTION | 2023-11-22 | False | research-prototype | medium |
+| 1,985 | C++ | NOASSERTION | 2023-11-22 | False | research-prototype | medium |
 
 Stereo multi-state constraint Kalman filter VIO designed for fast autonomous flight.
 
@@ -28,4 +28,4 @@ Stereo multi-state constraint Kalman filter VIO designed for fast autonomous fli
 
 _Indexed by lane(s): slam_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

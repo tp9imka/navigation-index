@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 4,437 | Python | NOASSERTION | 2026-11-05 | False | production | medium |
+| 4,446 | Python | NOASSERTION | 2026-11-05 | False | production | medium |
 
 NVIDIA's Omniverse-based robot simulator, now open source, with RTX sensor simulation (cameras, lidar, IMU) and ROS 2 bridges.
 
@@ -34,4 +34,4 @@ NVIDIA's Omniverse-based robot simulator, now open source, with RTX sensor simul
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

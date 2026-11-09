@@ -30,4 +30,4 @@ Lab assignments for MIT 16.485 Visual Navigation for Autonomous Vehicles: ROS, 3
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

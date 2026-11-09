@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 207 | C++ | MIT | 2025-03-13 | False | research-prototype | medium |
+| 208 | C++ | MIT | 2025-03-13 | False | research-prototype | medium |
 
 Optimization-based, point-uncertainty-aware radar-inertial odometry for 4D radar.
 
@@ -29,4 +29,4 @@ Optimization-based, point-uncertainty-aware radar-inertial odometry for 4D radar
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

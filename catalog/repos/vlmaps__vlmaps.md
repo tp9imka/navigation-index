@@ -30,4 +30,4 @@ Builds visual-language maps by fusing pretrained visual-language features into a
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 2,475 | Python | NOASSERTION | 2026-11-05 | False | production | high |
+| 2,474 | Python | NOASSERTION | 2026-11-06 | False | production | high |
 
 Message definitions (XML dialects) and the pymavlink-based generator for the MAVLink micro air vehicle protocol, used by PX4, ArduPilot and most GCS tools.
 
@@ -49,4 +49,4 @@ Message definitions (XML dialects) and the pymavlink-based generator for the MAV
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

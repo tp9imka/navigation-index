@@ -28,4 +28,4 @@ Modern C++17 library of Monte Carlo Localization algorithms with a ROS 2 node th
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

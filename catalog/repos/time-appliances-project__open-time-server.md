@@ -30,4 +30,4 @@ OCP specification for an open time server: COTS server, a NIC with hardware time
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

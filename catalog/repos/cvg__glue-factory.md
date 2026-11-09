@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 1,165 | Python | Apache-2.0 | 2026-07-20 | False | active-research | low |
+| 1,167 | Python | Apache-2.0 | 2026-07-20 | False | active-research | low |
 
 Training library for local feature detection and matching (trains LightGlue and others).
 
@@ -30,4 +30,4 @@ Training library for local feature detection and matching (trains LightGlue and 
 
 _Indexed by lane(s): alt-nav_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

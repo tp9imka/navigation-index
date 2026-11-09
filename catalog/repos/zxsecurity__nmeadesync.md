@@ -28,4 +28,4 @@ Proof-of-concept that feeds crafted NMEA sentences to a GPS-referenced NTP serve
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

@@ -35,4 +35,4 @@ Go implementation of a simple ATAK-compatible server and a web client, supportin
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

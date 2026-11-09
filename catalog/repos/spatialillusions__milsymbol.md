@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 822 | JavaScript | MIT | 2026-10-27 | False | production | high |
+| 821 | JavaScript | MIT | 2026-10-27 | False | production | high |
 
 Pure JavaScript library generating MIL-STD-2525 (B/C/D/E) and APP-6 (B/D/E) military symbols as SVG or canvas.
 
@@ -44,4 +44,4 @@ Pure JavaScript library generating MIL-STD-2525 (B/C/D/E) and APP-6 (B/D/E) mili
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

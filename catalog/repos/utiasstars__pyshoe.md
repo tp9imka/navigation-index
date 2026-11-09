@@ -45,4 +45,4 @@ Open Python foot-mounted INS from UTIAS with a public inertial dataset and sever
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

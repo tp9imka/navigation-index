@@ -20,4 +20,4 @@ Command-line utilities to read and write the configuration of Leo Bodnar GPSDO d
 
 _Indexed by lane(s): timing_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

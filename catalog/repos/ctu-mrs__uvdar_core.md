@@ -30,4 +30,4 @@ Mutual relative localization for UAV swarms using blinking ultraviolet LEDs and 
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

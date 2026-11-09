@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 381 | C++ | MIT | 2026-01-13 | False | active-research | medium |
+| 382 | C++ | MIT | 2026-01-13 | False | active-research | medium |
 
 Platform for outdoor aerial vision-language navigation: multi-engine simulators (UE, GTA V, Google Earth, 3DGS), automated data collection toolchain, a large benchmark and a keyframe-aware VLN model.
 
@@ -32,4 +32,4 @@ Platform for outdoor aerial vision-language navigation: multi-engine simulators 
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

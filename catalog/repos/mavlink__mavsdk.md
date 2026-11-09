@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 962 | C++ | BSD-3-Clause | 2026-11-05 | False | production | high |
+| 963 | C++ | BSD-3-Clause | 2026-11-09 | False | production | high |
 
 C++ SDK exposing high-level MAVLink plugins (action, mission, offboard, telemetry, camera) with a gRPC server for other languages.
 
@@ -41,4 +41,4 @@ C++ SDK exposing high-level MAVLink plugins (action, mission, offboard, telemetr
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

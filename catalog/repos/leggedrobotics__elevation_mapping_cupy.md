@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 1,160 | Python | MIT | 2026-10-03 | False | active-research | high |
+| 1,161 | Python | MIT | 2026-10-03 | False | active-research | high |
 
 GPU-accelerated elevation and traversability mapping from ETH Zurich, supporting semantic layers and learned traversability, used on ANYmal robots.
 
@@ -39,4 +39,4 @@ GPU-accelerated elevation and traversability mapping from ETH Zurich, supporting
 
 _Indexed by lane(s): domains-swarm, planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

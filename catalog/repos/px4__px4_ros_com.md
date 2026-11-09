@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 231 | C++ | BSD-3-Clause | 2025-11-21 | False | production | high |
+| 232 | C++ | BSD-3-Clause | 2025-11-21 | False | production | high |
 
 Example ROS 2 nodes and helpers (frame transforms) for interfacing with PX4 over DDS.
 
@@ -39,4 +39,4 @@ Example ROS 2 nodes and helpers (frame transforms) for interfacing with PX4 over
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

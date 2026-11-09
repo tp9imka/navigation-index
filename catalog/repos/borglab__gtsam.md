@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 3,776 | Jupyter Notebook | NOASSERTION | 2026-11-06 | False | production | high |
+| 3,780 | Jupyter Notebook | NOASSERTION | 2026-11-08 | False | production | high |
 
 Georgia Tech factor-graph library for smoothing and mapping, with incremental solvers (iSAM2) and a full IMU preintegration factor set. Ships Python bindings and navigation examples combining IMU with GPS-style measurements.
 
@@ -62,4 +62,4 @@ Georgia Tech factor-graph library for smoothing and mapping, with incremental so
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

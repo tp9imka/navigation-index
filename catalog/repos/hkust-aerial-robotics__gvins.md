@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 1,169 | C++ | GPL-3.0 | 2021-09-11 | False | research-prototype | medium |
+| 1,171 | C++ | GPL-3.0 | 2021-09-11 | False | research-prototype | medium |
 
 Tightly coupled GNSS-visual-inertial estimator that fuses raw GNSS pseudorange and Doppler with VIO in a factor graph, giving drift-free global poses and smooth local tracking.
 
@@ -36,4 +36,4 @@ Tightly coupled GNSS-visual-inertial estimator that fuses raw GNSS pseudorange a
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

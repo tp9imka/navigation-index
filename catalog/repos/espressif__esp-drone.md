@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 2,297 | C | GPL-3.0 | 2026-10-26 | False | active-research | medium |
+| 2,305 | C | GPL-3.0 | 2026-10-26 | False | active-research | medium |
 
 Espressif's mini quadcopter firmware for ESP32/ESP32-S2/S3, derived from Crazyflie code, controlled over Wi-Fi.
 
@@ -30,4 +30,4 @@ Espressif's mini quadcopter firmware for ESP32/ESP32-S2/S3, derived from Crazyfl
 
 _Indexed by lane(s): autopilots_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

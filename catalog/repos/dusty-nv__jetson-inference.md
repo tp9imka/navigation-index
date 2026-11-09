@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 9,033 | C++ | MIT | 2025-10-16 | False | production | high |
+| 9,035 | C++ | MIT | 2025-10-16 | False | production | high |
 
 NVIDIA's guide and library for deploying detection, segmentation and depth networks with TensorRT on Jetson, with camera streaming.
 
@@ -38,4 +38,4 @@ NVIDIA's guide and library for deploying detection, segmentation and depth netwo
 
 _Indexed by lane(s): gap-fill_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

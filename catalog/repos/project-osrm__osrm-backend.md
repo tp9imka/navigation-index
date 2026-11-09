@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 8,194 | C++ | BSD-2-Clause | 2026-11-02 | False | production | high |
+| 8,200 | C++ | BSD-2-Clause | 2026-11-07 | False | production | high |
 
 High-performance road routing engine on OpenStreetMap data using contraction hierarchies or multi-level Dijkstra.
 
@@ -38,4 +38,4 @@ High-performance road routing engine on OpenStreetMap data using contraction hie
 
 _Indexed by lane(s): planning-gis-c2_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

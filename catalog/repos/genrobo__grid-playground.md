@@ -28,4 +28,4 @@ Notes and examples for the GRID platform from General Robotics (formerly Scaled 
 
 _Indexed by lane(s): sim-data_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

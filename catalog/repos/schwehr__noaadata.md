@@ -30,4 +30,4 @@ Pure-Python AIS decode and encode library from a long-time AIS researcher, with 
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

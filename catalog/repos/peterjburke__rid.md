@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 82 | C | MIT | 2024-03-31 | False | research-prototype | high |
+| 83 | C | MIT | 2024-03-31 | False | research-prototype | high |
 
 ESP32 Remote ID receiver built on opendroneid-core-c and a fork of sxjack's electronic ID classes.
 
@@ -34,4 +34,4 @@ ESP32 Remote ID receiver built on opendroneid-core-c and a fork of sxjack's elec
 
 _Indexed by lane(s): domains-swarm_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

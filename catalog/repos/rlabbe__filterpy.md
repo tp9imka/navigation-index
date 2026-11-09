@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 3,894 | Python | MIT | 2026-10-27 | False | production | high |
+| 3,896 | Python | MIT | 2026-10-27 | False | production | high |
 
 Python library of Kalman filters (linear, extended, unscented, ensemble), smoothers, particle filtering helpers and related estimators.
 
@@ -45,4 +45,4 @@ Python library of Kalman filters (linear, extended, unscented, ensemble), smooth
 
 _Indexed by lane(s): ins-fusion_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._

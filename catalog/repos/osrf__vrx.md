@@ -4,7 +4,7 @@
 
 | stars | language | license | last push | archived | maturity | hackathon fit |
 |---|---|---|---|---|---|---|
-| 762 | C++ | Apache-2.0 | 2026-08-02 | False | production | high |
+| 765 | C++ | Apache-2.0 | 2026-08-02 | False | production | high |
 
 Gazebo-based simulation environment for the RobotX maritime autonomy competition, with a WAM-V USV model, waves, wind, sensors and scored tasks such as station keeping, wayfinding and perception.
 
@@ -40,4 +40,4 @@ Gazebo-based simulation environment for the RobotX maritime autonomy competition
 
 _Indexed by lane(s): domains-swarm, sim-data_
 
-_GitHub metadata fetched 2026-11-06._
+_GitHub metadata fetched 2026-11-09._
