@@ -72,3 +72,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 ## 2026-11-09 wave 5 (Ivan: more arenas, more algorithms, a playground)
 - added 46-50; recommendation: playground runs the real Python arena via Pyodide (one implementation), gated on the 48a timing spike.
 - launched 46a, 48a, 49, 50.
+- landed: 35 => 2e3f270 (decode_eval 63/63; evidence rows for 4 samples; readiness overrides for 6; gate OK)
