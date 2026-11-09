@@ -188,6 +188,36 @@ seed 0. "Of which unsensed" counts collisions whose contact was with an unsensed
 - A rerun of 24 runs (F2 jump, F1 bias, F0 none, layouts 0-7, unsensed on) in one process gave
   identical outcome, min clearance, path length, intervention fraction and unsensed-hit flags.
 
+## Part b: estimation-aware baselines (ran 2026-11-09, synthetic)
+
+Added by loop item 06b: F3 Belief-CBF (map barrier inflated by k * sigma from the EKF covariance,
+plus the prediction margin gamma), F3p (F3 with the covariance prediction only), F4 MR-CBF with a
+fixed error bound eps_m. F4's default eps_m = 0.99 m is the worst per-run position error seen on
+seed 1 ([kill_b_eps_calib_1.md](results/kill_b_eps_calib_1.md)); 0.4, 0.2 and 0.1 m are swept.
+`python run_kill.py --layouts 100 --seed 0 --workers 14 --tag kill_b --arms F2,F3,F3p,F4,F4@eps_m=0.4,F4@eps_m=0.2,F4@eps_m=0.1`
+(807 s). Unsensed obstacles on, collision % (reached %):
+
+| arm | none | jump | bias | dropout |
+|---|---|---|---|---|
+| F2 PX4-CBF | 3 (72) | 11 (33) | 7 (33) | 4 (59) |
+| F3 Belief-CBF | 0 (62) | 9 (31) | 3 (31) | 1 (56) |
+| F4 MR-CBF eps 0.99 m | 15 (0) | 13 (0) | 18 (0) | 15 (0) |
+| F4 MR-CBF eps 0.2 m | 0 (60) | 0 (29) | 0 (29) | 1 (53) |
+| F4 MR-CBF eps 0.1 m | 0 (65) | 11 (29) | 5 (33) | 4 (56) |
+
+Full tables and barrier diagnostics: [kill_b_summary_0.md](results/kill_b_summary_0.md).
+
+- **The bar for "ours" is now MR-CBF with a fixed 0.2 m bound:** 0-1 % collisions in every fault
+  case with unsensed obstacles, at the same reach as F2/F3. Doc 04's fail line ("a baseline within
+  1 pp") is close to met by this arm. Ours has to show either fewer collisions at equal reach or
+  more reach at equal safety, and a reason a fixed bound cannot be chosen in advance.
+- F4 with the calibrated worst-case bound (0.99 m) freezes: 0 % reach, 82-85 % stuck; its
+  collisions are QP-infeasible slack, not unsensed hits.
+- F3 Belief-CBF removes most fault collisions except jumps (9 %): a jump is not in the covariance.
+- The 0.2 m value was swept on seed 0 itself, so it is tuned on the test seed. Item 37 reruns on
+  held-out seeds. The job hit its time limit before writing this section; the loop driver wrote it
+  from the result files.
+
 ## Add an arm
 
 1. In `filters.py`, subclass `SafetyFilter` with `NAME` (for example `"F3"`) and `DEFAULTS`

@@ -1,0 +1,622 @@
+{
+ "command": "python run_kill.py --calibrate --layouts 100 --seed 1 --workers 14",
+ "input": "synthetic",
+ "family": "random",
+ "seed": 1,
+ "layouts": 100,
+ "arm": "F2",
+ "case": "none",
+ "unsensed": false,
+ "stats": {
+  "eps_m": 1.0558,
+  "state_err_median": 0.4103,
+  "state_err_p95": 0.768,
+  "state_err_max": 1.0558,
+  "pos_err_median": 0.386,
+  "pos_err_p95": 0.7565,
+  "pos_err_max": 0.9907
+ },
+ "wall_s": 6.1,
+ "per_run": [
+  {
+   "index": 0,
+   "max_state_error": 0.6947,
+   "max_pose_error_m": 0.6755,
+   "outcome": "stuck"
+  },
+  {
+   "index": 1,
+   "max_state_error": 0.4384,
+   "max_pose_error_m": 0.4289,
+   "outcome": "stuck"
+  },
+  {
+   "index": 2,
+   "max_state_error": 0.4072,
+   "max_pose_error_m": 0.3207,
+   "outcome": "reached"
+  },
+  {
+   "index": 3,
+   "max_state_error": 0.5192,
+   "max_pose_error_m": 0.5179,
+   "outcome": "reached"
+  },
+  {
+   "index": 4,
+   "max_state_error": 0.3268,
+   "max_pose_error_m": 0.316,
+   "outcome": "reached"
+  },
+  {
+   "index": 5,
+   "max_state_error": 0.3529,
+   "max_pose_error_m": 0.3486,
+   "outcome": "reached"
+  },
+  {
+   "index": 6,
+   "max_state_error": 0.6287,
+   "max_pose_error_m": 0.542,
+   "outcome": "stuck"
+  },
+  {
+   "index": 7,
+   "max_state_error": 0.3684,
+   "max_pose_error_m": 0.3589,
+   "outcome": "reached"
+  },
+  {
+   "index": 8,
+   "max_state_error": 0.2036,
+   "max_pose_error_m": 0.1636,
+   "outcome": "reached"
+  },
+  {
+   "index": 9,
+   "max_state_error": 0.4742,
+   "max_pose_error_m": 0.3995,
+   "outcome": "reached"
+  },
+  {
+   "index": 10,
+   "max_state_error": 0.5536,
+   "max_pose_error_m": 0.5531,
+   "outcome": "stuck"
+  },
+  {
+   "index": 11,
+   "max_state_error": 0.8228,
+   "max_pose_error_m": 0.7898,
+   "outcome": "stuck"
+  },
+  {
+   "index": 12,
+   "max_state_error": 0.4078,
+   "max_pose_error_m": 0.351,
+   "outcome": "reached"
+  },
+  {
+   "index": 13,
+   "max_state_error": 0.29,
+   "max_pose_error_m": 0.2842,
+   "outcome": "reached"
+  },
+  {
+   "index": 14,
+   "max_state_error": 0.6627,
+   "max_pose_error_m": 0.626,
+   "outcome": "stuck"
+  },
+  {
+   "index": 15,
+   "max_state_error": 0.7314,
+   "max_pose_error_m": 0.6244,
+   "outcome": "stuck"
+  },
+  {
+   "index": 16,
+   "max_state_error": 0.4936,
+   "max_pose_error_m": 0.4895,
+   "outcome": "stuck"
+  },
+  {
+   "index": 17,
+   "max_state_error": 0.3482,
+   "max_pose_error_m": 0.3256,
+   "outcome": "reached"
+  },
+  {
+   "index": 18,
+   "max_state_error": 0.3668,
+   "max_pose_error_m": 0.3222,
+   "outcome": "reached"
+  },
+  {
+   "index": 19,
+   "max_state_error": 0.7256,
+   "max_pose_error_m": 0.7251,
+   "outcome": "stuck"
+  },
+  {
+   "index": 20,
+   "max_state_error": 0.576,
+   "max_pose_error_m": 0.5075,
+   "outcome": "reached"
+  },
+  {
+   "index": 21,
+   "max_state_error": 0.5432,
+   "max_pose_error_m": 0.4476,
+   "outcome": "reached"
+  },
+  {
+   "index": 22,
+   "max_state_error": 0.1867,
+   "max_pose_error_m": 0.1672,
+   "outcome": "reached"
+  },
+  {
+   "index": 23,
+   "max_state_error": 0.409,
+   "max_pose_error_m": 0.4033,
+   "outcome": "stuck"
+  },
+  {
+   "index": 24,
+   "max_state_error": 0.4383,
+   "max_pose_error_m": 0.4337,
+   "outcome": "stuck"
+  },
+  {
+   "index": 25,
+   "max_state_error": 0.2572,
+   "max_pose_error_m": 0.2411,
+   "outcome": "reached"
+  },
+  {
+   "index": 26,
+   "max_state_error": 0.2906,
+   "max_pose_error_m": 0.2566,
+   "outcome": "reached"
+  },
+  {
+   "index": 27,
+   "max_state_error": 0.312,
+   "max_pose_error_m": 0.2307,
+   "outcome": "reached"
+  },
+  {
+   "index": 28,
+   "max_state_error": 0.2089,
+   "max_pose_error_m": 0.1928,
+   "outcome": "stuck"
+  },
+  {
+   "index": 29,
+   "max_state_error": 0.3439,
+   "max_pose_error_m": 0.3361,
+   "outcome": "reached"
+  },
+  {
+   "index": 30,
+   "max_state_error": 0.1788,
+   "max_pose_error_m": 0.1392,
+   "outcome": "reached"
+  },
+  {
+   "index": 31,
+   "max_state_error": 0.4222,
+   "max_pose_error_m": 0.2756,
+   "outcome": "reached"
+  },
+  {
+   "index": 32,
+   "max_state_error": 0.2622,
+   "max_pose_error_m": 0.1653,
+   "outcome": "reached"
+  },
+  {
+   "index": 33,
+   "max_state_error": 0.4444,
+   "max_pose_error_m": 0.4422,
+   "outcome": "stuck"
+  },
+  {
+   "index": 34,
+   "max_state_error": 0.1091,
+   "max_pose_error_m": 0.0458,
+   "outcome": "stuck"
+  },
+  {
+   "index": 35,
+   "max_state_error": 0.6554,
+   "max_pose_error_m": 0.6545,
+   "outcome": "stuck"
+  },
+  {
+   "index": 36,
+   "max_state_error": 0.757,
+   "max_pose_error_m": 0.7548,
+   "outcome": "stuck"
+  },
+  {
+   "index": 37,
+   "max_state_error": 0.5894,
+   "max_pose_error_m": 0.5351,
+   "outcome": "reached"
+  },
+  {
+   "index": 38,
+   "max_state_error": 0.3586,
+   "max_pose_error_m": 0.353,
+   "outcome": "reached"
+  },
+  {
+   "index": 39,
+   "max_state_error": 0.4389,
+   "max_pose_error_m": 0.392,
+   "outcome": "reached"
+  },
+  {
+   "index": 40,
+   "max_state_error": 0.3268,
+   "max_pose_error_m": 0.2966,
+   "outcome": "reached"
+  },
+  {
+   "index": 41,
+   "max_state_error": 0.4627,
+   "max_pose_error_m": 0.4627,
+   "outcome": "stuck"
+  },
+  {
+   "index": 42,
+   "max_state_error": 0.3599,
+   "max_pose_error_m": 0.3256,
+   "outcome": "reached"
+  },
+  {
+   "index": 43,
+   "max_state_error": 0.2451,
+   "max_pose_error_m": 0.2216,
+   "outcome": "reached"
+  },
+  {
+   "index": 44,
+   "max_state_error": 0.393,
+   "max_pose_error_m": 0.3899,
+   "outcome": "stuck"
+  },
+  {
+   "index": 45,
+   "max_state_error": 0.2517,
+   "max_pose_error_m": 0.2458,
+   "outcome": "reached"
+  },
+  {
+   "index": 46,
+   "max_state_error": 0.6221,
+   "max_pose_error_m": 0.5849,
+   "outcome": "stuck"
+  },
+  {
+   "index": 47,
+   "max_state_error": 0.3478,
+   "max_pose_error_m": 0.3188,
+   "outcome": "reached"
+  },
+  {
+   "index": 48,
+   "max_state_error": 1.0047,
+   "max_pose_error_m": 0.9814,
+   "outcome": "stuck"
+  },
+  {
+   "index": 49,
+   "max_state_error": 0.6498,
+   "max_pose_error_m": 0.5918,
+   "outcome": "stuck"
+  },
+  {
+   "index": 50,
+   "max_state_error": 0.5072,
+   "max_pose_error_m": 0.495,
+   "outcome": "stuck"
+  },
+  {
+   "index": 51,
+   "max_state_error": 0.288,
+   "max_pose_error_m": 0.2823,
+   "outcome": "reached"
+  },
+  {
+   "index": 52,
+   "max_state_error": 0.2998,
+   "max_pose_error_m": 0.2775,
+   "outcome": "reached"
+  },
+  {
+   "index": 53,
+   "max_state_error": 0.6303,
+   "max_pose_error_m": 0.6258,
+   "outcome": "stuck"
+  },
+  {
+   "index": 54,
+   "max_state_error": 0.3103,
+   "max_pose_error_m": 0.2983,
+   "outcome": "reached"
+  },
+  {
+   "index": 55,
+   "max_state_error": 0.3984,
+   "max_pose_error_m": 0.3871,
+   "outcome": "stuck"
+  },
+  {
+   "index": 56,
+   "max_state_error": 0.689,
+   "max_pose_error_m": 0.6731,
+   "outcome": "reached"
+  },
+  {
+   "index": 57,
+   "max_state_error": 0.7364,
+   "max_pose_error_m": 0.7244,
+   "outcome": "reached"
+  },
+  {
+   "index": 58,
+   "max_state_error": 0.4625,
+   "max_pose_error_m": 0.3778,
+   "outcome": "reached"
+  },
+  {
+   "index": 59,
+   "max_state_error": 0.8752,
+   "max_pose_error_m": 0.8749,
+   "outcome": "stuck"
+  },
+  {
+   "index": 60,
+   "max_state_error": 0.2592,
+   "max_pose_error_m": 0.2408,
+   "outcome": "reached"
+  },
+  {
+   "index": 61,
+   "max_state_error": 0.2678,
+   "max_pose_error_m": 0.2272,
+   "outcome": "reached"
+  },
+  {
+   "index": 62,
+   "max_state_error": 0.4462,
+   "max_pose_error_m": 0.4354,
+   "outcome": "reached"
+  },
+  {
+   "index": 63,
+   "max_state_error": 0.3332,
+   "max_pose_error_m": 0.2788,
+   "outcome": "reached"
+  },
+  {
+   "index": 64,
+   "max_state_error": 0.4956,
+   "max_pose_error_m": 0.4743,
+   "outcome": "reached"
+  },
+  {
+   "index": 65,
+   "max_state_error": 0.2907,
+   "max_pose_error_m": 0.2757,
+   "outcome": "stuck"
+  },
+  {
+   "index": 66,
+   "max_state_error": 1.0558,
+   "max_pose_error_m": 0.9907,
+   "outcome": "stuck"
+  },
+  {
+   "index": 67,
+   "max_state_error": 0.3679,
+   "max_pose_error_m": 0.3674,
+   "outcome": "stuck"
+  },
+  {
+   "index": 68,
+   "max_state_error": 0.3326,
+   "max_pose_error_m": 0.2854,
+   "outcome": "reached"
+  },
+  {
+   "index": 69,
+   "max_state_error": 0.6128,
+   "max_pose_error_m": 0.4757,
+   "outcome": "reached"
+  },
+  {
+   "index": 70,
+   "max_state_error": 0.3466,
+   "max_pose_error_m": 0.3182,
+   "outcome": "reached"
+  },
+  {
+   "index": 71,
+   "max_state_error": 0.2562,
+   "max_pose_error_m": 0.2166,
+   "outcome": "reached"
+  },
+  {
+   "index": 72,
+   "max_state_error": 0.1372,
+   "max_pose_error_m": 0.0842,
+   "outcome": "stuck"
+  },
+  {
+   "index": 73,
+   "max_state_error": 0.4807,
+   "max_pose_error_m": 0.4311,
+   "outcome": "stuck"
+  },
+  {
+   "index": 74,
+   "max_state_error": 0.4117,
+   "max_pose_error_m": 0.4087,
+   "outcome": "stuck"
+  },
+  {
+   "index": 75,
+   "max_state_error": 0.6072,
+   "max_pose_error_m": 0.5402,
+   "outcome": "stuck"
+  },
+  {
+   "index": 76,
+   "max_state_error": 0.331,
+   "max_pose_error_m": 0.299,
+   "outcome": "reached"
+  },
+  {
+   "index": 77,
+   "max_state_error": 0.5816,
+   "max_pose_error_m": 0.5204,
+   "outcome": "reached"
+  },
+  {
+   "index": 78,
+   "max_state_error": 0.8349,
+   "max_pose_error_m": 0.834,
+   "outcome": "stuck"
+  },
+  {
+   "index": 79,
+   "max_state_error": 0.3872,
+   "max_pose_error_m": 0.3848,
+   "outcome": "stuck"
+  },
+  {
+   "index": 80,
+   "max_state_error": 0.3853,
+   "max_pose_error_m": 0.3805,
+   "outcome": "reached"
+  },
+  {
+   "index": 81,
+   "max_state_error": 0.5255,
+   "max_pose_error_m": 0.418,
+   "outcome": "stuck"
+  },
+  {
+   "index": 82,
+   "max_state_error": 0.708,
+   "max_pose_error_m": 0.5895,
+   "outcome": "stuck"
+  },
+  {
+   "index": 83,
+   "max_state_error": 0.7021,
+   "max_pose_error_m": 0.6632,
+   "outcome": "reached"
+  },
+  {
+   "index": 84,
+   "max_state_error": 0.3521,
+   "max_pose_error_m": 0.3401,
+   "outcome": "reached"
+  },
+  {
+   "index": 85,
+   "max_state_error": 0.4465,
+   "max_pose_error_m": 0.4446,
+   "outcome": "reached"
+  },
+  {
+   "index": 86,
+   "max_state_error": 0.4545,
+   "max_pose_error_m": 0.4493,
+   "outcome": "reached"
+  },
+  {
+   "index": 87,
+   "max_state_error": 0.7641,
+   "max_pose_error_m": 0.7515,
+   "outcome": "stuck"
+  },
+  {
+   "index": 88,
+   "max_state_error": 0.5485,
+   "max_pose_error_m": 0.5043,
+   "outcome": "reached"
+  },
+  {
+   "index": 89,
+   "max_state_error": 0.2299,
+   "max_pose_error_m": 0.2146,
+   "outcome": "stuck"
+  },
+  {
+   "index": 90,
+   "max_state_error": 0.3575,
+   "max_pose_error_m": 0.2752,
+   "outcome": "reached"
+  },
+  {
+   "index": 91,
+   "max_state_error": 0.2926,
+   "max_pose_error_m": 0.226,
+   "outcome": "reached"
+  },
+  {
+   "index": 92,
+   "max_state_error": 0.4048,
+   "max_pose_error_m": 0.3738,
+   "outcome": "reached"
+  },
+  {
+   "index": 93,
+   "max_state_error": 0.4944,
+   "max_pose_error_m": 0.3816,
+   "outcome": "reached"
+  },
+  {
+   "index": 94,
+   "max_state_error": 0.7536,
+   "max_pose_error_m": 0.6644,
+   "outcome": "reached"
+  },
+  {
+   "index": 95,
+   "max_state_error": 0.3797,
+   "max_pose_error_m": 0.3617,
+   "outcome": "reached"
+  },
+  {
+   "index": 96,
+   "max_state_error": 0.7651,
+   "max_pose_error_m": 0.7217,
+   "outcome": "stuck"
+  },
+  {
+   "index": 97,
+   "max_state_error": 0.238,
+   "max_pose_error_m": 0.2243,
+   "outcome": "reached"
+  },
+  {
+   "index": 98,
+   "max_state_error": 0.4696,
+   "max_pose_error_m": 0.4603,
+   "outcome": "stuck"
+  },
+  {
+   "index": 99,
+   "max_state_error": 0.22,
+   "max_pose_error_m": 0.2031,
+   "outcome": "reached"
+  }
+ ]
+}

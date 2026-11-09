@@ -173,6 +173,28 @@ class VioEstimator:
         white = VIO_WHITE * (DARK["white_mult"] if dark else 1.0)
         self._update(self.vio_pos + meas * white, white)
 
+    # ---- read-only accessor (belief-space safety filters) ----
+    def belief(self) -> dict | None:
+        """Copies of the EKF mean and covariance after the last call, plus the noise settings the
+        filter uses. Reads state only; changes nothing. None before the first call.
+
+        x [x, y, vx, vy], P 4x4 (EKF only, no VIO drift), drift_var (horizontal VIO drift variance
+        accumulated so far, m^2, both axes together), q_acc (process noise, m/s^2 per axis),
+        vio_r (std of the next VIO position measurement, m), vio_hz, imu_hz, drift_c (m/sqrt(m)
+        now), time_walk (m/sqrt(s) now), last_dark, vio_lost, last_vio_t."""
+        if self.prev is None:
+            return None
+        dark = bool(self.last_dark)
+        return {
+            "t": float(self.tf), "x": self.x.copy(), "P": self.P.copy(),
+            "drift_var": float(self.drift_var), "q_acc": Q_ACC,
+            "vio_r": VIO_WHITE * (DARK["white_mult"] if dark else 1.0),
+            "vio_hz": VIO_HZ, "imu_hz": IMU_HZ,
+            "drift_c": DRIFT_C * (DARK["drift_mult"] if dark else 1.0),
+            "time_walk": DARK["time_walk"] if dark else 0.0,
+            "last_dark": dark, "vio_lost": bool(self.vio_lost), "last_vio_t": float(self.last_vio_t),
+        }
+
     # ---- PoseSource ----
     def __call__(self, truth: Pose) -> Pose:
         p1 = np.array([truth.x, truth.y])
