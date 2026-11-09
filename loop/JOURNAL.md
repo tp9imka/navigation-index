@@ -63,3 +63,4 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - added 34-45; dropped 17; parked 26; 06 part c folded into 37; 28 amended (tuned/held-out column) to run last.
 - risk noted: do not write PASS for the headline before 37 (held-out seeds).
 - launched wave 4: 35, 36, 38, 43.
+- landed: 32 => 0a62876 (job hit timeout after writing results; crazyflie preset on glass family: 90 % / 100 % collisions; bright light 38 % collisions for A* unknown map on random; parity 50/50 with run.evaluate; claims checked 2/2: table and notes consistent, parity line present)
