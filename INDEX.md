@@ -19,7 +19,7 @@ Browse by concept below, open [the graph](graph/index.html), or grep `index/reco
   - [Celestial and star-tracker navigation](catalog/concepts/celestial-nav.md) - 16 repos, 9 docs/samples
   - [Signals of opportunity](catalog/concepts/signals-of-opportunity.md) - 14 repos, 53 docs/samples
   - [Electronic warfare resilience](catalog/concepts/ew-resilience.md) - 18 repos, 78 docs/samples
-- [Inertial navigation (INS/IMU)](catalog/concepts/ins.md) - 81 repos, 98 docs/samples
+- [Inertial navigation (INS/IMU)](catalog/concepts/ins.md) - 81 repos, 97 docs/samples
 - [Sensor fusion and state estimation](catalog/concepts/sensor-fusion.md) - 130 repos, 244 docs/samples
   - [GNSS/INS integration](catalog/concepts/gnss-ins.md) - 39 repos, 56 docs/samples
   - [Sensor calibration](catalog/concepts/calibration.md) - 29 repos, 31 docs/samples
@@ -46,7 +46,7 @@ Browse by concept below, open [the graph](graph/index.html), or grep `index/reco
 - [Ground vehicle autonomy](catalog/concepts/ground-vehicle-nav.md) - 41 repos, 29 docs/samples
 - [Space and orbital navigation](catalog/concepts/space-nav.md) - 11 repos, 28 docs/samples
 - [Simulation and HIL/SITL](catalog/concepts/simulation.md) - 99 repos, 91 docs/samples
-- [Datasets and benchmarks](catalog/concepts/datasets-benchmarks.md) - 102 repos, 179 docs/samples
+- [Datasets and benchmarks](catalog/concepts/datasets-benchmarks.md) - 102 repos, 180 docs/samples
 - [ROS / ROS 2 robotics middleware](catalog/concepts/ros.md) - 118 repos, 34 docs/samples
 - [Onboard / edge AI perception](catalog/concepts/edge-ai.md) - 78 repos, 63 docs/samples
 - [Tracking and data association](catalog/concepts/target-tracking.md) - 17 repos, 15 docs/samples

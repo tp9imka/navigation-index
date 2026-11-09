@@ -188,7 +188,7 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [Jamming and spoofing](catalog/concepts/gnss-interference.md): 198 items - GNSS interference, spoofing simulation, detection, mitigation, monitoring, anti-jam antennas (CRPA).
 - [Assured / resilient PNT](catalog/concepts/assured-pnt.md): 316 items - Architectures that keep position, navigation and timing trustworthy under denial and deception.
 - [Timing and time transfer](catalog/concepts/timing.md): 150 items - Clocks, holdover, PTP/NTP, GNSS-disciplined oscillators, chip-scale atomic clocks.
-- [Inertial navigation (INS/IMU)](catalog/concepts/ins.md): 179 items - Strapdown mechanization, IMU error models, calibration, dead reckoning.
+- [Inertial navigation (INS/IMU)](catalog/concepts/ins.md): 178 items - Strapdown mechanization, IMU error models, calibration, dead reckoning.
 - [Sensor fusion and state estimation](catalog/concepts/sensor-fusion.md): 374 items - Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integration.
 - [GNSS/INS integration](catalog/concepts/gnss-ins.md): 95 items - Loosely, tightly and deeply coupled GNSS/INS.
 - [Sensor calibration](catalog/concepts/calibration.md): 60 items - Camera-IMU, LiDAR-IMU extrinsics, intrinsics, time offset, Allan variance.
@@ -219,7 +219,7 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [Ground vehicle autonomy](catalog/concepts/ground-vehicle-nav.md): 70 items - UGV/off-road autonomy stacks, localization and navigation for ground robots.
 - [Space and orbital navigation](catalog/concepts/space-nav.md): 39 items - Orbit determination, LEO-PNT, spacecraft navigation.
 - [Simulation and HIL/SITL](catalog/concepts/simulation.md): 190 items - Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simulators.
-- [Datasets and benchmarks](catalog/concepts/datasets-benchmarks.md): 281 items - Public datasets, evaluation tools, leaderboards for navigation and localization.
+- [Datasets and benchmarks](catalog/concepts/datasets-benchmarks.md): 282 items - Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [ROS / ROS 2 robotics middleware](catalog/concepts/ros.md): 152 items - ROS ecosystem packages for navigation and localization.
 - [Onboard / edge AI perception](catalog/concepts/edge-ai.md): 141 items - Detection, segmentation, depth on embedded hardware supporting navigation.
 - [Tracking and data association](catalog/concepts/target-tracking.md): 32 items - Multi-target tracking, MHT/JPDA, track fusion (for nav-relevant awareness, not weapon guidance).

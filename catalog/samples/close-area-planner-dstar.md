@@ -18,4 +18,11 @@ D* Lite on the same inflated grid and cost model as astar_esdf's unknown-map mod
 
 **Tags:** `close-area`, `a-to-b`, `moving-obstacles`, `dynamic-obstacles`, `pedestrians`, `replanning`, `a-star`, `esdf`, `safety-filter`, `px4-cbf`, `control-barrier-function`, `apf`, `potential-field`, `benchmark`, `python`, `numpy`, `scipy`, `cpu-only`
 
+## Referenced by
+
+- [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) (mentions)
+- [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Close-area benchmark matrix: 14 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md) (explains)
+
 _Indexed by lane(s): samples_
