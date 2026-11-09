@@ -1,0 +1,44 @@
+{
+  "id": "sample:close-area-relocalize",
+  "title": "Close-area relocalization after VIO loss: scan-to-map pose hypotheses, ratio + persistence acceptance, hover until one wins",
+  "summary": "Relocalizer for the close-area arena. After a detected VIO loss (reset_counter change, quality 0, or a scan-to-map innovation test) a pose source that wraps the arena's VIO-like estimator reports quality 0 (a planner gate hovers), matches the 72-beam range scan against the known 0.1 m occupancy grid by correlative grid search on a likelihood field (EDT distance, sigma 0.10 m, +-2 m window), keeps up to 5 hypotheses 0.5 m apart, and accepts one with a named rule: best score >= 0.6, best >= 1.02 x second, and the same winner for 3 scans; 'none of them' keeps hovering and widens the window to +-4 m. On accept it re-anchors the estimate. experiment.py flies the arena's A* known-map planner on 100 random layouts under the dropout and jump faults and compares no relocalization, hover only, single-hypothesis commit at once, and the multi-hypothesis rule, with ablations without the innovation test, plus a symmetric 2 m x 14.8 m corridor where shifted poses look the same. Thresholds set on seed-1 static poses (tune.py). Synthetic arena only.",
+  "concepts": [
+    "concept:lidar-slam",
+    "concept:sensor-fusion",
+    "concept:vio",
+    "concept:simulation"
+  ],
+  "tags": [
+    "close-area",
+    "a-to-b",
+    "relocalization",
+    "kidnapped-robot",
+    "multi-hypothesis",
+    "scan-matching",
+    "correlative-scan-matching",
+    "likelihood-field",
+    "occupancy-grid",
+    "vio-loss",
+    "reset-counter",
+    "innovation-test",
+    "hover",
+    "symmetric-corridor",
+    "python",
+    "numpy",
+    "scipy"
+  ],
+  "related": [
+    {"id": "sample:close-area-arena", "rel": "explains"},
+    {"id": "res:fox-burgard-thrun-1998-active-markov-localization", "rel": "explains"},
+    {"id": "repo:hviktortsoi/fast_lio_localization", "rel": "explains"}
+  ],
+  "verified": "ran 2026-11-09 with CPython 3.12.10 + numpy 2.5.4 / scipy 1.18.1 on an Apple M3 Max, in the sample venv: experiment.py --layouts 100 --seed 0 ran twice with identical tables (wall 70.7 s on 8 workers for the kept run); experiment.py --corridor --runs 20 ran once (21.3 s); tune.py on seed 1 wrote results/tune_seed1.json. Every number in README is from results/. test_smoke.py: 1 passed in the venv, 1 skipped under plain python3 without numpy. No arena file was edited. Layouts, vehicle, estimator and range sensor are simulated; yaw is truth; the map is the exact prior grid; no SITL, no real drone or lidar.",
+  "verified_status": "ran",
+  "deps": "venv",
+  "first_command": ".venv/bin/python experiment.py --layouts 100 --seed 0",
+  "group": "Close-area A=>B: planning and safety",
+  "shows": "What the drone does when VIO is lost indoors: scan-to-map relocalization with up to 5 hypotheses and a ratio + persistence rule vs commit-at-once vs no relocalization, under dropout and jump faults, plus a symmetric corridor",
+  "input": "synthetic",
+  "runtime": "~71 s for 100 layouts x 2 faults x 7 arms on 8 workers; corridor ~21 s",
+  "key_result": "[100 random layouts, seed 0, A* known map](README.md#results-ran-2026-11-09-apple-m3-max-cpython-31210-numpy-254-scipy-1181): no relocalization reached 64 % (dropout) / 36 % (jump) with 1 % / 9 % collisions; commit-at-once relocalization 100 % / 100 %, 0 % collisions, 2 / 4 wrong commits all later corrected; the multi-hypothesis rule 80 % / 93 %, 0 wrong commits, but hovers until stuck when the scan has under 10 returns or two poses tie; in a symmetric corridor it hovers in 20 of 20 runs"
+}

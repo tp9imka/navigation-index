@@ -45,3 +45,4 @@ fiducial-goal-apriltag
 close-area-safety-filter
 close-area-planner-sampling
 close-area-planner-mpc
+close-area-relocalize
