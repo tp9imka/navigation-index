@@ -18,6 +18,7 @@ cache directory (a USB disk is fine) with everything a team may need, before the
 | `git` | `git clone --mirror` => `git bundle` for the 40 most-linked carded repos (83 in `full`) | integration cards ranked by inbound links in `index/records.jsonl` |
 | `js` | maplibre-gl, milsymbol, pmtiles for the demo dashboard | `templates/demo-dashboard/fetch-vendor.sh` |
 | `tool` / `tiles` | `pmtiles` CLI (4 platforms) and a regional vector basemap extract | `protomaps__pmtiles` card, Protomaps daily build |
+| `browser` | Pyodide 314.0.7 + numpy + scipy for the playground and Solver when the CDN is blocked; `dist/venue-kit.zip` with `serve.py` (separate tool, not in `prep.py`) | `python3 tools/venue_kit.py prepare`, `verify`, `bundle` |
 
 Files: `prep.py` (fetcher, stdlib only), `build_manifest.py` (regenerates `manifest.json` from the
 repo), `manifest.json`, `test_manifest.py`.

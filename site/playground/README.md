@@ -87,6 +87,10 @@ retried again. The 122 s stall itself (a fetch that hangs, then fails) was not r
 
 ## Offline / blocked CDN
 
+One command does all of this: `python3 tools/venue_kit.py prepare` vendors Pyodide with sha256 checks,
+`verify` checks the playground and the Solver with the CDN blocked, `bundle` writes a zip that runs
+with `python3 serve.py` ([day0-runbook](../../docs/day0-runbook.md)). The manual steps below do the same by hand.
+
 The playground needs Pyodide 314.0.7, numpy and scipy. By default it loads them from
 cdn.jsdelivr.net. To run without the CDN (venue Wi-Fi that blocks it, or no network), vendor them
 into `site/playground/pyodide-local/` once, while you still have network (about 30 MB on disk,

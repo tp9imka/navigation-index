@@ -7,3 +7,7 @@ __pycache__/
 
 # vendored Pyodide for offline playground use (never commit)
 site/playground/pyodide-local/
+
+
+# venue kit zip (tools/venue_kit.py bundle)
+dist/

@@ -254,3 +254,12 @@ Go if all of these are true; otherwise switch to the fallback now, while it is c
 - [ ] Threat model v0 and risk register v0 are committed.
 - [ ] Every person knows their H+3 to H+6 task (the playbook's
       [48h plan](hackathon-playbook.md#5-48h-execution-plan-template) takes over from here).
+
+
+## Browser tools offline
+
+- The venue network may block cdn.jsdelivr.net; then the playground and the Solver cannot load Pyodide.
+- Before the event, with network: `python3 tools/venue_kit.py prepare` (vendors Pyodide 314.0.7 + numpy + scipy into `site/playground/pyodide-local/`, checks sha256).
+- Then `python3 tools/venue_kit.py verify`: headless Chrome with the CDN blocked runs one playground run and one Solver Quick sweep, PASS or FAIL.
+- `python3 tools/venue_kit.py bundle` writes `dist/venue-kit.zip`; on any laptop: unzip, `python3 serve.py`, open http://localhost:8000/site/playground/.
+- Details: [site/playground/README.md](../site/playground/README.md#offline--blocked-cdn) and the `browser` row in [templates/offline-kit](../templates/offline-kit/README.md).
