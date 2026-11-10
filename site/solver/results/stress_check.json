@@ -1,0 +1,235 @@
+{
+ "date": "2026-11-10T10:04:49.221Z",
+ "input": "synthetic",
+ "host": "Apple M3 Max, 16 cores, load 30.5 36.7 43.4",
+ "map": "random_0",
+ "chrome": "Chrome/140.0.7339.208",
+ "page": "http://127.0.0.1:8784/site/solver/index.html?map=random_0",
+ "python_ready_s": 7.471,
+ "world": "random_0",
+ "stress_title": "On easy maps the planners separate only when the sensor or pose gets worse (Quick on random_0: 17 of 18 planners reached B 5/5). Stress: 5 seeds, same map; variations = your drone's sensor (truth pose), crazyflie (4 beams, truth pose) and your drone's sensor with a VIO fault (the one chosen below, else VIO jump 0.5 m). Then run.",
+ "sweep": {
+  "done": 270,
+  "total": 270,
+  "elapsed_s": 166.347,
+  "cancelled": false,
+  "K": 4,
+  "wall_s_from_click": 166.367
+ },
+ "count_msg": "270 runs = 18 planners x 3 variations (ideal / truth pose; ideal / VIO jump; crazyflie / truth pose) x 5 seeds. Estimate: about 2 min 33 s on 4 workers (from run times measured in this browser). Run time limit: 60 s of sim time (Auto: random family, default).Quick separates 5/5 from 0/5; telling 5/5 from 4/5 needs about 33 seeds (95 % Wilson: 5/5 57 %-100 %, 0/5 0 %-43 %).",
+ "spec": {
+  "planners": [
+   "straight",
+   "freest_beam",
+   "astar_known",
+   "astar_unknown",
+   "apf",
+   "vfh_plus",
+   "dwa",
+   "dwa_mem",
+   "bug2",
+   "tangent_bug",
+   "dstar_lite",
+   "informed_rrt_star",
+   "thetastar_known",
+   "lazy_thetastar_known",
+   "lazy_thetastar_unknown",
+   "mppi",
+   "mppi_astar",
+   "hybrid_astar"
+  ],
+  "presets": [
+   "ideal",
+   "crazyflie"
+  ],
+  "faults": [
+   "truth",
+   "jump"
+  ],
+  "fault": "jump",
+  "seeds": 5,
+  "jitter": 0.5,
+  "time_limit": "auto",
+  "vehicle": {
+   "radius_m": 0.15,
+   "v_max": 2,
+   "a_max": 3,
+   "tau": 0.15
+  },
+  "sensor_choice": "ideal",
+  "sensor": null,
+  "yaw": "fixed",
+  "vars": [
+   "ideal|truth",
+   "ideal|jump",
+   "crazyflie|truth"
+  ]
+ },
+ "outcomes": {
+  "stuck": 82,
+  "reached": 158,
+  "collision": 25,
+  "timeout": 5
+ },
+ "errors": [],
+ "stress": {
+  "headline": "17 planners tie at the top; run Thorough or more seeds to separate them (n=15 per planner, best 12/15 reached B, 95 % CI 55 %-93 %).",
+  "kind": "tie",
+  "tied_n": 17,
+  "tied": [
+   "lazy_thetastar_unknown",
+   "dstar_lite",
+   "hybrid_astar",
+   "astar_unknown",
+   "thetastar_known",
+   "lazy_thetastar_known",
+   "astar_known",
+   "informed_rrt_star",
+   "bug2",
+   "apf",
+   "tangent_bug",
+   "mppi",
+   "dwa_mem",
+   "mppi_astar",
+   "freest_beam",
+   "vfh_plus",
+   "dwa"
+  ],
+  "clearly_worse": [
+   "straight"
+  ],
+  "pareto": [
+   "lazy_thetastar_unknown",
+   "dstar_lite",
+   "thetastar_known"
+  ]
+ },
+ "quick": {
+  "source": "site/solver/results/recommend_random_0.json",
+  "headline": "17 planners tie at the top; run Thorough or more seeds to separate them (n=5 per planner, best 5/5 reached B, 95 % CI 57 %-100 %).",
+  "kind": "tie",
+  "tied_n": 17,
+  "tied": [
+   "thetastar_known",
+   "lazy_thetastar_known",
+   "lazy_thetastar_unknown",
+   "hybrid_astar",
+   "dstar_lite",
+   "astar_unknown",
+   "astar_known",
+   "mppi_astar",
+   "mppi",
+   "tangent_bug",
+   "freest_beam",
+   "vfh_plus",
+   "informed_rrt_star",
+   "apf",
+   "bug2",
+   "dwa",
+   "dwa_mem"
+  ]
+ },
+ "left_the_tie": [],
+ "pareto_view": {
+  "pooled": {
+   "group_n": 17,
+   "front": [
+    "lazy_thetastar_unknown",
+    "dstar_lite",
+    "thetastar_known"
+   ],
+   "excluded": [],
+   "rows_n": 18,
+   "text": "Pareto-optimal (all variations pooled): Lazy Theta*, unknown map (geofenced) 17.69 s, 0.506 m, 80 %; D* Lite, unknown map (geofenced) 20.25 s, 0.516 m, 80 %; Theta* (any-angle), known map 17.08 s, 0.334 m, 67 %. Best success group: 17 planners whose 95 % interval overlaps Lazy Theta*, unknown map (geofenced)'s (55 %-93 %)."
+  },
+  "ideal|truth": {
+   "group_n": 17,
+   "front": [
+    "thetastar_known"
+   ],
+   "excluded": [],
+   "rows_n": 18,
+   "text": "Pareto-optimal (ideal / truth pose): Theta* (any-angle), known map 17.08 s, 0.870 m, 100 %. Best success group: 17 planners whose 95 % interval overlaps Theta* (any-angle), known map's (57 %-100 %)."
+  },
+  "ideal|jump": {
+   "group_n": 18,
+   "front": [
+    "lazy_thetastar_unknown"
+   ],
+   "excluded": [
+    "apf",
+    "astar_known",
+    "bug2",
+    "dwa_mem",
+    "freest_beam",
+    "informed_rrt_star",
+    "lazy_thetastar_known",
+    "straight",
+    "tangent_bug",
+    "thetastar_known",
+    "vfh_plus"
+   ],
+   "rows_n": 18,
+   "text": "Pareto-optimal (ideal / VIO jump): Lazy Theta*, unknown map (geofenced) 17.63 s, 0.820 m, 40 %. Best success group: 18 planners whose 95 % interval overlaps Lazy Theta*, unknown map (geofenced)'s (12 %-77 %); no time to B, not ranked: APF + wall follow, A* + ESDF, known map, Bug2, DWA + 3 s scan memory, freest beam (reactive), Informed RRT* 5000, known map, Lazy Theta*, known map, straight line to B, TangentBug, Theta* (any-angle), known map, VFH+."
+  },
+  "crazyflie|truth": {
+   "group_n": 16,
+   "front": [
+    "thetastar_known"
+   ],
+   "excluded": [],
+   "rows_n": 18,
+   "text": "Pareto-optimal (crazyflie / truth pose): Theta* (any-angle), known map 17.08 s, 0.870 m, 100 %. Best success group: 16 planners whose 95 % interval overlaps Theta* (any-angle), known map's (57 %-100 %)."
+  }
+ },
+ "canvas_light": {
+  "css_w": 640,
+  "css_h": 400,
+  "w": 640,
+  "h": 400,
+  "corner_rgb": [
+   255,
+   255,
+   255
+  ],
+  "theme": "system",
+  "panel": "#ffffff"
+ },
+ "canvas_dark": {
+  "css_w": 640,
+  "css_h": 400,
+  "w": 640,
+  "h": 400,
+  "corner_rgb": [
+   29,
+   29,
+   27
+  ],
+  "theme": "dark",
+  "panel": "#1d1d1b"
+ },
+ "phone": {
+  "scrollWidth": 390,
+  "innerWidth": 390,
+  "no_horizontal_scroll": true,
+  "canvas": {
+   "css_w": 322,
+   "css_h": 322,
+   "w": 644,
+   "h": 644,
+   "corner_rgb": [
+    255,
+    255,
+    255
+   ],
+   "theme": "light",
+   "panel": "#ffffff"
+  }
+ },
+ "shot": {
+  "file": "solver_pareto.png",
+  "width": 780,
+  "height": 1688
+ },
+ "console": []
+}

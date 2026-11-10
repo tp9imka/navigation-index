@@ -483,3 +483,103 @@ test("recommend: ARM F0 with a warning below 1.4 m, F2 on a wide map", () => {
   assert.equal(c.world_file.inline, true);
   assert.equal(c.world.obstacles.length, 2);
 });
+
+
+// ------------------------------------------------------------ Stress and Pareto (loop-89)
+// ranking row: k of n reached, median time to B t, min clearance c (rank() field names)
+const prow = (planner, k, n, t, c) => ({ planner, reached: k, n, success: S.wilson(k, n), median_time_s: t, min_clearance_m: c });
+
+test("Stress: drone sensor + crazyflie on truth pose, drone sensor with one VIO fault, 5 seeds", () => {
+  assert.deepEqual(S.stressVariations("ideal"), ["ideal|truth", "crazyflie|truth", "ideal|jump"]);
+  assert.deepEqual(S.stressVariations("crazyflie", "bias"), ["crazyflie|truth", "crazyflie|bias"]);
+  assert.deepEqual(S.stressVariations("ideal", "nonsense"), ["ideal|truth", "crazyflie|truth", "ideal|jump"]);
+  const spec = S.normSpec({ planners: ["a", "b"], presets: ["ideal", "crazyflie"], fault: "jump", seeds: S.STRESS_SEEDS, vars: S.stressVariations("ideal") });
+  assert.equal(S.STRESS_SEEDS, 5);
+  // cross-product order, crazyflie|jump left out
+  assert.deepEqual(S.variations(spec), ["ideal|truth", "ideal|jump", "crazyflie|truth"]);
+  assert.equal(S.runCount(spec), 2 * 3 * 5);
+  const runs = S.buildRuns(spec);
+  assert.equal(runs.length, 30);
+  assert.ok(!runs.some(r => r.key === "crazyflie|jump"));
+  assert.deepEqual(runs.slice(0, 6).map(r => `${r.planner}:${r.key}`),
+    ["a:ideal|truth", "b:ideal|truth", "a:ideal|jump", "b:ideal|jump", "a:crazyflie|truth", "b:crazyflie|truth"]);
+  assert.equal(runs.find(r => r.preset === "crazyflie").beams, 4);
+  // keys outside presets x faults are dropped; nothing valid => every preset x fault
+  assert.deepEqual(S.normSpec({ presets: ["ideal"], vars: ["ideal|truth", "lidar_2d|truth"] }).vars, ["ideal|truth"]);
+  assert.equal(S.normSpec({ presets: ["ideal"], vars: ["lidar_2d|truth"] }).vars, undefined);
+  assert.equal(S.normSpec({ presets: ["ideal"] }).vars, undefined);
+  // share link round trip
+  const back = S.normSpec(S.specFromQuery(S.specToQuery(spec)).spec);
+  assert.deepEqual(S.variations(back), S.variations(spec));
+});
+
+test("Pareto: dominance needs no worse in both and better in one", () => {
+  assert.equal(S.dominates({ t: 17, c: 0.8 }, { t: 18, c: 0.7 }), true);
+  assert.equal(S.dominates({ t: 17, c: 0.8 }, { t: 17, c: 0.7 }), true);        // same time, safer
+  assert.equal(S.dominates({ t: 17, c: 0.8 }, { t: 18, c: 0.8 }), true);        // same clearance, faster
+  assert.equal(S.dominates({ t: 17, c: 0.5 }, { t: 18, c: 0.8 }), false);       // faster but closer: trade-off
+  assert.equal(S.dominates({ t: 17, c: 0.8 }, { t: 17, c: 0.8 }), false);       // equal: neither dominates
+  // compared at 0.01 s and 0.001 m: float noise below that is a tie
+  assert.equal(S.dominates({ t: 17.001, c: 0.8 }, { t: 17.004, c: 0.8 }), false);
+  assert.equal(S.dominates({ t: 17, c: 0.8004 }, { t: 17, c: 0.8001 }), false);
+});
+
+test("Pareto: front within the best success group; trade-offs both stay, dominated and outside the group do not", () => {
+  // random_0 Quick numbers (results/recommend_random_0.md): thetastar_known 17.08 s 0.870 m, lazy_thetastar_unknown
+  // 17.30 s 0.869 m, apf 28.24 s 0.634 m, hybrid_astar 18.28 s 0.513 m; plus a fast planner with a clearly worse rate
+  const rk = [prow("thetastar_known", 5, 5, 17.08, 0.870), prow("lazy_thetastar_unknown", 5, 5, 17.30, 0.869),
+    prow("hybrid_astar", 5, 5, 18.28, 0.513), prow("safe_slow", 5, 5, 40, 0.95), prow("fast_bad", 0, 30, 10, 2.0)];
+  rk[4].reached = 1; rk[4].success = S.wilson(1, 30);                  // 3-17 %: no overlap with 57-100 %
+  const p = S.paretoFront(rk);
+  assert.deepEqual(p.group, ["thetastar_known", "lazy_thetastar_unknown", "hybrid_astar", "safe_slow"]);
+  assert.deepEqual(p.front, ["thetastar_known", "safe_slow"]);
+  const by = Object.fromEntries(p.points.map(q => [q.planner, q]));
+  assert.equal(by.lazy_thetastar_unknown.dominated_by, "thetastar_known");
+  assert.equal(by.hybrid_astar.dominated_by, "thetastar_known");
+  assert.equal(by.fast_bad.in_group, false);
+  assert.equal(by.fast_bad.pareto, false);                            // faster and safer, but outside the group
+  assert.deepEqual(p.excluded, []);
+});
+
+test("Pareto: ties stay together, missing times are excluded, nobody reached => empty", () => {
+  const tie = S.paretoFront([prow("a", 5, 5, 20, 0.5), prow("b", 5, 5, 20, 0.5), prow("c", 5, 5, 21, 0.5)]);
+  assert.deepEqual(tie.front, ["a", "b"]);
+  // a group member without a median time (never reached B, interval still overlaps at n = 1) is excluded, not fast
+  const miss = S.paretoFront([prow("a", 2, 2, 30, 0.4), prow("never", 0, 1, null, 0.9), prow("noclr", 1, 1, 25, null)]);
+  assert.deepEqual(miss.group, ["a", "never", "noclr"]);
+  assert.deepEqual(miss.front, ["a"]);
+  assert.deepEqual(miss.excluded, ["never", "noclr"]);
+  assert.deepEqual(S.paretoFront([prow("x", 0, 5, null, 0.3)]), { group: [], front: [], excluded: [],
+    points: [{ planner: "x", t: null, c: 0.3, p: 0, in_group: false, eligible: false, pareto: false, dominated_by: null }] });
+  assert.deepEqual(S.paretoFront([]).front, []);
+  // a clear winner is its own group
+  const win = S.paretoFront([prow("w", 30, 30, 30, 0.2), prow("l", 3, 30, 10, 0.9)]);
+  assert.deepEqual([win.group, win.front], [["w"], ["w"]]);
+});
+
+test("Pareto: per-variation rows come from the matrix cells, pooled from the ranking", () => {
+  const recs = [...many("a", 5, 5, 20), ...many("b", 5, 5, 25).map(r => ({ ...r, min_clearance_m: 0.9 })),
+    ...many("a", 5, 5, 30).map(r => ({ ...r, preset: "crazyflie" })), ...many("b", 5, 5, 22).map(r => ({ ...r, preset: "crazyflie", min_clearance_m: 0.9 }))];
+  const agg = S.aggregate(recs, S.normSpec({ planners: ["a", "b"], presets: ["ideal", "crazyflie"], seeds: 5 }));
+  assert.deepEqual(S.paretoFront(S.paretoRows(agg, "crazyflie|truth")).front, ["b"]);   // b faster and safer there
+  assert.deepEqual(S.paretoFront(S.paretoRows(agg, "ideal|truth")).front, ["a", "b"]);  // a faster, b safer
+  assert.equal(S.paretoRows(agg, ""), agg.ranking);
+});
+
+test("recommend: 'Pareto-optimal: ...' under the tied set, pareto in recommend.json", () => {
+  const recs = [...many("thetastar_known", 3, 3, 17), ...many("dwa", 3, 3, 40).map(r => ({ ...r, min_clearance_m: 0.9 })),
+    ...many("bug2", 3, 3, 45)];
+  const { md, json } = R.recommend(recDoc(recs), ADV);
+  assert.equal(json.kind, "tie");
+  assert.deepEqual(json.pareto.front.map(r => r.planner), ["thetastar_known", "dwa"]);
+  assert.equal(json.pareto.group_n, 3);
+  assert.match(md, /^Pareto-optimal: Theta\* \(any-angle\), known map \(17\.10 s, 0\.400 m\), DWA \(dynamic window\) \(40\.10 s, 0\.900 m\)\. /m);
+  // directly after the tied table, before the clearly-worse section / more-seeds line
+  assert.ok(md.indexOf("Pareto-optimal:") > md.indexOf("### Tied with the best"));
+  assert.ok(md.indexOf("Pareto-optimal:") < md.indexOf("What more seeds buy"));
+  assert.ok(!/[\u2013\u2014\u2192]/.test(md), "no en or em dashes, no arrows");
+  // Stress spec: recommend lists only the flown variations
+  const spec = S.normSpec({ planners: ["thetastar_known"], presets: ["ideal", "crazyflie"], fault: "jump", seeds: 5, vars: S.stressVariations("ideal") });
+  const doc = S.exportDoc({ spec, world: OPEN, worldName: "random_0", records: many("thetastar_known", 3, 3) });
+  assert.deepEqual(R.recommend(doc, ADV).json.flown.variations, ["ideal / truth pose", "ideal / VIO jump", "crazyflie / truth pose"]);
+});

@@ -2,9 +2,9 @@
 // (site/playground/worker.js, unchanged), draw the race, rank the planners.
 // Pure logic lives in sweep.js (unit tested), the worker pool in pool.js.
 // window.SOLVER is a small API for scripted checks (results/measure_solver.mjs).
-import * as SW from "./sweep.js?v=20261110e";
+import * as SW from "./sweep.js?v=20261110f";
 import { Pool } from "./pool.js?v=20261110c";
-import * as REC from "./recommend.js?v=20261110f";
+import * as REC from "./recommend.js?v=20261110g";
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -32,6 +32,7 @@ function plannerColor(p) {
 const S = {
   doc: null, worldName: null, pristine: false, presets: [], env: null, pool: null, readyCount: 0, loadMs: null,
   sweep: null, walls: {}, sel: null, anim: null, linkSpec: null, autoStart: false, dirty: false,
+  vars: null,                    // explicit variation keys (Stress); null = every preset x fault
 };
 let readyResolve; const readyP = new Promise(ok => { readyResolve = ok; });
 let doneResolve = null;
@@ -269,6 +270,7 @@ function buildSweepControls(env) {
   $("#faultSel").innerHTML = '<option value="">truth only (planner sees truth)</option>' +
     faults.map(f => `<option value="${f}">truth + ${esc(SW.FAULT_LABELS[f])}</option>`).join("");
   if (S.linkSpec && faults.includes(S.linkSpec.fault)) $("#faultSel").value = S.linkSpec.fault;
+  if (S.linkSpec && Array.isArray(S.linkSpec.vars) && S.linkSpec.vars.length) S.vars = S.linkSpec.vars.slice();
   if (S.linkSpec && S.linkSpec.seeds) $("#seedsIn").value = SW.normSpec({ seeds: S.linkSpec.seeds }).seeds;
   if (S.linkSpec && S.linkSpec.time_limit != null) $("#tlimSel").value = String(SW.normTimeLimit(S.linkSpec.time_limit));
   if (S.linkSpec && S.linkSpec.jitter != null) {
@@ -276,7 +278,8 @@ function buildSweepControls(env) {
     $("#jitterOn").checked = j > 0;
     if (j > 0) $("#jitterR").value = String(j);
   }
-  for (const el of document.querySelectorAll("#plannerList input, #presetList input")) el.onchange = updateCount;
+  for (const el of document.querySelectorAll("#plannerList input")) el.onchange = updateCount;
+  for (const el of document.querySelectorAll("#presetList input")) el.onchange = manualVariations;
   updateCount();
 }
 
@@ -299,7 +302,7 @@ function buildDroneControls(offered) {
     const v = $("#droneSensor").value;
     const box = document.querySelector(`#presetList input[value="${v}"]`);
     if (box) box.checked = true;
-    updateCount();
+    manualVariations();
   };
 }
 function readDrone() {
@@ -318,7 +321,8 @@ function droneSummary(spec) {
 function readSpec() {
   const vals = name => [...document.querySelectorAll(`input[name="${name}"]:checked`)].map(i => i.value);
   return SW.normSpec({ planners: vals("planner"), presets: vals("preset"), fault: $("#faultSel").value || null,
-    seeds: $("#seedsIn").value, jitter: $("#jitterOn").checked ? $("#jitterR").value : 0, time_limit: $("#tlimSel").value, ...readDrone() },
+    seeds: $("#seedsIn").value, jitter: $("#jitterOn").checked ? $("#jitterR").value : 0, time_limit: $("#tlimSel").value, ...readDrone(),
+    ...(S.vars ? { vars: S.vars } : {}) },
   S.env ? S.env.planners : null);
 }
 
@@ -334,7 +338,10 @@ function updateCount() {
   const est = SW.estimateSeconds(SW.buildRuns(spec), measuredMeans(), K);
   $("#customBox").hidden = spec.sensor_choice !== SW.CUSTOM;
   $("#droneSum").textContent = "(" + droneSummary(spec) + ")";
-  $("#countMsg").innerHTML = `<b>${n} runs</b> = ${spec.planners.length} planners x ${spec.presets.length} sensor x ${spec.faults.length} fault x ${spec.seeds} seeds. ` +
+  const nv = SW.variations(spec).length;
+  $("#countMsg").innerHTML = `<b>${n} runs</b> = ${spec.planners.length} planners x ` +
+    (spec.vars ? `${nv} variations (${esc(SW.variations(spec).map(k => SW.variationLabel(k, spec)).join("; "))})` : `${spec.presets.length} sensor x ${spec.faults.length} fault`) +
+    ` x ${spec.seeds} seeds. ` +
     `Estimate: about ${SW.fmtDuration(est.s)} on ${K} worker${K > 1 ? "s" : ""} ` +
     `<span class="muted">(${est.measured ? "from run times measured in this browser" : "rough prior from the playground README timings, scaled by beams / 72; refined after the first runs"})</span>. ` +
     esc(SW.timeLimitText(spec, S.doc, [])) +
@@ -345,7 +352,7 @@ function updateCount() {
 function setBusy(on) {
   $("#runBtn").disabled = on || !S.readyCount;
   $("#cancelBtn").disabled = !on;
-  for (const el of document.querySelectorAll("#plannerList input, #presetList input, #droneBox input, #droneBox select, #faultSel, #seedsIn, #tlimSel, #jitterOn, #jitterR, #quickBtn, #thoroughBtn, #presetSel, #fileIn, #linkForm button"))
+  for (const el of document.querySelectorAll("#plannerList input, #presetList input, #droneBox input, #droneBox select, #faultSel, #seedsIn, #tlimSel, #jitterOn, #jitterR, #quickBtn, #thoroughBtn, #stressBtn, #presetSel, #fileIn, #linkForm button"))
     el.disabled = on;
   if (!on) $("#jitterR").disabled = !$("#jitterOn").checked;
 }
@@ -390,6 +397,8 @@ function startSweep() {
   $("#raceVar").innerHTML = '<option value="">all variations</option>' +
     SW.variations(spec).map(k => `<option value="${esc(k)}">${esc(SW.variationLabel(k, spec))}</option>`).join("");
   if (SW.variations(spec).length === 1) $("#raceVar").value = SW.variations(spec)[0];
+  $("#paretoVar").innerHTML = '<option value="">all variations pooled</option>' +
+    SW.variations(spec).map(k => `<option value="${esc(k)}">${esc(SW.variationLabel(k, spec))}</option>`).join("");
   $("#raceSeed").innerHTML = Array.from({ length: spec.seeds }, (_, i) => `<option value="${i}">${i}</option>`).join("");
   setBusy(true);
   S.pool.add(jobs);
@@ -476,7 +485,7 @@ function renderResults() {
   const recs = sw ? sw.records.filter(Boolean) : [];
   if (!recs.length) {
     $("#headline").textContent = "Run a sweep to see the ranking."; $("#headline").className = "headline";
-    $("#ranking").innerHTML = ""; $("#matrix").innerHTML = ""; $("#limitLine").textContent = ""; return;
+    $("#ranking").innerHTML = ""; $("#matrix").innerHTML = ""; $("#limitLine").textContent = ""; $("#paretoBox").hidden = true; return;
   }
   const agg = SW.aggregate(recs, sw.spec);
   const partial = sw.running ? ` (live: ${recs.length}/${sw.total} runs)` : sw.cancelled ? ` (cancelled: ${recs.length}/${sw.total} runs)` : "";
@@ -503,7 +512,100 @@ function renderResults() {
     }).join("") + "</tr>").join("");
   $("#matrix").innerHTML = head + "<tbody>" + body + "</tbody>";
   if (S.sel) renderDetail(agg);
+  renderPareto(agg);
 }
+
+// ---------------------------------------------------------------- Pareto view (loop-89)
+// x = median time to B, y = min clearance, dot area grows with the success rate; ring + id label = Pareto-optimal
+// within the best success group (SW.paretoFront). Faded = outside that group. No time to B => not plotted.
+function niceTicks(lo, hi, n) {
+  const span = Math.max(hi - lo, 1e-9), raw = span / Math.max(1, n), mag = 10 ** Math.floor(Math.log10(raw));
+  const step = [1, 2, 2.5, 5, 10].map(m => m * mag).find(st => st >= raw) || 10 * mag;
+  const out = [];
+  for (let v = Math.ceil(lo / step) * step; v <= hi + 1e-9; v += step) out.push(+v.toFixed(6));
+  return out;
+}
+let paretoLast = null;
+function renderPareto(agg) {
+  const sw = S.sweep, key = $("#paretoVar").value;
+  if (key && !agg.variations.includes(key)) $("#paretoVar").value = "";
+  const rows = SW.paretoRows(agg, $("#paretoVar").value), par = SW.paretoFront(rows);
+  paretoLast = { rows, par, key: $("#paretoVar").value };
+  $("#paretoBox").hidden = false;
+  drawPareto();
+  const where = $("#paretoVar").value ? SW.variationLabel($("#paretoVar").value, sw.spec) : "all variations pooled";
+  const byId = Object.fromEntries(rows.map(r => [r.planner, r]));
+  const nb = t => t.replace(/ (s|m|%)\b/g, "&nbsp;$1").replace(/ %/g, "&nbsp;%");
+  const one = id => `<b>${esc(SW.plannerLabel(id))}</b> ${nb(`${byId[id].median_time_s.toFixed(2)} s, ${byId[id].min_clearance_m.toFixed(3)} m, ${pct(byId[id].success.p)}`)}`;
+  const top = rows[0];
+  let html;
+  if (!par.group.length) html = `No Pareto set (${esc(where)}): no planner reached B.`;
+  else html = `Pareto-optimal (${esc(where)}): ${par.front.length ? par.front.map(one).join("; ") : "none"}.` +
+    ` <span class="muted">Best success group: ${par.group.length} planner${par.group.length > 1 ? "s" : ""} whose 95 % interval overlaps ${esc(SW.plannerLabel(top.planner))}'s (${pct(top.success.lo)}-${pct(top.success.hi)})` +
+    (par.excluded.length ? `; no time to B, not ranked: ${esc(par.excluded.map(SW.plannerLabel).join(", "))}` : "") + ".</span>";
+  if (sw.running) html += ' <span class="muted">(live, changes as runs finish)</span>';
+  $("#paretoList").innerHTML = html;
+  $("#pareto").setAttribute("aria-label", "Scatter of median time to B against min clearance per planner. " + $("#paretoList").textContent);
+}
+function drawPareto() {
+  const c = $("#pareto"); if (!paretoLast || $("#paretoBox").hidden) return;
+  const { par } = paretoLast, C = colors(), ctx = c.getContext("2d"), dpr = fitCanvas(c), W = c.width, H = c.height;
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H);
+  const pts = par.points.filter(q => q.t != null && q.c != null);
+  ctx.font = `${11 * dpr}px system-ui, sans-serif`; ctx.textBaseline = "middle";
+  if (!pts.length) { ctx.fillStyle = C.muted; ctx.textAlign = "center"; ctx.fillText("no planner reached B", W / 2, H / 2); ctx.textAlign = "start"; return; }
+  const L = 46 * dpr, R = 14 * dpr, T = 12 * dpr, B = 38 * dpr;
+  let t0 = Math.min(...pts.map(q => q.t)), t1 = Math.max(...pts.map(q => q.t));
+  const tp = Math.max((t1 - t0) * 0.08, 0.5); t0 = Math.max(0, t0 - tp); t1 += tp;
+  const c0 = Math.min(0, ...pts.map(q => q.c)), c1 = Math.max(...pts.map(q => q.c)) * 1.12 + 0.02;
+  const X = t => L + (t - t0) / (t1 - t0) * (W - L - R), Y = v => H - B - (v - c0) / (c1 - c0) * (H - B - T);
+  // axes, grid, ticks
+  ctx.strokeStyle = C.line; ctx.fillStyle = C.muted; ctx.lineWidth = 1;
+  const nx = W < 500 * dpr ? 4 : 6;
+  ctx.textAlign = "center";
+  for (const v of niceTicks(t0, t1, nx)) { const x = X(v); ctx.globalAlpha = 0.5; ctx.beginPath(); ctx.moveTo(x, T); ctx.lineTo(x, H - B); ctx.stroke(); ctx.globalAlpha = 1; ctx.fillText(String(v), x, H - B + 10 * dpr); }
+  ctx.textAlign = "right";
+  for (const v of niceTicks(c0, c1, 4)) { const y = Y(v); ctx.globalAlpha = 0.5; ctx.beginPath(); ctx.moveTo(L, y); ctx.lineTo(W - R, y); ctx.stroke(); ctx.globalAlpha = 1; ctx.fillText(v.toFixed(2), L - 5 * dpr, y); }
+  ctx.strokeStyle = C.muted; ctx.beginPath(); ctx.moveTo(L, T); ctx.lineTo(L, H - B); ctx.lineTo(W - R, H - B); ctx.stroke();
+  ctx.fillStyle = C.fg; ctx.textAlign = "center";
+  ctx.fillText("median time to B, s (left = faster)", L + (W - L - R) / 2, H - 10 * dpr);
+  ctx.save(); ctx.translate(12 * dpr, T + (H - B - T) / 2); ctx.rotate(-Math.PI / 2); ctx.fillText("min clearance, m (up = safer)", 0, 0); ctx.restore();
+  // front as a staircase
+  const fr = pts.filter(q => q.pareto).sort((a, b) => a.t - b.t);
+  if (fr.length > 1) {
+    ctx.strokeStyle = C.accent; ctx.lineWidth = 1.5 * dpr; ctx.setLineDash([4 * dpr, 3 * dpr]); ctx.beginPath();
+    fr.forEach((q, i) => { const x = X(q.t), y = Y(q.c); if (!i) ctx.moveTo(x, y); else { ctx.lineTo(x, Y(fr[i - 1].c)); ctx.lineTo(x, y); } });
+    ctx.stroke(); ctx.setLineDash([]);
+  }
+  // dots: faded outside the group, front last (on top)
+  const order = [...pts.filter(q => !q.in_group), ...pts.filter(q => q.in_group && !q.pareto), ...fr];
+  for (const q of order) {
+    const x = X(q.t), y = Y(q.c), r = (2.5 + 5 * (q.p || 0)) * dpr;
+    ctx.globalAlpha = q.in_group ? 0.95 : 0.3;
+    ctx.fillStyle = plannerColor(q.planner); ctx.beginPath(); ctx.arc(x, y, r, 0, 2 * Math.PI); ctx.fill();
+    ctx.strokeStyle = C.bg; ctx.lineWidth = 1 * dpr; ctx.stroke();
+    if (q.pareto) { ctx.globalAlpha = 1; ctx.strokeStyle = C.fg; ctx.lineWidth = 2 * dpr; ctx.beginPath(); ctx.arc(x, y, r + 3 * dpr, 0, 2 * Math.PI); ctx.stroke(); }
+  }
+  ctx.globalAlpha = 1; ctx.fillStyle = C.fg; ctx.font = `600 ${11 * dpr}px system-ui, sans-serif`;
+  // labels: first candidate spot (right/left of the dot, stepping up and down a line) that overlaps no placed label
+  const placed = [], lh = 13 * dpr;
+  const hit = (a, b) => a[0] < b[2] && b[0] < a[2] && a[1] < b[3] && b[1] < a[3];
+  for (const q of [...fr].sort((a, b) => b.c - a.c)) {
+    const x = X(q.t), y = Y(q.c), r = (2.5 + 5 * (q.p || 0)) * dpr + 5 * dpr, w = ctx.measureText(q.planner).width;
+    let box = null;
+    for (const dy of [-0.6, 0.6, -1.6, 1.6, -2.6, 2.6, -3.6, 3.6]) for (const side of [1, -1]) {
+      if (box) break;
+      const x0 = side > 0 ? x + r : x - r - w, cy = y + dy * lh, b = [x0, cy - lh / 2, x0 + w, cy + lh / 2];
+      if (b[0] >= L && b[2] <= W - R && b[1] >= 0 && b[3] <= H - B && !placed.some(p => hit(p, b))) box = b;
+    }
+    if (!box) { const x0 = Math.min(x + r, W - R - w); box = [x0, y - lh, x0 + w, y]; }
+    placed.push(box);
+    ctx.textAlign = "left"; ctx.fillText(q.planner, box[0], (box[1] + box[3]) / 2);
+  }
+  ctx.textAlign = "start";
+}
+$("#paretoVar").onchange = () => schedule();
 
 function jitterList(sw) {
   if (!sw || !sw.jitters) return "-";
@@ -638,15 +740,19 @@ $("#cancelBtn").onclick = () => cancelSweep("cancelled");
 $("#seedsIn").oninput = updateCount;
 $("#jitterOn").onchange = () => { $("#jitterR").disabled = !$("#jitterOn").checked; updateCount(); };
 $("#jitterR").onchange = updateCount;
-$("#faultSel").onchange = updateCount;
+$("#faultSel").onchange = manualVariations;
 $("#tlimSel").onchange = updateCount;
 $("#allBtn").onclick = () => { document.querySelectorAll('input[name="planner"]').forEach(i => { i.checked = true; }); updateCount(); };
 $("#noneBtn").onclick = () => { document.querySelectorAll('input[name="planner"]').forEach(i => { i.checked = false; }); updateCount(); };
 
-function preset(seeds, presets, resetFault) {
+// A manual change to the sensor presets, the fault or the drone's sensor drops the Stress variation subset.
+function manualVariations() { S.vars = null; updateCount(); }
+function preset(seeds, presets, resetFault, vars, fault) {
   $("#seedsIn").value = seeds;
   document.querySelectorAll('input[name="preset"]').forEach(i => { i.checked = presets.includes(i.value); });
   if (resetFault) $("#faultSel").value = "";
+  if (fault) $("#faultSel").value = fault;
+  S.vars = vars || null;
   updateCount();
   if (S.readyCount) return startSweep();
   S.autoStart = true;
@@ -658,8 +764,18 @@ function preset(seeds, presets, resetFault) {
 const droneP = () => { const c = $("#droneSensor").value || "ideal"; return c === SW.CUSTOM ? [] : [c]; };
 const quick = () => preset(SW.QUICK_SEEDS, droneP(), true);
 const thorough = () => preset(SW.THOROUGH_SEEDS, [...new Set(["ideal", "crazyflie", ...droneP()])], false);
+// Stress (loop-89): 5 seeds (SW.STRESS_SEEDS), the drone's sensor + crazyflie on truth pose, and the drone's sensor
+// with one VIO fault (the chosen one, else SW.STRESS_FAULT = jump). crazyflie flies truth pose only (S.vars).
+function stress() {
+  const c = $("#droneSensor").value || "ideal", key = c === SW.CUSTOM ? SW.CUSTOM : c;
+  const offered = [...$("#faultSel").options].map(o => o.value).filter(Boolean);
+  const want = $("#faultSel").value || SW.STRESS_FAULT, fault = offered.includes(want) ? want : offered.includes(SW.STRESS_FAULT) ? SW.STRESS_FAULT : null;
+  const vars = fault ? SW.stressVariations(key, fault) : SW.stressVariations(key).filter(k => k.endsWith("|truth"));
+  return preset(SW.STRESS_SEEDS, [...new Set([...droneP(), SW.STRESS_PRESET])], !fault, vars, fault);
+}
 $("#quickBtn").onclick = quick;
 $("#thoroughBtn").onclick = thorough;
+$("#stressBtn").onclick = stress;
 
 $("#presetSel").onchange = () => { const v = $("#presetSel").value; if (v) loadPreset(v).catch(err => worldMsg(err.message, "bad")); };
 $("#fileIn").onchange = ev => {
@@ -742,8 +858,8 @@ $("#themeBtn").onclick = () => {
   drawAll(); renderSweep();
 };
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { drawAll(); renderSweep(); });
-if (window.ResizeObserver) { const ro = new ResizeObserver(() => drawAll()); ro.observe($("#race")); ro.observe($("#preview")); }
-else window.addEventListener("resize", drawAll);
+if (window.ResizeObserver) { const ro = new ResizeObserver(() => { drawAll(); drawPareto(); }); ro.observe($("#race")); ro.observe($("#preview")); ro.observe($("#pareto")); }
+else window.addEventListener("resize", () => { drawAll(); drawPareto(); });
 
 // ---------------------------------------------------------------- start
 async function init() {
@@ -765,6 +881,6 @@ async function init() {
 }
 const started = init();
 
-window.SOLVER = { S, K, ready: readyP, started, quick, thorough, run: startSweep, cancel: () => cancelSweep("cancelled"),
+window.SOLVER = { S, K, ready: readyP, started, quick, thorough, stress, pareto: () => paretoLast, run: startSweep, cancel: () => cancelSweep("cancelled"),
   exportJSON, recommend: recommendNow, csv: () => (S.sweep ? SW.toCSV(S.sweep.records.filter(Boolean)) : null), animate: startAnim, setT: setAnimT,
   shareUrl, loadPreset, allReady: () => S.readyCount >= K };

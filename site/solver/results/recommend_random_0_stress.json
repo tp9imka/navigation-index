@@ -1,0 +1,1117 @@
+{
+ "schema": "navidx-solver-recommend/1",
+ "input": "synthetic",
+ "caveat": "synthetic 2.5D simulation, scored on truth, not a flight result; 5 seeds on one map is a small sample",
+ "world_name": "random_0",
+ "family": "random",
+ "headline": {
+  "kind": "tie",
+  "planner": null,
+  "planners": [
+   "lazy_thetastar_unknown",
+   "dstar_lite",
+   "hybrid_astar",
+   "astar_unknown",
+   "thetastar_known",
+   "lazy_thetastar_known",
+   "astar_known",
+   "informed_rrt_star",
+   "bug2",
+   "apf",
+   "tangent_bug",
+   "mppi",
+   "dwa_mem",
+   "mppi_astar",
+   "freest_beam",
+   "vfh_plus",
+   "dwa"
+  ],
+  "top_n": 17,
+  "text": "17 planners tie at the top; run Thorough or more seeds to separate them (n=15 per planner, best 12/15 reached B, 95 % CI 55 %-93 %)."
+ },
+ "kind": "tie",
+ "pick": [
+  {
+   "planner": "lazy_thetastar_unknown",
+   "label": "Lazy Theta*, unknown map (geofenced)",
+   "bench_id": "lazy_thetastar_unknown",
+   "reached": 12,
+   "n": 15,
+   "n_distinct": 15,
+   "reached_distinct": 12,
+   "wilson_95": {
+    "lo": 0.5481406466534955,
+    "hi": 0.9295257935638959,
+    "p": 0.8
+   },
+   "median_time_s": 17.69,
+   "min_clearance_m": 0.5065,
+   "collisions": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "dstar_lite",
+   "label": "D* Lite, unknown map (geofenced)",
+   "bench_id": "dstar_lite",
+   "reached": 12,
+   "n": 15,
+   "n_distinct": 15,
+   "reached_distinct": 12,
+   "wilson_95": {
+    "lo": 0.5481406466534955,
+    "hi": 0.9295257935638959,
+    "p": 0.8
+   },
+   "median_time_s": 20.25,
+   "min_clearance_m": 0.5165,
+   "collisions": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "hybrid_astar",
+   "label": "Hybrid A*, unknown map (geofenced)",
+   "bench_id": "hybrid_astar",
+   "reached": 11,
+   "n": 15,
+   "n_distinct": 15,
+   "reached_distinct": 11,
+   "wilson_95": {
+    "lo": 0.4804911034231324,
+    "hi": 0.8910272389681718,
+    "p": 0.7333333333333333
+   },
+   "median_time_s": 19.2,
+   "min_clearance_m": 0.3606,
+   "collisions": 0,
+   "stuck": 4,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "astar_unknown",
+   "label": "A* + ESDF, unknown map",
+   "bench_id": "astar_unknown",
+   "reached": 11,
+   "n": 15,
+   "n_distinct": 15,
+   "reached_distinct": 11,
+   "wilson_95": {
+    "lo": 0.4804911034231324,
+    "hi": 0.8910272389681718,
+    "p": 0.7333333333333333
+   },
+   "median_time_s": 20.52,
+   "min_clearance_m": 0.4497,
+   "collisions": 0,
+   "stuck": 4,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "thetastar_known",
+   "label": "Theta* (any-angle), known map",
+   "bench_id": "thetastar_known",
+   "reached": 10,
+   "n": 15,
+   "n_distinct": 15,
+   "reached_distinct": 10,
+   "wilson_95": {
+    "lo": 0.41713125151212976,
+    "hi": 0.8482389930530876,
+    "p": 0.6666666666666666
+   },
+   "median_time_s": 17.08,
+   "min_clearance_m": 0.3341,
+   "collisions": 0,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "lazy_thetastar_known",
+   "label": "Lazy Theta*, known map",
+   "bench_id": "lazy_thetastar_known",
+   "reached": 10,
+   "n": 15,
+   "n_distinct": 15,
+   "reached_distinct": 10,
+   "wilson_95": {
+    "lo": 0.41713125151212976,
+    "hi": 0.8482389930530876,
+    "p": 0.6666666666666666
+   },
+   "median_time_s": 17.1,
+   "min_clearance_m": 0.2918,
+   "collisions": 0,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "astar_known",
+   "label": "A* + ESDF, known map",
+   "bench_id": "astar_known",
+   "reached": 10,
+   "n": 15,
+   "n_distinct": 15,
+   "reached_distinct": 10,
+   "wilson_95": {
+    "lo": 0.41713125151212976,
+    "hi": 0.8482389930530876,
+    "p": 0.6666666666666666
+   },
+   "median_time_s": 19.38,
+   "min_clearance_m": 0.1442,
+   "collisions": 4,
+   "stuck": 1,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "informed_rrt_star",
+   "label": "Informed RRT* 5000, known map",
+   "bench_id": "informed_rrt_star",
+   "reached": 10,
+   "n": 15,
+   "n_distinct": 15,
+   "reached_distinct": 10,
+   "wilson_95": {
+    "lo": 0.41713125151212976,
+    "hi": 0.8482389930530876,
+    "p": 0.6666666666666666
+   },
+   "median_time_s": 26.64,
+   "min_clearance_m": 0.1476,
+   "collisions": 5,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "bug2",
+   "label": "Bug2",
+   "bench_id": "bug2",
+   "reached": 10,
+   "n": 15,
+   "n_distinct": 15,
+   "reached_distinct": 10,
+   "wilson_95": {
+    "lo": 0.41713125151212976,
+    "hi": 0.8482389930530876,
+    "p": 0.6666666666666666
+   },
+   "median_time_s": 30.32,
+   "min_clearance_m": 0.3523,
+   "collisions": 0,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "apf",
+   "label": "APF + wall follow",
+   "bench_id": "apf_escape",
+   "reached": 10,
+   "n": 15,
+   "n_distinct": 15,
+   "reached_distinct": 10,
+   "wilson_95": {
+    "lo": 0.41713125151212976,
+    "hi": 0.8482389930530876,
+    "p": 0.6666666666666666
+   },
+   "median_time_s": 30.58,
+   "min_clearance_m": 0.4382,
+   "collisions": 0,
+   "stuck": 1,
+   "timeout": 4,
+   "error": 0
+  },
+  {
+   "planner": "tangent_bug",
+   "label": "TangentBug",
+   "bench_id": "tangent_bug",
+   "reached": 9,
+   "n": 15,
+   "n_distinct": 15,
+   "reached_distinct": 9,
+   "wilson_95": {
+    "lo": 0.357464427565077,
+    "hi": 0.8017577191740534,
+    "p": 0.6
+   },
+   "median_time_s": 25.64,
+   "min_clearance_m": 0.148,
+   "collisions": 1,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "mppi",
+   "label": "MPPI, goal only (no global plan)",
+   "bench_id": "mppi",
+   "reached": 8,
+   "n": 15,
+   "n_distinct": 15,
+   "reached_distinct": 8,
+   "wilson_95": {
+    "lo": 0.3011663015105079,
+    "hi": 0.7519077474025355,
+    "p": 0.5333333333333333
+   },
+   "median_time_s": 20.87,
+   "min_clearance_m": 0.1263,
+   "collisions": 3,
+   "stuck": 4,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "dwa_mem",
+   "label": "DWA + 3 s scan memory",
+   "bench_id": "dwa_mem",
+   "reached": 8,
+   "n": 15,
+   "n_distinct": 15,
+   "reached_distinct": 8,
+   "wilson_95": {
+    "lo": 0.3011663015105079,
+    "hi": 0.7519077474025355,
+    "p": 0.5333333333333333
+   },
+   "median_time_s": 46.07,
+   "min_clearance_m": 0.1796,
+   "collisions": 0,
+   "stuck": 7,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "mppi_astar",
+   "label": "MPPI on the unknown-map A* path",
+   "bench_id": "mppi_astar",
+   "reached": 7,
+   "n": 15,
+   "n_distinct": 15,
+   "reached_distinct": 7,
+   "wilson_95": {
+    "lo": 0.24809225259746442,
+    "hi": 0.6988336984894921,
+    "p": 0.4666666666666667
+   },
+   "median_time_s": 20.26,
+   "min_clearance_m": 0.1284,
+   "collisions": 4,
+   "stuck": 4,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "freest_beam",
+   "label": "freest beam (reactive)",
+   "bench_id": "freest_beam",
+   "reached": 7,
+   "n": 15,
+   "n_distinct": 15,
+   "reached_distinct": 7,
+   "wilson_95": {
+    "lo": 0.24809225259746442,
+    "hi": 0.6988336984894921,
+    "p": 0.4666666666666667
+   },
+   "median_time_s": 26.12,
+   "min_clearance_m": 0.2777,
+   "collisions": 0,
+   "stuck": 8,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "vfh_plus",
+   "label": "VFH+",
+   "bench_id": "vfh_plus",
+   "reached": 7,
+   "n": 15,
+   "n_distinct": 15,
+   "reached_distinct": 7,
+   "wilson_95": {
+    "lo": 0.24809225259746442,
+    "hi": 0.6988336984894921,
+    "p": 0.4666666666666667
+   },
+   "median_time_s": 26.34,
+   "min_clearance_m": 0.142,
+   "collisions": 3,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "dwa",
+   "label": "DWA (dynamic window)",
+   "bench_id": "dwa",
+   "reached": 6,
+   "n": 15,
+   "n_distinct": 15,
+   "reached_distinct": 6,
+   "wilson_95": {
+    "lo": 0.19824228082594664,
+    "hi": 0.642535572434923,
+    "p": 0.4
+   },
+   "median_time_s": 43.269999999999996,
+   "min_clearance_m": 0.1478,
+   "collisions": 2,
+   "stuck": 6,
+   "timeout": 1,
+   "error": 0
+  }
+ ],
+ "clearly_worse": [
+  {
+   "planner": "straight",
+   "label": "straight line to B",
+   "bench_id": "straight",
+   "reached": 0,
+   "n": 15,
+   "n_distinct": 15,
+   "reached_distinct": 0,
+   "wilson_95": {
+    "lo": 0,
+    "hi": 0.20388926630434784,
+    "p": 0
+   },
+   "median_time_s": null,
+   "min_clearance_m": 0.1484,
+   "collisions": 3,
+   "stuck": 12,
+   "timeout": 0,
+   "error": 0
+  }
+ ],
+ "tied_n": 17,
+ "more_seeds": "What more seeds buy: Quick separates 5/5 from 0/5; telling 5/5 from 4/5 needs about 33 seeds (95 % Wilson: 5/5 57 %-100 %, 0/5 0 %-43 %). The tied set spans 80 % to 40 %; separating those two rates needs about 21 distinct runs per planner (Thorough flies 10 seeds per sensor).",
+ "pareto": {
+  "basis": "pooled over every variation of the sweep",
+  "front": [
+   {
+    "planner": "lazy_thetastar_unknown",
+    "label": "Lazy Theta*, unknown map (geofenced)",
+    "bench_id": "lazy_thetastar_unknown",
+    "median_time_s": 17.69,
+    "min_clearance_m": 0.5065
+   },
+   {
+    "planner": "dstar_lite",
+    "label": "D* Lite, unknown map (geofenced)",
+    "bench_id": "dstar_lite",
+    "median_time_s": 20.25,
+    "min_clearance_m": 0.5165
+   },
+   {
+    "planner": "thetastar_known",
+    "label": "Theta* (any-angle), known map",
+    "bench_id": "thetastar_known",
+    "median_time_s": 17.08,
+    "min_clearance_m": 0.3341
+   }
+  ],
+  "group_n": 17,
+  "excluded": [],
+  "rule": "Among the best success group (95 % Wilson interval overlaps the top planner's), a planner is Pareto-optimal when no other member is both no slower (median time to B, 0.01 s) and no closer to a surface (min clearance, 0.001 m) and better in one. Members without a median time to B are excluded."
+ },
+ "fly": {
+  "planner_bench_id": "lazy_thetastar_unknown",
+  "command": "make first-flight PLANNER=bench:lazy_thetastar_unknown WORLD=../../site/playground/presets/random_0.json ARM=F2",
+  "arm": "F2",
+  "arm_warning": null,
+  "note": null,
+  "cwd": "templates/flight-repo",
+  "out": "results/first_flight_bench_lazy_thetastar_unknown_random_0",
+  "flies": {
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": "ideal: 72 beams, 360 deg, 6 m, noise 0.02 m, dropout 0.02 (run.DEFAULTS)",
+   "pose": "truth (no FAULT=)",
+   "seed": 0,
+   "loop_hz": 20,
+   "ab": "the world file's exact A and B"
+  }
+ },
+ "passage": {
+  "clearance_m": 1.7992,
+  "passage_m": 3.5984,
+  "at": [
+   8.988,
+   14.105
+  ],
+  "grid_m": 0.05,
+  "method": "Narrowest passage = 2 x the bottleneck clearance of the best route A=>B on a 0.05 m ESDF grid of the world (maximin search, cells within 0.7 m of A free, goal = within 0.2 m of B). Chosen over 2 x the winner's min clearance because a run's min clearance is its closest approach to any surface (a corner it cut), not the width it had to pass: in site/solver/results/quick_random_0.json D* Lite's 0.583 m gives 1.17 m (=> F0) on a map whose best route never narrows below 3.6 m. Grid error up to about 0.05 m.",
+  "narrow_below_m": 1.4,
+  "winner_min_clearance_x2_m": 1.013
+ },
+ "world_file": {
+  "path": "../../site/playground/presets/random_0.json",
+  "inline": false,
+  "how": "Preset random_0: the hub ships it at site/playground/presets/random_0.json (the path below is relative to templates/flight-repo). The same world is inline in recommend.json (\"world\")."
+ },
+ "flown": {
+  "vehicle": {
+   "radius_m": 0.15,
+   "v_max": 2,
+   "a_max": 3,
+   "tau": 0.15
+  },
+  "vehicle_default": true,
+  "sensors": [
+   {
+    "preset": "ideal",
+    "label": "ideal",
+    "spec": {
+     "beams": 72,
+     "fov_deg": 360,
+     "max_range_m": 6,
+     "min_range_m": 0,
+     "noise_sigma_m": 0.02,
+     "cone_deg": 0,
+     "dropout": 0.02
+    }
+   },
+   {
+    "preset": "crazyflie",
+    "label": "crazyflie",
+    "spec": {
+     "beams": 4,
+     "fov_deg": 360,
+     "max_range_m": 3,
+     "min_range_m": 0.04,
+     "noise_sigma_m": 0.02,
+     "cone_deg": 27,
+     "dropout": 0.05
+    }
+   }
+  ],
+  "variations": [
+   "ideal / truth pose",
+   "ideal / VIO jump",
+   "crazyflie / truth pose"
+  ],
+  "yaw": "fixed",
+  "yaw_policy_flown": [
+   "off"
+  ],
+  "jitter_m": 0.5,
+  "time_limit": "Run time limit: 60 s of sim time (Auto: random family, default).",
+  "seeds": 5,
+  "runs": 270,
+  "cancelled": false,
+  "finished": "2026-11-10T10:08:07.198Z"
+ },
+ "next_steps": [],
+ "benchmark": {
+  "source": "site/playground/data/advisor.json",
+  "from": "samples/close-area-benchmark/results/matrix_0.json",
+  "run": {
+   "command": "python bench.py --layouts 20 --seed 0 --workers 14 --parity",
+   "layouts": 20,
+   "seed": 0,
+   "date": "2026-11-10",
+   "pose": "true pose (no VIO, no faults)"
+  },
+  "planner": "lazy_thetastar_unknown",
+  "rows": [
+   {
+    "family": "random",
+    "label": "Random boxes + cylinders",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 17.4
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 19.95
+    }
+   },
+   {
+    "family": "u_trap",
+    "label": "U trap",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 18.85
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 25.57
+    }
+   },
+   {
+    "family": "narrow_gap",
+    "label": "Narrow gap",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 90,
+     "collision_pct": 0,
+     "median_time_s": 29.43
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 15,
+     "collision_pct": 25,
+     "median_time_s": 52.28
+    }
+   },
+   {
+    "family": "office",
+    "label": "Office (rooms + corridor)",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 90,
+     "collision_pct": 0,
+     "median_time_s": 18.1
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 45,
+     "collision_pct": 35,
+     "median_time_s": 26.32
+    }
+   },
+   {
+    "family": "warehouse",
+    "label": "Warehouse (shelf aisles)",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 65,
+     "collision_pct": 0,
+     "median_time_s": 39.1
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 30,
+     "collision_pct": 20,
+     "median_time_s": 84.57
+    }
+   },
+   {
+    "family": "forest",
+    "label": "Forest (40-90 poles)",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 18.28
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 95,
+     "collision_pct": 5,
+     "median_time_s": 23.6
+    }
+   },
+   {
+    "family": "maze",
+    "label": "Maze (10 x 10 cells)",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 90,
+     "collision_pct": 0,
+     "median_time_s": 35
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 50,
+     "collision_pct": 0,
+     "median_time_s": 75.73
+    }
+   },
+   {
+    "family": "glass_office",
+    "label": "Glass office (glass panels)",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 95,
+     "collision_pct": 0,
+     "median_time_s": 25.92
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 30,
+     "collision_pct": 55,
+     "median_time_s": 47.57
+    }
+   }
+  ],
+  "tied_family": [
+   {
+    "planner": "lazy_thetastar_unknown",
+    "rows": [
+     {
+      "family": "random",
+      "label": "Random boxes + cylinders",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 17.4
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 19.95
+      }
+     }
+    ]
+   },
+   {
+    "planner": "dstar_lite",
+    "rows": [
+     {
+      "family": "random",
+      "label": "Random boxes + cylinders",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 18.78
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 21.41
+      }
+     }
+    ]
+   },
+   {
+    "planner": "hybrid_astar",
+    "rows": [
+     {
+      "family": "random",
+      "label": "Random boxes + cylinders",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 18.44
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 95,
+       "collision_pct": 5,
+       "median_time_s": 21.24
+      }
+     }
+    ]
+   },
+   {
+    "planner": "astar_unknown",
+    "rows": [
+     {
+      "family": "random",
+      "label": "Random boxes + cylinders",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 19.01
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 22.51
+      }
+     }
+    ]
+   },
+   {
+    "planner": "thetastar_known",
+    "rows": [
+     {
+      "family": "random",
+      "label": "Random boxes + cylinders",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 17.09
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 17.09
+      }
+     }
+    ]
+   },
+   {
+    "planner": "lazy_thetastar_known",
+    "rows": [
+     {
+      "family": "random",
+      "label": "Random boxes + cylinders",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 17.11
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 17.11
+      }
+     }
+    ]
+   },
+   {
+    "planner": "astar_known",
+    "rows": [
+     {
+      "family": "random",
+      "label": "Random boxes + cylinders",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 18.46
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 18.46
+      }
+     }
+    ]
+   },
+   {
+    "planner": "informed_rrt_star",
+    "rows": [
+     {
+      "family": "random",
+      "label": "Random boxes + cylinders",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 23.92
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 23.92
+      }
+     }
+    ]
+   },
+   {
+    "planner": "bug2",
+    "rows": [
+     {
+      "family": "random",
+      "label": "Random boxes + cylinders",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 90,
+       "collision_pct": 0,
+       "median_time_s": 27.48
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 90,
+       "collision_pct": 10,
+       "median_time_s": 27.86
+      }
+     }
+    ]
+   },
+   {
+    "planner": "apf_escape",
+    "rows": [
+     {
+      "family": "random",
+      "label": "Random boxes + cylinders",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 27.52
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 85,
+       "collision_pct": 0,
+       "median_time_s": 26.68
+      }
+     }
+    ]
+   },
+   {
+    "planner": "tangent_bug",
+    "rows": [
+     {
+      "family": "random",
+      "label": "Random boxes + cylinders",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 95,
+       "collision_pct": 0,
+       "median_time_s": 24.6
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 55,
+       "collision_pct": 45,
+       "median_time_s": 24.44
+      }
+     }
+    ]
+   },
+   {
+    "planner": "mppi",
+    "rows": [
+     {
+      "family": "random",
+      "label": "Random boxes + cylinders",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 90,
+       "collision_pct": 0,
+       "median_time_s": 20.35
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 55,
+       "collision_pct": 40,
+       "median_time_s": 20.3
+      }
+     }
+    ]
+   },
+   {
+    "planner": "dwa_mem",
+    "rows": [
+     {
+      "family": "random",
+      "label": "Random boxes + cylinders",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 75,
+       "collision_pct": 0,
+       "median_time_s": 27.68
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 55,
+       "collision_pct": 5,
+       "median_time_s": 26.28
+      }
+     }
+    ]
+   },
+   {
+    "planner": "mppi_astar",
+    "rows": [
+     {
+      "family": "random",
+      "label": "Random boxes + cylinders",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 20.24
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 80,
+       "collision_pct": 20,
+       "median_time_s": 20.37
+      }
+     }
+    ]
+   },
+   {
+    "planner": "freest_beam",
+    "rows": [
+     {
+      "family": "random",
+      "label": "Random boxes + cylinders",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 80,
+       "collision_pct": 0,
+       "median_time_s": 24.64
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 50,
+       "collision_pct": 5,
+       "median_time_s": 24.41
+      }
+     }
+    ]
+   },
+   {
+    "planner": "vfh_plus",
+    "rows": [
+     {
+      "family": "random",
+      "label": "Random boxes + cylinders",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 25.59
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 45,
+       "collision_pct": 55,
+       "median_time_s": 24.88
+      }
+     }
+    ]
+   },
+   {
+    "planner": "dwa",
+    "rows": [
+     {
+      "family": "random",
+      "label": "Random boxes + cylinders",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 80,
+       "collision_pct": 0,
+       "median_time_s": 31.06
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 40,
+       "collision_pct": 35,
+       "median_time_s": 25.69
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "sweep_source": {
+  "schema": "navidx-solver-sweep/1",
+  "started": "2026-11-10T10:05:20.849Z",
+  "finished": "2026-11-10T10:08:07.198Z"
+ },
+ "world": {
+  "schema": "close-area-world/1",
+  "frame": "local ENU m, origin at A",
+  "family": "random",
+  "seed": 0,
+  "index": 0,
+  "bounds": [
+   -1.637,
+   -1.2698,
+   18.363,
+   18.7302
+  ],
+  "a": [
+   0,
+   0
+  ],
+  "b": [
+   16.404,
+   16.7467
+  ],
+  "z": 1,
+  "radius": 0.15,
+  "obstacles": [
+   {
+    "type": "box",
+    "cx": 4.5576,
+    "cy": 7.2613,
+    "hx": 0.4054,
+    "hy": 1.0883,
+    "material": "matte"
+   },
+   {
+    "type": "box",
+    "cx": 11.1596,
+    "cy": 10.9225,
+    "hx": 1.4965,
+    "hy": 1.476,
+    "material": "matte"
+   },
+   {
+    "type": "box",
+    "cx": 6.3038,
+    "cy": 16.1454,
+    "hx": 1.029,
+    "hy": 0.355,
+    "material": "matte"
+   },
+   {
+    "type": "cylinder",
+    "cx": 16.2054,
+    "cy": 10.7563,
+    "r": 0.5262,
+    "material": "matte"
+   },
+   {
+    "type": "cylinder",
+    "cx": 12.7265,
+    "cy": 2.5677,
+    "r": 0.5249,
+    "material": "matte"
+   },
+   {
+    "type": "cylinder",
+    "cx": 11.8883,
+    "cy": 11.5889,
+    "r": 0.4334,
+    "material": "matte"
+   },
+   {
+    "type": "cylinder",
+    "cx": 1.4299,
+    "cy": 12.9385,
+    "r": 0.3861,
+    "material": "matte"
+   },
+   {
+    "type": "cylinder",
+    "cx": 8.0939,
+    "cy": 16.1305,
+    "r": 0.4147,
+    "material": "matte"
+   },
+   {
+    "type": "cylinder",
+    "cx": 9.7221,
+    "cy": 5.3457,
+    "r": 0.4027,
+    "material": "matte"
+   }
+  ]
+ }
+}

@@ -4,7 +4,7 @@
 // world's narrowest passage, what the sweep flew, and the benchmark rows of the pick.
 // Unit tests: node --test site/solver/test_sweep.mjs
 import { clearanceAt, overlaps, plannerLabel, timeLimitText, variationLabel, sensorSpecOf, customLabel,
-  isDefaultVehicle, normVehicle, separationNote, seedsToSeparate, seedsName, THOROUGH_SEEDS } from "./sweep.js?v=20261110e";
+  isDefaultVehicle, normVehicle, separationNote, seedsToSeparate, seedsName, THOROUGH_SEEDS, variations, paretoFront } from "./sweep.js?v=20261110f";
 
 export const SCHEMA = "navidx-solver-recommend/1";
 // F2 (samples/close-area-safety-filter/filters.py, eps = 0.7 m) holds the vehicle centre 0.7 m from every
@@ -189,15 +189,23 @@ export function recommend(doc, advisor) {
   const flown = {
     vehicle: normVehicle(spec.vehicle), vehicle_default: isDefaultVehicle(spec.vehicle),
     sensors: (spec.presets || []).map(pr => ({ preset: pr, label: pr === "custom" ? customLabel(spec.sensor) : pr, spec: sensorSpecOf(pr, spec) })),
-    variations: (spec.presets || []).flatMap(pr => (spec.faults || []).map(f => variationLabel(`${pr}|${f}`, spec))),
+    variations: (spec.presets ? variations(spec) : []).map(k => variationLabel(k, spec)),
     yaw: spec.yaw || "fixed", yaw_policy_flown: (doc.drone && doc.drone.yaw_policy_flown) || [],
     jitter_m: spec.jitter || 0, time_limit: timeLimitText(spec, doc.world, doc.records || []),
     seeds, runs: doc.records_n, cancelled: !!doc.cancelled, finished: doc.finished || null };
   const fbench = flyId ? benchRows(flyId, advisor) : [];
+  const par = paretoFront(doc.ranking || []), byId = Object.fromEntries((doc.ranking || []).map(r => [r.planner, r]));
+  const parRow = id => ({ planner: id, label: plannerLabel(id), bench_id: benchId(id, advisor),
+    median_time_s: byId[id].median_time_s, min_clearance_m: byId[id].min_clearance_m });
+  const pareto = { basis: "pooled over every variation of the sweep", front: par.front.map(parRow),
+    group_n: par.group.length, excluded: par.excluded.map(id => plannerLabel(id)),
+    rule: "Among the best success group (95 % Wilson interval overlaps the top planner's), a planner is Pareto-optimal when no other " +
+      "member is both no slower (median time to B, 0.01 s) and no closer to a surface (min clearance, 0.001 m) and better in one. " +
+      "Members without a median time to B are excluded." };
   const json = { schema: SCHEMA, input: "synthetic", caveat: CAVEAT.replace("n seeds", `${seeds} seeds`),
     world_name: doc.world_name || null, family: fam || null, headline: doc.headline, kind: p.kind,
     pick: rows, clearly_worse: worse, tied_n: p.kind === "tie" ? rows.length : null,
-    more_seeds: p.kind === "tie" ? moreSeedsLine(p.set, seeds) : null, fly: flyId ? { planner_bench_id: flyId, command, arm: armc.arm, arm_warning: armc.warning, note: flyNote,
+    more_seeds: p.kind === "tie" ? moreSeedsLine(p.set, seeds) : null, pareto, fly: flyId ? { planner_bench_id: flyId, command, arm: armc.arm, arm_warning: armc.warning, note: flyNote,
       cwd: "templates/flight-repo", out: `results/first_flight_bench_${flyId}_${wf.path.replace(/^.*\//, "").replace(/\.json$/, "")}`,
       flies: FLIGHT_DEFAULTS } : null,
     passage: { ...(passage || { clearance_m: null, passage_m: null }), method: passageNote, narrow_below_m: NARROW_PASSAGE_M,
@@ -213,6 +221,13 @@ export function recommend(doc, advisor) {
 }
 
 // ------------------------------------------------------------ markdown
+// "Pareto-optimal: A (17.08 s, 0.870 m), B (...)." plus the rule, under the tied set.
+export function paretoLine(par) {
+  if (!par || !par.front.length) return "Pareto-optimal: none (no tied planner has a median time to B).";
+  return `Pareto-optimal: ${par.front.map(r => `${r.label} (${f2(r.median_time_s)} s, ${r.min_clearance_m.toFixed(3)} m)`).join(", ")}. ` +
+    `Fast and safe among the ${par.group_n} tied planners, ${par.basis}: no other tied planner is as fast to B (median) and as far from every surface (min clearance) and better in one` +
+    (par.excluded.length ? `; without a time to B, not ranked: ${par.excluded.join(", ")}` : "") + ".";
+}
 const cellTxt = c => (c ? `${c.reached_pct} / ${c.collision_pct}` : "-");
 function toMarkdown(j, p) {
   const L = [], name = j.world_name || "custom world";
@@ -234,6 +249,7 @@ function toMarkdown(j, p) {
   if (p.kind === "tie") {
     L.push("", `### Tied with the best (${j.pick.length})`);
     table(j.pick);
+    L.push(paretoLine(j.pareto), "");
     if (j.clearly_worse.length) {
       L.push(`### Clearly worse (${j.clearly_worse.length})`, "", "95 % Wilson interval does not overlap the best one's.");
       table(j.clearly_worse);

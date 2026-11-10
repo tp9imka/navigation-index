@@ -53,6 +53,17 @@ export const MAX_SEEDS = 50;
 // name a winner; with 5 seeds 5/5 (57-100 %) is disjoint from 0/5 (0-43 %).
 export const QUICK_SEEDS = 5;
 export const THOROUGH_SEEDS = 10;
+// Stress button (loop-89): on random_0 17 of 18 planners reached B 5/5 under Quick, so success cannot order
+// them. Stress keeps Quick's 5 seeds and adds the variations that make the sensor or the pose worse:
+// the drone's sensor (truth pose), crazyflie (4 beams, truth pose) and the drone's sensor with one VIO fault.
+export const STRESS_SEEDS = QUICK_SEEDS;
+export const STRESS_FAULT = "jump";              // worker faults: none, jump, bias, dropout (worker.js env.faults)
+export const STRESS_PRESET = "crazyflie";
+// Variation keys of a Stress sweep for the drone's sensor key (a preset name or CUSTOM) and fault.
+export function stressVariations(sensorKey, fault = STRESS_FAULT) {
+  const d = sensorKey || "ideal", f = EXTRA_FAULTS.includes(fault) ? fault : STRESS_FAULT;
+  return [...new Set([`${d}|truth`, `${STRESS_PRESET}|truth`, `${d}|${f}`])];
+}
 // Headline: more planners than this overlapping the best one => "N planners tie at the top".
 export const BIG_TIE = 5;
 export const JITTER_RADII = [0.25, 0.5, 1.0];     // m, start/goal jitter radius choices
@@ -126,9 +137,16 @@ export function normSpec(spec, available) {
   // jitter: radius in m (one of JITTER_RADII), 0 = off; missing => default ON
   const jv = s.jitter == null || s.jitter === "" ? JITTER_DEFAULT : Number(s.jitter);
   const jitter = jv === 0 ? 0 : JITTER_RADII.includes(jv) ? jv : JITTER_DEFAULT;
-  return { planners, presets, faults: extra ? ["truth", extra] : ["truth"], fault: extra, seeds, jitter,
+  const faults = extra ? ["truth", extra] : ["truth"];
+  // vars (loop-89, Stress): an explicit subset of presets x faults, kept in cross-product order; missing,
+  // empty or nothing valid => null (every preset x fault)
+  const asked = Array.isArray(s.vars) ? new Set(s.vars) : null;
+  const vars = asked ? presets.flatMap(p => faults.map(f => `${p}|${f}`)).filter(k => asked.has(k)) : [];
+  const out = { planners, presets, faults, fault: extra, seeds, jitter,
     time_limit: normTimeLimit(s.time_limit), vehicle: normVehicle(s.vehicle), sensor_choice,
     sensor: custom ? normSensor(s.sensor) : null, yaw: normYaw(s.yaw) };
+  if (vars.length) out.vars = vars;
+  return out;
 }
 
 // The run message's cfg extras: vehicle only when it differs from the arena default, sensor for the custom
@@ -246,18 +264,21 @@ export function jitterWorld(doc, j) {
   return w;
 }
 
-export const variations = spec => spec.presets.flatMap(p => spec.faults.map(f => variationKey(p, f)));
-export const runCount = spec => spec.planners.length * spec.presets.length * spec.faults.length * spec.seeds;
+// Every preset x fault, or spec.vars when the sweep chose a subset (Stress).
+export const variations = spec => (spec.vars && spec.vars.length ? spec.vars.slice()
+  : spec.presets.flatMap(p => spec.faults.map(f => variationKey(p, f))));
+export const runCount = spec => spec.planners.length * variations(spec).length * spec.seeds;
 
 // Seed outermost, planner innermost: every planner advances at the same pace through the FIFO queue.
 export function buildRuns(spec) {
-  const out = [];
+  const out = [], keys = variations(spec);
   for (let seed = 0; seed < spec.seeds; seed++)
-    for (const preset of spec.presets)
-      for (const fault of spec.faults)
-        for (const planner of spec.planners)
-          out.push({ planner, preset, fault, seed, filter: "none", key: variationKey(preset, fault),
-            beams: (sensorSpecOf(preset, spec) || {}).beams || null });
+    for (const key of keys) {
+      const [preset, fault] = key.split("|");
+      for (const planner of spec.planners)
+        out.push({ planner, preset, fault, seed, filter: "none", key,
+          beams: (sensorSpecOf(preset, spec) || {}).beams || null });
+    }
   return out;
 }
 
@@ -412,6 +433,45 @@ export function headline(ranking) {
       `; runner-up ${plannerLabel(b.planner)} ${b.reached}/${b.n} (${pct(b.success.lo)}-${pct(b.success.hi)}, ${nOne(b)}).${dupNote(a, b)}` };
 }
 
+// ------------------------------------------------------------ Pareto view (loop-89)
+// When success ties, which planners are fast AND safe? ranking: rank() rows (pooled, or one variation's cells).
+// Group = the best success group: every planner whose 95 % Wilson interval overlaps the top one's (the tied set
+// of the headline and Recommend; just the top planner when it is a clear winner). Empty when nobody reached B.
+// Eligible = in the group with a median time to B and a min clearance (a planner without a time never reached B
+// in this group, so it cannot be "fast"; it is listed as excluded, never on the front).
+// A dominates B when A is no slower (median time to B, compared at 0.01 s) and no closer (min clearance, at
+// 0.001 m) and better in at least one. Equal points do not dominate each other: both stay on the front.
+// Returns { group, front, excluded, points } with planner ids in ranking order; points has one entry per
+// ranking row: { planner, t, c, p, in_group, eligible, pareto, dominated_by }.
+export const PARETO_T_DP = 2, PARETO_C_DP = 3;
+const rnd = (v, dp) => Math.round(v * 10 ** dp) / 10 ** dp;
+export function dominates(a, b) {
+  const ta = rnd(a.t, PARETO_T_DP), tb = rnd(b.t, PARETO_T_DP), ca = rnd(a.c, PARETO_C_DP), cb = rnd(b.c, PARETO_C_DP);
+  return ta <= tb && ca >= cb && (ta < tb || ca > cb);
+}
+export function paretoFront(ranking) {
+  const rk = ranking || [], top = rk[0];
+  const ok = !!(top && top.reached > 0 && top.success);
+  const points = rk.map(r => {
+    const in_group = ok && overlaps(r.success, top.success);
+    const t = typeof r.median_time_s === "number" ? r.median_time_s : null, c = typeof r.min_clearance_m === "number" ? r.min_clearance_m : null;
+    return { planner: r.planner, t, c, p: r.success ? r.success.p : null, in_group, eligible: in_group && t != null && c != null, pareto: false, dominated_by: null };
+  });
+  const el = points.filter(q => q.eligible);
+  for (const q of el) {
+    const d = el.find(o => o !== q && dominates(o, q));
+    q.dominated_by = d ? d.planner : null;
+    q.pareto = !d;
+  }
+  return { group: points.filter(q => q.in_group).map(q => q.planner), front: points.filter(q => q.pareto).map(q => q.planner),
+    excluded: points.filter(q => q.in_group && !q.eligible).map(q => q.planner), points };
+}
+// Rows for one variation key (cells of aggregate()), or the pooled ranking when key is empty.
+export function paretoRows(agg, key) {
+  if (!key) return agg.ranking;
+  return rank(Object.fromEntries(agg.planners.map(p => [p, agg.cells[p] && agg.cells[p][key]]).filter(([, c]) => c)));
+}
+
 // ------------------------------------------------------------ export
 export const CSV_COLS = ["planner", "planner_label", "preset", "fault", "seed", "a_x", "a_y", "b_x", "b_y", "outcome", "time_to_goal_s",
   "path_length_m", "min_clearance_m", "duration_s", "max_time_s", "wall_s",
@@ -476,6 +536,7 @@ export function specToQuery(spec, src) {
   q.set("sensor", choice);
   if (choice === CUSTOM) { const s = normSensor(spec.sensor); q.set("cs", SENSOR_KEYS.map(k => g(s[k])).join(",")); }
   if (normYaw(spec.yaw) !== "fixed") q.set("yaw", normYaw(spec.yaw));
+  if (spec.vars && spec.vars.length) q.set("vars", spec.vars.join(","));
   if (src) q.set("src", src);
   return q.toString();
 }
@@ -494,6 +555,7 @@ export function specFromQuery(search) {
   if (q.has("sensor")) out.sensor_choice = q.get("sensor");
   if (q.has("cs")) out.sensor = zipKeys(SENSOR_KEYS, q.get("cs"));
   if (q.has("yaw")) out.yaw = q.get("yaw");
+  if (q.has("vars")) out.vars = list("vars");
   const src = q.get("src");
   return { spec: out, src: src && /^[a-z0-9_]+$/.test(src) ? src : null };
 }

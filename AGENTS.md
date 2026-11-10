@@ -35,7 +35,7 @@ Use this block when the brief is "fly a drone from A to B in a close area, maybe
    [templates/pitch/close-area-story.md](templates/pitch/close-area-story.md).
 6. Day-1 tools, one entry command each (all synthetic; flow in the cheat sheet "Day-1 flow with the browser tools"):
    - Room => world JSON: `world_from_room.py rooms/hall_8x6.json` or `world_from_image.py <plan>.png --ref ...` in [close-area-arena](samples/close-area-arena/README.md#your-room-in-the-arena-ran-2026-11-10-synthetic).
-   - Rank planners on that world: [site/solver/](site/solver/README.md) (Import world JSON, Your drone, Quick / Thorough, Recommend => `recommend.md`).
+   - Rank planners on that world: [site/solver/](site/solver/README.md) (Import world JSON, Your drone, Quick / Stress / Thorough, Pareto view, Recommend => `recommend.md`).
    - Fly the pick: `make first-flight PLANNER=bench:<id> WORLD=<file.json> ARM=<F0|F2>` in [flight-repo](templates/flight-repo/README.md#fly-what-the-solver-picks-benchid-in-a-world-file); F2 cannot pass gaps under ~1.4 m, use `ARM=F0` there.
    - Regression bar: `pack.py run packs/<name>.json` in [close-area-benchmark](samples/close-area-benchmark/README.md#scenario-packs).
    - People walking through: `run_predict.py --layouts 50 --seeds 0,1` in [close-area-moving-obstacles](samples/close-area-moving-obstacles/README.md) (VO gate PASS on held-out seed 1).

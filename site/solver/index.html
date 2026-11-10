@@ -7,13 +7,13 @@
 <meta name="description" content="Pick or import a close-area map, run every planner on every sensor and VIO variation for N seeds in your browser (Pyodide), watch the race, and get a ranked result matrix with Wilson intervals.">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="../showcase.css?v=20261110">
-<link rel="stylesheet" href="solver.css?v=20261110d">
+<link rel="stylesheet" href="solver.css?v=20261110e">
 <link rel="stylesheet" href="../nav.css?v=20261110n">
 <script defer src="../nav.js?v=20261110n"></script>
 <script>
   try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
-<script type="module" src="solver.js?v=20261110f"></script>
+<script type="module" src="solver.js?v=20261110g"></script>
 </head>
 <body>
 <header class="top">
@@ -68,6 +68,7 @@
     <div class="row">
       <button class="btn sm" id="quickBtn" title="5 seeds, your drone's sensor only (ideal by default), truth pose, then run">Quick</button>
       <button class="btn sm" id="thoroughBtn" title="10 seeds, ideal + crazyflie + your drone's sensor, then run">Thorough</button>
+      <button class="btn sm" id="stressBtn" title="On easy maps the planners separate only when the sensor or pose gets worse (Quick on random_0: 17 of 18 planners reached B 5/5). Stress: 5 seeds, same map; variations = your drone's sensor (truth pose), crazyflie (4 beams, truth pose) and your drone's sensor with a VIO fault (the one chosen below, else VIO jump 0.5 m). Then run.">Stress</button>
     </div>
     <fieldset class="box"><legend>Planners <button class="linkish small" id="allBtn" type="button">all</button> <button class="linkish small" id="noneBtn" type="button">none</button></legend>
       <div id="plannerList" class="checks"><span class="muted small">appear when Python is ready</span></div>
@@ -144,6 +145,13 @@
   <div class="grid-scroll"><table class="matrix" id="matrix"></table></div>
   <p class="small muted">Cell: success rate with its 95 % Wilson interval, n, and the median time to B over the runs that reached it. Runs with the same outcome, time to B and path length (3 dp) are identical: they count once in the rate and the interval, and the cell says "deterministic: k identical runs". Errors count as not reached. Click a cell for details.</p>
   <div id="detail" class="detail" hidden></div>
+  <div class="pareto" id="paretoBox" hidden>
+    <h3>Fast and safe: Pareto view</h3>
+    <label class="small">Variation <select id="paretoVar" aria-label="Pareto variation"><option value="">all variations pooled</option></select></label>
+    <canvas id="pareto" width="640" height="400" aria-label="Scatter of median time to B against min clearance per planner"></canvas>
+    <p class="small" id="paretoList" aria-live="polite"></p>
+    <p class="small muted">One dot per planner: x = median time to B over its runs that reached B, y = min clearance (lowest centre-to-surface distance over its runs), dot size = success rate. Faded = outside the best success group (95 % Wilson interval does not overlap the top planner's). Ring, label and dashed line = Pareto-optimal in that group: no other member is as fast and as far from surfaces and better in one (times at 0.01 s, clearances at 0.001 m). Up and left is better. Planners that never reached B are not plotted.</p>
+  </div>
   <div class="row">
     <button class="btn sm" id="csvBtn" disabled>Export CSV</button>
     <button class="btn sm" id="jsonBtn" disabled>Export JSON</button>

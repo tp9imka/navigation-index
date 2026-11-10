@@ -83,8 +83,11 @@ Details:
   code (`separationNote`, `seedsToSeparate` in sweep.js), e.g. "Quick separates 5/5 from 0/5; telling 5/5
   from 4/5 needs about 33 seeds" (Thorough: 10/10 vs 9/10 needs about 76). The Quick results recorded
   before loop-87 below (random_0, maze_0, office_0, loop-80 Recommend) used 3 seeds.
-- **Share link.** `index.html?planners=..&presets=..&fault=..&seeds=..&jitter=..&tlim=auto|60|120|180&src=<preset>#w=<world>`.
-  A link without `tlim` opens with Auto. The world
+  **Stress** (loop-89) = 5 seeds, the drone's sensor and crazyflie on truth pose plus the drone's sensor with
+  one VIO fault; see [Stress and the Pareto view](#stress-and-the-pareto-view-loop-89).
+- **Share link.** `index.html?planners=..&presets=..&fault=..&seeds=..&jitter=..&tlim=auto|60|120|180&vars=..&src=<preset>#w=<world>`.
+  A link without `tlim` opens with Auto. `vars` (Stress) lists the variation keys flown (`ideal|truth,...`);
+  without it every preset x fault flies. The world
   is coded the playground way (deflate + base64url, code copied into sweep.js, playground.js is not
   imported). Results are not in the link. `?map=<preset>` opens a preset directly; `?pyodide=cdn|local|auto`
   is passed to the worker.
@@ -307,6 +310,69 @@ narrow_gap_0 were not flown here; the custom-world `my_world.json` command was n
 but was not looked at or screenshotted; the "Clearly worse" table and the "N planners tie at the top"
 headline were seen only in the recorded files above and the unit tests.
 
+## Stress and the Pareto view (loop-89)
+
+On easy maps success rate cannot order the planners: the loop-87 Quick sweeps had 17 of 18 planners at 5/5
+on random_0 and 14 on narrow_gap_0 ([Recommend result](#result-quick-sweeps-on-narrow_gap_0-and-random_0-loop-87-quick--5-seeds)).
+Two additions:
+
+- **Stress** button (next to Quick and Thorough; the tooltip gives the rationale: on easy maps the planners
+  separate only when the sensor or pose gets worse). 5 seeds (`STRESS_SEEDS`), same map, three variations
+  (`stressVariations`): the drone's sensor on truth pose, `crazyflie` (4 beams) on truth pose, and the drone's
+  sensor with a VIO fault (the one chosen in the VIO fault select, else `jump`, VIO jump 0.5 m; the worker
+  offers `none`, `jump`, `bias`, `dropout`). crazyflie does not get the fault: the sweep spec carries the
+  subset as `spec.vars` (in the JSON export, the share link and Recommend's "Variations" line). Changing the
+  sensor presets, the fault or the drone's sensor by hand drops the subset (back to every preset x fault).
+- **Pareto view** (Result section, under the matrix): for one variation or all pooled, a canvas scatter of
+  median time to B (x) vs min clearance (y) per planner, dot size = success rate. `paretoFront` in sweep.js:
+  the group = the best success group, every planner whose 95 % Wilson interval overlaps the top one's (the
+  same tied set as the headline and Recommend; just the winner when there is one). A planner dominates
+  another when it is no slower and no closer (times compared at 0.01 s, clearances at 0.001 m) and better
+  in one; equal points both stay. Group members without a median time to B are excluded, never "fast".
+  Pareto-optimal planners get a ring, their id and a dashed staircase; the list under the plot names them.
+  Recommend adds `Pareto-optimal: A (t s, c m), ...` under the tied table (pooled) and `pareto` to
+  recommend.json. Theme-aware (redrawn on the theme button), square on screens under 640 px.
+
+Note the group rule: it is the Wilson tied set, not "the highest rate". With 15 runs per planner a 10/15
+planner (42-85 %) overlaps a 12/15 one (55-93 %), so it can be Pareto-optimal by being the fastest.
+The dot size shows its lower rate.
+
+### Result: one Stress sweep on random_0
+
+`node site/solver/results/measure_stress.mjs` (headless Chrome 140.0.7339.208, 4 workers, 18 planners x 3
+variations x 5 seeds = 270 runs, 270 done, 0 errors, 166.3 s, jitter 0.5 m, Apple M3 Max 16 cores, load
+average 30.5 at the start; [results/stress_check.json](results/stress_check.json), sweep
+[results/stress_random_0.json](results/stress_random_0.json), export
+[results/recommend_random_0_stress.md](results/recommend_random_0_stress.md) and
+[.json](results/recommend_random_0_stress.json)). Synthetic.
+
+| Sweep | Headline | Tied set | Success spread in the tied set | Pareto-optimal (pooled) |
+|---|---|---|---|---|
+| Quick (loop-87, [recommend_random_0.json](results/recommend_random_0.json)) | 17 planners tie at the top | 17, `straight` clearly worse (0/5) | all 5/5 | not computed then |
+| Stress | 17 planners tie at the top (n=15 per planner, best 12/15, 55-93 %) | the same 17, `straight` clearly worse (0/15) | 12/15 (`lazy_thetastar_unknown`, `dstar_lite`) down to 6/15 (`dwa`) | `lazy_thetastar_unknown` 17.69 s, 0.506 m; `dstar_lite` 20.25 s, 0.516 m; `thetastar_known` 17.08 s, 0.334 m (10/15) |
+
+Stress does not shrink the tied set at 15 runs per planner: the Wilson intervals of 12/15 and 6/15 (20-64 %)
+still overlap. It does break the all-5/5 tie into rates, and it moves the top: the pooled first is
+`lazy_thetastar_unknown`, not Quick's `thetastar_known`. Per variation (Pareto view, from stress_check.json):
+
+| Variation | Reached / runs | Best success group | Pareto-optimal |
+|---|---|---|---|
+| ideal / truth pose | 85/90 | 17 | `thetastar_known` (17.08 s, 0.870 m, 5/5) |
+| ideal / VIO jump | 9/90 (67 stuck, 9 collision, 5 timeout) | 18 (best 2/5, 12-77 %), 11 never reached B | `lazy_thetastar_unknown` (17.63 s, 0.820 m) |
+| crazyflie / truth pose | 64/90 (16 collision, 10 stuck) | 16 | `thetastar_known` (17.08 s, 0.870 m) |
+
+Known-map planners fly the same path with crazyflie as with ideal (`thetastar_known` 17.08 s, 0.870 m on
+both), so crazyflie does not test them; the VIO jump is what costs them B.
+
+Screenshot [results/solver_pareto.png](results/solver_pareto.png): 390 x 844 at 2x, pooled view, no horizontal
+scroll (scrollWidth 390). Light and dark: the canvas corner pixel matched `--panel` in both (255,255,255 and
+29,29,27 in stress_check.json); only the light one was screenshotted.
+
+Not verified: the Stress button was not clicked (the script calls `SOLVER.stress()`, its click handler); a
+Custom drone sensor, a drone sensor other than ideal and faults other than `jump` under Stress ran in unit
+tests only; the `vars=` share link was not opened in a browser; the "What more seeds buy" line names the
+5 seeds per variation ("Quick separates..."), not the 15 runs per planner pooled. One map, 5 seeds.
+
 ## Limits and not verified
 
 - One map, 3 seeds (5 since loop-87), ideal sensor, truth pose: a small sample. On random_0 the 3-seed Quick
@@ -326,7 +392,8 @@ headline were seen only in the recorded files above and the unit tests.
 - Run time limit: only Auto on maze_0 ran in a browser. The fixed 60 / 120 / 180 s choices, the
   `tlim=` share link and the CSV / JSON fields are unit tested in [test_sweep.mjs](test_sweep.mjs) only;
   the scaled watchdog was not triggered.
-- Not run by the script: Thorough, crazyflie preset, any VIO fault, import from a file, paste of a
+- crazyflie and VIO jump ran only in the loop-89 Stress sweep (random_0); bias, dropout and VIO none did not run.
+- Not run by the script: Thorough, import from a file, paste of a
   playground link (the codec is unit tested, the form was not clicked), CSV and JSON downloads through
   the buttons (the JSON comes from the same function), the 180 s watchdog and the worker-crash path
   (the error path is unit tested in sweep.js only).

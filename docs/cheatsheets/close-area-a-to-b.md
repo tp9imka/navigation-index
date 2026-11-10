@@ -57,8 +57,10 @@ All synthetic. One pass takes about 15 minutes once the room is measured.
    [navigation-index.pages.dev/site/solver/](https://navigation-index.pages.dev/site/solver/)),
    **Import world JSON**, set **Your drone** (radius, speed, sensor), press **Quick** (5 seeds, the
    drone's sensor, truth pose).
-3. **Tied? Run Thorough.** Quick often ties: on random_0, 17 of 18 planners tied at 5 of 5. **Thorough**
-   = 10 seeds, ideal + crazyflie + the drone's sensor.
+3. **Tied? Read the Pareto view first.** Quick often ties: on random_0, 17 of 18 planners tied at 5 of 5.
+   The Pareto view (median time to B vs min clearance) keeps the planners nothing beats on both; on
+   random_0 that was 3 of 17. **Stress** (drone sensor + crazyflie + a VIO jump, 5 seeds) and **Thorough**
+   (10 seeds) add runs, but on random_0 Stress still left 17 tied (synthetic).
 4. **Recommend.** Downloads `recommend.md` / `.json` with the pick, the tied set and the command to fly.
 5. **Fly it in flight-repo.** From `templates/flight-repo`:
    `make first-flight PLANNER=bench:<id> WORLD=<file.json> ARM=<F0|F2>`
@@ -209,7 +211,7 @@ before any planner flight. Rules per platform: [frames.md](../../templates/drone
 7. **Quick ties on easy maps.** On random_0 a 5-seed Quick sweep tied 17 of 18 planners at 5 of 5
    (95 % Wilson 57-100 %); only `straight` dropped out (synthetic,
    [Solver](../../site/solver/README.md#result-quick-sweeps-on-narrow_gap_0-and-random_0-loop-87-quick--5-seeds)).
-   A tie is not a winner: run Thorough or a harder map.
+   A tie is not a winner: read the Pareto view, then run Stress, Thorough or a harder map.
 8. **Frontier search is not a search for B.** With B unknown, nearest-frontier found B in 43.3 %
    [31.6, 55.9] of runs in 180 s; with a nominal B within 2 m every arm found it in 88.3-100 %. The
    6 m range sensor maps the room before the 2 m detector sees B (synthetic,
