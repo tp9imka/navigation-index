@@ -1,4 +1,5 @@
-// Run the Solver page in headless Chrome and record one real Quick sweep on random_0.
+// Run the Solver page in headless Chrome and record one real Quick sweep on random_0 (start/goal
+// jitter ON, the default 0.5 m: seed 0 = exact map, seeds 1 and 2 move A and B).
 // Run from the repo root (Node 22+, no npm packages): node site/solver/results/measure_solver.mjs
 // Needs Google Chrome at the macOS default path (or CHROME=...) and network for cdn.jsdelivr.net.
 // Writes into site/solver/results/: quick_random_0.json (SOLVER.exportJSON(), the function behind the
@@ -91,6 +92,14 @@ async function main() {
     const doc = JSON.parse(json);
     out.headline = doc.headline.text;
     out.outcomes = doc.records.reduce((a, r) => ((a[r.outcome] = (a[r.outcome] || 0) + 1), a), {});
+    out.jitter = doc.jitter;
+    out.distinct = Object.fromEntries(doc.ranking.map(r => [r.planner, { n: r.n, n_distinct: r.n_distinct, reached: r.reached,
+      ci: [+(r.success.lo * 100).toFixed(1), +(r.success.hi * 100).toFixed(1)], median_time_s: r.median_time_s }]));
+    out.ranking = doc.ranking.map(r => r.planner);
+    // seed 0 is the exact map: A* known map should match the playground's random_0 seed 0 run
+    const ak0 = doc.records.find(r => r.planner === "astar_known" && r.seed === 0);
+    out.seed0_astar_known = ak0 ? { time_to_goal_s: ak0.time_to_goal_s, min_clearance_m: ak0.min_clearance_m, a: ak0.a, b: ak0.b } : null;
+    out.jitter_controls = await cdp.eval("({ on: document.querySelector('#jitterOn').checked, radius: document.querySelector('#jitterR').value })");
     out.count_msg_after = await cdp.eval("document.querySelector('#countMsg').textContent");
 
     // 1. desktop result matrix, with one cell clicked (detail panel)
@@ -100,8 +109,8 @@ async function main() {
     await sleep(300);
     out.shot_matrix = await shot(cdp, "solver_matrix_desktop.png");
 
-    // 2. race mid-animation: variation ideal|truth, seed 0, paused at half of the longest run
-    out.anim = await cdp.eval("(() => { SOLVER.animate('ideal|truth', 0); const A = SOLVER.S.anim; SOLVER.setT(A.tmax / 2); return { runs: A.runs.length, tmax: A.tmax, t: A.t }; })()");
+    // 2. race mid-animation: variation ideal|truth, seed 1 (jittered A and B), paused at half of the longest run
+    out.anim = await cdp.eval("(() => { SOLVER.animate('ideal|truth', 1); const A = SOLVER.S.anim; SOLVER.setT(A.tmax / 2); return { seed: A.seed, runs: A.runs.length, tmax: A.tmax, t: A.t }; })()");
     await cdp.eval(scrollTo(".race h2"));
     await sleep(400);
     out.shot_race = await shot(cdp, "solver_race_mid.png");
@@ -124,8 +133,9 @@ async function main() {
     await cdp.send("Page.navigate", { url: link });
     for (let i = 0; i < 100; i++) { await sleep(200); if (await cdp.eval("typeof SOLVER === 'object'").catch(() => false)) break; }
     await cdp.eval("SOLVER.started.then(() => SOLVER.ready).then(() => true)");
-    const back = await cdp.eval("({ world: JSON.stringify(SOLVER.S.doc), name: SOLVER.S.worldName, planners: document.querySelectorAll('input[name=planner]:checked').length, seeds: document.querySelector('#seedsIn').value, presets: [...document.querySelectorAll('input[name=preset]:checked')].map(i => i.value) })");
-    out.share = { length: link.length, world_same: back.world === world0, name: back.name, planners_checked: back.planners, seeds: back.seeds, presets: back.presets };
+    const back = await cdp.eval("({ world: JSON.stringify(SOLVER.S.doc), name: SOLVER.S.worldName, planners: document.querySelectorAll('input[name=planner]:checked').length, seeds: document.querySelector('#seedsIn').value, presets: [...document.querySelectorAll('input[name=preset]:checked')].map(i => i.value), jitterOn: document.querySelector('#jitterOn').checked, jitterR: document.querySelector('#jitterR').value })");
+    out.share = { length: link.length, world_same: back.world === world0, name: back.name, planners_checked: back.planners, seeds: back.seeds, presets: back.presets,
+      jitter_on: back.jitterOn, jitter_radius: back.jitterR };
 
     // 5. cancel: start a sweep, cancel after the first result, check the counts
     out.cancel = await cdp.eval(`(async () => {

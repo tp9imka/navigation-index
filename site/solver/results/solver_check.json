@@ -1,24 +1,230 @@
 {
- "date": "2026-11-10T05:14:42.796Z",
+ "date": "2026-11-10T05:47:07.424Z",
  "input": "synthetic",
- "host": "Apple M3 Max, 16 cores, load 83.2 70.4 50.9",
+ "host": "Apple M3 Max, 16 cores, load 13.8 52.8 75.3",
  "chrome": "Chrome/140.0.7339.208",
  "page": "http://127.0.0.1:8781/site/solver/index.html?map=random_0",
- "python_ready_s": 6.422,
+ "python_ready_s": 6.759,
  "count_msg_before": "60 runs = 12 planners x 1 sensor x 1 fault x 5 seeds. Estimate: about 13 s on 4 workers (rough prior from the playground README timings; refined after the first runs).",
  "sweep": {
   "done": 36,
   "total": 36,
-  "elapsed_s": 12.024,
+  "elapsed_s": 12.02,
   "cancelled": false,
   "workers_ready": 4,
   "K": 4,
-  "wall_s_from_click": 12.028
+  "wall_s_from_click": 12.026
  },
- "headline": "No clear winner: A* + ESDF, unknown map and D* Lite, unknown map (geofenced) are within noise on this map (n=3).",
+ "headline": "No clear winner: D* Lite, unknown map (geofenced) and A* + ESDF, unknown map are within noise on this map (n=3).",
  "outcomes": {
   "stuck": 3,
   "reached": 33
+ },
+ "jitter": {
+  "radius_m": 0.5,
+  "min_clearance_m": 0.25,
+  "max_draws": 50,
+  "prng": "mulberry32",
+  "seed0": "exact map",
+  "per_seed": [
+   {
+    "seed": 0,
+    "a": [
+     0,
+     0
+    ],
+    "b": [
+     16.404,
+     16.7467
+    ],
+    "exact": true,
+    "a_kept": false,
+    "b_kept": false,
+    "draws": 0
+   },
+   {
+    "seed": 1,
+    "a": [
+     -0.0595,
+     0.3866
+    ],
+    "b": [
+     16.0977,
+     16.538
+    ],
+    "exact": false,
+    "a_kept": false,
+    "b_kept": false,
+    "draws": 2
+   },
+   {
+    "seed": 2,
+    "a": [
+     -0.1082,
+     0.2777
+    ],
+    "b": [
+     16.0749,
+     16.7561
+    ],
+    "exact": false,
+    "a_kept": false,
+    "b_kept": false,
+    "draws": 2
+   }
+  ]
+ },
+ "distinct": {
+  "dstar_lite": {
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 18.66
+  },
+  "astar_unknown": {
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 18.7
+  },
+  "astar_known": {
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 18.94
+  },
+  "tangent_bug": {
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 24.16
+  },
+  "freest_beam": {
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 25.32
+  },
+  "vfh_plus": {
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 25.5
+  },
+  "informed_rrt_star": {
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 26.64
+  },
+  "apf": {
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 28.24
+  },
+  "bug2": {
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 29.48
+  },
+  "dwa": {
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 43.68
+  },
+  "dwa_mem": {
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 44.84
+  },
+  "straight": {
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 0,
+   "ci": [
+    0,
+    56.2
+   ],
+   "median_time_s": null
+  }
+ },
+ "ranking": [
+  "dstar_lite",
+  "astar_unknown",
+  "astar_known",
+  "tangent_bug",
+  "freest_beam",
+  "vfh_plus",
+  "informed_rrt_star",
+  "apf",
+  "bug2",
+  "dwa",
+  "dwa_mem",
+  "straight"
+ ],
+ "seed0_astar_known": {
+  "time_to_goal_s": 19.38,
+  "min_clearance_m": 0.5647,
+  "a": [
+   0,
+   0
+  ],
+  "b": [
+   16.404,
+   16.7467
+  ]
+ },
+ "jitter_controls": {
+  "on": true,
+  "radius": "0.5"
  },
  "count_msg_after": "36 runs = 12 planners x 1 sensor x 1 fault x 3 seeds. Estimate: about 9 s on 4 workers (from run times measured in this browser).",
  "shot_matrix": {
@@ -27,9 +233,10 @@
   "height": 900
  },
  "anim": {
+  "seed": 1,
   "runs": 12,
-  "tmax": 47.3,
-  "t": 23.65
+  "tmax": 45.64,
+  "t": 22.82
  },
  "shot_race": {
   "file": "solver_race_mid.png",
@@ -48,14 +255,16 @@
   "height": 1688
  },
  "share": {
-  "length": 737,
+  "length": 748,
   "world_same": true,
   "name": "random_0",
   "planners_checked": 12,
   "seeds": "3",
   "presets": [
    "ideal"
-  ]
+  ],
+  "jitter_on": true,
+  "jitter_radius": "0.5"
  },
  "cancel": {
   "total": 36,

@@ -185,10 +185,26 @@ function raceRuns() {           // finished trajectories matching the race filte
   return sw.traj.filter(t => !key || t.key === key);
 }
 
+// The race shows A and B of the chosen seed (jittered for seed > 0) and a small + at the exact map's A and B.
+function raceSeedJitter() {
+  const sw = S.sweep; if (!sw || !sw.jitters) return null;
+  const seed = S.anim ? S.anim.seed : +$("#raceSeed").value || 0;
+  return sw.jitters[seed] || null;
+}
 function drawRace() {
-  const c = $("#race"), doc = (S.sweep && S.sweep.world) || S.doc;
-  if (!doc) return;
+  const c = $("#race"), base = (S.sweep && S.sweep.world) || S.doc;
+  if (!base) return;
+  const j = raceSeedJitter(), doc = j && !j.exact ? SW.jitterWorld(base, j) : base;
   const C = colors(), { ctx, P, dpr } = drawWorld(c, doc, C);
+  if (doc !== base) {
+    const q = 5 * dpr;
+    ctx.strokeStyle = C.fg; ctx.lineWidth = 1.5 * dpr; ctx.globalAlpha = 0.8;
+    for (const p of [base.a || [0, 0], base.b]) {
+      const [a, b] = P(p[0], p[1]);
+      ctx.beginPath(); ctx.moveTo(a - q, b); ctx.lineTo(a + q, b); ctx.moveTo(a, b - q); ctx.lineTo(a, b + q); ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+  }
   if (S.anim) return drawAnim(ctx, P, dpr, C);
   const runs = raceRuns();
   ctx.lineJoin = "round";
@@ -250,6 +266,11 @@ function buildSweepControls(env) {
     faults.map(f => `<option value="${f}">truth + ${esc(SW.FAULT_LABELS[f])}</option>`).join("");
   if (S.linkSpec && faults.includes(S.linkSpec.fault)) $("#faultSel").value = S.linkSpec.fault;
   if (S.linkSpec && S.linkSpec.seeds) $("#seedsIn").value = SW.normSpec({ seeds: S.linkSpec.seeds }).seeds;
+  if (S.linkSpec && S.linkSpec.jitter != null) {
+    const j = SW.normSpec({ jitter: S.linkSpec.jitter }).jitter;
+    $("#jitterOn").checked = j > 0;
+    if (j > 0) $("#jitterR").value = String(j);
+  }
   for (const el of document.querySelectorAll("#plannerList input, #presetList input")) el.onchange = updateCount;
   updateCount();
 }
@@ -257,7 +278,7 @@ function buildSweepControls(env) {
 function readSpec() {
   const vals = name => [...document.querySelectorAll(`input[name="${name}"]:checked`)].map(i => i.value);
   return SW.normSpec({ planners: vals("planner"), presets: vals("preset"), fault: $("#faultSel").value || null,
-    seeds: $("#seedsIn").value }, S.env ? S.env.planners : null);
+    seeds: $("#seedsIn").value, jitter: $("#jitterOn").checked ? $("#jitterR").value : 0 }, S.env ? S.env.planners : null);
 }
 
 function measuredMeans() {
@@ -279,8 +300,9 @@ function updateCount() {
 function setBusy(on) {
   $("#runBtn").disabled = on || !S.readyCount;
   $("#cancelBtn").disabled = !on;
-  for (const el of document.querySelectorAll("#plannerList input, #presetList input, #faultSel, #seedsIn, #quickBtn, #thoroughBtn, #presetSel, #fileIn, #linkForm button"))
+  for (const el of document.querySelectorAll("#plannerList input, #presetList input, #faultSel, #seedsIn, #jitterOn, #jitterR, #quickBtn, #thoroughBtn, #presetSel, #fileIn, #linkForm button"))
     el.disabled = on;
+  if (!on) $("#jitterR").disabled = !$("#jitterOn").checked;
 }
 
 function clearSweep() {
@@ -298,12 +320,21 @@ function startSweep() {
   stopAnim();
   const world = JSON.parse(JSON.stringify(S.doc));
   const runs = SW.buildRuns(spec);
-  const sw = { spec, world, worldName: S.pristine ? S.worldName : null, total: runs.length, done: 0,
+  // A and B per seed (seed 0 exact); one world per seed, shared by every planner and variation
+  const jitters = SW.seedJitters(world, spec);
+  const worlds = jitters.map(j => (j.exact ? world : SW.jitterWorld(world, j)));
+  const sw = { spec, world, worldName: S.pristine ? S.worldName : null, total: runs.length, done: 0, jitters,
     records: new Array(runs.length).fill(null), traj: [], running: true, cancelled: false,
     started: new Date().toISOString(), finished: null, t0: performance.now() };
   S.sweep = sw; S.sel = null; $("#detail").hidden = true;
-  const jobs = runs.map((r, idx) => ({ ...r, idx, sweep: sw, world,
-    cfg: { planner: r.planner, preset: r.preset, fault: r.fault, filter: "none", seed: r.seed } }));
+  const jobs = runs.map((r, idx) => {
+    const j = jitters[r.seed];
+    return { ...r, idx, sweep: sw, world: worlds[r.seed], a: j.a, b: j.b,
+      ab_kept: j.a_kept || j.b_kept ? { a: j.a_kept, b: j.b_kept } : null,
+      cfg: { planner: r.planner, preset: r.preset, fault: r.fault, filter: "none", seed: r.seed } };
+  });
+  const kept = jitters.filter(j => j.a_kept || j.b_kept).length;
+  if (spec.jitter && kept) $("#poolMsg").textContent = `Jitter: ${kept} seed(s) kept an exact A or B (no free point in ${SW.JITTER_DRAWS} draws).`;
   // race filters
   $("#raceVar").innerHTML = '<option value="">all variations</option>' +
     SW.variations(spec).map(k => `<option value="${esc(k)}">${esc(SW.variationLabel(k))}</option>`).join("");
@@ -401,7 +432,8 @@ function renderResults() {
   $("#headline").className = "headline " + agg.headline.kind;
   $("#ranking").innerHTML = agg.ranking.map(r =>
     `<li><span class="swatch" style="background:${plannerColor(r.planner)}"></span><b>${esc(SW.plannerLabel(r.planner))}</b>: ` +
-    `${r.reached}/${r.n} reached <span class="ci">(95 % CI ${pct(r.success.lo)}-${pct(r.success.hi)})</span>, ` +
+    `${r.reached}/${r.n} reached` + (r.n_distinct < r.n ? ` <span class="dup">(${r.reached_distinct}/${r.n_distinct} distinct)</span>` : "") +
+    ` <span class="ci">(95 % CI ${pct(r.success.lo)}-${pct(r.success.hi)}, ${esc(SW.nOne(r))})</span>, ` +
     (r.median_time_s == null ? "no run reached B" : `median ${r.median_time_s.toFixed(1)} s to B`) + (r.error ? `, <span class="c-bad">${r.error} error</span>` : "") + "</li>").join("");
   const order = agg.ranking.map(r => r.planner).concat(agg.planners.filter(p => !agg.ranking.some(r => r.planner === p)));
   const head = "<thead><tr><th>planner</th>" + agg.variations.map(k => `<th>${esc(SW.variationLabel(k))}</th>`).join("") + "</tr></thead>";
@@ -412,11 +444,21 @@ function renderResults() {
       const cls = c.success.p >= 0.8 ? "hi" : c.success.p >= 0.4 ? "mid" : "lo";
       const sel = S.sel && S.sel.planner === p && S.sel.key === k ? " sel" : "";
       return `<td class="${cls}${sel}"><button class="cell" data-p="${esc(p)}" data-k="${esc(k)}" title="details">` +
-        `<b>${pct(c.success.p)}</b> <span class="ci">[${pct(c.success.lo)}-${pct(c.success.hi)}]</span> <span class="n">n=${c.n}</span><br>` +
+        `<b>${pct(c.success.p)}</b> <span class="ci">[${pct(c.success.lo)}-${pct(c.success.hi)}]</span> <span class="n">${esc(SW.nOne(c))}</span><br>` +
+        (c.identical ? `<span class="dup">deterministic: ${c.identical} identical runs</span><br>` : "") +
         `<span class="n">${c.median_time_s == null ? "no run reached B" : "median " + c.median_time_s.toFixed(1) + " s to B"}</span></button></td>`;
     }).join("") + "</tr>").join("");
   $("#matrix").innerHTML = head + "<tbody>" + body + "</tbody>";
   if (S.sel) renderDetail(agg);
+}
+
+function jitterList(sw) {
+  if (!sw || !sw.jitters) return "-";
+  const xy = p => `(${p[0].toFixed(2)}, ${p[1].toFixed(2)})`;
+  const list = sw.jitters.slice(0, 10).map(j => `seed ${j.seed}: A ${xy(j.a)} B ${xy(j.b)}` +
+    (j.exact ? " exact map" : j.a_kept || j.b_kept ? ` (kept exact ${[j.a_kept && "A", j.b_kept && "B"].filter(Boolean).join(" and ")})` : ""));
+  return (sw.spec.jitter ? `jitter radius ${sw.spec.jitter} m<br>` : "jitter off<br>") + list.join("<br>") +
+    (sw.jitters.length > 10 ? `<br>... ${sw.jitters.length - 10} more in the JSON export` : "");
 }
 
 function renderDetail(agg) {
@@ -425,7 +467,10 @@ function renderDetail(agg) {
   const errs = S.sweep.records.filter(r => r && r.planner === p && SW.variationKey(r.preset, r.fault) === k && r.outcome === "error");
   $("#detail").hidden = false;
   $("#detail").innerHTML = `<b>${esc(SW.plannerLabel(p))}</b>, ${esc(SW.variationLabel(k))}` +
-    `<dl><dt>reached B</dt><dd>${c.reached}/${c.n} = ${pct(c.success.p)} (95 % Wilson ${pct(c.success.lo)}-${pct(c.success.hi)})</dd>` +
+    `<dl><dt>reached B</dt><dd>${c.reached}/${c.n} runs; distinct runs ${c.reached_distinct}/${c.n_distinct} = ${pct(c.success.p)} ` +
+    `(95 % Wilson on the ${c.n_distinct} distinct runs: ${pct(c.success.lo)}-${pct(c.success.hi)})</dd>` +
+    (c.identical ? `<dt>deterministic</dt><dd class="dup">${c.identical} of ${c.n} runs are identical to another run (same outcome, time to B and path length at 3 dp); each set counts as one trial.</dd>` : "") +
+    `<dt>A and B per seed</dt><dd class="mono small">${jitterList(S.sweep)}</dd>` +
     `<dt>median time to B</dt><dd>${f1(c.median_time_s, "s")}</dd>` +
     `<dt>median path length</dt><dd>${f1(c.median_path_m, "m")}</dd>` +
     `<dt>min clearance</dt><dd>${c.min_clearance_m == null ? "-" : c.min_clearance_m.toFixed(3) + " m"} (lowest over the runs, centre to surface)</dd>` +
@@ -487,7 +532,7 @@ $("#playBtn").onclick = () => {
 };
 $("#scrub").oninput = () => { if (S.anim) setAnimT(S.anim.tmax * (+$("#scrub").value) / 1000); };
 $("#raceVar").onchange = () => { if (S.anim) startAnim(); else drawRace(); };
-$("#raceSeed").onchange = () => { if (S.anim) startAnim(); };
+$("#raceSeed").onchange = () => { if (S.anim) startAnim(); else drawRace(); };
 
 // ---------------------------------------------------------------- pool
 function loadText(text, bad) { $("#loadText").textContent = text; $("#load").classList.toggle("err", !!bad); }
@@ -529,6 +574,8 @@ function startPool() {
 $("#runBtn").onclick = () => startSweep();
 $("#cancelBtn").onclick = () => cancelSweep("cancelled");
 $("#seedsIn").oninput = updateCount;
+$("#jitterOn").onchange = () => { $("#jitterR").disabled = !$("#jitterOn").checked; updateCount(); };
+$("#jitterR").onchange = updateCount;
 $("#faultSel").onchange = updateCount;
 $("#allBtn").onclick = () => { document.querySelectorAll('input[name="planner"]').forEach(i => { i.checked = true; }); updateCount(); };
 $("#noneBtn").onclick = () => { document.querySelectorAll('input[name="planner"]').forEach(i => { i.checked = false; }); updateCount(); };
@@ -584,7 +631,7 @@ function exportJSON() {
   const doc = SW.exportDoc({ spec: sw.spec, world: sw.world, worldName: sw.worldName, records: sw.records.filter(Boolean), env: S.env,
     pool: { workers: K, hardware_concurrency: navigator.hardwareConcurrency || null, ready_workers: S.readyCount,
       python_ready_s: S.loadMs != null ? S.loadMs / 1000 : null, sweep_wall_s: sw.elapsed_s != null ? sw.elapsed_s : null, user_agent: navigator.userAgent },
-    started: sw.started, finished: sw.finished, cancelled: sw.cancelled });
+    started: sw.started, finished: sw.finished, cancelled: sw.cancelled, jitters: sw.jitters });
   return JSON.stringify(doc, null, 1) + "\n";
 }
 $("#csvBtn").onclick = () => { if (S.sweep) download(baseName() + ".csv", SW.toCSV(S.sweep.records.filter(Boolean)), "text/csv"); };

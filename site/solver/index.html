@@ -67,6 +67,11 @@
     </fieldset>
     <label class="row small">VIO fault <select id="faultSel" aria-label="VIO fault"></select></label>
     <label class="row small">Seeds <input type="number" id="seedsIn" min="1" max="50" value="5" aria-label="Seeds"> <span class="muted">(0 .. N-1)</span></label>
+    <div class="row small">
+      <label><input type="checkbox" id="jitterOn" checked> Jitter A and B per seed</label>
+      <label>radius <select id="jitterR" aria-label="Jitter radius"><option value="0.25">0.25 m</option><option value="0.5" selected>0.5 m</option><option value="1">1.0 m</option></select></label>
+    </div>
+    <p class="small muted">Seed 0 flies the exact map; seed k &gt; 0 moves A and B by the same seeded offset for every planner. Off: with the ideal sensor and truth pose most planners repeat the identical run on every seed.</p>
     <p class="small" id="countMsg"></p>
     <div class="row">
       <button class="btn primary" id="runBtn" disabled>Run sweep</button>
@@ -93,7 +98,7 @@
         <input type="range" id="scrub" min="0" max="1000" value="0" aria-label="Race time">
         <span id="clock" class="mono small">0.0 s</span>
       </div>
-      <p class="small muted">X = collision point, check = reached B, ring = stuck or timeout. Thin lines: all finished runs of the chosen variation.</p>
+      <p class="small muted">X = collision point, check = reached B, ring = stuck or timeout. Thin lines: all finished runs of the chosen variation, every seed. A and B markers: the chosen seed's (jittered) points; small + = the exact map's A and B.</p>
     </div>
     <div>
       <table class="legend-t" id="legend"></table>
@@ -106,7 +111,7 @@
   <p class="headline" id="headline">Run a sweep to see the ranking.</p>
   <ol class="ranking" id="ranking"></ol>
   <div class="grid-scroll"><table class="matrix" id="matrix"></table></div>
-  <p class="small muted">Cell: success rate (reached B / n) with its 95 % Wilson interval, n, and the median time to B over the runs that reached it. Errors count in n as not reached. Click a cell for details.</p>
+  <p class="small muted">Cell: success rate with its 95 % Wilson interval, n, and the median time to B over the runs that reached it. Runs with the same outcome, time to B and path length (3 dp) are identical: they count once in the rate and the interval, and the cell says "deterministic: k identical runs". Errors count as not reached. Click a cell for details.</p>
   <div id="detail" class="detail" hidden></div>
   <div class="row">
     <button class="btn sm" id="csvBtn" disabled>Export CSV</button>
