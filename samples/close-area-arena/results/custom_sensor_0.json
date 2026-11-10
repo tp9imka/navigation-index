@@ -1,0 +1,475 @@
+{
+ "input": "synthetic",
+ "seed": 0,
+ "command": "samples/close-area-arena/.venv/bin/python samples/close-area-arena/results/custom_sensor_0.py",
+ "sensors": {
+  "ideal": {
+   "name": "ideal",
+   "model": "ray",
+   "beams": 72,
+   "fov_deg": 360.0,
+   "max_range_m": 6.0,
+   "min_range_m": 0.0,
+   "noise_sigma_m": 0.02,
+   "cone_deg": 0.0,
+   "dropout": 0.02
+  },
+  "depth_cam_87": {
+   "name": "depth_cam_87",
+   "model": "cone",
+   "beams": 30,
+   "fov_deg": 87.0,
+   "max_range_m": 5.0,
+   "min_range_m": 0.3,
+   "noise_sigma_m": 0.04,
+   "cone_deg": 3.0,
+   "dropout": 0.05
+  }
+ },
+ "yaw_policy": {
+  "cap_rad_s": 1.0,
+  "gain_per_s": 2.0,
+  "slow_mps": 0.2
+ },
+ "env": {
+  "python": "3.12.10",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "machine": "arm64"
+ },
+ "wall_s": 90.1,
+ "runs": [
+  {
+   "world": "random_0",
+   "planner": "astar_unknown",
+   "sensor": "ideal",
+   "preset": "ideal",
+   "yaw_policy": "off",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.7,
+    "duration_s": 18.7,
+    "min_clearance_m": 0.6624,
+    "path_length_m": 23.95
+   },
+   "max_time_s": 60.0,
+   "wall_s": 1.395
+  },
+  {
+   "world": "random_0",
+   "planner": "astar_unknown",
+   "sensor": "depth_cam_87",
+   "preset": "depth_cam_87",
+   "yaw_policy": "look_where_you_go",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.9,
+    "duration_s": 18.9,
+    "min_clearance_m": 0.6587,
+    "path_length_m": 23.981
+   },
+   "max_time_s": 60.0,
+   "wall_s": 1.429
+  },
+  {
+   "world": "random_0",
+   "planner": "astar_unknown",
+   "sensor": "depth_cam_87 fixed yaw",
+   "preset": "depth_cam_87",
+   "yaw_policy": "off",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 19.08,
+    "duration_s": 19.08,
+    "min_clearance_m": 0.6485,
+    "path_length_m": 23.98
+   },
+   "max_time_s": 60.0,
+   "wall_s": 1.437
+  },
+  {
+   "world": "random_0",
+   "planner": "mppi_astar",
+   "sensor": "ideal",
+   "preset": "ideal",
+   "yaw_policy": "off",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.24,
+    "duration_s": 20.24,
+    "min_clearance_m": 0.5812,
+    "path_length_m": 23.917
+   },
+   "max_time_s": 60.0,
+   "wall_s": 2.575
+  },
+  {
+   "world": "random_0",
+   "planner": "mppi_astar",
+   "sensor": "depth_cam_87",
+   "preset": "depth_cam_87",
+   "yaw_policy": "look_where_you_go",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.32,
+    "duration_s": 20.32,
+    "min_clearance_m": 0.6225,
+    "path_length_m": 23.998
+   },
+   "max_time_s": 60.0,
+   "wall_s": 3.121
+  },
+  {
+   "world": "random_0",
+   "planner": "mppi_astar",
+   "sensor": "depth_cam_87 fixed yaw",
+   "preset": "depth_cam_87",
+   "yaw_policy": "off",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.32,
+    "duration_s": 20.32,
+    "min_clearance_m": 0.639,
+    "path_length_m": 24.008
+   },
+   "max_time_s": 60.0,
+   "wall_s": 2.985
+  },
+  {
+   "world": "random_0",
+   "planner": "astar_unknown_pg",
+   "sensor": "ideal",
+   "preset": "ideal",
+   "yaw_policy": "off",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.68,
+    "duration_s": 18.68,
+    "min_clearance_m": 0.6432,
+    "path_length_m": 23.947
+   },
+   "max_time_s": 60.0,
+   "wall_s": 1.869
+  },
+  {
+   "world": "random_0",
+   "planner": "astar_unknown_pg",
+   "sensor": "depth_cam_87",
+   "preset": "depth_cam_87",
+   "yaw_policy": "look_where_you_go",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.9,
+    "duration_s": 18.9,
+    "min_clearance_m": 0.6769,
+    "path_length_m": 24.037
+   },
+   "max_time_s": 60.0,
+   "wall_s": 1.981
+  },
+  {
+   "world": "random_0",
+   "planner": "astar_unknown_pg",
+   "sensor": "depth_cam_87 fixed yaw",
+   "preset": "depth_cam_87",
+   "yaw_policy": "off",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.9,
+    "duration_s": 18.9,
+    "min_clearance_m": 0.6037,
+    "path_length_m": 23.938
+   },
+   "max_time_s": 60.0,
+   "wall_s": 1.961
+  },
+  {
+   "world": "office_0",
+   "planner": "astar_unknown",
+   "sensor": "ideal",
+   "preset": "ideal",
+   "yaw_policy": "off",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.96,
+    "duration_s": 21.96,
+    "min_clearance_m": 0.2892,
+    "path_length_m": 13.764
+   },
+   "max_time_s": 60.0,
+   "wall_s": 0.96
+  },
+  {
+   "world": "office_0",
+   "planner": "astar_unknown",
+   "sensor": "depth_cam_87",
+   "preset": "depth_cam_87",
+   "yaw_policy": "look_where_you_go",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 25.4,
+    "duration_s": 25.4,
+    "min_clearance_m": 0.224,
+    "path_length_m": 15.252
+   },
+   "max_time_s": 60.0,
+   "wall_s": 1.233
+  },
+  {
+   "world": "office_0",
+   "planner": "astar_unknown",
+   "sensor": "depth_cam_87 fixed yaw",
+   "preset": "depth_cam_87",
+   "yaw_policy": "off",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 23.14,
+    "duration_s": 23.14,
+    "min_clearance_m": 0.191,
+    "path_length_m": 14.253
+   },
+   "max_time_s": 60.0,
+   "wall_s": 1.046
+  },
+  {
+   "world": "office_0",
+   "planner": "mppi_astar",
+   "sensor": "ideal",
+   "preset": "ideal",
+   "yaw_policy": "off",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 12.84,
+    "duration_s": 12.84,
+    "min_clearance_m": 0.3131,
+    "path_length_m": 13.895
+   },
+   "max_time_s": 60.0,
+   "wall_s": 1.485
+  },
+  {
+   "world": "office_0",
+   "planner": "mppi_astar",
+   "sensor": "depth_cam_87",
+   "preset": "depth_cam_87",
+   "yaw_policy": "look_where_you_go",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 15.88,
+    "duration_s": 15.88,
+    "min_clearance_m": 0.2883,
+    "path_length_m": 15.725
+   },
+   "max_time_s": 60.0,
+   "wall_s": 1.747
+  },
+  {
+   "world": "office_0",
+   "planner": "mppi_astar",
+   "sensor": "depth_cam_87 fixed yaw",
+   "preset": "depth_cam_87",
+   "yaw_policy": "off",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 14.14,
+    "duration_s": 14.14,
+    "min_clearance_m": 0.2836,
+    "path_length_m": 14.516
+   },
+   "max_time_s": 60.0,
+   "wall_s": 1.445
+  },
+  {
+   "world": "office_0",
+   "planner": "astar_unknown_pg",
+   "sensor": "ideal",
+   "preset": "ideal",
+   "yaw_policy": "off",
+   "score": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 10.0,
+    "min_clearance_m": 0.8475,
+    "path_length_m": 0.0
+   },
+   "max_time_s": 60.0,
+   "wall_s": 0.575
+  },
+  {
+   "world": "office_0",
+   "planner": "astar_unknown_pg",
+   "sensor": "depth_cam_87",
+   "preset": "depth_cam_87",
+   "yaw_policy": "look_where_you_go",
+   "score": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 10.0,
+    "min_clearance_m": 0.8475,
+    "path_length_m": 0.0
+   },
+   "max_time_s": 60.0,
+   "wall_s": 0.623
+  },
+  {
+   "world": "office_0",
+   "planner": "astar_unknown_pg",
+   "sensor": "depth_cam_87 fixed yaw",
+   "preset": "depth_cam_87",
+   "yaw_policy": "off",
+   "score": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 10.0,
+    "min_clearance_m": 0.8475,
+    "path_length_m": 0.0
+   },
+   "max_time_s": 60.0,
+   "wall_s": 0.527
+  },
+  {
+   "world": "maze_0",
+   "planner": "astar_unknown",
+   "sensor": "ideal",
+   "preset": "ideal",
+   "yaw_policy": "off",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 44.78,
+    "duration_s": 44.78,
+    "min_clearance_m": 0.5911,
+    "path_length_m": 37.733
+   },
+   "max_time_s": 120.0,
+   "wall_s": 5.839
+  },
+  {
+   "world": "maze_0",
+   "planner": "astar_unknown",
+   "sensor": "depth_cam_87",
+   "preset": "depth_cam_87",
+   "yaw_policy": "look_where_you_go",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 54.28,
+    "duration_s": 54.28,
+    "min_clearance_m": 0.2642,
+    "path_length_m": 40.927
+   },
+   "max_time_s": 120.0,
+   "wall_s": 7.873
+  },
+  {
+   "world": "maze_0",
+   "planner": "astar_unknown",
+   "sensor": "depth_cam_87 fixed yaw",
+   "preset": "depth_cam_87",
+   "yaw_policy": "off",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 49.82,
+    "duration_s": 49.82,
+    "min_clearance_m": 0.5713,
+    "path_length_m": 41.392
+   },
+   "max_time_s": 120.0,
+   "wall_s": 7.209
+  },
+  {
+   "world": "maze_0",
+   "planner": "mppi_astar",
+   "sensor": "ideal",
+   "preset": "ideal",
+   "yaw_policy": "off",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.28,
+    "duration_s": 31.28,
+    "min_clearance_m": 0.357,
+    "path_length_m": 35.589
+   },
+   "max_time_s": 120.0,
+   "wall_s": 5.941
+  },
+  {
+   "world": "maze_0",
+   "planner": "mppi_astar",
+   "sensor": "depth_cam_87",
+   "preset": "depth_cam_87",
+   "yaw_policy": "look_where_you_go",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 34.82,
+    "duration_s": 34.82,
+    "min_clearance_m": 0.4024,
+    "path_length_m": 39.701
+   },
+   "max_time_s": 120.0,
+   "wall_s": 6.595
+  },
+  {
+   "world": "maze_0",
+   "planner": "mppi_astar",
+   "sensor": "depth_cam_87 fixed yaw",
+   "preset": "depth_cam_87",
+   "yaw_policy": "off",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 31.96,
+    "duration_s": 31.96,
+    "min_clearance_m": 0.3598,
+    "path_length_m": 36.49
+   },
+   "max_time_s": 120.0,
+   "wall_s": 6.072
+  },
+  {
+   "world": "maze_0",
+   "planner": "astar_unknown_pg",
+   "sensor": "ideal",
+   "preset": "ideal",
+   "yaw_policy": "off",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 51.9,
+    "duration_s": 51.9,
+    "min_clearance_m": 0.5385,
+    "path_length_m": 40.46
+   },
+   "max_time_s": 120.0,
+   "wall_s": 8.274
+  },
+  {
+   "world": "maze_0",
+   "planner": "astar_unknown_pg",
+   "sensor": "depth_cam_87",
+   "preset": "depth_cam_87",
+   "yaw_policy": "look_where_you_go",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 50.3,
+    "duration_s": 50.3,
+    "min_clearance_m": 0.5539,
+    "path_length_m": 41.447
+   },
+   "max_time_s": 120.0,
+   "wall_s": 7.198
+  },
+  {
+   "world": "maze_0",
+   "planner": "astar_unknown_pg",
+   "sensor": "depth_cam_87 fixed yaw",
+   "preset": "depth_cam_87",
+   "yaw_policy": "off",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 47.26,
+    "duration_s": 47.26,
+    "min_clearance_m": 0.5875,
+    "path_length_m": 40.292
+   },
+   "max_time_s": 120.0,
+   "wall_s": 6.69
+  }
+ ]
+}

@@ -2,8 +2,15 @@
 // Pyodide in a Web Worker, so the page never freezes while Python computes a run.
 // Protocol (postMessage):
 //   page => worker  {type: "run", id, world: <close-area-world/1 dict>, cfg: {planner, preset, fault, filter, seed,
-//                   recovery, max_time_s}}   max_time_s optional: run time limit override in s, clamped 10-300;
-//                   without it the limit comes from world.family (LONG_FAMILIES in DRIVER_PY, as bench.py)
+//                   recovery, max_time_s, vehicle, sensor}}   max_time_s optional: run time limit override in s,
+//                   clamped 10-300; without it the limit comes from world.family (LONG_FAMILIES in DRIVER_PY, as bench.py)
+//                   vehicle optional (loop-75): {radius_m, v_max, a_max, tau}, all four, each clamped to VEHICLE_CLAMP;
+//                   without it run.DEFAULTS["vehicle"]. sensor optional: {beams, fov_deg, max_range_m, min_range_m,
+//                   noise_sigma_m, cone_deg?, dropout?}, clamped to SENSOR_CLAMP; it replaces cfg.preset (which
+//                   is then reported as "custom"). Unknown or missing keys => error naming them
+//                   (samples/close-area-arena/presets.py). The result carries "vehicle" and "sensor" as flown
+//                   (after clamping, with a "clamped" list) and "yaw_policy": a sensor with fov < 360 deg flies the
+//                   look-where-you-go yaw policy (look_where_you_go below); 360 deg sensors keep yaw fixed as before.
 //   worker => page  {type: "progress", stage, step, steps, mb, mb_expected}
 //                   {type: "retry", step, attempt, attempts, wait_s, error}   (a load step failed, retrying)
 //                   {type: "ready", env, planners, timings}
@@ -13,7 +20,7 @@
 // native execute the same driver. Keep DRIVER_PY free of backticks and dollar-brace.
 
 const DRIVER_PY = String.raw`
-import importlib, json, math, sys, time
+import copy, importlib, json, math, sys, time
 import numpy as np
 
 _t0 = time.perf_counter()
@@ -190,11 +197,70 @@ def max_time_for(doc, override=None):
     return float(run_mod.DEFAULTS["max_time_s"]), "default"
 
 
+# Sensor presets offered by the page (loop-75 adds the two team-facing ones from presets.SENSOR_SPECS).
+PG_PRESETS = ("ideal", "crazyflie", "crazyflie_bright", "depth_cam_87", "lidar_2d")
+# Custom vehicle / sensor from a run message (loop-75): sane ranges, values outside are clamped and
+# listed in the result's "clamped". presets.py then checks the clamped dict (keys, types, min < max).
+VEHICLE_CLAMP = {"radius_m": (0.05, 0.6), "v_max": (0.1, 5.0), "a_max": (0.5, 20.0), "tau": (0.02, 1.0)}
+SENSOR_CLAMP = {"beams": (1, 360), "fov_deg": (1.0, 360.0), "max_range_m": (0.5, 30.0), "min_range_m": (0.0, 5.0),
+                "noise_sigma_m": (0.0, 0.5), "cone_deg": (0.0, 30.0), "dropout": (0.0, 0.5)}
+MIN_RANGE_GAP_M = 0.1         # min_range_m is clamped to at most max_range_m - 0.1
+# Look-where-you-go yaw (loop-75). The range fan is body frame and the planners command yaw_rate 0, so a
+# forward-only sensor would stare at the initial goal bearing all run. For fov < 360 deg the driver sets
+# the setpoint's yaw rate: face the commanded velocity, or the goal when slower than YAW_SLOW_MPS,
+# proportional with YAW_GAIN, capped at YAW_RATE_CAP. Off for 360 deg sensors (results unchanged).
+YAW_RATE_CAP = 1.0            # rad/s (57 deg/s) [proposal], half of vehicle.Vehicle yaw_rate_max 2.0
+YAW_GAIN = 2.0                # 1/s, yaw rate per rad of heading error [proposal]
+YAW_SLOW_MPS = 0.2            # m/s, below this commanded speed face the goal [proposal]
+FULL_FOV = 2 * math.pi - 1e-9
+
+
+def _clamp_spec(spec, required, defaults, ranges, what):
+    """(clamped dict with defaults filled, list of {key, asked, flown}) for a run-message dict."""
+    presets.check_keys(spec, required, defaults, what)
+    s = dict(defaults, **spec)
+    out, changed = {}, []
+    for k, v in s.items():
+        if isinstance(v, bool) or not isinstance(v, (int, float)) or not math.isfinite(v):
+            raise ValueError(what + " " + k + " must be a finite number, got " + repr(v))
+        lo, hi = ranges[k]
+        c = min(max(v, lo), hi)
+        if k == "beams":
+            c = int(round(c))
+        if c != v:
+            changed.append({"key": k, "asked": v, "flown": c})
+        out[k] = c
+    if "min_range_m" in out and out["min_range_m"] > out["max_range_m"] - MIN_RANGE_GAP_M:
+        c = round(out["max_range_m"] - MIN_RANGE_GAP_M, 6)
+        changed = [x for x in changed if x["key"] != "min_range_m"]
+        changed.append({"key": "min_range_m", "asked": s["min_range_m"], "flown": c})
+        out["min_range_m"] = c
+    return out, changed
+
+
+def clamp_vehicle(spec):
+    return _clamp_spec(spec, presets.VEHICLE_SPEC_KEYS, {}, VEHICLE_CLAMP, "vehicle")
+
+
+def clamp_sensor(spec):
+    return _clamp_spec(spec, presets.SENSOR_SPEC_REQUIRED, presets.SENSOR_SPEC_DEFAULTS, SENSOR_CLAMP, "sensor")
+
+
+def look_where_you_go(sp, pose, goal):
+    """Yaw rate (rad/s) toward the commanded velocity, or the goal when slow, from the pose the planner saw."""
+    if math.hypot(sp.vx, sp.vy) >= YAW_SLOW_MPS:
+        target = math.atan2(sp.vy, sp.vx)
+    else:
+        target = math.atan2(goal[1] - pose.y, goal[0] - pose.x)
+    err = (target - pose.yaw + math.pi) % (2 * math.pi) - math.pi
+    return max(-YAW_RATE_CAP, min(YAW_RATE_CAP, YAW_GAIN * err))
+
+
 def env_json():
     import platform, scipy
     return json.dumps({"python": sys.version.split()[0], "numpy": np.__version__, "scipy": scipy.__version__,
                        "machine": platform.machine(), "system": platform.system(), "imports_ms": IMPORT_MS,
-                       "planners": list(PLANNERS), "presets": [k for k in ("ideal", "crazyflie", "crazyflie_bright")],
+                       "planners": list(PLANNERS), "presets": [k for k in PG_PRESETS],
                        "faults": ["truth", "none", "jump", "bias", "dropout"],
                        "filters": ["none"] + (["F2"] if filters is not None else []),
                        "recovery": list(pg_reloc.ARMS) if pg_reloc is not None else ["none"],
@@ -206,7 +272,7 @@ def _r(v, n=3):
 
 
 def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="none", seed=0, cfg=None,
-             recovery="none", max_time_s=None):
+             recovery="none", max_time_s=None, vehicle=None, sensor=None, yaw_policy="auto"):
     """Fly one world. Same loop as run.run_one (filter off) or run_kill.run_one (F2 on), with the
     sensor preset and pose source as arguments. Scored by scorer.score on truth.
     fault: "truth" = no estimator (planner sees truth); else estimator.py VIO EKF with dark zones and
@@ -214,9 +280,31 @@ def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="no
     recovery (pg_reloc.ARMS): with fault jump or dropout, wrap the estimator in a relocalization arm
     of samples/close-area-relocalize; the arm brings its own planner (A* known map behind the hover
     gate), so planner must be astar_known and the filter none.
-    max_time_s: None = by world family (max_time_for), else the run time limit in s (clamped 10-300)."""
+    max_time_s: None = by world family (max_time_for), else the run time limit in s (clamped 10-300).
+    vehicle / sensor (loop-75): None, or a team-facing dict (presets.py schema), clamped by clamp_vehicle /
+    clamp_sensor; sensor replaces preset. yaw_policy: "auto" = look_where_you_go when the sensor fov < 360 deg,
+    "off" = never (native comparison only, the run message has no such field)."""
     cfg = cfg or run_mod.DEFAULTS
     t_max, t_max_src = max_time_for(doc, max_time_s)
+    veh_rec = dict(presets.vehicle_spec({"radius_m": cfg["vehicle"]["radius"], "v_max": cfg["vehicle"]["v_max"],
+                                         "a_max": cfg["vehicle"]["a_max"], "tau": cfg["vehicle"]["tau"]}),
+                   source="default", clamped=[])
+    if vehicle is not None:
+        vs, vch = clamp_vehicle(vehicle)
+        cfg = dict(cfg, vehicle=presets.vehicle_kwargs(vs))
+        veh_rec = dict(presets.vehicle_spec(vs), source="cfg", clamped=vch)
+    if sensor is not None:
+        ss, sch = clamp_sensor(sensor)
+        sens = presets.sensor_spec(ss)
+        preset = "custom"
+        sens_rec = dict(presets.describe_sensor(sens), clamped=sch)
+    else:
+        sens = preset
+        sens_rec = dict(presets.describe_sensor(preset), clamped=[])
+    if yaw_policy not in ("auto", "off"):
+        raise ValueError("yaw_policy must be auto or off")
+    yaw_on = yaw_policy == "auto" and presets.sensor_fov(sens) < FULL_FOV
+    sens_rec["yaw_policy"] = "look_where_you_go" if yaw_on else "off"
     if recovery != "none":
         if pg_reloc is None:
             raise RuntimeError("relocalization did not load: " + LOAD_ERRORS.get("relocalize", "?"))
@@ -232,7 +320,7 @@ def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="no
     free = bool(WC.has_free_path(w, radius))
     goal = (w.goal[0], w.goal[1], cfg["z0"])
     veh = vehicle_mod.Vehicle(0.0, 0.0, cfg["z0"], yaw=math.atan2(goal[1], goal[0]), **cfg["vehicle"])
-    sensor = presets.make_sensor(preset, np.random.default_rng([seed, index, 7]))   # run.py noise stream
+    sensor = presets.make_sensor(sens, np.random.default_rng([seed, index, 7]))   # run.py noise stream
     est = None
     if fault != "truth":
         est = estimator.make_pose_source_factory(fault, dark=True)(w, seed, index)
@@ -251,7 +339,7 @@ def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="no
         if filters is None:
             raise RuntimeError("safety filter did not load: " + LOAD_ERRORS.get("safety_filter", "?"))
         f = filters.make("F2")
-        fsensor = presets.make_sensor(preset, np.random.default_rng([seed, index, 8]))   # run_kill.py filter stream
+        fsensor = presets.make_sensor(sens, np.random.default_rng([seed, index, 8]))   # run_kill.py filter stream
     elif filt != "none":
         raise ValueError("filter must be none or F2")
     HZ, DT = vehicle_mod.HZ, vehicle_mod.DT
@@ -282,6 +370,9 @@ def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="no
                     trace.frame(pose, tr.t)
             scan = ad.ranges()
             sp_nom = pl.step(pose, scan, goal, grid, pdt)
+            if yaw_on:                          # copy: planners may keep the setpoint they returned
+                sp_nom = copy.copy(sp_nom)
+                sp_nom.yaw_rate = look_where_you_go(sp_nom, pose, goal)
             if f is None:
                 ad.send_setpoint(sp_nom)
             e = math.hypot(pose.x - tr.x, pose.y - tr.y)
@@ -329,6 +420,7 @@ def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="no
         "config": {"planner": planner, "preset": preset, "fault": fault, "filter": filt, "seed": seed, "index": index,
                    "recovery": recovery},
         "reloc": trace.result(res, est) if trace is not None else None,
+        "vehicle": veh_rec, "sensor": sens_rec,
         "score": res, "free_path": free,
         "wall_s": round(time.perf_counter() - t_start, 3), "sim_s": round(float(ts[-1]), 2),
         "max_time_s": t_max, "max_time_source": t_max_src,
@@ -349,7 +441,8 @@ def play(doc_json, cfg_json):
     c = json.loads(cfg_json)
     out = simulate(json.loads(doc_json), c.get("planner", "astar_known"), c.get("preset", "ideal"),
                    c.get("fault", "truth"), c.get("filter", "none"), int(c.get("seed", 0)),
-                   recovery=c.get("recovery", "none"), max_time_s=c.get("max_time_s"))
+                   recovery=c.get("recovery", "none"), max_time_s=c.get("max_time_s"),
+                   vehicle=c.get("vehicle"), sensor=c.get("sensor"))
     return json.dumps(out, allow_nan=False)
 `;
 
@@ -490,9 +583,19 @@ async function init() {
   postMessage({ type: "ready", env, timings: t, mb: Math.round(mbDone * 10) / 10 });
 }
 
+// cfg.vehicle / cfg.sensor (loop-75) must be plain objects when present; DRIVER_PY checks keys and clamps values.
+function checkCfg(cfg) {
+  for (const k of ["vehicle", "sensor"]) {
+    const v = cfg[k];
+    if (v !== undefined && v !== null && (typeof v !== "object" || Array.isArray(v)))
+      throw new Error(`cfg.${k} must be an object, got ${Array.isArray(v) ? "array" : typeof v}`);
+  }
+}
+
 function runOne(msg) {
   const t0 = performance.now();
   try {
+    checkCfg(msg.cfg || {});
     const out = JSON.parse(play(JSON.stringify(msg.world), JSON.stringify(msg.cfg || {})));
     out.worker_ms = Math.round(performance.now() - t0);
     postMessage({ type: "result", id: msg.id, result: out });

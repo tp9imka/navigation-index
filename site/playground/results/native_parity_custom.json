@@ -1,0 +1,312 @@
+{
+ "input": "synthetic",
+ "command": "samples/close-area-arena/.venv/bin/python site/playground/results/native_parity_custom.py",
+ "env": {
+  "python": "3.12.10",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "machine": "arm64",
+  "system": "Darwin",
+  "imports_ms": {
+   "scipy_ndimage": 224.2,
+   "arena": 7.4,
+   "reactive": 1.0,
+   "sample_planners": 64.6,
+   "safety_filter": 125.5
+  },
+  "planners": [
+   "straight",
+   "freest_beam",
+   "astar_known",
+   "astar_unknown",
+   "apf",
+   "vfh_plus",
+   "dwa",
+   "dwa_mem",
+   "bug2",
+   "tangent_bug",
+   "dstar_lite",
+   "informed_rrt_star",
+   "thetastar_known",
+   "lazy_thetastar_known",
+   "lazy_thetastar_unknown",
+   "mppi",
+   "mppi_astar",
+   "hybrid_astar"
+  ],
+  "presets": [
+   "ideal",
+   "crazyflie",
+   "crazyflie_bright",
+   "depth_cam_87",
+   "lidar_2d"
+  ],
+  "faults": [
+   "truth",
+   "none",
+   "jump",
+   "bias",
+   "dropout"
+  ],
+  "filters": [
+   "none",
+   "F2"
+  ],
+  "recovery": [
+   "none",
+   "single",
+   "multi",
+   "multi_ig"
+  ],
+  "load_errors": {}
+ },
+ "keys": [
+  "outcome",
+  "time_to_goal_s",
+  "duration_s",
+  "min_clearance_m",
+  "path_length_m"
+ ],
+ "cases": [
+  {
+   "world": "random_0",
+   "planner": "mppi_astar",
+   "preset": "ideal",
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87.0,
+    "max_range_m": 5.0,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3.0,
+    "dropout": 0.05
+   },
+   "vehicle": null,
+   "fault": "truth",
+   "filter": "none",
+   "seed": 0,
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.32,
+    "duration_s": 20.32,
+    "min_clearance_m": 0.6225,
+    "path_length_m": 23.998
+   },
+   "free_path": true,
+   "sim_s": 20.32,
+   "native_wall_s": 2.308,
+   "frames": 204,
+   "max_time_s": 60.0,
+   "flown": {
+    "vehicle": {
+     "radius_m": 0.15,
+     "v_max": 2.0,
+     "a_max": 3.0,
+     "tau": 0.15,
+     "source": "default",
+     "clamped": []
+    },
+    "sensor": {
+     "name": "custom",
+     "model": "cone",
+     "beams": 30,
+     "fov_deg": 87.0,
+     "max_range_m": 5.0,
+     "min_range_m": 0.3,
+     "noise_sigma_m": 0.04,
+     "cone_deg": 3.0,
+     "dropout": 0.05,
+     "clamped": [],
+     "yaw_policy": "look_where_you_go"
+    },
+    "radius": 0.15,
+    "n_beams": 30,
+    "max_range": 5.0
+   }
+  },
+  {
+   "world": "office_0",
+   "planner": "mppi_astar",
+   "preset": "ideal",
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87.0,
+    "max_range_m": 5.0,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3.0,
+    "dropout": 0.05
+   },
+   "vehicle": null,
+   "fault": "truth",
+   "filter": "none",
+   "seed": 0,
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 15.88,
+    "duration_s": 15.88,
+    "min_clearance_m": 0.2883,
+    "path_length_m": 15.725
+   },
+   "free_path": true,
+   "sim_s": 15.88,
+   "native_wall_s": 1.186,
+   "frames": 159,
+   "max_time_s": 60.0,
+   "flown": {
+    "vehicle": {
+     "radius_m": 0.15,
+     "v_max": 2.0,
+     "a_max": 3.0,
+     "tau": 0.15,
+     "source": "default",
+     "clamped": []
+    },
+    "sensor": {
+     "name": "custom",
+     "model": "cone",
+     "beams": 30,
+     "fov_deg": 87.0,
+     "max_range_m": 5.0,
+     "min_range_m": 0.3,
+     "noise_sigma_m": 0.04,
+     "cone_deg": 3.0,
+     "dropout": 0.05,
+     "clamped": [],
+     "yaw_policy": "look_where_you_go"
+    },
+    "radius": 0.15,
+    "n_beams": 30,
+    "max_range": 5.0
+   }
+  },
+  {
+   "world": "narrow_gap_0",
+   "planner": "mppi_astar",
+   "preset": "ideal",
+   "sensor": null,
+   "vehicle": {
+    "radius_m": 0.25,
+    "v_max": 2.0,
+    "a_max": 3.0,
+    "tau": 0.15
+   },
+   "fault": "truth",
+   "filter": "none",
+   "seed": 0,
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.6,
+    "duration_s": 21.6,
+    "min_clearance_m": 0.2652,
+    "path_length_m": 25.194
+   },
+   "free_path": true,
+   "sim_s": 21.6,
+   "native_wall_s": 2.603,
+   "frames": 216,
+   "max_time_s": 60.0,
+   "flown": {
+    "vehicle": {
+     "radius_m": 0.25,
+     "v_max": 2.0,
+     "a_max": 3.0,
+     "tau": 0.15,
+     "source": "cfg",
+     "clamped": []
+    },
+    "sensor": {
+     "name": "ideal",
+     "model": "ray",
+     "beams": 72,
+     "fov_deg": 360.0,
+     "max_range_m": 6.0,
+     "min_range_m": 0.0,
+     "noise_sigma_m": 0.02,
+     "cone_deg": 0.0,
+     "dropout": 0.02,
+     "clamped": [],
+     "yaw_policy": "off"
+    },
+    "radius": 0.25,
+    "n_beams": 72,
+    "max_range": 6.0
+   }
+  }
+ ],
+ "checks": [
+  {
+   "check": "K1 driver, preset name depth_cam_87",
+   "case": [
+    "random_0",
+    "mppi_astar"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.32,
+    "duration_s": 20.32,
+    "min_clearance_m": 0.6225,
+    "path_length_m": 23.998
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 20.32,
+    "duration_s": 20.32,
+    "min_clearance_m": 0.6225,
+    "path_length_m": 23.998
+   }
+  },
+  {
+   "check": "K1 driver, preset name depth_cam_87",
+   "case": [
+    "office_0",
+    "mppi_astar"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 15.88,
+    "duration_s": 15.88,
+    "min_clearance_m": 0.2883,
+    "path_length_m": 15.725
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 15.88,
+    "duration_s": 15.88,
+    "min_clearance_m": 0.2883,
+    "path_length_m": 15.725
+   }
+  },
+  {
+   "check": "K2 run.run_one, vehicle radius 0.25 m, same JSON world",
+   "case": [
+    "narrow_gap_0",
+    "mppi_astar"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.6,
+    "duration_s": 21.6,
+    "min_clearance_m": 0.2652,
+    "path_length_m": 25.194
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.6,
+    "duration_s": 21.6,
+    "min_clearance_m": 0.2652,
+    "path_length_m": 25.194
+   }
+  }
+ ],
+ "native_env": {
+  "python": "3.12.10",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "machine": "arm64"
+ },
+ "summary": "3/3 checks (K1, K2) identical"
+}
