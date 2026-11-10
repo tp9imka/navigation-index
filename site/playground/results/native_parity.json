@@ -8,11 +8,11 @@
   "machine": "arm64",
   "system": "Darwin",
   "imports_ms": {
-   "scipy_ndimage": 18187.3,
-   "arena": 41.1,
-   "reactive": 7.0,
-   "sample_planners": 4677.7,
-   "safety_filter": 10014.6
+   "scipy_ndimage": 3286.9,
+   "arena": 494.0,
+   "reactive": 70.5,
+   "sample_planners": 2390.7,
+   "safety_filter": 4439.2
   },
   "planners": [
    "straight",
@@ -37,7 +37,9 @@
   "presets": [
    "ideal",
    "crazyflie",
-   "crazyflie_bright"
+   "crazyflie_bright",
+   "depth_cam_87",
+   "lidar_2d"
   ],
   "faults": [
    "truth",
@@ -49,6 +51,20 @@
   "filters": [
    "none",
    "F2"
+  ],
+  "yaw": [
+   "fixed",
+   "look_where_you_go"
+  ],
+  "radius_consts": [
+   "astar.RADIUS",
+   "astar.CARROT_CLEAR_M",
+   "ha.RADIUS",
+   "rrt.RADIUS",
+   "mppi.R_COLL",
+   "mppi.D_SAFE",
+   "dwa.RADIUS",
+   "bug.RADIUS"
   ],
   "recovery": [
    "none",
@@ -82,7 +98,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 20.32,
-   "native_wall_s": 0.08,
+   "native_wall_s": 0.079,
    "frames": 204,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -103,7 +119,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 26.08,
-   "native_wall_s": 0.094,
+   "native_wall_s": 0.092,
    "frames": 261,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -124,7 +140,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 19.38,
-   "native_wall_s": 0.362,
+   "native_wall_s": 0.341,
    "frames": 194,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -137,15 +153,15 @@
    "filter": "none",
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 18.68,
-    "duration_s": 18.68,
-    "min_clearance_m": 0.6432,
-    "path_length_m": 23.947
+    "time_to_goal_s": 18.7,
+    "duration_s": 18.7,
+    "min_clearance_m": 0.6624,
+    "path_length_m": 23.95
    },
    "max_pose_error_m": 0.0,
    "free_path": true,
-   "sim_s": 18.68,
-   "native_wall_s": 1.41,
+   "sim_s": 18.7,
+   "native_wall_s": 1.372,
    "frames": 187,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -166,7 +182,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 28.88,
-   "native_wall_s": 0.091,
+   "native_wall_s": 0.099,
    "frames": 289,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -187,7 +203,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 26.12,
-   "native_wall_s": 0.101,
+   "native_wall_s": 0.105,
    "frames": 262,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -208,7 +224,7 @@
    "max_pose_error_m": 0.4906,
    "free_path": true,
    "sim_s": 14.2,
-   "native_wall_s": 0.375,
+   "native_wall_s": 0.36,
    "frames": 142,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -229,7 +245,7 @@
    "max_pose_error_m": 0.5185,
    "free_path": true,
    "sim_s": 32.9,
-   "native_wall_s": 0.684,
+   "native_wall_s": 0.65,
    "frames": 329,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -250,7 +266,7 @@
    "max_pose_error_m": 0.7143,
    "free_path": true,
    "sim_s": 25.84,
-   "native_wall_s": 0.146,
+   "native_wall_s": 0.141,
    "frames": 259,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -271,7 +287,7 @@
    "max_pose_error_m": 0.3331,
    "free_path": true,
    "sim_s": 20.6,
-   "native_wall_s": 0.524,
+   "native_wall_s": 0.477,
    "frames": 206,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -292,7 +308,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 22.74,
-   "native_wall_s": 0.448,
+   "native_wall_s": 0.419,
    "frames": 228,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -313,7 +329,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 13.06,
-   "native_wall_s": 0.069,
+   "native_wall_s": 0.068,
    "frames": 131,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -334,7 +350,7 @@
    "max_pose_error_m": 0.2255,
    "free_path": true,
    "sim_s": 13.12,
-   "native_wall_s": 0.096,
+   "native_wall_s": 0.09,
    "frames": 132,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -346,17 +362,17 @@
    "fault": "truth",
    "filter": "none",
    "score": {
-    "outcome": "stuck",
+    "outcome": "collision",
     "time_to_goal_s": null,
-    "duration_s": 10.0,
-    "min_clearance_m": 0.8616,
-    "path_length_m": 0.0
+    "duration_s": 55.28,
+    "min_clearance_m": 0.1472,
+    "path_length_m": 25.733
    },
    "max_pose_error_m": 0.0,
    "free_path": true,
-   "sim_s": 10.0,
-   "native_wall_s": 0.378,
-   "frames": 100,
+   "sim_s": 55.28,
+   "native_wall_s": 1.402,
+   "frames": 553,
    "max_time_s": 60.0,
    "max_time_source": "default"
   },
@@ -376,7 +392,7 @@
    "max_pose_error_m": 0.9488,
    "free_path": true,
    "sim_s": 29.42,
-   "native_wall_s": 0.415,
+   "native_wall_s": 0.447,
    "frames": 295,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -397,7 +413,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 43.68,
-   "native_wall_s": 0.587,
+   "native_wall_s": 0.568,
    "frames": 437,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -439,7 +455,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 28.96,
-   "native_wall_s": 0.109,
+   "native_wall_s": 0.102,
    "frames": 290,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -460,7 +476,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 25.68,
-   "native_wall_s": 0.136,
+   "native_wall_s": 0.122,
    "frames": 257,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -481,7 +497,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 24.52,
-   "native_wall_s": 0.818,
+   "native_wall_s": 0.772,
    "frames": 246,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -502,7 +518,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 25.88,
-   "native_wall_s": 0.432,
+   "native_wall_s": 0.413,
    "frames": 259,
    "max_time_s": 60.0,
    "max_time_source": "default"
@@ -523,7 +539,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 41.26,
-   "native_wall_s": 1.974,
+   "native_wall_s": 1.99,
    "frames": 413,
    "max_time_s": 120.0,
    "max_time_source": "family"
@@ -544,7 +560,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 49.26,
-   "native_wall_s": 1.649,
+   "native_wall_s": 1.699,
    "frames": 493,
    "max_time_s": 120.0,
    "max_time_source": "family"
@@ -565,7 +581,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 105.22,
-   "native_wall_s": 0.313,
+   "native_wall_s": 0.29,
    "frames": 1053,
    "max_time_s": 120.0,
    "max_time_source": "family"
@@ -586,7 +602,7 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 120.0,
-   "native_wall_s": 0.321,
+   "native_wall_s": 0.301,
    "frames": 1200,
    "max_time_s": 120.0,
    "max_time_source": "family"
@@ -607,10 +623,31 @@
    "max_pose_error_m": 0.0,
    "free_path": true,
    "sim_s": 69.7,
-   "native_wall_s": 0.415,
+   "native_wall_s": 0.404,
    "frames": 697,
    "max_time_s": 120.0,
    "max_time_source": "family"
+  },
+  {
+   "world": "office_0",
+   "planner": "astar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.96,
+    "duration_s": 21.96,
+    "min_clearance_m": 0.2892,
+    "path_length_m": 13.764
+   },
+   "max_pose_error_m": 0.0,
+   "free_path": true,
+   "sim_s": 21.96,
+   "native_wall_s": 0.592,
+   "frames": 220,
+   "max_time_s": 60.0,
+   "max_time_source": "default"
   }
  ],
  "checks": [
@@ -776,17 +813,17 @@
    "same": true,
    "driver": {
     "outcome": "reached",
-    "time_to_goal_s": 18.68,
-    "duration_s": 18.68,
-    "min_clearance_m": 0.6432,
-    "path_length_m": 23.947
+    "time_to_goal_s": 18.7,
+    "duration_s": 18.7,
+    "min_clearance_m": 0.6624,
+    "path_length_m": 23.95
    },
    "reference": {
     "outcome": "reached",
-    "time_to_goal_s": 18.68,
-    "duration_s": 18.68,
-    "min_clearance_m": 0.6432,
-    "path_length_m": 23.947
+    "time_to_goal_s": 18.7,
+    "duration_s": 18.7,
+    "min_clearance_m": 0.6624,
+    "path_length_m": 23.95
    }
   },
   {
@@ -798,20 +835,20 @@
     "truth",
     "none"
    ],
-   "same": true,
+   "same": false,
    "driver": {
     "outcome": "reached",
-    "time_to_goal_s": 18.68,
-    "duration_s": 18.68,
-    "min_clearance_m": 0.6432,
-    "path_length_m": 23.947
+    "time_to_goal_s": 18.7,
+    "duration_s": 18.7,
+    "min_clearance_m": 0.6624,
+    "path_length_m": 23.95
    },
    "reference": {
     "outcome": "reached",
-    "time_to_goal_s": 18.68,
-    "duration_s": 18.68,
-    "min_clearance_m": 0.6432,
-    "path_length_m": 23.947
+    "time_to_goal_s": 18.7,
+    "duration_s": 18.7,
+    "min_clearance_m": 0.6623,
+    "path_length_m": 23.95
    }
   },
   {
@@ -1115,6 +1152,56 @@
    }
   },
   {
+   "check": "A run.run_one on the same JSON world",
+   "case": [
+    "office_0",
+    "astar_unknown",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.96,
+    "duration_s": 21.96,
+    "min_clearance_m": 0.2892,
+    "path_length_m": 13.764
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.96,
+    "duration_s": 21.96,
+    "min_clearance_m": 0.2892,
+    "path_length_m": 13.764
+   }
+  },
+  {
+   "check": "B run.run_one on world.make_world (no JSON)",
+   "case": [
+    "office_0",
+    "astar_unknown",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": false,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.96,
+    "duration_s": 21.96,
+    "min_clearance_m": 0.2892,
+    "path_length_m": 13.764
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.0,
+    "duration_s": 22.0,
+    "min_clearance_m": 0.2892,
+    "path_length_m": 13.758
+   }
+  },
+  {
    "check": "C run.run_one + estimator fault (run.evaluate path)",
    "case": [
     "random_0",
@@ -1162,6 +1249,31 @@
     "duration_s": 25.84,
     "min_clearance_m": 0.4728,
     "path_length_m": 24.569
+   }
+  },
+  {
+   "check": "E run.run_one + bench.py planner factory, same JSON world",
+   "case": [
+    "random_0",
+    "astar_unknown",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.7,
+    "duration_s": 18.7,
+    "min_clearance_m": 0.6624,
+    "path_length_m": 23.95
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.7,
+    "duration_s": 18.7,
+    "min_clearance_m": 0.6624,
+    "path_length_m": 23.95
    }
   },
   {
@@ -1390,6 +1502,31 @@
    }
   },
   {
+   "check": "E run.run_one + bench.py planner factory, same JSON world",
+   "case": [
+    "office_0",
+    "astar_unknown",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.96,
+    "duration_s": 21.96,
+    "min_clearance_m": 0.2892,
+    "path_length_m": 13.764
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.96,
+    "duration_s": 21.96,
+    "min_clearance_m": 0.2892,
+    "path_length_m": 13.764
+   }
+  },
+  {
    "check": "D run_kill.run_one F2, unsensed off",
    "case": [
     "random_0",
@@ -1520,7 +1657,7 @@
    "fired_t": 2.7,
    "hyp_frames": 6,
    "sim_s": 21.78,
-   "native_wall_s": 0.49
+   "native_wall_s": 0.445
   },
   {
    "world": "reloc_demo_random_1_97",
@@ -1569,7 +1706,7 @@
    "fired_t": 2.7,
    "hyp_frames": 100,
    "sim_s": 22.9,
-   "native_wall_s": 0.555
+   "native_wall_s": 0.586
   },
   {
    "world": "reloc_demo_random_1_97",
@@ -1618,7 +1755,7 @@
    "fired_t": 2.7,
    "hyp_frames": 19,
    "sim_s": 20.34,
-   "native_wall_s": 0.495
+   "native_wall_s": 0.449
   },
   {
    "world": "u_trap_0",
@@ -1699,7 +1836,7 @@
    "fired_t": 7.267,
    "hyp_frames": 36,
    "sim_s": 21.76,
-   "native_wall_s": 0.424
+   "native_wall_s": 0.39
   }
  ],
  "reloc_checks": [
@@ -2237,6 +2374,35 @@
   {
    "case": [
     "random_0",
+    "astar_unknown",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "matrix": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.7,
+    "duration_s": 18.7,
+    "min_clearance_m": 0.6623,
+    "path_length_m": 23.95
+   },
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 18.7,
+    "duration_s": 18.7,
+    "min_clearance_m": 0.6624,
+    "path_length_m": 23.95
+   },
+   "max_time_s": {
+    "driver": 60.0,
+    "matrix": 60.0
+   },
+   "same": false,
+   "same_outcome": true
+  },
+  {
+   "case": [
+    "random_0",
     "dwa",
     "ideal",
     "truth",
@@ -2552,6 +2718,35 @@
    },
    "same": true,
    "same_outcome": true
+  },
+  {
+   "case": [
+    "office_0",
+    "astar_unknown",
+    "ideal",
+    "truth",
+    "none"
+   ],
+   "matrix": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.0,
+    "duration_s": 22.0,
+    "min_clearance_m": 0.2892,
+    "path_length_m": 13.758
+   },
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.96,
+    "duration_s": 21.96,
+    "min_clearance_m": 0.2892,
+    "path_length_m": 13.764
+   },
+   "max_time_s": {
+    "driver": 60.0,
+    "matrix": 60.0
+   },
+   "same": false,
+   "same_outcome": true
   }
  ],
  "native_env": {
@@ -2560,7 +2755,7 @@
   "scipy": "1.18.1",
   "machine": "arm64"
  },
- "summary": "27/33 checks identical",
+ "summary": "29/37 checks identical",
  "reloc_summary": "4/4 relocalization checks (G) identical",
- "matrix_summary": "9/11 identical to matrix_0.json, 11/11 same outcome (generated vs JSON world)"
+ "matrix_summary": "9/13 identical to matrix_0.json, 13/13 same outcome (generated vs JSON world)"
 }

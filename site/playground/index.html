@@ -7,7 +7,7 @@
 <meta name="description" content="Draw or load a close-area arena, place A and B, pick a planner, sensor, VIO fault, VIO loss recovery and safety filter, and run the hub's real Python arena code in your browser (Pyodide).">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="../showcase.css?v=20261109">
-<link rel="stylesheet" href="playground.css?v=20261109c">
+<link rel="stylesheet" href="playground.css?v=20261110d">
 <link rel="stylesheet" href="advisor.css?v=20261109">
 <link rel="stylesheet" href="../nav.css?v=20261110n">
 <script defer src="../nav.js?v=20261110n"></script>
@@ -15,7 +15,7 @@
   try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
 <script defer src="advisor.js?v=20261110"></script>
-<script defer src="playground.js?v=20261110c"></script>
+<script defer src="playground.js?v=20261110d"></script>
 </head>
 <body>
 <header class="top">
@@ -108,6 +108,16 @@
     <label class="small"><input type="checkbox" id="compare"> Compare two configs on the same world (overlaid)</label>
     <label class="small arms" title="Needs VIO fault jump or dropout in config A"><input type="checkbox" id="armsCmp" disabled> Compare all VIO loss recovery arms on config A (none, single, multi, multi + info-gain)</label>
     <label class="small seed">Seed <input type="number" id="seed" min="0" max="9999" value="0"> <span class="muted">(sensor noise, dark zones, fault timing)</span></label>
+    <details class="drone small" id="droneBox">
+      <summary>Advanced: your drone</summary>
+      <label class="seed">Radius, m <input type="number" id="drRadius" min="0.05" max="0.6" step="0.01" value="0.15"> <span class="muted">(0.05-0.6; every planner inflates obstacles by it)</span></label>
+      <label class="seed">Max speed v_max, m/s <input type="number" id="drVmax" min="0.1" max="5" step="0.1" value="2"> <span class="muted">(0.1-5)</span></label>
+      <label class="seed">Yaw <select id="drYaw" aria-label="Yaw policy">
+        <option value="fixed" selected>fixed: keep the start bearing to B (default)</option>
+        <option value="look_where_you_go">look where you go: face the velocity</option>
+      </select></label>
+      <p class="muted">Applies to configs A and B and goes into the copied link. a_max 3 m/s^2 and tau 0.15 s stay at the arena defaults. Fixed yaw was faster in 4 of 4 office and maze runs with the depth camera (synthetic, one layout each).</p>
+    </details>
     <div class="run-row">
       <button class="btn primary" id="runBtn" disabled>Run</button>
       <span id="runMsg" class="small muted" aria-live="polite">Waiting for Python to load.</span>

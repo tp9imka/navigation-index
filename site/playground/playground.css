@@ -46,6 +46,11 @@
 .sw-b { background: var(--b); } .sw-c { background: var(--c3); } .sw-d { background: var(--c4); }
 .seed { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin: 8px 0; }
 .seed input { width: 70px; font: inherit; font-size: 13px; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 2px 6px; }
+/* "Advanced: your drone" (loop-75b) */
+.drone { margin: 8px 0; border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px; }
+.drone summary { cursor: pointer; font-weight: 600; }
+.drone select { font: inherit; font-size: 13px; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 2px 4px; max-width: 100%; }
+.drone p { margin: 4px 0; }
 .run-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 8px 0 12px; }
 .run-row .btn { min-width: 90px; }
 #runMsg.bad { color: var(--bad); }

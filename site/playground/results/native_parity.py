@@ -11,9 +11,9 @@ Checks (fields: outcome, time_to_goal_s, duration_s, min_clearance_m, path_lengt
   Run time limit (loop-73b): the driver takes it from the world family (worker.js max_time_for, the
   bench.py LONG_FAMILIES table: maze and warehouse 120 s, else 60 s); every reference loop below gets
   the same limit through cfg_for.
-  E  driver (6 sample planners)  ==  run.run_one on the same JSON world with the planner built by
+  E  driver (6 sample planners, and astar_unknown since loop-75b)  ==  run.run_one on the same JSON world with the planner built by
                                     samples/close-area-benchmark/bench.py PLANNERS[name][0](world)
-  F  (information) driver (6 sample planners) vs the benchmark's results/matrix_0.json row (preset ideal,
+  F  (information) driver (6 sample planners, A* known map on maze / warehouse, astar_unknown) vs the benchmark's results/matrix_0.json row (preset ideal,
      layout 0, generated world, not JSON, so the 4-decimal rounding of check B applies)
   D  driver with F2              ==  close-area-safety-filter/run_kill.run_one("F2", case, unsensed off)  (random family only;
                                     run_kill builds its world with world.make_world, not from JSON)
@@ -78,8 +78,12 @@ CASES = [
     ("maze_0", "bug2", "ideal", "truth", "none"),
     ("warehouse_0", "bug2", "ideal", "truth", "none"),
     ("maze_0", "informed_rrt_star", "ideal", "truth", "none"),
+    # loop-75b: astar_unknown is geofenced as bench.py GeofencedAStar; office_0's B was outside the shipped map
+    ("office_0", "astar_unknown", "ideal", "truth", "none"),
 ]
 NEW = ("dwa", "dwa_mem", "bug2", "tangent_bug", "dstar_lite", "informed_rrt_star")
+# loop-75b: planners also checked against bench.py's factory (E) and matrix_0.json (F), besides A and B
+BENCH_TOO = ("astar_unknown",)
 # loop-63: VIO loss recovery arms (world, planner, preset, fault, filter, seed, recovery). The demo world is
 # world.make_world("random", 1, 97) through world_json (templates/demo-script-close-area.md H1), saved by this script.
 DEMO = "reloc_demo_random_1_97"
@@ -198,26 +202,27 @@ def main():
         out["checks"].append({"check": name, "case": list(case), "same": ok, "driver": mine["score"], "reference": pick(ref)})
         print("CHECK", name, case, "same" if ok else f"DIFF {mine['score']} vs {pick(ref)}")
 
-    fac = {"straight": lambda: run.load_planner("straight"), "astar_known": lambda: ns["PLANNERS"]["astar_known"](),
-           "astar_unknown": lambda: ns["PLANNERS"]["astar_unknown"](), "freest_beam": lambda: ns["PLANNERS"]["freest_beam"](),
-           "apf": lambda: ns["PLANNERS"]["apf"](), "vfh_plus": lambda: ns["PLANNERS"]["vfh_plus"]()}
+    # factories take the world (loop-75b: astar_unknown is geofenced on its bounds)
+    fac = {"straight": lambda w: run.load_planner("straight"), "astar_known": lambda w: ns["PLANNERS"]["astar_known"](),
+           "astar_unknown": lambda w: ns["PLANNERS"]["astar_unknown"](w), "freest_beam": lambda w: ns["PLANNERS"]["freest_beam"](),
+           "apf": lambda w: ns["PLANNERS"]["apf"](), "vfh_plus": lambda w: ns["PLANNERS"]["vfh_plus"]()}
     # A and B: truth pose, ideal sensor, no filter
     for case in [c for c in CASES if c[2:] == ("ideal", "truth", "none") and c[1] not in NEW]:
         wname, planner = case[0], case[1]
         wj = WJ.from_json(docs[wname])
         cfg = cfg_for(ns, run, docs[wname])
-        row, _, _ = run.run_one(fac[planner](), wj, 0, 0, cfg)
+        row, _, _ = run.run_one(fac[planner](wj), wj, 0, 0, cfg)
         check("A run.run_one on the same JSON world", case, row)
         fam = docs[wname]["family"]
         wg = WM.make_world(fam, 0, 0)
-        row, _, _ = run.run_one(fac[planner](), wg, 0, 0, cfg)
+        row, _, _ = run.run_one(fac[planner](wg), wg, 0, 0, cfg)
         check("B run.run_one on world.make_world (no JSON)", case, row)
     # C: estimator faults, no filter, ideal sensor (run.evaluate path)
     for case in [c for c in CASES if c[2] == "ideal" and c[3] not in ("truth",) and c[4] == "none"]:
         wname, planner, _, fault, _ = case
         wg = WJ.from_json(docs[wname])
         ps = est_mod.make_pose_source_factory(fault, dark=True)(wg, 0, 0)
-        row, _, _ = run.run_one(fac[planner](), wg, 0, 0, cfg_for(ns, run, docs[wname]), ps)
+        row, _, _ = run.run_one(fac[planner](wg), wg, 0, 0, cfg_for(ns, run, docs[wname]), ps)
         check("C run.run_one + estimator fault (run.evaluate path)", case, row)
     # E: the 6 sample planners, built the benchmark's way, through run.run_one on the same JSON world
     spec = importlib.util.spec_from_file_location("close_area_benchmark_bench", BENCH)
@@ -228,7 +233,7 @@ def main():
     finally:
         if saved is not None:
             sys.modules["arena"] = saved
-    for case in [c for c in CASES if c[1] in NEW]:
+    for case in [c for c in CASES if c[1] in NEW or (c[1] in BENCH_TOO and c[2:] == ("ideal", "truth", "none"))]:
         wj = WJ.from_json(docs[case[0]])
         row, _, _ = run.run_one(bench.PLANNERS[case[1]][0](wj), wj, 0, 0, cfg_for(ns, run, docs[case[0]]))
         check("E run.run_one + bench.py planner factory, same JSON world", case, row)
@@ -237,7 +242,8 @@ def main():
     out["matrix_rows"] = []
     # loop-73b: also A* known map on the long families (maze, warehouse), same 120 s limit as the matrix
     long_fams = ns["LONG_FAMILIES"]
-    for case in [c for c in CASES if c[1] in NEW or (docs[c[0]]["family"] in long_fams and c[2:] == ("ideal", "truth", "none"))]:
+    for case in [c for c in CASES if c[1] in NEW or ((docs[c[0]]["family"] in long_fams or c[1] in BENCH_TOO)
+                                                     and c[2:] == ("ideal", "truth", "none"))]:
         fam = docs[case[0]]["family"]
         ref = mx.get((case[1], fam, "ideal", docs[case[0]].get("index", 0)))
         mine = next(c for c in out["cases"] if (c["world"], c["planner"], c["preset"], c["fault"], c["filter"]) == case)

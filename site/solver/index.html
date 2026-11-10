@@ -7,13 +7,13 @@
 <meta name="description" content="Pick or import a close-area map, run every planner on every sensor and VIO variation for N seeds in your browser (Pyodide), watch the race, and get a ranked result matrix with Wilson intervals.">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="../showcase.css?v=20261110">
-<link rel="stylesheet" href="solver.css?v=20261110">
+<link rel="stylesheet" href="solver.css?v=20261110d">
 <link rel="stylesheet" href="../nav.css?v=20261110n">
 <script defer src="../nav.js?v=20261110n"></script>
 <script>
   try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
-<script type="module" src="solver.js?v=20261110c"></script>
+<script type="module" src="solver.js?v=20261110d"></script>
 </head>
 <body>
 <header class="top">
@@ -66,8 +66,8 @@
   <section class="panel" aria-label="Sweep">
     <h2>2. Sweep</h2>
     <div class="row">
-      <button class="btn sm" id="quickBtn" title="3 seeds, ideal sensor, truth pose, then run">Quick</button>
-      <button class="btn sm" id="thoroughBtn" title="10 seeds, ideal + crazyflie, then run">Thorough</button>
+      <button class="btn sm" id="quickBtn" title="3 seeds, your drone's sensor only (ideal by default), truth pose, then run">Quick</button>
+      <button class="btn sm" id="thoroughBtn" title="10 seeds, ideal + crazyflie + your drone's sensor, then run">Thorough</button>
     </div>
     <fieldset class="box"><legend>Planners <button class="linkish small" id="allBtn" type="button">all</button> <button class="linkish small" id="noneBtn" type="button">none</button></legend>
       <div id="plannerList" class="checks"><span class="muted small">appear when Python is ready</span></div>
@@ -75,6 +75,25 @@
     <fieldset class="box"><legend>Sensor presets</legend>
       <div id="presetList" class="checks"></div>
     </fieldset>
+    <details class="box drone" id="droneBox">
+      <summary>Your drone <span class="muted small" id="droneSum"></span></summary>
+      <p class="small muted">Applies to every run. Defaults are the arena's (run.DEFAULTS): radius 0.15 m, v_max 2 m/s, a_max 3 m/s^2, tau 0.15 s (tau is not editable here). Values outside the worker's ranges are clamped.</p>
+      <div class="drone-grid small">
+        <label>radius m <input type="number" id="vehR" min="0.05" max="0.6" step="0.01" value="0.15" aria-label="Vehicle radius m"> <span class="muted">default 0.15</span></label>
+        <label>v_max m/s <input type="number" id="vehV" min="0.1" max="5" step="0.1" value="2" aria-label="Maximum speed m/s"> <span class="muted">default 2</span></label>
+        <label>a_max m/s^2 <input type="number" id="vehA" min="0.5" max="20" step="0.5" value="3" aria-label="Maximum acceleration m/s^2"> <span class="muted">default 3</span></label>
+      </div>
+      <label class="row small">Sensor <select id="droneSensor" aria-label="Your drone's sensor"></select></label>
+      <div class="drone-grid small" id="customBox" hidden>
+        <label>beams <input type="number" id="csBeams" min="1" max="360" step="1" value="30" aria-label="Custom sensor beams"></label>
+        <label>FoV deg <input type="number" id="csFov" min="1" max="360" step="1" value="87" aria-label="Custom sensor field of view deg"></label>
+        <label>max range m <input type="number" id="csMax" min="0.5" max="30" step="0.5" value="5" aria-label="Custom sensor max range m"></label>
+        <label>min range m <input type="number" id="csMin" min="0" max="5" step="0.05" value="0.3" aria-label="Custom sensor min range m"></label>
+        <label>noise m <input type="number" id="csNoise" min="0" max="0.5" step="0.01" value="0.04" aria-label="Custom sensor noise sigma m"></label>
+        <p class="small muted span-all">Custom = one more sensor variation next to the checked presets. Cone 0 deg (one exact ray per beam) and dropout 0.02 come from the worker defaults.</p>
+      </div>
+      <label class="row small" title="Sent as cfg.yaw only when not fixed.">Yaw <select id="yawSel" aria-label="Yaw policy"><option value="fixed">fixed (worker default)</option><option value="look_where_you_go">look where you go</option></select></label>
+    </details>
     <label class="row small">VIO fault <select id="faultSel" aria-label="VIO fault"></select></label>
     <label class="row small" title="Seconds of sim time before a run ends as timeout. Auto = by map family, as the benchmark (close-area-benchmark bench.py LONG_FAMILIES): maze and warehouse 120 s, every other family 60 s. Custom worlds without a benchmark family (family custom, drawn from empty) use 60 s under Auto; an edited preset keeps its family.">Run time limit <select id="tlimSel" aria-label="Run time limit"><option value="auto" selected>Auto (by map family)</option><option value="60">60 s</option><option value="120">120 s</option><option value="180">180 s</option></select></label>
     <label class="row small">Seeds <input type="number" id="seedsIn" min="1" max="50" value="5" aria-label="Seeds"> <span class="muted">(0 .. N-1)</span></label>

@@ -91,7 +91,8 @@ test("spec query round trip and unknown planners dropped", () => {
   const spec = S.normSpec({ planners: ["dwa", "bug2"], presets: ["crazyflie"], fault: "bias", seeds: 7, jitter: "0.25" });
   const back = S.specFromQuery("?" + S.specToQuery(spec, "random_0"));
   assert.equal(back.src, "random_0");
-  assert.deepEqual(S.normSpec(back.spec, ["dwa"]), { planners: ["dwa"], presets: ["crazyflie"], faults: ["truth", "bias"], fault: "bias", seeds: 7, jitter: 0.25, time_limit: "auto" });
+  assert.deepEqual(S.normSpec(back.spec, ["dwa"]), { planners: ["dwa"], presets: ["crazyflie"], faults: ["truth", "bias"], fault: "bias", seeds: 7, jitter: 0.25, time_limit: "auto",
+    vehicle: S.VEHICLE_DEFAULT, sensor_choice: "ideal", sensor: null, yaw: "fixed" });
   assert.equal(S.normSpec({}).jitter, 0.5);                 // default ON, 0.5 m
   assert.equal(S.normSpec({ jitter: 0 }).jitter, 0);
   assert.equal(S.normSpec({ jitter: "1" }).jitter, 1);
@@ -248,4 +249,106 @@ test("all identical everywhere => headline says n and distinct", () => {
   const same = planner => [0, 1, 2].map(seed => rec(planner, "reached", { seed, time_to_goal_s: planner === "a" ? 18 : 19 }));
   const h = S.aggregate([...same("a"), ...same("b")], null).headline;
   assert.equal(h.text, "No clear winner: a and b are within noise on this map (n=3, 1 distinct). Identical runs count once in the interval.");
+});
+
+
+// ------------------------------------------------------------ your drone (loop-76)
+const DRONE = { vehicle: { radius_m: 0.25, v_max: 1.5, a_max: 4, tau: 0.15 }, sensor_choice: "custom",
+  sensor: { beams: 30, fov_deg: 87, max_range_m: 5, min_range_m: 0.3, noise_sigma_m: 0.04 }, yaw: "look_where_you_go" };
+
+test("custom sensor is one more variation key next to the presets, labelled by its spec", () => {
+  const spec = S.normSpec({ planners: ["a"], presets: ["ideal", "depth_cam_87"], seeds: 2, ...DRONE });
+  assert.deepEqual(spec.presets, ["ideal", "depth_cam_87", "custom"]);
+  assert.deepEqual(S.variations(spec), ["ideal|truth", "depth_cam_87|truth", "custom|truth"]);
+  assert.equal(S.runCount(spec), 6);
+  assert.equal(S.variationLabel("custom|truth", spec), "custom 30 beams 87 deg 5 m / truth pose");
+  assert.equal(S.variationLabel("lidar_2d|jump"), "lidar_2d / VIO jump");
+  // Custom with no preset checked => the custom variation alone; a preset choice adds no custom key
+  assert.deepEqual(S.normSpec({ ...DRONE, presets: [] }).presets, ["custom"]);
+  assert.deepEqual(S.normSpec({ presets: ["lidar_2d"], sensor_choice: "lidar_2d" }).presets, ["lidar_2d"]);
+  assert.equal(S.normSpec({ presets: ["lidar_2d"], sensor_choice: "lidar_2d" }).sensor, null);
+  assert.equal(S.normSpec({ sensor_choice: "rm -rf" }).sensor_choice, "ideal");
+  // runs carry beams for the estimate; the custom spec is in each record
+  const runs = S.buildRuns(spec);
+  assert.deepEqual(runs.map(r => r.beams), [72, 30, 30, 72, 30, 30]);
+  const run = { ...runs[2], vehicle: spec.vehicle, sensor: spec.sensor, yaw: spec.yaw };
+  const r = S.recordFromResult(run, { score: { outcome: "reached", time_to_goal_s: 15, path_length_m: 16 }, sensor: { yaw_policy: "look_where_you_go" } });
+  assert.equal(r.preset, "custom");
+  assert.deepEqual(r.sensor, spec.sensor);
+  assert.deepEqual(r.vehicle, DRONE.vehicle);
+  assert.equal(r.yaw, "look_where_you_go"); assert.equal(r.yaw_policy, "look_where_you_go");
+  const e = S.recordFromError(run, "boom");
+  assert.deepEqual(e.sensor, spec.sensor); assert.equal(e.yaw_policy, null);
+  // a named preset record gets the preset table spec, and the default vehicle when none was set
+  const p = S.recordFromResult({ planner: "a", preset: "depth_cam_87", fault: "truth", seed: 0 }, { score: { outcome: "stuck" } });
+  assert.equal(p.sensor.beams, 30); assert.equal(p.sensor.fov_deg, 87);
+  assert.deepEqual(p.vehicle, S.VEHICLE_DEFAULT); assert.equal(p.yaw, "fixed");
+  const agg = S.aggregate([r, p], spec);
+  assert.equal(agg.cells.a["custom|truth"].reached, 1);
+});
+
+test("cfg extras: vehicle only when changed, sensor for custom, yaw only when not fixed", () => {
+  const spec = S.normSpec({ planners: ["a"], ...DRONE });
+  assert.deepEqual(S.cfgExtras(spec, "custom"), { vehicle: DRONE.vehicle, sensor: DRONE.sensor, yaw: "look_where_you_go" });
+  assert.deepEqual(S.cfgExtras(spec, "ideal"), { vehicle: DRONE.vehicle, yaw: "look_where_you_go" });
+  assert.deepEqual(S.cfgExtras(S.normSpec({ planners: ["a"] }), "ideal"), {});
+  assert.equal("yaw" in S.cfgExtras(S.normSpec({ yaw: "fixed" }), "ideal"), false);
+  // clamped to the worker's ranges, min range kept 0.1 m below max
+  assert.deepEqual(S.normVehicle({ radius_m: 9, v_max: "x", a_max: 0.1 }), { radius_m: 0.6, v_max: 2, a_max: 0.5, tau: 0.15 });
+  const s = S.normSensor({ beams: 30.6, fov_deg: 500, max_range_m: 1, min_range_m: 2, noise_sigma_m: 0.04 });
+  assert.deepEqual(s, { beams: 31, fov_deg: 360, max_range_m: 1, min_range_m: 0.9, noise_sigma_m: 0.04 });
+  // jitter keeps the larger vehicle radius from surfaces
+  assert.equal(S.sweepRadius({ radius: 0.15 }, spec), 0.25);
+  assert.equal(S.sweepRadius({ radius: 0.15 }, S.normSpec({})), 0.15);
+});
+
+test("share link carries vehicle, sensor and yaw; old links open with the defaults", () => {
+  const spec = S.normSpec({ planners: ["dwa"], presets: ["lidar_2d"], seeds: 3, ...DRONE });
+  const q = S.specToQuery(spec, "office_0");
+  assert.match(q, /(^|&)veh=0\.25%2C1\.5%2C4%2C0\.15(&|$)/);
+  assert.match(q, /(^|&)sensor=custom(&|$)/);
+  assert.match(q, /(^|&)cs=30%2C87%2C5%2C0\.3%2C0\.04(&|$)/);
+  assert.match(q, /(^|&)yaw=look_where_you_go(&|$)/);
+  assert.match(q, /(^|&)presets=lidar_2d(&|$)/);                         // custom is implied by sensor=custom
+  const back = S.normSpec(S.specFromQuery("?" + q).spec);
+  assert.deepEqual(back, spec);
+  const plain = S.specToQuery(S.normSpec({ planners: ["dwa"], sensor_choice: "depth_cam_87", presets: ["depth_cam_87"] }));
+  assert.doesNotMatch(plain, /yaw=|cs=/);
+  assert.equal(S.normSpec(S.specFromQuery("?" + plain).spec).sensor_choice, "depth_cam_87");
+  const old = S.normSpec(S.specFromQuery("?planners=bug2&presets=ideal").spec);
+  assert.deepEqual([old.vehicle, old.sensor_choice, old.sensor, old.yaw], [S.VEHICLE_DEFAULT, "ideal", null, "fixed"]);
+});
+
+test("CSV and JSON exports carry vehicle, sensor and yaw", () => {
+  const spec = S.normSpec({ planners: ["a"], presets: ["depth_cam_87"], seeds: 1, ...DRONE });
+  const runs = S.buildRuns(spec).map(r => ({ ...r, vehicle: spec.vehicle, sensor: r.preset === "custom" ? spec.sensor : null, yaw: spec.yaw }));
+  const recs = runs.map(r => S.recordFromResult(r, { score: { outcome: "reached", time_to_goal_s: 12, path_length_m: 14 }, sensor: { yaw_policy: "look_where_you_go" } }));
+  const [head, ...rows] = S.toCSV(recs).trim().split("\n");
+  const cols = head.split(",");
+  for (const c of ["sensor_label", "sensor_beams", "sensor_fov_deg", "sensor_max_range_m", "sensor_noise_sigma_m", "vehicle_radius_m",
+    "vehicle_v_max", "vehicle_a_max", "vehicle_tau", "yaw", "yaw_policy"]) assert.ok(cols.includes(c), c);
+  const row = Object.fromEntries(rows[1].split(",").map((v, i) => [cols[i], v]));
+  assert.deepEqual([row.preset, row.sensor_label, row.sensor_beams, row.sensor_fov_deg, row.vehicle_radius_m, row.yaw, row.yaw_policy],
+    ["custom", "custom 30 beams 87 deg 5 m", "30", "87", "0.25", "look_where_you_go", "look_where_you_go"]);
+  const row0 = Object.fromEntries(rows[0].split(",").map((v, i) => [cols[i], v]));
+  assert.deepEqual([row0.sensor_label, row0.sensor_min_range_m], ["depth_cam_87", "0.3"]);
+  const doc = S.exportDoc({ spec, world: { bounds: [0, 0, 1, 1], radius: 0.15 }, records: recs });
+  assert.deepEqual(doc.spec.vehicle, DRONE.vehicle);
+  assert.equal(doc.spec.yaw, "look_where_you_go");
+  assert.deepEqual(doc.drone.sensor, DRONE.sensor);
+  assert.equal(doc.drone.custom_label, "custom 30 beams 87 deg 5 m");
+  assert.equal(doc.drone.vehicle_sent, true); assert.equal(doc.drone.yaw_sent, true);
+  assert.deepEqual(doc.drone.yaw_policy_flown, ["look_where_you_go"]);
+  assert.equal(doc.drone.sensor_specs.depth_cam_87.beams, 30);
+  near(doc.jitter.min_clearance_m, 0.35);
+  assert.deepEqual(doc.records[1].sensor, DRONE.sensor);
+});
+
+test("estimate: prior scaled by beams / 72 (floor 0.25), measured times unscaled", () => {
+  const p = S.PRIOR_WALL_S.dwa;
+  near(S.estimateSeconds([{ planner: "dwa", beams: 360 }], {}, 1).s, 5 * p);
+  near(S.estimateSeconds([{ planner: "dwa", beams: 30 }], {}, 1).s, p * 30 / 72);
+  near(S.estimateSeconds([{ planner: "dwa", beams: 4 }], {}, 1).s, p * 0.25);
+  near(S.estimateSeconds([{ planner: "dwa", beams: 72 }], {}, 1).s, p);
+  assert.equal(S.estimateSeconds([{ planner: "dwa", beams: 360 }], { dwa: 2 }, 1).s, 2);
 });

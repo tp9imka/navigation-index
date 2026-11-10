@@ -2,7 +2,7 @@
 // (site/playground/worker.js, unchanged), draw the race, rank the planners.
 // Pure logic lives in sweep.js (unit tested), the worker pool in pool.js.
 // window.SOLVER is a small API for scripted checks (results/measure_solver.mjs).
-import * as SW from "./sweep.js?v=20261110c";
+import * as SW from "./sweep.js?v=20261110d";
 import { Pool } from "./pool.js?v=20261110c";
 
 const $ = s => document.querySelector(s);
@@ -11,7 +11,7 @@ const css = name => getComputedStyle(document.documentElement).getPropertyValue(
 const PG = "../playground/";
 const SCHEMA = "close-area-world/1";
 const PYODIDE_Q = (q => (/^(cdn|local|auto)$/.test(q || "") ? q : null))(new URLSearchParams(location.search).get("pyodide"));
-const WORKER_V = "20261110c";       // worker.js cache-busting version, same as playground.js WORKER_URL
+const WORKER_V = "20261110d";       // worker.js cache-busting version, same as playground.js WORKER_URL
 const WORKER_URL = new URL(PG + "worker.js?v=" + WORKER_V + (PYODIDE_Q ? "&pyodide=" + PYODIDE_Q : ""), location.href);
 const K = SW.poolSize(navigator.hardwareConcurrency);
 const T_PAGE0 = performance.now();
@@ -260,8 +260,10 @@ function buildSweepControls(env) {
     `<label><input type="checkbox" name="planner" value="${esc(p)}"${!want || want.has(p) ? " checked" : ""}><span>${esc(SW.plannerLabel(p))}</span></label>`).join("");
   const avail = env.presets || SW.SWEEP_PRESETS;
   const wantP = (S.linkSpec && S.linkSpec.presets) || ["ideal"];
-  $("#presetList").innerHTML = SW.SWEEP_PRESETS.filter(p => avail.includes(p)).map(p =>
+  const offered = SW.SWEEP_PRESETS.filter(p => avail.includes(p));
+  $("#presetList").innerHTML = offered.map(p =>
     `<label><input type="checkbox" name="preset" value="${p}"${wantP.includes(p) ? " checked" : ""}><span>${esc(SW.PRESET_LABELS[p])}</span></label>`).join("");
+  buildDroneControls(offered);
   const faults = SW.EXTRA_FAULTS.filter(f => (env.faults || []).includes(f));
   $("#faultSel").innerHTML = '<option value="">truth only (planner sees truth)</option>' +
     faults.map(f => `<option value="${f}">truth + ${esc(SW.FAULT_LABELS[f])}</option>`).join("");
@@ -277,10 +279,45 @@ function buildSweepControls(env) {
   updateCount();
 }
 
+// "Your drone": vehicle (every run), sensor (a preset name checks that preset; Custom adds one variation), yaw.
+const VEH_IN = { radius_m: "#vehR", v_max: "#vehV", a_max: "#vehA" };
+const CS_IN = { beams: "#csBeams", fov_deg: "#csFov", max_range_m: "#csMax", min_range_m: "#csMin", noise_sigma_m: "#csNoise" };
+function buildDroneControls(offered) {
+  $("#droneSensor").innerHTML = offered.map(p => `<option value="${p}">${esc(SW.PRESET_LABELS[p] || p)}</option>`).join("") +
+    `<option value="${SW.CUSTOM}">Custom (beams, FoV, range, noise)</option>`;
+  const L = S.linkSpec || {};
+  if (L.vehicle) { const v = SW.normVehicle(L.vehicle); for (const [k, sel] of Object.entries(VEH_IN)) $(sel).value = String(v[k]); }
+  const choice = SW.normSensorChoice(L.sensor_choice);
+  $("#droneSensor").value = offered.includes(choice) || choice === SW.CUSTOM ? choice : "ideal";
+  if (L.sensor) { const s = SW.normSensor(L.sensor); for (const [k, sel] of Object.entries(CS_IN)) $(sel).value = String(s[k]); }
+  $("#yawSel").value = SW.normYaw(L.yaw);
+  if (L.vehicle || L.sensor_choice || L.yaw) $("#droneBox").open = !SW.isDefaultVehicle(L.vehicle) || choice !== "ideal" || SW.normYaw(L.yaw) !== "fixed";
+  for (const sel of [...Object.values(VEH_IN), ...Object.values(CS_IN)]) $(sel).oninput = updateCount;
+  $("#yawSel").onchange = updateCount;
+  $("#droneSensor").onchange = () => {
+    const v = $("#droneSensor").value;
+    const box = document.querySelector(`#presetList input[value="${v}"]`);
+    if (box) box.checked = true;
+    updateCount();
+  };
+}
+function readDrone() {
+  const vehicle = { tau: SW.VEHICLE_DEFAULT.tau }, sensor = {};
+  for (const [k, sel] of Object.entries(VEH_IN)) vehicle[k] = $(sel).value;
+  for (const [k, sel] of Object.entries(CS_IN)) sensor[k] = $(sel).value;
+  return { vehicle, sensor_choice: $("#droneSensor").value || "ideal", sensor, yaw: $("#yawSel").value };
+}
+function droneSummary(spec) {
+  const v = spec.vehicle;
+  const veh = SW.isDefaultVehicle(v) ? "arena default vehicle" : `radius ${v.radius_m} m, v_max ${v.v_max} m/s, a_max ${v.a_max} m/s^2`;
+  const sen = spec.sensor_choice === SW.CUSTOM ? SW.customLabel(spec.sensor) : spec.sensor_choice;
+  return `${veh}; sensor ${sen}; yaw ${spec.yaw}`;
+}
+
 function readSpec() {
   const vals = name => [...document.querySelectorAll(`input[name="${name}"]:checked`)].map(i => i.value);
   return SW.normSpec({ planners: vals("planner"), presets: vals("preset"), fault: $("#faultSel").value || null,
-    seeds: $("#seedsIn").value, jitter: $("#jitterOn").checked ? $("#jitterR").value : 0, time_limit: $("#tlimSel").value },
+    seeds: $("#seedsIn").value, jitter: $("#jitterOn").checked ? $("#jitterR").value : 0, time_limit: $("#tlimSel").value, ...readDrone() },
   S.env ? S.env.planners : null);
 }
 
@@ -294,9 +331,11 @@ function updateCount() {
   if (!S.env) { $("#countMsg").textContent = ""; return; }
   const spec = readSpec(), n = SW.runCount(spec);
   const est = SW.estimateSeconds(SW.buildRuns(spec), measuredMeans(), K);
+  $("#customBox").hidden = spec.sensor_choice !== SW.CUSTOM;
+  $("#droneSum").textContent = "(" + droneSummary(spec) + ")";
   $("#countMsg").innerHTML = `<b>${n} runs</b> = ${spec.planners.length} planners x ${spec.presets.length} sensor x ${spec.faults.length} fault x ${spec.seeds} seeds. ` +
     `Estimate: about ${SW.fmtDuration(est.s)} on ${K} worker${K > 1 ? "s" : ""} ` +
-    `<span class="muted">(${est.measured ? "from run times measured in this browser" : "rough prior from the playground README timings; refined after the first runs"})</span>. ` +
+    `<span class="muted">(${est.measured ? "from run times measured in this browser" : "rough prior from the playground README timings, scaled by beams / 72; refined after the first runs"})</span>. ` +
     esc(SW.timeLimitText(spec, S.doc, []));
   $("#runBtn").disabled = !n || !S.readyCount || !!(S.sweep && S.sweep.running);
 }
@@ -304,7 +343,7 @@ function updateCount() {
 function setBusy(on) {
   $("#runBtn").disabled = on || !S.readyCount;
   $("#cancelBtn").disabled = !on;
-  for (const el of document.querySelectorAll("#plannerList input, #presetList input, #faultSel, #seedsIn, #tlimSel, #jitterOn, #jitterR, #quickBtn, #thoroughBtn, #presetSel, #fileIn, #linkForm button"))
+  for (const el of document.querySelectorAll("#plannerList input, #presetList input, #droneBox input, #droneBox select, #faultSel, #seedsIn, #tlimSel, #jitterOn, #jitterR, #quickBtn, #thoroughBtn, #presetSel, #fileIn, #linkForm button"))
     el.disabled = on;
   if (!on) $("#jitterR").disabled = !$("#jitterOn").checked;
 }
@@ -327,7 +366,7 @@ function startSweep() {
   // A and B per seed (seed 0 exact); one world per seed, shared by every planner and variation
   const jitters = SW.seedJitters(world, spec);
   const worlds = jitters.map(j => (j.exact ? world : SW.jitterWorld(world, j)));
-  const sw = { spec, world, worldName: S.pristine ? S.worldName : null, total: runs.length, done: 0, jitters,
+  const sw = { spec, world, worldName: S.pristine ? S.worldName : null, total: runs.length, runs, done: 0, jitters,
     records: new Array(runs.length).fill(null), traj: [], running: true, cancelled: false,
     started: new Date().toISOString(), finished: null, t0: performance.now() };
   S.sweep = sw; S.sel = null; $("#detail").hidden = true;
@@ -335,7 +374,9 @@ function startSweep() {
     const j = jitters[r.seed];
     return { ...r, idx, sweep: sw, world: worlds[r.seed], a: j.a, b: j.b,
       ab_kept: j.a_kept || j.b_kept ? { a: j.a_kept, b: j.b_kept } : null,
-      cfg: { planner: r.planner, preset: r.preset, fault: r.fault, filter: "none", seed: r.seed } };
+      vehicle: spec.vehicle, sensor: r.preset === SW.CUSTOM ? spec.sensor : null, yaw: spec.yaw,
+      cfg: { planner: r.planner, ...(r.preset === SW.CUSTOM ? {} : { preset: r.preset }), fault: r.fault, filter: "none", seed: r.seed,
+        ...SW.cfgExtras(spec, r.preset) } };
   });
   // run time limit: Auto sends none (the worker applies the family rule), a fixed choice is sent as cfg.max_time_s.
   // The watchdog grows with the limit (180 s wall at 60 s of sim time).
@@ -345,7 +386,7 @@ function startSweep() {
   if (spec.jitter && kept) $("#poolMsg").textContent = `Jitter: ${kept} seed(s) kept an exact A or B (no free point in ${SW.JITTER_DRAWS} draws).`;
   // race filters
   $("#raceVar").innerHTML = '<option value="">all variations</option>' +
-    SW.variations(spec).map(k => `<option value="${esc(k)}">${esc(SW.variationLabel(k))}</option>`).join("");
+    SW.variations(spec).map(k => `<option value="${esc(k)}">${esc(SW.variationLabel(k, spec))}</option>`).join("");
   if (SW.variations(spec).length === 1) $("#raceVar").value = SW.variations(spec)[0];
   $("#raceSeed").innerHTML = Array.from({ length: spec.seeds }, (_, i) => `<option value="${i}">${i}</option>`).join("");
   setBusy(true);
@@ -398,7 +439,7 @@ function renderSweep() {
   $("#sweepBar").max = Math.max(1, total); $("#sweepBar").value = done;
   let txt = `${done}/${total}`;
   if (sw && sw.running) {
-    const pending = sw.records.map((r, i) => (r ? null : i)).filter(i => i != null).map(i => ({ planner: sw.spec.planners[i % sw.spec.planners.length] }));
+    const pending = sw.records.map((r, i) => (r ? null : i)).filter(i => i != null).map(i => sw.runs[i]);
     const est = SW.estimateSeconds(pending, measuredMeans(), Math.max(1, S.readyCount));
     txt += done ? `, about ${SW.fmtDuration(est.s)} left` : ", waiting for the first results";
   } else if (sw && sw.cancelled) txt += `, ${sw.why === "cancelled" ? "cancelled" : "stopped: " + sw.why}: ${total - done} runs not run`;
@@ -445,7 +486,7 @@ function renderResults() {
     ` <span class="ci">(95 % CI ${pct(r.success.lo)}-${pct(r.success.hi)}, ${esc(SW.nOne(r))})</span>, ` +
     (r.median_time_s == null ? "no run reached B" : `median ${r.median_time_s.toFixed(1)} s to B`) + (r.error ? `, <span class="c-bad">${r.error} error</span>` : "") + "</li>").join("");
   const order = agg.ranking.map(r => r.planner).concat(agg.planners.filter(p => !agg.ranking.some(r => r.planner === p)));
-  const head = "<thead><tr><th>planner</th>" + agg.variations.map(k => `<th>${esc(SW.variationLabel(k))}</th>`).join("") + "</tr></thead>";
+  const head = "<thead><tr><th>planner</th>" + agg.variations.map(k => `<th>${esc(SW.variationLabel(k, sw.spec))}</th>`).join("") + "</tr></thead>";
   const body = order.map(p => "<tr><th>" + `<span class="swatch" style="background:${plannerColor(p)}"></span>${esc(SW.plannerLabel(p))}</th>` +
     agg.variations.map(k => {
       const c = agg.cells[p][k];
@@ -470,15 +511,24 @@ function jitterList(sw) {
     (sw.jitters.length > 10 ? `<br>... ${sw.jitters.length - 10} more in the JSON export` : "");
 }
 
+const sensorText = s => (s ? `${s.beams} beams, FoV ${+s.fov_deg.toFixed(1)} deg, ${s.min_range_m}-${s.max_range_m} m, noise ${s.noise_sigma_m} m` +
+  (s.cone_deg != null ? `, cone ${+s.cone_deg.toFixed(2)} deg, dropout ${s.dropout}` : ", cone 0 deg and dropout 0.02 (worker defaults)") : "-");
+function vehText(spec, key) {
+  const v = spec.vehicle, flown = [...new Set(S.sweep.records.filter(r => r && SW.variationKey(r.preset, r.fault) === key).map(r => r.yaw_policy).filter(Boolean))];
+  return `radius ${v.radius_m} m, v_max ${v.v_max} m/s, a_max ${v.a_max} m/s^2, tau ${v.tau} s` + (SW.isDefaultVehicle(v) ? " (arena default, not sent)" : " (sent as cfg.vehicle)") +
+    `; yaw asked ${spec.yaw}` + (flown.length ? `, worker reported ${flown.join(" and ")}` : "");
+}
 function renderDetail(agg) {
   const { planner: p, key: k } = S.sel, c = agg.cells[p] && agg.cells[p][k];
   if (!c) { $("#detail").hidden = true; return; }
   const errs = S.sweep.records.filter(r => r && r.planner === p && SW.variationKey(r.preset, r.fault) === k && r.outcome === "error");
   $("#detail").hidden = false;
-  $("#detail").innerHTML = `<b>${esc(SW.plannerLabel(p))}</b>, ${esc(SW.variationLabel(k))}` +
+  $("#detail").innerHTML = `<b>${esc(SW.plannerLabel(p))}</b>, ${esc(SW.variationLabel(k, S.sweep.spec))}` +
     `<dl><dt>reached B</dt><dd>${c.reached}/${c.n} runs; distinct runs ${c.reached_distinct}/${c.n_distinct} = ${pct(c.success.p)} ` +
     `(95 % Wilson on the ${c.n_distinct} distinct runs: ${pct(c.success.lo)}-${pct(c.success.hi)})</dd>` +
     (c.identical ? `<dt>deterministic</dt><dd class="dup">${c.identical} of ${c.n} runs are identical to another run (same outcome, time to B and path length at 3 dp); each set counts as one trial.</dd>` : "") +
+    `<dt>sensor</dt><dd class="small">${esc(sensorText(SW.sensorSpecOf(k.split("|")[0], S.sweep.spec)))}</dd>` +
+    `<dt>vehicle, yaw</dt><dd class="small">${esc(vehText(S.sweep.spec, k))}</dd>` +
     `<dt>A and B per seed</dt><dd class="mono small">${jitterList(S.sweep)}</dd>` +
     `<dt>median time to B</dt><dd>${f1(c.median_time_s, "s")}</dd>` +
     `<dt>median path length</dt><dd>${f1(c.median_path_m, "m")}</dd>` +
@@ -504,7 +554,7 @@ function startAnim(key, seed) {
   if (seed == null) seed = +$("#raceSeed").value || 0;
   $("#raceVar").value = key; $("#raceSeed").value = String(seed);
   const runs = sw.traj.filter(t => t.key === key && t.seed === seed);
-  if (!runs.length) { $("#poolMsg").textContent = `No finished run for ${SW.variationLabel(key)}, seed ${seed} yet.`; return false; }
+  if (!runs.length) { $("#poolMsg").textContent = `No finished run for ${SW.variationLabel(key, sw.spec)}, seed ${seed} yet.`; return false; }
   const tmax = Math.max(...runs.map(t => t.pts[t.pts.length - 1][0]));
   S.anim = { key, seed, runs, tmax, t: 0, playing: true, last: performance.now() };
   $("#timeline").hidden = false; $("#playBtn").hidden = false; $("#speedLbl").hidden = false;
@@ -600,8 +650,11 @@ function preset(seeds, presets, resetFault) {
   $("#poolMsg").textContent = "The sweep starts when Python is ready.";
   return null;
 }
-const quick = () => preset(3, ["ideal"], true);          // Quick: 3 seeds, ideal only, truth pose only
-const thorough = () => preset(10, ["ideal", "crazyflie"], false);
+// Quick: 3 seeds, your drone's sensor only (ideal by default; Custom => the custom variation alone), truth pose only.
+// Thorough: 10 seeds, ideal + crazyflie + your drone's sensor, keeps the fault.
+const droneP = () => { const c = $("#droneSensor").value || "ideal"; return c === SW.CUSTOM ? [] : [c]; };
+const quick = () => preset(3, droneP(), true);
+const thorough = () => preset(10, [...new Set(["ideal", "crazyflie", ...droneP()])], false);
 $("#quickBtn").onclick = quick;
 $("#thoroughBtn").onclick = thorough;
 

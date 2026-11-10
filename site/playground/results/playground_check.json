@@ -1,5 +1,5 @@
 {
- "date": "2026-11-09T13:37:01.325Z",
+ "date": "2026-11-10T08:13:56.993Z",
  "input": "synthetic",
  "page": "http://127.0.0.1:8766/site/playground/index.html?pyodide=cdn",
  "steps": [],
@@ -10,13 +10,13 @@
   "height": 900
  },
  "load": {
-  "ready_ms": 5574,
+  "ready_ms": 7334,
   "mb": 22.3,
   "worker": {
-   "pyodide_ms": 2621,
-   "packages_ms": 1395,
-   "import_ms": 1551,
-   "ready_ms": 5567
+   "pyodide_ms": 2557,
+   "packages_ms": 3227,
+   "import_ms": 1537,
+   "ready_ms": 7322
   },
   "env": {
    "python": "3.14.2",
@@ -25,11 +25,11 @@
    "machine": "wasm32",
    "system": "Emscripten",
    "imports_ms": {
-    "scipy_ndimage": 732.6,
-    "arena": 34.7,
+    "scipy_ndimage": 677,
+    "arena": 36.1,
     "reactive": 3.1,
-    "sample_planners": 70,
-    "safety_filter": 439.6
+    "sample_planners": 227.9,
+    "safety_filter": 307.3
    },
    "planners": [
     "straight",
@@ -43,12 +43,20 @@
     "bug2",
     "tangent_bug",
     "dstar_lite",
-    "informed_rrt_star"
+    "informed_rrt_star",
+    "thetastar_known",
+    "lazy_thetastar_known",
+    "lazy_thetastar_unknown",
+    "mppi",
+    "mppi_astar",
+    "hybrid_astar"
    ],
    "presets": [
     "ideal",
     "crazyflie",
-    "crazyflie_bright"
+    "crazyflie_bright",
+    "depth_cam_87",
+    "lidar_2d"
    ],
    "faults": [
     "truth",
@@ -61,6 +69,20 @@
     "none",
     "F2"
    ],
+   "yaw": [
+    "fixed",
+    "look_where_you_go"
+   ],
+   "radius_consts": [
+    "astar.RADIUS",
+    "astar.CARROT_CLEAR_M",
+    "ha.RADIUS",
+    "rrt.RADIUS",
+    "mppi.R_COLL",
+    "mppi.D_SAFE",
+    "dwa.RADIUS",
+    "bug.RADIUS"
+   ],
    "recovery": [
     "none",
     "single",
@@ -71,35 +93,35 @@
    "pyodide": "314.0.7",
    "pyodide_source": "cdn",
    "pyodide_base": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/",
-   "arena_files": 36,
+   "arena_files": 42,
    "load_attempts": [
     {
      "step": "manifest.json",
      "attempt": 1,
      "ok": true,
-     "ms": 5
+     "ms": 2
     },
     {
      "step": "Pyodide runtime",
      "attempt": 1,
      "ok": true,
-     "ms": 2616
+     "ms": 2555
     },
     {
      "step": "hub .py files",
      "attempt": 1,
      "ok": true,
-     "ms": 78
+     "ms": 86
     },
     {
      "step": "numpy + scipy wheels",
      "attempt": 1,
      "ok": true,
-     "ms": 1313
+     "ms": 3137
     }
    ]
   },
-  "wall_since_navigate_s": 5.653
+  "wall_since_navigate_s": 7.452
  },
  "parity": [
   {
@@ -111,8 +133,10 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 20.32,
-   "native_wall_s": 0.083,
+   "native_wall_s": 0.079,
    "frames": 204,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
     "outcome": "stuck",
     "time_to_goal_s": null,
@@ -128,7 +152,7 @@
     "path_length_m": 13.266
    },
    "same": true,
-   "browser_wall_s": 0.191
+   "browser_wall_s": 0.19
   },
   {
    "world": "random_0",
@@ -141,6 +165,8 @@
    "sim_s": 26.08,
    "native_wall_s": 0.092,
    "frames": 261,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
     "outcome": "reached",
     "time_to_goal_s": 26.08,
@@ -156,7 +182,7 @@
     "path_length_m": 24.504
    },
    "same": true,
-   "browser_wall_s": 0.196
+   "browser_wall_s": 0.191
   },
   {
    "world": "random_0",
@@ -167,8 +193,10 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 19.38,
-   "native_wall_s": 0.343,
+   "native_wall_s": 0.341,
    "frames": 194,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
     "outcome": "reached",
     "time_to_goal_s": 19.38,
@@ -184,7 +212,7 @@
     "path_length_m": 23.838
    },
    "same": true,
-   "browser_wall_s": 0.752
+   "browser_wall_s": 0.785
   },
   {
    "world": "random_0",
@@ -194,25 +222,27 @@
    "filter": "none",
    "max_pose_error_m": 0,
    "free_path": true,
-   "sim_s": 18.68,
-   "native_wall_s": 1.445,
+   "sim_s": 18.7,
+   "native_wall_s": 1.372,
    "frames": 187,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
     "outcome": "reached",
-    "time_to_goal_s": 18.68,
-    "duration_s": 18.68,
-    "min_clearance_m": 0.6432,
-    "path_length_m": 23.947
+    "time_to_goal_s": 18.7,
+    "duration_s": 18.7,
+    "min_clearance_m": 0.6624,
+    "path_length_m": 23.95
    },
    "native": {
     "outcome": "reached",
-    "time_to_goal_s": 18.68,
-    "duration_s": 18.68,
-    "min_clearance_m": 0.6432,
-    "path_length_m": 23.947
+    "time_to_goal_s": 18.7,
+    "duration_s": 18.7,
+    "min_clearance_m": 0.6624,
+    "path_length_m": 23.95
    },
    "same": true,
-   "browser_wall_s": 3.049
+   "browser_wall_s": 3.065
   },
   {
    "world": "random_0",
@@ -225,6 +255,8 @@
    "sim_s": 28.88,
    "native_wall_s": 0.099,
    "frames": 289,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
     "outcome": "reached",
     "time_to_goal_s": 28.88,
@@ -240,7 +272,7 @@
     "path_length_m": 24.9
    },
    "same": true,
-   "browser_wall_s": 0.194
+   "browser_wall_s": 0.193
   },
   {
    "world": "random_0",
@@ -253,6 +285,8 @@
    "sim_s": 26.12,
    "native_wall_s": 0.105,
    "frames": 262,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
     "outcome": "reached",
     "time_to_goal_s": 26.12,
@@ -268,7 +302,7 @@
     "path_length_m": 24.478
    },
    "same": true,
-   "browser_wall_s": 0.216
+   "browser_wall_s": 0.213
   },
   {
    "world": "random_0",
@@ -279,8 +313,10 @@
    "max_pose_error_m": 0.4906,
    "free_path": true,
    "sim_s": 14.2,
-   "native_wall_s": 0.381,
+   "native_wall_s": 0.36,
    "frames": 142,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
     "outcome": "collision",
     "time_to_goal_s": null,
@@ -296,7 +332,7 @@
     "path_length_m": 15.888
    },
    "same": true,
-   "browser_wall_s": 0.805
+   "browser_wall_s": 0.806
   },
   {
    "world": "random_0",
@@ -307,8 +343,10 @@
    "max_pose_error_m": 0.5185,
    "free_path": true,
    "sim_s": 32.9,
-   "native_wall_s": 0.703,
+   "native_wall_s": 0.65,
    "frames": 329,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
     "outcome": "stuck",
     "time_to_goal_s": null,
@@ -324,7 +362,7 @@
     "path_length_m": 25.344
    },
    "same": true,
-   "browser_wall_s": 1.396
+   "browser_wall_s": 1.411
   },
   {
    "world": "random_0",
@@ -335,8 +373,10 @@
    "max_pose_error_m": 0.7143,
    "free_path": true,
    "sim_s": 25.84,
-   "native_wall_s": 0.153,
+   "native_wall_s": 0.141,
    "frames": 259,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
     "outcome": "reached",
     "time_to_goal_s": 25.84,
@@ -363,8 +403,10 @@
    "max_pose_error_m": 0.3331,
    "free_path": true,
    "sim_s": 20.6,
-   "native_wall_s": 0.514,
+   "native_wall_s": 0.477,
    "frames": 206,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
     "outcome": "reached",
     "time_to_goal_s": 20.6,
@@ -380,7 +422,7 @@
     "path_length_m": 24.334
    },
    "same": true,
-   "browser_wall_s": 1.017
+   "browser_wall_s": 0.998
   },
   {
    "world": "office_0",
@@ -391,8 +433,10 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 22.74,
-   "native_wall_s": 0.44,
+   "native_wall_s": 0.419,
    "frames": 228,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
     "outcome": "reached",
     "time_to_goal_s": 22.74,
@@ -408,7 +452,7 @@
     "path_length_m": 13.765
    },
    "same": true,
-   "browser_wall_s": 0.905
+   "browser_wall_s": 0.932
   },
   {
    "world": "office_0",
@@ -419,8 +463,10 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 13.06,
-   "native_wall_s": 0.072,
+   "native_wall_s": 0.068,
    "frames": 131,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
     "outcome": "stuck",
     "time_to_goal_s": null,
@@ -436,7 +482,7 @@
     "path_length_m": 7.115
    },
    "same": true,
-   "browser_wall_s": 0.139
+   "browser_wall_s": 0.135
   },
   {
    "world": "office_0",
@@ -447,8 +493,10 @@
    "max_pose_error_m": 0.2255,
    "free_path": true,
    "sim_s": 13.12,
-   "native_wall_s": 0.101,
+   "native_wall_s": 0.09,
    "frames": 132,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
     "outcome": "stuck",
     "time_to_goal_s": null,
@@ -464,7 +512,7 @@
     "path_length_m": 6.86
    },
    "same": true,
-   "browser_wall_s": 0.176
+   "browser_wall_s": 0.167
   },
   {
    "world": "glass_office_0",
@@ -474,25 +522,27 @@
    "filter": "none",
    "max_pose_error_m": 0,
    "free_path": true,
-   "sim_s": 10,
-   "native_wall_s": 0.43,
-   "frames": 100,
+   "sim_s": 55.28,
+   "native_wall_s": 1.402,
+   "frames": 553,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
-    "outcome": "stuck",
+    "outcome": "collision",
     "time_to_goal_s": null,
-    "duration_s": 10,
-    "min_clearance_m": 0.8616,
-    "path_length_m": 0
+    "duration_s": 55.28,
+    "min_clearance_m": 0.1472,
+    "path_length_m": 25.733
    },
    "native": {
-    "outcome": "stuck",
+    "outcome": "collision",
     "time_to_goal_s": null,
-    "duration_s": 10,
-    "min_clearance_m": 0.8616,
-    "path_length_m": 0
+    "duration_s": 55.28,
+    "min_clearance_m": 0.1472,
+    "path_length_m": 25.733
    },
    "same": true,
-   "browser_wall_s": 0.656
+   "browser_wall_s": 2.73
   },
   {
    "world": "u_trap_0",
@@ -503,8 +553,10 @@
    "max_pose_error_m": 0.9488,
    "free_path": true,
    "sim_s": 29.42,
-   "native_wall_s": 0.526,
+   "native_wall_s": 0.447,
    "frames": 295,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
     "outcome": "stuck",
     "time_to_goal_s": null,
@@ -520,7 +572,7 @@
     "path_length_m": 25.73
    },
    "same": true,
-   "browser_wall_s": 0.903
+   "browser_wall_s": 0.877
   },
   {
    "world": "random_0",
@@ -531,8 +583,10 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 43.68,
-   "native_wall_s": 0.704,
+   "native_wall_s": 0.568,
    "frames": 437,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
     "outcome": "reached",
     "time_to_goal_s": 43.68,
@@ -548,7 +602,7 @@
     "path_length_m": 24.261
    },
    "same": true,
-   "browser_wall_s": 1.112
+   "browser_wall_s": 1.098
   },
   {
    "world": "u_trap_0",
@@ -559,8 +613,10 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 28.96,
-   "native_wall_s": 1.702,
+   "native_wall_s": 1.337,
    "frames": 290,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
     "outcome": "stuck",
     "time_to_goal_s": null,
@@ -576,7 +632,7 @@
     "path_length_m": 12.447
    },
    "same": true,
-   "browser_wall_s": 2.55
+   "browser_wall_s": 2.69
   },
   {
    "world": "office_0",
@@ -587,8 +643,10 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 28.96,
-   "native_wall_s": 0.143,
+   "native_wall_s": 0.102,
    "frames": 290,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
     "outcome": "stuck",
     "time_to_goal_s": null,
@@ -604,7 +662,7 @@
     "path_length_m": 11.281
    },
    "same": true,
-   "browser_wall_s": 0.213
+   "browser_wall_s": 0.214
   },
   {
    "world": "forest_0",
@@ -615,8 +673,10 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 25.68,
-   "native_wall_s": 0.14,
+   "native_wall_s": 0.122,
    "frames": 257,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
     "outcome": "reached",
     "time_to_goal_s": 25.68,
@@ -632,7 +692,7 @@
     "path_length_m": 24.519
    },
    "same": true,
-   "browser_wall_s": 0.265
+   "browser_wall_s": 0.242
   },
   {
    "world": "narrow_gap_0",
@@ -643,8 +703,10 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 24.52,
-   "native_wall_s": 1.036,
+   "native_wall_s": 0.772,
    "frames": 246,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
     "outcome": "reached",
     "time_to_goal_s": 24.52,
@@ -660,7 +722,7 @@
     "path_length_m": 25.187
    },
    "same": true,
-   "browser_wall_s": 1.409
+   "browser_wall_s": 1.393
   },
   {
    "world": "office_0",
@@ -671,8 +733,10 @@
    "max_pose_error_m": 0,
    "free_path": true,
    "sim_s": 25.88,
-   "native_wall_s": 0.651,
+   "native_wall_s": 0.413,
    "frames": 259,
+   "max_time_s": 60,
+   "max_time_source": "default",
    "browser": {
     "outcome": "reached",
     "time_to_goal_s": 25.88,
@@ -688,7 +752,187 @@
     "path_length_m": 13.578
    },
    "same": true,
-   "browser_wall_s": 0.918
+   "browser_wall_s": 0.948
+  },
+  {
+   "world": "maze_0",
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 41.26,
+   "native_wall_s": 1.99,
+   "frames": 413,
+   "max_time_s": 120,
+   "max_time_source": "family",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 41.26,
+    "duration_s": 41.26,
+    "min_clearance_m": 0.5937,
+    "path_length_m": 36.981
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 41.26,
+    "duration_s": 41.26,
+    "min_clearance_m": 0.5937,
+    "path_length_m": 36.981
+   },
+   "same": true,
+   "browser_wall_s": 4.302
+  },
+  {
+   "world": "warehouse_0",
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 49.26,
+   "native_wall_s": 1.699,
+   "frames": 493,
+   "max_time_s": 120,
+   "max_time_source": "family",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 49.26,
+    "duration_s": 49.26,
+    "min_clearance_m": 0.5151,
+    "path_length_m": 34.978
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 49.26,
+    "duration_s": 49.26,
+    "min_clearance_m": 0.5151,
+    "path_length_m": 34.978
+   },
+   "same": true,
+   "browser_wall_s": 3.915
+  },
+  {
+   "world": "maze_0",
+   "planner": "bug2",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 105.22,
+   "native_wall_s": 0.29,
+   "frames": 1053,
+   "max_time_s": 120,
+   "max_time_source": "family",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 105.22,
+    "duration_s": 105.22,
+    "min_clearance_m": 0.4043,
+    "path_length_m": 65.49
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 105.22,
+    "duration_s": 105.22,
+    "min_clearance_m": 0.4043,
+    "path_length_m": 65.49
+   },
+   "same": true,
+   "browser_wall_s": 0.603
+  },
+  {
+   "world": "warehouse_0",
+   "planner": "bug2",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 120,
+   "native_wall_s": 0.301,
+   "frames": 1200,
+   "max_time_s": 120,
+   "max_time_source": "family",
+   "browser": {
+    "outcome": "timeout",
+    "time_to_goal_s": null,
+    "duration_s": 120,
+    "min_clearance_m": 0.4254,
+    "path_length_m": 70.725
+   },
+   "native": {
+    "outcome": "timeout",
+    "time_to_goal_s": null,
+    "duration_s": 120,
+    "min_clearance_m": 0.4254,
+    "path_length_m": 70.725
+   },
+   "same": true,
+   "browser_wall_s": 0.61
+  },
+  {
+   "world": "maze_0",
+   "planner": "informed_rrt_star",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 69.7,
+   "native_wall_s": 0.404,
+   "frames": 697,
+   "max_time_s": 120,
+   "max_time_source": "family",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 69.7,
+    "duration_s": 69.7,
+    "min_clearance_m": 0.2754,
+    "path_length_m": 33.637
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 69.7,
+    "duration_s": 69.7,
+    "min_clearance_m": 0.2754,
+    "path_length_m": 33.637
+   },
+   "same": true,
+   "browser_wall_s": 0.842
+  },
+  {
+   "world": "office_0",
+   "planner": "astar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "max_pose_error_m": 0,
+   "free_path": true,
+   "sim_s": 21.96,
+   "native_wall_s": 0.592,
+   "frames": 220,
+   "max_time_s": 60,
+   "max_time_source": "default",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.96,
+    "duration_s": 21.96,
+    "min_clearance_m": 0.2892,
+    "path_length_m": 13.764
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.96,
+    "duration_s": 21.96,
+    "min_clearance_m": 0.2892,
+    "path_length_m": 13.764
+   },
+   "same": true,
+   "browser_wall_s": 1.278
   }
  ],
  "reloc": [
@@ -822,8 +1066,8 @@
     "first_recover_s": 0.2
    },
    "same": true,
-   "browser_wall_s": 0.988,
-   "native_wall_s": 0.643
+   "browser_wall_s": 1.061,
+   "native_wall_s": 0.445
   },
   {
    "world": "reloc_demo_random_1_97",
@@ -891,8 +1135,8 @@
     "first_recover_s": 0.4
    },
    "same": true,
-   "browser_wall_s": 1.246,
-   "native_wall_s": 0.909
+   "browser_wall_s": 1.247,
+   "native_wall_s": 0.586
   },
   {
    "world": "reloc_demo_random_1_97",
@@ -960,8 +1204,8 @@
     "first_recover_s": 0.4
    },
    "same": true,
-   "browser_wall_s": 1.018,
-   "native_wall_s": 0.61
+   "browser_wall_s": 0.979,
+   "native_wall_s": 0.449
   },
   {
    "world": "u_trap_0",
@@ -1093,8 +1337,8 @@
     "first_recover_s": 0.4
    },
    "same": true,
-   "browser_wall_s": 0.817,
-   "native_wall_s": 0.61
+   "browser_wall_s": 0.822,
+   "native_wall_s": 0.39
   }
  ],
  "arms": {
@@ -1267,8 +1511,8 @@
  },
  "responsive": {
   "run": "astar_unknown on random_0",
-  "python_wall_s": 3.192,
-  "frames": 382,
+  "python_wall_s": 2.971,
+  "frames": 355,
   "max_ms": 10,
   "median_ms": 8
  },
@@ -1439,7 +1683,7 @@
  },
  "blocked": {
   "cdn": {
-   "wall_s": 8.865,
+   "wall_s": 9.058,
    "failed": true,
    "retry_visible": true,
    "text": "load failed: Pyodide runtime: 3 of 3 attempts failed, last error: Failed to fetch dynamically imported module: https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.mjs?attempt=3. Needs cdn.jsdelivr.net, or a local Pyodide folder (README: Offline / blocked CDN).",
@@ -1448,7 +1692,7 @@
      "step": "manifest.json",
      "attempt": 1,
      "ok": true,
-     "ms": 8
+     "ms": 10
     },
     {
      "step": "Pyodide runtime",
@@ -1482,21 +1726,9 @@
    "attempt": 2,
    "failed": false,
    "text": "Pyodide runtime: attempt 2 of 3 failed (Failed to fetch dynamically imported module: https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.mjs?attempt=2). Trying again in 6 s...",
-   "s_after_press": 3.002
+   "s_after_press": 3.004
   },
-  "local_folder": true,
-  "local": {
-   "ready_s": 3.662,
-   "source": "local",
-   "jsdelivr_requests_ok": 0,
-   "case": [
-    "reloc_demo_random_1_97",
-    "jump",
-    1,
-    "single"
-   ],
-   "same_as_native": true
-  },
+  "local_folder": false,
   "console": []
  },
  "phone": {
@@ -1520,14 +1752,14 @@
  "nav_390": {
   "showcase.html": {
    "scroll_width": 390,
-   "link_visible": true,
-   "link_right_px": 277,
+   "link_visible": false,
+   "link_right_px": null,
    "topnav_right_px": 378
   },
   "index.html": {
    "scroll_width": 390,
-   "link_visible": true,
-   "link_right_px": 295,
+   "link_visible": false,
+   "link_right_px": null,
    "topnav_right_px": 374
   }
  },

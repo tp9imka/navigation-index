@@ -1,0 +1,398 @@
+{
+ "date": "2026-11-10T09:16:25.746Z",
+ "input": "synthetic",
+ "host": "Apple M3 Max, 16 cores, load 95.2 79.5 71.9",
+ "chrome": "Chrome/140.0.7339.208",
+ "page": "http://127.0.0.1:8783/site/solver/index.html?map=office_0",
+ "python_ready_s": 6.763,
+ "planners": [
+  "straight",
+  "freest_beam",
+  "astar_known",
+  "astar_unknown",
+  "apf",
+  "vfh_plus",
+  "dwa",
+  "dwa_mem",
+  "bug2",
+  "tangent_bug",
+  "dstar_lite",
+  "informed_rrt_star",
+  "thetastar_known",
+  "lazy_thetastar_known",
+  "lazy_thetastar_unknown",
+  "mppi",
+  "mppi_astar",
+  "hybrid_astar"
+ ],
+ "drone_options": [
+  "ideal",
+  "crazyflie",
+  "depth_cam_87",
+  "lidar_2d",
+  "custom"
+ ],
+ "preset_boxes": [
+  "ideal",
+  "crazyflie",
+  "depth_cam_87",
+  "lidar_2d"
+ ],
+ "drone_summary": "(arena default vehicle; sensor depth_cam_87; yaw fixed)",
+ "count_msg_before": "180 runs = 18 planners x 2 sensor x 1 fault x 5 seeds. Estimate: about 1 min 34 s on 4 workers (rough prior from the playground README timings, scaled by beams / 72; refined after the first runs). Run time limit: 60 s of sim time (Auto: office family, default).",
+ "sweep": {
+  "done": 54,
+  "total": 54,
+  "elapsed_s": 17.523,
+  "cancelled": false,
+  "workers_ready": 4,
+  "K": 4,
+  "wall_s_from_click": 17.531
+ },
+ "limit_line": "Run time limit: 60 s of sim time (Auto: office family, default).",
+ "time_limit_select": "auto",
+ "world": "office",
+ "headline": "No clear winner: MPPI on the unknown-map A* path and Lazy Theta*, known map are within noise on this map (n=3).",
+ "outcomes": {
+  "stuck": 26,
+  "reached": 25,
+  "timeout": 1,
+  "collision": 2
+ },
+ "errors": [],
+ "ranking": [
+  {
+   "planner": "mppi_astar",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 14.62
+  },
+  {
+   "planner": "lazy_thetastar_known",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 19.74
+  },
+  {
+   "planner": "thetastar_known",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 19.92
+  },
+  {
+   "planner": "hybrid_astar",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 20.14
+  },
+  {
+   "planner": "astar_known",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 23.1
+  },
+  {
+   "planner": "astar_unknown",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 25.14
+  },
+  {
+   "planner": "dstar_lite",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 25.5
+  },
+  {
+   "planner": "informed_rrt_star",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 3,
+   "ci": [
+    43.8,
+    100
+   ],
+   "median_time_s": 26.18
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 1,
+   "ci": [
+    6.1,
+    79.2
+   ],
+   "median_time_s": 20.06
+  },
+  {
+   "planner": "apf",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 0,
+   "ci": [
+    0,
+    56.2
+   ],
+   "median_time_s": null
+  },
+  {
+   "planner": "bug2",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 0,
+   "ci": [
+    0,
+    56.2
+   ],
+   "median_time_s": null
+  },
+  {
+   "planner": "dwa",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 0,
+   "ci": [
+    0,
+    56.2
+   ],
+   "median_time_s": null
+  },
+  {
+   "planner": "dwa_mem",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 0,
+   "ci": [
+    0,
+    56.2
+   ],
+   "median_time_s": null
+  },
+  {
+   "planner": "freest_beam",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 0,
+   "ci": [
+    0,
+    56.2
+   ],
+   "median_time_s": null
+  },
+  {
+   "planner": "mppi",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 0,
+   "ci": [
+    0,
+    56.2
+   ],
+   "median_time_s": null
+  },
+  {
+   "planner": "straight",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 0,
+   "ci": [
+    0,
+    56.2
+   ],
+   "median_time_s": null
+  },
+  {
+   "planner": "tangent_bug",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 0,
+   "ci": [
+    0,
+    56.2
+   ],
+   "median_time_s": null
+  },
+  {
+   "planner": "vfh_plus",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 0,
+   "ci": [
+    0,
+    56.2
+   ],
+   "median_time_s": null
+  }
+ ],
+ "max_wall_s": {
+  "straight": 0.17,
+  "freest_beam": 0.143,
+  "astar_known": 1.044,
+  "astar_unknown": 1.818,
+  "apf": 0.243,
+  "vfh_plus": 0.162,
+  "dwa": 0.615,
+  "dwa_mem": 1.131,
+  "bug2": 0.156,
+  "tangent_bug": 0.347,
+  "dstar_lite": 1.438,
+  "informed_rrt_star": 0.932,
+  "thetastar_known": 3.824,
+  "lazy_thetastar_known": 2.504,
+  "lazy_thetastar_unknown": 2.433,
+  "mppi": 0.99,
+  "mppi_astar": 3.086,
+  "hybrid_astar": 1.198
+ },
+ "spec": {
+  "planners": [
+   "straight",
+   "freest_beam",
+   "astar_known",
+   "astar_unknown",
+   "apf",
+   "vfh_plus",
+   "dwa",
+   "dwa_mem",
+   "bug2",
+   "tangent_bug",
+   "dstar_lite",
+   "informed_rrt_star",
+   "thetastar_known",
+   "lazy_thetastar_known",
+   "lazy_thetastar_unknown",
+   "mppi",
+   "mppi_astar",
+   "hybrid_astar"
+  ],
+  "presets": [
+   "depth_cam_87"
+  ],
+  "faults": [
+   "truth"
+  ],
+  "fault": null,
+  "seeds": 3,
+  "jitter": 0.5,
+  "time_limit": "auto",
+  "vehicle": {
+   "radius_m": 0.15,
+   "v_max": 2,
+   "a_max": 3,
+   "tau": 0.15
+  },
+  "sensor_choice": "depth_cam_87",
+  "sensor": null,
+  "yaw": "fixed"
+ },
+ "drone": {
+  "vehicle": {
+   "radius_m": 0.15,
+   "v_max": 2,
+   "a_max": 3,
+   "tau": 0.15
+  },
+  "vehicle_default": {
+   "radius_m": 0.15,
+   "v_max": 2,
+   "a_max": 3,
+   "tau": 0.15
+  },
+  "vehicle_sent": false,
+  "sensor_choice": "depth_cam_87",
+  "sensor": null,
+  "custom_label": null,
+  "custom_defaults": {
+   "cone_deg": 0,
+   "dropout": 0.02,
+   "source": "presets.py SENSOR_SPEC_DEFAULTS, filled by the worker"
+  },
+  "yaw": "fixed",
+  "yaw_sent": false,
+  "yaw_policy_flown": [
+   "off"
+  ],
+  "sensor_specs": {
+   "depth_cam_87": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   }
+  }
+ },
+ "presets_flown": [
+  "depth_cam_87"
+ ],
+ "count_msg_after": "54 runs = 18 planners x 1 sensor x 1 fault x 3 seeds. Estimate: about 14 s on 4 workers (from run times measured in this browser). Run time limit: 60 s of sim time (Auto: office family, default).",
+ "csv_head": "planner,planner_label,preset,fault,seed,a_x,a_y,b_x,b_y,outcome,time_to_goal_s,path_length_m,min_clearance_m,duration_s,max_time_s,wall_s,sensor_label,sensor_beams,sensor_fov_deg,sensor_max_range_m,sensor_min_range_m,sensor_noise_sigma_m,vehicle_radius_m,vehicle_v_max,vehicle_a_max,vehicle_tau,yaw,yaw_policy,error",
+ "phone": {
+  "scrollWidth": 390,
+  "innerWidth": 390,
+  "bodyScrollWidth": 390,
+  "customShown": true,
+  "count": "108 runs = 18 planners x 2 sensor x 1 fault x 3 seeds. Estimate: about 28 s on 4 workers (from run times measured in this browser). Run time limit: 60 s of sim time (Auto: office family, default).",
+  "no_horizontal_scroll": true
+ },
+ "shot_phone": {
+  "file": "solver_drone_390.png",
+  "width": 780,
+  "height": 1688
+ },
+ "share": {
+  "query": "planners=straight%2Cfreest_beam%2Castar_known%2Castar_unknown%2Capf%2Cvfh_plus%2Cdwa%2Cdwa_mem%2Cbug2%2Ctangent_bug%2Cdstar_lite%2Cinformed_rrt_star%2Cthetastar_known%2Clazy_thetastar_known%2Clazy_thetastar_unknown%2Cmppi%2Cmppi_astar%2Chybrid_astar&presets=depth_cam_87&seeds=3&jitter=0.5&tlim=auto&veh=0.25%2C1.5%2C3%2C0.15&sensor=custom&cs=24%2C120%2C4%2C0.3%2C0.04&yaw=look_where_you_go&src=office_0",
+  "back": {
+   "open": true,
+   "r": "0.25",
+   "v": "1.5",
+   "a": "3",
+   "sensor": "custom",
+   "beams": "24",
+   "fov": "120",
+   "max": "4",
+   "yaw": "look_where_you_go",
+   "summary": "(radius 0.25 m, v_max 1.5 m/s, a_max 3 m/s^2; sensor custom 24 beams 120 deg 4 m; yaw look_where_you_go)",
+   "count": "108 runs = 18 planners x 2 sensor x 1 fault x 3 seeds. Estimate: about 30 s on 4 workers (rough prior from the playground README timings, scaled by beams / 72; refined after the first runs). Run time limit: 60 s of sim time (Auto: office family, default)."
+  }
+ },
+ "console": []
+}

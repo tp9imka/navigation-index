@@ -1,5 +1,5 @@
 {
- "date": "2026-11-10T07:42:32.793Z",
+ "date": "2026-11-10T08:16:35.660Z",
  "input": "synthetic",
  "page": "http://127.0.0.1:8778/site/playground/manifest.json",
  "worker": "site/playground/worker.js (direct postMessage)",
@@ -7,13 +7,13 @@
  "host": {
   "cpus": 16,
   "loadavg": [
-   84.9,
-   78.9,
-   64.6
+   174,
+   108.5,
+   81.5
   ]
  },
  "chrome": "Chrome/140.0.7339.208",
- "ready_s": 15.5,
+ "ready_s": 18.2,
  "env": {
   "pyodide": "314.0.7",
   "python": "3.14.2",
@@ -49,6 +49,8 @@
     "min_clearance_m": 0.6225,
     "path_length_m": 23.998
    },
+   "before": null,
+   "free_path": true,
    "same": true,
    "flown_same": true,
    "frames": {
@@ -78,12 +80,13 @@
      "yaw_policy": "look_where_you_go"
     },
     "radius": 0.15,
+    "yaw": "look_where_you_go",
     "n_beams": 30,
     "max_range": 5
    },
-   "browser_wall_s": 4.559,
-   "worker_ms": 4561,
-   "native_wall_s": 2.308,
+   "browser_wall_s": 4.329,
+   "worker_ms": 4331,
+   "native_wall_s": 2.192,
    "sim_s": 20.32
   },
   {
@@ -104,6 +107,8 @@
     "min_clearance_m": 0.2883,
     "path_length_m": 15.725
    },
+   "before": null,
+   "free_path": true,
    "same": true,
    "flown_same": true,
    "frames": {
@@ -133,13 +138,72 @@
      "yaw_policy": "look_where_you_go"
     },
     "radius": 0.15,
+    "yaw": "look_where_you_go",
     "n_beams": 30,
     "max_range": 5
    },
-   "browser_wall_s": 2.343,
-   "worker_ms": 2345,
-   "native_wall_s": 1.186,
+   "browser_wall_s": 2.077,
+   "worker_ms": 2079,
+   "native_wall_s": 1.174,
    "sim_s": 15.88
+  },
+  {
+   "world": "office_0",
+   "planner": "mppi_astar",
+   "custom": "sensor",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 14.14,
+    "duration_s": 14.14,
+    "min_clearance_m": 0.2836,
+    "path_length_m": 14.516
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 14.14,
+    "duration_s": 14.14,
+    "min_clearance_m": 0.2836,
+    "path_length_m": 14.516
+   },
+   "before": null,
+   "free_path": true,
+   "same": true,
+   "flown_same": true,
+   "frames": {
+    "browser": 142,
+    "native": 142
+   },
+   "flown": {
+    "vehicle": {
+     "radius_m": 0.15,
+     "v_max": 2,
+     "a_max": 3,
+     "tau": 0.15,
+     "source": "default",
+     "clamped": []
+    },
+    "sensor": {
+     "name": "custom",
+     "model": "cone",
+     "beams": 30,
+     "fov_deg": 87,
+     "max_range_m": 5,
+     "min_range_m": 0.3,
+     "noise_sigma_m": 0.04,
+     "cone_deg": 3,
+     "dropout": 0.05,
+     "clamped": [],
+     "yaw_policy": "off"
+    },
+    "radius": 0.15,
+    "yaw": "fixed",
+    "n_beams": 30,
+    "max_range": 5
+   },
+   "browser_wall_s": 1.761,
+   "worker_ms": 1763,
+   "native_wall_s": 0.985,
+   "sim_s": 14.14
   },
   {
    "world": "narrow_gap_0",
@@ -147,23 +211,31 @@
    "custom": "vehicle",
    "browser": {
     "outcome": "reached",
-    "time_to_goal_s": 21.6,
-    "duration_s": 21.6,
-    "min_clearance_m": 0.2652,
-    "path_length_m": 25.194
+    "time_to_goal_s": 40,
+    "duration_s": 40,
+    "min_clearance_m": 0.3595,
+    "path_length_m": 45.096
    },
    "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 40,
+    "duration_s": 40,
+    "min_clearance_m": 0.3595,
+    "path_length_m": 45.096
+   },
+   "before": {
     "outcome": "reached",
     "time_to_goal_s": 21.6,
     "duration_s": 21.6,
     "min_clearance_m": 0.2652,
     "path_length_m": 25.194
    },
+   "free_path": true,
    "same": true,
    "flown_same": true,
    "frames": {
-    "browser": 216,
-    "native": 216
+    "browser": 400,
+    "native": 400
    },
    "flown": {
     "vehicle": {
@@ -188,13 +260,206 @@
      "yaw_policy": "off"
     },
     "radius": 0.25,
+    "yaw": "fixed",
     "n_beams": 72,
     "max_range": 6
    },
-   "browser_wall_s": 5.159,
-   "worker_ms": 5163,
-   "native_wall_s": 2.603,
-   "sim_s": 21.6
+   "browser_wall_s": 11.571,
+   "worker_ms": 11577,
+   "native_wall_s": 5.632,
+   "sim_s": 40
+  },
+  {
+   "world": "narrow_gap_0",
+   "planner": "mppi_astar",
+   "custom": "vehicle",
+   "browser": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 52.46,
+    "min_clearance_m": 0.6173,
+    "path_length_m": 33.293
+   },
+   "native": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 52.46,
+    "min_clearance_m": 0.6173,
+    "path_length_m": 33.293
+   },
+   "before": {
+    "outcome": "collision",
+    "time_to_goal_s": null,
+    "duration_s": 11.12,
+    "min_clearance_m": 0.3467,
+    "path_length_m": 12.999
+   },
+   "free_path": false,
+   "same": true,
+   "flown_same": true,
+   "frames": {
+    "browser": 526,
+    "native": 526
+   },
+   "flown": {
+    "vehicle": {
+     "radius_m": 0.35,
+     "v_max": 2,
+     "a_max": 3,
+     "tau": 0.15,
+     "source": "cfg",
+     "clamped": []
+    },
+    "sensor": {
+     "name": "ideal",
+     "model": "ray",
+     "beams": 72,
+     "fov_deg": 360,
+     "max_range_m": 6,
+     "min_range_m": 0,
+     "noise_sigma_m": 0.02,
+     "cone_deg": 0,
+     "dropout": 0.02,
+     "clamped": [],
+     "yaw_policy": "off"
+    },
+    "radius": 0.35,
+    "yaw": "fixed",
+    "n_beams": 72,
+    "max_range": 6
+   },
+   "browser_wall_s": 40.915,
+   "worker_ms": 40923,
+   "native_wall_s": 18.37,
+   "sim_s": 52.52
+  },
+  {
+   "world": "narrow_gap_0",
+   "planner": "astar_unknown",
+   "custom": "vehicle",
+   "browser": {
+    "outcome": "reached",
+    "time_to_goal_s": 53.24,
+    "duration_s": 53.24,
+    "min_clearance_m": 0.3264,
+    "path_length_m": 55.086
+   },
+   "native": {
+    "outcome": "reached",
+    "time_to_goal_s": 53.24,
+    "duration_s": 53.24,
+    "min_clearance_m": 0.3264,
+    "path_length_m": 55.086
+   },
+   "before": {
+    "outcome": "reached",
+    "time_to_goal_s": 24.98,
+    "duration_s": 24.98,
+    "min_clearance_m": 0.301,
+    "path_length_m": 25.195
+   },
+   "free_path": true,
+   "same": true,
+   "flown_same": true,
+   "frames": {
+    "browser": 533,
+    "native": 533
+   },
+   "flown": {
+    "vehicle": {
+     "radius_m": 0.25,
+     "v_max": 2,
+     "a_max": 3,
+     "tau": 0.15,
+     "source": "cfg",
+     "clamped": []
+    },
+    "sensor": {
+     "name": "ideal",
+     "model": "ray",
+     "beams": 72,
+     "fov_deg": 360,
+     "max_range_m": 6,
+     "min_range_m": 0,
+     "noise_sigma_m": 0.02,
+     "cone_deg": 0,
+     "dropout": 0.02,
+     "clamped": [],
+     "yaw_policy": "off"
+    },
+    "radius": 0.25,
+    "yaw": "fixed",
+    "n_beams": 72,
+    "max_range": 6
+   },
+   "browser_wall_s": 13.721,
+   "worker_ms": 13729,
+   "native_wall_s": 6.34,
+   "sim_s": 53.24
+  },
+  {
+   "world": "narrow_gap_0",
+   "planner": "astar_unknown",
+   "custom": "vehicle",
+   "browser": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 38.54,
+    "min_clearance_m": 0.418,
+    "path_length_m": 34.379
+   },
+   "native": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 38.54,
+    "min_clearance_m": 0.418,
+    "path_length_m": 34.379
+   },
+   "before": {
+    "outcome": "collision",
+    "time_to_goal_s": null,
+    "duration_s": 12.62,
+    "min_clearance_m": 0.3484,
+    "path_length_m": 12.956
+   },
+   "free_path": false,
+   "same": true,
+   "flown_same": true,
+   "frames": {
+    "browser": 386,
+    "native": 386
+   },
+   "flown": {
+    "vehicle": {
+     "radius_m": 0.35,
+     "v_max": 2,
+     "a_max": 3,
+     "tau": 0.15,
+     "source": "cfg",
+     "clamped": []
+    },
+    "sensor": {
+     "name": "ideal",
+     "model": "ray",
+     "beams": 72,
+     "fov_deg": 360,
+     "max_range_m": 6,
+     "min_range_m": 0,
+     "noise_sigma_m": 0.02,
+     "cone_deg": 0,
+     "dropout": 0.02,
+     "clamped": [],
+     "yaw_policy": "off"
+    },
+    "radius": 0.35,
+    "yaw": "fixed",
+    "n_beams": 72,
+    "max_range": 6
+   },
+   "browser_wall_s": 21.451,
+   "worker_ms": 21457,
+   "native_wall_s": 9.847,
+   "sim_s": 38.56
   }
  ],
  "refusals": [
@@ -212,10 +477,111 @@
    "case": "vehicle missing 3 keys",
    "ok": true,
    "message": "  File \"/home/pyodide/close_area_arena/presets.py\", line 155, in check_keys\n    raise ValueError(f\"missing {what} keys: {', '.join(missing)}\")\nValueError: missing vehicle keys: v_max, a_max, tau"
+  },
+  {
+   "case": "cfg.yaw spin",
+   "ok": true,
+   "message": "  File \"<exec>\", line 356, in simulate\n  File \"<exec>\", line 402, in _simulate\nValueError: cfg.yaw must be fixed or look_where_you_go, got 'spin'"
+  }
+ ],
+ "ui": {
+  "sensor_options": [
+   "ideal",
+   "crazyflie",
+   "crazyflie_bright",
+   "depth_cam_87",
+   "lidar_2d"
+  ],
+  "default_cfg": {
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "recovery": "none",
+   "seed": 0
+  },
+  "set_cfg": {
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "recovery": "none",
+   "seed": 0,
+   "vehicle": {
+    "radius_m": 0.25,
+    "v_max": 1.5,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "yaw": "look_where_you_go"
+  },
+  "link_params": {
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "filter": "none",
+   "recovery": "none",
+   "seed": "0",
+   "radius": "0.25",
+   "v_max": "1.5",
+   "yaw": "look_where_you_go",
+   "src": "random_0"
+  },
+  "restored": {
+   "cfg": {
+    "planner": "astar_known",
+    "preset": "ideal",
+    "fault": "truth",
+    "filter": "none",
+    "recovery": "none",
+    "seed": 0,
+    "vehicle": {
+     "radius_m": 0.25,
+     "v_max": 1.5,
+     "a_max": 3,
+     "tau": 0.15
+    },
+    "yaw": "look_where_you_go"
+   },
+   "open": true,
+   "msg": "World and config restored from the link (9 obstacles)."
+  },
+  "clamped": {
+   "radius_m": 0.6,
+   "v_max": 1.5,
+   "a_max": 3,
+   "tau": 0.15
+  }
+ },
+ "ui_checks": [
+  {
+   "check": "sensor select offers the 5 presets",
+   "ok": true
+  },
+  {
+   "check": "default drone: no vehicle / yaw in readCfg or the link",
+   "ok": true
+  },
+  {
+   "check": "drone panel => readCfg vehicle + yaw",
+   "ok": true
+  },
+  {
+   "check": "link carries radius, v_max, yaw",
+   "ok": true
+  },
+  {
+   "check": "link restores the drone panel (open, same readCfg)",
+   "ok": true
+  },
+  {
+   "check": "radius 9 m clamped to 0.6 m in readCfg",
+   "ok": true
   }
  ],
  "console": [],
- "summary": "3/3 cases identical (browser = native)",
+ "summary": "7/7 cases identical (browser = native)",
  "flown_ok": true,
- "refusals_ok": true
+ "refusals_ok": true,
+ "ui_ok": true
 }

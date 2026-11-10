@@ -78,5 +78,21 @@ if missing:
 BA.PLANNER_DOCS.update(NEW_DOCS)
 BA.PRIOR_MAP.update({"thetastar_known", "lazy_thetastar_known"})      # as bench.py PRIOR_MAP
 
-if __name__ == "__main__":
+# loop-75b: the playground's astar_unknown now uses the benchmark's geofenced map corner (worker.js
+# GeofencedAStar), so build_advisor.py's "runs the shipped unknown-map A*" note is out of date. Text only;
+# the shipped vs benchmark numbers it introduces are unchanged. Driver: move this text into build_advisor.py.
+MAP_CORNER_NOTE = ("Since loop-75b the playground's unknown-map A* uses the benchmark's map corner (area corner "
+                   "minus 2 m); the shipped map starts 2.5 m behind A. Ideal sensor, 20 layouts: reached % shipped "
+                   "vs benchmark corner.")
+
+
+def main():
+    import json
     BA.main()
+    doc = json.loads(BA.OUT.read_text())
+    doc["playground_differences"]["astar_unknown_map_corner"] = MAP_CORNER_NOTE
+    BA.OUT.write_text(json.dumps(doc, indent=1, ensure_ascii=True) + "\n")
+
+
+if __name__ == "__main__":
+    main()

@@ -16,10 +16,36 @@ export const PLANNER_LABELS = {
   mppi: "MPPI, goal only (no global plan)", mppi_astar: "MPPI on the unknown-map A* path",
   hybrid_astar: "Hybrid A*, unknown map (geofenced)",
 };
-export const PRESET_LABELS = { ideal: "ideal: 72 rays, 360 deg, 6 m", crazyflie: "Crazyflie: 4 cone beams, 3 m" };
+export const PRESET_LABELS = { ideal: "ideal: 72 rays, 360 deg, 6 m", crazyflie: "Crazyflie: 4 cone beams, 3 m",
+  depth_cam_87: "depth camera: 30 beams, 87 deg forward, 0.3-5 m", lidar_2d: "2D lidar: 360 beams, 360 deg, 0.15-12 m" };
 export const FAULT_LABELS = { truth: "off: planner sees truth", none: "VIO EKF, no fault", jump: "VIO jump 0.5 m",
   bias: "VIO bias 0.05 m/s, 10 s", dropout: "VIO dropout 2 s" };
-export const SWEEP_PRESETS = ["ideal", "crazyflie"];
+export const SWEEP_PRESETS = ["ideal", "crazyflie", "depth_cam_87", "lidar_2d"];
+export const CUSTOM = "custom";                  // variation key of the "Your drone" custom sensor
+
+// Sensor presets in the team-facing schema (copied from samples/close-area-arena/presets.py: SENSOR_PRESETS
+// for ideal and crazyflie, SENSOR_SPECS for depth_cam_87 and lidar_2d). Used for labels, CSV columns and
+// the beam count of the time estimate; the worker flies its own copy. ideal has no minimum range (ray model)
+// and crazyflie's noise grows with range (zranger model, 0.02 m is the floor).
+export const PRESET_SPECS = {
+  ideal: { beams: 72, fov_deg: 360, max_range_m: 6.0, min_range_m: 0, noise_sigma_m: 0.02, cone_deg: 0, dropout: 0.02 },
+  crazyflie: { beams: 4, fov_deg: 360, max_range_m: 3.0, min_range_m: 0.04, noise_sigma_m: 0.02, cone_deg: 27.0, dropout: 0.05 },
+  depth_cam_87: { beams: 30, fov_deg: 87.0, max_range_m: 5.0, min_range_m: 0.3, noise_sigma_m: 0.04, cone_deg: 87.0 / 29, dropout: 0.05 },
+  lidar_2d: { beams: 360, fov_deg: 360, max_range_m: 12.0, min_range_m: 0.15, noise_sigma_m: 0.03, cone_deg: 0, dropout: 0.02 },
+};
+// Vehicle: run.DEFAULTS["vehicle"] (= presets.py VEHICLE_SPECS["default"]) and the worker's VEHICLE_CLAMP.
+export const VEHICLE_DEFAULT = { radius_m: 0.15, v_max: 2.0, a_max: 3.0, tau: 0.15 };
+export const VEHICLE_KEYS = ["radius_m", "v_max", "a_max", "tau"];
+export const VEHICLE_CLAMP = { radius_m: [0.05, 0.6], v_max: [0.1, 5.0], a_max: [0.5, 20.0], tau: [0.02, 1.0] };
+// Custom sensor: the fields the panel shows, defaults = depth_cam_87 numbers, ranges = worker SENSOR_CLAMP.
+// cone_deg and dropout are not sent: the worker fills presets.py SENSOR_SPEC_DEFAULTS (0 deg, 0.02).
+export const SENSOR_KEYS = ["beams", "fov_deg", "max_range_m", "min_range_m", "noise_sigma_m"];
+export const SENSOR_DEFAULT = { beams: 30, fov_deg: 87, max_range_m: 5, min_range_m: 0.3, noise_sigma_m: 0.04 };
+export const SENSOR_CLAMP = { beams: [1, 360], fov_deg: [1, 360], max_range_m: [0.5, 30], min_range_m: [0, 5], noise_sigma_m: [0, 0.5] };
+export const MIN_RANGE_GAP_M = 0.1;              // worker: min_range_m <= max_range_m - 0.1
+// Yaw policy request (cfg.yaw). "fixed" is the worker default and is never sent.
+export const YAW_CHOICES = ["fixed", "look_where_you_go"];
+export const YAW_LABELS = { fixed: "fixed (worker default)", look_where_you_go: "look where you go" };
 export const EXTRA_FAULTS = ["none", "jump", "bias", "dropout"];
 export const OUTCOMES = ["reached", "collision", "stuck", "timeout", "error"];
 export const MAX_SEEDS = 50;
@@ -37,7 +63,13 @@ export const TIME_LIMITS = ["auto", 60, 120, 180];
 
 export const plannerLabel = p => PLANNER_LABELS[p] || p;
 export const variationKey = (preset, fault) => `${preset}|${fault}`;
-export const variationLabel = key => { const [p, f] = key.split("|"); return `${p} / ${f === "truth" ? "truth pose" : "VIO " + f}`; };
+const g = v => String(Math.round(v * 1000) / 1000);
+// "custom 30 beams 87 deg 5 m"
+export const customLabel = s => (s ? `custom ${s.beams} beams ${g(s.fov_deg)} deg ${g(s.max_range_m)} m` : "custom");
+export const presetName = (p, spec) => (p === CUSTOM ? customLabel(spec && spec.sensor) : p);
+export const variationLabel = (key, spec) => { const [p, f] = key.split("|"); return `${presetName(p, spec)} / ${f === "truth" ? "truth pose" : "VIO " + f}`; };
+// Sensor spec of a variation preset: the custom dict, or the preset table.
+export const sensorSpecOf = (preset, spec) => (preset === CUSTOM ? (spec && spec.sensor) || null : PRESET_SPECS[preset] || null);
 
 // Browser Python seconds per run from site/playground/README.md (synthetic, one preset each) and the
 // spike table there; only a prior for the estimate before this browser has measured its own runs.
@@ -47,21 +79,63 @@ export const PRIOR_WALL_S = { straight: 0.1, freest_beam: 0.2, astar_known: 0.7,
   thetastar_known: 6.6, lazy_thetastar_known: 4.3, lazy_thetastar_unknown: 20.5, mppi: 1.7, mppi_astar: 7.7,
   hybrid_astar: 1.7 };
 export const PRIOR_DEFAULT_S = 1.0;
+// The priors were measured with the ideal sensor (72 beams). A run with b beams gets prior x b / 72, at least
+// x BEAM_FACTOR_MIN [proposal: planner time does not vanish with 4 beams]. Measured times are not scaled.
+export const PRIOR_BEAMS = 72;
+export const BEAM_FACTOR_MIN = 0.25;
+export const beamFactor = beams => (Number.isFinite(beams) && beams > 0 ? Math.max(BEAM_FACTOR_MIN, beams / PRIOR_BEAMS) : 1);
+
+// ------------------------------------------------------------ vehicle, sensor, yaw
+const clampNum = (v, [lo, hi], dflt) => { const n = Number(v); return v === "" || v == null || !Number.isFinite(n) ? dflt : Math.min(hi, Math.max(lo, n)); };
+// All four keys, each clamped to the worker's range; missing or not a number => arena default.
+export function normVehicle(v) {
+  const s = v && typeof v === "object" ? v : {};
+  return Object.fromEntries(VEHICLE_KEYS.map(k => [k, clampNum(s[k], VEHICLE_CLAMP[k], VEHICLE_DEFAULT[k])]));
+}
+export const isDefaultVehicle = v => VEHICLE_KEYS.every(k => normVehicle(v)[k] === VEHICLE_DEFAULT[k]);
+// Custom sensor dict as the worker will fly it (same clamping, beams an integer, min range below max).
+export function normSensor(v) {
+  const s = v && typeof v === "object" ? v : {};
+  const out = Object.fromEntries(SENSOR_KEYS.map(k => [k, clampNum(s[k], SENSOR_CLAMP[k], SENSOR_DEFAULT[k])]));
+  out.beams = Math.round(out.beams);
+  if (out.min_range_m > out.max_range_m - MIN_RANGE_GAP_M) out.min_range_m = Math.round((out.max_range_m - MIN_RANGE_GAP_M) * 1e6) / 1e6;
+  return out;
+}
+export const normYaw = v => (YAW_CHOICES.includes(v) ? v : "fixed");
+// "Your drone" sensor choice: a sweep preset name or "custom".
+export const normSensorChoice = v => (v === CUSTOM || SWEEP_PRESETS.includes(v) ? v : "ideal");
 
 // ------------------------------------------------------------ spec
+// presets: the checked named presets, then "custom" when the drone's sensor is Custom (spec.sensor = its dict).
 export function normSpec(spec, available) {
   const s = spec || {};
   const ok = available && available.length ? new Set(available) : null;
   const planners = [...new Set((s.planners || []).filter(p => typeof p === "string" && (!ok || ok.has(p))))];
-  const presets = SWEEP_PRESETS.filter(p => (s.presets || ["ideal"]).includes(p));
+  const sensor_choice = normSensorChoice(s.sensor_choice);
+  const custom = sensor_choice === CUSTOM;
+  const named = SWEEP_PRESETS.filter(p => (s.presets || (custom ? [] : ["ideal"])).includes(p));
+  const presets = custom ? [...named, CUSTOM] : named.length ? named : ["ideal"];
   const extra = EXTRA_FAULTS.includes(s.fault) ? s.fault : null;
   const seeds = Math.max(1, Math.min(MAX_SEEDS, parseInt(s.seeds, 10) || 5));
   // jitter: radius in m (one of JITTER_RADII), 0 = off; missing => default ON
   const jv = s.jitter == null || s.jitter === "" ? JITTER_DEFAULT : Number(s.jitter);
   const jitter = jv === 0 ? 0 : JITTER_RADII.includes(jv) ? jv : JITTER_DEFAULT;
-  return { planners, presets: presets.length ? presets : ["ideal"], faults: extra ? ["truth", extra] : ["truth"], fault: extra, seeds, jitter,
-    time_limit: normTimeLimit(s.time_limit) };
+  return { planners, presets, faults: extra ? ["truth", extra] : ["truth"], fault: extra, seeds, jitter,
+    time_limit: normTimeLimit(s.time_limit), vehicle: normVehicle(s.vehicle), sensor_choice,
+    sensor: custom ? normSensor(s.sensor) : null, yaw: normYaw(s.yaw) };
 }
+
+// The run message's cfg extras: vehicle only when it differs from the arena default, sensor for the custom
+// variation (it replaces cfg.preset), yaw only when not "fixed".
+export function cfgExtras(spec, preset) {
+  const out = {};
+  if (spec.vehicle && !isDefaultVehicle(spec.vehicle)) out.vehicle = { ...normVehicle(spec.vehicle) };
+  if (preset === CUSTOM) out.sensor = { ...normSensor(spec.sensor) };
+  if (normYaw(spec.yaw) !== "fixed") out.yaw = normYaw(spec.yaw);
+  return out;
+}
+// Vehicle radius for the jitter clearance: the larger of the world's and the sweep vehicle's.
+export const sweepRadius = (doc, spec) => Math.max(vehicleRadius(doc), (spec && spec.vehicle && spec.vehicle.radius_m) || 0);
 
 // ------------------------------------------------------------ run time limit
 // "auto" (also missing or not a choice) or one of the fixed choices in s.
@@ -148,15 +222,16 @@ export function jitterPoint(doc, p, rng, R, minClear, draws = JITTER_DRAWS) {
 }
 
 // A and B for one seed. Depends only on (world, seed, R): every planner gets the same points.
-export function seedJitter(doc, seed, R) {
+// radius: vehicle radius for the clearance (default: the world's, else 0.15 m).
+export function seedJitter(doc, seed, R, radius) {
   const a = [doc.a ? doc.a[0] : 0, doc.a ? doc.a[1] : 0], b = [doc.b[0], doc.b[1]];
   if (!seed || !R) return { seed, a, b, exact: true, a_kept: false, b_kept: false, draws: 0 };
   const rng = mulberry32((Math.imul(seed, 0x9E3779B1) ^ 0x5EED) >>> 0);
-  const minClear = vehicleRadius(doc) + JITTER_MARGIN_M;
+  const minClear = (radius > 0 ? radius : vehicleRadius(doc)) + JITTER_MARGIN_M;
   const ja = jitterPoint(doc, a, rng, R, minClear), jb = jitterPoint(doc, b, rng, R, minClear);
   return { seed, a: ja.p, b: jb.p, exact: false, a_kept: ja.kept, b_kept: jb.kept, draws: ja.draws + jb.draws };
 }
-export const seedJitters = (doc, spec) => Array.from({ length: spec.seeds }, (_, s) => seedJitter(doc, s, spec.jitter));
+export const seedJitters = (doc, spec) => Array.from({ length: spec.seeds }, (_, s) => seedJitter(doc, s, spec.jitter, sweepRadius(doc, spec)));
 
 // A copy of the world with A and B replaced (the worker re-centres on A; result.offset maps back).
 export function jitterWorld(doc, j) {
@@ -175,7 +250,8 @@ export function buildRuns(spec) {
     for (const preset of spec.presets)
       for (const fault of spec.faults)
         for (const planner of spec.planners)
-          out.push({ planner, preset, fault, seed, filter: "none", key: variationKey(preset, fault) });
+          out.push({ planner, preset, fault, seed, filter: "none", key: variationKey(preset, fault),
+            beams: (sensorSpecOf(preset, spec) || {}).beams || null });
   return out;
 }
 
@@ -185,16 +261,23 @@ export function buildRuns(spec) {
 export function recordFromResult(run, result) {
   const sc = result && result.score;
   if (!sc || !OUTCOMES.includes(sc.outcome) || sc.outcome === "error") return recordFromError(run, "result has no valid score");
-  return { planner: run.planner, preset: run.preset, fault: run.fault, seed: run.seed, ...abOf(run), outcome: sc.outcome,
+  const fs = result.sensor && typeof result.sensor === "object" ? result.sensor : null;
+  return { planner: run.planner, preset: run.preset, fault: run.fault, seed: run.seed, ...abOf(run), ...droneOf(run),
+    yaw_policy: fs && typeof fs.yaw_policy === "string" ? fs.yaw_policy : null, outcome: sc.outcome,
     time_to_goal_s: num(sc.time_to_goal_s), path_length_m: num(sc.path_length_m), min_clearance_m: num(sc.min_clearance_m),
     duration_s: num(sc.duration_s), max_time_s: num(result.max_time_s),
     wall_s: result.worker_ms != null ? result.worker_ms / 1000 : num(result.wall_s), error: null };
 }
 export function recordFromError(run, message) {
-  return { planner: run.planner, preset: run.preset, fault: run.fault, seed: run.seed, ...abOf(run), outcome: "error",
-    time_to_goal_s: null, path_length_m: null, min_clearance_m: null, duration_s: null, max_time_s: null, wall_s: null,
+  return { planner: run.planner, preset: run.preset, fault: run.fault, seed: run.seed, ...abOf(run), ...droneOf(run), yaw_policy: null,
+    outcome: "error", time_to_goal_s: null, path_length_m: null, min_clearance_m: null, duration_s: null, max_time_s: null, wall_s: null,
     error: String(message || "error") };
 }
+// Vehicle (always, arena default when the sweep did not change it), sensor spec (custom dict; a named
+// preset's table entry) and the yaw request. yaw_policy is what the worker reported it flew.
+const droneOf = run => ({ vehicle: run.vehicle ? normVehicle(run.vehicle) : { ...VEHICLE_DEFAULT },
+  sensor: run.preset === CUSTOM ? (run.sensor ? normSensor(run.sensor) : null) : PRESET_SPECS[run.preset] ? { ...PRESET_SPECS[run.preset] } : null,
+  yaw: normYaw(run.yaw) });
 // A and B the run actually flew (jittered for seed > 0) and whether a jitter fell back to the exact point.
 const abOf = run => ({ a: run.a || null, b: run.b || null, ab_kept: run.ab_kept || null });
 const num = v => (typeof v === "number" && Number.isFinite(v) ? v : null);
@@ -296,10 +379,15 @@ export function headline(ranking) {
 
 // ------------------------------------------------------------ export
 export const CSV_COLS = ["planner", "planner_label", "preset", "fault", "seed", "a_x", "a_y", "b_x", "b_y", "outcome", "time_to_goal_s",
-  "path_length_m", "min_clearance_m", "duration_s", "max_time_s", "wall_s", "error"];
+  "path_length_m", "min_clearance_m", "duration_s", "max_time_s", "wall_s",
+  "sensor_label", "sensor_beams", "sensor_fov_deg", "sensor_max_range_m", "sensor_min_range_m", "sensor_noise_sigma_m",
+  "vehicle_radius_m", "vehicle_v_max", "vehicle_a_max", "vehicle_tau", "yaw", "yaw_policy", "error"];
 const csvCell = v => { if (v == null) return ""; const s = String(v); return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
 const csvVal = (r, c) => {
   if (c === "planner_label") return plannerLabel(r.planner);
+  if (c === "sensor_label") return r.preset === CUSTOM ? customLabel(r.sensor) : r.preset;
+  if (c.startsWith("sensor_")) return r.sensor ? r.sensor[c.slice(7)] : null;
+  if (c.startsWith("vehicle_")) return r.vehicle ? r.vehicle[c.slice(8)] : null;
   const m = /^([ab])_([xy])$/.exec(c);
   return m ? (r[m[1]] ? r[m[1]][m[2] === "x" ? 0 : 1] : null) : r[c];
 };
@@ -315,7 +403,8 @@ export function exportDoc({ spec, world, worldName, records, env, pool, started,
       "Identical runs (same variation, outcome, time to B and path length at 3 dp) count once in every interval.",
     world_name: worldName || null, spec, run_count: runCount(spec), records_n: records.length, cancelled: !!cancelled,
     started: started || null, finished: finished || null, pool: pool || null, env: env || null,
-    jitter: { radius_m: spec.jitter || 0, min_clearance_m: vehicleRadius(world) + JITTER_MARGIN_M, max_draws: JITTER_DRAWS,
+    drone: droneDoc(spec, records),
+    jitter: { radius_m: spec.jitter || 0, min_clearance_m: sweepRadius(world, spec) + JITTER_MARGIN_M, max_draws: JITTER_DRAWS,
       prng: "mulberry32", seed0: "exact map", per_seed: jitters || null },
     time_limit: { choice: normTimeLimit(spec.time_limit), expected_s: timeLimitFor(world, spec.time_limit).s,
       source: timeLimitFor(world, spec.time_limit).source, used_s: limitsUsed(records), long_families: LONG_FAMILIES,
@@ -323,18 +412,39 @@ export function exportDoc({ spec, world, worldName, records, env, pool, started,
     headline: agg.headline, ranking: agg.ranking, matrix: agg.cells, records, world };
 }
 
+// "Your drone" block of the JSON export: what was asked, and the yaw policies the worker reported.
+export function droneDoc(spec, records) {
+  const v = normVehicle(spec.vehicle);
+  return { vehicle: v, vehicle_default: { ...VEHICLE_DEFAULT }, vehicle_sent: !isDefaultVehicle(v),
+    sensor_choice: normSensorChoice(spec.sensor_choice), sensor: spec.sensor ? normSensor(spec.sensor) : null,
+    custom_label: spec.sensor ? customLabel(normSensor(spec.sensor)) : null,
+    custom_defaults: { cone_deg: 0, dropout: 0.02, source: "presets.py SENSOR_SPEC_DEFAULTS, filled by the worker" },
+    yaw: normYaw(spec.yaw), yaw_sent: normYaw(spec.yaw) !== "fixed",
+    yaw_policy_flown: [...new Set((records || []).map(r => r.yaw_policy).filter(Boolean))].sort(),
+    sensor_specs: Object.fromEntries(spec.presets.map(p => [p, sensorSpecOf(p, spec)])) };
+}
+
 // ------------------------------------------------------------ share link (world + sweep spec, no results)
 export function specToQuery(spec, src) {
   const q = new URLSearchParams();
   q.set("planners", spec.planners.join(","));
-  q.set("presets", spec.presets.join(","));
+  q.set("presets", spec.presets.filter(p => p !== CUSTOM).join(","));
   if (spec.fault) q.set("fault", spec.fault);
   q.set("seeds", String(spec.seeds));
   if (spec.jitter != null) q.set("jitter", String(spec.jitter));
   q.set("tlim", String(normTimeLimit(spec.time_limit)));
+  // your drone: veh = radius_m,v_max,a_max,tau; sensor = preset name or custom; cs = custom sensor
+  // beams,fov_deg,max_range_m,min_range_m,noise_sigma_m; yaw only when not fixed
+  const v = normVehicle(spec.vehicle);
+  q.set("veh", VEHICLE_KEYS.map(k => g(v[k])).join(","));
+  const choice = normSensorChoice(spec.sensor_choice);
+  q.set("sensor", choice);
+  if (choice === CUSTOM) { const s = normSensor(spec.sensor); q.set("cs", SENSOR_KEYS.map(k => g(s[k])).join(",")); }
+  if (normYaw(spec.yaw) !== "fixed") q.set("yaw", normYaw(spec.yaw));
   if (src) q.set("src", src);
   return q.toString();
 }
+const zipKeys = (keys, text) => { const v = String(text || "").split(","); return Object.fromEntries(keys.map((k, i) => [k, v[i] === undefined ? undefined : v[i].trim()])); };
 export function specFromQuery(search) {
   const q = new URLSearchParams(search || "");
   const list = k => (q.get(k) || "").split(",").map(s => s.trim()).filter(Boolean);
@@ -345,6 +455,10 @@ export function specFromQuery(search) {
   if (q.has("seeds")) out.seeds = q.get("seeds");
   if (q.has("jitter")) out.jitter = q.get("jitter");
   if (q.has("tlim")) out.time_limit = q.get("tlim");
+  if (q.has("veh")) out.vehicle = zipKeys(VEHICLE_KEYS, q.get("veh"));
+  if (q.has("sensor")) out.sensor_choice = q.get("sensor");
+  if (q.has("cs")) out.sensor = zipKeys(SENSOR_KEYS, q.get("cs"));
+  if (q.has("yaw")) out.yaw = q.get("yaw");
   const src = q.get("src");
   return { spec: out, src: src && /^[a-z0-9_]+$/.test(src) ? src : null };
 }
@@ -383,13 +497,14 @@ export function worldParamFrom(text) {
 
 // ------------------------------------------------------------ time estimate
 // Seconds left for the runs not done yet on K workers: per-planner mean wall time measured in this
-// browser when available, else the prior. Returns { s, measured } (measured = no prior was used).
+// browser when available, else the prior scaled by the run's beam count (beamFactor; no beams => x 1).
+// Returns { s, measured } (measured = no prior was used).
 export function estimateSeconds(pending, measuredWall, K, prior = PRIOR_WALL_S) {
   let total = 0, measured = true;
   for (const r of pending) {
     const m = measuredWall && measuredWall[r.planner];
     if (m != null) total += m;
-    else { total += prior[r.planner] != null ? prior[r.planner] : PRIOR_DEFAULT_S; measured = false; }
+    else { total += (prior[r.planner] != null ? prior[r.planner] : PRIOR_DEFAULT_S) * beamFactor(r.beams); measured = false; }
   }
   return { s: total / Math.max(1, K), measured };
 }

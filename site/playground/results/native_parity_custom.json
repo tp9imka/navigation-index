@@ -8,11 +8,11 @@
   "machine": "arm64",
   "system": "Darwin",
   "imports_ms": {
-   "scipy_ndimage": 224.2,
-   "arena": 7.4,
-   "reactive": 1.0,
-   "sample_planners": 64.6,
-   "safety_filter": 125.5
+   "scipy_ndimage": 5772.6,
+   "arena": 279.9,
+   "reactive": 204.7,
+   "sample_planners": 1766.9,
+   "safety_filter": 3092.3
   },
   "planners": [
    "straight",
@@ -52,6 +52,20 @@
    "none",
    "F2"
   ],
+  "yaw": [
+   "fixed",
+   "look_where_you_go"
+  ],
+  "radius_consts": [
+   "astar.RADIUS",
+   "astar.CARROT_CLEAR_M",
+   "ha.RADIUS",
+   "rrt.RADIUS",
+   "mppi.R_COLL",
+   "mppi.D_SAFE",
+   "dwa.RADIUS",
+   "bug.RADIUS"
+  ],
   "recovery": [
    "none",
    "single",
@@ -82,6 +96,7 @@
     "dropout": 0.05
    },
    "vehicle": null,
+   "yaw": "look_where_you_go",
    "fault": "truth",
    "filter": "none",
    "seed": 0,
@@ -94,7 +109,7 @@
    },
    "free_path": true,
    "sim_s": 20.32,
-   "native_wall_s": 2.308,
+   "native_wall_s": 2.192,
    "frames": 204,
    "max_time_s": 60.0,
    "flown": {
@@ -120,8 +135,18 @@
      "yaw_policy": "look_where_you_go"
     },
     "radius": 0.15,
+    "yaw": "look_where_you_go",
     "n_beams": 30,
     "max_range": 5.0
+   },
+   "inflation": {
+    "radius_m": 0.15,
+    "set": {},
+    "instance": {},
+    "not_reached": {
+     "straight": "flies the straight line to B, has no obstacle model",
+     "freest_beam": "fixed 1.0 m free-beam and 0.6 m repulsion thresholds, no radius term"
+    }
    }
   },
   {
@@ -138,6 +163,7 @@
     "dropout": 0.05
    },
    "vehicle": null,
+   "yaw": "look_where_you_go",
    "fault": "truth",
    "filter": "none",
    "seed": 0,
@@ -150,7 +176,7 @@
    },
    "free_path": true,
    "sim_s": 15.88,
-   "native_wall_s": 1.186,
+   "native_wall_s": 1.174,
    "frames": 159,
    "max_time_s": 60.0,
    "flown": {
@@ -176,8 +202,85 @@
      "yaw_policy": "look_where_you_go"
     },
     "radius": 0.15,
+    "yaw": "look_where_you_go",
     "n_beams": 30,
     "max_range": 5.0
+   },
+   "inflation": {
+    "radius_m": 0.15,
+    "set": {},
+    "instance": {},
+    "not_reached": {
+     "straight": "flies the straight line to B, has no obstacle model",
+     "freest_beam": "fixed 1.0 m free-beam and 0.6 m repulsion thresholds, no radius term"
+    }
+   }
+  },
+  {
+   "world": "office_0",
+   "planner": "mppi_astar",
+   "preset": "ideal",
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87.0,
+    "max_range_m": 5.0,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3.0,
+    "dropout": 0.05
+   },
+   "vehicle": null,
+   "yaw": null,
+   "fault": "truth",
+   "filter": "none",
+   "seed": 0,
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 14.14,
+    "duration_s": 14.14,
+    "min_clearance_m": 0.2836,
+    "path_length_m": 14.516
+   },
+   "free_path": true,
+   "sim_s": 14.14,
+   "native_wall_s": 0.985,
+   "frames": 142,
+   "max_time_s": 60.0,
+   "flown": {
+    "vehicle": {
+     "radius_m": 0.15,
+     "v_max": 2.0,
+     "a_max": 3.0,
+     "tau": 0.15,
+     "source": "default",
+     "clamped": []
+    },
+    "sensor": {
+     "name": "custom",
+     "model": "cone",
+     "beams": 30,
+     "fov_deg": 87.0,
+     "max_range_m": 5.0,
+     "min_range_m": 0.3,
+     "noise_sigma_m": 0.04,
+     "cone_deg": 3.0,
+     "dropout": 0.05,
+     "clamped": [],
+     "yaw_policy": "off"
+    },
+    "radius": 0.15,
+    "yaw": "fixed",
+    "n_beams": 30,
+    "max_range": 5.0
+   },
+   "inflation": {
+    "radius_m": 0.15,
+    "set": {},
+    "instance": {},
+    "not_reached": {
+     "straight": "flies the straight line to B, has no obstacle model",
+     "freest_beam": "fixed 1.0 m free-beam and 0.6 m repulsion thresholds, no radius term"
+    }
    }
   },
   {
@@ -191,20 +294,21 @@
     "a_max": 3.0,
     "tau": 0.15
    },
+   "yaw": null,
    "fault": "truth",
    "filter": "none",
    "seed": 0,
    "score": {
     "outcome": "reached",
-    "time_to_goal_s": 21.6,
-    "duration_s": 21.6,
-    "min_clearance_m": 0.2652,
-    "path_length_m": 25.194
+    "time_to_goal_s": 40.0,
+    "duration_s": 40.0,
+    "min_clearance_m": 0.3595,
+    "path_length_m": 45.096
    },
    "free_path": true,
-   "sim_s": 21.6,
-   "native_wall_s": 2.603,
-   "frames": 216,
+   "sim_s": 40.0,
+   "native_wall_s": 5.632,
+   "frames": 400,
    "max_time_s": 60.0,
    "flown": {
     "vehicle": {
@@ -229,8 +333,286 @@
      "yaw_policy": "off"
     },
     "radius": 0.25,
+    "yaw": "fixed",
     "n_beams": 72,
     "max_range": 6.0
+   },
+   "inflation": {
+    "radius_m": 0.25,
+    "set": {
+     "astar.RADIUS": 0.25,
+     "astar.CARROT_CLEAR_M": 0.35,
+     "ha.RADIUS": 0.25,
+     "rrt.RADIUS": 0.25,
+     "mppi.R_COLL": 0.25,
+     "mppi.D_SAFE": 0.5,
+     "dwa.RADIUS": 0.25,
+     "bug.RADIUS": 0.25
+    },
+    "instance": {
+     "apf": "APF.radius = radius_m",
+     "vfh_plus": "VFHPlus.r_rs = radius_m + d_s (0.1 m)"
+    },
+    "not_reached": {
+     "straight": "flies the straight line to B, has no obstacle model",
+     "freest_beam": "fixed 1.0 m free-beam and 0.6 m repulsion thresholds, no radius term"
+    }
+   },
+   "before": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.6,
+    "duration_s": 21.6,
+    "min_clearance_m": 0.2652,
+    "path_length_m": 25.194
+   }
+  },
+  {
+   "world": "narrow_gap_0",
+   "planner": "mppi_astar",
+   "preset": "ideal",
+   "sensor": null,
+   "vehicle": {
+    "radius_m": 0.35,
+    "v_max": 2.0,
+    "a_max": 3.0,
+    "tau": 0.15
+   },
+   "yaw": null,
+   "fault": "truth",
+   "filter": "none",
+   "seed": 0,
+   "score": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 52.46,
+    "min_clearance_m": 0.6173,
+    "path_length_m": 33.293
+   },
+   "free_path": false,
+   "sim_s": 52.52,
+   "native_wall_s": 18.37,
+   "frames": 526,
+   "max_time_s": 60.0,
+   "flown": {
+    "vehicle": {
+     "radius_m": 0.35,
+     "v_max": 2.0,
+     "a_max": 3.0,
+     "tau": 0.15,
+     "source": "cfg",
+     "clamped": []
+    },
+    "sensor": {
+     "name": "ideal",
+     "model": "ray",
+     "beams": 72,
+     "fov_deg": 360.0,
+     "max_range_m": 6.0,
+     "min_range_m": 0.0,
+     "noise_sigma_m": 0.02,
+     "cone_deg": 0.0,
+     "dropout": 0.02,
+     "clamped": [],
+     "yaw_policy": "off"
+    },
+    "radius": 0.35,
+    "yaw": "fixed",
+    "n_beams": 72,
+    "max_range": 6.0
+   },
+   "inflation": {
+    "radius_m": 0.35,
+    "set": {
+     "astar.RADIUS": 0.35,
+     "astar.CARROT_CLEAR_M": 0.45,
+     "ha.RADIUS": 0.35,
+     "rrt.RADIUS": 0.35,
+     "mppi.R_COLL": 0.35,
+     "mppi.D_SAFE": 0.6,
+     "dwa.RADIUS": 0.35,
+     "bug.RADIUS": 0.35
+    },
+    "instance": {
+     "apf": "APF.radius = radius_m",
+     "vfh_plus": "VFHPlus.r_rs = radius_m + d_s (0.1 m)"
+    },
+    "not_reached": {
+     "straight": "flies the straight line to B, has no obstacle model",
+     "freest_beam": "fixed 1.0 m free-beam and 0.6 m repulsion thresholds, no radius term"
+    }
+   },
+   "before": {
+    "outcome": "collision",
+    "time_to_goal_s": null,
+    "duration_s": 11.12,
+    "min_clearance_m": 0.3467,
+    "path_length_m": 12.999
+   }
+  },
+  {
+   "world": "narrow_gap_0",
+   "planner": "astar_unknown",
+   "preset": "ideal",
+   "sensor": null,
+   "vehicle": {
+    "radius_m": 0.25,
+    "v_max": 2.0,
+    "a_max": 3.0,
+    "tau": 0.15
+   },
+   "yaw": null,
+   "fault": "truth",
+   "filter": "none",
+   "seed": 0,
+   "score": {
+    "outcome": "reached",
+    "time_to_goal_s": 53.24,
+    "duration_s": 53.24,
+    "min_clearance_m": 0.3264,
+    "path_length_m": 55.086
+   },
+   "free_path": true,
+   "sim_s": 53.24,
+   "native_wall_s": 6.34,
+   "frames": 533,
+   "max_time_s": 60.0,
+   "flown": {
+    "vehicle": {
+     "radius_m": 0.25,
+     "v_max": 2.0,
+     "a_max": 3.0,
+     "tau": 0.15,
+     "source": "cfg",
+     "clamped": []
+    },
+    "sensor": {
+     "name": "ideal",
+     "model": "ray",
+     "beams": 72,
+     "fov_deg": 360.0,
+     "max_range_m": 6.0,
+     "min_range_m": 0.0,
+     "noise_sigma_m": 0.02,
+     "cone_deg": 0.0,
+     "dropout": 0.02,
+     "clamped": [],
+     "yaw_policy": "off"
+    },
+    "radius": 0.25,
+    "yaw": "fixed",
+    "n_beams": 72,
+    "max_range": 6.0
+   },
+   "inflation": {
+    "radius_m": 0.25,
+    "set": {
+     "astar.RADIUS": 0.25,
+     "astar.CARROT_CLEAR_M": 0.35,
+     "ha.RADIUS": 0.25,
+     "rrt.RADIUS": 0.25,
+     "mppi.R_COLL": 0.25,
+     "mppi.D_SAFE": 0.5,
+     "dwa.RADIUS": 0.25,
+     "bug.RADIUS": 0.25
+    },
+    "instance": {
+     "apf": "APF.radius = radius_m",
+     "vfh_plus": "VFHPlus.r_rs = radius_m + d_s (0.1 m)"
+    },
+    "not_reached": {
+     "straight": "flies the straight line to B, has no obstacle model",
+     "freest_beam": "fixed 1.0 m free-beam and 0.6 m repulsion thresholds, no radius term"
+    }
+   },
+   "before": {
+    "outcome": "reached",
+    "time_to_goal_s": 24.98,
+    "duration_s": 24.98,
+    "min_clearance_m": 0.301,
+    "path_length_m": 25.195
+   }
+  },
+  {
+   "world": "narrow_gap_0",
+   "planner": "astar_unknown",
+   "preset": "ideal",
+   "sensor": null,
+   "vehicle": {
+    "radius_m": 0.35,
+    "v_max": 2.0,
+    "a_max": 3.0,
+    "tau": 0.15
+   },
+   "yaw": null,
+   "fault": "truth",
+   "filter": "none",
+   "seed": 0,
+   "score": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 38.54,
+    "min_clearance_m": 0.418,
+    "path_length_m": 34.379
+   },
+   "free_path": false,
+   "sim_s": 38.56,
+   "native_wall_s": 9.847,
+   "frames": 386,
+   "max_time_s": 60.0,
+   "flown": {
+    "vehicle": {
+     "radius_m": 0.35,
+     "v_max": 2.0,
+     "a_max": 3.0,
+     "tau": 0.15,
+     "source": "cfg",
+     "clamped": []
+    },
+    "sensor": {
+     "name": "ideal",
+     "model": "ray",
+     "beams": 72,
+     "fov_deg": 360.0,
+     "max_range_m": 6.0,
+     "min_range_m": 0.0,
+     "noise_sigma_m": 0.02,
+     "cone_deg": 0.0,
+     "dropout": 0.02,
+     "clamped": [],
+     "yaw_policy": "off"
+    },
+    "radius": 0.35,
+    "yaw": "fixed",
+    "n_beams": 72,
+    "max_range": 6.0
+   },
+   "inflation": {
+    "radius_m": 0.35,
+    "set": {
+     "astar.RADIUS": 0.35,
+     "astar.CARROT_CLEAR_M": 0.45,
+     "ha.RADIUS": 0.35,
+     "rrt.RADIUS": 0.35,
+     "mppi.R_COLL": 0.35,
+     "mppi.D_SAFE": 0.6,
+     "dwa.RADIUS": 0.35,
+     "bug.RADIUS": 0.35
+    },
+    "instance": {
+     "apf": "APF.radius = radius_m",
+     "vfh_plus": "VFHPlus.r_rs = radius_m + d_s (0.1 m)"
+    },
+    "not_reached": {
+     "straight": "flies the straight line to B, has no obstacle model",
+     "freest_beam": "fixed 1.0 m free-beam and 0.6 m repulsion thresholds, no radius term"
+    }
+   },
+   "before": {
+    "outcome": "collision",
+    "time_to_goal_s": null,
+    "duration_s": 12.62,
+    "min_clearance_m": 0.3484,
+    "path_length_m": 12.956
    }
   }
  ],
@@ -239,7 +621,8 @@
    "check": "K1 driver, preset name depth_cam_87",
    "case": [
     "random_0",
-    "mppi_astar"
+    "mppi_astar",
+    "look_where_you_go"
    ],
    "same": true,
    "driver": {
@@ -261,7 +644,8 @@
    "check": "K1 driver, preset name depth_cam_87",
    "case": [
     "office_0",
-    "mppi_astar"
+    "mppi_astar",
+    "look_where_you_go"
    ],
    "same": true,
    "driver": {
@@ -280,7 +664,191 @@
    }
   },
   {
-   "check": "K2 run.run_one, vehicle radius 0.25 m, same JSON world",
+   "check": "K1 driver, preset name depth_cam_87",
+   "case": [
+    "office_0",
+    "mppi_astar",
+    "fixed"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 14.14,
+    "duration_s": 14.14,
+    "min_clearance_m": 0.2836,
+    "path_length_m": 14.516
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 14.14,
+    "duration_s": 14.14,
+    "min_clearance_m": 0.2836,
+    "path_length_m": 14.516
+   }
+  },
+  {
+   "check": "K2 run.run_one + radius_override, vehicle radius 0.25 m, same JSON world",
+   "case": [
+    "narrow_gap_0",
+    "mppi_astar",
+    0.25
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 40.0,
+    "duration_s": 40.0,
+    "min_clearance_m": 0.3595,
+    "path_length_m": 45.096
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 40.0,
+    "duration_s": 40.0,
+    "min_clearance_m": 0.3595,
+    "path_length_m": 45.096
+   }
+  },
+  {
+   "check": "K2 run.run_one + radius_override, vehicle radius 0.35 m, same JSON world",
+   "case": [
+    "narrow_gap_0",
+    "mppi_astar",
+    0.35
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 52.46,
+    "min_clearance_m": 0.6173,
+    "path_length_m": 33.293
+   },
+   "reference": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 52.46,
+    "min_clearance_m": 0.6173,
+    "path_length_m": 33.293
+   }
+  },
+  {
+   "check": "K2 run.run_one + radius_override, vehicle radius 0.25 m, same JSON world",
+   "case": [
+    "narrow_gap_0",
+    "astar_unknown",
+    0.25
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 53.24,
+    "duration_s": 53.24,
+    "min_clearance_m": 0.3264,
+    "path_length_m": 55.086
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 53.24,
+    "duration_s": 53.24,
+    "min_clearance_m": 0.3264,
+    "path_length_m": 55.086
+   }
+  },
+  {
+   "check": "K2 run.run_one + radius_override, vehicle radius 0.35 m, same JSON world",
+   "case": [
+    "narrow_gap_0",
+    "astar_unknown",
+    0.35
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 38.54,
+    "min_clearance_m": 0.418,
+    "path_length_m": 34.379
+   },
+   "reference": {
+    "outcome": "stuck",
+    "time_to_goal_s": null,
+    "duration_s": 38.54,
+    "min_clearance_m": 0.418,
+    "path_length_m": 34.379
+   }
+  },
+  {
+   "check": "K3 overridden constants restored after the runs",
+   "case": "RADIUS_TABLE",
+   "same": true,
+   "driver": {
+    "astar.RADIUS": 0.15,
+    "astar.CARROT_CLEAR_M": 0.25,
+    "ha.RADIUS": 0.15,
+    "rrt.RADIUS": 0.15,
+    "mppi.R_COLL": 0.15,
+    "mppi.D_SAFE": 0.4,
+    "dwa.RADIUS": 0.15,
+    "bug.RADIUS": 0.15
+   },
+   "reference": {
+    "astar.RADIUS": 0.15,
+    "astar.CARROT_CLEAR_M": 0.25,
+    "ha.RADIUS": 0.15,
+    "rrt.RADIUS": 0.15,
+    "mppi.R_COLL": 0.15,
+    "mppi.D_SAFE": 0.4,
+    "dwa.RADIUS": 0.15,
+    "bug.RADIUS": 0.15
+   }
+  },
+  {
+   "check": "K3 default-radius run after the custom-radius runs == the same run before them",
+   "case": [
+    "narrow_gap_0",
+    "mppi_astar"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.6,
+    "duration_s": 21.6,
+    "min_clearance_m": 0.2652,
+    "path_length_m": 25.194
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.6,
+    "duration_s": 21.6,
+    "min_clearance_m": 0.2652,
+    "path_length_m": 25.194
+   }
+  },
+  {
+   "check": "K4 cfg.yaw absent == yaw_policy off (loop-75 fixed yaw)",
+   "case": [
+    "office_0",
+    "mppi_astar"
+   ],
+   "same": true,
+   "driver": {
+    "outcome": "reached",
+    "time_to_goal_s": 14.14,
+    "duration_s": 14.14,
+    "min_clearance_m": 0.2836,
+    "path_length_m": 14.516
+   },
+   "reference": {
+    "outcome": "reached",
+    "time_to_goal_s": 14.14,
+    "duration_s": 14.14,
+    "min_clearance_m": 0.2836,
+    "path_length_m": 14.516
+   }
+  },
+  {
+   "check": "K5 cfg.vehicle radius 0.15 m == no cfg.vehicle",
    "case": [
     "narrow_gap_0",
     "mppi_astar"
@@ -302,11 +870,28 @@
    }
   }
  ],
+ "custom_sensor_0": {
+  "case": [
+   "office_0",
+   "mppi_astar",
+   "depth_cam_87",
+   "fixed"
+  ],
+  "published": {
+   "outcome": "reached",
+   "time_to_goal_s": 14.14,
+   "duration_s": 14.14,
+   "min_clearance_m": 0.2836,
+   "path_length_m": 14.516
+  },
+  "same": true,
+  "source": "samples/close-area-arena/results/custom_sensor_0.json"
+ },
  "native_env": {
   "python": "3.12.10",
   "numpy": "2.5.4",
   "scipy": "1.18.1",
   "machine": "arm64"
  },
- "summary": "3/3 checks (K1, K2) identical"
+ "summary": "11/11 checks (K1-K5) identical"
 }

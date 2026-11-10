@@ -9,8 +9,12 @@
 //                   noise_sigma_m, cone_deg?, dropout?}, clamped to SENSOR_CLAMP; it replaces cfg.preset (which
 //                   is then reported as "custom"). Unknown or missing keys => error naming them
 //                   (samples/close-area-arena/presets.py). The result carries "vehicle" and "sensor" as flown
-//                   (after clamping, with a "clamped" list) and "yaw_policy": a sensor with fov < 360 deg flies the
-//                   look-where-you-go yaw policy (look_where_you_go below); 360 deg sensors keep yaw fixed as before.
+//                   (after clamping, with a "clamped" list).
+//                   loop-75b: cfg.yaw optional, "fixed" (default, every sensor) | "look_where_you_go"; the result
+//                   carries it as "yaw" (and config.yaw). Every planner inflates obstacles by the flown
+//                   vehicle radius_m for that run (radius_override in DRIVER_PY, restored after the run); the
+//                   result's "inflation" lists the constants set and the planners that have no radius term.
+//                   astar_unknown is geofenced (map corner on the area bounds - 2 m), as close-area-benchmark.
 //   worker => page  {type: "progress", stage, step, steps, mb, mb_expected}
 //                   {type: "retry", step, attempt, attempts, wait_s, error}   (a load step failed, retrying)
 //                   {type: "ready", env, planners, timings}
@@ -40,11 +44,27 @@ astar = importlib.import_module(P + "planners.astar_esdf")
 run_faults = importlib.import_module(P + "run_faults")
 _t2 = time.perf_counter()
 
+class GeofencedAStar(astar.AStarESDF):
+    """close-area-benchmark bench.py GeofencedAStar (loop-75b): astar_esdf(known_map=False) with its
+    log-odds map corner on the area bounds minus 2 m (same 24 m size), instead of the shipped fixed
+    corner at (-2.5, -2.5), which left office_0's B outside the map. Subclass built here, sample not edited."""
+
+    def __init__(self, bounds, margin=2.0):
+        self.bounds, self.margin = bounds, margin
+        super().__init__(known_map=False)
+
+    def reset(self):
+        super().reset()
+        if self.map is not None:
+            self.map.x0 = self.bounds[0] - self.margin
+            self.map.y0 = self.bounds[1] - self.margin
+
+
 PLANNERS = {
     "straight": lambda: straight.make(),
     "freest_beam": lambda: run_faults.FreestBeam(),
     "astar_known": lambda: astar.make(known_map=True),
-    "astar_unknown": lambda: astar.make(known_map=False),
+    "astar_unknown": lambda w: GeofencedAStar(_bounds(w)),
 }
 LOAD_ERRORS = {}
 
@@ -102,7 +122,7 @@ def _geofenced_dstar(bounds, margin=2.0):
 
 
 # Planners that need the world (geofence) take it as an argument; the rest ignore it.
-WORLD_PLANNERS = set()
+WORLD_PLANNERS = {"astar_unknown"}
 # DWA, DWA + 3 s memory, Bug2, TangentBug (samples/close-area-planner-dwa-bug)
 try:
     _m = _load_sample(DWABUG_DIR, ["dwa", "bug"])
@@ -206,13 +226,91 @@ SENSOR_CLAMP = {"beams": (1, 360), "fov_deg": (1.0, 360.0), "max_range_m": (0.5,
                 "noise_sigma_m": (0.0, 0.5), "cone_deg": (0.0, 30.0), "dropout": (0.0, 0.5)}
 MIN_RANGE_GAP_M = 0.1         # min_range_m is clamped to at most max_range_m - 0.1
 # Look-where-you-go yaw (loop-75). The range fan is body frame and the planners command yaw_rate 0, so a
-# forward-only sensor would stare at the initial goal bearing all run. For fov < 360 deg the driver sets
-# the setpoint's yaw rate: face the commanded velocity, or the goal when slower than YAW_SLOW_MPS,
-# proportional with YAW_GAIN, capped at YAW_RATE_CAP. Off for 360 deg sensors (results unchanged).
+# forward-only sensor would stare at the initial goal bearing all run. With cfg.yaw = "look_where_you_go"
+# the driver sets the setpoint's yaw rate: face the commanded velocity, or the goal when slower than
+# YAW_SLOW_MPS, proportional with YAW_GAIN, capped at YAW_RATE_CAP. loop-75b: opt-in for every sensor (it was
+# on by default for fov < 360 deg in loop-75); fixed yaw was faster in 4 of 4 office_0 / maze_0 runs
+# (samples/close-area-arena/results/custom_sensor_0.md).
 YAW_RATE_CAP = 1.0            # rad/s (57 deg/s) [proposal], half of vehicle.Vehicle yaw_rate_max 2.0
 YAW_GAIN = 2.0                # 1/s, yaw rate per rad of heading error [proposal]
 YAW_SLOW_MPS = 0.2            # m/s, below this commanded speed face the goal [proposal]
 FULL_FOV = 2 * math.pi - 1e-9
+YAW_OPTIONS = ("fixed", "look_where_you_go")   # cfg.yaw (loop-75b), default "fixed" for every sensor
+
+# Vehicle radius in the planners (loop-75b). The planner samples hardcode the 0.15 m arena radius as module
+# constants (or constructor defaults). When a run flies another radius_m, every planner below inflates by it:
+# each constant is set to radius_m + (its shipped value - 0.15 m), so the planner's own margins on top of the
+# radius stay as shipped, for that run only, and restored after it (radius_override). At 0.15 m nothing is touched.
+RADIUS_DEFAULT = float(run_mod.DEFAULTS["vehicle"]["radius"])
+RADIUS_CONSTS = [                # (module global name in this driver, attribute, what it is)
+    ("astar", "RADIUS", "A* known / unknown map, D* Lite, Theta*, Lazy Theta*, MPPI-A* guide, relocalization arms: inflation"),
+    ("astar", "CARROT_CLEAR_M", "astar_esdf carrot chord clearance, RADIUS + TRACK_MARGIN at import"),
+    ("_ha", "RADIUS", "Hybrid A*: inflation (copied from astar_esdf at import)"),
+    ("_rrt", "RADIUS", "Informed RRT*: inflation (copied from astar_esdf at import)"),
+    ("_mppi", "R_COLL", "MPPI: collision distance (astar_esdf.RADIUS at import)"),
+    ("_mppi", "D_SAFE", "MPPI: distance where the obstacle cost starts (0.25 m beyond the radius as shipped)"),
+    ("_dwa", "RADIUS", "DWA, DWA + memory: rollout clearance"),
+    ("_bug", "RADIUS", "Bug2, TangentBug: wall distance, hit and free-segment tests"),
+]
+RADIUS_NOT_REACHED = {
+    "straight": "flies the straight line to B, has no obstacle model",
+    "freest_beam": "fixed 1.0 m free-beam and 0.6 m repulsion thresholds, no radius term",
+}
+
+
+def _radius_table():
+    """[(module, attr, offset, note)] for the loaded modules, deduplicated by module identity."""
+    out, seen = [], set()
+    g = globals()
+    for name, attr, note in RADIUS_CONSTS:
+        mod = g.get(name)
+        if mod is None or not hasattr(mod, attr) or (id(mod), attr) in seen:
+            continue
+        seen.add((id(mod), attr))
+        out.append((mod, attr, float(getattr(mod, attr)) - RADIUS_DEFAULT, name.lstrip("_") + "." + attr))
+    return out
+
+
+RADIUS_TABLE = _radius_table()
+
+
+class radius_override:
+    """with radius_override(r): the RADIUS_TABLE constants = r + offset; restored on exit, also after an error."""
+
+    def __init__(self, r):
+        self.r, self.saved = float(r), []
+
+    def __enter__(self):
+        if self.r != RADIUS_DEFAULT:
+            self.saved = [(m, a, getattr(m, a)) for m, a, _, _ in RADIUS_TABLE]
+            for m, a, off, _ in RADIUS_TABLE:
+                setattr(m, a, round(self.r + off, 9))
+        return self
+
+    def __exit__(self, *exc):
+        for m, a, v in self.saved:
+            setattr(m, a, v)
+        self.saved = []
+        return False
+
+    def record(self):
+        if self.r == RADIUS_DEFAULT:
+            return {"radius_m": self.r, "set": {}, "instance": {}, "not_reached": dict(RADIUS_NOT_REACHED)}
+        return {"radius_m": self.r, "set": {lbl: round(self.r + off, 9) for _, _, off, lbl in RADIUS_TABLE},
+                "instance": {"apf": "APF.radius = radius_m", "vfh_plus": "VFHPlus.r_rs = radius_m + d_s (0.1 m)"},
+                "not_reached": dict(RADIUS_NOT_REACHED)}
+
+
+def build_planner(planner, w, r=RADIUS_DEFAULT):
+    """PLANNERS[planner] for world w; inside radius_override(r) for a non-default radius. APF and VFH+ keep the
+    radius on the instance (constructor default 0.15 m), so they are set here, per run."""
+    pl = PLANNERS[planner](w) if planner in WORLD_PLANNERS else PLANNERS[planner]()
+    if r != RADIUS_DEFAULT:
+        if planner == "apf":
+            pl.radius = r
+        elif planner == "vfh_plus":
+            pl.r_rs = round(pl.r_rs - RADIUS_DEFAULT + r, 9)
+    return pl
 
 
 def _clamp_spec(spec, required, defaults, ranges, what):
@@ -263,6 +361,7 @@ def env_json():
                        "planners": list(PLANNERS), "presets": [k for k in PG_PRESETS],
                        "faults": ["truth", "none", "jump", "bias", "dropout"],
                        "filters": ["none"] + (["F2"] if filters is not None else []),
+                       "yaw": list(YAW_OPTIONS), "radius_consts": [lbl for _, _, _, lbl in RADIUS_TABLE],
                        "recovery": list(pg_reloc.ARMS) if pg_reloc is not None else ["none"],
                        "load_errors": LOAD_ERRORS})
 
@@ -272,7 +371,22 @@ def _r(v, n=3):
 
 
 def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="none", seed=0, cfg=None,
-             recovery="none", max_time_s=None, vehicle=None, sensor=None, yaw_policy="auto"):
+             recovery="none", max_time_s=None, vehicle=None, sensor=None, yaw="fixed", yaw_policy=None, inflate=True):
+    """_simulate inside radius_override(vehicle radius_m): the planners inflate by the flown radius for this
+    run only. inflate=False (native before/after comparison only, the run message has no such field) keeps
+    the shipped 0.15 m constants, as before loop-75b."""
+    r = clamp_vehicle(vehicle)[0]["radius_m"] if vehicle is not None else RADIUS_DEFAULT
+    ov = radius_override(r if inflate else RADIUS_DEFAULT)
+    with ov:
+        out = _simulate(doc, planner, preset, fault, filt, seed, cfg, recovery, max_time_s, vehicle, sensor,
+                        yaw, yaw_policy, ov.r)
+    out["inflation"] = ov.record()
+    return out
+
+
+def _simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="none", seed=0, cfg=None,
+              recovery="none", max_time_s=None, vehicle=None, sensor=None, yaw="fixed", yaw_policy=None,
+              plan_radius=RADIUS_DEFAULT):
     """Fly one world. Same loop as run.run_one (filter off) or run_kill.run_one (F2 on), with the
     sensor preset and pose source as arguments. Scored by scorer.score on truth.
     fault: "truth" = no estimator (planner sees truth); else estimator.py VIO EKF with dark zones and
@@ -282,8 +396,11 @@ def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="no
     gate), so planner must be astar_known and the filter none.
     max_time_s: None = by world family (max_time_for), else the run time limit in s (clamped 10-300).
     vehicle / sensor (loop-75): None, or a team-facing dict (presets.py schema), clamped by clamp_vehicle /
-    clamp_sensor; sensor replaces preset. yaw_policy: "auto" = look_where_you_go when the sensor fov < 360 deg,
-    "off" = never (native comparison only, the run message has no such field)."""
+    clamp_sensor; sensor replaces preset. yaw (loop-75b, run message cfg.yaw): "fixed" (default, every sensor)
+    = yaw rate 0 from the driver, the vehicle keeps its initial bearing to B; "look_where_you_go" = the
+    look_where_you_go policy below, for any sensor. yaw_policy (loop-75, native scripts only, overrides yaw when
+    given): "auto" = look_where_you_go when the sensor fov < 360 deg, "off" = fixed.
+    plan_radius: the radius the planners were set to by simulate (radius_override), for the APF / VFH+ instances."""
     cfg = cfg or run_mod.DEFAULTS
     t_max, t_max_src = max_time_for(doc, max_time_s)
     veh_rec = dict(presets.vehicle_spec({"radius_m": cfg["vehicle"]["radius"], "v_max": cfg["vehicle"]["v_max"],
@@ -301,9 +418,15 @@ def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="no
     else:
         sens = preset
         sens_rec = dict(presets.describe_sensor(preset), clamped=[])
-    if yaw_policy not in ("auto", "off"):
-        raise ValueError("yaw_policy must be auto or off")
-    yaw_on = yaw_policy == "auto" and presets.sensor_fov(sens) < FULL_FOV
+    if yaw_policy is not None:
+        if yaw_policy not in ("auto", "off"):
+            raise ValueError("yaw_policy must be auto or off")
+        yaw_on = yaw_policy == "auto" and presets.sensor_fov(sens) < FULL_FOV
+    else:
+        if yaw not in YAW_OPTIONS:
+            raise ValueError("cfg.yaw must be fixed or look_where_you_go, got " + repr(yaw))
+        yaw_on = yaw == "look_where_you_go"
+    yaw_flown = "look_where_you_go" if yaw_on else "fixed"
     sens_rec["yaw_policy"] = "look_where_you_go" if yaw_on else "off"
     if recovery != "none":
         if pg_reloc is None:
@@ -329,7 +452,7 @@ def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="no
         src, pl = pg_reloc.build(recovery, w, est, seed, index)
         trace = pg_reloc.Trace(recovery, src)
     else:
-        pl = PLANNERS[planner](w) if planner in WORLD_PLANNERS else PLANNERS[planner]()
+        pl = build_planner(planner, w, plan_radius)
         if pg_reloc is not None and fault in pg_reloc.FAULTS and filt == "none":
             trace = pg_reloc.Trace("none", est)      # verdict strip only: lost while quality is 0
     ad = adapter_mod.SimAdapter(w, veh, sensor, pose_source=src)
@@ -418,7 +541,8 @@ def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="no
     clr = w.sdf(xy_a[::ratio])                 # truth clearance at planner rate, for the sparkline
     return {
         "config": {"planner": planner, "preset": preset, "fault": fault, "filter": filt, "seed": seed, "index": index,
-                   "recovery": recovery},
+                   "recovery": recovery, "yaw": yaw_flown},
+        "yaw": yaw_flown,
         "reloc": trace.result(res, est) if trace is not None else None,
         "vehicle": veh_rec, "sensor": sens_rec,
         "score": res, "free_path": free,
@@ -442,7 +566,7 @@ def play(doc_json, cfg_json):
     out = simulate(json.loads(doc_json), c.get("planner", "astar_known"), c.get("preset", "ideal"),
                    c.get("fault", "truth"), c.get("filter", "none"), int(c.get("seed", 0)),
                    recovery=c.get("recovery", "none"), max_time_s=c.get("max_time_s"),
-                   vehicle=c.get("vehicle"), sensor=c.get("sensor"))
+                   vehicle=c.get("vehicle"), sensor=c.get("sensor"), yaw=c.get("yaw", "fixed"))
     return json.dumps(out, allow_nan=False)
 `;
 

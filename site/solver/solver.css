@@ -34,6 +34,14 @@ input[type="text"], input[type="number"] { font: inherit; font-size: 13px; color
 .prog { display: flex; gap: 8px; align-items: center; margin: 4px 0; }
 .prog progress { flex: 1; min-width: 0; height: 12px; accent-color: var(--accent); }
 #countMsg { margin: 4px 0 8px; }
+.drone summary { font-size: 13px; font-weight: 600; cursor: pointer; padding: 2px 0; overflow-wrap: anywhere; }
+.drone summary .muted { font-weight: 400; }
+.drone p { margin: 6px 0; }
+.drone-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 4px 12px; margin: 0 0 8px; }
+.drone-grid[hidden] { display: none; }
+.drone-grid label { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; min-width: 0; }
+.drone-grid input[type="number"] { width: 72px; }
+.drone-grid .span-all { grid-column: 1 / -1; }
 
 .race-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 16px; align-items: start; }
 #race { width: 100%; height: auto; aspect-ratio: 1 / 1; display: block; border-radius: 8px; background: var(--panel); }

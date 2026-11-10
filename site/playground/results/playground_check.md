@@ -1,42 +1,48 @@
 # Playground check: headless Chrome vs native CPython
 
-Written by `node site/playground/results/measure_playground.mjs` on 2026-11-09. Input: synthetic (simulated layouts, vehicle, range sensors and VIO from samples/close-area-arena). Raw data: [playground_check.json](playground_check.json). Native reference: [native_parity.json](native_parity.json) from `native_parity.py`, which runs the same `DRIVER_PY` string from worker.js.
+Written by `node site/playground/results/measure_playground.mjs` on 2026-11-10. Input: synthetic (simulated layouts, vehicle, range sensors and VIO from samples/close-area-arena). Raw data: [playground_check.json](playground_check.json). Native reference: [native_parity.json](native_parity.json) from `native_parity.py`, which runs the same `DRIVER_PY` string from worker.js.
 
 Browser: Chrome/140.0.7339.208 headless, Pyodide 314.0.7 (Python 3.14.2, numpy 2.4.6, scipy 1.18.0). Native: CPython 3.12.10, numpy 2.5.4, scipy 1.18.1, arm64.
 
 ## Load (fresh Chrome profile, cold HTTP cache)
 
-- Python ready 5574 ms after the page script started; 22.3 MB downloaded (Resource Timing in the worker).
-- Worker steps: Pyodide runtime 2621 ms, numpy + scipy + 36 hub files 1395 ms, imports 1551 ms (scipy.ndimage 732.6, arena 34.7, reactive 3.1, DWA / Bug / D* Lite / RRT* 70, safety filter 439.6 ms).
-- Planners loaded: straight, freest_beam, astar_known, astar_unknown, apf, vfh_plus, dwa, dwa_mem, bug2, tangent_bug, dstar_lite, informed_rrt_star. Filters: none, F2. Load errors: {}.
+- Python ready 7334 ms after the page script started; 22.3 MB downloaded (Resource Timing in the worker).
+- Worker steps: Pyodide runtime 2557 ms, numpy + scipy + 42 hub files 3227 ms, imports 1537 ms (scipy.ndimage 677, arena 36.1, reactive 3.1, DWA / Bug / D* Lite / RRT* 227.9, safety filter 307.3 ms).
+- Planners loaded: straight, freest_beam, astar_known, astar_unknown, apf, vfh_plus, dwa, dwa_mem, bug2, tangent_bug, dstar_lite, informed_rrt_star, thetastar_known, lazy_thetastar_known, lazy_thetastar_unknown, mppi, mppi_astar, hybrid_astar. Filters: none, F2. Load errors: {}.
 
-## Browser score = native score on the preset worlds: 21/21
+## Browser score = native score on the preset worlds: 27/27
 
 Fields: outcome, time_to_goal_s, duration_s, min_clearance_m, path_length_m. Seed 0.
 
 | world | planner | sensor | VIO fault | filter | browser: outcome / time_to_goal_s / duration_s / min_clearance_m / path_length_m | same as native | browser Python s | native Python s |
 |---|---|---|---|---|---|---|---|---|
-| random_0 | straight | ideal | truth | none | stuck / - / 20.3 / 0.3797 / 13.266 | yes | 0.191 | 0.083 |
-| random_0 | freest_beam | ideal | truth | none | reached / 26.08 / 26.08 / 0.4702 / 24.504 | yes | 0.196 | 0.092 |
-| random_0 | astar_known | ideal | truth | none | reached / 19.38 / 19.38 / 0.5647 / 23.838 | yes | 0.752 | 0.343 |
-| random_0 | astar_unknown | ideal | truth | none | reached / 18.68 / 18.68 / 0.6432 / 23.947 | yes | 3.049 | 1.445 |
-| random_0 | apf | ideal | truth | none | reached / 28.88 / 28.88 / 0.6356 / 24.9 | yes | 0.194 | 0.099 |
-| random_0 | vfh_plus | ideal | truth | none | reached / 26.12 / 26.12 / 0.2332 / 24.478 | yes | 0.216 | 0.105 |
-| random_0 | astar_known | ideal | jump | none | collision / - / 14.2 / 0.1497 / 15.888 | yes | 0.805 | 0.381 |
-| random_0 | astar_known | ideal | jump | F2 | stuck / - / 32.88 / 0.3383 / 25.344 | yes | 1.396 | 0.703 |
-| random_0 | freest_beam | ideal | bias | none | reached / 25.84 / 25.84 / 0.4728 / 24.569 | yes | 0.277 | 0.153 |
-| random_0 | astar_known | ideal | dropout | F2 | reached / 20.6 / 20.6 / 0.8379 / 24.334 | yes | 1.017 | 0.514 |
-| office_0 | astar_known | ideal | truth | none | reached / 22.74 / 22.74 / 0.2997 / 13.765 | yes | 0.905 | 0.44 |
-| office_0 | freest_beam | ideal | truth | none | stuck / - / 13.04 / 0.434 / 7.115 | yes | 0.139 | 0.072 |
-| office_0 | freest_beam | crazyflie | none | none | stuck / - / 13.1 / 0.4871 / 6.86 | yes | 0.176 | 0.101 |
-| glass_office_0 | astar_unknown | crazyflie | truth | none | stuck / - / 10 / 0.8616 / 0 | yes | 0.656 | 0.43 |
-| u_trap_0 | astar_known | crazyflie_bright | bias | F2 | stuck / - / 29.4 / 0.6862 / 25.73 | yes | 0.903 | 0.526 |
-| random_0 | dwa | ideal | truth | none | reached / 43.68 / 43.68 / 0.2682 / 24.261 | yes | 1.112 | 0.704 |
-| u_trap_0 | dwa_mem | ideal | truth | none | stuck / - / 28.94 / 0.2757 / 12.447 | yes | 2.55 | 1.702 |
-| office_0 | bug2 | ideal | truth | none | stuck / - / 28.94 / 0.4578 / 11.281 | yes | 0.213 | 0.143 |
-| forest_0 | tangent_bug | ideal | truth | none | reached / 25.68 / 25.68 / 0.3731 / 24.519 | yes | 0.265 | 0.14 |
-| narrow_gap_0 | dstar_lite | ideal | truth | none | reached / 24.52 / 24.52 / 0.3288 / 25.187 | yes | 1.409 | 1.036 |
-| office_0 | informed_rrt_star | ideal | truth | none | reached / 25.88 / 25.88 / 0.2762 / 13.578 | yes | 0.918 | 0.651 |
+| random_0 | straight | ideal | truth | none | stuck / - / 20.3 / 0.3797 / 13.266 | yes | 0.19 | 0.079 |
+| random_0 | freest_beam | ideal | truth | none | reached / 26.08 / 26.08 / 0.4702 / 24.504 | yes | 0.191 | 0.092 |
+| random_0 | astar_known | ideal | truth | none | reached / 19.38 / 19.38 / 0.5647 / 23.838 | yes | 0.785 | 0.341 |
+| random_0 | astar_unknown | ideal | truth | none | reached / 18.7 / 18.7 / 0.6624 / 23.95 | yes | 3.065 | 1.372 |
+| random_0 | apf | ideal | truth | none | reached / 28.88 / 28.88 / 0.6356 / 24.9 | yes | 0.193 | 0.099 |
+| random_0 | vfh_plus | ideal | truth | none | reached / 26.12 / 26.12 / 0.2332 / 24.478 | yes | 0.213 | 0.105 |
+| random_0 | astar_known | ideal | jump | none | collision / - / 14.2 / 0.1497 / 15.888 | yes | 0.806 | 0.36 |
+| random_0 | astar_known | ideal | jump | F2 | stuck / - / 32.88 / 0.3383 / 25.344 | yes | 1.411 | 0.65 |
+| random_0 | freest_beam | ideal | bias | none | reached / 25.84 / 25.84 / 0.4728 / 24.569 | yes | 0.277 | 0.141 |
+| random_0 | astar_known | ideal | dropout | F2 | reached / 20.6 / 20.6 / 0.8379 / 24.334 | yes | 0.998 | 0.477 |
+| office_0 | astar_known | ideal | truth | none | reached / 22.74 / 22.74 / 0.2997 / 13.765 | yes | 0.932 | 0.419 |
+| office_0 | freest_beam | ideal | truth | none | stuck / - / 13.04 / 0.434 / 7.115 | yes | 0.135 | 0.068 |
+| office_0 | freest_beam | crazyflie | none | none | stuck / - / 13.1 / 0.4871 / 6.86 | yes | 0.167 | 0.09 |
+| glass_office_0 | astar_unknown | crazyflie | truth | none | collision / - / 55.28 / 0.1472 / 25.733 | yes | 2.73 | 1.402 |
+| u_trap_0 | astar_known | crazyflie_bright | bias | F2 | stuck / - / 29.4 / 0.6862 / 25.73 | yes | 0.877 | 0.447 |
+| random_0 | dwa | ideal | truth | none | reached / 43.68 / 43.68 / 0.2682 / 24.261 | yes | 1.098 | 0.568 |
+| u_trap_0 | dwa_mem | ideal | truth | none | stuck / - / 28.94 / 0.2757 / 12.447 | yes | 2.69 | 1.337 |
+| office_0 | bug2 | ideal | truth | none | stuck / - / 28.94 / 0.4578 / 11.281 | yes | 0.214 | 0.102 |
+| forest_0 | tangent_bug | ideal | truth | none | reached / 25.68 / 25.68 / 0.3731 / 24.519 | yes | 0.242 | 0.122 |
+| narrow_gap_0 | dstar_lite | ideal | truth | none | reached / 24.52 / 24.52 / 0.3288 / 25.187 | yes | 1.393 | 0.772 |
+| office_0 | informed_rrt_star | ideal | truth | none | reached / 25.88 / 25.88 / 0.2762 / 13.578 | yes | 0.948 | 0.413 |
+| maze_0 | astar_known | ideal | truth | none | reached / 41.26 / 41.26 / 0.5937 / 36.981 | yes | 4.302 | 1.99 |
+| warehouse_0 | astar_known | ideal | truth | none | reached / 49.26 / 49.26 / 0.5151 / 34.978 | yes | 3.915 | 1.699 |
+| maze_0 | bug2 | ideal | truth | none | reached / 105.22 / 105.22 / 0.4043 / 65.49 | yes | 0.603 | 0.29 |
+| warehouse_0 | bug2 | ideal | truth | none | timeout / - / 120 / 0.4254 / 70.725 | yes | 0.61 | 0.301 |
+| maze_0 | informed_rrt_star | ideal | truth | none | reached / 69.7 / 69.7 / 0.2754 / 33.637 | yes | 0.842 | 0.404 |
+| office_0 | astar_unknown | ideal | truth | none | reached / 21.96 / 21.96 / 0.2892 / 13.764 | yes | 1.278 | 0.592 |
 
 ## VIO loss recovery: browser = native on 4/4 cases
 
@@ -44,10 +50,10 @@ Arms built by `pg_reloc.py` with `samples/close-area-relocalize/run_disambiguate
 
 | world | fault | seed | recovery | browser: outcome / time_to_goal_s / duration_s / min_clearance_m / path_length_m | events / accepted / wrong / open at end / moves | same as native | browser Python s | native Python s |
 |---|---|---|---|---|---|---|---|---|
-| reloc_demo_random_1_97 | jump | 1 | single | reached / 21.78 / 21.78 / 0.5182 / 24.151 | 6 / 6 / 1 / 0 / 0 | yes | 0.988 | 0.643 |
-| reloc_demo_random_1_97 | jump | 1 | multi | stuck / - / 22.88 / 0.853 / 17.66 | 2 / 1 / 0 / 1 / 0 | yes | 1.246 | 0.909 |
-| reloc_demo_random_1_97 | jump | 1 | multi_ig | reached / 20.34 / 20.34 / 0.6982 / 24.35 | 2 / 2 / 0 / 0 / 1 | yes | 1.018 | 0.61 |
-| u_trap_0 | dropout | 0 | multi_ig | reached / 21.76 / 21.76 / 0.6216 / 24.609 | 6 / 6 / 0 / 0 / 1 | yes | 0.817 | 0.61 |
+| reloc_demo_random_1_97 | jump | 1 | single | reached / 21.78 / 21.78 / 0.5182 / 24.151 | 6 / 6 / 1 / 0 / 0 | yes | 1.061 | 0.445 |
+| reloc_demo_random_1_97 | jump | 1 | multi | stuck / - / 22.88 / 0.853 / 17.66 | 2 / 1 / 0 / 1 / 0 | yes | 1.247 | 0.586 |
+| reloc_demo_random_1_97 | jump | 1 | multi_ig | reached / 20.34 / 20.34 / 0.6982 / 24.35 | 2 / 2 / 0 / 0 / 1 | yes | 0.979 | 0.449 |
+| u_trap_0 | dropout | 0 | multi_ig | reached / 21.76 / 21.76 / 0.6216 / 24.609 | 6 / 6 / 0 / 0 / 1 | yes | 0.822 | 0.39 |
 
 Compare all arms, reloc_demo_random_1_97, seed 1, jump ([pg_reloc_arms.png](pg_reloc_arms.png), t 13.6 s):
 
@@ -62,9 +68,9 @@ Verdict strip at 13.6 s: none nominal, single wrong, multi hovering, multi+IG ho
 
 ## Blocked CDN (cdn.jsdelivr.net mapped to 127.0.0.1, fresh profile)
 
-- `?pyodide=cdn`: load failed after 8.865 s, Retry button visible: yes. Attempts: manifest.json #1 ok (8 ms), Pyodide runtime #1 failed (1 ms), Pyodide runtime #2 failed (1 ms), Pyodide runtime #3 failed (1 ms). Message: "load failed: Pyodide runtime: 3 of 3 attempts failed, last error: Failed to fetch dynamically imported module: https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.mjs?attempt=3. Needs cdn.jsdelivr.net, or a local Pyodide folder (README: Offline / blocked CDN)." ([pg_blocked_retry.png](pg_blocked_retry.png)).
-- Retry pressed: new worker, attempt 2; 3.002 s later: "Pyodide runtime: attempt 2 of 3 failed (Failed to fetch dynamically imported module: https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.mjs?attempt=2). Trying again in 6 s..."
-- `?pyodide=auto` with site/playground/pyodide-local/ filled (README: Offline / blocked CDN): source local, ready 3.662 s after navigation, 0 successful jsdelivr requests, reloc_demo_random_1_97 jump 1 single same as native: yes.
+- `?pyodide=cdn`: load failed after 9.058 s, Retry button visible: yes. Attempts: manifest.json #1 ok (10 ms), Pyodide runtime #1 failed (1 ms), Pyodide runtime #2 failed (1 ms), Pyodide runtime #3 failed (1 ms). Message: "load failed: Pyodide runtime: 3 of 3 attempts failed, last error: Failed to fetch dynamically imported module: https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.mjs?attempt=3. Needs cdn.jsdelivr.net, or a local Pyodide folder (README: Offline / blocked CDN)." ([pg_blocked_retry.png](pg_blocked_retry.png)).
+- Retry pressed: new worker, attempt 2; 3.004 s later: "Pyodide runtime: attempt 2 of 3 failed (Failed to fetch dynamically imported module: https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.mjs?attempt=2). Trying again in 6 s..."
+- site/playground/pyodide-local/ not present: local load not measured in this run.
 - Console errors / warnings / exceptions in this profile: 0.
 
 ## Hand-drawn world (box drawn with pointer events)
@@ -78,7 +84,7 @@ One box from (7, 7) to (13, 12) on an empty 20 x 20 m area, A (1.5, 1.5), B (18.
 
 ## Page stays responsive while Python runs
 
-During astar_unknown on random_0 (3.192 s of Python in the worker) the page drew 382 animation frames; longest gap between frames 10 ms, median 8 ms.
+During astar_unknown on random_0 (2.971 s of Python in the worker) the page drew 355 animation frames; longest gap between frames 10 ms, median 8 ms.
 
 ## Shareable link
 
@@ -114,7 +120,7 @@ Console errors / warnings / exceptions in the fresh profile: 0.
 - VIO jump on random_0, astar_known: no filter collision / - / 14.2 / 0.1497 / 15.888 (jump fired at 5.1 s); F2 stuck / - / 32.88 / 0.3383 / 25.344, F2 intervened on 26.8 % of 50 Hz steps.
 - Phone 390 x 844 @2x: office_0 astar_known reached / 22.74 / 22.74 / 0.2997 / 13.765; document scroll width 390 px, body 390 px => no horizontal scroll.
 
-- Nav link at 390 px: site/showcase.html scroll width 390 px, Playground link visible (right edge 277 px); site/index.html scroll width 390 px, Playground link visible (right edge 295 px).
+- Nav link at 390 px: site/showcase.html scroll width 390 px, Playground link NOT fully visible (right edge null px); site/index.html scroll width 390 px, Playground link NOT fully visible (right edge null px).
 
 Viewport screenshots (checked with `sips -g pixelHeight`): [pg_loading.png](pg_loading.png) 1280 x 900, [pg_compare_random0.png](pg_compare_random0.png) 1280 x 900, [pg_custom_drawn.png](pg_custom_drawn.png) 1280 x 900, [pg_jump_f2_dark.png](pg_jump_f2_dark.png) 1280 x 900, [pg_shared_link.png](pg_shared_link.png) 1280 x 900, [pg_phone_390.png](pg_phone_390.png) 780 x 1688, [pg_reloc_arms.png](pg_reloc_arms.png) 1280 x 900, [pg_blocked_retry.png](pg_blocked_retry.png) 1280 x 900.
 

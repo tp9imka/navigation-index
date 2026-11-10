@@ -22,7 +22,9 @@ const LABELS = {
     lazy_thetastar_unknown: "Lazy Theta*, unknown map (geofenced)",
     mppi: "MPPI, goal only (no global plan)", mppi_astar: "MPPI on the unknown-map A* path",
     hybrid_astar: "Hybrid A*, unknown map (geofenced)" },
-  preset: { ideal: "ideal: 72 rays, 360 deg, 6 m", crazyflie: "Crazyflie: 4 cone beams, 3 m", crazyflie_bright: "Crazyflie, bright light: 0.73 m" },
+  preset: { ideal: "ideal: 72 rays, 360 deg, 6 m", crazyflie: "Crazyflie: 4 cone beams, 3 m", crazyflie_bright: "Crazyflie, bright light: 0.73 m",
+    depth_cam_87: "depth camera: 30 beams, 87 deg forward, 0.3-5 m (D435i class)",
+    lidar_2d: "2D lidar: 360 beams, 360 deg, 12 m (RPLIDAR A1 class)" },
   fault: { truth: "off: planner sees truth", none: "VIO EKF, no fault", jump: "VIO jump 0.5 m", bias: "VIO bias 0.05 m/s, 10 s", dropout: "VIO dropout 2 s" },
   filter: { none: "none", F2: "F2: PX4-CBF on ranges" },
   recovery: { none: "none: VIO EKF only", single: "single: commit to the best match", multi: "multi: hover until one wins",
@@ -32,6 +34,12 @@ const DEFAULT_CFG = [
   { planner: "astar_known", preset: "ideal", fault: "truth", filter: "none", recovery: "none" },
   { planner: "freest_beam", preset: "ideal", fault: "truth", filter: "none", recovery: "none" },
 ];
+// "Advanced: your drone" (loop-75b): one vehicle for configs A and B. a_max and tau stay at run.DEFAULTS.
+// Sent as cfg.vehicle only when radius or v_max differ from the defaults, and cfg.yaw only when not "fixed",
+// so a default run sends the same message (and gets the same result) as before.
+const DRONE_DEFAULT = { radius_m: 0.15, v_max: 2.0, a_max: 3.0, tau: 0.15 };
+const DRONE_RANGE = { radius_m: [0.05, 0.6], v_max: [0.1, 5.0] };          // worker.js VEHICLE_CLAMP
+const YAW_LABEL = { fixed: "fixed: keep the start bearing to B", look_where_you_go: "look where you go: face the velocity" };
 // VIO loss recovery (pg_reloc.py): active with these faults; the arm flies A* known map, no filter.
 const RELOC_FAULTS = ["jump", "dropout"];
 const ARMS = ["none", "single", "multi", "multi_ig"];
@@ -591,10 +599,29 @@ function lockCfg(id) {
   if (id === "A") syncArms();
 }
 
+function readDrone() {          // the form values, clamped to DRONE_RANGE; empty or junk => default
+  const num = k => {
+    const v = parseFloat($(k === "radius_m" ? "#drRadius" : "#drVmax").value), [lo, hi] = DRONE_RANGE[k];
+    return Number.isFinite(v) ? Math.round(Math.min(hi, Math.max(lo, v)) * 1000) / 1000 : DRONE_DEFAULT[k];
+  };
+  const yaw = $("#drYaw").value in YAW_LABEL ? $("#drYaw").value : "fixed";
+  return { radius_m: num("radius_m"), v_max: num("v_max"), yaw };
+}
+function setDrone(cfg) {         // cfg.vehicle / cfg.yaw of a run config; absent => defaults
+  const v = (cfg && cfg.vehicle) || DRONE_DEFAULT;
+  $("#drRadius").value = v.radius_m; $("#drVmax").value = v.v_max;
+  $("#drYaw").value = (cfg && cfg.yaw) || "fixed";
+  const custom = v.radius_m !== DRONE_DEFAULT.radius_m || v.v_max !== DRONE_DEFAULT.v_max || $("#drYaw").value !== "fixed";
+  if (custom) $("#droneBox").open = true;
+}
 function readCfg(which) {
   const id = which === 0 ? "A" : "B", o = {};
   for (const k of CFG_KEYS) o[k] = $(`#${id}_${k}`).value;
   o.seed = Math.max(0, Math.min(9999, parseInt($("#seed").value, 10) || 0));
+  const d = readDrone();
+  if (d.radius_m !== DRONE_DEFAULT.radius_m || d.v_max !== DRONE_DEFAULT.v_max)
+    o.vehicle = { ...DRONE_DEFAULT, radius_m: d.radius_m, v_max: d.v_max };
+  if (d.yaw !== "fixed") o.yaw = d.yaw;
   return o;
 }
 function setCfg(which, cfg) {
@@ -604,6 +631,7 @@ function setCfg(which, cfg) {
   for (const k of keys) {
     const v = cfg[k];
     if (k === "seed") $("#seed").value = v;
+    else if (k === "vehicle" || k === "yaw") { if (which === 0) setDrone(cfg); }
     else if ($(`#${id}_${k}`)) { $(`#${id}_${k}`).value = v; if (k === "fault") lockCfg(id); }
   }
   lockCfg(id);
@@ -630,6 +658,7 @@ function applyEnv(env) {        // disable options the worker could not load
     for (const o of $(`#${id}_planner`).options) o.disabled = !env.planners.includes(o.value);
     for (const o of $(`#${id}_filter`).options) o.disabled = !env.filters.includes(o.value);
     for (const o of $(`#${id}_recovery`).options) o.disabled = !(env.recovery || ["none"]).includes(o.value);
+    if (env.presets) for (const o of $(`#${id}_preset`).options) o.disabled = !env.presets.includes(o.value);
     lockCfg(id);
   }
   const errs = Object.entries(env.load_errors || {}).map(([k, v]) => `${k}: ${v}`).join("; ");
@@ -640,7 +669,8 @@ function applyEnv(env) {        // disable options the worker could not load
 // ---------------------------------------------------------------- shareable link
 // URL = page ? config query params # w=<world JSON, deflate (zlib, CompressionStream), base64url>.
 // Params: planner, preset, fault, filter, recovery (config A), the same with _b (config B), compare=1,
-// arms=1 (compare all recovery arms on config A), seed,
+// arms=1 (compare all recovery arms on config A), seed, and (loop-75b, "Advanced: your drone", only when not
+// the default) radius=<m>, v_max=<m/s>, yaw=look_where_you_go; they apply to both configs,
 // src=<preset name> when the world is an unedited preset (only used to show the native parity note).
 const CFG_KEYS = ["planner", "preset", "fault", "filter", "recovery"];
 
@@ -675,6 +705,8 @@ async function shareUrl() {
   if (cmp) { const b = readCfg(1); q.set("compare", "1"); for (const k of CFG_KEYS) q.set(k + "_b", b[k]); }
   if ($("#armsCmp").checked) q.set("arms", "1");
   q.set("seed", String(a.seed));
+  if (a.vehicle) { q.set("radius", String(a.vehicle.radius_m)); q.set("v_max", String(a.vehicle.v_max)); }
+  if (a.yaw) q.set("yaw", a.yaw);
   if (S.pristine && S.presetName) q.set("src", S.presetName);
   return location.origin + location.pathname + "?" + q.toString() + "#w=" + await encodeWorld(S.doc);
 }
@@ -687,6 +719,21 @@ function cfgFromQuery(q, suffix) {     // unknown values are dropped, the panel 
     if (Object.prototype.hasOwnProperty.call(LABELS[k], v)) c[k] = v; else bad.push(`${k}${suffix}=${v}`);
   }
   return [c, bad];
+}
+
+function droneFromQuery(q) {     // [{vehicle?, yaw?}, ignored params]; out-of-range numbers are dropped, not clamped
+  const out = {}, bad = [], veh = { ...DRONE_DEFAULT };
+  let custom = false;
+  for (const [p, k] of [["radius", "radius_m"], ["v_max", "v_max"]]) {
+    const t = q.get(p);
+    if (t == null) continue;
+    const v = Number(t), [lo, hi] = DRONE_RANGE[k];
+    if (t.trim() !== "" && Number.isFinite(v) && v >= lo && v <= hi) { veh[k] = v; custom = true; } else bad.push(`${p}=${t}`);
+  }
+  if (custom) out.vehicle = veh;
+  const y = q.get("yaw");
+  if (y != null) { if (y in YAW_LABEL) out.yaw = y; else bad.push(`yaw=${y}`); }
+  return [out, bad];
 }
 
 // Restore world + config from the current URL. Returns true when the link held a world.
@@ -709,9 +756,11 @@ async function restoreFromUrl() {
   const seed = parseInt(q.get("seed"), 10);
   if (Number.isFinite(seed)) ca.seed = Math.max(0, Math.min(9999, seed));
   setCfg(0, ca); setCfg(1, cb);
+  const [drone, badD] = droneFromQuery(q);
+  setDrone(drone);
   $("#compare").checked = q.get("compare") === "1"; $("#compare").onchange();
   $("#armsCmp").checked = q.get("arms") === "1" && !$("#armsCmp").disabled; $("#armsCmp").onchange();
-  const bad = badA.concat(badB);
+  const bad = badA.concat(badB, badD);
   worldMsg(`World and config restored from the link (${doc.obstacles.length} obstacles).` + (bad.length ? " Ignored: " + bad.join(", ") : ""), bad.length ? "bad" : "ok");
   S.fromLink = true;
   return true;
@@ -733,7 +782,7 @@ $("#linkBtn").onclick = async () => {
 // The worker retries each load step itself (worker.js step()). When it gives up, or the load runs
 // longer than SLOW_S, the Retry button starts a fresh worker. readyP resolves on the first ready.
 // ?pyodide=cdn|local|auto in the page URL is passed on to the worker (manifest.json pyodide_source).
-const WORKER_URL = "worker.js?v=20261110c";   // bump when worker.js changes (also solver.js WORKER_V)
+const WORKER_URL = "worker.js?v=20261110d";   // bump when worker.js changes (also solver.js WORKER_V)
 const SLOW_S = 45;
 const PYODIDE_Q = (q => (/^(cdn|local|auto)$/.test(q || "") ? q : null))(new URLSearchParams(location.search).get("pyodide"));
 let worker = null, readyResolve;
@@ -826,6 +875,7 @@ async function runNow(cfgs, opts) {
   try { checkDoc(S.doc); } catch (err) { runMsg(err.message, true); return null; }
   if (cfgs) {                    // scripted run: show the configs it uses in the panel
     cfgs.slice(0, 2).forEach((c, k) => setCfg(k, { recovery: "none", ...c }));
+    setDrone(cfgs[0]);            // the panel shows the drone the scripted run flies (defaults when absent)
     $("#compare").checked = cfgs.length > 1 && !(opts && opts.arms); $("#compare").onchange();
     $("#armsCmp").checked = !!(opts && opts.arms) && !$("#armsCmp").disabled;
   }
@@ -940,6 +990,8 @@ function showScore() {
   const rows = [
     ["Planner", r => esc(LABELS.planner[r.config.planner])],
     ["Sensor", r => esc(r.config.preset)],
+    ["Vehicle radius / v_max", r => `${fmt(r.radius)} m / ${fmt(r.vehicle ? r.vehicle.v_max : null)} m/s`],
+    ["Yaw", r => esc(r.yaw || "fixed")],
     ["VIO fault", r => esc(LABELS.fault[r.config.fault])],
     ["Safety filter", r => esc(r.config.filter)],
     ["VIO loss recovery", r => esc(LABELS.recovery[r.config.recovery || "none"])],
@@ -961,7 +1013,7 @@ function showScore() {
       ["Hovering while lost, s", r => relocF(r, s => fmt(s.hover_s))],
       ["Info-gain moves flown", r => relocF(r, s => s.moves)],
     ] : []),
-    ["Free path for 0.15 m (BFS)", r => (r.free_path ? "yes" : "no")],
+    ["Free path at this radius (BFS)", r => (r.free_path ? "yes" : "no")],
     ["Python wall time, s", r => fmt(r.wall_s)],
   ];
   const head = `<thead><tr><th></th>${R.map((r, k) => `<th><span class="sw-${"abcd"[k % 4]}"></span> ${esc(runLabel(k))}</th>`).join("")}</tr></thead>`;
@@ -1021,6 +1073,7 @@ async function parityNote() {
   const keys = S.parity.keys, msgs = [];
   (S.runs || []).forEach((r, k) => {
     const c = r.config, rec = c.recovery || "none";
+    if ((r.vehicle && r.vehicle.source === "cfg") || (r.yaw && r.yaw !== "fixed")) return;   // native_parity_custom.json has those
     const match = x => x.world === S.presetName && x.planner === c.planner && x.preset === c.preset && x.fault === c.fault && x.filter === c.filter;
     const ref = rec === "none" ? c.seed === 0 && S.parity.cases.find(match)
       : (S.parity.reloc_cases || []).find(x => match(x) && x.seed === c.seed && x.recovery === rec);

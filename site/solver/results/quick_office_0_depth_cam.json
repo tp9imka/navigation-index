@@ -1,0 +1,3608 @@
+{
+ "schema": "navidx-solver-sweep/1",
+ "input": "synthetic",
+ "note": "SYNTHETIC SIMULATION, 2.5D POINT MASS. Scored on truth. Not a flight result. n seeds on one map is a small sample. Identical runs (same variation, outcome, time to B and path length at 3 dp) count once in every interval.",
+ "world_name": "office_0",
+ "spec": {
+  "planners": [
+   "straight",
+   "freest_beam",
+   "astar_known",
+   "astar_unknown",
+   "apf",
+   "vfh_plus",
+   "dwa",
+   "dwa_mem",
+   "bug2",
+   "tangent_bug",
+   "dstar_lite",
+   "informed_rrt_star",
+   "thetastar_known",
+   "lazy_thetastar_known",
+   "lazy_thetastar_unknown",
+   "mppi",
+   "mppi_astar",
+   "hybrid_astar"
+  ],
+  "presets": [
+   "depth_cam_87"
+  ],
+  "faults": [
+   "truth"
+  ],
+  "fault": null,
+  "seeds": 3,
+  "jitter": 0.5,
+  "time_limit": "auto",
+  "vehicle": {
+   "radius_m": 0.15,
+   "v_max": 2,
+   "a_max": 3,
+   "tau": 0.15
+  },
+  "sensor_choice": "depth_cam_87",
+  "sensor": null,
+  "yaw": "fixed"
+ },
+ "run_count": 54,
+ "records_n": 54,
+ "cancelled": false,
+ "started": "2026-11-10T09:16:33.752Z",
+ "finished": "2026-11-10T09:16:51.275Z",
+ "pool": {
+  "workers": 4,
+  "hardware_concurrency": 16,
+  "ready_workers": 4,
+  "python_ready_s": 6.662,
+  "sweep_wall_s": 17.523,
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36"
+ },
+ "env": {
+  "python": "3.14.2",
+  "numpy": "2.4.6",
+  "scipy": "1.18.0",
+  "machine": "wasm32",
+  "system": "Emscripten",
+  "imports_ms": {
+   "scipy_ndimage": 698.1,
+   "arena": 38.4,
+   "reactive": 3.4,
+   "sample_planners": 234,
+   "safety_filter": 311.4
+  },
+  "planners": [
+   "straight",
+   "freest_beam",
+   "astar_known",
+   "astar_unknown",
+   "apf",
+   "vfh_plus",
+   "dwa",
+   "dwa_mem",
+   "bug2",
+   "tangent_bug",
+   "dstar_lite",
+   "informed_rrt_star",
+   "thetastar_known",
+   "lazy_thetastar_known",
+   "lazy_thetastar_unknown",
+   "mppi",
+   "mppi_astar",
+   "hybrid_astar"
+  ],
+  "presets": [
+   "ideal",
+   "crazyflie",
+   "crazyflie_bright",
+   "depth_cam_87",
+   "lidar_2d"
+  ],
+  "faults": [
+   "truth",
+   "none",
+   "jump",
+   "bias",
+   "dropout"
+  ],
+  "filters": [
+   "none",
+   "F2"
+  ],
+  "yaw": [
+   "fixed",
+   "look_where_you_go"
+  ],
+  "radius_consts": [
+   "astar.RADIUS",
+   "astar.CARROT_CLEAR_M",
+   "ha.RADIUS",
+   "rrt.RADIUS",
+   "mppi.R_COLL",
+   "mppi.D_SAFE",
+   "dwa.RADIUS",
+   "bug.RADIUS"
+  ],
+  "recovery": [
+   "none",
+   "single",
+   "multi",
+   "multi_ig"
+  ],
+  "load_errors": {},
+  "pyodide": "314.0.7",
+  "pyodide_source": "cdn",
+  "pyodide_base": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/",
+  "arena_files": 42,
+  "load_attempts": [
+   {
+    "step": "manifest.json",
+    "attempt": 1,
+    "ok": true,
+    "ms": 3
+   },
+   {
+    "step": "Pyodide runtime",
+    "attempt": 1,
+    "ok": true,
+    "ms": 2383
+   },
+   {
+    "step": "hub .py files",
+    "attempt": 1,
+    "ok": true,
+    "ms": 64
+   },
+   {
+    "step": "numpy + scipy wheels",
+    "attempt": 1,
+    "ok": true,
+    "ms": 2620
+   }
+  ]
+ },
+ "drone": {
+  "vehicle": {
+   "radius_m": 0.15,
+   "v_max": 2,
+   "a_max": 3,
+   "tau": 0.15
+  },
+  "vehicle_default": {
+   "radius_m": 0.15,
+   "v_max": 2,
+   "a_max": 3,
+   "tau": 0.15
+  },
+  "vehicle_sent": false,
+  "sensor_choice": "depth_cam_87",
+  "sensor": null,
+  "custom_label": null,
+  "custom_defaults": {
+   "cone_deg": 0,
+   "dropout": 0.02,
+   "source": "presets.py SENSOR_SPEC_DEFAULTS, filled by the worker"
+  },
+  "yaw": "fixed",
+  "yaw_sent": false,
+  "yaw_policy_flown": [
+   "off"
+  ],
+  "sensor_specs": {
+   "depth_cam_87": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   }
+  }
+ },
+ "jitter": {
+  "radius_m": 0.5,
+  "min_clearance_m": 0.25,
+  "max_draws": 50,
+  "prng": "mulberry32",
+  "seed0": "exact map",
+  "per_seed": [
+   {
+    "seed": 0,
+    "a": [
+     0,
+     0
+    ],
+    "b": [
+     -6.7483,
+     -7.3857
+    ],
+    "exact": true,
+    "a_kept": false,
+    "b_kept": false,
+    "draws": 0
+   },
+   {
+    "seed": 1,
+    "a": [
+     -0.0595,
+     0.3866
+    ],
+    "b": [
+     -7.0546,
+     -7.5944
+    ],
+    "exact": false,
+    "a_kept": false,
+    "b_kept": false,
+    "draws": 2
+   },
+   {
+    "seed": 2,
+    "a": [
+     -0.1082,
+     0.2777
+    ],
+    "b": [
+     -7.0774,
+     -7.3763
+    ],
+    "exact": false,
+    "a_kept": false,
+    "b_kept": false,
+    "draws": 2
+   }
+  ]
+ },
+ "time_limit": {
+  "choice": "auto",
+  "expected_s": 60,
+  "source": "default",
+  "used_s": [
+   60
+  ],
+  "long_families": {
+   "maze": 120,
+   "warehouse": 120
+  },
+  "default_s": 60,
+  "rule": "auto: world.family in long_families => that limit, else default_s (bench.py LONG_FAMILIES)"
+ },
+ "headline": {
+  "kind": "tie",
+  "planner": null,
+  "planners": [
+   "mppi_astar",
+   "lazy_thetastar_known"
+  ],
+  "text": "No clear winner: MPPI on the unknown-map A* path and Lazy Theta*, known map are within noise on this map (n=3)."
+ },
+ "ranking": [
+  {
+   "planner": "mppi_astar",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 3,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 3,
+   "success": {
+    "p": 1,
+    "lo": 0.43849391955098227,
+    "hi": 1
+   },
+   "median_time_s": 14.62,
+   "median_path_m": 15.018,
+   "min_clearance_m": 0.2502,
+   "collision_rate": 0,
+   "mean_wall_s": 2.2983333333333333
+  },
+  {
+   "planner": "lazy_thetastar_known",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 3,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 3,
+   "success": {
+    "p": 1,
+    "lo": 0.43849391955098227,
+    "hi": 1
+   },
+   "median_time_s": 19.74,
+   "median_path_m": 14.721,
+   "min_clearance_m": 0.362,
+   "collision_rate": 0,
+   "mean_wall_s": 2.292
+  },
+  {
+   "planner": "thetastar_known",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 3,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 3,
+   "success": {
+    "p": 1,
+    "lo": 0.43849391955098227,
+    "hi": 1
+   },
+   "median_time_s": 19.92,
+   "median_path_m": 14.704,
+   "min_clearance_m": 0.3723,
+   "collision_rate": 0,
+   "mean_wall_s": 3.4919999999999995
+  },
+  {
+   "planner": "hybrid_astar",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 3,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 3,
+   "success": {
+    "p": 1,
+    "lo": 0.43849391955098227,
+    "hi": 1
+   },
+   "median_time_s": 20.14,
+   "median_path_m": 14.259,
+   "min_clearance_m": 0.2839,
+   "collision_rate": 0,
+   "mean_wall_s": 1.075
+  },
+  {
+   "planner": "astar_known",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 3,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 3,
+   "success": {
+    "p": 1,
+    "lo": 0.43849391955098227,
+    "hi": 1
+   },
+   "median_time_s": 23.1,
+   "median_path_m": 13.989,
+   "min_clearance_m": 0.2763,
+   "collision_rate": 0,
+   "mean_wall_s": 1.0056666666666667
+  },
+  {
+   "planner": "astar_unknown",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 3,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 3,
+   "success": {
+    "p": 1,
+    "lo": 0.43849391955098227,
+    "hi": 1
+   },
+   "median_time_s": 25.14,
+   "median_path_m": 14.723,
+   "min_clearance_m": 0.171,
+   "collision_rate": 0,
+   "mean_wall_s": 1.6496666666666666
+  },
+  {
+   "planner": "dstar_lite",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 3,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 3,
+   "success": {
+    "p": 1,
+    "lo": 0.43849391955098227,
+    "hi": 1
+   },
+   "median_time_s": 25.5,
+   "median_path_m": 14.763,
+   "min_clearance_m": 0.171,
+   "collision_rate": 0,
+   "mean_wall_s": 1.338
+  },
+  {
+   "planner": "informed_rrt_star",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 3,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 3,
+   "success": {
+    "p": 1,
+    "lo": 0.43849391955098227,
+    "hi": 1
+   },
+   "median_time_s": 26.18,
+   "median_path_m": 13.773,
+   "min_clearance_m": 0.2673,
+   "collision_rate": 0,
+   "mean_wall_s": 0.8856666666666667
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 1,
+   "collision": 2,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 1,
+   "success": {
+    "p": 0.3333333333333333,
+    "lo": 0.0614903152761605,
+    "hi": 0.7923450448735121
+   },
+   "median_time_s": 20.06,
+   "median_path_m": 0.464,
+   "min_clearance_m": 0.1476,
+   "collision_rate": 0.6666666666666666,
+   "mean_wall_s": 1.2516666666666667
+  },
+  {
+   "planner": "apf",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 2,
+   "timeout": 1,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.5615060804490177
+   },
+   "median_time_s": null,
+   "median_path_m": 5.754,
+   "min_clearance_m": 0.3494,
+   "collision_rate": 0,
+   "mean_wall_s": 0.17233333333333334
+  },
+  {
+   "planner": "bug2",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.5615060804490177
+   },
+   "median_time_s": null,
+   "median_path_m": 5.829,
+   "min_clearance_m": 0.4609,
+   "collision_rate": 0,
+   "mean_wall_s": 0.14733333333333334
+  },
+  {
+   "planner": "dwa",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.5615060804490177
+   },
+   "median_time_s": null,
+   "median_path_m": 2.87,
+   "min_clearance_m": 0.26,
+   "collision_rate": 0,
+   "mean_wall_s": 0.6136666666666667
+  },
+  {
+   "planner": "dwa_mem",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.5615060804490177
+   },
+   "median_time_s": null,
+   "median_path_m": 3.626,
+   "min_clearance_m": 0.3064,
+   "collision_rate": 0,
+   "mean_wall_s": 1.104
+  },
+  {
+   "planner": "freest_beam",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.5615060804490177
+   },
+   "median_time_s": null,
+   "median_path_m": 6.547,
+   "min_clearance_m": 0.4243,
+   "collision_rate": 0,
+   "mean_wall_s": 0.13933333333333334
+  },
+  {
+   "planner": "mppi",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.5615060804490177
+   },
+   "median_time_s": null,
+   "median_path_m": 2.988,
+   "min_clearance_m": 0.4609,
+   "collision_rate": 0,
+   "mean_wall_s": 0.9246666666666666
+  },
+  {
+   "planner": "straight",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.5615060804490177
+   },
+   "median_time_s": null,
+   "median_path_m": 0.769,
+   "min_clearance_m": 0.384,
+   "collision_rate": 0,
+   "mean_wall_s": 0.1436666666666667
+  },
+  {
+   "planner": "tangent_bug",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.5615060804490177
+   },
+   "median_time_s": null,
+   "median_path_m": 33.63,
+   "min_clearance_m": 0.3633,
+   "collision_rate": 0,
+   "mean_wall_s": 0.26899999999999996
+  },
+  {
+   "planner": "vfh_plus",
+   "n": 3,
+   "n_distinct": 3,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.5615060804490177
+   },
+   "median_time_s": null,
+   "median_path_m": 8.764,
+   "min_clearance_m": 0.4363,
+   "collision_rate": 0,
+   "mean_wall_s": 0.158
+  }
+ ],
+ "matrix": {
+  "straight": {
+   "depth_cam_87|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 3,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.5615060804490177
+    },
+    "median_time_s": null,
+    "median_path_m": 0.769,
+    "min_clearance_m": 0.384,
+    "collision_rate": 0,
+    "mean_wall_s": 0.1436666666666667
+   }
+  },
+  "freest_beam": {
+   "depth_cam_87|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 3,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.5615060804490177
+    },
+    "median_time_s": null,
+    "median_path_m": 6.547,
+    "min_clearance_m": 0.4243,
+    "collision_rate": 0,
+    "mean_wall_s": 0.13933333333333334
+   }
+  },
+  "astar_known": {
+   "depth_cam_87|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 3,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 3,
+    "success": {
+     "p": 1,
+     "lo": 0.43849391955098227,
+     "hi": 1
+    },
+    "median_time_s": 23.1,
+    "median_path_m": 13.989,
+    "min_clearance_m": 0.2763,
+    "collision_rate": 0,
+    "mean_wall_s": 1.0056666666666667
+   }
+  },
+  "astar_unknown": {
+   "depth_cam_87|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 3,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 3,
+    "success": {
+     "p": 1,
+     "lo": 0.43849391955098227,
+     "hi": 1
+    },
+    "median_time_s": 25.14,
+    "median_path_m": 14.723,
+    "min_clearance_m": 0.171,
+    "collision_rate": 0,
+    "mean_wall_s": 1.6496666666666666
+   }
+  },
+  "apf": {
+   "depth_cam_87|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 2,
+    "timeout": 1,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.5615060804490177
+    },
+    "median_time_s": null,
+    "median_path_m": 5.754,
+    "min_clearance_m": 0.3494,
+    "collision_rate": 0,
+    "mean_wall_s": 0.17233333333333334
+   }
+  },
+  "vfh_plus": {
+   "depth_cam_87|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 3,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.5615060804490177
+    },
+    "median_time_s": null,
+    "median_path_m": 8.764,
+    "min_clearance_m": 0.4363,
+    "collision_rate": 0,
+    "mean_wall_s": 0.158
+   }
+  },
+  "dwa": {
+   "depth_cam_87|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 3,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.5615060804490177
+    },
+    "median_time_s": null,
+    "median_path_m": 2.87,
+    "min_clearance_m": 0.26,
+    "collision_rate": 0,
+    "mean_wall_s": 0.6136666666666667
+   }
+  },
+  "dwa_mem": {
+   "depth_cam_87|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 3,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.5615060804490177
+    },
+    "median_time_s": null,
+    "median_path_m": 3.626,
+    "min_clearance_m": 0.3064,
+    "collision_rate": 0,
+    "mean_wall_s": 1.104
+   }
+  },
+  "bug2": {
+   "depth_cam_87|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 3,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.5615060804490177
+    },
+    "median_time_s": null,
+    "median_path_m": 5.829,
+    "min_clearance_m": 0.4609,
+    "collision_rate": 0,
+    "mean_wall_s": 0.14733333333333334
+   }
+  },
+  "tangent_bug": {
+   "depth_cam_87|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 3,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.5615060804490177
+    },
+    "median_time_s": null,
+    "median_path_m": 33.63,
+    "min_clearance_m": 0.3633,
+    "collision_rate": 0,
+    "mean_wall_s": 0.26899999999999996
+   }
+  },
+  "dstar_lite": {
+   "depth_cam_87|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 3,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 3,
+    "success": {
+     "p": 1,
+     "lo": 0.43849391955098227,
+     "hi": 1
+    },
+    "median_time_s": 25.5,
+    "median_path_m": 14.763,
+    "min_clearance_m": 0.171,
+    "collision_rate": 0,
+    "mean_wall_s": 1.338
+   }
+  },
+  "informed_rrt_star": {
+   "depth_cam_87|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 3,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 3,
+    "success": {
+     "p": 1,
+     "lo": 0.43849391955098227,
+     "hi": 1
+    },
+    "median_time_s": 26.18,
+    "median_path_m": 13.773,
+    "min_clearance_m": 0.2673,
+    "collision_rate": 0,
+    "mean_wall_s": 0.8856666666666667
+   }
+  },
+  "thetastar_known": {
+   "depth_cam_87|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 3,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 3,
+    "success": {
+     "p": 1,
+     "lo": 0.43849391955098227,
+     "hi": 1
+    },
+    "median_time_s": 19.92,
+    "median_path_m": 14.704,
+    "min_clearance_m": 0.3723,
+    "collision_rate": 0,
+    "mean_wall_s": 3.4919999999999995
+   }
+  },
+  "lazy_thetastar_known": {
+   "depth_cam_87|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 3,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 3,
+    "success": {
+     "p": 1,
+     "lo": 0.43849391955098227,
+     "hi": 1
+    },
+    "median_time_s": 19.74,
+    "median_path_m": 14.721,
+    "min_clearance_m": 0.362,
+    "collision_rate": 0,
+    "mean_wall_s": 2.292
+   }
+  },
+  "lazy_thetastar_unknown": {
+   "depth_cam_87|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 1,
+    "collision": 2,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 1,
+    "success": {
+     "p": 0.3333333333333333,
+     "lo": 0.0614903152761605,
+     "hi": 0.7923450448735121
+    },
+    "median_time_s": 20.06,
+    "median_path_m": 0.464,
+    "min_clearance_m": 0.1476,
+    "collision_rate": 0.6666666666666666,
+    "mean_wall_s": 1.2516666666666667
+   }
+  },
+  "mppi": {
+   "depth_cam_87|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 3,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.5615060804490177
+    },
+    "median_time_s": null,
+    "median_path_m": 2.988,
+    "min_clearance_m": 0.4609,
+    "collision_rate": 0,
+    "mean_wall_s": 0.9246666666666666
+   }
+  },
+  "mppi_astar": {
+   "depth_cam_87|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 3,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 3,
+    "success": {
+     "p": 1,
+     "lo": 0.43849391955098227,
+     "hi": 1
+    },
+    "median_time_s": 14.62,
+    "median_path_m": 15.018,
+    "min_clearance_m": 0.2502,
+    "collision_rate": 0,
+    "mean_wall_s": 2.2983333333333333
+   }
+  },
+  "hybrid_astar": {
+   "depth_cam_87|truth": {
+    "n": 3,
+    "n_distinct": 3,
+    "identical": 0,
+    "reached": 3,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 3,
+    "success": {
+     "p": 1,
+     "lo": 0.43849391955098227,
+     "hi": 1
+    },
+    "median_time_s": 20.14,
+    "median_path_m": 14.259,
+    "min_clearance_m": 0.2839,
+    "collision_rate": 0,
+    "mean_wall_s": 1.075
+   }
+  }
+ },
+ "records": [
+  {
+   "planner": "straight",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    -6.7483,
+    -7.3857
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 0.832,
+   "min_clearance_m": 0.3893,
+   "duration_s": 12.18,
+   "max_time_s": 60,
+   "wall_s": 0.17,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "freest_beam",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    -6.7483,
+    -7.3857
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 6.099,
+   "min_clearance_m": 0.4376,
+   "duration_s": 13.66,
+   "max_time_s": 60,
+   "wall_s": 0.143,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "astar_known",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    -6.7483,
+    -7.3857
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 22.74,
+   "path_length_m": 13.765,
+   "min_clearance_m": 0.2997,
+   "duration_s": 22.74,
+   "max_time_s": 60,
+   "wall_s": 0.945,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "astar_unknown",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    -6.7483,
+    -7.3857
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 23.14,
+   "path_length_m": 14.253,
+   "min_clearance_m": 0.191,
+   "duration_s": 23.14,
+   "max_time_s": 60,
+   "wall_s": 1.435,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "apf",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    -6.7483,
+    -7.3857
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "timeout",
+   "time_to_goal_s": null,
+   "path_length_m": 5.754,
+   "min_clearance_m": 0.5515,
+   "duration_s": 11.64,
+   "max_time_s": 60,
+   "wall_s": 0.134,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "vfh_plus",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    -6.7483,
+    -7.3857
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 8.572,
+   "min_clearance_m": 0.4708,
+   "duration_s": 12.74,
+   "max_time_s": 60,
+   "wall_s": 0.162,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "dwa",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    -6.7483,
+    -7.3857
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 2.764,
+   "min_clearance_m": 0.2698,
+   "duration_s": 25.24,
+   "max_time_s": 60,
+   "wall_s": 0.615,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "dwa_mem",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    -6.7483,
+    -7.3857
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 3.318,
+   "min_clearance_m": 0.3064,
+   "duration_s": 23.26,
+   "max_time_s": 60,
+   "wall_s": 1.097,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "bug2",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    -6.7483,
+    -7.3857
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 5.888,
+   "min_clearance_m": 0.5646,
+   "duration_s": 10.1,
+   "max_time_s": 60,
+   "wall_s": 0.131,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "tangent_bug",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    -6.7483,
+    -7.3857
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 40.206,
+   "min_clearance_m": 0.3855,
+   "duration_s": 59.18,
+   "max_time_s": 60,
+   "wall_s": 0.347,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "dstar_lite",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    -6.7483,
+    -7.3857
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 23.5,
+   "path_length_m": 14.249,
+   "min_clearance_m": 0.223,
+   "duration_s": 23.5,
+   "max_time_s": 60,
+   "wall_s": 1.205,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "informed_rrt_star",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    -6.7483,
+    -7.3857
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 25.88,
+   "path_length_m": 13.578,
+   "min_clearance_m": 0.2762,
+   "duration_s": 25.88,
+   "max_time_s": 60,
+   "wall_s": 0.868,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "thetastar_known",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    -6.7483,
+    -7.3857
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 19.48,
+   "path_length_m": 14.43,
+   "min_clearance_m": 0.3726,
+   "duration_s": 19.48,
+   "max_time_s": 60,
+   "wall_s": 3.076,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "lazy_thetastar_known",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    -6.7483,
+    -7.3857
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 19.18,
+   "path_length_m": 14.457,
+   "min_clearance_m": 0.3854,
+   "duration_s": 19.18,
+   "max_time_s": 60,
+   "wall_s": 2.024,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    -6.7483,
+    -7.3857
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 20.06,
+   "path_length_m": 15.229,
+   "min_clearance_m": 0.3494,
+   "duration_s": 20.06,
+   "max_time_s": 60,
+   "wall_s": 2.433,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "mppi",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    -6.7483,
+    -7.3857
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 2.739,
+   "min_clearance_m": 0.667,
+   "duration_s": 13.48,
+   "max_time_s": 60,
+   "wall_s": 0.851,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "mppi_astar",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    -6.7483,
+    -7.3857
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 14.14,
+   "path_length_m": 14.516,
+   "min_clearance_m": 0.2836,
+   "duration_s": 14.14,
+   "max_time_s": 60,
+   "wall_s": 1.822,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "hybrid_astar",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0,
+    0
+   ],
+   "b": [
+    -6.7483,
+    -7.3857
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 19.9,
+   "path_length_m": 14.259,
+   "min_clearance_m": 0.2977,
+   "duration_s": 19.9,
+   "max_time_s": 60,
+   "wall_s": 1.018,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "straight",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    -7.0546,
+    -7.5944
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 0.769,
+   "min_clearance_m": 0.384,
+   "duration_s": 12.16,
+   "max_time_s": 60,
+   "wall_s": 0.136,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "freest_beam",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    -7.0546,
+    -7.5944
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 7.006,
+   "min_clearance_m": 0.4243,
+   "duration_s": 14.14,
+   "max_time_s": 60,
+   "wall_s": 0.139,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "astar_known",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    -7.0546,
+    -7.5944
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 23.78,
+   "path_length_m": 14.295,
+   "min_clearance_m": 0.297,
+   "duration_s": 23.78,
+   "max_time_s": 60,
+   "wall_s": 1.044,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "astar_unknown",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    -7.0546,
+    -7.5944
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 26.08,
+   "path_length_m": 15.008,
+   "min_clearance_m": 0.171,
+   "duration_s": 26.08,
+   "max_time_s": 60,
+   "wall_s": 1.818,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "apf",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    -7.0546,
+    -7.5944
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 21.214,
+   "min_clearance_m": 0.451,
+   "duration_s": 38.8,
+   "max_time_s": 60,
+   "wall_s": 0.243,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "vfh_plus",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    -7.0546,
+    -7.5944
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 8.764,
+   "min_clearance_m": 0.4609,
+   "duration_s": 12.66,
+   "max_time_s": 60,
+   "wall_s": 0.158,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "dwa",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    -7.0546,
+    -7.5944
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 2.931,
+   "min_clearance_m": 0.2741,
+   "duration_s": 25.1,
+   "max_time_s": 60,
+   "wall_s": 0.614,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "dwa_mem",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    -7.0546,
+    -7.5944
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 3.666,
+   "min_clearance_m": 0.3082,
+   "duration_s": 24.26,
+   "max_time_s": 60,
+   "wall_s": 1.084,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "bug2",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    -7.0546,
+    -7.5944
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 5.829,
+   "min_clearance_m": 0.4609,
+   "duration_s": 17.74,
+   "max_time_s": 60,
+   "wall_s": 0.155,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "tangent_bug",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    -7.0546,
+    -7.5944
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 9.535,
+   "min_clearance_m": 0.4253,
+   "duration_s": 14.4,
+   "max_time_s": 60,
+   "wall_s": 0.147,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "dstar_lite",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    -7.0546,
+    -7.5944
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 26.4,
+   "path_length_m": 14.969,
+   "min_clearance_m": 0.171,
+   "duration_s": 26.4,
+   "max_time_s": 60,
+   "wall_s": 1.371,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "informed_rrt_star",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    -7.0546,
+    -7.5944
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 27.72,
+   "path_length_m": 14.076,
+   "min_clearance_m": 0.276,
+   "duration_s": 27.72,
+   "max_time_s": 60,
+   "wall_s": 0.857,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "thetastar_known",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    -7.0546,
+    -7.5944
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 20.24,
+   "path_length_m": 15.072,
+   "min_clearance_m": 0.3732,
+   "duration_s": 20.24,
+   "max_time_s": 60,
+   "wall_s": 3.576,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "lazy_thetastar_known",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    -7.0546,
+    -7.5944
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 20.02,
+   "path_length_m": 15.082,
+   "min_clearance_m": 0.3746,
+   "duration_s": 20.02,
+   "max_time_s": 60,
+   "wall_s": 2.348,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    -7.0546,
+    -7.5944
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "collision",
+   "time_to_goal_s": null,
+   "path_length_m": 0.347,
+   "min_clearance_m": 0.1476,
+   "duration_s": 0.56,
+   "max_time_s": 60,
+   "wall_s": 0.742,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "mppi",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    -7.0546,
+    -7.5944
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 3.113,
+   "min_clearance_m": 0.4609,
+   "duration_s": 14.04,
+   "max_time_s": 60,
+   "wall_s": 0.933,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "mppi_astar",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    -7.0546,
+    -7.5944
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 14.62,
+   "path_length_m": 15.018,
+   "min_clearance_m": 0.2531,
+   "duration_s": 14.62,
+   "max_time_s": 60,
+   "wall_s": 1.987,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "hybrid_astar",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    -0.0595,
+    0.3866
+   ],
+   "b": [
+    -7.0546,
+    -7.5944
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 20.14,
+   "path_length_m": 14.994,
+   "min_clearance_m": 0.298,
+   "duration_s": 20.14,
+   "max_time_s": 60,
+   "wall_s": 1.009,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "straight",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    -7.0774,
+    -7.3763
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 0.672,
+   "min_clearance_m": 0.3895,
+   "duration_s": 11.76,
+   "max_time_s": 60,
+   "wall_s": 0.125,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "freest_beam",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    -7.0774,
+    -7.3763
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 6.547,
+   "min_clearance_m": 0.4592,
+   "duration_s": 13.96,
+   "max_time_s": 60,
+   "wall_s": 0.136,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "astar_known",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    -7.0774,
+    -7.3763
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 23.1,
+   "path_length_m": 13.989,
+   "min_clearance_m": 0.2763,
+   "duration_s": 23.1,
+   "max_time_s": 60,
+   "wall_s": 1.028,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "astar_unknown",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    -7.0774,
+    -7.3763
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 25.14,
+   "path_length_m": 14.723,
+   "min_clearance_m": 0.2179,
+   "duration_s": 25.14,
+   "max_time_s": 60,
+   "wall_s": 1.696,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "apf",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    -7.0774,
+    -7.3763
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 5.093,
+   "min_clearance_m": 0.3494,
+   "duration_s": 14.88,
+   "max_time_s": 60,
+   "wall_s": 0.14,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "vfh_plus",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    -7.0774,
+    -7.3763
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 8.996,
+   "min_clearance_m": 0.4363,
+   "duration_s": 12.7,
+   "max_time_s": 60,
+   "wall_s": 0.154,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "dwa",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    -7.0774,
+    -7.3763
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 2.87,
+   "min_clearance_m": 0.26,
+   "duration_s": 24.42,
+   "max_time_s": 60,
+   "wall_s": 0.612,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "dwa_mem",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    -7.0774,
+    -7.3763
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 3.626,
+   "min_clearance_m": 0.3147,
+   "duration_s": 22.9,
+   "max_time_s": 60,
+   "wall_s": 1.131,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "bug2",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    -7.0774,
+    -7.3763
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 5.804,
+   "min_clearance_m": 0.5698,
+   "duration_s": 17.82,
+   "max_time_s": 60,
+   "wall_s": 0.156,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "tangent_bug",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    -7.0774,
+    -7.3763
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 33.63,
+   "min_clearance_m": 0.3633,
+   "duration_s": 49.98,
+   "max_time_s": 60,
+   "wall_s": 0.313,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "dstar_lite",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    -7.0774,
+    -7.3763
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 25.5,
+   "path_length_m": 14.763,
+   "min_clearance_m": 0.2179,
+   "duration_s": 25.5,
+   "max_time_s": 60,
+   "wall_s": 1.438,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "informed_rrt_star",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    -7.0774,
+    -7.3763
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 26.18,
+   "path_length_m": 13.773,
+   "min_clearance_m": 0.2673,
+   "duration_s": 26.18,
+   "max_time_s": 60,
+   "wall_s": 0.932,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "thetastar_known",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    -7.0774,
+    -7.3763
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 19.92,
+   "path_length_m": 14.704,
+   "min_clearance_m": 0.3723,
+   "duration_s": 19.92,
+   "max_time_s": 60,
+   "wall_s": 3.824,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "lazy_thetastar_known",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    -7.0774,
+    -7.3763
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 19.74,
+   "path_length_m": 14.721,
+   "min_clearance_m": 0.362,
+   "duration_s": 19.74,
+   "max_time_s": 60,
+   "wall_s": 2.504,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    -7.0774,
+    -7.3763
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "collision",
+   "time_to_goal_s": null,
+   "path_length_m": 0.464,
+   "min_clearance_m": 0.1482,
+   "duration_s": 1.28,
+   "max_time_s": 60,
+   "wall_s": 0.58,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "mppi",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    -7.0774,
+    -7.3763
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 2.988,
+   "min_clearance_m": 0.5698,
+   "duration_s": 13.96,
+   "max_time_s": 60,
+   "wall_s": 0.99,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "mppi_astar",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    -7.0774,
+    -7.3763
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 17.5,
+   "path_length_m": 16.478,
+   "min_clearance_m": 0.2502,
+   "duration_s": 17.5,
+   "max_time_s": 60,
+   "wall_s": 3.086,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "hybrid_astar",
+   "preset": "depth_cam_87",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    -0.1082,
+    0.2777
+   ],
+   "b": [
+    -7.0774,
+    -7.3763
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 30,
+    "fov_deg": 87,
+    "max_range_m": 5,
+    "min_range_m": 0.3,
+    "noise_sigma_m": 0.04,
+    "cone_deg": 3,
+    "dropout": 0.05
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 21.58,
+   "path_length_m": 14.115,
+   "min_clearance_m": 0.2839,
+   "duration_s": 21.58,
+   "max_time_s": 60,
+   "wall_s": 1.198,
+   "error": null,
+   "worker": 0
+  }
+ ],
+ "world": {
+  "schema": "close-area-world/1",
+  "frame": "local ENU m, origin at A",
+  "family": "office",
+  "seed": 0,
+  "index": 0,
+  "bounds": [
+   -15.0766,
+   -14.6852,
+   4.9234,
+   5.3148
+  ],
+  "a": [
+   0,
+   0
+  ],
+  "b": [
+   -6.7483,
+   -7.3857
+  ],
+  "z": 1,
+  "radius": 0.15,
+  "obstacles": [
+   {
+    "type": "wall",
+    "x0": -1.0503,
+    "y0": 0.8975,
+    "x1": 3.0494,
+    "y1": 0.8975,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": -1.0003,
+    "y0": -3.0509,
+    "x1": -1.0003,
+    "y1": 0.9475,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 2.9994,
+    "y0": -3.0509,
+    "x1": 2.9994,
+    "y1": 0.9475,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": -1.0503,
+    "y0": -3.0009,
+    "x1": 0.0475,
+    "y1": -3.0009,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 0.9704,
+    "y0": -3.0009,
+    "x1": 3.0494,
+    "y1": -3.0009,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": -12.8377,
+    "y0": -9.0571,
+    "x1": -8.7499,
+    "y1": -9.0571,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": -12.7877,
+    "y0": -9.1071,
+    "x1": -12.7877,
+    "y1": -4.8735,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": -8.7999,
+    "y0": -9.1071,
+    "x1": -8.7999,
+    "y1": -4.8735,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": -12.8377,
+    "y0": -4.9235,
+    "x1": -11.2114,
+    "y1": -4.9235,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": -10.317,
+    "y0": -4.9235,
+    "x1": -8.7499,
+    "y1": -4.9235,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": -8.8499,
+    "y0": -9.0571,
+    "x1": -5.0099,
+    "y1": -9.0571,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": -5.0599,
+    "y0": -9.1071,
+    "x1": -5.0599,
+    "y1": -4.8735,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": -8.8499,
+    "y0": -4.9235,
+    "x1": -8.0677,
+    "y1": -4.9235,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": -7.0861,
+    "y0": -4.9235,
+    "x1": -5.0099,
+    "y1": -4.9235,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": -5.1099,
+    "y0": -9.0571,
+    "x1": -1.1104,
+    "y1": -9.0571,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": -1.1604,
+    "y0": -9.1071,
+    "x1": -1.1604,
+    "y1": -4.8735,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": -5.1099,
+    "y0": -4.9235,
+    "x1": -3.5019,
+    "y1": -4.9235,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": -2.5089,
+    "y0": -4.9235,
+    "x1": -1.1104,
+    "y1": -4.9235,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": -1.2104,
+    "y0": -9.0571,
+    "x1": 3.1607,
+    "y1": -9.0571,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 3.1107,
+    "y0": -9.1071,
+    "x1": 3.1107,
+    "y1": -4.8735,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": -1.2104,
+    "y0": -4.9235,
+    "x1": 1.2057,
+    "y1": -4.9235,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 2.1854,
+    "y0": -4.9235,
+    "x1": 3.1607,
+    "y1": -4.9235,
+    "thickness": 0.1,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "box",
+    "cx": 1.9374,
+    "cy": -0.91,
+    "hx": 0.3063,
+    "hy": 0.7047,
+    "material": "matte",
+    "tag": "desk"
+   },
+   {
+    "type": "box",
+    "cx": -10.8807,
+    "cy": -7.5596,
+    "hx": 0.3763,
+    "hy": 0.7941,
+    "material": "matte",
+    "tag": "desk"
+   },
+   {
+    "type": "box",
+    "cx": -8.0755,
+    "cy": -7.9074,
+    "hx": 0.3367,
+    "hy": 0.738,
+    "material": "matte",
+    "tag": "desk"
+   },
+   {
+    "type": "box",
+    "cx": -3.9063,
+    "cy": -6.8645,
+    "hx": 0.7263,
+    "hy": 0.3083,
+    "material": "matte",
+    "tag": "desk"
+   },
+   {
+    "type": "box",
+    "cx": -0.4209,
+    "cy": -7.1784,
+    "hx": 0.3732,
+    "hy": 0.7472,
+    "material": "matte",
+    "tag": "desk"
+   },
+   {
+    "type": "box",
+    "cx": 0.2313,
+    "cy": -7.2307,
+    "hx": 0.3011,
+    "hy": 0.617,
+    "material": "matte",
+    "tag": "desk"
+   }
+  ]
+ }
+}

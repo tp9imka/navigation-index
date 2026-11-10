@@ -14,7 +14,7 @@ vehicle, range sensor and VIO. N seeds on one map is a small sample.
 | Part | File | What it does |
 |---|---|---|
 | Map | [solver.js](solver.js) | 8 presets from [../playground/presets/](../playground/presets/index.json), import a `close-area-world/1` JSON, open a link with `#w=`, or paste a playground link. Read-only preview. **Edit in playground** opens the current world in [the playground](../playground/README.md) via `#w=` |
-| Sweep | [sweep.js](sweep.js) | Planners (from the worker's `ready` env.planners, all checked, playground labels), sensor presets ideal and crazyflie, VIO fault (truth only, or truth + one of none / jump / bias / dropout), seeds 0..N-1 (default 5), **Jitter A and B per seed** (default on, radius 0.25 / 0.5 / 1.0 m, default 0.5 m), **Run time limit** (Auto by map family, 60, 120 or 180 s). Shows the run count, a time estimate and the limit the map gets |
+| Sweep | [sweep.js](sweep.js) | Planners (from the worker's `ready` env.planners, all checked, playground labels), sensor presets ideal, crazyflie, depth_cam_87 and lidar_2d, **Your drone** (vehicle, sensor or Custom, yaw; below), VIO fault (truth only, or truth + one of none / jump / bias / dropout), seeds 0..N-1 (default 5), **Jitter A and B per seed** (default on, radius 0.25 / 0.5 / 1.0 m, default 0.5 m), **Run time limit** (Auto by map family, 60, 120 or 180 s). Shows the run count, a time estimate and the limit the map gets |
 | Engine | [pool.js](pool.js) | K = min(4, `navigator.hardwareConcurrency` - 1), at least 1, ES-module workers of [../playground/worker.js](../playground/worker.js), unchanged. Each loads Pyodide once. One FIFO queue. Cancel terminates the pool |
 | Race | [solver.js](solver.js) | All finished trajectories on one canvas, one colour per planner, legend with live counters. **Animate race** replays one variation + seed in sim time, with a timeline slider |
 | Result | [sweep.js](sweep.js), [solver.js](solver.js) | Ranking, headline, planner x variation matrix, cell details, CSV / JSON export, share link |
@@ -172,6 +172,62 @@ start). Input type: synthetic.
   `matrix_0.json` maze rows (layout 0, seed 0, ideal).
 - Slowest run in the worker: Lazy Theta* unknown map, 30.7 s (watchdog 360 s at the 120 s limit).
 
+## Your drone (loop-76)
+
+A collapsible **Your drone** panel in the Sweep section. Input type of every run: synthetic.
+
+- **Vehicle** (every run): radius, v_max, a_max, with the arena defaults shown (run.DEFAULTS: 0.15 m,
+  2 m/s, 3 m/s^2; tau 0.15 s is kept and not editable). Values are clamped to the worker's `VEHICLE_CLAMP`.
+  The page sends `cfg.vehicle` only when it differs from the default. The start/goal jitter keeps the larger
+  of the world's and the vehicle's radius + 0.1 m from every surface.
+- **Sensor**: any preset name or **Custom** (beams, FoV, max range, min range, noise; defaults = the
+  depth_cam_87 numbers). A preset name checks that preset. Custom is one more variation key, `custom`,
+  next to the checked presets, labelled for example "custom 30 beams 87 deg 5 m". It is sent as
+  `cfg.sensor` (no `cfg.preset`); cone 0 deg and dropout 0.02 come from the worker defaults
+  (presets.py `SENSOR_SPEC_DEFAULTS`). The preset multi-select now also offers depth_cam_87 (30 beams, 87 deg
+  forward, 0.3-5 m) and lidar_2d (360 beams, 0.15-12 m), specs copied from
+  [presets.py](../../samples/close-area-arena/presets.py) into `PRESET_SPECS` in sweep.js.
+- **Yaw**: fixed (default) or look where you go. Sent as `cfg.yaw` only when not fixed (the interface another
+  job is adding to the worker). Each record stores the asked `yaw` and the `yaw_policy` the worker reported.
+- **Quick** = 3 seeds, the drone's sensor only (ideal by default, Custom => the custom variation alone).
+  **Thorough** = 10 seeds, ideal + crazyflie + the drone's sensor.
+- **Records and exports.** Every record has `vehicle`, `sensor` (the custom dict, or the preset's spec),
+  `yaw`, `yaw_policy`. CSV adds `sensor_label`, `sensor_beams`, `sensor_fov_deg`, `sensor_max_range_m`,
+  `sensor_min_range_m`, `sensor_noise_sigma_m`, `vehicle_radius_m`, `vehicle_v_max`, `vehicle_a_max`,
+  `vehicle_tau`, `yaw`, `yaw_policy`. JSON adds `spec.vehicle / sensor_choice / sensor / yaw` and a `drone`
+  block (asked vs default, sent or not, yaw policies flown, sensor spec per variation).
+- **Share link** adds `veh=radius_m,v_max,a_max,tau`, `sensor=<preset>|custom`,
+  `cs=beams,fov_deg,max_range_m,min_range_m,noise_sigma_m` (Custom only) and `yaw=look_where_you_go`
+  (only when not fixed). Links without them open with the defaults.
+- **Estimate.** The prior per planner is scaled by beams / 72 (the priors were measured on the 72-beam ideal
+  sensor), at least x 0.25 [proposal]. Times measured in this browser are used unscaled.
+
+### Result: one Quick sweep on office_0 with depth_cam_87
+
+Source: [results/quick_office_0_depth_cam.json](results/quick_office_0_depth_cam.json) (`SOLVER.exportJSON()`)
+and [results/solver_check_drone.json](results/solver_check_drone.json), written by
+[results/measure_solver_drone.mjs](results/measure_solver_drone.mjs) (a copy of measure_solver_maze.mjs that
+picks depth_cam_87 in the panel, then presses Quick) in headless Chrome 140 on an Apple M3 Max (16 cores,
+shared host, load average 45.0 at the start). Input type: synthetic.
+
+- Quick = 18 planners x depth_cam_87 x truth pose x 3 seeds = **54 runs, 54 done, 0 errors, 17.5 s** on K = 4
+  workers, jitter on (0.5 m), run time limit Auto => 60 s (office family). Arena default vehicle (not sent).
+  Re-run by the loop driver after loop-75b landed: yaw fixed (not sent), the worker reports yaw policy
+  `off` on all 54 runs, and `astar_unknown` is geofenced.
+- Outcomes: 25 reached, 26 stuck, 2 collision, 1 timeout.
+- Headline: **No clear winner**: MPPI on the unknown-map A* path and Lazy Theta*, known map are within
+  noise on this map (n=3).
+- Ranking (synthetic, reached of 3, 95 % Wilson 44-100 % each, median time to B): MPPI + A* 14.62 s; Lazy
+  Theta* known 19.74 s; Theta* known 19.92 s; Hybrid A* 20.14 s; A* + ESDF known 23.1 s; A* + ESDF unknown
+  25.14 s; D* Lite 25.5 s; Informed RRT* 26.18 s. Lazy Theta* unknown 1/3 (6-79 %); the other 9 planners
+  0/3. The earlier run of this page (look-where-you-go yaw, ungeofenced A* unknown) had 17 reached and 9
+  collisions: holding yaw toward B and geofencing A* both helped here.
+- 390 px phone viewport with the panel open on Custom: `scrollWidth` 390 = viewport width, no horizontal
+  scroll. Screenshot (viewport only): [results/solver_drone_390.png](results/solver_drone_390.png) (390 x 844 at 2x).
+- Share link round trip (no sweep after the reload): radius 0.25, v_max 1.5, Custom 24 beams 120 deg 4 m and
+  yaw look_where_you_go were restored, and the panel opened.
+- No console errors or warnings.
+
 ## Limits and not verified
 
 - One map, 3 seeds, ideal sensor, truth pose: a small sample. On random_0 the Quick sweep cannot separate
@@ -194,6 +250,9 @@ start). Input type: synthetic.
   playground link (the codec is unit tested, the form was not clicked), CSV and JSON downloads through
   the buttons (the JSON comes from the same function), the 180 s watchdog and the worker-crash path
   (the error path is unit tested in sweep.js only).
+- Your drone (loop-76): only the depth_cam_87 Quick sweep ran. No browser sweep used a custom vehicle, the
+  Custom sensor, lidar_2d or `yaw=look_where_you_go`; `cfg.yaw` and planners honouring `vehicle.radius_m`
+  depend on a worker change that was not in this checkout. Those paths are unit tested in sweep.js only.
 - K workers each hold a Pyodide heap (the playground README measured 90 MB of wasm heap per runtime).
   4 workers on a small phone were not tried.
 - Each worker is a separate Pyodide: per-run wall times are measured under the load of K parallel
