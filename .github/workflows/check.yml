@@ -32,7 +32,7 @@ jobs:
       - name: Readiness schema and filter contracts
         run: python3 tools/test_readiness.py
       - name: Browser readiness filters and share links
-        run: node --test site/test_constraints.js
+        run: node --test site/test_constraints.js site/solver/test_sweep.mjs
       - name: Stdlib sample and template tests
         run: |
           python3 tools/test_mcp_server.py

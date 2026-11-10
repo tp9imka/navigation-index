@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navigation Index - Solver: which planner is best for this map?</title>
+<meta name="description" content="Pick or import a close-area map, run every planner on every sensor and VIO variation for N seeds in your browser (Pyodide), watch the race, and get a ranked result matrix with Wilson intervals.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../showcase.css?v=20261110">
+<link rel="stylesheet" href="solver.css?v=20261110">
+<script>
+  try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<script type="module" src="solver.js?v=20261110"></script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="../index.html" title="Search">Navigation Index</a>
+  <nav class="topnav" aria-label="Sections">
+    <a href="../showcase.html">Showcase</a>
+    <a href="../playground/index.html">Playground</a>
+    <a href="../index.html" class="strong">Search</a>
+    <button id="themeBtn" class="icon-btn" title="Toggle dark / light theme" aria-label="Toggle theme">&#9680;</button>
+  </nav>
+</header>
+
+<main>
+<section class="sv-head">
+  <h1>Solver: which planner is best for this map?</h1>
+  <p class="muted">Pick a map, choose the sweep, press Run. Every planner flies every variation for N seeds, in parallel
+    Web Workers running the hub's real Python arena (<a href="../playground/README.md">same worker as the playground</a>).</p>
+  <p class="honest"><span class="badge synthetic" id="honestLabel">SYNTHETIC SIMULATION, 2.5D POINT MASS. Scored on truth. Not a flight result.</span>
+    <span class="muted small" id="sampleNote">N seeds on one map is a small sample: read the intervals, not just the rank.</span></p>
+  <div id="load" class="load" aria-live="polite">
+    <progress id="loadBar" max="100" value="0"></progress>
+    <span id="loadText" class="small">Loading Python (about 22 MB on first visit, cached after)...</span>
+  </div>
+</section>
+
+<div class="sv-grid">
+  <section class="panel" aria-label="Map">
+    <h2>1. Map</h2>
+    <label class="row small">Preset <select id="presetSel" aria-label="Preset map"><option value="">loading...</option></select></label>
+    <div class="row">
+      <label class="btn sm file-btn">Import world JSON<input type="file" id="fileIn" accept=".json,application/json" hidden></label>
+      <a class="btn sm" id="editLink" href="../playground/index.html" title="Open this world in the playground editor">Edit in playground</a>
+    </div>
+    <form class="row" id="linkForm">
+      <input type="text" id="linkIn" placeholder="paste a playground link (#w=...)" aria-label="Playground share link">
+      <button class="btn sm" type="submit">Load link</button>
+    </form>
+    <canvas id="preview" width="300" height="300" aria-label="Read-only map preview"></canvas>
+    <p class="small" id="worldMsg" aria-live="polite"></p>
+  </section>
+
+  <section class="panel" aria-label="Sweep">
+    <h2>2. Sweep</h2>
+    <div class="row">
+      <button class="btn sm" id="quickBtn" title="3 seeds, ideal sensor, truth pose, then run">Quick</button>
+      <button class="btn sm" id="thoroughBtn" title="10 seeds, ideal + crazyflie, then run">Thorough</button>
+    </div>
+    <fieldset class="box"><legend>Planners <button class="linkish small" id="allBtn" type="button">all</button> <button class="linkish small" id="noneBtn" type="button">none</button></legend>
+      <div id="plannerList" class="checks"><span class="muted small">appear when Python is ready</span></div>
+    </fieldset>
+    <fieldset class="box"><legend>Sensor presets</legend>
+      <div id="presetList" class="checks"></div>
+    </fieldset>
+    <label class="row small">VIO fault <select id="faultSel" aria-label="VIO fault"></select></label>
+    <label class="row small">Seeds <input type="number" id="seedsIn" min="1" max="50" value="5" aria-label="Seeds"> <span class="muted">(0 .. N-1)</span></label>
+    <p class="small" id="countMsg"></p>
+    <div class="row">
+      <button class="btn primary" id="runBtn" disabled>Run sweep</button>
+      <button class="btn" id="cancelBtn" disabled>Cancel</button>
+    </div>
+    <div class="prog"><progress id="sweepBar" max="1" value="0"></progress> <span id="sweepText" class="small mono">0/0</span></div>
+    <p class="small muted" id="poolMsg"></p>
+  </section>
+</div>
+
+<section class="panel race" aria-label="Race">
+  <h2>3. Race</h2>
+  <div class="race-grid">
+    <div>
+      <canvas id="race" width="720" height="720" aria-label="All finished trajectories, one colour per planner"></canvas>
+      <div class="controls">
+        <label class="small">Variation <select id="raceVar" aria-label="Race variation"><option value="">all</option></select></label>
+        <label class="small">Seed <select id="raceSeed" aria-label="Race seed"></select></label>
+        <button class="btn sm" id="animBtn" disabled>Animate race</button>
+        <button class="btn sm" id="playBtn" hidden>Pause</button>
+        <label class="small" id="speedLbl" hidden>speed <select id="speed"><option>1</option><option>2</option><option selected>4</option><option>8</option></select>x</label>
+      </div>
+      <div class="controls" id="timeline" hidden>
+        <input type="range" id="scrub" min="0" max="1000" value="0" aria-label="Race time">
+        <span id="clock" class="mono small">0.0 s</span>
+      </div>
+      <p class="small muted">X = collision point, check = reached B, ring = stuck or timeout. Thin lines: all finished runs of the chosen variation.</p>
+    </div>
+    <div>
+      <table class="legend-t" id="legend"></table>
+    </div>
+  </div>
+</section>
+
+<section class="panel" aria-label="Results">
+  <h2>4. Result</h2>
+  <p class="headline" id="headline">Run a sweep to see the ranking.</p>
+  <ol class="ranking" id="ranking"></ol>
+  <div class="grid-scroll"><table class="matrix" id="matrix"></table></div>
+  <p class="small muted">Cell: success rate (reached B / n) with its 95 % Wilson interval, n, and the median time to B over the runs that reached it. Errors count in n as not reached. Click a cell for details.</p>
+  <div id="detail" class="detail" hidden></div>
+  <div class="row">
+    <button class="btn sm" id="csvBtn" disabled>Export CSV</button>
+    <button class="btn sm" id="jsonBtn" disabled>Export JSON</button>
+    <button class="btn sm" id="shareBtn">Copy share link</button>
+    <span class="small" id="shareMsg" aria-live="polite"></span>
+  </div>
+</section>
+</main>
+
+<footer class="foot muted small">
+  Solver source: <a href="README.md">site/solver/README.md</a>. Runs use <a href="../playground/worker.js">site/playground/worker.js</a> unchanged.
+  All runs are synthetic.
+</footer>
+</body>
+</html>

@@ -17,12 +17,15 @@ it lists.
 [docs/research/close-area-nav/](docs/research/close-area-nav/README.md), then the runnable
 [samples/close-area-arena](samples/close-area-arena/README.md).
 
-**Try it in the browser** (GitHub Pages, synthetic simulation):
+**Try it in the browser** (Cloudflare Pages, synthetic simulation):
 - [Showcase](https://navigation-index.pages.dev/site/showcase.html) - replays of 14
   planners on 8 arenas, side-by-side compare, the results grid.
 - [Playground](https://navigation-index.pages.dev/site/playground/) - draw an arena, pick
   a planner, sensor, VIO fault and safety filter, run the hub's real Python in the browser; the
   Advisor shows each planner's measured success rate on the selected arena.
+- [Solver](https://navigation-index.pages.dev/site/solver/) - pick or draw a map, run every planner
+  over sensor presets and seeds in parallel, watch the race, get a ranked result matrix
+  ([how it works](site/solver/README.md)).
 - [Search UI](https://navigation-index.pages.dev/site/) - every record, doc and sample.
 
 **Close-area material at a glance:**

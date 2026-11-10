@@ -1,0 +1,67 @@
+{
+ "date": "2026-11-10T05:14:42.796Z",
+ "input": "synthetic",
+ "host": "Apple M3 Max, 16 cores, load 83.2 70.4 50.9",
+ "chrome": "Chrome/140.0.7339.208",
+ "page": "http://127.0.0.1:8781/site/solver/index.html?map=random_0",
+ "python_ready_s": 6.422,
+ "count_msg_before": "60 runs = 12 planners x 1 sensor x 1 fault x 5 seeds. Estimate: about 13 s on 4 workers (rough prior from the playground README timings; refined after the first runs).",
+ "sweep": {
+  "done": 36,
+  "total": 36,
+  "elapsed_s": 12.024,
+  "cancelled": false,
+  "workers_ready": 4,
+  "K": 4,
+  "wall_s_from_click": 12.028
+ },
+ "headline": "No clear winner: A* + ESDF, unknown map and D* Lite, unknown map (geofenced) are within noise on this map (n=3).",
+ "outcomes": {
+  "stuck": 3,
+  "reached": 33
+ },
+ "count_msg_after": "36 runs = 12 planners x 1 sensor x 1 fault x 3 seeds. Estimate: about 9 s on 4 workers (from run times measured in this browser).",
+ "shot_matrix": {
+  "file": "solver_matrix_desktop.png",
+  "width": 1280,
+  "height": 900
+ },
+ "anim": {
+  "runs": 12,
+  "tmax": 47.3,
+  "t": 23.65
+ },
+ "shot_race": {
+  "file": "solver_race_mid.png",
+  "width": 1280,
+  "height": 900
+ },
+ "phone": {
+  "scrollWidth": 390,
+  "innerWidth": 390,
+  "bodyScrollWidth": 390,
+  "no_horizontal_scroll": true
+ },
+ "shot_phone": {
+  "file": "solver_phone_390.png",
+  "width": 780,
+  "height": 1688
+ },
+ "share": {
+  "length": 737,
+  "world_same": true,
+  "name": "random_0",
+  "planners_checked": 12,
+  "seeds": "3",
+  "presets": [
+   "ideal"
+  ]
+ },
+ "cancel": {
+  "total": 36,
+  "done": 1,
+  "cancelled": true,
+  "text": "1/36, cancelled: 35 runs not run"
+ },
+ "console": []
+}
