@@ -40,6 +40,7 @@ Use these when the brief is "fly a drone from A to B in a close area, maybe with
 | Page | Use it when | You get |
 |---|---|---|
 | [day1-close-area-intake.md](day1-close-area-intake.md) | First 20 minutes after the brief | Organiser questions in order; each answer => adapter driver, sim, samples, docs |
+| [day1-quickstart.md](day1-quickstart.md) | First hour after the intake | Ordered script: clone, room => world JSON, Solver, `make first-flight`, score, scenario pack, offline fallbacks; each step with command, cwd, last line, wall time, gotchas |
 | [research/](research/README.md) | You need the innovation story or which research round applies | Brief family => headline idea => kill test => status, both rounds |
 | [research/close-area-nav/](research/close-area-nav/README.md) | You need the plan and the reasons | Planner, sim, localization and innovation lanes, recommended direction, kill test, licence traps |
 | [research/innovation-prior-art/](research/innovation-prior-art/README.md) | The brief is long-range GNSS-denied instead | The earlier research round, now the fallback frame |

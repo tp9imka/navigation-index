@@ -13,6 +13,8 @@ that fit an autonomous flight product and lists the rows to skip.
 
 Use this block when the brief is "fly a drone from A to B in a close area, maybe with obstacles".
 
+Start here: one ordered script, fresh clone => scored first flight => regression bar: [docs/day1-quickstart.md](docs/day1-quickstart.md).
+
 1. First 20 minutes: [docs/day1-close-area-intake.md](docs/day1-close-area-intake.md) - organiser
    questions in order, each answer => driver, sim, sample. Research behind it:
    [docs/research/close-area-nav/README.md](docs/research/close-area-nav/README.md).

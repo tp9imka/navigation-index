@@ -37,6 +37,7 @@ it lists.
 | Need | Open |
 |---|---|
 | First 20 minutes of the day | [docs/day1-close-area-intake.md](docs/day1-close-area-intake.md), measured end to end in [docs/day1-dry-run.md](docs/day1-dry-run.md) |
+| First hour of the day: clone to a scored first flight and a regression bar | [docs/day1-quickstart.md](docs/day1-quickstart.md) |
 | Which planner for which arena and sensor | [samples/close-area-benchmark](samples/close-area-benchmark/README.md) (14 planners x 8 arenas x 2 sensors) |
 | Starter code for the team repo | [templates/flight-repo](templates/flight-repo/README.md) (`make first-flight`), [templates/drone-adapter](templates/drone-adapter/README.md) (PX4, ArduPilot, Crazyflie, Tello) |
 | Our room as an arena world | [samples/close-area-arena](samples/close-area-arena/README.md#your-room-in-the-arena-ran-2026-11-10-synthetic) `world_from_room.py` (measured room) or `world_from_image.py` (floor plan image) => world JSON for the Solver |
