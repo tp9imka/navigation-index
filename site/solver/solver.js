@@ -12,7 +12,7 @@ const css = name => getComputedStyle(document.documentElement).getPropertyValue(
 const PG = "../playground/";
 const SCHEMA = "close-area-world/1";
 const PYODIDE_Q = (q => (/^(cdn|local|auto)$/.test(q || "") ? q : null))(new URLSearchParams(location.search).get("pyodide"));
-const WORKER_V = "20261110d";       // worker.js cache-busting version, same as playground.js WORKER_URL
+const WORKER_V = "20261110e";       // worker.js cache-busting version, same as playground.js WORKER_URL
 const WORKER_URL = new URL(PG + "worker.js?v=" + WORKER_V + (PYODIDE_Q ? "&pyodide=" + PYODIDE_Q : ""), location.href);
 const K = SW.poolSize(navigator.hardwareConcurrency);
 const T_PAGE0 = performance.now();

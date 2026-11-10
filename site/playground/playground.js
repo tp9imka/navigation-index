@@ -782,7 +782,7 @@ $("#linkBtn").onclick = async () => {
 // The worker retries each load step itself (worker.js step()). When it gives up, or the load runs
 // longer than SLOW_S, the Retry button starts a fresh worker. readyP resolves on the first ready.
 // ?pyodide=cdn|local|auto in the page URL is passed on to the worker (manifest.json pyodide_source).
-const WORKER_URL = "worker.js?v=20261110d";   // bump when worker.js changes (also solver.js WORKER_V)
+const WORKER_URL = "worker.js?v=20261110e";   // bump when worker.js changes (also solver.js WORKER_V)
 const SLOW_S = 45;
 const PYODIDE_Q = (q => (/^(cdn|local|auto)$/.test(q || "") ? q : null))(new URLSearchParams(location.search).get("pyodide"));
 let worker = null, readyResolve;

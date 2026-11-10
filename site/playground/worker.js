@@ -637,7 +637,11 @@ async function pickSource(m, mUrl) {
   if (want === "local" || want === "auto") {
     let found = false;
     if (local) {
-      try { await fetchT(local + "pyodide.mjs", TIMEOUT_S.source, { method: "HEAD" }); found = true; } catch (err) { /* not vendored */ }
+      // Cloudflare Pages answers a missing path with 200 text/html (its SPA fallback), so a 200 alone is not proof
+      try {
+        const r = await fetchT(local + "pyodide.mjs", TIMEOUT_S.source, { method: "HEAD" });
+        found = !(r.headers.get("content-type") || "").includes("text/html");
+      } catch (err) { /* not vendored */ }
     }
     if (found) return { source: "local", base: local };
     if (want === "local") throw new Error(`pyodide_source is local, but ${local}pyodide.mjs is missing (README: Offline / blocked CDN)`);
