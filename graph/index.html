@@ -6,21 +6,39 @@
 <title>Navigation Graph</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.9/standalone/umd/vis-network.min.js"></script>
 <style>
-  :root { --bg:#f7f7f5; --fg:#1d1d1b; --muted:#6b6b66; --panel:#ffffff; --line:#d9d9d4; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#151514; --fg:#ecece8; --muted:#9a9a94; --panel:#1f1f1d; --line:#33332f; } }
+  :root { --bg:#f7f7f5; --fg:#1d1d1b; --muted:#6b6b66; --panel:#ffffff; --line:#d9d9d4; --accent:#1f5fbf; --accent-bg:#e6eefb; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#151514; --fg:#ecece8; --muted:#9a9a94; --panel:#1f1f1d; --line:#33332f; --accent:#7fb0ff; --accent-bg:#1d2a40; } }
   * { box-sizing:border-box; }
-  body { margin:0; font:14px/1.4 system-ui, sans-serif; background:var(--bg); color:var(--fg); display:flex; height:100vh; }
+  body { margin:0; font:14px/1.4 system-ui, sans-serif; background:var(--bg); color:var(--fg); display:grid; grid-template-columns:auto minmax(0, 1fr); grid-template-rows:auto minmax(0, 1fr); height:100vh; }
+  .top { grid-column:1 / -1; display:flex; align-items:center; gap:12px; padding:8px 16px; background:var(--panel); border-bottom:1px solid var(--line); }
+  .brand { font-weight:700; color:var(--fg); text-decoration:none; white-space:nowrap; }
   #side { width:340px; max-width:45vw; padding:16px; border-right:1px solid var(--line); overflow:auto; background:var(--panel); }
-  #net { flex:1; }
+  #net { min-width:0; min-height:0; }
   input, select { width:100%; padding:6px 8px; margin:4px 0 10px; background:var(--bg); color:var(--fg); border:1px solid var(--line); border-radius:6px; }
   h1 { font-size:16px; margin:0 0 8px; }
   .muted { color:var(--muted); font-size:12px; }
   a { color:inherit; }
   #info h2 { font-size:15px; margin:12px 0 4px; }
-  @media (max-width: 700px) { body { flex-direction:column; } #side { width:100%; max-width:none; height:40vh; } }
+  @media (max-width: 700px) { body { grid-template-columns:minmax(0, 1fr); grid-template-rows:auto 40vh minmax(0, 1fr); } #side { width:100%; max-width:none; height:40vh; } }
 </style>
+<link rel="stylesheet" href="../site/nav.css?v=20261110n">
+<script defer src="../site/nav.js?v=20261110n"></script>
 </head>
 <body>
+<header class="top">
+  <a class="brand" href="../" title="Home">Navigation Index</a>
+  <nav class="site-nav" id="siteNav" aria-label="Site">
+    <ul class="nav-list">
+      <li><a href="../">Home</a></li>
+      <li><a href="../site/solver/">Solver</a></li>
+      <li><a href="../site/playground/">Playground</a></li>
+      <li><a href="../site/showcase.html">Showcase</a></li>
+      <li><a href="../site/">Search</a></li>
+      <li><a href="./" aria-current="page">Graph</a></li>
+      <li><a href="https://github.com/tp9imka/navigation-index" class="nav-ext" rel="noopener">GitHub</a></li>
+    </ul>
+  </nav>
+</header>
 <div id="side">
   <h1>Navigation knowledge graph</h1>
   <div class="muted">Concepts (large) link repos, docs and samples. Click a node for details.</div>

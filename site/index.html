@@ -7,6 +7,8 @@
 <meta name="description" content="Search and browse the navigation / PNT / GNSS-denied autonomy hub: repos, documents, datasets, samples and deep-dive cards.">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="style.css?v=20261107-readiness">
+<link rel="stylesheet" href="nav.css?v=20261110n">
+<script defer src="nav.js?v=20261110n"></script>
 <script>
   try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
@@ -17,20 +19,28 @@
 <script defer src="app.js?v=2e99da161238"></script>
 </head>
 <body>
-<header class="top">
+<header class="top top-search">
   <button id="filtersBtn" class="icon-btn only-narrow" aria-controls="side" aria-expanded="false" title="Filters">Filters</button>
-  <a class="brand" href="#" title="Home">Navigation Index</a>
+  <a class="brand" href="../" title="Home">Navigation Index</a>
+  <nav class="site-nav" id="siteNav" aria-label="Site">
+    <ul class="nav-list">
+      <li><a href="../">Home</a></li>
+      <li><a href="solver/">Solver</a></li>
+      <li><a href="playground/">Playground</a></li>
+      <li><a href="showcase.html">Showcase</a></li>
+      <li><a href="./" aria-current="page">Search</a></li>
+      <li><a href="../graph/">Graph</a></li>
+      <li><a href="https://github.com/tp9imka/navigation-index" class="nav-ext" rel="noopener">GitHub</a></li>
+    </ul>
+  </nav>
   <div class="searchbox">
     <input id="q" type="search" placeholder="Search repos, docs, datasets, cards...  ( / )" autocomplete="off" spellcheck="false" aria-label="Search">
   </div>
-  <nav class="topnav">
+  <div class="topnav page-tools">
     <a href="#view=kits" id="kitsLink"><span class="wide-only">Starter </span>kits</a>
-    <a href="../graph/index.html">Graph</a>
-    <a href="showcase.html">Showcase</a>
-    <a href="playground/index.html">Playground</a>
     <button id="helpBtn" class="icon-btn" title="Keyboard shortcuts (?)">?</button>
     <button id="themeBtn" class="icon-btn" title="Toggle dark / light theme (t)" aria-label="Toggle theme">&#9680;</button>
-  </nav>
+  </div>
 </header>
 <div class="layout">
   <aside id="side" class="side" aria-label="Filters">

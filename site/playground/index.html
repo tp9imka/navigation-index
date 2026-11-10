@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="../showcase.css?v=20261109">
 <link rel="stylesheet" href="playground.css?v=20261109c">
 <link rel="stylesheet" href="advisor.css?v=20261109">
+<link rel="stylesheet" href="../nav.css?v=20261110n">
+<script defer src="../nav.js?v=20261110n"></script>
 <script>
   try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
@@ -17,12 +19,21 @@
 </head>
 <body>
 <header class="top">
-  <a class="brand" href="../index.html" title="Search">Navigation Index</a>
-  <nav class="topnav" aria-label="Sections">
-    <a href="../showcase.html">Showcase</a>
-    <a href="../index.html" class="strong">Search</a>
-    <button id="themeBtn" class="icon-btn" title="Toggle dark / light theme" aria-label="Toggle theme">&#9680;</button>
+  <a class="brand" href="../../" title="Home">Navigation Index</a>
+  <nav class="site-nav" id="siteNav" aria-label="Site">
+    <ul class="nav-list">
+      <li><a href="../../">Home</a></li>
+      <li><a href="../solver/">Solver</a></li>
+      <li><a href="./" aria-current="page">Playground</a></li>
+      <li><a href="../showcase.html">Showcase</a></li>
+      <li><a href="../">Search</a></li>
+      <li><a href="../../graph/">Graph</a></li>
+      <li><a href="https://github.com/tp9imka/navigation-index" class="nav-ext" rel="noopener">GitHub</a></li>
+    </ul>
   </nav>
+  <div class="topnav page-tools">
+    <button id="themeBtn" class="icon-btn" title="Toggle dark / light theme" aria-label="Toggle theme">&#9680;</button>
+  </div>
 </header>
 
 <main>

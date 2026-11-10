@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navigation Index</title>
+<meta name="description" content="A navigation knowledge hub and browser lab for flying a drone from A to B in a close area, built for an autonomous-flight hackathon. Solver, playground, showcase and search.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="site/showcase.css?v=20261109s1">
+<link rel="stylesheet" href="site/nav.css?v=20261110n">
+<script>
+  try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<script defer src="site/nav.js?v=20261110n"></script>
+<style>
+  .home-hero { padding: 40px 0 22px; }
+  .home-hero h1 { font-size: clamp(26px, 4vw, 40px); line-height: 1.15; margin: 0 0 10px; letter-spacing: -0.02em; max-width: 30ch; }
+  .home-hero p { margin: 0; max-width: 70ch; font-size: 17px; }
+  .tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; padding: 8px 0 26px; }
+  .tile {
+    display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line);
+    border-radius: 14px; overflow: hidden; color: var(--fg); text-decoration: none;
+    transition: border-color .15s, transform .15s;
+  }
+  .tile:hover { border-color: var(--accent); text-decoration: none; transform: translateY(-2px); }
+  .tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { .tile, .tile:hover { transition: none; transform: none; } }
+  .tile img {
+    display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: top left;
+    border-bottom: 1px solid var(--line); background: var(--code);
+  }
+  .tile .tile-body { padding: 14px 18px 18px; }
+  .tile h2 { font-size: 21px; margin: 0 0 4px; color: var(--accent); }
+  .tile p { margin: 0; }
+  .tile .q { font-weight: 600; }
+  .agents-box {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; margin: 0 0 18px;
+    display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: baseline;
+  }
+  .agents-box strong { margin-right: 4px; }
+  .honesty {
+    margin: 0 0 40px; padding: 10px 14px; border-radius: 10px; background: var(--warn-bg); color: var(--warn);
+    font-weight: 600; font-size: 14px;
+  }
+  @media (max-width: 760px) {
+    .home-hero { padding: 26px 0 16px; }
+    .home-hero p { font-size: 16px; }
+    .tiles { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+    main { padding: 0 14px; }
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="./" title="Home">Navigation Index</a>
+  <nav class="site-nav" id="siteNav" aria-label="Site">
+    <ul class="nav-list">
+      <li><a href="./" aria-current="page">Home</a></li>
+      <li><a href="site/solver/">Solver</a></li>
+      <li><a href="site/playground/">Playground</a></li>
+      <li><a href="site/showcase.html">Showcase</a></li>
+      <li><a href="site/">Search</a></li>
+      <li><a href="graph/">Graph</a></li>
+      <li><a href="https://github.com/tp9imka/navigation-index" class="nav-ext" rel="noopener">GitHub</a></li>
+    </ul>
+  </nav>
+  <div class="topnav page-tools">
+    <button id="themeBtn" class="icon-btn" title="Toggle dark / light theme" aria-label="Toggle theme">&#9680;</button>
+  </div>
+</header>
+
+<main>
+<section class="home-hero">
+  <h1>Navigation Index</h1>
+  <p>A navigation knowledge hub and browser lab for flying a drone from A to B in a close area, built for an autonomous-flight hackathon.</p>
+</section>
+
+<section class="tiles" aria-label="Tools">
+  <a class="tile" href="site/solver/">
+    <img src="site/solver/results/solver_race_mid.png" width="1280" height="900" alt="Solver: every planner racing on one map" loading="lazy">
+    <div class="tile-body">
+      <h2>Solver</h2>
+      <p><span class="q">Which planner is best for my map?</span> Run every planner on every sensor and VIO variation and get a ranked matrix.</p>
+    </div>
+  </a>
+  <a class="tile" href="site/playground/">
+    <img src="site/playground/results/pg_compare_random0.png" width="1280" height="900" alt="Playground: two planner configs overlaid on a drawn arena" loading="lazy">
+    <div class="tile-body">
+      <h2>Playground</h2>
+      <p>Draw an arena, place A and B, pick a planner, sensor, VIO fault and safety filter, and fly it in your browser.</p>
+    </div>
+  </a>
+  <a class="tile" href="site/showcase.html">
+    <img src="site/screenshots/showcase-desktop.png" width="1280" height="900" alt="Showcase: hub counters and arena replays" loading="lazy">
+    <div class="tile-body">
+      <h2>Showcase</h2>
+      <p>What the hub holds in 30 seconds: live counts, arena replays and the runnable samples with their honest status.</p>
+    </div>
+  </a>
+  <a class="tile" href="site/">
+    <img src="site/screenshots/desktop.png" width="1400" height="900" alt="Search: repos, documents, datasets and samples with filters" loading="lazy">
+    <div class="tile-body">
+      <h2>Search</h2>
+      <p>Find any repo, document, dataset, sample or deep-dive card, filtered by compute, hardware and setup time.</p>
+    </div>
+  </a>
+</section>
+
+<aside class="agents-box" aria-label="For coding agents">
+  <strong>For coding agents:</strong>
+  <a href="https://github.com/tp9imka/navigation-index/blob/main/AGENTS.md" rel="noopener">AGENTS.md</a>
+  <a href="llms.txt">llms.txt</a>
+  <a href="https://github.com/tp9imka/navigation-index#readme" rel="noopener">README on GitHub</a>
+</aside>
+
+<p class="honesty">All browser results are synthetic simulation, scored on truth. None of them is a flight result.</p>
+</main>
+
+<script>
+  document.getElementById("themeBtn").onclick = function () {
+    var root = document.documentElement;
+    var dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = dark ? "light" : "dark";
+    try { localStorage.setItem("navidx-theme", root.dataset.theme); } catch (e) {}
+  };
+</script>
+</body>
+</html>

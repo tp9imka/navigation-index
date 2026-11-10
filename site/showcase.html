@@ -7,6 +7,8 @@
 <meta name="description" content="What the navigation hub contains, in 30 seconds: live counts, a replay of the close-area arena, the runnable samples with honest status, and how coding agents use it.">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="showcase.css?v=20261109s1">
+<link rel="stylesheet" href="nav.css?v=20261110n">
+<script defer src="nav.js?v=20261110n"></script>
 <script>
   try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
@@ -14,16 +16,25 @@
 </head>
 <body>
 <header class="top">
-  <a class="brand" href="index.html" title="Search">Navigation Index</a>
-  <nav class="topnav" aria-label="Sections">
+  <a class="brand" href="../" title="Home">Navigation Index</a>
+  <nav class="site-nav" id="siteNav" aria-label="Site">
+    <ul class="nav-list">
+      <li><a href="../">Home</a></li>
+      <li><a href="solver/">Solver</a></li>
+      <li><a href="playground/">Playground</a></li>
+      <li><a href="showcase.html" aria-current="page">Showcase</a></li>
+      <li><a href="./">Search</a></li>
+      <li><a href="../graph/">Graph</a></li>
+      <li><a href="https://github.com/tp9imka/navigation-index" class="nav-ext" rel="noopener">GitHub</a></li>
+    </ul>
+  </nav>
+  <div class="topnav page-tools">
     <a href="#tested">Tested</a>
     <a href="#arena">Replay</a>
     <a href="#samples">Samples</a>
     <a href="#agents">Agents</a>
-    <a href="playground/index.html">Playground</a>
-    <a href="index.html" class="strong">Search</a>
     <button id="themeBtn" class="icon-btn" title="Toggle dark / light theme" aria-label="Toggle theme">&#9680;</button>
-  </nav>
+  </div>
 </header>
 
 <main>

@@ -17,7 +17,7 @@ it lists.
 [docs/research/close-area-nav/](docs/research/close-area-nav/README.md), then the runnable
 [samples/close-area-arena](samples/close-area-arena/README.md).
 
-**Try it in the browser** (Cloudflare Pages, synthetic simulation):
+**Try it in the browser** ([home page](https://navigation-index.pages.dev/), Cloudflare Pages, synthetic simulation):
 - [Showcase](https://navigation-index.pages.dev/site/showcase.html) - replays of 14
   planners on 8 arenas, side-by-side compare, the results grid.
 - [Playground](https://navigation-index.pages.dev/site/playground/) - draw an arena, pick

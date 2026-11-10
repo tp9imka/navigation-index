@@ -1,0 +1,2372 @@
+{
+  "generated": "2026-11-10T07:43:39.449Z",
+  "server": "python3 -m http.server 8765 (repo root)",
+  "prefix_server": "node static server, repo under /navigation-index/ on 8766",
+  "chrome": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "pages": [
+    {
+      "base": "/",
+      "page": "/index.html",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Home"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "./",
+        "site/solver/",
+        "site/playground/",
+        "site/showcase.html",
+        "site/",
+        "graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "./"
+    },
+    {
+      "base": "/",
+      "page": "/index.html",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Home"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "./",
+        "site/solver/",
+        "site/playground/",
+        "site/showcase.html",
+        "site/",
+        "graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "./"
+    },
+    {
+      "base": "/",
+      "page": "/site/index.html",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Search"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "../",
+        "solver/",
+        "playground/",
+        "showcase.html",
+        "./",
+        "../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../"
+    },
+    {
+      "base": "/",
+      "page": "/site/index.html",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Search"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "../",
+        "solver/",
+        "playground/",
+        "showcase.html",
+        "./",
+        "../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../"
+    },
+    {
+      "base": "/",
+      "page": "/site/showcase.html",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Showcase"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "../",
+        "solver/",
+        "playground/",
+        "showcase.html",
+        "./",
+        "../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../"
+    },
+    {
+      "base": "/",
+      "page": "/site/showcase.html",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Showcase"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "../",
+        "solver/",
+        "playground/",
+        "showcase.html",
+        "./",
+        "../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../"
+    },
+    {
+      "base": "/",
+      "page": "/site/solver/index.html",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Solver"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "../../",
+        "./",
+        "../playground/",
+        "../showcase.html",
+        "../",
+        "../../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../../"
+    },
+    {
+      "base": "/",
+      "page": "/site/solver/index.html",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Solver"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "../../",
+        "./",
+        "../playground/",
+        "../showcase.html",
+        "../",
+        "../../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../../"
+    },
+    {
+      "base": "/",
+      "page": "/site/playground/index.html",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Playground"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "../../",
+        "../solver/",
+        "./",
+        "../showcase.html",
+        "../",
+        "../../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../../"
+    },
+    {
+      "base": "/",
+      "page": "/site/playground/index.html",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Playground"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "../../",
+        "../solver/",
+        "./",
+        "../showcase.html",
+        "../",
+        "../../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../../"
+    },
+    {
+      "base": "/",
+      "page": "/graph/index.html",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Graph"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "../",
+        "../site/solver/",
+        "../site/playground/",
+        "../site/showcase.html",
+        "../site/",
+        "./",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../"
+    },
+    {
+      "base": "/",
+      "page": "/graph/index.html",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Graph"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "../",
+        "../site/solver/",
+        "../site/playground/",
+        "../site/showcase.html",
+        "../site/",
+        "./",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../"
+    },
+    {
+      "base": "/",
+      "page": "/",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Home"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "./",
+        "site/solver/",
+        "site/playground/",
+        "site/showcase.html",
+        "site/",
+        "graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "./"
+    },
+    {
+      "base": "/",
+      "page": "/",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Home"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "./",
+        "site/solver/",
+        "site/playground/",
+        "site/showcase.html",
+        "site/",
+        "graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "./"
+    },
+    {
+      "base": "/",
+      "page": "/site/",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Search"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "../",
+        "solver/",
+        "playground/",
+        "showcase.html",
+        "./",
+        "../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../"
+    },
+    {
+      "base": "/",
+      "page": "/site/",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Search"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "../",
+        "solver/",
+        "playground/",
+        "showcase.html",
+        "./",
+        "../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../"
+    },
+    {
+      "base": "/",
+      "page": "/site/solver/",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Solver"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "../../",
+        "./",
+        "../playground/",
+        "../showcase.html",
+        "../",
+        "../../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../../"
+    },
+    {
+      "base": "/",
+      "page": "/site/solver/",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Solver"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "../../",
+        "./",
+        "../playground/",
+        "../showcase.html",
+        "../",
+        "../../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../../"
+    },
+    {
+      "base": "/",
+      "page": "/site/playground/",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Playground"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "../../",
+        "../solver/",
+        "./",
+        "../showcase.html",
+        "../",
+        "../../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../../"
+    },
+    {
+      "base": "/",
+      "page": "/site/playground/",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Playground"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "../../",
+        "../solver/",
+        "./",
+        "../showcase.html",
+        "../",
+        "../../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../../"
+    },
+    {
+      "base": "/",
+      "page": "/graph/",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Graph"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "../",
+        "../site/solver/",
+        "../site/playground/",
+        "../site/showcase.html",
+        "../site/",
+        "./",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../"
+    },
+    {
+      "base": "/",
+      "page": "/graph/",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Graph"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "../",
+        "../site/solver/",
+        "../site/playground/",
+        "../site/showcase.html",
+        "../site/",
+        "./",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/index.html",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Home"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "./",
+        "site/solver/",
+        "site/playground/",
+        "site/showcase.html",
+        "site/",
+        "graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "./"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/index.html",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Home"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "./",
+        "site/solver/",
+        "site/playground/",
+        "site/showcase.html",
+        "site/",
+        "graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "./"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/site/index.html",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Search"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "../",
+        "solver/",
+        "playground/",
+        "showcase.html",
+        "./",
+        "../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/site/index.html",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Search"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "../",
+        "solver/",
+        "playground/",
+        "showcase.html",
+        "./",
+        "../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/site/showcase.html",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Showcase"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "../",
+        "solver/",
+        "playground/",
+        "showcase.html",
+        "./",
+        "../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/site/showcase.html",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Showcase"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "../",
+        "solver/",
+        "playground/",
+        "showcase.html",
+        "./",
+        "../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/site/solver/index.html",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Solver"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "../../",
+        "./",
+        "../playground/",
+        "../showcase.html",
+        "../",
+        "../../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../../"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/site/solver/index.html",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Solver"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "../../",
+        "./",
+        "../playground/",
+        "../showcase.html",
+        "../",
+        "../../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../../"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/site/playground/index.html",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Playground"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "../../",
+        "../solver/",
+        "./",
+        "../showcase.html",
+        "../",
+        "../../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../../"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/site/playground/index.html",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Playground"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "../../",
+        "../solver/",
+        "./",
+        "../showcase.html",
+        "../",
+        "../../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../../"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/graph/index.html",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Graph"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "../",
+        "../site/solver/",
+        "../site/playground/",
+        "../site/showcase.html",
+        "../site/",
+        "./",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/graph/index.html",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Graph"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "../",
+        "../site/solver/",
+        "../site/playground/",
+        "../site/showcase.html",
+        "../site/",
+        "./",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Home"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "./",
+        "site/solver/",
+        "site/playground/",
+        "site/showcase.html",
+        "site/",
+        "graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "./"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Home"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "./",
+        "site/solver/",
+        "site/playground/",
+        "site/showcase.html",
+        "site/",
+        "graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "./"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/site/",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Search"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "../",
+        "solver/",
+        "playground/",
+        "showcase.html",
+        "./",
+        "../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/site/",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Search"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "../",
+        "solver/",
+        "playground/",
+        "showcase.html",
+        "./",
+        "../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/site/solver/",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Solver"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "../../",
+        "./",
+        "../playground/",
+        "../showcase.html",
+        "../",
+        "../../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../../"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/site/solver/",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Solver"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "../../",
+        "./",
+        "../playground/",
+        "../showcase.html",
+        "../",
+        "../../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../../"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/site/playground/",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Playground"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "../../",
+        "../solver/",
+        "./",
+        "../showcase.html",
+        "../",
+        "../../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../../"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/site/playground/",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Playground"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "../../",
+        "../solver/",
+        "./",
+        "../showcase.html",
+        "../",
+        "../../graph/",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../../"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/graph/",
+      "width": 1280,
+      "nav_js": true,
+      "current": [
+        "Graph"
+      ],
+      "overflow_x": false,
+      "scroll_width": 1280,
+      "links": [
+        "../",
+        "../site/solver/",
+        "../site/playground/",
+        "../site/showcase.html",
+        "../site/",
+        "./",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../"
+    },
+    {
+      "base": "/navigation-index/",
+      "page": "/graph/",
+      "width": 390,
+      "nav_js": true,
+      "current": [
+        "Graph"
+      ],
+      "overflow_x": false,
+      "scroll_width": 390,
+      "links": [
+        "../",
+        "../site/solver/",
+        "../site/playground/",
+        "../site/showcase.html",
+        "../site/",
+        "./",
+        "https://github.com/tp9imka/navigation-index"
+      ],
+      "brand": "../"
+    }
+  ],
+  "links": [
+    {
+      "base": "/",
+      "from": "/index.html",
+      "label": "Home",
+      "href": "./",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/index.html",
+      "label": "Solver",
+      "href": "site/solver/",
+      "url": "http://127.0.0.1:8765/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/index.html",
+      "label": "Playground",
+      "href": "site/playground/",
+      "url": "http://127.0.0.1:8765/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/index.html",
+      "label": "Showcase",
+      "href": "site/showcase.html",
+      "url": "http://127.0.0.1:8765/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/index.html",
+      "label": "Search",
+      "href": "site/",
+      "url": "http://127.0.0.1:8765/site/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/index.html",
+      "label": "Graph",
+      "href": "graph/",
+      "url": "http://127.0.0.1:8765/graph/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/index.html",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/",
+      "from": "/index.html",
+      "label": "brand",
+      "href": "./",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/index.html",
+      "label": "Home",
+      "href": "../",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/index.html",
+      "label": "Solver",
+      "href": "solver/",
+      "url": "http://127.0.0.1:8765/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/index.html",
+      "label": "Playground",
+      "href": "playground/",
+      "url": "http://127.0.0.1:8765/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/index.html",
+      "label": "Showcase",
+      "href": "showcase.html",
+      "url": "http://127.0.0.1:8765/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/index.html",
+      "label": "Search",
+      "href": "./",
+      "url": "http://127.0.0.1:8765/site/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/index.html",
+      "label": "Graph",
+      "href": "../graph/",
+      "url": "http://127.0.0.1:8765/graph/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/index.html",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/",
+      "from": "/site/index.html",
+      "label": "brand",
+      "href": "../",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/showcase.html",
+      "label": "Home",
+      "href": "../",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/showcase.html",
+      "label": "Solver",
+      "href": "solver/",
+      "url": "http://127.0.0.1:8765/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/showcase.html",
+      "label": "Playground",
+      "href": "playground/",
+      "url": "http://127.0.0.1:8765/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/showcase.html",
+      "label": "Showcase",
+      "href": "showcase.html",
+      "url": "http://127.0.0.1:8765/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/showcase.html",
+      "label": "Search",
+      "href": "./",
+      "url": "http://127.0.0.1:8765/site/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/showcase.html",
+      "label": "Graph",
+      "href": "../graph/",
+      "url": "http://127.0.0.1:8765/graph/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/showcase.html",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/",
+      "from": "/site/showcase.html",
+      "label": "brand",
+      "href": "../",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/solver/index.html",
+      "label": "Home",
+      "href": "../../",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/solver/index.html",
+      "label": "Solver",
+      "href": "./",
+      "url": "http://127.0.0.1:8765/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/solver/index.html",
+      "label": "Playground",
+      "href": "../playground/",
+      "url": "http://127.0.0.1:8765/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/solver/index.html",
+      "label": "Showcase",
+      "href": "../showcase.html",
+      "url": "http://127.0.0.1:8765/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/solver/index.html",
+      "label": "Search",
+      "href": "../",
+      "url": "http://127.0.0.1:8765/site/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/solver/index.html",
+      "label": "Graph",
+      "href": "../../graph/",
+      "url": "http://127.0.0.1:8765/graph/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/solver/index.html",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/",
+      "from": "/site/solver/index.html",
+      "label": "brand",
+      "href": "../../",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/playground/index.html",
+      "label": "Home",
+      "href": "../../",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/playground/index.html",
+      "label": "Solver",
+      "href": "../solver/",
+      "url": "http://127.0.0.1:8765/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/playground/index.html",
+      "label": "Playground",
+      "href": "./",
+      "url": "http://127.0.0.1:8765/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/playground/index.html",
+      "label": "Showcase",
+      "href": "../showcase.html",
+      "url": "http://127.0.0.1:8765/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/playground/index.html",
+      "label": "Search",
+      "href": "../",
+      "url": "http://127.0.0.1:8765/site/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/playground/index.html",
+      "label": "Graph",
+      "href": "../../graph/",
+      "url": "http://127.0.0.1:8765/graph/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/playground/index.html",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/",
+      "from": "/site/playground/index.html",
+      "label": "brand",
+      "href": "../../",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/graph/index.html",
+      "label": "Home",
+      "href": "../",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/graph/index.html",
+      "label": "Solver",
+      "href": "../site/solver/",
+      "url": "http://127.0.0.1:8765/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/graph/index.html",
+      "label": "Playground",
+      "href": "../site/playground/",
+      "url": "http://127.0.0.1:8765/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/graph/index.html",
+      "label": "Showcase",
+      "href": "../site/showcase.html",
+      "url": "http://127.0.0.1:8765/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/graph/index.html",
+      "label": "Search",
+      "href": "../site/",
+      "url": "http://127.0.0.1:8765/site/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/graph/index.html",
+      "label": "Graph",
+      "href": "./",
+      "url": "http://127.0.0.1:8765/graph/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/graph/index.html",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/",
+      "from": "/graph/index.html",
+      "label": "brand",
+      "href": "../",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/",
+      "label": "Home",
+      "href": "./",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/",
+      "label": "Solver",
+      "href": "site/solver/",
+      "url": "http://127.0.0.1:8765/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/",
+      "label": "Playground",
+      "href": "site/playground/",
+      "url": "http://127.0.0.1:8765/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/",
+      "label": "Showcase",
+      "href": "site/showcase.html",
+      "url": "http://127.0.0.1:8765/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/",
+      "label": "Search",
+      "href": "site/",
+      "url": "http://127.0.0.1:8765/site/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/",
+      "label": "Graph",
+      "href": "graph/",
+      "url": "http://127.0.0.1:8765/graph/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/",
+      "from": "/",
+      "label": "brand",
+      "href": "./",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/",
+      "label": "Home",
+      "href": "../",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/",
+      "label": "Solver",
+      "href": "solver/",
+      "url": "http://127.0.0.1:8765/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/",
+      "label": "Playground",
+      "href": "playground/",
+      "url": "http://127.0.0.1:8765/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/",
+      "label": "Showcase",
+      "href": "showcase.html",
+      "url": "http://127.0.0.1:8765/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/",
+      "label": "Search",
+      "href": "./",
+      "url": "http://127.0.0.1:8765/site/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/",
+      "label": "Graph",
+      "href": "../graph/",
+      "url": "http://127.0.0.1:8765/graph/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/",
+      "from": "/site/",
+      "label": "brand",
+      "href": "../",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/solver/",
+      "label": "Home",
+      "href": "../../",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/solver/",
+      "label": "Solver",
+      "href": "./",
+      "url": "http://127.0.0.1:8765/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/solver/",
+      "label": "Playground",
+      "href": "../playground/",
+      "url": "http://127.0.0.1:8765/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/solver/",
+      "label": "Showcase",
+      "href": "../showcase.html",
+      "url": "http://127.0.0.1:8765/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/solver/",
+      "label": "Search",
+      "href": "../",
+      "url": "http://127.0.0.1:8765/site/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/solver/",
+      "label": "Graph",
+      "href": "../../graph/",
+      "url": "http://127.0.0.1:8765/graph/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/solver/",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/",
+      "from": "/site/solver/",
+      "label": "brand",
+      "href": "../../",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/playground/",
+      "label": "Home",
+      "href": "../../",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/playground/",
+      "label": "Solver",
+      "href": "../solver/",
+      "url": "http://127.0.0.1:8765/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/playground/",
+      "label": "Playground",
+      "href": "./",
+      "url": "http://127.0.0.1:8765/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/playground/",
+      "label": "Showcase",
+      "href": "../showcase.html",
+      "url": "http://127.0.0.1:8765/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/playground/",
+      "label": "Search",
+      "href": "../",
+      "url": "http://127.0.0.1:8765/site/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/playground/",
+      "label": "Graph",
+      "href": "../../graph/",
+      "url": "http://127.0.0.1:8765/graph/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/site/playground/",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/",
+      "from": "/site/playground/",
+      "label": "brand",
+      "href": "../../",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/graph/",
+      "label": "Home",
+      "href": "../",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/graph/",
+      "label": "Solver",
+      "href": "../site/solver/",
+      "url": "http://127.0.0.1:8765/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/graph/",
+      "label": "Playground",
+      "href": "../site/playground/",
+      "url": "http://127.0.0.1:8765/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/graph/",
+      "label": "Showcase",
+      "href": "../site/showcase.html",
+      "url": "http://127.0.0.1:8765/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/graph/",
+      "label": "Search",
+      "href": "../site/",
+      "url": "http://127.0.0.1:8765/site/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/graph/",
+      "label": "Graph",
+      "href": "./",
+      "url": "http://127.0.0.1:8765/graph/",
+      "status": 200
+    },
+    {
+      "base": "/",
+      "from": "/graph/",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/",
+      "from": "/graph/",
+      "label": "brand",
+      "href": "../",
+      "url": "http://127.0.0.1:8765/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/index.html",
+      "label": "Home",
+      "href": "./",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/index.html",
+      "label": "Solver",
+      "href": "site/solver/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/index.html",
+      "label": "Playground",
+      "href": "site/playground/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/index.html",
+      "label": "Showcase",
+      "href": "site/showcase.html",
+      "url": "http://127.0.0.1:8766/navigation-index/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/index.html",
+      "label": "Search",
+      "href": "site/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/index.html",
+      "label": "Graph",
+      "href": "graph/",
+      "url": "http://127.0.0.1:8766/navigation-index/graph/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/index.html",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/index.html",
+      "label": "brand",
+      "href": "./",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/index.html",
+      "label": "Home",
+      "href": "../",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/index.html",
+      "label": "Solver",
+      "href": "solver/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/index.html",
+      "label": "Playground",
+      "href": "playground/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/index.html",
+      "label": "Showcase",
+      "href": "showcase.html",
+      "url": "http://127.0.0.1:8766/navigation-index/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/index.html",
+      "label": "Search",
+      "href": "./",
+      "url": "http://127.0.0.1:8766/navigation-index/site/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/index.html",
+      "label": "Graph",
+      "href": "../graph/",
+      "url": "http://127.0.0.1:8766/navigation-index/graph/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/index.html",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/index.html",
+      "label": "brand",
+      "href": "../",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/showcase.html",
+      "label": "Home",
+      "href": "../",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/showcase.html",
+      "label": "Solver",
+      "href": "solver/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/showcase.html",
+      "label": "Playground",
+      "href": "playground/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/showcase.html",
+      "label": "Showcase",
+      "href": "showcase.html",
+      "url": "http://127.0.0.1:8766/navigation-index/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/showcase.html",
+      "label": "Search",
+      "href": "./",
+      "url": "http://127.0.0.1:8766/navigation-index/site/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/showcase.html",
+      "label": "Graph",
+      "href": "../graph/",
+      "url": "http://127.0.0.1:8766/navigation-index/graph/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/showcase.html",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/showcase.html",
+      "label": "brand",
+      "href": "../",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/solver/index.html",
+      "label": "Home",
+      "href": "../../",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/solver/index.html",
+      "label": "Solver",
+      "href": "./",
+      "url": "http://127.0.0.1:8766/navigation-index/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/solver/index.html",
+      "label": "Playground",
+      "href": "../playground/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/solver/index.html",
+      "label": "Showcase",
+      "href": "../showcase.html",
+      "url": "http://127.0.0.1:8766/navigation-index/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/solver/index.html",
+      "label": "Search",
+      "href": "../",
+      "url": "http://127.0.0.1:8766/navigation-index/site/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/solver/index.html",
+      "label": "Graph",
+      "href": "../../graph/",
+      "url": "http://127.0.0.1:8766/navigation-index/graph/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/solver/index.html",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/solver/index.html",
+      "label": "brand",
+      "href": "../../",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/playground/index.html",
+      "label": "Home",
+      "href": "../../",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/playground/index.html",
+      "label": "Solver",
+      "href": "../solver/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/playground/index.html",
+      "label": "Playground",
+      "href": "./",
+      "url": "http://127.0.0.1:8766/navigation-index/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/playground/index.html",
+      "label": "Showcase",
+      "href": "../showcase.html",
+      "url": "http://127.0.0.1:8766/navigation-index/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/playground/index.html",
+      "label": "Search",
+      "href": "../",
+      "url": "http://127.0.0.1:8766/navigation-index/site/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/playground/index.html",
+      "label": "Graph",
+      "href": "../../graph/",
+      "url": "http://127.0.0.1:8766/navigation-index/graph/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/playground/index.html",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/playground/index.html",
+      "label": "brand",
+      "href": "../../",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/graph/index.html",
+      "label": "Home",
+      "href": "../",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/graph/index.html",
+      "label": "Solver",
+      "href": "../site/solver/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/graph/index.html",
+      "label": "Playground",
+      "href": "../site/playground/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/graph/index.html",
+      "label": "Showcase",
+      "href": "../site/showcase.html",
+      "url": "http://127.0.0.1:8766/navigation-index/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/graph/index.html",
+      "label": "Search",
+      "href": "../site/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/graph/index.html",
+      "label": "Graph",
+      "href": "./",
+      "url": "http://127.0.0.1:8766/navigation-index/graph/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/graph/index.html",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/graph/index.html",
+      "label": "brand",
+      "href": "../",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/",
+      "label": "Home",
+      "href": "./",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/",
+      "label": "Solver",
+      "href": "site/solver/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/",
+      "label": "Playground",
+      "href": "site/playground/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/",
+      "label": "Showcase",
+      "href": "site/showcase.html",
+      "url": "http://127.0.0.1:8766/navigation-index/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/",
+      "label": "Search",
+      "href": "site/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/",
+      "label": "Graph",
+      "href": "graph/",
+      "url": "http://127.0.0.1:8766/navigation-index/graph/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/",
+      "label": "brand",
+      "href": "./",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/",
+      "label": "Home",
+      "href": "../",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/",
+      "label": "Solver",
+      "href": "solver/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/",
+      "label": "Playground",
+      "href": "playground/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/",
+      "label": "Showcase",
+      "href": "showcase.html",
+      "url": "http://127.0.0.1:8766/navigation-index/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/",
+      "label": "Search",
+      "href": "./",
+      "url": "http://127.0.0.1:8766/navigation-index/site/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/",
+      "label": "Graph",
+      "href": "../graph/",
+      "url": "http://127.0.0.1:8766/navigation-index/graph/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/",
+      "label": "brand",
+      "href": "../",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/solver/",
+      "label": "Home",
+      "href": "../../",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/solver/",
+      "label": "Solver",
+      "href": "./",
+      "url": "http://127.0.0.1:8766/navigation-index/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/solver/",
+      "label": "Playground",
+      "href": "../playground/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/solver/",
+      "label": "Showcase",
+      "href": "../showcase.html",
+      "url": "http://127.0.0.1:8766/navigation-index/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/solver/",
+      "label": "Search",
+      "href": "../",
+      "url": "http://127.0.0.1:8766/navigation-index/site/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/solver/",
+      "label": "Graph",
+      "href": "../../graph/",
+      "url": "http://127.0.0.1:8766/navigation-index/graph/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/solver/",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/solver/",
+      "label": "brand",
+      "href": "../../",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/playground/",
+      "label": "Home",
+      "href": "../../",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/playground/",
+      "label": "Solver",
+      "href": "../solver/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/playground/",
+      "label": "Playground",
+      "href": "./",
+      "url": "http://127.0.0.1:8766/navigation-index/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/playground/",
+      "label": "Showcase",
+      "href": "../showcase.html",
+      "url": "http://127.0.0.1:8766/navigation-index/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/playground/",
+      "label": "Search",
+      "href": "../",
+      "url": "http://127.0.0.1:8766/navigation-index/site/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/playground/",
+      "label": "Graph",
+      "href": "../../graph/",
+      "url": "http://127.0.0.1:8766/navigation-index/graph/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/playground/",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/site/playground/",
+      "label": "brand",
+      "href": "../../",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/graph/",
+      "label": "Home",
+      "href": "../",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/graph/",
+      "label": "Solver",
+      "href": "../site/solver/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/solver/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/graph/",
+      "label": "Playground",
+      "href": "../site/playground/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/playground/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/graph/",
+      "label": "Showcase",
+      "href": "../site/showcase.html",
+      "url": "http://127.0.0.1:8766/navigation-index/site/showcase.html",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/graph/",
+      "label": "Search",
+      "href": "../site/",
+      "url": "http://127.0.0.1:8766/navigation-index/site/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/graph/",
+      "label": "Graph",
+      "href": "./",
+      "url": "http://127.0.0.1:8766/navigation-index/graph/",
+      "status": 200
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/graph/",
+      "label": "GitHub",
+      "href": "https://github.com/tp9imka/navigation-index",
+      "url": "https://github.com/tp9imka/navigation-index",
+      "status": "external, not fetched"
+    },
+    {
+      "base": "/navigation-index/",
+      "from": "/graph/",
+      "label": "brand",
+      "href": "../",
+      "url": "http://127.0.0.1:8766/navigation-index/",
+      "status": 200
+    }
+  ],
+  "summary": {
+    "pages_checked": 44,
+    "links_fetched": 154,
+    "links_200": 154,
+    "links_not_200": [],
+    "pages_without_js_nav": [],
+    "pages_with_overflow_x": [],
+    "pages_with_wrong_current": []
+  },
+  "round_trip": {
+    "home_to_search": {
+      "path": "/site/",
+      "results": 50,
+      "current": "Search"
+    },
+    "brand_back": {
+      "path": "/",
+      "current": "Home"
+    }
+  },
+  "screenshots": [
+    "home-desktop.png",
+    "home-390.png",
+    "home-390-menu-dark.png",
+    "solver-nav-desktop.png",
+    "search-nav-desktop.png",
+    "search-390-menu-dark.png",
+    "showcase-390.png",
+    "graph-nav-desktop.png"
+  ]
+}
