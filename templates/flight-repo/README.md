@@ -17,18 +17,21 @@ Status: hackathon starter, not flight-tested, not for operational use.
 ## Run it
 
 ```sh
-make test    # 10 unit tests on the mock, stdlib import check, 3 s arena smoke flight (skips without .venv or the hub)
+make test    # 11 unit tests on the mock, bench: loading test under ./.venv, stdlib import check, 3 s arena smoke flight (venv parts skip without .venv or the hub)
 make sim     # 4 mock flights, one score line each, JSONL logs in runs/
 make arena   # the hub's arena "straight" planner flown through this loop (needs the hub checkout)
 python3 main.py --mock          # A=(0,0,1) => B=(5,3,1), one-line score
 make first-flight   # arena world + A* planner + F2 safety arm, scored => results/first_flight.png
 make first-flight-reloc   # jump fault + relocalization, scored, plus an ODOMETRY dry-run JSONL
+make first-flight PLANNER=bench:dstar_lite WORLD=../../site/playground/presets/narrow_gap_0.json   # any Solver pick, any world file
+make bench-list     # the PLANNER=bench:<id> ids
 ```
 
 Copied out of the hub (the H+0 case), every target that needs the hub takes its path:
 
 ```sh
-make first-flight HUB=/path/to/navigation-index        # sets ARENA, SAFETY and RELOC below it
+make first-flight HUB=/path/to/navigation-index        # sets ARENA, SAFETY, RELOC and BENCH below it
+make first-flight HUB=/path/to/navigation-index PLANNER=bench:dstar_lite WORLD=/path/to/navigation-index/site/playground/presets/narrow_gap_0.json
 make first-flight ARENA=/path/to/hub/samples/close-area-arena SAFETY=/path/to/hub/samples/close-area-safety-filter
 ```
 
@@ -65,6 +68,8 @@ What each piece is:
 | `--adapter arena:<family>:<seed>[:<index>]` | `flightloop/arena_adapter.py: ArenaAdapter` | Arena `SimAdapter` on layout (family, seed, index), same world, sensor seed and start yaw as the arena's `run.run_one`. Lockstep: each `send_setpoint()` runs the 50 Hz physics to the next 20 Hz tick (2 or 3 steps, so `pose.t` steps 0.04 / 0.06 s). Truth clearance under 0.15 m freezes the vehicle |
 | `--fault none\|jump\|bias\|dropout\|overconfident` | same | Pose from the arena `estimator.make_pose_source_factory(fault, dark=True)`. Omit => truth pose |
 | `--planner arena:astar_esdf` | `main.load_arena_planner` | Arena A* + ESDF, known prior map (`uses_grid = True`, gets the layout grid) |
+| `--planner bench:<id>` | `flightloop/bench_planner.py` | Any [close-area-benchmark](../../samples/close-area-benchmark/README.md) row, built by its `bench.PLANNERS[id]` factory with the World (section "Fly what the Solver picks") |
+| `--adapter world:<file.json>[:<seed>]` | `arena_adapter.ArenaAdapter.from_world_json` | Same SimAdapter on a close-area-world/1 file (`world_json.from_json`), e.g. a playground preset. Seed = run seed for sensor noise and estimator (default 0, as the playground) |
 | `--safety arm:F0\|F1\|F2` | `flightloop/safety_shim.py: ArmShim` | Kill-test arm from [close-area-safety-filter](../../samples/close-area-safety-filter/README.md) `filters.py`, called with the arena World, a health dict and dt 0.05 s |
 | `--log` | `arena_adapter.CloseAreaLog` | Turns each loop line into [close-area-log/1](../../samples/close-area-arena/log_format.md), adding `truth` (sim truth at the same `pose()` call) and `planned` (A* `path_xy`, when it changes). Loop fields kept as extras: `loop_mode`, `health`, `source`, `reasons`, `plan_ms` |
 
@@ -222,6 +227,128 @@ open layouts, random and u_trap (100 % each, 180 runs); it failed on narrow_gap,
 warehouse, maze and glass_office ([sample README](../../samples/close-area-relocalize/README.md#held-out-matrix-seeds-2-4-7-families-harder-faults-loop-56)).
 It needs a prior map and a dense range fan (72 beams, 6 m); yaw is truth in the sim.
 
+## Fly what the Solver picks: `bench:<id>` in a `world:` file
+
+The playground Solver ranks the [close-area-benchmark](../../samples/close-area-benchmark/README.md)
+rows. Any of them flies in this loop:
+
+```sh
+make first-flight PLANNER=bench:dstar_lite WORLD=../../site/playground/presets/narrow_gap_0.json
+# = .venv/bin/python main.py --adapter world:<WORLD> --planner bench:dstar_lite --safety arm:F2 ... --bench-dir ../../samples/close-area-benchmark
+#   then score_log.py => results/first_flight_bench_dstar_lite_narrow_gap_0.{jsonl,png} and _score.json
+make first-flight PLANNER=bench:mppi_astar WORLD=my_world.json ARM=F0 OUT=my_run   # no filter, own file names
+```
+
+- `flightloop/bench_planner.py` imports `samples/close-area-benchmark/bench.py` by path
+  (`spec_from_file_location`), the way `site/playground/worker.js` loads sample folders. bench.py
+  then loads the arena and every planner sample from its own folder, so nothing in the hub is
+  edited. Copied out, pass `HUB=` (or `BENCH=`): [results/copied_out_bench.txt](results/copied_out_bench.txt)
+  ran it from a copy with `HUB=` (same score line) and without (rc 2, the path hint).
+- Every factory gets the World. `needs_world` below = the factory reads the area bounds
+  (geofence for the unknown-map log-odds map); the others ignore it.
+- The 120 s limit of bench.py `LONG_FAMILIES` (maze, warehouse) now applies to both adapters
+  when `--timeout` is not given; other families keep 60 s.
+
+### Result (2026-11-10, synthetic, ./.venv uv CPython 3.11.15, numpy 2.4.6, scipy 1.17.1)
+
+`make first-flight PLANNER=bench:dstar_lite WORLD=../../site/playground/presets/narrow_gap_0.json`,
+from [results/first_flight_bench.txt](results/first_flight_bench.txt):
+
+```
+score input=synthetic adapter=world:../../site/playground/presets/narrow_gap_0.json fault=truth planner=bench:dstar_lite safety=arm:F2 reached=False final_dist_m=12.804 t_s=60.00 collided=False min_clearance_m=0.835 max_pose_error_m=0.000 ticks=1201 intervened=1088 keepalive=1 planner_errors=0 outcome=timeout modes=nominal:1200,timeout:1 health=ok:1201 log=results/first_flight_bench_dstar_lite_narrow_gap_0.jsonl
+outcome          stuck
+time to goal     -   (run ends at 23.0 s, 12.8 m from B)
+min clearance    0.8356 m   at [4.432, 4.903, 6.0] (x, y, t)
+```
+
+![planned vs flown, narrow_gap_0, bench:dstar_lite + F2: stuck in front of the gap](results/first_flight_bench_dstar_lite_narrow_gap_0.png)
+
+**Check against the playground parity row: FAIL with F2 (the default arm), same outcome with F0.**
+The row, from [site/playground/README.md](../../site/playground/README.md) (seed 0, ideal sensor,
+truth pose, no filter, browser = native):
+
+```
+| narrow_gap_0 | dstar_lite | reached / 24.52 / 0.3288 / 25.187 | 1.28 | 0.824 |
+```
+
+| Run (all synthetic, narrow_gap_0, seed 0, truth pose) | Outcome | Time to goal s | Min clearance m | Path m | Source |
+|---|---|---|---|---|---|
+| Playground parity row (worker driver, 10 Hz planner) | reached | 24.52 | 0.3288 | 25.187 | site/playground/README.md |
+| Arena `run.run_one` + `bench.PLANNERS["dstar_lite"]`, this checkout | reached | 24.52 | 0.3288 | 25.187 | [bench_parity.txt](results/bench_parity.txt) |
+| This loop, 20 Hz, `arm:F0` (no filter) | reached | 24.96 | 0.293 | 25.195 | [first_flight_bench.txt](results/first_flight_bench.txt), [score JSON](results/first_flight_bench_dstar_lite_narrow_gap_0_F0_score.json), [plot](results/first_flight_bench_dstar_lite_narrow_gap_0_F0.png) |
+| This loop, 20 Hz, `arm:F2` (`make first-flight` default) | stuck (timeout at 60 s) | - | 0.8356 | 13.036 | [score JSON](results/first_flight_bench_dstar_lite_narrow_gap_0_score.json) |
+
+Times, clearance and path for this loop are `score_log.py` on the 20 Hz log.
+
+What the F2 filter changes: the vehicle stops at about (10.6, 6.45), in front of the gap in the
+wall at y = 7.41. From the preset's two wall boxes the gap is 0.764 m wide (x 10.197 to 10.961).
+F2 (eps = 0.7 m) holds the centre 0.7 m from every return, which closes passages narrower than
+about 1.4 m ([close-area-safety-filter README](../../samples/close-area-safety-filter/README.md):
+F0 reaches 10 of 10 narrow_gap layouts with truth pose, F2 0 of 10). The planner keeps planning
+through the gap (orange lines); the filter changed the setpoint on 1088 of 1201 ticks. The
+benchmark row `astar_unknown_f2` shows the same thing: 0 % reached on narrow_gap, 100 % stuck
+([matrix_0.md](../../samples/close-area-benchmark/results/matrix_0.md)). For a Solver pick on a
+narrow-gap world, fly `ARM=F0` or tune F2's eps; do not read this as a D* Lite failure.
+
+What the 20 Hz loop changes (F0 vs the parity row): same outcome; reached 0.44 s later (24.96 vs
+24.52 s), min clearance 0.036 m lower (0.293 vs 0.3288 m, closest point in the gap at (10.39, 7.04)),
+path 0.008 m longer. Mechanisms, not separated one by one:
+
+- The planner runs every 0.05 s with `dt` = 0.05 s instead of every 0.1 s with 0.1 s, so D* Lite
+  updates its map from scans at different instants and follows a slightly different line through
+  the gap.
+- Lockstep: ticks alternate 2 and 3 physics steps (0.04 / 0.06 s), so the logged rate is 16.67 Hz
+  median and the scorer sees the 0.3 m disc up to 0.06 s late. `main.py`'s own line
+  (50 Hz truth) says `t_s=26.26`: that includes the 1.0 s arrival dwell.
+- 30 ms planner budget: one D* Lite replan overran it (`keepalive=1`; the arena reference logged a
+  51.5 ms maximum step, [bench_parity.txt](results/bench_parity.txt)), so one tick reused the
+  previous setpoint. Planners with many keep-alive ticks are wall-clock dependent and can differ
+  between runs and machines. An earlier sweep (not kept) gave different run ends for some of them.
+
+### All ids on narrow_gap_0 (`results/bench_parity.py`)
+
+Every id was flown once with F0 and once with F2 through this loop, 6 processes in parallel
+([results/bench_parity.txt](results/bench_parity.txt), synthetic, truth pose, seed 0). Keep-alive
+counts are inflated by the parallel load. 21 of 22 ids flew; `astar_mpc` did not load (osqp is not
+in the arena requirements: install the benchmark's `requirements.txt` into `./.venv` to get it).
+
+| id | needs_world | F0: reached / t_s | F2: reached |
+|---|---|---|---|
+| straight, freest_beam, apf_escape, bug2, dwa, dwa_mem | False | False / 60.00 (timeout) | False |
+| vfh_plus | False | True / 28.50 | False |
+| astar_known, informed_rrt_star, thetastar_known, lazy_thetastar_known | False | True / 26.06, 30.60, 23.96, 23.96 | False |
+| tangent_bug, astar_unknown_prior | False | True / 29.90, 25.86 | False |
+| astar_mpc | False | not loaded (osqp) | - |
+| astar_unknown, astar_unknown_f2, dstar_lite | True | True / 26.40, 26.30, 26.26 | False |
+| thetastar_unknown, lazy_thetastar_unknown | True | True / 26.66, 24.40 | False |
+| mppi, mppi_astar, hybrid_astar | True | True / 23.50, 23.26, 25.10 | False |
+
+`t_s` is `main.py`'s run end (50 Hz truth, includes the 1.0 s dwell). With F2 no id passes the
+0.764 m gap: all end 11.2-16.8 m from B. Collisions are not in the sweep file (only the dstar_lite
+lines are kept whole, both `collided=False`). `astar_unknown_f2` is the benchmark's
+A* unknown map with its F2 at 50 Hz; here `bench:` builds only the planner and prints a note to
+add `--safety arm:F2`. `astar_unknown_prior` is a diagnostic row, not in bench.py's default list.
+`make bench-list` prints the same ids, which need the world and which loaded.
+
+### `make test` after this change
+
+From [results/first_flight_bench.txt](results/first_flight_bench.txt) (the system `python3` skips
+the bench test, the `./.venv` run passes it):
+
+```
+Ran 11 tests in 1.748s
+OK (skipped=1)
+test_bench_straight_flies_in_a_world_file (test_flightloop.BenchPlanner.test_bench_straight_flies_in_a_world_file) ... ok
+Ran 1 test in 0.718s
+OK
+arena_adapter, safety_shim, reloc_shim, bench_planner import without numpy: ok
+arena smoke (3 s flight, scored): ok
+```
+
+The default `make first-flight` flight is unchanged by this change: `reached=True final_dist_m=0.165
+t_s=21.10 min_clearance_m=0.827 ticks=423` (same file), as in the result above. `make sim` printed
+its 4 score lines.
+
 ## Files
 
 | Path | What |
@@ -234,12 +361,14 @@ It needs a prior map and a dense range fan (72 beams, 6 m); yaw is truth in the 
 | `flightloop/loop.py` | `run()`: 20 Hz loop, planner in a worker thread with a 30 ms budget, keep-alive, degraded => 0.3 m/s cap, lost => hover, one JSONL line per tick |
 | `flightloop/arena_adapter.py` | `ArenaAdapter` (arena world as a loop adapter, optional estimator fault), `CloseAreaLog` (loop log => close-area-log/1). Stdlib at import; numpy when built |
 | `flightloop/safety_shim.py` | `ArmShim`: a close-area-safety-filter arm (F0, F1, F2) as this loop's `SafetyFilter`. Stdlib at import |
+| `flightloop/bench_planner.py` | `make(id, bench_dir, world)`, `describe()`: close-area-benchmark `bench.PLANNERS` loaded by path. Stdlib at import |
 | `flightloop/reloc_shim.py` | `RelocShim`: close-area-relocalize arm (f) `multi_ig` as the arena pose source, plus `relocalizing` / `cmd` for the loop; `OdometryStream`: ODOMETRY-like dry-run JSONL. Stdlib at import |
-| `main.py` | CLI: `--mock` or `--adapter arena:<family>:<seed>[:<index>]`, `--fault`, `--reloc`, `--reloc-dir`, `--odom`, `--scenario open|blocked`, `--planner go_to_goal|blind|arena:<module>`, `--safety range_stop|pass_through|arm:F0|F1|F2`, `--realtime` |
-| `test_flightloop.py` | Protocols, reach, filter vs blind planner, keep-alive, degraded cap, lost hover, reset counting, arrival gate, shim, reloc hover / move / resume, ODOMETRY counter |
+| `main.py` | CLI: `--mock` or `--adapter arena:<family>:<seed>[:<index>]`, `--fault`, `--reloc`, `--reloc-dir`, `--odom`, `--scenario open|blocked`, `--planner go_to_goal|blind|arena:<module>|bench:<id>|bench:list`, `--adapter world:<file.json>`, `--bench-dir`, `--safety range_stop|pass_through|arm:F0|F1|F2`, `--realtime` |
+| `test_flightloop.py` | Protocols, reach, filter vs blind planner, keep-alive, degraded cap, lost hover, reset counting, arrival gate, shim, reloc hover / move / resume, ODOMETRY counter; `BenchPlanner` (venv only): `bench:straight` built and flown 2 s in a `world:` file, `needs_world` flags |
 | `results/2026-11-09-mock-run.txt` | Raw output quoted below |
 | `results/first_flight*` | Arena first flight: raw output, log, score JSON, PNG (section "Brief to first flight"); `first_flight_reloc*` adds the ODOMETRY JSONL |
 | `results/copied_out_dry_run.*` | Template copied to a temp dir, `make` without and with the hub paths |
+| `results/first_flight_bench*`, `results/bench_parity.*`, `results/copied_out_bench.txt` | `bench:` / `world:` first flight (F2 and F0), every id on narrow_gap_0, arena reference loop, copied-out run (section "Fly what the Solver picks") |
 
 ## Loop rules (flightloop/loop.py)
 

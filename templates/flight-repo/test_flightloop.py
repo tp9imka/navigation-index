@@ -3,7 +3,10 @@ from __future__ import annotations
 
 import io
 import json
+import importlib.util
 import math
+import os
+import tempfile
 import time
 import unittest
 from dataclasses import replace
@@ -13,6 +16,10 @@ from flightloop import (DEGRADED, LOST, OK, GoToGoal, MockAdapter, NavHealth, Pa
 from flightloop.loop import ARRIVE_DWELL_S, ARRIVE_WAIT_S, DEGRADED_SPEED_CAP_MS, DT_S
 from flightloop.safety_shim import ArmShim, accepts_nav_health
 
+HERE = os.path.dirname(os.path.abspath(__file__))
+BENCH_DIR = os.environ.get("BENCH_DIR", os.path.join(HERE, "..", "..", "samples", "close-area-benchmark"))
+ARENA_DIR = os.environ.get("ARENA_DIR", os.path.join(HERE, "..", "..", "samples", "close-area-arena"))
+HAVE_SCI = all(importlib.util.find_spec(m) is not None for m in ("numpy", "scipy"))
 OPEN = ((0.0, 0.0, 1.0), (5.0, 3.0, 1.0))
 BLOCKED = ((0.0, 0.0, 1.0), (6.0, 0.0, 1.0))
 
@@ -174,6 +181,39 @@ class FlightLoop(unittest.TestCase):
         self.assertEqual([m["quality"] for m in msgs], [80, 0, 0, 80, 80, 0, 80])
         self.assertEqual(st.increments, [0.3, 0.6])
         self.assertEqual((msgs[0]["x"], msgs[0]["y"], msgs[0]["z"]), (2.0, 1.0, -1.0))   # ENU => NED
+
+
+@unittest.skipUnless(HAVE_SCI and os.path.exists(os.path.join(BENCH_DIR, "bench.py"))
+                     and os.path.exists(os.path.join(ARENA_DIR, "__init__.py")),
+                     "needs numpy + scipy (make venv) and the hub's close-area-benchmark (BENCH_DIR)")
+class BenchPlanner(unittest.TestCase):
+    def test_bench_straight_flies_in_a_world_file(self):
+        """bench:straight via bench.py PLANNERS, flown 2 s in a world: adapter built from a JSON file."""
+        import importlib
+        from flightloop import bench_planner
+        from flightloop.arena_adapter import ArenaAdapter
+        gen = ArenaAdapter(ARENA_DIR, "random", 0, 0)
+        wj = importlib.import_module("close_area_arena.world_json")
+        with tempfile.TemporaryDirectory() as d:
+            path = os.path.join(d, "random_0.json")
+            with open(path, "w") as fh:
+                json.dump(wj.to_json(gen.world), fh)
+            ad = ArenaAdapter.from_spec(f"world:{path}", ARENA_DIR)
+        for got, want in zip(ad.goal[:2], gen.goal[:2]):     # world_json rounds to 4 decimals
+            self.assertAlmostEqual(got, want, places=4)
+        self.assertEqual(ad.world.grid.occ.shape, gen.world.grid.occ.shape)
+        rows = {r["id"]: r for r in bench_planner.describe(BENCH_DIR)}
+        self.assertGreaterEqual(len(rows), 18)
+        self.assertFalse(rows["straight"]["needs_world"])
+        self.assertTrue(rows["dstar_lite"]["needs_world"])
+        pl, arm = bench_planner.make("straight", BENCH_DIR, ad.world)
+        self.assertIsNone(arm)
+        log = io.StringIO()
+        r = run(ad, pl, PassThrough(), ad.goal, grid=ad.grid, log=log, timeout_s=2.0)
+        self.assertEqual(r.planner_errors, 0)
+        self.assertGreater(ad.vehicle.p[0] ** 2 + ad.vehicle.p[1] ** 2, 0.5 ** 2)   # it moved
+        with self.assertRaises(ValueError):
+            bench_planner.make("no_such_planner", BENCH_DIR, ad.world)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,25 @@
+{
+ "log_input": "synthetic",
+ "positions_from": "truth",
+ "outcome": "stuck",
+ "reached": false,
+ "time_to_goal_s": null,
+ "duration_s": 23.0,
+ "final_dist_to_B_m": 12.8,
+ "min_clearance_m": 0.8356,
+ "closest_approach_xyt": [
+  4.432,
+  4.903,
+  6.0
+ ],
+ "path_length_m": 13.036,
+ "straight_line_m": 24.427,
+ "interventions": 2,
+ "intervention_fraction": 0.757,
+ "manual_mode_entries": 0,
+ "steps_scored": 461,
+ "steps_in_log": 1201,
+ "log_rate_hz_median": 20.0,
+ "max_pose_error_m": 0.0,
+ "log": "results/first_flight_bench_dstar_lite_narrow_gap_0.jsonl"
+}

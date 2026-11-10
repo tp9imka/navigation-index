@@ -12,6 +12,11 @@ Arena world (needs the arena venv: make venv, then .venv python of the arena):
     --safety arm:F0|F1|F2                        kill-test arm from samples/close-area-safety-filter
     --reloc [--odom PATH]                        relocalize after VIO loss (close-area-relocalize arm
                                                  multi_ig), ODOMETRY-like dry-run JSONL with reset_counter
+Any close-area-benchmark planner, in an arena layout or a close-area-world/1 file (playground preset):
+    python main.py --adapter world:../../site/playground/presets/narrow_gap_0.json --planner bench:dstar_lite --safety arm:F2
+    --planner bench:<id>                         samples/close-area-benchmark/bench.py PLANNERS[id](world)
+    --planner bench:list                         print the ids, which read the world, which loaded
+    --adapter world:<file.json>[:<seed>]         world_json.from_json; seed = run seed (default 0)
 The arena log is close-area-log/1 (log_format.md); score it with the arena's score_log.py.
 
 The score line is on truth: the mock's own state, or the arena's sim truth.
@@ -30,9 +35,11 @@ from flightloop.arena_adapter import load_arena
 HERE = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_ARENA = os.environ.get("ARENA_DIR", os.path.join(HERE, "..", "..", "samples", "close-area-arena"))
 DEFAULT_SAFETY_DIR = os.environ.get("SAFETY_DIR", os.path.join(HERE, "..", "..", "samples", "close-area-safety-filter"))
+DEFAULT_BENCH_DIR = os.environ.get("BENCH_DIR", os.path.join(HERE, "..", "..", "samples", "close-area-benchmark"))
 DEFAULT_RELOC_DIR = os.environ.get("RELOC_DIR", os.path.join(HERE, "..", "..", "samples", "close-area-relocalize"))
 TIMEOUT_MOCK_S = 30.0
 TIMEOUT_ARENA_S = 60.0              # arena run.DEFAULTS["max_time_s"]
+LONG_FAMILIES = {"maze": 120.0, "warehouse": 120.0}   # close-area-benchmark bench.py LONG_FAMILIES (= playground)
 FAULTS = ("none", "jump", "bias", "dropout", "overconfident")   # arena faults.CASES
 ARMS = ("F0", "F1", "F2")           # close-area-safety-filter filters.REGISTRY
 SCENARIOS = {                       # name: (start, goal)
@@ -53,6 +60,36 @@ def load_arena_planner(name: str, arena_dir: str):
     except FileNotFoundError as e:
         sys.exit(str(e))
     return importlib.import_module(f"close_area_arena.planners.{name}").make()
+
+
+def load_bench_planner(pid: str, bench_dir: str, world):
+    """close-area-benchmark bench.PLANNERS[pid](world), loaded by path (flightloop/bench_planner.py)."""
+    from flightloop import bench_planner
+    try:
+        pl, arm = bench_planner.make(pid, bench_dir, world)
+    except (FileNotFoundError, ValueError) as e:
+        sys.exit(str(e))
+    except ImportError as e:
+        sys.exit(f"bench.py needs numpy and scipy ({e}): run with the arena venv python (make venv)")
+    if arm:
+        print(f"note: benchmark row bench:{pid} runs filter {arm} at 50 Hz; here only the planner is built. "
+              f"Add --safety arm:{arm} for the filter (20 Hz, this loop)", file=sys.stderr)
+    return pl
+
+
+def print_bench_list(bench_dir: str) -> int:
+    from flightloop import bench_planner
+    try:
+        rows = bench_planner.describe(bench_dir)
+    except FileNotFoundError as e:
+        sys.exit(str(e))
+    except ImportError as e:
+        sys.exit(f"bench.py needs numpy and scipy ({e}): run with the arena venv python (make venv)")
+    print(f"{'id':24s} {'needs_world':11s} {'loaded':6s} {'filter':6s} sample / label")
+    for r in rows:
+        print(f"{r['id']:24s} {str(r['needs_world']):11s} {str(r['loaded']):6s} {r['filter'] or '-':6s} "
+              f"{r['sample']} / {r['label']}{'' if r['default'] else ' [not in bench.DEFAULT_PLANNERS]'}")
+    return 0
 
 
 def make_safety(name: str, safety_dir: str, world=None):
@@ -77,11 +114,15 @@ def fly_arena(a, safety_name: str) -> int:
         sys.exit(str(e))
     except ImportError as e:
         sys.exit(f"the arena needs numpy and scipy ({e}): run with the arena venv python (make venv)")
-    planner = (load_arena_planner(a.planner.split(":", 1)[1], a.arena)
-               if a.planner.startswith("arena:") else PLANNERS[a.planner]())
+    if a.planner.startswith("bench:"):
+        planner = load_bench_planner(a.planner.split(":", 1)[1], a.bench_dir, ad.world)
+    elif a.planner.startswith("arena:"):
+        planner = load_arena_planner(a.planner.split(":", 1)[1], a.arena)
+    else:
+        planner = PLANNERS[a.planner]()
     safety = make_safety(safety_name, a.safety_dir, world=ad.world)
     getattr(safety, "reset", lambda: None)()
-    stem = a.adapter.replace(":", "_") + ("" if a.fault is None else f"_{a.fault}") + ("_reloc" if a.reloc else "")
+    stem = os.path.splitext(os.path.basename(a.adapter))[0].replace(":", "_") + ("" if a.fault is None else f"_{a.fault}") + ("_reloc" if a.reloc else "")
     log_path = a.log or os.path.join("runs", f"{stem}.jsonl")
     os.makedirs(os.path.dirname(log_path) or ".", exist_ok=True)
     shim, odom_fh = None, None
@@ -94,10 +135,12 @@ def fly_arena(a, safety_name: str) -> int:
             shim = RelocShim(ad, a.reloc_dir, odom=odom_fh)
         except (FileNotFoundError, ValueError) as e:
             sys.exit(str(e))
-    source = (f"flight-repo loop, close-area-arena {ad.family} seed {ad.seed} index {ad.index}, "
+    where = (f"world file {ad.world_file} ({ad.family}, run seed {ad.seed}, index {ad.index})"
+             if getattr(ad, "world_file", None) else f"close-area-arena {ad.family} seed {ad.seed} index {ad.index}")
+    source = (f"flight-repo loop, {where}, "
               f"planner {a.planner}, safety {safety.name}, pose {'truth' if a.fault is None else 'estimator fault ' + a.fault}"
               f"{', relocalization close-area-relocalize multi_ig' if shim else ''}")
-    timeout = TIMEOUT_ARENA_S if a.timeout is None else a.timeout
+    timeout = LONG_FAMILIES.get(ad.family, TIMEOUT_ARENA_S) if a.timeout is None else a.timeout
     with open(log_path, "w", buffering=1) as fh:
         log = CloseAreaLog(fh, ad, planner, source=source,
                            notes="filter_intervened = safety arm changed the setpoint; loop_mode = flight-loop mode")
@@ -126,16 +169,17 @@ def fly_arena(a, safety_name: str) -> int:
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--mock", action="store_true", help="fly the stdlib MockAdapter (= --adapter mock)")
-    ap.add_argument("--adapter", default=None, help="mock or arena:<family>:<seed>[:<index>]")
+    ap.add_argument("--adapter", default=None, help="mock, arena:<family>:<seed>[:<index>] or world:<file.json>[:<seed>]")
     ap.add_argument("--fault", choices=FAULTS, default=None,
                     help="arena only: fly on the arena estimator with this fault (default: truth pose)")
     ap.add_argument("--safety-dir", default=DEFAULT_SAFETY_DIR, help="path to samples/close-area-safety-filter")
     ap.add_argument("--scenario", choices=sorted(SCENARIOS), default="open")
-    ap.add_argument("--planner", default="go_to_goal", help="go_to_goal, blind, or arena:<module>")
+    ap.add_argument("--planner", default="go_to_goal", help="go_to_goal, blind, arena:<module>, bench:<id> or bench:list")
+    ap.add_argument("--bench-dir", default=DEFAULT_BENCH_DIR, help="path to samples/close-area-benchmark")
     ap.add_argument("--arena", default=DEFAULT_ARENA, help="path to samples/close-area-arena")
     ap.add_argument("--safety", default="range_stop", help="range_stop, pass_through or arm:F0|F1|F2")
     ap.add_argument("--timeout", type=float, default=None,
-                    help=f"flight time limit, s (default {TIMEOUT_MOCK_S:g} mock, {TIMEOUT_ARENA_S:g} arena)")
+                    help=f"flight time limit, s (default {TIMEOUT_MOCK_S:g} mock, {TIMEOUT_ARENA_S:g} arena, 120 maze/warehouse)")
     ap.add_argument("--log", default=None, help="JSONL path (default runs/<scenario>.jsonl)")
     ap.add_argument("--realtime", action="store_true", help="pace at 20 Hz wall time")
     ap.add_argument("--reloc", action="store_true",
@@ -143,16 +187,20 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--reloc-dir", default=DEFAULT_RELOC_DIR, help="path to samples/close-area-relocalize")
     ap.add_argument("--odom", default=None, help="ODOMETRY-like JSONL (default <log>_odometry.jsonl)")
     a = ap.parse_args(argv)
-    if a.planner not in PLANNERS and not a.planner.startswith("arena:"):
-        ap.error(f"--planner must be one of {sorted(PLANNERS)} or arena:<module>")
+    if a.planner == "bench:list":
+        return print_bench_list(a.bench_dir)
+    if a.planner not in PLANNERS and not a.planner.startswith(("arena:", "bench:")):
+        ap.error(f"--planner must be one of {sorted(PLANNERS)}, arena:<module> or bench:<id>")
     if a.safety not in ("range_stop", "pass_through") and a.safety not in (f"arm:{x}" for x in ARMS):
         ap.error(f"--safety must be range_stop, pass_through or arm:<{'|'.join(ARMS)}>")
     if a.reloc and a.fault is None:
         ap.error("--reloc needs --fault (a pose estimator to relocalize)")
-    if a.adapter and a.adapter.startswith("arena:"):
+    if a.adapter and a.adapter.startswith(("arena:", "world:")):
         return fly_arena(a, a.safety)
     if a.fault is not None or a.reloc:
-        ap.error("--fault and --reloc need --adapter arena:...")
+        ap.error("--fault and --reloc need --adapter arena:... or world:...")
+    if a.planner.startswith("bench:"):
+        ap.error("bench:<id> planners need a world: --adapter arena:... or world:<file.json>")
     if not (a.mock or a.adapter == "mock"):
         sys.exit("no real driver yet: write drivers/<platform>.py (see README) and wire it here")
 

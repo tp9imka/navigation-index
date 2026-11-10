@@ -1,0 +1,16 @@
+$ make first-flight PLANNER=bench:dstar_lite WORLD=$HUB/site/playground/presets/narrow_gap_0.json VENV=<template>/.venv   # no HUB
+error: ../../samples/close-area-safety-filter/filters.py not found.
+This target needs the navigation-index hub samples. Set the paths, e.g.:
+  make first-flight ARENA=/path/to/hub/samples/close-area-arena SAFETY=/path/to/hub/samples/close-area-safety-filter RELOC=/path/to/hub/samples/close-area-relocalize
+(or HUB=/path/to/hub for all of them; bench: planners also need BENCH=/path/to/hub/samples/close-area-benchmark)
+make: *** [first-flight] Error 2
+rc=2
+$ make first-flight HUB=$HUB PLANNER=bench:dstar_lite WORLD=$HUB/site/playground/presets/narrow_gap_0.json VENV=<template>/.venv
+$HUB/templates/flight-repo/.venv/bin/python main.py --adapter world:$HUB/site/playground/presets/narrow_gap_0.json --planner bench:dstar_lite --safety arm:F2  --arena $HUB/samples/close-area-arena --safety-dir $HUB/samples/close-area-safety-filter --bench-dir $HUB/samples/close-area-benchmark --log results/first_flight_bench_dstar_lite_narrow_gap_0.jsonl
+[bench] close-area-planner-mpc/mpc.py not loaded: No module named 'osqp'
+score input=synthetic adapter=world:$HUB/site/playground/presets/narrow_gap_0.json fault=truth planner=bench:dstar_lite safety=arm:F2 reached=False final_dist_m=12.804 t_s=60.00 collided=False min_clearance_m=0.835 max_pose_error_m=0.000 ticks=1201 intervened=1088 keepalive=1 planner_errors=0 outcome=timeout modes=nominal:1200,timeout:1 health=ok:1201 log=results/first_flight_bench_dstar_lite_narrow_gap_0.jsonl
+$HUB/templates/flight-repo/.venv/bin/python $HUB/samples/close-area-arena/score_log.py results/first_flight_bench_dstar_lite_narrow_gap_0.jsonl --plot results/first_flight_bench_dstar_lite_narrow_gap_0.png --json results/first_flight_bench_dstar_lite_narrow_gap_0_score.json
+outcome          stuck
+time to goal     -   (run ends at 23.0 s, 12.8 m from B)
+min clearance    0.8356 m   at [4.432, 4.903, 6.0] (x, y, t)
+rc=0

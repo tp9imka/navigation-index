@@ -64,6 +64,17 @@ def parse_spec(spec: str) -> tuple[str, int, int]:
     return family, seed, index
 
 
+def parse_world_spec(spec: str) -> tuple[str, int]:
+    """'world:<file.json>[:<seed>]' => (path, run seed). Seed defaults to 0 (the playground's)."""
+    if not spec.startswith("world:") or len(spec) <= len("world:"):
+        raise ValueError(f"adapter spec {spec!r}: want world:<file.json>[:<seed>]")
+    rest = spec[len("world:"):]
+    head, sep, tail = rest.rpartition(":")
+    if sep and tail.isdigit():
+        return head, int(tail)
+    return rest, 0
+
+
 def _pose(p) -> Pose:
     return Pose(t=p.t, x=p.x, y=p.y, z=p.z, vx=p.vx, vy=p.vy, vz=p.vz, yaw=p.yaw,
                 quality=p.quality, reset_counter=p.reset_counter, sigma_xy=p.sigma_xy)
@@ -74,7 +85,10 @@ class ArenaAdapter:
     the arena's run.run_one, so a layout here is the layout in the arena's results tables."""
 
     def __init__(self, arena_dir: str, family: str = "random", seed: int = 0, index: int = 0,
-                 fault: str | None = None, dt: float = LOOP_DT_S) -> None:
+                 fault: str | None = None, dt: float = LOOP_DT_S, world=None) -> None:
+        """world=None => world.make_world(family, seed, index). A given World (e.g. from a
+        close-area-world/1 file) is used as is; seed and index then only seed the sensor noise
+        and the estimator, as in the playground driver (worker.js simulate)."""
         load_arena(arena_dir)
         import numpy as np
         run = importlib.import_module("close_area_arena.run")
@@ -84,7 +98,8 @@ class ArenaAdapter:
         vehicle = importlib.import_module("close_area_arena.vehicle")
         cfg = run.DEFAULTS
         self.family, self.seed, self.index, self.fault = family, seed, index, fault
-        self.world = world_mod.make_world(family, seed, index, radius=cfg["vehicle"]["radius"])
+        self.world = world if world is not None else world_mod.make_world(
+            family, seed, index, radius=cfg["vehicle"]["radius"])
         self.goal = (float(self.world.goal[0]), float(self.world.goal[1]), cfg["z0"])
         self.radius = cfg["vehicle"]["radius"]
         self.grid = self.world.grid
@@ -108,8 +123,31 @@ class ArenaAdapter:
 
     @classmethod
     def from_spec(cls, spec: str, arena_dir: str, fault: str | None = None) -> "ArenaAdapter":
+        if spec.startswith("world:"):
+            path, seed = parse_world_spec(spec)
+            return cls.from_world_json(path, arena_dir, fault=fault, seed=seed)
         family, seed, index = parse_spec(spec)
         return cls(arena_dir, family, seed, index, fault)
+
+    @classmethod
+    def from_world_json(cls, path: str, arena_dir: str, fault: str | None = None,
+                        seed: int = 0) -> "ArenaAdapter":
+        """World from a close-area-world/1 file (samples/close-area-arena/world_json.py).
+        seed = run seed (sensor noise [seed, index, 7], estimator), as the playground's cfg.seed;
+        index = the file's "index" (0 if missing), family = its "family"."""
+        load_arena(arena_dir)
+        wj = importlib.import_module("close_area_arena.world_json")
+        with open(path) as fh:
+            doc = json.load(fh)
+        world = wj.from_json(doc)
+        idx = doc.get("index")
+        index = idx if isinstance(idx, int) and not isinstance(idx, bool) else 0
+        ad = cls(arena_dir, str(doc.get("family", "custom")), seed, index, fault, world=world)
+        ad.world_file = path
+        z = doc.get("z")
+        if isinstance(z, (int, float)) and abs(float(z) - Z0_M) > 1e-9:
+            print(f"note: {path} z={z} m; the arena flies at {Z0_M} m (run.DEFAULTS z0)", file=sys.stderr)
+        return ad
 
     # ---- Adapter ----
     def pose(self) -> Pose:

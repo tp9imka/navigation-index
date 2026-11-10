@@ -1,0 +1,99 @@
+# loop-78, 2026-11-10 11:30, synthetic, macOS arm64, ./.venv (uv CPython 3.11.15, numpy 2.4.6, scipy 1.17.1)
+$ make first-flight PLANNER=bench:dstar_lite WORLD=../../site/playground/presets/narrow_gap_0.json
+.venv/bin/python main.py --adapter world:../../site/playground/presets/narrow_gap_0.json --planner bench:dstar_lite --safety arm:F2  --arena ../../samples/close-area-arena --safety-dir ../../samples/close-area-safety-filter --bench-dir ../../samples/close-area-benchmark --log results/first_flight_bench_dstar_lite_narrow_gap_0.jsonl
+[bench] close-area-planner-mpc/mpc.py not loaded: No module named 'osqp'
+score input=synthetic adapter=world:../../site/playground/presets/narrow_gap_0.json fault=truth planner=bench:dstar_lite safety=arm:F2 reached=False final_dist_m=12.804 t_s=60.00 collided=False min_clearance_m=0.835 max_pose_error_m=0.000 ticks=1201 intervened=1088 keepalive=1 planner_errors=0 outcome=timeout modes=nominal:1200,timeout:1 health=ok:1201 log=results/first_flight_bench_dstar_lite_narrow_gap_0.jsonl
+.venv/bin/python ../../samples/close-area-arena/score_log.py results/first_flight_bench_dstar_lite_narrow_gap_0.jsonl --plot results/first_flight_bench_dstar_lite_narrow_gap_0.png --json results/first_flight_bench_dstar_lite_narrow_gap_0_score.json
+input            synthetic (positions from truth)
+outcome          stuck
+reached          False
+time to goal     -   (run ends at 23.0 s, 12.8 m from B)
+min clearance    0.8356 m   at [4.432, 4.903, 6.0] (x, y, t)
+path length      13.036 m   (straight A=>B 24.427 m)
+interventions    2   fraction 0.757 of logged steps
+manual modes     0 entries
+steps            461 scored of 1201, median rate 20.0 Hz
+max pose error   0.0 m (logged pose vs truth)
+wrote results/first_flight_bench_dstar_lite_narrow_gap_0_score.json
+wrote results/first_flight_bench_dstar_lite_narrow_gap_0.png
+rc=0
+$ make first-flight PLANNER=bench:dstar_lite WORLD=../../site/playground/presets/narrow_gap_0.json ARM=F0 OUT=first_flight_bench_dstar_lite_narrow_gap_0_F0
+.venv/bin/python main.py --adapter world:../../site/playground/presets/narrow_gap_0.json --planner bench:dstar_lite --safety arm:F0  --arena ../../samples/close-area-arena --safety-dir ../../samples/close-area-safety-filter --bench-dir ../../samples/close-area-benchmark --log results/first_flight_bench_dstar_lite_narrow_gap_0_F0.jsonl
+[bench] close-area-planner-mpc/mpc.py not loaded: No module named 'osqp'
+score input=synthetic adapter=world:../../site/playground/presets/narrow_gap_0.json fault=truth planner=bench:dstar_lite safety=arm:F0 reached=True final_dist_m=0.162 t_s=26.26 collided=False min_clearance_m=0.293 max_pose_error_m=0.000 ticks=526 intervened=0 keepalive=1 planner_errors=0 outcome=arrived modes=arrive_dwell:20,arrived:1,nominal:505 health=ok:526 log=results/first_flight_bench_dstar_lite_narrow_gap_0_F0.jsonl
+.venv/bin/python ../../samples/close-area-arena/score_log.py results/first_flight_bench_dstar_lite_narrow_gap_0_F0.jsonl --plot results/first_flight_bench_dstar_lite_narrow_gap_0_F0.png --json results/first_flight_bench_dstar_lite_narrow_gap_0_F0_score.json
+input            synthetic (positions from truth)
+outcome          reached
+reached          True
+time to goal     24.96 s   (run ends at 24.96 s, 0.28 m from B)
+min clearance    0.293 m   at [10.39, 7.04, 12.86] (x, y, t)
+path length      25.195 m   (straight A=>B 24.427 m)
+interventions    0   fraction 0.0 of logged steps
+manual modes     0 entries
+steps            500 scored of 526, median rate 16.67 Hz
+max pose error   0.0 m (logged pose vs truth)
+wrote results/first_flight_bench_dstar_lite_narrow_gap_0_F0_score.json
+wrote results/first_flight_bench_dstar_lite_narrow_gap_0_F0.png
+rc=0
+$ .venv/bin/python main.py --adapter arena:random:0 --planner arena:astar_esdf --safety arm:F2 --log runs/regress_default.jsonl   # default flight, unchanged?
+score input=synthetic adapter=arena:random:0 fault=truth planner=arena:astar_esdf safety=arm:F2 reached=True final_dist_m=0.165 t_s=21.10 collided=False min_clearance_m=0.827 max_pose_error_m=0.000 ticks=423 intervened=136 keepalive=0 planner_errors=0 outcome=arrived modes=arrive_dwell:20,arrived:1,nominal:402 health=ok:423 log=runs/regress_default.jsonl
+$ make bench-list
+.venv/bin/python main.py --planner bench:list --bench-dir ../../samples/close-area-benchmark
+[bench] close-area-planner-mpc/mpc.py not loaded: No module named 'osqp'
+id                       needs_world loaded filter sample / label
+straight                 False       True   -      close-area-arena / straight line (floor)
+freest_beam              False       True   -      close-area-arena / freest beam
+apf_escape               False       True   -      close-area-planner-reactive / APF + wall-follow escape
+vfh_plus                 False       True   -      close-area-planner-reactive / VFH+
+astar_known              False       True   -      close-area-arena / A* known map
+astar_unknown            True        True   -      close-area-arena / A* unknown map
+informed_rrt_star        False       True   -      close-area-planner-sampling / Informed RRT* 5000, known map
+astar_mpc                False       False  -      close-area-planner-mpc / A* known + MPC follower
+astar_unknown_f2         True        True   F2     close-area-safety-filter / A* unknown map + F2 filter
+astar_unknown_prior      False       True   -      close-area-arena / A* unknown map, shipped map prior (diagnostic) [not in bench.DEFAULT_PLANNERS]
+dwa                      False       True   -      close-area-planner-dwa-bug / DWA
+dwa_mem                  False       True   -      close-area-planner-dwa-bug / DWA + 3 s scan memory
+bug2                     False       True   -      close-area-planner-dwa-bug / Bug2
+tangent_bug              False       True   -      close-area-planner-dwa-bug / TangentBug
+dstar_lite               True        True   -      close-area-planner-dstar / D* Lite unknown map
+thetastar_known          False       True   -      close-area-planner-thetastar / Theta* known map
+lazy_thetastar_known     False       True   -      close-area-planner-thetastar / Lazy Theta* known map
+thetastar_unknown        True        True   -      close-area-planner-thetastar / Theta* unknown map
+lazy_thetastar_unknown   True        True   -      close-area-planner-thetastar / Lazy Theta* unknown map
+mppi                     True        True   -      close-area-planner-mppi / MPPI, goal only, unknown map
+mppi_astar               True        True   -      close-area-planner-mppi / MPPI on the unknown-map A* path
+hybrid_astar             True        True   -      close-area-planner-hybrid-astar / Hybrid A* unknown map
+$ make test
+python3 -m unittest -v test_flightloop
+test_bench_straight_flies_in_a_world_file (test_flightloop.BenchPlanner.test_bench_straight_flies_in_a_world_file)
+bench:straight via bench.py PLANNERS, flown 2 s in a world: adapter built from a JSON file. ... skipped "needs numpy + scipy (make venv) and the hub's close-area-benchmark (BENCH_DIR)"
+test_arrival_gated_on_health (test_flightloop.FlightLoop.test_arrival_gated_on_health) ... ok
+test_degraded_caps_speed_and_lost_hovers (test_flightloop.FlightLoop.test_degraded_caps_speed_and_lost_hovers) ... ok
+test_health_reset_jumps (test_flightloop.FlightLoop.test_health_reset_jumps) ... ok
+test_keepalive_when_planner_overruns (test_flightloop.FlightLoop.test_keepalive_when_planner_overruns) ... ok
+test_odometry_counter_increments_once_per_reanchor (test_flightloop.FlightLoop.test_odometry_counter_increments_once_per_reanchor) ... ok
+test_open_reaches_and_logs_every_tick (test_flightloop.FlightLoop.test_open_reaches_and_logs_every_tick) ... ok
+test_protocols (test_flightloop.FlightLoop.test_protocols) ... ok
+test_reloc_mode_hovers_moves_and_resumes (test_flightloop.FlightLoop.test_reloc_mode_hovers_moves_and_resumes) ... ok
+test_safety_filter_catches_blind_planner (test_flightloop.FlightLoop.test_safety_filter_catches_blind_planner) ... ok
+test_shim_passes_nav_health_only_to_aware_arms (test_flightloop.FlightLoop.test_shim_passes_nav_health_only_to_aware_arms) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 1.748s
+
+OK (skipped=1)
+test_bench_straight_flies_in_a_world_file (test_flightloop.BenchPlanner.test_bench_straight_flies_in_a_world_file)
+bench:straight via bench.py PLANNERS, flown 2 s in a world: adapter built from a JSON file. ... [bench] close-area-planner-mpc/mpc.py not loaded: No module named 'osqp'
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.718s
+
+OK
+python3 -c "import flightloop.arena_adapter, flightloop.safety_shim, flightloop.reloc_shim, flightloop.bench_planner; print('arena_adapter, safety_shim, reloc_shim, bench_planner import without numpy: ok')"
+arena_adapter, safety_shim, reloc_shim, bench_planner import without numpy: ok
+score input=synthetic adapter=arena:random:0 fault=truth planner=arena:astar_esdf safety=arm:F2 reached=False final_dist_m=19.317 t_s=3.00 collided=False min_clearance_m=1.271 max_pose_error_m=0.000 ticks=61 intervened=0 keepalive=0 planner_errors=0 outcome=timeout modes=nominal:60,timeout:1 health=ok:61 log=runs/smoke_arena.jsonl
+arena smoke (3 s flight, scored): ok
+rc=0
+$ make sim
+4
