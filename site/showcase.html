@@ -58,10 +58,43 @@
 
 <section id="tested" class="section">
   <h2>What we tested</h2>
-  <p class="muted">Two innovation ideas for the close-area task, each run against its own kill test on held-out seeds. Both were narrowed by their own tests. Every number here is <strong>synthetic</strong>: simulated layouts, vehicle, range fan and VIO-like estimator, scored on truth. None is SITL or flight.</p>
+  <p class="muted">Two innovation ideas for the close-area task, each run against its own kill test on held-out seeds. Both were narrowed by their own tests. Three later experiments follow: walking people, finding B, and Hybrid A*. Every number here is <strong>synthetic</strong>: simulated layouts, vehicle, range fan and VIO-like estimator, scored on truth. None is SITL or flight.</p>
   <div class="story-cards" id="storyCards">
     <article class="card scard" id="cardKill"><h3>Integrity-aware safety filter (F5)</h3><p class="muted small">Loading kill_test.json...</p></article>
     <article class="card scard" id="cardReloc"><h3>Relocalization after VIO loss (f)</h3><p class="muted small">Loading relocalize.json...</p></article>
+    <article class="card scard" id="cardVo"><div class="row"><span class="badge reached">PASS held-out</span><span class="badge synthetic">synthetic</span></div>
+      <h3>Walking people: VO gate on A*</h3>
+      <p class="shows">Track people from range hits, predict them at constant velocity, gate the A* carrot by a 3 s velocity obstacle. Bar (fixed before seed 1 ran): no more collisions than A* + F2, more runs reach B, sign test p &lt; 0.05.</p>
+      <ul class="snum">
+        <li><b>100 %</b> (96.3-100) reached, 0 collisions, held-out seed 1 (100 runs, 0.5 and 1.0 m/s).</li>
+        <li>A* + F2: <b>92 %</b> (85.0-95.9) reached, 0 collisions, 8 % stuck. VO reached B in 8 runs where F2 did not, 0 the other way, p = 0.0078.</li>
+        <li>Space-time A*: 97 % reached but <b>3 %</b> collisions. FAIL.</li>
+      </ul>
+      <p class="kr"><strong>Limit:</strong> the gain is reaching B where F2 deadlocks, not better handling of people. Sim people walk straight lines at constant speed, which favours the predictor.</p>
+      <p class="small"><a href="../samples/close-area-moving-obstacles/results/predict_0_1.md">predict_0_1.md</a> - <a href="index.html#page=samples%2Fclose-area-moving-obstacles%2FREADME.md">sample README</a>. 95 % Wilson intervals.</p>
+    </article>
+    <article class="card scard" id="cardExplore"><div class="row"><span class="badge stuck">43 % with B unknown</span><span class="badge synthetic">synthetic</span></div>
+      <h3>Find B when it is not a coordinate</h3>
+      <p class="shows">B is a marker seen within 2 m. Search arms: nearest frontier, frontier near a nominal B, lawnmower, random walk; then the same A* flies to B. 3 families x 20 layouts, 180 s budget, ideal 72-ray fan.</p>
+      <ul class="snum">
+        <li>B unknown: nearest frontier found it in <b>43.3 %</b> [31.6, 55.9], the best arm.</li>
+        <li>Nominal B within 2 m: every arm found it in <b>88.3-100 %</b>, about as fast as B given (21.82-28.96 s vs 22.8 s to B).</li>
+        <li>Crazyflie-like 4 beams: B given still collides in <b>38.3 %</b>; collisions decide, not search.</li>
+      </ul>
+      <p class="kr"><strong>Lesson:</strong> the 6 m range sensor maps the room before a 2 m detector sees B, so frontier exploration finishes the map, not the search. Ask the organisers for a nominal B.</p>
+      <p class="small"><a href="../samples/close-area-explore/results/analysis_0.md">analysis_0.md</a> - <a href="index.html#page=samples%2Fclose-area-explore%2FREADME.md">sample README</a>. 95 % Wilson intervals.</p>
+    </article>
+    <article class="card scard" id="cardHybrid"><div class="row"><span class="badge collision">negative</span><span class="badge synthetic">synthetic</span></div>
+      <h3>Hybrid A* on a turn-limited vehicle</h3>
+      <p class="shows">Plan over x, y and heading with turn-rate-limited arcs, against grid A* + carrot follower. 8 families x 20 layouts, unknown map, 1 rad/s turn limit.</p>
+      <ul class="snum">
+        <li>Reached <b>81.9 %</b> vs <b>91.2 %</b> for A* (160 runs each, ideal sensor).</li>
+        <li>Collisions: 0 % vs 0 % on ideal, 17.5 % vs 17.5 % on 4 beams. No safety gain.</li>
+        <li><b>0.94 s</b> faster median when both reached B (152 paired runs).</li>
+      </ul>
+      <p class="kr"><strong>Keep:</strong> A* + follower stays the multirotor default. Hybrid A* only when the vehicle cannot turn in place at speed. Our untuned version has no path smoothing.</p>
+      <p class="small"><a href="../samples/close-area-planner-hybrid-astar/results/bench_0.md">bench_0.md</a> - <a href="index.html#page=samples%2Fclose-area-planner-hybrid-astar%2FREADME.md">sample README</a>.</p>
+    </article>
   </div>
 
   <h3 class="pick-h">Kill test replay: one layout, VIO jump, two obstacles the range fan cannot see</h3>

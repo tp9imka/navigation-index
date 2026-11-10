@@ -119,6 +119,19 @@ relocalization after VIO loss in an open room with a dense sensor
 people move. The integrity-aware safety filter failed its held-out kill test
 ([Part e](../samples/close-area-safety-filter/README.md#part-e-held-out-seeds-and-families-ran-2026-11-09-synthetic)).
 
+### Answers that map to a tool
+
+Added 2026-11-10 (loop-90). All tools run on synthetic input; the full flow is in the
+[cheat sheet](cheatsheets/close-area-a-to-b.md#day-1-flow-with-the-browser-tools).
+
+| Organiser answer | Tool | First command or click |
+|---|---|---|
+| Q7: "here is the floor plan" (image, PDF screenshot, whiteboard photo) | [world_from_image.py](../samples/close-area-arena/README.md#your-room-in-the-arena-ran-2026-11-10-synthetic) | `world_from_image.py <plan>.png --ref X1 Y1 X2 Y2 D --a-m X Y --b-m X Y -o room.world.json --preview room.png`; a measured room without a drawing: `world_from_room.py <room>.json` |
+| Q1 / Q5: drone size, top speed, sensor specs | Solver **Your drone** panel ([site/solver](../site/solver/README.md#your-drone-loop-76)) | Set radius, v_max, a_max and a sensor preset or Custom (beams, FoV, range), then **Quick**; **Recommend** gives the flight-repo command |
+| Q7: "people walk through" | VO gate in [close-area-moving-obstacles](../samples/close-area-moving-obstacles/README.md#prediction-arms-constant-velocity-tracks-space-time-a-vo-gate-ran-2026-11-10) | `run_predict.py --layouts 50 --seeds 0,1 --workers 14`. A* + VO gate reached B in 100 of 100 held-out runs with 0 collisions vs 92 % for A* + F2; the sim people walk straight lines |
+| Q3: "B is a marker" and its position is not given | [close-area-explore](../samples/close-area-explore/README.md) to find it, then [fiducial-goal-apriltag](../samples/fiducial-goal-apriltag/README.md) for the last metres | `bench.py --layouts 20 --seed 0 --jobs 14`. With B unknown nearest-frontier found it in 43.3 % [31.6, 55.9]; with a nominal within 2 m every arm found it in 88.3-100 %. Ask for a nominal B |
+| Any answer, before tuning | Scenario pack in [close-area-benchmark](../samples/close-area-benchmark/README.md#scenario-packs) | `pack.py run packs/<name>.json`: our room + our drone + the bar, re-run after each change |
+
 ## 3. Decision tree
 
 Each leaf names the hub paths to open. Status words come from
@@ -242,7 +255,7 @@ Each leaf names the hub paths to open. Status words come from
 | Venue-frame coordinates (mocap, UWB, Lighthouse frame) | The venue system, or one known pose (AprilTag at A) to align VIO | [vrpn_mocap](../catalog/repos/alvinsunyixiao__vrpn_mocap.md), [Loco](../catalog/resources/bitcraze-loco-positioning.md) | 31, 33 |
 | GPS point | GNSS (RTK if offered) to get close, a relative cue for the last metres | [03 section 5b](research/close-area-nav/03-close-area-localization.md#b-outdoor-gnss-available) | 31, 32 |
 | Marker, pad, tag or object | Odometry only has to bring it into view; fiducial or detector gives the goal | [AprilTag](../catalog/repos/aprilrobotics__apriltag.md), [apriltag_ros](../catalog/repos/christianrauch__apriltag_ros.md), [PX4 precision landing](../catalog/resources/px4-precision-landing-docs.md), [Clover card](integration-cards/copterexpress__clover.md) | 32 |
-| "Somewhere behind the obstacles" (search) | Exploration + detection | [01 planning](research/close-area-nav/01-planning-and-mapping.md); gap: no exploration sample | 31 |
+| "Somewhere behind the obstacles" (search) | Exploration + detection | [close-area-explore](../samples/close-area-explore/README.md) (frontier 43.3 % found with B unknown, synthetic; a frontier of the map is not a search for B), [01 planning](research/close-area-nav/01-planning-and-mapping.md) | 31, 32 |
 
 Marker branch details:
 
@@ -330,6 +343,9 @@ Obstacle sensing:
   help. Put a range-only CBF filter (PX4-CBF style) under the planner: 0 % collisions, at 16 %
   stuck. APF also held 0-2 %. Synthetic, no motion prediction
   ([close-area-moving-obstacles](../samples/close-area-moving-obstacles/README.md)).
+  With constant-velocity tracks, a VO gate on A* (`run_predict.py`) reached B in 100 of 100
+  held-out runs with 0 collisions vs 92 % for A* + F2 (exact sign test p = 0.0078); the gain is
+  reaching B where F2 deadlocks. Synthetic, people walk straight lines at constant speed.
 
 ### 3.6 Q8: compute
 

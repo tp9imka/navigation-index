@@ -33,6 +33,16 @@ Use this block when the brief is "fly a drone from A to B in a close area, maybe
 5. One-page summary: [docs/cheatsheets/close-area-a-to-b.md](docs/cheatsheets/close-area-a-to-b.md). Demo and
    pitch: [templates/demo-script-close-area.md](templates/demo-script-close-area.md),
    [templates/pitch/close-area-story.md](templates/pitch/close-area-story.md).
+6. Day-1 tools, one entry command each (all synthetic; flow in the cheat sheet "Day-1 flow with the browser tools"):
+   - Room => world JSON: `world_from_room.py rooms/hall_8x6.json` or `world_from_image.py <plan>.png --ref ...` in [close-area-arena](samples/close-area-arena/README.md#your-room-in-the-arena-ran-2026-11-10-synthetic).
+   - Rank planners on that world: [site/solver/](site/solver/README.md) (Import world JSON, Your drone, Quick / Thorough, Recommend => `recommend.md`).
+   - Fly the pick: `make first-flight PLANNER=bench:<id> WORLD=<file.json> ARM=<F0|F2>` in [flight-repo](templates/flight-repo/README.md#fly-what-the-solver-picks-benchid-in-a-world-file); F2 cannot pass gaps under ~1.4 m, use `ARM=F0` there.
+   - Regression bar: `pack.py run packs/<name>.json` in [close-area-benchmark](samples/close-area-benchmark/README.md#scenario-packs).
+   - People walking through: `run_predict.py --layouts 50 --seeds 0,1` in [close-area-moving-obstacles](samples/close-area-moving-obstacles/README.md) (VO gate PASS on held-out seed 1).
+   - B is a marker at an unknown spot: `bench.py --layouts 20 --seed 0` in [close-area-explore](samples/close-area-explore/README.md) (frontier finds B in 43 % with B unknown; ask for a nominal B).
+   - More planners: [thetastar](samples/close-area-planner-thetastar/README.md), [mppi](samples/close-area-planner-mppi/README.md), [hybrid-astar](samples/close-area-planner-hybrid-astar/README.md) (negative result); all are `bench:` ids.
+   - Offline browser tools: `python3 tools/venue_kit.py prepare` then `verify` ([day-0 runbook](docs/day0-runbook.md#browser-tools-offline)).
+   - How it was built: [docs/case-study](docs/case-study/README.md); live site: https://navigation-index.pages.dev/.
 
 MCP-only clients: `read` serves `docs/**/*.md`, `templates/**/*.md` and `samples/<name>/*.md`
 (README, CONTRACT, INTEGRATION), so every page above is reachable without file access.

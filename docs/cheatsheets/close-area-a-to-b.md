@@ -45,6 +45,34 @@ OK, `final_distance_m=0.096 collided=False` on the mock. Fly the arena planners 
 real loop with [flight-repo](../../templates/flight-repo/README.md) (`make sim`,
 `--planner arena:<name>`).
 
+### Day-1 flow with the browser tools
+
+All synthetic. One pass takes about 15 minutes once the room is measured.
+
+1. **Room => world JSON.** Measured room: `world_from_room.py rooms/<room>.json`. Floor plan or
+   whiteboard photo: `world_from_image.py <plan>.png --ref X1 Y1 X2 Y2 D ...` (both in
+   [close-area-arena, Your room in the arena](../../samples/close-area-arena/README.md#your-room-in-the-arena-ran-2026-11-10-synthetic)).
+   Both exit 1 when A and B have no free path.
+2. **Solver, Quick.** Open the [Solver](../../site/solver/README.md) (live:
+   [navigation-index.pages.dev/site/solver/](https://navigation-index.pages.dev/site/solver/)),
+   **Import world JSON**, set **Your drone** (radius, speed, sensor), press **Quick** (5 seeds, the
+   drone's sensor, truth pose).
+3. **Tied? Run Thorough.** Quick often ties: on random_0, 17 of 18 planners tied at 5 of 5. **Thorough**
+   = 10 seeds, ideal + crazyflie + the drone's sensor.
+4. **Recommend.** Downloads `recommend.md` / `.json` with the pick, the tied set and the command to fly.
+5. **Fly it in flight-repo.** From `templates/flight-repo`:
+   `make first-flight PLANNER=bench:<id> WORLD=<file.json> ARM=<F0|F2>`
+   ([Fly what the Solver picks](../../templates/flight-repo/README.md#fly-what-the-solver-picks-benchid-in-a-world-file)).
+6. **Scenario pack as the regression bar.** Write room + drone + bar once as a
+   `close-area-pack/1` file, re-run after every tuning change:
+   `.venv/bin/python pack.py run packs/<name>.json --workers 14` in
+   [close-area-benchmark](../../samples/close-area-benchmark/README.md#scenario-packs). Use a count
+   rule (`collisions == 0`) for a safety bar on a small pack; `reached_rate >= 0.9` needs 35 clean
+   runs before it can PASS.
+
+Venue network blocks the CDN? `python3 tools/venue_kit.py prepare`, then `verify`, before the event
+([day-0 runbook, Browser tools offline](../day0-runbook.md#browser-tools-offline)).
+
 ## 3. Which planner first
 
 Read the [close-area-benchmark](../../samples/close-area-benchmark/README.md#results-ran-2026-11-09-synthetic)
@@ -87,7 +115,7 @@ Situations the matrix does not cover:
 
 | Situation | Start with | Why |
 |---|---|---|
-| Moving obstacles (people walking through) | A* replan + F2 range filter ([close-area-moving-obstacles](../../samples/close-area-moving-obstacles/README.md)) | A* alone collided in 14-36 % of runs; with F2 0 %, 16 % stuck; APF 0-2 % |
+| Moving obstacles (people walking through) | A* replan + F2 range filter ([close-area-moving-obstacles](../../samples/close-area-moving-obstacles/README.md)) | A* alone collided in 14-36 % of runs; with F2 0 %, 16 % stuck; APF 0-2 %. With tracks: A* + VO gate (`run_predict.py`) reached B in 100 of 100 held-out runs, 0 collisions, vs 92 % for A* + F2 (people walk straight lines) |
 | Windows, bars, B at another height | `planners/astar_esdf_3d.py` on a prior 3D map ([window_bar](../../samples/close-area-arena/README.md#altitude-windows-and-bars-ran-2026-11-09-synthetic)) | 2.5D at 1 m reached 14 %, 3D 100 %, 0 % collisions (50 layouts) |
 | Estimator faults, no map | `freest_beam` (inside `run_faults.py`) | Range-only, so faults cut reach, not safety; A* under faults is in [close-area-safety-filter](../../samples/close-area-safety-filter/README.md) |
 | Goal B is a tag or pad | Any of the above to bring the tag into view, then [fiducial-goal-apriltag](../../samples/fiducial-goal-apriltag/README.md) `final_approach.py` | Tag-relative servo for the last metres |
@@ -173,6 +201,25 @@ before any planner flight. Rules per platform: [frames.md](../../templates/drone
    ([close-area-safety-filter](../../samples/close-area-safety-filter/README.md), synthetic).
 5. **Frames and keep-alive.** ENU vs NED, absolute heading vs yaw rate, stick values vs m/s.
    Command +x on the bench and watch which way it moves before the first planner flight.
+6. **F2 vs narrow gaps.** F2 holds the drone centre 0.7 m from every return, so it cannot pass gaps
+   under about 1.4 m. On narrow_gap_0 (0.764 m gap) every flight-repo `bench:` id with F2 ended
+   11.2-16.8 m from B; with F0 dstar_lite reached in 24.96 s (synthetic,
+   [flight-repo](../../templates/flight-repo/README.md#all-ids-on-narrow_gap_0-resultsbench_paritypy)).
+   Recommend switches to `ARM=F0` with a warning below 1.4 m.
+7. **Quick ties on easy maps.** On random_0 a 5-seed Quick sweep tied 17 of 18 planners at 5 of 5
+   (95 % Wilson 57-100 %); only `straight` dropped out (synthetic,
+   [Solver](../../site/solver/README.md#result-quick-sweeps-on-narrow_gap_0-and-random_0-loop-87-quick--5-seeds)).
+   A tie is not a winner: run Thorough or a harder map.
+8. **Frontier search is not a search for B.** With B unknown, nearest-frontier found B in 43.3 %
+   [31.6, 55.9] of runs in 180 s; with a nominal B within 2 m every arm found it in 88.3-100 %. The
+   6 m range sensor maps the room before the 2 m detector sees B (synthetic,
+   [close-area-explore](../../samples/close-area-explore/README.md)). Ask for a nominal B.
+9. **Planners on 4 beams.** Benchmark winners on the ideal 72-ray fan collide on the Crazyflie-like
+   4-beam preset: MPPI on the A* path office 85 % collisions vs 25 % for A*
+   ([close-area-planner-mppi](../../samples/close-area-planner-mppi/README.md)); unknown-map Theta*
+   office collisions 25 % => 35-60 %
+   ([close-area-planner-thetastar](../../samples/close-area-planner-thetastar/README.md)). All
+   synthetic. Run the Solver with your drone's sensor, not ideal.
 
 ## 7. Stretch goal
 
@@ -212,11 +259,18 @@ Pitch: [close-area story](../../templates/pitch/close-area-story.md); demo:
   [close-area-planner-dwa-bug](../../samples/close-area-planner-dwa-bug/README.md),
   [close-area-relocalize](../../samples/close-area-relocalize/README.md),
   [close-area-safety-filter](../../samples/close-area-safety-filter/README.md),
-  [close-area-moving-obstacles](../../samples/close-area-moving-obstacles/README.md),
+  [close-area-moving-obstacles](../../samples/close-area-moving-obstacles/README.md) (`run_predict.py`: VO gate),
+  [close-area-explore](../../samples/close-area-explore/README.md),
+  [close-area-planner-thetastar](../../samples/close-area-planner-thetastar/README.md),
+  [close-area-planner-mppi](../../samples/close-area-planner-mppi/README.md),
+  [close-area-planner-hybrid-astar](../../samples/close-area-planner-hybrid-astar/README.md),
   [vio-to-mavlink-bridge](../../samples/vio-to-mavlink-bridge/), [sitl-docker](../../samples/sitl-docker/).
 - Templates: [drone-adapter](../../templates/drone-adapter/README.md) +
   [drivers](../../templates/drone-adapter/drivers/README.md),
   [flight-repo](../../templates/flight-repo/README.md).
+- Browser: [home page](https://navigation-index.pages.dev/), [Solver](../../site/solver/README.md),
+  [playground](../../site/playground/README.md). How the toolkit was built:
+  [case study](../case-study/README.md).
 - Research: [01 planning](../research/close-area-nav/01-planning-and-mapping.md),
   [02 sims and platforms](../research/close-area-nav/02-sims-platforms-competitions.md),
   [03 localization](../research/close-area-nav/03-close-area-localization.md),
