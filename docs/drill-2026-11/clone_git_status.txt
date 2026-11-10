@@ -1,0 +1,16 @@
+ M samples/close-area-arena/results/room_hall_8x6.json
+?? samples/close-area-arena/results/room_our_room.png
+?? samples/close-area-arena/rooms/our_room.json
+?? samples/close-area-arena/rooms/our_room.world.json
+?? samples/close-area-benchmark/packs/our_room.json
+?? samples/close-area-benchmark/results/pack_our_room.json
+?? samples/close-area-benchmark/results/pack_our_room.md
+?? templates/flight-repo/my_world.json
+?? templates/flight-repo/recommend.json
+?? templates/flight-repo/recommend.md
+?? templates/flight-repo/results/first_flight_bench_thetastar_known_my_world.jsonl
+?? templates/flight-repo/results/first_flight_bench_thetastar_known_my_world.png
+?? templates/flight-repo/results/first_flight_bench_thetastar_known_my_world_score.json
+?? templates/flight-repo/results/warm_rerun.jsonl
+?? templates/flight-repo/results/warm_rerun.png
+?? templates/flight-repo/results/warm_rerun_score.json

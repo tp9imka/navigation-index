@@ -1,0 +1,16 @@
+.venv/bin/python main.py --adapter world:my_world.json --planner bench:thetastar_known --safety arm:F0  --arena ../../samples/close-area-arena --safety-dir ../../samples/close-area-safety-filter --bench-dir ../../samples/close-area-benchmark --log results/warm_rerun.jsonl
+[bench] close-area-planner-mpc/mpc.py not loaded: No module named 'osqp'
+score input=synthetic adapter=world:my_world.json fault=truth planner=bench:thetastar_known safety=arm:F0 reached=True final_dist_m=0.156 t_s=23.66 collided=False min_clearance_m=0.213 max_pose_error_m=0.000 ticks=474 intervened=0 keepalive=0 planner_errors=0 outcome=arrived modes=arrive_dwell:20,arrived:1,nominal:453 health=ok:474 log=results/warm_rerun.jsonl
+.venv/bin/python ../../samples/close-area-arena/score_log.py results/warm_rerun.jsonl --plot results/warm_rerun.png --json results/warm_rerun_score.json
+input            synthetic (positions from truth)
+outcome          reached
+reached          True
+time to goal     22.3 s   (run ends at 22.3 s, 0.291 m from B)
+min clearance    0.2133 m   at [4.413, 2.948, 12.56] (x, y, t)
+path length      9.626 m   (straight A=>B 6.403 m)
+interventions    0   fraction 0.0 of logged steps
+manual modes     0 entries
+steps            447 scored of 474, median rate 16.67 Hz
+max pose error   0.0 m (logged pose vs truth)
+wrote results/warm_rerun_score.json
+wrote results/warm_rerun.png

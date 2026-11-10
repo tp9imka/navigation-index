@@ -1,0 +1,24 @@
+diff --git a/samples/close-area-arena/results/room_hall_8x6.json b/samples/close-area-arena/results/room_hall_8x6.json
+index c93d15f..2e3e9d6 100644
+--- a/samples/close-area-arena/results/room_hall_8x6.json
++++ b/samples/close-area-arena/results/room_hall_8x6.json
+@@ -1,7 +1,7 @@
+ {
+  "input": "synthetic (world from a room description, simulated vehicle and sensor)",
+  "planner": "astar_esdf known_map=True",
+- "command": "python world_from_room.py rooms/hall_8x6.json --preview results/room_hall_8x6.png",
++ "command": "python world_from_room.py rooms/our_room.json --preview results/room_our_room.png",
+  "score_line": "astar_known on hall_8x6: reached, time to goal 23.98 s, min clearance 0.2212 m, path 9.204 m, 8 obstacles (synthetic, truth pose)",
+  "run": {
+   "outcome": "reached",
+@@ -21,7 +21,7 @@
+    0.2
+   ],
+   "max_pose_error_m": 0.0,
+-  "planner_ms_mean": 0.872,
+-  "planner_ms_max": 8.9596
++  "planner_ms_mean": 0.8149,
++  "planner_ms_max": 6.634
+  }
+ }
+\ No newline at end of file

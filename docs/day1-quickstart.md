@@ -1,6 +1,6 @@
 # Day-1 quickstart: fresh clone => flown, scored first flight => regression bar
 
-**Next action:** run step 1, then work down. One pass is about 15 minutes once the room is measured
+**Next action:** run step 1, then work down. One pass took 6 min 7 s agent-driven ([day1-drill-2026-11.md](day1-drill-2026-11.md)); budget 15 minutes by hand once the room is measured
 ([cheat sheet](cheatsheets/close-area-a-to-b.md#day-1-flow-with-the-browser-tools)), plus up to 4
 minutes for the first cold venv (step 4).
 
@@ -46,11 +46,13 @@ uv pip install --python .venv -r requirements-image.txt
 - cwd: `samples/close-area-arena`.
 - Score line (README): `astar_known on hall_8x6: reached, time to goal 23.98 s, min clearance 0.2212 m, path 9.204 m, 8 obstacles (synthetic, truth pose)`.
   Last line (from source, `world_from_room.finish`): `wrote results/room_hall_8x6.json, results/room_hall_8x6.png`.
-- Wall: not measured.
+- Wall: venv 2 s (warm uv cache), world_from_room.py with --preview 12 s (drill 2026-11).
 - Gotchas:
   - Both CLIs exit 1 when A and B have no free path (0.15 m radius + 0.1 m), or on a bad spec.
   - The example commands overwrite committed files (`rooms/*.world.json`, `results/room_*`). For
-    your room use your own spec name and `-o`, e.g. `rooms/our_room.json`.
+    your room use your own spec file and set its `"name"` field too, e.g. `rooms/our_room.json` with
+    `"name": "our_room"`: `--preview` / `--fly` write `results/room_<name>.json` from that field, so a
+    copied hall_8x6 spec still overwrites `results/room_hall_8x6.json` (drill 2026-11, blocker B1).
   - Axis-aligned boxes only; `world_from_room.py` rejects a diagonal wall. Any dark mark in an image
     becomes an obstacle; no perspective correction. A door can lose up to 0.2 m on the planner grid.
   - `--ref X1 Y1 X2 Y2 D`: two pixel points and their distance in metres; a 100 px reference gives
@@ -80,6 +82,7 @@ then open `http://localhost:8000/site/solver/`. Clicks, in order:
   68.1 s (narrow_gap_0); Stress 166.3 s (random_0, 270 runs,
   [Stress](../site/solver/README.md#stress-and-the-pareto-view-loop-89)). Thorough: not measured.
   Python ready 6.8 s after navigation on a fresh profile.
+  Custom world (hall_8x6 copy, 8 obstacles) with Your drone 0.2 m, 1.5 m/s, depth_cam_87: Quick 21.05 s for 90 runs, whole step 30 s incl. load, import and Recommend; 8 tied, 1 Pareto-optimal (drill 2026-11, synthetic).
 - Gotchas:
   - A tie is not a winner. On random_0 Quick tied 17 of 18; Stress still left 17 tied, 3 Pareto-optimal.
   - Recommend switches to `ARM=F0` with a warning when the narrowest passage is below 1.4 m.
@@ -114,7 +117,8 @@ make first-flight ARENA=/path/to/hub/samples/close-area-arena SAFETY=/path/to/hu
 - Wall: cold 205.89 s (whole target, 2.77 s CPU: waiting, cause not found; budget 4 minutes);
   copied-out cold venv 99.74 s; warm 4.94 s and 2.48 s
   ([Brief to first flight](../templates/flight-repo/README.md#brief-to-first-flight)). A `bench:` flight
-  with a warm venv: not measured.
+  on a custom world: 44 s with a cold flight-repo venv, 2 s warm (drill 2026-11).
+  - An imported world file works as `WORLD=` directly (e.g. `WORLD=../../samples/close-area-arena/rooms/our_room.world.json`); recommend.md's `my_world.json` one-liner gives the identical file. The OUT stem then follows the file name.
 - Gotchas:
   - **F2 cannot pass gaps under about 1.4 m.** On narrow_gap_0 (0.764 m gap) every `bench:` id with F2
     ended 11.2-16.8 m from B; with F0 dstar_lite reached in 24.96 s
@@ -159,7 +163,8 @@ uv venv .venv && uv pip install --python .venv -r requirements.txt   # arena dep
 - Last line ([pack_hall_8x6_stdout.txt](../samples/close-area-benchmark/results/pack_hall_8x6_stdout.txt),
   1 worker): `wall 21.1 s for 60 runs on 1 workers; wrote results/pack_hall_8x6.json, .md`.
   Exit code 0 = at least one planner passes every criterion, 1 = none does, 2 = invalid pack.
-- Wall: about 8 s (hall_8x6, 60 runs, 14 workers), about 15 s (office_crazyflie, 75 runs).
+- Wall: about 8 s (hall_8x6, 60 runs, 14 workers), about 15 s (office_crazyflie, 75 runs); 51 s for 105 runs on 4 workers on a fresh venv (16.4 s inside the script, drill 2026-11). On a laptop use `--workers 4`.
+  - The Solver and the pack can disagree on a no-map planner: on the drill room `lazy_thetastar_unknown` reached 5/5 in Solver Quick and 2/5 in the pack on the same seeds, A, B, vehicle and sensor (known-map planners agreed). Suspected cause: the Solver's worker plans with the drone radius, the pack's benchmark loop inflates by 0.15 m (being checked, loop item 99). Until then the bar is the pack verdict.
 - Gotchas:
   - **Use a count rule for safety** (`"collisions": "== 0"`), not `collision_rate <= 0`, which can
     never pass. A count rule says only "0 in these n runs": 15 clean runs support a rate of at most 0.20.

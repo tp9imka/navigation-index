@@ -1,0 +1,34 @@
+uv venv .venv && uv pip install --python .venv -r ../../samples/close-area-arena/requirements.txt
+Using CPython 3.11.15
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
+Resolved 12 packages in 11ms
+Installed 12 packages in 155ms
+ + contourpy==1.3.3
+ + cycler==0.12.1
+ + fonttools==4.68.0
+ + kiwisolver==1.5.1
+ + matplotlib==3.11.2
+ + numpy==2.4.6
+ + packaging==26.3
+ + pillow==13.0.0
+ + pyparsing==3.3.3
+ + python-dateutil==4.0.0
+ + scipy==1.17.1
+ + tzdata==2026.6
+.venv/bin/python main.py --adapter world:my_world.json --planner bench:thetastar_known --safety arm:F0  --arena ../../samples/close-area-arena --safety-dir ../../samples/close-area-safety-filter --bench-dir ../../samples/close-area-benchmark --log results/first_flight_bench_thetastar_known_my_world.jsonl
+[bench] close-area-planner-mpc/mpc.py not loaded: No module named 'osqp'
+score input=synthetic adapter=world:my_world.json fault=truth planner=bench:thetastar_known safety=arm:F0 reached=True final_dist_m=0.156 t_s=23.66 collided=False min_clearance_m=0.213 max_pose_error_m=0.000 ticks=474 intervened=0 keepalive=0 planner_errors=0 outcome=arrived modes=arrive_dwell:20,arrived:1,nominal:453 health=ok:474 log=results/first_flight_bench_thetastar_known_my_world.jsonl
+.venv/bin/python ../../samples/close-area-arena/score_log.py results/first_flight_bench_thetastar_known_my_world.jsonl --plot results/first_flight_bench_thetastar_known_my_world.png --json results/first_flight_bench_thetastar_known_my_world_score.json
+input            synthetic (positions from truth)
+outcome          reached
+reached          True
+time to goal     22.3 s   (run ends at 22.3 s, 0.291 m from B)
+min clearance    0.2133 m   at [4.413, 2.948, 12.56] (x, y, t)
+path length      9.626 m   (straight A=>B 6.403 m)
+interventions    0   fraction 0.0 of logged steps
+manual modes     0 entries
+steps            447 scored of 474, median rate 16.67 Hz
+max pose error   0.0 m (logged pose vs truth)
+wrote results/first_flight_bench_thetastar_known_my_world_score.json
+wrote results/first_flight_bench_thetastar_known_my_world.png

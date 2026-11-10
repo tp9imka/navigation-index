@@ -47,7 +47,7 @@ real loop with [flight-repo](../../templates/flight-repo/README.md) (`make sim`,
 
 ### Day-1 flow with the browser tools
 
-All synthetic. One pass takes about 15 minutes once the room is measured.
+All synthetic. One pass took 6 min 7 s in the loop-92 drill (clone to pack verdict, agent-driven, warm uv cache; 2 min 26 s of that was commands: Solver Quick 30 s, cold first flight 44 s, 105-run pack 51 s on 4 workers), see [day1-drill-2026-11.md](../day1-drill-2026-11.md). Budget 15 minutes by hand once the room is measured (hand clicks not timed).
 
 1. **Room => world JSON.** Measured room: `world_from_room.py rooms/<room>.json`. Floor plan or
    whiteboard photo: `world_from_image.py <plan>.png --ref X1 Y1 X2 Y2 D ...` (both in

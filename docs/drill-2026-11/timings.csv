@@ -1,0 +1,11 @@
+step,start,end,wall_s,rc
+1 clone,1794307252,1794307258,6,0
+2a arena venv,1794307267,1794307269,2,0
+2b world_from_room,1794307274,1794307286,12,0
+3 solver (headless: load+import+drone+Quick+Pareto+Recommend),1794307351,1794307381,30,0
+4a save my_world.json (recommend.md one-liner),1794307467,1794307467,0,0
+4b make first-flight PLANNER=bench:thetastar_known WORLD=my_world.json ARM=F0,1794307473,1794307517,44,0
+4c same command warm (OUT=warm_rerun),1794307524,1794307526,2,0
+6a bench venv,1794307560,1794307561,1,0
+6b write packs/our_room.json,1794307561,1794307561,0,0
+6c pack.py run packs/our_room.json --workers 4,1794307568,1794307619,51,0

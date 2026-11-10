@@ -1,0 +1,4 @@
+wrote rooms/our_room.world.json: 8 obstacles, bounds [0.0, 0.0, 8.0, 6.0], A [0.8, 0.8], B [7.2, 1.0]
+ok from_json, ok has_free_path
+astar_known on hall_8x6: reached, time to goal 23.98 s, min clearance 0.2212 m, path 9.204 m, 8 obstacles (synthetic, truth pose)
+wrote results/room_hall_8x6.json, results/room_our_room.png

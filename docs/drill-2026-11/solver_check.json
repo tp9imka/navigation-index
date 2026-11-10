@@ -1,0 +1,664 @@
+{
+ "date": "2026-11-10T10:42:31.704Z",
+ "input": "synthetic",
+ "world_file": "our_room.world.json",
+ "host": "Apple M3 Max, 16 cores, load 14.0 39.7 50.5",
+ "t": {
+  "chrome_up": "0.6",
+  "ready": "4.9",
+  "imported": "5.0",
+  "drone_set": "5.0",
+  "quick_done": "26.1",
+  "recommended": "29.1"
+ },
+ "chrome": "Chrome/140.0.7339.208",
+ "python_ready_s": 4.343,
+ "K": 4,
+ "import_msg": "Imported our_room.world.json (8 obstacles).",
+ "world_loaded": {
+  "name": null,
+  "obstacles": 8,
+  "a": [
+   0.8,
+   0.8
+  ],
+  "b": [
+   7.2,
+   1
+  ],
+  "family": "custom",
+  "radius": 0.15
+ },
+ "drone_options": [
+  "ideal",
+  "crazyflie",
+  "depth_cam_87",
+  "lidar_2d",
+  "custom"
+ ],
+ "drone_summary": "(radius 0.2 m, v_max 1.5 m/s, a_max 3 m/s^2; sensor depth_cam_87; yaw fixed)",
+ "sweep": {
+  "running": false,
+  "done": 90,
+  "total": 90
+ },
+ "quick_wall_s": 21.05,
+ "headline": "8 planners tie at the top; run Thorough or more seeds to separate them (n=5 per planner, best 5/5 reached B, 95 % CI 57 %-100 %).",
+ "limit_line": "Run time limit: 60 s of sim time (Auto: no benchmark family, default).",
+ "pareto": {
+  "key": "",
+  "front": {
+   "group": [
+    "thetastar_known",
+    "lazy_thetastar_known",
+    "astar_known",
+    "lazy_thetastar_unknown",
+    "informed_rrt_star",
+    "astar_unknown",
+    "dstar_lite",
+    "hybrid_astar"
+   ],
+   "front": [
+    "thetastar_known"
+   ],
+   "excluded": [],
+   "points": [
+    {
+     "planner": "thetastar_known",
+     "t": 21.88,
+     "c": 0.2219,
+     "p": 1,
+     "in_group": true,
+     "eligible": true,
+     "pareto": true,
+     "dominated_by": null
+    },
+    {
+     "planner": "lazy_thetastar_known",
+     "t": 21.94,
+     "c": 0.2217,
+     "p": 1,
+     "in_group": true,
+     "eligible": true,
+     "pareto": false,
+     "dominated_by": "thetastar_known"
+    },
+    {
+     "planner": "astar_known",
+     "t": 22.92,
+     "c": 0.2067,
+     "p": 1,
+     "in_group": true,
+     "eligible": true,
+     "pareto": false,
+     "dominated_by": "thetastar_known"
+    },
+    {
+     "planner": "lazy_thetastar_unknown",
+     "t": 29.18,
+     "c": 0.2062,
+     "p": 1,
+     "in_group": true,
+     "eligible": true,
+     "pareto": false,
+     "dominated_by": "thetastar_known"
+    },
+    {
+     "planner": "informed_rrt_star",
+     "t": 23.549999999999997,
+     "c": 0.1988,
+     "p": 0.8,
+     "in_group": true,
+     "eligible": true,
+     "pareto": false,
+     "dominated_by": "thetastar_known"
+    },
+    {
+     "planner": "astar_unknown",
+     "t": 28.1,
+     "c": 0.1993,
+     "p": 0.6,
+     "in_group": true,
+     "eligible": true,
+     "pareto": false,
+     "dominated_by": "thetastar_known"
+    },
+    {
+     "planner": "dstar_lite",
+     "t": 29.14,
+     "c": 0.1993,
+     "p": 0.6,
+     "in_group": true,
+     "eligible": true,
+     "pareto": false,
+     "dominated_by": "thetastar_known"
+    },
+    {
+     "planner": "hybrid_astar",
+     "t": 44.96,
+     "c": 0.2211,
+     "p": 0.6,
+     "in_group": true,
+     "eligible": true,
+     "pareto": false,
+     "dominated_by": "thetastar_known"
+    },
+    {
+     "planner": "apf",
+     "t": null,
+     "c": 0.4489,
+     "p": 0,
+     "in_group": false,
+     "eligible": false,
+     "pareto": false,
+     "dominated_by": null
+    },
+    {
+     "planner": "bug2",
+     "t": null,
+     "c": 0.4705,
+     "p": 0,
+     "in_group": false,
+     "eligible": false,
+     "pareto": false,
+     "dominated_by": null
+    },
+    {
+     "planner": "dwa",
+     "t": null,
+     "c": 0.3535,
+     "p": 0,
+     "in_group": false,
+     "eligible": false,
+     "pareto": false,
+     "dominated_by": null
+    },
+    {
+     "planner": "dwa_mem",
+     "t": null,
+     "c": 0.3645,
+     "p": 0,
+     "in_group": false,
+     "eligible": false,
+     "pareto": false,
+     "dominated_by": null
+    },
+    {
+     "planner": "freest_beam",
+     "t": null,
+     "c": 0.1954,
+     "p": 0,
+     "in_group": false,
+     "eligible": false,
+     "pareto": false,
+     "dominated_by": null
+    },
+    {
+     "planner": "mppi",
+     "t": null,
+     "c": 0.4862,
+     "p": 0,
+     "in_group": false,
+     "eligible": false,
+     "pareto": false,
+     "dominated_by": null
+    },
+    {
+     "planner": "mppi_astar",
+     "t": null,
+     "c": 0.1868,
+     "p": 0,
+     "in_group": false,
+     "eligible": false,
+     "pareto": false,
+     "dominated_by": null
+    },
+    {
+     "planner": "straight",
+     "t": null,
+     "c": 0.4361,
+     "p": 0,
+     "in_group": false,
+     "eligible": false,
+     "pareto": false,
+     "dominated_by": null
+    },
+    {
+     "planner": "tangent_bug",
+     "t": null,
+     "c": 0.1923,
+     "p": 0,
+     "in_group": false,
+     "eligible": false,
+     "pareto": false,
+     "dominated_by": null
+    },
+    {
+     "planner": "vfh_plus",
+     "t": null,
+     "c": 0.4862,
+     "p": 0,
+     "in_group": false,
+     "eligible": false,
+     "pareto": false,
+     "dominated_by": null
+    }
+   ]
+  },
+  "rows": [
+   {
+    "planner": "thetastar_known",
+    "n": 5,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 5,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 5,
+    "success": {
+     "p": 1,
+     "lo": 0.5655085052479191,
+     "hi": 1
+    },
+    "median_time_s": 21.88,
+    "median_path_m": 9.583,
+    "min_clearance_m": 0.2219,
+    "collision_rate": 0,
+    "mean_wall_s": 1.0962
+   },
+   {
+    "planner": "lazy_thetastar_known",
+    "n": 5,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 5,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 5,
+    "success": {
+     "p": 1,
+     "lo": 0.5655085052479191,
+     "hi": 1
+    },
+    "median_time_s": 21.94,
+    "median_path_m": 9.582,
+    "min_clearance_m": 0.2217,
+    "collision_rate": 0,
+    "mean_wall_s": 0.7252
+   },
+   {
+    "planner": "astar_known",
+    "n": 5,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 5,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 5,
+    "success": {
+     "p": 1,
+     "lo": 0.5655085052479191,
+     "hi": 1
+    },
+    "median_time_s": 22.92,
+    "median_path_m": 9.045,
+    "min_clearance_m": 0.2067,
+    "collision_rate": 0,
+    "mean_wall_s": 0.5154
+   },
+   {
+    "planner": "lazy_thetastar_unknown",
+    "n": 5,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 5,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 5,
+    "success": {
+     "p": 1,
+     "lo": 0.5655085052479191,
+     "hi": 1
+    },
+    "median_time_s": 29.18,
+    "median_path_m": 13.947,
+    "min_clearance_m": 0.2062,
+    "collision_rate": 0,
+    "mean_wall_s": 2.1273999999999997
+   },
+   {
+    "planner": "informed_rrt_star",
+    "n": 5,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 4,
+    "collision": 1,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 4,
+    "success": {
+     "p": 0.8,
+     "lo": 0.3755282641185388,
+     "hi": 0.9637768390302125
+    },
+    "median_time_s": 23.549999999999997,
+    "median_path_m": 8.617,
+    "min_clearance_m": 0.1988,
+    "collision_rate": 0.2,
+    "mean_wall_s": 0.5338
+   },
+   {
+    "planner": "astar_unknown",
+    "n": 5,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 3,
+    "collision": 2,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 3,
+    "success": {
+     "p": 0.6,
+     "lo": 0.23071993220883708,
+     "hi": 0.8823817688407467
+    },
+    "median_time_s": 28.1,
+    "median_path_m": 11.348,
+    "min_clearance_m": 0.1993,
+    "collision_rate": 0.4,
+    "mean_wall_s": 0.7722
+   },
+   {
+    "planner": "dstar_lite",
+    "n": 5,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 3,
+    "collision": 2,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 3,
+    "success": {
+     "p": 0.6,
+     "lo": 0.23071993220883708,
+     "hi": 0.8823817688407467
+    },
+    "median_time_s": 29.14,
+    "median_path_m": 11.587,
+    "min_clearance_m": 0.1993,
+    "collision_rate": 0.4,
+    "mean_wall_s": 1.89
+   },
+   {
+    "planner": "hybrid_astar",
+    "n": 5,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 3,
+    "collision": 0,
+    "stuck": 2,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 3,
+    "success": {
+     "p": 0.6,
+     "lo": 0.23071993220883708,
+     "hi": 0.8823817688407467
+    },
+    "median_time_s": 44.96,
+    "median_path_m": 13.995,
+    "min_clearance_m": 0.2211,
+    "collision_rate": 0,
+    "mean_wall_s": 2.0713999999999997
+   },
+   {
+    "planner": "apf",
+    "n": 5,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 5,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.43449149475208104
+    },
+    "median_time_s": null,
+    "median_path_m": 8.878,
+    "min_clearance_m": 0.4489,
+    "collision_rate": 0,
+    "mean_wall_s": 0.06760000000000001
+   },
+   {
+    "planner": "bug2",
+    "n": 5,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 5,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.43449149475208104
+    },
+    "median_time_s": null,
+    "median_path_m": 6.806,
+    "min_clearance_m": 0.4705,
+    "collision_rate": 0,
+    "mean_wall_s": 0.0602
+   },
+   {
+    "planner": "dwa",
+    "n": 5,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 5,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.43449149475208104
+    },
+    "median_time_s": null,
+    "median_path_m": 3.144,
+    "min_clearance_m": 0.3535,
+    "collision_rate": 0,
+    "mean_wall_s": 0.6516
+   },
+   {
+    "planner": "dwa_mem",
+    "n": 5,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 5,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.43449149475208104
+    },
+    "median_time_s": null,
+    "median_path_m": 3.283,
+    "min_clearance_m": 0.3645,
+    "collision_rate": 0,
+    "mean_wall_s": 1.0028000000000001
+   },
+   {
+    "planner": "freest_beam",
+    "n": 5,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 0,
+    "collision": 1,
+    "stuck": 4,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.43449149475208104
+    },
+    "median_time_s": null,
+    "median_path_m": 6.623,
+    "min_clearance_m": 0.1954,
+    "collision_rate": 0.2,
+    "mean_wall_s": 0.0716
+   },
+   {
+    "planner": "mppi",
+    "n": 5,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 5,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.43449149475208104
+    },
+    "median_time_s": null,
+    "median_path_m": 2.378,
+    "min_clearance_m": 0.4862,
+    "collision_rate": 0,
+    "mean_wall_s": 0.775
+   },
+   {
+    "planner": "mppi_astar",
+    "n": 5,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 0,
+    "collision": 5,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.43449149475208104
+    },
+    "median_time_s": null,
+    "median_path_m": 4.447,
+    "min_clearance_m": 0.1868,
+    "collision_rate": 1,
+    "mean_wall_s": 0.8382
+   },
+   {
+    "planner": "straight",
+    "n": 5,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 5,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.43449149475208104
+    },
+    "median_time_s": null,
+    "median_path_m": 2.301,
+    "min_clearance_m": 0.4361,
+    "collision_rate": 0,
+    "mean_wall_s": 0.0656
+   },
+   {
+    "planner": "tangent_bug",
+    "n": 5,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 0,
+    "collision": 1,
+    "stuck": 3,
+    "timeout": 1,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.43449149475208104
+    },
+    "median_time_s": null,
+    "median_path_m": 10.905,
+    "min_clearance_m": 0.1923,
+    "collision_rate": 0.2,
+    "mean_wall_s": 0.0888
+   },
+   {
+    "planner": "vfh_plus",
+    "n": 5,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 5,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.43449149475208104
+    },
+    "median_time_s": null,
+    "median_path_m": 4.378,
+    "min_clearance_m": 0.4862,
+    "collision_rate": 0,
+    "mean_wall_s": 0.07120000000000001
+   }
+  ]
+ },
+ "pareto_text": "Fast and safe: Pareto view\nVariation \nall variations pooled\ndepth_cam_87 / truth pose\n\nPareto-optimal (all variations pooled): Theta* (any-angle), known map 21.88 s, 0.222 m, 100 %. Best success group: 8 planners whose 95 % interval overlaps Theta* (any-angle), known map's (57 %-100 %).\n\nOne dot per planner: x = median time to B over its runs that reached B, y = min clearance (lowest centre-to-surface distance over its runs), dot size = success rate. Faded = outside the best success group (95 % Wilson interval does not overlap the top planner's). Ring, label and dashed line = Pareto-optimal in that group: no other member is as fast and as far from surfaces and better in one (times at 0.01 s, clearances at 0.001 m). Up and left is better. Planners that never reached B are not plotted.",
+ "rec_enabled": true,
+ "downloads": [
+  "recommend.json",
+  "recommend.md"
+ ],
+ "share_msg": "recommend.md and recommend.json downloaded.",
+ "rec": {
+  "headline": "8 planners tie at the top; run Thorough or more seeds to separate them (n=5 per planner, best 5/5 reached B, 95 % CI 57 %-100 %).",
+  "kind": "tie",
+  "tied_n": 8,
+  "command": "make first-flight PLANNER=bench:thetastar_known WORLD=my_world.json ARM=F0",
+  "arm": "F0",
+  "passage_m": 0.6512,
+  "advisor": true
+ },
+ "console": []
+}
