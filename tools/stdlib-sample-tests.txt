@@ -54,3 +54,4 @@ navigation-innovation-lab
 close-area-planner-hybrid-astar
 close-area-planner-thetastar
 close-area-planner-mppi
+close-area-explore

@@ -414,6 +414,19 @@ themselves. Not upstream defects: Stone Soup set-order nondeterminism, evo on a 
 - **Channel:** email to the corresponding author (RA-L errata go through the authors).
 - **Status:** not filed - awaiting owner decision.
 
+## 22. close-area-arena: a dropped beam marks free space behind walls
+
+- **Source:** hub code, `samples/close-area-arena/planners/astar_esdf.py` `LogOddsMap.update`
+  ([close-area-explore analysis](../samples/close-area-explore/results/analysis_0.md)).
+- **Evidence:** a beam with no return (`inf`, which the sensor also returns for a dropped beam) is
+  traced as free out to `max_range`, so a dropout marks cells behind a wall as free. The
+  planner's known-free area reached 1.25 x the true free area; the three worst runs rerun with
+  dropout 0 ended at 0.79-0.98 (synthetic).
+- **Suggested fix:** skip dropped beams, or trace no-return beams only when the sensor reports
+  "no target" separately from "dropout". Impact on unknown-map benchmark rows not measured yet.
+- **Channel:** hub (loop item 85).
+- **Status:** open - impact check in progress.
+
 ## Checked and not filed
 
 - **Heimdall DAQ firmware synthetic mode** ([card](integration-cards/krakenrf__heimdall_daq_fw.md)):
