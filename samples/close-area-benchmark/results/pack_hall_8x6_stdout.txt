@@ -1,0 +1,18 @@
+| planner | reached_rate >= 0.9 | collision_rate <= 0 | time_to_goal_p50_s <= 30 | verdict |
+|---|---|---|---|---|
+| astar_known | NOT PROVEN: 10/10 = 1.00, CI [0.72, 1.00]; lower 0.72 misses >= 0.9, upper 1.00 meets it | NOT PROVEN: 0/10 = 0.00, CI [0.00, 0.28]; upper 0.28 misses <= 0, lower 0.00 meets it | PASS: 23.7 s, CI [22.9, 24.6], n=10; upper 24.6 <= 30 | **NOT PROVEN** |
+| astar_unknown | FAIL: 3/10 = 0.30, CI [0.11, 0.60]; upper 0.60 misses >= 0.9 | FAIL: 7/10 = 0.70, CI [0.40, 0.89]; lower 0.40 misses <= 0 | NOT PROVEN: inf s, CI [29.2, inf], n=10; upper inf misses <= 30, lower 29.2 meets it | **FAIL** |
+| astar_unknown_f2 | FAIL: 0/9 = 0.00, CI [0.00, 0.30]; upper 0.30 misses >= 0.9 | NOT PROVEN: 0/9 = 0.00, CI [0.00, 0.30]; upper 0.30 misses <= 0, lower 0.00 meets it | FAIL: inf s, CI [inf, inf], n=9; lower inf misses <= 30 | **FAIL** |
+| mppi_astar | FAIL: 0/10 = 0.00, CI [0.00, 0.28]; upper 0.28 misses >= 0.9 | FAIL: 10/10 = 1.00, CI [0.72, 1.00]; lower 0.72 misses <= 0 | FAIL: inf s, CI [inf, inf], n=10; lower inf misses <= 30 | **FAIL** |
+| tangent_bug | FAIL: 0/10 = 0.00, CI [0.00, 0.28]; upper 0.28 misses >= 0.9 | FAIL: 2/10 = 0.20, CI [0.06, 0.51]; lower 0.06 misses <= 0 | FAIL: inf s, CI [inf, inf], n=10; lower inf misses <= 30 | **FAIL** |
+| straight | FAIL: 0/10 = 0.00, CI [0.00, 0.28]; upper 0.28 misses >= 0.9 | NOT PROVEN: 0/10 = 0.00, CI [0.00, 0.28]; upper 0.28 misses <= 0, lower 0.00 meets it | FAIL: inf s, CI [inf, inf], n=10; lower inf misses <= 30 | **FAIL** |
+
+- astar_known: NOT PROVEN (10 runs)
+- astar_unknown: FAIL (10 runs)
+- astar_unknown_f2: FAIL (10 runs)
+- mppi_astar: FAIL (10 runs)
+- tangent_bug: FAIL (10 runs)
+- straight: FAIL (10 runs)
+
+Exit code 1: no planner passes every criterion.
+wall 8.3 s for 60 runs on 14 workers; wrote results/pack_hall_8x6.json, .md

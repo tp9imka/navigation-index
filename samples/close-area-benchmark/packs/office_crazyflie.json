@@ -1,0 +1,12 @@
+{
+ "schema": "close-area-pack/1",
+ "name": "office_crazyflie",
+ "description": "Three office layouts (playground preset office_0 and benchmark office layouts 1 and 2), stock vehicle, Crazyflie Multi-ranger preset (4 cone beams, 3 m). Bar: reach B in at least 90 % of runs, no collisions, median time to B at most 30 s.",
+ "worlds": ["preset:office_0", "family:office:1", "family:office:2"],
+ "vehicle": "default",
+ "sensor": "crazyflie",
+ "planners": ["astar_known", "astar_unknown", "astar_unknown_f2", "lazy_thetastar_unknown", "dwa_mem"],
+ "seeds": {"n": 5, "jitter_m": 0.5},
+ "max_time_s": "auto",
+ "criteria": {"reached_rate": ">= 0.9", "collision_rate": "<= 0", "time_to_goal_p50_s": "<= 30"}
+}
