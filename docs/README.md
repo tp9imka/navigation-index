@@ -66,6 +66,7 @@ Use these when the brief is "fly a drone from A to B in a close area, maybe with
 
 | Page | Use it when | You get |
 |---|---|---|
+| [case-study/](case-study/README.md) | You need the story of how the hub was built, for a pitch or a portfolio | Two days, 83 items, two headlines killed: method, failures, figures derived from committed files |
 | [evidence-matrix.md](evidence-matrix.md) | You quote any number | Every measured number across samples, with input type (real / SITL / synthetic). Superseded results (altpnt v1, the interference scorer before its real-data rework) are labelled |
 
 ## Maintaining the hub
