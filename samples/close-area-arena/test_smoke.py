@@ -58,6 +58,20 @@ class SmokeTest(unittest.TestCase):
         self.assertAlmostEqual(rows_s[0]["max_pose_error_m"], 5.0, places=6)
         self.assertNotEqual(strip(rows_s)[0]["path_length_m"], strip(rows_a)[0]["path_length_m"])
 
+    def test_world_from_room_example_spec(self):
+        load_arena()
+        import importlib
+        import json
+        wfr = importlib.import_module("close_area_arena.world_from_room")
+        with open(os.path.join(HERE, "rooms", "hall_8x6.json")) as fh:
+            doc = wfr.room_to_world(json.load(fh))
+        self.assertEqual(doc["bounds"], [0.0, 0.0, 8.0, 6.0])
+        self.assertEqual(len(doc["obstacles"]), 8)          # 2 wall pieces (door cut), 4 boxes, 2 pillars
+        w, problems = wfr.check(doc)                        # world_json.from_json + has_free_path
+        self.assertEqual(problems, [])
+        self.assertAlmostEqual(w.goal[0], 6.4)               # B moved into the A-origin frame
+        self.assertGreater(w.clearance(5.0 - 0.8, 4.05 - 0.8), 0.4)   # door centre is free
+
 
 if __name__ == "__main__":
     unittest.main()

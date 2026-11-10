@@ -1,0 +1,4 @@
+# Extra dependency of world_from_image.py for PNG / JPG input (PGM / PBM need only requirements.txt).
+# uv pip install --python .venv -r requirements-image.txt
+-r requirements.txt
+Pillow>=10.0

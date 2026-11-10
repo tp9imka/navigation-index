@@ -1,0 +1,23 @@
+{
+ "name": "hall_8x6",
+ "note": "Example room spec for world_from_room.py: 8 x 6 m hall split by a wall at x = 5 m with one 0.9 m door, two pillars, three tables and a shelf. Made-up layout, not a measured room.",
+ "size_m": [8.0, 6.0],
+ "height_m": 3.0,
+ "z_m": 1.0,
+ "wall_thickness_m": 0.12,
+ "walls": [
+  {"from": [5.0, 0.0], "to": [5.0, 6.0], "doors": [[3.6, 0.9]]}
+ ],
+ "pillars": [
+  {"at": [2.6, 2.0], "r": 0.2},
+  {"at": [2.6, 4.0], "r": 0.2}
+ ],
+ "boxes": [
+  {"at": [1.4, 3.0], "size": [1.6, 0.8], "tag": "table"},
+  {"at": [3.9, 1.2], "size": [0.8, 1.6], "tag": "table"},
+  {"at": [6.5, 2.4], "size": [1.2, 0.8], "tag": "table"},
+  {"at": [6.6, 5.7], "size": [2.0, 0.4], "tag": "shelf"}
+ ],
+ "a": [0.8, 0.8],
+ "b": [7.2, 1.0]
+}

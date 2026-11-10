@@ -1,0 +1,20 @@
+{
+ "date": "2026-11-10T07:28:44.390Z",
+ "input": "synthetic",
+ "page": "http://127.0.0.1:8793/site/solver/",
+ "chrome": "Chrome/140.0.7339.208",
+ "imports": [
+  {
+   "file": "hall_8x6.world.json",
+   "message": "Imported hall_8x6.world.json (8 obstacles).",
+   "ok": true
+  },
+  {
+   "file": "sketch_hall.world.json",
+   "message": "Imported sketch_hall.world.json (45 obstacles).",
+   "ok": true
+  }
+ ],
+ "screenshot": "results/room_in_solver.png (viewport 1280 x 900, after importing sketch_hall.world.json)",
+ "console": []
+}

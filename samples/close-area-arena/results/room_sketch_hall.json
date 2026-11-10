@@ -1,0 +1,49 @@
+{
+ "input": "synthetic (world from a room description, simulated vehicle and sensor)",
+ "planner": "astar_esdf known_map=True",
+ "command": "python world_from_image.py rooms/sketch_hall.png --ref 40 40 440 40 8.0 --origin-px 40 340 --a-m 0.8 0.8 --b-m 7.2 1.0 -o rooms/sketch_hall.world.json --preview results/room_sketch_hall.png",
+ "score_line": "astar_known on sketch_hall: reached, time to goal 25.54 s, min clearance 0.2153 m, path 9.629 m, 45 obstacles (synthetic, truth pose)",
+ "image": {
+  "file": "sketch_hall.png",
+  "px": [
+   480,
+   380
+  ],
+  "m_per_px": 0.02,
+  "ref_px": 400.0,
+  "ref_m": 8.0,
+  "scale_err_pct_1px": 0.35,
+  "threshold": 128.0,
+  "dark_px_pct": 12.49,
+  "grid": [
+   96,
+   76
+  ],
+  "occupied_cells": 1163,
+  "specks_dropped": 0,
+  "boxes": 45,
+  "fill": 0.3,
+  "min_cells": 3
+ },
+ "run": {
+  "outcome": "reached",
+  "reached": true,
+  "collision": false,
+  "stuck": false,
+  "timeout": false,
+  "time_to_goal_s": 25.54,
+  "min_clearance_m": 0.2153,
+  "path_length_m": 9.629,
+  "duration_s": 25.54,
+  "index": 0,
+  "layout_attempts": 1,
+  "n_obstacles": 45,
+  "goal": [
+   6.4,
+   0.2
+  ],
+  "max_pose_error_m": 0.0,
+  "planner_ms_mean": 0.8435,
+  "planner_ms_max": 6.5429
+ }
+}

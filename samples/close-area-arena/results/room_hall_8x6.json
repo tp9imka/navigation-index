@@ -1,0 +1,27 @@
+{
+ "input": "synthetic (world from a room description, simulated vehicle and sensor)",
+ "planner": "astar_esdf known_map=True",
+ "command": "python world_from_room.py rooms/hall_8x6.json --preview results/room_hall_8x6.png",
+ "score_line": "astar_known on hall_8x6: reached, time to goal 23.98 s, min clearance 0.2212 m, path 9.204 m, 8 obstacles (synthetic, truth pose)",
+ "run": {
+  "outcome": "reached",
+  "reached": true,
+  "collision": false,
+  "stuck": false,
+  "timeout": false,
+  "time_to_goal_s": 23.98,
+  "min_clearance_m": 0.2212,
+  "path_length_m": 9.204,
+  "duration_s": 23.98,
+  "index": 0,
+  "layout_attempts": 1,
+  "n_obstacles": 8,
+  "goal": [
+   6.4,
+   0.2
+  ],
+  "max_pose_error_m": 0.0,
+  "planner_ms_mean": 0.872,
+  "planner_ms_max": 8.9596
+ }
+}

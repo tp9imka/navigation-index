@@ -324,6 +324,71 @@ No rotor downwash near window frames. B is always at 1.0 m. One seed. The 2.5D m
 generous one (any box that overlaps the vehicle's height band). A thin 2D lidar slice was not
 scored; it would see through bars just outside 1 m and is likely to collide rather than stop.
 
+## Your room in the arena (ran 2026-11-10, synthetic)
+
+Two CLIs write `close-area-world/1` JSON ([world_json.py](world_json.py), no schema change) for a
+room of any size, for example an 8 x 6 m hall that the 20 x 20 m playground editor cannot hold.
+Both check the result with `world_json.from_json` and the arena's free-path test
+(`worlds_complex.has_free_path`, 0.15 m radius + 0.1 m at A and B) and exit 1 on a failure.
+`--preview` flies `astar_esdf` with the known map through `run.run_one` (truth pose, arena defaults),
+writes `results/room_<name>.json` and a PNG of map and path.
+
+```sh
+# 1. measured room => JSON spec (walls with door gaps, pillars, tables, A, B; format in the script's docstring)
+.venv/bin/python world_from_room.py rooms/hall_8x6.json --preview results/room_hall_8x6.png
+# 2. floor plan or whiteboard photo => boxes; PNG/JPG needs Pillow (PGM/PBM do not)
+uv pip install --python .venv -r requirements-image.txt
+.venv/bin/python world_from_image.py rooms/sketch_hall.png --ref 40 40 440 40 8.0 --origin-px 40 340 \
+    --a-m 0.8 0.8 --b-m 7.2 1.0 -o rooms/sketch_hall.world.json --preview results/room_sketch_hall.png
+```
+
+`--ref X1 Y1 X2 Y2 D` = two pixel points (column, row) and their real distance in metres; or
+`--m-per-px`. A and B take `--a-px COL ROW` or `--a-m X Y`. Then open `/site/solver/` and use
+**Import world JSON**.
+
+Inputs: [rooms/hall_8x6.json](rooms/hall_8x6.json) is a made-up 8 x 6 m hall (wall at x = 5 m with
+a 0.9 m door, 2 pillars, 3 tables, 1 shelf). [rooms/sketch_hall.png](rooms/sketch_hall.png) (74 KB)
+is the same hall drawn by [rooms/make_sketch.py](rooms/make_sketch.py) with wobbly pencil lines,
+uneven paper and light smudges: a synthetic drawing, not a photo. Outputs:
+[hall_8x6.world.json](rooms/hall_8x6.world.json), [sketch_hall.world.json](rooms/sketch_hall.world.json).
+
+Score lines printed by the two commands ([room_hall_8x6.json](results/room_hall_8x6.json),
+[room_sketch_hall.json](results/room_sketch_hall.json)), synthetic, truth pose, one run each:
+
+```
+astar_known on hall_8x6: reached, time to goal 23.98 s, min clearance 0.2212 m, path 9.204 m, 8 obstacles (synthetic, truth pose)
+astar_known on sketch_hall: reached, time to goal 25.54 s, min clearance 0.2153 m, path 9.629 m, 45 obstacles (synthetic, truth pose)
+```
+
+- Image pipeline (`image` in [room_sketch_hall.json](results/room_sketch_hall.json)): scale 0.02 m/px
+  from 400 px = 8.0 m, threshold 128, 12.49 % dark pixels, 96 x 76 cells, 1163 occupied => 45 boxes.
+  Bounds came out [-0.1, -0.1, 8.1, 6.1] in [sketch_hall.world.json](rooms/sketch_hall.world.json):
+  the drawn outer walls are about 0.1 m thick and sit on the bounds.
+- Same hall, two inputs: the sketch path is 0.425 m longer and 1.56 s slower than the spec path,
+  with 45 boxes instead of 8 obstacles.
+- Previews: [room_hall_8x6.png](results/room_hall_8x6.png),
+  [room_sketch_hall.png](results/room_sketch_hall.png). The Solver opened both worlds through its
+  file input in headless Chrome 140 ("Imported sketch_hall.world.json (45 obstacles).", no console
+  errors): [room_in_solver.png](results/room_in_solver.png), script
+  [rooms/shot_solver.mjs](rooms/shot_solver.mjs), log [room_in_solver.json](results/room_in_solver.json).
+  No sweep ran in the Solver.
+
+Limits:
+
+- Axis-aligned boxes and walls only. A diagonal wall or a round pillar in an image becomes a stair
+  of boxes; `world_from_room.py` rejects a diagonal wall. Use `pillars` (cylinders) in the spec.
+- Thresholds: a pixel is dark below grey 128 (`--threshold otsu` picks one from the histogram
+  instead). A 0.1 m cell is occupied at 30 % dark
+  pixels (`--fill`), blobs under 3 cells are dropped (`--min-cells`). Any dark mark (text, arrows,
+  a shadow, a dark floor) becomes an obstacle; uneven light on a photo can need a higher or lower
+  threshold. No perspective correction: photograph the plan straight on.
+- Scale error: with `--ref`, +-1 px on each clicked point gives about +-1.4 px on the length. The CLI
+  prints it (+-0.35 % for 400 px); a 100 px reference gives +-1.4 %. A tape-measure error adds to it.
+- Boxes sit on 0.1 m cell edges, so a drawn edge moves by up to 0.1 m. The arena grid then marks
+  cells within 0.05 m of a surface, so a door can lose up to another 0.2 m on the planner's grid.
+- The free-path check is 2D at the hold altitude. `height_m` in the room spec only checks that
+  `z_m` is at least 0.3 m below the ceiling.
+
 ## Limits
 
 - 2.5D only: no altitude changes, no overhangs, z is held. Obstacles are axis-aligned boxes
