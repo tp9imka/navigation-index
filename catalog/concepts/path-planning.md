@@ -6,11 +6,12 @@ Global/local planners, sampling and search based planning, trajectory optimizati
 
 **Sub-concepts:** [Mission planning and routing](../../catalog/concepts/mission-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
-## Samples (10)
+## Samples (11)
 
 - [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md) - Small deterministic simulator that every close-area A=>B approach in the hub is compared in.
 - [Close-area benchmark matrix: 14 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md) - Runs every close-area planner in the hub through the shared close-area-arena on the same seeded layouts and scores them on truth: straight, freest_beam, APF with wall-follow escape, VFH+, A* + ESDF on the known map, A* +
 - [Close-area corridor MPC: linear MPC with OSQP in an ESDF half-plane corridor on the arena A*, vs the carrot follower](../../catalog/samples/close-area-planner-mpc.md) - Replaces the close-area-arena A* carrot follower with a linear MPC path follower and measures the difference.
+- [Close-area Hybrid A*: kinematically feasible (x, y, heading) search with turn-rate-limited primitives against A* + follower, in the close-area arena](../../catalog/samples/close-area-planner-hybrid-astar.md) - Own numpy + scipy Hybrid A* (Dolgov et al.
 - [Close-area local planners: DWA (Nav2-style dynamic window) and Bug2 / TangentBug, range sensor only, next to APF and VFH+ on 72-beam and Crazyflie-like 4-beam fans](../../catalog/samples/close-area-planner-dwa-bug.md) - Two more classic map-free local planners for close-area A=>B, written as close-area-arena Planners that read only the pose and the range scan, and measured on the same arena families and fans as the reactive sample.
 - [Close-area moving obstacles: walking people in the arena, A* replan vs A* + PX4-CBF range filter vs APF](../../catalog/samples/close-area-moving-obstacles.md) - Moving-obstacle family for the shared close-area-arena.
 - [Close-area reactive planners: APF with wall-follow escape and VFH+, range sensor only, 72-beam vs Crazyflie-like 4-beam fan](../../catalog/samples/close-area-planner-reactive.md) - Map-free fallback planners for close-area A=>B, written as close-area-arena Planners that read only the pose and the range scan.
@@ -19,7 +20,7 @@ Global/local planners, sampling and search based planning, trajectory optimizati
 - [D* Lite vs A* from scratch for unknown-map replanning in the close-area arena](../../catalog/samples/close-area-planner-dstar.md) - D* Lite on the same inflated grid and cost model as astar_esdf's unknown-map mode, compared with A* replanning from scratch on 50 seed-0 layouts per family.
 - [Navigation innovation laboratory: active localization, asynchronous fix scheduling and selective model adaptation](../../catalog/samples/navigation-innovation-lab.md) - Three stdlib synthetic POCs with conventional baselines, ablations, held-out seeds, stress cases and paired intervals.
 
-## Guides (29)
+## Guides (30)
 
 - [01. Flyable maneuvers that separate competing location hypotheses](../../docs/research/innovation-prior-art/01-disambiguating-maneuvers.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers".
 - [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2.
@@ -38,6 +39,7 @@ Global/local planners, sampling and search based planning, trajectory optimizati
 - [Demo dashboard](../../templates/demo-dashboard/README.md) - Use this when a GNSS / PNT run with lat / lon tracks needs a judge-facing map replay.
 - [Demo script: close-area A to B](../../templates/demo-script-close-area.md) - Live-demo variant of demo-script.md for the close-area task: fly from A to B through obstacles, with a VIO fault injected.
 - [drivers: Adapter implementations for real platforms](../../templates/drone-adapter/drivers/README.md) - Use this when you need to send velocity setpoints to PX4 (MAVSDK Offboard), ArduPilot (GUIDED, pymavlink), a Crazyflie (cflib) or a Tello (djitellopy), or read pose and ranges from them, behind the pose() / ranges() / se
+- [Evidence matrix](../../docs/evidence-matrix.md) - Recording/replay plumbing: recording-replay ran on 2026-11-07 with 101 synthetic poses over 10 s.
 - [flight-repo: close-area A=>B flight loop starter](../../templates/flight-repo/README.md) - Use this when the task is "fly from A to B in a close area, maybe with obstacles": clone it at H+0 as the team repo.
 - [Guidance and planning for a navigation entry](../../docs/guidance-planning.md) - Written 2026-11-09 for Challenge 2 "Autonomous Frontiers" (entry point).
 - [H1: move to distinguish competing location hypotheses](../../docs/hypotheses/h1-active-disambiguation.md) - Status: mechanism demonstrated synthetically; proposed improvement over the information-gain baseline NOT demonstrated.

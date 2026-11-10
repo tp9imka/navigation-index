@@ -20,4 +20,8 @@ Peer-reviewed (IJRR). The Hybrid A* paper from the DARPA Urban Challenge: A* ove
 
 - explains: [Search-based motion planning for quadrotors using linear quadratic minimum time control](../../catalog/resources/liu-mpl-lqmt-iros-2017.md)
 
+## Referenced by
+
+- [Close-area Hybrid A*: kinematically feasible (x, y, heading) search with turn-rate-limited primitives against A* + follower, in the close-area arena](../../catalog/samples/close-area-planner-hybrid-astar.md) (explains)
+
 _Indexed by lane(s): close-area-planning_
