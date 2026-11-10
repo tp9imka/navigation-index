@@ -6,7 +6,7 @@ Reactive avoidance, sense-and-avoid, DAA.
 
 **Parent:** [Path and motion planning](../../catalog/concepts/path-planning.md)
 
-## Samples (9)
+## Samples (10)
 
 - [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md) - Small deterministic simulator that every close-area A=>B approach in the hub is compared in.
 - [Close-area benchmark matrix: 14 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md) - Runs every close-area planner in the hub through the shared close-area-arena on the same seeded layouts and scores them on truth: straight, freest_beam, APF with wall-follow escape, VFH+, A* + ESDF on the known map, A* +
@@ -16,9 +16,10 @@ Reactive avoidance, sense-and-avoid, DAA.
 - [Close-area MPPI: sampling-based MPC (Model Predictive Path Integral) from range returns, alone and on an unknown-map A* path, vs A* on 8 arena families](../../catalog/samples/close-area-planner-mppi.md) - Own numpy MPPI (information-theoretic update of Williams et al.
 - [Close-area reactive planners: APF with wall-follow escape and VFH+, range sensor only, 72-beam vs Crazyflie-like 4-beam fan](../../catalog/samples/close-area-planner-reactive.md) - Map-free fallback planners for close-area A=>B, written as close-area-arena Planners that read only the pose and the range scan.
 - [Close-area safety-filter kill test A: no filter, PX4 Collision Prevention style and PX4-CBF as shipped on A* under VIO faults, with map-only obstacles the range fan cannot see](../../catalog/samples/close-area-safety-filter.md) - Harness that puts a safety filter between a planner and the vehicle in the shared close-area-arena, for the kill test of the hub's integrity-aware safety-filter headline.
+- [Close-area search for B: frontier, nominal-first, lawnmower and random-walk arms when B is a region or unknown, then A* to the detected B](../../catalog/samples/close-area-explore.md) - Search arms for the case where B is a marker, a nominal position or an area, not a coordinate.
 - [D* Lite vs A* from scratch for unknown-map replanning in the close-area arena](../../catalog/samples/close-area-planner-dstar.md) - D* Lite on the same inflated grid and cost model as astar_esdf's unknown-map mode, compared with A* replanning from scratch on 50 seed-0 layouts per family.
 
-## Guides (22)
+## Guides (25)
 
 - [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) - Prior-art scan, 2026-11-09, for EDGE hackathon Challenge 2.
 - [05. CBF baselines for the idea C kill test, read faithfully](../../docs/research/close-area-nav/05-cbf-baselines-faithful.md) - Loop-05, 2026-11-09.
@@ -32,14 +33,17 @@ Reactive avoidance, sense-and-avoid, DAA.
 - [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) - Written 2026-11-09 for Challenge 2 (entry point).
 - [Close-area A=>B: simulators, platforms, competition formats](../../docs/research/close-area-nav/02-sims-platforms-competitions.md) - Lane 2 of the close-area research pass (2026-11-09).
 - [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) - Fill this on Day 2 when the task is "fly a drone from A to B in a close area, with obstacles".
+- [Day-1 drill 2026-11: brief drops => scored first flight => regression bar (loop-92)](../../docs/day1-drill-2026-11.md) - Next action if you are on Day 1: read Blockers (two of them change what you type), then follow day1-quickstart.md steps 2-6.
 - [Day-1 dry run: close-area A=>B, one agent, no team (loop-58)](../../docs/day1-dry-run.md) - Next action if you are on Day 1: read the blockers table first, then follow the runbook.
 - [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) - Next action on Day 1: ask questions 1-3 of section 1, then open section 2 for the stack.
+- [Day-1 quickstart: fresh clone => flown, scored first flight => regression bar](../../docs/day1-quickstart.md) - Next action: run step 1, then work down.
 - [Demo dashboard](../../templates/demo-dashboard/README.md) - Use this when a GNSS / PNT run with lat / lon tracks needs a judge-facing map replay.
-- [Demo script: close-area A to B](../../templates/demo-script-close-area.md) - Live-demo variant of demo-script.md for the close-area task: fly from A to B through obstacles, with a VIO fault injected.
+- [Demo script: close-area A to B, the toolkit in 2 minutes](../../templates/demo-script-close-area.md) - State on 2026-11-10: this is a script for the measured toolkit.
 - [drivers: Adapter implementations for real platforms](../../templates/drone-adapter/drivers/README.md) - Use this when you need to send velocity setpoints to PX4 (MAVSDK Offboard), ArduPilot (GUIDED, pymavlink), a Crazyflie (cflib) or a Tello (djitellopy), or read pose and ranges from them, behind the pose() / ranges() / se
 - [flight-repo: close-area A=>B flight loop starter](../../templates/flight-repo/README.md) - Use this when the task is "fly from A to B in a close area, maybe with obstacles": clone it at H+0 as the team repo.
 - [Hackathon kit templates](../../templates/README.md) - Use this when you need a file to copy for the hackathon itself: a repo skeleton, a platform driver, a demo script, a pitch, a plan or a checklist.
-- [Judge drill: close-area A=>B, relocalization pitch (H1)](../../templates/pitch/judge-drill-close-area.md) - Use this at H+36 to rehearse the hard questions for the close-area pitch.
+- [Judge drill: close-area A=>B, measured-toolkit pitch](../../templates/pitch/judge-drill-toolkit.md) - Use this at H+36 to rehearse the hard questions for the toolkit pitch: the measured toolkit, plus a narrow claim only if the real brief fits it (case study, research decision).
+- [Judge drill: close-area A=>B, relocalization pitch (H1)](../../templates/pitch/judge-drill-close-area.md) - For the default toolkit pitch (decided 2026-11-09 evening) use judge-drill-toolkit.md; this page is for the H1 variant.
 - [Navigation primer](../../docs/primer/README.md) - Use this when a navigation term, sensor or failure mode is new to you and you need the plain explanation plus the repos to build with.
 - [Research rounds: which one applies, and the innovation story per brief](../../docs/research/README.md) - Use this when you need the innovation story, want to know which research round fits the brief, or need the kill test and status for a headline idea.
 

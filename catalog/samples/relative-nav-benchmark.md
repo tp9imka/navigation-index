@@ -50,7 +50,7 @@ One command per part. KISS-ICP (pip) on KITTI odometry 04 from the raw drive, sc
 - [04. Close-area navigation: prior art for three innovation angles, plus a wider scan](../../docs/research/close-area-nav/04-innovation-prior-art.md) (mentions)
 - [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) (mentions)
 - [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) (mentions)
-- [Three selective offline starter bundles](../../docs/starter-bundles.md) (mentions)
+- [Four selective offline starter bundles](../../docs/starter-bundles.md) (mentions)
 - [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) (mentions)
 - [Judge drill: close-area A=>B, relocalization pitch (H1)](../../templates/pitch/judge-drill-close-area.md) (mentions)
 - [Slides outline](../../templates/pitch/slides-outline.md) (mentions)

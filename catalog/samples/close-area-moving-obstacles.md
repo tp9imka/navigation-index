@@ -29,6 +29,7 @@ Moving-obstacle family for the shared close-area-arena. moving.py draws 1-3 pers
 - [Challenge 2 "Autonomous Frontiers": entry point](../../docs/challenge-2-autonomous-flight.md) (mentions)
 - [Cheat sheets: pick one in 30 seconds](../../docs/cheatsheets/README.md) (mentions)
 - [Day-1 intake: close-area A=>B, organiser answers => stack](../../docs/day1-close-area-intake.md) (mentions)
+- [Day-1 quickstart: fresh clone => flown, scored first flight => regression bar](../../docs/day1-quickstart.md) (mentions)
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [Close-area A=>B: planning and mapping for a small multirotor](../../docs/research/close-area-nav/01-planning-and-mapping.md) (mentions)
@@ -36,5 +37,6 @@ Moving-obstacle family for the shared close-area-arena. moving.py draws 1-3 pers
 - [Research rounds: which one applies, and the innovation story per brief](../../docs/research/README.md) (mentions)
 - [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) (mentions)
 - [Judge drill: close-area A=>B, relocalization pitch (H1)](../../templates/pitch/judge-drill-close-area.md) (mentions)
+- [Judge drill: close-area A=>B, measured-toolkit pitch](../../templates/pitch/judge-drill-toolkit.md) (mentions)
 
 _Indexed by lane(s): samples_

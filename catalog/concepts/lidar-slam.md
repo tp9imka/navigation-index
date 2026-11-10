@@ -9,7 +9,7 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [Close-area relocalization after VIO loss: scan-to-map pose hypotheses, ratio + persistence acceptance, hover until one wins](../../catalog/samples/close-area-relocalize.md) - Relocalizer for the close-area arena.
 - [Relative navigation benchmark on real data: KISS-ICP lidar odometry, OpenVINS VIO, mono and nadir VO, scored with evo](../../catalog/samples/relative-nav-benchmark.md) - One command per part.
 
-## Guides (9)
+## Guides (10)
 
 - [09. Measuring OpenVINS covariance realism (NEES) in under 30 minutes](../../docs/research/close-area-nav/09-vio-nees-feasibility.md) - Loop-24, 2026-11-09.
 - [10. Kill test for the new headline: does relocalization after VIO loss already exist?](../../docs/research/close-area-nav/10-relocalization-prior-art.md) - Prior-art scan, 2026-11-09 (loop-57), copying the method of 07.
@@ -17,9 +17,10 @@ LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [9. Evaluation and datasets](../../docs/primer/09-evaluation-and-datasets.md) - After this chapter you can pick a dataset or simulator that matches your scenario, compute the trajectory metrics judges and reviewers expect, and design a GNSS-outage or interference test that shows what your system doe
 - [Dataset cards](../../docs/dataset-cards/README.md) - Use this when you need recorded data to test a navigation method: which dataset fits, its checked size and license, the download command, and what to fetch before venue Wi-Fi fails.
 - [Day-1 dry run: close-area A=>B, one agent, no team (loop-58)](../../docs/day1-dry-run.md) - Next action if you are on Day 1: read the blockers table first, then follow the runbook.
-- [Demo script: close-area A to B](../../templates/demo-script-close-area.md) - Live-demo variant of demo-script.md for the close-area task: fly from A to B through obstacles, with a VIO fault injected.
+- [Day-1 quickstart: fresh clone => flown, scored first flight => regression bar](../../docs/day1-quickstart.md) - Next action: run step 1, then work down.
+- [Demo script: close-area A to B, the toolkit in 2 minutes](../../templates/demo-script-close-area.md) - State on 2026-11-10: this is a script for the measured toolkit.
 - [flight-repo: close-area A=>B flight loop starter](../../templates/flight-repo/README.md) - Use this when the task is "fly from A to B in a close area, maybe with obstacles": clone it at H+0 as the team repo.
-- [Judge drill: close-area A=>B, relocalization pitch (H1)](../../templates/pitch/judge-drill-close-area.md) - Use this at H+36 to rehearse the hard questions for the close-area pitch.
+- [Judge drill: close-area A=>B, relocalization pitch (H1)](../../templates/pitch/judge-drill-close-area.md) - For the default toolkit pitch (decided 2026-11-09 evening) use judge-drill-toolkit.md; this page is for the H1 variant.
 
 ## Repositories (59)
 

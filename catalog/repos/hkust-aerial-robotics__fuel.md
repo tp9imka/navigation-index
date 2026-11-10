@@ -29,6 +29,7 @@ Frontier-information-structure based autonomous exploration for quadrotors, comb
 - [Fast-Planner](../../catalog/repos/hkust-aerial-robotics__fast-planner.md) (extends)
 - [GBPlanner (CERBERUS)](../../catalog/repos/ntnu-arl__gbplanner_ros.md) (alternative_to)
 - [RACER - multi-UAV exploration](../../catalog/repos/robotics-star-lab__racer.md) (extends)
+- [Close-area search for B: frontier, nominal-first, lawnmower and random-walk arms when B is a region or unknown, then A* to the detected B](../../catalog/samples/close-area-explore.md) (explains)
 
 _Indexed by lane(s): planning-gis-c2_
 

@@ -31,6 +31,7 @@ CMU ground-robot development environment with simulated worlds, terrain analysis
 - [TARE Planner (CMU Explorer)](../../catalog/repos/caochao39__tare_planner.md) (depends_on)
 - [FAR Planner](../../catalog/repos/michaelfyang__far_planner.md) (depends_on)
 - [GBPlanner (CERBERUS)](../../catalog/repos/ntnu-arl__gbplanner_ros.md) (alternative_to)
+- [Close-area search for B: frontier, nominal-first, lawnmower and random-walk arms when B is a region or unknown, then A* to the detected B](../../catalog/samples/close-area-explore.md) (explains)
 
 _Indexed by lane(s): defense-context, planning-gis-c2_
 

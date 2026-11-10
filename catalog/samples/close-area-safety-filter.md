@@ -38,7 +38,7 @@ Harness that puts a safety filter between a planner and the vehicle in the share
 - [08. Crazyflie sensing limits: what the planner and safety filter can rely on](../../docs/research/close-area-nav/08-crazyflie-sensing-limits.md) (mentions)
 - [Close-area A=>B navigation: synthesis](../../docs/research/close-area-nav/README.md) (mentions)
 - [Research rounds: which one applies, and the innovation story per brief](../../docs/research/README.md) (mentions)
-- [Demo script: close-area A to B](../../templates/demo-script-close-area.md) (mentions)
+- [Demo script: close-area A to B, the toolkit in 2 minutes](../../templates/demo-script-close-area.md) (mentions)
 - [flight-repo: close-area A=>B flight loop starter](../../templates/flight-repo/README.md) (mentions)
 - [Close-area pitch scaffold: A to B through obstacles](../../templates/pitch/close-area-story.md) (mentions)
 - [Judge drill: close-area A=>B, relocalization pitch (H1)](../../templates/pitch/judge-drill-close-area.md) (mentions)

@@ -1,6 +1,6 @@
 # navigation-index
 
-> Knowledge hub for navigation / PNT / GNSS-denied autonomy with a defense lens: 923 open-source repos, 975 documents, talks, courses and datasets, 62 usage samples and 89 guides, linked in one graph over 46 concepts.
+> Knowledge hub for navigation / PNT / GNSS-denied autonomy with a defense lens: 923 open-source repos, 975 documents, talks, courses and datasets, 63 usage samples and 92 guides, linked in one graph over 46 concepts.
 
 Read AGENTS.md for how to query and extend. For a problem statement, run `python3 tools/query.py decode "<statement>"` (MCP tool `decode`) or read docs/problem-statement-decoder.md to pick its rows, then search with each row's keywords: `python3 tools/query.py search "<keywords>"` or the MCP server tools/mcp_server.py (its `read` tool returns any guide, template or sample doc). Guides (kind `guide`, including templates/) are searchable like any other node.
 
@@ -34,7 +34,9 @@ Read AGENTS.md for how to query and extend. For a problem statement, run `python
 - [Dataset cards](docs/dataset-cards/README.md): Use this when you need recorded data to test a navigation method: which dataset fits, its checked size and license, the download command, and what to fetch before venue Wi-Fi fails.
 - [Day-0 runbook: the first 3 hours](docs/day0-runbook.md): What a 4-5 person team does from the moment the problem statement drops until H+3, when a walking skeleton should run end to end.
 - [Day-1 intake: close-area A=>B, organiser answers => stack](docs/day1-close-area-intake.md): Next action on Day 1: ask questions 1-3 of section 1, then open section 2 for the stack.
+- [Day-1 drill 2026-11: brief drops => scored first flight => regression bar (loop-92)](docs/day1-drill-2026-11.md): Next action if you are on Day 1: read Blockers (two of them change what you type), then follow day1-quickstart.md steps 2-6.
 - [Day-1 dry run: close-area A=>B, one agent, no team (loop-58)](docs/day1-dry-run.md): Next action if you are on Day 1: read the blockers table first, then follow the runbook.
+- [Day-1 quickstart: fresh clone => flown, scored first flight => regression bar](docs/day1-quickstart.md): Next action: run step 1, then work down.
 - [Differentiators scan: what to bring besides satellite matching](docs/differentiators-scan.md): Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (details drop 2026-11-18).
 - [Evidence matrix](docs/evidence-matrix.md): Recording/replay plumbing: recording-replay ran on 2026-11-07 with 101 synthetic poses over 10 s.
 - [Export control and ethics](docs/export-control-and-ethics.md): Not legal advice.
@@ -88,13 +90,13 @@ Read AGENTS.md for how to query and extend. For a problem statement, run `python
 - [03. Adapt aerodynamic navigation parameters only when the data make them identifiable](docs/research/innovation-prior-art/03-identifiability-gated-aero-adaptation.md): Research date 2026-11-09.
 - [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](docs/research/innovation-prior-art/04-wider-innovation-scan.md): Scan date 2026-11-09, for EDGE hackathon Challenge 2 "Autonomous Frontiers" (full brief 2026-11-18).
 - [Innovation prior art: synthesis](docs/research/innovation-prior-art/README.md): Use this when the brief is long range (km-scale legs, GNSS jammed or spoofed, fixed-wing, terrain or visual fixes) and you need the prior art, strongest baseline or falsifier for a long-range idea.
-- [Three selective offline starter bundles](docs/starter-bundles.md): Pick a bundle before downloading the broad offline kit.
+- [Four selective offline starter bundles](docs/starter-bundles.md): Pick a bundle before downloading the broad offline kit.
 - [Timing resilience: the T in PNT](docs/timing-resilience.md): After this page you can explain why a GNSS-denied system loses time before it loses position, estimate how long a given oscillator holds time from its datasheet, name the attacks on GNSS and network time, and pick a 24-48 h build that ...
 - [Upstream findings](docs/upstream-findings.md): Defects and gaps that the hub's samples found in other people's code and data, with what a maintainer needs to act on them.
 - [Hackathon kit templates](templates/README.md): Use this when you need a file to copy for the hackathon itself: a repo skeleton, a platform driver, a demo script, a pitch, a plan or a checklist.
 - [ADR-NNNN: TODO decision title](templates/adr.md): - Status: proposed accepted superseded by ADR-NNNN - Date / hour: TODO (e.g.
 - [Demo dashboard](templates/demo-dashboard/README.md): Use this when a GNSS / PNT run with lat / lon tracks needs a judge-facing map replay.
-- [Demo script: close-area A to B](templates/demo-script-close-area.md): Live-demo variant of demo-script.md for the close-area task: fly from A to B through obstacles, with a VIO fault injected.
+- [Demo script: close-area A to B, the toolkit in 2 minutes](templates/demo-script-close-area.md): State on 2026-11-10: this is a script for the measured toolkit.
 - [Demo script](templates/demo-script.md): Live demo inside a 3-minute pitch (adjust times to the event).
 - [drone-adapter: one seam between the planner and any drone](templates/drone-adapter/README.md): Use this when planner code must not depend on which drone you get.
 - [drivers: Adapter implementations for real platforms](templates/drone-adapter/drivers/README.md): Use this when you need to send velocity setpoints to PX4 (MAVSDK Offboard), ArduPilot (GUIDED, pymavlink), a Crazyflie (cflib) or a Tello (djitellopy), or read pose and ranges from them, behind the pose() / ranges() / send_setpoint() seam ...
@@ -105,7 +107,8 @@ Read AGENTS.md for how to query and extend. For a problem statement, run `python
 - [Pitch deck outline](templates/pitch-deck-outline.md): 9 slides, 3 minutes plus Q&A.
 - [Pitch kit](templates/pitch/README.md): Use this when you write what you say, show or hand to judges at the end.
 - [Close-area pitch scaffold: A to B through obstacles](templates/pitch/close-area-story.md): Fill this on Day 2 when the task is "fly a drone from A to B in a close area, with obstacles".
-- [Judge drill: close-area A=>B, relocalization pitch (H1)](templates/pitch/judge-drill-close-area.md): Use this at H+36 to rehearse the hard questions for the close-area pitch.
+- [Judge drill: close-area A=>B, relocalization pitch (H1)](templates/pitch/judge-drill-close-area.md): For the default toolkit pitch (decided 2026-11-09 evening) use judge-drill-toolkit.md; this page is for the H1 variant.
+- [Judge drill: close-area A=>B, measured-toolkit pitch](templates/pitch/judge-drill-toolkit.md): Use this at H+36 to rehearse the hard questions for the toolkit pitch: the measured toolkit, plus a narrow claim only if the real brief fits it (case study, research decision).
 - [[Project name]: one-pager](templates/pitch/one-pager-template.md): Team: [names, roles] - Brief: [problem statement, in its own words] - Repo: [URL, public / private] - Commit: [hash]
 - [Pitch structure](templates/pitch/pitch-structure.md): Two skeletons (3 and 5 minutes) for a PNT-resilience pitch, the funder vocabulary to use and not to stretch, and 15 hard judge questions with answer patterns.
 - [Slides outline](templates/pitch/slides-outline.md): A 7-slide deck (6 if you merge slides 6 and 7) for a 3-5 minute pitch.
@@ -128,6 +131,7 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [celestial-star-tracker](samples/celestial-star-tracker/README.md) (ran, venv): cedar-solve lost-in-space on real star images vs a known WCS, then lat/lon from star elevations above an IMU vertical; error budget for level, vibration, accel bias, clock, refraction
 - [close-area-arena](samples/close-area-arena/README.md) (ran, venv): Seeded 2.5D A=>B arena (random, U-trap, narrow-gap layouts) behind the published pose/ranges/send_setpoint interface, truth scorer, straight baseline, EDT timing
 - [close-area-benchmark](samples/close-area-benchmark/README.md) (ran, venv): Which close-area planner reaches B in which room type (clutter, U trap, gap, office, warehouse, forest, maze, glass office) with a 72-ray sensor and with a 4-beam Crazyflie-like sensor, plus a replay per room type and planner
+- [close-area-explore](samples/close-area-explore/README.md) (ran, venv): Finding B when it is a region or unknown: frontier, nominal-first, lawnmower and random-walk search on the unknown-map A*, 2 m line-of-sight detection, random / office / warehouse, ideal and crazyflie sensors, found % with Wilson intervals
 - [close-area-moving-obstacles](samples/close-area-moving-obstacles/README.md) (ran, venv): What walking people (1-3 per layout, 0.5 and 1.0 m/s) do to A* replanning, A* + PX4-CBF range filter and APF in the arena: collisions, stuck, clearance, time and warning before contact
 - [close-area-planner-dstar](samples/close-area-planner-dstar/README.md) (ran, venv): Incremental replanning (D* Lite) vs A* from scratch: same paths, 4-7x faster here, 800x faster on an 8x8 tiled map
 - [close-area-planner-dwa-bug](samples/close-area-planner-dwa-bug/README.md) (ran, venv): DWA (with and without scan memory), Bug2 and TangentBug from range returns only, next to APF and VFH+, on random, U-trap and narrow-gap layouts with a 72-beam fan and a Crazyflie-like 4-beam fan; reached, collisions, path length vs ...
@@ -195,9 +199,9 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [Sensor fusion and state estimation](catalog/concepts/sensor-fusion.md): 375 items - Kalman filters (EKF/UKF/ESKF/IEKF), factor graphs, smoothing, multi-sensor integration.
 - [GNSS/INS integration](catalog/concepts/gnss-ins.md): 95 items - Loosely, tightly and deeply coupled GNSS/INS.
 - [Sensor calibration](catalog/concepts/calibration.md): 60 items - Camera-IMU, LiDAR-IMU extrinsics, intrinsics, time offset, Allan variance.
-- [Visual(-inertial) odometry](catalog/concepts/vio.md): 207 items - VO/VIO from monocular, stereo, event cameras with IMU.
+- [Visual(-inertial) odometry](catalog/concepts/vio.md): 205 items - VO/VIO from monocular, stereo, event cameras with IMU.
 - [Visual SLAM](catalog/concepts/visual-slam.md): 103 items - Mapping and localization with loop closure from cameras.
-- [LiDAR odometry and SLAM](catalog/concepts/lidar-slam.md): 118 items - LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
+- [LiDAR odometry and SLAM](catalog/concepts/lidar-slam.md): 119 items - LiDAR(-inertial) odometry, scan matching, LiDAR mapping.
 - [Radar navigation and odometry](catalog/concepts/radar-nav.md): 35 items - Radar odometry, radar SLAM, radar altimeters, Doppler velocity.
 - [Place recognition and loop closure](catalog/concepts/place-recognition.md): 90 items - Global descriptors, image retrieval, LiDAR place recognition.
 - [Feature detection and matching](catalog/concepts/feature-matching.md): 78 items - Keypoints/descriptors and learned matchers (SIFT, SuperPoint, LightGlue, LoFTR).
@@ -210,9 +214,9 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [Indoor and pedestrian navigation](catalog/concepts/indoor-pedestrian.md): 25 items - PDR, foot-mounted INS, dismounted soldier navigation, indoor positioning.
 - [Autopilots and flight control](catalog/concepts/autopilot.md): 169 items - Flight stacks, control loops, estimation inside autopilots, firmware.
 - [MAVLink, ground control and C2 links](catalog/concepts/mavlink-gcs.md): 59 items - MAVLink protocol, SDKs, ground control stations, telemetry radios.
-- [Path and motion planning](catalog/concepts/path-planning.md): 221 items - Global/local planners, sampling and search based planning, trajectory optimization.
+- [Path and motion planning](catalog/concepts/path-planning.md): 225 items - Global/local planners, sampling and search based planning, trajectory optimization.
 - [Mission planning and routing](catalog/concepts/mission-planning.md): 45 items - Route networks, waypoint missions, coverage, terrain-aware and threat-aware routing.
-- [Obstacle avoidance and collision avoidance](catalog/concepts/obstacle-avoidance.md): 154 items - Reactive avoidance, sense-and-avoid, DAA.
+- [Obstacle avoidance and collision avoidance](catalog/concepts/obstacle-avoidance.md): 158 items - Reactive avoidance, sense-and-avoid, DAA.
 - [Swarms and multi-agent navigation](catalog/concepts/multi-agent.md): 91 items - Cooperative localization, swarm control, multi-robot SLAM, formation flight.
 - [GIS, maps and geospatial data](catalog/concepts/gis-mapping.md): 77 items - Map engines, tiles, DEMs, orthophotos, coordinate systems, geodesy.
 - [Geodesy and coordinate frames](catalog/concepts/geodesy.md): 28 items - Datums, projections, ECEF/ENU/NED, MGRS, geoid models.
@@ -221,13 +225,13 @@ Status: ran = main path executed, partial = part ran, sketch = nothing ran.
 - [Underwater navigation](catalog/concepts/underwater-nav.md): 28 items - DVL, USBL/LBL acoustics, AUV navigation, underwater SLAM.
 - [Ground vehicle autonomy](catalog/concepts/ground-vehicle-nav.md): 70 items - UGV/off-road autonomy stacks, localization and navigation for ground robots.
 - [Space and orbital navigation](catalog/concepts/space-nav.md): 39 items - Orbit determination, LEO-PNT, spacecraft navigation.
-- [Simulation and HIL/SITL](catalog/concepts/simulation.md): 198 items - Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simulators.
-- [Datasets and benchmarks](catalog/concepts/datasets-benchmarks.md): 287 items - Public datasets, evaluation tools, leaderboards for navigation and localization.
+- [Simulation and HIL/SITL](catalog/concepts/simulation.md): 204 items - Physics and sensor simulators, software/hardware-in-the-loop, GNSS signal simulators.
+- [Datasets and benchmarks](catalog/concepts/datasets-benchmarks.md): 293 items - Public datasets, evaluation tools, leaderboards for navigation and localization.
 - [ROS / ROS 2 robotics middleware](catalog/concepts/ros.md): 152 items - ROS ecosystem packages for navigation and localization.
 - [Onboard / edge AI perception](catalog/concepts/edge-ai.md): 141 items - Detection, segmentation, depth on embedded hardware supporting navigation.
 - [Tracking and data association](catalog/concepts/target-tracking.md): 32 items - Multi-target tracking, MHT/JPDA, track fusion (for nav-relevant awareness, not weapon guidance).
 - [Counter-UAS and drone detection](catalog/concepts/counter-uas.md): 79 items - Detecting, tracking and identifying drones (Remote ID, RF, radar, vision) - defensive.
 - [Electronic warfare resilience](catalog/concepts/ew-resilience.md): 96 items - Operating comms and navigation under EW: spectrum monitoring, LPI/LPD links, fallback modes.
-- [Standards and interface specs](catalog/concepts/standards.md): 143 items - ICDs, STANAGs, RTCM, NMEA, MAVLink, CoT, ASTERIX, interoperability specs.
+- [Standards and interface specs](catalog/concepts/standards.md): 142 items - ICDs, STANAGs, RTCM, NMEA, MAVLink, CoT, ASTERIX, interoperability specs.
 - [Policy, export control and ethics](catalog/concepts/policy-ethics.md): 46 items - ITAR/EAR, dual-use rules, PNT policy, responsible military AI.
 - [LLM agents for robotics and navigation](catalog/concepts/llm-agents-robotics.md): 47 items - Language models driving robots, mission planning, MCP servers for drones/ROS/GIS.

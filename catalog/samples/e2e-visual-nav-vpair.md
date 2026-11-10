@@ -42,7 +42,7 @@ Chains four sibling samples by import on the real VPAIR light-aircraft flight (1
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 - [02. Deadline-aware scheduling of expensive absolute fixes](../../docs/research/innovation-prior-art/02-deadline-aware-fix-scheduling.md) (mentions)
 - [Wider innovation scan: ten algorithmic directions for a 48h navigation POC](../../docs/research/innovation-prior-art/04-wider-innovation-scan.md) (mentions)
-- [Three selective offline starter bundles](../../docs/starter-bundles.md) (mentions)
+- [Four selective offline starter bundles](../../docs/starter-bundles.md) (mentions)
 - [Pitch structure](../../templates/pitch/pitch-structure.md) (mentions)
 - [Slides outline](../../templates/pitch/slides-outline.md) (mentions)
 - [Story bank](../../templates/pitch/story-bank.md) (mentions)

@@ -1019,6 +1019,20 @@
    "size_complete": false
   },
   {
+   "id": "pip:close-area-arena-image",
+   "type": "pip",
+   "tier": "standard",
+   "license": "per package (see PyPI metadata)",
+   "source": "samples/close-area-arena/requirements-image.txt",
+   "requirements": [
+    "-r requirements.txt",
+    "Pillow>=10.0"
+   ],
+   "vcs": [],
+   "size": null,
+   "size_complete": false
+  },
+  {
    "id": "pip:close-area-arena",
    "type": "pip",
    "tier": "standard",
@@ -1042,6 +1056,20 @@
    "requirements": [
     "-r ../close-area-arena/requirements.txt",
     "osqp>=1.0"
+   ],
+   "vcs": [],
+   "size": null,
+   "size_complete": false
+  },
+  {
+   "id": "pip:close-area-explore",
+   "type": "pip",
+   "tier": "standard",
+   "license": "per package (see PyPI metadata)",
+   "source": "samples/close-area-explore/requirements.txt",
+   "requirements": [
+    "numpy>=2.0",
+    "scipy>=1.13"
    ],
    "vcs": [],
    "size": null,

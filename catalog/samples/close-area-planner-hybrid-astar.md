@@ -28,5 +28,6 @@ Own numpy + scipy Hybrid A* (Dolgov et al. 2008 / 2010) over continuous (x, y, h
 
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
+- [Judge drill: close-area A=>B, measured-toolkit pitch](../../templates/pitch/judge-drill-toolkit.md) (mentions)
 
 _Indexed by lane(s): samples_
