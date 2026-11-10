@@ -1,0 +1,3392 @@
+{
+ "command": "python pack.py run results/pack_drill_our_room.json --workers 4 --out results/pack_drill_our_room_after",
+ "input": "synthetic",
+ "note": "SYNTHETIC SIMULATION, 2.5D point mass, scored on truth, planner sees the true pose. Not a flight result.",
+ "pack_file": "results/pack_drill_our_room.json",
+ "workers": 4,
+ "wall_s": 24.5,
+ "n_runs": 105,
+ "env": {
+  "python": "3.11.15",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "osqp": "1.1.3",
+  "machine": "arm64",
+  "system": "Darwin",
+  "cpus": 16
+ },
+ "date": "2026-11-10",
+ "pack": {
+  "schema": "close-area-pack/1",
+  "name": "drill_our_room",
+  "description": "loop-99 re-run of the drill pack docs/drill-2026-11/pack_our_room.json (loop-92 drill, our hall = copy of close-area-arena/rooms/hall_8x6.json), world from docs/drill-2026-11/our_room.world.json. Same vehicle, sensor, planners, seeds and bar as the drill pack.",
+  "vehicle": {
+   "radius_m": 0.2,
+   "v_max": 1.5,
+   "a_max": 3.0,
+   "tau": 0.15
+  },
+  "vehicle_ref": {
+   "radius_m": 0.2,
+   "v_max": 1.5,
+   "a_max": 3.0,
+   "tau": 0.15
+  },
+  "vehicle_kwargs": {
+   "tau": 0.15,
+   "a_max": 3.0,
+   "v_max": 1.5,
+   "radius": 0.2
+  },
+  "sensor": {
+   "name": "depth_cam_87",
+   "model": "cone",
+   "beams": 30,
+   "fov_deg": 87.0,
+   "max_range_m": 5.0,
+   "min_range_m": 0.3,
+   "noise_sigma_m": 0.04,
+   "cone_deg": 3.0,
+   "dropout": 0.05
+  },
+  "sensor_ref": "depth_cam_87",
+  "sensor_name": "depth_cam_87",
+  "planners": [
+   "thetastar_known",
+   "astar_known",
+   "lazy_thetastar_unknown"
+  ],
+  "seeds": 35,
+  "jitter_m": 0.5,
+  "max_time_s": "auto",
+  "criteria": {
+   "reached_rate": ">= 0.9",
+   "collisions": "== 0",
+   "time_to_goal_p50_s": "<= 30"
+  }
+ },
+ "worlds": [
+  {
+   "ref": "../../../docs/drill-2026-11/our_room.world.json",
+   "name": "our_room",
+   "family": "custom",
+   "max_time_s": 60.0
+  }
+ ],
+ "no_free_path_at_radius": [],
+ "planner_inflation": {
+  "radius_m": 0.2,
+  "set": {
+   "astar_esdf.RADIUS": 0.2,
+   "astar_esdf.CARROT_CLEAR_M": 0.3,
+   "hybrid_astar.RADIUS": 0.2,
+   "rrt_star.RADIUS": 0.2,
+   "mppi.R_COLL": 0.2,
+   "mppi.D_SAFE": 0.45,
+   "dwa.RADIUS": 0.2,
+   "bug.RADIUS": 0.2
+  },
+  "instance": {
+   "apf_escape": "APF.radius = radius_m",
+   "vfh_plus": "VFHPlus.r_rs = radius_m + d_s (0.1 m)"
+  },
+  "note": "planners inflate by the pack radius for each run, as site/playground/worker.js radius_override"
+ },
+ "evaluation": {
+  "planners": {
+   "thetastar_known": {
+    "criteria": {
+     "reached_rate": {
+      "verdict": "PASS",
+      "k": 35,
+      "n": 35,
+      "n_runs": 35,
+      "value": 1.0,
+      "lo": 0.9010957324106112,
+      "hi": 1.0,
+      "bound_used": "lower",
+      "runs_needed_all_success": 35,
+      "all_success": true,
+      "gap": null,
+      "criterion": ">= 0.9"
+     },
+     "collisions": {
+      "verdict": "PASS",
+      "k": 0,
+      "n": 35,
+      "n_runs": 35,
+      "min_runs": 35,
+      "outcome": "collision",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.09890426758938868,
+      "bound_used": "count",
+      "gap": null,
+      "criterion": "== 0"
+     },
+     "time_to_goal_p50_s": {
+      "verdict": "PASS",
+      "n": 35,
+      "n_runs": 35,
+      "value": 22.18,
+      "lo": 21.88,
+      "hi": 22.46,
+      "bound_used": "upper",
+      "gap": null,
+      "criterion": "<= 30"
+     }
+    },
+    "verdict": "PASS",
+    "n_runs": 35,
+    "size_hint": null
+   },
+   "astar_known": {
+    "criteria": {
+     "reached_rate": {
+      "verdict": "PASS",
+      "k": 35,
+      "n": 35,
+      "n_runs": 35,
+      "value": 1.0,
+      "lo": 0.9010957324106112,
+      "hi": 1.0,
+      "bound_used": "lower",
+      "runs_needed_all_success": 35,
+      "all_success": true,
+      "gap": null,
+      "criterion": ">= 0.9"
+     },
+     "collisions": {
+      "verdict": "PASS",
+      "k": 0,
+      "n": 35,
+      "n_runs": 35,
+      "min_runs": 35,
+      "outcome": "collision",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.09890426758938868,
+      "bound_used": "count",
+      "gap": null,
+      "criterion": "== 0"
+     },
+     "time_to_goal_p50_s": {
+      "verdict": "PASS",
+      "n": 35,
+      "n_runs": 35,
+      "value": 23.34,
+      "lo": 23.02,
+      "hi": 23.56,
+      "bound_used": "upper",
+      "gap": null,
+      "criterion": "<= 30"
+     }
+    },
+    "verdict": "PASS",
+    "n_runs": 35,
+    "size_hint": null
+   },
+   "lazy_thetastar_unknown": {
+    "criteria": {
+     "reached_rate": {
+      "verdict": "NOT PROVEN",
+      "k": 34,
+      "n": 35,
+      "n_runs": 35,
+      "value": 0.9714285714285714,
+      "lo": 0.8546659090672868,
+      "hi": 0.9949386386341466,
+      "bound_used": "lower",
+      "runs_needed_all_success": 35,
+      "all_success": false,
+      "gap": "sample_size",
+      "criterion": ">= 0.9"
+     },
+     "collisions": {
+      "verdict": "FAIL",
+      "k": 1,
+      "n": 35,
+      "n_runs": 35,
+      "min_runs": 35,
+      "outcome": "collision",
+      "value": 0.02857142857142857,
+      "lo": 0.005061361365853362,
+      "hi": 0.1453340909327131,
+      "bound_used": "count",
+      "gap": null,
+      "criterion": "== 0"
+     },
+     "time_to_goal_p50_s": {
+      "verdict": "PASS",
+      "n": 35,
+      "n_runs": 35,
+      "value": 28.9,
+      "lo": 28.66,
+      "hi": 29.56,
+      "bound_used": "upper",
+      "gap": null,
+      "criterion": "<= 30"
+     }
+    },
+    "verdict": "FAIL",
+    "n_runs": 35,
+    "size_hint": null
+   }
+  },
+  "hints": [],
+  "min_runs_default": 35,
+  "exit_code": 0
+ },
+ "records": [
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1.0
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.26,
+   "path_length_m": 9.912,
+   "min_clearance_m": 0.2219,
+   "duration_s": 22.26,
+   "wall_s": 0.51,
+   "planner_ms_mean": 2.199,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 21.74,
+   "path_length_m": 8.876,
+   "min_clearance_m": 0.2263,
+   "duration_s": 21.74,
+   "wall_s": 0.51,
+   "planner_ms_mean": 2.258,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 21.88,
+   "path_length_m": 8.858,
+   "min_clearance_m": 0.2293,
+   "duration_s": 21.88,
+   "wall_s": 0.52,
+   "planner_ms_mean": 2.258,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.46,
+   "path_length_m": 10.023,
+   "min_clearance_m": 0.2487,
+   "duration_s": 22.46,
+   "wall_s": 0.53,
+   "planner_ms_mean": 2.249,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 21.1,
+   "path_length_m": 9.583,
+   "min_clearance_m": 0.2479,
+   "duration_s": 21.1,
+   "wall_s": 0.5,
+   "planner_ms_mean": 2.292,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 5,
+   "a": [
+    0.8645,
+    0.3985
+   ],
+   "b": [
+    7.5612,
+    0.7581
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.78,
+   "path_length_m": 10.354,
+   "min_clearance_m": 0.2487,
+   "duration_s": 22.78,
+   "wall_s": 0.57,
+   "planner_ms_mean": 2.388,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 6,
+   "a": [
+    0.8439,
+    1.1426
+   ],
+   "b": [
+    7.294,
+    0.6396
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.44,
+   "path_length_m": 9.88,
+   "min_clearance_m": 0.2557,
+   "duration_s": 22.44,
+   "wall_s": 0.52,
+   "planner_ms_mean": 2.209,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 7,
+   "a": [
+    1.2507,
+    0.715
+   ],
+   "b": [
+    7.4085,
+    0.5906
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.46,
+   "path_length_m": 10.222,
+   "min_clearance_m": 0.2701,
+   "duration_s": 22.46,
+   "wall_s": 0.48,
+   "planner_ms_mean": 2.06,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 8,
+   "a": [
+    0.5159,
+    0.4267
+   ],
+   "b": [
+    7.2977,
+    0.8242
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 23.24,
+   "path_length_m": 10.809,
+   "min_clearance_m": 0.2712,
+   "duration_s": 23.24,
+   "wall_s": 0.5,
+   "planner_ms_mean": 2.057,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 9,
+   "a": [
+    1.1176,
+    1.0924
+   ],
+   "b": [
+    6.9721,
+    0.7928
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 21.52,
+   "path_length_m": 9.766,
+   "min_clearance_m": 0.248,
+   "duration_s": 21.52,
+   "wall_s": 0.5,
+   "planner_ms_mean": 2.197,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 10,
+   "a": [
+    0.5813,
+    0.815
+   ],
+   "b": [
+    6.992,
+    0.5507
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.6,
+   "path_length_m": 10.537,
+   "min_clearance_m": 0.2556,
+   "duration_s": 22.6,
+   "wall_s": 0.53,
+   "planner_ms_mean": 2.258,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 11,
+   "a": [
+    0.4174,
+    0.7737
+   ],
+   "b": [
+    6.7485,
+    0.8246
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.34,
+   "path_length_m": 9.238,
+   "min_clearance_m": 0.2257,
+   "duration_s": 22.34,
+   "wall_s": 0.53,
+   "planner_ms_mean": 2.285,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 12,
+   "a": [
+    0.9165,
+    0.8999
+   ],
+   "b": [
+    7.1707,
+    0.7409
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 21.96,
+   "path_length_m": 10.021,
+   "min_clearance_m": 0.2188,
+   "duration_s": 21.96,
+   "wall_s": 0.5,
+   "planner_ms_mean": 2.171,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 13,
+   "a": [
+    0.7328,
+    1.0138
+   ],
+   "b": [
+    7.6149,
+    0.7853
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.72,
+   "path_length_m": 9.937,
+   "min_clearance_m": 0.2202,
+   "duration_s": 22.72,
+   "wall_s": 0.55,
+   "planner_ms_mean": 2.305,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 14,
+   "a": [
+    0.568,
+    0.8756
+   ],
+   "b": [
+    7.6162,
+    0.817
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.98,
+   "path_length_m": 10.104,
+   "min_clearance_m": 0.2558,
+   "duration_s": 22.98,
+   "wall_s": 0.53,
+   "planner_ms_mean": 2.233,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 15,
+   "a": [
+    0.3358,
+    0.8457
+   ],
+   "b": [
+    6.7969,
+    1.2405
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.64,
+   "path_length_m": 9.168,
+   "min_clearance_m": 0.2218,
+   "duration_s": 22.64,
+   "wall_s": 0.57,
+   "planner_ms_mean": 2.427,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 16,
+   "a": [
+    1.0828,
+    0.7444
+   ],
+   "b": [
+    6.8193,
+    0.9339
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 21.9,
+   "path_length_m": 8.813,
+   "min_clearance_m": 0.2218,
+   "duration_s": 21.9,
+   "wall_s": 0.5,
+   "planner_ms_mean": 2.186,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 17,
+   "a": [
+    0.6469,
+    0.3936
+   ],
+   "b": [
+    7.2607,
+    1.2384
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.2,
+   "path_length_m": 9.983,
+   "min_clearance_m": 0.2218,
+   "duration_s": 22.2,
+   "wall_s": 0.53,
+   "planner_ms_mean": 2.282,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 18,
+   "a": [
+    0.7605,
+    0.7002
+   ],
+   "b": [
+    7.5032,
+    0.9911
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 21.26,
+   "path_length_m": 10.004,
+   "min_clearance_m": 0.2491,
+   "duration_s": 21.26,
+   "wall_s": 0.5,
+   "planner_ms_mean": 2.244,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 19,
+   "a": [
+    0.5915,
+    1.0816
+   ],
+   "b": [
+    7.4654,
+    1.3452
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 21.0,
+   "path_length_m": 9.44,
+   "min_clearance_m": 0.2505,
+   "duration_s": 21.0,
+   "wall_s": 0.49,
+   "planner_ms_mean": 2.237,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 20,
+   "a": [
+    0.8137,
+    0.7796
+   ],
+   "b": [
+    7.4085,
+    1.0492
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 21.64,
+   "path_length_m": 9.766,
+   "min_clearance_m": 0.2217,
+   "duration_s": 21.64,
+   "wall_s": 0.5,
+   "planner_ms_mean": 2.223,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 21,
+   "a": [
+    1.1381,
+    0.6261
+   ],
+   "b": [
+    7.2311,
+    1.2598
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 21.4,
+   "path_length_m": 9.497,
+   "min_clearance_m": 0.2228,
+   "duration_s": 21.4,
+   "wall_s": 0.5,
+   "planner_ms_mean": 2.25,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 22,
+   "a": [
+    0.9083,
+    0.7459
+   ],
+   "b": [
+    7.2492,
+    0.7192
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.68,
+   "path_length_m": 10.147,
+   "min_clearance_m": 0.2187,
+   "duration_s": 22.68,
+   "wall_s": 0.53,
+   "planner_ms_mean": 2.254,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 23,
+   "a": [
+    0.8775,
+    0.4675
+   ],
+   "b": [
+    7.4598,
+    1.2295
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 21.66,
+   "path_length_m": 9.778,
+   "min_clearance_m": 0.2219,
+   "duration_s": 21.66,
+   "wall_s": 0.52,
+   "planner_ms_mean": 2.297,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 24,
+   "a": [
+    0.3241,
+    0.8863
+   ],
+   "b": [
+    7.4319,
+    1.1453
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.22,
+   "path_length_m": 9.961,
+   "min_clearance_m": 0.2216,
+   "duration_s": 22.22,
+   "wall_s": 0.55,
+   "planner_ms_mean": 2.357,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 25,
+   "a": [
+    0.4885,
+    0.9776
+   ],
+   "b": [
+    7.4163,
+    0.7457
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.46,
+   "path_length_m": 10.178,
+   "min_clearance_m": 0.2305,
+   "duration_s": 22.46,
+   "wall_s": 0.54,
+   "planner_ms_mean": 2.312,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 26,
+   "a": [
+    0.6319,
+    0.9993
+   ],
+   "b": [
+    7.4881,
+    0.9335
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 21.86,
+   "path_length_m": 9.871,
+   "min_clearance_m": 0.2501,
+   "duration_s": 21.86,
+   "wall_s": 0.52,
+   "planner_ms_mean": 2.28,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 27,
+   "a": [
+    0.6335,
+    0.6586
+   ],
+   "b": [
+    6.7842,
+    1.1863
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 21.94,
+   "path_length_m": 9.082,
+   "min_clearance_m": 0.2253,
+   "duration_s": 21.94,
+   "wall_s": 0.53,
+   "planner_ms_mean": 2.328,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 28,
+   "a": [
+    0.8938,
+    0.3098
+   ],
+   "b": [
+    7.1416,
+    0.8572
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 23.12,
+   "path_length_m": 10.353,
+   "min_clearance_m": 0.2551,
+   "duration_s": 23.12,
+   "wall_s": 0.56,
+   "planner_ms_mean": 2.314,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 29,
+   "a": [
+    0.8656,
+    0.5117
+   ],
+   "b": [
+    6.7888,
+    0.9891
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.18,
+   "path_length_m": 9.065,
+   "min_clearance_m": 0.2189,
+   "duration_s": 22.18,
+   "wall_s": 0.53,
+   "planner_ms_mean": 2.269,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 30,
+   "a": [
+    1.0302,
+    0.4028
+   ],
+   "b": [
+    7.0055,
+    0.7567
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.84,
+   "path_length_m": 10.295,
+   "min_clearance_m": 0.2234,
+   "duration_s": 22.84,
+   "wall_s": 0.55,
+   "planner_ms_mean": 2.306,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 31,
+   "a": [
+    0.8618,
+    0.4213
+   ],
+   "b": [
+    6.9801,
+    1.3644
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 21.94,
+   "path_length_m": 9.874,
+   "min_clearance_m": 0.255,
+   "duration_s": 21.94,
+   "wall_s": 0.55,
+   "planner_ms_mean": 2.385,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 32,
+   "a": [
+    0.9144,
+    1.0297
+   ],
+   "b": [
+    7.5,
+    1.094
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 21.5,
+   "path_length_m": 9.462,
+   "min_clearance_m": 0.2561,
+   "duration_s": 21.5,
+   "wall_s": 0.5,
+   "planner_ms_mean": 2.228,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 33,
+   "a": [
+    1.0914,
+    1.0336
+   ],
+   "b": [
+    6.9272,
+    0.9782
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 21.7,
+   "path_length_m": 9.195,
+   "min_clearance_m": 0.2829,
+   "duration_s": 21.7,
+   "wall_s": 0.46,
+   "planner_ms_mean": 2.02,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "thetastar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 34,
+   "a": [
+    0.5309,
+    0.8579
+   ],
+   "b": [
+    6.793,
+    1.0888
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.16,
+   "path_length_m": 9.02,
+   "min_clearance_m": 0.2213,
+   "duration_s": 22.16,
+   "wall_s": 0.53,
+   "planner_ms_mean": 2.308,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1.0
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 23.54,
+   "path_length_m": 9.114,
+   "min_clearance_m": 0.2081,
+   "duration_s": 23.54,
+   "wall_s": 0.22,
+   "planner_ms_mean": 0.833,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.92,
+   "path_length_m": 8.748,
+   "min_clearance_m": 0.2189,
+   "duration_s": 22.92,
+   "wall_s": 0.21,
+   "planner_ms_mean": 0.831,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.92,
+   "path_length_m": 8.72,
+   "min_clearance_m": 0.2067,
+   "duration_s": 22.92,
+   "wall_s": 0.22,
+   "planner_ms_mean": 0.843,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 23.8,
+   "path_length_m": 9.045,
+   "min_clearance_m": 0.2112,
+   "duration_s": 23.8,
+   "wall_s": 0.23,
+   "planner_ms_mean": 0.861,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.62,
+   "path_length_m": 9.266,
+   "min_clearance_m": 0.2105,
+   "duration_s": 22.62,
+   "wall_s": 0.22,
+   "planner_ms_mean": 0.863,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 5,
+   "a": [
+    0.8645,
+    0.3985
+   ],
+   "b": [
+    7.5612,
+    0.7581
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 24.96,
+   "path_length_m": 9.797,
+   "min_clearance_m": 0.2108,
+   "duration_s": 24.96,
+   "wall_s": 0.25,
+   "planner_ms_mean": 0.916,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 6,
+   "a": [
+    0.8439,
+    1.1426
+   ],
+   "b": [
+    7.294,
+    0.6396
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 23.32,
+   "path_length_m": 9.115,
+   "min_clearance_m": 0.2113,
+   "duration_s": 23.32,
+   "wall_s": 0.22,
+   "planner_ms_mean": 0.855,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 7,
+   "a": [
+    1.2507,
+    0.715
+   ],
+   "b": [
+    7.4085,
+    0.5906
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 23.82,
+   "path_length_m": 9.348,
+   "min_clearance_m": 0.2312,
+   "duration_s": 23.82,
+   "wall_s": 0.24,
+   "planner_ms_mean": 0.903,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 8,
+   "a": [
+    0.5159,
+    0.4267
+   ],
+   "b": [
+    7.2977,
+    0.8242
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 25.24,
+   "path_length_m": 9.956,
+   "min_clearance_m": 0.2337,
+   "duration_s": 25.24,
+   "wall_s": 0.25,
+   "planner_ms_mean": 0.881,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 9,
+   "a": [
+    1.1176,
+    1.0924
+   ],
+   "b": [
+    6.9721,
+    0.7928
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.3,
+   "path_length_m": 8.619,
+   "min_clearance_m": 0.2103,
+   "duration_s": 22.3,
+   "wall_s": 0.23,
+   "planner_ms_mean": 0.918,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 10,
+   "a": [
+    0.5813,
+    0.815
+   ],
+   "b": [
+    6.992,
+    0.5507
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 23.12,
+   "path_length_m": 9.425,
+   "min_clearance_m": 0.209,
+   "duration_s": 23.12,
+   "wall_s": 0.24,
+   "planner_ms_mean": 0.924,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 11,
+   "a": [
+    0.4174,
+    0.7737
+   ],
+   "b": [
+    6.7485,
+    0.8246
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 23.38,
+   "path_length_m": 9.129,
+   "min_clearance_m": 0.211,
+   "duration_s": 23.38,
+   "wall_s": 0.23,
+   "planner_ms_mean": 0.875,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 12,
+   "a": [
+    0.9165,
+    0.8999
+   ],
+   "b": [
+    7.1707,
+    0.7409
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.96,
+   "path_length_m": 9.136,
+   "min_clearance_m": 0.2084,
+   "duration_s": 22.96,
+   "wall_s": 0.23,
+   "planner_ms_mean": 0.908,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 13,
+   "a": [
+    0.7328,
+    1.0138
+   ],
+   "b": [
+    7.6149,
+    0.7853
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 24.1,
+   "path_length_m": 9.634,
+   "min_clearance_m": 0.2095,
+   "duration_s": 24.1,
+   "wall_s": 0.23,
+   "planner_ms_mean": 0.849,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 14,
+   "a": [
+    0.568,
+    0.8756
+   ],
+   "b": [
+    7.6162,
+    0.817
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 24.18,
+   "path_length_m": 9.826,
+   "min_clearance_m": 0.2116,
+   "duration_s": 24.18,
+   "wall_s": 0.22,
+   "planner_ms_mean": 0.833,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 15,
+   "a": [
+    0.3358,
+    0.8457
+   ],
+   "b": [
+    6.7969,
+    1.2405
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 23.6,
+   "path_length_m": 8.984,
+   "min_clearance_m": 0.218,
+   "duration_s": 23.6,
+   "wall_s": 0.23,
+   "planner_ms_mean": 0.892,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 16,
+   "a": [
+    1.0828,
+    0.7444
+   ],
+   "b": [
+    6.8193,
+    0.9339
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 23.02,
+   "path_length_m": 8.663,
+   "min_clearance_m": 0.2108,
+   "duration_s": 23.02,
+   "wall_s": 0.22,
+   "planner_ms_mean": 0.856,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 17,
+   "a": [
+    0.6469,
+    0.3936
+   ],
+   "b": [
+    7.2607,
+    1.2384
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 23.36,
+   "path_length_m": 9.699,
+   "min_clearance_m": 0.2101,
+   "duration_s": 23.36,
+   "wall_s": 0.24,
+   "planner_ms_mean": 0.928,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 18,
+   "a": [
+    0.7605,
+    0.7002
+   ],
+   "b": [
+    7.5032,
+    0.9911
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.44,
+   "path_length_m": 9.717,
+   "min_clearance_m": 0.2108,
+   "duration_s": 22.44,
+   "wall_s": 0.23,
+   "planner_ms_mean": 0.919,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 19,
+   "a": [
+    0.5915,
+    1.0816
+   ],
+   "b": [
+    7.4654,
+    1.3452
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.3,
+   "path_length_m": 9.148,
+   "min_clearance_m": 0.2111,
+   "duration_s": 22.3,
+   "wall_s": 0.22,
+   "planner_ms_mean": 0.884,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 20,
+   "a": [
+    0.8137,
+    0.7796
+   ],
+   "b": [
+    7.4085,
+    1.0492
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.72,
+   "path_length_m": 9.467,
+   "min_clearance_m": 0.2082,
+   "duration_s": 22.72,
+   "wall_s": 0.23,
+   "planner_ms_mean": 0.925,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 21,
+   "a": [
+    1.1381,
+    0.6261
+   ],
+   "b": [
+    7.2311,
+    1.2598
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.82,
+   "path_length_m": 9.18,
+   "min_clearance_m": 0.2114,
+   "duration_s": 22.82,
+   "wall_s": 0.23,
+   "planner_ms_mean": 0.891,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 22,
+   "a": [
+    0.9083,
+    0.7459
+   ],
+   "b": [
+    7.2492,
+    0.7192
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 23.62,
+   "path_length_m": 9.246,
+   "min_clearance_m": 0.2099,
+   "duration_s": 23.62,
+   "wall_s": 0.24,
+   "planner_ms_mean": 0.921,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 23,
+   "a": [
+    0.8775,
+    0.4675
+   ],
+   "b": [
+    7.4598,
+    1.2295
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 23.1,
+   "path_length_m": 9.478,
+   "min_clearance_m": 0.2115,
+   "duration_s": 23.1,
+   "wall_s": 0.24,
+   "planner_ms_mean": 0.936,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 24,
+   "a": [
+    0.3241,
+    0.8863
+   ],
+   "b": [
+    7.4319,
+    1.1453
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 23.56,
+   "path_length_m": 9.675,
+   "min_clearance_m": 0.2111,
+   "duration_s": 23.56,
+   "wall_s": 0.24,
+   "planner_ms_mean": 0.931,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 25,
+   "a": [
+    0.4885,
+    0.9776
+   ],
+   "b": [
+    7.4163,
+    0.7457
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 24.16,
+   "path_length_m": 9.592,
+   "min_clearance_m": 0.2087,
+   "duration_s": 24.16,
+   "wall_s": 0.26,
+   "planner_ms_mean": 0.965,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 26,
+   "a": [
+    0.6319,
+    0.9993
+   ],
+   "b": [
+    7.4881,
+    0.9335
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 23.0,
+   "path_length_m": 9.563,
+   "min_clearance_m": 0.2268,
+   "duration_s": 23.0,
+   "wall_s": 0.24,
+   "planner_ms_mean": 0.951,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 27,
+   "a": [
+    0.6335,
+    0.6586
+   ],
+   "b": [
+    6.7842,
+    1.1863
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 23.08,
+   "path_length_m": 8.874,
+   "min_clearance_m": 0.2098,
+   "duration_s": 23.08,
+   "wall_s": 0.25,
+   "planner_ms_mean": 0.994,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 28,
+   "a": [
+    0.8938,
+    0.3098
+   ],
+   "b": [
+    7.1416,
+    0.8572
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 24.6,
+   "path_length_m": 9.443,
+   "min_clearance_m": 0.2095,
+   "duration_s": 24.6,
+   "wall_s": 0.27,
+   "planner_ms_mean": 1.012,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 29,
+   "a": [
+    0.8656,
+    0.5117
+   ],
+   "b": [
+    6.7888,
+    0.9891
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 23.34,
+   "path_length_m": 8.924,
+   "min_clearance_m": 0.2108,
+   "duration_s": 23.34,
+   "wall_s": 0.23,
+   "planner_ms_mean": 0.905,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 30,
+   "a": [
+    1.0302,
+    0.4028
+   ],
+   "b": [
+    7.0055,
+    0.7567
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 24.02,
+   "path_length_m": 9.229,
+   "min_clearance_m": 0.2095,
+   "duration_s": 24.02,
+   "wall_s": 0.25,
+   "planner_ms_mean": 0.944,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 31,
+   "a": [
+    0.8618,
+    0.4213
+   ],
+   "b": [
+    6.9801,
+    1.3644
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 23.46,
+   "path_length_m": 9.541,
+   "min_clearance_m": 0.2086,
+   "duration_s": 23.46,
+   "wall_s": 0.24,
+   "planner_ms_mean": 0.944,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 32,
+   "a": [
+    0.9144,
+    1.0297
+   ],
+   "b": [
+    7.5,
+    1.094
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 22.56,
+   "path_length_m": 9.173,
+   "min_clearance_m": 0.21,
+   "duration_s": 22.56,
+   "wall_s": 0.22,
+   "planner_ms_mean": 0.863,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 33,
+   "a": [
+    1.0914,
+    1.0336
+   ],
+   "b": [
+    6.9272,
+    0.9782
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 23.4,
+   "path_length_m": 8.784,
+   "min_clearance_m": 0.2358,
+   "duration_s": 23.4,
+   "wall_s": 0.23,
+   "planner_ms_mean": 0.898,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "astar_known",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 34,
+   "a": [
+    0.5309,
+    0.8579
+   ],
+   "b": [
+    6.793,
+    1.0888
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 23.12,
+   "path_length_m": 8.874,
+   "min_clearance_m": 0.2083,
+   "duration_s": 23.12,
+   "wall_s": 0.23,
+   "planner_ms_mean": 0.891,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1.0
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 29.18,
+   "path_length_m": 14.176,
+   "min_clearance_m": 0.215,
+   "duration_s": 29.18,
+   "wall_s": 1.29,
+   "planner_ms_mean": 4.301,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 33.76,
+   "path_length_m": 15.41,
+   "min_clearance_m": 0.2062,
+   "duration_s": 33.76,
+   "wall_s": 1.32,
+   "planner_ms_mean": 3.797,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 28.78,
+   "path_length_m": 13.947,
+   "min_clearance_m": 0.2297,
+   "duration_s": 28.78,
+   "wall_s": 1.21,
+   "planner_ms_mean": 4.115,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 29.68,
+   "path_length_m": 13.504,
+   "min_clearance_m": 0.2173,
+   "duration_s": 29.68,
+   "wall_s": 1.32,
+   "planner_ms_mean": 4.327,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 26.96,
+   "path_length_m": 13.293,
+   "min_clearance_m": 0.2533,
+   "duration_s": 26.96,
+   "wall_s": 1.19,
+   "planner_ms_mean": 4.317,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 5,
+   "a": [
+    0.8645,
+    0.3985
+   ],
+   "b": [
+    7.5612,
+    0.7581
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 33.34,
+   "path_length_m": 15.01,
+   "min_clearance_m": 0.2195,
+   "duration_s": 33.34,
+   "wall_s": 1.52,
+   "planner_ms_mean": 4.451,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 6,
+   "a": [
+    0.8439,
+    1.1426
+   ],
+   "b": [
+    7.294,
+    0.6396
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 29.38,
+   "path_length_m": 14.111,
+   "min_clearance_m": 0.2377,
+   "duration_s": 29.38,
+   "wall_s": 1.25,
+   "planner_ms_mean": 4.163,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 7,
+   "a": [
+    1.2507,
+    0.715
+   ],
+   "b": [
+    7.4085,
+    0.5906
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 30.1,
+   "path_length_m": 12.12,
+   "min_clearance_m": 0.2463,
+   "duration_s": 30.1,
+   "wall_s": 1.19,
+   "planner_ms_mean": 3.868,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 8,
+   "a": [
+    0.5159,
+    0.4267
+   ],
+   "b": [
+    7.2977,
+    0.8242
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 28.88,
+   "path_length_m": 14.058,
+   "min_clearance_m": 0.2466,
+   "duration_s": 28.88,
+   "wall_s": 1.22,
+   "planner_ms_mean": 4.131,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 9,
+   "a": [
+    1.1176,
+    1.0924
+   ],
+   "b": [
+    6.9721,
+    0.7928
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 28.58,
+   "path_length_m": 13.957,
+   "min_clearance_m": 0.2024,
+   "duration_s": 28.58,
+   "wall_s": 1.24,
+   "planner_ms_mean": 4.231,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 10,
+   "a": [
+    0.5813,
+    0.815
+   ],
+   "b": [
+    6.992,
+    0.5507
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 28.44,
+   "path_length_m": 13.657,
+   "min_clearance_m": 0.217,
+   "duration_s": 28.44,
+   "wall_s": 1.22,
+   "planner_ms_mean": 4.164,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 11,
+   "a": [
+    0.4174,
+    0.7737
+   ],
+   "b": [
+    6.7485,
+    0.8246
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 30.5,
+   "path_length_m": 14.512,
+   "min_clearance_m": 0.2423,
+   "duration_s": 30.5,
+   "wall_s": 1.31,
+   "planner_ms_mean": 4.206,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 12,
+   "a": [
+    0.9165,
+    0.8999
+   ],
+   "b": [
+    7.1707,
+    0.7409
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 31.14,
+   "path_length_m": 14.721,
+   "min_clearance_m": 0.2242,
+   "duration_s": 31.14,
+   "wall_s": 1.3,
+   "planner_ms_mean": 4.072,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 13,
+   "a": [
+    0.7328,
+    1.0138
+   ],
+   "b": [
+    7.6149,
+    0.7853
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 31.28,
+   "path_length_m": 14.228,
+   "min_clearance_m": 0.2357,
+   "duration_s": 31.28,
+   "wall_s": 1.66,
+   "planner_ms_mean": 5.205,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 14,
+   "a": [
+    0.568,
+    0.8756
+   ],
+   "b": [
+    7.6162,
+    0.817
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 29.56,
+   "path_length_m": 13.932,
+   "min_clearance_m": 0.2197,
+   "duration_s": 29.56,
+   "wall_s": 1.45,
+   "planner_ms_mean": 4.792,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 15,
+   "a": [
+    0.3358,
+    0.8457
+   ],
+   "b": [
+    6.7969,
+    1.2405
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 28.38,
+   "path_length_m": 14.122,
+   "min_clearance_m": 0.2143,
+   "duration_s": 28.38,
+   "wall_s": 1.22,
+   "planner_ms_mean": 4.191,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 16,
+   "a": [
+    1.0828,
+    0.7444
+   ],
+   "b": [
+    6.8193,
+    0.9339
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 30.82,
+   "path_length_m": 14.548,
+   "min_clearance_m": 0.2062,
+   "duration_s": 30.82,
+   "wall_s": 1.33,
+   "planner_ms_mean": 4.199,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 17,
+   "a": [
+    0.6469,
+    0.3936
+   ],
+   "b": [
+    7.2607,
+    1.2384
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 28.82,
+   "path_length_m": 13.657,
+   "min_clearance_m": 0.2512,
+   "duration_s": 28.82,
+   "wall_s": 1.29,
+   "planner_ms_mean": 4.361,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 18,
+   "a": [
+    0.7605,
+    0.7002
+   ],
+   "b": [
+    7.5032,
+    0.9911
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 28.84,
+   "path_length_m": 13.696,
+   "min_clearance_m": 0.2188,
+   "duration_s": 28.84,
+   "wall_s": 1.31,
+   "planner_ms_mean": 4.432,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 19,
+   "a": [
+    0.5915,
+    1.0816
+   ],
+   "b": [
+    7.4654,
+    1.3452
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 28.12,
+   "path_length_m": 13.978,
+   "min_clearance_m": 0.2294,
+   "duration_s": 28.12,
+   "wall_s": 1.24,
+   "planner_ms_mean": 4.288,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 20,
+   "a": [
+    0.8137,
+    0.7796
+   ],
+   "b": [
+    7.4085,
+    1.0492
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 28.66,
+   "path_length_m": 13.842,
+   "min_clearance_m": 0.209,
+   "duration_s": 28.66,
+   "wall_s": 1.27,
+   "planner_ms_mean": 4.31,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 21,
+   "a": [
+    1.1381,
+    0.6261
+   ],
+   "b": [
+    7.2311,
+    1.2598
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 28.64,
+   "path_length_m": 13.599,
+   "min_clearance_m": 0.2222,
+   "duration_s": 28.64,
+   "wall_s": 1.26,
+   "planner_ms_mean": 4.285,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 22,
+   "a": [
+    0.9083,
+    0.7459
+   ],
+   "b": [
+    7.2492,
+    0.7192
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 29.16,
+   "path_length_m": 13.996,
+   "min_clearance_m": 0.2273,
+   "duration_s": 29.16,
+   "wall_s": 1.25,
+   "planner_ms_mean": 4.178,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 23,
+   "a": [
+    0.8775,
+    0.4675
+   ],
+   "b": [
+    7.4598,
+    1.2295
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 27.8,
+   "path_length_m": 13.362,
+   "min_clearance_m": 0.2225,
+   "duration_s": 27.8,
+   "wall_s": 1.24,
+   "planner_ms_mean": 4.344,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 24,
+   "a": [
+    0.3241,
+    0.8863
+   ],
+   "b": [
+    7.4319,
+    1.1453
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 28.06,
+   "path_length_m": 13.904,
+   "min_clearance_m": 0.26,
+   "duration_s": 28.06,
+   "wall_s": 1.26,
+   "planner_ms_mean": 4.384,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 25,
+   "a": [
+    0.4885,
+    0.9776
+   ],
+   "b": [
+    7.4163,
+    0.7457
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 28.9,
+   "path_length_m": 14.343,
+   "min_clearance_m": 0.22,
+   "duration_s": 28.9,
+   "wall_s": 1.24,
+   "planner_ms_mean": 4.187,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 26,
+   "a": [
+    0.6319,
+    0.9993
+   ],
+   "b": [
+    7.4881,
+    0.9335
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 28.58,
+   "path_length_m": 14.061,
+   "min_clearance_m": 0.2238,
+   "duration_s": 28.58,
+   "wall_s": 1.26,
+   "planner_ms_mean": 4.316,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 27,
+   "a": [
+    0.6335,
+    0.6586
+   ],
+   "b": [
+    6.7842,
+    1.1863
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 28.88,
+   "path_length_m": 13.988,
+   "min_clearance_m": 0.2434,
+   "duration_s": 28.88,
+   "wall_s": 1.26,
+   "planner_ms_mean": 4.258,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 28,
+   "a": [
+    0.8938,
+    0.3098
+   ],
+   "b": [
+    7.1416,
+    0.8572
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 31.5,
+   "path_length_m": 13.522,
+   "min_clearance_m": 0.2248,
+   "duration_s": 31.5,
+   "wall_s": 1.36,
+   "planner_ms_mean": 4.22,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 29,
+   "a": [
+    0.8656,
+    0.5117
+   ],
+   "b": [
+    6.7888,
+    0.9891
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 27.96,
+   "path_length_m": 12.846,
+   "min_clearance_m": 0.2537,
+   "duration_s": 27.96,
+   "wall_s": 1.28,
+   "planner_ms_mean": 4.479,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 30,
+   "a": [
+    1.0302,
+    0.4028
+   ],
+   "b": [
+    7.0055,
+    0.7567
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 30.26,
+   "path_length_m": 14.169,
+   "min_clearance_m": 0.2171,
+   "duration_s": 30.26,
+   "wall_s": 1.29,
+   "planner_ms_mean": 4.151,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 31,
+   "a": [
+    0.8618,
+    0.4213
+   ],
+   "b": [
+    6.9801,
+    1.3644
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 29.2,
+   "path_length_m": 13.853,
+   "min_clearance_m": 0.2318,
+   "duration_s": 29.2,
+   "wall_s": 1.33,
+   "planner_ms_mean": 4.464,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 32,
+   "a": [
+    0.9144,
+    1.0297
+   ],
+   "b": [
+    7.5,
+    1.094
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 28.36,
+   "path_length_m": 13.301,
+   "min_clearance_m": 0.2126,
+   "duration_s": 28.36,
+   "wall_s": 1.28,
+   "planner_ms_mean": 4.42,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 33,
+   "a": [
+    1.0914,
+    1.0336
+   ],
+   "b": [
+    6.9272,
+    0.9782
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "reached",
+   "time_to_goal_s": 29.48,
+   "path_length_m": 14.048,
+   "min_clearance_m": 0.2081,
+   "duration_s": 29.48,
+   "wall_s": 1.36,
+   "planner_ms_mean": 4.501,
+   "hit_material": null,
+   "intervention_frac": null
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "world": "our_room",
+   "world_index": 0,
+   "seed": 34,
+   "a": [
+    0.5309,
+    0.8579
+   ],
+   "b": [
+    6.793,
+    1.0888
+   ],
+   "ab_kept": [
+    false,
+    false
+   ],
+   "max_time_s": 60.0,
+   "free_path": true,
+   "error": null,
+   "outcome": "collision",
+   "time_to_goal_s": null,
+   "path_length_m": 9.92,
+   "min_clearance_m": 0.1996,
+   "duration_s": 18.14,
+   "wall_s": 0.89,
+   "planner_ms_mean": 4.792,
+   "hit_material": "matte",
+   "intervention_frac": null
+  }
+ ]
+}

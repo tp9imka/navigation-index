@@ -274,6 +274,7 @@ benchmark's own flight loop and prints PASS / FAIL / NOT PROVEN per planner and 
 
 Exit code: 0 if at least one planner passes every criterion, 1 if none does, 2 if the pack is invalid.
 `--out results/<stem>` changes the output stem (default `results/pack_<name>`).
+`--shipped-inflation` keeps the planners' shipped 0.15 m inflation (the pack before loop-99, see "Vehicle radius").
 
 ### Schema `close-area-pack/1`
 
@@ -344,16 +345,35 @@ the world JSON rounds coordinates to 0.1 mm. The same code on the unrounded layo
 outcome and min clearance, 15 of 15
 ([results/pack_office_crazyflie_matrix_check.md](results/pack_office_crazyflie_matrix_check.md)).
 
-**Vehicle radius.** The pack radius changes the vehicle, the collision stop and the scoring. It does
-not change how far the planners inflate obstacles: they use their own constants (`astar_esdf.RADIUS`
-0.15 m and the like), and bench.py's factories take no radius. A pack with `radius_m` 0.2 therefore
-flies planners that plan for 0.15 m.
+**Vehicle radius.** The pack radius changes the vehicle, the collision stop, the scoring and (since
+loop-99) how far the planners inflate obstacles. pack.py applies the Solver worker's per-run override
+(site/playground/worker.js `radius_override`, loop-75b): each constant in `pack.RADIUS_CONSTS`
+(`astar_esdf.RADIUS`, `astar_esdf.CARROT_CLEAR_M`, `hybrid_astar.RADIUS`, `rrt_star.RADIUS`,
+`mppi.R_COLL`, `mppi.D_SAFE`, `dwa.RADIUS`, `bug.RADIUS`) is set to radius + (shipped value - 0.15 m)
+for that run and restored after it; APF and VFH+ get the radius on the instance. At 0.15 m nothing
+changes. The result JSON lists what was set under `planner_inflation`. Before loop-99 a pack with
+`radius_m` 0.2 flew planners that planned for 0.15 m, while the Solver inflated by 0.2 m, so the two
+disagreed (drill 2026-11, blocker B2).
+
+Drill room check (synthetic, [results/pack_drill_solver_vs_pack.md](results/pack_drill_solver_vs_pack.md)):
+on docs/drill-2026-11/our_room.world.json, radius 0.2 m, `depth_cam_87`, seeds 0-4, the worker driver
+without the override equals the old pack and the driver with it equals the pack with it, 15 of 15
+(planner, seed) runs, all four score fields
+([results/pack_drill_b2_confirm.json](results/pack_drill_b2_confirm.json)). After the fix the 35-seed pack
+([results/pack_drill_our_room_after.md](results/pack_drill_our_room_after.md)) matches the drill's Solver
+export on all 15 seed 0-4 runs. `lazy_thetastar_unknown` went from 17/35 reached, 18 collisions to
+34/35 reached, 1 collision (seed 34, min clearance 0.1996 m): still FAIL on the collision bar.
+`thetastar_known` and `astar_known` stay 35/35, PASS.
 
 **Heading.** The bench loop has no yaw policy: the vehicle starts facing B and turns only if the
 planner commands a yaw rate. The playground turns a sensor with less than 360 deg of view toward the
 direction of travel; that policy is not applied here. This matters for `depth_cam_87`.
 
 ### Results (ran 2026-11-10, synthetic)
+
+These two packs ran before loop-99, so their planners inflated by the shipped 0.15 m. The office pack
+uses the default 0.15 m vehicle and is unaffected; the hall numbers (0.2 m) were not re-run with the
+override.
 
 Both packs ran on an Apple M3 Max (16 cores), macOS arm64, CPython 3.12.10, numpy 2.5.4, 14 worker
 processes. Every number below is from results/pack_*.md / .json. The planner sees the true pose and

@@ -333,14 +333,33 @@ Both check the result with `world_json.from_json` and the arena's free-path test
 `--preview` flies `astar_esdf` with the known map through `run.run_one` (truth pose, arena defaults),
 writes `results/room_<name>.json` and a PNG of map and path.
 
+`<name>` is the input FILE stem (`rooms/our_room.json` => `our_room`) or `--name`; the spec's
+`"name"` field is not used for file names. Neither CLI overwrites a git-tracked file without `--force`
+(check: `git ls-files --error-unmatch`, skipped when git is not installed): the record, the preview
+PNG, and the world JSON when its content would change. On a refusal they exit 2 and write nothing.
+Before loop-99 the name came from the spec's `"name"`, so a copied example spec silently overwrote the
+committed `results/room_hall_8x6.json` (drill 2026-11, blocker B1).
+
 ```sh
 # 1. measured room => JSON spec (walls with door gaps, pillars, tables, A, B; format in the script's docstring)
-.venv/bin/python world_from_room.py rooms/hall_8x6.json --preview results/room_hall_8x6.png
+cp rooms/hall_8x6.json rooms/our_room.json      # then edit it; outputs are named our_room
+.venv/bin/python world_from_room.py rooms/our_room.json --preview results/room_our_room.png
 # 2. floor plan or whiteboard photo => boxes; PNG/JPG needs Pillow (PGM/PBM do not)
 uv pip install --python .venv -r requirements-image.txt
+.venv/bin/python world_from_image.py <plan>.png --ref X1 Y1 X2 Y2 D --a-m X Y --b-m X Y \
+    -o rooms/<plan>.world.json --preview results/room_<plan>.png
+# re-create the committed examples (overwrites tracked files, hence --force)
+.venv/bin/python world_from_room.py rooms/hall_8x6.json --preview results/room_hall_8x6.png --force
 .venv/bin/python world_from_image.py rooms/sketch_hall.png --ref 40 40 440 40 8.0 --origin-px 40 340 \
-    --a-m 0.8 0.8 --b-m 7.2 1.0 -o rooms/sketch_hall.world.json --preview results/room_sketch_hall.png
+    --a-m 0.8 0.8 --b-m 7.2 1.0 -o rooms/sketch_hall.world.json --preview results/room_sketch_hall.png --force
 ```
+
+Checked (loop-99, synthetic): with a copy `rooms/our_room.json` that still says `"name": "hall_8x6"`,
+`world_from_room.py rooms/our_room.json --preview results/room_our_room.png` exits 0, prints a note
+about the name, writes `results/room_our_room.json` and the score line "astar_known on our_room:
+reached, time to goal 23.98 s" (the same run as the committed [room_hall_8x6.json](results/room_hall_8x6.json)), and leaves `results/room_hall_8x6.json` untouched. The two example
+commands above without `--force` exit 2 and name the tracked files; `world_from_room.py
+rooms/hall_8x6.json` without `--preview` exits 0, because the world JSON it rewrites is identical.
 
 `--ref X1 Y1 X2 Y2 D` = two pixel points (column, row) and their real distance in metres; or
 `--m-per-px`. A and B take `--a-px COL ROW` or `--a-m X Y`. Then open `/site/solver/` and use

@@ -1,0 +1,27 @@
+{
+ "schema": "close-area-pack/1",
+ "name": "drill_our_room",
+ "description": "loop-99 re-run of the drill pack docs/drill-2026-11/pack_our_room.json (loop-92 drill, our hall = copy of close-area-arena/rooms/hall_8x6.json), world from docs/drill-2026-11/our_room.world.json. Same vehicle, sensor, planners, seeds and bar as the drill pack.",
+ "worlds": [
+  "../../../docs/drill-2026-11/our_room.world.json"
+ ],
+ "vehicle": {
+  "radius_m": 0.2,
+  "v_max": 1.5,
+  "a_max": 3.0,
+  "tau": 0.15
+ },
+ "sensor": "depth_cam_87",
+ "planners": [
+  "thetastar_known",
+  "astar_known",
+  "lazy_thetastar_unknown"
+ ],
+ "seeds": 35,
+ "max_time_s": "auto",
+ "criteria": {
+  "reached_rate": ">= 0.9",
+  "collisions": "== 0",
+  "time_to_goal_p50_s": "<= 30"
+ }
+}

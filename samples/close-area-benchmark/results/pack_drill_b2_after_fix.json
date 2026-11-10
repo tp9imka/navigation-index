@@ -1,0 +1,128 @@
+{
+ "input": "synthetic",
+ "world": "docs/drill-2026-11/our_room.world.json",
+ "vehicle": {
+  "radius_m": 0.2,
+  "v_max": 1.5,
+  "a_max": 3.0,
+  "tau": 0.15
+ },
+ "sensor": "depth_cam_87",
+ "command": "samples/close-area-benchmark/.venv/bin/python samples/close-area-benchmark/results/pack_drill_b2_repro.py --seeds 1 --planners lazy_thetastar_unknown,thetastar_known,astar_known",
+ "rows": [
+  {
+   "planner": "lazy_thetastar_unknown",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "driver_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 33.76,
+    "min_clearance_m": 0.2062,
+    "path_length_m": 15.41
+   },
+   "driver_no_inflate": {
+    "outcome": "collision",
+    "time_to_goal_s": null,
+    "min_clearance_m": 0.1965,
+    "path_length_m": 4.502
+   },
+   "pack_shipped": {
+    "outcome": "collision",
+    "time_to_goal_s": null,
+    "min_clearance_m": 0.1965,
+    "path_length_m": 4.502
+   },
+   "pack_override": {
+    "outcome": "reached",
+    "time_to_goal_s": 33.76,
+    "min_clearance_m": 0.2062,
+    "path_length_m": 15.41
+   },
+   "same_inflate": true,
+   "same_shipped": true
+  },
+  {
+   "planner": "thetastar_known",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "driver_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.74,
+    "min_clearance_m": 0.2263,
+    "path_length_m": 8.876
+   },
+   "driver_no_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.78,
+    "min_clearance_m": 0.217,
+    "path_length_m": 9.428
+   },
+   "pack_shipped": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.78,
+    "min_clearance_m": 0.217,
+    "path_length_m": 9.428
+   },
+   "pack_override": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.74,
+    "min_clearance_m": 0.2263,
+    "path_length_m": 8.876
+   },
+   "same_inflate": true,
+   "same_shipped": true
+  },
+  {
+   "planner": "astar_known",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "driver_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.92,
+    "min_clearance_m": 0.2189,
+    "path_length_m": 8.748
+   },
+   "driver_no_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 23.72,
+    "min_clearance_m": 0.2204,
+    "path_length_m": 9.024
+   },
+   "pack_shipped": {
+    "outcome": "reached",
+    "time_to_goal_s": 23.72,
+    "min_clearance_m": 0.2204,
+    "path_length_m": 9.024
+   },
+   "pack_override": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.92,
+    "min_clearance_m": 0.2189,
+    "path_length_m": 8.748
+   },
+   "same_inflate": true,
+   "same_shipped": true
+  }
+ ]
+}

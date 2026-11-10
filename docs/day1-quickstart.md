@@ -36,7 +36,8 @@ Then one of ([arena, Your room in the arena](../samples/close-area-arena/README.
 
 ```sh
 # measured room => JSON spec (walls with door gaps, pillars, tables, A, B; format in the script's docstring)
-.venv/bin/python world_from_room.py rooms/hall_8x6.json --preview results/room_hall_8x6.png
+cp rooms/hall_8x6.json rooms/our_room.json   # then edit it to your room
+.venv/bin/python world_from_room.py rooms/our_room.json --preview results/room_our_room.png
 # floor plan or whiteboard photo => boxes; PNG/JPG needs Pillow (PGM/PBM do not)
 uv pip install --python .venv -r requirements-image.txt
 .venv/bin/python world_from_image.py rooms/sketch_hall.png --ref 40 40 440 40 8.0 --origin-px 40 340 \
@@ -45,14 +46,13 @@ uv pip install --python .venv -r requirements-image.txt
 
 - cwd: `samples/close-area-arena`.
 - Score line (README): `astar_known on hall_8x6: reached, time to goal 23.98 s, min clearance 0.2212 m, path 9.204 m, 8 obstacles (synthetic, truth pose)`.
-  Last line (from source, `world_from_room.finish`): `wrote results/room_hall_8x6.json, results/room_hall_8x6.png`.
+  Last line (from source, `world_from_room.finish`): `wrote results/room_our_room.json, results/room_our_room.png` for the copy above.
 - Wall: venv 2 s (warm uv cache), world_from_room.py with --preview 12 s (drill 2026-11).
 - Gotchas:
   - Both CLIs exit 1 when A and B have no free path (0.15 m radius + 0.1 m), or on a bad spec.
-  - The example commands overwrite committed files (`rooms/*.world.json`, `results/room_*`). For
-    your room use your own spec file and set its `"name"` field too, e.g. `rooms/our_room.json` with
-    `"name": "our_room"`: `--preview` / `--fly` write `results/room_<name>.json` from that field, so a
-    copied hall_8x6 spec still overwrites `results/room_hall_8x6.json` (drill 2026-11, blocker B1).
+  - Outputs are named after the spec file stem (or `--name`), and both CLIs refuse to overwrite a
+    git-tracked file unless `--force` (exit 2). So run the shipped examples on a copy, as above
+    (fixed after drill 2026-11 blocker B1, loop-99).
   - Axis-aligned boxes only; `world_from_room.py` rejects a diagonal wall. Any dark mark in an image
     becomes an obstacle; no perspective correction. A door can lose up to 0.2 m on the planner grid.
   - `--ref X1 Y1 X2 Y2 D`: two pixel points and their distance in metres; a 100 px reference gives
@@ -164,7 +164,7 @@ uv venv .venv && uv pip install --python .venv -r requirements.txt   # arena dep
   1 worker): `wall 21.1 s for 60 runs on 1 workers; wrote results/pack_hall_8x6.json, .md`.
   Exit code 0 = at least one planner passes every criterion, 1 = none does, 2 = invalid pack.
 - Wall: about 8 s (hall_8x6, 60 runs, 14 workers), about 15 s (office_crazyflie, 75 runs); 51 s for 105 runs on 4 workers on a fresh venv (16.4 s inside the script, drill 2026-11). On a laptop use `--workers 4`.
-  - The Solver and the pack can disagree on a no-map planner: on the drill room `lazy_thetastar_unknown` reached 5/5 in Solver Quick and 2/5 in the pack on the same seeds, A, B, vehicle and sensor (known-map planners agreed). Suspected cause: the Solver's worker plans with the drone radius, the pack's benchmark loop inflates by 0.15 m (being checked, loop item 99). Until then the bar is the pack verdict.
+  - Before loop-99 the Solver and the pack disagreed on a no-map planner: on the drill room `lazy_thetastar_unknown` reached 5/5 in Solver Quick and 2/5 in the pack on the same seeds, A, B, vehicle and sensor (known-map planners agreed). Cause (loop-99): the pack's benchmark loop inflated by 0.15 m while the Solver plans with the drone radius. Fixed: `pack.py` now applies the same per-run radius override, and the two agree on all 15 drill runs ([solver_vs_pack.md](../samples/close-area-benchmark/results/pack_drill_solver_vs_pack.md)). `--shipped-inflation` gives the old behaviour.
 - Gotchas:
   - **Use a count rule for safety** (`"collisions": "== 0"`), not `collision_rate <= 0`, which can
     never pass. A count rule says only "0 in these n runs": 15 clean runs support a rate of at most 0.20.

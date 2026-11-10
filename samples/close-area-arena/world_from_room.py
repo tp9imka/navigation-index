@@ -24,7 +24,13 @@ plan frame: bounds [0, 0, w, h] and "a" as given (from_json moves the origin to 
 
 --fly flies astar_esdf with the known map (run.run_one, truth pose, ideal arena defaults) and
 writes results/room_<name>.json; --preview writes the map and flown path as a PNG.
-Exit code 1 if the world fails world_json.from_json or the free-path check.
+<name> is the spec FILE stem (rooms/our_room.json => our_room), or --name. The spec's "name" field
+is not used for file names (loop-99, drill 2026-11 blocker B1: a copied spec kept "hall_8x6" and
+overwrote the committed results/room_hall_8x6.json).
+No overwrite of a git-tracked file (git ls-files --error-unmatch) unless --force: the record, the
+preview PNG, and the world JSON when its content would change. Skipped when git is not installed.
+Exit code 1 if the world fails world_json.from_json or the free-path check, 2 if an output is a
+git-tracked file and --force is not given (nothing is written then).
 """
 from __future__ import annotations
 
@@ -32,6 +38,7 @@ import argparse
 import json
 import math
 import os
+import subprocess
 import sys
 
 try:
@@ -154,6 +161,28 @@ def check(doc: dict):
     return w, problems
 
 
+def git_tracked(path: str) -> bool:
+    """True if path is a file tracked by git. False when untracked, outside a repo, or git is missing."""
+    path = os.path.abspath(path)
+    if not os.path.isfile(path):
+        return False
+    try:
+        r = subprocess.run(["git", "-C", os.path.dirname(path), "ls-files", "--error-unmatch", "--",
+                            os.path.basename(path)], stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
+                           stderr=subprocess.DEVNULL, timeout=10)
+    except (OSError, subprocess.SubprocessError):    # no git binary, or it hung: skip the check
+        return False
+    return r.returncode == 0
+
+
+def record_path(name: str, out_dir: str | None = None) -> str:
+    try:
+        from . import run
+    except ImportError:
+        import run
+    return os.path.join(out_dir or run.RESULTS, f"room_{name}.json")
+
+
 def fly(w, name: str, preview: str | None = None, out_dir: str | None = None, extra: dict | None = None) -> dict:
     """astar_esdf known map through run.run_one (truth pose, arena defaults). Synthetic."""
     try:
@@ -166,9 +195,8 @@ def fly(w, name: str, preview: str | None = None, out_dir: str | None = None, ex
     line = (f"astar_known on {name}: {row['outcome']}, time to goal {t}, "
             f"min clearance {row['min_clearance_m']} m, path {row['path_length_m']} m, "
             f"{row['n_obstacles']} obstacles (synthetic, truth pose)")
-    out_dir = out_dir or run.RESULTS
-    os.makedirs(out_dir, exist_ok=True)
-    rec = os.path.join(out_dir, f"room_{name}.json")
+    rec = record_path(name, out_dir)
+    os.makedirs(os.path.dirname(rec), exist_ok=True)
     with open(rec, "w") as fh:
         json.dump({"input": "synthetic (world from a room description, simulated vehicle and sensor)",
                    "planner": "astar_esdf known_map=True", "command": " ".join(["python", os.path.basename(sys.argv[0])] + sys.argv[1:]),
@@ -178,8 +206,29 @@ def fly(w, name: str, preview: str | None = None, out_dir: str | None = None, ex
     return {"line": line, "row": row, "record": rec}
 
 
-def finish(doc: dict, out: str, name: str, do_fly: bool, preview: str | None, extra: dict | None = None) -> int:
-    """Shared tail of both CLIs: write, check, optionally fly and render."""
+def tracked_outputs(doc: dict, out: str, name: str, do_fly: bool, preview: str | None) -> list:
+    """Outputs of finish() that would overwrite a git-tracked file. The world JSON counts only if its
+    content would change (re-running a shipped example rewrites the same bytes)."""
+    hits = []
+    if git_tracked(out):
+        with open(out) as fh:
+            if fh.read() != json.dumps(doc, indent=1):
+                hits.append(out)
+    if do_fly or preview:
+        hits += [p for p in (record_path(name), preview) if p and git_tracked(p)]
+    return hits
+
+
+def finish(doc: dict, out: str, name: str, do_fly: bool, preview: str | None, extra: dict | None = None,
+           force: bool = False) -> int:
+    """Shared tail of both CLIs: refuse to overwrite git-tracked files, write, check, optionally fly and render."""
+    hits = [] if force else tracked_outputs(doc, out, name, do_fly, preview)
+    if hits:
+        for p in hits:
+            print(f"FAIL refusing to overwrite git-tracked {os.path.relpath(p)}")
+        print(f"(outputs are named \"{name}\"; pick another input file name, --name, -o or --preview, "
+              "or pass --force to overwrite)")
+        return 2
     with open(out, "w") as fh:
         json.dump(doc, fh, indent=1)
     try:
@@ -200,23 +249,32 @@ def finish(doc: dict, out: str, name: str, do_fly: bool, preview: str | None, ex
     return 0
 
 
+def output_name(spec_path: str, name: str | None = None) -> str:
+    """<name> in results/room_<name>.json: --name, else the spec file stem (never the spec's "name" field)."""
+    return name or os.path.splitext(os.path.basename(spec_path))[0]
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("spec", help="room spec JSON")
     ap.add_argument("-o", "--out", help="world JSON to write (default: <spec>.world.json)")
     ap.add_argument("--fly", action="store_true", help="fly astar_esdf known map, write results/room_<name>.json")
     ap.add_argument("--preview", help="PNG of map + flown path (implies --fly)")
+    ap.add_argument("--name", help="name for results/room_<name>.json and the score line (default: spec file stem)")
+    ap.add_argument("--force", action="store_true", help="overwrite outputs even if git tracks them")
     a = ap.parse_args(argv)
     with open(a.spec) as fh:
         spec = json.load(fh)
-    name = str(spec.get("name") or os.path.splitext(os.path.basename(a.spec))[0])
+    name = output_name(a.spec, a.name)
+    if not a.name and isinstance(spec, dict) and spec.get("name") and str(spec["name"]) != name:
+        print(f"note: spec \"name\" is {spec['name']!r}; outputs are named after the file stem {name!r} (--name to change)")
     try:
         doc = room_to_world(spec)
     except ValueError as e:
         print(f"FAIL room spec: {e}")
         return 1
     out = a.out or os.path.splitext(a.spec)[0] + ".world.json"
-    return finish(doc, out, name, a.fly, a.preview)
+    return finish(doc, out, name, a.fly, a.preview, force=a.force)
 
 
 if __name__ == "__main__":

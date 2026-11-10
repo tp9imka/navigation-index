@@ -1,0 +1,586 @@
+{
+ "note": "loop-99 confirmation run, before pack.py had its own override: pack_shipped = pack.fly() with untouched module constants (the drill pack), pack_override = pack.fly() inside worker.js DRIVER_PY radius_override(0.2). Script version: pack_drill_b2_repro.py before the --after mode was added.",
+ "runs": 60,
+ "input": "synthetic",
+ "world": "docs/drill-2026-11/our_room.world.json",
+ "vehicle": {
+  "radius_m": 0.2,
+  "v_max": 1.5,
+  "a_max": 3.0,
+  "tau": 0.15
+ },
+ "sensor": "depth_cam_87",
+ "command": "samples/close-area-benchmark/.venv/bin/python samples/close-area-benchmark/results/pack_drill_b2_repro.py --seeds 0,1,2,3,4 --planners lazy_thetastar_unknown,thetastar_known,astar_known",
+ "rows": [
+  {
+   "planner": "lazy_thetastar_unknown",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1.0
+   ],
+   "driver_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 29.18,
+    "min_clearance_m": 0.215,
+    "path_length_m": 14.176
+   },
+   "driver_no_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 27.22,
+    "min_clearance_m": 0.252,
+    "path_length_m": 11.718
+   },
+   "pack_shipped": {
+    "outcome": "reached",
+    "time_to_goal_s": 27.22,
+    "min_clearance_m": 0.252,
+    "path_length_m": 11.718
+   },
+   "pack_override": {
+    "outcome": "reached",
+    "time_to_goal_s": 29.18,
+    "min_clearance_m": 0.215,
+    "path_length_m": 14.176
+   },
+   "same_inflate": true,
+   "same_shipped": true
+  },
+  {
+   "planner": "thetastar_known",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1.0
+   ],
+   "driver_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.26,
+    "min_clearance_m": 0.2219,
+    "path_length_m": 9.912
+   },
+   "driver_no_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.28,
+    "min_clearance_m": 0.214,
+    "path_length_m": 9.645
+   },
+   "pack_shipped": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.28,
+    "min_clearance_m": 0.214,
+    "path_length_m": 9.645
+   },
+   "pack_override": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.26,
+    "min_clearance_m": 0.2219,
+    "path_length_m": 9.912
+   },
+   "same_inflate": true,
+   "same_shipped": true
+  },
+  {
+   "planner": "astar_known",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1.0
+   ],
+   "driver_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 23.54,
+    "min_clearance_m": 0.2081,
+    "path_length_m": 9.114
+   },
+   "driver_no_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 23.98,
+    "min_clearance_m": 0.2212,
+    "path_length_m": 9.204
+   },
+   "pack_shipped": {
+    "outcome": "reached",
+    "time_to_goal_s": 23.98,
+    "min_clearance_m": 0.2212,
+    "path_length_m": 9.204
+   },
+   "pack_override": {
+    "outcome": "reached",
+    "time_to_goal_s": 23.54,
+    "min_clearance_m": 0.2081,
+    "path_length_m": 9.114
+   },
+   "same_inflate": true,
+   "same_shipped": true
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "driver_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 33.76,
+    "min_clearance_m": 0.2062,
+    "path_length_m": 15.41
+   },
+   "driver_no_inflate": {
+    "outcome": "collision",
+    "time_to_goal_s": null,
+    "min_clearance_m": 0.1965,
+    "path_length_m": 4.502
+   },
+   "pack_shipped": {
+    "outcome": "collision",
+    "time_to_goal_s": null,
+    "min_clearance_m": 0.1965,
+    "path_length_m": 4.502
+   },
+   "pack_override": {
+    "outcome": "reached",
+    "time_to_goal_s": 33.76,
+    "min_clearance_m": 0.2062,
+    "path_length_m": 15.41
+   },
+   "same_inflate": true,
+   "same_shipped": true
+  },
+  {
+   "planner": "thetastar_known",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "driver_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.74,
+    "min_clearance_m": 0.2263,
+    "path_length_m": 8.876
+   },
+   "driver_no_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.78,
+    "min_clearance_m": 0.217,
+    "path_length_m": 9.428
+   },
+   "pack_shipped": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.78,
+    "min_clearance_m": 0.217,
+    "path_length_m": 9.428
+   },
+   "pack_override": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.74,
+    "min_clearance_m": 0.2263,
+    "path_length_m": 8.876
+   },
+   "same_inflate": true,
+   "same_shipped": true
+  },
+  {
+   "planner": "astar_known",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "driver_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.92,
+    "min_clearance_m": 0.2189,
+    "path_length_m": 8.748
+   },
+   "driver_no_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 23.72,
+    "min_clearance_m": 0.2204,
+    "path_length_m": 9.024
+   },
+   "pack_shipped": {
+    "outcome": "reached",
+    "time_to_goal_s": 23.72,
+    "min_clearance_m": 0.2204,
+    "path_length_m": 9.024
+   },
+   "pack_override": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.92,
+    "min_clearance_m": 0.2189,
+    "path_length_m": 8.748
+   },
+   "same_inflate": true,
+   "same_shipped": true
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "driver_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 28.78,
+    "min_clearance_m": 0.2297,
+    "path_length_m": 13.947
+   },
+   "driver_no_inflate": {
+    "outcome": "collision",
+    "time_to_goal_s": null,
+    "min_clearance_m": 0.199,
+    "path_length_m": 7.827
+   },
+   "pack_shipped": {
+    "outcome": "collision",
+    "time_to_goal_s": null,
+    "min_clearance_m": 0.199,
+    "path_length_m": 7.827
+   },
+   "pack_override": {
+    "outcome": "reached",
+    "time_to_goal_s": 28.78,
+    "min_clearance_m": 0.2297,
+    "path_length_m": 13.947
+   },
+   "same_inflate": true,
+   "same_shipped": true
+  },
+  {
+   "planner": "thetastar_known",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "driver_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.88,
+    "min_clearance_m": 0.2293,
+    "path_length_m": 8.858
+   },
+   "driver_no_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.9,
+    "min_clearance_m": 0.2164,
+    "path_length_m": 9.386
+   },
+   "pack_shipped": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.9,
+    "min_clearance_m": 0.2164,
+    "path_length_m": 9.386
+   },
+   "pack_override": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.88,
+    "min_clearance_m": 0.2293,
+    "path_length_m": 8.858
+   },
+   "same_inflate": true,
+   "same_shipped": true
+  },
+  {
+   "planner": "astar_known",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "driver_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.92,
+    "min_clearance_m": 0.2067,
+    "path_length_m": 8.72
+   },
+   "driver_no_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 23.66,
+    "min_clearance_m": 0.2235,
+    "path_length_m": 8.928
+   },
+   "pack_shipped": {
+    "outcome": "reached",
+    "time_to_goal_s": 23.66,
+    "min_clearance_m": 0.2235,
+    "path_length_m": 8.928
+   },
+   "pack_override": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.92,
+    "min_clearance_m": 0.2067,
+    "path_length_m": 8.72
+   },
+   "same_inflate": true,
+   "same_shipped": true
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "driver_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 29.68,
+    "min_clearance_m": 0.2173,
+    "path_length_m": 13.504
+   },
+   "driver_no_inflate": {
+    "outcome": "collision",
+    "time_to_goal_s": null,
+    "min_clearance_m": 0.1986,
+    "path_length_m": 7.116
+   },
+   "pack_shipped": {
+    "outcome": "collision",
+    "time_to_goal_s": null,
+    "min_clearance_m": 0.1986,
+    "path_length_m": 7.116
+   },
+   "pack_override": {
+    "outcome": "reached",
+    "time_to_goal_s": 29.68,
+    "min_clearance_m": 0.2173,
+    "path_length_m": 13.504
+   },
+   "same_inflate": true,
+   "same_shipped": true
+  },
+  {
+   "planner": "thetastar_known",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "driver_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.46,
+    "min_clearance_m": 0.2487,
+    "path_length_m": 10.023
+   },
+   "driver_no_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.3,
+    "min_clearance_m": 0.2146,
+    "path_length_m": 9.322
+   },
+   "pack_shipped": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.3,
+    "min_clearance_m": 0.2146,
+    "path_length_m": 9.322
+   },
+   "pack_override": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.46,
+    "min_clearance_m": 0.2487,
+    "path_length_m": 10.023
+   },
+   "same_inflate": true,
+   "same_shipped": true
+  },
+  {
+   "planner": "astar_known",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "driver_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 23.8,
+    "min_clearance_m": 0.2112,
+    "path_length_m": 9.045
+   },
+   "driver_no_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 24.16,
+    "min_clearance_m": 0.2263,
+    "path_length_m": 8.914
+   },
+   "pack_shipped": {
+    "outcome": "reached",
+    "time_to_goal_s": 24.16,
+    "min_clearance_m": 0.2263,
+    "path_length_m": 8.914
+   },
+   "pack_override": {
+    "outcome": "reached",
+    "time_to_goal_s": 23.8,
+    "min_clearance_m": 0.2112,
+    "path_length_m": 9.045
+   },
+   "same_inflate": true,
+   "same_shipped": true
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "driver_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 26.96,
+    "min_clearance_m": 0.2533,
+    "path_length_m": 13.293
+   },
+   "driver_no_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 23.9,
+    "min_clearance_m": 0.2249,
+    "path_length_m": 10.349
+   },
+   "pack_shipped": {
+    "outcome": "reached",
+    "time_to_goal_s": 23.9,
+    "min_clearance_m": 0.2249,
+    "path_length_m": 10.349
+   },
+   "pack_override": {
+    "outcome": "reached",
+    "time_to_goal_s": 26.96,
+    "min_clearance_m": 0.2533,
+    "path_length_m": 13.293
+   },
+   "same_inflate": true,
+   "same_shipped": true
+  },
+  {
+   "planner": "thetastar_known",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "driver_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.1,
+    "min_clearance_m": 0.2479,
+    "path_length_m": 9.583
+   },
+   "driver_no_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.38,
+    "min_clearance_m": 0.2442,
+    "path_length_m": 9.871
+   },
+   "pack_shipped": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.38,
+    "min_clearance_m": 0.2442,
+    "path_length_m": 9.871
+   },
+   "pack_override": {
+    "outcome": "reached",
+    "time_to_goal_s": 21.1,
+    "min_clearance_m": 0.2479,
+    "path_length_m": 9.583
+   },
+   "same_inflate": true,
+   "same_shipped": true
+  },
+  {
+   "planner": "astar_known",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "driver_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.62,
+    "min_clearance_m": 0.2105,
+    "path_length_m": 9.266
+   },
+   "driver_no_inflate": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.9,
+    "min_clearance_m": 0.2141,
+    "path_length_m": 9.346
+   },
+   "pack_shipped": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.9,
+    "min_clearance_m": 0.2141,
+    "path_length_m": 9.346
+   },
+   "pack_override": {
+    "outcome": "reached",
+    "time_to_goal_s": 22.62,
+    "min_clearance_m": 0.2105,
+    "path_length_m": 9.266
+   },
+   "same_inflate": true,
+   "same_shipped": true
+  }
+ ]
+}

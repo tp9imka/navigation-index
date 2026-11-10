@@ -16,6 +16,9 @@ A and B: --a-px COL ROW or --a-m X Y (same for B).
 
 PGM (P2/P5) and PBM (P1/P4) are read with the stdlib. PNG / JPG need Pillow:
 uv pip install --python .venv -r requirements-image.txt
+Outputs are named after the image file stem or --name. A git-tracked output (the record, the preview,
+or the world JSON if its content changes) is not overwritten without --force (world_from_room.finish):
+the command above re-creates the committed sketch_hall example, so it needs --force.
 Limits: no perspective correction (photograph the plan straight on), no rotated boxes, round
 pillars become stair-step boxes, any dark mark (text, arrows, a shadow) becomes an obstacle.
 """
@@ -235,6 +238,7 @@ def main(argv=None) -> int:
     ap.add_argument("-o", "--out", help="world JSON (default: <image>.world.json)")
     ap.add_argument("--fly", action="store_true", help="fly astar_esdf known map, write results/room_<name>.json")
     ap.add_argument("--preview", help="PNG of map + flown path (implies --fly)")
+    ap.add_argument("--force", action="store_true", help="overwrite outputs even if git tracks them")
     a = ap.parse_args(argv)
 
     grey = read_grey(a.image)
@@ -268,7 +272,7 @@ def main(argv=None) -> int:
     out = a.out or os.path.splitext(a.image)[0] + ".world.json"
     extra = {"image": {"file": os.path.basename(a.image), "px": [w, h], **scale, **st,
                        "fill": a.fill, "min_cells": a.min_cells}}
-    return WR.finish(doc, out, name, a.fly, a.preview, extra)
+    return WR.finish(doc, out, name, a.fly, a.preview, extra, force=a.force)
 
 
 if __name__ == "__main__":

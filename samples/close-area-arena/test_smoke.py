@@ -71,6 +71,20 @@ class SmokeTest(unittest.TestCase):
         self.assertEqual(problems, [])
         self.assertAlmostEqual(w.goal[0], 6.4)               # B moved into the A-origin frame
         self.assertGreater(w.clearance(5.0 - 0.8, 4.05 - 0.8), 0.4)   # door centre is free
+        # loop-99 (drill B1): a copied spec keeps "name": "hall_8x6"; outputs follow the file stem
+        self.assertEqual(wfr.output_name("rooms/our_room.json"), "our_room")
+        self.assertEqual(wfr.output_name("rooms/our_room.json", "lab"), "lab")
+        import shutil
+        import subprocess
+        import tempfile
+        if shutil.which("git") and subprocess.run(["git", "-C", HERE, "ls-files", "--error-unmatch", "--",
+                                                   "results/room_hall_8x6.json"], capture_output=True).returncode == 0:
+            with tempfile.TemporaryDirectory() as td:   # world JSON outside the repo: never tracked
+                out = os.path.join(td, "x.world.json")
+                self.assertEqual(wfr.tracked_outputs(doc, out, "our_room", True, None), [])
+                self.assertEqual(wfr.tracked_outputs(doc, out, "hall_8x6", True, None), [wfr.record_path("hall_8x6")])
+                self.assertEqual(wfr.finish(doc, out, "hall_8x6", True, None), 2)   # refused, before any flight
+                self.assertFalse(os.path.exists(out))
 
 
 if __name__ == "__main__":

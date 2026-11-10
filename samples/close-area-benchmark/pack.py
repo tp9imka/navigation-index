@@ -44,8 +44,11 @@ Exit code 0 if at least one planner passes every criterion, 1 otherwise, 2 on a 
 
 The flight loop is bench.run_one's own code object, run with its world, vehicle, sensor and time
 limit swapped in (see fly()). Scored on truth by the arena scorer. Synthetic only.
-Vehicle radius: changes the vehicle, the collision stop and the scoring. The planners still inflate
-by their own constants (astar_esdf RADIUS 0.15 m and the like); bench.py's factories take no radius.
+Vehicle radius: changes the vehicle, the collision stop and the scoring, and (loop-99) the planners'
+inflation, as the Solver's worker does (site/playground/worker.js radius_override, loop-75b): for each
+run the RADIUS_CONSTS module constants are set to radius + (shipped value - 0.15 m), APF / VFH+ get the
+radius on the instance, and everything is restored after the run. At 0.15 m nothing is touched.
+--shipped-inflation keeps the shipped 0.15 m constants (the pack before loop-99).
 """
 from __future__ import annotations
 
@@ -74,6 +77,19 @@ JITTER_MARGIN_M = 0.1
 JITTER_DRAWS = 50
 M32 = 0xFFFFFFFF
 CLEAR_TOL_M = 2e-4             # check-matrix: world JSON rounding (0.1 mm) may move min clearance this much
+# Planner inflation by the run's vehicle radius (loop-99): the same constants as site/playground/worker.js
+# RADIUS_CONSTS (loop-75b). (bench.py global, key in that dict or None, attribute).
+RADIUS_DEFAULT_M = 0.15        # close-area-arena run.DEFAULTS vehicle radius, the planners' shipped value
+RADIUS_CONSTS = [
+    ("astar_esdf", None, "RADIUS"),
+    ("astar_esdf", None, "CARROT_CLEAR_M"),
+    ("_hybrid", "hybrid_astar", "RADIUS"),
+    ("_sampling", "rrt_star", "RADIUS"),
+    ("_mppi", "mppi", "R_COLL"),
+    ("_mppi", "mppi", "D_SAFE"),
+    ("_dwabug", "dwa", "RADIUS"),
+    ("_dwabug", "bug", "RADIUS"),
+]
 
 
 # ------------------------------------------------------------ statistics (stdlib only)
@@ -582,20 +598,93 @@ def load_pack(path: str) -> dict:
 
 
 # ------------------------------------------------------------ one flight
-def fly(planner: str, w, wname: str, sensor_ref, sensor_name: str, vk: dict, t_max: float, index: int, seed: int):
+_RADIUS_TABLE = None
+
+
+def radius_table() -> list:
+    """[(module, attr, offset from 0.15 m, label)] for the loaded planner modules, offsets from the import
+    values (worker.js _radius_table). Built once per process, before any override."""
+    global _RADIUS_TABLE
+    if _RADIUS_TABLE is None:
+        import bench
+        out, seen = [], set()
+        for gname, key, attr in RADIUS_CONSTS:
+            mod = getattr(bench, gname, None)
+            if isinstance(mod, dict):
+                mod = mod.get(key)
+            if mod is None or not hasattr(mod, attr) or (id(mod), attr) in seen:
+                continue
+            seen.add((id(mod), attr))
+            out.append((mod, attr, float(getattr(mod, attr)) - RADIUS_DEFAULT_M, f"{key or gname}.{attr}"))
+        _RADIUS_TABLE = out
+    return _RADIUS_TABLE
+
+
+class radius_override:
+    """with radius_override(r): planner inflation constants = r + offset, restored on exit (also after an
+    error). Same rule as site/playground/worker.js radius_override. No-op at 0.15 m."""
+
+    def __init__(self, r: float):
+        self.r, self.saved = float(r), []
+
+    def __enter__(self):
+        if self.r != RADIUS_DEFAULT_M:
+            tab = radius_table()
+            self.saved = [(m, a, getattr(m, a)) for m, a, _, _ in tab]
+            for m, a, off, _ in tab:
+                setattr(m, a, round(self.r + off, 9))
+        return self
+
+    def __exit__(self, *exc):
+        for m, a, v in self.saved:
+            setattr(m, a, v)
+        self.saved = []
+        return False
+
+
+def _instance_radius(planner: str, pl, r: float):
+    """worker.js build_planner: APF and VFH+ keep the radius on the instance (constructor default 0.15 m)."""
+    if r != RADIUS_DEFAULT_M:
+        if planner == "apf_escape":
+            pl.radius = r
+        elif planner == "vfh_plus":
+            pl.r_rs = round(pl.r_rs - RADIUS_DEFAULT_M + r, 9)
+    return pl
+
+
+def fly(planner: str, w, wname: str, sensor_ref, sensor_name: str, vk: dict, t_max: float, index: int, seed: int,
+        inflate: bool = True):
     """bench.run_one's code, run with this world, vehicle, sensor and limit in its globals.
-    run_one reads run.DEFAULTS, world_glass.make_any_world / nearest_material, presets.make_sensor
-    and max_time(family) from module globals; those four are swapped, nothing else."""
+    run_one reads run.DEFAULTS, world_glass.make_any_world / nearest_material, presets.make_sensor,
+    max_time(family) and PLANNERS from module globals; those five are swapped, nothing else.
+    inflate (loop-99): the planners inflate by vk["radius"] for this run (radius_override), as the Solver;
+    False keeps the shipped 0.15 m constants."""
     import bench
+    r = float(vk["radius"]) if inflate else RADIUS_DEFAULT_M
     real = bench.presets
     g = dict(bench.__dict__)
+    g["PLANNERS"] = {k: ((lambda f, k: (lambda ww: _instance_radius(k, f(ww), r)))(v[0], k),) + tuple(v[1:])
+                     for k, v in bench.PLANNERS.items()}
     g["run"] = types.SimpleNamespace(DEFAULTS=dict(bench.run.DEFAULTS, vehicle=dict(vk)))
     g["world_glass"] = types.SimpleNamespace(make_any_world=lambda *a, **k: w,
                                              nearest_material=bench.world_glass.nearest_material)
     g["presets"] = types.SimpleNamespace(make_sensor=lambda _name, rng: real.make_sensor(sensor_ref, rng))
     g["max_time"] = lambda _family: t_max
     run_one = types.FunctionType(bench.run_one.__code__, g, "run_one", bench.run_one.__defaults__)
-    return run_one(planner, wname, sensor_name, index, seed)
+    with radius_override(r):
+        return run_one(planner, wname, sensor_name, index, seed)
+
+
+def inflation_record(radius: float, inflate: bool) -> dict:
+    """What the planners inflated by, for the result JSON (worker.js radius_override.record)."""
+    r = float(radius) if inflate else RADIUS_DEFAULT_M
+    if r == RADIUS_DEFAULT_M:
+        note = ("shipped 0.15 m constants" + ("" if inflate or radius == RADIUS_DEFAULT_M else
+                f" (--shipped-inflation; the vehicle flies {radius} m)"))
+        return {"radius_m": r, "set": {}, "instance": {}, "note": note}
+    return {"radius_m": r, "set": {lbl: round(r + off, 9) for _, _, off, lbl in radius_table()},
+            "instance": {"apf_escape": "APF.radius = radius_m", "vfh_plus": "VFHPlus.r_rs = radius_m + d_s (0.1 m)"},
+            "note": "planners inflate by the pack radius for each run, as site/playground/worker.js radius_override"}
 
 
 def _task(t):
@@ -607,7 +696,7 @@ def _task(t):
         w = wj.from_json(t["doc"])
         free = bool(WC.has_free_path(w, t["vk"]["radius"]))
         r = fly(t["planner"], w, t["world"], t["sensor_ref"], t["sensor_name"], t["vk"], t["t_max"],
-                t["index"], t["seed"])
+                t["index"], t["seed"], inflate=t.get("inflate", True))
         keep = ("outcome", "time_to_goal_s", "path_length_m", "min_clearance_m", "duration_s", "wall_s",
                 "planner_ms_mean", "hit_material", "intervention_frac")
         return dict(base, free_path=free, error=None, **{k: r.get(k) for k in keep})
@@ -616,7 +705,7 @@ def _task(t):
                     min_clearance_m=None, duration_s=None, wall_s=None, error=f"{type(e).__name__}: {e}")
 
 
-def build_tasks(pack: dict) -> list:
+def build_tasks(pack: dict, inflate: bool = True) -> list:
     tasks = []
     for i, wd in enumerate(pack["worlds"]):
         for s in range(pack["seeds"]):
@@ -626,18 +715,19 @@ def build_tasks(pack: dict) -> list:
                 tasks.append({"planner": p, "world": wd["name"], "index": i, "seed": s, "doc": doc,
                               "a": j["a"], "b": j["b"], "ab_kept": [j["a_kept"], j["b_kept"]],
                               "t_max": wd["max_time_s"], "vk": pack["vehicle_kwargs"],
-                              "sensor_ref": pack["sensor_ref"], "sensor_name": pack["sensor_name"]})
+                              "sensor_ref": pack["sensor_ref"], "sensor_name": pack["sensor_name"],
+                              "inflate": inflate})
     return tasks
 
 
-def run_pack(path: str, workers: int, out: str | None, argv) -> int:
+def run_pack(path: str, workers: int, out: str | None, argv, inflate: bool = True) -> int:
     import bench
     try:
         pack = load_pack(path)
     except (ValueError, OSError, json.JSONDecodeError) as e:
         print(f"bad pack {path}: {e}", file=sys.stderr)
         return 2
-    tasks = build_tasks(pack)
+    tasks = build_tasks(pack, inflate)
     tasks.sort(key=lambda t: bench.SLOW.get(t["planner"], 9))     # slow planners first
     t0 = time.perf_counter()
     if workers > 1:
@@ -663,8 +753,7 @@ def run_pack(path: str, workers: int, out: str | None, argv) -> int:
             "pack": {k: v for k, v in pack.items() if k not in ("worlds", "file")},
             "worlds": [{k: v for k, v in wd.items() if k != "doc"} for wd in pack["worlds"]],
             "no_free_path_at_radius": [list(x) for x in no_path],
-            "planner_inflation_note": "planners inflate by their own constants (0.15 m class); the pack radius "
-                                      "changes the vehicle, the collision stop and the scoring only"}
+            "planner_inflation": inflation_record(pack["vehicle_kwargs"]["radius"], inflate)}
     with open(stem + ".json", "w") as fh:
         json.dump(_finite({**meta, "evaluation": ev, "records": recs}), fh, indent=1, allow_nan=False)
     md = render_md(meta, pack, ev, recs)
@@ -700,7 +789,9 @@ def render_md(meta, pack, ev, recs) -> str:
            f"Sensor `{s['name']}`: {s['beams']} beams, fov {s['fov_deg']:g} deg, {s['min_range_m']}-{s['max_range_m']} m, "
            f"noise {s['noise_sigma_m']} m, cone {s['cone_deg']:.3g} deg, dropout {s['dropout']}.",
            f"Seeds 0-{pack['seeds'] - 1}: seed 0 exact A/B, seeds > 0 move A and B up to {pack['jitter_m']:g} m "
-           "(same points for every planner).", ""]
+           "(same points for every planner).",
+           f"Planner inflation: {meta['planner_inflation']['radius_m']} m "
+           f"({meta['planner_inflation']['note']}).", ""]
     if meta["no_free_path_at_radius"]:
         out += ["No free path at the pack radius (world, seed): "
                 + ", ".join(f"{w} s{k}" for w, k in meta["no_free_path_at_radius"]), ""]
@@ -785,12 +876,14 @@ def main(argv=None) -> int:
     r.add_argument("pack")
     r.add_argument("--workers", type=int, default=max(1, (os.cpu_count() or 2) - 2))
     r.add_argument("--out", default=None, help="output stem (default results/pack_<name>)")
+    r.add_argument("--shipped-inflation", action="store_true",
+                   help="planners keep their shipped 0.15 m inflation (the pack before loop-99); default: the pack radius")
     c = sub.add_parser("check-matrix", help="seed-0 rows of a pack result vs results/matrix_0.json")
     c.add_argument("result")
     a = ap.parse_args(argv)
     if a.cmd == "check-matrix":
         return check_matrix(a.result)
-    return run_pack(a.pack, a.workers, a.out, argv)
+    return run_pack(a.pack, a.workers, a.out, argv, inflate=not a.shipped_inflation)
 
 
 if __name__ == "__main__":
