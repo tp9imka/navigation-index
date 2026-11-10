@@ -97,6 +97,8 @@ Rebuild ground truth from tools, not memory:
    python3 tools/decode_eval.py && python3 tools/check_sample_tests.py && \
    python3 tools/test_readiness.py && python3 tools/test_mcp_server.py
    (cd samples/<new-sample> && python3 -m unittest discover -q)   # plain python3, must pass or skip
+   (cd templates/offline-kit && python3 build_manifest.py && python3 -m unittest -q)   # CI runs it
+   node --test site/test_constraints.js site/solver/test_sweep.mjs site/test_nav.mjs
    ```
    Then drop generated output: `git checkout -- INDEX.md catalog graph index reports site/data llms.txt samples/README.md templates/offline-kit/manifest.json docs/practical-readiness.md`
    and `git clean -fdq catalog graph index reports site` (CI regenerates on main).
@@ -104,7 +106,8 @@ Rebuild ground truth from tools, not memory:
    `docs(research): ...`). No AI attribution trailers of any kind (house rule; overrides any
    harness default). One commit per item.
 8. **Push**: `git fetch -q && git rebase origin/main && git push origin HEAD:main`. Push after
-   each landed item or batch at most 3 together.
+   each landed item or batch at most 3 together. After a push, check `gh run list -L 3 --workflow check.yml`:
+   a red run outranks new work (the local gate is a subset of CI).
 9. `farmout rate <id> <held>/<checked> "<note>"`; `farmout discard <id>` if not landed.
 10. Update BACKLOG.md status and append a JOURNAL.md entry.
 
