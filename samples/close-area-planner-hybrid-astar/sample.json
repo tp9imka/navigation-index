@@ -1,0 +1,40 @@
+{
+  "id": "sample:close-area-planner-hybrid-astar",
+  "title": "Close-area Hybrid A*: kinematically feasible (x, y, heading) search with turn-rate-limited primitives against A* + follower, in the close-area arena",
+  "summary": "Own numpy + scipy Hybrid A* (Dolgov et al. 2008 / 2010) over continuous (x, y, heading) states binned 0.25 m x 10 deg: fast arcs at 1.5 m/s and slow arcs at 0.5 m/s limited by a 1.0 rad/s turn rate and the arena's 3 m/s^2, turns in place, a straight-line shot to B when the ESDF segment is clear (no Reeds-Shepp), cost = flight time x astar_esdf's clearance and unknown-cell cost, heuristic = cost-weighted 2D Dijkstra (scipy.sparse.csgraph). Subclasses the arena's astar_esdf: same range-built log-odds map, inflation, replan rule and carrot follower, plus a speed profile from the primitives. vehicle_turn.py adds a turn-rate-limited vehicle (velocity direction turns at <= 1.0 rad/s, subclass of the arena vehicle). bench.py: 1200 flights, 8 families x 20 layouts on preset ideal plus crazyflie on random and office, stock and turn-limited vehicle, against astar_unknown (benchmark row, 200/200 runs identical to the benchmark) and astar_unknown with a pure-pursuit turn speed cap. plan_quality.py: first plan on the known map, max heading change per metre and minimum time to B under the same limits. Synthetic arena only.",
+  "concepts": [
+    "concept:path-planning",
+    "concept:simulation",
+    "concept:datasets-benchmarks"
+  ],
+  "tags": [
+    "close-area",
+    "a-to-b",
+    "hybrid-astar",
+    "kinodynamic-planning",
+    "motion-primitives",
+    "turn-rate-limit",
+    "a-star",
+    "esdf",
+    "occupancy-grid",
+    "benchmark",
+    "python",
+    "numpy",
+    "scipy",
+    "pyodide"
+  ],
+  "related": [
+    {"id": "sample:close-area-arena", "rel": "explains"},
+    {"id": "sample:close-area-benchmark", "rel": "explains"},
+    {"id": "res:dolgov-hybrid-astar-ijrr-2010", "rel": "explains"}
+  ],
+  "verified": "ran 2026-11-10 with CPython 3.12.10 + numpy 2.5.4 / scipy 1.18.1 on an Apple M3 Max (16 cores, host shared with other jobs, load average 128-266 seen right after the runs), in the sample venv (requirements.txt reuses the arena's): bench.py --layouts 20 --seed 0 --workers 14 (1200 flights, wall 207.5 s; an earlier identical command gave the same reached / collision / stuck numbers) wrote results/bench_0.*, and its astar_unknown rows on the stock vehicle equal close-area-benchmark/results/matrix_0.json in 200/200 runs (outcome, min clearance, path length); plan_quality.py --layouts 20 --seed 0 (single process, 13.3 s) wrote results/plan_quality_0.*; a single-process timing run (30 flights, 56.5 s) wrote results/timing_jobs1_0.*. test_smoke.py: 1 passed in the venv, 1 skipped under plain python3 3.14 without numpy. Not run in Pyodide or the browser playground. No arena or shared file was edited. Layouts, vehicle and sensor are simulated; no SITL, no flight.",
+  "verified_status": "ran",
+  "deps": "venv",
+  "first_command": ".venv/bin/python bench.py --layouts 20 --seed 0 --workers 14",
+  "group": "Close-area A=>B: planning and safety",
+  "shows": "Hybrid A* vs A* + carrot follower on a stock and a turn-rate-limited vehicle: reached / collision / stuck on 8 families and 2 sensor presets, time to B, max heading change per metre of the plan, replan ms",
+  "input": "synthetic",
+  "runtime": "flight bench ~3.5 min on 14 processes; plan quality ~15 s",
+  "key_result": "[1200 flights, seed 0](README.md#results-ran-2026-11-10-apple-m3-max-cpython-31210-numpy-254-scipy-1181): Hybrid A* did not reduce collisions (0 % vs 0 % on ideal; 17.5 % vs 17.5 % crazyflie on the turn-limited vehicle) and reached B less often (81.9 % vs 91.2 % on the turn-limited vehicle, ideal, 8 families); when both reached it was 0.94 s faster (median, turn-limited). Known-map plans: median max heading change 2.131 vs 3.248 rad/m, minimum time to B under a 1 rad/s turn limit 0.435 s shorter per layout (median of paired deltas); replan 13.30 / 24.75 ms median / p95 vs 20.67 / 85.55 ms for A* (14 processes)"
+}
