@@ -1,0 +1,151 @@
+`python run_predict.py --layouts 50 --seeds 0,1 --workers 14` (synthetic), wall 44.7 s, 1000 runs, 14 workers, CPython 3.12.10, numpy 2.5.4, scipy 1.18.1, Darwin arm64
+
+Inputs are synthetic: arena `random` layouts, simulated people (1-3 per layout, r 0.25 m, straight segments at constant speed with an instant U-turn), simulated 72-beam fan, truth pose. The people walk straight lines, which is the constant-velocity model: this favours the predictor arms.
+
+Seed 0 = tuning seed, seed 1 = held out. 95 % CI = Wilson score interval. Warning = contact time minus first step the hit person was visible to the fan (collided runs only).
+
+| seed | arm | people m/s | n | reached % (95 % CI) | collision % (95 % CI) | stuck % (95 % CI) | timeout % | time to B median s (p25-p75) | warning s median (min-max, n collided) | median min person clearance m |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 0 | astar | 0.5 | 50 | 86.0 (73.8-93.0) | 14.0 (7.0-26.2) | 0.0 (0.0-7.1) | 0.0 | 20.02 (18.63-21.98) | 5.58 (4.08-8.74, 7) | 0.71 |
+| 0 | astar | 1.0 | 50 | 64.0 (50.1-75.9) | 36.0 (24.1-49.9) | 0.0 (0.0-7.1) | 0.0 | 20.07 (18.7-21.01) | 4.41 (2.94-6.74, 18) | 0.55 |
+| 0 | astar_f2 | 0.5 | 50 | 84.0 (71.5-91.7) | 0.0 (0.0-7.1) | 16.0 (8.3-28.5) | 0.0 | 19.95 (18.8-21.38) | - | 0.92 |
+| 0 | astar_f2 | 1.0 | 50 | 84.0 (71.5-91.7) | 0.0 (0.0-7.1) | 16.0 (8.3-28.5) | 0.0 | 20.62 (19.12-23.17) | - | 0.63 |
+| 0 | apf | 0.5 | 50 | 98.0 (89.5-99.6) | 0.0 (0.0-7.1) | 2.0 (0.4-10.5) | 0.0 | 27.74 (25.84-31.02) | - | 0.71 |
+| 0 | apf | 1.0 | 50 | 94.0 (83.8-97.9) | 2.0 (0.4-10.5) | 4.0 (1.1-13.5) | 0.0 | 28.82 (26.04-32.97) | 7.6 (7.6-7.6, 1) | 0.59 |
+| 0 | st_astar | 0.5 | 50 | 100.0 (92.9-100.0) | 0.0 (0.0-7.1) | 0.0 (0.0-7.1) | 0.0 | 18.45 (17.98-18.85) | - | 0.8 |
+| 0 | st_astar | 1.0 | 50 | 98.0 (89.5-99.6) | 2.0 (0.4-10.5) | 0.0 (0.0-7.1) | 0.0 | 18.78 (18.24-19.1) | 5.36 (5.36-5.36, 1) | 0.67 |
+| 0 | astar_vo | 0.5 | 50 | 100.0 (92.9-100.0) | 0.0 (0.0-7.1) | 0.0 (0.0-7.1) | 0.0 | 20.35 (18.63-22.45) | - | 0.97 |
+| 0 | astar_vo | 1.0 | 50 | 100.0 (92.9-100.0) | 0.0 (0.0-7.1) | 0.0 (0.0-7.1) | 0.0 | 20.57 (19.58-23.06) | - | 0.7 |
+| 1 | astar | 0.5 | 50 | 82.0 (69.2-90.2) | 18.0 (9.8-30.8) | 0.0 (0.0-7.1) | 0.0 | 20.0 (18.5-21.22) | 4.96 (4.14-7.76, 9) | 1.05 |
+| 1 | astar | 1.0 | 50 | 62.0 (48.2-74.1) | 38.0 (25.9-51.8) | 0.0 (0.0-7.1) | 0.0 | 20.5 (19.23-21.84) | 5.74 (3.12-8.06, 19) | 0.34 |
+| 1 | astar_f2 | 0.5 | 50 | 92.0 (81.2-96.8) | 0.0 (0.0-7.1) | 8.0 (3.2-18.8) | 0.0 | 20.1 (18.57-22.16) | - | 1.13 |
+| 1 | astar_f2 | 1.0 | 50 | 92.0 (81.2-96.8) | 0.0 (0.0-7.1) | 8.0 (3.2-18.8) | 0.0 | 20.66 (19.82-22.58) | - | 0.65 |
+| 1 | apf | 0.5 | 50 | 92.0 (81.2-96.8) | 0.0 (0.0-7.1) | 8.0 (3.2-18.8) | 0.0 | 27.79 (25.96-30.72) | - | 0.71 |
+| 1 | apf | 1.0 | 50 | 92.0 (81.2-96.8) | 4.0 (1.1-13.5) | 4.0 (1.1-13.5) | 0.0 | 28.66 (26.26-30.61) | 20.65 (10.52-30.78, 2) | 0.7 |
+| 1 | st_astar | 0.5 | 50 | 98.0 (89.5-99.6) | 2.0 (0.4-10.5) | 0.0 (0.0-7.1) | 0.0 | 18.64 (17.94-19.08) | 3.38 (3.38-3.38, 1) | 0.75 |
+| 1 | st_astar | 1.0 | 50 | 96.0 (86.5-98.9) | 4.0 (1.1-13.5) | 0.0 (0.0-7.1) | 0.0 | 18.9 (18.46-19.42) | 5.17 (4.5-5.84, 2) | 0.69 |
+| 1 | astar_vo | 0.5 | 50 | 100.0 (92.9-100.0) | 0.0 (0.0-7.1) | 0.0 (0.0-7.1) | 0.0 | 20.25 (18.72-21.97) | - | 1.13 |
+| 1 | astar_vo | 1.0 | 50 | 100.0 (92.9-100.0) | 0.0 (0.0-7.1) | 0.0 (0.0-7.1) | 0.0 | 21.72 (20.07-22.91) | - | 0.81 |
+
+Pooled over both speeds (100 runs per seed and arm):
+
+| seed | arm | reached % (95 % CI) | collision % (95 % CI) | stuck % (95 % CI) | time to B median s |
+|---|---|---|---|---|---|
+| 0 | astar | 75.0 (65.7-82.5) | 25.0 (17.5-34.3) | 0.0 (0.0-3.7) | 20.02 |
+| 0 | astar_f2 | 84.0 (75.6-89.9) | 0.0 (0.0-3.7) | 16.0 (10.1-24.4) | 20.2 |
+| 0 | apf | 96.0 (90.2-98.4) | 1.0 (0.2-5.4) | 3.0 (1.0-8.5) | 28.31 |
+| 0 | st_astar | 99.0 (94.6-99.8) | 1.0 (0.2-5.4) | 0.0 (0.0-3.7) | 18.6 |
+| 0 | astar_vo | 100.0 (96.3-100.0) | 0.0 (0.0-3.7) | 0.0 (0.0-3.7) | 20.49 |
+| 1 | astar | 72.0 (62.5-79.9) | 28.0 (20.1-37.5) | 0.0 (0.0-3.7) | 20.22 |
+| 1 | astar_f2 | 92.0 (85.0-95.9) | 0.0 (0.0-3.7) | 8.0 (4.1-15.0) | 20.61 |
+| 1 | apf | 92.0 (85.0-95.9) | 2.0 (0.6-7.0) | 6.0 (2.8-12.5) | 28.25 |
+| 1 | st_astar | 97.0 (91.5-99.0) | 3.0 (1.0-8.5) | 0.0 (0.0-3.7) | 18.72 |
+| 1 | astar_vo | 100.0 (96.3-100.0) | 0.0 (0.0-3.7) | 0.0 (0.0-3.7) | 20.62 |
+
+Paired against astar_f2 (same layouts, both speeds). Rule: PASS when collisions <= astar_f2's, more runs reach B, and the exact sign test on layouts where only one of the two reached gives p < 0.05. The verdict that counts is the held-out seed 1.
+
+| seed | arm | reached only by arm | reached only by astar_f2 | sign test p | collisions arm / astar_f2 | verdict |
+|---|---|---|---|---|---|---|
+| 0 | astar | 12 | 21 | 0.163 | 25 / 0 | FAIL |
+| 1 | astar | 6 | 26 | 0.000535 | 28 / 0 | FAIL |
+| 0 | apf | 15 | 3 | 0.00754 | 1 / 0 | FAIL |
+| 1 | apf | 6 | 6 | 1.0 | 2 / 0 | FAIL |
+| 0 | st_astar | 16 | 1 | 0.000275 | 1 / 0 | FAIL |
+| 1 | st_astar | 8 | 3 | 0.227 | 3 / 0 | FAIL |
+| 0 | astar_vo | 16 | 0 | 3.05e-05 | 0 / 0 | PASS |
+| 1 | astar_vo | 8 | 0 | 0.00781 | 0 / 0 | PASS |
+
+Predictor accuracy (confirmed tracks sampled every 0.5 s, each matched to the nearest true person within 0.5 m; truth used only for this table). err_tau = distance between the constant-velocity prediction tau s ahead and where the person really is then.
+
+| seed | arm | people m/s | samples | err 0 s median / p90 m | err 1 s median / p90 m | err 3 s median / p90 m | median abs speed error m/s | plan ms (median of run medians, max) |
+|---|---|---|---|---|---|---|---|---|
+| 0 | st_astar | 0.5 | 1813 | 0.06 / 0.21 | 0.19 / 0.74 | 0.7 / 2.32 | 0.07 | 9.93, 115.5 |
+| 0 | st_astar | 1.0 | 1851 | 0.06 / 0.21 | 0.37 / 1.48 | 2.36 / 5.17 | 0.1 | 10.42, 90.5 |
+| 0 | astar_vo | 0.5 | 2124 | 0.06 / 0.2 | 0.17 / 0.69 | 0.66 / 2.2 | 0.06 | 3.3, 38.3 |
+| 0 | astar_vo | 1.0 | 2336 | 0.06 / 0.21 | 0.33 / 1.5 | 2.33 / 5.21 | 0.09 | 3.56, 74.3 |
+| 1 | st_astar | 0.5 | 1698 | 0.06 / 0.21 | 0.19 / 0.7 | 0.73 / 2.32 | 0.07 | 10.13, 126.7 |
+| 1 | st_astar | 1.0 | 1748 | 0.06 / 0.2 | 0.38 / 1.56 | 2.53 / 5.24 | 0.1 | 10.39, 104.7 |
+| 1 | astar_vo | 0.5 | 1967 | 0.06 / 0.2 | 0.19 / 0.71 | 0.69 / 2.32 | 0.06 | 3.98, 46.9 |
+| 1 | astar_vo | 1.0 | 2252 | 0.06 / 0.19 | 0.38 / 1.55 | 2.55 / 5.22 | 0.1 | 3.83, 42.7 |
+
+Planner counters (summed over runs): st_astar n_capped = searches that hit the expansion cap, n_relaxed = searches that needed PERSON_MARGIN 0, n_escape = no path, stepped away; astar_vo n_gated = 10 Hz steps the VO changed the command, n_no_free = steps with no VO-free candidate.
+
+- seed 0 st_astar 0.5 m/s: {'n_capped': 14, 'n_relaxed': 4, 'n_escape': 0}
+- seed 0 st_astar 1.0 m/s: {'n_capped': 1, 'n_relaxed': 37, 'n_escape': 0}
+- seed 0 astar_vo 0.5 m/s: {'n_gated': 1741, 'n_no_free': 0}
+- seed 0 astar_vo 1.0 m/s: {'n_gated': 2182, 'n_no_free': 0}
+- seed 1 st_astar 0.5 m/s: {'n_capped': 5, 'n_relaxed': 7, 'n_escape': 0}
+- seed 1 st_astar 1.0 m/s: {'n_capped': 3, 'n_relaxed': 28, 'n_escape': 0}
+- seed 1 astar_vo 0.5 m/s: {'n_gated': 1175, 'n_no_free': 0}
+- seed 1 astar_vo 1.0 m/s: {'n_gated': 2203, 'n_no_free': 7}
+
+Reuse check: existing arms on seed 0 vs results/moving_0.json on outcome, min_clearance_m, duration_s, warning_s: 300 runs identical, 0 differ.
+
+Replays (seed 1, 1.0 m/s, layout 2): [predict_replay_astar_s1_v1_i2.json](predict_replay_astar_s1_v1_i2.json) collision, 8224 bytes, same outcome as batch: True; [predict_replay_st_astar_s1_v1_i2.json](predict_replay_st_astar_s1_v1_i2.json) reached, 23115 bytes, same outcome as batch: True; [predict_replay_astar_vo_s1_v1_i2.json](predict_replay_astar_vo_s1_v1_i2.json) reached, 28426 bytes, same outcome as batch: True
+
+Every collided run:
+
+| seed | arm | speed | layout | hit | t_collision s | warning s | vehicle speed at contact m/s |
+|---|---|---|---|---|---|---|---|
+| 0 | astar | 0.5 | 5 | mover | 13.38 | 5.68 | 0.305 |
+| 0 | astar | 0.5 | 7 | mover | 11.38 | 4.68 | 0.304 |
+| 0 | astar | 0.5 | 11 | mover | 11.76 | 6.76 | 0.298 |
+| 0 | astar | 0.5 | 15 | mover | 6.48 | 4.38 | 0.282 |
+| 0 | astar | 0.5 | 22 | mover | 8.48 | 5.58 | 0.294 |
+| 0 | astar | 0.5 | 37 | mover | 10.64 | 8.74 | 0.303 |
+| 0 | astar | 0.5 | 46 | mover | 12.48 | 4.08 | 0.305 |
+| 0 | astar | 1.0 | 1 | mover | 10.04 | 6.74 | 0.319 |
+| 0 | astar | 1.0 | 12 | mover | 14.26 | 4.66 | 0.366 |
+| 0 | astar | 1.0 | 14 | mover | 8.94 | 3.24 | 0.443 |
+| 0 | astar | 1.0 | 15 | mover | 6.22 | 4.42 | 0.381 |
+| 0 | astar | 1.0 | 16 | mover | 12.5 | 4.4 | 0.475 |
+| 0 | astar | 1.0 | 17 | mover | 7.2 | 3.9 | 0.374 |
+| 0 | astar | 1.0 | 18 | mover | 7.3 | 4.9 | 0.464 |
+| 0 | astar | 1.0 | 21 | mover | 12.7 | 6.5 | 0.412 |
+| 0 | astar | 1.0 | 23 | mover | 13.36 | 5.96 | 0.439 |
+| 0 | astar | 1.0 | 24 | mover | 5.84 | 4.24 | 0.385 |
+| 0 | astar | 1.0 | 25 | mover | 8.28 | 5.08 | 0.395 |
+| 0 | astar | 1.0 | 27 | mover | 6.4 | 5.1 | 0.577 |
+| 0 | astar | 1.0 | 31 | mover | 11.12 | 3.02 | 0.316 |
+| 0 | astar | 1.0 | 33 | mover | 11.34 | 3.64 | 0.172 |
+| 0 | astar | 1.0 | 37 | mover | 6.6 | 4.3 | 0.395 |
+| 0 | astar | 1.0 | 40 | mover | 4.94 | 2.94 | 0.459 |
+| 0 | astar | 1.0 | 42 | mover | 10.68 | 3.98 | 0.332 |
+| 0 | astar | 1.0 | 45 | mover | 10.76 | 6.46 | 0.352 |
+| 0 | apf | 1.0 | 13 | mover | 9.7 | 7.6 | 0.27 |
+| 0 | st_astar | 1.0 | 21 | mover | 12.46 | 5.36 | 0.901 |
+| 1 | astar | 0.5 | 10 | mover | 7.5 | 4.5 | 0.218 |
+| 1 | astar | 0.5 | 11 | mover | 14.12 | 6.82 | 0.3 |
+| 1 | astar | 0.5 | 31 | mover | 7.6 | 5.2 | 0.306 |
+| 1 | astar | 0.5 | 33 | mover | 7.4 | 4.6 | 0.315 |
+| 1 | astar | 0.5 | 35 | mover | 11.84 | 4.84 | 0.303 |
+| 1 | astar | 0.5 | 36 | mover | 11.26 | 4.96 | 0.291 |
+| 1 | astar | 0.5 | 43 | mover | 15.06 | 7.76 | 0.29 |
+| 1 | astar | 0.5 | 46 | mover | 8.54 | 4.14 | 0.302 |
+| 1 | astar | 0.5 | 48 | mover | 12.8 | 5.2 | 0.3 |
+| 1 | astar | 1.0 | 2 | mover | 11.14 | 6.24 | 0.326 |
+| 1 | astar | 1.0 | 3 | mover | 12.7 | 3.9 | 0.395 |
+| 1 | astar | 1.0 | 7 | mover | 8.84 | 5.74 | 0.468 |
+| 1 | astar | 1.0 | 9 | mover | 6.54 | 3.94 | 0.444 |
+| 1 | astar | 1.0 | 10 | mover | 12.82 | 7.72 | 0.373 |
+| 1 | astar | 1.0 | 16 | mover | 11.8 | 4.1 | 0.42 |
+| 1 | astar | 1.0 | 19 | mover | 14.1 | 5.3 | 0.473 |
+| 1 | astar | 1.0 | 20 | mover | 13.12 | 4.42 | 0.353 |
+| 1 | astar | 1.0 | 21 | mover | 11.68 | 6.18 | 0.195 |
+| 1 | astar | 1.0 | 34 | mover | 20.74 | 5.84 | 0.353 |
+| 1 | astar | 1.0 | 35 | mover | 16.26 | 8.06 | 0.329 |
+| 1 | astar | 1.0 | 37 | mover | 7.42 | 3.12 | 0.393 |
+| 1 | astar | 1.0 | 38 | mover | 11.3 | 5.9 | 0.352 |
+| 1 | astar | 1.0 | 39 | mover | 8.36 | 6.16 | 0.427 |
+| 1 | astar | 1.0 | 40 | mover | 8.46 | 6.36 | 0.355 |
+| 1 | astar | 1.0 | 44 | mover | 8.4 | 5.9 | 0.494 |
+| 1 | astar | 1.0 | 47 | mover | 7.8 | 4.8 | 0.391 |
+| 1 | astar | 1.0 | 48 | mover | 7.6 | 4.2 | 0.532 |
+| 1 | astar | 1.0 | 49 | mover | 11.22 | 5.52 | 0.265 |
+| 1 | apf | 1.0 | 29 | mover | 36.58 | 30.78 | 0.409 |
+| 1 | apf | 1.0 | 44 | mover | 14.02 | 10.52 | 0.547 |
+| 1 | st_astar | 0.5 | 31 | mover | 5.38 | 3.38 | 0.496 |
+| 1 | st_astar | 1.0 | 4 | mover | 9.24 | 5.84 | 0.635 |
+| 1 | st_astar | 1.0 | 49 | mover | 10.6 | 4.5 | 0.214 |
+
+wrote /Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261110-112052-kiro-6d9b/samples/close-area-moving-obstacles/results/predict_0_1.json, /Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261110-112052-kiro-6d9b/samples/close-area-moving-obstacles/results/predict_0_1.md

@@ -126,10 +126,86 @@ outcome, min clearance, path length, collision time and warning time
 ([results/rerun_check.txt](results/rerun_check.txt)). `test_smoke.py` reruns
 astar / 1.0 m/s / layout 1 against the saved row.
 
+## Prediction arms: constant-velocity tracks, space-time A*, VO gate (ran 2026-11-10)
+
+The sim people walk straight segments at constant speed with an instant U-turn at each end.
+That is the constant-velocity model, so this setup favours a constant-velocity predictor. Real
+people stop, wander and react to the drone; expect worse numbers on a real floor.
+
+| File | What |
+|---|---|
+| `predict.py` | Range hits the prior map does not explain (prior ESDF > 0.15 m) => single-linkage clusters (0.4 m) => centre (centroid pushed 0.7 x 0.25 m away from the sensor) => alpha-beta tracks (0.5 / 0.1, confirmed after 3 hits, dropped after 0.6 s) => constant-velocity extrapolation to 3 s, footprint radius 0.25 m + 0.1 m/s x tau. Turn-around hedge: the disc a person can reach from where it is now at its peak-held speed |
+| `planners_st.py` | Arm `st_astar`: space-time A* on the 0.1 m prior grid, 0.2 s layers, 8 s horizon, 5 Hz replan; each layer blocks the predicted swept footprint (capsule over the step) plus 0.25 m inflation and 0.3 m margin, and for tau <= 0.5 s the turn-around disc; static clearance cost and geodesic heuristic from the arena A*; time-indexed follower |
+| `vo.py` | Arm `astar_vo`: the existing `astar_replan` planner unchanged, its carrot command gated by a truncated velocity obstacle (3 s, 0.3 m margin) per track plus a 1 s turn-around cone; numpy over 162 candidate velocities x tracks |
+| `run_predict.py` | 50 layouts x 0.5 / 1.0 m/s x seeds 0 and 1 x five arms through `run_moving.run_one` unchanged; Wilson 95 % intervals; paired sign test against `astar_f2`; predictor error against truth; replay JSON |
+
+Run (about 45 s for 1000 runs on 14 workers, Apple M3 Max):
+
+```sh
+cd samples/close-area-moving-obstacles
+.venv/bin/python run_predict.py --layouts 50 --seeds 0,1 --workers 14
+```
+
+Seed 0 tuned the margins and the hedge (10 `st_astar` and 8 `astar_vo` configurations,
+[results/predict_tuning.md](results/predict_tuning.md)). Seed 1 is held out. The three existing
+arms on seed 0 match `results/moving_0.json` in all 300 runs (outcome, min clearance, duration,
+warning time).
+
+Held-out seed 1, both speeds pooled, 100 runs per arm (95 % Wilson interval):
+
+| arm | reached % | collision % | stuck % | median time to B s |
+|---|---|---|---|---|
+| astar | 72.0 (62.5-79.9) | 28.0 (20.1-37.5) | 0.0 (0.0-3.7) | 20.22 |
+| astar_f2 | 92.0 (85.0-95.9) | 0.0 (0.0-3.7) | 8.0 (4.1-15.0) | 20.61 |
+| apf | 92.0 (85.0-95.9) | 2.0 (0.6-7.0) | 6.0 (2.8-12.5) | 28.25 |
+| st_astar | 97.0 (91.5-99.0) | 3.0 (1.0-8.5) | 0.0 (0.0-3.7) | 18.72 |
+| astar_vo | 100.0 (96.3-100.0) | 0.0 (0.0-3.7) | 0.0 (0.0-3.7) | 20.62 |
+
+Per speed, per seed, warning times and every collided run are in
+[results/predict_0_1.md](results/predict_0_1.md).
+
+Verdict against "gain over A* + F2" (rule fixed before seed 1 ran: no more collisions than
+`astar_f2`, more runs reach B, exact sign test on discordant layouts p < 0.05; seed 1, 100 paired
+runs):
+
+- **`astar_vo`: PASS.** 0 vs 0 collisions; reached in 8 runs where `astar_f2` did not, 0 the other
+  way, p = 0.0078. The 8 runs are the 4 layouts (1, 28, 34, 43) where `astar_f2` gets stuck at
+  both speeds (per-run rows). So the gain is reaching B where F2 deadlocks, at the same zero
+  collision count; it does not show that VO handles people better than F2. Zero collisions in
+  100 runs still allows a true rate up to 3.7 %.
+- **`st_astar`: FAIL.** 3 collisions (1 at 0.5 m/s, 2 at 1.0 m/s) vs 0; reached 8 vs 3
+  discordant, p = 0.227. It is the fastest arm (median 18.6-18.9 s to B per speed vs 20.1-20.7 s
+  for `astar_f2`) and never stuck, but it plans close passes in front of people and a U-turn
+  inside the 0.2 s replan cycle catches it. Vehicle speed at contact was 0.21-0.64 m/s
+  (collided-run table).
+- Against plain `astar` both arms remove most contacts: at 1.0 m/s on seed 1, 38 % => 4 %
+  (`st_astar`) and 0 % (`astar_vo`).
+
+How good is the constant-velocity guess here (confirmed tracks vs truth, seed 1, 1.0 m/s)? Position
+error now: median 0.06 m. 1 s ahead: median 0.38 m, p90 1.56 m. 3 s ahead: median 2.53 m, p90
+5.24 m (0.73 m median at 0.5 m/s). Segments are 3-6 m long, so a 1.0 m/s person often turns
+within 3 s; the 3 s prediction is often wrong even for straight-line walkers. The turn-around
+hedge was needed because of this (seed-0 traces in
+[results/predict_tuning.md](results/predict_tuning.md)).
+
+Planning cost (Python, one core): `st_astar` median 9.9-10.4 ms per search (median of run medians), max 127 ms;
+`astar_vo` 3.3-4.0 ms median for the inner A* search (the gate is not timed). Timings move between reruns; outcomes do not (an earlier identical run gave the same outcomes with a 150 ms st_astar max).
+
+Limits:
+
+- People walk straight lines at constant speed and ignore the drone; that favours constant
+  velocity. No stopping, wandering, groups or yielding.
+- Margins and the hedge are tuned on seed 0 only; seed 1 is one held-out draw of 50 layouts.
+- One static family (`random`), truth pose, ideal 360 deg fan. Under a narrow FoV the tracker
+  sees people later and loses them at the sides.
+- `astar_vo` was not combined with F2. Its zero collisions rest on the VO gate alone.
+- The tracker uses a person-size prior (0.25 m) and a 2.5 m/s speed cap; other drones or
+  vehicles would need other priors.
+
 ## Limits
 
 - **No prediction of obstacle motion.** Every arm reacts to where the person is, not where the
-  person is going. A constant-velocity predictor is the obvious next arm; it is not built.
+  person is going. A constant-velocity predictor is built: see [Prediction arms](#prediction-arms-constant-velocity-tracks-space-time-a-vo-gate-ran-2026-11-10).
 - **Constant-velocity segments.** People walk straight lines at a fixed speed with an instant
   U-turn. They do not stop, accelerate, wander, react to the drone or avoid each other (movers
   may overlap). Real people are less predictable on a straight line and more cautious near a
