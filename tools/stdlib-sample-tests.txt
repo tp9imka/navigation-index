@@ -52,3 +52,4 @@ close-area-planner-dwa-bug
 close-area-planner-dstar
 navigation-innovation-lab
 close-area-planner-hybrid-astar
+close-area-planner-thetastar

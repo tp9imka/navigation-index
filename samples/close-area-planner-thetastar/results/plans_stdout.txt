@@ -1,0 +1,195 @@
+[bench] close-area-planner-mpc/mpc.py not loaded: No module named 'osqp'
+random 0 {'astar_shortcut': (14.74, 24.749, 29.495), 'thetastar': (109.99, 24.491, 24.536), 'lazy_thetastar': (76.77, 24.514, 24.591)}
+random 1 {'astar_shortcut': (1.14, 24.297, 24.326), 'thetastar': (18.27, 24.297, 24.326), 'lazy_thetastar': (9.48, 24.297, 24.326)}
+random 2 {'astar_shortcut': (5.44, 24.242, 27.521), 'thetastar': (29.54, 24.396, 25.41), 'lazy_thetastar': (19.12, 24.432, 25.412)}
+random 3 {'astar_shortcut': (9.72, 24.781, 27.775), 'thetastar': (68.23, 24.599, 24.676), 'lazy_thetastar': (41.22, 24.644, 24.71)}
+random 4 {'astar_shortcut': (7.74, 24.112, 25.568), 'thetastar': (62.97, 24.011, 24.05), 'lazy_thetastar': (53.19, 24.053, 24.092)}
+random 5 {'astar_shortcut': (17.83, 24.437, 28.972), 'thetastar': (189.53, 24.749, 25.248), 'lazy_thetastar': (140.61, 24.812, 25.299)}
+random 6 {'astar_shortcut': (14.25, 25.239, 28.624), 'thetastar': (118.63, 25.163, 25.201), 'lazy_thetastar': (87.32, 25.226, 25.253)}
+random 7 {'astar_shortcut': (10.76, 24.889, 27.179), 'thetastar': (192.31, 25.024, 25.196), 'lazy_thetastar': (146.25, 25.025, 25.202)}
+random 8 {'astar_shortcut': (10.2, 24.12, 27.44), 'thetastar': (57.09, 24.283, 24.622), 'lazy_thetastar': (36.36, 24.293, 24.636)}
+random 9 {'astar_shortcut': (1.97, 23.621, 24.343), 'thetastar': (17.89, 23.625, 23.634), 'lazy_thetastar': (20.86, 23.657, 23.672)}
+random 10 {'astar_shortcut': (1.17, 24.211, 24.416), 'thetastar': (13.78, 24.212, 24.255), 'lazy_thetastar': (9.96, 24.212, 24.255)}
+random 11 {'astar_shortcut': (10.25, 24.734, 28.99), 'thetastar': (57.46, 25.074, 25.1), 'lazy_thetastar': (37.58, 25.076, 25.095)}
+random 12 {'astar_shortcut': (8.34, 24.552, 30.519), 'thetastar': (53.71, 24.732, 24.776), 'lazy_thetastar': (41.69, 24.744, 24.793)}
+random 13 {'astar_shortcut': (27.35, 26.626, 36.106), 'thetastar': (204.34, 26.956, 27.05), 'lazy_thetastar': (142.52, 26.987, 27.053)}
+random 14 {'astar_shortcut': (1.1, 24.363, 24.395), 'thetastar': (15.87, 24.363, 24.395), 'lazy_thetastar': (8.28, 24.363, 24.395)}
+random 15 {'astar_shortcut': (3.74, 24.158, 25.545), 'thetastar': (40.81, 24.114, 24.089), 'lazy_thetastar': (34.84, 24.163, 24.142)}
+random 16 {'astar_shortcut': (5.75, 25.001, 26.494), 'thetastar': (28.22, 25.075, 25.118), 'lazy_thetastar': (19.12, 25.074, 25.117)}
+random 17 {'astar_shortcut': (1.12, 23.894, 24.923), 'thetastar': (9.67, 23.935, 23.957), 'lazy_thetastar': (9.65, 23.923, 23.95)}
+random 18 {'astar_shortcut': (1.17, 23.777, 23.763), 'thetastar': (18.62, 23.777, 23.763), 'lazy_thetastar': (9.63, 23.777, 23.763)}
+random 19 {'astar_shortcut': (8.77, 24.15, 27.246), 'thetastar': (61.48, 24.155, 24.114), 'lazy_thetastar': (43.65, 24.178, 24.155)}
+u_trap 0 {'astar_shortcut': (13.29, 25.063, 26.435), 'thetastar': (82.23, 25.088, 25.061), 'lazy_thetastar': (49.1, 25.101, 25.067)}
+u_trap 1 {'astar_shortcut': (17.79, 25.777, 28.946), 'thetastar': (124.34, 25.851, 25.902), 'lazy_thetastar': (94.62, 25.821, 25.979)}
+u_trap 2 {'astar_shortcut': (16.67, 25.539, 27.162), 'thetastar': (130.44, 25.621, 25.651), 'lazy_thetastar': (82.96, 25.62, 25.647)}
+u_trap 3 {'astar_shortcut': (14.31, 25.221, 28.297), 'thetastar': (89.81, 25.464, 25.529), 'lazy_thetastar': (49.65, 25.465, 25.56)}
+u_trap 4 {'astar_shortcut': (18.38, 25.473, 26.787), 'thetastar': (164.93, 25.475, 25.45), 'lazy_thetastar': (109.75, 25.476, 25.447)}
+u_trap 5 {'astar_shortcut': (14.0, 24.966, 26.383), 'thetastar': (106.24, 24.995, 24.977), 'lazy_thetastar': (66.28, 25.007, 24.983)}
+u_trap 6 {'astar_shortcut': (17.27, 25.342, 28.258), 'thetastar': (137.54, 25.393, 25.368), 'lazy_thetastar': (103.09, 25.39, 25.369)}
+u_trap 7 {'astar_shortcut': (13.88, 25.947, 29.865), 'thetastar': (60.24, 25.95, 25.975), 'lazy_thetastar': (34.33, 25.966, 26.003)}
+u_trap 8 {'astar_shortcut': (22.05, 25.74, 29.168), 'thetastar': (140.34, 25.621, 25.764), 'lazy_thetastar': (103.35, 25.608, 25.792)}
+u_trap 9 {'astar_shortcut': (15.29, 26.258, 30.244), 'thetastar': (107.67, 25.858, 25.934), 'lazy_thetastar': (63.2, 25.868, 25.944)}
+u_trap 10 {'astar_shortcut': (16.95, 25.903, 29.108), 'thetastar': (149.57, 25.908, 25.989), 'lazy_thetastar': (92.26, 25.924, 26.002)}
+u_trap 11 {'astar_shortcut': (15.51, 25.668, 27.661), 'thetastar': (121.25, 25.72, 25.745), 'lazy_thetastar': (92.06, 25.712, 25.808)}
+u_trap 12 {'astar_shortcut': (22.08, 25.814, 29.746), 'thetastar': (167.54, 25.787, 25.796), 'lazy_thetastar': (112.94, 25.793, 25.845)}
+u_trap 13 {'astar_shortcut': (15.41, 25.623, 28.531), 'thetastar': (130.1, 25.181, 25.208), 'lazy_thetastar': (83.24, 25.16, 25.243)}
+u_trap 14 {'astar_shortcut': (12.69, 25.18, 26.671), 'thetastar': (78.94, 25.212, 25.27), 'lazy_thetastar': (51.38, 25.252, 25.303)}
+u_trap 15 {'astar_shortcut': (13.12, 24.517, 25.976), 'thetastar': (93.27, 24.572, 24.592), 'lazy_thetastar': (57.47, 24.552, 24.628)}
+u_trap 16 {'astar_shortcut': (13.41, 24.818, 26.219), 'thetastar': (87.88, 24.848, 24.885), 'lazy_thetastar': (53.82, 24.858, 24.895)}
+u_trap 17 {'astar_shortcut': (14.73, 24.271, 25.672), 'thetastar': (110.72, 24.254, 24.27), 'lazy_thetastar': (80.36, 24.247, 24.267)}
+u_trap 18 {'astar_shortcut': (14.29, 24.591, 25.858), 'thetastar': (94.88, 24.614, 24.607), 'lazy_thetastar': (59.81, 24.631, 24.625)}
+u_trap 19 {'astar_shortcut': (15.5, 25.103, 27.927), 'thetastar': (119.18, 25.009, 24.96), 'lazy_thetastar': (86.7, 24.999, 24.956)}
+narrow_gap 0 {'astar_shortcut': (23.65, 25.256, 31.482), 'thetastar': (203.44, 25.544, 29.397), 'lazy_thetastar': (149.78, 25.57, 29.41)}
+narrow_gap 1 {'astar_shortcut': (25.02, 25.132, 32.087), 'thetastar': (174.79, 25.494, 29.578), 'lazy_thetastar': (133.17, 25.502, 29.607)}
+narrow_gap 2 {'astar_shortcut': (32.16, 26.356, 30.959), 'thetastar': (265.6, 26.461, 30.555), 'lazy_thetastar': (181.39, 26.515, 30.56)}
+narrow_gap 3 {'astar_shortcut': (26.19, 26.345, 32.324), 'thetastar': (251.66, 26.471, 30.564), 'lazy_thetastar': (188.04, 26.468, 30.538)}
+narrow_gap 4 {'astar_shortcut': (36.15, 27.049, 37.219), 'thetastar': (274.27, 27.096, 31.482), 'lazy_thetastar': (173.1, 27.167, 31.539)}
+narrow_gap 5 {'astar_shortcut': (21.05, 25.532, 30.464), 'thetastar': (170.4, 25.387, 28.857), 'lazy_thetastar': (118.0, 25.384, 28.849)}
+narrow_gap 6 {'astar_shortcut': (20.73, 24.975, 30.483), 'thetastar': (164.04, 25.19, 28.63), 'lazy_thetastar': (127.53, 25.195, 28.638)}
+narrow_gap 7 {'astar_shortcut': (22.49, 23.962, 28.784), 'thetastar': (230.56, 24.208, 28.208), 'lazy_thetastar': (183.74, 24.226, 28.201)}
+narrow_gap 8 {'astar_shortcut': (32.19, 25.195, 31.047), 'thetastar': (301.81, 25.489, 28.887), 'lazy_thetastar': (211.36, 25.472, 28.881)}
+narrow_gap 9 {'astar_shortcut': (34.18, 25.506, 29.443), 'thetastar': (277.85, 25.547, 29.033), 'lazy_thetastar': (198.35, 25.627, 29.058)}
+narrow_gap 10 {'astar_shortcut': (25.63, 24.388, 28.444), 'thetastar': (260.93, 24.508, 27.972), 'lazy_thetastar': (200.99, 24.556, 27.968)}
+narrow_gap 11 {'astar_shortcut': (24.2, 25.057, 28.941), 'thetastar': (175.54, 25.166, 28.574), 'lazy_thetastar': (124.91, 25.174, 28.588)}
+narrow_gap 12 {'astar_shortcut': (20.2, 24.232, 29.951), 'thetastar': (120.99, 24.334, 27.844), 'lazy_thetastar': (77.76, 24.378, 27.881)}
+narrow_gap 13 {'astar_shortcut': (23.89, 25.24, 29.185), 'thetastar': (228.4, 25.386, 28.752), 'lazy_thetastar': (178.57, 25.391, 28.754)}
+narrow_gap 14 {'astar_shortcut': (23.47, 25.231, 30.105), 'thetastar': (206.82, 25.465, 29.51), 'lazy_thetastar': (144.17, 25.45, 29.504)}
+narrow_gap 15 {'astar_shortcut': (25.35, 27.284, 31.817), 'thetastar': (243.07, 27.401, 31.477), 'lazy_thetastar': (182.07, 27.398, 31.488)}
+narrow_gap 16 {'astar_shortcut': (22.69, 25.292, 31.445), 'thetastar': (211.25, 25.262, 28.71), 'lazy_thetastar': (161.76, 25.343, 28.735)}
+narrow_gap 17 {'astar_shortcut': (36.56, 26.767, 32.402), 'thetastar': (352.21, 26.857, 30.96), 'lazy_thetastar': (244.45, 26.974, 31.001)}
+narrow_gap 18 {'astar_shortcut': (34.93, 26.305, 33.885), 'thetastar': (273.01, 26.601, 30.01), 'lazy_thetastar': (205.03, 26.636, 30.072)}
+narrow_gap 19 {'astar_shortcut': (27.44, 25.052, 34.302), 'thetastar': (200.45, 24.949, 30.71), 'lazy_thetastar': (136.39, 24.861, 30.728)}
+office 0 {'astar_shortcut': (10.43, 15.0, 28.029), 'thetastar': (55.98, 15.423, 21.841), 'lazy_thetastar': (33.24, 15.443, 21.826)}
+office 1 {'astar_shortcut': (9.09, 11.127, 21.083), 'thetastar': (68.19, 11.535, 17.937), 'lazy_thetastar': (30.06, 11.489, 17.982)}
+office 2 {'astar_shortcut': (5.05, 8.114, 16.456), 'thetastar': (18.73, 8.363, 14.573), 'lazy_thetastar': (12.37, 8.424, 14.637)}
+office 3 {'astar_shortcut': (10.04, 10.919, 24.411), 'thetastar': (53.77, 11.263, 18.373), 'lazy_thetastar': (32.97, 11.392, 18.493)}
+office 4 {'astar_shortcut': (11.25, 17.005, 38.424), 'thetastar': (46.99, 17.274, 31.311), 'lazy_thetastar': (29.99, 17.302, 31.385)}
+office 5 {'astar_shortcut': (13.61, 14.67, 32.94), 'thetastar': (98.91, 15.098, 24.129), 'lazy_thetastar': (47.74, 15.119, 24.204)}
+office 6 {'astar_shortcut': (9.76, 14.397, 26.631), 'thetastar': (49.43, 14.812, 20.823), 'lazy_thetastar': (33.09, 14.865, 20.867)}
+office 7 {'astar_shortcut': (16.74, 15.278, 37.215), 'thetastar': (110.93, 15.746, 25.287), 'lazy_thetastar': (75.22, 15.796, 25.439)}
+office 8 {'astar_shortcut': (16.08, 12.195, 28.672), 'thetastar': (71.02, 12.285, 27.03), 'lazy_thetastar': (42.21, 12.311, 27.101)}
+office 9 {'astar_shortcut': (4.17, 7.095, 14.596), 'thetastar': (14.78, 7.208, 14.058), 'lazy_thetastar': (10.57, 7.227, 14.058)}
+office 10 {'astar_shortcut': (11.47, 11.082, 22.815), 'thetastar': (46.67, 11.26, 20.915), 'lazy_thetastar': (30.77, 11.415, 20.993)}
+office 11 {'astar_shortcut': (12.01, 15.073, 31.915), 'thetastar': (51.27, 15.558, 24.831), 'lazy_thetastar': (33.42, 15.649, 24.886)}
+office 12 {'astar_shortcut': (13.86, 11.275, 24.381), 'thetastar': (115.41, 11.697, 20.107), 'lazy_thetastar': (58.29, 11.711, 20.185)}
+office 13 {'astar_shortcut': (6.59, 11.561, 23.124), 'thetastar': (23.98, 12.134, 19.278), 'lazy_thetastar': (15.64, 12.209, 19.308)}
+office 14 {'astar_shortcut': (2.86, 6.328, 12.609), 'thetastar': (10.64, 6.458, 12.15), 'lazy_thetastar': (8.28, 6.307, 12.204)}
+office 15 {'astar_shortcut': (14.81, 12.165, 24.981), 'thetastar': (163.06, 12.406, 20.979), 'lazy_thetastar': (60.38, 12.493, 20.952)}
+office 16 {'astar_shortcut': (22.89, 13.98, 32.055), 'thetastar': (173.99, 14.412, 27.513), 'lazy_thetastar': (89.31, 14.344, 27.553)}
+office 17 {'astar_shortcut': (3.96, 7.782, 16.239), 'thetastar': (15.46, 7.78, 15.634), 'lazy_thetastar': (10.1, 7.798, 15.682)}
+office 18 {'astar_shortcut': (16.06, 15.763, 30.277), 'thetastar': (77.18, 16.109, 24.976), 'lazy_thetastar': (53.12, 16.117, 25.001)}
+office 19 {'astar_shortcut': (5.19, 8.682, 19.762), 'thetastar': (15.9, 9.141, 17.452), 'lazy_thetastar': (11.66, 9.08, 17.488)}
+warehouse 0 {'astar_shortcut': (29.87, 35.981, 76.064), 'thetastar': (128.37, 36.398, 50.845), 'lazy_thetastar': (88.28, 36.43, 50.913)}
+warehouse 1 {'astar_shortcut': (31.0, 36.504, 71.021), 'thetastar': (118.13, 36.872, 45.294), 'lazy_thetastar': (97.9, 36.86, 45.318)}
+warehouse 2 {'astar_shortcut': (35.65, 36.247, 58.914), 'thetastar': (132.13, 36.652, 41.231), 'lazy_thetastar': (84.39, 36.7, 41.225)}
+warehouse 3 {'astar_shortcut': (23.05, 37.724, 77.025), 'thetastar': (131.39, 38.205, 41.567), 'lazy_thetastar': (62.24, 38.24, 41.561)}
+warehouse 4 {'astar_shortcut': (24.13, 37.036, 75.108), 'thetastar': (158.71, 37.45, 44.761), 'lazy_thetastar': (124.29, 37.449, 44.766)}
+warehouse 5 {'astar_shortcut': (19.87, 35.29, 64.8), 'thetastar': (93.63, 35.739, 39.73), 'lazy_thetastar': (47.53, 35.735, 39.727)}
+warehouse 6 {'astar_shortcut': (33.4, 35.739, 65.335), 'thetastar': (160.32, 36.262, 41.341), 'lazy_thetastar': (96.63, 36.245, 41.354)}
+warehouse 7 {'astar_shortcut': (44.01, 34.574, 53.032), 'thetastar': (126.86, 35.019, 40.617), 'lazy_thetastar': (84.59, 35.016, 40.631)}
+warehouse 8 {'astar_shortcut': (38.14, 28.594, 53.506), 'thetastar': (174.07, 29.047, 45.057), 'lazy_thetastar': (96.93, 29.024, 45.052)}
+warehouse 9 {'astar_shortcut': (26.8, 29.21, 57.514), 'thetastar': (171.38, 29.547, 42.139), 'lazy_thetastar': (99.15, 29.572, 42.151)}
+warehouse 10 {'astar_shortcut': (35.0, 35.993, 66.472), 'thetastar': (141.97, 36.42, 42.492), 'lazy_thetastar': (82.03, 36.429, 42.522)}
+warehouse 11 {'astar_shortcut': (33.02, 36.681, 69.229), 'thetastar': (122.75, 36.992, 51.009), 'lazy_thetastar': (72.62, 36.95, 51.022)}
+warehouse 12 {'astar_shortcut': (33.8, 36.735, 72.622), 'thetastar': (115.09, 37.193, 39.607), 'lazy_thetastar': (73.96, 37.228, 39.601)}
+warehouse 13 {'astar_shortcut': (39.53, 36.078, 72.884), 'thetastar': (212.18, 36.52, 59.507), 'lazy_thetastar': (149.21, 36.579, 59.628)}
+warehouse 14 {'astar_shortcut': (27.26, 38.012, 73.256), 'thetastar': (129.78, 38.468, 48.837), 'lazy_thetastar': (81.81, 38.438, 48.831)}
+warehouse 15 {'astar_shortcut': (37.42, 36.259, 89.926), 'thetastar': (231.92, 36.749, 59.574), 'lazy_thetastar': (147.88, 36.768, 59.643)}
+warehouse 16 {'astar_shortcut': (28.76, 35.873, 61.882), 'thetastar': (143.94, 36.329, 39.931), 'lazy_thetastar': (96.17, 36.291, 39.928)}
+warehouse 17 {'astar_shortcut': (21.49, 34.697, 71.346), 'thetastar': (114.24, 35.186, 38.167), 'lazy_thetastar': (74.31, 35.222, 38.161)}
+warehouse 18 {'astar_shortcut': (37.59, 35.629, 72.654), 'thetastar': (183.05, 35.915, 56.06), 'lazy_thetastar': (121.88, 36.04, 56.146)}
+warehouse 19 {'astar_shortcut': (30.42, 29.599, 60.299), 'thetastar': (209.61, 29.918, 48.658), 'lazy_thetastar': (112.62, 29.999, 48.694)}
+forest 0 {'astar_shortcut': (33.36, 25.202, 32.879), 'thetastar': (128.13, 25.59, 27.088), 'lazy_thetastar': (84.93, 25.583, 27.116)}
+forest 1 {'astar_shortcut': (15.19, 24.318, 32.606), 'thetastar': (93.27, 24.811, 24.932), 'lazy_thetastar': (62.9, 24.869, 24.984)}
+forest 2 {'astar_shortcut': (14.4, 24.31, 30.367), 'thetastar': (55.66, 24.93, 25.018), 'lazy_thetastar': (36.36, 24.946, 25.082)}
+forest 3 {'astar_shortcut': (37.22, 25.022, 35.034), 'thetastar': (85.39, 25.531, 26.223), 'lazy_thetastar': (50.82, 25.619, 26.337)}
+forest 4 {'astar_shortcut': (14.86, 24.709, 31.483), 'thetastar': (53.42, 24.883, 24.943), 'lazy_thetastar': (30.62, 24.913, 24.977)}
+forest 5 {'astar_shortcut': (10.37, 24.072, 28.105), 'thetastar': (104.08, 24.248, 24.361), 'lazy_thetastar': (63.52, 24.234, 24.363)}
+forest 6 {'astar_shortcut': (47.65, 26.563, 35.499), 'thetastar': (191.58, 27.049, 28.418), 'lazy_thetastar': (116.38, 27.162, 28.447)}
+forest 7 {'astar_shortcut': (11.38, 24.166, 32.334), 'thetastar': (75.28, 24.376, 24.483), 'lazy_thetastar': (46.76, 24.394, 24.492)}
+forest 8 {'astar_shortcut': (16.73, 25.213, 32.105), 'thetastar': (50.13, 25.474, 25.736), 'lazy_thetastar': (40.66, 25.517, 25.77)}
+forest 9 {'astar_shortcut': (33.78, 26.344, 37.576), 'thetastar': (134.78, 25.203, 28.254), 'lazy_thetastar': (87.12, 25.233, 28.312)}
+forest 10 {'astar_shortcut': (57.42, 25.842, 34.518), 'thetastar': (220.66, 26.158, 29.446), 'lazy_thetastar': (153.56, 26.169, 30.057)}
+forest 11 {'astar_shortcut': (21.43, 25.004, 33.543), 'thetastar': (114.49, 25.275, 25.344), 'lazy_thetastar': (61.95, 25.277, 25.388)}
+forest 12 {'astar_shortcut': (14.6, 25.268, 32.497), 'thetastar': (62.03, 25.725, 25.961), 'lazy_thetastar': (45.7, 25.817, 26.107)}
+forest 13 {'astar_shortcut': (38.69, 25.39, 32.888), 'thetastar': (132.13, 25.444, 27.581), 'lazy_thetastar': (61.69, 25.472, 27.584)}
+forest 14 {'astar_shortcut': (15.37, 25.261, 30.58), 'thetastar': (66.14, 25.032, 25.06), 'lazy_thetastar': (47.04, 25.061, 25.08)}
+forest 15 {'astar_shortcut': (12.58, 24.457, 33.096), 'thetastar': (74.57, 24.897, 25.75), 'lazy_thetastar': (42.53, 24.95, 25.814)}
+forest 16 {'astar_shortcut': (6.63, 23.732, 29.106), 'thetastar': (27.62, 24.034, 24.738), 'lazy_thetastar': (30.97, 24.088, 24.8)}
+forest 17 {'astar_shortcut': (5.76, 24.282, 27.89), 'thetastar': (46.52, 24.494, 24.54), 'lazy_thetastar': (29.31, 24.598, 24.648)}
+forest 18 {'astar_shortcut': (15.99, 25.163, 32.462), 'thetastar': (70.26, 25.559, 25.674), 'lazy_thetastar': (48.14, 25.661, 25.786)}
+forest 19 {'astar_shortcut': (25.43, 24.636, 33.47), 'thetastar': (97.32, 25.292, 26.254), 'lazy_thetastar': (42.99, 25.336, 26.308)}
+maze 0 {'astar_shortcut': (65.93, 39.994, 67.971), 'thetastar': (177.04, 41.454, 49.318), 'lazy_thetastar': (109.59, 41.439, 49.33)}
+maze 1 {'astar_shortcut': (42.7, 31.228, 54.95), 'thetastar': (147.68, 32.848, 39.425), 'lazy_thetastar': (81.04, 32.99, 39.468)}
+maze 2 {'astar_shortcut': (66.57, 35.71, 62.627), 'thetastar': (234.27, 36.895, 41.6), 'lazy_thetastar': (111.23, 36.917, 41.638)}
+maze 3 {'astar_shortcut': (63.31, 38.452, 68.096), 'thetastar': (214.7, 39.816, 43.299), 'lazy_thetastar': (131.52, 39.864, 43.376)}
+maze 4 {'astar_shortcut': (85.22, 46.567, 85.584), 'thetastar': (215.85, 48.614, 52.118), 'lazy_thetastar': (125.94, 48.596, 52.117)}
+maze 5 {'astar_shortcut': (58.59, 37.387, 60.343), 'thetastar': (205.02, 39.259, 43.563), 'lazy_thetastar': (110.22, 39.378, 43.618)}
+maze 6 {'astar_shortcut': (85.31, 39.462, 67.867), 'thetastar': (186.6, 41.575, 48.872), 'lazy_thetastar': (108.58, 41.765, 48.998)}
+maze 7 {'astar_shortcut': (96.58, 45.616, 82.646), 'thetastar': (237.94, 48.968, 53.748), 'lazy_thetastar': (132.03, 49.03, 53.851)}
+maze 8 {'astar_shortcut': (41.81, 35.499, 59.882), 'thetastar': (122.83, 36.885, 42.097), 'lazy_thetastar': (74.66, 37.07, 42.183)}
+maze 9 {'astar_shortcut': (55.77, 36.21, 58.463), 'thetastar': (145.35, 37.461, 43.182), 'lazy_thetastar': (72.57, 37.577, 43.228)}
+maze 10 {'astar_shortcut': (50.45, 38.663, 63.183), 'thetastar': (135.26, 40.096, 45.981), 'lazy_thetastar': (90.67, 40.162, 45.99)}
+maze 11 {'astar_shortcut': (69.98, 45.042, 85.845), 'thetastar': (207.96, 47.397, 54.584), 'lazy_thetastar': (102.0, 47.461, 54.625)}
+maze 12 {'astar_shortcut': (46.85, 31.503, 50.207), 'thetastar': (146.03, 32.487, 35.715), 'lazy_thetastar': (73.92, 32.511, 35.731)}
+maze 13 {'astar_shortcut': (82.59, 40.351, 69.046), 'thetastar': (182.09, 42.31, 48.608), 'lazy_thetastar': (91.16, 42.401, 48.646)}
+maze 14 {'astar_shortcut': (55.46, 33.986, 61.448), 'thetastar': (126.7, 36.189, 42.809), 'lazy_thetastar': (67.89, 36.308, 42.883)}
+maze 15 {'astar_shortcut': (34.83, 35.777, 63.538), 'thetastar': (89.59, 37.179, 41.651), 'lazy_thetastar': (51.27, 37.178, 41.695)}
+maze 16 {'astar_shortcut': (68.51, 43.681, 76.616), 'thetastar': (158.06, 46.423, 53.486), 'lazy_thetastar': (92.38, 46.378, 53.483)}
+maze 17 {'astar_shortcut': (50.99, 40.454, 70.44), 'thetastar': (145.22, 41.567, 47.121), 'lazy_thetastar': (84.51, 41.639, 47.148)}
+maze 18 {'astar_shortcut': (41.54, 34.0, 60.819), 'thetastar': (100.74, 36.031, 41.682), 'lazy_thetastar': (60.16, 36.065, 41.726)}
+maze 19 {'astar_shortcut': (47.41, 38.692, 68.416), 'thetastar': (121.89, 40.501, 43.849), 'lazy_thetastar': (71.79, 40.499, 43.858)}
+glass_office 0 {'astar_shortcut': (19.02, 13.795, 32.829), 'thetastar': (103.22, 14.435, 27.156), 'lazy_thetastar': (72.44, 14.572, 27.255)}
+glass_office 1 {'astar_shortcut': (2.72, 6.059, 12.117), 'thetastar': (12.09, 6.173, 11.849), 'lazy_thetastar': (9.46, 6.212, 11.896)}
+glass_office 2 {'astar_shortcut': (5.29, 6.892, 16.819), 'thetastar': (20.17, 7.035, 15.934), 'lazy_thetastar': (13.66, 7.102, 15.96)}
+glass_office 3 {'astar_shortcut': (14.85, 14.674, 24.291), 'thetastar': (82.96, 15.177, 21.601), 'lazy_thetastar': (48.21, 15.1, 21.678)}
+glass_office 4 {'astar_shortcut': (40.63, 18.249, 39.976), 'thetastar': (424.2, 19.253, 31.933), 'lazy_thetastar': (189.7, 19.309, 32.084)}
+glass_office 5 {'astar_shortcut': (15.47, 12.236, 33.278), 'thetastar': (48.4, 12.429, 31.54), 'lazy_thetastar': (32.2, 12.554, 31.703)}
+glass_office 6 {'astar_shortcut': (7.04, 8.033, 19.67), 'thetastar': (26.04, 8.218, 18.42), 'lazy_thetastar': (18.9, 8.407, 18.66)}
+glass_office 7 {'astar_shortcut': (5.6, 8.507, 21.51), 'thetastar': (17.58, 9.111, 19.603), 'lazy_thetastar': (12.14, 9.084, 19.665)}
+glass_office 8 {'astar_shortcut': (13.41, 15.262, 29.839), 'thetastar': (45.08, 16.051, 24.361), 'lazy_thetastar': (28.34, 16.05, 24.446)}
+glass_office 9 {'astar_shortcut': (12.64, 12.978, 24.278), 'thetastar': (43.44, 13.482, 21.023), 'lazy_thetastar': (32.74, 13.541, 21.03)}
+glass_office 10 {'astar_shortcut': (20.27, 18.418, 38.199), 'thetastar': (67.79, 19.131, 33.213), 'lazy_thetastar': (40.76, 19.043, 33.272)}
+glass_office 11 {'astar_shortcut': (32.35, 18.554, 33.451), 'thetastar': (385.0, 19.16, 28.333), 'lazy_thetastar': (152.53, 19.212, 28.375)}
+glass_office 12 {'astar_shortcut': (18.45, 12.933, 31.489), 'thetastar': (70.23, 13.628, 27.813), 'lazy_thetastar': (47.57, 13.672, 27.84)}
+glass_office 13 {'astar_shortcut': (38.94, 22.24, 34.843), 'thetastar': (267.57, 22.353, 31.523), 'lazy_thetastar': (214.09, 22.531, 31.616)}
+glass_office 14 {'astar_shortcut': (31.42, 17.056, 45.424), 'thetastar': (186.62, 18.06, 35.206), 'lazy_thetastar': (131.75, 18.171, 35.279)}
+glass_office 15 {'astar_shortcut': (5.38, 7.343, 17.027), 'thetastar': (18.67, 7.414, 16.142), 'lazy_thetastar': (12.85, 7.394, 16.288)}
+glass_office 16 {'astar_shortcut': (12.03, 13.522, 23.106), 'thetastar': (72.87, 14.005, 19.845), 'lazy_thetastar': (39.4, 13.97, 19.908)}
+glass_office 17 {'astar_shortcut': (5.88, 8.518, 20.743), 'thetastar': (20.48, 8.68, 19.887), 'lazy_thetastar': (13.9, 8.611, 19.903)}
+glass_office 18 {'astar_shortcut': (35.3, 15.198, 35.17), 'thetastar': (241.8, 16.048, 29.875), 'lazy_thetastar': (139.98, 16.131, 29.983)}
+glass_office 19 {'astar_shortcut': (13.69, 16.294, 33.255), 'thetastar': (56.44, 16.964, 28.806), 'lazy_thetastar': (36.93, 16.953, 28.835)}
+`python bench.py plans --layouts 20 --seed 0 --repeats 3` from samples/close-area-planner-thetastar. Input: synthetic. One plan from A to B on the known prior grid per layout, seed 0, 20 layouts per family, 3 repeats per plan (ms = median of the repeats), single process, wall 121.5 s. Load average at start [255.1, 169.8, 108.5], at end [99.8, 142.3, 106.2] (shared machine). Plan ms = the planner's whole _plan (cost arrays, search, shortcut for A*), ESDF cached. Cost = thetastar.path_cost of the planned polyline in metres x cost (same scale for all three). Clearance = world.sdf every 2 cm along the planned polyline.
+
+| family | planner | plan ms median | plan ms p95 | plan ms max | ms ratio median | length median m | length ratio median | shorter | cost median | cost ratio median | cheaper | clearance median m | clearance min m | fallback plans |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| random | astar_shortcut | 8.04 | 18.31 | 27.35 | - | 24.33 | - | - | 27.21 | - | - | 0.64 | 0.556 | 0 |
+| random | thetastar | 55.4 | 192.91 | 204.34 | 8.23 | 24.38 | 1 | 5 | 24.58 | 0.925 | 17 | 0.96 | 0.814 | 0 |
+| random | lazy_thetastar | 36.97 | 142.71 | 146.25 | 6.5 | 24.4 | 1.001 | 4 | 24.61 | 0.925 | 17 | 0.972 | 0.814 | 0 |
+| u_trap | astar_shortcut | 15.35 | 22.05 | 22.08 | - | 25.41 | - | - | 27.79 | - | - | 0.619 | 0.589 | 0 |
+| u_trap | thetastar | 114.95 | 165.06 | 167.54 | 7.31 | 25.43 | 1.001 | 6 | 25.41 | 0.916 | 20 | 0.978 | 0.936 | 0 |
+| u_trap | lazy_thetastar | 81.66 | 109.91 | 112.94 | 4.86 | 25.43 | 1.001 | 6 | 25.41 | 0.918 | 20 | 0.972 | 0.923 | 0 |
+| narrow_gap | astar_shortcut | 25.19 | 36.17 | 36.56 | - | 25.25 | - | - | 31 | - | - | 0.353 | 0.223 | 0 |
+| narrow_gap | thetastar | 229.48 | 304.33 | 352.21 | 8.43 | 25.48 | 1.005 | 3 | 29.21 | 0.946 | 20 | 0.353 | 0.254 | 0 |
+| narrow_gap | lazy_thetastar | 175.83 | 213.01 | 244.45 | 6.15 | 25.46 | 1.006 | 2 | 29.23 | 0.946 | 20 | 0.353 | 0.25 | 0 |
+| office | astar_shortcut | 10.84 | 17.05 | 22.89 | - | 11.86 | - | - | 24.7 | - | - | 0.38 | 0.279 | 0 |
+| office | thetastar | 52.52 | 163.61 | 173.99 | 4.61 | 12.21 | 1.029 | 1 | 20.87 | 0.837 | 20 | 0.377 | 0.26 | 0 |
+| office | lazy_thetastar | 33.03 | 75.92 | 89.31 | 3.04 | 12.26 | 1.03 | 1 | 20.91 | 0.837 | 20 | 0.372 | 0.256 | 0 |
+| warehouse | astar_shortcut | 32.01 | 39.75 | 44.01 | - | 35.99 | - | - | 70.12 | - | - | 0.574 | 0.45 | 0 |
+| warehouse | thetastar | 137.05 | 213.17 | 231.92 | 4.78 | 36.41 | 1.012 | 0 | 43.63 | 0.665 | 20 | 0.657 | 0.45 | 0 |
+| warehouse | lazy_thetastar | 92.22 | 147.95 | 149.21 | 2.98 | 36.43 | 1.013 | 0 | 43.64 | 0.665 | 20 | 0.657 | 0.45 | 0 |
+| forest | astar_shortcut | 15.68 | 48.14 | 57.42 | - | 25.01 | - | - | 32.55 | - | - | 0.635 | 0.59 | 0 |
+| forest | thetastar | 80.34 | 193.03 | 220.66 | 4.09 | 25.24 | 1.012 | 2 | 25.7 | 0.8 | 20 | 0.949 | 0.617 | 0 |
+| forest | lazy_thetastar | 47.59 | 118.24 | 153.56 | 2.78 | 25.26 | 1.014 | 2 | 25.78 | 0.802 | 20 | 0.946 | 0.623 | 0 |
+| maze | astar_shortcut | 57.18 | 85.87 | 96.58 | - | 38.56 | - | - | 65.7 | - | - | 0.593 | 0.572 | 0 |
+| maze | thetastar | 152.87 | 234.45 | 237.94 | 2.64 | 39.96 | 1.045 | 0 | 43.71 | 0.697 | 20 | 0.671 | 0.572 | 0 |
+| maze | lazy_thetastar | 90.91 | 131.55 | 132.03 | 1.5 | 40.01 | 1.045 | 0 | 43.74 | 0.698 | 20 | 0.671 | 0.572 | 0 |
+| glass_office | astar_shortcut | 14.27 | 39.02 | 40.63 | - | 13.66 | - | - | 30.66 | - | - | 0.317 | 0.25 | 0 |
+| glass_office | thetastar | 62.12 | 386.96 | 424.2 | 3.97 | 14.22 | 1.037 | 0 | 25.76 | 0.876 | 20 | 0.314 | 0.244 | 0 |
+| glass_office | lazy_thetastar | 38.16 | 190.92 | 214.09 | 2.69 | 14.27 | 1.038 | 0 | 25.85 | 0.878 | 20 | 0.296 | 0.241 | 0 |
+| all | astar_shortcut | 18.41 | 63.44 | 96.58 | - | 25.06 | - | - | 31.25 | - | - | 0.582 | 0.223 | 0 |
+| all | thetastar | 118.38 | 265.7 | 424.2 | 5.51 | 25.17 | 1.012 | 17 | 26.24 | 0.855 | 157 | 0.655 | 0.244 | 0 |
+| all | lazy_thetastar | 72.59 | 183.95 | 244.45 | 3.46 | 25.18 | 1.013 | 15 | 26.32 | 0.859 | 157 | 0.653 | 0.241 | 0 |
+
+Ratios are medians of per-layout ratios Theta* / A* + shortcut (ms ratio: same layout, same process, a few ms apart, so less sensitive to machine load than the absolute ms); shorter / cheaper = layouts where the ratio is < 1.
+.venv/bin/python bench.py plans --layouts 20 --seed 0 --repeats 3  117.36s user 0.44s system 95% cpu 2:03.27 total

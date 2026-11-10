@@ -1,0 +1,58 @@
+{
+  "id": "sample:close-area-planner-thetastar",
+  "title": "Close-area any-angle planning: Theta* and Lazy Theta* against A* + shortcut on 8 arena families, known and unknown map",
+  "summary": "Own pure-Python Theta* (Daniel, Nash, Koenig, Felner 2010) and Lazy Theta* (Nash, Koenig, Tovey 2010) on the close-area arena's inflated 0.1 m grid with the same ESDF clearance cost as planners/astar_esdf: the any-angle edge parent(u) => v is priced by the A* cell cost integrated along the segment and must not touch a blocked cell, so the clearance cost still shapes the path. Exact uniform-cost-disc speed-up (checked equal to the plain walk on 80 searches). The flying planner subclasses AStarESDF (same two inflation levels, replan schedule, log-odds map, carrot follower and speed law) and drops only the post-hoc shortcut. make() works with no arguments; make(lazy=True); make(known_map=False, bounds=...) uses the benchmark's geofenced map. bench.py flights reuses close-area-benchmark's run_one for 8 families x 20 layouts on preset ideal (known and unknown map) plus crazyflie on random and office; its A* rows equal the benchmark matrix run by run. bench.py plans: single-process planning-only comparison (ms, length, cost, exact clearance). numpy + scipy only. Synthetic arena only.",
+  "concepts": [
+    "concept:path-planning",
+    "concept:simulation",
+    "concept:datasets-benchmarks"
+  ],
+  "tags": [
+    "close-area",
+    "a-to-b",
+    "theta-star",
+    "lazy-theta-star",
+    "any-angle-planning",
+    "a-star",
+    "occupancy-grid",
+    "esdf",
+    "benchmark",
+    "python",
+    "numpy",
+    "scipy",
+    "pyodide-compatible",
+    "cpu-only"
+  ],
+  "related": [
+    {"id": "sample:close-area-arena", "rel": "explains"},
+    {"id": "sample:close-area-benchmark", "rel": "explains"},
+    {"id": "repo:ai-winter/python_motion_planning", "rel": "explains"},
+    {"id": "repo:ros-navigation/navigation2", "rel": "explains"}
+  ],
+  "verified": "ran 2026-11-10 with CPython 3.12.10 + numpy 2.5.4 / scipy 1.18.1 on Apple silicon arm64 (16 CPUs, shared with other jobs, 1-minute load average 38-256 recorded in each results file), in the sample venv (requirements.txt reuses the arena's): bench.py flights --layouts 20 --seed 0 --workers 14 (1080 runs, wall 781.5 s) wrote results/flights_0.*; bench.py plans --layouts 20 --seed 0 --repeats 3 (wall 123 s) wrote results/plans_0.*; a single-process unknown-map timing run (1 layout per family, wall 296.3 s) wrote results/timing_unknown_jobs1.*; bench.py check wrote results/matrix_check_0.md (A* rows identical to close-area-benchmark/results/matrix_0.json: 160/160 known, 160/160 unknown, 40/40 crazyflie). The uniform-disc speed-up returned identical paths and costs to the plain line walk on 80 searches (ad hoc check, not saved to results/). Every number in README is from results/ or the cited abstracts. test_smoke.py: 1 passed in the venv, 1 skipped under plain python3 3.14 without numpy. No file outside this folder was edited. Not run in Pyodide; replan ms are wall time under machine load. Layouts, vehicle and sensor are simulated; no SITL, no flight.",
+  "verified_status": "ran",
+  "deps": "venv",
+  "first_command": ".venv/bin/python bench.py plans --layouts 20 --seed 0",
+  "group": "Close-area A=>B: planning and safety",
+  "shows": "Theta* and Lazy Theta* vs A* + shortcut on the same grid and cost: paired time to B, flown length and clearance on 8 families (known and unknown map, two sensor presets), planning ms per replan against a 200 ms budget",
+  "input": "synthetic",
+  "runtime": "plans ~2 min (1 process); flights ~13 min on 14 processes; unknown-map timing ~5 min",
+  "key_result": "[20 layouts x 8 families, seed 0](README.md#headline-faster-flights-slightly-longer-paths-35-55x-the-planning-time): Theta* reached B sooner than A* + shortcut in 157/160 known-map layouts (median 6-34 % less time per family) with 0.5-7 % longer paths and the same 100 % reached; plan median 118 ms (Lazy 73 ms) vs A* 18 ms; unknown map p95 1.88 s (Lazy 0.39 s) FAILS the 200 ms budget; 4-beam office collisions 25 % => 60 % (Lazy 35 %)",
+  "readiness": {
+    "compute": "cpu",
+    "hardware": "none",
+    "offline": "unknown",
+    "setup_minutes": null,
+    "download_mb": 0,
+    "platforms": [
+      "macos-arm64"
+    ],
+    "validation": "integrated",
+    "limitation": "Synthetic 2.5D point-mass arena on one shared Apple silicon machine; setup needs PyPI wheels (time not measured); offline not checked; Pyodide not run; Linux not tested.",
+    "evidence": [
+      "samples/close-area-planner-thetastar/README.md",
+      "samples/close-area-planner-thetastar/sample.json",
+      "samples/close-area-planner-thetastar/results/flights_0.json"
+    ]
+  }
+}
