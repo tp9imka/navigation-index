@@ -1,0 +1,198 @@
+50/640 runs, 31 s
+100/640 runs, 54 s
+150/640 runs, 54 s
+200/640 runs, 58 s
+250/640 runs, 74 s
+300/640 runs, 89 s
+350/640 runs, 92 s
+400/640 runs, 99 s
+450/640 runs, 101 s
+500/640 runs, 106 s
+550/640 runs, 107 s
+600/640 runs, 110 s
+wall 111.5 s for 640 runs; 640 runs in results/dropout_fix_runs.json
+50/3840 runs, 44 s
+100/3840 runs, 78 s
+150/3840 runs, 96 s
+200/3840 runs, 118 s
+250/3840 runs, 147 s
+300/3840 runs, 167 s
+350/3840 runs, 187 s
+400/3840 runs, 194 s
+450/3840 runs, 203 s
+500/3840 runs, 213 s
+550/3840 runs, 220 s
+600/3840 runs, 230 s
+650/3840 runs, 239 s
+700/3840 runs, 242 s
+750/3840 runs, 250 s
+800/3840 runs, 268 s
+850/3840 runs, 268 s
+900/3840 runs, 277 s
+950/3840 runs, 291 s
+1000/3840 runs, 297 s
+1050/3840 runs, 312 s
+1100/3840 runs, 327 s
+1150/3840 runs, 332 s
+1200/3840 runs, 339 s
+1250/3840 runs, 346 s
+1300/3840 runs, 364 s
+1350/3840 runs, 377 s
+1400/3840 runs, 383 s
+1450/3840 runs, 388 s
+1500/3840 runs, 396 s
+1550/3840 runs, 418 s
+1600/3840 runs, 424 s
+1650/3840 runs, 431 s
+1700/3840 runs, 438 s
+1750/3840 runs, 450 s
+1800/3840 runs, 477 s
+1850/3840 runs, 477 s
+1900/3840 runs, 485 s
+1950/3840 runs, 489 s
+2000/3840 runs, 490 s
+2050/3840 runs, 495 s
+2100/3840 runs, 498 s
+2150/3840 runs, 501 s
+2200/3840 runs, 504 s
+2250/3840 runs, 509 s
+2300/3840 runs, 517 s
+2350/3840 runs, 519 s
+2400/3840 runs, 528 s
+2450/3840 runs, 528 s
+2500/3840 runs, 531 s
+2550/3840 runs, 534 s
+2600/3840 runs, 537 s
+2650/3840 runs, 540 s
+2700/3840 runs, 544 s
+2750/3840 runs, 551 s
+2800/3840 runs, 558 s
+2850/3840 runs, 561 s
+2900/3840 runs, 566 s
+2950/3840 runs, 568 s
+3000/3840 runs, 572 s
+3050/3840 runs, 574 s
+3100/3840 runs, 577 s
+3150/3840 runs, 586 s
+3200/3840 runs, 598 s
+3250/3840 runs, 614 s
+3300/3840 runs, 618 s
+3350/3840 runs, 625 s
+3400/3840 runs, 629 s
+3450/3840 runs, 632 s
+3500/3840 runs, 635 s
+3550/3840 runs, 638 s
+3600/3840 runs, 640 s
+3650/3840 runs, 652 s
+3700/3840 runs, 673 s
+3750/3840 runs, 674 s
+3800/3840 runs, 684 s
+wall 688.6 s for 3840 runs; 4480 runs in results/dropout_fix_runs.json
+50/2880 runs, 41 s
+100/2880 runs, 82 s
+150/2880 runs, 124 s
+200/2880 runs, 156 s
+250/2880 runs, 187 s
+300/2880 runs, 187 s
+350/2880 runs, 191 s
+400/2880 runs, 202 s
+450/2880 runs, 209 s
+500/2880 runs, 214 s
+550/2880 runs, 215 s
+600/2880 runs, 216 s
+650/2880 runs, 219 s
+700/2880 runs, 222 s
+750/2880 runs, 235 s
+800/2880 runs, 245 s
+850/2880 runs, 255 s
+900/2880 runs, 272 s
+950/2880 runs, 277 s
+1000/2880 runs, 290 s
+1050/2880 runs, 300 s
+1100/2880 runs, 311 s
+1150/2880 runs, 327 s
+1200/2880 runs, 335 s
+1250/2880 runs, 350 s
+1300/2880 runs, 357 s
+1350/2880 runs, 369 s
+1400/2880 runs, 384 s
+1450/2880 runs, 389 s
+1500/2880 runs, 392 s
+1550/2880 runs, 393 s
+1600/2880 runs, 398 s
+1650/2880 runs, 404 s
+1700/2880 runs, 406 s
+1750/2880 runs, 410 s
+1800/2880 runs, 412 s
+1850/2880 runs, 418 s
+1900/2880 runs, 423 s
+1950/2880 runs, 426 s
+2000/2880 runs, 430 s
+2050/2880 runs, 432 s
+2100/2880 runs, 438 s
+2150/2880 runs, 442 s
+2200/2880 runs, 444 s
+2250/2880 runs, 445 s
+2300/2880 runs, 451 s
+2350/2880 runs, 456 s
+2400/2880 runs, 462 s
+2450/2880 runs, 463 s
+2500/2880 runs, 466 s
+2550/2880 runs, 471 s
+2600/2880 runs, 476 s
+2650/2880 runs, 482 s
+2700/2880 runs, 484 s
+2750/2880 runs, 486 s
+2800/2880 runs, 494 s
+2850/2880 runs, 500 s
+wall 502.1 s for 2880 runs; 7360 runs in results/dropout_fix_runs.json
+50/960 runs, 29 s
+100/960 runs, 43 s
+150/960 runs, 49 s
+200/960 runs, 55 s
+250/960 runs, 60 s
+300/960 runs, 75 s
+350/960 runs, 77 s
+400/960 runs, 84 s
+450/960 runs, 94 s
+500/960 runs, 98 s
+550/960 runs, 103 s
+600/960 runs, 108 s
+650/960 runs, 112 s
+700/960 runs, 116 s
+750/960 runs, 120 s
+800/960 runs, 124 s
+850/960 runs, 127 s
+900/960 runs, 132 s
+950/960 runs, 134 s
+wall 135.0 s for 960 runs; 8320 runs in results/dropout_fix_runs.json
+50/1280 runs, 598 s
+100/1280 runs, 1119 s
+150/1280 runs, 1265 s
+200/1280 runs, 1833 s
+Traceback (most recent call last):
+  File "/Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261110-121238-kiro-322a/samples/close-area-benchmark/dropout_fix.py", line 395, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261110-121238-kiro-322a/samples/close-area-benchmark/dropout_fix.py", line 391, in main
+    return cmd_run(a) if a.cmd == "run" else cmd_report(a)
+           ^^^^^^^^^^
+  File "/Users/aiva6306/.cache/farmout/worktrees/navigation-index-research-20261110-121238-kiro-322a/samples/close-area-benchmark/dropout_fix.py", line 186, in cmd_run
+    for k, r in enumerate(ex.map(task, tasks, chunksize=1)):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/process.py", line 636, in _chain_from_iterable_of_lists
+    for element in iterable:
+                   ^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+concurrent.futures.process.BrokenProcessPool: A process in the process pool was terminated abruptly while the future was running or pending.
+DONE

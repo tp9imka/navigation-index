@@ -419,13 +419,20 @@ themselves. Not upstream defects: Stone Soup set-order nondeterminism, evo on a 
 - **Source:** hub code, `samples/close-area-arena/planners/astar_esdf.py` `LogOddsMap.update`
   ([close-area-explore analysis](../samples/close-area-explore/results/analysis_0.md)).
 - **Evidence:** a beam with no return (`inf`, which the sensor also returns for a dropped beam) is
-  traced as free out to `max_range`, so a dropout marks cells behind a wall as free. The
-  planner's known-free area reached 1.25 x the true free area; the three worst runs rerun with
-  dropout 0 ended at 0.79-0.98 (synthetic).
-- **Suggested fix:** skip dropped beams, or trace no-return beams only when the sensor reports
-  "no target" separately from "dropout". Impact on unknown-map benchmark rows not measured yet.
-- **Channel:** hub (loop item 85).
-- **Status:** open - impact check in progress.
+  traced as free out to `max_range`, so a dropout marks cells behind a wall as free. Dropped beams are
+  2 % of all beams on the ideal preset and 5 % on crazyflie. Sized in
+  [dropout_fix_tables.md](../samples/close-area-benchmark/results/dropout_fix_tables.md) (synthetic,
+  seed 0, 20 layouts x 8 families, `dropout_fix.py`): the unpatched runs reproduce matrix_0.json in
+  640/640 runs; skipping only dropped beams (option B) leaves a no-dropout control identical in 0/160
+  changed runs, cuts the planner's falsely-free cells from a median 6.7-8.8 % to about 0.4 % (ideal preset), and moves
+  the 8-family reached rate of the unknown-map rows by -3.7 to +1.3 points (ideal) and -1.9 to +5.7
+  points (crazyflie), with fewer collisions for most crazyflie rows (MPPI + A* 66.9 => 60.6 %). Most
+  per-family changes are 1-2 layouts; the seed noise floor was not measured (that arm crashed).
+- **Decision (loop driver, 2026-11-10):** the effect is a few points and inside single-seed noise, so
+  matrix_0.json, the playground parity tables and the advisor stay as they are, with this bias noted.
+  The fix (option B) is backlog item 88: patch the arena and regenerate every unknown-map row.
+- **Channel:** hub.
+- **Status:** sized; fix deferred (item 88).
 
 ## Checked and not filed
 

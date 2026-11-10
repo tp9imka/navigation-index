@@ -1,0 +1,14 @@
+50/640 runs, 274 s
+100/640 runs, 277 s
+150/640 runs, 277 s
+200/640 runs, 277 s
+250/640 runs, 277 s
+300/640 runs, 278 s
+350/640 runs, 278 s
+400/640 runs, 278 s
+450/640 runs, 278 s
+500/640 runs, 278 s
+550/640 runs, 279 s
+600/640 runs, 279 s
+618 runs failed (BrokenProcessPool('A process in the process pool was terminated abruptly while the future was running or pending.')); rerun the same command to resume
+DONE1
