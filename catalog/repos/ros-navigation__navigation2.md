@@ -53,6 +53,7 @@ The standard ROS 2 navigation stack: behavior-tree driven navigator, global plan
 - [Navigating Using GPS Localization (Nav2 tutorial)](../../catalog/resources/nav2-gps-navigation-tutorial.md) (has_code)
 - [Nav2 ROSCon Talks (index)](../../catalog/resources/nav2-roscon-talks.md) (explains)
 - [Nav2 ROSCon Talks index](../../catalog/resources/nav2-roscon-talks-index.md) (uses)
+- [Close-area MPPI: sampling-based MPC (Model Predictive Path Integral) from range returns, alone and on an unknown-map A* path, vs A* on 8 arena families](../../catalog/samples/close-area-planner-mppi.md) (explains)
 - [Close-area any-angle planning: Theta* and Lazy Theta* against A* + shortcut on 8 arena families, known and unknown map](../../catalog/samples/close-area-planner-thetastar.md) (explains)
 
 _Indexed by lane(s): planning-gis-c2_

@@ -30,6 +30,7 @@ Own pure-Python Theta* (Daniel, Nash, Koenig, Felner 2010) and Lazy Theta* (Nash
 ## Referenced by
 
 - [Evidence matrix](../../docs/evidence-matrix.md) (mentions)
+- [Choose a stack you can run](../../docs/practical-readiness.md) (mentions)
 - [Problem-statement decoder](../../docs/problem-statement-decoder.md) (mentions)
 
 _Indexed by lane(s): samples_
