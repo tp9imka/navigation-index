@@ -56,6 +56,7 @@ Small deterministic simulator that every close-area A=>B approach in the hub is 
 - [Close-area corridor MPC: linear MPC with OSQP in an ESDF half-plane corridor on the arena A*, vs the carrot follower](../../catalog/samples/close-area-planner-mpc.md) (explains)
 - [Close-area reactive planners: APF with wall-follow escape and VFH+, range sensor only, 72-beam vs Crazyflie-like 4-beam fan](../../catalog/samples/close-area-planner-reactive.md) (explains)
 - [Close-area sampling planners: RRT* and Informed RRT* against A* on narrow gaps 0.4-1.2 m, in the close-area arena](../../catalog/samples/close-area-planner-sampling.md) (explains)
+- [Close-area any-angle planning: Theta* and Lazy Theta* against A* + shortcut on 8 arena families, known and unknown map](../../catalog/samples/close-area-planner-thetastar.md) (explains)
 - [Close-area relocalization after VIO loss: scan-to-map pose hypotheses, ratio + persistence acceptance, hover until one wins](../../catalog/samples/close-area-relocalize.md) (explains)
 - [Close-area safety-filter kill test A: no filter, PX4 Collision Prevention style and PX4-CBF as shipped on A* under VIO faults, with map-only obstacles the range fan cannot see](../../catalog/samples/close-area-safety-filter.md) (explains)
 

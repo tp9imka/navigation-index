@@ -6,8 +6,9 @@ Global/local planners, sampling and search based planning, trajectory optimizati
 
 **Sub-concepts:** [Mission planning and routing](../../catalog/concepts/mission-planning.md), [Obstacle avoidance and collision avoidance](../../catalog/concepts/obstacle-avoidance.md)
 
-## Samples (11)
+## Samples (12)
 
+- [Close-area any-angle planning: Theta* and Lazy Theta* against A* + shortcut on 8 arena families, known and unknown map](../../catalog/samples/close-area-planner-thetastar.md) - Own pure-Python Theta* (Daniel, Nash, Koenig, Felner 2010) and Lazy Theta* (Nash, Koenig, Tovey 2010) on the close-area arena's inflated 0.1 m grid with the same ESDF clearance cost as planners/astar_esdf: the any-angle 
 - [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md) - Small deterministic simulator that every close-area A=>B approach in the hub is compared in.
 - [Close-area benchmark matrix: 14 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md) - Runs every close-area planner in the hub through the shared close-area-arena on the same seeded layouts and scores them on truth: straight, freest_beam, APF with wall-follow escape, VFH+, A* + ESDF on the known map, A* +
 - [Close-area corridor MPC: linear MPC with OSQP in an ESDF half-plane corridor on the arena A*, vs the carrot follower](../../catalog/samples/close-area-planner-mpc.md) - Replaces the close-area-arena A* carrot follower with a linear MPC path follower and measures the difference.

@@ -1141,6 +1141,19 @@
    "size_complete": false
   },
   {
+   "id": "pip:close-area-planner-thetastar",
+   "type": "pip",
+   "tier": "standard",
+   "license": "per package (see PyPI metadata)",
+   "source": "samples/close-area-planner-thetastar/requirements.txt",
+   "requirements": [
+    "-r ../close-area-arena/requirements.txt"
+   ],
+   "vcs": [],
+   "size": null,
+   "size_complete": false
+  },
+  {
    "id": "pip:close-area-relocalize",
    "type": "pip",
    "tier": "standard",
@@ -2159,11 +2172,22 @@
    "size_complete": false
   },
   {
+   "id": "git:ros-navigation/navigation2",
+   "type": "git",
+   "tier": "standard",
+   "url": "https://github.com/ros-navigation/navigation2",
+   "rank": 15,
+   "license": "NOASSERTION",
+   "source": "docs/integration-cards/ros-navigation__navigation2.md",
+   "size": null,
+   "size_complete": false
+  },
+  {
    "id": "git:snstac/pytak",
    "type": "git",
    "tier": "standard",
    "url": "https://github.com/snstac/pytak",
-   "rank": 15,
+   "rank": 16,
    "license": "Apache-2.0",
    "source": "docs/integration-cards/snstac__pytak.md",
    "size": null,
@@ -2174,20 +2198,9 @@
    "type": "git",
    "tier": "standard",
    "url": "https://github.com/Algafix/OSNMA",
-   "rank": 16,
+   "rank": 17,
    "license": "EUPL-1.2",
    "source": "docs/integration-cards/algafix__osnma.md",
-   "size": null,
-   "size_complete": false
-  },
-  {
-   "id": "git:ros-navigation/navigation2",
-   "type": "git",
-   "tier": "standard",
-   "url": "https://github.com/ros-navigation/navigation2",
-   "rank": 17,
-   "license": "NOASSERTION",
-   "source": "docs/integration-cards/ros-navigation__navigation2.md",
    "size": null,
    "size_complete": false
   },

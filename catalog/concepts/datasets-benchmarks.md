@@ -4,10 +4,11 @@
 
 Public datasets, evaluation tools, leaderboards for navigation and localization.
 
-## Samples (15)
+## Samples (16)
 
 - [AprilTag goal B: detection envelope vs range and view angle, and a tag-relative final approach](../../catalog/samples/fiducial-goal-apriltag.md) - Renders a tag36h11 AprilTag (0.16 m, also 0.40 m) onto a textured wall with a 640 x 480 pinhole camera (fx = fy = 500 px, no distortion) at known poses, with Gaussian blur and noise, detects it with pupil-apriltags, and 
 - [C-UAS classifiers on public data: radar tracks (UAV vs bird) and DroneRF spectra](../../catalog/samples/cuas-classifiers.md) - Two defensive drone-detection baselines on openly licensed recordings.
+- [Close-area any-angle planning: Theta* and Lazy Theta* against A* + shortcut on 8 arena families, known and unknown map](../../catalog/samples/close-area-planner-thetastar.md) - Own pure-Python Theta* (Daniel, Nash, Koenig, Felner 2010) and Lazy Theta* (Nash, Koenig, Tovey 2010) on the close-area arena's inflated 0.1 m grid with the same ESDF clearance cost as planners/astar_esdf: the any-angle 
 - [Close-area arena: seeded 2.5D A=>B simulator, published drone interface, truth scorer](../../catalog/samples/close-area-arena.md) - Small deterministic simulator that every close-area A=>B approach in the hub is compared in.
 - [Close-area benchmark matrix: 14 planners x 8 arena families x 2 range-sensor presets, with replays in the world JSON format](../../catalog/samples/close-area-benchmark.md) - Runs every close-area planner in the hub through the shared close-area-arena on the same seeded layouts and scores them on truth: straight, freest_beam, APF with wall-follow escape, VFH+, A* + ESDF on the known map, A* +
 - [Close-area Hybrid A*: kinematically feasible (x, y, heading) search with turn-rate-limited primitives against A* + follower, in the close-area arena](../../catalog/samples/close-area-planner-hybrid-astar.md) - Own numpy + scipy Hybrid A* (Dolgov et al.

@@ -26,5 +26,6 @@ Python package of planning and tracking algorithms for mobile robots: Dijkstra, 
 ## Referenced by
 
 - [PathPlanning (zhm-real)](../../catalog/repos/zhm-real__pathplanning.md) (alternative_to)
+- [Close-area any-angle planning: Theta* and Lazy Theta* against A* + shortcut on 8 arena families, known and unknown map](../../catalog/samples/close-area-planner-thetastar.md) (explains)
 
 _Indexed by lane(s): close-area-planning_
