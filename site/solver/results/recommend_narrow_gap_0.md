@@ -1,33 +1,44 @@
 # Recommend: narrow_gap_0
 
-**Synthetic 2.5D simulation, scored on truth, not a flight result; 3 seeds on one map is a small sample.**
+**Synthetic 2.5D simulation, scored on truth, not a flight result; 5 seeds on one map is a small sample.**
 
-Solver headline: No clear winner: MPPI on the unknown-map A* path and MPPI, goal only (no global plan) are within noise on this map (n=3).
+Solver headline: 14 planners tie at the top; run Thorough or more seeds to separate them (n=5 per planner, best 5/5 reached B, 95 % CI 57 %-100 %).
 
-## Pick: no clear winner, tied set of 18
+## Pick: no clear winner, tied set of 14, 4 clearly worse
 
-Every planner whose 95 % Wilson interval overlaps the best one's (MPPI on the unknown-map A* path, 44 %-100 %). The command below flies the top of the ranking (success, then median time to B); any row is an equally supported choice at this n.
+Every planner whose 95 % Wilson interval overlaps the best one's (MPPI on the unknown-map A* path, 57 %-100 %). The command below flies the top of the ranking (success, then median time to B); any row is an equally supported choice at this n.
+
+### Tied with the best (14)
 
 | planner | bench id | reached | 95 % Wilson | n | n distinct | median time to B s | min clearance m | collisions |
 |---|---|---|---|---|---|---|---|---|
-| MPPI on the unknown-map A* path | mppi_astar | 3/3 | 44 %-100 % | 3 | 3 | 21.22 | 0.261 | 0 |
-| MPPI, goal only (no global plan) | mppi | 3/3 | 44 %-100 % | 3 | 3 | 21.94 | 0.213 | 0 |
-| Lazy Theta*, known map | lazy_thetastar_known | 3/3 | 44 %-100 % | 3 | 3 | 22.22 | 0.365 | 0 |
-| Theta* (any-angle), known map | thetastar_known | 3/3 | 44 %-100 % | 3 | 3 | 22.28 | 0.358 | 0 |
-| Lazy Theta*, unknown map (geofenced) | lazy_thetastar_unknown | 3/3 | 44 %-100 % | 3 | 3 | 22.52 | 0.307 | 0 |
-| Hybrid A*, unknown map (geofenced) | hybrid_astar | 3/3 | 44 %-100 % | 3 | 3 | 23.68 | 0.307 | 0 |
-| D* Lite, unknown map (geofenced) | dstar_lite | 3/3 | 44 %-100 % | 3 | 3 | 24.14 | 0.323 | 0 |
-| A* + ESDF, unknown map | astar_unknown | 3/3 | 44 %-100 % | 3 | 3 | 24.40 | 0.301 | 0 |
-| A* + ESDF, known map | astar_known | 3/3 | 44 %-100 % | 3 | 3 | 24.62 | 0.321 | 0 |
-| VFH+ | vfh_plus | 3/3 | 44 %-100 % | 3 | 3 | 27.20 | 0.226 | 0 |
-| TangentBug | tangent_bug | 3/3 | 44 %-100 % | 3 | 3 | 27.34 | 0.298 | 0 |
-| Informed RRT* 5000, known map | informed_rrt_star | 3/3 | 44 %-100 % | 3 | 3 | 28.46 | 0.264 | 0 |
-| DWA + 3 s scan memory | dwa_mem | 3/3 | 44 %-100 % | 3 | 3 | 47.14 | 0.235 | 0 |
-| DWA (dynamic window) | dwa | 3/3 | 44 %-100 % | 3 | 3 | 51.44 | 0.260 | 0 |
-| APF + wall follow | apf_escape | 0/3 | 0 %-56 % | 3 | 3 | - | 0.608 | 0 |
-| Bug2 | bug2 | 0/3 | 0 %-56 % | 3 | 3 | - | 0.482 | 0 |
-| freest beam (reactive) | freest_beam | 0/3 | 0 %-56 % | 3 | 3 | - | 0.330 | 0 |
-| straight line to B | straight | 0/3 | 0 %-56 % | 3 | 3 | - | 0.375 | 0 |
+| MPPI on the unknown-map A* path | mppi_astar | 5/5 | 57 %-100 % | 5 | 5 | 21.58 | 0.239 | 0 |
+| MPPI, goal only (no global plan) | mppi | 5/5 | 57 %-100 % | 5 | 5 | 21.94 | 0.213 | 0 |
+| Lazy Theta*, known map | lazy_thetastar_known | 5/5 | 57 %-100 % | 5 | 5 | 22.28 | 0.361 | 0 |
+| Theta* (any-angle), known map | thetastar_known | 5/5 | 57 %-100 % | 5 | 5 | 22.28 | 0.357 | 0 |
+| Lazy Theta*, unknown map (geofenced) | lazy_thetastar_unknown | 5/5 | 57 %-100 % | 5 | 5 | 22.72 | 0.305 | 0 |
+| Hybrid A*, unknown map (geofenced) | hybrid_astar | 5/5 | 57 %-100 % | 5 | 5 | 24.16 | 0.303 | 0 |
+| D* Lite, unknown map (geofenced) | dstar_lite | 5/5 | 57 %-100 % | 5 | 5 | 24.52 | 0.316 | 0 |
+| A* + ESDF, unknown map | astar_unknown | 5/5 | 57 %-100 % | 5 | 5 | 24.72 | 0.286 | 0 |
+| A* + ESDF, known map | astar_known | 5/5 | 57 %-100 % | 5 | 5 | 24.80 | 0.320 | 0 |
+| VFH+ | vfh_plus | 5/5 | 57 %-100 % | 5 | 5 | 27.40 | 0.226 | 0 |
+| TangentBug | tangent_bug | 5/5 | 57 %-100 % | 5 | 5 | 27.86 | 0.292 | 0 |
+| Informed RRT* 5000, known map | informed_rrt_star | 5/5 | 57 %-100 % | 5 | 5 | 28.60 | 0.260 | 0 |
+| DWA + 3 s scan memory | dwa_mem | 5/5 | 57 %-100 % | 5 | 5 | 50.60 | 0.235 | 0 |
+| DWA (dynamic window) | dwa | 5/5 | 57 %-100 % | 5 | 5 | 51.44 | 0.260 | 0 |
+
+### Clearly worse (4)
+
+95 % Wilson interval does not overlap the best one's.
+
+| planner | bench id | reached | 95 % Wilson | n | n distinct | median time to B s | min clearance m | collisions |
+|---|---|---|---|---|---|---|---|---|
+| APF + wall follow | apf_escape | 0/5 | 0 %-43 % | 5 | 5 | - | 0.608 | 0 |
+| Bug2 | bug2 | 0/5 | 0 %-43 % | 5 | 5 | - | 0.418 | 0 |
+| freest beam (reactive) | freest_beam | 0/5 | 0 %-43 % | 5 | 5 | - | 0.321 | 0 |
+| straight line to B | straight | 0/5 | 0 %-43 % | 5 | 5 | - | 0.284 | 0 |
+
+What more seeds buy: Quick separates 5/5 from 0/5; telling 5/5 from 4/5 needs about 33 seeds (95 % Wilson: 5/5 57 %-100 %, 0/5 0 %-43 %). Every tied planner has the same success rate here (100 % of distinct runs), so more seeds only split them if some start failing; median time to B orders them meanwhile.
 
 ## Fly it: templates/flight-repo
 
@@ -41,7 +52,7 @@ Writes results/first_flight_bench_mppi_astar_narrow_gap_0.jsonl, .png and _score
 > WARNING: ARM=F0 flies with NO safety filter. The narrowest passage on the best route A=>B is about 0.72 m (at 10.603, 7.548), below 1.4 m: F2 keeps the centre 0.7 m from every return and cannot pass (flight-repo results/first_flight_bench.txt: narrow_gap_0, F2 stuck, F0 reached). Retry F2 with a smaller eps before a real flight.
 
 - World file: Preset narrow_gap_0: the hub ships it at site/playground/presets/narrow_gap_0.json (the path below is relative to templates/flight-repo). The same world is inline in recommend.json ("world").
-- Narrowest passage: 0.72 m (bottleneck clearance 0.359 m at 10.603, 7.548); proxy 2 x the pick's min clearance = 0.52 m, not used.
+- Narrowest passage: 0.72 m (bottleneck clearance 0.359 m at 10.603, 7.548); proxy 2 x the pick's min clearance = 0.48 m, not used.
 - How: Narrowest passage = 2 x the bottleneck clearance of the best route A=>B on a 0.05 m ESDF grid of the world (maximin search, cells within 0.7 m of A free, goal = within 0.2 m of B). Chosen over 2 x the winner's min clearance because a run's min clearance is its closest approach to any surface (a corner it cut), not the width it had to pass: in site/solver/results/quick_random_0.json D* Lite's 0.583 m gives 1.17 m (=> F0) on a map whose best route never narrows below 3.6 m. Grid error up to about 0.05 m.
 - The command flies run.DEFAULTS, not the sweep: vehicle radius 0.15 m, v_max 2 m/s, a_max 3 m/s^2, tau 0.15 s; sensor ideal: 72 beams, 360 deg, 6 m, noise 0.02 m, dropout 0.02 (run.DEFAULTS); pose truth; seed 0; the world file's exact A and B; 20 Hz loop with the arm filter.
 
@@ -53,7 +64,7 @@ Writes results/first_flight_bench_mppi_astar_narrow_gap_0.jsonl, .png and _score
 - Yaw: asked fixed, worker reported off
 - Start/goal jitter: 0.5 m radius (seed 0 exact map)
 - Run time limit: 60 s of sim time (Auto: narrow_gap family, default).
-- Seeds: 3 (0..2), 54 runs; finished 2026-11-10T09:27:55.540Z
+- Seeds: 5 (0..4), 90 runs; finished 2026-11-10T09:45:55.641Z
 
 ## Benchmark rows for mppi_astar (beyond this map)
 
@@ -88,9 +99,5 @@ Tied set on the narrow_gap family (benchmark, reached % / collision %):
 | informed_rrt_star | 100 / 0 | 100 / 0 |
 | dwa_mem | 10 / 0 | 5 / 0 |
 | dwa | 10 / 0 | 0 / 40 |
-| apf_escape | 0 / 0 | 0 / 5 |
-| bug2 | 0 / 0 | 0 / 0 |
-| freest_beam | 0 / 0 | 0 / 0 |
-| straight | 0 / 0 | 0 / 70 |
 
 Generated by the Solver's Recommend button (site/solver/recommend.js).

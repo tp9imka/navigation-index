@@ -70,11 +70,19 @@ Details:
   runner-up's, it says "No clear winner: A and B are within noise on this map (n=..)". Otherwise it names the
   winner with both intervals. If no planner reached B, it says so. When identical runs were collapsed, the n
   reads "n=3, 1 distinct" and the headline adds "Identical runs count once in the interval."
+  When more than 5 planners overlap the best one's interval (loop-87), it says "N planners tie at the top;
+  run Thorough or more seeds to separate them" with the best planner's count and interval, instead of naming two.
 - **Estimate.** Before the first results it uses a prior per planner (browser Python seconds from the
   [playground README](../playground/README.md)). After that it uses the mean worker time per planner
   measured in this browser, summed over the remaining runs and divided by K. The pool's load time is not included.
-- **Quick** = 3 seeds, ideal only, truth pose only, then runs. **Thorough** = 10 seeds, ideal + crazyflie,
-  keeps the fault choice, then runs. Neither changes the planner selection or the jitter setting.
+- **Quick** = 5 seeds (`QUICK_SEEDS`, loop-87; 3 before), the drone's sensor only (ideal by default), truth pose
+  only, then runs. **Thorough** = 10 seeds (`THOROUGH_SEEDS`), ideal + crazyflie + the drone's sensor, keeps the
+  fault choice, then runs. Neither changes the planner selection or the jitter setting. Why 5: with 3 seeds
+  3/3 (95 % Wilson 44-100 %) overlaps 0/3 (0-56 %), so a Quick sweep could never name a winner; 5/5 (57-100 %)
+  is disjoint from 0/5 (0-43 %). The run summary under the sweep controls adds one line from the same Wilson
+  code (`separationNote`, `seedsToSeparate` in sweep.js), e.g. "Quick separates 5/5 from 0/5; telling 5/5
+  from 4/5 needs about 33 seeds" (Thorough: 10/10 vs 9/10 needs about 76). The Quick results recorded
+  before loop-87 below (random_0, maze_0, office_0, loop-80 Recommend) used 3 seeds.
 - **Share link.** `index.html?planners=..&presets=..&fault=..&seeds=..&jitter=..&tlim=auto|60|120|180&src=<preset>#w=<world>`.
   A link without `tlim` opens with Auto. The world
   is coded the playground way (deflate + base64url, code copied into sweep.js, playground.js is not
@@ -189,8 +197,8 @@ A collapsible **Your drone** panel in the Sweep section. Input type of every run
   [presets.py](../../samples/close-area-arena/presets.py) into `PRESET_SPECS` in sweep.js.
 - **Yaw**: fixed (default) or look where you go. Sent as `cfg.yaw` only when not fixed (the interface another
   job is adding to the worker). Each record stores the asked `yaw` and the `yaw_policy` the worker reported.
-- **Quick** = 3 seeds, the drone's sensor only (ideal by default, Custom => the custom variation alone).
-  **Thorough** = 10 seeds, ideal + crazyflie + the drone's sensor.
+- **Quick** = 5 seeds since loop-87 (3 when this section was recorded), the drone's sensor only (ideal by
+  default, Custom => the custom variation alone). **Thorough** = 10 seeds, ideal + crazyflie + the drone's sensor.
 - **Records and exports.** Every record has `vehicle`, `sensor` (the custom dict, or the preset's spec),
   `yaw`, `yaw_policy`. CSV adds `sensor_label`, `sensor_beams`, `sensor_fov_deg`, `sensor_max_range_m`,
   `sensor_min_range_m`, `sensor_noise_sigma_m`, `vehicle_radius_m`, `vehicle_v_max`, `vehicle_a_max`,
@@ -237,7 +245,7 @@ sweep turned into something to paste into the team repo and the pitch. Logic in
 
 | Part | What it says |
 |---|---|
-| Pick | Headline winner (or the only planner run) with the runner-up row; on "No clear winner" the tied set = every planner whose 95 % Wilson interval overlaps the best one's; on "No planner reached B" every row plus up to 5 "what to try next" items (time limit if runs timed out, Thorough, the benchmark's best for the map family and whether it was in the sweep, a map check when no route is wide enough). Rows: reached, interval, n, n distinct, median time to B, min clearance, collisions |
+| Pick | Headline winner (or the only planner run) with the runner-up row; on "No clear winner" two tables: "Tied with the best" = every planner whose 95 % Wilson interval overlaps the best one's (ranking order: success, then median time to B) and "Clearly worse" = the rest (intervals disjoint), then one "What more seeds buy" line (what this seed count separates, and the seeds per planner that would separate the best and the lowest rate in the tied set, `moreSeedsLine`); JSON `pick`, `clearly_worse`, `tied_n`, `more_seeds`; on "No planner reached B" every row plus up to 5 "what to try next" items (time limit if runs timed out, Thorough, the benchmark's best for the map family and whether it was in the sweep, a map check when no route is wide enough). Rows: reached, interval, n, n distinct, median time to B, min clearance, collisions |
 | Fly it | `make first-flight PLANNER=bench:<id> WORLD=<file.json> ARM=<F0\|F2>` for templates/flight-repo ([section "Fly what the Solver picks"](../../templates/flight-repo/README.md)). The id is the benchmark id (`advisor.json` planners, e.g. Solver `apf` => `bench:apf_escape`). On "none" the command flies the benchmark's best map-free planner for the family, marked untested on this map |
 | ARM | F2 by default. F0, with a warning (no safety filter), when the narrowest passage is below 1.4 m: F2 holds the centre 0.7 m (eps) from every return ([flight-repo first_flight_bench.txt](../../templates/flight-repo/results/first_flight_bench.txt): narrow_gap_0, F2 stuck, F0 reached) |
 | World file | A preset => `../../site/playground/presets/<name>.json` (relative to templates/flight-repo). A custom world => `my_world.json`, with a one-line python command that saves it from `recommend.json` (the world is inline there) |
@@ -255,20 +263,28 @@ whose best route never narrows below 3.60 m. Measured on the presets (node, 46-2
 glass_office_0 0.82 m => F0; random_0 3.60 m, u_trap_0 3.15 m, forest_0 1.78 m, maze_0 1.55 m,
 warehouse_0 1.45 m => F2. warehouse_0 is 0.05 m above the threshold, inside the grid error.
 
-### Result: Quick sweeps on narrow_gap_0 and random_0, then the flight
+### Result: Quick sweeps on narrow_gap_0 and random_0 (loop-87, Quick = 5 seeds)
 
-`node site/solver/results/measure_recommend.mjs` (copy of measure_solver.mjs, headless Chrome 140,
-4 workers, 18 planners x 3 seeds = 54 runs per map, jitter 0.5 m, ideal, truth pose, load average about 23
-on 16 cores; [results/recommend_check.json](results/recommend_check.json)). Synthetic.
+`node site/solver/results/measure_recommend.mjs` (headless Chrome 140.0.7339.208, 4 workers, 18 planners x
+5 seeds = 90 runs per map, jitter 0.5 m, ideal, truth pose, Apple M3 Max 16 cores, load average 41.2 at the
+start; [results/recommend_check.json](results/recommend_check.json)). Synthetic.
 
 | Map | Sweep | Headline | Pick | Narrowest passage | ARM | File |
 |---|---|---|---|---|---|---|
-| narrow_gap_0 | 38.5 s | No clear winner: MPPI on the unknown-map A* path and MPPI, goal only | tied set of 18 (14 at 3/3, 4 at 0/3), first `mppi_astar` 3/3, 44-100 %, median 21.22 s | 0.72 m | F0 + warning | [recommend_narrow_gap_0.md](results/recommend_narrow_gap_0.md), [.json](results/recommend_narrow_gap_0.json), sweep [quick_narrow_gap_0_loop80.json](results/quick_narrow_gap_0_loop80.json) |
-| random_0 | 28.9 s | No clear winner: Theta* (any-angle), known map and Lazy Theta*, known map | tied set of 18 (17 at 3/3, `straight` 0/3), first `thetastar_known` 3/3, 44-100 %, median 16.82 s | 3.60 m | F2 | [recommend_random_0.md](results/recommend_random_0.md), [.json](results/recommend_random_0.json), sweep [quick_random_0_loop80.json](results/quick_random_0_loop80.json) |
+| narrow_gap_0 | 90/90 runs, 68.1 s | 14 planners tie at the top; run Thorough or more seeds to separate them | tied 14 (all 5/5, 57-100 %), clearly worse 4 (`apf_escape`, `bug2`, `freest_beam`, `straight`, 0/5, 0-43 %); first `mppi_astar`, median 21.58 s | 0.72 m | F0 + warning | [recommend_narrow_gap_0.md](results/recommend_narrow_gap_0.md), [.json](results/recommend_narrow_gap_0.json), sweep [quick_narrow_gap_0_loop87.json](results/quick_narrow_gap_0_loop87.json) |
+| random_0 | 90/90 runs, 48.3 s | 17 planners tie at the top; run Thorough or more seeds to separate them | tied 17 (all 5/5, 57-100 %), clearly worse 1 (`straight`, 0/5); first `thetastar_known`, median 17.08 s | 3.60 m | F2 | [recommend_random_0.md](results/recommend_random_0.md), [.json](results/recommend_random_0.json), sweep [quick_random_0_loop87.json](results/quick_random_0_loop87.json) |
 
-With 3 seeds, 3/3 (44-100 %) overlaps 0/3 (0-56 %), so the tied set is every planner run: Quick cannot
-separate them. Read the benchmark rows below the table (e.g. `mppi` is 25 % reached on narrow_gap in
-the benchmark, ideal sensor, vs 95 % for `mppi_astar`).
+With 5 seeds the planners that never reached B drop out of the tied set. Every tied planner reached B on
+all 5 distinct runs, so no seed count separates them on success alone (the "What more seeds buy" line says
+so); median time to B orders them. Read the benchmark rows below the table (e.g. `mppi` is 25 % reached on
+narrow_gap in the benchmark, ideal sensor, vs 95 % for `mppi_astar`).
+
+Superseded (loop-80, Quick = 3 seeds, 54 runs per map, load about 23): both maps said "No clear winner"
+with a tied set of 18, every planner run (narrow_gap_0: 14 at 3/3 and 4 at 0/3, 38.5 s; random_0: 17 at
+3/3 and `straight` 0/3, 28.9 s), because 3/3 (44-100 %) overlaps 0/3 (0-56 %). Those sweeps are kept as
+[quick_narrow_gap_0_loop80.json](results/quick_narrow_gap_0_loop80.json) and
+[quick_random_0_loop80.json](results/quick_random_0_loop80.json); the recommend_*.md / .json files now hold
+the loop-87 export. The command for narrow_gap_0 is unchanged (`mppi_astar`, ARM=F0).
 
 The narrow_gap_0 command, run once in templates/flight-repo (its `./.venv`, built by this make, uv
 CPython 3.11.15, numpy 2.4.6, scipy 1.17.1; `OUT=` pointed the log to /tmp so nothing was added under
@@ -279,19 +295,23 @@ score input=synthetic adapter=world:../../site/playground/presets/narrow_gap_0.j
 ```
 
 score_log.py: reached, 21.76 s to goal, min clearance 0.2579 m at (10.443, 7.182), in the gap. The
-Solver's seed 0..2 runs gave a 21.22 s median and 0.261 m min clearance (10 Hz planner in the worker,
+loop-80 Solver's seed 0..2 runs gave a 21.22 s median and 0.261 m min clearance (10 Hz planner in the worker,
 jittered A and B on seeds 1-2). keepalive=29: 29 ticks reused the previous setpoint under the 30 ms
 planner budget on a loaded machine, so this run end is wall-clock dependent.
 
 Not verified: the button itself was not clicked (the script calls `SOLVER.recommend()`, the function
 behind it; two downloads from one click may make Chrome ask to allow multiple downloads); the "none"
 and "winner" texts ran in unit tests only, not in a browser; the random_0 command and ARM=F2 on
-narrow_gap_0 were not flown here; the custom-world `my_world.json` command was not run.
+narrow_gap_0 were not flown here; the custom-world `my_world.json` command was not run. loop-87: the
+"Quick separates 5/5 from 0/5" line under the sweep controls ran in the recorded page (no console errors)
+but was not looked at or screenshotted; the "Clearly worse" table and the "N planners tie at the top"
+headline were seen only in the recorded files above and the unit tests.
 
 ## Limits and not verified
 
-- One map, 3 seeds, ideal sensor, truth pose: a small sample. On random_0 the Quick sweep cannot separate
-  11 of the 12 planners.
+- One map, 3 seeds (5 since loop-87), ideal sensor, truth pose: a small sample. On random_0 the 3-seed Quick
+  sweep could not separate 11 of the 12 planners; the 5-seed one separates only `straight` (0/5) from the 17
+  planners at 5/5.
 - Jitter makes seeds sample start and goal positions within 0.25 to 1.0 m of the map's A and B, not other
   maps. A jittered map is a nearby variant of the same layout, so its runs are correlated with the others;
   the Wilson interval still treats distinct runs as independent.

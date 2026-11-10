@@ -2,9 +2,9 @@
 // (site/playground/worker.js, unchanged), draw the race, rank the planners.
 // Pure logic lives in sweep.js (unit tested), the worker pool in pool.js.
 // window.SOLVER is a small API for scripted checks (results/measure_solver.mjs).
-import * as SW from "./sweep.js?v=20261110d";
+import * as SW from "./sweep.js?v=20261110e";
 import { Pool } from "./pool.js?v=20261110c";
-import * as REC from "./recommend.js?v=20261110e";
+import * as REC from "./recommend.js?v=20261110f";
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -337,7 +337,8 @@ function updateCount() {
   $("#countMsg").innerHTML = `<b>${n} runs</b> = ${spec.planners.length} planners x ${spec.presets.length} sensor x ${spec.faults.length} fault x ${spec.seeds} seeds. ` +
     `Estimate: about ${SW.fmtDuration(est.s)} on ${K} worker${K > 1 ? "s" : ""} ` +
     `<span class="muted">(${est.measured ? "from run times measured in this browser" : "rough prior from the playground README timings, scaled by beams / 72; refined after the first runs"})</span>. ` +
-    esc(SW.timeLimitText(spec, S.doc, []));
+    esc(SW.timeLimitText(spec, S.doc, [])) +
+    `<br><span class="muted">${esc(SW.separationNote(spec.seeds, SW.seedsName(spec.seeds)))}</span>`;
   $("#runBtn").disabled = !n || !S.readyCount || !!(S.sweep && S.sweep.running);
 }
 
@@ -652,11 +653,11 @@ function preset(seeds, presets, resetFault) {
   $("#poolMsg").textContent = "The sweep starts when Python is ready.";
   return null;
 }
-// Quick: 3 seeds, your drone's sensor only (ideal by default; Custom => the custom variation alone), truth pose only.
-// Thorough: 10 seeds, ideal + crazyflie + your drone's sensor, keeps the fault.
+// Quick: 5 seeds (SW.QUICK_SEEDS), your drone's sensor only (ideal by default; Custom => the custom variation alone), truth pose only.
+// Thorough: 10 seeds (SW.THOROUGH_SEEDS), ideal + crazyflie + your drone's sensor, keeps the fault.
 const droneP = () => { const c = $("#droneSensor").value || "ideal"; return c === SW.CUSTOM ? [] : [c]; };
-const quick = () => preset(3, droneP(), true);
-const thorough = () => preset(10, [...new Set(["ideal", "crazyflie", ...droneP()])], false);
+const quick = () => preset(SW.QUICK_SEEDS, droneP(), true);
+const thorough = () => preset(SW.THOROUGH_SEEDS, [...new Set(["ideal", "crazyflie", ...droneP()])], false);
 $("#quickBtn").onclick = quick;
 $("#thoroughBtn").onclick = thorough;
 

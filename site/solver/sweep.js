@@ -49,6 +49,12 @@ export const YAW_LABELS = { fixed: "fixed (worker default)", look_where_you_go: 
 export const EXTRA_FAULTS = ["none", "jump", "bias", "dropout"];
 export const OUTCOMES = ["reached", "collision", "stuck", "timeout", "error"];
 export const MAX_SEEDS = 50;
+// Quick / Thorough buttons (loop-87): with 3 seeds 3/3 (44-100 %) overlaps 0/3 (0-56 %), so Quick could never
+// name a winner; with 5 seeds 5/5 (57-100 %) is disjoint from 0/5 (0-43 %).
+export const QUICK_SEEDS = 5;
+export const THOROUGH_SEEDS = 10;
+// Headline: more planners than this overlapping the best one => "N planners tie at the top".
+export const BIG_TIE = 5;
 export const JITTER_RADII = [0.25, 0.5, 1.0];     // m, start/goal jitter radius choices
 export const JITTER_DEFAULT = 0.5;
 export const JITTER_MARGIN_M = 0.1;              // jittered A/B keep vehicle radius + this from any surface
@@ -353,6 +359,32 @@ export function rank(pooled) {
 
 export const overlaps = (a, b) => a.lo <= b.hi && b.lo <= a.hi;
 const pct = v => `${Math.round(v * 100)} %`;
+
+// ------------------------------------------------------------ what n seeds can separate
+// Do kA/n and kB/n (n distinct runs each) have disjoint 95 % Wilson intervals?
+export const separates = (kA, kB, n) => !overlaps(wilson(kA, n), wilson(kB, n));
+// Smallest n (up to maxN) at which success rates pA and pB, flown n distinct runs each (k = round(p x n)),
+// have disjoint 95 % Wilson intervals; null when none does (pA = pB never separates).
+export function seedsToSeparate(pA, pB, maxN = 1000) {
+  if (Math.round(pA * 1e9) === Math.round(pB * 1e9)) return null;
+  for (let n = 1; n <= maxN; n++) if (separates(Math.round(pA * n), Math.round(pB * n), n)) return n;
+  return null;
+}
+const ci = w => `${pct(w.lo)}-${pct(w.hi)}`;
+// "Quick" / "Thorough" when the seed count is that button's, else null (the count names itself).
+export const seedsName = n => (n === QUICK_SEEDS ? "Quick" : n === THOROUGH_SEEDS ? "Thorough" : null);
+// One line for the sweep summary: what `seeds` seeds per planner can and cannot tell apart, e.g.
+// "Quick separates 5/5 from 0/5; telling 5/5 from 4/5 needs about N seeds." (N from seedsToSeparate).
+export function separationNote(seeds, name) {
+  const n = Math.max(1, seeds | 0), who = name || `${n} seed${n > 1 ? "s" : ""}`, verb = name || n === 1 ? "separates" : "separate";
+  const top = wilson(n, n), zero = wilson(0, n);
+  if (n === 1 || !separates(n, 0, n))
+    return `${who} cannot separate ${n}/${n} from 0/${n}; that needs ${seedsToSeparate(1, 0)} seeds ` +
+      `(95 % Wilson: ${n}/${n} ${ci(top)}, 0/${n} ${ci(zero)}).`;
+  const need = seedsToSeparate(1, (n - 1) / n);
+  return `${who} ${verb} ${n}/${n} from 0/${n}; telling ${n}/${n} from ${n - 1}/${n} needs ` +
+    `${need == null ? "more than 1000" : "about " + need} seeds (95 % Wilson: ${n}/${n} ${ci(top)}, 0/${n} ${ci(zero)}).`;
+}
 // "n=3" when every run is distinct, "n=3, 1 distinct" when identical runs were collapsed.
 export const nOne = s => (s.n_distinct != null && s.n_distinct < s.n ? `n=${s.n}, ${s.n_distinct} distinct` : `n=${s.n}`);
 const nText = (a, b) => (b && nOne(a) !== nOne(b) ? `${nOne(a)} and ${nOne(b)}` : nOne(a));
@@ -369,7 +401,10 @@ export function headline(ranking) {
   if (a.reached === 0) return { kind: "none", planner: null, text: `No planner reached B on this map (${nText(a)} per planner).` };
   if (!b) return { kind: "single", planner: a.planner,
     text: `Only ${plannerLabel(a.planner)} was run: ${reachText(a)} (95 % CI ${pct(a.success.lo)}-${pct(a.success.hi)}, ${nOne(a)}).${dupNote(a)}` };
-  if (overlaps(a.success, b.success)) return { kind: "tie", planner: null, planners: [a.planner, b.planner],
+  const top = ranking.filter(r => overlaps(r.success, a.success));
+  if (top.length > BIG_TIE) return { kind: "tie", planner: null, planners: top.map(r => r.planner), top_n: top.length,
+    text: `${top.length} planners tie at the top; run Thorough or more seeds to separate them (${nText(a)} per planner, best ${reachText(a)}, 95 % CI ${pct(a.success.lo)}-${pct(a.success.hi)}).${dupNote(...top)}` };
+  if (overlaps(a.success, b.success)) return { kind: "tie", planner: null, planners: [a.planner, b.planner], top_n: top.length,
     text: `No clear winner: ${plannerLabel(a.planner)} and ${plannerLabel(b.planner)} are within noise on this map (${nText(a, b)}).${dupNote(a, b)}` };
   return { kind: "winner", planner: a.planner,
     text: `${plannerLabel(a.planner)} wins on this map: ${reachText(a)} (95 % CI ${pct(a.success.lo)}-${pct(a.success.hi)}, ${nOne(a)})` +

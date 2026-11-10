@@ -44,6 +44,40 @@ test("a winner is named only when the intervals are disjoint", () => {
   assert.match(h.text, /^A\* \+ ESDF, known map wins on this map: 30\/30 reached B/);
 });
 
+test("Quick = 5 seeds separates 5/5 from 0/5; 3 seeds could not; 5/5 vs 4/5 needs about 33", () => {
+  assert.equal(S.QUICK_SEEDS, 5); assert.equal(S.THOROUGH_SEEDS, 10);
+  assert.equal(S.separates(3, 0, 3), false);                 // 44-100 % vs 0-56 %
+  assert.equal(S.separates(5, 0, 5), true);                  // 57-100 % vs 0-43 %
+  assert.equal(S.separates(5, 4, 5), false);
+  assert.equal(S.seedsToSeparate(1, 0), 4);
+  const n = S.seedsToSeparate(1, 0.8);
+  assert.equal(n, 33);
+  assert.equal(S.separates(n, Math.round(0.8 * n), n), true);
+  assert.equal(S.separates(n - 1, Math.round(0.8 * (n - 1)), n - 1), false);
+  assert.equal(S.seedsToSeparate(0.5, 0.5), null);
+  assert.equal(S.separationNote(5, "Quick"), "Quick separates 5/5 from 0/5; telling 5/5 from 4/5 needs about 33 seeds (95 % Wilson: 5/5 57 %-100 %, 0/5 0 %-43 %).");
+  assert.equal(S.separationNote(3), "3 seeds cannot separate 3/3 from 0/3; that needs 4 seeds (95 % Wilson: 3/3 44 %-100 %, 0/3 0 %-56 %).");
+  assert.match(S.separationNote(10, S.seedsName(10)), /^Thorough separates 10\/10 from 0\/10; telling 10\/10 from 9\/10 needs about 76 seeds/);
+  assert.equal(S.seedsName(7), null);
+  // Quick headline: 5/5 vs 0/5 names a winner
+  const h = S.aggregate([...many("astar_known", 5, 5), ...many("bug2", 0, 5)], null).headline;
+  assert.equal(h.kind, "winner");
+});
+
+test("more than 5 planners overlapping the best => 'N planners tie at the top'", () => {
+  const ids = ["a", "b", "c", "d", "e", "f"];
+  const recs = [...ids.flatMap((p, i) => many(p, 5, 5, 20 + i)), ...many("z", 0, 5)];
+  const h = S.aggregate(recs, null).headline;
+  assert.equal(h.kind, "tie");
+  assert.equal(h.top_n, 6);
+  assert.deepEqual(h.planners, ids);
+  assert.equal(h.text, "6 planners tie at the top; run Thorough or more seeds to separate them (n=5 per planner, best 5/5 reached B, 95 % CI 57 %-100 %).");
+  // 5 tied => still names the top two
+  const five = S.aggregate([...ids.slice(0, 5).flatMap(p => many(p, 5, 5)), ...many("z", 0, 5)], null).headline;
+  assert.match(five.text, /^No clear winner: a and b are within noise/);
+  assert.equal(five.top_n, 5);
+});
+
 test("nobody reached B => no winner", () => {
   const h = S.aggregate([...many("a", 0, 3), ...many("b", 0, 3)], null).headline;
   assert.equal(h.kind, "none");
@@ -387,10 +421,35 @@ test("recommend: tied set = every planner whose interval overlaps the best one",
   assert.equal(json.kind, "tie");
   // 3/3 = 44-100 %, 2/3 = 21-94 %, 0/3 = 0-56 % overlap; 0/30 = 0-11 % does not
   assert.deepEqual(json.pick.map(r => r.planner), ["astar_known", "apf", "straight"]);
-  assert.match(md, /^## Pick: no clear winner, tied set of 3$/m);
+  assert.match(md, /^## Pick: no clear winner, tied set of 3, 1 clearly worse$/m);
   assert.match(md, /\| APF \+ wall follow \| apf_escape \| 2\/3 \|/);
   assert.equal(json.fly.planner_bench_id, "astar_known");
   assert.deepEqual(json.benchmark.tied_family.map(t => t.planner), ["astar_known", "apf_escape", "straight"]);
+  // split table: tied rows under "Tied with the best", bug2 0/30 under "Clearly worse"
+  assert.equal(json.tied_n, 3);
+  assert.deepEqual(json.clearly_worse.map(r => r.planner), ["bug2"]);
+  const tied = md.indexOf("### Tied with the best (3)"), worse = md.indexOf("### Clearly worse (1)");
+  assert.ok(tied > 0 && worse > tied, "tied table before clearly worse");
+  assert.ok(md.indexOf("| Bug2 | bug2 | 0/30 |") > worse);
+  assert.ok(md.indexOf("| straight line to B | straight | 0/3 |") < worse);
+  // more seeds line: 3 seeds cannot split 3/3 from 0/3; 100 % vs 0 % (the set's range) needs 4 seeds (Wilson)
+  assert.equal(json.more_seeds, "What more seeds buy: 3 seeds cannot separate 3/3 from 0/3; that needs 4 seeds (95 % Wilson: 3/3 44 %-100 %, 0/3 0 %-56 %). " +
+    "The tied set spans 100 % to 0 %; separating those two rates needs about 4 distinct runs per planner (Thorough flies 10 seeds per sensor).");
+  assert.ok(md.includes(json.more_seeds));
+});
+
+test("recommend: tied set at equal rates says median time orders it; Quick seeds split 5/5 from 0/5", () => {
+  const recs = [...many("astar_known", 5, 5), ...many("dwa", 5, 5, 30), ...many("bug2", 0, 5)];
+  const doc = S.exportDoc({ spec: S.normSpec({ planners: ["astar_known", "dwa", "bug2"], presets: ["ideal"], seeds: S.QUICK_SEEDS }),
+    world: OPEN, worldName: "random_0", records: recs });
+  const { md, json } = R.recommend(doc, ADV);
+  assert.equal(json.kind, "tie");
+  assert.deepEqual(json.pick.map(r => r.planner), ["astar_known", "dwa"]);     // success, then median time
+  assert.deepEqual(json.clearly_worse.map(r => r.planner), ["bug2"]);
+  assert.match(json.more_seeds, /^What more seeds buy: Quick separates 5\/5 from 0\/5; telling 5\/5 from 4\/5 needs about 33 seeds/);
+  assert.match(json.more_seeds, /same success rate here \(100 % of distinct runs\)/);
+  assert.match(md, /^### Clearly worse \(1\)$/m);
+  assert.ok(!/[\u2013\u2014]/.test(md), "no en or em dashes");
 });
 
 test("recommend: no planner reached B => what to try next, benchmark pick", () => {

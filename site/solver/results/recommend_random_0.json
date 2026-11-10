@@ -1,7 +1,7 @@
 {
  "schema": "navidx-solver-recommend/1",
  "input": "synthetic",
- "caveat": "synthetic 2.5D simulation, scored on truth, not a flight result; 3 seeds on one map is a small sample",
+ "caveat": "synthetic 2.5D simulation, scored on truth, not a flight result; 5 seeds on one map is a small sample",
  "world_name": "random_0",
  "family": "random",
  "headline": {
@@ -9,9 +9,25 @@
   "planner": null,
   "planners": [
    "thetastar_known",
-   "lazy_thetastar_known"
+   "lazy_thetastar_known",
+   "lazy_thetastar_unknown",
+   "hybrid_astar",
+   "dstar_lite",
+   "astar_unknown",
+   "astar_known",
+   "mppi_astar",
+   "mppi",
+   "tangent_bug",
+   "freest_beam",
+   "vfh_plus",
+   "informed_rrt_star",
+   "apf",
+   "bug2",
+   "dwa",
+   "dwa_mem"
   ],
-  "text": "No clear winner: Theta* (any-angle), known map and Lazy Theta*, known map are within noise on this map (n=3)."
+  "top_n": 17,
+  "text": "17 planners tie at the top; run Thorough or more seeds to separate them (n=5 per planner, best 5/5 reached B, 95 % CI 57 %-100 %)."
  },
  "kind": "tie",
  "pick": [
@@ -19,17 +35,17 @@
    "planner": "thetastar_known",
    "label": "Theta* (any-angle), known map",
    "bench_id": "thetastar_known",
-   "reached": 3,
-   "n": 3,
-   "n_distinct": 3,
-   "reached_distinct": 3,
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
    "wilson_95": {
-    "lo": 0.43849391955098227,
+    "lo": 0.5655085052479191,
     "hi": 1,
     "p": 1
    },
-   "median_time_s": 16.82,
-   "min_clearance_m": 0.8824,
+   "median_time_s": 17.08,
+   "min_clearance_m": 0.8697,
    "collisions": 0,
    "stuck": 0,
    "timeout": 0,
@@ -39,16 +55,16 @@
    "planner": "lazy_thetastar_known",
    "label": "Lazy Theta*, known map",
    "bench_id": "lazy_thetastar_known",
-   "reached": 3,
-   "n": 3,
-   "n_distinct": 3,
-   "reached_distinct": 3,
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
    "wilson_95": {
-    "lo": 0.43849391955098227,
+    "lo": 0.5655085052479191,
     "hi": 1,
     "p": 1
    },
-   "median_time_s": 16.88,
+   "median_time_s": 17.1,
    "min_clearance_m": 0.8454,
    "collisions": 0,
    "stuck": 0,
@@ -59,17 +75,37 @@
    "planner": "lazy_thetastar_unknown",
    "label": "Lazy Theta*, unknown map (geofenced)",
    "bench_id": "lazy_thetastar_unknown",
-   "reached": 3,
-   "n": 3,
-   "n_distinct": 3,
-   "reached_distinct": 3,
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
    "wilson_95": {
-    "lo": 0.43849391955098227,
+    "lo": 0.5655085052479191,
     "hi": 1,
     "p": 1
    },
-   "median_time_s": 17.14,
+   "median_time_s": 17.3,
    "min_clearance_m": 0.869,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "hybrid_astar",
+   "label": "Hybrid A*, unknown map (geofenced)",
+   "bench_id": "hybrid_astar",
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
+   "wilson_95": {
+    "lo": 0.5655085052479191,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 18.28,
+   "min_clearance_m": 0.5126,
    "collisions": 0,
    "stuck": 0,
    "timeout": 0,
@@ -79,12 +115,12 @@
    "planner": "dstar_lite",
    "label": "D* Lite, unknown map (geofenced)",
    "bench_id": "dstar_lite",
-   "reached": 3,
-   "n": 3,
-   "n_distinct": 3,
-   "reached_distinct": 3,
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
    "wilson_95": {
-    "lo": 0.43849391955098227,
+    "lo": 0.5655085052479191,
     "hi": 1,
     "p": 1
    },
@@ -96,35 +132,15 @@
    "error": 0
   },
   {
-   "planner": "hybrid_astar",
-   "label": "Hybrid A*, unknown map (geofenced)",
-   "bench_id": "hybrid_astar",
-   "reached": 3,
-   "n": 3,
-   "n_distinct": 3,
-   "reached_distinct": 3,
-   "wilson_95": {
-    "lo": 0.43849391955098227,
-    "hi": 1,
-    "p": 1
-   },
-   "median_time_s": 18.74,
-   "min_clearance_m": 0.5126,
-   "collisions": 0,
-   "stuck": 0,
-   "timeout": 0,
-   "error": 0
-  },
-  {
    "planner": "astar_unknown",
    "label": "A* + ESDF, unknown map",
    "bench_id": "astar_unknown",
-   "reached": 3,
-   "n": 3,
-   "n_distinct": 3,
-   "reached_distinct": 3,
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
    "wilson_95": {
-    "lo": 0.43849391955098227,
+    "lo": 0.5655085052479191,
     "hi": 1,
     "p": 1
    },
@@ -139,17 +155,17 @@
    "planner": "astar_known",
    "label": "A* + ESDF, known map",
    "bench_id": "astar_known",
-   "reached": 3,
-   "n": 3,
-   "n_distinct": 3,
-   "reached_distinct": 3,
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
    "wilson_95": {
-    "lo": 0.43849391955098227,
+    "lo": 0.5655085052479191,
     "hi": 1,
     "p": 1
    },
-   "median_time_s": 18.94,
-   "min_clearance_m": 0.5606,
+   "median_time_s": 19.38,
+   "min_clearance_m": 0.5589,
    "collisions": 0,
    "stuck": 0,
    "timeout": 0,
@@ -159,16 +175,16 @@
    "planner": "mppi_astar",
    "label": "MPPI on the unknown-map A* path",
    "bench_id": "mppi_astar",
-   "reached": 3,
-   "n": 3,
-   "n_distinct": 3,
-   "reached_distinct": 3,
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
    "wilson_95": {
-    "lo": 0.43849391955098227,
+    "lo": 0.5655085052479191,
     "hi": 1,
     "p": 1
    },
-   "median_time_s": 19.88,
+   "median_time_s": 20.24,
    "min_clearance_m": 0.574,
    "collisions": 0,
    "stuck": 0,
@@ -179,16 +195,16 @@
    "planner": "mppi",
    "label": "MPPI, goal only (no global plan)",
    "bench_id": "mppi",
-   "reached": 3,
-   "n": 3,
-   "n_distinct": 3,
-   "reached_distinct": 3,
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
    "wilson_95": {
-    "lo": 0.43849391955098227,
+    "lo": 0.5655085052479191,
     "hi": 1,
     "p": 1
    },
-   "median_time_s": 20.36,
+   "median_time_s": 20.82,
    "min_clearance_m": 0.3357,
    "collisions": 0,
    "stuck": 0,
@@ -199,16 +215,16 @@
    "planner": "tangent_bug",
    "label": "TangentBug",
    "bench_id": "tangent_bug",
-   "reached": 3,
-   "n": 3,
-   "n_distinct": 3,
-   "reached_distinct": 3,
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
    "wilson_95": {
-    "lo": 0.43849391955098227,
+    "lo": 0.5655085052479191,
     "hi": 1,
     "p": 1
    },
-   "median_time_s": 24.16,
+   "median_time_s": 24.9,
    "min_clearance_m": 0.4324,
    "collisions": 0,
    "stuck": 0,
@@ -219,17 +235,17 @@
    "planner": "freest_beam",
    "label": "freest beam (reactive)",
    "bench_id": "freest_beam",
-   "reached": 3,
-   "n": 3,
-   "n_distinct": 3,
-   "reached_distinct": 3,
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
    "wilson_95": {
-    "lo": 0.43849391955098227,
+    "lo": 0.5655085052479191,
     "hi": 1,
     "p": 1
    },
-   "median_time_s": 25.32,
-   "min_clearance_m": 0.4702,
+   "median_time_s": 26.08,
+   "min_clearance_m": 0.4151,
    "collisions": 0,
    "stuck": 0,
    "timeout": 0,
@@ -239,16 +255,16 @@
    "planner": "vfh_plus",
    "label": "VFH+",
    "bench_id": "vfh_plus",
-   "reached": 3,
-   "n": 3,
-   "n_distinct": 3,
-   "reached_distinct": 3,
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
    "wilson_95": {
-    "lo": 0.43849391955098227,
+    "lo": 0.5655085052479191,
     "hi": 1,
     "p": 1
    },
-   "median_time_s": 25.5,
+   "median_time_s": 26.12,
    "min_clearance_m": 0.2332,
    "collisions": 0,
    "stuck": 0,
@@ -259,12 +275,12 @@
    "planner": "informed_rrt_star",
    "label": "Informed RRT* 5000, known map",
    "bench_id": "informed_rrt_star",
-   "reached": 3,
-   "n": 3,
-   "n_distinct": 3,
-   "reached_distinct": 3,
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
    "wilson_95": {
-    "lo": 0.43849391955098227,
+    "lo": 0.5655085052479191,
     "hi": 1,
     "p": 1
    },
@@ -279,17 +295,17 @@
    "planner": "apf",
    "label": "APF + wall follow",
    "bench_id": "apf_escape",
-   "reached": 3,
-   "n": 3,
-   "n_distinct": 3,
-   "reached_distinct": 3,
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
    "wilson_95": {
-    "lo": 0.43849391955098227,
+    "lo": 0.5655085052479191,
     "hi": 1,
     "p": 1
    },
    "median_time_s": 28.24,
-   "min_clearance_m": 0.6356,
+   "min_clearance_m": 0.6342,
    "collisions": 0,
    "stuck": 0,
    "timeout": 0,
@@ -299,17 +315,17 @@
    "planner": "bug2",
    "label": "Bug2",
    "bench_id": "bug2",
-   "reached": 3,
-   "n": 3,
-   "n_distinct": 3,
-   "reached_distinct": 3,
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
    "wilson_95": {
-    "lo": 0.43849391955098227,
+    "lo": 0.5655085052479191,
     "hi": 1,
     "p": 1
    },
-   "median_time_s": 29.48,
-   "min_clearance_m": 0.5126,
+   "median_time_s": 30.36,
+   "min_clearance_m": 0.4963,
    "collisions": 0,
    "stuck": 0,
    "timeout": 0,
@@ -319,17 +335,17 @@
    "planner": "dwa",
    "label": "DWA (dynamic window)",
    "bench_id": "dwa",
-   "reached": 3,
-   "n": 3,
-   "n_distinct": 3,
-   "reached_distinct": 3,
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
    "wilson_95": {
-    "lo": 0.43849391955098227,
+    "lo": 0.5655085052479191,
     "hi": 1,
     "p": 1
    },
-   "median_time_s": 43.68,
-   "min_clearance_m": 0.2627,
+   "median_time_s": 42.86,
+   "min_clearance_m": 0.2526,
    "collisions": 0,
    "stuck": 0,
    "timeout": 0,
@@ -339,43 +355,47 @@
    "planner": "dwa_mem",
    "label": "DWA + 3 s scan memory",
    "bench_id": "dwa_mem",
-   "reached": 3,
-   "n": 3,
-   "n_distinct": 3,
-   "reached_distinct": 3,
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
    "wilson_95": {
-    "lo": 0.43849391955098227,
+    "lo": 0.5655085052479191,
     "hi": 1,
     "p": 1
    },
-   "median_time_s": 44.84,
+   "median_time_s": 43.96,
    "min_clearance_m": 0.2398,
    "collisions": 0,
    "stuck": 0,
    "timeout": 0,
    "error": 0
-  },
+  }
+ ],
+ "clearly_worse": [
   {
    "planner": "straight",
    "label": "straight line to B",
    "bench_id": "straight",
    "reached": 0,
-   "n": 3,
-   "n_distinct": 3,
+   "n": 5,
+   "n_distinct": 5,
    "reached_distinct": 0,
    "wilson_95": {
     "lo": 0,
-    "hi": 0.5615060804490177,
+    "hi": 0.43449149475208104,
     "p": 0
    },
    "median_time_s": null,
    "min_clearance_m": 0.3715,
    "collisions": 0,
-   "stuck": 3,
+   "stuck": 5,
    "timeout": 0,
    "error": 0
   }
  ],
+ "tied_n": 17,
+ "more_seeds": "What more seeds buy: Quick separates 5/5 from 0/5; telling 5/5 from 4/5 needs about 33 seeds (95 % Wilson: 5/5 57 %-100 %, 0/5 0 %-43 %). Every tied planner has the same success rate here (100 % of distinct runs), so more seeds only split them if some start failing; median time to B orders them meanwhile.",
  "fly": {
   "planner_bench_id": "thetastar_known",
   "command": "make first-flight PLANNER=bench:thetastar_known WORLD=../../site/playground/presets/random_0.json ARM=F2",
@@ -408,7 +428,7 @@
   "grid_m": 0.05,
   "method": "Narrowest passage = 2 x the bottleneck clearance of the best route A=>B on a 0.05 m ESDF grid of the world (maximin search, cells within 0.7 m of A free, goal = within 0.2 m of B). Chosen over 2 x the winner's min clearance because a run's min clearance is its closest approach to any surface (a corner it cut), not the width it had to pass: in site/solver/results/quick_random_0.json D* Lite's 0.583 m gives 1.17 m (=> F0) on a map whose best route never narrows below 3.6 m. Grid error up to about 0.05 m.",
   "narrow_below_m": 1.4,
-  "winner_min_clearance_x2_m": 1.7648
+  "winner_min_clearance_x2_m": 1.7394
  },
  "world_file": {
   "path": "../../site/playground/presets/random_0.json",
@@ -447,10 +467,10 @@
   ],
   "jitter_m": 0.5,
   "time_limit": "Run time limit: 60 s of sim time (Auto: random family, default).",
-  "seeds": 3,
-  "runs": 54,
+  "seeds": 5,
+  "runs": 90,
   "cancelled": false,
-  "finished": "2026-11-10T09:28:27.791Z"
+  "finished": "2026-11-10T09:46:47.646Z"
  },
  "next_steps": [],
  "benchmark": {
@@ -659,27 +679,6 @@
     ]
    },
    {
-    "planner": "dstar_lite",
-    "rows": [
-     {
-      "family": "random",
-      "label": "Random boxes + cylinders",
-      "ideal": {
-       "n": 20,
-       "reached_pct": 100,
-       "collision_pct": 0,
-       "median_time_s": 18.78
-      },
-      "crazyflie": {
-       "n": 20,
-       "reached_pct": 100,
-       "collision_pct": 0,
-       "median_time_s": 21.41
-      }
-     }
-    ]
-   },
-   {
     "planner": "hybrid_astar",
     "rows": [
      {
@@ -696,6 +695,27 @@
        "reached_pct": 95,
        "collision_pct": 5,
        "median_time_s": 21.24
+      }
+     }
+    ]
+   },
+   {
+    "planner": "dstar_lite",
+    "rows": [
+     {
+      "family": "random",
+      "label": "Random boxes + cylinders",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 18.78
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 21.41
       }
      }
     ]
@@ -951,34 +971,13 @@
       }
      }
     ]
-   },
-   {
-    "planner": "straight",
-    "rows": [
-     {
-      "family": "random",
-      "label": "Random boxes + cylinders",
-      "ideal": {
-       "n": 20,
-       "reached_pct": 40,
-       "collision_pct": 0,
-       "median_time_s": 16.94
-      },
-      "crazyflie": {
-       "n": 20,
-       "reached_pct": 40,
-       "collision_pct": 40,
-       "median_time_s": 16.69
-      }
-     }
-    ]
    }
   ]
  },
  "sweep_source": {
   "schema": "navidx-solver-sweep/1",
-  "started": "2026-11-10T09:27:58.868Z",
-  "finished": "2026-11-10T09:28:27.791Z"
+  "started": "2026-11-10T09:45:59.342Z",
+  "finished": "2026-11-10T09:46:47.646Z"
  },
  "world": {
   "schema": "close-area-world/1",

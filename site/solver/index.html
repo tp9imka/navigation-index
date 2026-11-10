@@ -13,7 +13,7 @@
 <script>
   try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
-<script type="module" src="solver.js?v=20261110e"></script>
+<script type="module" src="solver.js?v=20261110f"></script>
 </head>
 <body>
 <header class="top">
@@ -66,7 +66,7 @@
   <section class="panel" aria-label="Sweep">
     <h2>2. Sweep</h2>
     <div class="row">
-      <button class="btn sm" id="quickBtn" title="3 seeds, your drone's sensor only (ideal by default), truth pose, then run">Quick</button>
+      <button class="btn sm" id="quickBtn" title="5 seeds, your drone's sensor only (ideal by default), truth pose, then run">Quick</button>
       <button class="btn sm" id="thoroughBtn" title="10 seeds, ideal + crazyflie + your drone's sensor, then run">Thorough</button>
     </div>
     <fieldset class="box"><legend>Planners <button class="linkish small" id="allBtn" type="button">all</button> <button class="linkish small" id="noneBtn" type="button">none</button></legend>

@@ -4,7 +4,7 @@
 // world's narrowest passage, what the sweep flew, and the benchmark rows of the pick.
 // Unit tests: node --test site/solver/test_sweep.mjs
 import { clearanceAt, overlaps, plannerLabel, timeLimitText, variationLabel, sensorSpecOf, customLabel,
-  isDefaultVehicle, normVehicle } from "./sweep.js?v=20261110d";
+  isDefaultVehicle, normVehicle, separationNote, seedsToSeparate, seedsName, THOROUGH_SEEDS } from "./sweep.js?v=20261110e";
 
 export const SCHEMA = "navidx-solver-recommend/1";
 // F2 (samples/close-area-safety-filter/filters.py, eps = 0.7 m) holds the vehicle centre 0.7 m from every
@@ -117,13 +117,30 @@ const rowOf = (r, advisor) => ({ planner: r.planner, label: plannerLabel(r.plann
   min_clearance_m: r.min_clearance_m, collisions: r.collision, stuck: r.stuck, timeout: r.timeout, error: r.error });
 
 // kind: winner (headline winner or the only planner run), tie (every planner whose Wilson interval overlaps
-// the best one's), none (no planner reached B), empty.
+// the best one's), none (no planner reached B), empty. On a tie, worse = the planners whose interval does not
+// overlap the best one's (clearly worse), in ranking order; the tied set keeps the ranking order (success,
+// then median time to B).
 export function pick(doc) {
   const rk = doc.ranking || [], h = doc.headline || { kind: "empty" };
-  if (!rk.length || h.kind === "empty") return { kind: "empty", top: null, set: [] };
-  if (h.kind === "none" || rk[0].reached === 0) return { kind: "none", top: null, set: rk };
-  if (h.kind === "tie") return { kind: "tie", top: rk[0], set: rk.filter(r => overlaps(r.success, rk[0].success)) };
-  return { kind: "winner", top: rk[0], set: rk.slice(0, 2) };     // winner and runner-up (both intervals)
+  if (!rk.length || h.kind === "empty") return { kind: "empty", top: null, set: [], worse: [] };
+  if (h.kind === "none" || rk[0].reached === 0) return { kind: "none", top: null, set: rk, worse: [] };
+  if (h.kind === "tie") return { kind: "tie", top: rk[0], set: rk.filter(r => overlaps(r.success, rk[0].success)),
+    worse: rk.filter(r => !overlaps(r.success, rk[0].success)) };
+  return { kind: "winner", top: rk[0], set: rk.slice(0, 2), worse: [] };     // winner and runner-up (both intervals)
+}
+
+// One line on what more seeds would buy for a tied set: what this seed count separates (sweep.js
+// separationNote), then the seeds per planner that would separate the best and the lowest rate in the set
+// (seedsToSeparate, same Wilson code), or why no seed count would.
+export function moreSeedsLine(set, seeds) {
+  if (!set.length) return null;
+  const pa = set[0].success.p, pb = Math.min(...set.map(r => r.success.p));
+  const head = `What more seeds buy: ${separationNote(seeds, seedsName(seeds))}`;
+  if (set.length < 2) return head;
+  if (Math.round(pa * 1e9) === Math.round(pb * 1e9))
+    return `${head} Every tied planner has the same success rate here (${pct(pa)} of distinct runs), so more seeds only split them if some start failing; median time to B orders them meanwhile.`;
+  const need = seedsToSeparate(pa, pb);
+  return `${head} The tied set spans ${pct(pa)} to ${pct(pb)}; separating those two rates needs ${need == null ? "more than 1000" : "about " + need} distinct runs per planner (Thorough flies ${THOROUGH_SEEDS} seeds per sensor).`;
 }
 
 export function worldFile(doc) {
@@ -156,7 +173,7 @@ function nextSteps(doc, passage, advisor) {
 export function recommend(doc, advisor) {
   const p = pick(doc), passage = narrowestPassage(doc.world), armc = chooseArm(passage), wf = worldFile(doc);
   const spec = doc.spec || {}, seeds = spec.seeds, fam = doc.world && doc.world.family;
-  const rows = p.set.map(r => rowOf(r, advisor));
+  const rows = p.set.map(r => rowOf(r, advisor)), worse = p.worse.map(r => rowOf(r, advisor));
   let flyId = p.top ? benchId(p.top.planner, advisor) : null, flyNote = null;
   if (p.kind === "none") {
     const rec = advisor && advisor.recommend && fam && advisor.recommend[fam] && advisor.recommend[fam].ideal;
@@ -179,7 +196,8 @@ export function recommend(doc, advisor) {
   const fbench = flyId ? benchRows(flyId, advisor) : [];
   const json = { schema: SCHEMA, input: "synthetic", caveat: CAVEAT.replace("n seeds", `${seeds} seeds`),
     world_name: doc.world_name || null, family: fam || null, headline: doc.headline, kind: p.kind,
-    pick: rows, fly: flyId ? { planner_bench_id: flyId, command, arm: armc.arm, arm_warning: armc.warning, note: flyNote,
+    pick: rows, clearly_worse: worse, tied_n: p.kind === "tie" ? rows.length : null,
+    more_seeds: p.kind === "tie" ? moreSeedsLine(p.set, seeds) : null, fly: flyId ? { planner_bench_id: flyId, command, arm: armc.arm, arm_warning: armc.warning, note: flyNote,
       cwd: "templates/flight-repo", out: `results/first_flight_bench_${flyId}_${wf.path.replace(/^.*\//, "").replace(/\.json$/, "")}`,
       flies: FLIGHT_DEFAULTS } : null,
     passage: { ...(passage || { clearance_m: null, passage_m: null }), method: passageNote, narrow_below_m: NARROW_PASSAGE_M,
@@ -203,14 +221,25 @@ function toMarkdown(j, p) {
   L.push(`Solver headline: ${j.headline.text}`, "");
   if (p.kind === "winner") L.push(`## Pick: ${j.pick[0].label} (\`bench:${j.pick[0].bench_id}\`)`, "",
     j.pick.length > 1 ? "Its 95 % Wilson interval does not overlap the runner-up's. Both rows:" : "Only this planner was run:");
-  else if (p.kind === "tie") L.push(`## Pick: no clear winner, tied set of ${j.pick.length}`, "",
+  else if (p.kind === "tie") L.push(`## Pick: no clear winner, tied set of ${j.pick.length}` + (j.clearly_worse.length ? `, ${j.clearly_worse.length} clearly worse` : ""), "",
     `Every planner whose 95 % Wilson interval overlaps the best one's (${j.pick[0].label}, ${pct(j.pick[0].wilson_95.lo)}-${pct(j.pick[0].wilson_95.hi)}). ` +
     `The command below flies the top of the ranking (success, then median time to B); any row is an equally supported choice at this n.`);
   else L.push("## Pick: no planner reached B", "", "Every planner in the sweep failed on this map. All rows:");
-  L.push("", "| planner | bench id | reached | 95 % Wilson | n | n distinct | median time to B s | min clearance m | collisions |",
-    "|---|---|---|---|---|---|---|---|---|");
-  for (const r of j.pick) L.push(`| ${r.label} | ${r.bench_id} | ${r.reached}/${r.n} | ${pct(r.wilson_95.lo)}-${pct(r.wilson_95.hi)} | ${r.n} | ${r.n_distinct} | ${f2(r.median_time_s)} | ${r.min_clearance_m == null ? "-" : r.min_clearance_m.toFixed(3)} | ${r.collisions} |`);
-  L.push("");
+  const table = rs => {
+    L.push("", "| planner | bench id | reached | 95 % Wilson | n | n distinct | median time to B s | min clearance m | collisions |",
+      "|---|---|---|---|---|---|---|---|---|");
+    for (const r of rs) L.push(`| ${r.label} | ${r.bench_id} | ${r.reached}/${r.n} | ${pct(r.wilson_95.lo)}-${pct(r.wilson_95.hi)} | ${r.n} | ${r.n_distinct} | ${f2(r.median_time_s)} | ${r.min_clearance_m == null ? "-" : r.min_clearance_m.toFixed(3)} | ${r.collisions} |`);
+    L.push("");
+  };
+  if (p.kind === "tie") {
+    L.push("", `### Tied with the best (${j.pick.length})`);
+    table(j.pick);
+    if (j.clearly_worse.length) {
+      L.push(`### Clearly worse (${j.clearly_worse.length})`, "", "95 % Wilson interval does not overlap the best one's.");
+      table(j.clearly_worse);
+    }
+    if (j.more_seeds) L.push(j.more_seeds, "");
+  } else table(j.pick);
   if (j.next_steps.length) { L.push("What to try next:", ""); j.next_steps.forEach((s, i) => L.push(`${i + 1}. ${s}`)); L.push(""); }
   L.push("## Fly it: templates/flight-repo", "");
   if (j.fly) {

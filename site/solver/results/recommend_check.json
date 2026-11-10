@@ -1,44 +1,52 @@
 {
- "date": "2026-11-10T09:27:09.104Z",
+ "date": "2026-11-10T09:44:37.230Z",
  "input": "synthetic",
- "host": "Apple M3 Max, 16 cores, load 22.9 37.6 52.6",
+ "host": "Apple M3 Max, 16 cores, load 41.2 44.3 49.3",
  "maps": {
   "narrow_gap_0": {
    "page": "http://127.0.0.1:8783/site/solver/index.html?map=narrow_gap_0",
-   "python_ready_s": 4.408,
+   "python_ready_s": 5.675,
    "world": "narrow_gap_0",
    "sweep": {
-    "done": 54,
-    "total": 54,
-    "elapsed_s": 38.535,
+    "done": 90,
+    "total": 90,
+    "elapsed_s": 68.074,
     "cancelled": false,
     "K": 4,
-    "wall_s_from_click": 38.572
+    "wall_s_from_click": 68.085
    },
    "button_enabled": true,
    "advisor_loaded": true,
-   "headline": "No clear winner: MPPI on the unknown-map A* path and MPPI, goal only (no global plan) are within noise on this map (n=3).",
+   "headline": "14 planners tie at the top; run Thorough or more seeds to separate them (n=5 per planner, best 5/5 reached B, 95 % CI 57 %-100 %).",
    "kind": "tie",
+   "seeds": 5,
+   "tied_n": 14,
+   "clearly_worse_n": 4,
+   "more_seeds": "What more seeds buy: Quick separates 5/5 from 0/5; telling 5/5 from 4/5 needs about 33 seeds (95 % Wilson: 5/5 57 %-100 %, 0/5 0 %-43 %). Every tied planner has the same success rate here (100 % of distinct runs), so more seeds only split them if some start failing; median time to B orders them meanwhile.",
    "command": "make first-flight PLANNER=bench:mppi_astar WORLD=../../site/playground/presets/narrow_gap_0.json ARM=F0",
    "arm": "F0",
    "passage_m": 0.7178
   },
   "random_0": {
    "page": "http://127.0.0.1:8783/site/solver/index.html?map=random_0",
-   "python_ready_s": 3.262,
+   "python_ready_s": 3.605,
    "world": "random_0",
    "sweep": {
-    "done": 54,
-    "total": 54,
-    "elapsed_s": 28.922,
+    "done": 90,
+    "total": 90,
+    "elapsed_s": 48.304,
     "cancelled": false,
     "K": 4,
-    "wall_s_from_click": 28.93
+    "wall_s_from_click": 48.311
    },
    "button_enabled": true,
    "advisor_loaded": true,
-   "headline": "No clear winner: Theta* (any-angle), known map and Lazy Theta*, known map are within noise on this map (n=3).",
+   "headline": "17 planners tie at the top; run Thorough or more seeds to separate them (n=5 per planner, best 5/5 reached B, 95 % CI 57 %-100 %).",
    "kind": "tie",
+   "seeds": 5,
+   "tied_n": 17,
+   "clearly_worse_n": 1,
+   "more_seeds": "What more seeds buy: Quick separates 5/5 from 0/5; telling 5/5 from 4/5 needs about 33 seeds (95 % Wilson: 5/5 57 %-100 %, 0/5 0 %-43 %). Every tied planner has the same success rate here (100 % of distinct runs), so more seeds only split them if some start failing; median time to B orders them meanwhile.",
    "command": "make first-flight PLANNER=bench:thetastar_known WORLD=../../site/playground/presets/random_0.json ARM=F2",
    "arm": "F2",
    "passage_m": 3.5984

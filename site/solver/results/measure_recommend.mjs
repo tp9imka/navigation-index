@@ -1,10 +1,12 @@
-// Record the Recommend export (loop-80) from real Quick sweeps in headless Chrome, one per map.
+// Record the Recommend export (loop-80; re-recorded loop-87 with Quick = 5 seeds) from real Quick sweeps in
+// headless Chrome, one per map.
 // Copied from measure_solver.mjs (same server, CDP client and Chrome flags), screenshots dropped.
 // Run from the repo root (Node 22+, no npm packages): node site/solver/results/measure_recommend.mjs [map ...]
 // Default maps: narrow_gap_0 random_0. Needs Google Chrome at the macOS default path (or CHROME=...)
 // and network for cdn.jsdelivr.net. Writes into site/solver/results/ per map:
 // recommend_<map>.md and recommend_<map>.json (SOLVER.recommend(), the function behind the Recommend button),
-// quick_<map>_loop80.json (SOLVER.exportJSON(), the sweep they came from), and recommend_check.json.
+// quick_<map>_<TAG>.json (SOLVER.exportJSON(), the sweep they came from; TAG = loop87, the loop-80 files are
+// kept), and recommend_check.json.
 import { spawn } from "node:child_process";
 import fs from "node:fs";
 import os from "node:os";
@@ -16,6 +18,7 @@ const ROOT = path.resolve(HERE, "../../..");
 const CHROME = process.env.CHROME || "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 const PORT = 8783, DBG = 9353, DESK = { width: 1280, height: 900 };
 const MAPS = process.argv.slice(2).length ? process.argv.slice(2) : ["narrow_gap_0", "random_0"];
+const TAG = "loop87";
 const sleep = t => new Promise(r => setTimeout(r, t));
 
 class CDP {
@@ -74,7 +77,7 @@ async function main() {
       const t1 = Date.now();
       m.sweep = await cdp.eval("SOLVER.quick().then(sw => ({ done: sw.done, total: sw.total, elapsed_s: sw.elapsed_s, cancelled: sw.cancelled, K: SOLVER.K }))");
       m.sweep.wall_s_from_click = (Date.now() - t1) / 1000;
-      fs.writeFileSync(path.join(HERE, `quick_${map}_loop80.json`), await cdp.eval("SOLVER.exportJSON()"));
+      fs.writeFileSync(path.join(HERE, `quick_${map}_${TAG}.json`), await cdp.eval("SOLVER.exportJSON()"));
       m.button_enabled = await cdp.eval("!document.querySelector('#recBtn').disabled");
       const r = await cdp.eval("SOLVER.recommend()");
       fs.writeFileSync(path.join(HERE, `recommend_${map}.md`), r.md);
@@ -83,6 +86,10 @@ async function main() {
       m.advisor_loaded = r.advisor;
       m.headline = j.headline.text;
       m.kind = j.kind;
+      m.seeds = j.flown.seeds;
+      m.tied_n = j.tied_n;
+      m.clearly_worse_n = j.clearly_worse.length;
+      m.more_seeds = j.more_seeds;
       m.command = j.fly ? j.fly.command : null;
       m.arm = j.fly ? j.fly.arm : null;
       m.passage_m = j.passage.passage_m;
