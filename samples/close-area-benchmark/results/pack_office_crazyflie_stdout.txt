@@ -1,10 +1,10 @@
-| planner | reached_rate >= 0.9 | collision_rate <= 0 | time_to_goal_p50_s <= 30 | verdict |
+| planner | reached_rate >= 0.9 | collisions == 0 (min 15 runs) | time_to_goal_p50_s <= 30 | verdict |
 |---|---|---|---|---|
-| astar_known | NOT PROVEN: 15/15 = 1.00, CI [0.80, 1.00]; lower 0.80 misses >= 0.9, upper 1.00 meets it | NOT PROVEN: 0/15 = 0.00, CI [0.00, 0.20]; upper 0.20 misses <= 0, lower 0.00 meets it | PASS: 18.1 s, CI [13.8, 22.6], n=15; upper 22.6 <= 30 | **NOT PROVEN** |
-| astar_unknown | FAIL: 6/15 = 0.40, CI [0.20, 0.64]; upper 0.64 misses >= 0.9 | FAIL: 3/15 = 0.20, CI [0.07, 0.45]; lower 0.07 misses <= 0 | NOT PROVEN: inf s, CI [18.2, inf], n=15; upper inf misses <= 30, lower 18.2 meets it | **FAIL** |
-| astar_unknown_f2 | NOT PROVEN: 12/15 = 0.80, CI [0.55, 0.93]; lower 0.55 misses >= 0.9, upper 0.93 meets it | NOT PROVEN: 0/15 = 0.00, CI [0.00, 0.20]; upper 0.20 misses <= 0, lower 0.00 meets it | NOT PROVEN: 26.6 s, CI [18.3, 32.3], n=15; upper 32.3 misses <= 30, lower 18.3 meets it | **NOT PROVEN** |
-| lazy_thetastar_unknown | FAIL: 7/15 = 0.47, CI [0.25, 0.70]; upper 0.70 misses >= 0.9 | FAIL: 5/15 = 0.33, CI [0.15, 0.58]; lower 0.15 misses <= 0 | NOT PROVEN: inf s, CI [19.5, inf], n=15; upper inf misses <= 30, lower 19.5 meets it | **FAIL** |
-| dwa_mem | FAIL: 1/15 = 0.07, CI [0.01, 0.30]; upper 0.30 misses >= 0.9 | NOT PROVEN: 0/15 = 0.00, CI [0.00, 0.20]; upper 0.20 misses <= 0, lower 0.00 meets it | FAIL: inf s, CI [inf, inf], n=15; lower inf misses <= 30 | **FAIL** |
+| astar_known | NOT PROVEN: 15/15 = 1.00, CI [0.80, 1.00]; lower 0.80 misses >= 0.9, upper 1.00 meets it; runs needed if every run succeeds: 35 | PASS: 0 collision in 15 distinct runs; 0 == 0 in 15 >= 15 distinct runs; rate <= 0.20 (95 % Wilson bound, not a rate claim) | PASS: 18.1 s, CI [13.8, 22.6], n=15; upper 22.6 <= 30 | **NOT PROVEN** |
+| astar_unknown | FAIL: 6/15 = 0.40, CI [0.20, 0.64]; upper 0.64 misses >= 0.9; runs needed if every run succeeds: 35 | FAIL: 3 collision in 15 distinct runs; 3 == 0 is false; rate <= 0.45 (95 % Wilson bound, not a rate claim) | NOT PROVEN: inf s, CI [18.2, inf], n=15; upper inf misses <= 30, lower 18.2 meets it | **FAIL** |
+| astar_unknown_f2 | NOT PROVEN: 12/15 = 0.80, CI [0.55, 0.93]; lower 0.55 misses >= 0.9, upper 0.93 meets it; runs needed if every run succeeds: 35 | PASS: 0 collision in 15 distinct runs; 0 == 0 in 15 >= 15 distinct runs; rate <= 0.20 (95 % Wilson bound, not a rate claim) | NOT PROVEN: 26.6 s, CI [18.3, 32.3], n=15; upper 32.3 misses <= 30, lower 18.3 meets it | **NOT PROVEN** |
+| lazy_thetastar_unknown | FAIL: 7/15 = 0.47, CI [0.25, 0.70]; upper 0.70 misses >= 0.9; runs needed if every run succeeds: 35 | FAIL: 5 collision in 15 distinct runs; 5 == 0 is false; rate <= 0.58 (95 % Wilson bound, not a rate claim) | NOT PROVEN: inf s, CI [19.5, inf], n=15; upper inf misses <= 30, lower 19.5 meets it | **FAIL** |
+| dwa_mem | FAIL: 1/15 = 0.07, CI [0.01, 0.30]; upper 0.30 misses >= 0.9; runs needed if every run succeeds: 35 | PASS: 0 collision in 15 distinct runs; 0 == 0 in 15 >= 15 distinct runs; rate <= 0.20 (95 % Wilson bound, not a rate claim) | FAIL: inf s, CI [inf, inf], n=15; lower inf misses <= 30 | **FAIL** |
 
 - astar_known: NOT PROVEN (15 runs)
 - astar_unknown: FAIL (15 runs)
@@ -12,5 +12,10 @@
 - lazy_thetastar_unknown: FAIL (15 runs)
 - dwa_mem: FAIL (15 runs)
 
+Sample-size hints (the observed runs meet every open bar; only n is short):
+
+- astar_known: NOT PROVEN only on sample size. reached_rate >= 0.9 needs 35 distinct runs if every run succeeds (has 15) => at least 12 seeds x 3 worlds.
+
 Exit code 1: no planner passes every criterion.
-wall 14.3 s for 75 runs on 14 workers; wrote results/pack_office_crazyflie.json, .md
+wall 97.1 s for 75 runs on 1 workers; wrote results/pack_office_crazyflie.json, .md
+exit 1

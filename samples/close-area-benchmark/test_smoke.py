@@ -83,6 +83,68 @@ class PackCriteriaTest(unittest.TestCase):
         self.assertEqual(z["verdict"], "NOT PROVEN")
         with self.assertRaises(ValueError):
             pack.parse_criteria({"reached_rate": "about 0.9"})
+        # runs needed if every run succeeds: n / (n + 1.96^2) >= bar => 16, 35, 73; "<= 0" never
+        self.assertEqual([pack.runs_needed(">=", b) for b in (0.8, 0.9, 0.95)], [16, 35, 73])
+        self.assertEqual(pack.runs_needed("<=", 0.05), 73)
+        self.assertIsNone(pack.runs_needed("<=", 0))
+        self.assertIsNone(pack.runs_needed(">=", 1))
+        for b in (0.8, 0.9, 0.95):   # n passes, n - 1 does not
+            n = pack.runs_needed(">=", b)
+            self.assertGreaterEqual(pack.wilson(n, n)[1], b)
+            self.assertLess(pack.wilson(n - 1, n - 1)[1], b)
+        g = ev["planners"]["good"]["criteria"]["reached_rate"]
+        self.assertEqual((g["runs_needed_all_success"], g["all_success"]), (35, True))
+        self.assertEqual(z["gap"], "unprovable")
+        # sample-size hint: "short" is 10/10, only n is short; "bad" FAILs => no hint
+        s = pack.evaluate(recs, {"reached_rate": ">= 0.9"}, ["short", "bad"], n_worlds=1)
+        self.assertEqual(len(s["hints"]), 1)
+        self.assertIn("needs 35 distinct runs if every run succeeds (has 10)", s["hints"][0])
+        self.assertIn("at least 35 seeds x 1 worlds", s["hints"][0])
+        self.assertIsNone(s["planners"]["bad"]["size_hint"])
+
+    def test_count_rules(self):
+        import pack
+
+        def rec(planner, i, outcome):
+            return {"planner": planner, "world": "w", "seed": i, "outcome": outcome,
+                    "time_to_goal_s": 10 + i / 2 if outcome == "reached" else None,
+                    "path_length_m": 10 + i / 100, "min_clearance_m": 0.2}
+        recs = ([rec("clean", i, "reached") for i in range(15)]
+                + [rec("one", i, "collision" if i == 3 else "reached") for i in range(30)]
+                + [rec("few", i, "reached") for i in range(9)]
+                + [rec("hit", i, "collision" if i < 2 else "reached") for i in range(5)])
+        ev = pack.evaluate(recs, {"collisions": "== 0"}, min_runs=15)
+        c = {p: e["criteria"]["collisions"] for p, e in ev["planners"].items()}
+        # 0 collisions in 15 distinct runs, min 15 => PASS; the rate bound stays 3.84 / 18.84 = 0.20
+        self.assertEqual((c["clean"]["verdict"], c["clean"]["k"], c["clean"]["n"]), ("PASS", 0, 15))
+        self.assertAlmostEqual(c["clean"]["hi"], 1.96 ** 2 / (15 + 1.96 ** 2), 9)
+        self.assertIn("rate <= 0.20 (95 % Wilson bound, not a rate claim)",
+                      pack.cell(c["clean"], pack.parse_criteria({"collisions": "== 0"})[0]))
+        self.assertEqual(c["one"]["verdict"], "FAIL")          # 1 collision: no n fixes "== 0"
+        self.assertEqual(c["few"]["verdict"], "NOT PROVEN")    # 0 in 9 < 15
+        self.assertEqual(c["hit"]["verdict"], "FAIL")          # 2 in 5: FAIL before min_runs
+        self.assertEqual(ev["exit_code"], 0)
+        # per-rule min_runs, and a top-level min_runs; "<= 1"
+        ev2 = pack.evaluate(recs, {"collisions": {"rule": "<= 1", "min_runs": 30}})
+        v2 = {p: e["criteria"]["collisions"]["verdict"] for p, e in ev2["planners"].items()}
+        self.assertEqual(v2, {"clean": "NOT PROVEN", "one": "PASS", "few": "NOT PROVEN", "hit": "FAIL"})
+        ev3 = pack.evaluate(recs, {"collision_count": "<= 1", "min_runs": 30})
+        self.assertEqual({p: e["criteria"]["collision_count"]["verdict"] for p, e in ev3["planners"].items()}, v2)
+        # default min_runs = the planner's own run count
+        ev4 = pack.evaluate(recs, {"collisions": "== 0"})
+        self.assertEqual(ev4["planners"]["few"]["criteria"]["collisions"]["verdict"], "PASS")
+        # identical runs count once toward min_runs, but every collision counts
+        dup = [dict(rec("dup", 0, "reached")) for _ in range(15)]
+        self.assertEqual(pack.evaluate(dup, {"collisions": "== 0"}, min_runs=15)
+                         ["planners"]["dup"]["criteria"]["collisions"]["verdict"], "NOT PROVEN")
+        # sample-size hint for a count rule
+        h = pack.evaluate(recs, {"collisions": "== 0"}, ["few"], min_runs=15, n_worlds=3)["hints"]
+        self.assertEqual(h, ["few: NOT PROVEN only on sample size. collisions == 0 needs 15 distinct runs (has 9)"
+                             " => at least 5 seeds x 3 worlds."])
+        for bad in ({"collisions": "== 0.5"}, {"collision_rate": "== 0"}, {"collisions": {"rule": "== 0", "n": 3}},
+                    {"reached_rate": {"rule": ">= 0.9"}}, {"collisions": "== 0", "min_runs": 0}):
+            with self.assertRaises(ValueError, msg=str(bad)):
+                pack.parse_criteria(bad)
 
 
 if __name__ == "__main__":

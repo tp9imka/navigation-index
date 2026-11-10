@@ -288,7 +288,7 @@ Exit code: 0 if at least one planner passes every criterion, 1 if none does, 2 i
 | `planners` | yes | ids of `PLANNERS` in [bench.py](bench.py) |
 | `seeds` | no | `n` or `{"n": n, "jitter_m": R}`, n in 1..200, default 5 seeds, R = 0.5 m. Seed 0 flies the exact A and B. Seed k > 0 moves A and B by a seeded offset within R that keeps vehicle radius + 0.1 m from every surface, the same offset for every planner. It is a port of `seedJitter` in [site/solver/sweep.js](../../site/solver/sweep.js) (same PRNG; seeds 0-9 on hall_8x6 and office_0 give the same points as the JS). One difference: the clearance uses the pack's vehicle radius, the Solver reads the world's. The seed also picks the sensor noise stream, as in bench.py |
 | `max_time_s` | no | `"auto"` (default: `bench.max_time(family)`, 120 s for maze and warehouse, else 60 s) or seconds |
-| `criteria` | yes | `{metric: "<op> <number>"}`, op in `>=`, `>`, `<=`, `<` |
+| `criteria` | yes | `{metric: "<op> <number>"}`, op in `>=`, `>`, `<=`, `<` (`==` for count rules). A count rule may also be `{"rule": "<op> <n>", "min_runs": N}`; a top-level `"min_runs": N` inside `criteria` sets it for every count rule |
 
 Metrics and how each is judged:
 
@@ -297,7 +297,13 @@ Metrics and how each is judged:
   3 dp) count once, as in the Solver. `>=` passes only if the **lower** bound meets the threshold, `<=` only if
   the **upper** bound does. The bar then still holds at the pessimistic end of the interval, so a lucky
   small sample cannot pass. It is FAIL when even the optimistic bound misses the bar, and NOT PROVEN in
-  between (more seeds or worlds needed).
+  between (more seeds or worlds needed). Each rate cell also prints "runs needed if every run
+  succeeds": the smallest n whose all-success Wilson bound passes the bar, or "never".
+- `<outcome>_count`, or `collisions`, `timeouts`, `errors`: k = runs with that outcome, every run
+  counted (duplicates included). `<=`, `<` and `==` FAIL as soon as k is past the bar, because more runs
+  cannot lower k. Otherwise the rule is NOT PROVEN until there are at least `min_runs` distinct runs
+  (default: the pack's seeds x worlds), and then the bar decides. The cell prints the Wilson bound of
+  the same outcome's rate next to the verdict, for example `rate <= 0.20` after 0 collisions in 15 runs.
 - `time_to_goal_p<q>_s`: the nearest-rank q-quantile of time to B over all runs, with a run that did
   not reach B counted as infinite. The interval is the distribution-free 95 % interval from order statistics
   (binomial ranks). Same rule: `<=` passes on the upper end.
@@ -306,10 +312,28 @@ Metrics and how each is judged:
 - Planner verdict: PASS if every criterion passes, FAIL if any fails, else NOT PROVEN.
 
 What the rule implies for small packs (from the Wilson formula; with no failures the lower bound is
-n / (n + 1.96^2)): `reached_rate >= 0.9` needs at least 35 runs that all reach B. `collision_rate <= 0.05`
-needs at least 73 runs without a collision. `collision_rate <= 0` can never pass: with 0 collisions the
-upper bound is 3.84 / (n + 3.84), above 0 for any n. Write it as `<= 0` when the point is to show that
-zero collisions is not proven. Write `<= 0.05` with enough runs when the pack must pass.
+n / (n + 1.96^2), `pack.runs_needed`, checked in test_smoke.py):
+
+| bar | runs needed if every run succeeds |
+|---|---|
+| `reached_rate >= 0.8` | 16 |
+| `reached_rate >= 0.9` | 35 |
+| `reached_rate >= 0.95` | 73 |
+| `collision_rate <= 0.05` | 73 |
+| `collision_rate <= 0` | never: with 0 collisions the upper bound is 3.84 / (n + 3.84), above 0 for any n |
+
+When a planner is NOT PROVEN and every open criterion is met by its observed value (all-success rates,
+count rules short of `min_runs`, a quantile whose point value meets the bar), the table ends with a
+sample-size hint: how many distinct runs each open bar needs and the seed count that gives them at
+the pack's world count.
+
+**Count rule or rate rule.** A rate rule (`collision_rate <= 0.05`) is a claim about the planner on
+runs you have not flown: with 95 % confidence the true rate is below the bar. A count rule
+(`collisions == 0`) says only what happened: no collision in these n runs. Use a count rule when the
+bar is "zero events" or "at most k events" and the run budget is fixed, which is the case for a
+safety bar on a small pack. Use a rate rule when the claim must carry to new runs, and fly the runs
+the table says it needs. The count cell prints the rate bound next to the verdict so nobody reads
+"0 collisions in 15 runs" as "collision rate 0": 15 clean runs support a rate of at most 0.20.
 
 **Flight loop.** Each run calls `bench.run_one`'s own code object. Four of its module globals are
 swapped: `run.DEFAULTS` (the pack vehicle), `world_glass.make_any_world` (the pack world),
@@ -337,39 +361,45 @@ runs are scored on truth. Each pack was run more than once while pack.py was wri
 hall 2 times), with the same numbers every time.
 
 **`packs/office_crazyflie.json`**: `preset:office_0`, `family:office:1`, `family:office:2`, default
-vehicle, `crazyflie` sensor, 5 planners x 3 worlds x 5 seeds = 75 runs, wall 14.3 s, exit code 1
+vehicle, `crazyflie` sensor, 5 planners x 3 worlds x 5 seeds = 75 runs, exit code 1
 ([results/pack_office_crazyflie.md](results/pack_office_crazyflie.md)).
 
-| planner | reached_rate >= 0.9 | collision_rate <= 0 | time_to_goal_p50_s <= 30 | verdict |
+| planner | reached_rate >= 0.9 | collisions == 0 (min 15 runs) | time_to_goal_p50_s <= 30 | verdict |
 |---|---|---|---|---|
-| astar_known | NOT PROVEN: 15/15 = 1.00, CI [0.80, 1.00]; lower 0.80 misses >= 0.9, upper 1.00 meets it | NOT PROVEN: 0/15 = 0.00, CI [0.00, 0.20]; upper 0.20 misses <= 0, lower 0.00 meets it | PASS: 18.1 s, CI [13.8, 22.6], n=15; upper 22.6 <= 30 | **NOT PROVEN** |
-| astar_unknown | FAIL: 6/15 = 0.40, CI [0.20, 0.64]; upper 0.64 misses >= 0.9 | FAIL: 3/15 = 0.20, CI [0.07, 0.45]; lower 0.07 misses <= 0 | NOT PROVEN: inf s, CI [18.2, inf], n=15; upper inf misses <= 30, lower 18.2 meets it | **FAIL** |
-| astar_unknown_f2 | NOT PROVEN: 12/15 = 0.80, CI [0.55, 0.93]; lower 0.55 misses >= 0.9, upper 0.93 meets it | NOT PROVEN: 0/15 = 0.00, CI [0.00, 0.20]; upper 0.20 misses <= 0, lower 0.00 meets it | NOT PROVEN: 26.6 s, CI [18.3, 32.3], n=15; upper 32.3 misses <= 30, lower 18.3 meets it | **NOT PROVEN** |
-| lazy_thetastar_unknown | FAIL: 7/15 = 0.47, CI [0.25, 0.70]; upper 0.70 misses >= 0.9 | FAIL: 5/15 = 0.33, CI [0.15, 0.58]; lower 0.15 misses <= 0 | NOT PROVEN: inf s, CI [19.5, inf], n=15; upper inf misses <= 30, lower 19.5 meets it | **FAIL** |
-| dwa_mem | FAIL: 1/15 = 0.07, CI [0.01, 0.30]; upper 0.30 misses >= 0.9 | NOT PROVEN: 0/15 = 0.00, CI [0.00, 0.20]; upper 0.20 misses <= 0, lower 0.00 meets it | FAIL: inf s, CI [inf, inf], n=15; lower inf misses <= 30 | **FAIL** |
+| astar_known | NOT PROVEN: 15/15 = 1.00, CI [0.80, 1.00]; lower 0.80 misses >= 0.9, upper 1.00 meets it; runs needed if every run succeeds: 35 | PASS: 0 collision in 15 distinct runs; 0 == 0 in 15 >= 15 distinct runs; rate <= 0.20 (95 % Wilson bound, not a rate claim) | PASS: 18.1 s, CI [13.8, 22.6], n=15; upper 22.6 <= 30 | **NOT PROVEN** |
+| astar_unknown | FAIL: 6/15 = 0.40, CI [0.20, 0.64]; upper 0.64 misses >= 0.9; runs needed if every run succeeds: 35 | FAIL: 3 collision in 15 distinct runs; 3 == 0 is false; rate <= 0.45 (95 % Wilson bound, not a rate claim) | NOT PROVEN: inf s, CI [18.2, inf], n=15; upper inf misses <= 30, lower 18.2 meets it | **FAIL** |
+| astar_unknown_f2 | NOT PROVEN: 12/15 = 0.80, CI [0.55, 0.93]; lower 0.55 misses >= 0.9, upper 0.93 meets it; runs needed if every run succeeds: 35 | PASS: 0 collision in 15 distinct runs; 0 == 0 in 15 >= 15 distinct runs; rate <= 0.20 (95 % Wilson bound, not a rate claim) | NOT PROVEN: 26.6 s, CI [18.3, 32.3], n=15; upper 32.3 misses <= 30, lower 18.3 meets it | **NOT PROVEN** |
+| lazy_thetastar_unknown | FAIL: 7/15 = 0.47, CI [0.25, 0.70]; upper 0.70 misses >= 0.9; runs needed if every run succeeds: 35 | FAIL: 5 collision in 15 distinct runs; 5 == 0 is false; rate <= 0.58 (95 % Wilson bound, not a rate claim) | NOT PROVEN: inf s, CI [19.5, inf], n=15; upper inf misses <= 30, lower 19.5 meets it | **FAIL** |
+| dwa_mem | FAIL: 1/15 = 0.07, CI [0.01, 0.30]; upper 0.30 misses >= 0.9; runs needed if every run succeeds: 35 | PASS: 0 collision in 15 distinct runs; 0 == 0 in 15 >= 15 distinct runs; rate <= 0.20 (95 % Wilson bound, not a rate claim) | FAIL: inf s, CI [inf, inf], n=15; lower inf misses <= 30 | **FAIL** |
+
+Sample-size hint: astar_known: NOT PROVEN only on sample size. reached_rate >= 0.9 needs 35 distinct runs if every run succeeds (has 15) => at least 12 seeds x 3 worlds.
 
 **`packs/hall_8x6.json`**: [rooms/hall_8x6.world.json](../close-area-arena/rooms/hall_8x6.world.json),
 vehicle radius 0.2 m (stock speed limits), `depth_cam_87` (30 beams over 87 deg, 0.3-5 m), 6 planners
-x 10 seeds = 60 runs, wall 8.3 s, exit code 1 ([results/pack_hall_8x6.md](results/pack_hall_8x6.md)).
+x 10 seeds = 60 runs, exit code 1 ([results/pack_hall_8x6.md](results/pack_hall_8x6.md)).
 The hall keeps a free path at 0.2 m for all 10 seeds' A and B.
 
-| planner | reached_rate >= 0.9 | collision_rate <= 0 | time_to_goal_p50_s <= 30 | verdict |
+| planner | reached_rate >= 0.9 | collisions == 0 (min 10 runs) | time_to_goal_p50_s <= 30 | verdict |
 |---|---|---|---|---|
-| astar_known | NOT PROVEN: 10/10 = 1.00, CI [0.72, 1.00]; lower 0.72 misses >= 0.9, upper 1.00 meets it | NOT PROVEN: 0/10 = 0.00, CI [0.00, 0.28]; upper 0.28 misses <= 0, lower 0.00 meets it | PASS: 23.7 s, CI [22.9, 24.6], n=10; upper 24.6 <= 30 | **NOT PROVEN** |
-| astar_unknown | FAIL: 3/10 = 0.30, CI [0.11, 0.60]; upper 0.60 misses >= 0.9 | FAIL: 7/10 = 0.70, CI [0.40, 0.89]; lower 0.40 misses <= 0 | NOT PROVEN: inf s, CI [29.2, inf], n=10; upper inf misses <= 30, lower 29.2 meets it | **FAIL** |
-| astar_unknown_f2 | FAIL: 0/9 = 0.00, CI [0.00, 0.30]; upper 0.30 misses >= 0.9 | NOT PROVEN: 0/9 = 0.00, CI [0.00, 0.30]; upper 0.30 misses <= 0, lower 0.00 meets it | FAIL: inf s, CI [inf, inf], n=9; lower inf misses <= 30 | **FAIL** |
-| mppi_astar | FAIL: 0/10 = 0.00, CI [0.00, 0.28]; upper 0.28 misses >= 0.9 | FAIL: 10/10 = 1.00, CI [0.72, 1.00]; lower 0.72 misses <= 0 | FAIL: inf s, CI [inf, inf], n=10; lower inf misses <= 30 | **FAIL** |
-| tangent_bug | FAIL: 0/10 = 0.00, CI [0.00, 0.28]; upper 0.28 misses >= 0.9 | FAIL: 2/10 = 0.20, CI [0.06, 0.51]; lower 0.06 misses <= 0 | FAIL: inf s, CI [inf, inf], n=10; lower inf misses <= 30 | **FAIL** |
-| straight | FAIL: 0/10 = 0.00, CI [0.00, 0.28]; upper 0.28 misses >= 0.9 | NOT PROVEN: 0/10 = 0.00, CI [0.00, 0.28]; upper 0.28 misses <= 0, lower 0.00 meets it | FAIL: inf s, CI [inf, inf], n=10; lower inf misses <= 30 | **FAIL** |
+| astar_known | NOT PROVEN: 10/10 = 1.00, CI [0.72, 1.00]; lower 0.72 misses >= 0.9, upper 1.00 meets it; runs needed if every run succeeds: 35 | PASS: 0 collision in 10 distinct runs; 0 == 0 in 10 >= 10 distinct runs; rate <= 0.28 (95 % Wilson bound, not a rate claim) | PASS: 23.7 s, CI [22.9, 24.6], n=10; upper 24.6 <= 30 | **NOT PROVEN** |
+| astar_unknown | FAIL: 3/10 = 0.30, CI [0.11, 0.60]; upper 0.60 misses >= 0.9; runs needed if every run succeeds: 35 | FAIL: 7 collision in 10 distinct runs; 7 == 0 is false; rate <= 0.89 (95 % Wilson bound, not a rate claim) | NOT PROVEN: inf s, CI [29.2, inf], n=10; upper inf misses <= 30, lower 29.2 meets it | **FAIL** |
+| astar_unknown_f2 | FAIL: 0/9 = 0.00, CI [0.00, 0.30]; upper 0.30 misses >= 0.9; runs needed if every run succeeds: 35 | NOT PROVEN: 0 collision in 9 distinct runs (10 flown); 9 distinct runs < min_runs 10; rate <= 0.30 (95 % Wilson bound, not a rate claim) | FAIL: inf s, CI [inf, inf], n=9; lower inf misses <= 30 | **FAIL** |
+| mppi_astar | FAIL: 0/10 = 0.00, CI [0.00, 0.28]; upper 0.28 misses >= 0.9; runs needed if every run succeeds: 35 | FAIL: 10 collision in 10 distinct runs; 10 == 0 is false; rate <= 1.00 (95 % Wilson bound, not a rate claim) | FAIL: inf s, CI [inf, inf], n=10; lower inf misses <= 30 | **FAIL** |
+| tangent_bug | FAIL: 0/10 = 0.00, CI [0.00, 0.28]; upper 0.28 misses >= 0.9; runs needed if every run succeeds: 35 | FAIL: 2 collision in 10 distinct runs; 2 == 0 is false; rate <= 0.51 (95 % Wilson bound, not a rate claim) | FAIL: inf s, CI [inf, inf], n=10; lower inf misses <= 30 | **FAIL** |
+| straight | FAIL: 0/10 = 0.00, CI [0.00, 0.28]; upper 0.28 misses >= 0.9; runs needed if every run succeeds: 35 | PASS: 0 collision in 10 distinct runs; 0 == 0 in 10 >= 10 distinct runs; rate <= 0.28 (95 % Wilson bound, not a rate claim) | FAIL: inf s, CI [inf, inf], n=10; lower inf misses <= 30 | **FAIL** |
+
+Sample-size hint: astar_known: NOT PROVEN only on sample size. reached_rate >= 0.9 needs 35 distinct runs if every run succeeds (has 10) => at least 35 seeds x 1 worlds.
 
 Reading:
 
-- **No planner passes either pack.** Both exit with code 1. The bar cannot pass at these sizes: zero
-  collisions is never provable, and 15 or 10 runs are below the 35 that `reached_rate >= 0.9` needs.
+- **No planner passes either pack.** Both exit with code 1. With the count rule for collisions (loop-86),
+  A* with the true map passes the collision and time bars and is NOT PROVEN only on sample size: 15 or 10
+  runs are below the 35 that `reached_rate >= 0.9` needs. Under the old rate rule `collision_rate <= 0`
+  could never pass.
 - **A* with the true map is the best candidate in both.** It reached B in 15 of 15 office runs and
   10 of 10 hall runs with no collision. Its median time to B is 18.1 s (office) and 23.7 s (hall), and the
-  time criterion passes on the upper bound. The reach and collision criteria are NOT PROVEN only
-  because n is small.
+  time criterion passes on the upper bound. The collision count rule passes; the reach criterion is NOT
+  PROVEN only because n is small.
 - **Without a map, F2 is the safest in the offices but stalls in the hall.** In the offices
   `astar_unknown_f2` reached B in 12 of 15 runs with 0 collisions, while `astar_unknown` reached 6 of 15
   with 3 collisions. In the hall `astar_unknown_f2` ended stuck in all 10 runs.

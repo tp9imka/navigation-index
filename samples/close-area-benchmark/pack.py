@@ -19,16 +19,24 @@ Schema (README.md "Scenario packs" has the long form):
       "planners": ["astar_known", ...],                # bench.PLANNERS ids
       "seeds": 5 | {"n": 5, "jitter_m": 0.5},          # seed 0 exact A/B, k > 0 jittered (site/solver/sweep.js)
       "max_time_s": "auto" | 90,                       # auto = bench.max_time(world family)
-      "criteria": {"reached_rate": ">= 0.9", "collision_rate": "<= 0", "time_to_goal_p50_s": "<= 30"}
+      "criteria": {"reached_rate": ">= 0.9", "collisions": "== 0", "time_to_goal_p50_s": "<= 30"}
+                  # count rule with its own minimum: "collisions": {"rule": "<= 1", "min_runs": 30};
+                  # a top-level "min_runs": 30 in criteria applies to every count rule
     }
 
-Criteria. Metrics: <outcome>_rate (reached, collision, stuck, timeout, error), time_to_goal_p<q>_s
-(quantile of time to B over all runs, a run that did not reach B counts as +inf) and min_clearance_m
-(smallest over all flown runs). Operators >=, >, <=, <.
+Criteria. Metrics: <outcome>_rate (reached, collision, stuck, timeout, error), <outcome>_count (also
+collisions, timeouts, errors), time_to_goal_p<q>_s (quantile of time to B over all runs, a run that
+did not reach B counts as +inf) and min_clearance_m (smallest over all flown runs). Operators >=, >,
+<=, <, and == for counts.
 - Rates: 95 % Wilson interval on the distinct runs (identical runs count once, as the Solver).
   ">=" / ">" passes only if the LOWER bound meets the threshold, "<=" / "<" only if the UPPER bound
   does: the bar must hold at the pessimistic end of the interval. It fails if even the optimistic
-  bound misses it. Anything between is NOT PROVEN (more runs needed).
+  bound misses it. Anything between is NOT PROVEN (more runs needed). Each rate verdict carries
+  runs_needed(): the smallest n that passes if every run succeeds (None for "<= 0": never).
+- Counts: k = runs with that outcome (every run, duplicates included). "<=", "<", "==" FAIL as soon as
+  k is past the bar. Otherwise NOT PROVEN below min_runs distinct runs (default seeds x worlds), else
+  the bar decides. A count PASS is "none happened in n runs", not a rate; the Wilson bound is printed
+  next to it.
 - Quantiles: distribution-free 95 % interval from order statistics (binomial ranks), same rule.
 - min_clearance_m: the observed worst case, no interval; PASS or FAIL.
 Planner verdict: PASS if every criterion passes, FAIL if any fails, else NOT PROVEN.
@@ -121,21 +129,63 @@ def distinct(recs: list) -> list:
     return out
 
 
-_OPS = {">=": lambda a, b: a >= b, ">": lambda a, b: a > b, "<=": lambda a, b: a <= b, "<": lambda a, b: a < b}
-_CRIT = re.compile(r"^\s*(>=|<=|>|<)\s*(-?[0-9]+(?:\.[0-9]+)?)\s*$")
+_OPS = {">=": lambda a, b: a >= b, ">": lambda a, b: a > b, "<=": lambda a, b: a <= b, "<": lambda a, b: a < b,
+        "==": lambda a, b: a == b}
+_CRIT = re.compile(r"^\s*(>=|<=|==|>|<)\s*(-?[0-9]+(?:\.[0-9]+)?)\s*$")
 _QUANT = re.compile(r"^time_to_goal_p([0-9]{1,2})_s$")
+# count metrics: <outcome>_count, plus plural names for the outcomes that have one
+COUNT_ALIASES = {"collisions": "collision", "timeouts": "timeout", "errors": "error"}
+RUNS_NEEDED_CAP = 100000       # runs_needed() gives None (never) past this
+
+
+def _count_outcome(metric: str):
+    if metric in COUNT_ALIASES:
+        return COUNT_ALIASES[metric]
+    if metric.endswith("_count") and metric[:-6] in OUTCOMES:
+        return metric[:-6]
+    return None
+
+
+def _min_runs(v, where: str) -> int:
+    if isinstance(v, bool) or not isinstance(v, int) or not 1 <= v <= 100000:
+        raise ValueError(f"{where}: min_runs must be a whole number in 1..100000")
+    return v
 
 
 def parse_criteria(criteria: dict) -> list:
+    """List of {metric, op, threshold, kind, text[, outcome, min_runs]}. A criterion value is "<op> <number>",
+    or for a count rule also {"rule": "<op> <n>", "min_runs": N}. A top-level "min_runs" key sets the
+    minimum run count for every count rule that does not set its own (None = the caller's default)."""
     if not isinstance(criteria, dict) or not criteria:
         raise ValueError("criteria must be a non-empty object {metric: \"<op> <number>\"}")
+    shared = _min_runs(criteria["min_runs"], "criteria") if "min_runs" in criteria else None
     out = []
     for metric, text in criteria.items():
+        if metric == "min_runs":
+            continue
+        own = None
+        if isinstance(text, dict):
+            if _count_outcome(metric) is None:
+                raise ValueError(f"criterion {metric}: the object form is only for count rules")
+            if "rule" not in text or set(text) - {"rule", "min_runs"}:
+                raise ValueError(f"criterion {metric}: object form is {{\"rule\": \"<op> <n>\", \"min_runs\": N}}")
+            own = _min_runs(text["min_runs"], f"criterion {metric}") if "min_runs" in text else None
+            text = text["rule"]
         m = _CRIT.match(str(text))
         if not m:
-            raise ValueError(f"criterion {metric}: {text!r} is not '<op> <number>' with op in >=, >, <=, <")
+            raise ValueError(f"criterion {metric}: {text!r} is not '<op> <number>' with op in >=, >, <=, <"
+                             " (== for count rules)")
         op, thr = m.group(1), float(m.group(2))
-        if metric.endswith("_rate") and metric[:-5] in OUTCOMES:
+        extra = {}
+        outcome = _count_outcome(metric)
+        if outcome is not None:
+            kind = "count"
+            if thr < 0 or thr != int(thr):
+                raise ValueError(f"criterion {metric}: count threshold {m.group(2)} is not a whole number >= 0")
+            extra = {"outcome": outcome, "min_runs": own if own is not None else shared}
+        elif op == "==":
+            raise ValueError(f"criterion {metric}: == is only for count rules (collisions, <outcome>_count)")
+        elif metric.endswith("_rate") and metric[:-5] in OUTCOMES:
             kind = "rate"
             if not 0 <= thr <= 1:
                 raise ValueError(f"criterion {metric}: rate threshold {thr} is outside [0, 1]")
@@ -144,10 +194,37 @@ def parse_criteria(criteria: dict) -> list:
         elif metric == "min_clearance_m":
             kind = "min"
         else:
-            raise ValueError(f"criterion {metric}: unknown metric (have <outcome>_rate, time_to_goal_p<q>_s, "
-                             "min_clearance_m)")
-        out.append({"metric": metric, "op": op, "threshold": thr, "kind": kind, "text": f"{op} {m.group(2)}"})
+            raise ValueError(f"criterion {metric}: unknown metric (have <outcome>_rate, <outcome>_count, "
+                             f"{', '.join(COUNT_ALIASES)}, time_to_goal_p<q>_s, min_clearance_m)")
+        out.append({"metric": metric, "op": op, "threshold": thr, "kind": kind, "text": f"{op} {m.group(2)}",
+                    **extra})
     return out
+
+
+def runs_needed(op: str, thr: float, z: float = Z95):
+    """Smallest n for which a rate bar passes when every run goes the bar's way (k = n for >= / >,
+    k = 0 for <= / <), judged on the same Wilson bound as the verdict. None if no n up to
+    RUNS_NEEDED_CAP does it (e.g. "<= 0": the upper bound z^2 / (n + z^2) is above 0 for every n)."""
+    up = op in (">=", ">")
+
+    def ok(n):
+        _, lo, hi = wilson(n if up else 0, n, z)
+        return _OPS[op](lo if up else hi, thr)
+    # all-success lower bound is n / (n + z^2), all-clean upper bound z^2 / (n + z^2): start just below
+    # the closed form and step, so the float comparison is the verdict's own
+    z2 = z * z
+    if up:
+        guess = 1 if thr <= 0 else (None if thr >= 1 else z2 * thr / (1 - thr))
+    else:
+        guess = None if thr <= 0 else (1 if thr >= 1 else z2 * (1 - thr) / thr)
+    if guess is None or guess > RUNS_NEEDED_CAP:
+        return None
+    n = max(1, int(guess) - 2)
+    while n <= RUNS_NEEDED_CAP:
+        if ok(n):
+            return n
+        n += 1
+    return None
 
 
 def _judge(op: str, thr: float, lo: float, hi: float) -> str:
@@ -157,25 +234,54 @@ def _judge(op: str, thr: float, lo: float, hi: float) -> str:
     return "PASS" if _OPS[op](hi, thr) else ("FAIL" if not _OPS[op](lo, thr) else "NOT PROVEN")
 
 
-def evaluate_one(recs: list, c: dict) -> dict:
+def _judge_count(op: str, thr: float, k: int, n: int, min_runs: int) -> str:
+    """Count rule. More runs can only add to k, so "<=", "<" and "==" FAIL as soon as k is past the bar,
+    whatever n is. Otherwise fewer than min_runs distinct runs => NOT PROVEN, else the bar decides."""
+    if (op in ("<=", "==") and k > thr) or (op == "<" and k >= thr):
+        return "FAIL"
+    if n < min_runs:
+        return "NOT PROVEN"
+    return "PASS" if _OPS[op](k, thr) else "FAIL"
+
+
+def evaluate_one(recs: list, c: dict, min_runs_default=None) -> dict:
     d = distinct(recs)
     n = len(d)
+    up = c["op"] in (">=", ">")
     if c["kind"] == "rate":
         outcome = c["metric"][:-5]
         k = sum(r["outcome"] == outcome for r in d)
         p, lo, hi = wilson(k, n)
         verdict = _judge(c["op"], c["threshold"], lo, hi) if n else "NOT PROVEN"
-        bound = "lower" if c["op"] in (">=", ">") else "upper"
+        need = runs_needed(c["op"], c["threshold"])
+        gap = None
+        if verdict == "NOT PROVEN":
+            gap = ("unprovable" if need is None else
+                   "sample_size" if n and _OPS[c["op"]](p, c["threshold"]) else "data")
         return {"verdict": verdict, "k": k, "n": n, "n_runs": len(recs), "value": p, "lo": lo, "hi": hi,
-                "bound_used": bound}
+                "bound_used": "lower" if up else "upper", "runs_needed_all_success": need,
+                "all_success": bool(n) and k == (n if up else 0), "gap": gap}
+    if c["kind"] == "count":
+        o = c["outcome"]
+        k = sum(r["outcome"] == o for r in recs)            # every run counts, duplicates included
+        kd = sum(r["outcome"] == o for r in d)
+        min_runs = c.get("min_runs") or min_runs_default or len(recs)
+        verdict = _judge_count(c["op"], c["threshold"], k, n, min_runs)
+        p, lo, hi = wilson(kd, n)
+        return {"verdict": verdict, "k": k, "n": n, "n_runs": len(recs), "min_runs": min_runs, "outcome": o,
+                "value": p, "lo": lo, "hi": hi, "bound_used": "count",
+                "gap": "sample_size" if verdict == "NOT PROVEN" else None}
     if c["kind"] == "quantile":
         q = int(_QUANT.match(c["metric"]).group(1)) / 100
         xs = [r["time_to_goal_s"] if r["outcome"] == "reached" and r.get("time_to_goal_s") is not None
               else math.inf for r in d]
         v, lo, hi = quantile_ci(xs, q)
         verdict = _judge(c["op"], c["threshold"], lo, hi) if n else "NOT PROVEN"
+        gap = None
+        if verdict == "NOT PROVEN":
+            gap = "sample_size" if v is not None and _OPS[c["op"]](v, c["threshold"]) else "data"
         return {"verdict": verdict, "n": n, "n_runs": len(recs), "value": v, "lo": lo, "hi": hi,
-                "bound_used": "lower" if c["op"] in (">=", ">") else "upper"}
+                "bound_used": "lower" if up else "upper", "gap": gap}
     flown = [r["min_clearance_m"] for r in recs if r["outcome"] != "error" and r.get("min_clearance_m") is not None]
     if not flown:
         return {"verdict": "NOT PROVEN", "n": 0, "n_runs": len(recs), "value": None, "lo": None, "hi": None,
@@ -185,18 +291,54 @@ def evaluate_one(recs: list, c: dict) -> dict:
             "value": v, "lo": v, "hi": v, "bound_used": "observed"}
 
 
-def evaluate(records: list, criteria: dict, planners=None) -> dict:
-    """{planner: {"criteria": {metric: result}, "verdict": PASS | FAIL | NOT PROVEN}} plus "exit_code"."""
+def size_hint(planner: str, e: dict, crit: list, n_worlds=None):
+    """One line if the planner is NOT PROVEN only because of sample size: every NOT PROVEN criterion
+    is met by its observed value (a count rule: below min_runs) and none is unprovable. Else None."""
+    if e["verdict"] != "NOT PROVEN":
+        return None
+    open_ = [(c, e["criteria"][c["metric"]]) for c in crit if e["criteria"][c["metric"]]["verdict"] == "NOT PROVEN"]
+    if any(r["gap"] != "sample_size" for _, r in open_):
+        return None
+    parts, need = [], 0
+    for c, r in open_:
+        if c["kind"] == "rate":
+            n_req = r["runs_needed_all_success"]
+            if r["all_success"]:
+                parts.append(f"{c['metric']} {c['text']} needs {n_req} distinct runs if every run succeeds (has {r['n']})")
+                need = max(need, n_req)
+            else:
+                parts.append(f"{c['metric']} {c['text']} needs more than {n_req} distinct runs, since "
+                             f"{r['k']}/{r['n']} is not all-success, and the extra runs must hold the observed rate")
+                need = max(need, n_req + 1)
+        elif c["kind"] == "count":
+            parts.append(f"{c['metric']} {c['text']} needs {r['min_runs']} distinct runs (has {r['n']})")
+            need = max(need, r["min_runs"])
+        else:
+            parts.append(f"{c['metric']} {c['text']}: observed {_num(r['value'], 1)} meets the bar, the interval "
+                         "is too wide (more runs)")
+    seeds = f" => at least {math.ceil(need / n_worlds)} seeds x {n_worlds} worlds" if n_worlds and need else ""
+    return f"{planner}: NOT PROVEN only on sample size. " + "; ".join(parts) + seeds + "."
+
+
+def evaluate(records: list, criteria: dict, planners=None, min_runs=None, n_worlds=None) -> dict:
+    """{planner: {"criteria": {metric: result}, "verdict": PASS | FAIL | NOT PROVEN}} plus "exit_code" and
+    "hints". min_runs: default minimum run count of a count rule (pack: seeds x worlds; None = the
+    planner's own run count). n_worlds turns a hint's run count into a seed count."""
     crit = parse_criteria(criteria)
     planners = list(planners) if planners else list(dict.fromkeys(r["planner"] for r in records))
-    out = {}
+    out, hints = {}, []
     for p in planners:
         mine = [r for r in records if r["planner"] == p]
-        res = {c["metric"]: dict(evaluate_one(mine, c), criterion=c["text"]) for c in crit}
+        res = {c["metric"]: dict(evaluate_one(mine, c, min_runs), criterion=c["text"]) for c in crit}
         vs = [x["verdict"] for x in res.values()]
         verdict = "PASS" if all(v == "PASS" for v in vs) else ("FAIL" if "FAIL" in vs else "NOT PROVEN")
         out[p] = {"criteria": res, "verdict": verdict, "n_runs": len(mine)}
-    return {"planners": out, "exit_code": 0 if any(v["verdict"] == "PASS" for v in out.values()) else 1}
+        h = size_hint(p, out[p], crit, n_worlds)
+        out[p]["size_hint"] = h
+        if h:
+            hints.append(h)
+    return {"planners": out, "hints": hints, "min_runs_default": min_runs,
+            "exit_code": 0 if any(v["verdict"] == "PASS" for v in out.values()) else 1}
 
 
 # ------------------------------------------------------------ table
@@ -226,10 +368,26 @@ def reason(r: dict, c: dict, nd: int = 2) -> str:
     return f"upper {hi} misses {c['op']} {t}, lower {lo} meets it"
 
 
+def count_reason(r: dict, c: dict) -> str:
+    t = f"{c['threshold']:g}"
+    if r["verdict"] == "FAIL":
+        return f"{r['k']} {c['op']} {t} is false"
+    if r["verdict"] == "NOT PROVEN":
+        return f"{r['n']} distinct runs < min_runs {r['min_runs']}"
+    return f"{r['k']} {c['op']} {t} in {r['n']} >= {r['min_runs']} distinct runs"
+
+
 def cell(r: dict, c: dict) -> str:
     if c["kind"] == "rate":
+        need = r["runs_needed_all_success"]
+        need_s = "never (no n proves it; use a count rule)" if need is None else str(need)
         return (f"{r['verdict']}: {r['k']}/{r['n']} = {_num(r['value'])}, CI [{_num(r['lo'])}, {_num(r['hi'])}]; "
-                + reason(r, c))
+                + reason(r, c) + f"; runs needed if every run succeeds: {need_s}")
+    if c["kind"] == "count":
+        runs = f"{r['n']} distinct runs" + (f" ({r['n_runs']} flown)" if r["n_runs"] != r["n"] else "")
+        bound = (f"rate <= {_num(r['hi'])}" if c["op"] in ("<=", "<", "==") else f"rate >= {_num(r['lo'])}")
+        return (f"{r['verdict']}: {r['k']} {r['outcome']} in {runs}; {count_reason(r, c)}; "
+                f"{bound} (95 % Wilson bound, not a rate claim)")
     if c["kind"] == "quantile":
         return (f"{r['verdict']}: {_num(r['value'], 1)} s, CI [{_num(r['lo'], 1)}, {_num(r['hi'], 1)}], n={r['n']}; "
                 + reason(r, c, 1))
@@ -238,7 +396,13 @@ def cell(r: dict, c: dict) -> str:
 
 def table(ev: dict, criteria: dict) -> str:
     crit = parse_criteria(criteria)
-    head = "| planner | " + " | ".join(f"{c['metric']} {c['text']}" for c in crit) + " | verdict |"
+
+    def head_of(c):
+        if c["kind"] != "count":
+            return f"{c['metric']} {c['text']}"
+        mins = {e["criteria"][c["metric"]]["min_runs"] for e in ev["planners"].values()}
+        return f"{c['metric']} {c['text']} (min {', '.join(map(str, sorted(mins)))} runs)"
+    head = "| planner | " + " | ".join(head_of(c) for c in crit) + " | verdict |"
     lines = [head, "|---" * (len(crit) + 2) + "|"]
     for p, e in ev["planners"].items():
         lines.append(f"| {p} | " + " | ".join(cell(e["criteria"][c["metric"]], c) for c in crit)
@@ -246,6 +410,9 @@ def table(ev: dict, criteria: dict) -> str:
     lines.append("")
     for p, e in ev["planners"].items():
         lines.append(f"- {p}: {e['verdict']} ({e['n_runs']} runs)")
+    if ev.get("hints"):
+        lines += ["", "Sample-size hints (the observed runs meet every open bar; only n is short):", ""]
+        lines += [f"- {h}" for h in ev["hints"]]
     lines += ["", f"Exit code {ev['exit_code']}: " + ("at least one planner passes every criterion."
                                                       if ev["exit_code"] == 0 else "no planner passes every criterion.")]
     return "\n".join(lines)
@@ -481,7 +648,8 @@ def run_pack(path: str, workers: int, out: str | None, argv) -> int:
     wall = round(time.perf_counter() - t0, 1)
     order = {p: k for k, p in enumerate(pack["planners"])}
     recs.sort(key=lambda r: (order[r["planner"]], r["world_index"], r["seed"]))
-    ev = evaluate(recs, pack["criteria"], pack["planners"])
+    n_worlds = len(pack["worlds"])
+    ev = evaluate(recs, pack["criteria"], pack["planners"], min_runs=pack["seeds"] * n_worlds, n_worlds=n_worlds)
     stem = out or os.path.join("results", f"pack_{pack['name']}")
     stem = stem[:-5] if stem.endswith(".json") else stem
     stem = stem if os.path.isabs(stem) else os.path.join(HERE, stem)
@@ -537,6 +705,10 @@ def render_md(meta, pack, ev, recs) -> str:
         out += ["No free path at the pack radius (world, seed): "
                 + ", ".join(f"{w} s{k}" for w, k in meta["no_free_path_at_radius"]), ""]
     out += ["Rates: 95 % Wilson interval on distinct runs; `>=` judged on the lower bound, `<=` on the upper. "
+            "\"Runs needed if every run succeeds\" is the smallest n whose all-success Wilson bound meets the bar. "
+            "Counts: every run of that outcome counts; PASS needs at least min_runs distinct runs "
+            f"(default seeds x worlds = {ev.get('min_runs_default')}). A count PASS says \"none (or at most k) "
+            "happened in n runs\"; it is not a rate claim, the Wilson bound next to it is what n runs support. "
             "Time quantile: distribution-free 95 % interval, a run that did not reach B counts as inf.", "",
             table(ev, pack["criteria"]), "", "## Outcomes", "",
             "| planner | runs | reached | collision | stuck | timeout | error |", "|---|---|---|---|---|---|---|"]

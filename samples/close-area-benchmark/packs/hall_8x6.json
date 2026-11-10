@@ -1,12 +1,12 @@
 {
  "schema": "close-area-pack/1",
  "name": "hall_8x6",
- "description": "The 8 x 6 m example hall of close-area-arena/rooms (wall with a door, 3 tables, a shelf, 2 pillars), a 0.2 m radius vehicle (stock speed limits), forward depth camera depth_cam_87 (87 deg, 0.3-5 m). Same bar as office_crazyflie.",
+ "description": "The 8 x 6 m example hall of close-area-arena/rooms (wall with a door, 3 tables, a shelf, 2 pillars), a 0.2 m radius vehicle (stock speed limits), forward depth camera depth_cam_87 (87 deg, 0.3-5 m). Same bar as office_crazyflie (reach B in at least 90 % of runs at the Wilson lower bound, 0 collisions in at least seeds x worlds = 10 distinct runs, median time to B at most 30 s).",
  "worlds": ["../../close-area-arena/rooms/hall_8x6.world.json"],
  "vehicle": {"radius_m": 0.2, "v_max": 2.0, "a_max": 3.0, "tau": 0.15},
  "sensor": "depth_cam_87",
  "planners": ["astar_known", "astar_unknown", "astar_unknown_f2", "mppi_astar", "tangent_bug", "straight"],
  "seeds": {"n": 10, "jitter_m": 0.5},
  "max_time_s": "auto",
- "criteria": {"reached_rate": ">= 0.9", "collision_rate": "<= 0", "time_to_goal_p50_s": "<= 30"}
+ "criteria": {"reached_rate": ">= 0.9", "collisions": "== 0", "time_to_goal_p50_s": "<= 30"}
 }
