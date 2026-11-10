@@ -18,12 +18,12 @@ it lists.
 [samples/close-area-arena](samples/close-area-arena/README.md).
 
 **Try it in the browser** (GitHub Pages, synthetic simulation):
-- [Showcase](https://tp9imka.github.io/navigation-index/site/showcase.html) - replays of 14
+- [Showcase](https://navigation-index.pages.dev/site/showcase.html) - replays of 14
   planners on 8 arenas, side-by-side compare, the results grid.
-- [Playground](https://tp9imka.github.io/navigation-index/site/playground/) - draw an arena, pick
+- [Playground](https://navigation-index.pages.dev/site/playground/) - draw an arena, pick
   a planner, sensor, VIO fault and safety filter, run the hub's real Python in the browser; the
   Advisor shows each planner's measured success rate on the selected arena.
-- [Search UI](https://tp9imka.github.io/navigation-index/site/) - every record, doc and sample.
+- [Search UI](https://navigation-index.pages.dev/site/) - every record, doc and sample.
 
 **Close-area material at a glance:**
 
