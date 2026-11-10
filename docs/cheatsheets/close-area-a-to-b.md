@@ -82,18 +82,21 @@ matrix before writing a planner: 14 planners x 8 room families x 2 range sensors
 cell, seed 0, true pose, synthetic. Cell = reached % / collision %. "Ideal" = 72 rays, 6 m, sees
 glass. "4 beams" = the Crazyflie-like preset (4 x 27 deg cones, 3 m, glass invisible). Try the
 picks in the browser: [playground](../../site/playground/index.html) (its advisor panel shows the
-same table; it stops runs at 60 s, the benchmark allowed 120 s on maze and warehouse).
+same table; runs get 120 s on maze and warehouse, 60 s elsewhere, as in the benchmark). "Depth
+camera" = depth_cam_87 (30 beams over 87 deg forward, 0.3-5 m, glass invisible, RealSense D435i class),
+yaw held toward B; 6 layouts per cell ([forward depth camera](../../samples/close-area-benchmark/README.md#forward-depth-camera-loop-94)),
+so read it as a direction, not a ranking.
 
-| Family | With a map (both sensors) | Without a map, ideal | Without a map, 4 beams |
-|---|---|---|---|
-| random clutter | `astar_known` 100 / 0 | `astar_unknown` 100 / 0 | `astar_unknown`, `astar_unknown_f2` or `dstar_lite` 100 / 0 |
-| u_trap | `astar_known` 100 / 0 | `astar_unknown` 100 / 0 | `astar_unknown_f2` or `dstar_lite` 100 / 0 |
-| narrow_gap (0.5-0.9 m) | `astar_known` 100 / 0 | `astar_unknown` 90 / 0 | `astar_unknown` 25 / 5 (weak) |
-| office | `astar_known` 100 / 0 | `astar_unknown` 95 / 0 | `astar_unknown_f2` 50 / 5 |
-| warehouse | `astar_known` 100 / 0 | `astar_unknown` 55 / 0 | none works: `bug2` 15 / 20 reaches most, `astar_unknown_f2` 0 / 0 is safest |
-| forest (open poles) | `astar_known` 100 / 0 | `astar_unknown` 100 / 0 (reactive planners tie) | `dstar_lite` 100 / 0 |
-| maze | `astar_known` 100 / 0 | `astar_unknown` 95 / 0 | `astar_unknown_f2` 55 / 0 |
-| glass_office | `astar_known` 100 / 0 | `astar_unknown` 95 / 0 | none works: `dstar_lite` 10 / 65; `freest_beam` or `dwa_mem` 5 / 5 are safest |
+| Family | With a map (all sensors) | Without a map, ideal | Without a map, 4 beams | Without a map, depth camera (n = 6, directional) |
+|---|---|---|---|---|
+| random clutter | `astar_known` 100 / 0 | `astar_unknown` 100 / 0 | `astar_unknown`, `astar_unknown_f2` or `dstar_lite` 100 / 0 | `astar_unknown`, `astar_unknown_f2`, `dstar_lite` or `mppi_astar` 100 / 0 |
+| u_trap | `astar_known` 100 / 0 | `astar_unknown` 100 / 0 | `astar_unknown_f2` or `dstar_lite` 100 / 0 | `astar_unknown`, `astar_unknown_f2`, `dstar_lite` or `mppi_astar` 100 / 0 |
+| narrow_gap (0.5-0.9 m) | `astar_known` 100 / 0 | `astar_unknown` 90 / 0 | `astar_unknown` 25 / 5 (weak) | `mppi_astar` 83 / 0 |
+| office | `astar_known` 100 / 0 | `astar_unknown` 95 / 0 | `astar_unknown_f2` 50 / 5 | `astar_unknown` or `dstar_lite` 67 / 0 |
+| warehouse | `astar_known` 100 / 0 | `astar_unknown` 55 / 0 | none works: `bug2` 15 / 20 reaches most, `astar_unknown_f2` 0 / 0 is safest | `dstar_lite` 83 / 0 |
+| forest (open poles) | `astar_known` 100 / 0 | `astar_unknown` 100 / 0 (reactive planners tie) | `dstar_lite` 100 / 0 | `astar_unknown`, `astar_unknown_f2`, `dstar_lite`, `dwa_mem` or `mppi_astar` 100 / 0 |
+| maze | `astar_known` 100 / 0 | `astar_unknown` 95 / 0 | `astar_unknown_f2` 55 / 0 | `astar_unknown` 100 / 0 (`dstar_lite` 83 / 0) |
+| glass_office | `astar_known` 100 / 0 | `astar_unknown` 95 / 0 | none works: `dstar_lite` 10 / 65; `freest_beam` or `dwa_mem` 5 / 5 are safest | none works: `dstar_lite` 33 / 67; `astar_unknown_f2` 0 / 0 or `dwa_mem` 17 / 0 are safest |
 
 How to read it:
 
@@ -109,6 +112,10 @@ How to read it:
   more in office and maze. Warehouse and glass rooms have no working map-free planner: ask for the
   map. On 72 beams do not put F2 under it by default: it freezes in doors and aisles (0 % reached
   in office, warehouse, maze, narrow_gap and glass_office).
+- **No map, forward depth camera:** `dstar_lite` first (79 % reached [66, 88], 10 % collision
+  [5, 22] pooled over 48 synthetic runs, 95 % Wilson), `astar_unknown` close behind (75 / 17).
+  `mppi_astar`, the ideal-sensor pick, collides in 50 % on office and warehouse with this sensor.
+  Glass rooms still need a map: glass is invisible to the camera (glass_office 67-83 % collision).
 - **Reactive planners** (APF, VFH+, DWA, Bug2, TangentBug) only fit open clutter: 0-40 % in
   office, warehouse and maze on ideal. On 4 beams, 3 s of scan memory cuts DWA collisions sharply
   (office 55 => 0 %), at the cost of runs ending stuck.
@@ -117,7 +124,7 @@ Situations the matrix does not cover:
 
 | Situation | Start with | Why |
 |---|---|---|
-| Moving obstacles (people walking through) | A* replan + F2 range filter ([close-area-moving-obstacles](../../samples/close-area-moving-obstacles/README.md)) | A* alone collided in 14-36 % of runs; with F2 0 %, 16 % stuck; APF 0-2 %. With tracks: A* + VO gate (`run_predict.py`) reached B in 100 of 100 held-out runs, 0 collisions, vs 92 % for A* + F2 (people walk straight lines) |
+| Moving obstacles (people walking through) | A* + velocity-obstacle gate ([close-area-moving-obstacles](../../samples/close-area-moving-obstacles/README.md#prediction-arms-constant-velocity-tracks-space-time-a-vo-gate-ran-2026-11-10)) | A* alone collided in 14-36 % of runs; with F2 0 %, 16 % stuck; APF 0-2 %. With tracks: A* + VO gate (`run_predict.py`) reached B in 100 of 100 held-out runs, 0 collisions, vs 92 % for A* + F2 (people walk straight lines) |
 | Windows, bars, B at another height | `planners/astar_esdf_3d.py` on a prior 3D map ([window_bar](../../samples/close-area-arena/README.md#altitude-windows-and-bars-ran-2026-11-09-synthetic)) | 2.5D at 1 m reached 14 %, 3D 100 %, 0 % collisions (50 layouts) |
 | Estimator faults, no map | `freest_beam` (inside `run_faults.py`) | Range-only, so faults cut reach, not safety; A* under faults is in [close-area-safety-filter](../../samples/close-area-safety-filter/README.md) |
 | Goal B is a tag or pad | Any of the above to bring the tag into view, then [fiducial-goal-apriltag](../../samples/fiducial-goal-apriltag/README.md) `final_approach.py` | Tag-relative servo for the last metres |

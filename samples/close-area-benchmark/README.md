@@ -245,6 +245,74 @@ glass_office `freest_beam` and `dwa_mem` (5 / 5) are far safer than `dstar_lite`
 - **glass_office on ideal is just an office.** The ideal ray fan sees glass. The glass cost shows
   only on the crazyflie preset, which is why the replays use it for that family.
 
+## Forward depth camera (loop-94)
+
+A RealSense D435i-class forward depth camera is the likeliest range sensor on a PX4-class drone.
+This section adds it as a third sensor column for the five map-free planners that matter on Day 1.
+Ran 2026-11-10, synthetic (simulated layouts, vehicle and sensor), scored on truth.
+
+```
+.venv/bin/python bench.py --presets depth_cam_87 --planners astar_unknown,astar_unknown_f2,dstar_lite,dwa_mem,mppi_astar \
+    --layouts 6 --workers 4 --stem matrix_depth_0          # 240 runs, wall 121 s on 4 processes
+python3 results/matrix_depth_0.compare.py                  # pairs it with matrix_0 layouts 0-5, no flights
+```
+
+- **Sensor:** preset `depth_cam_87` from [presets.py](../close-area-arena/presets.py): 30 beams of 3 deg
+  over 87 deg forward, 0.3-5 m, 0.04 m noise, 5 % dropout, glass and mirror invisible. No code change
+  in bench.py was needed: `--presets` takes any `presets.SENSOR_PRESETS` name and `--stem` exists.
+- **Yaw:** the benchmark loop sets yaw toward B at the start and none of the five planners sends a yaw
+  rate, so the camera stays pointed at B for the whole flight (fixed yaw). That is the same as the
+  playground default (`fixed`, loop-75b, [site/playground](../../site/playground/README.md)).
+  "Look where you go" was not run here.
+- **Prior-map planners are not re-run.** They never read the scan: in matrix_0 their ideal and
+  crazyflie rows are identical in 160/160 runs each
+  ([results/matrix_depth_0.compare.md](results/matrix_depth_0.compare.md)). Their depth column equals
+  ideal (100 / 0 in every family).
+- **Dropout bias:** the arena fix (backlog item 88) is parked, so these rows carry the known
+  dropout-map bias of [upstream-findings section 22](../../docs/upstream-findings.md#22-close-area-arena-a-dropped-beam-marks-free-space-behind-walls).
+- **Small sample, directional only.** n = 6 layouts per cell (seed 0, indices 0-5); one layout moves a
+  cell by 17 points. Intervals below are 95 % Wilson on the 48 pooled runs per row.
+
+Cell = reached % / collision %, n = 6, from [results/matrix_depth_0.md](results/matrix_depth_0.md).
+Directional.
+
+| planner | random | u_trap | narrow_gap | office | warehouse | forest | maze | glass_office | pooled reached % [95 % CI] | pooled collision % [95 % CI] |
+|---|---|---|---|---|---|---|---|---|---|---|
+| astar_unknown | 100 / 0 | 100 / 0 | 33 / 33 | 67 / 0 | 83 / 17 | 100 / 0 | 100 / 0 | 17 / 83 | 75 [61, 85] | 17 [9, 30] |
+| astar_unknown_f2 | 100 / 0 | 100 / 0 | 0 / 0 | 0 / 0 | 17 / 17 | 100 / 0 | 17 / 0 | 0 / 0 | 42 [29, 56] | 2 [0, 11] |
+| dstar_lite | 100 / 0 | 100 / 0 | 67 / 17 | 67 / 0 | 83 / 0 | 100 / 0 | 83 / 0 | 33 / 67 | 79 [66, 88] | 10 [5, 22] |
+| dwa_mem | 67 / 17 | 0 / 0 | 17 / 0 | 0 / 0 | 0 / 0 | 100 / 0 | 0 / 0 | 17 / 0 | 25 [15, 39] | 2 [0, 11] |
+| mppi_astar | 100 / 0 | 100 / 0 | 83 / 0 | 50 / 50 | 50 / 50 | 100 / 0 | 83 / 17 | 17 / 83 | 73 [59, 83] | 25 [15, 39] |
+
+The same five planners on the same six layouts, pooled over 8 families (48 runs, from
+[results/matrix_depth_0.compare.md](results/matrix_depth_0.compare.md)):
+
+| planner | ideal (72 rays, 360 deg, 6 m) | depth_cam_87 | crazyflie (4 beams, 3 m) |
+|---|---|---|---|
+| astar_unknown | 96 [86, 99] / 0 [0, 7] | 75 [61, 85] / 17 [9, 30] | 44 [31, 58] / 31 [20, 45] |
+| astar_unknown_f2 | 31 [20, 45] / 0 [0, 7] | 42 [29, 56] / 2 [0, 11] | 52 [38, 66] / 8 [3, 20] |
+| dstar_lite | 92 [80, 97] / 0 [0, 7] | 79 [66, 88] / 10 [5, 22] | 50 [36, 64] / 25 [15, 39] |
+| dwa_mem | 29 [18, 43] / 0 [0, 7] | 25 [15, 39] / 2 [0, 11] | 17 [9, 30] / 6 [2, 17] |
+| mppi_astar | 96 [86, 99] / 0 [0, 7] | 73 [59, 83] / 25 [15, 39] | 33 [22, 47] / 65 [50, 77] |
+
+Reading (all synthetic, directional):
+
+- **The depth camera sits between the two old columns.** Best pooled row: `dstar_lite` 79 % reached,
+  10 % collision; `astar_unknown` 75 / 17 and `mppi_astar` 73 / 25 overlap it. On ideal the best rows
+  reach 92-96 % with no collision; on crazyflie the best reach 44-52 %.
+- **Glass is the main loss.** Glass is invisible to the depth preset, so glass_office collides in
+  67-83 % for the three map-based rows. 13 of the 25 collisions of those rows hit glass (outcome mix
+  in the compare file).
+- **`mppi_astar` is not the ideal-sensor winner here.** It collides in 50 % on office and warehouse;
+  `dstar_lite` has 0 % there. The cause (87 deg view vs MPPI rollouts to the side) was not traced.
+- **F2 freezes as on ideal.** `astar_unknown_f2` ends stuck in 27 of 48 runs (0 % reached on
+  narrow_gap, office, glass_office) with 1 collision.
+- **`dwa_mem` stays a clutter-only planner:** 100 % in forest, 0 % in u_trap, office, warehouse, maze.
+
+Not verified: the run used Python 3.11.15 and numpy 2.4.6 (matrix_0 used 3.12.10 and 2.5.4); no
+parity check of this environment against matrix_0 was run, to stay inside the 240-run budget.
+Proposed cheat-sheet column and decoder sentence: [INTEGRATION_depth.md](INTEGRATION_depth.md).
+
 ## Replays
 
 `export_replays.py` flies layout 0 of each family again for every planner (crazyflie for
