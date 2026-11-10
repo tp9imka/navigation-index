@@ -365,10 +365,12 @@ def build():
     minimal_reqs = {"mavlink-to-tak-cot", "gnss-ins-ekf-outage", "gnss-interference-monitor"}
     for req in sorted(glob.glob(os.path.join(ROOT, "samples", "*", "requirements*.txt"))):
         sample = os.path.basename(os.path.dirname(req))
+        # requirements-image.txt => pip:<sample>-image, so extra sets never reuse the sample's id
+        extra = os.path.basename(req)[len("requirements"):-len(".txt")].lstrip("-_")
         reqs, vcs = parse_requirements(req)
         if not reqs and not vcs:
             continue
-        items.append(dict(id="pip:" + sample, type="pip", tier="minimal" if sample in minimal_reqs else "standard",
+        items.append(dict(id="pip:" + sample + ("-" + extra if extra else ""), type="pip", tier="minimal" if sample in minimal_reqs else "standard",
                           license="per package (see PyPI metadata)", source=rel(req), requirements=reqs, vcs=vcs,
                           size=None, size_complete=False))
     card_pip, card_pip_src = [], []

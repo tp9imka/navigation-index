@@ -100,10 +100,10 @@ class ManifestTests(unittest.TestCase):
 
     def test_sample_requirements_all_present(self):
         import glob
-        samples = {os.path.basename(os.path.dirname(p)) for p in glob.glob(os.path.join(bm.ROOT, "samples", "*", "requirements*.txt"))
-                   if any(bm.parse_requirements(p))}
-        got = {it["id"][4:] for it in self.built["items"] if it["type"] == "pip"} - {"integration-cards"}
-        self.assertEqual(samples, got)
+        files = {os.path.relpath(p, bm.ROOT) for p in glob.glob(os.path.join(bm.ROOT, "samples", "*", "requirements*.txt"))
+                 if any(bm.parse_requirements(p))}
+        pips = [it for it in self.built["items"] if it["type"] == "pip" and it["id"] != "pip:integration-cards"]
+        self.assertEqual(files, {it["source"] for it in pips})
 
     def test_profiles_nest(self):
         sel = {p: {i["id"] for i in prep.select(self.built, p, None, None)} for p in bm.TIERS}
