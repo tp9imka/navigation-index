@@ -6,7 +6,7 @@ GNSS-resilience brief: start at [story-bank.md](story-bank.md).
 
 Companion to [pitch-deck-outline.md](../pitch-deck-outline.md) (the 9-slide version mapped to
 judging criteria), [demo-script.md](../demo-script.md) and
-[demo-script-close-area.md](../demo-script-close-area.md) (minute-by-minute live demos). This kit
+[demo-script-close-area.md](../demo-script-close-area.md) (2-minute live demo of the toolkit: room => Solver => scored flight, H1 appendix for VIO loss). This kit
 adds the spoken structure, ready hooks tied to measured numbers, a short deck, judge-question
 prep and a one-pager.
 
