@@ -17,7 +17,7 @@ vehicle, range sensor and VIO. N seeds on one map is a small sample.
 | Sweep | [sweep.js](sweep.js) | Planners (from the worker's `ready` env.planners, all checked, playground labels), sensor presets ideal, crazyflie, depth_cam_87 and lidar_2d, **Your drone** (vehicle, sensor or Custom, yaw; below), VIO fault (truth only, or truth + one of none / jump / bias / dropout), seeds 0..N-1 (default 5), **Jitter A and B per seed** (default on, radius 0.25 / 0.5 / 1.0 m, default 0.5 m), **Run time limit** (Auto by map family, 60, 120 or 180 s). Shows the run count, a time estimate and the limit the map gets |
 | Engine | [pool.js](pool.js) | K = min(4, `navigator.hardwareConcurrency` - 1), at least 1, ES-module workers of [../playground/worker.js](../playground/worker.js), unchanged. Each loads Pyodide once. One FIFO queue. Cancel terminates the pool |
 | Race | [solver.js](solver.js) | All finished trajectories on one canvas, one colour per planner, legend with live counters. **Animate race** replays one variation + seed in sim time, with a timeline slider |
-| Result | [sweep.js](sweep.js), [solver.js](solver.js) | Ranking, headline, planner x variation matrix, cell details, CSV / JSON export, share link |
+| Result | [sweep.js](sweep.js), [solver.js](solver.js) | Ranking, headline, planner x variation matrix, cell details, CSV / JSON export, share link, **Recommend** ([recommend.js](recommend.js), section Recommend) |
 
 Details:
 
@@ -227,6 +227,66 @@ shared host, load average 45.0 at the start). Input type: synthetic.
 - Share link round trip (no sweep after the reload): radius 0.25, v_max 1.5, Custom 24 beams 120 deg 4 m and
   yaw look_where_you_go were restored, and the panel opened.
 - No console errors or warnings.
+
+## Recommend (loop-80)
+
+**Recommend** (Result section, next to Export JSON) downloads `recommend.md` and `recommend.json`: the
+sweep turned into something to paste into the team repo and the pitch. Logic in
+[recommend.js](recommend.js) (pure, unit tested), input = the same doc as Export JSON plus
+[../playground/data/advisor.json](../playground/data/advisor.json).
+
+| Part | What it says |
+|---|---|
+| Pick | Headline winner (or the only planner run) with the runner-up row; on "No clear winner" the tied set = every planner whose 95 % Wilson interval overlaps the best one's; on "No planner reached B" every row plus up to 5 "what to try next" items (time limit if runs timed out, Thorough, the benchmark's best for the map family and whether it was in the sweep, a map check when no route is wide enough). Rows: reached, interval, n, n distinct, median time to B, min clearance, collisions |
+| Fly it | `make first-flight PLANNER=bench:<id> WORLD=<file.json> ARM=<F0\|F2>` for templates/flight-repo ([section "Fly what the Solver picks"](../../templates/flight-repo/README.md)). The id is the benchmark id (`advisor.json` planners, e.g. Solver `apf` => `bench:apf_escape`). On "none" the command flies the benchmark's best map-free planner for the family, marked untested on this map |
+| ARM | F2 by default. F0, with a warning (no safety filter), when the narrowest passage is below 1.4 m: F2 holds the centre 0.7 m (eps) from every return ([flight-repo first_flight_bench.txt](../../templates/flight-repo/results/first_flight_bench.txt): narrow_gap_0, F2 stuck, F0 reached) |
+| World file | A preset => `../../site/playground/presets/<name>.json` (relative to templates/flight-repo). A custom world => `my_world.json`, with a one-line python command that saves it from `recommend.json` (the world is inline there) |
+| What flew | Vehicle, sensors, variations, yaw asked and reported, jitter, run time limit, seeds, run count; the synthetic caveat; and what the command flies instead (run.DEFAULTS vehicle and ideal sensor, truth pose, seed 0, exact A and B) |
+| Benchmark | The pick's reached % / collision % per family, ideal and crazyflie, from advisor.json (matrix_0, 20 layouts per family, seed 0, true pose); on a tie also each tied planner on this map's family |
+
+Narrowest passage: 2 x the bottleneck clearance of the best route A=>B on a 0.05 m ESDF grid of the world
+(`narrowestPassage`: clearance at every cell centre, maximin Dijkstra, cells within 0.7 m of A count as
+free, goal = any cell within 0.2 m of B). This is computed from the world, not from a run. The cheaper
+proxy (2 x the winning runs' min clearance) was rejected: min clearance is the closest approach to any
+surface, so a planner cutting a corner in open space reads narrow. In
+[results/quick_random_0.json](results/quick_random_0.json) D* Lite's 0.583 m gives 1.17 m (=> F0) on a map
+whose best route never narrows below 3.60 m. Measured on the presets (node, 46-289 ms each): narrow_gap_0
+0.72 m (the gap from the two wall boxes is 0.764 m; the grid under-reads by 0.046 m), office_0 0.90 m,
+glass_office_0 0.82 m => F0; random_0 3.60 m, u_trap_0 3.15 m, forest_0 1.78 m, maze_0 1.55 m,
+warehouse_0 1.45 m => F2. warehouse_0 is 0.05 m above the threshold, inside the grid error.
+
+### Result: Quick sweeps on narrow_gap_0 and random_0, then the flight
+
+`node site/solver/results/measure_recommend.mjs` (copy of measure_solver.mjs, headless Chrome 140,
+4 workers, 18 planners x 3 seeds = 54 runs per map, jitter 0.5 m, ideal, truth pose, load average about 23
+on 16 cores; [results/recommend_check.json](results/recommend_check.json)). Synthetic.
+
+| Map | Sweep | Headline | Pick | Narrowest passage | ARM | File |
+|---|---|---|---|---|---|---|
+| narrow_gap_0 | 38.5 s | No clear winner: MPPI on the unknown-map A* path and MPPI, goal only | tied set of 18 (14 at 3/3, 4 at 0/3), first `mppi_astar` 3/3, 44-100 %, median 21.22 s | 0.72 m | F0 + warning | [recommend_narrow_gap_0.md](results/recommend_narrow_gap_0.md), [.json](results/recommend_narrow_gap_0.json), sweep [quick_narrow_gap_0_loop80.json](results/quick_narrow_gap_0_loop80.json) |
+| random_0 | 28.9 s | No clear winner: Theta* (any-angle), known map and Lazy Theta*, known map | tied set of 18 (17 at 3/3, `straight` 0/3), first `thetastar_known` 3/3, 44-100 %, median 16.82 s | 3.60 m | F2 | [recommend_random_0.md](results/recommend_random_0.md), [.json](results/recommend_random_0.json), sweep [quick_random_0_loop80.json](results/quick_random_0_loop80.json) |
+
+With 3 seeds, 3/3 (44-100 %) overlaps 0/3 (0-56 %), so the tied set is every planner run: Quick cannot
+separate them. Read the benchmark rows below the table (e.g. `mppi` is 25 % reached on narrow_gap in
+the benchmark, ideal sensor, vs 95 % for `mppi_astar`).
+
+The narrow_gap_0 command, run once in templates/flight-repo (its `./.venv`, built by this make, uv
+CPython 3.11.15, numpy 2.4.6, scipy 1.17.1; `OUT=` pointed the log to /tmp so nothing was added under
+templates/), from [results/recommend_narrow_gap_0_flight.txt](results/recommend_narrow_gap_0_flight.txt):
+
+```
+score input=synthetic adapter=world:../../site/playground/presets/narrow_gap_0.json fault=truth planner=bench:mppi_astar safety=arm:F0 reached=True final_dist_m=0.178 t_s=23.26 collided=False min_clearance_m=0.258 max_pose_error_m=0.000 ticks=466 intervened=0 keepalive=29 planner_errors=0 outcome=arrived modes=arrive_dwell:20,arrived:1,nominal:445 health=ok:466 log=/tmp/loop80_flight/first_flight_bench_mppi_astar_narrow_gap_0.jsonl
+```
+
+score_log.py: reached, 21.76 s to goal, min clearance 0.2579 m at (10.443, 7.182), in the gap. The
+Solver's seed 0..2 runs gave a 21.22 s median and 0.261 m min clearance (10 Hz planner in the worker,
+jittered A and B on seeds 1-2). keepalive=29: 29 ticks reused the previous setpoint under the 30 ms
+planner budget on a loaded machine, so this run end is wall-clock dependent.
+
+Not verified: the button itself was not clicked (the script calls `SOLVER.recommend()`, the function
+behind it; two downloads from one click may make Chrome ask to allow multiple downloads); the "none"
+and "winner" texts ran in unit tests only, not in a browser; the random_0 command and ARM=F2 on
+narrow_gap_0 were not flown here; the custom-world `my_world.json` command was not run.
 
 ## Limits and not verified
 

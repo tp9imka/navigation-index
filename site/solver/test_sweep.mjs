@@ -2,6 +2,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import * as S from "./sweep.js";
+import * as R from "./recommend.js";
 
 const near = (a, b, tol = 5e-4) => assert.ok(Math.abs(a - b) <= tol, `${a} != ${b}`);
 const rec = (planner, outcome, extra = {}) => ({ planner, preset: "ideal", fault: "truth", seed: 0, outcome,
@@ -351,4 +352,75 @@ test("estimate: prior scaled by beams / 72 (floor 0.25), measured times unscaled
   near(S.estimateSeconds([{ planner: "dwa", beams: 4 }], {}, 1).s, p * 0.25);
   near(S.estimateSeconds([{ planner: "dwa", beams: 72 }], {}, 1).s, p);
   assert.equal(S.estimateSeconds([{ planner: "dwa", beams: 360 }], { dwa: 2 }, 1).s, 2);
+});
+
+// ------------------------------------------------------------ Recommend (recommend.js)
+const ADV = JSON.parse(fs.readFileSync(new URL("../playground/data/advisor.json", import.meta.url)));
+// 20 x 20 m open area; WALL_GAP(g) adds a wall across y = 10 with one gap g m wide at x = 10.
+const OPEN = { schema: "close-area-world/1", family: "random", bounds: [-2, -2, 18, 18], a: [0, 0], b: [15, 15], radius: 0.15, obstacles: [] };
+const WALL_GAP = g => ({ ...OPEN, family: "narrow_gap", obstacles: [
+  { type: "box", cx: (-2 + 10 - g / 2) / 2, cy: 10, hx: (10 - g / 2 + 2) / 2, hy: 0.15 },
+  { type: "box", cx: (10 + g / 2 + 18) / 2, cy: 10, hx: (18 - 10 - g / 2) / 2, hy: 0.15 }] });
+const recDoc = (records, world = OPEN, name = "random_0") => {
+  const planners = [...new Set(records.map(r => r.planner))];
+  return S.exportDoc({ spec: S.normSpec({ planners, presets: ["ideal"], seeds: 3 }), world, worldName: name, records });
+};
+
+test("recommend: winner text, both intervals, command and benchmark rows", () => {
+  const { md, json } = R.recommend(recDoc([...many("dstar_lite", 30, 30), ...many("bug2", 3, 30)]), ADV);
+  assert.equal(json.kind, "winner");
+  assert.deepEqual(json.pick.map(r => r.planner), ["dstar_lite", "bug2"]);
+  assert.match(md, /^## Pick: D\* Lite, unknown map \(geofenced\) \(`bench:dstar_lite`\)$/m);
+  assert.match(md, /Its 95 % Wilson interval does not overlap the runner-up's/);
+  assert.match(md, /\| D\* Lite, unknown map \(geofenced\) \| dstar_lite \| 30\/30 \| 89 %-100 % \| 30 \| 30 \| 21\.45 \| 0\.400 \| 0 \|/);
+  assert.match(md, /\| Bug2 \| bug2 \| 3\/30 \| 3 %-26 % \|/);
+  assert.equal(json.fly.command, "make first-flight PLANNER=bench:dstar_lite WORLD=../../site/playground/presets/random_0.json ARM=F2");
+  const nar = json.benchmark.rows.find(r => r.family === "narrow_gap");
+  assert.deepEqual([nar.ideal.reached_pct, nar.crazyflie.reached_pct], [85, 15]);   // advisor.json cells
+  assert.match(md, /Synthetic 2\.5D simulation, scored on truth, not a flight result; 3 seeds on one map is a small sample/);
+  assert.ok(!/[\u2013\u2014]/.test(md), "no en or em dashes");
+});
+
+test("recommend: tied set = every planner whose interval overlaps the best one", () => {
+  const recs = [...many("astar_known", 3, 3), ...many("apf", 2, 3), ...many("straight", 0, 3), ...many("bug2", 0, 30)];
+  const { md, json } = R.recommend(recDoc(recs), ADV);
+  assert.equal(json.kind, "tie");
+  // 3/3 = 44-100 %, 2/3 = 21-94 %, 0/3 = 0-56 % overlap; 0/30 = 0-11 % does not
+  assert.deepEqual(json.pick.map(r => r.planner), ["astar_known", "apf", "straight"]);
+  assert.match(md, /^## Pick: no clear winner, tied set of 3$/m);
+  assert.match(md, /\| APF \+ wall follow \| apf_escape \| 2\/3 \|/);
+  assert.equal(json.fly.planner_bench_id, "astar_known");
+  assert.deepEqual(json.benchmark.tied_family.map(t => t.planner), ["astar_known", "apf_escape", "straight"]);
+});
+
+test("recommend: no planner reached B => what to try next, benchmark pick", () => {
+  const recs = [...many("straight", 0, 3), ...many("bug2", 0, 3).map(r => ({ ...r, outcome: "timeout" }))];
+  const { md, json } = R.recommend(recDoc(recs, WALL_GAP(0.8), "narrow_gap_0"), ADV);
+  assert.equal(json.kind, "none");
+  assert.match(md, /^## Pick: no planner reached B$/m);
+  assert.match(md, /What to try next:/);
+  assert.match(md, /3 runs timed out: raise the Run time limit to 120 or 180 s\./);
+  assert.match(md, /Run Thorough/);
+  const best = ADV.recommend.narrow_gap.ideal.no_map.winner;
+  assert.equal(json.fly.planner_bench_id, best);
+  assert.match(md, /untested on this map/);
+});
+
+test("recommend: ARM F0 with a warning below 1.4 m, F2 on a wide map", () => {
+  const narrow = R.narrowestPassage(WALL_GAP(0.8)), wide = R.narrowestPassage(WALL_GAP(2.4)), open = R.narrowestPassage(OPEN);
+  assert.ok(narrow.passage_m > 0.7 && narrow.passage_m <= 0.8, `${narrow.passage_m}`);
+  assert.ok(wide.passage_m > 2.3 && wide.passage_m <= 2.4, `${wide.passage_m}`);
+  assert.ok(open.passage_m > 3.9, `${open.passage_m}`);      // A is 2 m from the bounds; within 0.7 m of A counts free
+  assert.equal(R.chooseArm(narrow).arm, "F0");
+  assert.match(R.chooseArm(narrow).warning, /NO safety filter/);
+  assert.equal(R.chooseArm(wide).arm, "F2");
+  assert.equal(R.chooseArm(wide).warning, null);
+  const { md, json } = R.recommend(recDoc(many("dstar_lite", 3, 3), WALL_GAP(0.8), "narrow_gap_0"), ADV);
+  assert.equal(json.fly.command, "make first-flight PLANNER=bench:dstar_lite WORLD=../../site/playground/presets/narrow_gap_0.json ARM=F0");
+  assert.match(md, /> WARNING: ARM=F0 flies with NO safety filter/);
+  // custom world: inline in recommend.json, saved as my_world.json
+  const c = R.recommend(recDoc(many("dstar_lite", 3, 3), WALL_GAP(2.4), null), ADV).json;
+  assert.equal(c.fly.command, "make first-flight PLANNER=bench:dstar_lite WORLD=my_world.json ARM=F2");
+  assert.equal(c.world_file.inline, true);
+  assert.equal(c.world.obstacles.length, 2);
 });

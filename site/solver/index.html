@@ -13,7 +13,7 @@
 <script>
   try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
-<script type="module" src="solver.js?v=20261110d"></script>
+<script type="module" src="solver.js?v=20261110e"></script>
 </head>
 <body>
 <header class="top">
@@ -147,6 +147,7 @@
   <div class="row">
     <button class="btn sm" id="csvBtn" disabled>Export CSV</button>
     <button class="btn sm" id="jsonBtn" disabled>Export JSON</button>
+    <button class="btn sm" id="recBtn" disabled title="recommend.md + recommend.json: the pick, the templates/flight-repo command to fly it, what the sweep flew and the benchmark rows">Recommend</button>
     <button class="btn sm" id="shareBtn">Copy share link</button>
     <span class="small" id="shareMsg" aria-live="polite"></span>
   </div>

@@ -1,0 +1,1046 @@
+{
+ "schema": "navidx-solver-recommend/1",
+ "input": "synthetic",
+ "caveat": "synthetic 2.5D simulation, scored on truth, not a flight result; 3 seeds on one map is a small sample",
+ "world_name": "narrow_gap_0",
+ "family": "narrow_gap",
+ "headline": {
+  "kind": "tie",
+  "planner": null,
+  "planners": [
+   "mppi_astar",
+   "mppi"
+  ],
+  "text": "No clear winner: MPPI on the unknown-map A* path and MPPI, goal only (no global plan) are within noise on this map (n=3)."
+ },
+ "kind": "tie",
+ "pick": [
+  {
+   "planner": "mppi_astar",
+   "label": "MPPI on the unknown-map A* path",
+   "bench_id": "mppi_astar",
+   "reached": 3,
+   "n": 3,
+   "n_distinct": 3,
+   "reached_distinct": 3,
+   "wilson_95": {
+    "lo": 0.43849391955098227,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 21.22,
+   "min_clearance_m": 0.2608,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "mppi",
+   "label": "MPPI, goal only (no global plan)",
+   "bench_id": "mppi",
+   "reached": 3,
+   "n": 3,
+   "n_distinct": 3,
+   "reached_distinct": 3,
+   "wilson_95": {
+    "lo": 0.43849391955098227,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 21.94,
+   "min_clearance_m": 0.2131,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "lazy_thetastar_known",
+   "label": "Lazy Theta*, known map",
+   "bench_id": "lazy_thetastar_known",
+   "reached": 3,
+   "n": 3,
+   "n_distinct": 3,
+   "reached_distinct": 3,
+   "wilson_95": {
+    "lo": 0.43849391955098227,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 22.22,
+   "min_clearance_m": 0.3654,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "thetastar_known",
+   "label": "Theta* (any-angle), known map",
+   "bench_id": "thetastar_known",
+   "reached": 3,
+   "n": 3,
+   "n_distinct": 3,
+   "reached_distinct": 3,
+   "wilson_95": {
+    "lo": 0.43849391955098227,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 22.28,
+   "min_clearance_m": 0.3581,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "label": "Lazy Theta*, unknown map (geofenced)",
+   "bench_id": "lazy_thetastar_unknown",
+   "reached": 3,
+   "n": 3,
+   "n_distinct": 3,
+   "reached_distinct": 3,
+   "wilson_95": {
+    "lo": 0.43849391955098227,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 22.52,
+   "min_clearance_m": 0.3075,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "hybrid_astar",
+   "label": "Hybrid A*, unknown map (geofenced)",
+   "bench_id": "hybrid_astar",
+   "reached": 3,
+   "n": 3,
+   "n_distinct": 3,
+   "reached_distinct": 3,
+   "wilson_95": {
+    "lo": 0.43849391955098227,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 23.68,
+   "min_clearance_m": 0.3068,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "dstar_lite",
+   "label": "D* Lite, unknown map (geofenced)",
+   "bench_id": "dstar_lite",
+   "reached": 3,
+   "n": 3,
+   "n_distinct": 3,
+   "reached_distinct": 3,
+   "wilson_95": {
+    "lo": 0.43849391955098227,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 24.14,
+   "min_clearance_m": 0.3227,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "astar_unknown",
+   "label": "A* + ESDF, unknown map",
+   "bench_id": "astar_unknown",
+   "reached": 3,
+   "n": 3,
+   "n_distinct": 3,
+   "reached_distinct": 3,
+   "wilson_95": {
+    "lo": 0.43849391955098227,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 24.4,
+   "min_clearance_m": 0.301,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "astar_known",
+   "label": "A* + ESDF, known map",
+   "bench_id": "astar_known",
+   "reached": 3,
+   "n": 3,
+   "n_distinct": 3,
+   "reached_distinct": 3,
+   "wilson_95": {
+    "lo": 0.43849391955098227,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 24.62,
+   "min_clearance_m": 0.3208,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "vfh_plus",
+   "label": "VFH+",
+   "bench_id": "vfh_plus",
+   "reached": 3,
+   "n": 3,
+   "n_distinct": 3,
+   "reached_distinct": 3,
+   "wilson_95": {
+    "lo": 0.43849391955098227,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 27.2,
+   "min_clearance_m": 0.2263,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "tangent_bug",
+   "label": "TangentBug",
+   "bench_id": "tangent_bug",
+   "reached": 3,
+   "n": 3,
+   "n_distinct": 3,
+   "reached_distinct": 3,
+   "wilson_95": {
+    "lo": 0.43849391955098227,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 27.34,
+   "min_clearance_m": 0.2978,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "informed_rrt_star",
+   "label": "Informed RRT* 5000, known map",
+   "bench_id": "informed_rrt_star",
+   "reached": 3,
+   "n": 3,
+   "n_distinct": 3,
+   "reached_distinct": 3,
+   "wilson_95": {
+    "lo": 0.43849391955098227,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 28.46,
+   "min_clearance_m": 0.2639,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "dwa_mem",
+   "label": "DWA + 3 s scan memory",
+   "bench_id": "dwa_mem",
+   "reached": 3,
+   "n": 3,
+   "n_distinct": 3,
+   "reached_distinct": 3,
+   "wilson_95": {
+    "lo": 0.43849391955098227,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 47.14,
+   "min_clearance_m": 0.2346,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "dwa",
+   "label": "DWA (dynamic window)",
+   "bench_id": "dwa",
+   "reached": 3,
+   "n": 3,
+   "n_distinct": 3,
+   "reached_distinct": 3,
+   "wilson_95": {
+    "lo": 0.43849391955098227,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 51.44,
+   "min_clearance_m": 0.2595,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "apf",
+   "label": "APF + wall follow",
+   "bench_id": "apf_escape",
+   "reached": 0,
+   "n": 3,
+   "n_distinct": 3,
+   "reached_distinct": 0,
+   "wilson_95": {
+    "lo": 0,
+    "hi": 0.5615060804490177,
+    "p": 0
+   },
+   "median_time_s": null,
+   "min_clearance_m": 0.6076,
+   "collisions": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "bug2",
+   "label": "Bug2",
+   "bench_id": "bug2",
+   "reached": 0,
+   "n": 3,
+   "n_distinct": 3,
+   "reached_distinct": 0,
+   "wilson_95": {
+    "lo": 0,
+    "hi": 0.5615060804490177,
+    "p": 0
+   },
+   "median_time_s": null,
+   "min_clearance_m": 0.4821,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 3,
+   "error": 0
+  },
+  {
+   "planner": "freest_beam",
+   "label": "freest beam (reactive)",
+   "bench_id": "freest_beam",
+   "reached": 0,
+   "n": 3,
+   "n_distinct": 3,
+   "reached_distinct": 0,
+   "wilson_95": {
+    "lo": 0,
+    "hi": 0.5615060804490177,
+    "p": 0
+   },
+   "median_time_s": null,
+   "min_clearance_m": 0.3302,
+   "collisions": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0
+  },
+  {
+   "planner": "straight",
+   "label": "straight line to B",
+   "bench_id": "straight",
+   "reached": 0,
+   "n": 3,
+   "n_distinct": 3,
+   "reached_distinct": 0,
+   "wilson_95": {
+    "lo": 0,
+    "hi": 0.5615060804490177,
+    "p": 0
+   },
+   "median_time_s": null,
+   "min_clearance_m": 0.3746,
+   "collisions": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0
+  }
+ ],
+ "fly": {
+  "planner_bench_id": "mppi_astar",
+  "command": "make first-flight PLANNER=bench:mppi_astar WORLD=../../site/playground/presets/narrow_gap_0.json ARM=F0",
+  "arm": "F0",
+  "arm_warning": "WARNING: ARM=F0 flies with NO safety filter. The narrowest passage on the best route A=>B is about 0.72 m (at 10.603, 7.548), below 1.4 m: F2 keeps the centre 0.7 m from every return and cannot pass (flight-repo results/first_flight_bench.txt: narrow_gap_0, F2 stuck, F0 reached). Retry F2 with a smaller eps before a real flight.",
+  "note": null,
+  "cwd": "templates/flight-repo",
+  "out": "results/first_flight_bench_mppi_astar_narrow_gap_0",
+  "flies": {
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": "ideal: 72 beams, 360 deg, 6 m, noise 0.02 m, dropout 0.02 (run.DEFAULTS)",
+   "pose": "truth (no FAULT=)",
+   "seed": 0,
+   "loop_hz": 20,
+   "ab": "the world file's exact A and B"
+  }
+ },
+ "passage": {
+  "clearance_m": 0.3589,
+  "passage_m": 0.7178,
+  "at": [
+   10.603,
+   7.548
+  ],
+  "grid_m": 0.05,
+  "method": "Narrowest passage = 2 x the bottleneck clearance of the best route A=>B on a 0.05 m ESDF grid of the world (maximin search, cells within 0.7 m of A free, goal = within 0.2 m of B). Chosen over 2 x the winner's min clearance because a run's min clearance is its closest approach to any surface (a corner it cut), not the width it had to pass: in site/solver/results/quick_random_0.json D* Lite's 0.583 m gives 1.17 m (=> F0) on a map whose best route never narrows below 3.6 m. Grid error up to about 0.05 m.",
+  "narrow_below_m": 1.4,
+  "winner_min_clearance_x2_m": 0.5216
+ },
+ "world_file": {
+  "path": "../../site/playground/presets/narrow_gap_0.json",
+  "inline": false,
+  "how": "Preset narrow_gap_0: the hub ships it at site/playground/presets/narrow_gap_0.json (the path below is relative to templates/flight-repo). The same world is inline in recommend.json (\"world\")."
+ },
+ "flown": {
+  "vehicle": {
+   "radius_m": 0.15,
+   "v_max": 2,
+   "a_max": 3,
+   "tau": 0.15
+  },
+  "vehicle_default": true,
+  "sensors": [
+   {
+    "preset": "ideal",
+    "label": "ideal",
+    "spec": {
+     "beams": 72,
+     "fov_deg": 360,
+     "max_range_m": 6,
+     "min_range_m": 0,
+     "noise_sigma_m": 0.02,
+     "cone_deg": 0,
+     "dropout": 0.02
+    }
+   }
+  ],
+  "variations": [
+   "ideal / truth pose"
+  ],
+  "yaw": "fixed",
+  "yaw_policy_flown": [
+   "off"
+  ],
+  "jitter_m": 0.5,
+  "time_limit": "Run time limit: 60 s of sim time (Auto: narrow_gap family, default).",
+  "seeds": 3,
+  "runs": 54,
+  "cancelled": false,
+  "finished": "2026-11-10T09:27:55.540Z"
+ },
+ "next_steps": [],
+ "benchmark": {
+  "source": "site/playground/data/advisor.json",
+  "from": "samples/close-area-benchmark/results/matrix_0.json",
+  "run": {
+   "command": "python bench.py --layouts 20 --seed 0 --workers 14 --parity",
+   "layouts": 20,
+   "seed": 0,
+   "date": "2026-11-10",
+   "pose": "true pose (no VIO, no faults)"
+  },
+  "planner": "mppi_astar",
+  "rows": [
+   {
+    "family": "random",
+    "label": "Random boxes + cylinders",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 20.24
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 80,
+     "collision_pct": 20,
+     "median_time_s": 20.37
+    }
+   },
+   {
+    "family": "u_trap",
+    "label": "U trap",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 21.93
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 40,
+     "collision_pct": 60,
+     "median_time_s": 27.13
+    }
+   },
+   {
+    "family": "narrow_gap",
+    "label": "Narrow gap",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 95,
+     "collision_pct": 0,
+     "median_time_s": 33.92
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 15,
+     "collision_pct": 85,
+     "median_time_s": 21.34
+    }
+   },
+   {
+    "family": "office",
+    "label": "Office (rooms + corridor)",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 11.35
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 10,
+     "collision_pct": 85,
+     "median_time_s": 8.1
+    }
+   },
+   {
+    "family": "warehouse",
+    "label": "Warehouse (shelf aisles)",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 65,
+     "collision_pct": 0,
+     "median_time_s": 24.3
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 0,
+     "collision_pct": 100,
+     "median_time_s": null
+    }
+   },
+   {
+    "family": "forest",
+    "label": "Forest (40-90 poles)",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 20.4
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 21.02
+    }
+   },
+   {
+    "family": "maze",
+    "label": "Maze (10 x 10 cells)",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 95,
+     "collision_pct": 0,
+     "median_time_s": 33.62
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 0,
+     "collision_pct": 100,
+     "median_time_s": null
+    }
+   },
+   {
+    "family": "glass_office",
+    "label": "Glass office (glass panels)",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 95,
+     "collision_pct": 0,
+     "median_time_s": 15.06
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 5,
+     "collision_pct": 85,
+     "median_time_s": 8.26
+    }
+   }
+  ],
+  "tied_family": [
+   {
+    "planner": "mppi_astar",
+    "rows": [
+     {
+      "family": "narrow_gap",
+      "label": "Narrow gap",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 95,
+       "collision_pct": 0,
+       "median_time_s": 33.92
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 15,
+       "collision_pct": 85,
+       "median_time_s": 21.34
+      }
+     }
+    ]
+   },
+   {
+    "planner": "mppi",
+    "rows": [
+     {
+      "family": "narrow_gap",
+      "label": "Narrow gap",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 25,
+       "collision_pct": 0,
+       "median_time_s": 22.76
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 0,
+       "collision_pct": 100,
+       "median_time_s": null
+      }
+     }
+    ]
+   },
+   {
+    "planner": "lazy_thetastar_known",
+    "rows": [
+     {
+      "family": "narrow_gap",
+      "label": "Narrow gap",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 22.36
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 22.36
+      }
+     }
+    ]
+   },
+   {
+    "planner": "thetastar_known",
+    "rows": [
+     {
+      "family": "narrow_gap",
+      "label": "Narrow gap",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 22.36
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 22.36
+      }
+     }
+    ]
+   },
+   {
+    "planner": "lazy_thetastar_unknown",
+    "rows": [
+     {
+      "family": "narrow_gap",
+      "label": "Narrow gap",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 90,
+       "collision_pct": 0,
+       "median_time_s": 29.43
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 15,
+       "collision_pct": 25,
+       "median_time_s": 52.28
+      }
+     }
+    ]
+   },
+   {
+    "planner": "hybrid_astar",
+    "rows": [
+     {
+      "family": "narrow_gap",
+      "label": "Narrow gap",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 70,
+       "collision_pct": 0,
+       "median_time_s": 32.1
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 10,
+       "collision_pct": 5,
+       "median_time_s": 37.39
+      }
+     }
+    ]
+   },
+   {
+    "planner": "dstar_lite",
+    "rows": [
+     {
+      "family": "narrow_gap",
+      "label": "Narrow gap",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 85,
+       "collision_pct": 0,
+       "median_time_s": 39.72
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 15,
+       "collision_pct": 10,
+       "median_time_s": 26.92
+      }
+     }
+    ]
+   },
+   {
+    "planner": "astar_unknown",
+    "rows": [
+     {
+      "family": "narrow_gap",
+      "label": "Narrow gap",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 90,
+       "collision_pct": 0,
+       "median_time_s": 37.51
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 25,
+       "collision_pct": 5,
+       "median_time_s": 29.6
+      }
+     }
+    ]
+   },
+   {
+    "planner": "astar_known",
+    "rows": [
+     {
+      "family": "narrow_gap",
+      "label": "Narrow gap",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 24.48
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 24.48
+      }
+     }
+    ]
+   },
+   {
+    "planner": "vfh_plus",
+    "rows": [
+     {
+      "family": "narrow_gap",
+      "label": "Narrow gap",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 50,
+       "collision_pct": 0,
+       "median_time_s": 27.58
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 5,
+       "collision_pct": 95,
+       "median_time_s": 29.24
+      }
+     }
+    ]
+   },
+   {
+    "planner": "tangent_bug",
+    "rows": [
+     {
+      "family": "narrow_gap",
+      "label": "Narrow gap",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 45,
+       "collision_pct": 0,
+       "median_time_s": 27.34
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 5,
+       "collision_pct": 10,
+       "median_time_s": 26.9
+      }
+     }
+    ]
+   },
+   {
+    "planner": "informed_rrt_star",
+    "rows": [
+     {
+      "family": "narrow_gap",
+      "label": "Narrow gap",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 28.13
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 100,
+       "collision_pct": 0,
+       "median_time_s": 28.13
+      }
+     }
+    ]
+   },
+   {
+    "planner": "dwa_mem",
+    "rows": [
+     {
+      "family": "narrow_gap",
+      "label": "Narrow gap",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 10,
+       "collision_pct": 0,
+       "median_time_s": 52.86
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 5,
+       "collision_pct": 0,
+       "median_time_s": 46.54
+      }
+     }
+    ]
+   },
+   {
+    "planner": "dwa",
+    "rows": [
+     {
+      "family": "narrow_gap",
+      "label": "Narrow gap",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 10,
+       "collision_pct": 0,
+       "median_time_s": 51.96
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 0,
+       "collision_pct": 40,
+       "median_time_s": null
+      }
+     }
+    ]
+   },
+   {
+    "planner": "apf_escape",
+    "rows": [
+     {
+      "family": "narrow_gap",
+      "label": "Narrow gap",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 0,
+       "collision_pct": 0,
+       "median_time_s": null
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 0,
+       "collision_pct": 5,
+       "median_time_s": null
+      }
+     }
+    ]
+   },
+   {
+    "planner": "bug2",
+    "rows": [
+     {
+      "family": "narrow_gap",
+      "label": "Narrow gap",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 0,
+       "collision_pct": 0,
+       "median_time_s": null
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 0,
+       "collision_pct": 0,
+       "median_time_s": null
+      }
+     }
+    ]
+   },
+   {
+    "planner": "freest_beam",
+    "rows": [
+     {
+      "family": "narrow_gap",
+      "label": "Narrow gap",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 0,
+       "collision_pct": 0,
+       "median_time_s": null
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 0,
+       "collision_pct": 0,
+       "median_time_s": null
+      }
+     }
+    ]
+   },
+   {
+    "planner": "straight",
+    "rows": [
+     {
+      "family": "narrow_gap",
+      "label": "Narrow gap",
+      "ideal": {
+       "n": 20,
+       "reached_pct": 0,
+       "collision_pct": 0,
+       "median_time_s": null
+      },
+      "crazyflie": {
+       "n": 20,
+       "reached_pct": 0,
+       "collision_pct": 70,
+       "median_time_s": null
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "sweep_source": {
+  "schema": "navidx-solver-sweep/1",
+  "started": "2026-11-10T09:27:17.005Z",
+  "finished": "2026-11-10T09:27:55.540Z"
+ },
+ "world": {
+  "schema": "close-area-world/1",
+  "frame": "local ENU m, origin at A",
+  "family": "narrow_gap",
+  "seed": 0,
+  "index": 0,
+  "bounds": [
+   -1.6225,
+   -1.4273,
+   18.3775,
+   18.5727
+  ],
+  "a": [
+   0,
+   0
+  ],
+  "b": [
+   17.087,
+   17.4565
+  ],
+  "z": 1,
+  "radius": 0.15,
+  "obstacles": [
+   {
+    "type": "box",
+    "cx": 4.2871,
+    "cy": 7.4104,
+    "hx": 5.9097,
+    "hy": 0.15,
+    "material": "matte"
+   },
+   {
+    "type": "box",
+    "cx": 14.6694,
+    "cy": 7.4104,
+    "hx": 3.708,
+    "hy": 0.15,
+    "material": "matte"
+   },
+   {
+    "type": "box",
+    "cx": 5.2377,
+    "cy": 3.9278,
+    "hx": 0.2554,
+    "hy": 0.3471,
+    "material": "matte"
+   },
+   {
+    "type": "cylinder",
+    "cx": 12.2738,
+    "cy": 13.9406,
+    "r": 0.6165,
+    "material": "matte"
+   },
+   {
+    "type": "cylinder",
+    "cx": 15.7872,
+    "cy": 11.7155,
+    "r": 0.7688,
+    "material": "matte"
+   }
+  ]
+ }
+}

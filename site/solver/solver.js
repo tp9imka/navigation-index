@@ -4,6 +4,7 @@
 // window.SOLVER is a small API for scripted checks (results/measure_solver.mjs).
 import * as SW from "./sweep.js?v=20261110d";
 import { Pool } from "./pool.js?v=20261110c";
+import * as REC from "./recommend.js?v=20261110e";
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -352,7 +353,7 @@ function clearSweep() {
   stopAnim();
   S.sweep = null; S.sel = null;
   $("#detail").hidden = true;
-  $("#csvBtn").disabled = $("#jsonBtn").disabled = true;
+  $("#csvBtn").disabled = $("#jsonBtn").disabled = $("#recBtn").disabled = true;
   renderSweep();
 }
 
@@ -420,6 +421,7 @@ function finishSweep(cancelled, why) {
   sw.why = why || null;
   setBusy(false);
   $("#csvBtn").disabled = $("#jsonBtn").disabled = !sw.done;
+  $("#recBtn").disabled = !sw.done;
   $("#animBtn").disabled = !sw.traj.length;
   updateCount();
   renderSweep();
@@ -700,6 +702,22 @@ function exportJSON() {
 $("#csvBtn").onclick = () => { if (S.sweep) download(baseName() + ".csv", SW.toCSV(S.sweep.records.filter(Boolean)), "text/csv"); };
 $("#jsonBtn").onclick = () => { const t = exportJSON(); if (t) download(baseName() + ".json", t, "application/json"); };
 
+// Recommend: recommend.md + recommend.json from the export doc and the benchmark summary (advisor.json).
+let advisorP = null;
+async function recommendNow() {
+  const t = exportJSON(); if (!t) return null;
+  advisorP = advisorP || fetch(PG + "data/advisor.json").then(r => (r.ok ? r.json() : null)).catch(() => null);
+  const adv = await advisorP;
+  const r = REC.recommend(JSON.parse(t), adv);
+  return { md: r.md, json: JSON.stringify(r.json, null, 1) + "\n", advisor: !!adv };
+}
+$("#recBtn").onclick = async () => {
+  const r = await recommendNow(); if (!r) return;
+  download("recommend.md", r.md, "text/markdown");
+  download("recommend.json", r.json, "application/json");
+  $("#shareMsg").textContent = "recommend.md and recommend.json downloaded" + (r.advisor ? "." : " (benchmark rows missing: advisor.json did not load).");
+};
+
 async function shareUrl() {
   const spec = S.env ? readSpec() : SW.normSpec(S.linkSpec || {});
   return location.origin + location.pathname + "?" + SW.specToQuery(spec, S.pristine ? S.worldName : null) + "#w=" + await SW.encodeWorld(S.doc);
@@ -747,5 +765,5 @@ async function init() {
 const started = init();
 
 window.SOLVER = { S, K, ready: readyP, started, quick, thorough, run: startSweep, cancel: () => cancelSweep("cancelled"),
-  exportJSON, csv: () => (S.sweep ? SW.toCSV(S.sweep.records.filter(Boolean)) : null), animate: startAnim, setT: setAnimT,
+  exportJSON, recommend: recommendNow, csv: () => (S.sweep ? SW.toCSV(S.sweep.records.filter(Boolean)) : null), animate: startAnim, setT: setAnimT,
   shareUrl, loadPreset, allReady: () => S.readyCount >= K };

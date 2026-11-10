@@ -1,0 +1,49 @@
+{
+ "date": "2026-11-10T09:27:09.104Z",
+ "input": "synthetic",
+ "host": "Apple M3 Max, 16 cores, load 22.9 37.6 52.6",
+ "maps": {
+  "narrow_gap_0": {
+   "page": "http://127.0.0.1:8783/site/solver/index.html?map=narrow_gap_0",
+   "python_ready_s": 4.408,
+   "world": "narrow_gap_0",
+   "sweep": {
+    "done": 54,
+    "total": 54,
+    "elapsed_s": 38.535,
+    "cancelled": false,
+    "K": 4,
+    "wall_s_from_click": 38.572
+   },
+   "button_enabled": true,
+   "advisor_loaded": true,
+   "headline": "No clear winner: MPPI on the unknown-map A* path and MPPI, goal only (no global plan) are within noise on this map (n=3).",
+   "kind": "tie",
+   "command": "make first-flight PLANNER=bench:mppi_astar WORLD=../../site/playground/presets/narrow_gap_0.json ARM=F0",
+   "arm": "F0",
+   "passage_m": 0.7178
+  },
+  "random_0": {
+   "page": "http://127.0.0.1:8783/site/solver/index.html?map=random_0",
+   "python_ready_s": 3.262,
+   "world": "random_0",
+   "sweep": {
+    "done": 54,
+    "total": 54,
+    "elapsed_s": 28.922,
+    "cancelled": false,
+    "K": 4,
+    "wall_s_from_click": 28.93
+   },
+   "button_enabled": true,
+   "advisor_loaded": true,
+   "headline": "No clear winner: Theta* (any-angle), known map and Lazy Theta*, known map are within noise on this map (n=3).",
+   "kind": "tie",
+   "command": "make first-flight PLANNER=bench:thetastar_known WORLD=../../site/playground/presets/random_0.json ARM=F2",
+   "arm": "F2",
+   "passage_m": 3.5984
+  }
+ },
+ "chrome": "Chrome/140.0.7339.208",
+ "console": []
+}

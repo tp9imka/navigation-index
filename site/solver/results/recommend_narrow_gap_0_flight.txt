@@ -1,0 +1,25 @@
+# loop-80, 2026-11-10, synthetic, macOS arm64, templates/flight-repo/.venv (uv CPython 3.11.15, numpy 2.4.6, scipy 1.17.1; built by this make, 12 wheels)
+# The command from site/solver/results/recommend_narrow_gap_0.md, run in templates/flight-repo.
+# OUT= added only so the log, plot and score JSON go to /tmp/loop80_flight/ (this job may not add files under templates/flight-repo/results/); same flight otherwise.
+# Wall 51.29 s including the venv build (time). Machine heavily loaded by other jobs.
+$ make first-flight PLANNER=bench:mppi_astar WORLD=../../site/playground/presets/narrow_gap_0.json ARM=F0 OUT=<../ x 12>/tmp/loop80_flight/first_flight_bench_mppi_astar_narrow_gap_0
+.venv/bin/python main.py --adapter world:../../site/playground/presets/narrow_gap_0.json --planner bench:mppi_astar --safety arm:F0  --arena ../../samples/close-area-arena --safety-dir ../../samples/close-area-safety-filter --bench-dir ../../samples/close-area-benchmark --log /tmp/loop80_flight/first_flight_bench_mppi_astar_narrow_gap_0.jsonl
+[bench] close-area-planner-mpc/mpc.py not loaded: No module named 'osqp'
+score input=synthetic adapter=world:../../site/playground/presets/narrow_gap_0.json fault=truth planner=bench:mppi_astar safety=arm:F0 reached=True final_dist_m=0.178 t_s=23.26 collided=False min_clearance_m=0.258 max_pose_error_m=0.000 ticks=466 intervened=0 keepalive=29 planner_errors=0 outcome=arrived modes=arrive_dwell:20,arrived:1,nominal:445 health=ok:466 log=/tmp/loop80_flight/first_flight_bench_mppi_astar_narrow_gap_0.jsonl
+.venv/bin/python ../../samples/close-area-arena/score_log.py /tmp/loop80_flight/first_flight_bench_mppi_astar_narrow_gap_0.jsonl --plot /tmp/loop80_flight/first_flight_bench_mppi_astar_narrow_gap_0.png --json /tmp/loop80_flight/first_flight_bench_mppi_astar_narrow_gap_0_score.json
+input            synthetic (positions from truth)
+outcome          reached
+reached          True
+time to goal     21.76 s   (run ends at 21.76 s, 0.294 m from B)
+min clearance    0.2579 m   at [10.443, 7.182, 11.33] (x, y, t)
+path length      25.133 m   (straight A=>B 24.427 m)
+interventions    0   fraction 0.0 of logged steps
+manual modes     0 entries
+steps            436 scored of 466, median rate 16.67 Hz
+max pose error   0.0 m (logged pose vs truth)
+wrote /tmp/loop80_flight/first_flight_bench_mppi_astar_narrow_gap_0_score.json
+wrote /tmp/loop80_flight/first_flight_bench_mppi_astar_narrow_gap_0.png
+rc=0
+
+score line (main.py, 50 Hz truth, t_s includes the 1.0 s arrival dwell):
+score input=synthetic adapter=world:../../site/playground/presets/narrow_gap_0.json fault=truth planner=bench:mppi_astar safety=arm:F0 reached=True final_dist_m=0.178 t_s=23.26 collided=False min_clearance_m=0.258 max_pose_error_m=0.000 ticks=466 intervened=0 keepalive=29 planner_errors=0 outcome=arrived modes=arrive_dwell:20,arrived:1,nominal:445 health=ok:466 log=/tmp/loop80_flight/first_flight_bench_mppi_astar_narrow_gap_0.jsonl
