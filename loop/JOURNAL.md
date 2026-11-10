@@ -126,3 +126,10 @@ Append-only. One entry per wave or land, newest at the bottom. Format:
 - 68 attempt 2 failed: kiro logged out. STOPPED: kiro-auth. Needs 'kiro-cli login', then relaunch 68 from scratchpad brief loop-68.md.
 - 68 attempt 3 failed after ~3 min: Kiro 'connection was interrupted' again, no files written. Network unstable; not retrying further until it is. STOPPED: network.
 - landed: 68 => aa1beb0 on attempt 4 (3 lost to network/auth). Specified submap arm 0-30 %; submap_fwd_ig 71/89/66/71 % with 0-6 wrong commits on crazyflie seed 2 - best 4-beam result, still FAIL vs 90 %/0. Seed 2 partly seen (6-layout probe) - noted in README.
+
+## 2026-11-10 wave: solver + 3 planners
+
+- Site moved to Cloudflare Pages (navigation-index.pages.dev, Git-linked to main), README links db0f459; GitHub Pages kept as mirror.
+- Ivan asked for a "problem solver" page and more algorithms. Launched 69 solver page (35b3), 70 Theta* (7ac1), 71 MPPI (980d), 72 Hybrid A* (987d). 73 wires 70-72 into the playground and benchmark after they land.
+- 69 landed 239333a: solver page, 36/36 Quick runs on random_0 in 12 s on 4 workers. Flaw found in review: on ideal + truth every seed is the same run, so n=3 overstated evidence. 69b (4097) adds per-seed A/B jitter and collapses identical runs.
+- 72 Hybrid A* edecf21 (81.9 vs 91.2 % reached, no collision gain), 70 Theta* c900822 (faster with prior map, too slow per replan unknown), 69b 88bc4dd (seed jitter + distinct-run CI), 71 MPPI 8750780 (alone stuck in traps; on A* path same reach, faster; 4-beam office 85 % collisions). 73 launched to wire them into playground, solver, benchmark, advisor.
