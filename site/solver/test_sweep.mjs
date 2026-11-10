@@ -91,7 +91,7 @@ test("spec query round trip and unknown planners dropped", () => {
   const spec = S.normSpec({ planners: ["dwa", "bug2"], presets: ["crazyflie"], fault: "bias", seeds: 7, jitter: "0.25" });
   const back = S.specFromQuery("?" + S.specToQuery(spec, "random_0"));
   assert.equal(back.src, "random_0");
-  assert.deepEqual(S.normSpec(back.spec, ["dwa"]), { planners: ["dwa"], presets: ["crazyflie"], faults: ["truth", "bias"], fault: "bias", seeds: 7, jitter: 0.25 });
+  assert.deepEqual(S.normSpec(back.spec, ["dwa"]), { planners: ["dwa"], presets: ["crazyflie"], faults: ["truth", "bias"], fault: "bias", seeds: 7, jitter: 0.25, time_limit: "auto" });
   assert.equal(S.normSpec({}).jitter, 0.5);                 // default ON, 0.5 m
   assert.equal(S.normSpec({ jitter: 0 }).jitter, 0);
   assert.equal(S.normSpec({ jitter: "1" }).jitter, 1);
@@ -99,6 +99,39 @@ test("spec query round trip and unknown planners dropped", () => {
   assert.equal(S.normSpec(S.specFromQuery("?jitter=0").spec).jitter, 0);
   assert.equal(S.normSpec({ seeds: "999" }).seeds, S.MAX_SEEDS);
   assert.equal(S.normSpec({ fault: "rm -rf" }).fault, null);
+});
+
+test("run time limit: Auto by family (bench.py LONG_FAMILIES), fixed choices, share link round trip", () => {
+  assert.deepEqual(S.LONG_FAMILIES, { maze: 120, warehouse: 120 });
+  assert.equal(S.normSpec({}).time_limit, "auto");
+  assert.equal(S.timeLimitFor({ family: "maze" }, "auto").s, 120);
+  assert.equal(S.timeLimitFor({ family: "warehouse" }).s, 120);
+  assert.equal(S.timeLimitFor({ family: "office" }, "auto").s, 60);
+  assert.deepEqual(S.timeLimitFor({ family: "custom" }, "auto"), { s: 60, source: "default", family: "custom" });
+  assert.equal(S.timeLimitFor({}, "auto").source, "default");                  // no family => 60 s
+  assert.equal(S.timeLimitFor({ family: "constructor" }, "auto").s, 60);       // not an own key
+  assert.deepEqual(S.timeLimitFor({ family: "maze" }, "60"), { s: 60, source: "fixed", family: "maze" });
+  for (const tl of ["auto", 60, 120, 180]) {
+    const spec = S.normSpec({ planners: ["bug2"], time_limit: tl });
+    const q = S.specToQuery(spec, "maze_0");
+    assert.match(q, new RegExp(`(^|&)tlim=${tl}(&|$)`));
+    const back = S.normSpec(S.specFromQuery("?" + q).spec);
+    assert.equal(back.time_limit, tl);
+    assert.equal(S.cfgTimeLimit(back), tl === "auto" ? undefined : tl);
+  }
+  assert.equal(S.normSpec(S.specFromQuery("?planners=bug2").spec).time_limit, "auto");   // old links: Auto
+  assert.equal(S.normSpec({ time_limit: "999" }).time_limit, "auto");                    // not a choice
+  const run = { planner: "bug2", preset: "ideal", fault: "truth", seed: 0 };
+  const r = S.recordFromResult(run, { score: { outcome: "reached", time_to_goal_s: 105.2, path_length_m: 65.5, duration_s: 105.2 }, max_time_s: 120 });
+  assert.equal(r.max_time_s, 120);
+  assert.equal(S.recordFromError(run, "x").max_time_s, null);
+  assert.match(S.toCSV([r]).split("\n")[0], /,duration_s,max_time_s,wall_s,/);
+  const spec = S.normSpec({ planners: ["bug2"] });
+  const doc = S.exportDoc({ spec, world: { family: "maze", bounds: [0, 0, 1, 1] }, records: [r] });
+  assert.equal(doc.spec.time_limit, "auto");
+  assert.deepEqual([doc.time_limit.choice, doc.time_limit.expected_s, doc.time_limit.source, doc.time_limit.used_s], ["auto", 120, "family", [120]]);
+  assert.match(S.timeLimitText(spec, { family: "maze" }, [r]), /120 s .*maze family/);
+  assert.match(S.timeLimitText(spec, { family: "custom" }, []), /60 s .*no benchmark family/);
 });
 
 test("world link codec round trip and w= from a pasted playground URL", async () => {

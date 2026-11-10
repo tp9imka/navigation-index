@@ -14,7 +14,7 @@ vehicle, range sensor and VIO. N seeds on one map is a small sample.
 | Part | File | What it does |
 |---|---|---|
 | Map | [solver.js](solver.js) | 8 presets from [../playground/presets/](../playground/presets/index.json), import a `close-area-world/1` JSON, open a link with `#w=`, or paste a playground link. Read-only preview. **Edit in playground** opens the current world in [the playground](../playground/README.md) via `#w=` |
-| Sweep | [sweep.js](sweep.js) | Planners (from the worker's `ready` env.planners, all checked, playground labels), sensor presets ideal and crazyflie, VIO fault (truth only, or truth + one of none / jump / bias / dropout), seeds 0..N-1 (default 5), **Jitter A and B per seed** (default on, radius 0.25 / 0.5 / 1.0 m, default 0.5 m). Shows the run count and a time estimate |
+| Sweep | [sweep.js](sweep.js) | Planners (from the worker's `ready` env.planners, all checked, playground labels), sensor presets ideal and crazyflie, VIO fault (truth only, or truth + one of none / jump / bias / dropout), seeds 0..N-1 (default 5), **Jitter A and B per seed** (default on, radius 0.25 / 0.5 / 1.0 m, default 0.5 m), **Run time limit** (Auto by map family, 60, 120 or 180 s). Shows the run count, a time estimate and the limit the map gets |
 | Engine | [pool.js](pool.js) | K = min(4, `navigator.hardwareConcurrency` - 1), at least 1, ES-module workers of [../playground/worker.js](../playground/worker.js), unchanged. Each loads Pyodide once. One FIFO queue. Cancel terminates the pool |
 | Race | [solver.js](solver.js) | All finished trajectories on one canvas, one colour per planner, legend with live counters. **Animate race** replays one variation + seed in sim time, with a timeline slider |
 | Result | [sweep.js](sweep.js), [solver.js](solver.js) | Ranking, headline, planner x variation matrix, cell details, CSV / JSON export, share link |
@@ -42,12 +42,22 @@ Details:
   "deterministic: k identical runs" (k = runs that have an identical twin). Error records are never
   collapsed: each error is its own failed trial. The pooled row keeps variations apart (the variation is
   part of the run signature).
+- **Run time limit (loop-73b).** Seconds of sim time before a run ends as `timeout`. **Auto** (default) uses
+  the benchmark's rule: [worker.js](../playground/worker.js) `max_time_for` copies
+  `samples/close-area-benchmark/bench.py` `LONG_FAMILIES`, so maze and warehouse get 120 s and every other
+  family 60 s (`run.DEFAULTS`). The rule reads the world's `family`: a preset edited in the playground keeps
+  its family, a world drawn from "New empty" has family `custom` and gets 60 s, as does a world without a
+  family (the select's tooltip says so). Under Auto the page sends no limit and the worker applies the rule;
+  60 / 120 / 180 s is sent as `cfg.max_time_s` (the worker clamps any value to 10-300 s). Every result
+  reports `max_time_s`, and the result header shows the limit the runs used, for example "Run time limit:
+  120 s of sim time (Auto: maze family, as the benchmark)." The watchdog grows with the limit: 180 s wall
+  per run at 60 s of sim time, 360 s at 120 s, 540 s at 180 s.
 - **Run order.** `buildRuns` puts the seed outermost and the planner innermost, so all planners advance
   at the same pace and the race fills evenly.
 - **Pool start.** The first worker starts alone; the other K-1 start when it is ready, so a cold load
   downloads the 22 MB once and the others read the browser cache. Runs start as soon as one worker is ready.
 - **Errors.** A worker `error` message, a worker crash (`onerror`), a fatal load error with a run on it
-  or no result within 180 s (watchdog, the worker is replaced) all end the run with outcome `error`.
+  or no result within the watchdog time (180 s, scaled with the run time limit; the worker is replaced) all end the run with outcome `error`.
   An error counts in n as not reached. The legend and the cell details show error counts and messages.
   Cancelled runs are not results: the progress line says how many were not run.
 - **Cell.** Success rate = distinct runs that reached B / n_distinct, with its 95 % Wilson score interval
@@ -65,12 +75,14 @@ Details:
   measured in this browser, summed over the remaining runs and divided by K. The pool's load time is not included.
 - **Quick** = 3 seeds, ideal only, truth pose only, then runs. **Thorough** = 10 seeds, ideal + crazyflie,
   keeps the fault choice, then runs. Neither changes the planner selection or the jitter setting.
-- **Share link.** `index.html?planners=..&presets=..&fault=..&seeds=..&jitter=..&src=<preset>#w=<world>`. The world
+- **Share link.** `index.html?planners=..&presets=..&fault=..&seeds=..&jitter=..&tlim=auto|60|120|180&src=<preset>#w=<world>`.
+  A link without `tlim` opens with Auto. The world
   is coded the playground way (deflate + base64url, code copied into sweep.js, playground.js is not
   imported). Results are not in the link. `?map=<preset>` opens a preset directly; `?pyodide=cdn|local|auto`
   is passed to the worker.
-- **Exports.** CSV: one row per run, with the A and B it flew. JSON (`navidx-solver-sweep/1`): spec (incl.
-  `jitter`), records (incl. `a`, `b`), jitter (radius, minimum clearance, per-seed A/B), ranking and matrix
+- **Exports.** CSV: one row per run, with the A and B it flew and `max_time_s`. JSON (`navidx-solver-sweep/1`): spec (incl.
+  `jitter` and `time_limit`), records (incl. `a`, `b`, `max_time_s`), `time_limit` (choice, expected and
+  used limits, the family table), jitter (radius, minimum clearance, per-seed A/B), ranking and matrix
   (incl. `n_distinct`, `identical`), headline, the exact world, worker env, pool size and timings. Trajectories are not exported.
 - Safety filter is always `none`, VIO loss recovery `none` (the playground covers those).
 
@@ -130,30 +142,35 @@ node site/solver/results/measure_solver.mjs     # about 1 minute
 node --test site/solver/test_sweep.mjs          # sweep.js unit tests, plain node
 ```
 
-## Result: one Quick sweep on maze_0, 18 planners (loop-73)
+## Result: one Quick sweep on maze_0, 18 planners, benchmark time limit (loop-73b)
 
 Source: [results/quick_maze_0.json](results/quick_maze_0.json) (`SOLVER.exportJSON()`) and
 [results/solver_check_maze_0.json](results/solver_check_maze_0.json), written by
 [results/measure_solver_maze.mjs](results/measure_solver_maze.mjs) (a copy of measure_solver.mjs with only
-the sweep step) in headless Chrome 140 on an Apple M3 Max (16 cores, shared host, load average 29.0 at the
+the sweep step) in headless Chrome 140 on an Apple M3 Max (16 cores, shared host, load average 51.9 at the
 start). Input type: synthetic.
 
-- The worker now lists **18 planners** (the 12 above plus Theta* known map, Lazy Theta* known map, Lazy
+- Run time limit **Auto => 120 s** (maze family, as the benchmark). Every record has `max_time_s` 120, and
+  the result header read "Run time limit: 120 s of sim time (Auto: maze family, as the benchmark)."
+- The worker lists **18 planners** (the 12 above plus Theta* known map, Lazy Theta* known map, Lazy
   Theta* unknown map, MPPI goal only, MPPI on the unknown-map A* path, Hybrid A*; see the
   [playground README](../playground/README.md)).
-- Quick = 18 planners x ideal x truth pose x 3 seeds = **54 runs, 54 done, 0 errors, 93.0 s** on K = 4
-  workers, jitter on (0.5 m). Python ready 7.3 s after navigation.
-- Headline: **No clear winner**: MPPI on the unknown-map A* path and Theta* (any-angle), known map are
-  within noise on this map (n=3). 8 planners reached B 3/3 (95 % Wilson 44-100 %), the other 10 0/3.
+- Quick = 18 planners x ideal x truth pose x 3 seeds = **54 runs, 54 done, 0 errors, 82.9 s** on K = 4
+  workers, jitter on (0.5 m). Python ready 6.1 s after navigation.
+- Headline (unchanged): **No clear winner**: MPPI on the unknown-map A* path and Theta* (any-angle), known
+  map are within noise on this map (n=3). 9 planners reached B 3/3 (95 % Wilson 44-100 %), Bug2 1/3
+  (6-79 %), the other 8 0/3.
 - Ranking by median time to B (synthetic): MPPI + A* 31.28 s, Theta* known 31.44 s, Lazy Theta* known
   31.48 s, Lazy Theta* unknown 34.16 s, Hybrid A* 39.26 s, A* known 40.92 s, D* Lite 44.9 s, A* unknown
-  48.7 s.
-- Outcomes: 24 reached, 23 stuck, 7 timeout. Informed RRT* timed out in 3 of 3: the page stops every run at
-  60 s, the benchmark gives maze 120 s.
-- Cross-check: seed 0 is the exact map. Theta* known (31.88 s, 0.8223 m) and MPPI + A* (31.28 s, 0.357 m)
-  give the same time to B and min clearance as the browser = native cases on maze_0 in
-  [playground_loop73.md](../playground/results/playground_loop73.md).
-- Slowest run in the worker: Lazy Theta* unknown map, 34.1 s (under the 180 s watchdog).
+  48.7 s, Informed RRT* 69.7 s, Bug2 105.22 s.
+- Outcomes: 28 reached, 23 stuck, 3 timeout (were 24 / 23 / 7 at the old 60 s limit). Changed runs:
+  Informed RRT* seeds 0, 1, 2 timeout => reached (69.7 s, 68.66 s, 75.38 s); Bug2 seed 0 timeout =>
+  reached (105.22 s). Still timeout at 120 s: Bug2 seeds 1 and 2, TangentBug seed 2.
+- Cross-check: seed 0 is the exact map. A* known (41.26 s), Bug2 (105.22 s), Informed RRT* (69.7 s),
+  Theta* known (31.88 s) and MPPI + A* (31.28 s) give the same time to B as the browser = native cases on
+  maze_0 in [playground_loop73b.md](../playground/results/playground_loop73b.md), and as the benchmark's
+  `matrix_0.json` maze rows (layout 0, seed 0, ideal).
+- Slowest run in the worker: Lazy Theta* unknown map, 30.7 s (watchdog 360 s at the 120 s limit).
 
 ## Limits and not verified
 
@@ -170,6 +187,9 @@ start). Input type: synthetic.
   Solver does not show it.
 - Verified in headless Chrome 140 only. Firefox, Safari, real phones and touch were not tried.
   `CompressionStream` (share link) needs Chrome 80+, Firefox 113+, Safari 16.4+.
+- Run time limit: only Auto on maze_0 ran in a browser. The fixed 60 / 120 / 180 s choices, the
+  `tlim=` share link and the CSV / JSON fields are unit tested in [test_sweep.mjs](test_sweep.mjs) only;
+  the scaled watchdog was not triggered.
 - Not run by the script: Thorough, crazyflie preset, any VIO fault, import from a file, paste of a
   playground link (the codec is unit tested, the form was not clicked), CSV and JSON downloads through
   the buttons (the JSON comes from the same function), the 180 s watchdog and the worker-crash path

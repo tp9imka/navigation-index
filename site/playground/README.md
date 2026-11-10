@@ -207,22 +207,64 @@ No run took over 60 s of browser Python, so all 6 stay in the list. Lazy Theta* 
 option: 30.7 s for one maze_0 run. MPPI, MPPI + A* and Hybrid A* take the world as an argument (geofence on
 the area bounds, as in the benchmark), like D* Lite.
 
+### Run time limit = the benchmark's (loop-73b)
+
+A run ends as `timeout` at the world's run time limit, in sim time. `worker.js` `max_time_for` takes it
+from the world's `family` with the table of `samples/close-area-benchmark/bench.py` `LONG_FAMILIES`:
+**maze and warehouse 120 s**, every other family 60 s (`run.DEFAULTS`). A world drawn from "New empty"
+(family `custom`) or without a family gets 60 s; an edited preset keeps its family. A run message may
+override the limit with `cfg.max_time_s` (clamped to 10-300 s; the Solver uses this for its fixed
+choices). Every result carries `max_time_s` and `max_time_source` (`family`, `default` or `cfg`), and the
+score table shows it next to the outcome, for example "reached (limit 120 s)". Before loop-73b every run
+stopped at 60 s, so on maze_0 Bug2 (105.22 s) and Informed RRT* (69.7 s) timed out here and reached B in
+the benchmark.
+
+Source: [results/playground_loop73b.md](results/playground_loop73b.md) (`results/measure_loop73b.mjs`,
+headless Chrome 140, Pyodide 314.0.7), every maze_0 and warehouse_0 case of
+[native_parity.json](results/native_parity.json) and
+[native_parity_loop73.json](results/native_parity_loop73.json). Seed 0, sensor ideal, truth pose, no
+filter. Input type: synthetic. **Browser = native on 11/11 cases**; the worker reported the same limit as
+native (120 s) and the score table showed it in 11/11. The 6 loop-73 maze_0 rows did not change with the
+longer limit (all of them end before 60 s). One browser run each on a shared host (load average 29.1).
+
+| world | planner | limit s (browser / native / table) | browser outcome / time to goal s / min clearance m / path m | native | same | browser Python s | native Python s |
+|---|---|---|---|---|---|---|---|
+| maze_0 | astar_known | 120 / 120 / 120 | reached / 41.26 / 0.5937 / 36.981 | reached / 41.26 / 0.5937 / 36.981 | yes | 5.076 | 1.974 |
+| warehouse_0 | astar_known | 120 / 120 / 120 | reached / 49.26 / 0.5151 / 34.978 | reached / 49.26 / 0.5151 / 34.978 | yes | 4.237 | 1.649 |
+| maze_0 | bug2 | 120 / 120 / 120 | reached / 105.22 / 0.4043 / 65.49 | reached / 105.22 / 0.4043 / 65.49 | yes | 0.662 | 0.313 |
+| warehouse_0 | bug2 | 120 / 120 / 120 | timeout / - / 0.4254 / 70.725 | timeout / - / 0.4254 / 70.725 | yes | 0.714 | 0.321 |
+| maze_0 | informed_rrt_star | 120 / 120 / 120 | reached / 69.7 / 0.2754 / 33.637 | reached / 69.7 / 0.2754 / 33.637 | yes | 0.932 | 0.415 |
+| maze_0 | thetastar_known | 120 / 120 / 120 | reached / 31.88 / 0.8223 / 39.463 | reached / 31.88 / 0.8223 / 39.463 | yes | 9.844 | 4.509 |
+| maze_0 | lazy_thetastar_known | 120 / 120 / 120 | reached / 31.88 / 0.8208 / 39.448 | reached / 31.88 / 0.8208 / 39.448 | yes | 6.203 | 2.736 |
+| maze_0 | lazy_thetastar_unknown | 120 / 120 / 120 | reached / 33.78 / 0.7908 / 40.487 | reached / 33.78 / 0.7908 / 40.487 | yes | 31.816 | 14.253 |
+| maze_0 | mppi | 120 / 120 / 120 | stuck / - / 0.6542 / 9.441 | stuck / - / 0.6542 / 9.441 | yes | 1.721 | 0.825 |
+| maze_0 | mppi_astar | 120 / 120 / 120 | reached / 31.28 / 0.357 / 35.589 | reached / 31.28 / 0.357 / 35.589 | yes | 10.109 | 4.314 |
+| maze_0 | hybrid_astar | 120 / 120 / 120 | reached / 39.26 / 0.2553 / 38.439 | reached / 39.26 / 0.2553 / 38.439 | yes | 2.466 | 1.516 |
+
+Benchmark parity (check F, information only; driver on the preset JSON vs `matrix_0.json`, layout 0, seed
+0, ideal, generated world, both at 120 s): A* known map on maze_0 is identical in every field (reached,
+41.26 s, 0.5937 m, 36.981 m). On warehouse_0 the outcome and time are the same (reached, 49.26 s); min
+clearance is 0.5151 m here and 0.515 m in the matrix, a 0.0001 m difference from the 4-decimal JSON export
+(check B). Bug2 on maze_0 and warehouse_0 and Informed RRT* on maze_0 are identical to the matrix.
+
 The driver loop matches the arena's own loops, checked natively in `native_parity.py`
-([native_parity.json](results/native_parity.json), 21/26 checks identical):
+([native_parity.json](results/native_parity.json), 27/33 checks identical; every reference loop gets
+the driver's run time limit, `cfg_for`):
 
 | check | identical |
 |---|---|
-| A: driver == `run.run_one` on the same JSON world (truth pose, ideal sensor), 8 cases of the first 6 planners | 8/8 |
-| E: driver == `run.run_one` with the planner built by `close-area-benchmark/bench.py` `PLANNERS[name][0]` called with the world, same JSON world, 6 new planners | 6/6 |
+| A: driver == `run.run_one` on the same JSON world (truth pose, ideal sensor), 10 cases of the first 6 planners (incl. A* known on maze_0 and warehouse_0) | 10/10 |
+| E: driver == `run.run_one` with the planner built by `close-area-benchmark/bench.py` `PLANNERS[name][0]` called with the world, same JSON world, 6 loop-62 planners plus Bug2 on maze_0 / warehouse_0 and Informed RRT* on maze_0 | 9/9 |
 | C: driver == `run.run_one` + `estimator.make_pose_source_factory(fault)` (the `run.evaluate` path) | 2/2 |
 | D: driver with F2 == `close-area-safety-filter/run_kill.run_one("F2", case, unsensed off)` | 2/2 |
-| B: driver on the preset JSON == `run.run_one` on `world.make_world` (no JSON) | 3/8 |
+| B: driver on the preset JSON == `run.run_one` on `world.make_world` (no JSON) | 4/10 |
 | G (loop-63, separate count `reloc_summary`): driver with recovery == `run.run_one` + `run_disambiguate.build`, same JSON world, score + loss events | 4/4 |
 
-Information only: the 6 new cases against the benchmark's own rows in
-`samples/close-area-benchmark/results/matrix_0.json` (generated worlds, preset ideal, layout 0):
-5/6 identical, 6/6 same outcome. Informed RRT* on office_0 differs in min clearance only (0.2762 m
-here, 0.2761 m in the matrix), the same 4-decimal JSON rounding as check B.
+Information only: the 6 loop-62 cases and the 5 loop-73b maze_0 / warehouse_0 cases against the
+benchmark's own rows in `samples/close-area-benchmark/results/matrix_0.json` (generated worlds, preset
+ideal, layout 0): 9/11 identical, 11/11 same outcome. Informed RRT* on office_0 differs in min clearance
+only (0.2762 m here, 0.2761 m in the matrix), A* known map on warehouse_0 too (0.5151 m vs 0.515 m): the
+same 4-decimal JSON rounding as check B.
 
 Check B is a real difference, not a bug in the playground: `world_json` rounds every number to 4
 decimals (0.1 mm), and that is enough to move some runs a little. Example: straight on random_0
@@ -242,7 +284,8 @@ the shipped fixed map corner at (-2.5, -2.5), as before, so on a user-drawn worl
 x or y it is clamped to the map edge and D* Lite is not. The loop is `run.run_one`
 when the filter is off (pose at the 10 Hz planner rate), and `run_kill.run_one` when F2 is on (pose
 and filter every 50 Hz step, a second sensor copy for the filter at 16.7 Hz, rng `[seed, index, 8]`).
-The only additions are a sensor-preset argument and trace recording.
+The only additions are a sensor-preset argument, trace recording and the run time limit by family
+(120 s on maze and warehouse, as `bench.py`; see "Run time limit" above).
 
 | Control | Options | Source |
 |---|---|---|
@@ -293,6 +336,7 @@ resized in the editor; "New empty" gives a 20 x 20 m area.
 | [manifest.json](manifest.json) | Pyodide pin, CDN and local source, packages, files (shared with the spike) |
 | [results/reloc_demo_random_1_97.json](results/reloc_demo_random_1_97.json) | The VIO-loss demo world (written by `native_parity.py`) |
 | [presets/](presets/index.json) | Preset world JSON |
+| `results/measure_loop73b.mjs` | Browser check of every maze_0 / warehouse_0 case with the benchmark run time limit ([playground_loop73b.md](results/playground_loop73b.md)) |
 | `results/native_parity_loop73.py`, `measure_loop73.mjs` | Native reference and browser check for the 6 loop-73 planners ([playground_loop73.md](results/playground_loop73.md)) |
 | `results/build_advisor_loop73.py` | Runs `data/build_advisor.py` unchanged with planner docs for the 7 loop-73 benchmark rows; rebuilds [data/advisor.json](data/advisor.json) |
 | `results/export_presets.py`, `native_parity.py`, `measure_playground.mjs` | Export presets; native reference + loop parity (incl. the relocalization cases); headless Chrome check, link check in a second fresh profile, blocked-CDN check in a third, and screenshots ([pg_shared_link.png](results/pg_shared_link.png)) |
@@ -307,6 +351,7 @@ samples/close-area-arena/.venv/bin/python site/playground/results/native_parity.
 node site/playground/results/measure_playground.mjs                                  # about 2 minutes
 samples/close-area-arena/.venv/bin/python site/playground/results/native_parity_loop73.py   # about 2 minutes
 node site/playground/results/measure_loop73.mjs                                      # about 2 minutes
+node site/playground/results/measure_loop73b.mjs                                     # about 2 minutes
 # optional: fill site/playground/pyodide-local/ first (Offline / blocked CDN) to also measure the local load
 ```
 
@@ -331,7 +376,12 @@ workers. The worker is therefore started with `{type: "module"}` and uses `impor
 - Pointer drawing was checked for the Box tool only. Wall, Cylinder, Glass, Move, Undo, Delete,
   material change and file open / save / localStorage were not exercised by the scripted check.
 - `spike.html` with the extended manifest (it now also writes the 19 extra files) was not re-run.
-- Worlds much larger than 20 x 20 m, and runs near the 60 s limit with A* unknown map. Estimate,
+- Run time limit (loop-73b): `measure_playground.mjs` (its 21 cases, link and CDN checks) was not re-run;
+  the 5 new maze_0 / warehouse_0 cases in native_parity.json were compared with the browser by
+  `measure_loop73b.mjs` only. The `cfg.max_time_s` override and its clamp were spot-checked once in native
+  CPython through `play()` (result not saved), not in a browser run. Office, forest and the other 60 s families were not re-run
+  (their limit did not change).
+- Worlds much larger than 20 x 20 m, and runs near the 60 s / 120 s limit with A* unknown map. Estimate,
   not measured: browser Python ran about 2x slower than native in the check, so such a run would
   take about 10 s.
 - Real or SITL flight: everything is the synthetic arena.

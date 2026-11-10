@@ -28,6 +28,12 @@ export const JITTER_DEFAULT = 0.5;
 export const JITTER_MARGIN_M = 0.1;              // jittered A/B keep vehicle radius + this from any surface
 export const JITTER_DRAWS = 50;                  // draws per point before the exact point is kept
 export const VEHICLE_RADIUS_M = 0.15;            // close-area arena default (world.py RADIUS)
+// Run time limit (loop-73b). "auto" = by map family, the rule of site/playground/worker.js max_time_for,
+// which copies samples/close-area-benchmark/bench.py LONG_FAMILIES. A world without a long family
+// (other presets, custom worlds) gets run.DEFAULTS max_time_s = 60 s.
+export const LONG_FAMILIES = { maze: 120, warehouse: 120 };
+export const DEFAULT_MAX_TIME_S = 60;
+export const TIME_LIMITS = ["auto", 60, 120, 180];
 
 export const plannerLabel = p => PLANNER_LABELS[p] || p;
 export const variationKey = (preset, fault) => `${preset}|${fault}`;
@@ -53,7 +59,36 @@ export function normSpec(spec, available) {
   // jitter: radius in m (one of JITTER_RADII), 0 = off; missing => default ON
   const jv = s.jitter == null || s.jitter === "" ? JITTER_DEFAULT : Number(s.jitter);
   const jitter = jv === 0 ? 0 : JITTER_RADII.includes(jv) ? jv : JITTER_DEFAULT;
-  return { planners, presets: presets.length ? presets : ["ideal"], faults: extra ? ["truth", extra] : ["truth"], fault: extra, seeds, jitter };
+  return { planners, presets: presets.length ? presets : ["ideal"], faults: extra ? ["truth", extra] : ["truth"], fault: extra, seeds, jitter,
+    time_limit: normTimeLimit(s.time_limit) };
+}
+
+// ------------------------------------------------------------ run time limit
+// "auto" (also missing or not a choice) or one of the fixed choices in s.
+export function normTimeLimit(v) {
+  if (v == null || v === "" || v === "auto") return "auto";
+  const n = Number(v);
+  return TIME_LIMITS.includes(n) ? n : "auto";
+}
+// The limit a run on doc gets: { s, source: "family" | "default" | "fixed", family }.
+export function timeLimitFor(doc, choice) {
+  const c = normTimeLimit(choice), fam = doc && typeof doc.family === "string" ? doc.family : null;
+  if (c !== "auto") return { s: c, source: "fixed", family: fam };
+  if (fam && Object.prototype.hasOwnProperty.call(LONG_FAMILIES, fam)) return { s: LONG_FAMILIES[fam], source: "family", family: fam };
+  return { s: DEFAULT_MAX_TIME_S, source: "default", family: fam };
+}
+// cfg.max_time_s for the worker: absent under Auto (the worker applies the same family rule itself).
+export const cfgTimeLimit = spec => (normTimeLimit(spec && spec.time_limit) === "auto" ? undefined : normTimeLimit(spec.time_limit));
+// Distinct limits the worker reported in the records (result.max_time_s), ascending.
+export const limitsUsed = records => [...new Set(records.map(r => r.max_time_s).filter(v => typeof v === "number"))].sort((a, b) => a - b);
+// One line for the result header: the limit used, and why.
+export function timeLimitText(spec, doc, records) {
+  const t = timeLimitFor(doc, spec && spec.time_limit), used = limitsUsed(records || []);
+  const s = used.length ? used.map(v => `${v} s`).join(" and ") : `${t.s} s`;
+  const why = t.source === "fixed" ? "fixed in the sweep"
+    : t.source === "family" ? `Auto: ${t.family} family, as the benchmark`
+      : `Auto: ${t.family && t.family !== "custom" ? t.family + " family" : "no benchmark family"}, default`;
+  return `Run time limit: ${s} of sim time (${why}).`;
 }
 
 // ------------------------------------------------------------ start/goal jitter
@@ -152,11 +187,13 @@ export function recordFromResult(run, result) {
   if (!sc || !OUTCOMES.includes(sc.outcome) || sc.outcome === "error") return recordFromError(run, "result has no valid score");
   return { planner: run.planner, preset: run.preset, fault: run.fault, seed: run.seed, ...abOf(run), outcome: sc.outcome,
     time_to_goal_s: num(sc.time_to_goal_s), path_length_m: num(sc.path_length_m), min_clearance_m: num(sc.min_clearance_m),
-    duration_s: num(sc.duration_s), wall_s: result.worker_ms != null ? result.worker_ms / 1000 : num(result.wall_s), error: null };
+    duration_s: num(sc.duration_s), max_time_s: num(result.max_time_s),
+    wall_s: result.worker_ms != null ? result.worker_ms / 1000 : num(result.wall_s), error: null };
 }
 export function recordFromError(run, message) {
   return { planner: run.planner, preset: run.preset, fault: run.fault, seed: run.seed, ...abOf(run), outcome: "error",
-    time_to_goal_s: null, path_length_m: null, min_clearance_m: null, duration_s: null, wall_s: null, error: String(message || "error") };
+    time_to_goal_s: null, path_length_m: null, min_clearance_m: null, duration_s: null, max_time_s: null, wall_s: null,
+    error: String(message || "error") };
 }
 // A and B the run actually flew (jittered for seed > 0) and whether a jitter fell back to the exact point.
 const abOf = run => ({ a: run.a || null, b: run.b || null, ab_kept: run.ab_kept || null });
@@ -259,7 +296,7 @@ export function headline(ranking) {
 
 // ------------------------------------------------------------ export
 export const CSV_COLS = ["planner", "planner_label", "preset", "fault", "seed", "a_x", "a_y", "b_x", "b_y", "outcome", "time_to_goal_s",
-  "path_length_m", "min_clearance_m", "duration_s", "wall_s", "error"];
+  "path_length_m", "min_clearance_m", "duration_s", "max_time_s", "wall_s", "error"];
 const csvCell = v => { if (v == null) return ""; const s = String(v); return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
 const csvVal = (r, c) => {
   if (c === "planner_label") return plannerLabel(r.planner);
@@ -280,6 +317,9 @@ export function exportDoc({ spec, world, worldName, records, env, pool, started,
     started: started || null, finished: finished || null, pool: pool || null, env: env || null,
     jitter: { radius_m: spec.jitter || 0, min_clearance_m: vehicleRadius(world) + JITTER_MARGIN_M, max_draws: JITTER_DRAWS,
       prng: "mulberry32", seed0: "exact map", per_seed: jitters || null },
+    time_limit: { choice: normTimeLimit(spec.time_limit), expected_s: timeLimitFor(world, spec.time_limit).s,
+      source: timeLimitFor(world, spec.time_limit).source, used_s: limitsUsed(records), long_families: LONG_FAMILIES,
+      default_s: DEFAULT_MAX_TIME_S, rule: "auto: world.family in long_families => that limit, else default_s (bench.py LONG_FAMILIES)" },
     headline: agg.headline, ranking: agg.ranking, matrix: agg.cells, records, world };
 }
 
@@ -291,6 +331,7 @@ export function specToQuery(spec, src) {
   if (spec.fault) q.set("fault", spec.fault);
   q.set("seeds", String(spec.seeds));
   if (spec.jitter != null) q.set("jitter", String(spec.jitter));
+  q.set("tlim", String(normTimeLimit(spec.time_limit)));
   if (src) q.set("src", src);
   return q.toString();
 }
@@ -303,6 +344,7 @@ export function specFromQuery(search) {
   if (q.has("fault")) out.fault = q.get("fault");
   if (q.has("seeds")) out.seeds = q.get("seeds");
   if (q.has("jitter")) out.jitter = q.get("jitter");
+  if (q.has("tlim")) out.time_limit = q.get("tlim");
   const src = q.get("src");
   return { spec: out, src: src && /^[a-z0-9_]+$/.test(src) ? src : null };
 }

@@ -1,10 +1,10 @@
 {
- "date": "2026-11-10T06:13:29.364Z",
+ "date": "2026-11-10T07:09:28.052Z",
  "input": "synthetic",
- "host": "Apple M3 Max, 16 cores, load 29.0 35.6 38.1",
+ "host": "Apple M3 Max, 16 cores, load 51.9 31.5 23.9",
  "chrome": "Chrome/140.0.7339.208",
  "page": "http://127.0.0.1:8782/site/solver/index.html?map=maze_0",
- "python_ready_s": 7.315,
+ "python_ready_s": 6.133,
  "planners": [
   "straight",
   "freest_beam",
@@ -25,22 +25,24 @@
   "mppi_astar",
   "hybrid_astar"
  ],
- "count_msg_before": "90 runs = 18 planners x 1 sensor x 1 fault x 5 seeds. Estimate: about 1 min 6 s on 4 workers (rough prior from the playground README timings; refined after the first runs).",
+ "count_msg_before": "90 runs = 18 planners x 1 sensor x 1 fault x 5 seeds. Estimate: about 1 min 6 s on 4 workers (rough prior from the playground README timings; refined after the first runs). Run time limit: 120 s of sim time (Auto: maze family, as the benchmark).",
  "sweep": {
   "done": 54,
   "total": 54,
-  "elapsed_s": 93.045,
+  "elapsed_s": 82.863,
   "cancelled": false,
   "workers_ready": 4,
   "K": 4,
-  "wall_s_from_click": 93.068
+  "wall_s_from_click": 82.872
  },
+ "limit_line": "Run time limit: 120 s of sim time (Auto: maze family, as the benchmark).",
+ "time_limit_select": "auto",
  "world": "maze",
  "headline": "No clear winner: MPPI on the unknown-map A* path and Theta* (any-angle), known map are within noise on this map (n=3).",
  "outcomes": {
   "stuck": 23,
-  "reached": 24,
-  "timeout": 7
+  "reached": 28,
+  "timeout": 3
  },
  "errors": [],
  "ranking": [
@@ -133,18 +135,29 @@
    "median_time_s": 48.7
   },
   {
-   "planner": "apf",
+   "planner": "informed_rrt_star",
    "n": 3,
    "n_distinct": 3,
-   "reached": 0,
+   "reached": 3,
    "ci": [
-    0,
-    56.2
+    43.8,
+    100
    ],
-   "median_time_s": null
+   "median_time_s": 69.7
   },
   {
    "planner": "bug2",
+   "n": 3,
+   "n_distinct": 3,
+   "reached": 1,
+   "ci": [
+    6.1,
+    79.2
+   ],
+   "median_time_s": 105.22
+  },
+  {
+   "planner": "apf",
    "n": 3,
    "n_distinct": 3,
    "reached": 0,
@@ -178,17 +191,6 @@
   },
   {
    "planner": "freest_beam",
-   "n": 3,
-   "n_distinct": 3,
-   "reached": 0,
-   "ci": [
-    0,
-    56.2
-   ],
-   "median_time_s": null
-  },
-  {
-   "planner": "informed_rrt_star",
    "n": 3,
    "n_distinct": 3,
    "reached": 0,
@@ -244,24 +246,24 @@
   }
  ],
  "max_wall_s": {
-  "straight": 0.251,
-  "freest_beam": 0.254,
-  "astar_known": 4.876,
-  "astar_unknown": 14.793,
-  "apf": 0.264,
-  "vfh_plus": 0.628,
-  "dwa": 2.163,
-  "dwa_mem": 7.411,
-  "bug2": 0.477,
-  "tangent_bug": 0.5,
-  "dstar_lite": 3.59,
-  "informed_rrt_star": 0.886,
-  "thetastar_known": 9.704,
-  "lazy_thetastar_known": 6.078,
-  "lazy_thetastar_unknown": 34.076,
-  "mppi": 1.619,
-  "mppi_astar": 12.466,
-  "hybrid_astar": 2.364
+  "straight": 0.219,
+  "freest_beam": 0.236,
+  "astar_known": 4.44,
+  "astar_unknown": 13.686,
+  "apf": 0.234,
+  "vfh_plus": 0.587,
+  "dwa": 1.875,
+  "dwa_mem": 6.286,
+  "bug2": 0.746,
+  "tangent_bug": 0.795,
+  "dstar_lite": 3.229,
+  "informed_rrt_star": 0.945,
+  "thetastar_known": 8.93,
+  "lazy_thetastar_known": 5.657,
+  "lazy_thetastar_unknown": 30.662,
+  "mppi": 1.629,
+  "mppi_astar": 11.736,
+  "hybrid_astar": 2.401
  },
  "console": []
 }

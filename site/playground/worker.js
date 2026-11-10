@@ -1,7 +1,9 @@
 // Playground worker (loop-48b, ES module worker): runs the hub's real close-area arena (samples/close-area-arena) under
 // Pyodide in a Web Worker, so the page never freezes while Python computes a run.
 // Protocol (postMessage):
-//   page => worker  {type: "run", id, world: <close-area-world/1 dict>, cfg: {planner, preset, fault, filter, seed}}
+//   page => worker  {type: "run", id, world: <close-area-world/1 dict>, cfg: {planner, preset, fault, filter, seed,
+//                   recovery, max_time_s}}   max_time_s optional: run time limit override in s, clamped 10-300;
+//                   without it the limit comes from world.family (LONG_FAMILIES in DRIVER_PY, as bench.py)
 //   worker => page  {type: "progress", stage, step, steps, mb, mb_expected}
 //                   {type: "retry", step, attempt, attempts, wait_s, error}   (a load step failed, retrying)
 //                   {type: "ready", env, planners, timings}
@@ -167,6 +169,25 @@ IMPORT_MS = {"scipy_ndimage": round((_t1 - _t0) * 1e3, 1), "arena": round((_t2 -
              "reactive": round((_t3 - _t2) * 1e3, 1),
              "sample_planners": round((_t3b - _t3) * 1e3, 1), "safety_filter": round((_t4 - _t3b) * 1e3, 1)}
 FILTER_SCAN_EVERY = 3        # physics steps, as close-area-safety-filter/run_kill.py (16.7 Hz filter scan)
+# Run time limit (loop-73b): the same table as close-area-benchmark/bench.py LONG_FAMILIES, so a preset
+# world gets the limit its benchmark row had. Other families, and worlds without a family, keep
+# run.DEFAULTS max_time_s (60 s). A run message may override it with cfg.max_time_s, clamped.
+LONG_FAMILIES = {"maze": 120.0, "warehouse": 120.0}
+MAX_TIME_CLAMP_S = (10.0, 300.0)
+
+
+def max_time_for(doc, override=None):
+    """(limit s, source) for one run: source "cfg" (override, clamped to MAX_TIME_CLAMP_S),
+    "family" (doc["family"] in LONG_FAMILIES) or "default" (run.DEFAULTS)."""
+    if override is not None:
+        if isinstance(override, bool) or not isinstance(override, (int, float)) or not math.isfinite(override):
+            raise ValueError("max_time_s must be a number of seconds")
+        lo, hi = MAX_TIME_CLAMP_S
+        return min(max(float(override), lo), hi), "cfg"
+    fam = doc.get("family")
+    if isinstance(fam, str) and fam in LONG_FAMILIES:
+        return LONG_FAMILIES[fam], "family"
+    return float(run_mod.DEFAULTS["max_time_s"]), "default"
 
 
 def env_json():
@@ -185,15 +206,17 @@ def _r(v, n=3):
 
 
 def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="none", seed=0, cfg=None,
-             recovery="none"):
+             recovery="none", max_time_s=None):
     """Fly one world. Same loop as run.run_one (filter off) or run_kill.run_one (F2 on), with the
     sensor preset and pose source as arguments. Scored by scorer.score on truth.
     fault: "truth" = no estimator (planner sees truth); else estimator.py VIO EKF with dark zones and
     faults.py case fault ("none" = no fault).
     recovery (pg_reloc.ARMS): with fault jump or dropout, wrap the estimator in a relocalization arm
     of samples/close-area-relocalize; the arm brings its own planner (A* known map behind the hover
-    gate), so planner must be astar_known and the filter none."""
+    gate), so planner must be astar_known and the filter none.
+    max_time_s: None = by world family (max_time_for), else the run time limit in s (clamped 10-300)."""
     cfg = cfg or run_mod.DEFAULTS
+    t_max, t_max_src = max_time_for(doc, max_time_s)
     if recovery != "none":
         if pg_reloc is None:
             raise RuntimeError("relocalization did not load: " + LOAD_ERRORS.get("relocalize", "?"))
@@ -233,7 +256,7 @@ def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="no
         raise ValueError("filter must be none or F2")
     HZ, DT = vehicle_mod.HZ, vehicle_mod.DT
     ratio, pdt = HZ // cfg["plan_hz"], 1.0 / cfg["plan_hz"]
-    n_steps = int(round(cfg["max_time_s"] * HZ))
+    n_steps = int(round(t_max * HZ))
     lag = int(round(scorer.STUCK_WINDOW_S * HZ))
     grid = w.grid if getattr(pl, "uses_grid", False) else None
     ts, xy = [0.0], [(0.0, 0.0)]
@@ -308,6 +331,7 @@ def simulate(doc, planner="astar_known", preset="ideal", fault="truth", filt="no
         "reloc": trace.result(res, est) if trace is not None else None,
         "score": res, "free_path": free,
         "wall_s": round(time.perf_counter() - t_start, 3), "sim_s": round(float(ts[-1]), 2),
+        "max_time_s": t_max, "max_time_source": t_max_src,
         "hz": cfg["plan_hz"], "radius": radius, "goal_tol_m": scorer.GOAL_TOL,
         "offset": [float(-w.xmin + doc["bounds"][0]), float(-w.ymin + doc["bounds"][1])],
         "scan_angles": [round(a, 4) for a in scan.angles] if scan is not None else [],
@@ -325,7 +349,7 @@ def play(doc_json, cfg_json):
     c = json.loads(cfg_json)
     out = simulate(json.loads(doc_json), c.get("planner", "astar_known"), c.get("preset", "ideal"),
                    c.get("fault", "truth"), c.get("filter", "none"), int(c.get("seed", 0)),
-                   recovery=c.get("recovery", "none"))
+                   recovery=c.get("recovery", "none"), max_time_s=c.get("max_time_s"))
     return json.dumps(out, allow_nan=False)
 `;
 

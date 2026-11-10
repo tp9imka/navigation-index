@@ -9,7 +9,7 @@ truth pose, no filter. Checks:
   E  driver == run.run_one on the same JSON world with the planner built by
      samples/close-area-benchmark/bench.py PLANNERS[name][0](world)
   F  (information) driver vs the benchmark's results/matrix_0.json row (preset ideal, layout 0, generated
-     world, not JSON; maze runs there have a 120 s limit, the playground keeps run.py's 60 s)
+     world, not JSON; since loop-73b both use 120 s on maze: worker.js max_time_for = bench.py LONG_FAMILIES)
 Writes native_parity_loop73.json for measure_loop73.mjs. `--matrix-only` recomputes only F from the saved file
 (run after the benchmark rows exist; the cases and their native wall times stay as they were).
 Input type: synthetic (seeded generated layouts, simulated vehicle and sensors).
@@ -48,7 +48,7 @@ def matrix_check(out):
     nm = out["matrix_rows"]
     out["matrix_summary"] = (f"{sum(r['same'] for r in nm)}/{len(nm)} identical to matrix_0.json, "
                              f"{sum(r['same_outcome'] for r in nm)}/{len(nm)} same outcome (generated vs JSON world; "
-                             "maze has a 120 s limit in the matrix, 60 s here)")
+                             "both with the bench.py LONG_FAMILIES limit, maze 120 s)")
     print(out["matrix_summary"])
 
 
@@ -79,7 +79,7 @@ def main():
         wall = time.perf_counter() - t0
         out["cases"].append({"world": wname, "planner": planner, "preset": preset, "fault": fault, "filter": filt,
                              "score": NP.pick(r["score"]), "free_path": r["free_path"], "sim_s": r["sim_s"],
-                             "native_wall_s": round(wall, 3), "frames": len(r["frames"])})
+                             "native_wall_s": round(wall, 3), "frames": len(r["frames"]), "max_time_s": r["max_time_s"]})
         print(wname, planner, NP.pick(r["score"]), f"{wall:.2f}s", flush=True)
     # E: bench.py factories through run.run_one on the same JSON world
     spec = importlib.util.spec_from_file_location("close_area_benchmark_bench", NP.BENCH)
@@ -92,7 +92,7 @@ def main():
             sys.modules["arena"] = saved
     for case in CASES:
         wj = WJ.from_json(docs[case[0]])
-        row, _, _ = run.run_one(bench.PLANNERS[case[1]][0](wj), wj, 0, 0)
+        row, _, _ = run.run_one(bench.PLANNERS[case[1]][0](wj), wj, 0, 0, NP.cfg_for(ns, run, docs[case[0]]))
         mine = next(c for c in out["cases"] if (c["world"], c["planner"]) == case[:2])
         ok = mine["score"] == NP.pick(row)
         out["checks"].append({"check": "E run.run_one + bench.py planner factory, same JSON world", "case": list(case),

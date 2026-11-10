@@ -2,8 +2,8 @@
 // (site/playground/worker.js, unchanged), draw the race, rank the planners.
 // Pure logic lives in sweep.js (unit tested), the worker pool in pool.js.
 // window.SOLVER is a small API for scripted checks (results/measure_solver.mjs).
-import * as SW from "./sweep.js";
-import { Pool } from "./pool.js";
+import * as SW from "./sweep.js?v=20261110c";
+import { Pool } from "./pool.js?v=20261110c";
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -11,7 +11,8 @@ const css = name => getComputedStyle(document.documentElement).getPropertyValue(
 const PG = "../playground/";
 const SCHEMA = "close-area-world/1";
 const PYODIDE_Q = (q => (/^(cdn|local|auto)$/.test(q || "") ? q : null))(new URLSearchParams(location.search).get("pyodide"));
-const WORKER_URL = new URL(PG + "worker.js" + (PYODIDE_Q ? "?pyodide=" + PYODIDE_Q : ""), location.href);
+const WORKER_V = "20261110c";       // worker.js cache-busting version, same as playground.js WORKER_URL
+const WORKER_URL = new URL(PG + "worker.js?v=" + WORKER_V + (PYODIDE_Q ? "&pyodide=" + PYODIDE_Q : ""), location.href);
 const K = SW.poolSize(navigator.hardwareConcurrency);
 const T_PAGE0 = performance.now();
 
@@ -266,6 +267,7 @@ function buildSweepControls(env) {
     faults.map(f => `<option value="${f}">truth + ${esc(SW.FAULT_LABELS[f])}</option>`).join("");
   if (S.linkSpec && faults.includes(S.linkSpec.fault)) $("#faultSel").value = S.linkSpec.fault;
   if (S.linkSpec && S.linkSpec.seeds) $("#seedsIn").value = SW.normSpec({ seeds: S.linkSpec.seeds }).seeds;
+  if (S.linkSpec && S.linkSpec.time_limit != null) $("#tlimSel").value = String(SW.normTimeLimit(S.linkSpec.time_limit));
   if (S.linkSpec && S.linkSpec.jitter != null) {
     const j = SW.normSpec({ jitter: S.linkSpec.jitter }).jitter;
     $("#jitterOn").checked = j > 0;
@@ -278,7 +280,8 @@ function buildSweepControls(env) {
 function readSpec() {
   const vals = name => [...document.querySelectorAll(`input[name="${name}"]:checked`)].map(i => i.value);
   return SW.normSpec({ planners: vals("planner"), presets: vals("preset"), fault: $("#faultSel").value || null,
-    seeds: $("#seedsIn").value, jitter: $("#jitterOn").checked ? $("#jitterR").value : 0 }, S.env ? S.env.planners : null);
+    seeds: $("#seedsIn").value, jitter: $("#jitterOn").checked ? $("#jitterR").value : 0, time_limit: $("#tlimSel").value },
+  S.env ? S.env.planners : null);
 }
 
 function measuredMeans() {
@@ -293,14 +296,15 @@ function updateCount() {
   const est = SW.estimateSeconds(SW.buildRuns(spec), measuredMeans(), K);
   $("#countMsg").innerHTML = `<b>${n} runs</b> = ${spec.planners.length} planners x ${spec.presets.length} sensor x ${spec.faults.length} fault x ${spec.seeds} seeds. ` +
     `Estimate: about ${SW.fmtDuration(est.s)} on ${K} worker${K > 1 ? "s" : ""} ` +
-    `<span class="muted">(${est.measured ? "from run times measured in this browser" : "rough prior from the playground README timings; refined after the first runs"})</span>.`;
+    `<span class="muted">(${est.measured ? "from run times measured in this browser" : "rough prior from the playground README timings; refined after the first runs"})</span>. ` +
+    esc(SW.timeLimitText(spec, S.doc, []));
   $("#runBtn").disabled = !n || !S.readyCount || !!(S.sweep && S.sweep.running);
 }
 
 function setBusy(on) {
   $("#runBtn").disabled = on || !S.readyCount;
   $("#cancelBtn").disabled = !on;
-  for (const el of document.querySelectorAll("#plannerList input, #presetList input, #faultSel, #seedsIn, #jitterOn, #jitterR, #quickBtn, #thoroughBtn, #presetSel, #fileIn, #linkForm button"))
+  for (const el of document.querySelectorAll("#plannerList input, #presetList input, #faultSel, #seedsIn, #tlimSel, #jitterOn, #jitterR, #quickBtn, #thoroughBtn, #presetSel, #fileIn, #linkForm button"))
     el.disabled = on;
   if (!on) $("#jitterR").disabled = !$("#jitterOn").checked;
 }
@@ -333,6 +337,10 @@ function startSweep() {
       ab_kept: j.a_kept || j.b_kept ? { a: j.a_kept, b: j.b_kept } : null,
       cfg: { planner: r.planner, preset: r.preset, fault: r.fault, filter: "none", seed: r.seed } };
   });
+  // run time limit: Auto sends none (the worker applies the family rule), a fixed choice is sent as cfg.max_time_s.
+  // The watchdog grows with the limit (180 s wall at 60 s of sim time).
+  const tlim = SW.cfgTimeLimit(spec), simS = SW.timeLimitFor(world, spec.time_limit).s;
+  for (const j of jobs) { if (tlim != null) j.cfg.max_time_s = tlim; j.timeoutS = Math.round(180 * Math.max(1, simS / 60)); }
   const kept = jitters.filter(j => j.a_kept || j.b_kept).length;
   if (spec.jitter && kept) $("#poolMsg").textContent = `Jitter: ${kept} seed(s) kept an exact A or B (no free point in ${SW.JITTER_DRAWS} draws).`;
   // race filters
@@ -424,12 +432,13 @@ function renderResults() {
   const recs = sw ? sw.records.filter(Boolean) : [];
   if (!recs.length) {
     $("#headline").textContent = "Run a sweep to see the ranking."; $("#headline").className = "headline";
-    $("#ranking").innerHTML = ""; $("#matrix").innerHTML = ""; return;
+    $("#ranking").innerHTML = ""; $("#matrix").innerHTML = ""; $("#limitLine").textContent = ""; return;
   }
   const agg = SW.aggregate(recs, sw.spec);
   const partial = sw.running ? ` (live: ${recs.length}/${sw.total} runs)` : sw.cancelled ? ` (cancelled: ${recs.length}/${sw.total} runs)` : "";
   $("#headline").textContent = agg.headline.text + partial;
   $("#headline").className = "headline " + agg.headline.kind;
+  $("#limitLine").textContent = SW.timeLimitText(sw.spec, sw.world, recs);
   $("#ranking").innerHTML = agg.ranking.map(r =>
     `<li><span class="swatch" style="background:${plannerColor(r.planner)}"></span><b>${esc(SW.plannerLabel(r.planner))}</b>: ` +
     `${r.reached}/${r.n} reached` + (r.n_distinct < r.n ? ` <span class="dup">(${r.reached_distinct}/${r.n_distinct} distinct)</span>` : "") +
@@ -577,6 +586,7 @@ $("#seedsIn").oninput = updateCount;
 $("#jitterOn").onchange = () => { $("#jitterR").disabled = !$("#jitterOn").checked; updateCount(); };
 $("#jitterR").onchange = updateCount;
 $("#faultSel").onchange = updateCount;
+$("#tlimSel").onchange = updateCount;
 $("#allBtn").onclick = () => { document.querySelectorAll('input[name="planner"]').forEach(i => { i.checked = true; }); updateCount(); };
 $("#noneBtn").onclick = () => { document.querySelectorAll('input[name="planner"]').forEach(i => { i.checked = false; }); updateCount(); };
 

@@ -8,11 +8,11 @@
   "machine": "arm64",
   "system": "Darwin",
   "imports_ms": {
-   "scipy_ndimage": 93644.5,
-   "arena": 1724.1,
-   "reactive": 98.7,
-   "sample_planners": 18776.1,
-   "safety_filter": 20579.1
+   "scipy_ndimage": 494.6,
+   "arena": 36.8,
+   "reactive": 1.0,
+   "sample_planners": 154.3,
+   "safety_filter": 293.0
   },
   "planners": [
    "straight",
@@ -81,8 +81,9 @@
    },
    "free_path": true,
    "sim_s": 17.08,
-   "native_wall_s": 2.059,
-   "frames": 171
+   "native_wall_s": 1.501,
+   "frames": 171,
+   "max_time_s": 60.0
   },
   {
    "world": "maze_0",
@@ -99,8 +100,9 @@
    },
    "free_path": true,
    "sim_s": 31.88,
-   "native_wall_s": 6.214,
-   "frames": 319
+   "native_wall_s": 4.509,
+   "frames": 319,
+   "max_time_s": 120.0
   },
   {
    "world": "random_0",
@@ -117,8 +119,9 @@
    },
    "free_path": true,
    "sim_s": 17.12,
-   "native_wall_s": 1.401,
-   "frames": 172
+   "native_wall_s": 1.054,
+   "frames": 172,
+   "max_time_s": 60.0
   },
   {
    "world": "maze_0",
@@ -135,8 +138,9 @@
    },
    "free_path": true,
    "sim_s": 31.88,
-   "native_wall_s": 3.616,
-   "frames": 319
+   "native_wall_s": 2.736,
+   "frames": 319,
+   "max_time_s": 120.0
   },
   {
    "world": "random_0",
@@ -153,8 +157,9 @@
    },
    "free_path": true,
    "sim_s": 17.6,
-   "native_wall_s": 6.44,
-   "frames": 176
+   "native_wall_s": 4.799,
+   "frames": 176,
+   "max_time_s": 60.0
   },
   {
    "world": "maze_0",
@@ -171,8 +176,9 @@
    },
    "free_path": true,
    "sim_s": 33.78,
-   "native_wall_s": 19.599,
-   "frames": 338
+   "native_wall_s": 14.253,
+   "frames": 338,
+   "max_time_s": 120.0
   },
   {
    "world": "random_0",
@@ -189,8 +195,9 @@
    },
    "free_path": true,
    "sim_s": 20.82,
-   "native_wall_s": 1.112,
-   "frames": 209
+   "native_wall_s": 0.834,
+   "frames": 209,
+   "max_time_s": 60.0
   },
   {
    "world": "maze_0",
@@ -207,8 +214,9 @@
    },
    "free_path": true,
    "sim_s": 21.02,
-   "native_wall_s": 1.083,
-   "frames": 211
+   "native_wall_s": 0.825,
+   "frames": 211,
+   "max_time_s": 120.0
   },
   {
    "world": "random_0",
@@ -225,8 +233,9 @@
    },
    "free_path": true,
    "sim_s": 20.24,
-   "native_wall_s": 3.122,
-   "frames": 203
+   "native_wall_s": 2.254,
+   "frames": 203,
+   "max_time_s": 60.0
   },
   {
    "world": "maze_0",
@@ -243,8 +252,9 @@
    },
    "free_path": true,
    "sim_s": 31.28,
-   "native_wall_s": 5.684,
-   "frames": 313
+   "native_wall_s": 4.314,
+   "frames": 313,
+   "max_time_s": 120.0
   },
   {
    "world": "random_0",
@@ -261,8 +271,9 @@
    },
    "free_path": true,
    "sim_s": 18.74,
-   "native_wall_s": 0.868,
-   "frames": 188
+   "native_wall_s": 0.722,
+   "frames": 188,
+   "max_time_s": 60.0
   },
   {
    "world": "maze_0",
@@ -279,8 +290,9 @@
    },
    "free_path": true,
    "sim_s": 39.26,
-   "native_wall_s": 1.932,
-   "frames": 393
+   "native_wall_s": 1.516,
+   "frames": 393,
+   "max_time_s": 120.0
   }
  ],
  "checks": [
@@ -887,12 +899,12 @@
    "same_outcome": true
   }
  ],
+ "matrix_summary": "6/12 identical to matrix_0.json, 12/12 same outcome (generated vs JSON world; both with the bench.py LONG_FAMILIES limit, maze 120 s)",
  "native_env": {
   "python": "3.12.10",
   "numpy": "2.5.4",
   "scipy": "1.18.1",
   "machine": "arm64"
  },
- "summary": "12/12 checks (E) identical",
- "matrix_summary": "6/12 identical to matrix_0.json, 12/12 same outcome (generated vs JSON world; maze has a 120 s limit in the matrix, 60 s here)"
+ "summary": "12/12 checks (E) identical"
 }

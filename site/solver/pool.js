@@ -88,7 +88,7 @@ export class Pool {
     this._pump();
   }
 
-  // Add jobs ({world, cfg, ...anything}); returns them with ids. FIFO.
+  // Add jobs ({world, cfg, timeoutS?, ...anything}); returns them with ids. FIFO.
   add(jobs) {
     for (const j of jobs) { j.id = this.nextId++; this.queue.push(j); }
     this._pump();
@@ -101,7 +101,8 @@ export class Pool {
       if (!slot || slot.dead || !slot.ready || slot.job || !this.queue.length) continue;
       const job = this.queue.shift();
       slot.job = job; job.worker = slot.i; job.t_sent = performance.now();
-      slot.timer = setTimeout(() => this._crash(slot, `no result after ${this.jobTimeoutS} s (watchdog)`), this.jobTimeoutS * 1000);
+      const tmo = job.timeoutS > 0 ? job.timeoutS : this.jobTimeoutS;       // per-job watchdog (longer run time limit)
+      slot.timer = setTimeout(() => this._crash(slot, `no result after ${tmo} s (watchdog)`), tmo * 1000);
       slot.w.postMessage({ type: "run", id: job.id, world: job.world, cfg: job.cfg });
     }
   }

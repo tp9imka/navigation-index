@@ -25,7 +25,8 @@ BENCH = ROOT / "samples/close-area-benchmark/results/matrix_0.json"
 PRIOR = ROOT / "samples/close-area-benchmark/results/prior_check_0.json"
 RELOC = ROOT / "samples/close-area-relocalize/results/reloc_matrix_refs.md"
 OUT = HERE / "advisor.json"
-PLAYGROUND_LIMIT_S = 60.0          # run.DEFAULTS max_time_s, used by worker.js for every world
+PLAYGROUND_LIMIT_S = 60.0          # run.DEFAULTS max_time_s: worker.js limit for every family not in PLAYGROUND_LONG
+PLAYGROUND_LONG = {"maze": 120.0, "warehouse": 120.0}   # loop-73b: worker.js max_time_for = bench.py LONG_FAMILIES
 
 PRIOR_MAP = {"astar_known", "informed_rrt_star", "astar_mpc"}
 # playground option id => benchmark row. Ids not listed map to the benchmark row of the same name.
@@ -203,7 +204,7 @@ def cell(runs, limit):
         "collisions_by_material": mats,
         "max_time_s": runs[0]["max_time_s"],
     }
-    if limit < runs[0]["max_time_s"]:      # what the playground's 60 s limit would have scored as reached
+    if limit < runs[0]["max_time_s"]:      # what a shorter playground limit would have scored as reached
         out["reached_within_60s"] = pct(sum(1 for t in times if t <= limit), n)
     return out
 
@@ -259,7 +260,7 @@ def main():
     for f in fams:
         for s in presets:
             for p in planners:
-                c = cell(groups[(f, s, p)], PLAYGROUND_LIMIT_S)
+                c = cell(groups[(f, s, p)], PLAYGROUND_LONG.get(f, PLAYGROUND_LIMIT_S))
                 ref = m["summary"][s][p][f]
                 for k, rk in (("reached", "reached_pct"), ("collision", "collision_pct"), ("stuck", "stuck_pct"),
                               ("timeout", "timeout_pct"), ("median_time_s", "median_time_to_goal_s"),
@@ -380,9 +381,9 @@ def main():
         "not_in_benchmark": {"presets": ["crazyflie_bright"], "nearest_preset": {"crazyflie_bright": "crazyflie"},
                              "faults": ["none", "jump", "bias", "dropout"], "filters": "F2 only on astar_unknown"},
         "playground_differences": {
-            "time_limit_s": PLAYGROUND_LIMIT_S,
-            "time_limit": "The playground stops every run at 60 s. The benchmark allowed 120 s on maze and warehouse; "
-                          "'reached_within_60s' shows what a 60 s limit would have scored.",
+            "time_limit_s": PLAYGROUND_LIMIT_S, "time_limit_long_s": PLAYGROUND_LONG,
+            "time_limit": "The playground uses the benchmark's run time limit: 120 s on maze and warehouse, 60 s on "
+                          "the other families and on custom worlds.",
             "astar_unknown_map_corner": "The playground runs the shipped unknown-map A*; its map starts 2.5 m behind A. "
                                         "The benchmark moved the map corner to the area corner. Ideal sensor, 20 layouts: "
                                         "reached % shipped vs benchmark.",

@@ -11,7 +11,7 @@
 <script>
   try { var t = localStorage.getItem("navidx-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
-<script type="module" src="solver.js?v=20261110b"></script>
+<script type="module" src="solver.js?v=20261110c"></script>
 </head>
 <body>
 <header class="top">
@@ -66,6 +66,7 @@
       <div id="presetList" class="checks"></div>
     </fieldset>
     <label class="row small">VIO fault <select id="faultSel" aria-label="VIO fault"></select></label>
+    <label class="row small" title="Seconds of sim time before a run ends as timeout. Auto = by map family, as the benchmark (close-area-benchmark bench.py LONG_FAMILIES): maze and warehouse 120 s, every other family 60 s. Custom worlds without a benchmark family (family custom, drawn from empty) use 60 s under Auto; an edited preset keeps its family.">Run time limit <select id="tlimSel" aria-label="Run time limit"><option value="auto" selected>Auto (by map family)</option><option value="60">60 s</option><option value="120">120 s</option><option value="180">180 s</option></select></label>
     <label class="row small">Seeds <input type="number" id="seedsIn" min="1" max="50" value="5" aria-label="Seeds"> <span class="muted">(0 .. N-1)</span></label>
     <div class="row small">
       <label><input type="checkbox" id="jitterOn" checked> Jitter A and B per seed</label>
@@ -109,6 +110,7 @@
 <section class="panel" aria-label="Results">
   <h2>4. Result</h2>
   <p class="headline" id="headline">Run a sweep to see the ranking.</p>
+  <p class="small muted" id="limitLine"></p>
   <ol class="ranking" id="ranking"></ol>
   <div class="grid-scroll"><table class="matrix" id="matrix"></table></div>
   <p class="small muted">Cell: success rate with its 95 % Wilson interval, n, and the median time to B over the runs that reached it. Runs with the same outcome, time to B and path length (3 dp) are identical: they count once in the rate and the interval, and the cell says "deterministic: k identical runs". Errors count as not reached. Click a cell for details.</p>

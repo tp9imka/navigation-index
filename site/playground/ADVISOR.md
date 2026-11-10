@@ -22,9 +22,11 @@ seed 0, true pose).
 
 Two playground-specific traps the panel shows:
 
-- **60 s limit.** The playground stops every run at 60 s; the benchmark allowed 120 s on maze and
-  warehouse. On maze with the Crazyflie sensor, `astar_unknown_f2` reached 55 % in 120 s and 0 %
-  within 60 s. The table prints "N % by 60 s" under such cells.
+- **Run time limit.** Since loop-73b the playground uses the benchmark's limit: 120 s on maze and
+  warehouse (worker.js `max_time_for` = bench.py `LONG_FAMILIES`), 60 s elsewhere. Before, it stopped
+  every run at 60 s, and the table printed "N % by 60 s" under cells that reached B later (on maze with
+  the Crazyflie sensor, `astar_unknown_f2` reached 55 % in 120 s and 0 % within 60 s). That note now
+  shows only where the playground limit is shorter than the benchmark cell's, which no preset family is.
 - **Unknown-map A* in the playground is the shipped one.** Its map starts 2.5 m behind A. The
   benchmark moved the map corner to the area corner. Ideal sensor, office: 15 % (shipped) vs 95 %
   (benchmark) reached ([prior_check_0.md](../../samples/close-area-benchmark/results/prior_check_0.md)).
@@ -68,7 +70,8 @@ python3 site/playground/data/build_advisor.py     # stdlib, < 1 s, writes data/a
   (%), `median_time_s` (over runs that reached B), `median_clearance_m` (over all runs), `n`, `seed`,
   `collisions_by_material` and `max_time_s` from the 4,480 per-run rows of matrix_0.json, and exits
   non-zero if any value differs from the matrix's own `summary`. All 224 cells match. Maze and
-  warehouse cells also get `reached_within_60s`.
+  warehouse cells got `reached_within_60s` while the playground stopped every run at 60 s; since
+  loop-73b the playground limit equals the benchmark's (120 s there), so no cell has it.
 - **Recommendation.** Rule: highest reached %, then lowest collision %, then lowest median time.
   Ranked separately for planners that need a prior map (`astar_known`, `informed_rrt_star`,
   `astar_mpc`) and those that do not. Ties on reached and collision are listed. A map-free winner

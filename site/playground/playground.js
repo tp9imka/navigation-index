@@ -733,7 +733,7 @@ $("#linkBtn").onclick = async () => {
 // The worker retries each load step itself (worker.js step()). When it gives up, or the load runs
 // longer than SLOW_S, the Retry button starts a fresh worker. readyP resolves on the first ready.
 // ?pyodide=cdn|local|auto in the page URL is passed on to the worker (manifest.json pyodide_source).
-const WORKER_URL = "worker.js?v=20261110";
+const WORKER_URL = "worker.js?v=20261110c";   // bump when worker.js changes (also solver.js WORKER_V)
 const SLOW_S = 45;
 const PYODIDE_Q = (q => (/^(cdn|local|auto)$/.test(q || "") ? q : null))(new URLSearchParams(location.search).get("pyodide"));
 let worker = null, readyResolve;
@@ -943,7 +943,8 @@ function showScore() {
     ["VIO fault", r => esc(LABELS.fault[r.config.fault])],
     ["Safety filter", r => esc(r.config.filter)],
     ["VIO loss recovery", r => esc(LABELS.recovery[r.config.recovery || "none"])],
-    ["Outcome", r => esc(r.score.outcome)],
+    // run time limit from worker.js max_time_for: 120 s for maze / warehouse (as the benchmark), else 60 s
+    ["Outcome", r => esc(r.score.outcome) + (r.max_time_s != null ? ` <span class="muted" title="Sim time before a run ends as timeout: 120 s for the maze and warehouse families (as close-area-benchmark), 60 s otherwise">(limit ${esc(r.max_time_s)} s)</span>` : "")],
     ["Time to B, s", r => fmt(r.score.time_to_goal_s)],
     ["Duration, s", r => fmt(r.score.duration_s)],
     ["Min clearance, m", r => fmt(r.score.min_clearance_m)],

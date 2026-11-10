@@ -83,14 +83,19 @@
       const others = [r.winner].concat(r.ties).filter(p => p !== w && !(swapNote && p === r.winner));
       const ties = others.length ? `<p class="small muted">Tied on reached and collision: ${others.map(esc).join(", ")}.</p>` : "";
       let late = "";
-      if (cell.reached_within_60s != null && cell.reached_within_60s < cell.reached)
-        late = `<p class="small adv-warn">The playground stops runs at 60 s. Within 60 s this planner reached ${pc(cell.reached_within_60s)} here (benchmark limit ${cell.max_time_s} s).</p>`;
+      if (shorterLimit(cell, c) && cell.reached_within_60s != null && cell.reached_within_60s < cell.reached)
+        late = `<p class="small adv-warn">The playground stops runs at ${pgLimitS(c.famUsed)} s here. Within 60 s this planner reached ${pc(cell.reached_within_60s)} (benchmark limit ${cell.max_time_s} s).</p>`;
       const weak = r.weak ? `<p class="small adv-warn">${esc(r.weak)}</p><p>${useBtn(r.safest, c, "Use the safest: " + D.planners[r.safest].label)}</p>` : "";
       return `<div class="adv-card"><h4>${esc(title)}</h4>
         <p class="adv-win"><strong>${esc(D.planners[w].label)}</strong> ${info("planner", w)}</p>
         <p class="small">${esc(why)}</p>${swapNote}${ties}${late}${weak}
         <p>${useBtn(w, c, "Use this", "primary")}</p></div>`;
     }
+
+    // Run time limit the playground uses for a family: worker.js max_time_for (bench.py LONG_FAMILIES, loop-73b).
+    // The "by 60 s" notes only apply when the playground limit is shorter than the benchmark cell's.
+    function pgLimitS(fam) { return ({ maze: 120, warehouse: 120 })[fam] || 60; }
+    function shorterLimit(cell, c) { return cell.max_time_s != null && pgLimitS(c.famUsed) < cell.max_time_s; }
 
     function rows(cells, c) {
       const D = st.data, rank = {};
@@ -107,7 +112,7 @@
       return list.map(r => {
         const bar = `<span class="adv-bar" aria-hidden="true"><i class="r" style="width:${r.reached}%"></i><i class="c" style="width:${r.collision}%"></i><i class="s" style="width:${r.stuck}%"></i><i class="t" style="width:${r.timeout}%"></i></span>`;
         const notPg = !D.planners[r.p].in_playground_now ? ' <span class="adv-tag">new</span>' : "";
-        const t60 = r.reached_within_60s != null && r.reached_within_60s < r.reached ? `<span class="adv-sub">${pc(r.reached_within_60s)} by 60 s</span>` : "";
+        const t60 = shorterLimit(r, c) && r.reached_within_60s != null && r.reached_within_60s < r.reached ? `<span class="adv-sub">${pc(r.reached_within_60s)} by 60 s</span>` : "";
         const ok = usable(r.p, c);
         return `<tr${r.p === D.recommend[c.famUsed][c.presetUsed].no_map.winner || r.p === D.recommend[c.famUsed][c.presetUsed].prior_map.winner ? ' class="adv-best"' : ""}>
           <td class="num">${r.rank}</td>
