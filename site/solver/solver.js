@@ -2,9 +2,9 @@
 // (site/playground/worker.js, unchanged), draw the race, rank the planners.
 // Pure logic lives in sweep.js (unit tested), the worker pool in pool.js.
 // window.SOLVER is a small API for scripted checks (results/measure_solver.mjs).
-import * as SW from "./sweep.js?v=20261110f";
+import * as SW from "./sweep.js?v=20261110g";
 import { Pool } from "./pool.js?v=20261110c";
-import * as REC from "./recommend.js?v=20261110g";
+import * as REC from "./recommend.js?v=20261110h";
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -382,7 +382,7 @@ function startSweep() {
   const jobs = runs.map((r, idx) => {
     const j = jitters[r.seed];
     return { ...r, idx, sweep: sw, world: worlds[r.seed], a: j.a, b: j.b,
-      ab_kept: j.a_kept || j.b_kept ? { a: j.a_kept, b: j.b_kept } : null,
+      ab_kept: j.a_kept || j.b_kept ? { a: j.a_kept, b: j.b_kept } : null, free_path_pred: j.free_path,
       vehicle: spec.vehicle, sensor: r.preset === SW.CUSTOM ? spec.sensor : null, yaw: spec.yaw,
       cfg: { planner: r.planner, ...(r.preset === SW.CUSTOM ? {} : { preset: r.preset }), fault: r.fault, filter: "none", seed: r.seed,
         ...SW.cfgExtras(spec, r.preset) } };
@@ -392,7 +392,12 @@ function startSweep() {
   const tlim = SW.cfgTimeLimit(spec), simS = SW.timeLimitFor(world, spec.time_limit).s;
   for (const j of jobs) { if (tlim != null) j.cfg.max_time_s = tlim; j.timeoutS = Math.round(180 * Math.max(1, simS / 60)); }
   const kept = jitters.filter(j => j.a_kept || j.b_kept).length;
-  if (spec.jitter && kept) $("#poolMsg").textContent = `Jitter: ${kept} seed(s) kept an exact A or B (no free point in ${SW.JITTER_DRAWS} draws).`;
+  const redrawn = jitters.filter(j => j.path_redraws > 0 && !j.path_kept).length, walled = jitters.filter(j => !j.free_path).length;
+  const jmsg = [];
+  if (spec.jitter && kept) jmsg.push(`${kept} seed(s) kept an exact A or B (no free point in ${SW.JITTER_DRAWS} draws, or no connected pair in ${SW.JITTER_PATH_TRIES})`);
+  if (spec.jitter && redrawn) jmsg.push(`${redrawn} seed(s) redrawn because A and B were not connected at the vehicle radius`);
+  if (walled) jmsg.push(`${walled} seed(s) have no free path A=>B at the vehicle radius before any run (shown as no path)`);
+  if (jmsg.length) $("#poolMsg").textContent = "Jitter: " + jmsg.join("; ") + ".";
   // race filters
   $("#raceVar").innerHTML = '<option value="">all variations</option>' +
     SW.variations(spec).map(k => `<option value="${esc(k)}">${esc(SW.variationLabel(k, spec))}</option>`).join("");
@@ -471,7 +476,7 @@ function renderLegend() {
   const rows = planners.map(p => {
     const recs = sw.records.filter(r => r && r.planner === p), c = SW.stats(recs);
     return `<tr><td><span class="swatch" style="background:${plannerColor(p)}"></span>${esc(SW.plannerLabel(p))}</td>` +
-      `<td>${recs.length}/${per}</td><td class="c-ok">${c.reached}</td><td class="c-bad">${c.collision}</td>` +
+      `<td>${recs.length}/${per}${c.no_path ? ` <span class="muted">(no path ${c.no_path})</span>` : ""}</td><td class="c-ok">${c.reached}</td><td class="c-bad">${c.collision}</td>` +
       `<td class="c-warn">${c.stuck + c.timeout}</td><td>${c.error ? `<b class="c-bad">${c.error}</b>` : 0}</td></tr>`;
   }).join("");
   $("#legend").innerHTML = '<thead><tr><th>planner</th><th>done</th><th>reached</th><th>collision</th><th title="stuck or timeout">stuck</th><th>error</th></tr></thead><tbody>' + rows + "</tbody>";
@@ -496,18 +501,21 @@ function renderResults() {
     `<li><span class="swatch" style="background:${plannerColor(r.planner)}"></span><b>${esc(SW.plannerLabel(r.planner))}</b>: ` +
     `${r.reached}/${r.n} reached` + (r.n_distinct < r.n ? ` <span class="dup">(${r.reached_distinct}/${r.n_distinct} distinct)</span>` : "") +
     ` <span class="ci">(95 % CI ${pct(r.success.lo)}-${pct(r.success.hi)}, ${esc(SW.nOne(r))})</span>, ` +
-    (r.median_time_s == null ? "no run reached B" : `median ${r.median_time_s.toFixed(1)} s to B`) + (r.error ? `, <span class="c-bad">${r.error} error</span>` : "") + "</li>").join("");
+    (r.median_time_s == null ? "no run reached B" : `median ${r.median_time_s.toFixed(1)} s to B`) + (r.error ? `, <span class="c-bad">${r.error} error</span>` : "") +
+    (r.no_path ? `, <span class="muted">no path (${r.no_path}), not counted</span>` : "") + "</li>").join("");
   const order = agg.ranking.map(r => r.planner).concat(agg.planners.filter(p => !agg.ranking.some(r => r.planner === p)));
   const head = "<thead><tr><th>planner</th>" + agg.variations.map(k => `<th>${esc(SW.variationLabel(k, sw.spec))}</th>`).join("") + "</tr></thead>";
   const body = order.map(p => "<tr><th>" + `<span class="swatch" style="background:${plannerColor(p)}"></span>${esc(SW.plannerLabel(p))}</th>` +
     agg.variations.map(k => {
       const c = agg.cells[p][k];
+      if (!c.n && c.no_path) return `<td class="na"><span class="cell muted" title="worker free_path false: A and B not connected at the vehicle radius; not counted">no path (${c.no_path})</span></td>`;
       if (!c.n) return '<td class="na"><span class="cell muted">-</span></td>';
       const cls = c.success.p >= 0.8 ? "hi" : c.success.p >= 0.4 ? "mid" : "lo";
       const sel = S.sel && S.sel.planner === p && S.sel.key === k ? " sel" : "";
       return `<td class="${cls}${sel}"><button class="cell" data-p="${esc(p)}" data-k="${esc(k)}" title="details">` +
         `<b>${pct(c.success.p)}</b> <span class="ci">[${pct(c.success.lo)}-${pct(c.success.hi)}]</span> <span class="n">${esc(SW.nOne(c))}</span><br>` +
         (c.identical ? `<span class="dup">deterministic: ${c.identical} identical runs</span><br>` : "") +
+        (c.no_path ? `<span class="n" title="worker free_path false: A and B not connected at the vehicle radius; not counted">no path (${c.no_path})</span><br>` : "") +
         `<span class="n">${c.median_time_s == null ? "no run reached B" : "median " + c.median_time_s.toFixed(1) + " s to B"}</span></button></td>`;
     }).join("") + "</tr>").join("");
   $("#matrix").innerHTML = head + "<tbody>" + body + "</tbody>";
@@ -611,7 +619,9 @@ function jitterList(sw) {
   if (!sw || !sw.jitters) return "-";
   const xy = p => `(${p[0].toFixed(2)}, ${p[1].toFixed(2)})`;
   const list = sw.jitters.slice(0, 10).map(j => `seed ${j.seed}: A ${xy(j.a)} B ${xy(j.b)}` +
-    (j.exact ? " exact map" : j.a_kept || j.b_kept ? ` (kept exact ${[j.a_kept && "A", j.b_kept && "B"].filter(Boolean).join(" and ")})` : ""));
+    (j.exact ? " exact map" : j.path_kept ? " (no connected pair, kept exact A and B)" : j.a_kept || j.b_kept ? ` (kept exact ${[j.a_kept && "A", j.b_kept && "B"].filter(Boolean).join(" and ")})` : "") +
+    (!j.exact && !j.path_kept && j.path_redraws ? ` (redrawn ${j.path_redraws}x: A and B not connected)` : "") +
+    (j.free_path === false ? " NO PATH" : ""));
   return (sw.spec.jitter ? `jitter radius ${sw.spec.jitter} m<br>` : "jitter off<br>") + list.join("<br>") +
     (sw.jitters.length > 10 ? `<br>... ${sw.jitters.length - 10} more in the JSON export` : "");
 }
@@ -631,6 +641,7 @@ function renderDetail(agg) {
   $("#detail").innerHTML = `<b>${esc(SW.plannerLabel(p))}</b>, ${esc(SW.variationLabel(k, S.sweep.spec))}` +
     `<dl><dt>reached B</dt><dd>${c.reached}/${c.n} runs; distinct runs ${c.reached_distinct}/${c.n_distinct} = ${pct(c.success.p)} ` +
     `(95 % Wilson on the ${c.n_distinct} distinct runs: ${pct(c.success.lo)}-${pct(c.success.hi)})</dd>` +
+    (c.no_path ? `<dt>no path</dt><dd>${c.no_path} run${c.no_path > 1 ? "s" : ""} (seeds ${esc(S.sweep.records.filter(r => r && r.planner === p && SW.variationKey(r.preset, r.fault) === k && SW.isNoPath(r)).map(r => r.seed).join(", "))}): the worker found no free path from A to B at the vehicle radius; kept out of n, the interval and the ranking.</dd>` : "") +
     (c.identical ? `<dt>deterministic</dt><dd class="dup">${c.identical} of ${c.n} runs are identical to another run (same outcome, time to B and path length at 3 dp); each set counts as one trial.</dd>` : "") +
     `<dt>sensor</dt><dd class="small">${esc(sensorText(SW.sensorSpecOf(k.split("|")[0], S.sweep.spec)))}</dd>` +
     `<dt>vehicle, yaw</dt><dd class="small">${esc(vehText(S.sweep.spec, k))}</dd>` +

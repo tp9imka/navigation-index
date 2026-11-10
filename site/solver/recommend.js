@@ -4,7 +4,7 @@
 // world's narrowest passage, what the sweep flew, and the benchmark rows of the pick.
 // Unit tests: node --test site/solver/test_sweep.mjs
 import { clearanceAt, overlaps, plannerLabel, timeLimitText, variationLabel, sensorSpecOf, customLabel,
-  isDefaultVehicle, normVehicle, separationNote, seedsToSeparate, seedsName, THOROUGH_SEEDS, variations, paretoFront } from "./sweep.js?v=20261110f";
+  isDefaultVehicle, normVehicle, noPathSummary, separationNote, seedsToSeparate, seedsName, THOROUGH_SEEDS, variations, paretoFront } from "./sweep.js?v=20261110g";
 
 export const SCHEMA = "navidx-solver-recommend/1";
 // F2 (samples/close-area-safety-filter/filters.py, eps = 0.7 m) holds the vehicle centre 0.7 m from every
@@ -114,7 +114,7 @@ const f2 = v => (v == null ? "-" : v.toFixed(2));
 const rowOf = (r, advisor) => ({ planner: r.planner, label: plannerLabel(r.planner), bench_id: benchId(r.planner, advisor),
   reached: r.reached, n: r.n, n_distinct: r.n_distinct, reached_distinct: r.reached_distinct,
   wilson_95: { lo: r.success.lo, hi: r.success.hi, p: r.success.p }, median_time_s: r.median_time_s,
-  min_clearance_m: r.min_clearance_m, collisions: r.collision, stuck: r.stuck, timeout: r.timeout, error: r.error });
+  min_clearance_m: r.min_clearance_m, collisions: r.collision, stuck: r.stuck, timeout: r.timeout, error: r.error, no_path: r.no_path || 0 });
 
 // kind: winner (headline winner or the only planner run), tie (every planner whose Wilson interval overlaps
 // the best one's), none (no planner reached B), empty. On a tie, worse = the planners whose interval does not
@@ -204,6 +204,7 @@ export function recommend(doc, advisor) {
       "Members without a median time to B are excluded." };
   const json = { schema: SCHEMA, input: "synthetic", caveat: CAVEAT.replace("n seeds", `${seeds} seeds`),
     world_name: doc.world_name || null, family: fam || null, headline: doc.headline, kind: p.kind,
+    no_path: noPathOf(doc),
     pick: rows, clearly_worse: worse, tied_n: p.kind === "tie" ? rows.length : null,
     more_seeds: p.kind === "tie" ? moreSeedsLine(p.set, seeds) : null, pareto, fly: flyId ? { planner_bench_id: flyId, command, arm: armc.arm, arm_warning: armc.warning, note: flyNote,
       cwd: "templates/flight-repo", out: `results/first_flight_bench_${flyId}_${wf.path.replace(/^.*\//, "").replace(/\.json$/, "")}`,
@@ -228,22 +229,32 @@ export function paretoLine(par) {
     `Fast and safe among the ${par.group_n} tied planners, ${par.basis}: no other tied planner is as fast to B (median) and as far from every surface (min clearance) and better in one` +
     (par.excluded.length ? `; without a time to B, not ranked: ${par.excluded.join(", ")}` : "") + ".";
 }
+// No-path runs (worker free_path false): how many, which seeds; they are not in any row's counts.
+function noPathOf(doc) {
+  const np = doc.no_path || noPathSummary(doc.records || []);
+  return { runs: np.runs || 0, seeds: np.seeds || [], of: doc.records_n != null ? doc.records_n : (doc.records || []).length,
+    text: np.runs ? `No path: ${np.runs} of ${doc.records_n != null ? doc.records_n : (doc.records || []).length} runs had no free path A=>B at the vehicle radius ` +
+      `(worker free_path false; seed${np.seeds.length === 1 ? "" : "s"} ${np.seeds.join(", ")}). They are shown as "no path" and kept out of every count, interval and the ranking below.`
+      : "No path: 0 runs (every run had a free path A=>B at the vehicle radius, worker free_path)." };
+}
 const cellTxt = c => (c ? `${c.reached_pct} / ${c.collision_pct}` : "-");
 function toMarkdown(j, p) {
   const L = [], name = j.world_name || "custom world";
   L.push(`# Recommend: ${name}`, "");
   L.push(`**${j.caveat.charAt(0).toUpperCase() + j.caveat.slice(1)}.**`, "");
   L.push(`Solver headline: ${j.headline.text}`, "");
+  L.push(j.no_path.text, "");
   if (p.kind === "winner") L.push(`## Pick: ${j.pick[0].label} (\`bench:${j.pick[0].bench_id}\`)`, "",
     j.pick.length > 1 ? "Its 95 % Wilson interval does not overlap the runner-up's. Both rows:" : "Only this planner was run:");
   else if (p.kind === "tie") L.push(`## Pick: no clear winner, tied set of ${j.pick.length}` + (j.clearly_worse.length ? `, ${j.clearly_worse.length} clearly worse` : ""), "",
     `Every planner whose 95 % Wilson interval overlaps the best one's (${j.pick[0].label}, ${pct(j.pick[0].wilson_95.lo)}-${pct(j.pick[0].wilson_95.hi)}). ` +
     `The command below flies the top of the ranking (success, then median time to B); any row is an equally supported choice at this n.`);
+  else if (p.kind === "empty" && j.no_path.runs) L.push("## Pick: none, no run had a free path", "", "Every run of the sweep was a no-path run; fix A, B or the walls in the playground editor.");
   else L.push("## Pick: no planner reached B", "", "Every planner in the sweep failed on this map. All rows:");
   const table = rs => {
-    L.push("", "| planner | bench id | reached | 95 % Wilson | n | n distinct | median time to B s | min clearance m | collisions |",
-      "|---|---|---|---|---|---|---|---|---|");
-    for (const r of rs) L.push(`| ${r.label} | ${r.bench_id} | ${r.reached}/${r.n} | ${pct(r.wilson_95.lo)}-${pct(r.wilson_95.hi)} | ${r.n} | ${r.n_distinct} | ${f2(r.median_time_s)} | ${r.min_clearance_m == null ? "-" : r.min_clearance_m.toFixed(3)} | ${r.collisions} |`);
+    L.push("", "| planner | bench id | reached | 95 % Wilson | n | n distinct | median time to B s | min clearance m | collisions | no path (not counted) |",
+      "|---|---|---|---|---|---|---|---|---|---|");
+    for (const r of rs) L.push(`| ${r.label} | ${r.bench_id} | ${r.reached}/${r.n} | ${pct(r.wilson_95.lo)}-${pct(r.wilson_95.hi)} | ${r.n} | ${r.n_distinct} | ${f2(r.median_time_s)} | ${r.min_clearance_m == null ? "-" : r.min_clearance_m.toFixed(3)} | ${r.collisions} | ${r.no_path} |`);
     L.push("");
   };
   if (p.kind === "tie") {

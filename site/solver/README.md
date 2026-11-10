@@ -29,7 +29,9 @@ Details:
   a seed, so planners stay comparable. A draw is rejected if it is inside an obstacle, closer than the
   vehicle radius (`radius` in the world, else 0.15 m) + 0.1 m to any obstacle surface or to the bounds
   (the arena treats the bounds as walls), or outside the bounds. After 50 rejected draws the exact point is
-  kept and recorded (`a_kept` / `b_kept`, a note under the pool line). The page edits a copy of the world
+  kept and recorded (`a_kept` / `b_kept`, a note under the pool line). Since loop-93 a drawn pair whose A and
+  B are not connected at that radius is redrawn (up to 20 pairs, `JITTER_PATH_TRIES`); see
+  [Free path](#free-path-and-the-day-1-import-pass-loop-93). The page edits a copy of the world
   dict (`a`, `b`) before posting the run; [worker.js](../playground/worker.js) is unchanged and re-centres
   on A as before. Each record carries the `a` and `b` it flew; the JSON export has `jitter.per_seed`, the CSV
   has `a_x, a_y, b_x, b_y`. The race view draws A and B of the chosen seed and a small + at the exact map's
@@ -302,8 +304,7 @@ loop-80 Solver's seed 0..2 runs gave a 21.22 s median and 0.261 m min clearance 
 jittered A and B on seeds 1-2). keepalive=29: 29 ticks reused the previous setpoint under the 30 ms
 planner budget on a loaded machine, so this run end is wall-clock dependent.
 
-Not verified: the button itself was not clicked (the script calls `SOLVER.recommend()`, the function
-behind it; two downloads from one click may make Chrome ask to allow multiple downloads); the "none"
+Not verified: the "none"
 and "winner" texts ran in unit tests only, not in a browser; the random_0 command and ARM=F2 on
 narrow_gap_0 were not flown here; the custom-world `my_world.json` command was not run. loop-87: the
 "Quick separates 5/5 from 0/5" line under the sweep controls ran in the recorded page (no console errors)
@@ -373,6 +374,65 @@ Custom drone sensor, a drone sensor other than ideal and faults other than `jump
 tests only; the `vars=` share link was not opened in a browser; the "What more seeds buy" line names the
 5 seeds per variation ("Quick separates..."), not the 15 runs per planner pooled. One map, 5 seeds.
 
+## Free path and the Day-1 import pass (loop-93)
+
+**Free path.** [worker.js](../playground/worker.js) returns `free_path` with every result:
+`worlds_complex.has_free_path(world, vehicle radius)`, true when A and B are each more than radius + 0.1 m
+from every surface and a 4-connected search on the world's 0.1 m grid, inflated by the radius, joins them.
+Before loop-93 the Solver dropped it, so a jittered seed that walled A or B in counted as a planner failure.
+Now:
+
+- Every record has `free_path` (the worker's) and `free_path_pred` (the page's own check before the run);
+  the CSV has both columns. A run with `free_path` false is a **no-path** run: the cell shows "no path (k)",
+  the legend and the ranking line show the count, the cell details list the seeds, and the headline adds
+  "k runs had no free path A=>B at the vehicle radius (seeds ...) and are not counted." No-path runs are kept
+  out of n, the Wilson interval, the median times and the ranking (`stats`: `n` = runs with a path,
+  `no_path`, `n_all`). A planner with only no-path runs is not ranked. Error records keep `free_path` null and
+  still count as failed trials. The JSON export has `no_path` (runs, seeds); recommend.md has a "No path:"
+  line under the headline and a "no path (not counted)" column; recommend.json has `no_path`.
+- **The jitter picker avoids them.** `hasFreePath` in sweep.js copies the worker's rule on the same grid
+  (cell centres at bounds + (i + 0.5) x 0.1 m, which does not move with A; occupied = centre within 0.05 m of
+  an obstacle or the cell under a cylinder centre; blocked = within the radius of an occupied cell centre or
+  the border). `seedJitter` redraws the A/B pair while it is not connected, up to 20 pairs, then keeps the exact
+  A and B (`path_kept`). A seed whose first pair connects gets the same A and B as before loop-93. The check
+  uses the jitter radius (the larger of the world's and the vehicle's). Cost: one grid per world and radius
+  (cached) and one BFS per drawn pair; 10 x 49 x 3 seeds below ran in about 1 s of node.
+- Parity: 10 single `straight` runs in the browser worker on test worlds (open, a wall with gaps of 0, 0.30,
+  0.35, 0.40 and 0.80 m, B inside / outside a closed room, hall_8x6 at radius 0.15 and 0.30 m): worker
+  `free_path` = page `hasFreePath` on **10/10**, 5 true and 5 false
+  ([measure_import.json](results/measure_import.json) `steps.parity`). The 90 Quick and 40 Thorough runs below
+  agree too (0 mismatches, all true).
+- How often it mattered on the shipped worlds: on the 8 presets and the two room worlds, seeds 1-49, jitter
+  0.25 / 0.5 / 1.0 m, **0 of 1470** first draws had no free path
+  ([free_path_jitter.json](results/free_path_jitter.json), `node site/solver/results/free_path_jitter.mjs`).
+  The redraw matters for user-drawn worlds with closed pockets near A or B (unit test `POCKET`: 2 of 49
+  seeds at 1.0 m needed a redraw).
+
+**Day-1 import pass.** `node site/solver/results/measure_import.mjs` (headless Chrome 140.0.7339.208, the
+page's pool K = 4, Apple M3 Max 16 cores, load average 15.8 / 42.2 / 51.7 at the start; every click is a CDP
+`Input.dispatchMouseEvent` mouse click; downloads captured with `Browser.setDownloadBehavior`). Result:
+[results/measure_import.json](results/measure_import.json), files in
+[results/import_hall_8x6/](results/import_hall_8x6/). Synthetic.
+
+| Step | What happened |
+|---|---|
+| Import world JSON | `hall_8x6.world.json` through the file input (`DOM.setFileInputFiles`): "Imported hall_8x6.world.json (8 obstacles)." |
+| Quick (clicked) | 18 planners x ideal x truth x 5 seeds = 90/90 runs in 19.4 s, 0 errors: 41 reached, 48 stuck, 1 timeout; **0 no-path runs** (worker `free_path` true on 90, page prediction true on 90, 0 jitter redraws) |
+| Headline | **9 planners tie at the top** (n=5 per planner, best 5/5, 95 % Wilson 57-100 %). Ranking first: Theta* known map 5/5, median 21.9 s; 7 planners at 5/5, `mppi_astar` 4/5, `tangent_bug` 2/5 in the tied set; 9 clearly worse at 0/5 |
+| Export CSV (clicked) | `solver_custom.csv` downloaded (completed): 90 rows, 31 columns, quoted CSV parses, `free_path` column all `true` |
+| Export JSON (clicked) | `solver_custom.json` downloaded, parses, schema `navidx-solver-sweep/1`, `no_path.runs` 0 |
+| Recommend (clicked) | both `recommend.md` and `recommend.json` downloaded from one click (both completed; headless Chrome did not block the second); md starts "# Recommend: custom world" and has "No path: 0 runs"; json parses (`navidx-solver-recommend/1`). Command `make first-flight PLANNER=bench:thetastar_known WORLD=my_world.json ARM=F0` (narrowest passage 0.65 m) |
+| Thorough wiring (clicked) | None, then the `astar_known` and `dstar_lite` boxes, then Thorough: spec 10 seeds, presets ideal + crazyflie, 2 planners = 40/40 runs in 8.1 s; matrix columns "ideal / truth pose", "crazyflie / truth pose"; headline "A* + ESDF, known map wins on this map: 20/20 reached B (95 % CI 84 %-100 %)", runner-up D* Lite 10/20 (30-70 %). Its JSON export (clicked) parses |
+| Console | no errors or warnings |
+
+Runs: 90 + 40 + 10 parity = 140. `node site/solver/results/measure_import.mjs --check-only` re-checks the
+saved files without a browser.
+
+Not verified in this pass: a sweep with k > 0 no-path runs in a browser (the shipped worlds never produce
+one; unit tests cover the display, the counts and recommend.md); the `my_world.json` command was not flown;
+the Thorough result is wiring only (2 planners, one map); downloads were checked in headless Chrome, where a
+real profile may still ask to allow the second Recommend download.
+
 ## Limits and not verified
 
 - One map, 3 seeds (5 since loop-87), ideal sensor, truth pose: a small sample. On random_0 the 3-seed Quick
@@ -385,18 +445,17 @@ tests only; the `vars=` share link was not opened in a browser; the "What more s
   With jitter off, many planners repeat the identical run on every seed; those collapse to one trial.
 - The duplicate marker and jitter-off path are unit tested in [test_sweep.mjs](test_sweep.mjs); the recorded
   browser run had jitter on and no duplicates, so the "deterministic" marker was not seen in a browser.
-- Jittered A or B can change whether the world has a free path; the worker reports `free_path` per run, the
-  Solver does not show it.
+- No-path handling (loop-93) ran in a browser only with every run connected (hall_8x6, 130 runs, 0 no path);
+  the "no path (k)" cell, the headline note and the recommend.md count with k > 0 ran in unit tests only.
 - Verified in headless Chrome 140 only. Firefox, Safari, real phones and touch were not tried.
   `CompressionStream` (share link) needs Chrome 80+, Firefox 113+, Safari 16.4+.
 - Run time limit: only Auto on maze_0 ran in a browser. The fixed 60 / 120 / 180 s choices, the
   `tlim=` share link and the CSV / JSON fields are unit tested in [test_sweep.mjs](test_sweep.mjs) only;
   the scaled watchdog was not triggered.
 - crazyflie and VIO jump ran only in the loop-89 Stress sweep (random_0); bias, dropout and VIO none did not run.
-- Not run by the script: Thorough, import from a file, paste of a
-  playground link (the codec is unit tested, the form was not clicked), CSV and JSON downloads through
-  the buttons (the JSON comes from the same function), the 180 s watchdog and the worker-crash path
-  (the error path is unit tested in sweep.js only).
+- Not run by any script: paste of a playground link (the codec is unit tested, the form was not clicked),
+  the 180 s watchdog and the worker-crash path (the error path is unit tested in sweep.js only). Import,
+  Quick, Thorough and the CSV / JSON / Recommend buttons were clicked once (loop-93, hall_8x6, below).
 - Your drone (loop-76): only the depth_cam_87 Quick sweep ran. No browser sweep used a custom vehicle, the
   Custom sensor, lidar_2d or `yaw=look_where_you_go`; `cfg.yaw` and planners honouring `vehicle.radius_m`
   depend on a worker change that was not in this checkout. Those paths are unit tested in sweep.js only.

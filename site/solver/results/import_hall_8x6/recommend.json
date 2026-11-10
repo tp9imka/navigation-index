@@ -1,0 +1,796 @@
+{
+ "schema": "navidx-solver-recommend/1",
+ "input": "synthetic",
+ "caveat": "synthetic 2.5D simulation, scored on truth, not a flight result; 5 seeds on one map is a small sample",
+ "world_name": null,
+ "family": "custom",
+ "headline": {
+  "kind": "tie",
+  "planner": null,
+  "planners": [
+   "thetastar_known",
+   "lazy_thetastar_known",
+   "astar_known",
+   "informed_rrt_star",
+   "lazy_thetastar_unknown",
+   "astar_unknown",
+   "dstar_lite",
+   "mppi_astar",
+   "tangent_bug"
+  ],
+  "top_n": 9,
+  "text": "9 planners tie at the top; run Thorough or more seeds to separate them (n=5 per planner, best 5/5 reached B, 95 % CI 57 %-100 %)."
+ },
+ "kind": "tie",
+ "no_path": {
+  "runs": 0,
+  "seeds": [],
+  "of": 90,
+  "text": "No path: 0 runs (every run had a free path A=>B at the vehicle radius, worker free_path)."
+ },
+ "pick": [
+  {
+   "planner": "thetastar_known",
+   "label": "Theta* (any-angle), known map",
+   "bench_id": "thetastar_known",
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
+   "wilson_95": {
+    "lo": 0.5655085052479191,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 21.9,
+   "min_clearance_m": 0.214,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "no_path": 0
+  },
+  {
+   "planner": "lazy_thetastar_known",
+   "label": "Lazy Theta*, known map",
+   "bench_id": "lazy_thetastar_known",
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
+   "wilson_95": {
+    "lo": 0.5655085052479191,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 21.98,
+   "min_clearance_m": 0.2164,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "no_path": 0
+  },
+  {
+   "planner": "astar_known",
+   "label": "A* + ESDF, known map",
+   "bench_id": "astar_known",
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
+   "wilson_95": {
+    "lo": 0.5655085052479191,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 23.72,
+   "min_clearance_m": 0.2141,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "no_path": 0
+  },
+  {
+   "planner": "informed_rrt_star",
+   "label": "Informed RRT* 5000, known map",
+   "bench_id": "informed_rrt_star",
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
+   "wilson_95": {
+    "lo": 0.5655085052479191,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 25.52,
+   "min_clearance_m": 0.2224,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "no_path": 0
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "label": "Lazy Theta*, unknown map (geofenced)",
+   "bench_id": "lazy_thetastar_unknown",
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
+   "wilson_95": {
+    "lo": 0.5655085052479191,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 27.58,
+   "min_clearance_m": 0.2532,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "no_path": 0
+  },
+  {
+   "planner": "astar_unknown",
+   "label": "A* + ESDF, unknown map",
+   "bench_id": "astar_unknown",
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
+   "wilson_95": {
+    "lo": 0.5655085052479191,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 28.76,
+   "min_clearance_m": 0.2228,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "no_path": 0
+  },
+  {
+   "planner": "dstar_lite",
+   "label": "D* Lite, unknown map (geofenced)",
+   "bench_id": "dstar_lite",
+   "reached": 5,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 5,
+   "wilson_95": {
+    "lo": 0.5655085052479191,
+    "hi": 1,
+    "p": 1
+   },
+   "median_time_s": 28.76,
+   "min_clearance_m": 0.2228,
+   "collisions": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "no_path": 0
+  },
+  {
+   "planner": "mppi_astar",
+   "label": "MPPI on the unknown-map A* path",
+   "bench_id": "mppi_astar",
+   "reached": 4,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 4,
+   "wilson_95": {
+    "lo": 0.3755282641185388,
+    "hi": 0.9637768390302125,
+    "p": 0.8
+   },
+   "median_time_s": 13.510000000000002,
+   "min_clearance_m": 0.2509,
+   "collisions": 0,
+   "stuck": 1,
+   "timeout": 0,
+   "error": 0,
+   "no_path": 0
+  },
+  {
+   "planner": "tangent_bug",
+   "label": "TangentBug",
+   "bench_id": "tangent_bug",
+   "reached": 2,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 2,
+   "wilson_95": {
+    "lo": 0.1176182311592533,
+    "hi": 0.769280067791163,
+    "p": 0.4
+   },
+   "median_time_s": 28.590000000000003,
+   "min_clearance_m": 0.2527,
+   "collisions": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0,
+   "no_path": 0
+  }
+ ],
+ "clearly_worse": [
+  {
+   "planner": "apf",
+   "label": "APF + wall follow",
+   "bench_id": "apf_escape",
+   "reached": 0,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 0,
+   "wilson_95": {
+    "lo": 0,
+    "hi": 0.43449149475208104,
+    "p": 0
+   },
+   "median_time_s": null,
+   "min_clearance_m": 0.4862,
+   "collisions": 0,
+   "stuck": 4,
+   "timeout": 1,
+   "error": 0,
+   "no_path": 0
+  },
+  {
+   "planner": "bug2",
+   "label": "Bug2",
+   "bench_id": "bug2",
+   "reached": 0,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 0,
+   "wilson_95": {
+    "lo": 0,
+    "hi": 0.43449149475208104,
+    "p": 0
+   },
+   "median_time_s": null,
+   "min_clearance_m": 0.4302,
+   "collisions": 0,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0,
+   "no_path": 0
+  },
+  {
+   "planner": "dwa",
+   "label": "DWA (dynamic window)",
+   "bench_id": "dwa",
+   "reached": 0,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 0,
+   "wilson_95": {
+    "lo": 0,
+    "hi": 0.43449149475208104,
+    "p": 0
+   },
+   "median_time_s": null,
+   "min_clearance_m": 0.2739,
+   "collisions": 0,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0,
+   "no_path": 0
+  },
+  {
+   "planner": "dwa_mem",
+   "label": "DWA + 3 s scan memory",
+   "bench_id": "dwa_mem",
+   "reached": 0,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 0,
+   "wilson_95": {
+    "lo": 0,
+    "hi": 0.43449149475208104,
+    "p": 0
+   },
+   "median_time_s": null,
+   "min_clearance_m": 0.2643,
+   "collisions": 0,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0,
+   "no_path": 0
+  },
+  {
+   "planner": "freest_beam",
+   "label": "freest beam (reactive)",
+   "bench_id": "freest_beam",
+   "reached": 0,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 0,
+   "wilson_95": {
+    "lo": 0,
+    "hi": 0.43449149475208104,
+    "p": 0
+   },
+   "median_time_s": null,
+   "min_clearance_m": 0.3764,
+   "collisions": 0,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0,
+   "no_path": 0
+  },
+  {
+   "planner": "hybrid_astar",
+   "label": "Hybrid A*, unknown map (geofenced)",
+   "bench_id": "hybrid_astar",
+   "reached": 0,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 0,
+   "wilson_95": {
+    "lo": 0,
+    "hi": 0.43449149475208104,
+    "p": 0
+   },
+   "median_time_s": null,
+   "min_clearance_m": 0.2526,
+   "collisions": 0,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0,
+   "no_path": 0
+  },
+  {
+   "planner": "mppi",
+   "label": "MPPI, goal only (no global plan)",
+   "bench_id": "mppi",
+   "reached": 0,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 0,
+   "wilson_95": {
+    "lo": 0,
+    "hi": 0.43449149475208104,
+    "p": 0
+   },
+   "median_time_s": null,
+   "min_clearance_m": 0.4862,
+   "collisions": 0,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0,
+   "no_path": 0
+  },
+  {
+   "planner": "straight",
+   "label": "straight line to B",
+   "bench_id": "straight",
+   "reached": 0,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 0,
+   "wilson_95": {
+    "lo": 0,
+    "hi": 0.43449149475208104,
+    "p": 0
+   },
+   "median_time_s": null,
+   "min_clearance_m": 0.4075,
+   "collisions": 0,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0,
+   "no_path": 0
+  },
+  {
+   "planner": "vfh_plus",
+   "label": "VFH+",
+   "bench_id": "vfh_plus",
+   "reached": 0,
+   "n": 5,
+   "n_distinct": 5,
+   "reached_distinct": 0,
+   "wilson_95": {
+    "lo": 0,
+    "hi": 0.43449149475208104,
+    "p": 0
+   },
+   "median_time_s": null,
+   "min_clearance_m": 0.247,
+   "collisions": 0,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0,
+   "no_path": 0
+  }
+ ],
+ "tied_n": 9,
+ "more_seeds": "What more seeds buy: Quick separates 5/5 from 0/5; telling 5/5 from 4/5 needs about 33 seeds (95 % Wilson: 5/5 57 %-100 %, 0/5 0 %-43 %). The tied set spans 100 % to 40 %; separating those two rates needs about 10 distinct runs per planner (Thorough flies 10 seeds per sensor).",
+ "pareto": {
+  "basis": "pooled over every variation of the sweep",
+  "front": [
+   {
+    "planner": "lazy_thetastar_unknown",
+    "label": "Lazy Theta*, unknown map (geofenced)",
+    "bench_id": "lazy_thetastar_unknown",
+    "median_time_s": 27.58,
+    "min_clearance_m": 0.2532
+   },
+   {
+    "planner": "mppi_astar",
+    "label": "MPPI on the unknown-map A* path",
+    "bench_id": "mppi_astar",
+    "median_time_s": 13.510000000000002,
+    "min_clearance_m": 0.2509
+   }
+  ],
+  "group_n": 9,
+  "excluded": [],
+  "rule": "Among the best success group (95 % Wilson interval overlaps the top planner's), a planner is Pareto-optimal when no other member is both no slower (median time to B, 0.01 s) and no closer to a surface (min clearance, 0.001 m) and better in one. Members without a median time to B are excluded."
+ },
+ "fly": {
+  "planner_bench_id": "thetastar_known",
+  "command": "make first-flight PLANNER=bench:thetastar_known WORLD=my_world.json ARM=F0",
+  "arm": "F0",
+  "arm_warning": "WARNING: ARM=F0 flies with NO safety filter. The narrowest passage on the best route A=>B is about 0.65 m (at 3.125, 2.025), below 1.4 m: F2 keeps the centre 0.7 m from every return and cannot pass (flight-repo results/first_flight_bench.txt: narrow_gap_0, F2 stuck, F0 reached). Retry F2 with a smaller eps before a real flight.",
+  "note": null,
+  "cwd": "templates/flight-repo",
+  "out": "results/first_flight_bench_thetastar_known_my_world",
+  "flies": {
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": "ideal: 72 beams, 360 deg, 6 m, noise 0.02 m, dropout 0.02 (run.DEFAULTS)",
+   "pose": "truth (no FAULT=)",
+   "seed": 0,
+   "loop_hz": 20,
+   "ab": "the world file's exact A and B"
+  }
+ },
+ "passage": {
+  "clearance_m": 0.3256,
+  "passage_m": 0.6512,
+  "at": [
+   3.125,
+   2.025
+  ],
+  "grid_m": 0.05,
+  "method": "Narrowest passage = 2 x the bottleneck clearance of the best route A=>B on a 0.05 m ESDF grid of the world (maximin search, cells within 0.7 m of A free, goal = within 0.2 m of B). Chosen over 2 x the winner's min clearance because a run's min clearance is its closest approach to any surface (a corner it cut), not the width it had to pass: in site/solver/results/quick_random_0.json D* Lite's 0.583 m gives 1.17 m (=> F0) on a map whose best route never narrows below 3.6 m. Grid error up to about 0.05 m.",
+  "narrow_below_m": 1.4,
+  "winner_min_clearance_x2_m": 0.428
+ },
+ "world_file": {
+  "path": "my_world.json",
+  "inline": true,
+  "how": "Custom world: save it from recommend.json (its \"world\" field) next to the Makefile: python3 -c \"import json; json.dump(json.load(open('recommend.json'))['world'], open('my_world.json', 'w'))\""
+ },
+ "flown": {
+  "vehicle": {
+   "radius_m": 0.15,
+   "v_max": 2,
+   "a_max": 3,
+   "tau": 0.15
+  },
+  "vehicle_default": true,
+  "sensors": [
+   {
+    "preset": "ideal",
+    "label": "ideal",
+    "spec": {
+     "beams": 72,
+     "fov_deg": 360,
+     "max_range_m": 6,
+     "min_range_m": 0,
+     "noise_sigma_m": 0.02,
+     "cone_deg": 0,
+     "dropout": 0.02
+    }
+   }
+  ],
+  "variations": [
+   "ideal / truth pose"
+  ],
+  "yaw": "fixed",
+  "yaw_policy_flown": [
+   "off"
+  ],
+  "jitter_m": 0.5,
+  "time_limit": "Run time limit: 60 s of sim time (Auto: no benchmark family, default).",
+  "seeds": 5,
+  "runs": 90,
+  "cancelled": false,
+  "finished": "2026-11-10T10:42:33.249Z"
+ },
+ "next_steps": [],
+ "benchmark": {
+  "source": "site/playground/data/advisor.json",
+  "from": "samples/close-area-benchmark/results/matrix_0.json",
+  "run": {
+   "command": "python bench.py --layouts 20 --seed 0 --workers 14 --parity",
+   "layouts": 20,
+   "seed": 0,
+   "date": "2026-11-10",
+   "pose": "true pose (no VIO, no faults)"
+  },
+  "planner": "thetastar_known",
+  "rows": [
+   {
+    "family": "random",
+    "label": "Random boxes + cylinders",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 17.09
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 17.09
+    }
+   },
+   {
+    "family": "u_trap",
+    "label": "U trap",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 17.66
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 17.66
+    }
+   },
+   {
+    "family": "narrow_gap",
+    "label": "Narrow gap",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 22.36
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 22.36
+    }
+   },
+   {
+    "family": "office",
+    "label": "Office (rooms + corridor)",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 18.05
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 18.05
+    }
+   },
+   {
+    "family": "warehouse",
+    "label": "Warehouse (shelf aisles)",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 27.46
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 27.46
+    }
+   },
+   {
+    "family": "forest",
+    "label": "Forest (40-90 poles)",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 18.12
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 18.12
+    }
+   },
+   {
+    "family": "maze",
+    "label": "Maze (10 x 10 cells)",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 30.07
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 30.07
+    }
+   },
+   {
+    "family": "glass_office",
+    "label": "Glass office (glass panels)",
+    "ideal": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 21.17
+    },
+    "crazyflie": {
+     "n": 20,
+     "reached_pct": 100,
+     "collision_pct": 0,
+     "median_time_s": 21.17
+    }
+   }
+  ],
+  "tied_family": [
+   {
+    "planner": "thetastar_known",
+    "rows": []
+   },
+   {
+    "planner": "lazy_thetastar_known",
+    "rows": []
+   },
+   {
+    "planner": "astar_known",
+    "rows": []
+   },
+   {
+    "planner": "informed_rrt_star",
+    "rows": []
+   },
+   {
+    "planner": "lazy_thetastar_unknown",
+    "rows": []
+   },
+   {
+    "planner": "astar_unknown",
+    "rows": []
+   },
+   {
+    "planner": "dstar_lite",
+    "rows": []
+   },
+   {
+    "planner": "mppi_astar",
+    "rows": []
+   },
+   {
+    "planner": "tangent_bug",
+    "rows": []
+   }
+  ]
+ },
+ "sweep_source": {
+  "schema": "navidx-solver-sweep/1",
+  "started": "2026-11-10T10:42:13.835Z",
+  "finished": "2026-11-10T10:42:33.249Z"
+ },
+ "world": {
+  "schema": "close-area-world/1",
+  "frame": "local ENU m, origin at A",
+  "family": "custom",
+  "seed": 0,
+  "index": 0,
+  "bounds": [
+   0,
+   0,
+   8,
+   6
+  ],
+  "a": [
+   0.8,
+   0.8
+  ],
+  "b": [
+   7.2,
+   1
+  ],
+  "z": 1,
+  "radius": 0.15,
+  "obstacles": [
+   {
+    "type": "wall",
+    "x0": 5,
+    "y0": 0,
+    "x1": 5,
+    "y1": 3.6,
+    "thickness": 0.12,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 5,
+    "y0": 4.5,
+    "x1": 5,
+    "y1": 6,
+    "thickness": 0.12,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "box",
+    "cx": 1.4,
+    "cy": 3,
+    "hx": 0.8,
+    "hy": 0.4,
+    "material": "matte",
+    "tag": "table"
+   },
+   {
+    "type": "box",
+    "cx": 3.9,
+    "cy": 1.2,
+    "hx": 0.4,
+    "hy": 0.8,
+    "material": "matte",
+    "tag": "table"
+   },
+   {
+    "type": "box",
+    "cx": 6.5,
+    "cy": 2.4,
+    "hx": 0.6,
+    "hy": 0.4,
+    "material": "matte",
+    "tag": "table"
+   },
+   {
+    "type": "box",
+    "cx": 6.6,
+    "cy": 5.7,
+    "hx": 1,
+    "hy": 0.2,
+    "material": "matte",
+    "tag": "shelf"
+   },
+   {
+    "type": "cylinder",
+    "cx": 2.6,
+    "cy": 2,
+    "r": 0.2,
+    "material": "matte",
+    "tag": "pillar"
+   },
+   {
+    "type": "cylinder",
+    "cx": 2.6,
+    "cy": 4,
+    "r": 0.2,
+    "material": "matte",
+    "tag": "pillar"
+   }
+  ]
+ }
+}

@@ -246,7 +246,9 @@ test("jitter: no free point in 50 draws => exact point kept and recorded", () =>
     obstacles: [{ type: "box", cx: 5, cy: 5, hx: 3, hy: 3 }] };           // A buried: every draw is inside
   const j = S.seedJitter(doc, 1, 0.5);
   assert.equal(j.a_kept, true); assert.deepEqual(j.a, [5, 5]);
-  assert.equal(j.b_kept, false);
+  // loop-93: a buried A is never connected, so no drawn pair passes hasFreePath => both exact points kept
+  assert.equal(j.path_kept, true); assert.equal(j.b_kept, true); assert.deepEqual(j.b, [8, 8]);
+  assert.equal(j.path_redraws, S.JITTER_PATH_TRIES); assert.equal(j.free_path, false);
   const r = S.recordFromResult({ planner: "dwa", preset: "ideal", fault: "truth", seed: 1, a: j.a, b: j.b, ab_kept: { a: true, b: false } },
     { score: { outcome: "stuck", path_length_m: 1 } });
   assert.deepEqual(r.a, [5, 5]); assert.deepEqual(r.ab_kept, { a: true, b: false });
@@ -582,4 +584,83 @@ test("recommend: 'Pareto-optimal: ...' under the tied set, pareto in recommend.j
   const spec = S.normSpec({ planners: ["thetastar_known"], presets: ["ideal", "crazyflie"], fault: "jump", seeds: 5, vars: S.stressVariations("ideal") });
   const doc = S.exportDoc({ spec, world: OPEN, worldName: "random_0", records: many("thetastar_known", 3, 3) });
   assert.deepEqual(R.recommend(doc, ADV).json.flown.variations, ["ideal / truth pose", "ideal / VIO jump", "crazyflie / truth pose"]);
+});
+
+
+// ------------------------------------------------------------ free path / no path (loop-93)
+const wallT = (x0, y0, x1, y1) => ({ type: "wall", x0, y0, x1, y1, thickness: 0.1 });
+// OPEN with a closed 1.2 x 1.2 m room east of B: a jittered B can land inside it, walled in.
+const POCKET = { ...OPEN, b: [14.8, 15], obstacles: [wallT(15.2, 14.4, 15.2, 15.6), wallT(16.4, 14.4, 16.4, 15.6),
+  wallT(15.2, 14.4, 16.4, 14.4), wallT(15.2, 15.6, 16.4, 15.6)] };
+
+test("hasFreePath: open map, closed wall, gap width, A too close to a surface", () => {
+  assert.equal(S.hasFreePath(OPEN, [0, 0], [15, 15], 0.15), true);
+  assert.equal(S.hasFreePath(WALL_GAP(0), [0, 0], [15, 15], 0.15), false);       // wall across, no gap
+  assert.equal(S.hasFreePath(WALL_GAP(0.3), [0, 0], [15, 15], 0.15), false);     // closed on the 0.1 m grid at 0.15 m
+  assert.equal(S.hasFreePath(WALL_GAP(0.8), [0, 0], [15, 15], 0.15), true);
+  assert.equal(S.hasFreePath(WALL_GAP(0.8), [0, 0], [15, 15], 0.6), false);      // a bigger vehicle does not fit
+  assert.equal(S.hasFreePath(OPEN, [-1.8, 0], [15, 15], 0.15), false);           // A 0.2 m from the bound: not > 0.25 m
+  assert.equal(S.hasFreePath(POCKET, [0, 0], [15.8, 15], 0.15), false);          // B inside the closed room
+  assert.equal(S.hasFreePath(POCKET, [0, 0], [14.8, 15], 0.15), true);
+});
+
+test("jitter: a pair whose A and B are not connected is redrawn; every seed ends connected", () => {
+  const js = S.seedJitters(POCKET, { seeds: 50, jitter: 1.0 });
+  assert.ok(js.every(j => j.free_path), "every seed connected");
+  const redrawn = js.filter(j => j.path_redraws > 0);
+  assert.ok(redrawn.length >= 1, "at least one seed needed a redraw");
+  for (const j of js) assert.equal(S.hasFreePath(POCKET, j.a, j.b, 0.15), true);
+  // without the check the first draw of a redrawn seed is walled in (same PRNG stream, first pair)
+  const j = redrawn[0], rng = S.mulberry32((Math.imul(j.seed, 0x9E3779B1) ^ 0x5EED) >>> 0), min = 0.15 + S.JITTER_MARGIN_M;
+  const a1 = S.jitterPoint(POCKET, POCKET.a, rng, 1.0, min).p, b1 = S.jitterPoint(POCKET, POCKET.b, rng, 1.0, min).p;
+  assert.equal(S.hasFreePath(POCKET, a1, b1, 0.15), false);
+  // seeds that needed no redraw are unchanged from the pre-loop-93 rule (first pair kept)
+  const k = js.find(x => x.seed > 0 && !x.path_redraws), r2 = S.mulberry32((Math.imul(k.seed, 0x9E3779B1) ^ 0x5EED) >>> 0);
+  assert.deepEqual(k.a, S.jitterPoint(POCKET, POCKET.a, r2, 1.0, min).p);
+  assert.equal(S.seedJitter(POCKET, 0, 1.0).free_path, true);
+});
+
+test("no path: worker free_path false is recorded, shown and kept out of n, Wilson and the ranking", () => {
+  const run = { planner: "dwa", preset: "ideal", fault: "truth", seed: 3, free_path_pred: false };
+  const r = S.recordFromResult(run, { score: { outcome: "stuck", path_length_m: 2 }, free_path: false });
+  assert.equal(r.free_path, false); assert.equal(r.free_path_pred, false); assert.equal(S.isNoPath(r), true);
+  assert.equal(S.recordFromResult(run, { score: { outcome: "stuck" } }).free_path, null);   // older worker: unknown, counted
+  assert.equal(S.recordFromError(run, "boom").free_path, null);                            // errors stay failed trials
+  const np = (p, seed) => rec(p, "stuck", { seed, free_path: false, free_path_pred: false, path_length_m: 1 + seed });
+  // a: 5/5 with a path + 2 no-path seeds; b: 4/5 + 2 no path; c: only no-path runs
+  const recs = [...many("a", 5, 5), np("a", 5), np("a", 6), ...many("b", 4, 5), np("b", 5), np("b", 6), np("c", 5), np("c", 6)];
+  const st = S.stats(recs.filter(x => x.planner === "a"));
+  assert.equal(st.n, 5); assert.equal(st.n_all, 7); assert.equal(st.no_path, 2); assert.equal(st.stuck, 0);
+  near(st.success.lo, S.wilson(5, 5).lo);                      // 5/5, not 5/7
+  const agg = S.aggregate(recs, { planners: ["a", "b", "c"], presets: ["ideal"], faults: ["truth"], seeds: 7 });
+  assert.deepEqual(agg.ranking.map(x => x.planner), ["a", "b"]);   // c has no counted run: out of the ranking
+  assert.equal(agg.cells.c["ideal|truth"].n, 0); assert.equal(agg.cells.c["ideal|truth"].no_path, 2);
+  assert.deepEqual(agg.no_path, { runs: 6, seeds: [5, 6], predicted: 6 });
+  assert.match(agg.headline.text, / 6 runs had no free path A=>B at the vehicle radius \(seeds 5, 6\) and are not counted\.$/);
+  assert.match(agg.headline.text, /^No clear winner: a and b are within noise on this map \(n=5\)\./);
+  // CSV column and JSON export
+  const csv = S.toCSV([r]).split("\n");
+  assert.match(csv[0], /,free_path,free_path_pred,error$/);
+  assert.match(csv[1], /,false,false,$/);
+  const doc = recDoc(recs);
+  assert.equal(doc.no_path.runs, 6);
+  // recommend.md: the no-path line and column; rows count only runs with a path
+  const { md, json } = R.recommend(doc, ADV);
+  assert.equal(json.no_path.runs, 6); assert.deepEqual(json.no_path.seeds, [5, 6]);
+  assert.match(md, /^No path: 6 of 16 runs had no free path A=>B at the vehicle radius \(worker free_path false; seeds 5, 6\)\. They are shown as "no path"/m);
+  assert.match(md, /\| min clearance m \| collisions \| no path \(not counted\) \|$/m);
+  assert.match(md, /^\| a \| a \| 5\/5 \| 57 %-100 % \| 5 \| 5 \| .* \| 0 \| 2 \|$/m);
+  assert.ok(!json.pick.some(x => x.planner === "c"));
+  assert.ok(!/[\u2013\u2014\u2192]/.test(md), "no en or em dashes, no arrows");
+  // a sweep without no-path runs says 0 and keeps the headline unchanged
+  const clean = R.recommend(recDoc(many("a", 5, 5)), ADV);
+  assert.match(clean.md, /^No path: 0 runs/m);
+  assert.ok(!/no free path/.test(clean.json.headline.text));
+});
+
+test("no path everywhere => no pick, the md says why", () => {
+  const recs = [0, 1, 2].map(seed => rec("a", "stuck", { seed, free_path: false, path_length_m: seed }));
+  const { md, json } = R.recommend(recDoc(recs), ADV);
+  assert.equal(json.kind, "empty");
+  assert.match(md, /^## Pick: none, no run had a free path$/m);
 });

@@ -210,7 +210,11 @@ export function mulberry32(seed) {
 // area bounds (the arena treats them as walls). Negative inside an obstacle or outside the bounds.
 export function clearanceAt(doc, x, y) {
   const [x0, y0, x1, y1] = doc.bounds;
-  let d = Math.min(x - x0, x1 - x, y - y0, y1 - y);
+  return Math.min(x - x0, x1 - x, y - y0, y1 - y, obstacleClearance(doc, x, y));
+}
+// Same, obstacles only (no bounds); Infinity when there is none. world.py _sdf_obstacles.
+export function obstacleClearance(doc, x, y) {
+  let d = Infinity;
   for (const o of doc.obstacles || []) {
     let e;
     if (o.type === "cylinder") e = Math.hypot(x - o.cx, y - o.cy) - o.r;
@@ -245,15 +249,94 @@ export function jitterPoint(doc, p, rng, R, minClear, draws = JITTER_DRAWS) {
   return { p: [p[0], p[1]], kept: true, draws };
 }
 
+// ------------------------------------------------------------ free path A=>B (loop-93)
+// The worker reports result.free_path = worlds_complex.has_free_path(world, vehicle radius): A and B each more
+// than radius + 0.1 m from every surface, and a 4-connected BFS from A's cell to B's cell on the world grid
+// (world_json.from_json: 0.1 m cells over the bounds, a cell is occupied when its centre is within 0.05 m of
+// an obstacle, plus the cell under each cylinder centre) inflated by the radius (world.py OccGrid.inflated:
+// a cell is blocked when its centre is within radius of an occupied cell centre or of the padded border).
+// hasFreePath copies that rule so the jitter picker can avoid a walled-in A or B before any run.
+export const FREE_PATH_RES = 0.1;                // world.py RES
+export const FREE_PATH_END_CLEAR_M = 0.1;        // worlds_complex.py END_CLEAR
+export const JITTER_PATH_TRIES = 20;             // A/B pairs drawn per seed until one is connected
+const gridCache = new WeakMap();
+// Blocked grid of doc at the given radius: { nx, ny, x0, y0, res, blocked } (blocked[j * nx + i]).
+export function freePathGrid(doc, radius, res = FREE_PATH_RES) {
+  let per = gridCache.get(doc);
+  if (!per) { per = new Map(); gridCache.set(doc, per); }
+  const key = `${radius}|${res}`;
+  if (per.has(key)) return per.get(key);
+  const [x0, y0, x1, y1] = doc.bounds;
+  const nx = Math.round((x1 - x0) / res), ny = Math.round((y1 - y0) / res);
+  const W = nx + 2, H = ny + 2, occ = new Uint8Array(W * H);  // padded by one occupied cell on every side
+  for (let j = 0; j < H; j++) for (let i = 0; i < W; i++) {
+    if (!i || !j || i === W - 1 || j === H - 1) { occ[j * W + i] = 1; continue; }
+    if (obstacleClearance(doc, x0 + (i - 0.5) * res, y0 + (j - 0.5) * res) <= res / 2) occ[j * W + i] = 1;
+  }
+  for (const o of doc.obstacles || []) if (o.type === "cylinder") {     // a pole thinner than a cell
+    const i = Math.floor((o.cx - x0) / res), j = Math.floor((o.cy - y0) / res);
+    if (i >= 0 && j >= 0 && i < nx && j < ny) occ[(j + 1) * W + i + 1] = 1;
+  }
+  const m = Math.floor((radius + 1e-9) / res), offs = [];
+  for (let dj = -m; dj <= m; dj++) for (let di = -m; di <= m; di++) if (Math.hypot(di, dj) * res <= radius + 1e-9) offs.push([di, dj]);
+  const blk = occ.slice();
+  for (let j = 0; j < H; j++) for (let i = 0; i < W; i++) {
+    const k = j * W + i;
+    if (!occ[k]) continue;
+    // interior occupied cells (all 4 neighbours occupied) cannot be the nearest one to a free cell
+    if (i > 0 && j > 0 && i < W - 1 && j < H - 1 && occ[k - 1] && occ[k + 1] && occ[k - W] && occ[k + W]) continue;
+    for (const [di, dj] of offs) { const ii = i + di, jj = j + dj; if (ii >= 0 && jj >= 0 && ii < W && jj < H) blk[jj * W + ii] = 1; }
+  }
+  const blocked = new Uint8Array(nx * ny);
+  for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++) blocked[j * nx + i] = blk[(j + 1) * W + i + 1];
+  const g = { nx, ny, x0, y0, res, blocked };
+  per.set(key, g);
+  return g;
+}
+// Is there a free path from a to b (world frame) for a vehicle of this radius? Same rule as the worker's free_path.
+export function hasFreePath(doc, a, b, radius) {
+  const r = radius > 0 ? radius : vehicleRadius(doc);
+  if (!(clearanceAt(doc, a[0], a[1]) > r + FREE_PATH_END_CLEAR_M) || !(clearanceAt(doc, b[0], b[1]) > r + FREE_PATH_END_CLEAR_M)) return false;
+  const g = freePathGrid(doc, r), { nx, ny, res } = g;
+  const si = Math.floor((a[0] - g.x0) / res), sj = Math.floor((a[1] - g.y0) / res);
+  const gi = Math.floor((b[0] - g.x0) / res), gj = Math.floor((b[1] - g.y0) / res);
+  if ([si, gi].some(i => i < 0 || i >= nx) || [sj, gj].some(j => j < 0 || j >= ny)) return false;
+  const s = sj * nx + si, t = gj * nx + gi;
+  if (g.blocked[s] || g.blocked[t]) return false;
+  const seen = new Uint8Array(nx * ny), q = new Int32Array(nx * ny);
+  let h = 0, e = 0; q[e++] = s; seen[s] = 1;
+  while (h < e) {
+    const k = q[h++];
+    if (k === t) return true;
+    const i = k % nx;
+    for (const n of [i + 1 < nx ? k + 1 : -1, i > 0 ? k - 1 : -1, k + nx < nx * ny ? k + nx : -1, k - nx]) {
+      if (n >= 0 && !seen[n] && !g.blocked[n]) { seen[n] = 1; q[e++] = n; }
+    }
+  }
+  return false;
+}
+
 // A and B for one seed. Depends only on (world, seed, R): every planner gets the same points.
 // radius: vehicle radius for the clearance (default: the world's, else 0.15 m).
+// A drawn pair whose A and B are not connected at that radius (hasFreePath) is redrawn, up to
+// JITTER_PATH_TRIES pairs; when none connects, the exact A and B are kept (path_kept = true).
+// free_path = hasFreePath of the pair returned (the exact map's for seed 0 and jitter off).
 export function seedJitter(doc, seed, R, radius) {
   const a = [doc.a ? doc.a[0] : 0, doc.a ? doc.a[1] : 0], b = [doc.b[0], doc.b[1]];
-  if (!seed || !R) return { seed, a, b, exact: true, a_kept: false, b_kept: false, draws: 0 };
+  const rad = radius > 0 ? radius : vehicleRadius(doc);
+  if (!seed || !R) return { seed, a, b, exact: true, a_kept: false, b_kept: false, draws: 0, path_redraws: 0, path_kept: false,
+    free_path: hasFreePath(doc, a, b, rad) };
   const rng = mulberry32((Math.imul(seed, 0x9E3779B1) ^ 0x5EED) >>> 0);
-  const minClear = (radius > 0 ? radius : vehicleRadius(doc)) + JITTER_MARGIN_M;
-  const ja = jitterPoint(doc, a, rng, R, minClear), jb = jitterPoint(doc, b, rng, R, minClear);
-  return { seed, a: ja.p, b: jb.p, exact: false, a_kept: ja.kept, b_kept: jb.kept, draws: ja.draws + jb.draws };
+  const minClear = rad + JITTER_MARGIN_M;
+  let draws = 0;
+  for (let t = 0; t < JITTER_PATH_TRIES; t++) {
+    const ja = jitterPoint(doc, a, rng, R, minClear), jb = jitterPoint(doc, b, rng, R, minClear);
+    draws += ja.draws + jb.draws;
+    if (hasFreePath(doc, ja.p, jb.p, rad))
+      return { seed, a: ja.p, b: jb.p, exact: false, a_kept: ja.kept, b_kept: jb.kept, draws, path_redraws: t, path_kept: false, free_path: true };
+  }
+  return { seed, a, b, exact: false, a_kept: true, b_kept: true, draws, path_redraws: JITTER_PATH_TRIES, path_kept: true,
+    free_path: hasFreePath(doc, a, b, rad) };
 }
 export const seedJitters = (doc, spec) => Array.from({ length: spec.seeds }, (_, s) => seedJitter(doc, s, spec.jitter, sweepRadius(doc, spec)));
 
@@ -293,13 +376,19 @@ export function recordFromResult(run, result) {
     yaw_policy: fs && typeof fs.yaw_policy === "string" ? fs.yaw_policy : null, outcome: sc.outcome,
     time_to_goal_s: num(sc.time_to_goal_s), path_length_m: num(sc.path_length_m), min_clearance_m: num(sc.min_clearance_m),
     duration_s: num(sc.duration_s), max_time_s: num(result.max_time_s),
-    wall_s: result.worker_ms != null ? result.worker_ms / 1000 : num(result.wall_s), error: null };
+    wall_s: result.worker_ms != null ? result.worker_ms / 1000 : num(result.wall_s),
+    // worker free_path (A and B connected at the vehicle radius); free_path_pred = the page's hasFreePath before the run
+    free_path: typeof result.free_path === "boolean" ? result.free_path : null, free_path_pred: predOf(run), error: null };
 }
+// An error record has no worker free_path: it stays a failed trial (counted), whatever the prediction said.
 export function recordFromError(run, message) {
   return { planner: run.planner, preset: run.preset, fault: run.fault, seed: run.seed, ...abOf(run), ...droneOf(run), yaw_policy: null,
     outcome: "error", time_to_goal_s: null, path_length_m: null, min_clearance_m: null, duration_s: null, max_time_s: null, wall_s: null,
-    error: String(message || "error") };
+    free_path: null, free_path_pred: predOf(run), error: String(message || "error") };
 }
+const predOf = run => (typeof run.free_path_pred === "boolean" ? run.free_path_pred : null);
+// A run is "no path" when the worker said A and B were not connected at the vehicle radius.
+export const isNoPath = r => r && r.free_path === false;
 // Vehicle (always, arena default when the sweep did not change it), sensor spec (custom dict; a named
 // preset's table entry) and the yaw request. yaw_policy is what the worker reported it flew.
 const droneOf = run => ({ vehicle: run.vehicle ? normVehicle(run.vehicle) : { ...VEHICLE_DEFAULT },
@@ -336,7 +425,10 @@ export const runSignature = r => [r.preset, r.fault, r.outcome, r3(r.time_to_goa
 // success = wilson(distinct runs that reached B, n_distinct). Error records each count as distinct.
 // `identical` = runs that have at least one
 // identical twin in the group (0 when every run is distinct).
-export function stats(recs) {
+// No-path runs (worker free_path false, loop-93) are kept out of every count below: no_path counts them,
+// n_all = n + no_path. A planner cannot fail a map that has no route.
+export function stats(all) {
+  const recs = all.filter(r => !isNoPath(r)), no_path = all.length - recs.length;
   const c = Object.fromEntries(OUTCOMES.map(o => [o, 0]));
   for (const r of recs) c[OUTCOMES.includes(r.outcome) ? r.outcome : "error"]++;
   const n = recs.length, flown = recs.filter(r => r.outcome !== "error");
@@ -347,7 +439,7 @@ export function stats(recs) {
   const n_distinct = groups.size;
   const reached_distinct = [...groups.keys()].filter(k => k.split("|")[2] === "reached").length;
   const identical = [...groups.values()].filter(v => v > 1).reduce((a, b) => a + b, 0);
-  return { n, n_distinct, identical, ...c, reached_distinct, success: wilson(reached_distinct, n_distinct),
+  return { n, n_all: all.length, no_path, n_distinct, identical, ...c, reached_distinct, success: wilson(reached_distinct, n_distinct),
     median_time_s: median(recs.filter(r => r.outcome === "reached").map(r => r.time_to_goal_s)),
     median_path_m: median(flown.map(r => r.path_length_m)),
     min_clearance_m: clr.length ? Math.min(...clr) : null,
@@ -366,9 +458,18 @@ export function aggregate(records, spec) {
     for (const k of keys) cells[p][k] = stats(mine.filter(r => variationKey(r.preset, r.fault) === k));
     pooled[p] = stats(mine);
   }
-  const ranking = rank(pooled);
-  return { planners, variations: keys, cells, pooled, ranking, headline: headline(ranking), n_records: records.length };
+  const ranking = rank(pooled), np = noPathSummary(records), h = headline(ranking);
+  if (np.runs) h.text += ` ${noPathNote(np)}`;
+  return { planners, variations: keys, cells, pooled, ranking, headline: h, n_records: records.length, no_path: np };
 }
+// No-path runs of a sweep: { runs, seeds (ascending), predicted (runs the page's hasFreePath also called no path) }.
+export function noPathSummary(records) {
+  const np = (records || []).filter(isNoPath);
+  return { runs: np.length, seeds: [...new Set(np.map(r => r.seed))].sort((a, b) => a - b),
+    predicted: np.filter(r => r.free_path_pred === false).length };
+}
+export const noPathNote = np => `${np.runs} run${np.runs === 1 ? "" : "s"} had no free path A=>B at the vehicle radius ` +
+  `(seed${np.seeds.length === 1 ? "" : "s"} ${np.seeds.join(", ")}) and ${np.runs === 1 ? "is" : "are"} not counted.`;
 
 // Success rate (descending), then median time to B (ascending, none = last), then planner id.
 export function rank(pooled) {
@@ -476,7 +577,7 @@ export function paretoRows(agg, key) {
 export const CSV_COLS = ["planner", "planner_label", "preset", "fault", "seed", "a_x", "a_y", "b_x", "b_y", "outcome", "time_to_goal_s",
   "path_length_m", "min_clearance_m", "duration_s", "max_time_s", "wall_s",
   "sensor_label", "sensor_beams", "sensor_fov_deg", "sensor_max_range_m", "sensor_min_range_m", "sensor_noise_sigma_m",
-  "vehicle_radius_m", "vehicle_v_max", "vehicle_a_max", "vehicle_tau", "yaw", "yaw_policy", "error"];
+  "vehicle_radius_m", "vehicle_v_max", "vehicle_a_max", "vehicle_tau", "yaw", "yaw_policy", "free_path", "free_path_pred", "error"];
 const csvCell = v => { if (v == null) return ""; const s = String(v); return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
 const csvVal = (r, c) => {
   if (c === "planner_label") return plannerLabel(r.planner);
@@ -500,7 +601,10 @@ export function exportDoc({ spec, world, worldName, records, env, pool, started,
     started: started || null, finished: finished || null, pool: pool || null, env: env || null,
     drone: droneDoc(spec, records),
     jitter: { radius_m: spec.jitter || 0, min_clearance_m: sweepRadius(world, spec) + JITTER_MARGIN_M, max_draws: JITTER_DRAWS,
-      prng: "mulberry32", seed0: "exact map", per_seed: jitters || null },
+      prng: "mulberry32", seed0: "exact map", per_seed: jitters || null, path_tries: JITTER_PATH_TRIES,
+      path_rule: "a drawn A/B pair not connected at the radius (hasFreePath, the worker's free_path rule on the 0.1 m grid) is redrawn; " +
+        "after path_tries pairs the exact A and B are kept (path_kept)" },
+    no_path: { ...agg.no_path, rule: "runs with worker free_path false are shown as no path and kept out of every count, interval and the ranking" },
     time_limit: { choice: normTimeLimit(spec.time_limit), expected_s: timeLimitFor(world, spec.time_limit).s,
       source: timeLimitFor(world, spec.time_limit).source, used_s: limitsUsed(records), long_families: LONG_FAMILIES,
       default_s: DEFAULT_MAX_TIME_S, rule: "auto: world.family in long_families => that limit, else default_s (bench.py LONG_FAMILIES)" },

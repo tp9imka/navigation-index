@@ -1,0 +1,526 @@
+{
+ "date": "2026-11-10T10:42:07.929Z",
+ "input": "synthetic",
+ "note": "SYNTHETIC SIMULATION, 2.5D point mass, scored on truth. Not a flight result.",
+ "host": "Apple M3 Max, 16 cores, load 15.8 42.2 51.7",
+ "page": "http://127.0.0.1:8803/site/solver/index.html",
+ "world_file": "samples/close-area-arena/rooms/hall_8x6.world.json",
+ "steps": {
+  "import": {
+   "message": "Imported hall_8x6.world.json (8 obstacles).",
+   "ok": true,
+   "world_name": null,
+   "obstacles": 8,
+   "bounds": [
+    0,
+    0,
+    8,
+    6
+   ]
+  },
+  "quick": {
+   "spec": {
+    "planners": [
+     "straight",
+     "freest_beam",
+     "astar_known",
+     "astar_unknown",
+     "apf",
+     "vfh_plus",
+     "dwa",
+     "dwa_mem",
+     "bug2",
+     "tangent_bug",
+     "dstar_lite",
+     "informed_rrt_star",
+     "thetastar_known",
+     "lazy_thetastar_known",
+     "lazy_thetastar_unknown",
+     "mppi",
+     "mppi_astar",
+     "hybrid_astar"
+    ],
+    "presets": [
+     "ideal"
+    ],
+    "faults": [
+     "truth"
+    ],
+    "fault": null,
+    "seeds": 5,
+    "jitter": 0.5,
+    "time_limit": "auto",
+    "vehicle": {
+     "radius_m": 0.15,
+     "v_max": 2,
+     "a_max": 3,
+     "tau": 0.15
+    },
+    "sensor_choice": "ideal",
+    "sensor": null,
+    "yaw": "fixed"
+   },
+   "end": {
+    "running": false,
+    "done": 90,
+    "total": 90
+   },
+   "wall_s_from_click": 21.183,
+   "elapsed_s": 19.414,
+   "K": 4,
+   "records": 90,
+   "outcomes": {
+    "stuck": 48,
+    "reached": 41,
+    "timeout": 1
+   },
+   "free_path": {
+    "true": 90
+   },
+   "free_path_pred": {
+    "true": 90
+   },
+   "pred_mismatch": 0,
+   "jitters": [
+    {
+     "seed": 0,
+     "a": [
+      0.8,
+      0.8
+     ],
+     "b": [
+      7.2,
+      1
+     ],
+     "exact": true,
+     "a_kept": false,
+     "b_kept": false,
+     "draws": 0,
+     "path_redraws": 0,
+     "path_kept": false,
+     "free_path": true
+    },
+    {
+     "seed": 1,
+     "a": [
+      0.7405,
+      1.1866
+     ],
+     "b": [
+      6.8937,
+      0.7913
+     ],
+     "exact": false,
+     "a_kept": false,
+     "b_kept": false,
+     "draws": 2,
+     "path_redraws": 0,
+     "path_kept": false,
+     "free_path": true
+    },
+    {
+     "seed": 2,
+     "a": [
+      0.6918,
+      1.0777
+     ],
+     "b": [
+      6.8709,
+      1.0094
+     ],
+     "exact": false,
+     "a_kept": false,
+     "b_kept": false,
+     "draws": 2,
+     "path_redraws": 0,
+     "path_kept": false,
+     "free_path": true
+    },
+    {
+     "seed": 3,
+     "a": [
+      1.0974,
+      0.4862
+     ],
+     "b": [
+      7.0783,
+      1.034
+     ],
+     "exact": false,
+     "a_kept": false,
+     "b_kept": false,
+     "draws": 2,
+     "path_redraws": 0,
+     "path_kept": false,
+     "free_path": true
+    },
+    {
+     "seed": 4,
+     "a": [
+      0.7771,
+      0.6454
+     ],
+     "b": [
+      7.1382,
+      1.408
+     ],
+     "exact": false,
+     "a_kept": false,
+     "b_kept": false,
+     "draws": 2,
+     "path_redraws": 0,
+     "path_kept": false,
+     "free_path": true
+    }
+   ],
+   "headline": "9 planners tie at the top; run Thorough or more seeds to separate them (n=5 per planner, best 5/5 reached B, 95 % CI 57 %-100 %).",
+   "no_path_cells": 0,
+   "buttons_enabled": [
+    true,
+    true,
+    true
+   ],
+   "export_headline": "9 planners tie at the top; run Thorough or more seeds to separate them (n=5 per planner, best 5/5 reached B, 95 % CI 57 %-100 %).",
+   "export_no_path": {
+    "runs": 0,
+    "seeds": [],
+    "predicted": 0,
+    "rule": "runs with worker free_path false are shown as no path and kept out of every count, interval and the ranking"
+   },
+   "ranking_top": [
+    {
+     "planner": "thetastar_known",
+     "reached": 5,
+     "n": 5,
+     "no_path": 0,
+     "wilson": [
+      0.566,
+      1
+     ],
+     "median_time_s": 21.9
+    },
+    {
+     "planner": "lazy_thetastar_known",
+     "reached": 5,
+     "n": 5,
+     "no_path": 0,
+     "wilson": [
+      0.566,
+      1
+     ],
+     "median_time_s": 21.98
+    },
+    {
+     "planner": "astar_known",
+     "reached": 5,
+     "n": 5,
+     "no_path": 0,
+     "wilson": [
+      0.566,
+      1
+     ],
+     "median_time_s": 23.72
+    },
+    {
+     "planner": "informed_rrt_star",
+     "reached": 5,
+     "n": 5,
+     "no_path": 0,
+     "wilson": [
+      0.566,
+      1
+     ],
+     "median_time_s": 25.52
+    },
+    {
+     "planner": "lazy_thetastar_unknown",
+     "reached": 5,
+     "n": 5,
+     "no_path": 0,
+     "wilson": [
+      0.566,
+      1
+     ],
+     "median_time_s": 27.58
+    }
+   ],
+   "reached_planners_5of5": 7,
+   "csv_rows_match_records": true,
+   "recommend_kind": "tie",
+   "recommend_no_path": {
+    "runs": 0,
+    "seeds": [],
+    "of": 90,
+    "text": "No path: 0 runs (every run had a free path A=>B at the vehicle radius, worker free_path)."
+   },
+   "recommend_command": "make first-flight PLANNER=bench:thetastar_known WORLD=my_world.json ARM=F0",
+   "recommend_arm": "F0",
+   "passage_m": 0.6512,
+   "tied_n": 9,
+   "clearly_worse": [
+    "apf",
+    "bug2",
+    "dwa",
+    "dwa_mem",
+    "freest_beam",
+    "hybrid_astar",
+    "mppi",
+    "straight",
+    "vfh_plus"
+   ]
+  },
+  "downloads": {
+   "#csvBtn": [
+    {
+     "file": "solver_custom.csv",
+     "state": "completed"
+    }
+   ],
+   "#jsonBtn": [
+    {
+     "file": "solver_custom.json",
+     "state": "completed"
+    }
+   ],
+   "#recBtn": [
+    {
+     "file": "recommend.md",
+     "state": "completed"
+    },
+    {
+     "file": "recommend.json",
+     "state": "completed"
+    }
+   ],
+   "share_msg": "recommend.md and recommend.json downloaded.",
+   "files": {
+    "csv": {
+     "file": "import_hall_8x6/solver_custom.csv",
+     "exists": true,
+     "bytes": 15594,
+     "rows": 90,
+     "columns": 31,
+     "has_free_path_col": true,
+     "rows_same_width": true,
+     "free_path_values": [
+      "true"
+     ],
+     "outcomes": {
+      "stuck": 48,
+      "reached": 41,
+      "timeout": 1
+     },
+     "parses": true
+    },
+    "json": {
+     "file": "import_hall_8x6/solver_custom.json",
+     "exists": true,
+     "bytes": 91618,
+     "schema": "navidx-solver-sweep/1",
+     "parses": true
+    },
+    "recommend_md": {
+     "file": "import_hall_8x6/recommend.md",
+     "exists": true,
+     "bytes": 6515,
+     "parses": true,
+     "first_line": "# Recommend: custom world"
+    },
+    "recommend_json": {
+     "file": "import_hall_8x6/recommend.json",
+     "exists": true,
+     "bytes": 16683,
+     "schema": "navidx-solver-recommend/1",
+     "parses": true
+    }
+   }
+  },
+  "thorough": {
+   "count_msg": "10 runs = 2 planners x 1 sensor x 1 fault x 5 seeds. Estimate: about 2 s on 4 workers (from run times measured in this browser). Run time limit: 60 s of sim time (Auto: no benchmark family, default).Quick separates 5/5 from 0/5; telling 5/5 from 4/5 needs about 33 seeds (95 % Wilson: 5/5 57 %-100 %, 0/5 0 %-43 %).",
+   "spec": {
+    "planners": [
+     "astar_known",
+     "dstar_lite"
+    ],
+    "presets": [
+     "ideal",
+     "crazyflie"
+    ],
+    "faults": [
+     "truth"
+    ],
+    "fault": null,
+    "seeds": 10,
+    "jitter": 0.5,
+    "time_limit": "auto",
+    "vehicle": {
+     "radius_m": 0.15,
+     "v_max": 2,
+     "a_max": 3,
+     "tau": 0.15
+    },
+    "sensor_choice": "ideal",
+    "sensor": null,
+    "yaw": "fixed"
+   },
+   "end": {
+    "running": false,
+    "done": 40,
+    "total": 40
+   },
+   "wall_s_from_click": 9.169,
+   "elapsed_s": 8.127,
+   "records": 40,
+   "outcomes": {
+    "reached": 30,
+    "collision": 9,
+    "stuck": 1
+   },
+   "free_path": {
+    "true": 40
+   },
+   "variations": [
+    "ideal / truth pose",
+    "crazyflie / truth pose"
+   ],
+   "headline": "A* + ESDF, known map wins on this map: 20/20 reached B (95 % CI 84 %-100 %, n=20), median 23.9 s to B; runner-up D* Lite, unknown map (geofenced) 10/20 (30 %-70 %, n=20).",
+   "download": [
+    {
+     "file": "solver_custom.json",
+     "state": "completed"
+    }
+   ],
+   "json_file": {
+    "file": "import_hall_8x6/thorough/solver_custom.json",
+    "exists": true,
+    "bytes": 41717,
+    "schema": "navidx-solver-sweep/1",
+    "parses": true
+   },
+   "export_seeds": 10,
+   "export_presets": [
+    "ideal",
+    "crazyflie"
+   ],
+   "export_planners": [
+    "astar_known",
+    "dstar_lite"
+   ],
+   "export_records": 40,
+   "ranking": [
+    {
+     "planner": "astar_known",
+     "reached": 20,
+     "n": 20,
+     "no_path": 0,
+     "wilson": [
+      0.839,
+      1
+     ],
+     "median_time_s": 23.85
+    },
+    {
+     "planner": "dstar_lite",
+     "reached": 10,
+     "n": 20,
+     "no_path": 0,
+     "wilson": [
+      0.299,
+      0.701
+     ],
+     "median_time_s": 29.310000000000002
+    }
+   ]
+  },
+  "parity": [
+   {
+    "name": "open",
+    "radius_m": 0.15,
+    "page": true,
+    "worker": true,
+    "outcome": "reached",
+    "error": null
+   },
+   {
+    "name": "wall_gap_0",
+    "radius_m": 0.15,
+    "page": false,
+    "worker": false,
+    "outcome": "stuck",
+    "error": null
+   },
+   {
+    "name": "wall_gap_0.30",
+    "radius_m": 0.15,
+    "page": false,
+    "worker": false,
+    "outcome": "stuck",
+    "error": null
+   },
+   {
+    "name": "wall_gap_0.35",
+    "radius_m": 0.15,
+    "page": false,
+    "worker": false,
+    "outcome": "stuck",
+    "error": null
+   },
+   {
+    "name": "wall_gap_0.40",
+    "radius_m": 0.15,
+    "page": true,
+    "worker": true,
+    "outcome": "stuck",
+    "error": null
+   },
+   {
+    "name": "wall_gap_0.80",
+    "radius_m": 0.15,
+    "page": true,
+    "worker": true,
+    "outcome": "reached",
+    "error": null
+   },
+   {
+    "name": "pocket_b_inside",
+    "radius_m": 0.15,
+    "page": false,
+    "worker": false,
+    "outcome": "stuck",
+    "error": null
+   },
+   {
+    "name": "pocket_b_outside",
+    "radius_m": 0.15,
+    "page": true,
+    "worker": true,
+    "outcome": "reached",
+    "error": null
+   },
+   {
+    "name": "hall_8x6_r0.15",
+    "radius_m": 0.15,
+    "page": true,
+    "worker": true,
+    "outcome": "stuck",
+    "error": null
+   },
+   {
+    "name": "hall_8x6_r0.30",
+    "radius_m": 0.3,
+    "page": false,
+    "worker": false,
+    "outcome": "stuck",
+    "error": null
+   }
+  ]
+ },
+ "chrome": "Chrome/140.0.7339.208",
+ "python_ready_s": 4.611,
+ "parity_agree": "10/10",
+ "console": [],
+ "files_rechecked": {
+  "date": "2026-11-10T10:47:02.538Z",
+  "command": "node site/solver/results/measure_import.mjs --check-only"
+ }
+}

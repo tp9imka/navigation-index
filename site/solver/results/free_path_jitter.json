@@ -1,0 +1,210 @@
+{
+ "date": "2026-11-10T10:44:53.617Z",
+ "input": "synthetic",
+ "command": "node site/solver/results/free_path_jitter.mjs",
+ "seeds": "1..49",
+ "radii_m": [
+  0.25,
+  0.5,
+  1
+ ],
+ "path_tries": 20,
+ "worlds": {
+  "office_0": {
+   "radius_m": 0.15,
+   "exact_free_path": true,
+   "R0.25": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   },
+   "R0.5": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   },
+   "R1": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   }
+  },
+  "warehouse_0": {
+   "radius_m": 0.15,
+   "exact_free_path": true,
+   "R0.25": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   },
+   "R0.5": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   },
+   "R1": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   }
+  },
+  "forest_0": {
+   "radius_m": 0.15,
+   "exact_free_path": true,
+   "R0.25": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   },
+   "R0.5": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   },
+   "R1": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   }
+  },
+  "maze_0": {
+   "radius_m": 0.15,
+   "exact_free_path": true,
+   "R0.25": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   },
+   "R0.5": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   },
+   "R1": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   }
+  },
+  "glass_office_0": {
+   "radius_m": 0.15,
+   "exact_free_path": true,
+   "R0.25": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   },
+   "R0.5": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   },
+   "R1": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   }
+  },
+  "random_0": {
+   "radius_m": 0.15,
+   "exact_free_path": true,
+   "R0.25": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   },
+   "R0.5": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   },
+   "R1": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   }
+  },
+  "u_trap_0": {
+   "radius_m": 0.15,
+   "exact_free_path": true,
+   "R0.25": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   },
+   "R0.5": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   },
+   "R1": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   }
+  },
+  "narrow_gap_0": {
+   "radius_m": 0.15,
+   "exact_free_path": true,
+   "R0.25": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   },
+   "R0.5": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   },
+   "R1": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   }
+  },
+  "hall_8x6": {
+   "radius_m": 0.15,
+   "exact_free_path": true,
+   "R0.25": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   },
+   "R0.5": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   },
+   "R1": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   }
+  },
+  "sketch_hall": {
+   "radius_m": 0.15,
+   "exact_free_path": true,
+   "R0.25": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   },
+   "R0.5": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   },
+   "R1": {
+    "first_draw_no_path": 0,
+    "redraw_connected": 0,
+    "exact_kept": 0
+   }
+  }
+ },
+ "total": {
+  "seed_draws": 1470,
+  "first_draw_no_path": 0,
+  "redraw_connected": 0,
+  "exact_kept": 0
+ }
+}

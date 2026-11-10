@@ -1,0 +1,5195 @@
+{
+ "schema": "navidx-solver-sweep/1",
+ "input": "synthetic",
+ "note": "SYNTHETIC SIMULATION, 2.5D POINT MASS. Scored on truth. Not a flight result. n seeds on one map is a small sample. Identical runs (same variation, outcome, time to B and path length at 3 dp) count once in every interval.",
+ "world_name": null,
+ "spec": {
+  "planners": [
+   "straight",
+   "freest_beam",
+   "astar_known",
+   "astar_unknown",
+   "apf",
+   "vfh_plus",
+   "dwa",
+   "dwa_mem",
+   "bug2",
+   "tangent_bug",
+   "dstar_lite",
+   "informed_rrt_star",
+   "thetastar_known",
+   "lazy_thetastar_known",
+   "lazy_thetastar_unknown",
+   "mppi",
+   "mppi_astar",
+   "hybrid_astar"
+  ],
+  "presets": [
+   "ideal"
+  ],
+  "faults": [
+   "truth"
+  ],
+  "fault": null,
+  "seeds": 5,
+  "jitter": 0.5,
+  "time_limit": "auto",
+  "vehicle": {
+   "radius_m": 0.15,
+   "v_max": 2,
+   "a_max": 3,
+   "tau": 0.15
+  },
+  "sensor_choice": "ideal",
+  "sensor": null,
+  "yaw": "fixed"
+ },
+ "run_count": 90,
+ "records_n": 90,
+ "cancelled": false,
+ "started": "2026-11-10T10:42:13.835Z",
+ "finished": "2026-11-10T10:42:33.249Z",
+ "pool": {
+  "workers": 4,
+  "hardware_concurrency": 16,
+  "ready_workers": 4,
+  "python_ready_s": 4.536,
+  "sweep_wall_s": 19.414,
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.0.0 Safari/537.36"
+ },
+ "env": {
+  "python": "3.14.2",
+  "numpy": "2.4.6",
+  "scipy": "1.18.0",
+  "machine": "wasm32",
+  "system": "Emscripten",
+  "imports_ms": {
+   "scipy_ndimage": 710,
+   "arena": 39.5,
+   "reactive": 3.4,
+   "sample_planners": 240.6,
+   "safety_filter": 313
+  },
+  "planners": [
+   "straight",
+   "freest_beam",
+   "astar_known",
+   "astar_unknown",
+   "apf",
+   "vfh_plus",
+   "dwa",
+   "dwa_mem",
+   "bug2",
+   "tangent_bug",
+   "dstar_lite",
+   "informed_rrt_star",
+   "thetastar_known",
+   "lazy_thetastar_known",
+   "lazy_thetastar_unknown",
+   "mppi",
+   "mppi_astar",
+   "hybrid_astar"
+  ],
+  "presets": [
+   "ideal",
+   "crazyflie",
+   "crazyflie_bright",
+   "depth_cam_87",
+   "lidar_2d"
+  ],
+  "faults": [
+   "truth",
+   "none",
+   "jump",
+   "bias",
+   "dropout"
+  ],
+  "filters": [
+   "none",
+   "F2"
+  ],
+  "yaw": [
+   "fixed",
+   "look_where_you_go"
+  ],
+  "radius_consts": [
+   "astar.RADIUS",
+   "astar.CARROT_CLEAR_M",
+   "ha.RADIUS",
+   "rrt.RADIUS",
+   "mppi.R_COLL",
+   "mppi.D_SAFE",
+   "dwa.RADIUS",
+   "bug.RADIUS"
+  ],
+  "recovery": [
+   "none",
+   "single",
+   "multi",
+   "multi_ig"
+  ],
+  "load_errors": {},
+  "pyodide": "314.0.7",
+  "pyodide_source": "cdn",
+  "pyodide_base": "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/",
+  "arena_files": 42,
+  "load_attempts": [
+   {
+    "step": "manifest.json",
+    "attempt": 1,
+    "ok": true,
+    "ms": 2
+   },
+   {
+    "step": "Pyodide runtime",
+    "attempt": 1,
+    "ok": true,
+    "ms": 1639
+   },
+   {
+    "step": "hub .py files",
+    "attempt": 1,
+    "ok": true,
+    "ms": 38
+   },
+   {
+    "step": "numpy + scipy wheels",
+    "attempt": 1,
+    "ok": true,
+    "ms": 1251
+   }
+  ]
+ },
+ "drone": {
+  "vehicle": {
+   "radius_m": 0.15,
+   "v_max": 2,
+   "a_max": 3,
+   "tau": 0.15
+  },
+  "vehicle_default": {
+   "radius_m": 0.15,
+   "v_max": 2,
+   "a_max": 3,
+   "tau": 0.15
+  },
+  "vehicle_sent": false,
+  "sensor_choice": "ideal",
+  "sensor": null,
+  "custom_label": null,
+  "custom_defaults": {
+   "cone_deg": 0,
+   "dropout": 0.02,
+   "source": "presets.py SENSOR_SPEC_DEFAULTS, filled by the worker"
+  },
+  "yaw": "fixed",
+  "yaw_sent": false,
+  "yaw_policy_flown": [
+   "off"
+  ],
+  "sensor_specs": {
+   "ideal": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   }
+  }
+ },
+ "jitter": {
+  "radius_m": 0.5,
+  "min_clearance_m": 0.25,
+  "max_draws": 50,
+  "prng": "mulberry32",
+  "seed0": "exact map",
+  "per_seed": [
+   {
+    "seed": 0,
+    "a": [
+     0.8,
+     0.8
+    ],
+    "b": [
+     7.2,
+     1
+    ],
+    "exact": true,
+    "a_kept": false,
+    "b_kept": false,
+    "draws": 0,
+    "path_redraws": 0,
+    "path_kept": false,
+    "free_path": true
+   },
+   {
+    "seed": 1,
+    "a": [
+     0.7405,
+     1.1866
+    ],
+    "b": [
+     6.8937,
+     0.7913
+    ],
+    "exact": false,
+    "a_kept": false,
+    "b_kept": false,
+    "draws": 2,
+    "path_redraws": 0,
+    "path_kept": false,
+    "free_path": true
+   },
+   {
+    "seed": 2,
+    "a": [
+     0.6918,
+     1.0777
+    ],
+    "b": [
+     6.8709,
+     1.0094
+    ],
+    "exact": false,
+    "a_kept": false,
+    "b_kept": false,
+    "draws": 2,
+    "path_redraws": 0,
+    "path_kept": false,
+    "free_path": true
+   },
+   {
+    "seed": 3,
+    "a": [
+     1.0974,
+     0.4862
+    ],
+    "b": [
+     7.0783,
+     1.034
+    ],
+    "exact": false,
+    "a_kept": false,
+    "b_kept": false,
+    "draws": 2,
+    "path_redraws": 0,
+    "path_kept": false,
+    "free_path": true
+   },
+   {
+    "seed": 4,
+    "a": [
+     0.7771,
+     0.6454
+    ],
+    "b": [
+     7.1382,
+     1.408
+    ],
+    "exact": false,
+    "a_kept": false,
+    "b_kept": false,
+    "draws": 2,
+    "path_redraws": 0,
+    "path_kept": false,
+    "free_path": true
+   }
+  ],
+  "path_tries": 20,
+  "path_rule": "a drawn A/B pair not connected at the radius (hasFreePath, the worker's free_path rule on the 0.1 m grid) is redrawn; after path_tries pairs the exact A and B are kept (path_kept)"
+ },
+ "no_path": {
+  "runs": 0,
+  "seeds": [],
+  "predicted": 0,
+  "rule": "runs with worker free_path false are shown as no path and kept out of every count, interval and the ranking"
+ },
+ "time_limit": {
+  "choice": "auto",
+  "expected_s": 60,
+  "source": "default",
+  "used_s": [
+   60
+  ],
+  "long_families": {
+   "maze": 120,
+   "warehouse": 120
+  },
+  "default_s": 60,
+  "rule": "auto: world.family in long_families => that limit, else default_s (bench.py LONG_FAMILIES)"
+ },
+ "headline": {
+  "kind": "tie",
+  "planner": null,
+  "planners": [
+   "thetastar_known",
+   "lazy_thetastar_known",
+   "astar_known",
+   "informed_rrt_star",
+   "lazy_thetastar_unknown",
+   "astar_unknown",
+   "dstar_lite",
+   "mppi_astar",
+   "tangent_bug"
+  ],
+  "top_n": 9,
+  "text": "9 planners tie at the top; run Thorough or more seeds to separate them (n=5 per planner, best 5/5 reached B, 95 % CI 57 %-100 %)."
+ },
+ "ranking": [
+  {
+   "planner": "thetastar_known",
+   "n": 5,
+   "n_all": 5,
+   "no_path": 0,
+   "n_distinct": 5,
+   "identical": 0,
+   "reached": 5,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 5,
+   "success": {
+    "p": 1,
+    "lo": 0.5655085052479191,
+    "hi": 1
+   },
+   "median_time_s": 21.9,
+   "median_path_m": 9.428,
+   "min_clearance_m": 0.214,
+   "collision_rate": 0,
+   "mean_wall_s": 1.1554000000000002
+  },
+  {
+   "planner": "lazy_thetastar_known",
+   "n": 5,
+   "n_all": 5,
+   "no_path": 0,
+   "n_distinct": 5,
+   "identical": 0,
+   "reached": 5,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 5,
+   "success": {
+    "p": 1,
+    "lo": 0.5655085052479191,
+    "hi": 1
+   },
+   "median_time_s": 21.98,
+   "median_path_m": 9.446,
+   "min_clearance_m": 0.2164,
+   "collision_rate": 0,
+   "mean_wall_s": 0.7592000000000001
+  },
+  {
+   "planner": "astar_known",
+   "n": 5,
+   "n_all": 5,
+   "no_path": 0,
+   "n_distinct": 5,
+   "identical": 0,
+   "reached": 5,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 5,
+   "success": {
+    "p": 1,
+    "lo": 0.5655085052479191,
+    "hi": 1
+   },
+   "median_time_s": 23.72,
+   "median_path_m": 9.024,
+   "min_clearance_m": 0.2141,
+   "collision_rate": 0,
+   "mean_wall_s": 0.5704
+  },
+  {
+   "planner": "informed_rrt_star",
+   "n": 5,
+   "n_all": 5,
+   "no_path": 0,
+   "n_distinct": 5,
+   "identical": 0,
+   "reached": 5,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 5,
+   "success": {
+    "p": 1,
+    "lo": 0.5655085052479191,
+    "hi": 1
+   },
+   "median_time_s": 25.52,
+   "median_path_m": 8.904,
+   "min_clearance_m": 0.2224,
+   "collision_rate": 0,
+   "mean_wall_s": 0.39059999999999995
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "n": 5,
+   "n_all": 5,
+   "no_path": 0,
+   "n_distinct": 5,
+   "identical": 0,
+   "reached": 5,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 5,
+   "success": {
+    "p": 1,
+    "lo": 0.5655085052479191,
+    "hi": 1
+   },
+   "median_time_s": 27.58,
+   "median_path_m": 11.21,
+   "min_clearance_m": 0.2532,
+   "collision_rate": 0,
+   "mean_wall_s": 1.7268000000000001
+  },
+  {
+   "planner": "astar_unknown",
+   "n": 5,
+   "n_all": 5,
+   "no_path": 0,
+   "n_distinct": 5,
+   "identical": 0,
+   "reached": 5,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 5,
+   "success": {
+    "p": 1,
+    "lo": 0.5655085052479191,
+    "hi": 1
+   },
+   "median_time_s": 28.76,
+   "median_path_m": 9.987,
+   "min_clearance_m": 0.2228,
+   "collision_rate": 0,
+   "mean_wall_s": 0.9916
+  },
+  {
+   "planner": "dstar_lite",
+   "n": 5,
+   "n_all": 5,
+   "no_path": 0,
+   "n_distinct": 5,
+   "identical": 0,
+   "reached": 5,
+   "collision": 0,
+   "stuck": 0,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 5,
+   "success": {
+    "p": 1,
+    "lo": 0.5655085052479191,
+    "hi": 1
+   },
+   "median_time_s": 28.76,
+   "median_path_m": 9.987,
+   "min_clearance_m": 0.2228,
+   "collision_rate": 0,
+   "mean_wall_s": 1.2551999999999999
+  },
+  {
+   "planner": "mppi_astar",
+   "n": 5,
+   "n_all": 5,
+   "no_path": 0,
+   "n_distinct": 5,
+   "identical": 0,
+   "reached": 4,
+   "collision": 0,
+   "stuck": 1,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 4,
+   "success": {
+    "p": 0.8,
+    "lo": 0.3755282641185388,
+    "hi": 0.9637768390302125
+   },
+   "median_time_s": 13.510000000000002,
+   "median_path_m": 9.887,
+   "min_clearance_m": 0.2509,
+   "collision_rate": 0,
+   "mean_wall_s": 1.3703999999999998
+  },
+  {
+   "planner": "tangent_bug",
+   "n": 5,
+   "n_all": 5,
+   "no_path": 0,
+   "n_distinct": 5,
+   "identical": 0,
+   "reached": 2,
+   "collision": 0,
+   "stuck": 3,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 2,
+   "success": {
+    "p": 0.4,
+    "lo": 0.1176182311592533,
+    "hi": 0.769280067791163
+   },
+   "median_time_s": 28.590000000000003,
+   "median_path_m": 4.957,
+   "min_clearance_m": 0.2527,
+   "collision_rate": 0,
+   "mean_wall_s": 0.1048
+  },
+  {
+   "planner": "apf",
+   "n": 5,
+   "n_all": 5,
+   "no_path": 0,
+   "n_distinct": 5,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 4,
+   "timeout": 1,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.43449149475208104
+   },
+   "median_time_s": null,
+   "median_path_m": 19.123,
+   "min_clearance_m": 0.4862,
+   "collision_rate": 0,
+   "mean_wall_s": 0.148
+  },
+  {
+   "planner": "bug2",
+   "n": 5,
+   "n_all": 5,
+   "no_path": 0,
+   "n_distinct": 5,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.43449149475208104
+   },
+   "median_time_s": null,
+   "median_path_m": 8.956,
+   "min_clearance_m": 0.4302,
+   "collision_rate": 0,
+   "mean_wall_s": 0.1072
+  },
+  {
+   "planner": "dwa",
+   "n": 5,
+   "n_all": 5,
+   "no_path": 0,
+   "n_distinct": 5,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.43449149475208104
+   },
+   "median_time_s": null,
+   "median_path_m": 2.962,
+   "min_clearance_m": 0.2739,
+   "collision_rate": 0,
+   "mean_wall_s": 0.7338000000000001
+  },
+  {
+   "planner": "dwa_mem",
+   "n": 5,
+   "n_all": 5,
+   "no_path": 0,
+   "n_distinct": 5,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.43449149475208104
+   },
+   "median_time_s": null,
+   "median_path_m": 4.454,
+   "min_clearance_m": 0.2643,
+   "collision_rate": 0,
+   "mean_wall_s": 2.1499999999999995
+  },
+  {
+   "planner": "freest_beam",
+   "n": 5,
+   "n_all": 5,
+   "no_path": 0,
+   "n_distinct": 5,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.43449149475208104
+   },
+   "median_time_s": null,
+   "median_path_m": 5.056,
+   "min_clearance_m": 0.3764,
+   "collision_rate": 0,
+   "mean_wall_s": 0.067
+  },
+  {
+   "planner": "hybrid_astar",
+   "n": 5,
+   "n_all": 5,
+   "no_path": 0,
+   "n_distinct": 5,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.43449149475208104
+   },
+   "median_time_s": null,
+   "median_path_m": 4.264,
+   "min_clearance_m": 0.2526,
+   "collision_rate": 0,
+   "mean_wall_s": 0.9528000000000001
+  },
+  {
+   "planner": "mppi",
+   "n": 5,
+   "n_all": 5,
+   "no_path": 0,
+   "n_distinct": 5,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.43449149475208104
+   },
+   "median_time_s": null,
+   "median_path_m": 2.452,
+   "min_clearance_m": 0.4862,
+   "collision_rate": 0,
+   "mean_wall_s": 0.7794
+  },
+  {
+   "planner": "straight",
+   "n": 5,
+   "n_all": 5,
+   "no_path": 0,
+   "n_distinct": 5,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.43449149475208104
+   },
+   "median_time_s": null,
+   "median_path_m": 2.33,
+   "min_clearance_m": 0.4075,
+   "collision_rate": 0,
+   "mean_wall_s": 0.06920000000000001
+  },
+  {
+   "planner": "vfh_plus",
+   "n": 5,
+   "n_all": 5,
+   "no_path": 0,
+   "n_distinct": 5,
+   "identical": 0,
+   "reached": 0,
+   "collision": 0,
+   "stuck": 5,
+   "timeout": 0,
+   "error": 0,
+   "reached_distinct": 0,
+   "success": {
+    "p": 0,
+    "lo": 0,
+    "hi": 0.43449149475208104
+   },
+   "median_time_s": null,
+   "median_path_m": 13.164,
+   "min_clearance_m": 0.247,
+   "collision_rate": 0,
+   "mean_wall_s": 0.265
+  }
+ ],
+ "matrix": {
+  "straight": {
+   "ideal|truth": {
+    "n": 5,
+    "n_all": 5,
+    "no_path": 0,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 5,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.43449149475208104
+    },
+    "median_time_s": null,
+    "median_path_m": 2.33,
+    "min_clearance_m": 0.4075,
+    "collision_rate": 0,
+    "mean_wall_s": 0.06920000000000001
+   }
+  },
+  "freest_beam": {
+   "ideal|truth": {
+    "n": 5,
+    "n_all": 5,
+    "no_path": 0,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 5,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.43449149475208104
+    },
+    "median_time_s": null,
+    "median_path_m": 5.056,
+    "min_clearance_m": 0.3764,
+    "collision_rate": 0,
+    "mean_wall_s": 0.067
+   }
+  },
+  "astar_known": {
+   "ideal|truth": {
+    "n": 5,
+    "n_all": 5,
+    "no_path": 0,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 5,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 5,
+    "success": {
+     "p": 1,
+     "lo": 0.5655085052479191,
+     "hi": 1
+    },
+    "median_time_s": 23.72,
+    "median_path_m": 9.024,
+    "min_clearance_m": 0.2141,
+    "collision_rate": 0,
+    "mean_wall_s": 0.5704
+   }
+  },
+  "astar_unknown": {
+   "ideal|truth": {
+    "n": 5,
+    "n_all": 5,
+    "no_path": 0,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 5,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 5,
+    "success": {
+     "p": 1,
+     "lo": 0.5655085052479191,
+     "hi": 1
+    },
+    "median_time_s": 28.76,
+    "median_path_m": 9.987,
+    "min_clearance_m": 0.2228,
+    "collision_rate": 0,
+    "mean_wall_s": 0.9916
+   }
+  },
+  "apf": {
+   "ideal|truth": {
+    "n": 5,
+    "n_all": 5,
+    "no_path": 0,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 4,
+    "timeout": 1,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.43449149475208104
+    },
+    "median_time_s": null,
+    "median_path_m": 19.123,
+    "min_clearance_m": 0.4862,
+    "collision_rate": 0,
+    "mean_wall_s": 0.148
+   }
+  },
+  "vfh_plus": {
+   "ideal|truth": {
+    "n": 5,
+    "n_all": 5,
+    "no_path": 0,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 5,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.43449149475208104
+    },
+    "median_time_s": null,
+    "median_path_m": 13.164,
+    "min_clearance_m": 0.247,
+    "collision_rate": 0,
+    "mean_wall_s": 0.265
+   }
+  },
+  "dwa": {
+   "ideal|truth": {
+    "n": 5,
+    "n_all": 5,
+    "no_path": 0,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 5,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.43449149475208104
+    },
+    "median_time_s": null,
+    "median_path_m": 2.962,
+    "min_clearance_m": 0.2739,
+    "collision_rate": 0,
+    "mean_wall_s": 0.7338000000000001
+   }
+  },
+  "dwa_mem": {
+   "ideal|truth": {
+    "n": 5,
+    "n_all": 5,
+    "no_path": 0,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 5,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.43449149475208104
+    },
+    "median_time_s": null,
+    "median_path_m": 4.454,
+    "min_clearance_m": 0.2643,
+    "collision_rate": 0,
+    "mean_wall_s": 2.1499999999999995
+   }
+  },
+  "bug2": {
+   "ideal|truth": {
+    "n": 5,
+    "n_all": 5,
+    "no_path": 0,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 5,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.43449149475208104
+    },
+    "median_time_s": null,
+    "median_path_m": 8.956,
+    "min_clearance_m": 0.4302,
+    "collision_rate": 0,
+    "mean_wall_s": 0.1072
+   }
+  },
+  "tangent_bug": {
+   "ideal|truth": {
+    "n": 5,
+    "n_all": 5,
+    "no_path": 0,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 2,
+    "collision": 0,
+    "stuck": 3,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 2,
+    "success": {
+     "p": 0.4,
+     "lo": 0.1176182311592533,
+     "hi": 0.769280067791163
+    },
+    "median_time_s": 28.590000000000003,
+    "median_path_m": 4.957,
+    "min_clearance_m": 0.2527,
+    "collision_rate": 0,
+    "mean_wall_s": 0.1048
+   }
+  },
+  "dstar_lite": {
+   "ideal|truth": {
+    "n": 5,
+    "n_all": 5,
+    "no_path": 0,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 5,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 5,
+    "success": {
+     "p": 1,
+     "lo": 0.5655085052479191,
+     "hi": 1
+    },
+    "median_time_s": 28.76,
+    "median_path_m": 9.987,
+    "min_clearance_m": 0.2228,
+    "collision_rate": 0,
+    "mean_wall_s": 1.2551999999999999
+   }
+  },
+  "informed_rrt_star": {
+   "ideal|truth": {
+    "n": 5,
+    "n_all": 5,
+    "no_path": 0,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 5,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 5,
+    "success": {
+     "p": 1,
+     "lo": 0.5655085052479191,
+     "hi": 1
+    },
+    "median_time_s": 25.52,
+    "median_path_m": 8.904,
+    "min_clearance_m": 0.2224,
+    "collision_rate": 0,
+    "mean_wall_s": 0.39059999999999995
+   }
+  },
+  "thetastar_known": {
+   "ideal|truth": {
+    "n": 5,
+    "n_all": 5,
+    "no_path": 0,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 5,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 5,
+    "success": {
+     "p": 1,
+     "lo": 0.5655085052479191,
+     "hi": 1
+    },
+    "median_time_s": 21.9,
+    "median_path_m": 9.428,
+    "min_clearance_m": 0.214,
+    "collision_rate": 0,
+    "mean_wall_s": 1.1554000000000002
+   }
+  },
+  "lazy_thetastar_known": {
+   "ideal|truth": {
+    "n": 5,
+    "n_all": 5,
+    "no_path": 0,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 5,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 5,
+    "success": {
+     "p": 1,
+     "lo": 0.5655085052479191,
+     "hi": 1
+    },
+    "median_time_s": 21.98,
+    "median_path_m": 9.446,
+    "min_clearance_m": 0.2164,
+    "collision_rate": 0,
+    "mean_wall_s": 0.7592000000000001
+   }
+  },
+  "lazy_thetastar_unknown": {
+   "ideal|truth": {
+    "n": 5,
+    "n_all": 5,
+    "no_path": 0,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 5,
+    "collision": 0,
+    "stuck": 0,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 5,
+    "success": {
+     "p": 1,
+     "lo": 0.5655085052479191,
+     "hi": 1
+    },
+    "median_time_s": 27.58,
+    "median_path_m": 11.21,
+    "min_clearance_m": 0.2532,
+    "collision_rate": 0,
+    "mean_wall_s": 1.7268000000000001
+   }
+  },
+  "mppi": {
+   "ideal|truth": {
+    "n": 5,
+    "n_all": 5,
+    "no_path": 0,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 5,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.43449149475208104
+    },
+    "median_time_s": null,
+    "median_path_m": 2.452,
+    "min_clearance_m": 0.4862,
+    "collision_rate": 0,
+    "mean_wall_s": 0.7794
+   }
+  },
+  "mppi_astar": {
+   "ideal|truth": {
+    "n": 5,
+    "n_all": 5,
+    "no_path": 0,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 4,
+    "collision": 0,
+    "stuck": 1,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 4,
+    "success": {
+     "p": 0.8,
+     "lo": 0.3755282641185388,
+     "hi": 0.9637768390302125
+    },
+    "median_time_s": 13.510000000000002,
+    "median_path_m": 9.887,
+    "min_clearance_m": 0.2509,
+    "collision_rate": 0,
+    "mean_wall_s": 1.3703999999999998
+   }
+  },
+  "hybrid_astar": {
+   "ideal|truth": {
+    "n": 5,
+    "n_all": 5,
+    "no_path": 0,
+    "n_distinct": 5,
+    "identical": 0,
+    "reached": 0,
+    "collision": 0,
+    "stuck": 5,
+    "timeout": 0,
+    "error": 0,
+    "reached_distinct": 0,
+    "success": {
+     "p": 0,
+     "lo": 0,
+     "hi": 0.43449149475208104
+    },
+    "median_time_s": null,
+    "median_path_m": 4.264,
+    "min_clearance_m": 0.2526,
+    "collision_rate": 0,
+    "mean_wall_s": 0.9528000000000001
+   }
+  }
+ },
+ "records": [
+  {
+   "planner": "straight",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 2.291,
+   "min_clearance_m": 0.4102,
+   "duration_s": 12.66,
+   "max_time_s": 60,
+   "wall_s": 0.089,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "freest_beam",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 4.307,
+   "min_clearance_m": 0.3846,
+   "duration_s": 12.76,
+   "max_time_s": 60,
+   "wall_s": 0.073,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 23.98,
+   "path_length_m": 9.204,
+   "min_clearance_m": 0.2212,
+   "duration_s": 23.98,
+   "max_time_s": 60,
+   "wall_s": 0.603,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "astar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 30.78,
+   "path_length_m": 10.898,
+   "min_clearance_m": 0.2228,
+   "duration_s": 30.78,
+   "max_time_s": 60,
+   "wall_s": 1.14,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "apf",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "timeout",
+   "time_to_goal_s": null,
+   "path_length_m": 14.265,
+   "min_clearance_m": 0.5459,
+   "duration_s": 26.4,
+   "max_time_s": 60,
+   "wall_s": 0.136,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "vfh_plus",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 13.052,
+   "min_clearance_m": 0.2694,
+   "duration_s": 19.34,
+   "max_time_s": 60,
+   "wall_s": 0.293,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "dwa",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 2.962,
+   "min_clearance_m": 0.2787,
+   "duration_s": 20.4,
+   "max_time_s": 60,
+   "wall_s": 0.815,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "dwa_mem",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 4.567,
+   "min_clearance_m": 0.3175,
+   "duration_s": 16.14,
+   "max_time_s": 60,
+   "wall_s": 2.243,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "bug2",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 9.087,
+   "min_clearance_m": 0.4302,
+   "duration_s": 24.2,
+   "max_time_s": 60,
+   "wall_s": 0.126,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "tangent_bug",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 3.996,
+   "min_clearance_m": 0.2527,
+   "duration_s": 11.28,
+   "max_time_s": 60,
+   "wall_s": 0.073,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "dstar_lite",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 30.78,
+   "path_length_m": 10.898,
+   "min_clearance_m": 0.2228,
+   "duration_s": 30.78,
+   "max_time_s": 60,
+   "wall_s": 1.363,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "informed_rrt_star",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 25.64,
+   "path_length_m": 9.094,
+   "min_clearance_m": 0.2268,
+   "duration_s": 25.64,
+   "max_time_s": 60,
+   "wall_s": 0.391,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 22.28,
+   "path_length_m": 9.645,
+   "min_clearance_m": 0.214,
+   "duration_s": 22.28,
+   "max_time_s": 60,
+   "wall_s": 1.159,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "lazy_thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 22.4,
+   "path_length_m": 9.639,
+   "min_clearance_m": 0.2164,
+   "duration_s": 22.4,
+   "max_time_s": 60,
+   "wall_s": 0.775,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 27.58,
+   "path_length_m": 11.21,
+   "min_clearance_m": 0.2774,
+   "duration_s": 27.58,
+   "max_time_s": 60,
+   "wall_s": 1.689,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "mppi",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 2.383,
+   "min_clearance_m": 0.6393,
+   "duration_s": 12.66,
+   "max_time_s": 60,
+   "wall_s": 0.79,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "mppi_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 2.111,
+   "min_clearance_m": 0.5388,
+   "duration_s": 12.02,
+   "max_time_s": 60,
+   "wall_s": 1.298,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "hybrid_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 0,
+   "a": [
+    0.8,
+    0.8
+   ],
+   "b": [
+    7.2,
+    1
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 6.701,
+   "min_clearance_m": 0.2526,
+   "duration_s": 18.14,
+   "max_time_s": 60,
+   "wall_s": 1.257,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "straight",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 2.356,
+   "min_clearance_m": 0.4088,
+   "duration_s": 12.74,
+   "max_time_s": 60,
+   "wall_s": 0.067,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "freest_beam",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 5.279,
+   "min_clearance_m": 0.4415,
+   "duration_s": 12.78,
+   "max_time_s": 60,
+   "wall_s": 0.07,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 23.72,
+   "path_length_m": 9.024,
+   "min_clearance_m": 0.2204,
+   "duration_s": 23.72,
+   "max_time_s": 60,
+   "wall_s": 0.58,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "astar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 31.18,
+   "path_length_m": 10.716,
+   "min_clearance_m": 0.2511,
+   "duration_s": 31.18,
+   "max_time_s": 60,
+   "wall_s": 1.105,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "apf",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 19.123,
+   "min_clearance_m": 0.5613,
+   "duration_s": 35.14,
+   "max_time_s": 60,
+   "wall_s": 0.173,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "vfh_plus",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 12.699,
+   "min_clearance_m": 0.2712,
+   "duration_s": 26.42,
+   "max_time_s": 60,
+   "wall_s": 0.223,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "dwa",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 4.074,
+   "min_clearance_m": 0.333,
+   "duration_s": 17.52,
+   "max_time_s": 60,
+   "wall_s": 0.717,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "dwa_mem",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 4.454,
+   "min_clearance_m": 0.2964,
+   "duration_s": 19.52,
+   "max_time_s": 60,
+   "wall_s": 2.271,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "bug2",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 8.956,
+   "min_clearance_m": 0.4755,
+   "duration_s": 23.9,
+   "max_time_s": 60,
+   "wall_s": 0.118,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "tangent_bug",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 19.76,
+   "path_length_m": 12.709,
+   "min_clearance_m": 0.3439,
+   "duration_s": 19.76,
+   "max_time_s": 60,
+   "wall_s": 0.115,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "dstar_lite",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 31.18,
+   "path_length_m": 10.716,
+   "min_clearance_m": 0.2511,
+   "duration_s": 31.18,
+   "max_time_s": 60,
+   "wall_s": 1.384,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "informed_rrt_star",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 25.24,
+   "path_length_m": 8.904,
+   "min_clearance_m": 0.2282,
+   "duration_s": 25.24,
+   "max_time_s": 60,
+   "wall_s": 0.384,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 21.78,
+   "path_length_m": 9.428,
+   "min_clearance_m": 0.217,
+   "duration_s": 21.78,
+   "max_time_s": 60,
+   "wall_s": 1.163,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "lazy_thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 21.98,
+   "path_length_m": 9.446,
+   "min_clearance_m": 0.221,
+   "duration_s": 21.98,
+   "max_time_s": 60,
+   "wall_s": 0.764,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 28.26,
+   "path_length_m": 11.44,
+   "min_clearance_m": 0.2761,
+   "duration_s": 28.26,
+   "max_time_s": 60,
+   "wall_s": 1.756,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "mppi",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 2.46,
+   "min_clearance_m": 0.6434,
+   "duration_s": 12.72,
+   "max_time_s": 60,
+   "wall_s": 0.779,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "mppi_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 14.22,
+   "path_length_m": 9.902,
+   "min_clearance_m": 0.2665,
+   "duration_s": 14.22,
+   "max_time_s": 60,
+   "wall_s": 1.433,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "hybrid_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 1,
+   "a": [
+    0.7405,
+    1.1866
+   ],
+   "b": [
+    6.8937,
+    0.7913
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 4.264,
+   "min_clearance_m": 0.2608,
+   "duration_s": 13.56,
+   "max_time_s": 60,
+   "wall_s": 0.939,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "straight",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 2.398,
+   "min_clearance_m": 0.4108,
+   "duration_s": 12.74,
+   "max_time_s": 60,
+   "wall_s": 0.064,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "freest_beam",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 5.056,
+   "min_clearance_m": 0.4603,
+   "duration_s": 12.8,
+   "max_time_s": 60,
+   "wall_s": 0.064,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 23.66,
+   "path_length_m": 8.928,
+   "min_clearance_m": 0.2235,
+   "duration_s": 23.66,
+   "max_time_s": 60,
+   "wall_s": 0.554,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "astar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 28.76,
+   "path_length_m": 9.824,
+   "min_clearance_m": 0.2684,
+   "duration_s": 28.76,
+   "max_time_s": 60,
+   "wall_s": 0.908,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "apf",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 7.86,
+   "min_clearance_m": 0.6467,
+   "duration_s": 15.02,
+   "max_time_s": 60,
+   "wall_s": 0.081,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "vfh_plus",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 18.657,
+   "min_clearance_m": 0.247,
+   "duration_s": 38.1,
+   "max_time_s": 60,
+   "wall_s": 0.319,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "dwa",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 2.857,
+   "min_clearance_m": 0.2965,
+   "duration_s": 17.98,
+   "max_time_s": 60,
+   "wall_s": 0.716,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "dwa_mem",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 2.659,
+   "min_clearance_m": 0.2643,
+   "duration_s": 20.32,
+   "max_time_s": 60,
+   "wall_s": 2.295,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "bug2",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 6.521,
+   "min_clearance_m": 0.4386,
+   "duration_s": 10,
+   "max_time_s": 60,
+   "wall_s": 0.057,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "tangent_bug",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 37.42,
+   "path_length_m": 23.355,
+   "min_clearance_m": 0.3133,
+   "duration_s": 37.42,
+   "max_time_s": 60,
+   "wall_s": 0.202,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "dstar_lite",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 28.76,
+   "path_length_m": 9.824,
+   "min_clearance_m": 0.2684,
+   "duration_s": 28.76,
+   "max_time_s": 60,
+   "wall_s": 1.175,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "informed_rrt_star",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 25.52,
+   "path_length_m": 8.831,
+   "min_clearance_m": 0.2224,
+   "duration_s": 25.52,
+   "max_time_s": 60,
+   "wall_s": 0.391,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 21.9,
+   "path_length_m": 9.386,
+   "min_clearance_m": 0.2164,
+   "duration_s": 21.9,
+   "max_time_s": 60,
+   "wall_s": 1.163,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "lazy_thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 21.94,
+   "path_length_m": 9.406,
+   "min_clearance_m": 0.2245,
+   "duration_s": 21.94,
+   "max_time_s": 60,
+   "wall_s": 0.765,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 28.28,
+   "path_length_m": 11.405,
+   "min_clearance_m": 0.2619,
+   "duration_s": 28.28,
+   "max_time_s": 60,
+   "wall_s": 1.809,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "mppi",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 2.508,
+   "min_clearance_m": 0.6415,
+   "duration_s": 12.74,
+   "max_time_s": 60,
+   "wall_s": 0.779,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "mppi_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 16.52,
+   "path_length_m": 10.86,
+   "min_clearance_m": 0.2847,
+   "duration_s": 16.52,
+   "max_time_s": 60,
+   "wall_s": 1.659,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "hybrid_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 2,
+   "a": [
+    0.6918,
+    1.0777
+   ],
+   "b": [
+    6.8709,
+    1.0094
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 4.11,
+   "min_clearance_m": 0.2893,
+   "duration_s": 12.26,
+   "max_time_s": 60,
+   "wall_s": 0.822,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "straight",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 2.003,
+   "min_clearance_m": 0.4075,
+   "duration_s": 12.9,
+   "max_time_s": 60,
+   "wall_s": 0.063,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "freest_beam",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 4.899,
+   "min_clearance_m": 0.3907,
+   "duration_s": 12.32,
+   "max_time_s": 60,
+   "wall_s": 0.062,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 24.16,
+   "path_length_m": 8.914,
+   "min_clearance_m": 0.2263,
+   "duration_s": 24.16,
+   "max_time_s": 60,
+   "wall_s": 0.567,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "astar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 27.58,
+   "path_length_m": 9.695,
+   "min_clearance_m": 0.2444,
+   "duration_s": 27.58,
+   "max_time_s": 60,
+   "wall_s": 0.912,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "apf",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 19.327,
+   "min_clearance_m": 0.4862,
+   "duration_s": 35.34,
+   "max_time_s": 60,
+   "wall_s": 0.176,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "vfh_plus",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 13.164,
+   "min_clearance_m": 0.2821,
+   "duration_s": 26.38,
+   "max_time_s": 60,
+   "wall_s": 0.224,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "dwa",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 3.756,
+   "min_clearance_m": 0.2861,
+   "duration_s": 15.92,
+   "max_time_s": 60,
+   "wall_s": 0.639,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "dwa_mem",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 3.95,
+   "min_clearance_m": 0.282,
+   "duration_s": 16.6,
+   "max_time_s": 60,
+   "wall_s": 2.132,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "bug2",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 8.679,
+   "min_clearance_m": 0.483,
+   "duration_s": 23.6,
+   "max_time_s": 60,
+   "wall_s": 0.117,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "tangent_bug",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 4.653,
+   "min_clearance_m": 0.2562,
+   "duration_s": 11.22,
+   "max_time_s": 60,
+   "wall_s": 0.07,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "dstar_lite",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 27.58,
+   "path_length_m": 9.695,
+   "min_clearance_m": 0.2444,
+   "duration_s": 27.58,
+   "max_time_s": 60,
+   "wall_s": 1.188,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "informed_rrt_star",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 25.38,
+   "path_length_m": 8.837,
+   "min_clearance_m": 0.227,
+   "duration_s": 25.38,
+   "max_time_s": 60,
+   "wall_s": 0.385,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 22.3,
+   "path_length_m": 9.322,
+   "min_clearance_m": 0.2146,
+   "duration_s": 22.3,
+   "max_time_s": 60,
+   "wall_s": 1.168,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "lazy_thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 22.44,
+   "path_length_m": 9.354,
+   "min_clearance_m": 0.2283,
+   "duration_s": 22.44,
+   "max_time_s": 60,
+   "wall_s": 0.765,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 27.42,
+   "path_length_m": 10.8,
+   "min_clearance_m": 0.2615,
+   "duration_s": 27.42,
+   "max_time_s": 60,
+   "wall_s": 1.724,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "mppi",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 2.134,
+   "min_clearance_m": 0.4862,
+   "duration_s": 12.58,
+   "max_time_s": 60,
+   "wall_s": 0.754,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "mppi_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 11.1,
+   "path_length_m": 9.783,
+   "min_clearance_m": 0.2558,
+   "duration_s": 11.1,
+   "max_time_s": 60,
+   "wall_s": 1.122,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "hybrid_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 3,
+   "a": [
+    1.0974,
+    0.4862
+   ],
+   "b": [
+    7.0783,
+    1.034
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 3.682,
+   "min_clearance_m": 0.2754,
+   "duration_s": 13.24,
+   "max_time_s": 60,
+   "wall_s": 0.822,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "straight",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 2.33,
+   "min_clearance_m": 0.4095,
+   "duration_s": 12.72,
+   "max_time_s": 60,
+   "wall_s": 0.063,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "freest_beam",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 6.106,
+   "min_clearance_m": 0.3764,
+   "duration_s": 12.64,
+   "max_time_s": 60,
+   "wall_s": 0.066,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "astar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 22.9,
+   "path_length_m": 9.346,
+   "min_clearance_m": 0.2141,
+   "duration_s": 22.9,
+   "max_time_s": 60,
+   "wall_s": 0.548,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "astar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 26.62,
+   "path_length_m": 9.987,
+   "min_clearance_m": 0.2407,
+   "duration_s": 26.62,
+   "max_time_s": 60,
+   "wall_s": 0.893,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "apf",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 19.346,
+   "min_clearance_m": 0.5406,
+   "duration_s": 35.4,
+   "max_time_s": 60,
+   "wall_s": 0.174,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "vfh_plus",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 19.889,
+   "min_clearance_m": 0.2757,
+   "duration_s": 31.72,
+   "max_time_s": 60,
+   "wall_s": 0.266,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "dwa",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 2.92,
+   "min_clearance_m": 0.2739,
+   "duration_s": 19.26,
+   "max_time_s": 60,
+   "wall_s": 0.782,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "dwa_mem",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 4.579,
+   "min_clearance_m": 0.3424,
+   "duration_s": 16.8,
+   "max_time_s": 60,
+   "wall_s": 1.809,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "bug2",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 9.1,
+   "min_clearance_m": 0.4308,
+   "duration_s": 24.2,
+   "max_time_s": 60,
+   "wall_s": 0.118,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "tangent_bug",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 4.957,
+   "min_clearance_m": 0.266,
+   "duration_s": 10.08,
+   "max_time_s": 60,
+   "wall_s": 0.064,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "dstar_lite",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 26.62,
+   "path_length_m": 9.987,
+   "min_clearance_m": 0.2407,
+   "duration_s": 26.62,
+   "max_time_s": 60,
+   "wall_s": 1.166,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "informed_rrt_star",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 26.06,
+   "path_length_m": 8.994,
+   "min_clearance_m": 0.2294,
+   "duration_s": 26.06,
+   "max_time_s": 60,
+   "wall_s": 0.402,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 21.38,
+   "path_length_m": 9.871,
+   "min_clearance_m": 0.2442,
+   "duration_s": 21.38,
+   "max_time_s": 60,
+   "wall_s": 1.124,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  },
+  {
+   "planner": "lazy_thetastar_known",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 21.38,
+   "path_length_m": 9.873,
+   "min_clearance_m": 0.2456,
+   "duration_s": 21.38,
+   "max_time_s": 60,
+   "wall_s": 0.727,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "lazy_thetastar_unknown",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 26.36,
+   "path_length_m": 10.51,
+   "min_clearance_m": 0.2532,
+   "duration_s": 26.36,
+   "max_time_s": 60,
+   "wall_s": 1.656,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 1
+  },
+  {
+   "planner": "mppi",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 2.452,
+   "min_clearance_m": 0.6245,
+   "duration_s": 12.7,
+   "max_time_s": 60,
+   "wall_s": 0.795,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 2
+  },
+  {
+   "planner": "mppi_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "reached",
+   "time_to_goal_s": 12.8,
+   "path_length_m": 9.887,
+   "min_clearance_m": 0.2509,
+   "duration_s": 12.8,
+   "max_time_s": 60,
+   "wall_s": 1.34,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 3
+  },
+  {
+   "planner": "hybrid_astar",
+   "preset": "ideal",
+   "fault": "truth",
+   "seed": 4,
+   "a": [
+    0.7771,
+    0.6454
+   ],
+   "b": [
+    7.1382,
+    1.408
+   ],
+   "ab_kept": null,
+   "vehicle": {
+    "radius_m": 0.15,
+    "v_max": 2,
+    "a_max": 3,
+    "tau": 0.15
+   },
+   "sensor": {
+    "beams": 72,
+    "fov_deg": 360,
+    "max_range_m": 6,
+    "min_range_m": 0,
+    "noise_sigma_m": 0.02,
+    "cone_deg": 0,
+    "dropout": 0.02
+   },
+   "yaw": "fixed",
+   "yaw_policy": "off",
+   "outcome": "stuck",
+   "time_to_goal_s": null,
+   "path_length_m": 4.69,
+   "min_clearance_m": 0.2627,
+   "duration_s": 13.5,
+   "max_time_s": 60,
+   "wall_s": 0.924,
+   "free_path": true,
+   "free_path_pred": true,
+   "error": null,
+   "worker": 0
+  }
+ ],
+ "world": {
+  "schema": "close-area-world/1",
+  "frame": "local ENU m, origin at A",
+  "family": "custom",
+  "seed": 0,
+  "index": 0,
+  "bounds": [
+   0,
+   0,
+   8,
+   6
+  ],
+  "a": [
+   0.8,
+   0.8
+  ],
+  "b": [
+   7.2,
+   1
+  ],
+  "z": 1,
+  "radius": 0.15,
+  "obstacles": [
+   {
+    "type": "wall",
+    "x0": 5,
+    "y0": 0,
+    "x1": 5,
+    "y1": 3.6,
+    "thickness": 0.12,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "wall",
+    "x0": 5,
+    "y0": 4.5,
+    "x1": 5,
+    "y1": 6,
+    "thickness": 0.12,
+    "material": "matte",
+    "tag": "wall"
+   },
+   {
+    "type": "box",
+    "cx": 1.4,
+    "cy": 3,
+    "hx": 0.8,
+    "hy": 0.4,
+    "material": "matte",
+    "tag": "table"
+   },
+   {
+    "type": "box",
+    "cx": 3.9,
+    "cy": 1.2,
+    "hx": 0.4,
+    "hy": 0.8,
+    "material": "matte",
+    "tag": "table"
+   },
+   {
+    "type": "box",
+    "cx": 6.5,
+    "cy": 2.4,
+    "hx": 0.6,
+    "hy": 0.4,
+    "material": "matte",
+    "tag": "table"
+   },
+   {
+    "type": "box",
+    "cx": 6.6,
+    "cy": 5.7,
+    "hx": 1,
+    "hy": 0.2,
+    "material": "matte",
+    "tag": "shelf"
+   },
+   {
+    "type": "cylinder",
+    "cx": 2.6,
+    "cy": 2,
+    "r": 0.2,
+    "material": "matte",
+    "tag": "pillar"
+   },
+   {
+    "type": "cylinder",
+    "cx": 2.6,
+    "cy": 4,
+    "r": 0.2,
+    "material": "matte",
+    "tag": "pillar"
+   }
+  ]
+ }
+}
