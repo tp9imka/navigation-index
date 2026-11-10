@@ -66,7 +66,9 @@ Rebuild ground truth from tools, not memory:
    2. Breadth: different navigation approaches on the shelf as runnable POCs.
    3. Depth: research rounds where the hub is thin or a POC raised a question.
    4. Long-range GNSS-denied fallbacks, only if cheap.
-   Keep roughly 2 build items for every 1 research item. Prefer S items; split M items first.
+   Keep roughly 2 build items for every 1 research item. CPU budget (Ivan, 2026-11-10): this runs on
+   Ivan's laptop; at most 1-2 jobs in flight and every brief caps worker processes at 4. Big
+   regenerations (> ~500 runs) run overnight only. Prefer S items; split M items first.
 2. **Brief.** One file per job in the scratchpad, from [brief-template.md](brief-template.md).
    Fill every section. No absolute paths to the source checkout in a brief.
 3. **Launch.** From the worktree:
